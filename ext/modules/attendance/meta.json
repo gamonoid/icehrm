@@ -1,0 +1,11 @@
+{
+"label":"Attendance",
+"menu":"Time Management",
+"order":"2",
+"icon":"fa-clock-o",
+"user_levels":["Admin","Manager","Employee"],
+
+"permissions":
+	{
+	}
+}

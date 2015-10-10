@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="icehrm-opensource" default="build">
+ <!-- By default, we assume all tools to be on the $PATH -->
+ <property name="toolsdir" value=""/>
+ <property name="destination" value="${basedir}/build/app"/>
+ <property name="origin" value="${basedir}/src"/>
+ <property environment="env"/>
+ <property name="env.appname" value="icehrm"/>
+ <property name="env.Version" value="dev"/>
+ <property name="installpath" value="/var/www/apps.gamonoid.com/icehrm-open-core"/>
+
+	
+ <target name="build"
+         depends="prepare,lint,phpunit,copyapp,release,install"
+         description=""/>
+	
+<target name="buildlocal"
+         depends="prepare,copyapp"
+         description=""/>
+
+ <target name="clean"
+         unless="clean.done"
+         description="Cleanup build artifacts">
+  <delete dir="${basedir}/build/api"/>
+  <delete dir="${basedir}/build/coverage"/>
+  <delete dir="${basedir}/build/logs"/>
+  <delete dir="${basedir}/build/pdepend"/>
+  <delete dir="${basedir}/build/phpdox"/>
+  <delete dir="${basedir}/build/test"/>
+  <delete dir="${basedir}/build/app"/>
+  <delete dir="${basedir}/build/release"/>
+  <property name="clean.done" value="true"/>
+ </target>
+
+ <target name="prepare"
+         unless="prepare.done"
+         depends="clean"
+         description="Prepare for build">
+  <mkdir dir="${basedir}/build/api"/>
+  <mkdir dir="${basedir}/build/coverage"/>
+  <mkdir dir="${basedir}/build/logs"/>
+  <mkdir dir="${basedir}/build/pdepend"/>
+  <mkdir dir="${basedir}/build/phpdox"/>
+  <mkdir dir="${basedir}/build/test"/>
+  <mkdir dir="${basedir}/build/app"/>
+  <mkdir dir="${basedir}/build/release/data"/>
+  <mkdir dir="${basedir}/build/release/data/${env.appname}_${env.Version}"/>
+  <mkdir dir="${basedir}/src/lib"/>
+ 	
+ 	<copy todir="${basedir}/src/lib" overwrite="true">
+	  <fileset dir="${basedir}/lib">
+	    <include name="**/*"/>
+	  </fileset>
+	</copy>
+ 	
+ 	<copy todir="${basedir}/src" overwrite="true">
+	  <fileset dir="${basedir}/core-ext">
+	    <include name="**/*"/>
+	  </fileset>
+	</copy>
+ 	
+ 	<copy todir="${basedir}/src">
+	  <fileset dir="${basedir}/ext">
+	    <include name="**/*"/>
+	  </fileset>
+	</copy>
+ 	
+ 	<copy todir="${basedir}/src">
+	  <fileset dir="${basedir}/tp">
+	    <include name="**/*"/>
+	  </fileset>
+	</copy>
+ 	
+  <property name="prepare.done" value="true"/>
+ </target>
+
+ <target name="lint" description="Perform syntax check of sourcecode files">
+  <apply executable="php" failonerror="true">
+   <arg value="-l" />
+
+   <fileset dir="${basedir}/src">
+    <include name="**/*.php" />
+    <modified />
+   </fileset>
+
+   <fileset dir="${basedir}/test">
+    <include name="**/*.php" />
+    <modified />
+   </fileset>
+  </apply>
+ </target>
+
+ <target name="phploc"
+         description="Measure project size using PHPLOC and print human readable output. Intended for usage on the command line.">
+  <exec executable="${toolsdir}phploc">
+   <arg value="--count-tests" />
+   <arg path="${basedir}/src" />
+   <arg path="${basedir}/tests" />
+  </exec>
+ </target>
+
+ <target name="phploc-ci"
+         depends="prepare"
+         description="Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment.">
+  <exec executable="${toolsdir}phploc">
+   <arg value="--count-tests" />
+   <arg value="--log-csv" />
+   <arg path="${basedir}/build/logs/phploc.csv" />
+   <arg value="--log-xml" />
+   <arg path="${basedir}/build/logs/phploc.xml" />
+   <arg path="${basedir}/src" />
+   <arg path="${basedir}/tests" />
+  </exec>
+ </target>
+
+ <target name="pdepend"
+         depends="prepare"
+         description="Calculate software metrics using PHP_Depend and log result in XML format. Intended for usage within a continuous integration environment.">
+  <exec executable="${toolsdir}pdepend">
+   <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
+   <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
+   <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
+   <arg path="${basedir}/src" />
+  </exec>
+ </target>
+
+ <target name="phpmd"
+         description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
+  <exec executable="${toolsdir}phpmd">
+   <arg path="${basedir}/src" />
+   <arg value="text" />
+   <arg path="${basedir}/build/phpmd.xml" />
+  </exec>
+ </target>
+
+ <target name="phpmd-ci"
+         depends="prepare"
+         description="Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment.">
+  <exec executable="${toolsdir}phpmd">
+   <arg path="${basedir}/src" />
+   <arg value="xml" />
+   <arg path="${basedir}/build/phpmd.xml" />
+   <arg value="--reportfile" />
+   <arg path="${basedir}/build/logs/pmd.xml" />
+  </exec>
+ </target>
+
+ <target name="phpcs"
+         description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
+  <exec executable="${toolsdir}phpcs">
+   <arg value="--standard=PSR2" />
+   <arg value="--extensions=php" />
+   <arg value="--ignore=autoload.php" />
+   <arg path="${basedir}/src" />
+   <arg path="${basedir}/tests" />
+  </exec>
+ </target>
+
+ <target name="phpcs-ci"
+         depends="prepare"
+         description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
+  <exec executable="${toolsdir}phpcs" output="/dev/null">
+   <arg value="--report=checkstyle" />
+   <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
+   <arg value="--standard=PSR2" />
+   <arg value="--extensions=php" />
+   <arg value="--ignore=autoload.php" />
+   <arg path="${basedir}/src" />
+  </exec>
+ </target>
+
+ <target name="phpcpd"
+         description="Find duplicate code using PHPCPD and print human readable output. Intended for usage on the command line before committing.">
+  <exec executable="${toolsdir}phpcpd">
+   <arg path="${basedir}/src" />
+  </exec>
+ </target>
+
+ <target name="phpcpd-ci"
+         depends="prepare"
+         description="Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment.">
+  <exec executable="${toolsdir}phpcpd">
+   <arg value="--log-pmd" />
+   <arg path="${basedir}/build/logs/pmd-cpd.xml" />
+   <arg path="${basedir}/src" />
+  </exec>
+ </target>
+
+ <target name="phpunit"
+         depends="prepare"
+         description="Run unit tests with PHPUnit">
+  <exec executable="${toolsdir}phpunit" failonerror="true">
+   <arg value="--configuration"/>
+   <arg path="${basedir}/phpunit.xml"/>
+  </exec>
+ </target>
+
+<target name="phpdox"
+         depends=""
+         description="Generate project documentation using phpDox">
+  <exec executable="${toolsdir}phpdox"/>
+ </target>
+	
+
+
+<target name="copyapp"
+     depends=""
+     description="Copy generated files to QA app">
+	
+	<delete includeemptydirs="true">
+	    <fileset dir="${destination}">
+	        <include name="**/*"/>
+	    </fileset>
+	</delete>
+	
+	<copy todir="${destination}">
+	  <fileset dir="${origin}">
+	    <include name="**/*"/>
+	  </fileset>
+	</copy>
+	
+</target>
+	
+<target name="install"
+     depends="copyapp"
+     description="">
+	
+	<delete includeemptydirs="true" failonerror="false">
+	    <fileset dir="${installpath}">
+	        <include name="**/*"/>
+	    </fileset>
+	</delete>
+	
+	<mkdir dir="${installpath}"/>
+
+	<copy todir="${installpath}">
+	  <fileset dir="${origin}">
+	    <include name="**/*"/>
+	  </fileset>
+	</copy>
+	
+	<delete includeemptydirs="true" failonerror="false">
+	    <fileset dir="${installpath}/app">
+	        <include name="**/*"/>
+	    </fileset>
+	</delete>
+</target>
+	
+<target name="release"
+     depends="copyapp"
+     description="Create a release">
+	
+	<copy todir="${basedir}/build/release/data/${env.appname}_${env.Version}">
+		  <fileset dir="${destination}">
+		    <include name="**/*"/>
+		  	<exclude name="test/**"/>
+		  </fileset>
+		</copy>
+	
+	<zip destfile="${basedir}/build/release/${env.appname}_${env.Version}.zip"
+	       basedir="${basedir}/build/release/data"
+	  />
+	
+	<tar destfile="${basedir}/build/release/${env.appname}_${env.Version}.tar"
+		       basedir="${basedir}/build/release/data"
+		  />
+	
+	<gzip destfile="${basedir}/build/release/${env.appname}_${env.Version}.tar.gz" src="${basedir}/build/release/${env.appname}_${env.Version}.tar"/>
+	
+</target>
+	
+
+	
+</project>
+

@@ -1,0 +1,16 @@
+{
+"label":"Company Structure",
+"menu":"Admin",
+"order":"2",
+"icon":"fa-building-o",
+"user_levels":["Admin","Manager"],
+
+"permissions":
+	{
+		"Manager":{
+			"Add Company Structure":"No",
+			"Edit Company Structure":"No",
+			"Delete Company Structure":"No"
+		}
+	}	
+}

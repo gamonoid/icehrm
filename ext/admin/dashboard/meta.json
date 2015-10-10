@@ -1,0 +1,11 @@
+{
+"label":"Dashboard",
+"menu":"Admin",
+"order":"1",
+"icon":"fa-desktop",
+"user_levels":["Admin"],
+
+"permissions":
+	{
+	}
+}

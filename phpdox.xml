@@ -1,0 +1,14 @@
+<phpdox xmlns="http://phpdox.net/config">
+ <project name="ice-framework" source="src" workdir="build/phpdox">
+  <collector publiconly="false">
+   <include mask="*.php" />
+   <exclude mask="**/lib/**"/>
+  </collector>
+
+  <generator output="build">
+   <build engine="html" enabled="true" output="html">
+    <file extension="html" />
+   </build>
+  </generator>
+ </project>
+</phpdox>

@@ -1,0 +1,22 @@
+{
+"label":"Emergency Contacts",
+"menu":"Personal Information",
+"order":"6",
+"icon":"fa-phone-square",
+"user_levels":["Admin","Manager","Employee"],
+
+"permissions":
+	{
+		"Manager":{
+			"Add Emergency Contacts":"Yes",
+			"Edit Emergency Contacts":"Yes",
+			"Delete Emergency Contacts":"Yes"
+		},
+		
+		"Employee":{
+			"Add Emergency Contacts":"Yes",
+			"Edit Emergency Contacts":"Yes",
+			"Delete Emergency Contacts":"Yes"
+		}
+	}
+}

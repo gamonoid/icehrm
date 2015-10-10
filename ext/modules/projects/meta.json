@@ -1,0 +1,22 @@
+{
+"label":"Projects",
+"menu":"Time Management",
+"order":"1",
+"icon":"fa-pencil-square",
+"user_levels":["Admin","Manager","Employee"],
+
+"permissions":
+	{
+		"Manager":{
+			"Add Projects":"Yes",
+			"Edit Projects":"Yes",
+			"Delete Projects":"Yes"
+		},
+		
+		"Employee":{
+			"Add Projects":"No",
+			"Edit Projects":"No",
+			"Delete Projects":"No"
+		}
+	}
+}

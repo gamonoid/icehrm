@@ -1,0 +1,55 @@
+<form class="form-horizontal" id="_id_">
+	<div class="control-group">
+		<div class="controls">
+		  	<span class="label label-warning" id="_id__error" style="display:none;"></span>
+		</div>
+	</div>
+	_fields_
+	<div class="control-group">
+    	<div class="controls">
+      		<button onclick="try{modJs.save()}catch(e){};return false;" class="btn">Save</button>
+      		<button onclick="modJs.cancel();return false;" class="btn">Cancel</button>
+      		<button id="changePasswordBtn" onclick="modJs.changePassword();return false;" class="btn btn-primary">Change Password</button>
+    	</div>
+  	</div>
+</form>
+
+
+<div class="modal" id="adminUsersModel" tabindex="-1" role="dialog" aria-labelledby="messageModelLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">	
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><li class="fa fa-times"/></button>
+		<h3 style="font-size: 17px;">Change User Password</h3>
+	</div>
+	<div class="modal-body">
+		<form id="adminUsersChangePwd">
+		<div class="control-group">
+		<div class="controls">
+		  	<span class="label label-warning" id="adminUsersChangePwd_error" style="display:none;"></span>
+		</div>
+		</div>
+		<div class="control-group" id="field_newpwd">
+			<label class="control-label" for="newpwd">New Password</label>
+			<div class="controls">
+			  	<input class="" type="password" id="newpwd" name="newpwd" value="" class="form-control"/>
+			  	<span class="help-inline" id="help_newpwd"></span>
+			</div>
+		</div>
+		<div class="control-group" id="field_conpwd">
+			<label class="control-label" for="conpwd">Confirm Password</label>
+			<div class="controls">
+			  	<input class="" type="password" id="conpwd" name="conpwd" value="" class="form-control"/>
+			  	<span class="help-inline" id="help_conpwd"></span>
+			</div>
+		</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+ 		<button class="btn btn-primary" onclick="modJs.changePasswordConfirm();">Change Password</button>
+ 		<button class="btn" onclick="modJs.closeChangePassword();">Not Now</button>
+	</div>
+</div>
+</div>
+</div>
+

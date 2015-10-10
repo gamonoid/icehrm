@@ -1,0 +1,11 @@
+{
+"label":"Manage Permissions",
+"menu":"System",
+"order":"4",
+"icon":"fa-unlock",
+"user_levels":["Admin"],
+
+"permissions":
+	{
+	}
+}

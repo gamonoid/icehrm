@@ -1,0 +1,38 @@
+{
+"label":"Basic Information",
+"menu":"Personal Information",
+"order":"2",
+"icon":"fa-user",
+"user_levels":["Admin","Manager","Employee"],
+
+"permissions":
+	{
+		"Manager":{
+			"Edit Employee Number":"No",
+			"Edit EPF/CPF Number":"Yes",
+			"Edit Employment Status":"No",
+			"Edit Job Title":"Yes",
+			"Edit Pay Grade":"Yes",
+			"Edit Joined Date":"Yes",
+			"Edit Department":"Yes",
+			"Edit Work Email":"Yes",
+			"Edit Country":"Yes",
+			"Upload/Delete Profile Image":"Yes",
+			"Edit Employee Details":"Yes"
+		},
+		
+		"Employee":{
+			"Edit Employee Number":"No",
+			"Edit EPF/CPF Number":"Yes",
+			"Edit Employment Status":"No",
+			"Edit Job Title":"No",
+			"Edit Pay Grade":"No",
+			"Edit Joined Date":"No",
+			"Edit Department":"No",
+			"Edit Work Email":"No",
+			"Edit Country":"No",
+			"Upload/Delete Profile Image":"Yes",
+			"Edit Employee Details":"Yes"
+		}
+	}
+}

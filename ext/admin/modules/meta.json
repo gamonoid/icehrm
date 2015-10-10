@@ -1,0 +1,11 @@
+{
+"label":"Manage Modules",
+"menu":"System",
+"order":"3",
+"icon":"fa-folder-open",
+"user_levels":["Admin"],
+
+"permissions":
+	{
+	}
+}

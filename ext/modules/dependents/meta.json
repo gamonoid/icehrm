@@ -1,0 +1,22 @@
+{
+"label":"Dependents",
+"menu":"Personal Information",
+"order":"5",
+"icon":"fa-sliders",
+"user_levels":["Admin","Manager","Employee"],
+
+"permissions":
+	{
+		"Manager":{
+			"Add Dependents":"Yes",
+			"Edit Dependents":"Yes",
+			"Delete Dependents":"Yes"
+		},
+		
+		"Employee":{
+			"Add Dependents":"Yes",
+			"Edit Dependents":"Yes",
+			"Delete Dependents":"Yes"
+		}
+	}
+}

@@ -1,0 +1,24 @@
+[
+[ "employee", {"label":"Employee","type":"select","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
+[ "date_start", {"label":"Start Date","type":"date"}],
+[ "date_end", {"label":"End Date","type":"date"}],
+[ "status", {"label":"Leave Status","type":"select","source":[["NULL","All Statuses"],["Approved","Approved"],["Pending","Pending"],["Rejected","Rejected"]]}]
+]
+
+["employee","date_start","date_end","status"]
+
+
+SELECT *,
+(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) from Employees where id = employee) as 'Employee',
+(SELECT name from LeaveTypes where id = leave_type) as 'Leave Type',
+(SELECT name from LeavePeriods where id = leave_type) as 'Leave Type',
+date_start as 'Start Date',
+date_end as 'End Date',
+details as 'Reason',
+status as 'Leave Status',
+(select count(*) from EmployeeLeaveDays d where d.employee_leave = lv.id and leave_type = 'Full Day') as 'Full Day Count',
+(select count(*) from EmployeeLeaveDays d where d.employee_leave = lv.id and leave_type = 'Half Day - Morning') as 'Half Day (Morning) Count',
+(select count(*) from EmployeeLeaveDays d where d.employee_leave = lv.id and leave_type = 'Half Day - Afternoon') as 'Half Day (Afternoon) Count'
+from EmployeeLeaves lv where employee = ? and date_start >= ? and date_end <= ? and status = ?;
+
+This report list all employee leaves by employee, date range and leave status

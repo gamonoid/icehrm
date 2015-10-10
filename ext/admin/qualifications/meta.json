@@ -1,0 +1,26 @@
+{
+"label":"Qualifications Setup",
+"menu":"Admin",
+"order":"4",
+"icon":"fa-check-square-o",
+
+"user_levels":["Admin","Manager"],
+
+"permissions":
+	{
+		"Manager":{
+			"Add Skills":"Yes",
+			"Edit Skills":"Yes",
+			"Delete Skills":"No",
+			"Add Education":"Yes",
+			"Edit Education":"Yes",
+			"Delete Education":"No",
+			"Add Certifications":"Yes",
+			"Edit Certifications":"Yes",
+			"Delete Certifications":"No",
+			"Add Languages":"Yes",
+			"Edit Languages":"Yes",
+			"Delete Languages":"No"
+		}
+	}	
+}

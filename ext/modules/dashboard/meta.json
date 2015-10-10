@@ -1,0 +1,11 @@
+{
+"label":"Dashboard",
+"menu":"Personal Information",
+"order":"1",
+"icon":"fa-desktop",
+"user_levels":["Admin","Manager","Employee"],
+
+"permissions":
+	{
+	}
+}

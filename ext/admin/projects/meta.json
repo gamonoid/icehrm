@@ -1,0 +1,19 @@
+{
+"label":"Projects/Client Setup",
+"menu":"Admin",
+"order":"5",
+"icon":"fa-list-alt",
+"user_levels":["Admin","Manager"],
+
+"permissions":
+	{
+		"Manager":{
+			"Add Projects":"Yes",
+			"Edit Projects":"Yes",
+			"Delete Projects":"No",
+			"Add Clients":"Yes",
+			"Edit Clients":"Yes",
+			"Delete Clients":"No"
+		}
+	}	
+}

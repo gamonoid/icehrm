@@ -1,0 +1,22 @@
+{
+"label":"Salary",
+"menu":"Personal Information",
+"order":"4",
+"icon":"fa-calculator",
+"user_levels":["Admin","Manager","Employee"],
+
+"permissions":
+	{
+		"Manager":{
+			"Add Salary":"No",
+			"Edit Salary":"No",
+			"Delete Salary":"No"
+		},
+		
+		"Employee":{
+			"Add Salary":"No",
+			"Edit Salary":"No",
+			"Delete Salary":"No"
+		}
+	}
+}

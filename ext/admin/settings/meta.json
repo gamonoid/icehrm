@@ -1,0 +1,11 @@
+{
+"label":"Settings",
+"menu":"System",
+"order":"1",
+"icon":"fa-cogs",
+"user_levels":["Admin"],
+
+"permissions":
+	{
+	}
+}

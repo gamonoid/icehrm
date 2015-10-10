@@ -1,0 +1,23 @@
+<form class="form-horizontal" id="timesheet_entries_cont">
+	<span style="font-size:15px;font-weight:bold;color:#999;margin-left:10px;">
+  	Timesheet From <span id="timesheet_start"></span> to <span id="timesheet_end"></span>
+	</span>
+	<table class="table table-condensed table-bordered table-striped" id="timesheet_entries" style="width:100%;font-size:12px;margin-left:5px;">
+			<thead>
+			<tr>
+			<th></th>
+			<th>Start</th>
+			<th>End</th>
+			<th>Duration</th>
+			<th>Project</th>
+			<th>Details</th>
+			</tr>
+			</thead>
+			<tbody id="timesheet_entries_table_body" class="timesheet_entries_table_body">
+			</tbody>
+	</table> 
+  	<div class="control-group">
+      		<button id="add_time_sheet_entry" style="margin-left:5px;display:none;" onclick="try{modJs.openTimeEntryDialog()}catch(e){};return false;" class="btn"><span class="icon-plus-sign"></span> Add Time Entry</button>
+      		<button id="submit_sheet" onclick="modJs.changeTimeSheetStatusWithId(modJs.currentId,'Submitted');return false;" class="btn" style="display:none;"><span class="icon-ok"></span> Submit Timesheet</button>
+  	</div>
+</form>

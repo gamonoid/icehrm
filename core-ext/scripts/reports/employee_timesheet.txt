@@ -1,0 +1,20 @@
+[
+[ "employee", {"label":"Employee","type":"select","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
+[ "project", {"label":"Project","type":"select","allow-null":true,"remote-source":["Project","id","name"]}],
+[ "date_start", {"label":"Start Date","type":"date"}],
+[ "date_end", {"label":"End Date","type":"date"}]
+]
+
+["date_start","date_end","project","employee"]
+
+SELECT 
+(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) from Employees where id = te.employee) as 'Employee',
+(SELECT name from Projects where id = te.project) as 'Project',
+details as 'Details',
+date_start as 'Start Time',
+date_end as 'End Time',
+SEC_TO_TIME(TIMESTAMPDIFF(SECOND,te.date_start,te.date_end)) as 'Duration'
+FROM EmployeeTimeEntry te 
+WHERE date_start >= ? and date_end <= ? and project = ? and employee = ?
+
+This report list all employee time entries by employee, date range and project

@@ -1,0 +1,11 @@
+{
+"label":"Subordinates",
+"menu":"Subordinates",
+"order":"1",
+"icon":"fa-users",
+"user_levels":["Admin","Manager"],
+
+"permissions":
+	{
+	}
+}

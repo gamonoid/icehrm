@@ -1,0 +1,35 @@
+
+
+Select id, employee_id as 'Employee ID',
+concat(`first_name`,' ',`middle_name`,' ', `last_name`) as 'Name',
+(SELECT name from Nationality where id = nationality) as 'Nationality',
+birthday as 'Birthday',
+gender as 'Gender',
+marital_status as 'Marital Status',
+ssn_num as 'SSN Number',
+nic_num as 'NIC Number',
+other_id as 'Other IDs',
+driving_license as 'Driving License Number',
+(SELECT name from EmploymentStatus where id = employment_status) as 'Employment Status',
+(SELECT name from JobTitles where id = job_title) as 'Job Title',
+(SELECT name from PayGrades where id = pay_grade) as 'Pay Grade',
+work_station_id as 'Work Station ID',
+address1 as 'Address 1',
+address2 as 'Address 2',
+city as 'City',
+(SELECT name from Country where code = country) as 'Country',
+(SELECT name from Province where id = province) as 'Province',
+postal_code as 'Postal Code',
+home_phone as 'Home Phone',
+mobile_phone as 'Mobile Phone',
+work_phone as 'Work Phone',
+work_email as 'Work Email',
+private_email as 'Private Email',
+joined_date as 'Joined Date',
+confirmation_date as 'Confirmation Date',
+(SELECT title from CompanyStructures where id = department) as 'Department',
+(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`,' [Employee ID:',`employee_id`,']') from Employees e1 where e1.id = e.supervisor) as 'Supervisor' 
+FROM Employees e _where_
+ 
+ 
+This report list all employee details and you can filter employees by department, employment status or job title
