@@ -9,9 +9,9 @@ define('HOME_LINK_ADMIN', CLIENT_BASE_URL."?g=admin&n=dashboard&m=admin_Admin");
 define('HOME_LINK_OTHERS', CLIENT_BASE_URL."?g=modules&n=dashboard&m=module_Personal_Information");
 
 //Version
-define('VERSION', '12.7.OS');
-define('CACHE_VALUE', '12.7');
-define('VERSION_DATE', '13/09/2015');
+define('VERSION', '13.1.OS');
+define('CACHE_VALUE', '13.1');
+define('VERSION_DATE', '09/10/2015');
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','icehrm@gamonoid.com');}
 if(!defined('KEY_PREFIX')){define('KEY_PREFIX','IceHrm');}

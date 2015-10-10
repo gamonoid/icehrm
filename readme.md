@@ -3,7 +3,7 @@ IceHrm
 
 Installation
 ------------
-Download the latest release https://github.com/thilinah/icehrm/releases/latest
+Download the latest release https://github.com/gamonoid/icehrm/releases/latest
 
 Copy the downloaded file to the path you want to install iCE Hrm in your server and extract.
 
