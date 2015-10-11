@@ -40,9 +40,8 @@ class DashboardActionManager extends SubActionManager{
 		
 		$attendance = new Attendance();
 		$data['numberOfAttendanceLastWeek'] = $attendance->Count("in_time > '".date("Y-m-d H:i:s",strtotime("-1 week"))."'");
-		
-		$empLeave = new EmployeeLeave();
-		$data['numberOfLeaves'] = $empLeave->Count("date_start > '".date("Y-m-d")."'");
+
+		$data['numberOfLeaves'] = 0;
 		
 		$timeEntry = new EmployeeTimeEntry();
 		$data['numberOfAttendanceLastWeek'] = $attendance->Count("in_time > '".date("Y-m-d H:i:s",strtotime("-1 week"))."'");
