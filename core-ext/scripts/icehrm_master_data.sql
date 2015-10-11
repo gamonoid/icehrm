@@ -665,14 +665,6 @@ INSERT INTO `Nationality` (`id`, `name`) VALUES
 (192, 'Zambian'),
 (193, 'Zimbabwean');
 
-INSERT INTO `WorkDays` (`id`, `name`, `status`, `country`) VALUES
-(1, 'Monday', 'Full Day',NULL),
-(2, 'Tuesday', 'Full Day',NULL),
-(3, 'Wednesday', 'Full Day',NULL),
-(4, 'Thursday', 'Full Day',NULL),
-(5, 'Friday', 'Full Day',NULL),
-(6, 'Saturday', 'Non-working Day',NULL),
-(7, 'Sunday', 'Non-working Day',NULL);
 
 
 INSERT INTO `Reports` (`id`, `name`, `details`, `parameters`, `query`, `paramOrder`, `type`) VALUES
@@ -758,9 +750,6 @@ INSERT INTO `Educations` (`id`, `name`, `description`) VALUES
 (3, 'Masters Degree', 'Masters Degree'),
 (4, 'Doctorate', 'Doctorate');
 
-INSERT INTO `HoliDays` (`id`, `name`, `dateh`, `status`) VALUES
-(1, 'New Year''s Day', '2015-01-01', 'Full Day'),
-(2, 'Christmas Day', '2015-12-25', 'Full Day');
 
 
 INSERT INTO `JobTitles` (`id`, `code`, `name`, `description`, `specification`) VALUES
