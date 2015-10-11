@@ -21,19 +21,12 @@ Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
 Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
 */
 
-include (APP_BASE_PATH."modules/leaves/api/LeavesActionManager.php");
 
 class DashboardActionManager extends SubActionManager{
 	
 	public function getPendingLeaves($req){
 		
-		$lam = new LeavesActionManager();
-		$leavePeriod = $lam->getCurrentLeavePeriod(date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
-		
-		$leave = new EmployeeLeave();
-		$pendingLeaves = $leave->Find("status = ? and employee = ?",array("Pending", $this->getCurrentProfileId()));
-		
-		return new IceResponse(IceResponse::SUCCESS,count($pendingLeaves));
+		return new IceResponse(IceResponse::SUCCESS,0);
 		
 	}
 	
