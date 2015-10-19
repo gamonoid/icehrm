@@ -72,19 +72,19 @@ AttendanceAdapter.method('getCustomTableParams', function() {
 			"aoColumnDefs": [ 
 			                 {
 			                	 "fnRender": function(data, cell){
-			                		 return that.preProcessRemoteTableData(data, cell, 2)
+			                		 return that.preProcessRemoteTableData(data, cell, 2);
 			                	 } ,
 			                	 "aTargets": [2]
 			                 },
 			                 {
 			                	 "fnRender": function(data, cell){
-			                		 return that.preProcessRemoteTableData(data, cell, 3)
+			                		 return that.preProcessRemoteTableData(data, cell, 3);
 			                	 } ,
 			                	 "aTargets": [3]
 			                 },
 			                 {
 			                	 "fnRender": function(data, cell){
-			                		 return that.preProcessRemoteTableData(data, cell, 4)
+			                		 return that.preProcessRemoteTableData(data, cell, 4);
 			                	 } ,
 			                	 "aTargets": [4]
 			                 },
