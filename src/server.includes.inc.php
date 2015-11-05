@@ -81,8 +81,10 @@ $noJSONRequests = SettingsManager::getInstance()->getSetting("System: Do not pas
 
 $debugMode = SettingsManager::getInstance()->getSetting("System: Debug Mode");
 if($debugMode == "1"){
+    error_reporting(E_ALL);
 	if(!defined('LOG_LEVEL')){define('LOG_LEVEL',Monolog\Logger::DEBUG);}	
 }else{
+    error_reporting(E_ERROR);
 	if(!defined('LOG_LEVEL')){define('LOG_LEVEL',Monolog\Logger::INFO);}
 }
 
