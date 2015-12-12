@@ -9,13 +9,13 @@ define('HOME_LINK_ADMIN', CLIENT_BASE_URL."?g=admin&n=dashboard&m=admin_Admin");
 define('HOME_LINK_OTHERS', CLIENT_BASE_URL."?g=modules&n=dashboard&m=module_Personal_Information");
 
 //Version
-define('VERSION', '13.1.OS');
-define('CACHE_VALUE', '13.1');
-define('VERSION_DATE', '09/10/2015');
+define('VERSION', '14.0.OS');
+define('CACHE_VALUE', '14.0.OS');
+define('VERSION_DATE', '12/12/2015');
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','icehrm@gamonoid.com');}
 if(!defined('KEY_PREFIX')){define('KEY_PREFIX','IceHrm');}
-if(!defined('APP_SEC')){define('APP_SEC','dbcs234d2saaqw');}
+if(!defined('APP_SEC')){define('APP_SEC','dbcs234d2s111');}
 
 define('UI_SHOW_SWITCH_PROFILE', true);
 define('CRON_LOG', '/var/log/nginx/icehrmcron.log');

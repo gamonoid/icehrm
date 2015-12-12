@@ -411,7 +411,7 @@ IceHRMBase.method('getTableTopButtonHtml', function() {
 		if(html != ""){
 			html += "&nbsp;&nbsp;";
 		}
-		html+='<button onclick="modJs.showFilters();return false;" class="btn btn-small btn-primary">Fillter <i class="fa fa-filter"></i></button>';
+		html+='<button onclick="modJs.showFilters();return false;" class="btn btn-small btn-primary">Filter <i class="fa fa-filter"></i></button>';
 		html += "&nbsp;&nbsp;";
 		if(this.filtersAlreadySet){
 			html+='<button id="__id___resetFilters" onclick="modJs.resetFilters();return false;" class="btn btn-small btn-default">__filterString__ <i class="fa fa-times"></i></button>';
@@ -445,6 +445,10 @@ IceHRMBase.method('getTableHTMLTemplate', function() {
     return '<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="grid"></table></div>';
 });
 
+IceHRMBase.method('isSortable', function() {
+    return true;
+});
+
 /**
  * Create the data table on provided element id
  * @method createTable
@@ -452,6 +456,9 @@ IceHRMBase.method('getTableHTMLTemplate', function() {
  */
 
 IceHRMBase.method('createTable', function(elementId) {
+
+
+    var that = this;
 	
 	if(this.getRemoteTable()){
 		this.createTableServer(elementId);
@@ -497,7 +504,7 @@ IceHRMBase.method('createTable', function(elementId) {
 			},
 			"aaData": data,
 			"aoColumns": headers,
-			"bSort": true,
+			"bSort": that.isSortable(),
 			"iDisplayLength": 15,
 			"iDisplayStart": start
 		};
@@ -559,7 +566,7 @@ IceHRMBase.method('createTableServer', function(elementId) {
 		    "bServerSide": true,
 		    "sAjaxSource": that.getDataUrl(that.getDataMapping()),
 			"aoColumns": headers,
-			"bSort": true,
+			"bSort": that.isSortable(),
 			"parent":that,
 			"iDisplayLength": 15,
 			"iDisplayStart": start
@@ -683,6 +690,38 @@ IceHRMBase.method('renderModel', function(id,header,body) {
 	$('#'+id+'ModelBody').html(body);
 });
 
+
+IceHRMBase.method('renderYesNoModel', function(header,body,yesBtnName,noBtnName,callback, callbackParams) {
+    var that = this;
+    var modelId = "#yesnoModel";
+
+    if(body == undefined || body == null){
+        body = "";
+    }
+
+    $(modelId+'Label').html(header);
+    $(modelId+'Body').html(body);
+    if(yesBtnName != null){
+        $(modelId+'YesBtn').html(yesBtnName);
+    }
+    if(noBtnName != null){
+        $(modelId+'NoBtn').html(noBtnName);
+    }
+
+    $(modelId+'YesBtn').off().on('click',function(){
+        if(callback != undefined && callback != null){
+            callback.apply(that,callbackParams);
+            that.cancelYesno();
+        }
+    });
+
+    $(modelId).modal({
+        backdrop: 'static'
+    });
+
+
+});
+
 IceHRMBase.method('renderModelFromDom', function(id,header,element) {
 	$('#'+id+'ModelBody').html("");
 	
@@ -746,8 +785,8 @@ IceHRMBase.method('showDomElement', function(title,element,closeCallback,closeCa
 	var that = this;
 	var modelId = "";
 	if(isPlain){
-		modelId = "#plainMessageModel";
-		this.renderModelFromDom('plainMessage',title,element);
+		modelId = "#dataMessageModel";
+		this.renderModelFromDom('dataMessage',title,element);
 	}else{
 		modelId = "#messageModel";
 		this.renderModelFromDom('message',title,element);
@@ -781,8 +820,16 @@ IceHRMBase.method('closeMessage', function() {
 	$('#messageModel').modal('hide');
 });
 
+IceHRMBase.method('cancelYesno', function() {
+	$('#yesnoModel').modal('hide');
+});
+
 IceHRMBase.method('closePlainMessage', function() {
 	$('#plainMessageModel').modal('hide');
+});
+
+IceHRMBase.method('closeDataMessage', function() {
+    $('#dataMessageModel').modal('hide');
 });
 
 
@@ -1435,7 +1482,7 @@ IceHRMBase.method('addDataGroup', function() {
 		
 		$("#"+field[0]+"_div").html(html);
 		
-		this.closePlainMessage();
+		this.closeDataMessage();
 		
 	}
 });
@@ -1482,7 +1529,7 @@ IceHRMBase.method('editDataGroup', function() {
 			
 			$("#"+field[0]+"_div").html(html);
 			
-			this.closePlainMessage();
+			this.closeDataMessage();
 		}
 		
 	}

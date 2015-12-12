@@ -83,5 +83,13 @@ class RestAccessToken extends ICEHRM_Record {
 	var $_table = 'RestAccessTokens';
 }
 
+class Cron extends ICEHRM_Record {
+    var $_table = 'Crons';
+}
+
+class IceEmail extends ICEHRM_Record {
+    var $_table = 'Emails';
+}
+
 
 

@@ -10,7 +10,7 @@ $basePath = $opts['p'];
 
 include (dirname(__FILE__)."/../classes/CronUtils.php");
 
-$cronUtils = CronUtils::getInstance($basePath, dirname(__FILE__)."/".$file);
+$cronUtils = CronUtils::getInstance($basePath, $file);
 
 echo "Cron Runner created \r\n";
 

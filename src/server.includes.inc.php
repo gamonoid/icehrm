@@ -26,6 +26,7 @@ if(defined("MODULE_PATH")){
 $user = SessionUtils::getSessionObject('user');
 
 include (APP_BASE_PATH."classes/BaseService.php");
+include (APP_BASE_PATH."classes/CronUtils.php");
 include (APP_BASE_PATH."classes/FileService.php");
 include (APP_BASE_PATH."classes/SubActionManager.php");
 include (APP_BASE_PATH."classes/AbstractInitialize.php");
@@ -48,6 +49,8 @@ include (APP_BASE_PATH."model/models.inc.php");
 include APP_BASE_PATH.'admin/users/api/UsersAdminManager.php';
 include APP_BASE_PATH.'admin/modules/api/ModulesAdminManager.php';
 include APP_BASE_PATH.'admin/permissions/api/PermissionsAdminManager.php';
+
+include (APP_BASE_PATH."classes/ApproveActionManager.php");
 
 $dbLocal = NewADOConnection(APP_CON_STR);
 
@@ -81,11 +84,11 @@ $noJSONRequests = SettingsManager::getInstance()->getSetting("System: Do not pas
 
 $debugMode = SettingsManager::getInstance()->getSetting("System: Debug Mode");
 if($debugMode == "1"){
+	if(!defined('LOG_LEVEL')){define('LOG_LEVEL',Monolog\Logger::DEBUG);}
     error_reporting(E_ALL);
-	if(!defined('LOG_LEVEL')){define('LOG_LEVEL',Monolog\Logger::DEBUG);}	
 }else{
-    error_reporting(E_ERROR);
 	if(!defined('LOG_LEVEL')){define('LOG_LEVEL',Monolog\Logger::INFO);}
+    error_reporting(E_ERROR);
 }
 
 LogManager::getInstance();
@@ -154,5 +157,7 @@ if($emailEnabled == "1"){
 }
 
 BaseService::getInstance()->setEmailSender($emailSender);
+
+include ('common.cron.tasks.php');
 
 ?>

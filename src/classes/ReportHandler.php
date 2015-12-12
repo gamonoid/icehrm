@@ -12,8 +12,8 @@ class ReportHandler{
 					return $this->executeReport($report,$query,$where[1]);
 				}else if($report->type == 'Class'){
 					$className = $report->query;
-					include MODULE_PATH.'/reportClasses/ReportBuilder.php';
-					include MODULE_PATH.'/reportClasses/'.$className.".php";
+					include APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilder.php';
+					include APP_BASE_PATH.'admin/reports/reportClasses/'.$className.".php";
 					$cls = new $className();
 					$data = $cls->getData($report,$request);
 					return $this->generateReport($report,$data);

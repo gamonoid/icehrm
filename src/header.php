@@ -23,6 +23,8 @@ Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilin
 
 include 'includes.inc.php';
 if(empty($user)){
+    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    SessionUtils::saveSessionObject('loginRedirect',$actual_link);
 	header("Location:".CLIENT_BASE_URL."login.php");
 }
 
@@ -54,6 +56,7 @@ if(!in_array($user->user_level, $modulePermissions['user'])){
     $commonRoles = array_intersect($modulePermissions['user_roles'], $userRoles);
     if(empty($commonRoles)){
         echo "You are not allowed to access this page";
+        header("Location:".CLIENT_BASE_URL."logout.php");
         exit();
     }
 
@@ -193,7 +196,7 @@ include('configureUIManager.php');
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <!-- Left side column. contains the logo and sidebar -->
-            <aside class="left-side sidebar-offcanvas">                
+            <aside class="left-side sidebar-offcanvas">
                 <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
                     <!-- Sidebar user panel -->
@@ -266,7 +269,7 @@ include('configureUIManager.php');
                         <?=$meta['label']?>
                         <small>
                         	<?=$meta['menu']?>&nbsp;&nbsp;
-                        	<a href="#" class="helpLink" target="_blank" style="display:none;"><i class="glyphicon glyphicon-question-sign"></i></a>
+                        	<a href="#" class="helpLink" target="_blank" style="display:none;color:#fff;"><i class="glyphicon glyphicon-question-sign"></i></a>
                         </small>
                     </h1>
                 </section>

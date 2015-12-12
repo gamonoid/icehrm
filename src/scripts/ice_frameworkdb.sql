@@ -205,3 +205,33 @@ create table `Files` (
 	primary key  (`id`),
 	unique key `filename` (`filename`)
 ) engine=innodb default charset=utf8;
+
+create table `Crons` (
+	`id` bigint(20) NOT NULL AUTO_INCREMENT,
+	`name` varchar(100) NOT NULL,
+	`class` varchar(100) NOT NULL,
+	`lastrun` DATETIME default '0000-00-00 00:00:00',
+	`frequency` int(4) NOT NULL,
+	`time` varchar(50) NOT NULL,
+	`type` enum('Minutely','Hourly','Daily','Weekly','Monthly','Yearly') default 'Hourly',
+	`status` enum('Enabled','Disabled') default 'Enabled',
+	primary key  (`id`),
+	key `KEY_Crons_frequency` (`frequency`)
+) engine=innodb default charset=utf8;
+
+create table `Emails` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `subject` varchar(300) NOT NULL,
+  `toEmail` varchar(300) NOT NULL,
+  `template` text NULL,
+  `params` text NULL,
+  `cclist` varchar(500) NULL,
+  `bcclist` varchar(500) NULL,
+  `error` varchar(500) NULL,
+  `created` DATETIME default '0000-00-00 00:00:00',
+  `updated` DATETIME default '0000-00-00 00:00:00',
+  `status` enum('Pending','Sent','Error') default 'Pending',
+  primary key  (`id`),
+  key `KEY_Emails_status` (`status`),
+  key `KEY_Emails_created` (`created`)
+) engine=innodb default charset=utf8;

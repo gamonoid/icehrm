@@ -2,14 +2,10 @@
 if(php_sapi_name() != 'cli'){
 	exit();
 }
-$opts = getopt('c:');
-$clientPath = $opts['c'];
 
-if(empty($clientPath)){
-	echo "No client path defined\r\n";
-	exit();
-}
+define('CLIENT_PATH',dirname(__FILE__)."/..");
 
-include $clientPath."/config.php";
+include (APP_BASE_PATH."config.base.php");
+
 include (APP_BASE_PATH."include.common.php");
-include("server.includes.inc.php");
+include(APP_BASE_PATH."server.includes.inc.php");

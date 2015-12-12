@@ -19,7 +19,7 @@ $_GET = InputCleaner::cleanParameters($_GET);
 $_POST = InputCleaner::cleanParameters($_POST);
 
 
-
+date_default_timezone_set('Asia/Colombo');
 //Find timezone diff with GMT
 $dateTimeZoneColombo = new DateTimeZone("Asia/Colombo");
 $dateTimeColombo = new DateTime("now", $dateTimeZoneColombo);

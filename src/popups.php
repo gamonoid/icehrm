@@ -51,6 +51,42 @@
 </div>
 <!-- Plain Message Modal -->
 
+<!-- Data Message Modal -->
+<div class="modal fade" id="dataMessageModel" tabindex="-1" role="dialog" aria-labelledby="dataMessageModelLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom:none;/*background-color: #3c8dbc;*/">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top:-10px;"><li class="fa fa-times"/></button>
+            </div>
+            <div class="modal-body">
+                <p id="dataMessageModelBody"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data Message Modal -->
+
+<!-- Yes No Modal -->
+<div class="modal fade" id="yesnoModel" tabindex="-1" role="dialog" aria-labelledby="yesnoModelLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><li class="fa fa-times"/></button>
+                <h3 id="yesnoModelLabel" style="font-size: 17px;"></h3>
+            </div>
+            <div class="modal-body">
+                <p id="yesnoModelBody"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="yesnoModelNoBtn" class="btn" onclick="modJs.cancelYesno();">No</button>
+                <button id="yesnoModelYesBtn" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Yes No Modal -->
+
+
 <!-- Upload Modal -->
 <div class="modal fade" id="uploadModel" tabindex="-1" role="dialog" aria-hidden="true">
 <div class="modal-dialog">

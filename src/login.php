@@ -46,12 +46,13 @@ if(empty($user)){
 
 $tuser = SessionUtils::getSessionObject('user');
 //check user
-
+/*
 $logoFileName = CLIENT_BASE_PATH."data/logo.png";
 $logoFileUrl = CLIENT_BASE_URL."data/logo.png";
 if(!file_exists($logoFileName)){
 	$logoFileUrl = BASE_URL."images/logo.png";	
-}
+}*/
+$logoFileUrl = UIManager::getInstance()->getCompanyLogoUrl();
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -89,31 +90,45 @@ if(!file_exists($logoFileName)){
         padding-top: 40px; 
       }
       .container {
-        width: 300px;
+          width: 300px;
+          min-height: 0px !important;
       }
 
       /* The white background content wrapper */
       .container > .content {
-        background-color: #fff;
-        padding: 20px;
-        margin: 0 -20px; 
-        -webkit-border-radius: 10px 10px 10px 10px;
-           -moz-border-radius: 10px 10px 10px 10px;
-                border-radius: 10px 10px 10px 10px;
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+          min-height: 0px !important;
+          background-color: #fff;
+          padding: 20px;
+          margin: 0 -20px;
+          -webkit-border-radius:0px;
+          -moz-border-radius:0px;
+          border-radius: 0px;
+          -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+          -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+          box-shadow: 0 1px 2px rgba(0,0,0,.15);
       }
 
-	  .login-form {
-		margin-left: 65px;
-	  }
-	
-	  legend {
-		margin-right: -50px;
-		font-weight: bold;
-	  	color: #404040;
-	  }
+      .login-form {
+          margin-left: 65px;
+      }
+
+      legend {
+          margin-right: -50px;
+          font-weight: bold;
+          color: #404040;
+      }
+
+      .add-on{
+          -webkit-border-radius:0px;
+          -moz-border-radius:0px;
+          border-radius: 0px;
+      }
+
+      input{
+          -webkit-border-radius:0px;
+          -moz-border-radius:0px;
+          border-radius: 0px;
+      }
 
     </style>
 	

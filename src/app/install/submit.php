@@ -21,7 +21,7 @@ $action = $_REQUEST['action'];
 
 if($action == "TEST_DB"){
 	
-	$db = NewADOConnection('mysql');
+	$db = NewADOConnection('mysqli');
 	$res = $db->Connect($_REQUEST["APP_HOST"], $_REQUEST["APP_USERNAME"], $_REQUEST["APP_PASSWORD"], $_REQUEST["APP_DB"]);
 	
 	if (!$res){
@@ -72,7 +72,7 @@ if($action == "TEST_DB"){
 	
 	$con = mysql_connect($_REQUEST["APP_HOST"],$_REQUEST["APP_USERNAME"],$_REQUEST["APP_PASSWORD"]);
 	
-	$db = NewADOConnection('mysql');
+	$db = NewADOConnection('mysqli');
 	$res = $db->Connect($_REQUEST["APP_HOST"], $_REQUEST["APP_USERNAME"], $_REQUEST["APP_PASSWORD"], $_REQUEST["APP_DB"]);
 	
 	

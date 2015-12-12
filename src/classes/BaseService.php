@@ -1103,6 +1103,30 @@ class BaseService{
     	$data = $customField->Find("type = ?",array($type));
     	return $data;
     }
+
+    public function getAllAdmins(){
+        $user = new User();
+        $admins = $user->Find('user_level = ?',array('Admin'));
+        return $admins;
+    }
+
+    public function getCurrentEmployeeTimeZone(){
+        $cemp = $this->getCurrentProfileId();
+        if(empty($cemp)){
+            return NULL;
+        }
+        $emp = new Employee();
+        $emp->Load("id = ?",array($cemp));
+        if(empty($emp->id) || empty($emp->department)){
+            return NULL;
+        }
+
+        $dept = new CompanyStructure();
+        $dept->Load("id = ?",array($emp->department));
+
+        return $dept->timezone;
+
+    }
 }
 
 class IceConstants{

@@ -59,6 +59,11 @@ abstract class AbstractModuleManager{
 		}
 	 */
 	public abstract function setupModuleClassDefinitions();
+
+
+    public function getDashboardItem(){
+        return null;
+    }
 	
 	
 	public function setupRestEndPoints(){

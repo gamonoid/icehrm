@@ -117,6 +117,9 @@ AdapterBase.method('addSuccessCallBack', function(callBackData,serverData, callG
 });
 
 AdapterBase.method('addFailCallBack', function(callBackData,serverData) {
+    try{
+        this.closePlainMessage();
+    }catch(e){}
 	this.showMessage("Error saving",serverData);
 	this.trackEvent("addFailed",this.tab,this.table);
 });
@@ -513,6 +516,163 @@ IdNameAdapter.method('getFormFields', function() {
 });
 
 
+/**
+ * ApproveAdminAdapter
+ */
+
+function ApproveAdminAdapter(endPoint,tab,filter,orderBy) {
+    this.initAdapter(endPoint,tab,filter,orderBy);
+}
+
+ApproveAdminAdapter.inherits(AdapterBase);
+
+
+ApproveAdminAdapter.method('openStatus', function(id,status) {
+    $('#'+this.itemNameLower+'StatusModel').modal('show');
+    $('#'+this.itemNameLower+'_status').val(status);
+    this.statusChangeId = id;
+});
+
+ApproveAdminAdapter.method('closeDialog', function() {
+    $('#'+this.itemNameLower+'StatusModel').modal('hide');
+});
+
+ApproveAdminAdapter.method('changeStatus', function() {
+    var status = $('#'+this.itemNameLower+'_status').val();
+    var reason = $('#'+this.itemNameLower+'_reason').val();
+
+    if(status == undefined || status == null || status == ""){
+        this.showMessage("Error", "Please select "+this.itemNameLower+" status");
+        return;
+    }
+
+    var object = {"id":this.statusChangeId,"status":status,"reason":reason};
+
+    var reqJson = JSON.stringify(object);
+
+    var callBackData = [];
+    callBackData['callBackData'] = [];
+    callBackData['callBackSuccess'] = 'changeStatusSuccessCallBack';
+    callBackData['callBackFail'] = 'changeStatusFailCallBack';
+
+    this.customAction('changeStatus','admin='+this.modulePathName,reqJson,callBackData);
+
+    this.closeDialog();
+    this.statusChangeId = null;
+});
+
+ApproveAdminAdapter.method('changeStatusSuccessCallBack', function(callBackData) {
+    this.showMessage("Successful", this.itemName + " Request status changed successfully");
+    this.get([]);
+});
+
+ApproveAdminAdapter.method('changeStatusFailCallBack', function(callBackData) {
+    this.showMessage("Error", "Error occurred while changing "+this.itemName+" request status");
+});
+
+
+
+ApproveAdminAdapter.method('getActionButtonsHtml', function(id,data) {
+    var editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
+    var deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
+    var statusChangeButton = '<img class="tableActionButton" src="_BASE_images/run.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Change Status" onclick="modJs.openStatus(_id_);return false;"></img>';
+
+    var html = '<div style="width:80px;">_edit__delete__status_</div>';
+
+    html = html.replace('_status_',statusChangeButton);
+
+    if(this.showDelete){
+        html = html.replace('_delete_',deleteButton);
+
+    }else{
+        html = html.replace('_delete_','');
+    }
+
+    if(this.showEdit){
+        html = html.replace('_edit_',editButton);
+    }else{
+        html = html.replace('_edit_','');
+    }
+
+    html = html.replace(/_id_/g,id);
+    html = html.replace(/_BASE_/g,this.baseUrl);
+    return html;
+});
+
+ApproveAdminAdapter.method('isSubProfileTable', function() {
+    if(this.user.user_level == "Admin"){
+        return false;
+    }else{
+        return true;
+    }
+});
+
+
+/**
+ * ApproveModuleAdapter
+ */
+
+function ApproveModuleAdapter(endPoint,tab,filter,orderBy) {
+    this.initAdapter(endPoint,tab,filter,orderBy);
+}
+
+ApproveModuleAdapter.inherits(AdapterBase);
+
+ApproveModuleAdapter.method('cancelRequest', function(id) {
+    var that = this;
+    var object = {};
+    object['id'] = id;
+
+    var reqJson = JSON.stringify(object);
+
+    var callBackData = [];
+    callBackData['callBackData'] = [];
+    callBackData['callBackSuccess'] = 'cancelSuccessCallBack';
+    callBackData['callBackFail'] = 'cancelFailCallBack';
+
+    this.customAction('cancel','modules='+this.modulePathName,reqJson,callBackData);
+});
+
+ApproveModuleAdapter.method('cancelSuccessCallBack', function(callBackData) {
+    this.showMessage("Successful", this.itemName + " cancellation request sent");
+    this.get([]);
+});
+
+ApproveModuleAdapter.method('cancelFailCallBack', function(callBackData) {
+    this.showMessage("Error Occurred while cancelling "+this.itemName, callBackData);
+});
+
+ApproveModuleAdapter.method('getActionButtonsHtml', function(id,data) {
+    var editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
+    var deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
+    var requestCancellationButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Cancel '+this.itemName+'" onclick="modJs.cancelRequest(_id_);return false;"></img>';
+
+    var html = '<div style="width:80px;">_edit__delete_</div>';
+
+    if(this.showDelete){
+        if(data[7] == "Approved"){
+            html = html.replace('_delete_',requestCancellationButton);
+        }else{
+            html = html.replace('_delete_',deleteButton);
+        }
+
+    }else{
+        html = html.replace('_delete_','');
+    }
+
+    if(this.showEdit){
+        html = html.replace('_edit_',editButton);
+    }else{
+        html = html.replace('_edit_','');
+    }
+
+    html = html.replace(/_id_/g,id);
+    html = html.replace(/_BASE_/g,this.baseUrl);
+    return html;
+});
+
+
+
 
 /**
  * RequestCache
@@ -538,7 +698,16 @@ RequestCache.method('getData', function(key) {
 
     var strData = localStorage.getItem(key);
     if(strData != undefined && strData != null && strData != ""){
-        return JSON.parse(strData);
+        data =  JSON.parse(strData);
+        if(data == undefined || data == null){
+            return null;
+        }
+
+        if(data.status != undefined && data.status != null && data.status != "SUCCESS"){
+            return null;
+        }
+
+        return data;
     }
 
     return null;
@@ -547,6 +716,10 @@ RequestCache.method('getData', function(key) {
 RequestCache.method('setData', function(key, data) {
 
     if (typeof(Storage) == "undefined") {
+        return null;
+    }
+
+    if(data.status != undefined && data.status != null && data.status != "SUCCESS"){
         return null;
     }
 

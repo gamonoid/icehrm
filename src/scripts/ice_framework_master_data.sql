@@ -667,6 +667,8 @@ INSERT INTO `Nationality` (`id`, `name`) VALUES
 
 
 INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+('Company: Logo', '', '','[ "value", {"label":"Logo","type":"fileupload","validation":"none"}]'),
+('Company: Name', 'Sample Company Pvt Ltd', 'Update your company name - For updating company logo copy a file named logo.png to /app/data/ folder', ''),
 ('Email: Enable', '1', '0 will disable all outgoing emails from modules. Value 1 will enable outgoing emails','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('Email: Mode', 'SMTP', 'SMTP, PHP Mailer or Amazon SES. SMTP = send emails using local or a remote smtp server. PHP Mailer = send emails using mail function provided by php. Amazon SES = send emails trough amazon Simple Email Service.','["value", {"label":"Value","type":"select","source":[["SMTP","SMTP"],["PHP Mailer","PHP Mailer"],["SES","Amazon SES"]]}]'),
 ('Email: SMTP Host', 'localhost', 'SMTP host IP',''),

@@ -13,6 +13,56 @@ abstract class EmailSender{
         $this->settings	= $settings;
     }
 
+    public function sendEmailFromNotification($notification){
+        $toEmail = null;
+        $user = new User();
+        $user->Load("id = ?",array($notification->toUser));
+
+        if(!empty($user->email)){
+            $name = "User";
+            $employee = new Employee();
+            $employee->Load("id = ?",array($user->employee));
+            if($employee->id == $user->employee && !empty($employee->id)){
+                $name = $employee->first_name;
+            }
+
+            $action = json_decode($notification->action);
+
+            $emailBody = file_get_contents(APP_BASE_PATH.'/templates/email/notificationEmail.html');
+            $emailBody = str_replace("#_user_#", $name, $emailBody);
+            $emailBody = str_replace("#_message_#", $notification->message, $emailBody);
+            if($action->type == "url"){
+                $emailBody = str_replace("#_url_#", CLIENT_BASE_URL."?".$action->url, $emailBody);
+            }
+            $this->sendEmail('IceHrm Notification from '.$notification->type,
+                $user->email,
+                $emailBody,
+                array(),
+                array(),
+                array()
+                );
+        }
+    }
+
+    public function sendEmailFromDB($email){
+        $params = array();
+        if(!empty($email->params)){
+            $params = json_decode($email->params, true);
+        }
+
+        $cclist = array();
+        if(!empty($email->cclist)){
+            $cclist = json_decode($email->cclist, true);
+        }
+
+        $bcclist = array();
+        if(!empty($email->bcclist)){
+            $bcclist = json_decode($email->bcclist, true);
+        }
+
+        $resp = $this->sendEmail($email->subject, $email->toEmail, $email->template, $params, $cclist, $bcclist);
+    }
+
     public function sendEmail($subject, $toEmail, $template, $params, $ccList = array(), $bccList = array()){
 
         $body = $template;
@@ -225,7 +275,7 @@ class SMTPEmailSender extends EmailSender{
         $mail = $smtp->send($toEmail, $headers, $body);
 
 
-        return true;
+        return $mail;
     }
 }
 
@@ -255,6 +305,6 @@ class PHPMailer extends EmailSender{
 
         LogManager::getInstance()->info("PHP mailer result : ".$res);
 
-        return true;
+        return $res;
     }
 }

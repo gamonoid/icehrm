@@ -153,10 +153,27 @@ class UIManager{
         }
 
         if($this->user->user_level == "Admin"){
+
+            $reg = '';
+            $num = '';
+            if(class_exists('ProVersion')){
+                $pro = new ProVersion();
+                if(!empty($pro->employeeLimit)){
+                    $num = "<br/>Employee Limit: ".$pro->employeeLimit;
+                }
+
+                if(method_exists($pro,'getRegisteredTo')){
+                    $reg = "<br/>Registered To: ".$pro->getRegisteredTo();
+                }
+            }
+
+
             $manuItems[] = new MenuItemTemplate('menuButtonHelp', array(
                 "APP_NAME"=>APP_NAME,
                 "VERSION"=>VERSION,
-                "VERSION_DATE"=>VERSION_DATE
+                "VERSION_DATE"=>VERSION_DATE,
+                "REG"=>$reg,
+                "NUM"=>$num
             ));
         }
 
@@ -197,6 +214,23 @@ class UIManager{
         $str = str_replace("__tabPages__",$moduleBuilder->getTabPagesHTML(), $str);
         $str = str_replace("__tabJs__",$moduleBuilder->getModJsHTML(), $str);
         return $str;
+    }
+
+
+    public function getCompanyLogoUrl(){
+        $logoFileSet = false;
+        $logoFileName = CLIENT_BASE_PATH."data/logo.png";
+        $logoSettings = SettingsManager::getInstance()->getSetting("Company: Logo");
+        if(!empty($logoSettings)){
+            $logoFileName = FileService::getInstance()->getFileUrl($logoSettings);
+            $logoFileSet = true;
+        }
+
+        if(!$logoFileSet && !file_exists($logoFileName)){
+            return  BASE_URL."images/logo.png";
+        }
+
+        return $logoFileName;
     }
 
 }
