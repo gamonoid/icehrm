@@ -26,24 +26,9 @@ define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
-    <div id="iceannon">
-        <div class="callout callout-warning lead" style="font-size: 14px;">
-            <h4>Why not upgrade to IceHrm Pro Version</h4>
-            <p>
-                IceHrm Pro is the feature rich upgrade to IceHrm open source version. It comes with improved modules for
-                employee management, leave management, LDAP support and number of other features over open source version.
-                Hit this <a href="http://icehrm.com/#compare" class="btn btn-primary btn-xs target="_blank">link</a> to do a full one to one comparison.
-
-                Also you can learn more about IceHrm Pro <a href="http://blog.icehrm.com/icehrm-pro/" class="btn btn-primary btn-xs" target="_blank">here</a>
-                <br/>
-                <br/>
-                <a href="http://icehrm.com/modules.php" class="btn btn-success btm-xs" target="_blank"><i class="fa fa-checkout"></i> Buy IceHrm Pro</a>
-            </p>
-        </div>
-    </div>
 			  
 	<div class="row">
-		<div class="col-lg-3 col-xs-6">
+		<div class="col-lg-3 col-xs-12">
 			<!-- small box -->
 			<div class="small-box bg-aqua">
 				<div class="inner">
@@ -62,7 +47,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 				</a>
 			</div>
 		</div><!-- ./col -->						                        
-		<div class="col-lg-3 col-xs-6">
+		<div class="col-lg-3 col-xs-12">
 			<!-- small box -->
 			<div class="small-box bg-green">
 				<div class="inner">
@@ -79,7 +64,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 				</a>
 			</div>
 		</div><!-- ./col -->
-		<div class="col-lg-3 col-xs-6">
+		<div class="col-lg-3 col-xs-12">
 			<!-- small box -->
 			<div class="small-box bg-yellow">
 				<div class="inner">
@@ -96,7 +81,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 				</a>
 			</div>
 		</div><!-- ./col -->
-		<div class="col-lg-3 col-xs-6">
+		<div class="col-lg-3 col-xs-12">
 			<!-- small box -->
 			<div class="small-box bg-red">
 				<div class="inner">
@@ -112,11 +97,9 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 					Update Clients/Projects <i class="fa fa-arrow-circle-right"></i>
 				</a>
 			</div>
-		</div><!-- ./col -->                        
-	</div>
-	
-	<div class="row">
-		<div class="col-lg-3 col-xs-6">
+		</div><!-- ./col -->
+
+		<div class="col-lg-3 col-xs-12">
 			<!-- small box -->
 			<div class="small-box bg-yellow">
 				<div class="inner">
@@ -135,7 +118,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 				</a>
 			</div>
 		</div><!-- ./col -->
-		<div class="col-lg-3 col-xs-6">
+		<div class="col-lg-3 col-xs-12">
 			<!-- small box -->
 			<div class="small-box bg-teal">
 				<div class="inner">
@@ -152,7 +135,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 				</a>
 			</div>
 		</div><!-- ./col -->
-		<div class="col-lg-3 col-xs-6">
+		<div class="col-lg-3 col-xs-12">
 			<!-- small box -->
 			<div class="small-box bg-green">
 				<div class="inner">
@@ -168,8 +151,62 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 					Update Settings <i class="fa fa-arrow-circle-right"></i>
 				</a>
 			</div>
-		</div><!-- ./col -->                        
+		</div><!-- ./col -->
+        <div class="col-lg-3 col-xs-12">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>
+                        Travel
+                    </h3>
+                    <p id="numberOfTravel">
+                        Requests
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-plane"></i>
+                </div>
+                <a href="#" class="small-box-footer" id="travelLink">
+                    Manage Travel <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-12">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>
+                        Help
+                    </h3>
+                    <p>
+                        User Guide
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-help"></i>
+                </div>
+                <a href="#" target="_blank" class="small-box-footer" id="icehrmHelpLink">
+                    Documentation <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
 	</div>
+
+    <div id="iceannon">
+        <div class="callout callout-warning lead" style="font-size: 14px;">
+            <h4>Why not upgrade to IceHrm Pro Version</h4>
+            <p>
+                IceHrm Pro is the feature rich upgrade to IceHrm open source version. It comes with improved modules for
+                employee management, leave management, LDAP support and number of other features over open source version.
+                Hit this <a href="http://icehrm.com/#compare" class="btn btn-primary btn-xs target="_blank">link</a> to do a full one to one comparison.
+
+                Also you can learn more about IceHrm Pro <a href="http://blog.icehrm.com/docs/icehrm-pro/" class="btn btn-primary btn-xs" target="_blank">here</a>
+                <br/>
+                <br/>
+                <a href="http://icehrm.com/modules.php" class="btn btn-success btm-xs" target="_blank"><i class="fa fa-checkout"></i> Buy IceHrm Pro</a>
+            </p>
+        </div>
+    </div>
 
 	
 
@@ -189,6 +226,9 @@ $("#attendanceLink").attr("href",modJs.getCustomUrl('?g=admin&n=attendance&m=adm
 $("#leaveLink").attr("href",modJs.getCustomUrl('?g=admin&n=leaves&m=admin_Admin'));
 $("#reportsLink").attr("href",modJs.getCustomUrl('?g=admin&n=reports&m=admin_Reports'));
 $("#settingsLink").attr("href",modJs.getCustomUrl('?g=admin&n=settings&m=admin_System'));
+$("#travelLink").attr("href",modJs.getCustomUrl('?g=admin&n=travel&m=admin_Employees'));
+
+$("#icehrmHelpLink").attr("href",modJs.getCustomUrl('http://blog.icehrm.com/docs/home/'));
 
 modJs.getInitData();
 

@@ -19,7 +19,7 @@ define('APP_DB', 'icehrm_os_db_test');
 define('APP_USERNAME', MYSQL_ROT_USER);
 define('APP_PASSWORD', MYSQL_ROT_PASS);
 define('APP_HOST', 'localhost');
-define('APP_CON_STR', 'mysql://'.APP_USERNAME.':'.APP_PASSWORD.'@'.APP_HOST.'/'.APP_DB);
+define('APP_CON_STR', 'mysqli://'.APP_USERNAME.':'.APP_PASSWORD.'@'.APP_HOST.'/'.APP_DB);
 
 //file upload
 define('FILE_TYPES', 'jpg,png,jpeg');

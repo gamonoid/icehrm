@@ -1,7 +1,7 @@
 {
 "label":"Salary",
-"menu":"Personal Information",
-"order":"4",
+"menu":"Finance",
+"order":"2",
 "icon":"fa-calculator",
 "user_levels":["Admin","Manager","Employee"],
 
