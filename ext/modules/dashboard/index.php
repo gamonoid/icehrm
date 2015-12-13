@@ -116,7 +116,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
                 <div class="icon">
                     <i class="ion ion-help"></i>
                 </div>
-                <a href="#" target="_blank" class="small-box-footer" id="icehrmHelpLink">
+                <a href="http://blog.icehrm.com/docs/home/" target="_blank" class="small-box-footer" id="icehrmHelpLink">
                     Documentation <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -221,10 +221,10 @@ $("#leavesLink").attr("href",modJs.getCustomUrl('?g=modules&n=leaves&m=module_Le
 $("#timesheetLink").attr("href",modJs.getCustomUrl('?g=modules&n=time_sheets&m=module_Time_Management'));
 $("#projectsLink").attr("href",modJs.getCustomUrl('?g=modules&n=projects&m=module_Time_Management'));
 $("#traveAdminlLink").attr("href",modJs.getCustomUrl('?g=admin&n=travel&m=admin_Employees'));
-$("#traveLink").attr("href",modJs.getCustomUrl('?g=modules&n=travel&m=module_Travel_Management'));
+$("#travelLink").attr("href",modJs.getCustomUrl('?g=modules&n=travel&m=module_Travel_Management'));
 $("#reportsLink").attr("href",modJs.getCustomUrl('?g=admin&n=reports&m=admin_Reports'));
 
-$("#icehrmHelpLink").attr("href",modJs.getCustomUrl('http://blog.icehrm.com/docs/home/'));
+
 
 modJs.getPunch();
 modJs.getPendingLeaves();

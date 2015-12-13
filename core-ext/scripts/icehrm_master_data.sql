@@ -820,13 +820,13 @@ INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
 
 
 INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
-  ('Notifications: Send Document Expiry Emails', '1', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
-  ('Notifications: Copy Document Expiry Emails to Manager', '1', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
-  ('Expense: Pre-Approve Expenses', '0', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
   ('Travel: Pre-Approve Travel Request', '0', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
 
 INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
   ('Attendance: Use Department Time Zone', '0', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
+
+INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+  ('Analytics: Google Key', 'UA-48048570-2',  'Google Analytics Key','');
 
 
 

@@ -185,7 +185,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
                 <div class="icon">
                     <i class="ion ion-help"></i>
                 </div>
-                <a href="#" target="_blank" class="small-box-footer" id="icehrmHelpLink">
+                <a href="http://blog.icehrm.com/docs/home/" target="_blank" class="small-box-footer" id="icehrmHelpLink">
                     Documentation <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -193,7 +193,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 	</div>
 
     <div id="iceannon">
-        <div class="callout callout-warning lead" style="font-size: 14px;">
+        <div class="callout callout-danger lead" style="font-size: 14px;font-weight: bold;">
             <h4>Why not upgrade to IceHrm Pro Version</h4>
             <p>
                 IceHrm Pro is the feature rich upgrade to IceHrm open source version. It comes with improved modules for
@@ -228,7 +228,6 @@ $("#reportsLink").attr("href",modJs.getCustomUrl('?g=admin&n=reports&m=admin_Rep
 $("#settingsLink").attr("href",modJs.getCustomUrl('?g=admin&n=settings&m=admin_System'));
 $("#travelLink").attr("href",modJs.getCustomUrl('?g=admin&n=travel&m=admin_Employees'));
 
-$("#icehrmHelpLink").attr("href",modJs.getCustomUrl('http://blog.icehrm.com/docs/home/'));
 
 modJs.getInitData();
 
