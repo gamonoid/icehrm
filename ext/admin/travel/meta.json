@@ -1,0 +1,11 @@
+{
+"label":"Travel Administration",
+"menu":"Employees",
+"order":"6",
+"icon":"fa-plane",
+"user_levels":["Admin","Manager"],
+
+"permissions":
+	{
+	}
+}
