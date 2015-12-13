@@ -1,6 +1,71 @@
 IceHrm
 ===========
 
+IceHrm is a [HRM software](http://icehrm.com) which enable companies of all sizes to [manage HR activities](http://icehrm.com)
+properly. 
+
+Following is a list of features supported in each version of icehrm
+-------------------------------------------------------------------
+
+### IceHrm Open Source Version 
+ * IceHrm Core Modules - Both Enterprise and Open source versions developed on same core concept. But the core modules in professional and enterprise versions are more feature rich and updated with latest security improvements.
+ * [Company Information Management](http://icehrm.com/compare.php) - Store and manage details about how companies, departments and branches of the organisation are connected
+ * Basic [Employee Management](http://icehrm.com) - Store, manage and retrieve employee information when required
+ * Time sheets - IceHrm is a [timesheet app](http://icehrm.com) / [Open source timesheet management](http://icehrm.com) application to track time spent by employees on various projects
+ * [Attendance Management](http://icehrm.com) - IceHrm can be used as a [attendance management system](http://icehrm.com) effectively for any size a company.
+ * [Performance Charts](http://icehrm.com) - Charts for monitoring attendance hours and comparing attendance with time sheets
+ * [Travel Management](http://icehrm.com) - Module for managing travel requests
+ 
+ 
+### IceHrm Pro Version
+
+IceHrm Profession version (in short IceHrmPro) is the feature rich commercial alternative for icehrm
+open source version.  IceHrm Pro supports following features
+
+Following features are supported in IceHrm Pro version in addition to the features supported in open source version.
+
+#### Advanced Employee Module
+
+![Advanced Employee Module](https://icehrm.s3.amazonaws.com/images/blog-images/advanced-employee-module.png)
+
+- Update all employee information without having to switch employees.
+- Search employee skills, qualifications and other information<br/>easily across whole company.
+- Terminate employees while keeping data in system.
+- Re-enable temporarily terminated employees with one click.
+- Employee archive feature to archive data of terminated employees.
+    
+#### Leave Management
+
+Leave module is only available in IceHrm Pro or Enterprise versions. IceHrm leave module is a complete leave management system for any type of a company
+
+To learn more about leave management in icehrm refer:
+- [Leave Admin Guide](http://blog.icehrm.com/docs/leave-admin)
+- [Configuring Leave Module](http://blog.icehrm.com/docs/leave-setup)
+- [Leave Rules](http://blog.icehrm.com/docs/leave-rules)
+
+#### Audit Trial
+
+Sometimes you need to access audit trail for your HRM system. Audit module records all the write actions (which alters your HRM system) 
+of your employees in a quickly accessible and understandable manor. This help you to identify potential issues with the way employees
+are using the system.
+
+#### Candidate / Recruitment Management
+
+Recruitment module can be used to:
+ 
+- Post jobs
+- Let candidates apply for these jobs
+- Schedule interviews
+- Track candidate progress with notes
+- Share job links with linkedIn, facebook, twitter and google+ directly from icehrm
+
+More about [recruitment module](http://blog.icehrm.com/docs/recruitment/)
+
+You can learn more about [IceHrm Pro here](http://blog.icehrm.com/docs/icehrm-pro/)
+
+To purchase IceHrmPro please visit [](http://icehrm.com/modules.php)
+ 
+ 
 Installation
 ------------
  * Download the latest release https://github.com/gamonoid/icehrm/releases/latest
@@ -29,16 +94,6 @@ Upgrade from Previous Versions to Latest Version
  
  Note: If you are upgrading from older versions of icehrm please note that the icehrm leave module is removed since v13.0
  
-
-IceHrm Pro
-----------
-
-IceHrm Profession version (in short IceHrmPro) is the feature rich commercial alternative for icehrm
-open source version.
-
-You can learn more about [IceHrm Pro here](http://blog.icehrm.com/docs/icehrm-pro/)
-
-To purchase IceHrmPro please visit [](http://icehrm.com/modules.php)
 
 
 Your Company Structure (Departments / Branches and other Organization Units)
