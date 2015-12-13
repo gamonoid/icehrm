@@ -25,6 +25,11 @@ $moduleName = 'attendance';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
+$useServerTime = SettingsManager::getInstance()->getSetting('Attendance: Use Department Time Zone');
+$currentEmployeeTimeZone = BaseService::getInstance()->getCurrentEmployeeTimeZone();
+if(empty($currentEmployeeTimeZone)){
+    $useServerTime = 0;
+}
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
@@ -48,8 +53,10 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 <script>
 var modJsList = new Array();
 modJsList['tabAttendance'] = new AttendanceAdapter('Attendance','Attendance','','in_time desc');
+modJsList['tabAttendance'].setUseServerTime(<?=$useServerTime?>);
 modJsList['tabAttendance'].setRemoteTable(true);
 modJsList['tabAttendance'].updatePunchButton(true);
+
 
 var modJs = modJsList['tabAttendance'];
 

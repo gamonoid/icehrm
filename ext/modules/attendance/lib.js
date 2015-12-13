@@ -23,12 +23,17 @@ Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilin
 function AttendanceAdapter(endPoint,tab,filter,orderBy) {
 	this.initAdapter(endPoint,tab,filter,orderBy);
 	this.punch = null;
+    this.useServerTime = 0;
 }
 
 AttendanceAdapter.inherits(AdapterBase);
 
 AttendanceAdapter.method('updatePunchButton', function() {
 	this.getPunch('changePunchButtonSuccessCallBack');
+});
+
+AttendanceAdapter.method('setUseServerTime', function(val) {
+    this.useServerTime = val;
 });
 
 
@@ -51,11 +56,19 @@ AttendanceAdapter.method('getHeaders', function() {
 });
 
 AttendanceAdapter.method('getFormFields', function() {
-	return [
-	        [ "id", {"label":"ID","type":"hidden"}],
-	        [ "time", {"label":"Time","type":"datetime"}],
-	        [ "note", {"label":"Note","type":"textarea","validation":"none"}]
-	];
+    if(this.useServerTime == 0){
+        return [
+            [ "id", {"label":"ID","type":"hidden"}],
+            [ "time", {"label":"Time","type":"datetime"}],
+            [ "note", {"label":"Note","type":"textarea","validation":"none"}]
+        ];
+    }else{
+        return [
+            [ "id", {"label":"ID","type":"hidden"}],
+            [ "note", {"label":"Note","type":"textarea","validation":"none"}]
+        ];
+    }
+
 });
 
 

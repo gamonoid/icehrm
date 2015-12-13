@@ -158,6 +158,13 @@ AttendanceAdapter.method('saveFailCallback', function(callBackData) {
 	this.showMessage("Error saving attendance entry", callBackData);
 });
 
+AttendanceAdapter.method('isSubProfileTable', function() {
+    if(this.user.user_level == "Admin"){
+        return false;
+    }else{
+        return true;
+    }
+});
 
 
 /*
@@ -215,4 +222,13 @@ AttendanceStatusAdapter.method('getActionButtonsHtml', function(id,data) {
         html = html.replace(/_COLOR_/g,'green');
     }
     return html;
+});
+
+
+AttendanceStatusAdapter.method('isSubProfileTable', function() {
+    if(this.user.user_level == "Admin"){
+        return false;
+    }else{
+        return true;
+    }
 });

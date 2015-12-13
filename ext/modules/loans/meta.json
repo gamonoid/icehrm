@@ -1,7 +1,7 @@
 {
 "label":"Loans",
-"menu":"Loans",
-"order":"1",
+"menu":"Finance",
+"order":"3",
 "icon":"fa-shield",
 "user_levels":["Admin","Manager","Employee"],
 

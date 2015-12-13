@@ -11,7 +11,7 @@ define('APP_DB', '_APP_DB_');
 define('APP_USERNAME', '_APP_USERNAME_');
 define('APP_PASSWORD', '_APP_PASSWORD_');
 define('APP_HOST', '_APP_HOST_');
-define('APP_CON_STR', 'mysql://'.APP_USERNAME.':'.APP_PASSWORD.'@'.APP_HOST.'/'.APP_DB);
+define('APP_CON_STR', 'mysqli://'.APP_USERNAME.':'.APP_PASSWORD.'@'.APP_HOST.'/'.APP_DB);
 
 //file upload
 define('FILE_TYPES', 'jpg,png,jpeg');

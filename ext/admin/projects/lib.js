@@ -63,7 +63,7 @@ ClientAdapter.method('getFormFields', function() {
 });
 
 ClientAdapter.method('getHelpLink', function () {
-	return 'http://blog.icehrm.com/?page_id=85';
+	return 'http://blog.icehrm.com/docs/projects/';
 });
 
 /**
@@ -116,7 +116,7 @@ ProjectAdapter.method('getFormFields', function() {
 });
 
 ProjectAdapter.method('getHelpLink', function () {
-	return 'http://blog.icehrm.com/?page_id=85';
+	return 'http://blog.icehrm.com/docs/projects/';
 });
 
 
@@ -172,6 +172,6 @@ EmployeeProjectAdapter.method('getFilters', function() {
 });
 
 EmployeeProjectAdapter.method('getHelpLink', function () {
-	return 'http://blog.icehrm.com/?page_id=85';
+	return 'http://blog.icehrm.com/docs/projects/';
 });
 

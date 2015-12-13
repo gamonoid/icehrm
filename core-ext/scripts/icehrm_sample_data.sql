@@ -36,8 +36,7 @@ INSERT INTO `EmployeeDependents` (`id`, `employee`, `name`, `relationship`, `dob
 (2, 1, 'Mica Singroo', 'Other', '2000-06-13', '');
 
 
-INSERT INTO `EmployeeDocuments` (`id`, `employee`, `document`, `date_added`, `valid_until`, `status`, `details`) VALUES
-(1, 2, 2, '2013-01-08', '0000-00-00', 'Active', 'zxczx');
+
 
 
 INSERT INTO `EmployeeEducations` (`id`, `education_id`, `employee`, `institute`, `date_start`, `date_end`) VALUES
@@ -59,9 +58,9 @@ INSERT INTO `EmployeeProjects` (`id`, `employee`, `project`, `date_start`, `date
 
 
 INSERT INTO `EmployeeSalary` (`id`, `employee`, `component`, `pay_frequency`, `currency`, `amount`, `details`) VALUES
-(1, 1, 'Basic', 'Monthly', 131, '2700.00', ''),
-(2, 2, 'Basic Salary', 'Monthly', 151, '12000.00', ''),
-(3, 2, 'Travelling Allowance', 'Monthly', 131, '5000.00', '');
+(1, 1, 1, 'Monthly', 131, '2700.00', ''),
+(2, 2, 2, 'Monthly', 151, '12000.00', ''),
+(3, 2, 3, 'Monthly', 131, '5000.00', '');
 
 
 INSERT INTO `EmployeeSkills` (`id`, `skill_id`, `employee`, `details`) VALUES

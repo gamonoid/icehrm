@@ -162,6 +162,3 @@ ReportAdapter.method('fillForm', function(object) {
 	}
 });
 
-ReportAdapter.method('getHelpLink', function () {
-	return 'http://blog.icehrm.com/?page_id=118';
-});

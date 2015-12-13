@@ -1,3 +1,119 @@
+INSERT INTO `Timezones`(`id`, `name`, `details`) VALUES
+(1, 'Pacific/Midway', '(GMT-11:00) Midway Island'),
+(2, 'US/Samoa', '(GMT-11:00) Samoa'),
+(3, 'US/Hawaii', '(GMT-10:00) Hawaii'),
+(4, 'US/Alaska', '(GMT-09:00) Alaska'),
+(5, 'US/Pacific', '(GMT-08:00) Pacific Time (US, Canada)'),
+(6, 'America/Tijuana', '(GMT-08:00) Tijuana'),
+(7, 'US/Arizona', '(GMT-07:00) Arizona'),
+(8, 'US/Mountain', '(GMT-07:00) Mountain Time (US, Canada)'),
+(9, 'America/Chihuahua', '(GMT-07:00) Chihuahua'),
+(10, 'America/Mazatlan', '(GMT-07:00) Mazatlan'),
+(11, 'America/Mexico_City', '(GMT-06:00) Mexico City'),
+(12, 'America/Monterrey', '(GMT-06:00) Monterrey'),
+(13, 'Canada/Saskatchewan', '(GMT-06:00) Saskatchewan'),
+(14, 'US/Central', '(GMT-06:00) Central Time (US , Canada)'),
+(15, 'US/Eastern', '(GMT-05:00) Eastern Time (US , Canada)'),
+(16, 'US/East-Indiana', '(GMT-05:00) Indiana (East)'),
+(17, 'America/Bogota', '(GMT-05:00) Bogota'),
+(18, 'America/Lima', '(GMT-05:00) Lima'),
+(19, 'America/Caracas', '(GMT-04:30) Caracas'),
+(20, 'Canada/Atlantic', '(GMT-04:00) Atlantic Time (Canada)'),
+(21, 'America/La_Paz', '(GMT-04:00) La Paz'),
+(22, 'America/Santiago', '(GMT-04:00) Santiago'),
+(23, 'Canada/Newfoundland', '(GMT-03:30) Newfoundland'),
+(24, 'America/Buenos_Aires', '(GMT-03:00) Buenos Aires'),
+(25, 'Greenland', '(GMT-03:00) Greenland'),
+(26, 'Atlantic/Stanley', '(GMT-02:00) Stanley'),
+(27, 'Atlantic/Azores', '(GMT-01:00) Azores'),
+(28, 'Atlantic/Cape_Verde', '(GMT-01:00) Cape Verde Is.'),
+(29, 'Africa/Casablanca', '(GMT) Casablanca'),
+(30, 'Europe/Dublin', '(GMT) Dublin'),
+(31, 'Europe/Lisbon', '(GMT) Lisbon'),
+(32, 'Europe/London', '(GMT) London'),
+(33, 'Africa/Monrovia', '(GMT) Monrovia'),
+(34, 'Europe/Amsterdam', '(GMT+01:00) Amsterdam'),
+(35, 'Europe/Belgrade', '(GMT+01:00) Belgrade'),
+(36, 'Europe/Berlin', '(GMT+01:00) Berlin'),
+(37, 'Europe/Bratislava', '(GMT+01:00) Bratislava'),
+(38, 'Europe/Brussels', '(GMT+01:00) Brussels'),
+(39, 'Europe/Budapest', '(GMT+01:00) Budapest'),
+(40, 'Europe/Copenhagen', '(GMT+01:00) Copenhagen'),
+(41, 'Europe/Ljubljana', '(GMT+01:00) Ljubljana'),
+(42, 'Europe/Madrid', '(GMT+01:00) Madrid'),
+(43, 'Europe/Paris', '(GMT+01:00) Paris'),
+(44, 'Europe/Prague', '(GMT+01:00) Prague'),
+(45, 'Europe/Rome', '(GMT+01:00) Rome'),
+(46, 'Europe/Sarajevo', '(GMT+01:00) Sarajevo'),
+(47, 'Europe/Skopje', '(GMT+01:00) Skopje'),
+(48, 'Europe/Stockholm', '(GMT+01:00) Stockholm'),
+(49, 'Europe/Vienna', '(GMT+01:00) Vienna'),
+(50, 'Europe/Warsaw', '(GMT+01:00) Warsaw'),
+(51, 'Europe/Zagreb', '(GMT+01:00) Zagreb'),
+(52, 'Europe/Athens', '(GMT+02:00) Athens'),
+(53, 'Europe/Bucharest', '(GMT+02:00) Bucharest'),
+(54, 'Africa/Cairo', '(GMT+02:00) Cairo'),
+(55, 'Africa/Harare', '(GMT+02:00) Harare'),
+(56, 'Europe/Helsinki', '(GMT+02:00) Helsinki'),
+(57, 'Europe/Istanbul', '(GMT+02:00) Istanbul'),
+(58, 'Asia/Jerusalem', '(GMT+02:00) Jerusalem'),
+(59, 'Europe/Kiev', '(GMT+02:00) Kyiv'),
+(60, 'Europe/Minsk', '(GMT+02:00) Minsk'),
+(61, 'Europe/Riga', '(GMT+02:00) Riga'),
+(62, 'Europe/Sofia', '(GMT+02:00) Sofia'),
+(63, 'Europe/Tallinn', '(GMT+02:00) Tallinn'),
+(64, 'Europe/Vilnius', '(GMT+02:00) Vilnius'),
+(65, 'Asia/Baghdad', '(GMT+03:00) Baghdad'),
+(66, 'Asia/Kuwait', '(GMT+03:00) Kuwait'),
+(67, 'Africa/Nairobi', '(GMT+03:00) Nairobi'),
+(68, 'Asia/Riyadh', '(GMT+03:00) Riyadh'),
+(69, 'Europe/Moscow', '(GMT+03:00) Moscow'),
+(70, 'Asia/Tehran', '(GMT+03:30) Tehran'),
+(71, 'Asia/Baku', '(GMT+04:00) Baku'),
+(72, 'Europe/Volgograd', '(GMT+04:00) Volgograd'),
+(73, 'Asia/Muscat', '(GMT+04:00) Muscat'),
+(74, 'Asia/Tbilisi', '(GMT+04:00) Tbilisi'),
+(75, 'Asia/Yerevan', '(GMT+04:00) Yerevan'),
+(76, 'Asia/Kabul', '(GMT+04:30) Kabul'),
+(77, 'Asia/Karachi', '(GMT+05:00) Karachi'),
+(78, 'Asia/Tashkent', '(GMT+05:00) Tashkent'),
+(79, 'Asia/Kolkata', '(GMT+05:30) Kolkata'),
+(80, 'Asia/Kathmandu', '(GMT+05:45) Kathmandu'),
+(81, 'Asia/Yekaterinburg', '(GMT+06:00) Ekaterinburg'),
+(82, 'Asia/Almaty', '(GMT+06:00) Almaty'),
+(83, 'Asia/Dhaka', '(GMT+06:00) Dhaka'),
+(84, 'Asia/Novosibirsk', '(GMT+07:00) Novosibirsk'),
+(85, 'Asia/Bangkok', '(GMT+07:00) Bangkok'),
+(86, 'Asia/Jakarta', '(GMT+07:00) Jakarta'),
+(87, 'Asia/Krasnoyarsk', '(GMT+08:00) Krasnoyarsk'),
+(88, 'Asia/Chongqing', '(GMT+08:00) Chongqing'),
+(89, 'Asia/Hong_Kong', '(GMT+08:00) Hong Kong'),
+(90, 'Asia/Kuala_Lumpur', '(GMT+08:00) Kuala Lumpur'),
+(91, 'Australia/Perth', '(GMT+08:00) Perth'),
+(92, 'Asia/Singapore', '(GMT+08:00) Singapore'),
+(93, 'Asia/Taipei', '(GMT+08:00) Taipei'),
+(94, 'Asia/Ulaanbaatar', '(GMT+08:00) Ulaan Bataar'),
+(95, 'Asia/Urumqi', '(GMT+08:00) Urumqi'),
+(96, 'Asia/Irkutsk', '(GMT+09:00) Irkutsk'),
+(97, 'Asia/Seoul', '(GMT+09:00) Seoul'),
+(98, 'Asia/Tokyo', '(GMT+09:00) Tokyo'),
+(99, 'Australia/Adelaide', '(GMT+09:30) Adelaide'),
+(100, 'Australia/Darwin', '(GMT+09:30) Darwin'),
+(101, 'Asia/Yakutsk', '(GMT+10:00) Yakutsk'),
+(102, 'Australia/Brisbane', '(GMT+10:00) Brisbane'),
+(103, 'Australia/Canberra', '(GMT+10:00) Canberra'),
+(104, 'Pacific/Guam', '(GMT+10:00) Guam'),
+(105, 'Australia/Hobart', '(GMT+10:00) Hobart'),
+(106, 'Australia/Melbourne', '(GMT+10:00) Melbourne'),
+(107, 'Pacific/Port_Moresby', '(GMT+10:00) Port Moresby'),
+(108, 'Australia/Sydney', '(GMT+10:00) Sydney'),
+(109, 'Asia/Vladivostok', '(GMT+11:00) Vladivostok'),
+(110, 'Asia/Magadan', '(GMT+12:00) Magadan'),
+(111, 'Pacific/Auckland', '(GMT+12:00) Auckland'),
+(112, 'Pacific/Fiji', '(GMT+12:00) Fiji');
+
+
+
 INSERT INTO `CurrencyTypes`(`id`, `code`, `name`) VALUES
 	(3, 'AED', 'Utd. Arab Emir. Dirham'),
     (4, 'AFN', 'Afghanistan Afghani'),
@@ -400,8 +516,8 @@ INSERT INTO `Country`(`code`, `namecap`, `name`, `iso3`, `numcode`) VALUES
     ('YE', 'YEMEN', 'Yemen', 'YEM', 887),
     ('ZM', 'ZAMBIA', 'Zambia', 'ZMB', 894),
     ('ZW', 'ZIMBABWE', 'Zimbabwe', 'ZWE', 716);
-
-INSERT INTO `Province`(`id`, `name`, `code`, `country`) VALUES
+	
+INSERT INTO `Province`(`id`, `name`, `code`, `country`) VALUES 
 	(1, 'Alaska', 'AK', 'US'),
     (2, 'Alabama', 'AL', 'US'),
     (3, 'American Samoa', 'AS', 'US'),
@@ -467,9 +583,9 @@ INSERT INTO `Province`(`id`, `name`, `code`, `country`) VALUES
     (63, 'Armed Forces Europe', 'AE', 'US'),
     (64, 'Armed Forces Middle East', 'AE', 'US'),
     (65, 'Armed Forces Pacific', 'AP', 'US');
-
-
-
+	
+	
+	
 INSERT INTO `Nationality` (`id`, `name`) VALUES
 (1, 'Afghan'),
 (2, 'Albanian'),
@@ -673,10 +789,17 @@ INSERT INTO `Reports` (`id`, `name`, `details`, `parameters`, `query`, `paramOrd
 (4, 'Employee Attendance Report', 'This report list all employee attendance entries by employee and date range', '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'EmployeeAttendanceReport', '["employee","date_start","date_end"]', 'Class'),
 (5, 'Employee Time Tracking Report', 'This report list employee working hours and attendance details for each day for a given period ', '[\r\n[ "employee", {"label":"Employee","type":"select2","allow-null":false,"remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'EmployeeTimeTrackReport', '["employee","date_start","date_end"]', 'Class');
 
+REPLACE INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`) VALUES
+  ('Expense Report', 'This report list employees expenses for a specified period',
+   '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}],\r\n[ "status", {"label":"Status","type":"select","source":[["NULL","All Statuses"],["Approved","Approved"],["Pending","Pending"],["Rejected","Rejected"],["Cancellation Requested","Cancellation Requested"],["Cancelled","Cancelled"]]}]\r\n]',
+   'ExpenseReport',
+   '["employee","date_start","date_end","status"]', 'Class');
 
 
 INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+('Company: Logo', '', '','[ "value", {"label":"Logo","type":"fileupload","validation":"none"}]'),
 ('Company: Name', 'Sample Company Pvt Ltd', 'Update your company name - For updating company logo copy a file named logo.png to /app/data/ folder', ''),
+('Company: Description', 'This is a company using icehrm.com', '',''),
 ('Email: Enable', '1', '0 will disable all outgoing emails from modules. Value 1 will enable outgoing emails','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('Email: Mode', 'SMTP', 'SMTP, PHP Mailer or Amazon SES. SMTP = send emails using local or a remote smtp server. PHP Mailer = send emails using mail function provided by php. Amazon SES = send emails trough amazon Simple Email Service.','["value", {"label":"Value","type":"select","source":[["SMTP","SMTP"],["PHP Mailer","PHP Mailer"],["SES","Amazon SES"]]}]'),
 ('Email: SMTP Host', 'localhost', 'SMTP host IP',''),
@@ -694,6 +817,17 @@ INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
 ('Projects: Make All Projects Available to Employees', '1', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('Attendance: Time-sheet Cross Check', '0',  'Only allow users to add an entry to a timesheet only if they have marked atteandance for the selected period','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('Api: REST Api Enabled', '0',  '','["value", {"label":"Value","type":"select","source":[["0","No"],["1","Yes"]]}]');
+
+
+INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+  ('Notifications: Send Document Expiry Emails', '1', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
+  ('Notifications: Copy Document Expiry Emails to Manager', '1', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
+  ('Expense: Pre-Approve Expenses', '0', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
+  ('Travel: Pre-Approve Travel Request', '0', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
+
+INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+  ('Attendance: Use Department Time Zone', '0', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
+
 
 
 INSERT INTO `Certifications` (`id`, `name`, `description`) VALUES
@@ -737,11 +871,6 @@ INSERT INTO `CompanyStructures` (`id`, `title`, `description`, `address`, `type`
 (2, 'Head Office', 'US Head office', 'PO Box 001002\nSample Road, Sample Town', 'Head Office', 'US', 1),
 (3, 'Marketing Department', 'Marketing Department', 'PO Box 001002\nSample Road, Sample Town', 'Department', 'US', 2);
 
-
-INSERT INTO `Documents` (`id`, `name`, `details`) VALUES
-(1, 'ID Copy', 'Your ID copy'),
-(2, 'Degree Ceritficate', 'Degree Ceritficate'),
-(3, 'Driving License', 'Driving License');
 
 
 INSERT INTO `Educations` (`id`, `name`, `description`) VALUES
@@ -876,6 +1005,33 @@ INSERT INTO `SalaryComponentType` (`id`,`code`, `name`) VALUES
   (2,'B002', 'Allowance');
 
 
-INSERT INTO `SalaryComponent` VALUES
-(1,'Basic Salary', 1,''),(2,'Fixed Allowance', 1,''),(3,'Car Allowance', 2,''),(4,'Telephone Allowance', 2,'');
+INSERT INTO `SalaryComponent` (`id`,`name`, `componentType`) VALUES
+  (1,'Basic Salary', 1),
+  (2,'Fixed Allowance', 1),
+  (3,'Car Allowance', 2),
+  (4,'Telephone Allowance', 2);
+INSERT INTO `ExpensesPaymentMethods` (`name`) VALUES
+  ('Cash'),
+  ('Check'),
+  ('Credit Card'),
+  ('Debit Card');
 
+
+INSERT INTO `ExpensesCategories` (`name`) VALUES
+('Auto - Gas'),
+('Auto - Insurance'),
+('Auto - Maintenance'),
+('Auto - Payment'),
+('Transportation'),
+('Bank Fees'),
+('Dining Out'),
+('Entertainment'),
+('Hotel / Motel'),
+('Insurance'),
+('Interest Charges'),
+('Loan Payment'),
+('Medical'),
+('Mileage'),
+('Rent'),
+('Rental Car'),
+('Utility');

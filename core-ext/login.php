@@ -74,29 +74,30 @@ if(!file_exists($logoFileName)){
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-	
-	<style type="text/css">
-      /* Override some defaults */
-      html, body {
-        background-color: #829AA8;
-      }
-      body {
-        padding-top: 40px; 
-      }
-      .container {
-        width: 300px;
-      }
+
+    <style type="text/css">
+        /* Override some defaults */
+        html, body {
+            background-color: #829AA8;
+        }
+        body {
+            padding-top: 40px;
+        }
+        .container {
+            width: 300px;
+        }
 
       /* The white background content wrapper */
       .container > .content {
+          min-height: 0px !important;
         background-color: #fff;
         padding: 20px;
-        margin: 0 -20px; 
-        -webkit-border-radius: 10px 10px 10px 10px;
-           -moz-border-radius: 10px 10px 10px 10px;
-                border-radius: 10px 10px 10px 10px;
+        margin: 0 -20px;
+          -webkit-border-radius:0px;
+          -moz-border-radius:0px;
+          border-radius: 0px;
         -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
                 box-shadow: 0 1px 2px rgba(0,0,0,.15);
@@ -112,10 +113,22 @@ if(!file_exists($logoFileName)){
 	  	color: #404040;
 	  }
 
+        .add-on{
+            -webkit-border-radius:0px;
+            -moz-border-radius:0px;
+            border-radius: 0px;
+        }
+
+      input{
+          -webkit-border-radius:0px;
+          -moz-border-radius:0px;
+          border-radius: 0px;
+      }
+
     </style>
-	
-	
-  </head>
+
+
+</head>
 
   <body>
   <div itemscope itemtype="http://schema.org/WebApplication" style="display: none;">

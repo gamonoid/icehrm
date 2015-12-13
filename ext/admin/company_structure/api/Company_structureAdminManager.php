@@ -50,3 +50,23 @@ if (!class_exists('CompanyStructure')) {
 		}
 	}
 }
+
+
+if (!class_exists('Timezone')) {
+    class Timezone extends ICEHRM_Record {
+        var $_table = 'Timezones';
+
+        public function getAdminAccess(){
+            return array("get","element","save","delete");
+        }
+
+        public function getManagerAccess(){
+            return array("get","element","save","delete");
+        }
+
+        public function getUserAccess(){
+            return array("get","element");
+        }
+
+    }
+}

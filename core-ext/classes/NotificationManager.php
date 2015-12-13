@@ -7,7 +7,7 @@ class NotificationManager{
 		$this->baseService = $baseService;
 	}
 	
-	public function addNotification($toEmployee, $message, $action, $type, $toUserId = null, $fromSystem = false){
+	public function addNotification($toEmployee, $message, $action, $type, $toUserId = null, $fromSystem = false, $sendEmail = false){
 		
 		$userEmp = new User();
 		
@@ -63,7 +63,12 @@ class NotificationManager{
 		$ok = $noti->Save();
 		if(!$ok){
 			error_log("Error adding notification: ".$noti->ErrorMsg());
-		}
+		}else if($sendEmail){
+            $emailSender = BaseService::getInstance()->getEmailSender();
+            if(!empty($emailSender)){
+                $emailSender->sendEmailFromNotification($noti);
+            }
+        }
 	}
 	
 	public function clearNotifications($userId){

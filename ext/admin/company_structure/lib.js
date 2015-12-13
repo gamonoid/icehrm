@@ -17,6 +17,7 @@ CompanyStructureAdapter.method('getDataMapping', function() {
 	        "address",
 	        "type",
 	        "country",
+	        "timezone",
 	        "parent"
 	];
 });
@@ -28,6 +29,7 @@ CompanyStructureAdapter.method('getHeaders', function() {
 			{ "sTitle": "Address","bSortable":false},
 			{ "sTitle": "Type"},
 			{ "sTitle": "Country", "sClass": "center" },
+            { "sTitle": "Time Zone"},
 			{ "sTitle": "Parent Structure"}
 	];
 });
@@ -40,6 +42,7 @@ CompanyStructureAdapter.method('getFormFields', function() {
 	        [ "address", {"label":"Address","type":"textarea","validation":"none"}],
 	        [ "type", {"label":"Type","type":"select","source":[["Company","Company"],["Head Office","Head Office"],["Regional Office","Regional Office"],["Department","Department"],["Unit","Unit"],["Sub Unit","Sub Unit"],["Other","Other"]]}],
 			[ "country", {"label":"Country","type":"select","remote-source":["Country","code","name"]}],
+			[ "timezone", {"label":"Time Zone","type":"select","allow-null":false,"remote-source":["Timezone","name","details"]}],
 			[ "parent", {"label":"Parent Structure","type":"select","allow-null":true,"remote-source":["CompanyStructure","id","title"]}]
 	];
 });
@@ -298,7 +301,7 @@ CompanyGraphAdapter.method('fixCyclicParent', function(sourceData) {
 });
 
 CompanyGraphAdapter.method('getHelpLink', function () {
-	return 'http://blog.icehrm.com/?page_id=61';
+	return 'http://blog.icehrm.com/docs/companystructure/';
 });
 
 

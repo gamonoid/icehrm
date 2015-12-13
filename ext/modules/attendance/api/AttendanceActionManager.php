@@ -46,15 +46,22 @@ class AttendanceActionManager extends SubActionManager{
 	
 	
 	public function savePunch($req){
+
+        $useServerTime = SettingsManager::getInstance()->getSetting('Attendance: Use Department Time Zone');
+        $currentEmployeeTimeZone = BaseService::getInstance()->getCurrentEmployeeTimeZone();
+
+        if($useServerTime == '1' && !empty($currentEmployeeTimeZone)){
+            date_default_timezone_set('Asia/Colombo');
+
+            $date = new DateTime("now", new DateTimeZone('Asia/Colombo'));
+
+            $date->setTimezone(new DateTimeZone($currentEmployeeTimeZone));
+            $req->time = $date->format('Y-m-d H:i:s');
+        }
+
 		$req->date = $req->time;
-		
-		/*
-		if(strtotime($req->date) > strtotime($req->cdate)){
-			return new IceResponse(IceResponse::ERROR,"You are not allowed to punch a future time");
-		}
-		*/
-		
-		//check if there is an open punch
+
+        //check if there is an open punch
 		$openPunch = $this->getPunch($req)->getData();
 		
 		if(empty($openPunch)){
@@ -65,13 +72,7 @@ class AttendanceActionManager extends SubActionManager{
 		$arr = explode(" ",$dateTime);
 		$date = $arr[0];
 		
-		$currentDateTime = $req->cdate;
-		$arr = explode(" ",$currentDateTime);
-		$currentDate = $arr[0];
-		
-		if($currentDate != $date){
-			return new IceResponse(IceResponse::ERROR,"You are not allowed to punch time for a previous date");
-		}
+
 	
 		$employee = $this->baseService->getElement('Employee',$this->getCurrentProfileId(),null,true);
 		
@@ -98,18 +99,18 @@ class AttendanceActionManager extends SubActionManager{
 				}
 				if(strtotime($attendance->out_time) >= strtotime($dateTime) && strtotime($attendance->in_time) <= strtotime($dateTime)){
 					//-1---0---1---0 || ---0--1---1---0
-					return new IceResponse(IceResponse::ERROR,"Time entry is overlapping with an existing one 1");
+					return new IceResponse(IceResponse::ERROR,"Time entry is overlapping with an existing one");
 				}else if(strtotime($attendance->out_time) >= strtotime($openPunch->in_time) && strtotime($attendance->in_time) <= strtotime($openPunch->in_time)){
 					//---0---1---0---1 || ---0--1---1---0
-					return new IceResponse(IceResponse::ERROR,"Time entry is overlapping with an existing one 2");
+					return new IceResponse(IceResponse::ERROR,"Time entry is overlapping with an existing one");
 				}else if(strtotime($attendance->out_time) <= strtotime($dateTime) && strtotime($attendance->in_time) >= strtotime($openPunch->in_time)){
 					//--1--0---0--1--
-					return new IceResponse(IceResponse::ERROR,"Time entry is overlapping with an existing one 3 ".$attendance->id);
+					return new IceResponse(IceResponse::ERROR,"Time entry is overlapping with an existing one ".$attendance->id);
 				}	
 			}else{
 				if(strtotime($attendance->out_time) >= strtotime($dateTime) && strtotime($attendance->in_time) <= strtotime($dateTime)){
 					//---0---1---0 
-					return new IceResponse(IceResponse::ERROR,"Time entry is overlapping with an existing one 4");
+					return new IceResponse(IceResponse::ERROR,"Time entry is overlapping with an existing one");
 				}	
 			}
 		}

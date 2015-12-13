@@ -63,5 +63,5 @@ SettingAdapter.method('fillForm', function(object) {
 
 
 SettingAdapter.method('getHelpLink', function () {
-	return 'http://blog.icehrm.com/?page_id=126';
+	return 'http://blog.icehrm.com/docs/settings/';
 });
