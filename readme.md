@@ -4,6 +4,38 @@ IceHrm
 IceHrm is a [HRM software](http://icehrm.com) which enable companies of all sizes to [manage HR activities](http://icehrm.com)
 properly. 
 
+Note: IceHrm is now fully compatible with PHP 7
+
+Installation
+------------
+ * Download the latest release https://github.com/gamonoid/icehrm/releases/latest
+
+ * Copy the downloaded file to the path you want to install iCE Hrm in your server and extract.
+
+ * Create a mysql DB for and user. Grant all on iCE Hrm DB to new DB user.
+
+ * Visit iCE Hrm installation path in your browser.
+
+ * During the installation form, fill in details appropriately.
+
+ * Once the application is installed use the username = admin and password = admin to login to your system.
+
+ Note: Please rename or delete the install folder (<ice hrm root>/app/install) since it could pose a security threat to your iCE Hrm instance.
+
+
+Upgrade from Previous Versions to Latest Version
+------------------------------------------------
+
+ * Backup icehrm installation file and DB
+ * Remove all folders except icehrm/app from your existing installation
+ * Copy all folders except icehrm/app into installation folder
+ * Use sql scripts inside 'db_upgrade/(version)' folder to upgrade the icehrm current version
+ 
+ 
+ Note: If you are upgrading from older versions of icehrm please note that the icehrm leave module is removed since v13.0
+ 
+
+
 Following is a list of features supported in each version of icehrm
 -------------------------------------------------------------------
 
@@ -36,7 +68,7 @@ Following features are supported in IceHrm Pro version in addition to the featur
     
 #### Leave Management
 
-Leave module is only available in IceHrm Pro or Enterprise versions. IceHrm leave module is a complete leave management system for any type of a company
+IceHrm [Leave management system](http://icehrm.com) is only available in IceHrm Pro or Enterprise versions. IceHrm leave module is a complete [leave management system](http://icehrm.com) for any type of a company
 
 To learn more about leave management in icehrm refer:
 - [Leave Admin Guide](http://blog.icehrm.com/docs/leave-admin)
@@ -49,9 +81,25 @@ Sometimes you need to access audit trail for your HRM system. Audit module recor
 of your employees in a quickly accessible and understandable manor. This help you to identify potential issues with the way employees
 are using the system.
 
+#### Expense Tracking
+
+[Track Employee Expenses](http://icehrm.com) with expense management module.
+
+You can learn more about [IceHrm Pro here](http://blog.icehrm.com/docs/icehrm-pro/)
+
+To purchase IceHrmPro please visit [http://icehrm.com/modules.php](http://icehrm.com/modules.php)
+
+
+### IceHrm Enterprise Version
+
+In addition to pro version features icehrm enterprise version includes following features
+
 #### Candidate / Recruitment Management
 
-Recruitment module can be used to:
+Recruitment module can be used as a [applicant tracking system](http://icehrm.com) or a [recruiting software](http://icehrm.com). IceHrm recruitment management system offers
+following features
+
+![Recruitment Job Position Sharing](https://icehrm.s3.amazonaws.com/images/blog-images/recruitment-share.png)
  
 - Post jobs
 - Let candidates apply for these jobs
@@ -59,42 +107,16 @@ Recruitment module can be used to:
 - Track candidate progress with notes
 - Share job links with linkedIn, facebook, twitter and google+ directly from icehrm
 
+![Candidate Details](https://icehrm.s3.amazonaws.com/images/blog-images/candidates.png)
+
 More about [recruitment module](http://blog.icehrm.com/docs/recruitment/)
 
-You can learn more about [IceHrm Pro here](http://blog.icehrm.com/docs/icehrm-pro/)
+#### LDAP Support
 
-To purchase IceHrmPro please visit [](http://icehrm.com/modules.php)
+#### Training Management
+
+Icehrm [training management system](http://icehrm.com) is for Module for managing courses, training sessions and employee attendance to training sessions.
  
- 
-Installation
-------------
- * Download the latest release https://github.com/gamonoid/icehrm/releases/latest
-
- * Copy the downloaded file to the path you want to install iCE Hrm in your server and extract.
-
- * Create a mysql DB for and user. Grant all on iCE Hrm DB to new DB user.
-
- * Visit iCE Hrm installation path in your browser.
-
- * During the installation form, fill in details appropriately.
-
- * Once the application is installed use the username = admin and password = admin to login to your system.
-
- Note: Please rename or delete the install folder (<ice hrm root>/app/install) since it could pose a security threat to your iCE Hrm instance.
-
-
-Upgrade from Previous Versions to Latest Version
-------------------------------------------------
-
- * Backup icehrm installation file and DB
- * Remove all folders except icehrm/app from your existing installation
- * Copy all folders except icehrm/app into installation folder
- * Use sql scripts inside 'db_upgrade/(version)' folder to upgrade the icehrm current version
- 
- 
- Note: If you are upgrading from older versions of icehrm please note that the icehrm leave module is removed since v13.0
- 
-
 
 Your Company Structure (Departments / Branches and other Organization Units)
 -------------------------------------------
@@ -496,33 +518,36 @@ After installation the settings module can be accessed by login in as admin and 
 </div>
 
 
+Projects Module
+---------------
+
+Projects module is used to add clients, projects and assign projects to employees
+
+Each and every project is attached to a client. Because of that, ICE Hrm allow adding 
+clients with basic information. Once clients are added, you can start creating project 
+for these clients. The clients section represent both external and internal clients of the company. 
+That way you can attach each and every project to a client.
+
+###Employee Projects
+Under employee projects tab you can assign projects to employees. You need to add projects to employees to enable them to add time against 
+these projects in time-sheets.
+
 Release note v14.0
 ------------------
 
 ### Features
- * Expense management module
+ * IceHrm is now fully compatible with PHP 7
  * Improvements to travel management module to change the process of applying for travel requests
- * Employee document expiry notifications
- * Immigration documents has been removed from travel module and users should use documents module instead
- * Allow stopping all email notifications for certain leave types
- * Leave filtering with leave period
  * New report add for getting travel requests
  * Improvements to user interface
  * Bunch of UI improvements including changing menu order and font sizes
- * Ability to stop all notifications for certain leave types
  * Add a setting to use server time for time zone defined on department that a user is attached to create new attendance records
  * Improvements to admin/manager and user dashboard
  * Managers allowed to view/add/edit employee documents
  * New reports added for employee expenses and travel
  
 ### Fixes
- * Fix issue: leave type not included in employee leave report
- * Fix invoice ordering
  * Fix unavailable help links
- * Remove manager access from recruitment setup
- * Remove Add New button from employees module for managers
- * Remove Add New button from archived and terminated employees tabs
- * Fix - training module view session info from my training sessions tab not working
 
 
 Release note v13.4
