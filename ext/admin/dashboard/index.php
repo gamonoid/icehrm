@@ -197,7 +197,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
             <h4>Why not upgrade to IceHrm Pro Version</h4>
             <p>
                 IceHrm Pro is the feature rich upgrade to IceHrm open source version. It comes with improved modules for
-                employee management, leave management, LDAP support and number of other features over open source version.
+                employee management, leave management and number of other features over open source version.
                 Hit this <a href="http://icehrm.com/#compare" class="btn btn-primary btn-xs target="_blank">link</a> to do a full one to one comparison.
 
                 Also you can learn more about IceHrm Pro <a href="http://blog.icehrm.com/docs/icehrm-pro/" class="btn btn-primary btn-xs" target="_blank">here</a>
