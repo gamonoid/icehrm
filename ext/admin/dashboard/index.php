@@ -205,7 +205,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
                     <i class="ion ion-ios-cart"></i>
                 </div>
                 <a href="http://icehrm.com/modules.php" target="_blank" class="small-box-footer">
-                    Documentation <i class="fa fa-arrow-circle-right"></i>
+                    From Icehrm.com <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
