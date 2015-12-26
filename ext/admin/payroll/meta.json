@@ -1,0 +1,11 @@
+{
+"label":"Setup",
+"menu":"Salary Details",
+"order":"6",
+"icon":"fa-cogs",
+"user_levels":["Admin"],
+
+"permissions":
+	{
+	}
+}
