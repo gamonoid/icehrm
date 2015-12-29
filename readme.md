@@ -49,7 +49,7 @@ Following is a list of features supported in each version of icehrm
  * [Travel Management](http://icehrm.com) - Module for managing travel requests
  
  
-### IceHrm Pro Version | [Buy now for 199 USD](http://icehrm.com)
+### IceHrm Pro Version | [Buy now for 349.49 USD](http://icehrm.com)
 
 IceHrm Profession version (in short IceHrmPro) is the feature rich commercial alternative for icehrm
 open source version.  IceHrm Pro supports following features
@@ -90,7 +90,7 @@ You can learn more about [IceHrm Pro here](http://blog.icehrm.com/docs/icehrm-pr
 To purchase IceHrmPro please visit [http://icehrm.com/modules.php](http://icehrm.com/modules.php)
 
 
-### IceHrm Enterprise Version [Starts from 575 USD](http://icehrm.com)
+### IceHrm Enterprise Version [Starts from 1498 USD](http://icehrm.com)
 
 In addition to pro version features icehrm enterprise version includes following features
 
