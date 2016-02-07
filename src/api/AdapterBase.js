@@ -95,13 +95,14 @@ AdapterBase.method('add', function(object,getFunctionCallBackData,callGetFunctio
 	}
 	$(object).attr('a','add');
 	$(object).attr('t',this.table);
+    that.showLoader();
 	$.post(this.moduleRelativeURL, object, function(data) {
 		if(data.status == "SUCCESS"){
 			that.addSuccessCallBack(getFunctionCallBackData,data.object, callGetFunction, successCallback, that);
 		}else{
 			that.addFailCallBack(getFunctionCallBackData,data.object);
 		}
-	},"json");
+	},"json").always(function() {that.hideLoader()});
 	this.trackEvent("add",this.tab,this.table);
 });
 
@@ -126,13 +127,14 @@ AdapterBase.method('addFailCallBack', function(callBackData,serverData) {
 
 AdapterBase.method('deleteObj', function(id,callBackData) {
 	var that = this;
+    that.showLoader();
 	$.post(this.moduleRelativeURL, {'t':this.table,'a':'delete','id':id}, function(data) {
 		if(data.status == "SUCCESS"){
 			that.deleteSuccessCallBack(callBackData,data.object);
 		}else{
 			that.deleteFailCallBack(callBackData,data.object);
 		}
-	},"json");
+	},"json").always(function() {that.hideLoader()});
 	this.trackEvent("delete",this.tab,this.table);
 });
 
@@ -170,14 +172,15 @@ AdapterBase.method('get', function(callBackData) {
 	
 	sourceMappingJson = this.fixJSON(sourceMappingJson);
 	filterJson = this.fixJSON(filterJson);
-	
+
+    that.showLoader();
 	$.post(this.moduleRelativeURL, {'t':this.table,'a':'get','sm':sourceMappingJson,'ft':filterJson,'ob':orderBy}, function(data) {
 		if(data.status == "SUCCESS"){
 			that.getSuccessCallBack(callBackData,data.object);
 		}else{
 			that.getFailCallBack(callBackData,data.object);
 		}
-	},"json");
+	},"json").always(function() {that.hideLoader()});
 	
 	that.initFieldMasterData();
 	
@@ -274,13 +277,14 @@ AdapterBase.method('getElement', function(id,callBackData) {
 	var that = this;
 	var sourceMappingJson = JSON.stringify(this.getSourceMapping());
 	sourceMappingJson = this.fixJSON(sourceMappingJson);
-	$.post(this.moduleRelativeURL, {'t':this.table,'a':'getElement','id':id,'sm':sourceMappingJson}, function(data) {
+    that.showLoader();
+    $.post(this.moduleRelativeURL, {'t':this.table,'a':'getElement','id':id,'sm':sourceMappingJson}, function(data) {
 		if(data.status == "SUCCESS"){
 			that.getElementSuccessCallBack.apply(that,[callBackData,data.object]);
 		}else{
 			that.getElementFailCallBack.apply(that,[callBackData,data.object]);
 		}
-	},"json");
+	},"json").always(function() {that.hideLoader()});
 	this.trackEvent("getElement",this.tab,this.table);
 });
 
@@ -361,6 +365,9 @@ AdapterBase.method('getFieldValues', function(fieldMaster,callBackData) {
 
 AdapterBase.method('setAdminProfile', function(empId) {
 	var that = this;
+    try{
+        localStorage.clear();
+    }catch(e){}
 	$.post(this.moduleRelativeURL, {'a':'setAdminEmp','empid':empId}, function(data) {
 		top.location.href = clientUrl;
 	},"json");

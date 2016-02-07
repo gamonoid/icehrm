@@ -1,54 +1,100 @@
 <?php
 define('CLIENT_PATH',dirname(__FILE__));
 include ("config.base.php");
-include ("include.common.php"); 
+include ("include.common.php");
 include("server.includes.inc.php");
 if(empty($user)){
-	if(!empty($_REQUEST['username']) && !empty($_REQUEST['password'])){
-		$suser = null;
-		$ssoUserLoaded = false;
-		if(empty($suser)){
-			$suser = new User();
-			$suser->Load("(username = ? or email = ?) and password = ?",array($_REQUEST['username'],$_REQUEST['username'],md5($_REQUEST['password'])));
-		}
-		
-		if($suser->password == md5($_REQUEST['password']) || $ssoUserLoaded){
-			$user = $suser;
-			SessionUtils::saveSessionObject('user', $user);
-			$suser->last_login = date("Y-m-d H:i:s");
-			$suser->Save();
-			
-			if(!$ssoUserLoaded && !empty(BaseService::getInstance()->auditManager)){
-				BaseService::getInstance()->auditManager->user = $user;
-				BaseService::getInstance()->audit(IceConstants::AUDIT_AUTHENTICATION, "User Login");
-			}
-			
-			if($user->user_level == "Admin"){
-				header("Location:".HOME_LINK_ADMIN);	
-			}else{
-				header("Location:".HOME_LINK_OTHERS);	
-			}
-		}else{
-			header("Location:".CLIENT_BASE_URL."login.php?f=1");
-		}			
-	}
+    if(!empty($_REQUEST['username']) && !empty($_REQUEST['password'])){
+        $suser = null;
+        $ssoUserLoaded = false;
+
+        if($_REQUEST['username'] != "admin") {
+            LogManager::getInstance()->debug("LDAP: Enabled :" . SettingsManager::getInstance()->getSetting("LDAP: Enabled"));
+            if (SettingsManager::getInstance()->getSetting("LDAP: Enabled") == "1") {
+                $ldapResp = LDAPManager::getInstance()->checkLDAPLogin($_REQUEST['username'], $_REQUEST['password']);
+                LogManager::getInstance()->debug("LDAP Response :" . json_encode($ldapResp));
+                if ($ldapResp->getStatus() == IceResponse::ERROR) {
+                    header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
+                    exit();
+                } else {
+                    $suser = new User();
+                    $suser->Load("username = ?", array($_REQUEST['username']));
+
+                    if (empty($suser)) {
+                        header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
+                        exit();
+                    }
+
+                    $ssoUserLoaded = true;
+                }
+            }
+        }
+
+        if(empty($suser)){
+            $suser = new User();
+            $suser->Load("(username = ? or email = ?) and password = ?",array($_REQUEST['username'],$_REQUEST['username'],md5($_REQUEST['password'])));
+        }
+
+        if($suser->password == md5($_REQUEST['password']) || $ssoUserLoaded){
+            $user = $suser;
+            SessionUtils::saveSessionObject('user', $user);
+            $suser->last_login = date("Y-m-d H:i:s");
+            $suser->Save();
+
+            if(!$ssoUserLoaded && !empty(BaseService::getInstance()->auditManager)){
+                BaseService::getInstance()->auditManager->user = $user;
+                BaseService::getInstance()->audit(IceConstants::AUDIT_AUTHENTICATION, "User Login");
+            }
+
+            $redirectUrl = SessionUtils::getSessionObject('loginRedirect');
+            if(!empty($redirectUrl)){
+                header("Location:".$redirectUrl);
+            }else{
+                if($user->user_level == "Admin"){
+                    header("Location:".HOME_LINK_ADMIN);
+                }else{
+                    if(empty($user->default_module)){
+                        header("Location:".HOME_LINK_OTHERS);
+                    }else{
+                        $defaultModule = new Module();
+                        $defaultModule->Load("id = ?",array($user->default_module));
+                        if($defaultModule->mod_group == "user"){
+                            $defaultModule->mod_group = "modules";
+                        }
+                        $homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&n=".$defaultModule->name.
+                            "&m=".$defaultModule->mod_group."_".str_replace(" ","_",$defaultModule->menu);
+                        header("Location:".$homeLink);
+                    }
+                }
+            }
+        }else{
+            header("Location:".CLIENT_BASE_URL."login.php?f=1");
+        }
+    }
 }else{
-	if($user->user_level == "Admin"){
-		header("Location:".HOME_LINK_ADMIN);	
-	}else{
-		header("Location:".HOME_LINK_OTHERS);	
-	}
-	
+    if($user->user_level == "Admin"){
+        header("Location:".HOME_LINK_ADMIN);
+    }else{
+        if(empty($user->default_module)){
+            header("Location:".HOME_LINK_OTHERS);
+        }else{
+            $defaultModule = new Module();
+            $defaultModule->Load("id = ?",array($user->default_module));
+            if($defaultModule->mod_group == "user"){
+                $defaultModule->mod_group = "modules";
+            }
+            $homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&n=".$defaultModule->name.
+                "&m=".$defaultModule->mod_group."_".str_replace(" ","_",$defaultModule->menu);
+            header("Location:".$homeLink);
+        }
+    }
+
 }
 
 $tuser = SessionUtils::getSessionObject('user');
 //check user
 
-$logoFileName = CLIENT_BASE_PATH."data/logo.png";
-$logoFileUrl = CLIENT_BASE_URL."data/logo.png";
-if(!file_exists($logoFileName)){
-	$logoFileUrl = BASE_URL."images/logo.png";	
-}
+$logoFileUrl = UIManager::getInstance()->getCompanyLogoUrl();
 
 ?><!DOCTYPE html>
 <html lang="en">

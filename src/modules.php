@@ -23,14 +23,17 @@ if(SettingsManager::getInstance()->getSetting("System: Add New Permissions") == 
 	SettingsManager::getInstance()->setSetting("System: Add New Permissions","0");
 }
 
-function includeModuleManager($type,$name){
+function includeModuleManager($type,$name,$data){
 	$moduleCapsName = ucfirst($name);
 	$moduleTypeCapsName = ucfirst($type); // Admin or Modules
 	$incFile = CLIENT_PATH.'/'.$type.'/'.$name.'/api/'.$moduleCapsName.$moduleTypeCapsName."Manager.php";
 	
 	include ($incFile);
 	$moduleManagerClass = $moduleCapsName.$moduleTypeCapsName."Manager";
-	BaseService::getInstance()->addModuleManager(new $moduleManagerClass());
+    $moduleManagerObj = new $moduleManagerClass();
+    $moduleManagerObj->setModuleObject($data);
+    $moduleManagerObj->setModuleType($type);
+	BaseService::getInstance()->addModuleManager($moduleManagerObj);
 }
 
 
@@ -82,13 +85,14 @@ $currentLocation = 0;
 foreach($ams as $am){
 	if(is_dir(CLIENT_PATH.'/admin/'.$am) && $am != '.' && $am != '..'){
 		$meta = json_decode(file_get_contents(CLIENT_PATH.'/admin/'.$am.'/meta.json'));
-		includeModuleManager('admin',$am);
+
 		$arr = array();
 		$arr['name'] = $am;	
 		$arr['label'] = $meta->label;	
 		$arr['icon'] = $meta->icon;	
 		$arr['menu'] = $meta->menu;	
 		$arr['order'] = $meta->order;
+		$arr['status'] = 'Enabled';
 		$arr['user_levels'] = $meta->user_levels;
         $arr['user_roles'] = isset($meta->user_roles)?$meta->user_roles:"";
 		
@@ -110,6 +114,7 @@ foreach($ams as $am){
             $arr['icon'] = $dbModule->icon;
             $arr['menu'] = $dbModule->menu;
             $arr['order'] = $dbModule->mod_order;
+            $arr['status'] = $dbModule->status;
             $arr['user_levels'] = json_decode($dbModule->user_levels);
             $arr['user_roles'] = json_decode($dbModule->user_roles);
 
@@ -133,6 +138,8 @@ foreach($ams as $am){
 			}
 			
 		}
+
+        includeModuleManager('admin',$am, $arr);
 		
 		if(!isset($adminModulesTemp[$arr['menu']])){
 			$adminModulesTemp[$arr['menu']] = array();	
@@ -166,13 +173,14 @@ $ams = scandir(CLIENT_PATH.'/modules/');
 foreach($ams as $am){
 	if(is_dir(CLIENT_PATH.'/modules/'.$am) && $am != '.' && $am != '..'){
 		$meta = json_decode(file_get_contents(CLIENT_PATH.'/modules/'.$am.'/meta.json'));
-		includeModuleManager('modules',$am);
+
 		$arr = array();
 		$arr['name'] = $am;	
 		$arr['label'] = $meta->label;	
 		$arr['icon'] = $meta->icon;
 		$arr['menu'] = $meta->menu;	
 		$arr['order'] = $meta->order;
+        $arr['status'] = 'Enabled';
 		$arr['user_levels'] = $meta->user_levels;
 		$arr['user_roles'] = isset($meta->user_roles)?$meta->user_roles:"";
 
@@ -193,6 +201,7 @@ foreach($ams as $am){
             $arr['icon'] = $dbModule->icon;
             $arr['menu'] = $dbModule->menu;
             $arr['order'] = $dbModule->mod_order;
+            $arr['status'] = $dbModule->status;
             $arr['user_levels'] = json_decode($dbModule->user_levels);
             $arr['user_roles'] = json_decode($dbModule->user_roles);
 
@@ -215,6 +224,8 @@ foreach($ams as $am){
 				createPermissions($meta, $dbModule->id);
 			}
 		}
+
+        includeModuleManager('modules',$am, $arr);
 		
 		if(!isset($userModulesTemp[$arr['menu']])){
 			$userModulesTemp[$arr['menu']] = array();	

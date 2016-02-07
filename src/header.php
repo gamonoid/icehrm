@@ -37,7 +37,10 @@ if(empty($user->default_module)){
 }else{
     $defaultModule = new Module();
     $defaultModule->Load("id = ?",array($user->default_module));
-    $homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&&n=".$defaultModule->name.
+    if($defaultModule->mod_group == "user"){
+        $defaultModule->mod_group = "modules";
+    }
+    $homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&n=".$defaultModule->name.
         "&m=".$defaultModule->mod_group."_".str_replace(" ","_",$defaultModule->menu);
 }
 
@@ -62,14 +65,13 @@ if(!in_array($user->user_level, $modulePermissions['user'])){
 
 }
 
-
-$logoFileName = CLIENT_BASE_PATH."data/logo.png";
-$logoFileUrl = CLIENT_BASE_URL."data/logo.png";
-if(!file_exists($logoFileName)){
-    $logoFileUrl = BASE_URL."images/logo.png";
-}
+$logoFileUrl = UIManager::getInstance()->getCompanyLogoUrl();
 
 $companyName = SettingsManager::getInstance()->getSetting('Company: Name');
+
+if(empty($companyName) || $companyName == "Sample Company Pvt Ltd"){
+    $companyName = APP_NAME;
+}
 
 //Load meta info
 $meta = json_decode(file_get_contents(MODULE_PATH."/meta.json"),true);
@@ -80,7 +82,7 @@ include('configureUIManager.php');
 <html>
 <head>
     <meta charset="utf-8">
-    <title><?=APP_NAME?></title>
+    <title><?=$companyName?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -129,6 +131,7 @@ include('configureUIManager.php');
     <link href="<?=BASE_URL?>css/style.css?v=<?=$cssVersion?>" rel="stylesheet">
 
 
+    <script type="text/javascript" src="<?=BASE_URL?>js/signature_pad.js"></script>
     <script type="text/javascript" src="<?=BASE_URL?>js/date.js"></script>
     <script type="text/javascript" src="<?=BASE_URL?>js/json2.js"></script>
     <script type="text/javascript" src="<?=BASE_URL?>js/CrockfordInheritance.v0.1.js"></script>
@@ -175,8 +178,8 @@ include('configureUIManager.php');
 </script>
 
 <header id="delegationDiv" class="header">
-    <a href="<?=$homeLink?>" class="logo" style="font-family: 'Source Sans Pro', sans-serif;">
-        <?=APP_NAME?>
+    <a href="<?=$homeLink?>" class="logo" style="overflow: hidden;font-family: 'Source Sans Pro', sans-serif;">
+        Home
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -187,6 +190,9 @@ include('configureUIManager.php');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </a>
+        <div class="logo" style="background: #3c8dbc;text-align: left;">
+            <?=$companyName?>
+        </div>
         <div class="navbar-right">
             <ul class="nav navbar-nav">
                 <?=UIManager::getInstance()->getMenuItemsHTML();?>
@@ -195,6 +201,17 @@ include('configureUIManager.php');
     </nav>
 </header>
 <div class="wrapper row-offcanvas row-offcanvas-left">
+    <div id="iceloader" style="
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0);
+    background-image: url('<?=BASE_URL?>images/icehrm-loader.gif');
+    background-repeat: no-repeat;
+    background-position: center;display:none;"></div>
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="left-side sidebar-offcanvas">
         <!-- sidebar: style can be found in sidebar.less -->

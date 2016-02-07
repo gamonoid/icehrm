@@ -4,7 +4,7 @@
 "order":"1",
 "icon":"fa-plane",
 "user_levels":["Admin","Manager","Employee"],
-
+  "dashboardPosition":107,
 "permissions":
 	{
 		"Manager":{

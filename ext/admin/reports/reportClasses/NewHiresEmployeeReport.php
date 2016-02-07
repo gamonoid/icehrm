@@ -1,6 +1,6 @@
 <?php
 if(!class_exists('ActiveEmployeeReport')){
-	include_once MODULE_PATH.'/reportClasses/ActiveEmployeeReport.php';
+	include_once APP_BASE_PATH.'admin/reports/reportClasses/ActiveEmployeeReport.php';
 }
 class NewHiresEmployeeReport extends ActiveEmployeeReport{
 	

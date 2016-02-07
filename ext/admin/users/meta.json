@@ -1,11 +1,12 @@
 {
-"label":"Users",
-"menu":"System",
-"order":"2",
-"icon":"fa-user",
-"user_levels":["Admin"],
+  "label":"Users",
+  "menu":"System",
+  "order":"2",
+  "icon":"fa-user",
+  "user_levels":["Admin"],
+  "dashboardPosition":3,
 
-"permissions":
-	{
-	}
+  "permissions":
+      {
+      }
 }

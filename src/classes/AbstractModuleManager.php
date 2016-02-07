@@ -10,6 +10,11 @@ abstract class AbstractModuleManager{
 	private $userClasses = array();
 	private $errorMappings = array();
 	private $modelClasses = array();
+
+    private $modulePath = null;
+    private $moduleObject = null;
+    private $moduleType = null;
+
 	
 	/**
 	 * Override this method in module manager class to define user classes. 
@@ -60,9 +65,82 @@ abstract class AbstractModuleManager{
 	 */
 	public abstract function setupModuleClassDefinitions();
 
+    public function initQuickAccessMenu(){
+
+    }
+
+    public function setModuleObject($obj){
+        $this->moduleObject = $obj;
+    }
+
+    public function getModuleObject(){
+        return $this->moduleObject;
+    }
+
+    public function setModuleType($type){
+        $this->moduleType = $type;
+    }
+
+    public function getModuleType(){
+        return $this->moduleType;
+    }
+
+    public function getModulePath(){
+        $subClass = get_called_class();
+        $reflector = new ReflectionClass($subClass);
+        $fn = $reflector->getFileName();
+        $this->modulePath = realpath(dirname($fn)."/..");
+        LogManager::getInstance()->info("Module Path: [$subClass | $fn]".$this->modulePath);
+    }
+
+    public function getDashboardItemData(){
+        return array();
+    }
 
     public function getDashboardItem(){
-        return null;
+        $this->getModulePath();
+        if(!file_exists($this->modulePath."/dashboard.html")){
+            //LogManager::getInstance()->error("Dashboard file not found :".$this->modulePath."/dashboard.html");
+            return null;
+        }
+        $dashboardItem = file_get_contents($this->modulePath."/dashboard.html");
+        if(empty($dashboardItem)){
+            //LogManager::getInstance()->error("Dashboard file is empty :".$this->modulePath."/dashboard.html");
+            return null;
+        }
+
+        $data = $this->getDashboardItemData();
+        $data['moduleLink'] = $this->getModuleLink();
+        LogManager::getInstance()->info("Module Link:".$data['moduleLink']);
+        foreach($data as $k => $v){
+            $dashboardItem = str_replace("#_".$k."_#", $v, $dashboardItem);
+        }
+
+        return $dashboardItem;
+
+    }
+
+    public function getDashboardItemIndex(){
+        $metaData = json_decode(file_get_contents($this->modulePath."/meta.json"),true);
+        if(!isset($metaData['dashboardPosition'])){
+            return 100;
+        }else{
+            return $metaData['dashboardPosition'];
+        }
+
+    }
+
+
+    private function getModuleLink(){
+
+        $metaData = json_decode(file_get_contents($this->modulePath."/meta.json"),true);
+
+        $mod = basename($this->modulePath);
+        $group = basename(realpath($this->modulePath."/.."));
+
+        //?g=admin&n=candidates&m=admin_Recruitment
+
+        return CLIENT_BASE_URL."?g=".$group."&n=".$mod."&m=".$group."_".str_replace(" ","_",$metaData['label']);
     }
 	
 	

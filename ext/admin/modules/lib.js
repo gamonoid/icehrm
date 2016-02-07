@@ -46,7 +46,8 @@ ModuleAdapter.method('getFormFields', function() {
 	        [ "id", {"label":"ID","type":"hidden"}],
 	        [ "label", {"label":"Label","type":"text","validation":""}],
 	        [ "status", {"label":"Status","type":"select","source":[["Enabled","Enabled"],["Disabled","Disabled"]]}],
-            [ "user_levels", {"label":"User Levels","type":"select2multi","source":[["Admin","Admin"],["Manager","Manager"],["Employee","Employee"],["Other","Other"]]}]
+            [ "user_levels", {"label":"User Levels","type":"select2multi","source":[["Admin","Admin"],["Manager","Manager"],["Employee","Employee"],["Other","Other"]]}],
+            [ "user_roles", {"label":"User Roles","type":"select2multi","remote-source":["UserRole","id","name"]}]
 	];
 });
 
@@ -65,7 +66,8 @@ ModuleAdapter.method('getActionButtonsHtml', function(id,data) {
 	nonEditableFields["admin_Settings"] = 1;
 	nonEditableFields["admin_Users"] = 1;
 	nonEditableFields["admin_Upgrade"] = 1;
-	
+	nonEditableFields["admin_Upgrade"] = 1;
+
 	nonEditableFields["user_Basic Information"] = 1;
 	
 	if(nonEditableFields[data[3]+"_"+data[1]] == 1){

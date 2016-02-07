@@ -4,6 +4,7 @@
 "order":"3",
 "icon":"fa-check-circle-o",
 "user_levels":["Admin","Manager","Employee"],
+  "dashboardPosition":104,
 
 "permissions":
 	{

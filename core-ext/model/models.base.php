@@ -69,4 +69,8 @@ class ICEHRM_Record extends ADOdb_Active_Record{
         return array(
         );
     }
+
+    public function allowIndirectMapping(){
+        return false;
+    }
 }

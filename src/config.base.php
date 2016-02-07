@@ -9,4 +9,4 @@ if(!defined('SIGN_IN_ELEMENT_MAPPING_FIELD_NAME')){define('SIGN_IN_ELEMENT_MAPPI
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','ice-framework@gamonoid.com');}
 if(!defined('KEY_PREFIX')){define('KEY_PREFIX','iCEf');}
-if(!defined('APP_SEC')){define('APP_SEC','4dcxudersqw');}
+if(!defined('APP_SEC')){define('APP_SEC','4dcxswfrds');}

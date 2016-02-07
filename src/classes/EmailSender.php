@@ -79,7 +79,7 @@ abstract class EmailSender{
 
         $emailBody = str_replace("#_emailBody_#", $body, $emailBody);
         $emailBody = str_replace("#_logourl_#",
-            BASE_URL."images/logo.png"
+            UIManager::getInstance()->getCompanyLogoUrl()
             , $emailBody);
 
         $user = new User();
@@ -113,7 +113,7 @@ abstract class EmailSender{
         //Convert to an html email
         $emailBody = $body;
         $emailBody = str_replace("#_logourl_#",
-            BASE_URL."images/logo.png"
+            UIManager::getInstance()->getCompanyLogoUrl()
             , $emailBody);
 
         $user = new User();
@@ -271,6 +271,14 @@ class SMTPEmailSender extends EmailSender{
             'Reply-To' => $replyToEmail,
             'Subject' => $subject);
 
+        if(!empty($ccList)){
+            $headers['Cc'] = implode(",",$ccList);
+        }
+
+        if(!empty($bccList)){
+            $headers['Bcc'] = implode(",",$bccList);
+        }
+
 
         $mail = $smtp->send($toEmail, $headers, $body);
 
@@ -297,6 +305,12 @@ class PHPMailer extends EmailSender{
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $headers .= 'From: '.$fromEmail. "\r\n";
+        if(!empty($ccList)){
+            $headers .= 'CC: '.implode(",",$ccList). "\r\n";
+        }
+        if(!empty($bccList)){
+            $headers .= 'BCC: '.implode(",",$bccList). "\r\n";
+        }
         $headers .= 'ReplyTo: '.$replyToEmail. "\r\n";
         $headers .= 'Ice-Mailer: PHP/' . phpversion();
 

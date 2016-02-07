@@ -26,166 +26,41 @@ define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
-			  
-	<div class="row">
-		<div class="col-lg-3 col-xs-12">
-			<!-- small box -->
-			<div class="small-box bg-aqua">
-				<div class="inner">
-					<h3 id="lastPunchTime">
-					..
-					</h3>
-					<p id="punchTimeText">
-					Waiting for Response..
-					</p>
-				</div>
-				<div class="icon">
-					<i class="ion ion-ios7-alarm-outline"></i>
-				</div>
-				<a href="#" class="small-box-footer" id="atteandanceLink">
-					Record Attendance <i class="fa fa-arrow-circle-right"></i>
-				</a>
-			</div>
-		</div><!-- ./col -->
-		<div class="col-lg-3 col-xs-12">
-			<!-- small box -->
-			<div class="small-box bg-yellow">
-				<div class="inner">
-					<h3 id="timeSheetHoursWorked">..</h3>
-					<p>
-						Hours worked Last Week
-					</p>
-				</div>
-				<div class="icon">
-					<i class="ion ion-clock"></i>
-				</div>
-				<a href="#" class="small-box-footer" id="timesheetLink">
-					Update Time Sheet <i class="fa fa-arrow-circle-right"></i>
-				</a>
-			</div>
-		</div><!-- ./col -->
-		<div class="col-lg-3 col-xs-12">
-			<!-- small box -->
-			<div class="small-box bg-red">
-				<div class="inner">
-					<h3 id="numberOfProjects">..</h3>
-					<p>
-						Active Projects
-					</p>
-				</div>
-				<div class="icon">
-					<i class="ion ion-pie-graph"></i>
-				</div>
-				<a href="#" class="small-box-footer" id="projectsLink">
-					More info <i class="fa fa-arrow-circle-right"></i>
-				</a>
-			</div>
-		</div><!-- ./col -->
 
-        <div class="col-lg-3 col-xs-12">
-            <!-- small box -->
-            <div class="small-box bg-teal">
-                <div class="inner">
-                    <h3>
-                        My Travel
-                    </h3>
-                    <p>
-                        Requests
-                    </p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-plane"></i>
-                </div>
-                <a href="#" class="small-box-footer" id="travelLink">
-                    Travel Requests <i class="fa fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-xs-12">
-            <!-- small box -->
-            <div class="small-box bg-yellow">
-                <div class="inner">
-                    <h3>
-                        Help
-                    </h3>
-                    <p>
-                        User Guide
-                    </p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-help"></i>
-                </div>
-                <a href="http://blog.icehrm.com/docs/home/" target="_blank" class="small-box-footer" id="icehrmHelpLink">
-                    Documentation <i class="fa fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <?php if($user->user_level == "Manager" || $user->user_level == "Admin"){?>
-
-            <div class="col-lg-3 col-xs-12">
-                <!-- small box -->
-                <div class="small-box bg-yellow">
-                    <div class="inner">
-                        <h3>
-                            Travel
-                        </h3>
-                        <p id="numberOfTravel">
-                            Management
-                        </p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-plane"></i>
-                    </div>
-                    <a href="#" class="small-box-footer" id="traveAdminlLink">
-                        Manage Travel <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                </div>
-            </div>
+    <div class="row">
 
 
-            <div class="col-lg-3 col-xs-12">
-                <!-- small box -->
-                <div class="small-box bg-red">
-                    <div class="inner">
-                        <h3>
-                            Attendance
-                        </h3>
-                        <p id="numberOfDocuments">
-                            Monitor
-                        </p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-ios7-timer"></i>
-                    </div>
-                    <a href="#" class="small-box-footer" id="attendanceAdminLink">
-                        View Attendance <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                </div>
-            </div><!-- ./col -->
-
-            <div class="col-lg-3 col-xs-12">
-                <!-- small box -->
-                <div class="small-box bg-teal">
-                    <div class="inner">
-                        <h3>Reports</h3>
-                        <p>
-                            View / Download Reports
-                        </p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-document-text"></i>
-                    </div>
-                    <a href="#" class="small-box-footer" id="reportsLink">
-                        Create a Report <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                </div>
-            </div><!-- ./col -->
 
 
-        <?php }?>
-	</div>
+        <?php
+        $moduleManagers = BaseService::getInstance()->getModuleManagers();
+        $dashBoardList = array();
+        foreach($moduleManagers as $moduleManagerObj){
+
+            $allowed = BaseService::getInstance()->isModuleAllowedForUser($moduleManagerObj);
+
+            if(!$allowed){
+                continue;
+            }
+
+            $item = $moduleManagerObj->getDashboardItem();
+            if(!empty($item)) {
+                $index = $moduleManagerObj->getDashboardItemIndex();
+                $dashBoardList[$index] = $item;
+            }
+        }
+
+        ksort($dashBoardList);
+
+        foreach($dashBoardList as $k=>$v){
+            echo $v;
+        }
+        ?>
+
+
+
+
+    </div>
 
 </div>
 <script>
@@ -194,22 +69,30 @@ var modJsList = new Array();
 modJsList['tabDashboard'] = new DashboardAdapter('Dashboard','Dashboard');
 
 var modJs = modJsList['tabDashboard'];
+/*
+$("#employeeLink").attr("href",modJs.getCustomUrl('?g=admin&n=employees&m=admin_Admin'));
+$("#jobsLink").attr("href",modJs.getCustomUrl('?g=admin&n=jobpositions&m=admin_Recruitment'));
+$("#candidatesLink").attr("href",modJs.getCustomUrl('?g=admin&n=candidates&m=admin_Recruitment'));
+$("#projectAdminLink").attr("href",modJs.getCustomUrl('?g=admin&n=projects&m=admin_Admin'));
+$("#trainingLink").attr("href",modJs.getCustomUrl('?g=admin&n=training&m=admin_Admin'));
+$("#travelLink").attr("href",modJs.getCustomUrl('?g=admin&n=travel&m=admin_Employees'));
+$("#documentLink").attr("href",modJs.getCustomUrl('?g=admin&n=documents&m=admin_Employees'));
+$("#expenseLink").attr("href",modJs.getCustomUrl('?g=admin&n=expenses&m=admin_Employees'));
 
+
+
+$("#myProfileLink").attr("href",modJs.getCustomUrl('?g=modules&n=employees&m=module_Personal_Information'));
 $("#atteandanceLink").attr("href",modJs.getCustomUrl('?g=modules&n=attendance&m=module_Time_Management'));
-$("#attendanceAdminLink").attr("href",modJs.getCustomUrl('?g=admin&n=attendance&m=admin_Admin'));
 $("#leavesLink").attr("href",modJs.getCustomUrl('?g=modules&n=leaves&m=module_Leaves'));
 $("#timesheetLink").attr("href",modJs.getCustomUrl('?g=modules&n=time_sheets&m=module_Time_Management'));
-$("#projectsLink").attr("href",modJs.getCustomUrl('?g=modules&n=projects&m=module_Time_Management'));
-$("#traveAdminlLink").attr("href",modJs.getCustomUrl('?g=admin&n=travel&m=admin_Employees'));
-$("#travelLink").attr("href",modJs.getCustomUrl('?g=modules&n=travel&m=module_Travel_Management'));
-$("#reportsLink").attr("href",modJs.getCustomUrl('?g=admin&n=reports&m=admin_Reports'));
-
-
+$("#projectsLink").attr("href",modJs.getCustomUrl('?g=modules&n=projects&m=module_Personal_Information'));
+$("#myDocumentsLink").attr("href",modJs.getCustomUrl('?g=modules&n=documents&m=module_Documents'));
+$("#mytravelLink").attr("href",modJs.getCustomUrl('?g=modules&n=travel&m=module_Travel_Management'));
+$("#myExpensesLink").attr("href",modJs.getCustomUrl('?g=modules&n=expenses&m=module_Finance'));
 
 modJs.getPunch();
-modJs.getPendingLeaves();
-modJs.getLastTimeSheetHours();
-modJs.getEmployeeActiveProjects();
+modJs.getInitData();
+*/
 
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>      

@@ -21,6 +21,19 @@ if (!class_exists('ProjectsAdminManager')) {
 				
 		}
 
+        public function getDashboardItemData(){
+            $data = array();
+            $project = new Project();
+            $data['numberOfProjects'] = $project->Count("status = 'Active'");
+            return $data;
+
+        }
+
+        public function initQuickAccessMenu(){
+            UIManager::getInstance()->addQuickAccessMenuItem("Manage Client/Projects","fa-list-alt",CLIENT_BASE_URL."?g=admin&n=projects&m=admin_Admin",array("Admin","Manager"));
+
+        }
+
 	}
 }
 

@@ -218,6 +218,9 @@ $logoFileUrl = UIManager::getInstance()->getCompanyLogoUrl();
   }
 
   function submitLogin(){
+      try{
+          localStorage.clear();
+      }catch(e){}
 	$("#loginForm").submit();  
   }
   

@@ -23,6 +23,39 @@ if (!class_exists('Time_sheetsModulesManager')) {
 			
 		}
 
+        public function getDashboardItemData(){
+            $data = array();
+            $data['timeSheetHoursWorked'] = $this->getLastTimeSheetHours()->getData();
+            return $data;
+
+        }
+
+        private function getLastTimeSheetHours(){
+            $timeSheet = new EmployeeTimeSheet();
+            $timeSheet->Load("employee = ? order by date_end desc limit 1",array(BaseService::getInstance()->getCurrentProfileId()));
+
+            if(empty($timeSheet->employee)){
+                return new IceResponse(IceResponse::SUCCESS,"0:00");
+            }
+
+            $timeSheetEntry = new EmployeeTimeEntry();
+            $list = $timeSheetEntry->Find("timesheet = ?",array($timeSheet->id));
+
+            $seconds = 0;
+            foreach($list as $entry){
+                $seconds += (strtotime($entry->date_end) - strtotime($entry->date_start));
+            }
+
+            $minutes = (int)($seconds/60);
+            $rem = $minutes % 60;
+            $hours = ($minutes - $rem)/60;
+            if($rem < 10){
+                $rem ="0".$rem;
+            }
+            return new IceResponse(IceResponse::SUCCESS,$hours.":".$rem);
+
+        }
+
 	}
 }
 
@@ -46,6 +79,41 @@ if (!class_exists('EmployeeTimeSheet')) {
 		public function getUserOnlyMeAccess(){
 			return array("element","save","delete");
 		}
+
+        public function getTotalTime()
+        {
+
+            $start = $this->date_start . " 00:00:00";
+            $end = $this->date_end . " 23:59:59";
+
+            $timeEntry = new EmployeeTimeEntry();
+            $list = $timeEntry->Find("employee = ? and ((date_start >= ? and date_start <= ?) or (date_end >= ? and date_end <= ?))", array($this->employee, $start, $end, $start, $end));
+
+
+            $seconds = 0;
+
+            foreach ($list as $entry) {
+
+                $secondsTemp = (strtotime($entry->date_end) - strtotime($entry->date_start));
+                if ($secondsTemp < 0) {
+                    $secondsTemp = 0;
+                }
+
+
+                $seconds += $secondsTemp;
+            }
+
+            $totMinutes = round($seconds / 60);
+            $minutes = $totMinutes % 60;
+            $hours = ($totMinutes - $minutes) / 60;
+
+            return CalendarTools::addLeadingZero($hours) . ":" . CalendarTools::addLeadingZero($minutes);
+        }
+
+        public function postProcessGetData($entry){
+            $entry->total_time = $this->getTotalTime();
+            return $entry;
+        }
 	}
 
 	class EmployeeTimeEntry extends ICEHRM_Record {

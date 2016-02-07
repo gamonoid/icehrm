@@ -53,6 +53,7 @@ $fieldTemplates['label'] = file_get_contents(CLIENT_PATH.'/templates/fields/labe
 $fieldTemplates['placeholder'] = file_get_contents(CLIENT_PATH.'/templates/fields/placeholder.html');
 $fieldTemplates['datagroup'] = file_get_contents(CLIENT_PATH.'/templates/fields/datagroup.html');
 $fieldTemplates['colorpick'] = file_get_contents(CLIENT_PATH.'/templates/fields/colorpick.html');
+$fieldTemplates['signature'] = file_get_contents(CLIENT_PATH.'/templates/fields/signature.html');
 
 $templates = array();
 $templates['formTemplate'] = file_get_contents(CLIENT_PATH.'/templates/form_template.html');
@@ -100,6 +101,11 @@ if(file_exists(MODULE_PATH.'/templates/fields/datagroup.html')){
 if(file_exists(MODULE_PATH.'/templates/fields/colorpick.html')){
 	$fieldTemplates['colorpick'] = file_get_contents(MODULE_PATH.'/templates/fields/colorpick.html');
 }
+
+if(file_exists(MODULE_PATH.'/templates/fields/signature.html')){
+    $fieldTemplates['signature'] = file_get_contents(MODULE_PATH.'/templates/fields/signature.html');
+}
+
 
 if(file_exists(MODULE_PATH.'/templates/form_template.html')){
 	$templates['orig_formTemplate'] = $templates['formTemplate'];

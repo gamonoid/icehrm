@@ -55,10 +55,31 @@ SettingAdapter.method('getMetaFieldForRendering', function(fieldName) {
 	return "";
 });
 
+SettingAdapter.method('edit', function(id) {
+    this.loadRemoteDataForSettings();
+    this.uber('edit',id);
+});
+
 
 SettingAdapter.method('fillForm', function(object) {
 	this.uber('fillForm',object);
 	$("#helptext").html(object.description);
+});
+
+
+SettingAdapter.method('loadRemoteDataForSettings', function () {
+    var field = ["country", {"label": "Country", "type": "select2", "remote-source": ["Country", "code", "name"]}];
+    if (field[1]['remote-source'] != undefined && field[1]['remote-source'] != null) {
+        var key = field[1]['remote-source'][0] + "_" + field[1]['remote-source'][1] + "_" + field[1]['remote-source'][2];
+        this.fieldMasterDataKeys[key] = false;
+        this.sourceMapping[field[0]] = field[1]['remote-source'];
+
+        var callBackData = {};
+        callBackData['callBack'] = 'initFieldMasterDataResponse';
+        callBackData['callBackData'] = [key];
+
+        this.getFieldValues(field[1]['remote-source'], callBackData);
+    }
 });
 
 

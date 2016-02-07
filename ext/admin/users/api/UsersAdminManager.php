@@ -19,6 +19,14 @@ if (!class_exists('UsersAdminManager')) {
 			$this->addModelClass('User');
 		}
 
+        public function getDashboardItemData(){
+            $data = array();
+            $user = new User();
+            $data['numberOfUsers'] = $user->Count("1 = 1");
+            return $data;
+
+        }
+
 	}
 }
 
@@ -53,4 +61,18 @@ if (!class_exists('User')) {
 	
 		var $_table = 'Users';
 	}	
+}
+
+if (!class_exists('UserRole')) {
+    class UserRole extends ICEHRM_Record {
+        public function getAdminAccess(){
+            return array("get","element","save","delete");
+        }
+
+        public function getUserAccess(){
+            return array();
+        }
+
+        var $_table = 'UserRoles';
+    }
 }

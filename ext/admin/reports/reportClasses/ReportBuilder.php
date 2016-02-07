@@ -1,6 +1,6 @@
 <?php
 if(!interface_exists('ReportBuilderInterface')){
-	include_once MODULE_PATH.'/reportClasses/ReportBuilderInterface.php';
+	include_once APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilderInterface.php';
 }
 abstract class ReportBuilder implements ReportBuilderInterface{
 	

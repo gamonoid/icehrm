@@ -19,6 +19,44 @@ if (!class_exists('AttendanceAdminManager')) {
             $this->addModelClass('Attendance');
         }
 
+        public function getDashboardItemData(){
+            $data = array();
+            $attendance = new Attendance();
+            $data['numberOfAttendanceLastWeek'] = $attendance->Count("in_time > '".date("Y-m-d H:i:s",strtotime("-1 week"))."'");
+            if(empty($data['numberOfAttendanceLastWeek'])){
+                $data['numberOfAttendanceLastWeek'] = 0;
+            }
+            return $data;
+
+        }
+
+        public function initQuickAccessMenu(){
+            UIManager::getInstance()->addQuickAccessMenuItem("Clocked In Employees","fa-clock-o",CLIENT_BASE_URL."?g=admin&n=attendance&m=admin_Employees#tabAttendanceStatus",array("Admin","Manager"));
+        }
+
+    }
+}
+
+if (!class_exists('AttendanceDashboardManager')) {
+
+    class AttendanceDashboardManager extends AbstractModuleManager{
+
+        public function initializeUserClasses(){
+
+        }
+
+        public function initializeFieldMappings(){
+
+        }
+
+        public function initializeDatabaseErrorMappings(){
+
+        }
+
+        public function setupModuleClassDefinitions(){
+            $this->addModelClass('Attendance');
+        }
+
     }
 }
 

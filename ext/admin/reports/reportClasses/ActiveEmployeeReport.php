@@ -1,6 +1,6 @@
 <?php
 if(!class_exists('ReportBuilder')){
-	include_once MODULE_PATH.'/reportClasses/ReportBuilder.php';
+	include_once APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilder.php';
 }
 class ActiveEmployeeReport extends ReportBuilder{
 	

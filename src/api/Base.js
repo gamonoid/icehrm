@@ -1094,6 +1094,12 @@ IceHRMBase.method('showFilters', function(object) {
 		});
 	});
 
+    /*
+    $tempDomObj.find('.signatureField').each(function() {
+        $(this).data('signaturePad',new SignaturePad($(this)));
+    });
+    */
+
 	//var tHtml = $tempDomObj.wrap('<div>').parent().html();
 	this.showDomElement("Edit",$tempDomObj,null,null,true);
 	$(".filterBtn").off();
@@ -1134,6 +1140,7 @@ IceHRMBase.method('preRenderForm', function(object) {
 IceHRMBase.method('renderForm', function(object) {
 	
 	var that = this;
+    var signatureIds = [];
 	if(object == null || object == undefined){
 		this.currentId = null;
 	}
@@ -1200,6 +1207,12 @@ IceHRMBase.method('renderForm', function(object) {
 		});
 		
 	});
+
+
+    $tempDomObj.find('.signatureField').each(function() {
+        //$(this).data('signaturePad',new SignaturePad($(this)));
+        signatureIds.push($(this).attr('id'));
+    });
 	
 	for(var i=0;i<fields.length;i++){
 		if(fields[i][1].type == "datagroup"){
@@ -1239,6 +1252,14 @@ IceHRMBase.method('renderForm', function(object) {
 	if(!this.showFormOnPopup){
 		$("#"+this.getTableName()+'Form').show();
 		$("#"+this.getTableName()).hide();
+
+        for(var i=0;i<signatureIds.length;i++){
+            $("#"+signatureIds[i])
+                .data('signaturePad',
+                new SignaturePad(document.getElementById(signatureIds[i])));
+
+        }
+
 		if(object != undefined && object != null){
 			this.fillForm(object);
 		}
@@ -1253,6 +1274,14 @@ IceHRMBase.method('renderForm', function(object) {
 		
 		$("#plainMessageModel .modal-body").html("");
 		$("#plainMessageModel .modal-body").append($tempDomObj);
+
+
+        for(var i=0;i<signatureIds.length;i++){
+            $("#"+signatureIds[i])
+                .data('signaturePad',
+                new SignaturePad(document.getElementById(signatureIds[i])));
+
+        }
 		
 		if(object != undefined && object != null){
 			this.fillForm(object,"#"+randomFormId);
@@ -1406,7 +1435,11 @@ IceHRMBase.method('showDataGroup', function(field, object) {
 		});
 	});
 
-	
+    /*
+    $tempDomObj.find('.signatureField').each(function() {
+        $(this).data('signaturePad',new SignaturePad($(this)));
+    });
+    */
 	
 	this.currentDataGroupField = field;
 	this.showDomElement("Add "+field[1]['label'],$tempDomObj,null,null,true);
@@ -1696,6 +1729,14 @@ IceHRMBase.method('fillForm', function(object, formId, fields) {
 				$(formId + ' #'+fields[i][0]).val(object[fields[i][0]]);
 				$(formId + ' #'+fields[i][0]+"_div").html(html);
 			}catch(e){}
+
+		}else if(fields[i][1].type == 'signature'){
+
+            if(object[fields[i][0]] != '' || object[fields[i][0]] != undefined
+                || object[fields[i][0]] != null){
+                $(formId + ' #'+fields[i][0]).data('signaturePad').fromDataURL(object[fields[i][0]]);
+            }
+
 		}else{
 			$(formId + ' #'+fields[i][0]).val(object[fields[i][0]]);
 		}
@@ -1774,7 +1815,11 @@ IceHRMBase.method('renderFormField', function(field) {
 	}else if(field[1].type == 'datagroup'){
 		t = t.replace(/_id_/g,field[0]);
 		t = t.replace(/_label_/g,field[1].label);
-	}
+
+	}else if(field[1].type == 'signature'){
+        t = t.replace(/_id_/g,field[0]);
+        t = t.replace(/_label_/g,field[1].label);
+    }
 	
 	if(field[1].validation != undefined && field[1].validation != null && field[1].validation != ""){
 		t = t.replace(/_validation_/g,'validation="'+field[1].validation+'"');
@@ -2096,4 +2141,22 @@ IceHRMBase.method('getHelpLink', function () {
 
 	return null;
 
+});
+
+IceHRMBase.method('showLoader', function () {
+	$('#iceloader').show();
+});
+
+IceHRMBase.method('hideLoader', function () {
+	$('#iceloader').hide();
+});
+
+IceHRMBase.method('generateOptions', function (data) {
+    var template = '<option value="__val__">__text__</option>';
+    var options = "";
+    for(index in data){
+        options += template.replace("__val__",index).replace("__text__",data[index]);
+    }
+
+    return options;
 });

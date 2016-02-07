@@ -34,7 +34,7 @@ function FormValidation(formId,validateAll,options) {
 	
 	this.settings = jQuery.extend(this.settings,options);
 	
-	this.inputTypes = new Array( "text",  "radio",  "checkbox",  "file", "password",  "select-one","select-multi",  "textarea","fileupload");
+	this.inputTypes = new Array( "text",  "radio",  "checkbox",  "file", "password",  "select-one","select-multi",  "textarea","fileupload" ,"signature");
 
 	this.validator = {
 			
@@ -202,8 +202,15 @@ FormValidation.method('checkValues' , function(options) {
 	    				inputValue = JSON.stringify(inputValue);
 	    			}else{
 	    				inputValue = "";
-	    			}	
-	    		}else{
+	    			}
+                }else if(inputObject.hasClass('signatureField')){
+                    if($('#'+id).data('signaturePad').isEmpty()){
+                        inputValue = '';
+                    }else{
+                        inputValue = $('#'+id).data('signaturePad').toDataURL();
+                    }
+
+                }else{
 	    			inputValue = inputObject.val();
 	    		}
 	    	}

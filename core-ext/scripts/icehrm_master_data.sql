@@ -1012,6 +1012,12 @@ INSERT INTO `SalaryComponent` (`id`,`name`, `componentType`) VALUES
   (2,'Fixed Allowance', 1),
   (3,'Car Allowance', 2),
   (4,'Telephone Allowance', 2);
+
+
+INSERT INTO `Crons` (`name`,`class`, `lastrun`, `frequency`, `time`, `type`, `status`) VALUES
+  ('Email Sender Task', 'EmailSenderTask', NULL, 1, 1, 'Minutely', 'Enabled'),
+  ('Document Expire Alert', 'DocumentExpiryNotificationTask', NULL, 1, 1, 'Minutely', 'Enabled');
+
 INSERT INTO `ExpensesPaymentMethods` (`name`) VALUES
   ('Cash'),
   ('Check'),

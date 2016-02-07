@@ -51,5 +51,11 @@ modJsList['tabSetting'].setShowAddNew(false);
 
 var modJs = modJsList['tabSetting'];
 
+$(window).load(function() {
+    modJs.loadRemoteDataForSettings();
+});
+
+
+
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>      

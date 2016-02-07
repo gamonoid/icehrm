@@ -19,5 +19,13 @@ if(!class_exists('CalendarTools')) {
             }
 
         }
+
+        public static function addLeadingZero($val)
+        {
+            if ($val < 10) {
+                $val = "0" . $val;
+            }
+            return $val;
+        }
     }
 }

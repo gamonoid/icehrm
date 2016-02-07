@@ -30,6 +30,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
 		<li class="active"><a id="tabUser" href="#tabPageUser">Users</a></li>
+		<li class=""><a id="tabUserRole" href="#tabPageUserRole">User Roles</a></li>
 	</ul>
 	 
 	<div class="tab-content">
@@ -41,6 +42,14 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 		
 			</div>
 		</div>
+        <div class="tab-pane" id="tabPageUserRole">
+            <div id="UserRole" class="reviewBlock" data-content="List" style="padding-left:5px;">
+
+            </div>
+            <div id="UserRoleForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
+
+            </div>
+        </div>
 	</div>
 
 </div>
@@ -50,7 +59,7 @@ modJsList['tabUser'] = new UserAdapter('User');
 <?php if(isset($_REQUEST['action']) && $_REQUEST['action'] == "new" && isset($_REQUEST['object'])){?>
 modJsList['tabUser'].newInitObject = JSON.parse(Base64.decode('<?=$_REQUEST['object']?>'));
 <?php }?>
-
+modJsList['tabUserRole'] = new UserRoleAdapter('UserRole');
 var modJs = modJsList['tabUser'];
 
 </script>

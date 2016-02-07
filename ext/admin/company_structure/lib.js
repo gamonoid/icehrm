@@ -41,8 +41,8 @@ CompanyStructureAdapter.method('getFormFields', function() {
 	        [ "description", {"label":"Details","type":"textarea","validation":""}],
 	        [ "address", {"label":"Address","type":"textarea","validation":"none"}],
 	        [ "type", {"label":"Type","type":"select","source":[["Company","Company"],["Head Office","Head Office"],["Regional Office","Regional Office"],["Department","Department"],["Unit","Unit"],["Sub Unit","Sub Unit"],["Other","Other"]]}],
-			[ "country", {"label":"Country","type":"select","remote-source":["Country","code","name"]}],
-			[ "timezone", {"label":"Time Zone","type":"select","allow-null":false,"remote-source":["Timezone","name","details"]}],
+			[ "country", {"label":"Country","type":"select2","remote-source":["Country","code","name"]}],
+			[ "timezone", {"label":"Time Zone","type":"select2","allow-null":false,"remote-source":["Timezone","name","details"]}],
 			[ "parent", {"label":"Parent Structure","type":"select","allow-null":true,"remote-source":["CompanyStructure","id","title"]}]
 	];
 });

@@ -34,6 +34,7 @@ EmployeeTimeSheetAdapter.method('getDataMapping', function() {
 	        "id",
 	        "date_start",
 	        "date_end",
+            "total_time",
 	        "status"
 	];
 });
@@ -43,6 +44,7 @@ EmployeeTimeSheetAdapter.method('getHeaders', function() {
 			{ "sTitle": "ID" ,"bVisible":false},
 			{ "sTitle": "Start Date"},
 			{ "sTitle": "End Date"},
+			{ "sTitle": "Total Time"},
 			{ "sTitle": "Status"}
 	];
 });
@@ -533,14 +535,16 @@ EmployeeTimeEntryAdapter.method('renderForm', function(object) {
 	
 	//append dates
 	
-	var dateStart = new Date(this.currentTimesheet.date_start.replace(" ","T"));
-	var dateStop = new Date(this.currentTimesheet.date_end.replace(" ","T"));
+	var dateStart = new Date(this.currentTimesheet.date_start);
+	var dateStop = new Date(this.currentTimesheet.date_end);
 	
 	var datesArray = this.getDates(dateStart, dateStop);
 	
 	var optionList = "";
 	for(var i=0; i<datesArray.length; i++){
-		optionList += '<option value="'+datesArray[i].toString("yyyy-MM-dd")+'">'+datesArray[i].toString("d-MMM-yyyy")+'</option>';
+        var k = datesArray[i];
+		//optionList += '<option value="'+datesArray[i].toString("yyyy-MM-dd")+'">'+datesArray[i].toString("d-MMM-yyyy")+'</option>';
+		optionList += '<option value="'+k.getUTCFullYear()+"-"+(k.getUTCMonth()+1)+"-"+k.getUTCDate()+'">'+k.toUTCString().slice(0, -13)+'</option>';
 	}
 	
 	
@@ -665,8 +669,8 @@ EmployeeTimeEntryAdapter.method('save', function() {
 });
 
 EmployeeTimeEntryAdapter.method('doCustomValidation', function(params) {
-	var st = Date.parse(params.date_start.replace(" ","T"));
-	var et = Date.parse(params.date_end.replace(" ","T"));
+	var st = Date.parse(params.date_start);
+	var et = Date.parse(params.date_end);
 	if(st.compareTo(et) != -1){
 		return "Start time should be less than End time";
 	}

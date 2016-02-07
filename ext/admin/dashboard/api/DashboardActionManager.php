@@ -40,13 +40,26 @@ class DashboardActionManager extends SubActionManager{
 		
 		$attendance = new Attendance();
 		$data['numberOfAttendanceLastWeek'] = $attendance->Count("in_time > '".date("Y-m-d H:i:s",strtotime("-1 week"))."'");
+		if(empty($data['numberOfAttendanceLastWeek'])){
+            $data['numberOfAttendanceLastWeek'] = 0;
+        }
 
-		$data['numberOfLeaves'] = 0;
+
+		$empLeave = new EmployeeLeave();
+		$data['numberOfLeaves'] = $empLeave->Count("date_start > '".date("Y-m-d")."'");
 		
 		$timeEntry = new EmployeeTimeEntry();
-		$data['numberOfAttendanceLastWeek'] = $attendance->Count("in_time > '".date("Y-m-d H:i:s",strtotime("-1 week"))."'");
-		
-		
+		$data['numberOfAttendanceLastWeek'] = $timeEntry->Count("in_time > '".date("Y-m-d H:i:s",strtotime("-1 week"))."'");
+
+        $candidate = new Candidate();
+        $data['numberOfCandidates'] = $candidate->Count("1 = 1");
+
+        $job = new Job();
+        $data['numberOfJobs'] = $job->Count("status = 'Active'");
+
+        $course = new Course();
+        $data['numberOfCourses'] = $course->Count("1 = 1");
+
 		return new IceResponse(IceResponse::SUCCESS,$data);
 		
 	}

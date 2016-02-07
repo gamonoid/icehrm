@@ -19,14 +19,21 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 		
 			</div>
 		</div>
+
 	</div>
 
 </div>
 <script>
 var modJsList = new Array();
 
-modJsList['tabReport'] = new ReportAdapter('Report','Report');
+modJsList['tabReport'] = new ReportAdapter('Report','Report','','report_group');
 modJsList['tabReport'].setShowAddNew(false);
+modJsList['tabReport'].setRemoteTable(true);
+
+/*
+modJsList['tabReport'] = new ReportGenAdapter('File','File','{"file_group":"Report"}','group');
+modJsList['tabReport'].setShowAddNew(false);
+*/
 
 var modJs = modJsList['tabReport'];
 

@@ -20,6 +20,21 @@ if (!class_exists('EmployeesAdminManager')) {
 			$this->addModelClass('EmploymentStatus');
 		}
 
+        public function getDashboardItemData(){
+            $data = array();
+            $emp = new Employee();
+            $data['numberOfEmployees'] = $emp->Count("1 = 1");
+
+            return $data;
+
+        }
+
+        public function initQuickAccessMenu(){
+            UIManager::getInstance()->addQuickAccessMenuItem("View Employees","fa-users",CLIENT_BASE_URL."?g=admin&n=employees&m=admin_Employees",array("Admin","Manager"));
+            UIManager::getInstance()->addQuickAccessMenuItem("Add a New Employee","fa-edit",CLIENT_BASE_URL."?g=admin&n=employees&m=admin_Employees&action=new",array("Admin"));
+
+        }
+
 	}
 }
 

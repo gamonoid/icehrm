@@ -35,7 +35,9 @@ UserAdapter.method('getFormFields', function() {
 	        [ "username", {"label":"User Name","type":"text","validation":"username"}],
 	        [ "email", {"label":"Email","type":"text","validation":"email"}],
 	        [ "employee", {"label":"Employee","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
-	        [ "user_level", {"label":"User Level","type":"select","source":[["Admin","Admin"],["Manager","Manager"],["Employee","Employee"]]}]
+	        [ "user_level", {"label":"User Level","type":"select","source":[["Admin","Admin"],["Manager","Manager"],["Employee","Employee"],["Other","Other"]]}],
+            [ "user_roles", {"label":"User Roles","type":"select2multi","remote-source":["UserRole","id","name"]}],
+            [ "default_module", {"label":"Default Module","type":"select2","null-label":"No Default Module","allow-null":true,"remote-source":["Module","id","menu+label"]}]
 	];
 });
 
@@ -62,8 +64,8 @@ UserAdapter.method('saveUserFailCallBack', function(callBackData,serverData) {
 
 UserAdapter.method('doCustomValidation', function(params) {
 	var msg = null;
-	if(params['user_level'] != "Admin" && params['employee'] == "NULL"){
-		msg = "For non Admin users, you have to assign an employee when adding or editing the user.<br/>";
+	if((params['user_level'] != "Admin" && params['user_level'] != "Other") && params['employee'] == "NULL"){
+		msg = "For this user type, you have to assign an employee when adding or editing the user.<br/>";
 		msg += " You may create a new employee through 'Admin'->'Employees' menu";
 	}
 	return msg;
@@ -154,9 +156,39 @@ UserAdapter.method('changePasswordFailCallBack', function(callBackData,serverDat
 	this.showMessage("Error",callBackData);
 });
 
-UserAdapter.method('getHelpLink', function () {
-	return 'http://blog.icehrm.com/?page_id=132';
+
+
+
+
+/**
+ * UserRoleAdapter
+ */
+
+function UserRoleAdapter(endPoint,tab,filter,orderBy) {
+    this.initAdapter(endPoint,tab,filter,orderBy);
+}
+
+UserRoleAdapter.inherits(AdapterBase);
+
+
+
+UserRoleAdapter.method('getDataMapping', function() {
+    return [
+        "id",
+        "name"
+    ];
 });
 
+UserRoleAdapter.method('getHeaders', function() {
+    return [
+        { "sTitle": "ID" ,"bVisible":false},
+        { "sTitle": "Name"}
+    ];
+});
 
-
+UserRoleAdapter.method('getFormFields', function() {
+    return [
+        [ "id", {"label":"ID","type":"hidden"}],
+        [ "name", {"label":"Name","type":"text","validation":""}]
+    ];
+});

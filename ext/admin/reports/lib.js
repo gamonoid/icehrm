@@ -7,8 +7,9 @@
  * ReportAdapter
  */
 
-function ReportAdapter(endPoint) {
-	this.initAdapter(endPoint);
+
+function ReportAdapter(endPoint,tab,filter,orderBy) {
+	this.initAdapter(endPoint,tab,filter,orderBy);
 	this._formFileds =  [
 	        [ "id", {"label":"ID","type":"hidden"}],
 	        [ "name", {"label":"Name","type":"label","validation":""}],
@@ -160,5 +161,44 @@ ReportAdapter.method('fillForm', function(object) {
 		}
 	    
 	}
+});
+
+
+
+
+function ReportGenAdapter(endPoint) {
+    this.initAdapter(endPoint);
+}
+
+ReportGenAdapter.inherits(AdapterBase);
+
+
+
+ReportGenAdapter.method('getDataMapping', function() {
+    return [
+        "id",
+        "name",
+    ];
+});
+
+ReportGenAdapter.method('getHeaders', function() {
+    return [
+        { "sTitle": "ID" ,"bVisible":false},
+        { "sTitle": "Name" }
+    ];
+});
+
+ReportGenAdapter.method('getFormFields', function() {
+    return [
+
+    ];
+});
+
+ReportGenAdapter.method('getActionButtonsHtml', function(id,data) {
+    var html = '<div style="width:80px;"><img class="tableActionButton" src="_BASE_images/download.png" style="cursor:pointer;" rel="tooltip" title="Download" onclick="download(_name_);return false;"></img></div>';
+    html = html.replace(/_id_/g,id);
+    html = html.replace(/_name_/g,data[1]);
+    html = html.replace(/_BASE_/g,this.baseUrl);
+    return html;
 });
 

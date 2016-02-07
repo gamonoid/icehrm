@@ -3,7 +3,7 @@
 "menu":"Admin",
 "order":"1",
 "icon":"fa-desktop",
-"user_levels":["Admin"],
+"user_levels":["Admin","Other"],
 
 "permissions":
 	{

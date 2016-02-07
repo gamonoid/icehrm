@@ -1,7 +1,6 @@
 <?php
 if(!defined("AWS_REGION")){define('AWS_REGION','us-east-1');}
 include(APP_BASE_PATH.'lib/Mail.php');
-include(APP_BASE_PATH.'lib/aws.phar');
 include(APP_BASE_PATH.'adodb512/adodb.inc.php');
 include(APP_BASE_PATH.'adodb512/adodb-active-record.inc.php');
 $ADODB_ASSOC_CASE = 2;
@@ -145,6 +144,12 @@ if(file_exists(APP_BASE_PATH.'admin/audit/api/AuditActionManager.php')){
 
 $emailEnabled = SettingsManager::getInstance()->getSetting("Email: Enable");
 $emailMode = SettingsManager::getInstance()->getSetting("Email: Mode");
+$uploadS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
+
+if($emailMode == "SES" || $uploadS3 == '1'){
+    include(APP_BASE_PATH.'lib/aws.phar');
+}
+
 $emailSender = null;
 if($emailEnabled == "1"){
 	if($emailMode == "SMTP"){

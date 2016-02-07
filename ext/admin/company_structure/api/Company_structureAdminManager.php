@@ -20,6 +20,14 @@ if (!class_exists('Company_structureAdminManager')) {
 
 			$this->addModelClass('CompanyStructure');
 		}
+
+        public function getDashboardItemData(){
+            $data = array();
+            $company = new CompanyStructure();
+            $data['numberOfCompanyStuctures'] = $company->Count("1 = 1");
+            return $data;
+
+        }
 		
 	}
 }
