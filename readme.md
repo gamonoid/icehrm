@@ -532,6 +532,21 @@ That way you can attach each and every project to a client.
 Under employee projects tab you can assign projects to employees. You need to add projects to employees to enable them to add time against 
 these projects in time-sheets.
 
+Release note v15.0
+------------------
+
+### Features
+ * Clear HTML5 local storage when logging in and switching users
+ * Showing a loading message while getting data from server
+ * Adding a new field to show total time of each time sheet
+ * New report added for listing Employee Time Sheets
+ * Company logo uploaded via settings will be used for all email headers
+ 
+### Fixes
+ * Fix issue: default module URL is incorrect for Employees
+ * Fix date parsing issue in time sheets
+ * AWS phar is included only when required
+
 Release note v14.1
 ------------------
 

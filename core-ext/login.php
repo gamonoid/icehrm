@@ -8,28 +8,6 @@ if(empty($user)){
         $suser = null;
         $ssoUserLoaded = false;
 
-        if($_REQUEST['username'] != "admin") {
-            LogManager::getInstance()->debug("LDAP: Enabled :" . SettingsManager::getInstance()->getSetting("LDAP: Enabled"));
-            if (SettingsManager::getInstance()->getSetting("LDAP: Enabled") == "1") {
-                $ldapResp = LDAPManager::getInstance()->checkLDAPLogin($_REQUEST['username'], $_REQUEST['password']);
-                LogManager::getInstance()->debug("LDAP Response :" . json_encode($ldapResp));
-                if ($ldapResp->getStatus() == IceResponse::ERROR) {
-                    header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
-                    exit();
-                } else {
-                    $suser = new User();
-                    $suser->Load("username = ?", array($_REQUEST['username']));
-
-                    if (empty($suser)) {
-                        header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
-                        exit();
-                    }
-
-                    $ssoUserLoaded = true;
-                }
-            }
-        }
-
         if(empty($suser)){
             $suser = new User();
             $suser->Load("(username = ? or email = ?) and password = ?",array($_REQUEST['username'],$_REQUEST['username'],md5($_REQUEST['password'])));
