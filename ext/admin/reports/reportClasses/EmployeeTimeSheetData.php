@@ -41,7 +41,7 @@ class EmployeeTimeSheetData implements ReportBuilderInterface{
 
 
         $reportData = array();
-        $reportData[] = array("Employee ID","Employee","Time Sheet","Total Time","Status");
+        $reportData[] = array("Employee ID","Employee","Name","Start","End","Total Time","Status");
 
         foreach($timeSheets as $ts){
             $employee = $employeeCache[$ts->employee];
@@ -56,7 +56,9 @@ class EmployeeTimeSheetData implements ReportBuilderInterface{
             $reportData[] = array(
                 $employee->employee_id,
                 $employee->first_name." ".$employee->last_name,
-                $ts->name,
+                date("F j, Y",strtotime($ts->date_start))." - ".date("F j, Y",strtotime($ts->date_end)),
+                $ts->date_start,
+                $ts->date_end,
                 $ts->getTotalTime(),
                 $ts->status
             );
