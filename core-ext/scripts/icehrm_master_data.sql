@@ -817,7 +817,7 @@ INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
 ('System: Add New Permissions', '0', 'Select this to add new permission changes done to meta.json file of any module','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('System: Debug Mode', '0', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('Projects: Make All Projects Available to Employees', '1', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
-('Attendance: Time-sheet Cross Check', '0',  'Only allow users to add an entry to a timesheet only if they have marked atteandance for the selected period','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
+('Attendance: Time-sheet Cross Check', '0',  'Only allow users to add an entry to a timesheet only if they have marked atteandance for the selected period','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('Api: REST Api Enabled', '0',  '','["value", {"label":"Value","type":"select","source":[["0","No"],["1","Yes"]]}]');
 
 
