@@ -11,6 +11,19 @@ INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
 INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
   ('Attendance: Work Week Start Day', '0', 'Set the starting day of the work week','["value", {"label":"Value","type":"select","source":[["0","Sunday"],["1","Monday"],["2","Tuesday"],["3","Wednesday"],["4","Thursday"],["5","Friday"],["6","Saturday"]]}]');
 
+
+ALTER table `Reports` ADD COLUMN `report_group` varchar(500) NULL;
+
+UPDATE Reports set report_group = 'Employee Information' where name = 'Employee Details Report';
+UPDATE Reports set report_group = 'Time Management' where name = 'Employee Time Entry Report';
+UPDATE Reports set report_group = 'Time Management' where name = 'Employee Attendance Report';
+UPDATE Reports set report_group = 'Time Management' where name = 'Employee Time Tracking Report';
+UPDATE Reports set report_group = 'Employee Information' where name = 'Active Employee Report';
+UPDATE Reports set report_group = 'Employee Information' where name = 'New Hires Employee Report';
+UPDATE Reports set report_group = 'Employee Information' where name = 'Terminated Employee Report';
+UPDATE Reports set report_group = 'Travel and Expense Management' where name = 'Travel Request Report';
+
+
 INSERT INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`) VALUES
 ('Overtime Report', 'This report list all employee attendance entries by employee with overtime calculations', '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'OvertimeReport', '["employee","date_start","date_end"]', 'Class','Time Management');
 

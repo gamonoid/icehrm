@@ -427,6 +427,7 @@ create table `Reports` (
 	`query` text default null,
 	`paramOrder` varchar(500) NOT NULL,
 	`type` enum('Query','Class') default 'Query',
+  `report_group` varchar(500) NULL,
 	primary key  (`id`),
 	UNIQUE KEY `Reports_Name` (`name`)
 ) engine=innodb default charset=utf8;
