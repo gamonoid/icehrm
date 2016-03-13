@@ -45,6 +45,7 @@ class BaseService{
 	var $moduleManagers = null;
 	var $emailSender = null;
     var $user = null;
+    var $historyManagers = array();
 	
 	private static $me = null;
 	
@@ -89,17 +90,23 @@ class BaseService{
 		$queryData = array();
 		if(!empty($filterStr)){
 			$filter = json_decode($filterStr, true);
-			
-			if(!empty($filter)){
-				foreach($filter as $k=>$v){
-					LogManager::getInstance()->info($filterStr);
-					if($v == '__myid__'){
-						$v = $this->getCurrentProfileId();
-					}
-					$query.=" and ".$k."=?";
-					$queryData[] = $v;
-				}	
-			}	
+
+
+            if(!empty($filter)){
+                LogManager::getInstance()->debug("Building filter query");
+                if(method_exists($obj,'getCustomFilterQuery')){
+                    LogManager::getInstance()->debug("Method: getCustomFilterQuery exists");
+                    $response = $obj->getCustomFilterQuery($filter);
+                    $query = $response[0];
+                    $queryData = $response[1];
+                }else{
+                    LogManager::getInstance()->debug("Method: getCustomFilterQuery not found");
+                    $defaultFilterResp = $this->buildDefaultFilterQuery($filter);
+                    $query = $defaultFilterResp[0];
+                    $queryData = $defaultFilterResp[1];
+                }
+
+            }
 		}
 		
 		if(empty($orderBy)){
@@ -112,13 +119,17 @@ class BaseService{
 		if(in_array($table, $this->userTables)){
 			$cemp = $this->getCurrentProfileId();
 			if(!empty($cemp)){
-				$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-				$list = $obj->Find($signInMappingField." = ?".$query.$orderBy, array_merge(array($cemp),$queryData));	
+                $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
+                LogManager::getInstance()->debug("Query: ".$signInMappingField." = ?".$query.$orderBy);
+                LogManager::getInstance()->debug("Query Data: ".print_r(array_merge(array($cemp),$queryData),true));
+				$list = $obj->Find($signInMappingField." = ?".$query.$orderBy, array_merge(array($cemp),$queryData));
 			}else{
 				$list = array();
 			}
 					
 		}else{
+            LogManager::getInstance()->debug("Query: "."1=1".$query.$orderBy);
+            LogManager::getInstance()->debug("Query Data: ".print_r($queryData,true));
 			$list = $obj->Find("1=1".$query.$orderBy,$queryData);	
 		}	
 		
@@ -136,19 +147,19 @@ class BaseService{
 			if(empty($v)){
 				continue;
 			}
-			$vArr = json_decode($v);
-			if(is_array($vArr)){
-				if(empty($vArr)){
+			if(is_array($v)){
+				if(empty($v)){
 					continue;
 				}
-				$v = $vArr;
 				$length = count($v);
 				for($i=0; $i<$length; $i++){
-					$query.=$k." like ?";
+
 					
 					if($i == 0){
 						$query.=" and (";
 					}
+
+                    $query.=$k." like ?";
 					
 					if($i < $length -1){
 						$query.=" or ";
@@ -477,7 +488,7 @@ class BaseService{
 					}	
 				}
 			}
-			return 	$obj;
+			return 	$obj->postProcessGetData($obj);
 		}
 		return null;
 	}
@@ -1066,6 +1077,37 @@ class BaseService{
         return true;
 
     }
+
+    public function isModuleAllowedForGivenUser($moduleManagerObj, $user){
+        $moduleObject = $moduleManagerObj->getModuleObject();
+
+        //Check if the module is disabled
+        if($moduleObject['status'] == 'Disabled'){
+            return false;
+        }
+
+        //Check if user has permissions to this module
+        //Check Module Permissions
+        $modulePermissions = BaseService::getInstance()->loadModulePermissions($moduleManagerObj->getModuleType(), $moduleObject['name'],$user->user_level);
+
+
+        if(!in_array($user->user_level, $modulePermissions['user'])){
+
+            if(!empty($user->user_roles)){
+                $userRoles = json_decode($user->user_roles,true);
+            }else{
+                $userRoles = array();
+            }
+            $commonRoles = array_intersect($modulePermissions['user_roles'], $userRoles);
+            if(empty($commonRoles)){
+                return false;
+            }
+
+        }
+
+        return true;
+
+    }
 	
 	public function getGAKey(){
 		return SettingsManager::getInstance()->getSetting('Analytics: Google Key');
@@ -1123,12 +1165,27 @@ class BaseService{
 		if(empty($this->moduleManagers)){
 			$this->moduleManagers = array();
 		}
-		$this->moduleManagers[] = $moduleManager;
+        $moduleObject = $moduleManager->getModuleObject();
+		$this->moduleManagers[$moduleManager->getModuleType()."_".$moduleObject['name']] = $moduleManager;
 	}
 	
 	public function getModuleManagers(){
-		return $this->moduleManagers;
+		return array_values($this->moduleManagers);
 	}
+
+    public function getModuleManagerNames(){
+        $keys =  array_keys($this->moduleManagers);
+        $arr = array();
+        foreach($keys as $key){
+            $arr[$key] = 1;
+        }
+
+        return $arr;
+    }
+
+    public function getModuleManager($type, $name){
+        return $this->moduleManagers[$type."_".$name];
+    }
 	
 	public function setEmailSender($emailSender){
 		$this->emailSender = $emailSender;
@@ -1173,7 +1230,115 @@ class BaseService{
         return $dept->timezone;
 
     }
+
+    public function setupHistoryManager($type, $historyManager){
+        $this->historyManagers[$type] = $historyManager;
+    }
+
+    public function addHistoryItem($historyManagerType, $type, $refId , $field, $oldVal, $newVal){
+        if(isset($this->historyManagers[$historyManagerType])){
+            return $this->historyManagers[$historyManagerType]->addHistory($type, $refId , $field, $oldVal, $newVal);
+        }
+        return false;
+    }
+
+    public function getItemFromCache($class, $id){
+        $data = MemcacheService::getInstance()->get($class."-".$id);
+        if($data !== false){
+            return unserialize($data);
+        }
+
+        $obj = new $class();
+        $obj->Load("id = ?",array($id));
+        if($obj->id != $id){
+            return null;
+        }
+
+        MemcacheService::getInstance()->set($class."-".$id, serialize($obj), 10 * 60);
+
+        return $obj;
+
+    }
 }
+
+
+class MemcacheService {
+    
+    private $connection 	        = null;
+    public static $openConnections 	= array();
+    private static $me 	= null;
+
+    private function __construct(){}
+
+    public static function getInstance(){
+        if(self::$me == null){
+            self::$me = new MemcacheService();
+        }
+
+        return self::$me;
+    }
+    
+
+    private function connect() {
+
+        if($this->connection == null) {
+            $this->connection = new Memcached();
+            $this->connection->addServer(MEMCACHE_HOST, MEMCACHE_PORT);
+
+            if(!$this->isConnected()) {
+                $this->connection = null;
+            } else {
+                self::$openConnections[] = $this->connection;
+            }
+        }
+        return $this->connection;
+    }
+
+    private function isConnected(){
+        $statuses = $this->connection->getStats();
+        return isset($statuses[$this->memcacheHost.":".$this->memcachePort]);
+    }
+
+    private function compressKey($key) {
+        return crc32(APP_DB.$key).md5(CLIENT_NAME);
+    }
+
+    public function set($key, $value, $expiry = 3600) {
+        $key = $this->compressKey($key);
+        $memcache = $this->connect();
+
+        if (!empty($memcache) && $this->isConnected()) {
+            $ok = $memcache->set($key, $value, time() + $expiry);
+            if(!$ok) {
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
+
+
+    public function get($key) {
+        $key = $this->compressKey($key);
+        $memcache = $this->connect();
+        if(!empty($memcache) && $this->isConnected()) {
+            return $memcache->get($key);
+        } else {
+            return false;
+        }
+    }
+
+    public function close() {
+        if($this->connection != null) {
+            if($this->isConnected()) {
+                $this->connection->quit();
+            }
+            $this->connection = null;
+        }
+    }
+}
+
+
 
 class IceConstants{
 	const AUDIT_AUTHENTICATION = "Authentication";
@@ -1186,4 +1351,8 @@ class IceConstants{
 	const NOTIFICATION_LEAVE = "Leave Module";
 	const NOTIFICATION_TIMESHEET = "Time Module";
     const NOTIFICATION_TRAINING = "Training Module";
+}
+
+interface HistoryManager{
+    public function addHistory($type, $refId, $field, $oldValue, $newValue);
 }

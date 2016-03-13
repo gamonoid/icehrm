@@ -103,10 +103,6 @@ foreach($ams as $am){
 			if($addNewPermissions && isset($meta->permissions)){
 				createPermissions($meta, $dbModule->id);
 			}
-			
-			if($dbModule->status == 'Disabled'){
-				continue;	
-			}
 
 
             $arr['name'] = $dbModule->name;
@@ -140,6 +136,9 @@ foreach($ams as $am){
 		}
 
         includeModuleManager('admin',$am, $arr);
+        if($dbModule->status == 'Disabled'){
+            continue;
+        }
 		
 		if(!isset($adminModulesTemp[$arr['menu']])){
 			$adminModulesTemp[$arr['menu']] = array();	
@@ -191,10 +190,7 @@ foreach($ams as $am){
 			if($addNewPermissions && isset($meta->permissions)){
 				createPermissions($meta, $dbModule->id);
 			}
-			
-			if($dbModule->status == 'Disabled'){
-				continue;
-			}
+
 
             $arr['name'] = $dbModule->name;
             $arr['label'] = $dbModule->label;
@@ -226,6 +222,10 @@ foreach($ams as $am){
 		}
 
         includeModuleManager('modules',$am, $arr);
+
+        if($dbModule->status == 'Disabled'){
+            continue;
+        }
 		
 		if(!isset($userModulesTemp[$arr['menu']])){
 			$userModulesTemp[$arr['menu']] = array();	

@@ -40,7 +40,7 @@ abstract class EmailSender{
                 array(),
                 array(),
                 array()
-                );
+            );
         }
     }
 
@@ -281,7 +281,9 @@ class SMTPEmailSender extends EmailSender{
 
 
         $mail = $smtp->send($toEmail, $headers, $body);
-
+        if (PEAR::isError($mail)) {
+            LogManager::getInstance()->info("SMTP Error Response:".$mail->getMessage());
+        }
 
         return $mail;
     }

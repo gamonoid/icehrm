@@ -58,8 +58,12 @@ if(!in_array($user->user_level, $modulePermissions['user'])){
     }
     $commonRoles = array_intersect($modulePermissions['user_roles'], $userRoles);
     if(empty($commonRoles)){
-        echo "You are not allowed to access this page";
-        header("Location:".CLIENT_BASE_URL."logout.php");
+        session_start();
+        $_SESSION['user'] = null;
+        session_destroy();
+        session_write_close();
+        $user = null;
+        header("Location:".CLIENT_BASE_URL."login.php?f=1&fm=You are not allowed to access this module");
         exit();
     }
 
@@ -149,8 +153,8 @@ include('configureUIManager.php');
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="<?=BASE_URL?>js/html5shiv.js"></script>
+    <script src="<?=BASE_URL?>js/respond.min.js"></script>
     <![endif]-->
     <script>
         var baseUrl = '<?=CLIENT_BASE_URL?>service.php';
@@ -190,7 +194,7 @@ include('configureUIManager.php');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </a>
-        <div class="logo" style="background: #3c8dbc;text-align: left;">
+        <div class="logo logoResponsive">
             <?=$companyName?>
         </div>
         <div class="navbar-right">

@@ -652,3 +652,13 @@ table.dataTable{
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
 }
+
+.logoResponsive{
+    background: #3c8dbc !important;
+    text-align: left !important;
+    width:50% !important;
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+    .logoResponsive { display: none !important;}
+}

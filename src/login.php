@@ -66,7 +66,7 @@ $logoFileUrl = UIManager::getInstance()->getCompanyLogoUrl();
     <!-- Le styles -->
     <link href="<?=BASE_URL?>bootstrap/css/bootstrap.css" rel="stylesheet">
 	
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js"></script>
+	<script type="text/javascript" src="<?=BASE_URL?>js/jquery-1.8.1.js"></script>
     <script src="<?=BASE_URL?>bootstrap/js/bootstrap.js"></script>
 	<script src="<?=BASE_URL?>js/jquery.placeholder.js"></script>
 	<script src="<?=BASE_URL?>js/jquery.dataTables.js"></script>

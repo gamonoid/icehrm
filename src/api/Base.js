@@ -1678,7 +1678,10 @@ IceHRMBase.method('fillForm', function(object, formId, fields) {
 			if(placeHolderVal == undefined || placeHolderVal == null){
 				placeHolderVal = "";
 			}else{
-				placeHolderVal = placeHolderVal.replace(/(?:\r\n|\r|\n)/g, '<br />');
+                try{
+                    placeHolderVal = placeHolderVal.replace(/(?:\r\n|\r|\n)/g, '<br />');
+                }catch(e){}
+
 			}
 			
 			
@@ -2160,3 +2163,12 @@ IceHRMBase.method('generateOptions', function (data) {
 
     return options;
 });
+
+IceHRMBase.method('isModuleInstalled', function (type, name) {
+    if(modulesInstalled == undefined || modulesInstalled == null){
+        return false;
+    }
+
+    return (modulesInstalled[type+"_"+name] == 1);
+});
+

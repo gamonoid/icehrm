@@ -194,5 +194,19 @@ abstract class AbstractModuleManager{
 		$this->modelClasses[] = $className;
 	}
 
+    protected function addHistoryGeneric($type, $table, $refName, $refId, $field, $oldValue, $newValue){
+        $eh = new $table();
+        $eh->type = $type;
+        $eh->$refName = $refId;
+        $eh->field = $field;
+        $eh->user = BaseService::getInstance()->getCurrentUser()->id;
+        $eh->old_value = $oldValue;
+        $eh->new_value = $newValue;
+        $eh->created = date("Y-m-d H:i:s");
+        $eh->updated = date("Y-m-d H:i:s");
+
+        $eh->Save();
+    }
+
 
 }

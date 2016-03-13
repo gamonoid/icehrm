@@ -532,6 +532,21 @@ That way you can attach each and every project to a client.
 Under employee projects tab you can assign projects to employees. You need to add projects to employees to enable them to add time against 
 these projects in time-sheets.
 
+Release note v15.2
+------------------
+
+### Features
+ * Overtime Reports
+ * Overtime calculation for california
+ 
+### Fixes
+ * Fix issue: uncaught error when placeholder value is empty
+ * Log email sending success status
+ * Fix broken longer company name issue
+ * Make the application accessible when client on an intranet with no internet connection
+ * Fix issue: when a module is disabled other modules depend on it stops working
+
+
 Release note v15.0
 ------------------
 

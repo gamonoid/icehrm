@@ -41,17 +41,22 @@ class FileService{
 
     public function getFromCache($key){
         try{
+            /*
             if(empty($this->memcache)){
                 $this->memcache = new Memcached();
                 $this->memcache->addServer("127.0.0.1", 11211);
             }
-
             $data = $this->memcache->get($key);
+            */
+
+            $data = MemcacheService::getInstance()->get($key);
+
             if(!empty($data)){
                 return $data;
             }
 
             return null;
+
         }catch(Exception $e){
             return null;
         }

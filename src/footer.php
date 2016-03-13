@@ -105,6 +105,8 @@
 		});
 		var clientUrl = '<?=CLIENT_BASE_URL?>';
 
+        var modulesInstalled = <?=json_encode(BaseService::getInstance()->getModuleManagerNames())?>;
+
 		$(document).ready(function() {
 
 			$(".dataTables_paginate ul").addClass("pagination");

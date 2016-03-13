@@ -14,9 +14,9 @@ if($_REQUEST['file_type']=="image"){
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js?v=1.1"></script>
-<script type="text/javascript" src="https://webstalk-js.s3.amazonaws.com/date.js"></script>
-<script type="text/javascript" src="https://webstalk-js.s3.amazonaws.com/json2.js"></script>
+<script type="text/javascript" src="<?=BASE_URL?>js/jquery-1.5.2.js"></script>
+<script type="text/javascript" src="<?=BASE_URL?>js/date.js"></script>
+<script type="text/javascript" src="<?=BASE_URL?>js/json2.js"></script>
 
 </head>
 <body>

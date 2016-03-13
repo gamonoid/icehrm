@@ -47,6 +47,7 @@ class Setting extends ICEHRM_Record {
 	public function getUserAccess(){
 		return array();
 	}
+
 	var $_table = 'Settings';
 }
 
