@@ -529,11 +529,22 @@ for these clients. The clients section represent both external and internal clie
 That way you can attach each and every project to a client.
 
 ###Employee Projects
+
 Under employee projects tab you can assign projects to employees. You need to add projects to employees to enable them to add time against 
 these projects in time-sheets.
 
-Release note v15.3
+Release note v16.0
 ------------------
+### Features
+ * Advanced Employee Management Module is now included in IceHrm Open Source Edition
+ * LDAP Module which was only available in IceHrm Enterprise is now included in open source also
+ * Initial implementation of icehrm REST Api for reading employee details
+ * Improvements to data filtering
+ * Multiple tabs for settings module
+ * Overtime reports - now its possible to calculate overtime for employees.compatible with US overtime rules
+ * Logout the user if tried accessing an unauthorized module
+ * Setting for updating module names
+ 
 ### Fixes
  * Fix issue: classes should be loaded even the module is disabled
  * Deleting the only Admin user is not allowed

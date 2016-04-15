@@ -54,10 +54,39 @@ if (!class_exists('User')) {
 				if(count($users) > 0){
 					return new IceResponse(IceResponse::ERROR,"A user with same authentication email already exist");
 				}
+
+                //Check if you are trying to change user level
+                $oldUser = new User();
+                $oldUser->Load("id = ?",array($obj->id));
+                if($oldUser->user_level != $obj->user_level && $oldUser->user_level == 'Admin'){
+                    $adminUsers = $userTemp->Find("user_level = ?",array("Admin"));
+                    if(count($adminUsers) == 1 && $adminUsers[0]->id == $obj->id){
+                        return new IceResponse(IceResponse::ERROR,"You are the only admin user for the application. You are not allowed to revoke your admin rights");
+                    }
+                }
+
+
 			}
+
+            //Check if the user have rights to the default module
+            if(!empty($obj->default_module)){
+                $module = new Module();
+                $module->Load("id = ?",array($obj->default_module));
+                if($module->mod_group == "user"){
+                    $module->mod_group = "modules";
+                }
+                $moduleManager = BaseService::getInstance()->getModuleManager($module->mod_group, $module->name);
+                if(!BaseService::getInstance()->isModuleAllowedForGivenUser($moduleManager, $obj)){
+                    return new IceResponse(IceResponse::ERROR,"This module can not be set as the default module for the user since the user do not have access to this module");
+                }
+
+            }
+
+
 	
 			return new IceResponse(IceResponse::SUCCESS,"");
 		}
+
 	
 		var $_table = 'Users';
 	}	

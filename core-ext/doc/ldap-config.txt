@@ -1,0 +1,27 @@
+Before using please install php5-ldap module
+sudo apt-get install php5-ldap
+
+For using php ldap on windows please refer
+http://stackoverflow.com/questions/16864306/fatal-error-call-to-undefined-function-ldap-connect
+
+
+The user "admin" will always login with local db username and password (even LDAP is enabled)
+
+Use following config to test LDAP connection with following test LDAP server
+http://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/
+
+Change configs as follows under System->Settings
+
+LDAP: Enabled = Yes
+LDAP: Server = ldap.forumsys.com
+LDAP: Port = 389
+LDAP: Root DN = dc=example,dc=com
+LDAP: Manager DN = cn=read-only-admin,dc=example,dc=com
+LDAP: Manager Password = password
+LDAP: Version 3 = Yes
+LDAP: User Filter = uid={}
+
+Then create a user with username "riemann" under System->Users
+
+Logout and try login with riemann/password
+

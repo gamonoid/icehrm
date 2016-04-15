@@ -62,24 +62,46 @@ SettingAdapter.method('edit', function(id) {
 
 
 SettingAdapter.method('fillForm', function(object) {
-	this.uber('fillForm',object);
+
+	var metaField = this.getMetaFieldForRendering('value');
+	var metaVal = object[metaField];
+	var formFields = null;
+
+	if(metaVal != "" && metaVal != undefined){
+		var formFields = [
+			[ "id", {"label":"ID","type":"hidden"}],
+			JSON.parse(metaVal)
+		];
+	}
+
+
+	this.uber('fillForm',object, null, formFields);
 	$("#helptext").html(object.description);
 });
 
 
 SettingAdapter.method('loadRemoteDataForSettings', function () {
-    var field = ["country", {"label": "Country", "type": "select2", "remote-source": ["Country", "code", "name"]}];
-    if (field[1]['remote-source'] != undefined && field[1]['remote-source'] != null) {
-        var key = field[1]['remote-source'][0] + "_" + field[1]['remote-source'][1] + "_" + field[1]['remote-source'][2];
-        this.fieldMasterDataKeys[key] = false;
-        this.sourceMapping[field[0]] = field[1]['remote-source'];
+	var fields = [];
+	var field = null;
+	fields.push(["country", {"label": "Country", "type": "select2multi", "remote-source": ["Country", "id", "name"]}]);
+	fields.push(["currency", {"label": "Currency", "type": "select2multi", "remote-source": ["CurrencyType","id","code+name"]}]);
+	fields.push(["nationality", {"label": "Nationality", "type": "select2multi", "remote-source": ["Nationality","id","name"]}]);
 
-        var callBackData = {};
-        callBackData['callBack'] = 'initFieldMasterDataResponse';
-        callBackData['callBackData'] = [key];
+	for(index in fields){
+		field = fields[index];
+		if (field[1]['remote-source'] != undefined && field[1]['remote-source'] != null) {
+			var key = field[1]['remote-source'][0] + "_" + field[1]['remote-source'][1] + "_" + field[1]['remote-source'][2];
+			this.fieldMasterDataKeys[key] = false;
+			this.sourceMapping[field[0]] = field[1]['remote-source'];
 
-        this.getFieldValues(field[1]['remote-source'], callBackData);
-    }
+			var callBackData = {};
+			callBackData['callBack'] = 'initFieldMasterDataResponse';
+			callBackData['callBackData'] = [key];
+
+			this.getFieldValues(field[1]['remote-source'], callBackData);
+		}
+	}
+
 });
 
 

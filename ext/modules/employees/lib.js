@@ -22,11 +22,56 @@ Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilin
 
 function EmployeeAdapter(endPoint) {
 	this.initAdapter(endPoint);
+    this.fieldNameMap = {};
+    this.hiddenFields = {};
+    this.tableFields = {};
+    this.formOnlyFields = {};
+    this.customFields = [];
 }
 
 EmployeeAdapter.inherits(AdapterBase);
 
 this.currentUserId = null;
+
+EmployeeAdapter.method('setFieldNameMap', function(fields) {
+    var field;
+    for(var i=0;i<fields.length;i++){
+        field = fields[i];
+        this.fieldNameMap[field.name] = field;
+        if(field.display == "Hidden"){
+            this.hiddenFields[field.name] = field;
+        }else{
+            if(field.display == "Table and Form"){
+                this.tableFields[field.name] = field;
+            }else{
+                this.formOnlyFields[field.name] = field;
+            }
+
+        }
+    }
+});
+
+EmployeeAdapter.method('setCustomFields', function(fields) {
+	  var field, parsed;
+	  for(var i=0;i<fields.length;i++){
+	      field = fields[i];
+	      if(field.display != "Hidden" && field.data != "" && field.data != undefined){
+	    	  try{
+	    		parsed = JSON.parse(field.data);
+	    		if(parsed == undefined || parsed == null){
+	    			continue;
+	    		}else if(parsed.length != 2){
+	    			continue;
+	    		}else if(parsed[1].type == undefined || parsed[1].type == null){
+	    			continue;
+	    		}
+	    		this.customFields.push(parsed);
+	    	  }catch(e){
+	    		  
+	    	  }
+	      }
+	  }
+	});
 
 EmployeeAdapter.method('getDataMapping', function() {
 	return [
@@ -55,7 +100,7 @@ EmployeeAdapter.method('getHeaders', function() {
 });
 
 EmployeeAdapter.method('getFormFields', function() {
-	
+	var fields, newFields = [];
 	var employee_id, ssn_num, employment_status, job_title, pay_grade, joined_date, department, work_email, country;
 	
 	if(this.checkPermission("Edit Employee Number") == "Yes"){
@@ -111,8 +156,8 @@ EmployeeAdapter.method('getFormFields', function() {
 	}else{
 		country = [ "country", {"label":"Country","type":"placeholder","remote-source":["Country","code","name"]}];
 	}
-	
-	return [
+
+    fields = [
 	        [ "id", {"label":"ID","type":"hidden","validation":""}],
 	        employee_id,
 	        [ "first_name", {"label":"First Name","type":"text","validation":""}],
@@ -144,6 +189,24 @@ EmployeeAdapter.method('getFormFields', function() {
 	        joined_date,
 	        department
 	];
+    
+    for(var i=0;i<this.customFields.length;i++){
+		fields.push(this.customFields[i]);
+	}
+
+
+    for(var i=0;i<fields.length;i++){
+    	tempField = fields[i];
+        if(this.hiddenFields[tempField[0]] == undefined || this.hiddenFields[tempField[0]] == null ){
+            if(this.fieldNameMap[tempField[0]] != undefined && this.fieldNameMap[tempField[0]] != null){
+                title = this.fieldNameMap[tempField[0]].textMapped;
+                tempField[1]['label'] = title;
+            }
+            newFields.push(tempField);
+        }
+    }
+
+    return newFields;
 });
 
 EmployeeAdapter.method('getSourceMapping' , function() {
@@ -187,17 +250,28 @@ EmployeeAdapter.method('modEmployeeDeleteProfileImageCallBack', function(data) {
 });
 
 EmployeeAdapter.method('modEmployeeGetSuccessCallBack' , function(data) {
+    var fields = this.getFormFields();
 	var currentEmpId = data[1];
 	var userEmpId = data[2];
 	data = data[0];
 	var html = this.getCustomTemplate('myDetails.html');
-	
+
+    for(var i=0;i<fields.length;i++) {
+        if(this.fieldNameMap[fields[i][0]] != undefined && this.fieldNameMap[fields[i][0]] != null){
+            title = this.fieldNameMap[fields[i][0]].textMapped;
+            html = html.replace("#_label_"+fields[i][0]+"_#",title);
+        }
+    }
+
+    html = html.replace(/#_.+_#/i,"");
+
 	html = html.replace(/_id_/g,data.id);
 	
 	$("#"+this.getTableName()).html(html);
-	var fields = this.getFormFields();
+
 	for(var i=0;i<fields.length;i++) {
 		$("#"+this.getTableName()+" #" + fields[i][0]).html(data[fields[i][0]]);
+        $("#"+this.getTableName()+" #" + fields[i][0]+"_Name").html(data[fields[i][0]+"_Name"]);
 	}
 	
 	var subordinates = "";
@@ -217,14 +291,7 @@ EmployeeAdapter.method('modEmployeeGetSuccessCallBack' , function(data) {
 	}
 	
 	$("#"+this.getTableName()+" #subordinates").html(subordinates);
-	
-	$("#"+this.getTableName()+" #nationality_Name").html(data.nationality_Name);
-	$("#"+this.getTableName()+" #employment_status_Name").html(data.employment_status_Name);
-	$("#"+this.getTableName()+" #job_title_Name").html(data.job_title_Name);
-	$("#"+this.getTableName()+" #country_Name").html(data.country_Name);
-	$("#"+this.getTableName()+" #province_Name").html(data.province_Name);
-	$("#"+this.getTableName()+" #supervisor_Name").html(data.supervisor_Name);
-	$("#"+this.getTableName()+" #department_Name").html(data.department_Name);
+
 	
 	$("#"+this.getTableName()+" #name").html(data.first_name + " " + data.last_name);
 	this.currentUserId = data.id;
@@ -318,16 +385,15 @@ EmployeeAdapter.method('changePasswordFailCallBack', function(callBackData,serve
  * Company Graph
  */
 
-
-function CompanyGraphAdapter(endPoint) {
+function CompanyStructureAdapter(endPoint) {
 	this.initAdapter(endPoint);
 }
 
-CompanyGraphAdapter.inherits(AdapterBase);
+CompanyStructureAdapter.inherits(AdapterBase);
 
 
 
-CompanyGraphAdapter.method('getDataMapping', function() {
+CompanyStructureAdapter.method('getDataMapping', function() {
 	return [
 	        "id",
 	        "title",
@@ -338,7 +404,7 @@ CompanyGraphAdapter.method('getDataMapping', function() {
 	];
 });
 
-CompanyGraphAdapter.method('getHeaders', function() {
+CompanyStructureAdapter.method('getHeaders', function() {
 	return [
 			{ "sTitle": "ID","bVisible":false },
 			{ "sTitle": "Name" },
@@ -349,7 +415,7 @@ CompanyGraphAdapter.method('getHeaders', function() {
 	];
 });
 
-CompanyGraphAdapter.method('getFormFields', function() {
+CompanyStructureAdapter.method('getFormFields', function() {
 	return [
 	        [ "id", {"label":"ID","type":"hidden","validation":""}],
 	        [ "title", {"label":"Name","type":"text","validation":""}],
@@ -361,25 +427,252 @@ CompanyGraphAdapter.method('getFormFields', function() {
 	];
 });
 
-CompanyGraphAdapter.method('createTable', function(elementId) {
 
-	var sourceData = this.sourceData;
 
-	if(modJs['r'] == undefined || modJs['r'] == null){
-		modJs['r'] = Raphael("CompanyGraph", 800, 1000);
-	}else{
-		return;
-	}
+function CompanyGraphAdapter(endPoint) {
+	this.initAdapter(endPoint);
+	this.nodeIdCounter = 0;
+}
 
-	var r = modJs['r'];
+CompanyGraphAdapter.inherits(CompanyStructureAdapter);
 
-	for(var i=0; i< sourceData.length; i++){
-		sourceData[i].parent = sourceData[i]._original[6];
+
+CompanyGraphAdapter.method('convertToTree', function(data) {
+	var ice = {};
+	ice['id'] = -1;
+	ice['title'] = '';
+	ice['name'] = '';
+	ice['children'] = [];
+	
+	var parent = null;
+	
+	var added = {};
+	
+	
+	for(var i=0;i<data.length;i++){
+		
+		data[i].name = data[i].title;
+		
+		if(data[i].parent != null && data[i].parent != undefined){
+			parent = this.findParent(data,data[i].parent);
+			if(parent != null){
+				if(parent.children == undefined || parent.children == null){
+					parent.children = [];
+				}
+				parent.children.push(data[i]);
+			}
+		}
+		
 	}
 	
-	var hierarchy = new HierarchyJs();
-	var nodes = hierarchy.createNodes(sourceData);
-	hierarchy.createHierarchy(nodes, r);
+	for(var i=0;i<data.length;i++){
+		if(data[i].parent == null || data[i].parent == undefined){
+			ice['children'].push(data[i]);
+		}
+	}
 	
+	return ice;
 	
 });
+
+
+CompanyGraphAdapter.method('findParent', function(data, parent) {
+	for(var i=0;i<data.length;i++){
+		if(data[i].title == parent || data[i].title == parent){
+			return data[i];
+		}
+	}
+	return null;
+});
+
+
+CompanyGraphAdapter.method('createTable', function(elementId) {
+	$("#tabPageCompanyGraph").html("");
+	var that = this;
+	var sourceData = this.sourceData;
+	
+	//this.fixCyclicParent(sourceData);
+	var treeData = this.convertToTree(sourceData);
+	
+	var m = [20, 120, 20, 120],
+    w = 5000 - m[1] - m[3],
+    h = 1000 - m[0] - m[2],
+    root;
+
+	var tree = d3.layout.tree()
+	    .size([h, w]);
+	
+	this.diagonal  = d3.svg.diagonal()
+	    .projection(function(d) { return [d.y, d.x]; });
+	
+	this.vis = d3.select("#tabPageCompanyGraph").append("svg:svg")
+	    .attr("width", w + m[1] + m[3])
+	    .attr("height", h + m[0] + m[2])
+	    .append("svg:g")
+	    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+	
+	  root = treeData;
+	  root.x0 = h / 2;
+	  root.y0 = 0;
+	
+	  function toggleAll(d) {
+	    if (d.children) {
+	      console.log(d.name);
+	      d.children.forEach(toggleAll);
+	      that.toggle(d);
+	    }
+	  }
+	  this.update(root, tree, root);
+	  
+	  
+	
+});
+
+CompanyGraphAdapter.method('update', function(source, tree, root) {
+	var that = this;
+	  var duration = d3.event && d3.event.altKey ? 5000 : 500;
+
+	  // Compute the new tree layout.
+	  var nodes = tree.nodes(root).reverse();
+
+	  // Normalize for fixed-depth.
+	  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+	  // Update the nodes�
+	  var node = that.vis.selectAll("g.node")
+	      .data(nodes, function(d) { return d.id || (d.id = ++that.nodeIdCounter); });
+
+	  // Enter any new nodes at the parent's previous position.
+	  var nodeEnter = node.enter().append("svg:g")
+	      .attr("class", "node")
+	      .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+	      .on("click", function(d) { that.toggle(d); that.update(d, tree, root); });
+
+	  nodeEnter.append("svg:circle")
+	      .attr("r", 1e-6)
+	      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+	  nodeEnter.append("svg:text")
+	      .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+	      .attr("dy", ".35em")
+	      .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+	      .text(function(d) { return d.name; })
+	      .style("fill-opacity", 1e-6);
+
+	  // Transition nodes to their new position.
+	  var nodeUpdate = node.transition()
+	      .duration(duration)
+	      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+	  nodeUpdate.select("circle")
+	      .attr("r", 4.5)
+	      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+	  nodeUpdate.select("text")
+	      .style("fill-opacity", 1);
+
+	  // Transition exiting nodes to the parent's new position.
+	  var nodeExit = node.exit().transition()
+	      .duration(duration)
+	      .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+	      .remove();
+
+	  nodeExit.select("circle")
+	      .attr("r", 1e-6);
+
+	  nodeExit.select("text")
+	      .style("fill-opacity", 1e-6);
+
+	  // Update the links�
+	  var link = that.vis.selectAll("path.link")
+	      .data(tree.links(nodes), function(d) { return d.target.id; });
+
+	  // Enter any new links at the parent's previous position.
+	  link.enter().insert("svg:path", "g")
+	      .attr("class", "link")
+	      .attr("d", function(d) {
+	        var o = {x: source.x0, y: source.y0};
+	        return that.diagonal({source: o, target: o});
+	      })
+	    .transition()
+	      .duration(duration)
+	      .attr("d", that.diagonal);
+
+	  // Transition links to their new position.
+	  link.transition()
+	      .duration(duration)
+	      .attr("d", that.diagonal);
+
+	  // Transition exiting nodes to the parent's new position.
+	  link.exit().transition()
+	      .duration(duration)
+	      .attr("d", function(d) {
+	        var o = {x: source.x, y: source.y};
+	        return that.diagonal({source: o, target: o});
+	      })
+	      .remove();
+
+	  // Stash the old positions for transition.
+	  nodes.forEach(function(d) {
+	    d.x0 = d.x;
+	    d.y0 = d.y;
+	  });
+});
+
+// Toggle children.
+CompanyGraphAdapter.method('toggle', function(d) {
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+});
+
+
+CompanyGraphAdapter.method('getSourceDataById', function(id) {
+
+	for(var i=0; i< this.sourceData.length; i++){
+		if(this.sourceData[i].id == id){
+			return this.sourceData[i];
+		}
+	}
+	
+	return null;
+	
+});
+
+CompanyGraphAdapter.method('fixCyclicParent', function(sourceData) {
+	var errorMsg = "";
+	for(var i=0; i< sourceData.length; i++){
+		var obj = sourceData[i];
+		
+		
+		var curObj = obj;
+		var parentIdArr = {};
+		parentIdArr[curObj.id] = 1;
+		
+		while(curObj.parent != null && curObj.parent != undefined){
+			var parent = this.getSourceDataById(curObj.parent);
+			if(parent == null){
+				break;
+			}else if(parentIdArr[parent.id] == 1){
+				errorMsg = obj.title +"'s parent structure set to "+parent.title+"<br/>";
+				obj.parent = null;
+				break;
+			}
+			parentIdArr[parent.id] = 1;
+			curObj = parent;
+		}
+	}
+	
+	if(errorMsg != ""){
+		this.showMessage("Company Structure is having a cyclic dependency","We found a cyclic dependency due to following reasons:<br/>"+errorMsg);
+		return false;
+	}
+	
+	return true;
+	
+});
+

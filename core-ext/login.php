@@ -3,17 +3,66 @@ define('CLIENT_PATH',dirname(__FILE__));
 include ("config.base.php");
 include ("include.common.php");
 include("server.includes.inc.php");
+
+error_log(print_r($_REQUEST,true));
+
 if(empty($user)){
+
+    if(!isset($_REQUEST['f']) && isset($_COOKIE['icehrmLF']) && $_REQUEST['login'] != 'no' && !isset($_REQUEST['username'])){
+        $tempUser = new User();
+        $tempUser->Load("login_hash = ?",array($_COOKIE['icehrmLF']));
+
+        if(!empty($tempUser->id) &&
+            sha1($tempUser->email."_".$tempUser->password) == $_COOKIE['icehrmLF']){
+
+            $_REQUEST['username'] = $tempUser->username;
+            $_REQUEST['password'] = $tempUser->password;
+            $_REQUEST['hashedPwd'] = $tempUser->password;
+        }
+    }
+
     if(!empty($_REQUEST['username']) && !empty($_REQUEST['password'])){
+
         $suser = null;
         $ssoUserLoaded = false;
 
-        if(empty($suser)){
-            $suser = new User();
-            $suser->Load("(username = ? or email = ?) and password = ?",array($_REQUEST['username'],$_REQUEST['username'],md5($_REQUEST['password'])));
+        if($_REQUEST['username'] != "admin") {
+            LogManager::getInstance()->debug("LDAP: Enabled :" . SettingsManager::getInstance()->getSetting("LDAP: Enabled"));
+            if (SettingsManager::getInstance()->getSetting("LDAP: Enabled") == "1") {
+                $ldapResp = LDAPManager::getInstance()->checkLDAPLogin($_REQUEST['username'], $_REQUEST['password']);
+                LogManager::getInstance()->debug("LDAP Response :" . json_encode($ldapResp));
+                if ($ldapResp->getStatus() == IceResponse::ERROR) {
+                    header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
+                    exit();
+                } else {
+                    $suser = new User();
+                    $suser->Load("username = ?", array($_REQUEST['username']));
+
+                    if (empty($suser)) {
+                        header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
+                        exit();
+                    }
+
+                    $ssoUserLoaded = true;
+                }
+            }
         }
 
-        if($suser->password == md5($_REQUEST['password']) || $ssoUserLoaded){
+
+        if(!isset($_REQUEST['hashedPwd'])){
+            $_REQUEST['hashedPwd'] = md5($_REQUEST['password']);
+        }
+        $suser = null;
+        $ssoUserLoaded = false;
+
+        include 'login.com.inc.php';
+
+        if(empty($suser)){
+            $suser = new User();
+            $suser->Load("(username = ? or email = ?) and password = ?",array($_REQUEST['username'],$_REQUEST['username'],$_REQUEST['hashedPwd']));
+        }
+
+        if($suser->password == $_REQUEST['hashedPwd'] || $ssoUserLoaded){
             $user = $suser;
             SessionUtils::saveSessionObject('user', $user);
             $suser->last_login = date("Y-m-d H:i:s");
@@ -24,12 +73,29 @@ if(empty($user)){
                 BaseService::getInstance()->audit(IceConstants::AUDIT_AUTHENTICATION, "User Login");
             }
 
+            if(!$ssoUserLoaded && isset($_REQUEST['remember'])){
+                //Add cookie
+                $suser->login_hash = sha1($suser->email."_".$suser->password);
+                $suser->Save();
+
+                setcookie('icehrmLF',$suser->login_hash);
+            }
+
+            if(!isset($_REQUEST['remember'])){
+                setcookie('icehrmLF');
+            }
+
             $redirectUrl = SessionUtils::getSessionObject('loginRedirect');
             if(!empty($redirectUrl)){
                 header("Location:".$redirectUrl);
             }else{
                 if($user->user_level == "Admin"){
-                    header("Location:".HOME_LINK_ADMIN);
+                    if(SessionUtils::getSessionObject('account_locked') == "1"){
+                        header("Location:".CLIENT_BASE_URL."?g=admin&n=billing&m=admin_System");
+                    }else{
+                        header("Location:".HOME_LINK_ADMIN);
+                    }
+
                 }else{
                     if(empty($user->default_module)){
                         header("Location:".HOME_LINK_OTHERS);
@@ -39,12 +105,13 @@ if(empty($user)){
                         if($defaultModule->mod_group == "user"){
                             $defaultModule->mod_group = "modules";
                         }
-                        $homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&n=".$defaultModule->name.
+                        $homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&&n=".$defaultModule->name.
                             "&m=".$defaultModule->mod_group."_".str_replace(" ","_",$defaultModule->menu);
                         header("Location:".$homeLink);
                     }
                 }
             }
+
         }else{
             header("Location:".CLIENT_BASE_URL."login.php?f=1");
         }
@@ -70,27 +137,25 @@ if(empty($user)){
 }
 
 $tuser = SessionUtils::getSessionObject('user');
-//check user
-
 $logoFileUrl = UIManager::getInstance()->getCompanyLogoUrl();
 
 ?><!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title><?=APP_NAME?> Login v<?=VERSION?> &copy; http://icehrm.com</title>
+    <title><?=APP_NAME?> Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A Powerful But Simple Way to Manage Your Company and People. http://icehrm.com">
-    <meta name="author" content="http://gamonoid.com">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <!-- Le styles -->
     <link href="<?=BASE_URL?>bootstrap/css/bootstrap.css" rel="stylesheet">
-	
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js"></script>
+
+    <script type="text/javascript" src="<?=BASE_URL?>js/jquery-1.8.1.js"></script>
     <script src="<?=BASE_URL?>bootstrap/js/bootstrap.js"></script>
-	<script src="<?=BASE_URL?>js/jquery.placeholder.js"></script>
-	<script src="<?=BASE_URL?>js/jquery.dataTables.js"></script>
-	<script src="<?=BASE_URL?>js/bootstrap-datepicker.js"></script>
+    <script src="<?=BASE_URL?>js/jquery.placeholder.js"></script>
+    <script src="<?=BASE_URL?>js/jquery.dataTables.js"></script>
+    <script src="<?=BASE_URL?>js/bootstrap-datepicker.js"></script>
     <link href="<?=BASE_URL?>bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="<?=BASE_URL?>css/DT_bootstrap.css?v=0.4" rel="stylesheet">
     <link href="<?=BASE_URL?>css/datepicker.css" rel="stylesheet">
@@ -98,7 +163,7 @@ $logoFileUrl = UIManager::getInstance()->getCompanyLogoUrl();
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="<?=BASE_URL?>js/html5.js"></script>
     <![endif]-->
 
     <style type="text/css">
@@ -113,29 +178,29 @@ $logoFileUrl = UIManager::getInstance()->getCompanyLogoUrl();
             width: 300px;
         }
 
-      /* The white background content wrapper */
-      .container > .content {
-          min-height: 0px !important;
-        background-color: #fff;
-        padding: 20px;
-        margin: 0 -20px;
-          -webkit-border-radius:0px;
-          -moz-border-radius:0px;
-          border-radius: 0px;
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-                box-shadow: 0 1px 2px rgba(0,0,0,.15);
-      }
+        /* The white background content wrapper */
+        .container > .content {
+            min-height: 0px !important;
+            background-color: #fff;
+            padding: 20px;
+            margin: 0 -20px;
+            -webkit-border-radius:0px;
+            -moz-border-radius:0px;
+            border-radius: 0px;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+            box-shadow: 0 1px 2px rgba(0,0,0,.15);
+        }
 
-	  .login-form {
-		margin-left: 65px;
-	  }
-	
-	  legend {
-		margin-right: -50px;
-		font-weight: bold;
-	  	color: #404040;
-	  }
+        .login-form {
+            margin-left: 65px;
+        }
+
+        legend {
+            margin-right: -50px;
+            font-weight: bold;
+            color: #404040;
+        }
 
         .add-on{
             -webkit-border-radius:0px;
@@ -143,212 +208,203 @@ $logoFileUrl = UIManager::getInstance()->getCompanyLogoUrl();
             border-radius: 0px;
         }
 
-      input{
-          -webkit-border-radius:0px;
-          -moz-border-radius:0px;
-          border-radius: 0px;
-      }
+        input{
+            -webkit-border-radius:0px;
+            -moz-border-radius:0px;
+            border-radius: 0px;
+        }
 
     </style>
 
 
 </head>
 
-  <body>
-  <div itemscope itemtype="http://schema.org/WebApplication" style="display: none;">
-      <span itemprop="name">IceHrm Pro</span> -
+<body>
 
-      REQUIRES <span itemprop="operatingSystem">Windows, OSX, Linux</span>
-      <link itemprop="applicationCategory" href="http://icehrm.com"/>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      RATING:
-      <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-          <span itemprop="ratingValue">4.5</span> (
-          <span itemprop="ratingCount">12</span> ratings )
-      </div>
+    ga('create', '<?=BaseService::getInstance()->getGAKey()?>', 'gamonoid.com');
+    ga('send', 'pageview');
 
-      <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-          Price: $<span itemprop="price">199.99</span>
-          <meta itemprop="priceCurrency" content="USD" />
-      </div>
-  </div>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+</script>
 
-  ga('create', '<?=BaseService::getInstance()->getGAKey()?>', 'gamonoid.com');
-  ga('send', 'pageview');
+<script type="text/javascript">
+    var key = "";
+    <?php if(isset($_REQUEST['key'])){?>
+    key = '<?=$_REQUEST['key']?>';
+    key = key.replace(/ /g,"+");
+    <?php }?>
 
-  </script>
-  
-  <script type="text/javascript">
-	var key = "";
-  <?php if(isset($_REQUEST['key'])){?>
-  	key = '<?=$_REQUEST['key']?>';
-  	key = key.replace(/ /g,"+");
-  <?php }?>
+    $(document).ready(function() {
+        $(window).keydown(function(event){
+            if(event.keyCode == 13) {
+                event.preventDefault();
+                return false;
+            }
+        });
 
-  $(document).ready(function() {
-	  $(window).keydown(function(event){
-	    if(event.keyCode == 13) {
-	      event.preventDefault();
-	      return false;
-	    }
-	  });
+        $("#password").keydown(function(event){
+            if(event.keyCode == 13) {
+                submitLogin();
+                return false;
+            }
+        });
+    });
 
-	  $("#password").keydown(function(event){
-		    if(event.keyCode == 13) {
-		      submitLogin();
-		      return false;
-		    }
-		  });
-	});
+    function showForgotPassword(){
+        $("#loginForm").hide();
+        $("#requestPasswordChangeForm").show();
+    }
 
-  function showForgotPassword(){
-	  $("#loginForm").hide();
-	  $("#requestPasswordChangeForm").show();
-  }
+    function requestPasswordChange(){
+        $("#requestPasswordChangeFormAlert").hide();
+        var id = $("#usernameChange").val();
+        $.post("service.php", {'a':'rpc','id':id}, function(data) {
+            if(data.status == "SUCCESS"){
+                $("#requestPasswordChangeFormAlert").show();
+                $("#requestPasswordChangeFormAlert").html(data.message);
+            }else{
+                $("#requestPasswordChangeFormAlert").show();
+                $("#requestPasswordChangeFormAlert").html(data.message);
+            }
+        },"json");
+    }
 
-  function requestPasswordChange(){
-	  $("#requestPasswordChangeFormAlert").hide();
-	  var id = $("#usernameChange").val();
-	  $.post("service.php", {'a':'rpc','id':id}, function(data) {
-			if(data.status == "SUCCESS"){
-				$("#requestPasswordChangeFormAlert").show();	
-				$("#requestPasswordChangeFormAlert").html(data.message);
-			}else{
-				$("#requestPasswordChangeFormAlert").show();	
-				$("#requestPasswordChangeFormAlert").html(data.message);
-			}
-	},"json");
-  }
+    function changePassword(){
+        $("#newPasswordFormAlert").hide();
+        var password = $("#password").val();
 
-  function changePassword(){
-	  $("#newPasswordFormAlert").hide();
-	  var password = $("#password").val();
+        var passwordValidation =  function (str) {
+            var val = /^[a-zA-Z0-9]\w{6,}$/;
+            return str != null && val.test(str);
+        };
 
-	  	var passwordValidation =  function (str) {  
-			var val = /^[a-zA-Z0-9]\w{6,}$/;  
-			return str != null && val.test(str);  
-		};
-	
-		
-		if(!passwordValidation(password)){
-			$("#newPasswordFormAlert").show();	
-			$("#newPasswordFormAlert").html("Password may contain only letters, numbers and should be longer than 6 characters");
-			return;
-		}
 
-	  
-	  $.post("service.php", {'a':'rsp','key':key,'pwd':password,"now":"1"}, function(data) {
-		  if(data.status == "SUCCESS"){
-			  top.location.href = "login.php?c=1";
-			}else{
-				$("#newPasswordFormAlert").show();	
-				$("#newPasswordFormAlert").html(data.message);
-			}
-	},"json");
-  }
+        if(!passwordValidation(password)){
+            $("#newPasswordFormAlert").show();
+            $("#newPasswordFormAlert").html("Password may contain only letters, numbers and should be longer than 6 characters");
+            return;
+        }
 
-  function submitLogin(){
-	$("#loginForm").submit();  
-  }
-  
-  </script>
-	<div class="container">
-		<?php if(defined('DEMO_MODE')){?>
-		<div class="content" style="top: 30px;
+
+        $.post("service.php", {'a':'rsp','key':key,'pwd':password,"now":"1"}, function(data) {
+            if(data.status == "SUCCESS"){
+                top.location.href = "login.php?c=1";
+            }else{
+                $("#newPasswordFormAlert").show();
+                $("#newPasswordFormAlert").html(data.message);
+            }
+        },"json");
+    }
+
+    function submitLogin(){
+        try{
+            localStorage.clear();
+        }catch(e){}
+        $("#loginForm").submit();
+    }
+
+</script>
+<div class="container">
+    <?php if(defined('DEMO_MODE')){?>
+        <div class="content" style="top: 30px;
 			position: absolute;
 			left: 50px;
 			width: 380px;
 			height: 100px;">
-			
-			<ul class="list-group" style="font-size:12px;">
-			  <li style="padding-bottom:3px;" class="list-group-item">Admin: (Username = admin/ Password = admin)</li>
-			  <li style="padding-bottom:3px;" class="list-group-item">Manager: (Username = manager/ Password = demouserpwd)</li>
-			  <li style="padding-bottom:3px;" class="list-group-item">User: (Username = user1/ Password = demouserpwd)</li>
-			  <li style="padding-bottom:3px;" class="list-group-item">User: (Username = user2/ Password = demouserpwd)</li>
-			</ul>
-		</div>
-		<?php }?>
-		<div class="content" style="margin-top:100px;">
-			<div class="row">
-				<div class="login-form">
-					<h2><img src="<?=$logoFileUrl?>"/></h2>
-					<?php if(!isset($_REQUEST['cp'])){?>
-					<form id="loginForm" action="login.php" method="POST">
-						<fieldset>
-							<div class="clearfix">
-								<div class="input-prepend">
-								  	<span class="add-on"><i class="icon-user"></i></span>
-								  	<input class="span2" type="text" id="username" name="username" placeholder="Username">
-								</div>
-							</div>
-							<div class="clearfix">
-								<div class="input-prepend">
-								  	<span class="add-on"><i class="icon-lock"></i></span>
-								  	<input class="span2" type="password" id="password" name="password" placeholder="Password">
-								</div>
-							</div>
-							<?php if(isset($_REQUEST['f'])){?>
-							<div class="clearfix alert alert-error" style="font-size:11px;width:147px;margin-bottom: 5px;">
-								Login failed
-								<?php if(isset($_REQUEST['fm'])){
-									echo $_REQUEST['fm'];	
-								}?>
-							</div>
-							<?php } ?>
-							<?php if(isset($_REQUEST['c'])){?>
-							<div class="clearfix alert alert-info" style="font-size:11px;width:147px;margin-bottom: 5px;">
-								Password changed successfully	
-							</div>
-							<?php } ?>
-							<button class="btn" style="margin-top: 5px;" type="button" onclick="submitLogin();return false;">Sign in&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
-						</fieldset>
-						<div class="clearfix">
-							<a href="" onclick="showForgotPassword();return false;" style="float:left;margin-top: 10px;">Forgot password</a>
-							<a href="<?=TWITTER_URL?>" target="_blank" style="float:right;"><img src="<?=BASE_URL?>images/32x32-Circle-53-TW.png"/></a>
-							<a href="<?=FB_URL?>" target="_blank" style="float:right;margin-right: 7px;"><img src="<?=BASE_URL?>images/32x32-Circle-54-FB.png"/></a>
-						</div>
+
+            <ul class="list-group" style="font-size:12px;">
+                <li style="padding-bottom:3px;" class="list-group-item">Admin: (Username = admin/ Password = admin)</li>
+                <li style="padding-bottom:3px;" class="list-group-item">Manager: (Username = manager/ Password = demouserpwd)</li>
+                <li style="padding-bottom:3px;" class="list-group-item">User: (Username = user1/ Password = demouserpwd)</li>
+                <li style="padding-bottom:3px;" class="list-group-item">User: (Username = user2/ Password = demouserpwd)</li>
+            </ul>
+        </div>
+    <?php }?>
+    <div class="content" style="margin-top:100px;">
+        <div class="row">
+            <div class="login-form">
+                <h2><img src="<?=$logoFileUrl?>"/></h2>
+                <?php if(!isset($_REQUEST['cp'])){?>
+                    <form id="loginForm" action="login.php" method="POST">
+                        <fieldset>
+                            <div class="clearfix">
+                                <div class="input-prepend">
+                                    <span class="add-on"><i class="icon-user"></i></span>
+                                    <input class="span2" type="text" id="username" name="username" placeholder="Username">
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="input-prepend">
+                                    <span class="add-on"><i class="icon-lock"></i></span>
+                                    <input class="span2" type="password" id="password" name="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="checkbox">
+                                    <label><input id="remember" name="remember" type="checkbox" value="remember" checked>Remember me</label>
+                                </div>
+                            </div>
+                            <?php if(isset($_REQUEST['f'])){?>
+                                <div class="clearfix alert alert-error" style="font-size:11px;width:147px;margin-bottom: 5px;">
+                                    Login failed
+                                    <?php if(isset($_REQUEST['fm'])){
+                                        echo $_REQUEST['fm'];
+                                    }?>
+                                </div>
+                            <?php } ?>
+                            <?php if(isset($_REQUEST['c'])){?>
+                                <div class="clearfix alert alert-info" style="font-size:11px;width:147px;margin-bottom: 5px;">
+                                    Password changed successfully
+                                </div>
+                            <?php } ?>
+                            <button class="btn" style="margin-top: 5px;" type="button" onclick="submitLogin();return false;">Sign in&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
+                        </fieldset>
                         <div class="clearfix">
-                            <span style="font-size:9px;">&copy; <a href="http://icehrm.com" target="_blank">IceHrm - v<?=VERSION?></a> Developed by <a href="http://gamonoid.com" target="_blank">Gamonoid (Pvt) Ltd.</a></span>
+                            <a href="" onclick="showForgotPassword();return false;" style="float:left;margin-top: 10px;">Forgot password</a>
+                            <!--
+                            <a href="<?=TWITTER_URL?>" target="_blank" style="float:right;"><img src="<?=BASE_URL?>images/32x32-Circle-53-TW.png"/></a>
+							<a href="<?=FB_URL?>" target="_blank" style="float:right;margin-right: 7px;"><img src="<?=BASE_URL?>images/32x32-Circle-54-FB.png"/></a>
+						    -->
                         </div>
-					</form>
-					<form id="requestPasswordChangeForm" style="display:none;" action="">
-						<fieldset>
-							<div class="clearfix">
-								<div class="input-prepend">
-								  	<span class="add-on"><i class="icon-user"></i></span>
-								  	<input class="span2" type="text" id="usernameChange" name="usernameChange" placeholder="Username or Email">
-								</div>
-							</div>
-							<div id="requestPasswordChangeFormAlert" class="clearfix alert alert-info" style="font-size:11px;width:147px;margin-bottom: 5px;display:none;">
-									
-							</div>
-							<button class="btn" style="margin-top: 5px;" type="button" onclick="requestPasswordChange();return false;">Request Password Change&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
-						</fieldset>
-					</form>
-					<?php }else{?>
-					<form id="newPasswordForm" action="">
-						<fieldset>
-							<div class="clearfix">
-								<div class="input-prepend">
-								  	<span class="add-on"><i class="icon-lock"></i></span>
-								  	<input class="span2" type="password" id="password" name="password" placeholder="New Password">
-								</div>
-							</div>
-							<div id="newPasswordFormAlert" class="clearfix alert alert-error" style="font-size:11px;width:147px;margin-bottom: 5px;display:none;">
-									
-							</div>
-							<button class="btn" style="margin-top: 5px;" type="button" onclick="changePassword();return false;">Change Password&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
-						</fieldset>
-					</form>
-					<?php }?>
-				</div>
-			</div>
-		</div>
-	</div> <!-- /container -->
+                    </form>
+                    <form id="requestPasswordChangeForm" style="display:none;" action="">
+                        <fieldset>
+                            <div class="clearfix">
+                                <div class="input-prepend">
+                                    <span class="add-on"><i class="icon-user"></i></span>
+                                    <input class="span2" type="text" id="usernameChange" name="usernameChange" placeholder="Username or Email">
+                                </div>
+                            </div>
+                            <div id="requestPasswordChangeFormAlert" class="clearfix alert alert-info" style="font-size:11px;width:147px;margin-bottom: 5px;display:none;">
+
+                            </div>
+                            <button class="btn" style="margin-top: 5px;" type="button" onclick="requestPasswordChange();return false;">Request Password Change&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
+                        </fieldset>
+                    </form>
+                <?php }else{?>
+                    <form id="newPasswordForm" action="">
+                        <fieldset>
+                            <div class="clearfix">
+                                <div class="input-prepend">
+                                    <span class="add-on"><i class="icon-lock"></i></span>
+                                    <input class="span2" type="password" id="password" name="password" placeholder="New Password">
+                                </div>
+                            </div>
+                            <div id="newPasswordFormAlert" class="clearfix alert alert-error" style="font-size:11px;width:147px;margin-bottom: 5px;display:none;">
+
+                            </div>
+                            <button class="btn" style="margin-top: 5px;" type="button" onclick="changePassword();return false;">Change Password&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
+                        </fieldset>
+                    </form>
+                <?php }?>
+            </div>
+        </div>
+    </div>
+</div> <!-- /container -->
 </body>
 </html>

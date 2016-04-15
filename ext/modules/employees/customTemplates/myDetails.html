@@ -1,59 +1,69 @@
-<div class="row-fluid">
-	<div class="col-xs-12 col-md-3">
+<div class="row">
+	<div class="col-xs-12 col-md-2">
 		<div class="row-fluid">
 			<div class="col-xs-12" style="text-align: center;">
-				<img id="profile_image__id_" src="" class="img-polaroid" style="max-width: 140px;max-height: 140px;">
+				<img id="profile_image__id_" src="" class="img-polaroid img-thumbnail" style="max-width: 140px;max-height: 140px;">
 			</div>
 		 	
 		</div>
 	</div>
-    <div class="col-xs-12 col-md-9">
+    <div class="col-xs-12 col-md-10">
+    	<div class="row-fluid">
+			<div class="col-md-12"><h2 id="name"></h2></div>
+		</div>	
+		<div class="row-fluid">
+			<div class="col-md-12">
+			<p>
+				<i class="fa fa-phone"></i> <span id="mobile_phone"></span>&nbsp;&nbsp;
+				<i class="fa fa-envelope"></i> <span id="work_email"></span>
+			</p>
+			</div>
+		</div>
 	    <div class="row-fluid">
 	    	<div class="col-xs-12" style="font-size:18px;border-bottom: 1px solid #DDD;margin-bottom: 10px;padding-bottom: 10px;">
-	    		<span id="name"></span><br/>
-				<button id="employeeProfileEditInfo" class="btn btn-inverse btn-xs" onclick="modJs.editEmployee();" style="margin-right:10px;">Edit Info</button>
-				<button id="employeeUploadProfileImage" onclick="showUploadDialog('profile_image__id_','Upload Profile Image','profile_image',_id_,'profile_image__id_','src','url','image');return false;" class="btn btn-xs btn-inverse" type="button" style="margin-right:10px;">Upload Profile Image</button>
-				<button id="employeeDeleteProfileImage" onclick="modJs.deleteProfileImage(_id_);return false;" class="btn btn-xs btn-inverse" type="button">Delete Profile Image</button>
-				<button id="employeeUpdatePassword" onclick="modJs.changePassword();return false;" class="btn btn-xs btn-inverse" type="button">Change Password</button>
+				<button id="employeeProfileEditInfo" class="btn btn-small btn-success" onclick="modJs.editEmployee();" style="margin-right:10px;"><i class="fa fa-edit"></i> Edit Info</button>
+				<button id="employeeUploadProfileImage" onclick="showUploadDialog('profile_image__id_','Upload Profile Image','profile_image',_id_,'profile_image__id_','src','url','image');return false;" class="btn btn-small btn-primary" type="button" style="margin-right:10px;"><i class="fa fa-upload"></i> Upload Profile Image</button>
+				<button id="employeeDeleteProfileImage" onclick="modJs.deleteProfileImage(_id_);return false;" class="btn btn-small btn-warning" type="button" style="margin-right:10px;"><i class="fa fa-times"></i> Delete Profile Image</button>
+				<button id="employeeUpdatePassword" onclick="modJs.changePassword();return false;" class="btn btn-small btn-success" type="button" style="margin-right:10px;"><i class="fa fa-lock"></i> Change Password</button>
 			</div>
 	    </div>
 	    
 	    <div class="row-fluid" style="border-top: 1px;">
 			<div class="col-xs-6 col-md-4" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;font-size:13px;">Employee Id</label>
+				<label class="control-label col-xs-12" style="font-size:13px;font-size:13px;">#_label_employee_id_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="employee_id"></label>
 			</div>
 			<div class="col-xs-6 col-md-4" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">NIC Number</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_nic_num_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="nic_num"></label>
 			</div>
 			<div class="col-xs-6 col-md-4" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">EPF/CPF No</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_ssn_num_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="ssn_num"></label>
 			</div>
 		</div>	
     </div>
 </div>
 
-<div class="row-fluid" style="margin-left:10px;">
-	<div class="col-xs-12">
-	<hr/>
-	<span class="label label-inverse" style="font-size:16px;background: #405A6A;">Personal Information</span><br/><br/>
+<div class="row" style="margin-left:10px;">
+	<div class="panel panel-default" style="width:97.5%;">
+		<div class="panel-heading"><h4>Personal Information</h4></div>
+		<div class="panel-body">
 		<div class="row-fluid">
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Driver's License Number</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_driving_license_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="driving_license"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Other Id</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_other_id_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="other_id"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Birth Day</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_birthday_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="birthday"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Gender</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_gender_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="gender"></label>
 			</div>
 		</div>	
@@ -61,87 +71,78 @@
 	    <div class="row-fluid">
 			
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Nationality</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_nationality_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="nationality_Name"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Marital Status</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_marital_status_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="marital_status"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Joined Date</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_joined_date_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="joined_date"></label>
 			</div>
 		</div>	
+		</div>
     </div>
 </div>
 
-<div class="row-fluid" style="margin-left:10px;margin-top:20px;">
-	<div class="col-xs-12">
-	<hr/>
-	<span class="label label-inverse" style="font-size:16px;background: #405A6A;">Contact Information</span><br/><br/>
+<div class="row" style="margin-left:10px;margin-top:20px;">
+	<div class="panel panel-default" style="width:97.5%;">
+	<div class="panel-heading"><h4>Contact Information</h4></div>
+		<div class="panel-body">
 		<div class="row-fluid">
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Address 1</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_address1_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="address1"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Address 2</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_address2_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="address2"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">City</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_city_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="city"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Country</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_country_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="country_Name"></label>
 			</div>
 		</div>	
 		<hr/>  
 	    <div class="row-fluid">
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Postal Code</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_postal_code_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="postal_code"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Home Phone</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_home_phone_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="home_phone"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Mobile Phone</label>
-				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="mobile_phone"></label>
-			</div>
-			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Work Phone</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_work_phone_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="work_phone"></label>
 			</div>
-		</div>	
-		<hr/> 
-    	<div class="row-fluid">
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Work Email</label>
-				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="work_email"></label>
-			</div>
-			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Private Email</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_private_email_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="private_email"></label>
 			</div>
-		</div>	  
+		</div>		  
+		</div>		  
     </div>
 </div>
 
-<div class="row-fluid" style="margin-left:10px;margin-top:20px;">
-	<div class="col-xs-12">
-	<hr/>
-	<span class="label label-inverse" style="font-size:16px;background: #405A6A;">Job Details</span><br/><br/>
+<div class="row" style="margin-left:10px;margin-top:20px;">
+	<div class="panel panel-default" style="width:97.5%;">
+	<div class="panel-heading"><h4>Job Details</h4></div>
+		<div class="panel-body">
 		<div class="row-fluid">
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Job Title</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_job_title_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="job_title_Name"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Employment Status</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_employment_status_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="employment_status_Name"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
@@ -149,16 +150,17 @@
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="supervisor_Name"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Subordinates</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">Direct Reports</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="subordinates"></label>
 			</div>
 		</div>	
 		<hr/>
 		<div class="row-fluid">
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Department</label>
+				<label class="control-label col-xs-12" style="font-size:13px;">#_label_department_#</label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="department_Name"></label>
 			</div>
+		</div>	
 		</div>	
     </div>
 </div>

@@ -32,8 +32,6 @@ EmployeeSalaryAdapter.method('getDataMapping', function() {
 	return [
 	        "id",
 	        "component",
-	        "pay_frequency",
-	        "currency",
 	        "amount",
 	        "details"
 	];
@@ -43,8 +41,6 @@ EmployeeSalaryAdapter.method('getHeaders', function() {
 	return [
 			{ "sTitle": "ID" ,"bVisible":false},
 			{ "sTitle": "Salary Component" },
-			{ "sTitle": "Pay Frequency"},
-			{ "sTitle": "Currency"},
 			{ "sTitle": "Amount"},
 			{ "sTitle": "Details"}
 	];
@@ -54,8 +50,6 @@ EmployeeSalaryAdapter.method('getFormFields', function() {
 	return [
 	        [ "id", {"label":"ID","type":"hidden"}],
             [ "component", {"label":"Salary Component","type":"select2","remote-source":["SalaryComponent","id","name"]}],
-	        [ "pay_frequency", {"label":"Pay Frequency","type":"select","source":[["Hourly","Hourly"],["Daily","Daily"],["Bi Weekly","Bi Weekly"],["Weekly","Weekly"],["Semi Monthly","Semi Monthly"],["Monthly","Monthly"]]}],
-	        [ "currency", {"label":"Currency","type":"select","remote-source":["CurrencyType","id","name"]}],
 	        [ "amount", {"label":"Amount","type":"text","validation":"float"}],
 	        [ "details", {"label":"Details","type":"textarea","validation":"none"}]
 	];

@@ -58,7 +58,7 @@ ModuleAdapter.method('getActionButtonsHtml', function(id,data) {
 	var nonEditableFields = {};
 	nonEditableFields["admin_Company Structure"] = 1;
 	nonEditableFields["admin_Employees"] = 1;
-	nonEditableFields["admin_Jobs"] = 1;
+	nonEditableFields["admin_Job Details Setup"] = 1;
 	nonEditableFields["admin_Leaves"] = 1;
 	nonEditableFields["admin_Manage Modules"] = 1;
 	nonEditableFields["admin_Projects"] = 1;
@@ -66,10 +66,11 @@ ModuleAdapter.method('getActionButtonsHtml', function(id,data) {
 	nonEditableFields["admin_Settings"] = 1;
 	nonEditableFields["admin_Users"] = 1;
 	nonEditableFields["admin_Upgrade"] = 1;
-	nonEditableFields["admin_Upgrade"] = 1;
+	nonEditableFields["admin_Dashboard"] = 1;
 
 	nonEditableFields["user_Basic Information"] = 1;
-	
+	nonEditableFields["user_Dashboard"] = 1;
+
 	if(nonEditableFields[data[3]+"_"+data[1]] == 1){
 		return "";
 	}

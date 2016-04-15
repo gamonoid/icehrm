@@ -23,8 +23,16 @@ Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilin
 
 class UsersActionManager extends SubActionManager{
 	public function changePassword($req){
-		if($this->user->user_level == 'Admin' || $this->user->id == $req->id){
-			$user = $this->baseService->getElement('User',$req->id);
+        if(defined('DEMO_MODE')){
+            return new IceResponse(IceResponse::ERROR,"You are not allowed to change the password in demo mode");
+        }
+
+        $user = new User();
+        $user->Load("id = ?",array($req->id));
+        LogManager::getInstance()->debug("Current User:".print_r($this->user,true));
+        LogManager::getInstance()->debug("Edit User:".print_r($user,true));
+		if($this->user->user_level == 'Admin' || $this->user->id == $user->id){
+
 			if(empty($user->id)){
 				return new IceResponse(IceResponse::ERROR,"Please save the user first");
 			}	

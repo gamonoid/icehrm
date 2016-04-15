@@ -1,0 +1,11 @@
+{
+"label":"Field Names Setup",
+"menu":"System",
+"order":"7",
+"icon":"fa-sort-alpha-asc",
+"user_levels":["Admin"],
+
+"permissions":
+	{
+	}
+}

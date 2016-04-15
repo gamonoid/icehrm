@@ -1,7 +1,10 @@
 {
 "Personal Information":"fa-male",
-"Subordinates":"fa-user",
+"Leave":"fa-calendar-o",
 "Time Management":"fa-clock-o",
+"Documents":"fa-files-o",
+"Company":"fa-building",
+"Training":"fa-briefcase",
 "Travel Management":"fa-plane",
-  "Finance":"fa-money"
+"Finance":"fa-money"
 }

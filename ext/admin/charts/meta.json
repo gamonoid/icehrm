@@ -1,0 +1,11 @@
+{
+"label":"Performance Charts",
+"menu":"Employees",
+"order":"93",
+"icon":"fa-bar-chart-o",
+"user_levels":["Admin","Manager"],
+
+"permissions":
+	{
+	}	
+}

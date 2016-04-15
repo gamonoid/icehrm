@@ -2,7 +2,6 @@
  * Author: Thilina Hasantha
  */
 
-
 /**
  * SalaryComponentTypeAdapter
  */
@@ -16,27 +15,27 @@ SalaryComponentTypeAdapter.inherits(AdapterBase);
 
 
 SalaryComponentTypeAdapter.method('getDataMapping', function() {
-	return [
-	        "id",
-	        "code",
-	        "name"
-	];
+    return [
+        "id",
+        "code",
+        "name"
+    ];
 });
 
 SalaryComponentTypeAdapter.method('getHeaders', function() {
-	return [
-			{ "sTitle": "ID" ,"bVisible":false},
-			{ "sTitle": "Code" },
-			{ "sTitle": "Name"}
-	];
+    return [
+        { "sTitle": "ID" ,"bVisible":false},
+        { "sTitle": "Code" },
+        { "sTitle": "Name"}
+    ];
 });
 
 SalaryComponentTypeAdapter.method('getFormFields', function() {
-	return [
-	        [ "id", {"label":"ID","type":"hidden"}],
-	        [ "code", {"label":"Code","type":"text","validation":""}],
-	        [ "name", {"label":"Name","type":"text","validation":""}]
-	];
+    return [
+        [ "id", {"label":"ID","type":"hidden"}],
+        [ "code", {"label":"Code","type":"text","validation":""}],
+        [ "name", {"label":"Name","type":"text","validation":""}]
+    ];
 });
 
 
@@ -53,30 +52,30 @@ SalaryComponentAdapter.inherits(AdapterBase);
 
 
 SalaryComponentAdapter.method('getDataMapping', function() {
-	return [
-	        "id",
-	        "name",
-	        "componentType",
-            "details"
-	];
+    return [
+        "id",
+        "name",
+        "componentType",
+        "details"
+    ];
 });
 
 SalaryComponentAdapter.method('getHeaders', function() {
-	return [
-			{ "sTitle": "ID" ,"bVisible":false},
-			{ "sTitle": "Name" },
-			{ "sTitle": "Salary Component Type" },
-			{ "sTitle": "Details"}
-	];
+    return [
+        { "sTitle": "ID" ,"bVisible":false},
+        { "sTitle": "Name" },
+        { "sTitle": "Salary Component Type" },
+        { "sTitle": "Details"}
+    ];
 });
 
 SalaryComponentAdapter.method('getFormFields', function() {
-	return [
-	        [ "id", {"label":"ID","type":"hidden"}],
-	        [ "name", {"label":"Name","type":"text","validation":""}],
-            [ "componentType", {"label":"Salary Component Type","type":"select2","remote-source":["SalaryComponentType","id","name"]}],
-	        [ "details", {"label":"Details","type":"textarea","validation":"none"}]
-	];
+    return [
+        [ "id", {"label":"ID","type":"hidden"}],
+        [ "name", {"label":"Name","type":"text","validation":""}],
+        [ "componentType", {"label":"Salary Component Type","type":"select2","remote-source":["SalaryComponentType","id","name"]}],
+        [ "details", {"label":"Details","type":"textarea","validation":"none"}]
+    ];
 });
 
 
@@ -96,8 +95,7 @@ DeductionAdapter.method('getDataMapping', function() {
     return [
         "id",
         "name",
-        "contributor",
-        "type",
+        "deduction_group"
     ];
 });
 
@@ -105,32 +103,52 @@ DeductionAdapter.method('getHeaders', function() {
     return [
         { "sTitle": "ID" ,"bVisible":false},
         { "sTitle": "Name" },
-        { "sTitle": "Contributor"},
-        { "sTitle": "Deduction Type"}
+        { "sTitle": "Calculation Group"}
     ];
 });
 
 DeductionAdapter.method('getFormFields', function() {
 
-    var rangeAmounts = [ "rangeAmounts", {"label":"Deduction Amounts","type":"datagroup",
+    var rangeAmounts = [ "rangeAmounts", {"label":"Calculation Process","type":"datagroup",
         "form":[
-            [ "lowerCondition", {"label":"Lower Limit Condition","type":"select","source":[["No Lower Limit","No Lower Limit"],[">","Greater than"],[">=","Greater than or Equal"]]}],
-            [ "lowerLimit", {"label":"Lower Limit","type":"text","validation":"none"}],
-            [ "upperCondition", {"label":"Upper Limit Condition","type":"select","source":[["No Upper Limit","No Upper Limit"],["<","Less than"],["<=","Less than or Equal"]]}],
-            [ "upperLimit", {"label":"Upper Limit","type":"text","validation":"none"}],
-            [ "amount", {"label":"Value","type":"text","validation":"float"}]
+            [ "lowerCondition", {"label":"Lower Limit Condition","type":"select","source":[["No Lower Limit","No Lower Limit"],["gt","Greater than"],["gte","Greater than or Equal"]]}],
+            [ "lowerLimit", {"label":"Lower Limit","type":"text","validation":"float"}],
+            [ "upperCondition", {"label":"Upper Limit Condition","type":"select","source":[["No Upper Limit","No Upper Limit"],["lt","Less than"],["lte","Less than or Equal"]]}],
+            [ "upperLimit", {"label":"Upper Limit","type":"text","validation":"float"}],
+            [ "amount", {"label":"Value","type":"text","validation":""}]
         ],
         "html":'<div id="#_id_#" class="panel panel-default">#_delete_##_edit_#<div class="panel-body">#_renderFunction_#</div></div>',
         "validation":"none",
+        "custom-validate-function":function (data){
+            var res = {};
+            res['valid'] = true;
+            if(lowerCondition != 'No Lower Limit'){
+                data.lowerLimit = 0;
+            }
+            if(upperCondition != 'No Upper Limit'){
+                data.upperLimit = 0;
+            }
+            res['params'] = data;
+            return res;
+        },
         "render":function(item){
             var output = "";
+            var getSymbol = function(text){
+                var map = {};
+                map['gt'] = '>';
+                map['gte'] = '>=';
+                map['lt'] = '<';
+                map['lte'] = '<=';
+
+                return map[text];
+            }
             if(item.lowerCondition != "No Lower Limit"){
-                output += item.lowerLimit + " " + item.lowerCondition + " ";
-                output += " and ";
+                output += item.lowerLimit + " " + getSymbol(item.lowerCondition) + " ";
             }
 
             if(item.upperCondition != "No Upper Limit"){
-                output += item.upperCondition + " " + item.upperLimit + " ";
+                output += " and ";
+                output += getSymbol(item.upperCondition) + " " + item.upperLimit + " ";
             }
             if(output == ""){
                 return  "Deduction is "+item.amount + " for all ranges";
@@ -148,17 +166,16 @@ DeductionAdapter.method('getFormFields', function() {
     return [
         [ "id", {"label":"ID","type":"hidden"}],
         [ "name", {"label":"Name","type":"text","validation":""}],
-        [ "contributor", {"label":"Contributor","type":"select","source":[["Employee","Employee"],["Employer","Employer"]]}],
-        [ "type", {"label":"Deduction Type","type":"select","source":[["Fixed","Fixed"],["Percentage","Percentage"]]}],
-        [ "percentage_type", {"label":"Percentage Type","type":"select","source":[["On Component","On Component"],["On Component Type","On Component Type"]]}],
-        [ "componentType", {"label":"Salary Component Type","type":"select2","allow-null":true,"null-label":"N/A","remote-source":["SalaryComponentType","id","name"]}],
-        [ "component", {"label":"Salary Component","type":"select2","allow-null":true,"null-label":"N/A","remote-source":["SalaryComponent","id","name"]}],
+        [ "componentType", {"label":"Salary Component Type","type":"select2multi","allow-null":true,"remote-source":["SalaryComponentType","id","name"]}],
+        [ "component", {"label":"Salary Component","type":"select2multi","allow-null":true,"remote-source":["SalaryComponent","id","name"]}],
+        [ "payrollColumn", {"label":"Payroll Report Column","type":"select2","allow-null":true,"remote-source":["PayrollColumn","id","name"]}],
         rangeAmounts,
-        [ "country", {"label":"Country","type":"select2","remote-source":["Country","id","name"]}]
+        [ "deduction_group", {"label":"Calculation Group","type":"select2","allow-null":true,"null-label":"None","remote-source":["DeductionGroup","id","name"]}]
 
     ];
 });
 
+/*
 DeductionAdapter.method('doCustomValidation', function(params) {
     if(params.type == "Fixed"){
         return null;
@@ -177,7 +194,8 @@ DeductionAdapter.method('doCustomValidation', function(params) {
 
     return null;
 });
-
+*/
+/*
 DeductionAdapter.method('postRenderForm', function(object, $tempDomObj) {
 
     $tempDomObj.find("#field_componentType").hide();
@@ -213,6 +231,10 @@ DeductionAdapter.method('postRenderForm', function(object, $tempDomObj) {
         }
     });
 });
+*/
+
+
+
 
 
 /*
@@ -232,8 +254,6 @@ EmployeeSalaryAdapter.method('getDataMapping', function() {
         "id",
         "employee",
         "component",
-        "pay_frequency",
-        "currency",
         "amount",
         "details"
     ];
@@ -244,8 +264,6 @@ EmployeeSalaryAdapter.method('getHeaders', function() {
         { "sTitle": "ID" ,"bVisible":false},
         { "sTitle": "Employee" },
         { "sTitle": "Salary Component" },
-        { "sTitle": "Pay Frequency"},
-        { "sTitle": "Currency"},
         { "sTitle": "Amount"},
         { "sTitle": "Details"}
     ];
@@ -256,8 +274,6 @@ EmployeeSalaryAdapter.method('getFormFields', function() {
         [ "id", {"label":"ID","type":"hidden"}],
         [ "employee", {"label":"Employee","type":"select2","remote-source":["Employee","id","first_name+last_name"]}],
         [ "component", {"label":"Salary Component","type":"select2","remote-source":["SalaryComponent","id","name"]}],
-        [ "pay_frequency", {"label":"Pay Frequency","type":"select","source":[["Hourly","Hourly"],["Daily","Daily"],["Bi Weekly","Bi Weekly"],["Weekly","Weekly"],["Semi Monthly","Semi Monthly"],["Monthly","Monthly"]]}],
-        [ "currency", {"label":"Currency","type":"select2","remote-source":["CurrencyType","id","name"]}],
         [ "amount", {"label":"Amount","type":"text","validation":"float"}],
         [ "details", {"label":"Details","type":"textarea","validation":"none"}]
     ];
@@ -269,6 +285,46 @@ EmployeeSalaryAdapter.method('getFilters', function() {
 
     ];
 });
+
+
+
+/*
+ * DeductionGroupAdapter
+ */
+
+function DeductionGroupAdapter(endPoint,tab,filter,orderBy) {
+    this.initAdapter(endPoint,tab,filter,orderBy);
+}
+
+DeductionGroupAdapter.inherits(AdapterBase);
+
+
+
+DeductionGroupAdapter.method('getDataMapping', function() {
+    return [
+        "id",
+        "name",
+        "description"
+    ];
+});
+
+DeductionGroupAdapter.method('getHeaders', function() {
+    return [
+        { "sTitle": "ID" ,"bVisible":false},
+        { "sTitle": "Name" },
+        { "sTitle": "Details" }
+    ];
+});
+
+DeductionGroupAdapter.method('getFormFields', function() {
+    return [
+        [ "id", {"label":"ID","type":"hidden"}],
+        [ "name", {"label":"Name","type":"text","validation":""}],
+        [ "description", {"label":"Details","type":"textarea","validation":"none"}]
+    ];
+});
+
+
 
 
 

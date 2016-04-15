@@ -1,5 +1,19 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 
+DELIMITER $$
+CREATE FUNCTION generate_fname () RETURNS varchar(255)
+  BEGIN
+    RETURN ELT(FLOOR(1 + (RAND() * (100-1))), "James","Mary","John","Patricia","Robert","Linda","Michael","Barbara","William","Elizabeth","David","Jennifer","Richard","Maria","Charles","Susan","Joseph","Margaret","Thomas","Dorothy","Christopher","Lisa","Daniel","Nancy","Paul","Karen","Mark","Betty","Donald","Helen","George","Sandra","Kenneth","Donna","Steven","Carol","Edward","Ruth","Brian","Sharon","Ronald","Michelle","Anthony","Laura","Kevin","Sarah","Jason","Kimberly","Matthew","Deborah","Gary","Jessica","Timothy","Shirley","Jose","Cynthia","Larry","Angela","Jeffrey","Melissa","Frank","Brenda","Scott","Amy","Eric","Anna","Stephen","Rebecca","Andrew","Virginia","Raymond","Kathleen","Gregory","Pamela","Joshua","Martha","Jerry","Debra","Dennis","Amanda","Walter","Stephanie","Patrick","Carolyn","Peter","Christine","Harold","Marie","Douglas","Janet","Henry","Catherine","Carl","Frances","Arthur","Ann","Ryan","Joyce","Roger","Diane");
+  END$$
+
+DELIMITER ;
+
+DELIMITER $$
+CREATE FUNCTION generate_lname () RETURNS varchar(255)
+  BEGIN
+    RETURN ELT(FLOOR(1 + (RAND() * (100-1))), "Smith","Johnson","Williams","Jones","Brown","Davis","Miller","Wilson","Moore","Taylor","Anderson","Thomas","Jackson","White","Harris","Martin","Thompson","Garcia","Martinez","Robinson","Clark","Rodriguez","Lewis","Lee","Walker","Hall","Allen","Young","Hernandez","King","Wright","Lopez","Hill","Scott","Green","Adams","Baker","Gonzalez","Nelson","Carter","Mitchell","Perez","Roberts","Turner","Phillips","Campbell","Parker","Evans","Edwards","Collins","Stewart","Sanchez","Morris","Rogers","Reed","Cook","Morgan","Bell","Murphy","Bailey","Rivera","Cooper","Richardson","Cox","Howard","Ward","Torres","Peterson","Gray","Ramirez","James","Watson","Brooks","Kelly","Sanders","Price","Bennett","Wood","Barnes","Ross","Henderson","Coleman","Jenkins","Perry","Powell","Long","Patterson","Hughes","Flores","Washington","Butler","Simmons","Foster","Gonzales","Bryant","Alexander","Russell","Griffin","Diaz","Hayes");
+  END$$
+DELIMITER ;
 
 INSERT INTO `CompanyStructures` (`id`, `title`, `description`, `address`, `type`, `country`, `parent`) VALUES
 (4, 'Development Center', 'Development Center', 'PO Box 001002\nSample Road, Sample Town', 'Regional Office', 'SG', 1),
@@ -10,11 +24,23 @@ INSERT INTO `CompanyStructures` (`id`, `title`, `description`, `address`, `type`
 (9, 'Administration & HR', 'Administration and Human Resource', '', 'Department', 'SG', 4);
 
 
-INSERT INTO `Employees` (`id`, `employee_id`, `first_name`, `middle_name`, `last_name`, `nationality`, `birthday`, `gender`, `marital_status`, `ssn_num`, `nic_num`, `other_id`, `driving_license`, `driving_license_exp_date`, `employment_status`, `job_title`, `pay_grade`, `work_station_id`, `address1`, `address2`, `city`, `country`, `province`, `postal_code`, `home_phone`, `mobile_phone`, `work_phone`, `work_email`, `private_email`, `joined_date`, `confirmation_date`, `supervisor`, `department`, `custom1`, `custom2`, `custom3`, `custom4`, `custom5`, `custom6`, `custom7`, `custom8`, `custom9`, `custom10`) VALUES
-(2, 'EMP002', 'Lala', 'Nadila ', 'Lamees', 175, '1984-03-12 18:30:00', 'Female', 'Single', '', '4594567WE3', '4595567WE3', '349-066-YUO', '2012-03-01', 1, 8, 2, 'W001', 'Green War Rd, 00123', '', 'Istanbul', 'TR', NULL, '909066', '+960112345', '+960112345', '+960112345', 'icehrm+manager@web-stalk.com', 'icehrm+manager@web-stalk.com', '2011-03-07 18:30:00', '2012-02-14 18:30:00', 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 'EMP003', 'Sofia', '', 'O''Sullivan', 4, '1975-08-28 18:30:00', 'Female', 'Married', '', '768-20-4394', '768-20-4394', '', NULL, 3, 10, 2, '', '2792 Trails End Road', 'Fort Lauderdale', 'Fort Lauderdale', 'US', 12, '33308', '954-388-3340', '954-388-3340', '954-388-3340', 'icehrm+user1@web-stalk.com', 'icehrm+user1@web-stalk.com', '2010-02-08 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'EMP004', 'Taylor', '', 'Holmes', 10, '1979-07-15 18:30:00', 'Male', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `Employees` (`id`, `employee_id`, `first_name`, `middle_name`, `last_name`, `nationality`, `birthday`, `gender`, `marital_status`, `ssn_num`, `nic_num`, `other_id`, `driving_license`, `driving_license_exp_date`, `employment_status`, `job_title`, `pay_grade`, `work_station_id`, `address1`, `address2`, `city`, `country`, `province`, `postal_code`, `home_phone`, `mobile_phone`, `work_phone`, `work_email`, `private_email`, `joined_date`, `confirmation_date`, `supervisor`, `department`, `custom1`, `custom2`, `custom3`, `custom4`, `custom5`, `custom6`, `custom7`, `custom8`, `custom9`, `custom10`,`indirect_supervisors`) VALUES
+(2, 'EMP002', 'Lala', 'Nadila ', 'Lamees', 175, '1984-03-12 18:30:00', 'Female', 'Single', '', '4594567WE3', '4595567WE3', '349-066-YUO', '2012-03-01', 1, 8, 2, 'W001', 'Green War Rd, 00123', '', 'Istanbul', 'TR', NULL, '909066', '+960112345', '+960112345', '+960112345', 'icehrm+manager@web-stalk.com', 'icehrm+manager@web-stalk.com', '2011-03-07 18:30:00', '2012-02-14 18:30:00', 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,NULL),
+(3, 'EMP003', 'Sofia', '', 'O''Sullivan', 4, '1975-08-28 18:30:00', 'Female', 'Married', '', '768-20-4394', '768-20-4394', '', NULL, 3, 10, 2, '', '2792 Trails End Road', 'Fort Lauderdale', 'Fort Lauderdale', 'US', 12, '33308', '954-388-3340', '954-388-3340', '954-388-3340', 'icehrm+user1@web-stalk.com', 'icehrm+user1@web-stalk.com', '2010-02-08 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,'[\"1\"]'),
+(4, 'EMP004', 'Taylor', '', 'Holmes', 10, '1979-07-15 18:30:00', 'Male', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,NULL);
 
+INSERT INTO `Employees` (`id`, `employee_id`, `first_name`, `middle_name`, `last_name`, `nationality`, `birthday`, `gender`, `marital_status`, `ssn_num`, `nic_num`, `other_id`, `driving_license`, `driving_license_exp_date`, `employment_status`, `job_title`, `pay_grade`, `work_station_id`, `address1`, `address2`, `city`, `country`, `province`, `postal_code`, `home_phone`, `mobile_phone`, `work_phone`, `work_email`, `private_email`, `joined_date`, `confirmation_date`, `supervisor`, `department`, `custom1`, `custom2`, `custom3`, `custom4`, `custom5`, `custom6`, `custom7`, `custom8`, `custom9`, `custom10`) VALUES
+  (5, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Male', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (6, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Male', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (7, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Male', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (8, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Male', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (9, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Male', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (10, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Female', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (11, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Female', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (12, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Female', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (13, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Female', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (14, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Female', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (15, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Female', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 INSERT INTO `EmergencyContacts` (`id`, `employee`, `name`, `relationship`, `home_phone`, `work_phone`, `mobile_phone`) VALUES
@@ -36,9 +62,6 @@ INSERT INTO `EmployeeDependents` (`id`, `employee`, `name`, `relationship`, `dob
 (2, 1, 'Mica Singroo', 'Other', '2000-06-13', '');
 
 
-
-
-
 INSERT INTO `EmployeeEducations` (`id`, `education_id`, `employee`, `institute`, `date_start`, `date_end`) VALUES
 (1, 1, 1, 'National University of Turky', '2004-02-03', '2006-06-13'),
 (2, 1, 2, 'MIT', '1995-02-21', '1999-10-12');
@@ -56,12 +79,38 @@ INSERT INTO `EmployeeProjects` (`id`, `employee`, `project`, `date_start`, `date
 (5, 2, 3, '2013-02-24', '0000-00-00', 'Current', '');
 
 
+INSERT INTO `EmployeeSalary` (`employee`, `component`,`amount`, `details`) VALUES
+  (1, 1,'50000.00', ''),
+  (1, 2,'20000.00', ''),
+  (1, 3,'30000.00', ''),
+  (1, 4,'2000.00', ''),
 
-INSERT INTO `EmployeeSalary` (`id`, `employee`, `component`, `pay_frequency`, `currency`, `amount`, `details`) VALUES
-(1, 1, 1, 'Monthly', 131, '2700.00', ''),
-(2, 2, 2, 'Monthly', 151, '12000.00', ''),
-(3, 2, 3, 'Monthly', 131, '5000.00', '');
+  (2, 1,'90500.00', ''),
+  (2, 2,'40000.00', ''),
+  (2, 3,'50000.00', ''),
 
+  (3, 1,'131409.00', ''),
+  (3, 2,'143471.00', ''),
+  (3, 3,'50000.00', ''),
+  (3, 4,'30000.00', ''),
+
+  (4, 5,'1432.00', ''),
+  (4, 6,'2100.00', ''),
+
+  (5, 5,'1200.00', ''),
+  (5, 6,'1500.00', ''),
+  (5, 7,'2000.00', ''),
+
+  (5, 1,round(rand() * 100000 + rand() * 20000 - rand() * 20000, 2), ''),
+  (6, 1,round(rand() * 100000 + rand() * 20000 - rand() * 20000, 2), ''),
+  (7, 1,round(rand() * 100000 + rand() * 20000 - rand() * 20000, 2), ''),
+  (8, 1,round(rand() * 100000 + rand() * 20000 - rand() * 20000, 2), ''),
+  (9, 1,round(rand() * 100000 + rand() * 20000 - rand() * 20000, 2), ''),
+  (10, 1,round(rand() * 100000 + rand() * 20000 - rand() * 20000, 2), ''),
+  (11, 1,round(rand() * 100000 + rand() * 20000 - rand() * 20000, 2), ''),
+  (12, 1,round(rand() * 100000 + rand() * 20000 - rand() * 20000, 2), ''),
+  (13, 1,round(rand() * 100000 + rand() * 20000 - rand() * 20000, 2), ''),
+  (14, 1,round(rand() * 100000 + rand() * 20000 - rand() * 20000, 2), '');
 
 INSERT INTO `EmployeeSkills` (`id`, `skill_id`, `employee`, `details`) VALUES
 (1, 9, 1, 'Creating web sites'),
@@ -69,10 +118,37 @@ INSERT INTO `EmployeeSkills` (`id`, `skill_id`, `employee`, `details`) VALUES
 
 
 
-INSERT INTO `Users` (`id`, `username`, `email`, `password`, `employee`, `user_level`, `last_login`, `last_update`, `created`) VALUES
-(2, 'manager', 'icehrm+manager@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 2, 'Manager', '2013-01-03 02:47:37', '2013-01-03 02:47:37', '2013-01-03 02:47:37'),
-(3, 'user1', 'icehrm+user1@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 3, 'Employee', '2013-01-03 02:48:32', '2013-01-03 02:48:32', '2013-01-03 02:48:32'),
-(4, 'user2', 'icehrm+user2@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 4, 'Employee', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55');
+
+INSERT INTO `LeaveRules` (`id`, `leave_type`, `job_title`, `employment_status`, `employee`, `supervisor_leave_assign`, `employee_can_apply`, `apply_beyond_current`, `leave_accrue`, `carried_forward`, `default_per_year`) VALUES
+(1, 1, 11, NULL, NULL, 'No', 'Yes', 'Yes', 'No', 'No', 25),
+(2, 2, NULL, NULL, 2, 'No', 'Yes', 'Yes', 'No', 'No', 10);
+
+
+
+INSERT INTO `Users` (`id`, `username`, `email`, `password`, `employee`,`default_module`, `user_level`,`user_roles`, `last_login`, `last_update`, `created`) VALUES
+(2, 'manager', 'icehrm+manager@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 2,NULL, 'Manager','', '2013-01-03 02:47:37', '2013-01-03 02:47:37', '2013-01-03 02:47:37'),
+(3, 'user1', 'icehrm+user1@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 3,NULL, 'Employee','', '2013-01-03 02:48:32', '2013-01-03 02:48:32', '2013-01-03 02:48:32'),
+(4, 'user2', 'icehrm+user2@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 4,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(5, 'user3', 'icehrm+user3@web-stalk.com', '4048bb914a704a0728549a26b92d8550', NULL,NULL, 'Other','["1"]', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55');
+
+INSERT INTO `Job` VALUES
+  (1,'Software Engineer','More than 375,000 users world-wide rely on our software for their daily business as it makes creating graphical presentations so much easier, faster and more enjoyable. Among our customers are many renowned consulting companies and large international corporations.','More than 375,000 users world-wide rely on our software for their daily business as it makes creating graphical presentations so much easier, faster and more enjoyable. Among our customers are many renowned consulting companies and large international corporations.\n\nWe follow our own strategy and do not have to make compromises with regard to code quality and beauty, because think-cell is profitable and has no outside investors. We are flourishing without program managers, meetings, and marketing-driven deadlines. Our code quality is extraordinarily high because we only release software when it is ready. We are willing to do the leg work of developing sophisticated algorithms and refining our user interface, which makes working with think-cellâ€™s software so satisfying.','Challenging C++ coding with high personal responsibility\nWork with a competent and creative team in a modern loft office in Berlin\nFamily-friendly working hours, no deadlines\nAbove-average salary (we offer our developers EUR 120,000 annually after one year of employment)\nFree supply of drinks, fruits, sweets and snacks\nFlat hierarchies and plenty of room for your ideas\nA full-time company nanny who is available for free when children are sick, or when you just feel like spending an evening out','[\"Health plan\",\"Paid vacations\"]',226,2,NULL,'JC001',1,NULL,7,14,9,151,'Yes',3500,5500,'job, engineer','Active','0000-00-00 00:00:00',NULL,'Text Only',1),
+  (2,'QA Senior Test Automation Engineer','As a QA Senior Test Automation Engineer at Rocket you will help us launch the most successful startup companies around the world.','As a QA Senior Test Automation Engineer at Rocket you will help us launch the most successful startup companies around the world.','Responsibilities:\n\nAutomated testing of web and mobile applications\nDevelop automated scenarios/scripts using Cucumber (for web applications) and Calabash (for mobile applications)\nOptimize existing test cases to get more stability and efficiency\nRun automated functional tests as well as performance and load tests\nAnalyze automated test results and report bugs to responsible employees\nSupport the test automation team during the whole development process (starting from the analysis of requirements up to the integration of automated test cases into the CI system (Jenkins)\n\n\nRequirements:\n\nSeveral years of experience as a Test Automation Engineer ( 5+ years )\nExperience with automated solutions such as Cucumber/Calabash, Gherkin, Selenium or similar tools/frameworks\nExperience with Ruby, Python, PHP, JAVA or similar programming languages\nExperience with source code controls like SVN, GIT, CVS\nFamiliarity with Continuous Integration and Delivery\nExperience in Agile Methodologies like Scrum and Kanban or extreme programming\nFluency in speaking & writing English skills\nISTQB certification\n Technology stack we use:\n\nTools: GitHub, Jira, Confluence, Bamboo, Jenkins, Testlink\nScrum, Kanban\nCucumber, Calabash, Capybara, JMeter','[\"Life insurance\"]',80,3,NULL,'JC002',3,NULL,5,14,6,151,'Yes',4000,4500,'','Active','0000-00-00 00:00:00',NULL,'Text Only',1),
+  (3,'Online Editor','Online Editors required for a reputed news agency','Online Editors required for a reputed news agency','','[]',129,NULL,NULL,'J0003',1,NULL,7,23,9,103,'No',0,0,'','Active','0001-01-01 00:00:00','attachment_BI5XQCYFxZO12W1447383181684','Image and Full Text',1);
+
+INSERT INTO `Candidates` VALUES
+  (1,'Jhon','Doe',4,NULL,'Male',NULL,NULL,NULL,'New York','US',NULL,NULL,'icehrm+jhon@web-stalk.com','+1 455565656',NULL,'Software Engineer','cv_rYwHphV7xD5dOe1444302569136',NULL,NULL,NULL,'','','','','','',NULL,NULL,NULL,NULL,NULL,NULL,'2015-10-08 16:59:20','2015-10-08 16:59:20',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'663fd20d1859344585f678a0f87b23522b8f9fce8c67c5290a609ce342b81442',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+INSERT INTO `Files` VALUES
+  (6,'attachment_BI5XQCYFxZO12W1447383181684','attachment_BI5XQCYFxZO12W1447383181684.png',1,'Job');
+
+
+INSERT INTO `EmployeeDocuments` (`id`,`employee`, `document`, `date_added`, `valid_until`, `status`, `details`, `attachment`, `expire_notification_last`) VALUES
+  (1, 1, 1, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 30 DAY), 'Active', '', NULL, -1),
+  (2, 1, 2, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 7 DAY), 'Active', '', NULL, -1),
+  (3, 1, 3, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 1 DAY), 'Active', '', NULL, -1);
+
+
 
 INSERT INTO `Attendance` (`employee`,`in_time`,`out_time`,`note`) VALUES
 (1, FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 30 DAY))) + FLOOR(28800 + (RAND() * 3600)),'%Y-%m-%d %T'), FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 30 DAY))) + FLOOR(57600 + (RAND() * 21600)),'%Y-%m-%d %T'), ''),
@@ -116,17 +192,93 @@ INSERT INTO `Attendance` (`employee`,`in_time`,`out_time`,`note`) VALUES
 (3, FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 22 DAY))) + FLOOR(28800 + (RAND() * 3600)),'%Y-%m-%d %T'), FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 22 DAY))) + FLOOR(57600 + (RAND() * 21600)),'%Y-%m-%d %T'), '');
 
 
+INSERT INTO `Payroll` VALUES
+  (1,'2016-03',4,1,1,'[\"5\",\"8\",\"9\",\"10\",\"6\",\"7\",\"4\",\"3\",\"2\",\"1\",\"11\",\"12\",\"13\",\"14\",\"15\",\"16\"]','2016-03-01','2016-03-31','Draft'),
+  (2,'2016-03-Weekly',2,1,2,'[\"1\",\"2\",\"3\"]','2016-03-01','2016-03-31','Draft');
+
+INSERT INTO `PayrollColumns` VALUES
+  (5,'Basic Salary',NULL,'[\"1\"]','[]','[]','[]',5,'No','Yes','0.00',NULL,NULL),
+  (6,'Fixed Allowance',NULL,'[\"2\"]','[]','[]','[]',6,'No','Yes','0.00',NULL,NULL),
+  (7,'Gross Pay',NULL,'[]','[]','[\"5\",\"6\"]','[]',7,'No','Yes','0.00',NULL,NULL),
+  (8,'EPF Employee Contribution',NULL,'[]','[\"1\"]','[]','[]',8,'No','Yes','0.00',NULL,NULL),
+  (9,'EPF Employer Contribution',NULL,'[]','[\"2\"]','[]','[]',9,'No','Yes','0.00',NULL,NULL),
+  (10,'ETF Employee Contribution',NULL,'[]','[\"3\"]','[]','[]',10,'No','Yes','0.00',NULL,NULL),
+  (11,'Total EPF 20%',NULL,'[]','[]','[\"8\",\"9\"]','[]',11,'No','Yes','0.00',NULL,NULL),
+  (12,'Total for PAYE',NULL,'[]','[]','[\"7\"]','[]',12,'No','Yes','0.00',NULL,NULL),
+  (13,'PAYE Tax',NULL,'[]','[\"4\"]','[]','[]',13,'No','Yes','0.00',NULL,NULL),
+  (14,'Stamp Duty',NULL,'[]','[\"5\"]','[]','[]',14,'No','Yes','0.00',NULL,NULL),
+  (15,'Total Deductions',NULL,'[]','[]','[\"8\",\"13\",\"14\"]','[]',15,'No','Yes','0.00',NULL,NULL),
+  (16,'Salary to Bank',NULL,'[]','[]','[\"7\"]','[\"15\"]',16,'No','Yes','0.00',NULL,NULL);
+
+
+INSERT INTO `DeductionGroup` VALUES
+  (1,'Sri Lanka Payroll Calculation',''),
+  (2,'Singapore Payroll Calculation','');
+
+INSERT INTO `Deductions` VALUES
+  (1,'EPF Employee Contribution','[]','[]',7,'[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":\"0\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":\"0\",\"amount\":\"X*0.08\",\"id\":\"rangeAmounts_1\"}]',1),
+  (2,'EPF Employer Contribution','[]','[]',7,'[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":\"0\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":\"0\",\"amount\":\"X*0.12\",\"id\":\"rangeAmounts_1\"}]',1),
+  (3,'ETF Employee Contribution','[]','[]',7,'[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":\"0\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":\"0\",\"amount\":\"X*0.03\",\"id\":\"rangeAmounts_1\"}]',1),
+  (4,'PAYE Tax','[]','[]',12,'[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":\"0\",\"upperCondition\":\"lte\",\"upperLimit\":\"62500\",\"amount\":\"0\",\"id\":\"rangeAmounts_1\"},{\"lowerCondition\":\"gt\",\"lowerLimit\":\"62500\",\"upperCondition\":\"lte\",\"upperLimit\":\"104167\",\"amount\":\"X*0.04 - 2500\",\"id\":\"rangeAmounts_2\"},{\"lowerCondition\":\"gt\",\"lowerLimit\":\"104167\",\"upperCondition\":\"lte\",\"upperLimit\":\"145833\",\"amount\":\"X*0.08 - 6667\",\"id\":\"rangeAmounts_3\"},{\"lowerCondition\":\"gt\",\"lowerLimit\":\"145833\",\"upperCondition\":\"lte\",\"upperLimit\":\"187500\",\"amount\":\"X*0.12-12500\",\"id\":\"rangeAmounts_4\"},{\"lowerCondition\":\"gt\",\"lowerLimit\":\"187500\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":\"0\",\"amount\":\"X*0.16 - 20000\",\"id\":\"rangeAmounts_5\"}]',1),
+  (5,'Stamp Duty','[]','[]',12,'[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":\"0\",\"upperCondition\":\"lte\",\"upperLimit\":\"25000\",\"amount\":\"0\",\"id\":\"rangeAmounts_1\"},{\"lowerCondition\":\"gt\",\"lowerLimit\":\"25000\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":\"0\",\"amount\":\"25\",\"id\":\"rangeAmounts_2\"}]',1);
+
+INSERT INTO `PayrollEmployees` VALUES
+  (1,1,4,151,'[]','[]',1),
+  (2,2,4,151,'[]','[]',1),
+  (3,3,4,151,'[]','[]',1),
+  (4,4,2,151,'[]','[]',1),
+  (5,5,2,151,'[]','[]',1),
+  (6,6,4,151,'[]','[]',1),
+  (7,7,4,151,'[]','[]',1),
+  (8,8,4,151,'[]','[]',1),
+  (9,9,4,151,'[]','[]',1),
+  (10,10,4,151,'[]','[]',1);
+
+INSERT INTO `EmployeeLeaves` VALUES
+  (1,1,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 3 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 3 DAY))),'%Y-%m-%d'),'Test Reason 1','Pending',''),
+  (2,1,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 4 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 4 DAY))),'%Y-%m-%d'),'Test Reason 2','Approved',''),
+  (3,2,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 3 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 3 DAY))),'%Y-%m-%d'),'Test Reason 3','Approved',''),
+
+  (4,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 8 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 8 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (5,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 9 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 9 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (6,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 10 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 10 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (7,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 11 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 11 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (8,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 12 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 12 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (9,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 13 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 13 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (10,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 14 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 14 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (11,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 15 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 15 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (12,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 16 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 16 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (13,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 17 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 17 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (14,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 18 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 18 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (15,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 19 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 19 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (16,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 20 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 20 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (17,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 21 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 21 DAY))),'%Y-%m-%d'),'Test Reason 4','Pending',''),
+  (18,3,1,4,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 22 DAY))),'%Y-%m-%d'),FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 22 DAY))),'%Y-%m-%d'),'Test Reason 22','Pending','');
+
+INSERT INTO `EmployeeLeaveDays` VALUES
+  (1,1,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 3 DAY))),'%Y-%m-%d'),'Full Day'),
+  (2,1,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 4 DAY))),'%Y-%m-%d'),'Half Day - Morning'),
+  (3,2,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 3 DAY))),'%Y-%m-%d'),'Half Day - Morning'),
+
+  (4,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 8 DAY))),'%Y-%m-%d'),'3 Hours - Morning'),
+  (5,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 9 DAY))),'%Y-%m-%d'),'Full Day'),
+  (6,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 10 DAY))),'%Y-%m-%d'),'Full Day'),
+  (7,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 11 DAY))),'%Y-%m-%d'),'Full Day'),
+  (8,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 12 DAY))),'%Y-%m-%d'),'Full Day'),
+  (9,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 13 DAY))),'%Y-%m-%d'),'Full Day'),
+  (10,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 14 DAY))),'%Y-%m-%d'),'Full Day'),
+  (11,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 15 DAY))),'%Y-%m-%d'),'Full Day'),
+  (12,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 16 DAY))),'%Y-%m-%d'),'Full Day'),
+  (13,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 17 DAY))),'%Y-%m-%d'),'Full Day'),
+  (14,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 18 DAY))),'%Y-%m-%d'),'Full Day'),
+  (15,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 19 DAY))),'%Y-%m-%d'),'Full Day'),
+  (16,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 20 DAY))),'%Y-%m-%d'),'Full Day'),
+  (17,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 21 DAY))),'%Y-%m-%d'),'Full Day'),
+  (18,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 22 DAY))),'%Y-%m-%d'),'Full Day');
+
 
 
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-
-
-
-
-
-
-
-
 
 
 

@@ -23,8 +23,20 @@ Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilin
 
 class EmployeesActionManager extends SubActionManager{
 	public function get($req){
+        $profileId = $this->getCurrentProfileId();
+        $subordinate = new Employee();
+        $subordinatesCount = $subordinate->Count("supervisor = ? and id = ?",array($profileId, $req->id));
+
+
+		if($this->user->user_level == 'Admin' || $subordinatesCount > 0){
+			$id = $req->id;
+		}
 		
-		$employee = $this->baseService->getElement('Employee',$this->getCurrentProfileId(),$req->map,true);	
+		if(empty($id)){
+			$id = $profileId;
+		}
+		
+		$employee = $this->baseService->getElement('Employee',$id,$req->map,true);	
 		
 		$subordinate = new Employee();
 		$subordinates = $subordinate->Find("supervisor = ?",array($employee->id));
@@ -53,11 +65,19 @@ class EmployeesActionManager extends SubActionManager{
 	}
 	
 	public function deleteProfileImage($req){
-		if($this->user->user_level == 'Admin' || $this->user->employee == $req->id){
+
+        $profileId = $this->getCurrentProfileId();
+        $subordinate = new Employee();
+        $subordinatesCount = $subordinate->Count("supervisor = ? and id = ?",array($profileId, $req->id));
+
+
+        if($this->user->user_level == 'Admin' || $this->user->employee == $req->id || $subordinatesCount == 1){
 			$fs = FileService::getInstance();
 			$res = $fs->deleteProfileImage($req->id);
 			return new IceResponse(IceResponse::SUCCESS,$res);	
 		}
+
+        return new IceResponse(IceResponse::ERROR,"Not allowed to delete profile image");
 	}
 	
 	public function changePassword($req){
@@ -65,8 +85,9 @@ class EmployeesActionManager extends SubActionManager{
 		if($this->getCurrentProfileId() != $this->user->employee || empty($this->user->employee)){
 			return new IceResponse(IceResponse::ERROR,"You are not allowed to change passwords of other employees");
 		}
-		
-		$user = $this->baseService->getElement('User',$this->user->id);
+
+        $user = new User();
+        $user->Load("id = ?",array($this->user->id));
 		if(empty($user->id)){
 			return new IceResponse(IceResponse::ERROR,"Error occured while changing password");
 		}

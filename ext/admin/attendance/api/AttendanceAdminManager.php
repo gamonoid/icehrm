@@ -34,6 +34,12 @@ if (!class_exists('AttendanceAdminManager')) {
             UIManager::getInstance()->addQuickAccessMenuItem("Clocked In Employees","fa-clock-o",CLIENT_BASE_URL."?g=admin&n=attendance&m=admin_Employees#tabAttendanceStatus",array("Admin","Manager"));
         }
 
+        public function initCalculationHooks(){
+            $this->addCalculationHook('AttendanceUtil_getTimeWorkedHours','Total Hours from Attendance','AttendanceUtil','getTimeWorkedHours');
+            $this->addCalculationHook('AttendanceUtil_getRegularWorkedHours','Total Regular Hours from Attendance','AttendanceUtil','getRegularWorkedHours');
+            $this->addCalculationHook('AttendanceUtil_getOverTimeWorkedHours','Total Overtime Hours from Attendance','AttendanceUtil','getOverTimeWorkedHours');
+        }
+
     }
 }
 
@@ -213,6 +219,39 @@ if (!class_exists('AttendanceStatus')) {
     }
 }
 
+if (!class_exists('AttendanceUtil')) {
+    class AttendanceUtil{
+        public function getAttendanceSummary($employeeId, $startDate, $endDate){
+            $startTime = $startDate." 00:00:00";
+            $endTime = $endDate." 23:59:59";
+            $attendance = new Attendance();
+            $atts = $attendance->Find("employee = ? and in_time >= ? and out_time <= ?",array($employeeId, $startTime, $endTime));
+
+            $atCalClassName = SettingsManager::getInstance()->getSetting('Attendance: Overtime Calculation Class');
+
+            $atCal = new $atCalClassName();
+            $atSum = $atCal->getDataSeconds($atts, $startDate, true);
+
+            return $atSum;
+        }
+
+        public function getTimeWorkedHours($employeeId, $startDate, $endDate){
+            $atSum = $this->getAttendanceSummary($employeeId, $startDate, $endDate);
+            return round(($atSum['t']/60)/60,2);
+        }
+
+        public function getRegularWorkedHours($employeeId, $startDate, $endDate){
+            $atSum = $this->getAttendanceSummary($employeeId, $startDate, $endDate);
+            return round(($atSum['r']/60)/60,2);
+        }
+
+        public function getOverTimeWorkedHours($employeeId, $startDate, $endDate){
+            $atSum = $this->getAttendanceSummary($employeeId, $startDate, $endDate);
+            return round(($atSum['o']/60)/60,2);
+        }
+    }
+}
+
 
 if (!class_exists('BasicOvertimeCalculator')) {
 
@@ -301,6 +340,18 @@ if (!class_exists('BasicOvertimeCalculator')) {
                 return $this->convertToHoursAggregated($overtime);
             }else{
                 return $this->convertToHours($overtime);
+            }
+
+        }
+
+        public function getDataSeconds($atts, $actualStartDate, $aggregate = false){
+            $atSummary = $this->createAttendanceSummary($atts);
+            $overtime = $this->calculateOvertime($this->removeAdditionalDays($atSummary, $actualStartDate));
+            if($aggregate){
+                $overtime = $this->aggregateData($overtime);
+                return $overtime;
+            }else{
+                return $overtime;
             }
 
         }

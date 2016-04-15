@@ -5,9 +5,9 @@ class ICEHRM_Record extends ADOdb_Active_Record{
 		return array("get","element","save","delete");
 	}
 
-    public function getOtherAccess(){
-        return array("get","element","save","delete");
-    }
+	public function getOtherAccess(){
+		return array("get","element","save","delete");
+	}
 
 	public function getManagerAccess(){
 		return array("get","element");
@@ -16,7 +16,7 @@ class ICEHRM_Record extends ADOdb_Active_Record{
 	public function getUserAccess(){
 		return array("get","element");
 	}
-	
+
 	public function getEmployeeAccess(){
 		return $this->getUserAccess();
 	}
@@ -57,9 +57,9 @@ class ICEHRM_Record extends ADOdb_Active_Record{
 
 	}
 
-    public function postProcessGetData($obj){
-        return $obj;
-    }
+	public function postProcessGetData($obj){
+		return $obj;
+	}
 
 	public function postProcessGetElement($obj){
 		return $obj;
@@ -69,12 +69,12 @@ class ICEHRM_Record extends ADOdb_Active_Record{
 		return array("get","element","save","delete");
 	}
 
-    public function getVirtualFields(){
-        return array(
-        );
-    }
+	public function getVirtualFields(){
+		return array(
+		);
+	}
 
-    public function allowIndirectMapping(){
-        return false;
-    }
+	public function allowIndirectMapping(){
+		return false;
+	}
 }

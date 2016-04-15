@@ -32,7 +32,6 @@ $moduleBuilder->addModuleOrGroup(new ModuleTab('Country','Country','Countries','
 $moduleBuilder->addModuleOrGroup(new ModuleTab('Province','Province','Provinces','ProvinceAdapter','',''));
 $moduleBuilder->addModuleOrGroup(new ModuleTab('CurrencyType','CurrencyType','Currency Types','CurrencyTypeAdapter','',''));
 $moduleBuilder->addModuleOrGroup(new ModuleTab('Nationality','Nationality','Nationality','NationalityAdapter','',''));
-$moduleBuilder->addModuleOrGroup(new ModuleTab('Nationality','Nationality','Nationality','NationalityAdapter','',''));
 $moduleBuilder->addModuleOrGroup(new ModuleTab('Ethnicity','Ethnicity','Ethnicity','EthnicityAdapter','',''));
 $moduleBuilder->addModuleOrGroup(new ModuleTab('ImmigrationStatus','ImmigrationStatus','Immigration Status','ImmigrationStatusAdapter','',''));
 

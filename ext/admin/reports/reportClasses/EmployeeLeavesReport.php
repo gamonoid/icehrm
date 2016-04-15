@@ -32,33 +32,49 @@ from EmployeeLeaves lv";
 		if(in_array("NULL", $employeeList) ){
 			$employeeList = array();
 		}
+
+		if($request['department'] != "NULL" && empty($employeeList)){
+			$empTmp = new Employee();
+			$empTemps = $empTmp->Find("department = ? and status = Active",array($request['department']));
+			foreach($empTemps as $empTmp){
+				$employeeList[] = $empTmp->id;
+			}
+		}
 		
 		
 		if(!empty($employeeList) && ($request['status'] != "NULL" && !empty($request['status']))){
-			$query = "where employee in (".implode(",", $employeeList).") and date_start >= ? and date_end <= ? and status = ?;";
+			$query = "where employee in (".implode(",", $employeeList).") and ((date_start >= ? and date_start <= ?) or (date_end >= ? and date_end <= ?)) and status = ?;";
 			$params = array(	
 					$request['date_start'],	
-					$request['date_end'],	
+					$request['date_end'],
+                    $request['date_start'],
+                    $request['date_end'],
 					$request['status']
 			);
 		}else if(!empty($employeeList)){
-			$query = "where employee in (".implode(",", $employeeList).") and date_start >= ? and date_end <= ?;";
+			$query = "where employee in (".implode(",", $employeeList).") and ((date_start >= ? and date_start <= ?) or (date_end >= ? and date_end <= ?));";
 			$params = array(
+					$request['date_start'],
+					$request['date_end'],
 					$request['date_start'],
 					$request['date_end']
 			);
 		}else if(($request['status'] != "NULL" && !empty($request['status']))){
-			$query = "where status = ? and date_start >= ? and date_end <= ?;";
+			$query = "where status = ? and ((date_start >= ? and date_start <= ?) or (date_end >= ? and date_end <= ?));";
 			$params = array(
 					$request['status'],
 					$request['date_start'],
-					$request['date_end']
+					$request['date_end'],
+                    $request['date_start'],
+                    $request['date_end']
 			);
 		}else{
-			$query = "where date_start >= ? and date_end <= ?;";
+			$query = "where ((date_start >= ? and date_start <= ?) or (date_end >= ? and date_end <= ?));";
 			$params = array(
 					$request['date_start'],
-					$request['date_end']
+					$request['date_end'],
+                    $request['date_start'],
+                    $request['date_end']
 			);
 		}
 		
