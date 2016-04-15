@@ -58,7 +58,21 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
         }
         ?>
     </div>
+    <div id="iceannon">
+        <div class="callout callout-danger lead" style="font-size: 14px;font-weight: bold;">
+            <h4>Why not upgrade to IceHrm Pro Version</h4>
+            <p>
+                IceHrm Pro is the feature rich upgrade to IceHrm open source version. It comes with improved modules for
+                employee management, leave management and number of other features over open source version.
+                Hit this <a href="http://icehrm.com/#compare" class="btn btn-primary btn-xs target="_blank">link</a> to do a full one to one comparison.
 
+                Also you can learn more about IceHrm Pro <a href="http://blog.icehrm.com/docs/icehrm-pro/" class="btn btn-primary btn-xs" target="_blank">here</a>
+                <br/>
+                <br/>
+                <a href="http://icehrm.com/modules.php" class="btn btn-success btm-xs" target="_blank"><i class="fa fa-checkout"></i> Buy IceHrm Pro</a>
+            </p>
+        </div>
+    </div>
 
 </div>
 <script>
@@ -68,5 +82,17 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
     var modJs = modJsList['tabDashboard'];
 
+    $(document).ready(function() {
+        try {
+            $.ajax({
+                url: "https://icehrm-public.s3.amazonaws.com/icehrmnews.html",
+                success: function (result) {
+                    $('#iceannon').html(result);
+                }
+            });
+        } catch (e) {
+        }
+
+    }
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>
