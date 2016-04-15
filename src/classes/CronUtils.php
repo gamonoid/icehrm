@@ -102,7 +102,7 @@ class IceCron{
                     return true;
                 }
             }else{
-                if(intval(date('m')) <= intval($time) && date('H') != date('H',strtotime($lastRunTime))){
+                if(intval(date('i')) <= intval($time) && date('H') != date('H',strtotime($lastRunTime))){
                     return true;
                 }
             }
@@ -113,7 +113,7 @@ class IceCron{
                     return true;
                 }
             }else{
-                if(intval(date('H')) <= intval($time) && date('d') != date('d',strtotime($lastRunTime))){
+                if(intval(date('H')) >= intval($time) && date('d') != date('d',strtotime($lastRunTime))){
                     return true;
                 }
             }
@@ -124,7 +124,7 @@ class IceCron{
                     return true;
                 }
             }else{
-                if(intval(date('d')) <= intval($time) && date('m') != date('m',strtotime($lastRunTime))){
+                if(intval(date('d')) >= intval($time) && date('m') != date('m',strtotime($lastRunTime))){
                     return true;
                 }
             }
@@ -134,7 +134,7 @@ class IceCron{
                     return true;
                 }
             }else{
-                if(intval(date('m')) <= intval($time) && date('Y') != date('Y',strtotime($lastRunTime))){
+                if(intval(date('m')) >= intval($time) && date('Y') != date('Y',strtotime($lastRunTime))){
                     return true;
                 }
             }

@@ -49,14 +49,14 @@ class RestApiManager{
 			$accessToken = $this->generateUserAccessToken($user)->getData();
 			if(!empty($accessTokenObj->id)){
 				$accessTokenObj->token = $accessToken;
-				$accessTokenObj->hash = base64_encode(CLIENT_BASE_URL).":".md5($accessTokenObj->token);
+				$accessTokenObj->hash = md5(CLIENT_BASE_URL.$accessTokenObj->token);
 				$accessTokenObj->updated = date("Y-m-d H:i:s");
 				$accessTokenObj->Save();
 			}else{
 				$accessTokenObj = new RestAccessToken();
 				$accessTokenObj->userId = $user->id;
 				$accessTokenObj->token = $accessToken;
-				$accessTokenObj->hash = base64_encode(CLIENT_BASE_URL).":".md5($accessTokenObj->token);
+				$accessTokenObj->hash = md5(CLIENT_BASE_URL.$accessTokenObj->token);
 				$accessTokenObj->updated = date("Y-m-d H:i:s");
 				$accessTokenObj->created = date("Y-m-d H:i:s");
 				$accessTokenObj->Save();
@@ -69,13 +69,14 @@ class RestApiManager{
 	
 	public function validateAccessToken($hash){
 		$accessTokenObj = new RestAccessToken();
+		LogManager::getInstance()->info("AT Hash:".$hash);
 		$accessTokenObj->Load("hash = ?",array($hash));
-		
+		LogManager::getInstance()->info("AT Hash Object:".json_encode($accessTokenObj));
 		if(!empty($accessTokenObj->id) && $accessTokenObj->hash == $hash){
 			return $this->validateAccessTokenInner($accessTokenObj->token);
 		}
 		
-		return new IceResponse(IceResponse::ERROR, "Acess Token not found");
+		return new IceResponse(IceResponse::ERROR, "Access Token not found");
 	}
 	
 	private function validateAccessTokenInner($accessToken){
@@ -122,30 +123,40 @@ class RestApiManager{
 
 
 class RestEndPoint{
-	var $url;
-	
-	public function setUrl($url){
-		$this->url = $url;
+
+	public function process($type , $parameter = NULL){
+		$resp = $this->$type($parameter);
+		$this->printResponse($resp);
 	}
 	
-	public function getUrl(){
-		return $this->url;
+	public function get($parameter){
+		return new IceResponse(IceResponse::ERROR, "Method not Implemented");
 	}
 	
-	public function get($parameters){
-		return new IceResponse(IceResponse::ERROR, false);
+	public function post($parameter){
+		return new IceResponse(IceResponse::ERROR, "Method not Implemented");
 	}
 	
-	public function post($parameters){
-		return new IceResponse(IceResponse::ERROR, false);
+	public function put($parameter){
+		return new IceResponse(IceResponse::ERROR, "Method not Implemented");
 	}
 	
-	public function put($parameters){
-		return new IceResponse(IceResponse::ERROR, false);
+	public function delete($parameter){
+		return new IceResponse(IceResponse::ERROR, "Method not Implemented");
 	}
-	
-	public function delete($parameters){
-		return new IceResponse(IceResponse::ERROR, false);
+
+	public function clearObject($obj){
+		return BaseService::getInstance()->cleanUpAdoDB($obj);
+	}
+
+	public function validateAccessToken(){
+		$accessTokenValidation = RestApiManager::getInstance()->validateAccessToken($_REQUEST['access_token']);
+
+		return $accessTokenValidation;
+	}
+
+	public function printResponse($response){
+		echo json_encode($response,JSON_PRETTY_PRINT);
 	}
 }
 

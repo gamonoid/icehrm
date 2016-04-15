@@ -23,6 +23,12 @@ if(SettingsManager::getInstance()->getSetting("System: Add New Permissions") == 
 	SettingsManager::getInstance()->setSetting("System: Add New Permissions","0");
 }
 
+$resetModuleNames = false;
+if(SettingsManager::getInstance()->getSetting("System: Reset Module Names") == "1"){
+	$resetModuleNames = true;
+	SettingsManager::getInstance()->setSetting("System: Reset Module Names","0");
+}
+
 function includeModuleManager($type,$name,$data){
 	$moduleCapsName = ucfirst($name);
 	$moduleTypeCapsName = ucfirst($type); // Admin or Modules
@@ -104,6 +110,12 @@ foreach($ams as $am){
 				createPermissions($meta, $dbModule->id);
 			}
 
+			if($resetModuleNames){
+				$dbModule->label = $arr['label'];
+				$dbModule->menu = $arr['menu'];
+				$dbModule->icon = $arr['icon'];
+				$dbModule->Save();
+			}
 
             $arr['name'] = $dbModule->name;
             $arr['label'] = $dbModule->label;
@@ -191,6 +203,12 @@ foreach($ams as $am){
 				createPermissions($meta, $dbModule->id);
 			}
 
+			if($resetModuleNames){
+				$dbModule->label = $arr['label'];
+				$dbModule->menu = $arr['menu'];
+				$dbModule->icon = $arr['icon'];
+				$dbModule->Save();
+			}
 
             $arr['name'] = $dbModule->name;
             $arr['label'] = $dbModule->label;

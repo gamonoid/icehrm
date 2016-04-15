@@ -12,6 +12,7 @@ include (APP_BASE_PATH."utils/SessionUtils.php");
 include (APP_BASE_PATH."utils/InputCleaner.php");
 include (APP_BASE_PATH."utils/LogManager.php");
 include (APP_BASE_PATH."utils/CalendarTools.php");
+include (APP_BASE_PATH."utils/EvalMath.php");
 
 
 $_REQUEST = InputCleaner::cleanParameters($_REQUEST);

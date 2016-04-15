@@ -532,6 +532,14 @@ That way you can attach each and every project to a client.
 Under employee projects tab you can assign projects to employees. You need to add projects to employees to enable them to add time against 
 these projects in time-sheets.
 
+Release note v15.3
+------------------
+### Fixes
+ * Fix issue: classes should be loaded even the module is disabled
+ * Deleting the only Admin user is not allowed
+ * Fixes for handling non UTF-8
+ * Fix for non-mandatory select boxes are shown as mandatory
+
 Release note v15.2
 ------------------
 

@@ -46,7 +46,8 @@ class BaseService{
 	var $emailSender = null;
     var $user = null;
     var $historyManagers = array();
-	
+    var $calculationHooks = array();
+
 	private static $me = null;
 	
 	private function __construct(){
@@ -131,10 +132,15 @@ class BaseService{
             LogManager::getInstance()->debug("Query: "."1=1".$query.$orderBy);
             LogManager::getInstance()->debug("Query Data: ".print_r($queryData,true));
 			$list = $obj->Find("1=1".$query.$orderBy,$queryData);	
-		}	
+		}
+
+        $newList = array();
+        foreach($list as $listObj){
+            $newList[] = $this->cleanUpAdoDB($listObj);
+        }
 		
 		if(!empty($mappingStr) && count($map)>0){
-			$list = $this->populateMapping($list, $map);
+			$list = $this->populateMapping($newList, $map);
 		}
 
 		return $list;
@@ -363,7 +369,7 @@ class BaseService{
 
         $processedList = array();
         foreach($list as $obj){
-            $processedList[] = $obj->postProcessGetData($obj);
+            $processedList[] = $this->cleanUpAdoDB($obj->postProcessGetData($obj));
         }
 
         $list = $processedList;
@@ -488,7 +494,8 @@ class BaseService{
 					}	
 				}
 			}
-			return 	$obj->postProcessGetData($obj);
+			$obj = $obj->postProcessGetElement($obj);
+			return 	$this->cleanUpAdoDB($obj->postProcessGetData($obj));
 		}
 		return null;
 	}
@@ -685,6 +692,7 @@ class BaseService{
 		}
 		
 		foreach($list as $obj){
+            $obj = $this->cleanUpAdoDB($obj);
 			if(count($values) == 1){
 				$ret[$obj->$key] = $obj->$value;	
 			}else{
@@ -1257,6 +1265,60 @@ class BaseService{
         MemcacheService::getInstance()->set($class."-".$id, serialize($obj), 10 * 60);
 
         return $obj;
+
+    }
+
+	public function addCalculationHook($code, $name, $class, $method){
+		$calcualtionHook = new CalculationHook();
+		$calcualtionHook->code = $code;
+		$calcualtionHook->name = $name;
+		$calcualtionHook->class = $class;
+		$calcualtionHook->method = $method;
+		$this->calculationHooks[$code] = $calcualtionHook;
+	}
+
+	public function getCalculationHooks(){
+		return array_values($this->calculationHooks);
+	}
+
+	public function getCalculationHook($code){
+		return $this->calculationHooks[$code];
+	}
+
+    public function executeCalculationHook($parameters, $code = NULL){
+		$ch = BaseService::getInstance()->getCalculationHook($code);
+
+        if(empty($ch->code)){
+            return null;
+        }
+        $class = $ch->class;
+        return call_user_func_array(array(new $class(), $ch->method), $parameters);
+    }
+
+    public function cleanNonUTFChar($obj){
+        $regex = <<<'END'
+/
+  (
+    (?: [\x00-\x7F]                 # single-byte sequences   0xxxxxxx
+    |   [\xC0-\xDF][\x80-\xBF]      # double-byte sequences   110xxxxx 10xxxxxx
+    |   [\xE0-\xEF][\x80-\xBF]{2}   # triple-byte sequences   1110xxxx 10xxxxxx * 2
+    |   [\xF0-\xF7][\x80-\xBF]{3}   # quadruple-byte sequence 11110xxx 10xxxxxx * 3
+    ){1,100}                        # ...one or more times
+  )
+| .                                 # anything else
+/x
+END;
+        if(is_string($obj)){
+            return preg_replace($regex, '$1', $obj);
+        }else{
+
+            foreach($obj as $key => $val){
+
+
+                $obj->$key = preg_replace($regex, '$1', $val);
+            }
+            return $obj;
+        }
 
     }
 }

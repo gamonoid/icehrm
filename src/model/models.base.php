@@ -61,6 +61,10 @@ class ICEHRM_Record extends ADOdb_Active_Record{
         return $obj;
     }
 
+	public function postProcessGetElement($obj){
+		return $obj;
+	}
+
     public function getDefaultAccessLevel(){
         return array("get","element","save","delete");
     }

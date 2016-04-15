@@ -48,6 +48,17 @@ class Setting extends ICEHRM_Record {
 		return array();
 	}
 
+	public function postProcessGetElement($obj){
+		if($obj->name == 'Api: REST Api Token'){
+			$user = BaseService::getInstance()->getCurrentUser();
+			$dbUser = new User();
+			$dbUser->Load("id = ?",array($user->id));
+			$resp = RestApiManager::getInstance()->getAccessTokenForUser($dbUser);
+			$obj->value = $resp->getData();
+		}
+		return $obj;
+	}
+
 	var $_table = 'Settings';
 }
 

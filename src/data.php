@@ -90,7 +90,18 @@ if(in_array($table, BaseService::getInstance()->userTables) && !$skipProfileRest
 			}
 			$subordinatesIds.=$sub->id;
 		}
-		$subordinatesIds.="";
+		if($obj->allowIndirectMapping()){
+			$indeirectEmployees = $subordinate->Find("indirect_supervisors IS NOT NULL and indirect_supervisors <> '' and status = 'Active'", array());
+			foreach($indeirectEmployees as $ie){
+				$indirectSupervisors = json_decode($ie->indirect_supervisors, true);
+				if(in_array($cemp, $indirectSupervisors)){
+					if($subordinatesIds != ""){
+						$subordinatesIds.=",";
+					}
+					$subordinatesIds.=$ie->id;
+				}
+			}
+		}
 		$sql = "Select count(id) as count from ".$obj->_table." where ".SIGN_IN_ELEMENT_MAPPING_FIELD_NAME." in (".$subordinatesIds.") ".$countFilterQuery;
 		LogManager::getInstance()->debug("Count Filter Query 2:".$sql);
 		LogManager::getInstance()->debug("Count Filter Query Data 2:".json_encode($countFilterQueryData));

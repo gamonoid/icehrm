@@ -263,4 +263,34 @@ if($action == 'get'){
 	
 }
 
-echo json_encode($ret);
+$res = json_encode($ret);
+
+if(empty($res) && !empty($ret)){
+    //Do this only if there is a json encoding error
+    if(!empty($ret['object'])) {
+        if (is_array($ret['object'])) {
+            $newObjects = array();
+            foreach ($ret['object'] as $obj) {
+                $newObjects[] = BaseService::getInstance()->cleanNonUTFChar($obj);
+            }
+            $ret['object'] = $newObjects;
+        } else {
+            $ret['object'] = BaseService::getInstance()->cleanNonUTFChar($ret['object']);
+        }
+    }else if(!empty($ret['data'])){
+        if (is_array($ret['data'])) {
+            $newObjects = array();
+            foreach ($ret['data'] as $obj) {
+                $newObjects[] = BaseService::getInstance()->cleanNonUTFChar($obj);
+            }
+            $ret['data'] = $newObjects;
+        } else {
+            $ret['data'] = BaseService::getInstance()->cleanNonUTFChar($ret['data']);
+        }
+    }
+
+
+    echo json_encode($ret);
+}else{
+    echo $res;
+}

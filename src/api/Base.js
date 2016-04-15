@@ -1725,7 +1725,10 @@ IceHRMBase.method('fillForm', function(object, formId, fields) {
 			}
 			
 			$(formId + ' #'+fields[i][0]).select2('val',msVal);
-		
+			var select2Height = $(formId + ' #'+fields[i][0]).find(".select2-choices").height();
+			$(formId + ' #'+fields[i][0]).find(".controls").css('min-height', select2Height+"px");
+			$(formId + ' #'+fields[i][0]).css('min-height', select2Height+"px");
+
 		}else if(fields[i][1].type == 'datagroup'){
 			try{
 				var html = this.dataGroupToHtml(object[fields[i][0]],fields[i]);
@@ -1764,7 +1767,13 @@ IceHRMBase.method('renderFormField', function(field) {
 	}
 	var t = this.fieldTemplates[field[1].type];
 	if(field[1].validation != "none" &&  field[1].validation != "emailOrEmpty" && field[1].validation != "numberOrEmpty" && field[1].type != "placeholder" && field[1].label.indexOf('*') < 0){
-		field[1].label = field[1].label + '<font class="redFont">*</font>';
+		var tempSelectBoxes = ['select','select2'];
+		if(tempSelectBoxes.indexOf(field[1].type) >= 0 && field[1]['allow-null'] == true){
+
+		}else{
+			field[1].label = field[1].label + '<font class="redFont">*</font>';
+		}
+
 	}
 	if(field[1].type == 'text' || field[1].type == 'textarea' || field[1].type == 'hidden' || field[1].type == 'label' || field[1].type == 'placeholder'){
 		t = t.replace(/_id_/g,field[0]);

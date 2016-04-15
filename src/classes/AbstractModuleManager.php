@@ -65,6 +65,10 @@ abstract class AbstractModuleManager{
 	 */
 	public abstract function setupModuleClassDefinitions();
 
+	public function initCalculationHooks(){
+		
+	}
+
     public function initQuickAccessMenu(){
 
     }
@@ -207,6 +211,10 @@ abstract class AbstractModuleManager{
 
         $eh->Save();
     }
+	
+	public function addCalculationHook($code, $name, $class, $method){
+		BaseService::getInstance()->addCalculationHook($code, $name, $class, $method);
+	}
 
 
 }
