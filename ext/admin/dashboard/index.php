@@ -93,6 +93,6 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
         } catch (e) {
         }
 
-    }
+    });
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>
