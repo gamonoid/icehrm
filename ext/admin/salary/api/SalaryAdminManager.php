@@ -1,26 +1,26 @@
 <?php
 if (!class_exists('SalaryAdminManager')) {
-	class SalaryAdminManager extends AbstractModuleManager{
-		
-		public function initializeUserClasses(){
-			
-		}
-		
-		public function initializeFieldMappings(){
-			
-		}
-		
-		public function initializeDatabaseErrorMappings(){
+    class SalaryAdminManager extends AbstractModuleManager{
 
-		}
-		
-		public function setupModuleClassDefinitions(){
+        public function initializeUserClasses(){
+
+        }
+
+        public function initializeFieldMappings(){
+
+        }
+
+        public function initializeDatabaseErrorMappings(){
+
+        }
+
+        public function setupModuleClassDefinitions(){
             $this->addModelClass('SalaryComponentType');
             $this->addModelClass('SalaryComponent');
-            $this->addModelClass('Deduction');
-		}
-		
-	}
+            $this->addModelClass('PayrollEmployee');
+        }
+
+    }
 }
 
 if (!class_exists('SalaryComponentType')) {
