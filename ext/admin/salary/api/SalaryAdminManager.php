@@ -51,33 +51,6 @@ if (!class_exists('SalaryComponent')) {
     }
 }
 
-if (!class_exists('Deduction')) {
-    class Deduction extends ICEHRM_Record {
-        var $_table = 'Deductions';
-
-        public function getAdminAccess(){
-            return array("get","element","save","delete");
-        }
-
-        public function getUserAccess(){
-            return array("get","element");
-        }
-    }
-}
-
-if (!class_exists('DeductionGroup')) {
-    class DeductionGroup extends ICEHRM_Record {
-        var $_table = 'DeductionGroup';
-
-        public function getAdminAccess(){
-            return array("get","element","save","delete");
-        }
-
-        public function getUserAccess(){
-            return array("get","element");
-        }
-    }
-}
 
 if (!class_exists('PayrollEmployee')) {
     class PayrollEmployee extends ICEHRM_Record {

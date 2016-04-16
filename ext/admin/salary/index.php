@@ -9,9 +9,6 @@ $moduleBuilder = new ModuleBuilder();
 
 $moduleBuilder->addModuleOrGroup(new ModuleTab('SalaryComponentType','SalaryComponentType','Salary Component Types','SalaryComponentTypeAdapter','','',true));
 $moduleBuilder->addModuleOrGroup(new ModuleTab('SalaryComponent','SalaryComponent','Salary Components','SalaryComponentAdapter','',''));
-$moduleBuilder->addModuleOrGroup(new ModuleTab('DeductionGroup','DeductionGroup','Calculation Groups','DeductionGroupAdapter','',''));
-$moduleBuilder->addModuleOrGroup(new ModuleTab('Deduction','Deduction','Calculation Methods','DeductionAdapter','',''));
-
 $moduleBuilder->addModuleOrGroup(new ModuleTab('EmployeeSalary','EmployeeSalary','Employee Salary Components','EmployeeSalaryAdapter','','',false,array("setRemoteTable"=>"true")));
 
 
