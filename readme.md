@@ -26,45 +26,37 @@ Installation
 Upgrade from Previous Versions to Latest Version
 ------------------------------------------------
 
- * Backup icehrm installation file and DB
- * Remove all folders except icehrm/app from your existing installation
- * Copy all folders except icehrm/app into installation folder
- * Use sql scripts inside 'db_upgrade/(version)' folder to upgrade the icehrm current version
- 
- 
- Note: If you are upgrading from older versions of icehrm please note that the icehrm leave module is removed since v13.0
- 
+Refer: [](http://blog.icehrm.com/docs/upgrade/)
 
-
-Following is a list of features supported in each version of icehrm
+Following is a list of features supported in each edition of icehrm
 -------------------------------------------------------------------
 
-### IceHrm Open Source Version 
+### IceHrm Open Source Edition 
  * IceHrm Core Modules - Both Enterprise and Open source versions developed on same core concept. But the core modules in professional and enterprise versions are more feature rich and updated with latest security improvements.
  * [Company Information Management](http://icehrm.com/compare.php) - Store and manage details about how companies, departments and branches of the organisation are connected
  * Basic [Employee Management](http://icehrm.com) - Store, manage and retrieve employee information when required
  * Time sheets - IceHrm is a [timesheet app](http://icehrm.com) / [Open source timesheet management](http://icehrm.com) application to track time spent by employees on various projects
  * [Attendance Management](http://icehrm.com) - IceHrm can be used as a [attendance management system](http://icehrm.com) effectively for any size a company.
- * [Performance Charts](http://icehrm.com) - Charts for monitoring attendance hours and comparing attendance with time sheets
+ * [LDAP Login](http://icehrm.com) - Users can share login with company LDAP server
  * [Travel Management](http://icehrm.com) - Module for managing travel requests
  
+ #### Advanced Employee Module (from v16.0.OS)
  
-### IceHrm Pro Version | [Buy now for 349.49 USD](http://icehrm.com)
+ ![Advanced Employee Module](https://icehrm.s3.amazonaws.com/images/blog-images/advanced-employee-module.png)
+ 
+ - Update all employee information without having to switch employees.
+ - Search employee skills, qualifications and other information<br/>easily across whole company.
+ - Terminate employees while keeping data in system.
+ - Re-enable temporarily terminated employees with one click.
+ - Employee archive feature to archive data of terminated employees.
+ 
+### IceHrm Pro Edition | [Buy now for 349.49 USD](http://icehrm.com)
 
 IceHrm Profession version (in short IceHrmPro) is the feature rich commercial alternative for icehrm
 open source version.  IceHrm Pro supports following features
 
 Following features are supported in IceHrm Pro version in addition to the features supported in open source version.
 
-#### Advanced Employee Module
-
-![Advanced Employee Module](https://icehrm.s3.amazonaws.com/images/blog-images/advanced-employee-module.png)
-
-- Update all employee information without having to switch employees.
-- Search employee skills, qualifications and other information<br/>easily across whole company.
-- Terminate employees while keeping data in system.
-- Re-enable temporarily terminated employees with one click.
-- Employee archive feature to archive data of terminated employees.
     
 #### Leave Management
 
@@ -89,10 +81,14 @@ You can learn more about [IceHrm Pro here](http://blog.icehrm.com/docs/icehrm-pr
 
 To purchase IceHrmPro please visit [http://icehrm.com/modules.php](http://icehrm.com/modules.php)
 
+#### Training Management
 
-### IceHrm Enterprise Version [Starts from 1498 USD](http://icehrm.com)
+Icehrm [training management system](http://icehrm.com) is for Module for managing courses, training sessions and employee attendance to training sessions.
+ 
 
-In addition to pro version features icehrm enterprise version includes following features
+### IceHrm Hosted Edition [Starts from 1498 USD](http://icehrm.com)
+
+In addition to pro version features icehrm enterprise hosted edition includes following features
 
 #### Candidate / Recruitment Management
 
@@ -111,12 +107,6 @@ following features
 
 More about [recruitment module](http://blog.icehrm.com/docs/recruitment/)
 
-#### LDAP Support
-
-#### Training Management
-
-Icehrm [training management system](http://icehrm.com) is for Module for managing courses, training sessions and employee attendance to training sessions.
- 
 
 Your Company Structure (Departments / Branches and other Organization Units)
 -------------------------------------------
