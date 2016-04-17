@@ -26,7 +26,7 @@ Installation
 Upgrade from Previous Versions to Latest Version
 ------------------------------------------------
 
-Refer: [](http://blog.icehrm.com/docs/upgrade/)
+Refer: [http://blog.icehrm.com/docs/upgrade/](http://blog.icehrm.com/docs/upgrade/)
 
 Following is a list of features supported in each edition of icehrm
 -------------------------------------------------------------------
