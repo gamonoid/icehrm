@@ -42,6 +42,7 @@ include (APP_BASE_PATH."classes/SimpleImage.php");
 include (APP_BASE_PATH."classes/Macaw.php");
 include (APP_BASE_PATH."classes/crypt/Aes.php");
 include (APP_BASE_PATH."classes/crypt/AesCtr.php");
+include (APP_BASE_PATH."classes/LDAPManager.php");
 
 include (APP_BASE_PATH."model/models.base.php");
 include (APP_BASE_PATH."model/models.inc.php");
