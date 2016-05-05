@@ -8,7 +8,7 @@ error_log(print_r($_REQUEST,true));
 
 if(empty($user)){
 
-    if(!isset($_REQUEST['f']) && isset($_COOKIE['icehrmLF']) && $_REQUEST['login'] != 'no' && !isset($_REQUEST['username'])){
+    if(!isset($_REQUEST['f']) && isset($_COOKIE['icehrmLF']) && @$_REQUEST['login'] != 'no' && !isset($_REQUEST['username'])){
         $tempUser = new User();
         $tempUser->Load("login_hash = ?",array($_COOKIE['icehrmLF']));
 
@@ -30,14 +30,15 @@ if(empty($user)){
             LogManager::getInstance()->debug("LDAP: Enabled :" . SettingsManager::getInstance()->getSetting("LDAP: Enabled"));
             if (SettingsManager::getInstance()->getSetting("LDAP: Enabled") == "1") {
                 $ldapResp = LDAPManager::getInstance()->checkLDAPLogin($_REQUEST['username'], $_REQUEST['password']);
-                LogManager::getInstance()->debug("LDAP Response :" . json_encode($ldapResp));
+                LogManager::getInstance()->debug("LDAP Response :" . print_r($ldapResp, true));
+                LogManager::getInstance()->debug("LDAP Response Status :" . $ldapResp->getStatus());
                 if ($ldapResp->getStatus() == IceResponse::ERROR) {
                     header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
                     exit();
                 } else {
                     $suser = new User();
                     $suser->Load("username = ?", array($_REQUEST['username']));
-
+                    LogManager::getInstance()->debug("LDAP Response :[".$_REQUEST['username']."]" . print_r($suser, true));
                     if (empty($suser)) {
                         header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
                         exit();
@@ -52,8 +53,6 @@ if(empty($user)){
         if(!isset($_REQUEST['hashedPwd'])){
             $_REQUEST['hashedPwd'] = md5($_REQUEST['password']);
         }
-        $suser = null;
-        $ssoUserLoaded = false;
 
         include 'login.com.inc.php';
 

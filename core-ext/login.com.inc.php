@@ -1,3 +1,2 @@
 <?php
 //Nothing here
-?>

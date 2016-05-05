@@ -26,6 +26,9 @@ class SettingsInitialize extends AbstractInitialize{
 	public function init(){
 		if(SettingsManager::getInstance()->getSetting("Api: REST Api Enabled") == "1"){
 			$user = BaseService::getInstance()->getCurrentUser();
+			if(empty($user)){
+				return;
+			}
 			$dbUser = new User();
 			$dbUser->Load("id = ?",array($user->id));
 			$resp = RestApiManager::getInstance()->getAccessTokenForUser($dbUser);

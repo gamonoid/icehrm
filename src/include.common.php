@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', false);
 error_reporting(E_ERROR);
 require dirname(__FILE__).'/composer/vendor/autoload.php';
 

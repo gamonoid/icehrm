@@ -8,14 +8,15 @@
  <property name="env.appname" value="icehrm"/>
  <property name="env.Version" value="dev"/>
  <property name="installpath" value="/var/www/apps.gamonoid.com/icehrm-open-core"/>
+<property name="installLocalpath" value="/Applications/XAMPP/xamppfiles/htdocs/icehrm-open-core"/>
 
 	
  <target name="build"
-         depends="prepare,lint,phpunit,copyapp,release,install"
+         depends="prepare,lint,copyapp,release,install"
          description=""/>
-	
-<target name="buildlocal"
-         depends="prepare,copyapp"
+
+ <target name="buildlocal"
+         depends="prepare,copyapp,installLocal"
          description=""/>
 
  <target name="clean"
@@ -37,6 +38,7 @@
          depends="clean"
          description="Prepare for build">
   <mkdir dir="${basedir}/build/api"/>
+  <mkdir dir="${basedir}/build/api"/>
   <mkdir dir="${basedir}/build/coverage"/>
   <mkdir dir="${basedir}/build/logs"/>
   <mkdir dir="${basedir}/build/pdepend"/>
@@ -47,29 +49,6 @@
   <mkdir dir="${basedir}/build/release/data/${env.appname}_${env.Version}"/>
   <mkdir dir="${basedir}/src/lib"/>
  	
- 	<copy todir="${basedir}/src/lib" overwrite="true">
-	  <fileset dir="${basedir}/lib">
-	    <include name="**/*"/>
-	  </fileset>
-	</copy>
- 	
- 	<copy todir="${basedir}/src" overwrite="true">
-	  <fileset dir="${basedir}/core-ext">
-	    <include name="**/*"/>
-	  </fileset>
-	</copy>
- 	
- 	<copy todir="${basedir}/src">
-	  <fileset dir="${basedir}/ext">
-	    <include name="**/*"/>
-	  </fileset>
-	</copy>
- 	
- 	<copy todir="${basedir}/src">
-	  <fileset dir="${basedir}/tp">
-	    <include name="**/*"/>
-	  </fileset>
-	</copy>
  	
   <property name="prepare.done" value="true"/>
  </target>
@@ -204,7 +183,6 @@
 
 
 <target name="copyapp"
-     depends=""
      description="Copy generated files to QA app">
 	
 	<delete includeemptydirs="true">
@@ -213,11 +191,29 @@
 	    </fileset>
 	</delete>
 	
-	<copy todir="${destination}">
+	<copy todir="${destination}" overwrite="true">
 	  <fileset dir="${origin}">
 	    <include name="**/*"/>
 	  </fileset>
 	</copy>
+
+    <copy todir="${destination}/lib" overwrite="true">
+        <fileset dir="${basedir}/lib">
+            <include name="**/*"/>
+        </fileset>
+    </copy>
+
+    <copy todir="${destination}" overwrite="true">
+        <fileset dir="${basedir}/core-ext">
+            <include name="**/*"/>
+        </fileset>
+    </copy>
+
+    <copy todir="${destination}" overwrite="true">
+        <fileset dir="${basedir}/ext">
+            <include name="**/*"/>
+        </fileset>
+    </copy>
 	
 </target>
 	
@@ -233,8 +229,8 @@
 	
 	<mkdir dir="${installpath}"/>
 
-	<copy todir="${installpath}">
-	  <fileset dir="${origin}">
+	<copy todir="${installpath}" overwrite="true">
+	  <fileset dir="${destination}">
 	    <include name="**/*"/>
 	  </fileset>
 	</copy>
@@ -244,6 +240,25 @@
 	        <include name="**/*"/>
 	    </fileset>
 	</delete>
+</target>
+
+<target name="installLocal"
+        depends="copyapp"
+        description="">
+
+    <delete includeemptydirs="true" failonerror="false">
+        <fileset dir="${installLocalpath}">
+            <include name="**/*"/>
+        </fileset>
+    </delete>
+
+    <mkdir dir="${installLocalpath}"/>
+
+    <copy todir="${installLocalpath}">
+        <fileset dir="${destination}">
+            <include name="**/*"/>
+        </fileset>
+    </copy>
 </target>
 	
 <target name="release"

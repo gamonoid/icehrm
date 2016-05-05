@@ -278,6 +278,10 @@ INSERT INTO `EmployeeLeaveDays` VALUES
 
 
 
+INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+  ('Instance : ID', '0847429146712c108e23c435e8f93b4d', '',''),
+  ('Instance: Key', 'UQHEYBx9H1eNR66nhNCNCz1WCDDhkjtx1OuJbO3ZQMt+8tfSGvuOH/YEHntRajY=', '','');
+
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 
 

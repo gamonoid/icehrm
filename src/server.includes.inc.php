@@ -26,6 +26,7 @@ $user = SessionUtils::getSessionObject('user');
 
 include (APP_BASE_PATH."classes/BaseService.php");
 include (APP_BASE_PATH."classes/CronUtils.php");
+include (APP_BASE_PATH."classes/LDAPManager.php");
 include (APP_BASE_PATH."classes/FileService.php");
 include (APP_BASE_PATH."classes/SubActionManager.php");
 include (APP_BASE_PATH."classes/AbstractInitialize.php");
@@ -42,7 +43,6 @@ include (APP_BASE_PATH."classes/SimpleImage.php");
 include (APP_BASE_PATH."classes/Macaw.php");
 include (APP_BASE_PATH."classes/crypt/Aes.php");
 include (APP_BASE_PATH."classes/crypt/AesCtr.php");
-include (APP_BASE_PATH."classes/LDAPManager.php");
 
 include (APP_BASE_PATH."model/models.base.php");
 include (APP_BASE_PATH."model/models.inc.php");
