@@ -527,6 +527,10 @@ Release note v18.0
 ------------------
 ### Features
  * Translations (beta) for German, French, Polish, Italian, Sinhala, Chinese, Japanese, Hindi and Spanish
+ * PDF Reports
+ * Ability to specify department heads
+ * Add advanced custom fields to employees via UI
+ *
 
 ### Fixes
  * Fix issue: classes should be loaded even the module is disabled
