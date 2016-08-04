@@ -821,7 +821,7 @@ REPLACE INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, 
    'TerminatedEmployeeReport',
    '["department","date_start","date_end"]', 'Class','Employee Information','CSV');
 
-REPLACE INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`) VALUES
+REPLACE INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`,`output`) VALUES
   ('Travel Request Report', 'This report list employees travel requests for a specified period',
    '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}],\r\n[ "status", {"label":"Status","type":"select","source":[["NULL","All Statuses"],["Approved","Approved"],["Pending","Pending"],["Rejected","Rejected"],["Cancellation Requested","Cancellation Requested"],["Cancelled","Cancelled"]]}]\r\n]',
    'TravelRequestReport',
