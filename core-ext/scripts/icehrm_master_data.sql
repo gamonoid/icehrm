@@ -910,6 +910,9 @@ REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
 REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
     ('System: Allowed Nationality', '', 'Only these nationalities will be allowed in select boxes','["value", {"label":"Value","type":"select2multi","remote-source":["Nationality","id","name"]}]');
 
+REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+    ('System: Language', 'en', 'Current Language','["value", {"label":"Value","type":"select2","allow-null":false,"remote-source":["SupportedLanguage","name","description"]}]');
+
 
 INSERT INTO `Certifications` (`id`, `name`, `description`) VALUES
   (1, 'Red Hat Certified Architect (RHCA)', 'Red Hat Certified Architect (RHCA)'),

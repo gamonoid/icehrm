@@ -530,10 +530,14 @@ Release note v18.0
  * PDF Reports
  * Ability to specify department heads
  * Add advanced custom fields to employees via UI
- * Allow indirect admins to allow travel requests
+ * Allow indirect admins to approve travel requests
  * Adding more languages to Language meta data table
  * Improvements to report module
  * Ability to select sections for placing custom fields on employee detail view screen
+ * Introducing clone button
+ * Unlimited custom fields for employees
+ * PDF report for monitoring time employee spent on projects
+ * Report files module - Allow downloading all previously generated reports
 
 ### Fixes
  * Fix: subordinates are not showing beyond first page issue.
