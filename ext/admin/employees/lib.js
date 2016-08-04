@@ -447,6 +447,43 @@ EmployeeAdapter.method('renderEmployee', function(data) {
 
     $("#"+this.getTableName()+" #profile_image_"+data.id).attr('src',data.image);
 
+
+    var sectionTemplate = '<div class="row" style="margin-left:10px;margin-top:20px;"><div class="panel panel-default" style="width:97.5%;"><div class="panel-heading"><h4>#_section.name_#</h4></div> <div class="panel-body"  id="cont_#_section_#"> </div></div></div>';
+    var sectionId = '';
+    var sectionHtml = '';
+    //Add custom fields
+    if(data.customFields != undefined && data.customFields != null && Object.keys(data.customFields).length > 0) {
+
+
+        var ct = '<div class="col-xs-6 col-md-3" style="font-size:16px;"><label class="control-label col-xs-12" style="font-size:13px;">#_label_#</label><label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;">#_value_#</label></div>';
+        var customFieldHtml;
+        for (index in data.customFields) {
+
+            if(!data.customFields[index][1]){
+                data.customFields[index][1] = 'Other Details';
+            }
+
+            sectionId = data.customFields[index][1].toLocaleLowerCase();
+            sectionId = sectionId.replace(' ','_');
+
+            if($("#cont_"+sectionId).length <= 0){
+                //Add section
+                sectionHtml = sectionTemplate;
+                sectionHtml = sectionHtml.replace('#_section_#', sectionId);
+                sectionHtml = sectionHtml.replace('#_section.name_#', data.customFields[index][1]);
+                $("#customFieldsCont").append($(sectionHtml));
+            }
+
+            customFieldHtml = ct;
+            customFieldHtml = customFieldHtml.replace('#_label_#', index);
+            customFieldHtml = customFieldHtml.replace('#_value_#', data.customFields[index][0]);
+            $("#cont_"+sectionId).append($(customFieldHtml));
+        }
+    }else{
+        $("#customFieldsCont").remove();
+    }
+
+
     this.cancel();
 
     if(!this.isModuleInstalled("admin","documents")) {

@@ -533,10 +533,10 @@ Release note v18.0
  * Allow indirect admins to allow travel requests
  * Adding more languages to Language meta data table
  * Improvements to report module
- *
+ * Ability to select sections for placing custom fields on employee detail view screen
 
 ### Fixes
- * Fix: suvordinates are not showing beyond first page issue.
+ * Fix: subordinates are not showing beyond first page issue.
 
 
 Release note v16.1
