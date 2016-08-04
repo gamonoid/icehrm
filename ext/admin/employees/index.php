@@ -115,7 +115,7 @@ $customFields = BaseService::getInstance()->getCustomFields("Employee");
 		
 			</div>
 		</div>
-        <?php if (!class_exists('DocumentsAdminManager')) {?>
+        <?php if (class_exists('DocumentsAdminManager')) {?>
             <div class="tab-pane" id="tabPageEmployeeDocument">
                 <div id="EmployeeDocument" class="reviewBlock" data-content="List" style="padding-left:5px;">
 
@@ -176,7 +176,7 @@ modJsList['tabTerminatedEmployee'] = new TerminatedEmployeeAdapter('Employee','T
 modJsList['tabTerminatedEmployee'].setRemoteTable(true);
 modJsList['tabTerminatedEmployee'].setShowAddNew(false);
 
-<?php if (!class_exists('DocumentsAdminManager')) {?>
+<?php if (class_exists('DocumentsAdminManager')) {?>
 modJsList['tabEmployeeDocument'] = new EmployeeDocumentAdapter('EmployeeDocument','EmployeeDocument');
 modJsList['tabTerminatedEmployee'].setRemoteTable(true);
 <?php } ?>
