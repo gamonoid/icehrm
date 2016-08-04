@@ -837,6 +837,7 @@ create table `CustomFields` (
 	`field_validation` varchar(50) NULL,
 	`field_options` varchar(500) NULL,
 	`display_order` int(11) default 0,
+	`display_section` varchar(50) NULL,
   primary key  (`id`),
 	unique key `CustomFields_name` (`type`,`name`)
 ) engine=innodb default charset=utf8;
