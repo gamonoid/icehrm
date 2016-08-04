@@ -530,10 +530,14 @@ Release note v18.0
  * PDF Reports
  * Ability to specify department heads
  * Add advanced custom fields to employees via UI
+ * Allow indirect admins to allow travel requests
+ * Adding more languages to Language meta data table
+ * Improvements to report module
  *
 
 ### Fixes
- * Fix issue: classes should be loaded even the module is disabled
+ * Fix: suvordinates are not showing beyond first page issue.
+
 
 Release note v16.1
 ------------------

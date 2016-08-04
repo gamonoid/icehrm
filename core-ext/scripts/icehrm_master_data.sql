@@ -884,12 +884,6 @@ INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
   ('Attendance: Use Department Time Zone', '0', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
 
 INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
-  ('Leave: Allow Indirect Admins to Approve', '0', 'Allow indirect admins to approve leave requests','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
-
-INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
-    ('Expense: Allow Indirect Admins to Approve', '0', 'Allow indirect admins to approve expense requests','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
-
-INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
     ('Travel: Allow Indirect Admins to Approve', '0', 'Allow indirect admins to approve travel requests','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
 
 

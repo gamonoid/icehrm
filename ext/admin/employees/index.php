@@ -24,7 +24,7 @@ $customFields = BaseService::getInstance()->getCustomFields("Employee");
 		<li><a id="tabEmployeeLanguage" href="#tabPageEmployeeLanguage"><?=LanguageManager::tran('Languages')?></a></li>
 		<li><a id="tabEmployeeDependent" href="#tabPageEmployeeDependent"><?=LanguageManager::tran('Dependents')?></a></li>
 		<li><a id="tabEmergencyContact" href="#tabPageEmergencyContact"><?=LanguageManager::tran('Emergency Contacts')?></a></li>
-            <?php if (!class_exists('DocumentsAdminManager')) {?>
+            <?php if (class_exists('DocumentsAdminManager')) {?>
                 <li><a id="tabEmployeeDocument" href="#tabPageEmployeeDocument"><?=LanguageManager::tran('Documents')?></a></li>
             <?php } ?>
         <?php }?>
