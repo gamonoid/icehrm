@@ -28,9 +28,9 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabClient" href="#tabPageClient">Clients</a></li>
-		<li><a id="tabProject" href="#tabPageProject">Projects</a></li>
-		<li><a id="tabEmployeeProject" href="#tabPageEmployeeProject">Employee Projects</a></li>
+		<li class="active"><a id="tabClient" href="#tabPageClient"><?=LanguageManager::tran('Clients')?></a></li>
+		<li><a id="tabProject" href="#tabPageProject"><?=LanguageManager::tran('Projects')?></a></li>
+		<li><a id="tabEmployeeProject" href="#tabPageEmployeeProject"><?=LanguageManager::tran('Employee Projects')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">

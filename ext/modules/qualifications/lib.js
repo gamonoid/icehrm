@@ -190,7 +190,7 @@ EmployeeLanguageAdapter.method('getFormFields', function() {
 	
 	return [
 	        [ "id", {"label":"ID","type":"hidden"}],
-	        [ "language_id", {"label":"Language","type":"select2","allow-null":false,"remote-source":["Language","id","name"]}],
+	        [ "language_id", {"label":"Language","type":"select2","allow-null":false,"remote-source":["Language","id","description"]}],
 	        [ "reading", {"label":"Reading","type":"select","source":compArray}],
 	        [ "speaking", {"label":"Speaking","type":"select","source":compArray}],
 	        [ "writing", {"label":"Writing","type":"select","source":compArray}],

@@ -1,6 +1,6 @@
 {
   "label":"Reports",
-  "menu":"Reports",
+  "menu":"Admin Reports",
   "order":"1",
   "icon":"fa-file-o",
   "user_levels":["Admin","Manager"],

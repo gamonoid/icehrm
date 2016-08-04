@@ -1,35 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="./test/bootstrap.php"
+<phpunit bootstrap="./build/test/bootstrap.php"
          backupGlobals="false"
          backupStaticAttributes="false"
          strict="true"
          verbose="true">
        
   <testsuites>
-  	<testsuite name="ice-framework">
-    	<directory suffix="Test.php">./test/admin</directory>
+  	<testsuite name="icehrm">
+    	<directory suffix="Test.php">./build/test/</directory>
     </testsuite>
   </testsuites>
 
   <logging>
     <log type="coverage-html" target="build/coverage"/>
     <log type="coverage-clover" target="build/logs/clover.xml"/>
-    <log type="coverage-crap4j" target="build/logs/crap4j.xml"/>
-    <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>
+    <!--<log type="coverage-crap4j" target="build/logs/crap4j.xml"/>-->
+    <!--<log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>-->
   </logging>
 
   <filter>
     <whitelist addUncoveredFilesFromWhitelist="true">
-      <directory suffix=".php">src</directory>
+      <directory suffix=".php">./build/app</directory>
       <exclude>
-      	<directory suffix=".php">./src/composer</directory>
-      	<directory suffix=".php">./src/lib</directory>
-      	<directory suffix=".php">./src/lib/Mail</directory>
-      	<directory suffix=".php">./src/adodb512</directory>
-      	<directory suffix=".php">./src/classes/crypt</directory>
-        <file>./test/bootstrap.php</file>
-        <file>./test/test.config.php</file>
-        <file>./test/test.includes.php</file>
+      	<directory suffix=".php">./build/app/composer</directory>
+      	<directory suffix=".php">./build/app/lib</directory>
+      	<directory suffix=".php">./build/app/lib/Mail</directory>
+      	<directory suffix=".php">./build/app/adodb512</directory>
+      	<directory suffix=".php">./build/app/classes/crypt</directory>
+      	<directory suffix=".php">./build/app/js</directory>
       </exclude>
     </whitelist>
   </filter>

@@ -118,8 +118,8 @@
                 <p id="verifyModelBody">
                     <b>Step 1:</b><br/>
                     Please get your Instance Key from here:<br/>
-                    <a target="_blank" href="http://icehrm.com/generateInstanceKey.php?id=<?=$baseService->getInstanceId()?>">
-                        http://icehrm.com/generateInstanceKey.php?id=<?=$baseService->getInstanceId()?>
+                    <a target="_blank" href="https://icehrm.com/generateInstanceKey.php?id=<?=$baseService->getInstanceId()?>">
+                        https://icehrm.com/generateInstanceKey.php?id=<?=$baseService->getInstanceId()?>
                     </a>
 
                     <br/><b>Step 2:</b><br/>
@@ -151,36 +151,36 @@
 
 
 <?php if($user->user_level == 'Admin'){?>
-    <!-- Modal -->
-    <div class="modal fade" id="profileSwitchModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><li class="fa fa-times"/></button>
-                    <h3 id="myModalLabel">Switch Employee</h3>
-                </div>
-                <div class="modal-body">
-                    <p>Select the employee to Edit</p>
-                    <div style="border: solid 1px #EEE;">
-                        <select id="switch_emp" style="width:100%;">
-                            <!--
-                            <option value="-1">No Employee</option>
-                            -->
-                            <?php
-                            $employees = $baseService->get('Employee');
-                            foreach($employees as $empTemp){
-                                ?>
-                                <option value="<?=$empTemp->id?>"><?=$empTemp->first_name." ".$empTemp->last_name?></option>
-                            <?php }?>
-                        </select>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                    <button class="btn btn-primary" onclick="modJs.setAdminProfile($('#switch_emp').val());return false;">Switch</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal -->
+	<!-- Modal -->
+	<div class="modal fade" id="profileSwitchModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><li class="fa fa-times"/></button>
+			<h3 id="myModalLabel"><?=LanguageManager::tran('Switch Employee')?></h3>
+		  </div>
+		  <div class="modal-body">
+			<p><?=LanguageManager::tran('Select The Employee to Switch Into')?></p>
+			<div style="border: solid 1px #EEE;">
+			<select id="switch_emp" style="width:100%;">
+			<!--
+			<option value="-1">No Employee</option>
+			-->
+			<?php
+			$employees = $baseService->get('Employee');
+			foreach($employees as $empTemp){
+			?>
+			<option value="<?=$empTemp->id?>"><?=$empTemp->first_name." ".$empTemp->last_name?></option>
+			<?php }?>
+			</select>
+			</div>
+		  </div>
+		  <div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true"><?=LanguageManager::tran('Close')?></button>
+			<button class="btn btn-primary" onclick="modJs.setAdminProfile($('#switch_emp').val());return false;"><?=LanguageManager::tran('Switch')?></button>
+		  </div>
+		</div>
+	</div>
+	</div>
+	<!-- Modal -->
 <?php }?>

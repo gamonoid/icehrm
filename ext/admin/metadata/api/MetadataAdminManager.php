@@ -52,7 +52,12 @@ if (!class_exists('Country')) {
 			}
 
 			if(!empty($allowedCountries)){
-				return parent::Find("id in (".implode(",",$allowedCountries).")" , array());
+				$res =  parent::Find("id in (".implode(",",$allowedCountries).")" , array());
+				if(empty($res)){
+					SettingsManager::getInstance()->setSetting('System: Allowed Countries','');
+				}else{
+					return $res;
+				}
 			}
 
 			return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
@@ -103,7 +108,12 @@ if (!class_exists('CurrencyType')) {
 			}
 
 			if(!empty($allowedCountries)){
-				return parent::Find("id in (".implode(",",$allowedCountries).")" , array());
+				$res =  parent::Find("id in (".implode(",",$allowedCountries).")" , array());
+				if(empty($res)){
+					SettingsManager::getInstance()->setSetting('System: Allowed Currencies','');
+				}else{
+					return $res;
+				}
 			}
 
 			return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
@@ -136,7 +146,12 @@ if (!class_exists('Nationality')) {
 			}
 
 			if(!empty($allowedCountries)){
-				return parent::Find("id in (".implode(",",$allowedCountries).")" , array());
+				$res = parent::Find("id in (".implode(",",$allowedCountries).")" , array());
+				if(empty($res)){
+					SettingsManager::getInstance()->setSetting('System: Allowed Currencies','');
+				}else{
+					return $res;
+				}
 			}
 
 			return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
@@ -208,6 +223,42 @@ if (!class_exists('CalculationHook')) {
 			return BaseService::getInstance()->getCalculationHook($bindarr[0]);
 		}
     }
+}
+
+if (!class_exists('CustomFieldValue')) {
+	class CustomFieldValue extends ICEHRM_Record {
+		var $_table = 'CustomFieldValues';
+
+		public function getAdminAccess(){
+			return array("get","element","save","delete");
+		}
+
+		public function getUserAccess(){
+			return array("get","element","save","delete");
+		}
+
+		public function getAnonymousAccess(){
+			return array();
+		}
+	}
+}
+
+if (!class_exists('SupportedLanguage')) {
+	class SupportedLanguage extends ICEHRM_Record {
+		var $_table = 'SupportedLanguages';
+
+		public function getAdminAccess(){
+			return array("get","element","save","delete");
+		}
+
+		public function getUserAccess(){
+			return array();
+		}
+
+		public function getAnonymousAccess(){
+			return array("get","element");
+		}
+	}
 }
 
 

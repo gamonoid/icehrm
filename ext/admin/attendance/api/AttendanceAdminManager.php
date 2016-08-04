@@ -38,6 +38,8 @@ if (!class_exists('AttendanceAdminManager')) {
             $this->addCalculationHook('AttendanceUtil_getTimeWorkedHours','Total Hours from Attendance','AttendanceUtil','getTimeWorkedHours');
             $this->addCalculationHook('AttendanceUtil_getRegularWorkedHours','Total Regular Hours from Attendance','AttendanceUtil','getRegularWorkedHours');
             $this->addCalculationHook('AttendanceUtil_getOverTimeWorkedHours','Total Overtime Hours from Attendance','AttendanceUtil','getOverTimeWorkedHours');
+            $this->addCalculationHook('AttendanceUtil_getWeeklyRegularWorkedHours','Total Weekly Regular Hours from Attendance','AttendanceUtil','getWeeklyBasedRegularHours');
+            $this->addCalculationHook('AttendanceUtil_getWeeklyOverTimeWorkedHours','Total Weekly Overtime Hours from Attendance','AttendanceUtil','getWeeklyBasedOvertimeHours');
         }
 
     }
@@ -248,6 +250,80 @@ if (!class_exists('AttendanceUtil')) {
         public function getOverTimeWorkedHours($employeeId, $startDate, $endDate){
             $atSum = $this->getAttendanceSummary($employeeId, $startDate, $endDate);
             return round(($atSum['o']/60)/60,2);
+        }
+
+        public function getWeeklyBasedRegularHours($employeeId, $startDate, $endDate){
+            $atSum = $this->getWeeklyBasedOvertimeSummary($employeeId, $startDate, $endDate);
+            return round(($atSum['r']/60)/60,2);
+        }
+
+        public function getWeeklyBasedOvertimeHours($employeeId, $startDate, $endDate){
+            $atSum = $this->getWeeklyBasedOvertimeSummary($employeeId, $startDate, $endDate);
+            return round(($atSum['o']/60)/60,2);
+        }
+
+        public function getWeeklyBasedOvertimeSummary($employeeId, $startDate, $endDate){
+
+            $attendance = new Attendance();
+            $atTimeByWeek = array();
+
+            //Find weeks starting from sunday and ending from saturday in day period
+
+            $weeks = $this->getWeeklyDays($startDate,$endDate);
+            foreach($weeks as $k=>$week){
+                $startTime = $week[0]." 00:00:00";
+                $endTime = $week[count($week) - 1]." 23:59:59";
+                $atts = $attendance->Find("employee = ? and in_time >= ? and out_time <= ?",array($employeeId, $startTime, $endTime));
+                foreach($atts as $atEntry){
+                    if($atEntry->out_time == "0000-00-00 00:00:00" || empty($atEntry->out_time)){
+                        continue;
+                    }
+                    if(!isset($atTimeByWeek[$k])){
+                        $atTimeByWeek[$k]   = 0;
+                    }
+
+                    $diff = strtotime($atEntry->out_time) - strtotime($atEntry->in_time);
+                    if($diff < 0){
+                        $diff = 0;
+                    }
+
+                    $atTimeByWeek[$k] += $diff;
+                }
+            }
+
+            $overtimeStarts = SettingsManager::getInstance()->getSetting('Attendance: Overtime Start Hour');
+            $overtimeStarts = (is_numeric($overtimeStarts))?floatval($overtimeStarts)*60*60*5:0;
+            $regTime = 0;
+            $overTime = 0;
+            foreach($atTimeByWeek as $value){
+                if($value > $overtimeStarts){
+                    $regTime += $overtimeStarts;
+                    $overTime = $value - $overtimeStarts;
+                }else{
+                    $regTime += $value;
+                }
+            }
+
+            return array('r'=>$regTime,'o'=>$overTime);
+
+        }
+
+        private function getWeeklyDays($startDate,$endDate){
+            $start = new DateTime($startDate);
+            $end = new DateTime($endDate.' 23:59');
+            $interval = new DateInterval('P1D');
+            $dateRange = new DatePeriod($start, $interval, $end);
+
+            $weekNumber = 1;
+            $weeks = array();
+            foreach ($dateRange as $date) {
+                $weeks[$weekNumber][] = $date->format('Y-m-d');
+                if ($date->format('w') == 6) {
+                    $weekNumber++;
+                }
+            }
+
+            return $weeks;
         }
     }
 }

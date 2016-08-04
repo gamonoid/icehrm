@@ -1,4 +1,7 @@
 <?php
+if(!class_exists('ReportBuilder')){
+    include_once APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilder.php';
+}
 if(!interface_exists('ReportBuilderInterface')){
     include_once APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilderInterface.php';
 }
@@ -6,7 +9,7 @@ if(!interface_exists('ReportBuilderInterface')){
 if(!class_exists('AttendanceAdminManager')){
     include_once APP_BASE_PATH.'admin/attendance/api/AttendanceAdminManager.php';
 }
-class OvertimeReport implements ReportBuilderInterface{
+class OvertimeReport extends ClassBasedReportBuilder implements ReportBuilderInterface{
     public function getData($report,$request){
 
         $employeeList = array();

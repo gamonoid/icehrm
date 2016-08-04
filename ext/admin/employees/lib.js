@@ -36,7 +36,7 @@ EmployeeAdapter.method('setFieldNameMap', function(fields) {
         if(field.display == "Hidden"){
             this.hiddenFields[field.name] = field;
         }else{
-            if(field.display == "Table and Form"){
+            if(field.display == "Table and Form" || field.display == "Form"){
                 this.tableFields[field.name] = field;
             }else{
                 this.formOnlyFields[field.name] = field;

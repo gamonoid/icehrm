@@ -31,16 +31,14 @@ EmployeeProjectAdapter.inherits(AdapterBase);
 EmployeeProjectAdapter.method('getDataMapping', function() {
 	return [
 	        "id",
-	        "project",
-	        "status"
+	        "project"
 	];
 });
 
 EmployeeProjectAdapter.method('getHeaders', function() {
 	return [
 			{ "sTitle": "ID" ,"bVisible":false},
-			{ "sTitle": "Project" },
-			{ "sTitle": "Status"}
+			{ "sTitle": "Project" }
 	];
 });
 
@@ -48,7 +46,6 @@ EmployeeProjectAdapter.method('getFormFields', function() {
 	return [
 	        [ "id", {"label":"ID","type":"hidden"}],
 	        [ "project", {"label":"Project","type":"select2","remote-source":["Project","id","name"]}],
-	        [ "status", {"label":"Status","type":"select","source":[["Current","Current"],["Inactive","Inactive"],["Completed","Completed"]]}],
 	        [ "details", {"label":"Details","type":"textarea","validation":"none"}]
 	];
 });

@@ -35,7 +35,7 @@ class EmployeesActionManager extends SubActionManager{
 
         $ok = $employee->Save();
         if(!$ok){
-            return new IceResponse(IceResponse::ERROR, "Error occured while activating employee");
+            return new IceResponse(IceResponse::ERROR, "Error occurred while activating employee");
         }
 
         return new IceResponse(IceResponse::SUCCESS, $employee);

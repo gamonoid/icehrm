@@ -66,15 +66,70 @@ class Report extends ICEHRM_Record {
 	public function getAdminAccess(){
 		return array("get","element","save","delete");
 	}
-	
+
 	public function getManagerAccess(){
 		return array("get","element","save","delete");
 	}
-	
+
 	public function getUserAccess(){
 		return array();
 	}
+
+	public function postProcessGetData($entry){
+		$entry->icon = '<img src="'.BASE_URL.'images/file-icons/'.strtolower($entry->output).".png".'"/>';
+		return $entry;
+	}
+
 	var $_table = 'Reports';
+}
+
+
+class ReportFile extends ICEHRM_Record {
+	public function getAdminAccess(){
+		return array("get","element","save","delete");
+	}
+
+	public function getManagerAccess(){
+		return array("get","element","save","delete");
+	}
+
+	public function getUserOnlyMeAccess(){
+		return array("get","element","delete");
+	}
+
+	public function getUserAccess(){
+		return array("get");
+	}
+
+	public function postProcessGetData($entry){
+		$data = explode(".",$entry->name);
+		$entry->icon = '<img src="'.BASE_URL.'images/file-icons/'.strtolower($data[count($data)-1]).".png".'"/>';
+		return $entry;
+	}
+
+	var $_table = 'ReportFiles';
+}
+
+
+class UserReport extends ICEHRM_Record {
+	public function getAdminAccess(){
+		return array("get","element","save","delete");
+	}
+
+	public function getManagerAccess(){
+		return array("get","element","save","delete");
+	}
+
+	public function getUserAccess(){
+		return array();
+	}
+
+	public function postProcessGetData($entry){
+		$entry->icon = '<img src="'.BASE_URL.'images/file-icons/'.strtolower($entry->output).".png".'"/>';
+		return $entry;
+	}
+
+	var $_table = 'UserReports';
 }
 
 class Audit extends ICEHRM_Record {
@@ -101,6 +156,10 @@ class Cron extends ICEHRM_Record {
 
 class IceEmail extends ICEHRM_Record {
     var $_table = 'Emails';
+}
+
+class StatusChangeLog extends ICEHRM_Record {
+	var $_table = 'StatusChangeLogs';
 }
 
 

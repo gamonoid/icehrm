@@ -86,6 +86,7 @@ SettingAdapter.method('loadRemoteDataForSettings', function () {
 	fields.push(["country", {"label": "Country", "type": "select2multi", "remote-source": ["Country", "id", "name"]}]);
 	fields.push(["currency", {"label": "Currency", "type": "select2multi", "remote-source": ["CurrencyType","id","code+name"]}]);
 	fields.push(["nationality", {"label": "Nationality", "type": "select2multi", "remote-source": ["Nationality","id","name"]}]);
+	fields.push(["supportedLanguage", {"label":"Value","type":"select2","allow-null":false,"remote-source":["SupportedLanguage","name","description"]}]);
 
 	for(index in fields){
 		field = fields[index];

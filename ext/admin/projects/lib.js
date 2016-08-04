@@ -95,13 +95,14 @@ ProjectAdapter.method('getHeaders', function() {
 });
 
 ProjectAdapter.method('getFormFields', function() {
+
 	if(this.showSave){
 		return [
 		        [ "id", {"label":"ID","type":"hidden"}],
 		        [ "name", {"label":"Name","type":"text"}],
 		        [ "client", {"label":"Client","type":"select2","allow-null":true,"remote-source":["Client","id","name"]}],
 		        [ "details",  {"label":"Details","type":"textarea","validation":"none"}],
-		        [ "status", {"label":"Status","type":"select","source":[["Active","Active"],["Inactive","Inactive"]]}]
+		        [ "status", {"label":"Status","type":"select","source":[["Active","Active"],["On Hold","On Hold"],["Completed","Completed"],["Dropped","Dropped"]]}]
 		];
 	}else{
 		return [
@@ -109,7 +110,7 @@ ProjectAdapter.method('getFormFields', function() {
 		        [ "name", {"label":"Name","type":"placeholder"}],
 		        [ "client", {"label":"Client","type":"placeholder","allow-null":true,"remote-source":["Client","id","name"]}],
 		        [ "details",  {"label":"Details","type":"placeholder","validation":"none"}],
-		        [ "status", {"label":"Status","type":"placeholder","source":[["Active","Active"],["Inactive","Inactive"]]}]
+			[ "status", {"label":"Status","type":"select","source":[["Active","Active"],["On Hold","On Hold"],["Completed","Completed"],["Dropped","Dropped"]]}]
 		];
 	}
 	
@@ -137,8 +138,7 @@ EmployeeProjectAdapter.method('getDataMapping', function() {
 	return [
 	        "id",
 	        "employee",
-	        "project",
-	        "status"
+	        "project"
 	];
 });
 
@@ -146,9 +146,7 @@ EmployeeProjectAdapter.method('getHeaders', function() {
 	return [
 			{ "sTitle": "ID" ,"bVisible":false},
 			{ "sTitle": "Employee" },
-			{ "sTitle": "Project" },
-			/*{ "sTitle": "Start Date"},*/
-			{ "sTitle": "Status"}
+			{ "sTitle": "Project" }
 	];
 });
 
@@ -157,9 +155,6 @@ EmployeeProjectAdapter.method('getFormFields', function() {
 	        [ "id", {"label":"ID","type":"hidden"}],
 	        [ "employee", {"label":"Employee","type":"select2","remote-source":["Employee","id","first_name+last_name"]}],
 	        [ "project", {"label":"Project","type":"select2","remote-source":["Project","id","name"]}],
-	        /*[ "date_start", {"label":"Start Date","type":"date","validation":""}],
-	        [ "date_end", {"label":"End Date","type":"date","validation":"none"}],*/
-	        [ "status", {"label":"Status","type":"select","source":[["Current","Current"],["Inactive","Inactive"],["Completed","Completed"]]}],
 	        [ "details", {"label":"Details","type":"textarea","validation":"none"}]
 	];
 });

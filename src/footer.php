@@ -7,6 +7,7 @@
 		
 		for (var prop in modJsList) {
 			if(modJsList.hasOwnProperty(prop)){
+				modJsList[prop].setTranslations(<?=LanguageManager::getTranslations()?>);
 				modJsList[prop].setPermissions(<?=json_encode($modulePermissions['perm'])?>);
 				modJsList[prop].setFieldTemplates(<?=json_encode($fieldTemplates)?>);
 				modJsList[prop].setTemplates(<?=json_encode($templates)?>);
@@ -130,8 +131,10 @@
 				  backdrop: 'static'
 			});
 			<?php }?>
+
 		});
-		
+
+
 	</script>
 	<?php include 'popups.php';?>
 	<?php include APP_BASE_PATH.'js/bootstrapDataTable.php';?>

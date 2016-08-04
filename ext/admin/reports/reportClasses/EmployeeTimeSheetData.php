@@ -1,10 +1,12 @@
 <?php
-
+if(!class_exists('ReportBuilder')){
+    include_once APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilder.php';
+}
 if(!interface_exists('ReportBuilderInterface')){
     include_once APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilderInterface.php';
 }
 
-class EmployeeTimeSheetData implements ReportBuilderInterface{
+class EmployeeTimeSheetData extends ClassBasedReportBuilder implements ReportBuilderInterface{
     public function getData($report,$request){
 
         $employeeCache = array();

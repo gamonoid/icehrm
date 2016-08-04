@@ -36,8 +36,9 @@ UserAdapter.method('getFormFields', function() {
 	        [ "email", {"label":"Email","type":"text","validation":"email"}],
 	        [ "employee", {"label":"Employee","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
 	        [ "user_level", {"label":"User Level","type":"select","source":[["Admin","Admin"],["Manager","Manager"],["Employee","Employee"],["Other","Other"]]}],
-            [ "user_roles", {"label":"User Roles","type":"select2multi","remote-source":["UserRole","id","name"]}],
-            [ "default_module", {"label":"Default Module","type":"select2","null-label":"No Default Module","allow-null":true,"remote-source":["Module","id","menu+label"]}]
+			[ "user_roles", {"label":"User Roles","type":"select2multi","remote-source":["UserRole","id","name"]}],
+			[ "lang", {"label":"Language","type":"select2","allow-null":true,"remote-source":["SupportedLanguage","name","description"]}],
+			[ "default_module", {"label":"Default Module","type":"select2","null-label":"No Default Module","allow-null":true,"remote-source":["Module","id","menu+label"]}]
 	];
 });
 
@@ -184,6 +185,11 @@ UserRoleAdapter.method('getHeaders', function() {
         { "sTitle": "ID" ,"bVisible":false},
         { "sTitle": "Name"}
     ];
+});
+
+
+UserRoleAdapter.method('postRenderForm', function(object, $tempDomObj) {
+	$tempDomObj.find("#changePasswordBtn").remove();
 });
 
 UserRoleAdapter.method('getFormFields', function() {

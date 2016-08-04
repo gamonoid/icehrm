@@ -69,5 +69,52 @@ if (!class_exists('Project')) {
 		public function getUserAccess(){
 			return array("get","element");
 		}
+
+		public function getAllProjects(){
+			$project = new Project();
+			$projects = $project->Find("status = ?",'Active');
+			foreach($projects as $project){
+				$client = new Client();
+				$client->Load("id = ?",array($project->client));
+
+				$project->name = $project->name." (".$client->name.")";
+				$employeeProjects[] = $project;
+			}
+			return $employeeProjects;
+		}
+		
+		public function getEmployeeProjects(){
+			$allowAllProjects = SettingsManager::getInstance()->getSetting("Projects: Make All Projects Available to Employees");
+			$employeeProjects = array();
+			if($allowAllProjects == 0){
+				$employeeProjectsTemp = new EmployeeProject();
+				$employeeProjectsTemp = $employeeProjectsTemp->Find("employee = ?",array(BaseService::getInstance()->getCurrentProfileId()));
+				foreach($employeeProjectsTemp as $p){
+					$project = new Project();
+					$project->Load("id = ?",array($p->project));
+					if($project->status == 'Active'){
+
+						$client = new Client();
+						$client->Load("id = ?",array($project->client));
+
+						$project->name = $project->name." (".$client->name.")";
+						$employeeProjects[] = $project;
+					}
+
+				}
+			}else{
+				$project = new Project();
+				$projects = $project->Find("status = ?",array('Active'));
+				foreach($projects as $project){
+					$client = new Client();
+					$client->Load("id = ?",array($project->client));
+
+					$project->name = $project->name." (".$client->name.")";
+					$employeeProjects[] = $project;
+				}
+			}
+
+			return $employeeProjects;
+		}
 	}
 }

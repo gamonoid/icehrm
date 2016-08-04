@@ -81,9 +81,9 @@ class ModuleTab{
     public function getHTML(){
         $active = ($this->isActive)?"active":"";
         if(!$this->isInsideGroup) {
-            return '<li class="' . $active . '"><a id="tab' . $this->name . '" href="#tabPage' . $this->name . '">' . $this->label . '</a></li>';
+            return '<li class="' . $active . '"><a id="tab' . $this->name . '" href="#tabPage' . $this->name . '">' . LanguageManager::tran($this->label) . '</a></li>';
         }else{
-            return '<li class="' . $active . '"><a id="tab' . $this->name . '" href="#tabPage' . $this->name . '">' . $this->label . '</a></li>';
+            return '<li class="' . $active . '"><a id="tab' . $this->name . '" href="#tabPage' . $this->name . '">' . LanguageManager::tran($this->label) . '</a></li>';
         }
     }
 

@@ -2,7 +2,7 @@
 if(!class_exists('ReportBuilder')){
 	include_once APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilder.php';
 }
-class EmployeeTimesheetReport extends ReportBuilder{
+class EmployeeTimesheetReport extends CSVReportBuilder implements CSVReportBuilderInterface{
 	
 	public function getMainQuery(){
 		$query = "SELECT 
@@ -28,34 +28,58 @@ FROM EmployeeTimeEntry te";
 		if(in_array("NULL", $employeeList) ){
 			$employeeList = array();
 		}
-		
-		
-		if(!empty($employeeList) && ($request['project'] != "NULL" && !empty($request['project']))){
-			$query = "where employee in (".implode(",", $employeeList).") and date_start >= ? and date_end <= ? and project = ?;";
-			$params = array(	
-					$request['date_start'],	
-					$request['date_end'],	
-					$request['project']
-			);
-		}else if(!empty($employeeList)){
-			$query = "where employee in (".implode(",", $employeeList).") and date_start >= ? and date_end <= ?;";
-			$params = array(
+
+		if(($request['client'] != "NULL" && !empty($request['client']))) {
+
+			$project = new Project();
+			$projects = $project->Find("client = ?",array($request['client']));
+			$projectIds = array();
+			foreach($projects as $project){
+				$projectIds[] = $project->id;
+			}
+
+			if (!empty($employeeList) && ($request['project'] != "NULL" && !empty($request['project']))) {
+				$query = "where employee in (" . implode(",", $employeeList) . ") and date_start >= ? and date_end <= ? and project in (".implode(",",$projectIds).");";
+				$params = array(
 					$request['date_start'],
 					$request['date_end']
-			);
-		}else if(($request['project'] != "NULL" && !empty($request['project']))){
-			$query = "where project = ? and date_start >= ? and date_end <= ?;";
-			$params = array(
+				);
+			} else {
+				$query = "where date_start >= ? and date_end <= ? and project in (".implode(",",$projectIds).");";
+				$params = array(
+					$request['date_start'],
+					$request['date_end']
+				);
+			}
+		}else{
+			if (!empty($employeeList) && ($request['project'] != "NULL" && !empty($request['project']))) {
+				$query = "where employee in (" . implode(",", $employeeList) . ") and date_start >= ? and date_end <= ? and project = ?;";
+				$params = array(
+					$request['date_start'],
+					$request['date_end'],
+					$request['project']
+				);
+			} else if (!empty($employeeList)) {
+				$query = "where employee in (" . implode(",", $employeeList) . ") and date_start >= ? and date_end <= ?;";
+				$params = array(
+					$request['date_start'],
+					$request['date_end']
+				);
+			} else if (($request['project'] != "NULL" && !empty($request['project']))) {
+				$query = "where project = ? and date_start >= ? and date_end <= ?;";
+				$params = array(
 					$request['project'],
 					$request['date_start'],
 					$request['date_end']
-			);
-		}else{
-			$query = "where date_start >= ? and date_end <= ?;";
-			$params = array(
+				);
+			} else {
+				$query = "where date_start >= ? and date_end <= ?;";
+				$params = array(
 					$request['date_start'],
 					$request['date_end']
-			);
+				);
+			}
+
 		}
 		
 		LogManager::getInstance()->info("Query:".$query);

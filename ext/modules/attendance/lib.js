@@ -247,3 +247,212 @@ AttendanceAdapter.method('getClientGMTOffset', function () {
 	return std_time_offset;
 	
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+function EmployeeAttendanceSheetAdapter(endPoint,tab,filter,orderBy) {
+	this.initAdapter(endPoint,tab,filter,orderBy);
+}
+
+EmployeeAttendanceSheetAdapter.inherits(AdapterBase);
+
+this.currentTimesheetId = null;
+this.currentTimesheet = null;
+
+EmployeeAttendanceSheetAdapter.method('getDataMapping', function() {
+	return [
+		"id",
+		"date_start",
+		"date_end",
+		"total_time",
+		"status"
+	];
+});
+
+EmployeeAttendanceSheetAdapter.method('getHeaders', function() {
+	return [
+		{ "sTitle": "ID" ,"bVisible":false},
+		{ "sTitle": "Start Date"},
+		{ "sTitle": "End Date"},
+		{ "sTitle": "Total Time"},
+		{ "sTitle": "Status"}
+	];
+});
+
+EmployeeAttendanceSheetAdapter.method('getFormFields', function() {
+	return [
+		[ "id", {"label":"ID","type":"hidden"}],
+		[ "date_start", {"label":"TimeSheet Start Date","type":"date","validation":""}],
+		[ "date_end", {"label":"TimeSheet End Date","type":"date","validation":""}],
+		[ "details", {"label":"Reason","type":"textarea","validation":"none"}]
+	];
+});
+
+EmployeeAttendanceSheetAdapter.method('preProcessTableData', function(row) {
+	row[1] =  Date.parse(row[1]).toString('MMM d, yyyy (dddd)');
+	row[2] =  Date.parse(row[2]).toString('MMM d, yyyy (dddd)');
+	return row;
+});
+
+EmployeeAttendanceSheetAdapter.method('renderForm', function(object) {
+	var formHtml = this.templates['formTemplate'];
+	var html = "";
+
+	$("#"+this.getTableName()+'Form').html(formHtml);
+	$("#"+this.getTableName()+'Form').show();
+	$("#"+this.getTableName()).hide();
+
+	$('#attendnacesheet_start').html(Date.parse(object.date_start).toString('MMM d, yyyy (dddd)'));
+	$('#attendnacesheet_end').html(Date.parse(object.date_end).toString('MMM d, yyyy (dddd)'));
+
+	this.currentTimesheet = object;
+
+	this.getTimeEntries();
+
+});
+
+
+
+EmployeeAttendanceSheetAdapter.method('getTimeEntries', function() {
+	timesheetId = this.currentId;
+	var sourceMappingJson = JSON.stringify(modJsList['tabEmployeeTimeEntry'].getSourceMapping());
+	object = {"id":timesheetId,"sm":sourceMappingJson};
+
+	var reqJson = JSON.stringify(object);
+
+	var callBackData = [];
+	callBackData['callBackData'] = [];
+	callBackData['callBackSuccess'] = 'getTimeEntriesSuccessCallBack';
+	callBackData['callBackFail'] = 'getTimeEntriesFailCallBack';
+
+	this.customAction('getTimeEntries','modules=time_sheets',reqJson,callBackData);
+});
+
+EmployeeAttendanceSheetAdapter.method('getTimeEntriesSuccessCallBack', function(callBackData) {
+	var entries = callBackData;
+	var html = "";
+	var temp = '<tr><td><img class="tableActionButton" src="_BASE_images/delete.png" style="cursor:pointer;" rel="tooltip" title="Delete" onclick="modJsList[\'tabEmployeeTimeEntry\'].deleteRow(_id_);return false;"></img></td><td>_start_</td><td>_end_</td><td>_duration_</td><td>_project_</td><td>_details_</td>';
+
+	for(var i=0;i<entries.length;i++){
+		try{
+			var t = temp;
+			t = t.replace(/_start_/g,Date.parse(entries[i].date_start).toString('MMM d, yyyy [hh:mm tt]'));
+			t = t.replace(/_end_/g,Date.parse(entries[i].date_end).toString('MMM d, yyyy [hh:mm tt]'));
+
+			var mili = Date.parse(entries[i].date_end) - Date.parse(entries[i].date_start);
+			var minutes = Math.round(mili/60000);
+			var hourMinutes = (minutes % 60);
+			var hours = (minutes-hourMinutes)/60;
+
+			t = t.replace(/_duration_/g,"Hours ("+hours+") - Min ("+hourMinutes+")");
+			if(entries[i].project == 'null' || entries[i].project == null || entries[i].project == undefined){
+				t = t.replace(/_project_/g,"None");
+			}else{
+				t = t.replace(/_project_/g,entries[i].project);
+			}
+			t = t.replace(/_project_/g,entries[i].project);
+			t = t.replace(/_details_/g,entries[i].details);
+			t = t.replace(/_id_/g,entries[i].id);
+			t = t.replace(/_BASE_/g,this.baseUrl);
+			html += t;
+		}catch(e){}
+	}
+
+	$('.timesheet_entries_table_body').html(html);
+	if(modJs.getTableName() == 'SubEmployeeTimeSheetAll'){
+		$('#submit_sheet').hide();
+		$('#add_time_sheet_entry').hide();
+	}else{
+		if(this.currentElement.status == 'Approved'){
+			$('#submit_sheet').hide();
+			$('#add_time_sheet_entry').hide();
+		}else{
+			$('#submit_sheet').show();
+			$('#add_time_sheet_entry').show();
+		}
+	}
+});
+
+EmployeeAttendanceSheetAdapter.method('getTimeEntriesFailCallBack', function(callBackData) {
+	this.showMessage("Error", "Error occured while getting timesheet entries");
+});
+
+
+
+EmployeeAttendanceSheetAdapter.method('createPreviousAttendnacesheet', function(id) {
+	object = {"id":id};
+
+	var reqJson = JSON.stringify(object);
+
+	var callBackData = [];
+	callBackData['callBackData'] = [];
+	callBackData['callBackSuccess'] = 'createPreviousAttendnacesheetSuccessCallBack';
+	callBackData['callBackFail'] = 'createPreviousAttendnacesheetFailCallBack';
+
+	this.customAction('createPreviousAttendnaceSheet','modules=attendnace',reqJson,callBackData);
+});
+
+EmployeeAttendanceSheetAdapter.method('createPreviousAttendnacesheetSuccessCallBack', function(callBackData) {
+	$('.tooltip').css("display","none");
+	$('.tooltip').remove();
+	//this.showMessage("Success", "Previous Timesheet created");
+	this.get([]);
+});
+
+EmployeeAttendanceSheetAdapter.method('createPreviousAttendnacesheetFailCallBack', function(callBackData) {
+	this.showMessage("Error", callBackData);
+});
+
+
+
+
+EmployeeAttendanceSheetAdapter.method('getActionButtonsHtml', function(id,data) {
+	var html = '';
+	if(this.getTableName() == "EmployeeTimeSheetAll"){
+		html = '<div style="width:80px;"><img class="tableActionButton" src="_BASE_images/view.png" style="cursor:pointer;" rel="tooltip" title="Edit Timesheet Entries" onclick="modJs.edit(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/redo.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="Create previous time sheet" onclick="modJs.createPreviousAttendnacesheet(_id_);return false;"></img></div>';
+	}else{
+		html = '<div style="width:80px;"><img class="tableActionButton" src="_BASE_images/view.png" style="cursor:pointer;" rel="tooltip" title="Edit Timesheet Entries" onclick="modJs.edit(_id_);return false;"></img></div>';
+	}
+	html = html.replace(/_id_/g,id);
+	html = html.replace(/_BASE_/g,this.baseUrl);
+	return html;
+});
+
+EmployeeAttendanceSheetAdapter.method('getCustomTableParams', function() {
+	var that = this;
+	var dataTableParams = {
+		"aoColumnDefs": [
+			{
+				"fnRender": function(data, cell){
+					return that.preProcessRemoteTableData(data, cell, 1)
+				} ,
+				"aTargets": [1]
+			},
+			{
+				"fnRender": function(data, cell){
+					return that.preProcessRemoteTableData(data, cell, 2)
+				} ,
+				"aTargets": [2]
+			},
+			{
+				"fnRender": that.getActionButtons,
+				"aTargets": [that.getDataMapping().length]
+			}
+		]
+	};
+	return dataTableParams;
+});
+
+EmployeeAttendanceSheetAdapter.method('preProcessRemoteTableData', function(data, cell, id) {
+	return Date.parse(cell).toString('MMM d, yyyy (dddd)');
+});

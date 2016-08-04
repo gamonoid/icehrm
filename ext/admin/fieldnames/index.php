@@ -15,13 +15,8 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-        <li class="dropdown">
-            <a href="#" id="settingsEmployeeMenu" class="dropdown-toggle" data-toggle="dropdown" aria-controls="settingsEmployeeMenu-contents">Employee Fields <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="settingsEmployeeMenu" id="settingsEmployeeMenu-contents">
-                <li><a id="tabEmployeeFieldName" href="#tabPageEmployeeFieldName">Employee Field Name Mapping</a></li>
-                <li><a id="tabEmployeeCustomField" href="#tabPageEmployeeCustomField">Employee Custom Fields</a></li>
-            </ul>
-        </li>
+        <li class="active"><a id="tabEmployeeFieldName" href="#tabPageEmployeeFieldName"><?=LanguageManager::tran('Employee Field Names')?></a></li>
+        <li><a id="tabEmployeeCustomField" href="#tabPageEmployeeCustomField"><?=LanguageManager::tran('Employee Custom Fields')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">
@@ -51,9 +46,9 @@ modJsList['tabEmployeeFieldName'] = new FieldNameAdapter('FieldNameMapping','Emp
 modJsList['tabEmployeeFieldName'].setRemoteTable(true);
 modJsList['tabEmployeeFieldName'].setShowAddNew(false);
 
-modJsList['tabEmployeeCustomField'] = new CustomFieldAdapter('CustomField','EmployeeCustomField',{"type":"Employee"});
+modJsList['tabEmployeeCustomField'] = new CustomFieldAdapter('CustomField','EmployeeCustomField',{"type":"Employee"},"display_order desc");
 modJsList['tabEmployeeCustomField'].setRemoteTable(true);
-modJsList['tabEmployeeCustomField'].setShowAddNew(false);
+modJsList['tabEmployeeCustomField'].setTableType("Employee");
 
 
 var modJs = modJsList['tabEmployeeFieldName'];

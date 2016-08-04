@@ -28,7 +28,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabEmergencyContact" href="#tabPageEmergencyContact">Emergency Contacts</a></li>
+		<li class="active"><a id="tabEmergencyContact" href="#tabPageEmergencyContact"><?=LanguageManager::tran('Emergency Contacts')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">

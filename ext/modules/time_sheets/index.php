@@ -26,31 +26,13 @@ define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
 
-
-//custom code
-$employeeProjects = array();
-$allowAllProjects = $settingsManager->getSetting("Projects: Make All Projects Available to Employees");
-if($allowAllProjects == 0){
-	$employeeProjects = array();
-	$employeeProjectsTemp = $baseService->get("EmployeeProject");
-	foreach($employeeProjectsTemp as $p){
-		$project = new Project();
-		$project->Load("id = ?",$p->project);
-		$p->name = $project->name;
-		$employeeProjects[] = $p;
-	}
-}else{
-	$employeeProjects = $baseService->get("Project");
-}
-
-
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabEmployeeTimeSheetAll" href="#tabPageEmployeeTimeSheetAll">All My TimeSheets</a></li>
-		<li class=""><a id="tabEmployeeTimeSheetApproved" href="#tabPageEmployeeTimeSheetApproved">Approved TimeSheets</a></li>
-		<li class=""><a id="tabEmployeeTimeSheetPending" href="#tabPageEmployeeTimeSheetPending">Pending TimeSheets</a></li>
-		<li class=""><a id="tabSubEmployeeTimeSheetAll" href="#tabPageSubEmployeeTimeSheetAll">Subordinate TimeSheets</a></li>
+		<li class="active"><a id="tabEmployeeTimeSheetAll" href="#tabPageEmployeeTimeSheetAll"><?=LanguageManager::tran('All My TimeSheets')?></a></li>
+		<li class=""><a id="tabEmployeeTimeSheetApproved" href="#tabPageEmployeeTimeSheetApproved"><?=LanguageManager::tran('Approved TimeSheets')?></a></li>
+		<li class=""><a id="tabEmployeeTimeSheetPending" href="#tabPageEmployeeTimeSheetPending"><?=LanguageManager::tran('Pending TimeSheets')?></a></li>
+		<li class=""><a id="tabSubEmployeeTimeSheetAll" href="#tabPageSubEmployeeTimeSheetAll"><?=LanguageManager::tran('Subordinate TimeSheets')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">
@@ -110,8 +92,6 @@ modJsList['tabSubEmployeeTimeSheetAll'].setRemoteTable(true);
 
 modJsList['tabEmployeeTimeEntry'] = new EmployeeTimeEntryAdapter('EmployeeTimeEntry','EmployeeTimeEntry','','');
 modJsList['tabEmployeeTimeEntry'].setShowAddNew(false);
-modJsList['tabEmployeeTimeEntry'].setAllProjectsAllowed(<?=$allowAllProjects?>);
-modJsList['tabEmployeeTimeEntry'].setEmployeeProjects(<?=json_encode($employeeProjects)?>);
 
 var modJs = modJsList['tabEmployeeTimeSheetAll'];
 

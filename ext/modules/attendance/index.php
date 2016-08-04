@@ -33,7 +33,7 @@ if(empty($currentEmployeeTimeZone)){
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabAttendance" href="#tabPageAttendance">Attendance</a></li>
+		<li class="active"><a id="tabAttendance" href="#tabPageAttendance"><?=LanguageManager::tran('Attendance')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">

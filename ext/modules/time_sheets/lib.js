@@ -464,13 +464,10 @@ EmployeeTimeEntryAdapter.method('getHeaders', function() {
 EmployeeTimeEntryAdapter.method('getFormFields', function() {
 	return [
 	        [ "id", {"label":"ID","type":"hidden"}],
-	        [ "project", {"label":"Project","type":"select2","allow-null":true,"remote-source":["Project","id","name"]}],
-	        //[ "project", {"label":"Project","type":"select","source":[]}],
+	        [ "project", {"label":"Project","type":"select2","allow-null":false,"remote-source":["Project","id","name","getEmployeeProjects"]}],
 	        [ "date_select", {"label":"Date","type":"select","source":[]}],
 	        [ "date_start", {"label":"Start Time","type":"time","validation":""}],
-	        /*[ "time_start", {"label":"Start Time","type":"time"}],*/
 	        [ "date_end", {"label":"End Time","type":"time","validation":""}],
-	        /*[ "time_end", {"label":"End Time","type":"time"}],*/
 	        [ "details", {"label":"Details","type":"textarea","validation":""}]
 	];
 });
@@ -567,7 +564,8 @@ EmployeeTimeEntryAdapter.method('renderForm', function(object) {
 	$("#"+this.getTableName()+'Form .select2Field').select2();
 	
 	$("#date_select").html(optionList);
-	
+
+	/*
 	var projectOptionList = "";
 	projectOptionList += '<option value="NULL">None</option>';
 	if(this.allProjectsAllowed == 0){
@@ -581,7 +579,8 @@ EmployeeTimeEntryAdapter.method('renderForm', function(object) {
 	}
 	
 	$("#project").html(projectOptionList);
-	
+	*/
+
 	if(object != undefined && object != null){
 		this.fillForm(object);
 	}

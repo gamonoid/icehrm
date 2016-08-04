@@ -64,6 +64,9 @@ class FileService{
     }
 
     public function saveInCache($key, $data, $expire){
+        if(!class_exists('Memcached')){
+            return;
+        }
         try{
             if(empty($this->memcache)){
                 $this->memcache = new Memcached();

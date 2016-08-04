@@ -54,8 +54,8 @@ path.link {
 <div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabEmployee" href="#tabPageEmployee">My Details</a></li>
-		<li><a id="tabCompanyGraph" href="#tabPageCompanyGraph">Company</a></li>
+		<li class="active"><a id="tabEmployee" href="#tabPageEmployee"><?=LanguageManager::tran('My Details')?></a></li>
+		<li><a id="tabCompanyGraph" href="#tabPageCompanyGraph"><?=LanguageManager::tran('Company')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">

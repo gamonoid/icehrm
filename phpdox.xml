@@ -1,8 +1,10 @@
 <phpdox xmlns="http://phpdox.net/config">
- <project name="ice-framework" source="src" workdir="build/phpdox">
+ <project name="icehrm" source="./build/app" workdir="./build/phpdox">
   <collector publiconly="false">
    <include mask="*.php" />
    <exclude mask="**/lib/**"/>
+   <exclude mask="**/adodb512/**"/>
+   <exclude mask="**/composer/**"/>
   </collector>
 
   <generator output="build">

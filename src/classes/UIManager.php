@@ -44,7 +44,7 @@ class UIManager{
             $template = str_replace("#_".$key."_#", $value, $template);
         }
 
-        return $template;
+        return LanguageManager::translateTnrText($template);
     }
 
     public function setCurrentUser($user){
@@ -153,17 +153,12 @@ class UIManager{
         }
 
         if($this->user->user_level == "Admin"){
-
-            $reg = '';
-            $num = '';
+            
+            $other = '';
             if(class_exists('ProVersion')){
                 $pro = new ProVersion();
-                if(!empty($pro->employeeLimit)){
-                    $num = "<br/>Employee Limit: ".$pro->employeeLimit;
-                }
-
-                if(method_exists($pro,'getRegisteredTo')){
-                    $reg = "<br/>Registered To: ".$pro->getRegisteredTo();
+                if(method_exists($pro, 'getDetails')){
+                    $other = $pro->getDetails();
                 }
             }
 
@@ -172,8 +167,7 @@ class UIManager{
                 "APP_NAME"=>APP_NAME,
                 "VERSION"=>VERSION,
                 "VERSION_DATE"=>VERSION_DATE,
-                "REG"=>$reg,
-                "NUM"=>$num
+                "OTHER"=>$other
             ));
         }
 
@@ -192,7 +186,8 @@ class UIManager{
     }
 
     public function addQuickAccessMenuItem($name, $icon, $link, $userLevels = array()){
-        $this->quickAccessMenuItems[] = array($name, $icon, $link, $userLevels);
+        $newName = LanguageManager::tran($name);
+        $this->quickAccessMenuItems[] = array($newName, $icon, $link, $userLevels);
     }
 
     public function getQuickAccessMenuItemsHTML(){

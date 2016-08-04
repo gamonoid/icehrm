@@ -28,10 +28,10 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabEmployeeSkill" href="#tabPageEmployeeSkill">Skills</a></li>
-		<li><a id="tabEmployeeEducation" href="#tabPageEmployeeEducation">Education</a></li>
-		<li><a id="tabEmployeeCertification" href="#tabPageEmployeeCertification">Certifications</a></li>
-		<li><a id="tabEmployeeLanguage" href="#tabPageEmployeeLanguage">Languages</a></li>
+		<li class="active"><a id="tabEmployeeSkill" href="#tabPageEmployeeSkill"><?=LanguageManager::tran('Skills')?></a></li>
+		<li><a id="tabEmployeeEducation" href="#tabPageEmployeeEducation"><?=LanguageManager::tran('Education')?></a></li>
+		<li><a id="tabEmployeeCertification" href="#tabPageEmployeeCertification"><?=LanguageManager::tran('Certifications')?></a></li>
+		<li><a id="tabEmployeeLanguage" href="#tabPageEmployeeLanguage"><?=LanguageManager::tran('Languages')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">

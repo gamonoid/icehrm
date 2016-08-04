@@ -30,6 +30,7 @@ if (!class_exists('EmployeesAdminManager')) {
 		public function setupModuleClassDefinitions(){
 			$this->addModelClass('Employee');
 			$this->addModelClass('EmploymentStatus');
+			$this->addModelClass('EmployeeApproval');
 		}
 
         public function getDashboardItemData(){
@@ -273,6 +274,25 @@ if (!class_exists('EmploymentStatus')) {
 	class EmploymentStatus extends ICEHRM_Record {
 
 		var $_table = 'EmploymentStatus';
+
+		public function getAdminAccess(){
+			return array("get","element","save","delete");
+		}
+
+		public function getManagerAccess(){
+			return array("get","element","save");
+		}
+
+		public function getUserAccess(){
+			return array();
+		}
+	}
+}
+
+if (!class_exists('EmployeeApproval')) {
+	class EmployeeApproval extends ICEHRM_Record {
+
+		var $_table = 'EmployeeApprovals';
 
 		public function getAdminAccess(){
 			return array("get","element","save","delete");

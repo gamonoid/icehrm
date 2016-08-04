@@ -28,10 +28,10 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabSkill" href="#tabPageSkill">Skills</a></li>
-		<li><a id="tabEducation" href="#tabPageEducation">Education</a></li>
-		<li><a id="tabCertification" href="#tabPageCertification">Certifications</a></li>
-		<li><a id="tabLanguage" href="#tabPageLanguage">Languages</a></li>
+		<li class="active"><a id="tabSkill" href="#tabPageSkill"><?=LanguageManager::tran('Skills')?></a></li>
+		<li><a id="tabEducation" href="#tabPageEducation"><?=LanguageManager::tran('Education')?></a></li>
+		<li><a id="tabCertification" href="#tabPageCertification"><?=LanguageManager::tran('Certifications')?></a></li>
+		<li><a id="tabLanguage" href="#tabPageLanguage"><?=LanguageManager::tran('Languages')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">
@@ -61,10 +61,10 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 		</div>
 		<div class="tab-pane" id="tabPageLanguage">
 			<div id="Language" class="reviewBlock" data-content="List" style="padding-left:5px;">
-		
+
 			</div>
 			<div id="LanguageForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-		
+
 			</div>
 		</div>
 	</div>

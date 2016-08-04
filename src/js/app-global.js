@@ -77,7 +77,7 @@ function download(name, closeCallback, closeCallbackData){
 		var fileParts;
 		var viewableImages = ["png","jpg","gif","bmp","jpge"]; 
 		
-		if(data['filename'].indexOf("https:") == 0){
+		if(data['filename'].indexOf("https:") == 0 || data['filename'].indexOf("http:") == 0){
 
 			fileParts = data['filename'].split("?");
 			fileParts = fileParts[0].split(".");

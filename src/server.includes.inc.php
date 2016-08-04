@@ -25,6 +25,7 @@ if(defined("MODULE_PATH")){
 $user = SessionUtils::getSessionObject('user');
 
 include (APP_BASE_PATH."classes/BaseService.php");
+include (APP_BASE_PATH."classes/LanguageManager.php");
 include (APP_BASE_PATH."classes/CronUtils.php");
 include (APP_BASE_PATH."classes/LDAPManager.php");
 include (APP_BASE_PATH."classes/FileService.php");
@@ -52,6 +53,8 @@ include APP_BASE_PATH.'admin/modules/api/ModulesAdminManager.php';
 include APP_BASE_PATH.'admin/permissions/api/PermissionsAdminManager.php';
 
 include (APP_BASE_PATH."classes/ApproveActionManager.php");
+include (APP_BASE_PATH."classes/ApprovalStatus.php");
+include (APP_BASE_PATH."classes/StatusChangeLogManager.php");
 
 $dbLocal = NewADOConnection(APP_CON_STR);
 
@@ -68,6 +71,7 @@ include (APP_BASE_PATH."model/custom.models.inc.php");
 $baseService = BaseService::getInstance();
 BaseService::getInstance()->setNonDeletables("User", "id", 1);
 BaseService::getInstance()->setCurrentUser($user);
+BaseService::getInstance()->setCustomFieldManager(new CustomFieldManager());
 BaseService::getInstance()->setDB($dbLocal);
 
 $reportHandler = new ReportHandler();
@@ -76,6 +80,7 @@ $notificationManager = new NotificationManager();
 
 BaseService::getInstance()->setNotificationManager($notificationManager);
 BaseService::getInstance()->setSettingsManager($settingsManager);
+BaseService::getInstance()->setCustomFieldManager(new CustomFieldManager());
 
 $notificationManager->setBaseService($baseService);
 

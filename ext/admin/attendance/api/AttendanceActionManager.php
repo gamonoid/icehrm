@@ -41,7 +41,7 @@ class AttendanceActionManager extends SubActionManager{
 		
 		//check if dates are differnet
 		if(!empty($outDate) && $inDate != $outDate){
-			return new IceResponse(IceResponse::ERROR,"Attendance entry should be within a single day");
+			return new IceResponse(IceResponse::ERROR,LanguageManager::tran("Attendance entry should be within a single day"));
 		}
 		
 		//compare dates

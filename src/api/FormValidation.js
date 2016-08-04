@@ -1,23 +1,23 @@
 /*
- This file is part of Ice Framework.
+This file is part of Ice Framework.
 
- Ice Framework is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
+Ice Framework is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
- Ice Framework is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+Ice Framework is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
- You should have received a copy of the GNU General Public License
- along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
 
- ------------------------------------------------------------------
+------------------------------------------------------------------
 
- Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
- Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
+Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]  
+Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
  */
 
 function FormValidation(formId,validateAll,options) {
@@ -29,73 +29,73 @@ function FormValidation(formId,validateAll,options) {
 	this.popupDialog = null;
 	this.validateAll = validateAll;
 	this.errorMap = new Array();
-
+	
 	this.settings = {"thirdPartyPopup":null,"LabelErrorClass":false, "ShowPopup":true};
-
+	
 	this.settings = jQuery.extend(this.settings,options);
-
+	
 	this.inputTypes = new Array( "text",  "radio",  "checkbox",  "file", "password",  "select-one","select-multi",  "textarea","fileupload" ,"signature");
 
 	this.validator = {
-
-		float: function (str) {
-			var floatstr = /^[-+]?[0-9]+(\.[0-9]+)?$/;
-			if (str != null && str.match(floatstr)) {
-				return true;
-			} else {
-				return false;
+			
+			float: function (str) {
+				var floatstr = /^[-+]?[0-9]+(\.[0-9]+)?$/;
+				if (str != null && str.match(floatstr)) {
+			   		return true;
+			 	} else {
+			 		return false;
+			 	}
+			},
+			
+			number: function (str) {
+				var numstr = /^[0-9]+$/;
+				if (str != null && str.match(numstr)) {
+			   		return true;
+			 	} else {
+			 		return false;
+			 	}
+			},
+			
+			numberOrEmpty: function (str) {
+				if(str == ""){
+					return true;
+				}
+				var numstr = /^[0-9]+$/;
+				if (str != null && str.match(numstr)) {
+			   		return true;
+			 	} else {
+			 		return false;
+			 	}
+			},
+			
+			email: function (str) {   
+				var emailPattern = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;  
+				return str != null && emailPattern.test(str);  
+			},  
+			
+			emailOrEmpty: function (str) {  
+				if(str == ""){
+					return true;
+				}
+				var emailPattern = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;  
+				return str != null && emailPattern.test(str);  
+			}, 
+			
+			username: function (str) {  
+				var username = /^[a-zA-Z0-9\.-]+$/;
+				return str != null && username.test(str);  
+			}, 
+			
+			input: function (str) {
+				if (str != null && str.length > 0) {
+					return true;
+				} else {
+					return false;
+				}
 			}
-		},
 
-		number: function (str) {
-			var numstr = /^[0-9]+$/;
-			if (str != null && str.match(numstr)) {
-				return true;
-			} else {
-				return false;
-			}
-		},
-
-		numberOrEmpty: function (str) {
-			if(str == ""){
-				return true;
-			}
-			var numstr = /^[0-9]+$/;
-			if (str != null && str.match(numstr)) {
-				return true;
-			} else {
-				return false;
-			}
-		},
-
-		email: function (str) {
-			var emailPattern = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-			return str != null && emailPattern.test(str);
-		},
-
-		emailOrEmpty: function (str) {
-			if(str == ""){
-				return true;
-			}
-			var emailPattern = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-			return str != null && emailPattern.test(str);
-		},
-
-		username: function (str) {
-			var username = /^[a-zA-Z0-9\.-]+$/;
-			return str != null && username.test(str);
-		},
-
-		input: function (str) {
-			if (str != null && str.length > 0) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-
-
-	};
+				
+		};
 
 }
 
@@ -104,7 +104,7 @@ FormValidation.method('clearError' , function(formInput, overrideMessage) {
 	$('#'+ this.formId +' #field_'+id).removeClass('error');
 	$('#'+ this.formId +' #help_'+id).html('');
 });
-
+	
 FormValidation.method('addError' , function(formInput, overrideMessage) {
 	this.formError = true;
 	if(formInput.attr("message") != null) {
@@ -133,10 +133,10 @@ FormValidation.method('addError' , function(formInput, overrideMessage) {
 			}
 		}
 	}
-
-
+	
+	
 });
-
+	
 
 FormValidation.method('showErrors' , function() {
 	if(this.formError) {
@@ -149,13 +149,13 @@ FormValidation.method('showErrors' , function() {
 				}else{
 					this.alert("Errors Found",this.errorMessages,-1);
 				}
-
+				
 			}
 		}
-	}
+    }
 });
-
-
+	
+	
 FormValidation.method('checkValues' , function(options) {
 	this.tempOptions = options;
 	var that = this;
@@ -166,100 +166,100 @@ FormValidation.method('checkValues' , function(options) {
 		if(that.settings['LabelErrorClass'] != false){
 			$("label[for='" + name + "']").removeClass(that.settings['LabelErrorClass']);
 		}
-		var id = inputObject.attr("id");
-		var name = inputObject.attr("name");
-		var type = inputObject.attr("type");
+	    var id = inputObject.attr("id");
+	    var name = inputObject.attr("name");
+	    var type = inputObject.attr("type");
+	    
+	    if(inputObject.hasClass('select2-focusser') || inputObject.hasClass('select2-input')){
+	    	return true;
+	    }
+		
+	    if(jQuery.inArray(type, that.inputTypes ) >= 0) {
+	    	if(inputObject.hasClass('uploadInput')){
+	    		inputValue = inputObject.attr("val");
+	    	//}else if(inputObject.hasClass('datetimeInput')){
+	    		//inputValue = inputObject.getDate()+":00";
+	    	}else{
+	    		//inputValue = (type == "radio" || type == "checkbox")?$("input[name='" + name + "']:checked").val():inputObject.val();
+	    		
+	    		inputValue = null;
+	    		if(type == "radio" || type == "checkbox"){
+	    			inputValue = $("input[name='" + name + "']:checked").val();
+	    		}else if(inputObject.hasClass('select2Field')){
+	    			if($('#'+id).select2('data') != null && $('#'+id).select2('data') != undefined){
+	    				inputValue = $('#'+id).select2('data').id;
+	    			}else{
+	    				inputValue = "";
+	    			}
+	    			
+	    		}else if(inputObject.hasClass('select2Multi')){
+	    			if($('#'+id).select2('data') != null && $('#'+id).select2('data') != undefined){
+	    				inputValueObjects = $('#'+id).select2('data');
+	    				inputValue = [];
+	    				for(var i=0;i<inputValueObjects.length;i++){
+	    					inputValue.push(inputValueObjects[i].id);
+	    				}
+	    				inputValue = JSON.stringify(inputValue);
+	    			}else{
+	    				inputValue = "";
+	    			}
+                }else if(inputObject.hasClass('signatureField')){
+                    if($('#'+id).data('signaturePad').isEmpty()){
+                        inputValue = '';
+                    }else{
+                        inputValue = $('#'+id).data('signaturePad').toDataURL();
+                    }
 
-		if(inputObject.hasClass('select2-focusser') || inputObject.hasClass('select2-input')){
-			return true;
-		}
+                }else{
+	    			inputValue = inputObject.val();
+	    		}
+	    	}
+		   
+		    var validation = inputObject.attr('validation');
+		    var valid = false;
+		    
+		    if(validation != undefined && validation != null &&  that.validator[validation] != undefined && that.validator[validation] != null){
+		    	valid = that.validator[validation](inputValue);
+		    	
+		    }else{
 
-		if(jQuery.inArray(type, that.inputTypes ) >= 0) {
-			if(inputObject.hasClass('uploadInput')){
-				inputValue = inputObject.attr("val");
-				//}else if(inputObject.hasClass('datetimeInput')){
-				//inputValue = inputObject.getDate()+":00";
-			}else{
-				//inputValue = (type == "radio" || type == "checkbox")?$("input[name='" + name + "']:checked").val():inputObject.val();
-
-				inputValue = null;
-				if(type == "radio" || type == "checkbox"){
-					inputValue = $("input[name='" + name + "']:checked").val();
-				}else if(inputObject.hasClass('select2Field')){
-					if($('#'+id).select2('data') != null && $('#'+id).select2('data') != undefined){
-						inputValue = $('#'+id).select2('data').id;
-					}else{
-						inputValue = "";
-					}
-
-				}else if(inputObject.hasClass('select2Multi')){
-					if($('#'+id).select2('data') != null && $('#'+id).select2('data') != undefined){
-						inputValueObjects = $('#'+id).select2('data');
-						inputValue = [];
-						for(var i=0;i<inputValueObjects.length;i++){
-							inputValue.push(inputValueObjects[i].id);
-						}
-						inputValue = JSON.stringify(inputValue);
-					}else{
-						inputValue = "";
-					}
-				}else if(inputObject.hasClass('signatureField')){
-					if($('#'+id).data('signaturePad').isEmpty()){
-						inputValue = '';
-					}else{
-						inputValue = $('#'+id).data('signaturePad').toDataURL();
-					}
-
-				}else{
-					inputValue = inputObject.val();
-				}
-			}
-
-			var validation = inputObject.attr('validation');
-			var valid = false;
-
-			if(validation != undefined && validation != null &&  that.validator[validation] != undefined && that.validator[validation] != null){
-				valid = that.validator[validation](inputValue);
-
-			}else{
-
-				if(that.validateAll){
-					if(validation != undefined && validation != null && validation == "none"){
-						valid = true;
-					}else{
-						valid = that.validator['input'](inputValue);
-					}
-
-				}else{
-					valid = true;
-				}
-				$(that.formObject).attr(id,inputValue);
-			}
-
-			if(!valid) {
-				that.addError(inputObject, null);
-			}else{
-				that.clearError(inputObject, null);
-				$(that.formObject).attr(id,inputValue);
-			}
-		}
-
-	};
+		    	if(that.validateAll){
+		    		if(validation != undefined && validation != null && validation == "none"){
+		    			valid = true;
+		    		}else{
+		    			valid = that.validator['input'](inputValue);
+		    		}
+		    		
+		    	}else{
+		    		valid = true;
+		    	}
+		    	$(that.formObject).attr(id,inputValue);
+		    }
+		    
+		    if(!valid) {
+	    		that.addError(inputObject, null);
+	    	}else{
+	    		that.clearError(inputObject, null);
+	    		$(that.formObject).attr(id,inputValue);
+	    	}
+	    }
+		
+	};  
 
 	var inputs = $('#'+ this.formId + " :input");
-	inputs.each(function() {
-		var that = $(this);
-		validate(that);
-	});
+    inputs.each(function() {
+    	var that = $(this);
+    	validate(that);
+    });
+    
+    inputs = $('#'+ this.formId + " .uploadInput");
+    inputs.each(function() {
+    	var that = $(this);
+    	validate(that);
+    });
 
-	inputs = $('#'+ this.formId + " .uploadInput");
-	inputs.each(function() {
-		var that = $(this);
-		validate(that);
-	});
-
-	this.showErrors();
-	this.tempOptions = {};
+    this.showErrors();
+    this.tempOptions = {};
 	return !this.formError;
 });
 
@@ -269,9 +269,9 @@ FormValidation.method('getFormParameters' , function() {
 
 
 FormValidation.method('alert', function (title,text,top) {
-
+	
 	alert(text);
-
+	
 });
 
 

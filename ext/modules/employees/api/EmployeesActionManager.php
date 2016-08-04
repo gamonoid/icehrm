@@ -24,13 +24,57 @@ Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilin
 class EmployeesActionManager extends SubActionManager{
 	public function get($req){
         $profileId = $this->getCurrentProfileId();
-        $subordinate = new Employee();
-        $subordinatesCount = $subordinate->Count("supervisor = ? and id = ?",array($profileId, $req->id));
+		$cemp = $profileId;
+		$obj = new Employee();
+
+		$cempObj = new Employee();
+		$cempObj->Load("id = ?",array($cemp));
+		if($obj->getUserOnlyMeAccessField() == 'id' &&
+			SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 &&
+			CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)){
+
+			$subordinates = $obj->Find("supervisor = ?",array($cemp));
+
+			if(empty($subordinates)){
+				$subordinates = array();
+			}
+
+			$childCompaniesIds = array();
+			if(SettingsManager::getInstance()->getSetting('System: Child Company Structure Managers Enabled') == '1'){
+				$childCompaniesResp = CompanyStructure::getAllChildCompanyStructures($cempObj->department);
+				$childCompanies = $childCompaniesResp->getObject();
+
+				foreach($childCompanies as $cc){
+					$childCompaniesIds[] = $cc->id;
+				}
+			}else{
+				$childCompaniesIds[] = $cempObj->department;
+			}
 
 
-		if($this->user->user_level == 'Admin' || $subordinatesCount > 0){
-			$id = $req->id;
+			if(!empty($childCompaniesIds)) {
+				$childStructureSubordinates = $obj->Find("department in (" . implode(',', $childCompaniesIds) . ") and id != ?", array($cemp));
+				$subordinates = array_merge($subordinates, $childStructureSubordinates);
+			}
+
+			foreach ($subordinates as $subordinate){
+				if($subordinate->id == $req->id){
+					$id = $req->id;
+					break;
+				}
+			}
+
+		}else{
+			$subordinate = new Employee();
+			$subordinatesCount = $subordinate->Count("supervisor = ? and id = ?",array($profileId, $req->id));
+
+
+			if($this->user->user_level == 'Admin' || $subordinatesCount > 0){
+				$id = $req->id;
+			}
 		}
+
+
 		
 		if(empty($id)){
 			$id = $profileId;
@@ -56,7 +100,13 @@ class EmployeesActionManager extends SubActionManager{
 		if(!empty($employee->joined_date)){
 			$employee->joined_date = date("F jS, Y",strtotime($employee->joined_date));
 		}
-		
+
+		//Read custom fields
+		try {
+			$employee = BaseService::getInstance()->customFieldManager->enrichObjectCustomFields('Employee', $employee);
+		}catch(Exception $e){
+			
+		}
 		
 		if(empty($employee->id)){
 			return new IceResponse(IceResponse::ERROR,$employee);		

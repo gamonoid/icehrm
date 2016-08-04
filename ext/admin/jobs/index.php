@@ -20,7 +20,6 @@ along with iCE Hrm. If not, see <http://www.gnu.org/licenses/>.
 Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]  
 Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
  */
-
 $moduleName = 'jobs';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
@@ -28,9 +27,9 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabJobTitles" href="#tabPageJobTitles">Job Titles</a></li>
-		<li><a id="tabPayGrades" href="#tabPagePayGrades">Pay Grades</a></li>
-		<li><a id="tabEmploymentStatus" href="#tabPageEmploymentStatus">Employment Status</a></li>
+		<li class="active"><a id="tabJobTitles" href="#tabPageJobTitles"><?=LanguageManager::tran('Job Titles')?></a></li>
+		<li><a id="tabPayGrades" href="#tabPagePayGrades"><?=LanguageManager::tran('Pay Grades')?></a></li>
+		<li><a id="tabEmploymentStatus" href="#tabPageEmploymentStatus"><?=LanguageManager::tran('Employment Status')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">

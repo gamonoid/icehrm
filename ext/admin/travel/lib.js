@@ -110,22 +110,22 @@ EmployeeImmigrationAdapter.method('getFilters', function() {
 
 
 /**
- * EmployeeTravelRecordAdapter
+ * EmployeeTravelRecordAdminAdapter
  */
 
 
-function EmployeeTravelRecordAdapter(endPoint,tab,filter,orderBy) {
+function EmployeeTravelRecordAdminAdapter(endPoint,tab,filter,orderBy) {
     this.initAdapter(endPoint,tab,filter,orderBy);
     this.itemName = 'TravelRequest';
     this.itemNameLower = 'travelrequest';
     this.modulePathName = 'travel';
 }
 
-EmployeeTravelRecordAdapter.inherits(ApproveAdminAdapter);
+EmployeeTravelRecordAdminAdapter.inherits(ApproveAdminAdapter);
 
 
 
-EmployeeTravelRecordAdapter.method('getDataMapping', function() {
+EmployeeTravelRecordAdminAdapter.method('getDataMapping', function() {
 	return [
 	        "id",
 	        "employee",
@@ -138,7 +138,7 @@ EmployeeTravelRecordAdapter.method('getDataMapping', function() {
 	];
 });
 
-EmployeeTravelRecordAdapter.method('getHeaders', function() {
+EmployeeTravelRecordAdminAdapter.method('getHeaders', function() {
 	return [
 			{ "sTitle": "ID" ,"bVisible":false},
 			{ "sTitle": "Employee" },
@@ -151,7 +151,7 @@ EmployeeTravelRecordAdapter.method('getHeaders', function() {
 	];
 });
 
-EmployeeTravelRecordAdapter.method('getFormFields', function() {
+EmployeeTravelRecordAdminAdapter.method('getFormFields', function() {
     return [
         ["id", {"label": "ID", "type": "hidden"}],
         ["employee", {

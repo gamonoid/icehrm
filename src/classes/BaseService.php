@@ -18,21 +18,21 @@ along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
 
 ------------------------------------------------------------------
 
-Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]  
+Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
 Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
  */
 
 
 /**
- * BaseService class serves as the core logic for managing the application and for handling most 
+ * BaseService class serves as the core logic for managing the application and for handling most
  * of the tasks related to retriving and saving data. This can be referred within any module using
  * BaseService::getInstance()
- * 
- @class BaseService
+ *
+@class BaseService
  */
 
 class BaseService{
-	
+
 	var $nonDeletables = array();
 	var $errros = array();
 	public $userTables = array();
@@ -44,22 +44,23 @@ class BaseService{
 	var $fileFields = null;
 	var $moduleManagers = null;
 	var $emailSender = null;
-    var $user = null;
-    var $historyManagers = array();
-    var $calculationHooks = array();
+	var $user = null;
+	var $historyManagers = array();
+	var $calculationHooks = array();
+	var $customFieldManager = null;
 
 	private static $me = null;
-	
+
 	private function __construct(){
-	
+
 	}
-	
+
 	/**
 	 * Get the only instance created for BaseService
 	 * @method getInstance
 	 * @return {BaseService} BaseService object
 	 */
-	
+
 	public static function getInstance(){
 		if(empty(self::$me)){
 			self::$me = new BaseService();
@@ -67,7 +68,7 @@ class BaseService{
 
 		return self::$me;
 	}
-	
+
 	/**
 	 * Get an array of objects from database
 	 * @method get
@@ -79,73 +80,73 @@ class BaseService{
 	 * @return {Array} an array of objects of type $table
 	 */
 	public function get($table,$mappingStr = null, $filterStr = null, $orderBy = null, $limit = null){
-		
+
 		if(!empty($mappingStr)){
-		$map = json_decode($mappingStr);
+			$map = json_decode($mappingStr);
 		}
 		$obj = new $table();
-		
+
 		$this->checkSecureAccess("get",$obj);
-		
+
 		$query = "";
 		$queryData = array();
 		if(!empty($filterStr)){
 			$filter = json_decode($filterStr, true);
 
 
-            if(!empty($filter)){
-                LogManager::getInstance()->debug("Building filter query");
-                if(method_exists($obj,'getCustomFilterQuery')){
-                    LogManager::getInstance()->debug("Method: getCustomFilterQuery exists");
-                    $response = $obj->getCustomFilterQuery($filter);
-                    $query = $response[0];
-                    $queryData = $response[1];
-                }else{
-                    LogManager::getInstance()->debug("Method: getCustomFilterQuery not found");
-                    $defaultFilterResp = $this->buildDefaultFilterQuery($filter);
-                    $query = $defaultFilterResp[0];
-                    $queryData = $defaultFilterResp[1];
-                }
+			if(!empty($filter)){
+				LogManager::getInstance()->debug("Building filter query");
+				if(method_exists($obj,'getCustomFilterQuery')){
+					LogManager::getInstance()->debug("Method: getCustomFilterQuery exists");
+					$response = $obj->getCustomFilterQuery($filter);
+					$query = $response[0];
+					$queryData = $response[1];
+				}else{
+					LogManager::getInstance()->debug("Method: getCustomFilterQuery not found");
+					$defaultFilterResp = $this->buildDefaultFilterQuery($filter);
+					$query = $defaultFilterResp[0];
+					$queryData = $defaultFilterResp[1];
+				}
 
-            }
+			}
 		}
-		
+
 		if(empty($orderBy)){
 			$orderBy = "";
 		}else{
 			$orderBy = " ORDER BY ".$orderBy;
 		}
-		
-		
+
+
 		if(in_array($table, $this->userTables)){
 			$cemp = $this->getCurrentProfileId();
 			if(!empty($cemp)){
-                $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-                LogManager::getInstance()->debug("Query: ".$signInMappingField." = ?".$query.$orderBy);
-                LogManager::getInstance()->debug("Query Data: ".print_r(array_merge(array($cemp),$queryData),true));
+				$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
+				LogManager::getInstance()->debug("Query: ".$signInMappingField." = ?".$query.$orderBy);
+				LogManager::getInstance()->debug("Query Data: ".print_r(array_merge(array($cemp),$queryData),true));
 				$list = $obj->Find($signInMappingField." = ?".$query.$orderBy, array_merge(array($cemp),$queryData));
 			}else{
 				$list = array();
 			}
-					
+
 		}else{
-            LogManager::getInstance()->debug("Query: "."1=1".$query.$orderBy);
-            LogManager::getInstance()->debug("Query Data: ".print_r($queryData,true));
-			$list = $obj->Find("1=1".$query.$orderBy,$queryData);	
+			LogManager::getInstance()->debug("Query: "."1=1".$query.$orderBy);
+			LogManager::getInstance()->debug("Query Data: ".print_r($queryData,true));
+			$list = $obj->Find("1=1".$query.$orderBy,$queryData);
 		}
 
-        $newList = array();
-        foreach($list as $listObj){
-            $newList[] = $this->cleanUpAdoDB($listObj);
-        }
-		
+		$newList = array();
+		foreach($list as $listObj){
+			$newList[] = $this->cleanUpAdoDB($listObj);
+		}
+
 		if(!empty($mappingStr) && count($map)>0){
 			$list = $this->populateMapping($newList, $map);
 		}
 
 		return $list;
 	}
-	
+
 	public function buildDefaultFilterQuery($filter){
 		$query = "";
 		$queryData = array();
@@ -160,13 +161,13 @@ class BaseService{
 				$length = count($v);
 				for($i=0; $i<$length; $i++){
 
-					
+
 					if($i == 0){
 						$query.=" and (";
 					}
 
-                    $query.=$k." like ?";
-					
+					$query.=$k." like ?";
+
 					if($i < $length -1){
 						$query.=" or ";
 					}else{
@@ -174,37 +175,37 @@ class BaseService{
 					}
 					$queryData[] = "%".$v[$i]."%";
 				}
-					
+
 			}else{
 				if(!empty($v) && $v != 'NULL'){
 					$query.=" and ".$k."=?";
-                    if($v == '__myid__'){
-                        $v = $this->getCurrentProfileId();
-                    }
+					if($v == '__myid__'){
+						$v = $this->getCurrentProfileId();
+					}
 					$queryData[] = $v;
 				}
-					
+
 			}
-				
+
 		}
 
 		return array($query, $queryData);
 	}
 
 
-    public function getSortingData($req){
-        $data = array();
-        $data['sorting'] = $req['sorting'];
+	public function getSortingData($req){
+		$data = array();
+		$data['sorting'] = $req['sorting'];
 
-        $columns = json_decode($req['cl'],true);
+		$columns = json_decode($req['cl'],true);
 
-        $data['column'] = $columns[$req['iSortCol_0']];
+		$data['column'] = $columns[$req['iSortCol_0']];
 
-        $data['order'] = $req['sSortDir_0'];
+		$data['order'] = $req['sSortDir_0'];
 
-        return $data;
-    }
-	
+		return $data;
+	}
+
 	/**
 	 * An extention of get method for the use of data tables with ability to search
 	 * @method getData
@@ -221,7 +222,7 @@ class BaseService{
 	 */
 	public function getData($table,$mappingStr = null, $filterStr = null, $orderBy = null, $limit = null, $searchColumns = null, $searchTerm = null, $isSubOrdinates = false, $skipProfileRestriction = false, $sortData = array()){
 		if(!empty($mappingStr)){
-		$map = json_decode($mappingStr);
+			$map = json_decode($mappingStr);
 		}
 		$obj = new $table();
 		$this->checkSecureAccess("get",$obj);
@@ -238,73 +239,103 @@ class BaseService{
 					$queryData = $response[1];
 				}else{
 					LogManager::getInstance()->debug("Method: getCustomFilterQuery not found");
-					$defaultFilterResp = $this->buildDefaultFilterQuery($filter);	
+					$defaultFilterResp = $this->buildDefaultFilterQuery($filter);
 					$query = $defaultFilterResp[0];
 					$queryData = $defaultFilterResp[1];
 				}
-				
-				
+
+
 			}
 
 			LogManager::getInstance()->debug("Filter Query:".$query);
 			LogManager::getInstance()->debug("Filter Query Data:".json_encode($queryData));
 		}
-		
-		
+
+
 		if(!empty($searchTerm) && !empty($searchColumns)){
 			$searchColumnList = json_decode($searchColumns);
-            $searchColumnList = array_diff($searchColumnList, $obj->getVirtualFields());
-            if(!empty($searchColumnList)){
-                $tempQuery = " and (";
-                foreach($searchColumnList as $col){
+			$searchColumnList = array_diff($searchColumnList, $obj->getVirtualFields());
+			if(!empty($searchColumnList)){
+				$tempQuery = " and (";
+				foreach($searchColumnList as $col){
 
-                    if($tempQuery != " and ("){
-                        $tempQuery.=" or ";
-                    }
-                    $tempQuery.=$col." like ?";
-                    $queryData[] = "%".$searchTerm."%";
-                }
-                $query.= $tempQuery.")";
-            }
+					if($tempQuery != " and ("){
+						$tempQuery.=" or ";
+					}
+					$tempQuery.=$col." like ?";
+					$queryData[] = "%".$searchTerm."%";
+				}
+				$query.= $tempQuery.")";
+			}
 
 		}
 
-        if(!empty($sortData) && $sortData['sorting']."" == "1" && isset($sortData['column'])){
+		if(!empty($sortData) && $sortData['sorting']."" == "1" && isset($sortData['column'])){
 
-            $orderBy = " ORDER BY ".$sortData['column']." ".$sortData['order'];
+			$orderBy = " ORDER BY ".$sortData['column']." ".$sortData['order'];
 
-        }else{
-            if(empty($orderBy)){
-                $orderBy = "";
-            }else{
-                $orderBy = " ORDER BY ".$orderBy;
-            }
-        }
+		}else{
+			if(empty($orderBy)){
+				$orderBy = "";
+			}else{
+				$orderBy = " ORDER BY ".$orderBy;
+			}
+		}
 
 
 
-		
+
 		if(empty($limit)){
-			$limit = "";	
+			$limit = "";
 		}
-		
-		
-		
+
+
+
 		if(in_array($table, $this->userTables) && !$skipProfileRestriction){
-			
+
 			$cemp = $this->getCurrentProfileId();
 			if(!empty($cemp)){
 				if(!$isSubOrdinates){
 					array_unshift($queryData, $cemp);
 					//$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-                    $signInMappingField = $obj->getUserOnlyMeAccessField();
-                    LogManager::getInstance()->debug("Data Load Query (x1):"."1=1".$signInMappingField." = ?".$query.$orderBy.$limit);
-                    LogManager::getInstance()->debug("Data Load Query Data (x1):".json_encode($queryData));
-                    $list = $obj->Find($signInMappingField." = ?".$query.$orderBy.$limit, $queryData);
+					$signInMappingField = $obj->getUserOnlyMeAccessField();
+					LogManager::getInstance()->debug("Data Load Query (x1):"."1=1".$signInMappingField." = ?".$query.$orderBy.$limit);
+					LogManager::getInstance()->debug("Data Load Query Data (x1):".json_encode($queryData));
+					$list = $obj->Find($signInMappingField." = ?".$query.$orderBy.$limit, $queryData);
 				}else{
 					$profileClass = ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME);
 					$subordinate = new $profileClass();
 					$subordinates = $subordinate->Find("supervisor = ?",array($cemp));
+					$cempObj = new Employee();
+					$cempObj->Load("id = ?",array($cemp));
+
+					if($obj->getUserOnlyMeAccessField() == 'id' &&
+						SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 &&
+						CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)){
+						if(empty($subordinates)){
+							$subordinates = array();
+						}
+
+						$childCompaniesIds = array();
+						if(SettingsManager::getInstance()->getSetting('System: Child Company Structure Managers Enabled') == '1'){
+							$childCompaniesResp = CompanyStructure::getAllChildCompanyStructures($cempObj->department);
+							$childCompanies = $childCompaniesResp->getObject();
+
+							foreach($childCompanies as $cc){
+								$childCompaniesIds[] = $cc->id;
+							}
+						}else{
+							$childCompaniesIds[] = $cempObj->department;
+						}
+
+
+
+						if(!empty($childCompaniesIds)) {
+							$childStructureSubordinates = $subordinate->Find("department in (" . implode(',', $childCompaniesIds) . ") and id != ?", array($cemp));
+							$subordinates = array_merge($subordinates, $childStructureSubordinates);
+						}
+					}
+
 					$subordinatesIds = "";
 					foreach($subordinates as $sub){
 						if($subordinatesIds != ""){
@@ -313,76 +344,124 @@ class BaseService{
 						$subordinatesIds.=$sub->id;
 					}
 
-                    if($obj->allowIndirectMapping()){
-                        $indeirectEmployees = $subordinate->Find("indirect_supervisors IS NOT NULL and indirect_supervisors <> '' and status = 'Active'", array());
-                        foreach($indeirectEmployees as $ie){
-                            $indirectSupervisors = json_decode($ie->indirect_supervisors, true);
-                            if(in_array($cemp, $indirectSupervisors)){
-                                if($subordinatesIds != ""){
-                                    $subordinatesIds.=",";
-                                }
-                                $subordinatesIds.=$ie->id;
-                            }
-                        }
-                    }
+					if($obj->allowIndirectMapping()){
+						$indeirectEmployees = $subordinate->Find("indirect_supervisors IS NOT NULL and indirect_supervisors <> '' and status = 'Active'", array());
+						foreach($indeirectEmployees as $ie){
+							$indirectSupervisors = json_decode($ie->indirect_supervisors, true);
+							if(in_array($cemp, $indirectSupervisors)){
+								if($subordinatesIds != ""){
+									$subordinatesIds.=",";
+								}
+								$subordinatesIds.=$ie->id;
+							}
+						}
+					}
 
-                    $signInMappingField = $obj->getUserOnlyMeAccessField();
-                    LogManager::getInstance()->debug("Data Load Query (x2):"."1=1".$signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit);
-                    LogManager::getInstance()->debug("Data Load Query Data (x2):".json_encode($queryData));
-					$list = $obj->Find($signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit, $queryData);
+					$signInMappingField = $obj->getUserOnlyMeAccessField();
+					LogManager::getInstance()->debug("Data Load Query (x2):"."1=1".$signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit);
+					LogManager::getInstance()->debug("Data Load Query Data (x2):".json_encode($queryData));
+					if(!empty($subordinatesIds)) {
+						$list = $obj->Find($signInMappingField . " in (" . $subordinatesIds . ") " . $query . $orderBy . $limit, $queryData);
+					}else{
+						$list = array();
+					}
 				}
-					
+
 			}else{
 				$list = array();
 			}
-					
+
 		}else if($isSubOrdinates){
-            $cemp = $this->getCurrentProfileId();
-            if(!empty($cemp)){
-                $profileClass = ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME);
-                $subordinate = new $profileClass();
-                $subordinates = $subordinate->Find("supervisor = ?",array($cemp));
-                $subordinatesIds = "";
-                foreach($subordinates as $sub){
-                    if($subordinatesIds != ""){
-                        $subordinatesIds.=",";
-                    }
-                    $subordinatesIds.=$sub->id;
-                }
-                $subordinatesIds.="";
-                $signInMappingField = $obj->getUserOnlyMeAccessField();
-                LogManager::getInstance()->debug("Data Load Query (a1):".$signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit);
-                $list = $obj->Find($signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit, $queryData);
-            }else{
-                $list = $obj->Find("1=1".$query.$orderBy.$limit,$queryData);
-            }
+			$cemp = $this->getCurrentProfileId();
+			if(!empty($cemp)){
+				$profileClass = ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME);
+				$subordinate = new $profileClass();
+				$subordinates = $subordinate->Find("supervisor = ?",array($cemp));
+				$cempObj = new Employee();
+				$cempObj->Load("id = ?",array($cemp));
+				if($obj->getUserOnlyMeAccessField() == 'id' &&
+					SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 &&
+					CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)){
+					if(empty($subordinates)){
+						$subordinates = array();
+					}
+
+					$childCompaniesIds = array();
+					if(SettingsManager::getInstance()->getSetting('System: Child Company Structure Managers Enabled') == '1'){
+						$childCompaniesResp = CompanyStructure::getAllChildCompanyStructures($cempObj->department);
+						$childCompanies = $childCompaniesResp->getObject();
+
+						foreach($childCompanies as $cc){
+							$childCompaniesIds[] = $cc->id;
+						}
+					}else{
+						$childCompaniesIds[] = $cempObj->department;
+					}
+
+
+					if(!empty($childCompaniesIds)) {
+						$childStructureSubordinates = $subordinate->Find("department in (" . implode(',', $childCompaniesIds) . ") and id != ?", array($cemp));
+						$subordinates = array_merge($subordinates, $childStructureSubordinates);
+					}
+				}
+
+
+				$subordinatesIds = "";
+				foreach($subordinates as $sub){
+					if($subordinatesIds != ""){
+						$subordinatesIds.=",";
+					}
+					$subordinatesIds.=$sub->id;
+				}
+
+
+				if($obj->allowIndirectMapping()){
+					$indeirectEmployees = $subordinate->Find("indirect_supervisors IS NOT NULL and indirect_supervisors <> '' and status = 'Active'", array());
+					foreach($indeirectEmployees as $ie){
+						$indirectSupervisors = json_decode($ie->indirect_supervisors, true);
+						if(in_array($cemp, $indirectSupervisors)){
+							if($subordinatesIds != ""){
+								$subordinatesIds.=",";
+							}
+							$subordinatesIds.=$ie->id;
+						}
+					}
+				}
+
+
+				$signInMappingField = $obj->getUserOnlyMeAccessField();
+				LogManager::getInstance()->debug("Data Load Query (a1):".$signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit);
+				$list = $obj->Find($signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit, $queryData);
+			}else{
+				$list = $obj->Find("1=1".$query.$orderBy.$limit,$queryData);
+			}
 		}else{
 			$list = $obj->Find("1=1".$query.$orderBy.$limit,$queryData);
-		}	
+		}
 
-        if(!$list){
-            LogManager::getInstance()->debug("Get Data Error:".$obj->ErrorMsg());
-        }
-		
+		if(!$list){
+			LogManager::getInstance()->debug("Get Data Error:".$obj->ErrorMsg());
+		}
+
 		LogManager::getInstance()->debug("Data Load Query:"."1=1".$query.$orderBy.$limit);
 		LogManager::getInstance()->debug("Data Load Query Data:".json_encode($queryData));
 
-        $processedList = array();
-        foreach($list as $obj){
-            $processedList[] = $this->cleanUpAdoDB($obj->postProcessGetData($obj));
-        }
+		$processedList = array();
+		foreach($list as $obj){
+			$processedList[] = $this->cleanUpAdoDB($obj->postProcessGetData($obj));
+		}
 
-        $list = $processedList;
-		
+		$list = $processedList;
+
 		if(!empty($mappingStr) && count($map)>0){
 			$list = $this->populateMapping($list, $map);
 		}
-		
-		
+
+
 		return $list;
 	}
-	
-	
+
+
 	/**
 	 * Propulate field mappings for a given set of objects
 	 * @method populateMapping
@@ -390,7 +469,7 @@ class BaseService{
 	 * @param $map {Array} an associative array of Mappings (e.g {"profile":["Profile","id","first_name+last_name"]})
 	 * @return {Array} array of populated objects
 	 */
-	
+
 	public function populateMapping($list,$map){
 		$listNew = array();
 		if(empty($list)){
@@ -398,30 +477,30 @@ class BaseService{
 		}
 		foreach($list as $item){
 			$item = $this->populateMappingItem($item, $map);
-			$listNew[] = $item;	
+			$listNew[] = $item;
 		}
 		return 	$listNew;
 	}
-	
+
 	public function populateMappingItem($item,$map){
 		foreach($map as $k=>$v){
 			$fTable = $v[0];
 			$tObj = new $fTable();
 			$tObj->Load($v[1]."= ?",array($item->$k));
-			
+
 			if($tObj->$v[1] == $item->$k){
 				$v[2] = str_replace("+"," ",$v[2]);
 				$values = explode(" ", $v[2]);
 				if(count($values) == 1){
 					$idField = $k."_id";
 					$item->$idField = $item->$k;
-					$item->$k = $tObj->$v[2];	
-					
+					$item->$k = $tObj->$v[2];
+
 				}else{
 					$objVal = "";
 					foreach($values as $v){
 						if($objVal != ""){
-							$objVal .= " ";	
+							$objVal .= " ";
 						}
 						$objVal .= $tObj->$v;
 					}
@@ -429,42 +508,42 @@ class BaseService{
 					$item->$idField = $item->$k;
 					$item->$k = $objVal;
 				}
-			}	
+			}
 		}
 		return 	$item;
 	}
-	
+
 	/**
 	 * Retive one element from db
 	 * @method getElement
 	 * @param $table {String} model class name of the table to get data (e.g for Users table model class name is User)
-	 * @param $table {Integer} id of the item to get from $table 
+	 * @param $table {Integer} id of the item to get from $table
 	 * @param $mappingStr {String} a JSON string to specify fields of the $table should be mapped to other tables (e.g {"profile":["Profile","id","first_name+last_name"]} : this is how the profile field in Users table is mapped to Profile table. In this case users profile field will get filled by Profile first name and last name. The original value in User->profile field will get moved to User->profile_id)
 	 * @param $skipSecurityCheck {Boolean} if true won't check whether the user has access to that object
 	 * @return {Object} an object of type $table
 	 */
-	
+
 	public function getElement($table,$id,$mappingStr = null, $skipSecurityCheck = false){
 		$obj = new $table();
-		
-		
+
+
 		if(in_array($table, $this->userTables)){
 			$cemp = $this->getCurrentProfileId();
 			if(!empty($cemp)){
-				$obj->Load("id = ?", array($id));	
+				$obj->Load("id = ?", array($id));
 			}else{
 			}
-					
+
 		}else{
 			$obj->Load("id = ?",array($id));
 		}
-		
+
 		if(!$skipSecurityCheck){
 			$this->checkSecureAccess("element",$obj);
 		}
-		
+
 		if(!empty($mappingStr)){
-			$map = json_decode($mappingStr);	
+			$map = json_decode($mappingStr);
 		}
 		if($obj->id == $id){
 			if(!empty($mappingStr)){
@@ -478,12 +557,12 @@ class BaseService{
 						if(count($values) == 1){
 							$idField = $name."_id";
 							$obj->$idField = $obj->$name;
-							$obj->$name = $tObj->$v[2];	
+							$obj->$name = $tObj->$v[2];
 						}else{
 							$objVal = "";
 							foreach($values as $v){
 								if($objVal != ""){
-									$objVal .= " ";	
+									$objVal .= " ";
 								}
 								$objVal .= $tObj->$v;
 							}
@@ -491,15 +570,23 @@ class BaseService{
 							$obj->$idField = $obj->$name;
 							$obj->$name = $objVal;
 						}
-					}	
+					}
 				}
 			}
+
+			//Add custom fields
+			$customFields = $this->customFieldManager->getCustomFields($table,$obj->id);
+			foreach ($customFields as $cf){
+				$obj->{$cf->name} = $cf->value;
+			}
+
+
 			$obj = $obj->postProcessGetElement($obj);
 			return 	$this->cleanUpAdoDB($obj->postProcessGetData($obj));
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Add an element to a given table
 	 * @method addElement
@@ -507,10 +594,13 @@ class BaseService{
 	 * @param $obj {Array} an associative array with field names and values for the new object. If the object id is not empty an existing object will be updated
 	 * @return {Object} newly added or updated element of type $table
 	 */
-	
+
 	public function addElement($table,$obj){
+		$customFields = array();
 		$isAdd = true;
 		$ele = new $table();
+		//LogManager::getInstance()->error("Obj:".json_encode($obj));
+
 		if(class_exists("ProVersion")){
 			$pro = new ProVersion();
 			$subscriptionTables = $pro->getSubscriptionTables();
@@ -521,48 +611,53 @@ class BaseService{
 				}
 			}
 		}
-		
+
 		if(!empty($obj['id'])){
 			$isAdd = false;
-			$ele->Load('id = ?',array($obj['id']));	
+			$ele->Load('id = ?',array($obj['id']));
 		}
-		
+
+		$objectKeys = $ele->getObjectKeys();
+
 		foreach($obj as $k=>$v){
 			if($k == 'id' || $k == 't' || $k == 'a'){
-				continue;	
+				continue;
 			}
 			if($v == "NULL"){
-				$v = null;	
+				$v = null;
 			}
-			$ele->$k = $v;	
+			if(isset($objectKeys[$k])){
+				$ele->$k = $v;
+			}
+
 		}
-		
-		
-		if(empty($obj['id'])){	
+
+
+		if(empty($obj['id'])){
 			if(in_array($table, $this->userTables)){
 				$cemp = $this->getCurrentProfileId();
 				if(!empty($cemp)){
 					$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-					$ele->$signInMappingField = $cemp;	
+					$ele->$signInMappingField = $cemp;
 				}else{
 					return new IceResponse(IceResponse::ERROR,"Profile id is not set");
-				}		
+				}
 			}
 		}
-		
+
 		$this->checkSecureAccess("save",$ele);
-		
+
 		$resp =$ele->validateSave($ele);
 		if($resp->getStatus() != IceResponse::SUCCESS){
 			return $resp;
 		}
-		
+
 		if($isAdd){
 			if(empty($ele->created)){
 				$ele->created = date("Y-m-d H:i:s");
 			}
 		}
-		
+
 		if(empty($ele->updated)){
 			$ele->updated = date("Y-m-d H:i:s");
 		}
@@ -571,23 +666,37 @@ class BaseService{
 		}else{
 			$ele = $ele->executePreUpdateActions($ele)->getData();
 		}
-		
-		
+
+
 		$ok = $ele->Save();
+
+
+
 		if(!$ok){
-			
+
 			$error = $ele->ErrorMsg();
-			
+
 			LogManager::getInstance()->info($error);
-			
+
 			if($isAdd){
 				$this->audit(IceConstants::AUDIT_ERROR, "Error occured while adding an object to ".$table." \ Error: ".$error);
 			}else{
 				$this->audit(IceConstants::AUDIT_ERROR, "Error occured while editing an object in ".$table." [id:".$ele->id."] \ Error: ".$error);
 			}
-			return new IceResponse(IceResponse::ERROR,$this->findError($error));		
+			return new IceResponse(IceResponse::ERROR,$this->findError($error));
 		}
-		
+		LogManager::getInstance()->error("Element:".json_encode($ele));
+		LogManager::getInstance()->error("Obj:".json_encode($obj));
+		LogManager::getInstance()->error("Obj Keys:".json_encode($objectKeys));
+		$customFields = $ele->getCustomFields($obj);
+		LogManager::getInstance()->error("Custom:".json_encode($customFields));
+		foreach($obj as $k=>$v){
+			if(isset($customFields[$k])){
+				$this->customFieldManager->addCustomField($table, $ele->id, $k, $v);
+			}
+		}
+
+
 		if($isAdd){
 			$ele->executePostSaveActions($ele);
 			$this->audit(IceConstants::AUDIT_ADD, "Added an object to ".$table." [id:".$ele->id."]");
@@ -595,10 +704,10 @@ class BaseService{
 			$ele->executePostUpdateActions($ele);
 			$this->audit(IceConstants::AUDIT_EDIT, "Edited an object in ".$table." [id:".$ele->id."]");
 		}
-		
+
 		return new IceResponse(IceResponse::SUCCESS,$ele);
 	}
-	
+
 	/**
 	 * Delete an element if not the $table and $id is defined as a non deletable
 	 * @method deleteElement
@@ -609,11 +718,11 @@ class BaseService{
 	public function deleteElement($table,$id){
 		$fileFields = $this->fileFields;
 		$ele = new $table();
-		
+
 		$ele->Load('id = ?',array($id));
 
 		$this->checkSecureAccess("delete",$ele);
-		
+
 		if(isset($this->nonDeletables[$table])){
 			$nonDeletableTable = $this->nonDeletables[$table];
 			if(!empty($nonDeletableTable)){
@@ -622,14 +731,24 @@ class BaseService{
 						return "This item can not be deleted";
 					}
 				}
-			}	
+			}
 		}
+
+		//Delete approval requests
+		if(class_exists("EmployeeApproval")){
+			$approvalRequest = new EmployeeApproval();
+			$approvalRequests = $approvalRequest->Find("type = ? and element = ?",array($table, $id));
+			foreach($approvalRequests as $approvalRequest){
+				$approvalRequest->Delete();
+			}
+		}
+
 
 		$ok = $ele->Delete();
 		if(!$ok){
 			$error = $ele->ErrorMsg();
 			LogManager::getInstance()->info($error);
-			return $this->findError($error);	
+			return $this->findError($error);
 		}else{
 			//Backup
 			if($table == "Profile"){
@@ -639,24 +758,24 @@ class BaseService{
 				$dataEntryBackup->data = json_encode($newObj);
 				$dataEntryBackup->Save();
 			}
-			
+
 			$this->audit(IceConstants::AUDIT_DELETE, "Deleted an object in ".$table." [id:".$ele->id."]");
 		}
-		
-		
-		
+
+
+
 		if(isset($fileFields[$table])){
 			foreach($fileFields[$table] as $k=>$v){
 				if(!empty($ele->$k)){
 					FileService::getInstance()->deleteFileByField($ele->$k,$v);
 				}
-					
+
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * Get associative array of by retriving data from $table using $key field ans key and $value field as value. Mainly used for getting data for populating option lists of select boxes when adding and editing items
 	 * @method getFieldValues
@@ -666,11 +785,11 @@ class BaseService{
 	 * @param $method {String} if not empty, use this menthod to get only a selected set of objects from db instead of retriving all objects. This method should be defined in class $table and should return an array of objects of type $table
 	 * @return {Array} associative array
 	 */
-	
+
 	public function getFieldValues($table,$key,$value,$method,$methodParams = NULL){
-		
+
 		$values = explode("+", $value);
-		
+
 		$ret = array();
 		$ele = new $table();
 		if(!empty($method)){
@@ -686,55 +805,55 @@ class BaseService{
 				LogManager::getInstance()->debug("Could not find method:".$method." in Class:".$table);
 				$list = $ele->Find('1 = 1',array());
 			}
-			
+
 		}else{
 			$list = $ele->Find('1 = 1',array());
 		}
-		
+
 		foreach($list as $obj){
-            $obj = $this->cleanUpAdoDB($obj);
+			$obj = $this->cleanUpAdoDB($obj);
 			if(count($values) == 1){
-				$ret[$obj->$key] = $obj->$value;	
+				$ret[$obj->$key] = $obj->$value;
 			}else{
 				$objVal = "";
 				foreach($values as $v){
 					if($objVal != ""){
-						$objVal .= " ";	
+						$objVal .= " ";
 					}
 					$objVal .= $obj->$v;
 				}
 				$ret[$obj->$key] = $objVal;
 			}
-		}	
+		}
 		return $ret;
 	}
-	
+
 	public function setNonDeletables($table, $field, $value){
 		if(!isset($this->nonDeletables[$table])){
-			$this->nonDeletables[$table] = array();	
+			$this->nonDeletables[$table] = array();
 		}
 		$this->nonDeletables[$table][$field] = $value;
 	}
-	
+
 	public function setSqlErrors($errros){
-		$this->errros = $errros;	
+		$this->errros = $errros;
 	}
-	
+
 	public function setUserTables($userTables){
-		$this->userTables = $userTables;	
+		$this->userTables = $userTables;
 	}
-	
+
 	/**
 	 * Set the current logged in user
 	 * @method setCurrentUser
 	 * @param $currentUser {User} the current logged in user
 	 * @return None
 	 */
-	
+
 	public function setCurrentUser($currentUser){
-		$this->currentUser = $currentUser;	
+		$this->currentUser = $currentUser;
 	}
-	
+
 
 	public function findError($error){
 		foreach($this->errros as $k=>$v){
@@ -748,24 +867,24 @@ class BaseService{
 					}
 				}
 			}
-		}	
+		}
 		return $error;
 	}
-	
+
 	/**
 	 * Get the currently logged in user from session
 	 * @method getCurrentUser
 	 * @return {User} currently logged in user from session
 	 */
-	
+
 	public function getCurrentUser(){
-        if(!empty($this->currentUser)){
-            return $this->currentUser;
-        }
+		if(!empty($this->currentUser)){
+			return $this->currentUser;
+		}
 		$user = SessionUtils::getSessionObject('user');
 		return $user;
 	}
-	
+
 	/**
 	 * Get the Profile id attached to currently logged in user. if the user is switched, this will return the id of switched Profile instead of currently logged in users Prifile id
 	 * @method getCurrentProfileId
@@ -783,14 +902,15 @@ class BaseService{
 		}
 		return $adminEmpId;
 	}
-	
+
+
 	/**
 	 * Get User by profile id
 	 * @method getUserFromProfileId
 	 * @param $profileId {Integer} profile id
 	 * @return {User} user object
 	 */
-	
+
 	public function getUserFromProfileId($profileId){
 		$user = new User();
 		$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
@@ -801,20 +921,20 @@ class BaseService{
 		return null;
 	}
 
-	
+
 	public function setCurrentAdminProfile($profileId){
 		if (!class_exists('SessionUtils')) {
 			include (APP_BASE_PATH."include.common.php");
 		}
-		
+
 		if($profileId == "-1"){
 			SessionUtils::saveSessionObject('admin_current_profile',null);
 			return;
 		}
-		
+
 		if($this->currentUser->user_level == 'Admin'){
 			SessionUtils::saveSessionObject('admin_current_profile',$profileId);
-					
+
 		}else if($this->currentUser->user_level == 'Manager'){
 			$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
 			$signInMappingFieldTable = ucfirst($signInMappingField);
@@ -828,39 +948,39 @@ class BaseService{
 					break;
 				}
 			}
-			
+
 			if(!$subFound){
-				return;	
+				return;
 			}
-			
+
 			SessionUtils::saveSessionObject('admin_current_profile',$profileId);
-			
+
 		}
 	}
-	
+
 	public function cleanUpAdoDB($obj){
-		unset($obj->_table);	
-		unset($obj->_dbat);	
-		unset($obj->_tableat);	
-		unset($obj->_where);	
-		unset($obj->_saved);	
-		unset($obj->_lasterr);	
-		unset($obj->_original);	
-		unset($obj->foreignName);	
-		
+		unset($obj->_table);
+		unset($obj->_dbat);
+		unset($obj->_tableat);
+		unset($obj->_where);
+		unset($obj->_saved);
+		unset($obj->_lasterr);
+		unset($obj->_original);
+		unset($obj->foreignName);
+
 		return $obj;
 	}
-	
+
 	public function setDB($db){
 		$this->db = $db;
 	}
-	
+
 	public function getDB(){
 		return $this->db;
 	}
-	
+
 	public function checkSecureAccessOld($type,$object){
-		
+
 		$accessMatrix = array();
 		if($this->currentUser->user_level == 'Admin'){
 			$accessMatrix = $object->getAdminAccess();
@@ -875,20 +995,20 @@ class BaseService{
 				$accessMatrix = $object->getUserOnlyMeAccess();
 				$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
 				if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()] == $this->currentUser->$signInMappingField) {
-					return true;	
+					return true;
 				}
-				
+
 				if (in_array($type, $accessMatrix)) {
-					
+
 					$field = $object->getUserOnlyMeAccessField();
 					$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
 					if($this->currentUser->$signInMappingField."" == $object->$field){
 						return true;
 					}
-					
+
 				}
 			}
-			
+
 		}else{
 			$accessMatrix = $object->getUserAccess();
 			if (in_array($type, $accessMatrix)) {
@@ -897,27 +1017,27 @@ class BaseService{
 				$accessMatrix = $object->getUserOnlyMeAccess();
 				$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
 				if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()] == $this->currentUser->$signInMappingField) {
-					return true;	
+					return true;
 				}
-				
+
 				if (in_array($type, $accessMatrix)) {
-					
+
 					$field = $object->getUserOnlyMeAccessField();
 					$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
 					if($this->currentUser->$signInMappingField."" == $object->$field){
 						return true;
 					}
-					
+
 				}
 			}
 		}
-		
+
 		$ret['status'] = "ERROR";
 		$ret['message'] = "Access violation";
 		echo json_encode($ret);
 		exit();
 	}
-	
+
 	/**
 	 * Use user level security functions defined in model classes to check whether a given action type is allowed to be executed by the current user on a given object
 	 * @method checkSecureAccess
@@ -925,22 +1045,22 @@ class BaseService{
 	 * @param $object {Object} object to test access
 	 * @return {Boolen} true or exit
 	 */
-	
+
 	public function checkSecureAccess($type,$object){
 
-        if(!empty($this->currentUser->user_roles)){
-            return true;
-        }
-		
+		if(!empty($this->currentUser->user_roles)){
+			return true;
+		}
+
 		$accessMatrix = array();
-		
+
 		//Construct permission method
 		$permMethod = "get".$this->currentUser->user_level."Access";
-        if(method_exists($object,$permMethod)){
-            $accessMatrix = $object->$permMethod();
-        }else{
-            $accessMatrix = $object->getDefaultAccessLevel();
-        }
+		if(method_exists($object,$permMethod)){
+			$accessMatrix = $object->$permMethod();
+		}else{
+			$accessMatrix = $object->getDefaultAccessLevel();
+		}
 
 		if (in_array($type, $accessMatrix)) {
 			//The user has required permission, so return true
@@ -948,219 +1068,217 @@ class BaseService{
 		}else{
 			//Now we need to check whther the user has access to his own records
 			$accessMatrix = $object->getUserOnlyMeAccess();
-			
+
 			$userOnlyMeAccessRequestField = $object->getUserOnlyMeAccessRequestField();
-			
+
 			//This will check whether user can access his own records using a value in request
 			if(isset($_REQUEST[$object->getUserOnlyMeAccessField()]) && isset($this->currentUser->$userOnlyMeAccessRequestField)){
 				if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()] == $this->currentUser->$userOnlyMeAccessRequestField) {
 					return true;
 				}
 			}
-			
+
 			//This will check whether user can access his own records using a value in requested object
 			if (in_array($type, $accessMatrix)) {
 				$field = $object->getUserOnlyMeAccessField();
 				if($this->currentUser->$userOnlyMeAccessRequestField == $object->$field){
 					return true;
 				}
-			
+
 			}
 		}
-		
+
 		$ret['status'] = "ERROR";
 		$ret['message'] = "Access violation";
 		echo json_encode($ret);
 		exit();
 	}
-	
-	
-	
+
+
+
 	public function getInstanceId(){
 		$settings = new Setting();
 		$settings->Load("name = ?",array("Instance : ID"));
-		
+
 		if($settings->name != "Instance : ID" || empty($settings->value)){
 			$settings->value = md5(time());
 			$settings->name = "Instance : ID";
 			$settings->Save();
 		}
-		
+
 		return $settings->value;
 	}
-	
+
 	public function setInstanceKey($key){
 		$settings = new Setting();
 		$settings->Load("name = ?",array("Instance: Key"));
 		if($settings->name != "Instance: Key"){
 			$settings->name = "Instance: Key";
-			
+
 		}
 		$settings->value = $key;
 		$settings->Save();
 	}
-	
+
 	public function getInstanceKey(){
 		$settings = new Setting();
 		$settings->Load("name = ?",array("Instance: Key"));
 		if($settings->name != "Instance: Key"){
-			return null;	
+			return null;
 		}
 		return $settings->value;
 	}
-	
+
 	public function validateInstance(){
 		$instanceId = $this->getInstanceId();
 		if(empty($instanceId)){
 			return true;
 		}
-	
+
 		$key = $this->getInstanceKey();
-	
+
 		if(empty($key)){
 			return false;
 		}
-	
+
 		$data = AesCtr::decrypt($key, $instanceId, 256);
 		$arr = explode("|",$data);
 		if($arr[0] == KEY_PREFIX && $arr[1] == $instanceId){
 			return true;
 		}
-	
+
 		return false;
 	}
-	
+
 	public function loadModulePermissions($group, $name, $userLevel){
 		$module = new Module();
 		$module->Load("update_path = ?",array($group.">".$name));
-
-        LogManager::getInstance()->info(" Current Mod :".json_encode($module));
 
 		$arr = array();
 		$arr['user'] = json_decode($module->user_levels,true);
 		$arr['user_roles'] = !empty($module->user_roles)?json_decode($module->user_roles,true):array();
 
-		
+
 		$permission = new Permission();
 		$modulePerms = $permission->Find("module_id = ? and user_level = ?",array($module->id,$userLevel));
 
-		
+
 		$perms = array();
 		foreach($modulePerms as $p){
 			$perms[$p->permission] = $p->value;
 		}
-		
+
 		$arr['perm'] = $perms;
-		
+
 		return $arr;
 	}
 
-    public function isModuleAllowedForUser($moduleManagerObj){
-        $moduleObject = $moduleManagerObj->getModuleObject();
+	public function isModuleAllowedForUser($moduleManagerObj){
+		$moduleObject = $moduleManagerObj->getModuleObject();
 
-        //Check if the module is disabled
-        if($moduleObject['status'] == 'Disabled'){
-            return false;
-        }
+		//Check if the module is disabled
+		if($moduleObject['status'] == 'Disabled'){
+			return false;
+		}
 
-        //Check if user has permissions to this module
-        //Check Module Permissions
-        $modulePermissions = BaseService::getInstance()->loadModulePermissions($moduleManagerObj->getModuleType(), $moduleObject['name'],BaseService::getInstance()->getCurrentUser()->user_level);
-
-
-        if(!in_array(BaseService::getInstance()->getCurrentUser()->user_level, $modulePermissions['user'])){
-
-            if(!empty(BaseService::getInstance()->getCurrentUser()->user_roles)){
-                $userRoles = json_decode(BaseService::getInstance()->getCurrentUser()->user_roles,true);
-            }else{
-                $userRoles = array();
-            }
-            $commonRoles = array_intersect($modulePermissions['user_roles'], $userRoles);
-            if(empty($commonRoles)){
-                return false;
-            }
-
-        }
-
-        return true;
-
-    }
-
-    public function isModuleAllowedForGivenUser($moduleManagerObj, $user){
-        $moduleObject = $moduleManagerObj->getModuleObject();
-
-        //Check if the module is disabled
-        if($moduleObject['status'] == 'Disabled'){
-            return false;
-        }
-
-        //Check if user has permissions to this module
-        //Check Module Permissions
-        $modulePermissions = BaseService::getInstance()->loadModulePermissions($moduleManagerObj->getModuleType(), $moduleObject['name'],$user->user_level);
+		//Check if user has permissions to this module
+		//Check Module Permissions
+		$modulePermissions = BaseService::getInstance()->loadModulePermissions($moduleManagerObj->getModuleType(), $moduleObject['name'],BaseService::getInstance()->getCurrentUser()->user_level);
 
 
-        if(!in_array($user->user_level, $modulePermissions['user'])){
+		if(!in_array(BaseService::getInstance()->getCurrentUser()->user_level, $modulePermissions['user'])){
 
-            if(!empty($user->user_roles)){
-                $userRoles = json_decode($user->user_roles,true);
-            }else{
-                $userRoles = array();
-            }
-            $commonRoles = array_intersect($modulePermissions['user_roles'], $userRoles);
-            if(empty($commonRoles)){
-                return false;
-            }
+			if(!empty(BaseService::getInstance()->getCurrentUser()->user_roles)){
+				$userRoles = json_decode(BaseService::getInstance()->getCurrentUser()->user_roles,true);
+			}else{
+				$userRoles = array();
+			}
+			$commonRoles = array_intersect($modulePermissions['user_roles'], $userRoles);
+			if(empty($commonRoles)){
+				return false;
+			}
 
-        }
+		}
 
-        return true;
+		return true;
 
-    }
-	
+	}
+
+	public function isModuleAllowedForGivenUser($moduleManagerObj, $user){
+		$moduleObject = $moduleManagerObj->getModuleObject();
+
+		//Check if the module is disabled
+		if($moduleObject['status'] == 'Disabled'){
+			return false;
+		}
+
+		//Check if user has permissions to this module
+		//Check Module Permissions
+		$modulePermissions = BaseService::getInstance()->loadModulePermissions($moduleManagerObj->getModuleType(), $moduleObject['name'],$user->user_level);
+
+
+		if(!in_array($user->user_level, $modulePermissions['user'])){
+
+			if(!empty($user->user_roles)){
+				$userRoles = json_decode($user->user_roles,true);
+			}else{
+				$userRoles = array();
+			}
+			$commonRoles = array_intersect($modulePermissions['user_roles'], $userRoles);
+			if(empty($commonRoles)){
+				return false;
+			}
+
+		}
+
+		return true;
+
+	}
+
 	public function getGAKey(){
 		return SettingsManager::getInstance()->getSetting('Analytics: Google Key');
 	}
-	
+
 	/**
 	 * Set the audit manager
 	 * @method setAuditManager
 	 * @param $auditManager {AuditManager}
 	 */
-	
+
 	public function setAuditManager($auditManager){
 		$this->auditManager = $auditManager;
 	}
-	
+
 	/**
 	 * Set the NotificationManager
 	 * @method setNotificationManager
 	 * @param $notificationManager {NotificationManager}
 	 */
-	
+
 	public function setNotificationManager($notificationManager){
 		$this->notificationManager = $notificationManager;
 	}
-	
+
 	/**
 	 * Set the SettingsManager
 	 * @method setSettingsManager
 	 * @param $settingsManager {SettingsManager}
 	 */
-	
+
 	public function setSettingsManager($settingsManager){
 		$this->settingsManager = $settingsManager;
 	}
-	
+
 	public function setFileFields($fileFields){
 		$this->fileFields = $fileFields;
 	}
-	
+
 	public function audit($type, $data){
 		if(!empty($this->auditManager)){
 			$this->auditManager->addAudit($type, $data);
 		}
 	}
-	
+
 	public function fixJSON($json){
 		$noJSONRequests = SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request");
 		if($noJSONRequests."" == "1"){
@@ -1168,105 +1286,105 @@ class BaseService{
 		}
 		return $json;
 	}
-	
+
 	public function addModuleManager($moduleManager){
 		if(empty($this->moduleManagers)){
 			$this->moduleManagers = array();
 		}
-        $moduleObject = $moduleManager->getModuleObject();
+		$moduleObject = $moduleManager->getModuleObject();
 		$this->moduleManagers[$moduleManager->getModuleType()."_".$moduleObject['name']] = $moduleManager;
 	}
-	
+
 	public function getModuleManagers(){
 		return array_values($this->moduleManagers);
 	}
 
-    public function getModuleManagerNames(){
-        $keys =  array_keys($this->moduleManagers);
-        $arr = array();
-        foreach($keys as $key){
-            $arr[$key] = 1;
-        }
+	public function getModuleManagerNames(){
+		$keys =  array_keys($this->moduleManagers);
+		$arr = array();
+		foreach($keys as $key){
+			$arr[$key] = 1;
+		}
 
-        return $arr;
-    }
+		return $arr;
+	}
 
-    public function getModuleManager($type, $name){
-        return $this->moduleManagers[$type."_".$name];
-    }
-	
+	public function getModuleManager($type, $name){
+		return $this->moduleManagers[$type."_".$name];
+	}
+
 	public function setEmailSender($emailSender){
 		$this->emailSender = $emailSender;
 	}
-	
+
 	public function getEmailSender(){
 		return $this->emailSender;
 	}
 
-    public function getFieldNameMappings($type){
-        $fieldNameMap = new FieldNameMapping();
-        $data = $fieldNameMap->Find("type = ?",array($type));
-        return $data;
-    }
-    
-    public function getCustomFields($type){
-    	$customField = new CustomField();
-    	$data = $customField->Find("type = ?",array($type));
-    	return $data;
-    }
+	public function getFieldNameMappings($type){
+		$fieldNameMap = new FieldNameMapping();
+		$data = $fieldNameMap->Find("type = ?",array($type));
+		return $data;
+	}
 
-    public function getAllAdmins(){
-        $user = new User();
-        $admins = $user->Find('user_level = ?',array('Admin'));
-        return $admins;
-    }
+	public function getCustomFields($type){
+		$customField = new CustomField();
+		$data = $customField->Find("type = ? and display = ?",array($type,'Form'));
+		return $data;
+	}
 
-    public function getCurrentEmployeeTimeZone(){
-        $cemp = $this->getCurrentProfileId();
-        if(empty($cemp)){
-            return NULL;
-        }
-        $emp = new Employee();
-        $emp->Load("id = ?",array($cemp));
-        if(empty($emp->id) || empty($emp->department)){
-            return NULL;
-        }
+	public function getAllAdmins(){
+		$user = new User();
+		$admins = $user->Find('user_level = ?',array('Admin'));
+		return $admins;
+	}
 
-        $dept = new CompanyStructure();
-        $dept->Load("id = ?",array($emp->department));
+	public function getCurrentEmployeeTimeZone(){
+		$cemp = $this->getCurrentProfileId();
+		if(empty($cemp)){
+			return NULL;
+		}
+		$emp = new Employee();
+		$emp->Load("id = ?",array($cemp));
+		if(empty($emp->id) || empty($emp->department)){
+			return NULL;
+		}
 
-        return $dept->timezone;
+		$dept = new CompanyStructure();
+		$dept->Load("id = ?",array($emp->department));
 
-    }
+		return $dept->timezone;
 
-    public function setupHistoryManager($type, $historyManager){
-        $this->historyManagers[$type] = $historyManager;
-    }
+	}
 
-    public function addHistoryItem($historyManagerType, $type, $refId , $field, $oldVal, $newVal){
-        if(isset($this->historyManagers[$historyManagerType])){
-            return $this->historyManagers[$historyManagerType]->addHistory($type, $refId , $field, $oldVal, $newVal);
-        }
-        return false;
-    }
+	public function setupHistoryManager($type, $historyManager){
+		$this->historyManagers[$type] = $historyManager;
+	}
 
-    public function getItemFromCache($class, $id){
-        $data = MemcacheService::getInstance()->get($class."-".$id);
-        if($data !== false){
-            return unserialize($data);
-        }
+	public function addHistoryItem($historyManagerType, $type, $refId , $field, $oldVal, $newVal){
+		if(isset($this->historyManagers[$historyManagerType])){
+			return $this->historyManagers[$historyManagerType]->addHistory($type, $refId , $field, $oldVal, $newVal);
+		}
+		return false;
+	}
 
-        $obj = new $class();
-        $obj->Load("id = ?",array($id));
-        if($obj->id != $id){
-            return null;
-        }
+	public function getItemFromCache($class, $id){
+		$data = MemcacheService::getInstance()->get($class."-".$id);
+		if($data !== false){
+			return unserialize($data);
+		}
 
-        MemcacheService::getInstance()->set($class."-".$id, serialize($obj), 10 * 60);
+		$obj = new $class();
+		$obj->Load("id = ?",array($id));
+		if($obj->id != $id){
+			return null;
+		}
 
-        return $obj;
+		MemcacheService::getInstance()->set($class."-".$id, serialize($obj), 10 * 60);
 
-    }
+		return $obj;
+
+	}
 
 	public function addCalculationHook($code, $name, $class, $method){
 		$calcualtionHook = new CalculationHook();
@@ -1285,18 +1403,18 @@ class BaseService{
 		return $this->calculationHooks[$code];
 	}
 
-    public function executeCalculationHook($parameters, $code = NULL){
+	public function executeCalculationHook($parameters, $code = NULL){
 		$ch = BaseService::getInstance()->getCalculationHook($code);
 
-        if(empty($ch->code)){
-            return null;
-        }
-        $class = $ch->class;
-        return call_user_func_array(array(new $class(), $ch->method), $parameters);
-    }
+		if(empty($ch->code)){
+			return null;
+		}
+		$class = $ch->class;
+		return call_user_func_array(array(new $class(), $ch->method), $parameters);
+	}
 
-    public function cleanNonUTFChar($obj){
-        $regex = <<<'END'
+	public function cleanNonUTFChar($obj){
+		$regex = <<<'END'
 /
   (
     (?: [\x00-\x7F]                 # single-byte sequences   0xxxxxxx
@@ -1308,96 +1426,234 @@ class BaseService{
 | .                                 # anything else
 /x
 END;
-        if(is_string($obj)){
-            return preg_replace($regex, '$1', $obj);
-        }else{
+		if(is_string($obj)){
+			return preg_replace($regex, '$1', $obj);
+		}else{
 
-            foreach($obj as $key => $val){
+			foreach($obj as $key => $val){
 
 
-                $obj->$key = preg_replace($regex, '$1', $val);
-            }
-            return $obj;
-        }
+				$obj->$key = preg_replace($regex, '$1', $val);
+			}
+			return $obj;
+		}
 
-    }
+	}
+
+	public function setCustomFieldManager($customFieldManager){
+		$this->customFieldManager = $customFieldManager;
+	}
+
+	public function getCustomFieldManager(){
+		return $this->customFieldManager;
+	}
+
+
+}
+
+class CustomFieldManager {
+	public function addCustomField($type, $id, $name, $value){
+		$customFieldValue = new CustomFieldValue();
+		$customFieldValue->Load("type = ? and name = ? and object_id = ?",
+			array($type, $name, $id));
+
+		if($customFieldValue->object_id != $id){
+			$customFieldValue->name = $name;
+			$customFieldValue->object_id = $id;
+			$customFieldValue->type = $type;
+			$customFieldValue->created = date("Y-md-d H:i:s");
+		}
+
+		$customFieldValue->value = $value;
+		$customFieldValue->updated = date("Y-md-d H:i:s");
+		$customFieldValue->Save();
+	}
+
+	public function getCustomFields($type, $id){
+		$customFieldValue = new CustomFieldValue();
+		$list = $customFieldValue->Find("type = ? and object_id = ?",
+			array($type, $id));
+
+		return $list;
+	}
+
+	public function enrichObjectCustomFields($table, $object){
+		$customFieldsList = BaseService::getInstance()->getCustomFields($table);
+		$customFieldsListOrdered = array();
+		$customFields = array();
+		foreach($customFieldsList as $cf){
+			$customFields[$cf->name] = $cf;
+		}
+
+		$customFieldValues = $this->getCustomFields('Employee',$object->id);
+		$object->customFields = array();
+		foreach ($customFieldValues as $cf){
+
+			if(!isset($customFields[$cf->name])){
+				continue;
+			}
+
+			$type = $customFields[$cf->name]->field_type;
+			$label = $customFields[$cf->name]->field_label;
+			$order = $customFields[$cf->name]->display_order;
+			$data = $customFields[$cf->name]->data;
+			$section = $customFields[$cf->name]->display_section;
+
+
+
+			$customFieldsListOrdered[] = $order;
+
+			if($type == "text" || $type == "textarea"){
+				$object->customFields[$label] = $cf->value;
+
+			}else if($type == 'select' || $type == 'select2'){
+				$options = $customFields[$cf->name]->field_options;
+				if(empty($options)){
+					continue;
+				}
+
+				$jsonOptions = json_decode($options);
+				foreach($jsonOptions as $option){
+					if($option->value == $cf->value){
+						$object->customFields[$label] = $option->label;
+					}
+				}
+
+			}else if($type == 'select2multi'){
+				$resArr = array();
+				$options = $customFields[$cf->name]->field_options;
+				if(empty($options) || empty($cf->value)){
+					continue;
+				}
+				$jsonOptions = json_decode($options);
+				$jsonOptionsKeys = array();
+				foreach($jsonOptions as $option){
+					$jsonOptionsKeys[$option->value] = $option->label;
+				}
+
+				$valueList = json_decode($cf->value,true);
+				foreach($valueList as $val){
+					if(!isset($jsonOptionsKeys[$val])){
+						$resArr[] = $val;
+					}else{
+						$resArr[] = $jsonOptionsKeys[$val];
+					}
+				}
+
+				$object->customFields[$label]  = implode('<br/>', $resArr);
+
+			}else if($type == "date"){
+				if(!empty($cf->value)){
+					$object->customFields[$label] = $cf->value;
+				}else{
+					$object->customFields[$label] = date("F j, Y",strtotime($cf->value));
+				}
+
+			}else if($type == "datetime"){
+				if(!empty($cf->value)){
+					$object->customFields[$label] = $cf->value;
+				}else{
+					$object->customFields[$label] = date("F j, Y, g:i a",strtotime($cf->value));
+				}
+			}else if($type == "time"){
+				if(!empty($cf->value)){
+					$object->customFields[$label] = $cf->value;
+				}else{
+					$object->customFields[$label] = date("g:i a",strtotime($cf->value));
+				}
+			}
+
+			$object->customFields[$label] = array($object->customFields[$label], $section);
+		}
+		array_multisort($customFieldsListOrdered, SORT_DESC, SORT_NUMERIC, $object->customFields);
+
+		return $object;
+
+	}
+
 }
 
 
 class MemcacheService {
-    
-    private $connection 	        = null;
-    public static $openConnections 	= array();
-    private static $me 	= null;
 
-    private function __construct(){}
+	private $connection 	        = null;
+	public static $openConnections 	= array();
+	private static $me 	= null;
 
-    public static function getInstance(){
-        if(self::$me == null){
-            self::$me = new MemcacheService();
-        }
+	private function __construct(){}
 
-        return self::$me;
-    }
-    
+	public static function getInstance(){
+		if(self::$me == null){
+			self::$me = new MemcacheService();
+		}
 
-    private function connect() {
-
-        if($this->connection == null) {
-            $this->connection = new Memcached();
-            $this->connection->addServer(MEMCACHE_HOST, MEMCACHE_PORT);
-
-            if(!$this->isConnected()) {
-                $this->connection = null;
-            } else {
-                self::$openConnections[] = $this->connection;
-            }
-        }
-        return $this->connection;
-    }
-
-    private function isConnected(){
-        $statuses = $this->connection->getStats();
-        return isset($statuses[$this->memcacheHost.":".$this->memcachePort]);
-    }
-
-    private function compressKey($key) {
-        return crc32(APP_DB.$key).md5(CLIENT_NAME);
-    }
-
-    public function set($key, $value, $expiry = 3600) {
-        $key = $this->compressKey($key);
-        $memcache = $this->connect();
-
-        if (!empty($memcache) && $this->isConnected()) {
-            $ok = $memcache->set($key, $value, time() + $expiry);
-            if(!$ok) {
-                return false;
-            }
-            return true;
-        }
-        return false;
-    }
+		return self::$me;
+	}
 
 
-    public function get($key) {
-        $key = $this->compressKey($key);
-        $memcache = $this->connect();
-        if(!empty($memcache) && $this->isConnected()) {
-            return $memcache->get($key);
-        } else {
-            return false;
-        }
-    }
+	private function connect() {
 
-    public function close() {
-        if($this->connection != null) {
-            if($this->isConnected()) {
-                $this->connection->quit();
-            }
-            $this->connection = null;
-        }
-    }
+		if($this->connection == null) {
+			$this->connection = new Memcached();
+			$this->connection->addServer(MEMCACHE_HOST, MEMCACHE_PORT);
+
+			if(!$this->isConnected()) {
+				$this->connection = null;
+			} else {
+				self::$openConnections[] = $this->connection;
+			}
+		}
+		return $this->connection;
+	}
+
+	private function isConnected(){
+		$statuses = $this->connection->getStats();
+		return isset($statuses[$this->memcacheHost.":".$this->memcachePort]);
+	}
+
+	private function compressKey($key) {
+		return crc32(APP_DB.$key).md5(CLIENT_NAME);
+	}
+
+	public function set($key, $value, $expiry = 3600) {
+		if(!class_exists('Memcached')){
+			return false;
+		}
+		$key = $this->compressKey($key);
+		$memcache = $this->connect();
+
+		if (!empty($memcache) && $this->isConnected()) {
+			$ok = $memcache->set($key, $value, time() + $expiry);
+			if(!$ok) {
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
+
+
+	public function get($key) {
+		if(!class_exists('Memcached')){
+			return false;
+		}
+		$key = $this->compressKey($key);
+		$memcache = $this->connect();
+		if(!empty($memcache) && $this->isConnected()) {
+			return $memcache->get($key);
+		} else {
+			return false;
+		}
+	}
+
+	public function close() {
+		if($this->connection != null) {
+			if($this->isConnected()) {
+				$this->connection->quit();
+			}
+			$this->connection = null;
+		}
+	}
 }
 
 
@@ -1409,12 +1665,12 @@ class IceConstants{
 	const AUDIT_DELETE = "Delete";
 	const AUDIT_ERROR = "Error";
 	const AUDIT_ACTION = "User Action";
-	
+
 	const NOTIFICATION_LEAVE = "Leave Module";
 	const NOTIFICATION_TIMESHEET = "Time Module";
-    const NOTIFICATION_TRAINING = "Training Module";
+	const NOTIFICATION_TRAINING = "Training Module";
 }
 
 interface HistoryManager{
-    public function addHistory($type, $refId, $field, $oldValue, $newValue);
+	public function addHistory($type, $refId, $field, $oldValue, $newValue);
 }

@@ -1,6 +1,8 @@
 <?php
-include('/usr/lib/php5/mysql.auth.php');
-include(dirname(__FILE__).'/test.config.php');
+if(!defined('TEST_BASE_PATH')){
+	include(dirname(__FILE__).'/test.config.php');
+}
+
 
 //Mock Session class
 if (!class_exists('SessionUtils')) {
@@ -32,42 +34,4 @@ if (!class_exists('SessionUtils')) {
 
 }
 
-
-
-
-
-include (APP_BASE_PATH."/include.common.php");
-
-$dropDBCommand = 'echo "DROP DATABASE IF EXISTS '.APP_DB.'"| mysql -u'.MYSQL_ROT_USER.' -p'.MYSQL_ROT_PASS;
-$createDBCommand = 'echo "CREATE DATABASE '.APP_DB.'"| mysql -u'.MYSQL_ROT_USER.' -p'.MYSQL_ROT_PASS;
-
-//echo "Drop DB Command:".$dropDBCommand."\r\n";
-exec($dropDBCommand);
-//echo "Create DB Command:".$createDBCommand."\r\n";
-exec($createDBCommand);
-
-
-
-//Run create table script
-$insql = APP_BASE_PATH."scripts/icehrmdb.sql";
-echo "Source File:".$insql."\r\n";
-
-$command = "cat ".$insql."| mysql -u".MYSQL_ROT_USER." -p".MYSQL_ROT_PASS." ".APP_DB;
-//echo "Command:".$insql."\r\n";
-exec($command);
-
-echo "Source File Done:".$insql."\r\n";
-
-
-//Run create table script
-$insql = APP_BASE_PATH."scripts/icehrm_master_data.sql";
-//echo "Source File:".$insql."\r\n";
-
-$command = "cat ".$insql."| mysql -u".MYSQL_ROT_USER." -p".MYSQL_ROT_PASS." ".APP_DB;
-//echo "Command:".$insql."\r\n";
-exec($command);
-
-echo "Source File Done:".$insql."\r\n";
-
-
-include(APP_BASE_PATH."/server.includes.inc.php");
+include(APP_BASE_PATH."/includes.inc.php");

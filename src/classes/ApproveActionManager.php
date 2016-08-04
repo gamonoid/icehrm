@@ -1,10 +1,24 @@
 <?php
-abstract class ApproveAdminActionManager extends SubActionManager{
+
+abstract class ApproveCommonActionManager extends SubActionManager{
+
+    public function getLogs($req){
+
+        $class = $this->getModelClass();
+        $logs = StatusChangeLogManager::getInstance()->getLogs($class, $req->id);
+        return new IceResponse(IceResponse::SUCCESS, $logs);
+    }
+}
+
+
+abstract class ApproveAdminActionManager extends ApproveCommonActionManager{
     
     public abstract function getModelClass();
     public abstract function getItemName();
     public abstract function getModuleName();
     public abstract function getModuleTabUrl();
+    public abstract function getModuleSubordinateTabUrl();
+    public abstract function getModuleApprovalTabUrl();
 
     public function changeStatus($req){
 
@@ -19,17 +33,80 @@ abstract class ApproveAdminActionManager extends SubActionManager{
             return new IceResponse(IceResponse::ERROR,"$itemName not found");
         }
 
+        /*
         if($this->user->user_level != 'Admin' && $this->user->user_level != 'Manager'){
             return new IceResponse(IceResponse::ERROR,"Only an admin or manager can do this");
+        }*/
+
+        //Check if this needs to be multi-approved
+        $apStatus = 0;
+        if($req->status == "Approved"){
+            $apStatus = 1;
+        }
+
+        if($req->status == "Approved" || $req->status == "Rejected"){
+            $approvalResp = ApprovalStatus::getInstance()->updateApprovalStatus($class,
+                $obj->id,
+                BaseService::getInstance()->getCurrentProfileId(),
+                $apStatus);
+
+            if($approvalResp->getStatus() == IceResponse::SUCCESS){
+                $objResp = $approvalResp->getObject();
+                $currentAp 	= $objResp[0];
+                $nextAp 	= $objResp[1];
+                $sendApprovalEmailto = null;
+                if(empty($currentAp) && empty($nextAp)){
+                    //No multi level approvals
+                    LogManager::getInstance()->debug($obj->id."|No multi level approvals|");
+                    if($req->status == "Approved"){
+                        $req->status = "Approved";
+                    }
+                }else if(empty($currentAp) && !empty($nextAp)){
+                    //Approval process is defined, but this person is a supervisor
+                    LogManager::getInstance()->debug($obj->id."|Approval process is defined, but this person is a supervisor|");
+                    $sendApprovalEmailto = $nextAp->approver;
+                    if($req->status == "Approved"){
+                        $req->status = "Processing";
+                    }
+
+                }else if(!empty($currentAp) && empty($nextAp)){
+                    //All multi level approvals completed, now we can approve
+                    LogManager::getInstance()->debug($obj->id."|All multi level approvals completed, now we can approve|");
+                    if($req->status == "Approved"){
+                        $req->status = "Approved";
+                    }
+                }else{
+                    //Current employee is an approver and we have another approval level left
+                    LogManager::getInstance()->debug($obj->id."|Current employee is an approver and we have another approval level left|");
+                    $sendApprovalEmailto = $nextAp->approver;
+                    if($req->status == "Approved"){
+                        $req->status = "Processing";
+                    }
+                }
+            }else{
+                return $approvalResp;
+            }
         }
 
         $oldStatus = $obj->status;
         $obj->status = $req->status;
+
+        if($oldStatus == $req->status && $req->status != "Processing"){
+            return new IceResponse(IceResponse::SUCCESS,"");
+        }
+
+
         $ok = $obj->Save();
+
         if(!$ok){
             LogManager::getInstance()->info($obj->ErrorMsg());
             return new IceResponse(IceResponse::ERROR,"Error occurred while saving $itemName information. Please contact admin");
         }
+
+
+        StatusChangeLogManager::getInstance()->addLog($class, $obj->id,
+            BaseService::getInstance()->getCurrentUser()->id, $oldStatus, $req->status, "");
+
 
         $this->baseService->audit(IceConstants::AUDIT_ACTION, "$itemName status changed from:".$oldStatus." to:".$obj->status." id:".$obj->id);
 
@@ -47,6 +124,16 @@ abstract class ApproveAdminActionManager extends SubActionManager{
 
         }
 
+        if(!empty($sendApprovalEmailto)){
+            $employee = $this->baseService->getElement('Employee',BaseService::getInstance()->getCurrentProfileId());
+
+            $notificationMsg = "You have been assigned ".$itemName." for approval by ".$employee->first_name." ".$employee->last_name;
+
+
+            $this->baseService->notificationManager->addNotification($sendApprovalEmailto,$notificationMsg,'{"type":"url","url":"'.$this->getModuleApprovalTabUrl().'"}',$this->getModuleName(), null, false, true);
+
+        }
+
 
         return new IceResponse(IceResponse::SUCCESS,"");
     }
@@ -54,7 +141,7 @@ abstract class ApproveAdminActionManager extends SubActionManager{
 }
 
 
-abstract class ApproveModuleActionManager extends SubActionManager{
+abstract class ApproveModuleActionManager extends ApproveCommonActionManager{
 
     public abstract function getModelClass();
     public abstract function getItemName();
@@ -94,14 +181,18 @@ abstract class ApproveModuleActionManager extends SubActionManager{
         $notificationMsg = $employee->first_name." ".$employee->last_name." cancelled a expense. Visit expense management module to approve";
 
         $this->baseService->notificationManager->addNotification($employee->supervisor,$notificationMsg,'{"type":"url","url":"'.$this->getModuleTabUrl().'"}',
-            $this->getModuleTabUrl(), null, false, true);
+            $this->getModuleName(), null, false, true);
         return new IceResponse(IceResponse::SUCCESS,$obj);
     }
 }
 
 
 
-class ApproveModel extends ICEHRM_Record {
+abstract class ApproveModel extends ICEHRM_Record {
+    
+    public function isMultiLevelApprovalsEnabled(){
+        return false;
+    }
 
     public function executePreSaveActions($obj){
         $preApprove = SettingsManager::getInstance()->getSetting($this->preApproveSettingName);
@@ -215,4 +306,32 @@ class ApproveModel extends ICEHRM_Record {
 
         return new IceResponse(IceResponse::SUCCESS,$obj);
     }
+
+    public function executePostSaveActions($obj){
+        $directAppr = ApprovalStatus::getInstance()->isDirectApproval($obj->employee);
+
+        if(!$directAppr && $this->isMultiLevelApprovalsEnabled()){
+            ApprovalStatus::getInstance()->initializeApprovalChain(get_called_class(),$obj->id);
+        }
+    }
+
+
+    abstract public function getType();
+    
+
+    public function findApprovals($obj, $whereOrderBy,$bindarr=false,$pkeysArr=false,$extra=array()){
+        $currentEmployee = BaseService::getInstance()->getCurrentProfileId();
+        $approveal = new EmployeeApproval();
+        $approveals = $approveal->Find("type = ? and approver = ? and status = -1 and active = 1",array($this->getType(), $currentEmployee));
+        $ids = array();
+        foreach ($approveals as $appr){
+
+            $ids[] = $appr->element;
+        }
+        $data = $obj->Find("id in (".implode(",",$ids).")",array());
+
+        return $data;
+    }
 }
+
+

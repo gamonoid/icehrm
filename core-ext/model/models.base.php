@@ -1,6 +1,19 @@
 <?php
 class ICEHRM_Record extends ADOdb_Active_Record{
 
+	var $keysToIgnore = array(
+		"_table",
+		"_dbat",
+		"_tableat",
+		"_where",
+		"_saved",
+		"_lasterr",
+		"_original",
+		"foreignName",
+		"a",
+		"t"
+	);
+
 	public function getAdminAccess(){
 		return array("get","element","save","delete");
 	}
@@ -74,7 +87,52 @@ class ICEHRM_Record extends ADOdb_Active_Record{
 		);
 	}
 
-	public function allowIndirectMapping(){
-		return false;
+    public function allowIndirectMapping(){
+        return false;
+    }
+
+	public function getDisplayName() {
+		return get_called_class();
+	}
+
+	public function getObjectKeys(){
+		$keys = array();
+
+		foreach($this as $k=>$v){
+			if(in_array($k,$this->keysToIgnore )){
+				continue;
+			}
+
+			if(is_array($v) || is_object($v)){
+				continue;
+			}
+
+			$keys[$k] = $k;
+		}
+
+		return $keys;
+	}
+
+	public function getCustomFields($obj){
+		$keys = array();
+		$objKeys = $this->getObjectKeys();
+		foreach($obj as $k=>$v){
+			if(isset($objKeys[$k])){
+				continue;
+			}
+
+			if(is_array($v) || is_object($v)){
+				continue;
+			}
+
+			if(in_array($k,$this->keysToIgnore )){
+				continue;
+			}
+
+			$keys[$k] = $k;
+		}
+
+		return $keys;
+
 	}
 }

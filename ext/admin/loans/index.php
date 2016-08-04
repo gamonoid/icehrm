@@ -28,8 +28,8 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabCompanyLoan" href="#tabPageCompanyLoan">Loan Types</a></li>
-		<li><a id="tabEmployeeCompanyLoan" href="#tabPageEmployeeCompanyLoan">Employee Loans</a></li>
+		<li class="active"><a id="tabCompanyLoan" href="#tabPageCompanyLoan"><?=LanguageManager::tran('Loan Types')?></a></li>
+		<li><a id="tabEmployeeCompanyLoan" href="#tabPageEmployeeCompanyLoan"><?=LanguageManager::tran('Employee Loans')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">

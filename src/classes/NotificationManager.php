@@ -29,7 +29,7 @@ class NotificationManager{
 		if(!empty($noti->fromProfile)){
 			$profile = $this->baseService->getElement($profileClass,$noti->fromProfile,null,true);
 			if(!empty($profile)){
-				$fs = new FileService();
+				$fs = FileService::getInstance();
 				$profile = $fs->updateProfileImage($profile);
 				$noti->image = $profile->image;
 			}

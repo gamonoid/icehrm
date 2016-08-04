@@ -11,30 +11,30 @@ $customFields = BaseService::getInstance()->getCustomFields("Employee");
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
         <?php if($user->user_level != "Admin"){
         ?>
-		    <li class="active"><a id="tabEmployee" href="#tabPageEmployee">Employees (Direct Reports)</a></li>
+		    <li class="active"><a id="tabEmployee" href="#tabPageEmployee"><?=LanguageManager::tran('Employees (Direct Reports)')?></a></li>
         <?php }else{ ?>
-            <li class="active"><a id="tabEmployee" href="#tabPageEmployee">Employees</a></li>
+            <li class="active"><a id="tabEmployee" href="#tabPageEmployee"><?=LanguageManager::tran('Employees')?></a></li>
         <?php }?>
 
         <?php if($user->user_level == "Admin"){
         ?>
-		<li><a id="tabEmployeeSkill" href="#tabPageEmployeeSkill">Skills</a></li>
-		<li><a id="tabEmployeeEducation" href="#tabPageEmployeeEducation">Education</a></li>
-		<li><a id="tabEmployeeCertification" href="#tabPageEmployeeCertification">Certifications</a></li>
-		<li><a id="tabEmployeeLanguage" href="#tabPageEmployeeLanguage">Languages</a></li>
-		<li><a id="tabEmployeeDependent" href="#tabPageEmployeeDependent">Dependents</a></li>
-		<li><a id="tabEmergencyContact" href="#tabPageEmergencyContact">Emergency Contacts</a></li>
+		<li><a id="tabEmployeeSkill" href="#tabPageEmployeeSkill"><?=LanguageManager::tran('Skills')?></a></li>
+		<li><a id="tabEmployeeEducation" href="#tabPageEmployeeEducation"><?=LanguageManager::tran('Education')?></a></li>
+		<li><a id="tabEmployeeCertification" href="#tabPageEmployeeCertification"><?=LanguageManager::tran('Certifications')?></a></li>
+		<li><a id="tabEmployeeLanguage" href="#tabPageEmployeeLanguage"><?=LanguageManager::tran('Languages')?></a></li>
+		<li><a id="tabEmployeeDependent" href="#tabPageEmployeeDependent"><?=LanguageManager::tran('Dependents')?></a></li>
+		<li><a id="tabEmergencyContact" href="#tabPageEmergencyContact"><?=LanguageManager::tran('Emergency Contacts')?></a></li>
             <?php if (!class_exists('DocumentsAdminManager')) {?>
-                <li><a id="tabEmployeeDocument" href="#tabPageEmployeeDocument">Documents</a></li>
+                <li><a id="tabEmployeeDocument" href="#tabPageEmployeeDocument"><?=LanguageManager::tran('Documents')?></a></li>
             <?php } ?>
         <?php }?>
         <?php if($user->user_level == "Admin"){
         ?>
         <li class="dropdown">
-            <a href="#" id="terminatedEmployeeMenu" class="dropdown-toggle" data-toggle="dropdown" aria-controls="terminatedEmployeeMenu-contents">Suspended Employees <span class="caret"></span></a>
+            <a href="#" id="terminatedEmployeeMenu" class="dropdown-toggle" data-toggle="dropdown" aria-controls="terminatedEmployeeMenu-contents"><?=LanguageManager::tran('Deactivated Employees')?> <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="terminatedEmployeeMenu" id="terminatedEmployeeMenu-contents">
-                <li><a id="tabTerminatedEmployee" href="#tabPageTerminatedEmployee">Temporarily Suspended Employees</a></li>
-                <li><a id="tabArchivedEmployee" href="#tabPageArchivedEmployee">Terminated Employee Data</a></li>
+                <li><a id="tabTerminatedEmployee" href="#tabPageTerminatedEmployee"><?=LanguageManager::tran('Temporarily Deactivated Employees')?></a></li>
+                <li><a id="tabArchivedEmployee" href="#tabPageArchivedEmployee"><?=LanguageManager::tran('Terminated Employee Data')?></a></li>
             </ul>
         </li>
         <?php }?>
@@ -133,7 +133,7 @@ $customFields = BaseService::getInstance()->getCustomFields("Employee");
 var modJsList = new Array();
 <?php if($user->user_level != "Admin"){
 ?>
-modJsList['tabEmployee'] = new EmployeeAdapter('Employee','Employee',{"status":"Active", "supervisor":"__myid__"});
+modJsList['tabEmployee'] = new EmployeeAdapter('Employee','Employee',{"status":"Active"});
 modJsList['tabEmployee'].setShowAddNew(false);
 <?php
 }else{
@@ -193,10 +193,10 @@ var modJs = modJsList['tabEmployee'];
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><li class="fa fa-times"/></button>
-                <h3 style="font-size: 17px;">Employee Saved Successfully</h3>
+                <h3 style="font-size: 17px;"><?=LanguageManager::tran('Employee Saved Successfully')?></h3>
             </div>
             <div class="modal-body">
-                 Employee needs a User to login to IceHrm. Do you want to create a user for this employee now? <br/><br/>You can do this later through Users module if required.
+				<?=LanguageManager::tran('Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?')?> <br/><br/><?=LanguageManager::tran('You can do this later through Users module if required.')?>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" onclick="modJs.createUser();">Yes</button>

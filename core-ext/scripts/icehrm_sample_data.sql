@@ -43,6 +43,10 @@ INSERT INTO `Employees` (`id`, `employee_id`, `first_name`, `middle_name`, `last
   (15, CONCAT('EMP', RAND()), generate_fname(), '', generate_fname(), 10, '1979-07-15 18:30:00', 'Female', 'Single', '158-06-2292', '158-06-2292', '', '', NULL, 1, 5, 2, '', '1164', 'Walnut Avenue', 'Rochelle Park', 'US', 35, '7662', '201-474-8048', '201-474-8048', '201-474-8048', 'icehrm+user2@web-stalk.com', 'icehrm+user2@web-stalk.com', '2006-07-12 18:30:00', '0000-00-00 00:00:00', 2, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
+UPDATE `Employees` set supervisor = 2, indirect_supervisors = '[3,4]', approver1 = 5, approver2 = 6, approver3 = 7 where id = 1;
+UPDATE `Employees` set supervisor = 1, indirect_supervisors = '[3,4]', approver1 = 5, approver2 = 6 where id = 2;
+UPDATE `Employees` set supervisor = 2, indirect_supervisors = '[1,4]', approver1 = 5 where id = 3;
+
 INSERT INTO `EmergencyContacts` (`id`, `employee`, `name`, `relationship`, `home_phone`, `work_phone`, `mobile_phone`) VALUES
 (1, 1, 'Emma Owns', 'Mother', '+874463422', '+874463422', '+874463422'),
 (2, 2, 'Casey Watson', 'Sister', '231-453-876', '231-453-876', '231-453-876');
@@ -129,7 +133,13 @@ INSERT INTO `Users` (`id`, `username`, `email`, `password`, `employee`,`default_
 (2, 'manager', 'icehrm+manager@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 2,NULL, 'Manager','', '2013-01-03 02:47:37', '2013-01-03 02:47:37', '2013-01-03 02:47:37'),
 (3, 'user1', 'icehrm+user1@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 3,NULL, 'Employee','', '2013-01-03 02:48:32', '2013-01-03 02:48:32', '2013-01-03 02:48:32'),
 (4, 'user2', 'icehrm+user2@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 4,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
-(5, 'user3', 'icehrm+user3@web-stalk.com', '4048bb914a704a0728549a26b92d8550', NULL,NULL, 'Other','["1"]', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55');
+(5, 'user3', 'icehrm+user3@web-stalk.com', '4048bb914a704a0728549a26b92d8550', NULL,NULL, 'Other','["1"]', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(6, 'user4', 'icehrm+user4@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 5,NULL, 'Manager','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(7, 'user5', 'icehrm+user5@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 6,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(8, 'user6', 'icehrm+user6@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 7,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(9, 'user7', 'icehrm+user7@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 8,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(10, 'user8', 'icehrm+user8@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 9,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(11, 'user9', 'icehrm+user9@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 10,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55');
 
 INSERT INTO `Job` VALUES
   (1,'Software Engineer','More than 375,000 users world-wide rely on our software for their daily business as it makes creating graphical presentations so much easier, faster and more enjoyable. Among our customers are many renowned consulting companies and large international corporations.','More than 375,000 users world-wide rely on our software for their daily business as it makes creating graphical presentations so much easier, faster and more enjoyable. Among our customers are many renowned consulting companies and large international corporations.\n\nWe follow our own strategy and do not have to make compromises with regard to code quality and beauty, because think-cell is profitable and has no outside investors. We are flourishing without program managers, meetings, and marketing-driven deadlines. Our code quality is extraordinarily high because we only release software when it is ready. We are willing to do the leg work of developing sophisticated algorithms and refining our user interface, which makes working with think-cellâ€™s software so satisfying.','Challenging C++ coding with high personal responsibility\nWork with a competent and creative team in a modern loft office in Berlin\nFamily-friendly working hours, no deadlines\nAbove-average salary (we offer our developers EUR 120,000 annually after one year of employment)\nFree supply of drinks, fruits, sweets and snacks\nFlat hierarchies and plenty of room for your ideas\nA full-time company nanny who is available for free when children are sick, or when you just feel like spending an evening out','[\"Health plan\",\"Paid vacations\"]',226,2,NULL,'JC001',1,NULL,7,14,9,151,'Yes',3500,5500,'job, engineer','Active','0000-00-00 00:00:00',NULL,'Text Only',1),
@@ -191,10 +201,13 @@ INSERT INTO `Attendance` (`employee`,`in_time`,`out_time`,`note`) VALUES
 (3, FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 23 DAY))) + FLOOR(28800 + (RAND() * 3600)),'%Y-%m-%d %T'), FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 23 DAY))) + FLOOR(57600 + (RAND() * 21600)),'%Y-%m-%d %T'), ''),
 (3, FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 22 DAY))) + FLOOR(28800 + (RAND() * 3600)),'%Y-%m-%d %T'), FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 22 DAY))) + FLOOR(57600 + (RAND() * 21600)),'%Y-%m-%d %T'), '');
 
+INSERT INTO `PayslipTemplates` (`id`, `name`, `data`, `status`, `created`, `updated`) VALUES
+  (1, 'Basic', '[{"type":"Company Logo","payrollColumn":"NULL","label":"","text":"","fontSize":"Normal","fontStyle":"Normal","fontColor":"#000000","status":"Show","id":"data_1"},{"type":"Company Name","payrollColumn":"NULL","label":"","text":"","fontSize":"Normal","fontStyle":"Normal","fontColor":"","status":"Show","id":"data_2"},{"type":"Separators","payrollColumn":"NULL","label":"","text":"","fontSize":"Normal","fontStyle":"Normal","fontColor":"","status":"Show","id":"data_8"},{"type":"Payroll Column","payrollColumn":"5","label":"","text":"","fontSize":"Normal","fontStyle":"Normal","fontColor":"","status":"Show","id":"data_3"},{"type":"Payroll Column","payrollColumn":"6","label":"","text":"","fontSize":"Normal","fontStyle":"Normal","fontColor":"","status":"Show","id":"data_4"},{"type":"Payroll Column","payrollColumn":"17","label":"","text":"","fontSize":"Normal","fontStyle":"Normal","fontColor":"","status":"Show","id":"data_5"},{"type":"Separators","payrollColumn":"NULL","label":"","text":"","fontSize":"Normal","fontStyle":"Normal","fontColor":"","status":"Show","id":"data_9"},{"type":"Payroll Column","payrollColumn":"18","label":"","text":"","fontSize":"Normal","fontStyle":"Normal","fontColor":"","status":"Show","id":"data_6"},{"type":"Separators","payrollColumn":"NULL","label":"","text":"","fontSize":"Normal","fontStyle":"Normal","fontColor":"","status":"Show","id":"data_10"},{"type":"Text","payrollColumn":"NULL","label":"","text":"Big Company Ltd. is a limited company registered in England and Wales. Registered number: 1234567. Registered office: 123 Some Street, Somewhere, Someshire.","fontSize":"Normal","fontStyle":"Normal","fontColor":"","status":"Show","id":"data_7"}]', NULL, '2016-06-30 03:37:12', '2016-06-30 03:37:12');
+
 
 INSERT INTO `Payroll` VALUES
-  (1,'2016-03',4,1,1,'[\"5\",\"8\",\"9\",\"10\",\"6\",\"7\",\"4\",\"3\",\"2\",\"1\",\"11\",\"12\",\"13\",\"14\",\"15\",\"16\"]','2016-03-01','2016-03-31','Draft'),
-  (2,'2016-03-Weekly',2,1,2,'[\"1\",\"2\",\"3\"]','2016-03-01','2016-03-31','Draft');
+  (1,'2016-03',4,1,1,'[\"5\",\"8\",\"9\",\"10\",\"6\",\"7\",\"4\",\"3\",\"2\",\"1\",\"11\",\"12\",\"13\",\"14\",\"15\",\"16\"]','2016-03-01','2016-03-31','Draft', 1),
+  (2,'2016-03-Weekly',2,1,2,'[\"1\",\"2\",\"3\"]','2016-03-01','2016-03-31','Draft', 1);
 
 INSERT INTO `PayrollColumns` VALUES
   (5,'Basic Salary',NULL,'[\"1\"]','[]','[]','[]',5,'No','Yes','0.00',NULL,NULL),
@@ -276,11 +289,10 @@ INSERT INTO `EmployeeLeaveDays` VALUES
   (17,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 21 DAY))),'%Y-%m-%d'),'Full Day'),
   (18,3,FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 22 DAY))),'%Y-%m-%d'),'Full Day');
 
-
-
 INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
   ('Instance : ID', '0847429146712c108e23c435e8f93b4d', '',''),
   ('Instance: Key', 'UQHEYBx9H1eNR66nhNCNCz1WCDDhkjtx1OuJbO3ZQMt+8tfSGvuOH/YEHntRajY=', '','');
+
 
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 

@@ -2,7 +2,10 @@
 if(!class_exists('ReportBuilder')){
     include_once APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilder.php';
 }
-class ExpenseReport extends ReportBuilder{
+if(!class_exists('ReportBuilder')){
+    include_once APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilder.php';
+}
+class ExpenseReport extends CSVReportBuilder implements CSVReportBuilderInterface{
 
     public function getMainQuery(){
         $query = "SELECT

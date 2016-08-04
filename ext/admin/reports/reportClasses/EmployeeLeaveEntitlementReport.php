@@ -1,4 +1,7 @@
 <?php
+if(!class_exists('ReportBuilder')){
+    include_once APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilder.php';
+}
 if(!interface_exists('ReportBuilderInterface')){
     include_once APP_BASE_PATH.'admin/reports/reportClasses/ReportBuilderInterface.php';
 }
@@ -6,7 +9,7 @@ if(!interface_exists('ReportBuilderInterface')){
 if(!class_exists('LeavesActionManager')){
     include_once APP_BASE_PATH.'modules/leaves/api/LeavesActionManager.php';
 }
-class EmployeeLeaveEntitlementReport implements ReportBuilderInterface{
+class EmployeeLeaveEntitlementReport extends ClassBasedReportBuilder implements ReportBuilderInterface{
     public function getData($report,$req){
 
         $leaveActionManager = new LeavesActionManager();

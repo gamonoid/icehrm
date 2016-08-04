@@ -273,13 +273,17 @@ AdapterBase.method('getFailCallBack', function(callBackData,serverData) {
 });
 
 
-AdapterBase.method('getElement', function(id,callBackData) {
+AdapterBase.method('getElement', function(id,callBackData,clone) {
 	var that = this;
 	var sourceMappingJson = JSON.stringify(this.getSourceMapping());
 	sourceMappingJson = this.fixJSON(sourceMappingJson);
     that.showLoader();
     $.post(this.moduleRelativeURL, {'t':this.table,'a':'getElement','id':id,'sm':sourceMappingJson}, function(data) {
 		if(data.status == "SUCCESS"){
+			if(clone){
+				delete data.object.id;
+			}
+			this.currentElement = data.object;
 			that.getElementSuccessCallBack.apply(that,[callBackData,data.object]);
 		}else{
 			that.getElementFailCallBack.apply(that,[callBackData,data.object]);
@@ -524,6 +528,61 @@ IdNameAdapter.method('getFormFields', function() {
 
 
 /**
+ * LogViewAdapter
+ */
+
+function LogViewAdapter(endPoint,tab,filter,orderBy){
+	this.initAdapter(endPoint,tab,filter,orderBy);
+}
+
+LogViewAdapter.inherits(AdapterBase);
+
+LogViewAdapter.method('getLogs', function(id) {
+	var that = this;
+	var object = {"id":id};
+	var reqJson = JSON.stringify(object);
+
+	var callBackData = [];
+	callBackData['callBackData'] = [];
+	callBackData['callBackSuccess'] = 'getLogsSuccessCallBack';
+	callBackData['callBackFail'] = 'getLogsFailCallBack';
+
+	this.customAction('getLogs','admin='+this.modulePathName,reqJson,callBackData);
+});
+
+LogViewAdapter.method('getLogsSuccessCallBack', function(callBackData) {
+
+	var tableLog = '<table class="table table-condensed table-bordered table-striped" style="font-size:14px;"><thead><tr><th>Notes</th></tr></thead><tbody>_days_</tbody></table> ';
+	var rowLog = '<tr><td><span class="logTime label label-default">_date_</span>&nbsp;&nbsp;<b>_status_</b><br/>_note_</td></tr>';
+
+	var logs = callBackData.data;
+	var html = "";
+	var rowsLogs = "";
+
+
+	for(var i=0;i<logs.length;i++){
+		trow = rowLog;
+		trow = trow.replace(/_date_/g,logs[i].time);
+		trow = trow.replace(/_status_/g,logs[i].status_from+" -> "+logs[i].status_to);
+		trow = trow.replace(/_note_/g,logs[i].note);
+		rowsLogs += trow;
+	}
+
+	if(rowsLogs != ""){
+		tableLog = tableLog.replace('_days_',rowsLogs);
+		html+= tableLog;
+	}
+
+	this.showMessage("Logs",html);
+
+	timeUtils.convertToRelativeTime($(".logTime"));
+});
+
+LogViewAdapter.method('getLogsFailCallBack', function(callBackData) {
+	this.showMessage("Error","Error occured while getting data");
+});
+
+/**
  * ApproveAdminAdapter
  */
 
@@ -531,11 +590,16 @@ function ApproveAdminAdapter(endPoint,tab,filter,orderBy) {
     this.initAdapter(endPoint,tab,filter,orderBy);
 }
 
-ApproveAdminAdapter.inherits(AdapterBase);
+ApproveAdminAdapter.inherits(LogViewAdapter);
 
+ApproveAdminAdapter.method('getStatusFieldPosition', function() {
+	var dm = this.getDataMapping();
+	return dm.length - 1;
+});
 
 ApproveAdminAdapter.method('openStatus', function(id,status) {
     $('#'+this.itemNameLower+'StatusModel').modal('show');
+    $('#'+this.itemNameLower+'_status').html(this.getStatusOptions(status));
     $('#'+this.itemNameLower+'_status').val(status);
     this.statusChangeId = id;
 });
@@ -582,11 +646,19 @@ ApproveAdminAdapter.method('changeStatusFailCallBack', function(callBackData) {
 ApproveAdminAdapter.method('getActionButtonsHtml', function(id,data) {
     var editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
     var deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
-    var statusChangeButton = '<img class="tableActionButton" src="_BASE_images/run.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Change Status" onclick="modJs.openStatus(_id_);return false;"></img>';
+    var statusChangeButton = '<img class="tableActionButton" src="_BASE_images/run.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Change Status" onclick="modJs.openStatus(_id_, \'_cstatus_\');return false;"></img>';
+    var viewLogsButton = '<img class="tableActionButton" src="_BASE_images/log.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="View Logs" onclick="modJs.getLogs(_id_);return false;"></img>';
 
-    var html = '<div style="width:80px;">_edit__delete__status_</div>';
+    var html = '<div style="width:120px;">_edit__delete__status__logs_</div>';
 
-    html = html.replace('_status_',statusChangeButton);
+	var optiondata = this.getStatusOptionsData(data[this.getStatusFieldPosition()]);
+	if(Object.keys(optiondata).length > 0){
+		html = html.replace('_status_',statusChangeButton);
+	}else{
+		html = html.replace('_status_','');
+	}
+
+    html = html.replace('_logs_',viewLogsButton);
 
     if(this.showDelete){
         html = html.replace('_delete_',deleteButton);
@@ -603,6 +675,7 @@ ApproveAdminAdapter.method('getActionButtonsHtml', function(id,data) {
 
     html = html.replace(/_id_/g,id);
     html = html.replace(/_BASE_/g,this.baseUrl);
+    html = html.replace(/_cstatus_/g,data[this.getStatusFieldPosition()]);
     return html;
 });
 
@@ -614,6 +687,33 @@ ApproveAdminAdapter.method('isSubProfileTable', function() {
     }
 });
 
+ApproveAdminAdapter.method('getStatusOptionsData', function(currentStatus) {
+	var data = {};
+	if(currentStatus == 'Approved'){
+
+	}else if(currentStatus == 'Pending'){
+		data["Approved"] = "Approved";
+		data["Rejected"] = "Rejected";
+
+	}else if(currentStatus == 'Rejected'){
+
+	}else if(currentStatus == 'Cancelled'){
+
+	}else if(currentStatus == 'Processing'){
+
+	}else{
+		data["Cancellation Requested"] = "Cancellation Requested";
+		data["Cancelled"] = "Cancelled";
+	}
+
+	return data;
+});
+
+ApproveAdminAdapter.method('getStatusOptions', function(currentStatus) {
+
+	return this.generateOptions(this.getStatusOptionsData(currentStatus));
+});
+
 
 /**
  * ApproveModuleAdapter
@@ -623,7 +723,7 @@ function ApproveModuleAdapter(endPoint,tab,filter,orderBy) {
     this.initAdapter(endPoint,tab,filter,orderBy);
 }
 
-ApproveModuleAdapter.inherits(AdapterBase);
+ApproveModuleAdapter.inherits(LogViewAdapter);
 
 ApproveModuleAdapter.method('cancelRequest', function(id) {
     var that = this;
@@ -653,8 +753,12 @@ ApproveModuleAdapter.method('getActionButtonsHtml', function(id,data) {
     var editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
     var deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
     var requestCancellationButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Cancel '+this.itemName+'" onclick="modJs.cancelRequest(_id_);return false;"></img>';
+	var viewLogsButton = '<img class="tableActionButton" src="_BASE_images/log.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="View Logs" onclick="modJs.getLogs(_id_);return false;"></img>';
 
-    var html = '<div style="width:80px;">_edit__delete_</div>';
+
+	var html = '<div style="width:120px;">_edit__logs__delete_</div>';
+
+	html = html.replace('_logs_',viewLogsButton);
 
     if(this.showDelete){
         if(data[7] == "Approved"){
@@ -677,6 +781,54 @@ ApproveModuleAdapter.method('getActionButtonsHtml', function(id,data) {
     html = html.replace(/_BASE_/g,this.baseUrl);
     return html;
 });
+
+/**
+ * ApproveApproverAdapter
+ */
+
+function ApproveApproverAdapter() {
+}
+
+ApproveApproverAdapter.method('getActionButtonsHtml', function(id,data) {
+	var statusChangeButton = '<img class="tableActionButton" src="_BASE_images/run.png" style="cursor:pointer;" rel="tooltip" title="Change Status" onclick="modJs.openStatus(_id_, \'_cstatus_\');return false;"></img>';
+	var viewLogsButton = '<img class="tableActionButton" src="_BASE_images/log.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="View Logs" onclick="modJs.getLogs(_id_);return false;"></img>';
+
+	var html = '<div style="width:80px;">_status__logs_</div>';
+
+
+	html = html.replace('_logs_',viewLogsButton);
+
+
+	if(data[this.getStatusFieldPosition()] == 'Processing'){
+		html = html.replace('_status_',statusChangeButton);
+
+	}else{
+		html = html.replace('_status_','');
+	}
+
+	html = html.replace(/_id_/g,id);
+	html = html.replace(/_BASE_/g,this.baseUrl);
+	html = html.replace(/_cstatus_/g,data[this.getStatusFieldPosition()]);
+	return html;
+});
+
+ApproveApproverAdapter.method('getStatusOptionsData', function(currentStatus) {
+	var data = {};
+	if(currentStatus != 'Processing'){
+
+	}else{
+		data["Approved"] = "Approved";
+		data["Rejected"] = "Rejected";
+
+	}
+
+	return data;
+});
+
+ApproveApproverAdapter.method('getStatusOptions', function(currentStatus) {
+	return this.generateOptions(this.getStatusOptionsData(currentStatus));
+});
+
 
 
 

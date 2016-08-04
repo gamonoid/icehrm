@@ -124,3 +124,14 @@ if(is_dir(MODULE_PATH.'/customTemplates/')){
 }
 
 
+foreach($fieldTemplates as $k=>$v){
+	$fieldTemplates[$k] = LanguageManager::translateTnrText($v);
+}
+
+foreach($templates as $k=>$v){
+	$templates[$k] = LanguageManager::translateTnrText($v);
+}
+
+foreach($customTemplates as $k=>$v){
+	$customTemplates[$k] = LanguageManager::translateTnrText($v);
+}

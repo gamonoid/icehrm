@@ -89,8 +89,12 @@ if (!class_exists('EmployeeTravelRecord')) {
         var $notificationModuleName = "Travel Management";
         var $notificationUnitName = "TravelRequest";
         var $notificationUnitPrefix = "A";
-        var $notificationUnitAdminUrl = "g=admin&n=travel&m=admin_Employees";
+        var $notificationUnitAdminUrl = "g=modules&n=travel&m=module_Travel_Management#tabSubordinateEmployeeTravelRecord";
         var $preApproveSettingName = "Travel: Pre-Approve Travel Request";
+
+		public function isMultiLevelApprovalsEnabled(){
+			return (SettingsManager::getInstance()->getSetting('Travel: Enable Multi Level Approvals') == '1');
+		}
 
         public function getAdminAccess()
         {
@@ -124,5 +128,28 @@ if (!class_exists('EmployeeTravelRecord')) {
             );
         }
 
+		public function getType(){
+			return 'EmployeeTravelRecord';
+		}
+
+		public function allowIndirectMapping(){
+			if(SettingsManager::getInstance()->getSetting('Travel: Allow Indirect Admins to Approve') == '1'){
+				return true;
+			}
+			return false;
+		}
+
     }
+}
+
+
+if (!class_exists('EmployeeTravelRecordApproval')) {
+
+	class EmployeeTravelRecordApproval extends EmployeeTravelRecord
+	{
+
+		public function Find($whereOrderBy,$bindarr=false,$pkeysArr=false,$extra=array()){
+			return $this->findApprovals(new EmployeeTravelRecord(), $whereOrderBy,$bindarr,$pkeysArr,$extra);
+		}
+	}
 }

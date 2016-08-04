@@ -99,6 +99,7 @@ include('configureUIManager.php');
 
 
     <script type="text/javascript" src="<?=BASE_URL?>js/jquery2.0.2.min.js"></script>
+    <script type="text/javascript" src="<?=BASE_URL?>js/jquery-ui.js"></script>
 
     <script src="<?=BASE_URL?>themejs/bootstrap.js"></script>
     <script src="<?=BASE_URL?>js/jquery.placeholder.js"></script>
@@ -147,7 +148,6 @@ include('configureUIManager.php');
     <script type="text/javascript" src="<?=BASE_URL?>api/TimeUtils.js?v=<?=$jsVersion?>"></script>
     <script type="text/javascript" src="<?=BASE_URL?>api/AesCrypt.js?v=<?=$jsVersion?>"></script>
     <script type="text/javascript" src="<?=BASE_URL?>api/SocialShare.js?v=<?=$jsVersion?>"></script>
-    <?php include 'modulejslibs.inc.php';?>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -176,14 +176,10 @@ include('configureUIManager.php');
     ga('send','pageview');
 
 </script>
-<script type="text/javascript">
-
-
-</script>
 
 <header id="delegationDiv" class="header">
     <a href="<?=$homeLink?>" class="logo" style="overflow: hidden;font-family: 'Source Sans Pro', sans-serif;">
-        Home
+        <?=LanguageManager::tran('Home')?>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -232,7 +228,7 @@ include('configureUIManager.php');
                         <?php if(count($menu['menu']) == 0){continue;}?>
                         <li  class="treeview" ref="<?="admin_".str_replace(" ", "_", $menu['name'])?>">
                             <a href="#">
-                                <i class="fa <?=!isset($mainIcons[$menu['name']])?"fa-th":$mainIcons[$menu['name']];?>"></i></i> <span><?=$menu['name']?></span>
+                                <i class="fa <?=!isset($mainIcons[$menu['name']])?"fa-th":$mainIcons[$menu['name']];?>"></i></i> <span><?=LanguageManager::tran($menu['name'])?></span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
 
@@ -240,7 +236,7 @@ include('configureUIManager.php');
                                 <?php foreach ($menu['menu'] as $item){?>
                                     <li>
                                         <a href="<?=CLIENT_BASE_URL?>?g=admin&n=<?=$item['name']?>&m=<?="admin_".str_replace(" ", "_", $menu['name'])?>">
-                                            <i class="fa <?=!isset($item['icon'])?"fa-angle-double-right":$item['icon']?>"></i> <?=$item['label']?>
+                                            <i class="fa <?=!isset($item['icon'])?"fa-angle-double-right":$item['icon']?>"></i> <?=LanguageManager::tran($item['label'])?>
                                         </a>
                                     </li>
                                 <?php }?>
@@ -257,7 +253,7 @@ include('configureUIManager.php');
                         <?php if(count($menu['menu']) == 0){continue;}?>
                         <li  class="treeview" ref="<?="module_".str_replace(" ", "_", $menu['name'])?>">
                             <a href="#">
-                                <i class="fa <?=!isset($mainIcons[$menu['name']])?"fa-th":$mainIcons[$menu['name']];?>"></i></i> <span><?=$menu['name']?></span>
+                                <i class="fa <?=!isset($mainIcons[$menu['name']])?"fa-th":$mainIcons[$menu['name']];?>"></i></i> <span><?=LanguageManager::tran($menu['name'])?></span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
 
@@ -265,7 +261,7 @@ include('configureUIManager.php');
                                 <?php foreach ($menu['menu'] as $item){?>
                                     <li>
                                         <a href="<?=CLIENT_BASE_URL?>?g=modules&n=<?=$item['name']?>&m=<?="module_".str_replace(" ", "_", $menu['name'])?>">
-                                            <i class="fa <?=!isset($item['icon'])?"fa-angle-double-right":$item['icon']?>"></i> <?=$item['label']?>
+                                            <i class="fa <?=!isset($item['icon'])?"fa-angle-double-right":$item['icon']?>"></i> <?=LanguageManager::tran($item['label'])?>
                                         </a>
                                     </li>
                                 <?php }?>
@@ -275,6 +271,39 @@ include('configureUIManager.php');
 
                 <?php }?>
 
+                <?php
+                if(file_exists(CLIENT_PATH.'/third_party_meta.json')){
+                    $tpModules = json_decode(file_get_contents(CLIENT_PATH.'/third_party_meta.json'),true);
+                    foreach($tpModules as $menu){?>
+
+                    <?php if(count($menu['menu']) == 0){continue;}?>
+                    <li  class="treeview" ref="<?="module_".str_replace(" ", "_", $menu['name'])?>">
+                        <a href="#">
+                            <i class="fa <?=$menu['icon']?>"></i></i> <span><?=LanguageManager::tran($menu['name'])?></span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+
+                        <ul class="treeview-menu" id="<?="module_".str_replace(" ", "_", $menu['name'])?>">
+                            <?php foreach ($menu['menu'] as $item){?>
+                                <li>
+                                    <a href="<?=$item['link']?>" target="_blank">
+                                        <i class="fa <?=!isset($item['icon'])?"fa-angle-double-right":$item['icon']?>"></i> <?=LanguageManager::tran($item['label'])?>
+                                    </a>
+                                </li>
+                            <?php }?>
+                        </ul>
+                    </li>
+                <?php }
+                }?>
+                
+
+                <li>
+                    <div class="user-panel">
+                        <div class="info">
+                            <p></p>
+                        </div>
+                    </div>
+                </li>
 
 
             </ul>
@@ -287,9 +316,9 @@ include('configureUIManager.php');
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                <?=$meta['label']?>
+                <?=LanguageManager::tran($meta['label'])?>
                 <small>
-                    <?=$meta['menu']?>&nbsp;&nbsp;
+                    <?=LanguageManager::tran($meta['menu'])?>&nbsp;&nbsp;
                     <a href="#" class="helpLink" target="_blank" style="display:none;color:#fff;"><i class="glyphicon glyphicon-question-sign"></i></a>
                 </small>
             </h1>

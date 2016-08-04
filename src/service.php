@@ -57,7 +57,7 @@ if($action == 'get'){
 		$ret['status'] = "ERROR";
 	}
 }else if($action == 'add'){
-	if($_REQUEST['t'] == "Report"){
+	if($_REQUEST['t'] == "Report" || $_REQUEST['t'] == "UserReport"){
 		$data = $reportHandler->handleReport($_REQUEST);
 		$ret['status'] = $data[0];
 		$ret['object'] = $data[1];
@@ -136,6 +136,7 @@ if($action == 'get'){
 	$file = new File();
 	$file->Load("name =?",array($name));
 	$ret = array();
+	$type = strtolower(substr($file->filename, strrpos($file->filename,".")+1));
 	if($file->name == $name){
 		$ret['status'] = "SUCCESS";
 		if(SettingsManager::getInstance()->getSetting("Files: Upload Files to S3") == '1'){
@@ -146,6 +147,9 @@ if($action == 'get'){
 			$fileUrl = $s3WebUrl.CLIENT_NAME."/".$file->filename;
 			$fileUrl = $s3FileSys->generateExpiringURL($fileUrl);
 			$file->filename = $fileUrl;
+
+		}else if($type == "pdf"){
+			$file->filename = CLIENT_BASE_URL.'data/'.$file->filename;
 		}
 		$ret['data']=$file;
 	}else{

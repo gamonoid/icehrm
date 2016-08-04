@@ -51,11 +51,14 @@ EmployeeImmigrationAdapter.method('getFormFields', function() {
 
 
 
-function EmployeeTravelRecordAdapter(endPoint) {
-	this.initAdapter(endPoint);
+function EmployeeTravelRecordAdapter(endPoint,tab,filter,orderBy) {
+	this.initAdapter(endPoint,tab,filter,orderBy);
+	this.itemName = 'Travel';
+	this.itemNameLower = 'employeetravelrecord';
+	this.modulePathName = 'travel';
 }
 
-EmployeeTravelRecordAdapter.inherits(AdapterBase);
+EmployeeTravelRecordAdapter.inherits(ApproveModuleAdapter);
 
 
 
@@ -103,6 +106,7 @@ EmployeeTravelRecordAdapter.method('getFormFields', function() {
 	];
 });
 
+/*
 EmployeeTravelRecordAdapter.method('getActionButtonsHtml', function(id,data) {
     var editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
     var deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
@@ -155,4 +159,72 @@ EmployeeTravelRecordAdapter.method('cancelSuccessCallBack', function(callBackDat
 EmployeeTravelRecordAdapter.method('cancelFailCallBack', function(callBackData) {
     this.showMessage("Error Occurred while cancelling Travel request", callBackData);
 });
+*/
+
+/*
+ EmployeeTravelRecordApproverAdapter
+ */
+
+function EmployeeTravelRecordApproverAdapter(endPoint,tab,filter,orderBy) {
+	this.initAdapter(endPoint,tab,filter,orderBy);
+	this.itemName = 'Travel';
+	this.itemNameLower = 'employeetravelrecord';
+	this.modulePathName = 'travel';
+}
+
+EmployeeTravelRecordApproverAdapter.inherits(EmployeeTravelRecordAdminAdapter);
+
+EmployeeTravelRecordApproverAdapter.method('getActionButtonsHtml', function(id,data) {
+	var statusChangeButton = '<img class="tableActionButton" src="_BASE_images/run.png" style="cursor:pointer;" rel="tooltip" title="Change Status" onclick="modJs.openStatus(_id_, \'_cstatus_\');return false;"></img>';
+	var viewLogsButton = '<img class="tableActionButton" src="_BASE_images/log.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="View Logs" onclick="modJs.getLogs(_id_);return false;"></img>';
+
+	var html = '<div style="width:80px;">_status__logs_</div>';
+
+
+	html = html.replace('_logs_',viewLogsButton);
+
+
+	if(data[this.getStatusFieldPosition()] == 'Processing'){
+		html = html.replace('_status_',statusChangeButton);
+
+	}else{
+		html = html.replace('_status_','');
+	}
+
+	html = html.replace(/_id_/g,id);
+	html = html.replace(/_BASE_/g,this.baseUrl);
+	html = html.replace(/_cstatus_/g,data[this.getStatusFieldPosition()]);
+	return html;
+});
+
+EmployeeTravelRecordApproverAdapter.method('getStatusOptionsData', function(currentStatus) {
+	var data = {};
+	if(currentStatus != 'Processing'){
+
+	}else{
+		data["Approved"] = "Approved";
+		data["Rejected"] = "Rejected";
+
+	}
+
+	return data;
+});
+
+EmployeeTravelRecordApproverAdapter.method('getStatusOptions', function(currentStatus) {
+	return this.generateOptions(this.getStatusOptionsData(currentStatus));
+});
+
+
+/*
+ SubordinateExpenseModuleAdapter
+ */
+
+function SubordinateEmployeeTravelRecordAdapter(endPoint,tab,filter,orderBy) {
+	this.initAdapter(endPoint,tab,filter,orderBy);
+	this.itemName = 'Travel';
+	this.itemNameLower = 'employeetravelrecord';
+	this.modulePathName = 'travel';
+}
+
+SubordinateEmployeeTravelRecordAdapter.inherits(EmployeeTravelRecordAdminAdapter);
 

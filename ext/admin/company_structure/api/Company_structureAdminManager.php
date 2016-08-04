@@ -87,6 +87,20 @@ if (!class_exists('CompanyStructure')) {
                 }
             }
         }
+
+        public static function isHeadOfCompanyStructure($companyStructureId, $profileId){
+            $companyStructure = new CompanyStructure();
+            $companyStructure->Load("id = ?",array($companyStructureId));
+
+            if(isset($companyStructure->heads) && !empty($companyStructure->heads)){
+                $heads = json_decode($companyStructure->heads);
+                if(is_array($heads) && !empty($heads) && in_array($profileId, $heads)){
+                    return true;
+                }
+            }
+
+            return false;
+        }
 	}
 }
 

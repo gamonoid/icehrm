@@ -28,7 +28,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabEmployeeSalary" href="#tabPageEmployeeSalary">Salary</a></li>
+		<li class="active"><a id="tabEmployeeSalary" href="#tabPageEmployeeSalary"><?=LanguageManager::tran('Salary')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">

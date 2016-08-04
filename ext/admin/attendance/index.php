@@ -28,11 +28,8 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabAttendance" href="#tabPageAttendance">Monitor Attendance</a></li>
-        <li class=""><a id="tabAttendanceStatus" href="#tabPageAttendanceStatus">Current Clocked In Status</a></li>
-        <!--
-		<li class=""><a id="tabAttendanceData" href="#tabPageAttendanceData">Attendance Data Update</a></li>
-		-->
+		<li class="active"><a id="tabAttendance" href="#tabPageAttendance"><?=LanguageManager::tran('Monitor Attendance')?></a></li>
+        <li class=""><a id="tabAttendanceStatus" href="#tabPageAttendanceStatus"><?=LanguageManager::tran('Current Clocked In Status')?></a></li>
 	</ul>
 	
 	<div class="tab-content">
@@ -52,20 +49,6 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
             </div>
         </div>
-		<!--  
-		<div class="tab-pane" id="tabPageAttendanceData">
-			<div class="control-group" id="field__id_">
-				<div class="controls">
-				  	<textarea class="input-xxlarge" placeholder="Insert CSV data to submit" type="textarea" width="96%" rows="100" id="attendanceData" name="attendanceData"></textarea>
-				</div>
-			</div>
-			<div class="control-group">
-		    	<div class="controls">
-		      		<button onclick="return false;" class="btn">Update Attendance Data</button>
-		    	</div>
-  			</div>
-		</div>
-		-->
 		
 	</div>
 

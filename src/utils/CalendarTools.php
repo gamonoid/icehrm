@@ -27,5 +27,11 @@ if(!class_exists('CalendarTools')) {
             }
             return $val;
         }
+
+        public static function getTimeDiffInHours($start, $end){
+            $diff = strtotime($end) - strtotime($start);
+            $hours = round($diff/(3600),2);
+            return $hours;
+        }
     }
 }

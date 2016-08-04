@@ -47,5 +47,19 @@ if (!class_exists('EmployeeProject')) {
 		public function getUserOnlyMeAccess(){
 			return array("element","save","delete");
 		}
+
+		public function executePreSaveActions($obj){
+			if(empty($obj->status)){
+				$obj->status = "Current";
+			}
+			return new IceResponse(IceResponse::SUCCESS,$obj);
+		}
+
+		public function executePreUpdateActions($obj){
+			if(empty($obj->status)){
+				$obj->status = "Current";
+			}
+			return new IceResponse(IceResponse::SUCCESS,$obj);
+		}
 	}
 }

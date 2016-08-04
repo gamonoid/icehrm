@@ -83,6 +83,37 @@ if(in_array($table, BaseService::getInstance()->userTables) && !$skipProfileRest
 		$profileClass = ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME);
 		$subordinate = new $profileClass();
 		$subordinates = $subordinate->Find("supervisor = ?",array($cemp));
+
+		$cempObj = new Employee();
+		$cempObj->Load("id = ?",array($cemp));
+
+		if($obj->getUserOnlyMeAccessField() == 'id' &&
+			SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 &&
+			CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)){
+			if(empty($subordinates)){
+				$subordinates = array();
+			}
+
+			$childCompaniesIds = array();
+			if(SettingsManager::getInstance()->getSetting('System: Child Company Structure Managers Enabled') == '1'){
+				$childCompaniesResp = CompanyStructure::getAllChildCompanyStructures($cempObj->department);
+				$childCompanies = $childCompaniesResp->getObject();
+
+				foreach($childCompanies as $cc){
+					$childCompaniesIds[] = $cc->id;
+				}
+			}else{
+				$childCompaniesIds[] = $cempObj->department;
+			}
+
+
+			if(!empty($childCompaniesIds)) {
+				$childStructureSubordinates = $subordinate->Find("department in (" . implode(',', $childCompaniesIds) . ") and id != ?", array($cemp));
+				$subordinates = array_merge($subordinates, $childStructureSubordinates);
+			}
+		}
+
+
 		$subordinatesIds = "";
 		foreach($subordinates as $sub){
 			if($subordinatesIds != ""){
@@ -102,7 +133,7 @@ if(in_array($table, BaseService::getInstance()->userTables) && !$skipProfileRest
 				}
 			}
 		}
-		$sql = "Select count(id) as count from ".$obj->_table." where ".SIGN_IN_ELEMENT_MAPPING_FIELD_NAME." in (".$subordinatesIds.") ".$countFilterQuery;
+		$sql = "Select count(id) as count from ".$obj->_table." where ".$obj->getUserOnlyMeAccessField()." in (".$subordinatesIds.") ".$countFilterQuery;
 		LogManager::getInstance()->debug("Count Filter Query 2:".$sql);
 		LogManager::getInstance()->debug("Count Filter Query Data 2:".json_encode($countFilterQueryData));
 		$rowCount = $obj->DB()->Execute($sql,$countFilterQueryData);

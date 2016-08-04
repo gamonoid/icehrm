@@ -289,6 +289,20 @@ EmployeeAdapter.method('modEmployeeGetSuccessCallBack' , function(data) {
 		}
 		subordinates += "<br/>";
 	}
+
+	//Add custom fields
+	if(data.customFields != undefined && data.customFields != null && Object.keys(data.customFields).length > 0) {
+		var ct = '<div class="col-xs-6 col-md-3" style="font-size:16px;"><label class="control-label col-xs-12" style="font-size:13px;">#_label_#</label><label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;">#_value_#</label></div>';
+		var customFieldHtml;
+		for (index in data.customFields) {
+			customFieldHtml = ct;
+			customFieldHtml = customFieldHtml.replace('#_label_#', index);
+			customFieldHtml = customFieldHtml.replace('#_value_#', data.customFields[index]);
+			$("#customFields").append($(customFieldHtml));
+		}
+	}else{
+		$("#customFieldsCont").remove();
+	}
 	
 	$("#"+this.getTableName()+" #subordinates").html(subordinates);
 

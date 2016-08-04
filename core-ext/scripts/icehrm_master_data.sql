@@ -791,46 +791,45 @@ INSERT INTO `WorkDays` (`id`, `name`, `status`, `country`) VALUES
   (7, 'Sunday', 'Non-working Day',NULL);
 
 
-INSERT INTO `Reports` (`id`, `name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`) VALUES
-  (1, 'Employee Details Report', 'This report list all employee details and you can filter employees by department, employment status or job title', '[\r\n[ "department", {"label":"Department","type":"select2","remote-source":["CompanyStructure","id","title"],"allow-null":true}],\r\n[ "employment_status", {"label":"Employment Status","type":"select2","remote-source":["EmploymentStatus","id","name"],"allow-null":true}],\r\n[ "job_title", {"label":"Job Title","type":"select2","remote-source":["JobTitle","id","name"],"allow-null":true}]\r\n]', 'Select id, employee_id as ''Employee ID'',\r\nconcat(`first_name`,'' '',`middle_name`,'' '', `last_name`) as ''Name'',\r\n(SELECT name from Nationality where id = nationality) as ''Nationality'',\r\nbirthday as ''Birthday'',\r\ngender as ''Gender'',\r\nmarital_status as ''Marital Status'',\r\nssn_num as ''SSN Number'',\r\nnic_num as ''NIC Number'',\r\nother_id as ''Other IDs'',\r\ndriving_license as ''Driving License Number'',\r\n(SELECT name from EmploymentStatus where id = employment_status) as ''Employment Status'',\r\n(SELECT name from JobTitles where id = job_title) as ''Job Title'',\r\n(SELECT name from PayGrades where id = pay_grade) as ''Pay Grade'',\r\nwork_station_id as ''Work Station ID'',\r\naddress1 as ''Address 1'',\r\naddress2 as ''Address 2'',\r\ncity as ''City'',\r\n(SELECT name from Country where code = country) as ''Country'',\r\n(SELECT name from Province where id = province) as ''Province'',\r\npostal_code as ''Postal Code'',\r\nhome_phone as ''Home Phone'',\r\nmobile_phone as ''Mobile Phone'',\r\nwork_phone as ''Work Phone'',\r\nwork_email as ''Work Email'',\r\nprivate_email as ''Private Email'',\r\njoined_date as ''Joined Date'',\r\nconfirmation_date as ''Confirmation Date'',\r\n(SELECT title from CompanyStructures where id = department) as ''Department'',\r\n(SELECT concat(`first_name`,'' '',`middle_name`,'' '', `last_name`,'' [Employee ID:'',`employee_id`,'']'') from Employees e1 where e1.id = e.supervisor) as ''Supervisor'' \r\nFROM Employees e _where_', '["department","employment_status","job_title"]', 'Query', 'Employee Information'),
-  (3, 'Employee Time Entry Report', 'This report list all employee time entries by employee, date range and project', '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "project", {"label":"Project","type":"select","allow-null":true,"remote-source":["Project","id","name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'EmployeeTimesheetReport', '["employee","date_start","date_end","status"]', 'Class','Time Management'),
-  (4, 'Employee Attendance Report', 'This report list all employee attendance entries by employee and date range', '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'EmployeeAttendanceReport', '["employee","date_start","date_end"]', 'Class','Time Management'),
-  (5, 'Employee Time Tracking Report', 'This report list employee working hours and attendance details for each day for a given period ', '[\r\n[ "employee", {"label":"Employee","type":"select2","allow-null":false,"remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'EmployeeTimeTrackReport', '["employee","date_start","date_end"]', 'Class','Time Management');
+REPLACE INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`,`output`) VALUES
+  ('Employee Details Report', 'This report list all employee details and you can filter employees by department, employment status or job title', '[\r\n[ "department", {"label":"Department","type":"select2","remote-source":["CompanyStructure","id","title"],"allow-null":true}],\r\n[ "employment_status", {"label":"Employment Status","type":"select2","remote-source":["EmploymentStatus","id","name"],"allow-null":true}],\r\n[ "job_title", {"label":"Job Title","type":"select2","remote-source":["JobTitle","id","name"],"allow-null":true}]\r\n]', 'Select id, employee_id as ''Employee ID'',\r\nconcat(`first_name`,'' '',`middle_name`,'' '', `last_name`) as ''Name'',\r\n(SELECT name from Nationality where id = nationality) as ''Nationality'',\r\nbirthday as ''Birthday'',\r\ngender as ''Gender'',\r\nmarital_status as ''Marital Status'',\r\nssn_num as ''SSN Number'',\r\nnic_num as ''NIC Number'',\r\nother_id as ''Other IDs'',\r\ndriving_license as ''Driving License Number'',\r\n(SELECT name from EmploymentStatus where id = employment_status) as ''Employment Status'',\r\n(SELECT name from JobTitles where id = job_title) as ''Job Title'',\r\n(SELECT name from PayGrades where id = pay_grade) as ''Pay Grade'',\r\nwork_station_id as ''Work Station ID'',\r\naddress1 as ''Address 1'',\r\naddress2 as ''Address 2'',\r\ncity as ''City'',\r\n(SELECT name from Country where code = country) as ''Country'',\r\n(SELECT name from Province where id = province) as ''Province'',\r\npostal_code as ''Postal Code'',\r\nhome_phone as ''Home Phone'',\r\nmobile_phone as ''Mobile Phone'',\r\nwork_phone as ''Work Phone'',\r\nwork_email as ''Work Email'',\r\nprivate_email as ''Private Email'',\r\njoined_date as ''Joined Date'',\r\nconfirmation_date as ''Confirmation Date'',\r\n(SELECT title from CompanyStructures where id = department) as ''Department'',\r\n(SELECT concat(`first_name`,'' '',`middle_name`,'' '', `last_name`,'' [Employee ID:'',`employee_id`,'']'') from Employees e1 where e1.id = e.supervisor) as ''Supervisor'' \r\nFROM Employees e _where_', '["department","employment_status","job_title"]', 'Query', 'Employee Information','CSV'),
+  ('Employee Attendance Report', 'This report list all employee attendance entries by employee and date range', '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'EmployeeAttendanceReport', '["employee","date_start","date_end"]', 'Class','Time Management','CSV'),
+  ('Employee Time Tracking Report', 'This report list employee working hours and attendance details for each day for a given period ', '[\r\n[ "employee", {"label":"Employee","type":"select2","allow-null":false,"remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'EmployeeTimeTrackReport', '["employee","date_start","date_end"]', 'Class','Time Management','CSV');
 
-INSERT INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`) VALUES
+
+REPLACE INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`,`output`) VALUES
+  ('Employee Time Entry Report', 'View employee time entries by date range and project',
+   '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "client", {"label":"Select Client","type":"select","allow-null":true,"null-label":"Not Selected","remote-source":["Client","id","name"]}],\r\n[ "project", {"label":"Or Project","type":"select","allow-null":true,"null-label":"All Projects","remote-source":["Project","id","name","getAllProjects"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]',
+   'EmployeeTimesheetReport', '["employee","client","project","date_start","date_end","status"]', 'Class','Time Management','CSV');
+
+
+REPLACE INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`,`output`) VALUES
   ('Active Employee Report', 'This report list employees who are currently active based on joined date and termination date ',
    '[\r\n[ "department", {"label":"Department","type":"select2","remote-source":["CompanyStructure","id","title"],"allow-null":true}]\r\n]',
    'ActiveEmployeeReport',
-   '["department"]', 'Class','Employee Information');
+   '["department"]', 'Class','Employee Information','CSV');
 
-INSERT INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`, `report_group`) VALUES
+REPLACE INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`, `report_group`,`output`) VALUES
   ('New Hires Employee Report', 'This report list employees who are joined between given two dates ',
    '[[ "department", {"label":"Department","type":"select2","remote-source":["CompanyStructure","id","title"],"allow-null":true}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]',
    'NewHiresEmployeeReport',
-   '["department","date_start","date_end"]', 'Class','Employee Information');
+   '["department","date_start","date_end"]', 'Class','Employee Information','CSV');
 
-INSERT INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`, `report_group`) VALUES
+REPLACE INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`, `report_group`,`output`) VALUES
   ('Terminated Employee Report', 'This report list employees who are terminated between given two dates ',
    '[[ "department", {"label":"Department","type":"select2","remote-source":["CompanyStructure","id","title"],"allow-null":true}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]',
    'TerminatedEmployeeReport',
-   '["department","date_start","date_end"]', 'Class','Employee Information');
+   '["department","date_start","date_end"]', 'Class','Employee Information','CSV');
 
 REPLACE INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`) VALUES
   ('Travel Request Report', 'This report list employees travel requests for a specified period',
    '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}],\r\n[ "status", {"label":"Status","type":"select","source":[["NULL","All Statuses"],["Approved","Approved"],["Pending","Pending"],["Rejected","Rejected"],["Cancellation Requested","Cancellation Requested"],["Cancelled","Cancelled"]]}]\r\n]',
    'TravelRequestReport',
-   '["employee","date_start","date_end","status"]', 'Class', 'Travel and Expense Management');
+   '["employee","date_start","date_end","status"]', 'Class', 'Travel and Expense Management','CSV');
 
 
-INSERT INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`) VALUES
-  ('Employee Time Sheet Report', 'This report list all employee time sheets by employee and date range', '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}],\r\n[ "status", {"label":"Status","allow-null":true,"null-label":"All Status","type":"select","source":[["Approved","Approved"],["Pending","Pending"],["Rejected","Rejected"]]}]\r\n]', 'EmployeeTimeSheetData', '["employee","date_start","date_end","status"]', 'Class','Time Management');
-
-
-INSERT INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`) VALUES
-('Overtime Report', 'This report list all employee attendance entries by employee with overtime calculations', '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'OvertimeReport', '["employee","date_start","date_end"]', 'Class','Time Management');
-
-INSERT INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`) VALUES
-  ('Overtime Summary Report', 'This report list all employee attendance entries by employee with overtime calculation summary', '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'OvertimeSummaryReport', '["employee","date_start","date_end"]', 'Class','Time Management');
+REPLACE INTO `Reports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`,`output`) VALUES
+  ('Employee Time Sheet Report', 'This report list all employee time sheets by employee and date range', '[\r\n[ "employee", {"label":"Employee","type":"select2multi","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}],\r\n[ "status", {"label":"Status","allow-null":true,"null-label":"All Status","type":"select","source":[["Approved","Approved"],["Pending","Pending"],["Rejected","Rejected"]]}]\r\n]', 'EmployeeTimeSheetData', '["employee","date_start","date_end","status"]', 'Class','Time Management','CSV');
 
 
 
@@ -871,7 +870,7 @@ REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
   ('LDAP: Version 3', '1',  'Are you using LDAP v3','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
   ('LDAP: User Filter', '',  'e.g: uid={}, we will replace {} with actual username provided by the user at the time of login','');
 
-REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
   ('Recruitment: Show Quick Apply', '1', 'Show quick apply button when candidates are applying for jobs. Quick apply allow candidates to apply with minimum amount of information','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
   ('Recruitment: Show Apply', '1', 'Show apply button when candidates are applying for jobs','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
 
@@ -888,24 +887,33 @@ INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
   ('Leave: Allow Indirect Admins to Approve', '0', 'Allow indirect admins to approve leave requests','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
 
 INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
-  ('Attendance: Overtime Calculation Class', 'BasicOvertimeCalculator', 'Set the method used to calculate overtime','["value", {"label":"Value","type":"select","source":[["BasicOvertimeCalculator","BasicOvertimeCalculator"],["CaliforniaOvertimeCalculator","CaliforniaOvertimeCalculator"]]}]');
+    ('Expense: Allow Indirect Admins to Approve', '0', 'Allow indirect admins to approve expense requests','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
 
+INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+    ('Travel: Allow Indirect Admins to Approve', '0', 'Allow indirect admins to approve travel requests','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
 
 
 INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+  ('Attendance: Overtime Calculation Class', 'BasicOvertimeCalculator', 'Set the method used to calculate overtime','["value", {"label":"Value","type":"select","source":[["BasicOvertimeCalculator","BasicOvertimeCalculator"],["CaliforniaOvertimeCalculator","CaliforniaOvertimeCalculator"]]}]');
+
+REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+  ('Attendance: Overtime Calculation Period', 'Daily', 'Set the period for overtime calculation. (Affects attendance sheets)','["value", {"label":"Value","type":"select","source":[["Daily","Daily"],["Weekly","Weekly"]]}]');
+
+
+REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
   ('Attendance: Overtime Start Hour', '8', 'Overtime calculation will start after an employee work this number of hours per day, 0 to indicate no overtime', ''),
   ('Attendance: Double time Start Hour', '12', 'Double time calculation will start after an employee work this number of hours per day, 0 to indicate no double time', '');
 
-INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
   ('Attendance: Work Week Start Day', '0', 'Set the starting day of the work week','["value", {"label":"Value","type":"select","source":[["0","Sunday"],["1","Monday"],["2","Tuesday"],["3","Wednesday"],["4","Thursday"],["5","Friday"],["6","Saturday"]]}]');
 
-INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
     ('System: Allowed Countries', '', 'Only these countries will be allowed in select boxes','["value", {"label":"Value","type":"select2multi","remote-source":["Country","id","name"]}]');
 
-INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
     ('System: Allowed Currencies', '', 'Only these currencies will be allowed in select boxes','["value", {"label":"Value","type":"select2multi","remote-source":["CurrencyType","id","code+name"]}]');
 
-INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
     ('System: Allowed Nationality', '', 'Only these nationalities will be allowed in select boxes','["value", {"label":"Value","type":"select2multi","remote-source":["Nationality","id","name"]}]');
 
 
@@ -986,11 +994,203 @@ INSERT INTO `JobTitles` (`id`, `code`, `name`, `description`, `specification`) V
 
 
 INSERT INTO `Languages` (`id`, `name`, `description`) VALUES
-  (1, 'English', 'English'),
-  (2, 'French', 'French'),
-  (3, 'German', 'German'),
-  (4, 'Chinese', 'Chinese');
+    (1, 'en', 'English'),
+    (2, 'fr', 'French'),
+    (3, 'de', 'German'),
+    (4, 'zh', 'Chinese'),
+    (5, 'aa', 'Afar'),
+    (6, 'ab', 'Abkhaz'),
+    (7, 'ae', 'Avestan'),
+    (8, 'af', 'Afrikaans'),
+    (9, 'ak', 'Akan'),
+    (10, 'am', 'Amharic'),
+    (11, 'an', 'Aragonese'),
+    (12, 'ar', 'Arabic'),
+    (13, 'as', 'Assamese'),
+    (14, 'av', 'Avaric'),
+    (15, 'ay', 'Aymara'),
+    (16, 'az', 'Azerbaijani'),
+    (17, 'ba', 'Bashkir'),
+    (18, 'be', 'Belarusian'),
+    (19, 'bg', 'Bulgarian'),
+    (20, 'bh', 'Bihari'),
+    (21, 'bi', 'Bislama'),
+    (22, 'bm', 'Bambara'),
+    (23, 'bn', 'Bengali'),
+    (24, 'bo', 'Tibetan Standard, Tibetan, Central'),
+    (25, 'br', 'Breton'),
+    (26, 'bs', 'Bosnian'),
+    (27, 'ca', 'Catalan; Valencian'),
+    (28, 'ce', 'Chechen'),
+    (29, 'ch', 'Chamorro'),
+    (30, 'co', 'Corsican'),
+    (31, 'cr', 'Cree'),
+    (32, 'cs', 'Czech'),
+    (33, 'cu', 'Old Church Slavonic, Church Slavic, Church Slavonic, Old Bulgarian, Old Slavonic'),
+    (34, 'cv', 'Chuvash'),
+    (35, 'cy', 'Welsh'),
+    (36, 'da', 'Danish'),
+    (37, 'dv', 'Divehi; Dhivehi; Maldivian;'),
+    (38, 'dz', 'Dzongkha'),
+    (39, 'ee', 'Ewe'),
+    (40, 'el', 'Greek, Modern'),
+    (41, 'eo', 'Esperanto'),
+    (42, 'es', 'Spanish; Castilian'),
+    (43, 'et', 'Estonian'),
+    (44, 'eu', 'Basque'),
+    (45, 'fa', 'Persian'),
+    (46, 'ff', 'Fula; Fulah; Pulaar; Pular'),
+    (47, 'fi', 'Finnish'),
+    (48, 'fj', 'Fijian'),
+    (49, 'fo', 'Faroese'),
+    (50, 'fy', 'Western Frisian'),
+    (51, 'ga', 'Irish'),
+    (52, 'gd', 'Scottish Gaelic; Gaelic'),
+    (53, 'gl', 'Galician'),
+    (54, 'gn', 'GuaranÃ­'),
+    (55, 'gu', 'Gujarati'),
+    (56, 'gv', 'Manx'),
+    (57, 'ha', 'Hausa'),
+    (58, 'he', 'Hebrew (modern)'),
+    (59, 'hi', 'Hindi'),
+    (60, 'ho', 'Hiri Motu'),
+    (61, 'hr', 'Croatian'),
+    (62, 'ht', 'Haitian; Haitian Creole'),
+    (63, 'hu', 'Hungarian'),
+    (64, 'hy', 'Armenian'),
+    (65, 'hz', 'Herero'),
+    (66, 'ia', 'Interlingua'),
+    (67, 'id', 'Indonesian'),
+    (68, 'ie', 'Interlingue'),
+    (69, 'ig', 'Igbo'),
+    (70, 'ii', 'Nuosu'),
+    (71, 'ik', 'Inupiaq'),
+    (72, 'io', 'Ido'),
+    (73, 'is', 'Icelandic'),
+    (74, 'it', 'Italian'),
+    (75, 'iu', 'Inuktitut'),
+    (76, 'ja', 'Japanese (ja)'),
+    (77, 'jv', 'Javanese (jv)'),
+    (78, 'ka', 'Georgian'),
+    (79, 'kg', 'Kongo'),
+    (80, 'ki', 'Kikuyu, Gikuyu'),
+    (81, 'kj', 'Kwanyama, Kuanyama'),
+    (82, 'kk', 'Kazakh'),
+    (83, 'kl', 'Kalaallisut, Greenlandic'),
+    (84, 'km', 'Khmer'),
+    (85, 'kn', 'Kannada'),
+    (86, 'ko', 'Korean'),
+    (87, 'kr', 'Kanuri'),
+    (88, 'ks', 'Kashmiri'),
+    (89, 'ku', 'Kurdish'),
+    (90, 'kv', 'Komi'),
+    (91, 'kw', 'Cornish'),
+    (92, 'ky', 'Kirghiz, Kyrgyz'),
+    (93, 'la', 'Latin'),
+    (94, 'lb', 'Luxembourgish, Letzeburgesch'),
+    (95, 'lg', 'Luganda'),
+    (96, 'li', 'Limburgish, Limburgan, Limburger'),
+    (97, 'ln', 'Lingala'),
+    (98, 'lo', 'Lao'),
+    (99, 'lt', 'Lithuanian'),
+    (100, 'lu', 'Luba-Katanga'),
+    (101, 'lv', 'Latvian'),
+    (102, 'mg', 'Malagasy'),
+    (103, 'mh', 'Marshallese'),
+    (104, 'mi', 'Maori'),
+    (105, 'mk', 'Macedonian'),
+    (106, 'ml', 'Malayalam'),
+    (107, 'mn', 'Mongolian'),
+    (108, 'mr', 'Marathi (Mara?hi)'),
+    (109, 'ms', 'Malay'),
+    (110, 'mt', 'Maltese'),
+    (111, 'my', 'Burmese'),
+    (112, 'na', 'Nauru'),
+    (113, 'nb', 'Norwegian BokmÃ¥l'),
+    (114, 'nd', 'North Ndebele'),
+    (115, 'ne', 'Nepali'),
+    (116, 'ng', 'Ndonga'),
+    (117, 'nl', 'Dutch'),
+    (118, 'nn', 'Norwegian Nynorsk'),
+    (119, 'no', 'Norwegian'),
+    (120, 'nr', 'South Ndebele'),
+    (121, 'nv', 'Navajo, Navaho'),
+    (122, 'ny', 'Chichewa; Chewa; Nyanja'),
+    (123, 'oc', 'Occitan'),
+    (124, 'oj', 'Ojibwe, Ojibwa'),
+    (125, 'om', 'Oromo'),
+    (126, 'or', 'Oriya'),
+    (127, 'os', 'Ossetian, Ossetic'),
+    (128, 'pa', 'Panjabi, Punjabi'),
+    (129, 'pi', 'Pali'),
+    (130, 'pl', 'Polish'),
+    (131, 'ps', 'Pashto, Pushto'),
+    (132, 'pt', 'Portuguese'),
+    (133, 'qu', 'Quechua'),
+    (134, 'rm', 'Romansh'),
+    (135, 'rn', 'Kirundi'),
+    (136, 'ro', 'Romanian, Moldavian, Moldovan'),
+    (137, 'ru', 'Russian'),
+    (138, 'rw', 'Kinyarwanda'),
+    (139, 'sa', 'Sanskrit (Sa?sk?ta)'),
+    (140, 'sc', 'Sardinian'),
+    (141, 'sd', 'Sindhi'),
+    (142, 'se', 'Northern Sami'),
+    (143, 'sg', 'Sango'),
+    (144, 'si', 'Sinhala, Sinhalese'),
+    (145, 'sk', 'Slovak'),
+    (146, 'sl', 'Slovene'),
+    (147, 'sm', 'Samoan'),
+    (148, 'sn', 'Shona'),
+    (149, 'so', 'Somali'),
+    (150, 'sq', 'Albanian'),
+    (151, 'sr', 'Serbian'),
+    (152, 'ss', 'Swati'),
+    (153, 'st', 'Southern Sotho'),
+    (154, 'su', 'Sundanese'),
+    (155, 'sv', 'Swedish'),
+    (156, 'sw', 'Swahili'),
+    (157, 'ta', 'Tamil'),
+    (158, 'te', 'Telugu'),
+    (159, 'tg', 'Tajik'),
+    (160, 'th', 'Thai'),
+    (161, 'ti', 'Tigrinya'),
+    (162, 'tk', 'Turkmen'),
+    (163, 'tl', 'Tagalog'),
+    (164, 'tn', 'Tswana'),
+    (165, 'to', 'Tonga (Tonga Islands)'),
+    (166, 'tr', 'Turkish'),
+    (167, 'ts', 'Tsonga'),
+    (168, 'tt', 'Tatar'),
+    (169, 'tw', 'Twi'),
+    (170, 'ty', 'Tahitian'),
+    (171, 'ug', 'Uighur, Uyghur'),
+    (172, 'uk', 'Ukrainian'),
+    (173, 'ur', 'Urdu'),
+    (174, 'uz', 'Uzbek'),
+    (175, 've', 'Venda'),
+    (176, 'vi', 'Vietnamese'),
+    (177, 'vo', 'VolapÃ¼k'),
+    (178, 'wa', 'Walloon'),
+    (179, 'wo', 'Wolof'),
+    (180, 'xh', 'Xhosa'),
+    (181, 'yi', 'Yiddish'),
+    (182, 'yo', 'Yoruba'),
+    (183, 'za', 'Zhuang, Chuang'),
+    (184, 'zu', 'Zulu');
 
+
+INSERT INTO `SupportedLanguages` (`name`, `description`) VALUES
+    ('en', 'English'),
+    ('de', 'German'),
+    ('fr', 'French'),
+    ('pl', 'Polish'),
+    ('it', 'Italian'),
+    ('si', 'Sinhala'),
+    ('zh', 'Chinese'),
+    ('ja', 'Japanese'),
+    ('hi', 'Hindi'),
+    ('es', 'Spanish');
 
 INSERT INTO `LeavePeriods` (`id`, `name`, `date_start`, `date_end`, `status`) VALUES
   (3, 'Year 2015', '2015-01-01', '2015-12-31', 'Active'),
@@ -1117,7 +1317,7 @@ INSERT INTO `UserRoles` VALUES
 
 
 INSERT INTO `Users` VALUES 
-(1,'admin','icehrm+admin@web-stalk.com','21232f297a57a5a743894a0e4a801fc3',1,NULL,'Admin','',NULL,NULL,NULL,NULL);
+(1,'admin','icehrm+admin@web-stalk.com','21232f297a57a5a743894a0e4a801fc3',1,NULL,'Admin','',NULL,NULL,NULL,NULL,NULL);
 
 
 INSERT INTO `SalaryComponentType` (`id`,`code`, `name`) VALUES
@@ -1263,3 +1463,41 @@ INSERT INTO `PayrollColumnTemplates` (`name`,`columns`) VALUES
   ('All Columns','[\"1\",\"2\",\"3\",\"4\"]'),
   ('All Time Management Columns','[\"1\",\"2\",\"3\"]');
 
+
+
+INSERT INTO `DataImport` (`name`, `dataType`, `details`, `columns`, `updated`, `created`) VALUES
+  ('Sage50 Import - Employee Data', 'Sage50Employees', '', '[{"name":"employee_id","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"Yes","id":"columns_7"},{"name":"title","title":"title","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_1"},{"name":"initial","title":"Initial","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_2"},{"name":"first_name","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_3"},{"name":"middle_name","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_4"},{"name":"middle_name","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_5"},{"name":"last_name","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_6"},{"name":"address1","title":"Address1","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_8"},{"name":"address3","title":"Address3","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_10"},{"name":"address2","title":"Address2","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_9"},{"name":"address4","title":"Address4","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_11"},{"name":"address5","title":"Address5","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_12"},{"name":"postal_code","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_13"},{"name":"home_phone","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_14"},{"name":"mobile_phone","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_15"},{"name":"private_email","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_16"},{"name":"gender","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_17"},{"name":"marital_status","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_18"},{"name":"previous_surname","title":"Previous Surname","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_19"},{"name":"birthday","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_20"},{"name":"disabled","title":"Disabled","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_21"},{"name":"nationality","title":"Nationality","type":"Reference","dependOn":"Nationality","dependOnField":"name","isKeyField":"Yes","idField":"No","id":"columns_22"},{"name":"ethnicity","title":"Ethnicity","type":"Normal","dependOn":"Ethnicity","dependOnField":"name","isKeyField":"Yes","idField":"No","id":"columns_23"},{"name":"EmergencyContact/name","title":"","type":"Attached","dependOn":"EmergencyContact","dependOnField":"name","isKeyField":"Yes","idField":"No","id":"columns_24"},{"name":"EmergencyContact/relationship","title":"","type":"Attached","dependOn":"EmergencyContact","dependOnField":"relationship","isKeyField":"No","idField":"No","id":"columns_25"},{"name":"EmergencyContact/home_phone","title":"","type":"Attached","dependOn":"EmergencyContact","dependOnField":"home_phone","isKeyField":"No","idField":"No","id":"columns_26"},{"name":"tax_code","title":"Tax Code","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_27"},{"name":"wk1_mth1_basis","title":"Wk1Mth1 Basis","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_28"},{"name":"NI_category","title":"NI Category","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_29"},{"name":"nic_num","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_30"},{"name":"ssn_num","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_31"},{"name":"job_title","title":"","type":"Reference","dependOn":"JobTitle","dependOnField":"name","isKeyField":"Yes","idField":"No","id":"columns_32"},{"name":"employment_status","title":"","type":"Reference","dependOn":"EmploymentStatus","dependOnField":"name","isKeyField":"Yes","idField":"No","id":"columns_33"},{"name":"pay_frequency","title":"Pay Frequency","type":"Reference","dependOn":"PayFrequency","dependOnField":"name","isKeyField":"Yes","idField":"No","id":"columns_34"},{"name":"contracted_hours","title":"Contracted Hours","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_35"},{"name":"joined_date","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_36"},{"name":"termination_date","title":"","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_37"},{"name":"CompanyStructure/title","title":"","type":"Reference","dependOn":"CompanyStructure","dependOnField":"title","isKeyField":"Yes","idField":"No","id":"columns_38"},{"name":"cost_centre_reference","title":"Cost Centre","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_39"},{"name":"employee_notes","title":"Employee Notes","type":"Normal","dependOn":"NULL","dependOnField":"","isKeyField":"No","idField":"No","id":"columns_40"}]', '2016-06-03 00:26:32', '2016-06-03 00:26:32');
+
+
+
+
+REPLACE INTO `UserReports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`,`output`) VALUES
+  ('Time Entry Report', 'View your time entries by date range and project',
+   '[\r\n[ "client", {"label":"Select Client","type":"select","allow-null":true,"null-label":"Not Selected","remote-source":["Client","id","name"]}],\r\n[ "project", {"label":"Or Project","type":"select","allow-null":true,"null-label":"All Projects","remote-source":["Project","id","name","getAllProjects"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]',
+   'EmployeeTimesheetReport', '["client","project","date_start","date_end","status"]', 'Class','Time Management','CSV');
+
+REPLACE INTO `UserReports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`,`output`) VALUES
+  ('Attendance Report', 'View your attendance entries by date range', '[\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'EmployeeAttendanceReport', '["date_start","date_end"]', 'Class','Time Management','CSV');
+
+REPLACE INTO `UserReports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`,`output`) VALUES
+  ('Time Tracking Report', 'View your working hours and attendance details for each day for a given period ', '[\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]', 'EmployeeTimeTrackReport', '["date_start","date_end"]', 'Class','Time Management','CSV');
+
+
+REPLACE INTO `UserReports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`,`output`) VALUES
+  ('Travel Request Report', 'View travel requests for a specified period',
+   '[\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}],\r\n[ "status", {"label":"Status","type":"select","source":[["NULL","All Statuses"],["Approved","Approved"],["Pending","Pending"],["Rejected","Rejected"],["Cancellation Requested","Cancellation Requested"],["Cancelled","Cancelled"]]}]\r\n]',
+   'TravelRequestReport',
+   '["date_start","date_end","status"]', 'Class', 'Travel and Expense Management','CSV');
+
+
+REPLACE INTO `UserReports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`,`output`) VALUES
+  ('Time Sheet Report', 'This report list all employee time sheets by employee and date range',
+   '[\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}],\r\n[ "status", {"label":"Status","allow-null":true,"null-label":"All Status","type":"select","source":[["Approved","Approved"],["Pending","Pending"],["Rejected","Rejected"]]}]\r\n]',
+   'EmployeeTimeSheetData',
+   '["date_start","date_end","status"]', 'Class','Time Management','CSV');
+
+
+REPLACE INTO `UserReports` (`name`, `details`, `parameters`, `query`, `paramOrder`, `type`,`report_group`,`output`) VALUES
+  ('Client Project Time Report', 'View your time entries for projects under a given client',
+   '[\r\n[ "client", {"label":"Select Client","type":"select","allow-null":false,"remote-source":["Client","id","name"]}],\r\n[ "date_start", {"label":"Start Date","type":"date"}],\r\n[ "date_end", {"label":"End Date","type":"date"}]\r\n]',
+   'ClientProjectTimeReport', '["client","date_start","date_end","status"]', 'Class','Time Management','PDF');
