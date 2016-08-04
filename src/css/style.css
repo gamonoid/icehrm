@@ -223,9 +223,6 @@ border-radius: 4px 0 4px 0;
     color:white;
 }
 
-.nav-tabs > li > a {
-    color:white;
-}
 
 .nav-tabs > li > a:hover{
     color:#555;
