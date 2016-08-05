@@ -6,6 +6,17 @@ properly.
 
 Note: IceHrm is now fully compatible with PHP 7
 
+Useful Links
+-------------
+ * IceHrm Opensource Blog: [http://icehrm.org](http://icehrm.org)
+ * IceHrm Cloud Hosting: [https://icehrm.com](https://icehrm.com)
+ * IceHrm Documentation (Opensource and Commercial): [http://blog.icehrm.com](http://blog.icehrm.com)
+ * IceHrm Blog: [https://icehrm.com/blog](http://icehrm.com/blog)
+ * Purchase IceHrm Pro: [https://icehrm.com/modules.php](https://icehrm.com/modules.php)
+ * Report Issues: [https://github.com/gamonoid/icehrm/issues](https://github.com/gamonoid/icehrm/issues)
+ * Feature Requests: [https://bitbucket.org/thilina/icehrm-opensource/issues](https://bitbucket.org/thilina/icehrm-opensource/issues)
+ * Community Support: [http://stackoverflow.com/search?q=icehrm](http://stackoverflow.com/search?q=icehrm)
+
 Installation
 ------------
  * Download the latest release https://github.com/gamonoid/icehrm/releases/latest
