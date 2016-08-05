@@ -472,10 +472,11 @@ INSERT INTO `SupportedLanguages` (`name`, `description`) VALUES
 ('es', 'Spanish');
 
 
-Alter table `Users` add column varchar(100) default null;
+Alter table `Users` add column `lang` bigint(20) default null;
 
 REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
     ('System: Language', 'en', 'Current Language','["value", {"label":"Value","type":"select2","allow-null":false,"remote-source":["SupportedLanguage","name","description"]}]');
+
 
 
 
