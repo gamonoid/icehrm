@@ -35,7 +35,7 @@ Following is a list of features supported in each edition of icehrm
 
 ![Employee Module](https://icehrm.s3.amazonaws.com/images/blog-images/advanced-employee-module.png)
 
- #### Employee Management
+#### Employee Management
 
  - Basic [Employee Management](https://icehrm.com) - Store, manage and retrieve employee information when required
  - Update all employee information without having to switch employees.
