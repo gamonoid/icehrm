@@ -54,7 +54,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
         ksort($dashBoardList);
 
         foreach($dashBoardList as $k=>$v){
-            echo $v;
+            echo LanguageManager::translateTnrText($v);
         }
         ?>
     </div>
