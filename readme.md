@@ -1,7 +1,7 @@
 IceHrm
 ===========
 
-IceHrm is a [HRM software](http://icehrm.com) which enable companies of all sizes to [manage HR activities](http://icehrm.com)
+IceHrm is a [HRM software](https://icehrm.com) which enable companies of all sizes to [manage HR activities](https://icehrm.com)
 properly. 
 
 Note: IceHrm is now fully compatible with PHP 7
@@ -31,36 +31,36 @@ Refer: [http://blog.icehrm.com/docs/upgrade/](http://blog.icehrm.com/docs/upgrad
 Following is a list of features supported in each edition of icehrm
 -------------------------------------------------------------------
 
-### IceHrm Open Source Edition 
- * IceHrm Core Modules - Both Enterprise and Open source versions developed on same core concept. But the core modules in professional and enterprise versions are more feature rich and updated with latest security improvements.
- * [Company Information Management](http://icehrm.com/compare.php) - Store and manage details about how companies, departments and branches of the organisation are connected
- * Basic [Employee Management](http://icehrm.com) - Store, manage and retrieve employee information when required
- * Time sheets - IceHrm is a [timesheet app](http://icehrm.com) / [Open source timesheet management](http://icehrm.com) application to track time spent by employees on various projects
- * [Attendance Management](http://icehrm.com) - IceHrm can be used as a [attendance management system](http://icehrm.com) effectively for any size a company.
- * [LDAP Login](http://icehrm.com) - Users can share login with company LDAP server
- * [Travel Management](http://icehrm.com) - Module for managing travel requests
- 
- #### Advanced Employee Module (from v16.0.OS)
- 
- ![Advanced Employee Module](https://icehrm.s3.amazonaws.com/images/blog-images/advanced-employee-module.png)
- 
+### IceHrm Open Source Edition
+
+![Employee Module](https://icehrm.s3.amazonaws.com/images/blog-images/advanced-employee-module.png)
+
+ #### Employee Management
+
+ - Basic [Employee Management](https://icehrm.com) - Store, manage and retrieve employee information when required
  - Update all employee information without having to switch employees.
  - Search employee skills, qualifications and other information<br/>easily across whole company.
  - Terminate employees while keeping data in system.
  - Re-enable temporarily terminated employees with one click.
- - Employee archive feature to archive data of terminated employees.
+ - Employee archive feature to archive data of terminated employee
+
+#### Other Features
+
+ * [Company Information Management](https://icehrm.com) - Store and manage details about how companies, departments and branches of the organisation are connected
+ * Time sheets - IceHrm is a [timesheet app](https://icehrm.com) / [Open source timesheet management](https://icehrm.com) application to track time spent by employees on various projects
+ * [Attendance Management](https://icehrm.com) - IceHrm can be used as a [attendance management system](https://icehrm.com) effectively for any size a company.
+ * [LDAP Login](https://icehrm.com) - Users can share login with company LDAP server
+ * [Travel Management](https://icehrm.com) - Module for managing travel requests
+
  
-### IceHrm Pro Edition | [Buy now for 349.49 USD](http://icehrm.com)
+### IceHrm Pro Edition | [IceHrm.com](https://icehrm.com/modules.php)
 
 IceHrm Profession version (in short IceHrmPro) is the feature rich commercial alternative for icehrm
 open source version.  IceHrm Pro supports following features
-
-Following features are supported in IceHrm Pro version in addition to the features supported in open source version.
-
     
 #### Leave Management
 
-IceHrm [Leave management system](http://icehrm.com) is only available in IceHrm Pro or Enterprise versions. IceHrm leave module is a complete [leave management system](http://icehrm.com) for any type of a company
+IceHrm [Leave management system](https://icehrm.com) is only available in IceHrm Pro or Enterprise versions. IceHrm leave module is a complete [leave management system](https://icehrm.com) for any type of a company
 
 To learn more about leave management in icehrm refer:
 - [Leave Admin Guide](http://blog.icehrm.com/docs/leave-admin)
@@ -75,24 +75,30 @@ are using the system.
 
 #### Expense Tracking
 
-[Track Employee Expenses](http://icehrm.com) with expense management module.
+[Track Employee Expenses](https://icehrm.com) with expense management module.
 
 You can learn more about [IceHrm Pro here](http://blog.icehrm.com/docs/icehrm-pro/)
 
-To purchase IceHrmPro please visit [http://icehrm.com/modules.php](http://icehrm.com/modules.php)
+To purchase IceHrmPro please visit [https://icehrm.com/modules.php](https://icehrm.com/modules.php)
 
 #### Training Management
 
-Icehrm [training management system](http://icehrm.com) is for Module for managing courses, training sessions and employee attendance to training sessions.
+Icehrm [training management system](https://icehrm.com) is for Module for managing courses, training sessions and employee attendance to training sessions.
  
 
-### IceHrm Hosted Edition [Starts from 1498 USD](http://icehrm.com)
+### IceHrm Enterprise Edition
 
-In addition to pro version features icehrm enterprise hosted edition includes following features
+In addition to pro version features IceHrm enterprise cloud edition includes following features
+
+#### [Employee History Management](https://icehrm.com)
+
+#### [Payroll](https://icehrm.com)
+
+IceHrm Enterprise has a full featured payroll module including [PDF salary slip generation](https://icehrm.com)
 
 #### Candidate / Recruitment Management
 
-Recruitment module can be used as a [applicant tracking system](http://icehrm.com) or a [recruiting software](http://icehrm.com). IceHrm recruitment management system offers
+Recruitment module can be used as a [applicant tracking system](https://icehrm.com) or a [recruiting software](https://icehrm.com). IceHrm recruitment management system offers
 following features
 
 ![Recruitment Job Position Sharing](https://icehrm.s3.amazonaws.com/images/blog-images/recruitment-share.png)
@@ -107,421 +113,6 @@ following features
 
 More about [recruitment module](http://blog.icehrm.com/docs/recruitment/)
 
-
-Your Company Structure (Departments / Branches and other Organization Units)
--------------------------------------------
-
-Company structure module allows you to define the structure of you company by 
-creating parent structure of the company, branches, departments and other 
-company units. Also it provides a graphical overview of how each of 
-your company units are interconnected.
-
-![Company Structure](https://icehrm.s3.amazonaws.com/images/blog-images/Company_stucture.png)
-
-Employee Management
--------------------
-
-Employees module is used to list, edit, add and search employees in your company. 
-You can use the search box to search employees by ID, name or department. 
-Also you can use filter button to filter employees by job title, department or supervisor.
-
-###Difference Between Users and Employees
-
-A user is a person who can login to icehrm. It’s not required for admin users to have an employee attached but 
-each non admin user must have an associated employee. Having an employee added in icehrm won’t 
-allow the person to login to icehrm. You need to create user with a Manager or Employee user level 
-for that employee to be able to login to the system.
-
-###Adding Employees
-
-Adding employees to ICE Hrm can only be done by the admin. The employee Id field should have a unique value. 
-In order to complete adding an employee you need to provide job title, employment status and pay grade. 
-These values can be defined in admin: Jobs module.
-
-Once an employee is added to the system you will be asked to create a user for the newly added employee
-
-###Switching Employees
-
-One of the key features of ICE Hrm, is admins and mangers ability to login as another employee. 
-This feature can be used to apply leaves, add attendance records or update time sheets behalf of other employees.
-
-To login as an employee you can use the  switch user icon on employee list or the “Switch Employee” menu in top right hand corner.
-
-In open source version you must switch employee to edit employee basic information like skills and qualifications. 
-But on Pro and Enterprise versions you can directly update employee information through Advanced Employee Management module.
-
-
-Settings
---------
-
-After installation the settings module can be accessed by login in as admin and going to System->Settings
-
-## Global Settings
-
-<div class="mobile-side-scroller">
-<table>
-  <thead>
-    <tr>
-      <th>Setting</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><p><code>Company: Name</code></p></td>
-      <td><p>
-        Name of the company
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Company: Logo</code></p></td>
-      <td><p>
-
-        Company logo. You may upload the company logo here.
-        Ideally should be 200px wide and height between 50px to 150 px.
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Company: Description</code></p></td>
-      <td><p>
-
-        A short description about the company. Will be used mainly in recruitment module
-
-      </p></td>
-    </tr>
-    <tr>
-          <td><p><code>Email: Enable</code></p></td>
-          <td><p>
-    
-            Set this to "No" to disable all outgoing emails from modules. Value "Yes" will enable outgoing emails
-    
-          </p></td>
-        </tr>
-  </tbody>
-</table>
-</div>
-
-## Email Settings
-
-### Configuring Email with SMTP
-
-<div class="mobile-side-scroller">
-<table>
-  <thead>
-    <tr>
-      <th>Setting</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><p><code>Email: Mode</code></p></td>
-      <td><p>
-
-        This should be set to SMTP
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: SMTP Host</code></p></td>
-      <td><p>
-
-        If you are using local machine to send emails, set this to localhost. If not set the IP address of the server you are using to send emails
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: SMTP Authentication</code></p></td>
-      <td><p>
-
-        Set this to "Yes" if SMTP server authorization is enabled
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: SMTP User</code></p></td>
-      <td><p>
-
-        User name of the SMTP user
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: SMTP Password</code></p></td>
-      <td><p>
-
-        SMTP user password
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: SMTP Port</code></p></td>
-      <td><p>
-
-        Port configured in SMTP server (Default 25)
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: Email From</code></p></td>
-      <td><p>
-
-        From email address (e.g icehrm@mydomain.com)
-
-      </p></td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-### Configuring Email with Amazon SES
-
-<div class="mobile-side-scroller">
-<table>
-  <thead>
-    <tr>
-      <th>Setting</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><p><code>Email: Mode</code></p></td>
-      <td><p>
-
-        This should be set to SES
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: Amazon SES Key</code></p></td>
-      <td><p>
-
-        Amazon access key Id (You can get this through AWS console)
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: Amazone SES Secret</code></p></td>
-      <td><p>
-
-        Amazon access key secret
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: Email From</code></p></td>
-      <td><p>
-
-        Authorized email address for sending emails through SES
-
-      </p></td>
-    </tr>
-    
-  </tbody>
-</table>
-</div>
-
-### Configuring Email with Gmail
-
-<div class="mobile-side-scroller">
-<table>
-  <thead>
-    <tr>
-      <th>Setting</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><p><code>Email: Mode</code></p></td>
-      <td><p>
-
-        This should be set to SMTP
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: SMTP Host</code></p></td>
-      <td><p>
-
-        ssl://smtp.gmail.com
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: SMTP Authentication</code></p></td>
-      <td><p>
-
-        Yes
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: SMTP User</code></p></td>
-      <td><p>
-
-        yourgmailaddress@gmail.com
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: SMTP Password</code></p></td>
-      <td><p>
-
-        Gmail password
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: SMTP Port</code></p></td>
-      <td><p>
-
-        465
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Email: Email From</code></p></td>
-      <td><p>
-
-        yourgmailaddress@gmail.com
-
-      </p></td>
-    </tr>
-    
-  </tbody>
-</table>
-</div>
-
-## Developer Settings
-
-<div class="mobile-side-scroller">
-<table>
-  <thead>
-    <tr>
-      <th>Setting</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><p><code>System: Do not pass JSON in request</code></p></td>
-      <td><p>
-
-        Select Yes if you are having trouble loading data for some tables
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>System: Reset Modules and Permissions</code></p></td>
-      <td><p>
-
-        When this is set to “Yes” IceHrm will reset all values given in System->Permissions module. This setting can be used to reload permissions after adding new permissions to module meta.json file
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>System: Add New Permissions</code></p></td>
-      <td><p>
-
-        Add new permissions without resetting modules
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>System: Debug Mode</code></p></td>
-      <td><p>
-
-        Print debug log messages
-
-      </p></td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-## Other Settings
-
-<div class="mobile-side-scroller">
-<table>
-  <thead>
-    <tr>
-      <th>Setting</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><p><code>Leave: Share Calendar to Whole Company</code></p></td>
-      <td><p>
-
-        If "Yes" all the employees of company can see other peoples' leave schedules.
-        If set to "No" only admins and supervisors will be able to see leave schedule of subordinates
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Leave: CC Emails</code></p></td>
-      <td><p>
-
-        Every email sent though leave module will be CC to these comma seperated list of emails addresses
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Leave: BCC Emails</code></p></td>
-      <td><p>
-
-        Every email sent though leave module will be BCC to these comma seperated list of emails addresses
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Attendance: Time-sheet Cross Check</code></p></td>
-      <td><p>
-
-        Only allow users to add an entry to a timesheet only if they have marked atteandance for the selected period
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Recruitment: Show Quick Apply</code></p></td>
-      <td><p>
-
-        Show quick apply button when candidates are applying for jobs. Quick apply allow candidates to apply with minimum amount of information
-
-      </p></td>
-    </tr>
-    <tr>
-      <td><p><code>Recruitment: Show Apply</code></p></td>
-      <td><p>
-
-        Show apply button when candidates are applying for jobs
-
-      </p></td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-Projects Module
----------------
-
-Projects module is used to add clients, projects and assign projects to employees
-
-Each and every project is attached to a client. Because of that, ICE Hrm allow adding 
-clients with basic information. Once clients are added, you can start creating project 
-for these clients. The clients section represent both external and internal clients of the company. 
-That way you can attach each and every project to a client.
-
-###Employee Projects
-
-Under employee projects tab you can assign projects to employees. You need to add projects to employees to enable them to add time against 
-these projects in time-sheets.
 
 Release note v18.0
 ------------------
