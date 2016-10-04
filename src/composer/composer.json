@@ -1,9 +1,0 @@
-{
-	"require": {
-    	"monolog/monolog": "1.13.1",
-        "twig/twig": "1.23.*",
-        "gettext/gettext": "4.0.0"
-    },
-    "require-dev": {
-    }
-}
