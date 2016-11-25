@@ -28,8 +28,8 @@ if(!defined('MYSQL_ROOT_USER') || !defined('MYSQL_ROOT_PASS')){
 
 if(!defined('MYSQL_ROOT_USER') || !defined('MYSQL_ROOT_PASS')){
     define('APP_DB', 'testing');
-    define('APP_USERNAME', 'testing');
-    define('APP_PASSWORD', 'testing');
+    define('APP_USERNAME', 'root');
+    define('APP_PASSWORD', 'dev');
 }else{
     define('APP_DB', 'icehrmht');
     define('APP_USERNAME', MYSQL_ROOT_USER);
