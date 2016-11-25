@@ -1,0 +1,1601 @@
+msgid ""
+msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: Chinese\n"
+"Language-Team: IceHrm\n"
+"Last-Translator: Thilina Hasantha\n"
+"MIME-Version: 1.0\n"
+"Project-Id-Version: 18.0\n"
+"Report-Msgid-Bugs-To: https://icehrm.com\n"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Done"
+msgstr "做"
+
+msgid "Clocked In Employees"
+msgstr "主频在员工"
+
+msgid "Candidates"
+msgstr "候选人"
+
+msgid "View Employees"
+msgstr "查看员工"
+
+msgid "Add a New Employee"
+msgstr "添加新员工"
+
+msgid "Leave Calendar"
+msgstr "离开日历"
+
+msgid "Manage Client/Projects"
+msgstr "管理客户端/项目"
+
+msgid "Home"
+msgstr "家"
+
+msgid "Quick Access"
+msgstr "快速访问"
+
+msgid "Switch"
+msgstr "开关"
+
+msgid "Profile"
+msgstr "轮廓"
+
+msgid "Sign out"
+msgstr "退出"
+
+msgid "Help"
+msgstr "帮帮我"
+
+msgid "About"
+msgstr "关于"
+
+msgid "Version"
+msgstr "版"
+
+msgid "Release Date"
+msgstr "发布日期"
+
+msgid "Logged In"
+msgstr "登录"
+
+msgid "Admin"
+msgstr "联系"
+
+msgid "Dashboard"
+msgstr "仪表板"
+
+msgid "Company Structure"
+msgstr "公司结构"
+
+msgid "Job Details Setup"
+msgstr "招聘信息的设定"
+
+msgid "Qualifications Setup"
+msgstr "资格设置"
+
+msgid "Training Setup"
+msgstr "培训设置"
+
+msgid "Projects/Client Setup"
+msgstr "项目/客户端安装"
+
+msgid "Leave Settings"
+msgstr "离开设置"
+
+msgid "Company Loans"
+msgstr "公司贷款"
+
+msgid "Audit Log"
+msgstr "审计日志"
+
+msgid "Employees"
+msgstr "雇员"
+
+msgid "Employee History"
+msgstr "员工历史"
+
+msgid "Document Management"
+msgstr "文档管理"
+
+msgid "Travel Administration"
+msgstr "旅游管理"
+
+msgid "Expense Administration"
+msgstr "费用管理"
+
+msgid "Monitor Attendance"
+msgstr "监控考勤"
+
+msgid "Performance Charts"
+msgstr "性能图表"
+
+msgid "Overtime Administration"
+msgstr "加班管理"
+
+msgid "Admin Reports"
+msgstr "管理员报告"
+
+msgid "Reports"
+msgstr "报告"
+
+msgid "Report Files"
+msgstr "报告文件"
+
+msgid "System"
+msgstr "系统"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Users"
+msgstr "用户"
+
+msgid "Manage Modules"
+msgstr "管理模块"
+
+msgid "Manage Permissions"
+msgstr "管理权限"
+
+msgid "Upgrade"
+msgstr "升级"
+
+msgid "Manage Metadata"
+msgstr "管理元数据"
+
+msgid "Field Names Setup"
+msgstr "字段名称设置"
+
+msgid "Payroll"
+msgstr "工资表"
+
+msgid "Salary"
+msgstr "薪水"
+
+msgid "Payroll Reports"
+msgstr "薪资报告"
+
+msgid "Recruitment"
+msgstr "招聘"
+
+msgid "Recruitment Setup"
+msgstr "招聘设置"
+
+msgid "Job Positions"
+msgstr "岗位"
+
+msgid "Personal Information"
+msgstr "个人信息"
+
+msgid "Basic Information"
+msgstr "基本信息"
+
+msgid "Qualifications"
+msgstr "资格"
+
+msgid "Dependents"
+msgstr "眷"
+
+msgid "Emergency Contacts"
+msgstr "紧急联络"
+
+msgid "Leave"
+msgstr "离开"
+
+msgid "Leave Management"
+msgstr "离开管理"
+
+msgid "Time Management"
+msgstr "时间管理"
+
+msgid "Projects"
+msgstr "项目"
+
+msgid "Attendance"
+msgstr "护理"
+
+msgid "Time Sheets"
+msgstr "考勤表"
+
+msgid "Attendance Sheets"
+msgstr "签到表"
+
+msgid "Overtime Requests"
+msgstr "加班的请求"
+
+msgid "Documents"
+msgstr "文件"
+
+msgid "My Documents"
+msgstr "我的文件"
+
+msgid "Company"
+msgstr "公司"
+
+msgid "Staff Directory"
+msgstr "教职员名录"
+
+msgid "Training"
+msgstr "训练"
+
+msgid "Travel Management"
+msgstr "旅游管理"
+
+msgid "Travel"
+msgstr "旅行"
+
+msgid "Finance"
+msgstr "金融"
+
+msgid "Expenses"
+msgstr "花费"
+
+msgid "Loans"
+msgstr "贷款"
+
+msgid "User Reports"
+msgstr "用户报告"
+
+msgid "People"
+msgstr "人"
+
+msgid "Manage"
+msgstr "管理"
+
+msgid "Departments"
+msgstr "部门"
+
+msgid "Active Projects"
+msgstr "活动项目"
+
+msgid "Update Clients/Projects"
+msgstr "更新客户端/项目"
+
+msgid "Entries Last Week"
+msgstr "条目上周"
+
+msgid "Upcoming"
+msgstr "即将到来"
+
+msgid "View / Download Reports"
+msgstr "查看/下载报告"
+
+msgid "Generate a Report"
+msgstr "生成报告"
+
+msgid "Configure"
+msgstr "配置"
+
+msgid "Update"
+msgstr "更新"
+
+msgid "Applicants"
+msgstr "申请人"
+
+msgid "Active Jobs"
+msgstr "活动作业"
+
+msgid "Jobs Posted"
+msgstr "乔布斯发布"
+
+msgid "Jobs"
+msgstr "工作"
+
+msgid "Courses"
+msgstr "培训班"
+
+msgid "Requests"
+msgstr "要求"
+
+msgid "Document"
+msgstr "文件"
+
+msgid "Management"
+msgstr "管理"
+
+msgid "Expense"
+msgstr "费用"
+
+msgid "Permission"
+msgstr "允许"
+
+msgid "Permissions"
+msgstr "权限"
+
+msgid "and"
+msgstr "和"
+
+msgid "Invoices"
+msgstr "发票"
+
+msgid "Make a Payment"
+msgstr "进行付款"
+
+msgid "Switch Employee"
+msgstr "开关员工"
+
+msgid "Select The Employee to Switch Into"
+msgstr "选择切换到员工"
+
+msgid "Close"
+msgstr "关"
+
+msgid "My Profile"
+msgstr "我的简历"
+
+msgid "Edit Details"
+msgstr "编辑详情"
+
+msgid "View/Edit Profile"
+msgstr "查看/编辑个人资料"
+
+msgid "Punch In"
+msgstr "切入"
+
+msgid "or"
+msgstr "要么"
+
+msgid "Punch Out"
+msgstr "切出"
+
+msgid "Record Attendance"
+msgstr "出席记录"
+
+msgid "Pending Leaves"
+msgstr "待叶"
+
+msgid "Check Leave Status"
+msgstr "检查休假状态"
+
+msgid "Hours worked Last Week"
+msgstr "工作时间上周"
+
+msgid "Update Time Sheet"
+msgstr "更新时间表"
+
+msgid "My Projects"
+msgstr "我的项目"
+
+msgid "Projects Assigned"
+msgstr "项目分配"
+
+msgid "More info"
+msgstr "更多信息"
+
+msgid "Store"
+msgstr "商店"
+
+msgid "My Travel"
+msgstr "我的旅行"
+
+msgid "My Expenses"
+msgstr "我的费用"
+
+msgid "Manage Expenses"
+msgstr "管理费用"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Address"
+msgstr "地址"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Country"
+msgstr "国家"
+
+msgid "Time Zone"
+msgstr "时区"
+
+msgid "Parent Structure"
+msgstr "母体结构"
+
+msgid "Details"
+msgstr "细节"
+
+msgid "Heads"
+msgstr "头"
+
+msgid "Code"
+msgstr "码"
+
+msgid "Job Title Code"
+msgstr "职位代码"
+
+msgid "Job Title"
+msgstr "职称"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Specification"
+msgstr "规范"
+
+msgid "Currency"
+msgstr "货币"
+
+msgid "Min Salary"
+msgstr "闵工资"
+
+msgid "Max Salary"
+msgstr "最高工资"
+
+msgid "Pay Grade Name"
+msgstr "工资等级名称"
+
+msgid "Employment Status"
+msgstr "就业状况"
+
+msgid "Coordinator"
+msgstr "协调员"
+
+msgid "Trainer"
+msgstr "训练者"
+
+msgid "Trainer Details"
+msgstr "培训师详细"
+
+msgid "Payment Type"
+msgstr "付款方式"
+
+msgid "Cost"
+msgstr "成本"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Course"
+msgstr "课程"
+
+msgid "Scheduled Time"
+msgstr "计划的时间"
+
+msgid "Assignment Due Date"
+msgstr "交作业的日期"
+
+msgid "Delivery Method"
+msgstr "运输方式"
+
+msgid "Delivery Location"
+msgstr "交货地点"
+
+msgid "Attendance Type"
+msgstr "出勤类型"
+
+msgid "Attachment"
+msgstr "附件"
+
+msgid "Training Certificate Required"
+msgstr "培训证书要求"
+
+msgid "Employee"
+msgstr "雇员"
+
+msgid "Training Session"
+msgstr "培训课程"
+
+msgid "Contact Number"
+msgstr "联系电话"
+
+msgid "Contact Email"
+msgstr "联系电子邮件"
+
+msgid "Company Url"
+msgstr "公司网址"
+
+msgid "First Contact Date"
+msgstr "第一次接触日期"
+
+msgid "Client"
+msgstr "客户"
+
+msgid "Project"
+msgstr "项目"
+
+msgid "Leave Name"
+msgstr "留下姓名"
+
+msgid "Leave Accrue Enabled"
+msgstr "离开计提启用"
+
+msgid "Leave Carried Forward"
+msgstr "离开结转"
+
+msgid "Leaves Per Year"
+msgstr "叶每年"
+
+msgid "Leaves Group"
+msgstr "叶组"
+
+msgid "Leaves Per Leave Period"
+msgstr "叶每休假期间"
+
+msgid "Admin can assign leave to employees"
+msgstr "管理员可以指定休假的员工"
+
+msgid "Employees can apply for this leave type"
+msgstr "员工可以申请这个假期类型"
+
+msgid "Employees can apply beyond the current leave balance"
+msgstr "员工可以申请超出了目前的平衡休假"
+
+msgid "Percentage of Leaves Carried Forward"
+msgstr "叶百分比推进型"
+
+msgid "Maximum Carried Forward Amount"
+msgstr "最大结转金额"
+
+msgid "Carried Forward Leave Availability Period"
+msgstr "结转休假期可用性"
+
+msgid "Proportionate leaves on Joined Date"
+msgstr "叶成比例的注册日期"
+
+msgid "Send Notification Emails"
+msgstr "发送电​​子邮件通知"
+
+msgid "Leave Group"
+msgstr "离开组"
+
+msgid "Leave Color"
+msgstr "离开颜色"
+
+msgid "Period Start"
+msgstr "周期开始"
+
+msgid "Period End"
+msgstr "期末"
+
+msgid "Day"
+msgstr "天"
+
+msgid "For All Countries"
+msgstr "所有国家"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Leave Type"
+msgstr "休假类型"
+
+msgid "Propotionate leaves on Joined Date"
+msgstr "Propotionate叶注册日期"
+
+msgid "Leaves Period"
+msgstr "叶期"
+
+msgid "Leave Amount"
+msgstr "离开金额"
+
+msgid "Leave Period"
+msgstr "休假期间"
+
+msgid "Note"
+msgstr "注意"
+
+msgid "All Employees"
+msgstr "所有员工"
+
+msgid "All Leave Types"
+msgstr "所有休假类型"
+
+msgid "Loan Type"
+msgstr "贷款类型"
+
+msgid "Loan Start Date"
+msgstr "贷款开始日期"
+
+msgid "Loan Period (Months)"
+msgstr "贷款期限（月）"
+
+msgid "Amount"
+msgstr "量"
+
+msgid "Last Installment Date"
+msgstr "最后分期付款日期"
+
+msgid "Loan Amount"
+msgstr "贷款额度"
+
+msgid "Monthly Installment"
+msgstr "每月分期付款"
+
+msgid "Employee Number"
+msgstr "员工编号"
+
+msgid "First Name"
+msgstr "名字"
+
+msgid "Middle Name"
+msgstr "中间名字"
+
+msgid "Last Name"
+msgstr "姓"
+
+msgid "Nationality"
+msgstr "国籍"
+
+msgid "Date of Birth"
+msgstr "出生日期"
+
+msgid "Gender"
+msgstr "性别"
+
+msgid "Marital Status"
+msgstr "婚姻状况"
+
+msgid "Ethnicity"
+msgstr "种族"
+
+msgid "Immigration Status"
+msgstr "移民身份"
+
+msgid "SSN/NRIC"
+msgstr "SSN /身份证"
+
+msgid "NIC"
+msgstr "NIC"
+
+msgid "Other ID"
+msgstr "其他ID"
+
+msgid "Driving License No"
+msgstr "驾驶执照无"
+
+msgid "Pay Grade"
+msgstr "工资等级"
+
+msgid "Work Station Id"
+msgstr "工作站标识"
+
+msgid "Address Line 1"
+msgstr "地址栏1"
+
+msgid "Address Line 2"
+msgstr "地址行2"
+
+msgid "City"
+msgstr "市"
+
+msgid "Province"
+msgstr "省"
+
+msgid "Postal/Zip Code"
+msgstr "邮政/邮编"
+
+msgid "Home Phone"
+msgstr "家庭电话"
+
+msgid "Mobile Phone"
+msgstr "移动电话"
+
+msgid "Work Phone"
+msgstr "工作电话"
+
+msgid "Work Email"
+msgstr "工作电子邮件"
+
+msgid "Private Email"
+msgstr "私人电子邮件"
+
+msgid "Joined Date"
+msgstr "注册日期"
+
+msgid "Confirmation Date"
+msgstr "确认日期"
+
+msgid "Termination Date"
+msgstr "终止日期"
+
+msgid "Department"
+msgstr "部"
+
+msgid "Supervisor"
+msgstr "监"
+
+msgid "Indirect Supervisors"
+msgstr "间接监事"
+
+msgid "First Level Approver"
+msgstr "第一级审批"
+
+msgid "Second Level Approver"
+msgstr "二级审批"
+
+msgid "Third Level Approver"
+msgstr "第三级审批"
+
+msgid "Notes"
+msgstr "笔记"
+
+msgid "Time (GMT)"
+msgstr "时间（GMT）"
+
+msgid "User"
+msgstr "用户"
+
+msgid "IP Address"
+msgstr "IP地址"
+
+msgid "Logged In Employee"
+msgstr "记录在员工"
+
+msgid "Skill"
+msgstr "技能"
+
+msgid "Qualification"
+msgstr "合格"
+
+msgid "Institute"
+msgstr "研究所"
+
+msgid "Start Date"
+msgstr "开始日期"
+
+msgid "Completed On"
+msgstr "完成"
+
+msgid "Certification"
+msgstr "证明"
+
+msgid "Granted On"
+msgstr "授予"
+
+msgid "Valid Thru"
+msgstr "有效至"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Reading"
+msgstr "读"
+
+msgid "Speaking"
+msgstr "请讲"
+
+msgid "Writing"
+msgstr "写作"
+
+msgid "Understanding"
+msgstr "理解"
+
+msgid "Date Added"
+msgstr "添加日期"
+
+msgid "Valid Until"
+msgstr "有效期至"
+
+msgid "Relationship"
+msgstr "关系"
+
+msgid "Id Number"
+msgstr "身份证号"
+
+msgid "All Job Titles"
+msgstr "所有职位名称"
+
+msgid "All Departments"
+msgstr "所有"
+
+msgid "Anyone"
+msgstr "任何人"
+
+msgid "Field"
+msgstr "领域"
+
+msgid "Old Value"
+msgstr "旧值"
+
+msgid "New Value"
+msgstr "新价值"
+
+msgid "Modified By"
+msgstr "修改者"
+
+msgid "Created"
+msgstr "创建"
+
+msgid "Notify Expiry"
+msgstr "到期通知"
+
+msgid "Notify Expiry Before One Month"
+msgstr "通知到期前一个月"
+
+msgid "Notify Expiry Before One Week"
+msgstr "通知到期前一周"
+
+msgid "Notify Expiry Before One Day"
+msgstr "通知到期的前一天"
+
+msgid "Travel Type"
+msgstr "旅游方式"
+
+msgid "Purpose of Travel"
+msgstr "旅行的目的"
+
+msgid "Travel From"
+msgstr "从旅游"
+
+msgid "Travel To"
+msgstr "前往"
+
+msgid "Travel Date"
+msgstr "行程日期"
+
+msgid "Return Date"
+msgstr "归期"
+
+msgid "Total Funding Proposed"
+msgstr "总资金建议"
+
+msgid "Itinerary / Cab Receipt"
+msgstr "行程单/收据驾驶室"
+
+msgid "Other Attachment 1"
+msgstr "其它附件1"
+
+msgid "Other Attachment 2"
+msgstr "其它附件2"
+
+msgid "Payment Method"
+msgstr "付款方法"
+
+msgid "Transaction / Ref No"
+msgstr "交易/参考编号"
+
+msgid "Payee"
+msgstr "收款人"
+
+msgid "Expense Category"
+msgstr "费用类别"
+
+msgid "Receipt"
+msgstr "收据"
+
+msgid "Time-In"
+msgstr "时间在"
+
+msgid "Time-Out"
+msgstr "暂停"
+
+msgid "Clocked In Status"
+msgstr "主频在状态"
+
+msgid "End Date"
+msgstr "结束日期"
+
+msgid "Category"
+msgstr "类别"
+
+msgid "Start Time"
+msgstr "开始时间"
+
+msgid "End Time"
+msgstr "时间结束"
+
+msgid "Leave Status"
+msgstr "离开状态"
+
+msgid "Select Client"
+msgstr "选择客户端"
+
+msgid "Not Selected"
+msgstr "未选择"
+
+msgid "Or Project"
+msgstr "或项目"
+
+msgid "All Projects"
+msgstr "所有项目"
+
+msgid "All Status"
+msgstr "所有状态"
+
+msgid "Value"
+msgstr "值"
+
+msgid "Logo"
+msgstr "商标"
+
+msgid "User Name"
+msgstr "用户名"
+
+msgid "Authentication Email"
+msgstr "验证电子邮件"
+
+msgid "User Level"
+msgstr "用户级别"
+
+msgid "Email"
+msgstr "电子邮件"
+
+msgid "User Roles"
+msgstr "用户角色"
+
+msgid "Default Module"
+msgstr "默认模块"
+
+msgid "No Default Module"
+msgstr "没有默认模块"
+
+msgid "Menu"
+msgstr "菜单"
+
+msgid "Group"
+msgstr "组"
+
+msgid "Order"
+msgstr "订购"
+
+msgid "Path"
+msgstr "路径"
+
+msgid "Label"
+msgstr "标签"
+
+msgid "User Levels"
+msgstr "用户级别"
+
+msgid "Module"
+msgstr "模"
+
+msgid "All Modules"
+msgstr "所有模块"
+
+msgid "Invoice Period Start"
+msgstr "发票周期开始"
+
+msgid "Invoice Period End"
+msgstr "发票期末"
+
+msgid "Due date"
+msgstr "截止日期"
+
+msgid "Url"
+msgstr "网址"
+
+msgid "Original Text"
+msgstr "原文"
+
+msgid "Mapped Text"
+msgstr "映射文本"
+
+msgid "Display Status"
+msgstr "显示状态"
+
+msgid "Field Type"
+msgstr "字段类型"
+
+msgid "Field Label"
+msgstr "字段标签"
+
+msgid "Validation"
+msgstr "验证"
+
+msgid "Field Options"
+msgstr "域选项"
+
+msgid "Priority"
+msgstr "优先"
+
+msgid "Display Section"
+msgstr "显示部分"
+
+msgid "Salary Component Type"
+msgstr "工资组件类型"
+
+msgid "Salary Component"
+msgstr "薪金部分"
+
+msgid "Pay Frequency"
+msgstr "收费频率"
+
+msgid "Calculation Group"
+msgstr "计算集团"
+
+msgid "None"
+msgstr "没有"
+
+msgid "Calculation Exemptions"
+msgstr "计算豁免"
+
+msgid "Calculations Assigned"
+msgstr "计算分配"
+
+msgid "Date Start"
+msgstr "起始日期"
+
+msgid "Date End"
+msgstr "日期结束"
+
+msgid "Payslip Template"
+msgstr "工资单模板"
+
+msgid "Payroll Columns"
+msgstr "工资列"
+
+msgid "Calculation Method"
+msgstr "计算方法"
+
+msgid "Editable"
+msgstr "可编辑"
+
+msgid "Enabled"
+msgstr "启用"
+
+msgid "Predefined Calculations"
+msgstr "预定义的计算"
+
+msgid "Salary Components"
+msgstr "工资组件"
+
+msgid "Columns to Add"
+msgstr "列添加"
+
+msgid "Columns to Subtract"
+msgstr "列减去"
+
+msgid "Column Order"
+msgstr "列顺序"
+
+msgid "Default Value"
+msgstr "默认值"
+
+msgid "Calculation Columns"
+msgstr "计算列"
+
+msgid "Function"
+msgstr "功能"
+
+msgid "Payroll Report Column"
+msgstr "薪资报告列"
+
+msgid "Calculation Process"
+msgstr "计算过程"
+
+msgid "Payslip Fields"
+msgstr "工资单场"
+
+msgid "Payroll Column"
+msgstr "工资列"
+
+msgid "Text"
+msgstr "文本"
+
+msgid "Lower Limit Condition"
+msgstr "下限条件"
+
+msgid "Lower Limit"
+msgstr "下限"
+
+msgid "Upper Limit Condition"
+msgstr "上限条件"
+
+msgid "Upper Limit"
+msgstr "上限"
+
+msgid "Column"
+msgstr "柱"
+
+msgid "Job Code"
+msgstr "职位代码"
+
+msgid "Short Description"
+msgstr "简短的介绍"
+
+msgid "Requirements"
+msgstr "要求"
+
+msgid "Benefits"
+msgstr "优点"
+
+msgid "Employment Type"
+msgstr "雇佣类型"
+
+msgid "Any Employment Type"
+msgstr "不限就业类型"
+
+msgid "Experience Level"
+msgstr "经验水平"
+
+msgid "Any Experience Level"
+msgstr "任何经验水平"
+
+msgid "Job Function"
+msgstr "工作职能"
+
+msgid "Any Job Function"
+msgstr "任何工作职能"
+
+msgid "Education Level"
+msgstr "教育程度"
+
+msgid "Any Education Level"
+msgstr "任何教育水平"
+
+msgid "Show Salary"
+msgstr "显示工资"
+
+msgid "Salary Min"
+msgstr "工资敏"
+
+msgid "Salary Max"
+msgstr "工资最高"
+
+msgid "Keywords"
+msgstr "关键词"
+
+msgid "Closing Date"
+msgstr "截止日期"
+
+msgid "Image"
+msgstr "图片"
+
+msgid "Display Type"
+msgstr "显示器类型"
+
+msgid "Profile Image"
+msgstr "简介的图片"
+
+msgid "Telephone"
+msgstr "电话"
+
+msgid "Resume Title"
+msgstr "简历标题"
+
+msgid "Resume"
+msgstr "简历"
+
+msgid "Resume Headline"
+msgstr "简历标题"
+
+msgid "Profile Summary"
+msgstr "概要文件摘要"
+
+msgid "Work History"
+msgstr "工作经历"
+
+msgid "Education"
+msgstr "教育"
+
+msgid "Skills"
+msgstr "技能"
+
+msgid "Referees"
+msgstr "裁判"
+
+msgid "From Year"
+msgstr "从新年"
+
+msgid "From Month"
+msgstr "从月"
+
+msgid "To Year"
+msgstr "至年"
+
+msgid "To Month"
+msgstr "为月"
+
+msgid "Currently Work Here"
+msgstr "现在在这里工作"
+
+msgid "Degree/Diploma"
+msgstr "学位/文凭"
+
+msgid "Currently Studying"
+msgstr "目前正在研究"
+
+msgid "Skill Level"
+msgstr "技能等级"
+
+msgid "Last Used Year"
+msgstr "去年二手年份"
+
+msgid "Last Used Month"
+msgstr "上次使用一个月"
+
+msgid "Years of Experience"
+msgstr "多年经验"
+
+msgid "Designation"
+msgstr "指定"
+
+msgid "Phone"
+msgstr "电话"
+
+msgid "Job"
+msgstr "工作"
+
+msgid "Candidate"
+msgstr "候选人"
+
+msgid "Referred By"
+msgstr "由......推荐"
+
+msgid "Leave Start Date"
+msgstr "离开开始日期"
+
+msgid "Leave End Date"
+msgstr "离开结束日期"
+
+msgid "Reason"
+msgstr "原因"
+
+msgid "Available Leaves"
+msgstr "叶可用"
+
+msgid "Approved Leaves"
+msgstr "叶批准"
+
+msgid "Rejected Leaves"
+msgstr "叶被拒绝"
+
+msgid "Leaves to be Accrued"
+msgstr "叶计入"
+
+msgid "Leaves Carried Forward"
+msgstr "叶结转"
+
+msgid "Apply Leave"
+msgstr "申请休假"
+
+msgid "Filter"
+msgstr "过滤"
+
+msgid "Add New"
+msgstr "添新"
+
+msgid "Time"
+msgstr "时间"
+
+msgid "Purpose"
+msgstr "目的"
+
+msgid "From"
+msgstr "从"
+
+msgid "To"
+msgstr "至"
+
+msgid "Created (GMT)"
+msgstr "创建日期（GMT）"
+
+msgid "Download"
+msgstr "下载"
+
+msgid "Submit"
+msgstr "提交"
+
+msgid "Upload"
+msgstr "上传"
+
+msgid "Remove"
+msgstr "去掉"
+
+msgid "Add"
+msgstr "加"
+
+msgid "Reset"
+msgstr "重启"
+
+msgid "Add Time Entry"
+msgstr "添加时间输入"
+
+msgid "Current Clocked In Status"
+msgstr "目前移入状态"
+
+msgid "Attendance entry should be within a single day"
+msgstr "出席条目应在一天内"
+
+msgid "Account Balance"
+msgstr "账户余额"
+
+msgid "Plan"
+msgstr "计划"
+
+msgid "Transactions"
+msgstr "交易"
+
+msgid "Applications"
+msgstr "应用"
+
+msgid "Attendance Graph"
+msgstr "考勤图"
+
+msgid "Hours in Office vs Hours Worked Graph"
+msgstr "小时在办公室VS工时图"
+
+msgid "Company Graph"
+msgstr "公司图"
+
+msgid "Company Documents"
+msgstr "公司文件"
+
+msgid "Document Types"
+msgstr "文档类型"
+
+msgid "Employee Documents"
+msgstr "员工的文档"
+
+msgid "Employee Basic Details"
+msgstr "职工基本细节"
+
+msgid "Employees (Direct Reports)"
+msgstr "员工（直接报告）"
+
+msgid "Certifications"
+msgstr "认证"
+
+msgid "Languages"
+msgstr "语言"
+
+msgid "Deactivated Employees"
+msgstr "停用员工"
+
+msgid "Temporarily Deactivated Employees"
+msgstr "临时禁用员工"
+
+msgid "Terminated Employee Data"
+msgstr "离职员工资料"
+
+msgid "Employee Saved Successfully"
+msgstr "员工成功保存"
+
+msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
+msgstr "员工需要用户登录到IceHrm。你想创建现在这个员工的用户？"
+
+msgid "You can do this later through Users module if required."
+msgstr "如果需要，可以通过用户模块后做到这一点。"
+
+msgid "Expenses Categories"
+msgstr "费用分类"
+
+msgid "Payment Methods"
+msgstr "支付方式"
+
+msgid "Employee Expenses"
+msgstr "员工费用"
+
+msgid "Salary Component Types"
+msgstr "薪金部分类型"
+
+msgid "Employee Salary Components"
+msgstr "员工工资组件"
+
+msgid "Company Payroll"
+msgstr "公司工资"
+
+msgid "Calculation Groups"
+msgstr "计算组"
+
+msgid "Calculation Methods"
+msgstr "计算方法"
+
+msgid "Payslip Templates"
+msgstr "工资单模板"
+
+msgid "Edit Employment Types"
+msgstr "编辑就业类型"
+
+msgid "Edit Experience Levels"
+msgstr "编辑经验水平"
+
+msgid "Edit Job Functions"
+msgstr "编辑作业功能"
+
+msgid "Edit Education Levels"
+msgstr "编辑教育程度"
+
+msgid "Edit Benefits"
+msgstr "编辑好处"
+
+msgid "Application"
+msgstr "应用"
+
+msgid "Job Titles"
+msgstr "职位名称"
+
+msgid "Pay Grades"
+msgstr "薪酬级别"
+
+msgid "Training Sessions"
+msgstr "培训课程"
+
+msgid "Employee Training Sessions"
+msgstr "员工培训课程"
+
+msgid "Clients"
+msgstr "客户端"
+
+msgid "Employee Projects"
+msgstr "员工项目"
+
+msgid "Leave Types"
+msgstr "离开类型"
+
+msgid "Work Week"
+msgstr "工作周"
+
+msgid "Holidays"
+msgstr "假期"
+
+msgid "Leave Rules"
+msgstr "离开规则"
+
+msgid "Paid Time Off"
+msgstr "带薪休假"
+
+msgid "Leave Groups"
+msgstr "离开组"
+
+msgid "Edit Leave Groups"
+msgstr "编辑休假组"
+
+msgid "Leave Group Employees"
+msgstr "离开集团的员工"
+
+msgid "Employee Leave List"
+msgstr "员工休假名单"
+
+msgid "Loan Types"
+msgstr "贷款类型"
+
+msgid "Employee Loans"
+msgstr "员工贷款"
+
+msgid "Travel Requests"
+msgstr "差旅请求"
+
+msgid "Overtime Categories"
+msgstr "加班分类"
+
+msgid "Leave / PTO"
+msgstr "离开/ PTO"
+
+msgid "Other"
+msgstr "其他"
+
+msgid "Modules"
+msgstr "模块"
+
+msgid "Countries"
+msgstr "国家"
+
+msgid "Provinces"
+msgstr "省"
+
+msgid "Currency Types"
+msgstr "货币类型"
+
+msgid "Employee Custom Fields"
+msgstr "员工自定义字段"
+
+msgid "Employee Field Names"
+msgstr "员工字段名称"
+
+msgid "My Details"
+msgstr "我的详细资料"
+
+msgid "All My Leaves"
+msgstr "我所有的树叶"
+
+msgid "Leave Entitlement"
+msgstr "休假权利"
+
+msgid "Approved Leave"
+msgstr "批准休假"
+
+msgid "Pending Leave"
+msgstr "待离开"
+
+msgid "Subordinate Leave"
+msgstr "下属休假"
+
+msgid "Cancellation Requests"
+msgstr "取消请求"
+
+msgid "Approval Requests"
+msgstr "批准请求"
+
+msgid "Approved TimeSheets"
+msgstr "批准称TimeSheets"
+
+msgid "All My TimeSheets"
+msgstr "所有我的时间表"
+
+msgid "Pending TimeSheets"
+msgstr "待定称TimeSheets"
+
+msgid "Subordinate TimeSheets"
+msgstr "下属称TimeSheets"
+
+msgid "Approved Attendance Sheets"
+msgstr "批准签到表"
+
+msgid "All My Attendance Sheets"
+msgstr "我所有的考勤表"
+
+msgid "Pending Attendance Sheets"
+msgstr "待签到表"
+
+msgid "Subordinate Attendance Sheets"
+msgstr "下属签到表"
+
+msgid "Subordinate Overtime Requests"
+msgstr "下属加班请求"
+
+msgid "Overtime Request Approval"
+msgstr "加班申请审批"
+
+msgid "My Training Sessions"
+msgstr "我的培训课程"
+
+msgid "All Training Sessions"
+msgstr "所有培训课程"
+
+msgid "Training Sessions of Direct Reports"
+msgstr "直接下属的培训课程"
+
+msgid "Subordinate Travel Requests"
+msgstr "下属差旅请求"
+
+msgid "Travel Request Approval"
+msgstr "旅行请求审批"
+
+msgid "Subordinate Expenses"
+msgstr "下属费用"
+
+msgid "Expenses Approval"
+msgstr "支出审批"
+
+msgid "Loans Taken"
+msgstr "采取贷款"
+
+msgid "Change Leave Status"
+msgstr "更改休假状态"
+
+msgid "Leave Status"
+msgstr "离开状态"
+
+msgid "Status Change Note"
+msgstr "状态更改注"
+
+msgid "Leave Summary"
+msgstr "离开摘要"
+
+msgid "Approved Leave Count"
+msgstr "批准休假计数"
+
+msgid "Pending Leave Count"
+msgstr "待离开计数"
+
+msgid "Available Leave Count"
+msgstr "可用计数休假"
+
+msgid "Leave Dates"
+msgstr "离开日期"
+
+msgid "Leave Date"
+msgstr "离开日期"
+
+msgid "Leave Notes"
+msgstr "留便条"
+
+msgid "Apply"
+msgstr "应用"
+
+msgid "Back"
+msgstr "背部"
+

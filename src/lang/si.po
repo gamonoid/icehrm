@@ -1,0 +1,1601 @@
+msgid ""
+msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: Sinhala\n"
+"Language-Team: IceHrm\n"
+"Last-Translator: Thilina Hasantha\n"
+"MIME-Version: 1.0\n"
+"Project-Id-Version: 18.0\n"
+"Report-Msgid-Bugs-To: https://icehrm.com\n"
+
+msgid "Save"
+msgstr "සුරකින්න"
+
+msgid "Cancel"
+msgstr "අවලංගු කරන්න"
+
+msgid "Done"
+msgstr "හරි"
+
+msgid "Clocked In Employees"
+msgstr "සේවක දී තත්පර"
+
+msgid "Candidates"
+msgstr "අපේක්ෂකයන්"
+
+msgid "View Employees"
+msgstr "සේවක දැක්ම"
+
+msgid "Add a New Employee"
+msgstr "නව සේවක එකතු කරන්න"
+
+msgid "Leave Calendar"
+msgstr "දින දසුන තබන්න"
+
+msgid "Manage Client/Projects"
+msgstr "සේවාලාභියා / ව්යාපෘති කළමනාකරණය"
+
+msgid "Home"
+msgstr "ගෙදර"
+
+msgid "Quick Access"
+msgstr "ඉක්මන් ප්රවේශ"
+
+msgid "Switch"
+msgstr "ස්විච්"
+
+msgid "Profile"
+msgstr "නරඹන්න"
+
+msgid "Sign out"
+msgstr "වරන්න"
+
+msgid "Help"
+msgstr "උදව්"
+
+msgid "About"
+msgstr "ගැන"
+
+msgid "Version"
+msgstr "පිටපත"
+
+msgid "Release Date"
+msgstr "නිකුත් කරන දිනය"
+
+msgid "Logged In"
+msgstr "ඇතුල් වුනා"
+
+msgid "Admin"
+msgstr "පරිපාලක"
+
+msgid "Dashboard"
+msgstr "උපකරණ පුවරුව"
+
+msgid "Company Structure"
+msgstr "සමාගම ව්යුහය"
+
+msgid "Job Details Setup"
+msgstr "රැකියා විස්තර කරන සැකසුම"
+
+msgid "Qualifications Setup"
+msgstr "සුදුසුකම් Setup"
+
+msgid "Training Setup"
+msgstr "පුහුණු කරන සැකසුම"
+
+msgid "Projects/Client Setup"
+msgstr "ව්යාපෘති / ප්රදාන සේවාලාභියා Setup"
+
+msgid "Leave Settings"
+msgstr "සැකසුම් තබන්න"
+
+msgid "Company Loans"
+msgstr "සමාගම ණය"
+
+msgid "Audit Log"
+msgstr "විගණන ලොග්"
+
+msgid "Employees"
+msgstr "සේවක"
+
+msgid "Employee History"
+msgstr "සේවක ඉතිහාසය"
+
+msgid "Document Management"
+msgstr "ලේඛන කළමනාකරණ"
+
+msgid "Travel Administration"
+msgstr "සංචාරක පරිපාලන"
+
+msgid "Expense Administration"
+msgstr "වියදම් පරිපාලන"
+
+msgid "Monitor Attendance"
+msgstr "මොනිටරය පැමිණීම"
+
+msgid "Performance Charts"
+msgstr "කාර්ය සාධන ප්රස්ථාර සටහන්"
+
+msgid "Overtime Administration"
+msgstr "අතිකාල පරිපාලන"
+
+msgid "Admin Reports"
+msgstr "පරිපාලන වාර්තා"
+
+msgid "Reports"
+msgstr "වාර්තා"
+
+msgid "Report Files"
+msgstr "වාර්තාව ගොනු"
+
+msgid "System"
+msgstr "පද්ධතිය"
+
+msgid "Settings"
+msgstr "සැකසුම්"
+
+msgid "Users"
+msgstr "පරිශීලකයන්"
+
+msgid "Manage Modules"
+msgstr "මොඩියුල කළමනාකරණය"
+
+msgid "Manage Permissions"
+msgstr "අවසර කළමනාකරණය"
+
+msgid "Upgrade"
+msgstr "උත්ශ්රේණි කිරීම"
+
+msgid "Manage Metadata"
+msgstr "පාරදත්ත කළමනාකරණය"
+
+msgid "Field Names Setup"
+msgstr "ක්ෂේත්ර නාම සැකසුම"
+
+msgid "Payroll"
+msgstr "වැටුප්"
+
+msgid "Salary"
+msgstr "වැටුප"
+
+msgid "Payroll Reports"
+msgstr "වැටුප් වාර්තා"
+
+msgid "Recruitment"
+msgstr "බඳවා ගැනීම"
+
+msgid "Recruitment Setup"
+msgstr "බඳවා ගැනීම Setup"
+
+msgid "Job Positions"
+msgstr "රැකියා තනතුරු"
+
+msgid "Personal Information"
+msgstr "පුද්ගලික තොරතුරු"
+
+msgid "Basic Information"
+msgstr "මූලික තොරතුරු"
+
+msgid "Qualifications"
+msgstr "සුදුසුකම්"
+
+msgid "Dependents"
+msgstr "යැපෙන්නන්ට"
+
+msgid "Emergency Contacts"
+msgstr "හදිසි ඇමතුම්"
+
+msgid "Leave"
+msgstr "අවසරය,"
+
+msgid "Leave Management"
+msgstr "කළමනාකරණ තබන්න"
+
+msgid "Time Management"
+msgstr "කාල කළමණාකරණය"
+
+msgid "Projects"
+msgstr "ව්යාපෘති"
+
+msgid "Attendance"
+msgstr "පැමිණීම"
+
+msgid "Time Sheets"
+msgstr "කාලය පත්ර"
+
+msgid "Attendance Sheets"
+msgstr "පැමිණීම පත්ර"
+
+msgid "Overtime Requests"
+msgstr "අතිකාල ඉල්ලීම්"
+
+msgid "Documents"
+msgstr "ලිපි ලේඛන"
+
+msgid "My Documents"
+msgstr "මගේ ලේඛන"
+
+msgid "Company"
+msgstr "සමාගම"
+
+msgid "Staff Directory"
+msgstr "මාණ්ඩලික නාමාවලිය"
+
+msgid "Training"
+msgstr "පුහුණුව"
+
+msgid "Travel Management"
+msgstr "සංචාරක කළමනාකරණ"
+
+msgid "Travel"
+msgstr "ගමන්"
+
+msgid "Finance"
+msgstr "මුදල්"
+
+msgid "Expenses"
+msgstr "වියදම්"
+
+msgid "Loans"
+msgstr "ණය"
+
+msgid "User Reports"
+msgstr "පරිශීලක වාර්තා"
+
+msgid "People"
+msgstr "මහජන"
+
+msgid "Manage"
+msgstr "කළමනාකරණය"
+
+msgid "Departments"
+msgstr "දෙපාර්තමේන්තු"
+
+msgid "Active Projects"
+msgstr "ක්රියාකාරී ව්යාපෘති"
+
+msgid "Update Clients/Projects"
+msgstr "යාවත්කාලීන සේවාලාභීන් / ව්යාපෘති"
+
+msgid "Entries Last Week"
+msgstr "සටහන් ඇතුළත් කිරීම් අවසන් සතිය"
+
+msgid "Upcoming"
+msgstr "ඉදිරියට එන"
+
+msgid "View / Download Reports"
+msgstr "දැක්ම / බාගත වාර්තා"
+
+msgid "Generate a Report"
+msgstr "වාර්තාව ජනනය"
+
+msgid "Configure"
+msgstr "මානන්න"
+
+msgid "Update"
+msgstr "යාවත්කාලීන"
+
+msgid "Applicants"
+msgstr "අයදුම්කරුවන්"
+
+msgid "Active Jobs"
+msgstr "ක්රියාකාරී රැකියා"
+
+msgid "Jobs Posted"
+msgstr "රැකියා ගන්න"
+
+msgid "Jobs"
+msgstr "රැකියා"
+
+msgid "Courses"
+msgstr "පාඨමාලා"
+
+msgid "Requests"
+msgstr "ඉල්ලීම්"
+
+msgid "Document"
+msgstr "ලේඛන"
+
+msgid "Management"
+msgstr "කළමනාකරණ"
+
+msgid "Expense"
+msgstr "වියදම්"
+
+msgid "Permission"
+msgstr "අවසර"
+
+msgid "Permissions"
+msgstr "අවසර"
+
+msgid "and"
+msgstr "සහ"
+
+msgid "Invoices"
+msgstr "ඉන්වොයිසි"
+
+msgid "Make a Payment"
+msgstr "ගෙවීම් කිරීමට"
+
+msgid "Switch Employee"
+msgstr "ස්විච් සේවක"
+
+msgid "Select The Employee to Switch Into"
+msgstr "බවට පත් මාරුවෙන්න කිරීමට සේවක තෝරන්න"
+
+msgid "Close"
+msgstr "සමීප"
+
+msgid "My Profile"
+msgstr "මගේ තොරතුරු"
+
+msgid "Edit Details"
+msgstr "සංස්කරණය කරන්න විස්තර"
+
+msgid "View/Edit Profile"
+msgstr "දැක්ම / සංස්කරණය කරන්න නරඹන්න"
+
+msgid "Punch In"
+msgstr "දී ඕනැතරම්"
+
+msgid "or"
+msgstr "හෝ"
+
+msgid "Punch Out"
+msgstr "න් ඕනැතරම්"
+
+msgid "Record Attendance"
+msgstr "වාර්තා පැමිණීම"
+
+msgid "Pending Leaves"
+msgstr "විභාග පත්ර"
+
+msgid "Check Leave Status"
+msgstr "නිවාඩු තත්ත්වය පරීක්ෂා කරන්න"
+
+msgid "Hours worked Last Week"
+msgstr "පැය වැඩ අවසන් සතිය"
+
+msgid "Update Time Sheet"
+msgstr "යාවත්කාලීන වේලාව පත්රය"
+
+msgid "My Projects"
+msgstr "මගේ ව්යාපෘති"
+
+msgid "Projects Assigned"
+msgstr "නොම්මර ව්යාපෘති"
+
+msgid "More info"
+msgstr "වැඩි තොරතුරු"
+
+msgid "Store"
+msgstr "ගබඩා"
+
+msgid "My Travel"
+msgstr "මගේ ගමන්"
+
+msgid "My Expenses"
+msgstr "මගේ වියදම්"
+
+msgid "Manage Expenses"
+msgstr "වියදම් කළමනාකරණය"
+
+msgid "ID"
+msgstr "හැඳුනුම්පත"
+
+msgid "Name"
+msgstr "නම"
+
+msgid "Address"
+msgstr "ලිපිනය"
+
+msgid "Type"
+msgstr "වර්ගය"
+
+msgid "Country"
+msgstr "රට"
+
+msgid "Time Zone"
+msgstr "වේලා කලාපය"
+
+msgid "Parent Structure"
+msgstr "මව් ව්යුහය"
+
+msgid "Details"
+msgstr "විස්තර"
+
+msgid "Heads"
+msgstr "ප්රධානීන්"
+
+msgid "Code"
+msgstr "කේතය"
+
+msgid "Job Title Code"
+msgstr "රැකියා හිමිකම් සංග්රහයේ"
+
+msgid "Job Title"
+msgstr "රැකියා තනතුර"
+
+msgid "Description"
+msgstr "විස්තර"
+
+msgid "Specification"
+msgstr "පිරිවිතර"
+
+msgid "Currency"
+msgstr "මුදල්"
+
+msgid "Min Salary"
+msgstr "අවම වැටුප"
+
+msgid "Max Salary"
+msgstr "මැක්ස් වැටුප"
+
+msgid "Pay Grade Name"
+msgstr "ගෙවීමට ශ්රේණියේ නම"
+
+msgid "Employment Status"
+msgstr "රැකියා තත්වය"
+
+msgid "Coordinator"
+msgstr "සම්බන්ධීකාරක"
+
+msgid "Trainer"
+msgstr "පුහුණුකරු"
+
+msgid "Trainer Details"
+msgstr "පුහුණුකරු විස්තර"
+
+msgid "Payment Type"
+msgstr "ගෙවීම් වර්ගය"
+
+msgid "Cost"
+msgstr "පිරිවැය"
+
+msgid "Status"
+msgstr "තත්ත්වය"
+
+msgid "Course"
+msgstr "පාඨමාලාව"
+
+msgid "Scheduled Time"
+msgstr "නියමිත වේලාව"
+
+msgid "Assignment Due Date"
+msgstr "පැවරුම නියමිත දිනය"
+
+msgid "Delivery Method"
+msgstr "සැපයුම් ක්රමය"
+
+msgid "Delivery Location"
+msgstr "සැපයුම් ස්ථානය"
+
+msgid "Attendance Type"
+msgstr "පැමිණීම වර්ගය"
+
+msgid "Attachment"
+msgstr "ඇමුණුම්"
+
+msgid "Training Certificate Required"
+msgstr "පුහුණු සහතිකය අවශ්ය"
+
+msgid "Employee"
+msgstr "සේවක"
+
+msgid "Training Session"
+msgstr "පුහුණු සැසිය"
+
+msgid "Contact Number"
+msgstr "ඇමතුම් අංකය"
+
+msgid "Contact Email"
+msgstr "අප අමතන්න විද්යුත්"
+
+msgid "Company Url"
+msgstr "සමාගම අඩවිය"
+
+msgid "First Contact Date"
+msgstr "පළමු අමතන්න දිනය"
+
+msgid "Client"
+msgstr "සේවාලාභියා"
+
+msgid "Project"
+msgstr "ව්යාපෘති"
+
+msgid "Leave Name"
+msgstr "අවසරය, නම"
+
+msgid "Leave Accrue Enabled"
+msgstr "අවසරය, පළාත මුළුමනින්ම ස"
+
+msgid "Leave Carried Forward"
+msgstr "අවසරය, ඉදිරියට ගෙන"
+
+msgid "Leaves Per Year"
+msgstr "වසරකට කොළ"
+
+msgid "Leaves Group"
+msgstr "කොළ සමූහය"
+
+msgid "Leaves Per Leave Period"
+msgstr "එක් නිවාඩු කාලය පිටත්"
+
+msgid "Admin can assign leave to employees"
+msgstr "පරිපාලක සේවකයින් සඳහා නිවාඩු ලබා දිය හැකි"
+
+msgid "Employees can apply for this leave type"
+msgstr "සේවකයින් මේ නිවාඩු වර්ගය සඳහා ඉල්ලුම් කළ හැකි"
+
+msgid "Employees can apply beyond the current leave balance"
+msgstr "සේවක වර්තමාන නිවාඩු ශේෂ ඔබ්බට අයදුම් කළ හැකිය"
+
+msgid "Percentage of Leaves Carried Forward"
+msgstr "පත්ර ප්රතිශතය ඉදිරි ස්ථානමාරුව"
+
+msgid "Maximum Carried Forward Amount"
+msgstr "උපරිම ස්ථානමාරුව ඉදිරි මුදල"
+
+msgid "Carried Forward Leave Availability Period"
+msgstr "සිදු ඉදිරි නිවාඩු ලැබිය හැකි කාලය"
+
+msgid "Proportionate leaves on Joined Date"
+msgstr "ඒකබද්ධ දිනය මත අනුපාත කොළ"
+
+msgid "Send Notification Emails"
+msgstr "නිවේදනය විද්යුත් තැපැල් පණිවුඩ යවන්න"
+
+msgid "Leave Group"
+msgstr "සමූහ තබන්න"
+
+msgid "Leave Color"
+msgstr "වර්ණ තබන්න"
+
+msgid "Period Start"
+msgstr "කාලය ආරම්භය"
+
+msgid "Period End"
+msgstr "කාලය අවසානය"
+
+msgid "Day"
+msgstr "දවස"
+
+msgid "For All Countries"
+msgstr "සියලුම රටවල් සඳහා"
+
+msgid "Date"
+msgstr "දිනය"
+
+msgid "Leave Type"
+msgstr "වර්ගය තබන්න"
+
+msgid "Propotionate leaves on Joined Date"
+msgstr "Propotionate ඒකබද්ධ දිනය කොළ"
+
+msgid "Leaves Period"
+msgstr "කාලය පිටත්"
+
+msgid "Leave Amount"
+msgstr "මුදල තබන්න"
+
+msgid "Leave Period"
+msgstr "කාලය Leave"
+
+msgid "Note"
+msgstr "සටහන"
+
+msgid "All Employees"
+msgstr "සියලු සේවක"
+
+msgid "All Leave Types"
+msgstr "සියලු වර්ග තබන්න"
+
+msgid "Loan Type"
+msgstr "ණය වර්ගය"
+
+msgid "Loan Start Date"
+msgstr "ණය ඇරඹුම් දිනය"
+
+msgid "Loan Period (Months)"
+msgstr "ණය කාලය (මාස)"
+
+msgid "Amount"
+msgstr "ප්රමාණය"
+
+msgid "Last Installment Date"
+msgstr "පසුගිය වාරික දිනය"
+
+msgid "Loan Amount"
+msgstr "ණය මුදල"
+
+msgid "Monthly Installment"
+msgstr "මාසික වාරික"
+
+msgid "Employee Number"
+msgstr "සේවක සංඛ්යාව"
+
+msgid "First Name"
+msgstr "මුල් නම"
+
+msgid "Middle Name"
+msgstr "මැද නම"
+
+msgid "Last Name"
+msgstr "අවසන් නම"
+
+msgid "Nationality"
+msgstr "ජාතිය"
+
+msgid "Date of Birth"
+msgstr "උපන්දිනය"
+
+msgid "Gender"
+msgstr "ස්ත්රී පුරුෂ භාවය"
+
+msgid "Marital Status"
+msgstr "විවාහක අවිවාහක බව"
+
+msgid "Ethnicity"
+msgstr "ජනවාර්ගික"
+
+msgid "Immigration Status"
+msgstr "ආගමන තත්ත්වය"
+
+msgid "SSN/NRIC"
+msgstr "SSN / NRIC"
+
+msgid "NIC"
+msgstr "ජාතික හැඳුනුම්පත්"
+
+msgid "Other ID"
+msgstr "වෙනත් ID"
+
+msgid "Driving License No"
+msgstr "රියදුරු බලපත්ර අංක"
+
+msgid "Pay Grade"
+msgstr "ගෙවීමට ශ්රේණියේ"
+
+msgid "Work Station Id"
+msgstr "ස්ථානය අංකය වැඩ"
+
+msgid "Address Line 1"
+msgstr "ලිපින පේළි 1"
+
+msgid "Address Line 2"
+msgstr "ලිපින පේළිය 2"
+
+msgid "City"
+msgstr "නගරය"
+
+msgid "Province"
+msgstr "පළාත"
+
+msgid "Postal/Zip Code"
+msgstr "තැපැල් කේතය / නගර අංකය"
+
+msgid "Home Phone"
+msgstr "නිවසේ දුරකථනය"
+
+msgid "Mobile Phone"
+msgstr "ජංගම දුරකථන"
+
+msgid "Work Phone"
+msgstr "වැඩ දුරකථන"
+
+msgid "Work Email"
+msgstr "වැඩ විද්යුත්"
+
+msgid "Private Email"
+msgstr "පෞද්ගලික විද්යුත්"
+
+msgid "Joined Date"
+msgstr "එක් දිනය"
+
+msgid "Confirmation Date"
+msgstr "ස්ථිර කිරීම දිනය"
+
+msgid "Termination Date"
+msgstr "සේවය අවසන් දිනය"
+
+msgid "Department"
+msgstr "ෙදපාර්තෙම්න්තුෙව්"
+
+msgid "Supervisor"
+msgstr "සුපරීක්ෂක"
+
+msgid "Indirect Supervisors"
+msgstr "වක්ර පරීක්ෂකවරුන්"
+
+msgid "First Level Approver"
+msgstr "පළමු පෙළ Approver"
+
+msgid "Second Level Approver"
+msgstr "දෙවන පෙළ Approver"
+
+msgid "Third Level Approver"
+msgstr "තෙවන පෙළ Approver"
+
+msgid "Notes"
+msgstr "සටහන්"
+
+msgid "Time (GMT)"
+msgstr "කාලය (GMT)"
+
+msgid "User"
+msgstr "පරිශීලක"
+
+msgid "IP Address"
+msgstr "IP ලිපිනය"
+
+msgid "Logged In Employee"
+msgstr "සේවක ලොගින් වී"
+
+msgid "Skill"
+msgstr "නිපුණතා"
+
+msgid "Qualification"
+msgstr "සුදුසුකම්"
+
+msgid "Institute"
+msgstr "ආයතනය"
+
+msgid "Start Date"
+msgstr "ආරම්භක දිනය"
+
+msgid "Completed On"
+msgstr "දා අවසන්"
+
+msgid "Certification"
+msgstr "සහතික"
+
+msgid "Granted On"
+msgstr "දා ලබා දී"
+
+msgid "Valid Thru"
+msgstr "වලංගු වන්නේ"
+
+msgid "Language"
+msgstr "භාෂාව"
+
+msgid "Reading"
+msgstr "කියවීම"
+
+msgid "Speaking"
+msgstr "කතා කරමින්"
+
+msgid "Writing"
+msgstr "ලේඛන"
+
+msgid "Understanding"
+msgstr "අවබෝධය"
+
+msgid "Date Added"
+msgstr "එකතු කරන දිනය"
+
+msgid "Valid Until"
+msgstr "තුරු වලංගු"
+
+msgid "Relationship"
+msgstr "සම්බන්ධතාවය"
+
+msgid "Id Number"
+msgstr "හැදුනුම්පත් අංකය"
+
+msgid "All Job Titles"
+msgstr "සියලු රැකියා මාතෘකා"
+
+msgid "All Departments"
+msgstr "සියලු ෙදපාර්තෙම්න්තු"
+
+msgid "Anyone"
+msgstr "ඕනෑම කෙනෙකුට"
+
+msgid "Field"
+msgstr "ක්ෂේත්ර"
+
+msgid "Old Value"
+msgstr "පරණ අගය"
+
+msgid "New Value"
+msgstr "නව අගය"
+
+msgid "Modified By"
+msgstr "කිරීම නවීකරණය කරන ලද"
+
+msgid "Created"
+msgstr "නිර්මාණය"
+
+msgid "Notify Expiry"
+msgstr "කල් ඉකුත් වීමේ දැනුම් දෙන්න"
+
+msgid "Notify Expiry Before One Month"
+msgstr "එක් මාසික පෙර කල් ඉකුත් වීමේ දැනුම් දෙන්න"
+
+msgid "Notify Expiry Before One Week"
+msgstr "සතියකට පෙර කල් ඉකුත් වීමේ දැනුම් දෙන්න"
+
+msgid "Notify Expiry Before One Day"
+msgstr "එක් දින පෙර කල් ඉකුත් වීමේ දැනුම් දෙන්න"
+
+msgid "Travel Type"
+msgstr "සංචාරක වර්ගය"
+
+msgid "Purpose of Travel"
+msgstr "සංචාරක අරමුණ"
+
+msgid "Travel From"
+msgstr "සිට ගමන්"
+
+msgid "Travel To"
+msgstr "කිරීම සඳහා ගමන්"
+
+msgid "Travel Date"
+msgstr "සංචාරක දිනය"
+
+msgid "Return Date"
+msgstr "ආපසු දිනය"
+
+msgid "Total Funding Proposed"
+msgstr "මුළු අරමුදල් යෝජිත"
+
+msgid "Itinerary / Cab Receipt"
+msgstr "සකසන ලද / කැබ් කුවිතාන්සිය"
+
+msgid "Other Attachment 1"
+msgstr "වෙනත් ඇමුණුම් 1"
+
+msgid "Other Attachment 2"
+msgstr "වෙනත් ඇමුණුම් 2"
+
+msgid "Payment Method"
+msgstr "ගෙවීමේ ක්රමය"
+
+msgid "Transaction / Ref No"
+msgstr "ගනුදෙනු / අංකය නොමැත"
+
+msgid "Payee"
+msgstr "ලබන්නා"
+
+msgid "Expense Category"
+msgstr "වියදම් ප්රවර්ගය"
+
+msgid "Receipt"
+msgstr "කුවිතාන්සිය"
+
+msgid "Time-In"
+msgstr "කාලය තුළ"
+
+msgid "Time-Out"
+msgstr "කාලය හමාරයි"
+
+msgid "Clocked In Status"
+msgstr "තත්ත්වය දී ඇති බවට පුරෝකතනය"
+
+msgid "End Date"
+msgstr "අවසාන දිනය"
+
+msgid "Category"
+msgstr "වර්ගය"
+
+msgid "Start Time"
+msgstr "ආරම්භක වේලාව"
+
+msgid "End Time"
+msgstr "අවසන් කාල"
+
+msgid "Leave Status"
+msgstr "තත්ත්වය තබන්න"
+
+msgid "Select Client"
+msgstr "සේවාලාභියා තෝරන්න"
+
+msgid "Not Selected"
+msgstr "තෝරා නැත"
+
+msgid "Or Project"
+msgstr "ව්යාපෘතියක් හෝ"
+
+msgid "All Projects"
+msgstr "සියලුම ව්යාපෘති"
+
+msgid "All Status"
+msgstr "සියලු තත්ත්වය"
+
+msgid "Value"
+msgstr "වටිනාකම"
+
+msgid "Logo"
+msgstr "ලාංඡනය"
+
+msgid "User Name"
+msgstr "පරිශීලක නාමය"
+
+msgid "Authentication Email"
+msgstr "තහවුරු කරගැනීමේ විද්යුත්"
+
+msgid "User Level"
+msgstr "පරිශීලක පෙළ"
+
+msgid "Email"
+msgstr "විද්යුත් තැපෑල"
+
+msgid "User Roles"
+msgstr "පරිශීලක භූමිකා"
+
+msgid "Default Module"
+msgstr "පෙරනිමි මොඩියුලය"
+
+msgid "No Default Module"
+msgstr "කිසිදු පෙරනිමි මොඩියුලය"
+
+msgid "Menu"
+msgstr "මෙනු"
+
+msgid "Group"
+msgstr "සමූහය"
+
+msgid "Order"
+msgstr "නියෝග"
+
+msgid "Path"
+msgstr "මාර්ගය"
+
+msgid "Label"
+msgstr "ලේබලය"
+
+msgid "User Levels"
+msgstr "පරිශීලක පෙළ"
+
+msgid "Module"
+msgstr "මොඩියුලය"
+
+msgid "All Modules"
+msgstr "සියලු මොඩියුල"
+
+msgid "Invoice Period Start"
+msgstr "ඉන්වොයිසිය කාලය ආරම්භය"
+
+msgid "Invoice Period End"
+msgstr "ඉන්වොයිසිය කාලය අවසානය"
+
+msgid "Due date"
+msgstr "ගෙවිය යුතු දිනය"
+
+msgid "Url"
+msgstr "url"
+
+msgid "Original Text"
+msgstr "මුල් පෙළ"
+
+msgid "Mapped Text"
+msgstr "සිතියම් ගත පෙළ"
+
+msgid "Display Status"
+msgstr "ප්රදර්ශනය තත්ත්වය"
+
+msgid "Field Type"
+msgstr "ක්ෂේත්ර වර්ගය"
+
+msgid "Field Label"
+msgstr "ක්ෂේත්ර ලේබල්"
+
+msgid "Validation"
+msgstr "වලංගුකරණය"
+
+msgid "Field Options"
+msgstr "ක්ෂේත්ර විකල්ප"
+
+msgid "Priority"
+msgstr "ප්රමුඛ"
+
+msgid "Display Section"
+msgstr "ප්රදර්ශනය වන වගන්තිය"
+
+msgid "Salary Component Type"
+msgstr "වැටුප් සංරචක වර්ගය"
+
+msgid "Salary Component"
+msgstr "වැටුප් සංරචක"
+
+msgid "Pay Frequency"
+msgstr "වැටුප් සංඛ්යාත"
+
+msgid "Calculation Group"
+msgstr "ගණනය සමූහ"
+
+msgid "None"
+msgstr "නැහැ"
+
+msgid "Calculation Exemptions"
+msgstr "ගණනය නිදහස් කිරීම්"
+
+msgid "Calculations Assigned"
+msgstr "නොම්මර ගණනය කිරීම්"
+
+msgid "Date Start"
+msgstr "දිනය ආරම්භය"
+
+msgid "Date End"
+msgstr "දිනය අවසානය"
+
+msgid "Payslip Template"
+msgstr "Payslip සැකිල්ල"
+
+msgid "Payroll Columns"
+msgstr "වැටුප් තීර"
+
+msgid "Calculation Method"
+msgstr "ගණනය ක්රමය"
+
+msgid "Editable"
+msgstr "සංස්කරණය"
+
+msgid "Enabled"
+msgstr "සක්රීය"
+
+msgid "Predefined Calculations"
+msgstr "කෙළින් ගණනයන්"
+
+msgid "Salary Components"
+msgstr "වැටුප් සංරචක"
+
+msgid "Columns to Add"
+msgstr "එක් කරන්න තීරුව"
+
+msgid "Columns to Subtract"
+msgstr "අඩු තීරු"
+
+msgid "Column Order"
+msgstr "තීරුව න්යාය"
+
+msgid "Default Value"
+msgstr "පෙරනිමි අගය"
+
+msgid "Calculation Columns"
+msgstr "ගණනය තීර"
+
+msgid "Function"
+msgstr "කාර්යයන්"
+
+msgid "Payroll Report Column"
+msgstr "වැටුප් වාර්තාව තීරුව"
+
+msgid "Calculation Process"
+msgstr "ගණනය කිරීමේ ක්රියාවලිය"
+
+msgid "Payslip Fields"
+msgstr "ෆීල්ඩ්ස් Payslip"
+
+msgid "Payroll Column"
+msgstr "වැටුප් වැනි තීරුව"
+
+msgid "Text"
+msgstr "පෙළ"
+
+msgid "Lower Limit Condition"
+msgstr "අඩු සීමාව තත්වය"
+
+msgid "Lower Limit"
+msgstr "අඩු සීමාව"
+
+msgid "Upper Limit Condition"
+msgstr "ඉහළ සීමාව තත්වය"
+
+msgid "Upper Limit"
+msgstr "ඉහළ සීමාව"
+
+msgid "Column"
+msgstr "තීරුව"
+
+msgid "Job Code"
+msgstr "රැකියා සංග්රහයේ"
+
+msgid "Short Description"
+msgstr "කෙටි විස්තරය"
+
+msgid "Requirements"
+msgstr "අවශ්යතා"
+
+msgid "Benefits"
+msgstr "ප්රතිලාභ"
+
+msgid "Employment Type"
+msgstr "රැකියා වර්ගය"
+
+msgid "Any Employment Type"
+msgstr "ඕනෑම සේවා නියුක්ති වර්ගය"
+
+msgid "Experience Level"
+msgstr "අත්දැකීම් පෙළ"
+
+msgid "Any Experience Level"
+msgstr "ඕනෑම අත්දැකීම් පෙළ"
+
+msgid "Job Function"
+msgstr "රැකියා කාර්යභාරය"
+
+msgid "Any Job Function"
+msgstr "ඕනෑම රැකියා කාර්යභාරය"
+
+msgid "Education Level"
+msgstr "අධ්යාපන මට්ටම"
+
+msgid "Any Education Level"
+msgstr "ඕනෑම අධ්යාපන පෙළ"
+
+msgid "Show Salary"
+msgstr "වැටුප පෙන්වන්න"
+
+msgid "Salary Min"
+msgstr "වැටුප් අවම"
+
+msgid "Salary Max"
+msgstr "වැටුප් මැක්ස්"
+
+msgid "Keywords"
+msgstr "ප්රධාන වචන"
+
+msgid "Closing Date"
+msgstr "අවසන් දිනය"
+
+msgid "Image"
+msgstr "රූප"
+
+msgid "Display Type"
+msgstr "ප්රදර්ශනය වර්ගය"
+
+msgid "Profile Image"
+msgstr "නරඹන්න රූප"
+
+msgid "Telephone"
+msgstr "දුරකථන"
+
+msgid "Resume Title"
+msgstr "නැවත ආරම්භ හිමිකම්"
+
+msgid "Resume"
+msgstr "අරඹන්න"
+
+msgid "Resume Headline"
+msgstr "ශීර්ෂ පාඨ නැවත ආරම්භ"
+
+msgid "Profile Summary"
+msgstr "නරඹන්න සාරාංශය"
+
+msgid "Work History"
+msgstr "රැකියා ඉතිහාසය"
+
+msgid "Education"
+msgstr "අධ්යාපන"
+
+msgid "Skills"
+msgstr "නිපුණතා"
+
+msgid "Referees"
+msgstr "විනිසුරුවන්ගේ"
+
+msgid "From Year"
+msgstr "වසර සිට"
+
+msgid "From Month"
+msgstr "මාසික සිට"
+
+msgid "To Year"
+msgstr "අවුරුද්ද"
+
+msgid "To Month"
+msgstr "මාසික කිරීමට"
+
+msgid "Currently Work Here"
+msgstr "දැනට මෙහි වැඩ"
+
+msgid "Degree/Diploma"
+msgstr "උපාධිය / ඩිප්ලෝමා"
+
+msgid "Currently Studying"
+msgstr "දැනට අධ්යයනය"
+
+msgid "Skill Level"
+msgstr "නිපුණතා මට්ටම"
+
+msgid "Last Used Year"
+msgstr "පසුගිය පාවිච්චි වර්ෂය"
+
+msgid "Last Used Month"
+msgstr "පසුගිය පාවිච්චි මාසික"
+
+msgid "Years of Experience"
+msgstr "වසර ගණනාවක අත්දැකීම්"
+
+msgid "Designation"
+msgstr "තනතුර"
+
+msgid "Phone"
+msgstr "දුරකථන"
+
+msgid "Job"
+msgstr "රැකියා"
+
+msgid "Candidate"
+msgstr "අපේක්ෂක"
+
+msgid "Referred By"
+msgstr "යොමු කරන ලද්දේ"
+
+msgid "Leave Start Date"
+msgstr "ආරම්භ කරන්න දිනය නිවාඩු"
+
+msgid "Leave End Date"
+msgstr "අවසානය දිනය නිවාඩු"
+
+msgid "Reason"
+msgstr "හේතුව"
+
+msgid "Available Leaves"
+msgstr "ලබා ගත හැකි නිසා පත්ර"
+
+msgid "Approved Leaves"
+msgstr "අනුමත පත්ර"
+
+msgid "Rejected Leaves"
+msgstr "ප්රතික්ෂේප පත්ර"
+
+msgid "Leaves to be Accrued"
+msgstr "උපචිත කිරීමට පිටත්"
+
+msgid "Leaves Carried Forward"
+msgstr "ඉදිරියට ගෙන කොළ"
+
+msgid "Apply Leave"
+msgstr "නිවාඩු අයදුම්"
+
+msgid "Filter"
+msgstr "පෙරහන"
+
+msgid "Add New"
+msgstr "අලුතින් එකතු කරන්න"
+
+msgid "Time"
+msgstr "කාලය"
+
+msgid "Purpose"
+msgstr "අරමුණ"
+
+msgid "From"
+msgstr "සිට"
+
+msgid "To"
+msgstr "දක්වා"
+
+msgid "Created (GMT)"
+msgstr "නිර්මාණය (GMT)"
+
+msgid "Download"
+msgstr "බාගත"
+
+msgid "Submit"
+msgstr "ඉදිරිපත්"
+
+msgid "Upload"
+msgstr "උඩුගත"
+
+msgid "Remove"
+msgstr "ඉවත් කරන්න"
+
+msgid "Add"
+msgstr "එක් කරන්න"
+
+msgid "Reset"
+msgstr "නැවත සකසන්න"
+
+msgid "Add Time Entry"
+msgstr "කාල සටහන් එකතු කරන්න"
+
+msgid "Current Clocked In Status"
+msgstr "වත්මන් යොදා තිබුණු තත්ත්වය දී"
+
+msgid "Attendance entry should be within a single day"
+msgstr "පැමිණීම ප්රවේශය එක් දිනක් ඇතුලත විය යුතුය"
+
+msgid "Account Balance"
+msgstr "ගිණුම් ශේෂය"
+
+msgid "Plan"
+msgstr "සැලැස්ම"
+
+msgid "Transactions"
+msgstr "ගනුදෙනු"
+
+msgid "Applications"
+msgstr "අයදුම්පත්"
+
+msgid "Attendance Graph"
+msgstr "පැමිණීම ප්රස්තාරය"
+
+msgid "Hours in Office vs Hours Worked Graph"
+msgstr "ප්රස්තාරය සතු වෘත්තීය පැය එදිරිව කාර්යාලය පැය"
+
+msgid "Company Graph"
+msgstr "සමාගම ප්රස්තාරය"
+
+msgid "Company Documents"
+msgstr "සමාගම ලියකියවිලි"
+
+msgid "Document Types"
+msgstr "ලේඛන වර්ග"
+
+msgid "Employee Documents"
+msgstr "සේවක ලේඛන"
+
+msgid "Employee Basic Details"
+msgstr "සේවක මූලික තොරතුරු"
+
+msgid "Employees (Direct Reports)"
+msgstr "සේවකයන් (සෘජු වාර්තා)"
+
+msgid "Certifications"
+msgstr "සහතික"
+
+msgid "Languages"
+msgstr "භාෂා"
+
+msgid "Deactivated Employees"
+msgstr "වන තුරැ සේවක"
+
+msgid "Temporarily Deactivated Employees"
+msgstr "තාවකාලිකව වන තුරැ සේවක"
+
+msgid "Terminated Employee Data"
+msgstr "අවසන් සේවක දත්ත"
+
+msgid "Employee Saved Successfully"
+msgstr "සේවක සාර්ථකව ගබඩා"
+
+msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
+msgstr "සේවක IceHrm කිරීමට ලොගින් කිරීමට පරිශීලක යුතුය. ඔබ දැන් මේ සේවකයා සඳහා පරිශීලක නිර්මාණය කිරීමට ඔබට අවශ්යද?"
+
+msgid "You can do this later through Users module if required."
+msgstr "ඔබ අවශ්ය නම් පරිශීලකයන් මොඩියුල හරහා පසුව එය කළ හැකි වනු ඇත."
+
+msgid "Expenses Categories"
+msgstr "වියදම් ප්රවර්ග"
+
+msgid "Payment Methods"
+msgstr "ගෙවීම් ක්රම"
+
+msgid "Employee Expenses"
+msgstr "සේවක වියදම්"
+
+msgid "Salary Component Types"
+msgstr "වැටුප් සංරචක වර්ග"
+
+msgid "Employee Salary Components"
+msgstr "සේවක වැටුප් සංරචක"
+
+msgid "Company Payroll"
+msgstr "සමාගම වැටුප්"
+
+msgid "Calculation Groups"
+msgstr "ගණනය කණ්ඩායම්"
+
+msgid "Calculation Methods"
+msgstr "ගණනය ක්රම"
+
+msgid "Payslip Templates"
+msgstr "Payslip ආකෘති පත්ර"
+
+msgid "Edit Employment Types"
+msgstr "සංස්කරණය කරන්න රැකියා වර්ග"
+
+msgid "Edit Experience Levels"
+msgstr "අත්දැකීම් පෙළ සංස්කරණය කරන්න"
+
+msgid "Edit Job Functions"
+msgstr "සංස්කරණය කරන්න රැකියා කාර්යයන්"
+
+msgid "Edit Education Levels"
+msgstr "සංස්කරණය කරන්න අධ්යාපන මට්ටම්"
+
+msgid "Edit Benefits"
+msgstr "සංස්කරණය කරන්න ප්රතිලාභ"
+
+msgid "Application"
+msgstr "අයදුම්පත"
+
+msgid "Job Titles"
+msgstr "රැකියා මාතෘකා"
+
+msgid "Pay Grades"
+msgstr "ශ්රේණි ගෙවීමට"
+
+msgid "Training Sessions"
+msgstr "පුහුණු සැසි"
+
+msgid "Employee Training Sessions"
+msgstr "සේවක පුහුණු සැසි"
+
+msgid "Clients"
+msgstr "සේවාලාභීන්"
+
+msgid "Employee Projects"
+msgstr "සේවක ව්යාපෘති"
+
+msgid "Leave Types"
+msgstr "වර්ග තබන්න"
+
+msgid "Work Week"
+msgstr "වැඩ සතිය"
+
+msgid "Holidays"
+msgstr "නිවාඩු දින"
+
+msgid "Leave Rules"
+msgstr "රීති තබන්න"
+
+msgid "Paid Time Off"
+msgstr "ගෙවුම් කාල Off"
+
+msgid "Leave Groups"
+msgstr "කණ්ඩායම් තබන්න"
+
+msgid "Edit Leave Groups"
+msgstr "සංස්කරණය කරන්න නිවාඩු කණ්ඩායම්"
+
+msgid "Leave Group Employees"
+msgstr "සමූහ සේවක නිවාඩු"
+
+msgid "Employee Leave List"
+msgstr "සේවක නිවාඩු ලැයිස්තුව"
+
+msgid "Loan Types"
+msgstr "ණය වර්ග"
+
+msgid "Employee Loans"
+msgstr "සේවක ණය"
+
+msgid "Travel Requests"
+msgstr "සංචාරක ඉල්ලීම්"
+
+msgid "Overtime Categories"
+msgstr "අතිකාල ප්රවර්ග"
+
+msgid "Leave / PTO"
+msgstr "අවසරය / PTO"
+
+msgid "Other"
+msgstr "වෙනත්"
+
+msgid "Modules"
+msgstr "මොඩියුල"
+
+msgid "Countries"
+msgstr "රටවල්"
+
+msgid "Provinces"
+msgstr "පළාත්"
+
+msgid "Currency Types"
+msgstr "ව්යවහාර මුදල් වර්ග"
+
+msgid "Employee Custom Fields"
+msgstr "සේවක රේගු ෆීල්ඩ්ස්"
+
+msgid "Employee Field Names"
+msgstr "සේවක ක්ෂේත්ර නම්"
+
+msgid "My Details"
+msgstr "මගේ විස්තර"
+
+msgid "All My Leaves"
+msgstr "මාගේ සියලු පත්ර"
+
+msgid "Leave Entitlement"
+msgstr "හිමිකම තබන්න"
+
+msgid "Approved Leave"
+msgstr "අනුමත නිවාඩු"
+
+msgid "Pending Leave"
+msgstr "නිවාඩු විභාග"
+
+msgid "Subordinate Leave"
+msgstr "යටත් නිවාඩු"
+
+msgid "Cancellation Requests"
+msgstr "අවලංගු ඉල්ලීම්"
+
+msgid "Approval Requests"
+msgstr "අනුමැතිය ඉල්ලීම්"
+
+msgid "Approved TimeSheets"
+msgstr "අනුමත TimeSheets"
+
+msgid "All My TimeSheets"
+msgstr "මාගේ සියලු TimeSheets"
+
+msgid "Pending TimeSheets"
+msgstr "ෙ TimeSheets"
+
+msgid "Subordinate TimeSheets"
+msgstr "යටත් TimeSheets"
+
+msgid "Approved Attendance Sheets"
+msgstr "අනුමත පැමිණීම පත්ර"
+
+msgid "All My Attendance Sheets"
+msgstr "මාගේ සියලු පැමිණීම පත්ර"
+
+msgid "Pending Attendance Sheets"
+msgstr "විභාග පැමිණීම පත්ර"
+
+msgid "Subordinate Attendance Sheets"
+msgstr "යටත් පැමිණීම පත්ර"
+
+msgid "Subordinate Overtime Requests"
+msgstr "යටත් අතිකාල ඉල්ලීම්"
+
+msgid "Overtime Request Approval"
+msgstr "අතිකාල, ඉල්ලීම් අනුමත"
+
+msgid "My Training Sessions"
+msgstr "මගේ පුහුණු සැසි"
+
+msgid "All Training Sessions"
+msgstr "සියලු පුහුණු සැසි"
+
+msgid "Training Sessions of Direct Reports"
+msgstr "සෘජු වාර්තා පුහුණු සැසි"
+
+msgid "Subordinate Travel Requests"
+msgstr "යටත් සංචාරක ඉල්ලීම්"
+
+msgid "Travel Request Approval"
+msgstr "සංචාරක ඉල්ලීම අනුමත"
+
+msgid "Subordinate Expenses"
+msgstr "යටත් වියදම්"
+
+msgid "Expenses Approval"
+msgstr "වියදම් අනුමත කිරීම"
+
+msgid "Loans Taken"
+msgstr "ගත වන ණය"
+
+msgid "Change Leave Status"
+msgstr "නිවාඩු තත්ත්වය වෙනස්"
+
+msgid "Leave Status"
+msgstr "තත්ත්වය තබන්න"
+
+msgid "Status Change Note"
+msgstr "තත්ත්වය සටහන වෙනස්"
+
+msgid "Leave Summary"
+msgstr "අවසරය සාරාංශය"
+
+msgid "Approved Leave Count"
+msgstr "අනුමත නිවාඩු ගණන්"
+
+msgid "Pending Leave Count"
+msgstr "විභාග නිවාඩු ගණන්"
+
+msgid "Available Leave Count"
+msgstr "ලබා ගත හැකි නිවාඩු ගණන්"
+
+msgid "Leave Dates"
+msgstr "දිනයන් නිවාඩු"
+
+msgid "Leave Date"
+msgstr "අවසරය, දිනය"
+
+msgid "Leave Notes"
+msgstr "සටහන් තබන්න"
+
+msgid "Apply"
+msgstr "අදාළ"
+
+msgid "Back"
+msgstr "ආපසු"
+

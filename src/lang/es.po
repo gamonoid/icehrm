@@ -1,0 +1,1601 @@
+msgid ""
+msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: Spanish\n"
+"Language-Team: IceHrm\n"
+"Last-Translator: Thilina Hasantha\n"
+"MIME-Version: 1.0\n"
+"Project-Id-Version: 18.0\n"
+"Report-Msgid-Bugs-To: https://icehrm.com\n"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Done"
+msgstr "Hecho"
+
+msgid "Clocked In Employees"
+msgstr "En Clocked empleados"
+
+msgid "Candidates"
+msgstr "Los candidatos"
+
+msgid "View Employees"
+msgstr "Ver Empleados"
+
+msgid "Add a New Employee"
+msgstr "Añadir un nuevo empleado"
+
+msgid "Leave Calendar"
+msgstr "Deja Calendario"
+
+msgid "Manage Client/Projects"
+msgstr "Manejo de Clientes / Proyectos"
+
+msgid "Home"
+msgstr "Casa"
+
+msgid "Quick Access"
+msgstr "Acceso rapido"
+
+msgid "Switch"
+msgstr "Cambiar"
+
+msgid "Profile"
+msgstr "Perfil"
+
+msgid "Sign out"
+msgstr "Desconectar"
+
+msgid "Help"
+msgstr "Ayuda"
+
+msgid "About"
+msgstr "Acerca de"
+
+msgid "Version"
+msgstr "Versión"
+
+msgid "Release Date"
+msgstr "Fecha de lanzamiento"
+
+msgid "Logged In"
+msgstr "Conectado"
+
+msgid "Admin"
+msgstr "Administración"
+
+msgid "Dashboard"
+msgstr "Tablero"
+
+msgid "Company Structure"
+msgstr "Estructura de la empresa"
+
+msgid "Job Details Setup"
+msgstr "Detalles del trabajo de instalación"
+
+msgid "Qualifications Setup"
+msgstr "Configuración de las calificaciones"
+
+msgid "Training Setup"
+msgstr "Configuración de la formación"
+
+msgid "Projects/Client Setup"
+msgstr "Proyectos / Configuración de clientes"
+
+msgid "Leave Settings"
+msgstr "Deja Ajustes"
+
+msgid "Company Loans"
+msgstr "Tarjeta de Crédito"
+
+msgid "Audit Log"
+msgstr "Registro de auditoría"
+
+msgid "Employees"
+msgstr "Empleados"
+
+msgid "Employee History"
+msgstr "Historia de los empleados"
+
+msgid "Document Management"
+msgstr "Gestión de documentos"
+
+msgid "Travel Administration"
+msgstr "Administración del viaje"
+
+msgid "Expense Administration"
+msgstr "Administración de Gastos"
+
+msgid "Monitor Attendance"
+msgstr "La asistencia del monitor"
+
+msgid "Performance Charts"
+msgstr "Tablas de rendimiento"
+
+msgid "Overtime Administration"
+msgstr "Administración de las horas extraordinarias"
+
+msgid "Admin Reports"
+msgstr "Admin informes"
+
+msgid "Reports"
+msgstr "Informes"
+
+msgid "Report Files"
+msgstr "Los archivos de informe"
+
+msgid "System"
+msgstr "Sistema"
+
+msgid "Settings"
+msgstr "Ajustes"
+
+msgid "Users"
+msgstr "Usuarios"
+
+msgid "Manage Modules"
+msgstr "Administrar módulos"
+
+msgid "Manage Permissions"
+msgstr "Administrar permisos"
+
+msgid "Upgrade"
+msgstr "Mejorar"
+
+msgid "Manage Metadata"
+msgstr "Manejo de metadatos"
+
+msgid "Field Names Setup"
+msgstr "Configuración de nombres de campo"
+
+msgid "Payroll"
+msgstr "Nómina de sueldos"
+
+msgid "Salary"
+msgstr "Salario"
+
+msgid "Payroll Reports"
+msgstr "Los informes de nómina"
+
+msgid "Recruitment"
+msgstr "Reclutamiento"
+
+msgid "Recruitment Setup"
+msgstr "Configuración de contratación"
+
+msgid "Job Positions"
+msgstr "Puestos de trabajo"
+
+msgid "Personal Information"
+msgstr "Informacion personal"
+
+msgid "Basic Information"
+msgstr "Información básica"
+
+msgid "Qualifications"
+msgstr "Calificaciones"
+
+msgid "Dependents"
+msgstr "Dependientes"
+
+msgid "Emergency Contacts"
+msgstr "Contactos de emergencia"
+
+msgid "Leave"
+msgstr "Salir"
+
+msgid "Leave Management"
+msgstr "Deja Gestión"
+
+msgid "Time Management"
+msgstr "Gestión del tiempo"
+
+msgid "Projects"
+msgstr "Proyectos"
+
+msgid "Attendance"
+msgstr "Asistencia"
+
+msgid "Time Sheets"
+msgstr "Las hojas de asistencia"
+
+msgid "Attendance Sheets"
+msgstr "Las hojas de asistencia"
+
+msgid "Overtime Requests"
+msgstr "Las solicitudes de horas extraordinarias"
+
+msgid "Documents"
+msgstr "Documentos"
+
+msgid "My Documents"
+msgstr "Mis documentos"
+
+msgid "Company"
+msgstr "Empresa"
+
+msgid "Staff Directory"
+msgstr "Directorio de Personal"
+
+msgid "Training"
+msgstr "Formación"
+
+msgid "Travel Management"
+msgstr "Gestión de viajes"
+
+msgid "Travel"
+msgstr "Viajar"
+
+msgid "Finance"
+msgstr "Financiar"
+
+msgid "Expenses"
+msgstr "Gastos"
+
+msgid "Loans"
+msgstr "Préstamos"
+
+msgid "User Reports"
+msgstr "Informes de usuarios"
+
+msgid "People"
+msgstr "Gente"
+
+msgid "Manage"
+msgstr "Gestionar"
+
+msgid "Departments"
+msgstr "Departamentos"
+
+msgid "Active Projects"
+msgstr "Proyectos activos"
+
+msgid "Update Clients/Projects"
+msgstr "Actualizar Clientes / Proyectos"
+
+msgid "Entries Last Week"
+msgstr "La semana pasada entradas"
+
+msgid "Upcoming"
+msgstr "Próximas"
+
+msgid "View / Download Reports"
+msgstr "Ver / Descargar informes"
+
+msgid "Generate a Report"
+msgstr "Generar un Informe"
+
+msgid "Configure"
+msgstr "Configurar"
+
+msgid "Update"
+msgstr "Actualizar"
+
+msgid "Applicants"
+msgstr "Solicitantes"
+
+msgid "Active Jobs"
+msgstr "Trabajos activos"
+
+msgid "Jobs Posted"
+msgstr "Trabajos Publicados"
+
+msgid "Jobs"
+msgstr "Trabajos"
+
+msgid "Courses"
+msgstr "Cursos"
+
+msgid "Requests"
+msgstr "Peticiones"
+
+msgid "Document"
+msgstr "Documento"
+
+msgid "Management"
+msgstr "Administración"
+
+msgid "Expense"
+msgstr "Gastos"
+
+msgid "Permission"
+msgstr "Permiso"
+
+msgid "Permissions"
+msgstr "Permisos"
+
+msgid "and"
+msgstr "Y"
+
+msgid "Invoices"
+msgstr "Facturas"
+
+msgid "Make a Payment"
+msgstr "Realizar un pago"
+
+msgid "Switch Employee"
+msgstr "Interruptor Empleado"
+
+msgid "Select The Employee to Switch Into"
+msgstr "Seleccionar el empleado para modificar en"
+
+msgid "Close"
+msgstr "Cerca"
+
+msgid "My Profile"
+msgstr "Mi perfil"
+
+msgid "Edit Details"
+msgstr "Editar detalles"
+
+msgid "View/Edit Profile"
+msgstr "Ver / Editar Perfil"
+
+msgid "Punch In"
+msgstr "Golpe en"
+
+msgid "or"
+msgstr "O"
+
+msgid "Punch Out"
+msgstr "Perforar"
+
+msgid "Record Attendance"
+msgstr "Registro de asistencia"
+
+msgid "Pending Leaves"
+msgstr "Las hojas pendientes"
+
+msgid "Check Leave Status"
+msgstr "Compruebe Dejar Estado"
+
+msgid "Hours worked Last Week"
+msgstr "Las horas trabajadas de la semana pasada"
+
+msgid "Update Time Sheet"
+msgstr "Hoja de Tiempo de actualización"
+
+msgid "My Projects"
+msgstr "Mis proyectos"
+
+msgid "Projects Assigned"
+msgstr "Proyectos asignados"
+
+msgid "More info"
+msgstr "Más información"
+
+msgid "Store"
+msgstr "Almacenar"
+
+msgid "My Travel"
+msgstr "Mi viaje"
+
+msgid "My Expenses"
+msgstr "Mis gastos"
+
+msgid "Manage Expenses"
+msgstr "Gestionar los gastos"
+
+msgid "ID"
+msgstr "CARNÉ DE IDENTIDAD"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Address"
+msgstr "Dirección"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Country"
+msgstr "País"
+
+msgid "Time Zone"
+msgstr "Zona horaria"
+
+msgid "Parent Structure"
+msgstr "Estructura de los padres"
+
+msgid "Details"
+msgstr "Detalles"
+
+msgid "Heads"
+msgstr "Jefes"
+
+msgid "Code"
+msgstr "Código"
+
+msgid "Job Title Code"
+msgstr "Trabajo Código Título"
+
+msgid "Job Title"
+msgstr "Título profesional"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Specification"
+msgstr "Especificación"
+
+msgid "Currency"
+msgstr "Moneda"
+
+msgid "Min Salary"
+msgstr "Min Salario"
+
+msgid "Max Salary"
+msgstr "Max Salario"
+
+msgid "Pay Grade Name"
+msgstr "Nombre Grado de Pago"
+
+msgid "Employment Status"
+msgstr "Estado de Empleo"
+
+msgid "Coordinator"
+msgstr "Coordinador"
+
+msgid "Trainer"
+msgstr "Entrenador"
+
+msgid "Trainer Details"
+msgstr "Trainer Detalles"
+
+msgid "Payment Type"
+msgstr "Tipo de pago"
+
+msgid "Cost"
+msgstr "Costo"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Course"
+msgstr "Curso"
+
+msgid "Scheduled Time"
+msgstr "Hora programada"
+
+msgid "Assignment Due Date"
+msgstr "Asignación Fecha de vencimiento"
+
+msgid "Delivery Method"
+msgstr "Método de entrega"
+
+msgid "Delivery Location"
+msgstr "Localización de la entrega"
+
+msgid "Attendance Type"
+msgstr "Tipo de asistencia"
+
+msgid "Attachment"
+msgstr "Adjunto archivo"
+
+msgid "Training Certificate Required"
+msgstr "Entrenamiento Certificado Obligatorio"
+
+msgid "Employee"
+msgstr "Empleado"
+
+msgid "Training Session"
+msgstr "Sesión de entrenamiento"
+
+msgid "Contact Number"
+msgstr "Número de contacto"
+
+msgid "Contact Email"
+msgstr "Email de contacto"
+
+msgid "Company Url"
+msgstr "URL de la compañía"
+
+msgid "First Contact Date"
+msgstr "Primer Contacto Fecha"
+
+msgid "Client"
+msgstr "Cliente"
+
+msgid "Project"
+msgstr "Proyecto"
+
+msgid "Leave Name"
+msgstr "Deja Nombre"
+
+msgid "Leave Accrue Enabled"
+msgstr "Deja Acumula Habilitado"
+
+msgid "Leave Carried Forward"
+msgstr "Deja Realizada"
+
+msgid "Leaves Per Year"
+msgstr "Deja por año"
+
+msgid "Leaves Group"
+msgstr "Grupo de hojas"
+
+msgid "Leaves Per Leave Period"
+msgstr "Dejar hojas por Período"
+
+msgid "Admin can assign leave to employees"
+msgstr "El administrador puede asignar licencias de los empleados"
+
+msgid "Employees can apply for this leave type"
+msgstr "Los empleados pueden solicitar este tipo de licencia"
+
+msgid "Employees can apply beyond the current leave balance"
+msgstr "Los empleados pueden solicitar más allá del equilibrio licencia actual"
+
+msgid "Percentage of Leaves Carried Forward"
+msgstr "Porcentaje de hojas Realizada"
+
+msgid "Maximum Carried Forward Amount"
+msgstr "Realizada Monto máximo"
+
+msgid "Carried Forward Leave Availability Period"
+msgstr "Período de disponibilidad llevado adelante Dejar"
+
+msgid "Proportionate leaves on Joined Date"
+msgstr "Hojas proporcionadas en Fecha de registro"
+
+msgid "Send Notification Emails"
+msgstr "Enviar mensajes de notificación"
+
+msgid "Leave Group"
+msgstr "Dejar el grupo"
+
+msgid "Leave Color"
+msgstr "Dejar color"
+
+msgid "Period Start"
+msgstr "Inicio período"
+
+msgid "Period End"
+msgstr "Fin periodo"
+
+msgid "Day"
+msgstr "Día"
+
+msgid "For All Countries"
+msgstr "Para todos los países"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Leave Type"
+msgstr "Dejar Tipo"
+
+msgid "Propotionate leaves on Joined Date"
+msgstr "Propotionate deja en Fecha de registro"
+
+msgid "Leaves Period"
+msgstr "Deja el Período"
+
+msgid "Leave Amount"
+msgstr "Deja Monto"
+
+msgid "Leave Period"
+msgstr "Deja Periodo"
+
+msgid "Note"
+msgstr "Nota"
+
+msgid "All Employees"
+msgstr "Todos los empleados"
+
+msgid "All Leave Types"
+msgstr "Tipos todos Leave"
+
+msgid "Loan Type"
+msgstr "Tipo de préstamo"
+
+msgid "Loan Start Date"
+msgstr "Préstamo Fecha de Inicio"
+
+msgid "Loan Period (Months)"
+msgstr "Período de préstamo (Meses)"
+
+msgid "Amount"
+msgstr "Cantidad"
+
+msgid "Last Installment Date"
+msgstr "Fecha última cuota"
+
+msgid "Loan Amount"
+msgstr "Monto del préstamo"
+
+msgid "Monthly Installment"
+msgstr "Pagos mensuales"
+
+msgid "Employee Number"
+msgstr "Número de empleado"
+
+msgid "First Name"
+msgstr "Nombre de pila"
+
+msgid "Middle Name"
+msgstr "Segundo nombre"
+
+msgid "Last Name"
+msgstr "Apellido"
+
+msgid "Nationality"
+msgstr "Nacionalidad"
+
+msgid "Date of Birth"
+msgstr "Fecha de nacimiento"
+
+msgid "Gender"
+msgstr "Género"
+
+msgid "Marital Status"
+msgstr "Estado civil"
+
+msgid "Ethnicity"
+msgstr "Etnicidad"
+
+msgid "Immigration Status"
+msgstr "Estado de inmigración"
+
+msgid "SSN/NRIC"
+msgstr "SSN / NRIC"
+
+msgid "NIC"
+msgstr "NIC"
+
+msgid "Other ID"
+msgstr "Otra identificación"
+
+msgid "Driving License No"
+msgstr "Sin carné de conducir"
+
+msgid "Pay Grade"
+msgstr "Grado de pago"
+
+msgid "Work Station Id"
+msgstr "Estación de trabajo Id"
+
+msgid "Address Line 1"
+msgstr "Dirección Línea 1"
+
+msgid "Address Line 2"
+msgstr "Dirección Línea 2"
+
+msgid "City"
+msgstr "Ciudad"
+
+msgid "Province"
+msgstr "Provincia"
+
+msgid "Postal/Zip Code"
+msgstr "Código Postal / Zip"
+
+msgid "Home Phone"
+msgstr "Teléfono de casa"
+
+msgid "Mobile Phone"
+msgstr "Teléfono móvil"
+
+msgid "Work Phone"
+msgstr "Teléfono del trabajo"
+
+msgid "Work Email"
+msgstr "Correo electrónico del trabajo"
+
+msgid "Private Email"
+msgstr "Correo privado"
+
+msgid "Joined Date"
+msgstr "Fecha de Registro"
+
+msgid "Confirmation Date"
+msgstr "Fecha de confirmación"
+
+msgid "Termination Date"
+msgstr "Fecha de conclusión"
+
+msgid "Department"
+msgstr "Departamento"
+
+msgid "Supervisor"
+msgstr "Supervisor"
+
+msgid "Indirect Supervisors"
+msgstr "Los supervisores indirectos"
+
+msgid "First Level Approver"
+msgstr "Primer Nivel aprobador"
+
+msgid "Second Level Approver"
+msgstr "Segundo Nivel aprobador"
+
+msgid "Third Level Approver"
+msgstr "Tercer nivel aprobador"
+
+msgid "Notes"
+msgstr "Notas"
+
+msgid "Time (GMT)"
+msgstr "(GMT)"
+
+msgid "User"
+msgstr "Usuario"
+
+msgid "IP Address"
+msgstr "Dirección IP"
+
+msgid "Logged In Employee"
+msgstr "E ingresados ​​Empleado"
+
+msgid "Skill"
+msgstr "Habilidad"
+
+msgid "Qualification"
+msgstr "Calificación"
+
+msgid "Institute"
+msgstr "Instituto"
+
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+msgid "Completed On"
+msgstr "Completado en"
+
+msgid "Certification"
+msgstr "Proceso de dar un título"
+
+msgid "Granted On"
+msgstr "En concedida"
+
+msgid "Valid Thru"
+msgstr "A través de validación"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "Reading"
+msgstr "Leyendo"
+
+msgid "Speaking"
+msgstr "Hablando"
+
+msgid "Writing"
+msgstr "Escritura"
+
+msgid "Understanding"
+msgstr "Comprensión"
+
+msgid "Date Added"
+msgstr "Fecha Agregada"
+
+msgid "Valid Until"
+msgstr "Válido hasta"
+
+msgid "Relationship"
+msgstr "Relación"
+
+msgid "Id Number"
+msgstr "Número de identificación"
+
+msgid "All Job Titles"
+msgstr "Todas las Profesiones"
+
+msgid "All Departments"
+msgstr "Todos los departamentos"
+
+msgid "Anyone"
+msgstr "Nadie"
+
+msgid "Field"
+msgstr "Campo"
+
+msgid "Old Value"
+msgstr "Valor antiguo"
+
+msgid "New Value"
+msgstr "Nuevo valor"
+
+msgid "Modified By"
+msgstr "Modificado por"
+
+msgid "Created"
+msgstr "Creado"
+
+msgid "Notify Expiry"
+msgstr "Notificar caducidad"
+
+msgid "Notify Expiry Before One Month"
+msgstr "Notificar caducidad Antes de un mes"
+
+msgid "Notify Expiry Before One Week"
+msgstr "Antes de notificar de caducidad Una Semana"
+
+msgid "Notify Expiry Before One Day"
+msgstr "Antes de notificar a un día de expiración"
+
+msgid "Travel Type"
+msgstr "Tipo de Viaje"
+
+msgid "Purpose of Travel"
+msgstr "Propósito de viaje"
+
+msgid "Travel From"
+msgstr "De viajes"
+
+msgid "Travel To"
+msgstr "Viajar a"
+
+msgid "Travel Date"
+msgstr "Fecha de viaje"
+
+msgid "Return Date"
+msgstr "Fecha de regreso"
+
+msgid "Total Funding Proposed"
+msgstr "La financiación total propuesto"
+
+msgid "Itinerary / Cab Receipt"
+msgstr "Itinerario / Recibo Cab"
+
+msgid "Other Attachment 1"
+msgstr "Otros datos adjuntos 1"
+
+msgid "Other Attachment 2"
+msgstr "Otros datos adjuntos 2"
+
+msgid "Payment Method"
+msgstr "Método de pago"
+
+msgid "Transaction / Ref No"
+msgstr "Transacción / Ref"
+
+msgid "Payee"
+msgstr "Tenedor"
+
+msgid "Expense Category"
+msgstr "Categoría del gasto"
+
+msgid "Receipt"
+msgstr "Recibo"
+
+msgid "Time-In"
+msgstr "Tiempo en"
+
+msgid "Time-Out"
+msgstr "Se acabó el tiempo"
+
+msgid "Clocked In Status"
+msgstr "En Clocked Estado"
+
+msgid "End Date"
+msgstr "Fecha final"
+
+msgid "Category"
+msgstr "Categoría"
+
+msgid "Start Time"
+msgstr "Hora de inicio"
+
+msgid "End Time"
+msgstr "Hora de finalización"
+
+msgid "Leave Status"
+msgstr "Deja Estado"
+
+msgid "Select Client"
+msgstr "Seleccione Cliente"
+
+msgid "Not Selected"
+msgstr "No seleccionado"
+
+msgid "Or Project"
+msgstr "Proyecto o"
+
+msgid "All Projects"
+msgstr "Todos los proyectos"
+
+msgid "All Status"
+msgstr "Todo Estado"
+
+msgid "Value"
+msgstr "Valor"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "User Name"
+msgstr "Nombre de usuario"
+
+msgid "Authentication Email"
+msgstr "Autenticación de correo electrónico"
+
+msgid "User Level"
+msgstr "Nivel de usuario"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "User Roles"
+msgstr "Roles del usuario"
+
+msgid "Default Module"
+msgstr "Módulo por defecto"
+
+msgid "No Default Module"
+msgstr "Sin módulo por defecto"
+
+msgid "Menu"
+msgstr "Menú"
+
+msgid "Group"
+msgstr "Grupo"
+
+msgid "Order"
+msgstr "Orden"
+
+msgid "Path"
+msgstr "Camino"
+
+msgid "Label"
+msgstr "Etiqueta"
+
+msgid "User Levels"
+msgstr "Niveles de usuario"
+
+msgid "Module"
+msgstr "Módulo"
+
+msgid "All Modules"
+msgstr "Todos los módulos"
+
+msgid "Invoice Period Start"
+msgstr "Factura de inicio del período"
+
+msgid "Invoice Period End"
+msgstr "Factura Final del Periodo"
+
+msgid "Due date"
+msgstr "Fecha de vencimiento"
+
+msgid "Url"
+msgstr "Url"
+
+msgid "Original Text"
+msgstr "Texto original"
+
+msgid "Mapped Text"
+msgstr "Texto asignada"
+
+msgid "Display Status"
+msgstr "Indicación de estado"
+
+msgid "Field Type"
+msgstr "Tipo de campo"
+
+msgid "Field Label"
+msgstr "Etiqueta de campo"
+
+msgid "Validation"
+msgstr "Validación"
+
+msgid "Field Options"
+msgstr "Opciones de campo"
+
+msgid "Priority"
+msgstr "Prioridad"
+
+msgid "Display Section"
+msgstr "Sección de pantalla"
+
+msgid "Salary Component Type"
+msgstr "Tipo de componente salarial"
+
+msgid "Salary Component"
+msgstr "Componente salario"
+
+msgid "Pay Frequency"
+msgstr "Frecuencia de pago"
+
+msgid "Calculation Group"
+msgstr "Cálculo Grupo"
+
+msgid "None"
+msgstr "Ninguna"
+
+msgid "Calculation Exemptions"
+msgstr "Exenciones de cálculo"
+
+msgid "Calculations Assigned"
+msgstr "Cálculos Asignado"
+
+msgid "Date Start"
+msgstr "Fecha de inicio"
+
+msgid "Date End"
+msgstr "Fecha de finalización"
+
+msgid "Payslip Template"
+msgstr "Plantilla de nómina"
+
+msgid "Payroll Columns"
+msgstr "Columnas de nómina"
+
+msgid "Calculation Method"
+msgstr "Método de cálculo"
+
+msgid "Editable"
+msgstr "Editable"
+
+msgid "Enabled"
+msgstr "Habilitado"
+
+msgid "Predefined Calculations"
+msgstr "Los cálculos predefinidos"
+
+msgid "Salary Components"
+msgstr "Componentes de sueldos"
+
+msgid "Columns to Add"
+msgstr "Añadir columnas a"
+
+msgid "Columns to Subtract"
+msgstr "Columnas que sustraer"
+
+msgid "Column Order"
+msgstr "Orden de las columnas"
+
+msgid "Default Value"
+msgstr "Valor por defecto"
+
+msgid "Calculation Columns"
+msgstr "Columnas de cálculo"
+
+msgid "Function"
+msgstr "Función"
+
+msgid "Payroll Report Column"
+msgstr "Informe de Nómina Columna"
+
+msgid "Calculation Process"
+msgstr "Proceso de cálculo"
+
+msgid "Payslip Fields"
+msgstr "Los campos nómina"
+
+msgid "Payroll Column"
+msgstr "Columna de nómina"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Lower Limit Condition"
+msgstr "Límite inferior Estado"
+
+msgid "Lower Limit"
+msgstr "Límite inferior"
+
+msgid "Upper Limit Condition"
+msgstr "Límite superior Condición"
+
+msgid "Upper Limit"
+msgstr "Limite superior"
+
+msgid "Column"
+msgstr "Columna"
+
+msgid "Job Code"
+msgstr "Código de Trabajo"
+
+msgid "Short Description"
+msgstr "Descripción breve"
+
+msgid "Requirements"
+msgstr "Requisitos"
+
+msgid "Benefits"
+msgstr "Beneficios"
+
+msgid "Employment Type"
+msgstr "Tipo de empleo"
+
+msgid "Any Employment Type"
+msgstr "Cualquier Tipo de empleo"
+
+msgid "Experience Level"
+msgstr "Nivel de experiencia"
+
+msgid "Any Experience Level"
+msgstr "Cualquier Nivel de experiencia"
+
+msgid "Job Function"
+msgstr "Función laboral"
+
+msgid "Any Job Function"
+msgstr "Cualquier Función laboral"
+
+msgid "Education Level"
+msgstr "Nivel de Educación"
+
+msgid "Any Education Level"
+msgstr "Cualquiera de Cultura"
+
+msgid "Show Salary"
+msgstr "Mostrar Salario"
+
+msgid "Salary Min"
+msgstr "Salario mínimo"
+
+msgid "Salary Max"
+msgstr "Sueldo Max"
+
+msgid "Keywords"
+msgstr "Palabras clave"
+
+msgid "Closing Date"
+msgstr "Fecha de cierre"
+
+msgid "Image"
+msgstr "Imagen"
+
+msgid "Display Type"
+msgstr "Tipo de visualización"
+
+msgid "Profile Image"
+msgstr "Imagen de perfil"
+
+msgid "Telephone"
+msgstr "Teléfono"
+
+msgid "Resume Title"
+msgstr "Título del curriculum vitae"
+
+msgid "Resume"
+msgstr "Currículum"
+
+msgid "Resume Headline"
+msgstr "Reanudar Encabezado"
+
+msgid "Profile Summary"
+msgstr "Resumen del perfil"
+
+msgid "Work History"
+msgstr "Historial de trabajo"
+
+msgid "Education"
+msgstr "Educación"
+
+msgid "Skills"
+msgstr "Habilidades"
+
+msgid "Referees"
+msgstr "Los árbitros"
+
+msgid "From Year"
+msgstr "De Año"
+
+msgid "From Month"
+msgstr "De Mes"
+
+msgid "To Year"
+msgstr "Para el año"
+
+msgid "To Month"
+msgstr "A Mes"
+
+msgid "Currently Work Here"
+msgstr "Actualmente trabajo aquí"
+
+msgid "Degree/Diploma"
+msgstr "Titulo"
+
+msgid "Currently Studying"
+msgstr "Actualmente estudiando"
+
+msgid "Skill Level"
+msgstr "Nivel de habilidad"
+
+msgid "Last Used Year"
+msgstr "Año última ocasión"
+
+msgid "Last Used Month"
+msgstr "Último mes de ocasión"
+
+msgid "Years of Experience"
+msgstr "Años de experiencia"
+
+msgid "Designation"
+msgstr "Designacion"
+
+msgid "Phone"
+msgstr "Teléfono"
+
+msgid "Job"
+msgstr "Trabajo"
+
+msgid "Candidate"
+msgstr "Candidato"
+
+msgid "Referred By"
+msgstr "Referido por"
+
+msgid "Leave Start Date"
+msgstr "Deja Fecha de Inicio"
+
+msgid "Leave End Date"
+msgstr "Deja Fecha de finalización"
+
+msgid "Reason"
+msgstr "Razón"
+
+msgid "Available Leaves"
+msgstr "Las hojas disponibles"
+
+msgid "Approved Leaves"
+msgstr "Hojas aprobados"
+
+msgid "Rejected Leaves"
+msgstr "Las hojas rechazadas"
+
+msgid "Leaves to be Accrued"
+msgstr "Deja a devengar"
+
+msgid "Leaves Carried Forward"
+msgstr "Realizada hojas"
+
+msgid "Apply Leave"
+msgstr "Aplicar Dejar"
+
+msgid "Filter"
+msgstr "Filtrar"
+
+msgid "Add New"
+msgstr "Agregar nuevo"
+
+msgid "Time"
+msgstr "Hora"
+
+msgid "Purpose"
+msgstr "Propósito"
+
+msgid "From"
+msgstr "De"
+
+msgid "To"
+msgstr "A"
+
+msgid "Created (GMT)"
+msgstr "Creado (GMT)"
+
+msgid "Download"
+msgstr "Descargar"
+
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "Upload"
+msgstr "Subir"
+
+msgid "Remove"
+msgstr "Retirar"
+
+msgid "Add"
+msgstr "Añadir"
+
+msgid "Reset"
+msgstr "Reiniciar"
+
+msgid "Add Time Entry"
+msgstr "Añadir entrada Tiempo"
+
+msgid "Current Clocked In Status"
+msgstr "En Clocked actual Estado"
+
+msgid "Attendance entry should be within a single day"
+msgstr "La asistencia de entrada debe estar dentro de un solo día"
+
+msgid "Account Balance"
+msgstr "Saldo de la cuenta"
+
+msgid "Plan"
+msgstr "Plan"
+
+msgid "Transactions"
+msgstr "Actas"
+
+msgid "Applications"
+msgstr "Aplicaciones"
+
+msgid "Attendance Graph"
+msgstr "Gráfico de asistencia"
+
+msgid "Hours in Office vs Hours Worked Graph"
+msgstr "En horas de oficina vs Gráfico horas trabajadas"
+
+msgid "Company Graph"
+msgstr "Empresa Gráfica"
+
+msgid "Company Documents"
+msgstr "Documentos de la empresa"
+
+msgid "Document Types"
+msgstr "Tipos de documentos"
+
+msgid "Employee Documents"
+msgstr "Documentos de los empleados"
+
+msgid "Employee Basic Details"
+msgstr "Datos básicos de los empleados"
+
+msgid "Employees (Direct Reports)"
+msgstr "(Informes empleados directos)"
+
+msgid "Certifications"
+msgstr "Certificaciones"
+
+msgid "Languages"
+msgstr "Idiomas"
+
+msgid "Deactivated Employees"
+msgstr "Los empleados desactivados"
+
+msgid "Temporarily Deactivated Employees"
+msgstr "Los empleados temporalmente Desactivado"
+
+msgid "Terminated Employee Data"
+msgstr "Terminado los datos del empleado"
+
+msgid "Employee Saved Successfully"
+msgstr "Empleado guardado con éxito"
+
+msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
+msgstr "Empleado necesita un usuario para iniciar sesión en IceHrm. ¿Quieres crear un usuario para este empleado ahora?"
+
+msgid "You can do this later through Users module if required."
+msgstr "Usted puede hacer esto más adelante a través del módulo de Usuarios si es necesario."
+
+msgid "Expenses Categories"
+msgstr "Gastos Categorías"
+
+msgid "Payment Methods"
+msgstr "Métodos de pago"
+
+msgid "Employee Expenses"
+msgstr "Los gastos de personal"
+
+msgid "Salary Component Types"
+msgstr "Tipos de componentes de salario"
+
+msgid "Employee Salary Components"
+msgstr "Componentes salario de los empleados"
+
+msgid "Company Payroll"
+msgstr "La nómina de la empresa"
+
+msgid "Calculation Groups"
+msgstr "Grupos de cálculo"
+
+msgid "Calculation Methods"
+msgstr "Métodos de cálculo"
+
+msgid "Payslip Templates"
+msgstr "Plantillas de hojas de pago"
+
+msgid "Edit Employment Types"
+msgstr "Modificar tipos de empleo"
+
+msgid "Edit Experience Levels"
+msgstr "Niveles de edición Experience"
+
+msgid "Edit Job Functions"
+msgstr "Funciones de edición de empleo"
+
+msgid "Edit Education Levels"
+msgstr "Niveles Editar Educación"
+
+msgid "Edit Benefits"
+msgstr "Editar Beneficios"
+
+msgid "Application"
+msgstr "Solicitud"
+
+msgid "Job Titles"
+msgstr "Títulos de trabajo"
+
+msgid "Pay Grades"
+msgstr "Grados de pago"
+
+msgid "Training Sessions"
+msgstr "Sesiones de entrenamiento"
+
+msgid "Employee Training Sessions"
+msgstr "Sesiones de capacitación de empleados"
+
+msgid "Clients"
+msgstr "Clientela"
+
+msgid "Employee Projects"
+msgstr "Los proyectos de los empleados"
+
+msgid "Leave Types"
+msgstr "Deja Tipos"
+
+msgid "Work Week"
+msgstr "Semana de trabajo"
+
+msgid "Holidays"
+msgstr "Vacaciones"
+
+msgid "Leave Rules"
+msgstr "Deja Reglas"
+
+msgid "Paid Time Off"
+msgstr "Tiempo libre pagado"
+
+msgid "Leave Groups"
+msgstr "Dejar Grupos"
+
+msgid "Edit Leave Groups"
+msgstr "Editar Dejar Grupos"
+
+msgid "Leave Group Employees"
+msgstr "Deja los empleados del Grupo"
+
+msgid "Employee Leave List"
+msgstr "Lista Dejar empleado"
+
+msgid "Loan Types"
+msgstr "Tipos de préstamos"
+
+msgid "Employee Loans"
+msgstr "Préstamos para empleados"
+
+msgid "Travel Requests"
+msgstr "Solicitud de viajes"
+
+msgid "Overtime Categories"
+msgstr "Categorías de horas extraordinarias"
+
+msgid "Leave / PTO"
+msgstr "Deja / PTO"
+
+msgid "Other"
+msgstr "Otro"
+
+msgid "Modules"
+msgstr "Módulos"
+
+msgid "Countries"
+msgstr "Países"
+
+msgid "Provinces"
+msgstr "Provincias"
+
+msgid "Currency Types"
+msgstr "Tipos de divisas"
+
+msgid "Employee Custom Fields"
+msgstr "Empleado de campos personalizados"
+
+msgid "Employee Field Names"
+msgstr "Empleado nombres de campo"
+
+msgid "My Details"
+msgstr "Mis detalles"
+
+msgid "All My Leaves"
+msgstr "Todos mis hojas"
+
+msgid "Leave Entitlement"
+msgstr "Los derechos de licencias"
+
+msgid "Approved Leave"
+msgstr "Dejar aprobado"
+
+msgid "Pending Leave"
+msgstr "Dejar pendiente"
+
+msgid "Subordinate Leave"
+msgstr "Dejar subordinada"
+
+msgid "Cancellation Requests"
+msgstr "Las solicitudes de cancelación"
+
+msgid "Approval Requests"
+msgstr "Las solicitudes de aprobación"
+
+msgid "Approved TimeSheets"
+msgstr "Tabla de tiempos aprobados"
+
+msgid "All My TimeSheets"
+msgstr "Todos Mis partes de horas"
+
+msgid "Pending TimeSheets"
+msgstr "Tabla de tiempos en espera"
+
+msgid "Subordinate TimeSheets"
+msgstr "Tabla de tiempos subordinadas"
+
+msgid "Approved Attendance Sheets"
+msgstr "Hojas de Asistencia aprobados"
+
+msgid "All My Attendance Sheets"
+msgstr "Todos mis hojas de asistencia"
+
+msgid "Pending Attendance Sheets"
+msgstr "A la espera de las Hojas de Asistencia"
+
+msgid "Subordinate Attendance Sheets"
+msgstr "Hojas de Asistencia subordinadas"
+
+msgid "Subordinate Overtime Requests"
+msgstr "Las solicitudes de horas extraordinarias subordinadas"
+
+msgid "Overtime Request Approval"
+msgstr "Las horas extraordinarias solicitud de aprobación"
+
+msgid "My Training Sessions"
+msgstr "Mis sesiones de entrenamiento"
+
+msgid "All Training Sessions"
+msgstr "Todas las sesiones de entrenamiento"
+
+msgid "Training Sessions of Direct Reports"
+msgstr "Las sesiones de entrenamiento de informes directos"
+
+msgid "Subordinate Travel Requests"
+msgstr "Solicitud de Viajes subordinadas"
+
+msgid "Travel Request Approval"
+msgstr "Viajes solicitud de aprobación"
+
+msgid "Subordinate Expenses"
+msgstr "Gastos subordinadas"
+
+msgid "Expenses Approval"
+msgstr "Gastos de Aprobación"
+
+msgid "Loans Taken"
+msgstr "Los préstamos contraídos"
+
+msgid "Change Leave Status"
+msgstr "Dejar cambiar de estado"
+
+msgid "Leave Status"
+msgstr "Deja Estado"
+
+msgid "Status Change Note"
+msgstr "Cambio de Estado Nota"
+
+msgid "Leave Summary"
+msgstr "Deja Resumen"
+
+msgid "Approved Leave Count"
+msgstr "Aprobado Conde Dejar"
+
+msgid "Pending Leave Count"
+msgstr "A la espera Dejar Conde"
+
+msgid "Available Leave Count"
+msgstr "Disponible Dejar Conde"
+
+msgid "Leave Dates"
+msgstr "Dejar las fechas"
+
+msgid "Leave Date"
+msgstr "Fecha de partida"
+
+msgid "Leave Notes"
+msgstr "Deje notas"
+
+msgid "Apply"
+msgstr "Aplicar"
+
+msgid "Back"
+msgstr "Espalda"
+

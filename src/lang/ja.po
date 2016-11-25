@@ -1,0 +1,1601 @@
+msgid ""
+msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: Japanese\n"
+"Language-Team: IceHrm\n"
+"Last-Translator: Thilina Hasantha\n"
+"MIME-Version: 1.0\n"
+"Project-Id-Version: 18.0\n"
+"Report-Msgid-Bugs-To: https://icehrm.com\n"
+
+msgid "Save"
+msgstr "セーブ"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Done"
+msgstr "終わりました"
+
+msgid "Clocked In Employees"
+msgstr "従業員ではクロック同期式"
+
+msgid "Candidates"
+msgstr "候補者"
+
+msgid "View Employees"
+msgstr "ビューの従業員"
+
+msgid "Add a New Employee"
+msgstr "新しい従業員を追加します。"
+
+msgid "Leave Calendar"
+msgstr "カレンダーを残します"
+
+msgid "Manage Client/Projects"
+msgstr "クライアント/プロジェクトを管理"
+
+msgid "Home"
+msgstr "ホーム"
+
+msgid "Quick Access"
+msgstr "クイックアクセス"
+
+msgid "Switch"
+msgstr "スイッチ"
+
+msgid "Profile"
+msgstr "プロフィール"
+
+msgid "Sign out"
+msgstr "サインアウト"
+
+msgid "Help"
+msgstr "助けて"
+
+msgid "About"
+msgstr "約"
+
+msgid "Version"
+msgstr "バージョン"
+
+msgid "Release Date"
+msgstr "発売日"
+
+msgid "Logged In"
+msgstr "ログインして"
+
+msgid "Admin"
+msgstr "管理者"
+
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+msgid "Company Structure"
+msgstr "会社組織"
+
+msgid "Job Details Setup"
+msgstr "ジョブの詳細設定"
+
+msgid "Qualifications Setup"
+msgstr "資格のセットアップ"
+
+msgid "Training Setup"
+msgstr "トレーニングのセットアップ"
+
+msgid "Projects/Client Setup"
+msgstr "プロジェクト/クライアントのセットアップ"
+
+msgid "Leave Settings"
+msgstr "設定を残します"
+
+msgid "Company Loans"
+msgstr "社員貸付"
+
+msgid "Audit Log"
+msgstr "監査ログ"
+
+msgid "Employees"
+msgstr "従業員"
+
+msgid "Employee History"
+msgstr "従業員の歴史"
+
+msgid "Document Management"
+msgstr "文書管理"
+
+msgid "Travel Administration"
+msgstr "旅行管理"
+
+msgid "Expense Administration"
+msgstr "経費管理"
+
+msgid "Monitor Attendance"
+msgstr "モニターの出席"
+
+msgid "Performance Charts"
+msgstr "パフォーマンスチャート"
+
+msgid "Overtime Administration"
+msgstr "残業管理"
+
+msgid "Admin Reports"
+msgstr "管理レポート"
+
+msgid "Reports"
+msgstr "レポート"
+
+msgid "Report Files"
+msgstr "レポートファイル"
+
+msgid "System"
+msgstr "システム"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "Users"
+msgstr "ユーザー"
+
+msgid "Manage Modules"
+msgstr "モジュールの管理"
+
+msgid "Manage Permissions"
+msgstr "権限の管理"
+
+msgid "Upgrade"
+msgstr "アップグレード"
+
+msgid "Manage Metadata"
+msgstr "メタデータを管理します"
+
+msgid "Field Names Setup"
+msgstr "フィールド名の設定"
+
+msgid "Payroll"
+msgstr "給与"
+
+msgid "Salary"
+msgstr "給料"
+
+msgid "Payroll Reports"
+msgstr "給与レポート"
+
+msgid "Recruitment"
+msgstr "募集"
+
+msgid "Recruitment Setup"
+msgstr "リクルートのセットアップ"
+
+msgid "Job Positions"
+msgstr "ジョブの体位"
+
+msgid "Personal Information"
+msgstr "個人情報"
+
+msgid "Basic Information"
+msgstr "基本情報"
+
+msgid "Qualifications"
+msgstr "資格"
+
+msgid "Dependents"
+msgstr "扶養"
+
+msgid "Emergency Contacts"
+msgstr "緊急連絡先"
+
+msgid "Leave"
+msgstr "残します"
+
+msgid "Leave Management"
+msgstr "管理を残します"
+
+msgid "Time Management"
+msgstr "時間管理"
+
+msgid "Projects"
+msgstr "プロジェクト"
+
+msgid "Attendance"
+msgstr "出席"
+
+msgid "Time Sheets"
+msgstr "タイムシート"
+
+msgid "Attendance Sheets"
+msgstr "出席シート"
+
+msgid "Overtime Requests"
+msgstr "残業要求"
+
+msgid "Documents"
+msgstr "ドキュメント"
+
+msgid "My Documents"
+msgstr "私の文書"
+
+msgid "Company"
+msgstr "会社"
+
+msgid "Staff Directory"
+msgstr "スタッフディレクトリ"
+
+msgid "Training"
+msgstr "トレーニング"
+
+msgid "Travel Management"
+msgstr "トラベルマネージメント"
+
+msgid "Travel"
+msgstr "旅行"
+
+msgid "Finance"
+msgstr "ファイナンス"
+
+msgid "Expenses"
+msgstr "経費"
+
+msgid "Loans"
+msgstr "ローン"
+
+msgid "User Reports"
+msgstr "ユーザレポート"
+
+msgid "People"
+msgstr "人"
+
+msgid "Manage"
+msgstr "管理します"
+
+msgid "Departments"
+msgstr "部門"
+
+msgid "Active Projects"
+msgstr "アクティブプロジェクト"
+
+msgid "Update Clients/Projects"
+msgstr "アップデートクライアント/プロジェクト"
+
+msgid "Entries Last Week"
+msgstr "エントリ先週"
+
+msgid "Upcoming"
+msgstr "来たる"
+
+msgid "View / Download Reports"
+msgstr "表示/ダウンロードレポート"
+
+msgid "Generate a Report"
+msgstr "レポートの生成"
+
+msgid "Configure"
+msgstr "設定します"
+
+msgid "Update"
+msgstr "更新"
+
+msgid "Applicants"
+msgstr "応募者"
+
+msgid "Active Jobs"
+msgstr "アクティブジョブ"
+
+msgid "Jobs Posted"
+msgstr "投稿ジョブズ"
+
+msgid "Jobs"
+msgstr "ジョブズ"
+
+msgid "Courses"
+msgstr "コー​​ス"
+
+msgid "Requests"
+msgstr "リクエスト"
+
+msgid "Document"
+msgstr "資料"
+
+msgid "Management"
+msgstr "管理"
+
+msgid "Expense"
+msgstr "費用"
+
+msgid "Permission"
+msgstr "許可"
+
+msgid "Permissions"
+msgstr "パーミッション"
+
+msgid "and"
+msgstr "そして"
+
+msgid "Invoices"
+msgstr "請求書"
+
+msgid "Make a Payment"
+msgstr "支払いをします"
+
+msgid "Switch Employee"
+msgstr "スイッチの従業員"
+
+msgid "Select The Employee to Switch Into"
+msgstr "切り替わりために従業員を選択"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "My Profile"
+msgstr "私のプロフィール"
+
+msgid "Edit Details"
+msgstr "編集詳細"
+
+msgid "View/Edit Profile"
+msgstr "表示/編集プロフィール"
+
+msgid "Punch In"
+msgstr "パンチイン"
+
+msgid "or"
+msgstr "または"
+
+msgid "Punch Out"
+msgstr "パンチアウト"
+
+msgid "Record Attendance"
+msgstr "レコード出席"
+
+msgid "Pending Leaves"
+msgstr "保留中の葉"
+
+msgid "Check Leave Status"
+msgstr "休暇ステータスの確認"
+
+msgid "Hours worked Last Week"
+msgstr "時間働いていた先週"
+
+msgid "Update Time Sheet"
+msgstr "更新タイムシート"
+
+msgid "My Projects"
+msgstr "マイプロジェクト"
+
+msgid "Projects Assigned"
+msgstr "割り当てられたプロジェクト"
+
+msgid "More info"
+msgstr "さらに詳しい情報"
+
+msgid "Store"
+msgstr "格納"
+
+msgid "My Travel"
+msgstr "マイトラベル"
+
+msgid "My Expenses"
+msgstr "私の費用"
+
+msgid "Manage Expenses"
+msgstr "経費を管理します"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Name"
+msgstr "名"
+
+msgid "Address"
+msgstr "住所"
+
+msgid "Type"
+msgstr "タイプ"
+
+msgid "Country"
+msgstr "国"
+
+msgid "Time Zone"
+msgstr "タイムゾーン"
+
+msgid "Parent Structure"
+msgstr "親構造"
+
+msgid "Details"
+msgstr "細部"
+
+msgid "Heads"
+msgstr "頭"
+
+msgid "Code"
+msgstr "コー​​ド"
+
+msgid "Job Title Code"
+msgstr "役職コード"
+
+msgid "Job Title"
+msgstr "職名"
+
+msgid "Description"
+msgstr "説明"
+
+msgid "Specification"
+msgstr "仕様"
+
+msgid "Currency"
+msgstr "通貨"
+
+msgid "Min Salary"
+msgstr "分給与"
+
+msgid "Max Salary"
+msgstr "マックス給与"
+
+msgid "Pay Grade Name"
+msgstr "グレード名を支払います"
+
+msgid "Employment Status"
+msgstr "雇用状況"
+
+msgid "Coordinator"
+msgstr "コー​​ディネーター"
+
+msgid "Trainer"
+msgstr "トレーナー"
+
+msgid "Trainer Details"
+msgstr "トレーナー詳細"
+
+msgid "Payment Type"
+msgstr "払いの種類"
+
+msgid "Cost"
+msgstr "コスト"
+
+msgid "Status"
+msgstr "状態"
+
+msgid "Course"
+msgstr "コー​​ス"
+
+msgid "Scheduled Time"
+msgstr "スケジュールされた時間"
+
+msgid "Assignment Due Date"
+msgstr "割り当て期日"
+
+msgid "Delivery Method"
+msgstr "配送方法"
+
+msgid "Delivery Location"
+msgstr "配信場所"
+
+msgid "Attendance Type"
+msgstr "出席タイプ"
+
+msgid "Attachment"
+msgstr "アタッチメント"
+
+msgid "Training Certificate Required"
+msgstr "トレーニングの証明書が必要"
+
+msgid "Employee"
+msgstr "従業員"
+
+msgid "Training Session"
+msgstr "トレーニングセッション"
+
+msgid "Contact Number"
+msgstr "連絡先の番号"
+
+msgid "Contact Email"
+msgstr "連絡先メールアドレス"
+
+msgid "Company Url"
+msgstr "会社のURL"
+
+msgid "First Contact Date"
+msgstr "ファーストコンタクト日付"
+
+msgid "Client"
+msgstr "クライアント"
+
+msgid "Project"
+msgstr "プロジェクト"
+
+msgid "Leave Name"
+msgstr "名を残します"
+
+msgid "Leave Accrue Enabled"
+msgstr "有効積算残します"
+
+msgid "Leave Carried Forward"
+msgstr "以下のまま持ち越さ"
+
+msgid "Leaves Per Year"
+msgstr "年間の葉"
+
+msgid "Leaves Group"
+msgstr "葉グループ"
+
+msgid "Leaves Per Leave Period"
+msgstr "パー休業期間は葉"
+
+msgid "Admin can assign leave to employees"
+msgstr "管理者は、従業員に休暇を割り当てることができます"
+
+msgid "Employees can apply for this leave type"
+msgstr "従業員はこの休暇のタイプに適用することができます"
+
+msgid "Employees can apply beyond the current leave balance"
+msgstr "従業員は現在休暇残高を超えて適用することができます"
+
+msgid "Percentage of Leaves Carried Forward"
+msgstr "葉の割合が繰り越さ"
+
+msgid "Maximum Carried Forward Amount"
+msgstr "最大運ばフォワード額"
+
+msgid "Carried Forward Leave Availability Period"
+msgstr "運ばフォワード休暇の開始期間"
+
+msgid "Proportionate leaves on Joined Date"
+msgstr "入社日に比例葉"
+
+msgid "Send Notification Emails"
+msgstr "通知電子メールを送信"
+
+msgid "Leave Group"
+msgstr "グループを脱退"
+
+msgid "Leave Color"
+msgstr "色を残します"
+
+msgid "Period Start"
+msgstr "期間開始"
+
+msgid "Period End"
+msgstr "期間終了"
+
+msgid "Day"
+msgstr "日"
+
+msgid "For All Countries"
+msgstr "すべての国の"
+
+msgid "Date"
+msgstr "日付"
+
+msgid "Leave Type"
+msgstr "タイプを残します"
+
+msgid "Propotionate leaves on Joined Date"
+msgstr "Propotionateは、入社日に葉"
+
+msgid "Leaves Period"
+msgstr "期間の葉"
+
+msgid "Leave Amount"
+msgstr "金額を残します"
+
+msgid "Leave Period"
+msgstr "期間を残します"
+
+msgid "Note"
+msgstr "注意"
+
+msgid "All Employees"
+msgstr "すべての従業員"
+
+msgid "All Leave Types"
+msgstr "すべてのタイプを残します"
+
+msgid "Loan Type"
+msgstr "ローンの種類"
+
+msgid "Loan Start Date"
+msgstr "ローン開始日"
+
+msgid "Loan Period (Months)"
+msgstr "ローン期間（月数）"
+
+msgid "Amount"
+msgstr "量"
+
+msgid "Last Installment Date"
+msgstr "最後の割賦日"
+
+msgid "Loan Amount"
+msgstr "融資額"
+
+msgid "Monthly Installment"
+msgstr "月賦"
+
+msgid "Employee Number"
+msgstr "従業員番号"
+
+msgid "First Name"
+msgstr "ファーストネーム"
+
+msgid "Middle Name"
+msgstr "ミドルネーム"
+
+msgid "Last Name"
+msgstr "苗字"
+
+msgid "Nationality"
+msgstr "国籍"
+
+msgid "Date of Birth"
+msgstr "生年月日"
+
+msgid "Gender"
+msgstr "性別"
+
+msgid "Marital Status"
+msgstr "配偶者の有無"
+
+msgid "Ethnicity"
+msgstr "民族性"
+
+msgid "Immigration Status"
+msgstr "移民ステータス"
+
+msgid "SSN/NRIC"
+msgstr "SSN /本投資法人"
+
+msgid "NIC"
+msgstr "NIC"
+
+msgid "Other ID"
+msgstr "他のID"
+
+msgid "Driving License No"
+msgstr "運転免許証はありません"
+
+msgid "Pay Grade"
+msgstr "グレードを支払います"
+
+msgid "Work Station Id"
+msgstr "局IDを働きます"
+
+msgid "Address Line 1"
+msgstr "住所1"
+
+msgid "Address Line 2"
+msgstr "住所2"
+
+msgid "City"
+msgstr "シティ"
+
+msgid "Province"
+msgstr "州"
+
+msgid "Postal/Zip Code"
+msgstr "郵便/郵便番号"
+
+msgid "Home Phone"
+msgstr "自宅の電話"
+
+msgid "Mobile Phone"
+msgstr "携帯電話"
+
+msgid "Work Phone"
+msgstr "仕事用の電話"
+
+msgid "Work Email"
+msgstr "仕事のメール"
+
+msgid "Private Email"
+msgstr "プライベートメール"
+
+msgid "Joined Date"
+msgstr "登録日"
+
+msgid "Confirmation Date"
+msgstr "確認日"
+
+msgid "Termination Date"
+msgstr "退職日"
+
+msgid "Department"
+msgstr "部門"
+
+msgid "Supervisor"
+msgstr "スーパーバイザー"
+
+msgid "Indirect Supervisors"
+msgstr "間接的な監督者"
+
+msgid "First Level Approver"
+msgstr "最初のレベルの承認者"
+
+msgid "Second Level Approver"
+msgstr "セカンドレベル承認"
+
+msgid "Third Level Approver"
+msgstr "第3レベルの承認者"
+
+msgid "Notes"
+msgstr "ノート"
+
+msgid "Time (GMT)"
+msgstr "標準時（GMT）"
+
+msgid "User"
+msgstr "ユーザー"
+
+msgid "IP Address"
+msgstr "IPアドレス"
+
+msgid "Logged In Employee"
+msgstr "従業員に記録"
+
+msgid "Skill"
+msgstr "技能"
+
+msgid "Qualification"
+msgstr "資格"
+
+msgid "Institute"
+msgstr "機関"
+
+msgid "Start Date"
+msgstr "開始日"
+
+msgid "Completed On"
+msgstr "完了"
+
+msgid "Certification"
+msgstr "認証"
+
+msgid "Granted On"
+msgstr "上に与えられました"
+
+msgid "Valid Thru"
+msgstr "Thru有効な"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "Reading"
+msgstr "レディング"
+
+msgid "Speaking"
+msgstr "話し中"
+
+msgid "Writing"
+msgstr "書き込み"
+
+msgid "Understanding"
+msgstr "理解"
+
+msgid "Date Added"
+msgstr "追加された日付"
+
+msgid "Valid Until"
+msgstr "まで有効"
+
+msgid "Relationship"
+msgstr "関係"
+
+msgid "Id Number"
+msgstr "ID番号"
+
+msgid "All Job Titles"
+msgstr "すべての役職"
+
+msgid "All Departments"
+msgstr "すべてのカテゴリー"
+
+msgid "Anyone"
+msgstr "誰でも"
+
+msgid "Field"
+msgstr "フィールド"
+
+msgid "Old Value"
+msgstr "古い値"
+
+msgid "New Value"
+msgstr "新しい値"
+
+msgid "Modified By"
+msgstr "更新者"
+
+msgid "Created"
+msgstr "作成した"
+
+msgid "Notify Expiry"
+msgstr "有効期限を通知"
+
+msgid "Notify Expiry Before One Month"
+msgstr "1ヶ月前に有効期限を通知します"
+
+msgid "Notify Expiry Before One Week"
+msgstr "1週間前に有効期限を通知します"
+
+msgid "Notify Expiry Before One Day"
+msgstr "一日前に有効期限を通知します"
+
+msgid "Travel Type"
+msgstr "旅行タイプ"
+
+msgid "Purpose of Travel"
+msgstr "渡航の目的"
+
+msgid "Travel From"
+msgstr "から旅行"
+
+msgid "Travel To"
+msgstr "に旅行する"
+
+msgid "Travel Date"
+msgstr "旅行日"
+
+msgid "Return Date"
+msgstr "返却日"
+
+msgid "Total Funding Proposed"
+msgstr "総資金提案"
+
+msgid "Itinerary / Cab Receipt"
+msgstr "旅程/タクシー領収書"
+
+msgid "Other Attachment 1"
+msgstr "その他の添付ファイル1"
+
+msgid "Other Attachment 2"
+msgstr "その他別紙2"
+
+msgid "Payment Method"
+msgstr "支払方法"
+
+msgid "Transaction / Ref No"
+msgstr "トランザクション/参照なし"
+
+msgid "Payee"
+msgstr "受取人"
+
+msgid "Expense Category"
+msgstr "経費カテゴリ"
+
+msgid "Receipt"
+msgstr "領収書"
+
+msgid "Time-In"
+msgstr "タイムイン"
+
+msgid "Time-Out"
+msgstr "タイムアウト"
+
+msgid "Clocked In Status"
+msgstr "ステータスではクロック同期式"
+
+msgid "End Date"
+msgstr "終了日"
+
+msgid "Category"
+msgstr "カテゴリー"
+
+msgid "Start Time"
+msgstr "始まる時間"
+
+msgid "End Time"
+msgstr "終了時間"
+
+msgid "Leave Status"
+msgstr "ステータスを残します"
+
+msgid "Select Client"
+msgstr "クライアントを選択します"
+
+msgid "Not Selected"
+msgstr "選択されていません"
+
+msgid "Or Project"
+msgstr "またはプロジェクト"
+
+msgid "All Projects"
+msgstr "すべてのプロジェクト"
+
+msgid "All Status"
+msgstr "すべてのステータス"
+
+msgid "Value"
+msgstr "値"
+
+msgid "Logo"
+msgstr "ロゴ"
+
+msgid "User Name"
+msgstr "ユーザー名"
+
+msgid "Authentication Email"
+msgstr "認証メール"
+
+msgid "User Level"
+msgstr "ユーザーレベル"
+
+msgid "Email"
+msgstr "Eメール"
+
+msgid "User Roles"
+msgstr "ユーザーの役割"
+
+msgid "Default Module"
+msgstr "デフォルトモジュール"
+
+msgid "No Default Module"
+msgstr "いいえデフォルトモジュールはありません"
+
+msgid "Menu"
+msgstr "メニュー"
+
+msgid "Group"
+msgstr "グループ"
+
+msgid "Order"
+msgstr "注文"
+
+msgid "Path"
+msgstr "パス"
+
+msgid "Label"
+msgstr "ラベル"
+
+msgid "User Levels"
+msgstr "ユーザーレベル"
+
+msgid "Module"
+msgstr "モジュール"
+
+msgid "All Modules"
+msgstr "すべてのモジュール"
+
+msgid "Invoice Period Start"
+msgstr "請求書期間開始"
+
+msgid "Invoice Period End"
+msgstr "請求書の期間終了"
+
+msgid "Due date"
+msgstr "期日"
+
+msgid "Url"
+msgstr "URL"
+
+msgid "Original Text"
+msgstr "原文"
+
+msgid "Mapped Text"
+msgstr "マップされたテキスト"
+
+msgid "Display Status"
+msgstr "表示ステータス"
+
+msgid "Field Type"
+msgstr "フィールドタイプ"
+
+msgid "Field Label"
+msgstr "フィールドのラベル"
+
+msgid "Validation"
+msgstr "検証"
+
+msgid "Field Options"
+msgstr "フィールドオプション"
+
+msgid "Priority"
+msgstr "優先"
+
+msgid "Display Section"
+msgstr "表示部"
+
+msgid "Salary Component Type"
+msgstr "給与コンポーネントの種類"
+
+msgid "Salary Component"
+msgstr "給与コンポーネント"
+
+msgid "Pay Frequency"
+msgstr "有料頻度"
+
+msgid "Calculation Group"
+msgstr "計算グループ"
+
+msgid "None"
+msgstr "なし"
+
+msgid "Calculation Exemptions"
+msgstr "計算免除"
+
+msgid "Calculations Assigned"
+msgstr "割り当てられた計算"
+
+msgid "Date Start"
+msgstr "日スタート"
+
+msgid "Date End"
+msgstr "日付終了"
+
+msgid "Payslip Template"
+msgstr "給料明細書のテンプレート"
+
+msgid "Payroll Columns"
+msgstr "給与の列"
+
+msgid "Calculation Method"
+msgstr "計算方法"
+
+msgid "Editable"
+msgstr "編集可能な"
+
+msgid "Enabled"
+msgstr "使用可能"
+
+msgid "Predefined Calculations"
+msgstr "事前定義された計算"
+
+msgid "Salary Components"
+msgstr "給与コンポーネント"
+
+msgid "Columns to Add"
+msgstr "追加する列"
+
+msgid "Columns to Subtract"
+msgstr "減算する列"
+
+msgid "Column Order"
+msgstr "列の順序"
+
+msgid "Default Value"
+msgstr "既定値"
+
+msgid "Calculation Columns"
+msgstr "計算列"
+
+msgid "Function"
+msgstr "関数"
+
+msgid "Payroll Report Column"
+msgstr "給与レポート列"
+
+msgid "Calculation Process"
+msgstr "計算プロセス"
+
+msgid "Payslip Fields"
+msgstr "給与明細のフィールド"
+
+msgid "Payroll Column"
+msgstr "給与列"
+
+msgid "Text"
+msgstr "テキスト"
+
+msgid "Lower Limit Condition"
+msgstr "下限条件"
+
+msgid "Lower Limit"
+msgstr "下限"
+
+msgid "Upper Limit Condition"
+msgstr "上限条件"
+
+msgid "Upper Limit"
+msgstr "上限"
+
+msgid "Column"
+msgstr "カラム"
+
+msgid "Job Code"
+msgstr "ジョブコード"
+
+msgid "Short Description"
+msgstr "簡単な説明"
+
+msgid "Requirements"
+msgstr "必要条件"
+
+msgid "Benefits"
+msgstr "利点"
+
+msgid "Employment Type"
+msgstr "雇用形態"
+
+msgid "Any Employment Type"
+msgstr "どれでも雇用タイプ"
+
+msgid "Experience Level"
+msgstr "経験レベル"
+
+msgid "Any Experience Level"
+msgstr "任意の経験レベル"
+
+msgid "Job Function"
+msgstr "職務権限"
+
+msgid "Any Job Function"
+msgstr "任意のジョブ機能"
+
+msgid "Education Level"
+msgstr "教育レベル"
+
+msgid "Any Education Level"
+msgstr "でも教育レベル"
+
+msgid "Show Salary"
+msgstr "ショー給与"
+
+msgid "Salary Min"
+msgstr "給与分"
+
+msgid "Salary Max"
+msgstr "給与マックス"
+
+msgid "Keywords"
+msgstr "キーワード"
+
+msgid "Closing Date"
+msgstr "決算日"
+
+msgid "Image"
+msgstr "画像"
+
+msgid "Display Type"
+msgstr "表示方式"
+
+msgid "Profile Image"
+msgstr "プロフィール画像"
+
+msgid "Telephone"
+msgstr "電話"
+
+msgid "Resume Title"
+msgstr "タイトルの再開"
+
+msgid "Resume"
+msgstr "履歴書"
+
+msgid "Resume Headline"
+msgstr "見出しを再開"
+
+msgid "Profile Summary"
+msgstr "プロフィール概要"
+
+msgid "Work History"
+msgstr "職歴"
+
+msgid "Education"
+msgstr "教育"
+
+msgid "Skills"
+msgstr "スキル"
+
+msgid "Referees"
+msgstr "レフリー"
+
+msgid "From Year"
+msgstr "年から"
+
+msgid "From Month"
+msgstr "月から"
+
+msgid "To Year"
+msgstr "年まで"
+
+msgid "To Month"
+msgstr "月へ"
+
+msgid "Currently Work Here"
+msgstr "現在、ここでの作業"
+
+msgid "Degree/Diploma"
+msgstr "学位/ディプロマ"
+
+msgid "Currently Studying"
+msgstr "現在勉強"
+
+msgid "Skill Level"
+msgstr "技術水準"
+
+msgid "Last Used Year"
+msgstr "最後に使用した年"
+
+msgid "Last Used Month"
+msgstr "最後に使用した月"
+
+msgid "Years of Experience"
+msgstr "積年の経験"
+
+msgid "Designation"
+msgstr "指定"
+
+msgid "Phone"
+msgstr "電話"
+
+msgid "Job"
+msgstr "ジョブ"
+
+msgid "Candidate"
+msgstr "候補者"
+
+msgid "Referred By"
+msgstr "で参照"
+
+msgid "Leave Start Date"
+msgstr "開始日を残します"
+
+msgid "Leave End Date"
+msgstr "終了日を残します"
+
+msgid "Reason"
+msgstr "理由"
+
+msgid "Available Leaves"
+msgstr "利用可能な葉"
+
+msgid "Approved Leaves"
+msgstr "承認された葉"
+
+msgid "Rejected Leaves"
+msgstr "拒否された葉"
+
+msgid "Leaves to be Accrued"
+msgstr "未収する葉"
+
+msgid "Leaves Carried Forward"
+msgstr "葉繰越"
+
+msgid "Apply Leave"
+msgstr "休暇を適用します"
+
+msgid "Filter"
+msgstr "フィルタ"
+
+msgid "Add New"
+msgstr "新しく追加する"
+
+msgid "Time"
+msgstr "時間"
+
+msgid "Purpose"
+msgstr "目的"
+
+msgid "From"
+msgstr "から"
+
+msgid "To"
+msgstr "に"
+
+msgid "Created (GMT)"
+msgstr "作成した（GMT）"
+
+msgid "Download"
+msgstr "ダウンロード"
+
+msgid "Submit"
+msgstr "提出します"
+
+msgid "Upload"
+msgstr "アップロード"
+
+msgid "Remove"
+msgstr "削除します"
+
+msgid "Add"
+msgstr "加えます"
+
+msgid "Reset"
+msgstr "リセット"
+
+msgid "Add Time Entry"
+msgstr "タイムエントリを追加します。"
+
+msgid "Current Clocked In Status"
+msgstr "現状ではクロック同期式"
+
+msgid "Attendance entry should be within a single day"
+msgstr "出席エントリは一日以内でなければなりません"
+
+msgid "Account Balance"
+msgstr "勘定残高"
+
+msgid "Plan"
+msgstr "計画"
+
+msgid "Transactions"
+msgstr "取引"
+
+msgid "Applications"
+msgstr "アプリケーション"
+
+msgid "Attendance Graph"
+msgstr "出席グラフ"
+
+msgid "Hours in Office vs Hours Worked Graph"
+msgstr "グラフ労働時間対オフィスでの時間"
+
+msgid "Company Graph"
+msgstr "当社グラフ"
+
+msgid "Company Documents"
+msgstr "会社のドキュメント"
+
+msgid "Document Types"
+msgstr "ドキュメントの種類"
+
+msgid "Employee Documents"
+msgstr "従業員のドキュメント"
+
+msgid "Employee Basic Details"
+msgstr "従業員の基本的な詳細"
+
+msgid "Employees (Direct Reports)"
+msgstr "従業員（ダイレクトレポート）"
+
+msgid "Certifications"
+msgstr "認定"
+
+msgid "Languages"
+msgstr "言語"
+
+msgid "Deactivated Employees"
+msgstr "非アクティブ従業員"
+
+msgid "Temporarily Deactivated Employees"
+msgstr "一時的に非アクティブ化従業員"
+
+msgid "Terminated Employee Data"
+msgstr "解雇された従業員データ"
+
+msgid "Employee Saved Successfully"
+msgstr "従業員は保存されました"
+
+msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
+msgstr "従業員はIceHrmにログインするユーザーを必要とします。あなたは今、この従業員のためのユーザを作成しますか？"
+
+msgid "You can do this later through Users module if required."
+msgstr "必要に応じてユーザーのモジュールを介して、後でこれを行うことができます。"
+
+msgid "Expenses Categories"
+msgstr "経費カテゴリー"
+
+msgid "Payment Methods"
+msgstr "お支払い方法"
+
+msgid "Employee Expenses"
+msgstr "従業員の経費"
+
+msgid "Salary Component Types"
+msgstr "給与コンポーネントタイプ"
+
+msgid "Employee Salary Components"
+msgstr "従業員の給与のコンポーネント"
+
+msgid "Company Payroll"
+msgstr "会社の給与計算"
+
+msgid "Calculation Groups"
+msgstr "計算グループ"
+
+msgid "Calculation Methods"
+msgstr "計算方法"
+
+msgid "Payslip Templates"
+msgstr "給料明細書のテンプレート"
+
+msgid "Edit Employment Types"
+msgstr "編集雇用の種類"
+
+msgid "Edit Experience Levels"
+msgstr "編集経験レベル"
+
+msgid "Edit Job Functions"
+msgstr "ジョブの編集機能"
+
+msgid "Edit Education Levels"
+msgstr "編集教育レベル"
+
+msgid "Edit Benefits"
+msgstr "編集のメリット"
+
+msgid "Application"
+msgstr "応用"
+
+msgid "Job Titles"
+msgstr "ジョブタイトル"
+
+msgid "Pay Grades"
+msgstr "有料グレード"
+
+msgid "Training Sessions"
+msgstr "トレーニングセッション"
+
+msgid "Employee Training Sessions"
+msgstr "従業員のトレーニングセッション"
+
+msgid "Clients"
+msgstr "クライアント"
+
+msgid "Employee Projects"
+msgstr "従業員のプロジェクト"
+
+msgid "Leave Types"
+msgstr "タイプを残します"
+
+msgid "Work Week"
+msgstr "仕事週"
+
+msgid "Holidays"
+msgstr "休日"
+
+msgid "Leave Rules"
+msgstr "ルールを残します"
+
+msgid "Paid Time Off"
+msgstr "有料オフタイム"
+
+msgid "Leave Groups"
+msgstr "グループを残します"
+
+msgid "Edit Leave Groups"
+msgstr "編集休暇グループ"
+
+msgid "Leave Group Employees"
+msgstr "グループの従業員を残します"
+
+msgid "Employee Leave List"
+msgstr "従業員の脱退一覧"
+
+msgid "Loan Types"
+msgstr "ローンの種類"
+
+msgid "Employee Loans"
+msgstr "従業員のローン"
+
+msgid "Travel Requests"
+msgstr "旅のリクエスト"
+
+msgid "Overtime Categories"
+msgstr "残業カテゴリー"
+
+msgid "Leave / PTO"
+msgstr "/ PTOを残します"
+
+msgid "Other"
+msgstr "他の"
+
+msgid "Modules"
+msgstr "モジュール"
+
+msgid "Countries"
+msgstr "国"
+
+msgid "Provinces"
+msgstr "地方"
+
+msgid "Currency Types"
+msgstr "通貨タイプ"
+
+msgid "Employee Custom Fields"
+msgstr "従業員のカスタムフィールド"
+
+msgid "Employee Field Names"
+msgstr "従業員のフィールド名"
+
+msgid "My Details"
+msgstr "私の詳細"
+
+msgid "All My Leaves"
+msgstr "すべての私の葉"
+
+msgid "Leave Entitlement"
+msgstr "エンタイトルメントを残します"
+
+msgid "Approved Leave"
+msgstr "承認された休暇"
+
+msgid "Pending Leave"
+msgstr "保留中のままに"
+
+msgid "Subordinate Leave"
+msgstr "下位休暇"
+
+msgid "Cancellation Requests"
+msgstr "取り消し要求"
+
+msgid "Approval Requests"
+msgstr "承認要求"
+
+msgid "Approved TimeSheets"
+msgstr "承認されたタイムシート"
+
+msgid "All My TimeSheets"
+msgstr "オール・マイ・タイムシート"
+
+msgid "Pending TimeSheets"
+msgstr "保留中のタイムシート"
+
+msgid "Subordinate TimeSheets"
+msgstr "下位タイムシート"
+
+msgid "Approved Attendance Sheets"
+msgstr "承認済みの出席シート"
+
+msgid "All My Attendance Sheets"
+msgstr "すべての私の出席シート"
+
+msgid "Pending Attendance Sheets"
+msgstr "保留中の出席シート"
+
+msgid "Subordinate Attendance Sheets"
+msgstr "下位の出席シート"
+
+msgid "Subordinate Overtime Requests"
+msgstr "下位残業要求"
+
+msgid "Overtime Request Approval"
+msgstr "残業リクエストの承認"
+
+msgid "My Training Sessions"
+msgstr "私のトレーニングセッション"
+
+msgid "All Training Sessions"
+msgstr "すべてのトレーニングセッション"
+
+msgid "Training Sessions of Direct Reports"
+msgstr "ダイレクトレポートのトレーニングセッション"
+
+msgid "Subordinate Travel Requests"
+msgstr "下位トラベルリクエスト"
+
+msgid "Travel Request Approval"
+msgstr "出張申請の承認"
+
+msgid "Subordinate Expenses"
+msgstr "下位費用"
+
+msgid "Expenses Approval"
+msgstr "経費の承認"
+
+msgid "Loans Taken"
+msgstr "借入"
+
+msgid "Change Leave Status"
+msgstr "脱退ステータスを変更"
+
+msgid "Leave Status"
+msgstr "ステータスを残します"
+
+msgid "Status Change Note"
+msgstr "ステータス変更（注）"
+
+msgid "Leave Summary"
+msgstr "概要を残します"
+
+msgid "Approved Leave Count"
+msgstr "承認された休暇カウント"
+
+msgid "Pending Leave Count"
+msgstr "保留中のままにカウント"
+
+msgid "Available Leave Count"
+msgstr "利用可能な脱退カウント"
+
+msgid "Leave Dates"
+msgstr "日付を残します"
+
+msgid "Leave Date"
+msgstr "日付を残します"
+
+msgid "Leave Notes"
+msgstr "メモを残します"
+
+msgid "Apply"
+msgstr "適用します"
+
+msgid "Back"
+msgstr "バック"
+

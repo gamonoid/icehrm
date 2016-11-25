@@ -1,0 +1,1601 @@
+msgid ""
+msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: Hindi\n"
+"Language-Team: IceHrm\n"
+"Last-Translator: Thilina Hasantha\n"
+"MIME-Version: 1.0\n"
+"Project-Id-Version: 18.0\n"
+"Report-Msgid-Bugs-To: https://icehrm.com\n"
+
+msgid "Save"
+msgstr "बचाना"
+
+msgid "Cancel"
+msgstr "रद्द करना"
+
+msgid "Done"
+msgstr "किया हुआ"
+
+msgid "Clocked In Employees"
+msgstr "कर्मचारियों में कमाए"
+
+msgid "Candidates"
+msgstr "उम्मीदवार"
+
+msgid "View Employees"
+msgstr "कर्मचारियों के देखने"
+
+msgid "Add a New Employee"
+msgstr "एक नए कर्मचारी जोड़े"
+
+msgid "Leave Calendar"
+msgstr "कैलेंडर छोड़ दो"
+
+msgid "Manage Client/Projects"
+msgstr "प्रबंधित क्लाइंट / परियोजनाएं"
+
+msgid "Home"
+msgstr "घर"
+
+msgid "Quick Access"
+msgstr "त्वरित ऐक्सेस"
+
+msgid "Switch"
+msgstr "स्विच"
+
+msgid "Profile"
+msgstr "प्रोफाइल"
+
+msgid "Sign out"
+msgstr "साइन आउट"
+
+msgid "Help"
+msgstr "मदद"
+
+msgid "About"
+msgstr "के बारे में"
+
+msgid "Version"
+msgstr "संस्करण"
+
+msgid "Release Date"
+msgstr "रिलीज़ की तारीख"
+
+msgid "Logged In"
+msgstr "में लॉग इन"
+
+msgid "Admin"
+msgstr "व्यवस्थापक"
+
+msgid "Dashboard"
+msgstr "डैशबोर्ड"
+
+msgid "Company Structure"
+msgstr "कंपनी संरचना"
+
+msgid "Job Details Setup"
+msgstr "नौकरी विवरण सेटअप"
+
+msgid "Qualifications Setup"
+msgstr "योग्यता सेटअप"
+
+msgid "Training Setup"
+msgstr "प्रशिक्षण सेटअप"
+
+msgid "Projects/Client Setup"
+msgstr "परियोजनाओं / क्लाइंट सेटअप"
+
+msgid "Leave Settings"
+msgstr "सेटिंग्स को छोड़"
+
+msgid "Company Loans"
+msgstr "कंपनी ऋण"
+
+msgid "Audit Log"
+msgstr "ऑडिट लॉग"
+
+msgid "Employees"
+msgstr "कर्मचारियों"
+
+msgid "Employee History"
+msgstr "कर्मचारी इतिहास"
+
+msgid "Document Management"
+msgstr "दस्तावेज़ प्रबंधन"
+
+msgid "Travel Administration"
+msgstr "सफर प्रशासन"
+
+msgid "Expense Administration"
+msgstr "व्यय प्रशासन"
+
+msgid "Monitor Attendance"
+msgstr "मॉनिटर उपस्थिति"
+
+msgid "Performance Charts"
+msgstr "प्रदर्शन चार्ट"
+
+msgid "Overtime Administration"
+msgstr "ओवरटाइम प्रशासन"
+
+msgid "Admin Reports"
+msgstr "व्यवस्थापक रिपोर्ट"
+
+msgid "Reports"
+msgstr "रिपोर्ट"
+
+msgid "Report Files"
+msgstr "रिपोर्ट फाइल"
+
+msgid "System"
+msgstr "प्रणाली"
+
+msgid "Settings"
+msgstr "सेटिंग्स"
+
+msgid "Users"
+msgstr "उपयोगकर्ता"
+
+msgid "Manage Modules"
+msgstr "मॉड्यूल का प्रबंधन"
+
+msgid "Manage Permissions"
+msgstr "अनुमतियाँ प्रबंधित करें"
+
+msgid "Upgrade"
+msgstr "नवीनीकरण"
+
+msgid "Manage Metadata"
+msgstr "मेटाडाटा को प्रबंधित"
+
+msgid "Field Names Setup"
+msgstr "क्षेत्र के नाम सेटअप"
+
+msgid "Payroll"
+msgstr "पेरोल"
+
+msgid "Salary"
+msgstr "वेतन"
+
+msgid "Payroll Reports"
+msgstr "पेरोल रिपोर्ट"
+
+msgid "Recruitment"
+msgstr "भरती"
+
+msgid "Recruitment Setup"
+msgstr "भर्ती सेटअप"
+
+msgid "Job Positions"
+msgstr "नौकरी पदों"
+
+msgid "Personal Information"
+msgstr "व्यक्तिगत जानकारी"
+
+msgid "Basic Information"
+msgstr "मूलभूत जानकारी"
+
+msgid "Qualifications"
+msgstr "योग्यता"
+
+msgid "Dependents"
+msgstr "आश्रितों"
+
+msgid "Emergency Contacts"
+msgstr "आपातकालीन संपर्क"
+
+msgid "Leave"
+msgstr "छोड़ना"
+
+msgid "Leave Management"
+msgstr "प्रबंधन छोड़ दो"
+
+msgid "Time Management"
+msgstr "समय प्रबंधन"
+
+msgid "Projects"
+msgstr "परियोजनाएं"
+
+msgid "Attendance"
+msgstr "उपस्थिति"
+
+msgid "Time Sheets"
+msgstr "समय पत्रक"
+
+msgid "Attendance Sheets"
+msgstr "उपस्थिति पत्रक"
+
+msgid "Overtime Requests"
+msgstr "ओवरटाइम अनुरोध"
+
+msgid "Documents"
+msgstr "दस्तावेज़"
+
+msgid "My Documents"
+msgstr "मेरे दस्तावेज"
+
+msgid "Company"
+msgstr "कंपनी"
+
+msgid "Staff Directory"
+msgstr "स्टाफ़ निदेशिका"
+
+msgid "Training"
+msgstr "प्रशिक्षण"
+
+msgid "Travel Management"
+msgstr "यात्रा प्रबंधन"
+
+msgid "Travel"
+msgstr "यात्रा"
+
+msgid "Finance"
+msgstr "वित्त"
+
+msgid "Expenses"
+msgstr "व्यय"
+
+msgid "Loans"
+msgstr "ऋण"
+
+msgid "User Reports"
+msgstr "उपयोगकर्ता रिपोर्ट"
+
+msgid "People"
+msgstr "लोग"
+
+msgid "Manage"
+msgstr "प्रबंधित"
+
+msgid "Departments"
+msgstr "विभागों"
+
+msgid "Active Projects"
+msgstr "सक्रिय परियोजनाओं"
+
+msgid "Update Clients/Projects"
+msgstr "ग्राहकों को अद्यतन / परियोजनाएं"
+
+msgid "Entries Last Week"
+msgstr "प्रविष्टियां पिछले हफ्ते"
+
+msgid "Upcoming"
+msgstr "आगामी"
+
+msgid "View / Download Reports"
+msgstr "देखें / डाउनलोड रिपोर्ट"
+
+msgid "Generate a Report"
+msgstr "एक रिपोर्ट उत्पन्न"
+
+msgid "Configure"
+msgstr "कॉन्फ़िगर"
+
+msgid "Update"
+msgstr "अद्यतन"
+
+msgid "Applicants"
+msgstr "आवेदक"
+
+msgid "Active Jobs"
+msgstr "सक्रिय नौकरियां"
+
+msgid "Jobs Posted"
+msgstr "नौकरी पोस्ट"
+
+msgid "Jobs"
+msgstr "नौकरियां"
+
+msgid "Courses"
+msgstr "पाठ्यक्रम"
+
+msgid "Requests"
+msgstr "अनुरोधों"
+
+msgid "Document"
+msgstr "दस्तावेज़"
+
+msgid "Management"
+msgstr "प्रबंध"
+
+msgid "Expense"
+msgstr "व्यय"
+
+msgid "Permission"
+msgstr "अनुमति"
+
+msgid "Permissions"
+msgstr "अनुमतियां"
+
+msgid "and"
+msgstr "तथा"
+
+msgid "Invoices"
+msgstr "चालान"
+
+msgid "Make a Payment"
+msgstr "भुगतान कीजिए"
+
+msgid "Switch Employee"
+msgstr "स्विच कर्मचारी"
+
+msgid "Select The Employee to Switch Into"
+msgstr "कर्मचारी में स्विच करने के लिए चयन करें"
+
+msgid "Close"
+msgstr "बंद करे"
+
+msgid "My Profile"
+msgstr "मेरी प्रोफाइल"
+
+msgid "Edit Details"
+msgstr "विवरण संपादित करें"
+
+msgid "View/Edit Profile"
+msgstr "देखें / प्रोफ़ाइल संपादित करें"
+
+msgid "Punch In"
+msgstr "अंदर प्रवेश करो"
+
+msgid "or"
+msgstr "या"
+
+msgid "Punch Out"
+msgstr "मुक्का मारना"
+
+msgid "Record Attendance"
+msgstr "रिकॉर्ड उपस्थिति"
+
+msgid "Pending Leaves"
+msgstr "लंबित पत्तियां"
+
+msgid "Check Leave Status"
+msgstr "लीव स्थिति की जांच करें"
+
+msgid "Hours worked Last Week"
+msgstr "घंटे काम पिछले हफ्ते"
+
+msgid "Update Time Sheet"
+msgstr "अपडेट समय पत्रक"
+
+msgid "My Projects"
+msgstr "मेरा परियोजनाओं"
+
+msgid "Projects Assigned"
+msgstr "परियोजनाओं निरुपित"
+
+msgid "More info"
+msgstr "और जानकारी"
+
+msgid "Store"
+msgstr "दुकान"
+
+msgid "My Travel"
+msgstr "मेरी यात्रा"
+
+msgid "My Expenses"
+msgstr "अपने खर्च"
+
+msgid "Manage Expenses"
+msgstr "खर्च का प्रबंधन"
+
+msgid "ID"
+msgstr "आईडी"
+
+msgid "Name"
+msgstr "नाम"
+
+msgid "Address"
+msgstr "पता"
+
+msgid "Type"
+msgstr "प्रकार"
+
+msgid "Country"
+msgstr "देश"
+
+msgid "Time Zone"
+msgstr "समय क्षेत्र"
+
+msgid "Parent Structure"
+msgstr "मूल संरचना"
+
+msgid "Details"
+msgstr "विवरण"
+
+msgid "Heads"
+msgstr "प्रमुखों"
+
+msgid "Code"
+msgstr "कोड"
+
+msgid "Job Title Code"
+msgstr "नौकरी शीर्षक संहिता"
+
+msgid "Job Title"
+msgstr "नौकरी का नाम"
+
+msgid "Description"
+msgstr "विवरण"
+
+msgid "Specification"
+msgstr "विशिष्टता"
+
+msgid "Currency"
+msgstr "मुद्रा"
+
+msgid "Min Salary"
+msgstr "न्यूनतम वेतन"
+
+msgid "Max Salary"
+msgstr "मैक्स वेतन"
+
+msgid "Pay Grade Name"
+msgstr "वेतन ग्रेड नाम"
+
+msgid "Employment Status"
+msgstr "रोज़गार की स्थिति"
+
+msgid "Coordinator"
+msgstr "समन्वयक"
+
+msgid "Trainer"
+msgstr "ट्रेनर"
+
+msgid "Trainer Details"
+msgstr "ट्रेनर विवरण"
+
+msgid "Payment Type"
+msgstr "भुगतान के प्रकार"
+
+msgid "Cost"
+msgstr "लागत"
+
+msgid "Status"
+msgstr "स्थिति"
+
+msgid "Course"
+msgstr "कोर्स"
+
+msgid "Scheduled Time"
+msgstr "नियत समय"
+
+msgid "Assignment Due Date"
+msgstr "असाइनमेंट नियत दिनांक"
+
+msgid "Delivery Method"
+msgstr "डिलिवरी विधि"
+
+msgid "Delivery Location"
+msgstr "प्रसव का स्थान"
+
+msgid "Attendance Type"
+msgstr "उपस्थिति प्रकार"
+
+msgid "Attachment"
+msgstr "आसक्ति"
+
+msgid "Training Certificate Required"
+msgstr "प्रशिक्षण प्रमाणपत्र आवश्यक"
+
+msgid "Employee"
+msgstr "कर्मचारी"
+
+msgid "Training Session"
+msgstr "प्रशिक्षण सत्र"
+
+msgid "Contact Number"
+msgstr "संपर्क संख्या"
+
+msgid "Contact Email"
+msgstr "ई - मेल से संपर्क करे"
+
+msgid "Company Url"
+msgstr "कंपनी यूआरएल"
+
+msgid "First Contact Date"
+msgstr "पहले संपर्क की तारीख"
+
+msgid "Client"
+msgstr "ग्राहक"
+
+msgid "Project"
+msgstr "परियोजना"
+
+msgid "Leave Name"
+msgstr "छोड़ दो नाम"
+
+msgid "Leave Accrue Enabled"
+msgstr "सक्षम एकत्रित होते हैं छोड़ दो"
+
+msgid "Leave Carried Forward"
+msgstr "आगे बढ़ाया छोड़ दो"
+
+msgid "Leaves Per Year"
+msgstr "प्रति वर्ष पत्तियां"
+
+msgid "Leaves Group"
+msgstr "पत्तियां समूह"
+
+msgid "Leaves Per Leave Period"
+msgstr "प्रति अवकाश अवधि पत्तियां"
+
+msgid "Admin can assign leave to employees"
+msgstr "व्यवस्थापक कर्मचारियों को छुट्टी असाइन कर सकते हैं"
+
+msgid "Employees can apply for this leave type"
+msgstr "कर्मचारियों को इस प्रकार की छुट्टी के लिए आवेदन कर सकते हैं"
+
+msgid "Employees can apply beyond the current leave balance"
+msgstr "कर्मचारियों को वर्तमान छुट्टी संतुलन परे आवेदन कर सकते हैं"
+
+msgid "Percentage of Leaves Carried Forward"
+msgstr "पत्तियां का प्रतिशत आगे बढ़ाया"
+
+msgid "Maximum Carried Forward Amount"
+msgstr "अधिकतम किए फॉरवर्ड राशि"
+
+msgid "Carried Forward Leave Availability Period"
+msgstr "फॉरवर्ड किए लीव उपलब्धता अवधि"
+
+msgid "Proportionate leaves on Joined Date"
+msgstr "शामिल हुए दिनांक पर आनुपातिक पत्ते"
+
+msgid "Send Notification Emails"
+msgstr "अधिसूचना ईमेल भेजें"
+
+msgid "Leave Group"
+msgstr "समूह छोड़ दें"
+
+msgid "Leave Color"
+msgstr "रंग छोड़"
+
+msgid "Period Start"
+msgstr "अवधि शुरू"
+
+msgid "Period End"
+msgstr "अवधि के अंत की"
+
+msgid "Day"
+msgstr "दिन"
+
+msgid "For All Countries"
+msgstr "सभी देशों के लिए"
+
+msgid "Date"
+msgstr "तारीख"
+
+msgid "Leave Type"
+msgstr "छोड़ दो प्रकार"
+
+msgid "Propotionate leaves on Joined Date"
+msgstr "Propotionate शामिल हुए दिनांक पर छोड़ देता है"
+
+msgid "Leaves Period"
+msgstr "अवधि पत्तियां"
+
+msgid "Leave Amount"
+msgstr "राशि छोड़"
+
+msgid "Leave Period"
+msgstr "अवधि छोड़ दो"
+
+msgid "Note"
+msgstr "ध्यान दें"
+
+msgid "All Employees"
+msgstr "सभी कर्मचारी"
+
+msgid "All Leave Types"
+msgstr "सभी प्रकार छोड़ दो"
+
+msgid "Loan Type"
+msgstr "प्रकार के ऋण"
+
+msgid "Loan Start Date"
+msgstr "ऋण प्रारंभ तिथि"
+
+msgid "Loan Period (Months)"
+msgstr "ऋण की अवधि (महीने)"
+
+msgid "Amount"
+msgstr "रकम"
+
+msgid "Last Installment Date"
+msgstr "अंतिम किस्त की तारीख"
+
+msgid "Loan Amount"
+msgstr "उधार की राशि"
+
+msgid "Monthly Installment"
+msgstr "मासिक किस्त"
+
+msgid "Employee Number"
+msgstr "कर्मचारी संख्या"
+
+msgid "First Name"
+msgstr "पहला नाम"
+
+msgid "Middle Name"
+msgstr "मध्य नाम"
+
+msgid "Last Name"
+msgstr "अंतिम नाम"
+
+msgid "Nationality"
+msgstr "राष्ट्रीयता"
+
+msgid "Date of Birth"
+msgstr "जन्म की तारीख"
+
+msgid "Gender"
+msgstr "लिंग"
+
+msgid "Marital Status"
+msgstr "वैवाहिक स्थिति"
+
+msgid "Ethnicity"
+msgstr "जातीयता"
+
+msgid "Immigration Status"
+msgstr "आव्रजन स्थिति"
+
+msgid "SSN/NRIC"
+msgstr "एसएसएन / NRIC"
+
+msgid "NIC"
+msgstr "एनआईसी"
+
+msgid "Other ID"
+msgstr "अन्य आईडी"
+
+msgid "Driving License No"
+msgstr "ड्राइविंग लाइसेंस नहीं"
+
+msgid "Pay Grade"
+msgstr "वेतन श्रेणी"
+
+msgid "Work Station Id"
+msgstr "काम स्टेशन पहचान पत्र"
+
+msgid "Address Line 1"
+msgstr "पता पंक्ति 1"
+
+msgid "Address Line 2"
+msgstr "पता पंक्ति नं। 2"
+
+msgid "City"
+msgstr "शहर"
+
+msgid "Province"
+msgstr "प्रांत"
+
+msgid "Postal/Zip Code"
+msgstr "डाक का / ज़िप कोड"
+
+msgid "Home Phone"
+msgstr "घर का फ़ोन"
+
+msgid "Mobile Phone"
+msgstr "मोबाइल फोन"
+
+msgid "Work Phone"
+msgstr "कार्य फ़ोन"
+
+msgid "Work Email"
+msgstr "कार्य ईमेल"
+
+msgid "Private Email"
+msgstr "निजी ईमेल"
+
+msgid "Joined Date"
+msgstr "शामिल हुए दिनांक"
+
+msgid "Confirmation Date"
+msgstr "पुष्टिकरण की तारीख"
+
+msgid "Termination Date"
+msgstr "निष्कासन तिथि"
+
+msgid "Department"
+msgstr "विभाग"
+
+msgid "Supervisor"
+msgstr "पर्यवेक्षक"
+
+msgid "Indirect Supervisors"
+msgstr "अप्रत्यक्ष पर्यवेक्षकों"
+
+msgid "First Level Approver"
+msgstr "प्रथम स्तर अनुमोदक"
+
+msgid "Second Level Approver"
+msgstr "द्वितीय स्तर अनुमोदक"
+
+msgid "Third Level Approver"
+msgstr "तीसरे स्तर अनुमोदक"
+
+msgid "Notes"
+msgstr "टिप्पणियाँ"
+
+msgid "Time (GMT)"
+msgstr "समय (जीएमटी)"
+
+msgid "User"
+msgstr "उपयोगकर्ता"
+
+msgid "IP Address"
+msgstr "आईपी ​​पता"
+
+msgid "Logged In Employee"
+msgstr "कर्मचारी में लॉग इन"
+
+msgid "Skill"
+msgstr "कौशल"
+
+msgid "Qualification"
+msgstr "योग्यता"
+
+msgid "Institute"
+msgstr "संस्थान"
+
+msgid "Start Date"
+msgstr "आरंभ करने की तिथि"
+
+msgid "Completed On"
+msgstr "पर पूर्ण"
+
+msgid "Certification"
+msgstr "प्रमाणीकरण"
+
+msgid "Granted On"
+msgstr "पर दी"
+
+msgid "Valid Thru"
+msgstr "के जरिए मान्य"
+
+msgid "Language"
+msgstr "भाषा"
+
+msgid "Reading"
+msgstr "पढ़ना"
+
+msgid "Speaking"
+msgstr "बोला जा रहा है"
+
+msgid "Writing"
+msgstr "लिख रहे हैं"
+
+msgid "Understanding"
+msgstr "समझ"
+
+msgid "Date Added"
+msgstr "तारीख संकलित हुई"
+
+msgid "Valid Until"
+msgstr "तब तक वैध"
+
+msgid "Relationship"
+msgstr "संबंध"
+
+msgid "Id Number"
+msgstr "आईडी नंबर"
+
+msgid "All Job Titles"
+msgstr "सभी नौकरी टाइटल"
+
+msgid "All Departments"
+msgstr "सभी विभाग"
+
+msgid "Anyone"
+msgstr "किसी को"
+
+msgid "Field"
+msgstr "खेत"
+
+msgid "Old Value"
+msgstr "पुराने मान"
+
+msgid "New Value"
+msgstr "नया मूल्य"
+
+msgid "Modified By"
+msgstr "द्वारा संशोधित"
+
+msgid "Created"
+msgstr "बनाया था"
+
+msgid "Notify Expiry"
+msgstr "समाप्ति की सूचित करें"
+
+msgid "Notify Expiry Before One Month"
+msgstr "एक महीने पहले समाप्ति सूचित करें"
+
+msgid "Notify Expiry Before One Week"
+msgstr "एक सप्ताह पहले समाप्ति सूचित करें"
+
+msgid "Notify Expiry Before One Day"
+msgstr "एक दिन पहले समाप्ति सूचित करें"
+
+msgid "Travel Type"
+msgstr "यात्रा के प्रकार"
+
+msgid "Purpose of Travel"
+msgstr "यात्रा का उद्देश्य"
+
+msgid "Travel From"
+msgstr "से यात्रा"
+
+msgid "Travel To"
+msgstr "को यात्रा"
+
+msgid "Travel Date"
+msgstr "यात्रा की तारीख"
+
+msgid "Return Date"
+msgstr "वापसी की तिथि"
+
+msgid "Total Funding Proposed"
+msgstr "कुल धन प्रस्तावित"
+
+msgid "Itinerary / Cab Receipt"
+msgstr "यात्रा कार्यक्रम / टैक्सी रसीद"
+
+msgid "Other Attachment 1"
+msgstr "अन्य लगाव 1"
+
+msgid "Other Attachment 2"
+msgstr "अन्य लगाव 2"
+
+msgid "Payment Method"
+msgstr "भुगतान का तरीका"
+
+msgid "Transaction / Ref No"
+msgstr "लेनदेन / रेफरी नहीं"
+
+msgid "Payee"
+msgstr "पेयी"
+
+msgid "Expense Category"
+msgstr "व्यय श्रेणी"
+
+msgid "Receipt"
+msgstr "रसीद"
+
+msgid "Time-In"
+msgstr "समय शुरू"
+
+msgid "Time-Out"
+msgstr "समय समाप्त"
+
+msgid "Clocked In Status"
+msgstr "स्थिति में दर्ज"
+
+msgid "End Date"
+msgstr "अंतिम तिथि"
+
+msgid "Category"
+msgstr "वर्ग"
+
+msgid "Start Time"
+msgstr "समय शुरू"
+
+msgid "End Time"
+msgstr "अंतिम समय"
+
+msgid "Leave Status"
+msgstr "स्थिति छोड़ दो"
+
+msgid "Select Client"
+msgstr "हमारे ग्राहकों का चयन"
+
+msgid "Not Selected"
+msgstr "नहीं चुने गए"
+
+msgid "Or Project"
+msgstr "या परियोजना"
+
+msgid "All Projects"
+msgstr "सभी परियोजनाएं"
+
+msgid "All Status"
+msgstr "सभी स्थिति"
+
+msgid "Value"
+msgstr "मूल्य"
+
+msgid "Logo"
+msgstr "प्रतीक चिन्ह"
+
+msgid "User Name"
+msgstr "उपयोगकर्ता नाम"
+
+msgid "Authentication Email"
+msgstr "प्रमाणीकरण ईमेल"
+
+msgid "User Level"
+msgstr "उपयोगकर्ता स्तर"
+
+msgid "Email"
+msgstr "ईमेल"
+
+msgid "User Roles"
+msgstr "उपयोगकर्ता भूमिका"
+
+msgid "Default Module"
+msgstr "डिफ़ॉल्ट मॉड्यूल"
+
+msgid "No Default Module"
+msgstr "कोई डिफ़ॉल्ट मॉड्यूल"
+
+msgid "Menu"
+msgstr "मेन्यू"
+
+msgid "Group"
+msgstr "समूह"
+
+msgid "Order"
+msgstr "व्यवस्था"
+
+msgid "Path"
+msgstr "पथ"
+
+msgid "Label"
+msgstr "लेबल"
+
+msgid "User Levels"
+msgstr "उपयोगकर्ता के स्तर"
+
+msgid "Module"
+msgstr "मॉड्यूल"
+
+msgid "All Modules"
+msgstr "सभी मॉड्यूल"
+
+msgid "Invoice Period Start"
+msgstr "चालान अवधि शुरू"
+
+msgid "Invoice Period End"
+msgstr "चालान अवधि के अंत"
+
+msgid "Due date"
+msgstr "नियत तारीख"
+
+msgid "Url"
+msgstr "यूआरएल"
+
+msgid "Original Text"
+msgstr "मूललेख"
+
+msgid "Mapped Text"
+msgstr "मैप किया गया पाठ"
+
+msgid "Display Status"
+msgstr "प्रदर्शन स्थिति"
+
+msgid "Field Type"
+msgstr "क्षेत्र प्रकार"
+
+msgid "Field Label"
+msgstr "फील्ड लेबल"
+
+msgid "Validation"
+msgstr "मान्यकरण"
+
+msgid "Field Options"
+msgstr "फ़ील्ड विकल्प"
+
+msgid "Priority"
+msgstr "प्राथमिकता"
+
+msgid "Display Section"
+msgstr "प्रदर्शन अनुभाग"
+
+msgid "Salary Component Type"
+msgstr "वेतन घटक प्रकार"
+
+msgid "Salary Component"
+msgstr "वेतन घटक"
+
+msgid "Pay Frequency"
+msgstr "भुगतान की आवृत्ति"
+
+msgid "Calculation Group"
+msgstr "परिकलन समूह"
+
+msgid "None"
+msgstr "कोई नहीं"
+
+msgid "Calculation Exemptions"
+msgstr "गणना छूट"
+
+msgid "Calculations Assigned"
+msgstr "गणना निरुपित"
+
+msgid "Date Start"
+msgstr "तिथि शुरू"
+
+msgid "Date End"
+msgstr "तिथि समाप्ति"
+
+msgid "Payslip Template"
+msgstr "payslip खाका"
+
+msgid "Payroll Columns"
+msgstr "पेरोल कॉलम"
+
+msgid "Calculation Method"
+msgstr "आकलन प्रणाली"
+
+msgid "Editable"
+msgstr "संपादन"
+
+msgid "Enabled"
+msgstr "सक्षम"
+
+msgid "Predefined Calculations"
+msgstr "पूर्वनिर्धारित गणना"
+
+msgid "Salary Components"
+msgstr "वेतन अवयव"
+
+msgid "Columns to Add"
+msgstr "कॉलम जोड़ने के लिए"
+
+msgid "Columns to Subtract"
+msgstr "कॉलम को घटाएँ"
+
+msgid "Column Order"
+msgstr "स्तंभ क्रम"
+
+msgid "Default Value"
+msgstr "डिफ़ॉल्ट मान"
+
+msgid "Calculation Columns"
+msgstr "गणना के कॉलम"
+
+msgid "Function"
+msgstr "समारोह"
+
+msgid "Payroll Report Column"
+msgstr "पेरोल रिपोर्ट कॉलम"
+
+msgid "Calculation Process"
+msgstr "गणना प्रक्रिया"
+
+msgid "Payslip Fields"
+msgstr "payslip फील्ड्स"
+
+msgid "Payroll Column"
+msgstr "पेरोल स्तंभ"
+
+msgid "Text"
+msgstr "टेक्स्ट"
+
+msgid "Lower Limit Condition"
+msgstr "निचली सीमा स्थिति"
+
+msgid "Lower Limit"
+msgstr "निचली सीमा"
+
+msgid "Upper Limit Condition"
+msgstr "ऊपरी सीमा स्थिति"
+
+msgid "Upper Limit"
+msgstr "ऊपरी सीमा"
+
+msgid "Column"
+msgstr "स्तंभ"
+
+msgid "Job Code"
+msgstr "नौकरी कोड"
+
+msgid "Short Description"
+msgstr "संक्षिप्त वर्णन"
+
+msgid "Requirements"
+msgstr "आवश्यकताओं"
+
+msgid "Benefits"
+msgstr "लाभ"
+
+msgid "Employment Type"
+msgstr "रोजगार के प्रकार"
+
+msgid "Any Employment Type"
+msgstr "किसी भी रोजगार के प्रकार"
+
+msgid "Experience Level"
+msgstr "अनुभव के स्तर"
+
+msgid "Any Experience Level"
+msgstr "किसी भी अनुभव के स्तर"
+
+msgid "Job Function"
+msgstr "कार्यभार"
+
+msgid "Any Job Function"
+msgstr "किसी भी काम के समारोह"
+
+msgid "Education Level"
+msgstr "शिक्षा का स्तर"
+
+msgid "Any Education Level"
+msgstr "किसी भी शिक्षा स्तर"
+
+msgid "Show Salary"
+msgstr "शो वेतन"
+
+msgid "Salary Min"
+msgstr "वेतन मिन"
+
+msgid "Salary Max"
+msgstr "वेतन मैक्स"
+
+msgid "Keywords"
+msgstr "कीवर्ड"
+
+msgid "Closing Date"
+msgstr "अंतिम तिथि"
+
+msgid "Image"
+msgstr "छवि"
+
+msgid "Display Type"
+msgstr "प्रदर्शन प्रकार"
+
+msgid "Profile Image"
+msgstr "प्रोफ़ाइल छवि"
+
+msgid "Telephone"
+msgstr "टेलीफोन"
+
+msgid "Resume Title"
+msgstr "बायो डाटा का शीर्षक"
+
+msgid "Resume"
+msgstr "बायोडाटा"
+
+msgid "Resume Headline"
+msgstr "संक्षिप्त विवरण का शीर्षक"
+
+msgid "Profile Summary"
+msgstr "प्रोफ़ाइल सारांश"
+
+msgid "Work History"
+msgstr "काम का इतिहास"
+
+msgid "Education"
+msgstr "शिक्षा"
+
+msgid "Skills"
+msgstr "कौशल"
+
+msgid "Referees"
+msgstr "रेफरी"
+
+msgid "From Year"
+msgstr "साल से"
+
+msgid "From Month"
+msgstr "महीने से"
+
+msgid "To Year"
+msgstr "साल"
+
+msgid "To Month"
+msgstr "महीने के लिए"
+
+msgid "Currently Work Here"
+msgstr "वर्तमान में यहाँ काम करे"
+
+msgid "Degree/Diploma"
+msgstr "दरजा प्रमाणपत्र"
+
+msgid "Currently Studying"
+msgstr "अभी अध्ययन कर रहा है"
+
+msgid "Skill Level"
+msgstr "कौशल स्तर"
+
+msgid "Last Used Year"
+msgstr "पिछले साल प्रयुक्त"
+
+msgid "Last Used Month"
+msgstr "पिछले महीने में प्रयुक्त"
+
+msgid "Years of Experience"
+msgstr "वर्षों का अनुभव"
+
+msgid "Designation"
+msgstr "पद"
+
+msgid "Phone"
+msgstr "फ़ोन"
+
+msgid "Job"
+msgstr "काम"
+
+msgid "Candidate"
+msgstr "उम्मीदवार"
+
+msgid "Referred By"
+msgstr "द्वारा उल्लिखित"
+
+msgid "Leave Start Date"
+msgstr "छोड़ दो प्रारंभ तिथि"
+
+msgid "Leave End Date"
+msgstr "छोड़ दो समाप्ति तिथि"
+
+msgid "Reason"
+msgstr "कारण"
+
+msgid "Available Leaves"
+msgstr "उपलब्ध पत्तियां"
+
+msgid "Approved Leaves"
+msgstr "स्वीकृत पत्तियां"
+
+msgid "Rejected Leaves"
+msgstr "अस्वीकृत पत्तियां"
+
+msgid "Leaves to be Accrued"
+msgstr "अर्जित किया जा करने के लिए छोड़ देता है"
+
+msgid "Leaves Carried Forward"
+msgstr "पत्तियां आगे बढ़ाया"
+
+msgid "Apply Leave"
+msgstr "लीव लागू करें"
+
+msgid "Filter"
+msgstr "फ़िल्टर"
+
+msgid "Add New"
+msgstr "नया जोड़ें"
+
+msgid "Time"
+msgstr "पहर"
+
+msgid "Purpose"
+msgstr "उद्देश्य"
+
+msgid "From"
+msgstr "से"
+
+msgid "To"
+msgstr "सेवा मेरे"
+
+msgid "Created (GMT)"
+msgstr "बनाया गया (जीएमटी)"
+
+msgid "Download"
+msgstr "डाउनलोड"
+
+msgid "Submit"
+msgstr "जमा करें"
+
+msgid "Upload"
+msgstr "अपलोड"
+
+msgid "Remove"
+msgstr "हटाना"
+
+msgid "Add"
+msgstr "जोड़ना"
+
+msgid "Reset"
+msgstr "रीसेट"
+
+msgid "Add Time Entry"
+msgstr "समय प्रविष्टि जोड़ें"
+
+msgid "Current Clocked In Status"
+msgstr "स्थिति में वर्तमान कमाए"
+
+msgid "Attendance entry should be within a single day"
+msgstr "उपस्थिति प्रविष्टि एक ही दिन के भीतर किया जाना चाहिए"
+
+msgid "Account Balance"
+msgstr "खाते में शेष"
+
+msgid "Plan"
+msgstr "योजना"
+
+msgid "Transactions"
+msgstr "लेनदेन"
+
+msgid "Applications"
+msgstr "अनुप्रयोगों"
+
+msgid "Attendance Graph"
+msgstr "उपस्थिति ग्राफ़"
+
+msgid "Hours in Office vs Hours Worked Graph"
+msgstr "कार्यालय में घंटे बनाम घंटे काम किया ग्राफ़"
+
+msgid "Company Graph"
+msgstr "कंपनी ग्राफ़"
+
+msgid "Company Documents"
+msgstr "कंपनी के दस्तावेजों"
+
+msgid "Document Types"
+msgstr "दस्तावेज़ प्रकार"
+
+msgid "Employee Documents"
+msgstr "कर्मचारी दस्तावेज"
+
+msgid "Employee Basic Details"
+msgstr "कर्मचारी बेसिक विवरण"
+
+msgid "Employees (Direct Reports)"
+msgstr "कर्मचारी (प्रत्यक्ष रिपोर्ट)"
+
+msgid "Certifications"
+msgstr "प्रमाणपत्र"
+
+msgid "Languages"
+msgstr "बोली"
+
+msgid "Deactivated Employees"
+msgstr "निष्क्रिय कर्मचारी"
+
+msgid "Temporarily Deactivated Employees"
+msgstr "अस्थायी रूप से निष्क्रिय कर्मचारी"
+
+msgid "Terminated Employee Data"
+msgstr "समाप्त कर्मचारी डेटा"
+
+msgid "Employee Saved Successfully"
+msgstr "कर्मचारी सफलतापूर्वक को बचाया"
+
+msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
+msgstr "कर्मचारी IceHrm के लिए लॉग इन करने के लिए एक उपयोगकर्ता की जरूरत है। आप इस कर्मचारी अब के लिए एक उपयोगकर्ता बनाने के लिए करना चाहते हैं?"
+
+msgid "You can do this later through Users module if required."
+msgstr "आप उपयोगकर्ताओं मॉड्यूल के माध्यम से बाद में यह कर सकते हैं, यदि आवश्यक।"
+
+msgid "Expenses Categories"
+msgstr "व्यय श्रेणियाँ"
+
+msgid "Payment Methods"
+msgstr "भुगतान की विधि"
+
+msgid "Employee Expenses"
+msgstr "कर्मचारी खर्च"
+
+msgid "Salary Component Types"
+msgstr "वेतन घटक प्रकार"
+
+msgid "Employee Salary Components"
+msgstr "कर्मचारी वेतन अवयव"
+
+msgid "Company Payroll"
+msgstr "कंपनी पेरोल"
+
+msgid "Calculation Groups"
+msgstr "गणना के समूह"
+
+msgid "Calculation Methods"
+msgstr "गणना के तरीकों"
+
+msgid "Payslip Templates"
+msgstr "payslip टेम्पलेट्स"
+
+msgid "Edit Employment Types"
+msgstr "रोजगार संपादित प्रकार"
+
+msgid "Edit Experience Levels"
+msgstr "अनुभव संपादित स्तर"
+
+msgid "Edit Job Functions"
+msgstr "संपादित काम कार्यों"
+
+msgid "Edit Education Levels"
+msgstr "संपादित शिक्षा का स्तर"
+
+msgid "Edit Benefits"
+msgstr "लाभ संपादित करें"
+
+msgid "Application"
+msgstr "आवेदन"
+
+msgid "Job Titles"
+msgstr "नौकरी शीर्षक"
+
+msgid "Pay Grades"
+msgstr "वेतन ग्रेड"
+
+msgid "Training Sessions"
+msgstr "प्रशिक्षण सत्र"
+
+msgid "Employee Training Sessions"
+msgstr "कर्मचारी प्रशिक्षण सत्र"
+
+msgid "Clients"
+msgstr "ग्राहकों"
+
+msgid "Employee Projects"
+msgstr "कर्मचारी परियोजनाएं"
+
+msgid "Leave Types"
+msgstr "प्रकार छोड़ दो"
+
+msgid "Work Week"
+msgstr "कार्य सप्ताह"
+
+msgid "Holidays"
+msgstr "छुट्टियां"
+
+msgid "Leave Rules"
+msgstr "नियम छोड़ दो"
+
+msgid "Paid Time Off"
+msgstr "भुगतान की अवधि समाप्त"
+
+msgid "Leave Groups"
+msgstr "लीव समूह"
+
+msgid "Edit Leave Groups"
+msgstr "संपादित लीव समूह"
+
+msgid "Leave Group Employees"
+msgstr "समूह के कर्मचारियों छोड़ दो"
+
+msgid "Employee Leave List"
+msgstr "कर्मचारी अवकाश सूची"
+
+msgid "Loan Types"
+msgstr "ऋण प्रकार"
+
+msgid "Employee Loans"
+msgstr "कर्मचारी ऋण"
+
+msgid "Travel Requests"
+msgstr "सफर के अनुरोध"
+
+msgid "Overtime Categories"
+msgstr "ओवरटाइम श्रेणियाँ"
+
+msgid "Leave / PTO"
+msgstr "छोड़ दो / पीटीओ"
+
+msgid "Other"
+msgstr "अन्य"
+
+msgid "Modules"
+msgstr "मॉड्यूल"
+
+msgid "Countries"
+msgstr "देशों"
+
+msgid "Provinces"
+msgstr "प्रांतों"
+
+msgid "Currency Types"
+msgstr "मुद्रा के प्रकार"
+
+msgid "Employee Custom Fields"
+msgstr "कर्मचारी कस्टम फील्ड्स"
+
+msgid "Employee Field Names"
+msgstr "कर्मचारी फील्ड नाम"
+
+msgid "My Details"
+msgstr "मेरा विवरण"
+
+msgid "All My Leaves"
+msgstr "मेरे सभी पत्तियां"
+
+msgid "Leave Entitlement"
+msgstr "छुट्टी का अधिकार"
+
+msgid "Approved Leave"
+msgstr "स्वीकृत छोड़ दो"
+
+msgid "Pending Leave"
+msgstr "विचाराधीन छोड़ दो"
+
+msgid "Subordinate Leave"
+msgstr "अधीनस्थ छोड़ दो"
+
+msgid "Cancellation Requests"
+msgstr "रद्द अनुरोध"
+
+msgid "Approval Requests"
+msgstr "अनुमोदन अनुरोध"
+
+msgid "Approved TimeSheets"
+msgstr "स्वीकृत timesheets"
+
+msgid "All My TimeSheets"
+msgstr "मेरे सभी timesheets"
+
+msgid "Pending TimeSheets"
+msgstr "लंबित timesheets"
+
+msgid "Subordinate TimeSheets"
+msgstr "अधीनस्थ timesheets"
+
+msgid "Approved Attendance Sheets"
+msgstr "स्वीकृत उपस्थिति पत्रक"
+
+msgid "All My Attendance Sheets"
+msgstr "सभी मेरी उपस्थिति पत्रक"
+
+msgid "Pending Attendance Sheets"
+msgstr "उपस्थिति पत्रक लंबित"
+
+msgid "Subordinate Attendance Sheets"
+msgstr "अधीनस्थ उपस्थिति पत्रक"
+
+msgid "Subordinate Overtime Requests"
+msgstr "अधीनस्थ ओवरटाइम अनुरोध"
+
+msgid "Overtime Request Approval"
+msgstr "ओवरटाइम अनुरोध अनुमोदन"
+
+msgid "My Training Sessions"
+msgstr "मेरे प्रशिक्षण सत्र"
+
+msgid "All Training Sessions"
+msgstr "सभी प्रशिक्षण सत्र"
+
+msgid "Training Sessions of Direct Reports"
+msgstr "प्रत्यक्ष रिपोर्ट के प्रशिक्षण सत्र"
+
+msgid "Subordinate Travel Requests"
+msgstr "अधीनस्थ सफर अनुरोध"
+
+msgid "Travel Request Approval"
+msgstr "सफर के अनुरोध अनुमोदन"
+
+msgid "Subordinate Expenses"
+msgstr "अधीनस्थ व्यय"
+
+msgid "Expenses Approval"
+msgstr "व्यय अनुमोदन"
+
+msgid "Loans Taken"
+msgstr "कर्ज लिया"
+
+msgid "Change Leave Status"
+msgstr "लीव स्थिति बदलें"
+
+msgid "Leave Status"
+msgstr "स्थिति छोड़ दो"
+
+msgid "Status Change Note"
+msgstr "स्थिति बदलें नोट"
+
+msgid "Leave Summary"
+msgstr "छोड़ दो सारांश"
+
+msgid "Approved Leave Count"
+msgstr "स्वीकृत लीव गणना"
+
+msgid "Pending Leave Count"
+msgstr "लंबित लीव गणना"
+
+msgid "Available Leave Count"
+msgstr "उपलब्ध छोड़ गणना"
+
+msgid "Leave Dates"
+msgstr "तारीखें छोड़ दो"
+
+msgid "Leave Date"
+msgstr "छोड़ दो दिनांक"
+
+msgid "Leave Notes"
+msgstr "लीव नोट्स"
+
+msgid "Apply"
+msgstr "लागू करें"
+
+msgid "Back"
+msgstr "वापस"
+

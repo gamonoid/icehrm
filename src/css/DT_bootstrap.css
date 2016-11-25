@@ -1,0 +1,56 @@
+
+div.dataTables_length label {
+	width: 460px;
+	float: left;
+	text-align: left;
+}
+
+div.dataTables_length select {
+	width: 75px;
+}
+
+div.dataTables_filter label {
+	float: right;
+	width: 460px;
+}
+
+div.dataTables_info {
+	padding-top: 8px;
+}
+
+div.dataTables_paginate {
+	float: right;
+	margin: 0;
+}
+
+table {
+	margin: 1em 0;
+	clear: both;
+}
+
+table.dataTable th:active {
+	outline: none;
+}
+
+
+
+.dataClass1{
+	display:none;
+}
+.dataClass2{
+	float: right;
+}
+.dataClass2 .dataTables_filter{
+	float: right;
+	width:280px;
+}
+div.dataClass2 label{
+	float: left;
+	width: 280px;
+}
+.dataClass3{
+	float: left;
+	margin-left: 30px;
+}
+.dataClass4{
+}
