@@ -12,6 +12,4 @@ php:
   - '7.0'
   - hhvm
   - nightly
-
-
-  icehrm.test.log
+after_failure: "cat /tmp/icehrm.test.log"
