@@ -13,7 +13,7 @@ define('CLIENT_NAME', 'app');
 
 if(!defined('MYSQL_ROOT_USER') || !defined('MYSQL_ROOT_PASS')){
     //Tests running on vagrant
-    define('APP_BASE_PATH', '/vagrant/build/app/');
+    define('APP_BASE_PATH', TEST_BASE_PATH.'../build/app/');
     define('CLIENT_BASE_PATH', APP_BASE_PATH.'test/');
     define('BASE_URL','http://app.app.dev/');
     define('CLIENT_BASE_URL','http://clients.app.dev/dev/');
