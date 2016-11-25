@@ -13,7 +13,7 @@
 
 	
  <target name="build"
-         depends="prepare,lint,copyapp,release,install"
+         depends="prepare,lint,copyapp,phpunit,release,install"
          description=""/>
 
  <target name="buildlocal"
