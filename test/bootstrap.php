@@ -30,3 +30,5 @@ foreach ($scripts as $insql){
     $command = "cat ".$insql."| mysql -u".MYSQL_ROOT_USER." -p".MYSQL_ROOT_PASS." '".APP_DB."'";
     exec($command);
 }
+
+echo "Bootstrapping done!!"."\r\n";

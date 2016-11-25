@@ -1,4 +1,5 @@
 <?php
+echo "LanguageManagerTest"."\r\n";
 if(!class_exists("TestTemplate")) {
     include dirname(__FILE__).'/../TestTemplate.php';
 }
@@ -14,7 +15,7 @@ class LanguageManagerTest extends TestTemplate{
 
 
     public function testSample(){
-        
+        echo "LanguageManagerTest testSample"."\r\n";
         $this->p("cat|".LanguageManager::tran('cat'));
         $this->p("cat|".LanguageManager::tran('cat'));
 
