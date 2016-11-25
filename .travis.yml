@@ -1,3 +1,7 @@
+services:
+  - mysql
+before_script:
+  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 install:
   - ant buildlocal
 language: php
