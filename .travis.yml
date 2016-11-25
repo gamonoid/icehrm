@@ -6,10 +6,8 @@ install:
   - ant buildlocal
 language: php
 php:
-  - '5.4'
   - '5.5'
   - '5.6'
   - '7.0'
-  - hhvm
   - nightly
 after_failure: "cat /tmp/icehrm.test.log"
