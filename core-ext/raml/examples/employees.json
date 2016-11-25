@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "employee_id": "EMP001",
+    "first_name": "IceHrm",
+    "middle_name": "Sample",
+    "last_name": "Employee"
+  },
+  {
+    "id": "2",
+    "employee_id": "EMP002",
+    "first_name": "Lala",
+    "middle_name": "Nadila ",
+    "last_name": "Lamees"
+  },
+  {
+    "id": "3",
+    "employee_id": "EMP003",
+    "first_name": "Sofia",
+    "middle_name": "",
+    "last_name": "O'Sullivan"
+  }
+]
