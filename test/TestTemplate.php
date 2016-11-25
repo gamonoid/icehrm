@@ -5,6 +5,7 @@ include APP_BASE_PATH.'admin/users/api/UsersAdminManager.php';
 class TestTemplate extends PHPUnit_Framework_TestCase{
 	
 	protected $usersArray = array();
+    private $db = null;
 
 	public function p($msg){
 		fwrite(STDOUT, $msg."\n");
@@ -88,5 +89,22 @@ class TestTemplate extends PHPUnit_Framework_TestCase{
 			}
 		}
 	}
-	
+
+	protected function resetDatabase(){
+        $dropDBCommand = 'echo "DROP DATABASE IF EXISTS ' . APP_DB . '"| mysql -u' . MYSQL_ROOT_USER . ' -p' . MYSQL_ROOT_PASS;
+        $createDBCommand = 'echo "CREATE DATABASE '.APP_DB.'"| mysql -u'.MYSQL_ROOT_USER.' -p'.MYSQL_ROOT_PASS;
+
+        exec($dropDBCommand);
+        exec($createDBCommand);
+
+        $scripts = array(
+            APP_BASE_PATH."scripts/icehrmdb.sql",
+            APP_BASE_PATH."scripts/icehrm_master_data.sql"
+        );
+
+        foreach ($scripts as $insql){
+            $command = "cat ".$insql."| mysql -u".MYSQL_ROOT_USER." -p".MYSQL_ROOT_PASS." '".APP_DB."'";
+            exec($command);
+        }
+    }
 }

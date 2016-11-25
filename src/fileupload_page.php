@@ -9,7 +9,15 @@ if($_REQUEST['file_type']=="image"){
 }else if($_REQUEST['file_type']=="all"){
 	$fileTypes = $fileTypesDocuments.",".$fileTypesImages;
 }else{
-	$fileTypes = $fileTypesDocuments.",".$fileTypesImages;
+
+	$clist = explode(",", $_REQUEST['file_type']);
+	$supportedList = explode(",", $fileTypesDocuments.",".$fileTypesImages);
+
+	if(count(array_intersect($clist, $supportedList)) == count($clist)){
+		$fileTypes = $_REQUEST['file_type'];
+	}else{
+		$fileTypes = $fileTypesDocuments.",".$fileTypesImages;
+	}
 }
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

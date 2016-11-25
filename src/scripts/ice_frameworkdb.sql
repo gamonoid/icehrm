@@ -235,3 +235,17 @@ create table `Emails` (
   key `KEY_Emails_status` (`status`),
   key `KEY_Emails_created` (`created`)
 ) engine=innodb default charset=utf8;
+
+create table `Migrations` (
+	`id` bigint(20) NOT NULL AUTO_INCREMENT,
+	`file` varchar(50) NOT NULL,
+	`version` int(11) NOT NULL,
+	`created` DATETIME default '0000-00-00 00:00:00',
+	`updated` DATETIME default '0000-00-00 00:00:00',
+	`status` enum('Pending','Up','Down','UpError','DownError') default 'Pending',
+	`last_error` varchar(500) NULL,
+	primary key  (`id`),
+	unique key `KEY_Migrations_file` (`file`),
+	index `KEY_Migrations_status` (`status`),
+	index `KEY_Migrations_version` (`version`)
+) engine=innodb default charset=utf8;

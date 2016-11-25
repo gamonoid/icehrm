@@ -5,11 +5,14 @@ if(!defined('APP_NAME')){define('APP_NAME','Isotope');}
 if(!defined('FB_URL')){define('FB_URL', 'https://www.facebook.com/icecamp');};
 if(!defined('TWITTER_URL')){define('TWITTER_URL', 'https://twitter.com/icecamp');};
 
-define('HOME_LINK_ADMIN', CLIENT_BASE_URL."?g=admin&n=dashboard&m=admin_Admin");
-define('HOME_LINK_OTHERS', CLIENT_BASE_URL."?g=modules&n=dashboard&m=module_Personal_Information");
+if(defined('CLIENT_BASE_URL')) {
+    define('HOME_LINK_ADMIN', CLIENT_BASE_URL . "?g=admin&n=dashboard&m=admin_Admin");
+    define('HOME_LINK_OTHERS', CLIENT_BASE_URL . "?g=modules&n=dashboard&m=module_Personal_Information");
+}
 
 //Version
 define('VERSION', '1.0.OS');
+define('VERSION_NUMBER', '100');
 define('CACHE_VALUE', '1.0.OS');
 define('VERSION_DATE', '28/06/2016');
 
@@ -26,3 +29,5 @@ define('MEMCACHE_PORT', '11211');
 if(!defined('WK_HTML_PATH')){
     define('WK_HTML_PATH', '/usr/bin/wkhtmltopdf');
 }
+
+define('ALL_CLIENT_BASE_PATH', dirname(__FILE__).'/app/');

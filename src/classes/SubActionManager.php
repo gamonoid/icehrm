@@ -28,10 +28,12 @@ class IceResponse{
 	
 	var $status;
 	var $data;
+	var $code;
 
-	public function __construct($status,$data = null){
+	public function __construct($status, $data = null, $code = null){
 		$this->status = $status;	
 		$this->data = $data;	
+		$this->code = $code;
 	}
 	
 	public function getStatus(){
@@ -44,6 +46,10 @@ class IceResponse{
 	
 	public function getObject(){
 		return $this->data;
+	}
+
+	public function getCode(){
+		return $this->code;
 	}
 	
 	public function getJsonArray(){

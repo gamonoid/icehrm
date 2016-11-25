@@ -10,21 +10,38 @@ define('TWITTER_URL', 'IceHrm');
 define('SIGN_IN_ELEMENT_MAPPING_FIELD_NAME','employee');
 
 define('CLIENT_NAME', 'app');
-define('APP_BASE_PATH', realpath(dirname(__FILE__).'/../app')."/");
-echo 'APP_BASE_PATH :'.APP_BASE_PATH."\r\n";
-define('CLIENT_BASE_PATH', APP_BASE_PATH.'app/');
-define('BASE_URL','http://apps.gamonoid.com/icehrmcore/');
-define('CLIENT_BASE_URL','http://apps.gamonoid.com/icehrm/');
 
-
-
-define('APP_DB', 'icehrmht');
 if(!defined('MYSQL_ROOT_USER')){
-    define('APP_USERNAME', 'root');
-    define('APP_PASSWORD', '');
+    //Tests running on vagrant
+    define('APP_BASE_PATH', '/vagrant/build/app/');
+    define('CLIENT_BASE_PATH', APP_BASE_PATH.'test/');
+    define('BASE_URL','http://app.app.dev/');
+    define('CLIENT_BASE_URL','http://clients.app.dev/dev/');
 }else{
+    //Tests running on deploy
+    define('APP_BASE_PATH', realpath(dirname(__FILE__).'/../app')."/");
+    define('CLIENT_BASE_PATH', APP_BASE_PATH.'app/');
+    define('BASE_URL','http://apps.gamonoid.com/icehrmcore/');
+    define('CLIENT_BASE_URL','http://apps.gamonoid.com/icehrm/');
+
+}
+
+
+
+
+if(!defined('MYSQL_ROOT_USER')){
+    define('APP_DB', 'testing');
+    define('APP_USERNAME', 'testing');
+    define('APP_PASSWORD', 'testing');
+}else{
+    define('APP_DB', 'icehrmht');
     define('APP_USERNAME', MYSQL_ROOT_USER);
     define('APP_PASSWORD', MYSQL_ROOT_PASS);
+}
+
+if(!defined('MYSQL_ROOT_USER')){
+    define('MYSQL_ROOT_USER', 'root');
+    define('MYSQL_ROOT_PASS', 'dev');
 }
 
 define('APP_HOST', 'localhost');

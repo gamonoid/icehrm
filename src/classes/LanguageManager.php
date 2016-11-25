@@ -35,12 +35,13 @@ class LanguageManager{
 
     private function getCurrentLang(){
         $user = BaseService::getInstance()->getCurrentUser();
-        LogManager::getInstance()->info("User:".json_encode($user));
         if(empty($user) || empty($user->lang) || $user->lang == "NULL"){
             $lang = SettingsManager::getInstance()->getSetting('System: Language');
             LogManager::getInstance()->info("System Lang:".$lang);
         }else{
-            $lang = $user->lang;
+            $supportedLang = new SupportedLanguage();
+            $supportedLang->Load("id = ?",array($user->lang));
+            $lang = $supportedLang->name;
         }
         if(empty($lang) || !file_exists(APP_BASE_PATH.'lang/'.$lang.'.po')){
             $lang = 'en';

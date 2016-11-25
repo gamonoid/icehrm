@@ -42,6 +42,8 @@ include (APP_BASE_PATH."classes/RestApiManager.php");
 include (APP_BASE_PATH."classes/ModuleBuilder.php");
 include (APP_BASE_PATH."classes/SimpleImage.php");
 include (APP_BASE_PATH."classes/Macaw.php");
+include (APP_BASE_PATH."classes/Migration.php");
+include (APP_BASE_PATH."classes/Validator.php");
 include (APP_BASE_PATH."classes/crypt/Aes.php");
 include (APP_BASE_PATH."classes/crypt/AesCtr.php");
 
@@ -81,6 +83,7 @@ $notificationManager = new NotificationManager();
 BaseService::getInstance()->setNotificationManager($notificationManager);
 BaseService::getInstance()->setSettingsManager($settingsManager);
 BaseService::getInstance()->setCustomFieldManager(new CustomFieldManager());
+BaseService::getInstance()->setMigrationManager(new MigrationManager());
 
 $notificationManager->setBaseService($baseService);
 
@@ -131,9 +134,6 @@ if(defined('CLIENT_PATH')){
 }
 //============= End - Initializing Modules ============
 
-
-
-
 BaseService::getInstance()->setFileFields($fileFields);
 
 BaseService::getInstance()->setUserTables($userTables);
@@ -170,6 +170,7 @@ if($emailEnabled == "1"){
 }
 
 BaseService::getInstance()->setEmailSender($emailSender);
+
 
 include ('common.cron.tasks.php');
 

@@ -2089,6 +2089,12 @@ IceHRMBase.method('renderFormField', function(field) {
 		}
 		t = t.replace(/_userId_/g,userId);
 		t = t.replace(/_group_/g,this.tab);
+
+		if(field[1].filetypes != undefined && field[1].filetypes != null){
+			t = t.replace(/_filetypes_/g,field[1].filetypes);
+		}else{
+			t = t.replace(/_filetypes_/g,'all');
+		}
 		
 		/*
 		if(object != null && object != undefined && object[field[0]] != null && object[field[0]] != undefined && object[field[0]] != ""){

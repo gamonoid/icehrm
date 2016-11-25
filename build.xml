@@ -3,6 +3,7 @@
  <!-- By default, we assume all tools to be on the $PATH -->
  <property name="toolsdir" value=""/>
  <property name="destination" value="${basedir}/build/app"/>
+ <property name="testdir" value="${basedir}/build/test"/>
  <property name="origin" value="${basedir}/src"/>
  <property environment="env"/>
  <property name="env.appname" value="icehrm"/>
@@ -16,7 +17,7 @@
          description=""/>
 
  <target name="buildlocal"
-         depends="prepare,copyapp,installLocal"
+         depends="prepare,copyapp"
          description=""/>
 
  <target name="clean"
@@ -180,23 +181,23 @@
          description="Generate project documentation using phpDox">
   <exec executable="${toolsdir}phpdox"/>
  </target>
-	
+
 
 
 <target name="copyapp"
-     description="Copy generated files to QA app">
-	
-	<delete includeemptydirs="true">
-	    <fileset dir="${destination}">
-	        <include name="**/*"/>
-	    </fileset>
-	</delete>
-	
-	<copy todir="${destination}" overwrite="true">
-	  <fileset dir="${origin}">
-	    <include name="**/*"/>
-	  </fileset>
-	</copy>
+        description="Copy generated files to QA app">
+
+    <delete includeemptydirs="true">
+        <fileset dir="${destination}">
+            <include name="**/*"/>
+        </fileset>
+    </delete>
+
+    <copy todir="${destination}" overwrite="true">
+        <fileset dir="${origin}">
+            <include name="**/*"/>
+        </fileset>
+    </copy>
 
     <copy todir="${destination}/lib" overwrite="true">
         <fileset dir="${basedir}/lib">
@@ -215,7 +216,13 @@
             <include name="**/*"/>
         </fileset>
     </copy>
-	
+
+    <copy todir="${testdir}" overwrite="true">
+        <fileset dir="${basedir}/test">
+            <include name="**/*"/>
+        </fileset>
+    </copy>
+
 </target>
 	
 <target name="install"

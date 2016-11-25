@@ -162,5 +162,8 @@ class StatusChangeLog extends ICEHRM_Record {
 	var $_table = 'StatusChangeLogs';
 }
 
+class Migration extends ICEHRM_Record {
+	var $_table = 'Migrations';
+}
 
 

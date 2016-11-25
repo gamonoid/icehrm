@@ -20,7 +20,9 @@ if(!class_exists('LogManager')){
                 if(is_writable(ini_get('error_log'))){
                     self::$me->log->pushHandler(new StreamHandler(ini_get('error_log'), LOG_LEVEL));
                 }else{
-                    self::$me->log->pushHandler(new StreamHandler(CLIENT_BASE_PATH.'data/app.log', LOG_LEVEL));
+                    if (!file_exists(CLIENT_BASE_PATH.'data') && !is_dir(CLIENT_BASE_PATH.'data')) {
+                        self::$me->log->pushHandler(new StreamHandler(CLIENT_BASE_PATH.'data/app.log', LOG_LEVEL));
+                    }
                 }
 			}
 			return self::$me;

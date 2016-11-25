@@ -1,0 +1,5 @@
+.DS_Store
+phpunit.xml
+vendor
+build
+.idea

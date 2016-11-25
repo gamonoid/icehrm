@@ -186,7 +186,7 @@ if(!isset($_REQUEST['objects'])) {
 		$row = array();
 		$colCount = count($columns);
 		for ($i = 0; $i < $colCount; $i++) {
-			$row[] = $item->$columns[$i];
+			$row[] = $item->{$columns[$i]};
 		}
 		$row["_org"] = BaseService::getInstance()->cleanUpAdoDB($item);
 		$output['aaData'][] = $row;

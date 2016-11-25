@@ -125,25 +125,123 @@ class RestApiManager{
 class RestEndPoint{
 
 	public function process($type , $parameter = NULL){
-		$resp = $this->$type($parameter);
-		$this->printResponse($resp);
+
+		$accessTokenValidation = $this->validateAccessToken();
+		if($accessTokenValidation->getStatus() == IceResponse::ERROR){
+			$resp = $accessTokenValidation;
+		}else{
+			$resp = $this->$type($parameter);
+		}
+
+		if($resp->getStatus() == IceResponse::SUCCESS && $resp->getCode() == null){
+			header('Content-Type: application/json');
+			http_response_code(200);
+			$this->printResponse($resp->getObject());
+
+		}else if($resp->getStatus() == IceResponse::SUCCESS){
+			header('Content-Type: application/json');
+			http_response_code($resp->getCode());
+			$this->printResponse($resp->getObject());
+
+		}else{
+			header('Content-Type: application/json');
+			http_response_code($resp->getCode());
+			$messages = array();
+			$messages[] = array(
+				"code" => $resp->getCode(),
+				"message" => $resp->getObject()
+			);
+			$this->printResponse(array("error",[$messages]));
+		}
+
 	}
 	
 	public function get($parameter){
-		return new IceResponse(IceResponse::ERROR, "Method not Implemented");
+		return new IceResponse(IceResponse::ERROR, "Method not Implemented", 404);
 	}
 	
 	public function post($parameter){
-		return new IceResponse(IceResponse::ERROR, "Method not Implemented");
+		return new IceResponse(IceResponse::ERROR, "Method not Implemented", 404);
 	}
 	
 	public function put($parameter){
-		return new IceResponse(IceResponse::ERROR, "Method not Implemented");
+		return new IceResponse(IceResponse::ERROR, "Method not Implemented", 404);
 	}
 	
 	public function delete($parameter){
-		return new IceResponse(IceResponse::ERROR, "Method not Implemented");
+		return new IceResponse(IceResponse::ERROR, "Method not Implemented", 404);
 	}
+
+	public function basicValidation($map, $data){
+	    $validator = new Validator();
+	    $map = $this->getAssocMap($map);
+        unset($map['id']);
+	    foreach ($data as $key=>$val) {
+	        if(!isset($map[$key])){
+	            unset($data[$key]);
+                continue;
+            }
+
+            $vrules = $map[$key];
+            if ((!isset($vrules['allow-null']) || $vrules['allow-null'] == false) && $vrules['validation'] != "none"   && empty($data[$key])){
+                return new IceResponse(IceResponse::ERROR, "Field should have a value - ".$key, 400);
+            } else if(isset($vrules['remote-source'])){
+                $class = $vrules['remote-source'][0];
+                $obj = new $class();
+                $idField = $vrules['remote-source'][1];
+                $obj->Load($idField." = ?", array($val));
+                if(empty($obj->$idField) || $obj->$idField != $val){
+                    if($vrules['allow-null'] == true ){
+                        $data[$key] = null;
+                    }else{
+                        return new IceResponse(IceResponse::ERROR, "Not found - ".$key, 400);
+                    }
+                }
+            }
+            if(!isset($vrules['remote-source'])){
+                if((!isset($vrules['validation']) || empty($vrules['validation']))){
+                    if(!$validator->validateRequired($val)){
+                        return new IceResponse(IceResponse::ERROR, "Required field value missing - ".$key, 400);
+                    }
+                }else if($vrules['validation'] != "none"){
+                    $validationRule = "validate". ucfirst($vrules['validation']);
+                    if(!$validator->$validationRule($val)){
+                        return new IceResponse(IceResponse::ERROR, "Validation failed - ".$key, 400);
+                    }
+                }
+            }
+
+        }
+
+        //check if request has all required fields
+        foreach ($map as $key=>$val) {
+            $vrules = $map[$key];
+            if(!isset($vrules['remote-source'])) {
+                if ($vrules['validation'] != "none") {
+                    if (!isset($data[$key])) {
+                        return new IceResponse(IceResponse::ERROR, "Required field missing - " . $key, 400);
+                    }
+                }
+            }else{
+                if (!isset($vrules['allow-null']) || $vrules['allow-null'] == false) {
+                    if (!isset($data[$key])) {
+                        return new IceResponse(IceResponse::ERROR, "Required field missing - " . $key, 400);
+                    }
+                }
+            }
+        }
+
+        return new IceResponse(IceResponse::SUCCESS, null);
+
+    }
+
+    public function getAssocMap($map){
+        $amap = array();
+        foreach ($map as $item){
+            $amap[$item[0]] = $item[1];
+        }
+        return $amap;
+    }
 
 	public function clearObject($obj){
 		return BaseService::getInstance()->cleanUpAdoDB($obj);
@@ -155,8 +253,39 @@ class RestEndPoint{
 		return $accessTokenValidation;
 	}
 
+    public function getValidate($parameter,  $data){
+        return new IceResponse(IceResponse::SUCCESS, null);
+    }
+
+    public function postValidate($parameter, $data){
+        return new IceResponse(IceResponse::SUCCESS, null);
+    }
+
+    public function putValidate($parameter,  $data){
+        return new IceResponse(IceResponse::SUCCESS, null);
+    }
+
+    public function deleteValidate($parameter, $data){
+        return new IceResponse(IceResponse::SUCCESS, null);
+    }
+	
+	public function cleanDBObject($obj){
+		unset($obj->keysToIgnore);
+		return $obj;
+	}
+
 	public function printResponse($response){
 		echo json_encode($response,JSON_PRETTY_PRINT);
 	}
+
+    public function getRequestBodyJSON() {
+        $rawInput = file_get_contents('php://input');
+        return json_decode($rawInput, true);
+    }
+
+    public function getRequestBody() {
+        $rawInput = file_get_contents('php://input');
+        return $rawInput;
+    }
 }
 
