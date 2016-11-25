@@ -263,7 +263,7 @@ EmployeeAdapter.method('modEmployeeGetSuccessCallBack' , function(data) {
         }
     }
 
-    html = html.replace(/#_.+_#/i,"");
+    html = html.replace(/#_.+_#/gi,"");
 
 	html = html.replace(/_id_/g,data.id);
 	

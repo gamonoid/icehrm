@@ -5,13 +5,16 @@ if(!defined('APP_NAME')){define('APP_NAME','ICE Hrm');}
 if(!defined('FB_URL')){define('FB_URL', 'https://www.facebook.com/icehrm');};
 if(!defined('TWITTER_URL')){define('TWITTER_URL', 'https://twitter.com/icehrmapp');};
 
-define('HOME_LINK_ADMIN', CLIENT_BASE_URL."?g=admin&n=dashboard&m=admin_Admin");
-define('HOME_LINK_OTHERS', CLIENT_BASE_URL."?g=modules&n=dashboard&m=module_Personal_Information");
+if(defined('CLIENT_BASE_URL')) {
+    define('HOME_LINK_ADMIN', CLIENT_BASE_URL . "?g=admin&n=dashboard&m=admin_Admin");
+    define('HOME_LINK_OTHERS', CLIENT_BASE_URL . "?g=modules&n=dashboard&m=module_Personal_Information");
+}
 
 //Version
-define('VERSION', '18.0.OS');
-define('CACHE_VALUE', '18.0.OS');
-define('VERSION_DATE', '04/08/2016');
+define('VERSION', '19.0.OS');
+define('CACHE_VALUE', '19.0.OS');
+define('VERSION_NUMBER', '190');
+define('VERSION_DATE', '19/11/2016');
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','icehrm@gamonoid.com');}
 if(!defined('KEY_PREFIX')){define('KEY_PREFIX','IceHrm');}
@@ -26,3 +29,5 @@ define('MEMCACHE_PORT', '11211');
 if(!defined('WK_HTML_PATH')){
     define('WK_HTML_PATH', '/usr/bin/wkhtmltopdf');
 }
+
+define('ALL_CLIENT_BASE_PATH', '/vagrant/deployment/clients/');

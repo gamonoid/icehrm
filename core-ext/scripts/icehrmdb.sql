@@ -1422,3 +1422,40 @@ create table `EmployeeOvertime` (
 	CONSTRAINT `Fk_EmployeeOvertime_Category` FOREIGN KEY (`category`) REFERENCES `OvertimeCategories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
+
+create table `Forms` (
+	`id` bigint(20) NOT NULL AUTO_INCREMENT,
+	`name` varchar(50) NOT NULL,
+	`description` varchar(500) NULL,
+	`items` text NULL,
+	`created` timestamp NULL default '0000-00-00 00:00:00',
+	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	primary key  (`id`)
+) engine=innodb default charset=utf8;
+
+create table `EmployeeForms` (
+	`id` bigint(20) NOT NULL AUTO_INCREMENT,
+	`employee` bigint(20) NOT NULL,
+	`form` bigint(20) NOT NULL,
+	`status` enum('Pending','Completed') default 'Pending',
+	`created` timestamp NULL default '0000-00-00 00:00:00',
+	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	CONSTRAINT `Fk_EmployeeForms_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `Fk_EmployeeForms_Forms` FOREIGN KEY (`form`) REFERENCES `Forms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	primary key  (`id`)
+) engine=innodb default charset=utf8;
+
+
+create table `Migrations` (
+	`id` bigint(20) NOT NULL AUTO_INCREMENT,
+	`file` varchar(50) NOT NULL,
+	`version` int(11) NOT NULL,
+	`created` DATETIME default '0000-00-00 00:00:00',
+	`updated` DATETIME default '0000-00-00 00:00:00',
+	`status` enum('Pending','Up','Down','UpError','DownError') default 'Pending',
+	`last_error` varchar(500) NULL,
+	primary key  (`id`),
+	unique key `KEY_Migrations_file` (`file`),
+	index `KEY_Migrations_status` (`status`),
+	index `KEY_Migrations_version` (`version`)
+) engine=innodb default charset=utf8;

@@ -16,10 +16,6 @@ if (!class_exists('EmployeesAdminManager')) {
                 $empRestEndPoint->process('get',$pathParams);
             });
 
-            \NoahBuscher\Macaw\Macaw::get(REST_API_PATH.'employees', function() {
-                $empRestEndPoint = new EmployeesRestEndPoint();
-                $empRestEndPoint->process('get',NULL);
-            });
         }
 
 		public function initializeDatabaseErrorMappings(){
@@ -231,10 +227,10 @@ if (!class_exists('Employee')) {
         }
 
         public static function cleanEmployeeData($obj){
+            unset($obj->keysToIgnore);
             unset($obj->historyFieldsToTrack);
             unset($obj->historyUpdateList);
             unset($obj->oldObjOrig);
-            unset($obj->oldObj);
             unset($obj->oldObj);
             return $obj;
         }
@@ -312,48 +308,39 @@ if (!class_exists('EmployeeApproval')) {
 if (!class_exists('EmployeeRestEndPoint')) {
     class EmployeeRestEndPoint extends RestEndPoint{
         public function get($parameter){
+
             if(empty($parameter)){
                 return new IceResponse(IceResponse::ERROR, "Employee ID not provided");
             }
 
-            $accessTokenValidation = $this->validateAccessToken();
-            if($accessTokenValidation->getStatus() == IceResponse::ERROR){
-                return $accessTokenValidation;
+            if($parameter === 'list'){
+                $emp = new Employee();
+                $emps = $emp->Find("1=1");
+                $newEmps = array();
+                foreach($emps as $emp){
+                    $employee = new stdClass();
+                    $employee->id = $emp->id;
+                    $employee->employee_id = $emp->employee_id;
+                    $employee->first_name = $emp->first_name;
+                    $employee->middle_name = $emp->middle_name;
+                    $employee->last_name = $emp->last_name;
+                    $newEmps[] = $employee;
+
+                }
+                return new IceResponse(IceResponse::SUCCESS, $newEmps);
+            }else{
+                $mapping = '{"nationality":["Nationality","id","name"],"ethnicity":["Ethnicity","id","name"],"immigration_status":["ImmigrationStatus","id","name"],"employment_status":["EmploymentStatus","id","name"],"job_title":["JobTitle","id","name"],"pay_grade":["PayGrade","id","name"],"country":["Country","code","name"],"province":["Province","id","name"],"department":["CompanyStructure","id","title"],"supervisor":["Employee","id","first_name+last_name"]}';
+                $emp = BaseService::getInstance()->getElement('Employee',$parameter,$mapping,true);
+                if(!empty($emp)){
+                    $emp = Employee::cleanEmployeeData($emp);
+                    return new IceResponse(IceResponse::SUCCESS,$emp);
+                }
+                return new IceResponse(IceResponse::ERROR, "Employee not found" ,404);
             }
 
-            $mapping = '{"nationality":["Nationality","id","name"],"ethnicity":["Ethnicity","id","name"],"immigration_status":["ImmigrationStatus","id","name"],"employment_status":["EmploymentStatus","id","name"],"job_title":["JobTitle","id","name"],"pay_grade":["PayGrade","id","name"],"country":["Country","code","name"],"province":["Province","id","name"],"department":["CompanyStructure","id","title"],"supervisor":["Employee","id","first_name+last_name"]}';
-            $employeeResp = BaseService::getInstance()->getElement('Employee',$parameter,$mapping,true);
-            if($employeeResp->getStatus() == IceResponse::SUCCESS){
-                $emp = $employeeResp->getObject();
-                $emp = Employee::cleanEmployeeData($emp);
-                return new IceResponse(IceResponse::SUCCESS,$emp);
-            }
-            return $employeeResp;
+
         }
 
 
     }
 }
-
-if (!class_exists('EmployeesRestEndPoint')) {
-    class EmployeesRestEndPoint extends RestEndPoint{
-        public function get($parameter){
-
-            $accessTokenValidation = $this->validateAccessToken();
-            if($accessTokenValidation->getStatus() == IceResponse::ERROR){
-                return $accessTokenValidation;
-            }
-
-            $emp = new Employee();
-            $emps = $emp->Find("1=1");
-            $newEmps = array();
-            foreach($emps as $emp){
-                $newEmps[] = Employee::cleanEmployeeData($emp);
-            }
-            return new IceResponse(IceResponse::SUCCESS, $newEmps);
-        }
-
-
-    }
-}
-

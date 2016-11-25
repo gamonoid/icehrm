@@ -34,7 +34,10 @@ $options1['setShowAddNew'] = 'false';
 $moduleBuilder->addModuleOrGroup(new ModuleTab('CompanySetting','Setting','Company','SettingAdapter','{"name":["Company:"]}','name',true,$options1));
 $moduleBuilder->addModuleOrGroup(new ModuleTab('SystemSetting','Setting','System','SettingAdapter','{"name":["System:"]}','name',false,$options1));
 $moduleBuilder->addModuleOrGroup(new ModuleTab('EmailSetting','Setting','Email','SettingAdapter','{"name":["Email:"]}','name',false,$options1));
-$moduleBuilder->addModuleOrGroup(new ModuleTab('LDAPSetting','Setting','LDAP','SettingAdapter','{"name":["LDAP:"]}','name',false,$options1));
+$moduleBuilder->addModuleOrGroup(new ModuleTab('LeaveSetting','Setting','Leave / PTO','SettingAdapter','{"name":["Leave:"]}','name',false,$options1));
+if(!defined('LDAP_ENABLED') || LDAP_ENABLED == true){
+    $moduleBuilder->addModuleOrGroup(new ModuleTab('LDAPSetting','Setting','LDAP','SettingAdapter','{"name":["LDAP:"]}','name',false,$options1));
+}
 $moduleBuilder->addModuleOrGroup(new ModuleTab('AttendanceSetting','Setting','Attendance','SettingAdapter','{"name":["Attendance:"]}','name',false,$options1));
 $moduleBuilder->addModuleOrGroup(new ModuleTab('OtherSetting','Setting','Other','SettingAdapter','{"name":["Projects:","Recruitment:","Notifications:","Expense:","Travel:","Api:","Overtime:"]}','name',false,$options1));
 echo UIManager::getInstance()->renderModule($moduleBuilder);
