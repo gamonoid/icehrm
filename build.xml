@@ -20,6 +20,10 @@
          depends="prepare,copyapp"
          description=""/>
 
+<target name="ice"
+        depends="copyapp_quick"
+        description=""/>
+
  <target name="clean"
          unless="clean.done"
          description="Cleanup build artifacts">
@@ -182,7 +186,39 @@
   <exec executable="${toolsdir}phpdox"/>
  </target>
 
+    <target name="copyapp_quick"
+            description="Copy generated files to QA app">
 
+        <copy todir="${destination}" overwrite="true">
+            <fileset dir="${origin}">
+                <include name="**/*"/>
+                <exclude name="composer/**"/>
+                <exclude name="themecss/**"/>
+                <exclude name="themejs/**"/>
+                <exclude name="robo/**"/>
+                <exclude name="images/**"/>
+            </fileset>
+        </copy>
+
+        <copy todir="${destination}" overwrite="true">
+            <fileset dir="${basedir}/core-ext">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
+
+        <copy todir="${destination}" overwrite="true">
+            <fileset dir="${basedir}/ext">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
+
+        <copy todir="${testdir}" overwrite="true">
+            <fileset dir="${basedir}/test">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
+
+    </target>
 
 <target name="copyapp"
         description="Copy generated files to QA app">

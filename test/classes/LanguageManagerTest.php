@@ -4,7 +4,6 @@ if(!class_exists("TestTemplate")) {
 }
 
 class LanguageManagerTest extends TestTemplate{
-    var $obj = null;
 
     protected function setUp()
     {
@@ -13,21 +12,11 @@ class LanguageManagerTest extends TestTemplate{
     }
 
 
-    public function testSample(){
-        $this->p("cat|".LanguageManager::tran('cat'));
-        $this->p("cat|".LanguageManager::tran('cat'));
-
-        $this->p("solid|".LanguageManager::tran('solid'));
-        $this->p("solid|".LanguageManager::tran('solid'));
-
-
-        $this->p("one file|".LanguageManager::tran('one file'));
-        $this->p("2 files|".LanguageManager::tran('2 files'));
-        
-        $string = "wert <t>Logged In</t> rrr";
-        
-        $txt = LanguageManager::translateTnrText($string);
-
-        $this->p("Tx1:".$txt);
+    public function testTran(){
+        $this->assertEquals('cat', LanguageManager::tran('cat'));
+        $this->assertEquals('solid', LanguageManager::tran('solid'));
+        $this->assertEquals('one file', LanguageManager::tran('one file'));
+        $this->assertEquals('2 files', LanguageManager::tran('2 files'));
+        $this->assertEquals('User Logged In now', LanguageManager::translateTnrText('User <t>Logged In</t> now'));
     }
 }
