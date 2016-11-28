@@ -16,9 +16,9 @@ Preparing development VM
 
 - Clone icehrm from https://github.com/gamonoid/icehrm.git or download the source
 
-- Install Vagrant [](https://www.vagrantup.com/downloads.html)
+- Install Vagrant [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
-- Install Vagrant host updater plugin [](https://github.com/cogitatio/vagrant-hostsupdater)
+- Install Vagrant host updater plugin [https://github.com/cogitatio/vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater)
 
 
 - Run vagrant up in icehrm root directory (this will download icehrm vagrant image which is  ~1 GB)
