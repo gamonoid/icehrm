@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "string"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "cv_title": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "employee_id",
+    "first_name",
+    "last_name"
+  ]
+}

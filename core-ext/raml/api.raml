@@ -1,0 +1,61 @@
+#%RAML 0.8
+---
+title: IceHrm
+baseUri: http://icehrm-hosted.gamonoid.com/api
+version: 1
+documentation:
+  - title: Authentication
+    content: !include documentation/authentication.md
+  - title: Responses
+    content: !include documentation/responses.md
+
+/employee:
+  displayName: Employee
+  /list:
+      get:
+        is: [ paginated ]
+        description: Get a list of employees
+        responses:
+          200:
+            body:
+              application/json:
+                schema: !include schemas/employees.json
+                example: !include examples/employees.json
+  /{id}:
+    get:
+      description: Get an employee by id
+      responses:
+        200:
+          body:
+            application/json:
+              schema: !include schemas/employee.json
+              example: !include examples/employee.json
+        404:
+          description: Employee does not exist
+          body:
+            application/json:
+              schema: !include schemas/error.json
+    uriParameters:
+      id:
+        description: Employee id
+        type: integer
+/candidate:
+  displayName: Candidate
+  /{id}:
+    get:
+      description: Get an employee by id
+      responses:
+        200:
+          body:
+            application/json:
+              schema: !include schemas/candidate.json
+              example: !include examples/candidate.json
+        404:
+          description: Candidate does not exist
+          body:
+            application/json:
+              schema: !include schemas/error.json
+    uriParameters:
+      id:
+        description: Candidate id
+        type: integer

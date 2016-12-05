@@ -102,12 +102,13 @@ class EmployeesActionManager extends SubActionManager{
 
         $ok = $archived->Save();
         if(!$ok){
-            return new IceResponse(IceResponse::ERROR, "Error occured while archiving employee");
+            return new IceResponse(IceResponse::ERROR, "Error occurred while archiving employee");
         }
+
 
         $ok = $employee->Delete();
         if(!$ok){
-            return new IceResponse(IceResponse::ERROR, "Error occured while deleting employee");
+            return new IceResponse(IceResponse::ERROR, "Error occurred while deleting employee");
         }
 
         return new IceResponse(IceResponse::SUCCESS, $archived);

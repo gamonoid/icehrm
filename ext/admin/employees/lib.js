@@ -197,6 +197,9 @@ EmployeeAdapter.method('getFormFields', function() {
         [ "department", {"label":"Department","type":"select2","remote-source":["CompanyStructure","id","title"]}],
         [ "supervisor", {"label":"Direct Supervisor","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
         [ "indirect_supervisors", {"label":"Indirect Supervisors","type":"select2multi","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
+        [ "approver1", {"label":"First Level Approver","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
+        [ "approver2", {"label":"Second Level Approver","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
+        [ "approver3", {"label":"Third Level Approver","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
         [ "notes", {"label":"Notes","type":"datagroup",
             "form":[
                 [ "note", {"label":"Note","type":"textarea","validation":""}]
@@ -413,7 +416,7 @@ EmployeeAdapter.method('renderEmployee', function(data) {
         }
     }
 
-    html = html.replace(/#_.+_#/i,"");
+    html = html.replace(/#_.+_#/gi,"");
     html = html.replace(/_id_/g,data.id);
 
     $("#"+this.getTableName()).html(html);
@@ -506,6 +509,12 @@ EmployeeAdapter.method('renderEmployee', function(data) {
     modJs.subModJsList['tabEmployeeLanguageSubTab'] = new EmployeeSubLanguageAdapter('EmployeeLanguage','EmployeeLanguageSubTab',{"employee":data.id});
     modJs.subModJsList['tabEmployeeLanguageSubTab'].parent = this;
 
+    modJs.subModJsList['tabEmployeeDependentSubTab'] = new EmployeeSubDependentAdapter('EmployeeDependent','EmployeeDependentSubTab',{"employee":data.id});
+    modJs.subModJsList['tabEmployeeDependentSubTab'].parent = this;
+
+    modJs.subModJsList['tabEmployeeEmergencyContactSubTab'] = new EmployeeSubEmergencyContactAdapter('EmergencyContact','EmployeeEmergencyContactSubTab',{"employee":data.id});
+    modJs.subModJsList['tabEmployeeEmergencyContactSubTab'].parent = this;
+
     if(this.isModuleInstalled("admin","documents")) {
         modJs.subModJsList['tabEmployeeDocumentSubTab'] = new EmployeeSubDocumentAdapter('EmployeeDocument', 'EmployeeDocumentSubTab', {"employee": data.id});
         modJs.subModJsList['tabEmployeeDocumentSubTab'].parent = this;
@@ -546,6 +555,16 @@ EmployeeAdapter.method('renderEmployee', function(data) {
     modJs.subModJsList['tabEmployeeLanguageSubTab'].setShowAddNew(false);
     modJs.subModJsList['tabEmployeeLanguageSubTab'].setShowCancel(false);
     modJs.subModJsList['tabEmployeeLanguageSubTab'].get([]);
+
+    modJs.subModJsList['tabEmployeeDependentSubTab'].setShowFormOnPopup(true);
+    modJs.subModJsList['tabEmployeeDependentSubTab'].setShowAddNew(false);
+    modJs.subModJsList['tabEmployeeDependentSubTab'].setShowCancel(false);
+    modJs.subModJsList['tabEmployeeDependentSubTab'].get([]);
+
+    modJs.subModJsList['tabEmployeeEmergencyContactSubTab'].setShowFormOnPopup(true);
+    modJs.subModJsList['tabEmployeeEmergencyContactSubTab'].setShowAddNew(false);
+    modJs.subModJsList['tabEmployeeEmergencyContactSubTab'].setShowCancel(false);
+    modJs.subModJsList['tabEmployeeEmergencyContactSubTab'].get([]);
 
     if(this.isModuleInstalled("admin","documents")) {
         modJs.subModJsList['tabEmployeeDocumentSubTab'].setShowFormOnPopup(true);
@@ -1372,7 +1391,7 @@ EmployeeSubSkillsAdapter.method('getSubHeaderTitle', function() {
 });
 
 EmployeeSubSkillsAdapter.method('getSubItemHtml', function(item, itemDelete, itemEdit) {
-    var itemHtml = $('<a href="#" class="list-group-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text">'+nl2br(item[3])+'</p></a>');
+    var itemHtml = $('<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text">'+nl2br(item[3])+'</p></div>');
     return itemHtml;
 });
 
@@ -1451,8 +1470,8 @@ EmployeeSubEducationAdapter.method('getSubItemHtml', function(item, itemDelete, 
     try{
         end = Date.parse(item[5]).toString('MMM d, yyyy');
     }catch(e){}
-    //var itemHtml = $('<a href="#" class="list-group-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text">'+nl2br(item[3])+'</p></a>');
-    var itemHtml = $('<a href="#" class="list-group-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text"><i class="fa fa-calendar"></i> Start: <b>'+start+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-calendar"></i> Completed: <b>'+end+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-building-o"></i> Institute: <b>'+item[3]+'</b></p></a>');
+    //var itemHtml = $('<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text">'+nl2br(item[3])+'</p></div>');
+    var itemHtml = $('<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text"><i class="fa fa-calendar"></i> Start: <b>'+start+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-calendar"></i> Completed: <b>'+end+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-building-o"></i> Institute: <b>'+item[3]+'</b></p></div>');
     return itemHtml;
 });
 
@@ -1529,7 +1548,7 @@ EmployeeSubCertificationAdapter.method('getSubItemHtml', function(item, itemDele
     try{
         end = Date.parse(item[5]).toString('MMM d, yyyy');
     }catch(e){}
-    var itemHtml = $('<a href="#" class="list-group-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text"><i class="fa fa-calendar"></i> Granted On: <b>'+start+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-calendar"></i> Valid Thru: <b>'+end+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-building-o"></i> Institute: <b>'+item[3]+'</b></p></a>');
+    var itemHtml = $('<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text"><i class="fa fa-calendar"></i> Granted On: <b>'+start+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-calendar"></i> Valid Thru: <b>'+end+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-building-o"></i> Institute: <b>'+item[3]+'</b></p></div>');
     return itemHtml;
 });
 
@@ -1607,7 +1626,7 @@ EmployeeSubLanguageAdapter.method('getSubHeaderTitle', function() {
 });
 
 EmployeeSubLanguageAdapter.method('getSubItemHtml', function(item, itemDelete, itemEdit) {
-    var itemHtml = $('<a href="#" class="list-group-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text"><i class="fa fa-asterisk"></i> Reading: <b>'+item[3]+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-asterisk"></i> Speaking: <b>'+ item[4] +'</b></p><p class="list-group-item-text">'+'<i class="fa fa-asterisk"></i> Writing: <b>'+item[5]+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-asterisk"></i> Understanding: <b>'+item[6]+'</b></p></a>');
+    var itemHtml = $('<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text"><i class="fa fa-asterisk"></i> Reading: <b>'+item[3]+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-asterisk"></i> Speaking: <b>'+ item[4] +'</b></p><p class="list-group-item-text">'+'<i class="fa fa-asterisk"></i> Writing: <b>'+item[5]+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-asterisk"></i> Understanding: <b>'+item[6]+'</b></p></div>');
     return itemHtml;
 });
 
@@ -1618,6 +1637,154 @@ EmployeeSubLanguageAdapter.method('isSubProfileTable', function() {
         return true;
     }
 });
+
+/**
+ * @class EmployeeSubDependentAdapter
+ * @param endPoint
+ * @param tab
+ * @param filter
+ * @param orderBy
+ * @returns
+ */
+
+function EmployeeSubDependentAdapter(endPoint,tab,filter,orderBy) {
+    this.initAdapter(endPoint,tab,filter,orderBy);
+}
+
+EmployeeSubDependentAdapter.inherits(SubAdapterBase);
+
+
+
+EmployeeSubDependentAdapter.method('getDataMapping', function() {
+    return [
+        "id",
+        "employee",
+        "name",
+        "relationship",
+        "dob",
+        "id_number"
+    ];
+});
+
+
+EmployeeSubDependentAdapter.method('getHeaders', function() {
+    return [
+        { "sTitle": "ID" ,"bVisible":false},
+        { "sTitle": "Employee" },
+        { "sTitle": "Name" },
+        { "sTitle": "Relationship"},
+        { "sTitle": "Date of Birth"},
+        { "sTitle": "Id Number"}
+    ];
+});
+
+EmployeeSubDependentAdapter.method('getFormFields', function() {
+    return [
+        [ "id", {"label":"ID","type":"hidden"}],
+        [ "employee", {"label":"Employee","type":"hidden"}],
+        [ "name", {"label":"Name","type":"text","validation":""}],
+        [ "relationship", {"label":"Relationship","type":"select","source":[["Child","Child"],["Spouse","Spouse"],["Parent","Parent"],["Other","Other"]]}],
+        [ "dob", {"label":"Date of Birth","type":"date","validation":""}],
+        [ "id_number", {"label":"Id Number","type":"text","validation":"none"}]
+    ];
+});
+
+
+EmployeeSubDependentAdapter.method('forceInjectValuesBeforeSave', function(params) {
+    params['employee'] = this.parent.currentId;
+    return params;
+});
+
+EmployeeSubDependentAdapter.method('getSubHeaderTitle', function() {
+    var addBtn = '<button class="btn btn-small btn-success" onclick="modJs.subModJsList[\'tab'+this.tab+'\'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>';
+    return addBtn + "Dependents";
+});
+
+EmployeeSubDependentAdapter.method('getSubItemHtml', function(item, itemDelete, itemEdit) {
+
+
+    var itemHtml = $('<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text"><i class="fa fa-users"></i> Relationship: <b>'+item[3]+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-user"></i> Name: <b>'+item[2]+'</b></p></div>');
+    return itemHtml;
+});
+
+
+
+/**
+ * @class EmployeeSubEmergencyContactAdapter
+ * @param endPoint
+ * @param tab
+ * @param filter
+ * @param orderBy
+ * @returns
+ */
+
+function EmployeeSubEmergencyContactAdapter(endPoint,tab,filter,orderBy) {
+    this.initAdapter(endPoint,tab,filter,orderBy);
+}
+
+EmployeeSubEmergencyContactAdapter.inherits(SubAdapterBase);
+
+
+
+EmployeeSubEmergencyContactAdapter.method('getDataMapping', function() {
+    return [
+        "id",
+        "employee",
+        "name",
+        "relationship",
+        "home_phone",
+        "work_phone",
+        "mobile_phone"
+    ];
+});
+
+
+EmployeeSubEmergencyContactAdapter.method('getHeaders', function() {
+    return [
+        { "sTitle": "ID" ,"bVisible":false},
+        { "sTitle": "Employee" },
+        { "sTitle": "Name" },
+        { "sTitle": "Relationship"},
+        { "sTitle": "Home Phone"},
+        { "sTitle": "Work Phone"},
+        { "sTitle": "Mobile Phone"}
+    ];
+});
+
+EmployeeSubEmergencyContactAdapter.method('getFormFields', function() {
+    return [
+        [ "id", {"label":"ID","type":"hidden"}],
+        [ "employee", {"label":"Employee","type":"hidden"}],
+        [ "name", {"label":"Name","type":"text","validation":""}],
+        [ "relationship", {"label":"Relationship","type":"text","validation":"none"}],
+        [ "home_phone", {"label":"Home Phone","type":"text","validation":"none"}],
+        [ "work_phone", {"label":"Work Phone","type":"text","validation":"none"}],
+        [ "mobile_phone", {"label":"Mobile Phone","type":"text","validation":"none"}]
+    ];
+});
+
+
+EmployeeSubEmergencyContactAdapter.method('forceInjectValuesBeforeSave', function(params) {
+    params['employee'] = this.parent.currentId;
+    return params;
+});
+
+EmployeeSubEmergencyContactAdapter.method('getSubHeaderTitle', function() {
+    var addBtn = '<button class="btn btn-small btn-success" onclick="modJs.subModJsList[\'tab'+this.tab+'\'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>';
+    return addBtn + "Emergency Contacts";
+});
+
+EmployeeSubEmergencyContactAdapter.method('getSubItemHtml', function(item, itemDelete, itemEdit) {
+
+
+    var itemHtml = $('<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text"><i class="fa fa-users"></i> Relationship: <b>'+item[3]+'</b></p><p class="list-group-item-text">'+'<i class="fa fa-user"></i> Name: <b>'+item[2]+'</b></p><p class="list-group-item-text"><i class="fa fa-phone"></i> Home Phone: <b>'+item[4]+'</b></p><p class="list-group-item-text"><i class="fa fa-phone"></i> Mobile Phone: <b>'+item[6]+'</b></p></div>');
+    return itemHtml;
+});
+
+
+
+
+
 
 
 /**
@@ -1692,9 +1859,14 @@ EmployeeSubDocumentAdapter.method('getSubItemHtml', function(item, itemDelete, i
     try{
         expire = Date.parse(item[5]).toString('MMM d, yyyy');
     }catch(e){}
-    var itemHtml = $('<a href="#" class="list-group-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+itemDelete+itemEdit+'</h5><p class="list-group-item-text">'+nl2br(item[3])+'</p><p class="list-group-item-text">'+'<i class="fa fa-calendar"></i> Expire On: <b>'+expire+'</b></p></a>');
+
+    var downloadButton = '<button id="#_id_#_download" onclick="download(\''+item[7]+'\');return false;" type="button" style="position: absolute;bottom: 5px;right: 70px;font-size: 13px;" tooltip="Download"><li class="fa fa-cloud-download"></li></button>';
+
+    var itemHtml = $('<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">'+item[2]+downloadButton+itemDelete+itemEdit+'</h5><p class="list-group-item-text">'+nl2br(item[3])+'</p><p class="list-group-item-text">'+'<i class="fa fa-calendar"></i> Expire On: <b>'+expire+'</b></p></div>');
     return itemHtml;
 });
+
+
 
 EmployeeSubDocumentAdapter.method('isSubProfileTable', function() {
     if(this.user.user_level == "Admin"){
