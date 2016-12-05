@@ -162,7 +162,7 @@ if(!$isDataFolderExists){
   	<div class="container-fluid bgbody" style="max-width:800px;padding-top:10px;margin:auto">
   	<h1>IceHRM Installation</h1>
   	<p class="p1">
-  	Please do not install this application if you have already installed (this could currupt existing instalation)
+  	Please do not install this application if you have already installed (this could break existing installation)
   	</p>
   	<?php if(count($errorMap)>0){?>
 	  	<?php foreach($errorMap as $error){?>
