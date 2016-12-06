@@ -95,6 +95,17 @@ if(empty($user)){
 						header("Location:".HOME_LINK_ADMIN);
 					}
 
+					if(defined('CHECK_UPDATE_URL')){
+						//Check for updates
+						$versionSplit = explode(".",VERSION);
+						$updateUrl = CHECK_UPDATE_URL."type=".$versionSplit[count($versionSplit) - 1].
+							"&cversion=".VERSION;
+						$updateData = file_get_contents($updateUrl);
+						if(!empty($updateData) && $updateData['status'] == "SUCCESS"){
+							SessionUtils::saveSessionObject('updateData', json_decode($updateData, true));
+						}
+					}
+
 				}else{
 					if(empty($user->default_module)){
 						header("Location:".HOME_LINK_OTHERS);
