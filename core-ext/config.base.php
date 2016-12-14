@@ -31,3 +31,5 @@ if(!defined('WK_HTML_PATH')){
 }
 
 define('ALL_CLIENT_BASE_PATH', '/vagrant/deployment/clients/');
+
+define('CHECK_UPDATE_URL', 'https://icehrm.com/a.php?a=checkUpdate&');
