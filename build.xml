@@ -12,13 +12,17 @@
 <property name="installLocalpath" value="/Applications/XAMPP/xamppfiles/htdocs/icehrm-open-core"/>
 
 	
- <target name="build"
-         depends="prepare,lint,copyapp,phpunit,release,install"
-         description=""/>
+<target name="build"
+     depends="prepare,lint,copyapp,phpunit,release,install"
+     description=""/>
 
- <target name="buildlocal"
-         depends="prepare,copyapp"
-         description=""/>
+<target name="buildlocal"
+     depends="prepare,copyapp"
+     description=""/>
+
+<target name="releaseapp"
+        depends="prepare,lint,copyapp,phpunit,release"
+        description=""/>
 
 <target name="ice"
         depends="copyapp_quick"

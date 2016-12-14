@@ -131,7 +131,7 @@ if(!$isDataFolderExists){
     	  	return;
   	  	}
 
-  	  	if(request["BASE_URL"].indexOf("http://") == 0 || request["BASE_URL"].indexOf("https://")){
+  	  	if(request["BASE_URL"].indexOf("http://") == 0 || request["BASE_URL"].indexOf("https://") == 0){
   	  	}else{
   	  	  	alert("Invalid Base URL");
   	  	  	return;
