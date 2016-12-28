@@ -5,6 +5,39 @@ IceHrm
 IceHrm is a [HRM software](https://icehrm.com) which enable companies of all sizes to [manage HR activities](https://icehrm.com)
 properly. 
 
+Useful Links
+-------------
+ * IceHrm Opensource Blog: [http://icehrm.org](http://icehrm.org)
+ * IceHrm Cloud Hosting: [https://icehrm.com](https://icehrm.com)
+ * IceHrm Documentation (Opensource and Commercial): [http://blog.icehrm.com](http://blog.icehrm.com)
+ * IceHrm Blog: [https://icehrm.com/blog](http://icehrm.com/blog)
+ * Purchase IceHrm Pro: [https://icehrm.com/modules.php](https://icehrm.com/modules.php)
+ * Report Issues: [https://github.com/gamonoid/icehrm/issues](https://github.com/gamonoid/icehrm/issues)
+ * Feature Requests: [https://bitbucket.org/thilina/icehrm-opensource/issues](https://bitbucket.org/thilina/icehrm-opensource/issues)
+ * Community Support: [http://stackoverflow.com/search?q=icehrm](http://stackoverflow.com/search?q=icehrm)
+
+Installation
+------------
+ * Download the latest release https://github.com/gamonoid/icehrm/releases/latest
+
+ * Copy the downloaded file to the path you want to install iCE Hrm in your server and extract.
+
+ * Create a mysql DB for and user. Grant all on iCE Hrm DB to new DB user.
+
+ * Visit iCE Hrm installation path in your browser.
+
+ * During the installation form, fill in details appropriately.
+
+ * Once the application is installed use the username = admin and password = admin to login to your system.
+
+ Note: Please rename or delete the install folder (<ice hrm root>/app/install) since it could pose a security threat to your iCE Hrm instance.
+
+
+Upgrade from Previous Versions to Latest Version
+------------------------------------------------
+
+Refer: [http://blog.icehrm.com/docs/upgrade/](http://blog.icehrm.com/docs/upgrade/)
+
 Setup IceHrm Development Environment
 ------------------------------------
 
@@ -46,6 +79,12 @@ Preparing development VM
 ~ $ ant buildlocal
 ```
 
+- If you destroyed the vagrant machine and created it again, you should run table creation scripts
+```
+~ $ mysql -u dev -p dev dev < /vagrant/scripts/icehrmdb.sql
+~ $ mysql -u dev -p dev dev < /vagrant/scripts/icehrm_master_data.sql
+```
+
 - Navigate to [](http://clients.app.dev/dev) to load icehrm from VM. (user:admin/pass:admin)
 
 - Runing unit test
@@ -56,35 +95,3 @@ Preparing development VM
 ```
 
 
-Useful Links
--------------
- * IceHrm Opensource Blog: [http://icehrm.org](http://icehrm.org)
- * IceHrm Cloud Hosting: [https://icehrm.com](https://icehrm.com)
- * IceHrm Documentation (Opensource and Commercial): [http://blog.icehrm.com](http://blog.icehrm.com)
- * IceHrm Blog: [https://icehrm.com/blog](http://icehrm.com/blog)
- * Purchase IceHrm Pro: [https://icehrm.com/modules.php](https://icehrm.com/modules.php)
- * Report Issues: [https://github.com/gamonoid/icehrm/issues](https://github.com/gamonoid/icehrm/issues)
- * Feature Requests: [https://bitbucket.org/thilina/icehrm-opensource/issues](https://bitbucket.org/thilina/icehrm-opensource/issues)
- * Community Support: [http://stackoverflow.com/search?q=icehrm](http://stackoverflow.com/search?q=icehrm)
-
-Installation
-------------
- * Download the latest release https://github.com/gamonoid/icehrm/releases/latest
-
- * Copy the downloaded file to the path you want to install iCE Hrm in your server and extract.
-
- * Create a mysql DB for and user. Grant all on iCE Hrm DB to new DB user.
-
- * Visit iCE Hrm installation path in your browser.
-
- * During the installation form, fill in details appropriately.
-
- * Once the application is installed use the username = admin and password = admin to login to your system.
-
- Note: Please rename or delete the install folder (<ice hrm root>/app/install) since it could pose a security threat to your iCE Hrm instance.
-
-
-Upgrade from Previous Versions to Latest Version
-------------------------------------------------
-
-Refer: [http://blog.icehrm.com/docs/upgrade/](http://blog.icehrm.com/docs/upgrade/)
