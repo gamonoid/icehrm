@@ -79,15 +79,16 @@ Preparing development VM
 ~ $ ant buildlocal
 ```
 
-- If you destroyed the vagrant machine and created it again, you should run table creation scripts
+- Execute table creation scripts
 ```
-~ $ mysql -u dev -p dev dev < /vagrant/scripts/icehrmdb.sql
-~ $ mysql -u dev -p dev dev < /vagrant/scripts/icehrm_master_data.sql
+~ $ mysql -udev -pdev dev < /vagrant/core-ext/scripts/icehrmdb.sql
+~ $ mysql -udev -pdev dev < /vagrant/core-ext/scripts/icehrm_master_data.sql
+~ $ mysql -udev -pdev dev < /vagrant/core-ext/scripts/icehrm_sample_data.sql
 ```
 
 - Navigate to [](http://clients.app.dev/dev) to load icehrm from VM. (user:admin/pass:admin)
 
-- Runing unit test
+- Unit testing
 
 ```
 ~ $ cd /vagrant
