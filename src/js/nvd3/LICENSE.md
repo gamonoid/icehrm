@@ -1,5 +1,5 @@
 
-##nvd3.js License
+## nvd3.js License
 
 Copyright (c) 2011, 2012 [Novus Partners, Inc.][novus]
 
@@ -19,7 +19,7 @@ limitations under the License.
 
 
 
-##d3.js License
+## d3.js License
 
 Copyright (c) 2012, Michael Bostock
 All rights reserved.
