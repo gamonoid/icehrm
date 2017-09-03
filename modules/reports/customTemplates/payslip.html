@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Payslip {{employeeName}} {{payroll.name}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{BASE_URL}}themecss/AdminLTE.css" rel="stylesheet">
+    <link href="{{BASE_URL}}themecss/bootstrap.min.css" rel="stylesheet">
+    <link href="{{BASE_URL}}themecss/font-awesome.min.css" rel="stylesheet">
+    <link href="{{BASE_URL}}themecss/ionicons.min.css" rel="stylesheet">
+    <script src="{{BASE_URL}}themejs/bootstrap.js"></script>
+</head>
+<body>
+<div class="container" style="margin-top:10px;">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+    {% for field in fields %}
+        {% if field.type == 'Company Logo' %}
+            {% include 'payslip/logo.html' with {'field': field} %}
+        {% elseif field.type == 'Company Name' %}
+            {% include 'payslip/companyname.html' with {'field': field} %}
+        {% elseif field.type == 'Payroll Column' %}
+            {% include 'payslip/column.html' with {'field': field} %}
+        {% elseif field.type == 'Text' %}
+            {% include 'payslip/text.html' with {'field': field} %}
+        {% elseif field.type == 'Separators' %}
+            {% include 'payslip/hr.html' with {'field': field} %}
+        {% endif %}
+    {% endfor %}
+    </div>
+    <div class="col-xs-2"></div>
+</div>
+<style type="text/css">
+    .borderless td {
+        border: none;
+    }
+    * {
+        font-size: 12px;
+    }
+</style>
+</body>
+</html>

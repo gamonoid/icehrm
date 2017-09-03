@@ -1,0 +1,12 @@
+{
+    "label": "Manage Metadata",
+    "menu": "System",
+    "order": "6",
+    "icon": "fa-sort-alpha-asc",
+    "user_levels": [
+        "Admin"
+    ],
+    "permissions": [],
+    "model_namespace": "\\Metadata\\Common\\Model",
+    "manager": "\\Metadata\\Admin\\Api\\MetadataAdminManager"
+}

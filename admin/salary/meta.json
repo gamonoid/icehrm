@@ -1,0 +1,12 @@
+{
+    "label": "Salary",
+    "menu": "Payroll",
+    "order": "1",
+    "icon": "fa-money",
+    "user_levels": [
+        "Admin"
+    ],
+    "permissions": [],
+    "model_namespace": "\\Salary\\Common\\Model",
+    "manager": "\\Salary\\Admin\\Api\\SalaryAdminManager"
+}

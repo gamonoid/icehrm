@@ -1,0 +1,14 @@
+{
+  "name": "IceHrm",
+  "authors": [
+    "team@icehrm.com"
+  ],
+  "description": "IceHrm",
+  "main": "",
+  "license": "GPLv3",
+  "homepage": "",
+  "dependencies": {
+    "simplemde": "^1.11.2",
+    "tinymce": "^4.5.5"
+  }
+}

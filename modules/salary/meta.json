@@ -1,0 +1,25 @@
+{
+    "label": "Salary",
+    "menu": "Finance",
+    "order": "2",
+    "icon": "fa-calculator",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "permissions": {
+        "Manager": {
+            "Add Salary": "No",
+            "Edit Salary": "No",
+            "Delete Salary": "No"
+        },
+        "Employee": {
+            "Add Salary": "No",
+            "Edit Salary": "No",
+            "Delete Salary": "No"
+        }
+    },
+    "model_namespace": "\\Salary\\Common\\Model",
+    "manager": "\\Salary\\User\\Api\\SalaryModulesManager"
+}

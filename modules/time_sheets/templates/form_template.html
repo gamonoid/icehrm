@@ -1,0 +1,29 @@
+<form class="form-horizontal" id="timesheet_entries_cont">
+	<div id="loadingBlock" style="display:none;position: absolute;top: 10px;left: 10px;font-weight: bold">Loading...</div>
+
+	<div class="control-group">
+		<button style="margin-left:5px;display:none;" onclick="try{modJs.openTimeEntryDialog()}catch(e){};return false;" class="add_time_sheet_entry btn btn-primary"><i class="fa fa-plus"></i> <t>Add Time Entry</t></button>
+		<button onclick="modJs.changeTimeSheetStatusWithId(modJs.currentId,'Submitted');return false;" class="submit_sheet btn btn-success" style="display:none;"><i class="fa fa-check"></i> <t>Submit</t></button>
+		<span style="font-size:17px;font-weight:bold;color:#999;margin-left:10px;">
+  			Timesheet From <span class="timesheet_start"></span> to <span class="timesheet_end"></span>
+		</span>
+	</div>
+	<hr/>
+	<div id="EmployeeTimesheetBlock" style="width:100%;margin-left:5px;"></div>
+
+	<table class="table table-condensed table-bordered table-striped" id="timesheet_entries" style="width:100%;font-size:12px;margin-left:5px;">
+			<thead>
+			<tr>
+			<th></th>
+			<th>Start</th>
+			<th>End</th>
+			<th>Duration</th>
+			<th>Project</th>
+			<th>Details</th>
+			</tr>
+			</thead>
+			<tbody id="timesheet_entries_table_body" class="timesheet_entries_table_body">
+			</tbody>
+	</table> 
+
+</form>

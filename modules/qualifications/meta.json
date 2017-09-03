@@ -1,0 +1,14 @@
+{
+    "label": "Qualifications",
+    "menu": "Personal Information",
+    "order": "3",
+    "icon": "fa-graduation-cap",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "permissions": [],
+    "model_namespace": "\\Qualifications\\Common\\Model",
+    "manager": "\\Qualifications\\User\\Api\\QualificationsModulesManager"
+}

@@ -1,0 +1,12 @@
+{
+    "label": "Payroll Reports",
+    "menu": "Payroll",
+    "order": "6",
+    "icon": "fa-cogs",
+    "user_levels": [
+        "Admin"
+    ],
+    "permissions": [],
+    "model_namespace": "\\Payroll\\Common\\Model",
+    "manager": "\\Payroll\\Admin\\Api\\PayrollAdminManager"
+}
