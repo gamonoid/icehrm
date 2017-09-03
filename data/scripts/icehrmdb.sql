@@ -120,14 +120,14 @@ create table `Employees` (
 	`middle_name` varchar(100) default null,
 	`last_name` varchar(100) default null,
 	`nationality` bigint(20) default null,
-	`birthday` date default '0000-00-00',
+	`birthday` date default NULL,
 	`gender` enum('Male','Female') default NULL,
 	`marital_status` enum('Married','Single','Divorced','Widowed','Other') default NULL,
 	`ssn_num` varchar(100) default NULL,
 	`nic_num` varchar(100) default NULL,
 	`other_id` varchar(100) default NULL,
 	`driving_license` varchar(100) default NULL,
-	`driving_license_exp_date` date default '0000-00-00',
+	`driving_license_exp_date` date default NULL,
 	`employment_status` bigint(20) default null,
 	`job_title` bigint(20) default null,
 	`pay_grade` bigint(20) null,
@@ -143,8 +143,8 @@ create table `Employees` (
 	`work_phone` varchar(50) default null,
 	`work_email` varchar(100) default null,
 	`private_email` varchar(100) default null,
-	`joined_date` date default '0000-00-00',
-	`confirmation_date` date default '0000-00-00',
+	`joined_date` date default null,
+	`confirmation_date` date default null,
 	`supervisor` bigint(20) default null,
 	`indirect_supervisors` varchar(250) default null,
 	`department` bigint(20) default null,
@@ -158,7 +158,7 @@ create table `Employees` (
 	`custom8` varchar(250) default null,
 	`custom9` varchar(250) default null,
 	`custom10` varchar(250) default null,
-	`termination_date` date default '0000-00-00',
+	`termination_date` date default null,
 	`notes` text default null,
 	`status` enum('Active','Terminated') default 'Active',
 	`ethnicity` bigint(20) default null,
@@ -191,11 +191,11 @@ create table `ArchivedEmployees` (
 	`nic_num` varchar(100) default '',
 	`other_id` varchar(100) default '',
 	`work_email` varchar(100) default null,
-	`joined_date` DATETIME default '0000-00-00 00:00:00',
-	`confirmation_date` DATETIME default '0000-00-00 00:00:00',
+	`joined_date` DATETIME default NULL,
+	`confirmation_date` DATETIME default NULL,
 	`supervisor` bigint(20) default null,
 	`department` bigint(20) default null,
-	`termination_date` DATETIME default '0000-00-00 00:00:00',
+	`termination_date` DATETIME default NULL,
 	`notes` text default null,
 	`data` longtext default null,
 	primary key  (`id`)
@@ -218,9 +218,9 @@ create table `Users` (
 	`default_module` bigint(20) null,
 	`user_level` enum('Admin','Employee','Manager','Other') default NULL,
 	`user_roles` text null,
-	`last_login` timestamp default '0000-00-00 00:00:00',
-	`last_update` timestamp default '0000-00-00 00:00:00',
-	`created` timestamp default '0000-00-00 00:00:00',
+	`last_login` datetime default NULL,
+	`last_update` datetime default NULL,
+	`created` datetime default NULL,
 	`login_hash` varchar(64) default null,
 	`lang` bigint(20) default null,
 	CONSTRAINT `Fk_User_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
@@ -249,8 +249,8 @@ create table `EmployeeEducations` (
 	`education_id` bigint(20) NULL,
 	`employee` bigint(20) NOT NULL,
 	`institute` varchar(400) default null,
-	`date_start` date default '0000-00-00',
-	`date_end` date default '0000-00-00',
+	`date_start` date default NULL,
+	`date_end` date default NULL,
 	CONSTRAINT `Fk_EmployeeEducations_Educations` FOREIGN KEY (`education_id`) REFERENCES `Educations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT `Fk_EmployeeEducations_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	primary key  (`id`)
@@ -261,8 +261,8 @@ create table `EmployeeCertifications` (
 	`certification_id` bigint(20) NULL,
 	`employee` bigint(20) NOT NULL,
 	`institute` varchar(400) default null,
-	`date_start` date default '0000-00-00',
-	`date_end` date default '0000-00-00',
+	`date_start` date default NULL,
+	`date_end` date default NULL,
 	CONSTRAINT `Fk_EmployeeCertifications_Certifications` FOREIGN KEY (`certification_id`) REFERENCES `Certifications` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT `Fk_EmployeeCertifications_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	primary key  (`id`),
@@ -301,7 +301,7 @@ create table `EmployeeDependents` (
 	`employee` bigint(20) NOT NULL,
 	`name` varchar(100) NOT NULL,
 	`relationship` enum('Child','Spouse','Parent','Other') default NULL,
-	`dob` date default '0000-00-00',
+	`dob` date default NULL,
 	`id_number` varchar(25) default null,
 	CONSTRAINT `Fk_EmployeeDependents_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	primary key  (`id`)
@@ -354,8 +354,8 @@ create table `LeaveGroups` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`name` varchar(100) NOT NULL,
 	`details` text default null,
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
 
@@ -363,8 +363,8 @@ create table `LeaveGroupEmployees` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`employee` bigint(20) NOT NULL,
 	`leave_group` bigint(20) NOT NULL,
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	CONSTRAINT `Fk_LeaveGroupEmployees_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT `Fk_LeaveGroupEmployees_LeaveGroups` FOREIGN KEY (`leave_group`) REFERENCES `LeaveGroups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	primary key  (`id`),
@@ -374,8 +374,8 @@ create table `LeaveGroupEmployees` (
 create table `LeavePeriods` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`name` varchar(100) NOT NULL,
-	`date_start` date default '0000-00-00',
-	`date_end` date default '0000-00-00',
+	`date_start` date default NULL,
+	`date_end` date default NULL,
 	`status` enum('Active','Inactive') default 'Inactive',
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
@@ -392,7 +392,7 @@ create table `WorkDays` (
 create table `HoliDays` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`name` varchar(100) NOT NULL,
-	`dateh` date default '0000-00-00',
+	`dateh` date default NULL,
 	`status` enum('Full Day','Half Day') default 'Full Day',
 	`country` bigint(20) DEFAULT NULL,
 	primary key  (`id`),
@@ -404,8 +404,8 @@ create table `EmployeeLeaves` (
 	`employee` bigint(20) NOT NULL,
 	`leave_type` bigint(20) NOT NULL,
 	`leave_period` bigint(20) NOT NULL,
-	`date_start` date default '0000-00-00',
-	`date_end` date default '0000-00-00',
+	`date_start` date default NULL,
+	`date_end` date default NULL,
 	`details` text default null,
 	`status` enum('Approved','Pending','Rejected','Cancellation Requested','Cancelled','Processing') default 'Pending',
 	`attachment` varchar(100) NULL,
@@ -422,7 +422,7 @@ create table `EmployeeLeaveLog` (
 	`data` varchar(500) NOT NULL,
 	`status_from` enum('Approved','Pending','Rejected','Cancellation Requested','Cancelled','Processing') default 'Pending',
 	`status_to` enum('Approved','Pending','Rejected','Cancellation Requested','Cancelled','Processing') default 'Pending',
-	`created` timestamp default '0000-00-00 00:00:00',
+	`created` datetime default NULL,
 	CONSTRAINT `Fk_EmployeeLeaveLog_EmployeeLeaves` FOREIGN KEY (`employee_leave`) REFERENCES `EmployeeLeaves` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT `Fk_EmployeeLeaveLog_Users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
 	primary key  (`id`)
@@ -431,7 +431,7 @@ create table `EmployeeLeaveLog` (
 create table `EmployeeLeaveDays` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`employee_leave` bigint(20) NOT NULL,
-	`leave_date` date default '0000-00-00',
+	`leave_date` date default NULL,
 	`leave_type` enum('Full Day','Half Day - Morning','Half Day - Afternoon','1 Hour - Morning','2 Hours - Morning','3 Hours - Morning','1 Hour - Afternoon','2 Hours - Afternoon','3 Hours - Afternoon') NOT NULL,
 	CONSTRAINT `Fk_EmployeeLeaveDays_EmployeeLeaves` FOREIGN KEY (`employee_leave`) REFERENCES `EmployeeLeaves` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	primary key  (`id`)
@@ -453,11 +453,11 @@ create table `Clients` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`name` varchar(100) NOT NULL,
 	`details` text default null,
-	`first_contact_date` date default '0000-00-00',
-	`created` timestamp default '0000-00-00 00:00:00',
+	`first_contact_date` date default NULL,
+	`created` datetime default NULL,
 	`address` text default null,
 	`contact_number` varchar(25) NULL,
-	`contact_email` varchar(25) NULL,
+	`contact_email` varchar(100) NULL,
 	`company_url` varchar(500) NULL,
 	`status` enum('Active','Inactive') default 'Active',
 	primary key  (`id`)
@@ -468,7 +468,7 @@ create table `Projects` (
 	`name` varchar(100) NOT NULL,
 	`client` bigint(20) NULL,
 	`details` text default null,
-	`created` timestamp default '0000-00-00 00:00:00',
+	`created` datetime default NULL,
 	`status` enum('Active','On Hold','Completed', 'Dropped') default 'Active',
 	CONSTRAINT `Fk_Projects_Client` FOREIGN KEY (`client`) REFERENCES `Clients` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
 	primary key  (`id`)
@@ -506,10 +506,10 @@ create table `EmployeeTimeEntry` (
 	`employee` bigint(20) NOT NULL,
 	`timesheet` bigint(20) NOT NULL,
 	`details` text default null,
-	`created` timestamp default '0000-00-00 00:00:00',
-	`date_start` timestamp default '0000-00-00 00:00:00',
+	`created` datetime default NULL,
+	`date_start` datetime default NULL,
 	`time_start` varchar(10) NOT NULL,
-	`date_end` timestamp default '0000-00-00 00:00:00',
+	`date_end` datetime default NULL,
 	`time_end` varchar(10) NOT NULL,
 	`status` enum('Active','Inactive') default 'Active',
 	CONSTRAINT `Fk_EmployeeTimeEntry_Projects` FOREIGN KEY (`project`) REFERENCES `Projects` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
@@ -530,8 +530,8 @@ create table `Documents` (
 	`expire_notification_day` enum('Yes','No') default 'Yes',
 	`sign` enum('Yes','No') default 'Yes',
 	`sign_label` VARCHAR(500) default null,
-	`created` DATETIME default '0000-00-00 00:00:00',
-	`updated` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
+	`updated` DATETIME default NULL,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
 
@@ -639,8 +639,8 @@ create table `Reports` (
 create table `Attendance` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`employee` bigint(20) NOT NULL,
-	`in_time` timestamp default '0000-00-00 00:00:00',
-	`out_time` timestamp default '0000-00-00 00:00:00',
+	`in_time` datetime default NULL,
+	`out_time` datetime default NULL,
 	`note` varchar(500) default null,
 	CONSTRAINT `Fk_Attendance_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	KEY `in_time` (`in_time`),
@@ -671,7 +671,7 @@ create table `DataEntryBackups` (
 
 create table `AuditLog` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`time` datetime default '0000-00-00 00:00:00',
+	`time` datetime default NULL,
 	`user` bigint(20) NOT NULL,
 	`ip` varchar(100) NULL,
 	`type` varchar(100) NOT NULL,
@@ -684,7 +684,7 @@ create table `AuditLog` (
 
 create table `Notifications` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`time` datetime default '0000-00-00 00:00:00',
+	`time` datetime default NULL,
 	`fromUser` bigint(20) NULL,
 	`fromEmployee` bigint(20) NULL,
 	`toUser` bigint(20) NOT NULL,
@@ -712,8 +712,8 @@ create table `Courses` (
 	`currency` varchar(3) null,
 	`cost` decimal(12,2) DEFAULT 0.00,
 	`status` enum('Active','Inactive') default 'Active',
-	`created` datetime default '0000-00-00 00:00:00',
-	`updated` datetime default '0000-00-00 00:00:00',
+	`created` datetime default NULL,
+	`updated` datetime default NULL,
 	CONSTRAINT `Fk_Courses_Employees` FOREIGN KEY (`coordinator`) REFERENCES `Employees` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
@@ -723,15 +723,15 @@ create table `TrainingSessions` (
 	`name` varchar(300) NOT NULL,
 	`course` bigint(20) NOT NULL,
 	`description` text default null,
-	`scheduled` datetime default '0000-00-00 00:00:00',
-	`dueDate` datetime default '0000-00-00 00:00:00',
+	`scheduled` datetime default NULL,
+	`dueDate` datetime default NULL,
 	`deliveryMethod` enum('Classroom','Self Study','Online') default 'Classroom',
 	`deliveryLocation` varchar(500) NULL,
 	`status` enum('Pending','Approved','Completed','Cancelled') default 'Pending',
 	`attendanceType` enum('Sign Up','Assign') default 'Sign Up',
 	`attachment` varchar(300) NULL,
-	`created` datetime default '0000-00-00 00:00:00',
-	`updated` datetime default '0000-00-00 00:00:00',
+	`created` datetime default NULL,
+	`updated` datetime default NULL,
 	`requireProof` enum('Yes','No') default 'Yes',
 	CONSTRAINT `Fk_TrainingSessions_Courses` FOREIGN KEY (`course`) REFERENCES `Courses` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	primary key  (`id`)
@@ -759,8 +759,8 @@ create table `ImmigrationDocuments` (
 	`alert_on_missing` enum('Yes','No') default 'Yes',
 	`alert_before_expiry` enum('Yes','No') default 'Yes',
 	`alert_before_day_number` int(11) NOT NULL,
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
 
@@ -775,8 +775,8 @@ create table `EmployeeImmigrations` (
 	`attachment1` varchar(100) NULL,
 	`attachment2` varchar(100) NULL,
 	`attachment3` varchar(100) NULL,
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	CONSTRAINT `Fk_EmployeeImmigrations_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT `Fk_EmployeeImmigrations_ImmigrationDocuments` FOREIGN KEY (`document`) REFERENCES `ImmigrationDocuments` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
 	primary key  (`id`)
@@ -790,16 +790,16 @@ create table `EmployeeTravelRecords` (
 	`purpose` varchar(200) NOT NULL,
 	`travel_from` varchar(200) NOT NULL,
 	`travel_to` varchar(200) NOT NULL,
-	`travel_date` datetime NULL default '0000-00-00 00:00:00',
-	`return_date` datetime NULL default '0000-00-00 00:00:00',
+	`travel_date` datetime NULL default NULL,
+	`return_date` datetime NULL default NULL,
 	`details` varchar(500) default null,
 	`funding` decimal(10,3) NULL,
 	`currency` bigint(20) NULL,
 	`attachment1` varchar(100) NULL,
 	`attachment2` varchar(100) NULL,
 	`attachment3` varchar(100) NULL,
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	`status` enum('Approved','Pending','Rejected','Cancellation Requested','Cancelled','Processing') default 'Pending',
 	CONSTRAINT `Fk_EmployeeTravelRecords_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	primary key  (`id`)
@@ -811,8 +811,8 @@ create table `RestAccessTokens` (
 	`userId` bigint(20) NOT NULL,
 	`hash` varchar(32) default null,
 	`token` varchar(500) default null,
-	`created` DATETIME default '0000-00-00 00:00:00',
-	`updated` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
+	`updated` DATETIME default NULL,
 	primary key  (`id`),
 	unique key `userId` (`userId`)
 ) engine=innodb default charset=utf8;
@@ -824,8 +824,8 @@ create table `FieldNameMappings` (
 	`textOrig` varchar(200) default null,
 	`textMapped` varchar(200) default null,
 	`display` enum('Form','Table and Form','Hidden') default 'Form',
-	`created` DATETIME default '0000-00-00 00:00:00',
-	`updated` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
+	`updated` DATETIME default NULL,
 	primary key  (`id`),
 	unique key `name` (`name`)
 ) engine=innodb default charset=utf8;
@@ -836,8 +836,8 @@ create table `CustomFields` (
 	`name` varchar(20) NOT NULL,
 	`data` text default null,
 	`display` enum('Form','Table and Form','Hidden') default 'Form',
-	`created` DATETIME default '0000-00-00 00:00:00',
-	`updated` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
+	`updated` DATETIME default NULL,
 	`field_type` varchar(20) NULL,
 	`field_label` varchar(50) NULL,
 	`field_validation` varchar(50) NULL,
@@ -959,8 +959,8 @@ create table `Payroll` (
 	`department` bigint(20) NOT NULL,
 	`column_template` bigint(20) NULL,
 	`columns` varchar(500) DEFAULT NULL,
-	`date_start` DATE NULL default '0000-00-00',
-	`date_end` DATE NULL default '0000-00-00',
+	`date_start` DATE NULL default NULL,
+	`date_end` DATE NULL default NULL,
 	`status` enum('Draft','Completed','Processing') default 'Draft',
 	`payslipTemplate` bigint(20) NULL,
 	primary key  (`id`)
@@ -1063,7 +1063,7 @@ create table `Job` (
 	`salaryMax` bigint(20) DEFAULT NULL,
 	`keywords` text DEFAULT NULL,
 	`status` enum('Active','On hold','Closed') default NULL,
-	`closingDate` DATETIME default '0000-00-00 00:00:00',
+	`closingDate` DATETIME default NULL,
 	`attachment` varchar(100) NULL,
 	`display` varchar(200) NOT NULL,
 	`postedBy` bigint(20) DEFAULT NULL,
@@ -1077,7 +1077,7 @@ create table `Candidates` (
 	`first_name` varchar(100) default '' not null,
 	`last_name` varchar(100) default '' not null,
 	`nationality` bigint(20) default null,
-	`birthday` DATETIME default '0000-00-00 00:00:00',
+	`birthday` DATETIME default null,
 	`gender` enum('Male','Female') default NULL,
 	`marital_status` enum('Married','Single','Divorced','Widowed','Other') default NULL,
 	`address1` varchar(100) default '',
@@ -1106,8 +1106,8 @@ create table `Candidates` (
 	`totalMonthsOfExperience` int(11) default null,
 	`htmlCVData` longtext DEFAULT NULL,
 	`generatedCVFile` varchar(150) DEFAULT NULL,
-	`created` DATETIME default '0000-00-00 00:00:00',
-	`updated` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
+	`updated` DATETIME default NULL,
 	`expectedSalary` int(11) default null,
 	`preferedPositions` text default null,
 	`preferedJobtype` varchar(60) default null,
@@ -1134,7 +1134,7 @@ create table `Applications` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`job` bigint(20) NOT NULL,
 	`candidate` bigint(20) DEFAULT NULL,
-	`created` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
 	`referredByEmail` varchar(200) DEFAULT NULL,
 	`notes` text DEFAULT NULL,
 	primary key  (`id`),
@@ -1148,9 +1148,9 @@ create table `Interviews` (
 	`job` bigint(20) NOT NULL,
 	`candidate` bigint(20) DEFAULT NULL,
 	`level` varchar(100) DEFAULT NULL,
-	`created` DATETIME default '0000-00-00 00:00:00',
-	`updated` DATETIME default '0000-00-00 00:00:00',
-	`scheduled` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
+	`updated` DATETIME default NULL,
+	`scheduled` DATETIME default NULL,
 	`location` varchar(500) DEFAULT NULL,
 	`mapId` bigint(20) NULL,
 	`status` varchar(100) default null,
@@ -1166,8 +1166,8 @@ create table `Calls` (
 	`job` bigint(20) NOT NULL,
 	`candidate` bigint(20) DEFAULT NULL,
 	`phone` varchar(20) default null,
-	`created` DATETIME default '0000-00-00 00:00:00',
-	`updated` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
+	`updated` DATETIME default NULL,
 	`status` varchar(100) default null,
 	`notes` text DEFAULT NULL,
 	primary key  (`id`),
@@ -1183,8 +1183,8 @@ create table `LeaveStartingBalance` (
 	`leave_period` bigint(20) NOT NULL,
 	`amount` decimal(10,3) NOT NULL,
 	`note` text DEFAULT NULL,
-	`created` datetime default '0000-00-00 00:00:00',
-	`updated` datetime default '0000-00-00 00:00:00',
+	`created` datetime default NULL,
+	`updated` datetime default NULL,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
 
@@ -1192,7 +1192,7 @@ create table `Crons` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`name` varchar(100) NOT NULL,
 	`class` varchar(100) NOT NULL,
-	`lastrun` DATETIME default '0000-00-00 00:00:00',
+	`lastrun` DATETIME default NULL,
 	`frequency` int(4) NOT NULL,
 	`time` varchar(50) NOT NULL,
 	`type` enum('Minutely','Hourly','Daily','Weekly','Monthly','Yearly') default 'Hourly',
@@ -1210,8 +1210,8 @@ create table `Emails` (
 	`cclist` varchar(500) NULL,
 	`bcclist` varchar(500) NULL,
 	`error` varchar(500) NULL,
-	`created` DATETIME default '0000-00-00 00:00:00',
-	`updated` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
+	`updated` DATETIME default NULL,
 	`status` enum('Pending','Sent','Error') default 'Pending',
 	primary key  (`id`),
 	key `KEY_Emails_status` (`status`),
@@ -1222,8 +1222,8 @@ create table `Emails` (
 create table `ExpensesCategories` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`name` varchar(500) NOT NULL,
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	`pre_approve` enum('Yes','No') default 'Yes',
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
@@ -1231,8 +1231,8 @@ create table `ExpensesCategories` (
 create table `ExpensesPaymentMethods` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`name` varchar(500) NOT NULL,
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
 
@@ -1240,7 +1240,7 @@ create table `ExpensesPaymentMethods` (
 create table `EmployeeExpenses` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`employee` bigint(20) NOT NULL,
-	`expense_date` date NULL default '0000-00-00',
+	`expense_date` date NULL default NULL,
 	`payment_method` bigint(20) NOT NULL,
 	`transaction_no` varchar(300) NOT NULL,
 	`payee` varchar(500) NOT NULL,
@@ -1251,8 +1251,8 @@ create table `EmployeeExpenses` (
 	`attachment1` varchar(100) NULL,
 	`attachment2` varchar(100) NULL,
 	`attachment3` varchar(100) NULL,
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	`status` enum('Approved','Pending','Rejected','Cancellation Requested','Cancelled','Processing') default 'Pending',
 	CONSTRAINT `Fk_EmployeeExpenses_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT `Fk_EmployeeExpenses_pm` FOREIGN KEY (`payment_method`) REFERENCES `ExpensesPaymentMethods` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -1277,8 +1277,8 @@ create table `EmployeeDataHistory` (
 	`new_value` varchar(500) default null,
 	`description` varchar(800) default null,
 	`user` bigint(20) NULL,
-	`updated` timestamp default '0000-00-00 00:00:00',
-	`created` timestamp default '0000-00-00 00:00:00',
+	`updated` datetime default NULL,
+	`created` datetime default NULL,
 	CONSTRAINT `Fk_EmployeeDataHistory_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT `Fk_EmployeeDataHistory_Users` FOREIGN KEY (`user`) REFERENCES `Users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
 	primary key  (`id`)
@@ -1304,8 +1304,8 @@ create table `CustomFieldValues` (
 	`name` varchar(60) not null,
 	`object_id` varchar(60) not null,
 	`value` text default NULL,
-	`updated` timestamp default '0000-00-00 00:00:00',
-	`created` timestamp default '0000-00-00 00:00:00',
+	`updated` datetime default NULL,
+	`created` datetime default NULL,
 	primary key  (`id`),
 	UNIQUE key `CustomFields_type_name_object_id` (`type`,`name`,`object_id`),
 	INDEX `CustomFields_type_object_id` (`type`,`object_id`)
@@ -1318,8 +1318,8 @@ create table `DataImport` (
 	`dataType` varchar(60) not null,
 	`details` text default NULL,
 	`columns` text default NULL,
-	`updated` timestamp default '0000-00-00 00:00:00',
-	`created` timestamp default '0000-00-00 00:00:00',
+	`updated` datetime default NULL,
+	`created` datetime default NULL,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
 
@@ -1331,8 +1331,8 @@ create table `DataImportFiles` (
 	`status` varchar(15) null,
 	`file` varchar(100) null,
 	`details` text default NULL,
-	`updated` timestamp default '0000-00-00 00:00:00',
-	`created` timestamp default '0000-00-00 00:00:00',
+	`updated` datetime default NULL,
+	`created` datetime default NULL,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
 
@@ -1357,7 +1357,7 @@ create table `ReportFiles` (
 	`employee` bigint(20) NULL,
 	`name` varchar(100) NOT NULL,
 	`attachment` varchar(100) NOT NULL,
-	`created` timestamp default '0000-00-00 00:00:00',
+	`created` datetime default NULL,
 	unique key `ReportFiles_attachment` (`attachment`),
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
@@ -1367,8 +1367,8 @@ create table `PayslipTemplates` (
 	`name` varchar(100) NOT NULL,
 	`data` longtext NULL,
 	`status` enum('Show','Hide') default 'Show',
-	`created` timestamp default '0000-00-00 00:00:00',
-	`updated` timestamp default '0000-00-00 00:00:00',
+	`created` datetime default NULL,
+	`updated` datetime default NULL,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
 
@@ -1380,8 +1380,8 @@ create table `EmployeeApprovals` (
 	`level` int(11) default 0,
 	`status` int(11) default 0,
 	`active` int(11) default 0,
-	`created` timestamp default '0000-00-00 00:00:00',
-	`updated` timestamp default '0000-00-00 00:00:00',
+	`created` datetime default NULL,
+	`updated` datetime default NULL,
 	UNIQUE key `EmployeeApprovals_type_element_level` (`type`,`element`,`level`),
 	INDEX `EmployeeApprovals_type_element_status_level` (`type`,`element`,`status`,`level`),
 	INDEX `EmployeeApprovals_type_element` (`type`,`element`),
@@ -1398,7 +1398,7 @@ create table `StatusChangeLogs` (
 	`data` varchar(500) NOT NULL,
 	`status_from` enum('Approved','Pending','Rejected','Cancellation Requested','Cancelled','Processing') default 'Pending',
 	`status_to` enum('Approved','Pending','Rejected','Cancellation Requested','Cancelled','Processing') default 'Pending',
-	`created` timestamp default '0000-00-00 00:00:00',
+	`created` datetime default NULL,
 	INDEX `EmployeeApprovals_type_element` (`type`,`element`),
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
@@ -1407,8 +1407,8 @@ create table `StatusChangeLogs` (
 create table `OvertimeCategories` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`name` varchar(500) NOT NULL,
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
 
@@ -1416,13 +1416,13 @@ create table `OvertimeCategories` (
 create table `EmployeeOvertime` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`employee` bigint(20) NOT NULL,
-	`start_time` timestamp NULL default '0000-00-00 00:00:00',
-	`end_time` timestamp NULL default '0000-00-00 00:00:00',
+	`start_time` datetime NULL default NULL,
+	`end_time` datetime NULL default NULL,
 	`category` bigint(20) NOT NULL,
 	`project` bigint(20) NULL,
 	`notes` text NULL,
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	`status` enum('Approved','Pending','Rejected','Cancellation Requested','Cancelled','Processing') default 'Pending',
 	CONSTRAINT `Fk_EmployeeOvertime_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT `Fk_EmployeeOvertime_Category` FOREIGN KEY (`category`) REFERENCES `OvertimeCategories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -1434,8 +1434,8 @@ create table `Forms` (
 	`name` varchar(50) NOT NULL,
 	`description` varchar(500) NULL,
 	`items` text NULL,
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
 
@@ -1444,8 +1444,8 @@ create table `EmployeeForms` (
 	`employee` bigint(20) NOT NULL,
 	`form` bigint(20) NOT NULL,
 	`status` enum('Pending','Completed') default 'Pending',
-	`created` timestamp NULL default '0000-00-00 00:00:00',
-	`updated` timestamp NULL default '0000-00-00 00:00:00',
+	`created` datetime NULL default NULL,
+	`updated` datetime NULL default NULL,
 	CONSTRAINT `Fk_EmployeeForms_Employee` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT `Fk_EmployeeForms_Forms` FOREIGN KEY (`form`) REFERENCES `Forms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 	primary key  (`id`)
@@ -1456,8 +1456,8 @@ create table `Migrations` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`file` varchar(50) NOT NULL,
 	`version` int(11) NOT NULL,
-	`created` DATETIME default '0000-00-00 00:00:00',
-	`updated` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
+	`updated` DATETIME default NULL,
 	`status` enum('Pending','Up','Down','UpError','DownError') default 'Pending',
 	`last_error` varchar(500) NULL,
 	primary key  (`id`),
