@@ -106,7 +106,7 @@ class AttendanceActionManager extends SubActionManager
         }
         $attendance->in_time = $inDateTime;
         if (empty($outDateTime)) {
-            $attendance->out_time = "0000-00-00 00:00:00";
+            $attendance->out_time = null;
         } else {
             $attendance->out_time = $outDateTime;
         }

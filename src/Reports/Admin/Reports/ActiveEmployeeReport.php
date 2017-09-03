@@ -52,10 +52,10 @@ FROM Employees e";
         
         if (empty($request['department']) || $request['department'] == "NULL") {
             $params = array();
-            $query = "where ((termination_date = '0001-01-01 00:00:00' or termination_date = '0000-00-00 00:00:00') and joined_date < NOW()) or (termination_date > NOW() and joined_date < NOW())";
+            $query = "where ((termination_date is NULL or termination_date = '0001-01-01 00:00:00' or termination_date = '0000-00-00 00:00:00') and joined_date < NOW()) or (termination_date > NOW() and joined_date < NOW())";
         } else {
             $depts = $this->getChildCompanyStuctures($request['department']);
-            $query = "where department in (".implode(",", $depts).") and (((termination_date = '0001-01-01 00:00:00' or termination_date = '0000-00-00 00:00:00') and joined_date < NOW()) or (termination_date > NOW() and joined_date < NOW()))";
+            $query = "where department in (".implode(",", $depts).") and (((termination_date is NULL or termination_date = '0001-01-01 00:00:00' or termination_date = '0000-00-00 00:00:00') and joined_date < NOW()) or (termination_date > NOW() and joined_date < NOW()))";
         }
         
         
