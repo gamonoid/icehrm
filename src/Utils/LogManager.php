@@ -22,7 +22,7 @@ class LogManager
             self::$me->log = new Logger(APP_NAME);
             if (is_writable(ini_get('error_log'))) {
                 self::$me->log->pushHandler(new StreamHandler(ini_get('error_log'), LOG_LEVEL));
-            } else {
+            } else if(is_writable(iCLIENT_BASE_PATH.'data/app.log')){
                 self::$me->log->pushHandler(new StreamHandler(CLIENT_BASE_PATH.'data/app.log', LOG_LEVEL));
             }
         }

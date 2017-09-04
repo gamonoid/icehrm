@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "1024"
     vb.cpus = "2"
-    vb.name = "app.dev"
+    vb.name = "icehrm.open"
   end
 
 
@@ -18,7 +18,7 @@ Vagrant.configure(2) do |config|
     sudo apt-get update
   SHELL
 
-  config.vm.hostname = "app.dev"
+  config.vm.hostname = "icehrm.open"
 
   config.hostsupdater.aliases = [
     "app.dev",
