@@ -8,5 +8,5 @@
     ],
     "permissions": [],
     "model_namespace": "\\Fieldnames\\Common\\Model",
-    "manager": "\\Fieldnames\\Admin\\Api\\FieldnamesAdminManager"
+    "manager": "\\Fieldnames\\Admin\\Api\\FieldNamesAdminManager"
 }
