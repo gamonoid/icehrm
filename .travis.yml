@@ -8,4 +8,4 @@ php:
   - '5.6'
   - '7.0'
   - nightly
-after_failure: "cat app/data/icehrm.log"
+after_failure: "cat /tmp/icehrm.test.log"
