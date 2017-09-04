@@ -4,16 +4,15 @@
  <property name="toolsdir" value=""/>
  <property name="destination" value="${basedir}/build/app"/>
  <property name="testdir" value="${basedir}/build/test"/>
- <property name="origin" value="${basedir}/src"/>
+ <property name="origin" value="${basedir}"/>
  <property environment="env"/>
  <property name="env.appname" value="icehrm"/>
  <property name="env.Version" value="dev"/>
  <property name="installpath" value="/var/www/apps.gamonoid.com/icehrm-open-core"/>
-<property name="installLocalpath" value="/Applications/XAMPP/xamppfiles/htdocs/icehrm-open-core"/>
 
-	
+
 <target name="build"
-     depends="prepare,lint,copyapp,phpunit,release,install"
+     depends="prepare,lint,copyapp,release,install"
      description=""/>
 
 <target name="buildlocal"
@@ -21,11 +20,7 @@
      description=""/>
 
 <target name="releaseapp"
-        depends="prepare,lint,copyapp,phpunit,release"
-        description=""/>
-
-<target name="ice"
-        depends="copyapp_quick"
+        depends="prepare,lint,copyapp,release"
         description=""/>
 
  <target name="clean"
@@ -57,8 +52,8 @@
   <mkdir dir="${basedir}/build/release/data"/>
   <mkdir dir="${basedir}/build/release/data/${env.appname}_${env.Version}"/>
   <mkdir dir="${basedir}/src/lib"/>
- 	
- 	
+
+
   <property name="prepare.done" value="true"/>
  </target>
 
@@ -190,39 +185,6 @@
   <exec executable="${toolsdir}phpdox"/>
  </target>
 
-    <target name="copyapp_quick"
-            description="Copy generated files to QA app">
-
-        <copy todir="${destination}" overwrite="true">
-            <fileset dir="${origin}">
-                <include name="**/*"/>
-                <exclude name="composer/**"/>
-                <exclude name="themecss/**"/>
-                <exclude name="themejs/**"/>
-                <exclude name="robo/**"/>
-                <exclude name="images/**"/>
-            </fileset>
-        </copy>
-
-        <copy todir="${destination}" overwrite="true">
-            <fileset dir="${basedir}/core-ext">
-                <include name="**/*"/>
-            </fileset>
-        </copy>
-
-        <copy todir="${destination}" overwrite="true">
-            <fileset dir="${basedir}/ext">
-                <include name="**/*"/>
-            </fileset>
-        </copy>
-
-        <copy todir="${testdir}" overwrite="true">
-            <fileset dir="${basedir}/test">
-                <include name="**/*"/>
-            </fileset>
-        </copy>
-
-    </target>
 
 <target name="copyapp"
         description="Copy generated files to QA app">
@@ -239,42 +201,60 @@
         </fileset>
     </copy>
 
-    <copy todir="${destination}/lib" overwrite="true">
-        <fileset dir="${basedir}/lib">
-            <include name="**/*"/>
+    <delete includeemptydirs="true">
+        <fileset dir="${destination}">
+            <include name=".vagrant/**"/>
+            <include name=".idea/**"/>
+            <include name="test/**"/>
+            <include name="Vagrantfile"/>
+            <include name="composer.phar"/>
+            <include name="build.xml"/>
+            <include name=".gitignore"/>
+            <include name=".travis.yml"/>
+            <include name="phpdox.xml"/>
+            <include name="phpunit.xml"/>
+            <include name="robo/**"/>
+            <include name="deployment/**"/>
+            <include name="docker/**"/>
         </fileset>
-    </copy>
+    </delete>
 
-    <copy todir="${destination}" overwrite="true">
-        <fileset dir="${basedir}/core-ext">
-            <include name="**/*"/>
-        </fileset>
-    </copy>
+    <!--<copy todir="${destination}/lib" overwrite="true">-->
+        <!--<fileset dir="${basedir}/lib">-->
+            <!--<include name="**/*"/>-->
+        <!--</fileset>-->
+    <!--</copy>-->
 
-    <copy todir="${destination}" overwrite="true">
-        <fileset dir="${basedir}/ext">
-            <include name="**/*"/>
-        </fileset>
-    </copy>
+    <!--<copy todir="${destination}" overwrite="true">-->
+        <!--<fileset dir="${basedir}/core-ext">-->
+            <!--<include name="**/*"/>-->
+        <!--</fileset>-->
+    <!--</copy>-->
 
-    <copy todir="${testdir}" overwrite="true">
-        <fileset dir="${basedir}/test">
-            <include name="**/*"/>
-        </fileset>
-    </copy>
+    <!--<copy todir="${destination}" overwrite="true">-->
+        <!--<fileset dir="${basedir}/ext">-->
+            <!--<include name="**/*"/>-->
+        <!--</fileset>-->
+    <!--</copy>-->
+
+    <!--<copy todir="${testdir}" overwrite="true">-->
+        <!--<fileset dir="${basedir}/test">-->
+            <!--<include name="**/*"/>-->
+        <!--</fileset>-->
+    <!--</copy>-->
 
 </target>
-	
+
 <target name="install"
      depends="copyapp"
      description="">
-	
+
 	<delete includeemptydirs="true" failonerror="false">
 	    <fileset dir="${installpath}">
 	        <include name="**/*"/>
 	    </fileset>
 	</delete>
-	
+
 	<mkdir dir="${installpath}"/>
 
 	<copy todir="${installpath}" overwrite="true">
@@ -282,7 +262,7 @@
 	    <include name="**/*"/>
 	  </fileset>
 	</copy>
-	
+
 	<delete includeemptydirs="true" failonerror="false">
 	    <fileset dir="${installpath}/app">
 	        <include name="**/*"/>
@@ -290,49 +270,30 @@
 	</delete>
 </target>
 
-<target name="installLocal"
-        depends="copyapp"
-        description="">
-
-    <delete includeemptydirs="true" failonerror="false">
-        <fileset dir="${installLocalpath}">
-            <include name="**/*"/>
-        </fileset>
-    </delete>
-
-    <mkdir dir="${installLocalpath}"/>
-
-    <copy todir="${installLocalpath}">
-        <fileset dir="${destination}">
-            <include name="**/*"/>
-        </fileset>
-    </copy>
-</target>
-	
 <target name="release"
      depends="copyapp"
      description="Create a release">
-	
+
 	<copy todir="${basedir}/build/release/data/${env.appname}_${env.Version}">
 		  <fileset dir="${destination}">
 		    <include name="**/*"/>
 		  	<exclude name="test/**"/>
 		  </fileset>
 		</copy>
-	
+
 	<zip destfile="${basedir}/build/release/${env.appname}_${env.Version}.zip"
 	       basedir="${basedir}/build/release/data"
 	  />
-	
+
 	<tar destfile="${basedir}/build/release/${env.appname}_${env.Version}.tar"
 		       basedir="${basedir}/build/release/data"
 		  />
-	
-	<gzip destfile="${basedir}/build/release/${env.appname}_${env.Version}.tar.gz" src="${basedir}/build/release/${env.appname}_${env.Version}.tar"/>
-	
-</target>
-	
 
-	
+	<gzip destfile="${basedir}/build/release/${env.appname}_${env.Version}.tar.gz" src="${basedir}/build/release/${env.appname}_${env.Version}.tar"/>
+
+</target>
+
+
+
 </project>
 
