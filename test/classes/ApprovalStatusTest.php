@@ -12,7 +12,7 @@ class ApprovalStatusTest extends TestTemplate{
     protected function setUp(){
 
         parent::setUp();
-        $emp = new Employee();
+        $emp = new \Employees\Common\Model\Employee();
         $emp->Load("id = ?",array(1));
         $emp->supervisor = 2;
         $emp->indirect_supervisors = json_encode(array(3,4));
@@ -23,7 +23,7 @@ class ApprovalStatusTest extends TestTemplate{
 
 
 
-        $this->travelRec = new EmployeeTravelRecord();
+        $this->travelRec = new \Travel\Common\Model\EmployeeTravelRecord();
 
         $this->travelRec->DB()->execute("delete from EmployeeTravelRecords");
 
@@ -46,7 +46,7 @@ class ApprovalStatusTest extends TestTemplate{
     public function testInitializeApprovalChain(){
         $id = $this->travelRec->id;
         $this->initializeObjects();
-        $as = ApprovalStatus::getInstance();
+        $as = \Classes\Approval\ApprovalStatus::getInstance();
         $as->initializeApprovalChain('EmployeeTravelRecord',$id);
         $status = $as->getAllStatuses('EmployeeTravelRecord',$id);
         $this->assertEquals(3, count($status));
@@ -56,7 +56,7 @@ class ApprovalStatusTest extends TestTemplate{
     public function testUpdateApprovalStatus(){
         $id = $this->travelRec->id;
         $this->initializeObjects();
-        $as = ApprovalStatus::getInstance();
+        $as = \Classes\Approval\ApprovalStatus::getInstance();
 
         $as->initializeApprovalChain('EmployeeTravelRecord',$id);
         $resp = $as->updateApprovalStatus('EmployeeTravelRecord',$id,2,1);
@@ -67,7 +67,7 @@ class ApprovalStatusTest extends TestTemplate{
 
 
         $resp = $as->updateApprovalStatus('EmployeeTravelRecord',$id,3,1);
-        $this->assertEquals(IceResponse::ERROR, $resp->getStatus());
+        $this->assertEquals(\Classes\IceResponse::ERROR, $resp->getStatus());
 
         $resp = $as->updateApprovalStatus('EmployeeTravelRecord',$id,5,1);
         $this->assertEquals(0, $resp->getObject()[0]->active);

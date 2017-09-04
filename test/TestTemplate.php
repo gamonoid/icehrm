@@ -1,20 +1,19 @@
 <?php
 include dirname(__FILE__).'/test.includes.php';
-include APP_BASE_PATH.'admin/users/api/UsersAdminManager.php';
 
 class TestTemplate extends PHPUnit_Framework_TestCase{
-	
+
 	protected $usersArray = array();
     private $db = null;
 
 	public function p($msg){
 		fwrite(STDOUT, $msg."\n");
 	}
-	
+
 	protected function setUp()
 	{
 		parent::setUp();
-		
+
 	}
 
 	protected function tearDown()
@@ -22,28 +21,28 @@ class TestTemplate extends PHPUnit_Framework_TestCase{
 		parent::tearDown();
 
 	}
-	
+
 	protected function deleteAllUsers(){
-		$user = new User();
+		$user = new \Users\Common\Model\User();
 		$users = $user->Find("username <> ?",array('admin'));
 		foreach($users as $user){
 			$user->Delete();
 		}
 	}
-	
+
 	protected function createNewUsers(){
-		
+
 		$profileVar = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
 		$profileClass = ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME);
-		
-		$user = new User();
+
+		$user = new \Users\Common\Model\User();
 		$user->username = 'manager';
 		$user->email = 'manager@icehrm-test.com';
 		$user->password = '21232f297a57a5a743894a0e4a801fc3';
 		$user->user_level = 'Manager';
 		$user->Save();
-		
-		$user = new User();
+
+		$user = new \Users\Common\Model\User();
 		$user->username = 'profile';
 		$user->email = 'profile@icehrm-test.com';
 		$user->password = '21232f297a57a5a743894a0e4a801fc3';
@@ -59,15 +58,15 @@ class TestTemplate extends PHPUnit_Framework_TestCase{
 
 		$dbLocal = NewADOConnection(APP_CON_STR);
 
-		File::SetDatabaseAdapter($dbLocal);
-		Setting::SetDatabaseAdapter($dbLocal);
-		Report::SetDatabaseAdapter($dbLocal);
-		DataEntryBackup::SetDatabaseAdapter($dbLocal);
-		Audit::SetDatabaseAdapter($dbLocal);
-		Notification::SetDatabaseAdapter($dbLocal);
-		RestAccessToken::SetDatabaseAdapter($dbLocal);
+		\Model\File::SetDatabaseAdapter($dbLocal);
+		\Model\Setting::SetDatabaseAdapter($dbLocal);
+		\Model\Report::SetDatabaseAdapter($dbLocal);
+		\Model\DataEntryBackup::SetDatabaseAdapter($dbLocal);
+		\Model\Audit::SetDatabaseAdapter($dbLocal);
+		\Model\Notification::SetDatabaseAdapter($dbLocal);
+		\Model\RestAccessToken::SetDatabaseAdapter($dbLocal);
 
-		$moduleManagers = BaseService::getInstance()->getModuleManagers();
+		$moduleManagers = \Classes\BaseService::getInstance()->getModuleManagers();
 
 		foreach($moduleManagers as $moduleManagerObj){
 
@@ -79,7 +78,6 @@ class TestTemplate extends PHPUnit_Framework_TestCase{
 			$moduleManagerObj->setupUserClasses($userTables);
 			$moduleManagerObj->setupFileFieldMappings($fileFields);
 			$moduleManagerObj->setupErrorMappings($mysqlErrors);
-			//$moduleManagerObj->setupRestEndPoints();
 			$moduleManagerObj->initCalculationHooks();
 
 			$modelClassList = $moduleManagerObj->getModelClasses();

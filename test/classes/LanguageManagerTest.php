@@ -13,10 +13,10 @@ class LanguageManagerTest extends TestTemplate{
 
 
     public function testTran(){
-        $this->assertEquals('cat', LanguageManager::tran('cat'));
-        $this->assertEquals('solid', LanguageManager::tran('solid'));
-        $this->assertEquals('one file', LanguageManager::tran('one file'));
-        $this->assertEquals('2 files', LanguageManager::tran('2 files'));
-        $this->assertEquals('User Logged In now', LanguageManager::translateTnrText('User <t>Logged In</t> now'));
+        $this->assertEquals('cat', \Classes\LanguageManager::tran('cat'));
+        $this->assertEquals('solid', \Classes\LanguageManager::tran('solid'));
+        $this->assertEquals('one file', \Classes\LanguageManager::tran('one file'));
+        $this->assertEquals('2 files', \Classes\LanguageManager::tran('2 files'));
+        $this->assertEquals('User Logged In now', \Classes\LanguageManager::translateTnrText('User <t>Logged In</t> now'));
     }
 }
