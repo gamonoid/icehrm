@@ -26,18 +26,23 @@ define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
 
-$billingActionManager = new \Billing\Admin\Api\BillingActionManager();
-
-$invoices = $billingActionManager->getInvoices(null)->getData();
-if(!empty($invoices)){
-    $invoices = json_decode(json_encode($invoices));
-}
+$invoices = [];
 $numOfUnpaidInvoices = 0;
-foreach($invoices as $inv){
-    if($inv->status == "Sent"){
-        $numOfUnpaidInvoices++;
+if (class_exists('\\Billing\\Admin\\Api\\BillingActionManager')) {
+    $billingActionManager = new \Billing\Admin\Api\BillingActionManager();
+
+    $invoices = $billingActionManager->getInvoices(null)->getData();
+    if(!empty($invoices)){
+        $invoices = json_decode(json_encode($invoices));
+    }
+
+    foreach($invoices as $inv){
+        if($inv->status == "Sent"){
+            $numOfUnpaidInvoices++;
+        }
     }
 }
+
 
 ?><div class="span9">
 <div class="row">
@@ -115,27 +120,6 @@ var modJsList = new Array();
 modJsList['tabDashboard'] = new DashboardAdapter('Dashboard','Dashboard');
 
 var modJs = modJsList['tabDashboard'];
-
-/*
-$("#employeeLink").attr("href",modJs.getCustomUrl('?g=admin&n=employees&m=admin_Admin'));
-$("#companyLink").attr("href",modJs.getCustomUrl('?g=admin&n=company_structure&m=admin_Admin'));
-$("#usersLink").attr("href",modJs.getCustomUrl('?g=admin&n=users&m=admin_System'));
-$("#projectsLink").attr("href",modJs.getCustomUrl('?g=admin&n=projects&m=admin_Admin'));
-$("#attendanceLink").attr("href",modJs.getCustomUrl('?g=admin&n=attendance&m=admin_Admin'));
-$("#leaveLink").attr("href",modJs.getCustomUrl('?g=admin&n=leaves&m=admin_Admin'));
-$("#reportsLink").attr("href",modJs.getCustomUrl('?g=admin&n=reports&m=admin_Reports'));
-$("#settingsLink").attr("href",modJs.getCustomUrl('?g=admin&n=settings&m=admin_System'));
-$("#jobsLink").attr("href",modJs.getCustomUrl('?g=admin&n=jobpositions&m=admin_Recruitment'));
-$("#candidatesLink").attr("href",modJs.getCustomUrl('?g=admin&n=candidates&m=admin_Recruitment'));
-$("#trainingLink").attr("href",modJs.getCustomUrl('?g=admin&n=training&m=admin_Admin'));
-$("#travelLink").attr("href",modJs.getCustomUrl('?g=admin&n=travel&m=admin_Employees'));
-$("#documentLink").attr("href",modJs.getCustomUrl('?g=admin&n=documents&m=admin_Employees'));
-$("#expenseLink").attr("href",modJs.getCustomUrl('?g=admin&n=expenses&m=admin_Employees'));
-$("#permissionLink").attr("href",modJs.getCustomUrl('?g=admin&n=permissions&m=admin_System'));
-$("#upgradeLink").attr("href",modJs.getCustomUrl('?g=admin&n=billing&m=admin_System'));
-
-modJs.getInitData();
-*/
 
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>

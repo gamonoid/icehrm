@@ -16,7 +16,7 @@ along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
 
 ------------------------------------------------------------------
 
-Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]  
+Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
 Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
  */
 
@@ -62,7 +62,7 @@ this.permissions = {};
 this.baseUrl = null;
 
 IceHRMBase.method('init' , function(appName, currentView, dataUrl, permissions) {
-	
+
 });
 
 /**
@@ -196,10 +196,10 @@ IceHRMBase.method('trackEvent' , function(action, label, value) {
 			this.ga.push(['_trackEvent', this.instanceId, action, label, value]);
 		}
 	}catch(e){
-		
+
 	}
-	
-	
+
+
 });
 
 
@@ -244,7 +244,7 @@ IceHRMBase.method('initFieldMasterData' , function(callback, loadAllCallback, lo
 	this.sourceMapping = {};
 	var fields = this.getFormFields();
 	var filterFields = this.getFilters();
-	
+
 	if(filterFields != null){
 		for(var j=0;j<filterFields.length;j++){
 			values = this.getMetaFieldValues(filterFields[j][0],fields);
@@ -253,8 +253,8 @@ IceHRMBase.method('initFieldMasterData' , function(callback, loadAllCallback, lo
 			}
 		}
 	}
-	
-	
+
+
 	var remoteSourceFields = [];
 	var remoteSourceFieldKeys = [];
 	var field = null;
@@ -267,7 +267,7 @@ IceHRMBase.method('initFieldMasterData' , function(callback, loadAllCallback, lo
 				remoteSourceFields.push(field);
 				remoteSourceFieldKeys.push(key);
 			}
-			
+
 		}else if(field[1]['form'] != undefined && field[1]['form'] != null){
 			for(var j=0;j<field[1]['form'].length;j++){
 				fieldSub = field[1]['form'][j];
@@ -277,19 +277,19 @@ IceHRMBase.method('initFieldMasterData' , function(callback, loadAllCallback, lo
 						remoteSourceFields.push(fieldSub);
 						remoteSourceFieldKeys.push(key);
 					}
-					
+
 				}
 			}
 		}
 	}
-	
+
 	for(var i=0;i<remoteSourceFields.length;i++){
 		var field = remoteSourceFields[i];
 		if(field[1]['remote-source'] != undefined && field[1]['remote-source'] != null){
 			var key = field[1]['remote-source'][0]+"_"+field[1]['remote-source'][1]+"_"+field[1]['remote-source'][2];
 			this.fieldMasterDataKeys[key] = false;
 			this.sourceMapping[field[0]] = field[1]['remote-source'];
-			
+
 			var callBackData = {};
 			callBackData['callBack'] = 'initFieldMasterDataResponse';
 			callBackData['callBackData'] = [key];
@@ -336,7 +336,7 @@ IceHRMBase.method('getRemoteTable' , function() {
 });
 
 IceHRMBase.method('isAllLoaded' , function(fieldMasterDataKeys) {
-	
+
 	for(key in fieldMasterDataKeys){
 		if(fieldMasterDataKeys[key] == false){
 			return false;
@@ -352,7 +352,7 @@ IceHRMBase.method('initFieldMasterDataResponse' , function(key,data, callback, l
 	if(callback != undefined && callback != null){
 		callback();
 	}
-	
+
 	if(this.fieldMasterDataCallback != null && this.fieldMasterDataCallback != undefined && this.isAllLoaded(this.fieldMasterDataKeys)){
         if(this.fieldMasterDataCallbackData == null || this.fieldMasterDataCallbackData == undefined){
             this.fieldMasterDataCallback();
@@ -361,7 +361,7 @@ IceHRMBase.method('initFieldMasterDataResponse' , function(key,data, callback, l
         }
 
 	}
-	
+
 });
 
 IceHRMBase.method('getMetaFieldValues' , function(key, fields) {
@@ -504,12 +504,12 @@ IceHRMBase.method('showView', function(view) {
 });
 
 IceHRMBase.method('showPreviousView', function() {
-	this.showView(this.previousView);	
+	this.showView(this.previousView);
 });
 
 
 IceHRMBase.method('moveToTop', function () {
-	
+
 });
 
 
@@ -521,7 +521,7 @@ IceHRMBase.method('callFunction', function (callback, cbParams,thisParam) {
 			}else{
 				callback.apply(thisParam, cbParams);
 			}
-			
+
 		} catch(e) {
 		}
 	} else {
@@ -531,7 +531,7 @@ IceHRMBase.method('callFunction', function (callback, cbParams,thisParam) {
 				f.apply(this, cbParams);
 			} catch(e) {
 			}
-		} 
+		}
 	}
 	return ;
 });
@@ -541,7 +541,7 @@ IceHRMBase.method('getTableTopButtonHtml', function() {
 	if(this.getShowAddNew()){
 		html = '<button onclick="modJs.renderForm();return false;" class="btn btn-small btn-primary">'+this.gt(this.getAddNewLabel())+' <i class="fa fa-plus"></i></button>';
 	}
-	
+
 	if(this.getFilters() != null){
 		if(html != ""){
 			html += "&nbsp;&nbsp;";
@@ -553,21 +553,21 @@ IceHRMBase.method('getTableTopButtonHtml', function() {
 		}else{
 			html+='<button id="__id___resetFilters" onclick="modJs.resetFilters();return false;" class="btn btn-small btn-default" style="display:none;">__filterString__ <i class="fa fa-times"></i></button>';
 		}
-		
+
 	}
-	
+
 	html = html.replace(/__id__/g, this.getTableName());
-	
+
 	if(this.currentFilterString != "" && this.currentFilterString != null){
 		html = html.replace(/__filterString__/g, this.currentFilterString);
 	}else{
 		html = html.replace(/__filterString__/g, 'Reset Filters');
 	}
-	
+
 	if(html != ""){
 		html = '<div class="row"><div class="col-xs-12">'+html+'</div></div>';
 	}
-	
+
 	return html;
 });
 
@@ -594,13 +594,13 @@ IceHRMBase.method('createTable', function(elementId) {
 
 
     var that = this;
-	
+
 	if(this.getRemoteTable()){
 		this.createTableServer(elementId);
 		return;
 	}
-	
-	
+
+
 	var headers = this.getHeaders();
 
 	//add translations
@@ -609,18 +609,18 @@ IceHRMBase.method('createTable', function(elementId) {
 	}
 
 	var data = this.getTableData();
-	
+
 	if(this.showActionButtons()){
         headers.push(this.getActionButtonHeader());
 	}
-	
-	
+
+
 	if(this.showActionButtons()){
 		for(var i=0;i<data.length;i++){
 			data[i].push(this.getActionButtonsHtml(data[i][0],data[i]));
 		}
 	}
-	
+
 	var html = "";
 	html = this.getTableTopButtonHtml() + this.getTableHTMLTemplate();
 	/*
@@ -638,7 +638,7 @@ IceHRMBase.method('createTable', function(elementId) {
 	}
 
 	$('#'+elementId).html(html);
-	
+
 	var dataTableParams = {
 			"oLanguage": {
 				"sLengthMenu": "_MENU_ records per page"
@@ -650,13 +650,13 @@ IceHRMBase.method('createTable', function(elementId) {
 			"iDisplayStart": start
 		};
 
-	
+
 	var customTableParams = this.getCustomTableParams();
-	
+
 	$.extend(dataTableParams, customTableParams);
-	
+
 	$('#'+elementId+' #grid').dataTable( dataTableParams );
-	
+
 	$(".dataTables_paginate ul").addClass("pagination");
 	$(".dataTables_length").hide();
 	$(".dataTables_filter input").addClass("form-control");
@@ -676,14 +676,14 @@ IceHRMBase.method('createTable', function(elementId) {
 IceHRMBase.method('createTableServer', function(elementId) {
 	var that = this;
 	var headers = this.getHeaders();
-	
+
 	headers.push({ "sTitle": "", "sClass": "center" });
 
 	//add translations
 	for(index in headers){
 		headers[index].sTitle = this.gt(headers[index].sTitle);
 	}
-	
+
 	var html = "";
 	html = this.getTableTopButtonHtml() + this.getTableHTMLTemplate();
 	/*
@@ -693,17 +693,17 @@ IceHRMBase.method('createTableServer', function(elementId) {
 		html = '<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="grid"></table></div>';
 	}
 	*/
-	
+
 	//Find current page
 	var activePage = $('#'+elementId +" .dataTables_paginate .active a").html();
 	var start = 0;
 	if(activePage != undefined && activePage != null){
 		start = parseInt(activePage, 10)*15 - 15;
 	}
-	
-	
+
+
 	$('#'+elementId).html(html);
-	
+
 	var dataTableParams = {
 			"oLanguage": {
 				"sLengthMenu": "_MENU_ records per page"
@@ -717,22 +717,22 @@ IceHRMBase.method('createTableServer', function(elementId) {
 			"iDisplayLength": 15,
 			"iDisplayStart": start
 		};
-	
+
 	if(this.showActionButtons()){
-		dataTableParams["aoColumnDefs"] = [ 
+		dataTableParams["aoColumnDefs"] = [
 		                        			{
 		                         				"fnRender": that.getActionButtons,
 		                         				"aTargets": [that.getDataMapping().length]
 		                         			}
 		                    			];
 	}
-	
+
 	var customTableParams = this.getCustomTableParams();
-	
+
 	$.extend(dataTableParams, customTableParams);
-	
+
 	$('#'+elementId+' #grid').dataTable( dataTableParams );
-	
+
 	$(".dataTables_paginate ul").addClass("pagination");
 	$(".dataTables_length").hide();
 	$(".dataTables_filter input").addClass("form-control");
@@ -740,7 +740,7 @@ IceHRMBase.method('createTableServer', function(elementId) {
 	$(".dataTables_filter label").contents().filter(function(){
 	    return (this.nodeType == 3);
 	}).remove();
-	
+
 	$('.tableActionButton').tooltip();
 
 });
@@ -759,7 +759,7 @@ IceHRMBase.method('createTableServer', function(elementId) {
 		});
  */
 IceHRMBase.method('getHeaders', function() {
-	
+
 });
 
 
@@ -793,11 +793,11 @@ IceHRMBase.method('getDataMapping', function() {
 	});
  */
 IceHRMBase.method('getFormFields', function() {
-	
+
 });
 
 IceHRMBase.method('getTableData', function() {
-	
+
 });
 
 /**
@@ -832,11 +832,11 @@ IceHRMBase.method('copyRow', function(id) {
 
 IceHRMBase.method('renderModel', function(id,header,body) {
 	$('#'+id+'ModelBody').html("");
-	
+
 	if(body == undefined || body == null){
 		body = "";
 	}
-	
+
 	$('#'+id+'ModelLabel').html(header);
 	$('#'+id+'ModelBody').html(body);
 });
@@ -875,11 +875,11 @@ IceHRMBase.method('renderYesNoModel', function(header,body,yesBtnName,noBtnName,
 
 IceHRMBase.method('renderModelFromDom', function(id,header,element) {
 	$('#'+id+'ModelBody').html("");
-	
+
 	if(element == undefined || element == null){
 		element = $("<div></div>");
 	}
-	
+
 	$('#'+id+'ModelLabel').html(header);
 	$('#'+id+'ModelBody').html("");
 	$('#'+id+'ModelBody').append(element);
@@ -895,7 +895,7 @@ IceHRMBase.method('deleteRow', function(id) {
 	this.deleteParams['id'] = id;
 	this.renderModel('delete',"Confirm Deletion","Are you sure you want to delete this item ?");
 	$('#deleteModel').modal('show');
-	
+
 });
 
 /**
@@ -919,7 +919,7 @@ IceHRMBase.method('showMessage', function(title,message,closeCallback,closeCallb
 		modelId = "#messageModel";
 		this.renderModel('message',title,message);
 	}
-	
+
 	$(modelId).unbind('hide');
 	if(closeCallback != null && closeCallback != undefined){
 		$(modelId).on('hidden.bs.modal',function(){
@@ -942,7 +942,7 @@ IceHRMBase.method('showDomElement', function(title,element,closeCallback,closeCa
 		modelId = "#messageModel";
 		this.renderModelFromDom('message',title,element);
 	}
-	
+
 	$(modelId).unbind('hide');
 	if(closeCallback != null && closeCallback != undefined){
 		$(modelId).on('hidden.bs.modal',function(){
@@ -986,7 +986,7 @@ IceHRMBase.method('closeDataMessage', function() {
 
 
 /**
- * Create or edit an element 
+ * Create or edit an element
  * @method save
  * @param getFunctionCallBackData {Array} once a success is returned call get() function for this module with these parameters
  * @param successCallback {Function} this will get called after success response
@@ -1003,13 +1003,26 @@ IceHRMBase.method('save', function(callGetFunction, successCallback) {
 			if(id != null && id != undefined && id != ""){
 				$(params).attr('id',id);
 			}
+			params = this.makeEmptyDateFieldsNull(params);
 			this.add(params,[],callGetFunction, successCallback);
 		}else{
 			$("#"+this.getTableName()+'Form .label').html(msg);
 			$("#"+this.getTableName()+'Form .label').show();
 		}
-		
+
 	}
+});
+
+
+IceHRMBase.method('makeEmptyDateFieldsNull', function(params) {
+	var fields = this.getFormFields();
+	fields.forEach(function(field) {
+		if((field[1].type == 'date' || field[1].type == 'datetime')
+			&& (params[field[0]] === '' || params[field[0]] === '0000-00-00' || params[field[0]] === '0000-00-00 00:00:00')){
+			delete params[field[0]];
+		}
+	});
+	return params;
 });
 
 /**
@@ -1038,7 +1051,7 @@ IceHRMBase.method('forceInjectValuesBeforeSave', function(params) {
 				}
 			}
 		}catch(e){
-			
+
 		}
 	return null;
 });
@@ -1048,12 +1061,12 @@ IceHRMBase.method('doCustomValidation', function(params) {
 });
 
 IceHRMBase.method('filterQuery', function() {
-	
+
 	var validator = new FormValidation(this.getTableName()+"_filter",true,{'ShowPopup':false,"LabelErrorClass":"error"});
 	if(validator.checkValues()){
 		var params = validator.getFormParameters();
 		if(this.doCustomFilterValidation(params)){
-			
+
 			//remove null params
 			for (var prop in params) {
 				if(params.hasOwnProperty(prop)){
@@ -1062,16 +1075,16 @@ IceHRMBase.method('filterQuery', function() {
 					}
 				}
 			}
-			
+
 			this.setFilter(params);
 			this.filtersAlreadySet = true;
 			$("#"+this.getTableName()+"_resetFilters").show();
 			this.currentFilterString = this.getFilterString(params);
-			
+
 			this.get([]);
 			this.closePlainMessage();
 		}
-		
+
 	}
 });
 
@@ -1080,22 +1093,22 @@ IceHRMBase.method('getFilterString', function(filters) {
 
 	var str = '';
 	var rmf, source, values, select2MVal, value, valueOrig;
-	
+
 	var filterFields = this.getFilters();
-	
-	
+
+
 	if(values == null){
 		values = [];
 	}
-	
+
 	for (var prop in filters) {
 		if(filters.hasOwnProperty(prop)){
 			values = this.getMetaFieldValues(prop,filterFields);
 			value = "";
 			valueOrig = null;
-			
+
 			if((values['type'] == 'select' || values['type'] == 'select2')){
-				
+
 				if(values['remote-source']!= undefined && values['remote-source']!= null){
 					rmf = values['remote-source'];
 					if(filters[prop] == "NULL"){
@@ -1108,8 +1121,8 @@ IceHRMBase.method('getFilterString', function(filters) {
 						value = this.fieldMasterData[rmf[0]+"_"+rmf[1]+"_"+rmf[2]][filters[prop]];
 						valueOrig = value;
 					}
-					
-					
+
+
 				}else{
 					source = values['source'][0];
 					if(filters[prop] == "NULL"){
@@ -1127,41 +1140,41 @@ IceHRMBase.method('getFilterString', function(filters) {
 							}
 						}
 					}
-					
-					
+
+
 				}
-				
+
 			}else if (values['type'] == 'select2multi'){
 				select2MVal = [];
 				try{
 					select2MVal = JSON.parse(filters[prop]);
-					
+
 				}catch(e){
-					
+
 				}
-				
+
 				value = select2MVal.join(",");
 				if(value != ""){
 					valueOrig = value;
 				}
-				
+
 			}else{
 				value = filters[prop];
 				if(value != ""){
 					valueOrig = value;
 				}
 			}
-			
+
 			if(valueOrig != null){
 				if(str != ''){
 					str += " | ";
 				}
-				
+
 				str += values['label']+" = "+value;
 			}
 		}
 	}
-	
+
 	return str;
 });
 
@@ -1196,7 +1209,7 @@ IceHRMBase.method('showFilters', function(object) {
 	var formHtml = this.templates['filterTemplate'];
 	var html = "";
 	var fields = this.getFilters();
-	
+
 	for(var i=0;i<fields.length;i++){
 		var metaField = this.getMetaFieldForRendering(fields[i][0]);
 		if(metaField == "" || metaField == undefined){
@@ -1209,19 +1222,19 @@ IceHRMBase.method('showFilters', function(object) {
 				html += this.renderFormField(fields[i]);
 			}
 		}
-		
+
 	}
 	formHtml = formHtml.replace(/_id_/g,this.getTableName()+"_filter");
 	formHtml = formHtml.replace(/_fields_/g,html);
-	
+
 	var $tempDomObj;
 	var randomFormId = this.generateRandom(14);
 	$tempDomObj = $('<div class="reviewBlock popupForm" data-content="Form"></div>');
 	$tempDomObj.attr('id',randomFormId);
-	
+
 	$tempDomObj.html(formHtml);
-	
-	
+
+
 	$tempDomObj.find('.datefield').datepicker({'viewMode':2});
 	$tempDomObj.find('.timefield').datetimepicker({
       language: 'en',
@@ -1230,7 +1243,7 @@ IceHRMBase.method('showFilters', function(object) {
 	$tempDomObj.find('.datetimefield').datetimepicker({
       language: 'en'
     });
-	
+
 	$tempDomObj.find('.colorpick').colorpicker();
 	tinymce.init({
 		selector: '#'+$tempDomObj.attr('id')+' .tinymce',
@@ -1242,12 +1255,12 @@ IceHRMBase.method('showFilters', function(object) {
 		$(this).data('simplemde', simplemde);
 		//simplemde.value($(this).val());
 	});
-	
+
 	//$tempDomObj.find('.select2Field').select2();
 	$tempDomObj.find('.select2Field').each(function() {
 		$(this).select2().select2('val', $(this).find("option:eq(0)").val());
 	});
-	
+
 	$tempDomObj.find('.select2Multi').each(function() {
 		$(this).select2().on("change",function(e){
 			var parentRow = $(this).parents(".row");
@@ -1270,23 +1283,23 @@ IceHRMBase.method('showFilters', function(object) {
 		e.stopPropagation();
 		try{
 			modJs.filterQuery();
-			
+
 		}catch(e){
 		};
 		return false;
 	});
-	
+
 	if(this.filter != undefined && this.filter != null){
 		this.fillForm(this.filter,"#"+this.getTableName()+"_filter", this.getFilters());
 	}
-	
+
 });
 
 
 /**
  * Override this method in your module class to make changes to data fo the form before showing the form
  * @method preRenderForm
- * @param object {Array} keys value list for populating form		
+ * @param object {Array} keys value list for populating form
  */
 
 IceHRMBase.method('preRenderForm', function(object) {
@@ -1296,23 +1309,23 @@ IceHRMBase.method('preRenderForm', function(object) {
 /**
  * Create the form
  * @method renderForm
- * @param object {Array} keys value list for populating form		
+ * @param object {Array} keys value list for populating form
  */
 
 IceHRMBase.method('renderForm', function(object) {
-	
+
 	var that = this;
     var signatureIds = [];
 	if(object == null || object == undefined){
 		this.currentId = null;
 	}
-	
+
 	this.preRenderForm(object);
-	
+
 	var formHtml = this.templates['formTemplate'];
 	var html = "";
 	var fields = this.getFormFields();
-	
+
 	for(var i=0;i<fields.length;i++){
 		var metaField = this.getMetaFieldForRendering(fields[i][0]);
 		if(metaField == "" || metaField == undefined){
@@ -1325,12 +1338,12 @@ IceHRMBase.method('renderForm', function(object) {
 				html += this.renderFormField(fields[i]);
 			}
 		}
-		
+
 	}
 	formHtml = formHtml.replace(/_id_/g,this.getTableName()+"_submit");
 	formHtml = formHtml.replace(/_fields_/g,html);
-	
-	
+
+
 	var $tempDomObj;
 	var randomFormId = this.generateRandom(14);
 	if(!this.showFormOnPopup){
@@ -1338,12 +1351,12 @@ IceHRMBase.method('renderForm', function(object) {
 	}else{
 		$tempDomObj = $('<div class="reviewBlock popupForm" data-content="Form"></div>');
 		$tempDomObj.attr('id',randomFormId);
-		
+
 	}
-	
+
 	$tempDomObj.html(formHtml);
-	
-	
+
+
 	$tempDomObj.find('.datefield').datepicker({'viewMode':2});
 	$tempDomObj.find('.timefield').datetimepicker({
       language: 'en',
@@ -1352,7 +1365,7 @@ IceHRMBase.method('renderForm', function(object) {
 	$tempDomObj.find('.datetimefield').datetimepicker({
       language: 'en'
     });
-	
+
 	$tempDomObj.find('.colorpick').colorpicker();
 
 	tinymce.init({
@@ -1365,20 +1378,20 @@ IceHRMBase.method('renderForm', function(object) {
 		$(this).data('simplemde', simplemde);
 		//simplemde.value($(this).val());
 	});
-	
+
 	//$tempDomObj.find('.select2Field').select2();
 	$tempDomObj.find('.select2Field').each(function() {
 		$(this).select2().select2('val', $(this).find("option:eq(0)").val());
-		
+
 	});
-	
+
 	$tempDomObj.find('.select2Multi').each(function() {
 		$(this).select2().on("change",function(e){
 			var parentRow = $(this).parents(".row");
 			var height = parentRow.find(".select2-choices").height();
 			parentRow.height(parseInt(height));
 		});
-		
+
 	});
 
 
@@ -1386,13 +1399,13 @@ IceHRMBase.method('renderForm', function(object) {
         //$(this).data('signaturePad',new SignaturePad($(this)));
         signatureIds.push($(this).attr('id'));
     });
-	
+
 	for(var i=0;i<fields.length;i++){
 		if(fields[i][1].type == "datagroup"){
 			$tempDomObj.find("#"+fields[i][0]).data('field',fields[i]);
 		}
 	}
-	
+
 	if(this.showSave == false){
 		$tempDomObj.find('.saveBtn').remove();
 	}else{
@@ -1407,9 +1420,9 @@ IceHRMBase.method('renderForm', function(object) {
 
 			  return false;
 		});
-		
+
 	}
-	
+
 	if(this.showCancel== false){
 		$tempDomObj.find('.cancelBtn').remove();
 	}else{
@@ -1419,9 +1432,9 @@ IceHRMBase.method('renderForm', function(object) {
 			  $(this ).data('modJs').cancel();
 			  return false;
 		});
-		
+
 	}
-	
+
 	if(!this.showFormOnPopup){
 		$("#"+this.getTableName()+'Form').show();
 		$("#"+this.getTableName()).hide();
@@ -1438,15 +1451,15 @@ IceHRMBase.method('renderForm', function(object) {
 		}
 
 		this.scrollToTop();
-		
+
 	}else{
-		
-		
-		
+
+
+
 		//var tHtml = $tempDomObj.wrap('<div>').parent().html();
 		//this.showMessage("Edit",tHtml,null,null,true);
 		this.showMessage("Edit","",null,null,true);
-		
+
 		$("#plainMessageModel .modal-body").html("");
 		$("#plainMessageModel .modal-body").append($tempDomObj);
 
@@ -1457,17 +1470,17 @@ IceHRMBase.method('renderForm', function(object) {
                 new SignaturePad(document.getElementById(signatureIds[i])));
 
         }
-		
+
 		if(object != undefined && object != null){
 			this.fillForm(object,"#"+randomFormId);
 		}
 
 	}
-	
+
 	this.postRenderForm(object,$tempDomObj);
 
 
-	
+
 });
 
 
@@ -1485,7 +1498,7 @@ IceHRMBase.method('retriveItemsAfterSave', function() {
 		if(object == null || object == undefined){
 			$tempDomObj.find("#changePasswordBtn").remove();
 		}
-	});			
+	});
  */
 
 IceHRMBase.method('postRenderForm', function(object, $tempDomObj) {
@@ -1496,39 +1509,39 @@ IceHRMBase.method('postRenderForm', function(object, $tempDomObj) {
  * Convert data group field to HTML
  * @method dataGroupToHtml
  * @param val {String} value in the field
- * @param field {Array} field meta data			
+ * @param field {Array} field meta data
  */
 
 IceHRMBase.method('dataGroupToHtml', function(val, field) {
 	var data = JSON.parse(val),
 		deleteButton, t, sortFunction, item,key = null, i, html, template, itemHtml, itemVal;
-	
+
 	deleteButton = '<a id="#_id_#_delete" onclick="modJs.deleteDataGroupItem(\'#_id_#\');return false;" type="button" style="float:right;margin-right:3px;" tooltip="Delete"><li class="fa fa-times"></li></a>';
 	editButton = '<a id="#_id_#_edit" onclick="modJs.editDataGroupItem(\'#_id_#\');return false;" type="button" style="float:right;margin-right:5px;" tooltip="Edit"><li class="fa fa-edit"></li></a>';
-	
+
 	template = field[1]['html'];
-	
+
 	if(data != null && data != undefined && field[1]['sort-function'] != undefined && field[1]['sort-function'] != null){
 		data.sort(field[1]['sort-function']);
 	}
-	
-	
+
+
 	html = $('<div id="'+field[0]+"_div_inner"+'"></div>');
-	
-	
-	
+
+
+
 	for(i=0;i<data.length;i++){
 		item = data[i];
-		
+
 		if(field[1]['pre-format-function'] != undefined && field[1]['pre-format-function'] != null){
 			item = field[1]['pre-format-function'].apply(this,[item]);
 		}
-		
+
 		t = template;
 		t = t.replace('#_delete_#',deleteButton);
 		t = t.replace('#_edit_#',editButton);
 		t = t.replace(/#_id_#/g,item.id);
-		
+
 		for(key in item){
 			itemVal = item[key];
 			if(itemVal != undefined && itemVal != null && typeof itemVal == "string"){
@@ -1540,7 +1553,7 @@ IceHRMBase.method('dataGroupToHtml', function(val, field) {
         if(field[1]['render'] != undefined && field[1]['render'] != null){
             t = t.replace('#_renderFunction_#', field[1]['render'](item));
         }
-		
+
 		itemHtml = $(t);
 		itemHtml.attr('fieldId',field[0]+"_div");
 		html.append(itemHtml);
@@ -1554,7 +1567,7 @@ IceHRMBase.method('dataGroupToHtml', function(val, field) {
 /**
  * Reset the DataGroup for a given field
  * @method resetDataGroup
- * @param field {Array} field meta data		
+ * @param field {Array} field meta data
  */
 IceHRMBase.method('resetDataGroup', function(field) {
 	$("#"+field[0]).val("");
@@ -1565,28 +1578,28 @@ IceHRMBase.method('showDataGroup', function(field, object) {
 	var formHtml = this.templates['datagroupTemplate'];
 	var html = "";
 	var fields = field[1]['form'];
-	
+
 	if(object != undefined && object != null && object.id != undefined){
 		this.currentDataGroupItemId = object.id;
 	}else{
 		this.currentDataGroupItemId = null;
 	}
-	
+
 	for(var i=0;i<fields.length;i++){
 		html += this.renderFormField(fields[i]);
-		
+
 	}
 	formHtml = formHtml.replace(/_id_/g,this.getTableName()+"_field_"+field[0]);
 	formHtml = formHtml.replace(/_fields_/g,html);
-	
+
 	var $tempDomObj;
 	var randomFormId = this.generateRandom(14);
 	$tempDomObj = $('<div class="reviewBlock popupForm" data-content="Form"></div>');
 	$tempDomObj.attr('id',randomFormId);
-	
+
 	$tempDomObj.html(formHtml);
-	
-	
+
+
 	$tempDomObj.find('.datefield').datepicker({'viewMode':2});
 	$tempDomObj.find('.timefield').datetimepicker({
       language: 'en',
@@ -1595,7 +1608,7 @@ IceHRMBase.method('showDataGroup', function(field, object) {
 	$tempDomObj.find('.datetimefield').datetimepicker({
       language: 'en'
     });
-	
+
 	$tempDomObj.find('.colorpick').colorpicker();
 
 	tinymce.init({
@@ -1608,12 +1621,12 @@ IceHRMBase.method('showDataGroup', function(field, object) {
 		$(this).data('simplemde', simplemde);
 		//simplemde.value($(this).val());
 	});
-	
+
 	$tempDomObj.find('.select2Field').each(function() {
 		$(this).select2().select2('val', $(this).find("option:eq(0)").val());
 	});
 
-	
+
 	$tempDomObj.find('.select2Multi').each(function() {
 		$(this).select2().on("change",function(e){
 			var parentRow = $(this).parents(".row");
@@ -1627,15 +1640,15 @@ IceHRMBase.method('showDataGroup', function(field, object) {
         $(this).data('signaturePad',new SignaturePad($(this)));
     });
     */
-	
+
 	this.currentDataGroupField = field;
 	this.showDomElement("Add "+field[1]['label'],$tempDomObj,null,null,true);
-	
+
 	if(object != undefined && object != null){
 		this.fillForm(object,"#"+this.getTableName()+"_field_"+field[0], field[1]['form']);
 	}
-	
-	
+
+
 	$(".groupAddBtn").off();
 	if(object != undefined && object != null && object.id != undefined){
 		$(".groupAddBtn").on('click',function(e) {
@@ -1643,7 +1656,7 @@ IceHRMBase.method('showDataGroup', function(field, object) {
 			e.stopPropagation();
 			try{
 				modJs.editDataGroup();
-				
+
 			}catch(e){
 			};
 			return false;
@@ -1654,14 +1667,14 @@ IceHRMBase.method('showDataGroup', function(field, object) {
 			e.stopPropagation();
 			try{
 				modJs.addDataGroup();
-				
+
 			}catch(e){
 			};
 			return false;
 		});
 	}
-	
-	
+
+
 });
 
 IceHRMBase.method('addDataGroup', function() {
@@ -1681,25 +1694,25 @@ IceHRMBase.method('addDataGroup', function() {
 				return false;
 			}
 		}
-		
+
 		var val = $("#"+field[0]).val();
 		if(val == ""){
 			val = "[]";
 		}
 		var data = JSON.parse(val);
-		
+
 		params['id'] = field[0]+"_"+this.dataGroupGetNextAutoIncrementId(data);
 		data.push(params);
 
-		
+
 		if(field[1]['sort-function'] != undefined && field[1]['sort-function'] != null){
 			data.sort(field[1]['sort-function']);
 		}
-		
+
 		val = JSON.stringify(data);
 
 		var html = this.dataGroupToHtml(val,field);
-		
+
 		$("#"+field[0]+"_div").html("");
 		$("#"+field[0]+"_div").append(html);
 
@@ -1814,13 +1827,13 @@ IceHRMBase.method('editDataGroup', function() {
 
 
 		if(this.doCustomFilterValidation(params)){
-			
+
 			var val = $("#"+field[0]).val();
 			if(val == ""){
 				val = "[]";
 			}
 			var data = JSON.parse(val);
-			
+
 			var editVal = {};
 			var editValIndex = -1;
 			var newVals = [];
@@ -1832,19 +1845,19 @@ IceHRMBase.method('editDataGroup', function() {
 				}
 				newVals.push(item);
 			}
-			
-			
-			
+
+
+
 			params['id'] = editVal.id;
 			newVals[editValIndex] = params;
-			
+
 			if(field[1]['sort-function'] != undefined && field[1]['sort-function'] != null){
 				newVals.sort(field[1]['sort-function']);
 			}
-			
+
 			val = JSON.stringify(newVals);
 			$("#"+field[0]).val(val);
-			
+
 			var html = this.dataGroupToHtml(val,field);
 
 			this.orderDataGroup(field);
@@ -1860,28 +1873,28 @@ IceHRMBase.method('editDataGroup', function() {
 			this.showMessage("Item Edited","This change will be effective only when you save the form");
 
 		}
-		
+
 	}
 });
 
 IceHRMBase.method('editDataGroupItem', function(id) {
 	var fieldId = id.substring(0,id.lastIndexOf("_"));
-	
+
 	var val = $("#"+fieldId).val();
 	var data = JSON.parse(val);
-	
+
 	var editVal = {};
-	
+
 	for(var i=0;i<data.length;i++){
 		item = data[i];
 		if(item.id == id){
 			editVal = item;
 		}
 	}
-	
+
 	this.showDataGroup($("#"+fieldId).data('field'),editVal);
-	
-	
+
+
 });
 
 IceHRMBase.method('dataGroupGetNextAutoIncrementId', function(data) {
@@ -1896,9 +1909,9 @@ IceHRMBase.method('dataGroupGetNextAutoIncrementId', function(data) {
 			autoId = parseInt(id) + 1;
 		}
 	}
-	
+
 	return autoId;
-	
+
 });
 
 
@@ -1929,7 +1942,7 @@ IceHRMBase.method('deleteDataGroupItem', function(id) {
 /**
  * Fill a form with required values after showing it
  * @method fillForm
- * @param object {Array} form data		
+ * @param object {Array} form data
  * @param formId {String} id of the form
  * @param formId {Array} field meta data
  */
@@ -1939,12 +1952,12 @@ IceHRMBase.method('fillForm', function(object, formId, fields) {
 	if(fields == null || fields == undefined){
 		fields = this.getFormFields();
 	}
-	
+
 	if(formId == null || formId == undefined || formId == ""){
 		formId = "#"+this.getTableName()+'Form';
 	}
-	
-	
+
+
 	for(var i=0;i<fields.length;i++) {
 		if(fields[i][1].type == 'date'){
 			if(object[fields[i][0]] != '0000-00-00' && object[fields[i][0]] != '' && object[fields[i][0]] != null && object[fields[i][0]] != undefined){
@@ -1966,14 +1979,14 @@ IceHRMBase.method('fillForm', function(object, formId, fields) {
 		}else if(fields[i][1].type == 'label'){
 			$(formId + ' #'+fields[i][0]).html(object[fields[i][0]]);
 		}else if(fields[i][1].type == 'placeholder'){
-			
+
 			if(fields[i][1]['remote-source'] != undefined && fields[i][1]['remote-source'] != null){
 				var key = fields[i][1]['remote-source'][0]+"_"+fields[i][1]['remote-source'][1]+"_"+fields[i][1]['remote-source'][2];
 				placeHolderVal = this.fieldMasterData[key][object[fields[i][0]]];
 			}else{
 				placeHolderVal = object[fields[i][0]];
 			}
-			
+
 			if(placeHolderVal == undefined || placeHolderVal == null){
 				placeHolderVal = "";
 			}else{
@@ -1982,10 +1995,10 @@ IceHRMBase.method('fillForm', function(object, formId, fields) {
                 }catch(e){}
 
 			}
-			
-			
-			
-			
+
+
+
+
 			$(formId + ' #'+fields[i][0]).html(placeHolderVal);
 		}else if(fields[i][1].type == 'fileupload'){
 			if(object[fields[i][0]] != null && object[fields[i][0]] != undefined && object[fields[i][0]] != ""){
@@ -1993,7 +2006,7 @@ IceHRMBase.method('fillForm', function(object, formId, fields) {
 				$(formId + ' #'+fields[i][0]).attr("val",object[fields[i][0]]);
 				$(formId + ' #'+fields[i][0]).show();
 				$(formId + ' #'+fields[i][0]+"_download").show();
-				
+
 			}
 			if(fields[i][1].readonly == true){
 				$(formId + ' #'+fields[i][0]+"_upload").remove();
@@ -2003,26 +2016,26 @@ IceHRMBase.method('fillForm', function(object, formId, fields) {
 				object[fields[i][0]] = "NULL";
 			}
 			$(formId + ' #'+fields[i][0]).val(object[fields[i][0]]);
-			
+
 		}else if(fields[i][1].type == 'select2'){
 			if(object[fields[i][0]] == undefined || object[fields[i][0]] == null || object[fields[i][0]] == ""){
 				object[fields[i][0]] = "NULL";
 			}
 			$(formId + ' #'+fields[i][0]).select2('val',object[fields[i][0]]);
-			
+
 		}else if(fields[i][1].type == 'select2multi'){
 			//TODO - SM
 			if(object[fields[i][0]] == undefined || object[fields[i][0]] == null || object[fields[i][0]] == ""){
 				object[fields[i][0]] = "NULL";
 			}
-			
+
 			var msVal = [];
 			if(object[fields[i][0]] != undefined && object[fields[i][0]] != null && object[fields[i][0]] != ""){
 				try{
 					msVal = JSON.parse(object[fields[i][0]]);
 				}catch(e){}
 			}
-			
+
 			$(formId + ' #'+fields[i][0]).select2('val',msVal);
 			var select2Height = $(formId + ' #'+fields[i][0]).find(".select2-choices").height();
 			$(formId + ' #'+fields[i][0]).find(".controls").css('min-height', select2Height+"px");
@@ -2051,7 +2064,7 @@ IceHRMBase.method('fillForm', function(object, formId, fields) {
 		}else{
 			$(formId + ' #'+fields[i][0]).val(object[fields[i][0]]);
 		}
-	    
+
 	}
 });
 
@@ -2084,7 +2097,7 @@ IceHRMBase.method('renderFormField', function(field) {
 	if(field[1].type == 'text' || field[1].type == 'textarea' || field[1].type == 'hidden' || field[1].type == 'label' || field[1].type == 'placeholder'){
 		t = t.replace(/_id_/g,field[0]);
 		t = t.replace(/_label_/g,field[1].label);
-		
+
 	}else if(field[1].type == 'select' || field[1].type == 'select2' || field[1].type == 'select2multi'){
 		t = t.replace(/_id_/g,field[0]);
 		t = t.replace(/_label_/g,field[1].label);
@@ -2094,23 +2107,23 @@ IceHRMBase.method('renderFormField', function(field) {
 			var key = field[1]['remote-source'][0]+"_"+field[1]['remote-source'][1]+"_"+field[1]['remote-source'][2];
 			t = t.replace('_options_',this.renderFormSelectOptionsRemote(this.fieldMasterData[key],field));
 		}
-		
+
 	}else if(field[1].type == 'colorpick'){
 		t = t.replace(/_id_/g,field[0]);
 		t = t.replace(/_label_/g,field[1].label);
-		
+
 	}else if(field[1].type == 'date'){
 		t = t.replace(/_id_/g,field[0]);
 		t = t.replace(/_label_/g,field[1].label);
-	
+
 	}else if(field[1].type == 'datetime'){
 		t = t.replace(/_id_/g,field[0]);
 		t = t.replace(/_label_/g,field[1].label);
-	
+
 	}else if(field[1].type == 'time'){
 		t = t.replace(/_id_/g,field[0]);
 		t = t.replace(/_label_/g,field[1].label);
-		
+
 	}else if(field[1].type == 'fileupload'){
 		t = t.replace(/_id_/g,field[0]);
 		t = t.replace(/_label_/g,field[1].label);
@@ -2128,14 +2141,14 @@ IceHRMBase.method('renderFormField', function(field) {
 		}else{
 			t = t.replace(/_filetypes_/g,'all');
 		}
-		
+
 		/*
 		if(object != null && object != undefined && object[field[0]] != null && object[field[0]] != undefined && object[field[0]] != ""){
 			t = t.replace(/_id___rand_/g,field[0]);
 		}
 		*/
 		t = t.replace(/_rand_/g,this.generateRandom(14));
-		
+
 	}else if(field[1].type == 'datagroup'){
 		t = t.replace(/_id_/g,field[0]);
 		t = t.replace(/_label_/g,field[1].label);
@@ -2149,7 +2162,7 @@ IceHRMBase.method('renderFormField', function(field) {
 		t = t.replace(/_label_/g,field[1].label);
 	}
 
-	
+
 	if(field[1].validation != undefined && field[1].validation != null && field[1].validation != ""){
 		t = t.replace(/_validation_/g,'validation="'+field[1].validation+'"');
 	}else{
@@ -2167,7 +2180,7 @@ IceHRMBase.method('renderFormField', function(field) {
 
 IceHRMBase.method('renderFormSelectOptions', function(options, field) {
 	var html = "";
-	
+
 	if(field != null && field != undefined){
 		if(field[1]['allow-null'] == true){
 			if(field[1]['null-label'] != undefined && field[1]['null-label'] != null){
@@ -2175,13 +2188,13 @@ IceHRMBase.method('renderFormSelectOptions', function(options, field) {
 			}else{
 				html += '<option value="NULL">Select</option>';
 			}
-			
+
 		}
 	}
-	
-	
+
+
 	//Sort options
-	
+
 	var tuples = [];
 
 	for (var key in options) {
@@ -2204,10 +2217,10 @@ IceHRMBase.method('renderFormSelectOptions', function(options, field) {
 		t = t.replace('_id_', prop);
 		t = t.replace('_val_', value);
 		html += t;
-	    
+
 	}
 	return html;
-	
+
 });
 
 IceHRMBase.method('renderFormSelectOptionsRemote', function(options,field) {
@@ -2218,11 +2231,11 @@ IceHRMBase.method('renderFormSelectOptionsRemote', function(options,field) {
 		}else{
 			html += '<option value="NULL">Select</option>';
 		}
-		
+
 	}
-	
+
 	//Sort options
-	
+
 	var tuples = [];
 
 	for (var key in options) {
@@ -2246,10 +2259,10 @@ IceHRMBase.method('renderFormSelectOptionsRemote', function(options,field) {
 		t = t.replace('_val_', value);
 		html += t;
 	}
-	
-	
+
+
 	return html;
-	
+
 });
 
 IceHRMBase.method('setTemplates', function(templates) {
@@ -2370,7 +2383,7 @@ IceHRMBase.method('getActionButtons', function(obj) {
  * @returns {String} html for action buttons
  */
 
-IceHRMBase.method('getActionButtonsHtml', function(id,data) {	
+IceHRMBase.method('getActionButtonsHtml', function(id,data) {
 	var editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
 	var deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
 	var cloneButton = '<img class="tableActionButton" src="_BASE_images/clone.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Copy" onclick="modJs.copyRow(_id_);return false;"></img>';
@@ -2387,13 +2400,13 @@ IceHRMBase.method('getActionButtonsHtml', function(id,data) {
 	}else{
 		html = html.replace('_delete_','');
 	}
-	
+
 	if(this.showEdit){
 		html = html.replace('_edit_',editButton);
 	}else{
 		html = html.replace('_edit_','');
 	}
-	
+
 	html = html.replace(/_id_/g,id);
 	html = html.replace(/_BASE_/g,this.baseUrl);
 	return html;
@@ -2423,20 +2436,20 @@ IceHRMBase.method('checkFileType', function (elementName, fileTypes) {
 	if (fileElement.value.lastIndexOf(".") > 0) {
 		fileExtension = fileElement.value.substring(fileElement.value.lastIndexOf(".") + 1, fileElement.value.length);
 	}
-	
+
 	fileExtension = fileExtension.toLowerCase();
-	
+
 	var allowed = fileTypes.split(",");
-	
+
 	if (allowed.indexOf(fileExtension) < 0) {
 		fileElement.value = "";
 		this.showMessage("File Type Error",'Selected file type is not supported');
 		this.clearFileElement(elementName);
 		return false;
 	}
-	
+
 	return true;
-	
+
 });
 
 IceHRMBase.method('clearFileElement', function (elementName) {
@@ -2463,15 +2476,15 @@ IceHRMBase.method('getClientDate', function (date) {
 });
 
 IceHRMBase.method('getClientGMTOffset', function () {
-	
+
 	var rightNow = new Date();
 	var jan1 = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);
 	var temp = jan1.toGMTString();
 	var jan2 = new Date(temp.substring(0, temp.lastIndexOf(" ")-1));
 	var std_time_offset = (jan1 - jan2) / (1000 * 60 * 60);
-	
+
 	return std_time_offset;
-	
+
 });
 
 /**

@@ -8,7 +8,7 @@ use Utils\LogManager;
 
 class ActiveEmployeeReport extends CSVReportBuilder implements CSVReportBuilderInterface
 {
-    
+
     public function getMainQuery()
     {
         $query = "Select id, employee_id as 'Employee ID',
@@ -41,15 +41,15 @@ confirmation_date as 'Confirmation Date',
 (SELECT title from CompanyStructures where id = department) as 'Department',
 (SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`,' [Employee ID:',`employee_id`,']') from Employees e1 where e1.id = e.supervisor) as 'Supervisor', notes as 'Notes'
 FROM Employees e";
-         
+
         return $query;
     }
-    
+
     public function getWhereQuery($request)
     {
         $query = "";
         $params = array();
-        
+
         if (empty($request['department']) || $request['department'] == "NULL") {
             $params = array();
             $query = "where ((termination_date is NULL or termination_date = '0001-01-01 00:00:00' or termination_date = '0000-00-00 00:00:00') and joined_date < NOW()) or (termination_date > NOW() and joined_date < NOW())";
@@ -57,11 +57,11 @@ FROM Employees e";
             $depts = $this->getChildCompanyStuctures($request['department']);
             $query = "where department in (".implode(",", $depts).") and (((termination_date is NULL or termination_date = '0001-01-01 00:00:00' or termination_date = '0000-00-00 00:00:00') and joined_date < NOW()) or (termination_date > NOW() and joined_date < NOW()))";
         }
-        
-        
+
+
         return array($query, $params);
     }
-    
+
     public function getChildCompanyStuctures($companyStructId)
     {
         $childIds = array();
@@ -86,7 +86,7 @@ FROM Employees e";
                 $nodeIdsAtLastLevel[] = $item->id;
             }
         } while (count($list) > 0 && $count < 10);
-        
+
         return $childIds;
     }
 }

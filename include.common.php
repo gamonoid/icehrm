@@ -3,10 +3,10 @@ ini_set('display_errors', false);
 error_reporting(E_ERROR);
 require dirname(__FILE__).'/lib/composer/vendor/autoload.php';
 
-$whoops = new \Whoops\Run;
-$whoops->pushHandler(new \Whoops\Handler\PlainTextHandler);
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
-$whoops->register();
+//$whoops = new \Whoops\Run;
+//$whoops->pushHandler(new \Whoops\Handler\PlainTextHandler);
+//$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+//$whoops->register();
 
 function t($text)
 {
@@ -18,9 +18,9 @@ $jsVersion = defined('CACHE_VALUE')?CACHE_VALUE:"v".VERSION;
 $cssVersion = defined('CACHE_VALUE')?CACHE_VALUE:"v".VERSION;
 
 if(!isset($_REQUEST['content']) || $_REQUEST['content'] != 'HTML'){
-    $_REQUEST = \Utils\InputCleaner::cleanParameters($_REQUEST);
-    $_GET = \Utils\InputCleaner::cleanParameters($_GET);
-    $_POST = \Utils\InputCleaner::cleanParameters($_POST);
+	$_REQUEST = \Utils\InputCleaner::cleanParameters($_REQUEST);
+	$_GET = \Utils\InputCleaner::cleanParameters($_GET);
+	$_POST = \Utils\InputCleaner::cleanParameters($_POST);
 }
 
 date_default_timezone_set('Asia/Colombo');

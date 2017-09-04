@@ -98,7 +98,7 @@ class Employee extends BaseModel
                 continue;
             }
 
-            if (empty($obj->$k) && ($oldObjOrig->$k = '0000-00-00' || empty($oldObjOrig->$k))) {
+            if (empty($obj->$k) && $oldObjOrig->$k == '0000-00-00') {
                 continue;
             }
 
