@@ -3,7 +3,7 @@ services:
 before_script:
   - echo "USE mysql;\nUPDATE user SET password=PASSWORD('dev') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 install:
-  - composer require phpunit/phpunit ^5.7
+  - phpunit --version
 language: php
 php:
   - '5.5'
