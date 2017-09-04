@@ -78,7 +78,7 @@ INSERT INTO `EmployeeCertifications` (`id`, `certification_id`, `employee`, `ins
 (4, 3, 2, 'PMI', '2004-06-08', '2017-09-14');
 
 INSERT INTO `EmployeeCompanyLoans` (`id`, `employee`, `loan`, `start_date`, `last_installment_date`, `period_months`, `amount`, `monthly_installment`, `status`, `details`) VALUES
-(1, 2, 2, '2013-02-05', NULL, 12, '12000.00', '1059.45', 'Approved', '');
+(1, 2, 2, '2013-02-05', '2016-02-05', 12, '12000.00', '1059.45', 'Approved', '');
 
 INSERT INTO `EmployeeDependents` (`id`, `employee`, `name`, `relationship`, `dob`, `id_number`) VALUES
 (1, 1, 'Emma Owns', 'Parent', '1940-06-11', '475209UHB'),
