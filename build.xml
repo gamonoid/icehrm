@@ -12,7 +12,7 @@
 
 
 <target name="build"
-     depends="prepare,lint,copyapp,release,install"
+     depends="prepare,lint,copyapp,phpunit,release,install"
      description=""/>
 
 <target name="buildlocal"
@@ -20,7 +20,7 @@
      description=""/>
 
 <target name="releaseapp"
-        depends="prepare,lint,copyapp,release"
+        depends="prepare,lint,copyapp,phpunit,release"
         description=""/>
 
  <target name="clean"
@@ -205,7 +205,6 @@
         <fileset dir="${destination}">
             <include name=".vagrant/**"/>
             <include name=".idea/**"/>
-            <include name="test/**"/>
             <include name="Vagrantfile"/>
             <include name="composer.phar"/>
             <include name="build.xml"/>
