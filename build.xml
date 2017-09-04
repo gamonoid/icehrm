@@ -206,15 +206,7 @@
             <include name=".vagrant/**"/>
             <include name=".idea/**"/>
             <include name="Vagrantfile"/>
-            <include name="composer.phar"/>
-            <include name="build.xml"/>
-            <include name=".gitignore"/>
-            <include name=".travis.yml"/>
-            <include name="phpdox.xml"/>
-            <include name="phpunit.xml"/>
-            <include name="robo/**"/>
-            <include name="deployment/**"/>
-            <include name="docker/**"/>
+            <include name="test/**"/>
         </fileset>
     </delete>
 
@@ -236,11 +228,11 @@
         <!--</fileset>-->
     <!--</copy>-->
 
-    <!--<copy todir="${testdir}" overwrite="true">-->
-        <!--<fileset dir="${basedir}/test">-->
-            <!--<include name="**/*"/>-->
-        <!--</fileset>-->
-    <!--</copy>-->
+    <copy todir="${testdir}" overwrite="true">
+        <fileset dir="${basedir}/test">
+            <include name="**/*"/>
+        </fileset>
+    </copy>
 
 </target>
 
