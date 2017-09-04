@@ -25,7 +25,7 @@ class LogManager
             } else if(is_writable(iCLIENT_BASE_PATH.'data/app.log')){
                 self::$me->log->pushHandler(new StreamHandler(CLIENT_BASE_PATH.'data/app.log', LOG_LEVEL));
             } else {
-                self::$me->log->pushHandler(new StreamHandler(CLIENT_BASE_PATH.'/tmp/icehrm.log', LOG_LEVEL));
+                self::$me->log->pushHandler(new StreamHandler('/tmp/icehrm.log', LOG_LEVEL));
             }
         }
         return self::$me;
