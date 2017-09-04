@@ -37,7 +37,7 @@ class ApprovalStatusTest extends TestTemplate{
         $this->travelRec->status = 'Pending';
         $this->travelRec->Save();
     }
-    
+
     protected function tearDown(){
         parent::tearDown();
     }
@@ -45,7 +45,7 @@ class ApprovalStatusTest extends TestTemplate{
 
     public function testInitializeApprovalChain(){
         $id = $this->travelRec->id;
-        $this->initializeObjects();
+        //$this->initializeObjects();
         $as = \Classes\Approval\ApprovalStatus::getInstance();
         $as->initializeApprovalChain('EmployeeTravelRecord',$id);
         $status = $as->getAllStatuses('EmployeeTravelRecord',$id);
@@ -55,7 +55,7 @@ class ApprovalStatusTest extends TestTemplate{
 
     public function testUpdateApprovalStatus(){
         $id = $this->travelRec->id;
-        $this->initializeObjects();
+        //$this->initializeObjects();
         $as = \Classes\Approval\ApprovalStatus::getInstance();
 
         $as->initializeApprovalChain('EmployeeTravelRecord',$id);

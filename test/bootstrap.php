@@ -22,7 +22,6 @@ $scripts = array(
     APP_BASE_PATH."scripts/icehrmdb.sql",
     APP_BASE_PATH."scripts/icehrm_master_data.sql",
     APP_BASE_PATH."scripts/icehrm_sample_data.sql",
-    //APP_BASE_PATH."scripts/unit_tests.sql"
 );
 
 foreach ($scripts as $insql){
