@@ -3,11 +3,7 @@ services:
 before_script:
   - echo "USE mysql;\nUPDATE user SET password=PASSWORD('dev') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 install:
-  - apt-get remove phpunit -y
-  - wget https://phar.phpunit.de/phpunit-5.7.phar
-  - chmod +x phpunit-5.7.phar
-  - sudo mv phpunit-5.7.phar phpunit
-  - phpunit --version
+  - composer require phpunit/phpunit ^5.7
 language: php
 php:
   - '5.5'
