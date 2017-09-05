@@ -3,6 +3,7 @@ if(file_exists('/usr/lib/php5/mysql.auth.php')){
     include '/usr/lib/php5/mysql.auth.php';
 }
 include(dirname(__FILE__).'/test.config.php');
+include(dirname(__FILE__).'/test.includes.php');
 
 
 $dropDBCommand = 'echo "DROP DATABASE IF EXISTS ' . APP_DB . '"| mysql -u' . MYSQL_ROOT_USER . ' -p' . MYSQL_ROOT_PASS;
