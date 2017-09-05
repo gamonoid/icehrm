@@ -1,9 +1,4 @@
 <?php
-if(!defined('TEST_BASE_PATH')){
-	include(dirname(__FILE__).'/test.config.php');
-}
-
-
 //Mock Session class
 if (!class_exists('SessionUtils')) {
 	class SessionUtils{
