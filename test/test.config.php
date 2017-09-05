@@ -41,7 +41,7 @@ if(!defined('MYSQL_ROOT_USER') || !defined('MYSQL_ROOT_PASS')){
     define('MYSQL_ROOT_PASS', 'dev');
 }
 
-define('APP_HOST', '127.0.0.1');
+define('APP_HOST', 'localhost');
 define('APP_CON_STR', 'mysqli://'.APP_USERNAME.':'.APP_PASSWORD.'@'.APP_HOST.'/'.APP_DB);
 
 //file upload
