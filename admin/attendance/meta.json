@@ -1,0 +1,14 @@
+{
+    "label": "Monitor Attendance",
+    "menu": "Employees",
+    "order": "8",
+    "icon": "fa-clock-o",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "dashboardPosition": 5,
+    "permissions": [],
+    "model_namespace": "\\Attendance\\Common\\Model",
+    "manager": "\\Attendance\\Admin\\Api\\AttendanceAdminManager"
+}

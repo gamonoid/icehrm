@@ -1,0 +1,23 @@
+{
+    "label": "Projects\/Client Setup",
+    "menu": "Admin",
+    "order": "51",
+    "icon": "fa-list-alt",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "dashboardPosition": 4,
+    "permissions": {
+        "Manager": {
+            "Add Projects": "Yes",
+            "Edit Projects": "Yes",
+            "Delete Projects": "No",
+            "Add Clients": "Yes",
+            "Edit Clients": "Yes",
+            "Delete Clients": "No"
+        }
+    },
+    "model_namespace": "\\Projects\\Common\\Model",
+    "manager": "\\Projects\\Admin\\Api\\ProjectsAdminManager"
+}

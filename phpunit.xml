@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="./build/test/bootstrap.php"
+<phpunit bootstrap="./test/bootstrap.php"
          backupGlobals="false"
          backupStaticAttributes="false"
          strict="true"
          verbose="true">
-       
+
   <testsuites>
-  	<testsuite name="icehrm">
-    	<directory suffix="Test.php">./build/test/</directory>
+  	<testsuite name="Unit">
+        <exclude>
+            <file>/test/TestTemplate.php</file>
+        </exclude>
+        <directory suffix=".php">./test/unit</directory>
     </testsuite>
+      <testsuite name="Integration">
+          <exclude>
+              <file>/test/TestTemplate.php</file>
+          </exclude>
+          <directory suffix=".php">./test/integration</directory>
+      </testsuite>
   </testsuites>
 
   <logging>
     <log type="coverage-html" target="build/coverage"/>
     <log type="coverage-clover" target="build/logs/clover.xml"/>
-    <!--<log type="coverage-crap4j" target="build/logs/crap4j.xml"/>-->
-    <!--<log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>-->
+    <log type="coverage-crap4j" target="build/logs/crap4j.xml"/>
+    <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>
   </logging>
 
   <filter>
     <whitelist addUncoveredFilesFromWhitelist="true">
-      <directory suffix=".php">./build/app</directory>
+      <directory suffix=".php">./src</directory>
       <exclude>
-      	<directory suffix=".php">./build/app/composer</directory>
-      	<directory suffix=".php">./build/app/lib</directory>
-      	<directory suffix=".php">./build/app/lib/Mail</directory>
-      	<directory suffix=".php">./build/app/adodb512</directory>
-      	<directory suffix=".php">./build/app/classes/crypt</directory>
-      	<directory suffix=".php">./build/app/js</directory>
+      	<directory suffix=".php">./composer</directory>
+      	<directory suffix=".php">./lib</directory>
+      	<directory suffix=".php">./lib/Mail</directory>
+      	<directory suffix=".php">./lib/composer</directory>
+      	<directory suffix=".php">./js</directory>
+      	<directory suffix=".php">./admin</directory>
+      	<directory suffix=".php">./modules</directory>
+      	<directory suffix=".php">./robo</directory>
+      	<directory suffix=".php">./migrations</directory>
       </exclude>
     </whitelist>
   </filter>

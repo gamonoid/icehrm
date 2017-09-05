@@ -1,0 +1,13 @@
+{
+    "label": "Dashboard",
+    "menu": "Admin",
+    "order": "1",
+    "icon": "fa-desktop",
+    "user_levels": [
+        "Admin",
+        "Other"
+    ],
+    "permissions": [],
+    "model_namespace": "\\Dashboard\\Common\\Model",
+    "manager": "\\Dashboard\\Admin\\Api\\DashboardAdminManager"
+}

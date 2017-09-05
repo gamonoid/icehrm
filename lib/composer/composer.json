@@ -1,0 +1,17 @@
+{
+	"require": {
+    	"monolog/monolog": "1.13.1",
+        "twig/twig": "1.23.*",
+        "gettext/gettext": "4.0.0",
+        "consolidation/robo": "~1",
+        "filp/whoops": "~2.1"
+    },
+    "require-dev": {
+      "phpunit/phpunit": "5.5.*"
+    },
+    "autoload": {
+      "psr-4": {
+        "": "../../src"
+      }
+    }
+}

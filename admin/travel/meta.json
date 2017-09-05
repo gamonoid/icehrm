@@ -1,0 +1,14 @@
+{
+    "label": "Travel Administration",
+    "menu": "Employees",
+    "order": "6",
+    "icon": "fa-plane",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "dashboardPosition": 12,
+    "permissions": [],
+    "model_namespace": "\\Travel\\Common\\Model",
+    "manager": "\\Travel\\Admin\\Api\\TravelAdminManager"
+}

@@ -1,0 +1,26 @@
+{
+    "label": "Travel",
+    "menu": "Travel Management",
+    "order": "1",
+    "icon": "fa-plane",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "dashboardPosition": 107,
+    "permissions": {
+        "Manager": {
+            "Add Travel Request": "Yes",
+            "Edit Travel Request": "Yes",
+            "Delete Travel Request": "Yes"
+        },
+        "Employee": {
+            "Add Travel Request": "Yes",
+            "Edit Travel Request": "Yes",
+            "Delete Travel Request": "Yes"
+        }
+    },
+    "model_namespace": "\\Travel\\Common\\Model",
+    "manager": "\\Travel\\User\\Api\\TravelModulesManager"
+}

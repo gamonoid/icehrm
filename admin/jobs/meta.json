@@ -1,0 +1,12 @@
+{
+    "label": "Job Details Setup",
+    "menu": "Admin",
+    "order": "3",
+    "icon": "fa-columns",
+    "user_levels": [
+        "Admin"
+    ],
+    "permissions": [],
+    "model_namespace": "\\Jobs\\Common\\Model",
+    "manager": "\\Jobs\\Admin\\Api\\JobsAdminManager"
+}

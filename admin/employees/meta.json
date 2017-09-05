@@ -1,0 +1,14 @@
+{
+    "label": "Employees",
+    "menu": "Employees",
+    "order": "1",
+    "icon": "fa-users",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "dashboardPosition": 1,
+    "permissions": [],
+    "model_namespace": "\\Employees\\Common\\Model",
+    "manager": "\\Employees\\Admin\\Api\\EmployeesAdminManager"
+}

@@ -1,0 +1,19 @@
+{
+  "label":"Company Structure",
+  "menu":"Admin",
+  "order":"2",
+  "icon":"fa-building-o",
+  "user_levels":["Admin","Manager"],
+  "dashboardPosition":2,
+
+  "permissions":
+      {
+          "Manager":{
+              "Add Company Structure":"No",
+              "Edit Company Structure":"No",
+              "Delete Company Structure":"No"
+          }
+      },
+  "model_namespace": "\\Company\\Common\\Model",
+  "manager": "\\Company\\Admin\\Api\\CompanyAdminManager"
+}

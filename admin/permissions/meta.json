@@ -1,0 +1,13 @@
+{
+    "label": "Manage Permissions",
+    "menu": "System",
+    "order": "4",
+    "icon": "fa-unlock",
+    "user_levels": [
+        "Admin"
+    ],
+    "dashboardPosition": 15,
+    "permissions": [],
+    "model_namespace": "\\Permissions\\Common\\Model",
+    "manager": "\\Permissions\\Admin\\Api\\PermissionsAdminManager"
+}

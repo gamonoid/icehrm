@@ -1,0 +1,14 @@
+{
+    "label": "Loans",
+    "menu": "Finance",
+    "order": "3",
+    "icon": "fa-shield",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "permissions": [],
+    "model_namespace": "\\Loans\\Common\\Model",
+    "manager": "\\Loans\\User\\Api\\LoansModulesManager"
+}

@@ -1,0 +1,15 @@
+{
+    "label": "Reports",
+    "menu": "User Reports",
+    "order": "1",
+    "icon": "fa-file-o",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "dashboardPosition": 7,
+    "permissions": [],
+    "model_namespace": "\\Reports\\Common\\Model",
+    "manager": "\\Reports\\User\\Api\\ReportsModulesManager"
+}

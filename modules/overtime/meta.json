@@ -1,0 +1,15 @@
+{
+    "label": "Overtime Requests",
+    "menu": "Time Management",
+    "order": "5",
+    "icon": "fa-align-center",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "dashboardPosition": 106,
+    "permissions": [],
+    "model_namespace": "\\Overtime\\Common\\Model",
+    "manager": "\\Overtime\\User\\Api\\OvertimeModulesManager"
+}

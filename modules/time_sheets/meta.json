@@ -1,0 +1,14 @@
+{
+	"label":"Time Sheets",
+	"menu":"Time Management",
+	"order":"3",
+	"icon":"fa-check-circle-o",
+	"user_levels":["Admin","Manager","Employee"],
+	  "dashboardPosition":104,
+
+	"permissions":
+		{
+		},
+	"model_namespace": "\\TimeSheets\\Common\\Model",
+	"manager": "\\TimeSheets\\User\\Api\\TimeSheetsModulesManager"
+}

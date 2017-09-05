@@ -1,0 +1,14 @@
+{
+    "label": "Overtime Administration",
+    "menu": "Employees",
+    "order": "94",
+    "icon": "fa-align-center",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "dashboardPosition": 13,
+    "permissions": [],
+    "model_namespace": "\\Overtime\\Common\\Model",
+    "manager": "\\Overtime\\Admin\\Api\\OvertimeAdminManager"
+}
