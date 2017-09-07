@@ -42,10 +42,10 @@ Setup IceHrm Development Environment
 ------------------------------------
 
 IceHrm development environment is packaged as a Vagrant box. I includes php7, nginx, phpunit and other
-software required for runing icehrm
+software required for running icehrm
 
-Preparing development VM
-------------------------
+Preparing development VM with Vagrant
+-------------------------------------
 
 - Clone icehrm from https://github.com/gamonoid/icehrm.git or download the source
 

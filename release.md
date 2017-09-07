@@ -1,7 +1,16 @@
-Release note v19.0
+Release note v20.0
 ------------------
 ### Features
  * Payroll Module
+ * Compatible with MySQL 5.7 Strict Mode
+ * Name spaced Classes
+ 
+### Fixes
+  * Fix: limiting selectable countries via Settings
+
+Release note v19.0
+------------------
+### Features
  * Development environment
  * Overtime module
  * Department heads who can manage all employees attached to a company structure
