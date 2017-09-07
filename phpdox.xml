@@ -1,10 +1,10 @@
-<phpdox xmlns="http://phpdox.net/config">
- <project name="icehrm" source="./build/app" workdir="./build/phpdox">
+<phpdox xmlns="http://xml.phpdox.net/config">
+ <project name="icehrm" source="." workdir="./build/phpdox">
   <collector publiconly="false">
    <include mask="*.php" />
-   <exclude mask="**/lib/**"/>
-   <exclude mask="**/adodb512/**"/>
-   <exclude mask="**/composer/**"/>
+   <exclude mask="*/lib/**"/>
+   <exclude mask="*/adodb512/**"/>
+   <exclude mask="*/composer/**"/>
   </collector>
 
   <generator output="build">

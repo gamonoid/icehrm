@@ -12,12 +12,12 @@
 
 
 <target name="build"
-     depends="prepare,lint,copyapp,phpunit,release,install"
+     depends="prepare,lint,copyapp,phpunit,phpdox,release,install"
      description=""/>
 
 <target name="buildlocal"
-     depends="prepare,copyapp"
-     description=""/>
+        depends="prepare,lint,copyapp,phpunit"
+        description=""/>
 
 <target name="releaseapp"
         depends="prepare,lint,copyapp,phpunit,release"
@@ -183,8 +183,7 @@
          depends=""
          description="Generate project documentation using phpDox">
   <exec executable="${toolsdir}phpdox"/>
- </target>
-
+</target>
 
 <target name="copyapp"
         description="Copy generated files to QA app">
@@ -209,24 +208,6 @@
             <include name="test/**"/>
         </fileset>
     </delete>
-
-    <!--<copy todir="${destination}/lib" overwrite="true">-->
-        <!--<fileset dir="${basedir}/lib">-->
-            <!--<include name="**/*"/>-->
-        <!--</fileset>-->
-    <!--</copy>-->
-
-    <!--<copy todir="${destination}" overwrite="true">-->
-        <!--<fileset dir="${basedir}/core-ext">-->
-            <!--<include name="**/*"/>-->
-        <!--</fileset>-->
-    <!--</copy>-->
-
-    <!--<copy todir="${destination}" overwrite="true">-->
-        <!--<fileset dir="${basedir}/ext">-->
-            <!--<include name="**/*"/>-->
-        <!--</fileset>-->
-    <!--</copy>-->
 
     <copy todir="${testdir}" overwrite="true">
         <fileset dir="${basedir}/test">
