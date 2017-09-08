@@ -1,6 +1,8 @@
 <?php
 namespace Classes\Migration;
 
+use Model\Setting;
+
 class v20170702_190500_add_attendance_image extends AbstractMigration{
 
     public function up(){

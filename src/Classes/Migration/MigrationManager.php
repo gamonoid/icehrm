@@ -149,11 +149,12 @@ class MigrationManager
             return false;
         }
         $migrationName = str_replace('.php', '', $migration->file);
-        if (!class_exists($migrationName)) {
+        if (!class_exists('\\Classes\\Migration\\'.$migrationName)) {
             include $path;
         }
         /* @var AbstractMigration $migClass */
-        $migClass = new $migrationName;
+        $migrationName = '\\Classes\\Migration\\'.$migrationName;
+        $migClass = new $migrationName($migration->file);
         $res = $migClass->up();
         if (!$res) {
             $migration->last_error = $migClass->getLastError();
@@ -188,7 +189,8 @@ class MigrationManager
             include $path;
         }
         /* @var AbstractMigration $migClass */
-        $migClass = new $migrationName;
+        $migrationName = '\\Classes\\Migration\\'.$migrationName;
+        $migClass = new $migrationName($migration->file);
         $res = $migClass->down();
         if (!$res) {
             $migration->last_error = $migClass->getLastError();
