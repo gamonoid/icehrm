@@ -32,6 +32,10 @@ Installation
 
  Note: Please rename or delete the install folder (<ice hrm root>/app/install) since it could pose a security threat to your iCE Hrm instance.
 
+Manual Installation
+-------------------
+
+[](https://thilinah.gitbooks.io/icehrm-guide/content/manual-installation.html)
 
 Upgrade from Previous Versions to Latest Version
 ------------------------------------------------
