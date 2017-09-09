@@ -33,5 +33,6 @@ if(!defined('WK_HTML_PATH')){
 }
 define('ALL_CLIENT_BASE_PATH', '/var/www/icehrm.app/icehrmapp/');
 
-define('LDAP_ENABLED', false);
+define('LDAP_ENABLED', true);
 define('RECRUITMENT_ENABLED', false);
+define('APP_WEB_URL', 'https://icehrm.com');
