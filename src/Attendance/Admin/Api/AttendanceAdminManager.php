@@ -53,32 +53,32 @@ class AttendanceAdminManager extends AbstractModuleManager
         $this->addCalculationHook(
             'AttendanceUtil_getTimeWorkedHours',
             'Total Hours from Attendance',
-            'AttendanceUtil',
+            '\\Attendance\\Admin\\Api\\AttendanceUtil',
             'getTimeWorkedHours'
         );
 
         $this->addCalculationHook(
             'AttendanceUtil_getRegularWorkedHours',
             'Total Regular Hours from Attendance',
-            'AttendanceUtil',
+            '\\Attendance\\Admin\\Api\\AttendanceUtil',
             'getRegularWorkedHours'
         );
         $this->addCalculationHook(
             'AttendanceUtil_getOverTimeWorkedHours',
             'Total Overtime Hours from Attendance',
-            'AttendanceUtil',
+            '\\Attendance\\Admin\\Api\\AttendanceUtil',
             'getOverTimeWorkedHours'
         );
         $this->addCalculationHook(
             'AttendanceUtil_getWeeklyRegularWorkedHours',
             'Total Weekly Regular Hours from Attendance',
-            'AttendanceUtil',
+            '\\Attendance\\Admin\\Api\\AttendanceUtil',
             'getWeeklyBasedRegularHours'
         );
         $this->addCalculationHook(
             'AttendanceUtil_getWeeklyOverTimeWorkedHours',
             'Total Weekly Overtime Hours from Attendance',
-            'AttendanceUtil',
+            '\\Attendance\\Admin\\Api\\AttendanceUtil',
             'getWeeklyBasedOvertimeHours'
         );
     }

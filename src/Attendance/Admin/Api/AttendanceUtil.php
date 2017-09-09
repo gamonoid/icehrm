@@ -24,7 +24,7 @@ class AttendanceUtil
         );
 
         $atCalClassName = SettingsManager::getInstance()->getSetting('Attendance: Overtime Calculation Class');
-        $atCalClassName = '\\Attendance\\Common\\\Calculations\\'.$atCalClassName;
+        $atCalClassName = '\\Attendance\\Common\\Calculations\\'.$atCalClassName;
         $atCal = new $atCalClassName();
         $atSum = $atCal->getDataSeconds($atts, $startDate, true);
 
