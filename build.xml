@@ -206,6 +206,10 @@
             <include name=".idea/**"/>
             <include name="Vagrantfile"/>
             <include name="test/**"/>
+            <include name="robo/**"/>
+            <include name="build/**"/>
+            <include name="build.xml"/>
+            <include name="lib/composer/composer.phar"/>
         </fileset>
     </delete>
 
