@@ -32,14 +32,17 @@ class Payroll extends BaseModel
     public function getEmployeePayrolls()
     {
         $currentEmp = BaseService::getInstance()->getCurrentProfileId();
-
-        $payrollDataTemp = new PayrollData();
-        $payrollData = $payrollDataTemp->Find("employee = ? group by payroll", array($currentEmp));
         $payrollIds = array();
-        foreach ($payrollData as $pd) {
-            $payrollIds[] = $pd->payroll;
-        }
+        $payrollDataTemp = new PayrollData();
 
+        $payrollDataTemp->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
+        $rs = $payrollDataTemp->DB()->Execute(
+            'select payroll from PayrollData where employee = ? group by payroll',
+            array($currentEmp)
+        );
+        foreach ($rs as $rowId => $row) {
+            $payrollIds[] = $row['payroll'];
+        }
         $payroll = new Payroll();
         $payrolls = $payroll->Find("id in (".implode(",", $payrollIds).") and status = 'Completed'");
         return $payrolls;

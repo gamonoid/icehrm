@@ -110,11 +110,12 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
     modJsList['tabPayrollData'].setTables('PayrollEmployee','PayrollColumn','PayrollData');
 
     modJsList['tabPayrollColumn'] = new PayrollColumnAdapter('PayrollColumn','PayrollColumn','','name, colorder');
+    modJsList['tabPayrollColumn'].setRemoteTable(true);
     //modJsList['tabPayrollColumnTemplate'] = new PayrollColumnTemplateAdapter('PayrollColumnTemplate','PayrollColumnTemplate');
 
     modJsList['tabPayrollEmployee'] = new PayrollEmployeeAdapter('PayrollEmployee','PayrollEmployee');
     modJsList['tabPayrollEmployee'].setRemoteTable(true);
-    
+
     modJsList['tabPayslipTemplate'] = new PayslipTemplateAdapter('PayslipTemplate','PayslipTemplate');
     modJsList['tabPayslipTemplate'].setRemoteTable(true);
 

@@ -321,7 +321,10 @@ class PayrollActionManager extends SubActionManager
 
         $employeeNamesById = array();
         $baseEmp = new Employee();
-        $baseEmpList = $baseEmp->Find("department in (".implode(",", $cssIds).") and status = ?", array('Active'));
+        $baseEmpList = $baseEmp->Find(
+            "department in (".implode(",", $cssIds).") and status = ?",
+            array('Active')
+        );
         $empIds = array();
         foreach ($baseEmpList as $baseEmp) {
             $employeeNamesById[$baseEmp->id] = $baseEmp->first_name." ".$baseEmp->last_name;
@@ -329,7 +332,10 @@ class PayrollActionManager extends SubActionManager
         }
 
         $emp = new $rowTable();
-        $emps = $emp->Find("pay_frequency = ? and employee in (".implode(",", $empIds).")", array($payroll->pay_period));
+        $emps = $emp->Find(
+            "pay_frequency = ? and deduction_group = ? and employee in (".implode(",", $empIds).")",
+            array($payroll->pay_period, $payroll->deduction_group)
+        );
         if (!$emps) {
             error_log("Error:".$emp->ErrorMsg());
         } else {
@@ -370,7 +376,6 @@ class PayrollActionManager extends SubActionManager
                         continue;
                     }
                     $item = new PayrollData();
-                    $item->id = "";
                     $item->payroll = $req->payrollId;
                     $item->employee = $e->id;
                     $item->payroll_item = $column->id;
@@ -436,7 +441,7 @@ class PayrollActionManager extends SubActionManager
         if ($payroll->status == 'Completed') {
             return new IceResponse(IceResponse::ERROR, true);
         }
-        $valueTable = mysqli_real_escape_string($payroll->DB(), $req->valueTable);
+        $valueTable = BaseService::getInstance()->getFullQualifiedModelClassName($req->valueTable);
         $payrollId = $req->payrollId;
         foreach ($req as $key => $val) {
             if (!is_array($val)) {

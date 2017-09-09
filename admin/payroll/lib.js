@@ -116,14 +116,15 @@ PayrollAdapter.method('getFormFields', function() {
     return [
         [ "id", {"label":"ID","type":"hidden"}],
         [ "name", {"label":"Name","type":"text"}],
-        [ "pay_period", {"label":"Pay Frequency","type":"select","remote-source":["PayFrequency","id","name"]}],
+        [ "pay_period", {"label":"Pay Frequency","type":"select","remote-source":["PayFrequency","id","name"],"sort":"none"}],
+        [ "deduction_group", {"label":"Calculation Group","type":"select","remote-source":["DeductionGroup","id","name"],"sort":"none"}],
         [ "payslipTemplate", {"label":"Payslip Template","type":"select","remote-source":["PayslipTemplate","id","name"]}],
-        [ "department", {"label":"Department","type":"select2","remote-source":["CompanyStructure","id","title"]}],
+        [ "department", {"label":"Department","type":"select2","remote-source":["CompanyStructure","id","title"],"sort":"none"}],
         [ "date_start",  {"label":"Start Date","type":"date","validation":""}],
         [ "date_end",  {"label":"End Date","type":"date","validation":""}],
         //[ "column_template", {"label":"Report Column Template","type":"select","remote-source":["PayrollColumnTemplate","id","name"]}],
         [ "columns", {"label":"Payroll Columns","type":"select2multi","remote-source":["PayrollColumn","id","name"]}],
-        [ "status", {"label":"Status","type":"select","source":[["Draft","Draft"],["Completed","Completed"]]}]
+        [ "status", {"label":"Status","type":"select","source":[["Draft","Draft"],["Completed","Completed"]],"sort":"none"}]
     ];
 });
 
@@ -303,7 +304,7 @@ PayrollColumnAdapter.method('getDataMapping', function() {
 
 PayrollColumnAdapter.method('getHeaders', function() {
     return [
-        { "sTitle": "ID" ,"bVisible":true},
+        { "sTitle": "ID" ,"bVisible":false},
         { "sTitle": "Name"},
         { "sTitle": "Column Order"},
         { "sTitle": "Calculation Method"},
@@ -409,7 +410,7 @@ PayrollEmployeeAdapter.method('getHeaders', function() {
         { "sTitle": "ID" ,"bVisible":false},
         { "sTitle": "Employee" },
         { "sTitle": "Pay Frequency"},
-        { "sTitle": "Deduction Group"},
+        { "sTitle": "Calculation Group"},
         { "sTitle": "Currency"},
     ];
 });
@@ -601,7 +602,7 @@ PayslipTemplateAdapter.method('getFormFields', function() {
     var payslipFields = [ "data", {"label":"Payslip Fields","type":"datagroup",
         "form":[
             [ "type", {"label":"Type","type":"select","sort":"none","source":[["Payroll Column","Payroll Column"],["Text","Text"],["Company Name","Company Name"],["Company Logo","Company Logo"], ["Separators","Separators"]]}],
-            [ "payrollColumn", {"label":"Payroll Column","type":"select2","allow-null":true,"remote-source":["PayrollColumn","id","name"]}],
+            [ "payrollColumn", {"label":"Payroll Column","type":"select2","sort":"none","allow-null":true,"null-label":"None","remote-source":["PayrollColumn","id","name"]}],
 
             [ "label", {"label":"Label","type":"text","validation":"none"}],
             [ "text", {"label":"Text","type":"textarea","validation":"none"}],
