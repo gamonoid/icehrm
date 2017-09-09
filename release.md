@@ -3,7 +3,8 @@ Release note v20.0
 ### Features
  * Payroll Module
  * Compatible with MySQL 5.7 Strict Mode
- * Name spaced Classes
+ * Namespaced Classes
+ * LDAP Module
  
 ### Fixes
   * Fix: limiting selectable countries via Settings
