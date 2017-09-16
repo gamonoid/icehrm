@@ -207,6 +207,7 @@
             <include name="Vagrantfile"/>
             <include name="test/**"/>
             <include name="robo/**"/>
+            <include name="deployment/**"/>
             <include name="build/**"/>
             <include name="build.xml"/>
             <include name="lib/composer/composer.phar"/>
