@@ -48,7 +48,9 @@ $notificationManager = new \Classes\NotificationManager();
 \Classes\BaseService::getInstance()->setNotificationManager($notificationManager);
 \Classes\BaseService::getInstance()->setSettingsManager($settingsManager);
 \Classes\BaseService::getInstance()->setCustomFieldManager(new \Classes\CustomFieldManager());
-\Classes\BaseService::getInstance()->setMigrationManager(new \Classes\Migration\MigrationManager());
+$migrationManager = new \Classes\Migration\MigrationManager();
+$migrationManager->setMigrationPath(APP_BASE_PATH .'/migrations/');
+\Classes\BaseService::getInstance()->setMigrationManager($migrationManager);
 
 $notificationManager->setBaseService($baseService);
 

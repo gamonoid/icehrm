@@ -51,7 +51,6 @@
   <mkdir dir="${basedir}/build/app"/>
   <mkdir dir="${basedir}/build/release/data"/>
   <mkdir dir="${basedir}/build/release/data/${env.appname}_${env.Version}"/>
-  <mkdir dir="${basedir}/src/lib"/>
 
 
   <property name="prepare.done" value="true"/>

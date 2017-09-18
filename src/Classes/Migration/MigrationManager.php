@@ -14,18 +14,13 @@ use Utils\LogManager;
 class MigrationManager
 {
 
-    private $migration_path;
+    private $migrationPath;
 
     protected $db = null;
 
-    public function __construct()
+    public function setMigrationPath($migrationPath)
     {
-        $this->migration_path = APP_BASE_PATH .'/migrations/';
-    }
-
-    public function setMigrationPath($migration_path)
-    {
-        $this->migration_path = $migration_path;
+        $this->migrationPath = $migrationPath;
     }
 
     public function getMigrationById($id)
@@ -63,10 +58,10 @@ class MigrationManager
     {
 
         $migrations = array();
-        $ams = scandir($this->migration_path);
+        $ams = scandir($this->migrationPath);
         foreach ($ams as $am) {
-            if (is_file($this->migration_path . $am)) {
-                $migrations[$am] = $this->migration_path . $am;
+            if (is_file($this->migrationPath . $am) && $am !== '.' && $am !== '..' && !empty($am)) {
+                $migrations[$am] = $this->migrationPath . $am;
             }
         }
 
@@ -84,17 +79,26 @@ class MigrationManager
                     if ($file == 'list.php') {
                         continue;
                     }
-                    $migration = new Migration();
-                    $migration->file = $file;
-                    $parts = explode("_", $file);
-                    $migration->version = intval($parts[1]);
-                    $migration->created = date("Y-m-d H:i:s");
-                    $migration->updated = date("Y-m-d H:i:s");
-                    $migration->status = 'Pending';
-                    $migration->Save();
+                    $this->createMigration($file);
                 }
             }
         }
+    }
+
+    public function createMigration($file)
+    {
+        if (file_exists($this->migrationPath . $file)) {
+            $migration = new Migration();
+            $migration->file = $file;
+            $parts = explode("_", $file);
+            $migration->version = intval($parts[1]);
+            $migration->created = date("Y-m-d H:i:s");
+            $migration->updated = date("Y-m-d H:i:s");
+            $migration->status = 'Pending';
+            $migration->Save();
+            return true;
+        }
+        return false;
     }
 
     public function runPendingMigrations()
@@ -135,6 +139,27 @@ class MigrationManager
     }
 
     /**
+     * @param string $migrationFileName
+     * @return AbstractMigration
+     */
+
+    public function getMigrationObject($migrationFileName)
+    {
+        $path = $this->migrationPath . $migrationFileName;
+        $migrationName = str_replace('.php', '', $migrationFileName);
+        $migrationName = '\\Classes\\Migration\\'.$migrationName;
+
+        if (!class_exists($migrationName)) {
+            include $path;
+        }
+        if (!class_exists($migrationName)) {
+            return false;
+        }
+        /* @var AbstractMigration $migClass */
+        return new $migrationName($migrationFileName);
+    }
+
+    /**
      * @param Migration $migration
      * @return bool
      */
@@ -144,20 +169,14 @@ class MigrationManager
             return false;
         }
 
-        $path = $this->migration_path . $migration->file;
-        if (!file_exists($path)) {
+        /* @var AbstractMigration $migObject */
+        $migObject = $this->getMigrationObject($migration->file);
+        if (!$migObject) {
             return false;
         }
-        $migrationName = str_replace('.php', '', $migration->file);
-        if (!class_exists('\\Classes\\Migration\\'.$migrationName)) {
-            include $path;
-        }
-        /* @var AbstractMigration $migClass */
-        $migrationName = '\\Classes\\Migration\\'.$migrationName;
-        $migClass = new $migrationName($migration->file);
-        $res = $migClass->up();
+        $res = $migObject->up();
         if (!$res) {
-            $migration->last_error = $migClass->getLastError();
+            $migration->last_error = $migObject->getLastError();
             $migration->status = "UpError";
             $migration->updated = date("Y-m-d H:i:s");
             $migration->Save();
@@ -179,21 +198,14 @@ class MigrationManager
             return false;
         }
 
-        $path = $this->migration_path . $migration->file;
-        if (!file_exists($path)) {
+        /* @var AbstractMigration $migObject */
+        $migObject = $this->getMigrationObject($migration->file);
+        if (!$migObject) {
             return false;
         }
-
-        $migrationName = str_replace('.php', '', $migration->file);
-        if (!class_exists($migrationName)) {
-            include $path;
-        }
-        /* @var AbstractMigration $migClass */
-        $migrationName = '\\Classes\\Migration\\'.$migrationName;
-        $migClass = new $migrationName($migration->file);
-        $res = $migClass->down();
+        $res = $migObject->down();
         if (!$res) {
-            $migration->last_error = $migClass->getLastError();
+            $migration->last_error = $migObject->getLastError();
             $migration->status = "DownError";
             $migration->updated = date("Y-m-d H:i:s");
             $migration->Save();
@@ -211,7 +223,7 @@ class MigrationManager
         $migration = new Migration();
         $migration->Load("1 = 1 order by id desc limit 1");
 
-        include $this->migration_path . "list.php";
+        include $this->migrationPath . "list.php";
         /* @var array $migrationList */
         if (count($migrationList) > 0 && (empty($migration->id) || $migrationList[0].".php" != $migration->file)) {
             LogManager::getInstance()->info("ensureMigrations - execute migrations");

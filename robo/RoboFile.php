@@ -26,6 +26,7 @@ class RoboFile extends \Robo\Tasks
         $this->includeCientConfig($client);
         $this->say("DB Migrating " . $action . " for ". $client);
         $migrationManager = new \Classes\Migration\MigrationManager();
+        $migrationManager->setMigrationPath(APP_BASE_PATH .'/migrations/');
         $res = $migrationManager->runMigration($action);
         $this->say("DB Migrating Result : " . print_r($res, true));
     }
@@ -34,6 +35,7 @@ class RoboFile extends \Robo\Tasks
         $this->includeCientConfig($client);
         $this->say("Run all pending migrations " . " for ". $client);
         $migrationManager = new \Classes\Migration\MigrationManager();
+        $migrationManager->setMigrationPath(APP_BASE_PATH .'/migrations/');
         $migrationManager->queueMigrations();
         $migrations = $migrationManager->getPendingMigrations();
         foreach ($migrations as $migration) {
