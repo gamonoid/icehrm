@@ -17,7 +17,7 @@ along with iCE Hrm. If not, see <http://www.gnu.org/licenses/>.
 
 ------------------------------------------------------------------
 
-Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]  
+Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
 Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
  */
 namespace Users\Common\Model;
@@ -25,6 +25,7 @@ namespace Users\Common\Model;
 use Classes\BaseService;
 use Model\BaseModel;
 use Classes\IceResponse;
+use Modules\Common\Model\Module;
 
 class User extends BaseModel
 {
@@ -66,7 +67,7 @@ class User extends BaseModel
 
         //Check if the user have rights to the default module
         if (!empty($obj->default_module)) {
-            $module = new \Module();
+            $module = new Module();
             $module->Load("id = ?", array($obj->default_module));
             if ($module->mod_group == "user") {
                 $module->mod_group = "modules";
