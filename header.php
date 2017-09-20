@@ -35,7 +35,7 @@ if(empty($user->default_module)){
         $homeLink = HOME_LINK_OTHERS;
     }
 }else{
-    $defaultModule = new Module();
+    $defaultModule = new \Modules\Common\Model\Module();
     $defaultModule->Load("id = ?",array($user->default_module));
     if($defaultModule->mod_group == "user"){
         $defaultModule->mod_group = "modules";
