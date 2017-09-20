@@ -24,25 +24,12 @@ SQL;
 
 
         return $this->executeQuery($sql);
-
-        $sql = <<<'SQL'
-        Alter table Attendance add column `image_out` longtext default null;
-SQL;
-
-
-        return $this->executeQuery($sql);
     }
 
     public function down(){
 
         $sql = <<<'SQL'
         Alter table Attendance drop column `image_in`;
-SQL;
-
-        return $this->executeQuery($sql);
-
-        $sql = <<<'SQL'
-        Alter table Attendance drop column `image_out`;
 SQL;
 
         return $this->executeQuery($sql);
