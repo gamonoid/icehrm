@@ -10,6 +10,9 @@
  <property name="env.Version" value="dev"/>
  <property name="installpath" value="/var/www/apps.gamonoid.com/icehrm-open-core"/>
 
+<target name="build-ci"
+        depends="prepare,lint,phpcs,copyapp,phpunit"
+        description=""/>
 
 <target name="build"
      depends="prepare,lint,phpcs,copyapp,release,install"

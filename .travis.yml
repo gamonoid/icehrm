@@ -6,7 +6,7 @@ install:
   - composer require --dev phpunit/phpunit ^5.7
   - $TRAVIS_BUILD_DIR/vendor/bin/phpunit --version
 #script: $TRAVIS_BUILD_DIR/vendor/bin/phpunit
-script: ant build
+script: ant build-ci
 language: php
 php:
   - '5.6'
