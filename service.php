@@ -180,7 +180,7 @@ if($action == 'get'){
 	exit;
 
 }else if($action == 'rsp'){ // linked clicked from password change email
-	$user = new User();
+	$user = new \Users\Common\Model\User();
 	if(!empty($_REQUEST['key'])){
 		$arr = explode("-", $_REQUEST['key']);
 		$userId = $arr[0];
