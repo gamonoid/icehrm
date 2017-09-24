@@ -14,9 +14,9 @@ class IceResponse
     const SUCCESS = "SUCCESS";
     const ERROR = "ERROR";
 
-    var $status;
-    var $data;
-    var $code;
+    public $status;
+    public $data;
+    public $code;
 
     public function __construct($status, $data = null, $code = null)
     {

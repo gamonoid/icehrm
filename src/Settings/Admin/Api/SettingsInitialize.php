@@ -30,7 +30,9 @@ class SettingsInitialize extends AbstractInitialize
             $dbUser->Load("id = ?", array($user->id));
             $resp = RestApiManager::getInstance()->getAccessTokenForUser($dbUser);
             if ($resp->getStatus() != IceResponse::SUCCESS) {
-                LogManager::getInstance()->error("Error occurred while creating REST Api access token for ".$user->username);
+                LogManager::getInstance()->error(
+                    "Error occurred while creating REST Api access token for ".$user->username
+                );
             }
         }
 

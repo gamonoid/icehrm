@@ -15,7 +15,7 @@ use Utils\LogManager;
 class PDFReportBuilder extends ReportBuilder
 {
 
-    var $twig;
+    protected $twig;
 
     protected function getDefaultData()
     {
@@ -68,7 +68,9 @@ class PDFReportBuilder extends ReportBuilder
         try {
             $fileFullNamePdf = CLIENT_BASE_PATH.'data/'.$fileFirstPart.".pdf";
             //Try generating the pdf
-            LogManager::getInstance()->debug("wkhtmltopdf 1:".print_r(WK_HTML_PATH." ".$fileFullName." ".$fileFullNamePdf, true));
+            LogManager::getInstance()->debug(
+                "wkhtmltopdf 1:".print_r(WK_HTML_PATH." ".$fileFullName." ".$fileFullNamePdf, true)
+            );
             exec(WK_HTML_PATH." ".$fileFullName." ".$fileFullNamePdf, $output, $ret);
 
             LogManager::getInstance()->debug("wkhtmltopdf 2:".print_r($output, true));

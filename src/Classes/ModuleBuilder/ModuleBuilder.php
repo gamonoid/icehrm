@@ -10,7 +10,7 @@ namespace Classes\ModuleBuilder;
 
 class ModuleBuilder
 {
-    var $modules = array();
+    public $modules = array();
 
     /**
      * @param ModuleTab $module

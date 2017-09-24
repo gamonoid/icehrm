@@ -13,7 +13,7 @@ use Model\BaseModel;
 
 class Country extends BaseModel
 {
-    var $_table = 'Country';
+    public $table = 'Country';
 
     public function getAdminAccess()
     {
@@ -30,6 +30,7 @@ class Country extends BaseModel
         return array("get","element");
     }
 
+    // @codingStandardsIgnoreStart
     function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
     {
         $allowedCountriesStr = SettingsManager::getInstance()->getSetting('System: Allowed Countries');
@@ -49,4 +50,5 @@ class Country extends BaseModel
 
         return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
     }
+    // @codingStandardsIgnoreEnd
 }

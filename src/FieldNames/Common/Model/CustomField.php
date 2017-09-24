@@ -14,7 +14,7 @@ use Model\BaseModel;
 
 class CustomField extends BaseModel
 {
-    var $_table = 'CustomFields';
+    public $table = 'CustomFields';
 
     public function getAdminAccess()
     {

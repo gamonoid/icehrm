@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="icehrm-opensource" default="build">
  <!-- By default, we assume all tools to be on the $PATH -->
- <property name="toolsdir" value=""/>
+ <property name="toolsdir" value="${basedir}/tools/"/>
  <property name="destination" value="${basedir}/build/app"/>
  <property name="testdir" value="${basedir}/build/test"/>
  <property name="origin" value="${basedir}"/>
@@ -12,11 +12,11 @@
 
 
 <target name="build"
-     depends="prepare,lint,copyapp,release,install"
+     depends="prepare,lint,phpcs,copyapp,release,install"
      description=""/>
 
 <target name="buildlocal"
-        depends="prepare,lint,copyapp,phpunit"
+        depends="prepare,lint,phpcs,copyapp,phpunit"
         description=""/>
 
 <target name="releaseapp"
@@ -135,7 +135,8 @@
    <arg value="--extensions=php" />
    <arg value="--ignore=autoload.php" />
    <arg path="${basedir}/src" />
-   <arg path="${basedir}/tests" />
+   <arg path="${basedir}/test/unit" />
+   <arg path="${basedir}/test/integration" />
   </exec>
  </target>
 
@@ -205,6 +206,7 @@
             <include name=".idea/**"/>
             <include name="Vagrantfile"/>
             <include name="test/**"/>
+            <include name="tools/**"/>
             <include name="robo/**"/>
             <include name="deployment/**"/>
             <include name="build/**"/>

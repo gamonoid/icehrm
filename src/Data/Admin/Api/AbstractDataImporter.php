@@ -10,17 +10,17 @@ use Utils\LogManager;
 abstract class AbstractDataImporter
 {
 
-    var $dataImport = null;
+    protected $dataImport = null;
 
-    var $headerMapping = array();
-    var $primaryKeyColumn = 0;
+    protected $headerMapping = array();
+    protected $primaryKeyColumn = 0;
 
-    var $rowObjects = array();
-    var $attachedObjects = array();
-    var $objectKeys;
-    var $customFields;
-    var $columnsCompeted = array();
-    var $relatedColumns = array();
+    protected $rowObjects = array();
+    protected $attachedObjects = array();
+    protected $objectKeys;
+    protected $customFields;
+    protected $columnsCompeted = array();
+    protected $relatedColumns = array();
 
     public function getRowObjects()
     {

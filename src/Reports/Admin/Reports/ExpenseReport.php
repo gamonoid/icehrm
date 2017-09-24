@@ -10,7 +10,8 @@ class ExpenseReport extends CSVReportBuilder implements CSVReportBuilderInterfac
     public function getMainQuery()
     {
         $query = "SELECT
-(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) from Employees where id = employee) as 'Employee',
+(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) 
+from Employees where id = employee) as 'Employee',
 expense_date as 'Date',
 (SELECT name from ExpensesPaymentMethods where id = payment_method) as 'Payment Method',
 transaction_no as 'Transaction Ref',
@@ -39,14 +40,16 @@ from EmployeeExpenses";
         }
 
         if (!empty($employeeList) && ($request['status'] != "NULL" && !empty($request['status']))) {
-            $query = "where employee in (".implode(",", $employeeList).") and date(expense_date) >= ? and date(expense_date) <= ? and status = ?;";
+            $query = "where employee in (".implode(",", $employeeList)
+                .") and date(expense_date) >= ? and date(expense_date) <= ? and status = ?;";
             $params = array(
                 $request['date_start'],
                 $request['date_end'],
                 $request['status']
             );
         } elseif (!empty($employeeList)) {
-            $query = "where employee in (".implode(",", $employeeList).") and date(expense_date) >= ? and date(expense_date) <= ?;";
+            $query = "where employee in (".implode(",", $employeeList)
+                .") and date(expense_date) >= ? and date(expense_date) <= ?;";
             $params = array(
                 $request['date_start'],
                 $request['date_end']

@@ -10,5 +10,5 @@ namespace Model;
 
 class Notification extends BaseModel
 {
-    var $_table = 'Notifications';
+    public $table = 'Notifications';
 }

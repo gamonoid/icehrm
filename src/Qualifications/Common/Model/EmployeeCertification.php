@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class EmployeeCertification extends BaseModel
 {
-    var $_table = 'EmployeeCertifications';
+    public $table = 'EmployeeCertifications';
 
     public function getAdminAccess()
     {

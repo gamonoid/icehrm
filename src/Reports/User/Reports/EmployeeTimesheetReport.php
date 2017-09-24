@@ -13,7 +13,8 @@ class EmployeeTimesheetReport extends CSVReportBuilder implements CSVReportBuild
     public function getMainQuery()
     {
         $query = "SELECT 
-(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) from Employees where id = te.employee) as 'Employee',
+(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) 
+from Employees where id = te.employee) as 'Employee',
 (SELECT name from Projects where id = te.project) as 'Project',
 details as 'Details',
 date_start as 'Start Time',
@@ -44,7 +45,8 @@ FROM EmployeeTimeEntry te";
                     $projectIds[] = $project->id;
                 }
 
-                $query = "where project in (".implode(",", $projectIds).") and employee = ? and date_start >= ? and date_end <= ?;";
+                $query = "where project in (".implode(",", $projectIds)
+                    .") and employee = ? and date_start >= ? and date_end <= ?;";
                 $params = array(
                     BaseService::getInstance()->getCurrentProfileId(),
                     $request['date_start'],

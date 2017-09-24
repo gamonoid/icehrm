@@ -34,7 +34,8 @@ FROM Attendance at";
         }
 
         if (!empty($employeeList)) {
-            $query = "where employee in (".implode(",", $employeeList).") and in_time >= ? and out_time <= ? order by in_time desc;";
+            $query = "where employee in (".implode(",", $employeeList)
+                .") and in_time >= ? and out_time <= ? order by in_time desc;";
             $params = array(
                     $request['date_start']." 00:00:00",
                     $request['date_end']." 23:59:59",

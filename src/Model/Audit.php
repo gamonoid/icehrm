@@ -10,5 +10,5 @@ namespace Model;
 
 class Audit extends BaseModel
 {
-    var $_table = 'AuditLog';
+    public $table = 'AuditLog';
 }

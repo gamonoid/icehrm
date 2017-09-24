@@ -8,15 +8,14 @@
 
 namespace Test\Unit;
 
-
 use Classes\BaseService;
 
 class BaseServiceUnit extends \TestTemplate
 {
-	public function testGet()
-	{
-		$baseService = BaseService::getInstance();
-		// create a user
-		//$user =
-	}
+    public function testGet()
+    {
+        $baseService = BaseService::getInstance();
+        // create a user
+        //$user =
+    }
 }

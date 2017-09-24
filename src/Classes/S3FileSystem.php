@@ -7,9 +7,9 @@ use Utils\LogManager;
 class S3FileSystem
 {
 
-    var $s3;
-    var $key;
-    var $secret;
+    protected $s3;
+    protected $key;
+    protected $secret;
 
     public function __construct($key, $secret)
     {
@@ -89,7 +89,7 @@ class S3FileSystem
         $signsz = implode("\n", $pieces = array('GET', null, null, $expiresTimestamp, $signpath));
 
         // Calculate the hash
-        $signature = $this->el_crypto_hmacSHA1($this->secret, $signsz);
+        $signature = $this->elCryptoHmacSHA1($this->secret, $signsz);
         // ... to the query string ...
         $qs = http_build_query($pieces = array(
                 'AWSAccessKeyId' => $this->key,
@@ -100,7 +100,7 @@ class S3FileSystem
         return $url.'?'.$qs;
     }
 
-    private function el_crypto_hmacSHA1($key, $data, $blocksize = 64)
+    private function elCryptoHmacSHA1($key, $data, $blocksize = 64)
     {
         if (strlen($key) > $blocksize) {
             $key = pack('H*', sha1($key));

@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class FieldNameMapping extends BaseModel
 {
-    var $_table = 'FieldNameMappings';
+    public $table = 'FieldNameMappings';
 
     public function getAdminAccess()
     {

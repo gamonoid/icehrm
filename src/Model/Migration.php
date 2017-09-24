@@ -10,5 +10,5 @@ namespace Model;
 
 class Migration extends BaseModel
 {
-    var $_table = 'Migrations';
+    public $table = 'Migrations';
 }

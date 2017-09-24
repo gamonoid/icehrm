@@ -24,7 +24,8 @@ abstract class EmailIceTask implements IceTask
         foreach ($emailList as $employeeId => $emailData) {
             $ccList = array();
             if (SettingsManager::getInstance()->getSetting(
-                    'Notifications: Copy Document Expiry Emails to Manager') == '1'
+                'Notifications: Copy Document Expiry Emails to Manager'
+            ) == '1'
             ) {
                 $employee = new Employee();
                 $employee->Load("id = ?", array($employeeId));

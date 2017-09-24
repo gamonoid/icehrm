@@ -11,7 +11,7 @@ class RestApiManager
 
     private static $me = null;
 
-    var $endPoints = array();
+    protected $endPoints = array();
 
     private function __construct()
     {

@@ -8,16 +8,16 @@ class UIManager
 
     private static $me = null;
 
-    var $user;
-    var $currentProfile;
-    var $switchedProfile;
+    protected $user;
+    protected $currentProfile;
+    protected $switchedProfile;
 
-    var $currentProfileBlock = null;
-    var $switchedProfileBlock = null;
+    protected $currentProfileBlock = null;
+    protected $switchedProfileBlock = null;
 
-    var $tempates = array();
+    protected $templates = array();
 
-    var $quickAccessMenuItems = array();
+    protected $quickAccessMenuItems = array();
 
     private function __construct()
     {
@@ -35,13 +35,13 @@ class UIManager
     private function getTemplate($name, $type)
     {
 
-        if (isset($this->tempates[$name])) {
-            return $this->tempates[$name];
+        if (isset($this->templates[$name])) {
+            return $this->templates[$name];
         }
 
-        $this->tempates[$name] = file_get_contents(APP_BASE_PATH."templates/".$type."/".$name.".html");
+        $this->templates[$name] = file_get_contents(APP_BASE_PATH."templates/".$type."/".$name.".html");
 
-        return $this->tempates[$name];
+        return $this->templates[$name];
     }
 
     public function populateTemplate($name, $type, $params)
@@ -210,7 +210,9 @@ class UIManager
      */
     public function renderModule($moduleBuilder)
     {
-        $str = '<div class="span9"><ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">__tabHeaders__</ul><div class="tab-content">__tabPages__</div></div><script>__tabJs__</script>';
+        $str = '<div class="span9">'
+            .'<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">'
+            .'__tabHeaders__</ul><div class="tab-content">__tabPages__</div></div><script>__tabJs__</script>';
         $str = str_replace("__tabHeaders__", $moduleBuilder->getTabHeadersHTML(), $str);
         $str = str_replace("__tabPages__", $moduleBuilder->getTabPagesHTML(), $str);
         $str = str_replace("__tabJs__", $moduleBuilder->getModJsHTML(), $str);

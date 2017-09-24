@@ -16,7 +16,7 @@ use Users\Common\Model\User;
 abstract class EmailSender
 {
     /* @var \Classes\SettingsManager $settings */
-    var $settings = null;
+    public $settings = null;
     public function __construct($settings)
     {
         $this->settings = $settings;

@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class ExpensesCategory extends BaseModel
 {
-    var $_table = 'ExpensesCategories';
+    public $table = 'ExpensesCategories';
 
     public function getAdminAccess()
     {

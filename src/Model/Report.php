@@ -31,5 +31,5 @@ class Report extends BaseModel
         return $entry;
     }
 
-    var $_table = 'Reports';
+    public $table = 'Reports';
 }

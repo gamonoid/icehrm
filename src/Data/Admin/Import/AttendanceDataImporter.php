@@ -7,7 +7,7 @@ use Data\Admin\Api\AbstractDataImporter;
 class AttendanceDataImporter extends AbstractDataImporter
 {
 
-    var $processed = array();
+    protected $processed = array();
 
     public function getModelObject()
     {

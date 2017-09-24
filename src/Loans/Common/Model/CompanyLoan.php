@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class CompanyLoan extends BaseModel
 {
-    var $_table = 'CompanyLoans';
+    public $table = 'CompanyLoans';
 
     public function getAdminAccess()
     {

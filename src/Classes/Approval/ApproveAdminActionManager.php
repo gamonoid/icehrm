@@ -24,7 +24,7 @@ abstract class ApproveAdminActionManager extends ApproveCommonActionManager
 
         $class = $this->getModelClass();
         $itemName = $this->getItemName();
-		/* @var BaseModel $obj */
+        /* @var BaseModel $obj */
         $nsClass = BaseService::getInstance()->getFullQualifiedModelClassName($class);
         $obj = new $nsClass();
         $obj->Load("id = ?", array($req->id));

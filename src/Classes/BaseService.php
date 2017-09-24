@@ -51,27 +51,27 @@ use Utils\SessionUtils;
 class BaseService
 {
 
-    var $nonDeletables = array();
-    var $errros = array();
+    public $nonDeletables = array();
+    public $errros = array();
     public $userTables = array();
     /* @var User $currentUser */
-    var $currentUser = null;
-    var $db = null;
-    var $auditManager = null;
+    public $currentUser = null;
+    public $db = null;
+    public $auditManager = null;
     /* @var NotificationManager $notificationManager */
-    var $notificationManager = null;
+    public $notificationManager = null;
     /* @var SettingsManager $settingsManager*/
-    var $settingsManager = null;
-    var $fileFields = null;
-    var $moduleManagers = null;
+    public $settingsManager = null;
+    public $fileFields = null;
+    public $moduleManagers = null;
     /* @var EmailSender $emailSender */
-    var $emailSender = null;
-    var $user = null;
-    var $historyManagers = array();
-    var $calculationHooks = array();
-    var $customFieldManager = null;
-    var $migrationManager = null;
-    var $modelClassMap = array();
+    public $emailSender = null;
+    public $user = null;
+    public $historyManagers = array();
+    public $calculationHooks = array();
+    public $customFieldManager = null;
+    public $migrationManager = null;
+    public $modelClassMap = array();
 
     private static $me = null;
 
@@ -97,9 +97,16 @@ class BaseService
     /**
      * Get an array of objects from database
      * @method get
-     * @param $table {String} model class name of the table to retive data (e.g for Users table model class name is User)
-     * @param $mappingStr {String} a JSON string to specify fields of the $table should be mapped to other tables (e.g {"profile":["Profile","id","first_name+last_name"]} : this is how the profile field in Users table is mapped to Profile table. In this case users profile field will get filled by Profile first name and last name. The original value in User->profile field will get moved to User->profile_id)
-     * @param $filterStr {String} a JSON string to specify the ordering of the items (e.g {"job_title":"2","department":"2"}  - this will select only items having job_title = 2 and department = 2)
+     * @param $table {String} model class name of the table to retive data
+     * (e.g for Users table model class name is User)
+     * @param $mappingStr {String} a JSON string to specify fields of the $table should be mapped
+     * to other tables (e.g {"profile":["Profile","id","first_name+last_name"]} : this is how the
+     * profile field in Users table is mapped to Profile table. In this case users profile field
+     * will get filled by Profile first name and last name. The original value in User->profile
+     * field will get moved to User->profile_id)
+     * @param $filterStr {String} a JSON string to specify the ordering of the items
+     * (e.g {"job_title":"2","department":"2"}  - this will select only items having
+     * job_title = 2 and department = 2)
      * @param $orderBy {String} a string to specify the ordering (e.g in_time desc)
      * @param string $limit {String} a string to specify the limit (e.g limit 2)
      * @return {Array} an array of objects of type $table
@@ -110,7 +117,7 @@ class BaseService
         if (!empty($mappingStr)) {
             $map = json_decode($mappingStr);
         }
-	    $nsTable = $this->getFullQualifiedModelClassName($table);
+        $nsTable = $this->getFullQualifiedModelClassName($table);
         $obj = new $nsTable();
 
         $this->checkSecureAccess("get", $obj);
@@ -238,24 +245,46 @@ class BaseService
     /**
      * An extention of get method for the use of data tables with ability to search
      * @method getData
-     * @param $table {String} model class name of the table to retive data (e.g for Users table model class name is User)
-     * @param $mappingStr {String} a JSON string to specify fields of the $table should be mapped to other tables (e.g {"profile":["Profile","id","first_name+last_name"]} : this is how the profile field in Users table is mapped to Profile table. In this case users profile field will get filled by Profile first name and last name. The original value in User->profile field will get moved to User->profile_id)
-     * @param $filterStr {String} a JSON string to specify the ordering of the items (e.g {"job_title":"2","department":"2"}  - this will select only items having job_title = 2 and department = 2)
+     * @param $table {String} model class name of the table to retive data
+     * (e.g for Users table model class name is User)
+     * @param $mappingStr {String} a JSON string to specify fields of the $table should
+     * be mapped to other tables (e.g {"profile":["Profile","id","first_name+last_name"]}
+     * : this is how the profile field in Users table is mapped to Profile table.
+     * In this case users profile field will get filled by Profile first name and last name.
+     * The original value in User->profile field will get moved to User->profile_id)
+     * @param $filterStr {String} a JSON string to specify the ordering of the items
+     * (e.g {"job_title":"2","department":"2"}  - this will select only items having
+     * job_title = 2 and department = 2)
      * @param $orderBy {String} a string to specify the ordering (e.g in_time desc)
      * @param string $limit {String} a string to specify the limit (e.g limit 2)
-     * @param string $searchColumns {String} a JSON string to specify names of searchable fields (e.g ["id","employee_id","first_name","last_name","mobile_phone","department","gender","supervisor"])
+     * @param string $searchColumns {String} a JSON string to specify names of searchable
+     * fields (e.g ["id","employee_id","first_name","last_name","mobile_phone","department","gender","supervisor"])
      * @param string $searchTerm {String} a string to specify term to search
-     * @param string $isSubOrdinates {Boolean} a Boolean to specify if we only need to retive subordinates. Any item is a subordinate item if the item has "profile" field defined and the value of "profile" field is equal to id of one of the subordinates of currenly logged in profile id. (Any Profile is a subordinate of curently logged in Profile if the supervisor field of a Profile is set to the id of currently logged in Profile)
+     * @param string $isSubOrdinates {Boolean} a Boolean to specify if we only need to retive
+     * subordinates. Any item is a subordinate item if the item has "profile" field defined
+     * and the value of "profile" field is equal to id of one of the subordinates of currenly
+     * logged in profile id. (Any Profile is a subordinate of curently logged in Profile if the
+     * supervisor field of a Profile is set to the id of currently logged in Profile)
      * @param string $skipProfileRestriction {Boolean} default if false - TODO - I'll explain this later
      * @return {Array} an array of objects of type $table
      */
-    public function getData($table, $mappingStr = null, $filterStr = null, $orderBy = null, $limit = null, $searchColumns = null, $searchTerm = null, $isSubOrdinates = false, $skipProfileRestriction = false, $sortData = array())
-    {
+    public function getData(
+        $table,
+        $mappingStr = null,
+        $filterStr = null,
+        $orderBy = null,
+        $limit = null,
+        $searchColumns = null,
+        $searchTerm = null,
+        $isSubOrdinates = false,
+        $skipProfileRestriction = false,
+        $sortData = array()
+    ) {
         if (!empty($mappingStr)) {
             $map = json_decode($mappingStr);
         }
-	    $nsTable = $this->getFullQualifiedModelClassName($table);
-	    $obj = new $nsTable();
+        $nsTable = $this->getFullQualifiedModelClassName($table);
+        $obj = new $nsTable();
         $this->checkSecureAccess("get", $obj);
         $query = "";
         $queryData = array();
@@ -317,7 +346,9 @@ class BaseService
                     array_unshift($queryData, $cemp);
                     //$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
                     $signInMappingField = $obj->getUserOnlyMeAccessField();
-                    LogManager::getInstance()->debug("Data Load Query (x1):"."1=1".$signInMappingField." = ?".$query.$orderBy.$limit);
+                    LogManager::getInstance()->debug(
+                        "Data Load Query (x1):"."1=1".$signInMappingField." = ?".$query.$orderBy.$limit
+                    );
                     LogManager::getInstance()->debug("Data Load Query Data (x1):".json_encode($queryData));
                     $list = $obj->Find($signInMappingField." = ?".$query.$orderBy.$limit, $queryData);
                 } else {
@@ -335,7 +366,10 @@ class BaseService
                         }
 
                         $childCompaniesIds = array();
-                        if (SettingsManager::getInstance()->getSetting('System: Child Company Structure Managers Enabled') == '1') {
+                        if (SettingsManager::getInstance()->getSetting(
+                            'System: Child Company Structure Managers Enabled'
+                        ) == '1'
+                        ) {
                             $childCompaniesResp = CompanyStructure::getAllChildCompanyStructures($cempObj->department);
                             $childCompanies = $childCompaniesResp->getObject();
 
@@ -347,7 +381,10 @@ class BaseService
                         }
 
                         if (!empty($childCompaniesIds)) {
-                            $childStructureSubordinates = $subordinate->Find("department in (" . implode(',', $childCompaniesIds) . ") and id != ?", array($cemp));
+                            $childStructureSubordinates = $subordinate->Find(
+                                "department in (" . implode(',', $childCompaniesIds) . ") and id != ?",
+                                array($cemp)
+                            );
                             $subordinates = array_merge($subordinates, $childStructureSubordinates);
                         }
                     }
@@ -361,7 +398,10 @@ class BaseService
                     }
 
                     if ($obj->allowIndirectMapping()) {
-                        $indeirectEmployees = $subordinate->Find("indirect_supervisors IS NOT NULL and indirect_supervisors <> '' and status = 'Active'", array());
+                        $indeirectEmployees = $subordinate->Find(
+                            "indirect_supervisors IS NOT NULL and indirect_supervisors <> '' and status = 'Active'",
+                            array()
+                        );
                         foreach ($indeirectEmployees as $ie) {
                             $indirectSupervisors = json_decode($ie->indirect_supervisors, true);
                             if (in_array($cemp, $indirectSupervisors)) {
@@ -374,10 +414,16 @@ class BaseService
                     }
 
                     $signInMappingField = $obj->getUserOnlyMeAccessField();
-                    LogManager::getInstance()->debug("Data Load Query (x2):"."1=1".$signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit);
+                    LogManager::getInstance()->debug(
+                        "Data Load Query (x2):"."1=1".$signInMappingField." in (".$subordinatesIds.") "
+                        .$query.$orderBy.$limit
+                    );
                     LogManager::getInstance()->debug("Data Load Query Data (x2):".json_encode($queryData));
                     if (!empty($subordinatesIds)) {
-                        $list = $obj->Find($signInMappingField . " in (" . $subordinatesIds . ") " . $query . $orderBy . $limit, $queryData);
+                        $list = $obj->Find(
+                            $signInMappingField . " in (" . $subordinatesIds . ") " . $query . $orderBy . $limit,
+                            $queryData
+                        );
                     } else {
                         $list = array();
                     }
@@ -401,7 +447,10 @@ class BaseService
                     }
 
                     $childCompaniesIds = array();
-                    if (SettingsManager::getInstance()->getSetting('System: Child Company Structure Managers Enabled') == '1') {
+                    if (SettingsManager::getInstance()->getSetting(
+                        'System: Child Company Structure Managers Enabled'
+                    ) == '1'
+                    ) {
                         $childCompaniesResp = CompanyStructure::getAllChildCompanyStructures($cempObj->department);
                         $childCompanies = $childCompaniesResp->getObject();
 
@@ -413,7 +462,10 @@ class BaseService
                     }
 
                     if (!empty($childCompaniesIds)) {
-                        $childStructureSubordinates = $subordinate->Find("department in (" . implode(',', $childCompaniesIds) . ") and id != ?", array($cemp));
+                        $childStructureSubordinates = $subordinate->Find(
+                            "department in (" . implode(',', $childCompaniesIds) . ") and id != ?",
+                            array($cemp)
+                        );
                         $subordinates = array_merge($subordinates, $childStructureSubordinates);
                     }
                 }
@@ -427,7 +479,10 @@ class BaseService
                 }
 
                 if ($obj->allowIndirectMapping()) {
-                    $indeirectEmployees = $subordinate->Find("indirect_supervisors IS NOT NULL and indirect_supervisors <> '' and status = 'Active'", array());
+                    $indeirectEmployees = $subordinate->Find(
+                        "indirect_supervisors IS NOT NULL and indirect_supervisors <> '' and status = 'Active'",
+                        array()
+                    );
                     foreach ($indeirectEmployees as $ie) {
                         $indirectSupervisors = json_decode($ie->indirect_supervisors, true);
                         if (in_array($cemp, $indirectSupervisors)) {
@@ -440,8 +495,13 @@ class BaseService
                 }
 
                 $signInMappingField = $obj->getUserOnlyMeAccessField();
-                LogManager::getInstance()->debug("Data Load Query (a1):".$signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit);
-                $list = $obj->Find($signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit, $queryData);
+                LogManager::getInstance()->debug(
+                    "Data Load Query (a1):".$signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit
+                );
+                $list = $obj->Find(
+                    $signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit,
+                    $queryData
+                );
             } else {
                 $list = $obj->Find("1=1".$query.$orderBy.$limit, $queryData);
             }
@@ -527,15 +587,18 @@ class BaseService
      * @method getElement
      * @param $table {String} model class name of the table to get data (e.g for Users table model class name is User)
      * @param $table {Integer} id of the item to get from $table
-     * @param $mappingStr {String} a JSON string to specify fields of the $table should be mapped to other tables (e.g {"profile":["Profile","id","first_name+last_name"]} : this is how the profile field in Users table is mapped to Profile table. In this case users profile field will get filled by Profile first name and last name. The original value in User->profile field will get moved to User->profile_id)
+     * @param $mappingStr {String} a JSON string to specify fields of the $table should be mapped to other
+     * tables (e.g {"profile":["Profile","id","first_name+last_name"]} : this is how the profile field in
+     * Users table is mapped to Profile table. In this case users profile field will get filled by Profile
+     * first name and last name. The original value in User->profile field will get moved to User->profile_id)
      * @param $skipSecurityCheck {Boolean} if true won't check whether the user has access to that object
      * @return {Object} an object of type $table
      */
 
     public function getElement($table, $id, $mappingStr = null, $skipSecurityCheck = false)
     {
-	    $nsTable = $this->getFullQualifiedModelClassName($table);
-	    $obj = new $nsTable();
+        $nsTable = $this->getFullQualifiedModelClassName($table);
+        $obj = new $nsTable();
 
         if (in_array($table, $this->userTables)) {
             $cemp = $this->getCurrentProfileId();
@@ -595,7 +658,8 @@ class BaseService
      * Add an element to a given table
      * @method addElement
      * @param $table {String} model class name of the table to add data (e.g for Users table model class name is User)
-     * @param $obj {Array} an associative array with field names and values for the new object. If the object id is not empty an existing object will be updated
+     * @param $obj {Array} an associative array with field names and values for the new object.
+     * If the object id is not empty an existing object will be updated
      * @return {Object} newly added or updated element of type $table
      */
 
@@ -603,8 +667,8 @@ class BaseService
     {
         $customFields = array();
         $isAdd = true;
-	    $nsTable = $this->getFullQualifiedModelClassName($table);
-	    $ele = new $nsTable();
+        $nsTable = $this->getFullQualifiedModelClassName($table);
+        $ele = new $nsTable();
         //LogManager::getInstance()->error("Obj:".json_encode($obj));
 
         if (class_exists("\\Classes\\ProVersion")) {
@@ -680,13 +744,13 @@ class BaseService
 
             if ($isAdd) {
                 $this->audit(
-	                IceConstants::AUDIT_ERROR,
-	                "Error occured while adding an object to ".$table." \ Error: ".$error
+                    IceConstants::AUDIT_ERROR,
+                    "Error occured while adding an object to ".$table." \ Error: ".$error
                 );
             } else {
                 $this->audit(
-	                IceConstants::AUDIT_ERROR,
-	                "Error occured while editing an object in ".$table." [id:".$ele->id."] \ Error: ".$error
+                    IceConstants::AUDIT_ERROR,
+                    "Error occured while editing an object in ".$table." [id:".$ele->id."] \ Error: ".$error
                 );
             }
             return new IceResponse(IceResponse::ERROR, $this->findError($error));
@@ -716,15 +780,16 @@ class BaseService
     /**
      * Delete an element if not the $table and $id is defined as a non deletable
      * @method deleteElement
-     * @param $table {String} model class name of the table to delete data (e.g for Users table model class name is User)
+     * @param $table {String} model class name of the table to delete data
+     * (e.g for Users table model class name is User)
      * @param $id {Integer} id of the item to delete
      * @return NULL
      */
     public function deleteElement($table, $id)
     {
         $fileFields = $this->fileFields;
-	    $nsTable = $this->getFullQualifiedModelClassName($table);
-	    $ele = new $nsTable();
+        $nsTable = $this->getFullQualifiedModelClassName($table);
+        $ele = new $nsTable();
 
         $ele->Load('id = ?', array($id));
 
@@ -784,12 +849,16 @@ class BaseService
     }
 
     /**
-     * Get associative array of by retriving data from $table using $key field ans key and $value field as value. Mainly used for getting data for populating option lists of select boxes when adding and editing items
+     * Get associative array of by retriving data from $table using $key field ans key and
+     * $value field as value. Mainly used for getting data for populating option lists of select
+     * boxes when adding and editing items
      * @method getFieldValues
      * @param $table {String} model class name of the table to get data (e.g for Users table model class name is User)
      * @param $key {String} key field name
      * @param $value {String} value field name (multiple fileds cam be concatinated using +) - e.g first_name+last_name
-     * @param $method {String} if not empty, use this menthod to get only a selected set of objects from db instead of retriving all objects. This method should be defined in class $table and should return an array of objects of type $table
+     * @param $method {String} if not empty, use this menthod to get only a selected set of objects
+     * from db instead of retriving all objects. This method should be defined in class $table
+     * and should return an array of objects of type $table
      * @return {Array} associative array
      */
 
@@ -799,8 +868,8 @@ class BaseService
         $values = explode("+", $value);
 
         $ret = array();
-	    $nsTable = $this->getFullQualifiedModelClassName($table);
-	    $ele = new $nsTable();
+        $nsTable = $this->getFullQualifiedModelClassName($table);
+        $ele = new $nsTable();
         if (!empty($method)) {
             LogManager::getInstance()->debug("Call method for getFieldValues:".$method);
             LogManager::getInstance()->debug("Call method params for getFieldValues:".json_decode($methodParams));
@@ -851,7 +920,7 @@ class BaseService
 
     public function setUserTables($userTables)
     {
-	    $this->userTables = $userTables;
+        $this->userTables = $userTables;
     }
 
     /**
@@ -898,7 +967,8 @@ class BaseService
     }
 
     /**
-     * Get the Profile id attached to currently logged in user. if the user is switched, this will return the id of switched Profile instead of currently logged in users Prifile id
+     * Get the Profile id attached to currently logged in user. if the user is switched,
+     * this will return the id of switched Profile instead of currently logged in users Prifile id
      * @method getCurrentProfileId
      * @return {Integer}
      */
@@ -1003,7 +1073,8 @@ class BaseService
             } else {
                 $accessMatrix = $object->getUserOnlyMeAccess();
                 $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-                if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()] == $this->currentUser->$signInMappingField) {
+                if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()]
+                    == $this->currentUser->$signInMappingField) {
                     return true;
                 }
 
@@ -1022,7 +1093,8 @@ class BaseService
             } else {
                 $accessMatrix = $object->getUserOnlyMeAccess();
                 $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-                if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()] == $this->currentUser->$signInMappingField) {
+                if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()]
+                    == $this->currentUser->$signInMappingField) {
                     return true;
                 }
 
@@ -1043,7 +1115,8 @@ class BaseService
     }
 
     /**
-     * Use user level security functions defined in model classes to check whether a given action type is allowed to be executed by the current user on a given object
+     * Use user level security functions defined in model classes to check whether a given action
+     * type is allowed to be executed by the current user on a given object
      * @method checkSecureAccess
      * @param $type {String} Action type
      * @param $object {Object} object to test access
@@ -1077,8 +1150,10 @@ class BaseService
             $userOnlyMeAccessRequestField = $object->getUserOnlyMeAccessRequestField();
 
             //This will check whether user can access his own records using a value in request
-            if (isset($_REQUEST[$object->getUserOnlyMeAccessField()]) && isset($this->currentUser->$userOnlyMeAccessRequestField)) {
-                if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()] == $this->currentUser->$userOnlyMeAccessRequestField) {
+            if (isset($_REQUEST[$object->getUserOnlyMeAccessField()])
+                && isset($this->currentUser->$userOnlyMeAccessRequestField)) {
+                if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()]
+                    == $this->currentUser->$userOnlyMeAccessRequestField) {
                     return true;
                 }
             }
@@ -1188,7 +1263,11 @@ class BaseService
 
         //Check if user has permissions to this module
         //Check Module Permissions
-        $modulePermissions = BaseService::getInstance()->loadModulePermissions($moduleManagerObj->getModuleType(), $moduleObject['name'], BaseService::getInstance()->getCurrentUser()->user_level);
+        $modulePermissions = BaseService::getInstance()->loadModulePermissions(
+            $moduleManagerObj->getModuleType(),
+            $moduleObject['name'],
+            BaseService::getInstance()->getCurrentUser()->user_level
+        );
 
         if (!in_array(BaseService::getInstance()->getCurrentUser()->user_level, $modulePermissions['user'])) {
             if (!empty(BaseService::getInstance()->getCurrentUser()->user_roles)) {
@@ -1216,7 +1295,11 @@ class BaseService
 
         //Check if user has permissions to this module
         //Check Module Permissions
-        $modulePermissions = BaseService::getInstance()->loadModulePermissions($moduleManagerObj->getModuleType(), $moduleObject['name'], $user->user_level);
+        $modulePermissions = BaseService::getInstance()->loadModulePermissions(
+            $moduleManagerObj->getModuleType(),
+            $moduleObject['name'],
+            $user->user_level
+        );
 
         if (!in_array($user->user_level, $modulePermissions['user'])) {
             if (!empty($user->user_roles)) {
@@ -1396,7 +1479,7 @@ class BaseService
 
     public function getItemFromCache($class, $id)
     {
-	    $class = $this->getFullQualifiedModelClassName($class);
+        $class = $this->getFullQualifiedModelClassName($class);
         $data = MemcacheService::getInstance()->get($class."-".$id);
         if ($data !== false) {
             return unserialize($data);
@@ -1478,10 +1561,11 @@ END;
         return $this->customFieldManager;
     }
 
-	public function getFullQualifiedModelClassName($class) {
-		if ($this->modelClassMap[$class]) {
-			return $this->modelClassMap[$class];
-		}
-		return '\\Model\\'.$class;
-	}
+    public function getFullQualifiedModelClassName($class)
+    {
+        if ($this->modelClassMap[$class]) {
+            return $this->modelClassMap[$class];
+        }
+        return '\\Model\\'.$class;
+    }
 }

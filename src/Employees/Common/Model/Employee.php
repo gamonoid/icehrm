@@ -9,10 +9,10 @@ use Model\BaseModel;
 class Employee extends BaseModel
 {
 
-    var $oldObj = null;
-    var $oldObjOrig = null;
-    var $historyUpdateList = array();
-    var $historyFieldsToTrack = array(
+    public $oldObj = null;
+    public $oldObjOrig = null;
+    public $historyUpdateList = array();
+    public $historyFieldsToTrack = array(
         "employee_id"=>"employee_id",
         "first_name"=>"first_name",
         "middle_name"=>"middle_name",
@@ -78,7 +78,11 @@ class Employee extends BaseModel
         $oldObjOrig->Load("id = ?", array($obj->id));
         $this->oldObjOrig = $oldObjOrig;
 
-        $mapping = '{"nationality":["Nationality","id","name"],"employment_status":["EmploymentStatus","id","name"],"job_title":["JobTitle","id","name"],"pay_grade":["PayGrade","id","name"],"country":["Country","code","name"],"province":["Province","id","name"],"department":["CompanyStructure","id","title"],"supervisor":["Employee","id","first_name+last_name"]}';
+        $mapping = '{"nationality":["Nationality","id","name"],'
+            .'"employment_status":["EmploymentStatus","id","name"],"job_title":["JobTitle","id","name"],'
+            .'"pay_grade":["PayGrade","id","name"],"country":["Country","code","name"],'
+            .'"province":["Province","id","name"],"department":["CompanyStructure","id","title"],'
+            .'"supervisor":["Employee","id","first_name+last_name"]}';
 
         $this->oldObj = BaseService::getInstance()->getElement('Employee', $obj->id, $mapping, true);
     }
@@ -89,7 +93,11 @@ class Employee extends BaseModel
         $oldObj = $this->oldObj;
         $oldObjOrig = $this->oldObjOrig;
 
-        $mapping = '{"nationality":["Nationality","id","name"],"employment_status":["EmploymentStatus","id","name"],"job_title":["JobTitle","id","name"],"pay_grade":["PayGrade","id","name"],"country":["Country","code","name"],"province":["Province","id","name"],"department":["CompanyStructure","id","title"],"supervisor":["Employee","id","first_name+last_name"]}';
+        $mapping = '{"nationality":["Nationality","id","name"],'
+            .'"employment_status":["EmploymentStatus","id","name"],"job_title":["JobTitle","id","name"],'
+            .'"pay_grade":["PayGrade","id","name"],"country":["Country","code","name"],'
+            .'"province":["Province","id","name"],"department":["CompanyStructure","id","title"],'
+            .'"supervisor":["Employee","id","first_name+last_name"]}';
 
         $objEnriched = BaseService::getInstance()->getElement('Employee', $obj->id, $mapping, true);
 
@@ -205,5 +213,5 @@ class Employee extends BaseModel
         return $obj;
     }
 
-    var $_table = 'Employees';
+    public $table = 'Employees';
 }

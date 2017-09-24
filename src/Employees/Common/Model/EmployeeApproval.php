@@ -13,7 +13,7 @@ use Model\BaseModel;
 class EmployeeApproval extends BaseModel
 {
 
-    var $_table = 'EmployeeApprovals';
+    public $table = 'EmployeeApprovals';
 
     public function getAdminAccess()
     {

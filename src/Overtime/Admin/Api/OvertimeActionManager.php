@@ -8,7 +8,6 @@
 
 namespace Overtime\Admin\Api;
 
-
 use Classes\Approval\ApproveAdminActionManager;
 
 class OvertimeActionManager extends ApproveAdminActionManager

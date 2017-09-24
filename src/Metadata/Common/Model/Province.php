@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class Province extends BaseModel
 {
-    var $_table = 'Province';
+    public $table = 'Province';
 
     public function getAdminAccess()
     {

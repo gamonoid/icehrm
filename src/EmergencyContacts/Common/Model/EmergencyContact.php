@@ -5,7 +5,7 @@ use Model\BaseModel;
 
 class EmergencyContact extends BaseModel
 {
-    var $_table = 'EmergencyContacts';
+    public $table = 'EmergencyContacts';
 
     public function getAdminAccess()
     {

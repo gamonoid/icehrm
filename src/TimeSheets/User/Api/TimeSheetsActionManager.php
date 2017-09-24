@@ -84,14 +84,34 @@ class TimeSheetsActionManager extends SubActionManager
 
         $timeSheetEmployee = $this->baseService->getElement('Employee', $timeSheet->employee, null, true);
 
-        $this->baseService->audit(IceConstants::AUDIT_ACTION, "Timesheet [".$timeSheetEmployee->first_name." ".$timeSheetEmployee->last_name." - ".date("M d, Y (l)", strtotime($timeSheet->date_start))." to ".date("M d, Y (l)", strtotime($timeSheet->date_end))."] status changed from:".$oldStatus." to:".$req->status);
+        $this->baseService->audit(
+            IceConstants::AUDIT_ACTION,
+            "Timesheet [".$timeSheetEmployee->first_name." ".$timeSheetEmployee->last_name
+            ." - ".date("M d, Y (l)", strtotime($timeSheet->date_start))." to "
+            .date("M d, Y (l)", strtotime($timeSheet->date_end))."] status changed from:"
+            .$oldStatus." to:".$req->status
+        );
 
         if ($timeSheet->status == "Submitted" && $employee->id == $timeSheet->employee) {
-            $notificationMsg = $employee->first_name." ".$employee->last_name." submitted timesheet from ".date("M d, Y (l)", strtotime($timeSheet->date_start))." to ".date("M d, Y (l)", strtotime($timeSheet->date_end));
-            $this->baseService->notificationManager->addNotification($employee->supervisor, $notificationMsg, '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabSubEmployeeTimeSheetAll"}', IceConstants::NOTIFICATION_TIMESHEET);
+            $notificationMsg = $employee->first_name." ".$employee->last_name
+                ." submitted timesheet from ".date("M d, Y (l)", strtotime($timeSheet->date_start))
+                ." to ".date("M d, Y (l)", strtotime($timeSheet->date_end));
+            $this->baseService->notificationManager->addNotification(
+                $employee->supervisor,
+                $notificationMsg,
+                '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabSubEmployeeTimeSheetAll"}',
+                IceConstants::NOTIFICATION_TIMESHEET
+            );
         } elseif ($timeSheet->status == "Approved" || $timeSheet->status == "Rejected") {
-            $notificationMsg = $employee->first_name." ".$employee->last_name." ".$timeSheet->status." timesheet from ".date("M d, Y (l)", strtotime($timeSheet->date_start))." to ".date("M d, Y (l)", strtotime($timeSheet->date_end));
-            $this->baseService->notificationManager->addNotification($timeSheet->employee, $notificationMsg, '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabEmployeeTimeSheetApproved"}', IceConstants::NOTIFICATION_TIMESHEET);
+            $notificationMsg = $employee->first_name." ".$employee->last_name." ".$timeSheet->status
+                ." timesheet from ".date("M d, Y (l)", strtotime($timeSheet->date_start))." to "
+                .date("M d, Y (l)", strtotime($timeSheet->date_end));
+            $this->baseService->notificationManager->addNotification(
+                $timeSheet->employee,
+                $notificationMsg,
+                '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabEmployeeTimeSheetApproved"}',
+                IceConstants::NOTIFICATION_TIMESHEET
+            );
         }
 
         return new IceResponse(IceResponse::SUCCESS, "");
@@ -173,44 +193,15 @@ class TimeSheetsActionManager extends SubActionManager
 
         $employee = $this->baseService->getElement('Employee', $req->e, null, true);
 
-        $user = BaseService::getInstance()->getCurrentUser();
-
-        /*
-        if($user->user_level == "Manager"){
-            $subordinate = new Employee();
-            $subordinates = $subordinate->Find("supervisor = ?",array($employee->id));
-
-            $subordinatesIds = $employee->id;
-            foreach($subordinates as $sub){
-                if($subordinatesIds != ""){
-                    $subordinatesIds.=",";
-                }
-                $subordinatesIds.=$sub->id;
-            }
-
-            $timeEntry = new EmployeeTimeEntry();
-            $startDate = date("Y-m-d H:i:s",$req->start);
-            $endDate = date("Y-m-d H:i:s",$req->end);
-
-            $list = $timeEntry->Find("employee in (".$subordinatesIds.") and ((date_start >= ? and date_start <= ? ) or (date_end >= ? and date_end <= ?))",array($startDate,$endDate,$startDate,$endDate));
-
-        }else{
-            $currEmployee = BaseService::getInstance()->getCurrentProfileId();
-            $timeEntry = new EmployeeTimeEntry();
-            $startDate = date("Y-m-d H:i:s",$req->start);
-            $endDate = date("Y-m-d H:i:s",$req->end);
-
-            $list = $timeEntry->Find("employee = ? and ((date_start >= ? and date_start <= ? ) or (date_end >= ? and date_end <= ?))",array($currEmployee, $startDate,$endDate,$startDate,$endDate));
-
-        }
-        */
-
         $currEmployee = $employee->id;
         $timeEntry = new EmployeeTimeEntry();
         $startDate = date("Y-m-d H:i:s", $req->start);
         $endDate = date("Y-m-d H:i:s", $req->end);
 
-        $list = $timeEntry->Find("employee = ? and ((date_start >= ? and date_start <= ? ) or (date_end >= ? and date_end <= ?))", array($currEmployee, $startDate,$endDate,$startDate,$endDate));
+        $list = $timeEntry->Find(
+            "employee = ? and ((date_start >= ? and date_start <= ? ) or (date_end >= ? and date_end <= ?))",
+            array($currEmployee, $startDate,$endDate,$startDate,$endDate)
+        );
 
         if (!$list) {
             LogManager::getInstance()->info($timeEntry->ErrorMsg());
@@ -220,7 +211,6 @@ class TimeSheetsActionManager extends SubActionManager
         $list = $this->baseService->populateMapping($list, $map);
 
         $data = array();
-        $mode = CalendarTools::getCalendarMode($req->start, $req->end);
         foreach ($list as $leave) {
             $data[] = $this->workScheduleToEvent($leave);
         }
@@ -429,7 +419,10 @@ class TimeSheetsActionManager extends SubActionManager
                 continue;
             }
             $data = new EmployeeTimeEntry();
-            $data->Load("project = ? and timesheet = ? and date(date_start) = ?", array($val[1],$req->currentId, $val[0]));
+            $data->Load(
+                "project = ? and timesheet = ? and date(date_start) = ?",
+                array($val[1],$req->currentId, $val[0])
+            );
             if (empty($data->id)) {
                 $data->project = $val[1];
                 $data->employee = $timesheet->employee;

@@ -13,7 +13,7 @@ use Utils\CalendarTools;
 
 class EmployeeTimeSheet extends BaseModel
 {
-    var $_table = 'EmployeeTimeSheets';
+    public $table = 'EmployeeTimeSheets';
 
     public function getAdminAccess()
     {
@@ -42,7 +42,10 @@ class EmployeeTimeSheet extends BaseModel
         $end = $this->date_end . " 23:59:59";
 
         $timeEntry = new EmployeeTimeEntry();
-        $list = $timeEntry->Find("employee = ? and ((date_start >= ? and date_start <= ?) or (date_end >= ? and date_end <= ?))", array($this->employee, $start, $end, $start, $end));
+        $list = $timeEntry->Find(
+            "employee = ? and ((date_start >= ? and date_start <= ?) or (date_end >= ? and date_end <= ?))",
+            array($this->employee, $start, $end, $start, $end)
+        );
 
         $seconds = 0;
 

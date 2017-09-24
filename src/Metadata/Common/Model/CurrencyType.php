@@ -13,7 +13,7 @@ use Model\BaseModel;
 
 class CurrencyType extends BaseModel
 {
-    var $_table = 'CurrencyTypes';
+    public $table = 'CurrencyTypes';
 
     public function getAdminAccess()
     {
@@ -30,6 +30,7 @@ class CurrencyType extends BaseModel
         return array("get","element");
     }
 
+    // @codingStandardsIgnoreStart
     function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
     {
         $allowedCountriesStr = SettingsManager::getInstance()->getSetting('System: Allowed Currencies');
@@ -49,4 +50,5 @@ class CurrencyType extends BaseModel
 
         return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
     }
+    // @codingStandardsIgnoreEnd
 }

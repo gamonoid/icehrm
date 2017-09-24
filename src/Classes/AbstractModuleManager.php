@@ -1,6 +1,7 @@
 <?php
 /**
- *The base class for module manager classes. ModuleManager classes which extend this class provide core backend functionality
+ *The base class for module manager classes. ModuleManager classes which extend this
+ * class provide core backend functionality
  *to each module such as defining models, error handliing and other configuration details
  *@class AbstractModuleManager
  */
@@ -23,9 +24,12 @@ abstract class AbstractModuleManager
 
     /**
      * Override this method in module manager class to define user classes.
-     * A user class is a class that is mapped to a table having a field named profile. The profile field is mapped to the id of a Profile element.
-     * When a user is saving this type of an object in db, profile field will be set to the id of the Profile of currently logged in or switched user.
-     * When a user is retriving this type of records, only the records having profile field set to currently logged in users profile id will be released.
+     * A user class is a class that is mapped to a table having a field named profile.
+     * The profile field is mapped to the id of a Profile element.
+     * When a user is saving this type of an object in db, profile field will be set to the id of the
+     * Profile of currently logged in or switched user.
+     * When a user is retriving this type of records, only the records having profile field set to c
+     * urrently logged in users profile id will be released.
      * @method initializeUserClasses
      * @example
         public function initializeUserClasses(){
@@ -36,7 +40,8 @@ abstract class AbstractModuleManager
     abstract public function initializeUserClasses();
 
     /**
-     * Override this method in module manager class to define file field mappings. If you have a table field that stores a name of a file which need to be
+     * Override this method in module manager class to define file field mappings.
+     * If you have a table field that stores a name of a file which need to be
      * deleted from the disk when the record is deleted a file field mapping should be added.
      * @method initializeFieldMappings
      * @example
@@ -47,19 +52,22 @@ abstract class AbstractModuleManager
     abstract public function initializeFieldMappings();
 
     /**
-     * Override this method in module manager class to define DB error mappings. Some actions to your model classes trigger database errors.
+     * Override this method in module manager class to define DB error mappings. Some actions to your
+     * model classes trigger database errors.
      * These errors need to be translated to user friendly texts using DB error mappings
      * @method initializeDatabaseErrorMappings
      * @example
         public function initializeDatabaseErrorMappings(){
-            $this->addDatabaseErrorMapping('CONSTRAINT `Fk_User_Employee` FOREIGN KEY',"Can not delete Employee, please delete the User for this employee first.");
+            $this->addDatabaseErrorMapping('CONSTRAINT `Fk_User_Employee` FOREIGN KEY',"Can not delete Employee,
+     * please delete the User for this employee first.");
             $this->addDatabaseErrorMapping("Duplicate entry|for key 'employee'","A duplicate entry found");
         }
      */
     abstract public function initializeDatabaseErrorMappings();
 
     /**
-     * Override this method in module manager class to add model classes to this module. All the model classes defind for the module should be added here
+     * Override this method in module manager class to add model classes to this module.
+     * All the model classes defind for the module should be added here
      * @method setupModuleClassDefinitions
      * @example
         public function setupModuleClassDefinitions(){
@@ -133,7 +141,8 @@ abstract class AbstractModuleManager
         return $this->modulePath;
     }
 
-    public function setModulePath($modulePath) {
+    public function setModulePath($modulePath)
+    {
         $this->modulePath = $modulePath;
     }
 

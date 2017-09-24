@@ -10,5 +10,5 @@ namespace Model;
 
 class IceEmail extends BaseModel
 {
-    var $_table = 'Emails';
+    public $table = 'Emails';
 }

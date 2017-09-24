@@ -10,9 +10,9 @@ namespace Classes\ModuleBuilder;
 
 class ModuleTabGroup
 {
-    var $name;
-    var $label;
-    var $isActive = false;
+    public $name;
+    public $label;
+    public $isActive = false;
     public $modules = array();
 
     public function __construct($name, $label)
@@ -37,7 +37,9 @@ class ModuleTabGroup
         $active = ($this->isActive)?" active":"";
 
         $html.= '<li class="dropdown'.$active.'">'."\r\n".
-            '<a href="#" id="'.$this->name.'" class="dropdown-toggle" data-toggle="dropdown" aria-controls="'.$this->name.'-contents">'.$this->label.' <span class="caret"></span></a>'."\r\n".
+            '<a href="#" id="'.$this->name.
+            '" class="dropdown-toggle" data-toggle="dropdown" aria-controls="'.$this->name.
+            '-contents">'.$this->label.' <span class="caret"></span></a>'."\r\n".
             '<ul class="dropdown-menu" role="menu" aria-labelledby="'.$this->name.'" id="'.$this->name.'-contents">';
 
         foreach ($this->modules as $module) {

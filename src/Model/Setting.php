@@ -36,5 +36,5 @@ class Setting extends BaseModel
         return $obj;
     }
 
-    var $_table = 'Settings';
+    public $table = 'Settings';
 }

@@ -5,7 +5,8 @@ before_script:
 install:
   - composer require --dev phpunit/phpunit ^5.7
   - $TRAVIS_BUILD_DIR/vendor/bin/phpunit --version
-script: $TRAVIS_BUILD_DIR/vendor/bin/phpunit
+#script: $TRAVIS_BUILD_DIR/vendor/bin/phpunit
+script: ant build
 language: php
 php:
   - '5.6'

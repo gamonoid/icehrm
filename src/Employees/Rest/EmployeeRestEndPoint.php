@@ -33,7 +33,13 @@ class EmployeeRestEndPoint extends RestEndPoint
             }
             return new IceResponse(IceResponse::SUCCESS, $newEmps);
         } else {
-            $mapping = '{"nationality":["Nationality","id","name"],"ethnicity":["Ethnicity","id","name"],"immigration_status":["ImmigrationStatus","id","name"],"employment_status":["EmploymentStatus","id","name"],"job_title":["JobTitle","id","name"],"pay_grade":["PayGrade","id","name"],"country":["Country","code","name"],"province":["Province","id","name"],"department":["CompanyStructure","id","title"],"supervisor":["Employee","id","first_name+last_name"]}';
+            $mapping = '{"nationality":["Nationality","id","name"],"ethnicity":["Ethnicity","id","name"],'
+                .'"immigration_status":["ImmigrationStatus","id","name"],'
+                .'"employment_status":["EmploymentStatus","id","name"],'
+                .'"job_title":["JobTitle","id","name"],"pay_grade":["PayGrade","id","name"],'
+                .'"country":["Country","code","name"],"province":["Province","id","name"],'
+                .'"department":["CompanyStructure","id","title"],'
+                .'"supervisor":["Employee","id","first_name+last_name"]}';
             $emp = BaseService::getInstance()->getElement('Employee', $parameter, $mapping, true);
             if (!empty($emp)) {
                 $emp = Employee::cleanEmployeeData($emp);

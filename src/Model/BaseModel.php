@@ -6,7 +6,7 @@ use Classes\IceResponse;
 class BaseModel extends \ADOdb_Active_Record
 {
 
-    var $keysToIgnore = array(
+    public $keysToIgnore = array(
         "_table",
         "_dbat",
         "_tableat",

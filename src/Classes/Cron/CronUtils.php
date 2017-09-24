@@ -3,8 +3,8 @@ namespace Classes\Cron;
 
 class CronUtils
 {
-    var $clientBasePath;
-    var $cronFile;
+    public $clientBasePath;
+    public $cronFile;
 
     private static $me = null;
 
