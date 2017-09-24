@@ -8,23 +8,24 @@
 
 namespace unit;
 
-
 use Attendance\User\Api\AttendanceActionManager;
 use Classes\BaseService;
 
-class UserAttendanceActionManagerUnit extends \TestTemplate{
+class UserAttendanceActionManagerUnit extends \TestTemplate
+{
 
-	protected $actionMgr;
-	protected function setUp()
-	{
-		parent::setUp();
-		$this->actionMgr = new AttendanceActionManager();
-		$this->actionMgr->setBaseService(BaseService::getInstance());
-	}
+    protected $actionMgr;
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->actionMgr = new AttendanceActionManager();
+        $this->actionMgr->setBaseService(BaseService::getInstance());
+    }
 
-	public function testTran(){
+    public function testTran()
+    {
 
-		$punch = $this->actionMgr->getPunch(['date' => date('Y-m-d H:i:s')]);
-		self::assertEquals('SUCCESS', $punch->getStatus());
-	}
+        $punch = $this->actionMgr->getPunch(['date' => date('Y-m-d H:i:s')]);
+        self::assertEquals('SUCCESS', $punch->getStatus());
+    }
 }

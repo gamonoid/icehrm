@@ -47,7 +47,8 @@ class ClientProjectTimeReport extends PDFReportBuilder implements PDFReportBuild
 
         $employeeTimeEntry = new EmployeeTimeEntry();
         $timeEntryList = $employeeTimeEntry->Find(
-            "employee = ? and date(date_start) >= ? and  date(date_end) <= ? and project in (".implode(",", $projectIds).") order by date_start",
+            "employee = ? and date(date_start) >= ? and  date(date_end) <= ? and project in ("
+            .implode(",", $projectIds).") order by date_start",
             array($employeeId, $request['date_start'], $request['date_end'])
         );
 

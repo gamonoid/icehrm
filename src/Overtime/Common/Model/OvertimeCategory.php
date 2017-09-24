@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class OvertimeCategory extends BaseModel
 {
-    var $_table = 'OvertimeCategories';
+    public $table = 'OvertimeCategories';
 
     public function getAdminAccess()
     {

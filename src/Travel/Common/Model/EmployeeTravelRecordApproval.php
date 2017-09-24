@@ -11,8 +11,10 @@ namespace Travel\Common\Model;
 class EmployeeTravelRecordApproval extends EmployeeTravelRecord
 {
 
+    // @codingStandardsIgnoreStart
     public function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
     {
+        // @codingStandardsIgnoreEnd
         return $this->findApprovals(
             new EmployeeTravelRecord(),
             $whereOrderBy,

@@ -6,13 +6,14 @@ use Employees\Common\Model\Employee;
 use Test\Helper\EmployeeTestDataHelper;
 use Travel\Common\Model\EmployeeTravelRecord;
 
+class ApprovalStatusIntegration extends \TestTemplate
+{
 
-class ApprovalStatusIntegration extends \TestTemplate{
+    protected $travelRec = null;
+    protected $ids = null;
 
-    var $travelRec = null;
-    var $ids = null;
-
-    protected function setUp(){
+    protected function setUp()
+    {
 
         parent::setUp();
         $ids = [];
@@ -21,7 +22,7 @@ class ApprovalStatusIntegration extends \TestTemplate{
         }
 
         $emp = new Employee();
-        $emp->Load("id = ?",array($ids[0]));
+        $emp->Load("id = ?", array($ids[0]));
         $emp->supervisor = $ids[1];
         $emp->indirect_supervisors = json_encode(array($ids[2],$ids[3]));
         $emp->approver1 = $ids[4];
@@ -46,7 +47,8 @@ class ApprovalStatusIntegration extends \TestTemplate{
         $this->ids = $ids;
     }
 
-    protected function tearDown(){
+    protected function tearDown()
+    {
         parent::tearDown();
         foreach ($this->ids as $id) {
             $employee = new Employee();
@@ -59,11 +61,12 @@ class ApprovalStatusIntegration extends \TestTemplate{
     }
 
 
-    public function testInitializeApprovalChain(){
+    public function testInitializeApprovalChain()
+    {
         $id = $this->travelRec->id;
         $as = ApprovalStatus::getInstance();
-        $as->initializeApprovalChain('EmployeeTravelRecord',$id);
-        $status = $as->getAllStatuses('EmployeeTravelRecord',$id);
+        $as->initializeApprovalChain('EmployeeTravelRecord', $id);
+        $status = $as->getAllStatuses('EmployeeTravelRecord', $id);
         $this->assertEquals(3, count($status));
         $this->assertEquals($this->ids[4], $status[0]->approver);
         $this->assertEquals($this->ids[5], $status[1]->approver);
@@ -71,41 +74,41 @@ class ApprovalStatusIntegration extends \TestTemplate{
     }
 
 
-    public function testUpdateApprovalStatus(){
+    public function testUpdateApprovalStatus()
+    {
         $id = $this->travelRec->id;
         $as = ApprovalStatus::getInstance();
 
-        $as->initializeApprovalChain('EmployeeTravelRecord',$id);
+        $as->initializeApprovalChain('EmployeeTravelRecord', $id);
 
         // Supervisor should approve first
-        $resp = $as->updateApprovalStatus('EmployeeTravelRecord',$id,$this->ids[1],1);
+        $resp = $as->updateApprovalStatus('EmployeeTravelRecord', $id, $this->ids[1], 1);
         $this->assertNull($resp->getObject()[0]);
         $this->assertEquals(1, $resp->getObject()[1]->active);
         $this->assertEquals(1, $resp->getObject()[1]->level);
 
         // Now if a an indirect supervisor try to approve it should fail
-        $resp = $as->updateApprovalStatus('EmployeeTravelRecord',$id,$this->ids[2],1);
+        $resp = $as->updateApprovalStatus('EmployeeTravelRecord', $id, $this->ids[2], 1);
         $this->assertEquals(\Classes\IceResponse::ERROR, $resp->getStatus());
 
         // First approver approves
-        $resp = $as->updateApprovalStatus('EmployeeTravelRecord',$id,$this->ids[4],1);
+        $resp = $as->updateApprovalStatus('EmployeeTravelRecord', $id, $this->ids[4], 1);
         $this->assertEquals(0, $resp->getObject()[0]->active);
         $this->assertEquals(1, $resp->getObject()[0]->level);
         $this->assertEquals(1, $resp->getObject()[1]->active);
         $this->assertEquals(2, $resp->getObject()[1]->level);
 
         // Second approver approves
-        $resp = $as->updateApprovalStatus('EmployeeTravelRecord',$id,$this->ids[5],1);
+        $resp = $as->updateApprovalStatus('EmployeeTravelRecord', $id, $this->ids[5], 1);
         $this->assertEquals(0, $resp->getObject()[0]->active);
         $this->assertEquals(2, $resp->getObject()[0]->level);
         $this->assertEquals(1, $resp->getObject()[1]->active);
         $this->assertEquals(3, $resp->getObject()[1]->level);
 
         // Third approver approves
-        $resp = $as->updateApprovalStatus('EmployeeTravelRecord',$id,$this->ids[6],1);
+        $resp = $as->updateApprovalStatus('EmployeeTravelRecord', $id, $this->ids[6], 1);
         $this->assertEquals(1, $resp->getObject()[0]->active);
         $this->assertEquals(3, $resp->getObject()[0]->level);
         $this->assertNull($resp->getObject()[1]);
     }
-
 }

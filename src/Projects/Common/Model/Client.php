@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class Client extends BaseModel
 {
-    var $_table = 'Clients';
+    public $table = 'Clients';
     public function getAdminAccess()
     {
         return array("get","element","save","delete");

@@ -45,7 +45,7 @@ class DashboardActionManager extends SubActionManager
 
         $timeEntry = new EmployeeTimeEntry();
         $data['numberOfAttendanceLastWeek'] = $timeEntry->Count(
-	        "in_time > '".date("Y-m-d H:i:s", strtotime("-1 week"))."'"
+            "in_time > '".date("Y-m-d H:i:s", strtotime("-1 week"))."'"
         );
 
         $candidate = new Candidate();

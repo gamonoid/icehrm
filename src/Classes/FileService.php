@@ -97,7 +97,7 @@ class FileService
                 //Resize image to 100
 
                 $img = new \Classes\SimpleImage("/tmp/".$file->filename."_orig");
-                $img->fit_to_width(100);
+                $img->fitToWidth(100);
                 $img->save("/tmp/".$file->filename);
 
                 $uploadFilesToS3Key = SettingsManager::getInstance()->getSetting(

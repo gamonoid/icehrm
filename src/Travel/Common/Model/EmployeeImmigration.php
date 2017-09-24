@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class EmployeeImmigration extends BaseModel
 {
-    var $_table = 'EmployeeImmigrations';
+    public $table = 'EmployeeImmigrations';
 
     public function getAdminAccess()
     {

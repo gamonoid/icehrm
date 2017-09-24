@@ -27,7 +27,10 @@ class PayrollCalculations extends BaseModel
         } else {
             //Find all pay period salary
             $employeeSalary = new EmployeeSalary();
-            $list = $employeeSalary->Find("employee = ? and pay_frequency = ?", array($employeeId, $payroll->pay_period));
+            $list = $employeeSalary->Find(
+                "employee = ? and pay_frequency = ?",
+                array($employeeId, $payroll->pay_period)
+            );
             $amount = 0;
             foreach ($list as $sal) {
                 $amount += floatval($sal->amount);
@@ -53,7 +56,10 @@ class PayrollCalculations extends BaseModel
         $end = date("Y-m-d", strtotime($attendance->out_time));
 
         $timesheet = new EmployeeTimeSheet();
-        $timesheet->Load("date_start <= ? and date_end >= ? and employee = ?", array($start, $end, $attendance->employee));
+        $timesheet->Load(
+            "date_start <= ? and date_end >= ? and employee = ?",
+            array($start, $end, $attendance->employee)
+        );
 
         if (!empty($timesheet->id)) {
             if ($timesheet->status == "Approved") {
@@ -73,7 +79,10 @@ class PayrollCalculations extends BaseModel
         $endTime = strtotime($end);
 
         $attendance = new Attendance();
-        $list = $attendance->Find("employee = ? and ((in_time >= ? and in_time <= ?) or (out_time >= ? and out_time <= ?))", array($employee, $start, $end, $start, $end));
+        $list = $attendance->Find(
+            "employee = ? and ((in_time >= ? and in_time <= ?) or (out_time >= ? and out_time <= ?))",
+            array($employee, $start, $end, $start, $end)
+        );
 
         $seconds = 0;
         $unapprovedSeconds = 0;

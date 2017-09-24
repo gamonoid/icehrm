@@ -9,8 +9,8 @@ use Utils\LogManager;
 class UsersEmailSender
 {
 
-    var $emailSender = null;
-    var $subActionManager = null;
+    protected $emailSender = null;
+    protected $subActionManager = null;
 
     public function __construct(EmailSender $emailSender, SubActionManager $subActionManager)
     {

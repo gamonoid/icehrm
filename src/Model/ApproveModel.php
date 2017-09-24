@@ -41,23 +41,55 @@ abstract class ApproveModel extends BaseModel
             $employee = BaseService::getInstance()->getElement('Employee', $currentEmpId);
 
             if (!empty($employee->supervisor)) {
-                $notificationMsg = "A new ".$this->notificationUnitName." has been added by " . $employee->first_name . " " . $employee->last_name . ". Please visit ".$this->notificationModuleName." module to review it";
+                $notificationMsg = "A new "
+                    .$this->notificationUnitName." has been added by "
+                    . $employee->first_name . " " . $employee->last_name
+                    . ". Please visit ".$this->notificationModuleName." module to review it";
 
-                BaseService::getInstance()->notificationManager->addNotification($employee->supervisor, $notificationMsg, '{"type":"url","url":"'.$this->notificationUnitAdminUrl.'"}', $this->notificationModuleName, null, false, $sendNotificationEmail);
+                BaseService::getInstance()->notificationManager->addNotification(
+                    $employee->supervisor,
+                    $notificationMsg,
+                    '{"type":"url","url":"'.$this->notificationUnitAdminUrl.'"}',
+                    $this->notificationModuleName,
+                    null,
+                    false,
+                    $sendNotificationEmail
+                );
             } else {
                 $user = BaseService::getInstance()->getCurrentUser();
 
                 if ($user->user_level == "Admin") {
                     //Auto approve
                     $obj->status = "Approved";
-                    $notificationMsg = "Your ".$this->notificationUnitName." is auto approved since you are an administrator and do not have any supervisor assigned";
-                    BaseService::getInstance()->notificationManager->addNotification(null, $notificationMsg, '{"type":"url","url":"'.$this->notificationUnitAdminUrl.'"}', $this->notificationModuleName, $user->id, false, $sendNotificationEmail);
+                    $notificationMsg = "Your ".$this->notificationUnitName
+                        ." is auto approved since you are an administrator and do not have any supervisor assigned";
+                    BaseService::getInstance()->notificationManager->addNotification(
+                        null,
+                        $notificationMsg,
+                        '{"type":"url","url":"'.$this->notificationUnitAdminUrl.'"}',
+                        $this->notificationModuleName,
+                        $user->id,
+                        false,
+                        $sendNotificationEmail
+                    );
                 } else {
                     //If the user do not have a supervisor, notify all admins
                     $admins = BaseService::getInstance()->getAllAdmins();
                     foreach ($admins as $admin) {
-                        $notificationMsg = "A new ".$this->notificationUnitName." has been added by " . $employee->first_name . " " . $employee->last_name . ". Please visit ".$this->notificationModuleName." module to review it. You are getting this notification since you are an administrator and the user do not have any supervisor assigned.";
-                        BaseService::getInstance()->notificationManager->addNotification(null, $notificationMsg, '{"type":"url","url":"'.$this->notificationUnitAdminUrl.'"}', $this->notificationModuleName, $admin->id, false, $sendNotificationEmail);
+                        $notificationMsg = "A new ".$this->notificationUnitName." has been added by "
+                            .$employee->first_name . " " . $employee->last_name . ". Please visit "
+                            .$this->notificationModuleName
+                            ." module to review it. You are getting this notification since you are an "
+                            ."administrator and the user do not have any supervisor assigned.";
+                        BaseService::getInstance()->notificationManager->addNotification(
+                            null,
+                            $notificationMsg,
+                            '{"type":"url","url":"'.$this->notificationUnitAdminUrl.'"}',
+                            $this->notificationModuleName,
+                            $admin->id,
+                            false,
+                            $sendNotificationEmail
+                        );
                     }
                 }
             }
@@ -102,9 +134,20 @@ abstract class ApproveModel extends BaseModel
                 $employee = BaseService::getInstance()->getElement('Employee', $currentEmpId);
 
                 if (!empty($employee->supervisor)) {
-                    $notificationMsg = $this->notificationUnitPrefix." ".$this->notificationUnitName." has been updated by " . $employee->first_name . " " . $employee->last_name . ". Please visit ".$this->notificationModuleName." module to review it";
+                    $notificationMsg = $this->notificationUnitPrefix." "
+                        .$this->notificationUnitName." has been updated by "
+                        .$employee->first_name . " " . $employee->last_name
+                        .". Please visit ".$this->notificationModuleName." module to review it";
 
-                    BaseService::getInstance()->notificationManager->addNotification($employee->supervisor, $notificationMsg, '{"type":"url","url":"'.$this->notificationUnitAdminUrl.'"}', $this->notificationModuleName, null, false, $sendNotificationEmail);
+                    BaseService::getInstance()->notificationManager->addNotification(
+                        $employee->supervisor,
+                        $notificationMsg,
+                        '{"type":"url","url":"'.$this->notificationUnitAdminUrl.'"}',
+                        $this->notificationModuleName,
+                        null,
+                        false,
+                        $sendNotificationEmail
+                    );
                 } else {
                     $user = BaseService::getInstance()->getCurrentUser();
 
@@ -113,8 +156,21 @@ abstract class ApproveModel extends BaseModel
                         //If the user do not have a supervisor, notify all admins
                         $admins = BaseService::getInstance()->getAllAdmins();
                         foreach ($admins as $admin) {
-                            $notificationMsg = $this->notificationUnitPrefix." ".$this->notificationUnitName." request has been updated by " . $employee->first_name . " " . $employee->last_name . ". Please visit ".$this->notificationModuleName." module to review it. You are getting this notification since you are an administrator and the user do not have any supervisor assigned.";
-                            BaseService::getInstance()->notificationManager->addNotification(null, $notificationMsg, '{"type":"url","url":"g=admin&n=travel&m=admin_Employees"}', "Travel Module", $admin->id, false, $sendNotificationEmail);
+                            $notificationMsg = $this->notificationUnitPrefix." "
+                                .$this->notificationUnitName." request has been updated by "
+                                .$employee->first_name . " " . $employee->last_name
+                                .". Please visit ".$this->notificationModuleName
+                                ." module to review it. You are getting this notification since you are "
+                                ."an administrator and the user do not have any supervisor assigned.";
+                            BaseService::getInstance()->notificationManager->addNotification(
+                                null,
+                                $notificationMsg,
+                                '{"type":"url","url":"g=admin&n=travel&m=admin_Employees"}',
+                                "Travel Module",
+                                $admin->id,
+                                false,
+                                $sendNotificationEmail
+                            );
                         }
                     }
                 }
@@ -140,7 +196,10 @@ abstract class ApproveModel extends BaseModel
     {
         $currentEmployee = BaseService::getInstance()->getCurrentProfileId();
         $approveal = new EmployeeApproval();
-        $approveals = $approveal->Find("type = ? and approver = ? and status = -1 and active = 1", array($this->getType(), $currentEmployee));
+        $approveals = $approveal->Find(
+            "type = ? and approver = ? and status = -1 and active = 1",
+            array($this->getType(), $currentEmployee)
+        );
         $ids = array();
         foreach ($approveals as $appr) {
             $ids[] = $appr->element;

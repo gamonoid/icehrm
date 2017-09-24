@@ -37,5 +37,5 @@ class UserRole extends BaseModel
         return array();
     }
 
-    var $_table = 'UserRoles';
+    public $table = 'UserRoles';
 }

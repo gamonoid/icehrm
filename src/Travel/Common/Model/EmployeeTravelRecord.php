@@ -13,13 +13,14 @@ use Model\ApproveModel;
 
 class EmployeeTravelRecord extends ApproveModel
 {
-    var $_table = 'EmployeeTravelRecords';
+    public $table = 'EmployeeTravelRecords';
 
-    var $notificationModuleName = "Travel Management";
-    var $notificationUnitName = "TravelRequest";
-    var $notificationUnitPrefix = "A";
-    var $notificationUnitAdminUrl = "g=modules&n=travel&m=module_Travel_Management#tabSubordinateEmployeeTravelRecord";
-    var $preApproveSettingName = "Travel: Pre-Approve Travel Request";
+    public $notificationModuleName = "Travel Management";
+    public $notificationUnitName = "TravelRequest";
+    public $notificationUnitPrefix = "A";
+    public $notificationUnitAdminUrl
+        = "g=modules&n=travel&m=module_Travel_Management#tabSubordinateEmployeeTravelRecord";
+    public $preApproveSettingName = "Travel: Pre-Approve Travel Request";
 
     public function isMultiLevelApprovalsEnabled()
     {

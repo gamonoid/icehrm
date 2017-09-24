@@ -19,7 +19,13 @@ class SMTPEmailSender extends EmailSender
     }
 
     protected function sendMail(
-        $subject, $body, $toEmail, $fromEmail, $replyToEmail = null, $ccList = array(), $bccList = array()
+        $subject,
+        $body,
+        $toEmail,
+        $fromEmail,
+        $replyToEmail = null,
+        $ccList = array(),
+        $bccList = array()
     ) {
 
         try {

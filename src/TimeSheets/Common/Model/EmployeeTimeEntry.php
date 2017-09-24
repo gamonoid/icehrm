@@ -15,7 +15,7 @@ use Model\BaseModel;
 
 class EmployeeTimeEntry extends BaseModel
 {
-    var $_table = 'EmployeeTimeEntry';
+    public $table = 'EmployeeTimeEntry';
 
     public function getAdminAccess()
     {

@@ -8,7 +8,6 @@
 
 namespace Travel\Admin\Api;
 
-
 use Classes\Approval\ApproveAdminActionManager;
 
 class TravelActionManager extends ApproveAdminActionManager

@@ -7,7 +7,7 @@ use Users\Common\Model\User;
 class NotificationManager
 {
     /* @var \Classes\BaseService $baseService */
-    var $baseService;
+    public $baseService;
 
     public function setBaseService($baseService)
     {
@@ -15,11 +15,18 @@ class NotificationManager
     }
 
     public function addNotification(
-        $toEmployee, $message, $action, $type, $toUserId = null, $fromSystem = false, $sendEmail = false)
-    {
+        $toEmployee,
+        $message,
+        $action,
+        $type,
+        $toUserId = null,
+        $fromSystem = false,
+        $sendEmail = false
+    ) {
+    
 
         $userEmp = new User();
-	    $toUser = null;
+        $toUser = null;
         if (!empty($toEmployee)) {
             $userEmp->Load("employee = ?", array($toEmployee));
 
@@ -91,7 +98,7 @@ class NotificationManager
         $notification = new Notification();
 
         $listUnread = $notification->Find("toUser = ? and status = ?", array($userId,'Unread'));
-		/* @var Notification $not */
+        /* @var Notification $not */
         foreach ($listUnread as $not) {
             $not->status = "Read";
             $not->Save();

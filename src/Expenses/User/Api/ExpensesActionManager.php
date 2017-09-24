@@ -8,7 +8,6 @@
 
 namespace Expenses\User\Api;
 
-
 use Classes\Approval\ApproveModuleActionManager;
 
 class ExpensesActionManager extends ApproveModuleActionManager

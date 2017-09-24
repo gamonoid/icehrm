@@ -13,7 +13,7 @@ use Model\BaseModel;
 
 class CalculationHook extends BaseModel
 {
-    var $_table = 'CalculationHooks';
+    public $table = 'CalculationHooks';
 
     public function getAdminAccess()
     {
@@ -29,7 +29,7 @@ class CalculationHook extends BaseModel
     {
         return array("get","element");
     }
-
+    // @codingStandardsIgnoreStart
     function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
     {
         return BaseService::getInstance()->getCalculationHooks();
@@ -39,4 +39,5 @@ class CalculationHook extends BaseModel
     {
         return BaseService::getInstance()->getCalculationHook($bindarr[0]);
     }
+    // @codingStandardsIgnoreEnd
 }

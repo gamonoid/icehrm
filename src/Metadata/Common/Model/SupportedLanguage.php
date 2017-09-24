@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class SupportedLanguage extends BaseModel
 {
-    var $_table = 'SupportedLanguages';
+    public $table = 'SupportedLanguages';
 
     public function getAdminAccess()
     {

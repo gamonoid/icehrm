@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class CustomFieldValue extends BaseModel
 {
-    var $_table = 'CustomFieldValues';
+    public $table = 'CustomFieldValues';
 
     public function getAdminAccess()
     {

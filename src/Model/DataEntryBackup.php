@@ -10,5 +10,5 @@ namespace Model;
 
 class DataEntryBackup extends BaseModel
 {
-    var $_table = 'DataEntryBackups';
+    public $table = 'DataEntryBackups';
 }

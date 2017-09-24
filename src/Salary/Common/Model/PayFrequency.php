@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class PayFrequency extends BaseModel
 {
-    var $_table = 'PayFrequency';
+    public $table = 'PayFrequency';
     public function getAdminAccess()
     {
         return array("get","element","save","delete");

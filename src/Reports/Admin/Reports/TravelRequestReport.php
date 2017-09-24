@@ -10,7 +10,8 @@ class TravelRequestReport extends CSVReportBuilder implements CSVReportBuilderIn
     public function getMainQuery()
     {
         $query = "SELECT
-(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) from Employees where id = employee) as 'Employee',
+(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) 
+from Employees where id = employee) as 'Employee',
 type as 'Type',
 purpose as 'Purpose',
 travel_from as 'Travel From',
@@ -40,14 +41,16 @@ from EmployeeTravelRecords";
         }
 
         if (!empty($employeeList) && ($request['status'] != "NULL" && !empty($request['status']))) {
-            $query = "where employee in (".implode(",", $employeeList).") and date(travel_date) >= ? and date(return_date) <= ? and status = ?;";
+            $query = "where employee in (".implode(",", $employeeList)
+                .") and date(travel_date) >= ? and date(return_date) <= ? and status = ?;";
             $params = array(
                 $request['date_start'],
                 $request['date_end'],
                 $request['status']
             );
         } elseif (!empty($employeeList)) {
-            $query = "where employee in (".implode(",", $employeeList).") and date(travel_date) >= ? and date(return_date) <= ?;";
+            $query = "where employee in (".implode(",", $employeeList)
+                .") and date(travel_date) >= ? and date(return_date) <= ?;";
             $params = array(
                 $request['date_start'],
                 $request['date_end']

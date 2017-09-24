@@ -5,7 +5,7 @@ use Model\BaseModel;
 
 class Timezone extends BaseModel
 {
-    var $_table = 'Timezones';
+    public $table = 'Timezones';
 
     public function getAdminAccess()
     {

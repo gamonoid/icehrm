@@ -12,7 +12,7 @@ use Utils\LogManager;
 
 class SNSEmailSender extends EmailSender
 {
-    var $ses = null;
+    private $ses = null;
     public function __construct($settings)
     {
         parent::__construct($settings);
@@ -25,7 +25,13 @@ class SNSEmailSender extends EmailSender
     }
 
     protected function sendMail(
-        $subject, $body, $toEmail, $fromEmail, $replyToEmail = null, $ccList = array(), $bccList = array()
+        $subject,
+        $body,
+        $toEmail,
+        $fromEmail,
+        $replyToEmail = null,
+        $ccList = array(),
+        $bccList = array()
     ) {
 
         try {

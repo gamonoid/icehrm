@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class PayslipTemplate extends BaseModel
 {
-    var $_table = 'PayslipTemplates';
+    public $table = 'PayslipTemplates';
 
     public function getAdminAccess()
     {

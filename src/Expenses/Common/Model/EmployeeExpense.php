@@ -13,13 +13,13 @@ use Model\ApproveModel;
 
 class EmployeeExpense extends ApproveModel
 {
-    var $_table = 'EmployeeExpenses';
+    public $table = 'EmployeeExpenses';
 
-    var $notificationModuleName = "Expense Management";
-    var $notificationUnitName = "Expense";
-    var $notificationUnitPrefix = "An";
-    var $notificationUnitAdminUrl = "g=modules&n=expenses&m=module_Finance#tabSubordinateEmployeeExpense";
-    var $preApproveSettingName = "Expense: Pre-Approve Expenses";
+    public $notificationModuleName = "Expense Management";
+    public $notificationUnitName = "Expense";
+    public $notificationUnitPrefix = "An";
+    public $notificationUnitAdminUrl = "g=modules&n=expenses&m=module_Finance#tabSubordinateEmployeeExpense";
+    public $preApproveSettingName = "Expense: Pre-Approve Expenses";
 
     public function isMultiLevelApprovalsEnabled()
     {

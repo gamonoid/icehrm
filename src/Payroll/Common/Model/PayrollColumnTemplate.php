@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class PayrollColumnTemplate extends BaseModel
 {
-    var $_table = 'PayrollColumnTemplates';
+    public $table = 'PayrollColumnTemplates';
     public function getAdminAccess()
     {
         return array("get","element","save","delete");

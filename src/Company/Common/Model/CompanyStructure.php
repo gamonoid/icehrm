@@ -6,7 +6,7 @@ use Model\BaseModel;
 
 class CompanyStructure extends BaseModel
 {
-    var $_table = 'CompanyStructures';
+    public $table = 'CompanyStructures';
 
     public function getAdminAccess()
     {

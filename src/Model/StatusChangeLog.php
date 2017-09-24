@@ -10,5 +10,5 @@ namespace Model;
 
 class StatusChangeLog extends BaseModel
 {
-    var $_table = 'StatusChangeLogs';
+    public $table = 'StatusChangeLogs';
 }

@@ -14,7 +14,7 @@ use Model\BaseModel;
 
 class Project extends BaseModel
 {
-    var $_table = 'Projects';
+    public $table = 'Projects';
     public function getAdminAccess()
     {
         return array("get","element","save","delete");
@@ -47,11 +47,16 @@ class Project extends BaseModel
 
     public function getEmployeeProjects()
     {
-        $allowAllProjects = SettingsManager::getInstance()->getSetting("Projects: Make All Projects Available to Employees");
+        $allowAllProjects = SettingsManager::getInstance()->getSetting(
+            "Projects: Make All Projects Available to Employees"
+        );
         $employeeProjects = array();
         if ($allowAllProjects == 0) {
             $employeeProjectsTemp = new EmployeeProject();
-            $employeeProjectsTemp = $employeeProjectsTemp->Find("employee = ?", array(BaseService::getInstance()->getCurrentProfileId()));
+            $employeeProjectsTemp = $employeeProjectsTemp->Find(
+                "employee = ?",
+                array(BaseService::getInstance()->getCurrentProfileId())
+            );
             foreach ($employeeProjectsTemp as $p) {
                 $project = new Project();
                 $project->Load("id = ?", array($p->project));

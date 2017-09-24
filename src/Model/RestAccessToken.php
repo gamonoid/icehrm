@@ -10,5 +10,5 @@ namespace Model;
 
 class RestAccessToken extends BaseModel
 {
-    var $_table = 'RestAccessTokens';
+    public $table = 'RestAccessTokens';
 }

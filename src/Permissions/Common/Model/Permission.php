@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class Permission extends BaseModel
 {
-    var $_table = 'Permissions';
+    public $table = 'Permissions';
 
     public function getAdminAccess()
     {

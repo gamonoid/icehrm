@@ -6,7 +6,7 @@ use Data\Admin\Api\AbstractDataImporter;
 class EmployeeDataImporter extends AbstractDataImporter
 {
 
-    var $processed = array();
+    protected $processed = array();
 
     public function getModelObject()
     {

@@ -24,8 +24,15 @@ class CompanyAdminManager extends AbstractModuleManager
 
     public function initializeDatabaseErrorMappings()
     {
-        $this->addDatabaseErrorMapping("CONSTRAINT `Fk_Employee_CompanyStructures` FOREIGN KEY (`department`) REFERENCES `CompanyStructures` (`id`)", "Can not delete a company structure while employees are assigned to it");
-        $this->addDatabaseErrorMapping("CONSTRAINT `Fk_CompanyStructures_Own` FOREIGN KEY (`parent`) REFERENCES ", "Can not delete a parent structure");
+        $this->addDatabaseErrorMapping(
+            "CONSTRAINT `Fk_Employee_CompanyStructures` FOREIGN KEY (`department`) 
+            REFERENCES `CompanyStructures` (`id`)",
+            "Can not delete a company structure while employees are assigned to it"
+        );
+        $this->addDatabaseErrorMapping(
+            "CONSTRAINT `Fk_CompanyStructures_Own` FOREIGN KEY (`parent`) REFERENCES ",
+            "Can not delete a parent structure"
+        );
     }
 
     public function setupModuleClassDefinitions()

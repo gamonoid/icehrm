@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class SalaryComponentType extends BaseModel
 {
-    var $_table = 'SalaryComponentType';
+    public $table = 'SalaryComponentType';
 
     public function getAdminAccess()
     {

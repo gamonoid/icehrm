@@ -6,8 +6,7 @@ use Leaves\User\Api\LeavesActionManager;
 use Reports\Admin\Api\ClassBasedReportBuilder;
 use Reports\Admin\Api\ReportBuilderInterface;
 
-class EmployeeLeaveEntitlementReport extends ClassBasedReportBuilder
-    implements ReportBuilderInterface
+class EmployeeLeaveEntitlementReport extends ClassBasedReportBuilder implements ReportBuilderInterface
 {
     public function getData($report, $req)
     {
@@ -29,7 +28,10 @@ class EmployeeLeaveEntitlementReport extends ClassBasedReportBuilder
         }
 
         $reportData = array();
-        $reportData[] = array("Employee ID","Employee","Leave Type","Pending","Approved","Rejected","Canceled","Available","To be Accrued","Carried Forward from Previous Years");
+        $reportData[] = array(
+            "Employee ID",
+            "Employee","Leave Type","Pending","Approved","Rejected",
+            "Canceled","Available","To be Accrued","Carried Forward from Previous Years");
 
         foreach ($employees as $employee) {
             $leaveEntitlements = $leaveActionManager->getEntitlementByEmployee($employee)->getObject();

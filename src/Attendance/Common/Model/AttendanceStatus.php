@@ -14,7 +14,7 @@ use Model\BaseModel;
 
 class AttendanceStatus extends BaseModel
 {
-    var $_table = 'Attendance';
+    public $table = 'Attendance';
 
     public function getRecentAttendanceEntries($limit)
     {
@@ -59,9 +59,10 @@ class AttendanceStatus extends BaseModel
 
         return array_values($employees);
     }
-
+    // @codingStandardsIgnoreStart
     public function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
     {
+        // @codingStandardsIgnoreEnd
         $shift = intval(SettingsManager::getInstance()->getSetting("Attendance: Shift (Minutes)"));
         $employee = new Employee();
         $data = array();

@@ -10,7 +10,7 @@ namespace Model;
 
 class File extends BaseModel
 {
-    var $_table = 'Files';
+    public $table = 'Files';
     public function getAdminAccess()
     {
         return array("get","element","save","delete");

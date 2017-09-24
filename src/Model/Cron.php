@@ -10,5 +10,5 @@ namespace Model;
 
 class Cron extends BaseModel
 {
-    var $_table = 'Crons';
+    public $table = 'Crons';
 }

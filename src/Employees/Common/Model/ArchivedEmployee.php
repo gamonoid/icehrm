@@ -31,5 +31,5 @@ class ArchivedEmployee extends BaseModel
         return "id";
     }
 
-    var $_table = 'ArchivedEmployees';
+    public $table = 'ArchivedEmployees';
 }

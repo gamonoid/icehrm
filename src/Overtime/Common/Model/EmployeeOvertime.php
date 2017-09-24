@@ -13,13 +13,13 @@ use Model\ApproveModel;
 
 class EmployeeOvertime extends ApproveModel
 {
-    var $_table = 'EmployeeOvertime';
+    public $table = 'EmployeeOvertime';
 
-    var $notificationModuleName = "Overtime Management";
-    var $notificationUnitName = "OvertimeRequest";
-    var $notificationUnitPrefix = "An";
-    var $notificationUnitAdminUrl = "g=modules&n=overtime&m=module_Time_Management#tabSubordinateEmployeeOvertime";
-    var $preApproveSettingName = "Attendance: Pre-Approve Overtime Request";
+    public $notificationModuleName = "Overtime Management";
+    public $notificationUnitName = "OvertimeRequest";
+    public $notificationUnitPrefix = "An";
+    public $notificationUnitAdminUrl = "g=modules&n=overtime&m=module_Time_Management#tabSubordinateEmployeeOvertime";
+    public $preApproveSettingName = "Attendance: Pre-Approve Overtime Request";
 
     public function isMultiLevelApprovalsEnabled()
     {

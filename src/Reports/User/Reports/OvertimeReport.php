@@ -43,9 +43,15 @@ class OvertimeReport extends ClassBasedReportBuilder implements ReportBuilderInt
 
         $reportData = array();
         if (!$this->isAggregated()) {
-            $reportData[] = array("Date", "Employee ID", "Employee", "Time in Office", "Regular Time", "Overtime", "Double Time");
+            $reportData[] = array(
+                "Date", "Employee ID", "Employee", "Time in Office",
+                "Regular Time", "Overtime", "Double Time"
+            );
         } else {
-            $reportData[] = array("Employee ID", "Employee", "Time in Office", "Regular Time", "Overtime", "Double Time");
+            $reportData[] = array(
+                "Employee ID", "Employee", "Time in Office", "Regular Time", "Overtime",
+                "Double Time"
+            );
         }
 
         foreach ($employeeAttendance as $employeeId => $atData) {

@@ -75,7 +75,8 @@ class AttendanceActionManager extends SubActionManager
             if (empty($attendance->out_time) || $attendance->out_time == "0000-00-00 00:00:00") {
                 return new IceResponse(
                     IceResponse::ERROR,
-                    "There is a non closed attendance entry for today. Please mark punch-out time of the open entry before adding a new one"
+                    "There is a non closed attendance entry for today. 
+                    Please mark punch-out time of the open entry before adding a new one"
                 );
             } elseif (!empty($outDateTime)) {
                 if (strtotime($attendance->out_time) >= strtotime($outDateTime)

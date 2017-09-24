@@ -13,7 +13,7 @@ use Model\BaseModel;
 
 class Payroll extends BaseModel
 {
-    var $_table = 'Payroll';
+    public $table = 'Payroll';
     public function getAdminAccess()
     {
         return array("get","element","save","delete");

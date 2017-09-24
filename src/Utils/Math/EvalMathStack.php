@@ -12,16 +12,16 @@ namespace Utils\Math;
 class EvalMathStack
 {
 
-    var $stack = array();
-    var $count = 0;
+    protected $stack = array();
+    public $count = 0;
 
-    function push($val)
+    public function push($val)
     {
         $this->stack[$this->count] = $val;
         $this->count++;
     }
 
-    function pop()
+    public function pop()
     {
         if ($this->count > 0) {
             $this->count--;
@@ -30,7 +30,7 @@ class EvalMathStack
         return null;
     }
 
-    function last($n = 1)
+    public function last($n = 1)
     {
         if ($this->count - $n >= 0) {
             return $this->stack[$this->count - $n];

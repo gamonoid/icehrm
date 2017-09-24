@@ -36,5 +36,5 @@ class Module extends BaseModel
     {
         return array();
     }
-    var $_table = 'Modules';
+    public $table = 'Modules';
 }

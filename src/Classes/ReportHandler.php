@@ -75,12 +75,12 @@ class ReportHandler
         return $this->generateReport($reportBuilder, $report, $reportData);
     }
 
-	/**
-	 * @param ReportBuilder $reportBuilder
-	 * @param $report
-	 * @param $data
-	 * @return array
-	 */
+    /**
+     * @param ReportBuilder $reportBuilder
+     * @param $report
+     * @param $data
+     * @return array
+     */
     protected function generateReport($reportBuilder, $report, $data)
     {
 

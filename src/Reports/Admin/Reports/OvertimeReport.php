@@ -24,7 +24,8 @@ class OvertimeReport extends ClassBasedReportBuilder implements ReportBuilderInt
         $sevenDateBefore = date('Y-m-d', strtotime('-7 days', strtotime($request['date_start'])));
 
         if (!empty($employeeList)) {
-            $query = "employee in (".implode(",", $employeeList).") and in_time >= ? and out_time <= ? order by in_time;";
+            $query = "employee in (".implode(",", $employeeList)
+                .") and in_time >= ? and out_time <= ? order by in_time;";
             $params = array(
                 $sevenDateBefore." 00:00:00",
                 $request['date_end']." 23:59:59",
@@ -57,9 +58,14 @@ class OvertimeReport extends ClassBasedReportBuilder implements ReportBuilderInt
 
         $reportData = array();
         if (!$this->isAggregated()) {
-            $reportData[] = array("Date", "Employee ID", "Employee", "Time in Office", "Regular Time", "Overtime", "Double Time");
+            $reportData[] = array(
+                "Date", "Employee ID", "Employee", "Time in Office", "Regular Time",
+                "Overtime", "Double Time"
+            );
         } else {
-            $reportData[] = array("Employee ID", "Employee", "Time in Office", "Regular Time", "Overtime", "Double Time");
+            $reportData[] = array(
+                "Employee ID", "Employee", "Time in Office", "Regular Time", "Overtime", "Double Time"
+            );
         }
 
         foreach ($employeeAttendance as $employeeId => $atData) {

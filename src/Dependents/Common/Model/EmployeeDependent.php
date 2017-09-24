@@ -6,7 +6,7 @@ use Model\BaseModel;
 
 class EmployeeDependent extends BaseModel
 {
-    var $_table = 'EmployeeDependents';
+    public $table = 'EmployeeDependents';
 
     public function getAdminAccess()
     {

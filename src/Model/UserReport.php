@@ -31,5 +31,5 @@ class UserReport extends BaseModel
         return $entry;
     }
 
-    var $_table = 'UserReports';
+    public $table = 'UserReports';
 }

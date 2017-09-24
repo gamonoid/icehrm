@@ -37,5 +37,5 @@ class ReportFile extends BaseModel
         return $entry;
     }
 
-    var $_table = 'ReportFiles';
+    public $table = 'ReportFiles';
 }

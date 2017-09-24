@@ -12,7 +12,7 @@ use Model\BaseModel;
 
 class Deduction extends BaseModel
 {
-    var $_table = 'Deductions';
+    public $table = 'Deductions';
 
     public function getAdminAccess()
     {

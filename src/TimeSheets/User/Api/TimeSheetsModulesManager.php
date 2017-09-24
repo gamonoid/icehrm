@@ -54,7 +54,10 @@ class TimeSheetsModulesManager extends AbstractModuleManager
     private function getLastTimeSheetHours()
     {
         $timeSheet = new EmployeeTimeSheet();
-        $timeSheet->Load("employee = ? order by date_end desc limit 1", array(BaseService::getInstance()->getCurrentProfileId()));
+        $timeSheet->Load(
+            "employee = ? order by date_end desc limit 1",
+            array(BaseService::getInstance()->getCurrentProfileId())
+        );
 
         if (empty($timeSheet->employee)) {
             return new IceResponse(IceResponse::SUCCESS, "0:00");

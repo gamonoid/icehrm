@@ -24,11 +24,11 @@ namespace Classes;
 
 abstract class SubActionManager
 {
-    var $user = null;
+    protected $user = null;
     /* @var \Classes\BaseService $baseService*/
     protected $baseService = null;
-    var $emailTemplates = null;
-    var $emailSender = null;
+    public $emailTemplates = null;
+    protected $emailSender = null;
 
     public function setUser($user)
     {

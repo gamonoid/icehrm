@@ -6,7 +6,7 @@ use Model\BaseModel;
 
 class DataImportFile extends BaseModel
 {
-    var $_table = 'DataImportFiles';
+    public $table = 'DataImportFiles';
 
     public function getAdminAccess()
     {

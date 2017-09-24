@@ -8,7 +8,6 @@
 
 namespace Employees\User\Api;
 
-
 use Classes\BaseService;
 use Classes\FileService;
 use Classes\IceResponse;
@@ -50,7 +49,11 @@ class EmployeesActionManager extends SubActionManager
             }
 
             if (!empty($childCompaniesIds)) {
-                $childStructureSubordinates = $obj->Find("department in (" . implode(',', $childCompaniesIds) . ") and id != ?", array($cemp));
+                $childStructureSubordinates
+                    = $obj->Find(
+                        "department in (" . implode(',', $childCompaniesIds) . ") and id != ?",
+                        array($cemp)
+                    );
                 $subordinates = array_merge($subordinates, $childStructureSubordinates);
             }
 

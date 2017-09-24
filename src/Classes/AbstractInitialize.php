@@ -25,7 +25,7 @@ namespace Classes;
 abstract class AbstractInitialize
 {
     /* @var \Classes\BaseService $baseService */
-    var $baseService = null;
+    public $baseService = null;
     public function setBaseService($baseService)
     {
         $this->baseService = $baseService;

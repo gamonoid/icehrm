@@ -3,15 +3,16 @@ namespace Test\Unit;
 
 use Classes\LanguageManager;
 
-class LanguageManagerUnit extends \TestTemplate{
+class LanguageManagerUnit extends \TestTemplate
+{
 
     protected function setUp()
     {
         parent::setUp();
-
     }
     
-    public function testTran(){
+    public function testTran()
+    {
         $this->assertEquals('cat', LanguageManager::tran('cat'));
         $this->assertEquals('solid', LanguageManager::tran('solid'));
         $this->assertEquals('one file', LanguageManager::tran('one file'));
