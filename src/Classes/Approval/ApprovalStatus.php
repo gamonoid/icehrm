@@ -111,9 +111,7 @@ class ApprovalStatus
 
     public function updateApprovalStatus($type, $id, $currentEmployee, $status)
     {
-        LogManager::getInstance()->error('updateApprovalStatus 1');
         if (!$this->approvalChainExists($type, $id)) {
-            LogManager::getInstance()->error('updateApprovalStatus 2');
             return new IceResponse(IceResponse::SUCCESS, array(null, null));
         }
 
@@ -136,8 +134,6 @@ class ApprovalStatus
             }
         }
 
-        LogManager::getInstance()->error('level '.$level);
-
         $currentAL = null;
         if ($level > 0) {
             $currentAL = new EmployeeApproval();
@@ -149,7 +145,6 @@ class ApprovalStatus
             $nextAL = new EmployeeApproval();
             $nextAL->Load("type = ? and element = ? and level = ?", array($type, $id, intval($level)+1));
 
-            LogManager::getInstance()->error('next AL '.print_r($nextAL, true));
             if (empty($nextAL->id)) {
                 $nextAL = null;
             }

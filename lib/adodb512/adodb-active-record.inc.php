@@ -128,9 +128,10 @@ class ADODB_Active_Record {
 			$db = $pkeyarr;
 			$pkeyarr = false;
 		}
-		
-		if (!$table) { 
-			if (!empty($this->_table)) $table = $this->_table;
+
+		if (!$table) {
+			if (!empty($this->table)) $table = $this->table;
+			else if (!empty($this->_table)) $table = $this->_table;
 			else $table = $this->_pluralize(get_class($this));
 		}
 		$this->foreignName = strtolower(get_class($this)); // CFR: default foreign name
