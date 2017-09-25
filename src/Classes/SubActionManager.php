@@ -24,7 +24,7 @@ namespace Classes;
 
 abstract class SubActionManager
 {
-    protected $user = null;
+    public $user = null;
     /* @var \Classes\BaseService $baseService*/
     protected $baseService = null;
     public $emailTemplates = null;
