@@ -2,13 +2,13 @@
 
 //Reset modules if required
 if (\Classes\SettingsManager::getInstance()->getSetting("System: Reset Modules and Permissions") == "1") {
-    $permissionTemp = new Permission();
+    $permissionTemp = new \Permissions\Common\Model\Permission();
     $permissions = $permissionTemp->Find("1=1");
     foreach ($permissions as $permTemp) {
         $permTemp->Delete();
     }
 
-    $moduleTemp = new Module();
+    $moduleTemp = new \Modules\Common\Model\Module();
     $modulesTemp = $moduleTemp->Find("1=1");
     foreach ($modulesTemp as $moduleTemp) {
         $moduleTemp->Delete();
