@@ -1,3 +1,21 @@
+Release note v20.2
+------------------
+### Fixes
+  * Fix for resetting modules
+  
+Release note v20.1
+------------------
+### Features
+ * Compatible with MySQL 5.7 Strict Mode
+ * PSR-2 compatible code
+ * Employee History Module
+ * Staff Directory
+ 
+### Fixes
+  * Fix: password reset not working
+  * Fix: limiting selectable countries via Settings
+  * Fix for resetting modules
+  
 Release note v20.0
 ------------------
 ### Features
