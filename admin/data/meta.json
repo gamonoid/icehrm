@@ -1,0 +1,12 @@
+{
+    "label": "Data",
+    "menu": "System",
+    "order": "8",
+    "icon": "fa-database",
+    "user_levels": [
+        "Admin"
+    ],
+    "permissions": [],
+    "model_namespace": "\\Data\\Common\\Model",
+    "manager": "\\Data\\Admin\\Api\\DataAdminManager"
+}
