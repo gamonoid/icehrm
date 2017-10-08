@@ -40,20 +40,20 @@ function checkFileType (elementName, fileTypes) {
 	if (fileElement.value.lastIndexOf(".") > 0) {
 		fileExtension = fileElement.value.substring(fileElement.value.lastIndexOf(".") + 1, fileElement.value.length);
 	}
-	
+
 	fileExtension = fileExtension.toLowerCase();
-	
+
 	var allowed = fileTypes.split(",");
-	
+
 	if (allowed.indexOf(fileExtension) < 0) {
 		fileElement.value = "";
 		alert('Selected file type is not supported');
 		clearFileElement(elementName);
 		return false;
 	}
-	
+
 	return true;
-	
+
 }
 
 function clearFileElement (elementName) {

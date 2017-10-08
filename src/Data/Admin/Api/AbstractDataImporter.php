@@ -7,7 +7,7 @@ use Data\Common\Model\DataImport;
 use FieldNames\Common\Model\CustomField;
 use Utils\LogManager;
 
-abstract class AbstractDataImporter
+abstract class AbstractDataImporter implements DataImporter
 {
 
     protected $dataImport = null;
@@ -22,7 +22,7 @@ abstract class AbstractDataImporter
     protected $columnsCompeted = array();
     protected $relatedColumns = array();
 
-    public function getRowObjects()
+    public function getResult()
     {
         return $this->rowObjects;
     }
@@ -243,4 +243,41 @@ abstract class AbstractDataImporter
         return false;
     }
     abstract public function fixBeforeSave($object, $data);
+
+
+    public function process($data, $dataImportId)
+    {
+        $data = str_replace("\r", "\n", $data);
+        $data = str_replace("\n\n", "\n", $data);
+
+        $lines = str_getcsv($data, "\n");
+
+        $headerProcessed = false;
+
+        $counter = 0;
+
+        LogManager::getInstance()->info("Line Count:".count($lines));
+
+        $res = array();
+
+        foreach ($lines as $line) {
+            $cells = str_getcsv($line, ",");
+            if ($headerProcessed === false) {
+                $this->setDataImportId($dataImportId);
+                $this->processHeader($cells);
+                $headerProcessed = true;
+            } else {
+                $result = $this->processDataRow($counter, $cells);
+                $res[] = array($cells,$result);
+            }
+            $counter++;
+        }
+
+        return $res;
+    }
+
+    public function getLastStatus()
+    {
+        return IceResponse::SUCCESS;
+    }
 }
