@@ -22,6 +22,8 @@ if (empty($user)) {
 	}
 
 	if (!empty($_REQUEST['username']) && !empty($_REQUEST['password'])) {
+		$suser = null;
+		$ssoUserLoaded = false;
 
 		if($_REQUEST['username'] != "admin") {
 			if (\Classes\SettingsManager::getInstance()->getSetting("LDAP: Enabled") == "1") {
@@ -44,8 +46,7 @@ if (empty($user)) {
 		if (!isset($_REQUEST['hashedPwd'])) {
 			$_REQUEST['hashedPwd'] = md5($_REQUEST['password']);
 		}
-		$suser = null;
-		$ssoUserLoaded = false;
+
 
 		include 'login.com.inc.php';
 
