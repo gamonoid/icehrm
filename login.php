@@ -4,8 +4,6 @@ include("config.base.php");
 include("include.common.php");
 include("server.includes.inc.php");
 
-error_log(print_r($_REQUEST, true));
-
 if (empty($user)) {
 	if (!isset($_REQUEST['f']) && isset($_COOKIE['icehrmLF'])
 		&& $_REQUEST['login'] != 'no' && !isset($_REQUEST['username'])) {
