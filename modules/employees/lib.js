@@ -710,3 +710,36 @@ CompanyGraphAdapter.method('fixCyclicParent', function(sourceData) {
 
 });
 
+
+
+/*
+ * Api Access
+ */
+
+function ApiAccessAdapter(endPoint) {
+	this.initAdapter(endPoint);
+}
+
+ApiAccessAdapter.inherits(AdapterBase);
+
+
+
+ApiAccessAdapter.method('getDataMapping', function() {
+	return [
+	];
+});
+
+ApiAccessAdapter.method('getHeaders', function() {
+	return [
+
+	];
+});
+
+ApiAccessAdapter.method('getFormFields', function() {
+	return [
+	];
+});
+
+ApiAccessAdapter.method('get', function() {
+
+});

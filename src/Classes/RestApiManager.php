@@ -85,8 +85,7 @@ class RestApiManager
         LogManager::getInstance()->info("AT Hash Object:".json_encode($accessTokenObj));
         if (!empty($accessTokenObj->id) && $accessTokenObj->hash == $hash) {
             //No need to do user based validation for now
-            //return $this->validateAccessTokenInner($accessTokenObj->token);
-            return new IceResponse(IceResponse::SUCCESS, true);
+            return $this->validateAccessTokenInner($accessTokenObj->token);
         }
 
         return new IceResponse(IceResponse::ERROR, "Authorization bearer token not found or invalid", 401);
@@ -107,7 +106,8 @@ class RestApiManager
 
         $data = json_decode($accessToken, true);
         if ($data['userId'] == $user->id) {
-            return new IceResponse(IceResponse::SUCCESS, true);
+            unset($user->password);
+            return new IceResponse(IceResponse::SUCCESS, $user);
         }
 
         return new IceResponse(IceResponse::ERROR, false);

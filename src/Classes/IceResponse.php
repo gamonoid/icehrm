@@ -49,4 +49,28 @@ class IceResponse
     {
         return array("status"=>$this->status,"data"=>$this->data);
     }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @param null $data
+     */
+    public function setData($data)
+    {
+        $this->data = $data;
+    }
+
+    /**
+     * @param null $code
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+    }
 }

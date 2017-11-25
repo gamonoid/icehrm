@@ -14,6 +14,10 @@ class CustomFieldManager
 {
     public function addCustomField($type, $id, $name, $value)
     {
+        if ($name[0] === '/') {
+            return;
+        }
+
         $customFieldValue = new CustomFieldValue();
         $customFieldValue->Load(
             "type = ? and name = ? and object_id = ?",

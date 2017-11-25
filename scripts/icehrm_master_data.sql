@@ -1449,16 +1449,7 @@ INSERT INTO `ExpensesCategories` (`name`) VALUES
 ('Utility');
 
 
-INSERT INTO `PayrollColumns` (`id`,`name`,`calculation_hook`,`salary_components`,`deductions`,`add_columns`,`sub_columns`,`editable`,`enabled`,`default_value`,`calculation_columns`,`calculation_function`) VALUES
-    (1,'Total Hours','AttendanceUtil_getTimeWorkedHours','','','','','No','Yes','0.00',NULL,NULL),
-    (2,'Regular Hours','AttendanceUtil_getRegularWorkedHours','','','','','No','Yes','0.00',NULL,NULL),
-    (3,'Overtime Hours','AttendanceUtil_getOverTimeWorkedHours','','','','','No','Yes','0.00',NULL,NULL),
-    (4,'Leave Hours','LeaveUtil_getLeaveHours','','','','','No','Yes','0.00',NULL,NULL);
 
-
-INSERT INTO `PayrollColumnTemplates` (`name`,`columns`) VALUES
-    ('All Columns','[\"1\",\"2\",\"3\",\"4\"]'),
-    ('All Time Management Columns','[\"1\",\"2\",\"3\"]');
 
 
 
