@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Thilina
- * Date: 8/19/17
- * Time: 12:13 PM
- */
-
 namespace Expenses\Admin\Api;
 
 use Classes\AbstractModuleManager;
@@ -22,7 +15,6 @@ class ExpensesAdminManager extends AbstractModuleManager
 
     public function initializeFieldMappings()
     {
-
         $this->addFileFieldMapping('EmployeeExpense', 'attachment1', 'name');
         $this->addFileFieldMapping('EmployeeExpense', 'attachment2', 'name');
         $this->addFileFieldMapping('EmployeeExpense', 'attachment3', 'name');
@@ -39,5 +31,15 @@ class ExpensesAdminManager extends AbstractModuleManager
         $this->addModelClass('ExpensesPaymentMethod');
         $this->addModelClass('EmployeeExpense');
         $this->addModelClass('EmployeeExpenseApproval');
+    }
+
+    public function initCalculationHooks()
+    {
+        $this->addCalculationHook(
+            'ExpensePayrollUtils_getApprovedExpensesTotal',
+            'Total Approved Expenses',
+            ExpensePayrollUtils::class,
+            'getApprovedExpensesTotal'
+        );
     }
 }
