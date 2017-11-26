@@ -36,7 +36,7 @@ class AttendanceAdminManager extends AbstractModuleManager
 
         \Classes\Macaw::get(REST_API_PATH.'attendance', function ($pathParams) {
             $restEndPoint = new AttendanceRestEndPoint();
-            $restEndPoint->process('list', $pathParams);
+            $restEndPoint->process('listAll', $pathParams);
         });
 
         \Classes\Macaw::get(REST_API_PATH.'employee/(:num)/attendance', function ($pathParams) {

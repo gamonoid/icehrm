@@ -38,7 +38,7 @@ class EmployeesAdminManager extends AbstractModuleManager
 
         \Classes\Macaw::get(REST_API_PATH.'employees', function () {
             $empRestEndPoint = new EmployeeRestEndPoint();
-            $empRestEndPoint->process('list');
+            $empRestEndPoint->process('listAll');
         });
 
         \Classes\Macaw::post(REST_API_PATH.'employees', function () {

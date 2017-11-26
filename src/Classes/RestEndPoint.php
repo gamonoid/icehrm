@@ -135,7 +135,7 @@ class RestEndPoint
         return $obj;
     }
 
-    public function list(User $user)
+    public function listAll(User $user)
     {
         return new IceResponse(IceResponse::ERROR, "Method not Implemented", 404);
     }
