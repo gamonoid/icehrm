@@ -24,7 +24,9 @@ if (defined("MODULE_PATH")) {
 
 $user = \Utils\SessionUtils::getSessionObject('user');
 
-$dbLocal = NewADOConnection(APP_CON_STR);
+$dbLocal = NewADOConnection('mysqli');
+$res = $dbLocal->Connect(APP_HOST, APP_USERNAME, APP_PASSWORD, APP_DB);
+
 
 \Model\File::SetDatabaseAdapter($dbLocal);
 \Model\Setting::SetDatabaseAdapter($dbLocal);
