@@ -78,17 +78,17 @@ ReportAdapter.method('processFormFieldsWithObject', function(object) {
 					that.remoteFieldsExists = true;
 				}
 			});
-			
+
 		}
 	}
-	
+
 	var tempArray = [];
 	that._formFileds.forEach(function(entry) {
 		if(jQuery.inArray(entry[0], fieldsToDelete) < 0){
 			tempArray.push(entry);
 		}
 	});
-	
+
 	that._formFileds = tempArray;
 });
 
@@ -107,7 +107,7 @@ ReportAdapter.method('renderForm', function(object) {
 	}
 
 	this.currentReport = object;
-	
+
 });
 
 ReportAdapter.method('renderFormNew', function(object) {
@@ -284,8 +284,8 @@ ReportAdapter.method('addSuccessCallBack', function(callBackData,serverData) {
 		link = '<a href="'+modJs.getCustomActionUrl("download",{'file':fileName})+'" target="_blank" style="font-size:14px;font-weight:bold;">Download Report <img src="_BASE_images/download.png"></img> </a>';
 	}
 	link = link.replace(/_BASE_/g,this.baseUrl);
-	
-	if(this.currentReport.output == "PDF"){
+
+	if(this.currentReport.output == "PDF" || this.currentReport.output == "JSON"){
 
 		this.showMessage("Download Report",link);
 
@@ -352,7 +352,7 @@ ReportAdapter.method('fillForm', function(object) {
 		}else{
 			$("#"+this.getTableName()+'Form #'+fields[i][0]).val(object[fields[i][0]]);
 		}
-	    
+
 	}
 });
 

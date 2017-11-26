@@ -72,6 +72,7 @@ class BaseService
     public $customFieldManager = null;
     public $migrationManager = null;
     public $modelClassMap = array();
+    public $currentProfileId = false;
 
     private static $me = null;
 
@@ -185,6 +186,14 @@ class BaseService
     public function getModelClassName($name)
     {
         return $this->getFullQualifiedModelClassName($name);
+    }
+
+    /**
+     * @param boolean $currentProfileId
+     */
+    public function setCurrentProfileId($currentProfileId)
+    {
+        $this->currentProfileId = $currentProfileId;
     }
 
     public function buildDefaultFilterQuery($filter)
@@ -755,9 +764,7 @@ class BaseService
             }
             return new IceResponse(IceResponse::ERROR, $this->findError($error));
         }
-        LogManager::getInstance()->error("Element:".json_encode($ele));
-        LogManager::getInstance()->error("Obj:".json_encode($obj));
-        LogManager::getInstance()->error("Obj Keys:".json_encode($objectKeys));
+
         $customFields = $ele->getCustomFields($obj);
         LogManager::getInstance()->error("Custom:".json_encode($customFields));
         foreach ($obj as $k => $v) {
@@ -792,6 +799,13 @@ class BaseService
         $ele = new $nsTable();
 
         $ele->Load('id = ?', array($id));
+        if (empty($ele->id) || $ele->id !== $id) {
+            return new IceResponse(
+                IceResponse::ERROR,
+                "Item not found"
+            );
+        }
+
 
         $this->checkSecureAccess("delete", $ele);
 
@@ -800,7 +814,10 @@ class BaseService
             if (!empty($nonDeletableTable)) {
                 foreach ($nonDeletableTable as $field => $value) {
                     if ($ele->$field == $value) {
-                        return "This item can not be deleted";
+                        return new IceResponse(
+                            IceResponse::ERROR,
+                            "This item can not be deleted"
+                        );
                     }
                 }
             }
@@ -818,7 +835,10 @@ class BaseService
         if (!$ok) {
             $error = $ele->ErrorMsg();
             LogManager::getInstance()->info($error);
-            return $this->findError($error);
+            return new IceResponse(
+                IceResponse::ERROR,
+                $this->findError($error)
+            );
         } else {
             //Backup
             if ($table == ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME)) {
@@ -845,7 +865,10 @@ class BaseService
             $cf->Delete();
         }
 
-        return null;
+        return new IceResponse(
+            IceResponse::SUCCESS,
+            null
+        );
     }
 
     /**
@@ -974,6 +997,9 @@ class BaseService
      */
     public function getCurrentProfileId()
     {
+        if ($this->currentProfileId) {
+            return $this->currentProfileId;
+        }
         $adminEmpId = SessionUtils::getSessionObject('admin_current_profile');
         $user = SessionUtils::getSessionObject('user');
         if (empty($adminEmpId) && !empty($user)) {
@@ -1035,6 +1061,7 @@ class BaseService
 
     public function cleanUpAdoDB($obj)
     {
+        unset($obj->table);
         unset($obj->_table);
         unset($obj->_dbat);
         unset($obj->_tableat);

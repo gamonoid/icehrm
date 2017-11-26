@@ -4,8 +4,6 @@ include("config.base.php");
 include("include.common.php");
 include("server.includes.inc.php");
 
-error_log(print_r($_REQUEST, true));
-
 if (empty($user)) {
 	if (!isset($_REQUEST['f']) && isset($_COOKIE['icehrmLF'])
 		&& $_REQUEST['login'] != 'no' && !isset($_REQUEST['username'])) {
@@ -22,11 +20,31 @@ if (empty($user)) {
 	}
 
 	if (!empty($_REQUEST['username']) && !empty($_REQUEST['password'])) {
+		$suser = null;
+		$ssoUserLoaded = false;
+
+		if($_REQUEST['username'] != "admin") {
+			if (\Classes\SettingsManager::getInstance()->getSetting("LDAP: Enabled") == "1") {
+				$ldapResp = \Classes\LDAPManager::getInstance()->checkLDAPLogin($_REQUEST['username'], $_REQUEST['password']);
+				if ($ldapResp->getStatus() == \Classes\IceResponse::ERROR) {
+					header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
+					exit();
+				} else {
+					$suser = new \Users\Common\Model\User();
+					$suser->Load("username = ?", array($_REQUEST['username']));
+					if (empty($suser)) {
+						header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
+						exit();
+					}
+					$ssoUserLoaded = true;
+				}
+			}
+		}
+
 		if (!isset($_REQUEST['hashedPwd'])) {
 			$_REQUEST['hashedPwd'] = md5($_REQUEST['password']);
 		}
-		$suser = null;
-		$ssoUserLoaded = false;
+
 
 		include 'login.com.inc.php';
 

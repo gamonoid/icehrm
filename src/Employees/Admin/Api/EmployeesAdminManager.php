@@ -26,9 +26,34 @@ class EmployeesAdminManager extends AbstractModuleManager
 
     public function setupRestEndPoints()
     {
-        \Classes\Macaw::get(REST_API_PATH.'employee/(:any)', function ($pathParams) {
+        \Classes\Macaw::get(REST_API_PATH.'employees/me', function () {
+            $empRestEndPoint = new EmployeeRestEndPoint();
+            $empRestEndPoint->process('get', 'me');
+        });
+
+        \Classes\Macaw::get(REST_API_PATH.'employees/(:num)', function ($pathParams) {
             $empRestEndPoint = new EmployeeRestEndPoint();
             $empRestEndPoint->process('get', $pathParams);
+        });
+
+        \Classes\Macaw::get(REST_API_PATH.'employees', function () {
+            $empRestEndPoint = new EmployeeRestEndPoint();
+            $empRestEndPoint->process('listAll');
+        });
+
+        \Classes\Macaw::post(REST_API_PATH.'employees', function () {
+            $empRestEndPoint = new EmployeeRestEndPoint();
+            $empRestEndPoint->process('post');
+        });
+
+        \Classes\Macaw::put(REST_API_PATH.'employees/(:num)', function ($pathParams) {
+            $empRestEndPoint = new EmployeeRestEndPoint();
+            $empRestEndPoint->process('put', $pathParams);
+        });
+
+        \Classes\Macaw::delete(REST_API_PATH.'employees/(:num)', function ($pathParams) {
+            $empRestEndPoint = new EmployeeRestEndPoint();
+            $empRestEndPoint->process('delete', $pathParams);
         });
     }
 

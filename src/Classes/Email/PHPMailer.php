@@ -25,10 +25,16 @@ class PHPMailer extends EmailSender
         $fromEmail,
         $replyToEmail = null,
         $ccList = array(),
-        $bccList = array()
+        $bccList = array(),
+        $fromName = null
     ) {
 
         try {
+
+            if ($fromName) {
+                $fromEmail = $fromName." <".$fromEmail.">";
+            }
+
             if (empty($replyToEmail)) {
                 $replyToEmail = $fromEmail;
             }
@@ -46,13 +52,8 @@ class PHPMailer extends EmailSender
             }
             $headers .= 'ReplyTo: ' . $replyToEmail . "\r\n";
             $headers .= 'Ice-Mailer: PHP/' . phpversion();
-
-            // Mail it
-            $res = mail($toEmail, $subject, $body, $headers);
-
-            LogManager::getInstance()->info("PHP mailer result : " . $res);
-
-            return $res;
+            
+            return mail($toEmail, $subject, $body, $headers);
         } catch (\Exception $e) {
             LogManager::getInstance()->error("Error sending email:" . $e->getMessage());
             return false;

@@ -78,11 +78,12 @@ if($action == 'get'){
 
 
 }else if($action == 'delete'){
-	$ret['object'] = \Classes\BaseService::getInstance()->deleteElement($_REQUEST['t'],$_REQUEST['id']);
-	if($ret['object'] == null){
-		$ret['status'] = "SUCCESS";
+	/* @var \Classes\IceResponse $response */
+	$response = \Classes\BaseService::getInstance()->deleteElement($_REQUEST['t'],$_REQUEST['id']);
+	if($response->getStatus() == \Classes\IceResponse::SUCCESS){
+		$ret['status'] = \Classes\IceResponse::SUCCESS;
 	}else{
-		$ret['status'] = "ERROR";
+		$ret['status'] = \Classes\IceResponse::ERROR;
 	}
 
 }else if($action == 'getFieldValues'){

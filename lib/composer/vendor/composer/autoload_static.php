@@ -4,10 +4,11 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit91d733469d809ee1828b45ab2da48a10
+class ComposerStaticInita01cedac3fb3abb6b395843685a2b9da
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -17,6 +18,7 @@ class ComposerStaticInit91d733469d809ee1828b45ab2da48a10
         ),
         'W' => 
         array (
+            'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
         'S' => 
@@ -55,6 +57,10 @@ class ComposerStaticInit91d733469d809ee1828b45ab2da48a10
             'Gettext\\Languages\\' => 18,
             'Gettext\\' => 8,
         ),
+        'E' => 
+        array (
+            'Egulias\\EmailValidator\\' => 23,
+        ),
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
@@ -74,6 +80,10 @@ class ComposerStaticInit91d733469d809ee1828b45ab2da48a10
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -139,6 +149,10 @@ class ComposerStaticInit91d733469d809ee1828b45ab2da48a10
         array (
             0 => __DIR__ . '/..' . '/gettext/gettext/src',
         ),
+        'Egulias\\EmailValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
+        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -161,6 +175,10 @@ class ComposerStaticInit91d733469d809ee1828b45ab2da48a10
         ),
     );
 
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/../..' . '/../../src',
+    );
+
     public static $prefixesPsr0 = array (
         'T' => 
         array (
@@ -178,6 +196,13 @@ class ComposerStaticInit91d733469d809ee1828b45ab2da48a10
             'PHPDocsMD' => 
             array (
                 0 => __DIR__ . '/..' . '/victorjonsson/markdowndocs/src',
+            ),
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Lexer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
             ),
         ),
     );
@@ -644,10 +669,11 @@ class ComposerStaticInit91d733469d809ee1828b45ab2da48a10
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit91d733469d809ee1828b45ab2da48a10::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit91d733469d809ee1828b45ab2da48a10::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit91d733469d809ee1828b45ab2da48a10::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit91d733469d809ee1828b45ab2da48a10::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita01cedac3fb3abb6b395843685a2b9da::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita01cedac3fb3abb6b395843685a2b9da::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInita01cedac3fb3abb6b395843685a2b9da::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita01cedac3fb3abb6b395843685a2b9da::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInita01cedac3fb3abb6b395843685a2b9da::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -42,10 +42,12 @@ class UsersEmailSender
         if (!empty($emailTo)) {
             if (!empty($this->emailSender)) {
                 LogManager::getInstance()->info("[sendWelcomeUserEmail] sending email to $emailTo : ".$email);
-                $this->emailSender->sendEmail("Your IceHrm account is ready", $emailTo, $email, $params);
+                return $this->emailSender->sendEmail("Your IceHrm account is ready", $emailTo, $email, $params);
             }
         } else {
             LogManager::getInstance()->info("[sendWelcomeUserEmail] email is empty");
         }
+        
+        return false;
     }
 }

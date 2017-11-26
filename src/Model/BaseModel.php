@@ -154,7 +154,7 @@ class BaseModel extends \ADOdb_Active_Record
                 continue;
             }
 
-            $keys[$k] = $k;
+            $keys[$k] = $v;
         }
 
         return $keys;

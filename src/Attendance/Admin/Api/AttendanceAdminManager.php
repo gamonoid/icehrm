@@ -2,6 +2,7 @@
 namespace Attendance\Admin\Api;
 
 use Attendance\Common\Model\Attendance;
+use Attendance\Rest\AttendanceRestEndPoint;
 use Classes\AbstractModuleManager;
 use Classes\UIManager;
 
@@ -24,6 +25,49 @@ class AttendanceAdminManager extends AbstractModuleManager
     {
         $this->addModelClass('Attendance');
         $this->addModelClass('AttendanceStatus');
+    }
+
+    public function setupRestEndPoints()
+    {
+        \Classes\Macaw::get(REST_API_PATH.'attendance/(:num)', function ($pathParams) {
+            $restEndPoint = new AttendanceRestEndPoint();
+            $restEndPoint->process('get', $pathParams);
+        });
+
+        \Classes\Macaw::get(REST_API_PATH.'attendance', function ($pathParams) {
+            $restEndPoint = new AttendanceRestEndPoint();
+            $restEndPoint->process('listAll', $pathParams);
+        });
+
+        \Classes\Macaw::get(REST_API_PATH.'employee/(:num)/attendance', function ($pathParams) {
+            $restEndPoint = new AttendanceRestEndPoint();
+            $restEndPoint->process('listEmployeeAttendance', $pathParams);
+        });
+
+        \Classes\Macaw::post(REST_API_PATH.'attendance', function ($pathParams) {
+            $restEndPoint = new AttendanceRestEndPoint();
+            $restEndPoint->process('post', $pathParams);
+        });
+
+        \Classes\Macaw::delete(REST_API_PATH.'attendance/(:num)', function ($pathParams) {
+            $restEndPoint = new AttendanceRestEndPoint();
+            $restEndPoint->process('delete', $pathParams);
+        });
+
+        \Classes\Macaw::post(REST_API_PATH.'attendance/punch-in', function ($pathParams) {
+            $restEndPoint = new AttendanceRestEndPoint();
+            $restEndPoint->process('punchIn', $pathParams);
+        });
+
+        \Classes\Macaw::get(REST_API_PATH.'employee/(:num)/open-punch-in/(:any)', function ($employeeId, $date) {
+            $restEndPoint = new AttendanceRestEndPoint();
+            $restEndPoint->process('getOpenPunch', [$employeeId, $date]);
+        });
+
+        \Classes\Macaw::post(REST_API_PATH.'attendance/punch-out', function ($pathParams) {
+            $restEndPoint = new AttendanceRestEndPoint();
+            $restEndPoint->process('punchOut', $pathParams);
+        });
     }
 
     public function getDashboardItemData()

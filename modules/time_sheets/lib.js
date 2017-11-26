@@ -16,7 +16,7 @@ along with iCE Hrm. If not, see <http://www.gnu.org/licenses/>.
 
 ------------------------------------------------------------------
 
-Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]  
+Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
 Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
  */
 
@@ -79,9 +79,9 @@ EmployeeTimeSheetAdapter.method('renderForm', function(object) {
 
 	$('.timesheet_start').html(Date.parse(object.date_start).toString('MMM d, yyyy (dddd)'));
 	$('.timesheet_end').html(Date.parse(object.date_end).toString('MMM d, yyyy (dddd)'));
-	
+
 	this.currentTimesheet = object;
-	
+
 	this.getTimeEntries();
 
 	var st = Date.parse(object.date_start);
@@ -127,9 +127,9 @@ EmployeeTimeSheetAdapter.method('renderForm', function(object) {
 	});
 
 	$('#EmployeeTimesheetBlock').fullCalendar('gotoDate', st);
-	
+
 	$('.fc-toolbar').hide();
-	
+
 });
 
 
@@ -219,7 +219,7 @@ EmployeeTimeSheetAdapter.method('openTimeEntryDialog', function(object) {
 	obj.currentTimesheet = this.currentTimesheet;
 	obj.renderForm(object);
 	obj.timesheetId = this.currentId;
-	
+
 });
 
 EmployeeTimeSheetAdapter.method('closeTimeEntryDialog', function() {
@@ -231,14 +231,14 @@ EmployeeTimeSheetAdapter.method('getTimeEntries', function() {
 	timesheetId = this.currentId;
 	var sourceMappingJson = JSON.stringify(modJsList['tabEmployeeTimeEntry'].getSourceMapping());
 	object = {"id":timesheetId,"sm":sourceMappingJson};
-	
+
 	var reqJson = JSON.stringify(object);
-	
+
 	var callBackData = [];
 	callBackData['callBackData'] = [];
 	callBackData['callBackSuccess'] = 'getTimeEntriesSuccessCallBack';
 	callBackData['callBackFail'] = 'getTimeEntriesFailCallBack';
-	
+
 	this.customAction('getTimeEntries','modules=time_sheets',reqJson,callBackData);
 });
 
@@ -246,18 +246,18 @@ EmployeeTimeSheetAdapter.method('getTimeEntriesSuccessCallBack', function(callBa
 	var entries = callBackData;
 	var html = "";
 	var temp = '<tr><td><img class="tableActionButton" src="_BASE_images/delete.png" style="cursor:pointer;" rel="tooltip" title="Delete" onclick="modJsList[\'tabEmployeeTimeEntry\'].deleteRow(_id_);return false;"></img></td><td>_start_</td><td>_end_</td><td>_duration_</td><td>_project_</td><td>_details_</td>';
-	
+
 	for(var i=0;i<entries.length;i++){
 		try{
 			var t = temp;
 			t = t.replace(/_start_/g,Date.parse(entries[i].date_start).toString('MMM d, yyyy [hh:mm tt]'));
 			t = t.replace(/_end_/g,Date.parse(entries[i].date_end).toString('MMM d, yyyy [hh:mm tt]'));
-			
+
 			var mili = Date.parse(entries[i].date_end) - Date.parse(entries[i].date_start);
 			var minutes = Math.round(mili/60000);
 			var hourMinutes = (minutes % 60);
 			var hours = (minutes-hourMinutes)/60;
-			
+
 			t = t.replace(/_duration_/g,"Hours ("+hours+") - Min ("+hourMinutes+")");
 			if(entries[i].project == 'null' || entries[i].project == null || entries[i].project == undefined){
 				t = t.replace(/_project_/g,"None");
@@ -271,7 +271,7 @@ EmployeeTimeSheetAdapter.method('getTimeEntriesSuccessCallBack', function(callBa
 		html += t;
 		}catch(e){}
 	}
-	
+
 	$('.timesheet_entries_table_body').html(html);
 	if(modJs.getTableName() == 'SubEmployeeTimeSheetAll' || this.needStartEndTime+'' == '0'){
 		$('.submit_sheet').hide();
@@ -297,14 +297,14 @@ EmployeeTimeSheetAdapter.method('getTimeEntriesFailCallBack', function(callBackD
 
 EmployeeTimeSheetAdapter.method('createPreviousTimesheet', function(id) {
 	object = {"id":id};
-	
+
 	var reqJson = JSON.stringify(object);
-	
+
 	var callBackData = [];
 	callBackData['callBackData'] = [];
 	callBackData['callBackSuccess'] = 'createPreviousTimesheetSuccessCallBack';
 	callBackData['callBackFail'] = 'createPreviousTimesheetFailCallBack';
-	
+
 	this.customAction('createPreviousTimesheet','modules=time_sheets',reqJson,callBackData);
 });
 
@@ -320,21 +320,21 @@ EmployeeTimeSheetAdapter.method('createPreviousTimesheetFailCallBack', function(
 });
 
 EmployeeTimeSheetAdapter.method('changeTimeSheetStatusWithId', function(id, status) {
-	
+
 	if(status == "" || status ==null || status == undefined){
 		this.showMessage("Status Error","Please select a status");
 		return;
 	}
-	
+
 	object = {"id":id,"status":status};
-	
+
 	var reqJson = JSON.stringify(object);
-	
+
 	var callBackData = [];
 	callBackData['callBackData'] = [];
 	callBackData['callBackSuccess'] = 'changeTimeSheetStatusSuccessCallBack';
 	callBackData['callBackFail'] = 'changeTimeSheetStatusFailCallBack';
-	
+
 	this.customAction('changeTimeSheetStatus','modules=time_sheets',reqJson,callBackData);
 });
 
@@ -380,7 +380,7 @@ EmployeeTimeSheetAdapter.method('getActionButtonsHtml', function(id,data) {
 EmployeeTimeSheetAdapter.method('getCustomTableParams', function() {
 	var that = this;
 	var dataTableParams = {
-			"aoColumnDefs": [ 
+			"aoColumnDefs": [
 			                 {
 			                	 "fnRender": function(data, cell){
 			                		 return that.preProcessRemoteTableData(data, cell, 1)
@@ -464,13 +464,13 @@ SubEmployeeTimeSheetAdapter.method('getCustomSuccessCallBack', function(serverDa
 		}
 		data.push(this.preProcessTableData(row));
 	}
-	
+
 	this.tableData = data;
-	
+
 	this.createTable(this.getTableName());
 	$("#"+this.getTableName()+'Form').hide();
 	$("#"+this.getTableName()).show();
-	
+
 });
 
 SubEmployeeTimeSheetAdapter.method('preProcessTableData', function(row) {
@@ -492,9 +492,9 @@ SubEmployeeTimeSheetAdapter.method('closeTimeSheetStatus', function() {
 
 SubEmployeeTimeSheetAdapter.method('changeTimeSheetStatus', function() {
 	var timeSheetStatus = $('#timesheet_status').val();
-	
+
 	this.changeTimeSheetStatusWithId(this.timeSheetStatusChangeId,timeSheetStatus);
-	
+
 	this.closeTimeSheetStatus();
 	this.timeSheetStatusChangeId = null;
 });
@@ -521,7 +521,7 @@ SubEmployeeTimeSheetAdapter.method('getActionButtonsHtml', function(id,data) {
 			'</div>';
 	}
 
-	
+
 	html = html.replace(/_id_/g,id);
 	html = html.replace(/_BASE_/g,this.baseUrl);
 	html = html.replace(/_sdate_/g,data[1]);
@@ -534,7 +534,7 @@ SubEmployeeTimeSheetAdapter.method('getActionButtonsHtml', function(id,data) {
 SubEmployeeTimeSheetAdapter.method('getCustomTableParams', function() {
 	var that = this;
 	var dataTableParams = {
-			"aoColumnDefs": [ 
+			"aoColumnDefs": [
 			                 {
 			                	 "fnRender": function(data, cell){
 			                		 return that.preProcessRemoteTableData(data, cell, 2)
@@ -615,7 +615,7 @@ EmployeeTimeEntryAdapter.method('getFormFields', function() {
 
 
 EmployeeTimeEntryAdapter.method('getDates', function(startDate, stopDate) {
-	
+
     var dateArray = new Array();
     var currentDate = startDate;
     while (currentDate <= stopDate) {
@@ -631,7 +631,7 @@ EmployeeTimeEntryAdapter.method('renderForm', function(object) {
 	formHtml = formHtml.replace(/modJs/g,"modJsList['tabEmployeeTimeEntry']");
 	var html = "";
 	var fields = this.getFormFields();
-	
+
 	for(var i=0;i<fields.length;i++){
 		var metaField = this.getMetaFieldForRendering(fields[i][0]);
 		if(metaField == "" || metaField == undefined){
@@ -644,32 +644,32 @@ EmployeeTimeEntryAdapter.method('renderForm', function(object) {
 				html += this.renderFormField(fields[i]);
 			}
 		}
-		
+
 	}
-	
-	
+
+
 	//append dates
-	
+
 	//var dateStart = new Date(this.currentTimesheet.date_start);
 	//var dateStop = new Date(this.currentTimesheet.date_end);
-	
+
 	//var datesArray = this.getDates(dateStart, dateStop);
-	
+
 	var optionList = "";
 	for(var i=0; i<this.currentTimesheet.days.length; i++){
         var k = this.currentTimesheet.days[i];
 		//optionList += '<option value="'+timeUtils.getMySQLFormatDate(k)+'">'+k.toUTCString().slice(0, -13)+'</option>';
 		optionList += '<option value="'+k[0]+'">'+k[1]+'</option>';
 	}
-	
-	
-	
+
+
+
 	formHtml = formHtml.replace(/_id_/g,this.getTableName()+"_submit");
 	formHtml = formHtml.replace(/_fields_/g,html);
 	$("#"+this.getTableName()+'Form').html(formHtml);
 	$("#"+this.getTableName()+'Form').show();
 	$("#"+this.getTableName()).hide();
-	
+
 	$("#"+this.getTableName()+'Form .datefield').datepicker({'viewMode':2});
 	$("#"+this.getTableName()+'Form .datetimefield').datetimepicker({
       language: 'en'
@@ -678,9 +678,9 @@ EmployeeTimeEntryAdapter.method('renderForm', function(object) {
 	      language: 'en',
 	      pickDate: false
 	});
-	
+
 	$("#"+this.getTableName()+'Form .select2Field').select2();
-	
+
 	$("#date_select").html(optionList);
 
 
@@ -726,20 +726,20 @@ EmployeeTimeEntryAdapter.method('setEmployeeProjects', function(employeeProjects
 
 EmployeeTimeEntryAdapter.method('save', function() {
 	var validator = new FormValidation(this.getTableName()+"_submit",true,{'ShowPopup':false,"LabelErrorClass":"error"});
-	
+
 	if(validator.checkValues()){
 		var params = validator.getFormParameters();
 		$(params).attr('timesheet',this.timesheetId);
-		
+
 		params.time_start = params.date_start;
 		params.time_end = params.date_end;
-		
+
 		params.date_start = params.date_select+" "+params.date_start;
 		params.date_end = params.date_select+" "+params.date_end;
-		
-		
+
+
 		var msg = this.doCustomValidation(params);
-		
+
 		if(msg == null){
 			var id = $('#'+this.getTableName()+"_submit #id").val();
 			if(id != null && id != undefined && id != ""){
@@ -751,7 +751,7 @@ EmployeeTimeEntryAdapter.method('save', function() {
 			$("#"+this.getTableName()+'Form .label').html(msg);
 			$("#"+this.getTableName()+'Form .label').show();
 		}
-		
+
 	}
 });
 
@@ -764,7 +764,7 @@ EmployeeTimeEntryAdapter.method('doCustomValidation', function(params) {
 	/*
 	var sd = Date.parse(this.currentTimesheet.date_start);
 	var ed = Date.parse(this.currentTimesheet.date_end).addDays(1);
-	
+
 	if(sd.compareTo(et) != -1 || sd.compareTo(st) > 0 || st.compareTo(ed) != -1 || et.compareTo(ed) != -1){
 		return "Start time and end time shoud be with in " + sd.toString('MMM d, yyyy (dddd)') + " and " + ed.toString('MMM d, yyyy (dddd)');
 	}
@@ -779,7 +779,7 @@ EmployeeTimeEntryAdapter.method('addSuccessCallBack', function(callBackData,serv
 
 EmployeeTimeEntryAdapter.method('deleteRow', function(id) {
 	this.deleteObj(id,[]);
-	
+
 });
 
 EmployeeTimeEntryAdapter.method('deleteSuccessCallBack', function(callBackData,serverData) {
@@ -807,10 +807,10 @@ QtsheetAdapter.method('validateCellValue', function(element, evt, newValue) {
 		return false;
 	}
 	var val = parseFloat(newValue);
-	if(val <= 0  || val > 24){
+	if(val < 0  || val > 24){
 		return false;
 	}
-	
+
 	//Update total
 	//Find current column number
 	//Adding 2 because nth child is based on 1 and we are adding a virtual column for row names
@@ -845,7 +845,7 @@ QtsheetAdapter.method('validateCellValue', function(element, evt, newValue) {
 	if(columnTotal > 24){
 		return false;
 	}
-	
+
 	modJs.addCellDataUpdate(element.data('colId'),element.data('rowId'),newValue);
 	return true;
 });

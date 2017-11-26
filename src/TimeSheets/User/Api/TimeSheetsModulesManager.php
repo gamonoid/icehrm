@@ -79,4 +79,14 @@ class TimeSheetsModulesManager extends AbstractModuleManager
         }
         return new IceResponse(IceResponse::SUCCESS, $hours.":".$rem);
     }
+
+    public function initCalculationHooks()
+    {
+        $this->addCalculationHook(
+            'TimeSheetsPayrollUtils_getApprovedTimeInTimeSheets',
+            'Total Hours from Approved Time Sheets',
+            TimeSheetsPayrollUtils::class,
+            'getApprovedTimeInTimeSheets'
+        );
+    }
 }

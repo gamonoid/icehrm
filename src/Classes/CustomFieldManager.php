@@ -9,11 +9,16 @@
 namespace Classes;
 
 use Metadata\Common\Model\CustomFieldValue;
+use Utils\LogManager;
 
 class CustomFieldManager
 {
     public function addCustomField($type, $id, $name, $value)
     {
+        if ($name[0] === '/') {
+            return;
+        }
+
         $customFieldValue = new CustomFieldValue();
         $customFieldValue->Load(
             "type = ? and name = ? and object_id = ?",
@@ -24,12 +29,17 @@ class CustomFieldManager
             $customFieldValue->name = $name;
             $customFieldValue->object_id = $id;
             $customFieldValue->type = $type;
-            $customFieldValue->created = date("Y-md-d H:i:s");
+            $customFieldValue->created = date("Y-m-d H:i:s");
         }
 
         $customFieldValue->value = $value;
-        $customFieldValue->updated = date("Y-md-d H:i:s");
-        $customFieldValue->Save();
+        $customFieldValue->updated = date("Y-m-d H:i:s");
+        $ok = $customFieldValue->Save();
+        if (!$ok) {
+            LogManager::getInstance()->error("Error saving custom field: " . $customFieldValue->ErrorMsg());
+            return false;
+        }
+        return true;
     }
 
     public function getCustomFields($type, $id)

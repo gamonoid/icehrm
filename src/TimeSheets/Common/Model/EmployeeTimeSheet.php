@@ -35,7 +35,7 @@ class EmployeeTimeSheet extends BaseModel
         return array("element","save","delete");
     }
 
-    public function getTotalTime()
+    public function getTotalTimeMinutes()
     {
 
         $start = $this->date_start . " 00:00:00";
@@ -59,11 +59,18 @@ class EmployeeTimeSheet extends BaseModel
         }
 
         $totMinutes = round($seconds / 60);
+        
+        return $totMinutes;
+    }
+
+    public function getTotalTime()
+    {
+        $totMinutes = $this->getTotalTimeMinutes();
         $minutes = $totMinutes % 60;
         $hours = ($totMinutes - $minutes) / 60;
 
         return CalendarTools::addLeadingZero($hours)
-            . ":" . CalendarTools::addLeadingZero($minutes);
+        . ":" . CalendarTools::addLeadingZero($minutes);
     }
 
     public function postProcessGetData($entry)

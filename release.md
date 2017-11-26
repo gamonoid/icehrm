@@ -1,3 +1,16 @@
+Release note v20.3.0.OS
+-----------------------
+### Features
+ * Employee and Attendance REST Api Released
+ * Import/Export for Payroll Configurations
+ * Ability to import employee approved time sheet hours to payroll
+ * Swift Mailer based SMTP support (no need to install Net_SMTP anymore)
+ * Add direct Edit button on employee list
+ 
+### Fixes
+  * Fix DB connection issues due to special characters in password
+  * Fixes for custom field saving issues in mysql v5.7.x
+  
 Release note v20.2
 ------------------
 ### Fixes

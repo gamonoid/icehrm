@@ -36,15 +36,6 @@ class DataActionManager extends SubActionManager
 
         $data = file_get_contents($url);
 
-        $data = str_replace("\r", "\n", $data);
-        $data = str_replace("\n\n", "\n", $data);
-
-        $lines = str_getcsv($data, "\n");
-
-        $headerProcessed = false;
-
-        $counter = 0;
-
         $dataImport = new DataImport();
         $dataImport->Load("id =?", array($dataFile->data_import_definition));
         if (empty($dataImport->id)) {
@@ -54,27 +45,13 @@ class DataActionManager extends SubActionManager
         $processClass = '\\Data\Admin\Import\\'.$dataImport->dataType;
         $processObj = new $processClass();
 
-        LogManager::getInstance()->info("Line Count:".count($lines));
-
-        $res = array();
-
-        foreach ($lines as $line) {
-            $cells = str_getcsv($line, ",");
-            if ($headerProcessed === false) {
-                $processObj->setDataImportId($dataImport->id);
-                $processObj->processHeader($cells);
-                $headerProcessed = true;
-            } else {
-                $result = $processObj->processDataRow($counter, $cells);
-                $res[] = array($cells,$result);
-            }
-            $counter++;
+        $res = $processObj->process($data, $dataImport->id);
+        if ($processObj->getLastStatus() === IceResponse::SUCCESS) {
+            $dataFile->status = "Processed";
         }
-
-        $dataFile->status = "Processed";
         $dataFile->details = json_encode($res, JSON_PRETTY_PRINT);
         $dataFile->Save();
-        return new IceResponse(IceResponse::SUCCESS, $processObj->getRowObjects());
+        return new IceResponse($processObj->getLastStatus(), $processObj->getResult());
     }
 
     private function processHeader($dataImportId, $data)

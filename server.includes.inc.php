@@ -24,7 +24,9 @@ if (defined("MODULE_PATH")) {
 
 $user = \Utils\SessionUtils::getSessionObject('user');
 
-$dbLocal = NewADOConnection(APP_CON_STR);
+$dbLocal = NewADOConnection('mysqli');
+$res = $dbLocal->Connect(APP_HOST, APP_USERNAME, APP_PASSWORD, APP_DB);
+
 
 \Model\File::SetDatabaseAdapter($dbLocal);
 \Model\Setting::SetDatabaseAdapter($dbLocal);
@@ -135,6 +137,8 @@ if ($emailEnabled == "1") {
         $emailSender = new \Classes\Email\SNSEmailSender($settingsManager);
     } elseif ($emailMode == "PHP Mailer") {
         $emailSender = new \Classes\Email\PHPMailer($settingsManager);
+    } elseif ($emailMode == "Swift SMTP") {
+        $emailSender = new \Classes\Email\SwiftMailer($settingsManager);
     }
 }
 

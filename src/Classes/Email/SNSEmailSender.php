@@ -31,10 +31,15 @@ class SNSEmailSender extends EmailSender
         $fromEmail,
         $replyToEmail = null,
         $ccList = array(),
-        $bccList = array()
+        $bccList = array(),
+        $fromName = null
     ) {
 
         try {
+            if ($fromName) {
+                $fromEmail = $fromName." <".$fromEmail.">";
+            }
+
             if (empty($replyToEmail)) {
                 $replyToEmail = $fromEmail;
             }
@@ -57,7 +62,6 @@ class SNSEmailSender extends EmailSender
                 )
             );
 
-            //$response = $this->ses->sendEmail($fromEmail, $toArray, $message);
             $response = $this->ses->sendEmail(
                 array(
                     'Source' => $fromEmail,
@@ -70,7 +74,7 @@ class SNSEmailSender extends EmailSender
 
             LogManager::getInstance()->info("SES Response:" . print_r($response, true));
 
-            return $response;
+            return true;
         } catch (\Exception $e) {
             LogManager::getInstance()->error("Error sending email:" . $e->getMessage());
             return false;

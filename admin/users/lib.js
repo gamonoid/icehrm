@@ -55,7 +55,12 @@ UserAdapter.method('changePassword', function() {
 });
 
 UserAdapter.method('saveUserSuccessCallBack', function(callBackData,serverData) {
-	this.showMessage("Create User","An email has been sent to "+callBackData['email']+" with a temporary password to login to IceHrm.");
+	var user = callBackData[0];
+	if (callBackData[1]) {
+		this.showMessage("Create User","An email has been sent to "+user['email']+" with a temporary password to login to IceHrm.");
+	} else {
+		this.showMessage("Create User","User created successfully. But there was a problem sending welcome email.");
+	}
 	this.get([]);
 });
 
@@ -76,7 +81,7 @@ UserAdapter.method('save', function() {
 	var validator = new FormValidation(this.getTableName()+"_submit",true,{'ShowPopup':false,"LabelErrorClass":"error"});
 	if(validator.checkValues()){
 		var params = validator.getFormParameters();
-		
+
 		var msg = this.doCustomValidation(params);
 		if(msg == null){
 			var id = $('#'+this.getTableName()+"_submit #id").val();
@@ -84,63 +89,63 @@ UserAdapter.method('save', function() {
 				$(params).attr('id',id);
 				this.add(params,[]);
 			}else{
-				
+
 				var reqJson = JSON.stringify(params);
-				
+
 				var callBackData = [];
 				callBackData['callBackData'] = [];
 				callBackData['callBackSuccess'] = 'saveUserSuccessCallBack';
 				callBackData['callBackFail'] = 'saveUserFailCallBack';
-				
+
 				this.customAction('saveUser','admin=users',reqJson,callBackData);
 			}
-			
+
 		}else{
 			//$("#"+this.getTableName()+'Form .label').html(msg);
 			//$("#"+this.getTableName()+'Form .label').show();
 			this.showMessage("Error Saving User",msg);
 		}
-		
-		
-		
+
+
+
 	}
 });
 
 
 UserAdapter.method('changePasswordConfirm', function() {
 	$('#adminUsersChangePwd_error').hide();
-	
-	var passwordValidation =  function (str) {  
-		var val = /^[a-zA-Z0-9]\w{6,}$/;  
-		return str != null && val.test(str);  
+
+	var passwordValidation =  function (str) {
+		var val = /^[a-zA-Z0-9]\w{6,}$/;
+		return str != null && val.test(str);
 	};
-	
+
 	var password = $('#adminUsersChangePwd #newpwd').val();
-	
+
 	if(!passwordValidation(password)){
 		$('#adminUsersChangePwd_error').html("Password may contain only letters, numbers and should be longer than 6 characters");
 		$('#adminUsersChangePwd_error').show();
 		return;
 	}
-	
+
 	var conPassword = $('#adminUsersChangePwd #conpwd').val();
-	
+
 	if(conPassword != password){
 		$('#adminUsersChangePwd_error').html("Passwords don't match");
 		$('#adminUsersChangePwd_error').show();
 		return;
 	}
-	
+
 	var req = {"id":this.currentId,"pwd":conPassword};
 	var reqJson = JSON.stringify(req);
-	
+
 	var callBackData = [];
 	callBackData['callBackData'] = [];
 	callBackData['callBackSuccess'] = 'changePasswordSuccessCallBack';
 	callBackData['callBackFail'] = 'changePasswordFailCallBack';
-	
+
 	this.customAction('changePassword','admin=users',reqJson,callBackData);
-	
+
 });
 
 UserAdapter.method('closeChangePassword', function() {

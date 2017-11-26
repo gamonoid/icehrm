@@ -31,5 +31,21 @@ class Report extends BaseModel
         return $entry;
     }
 
+    public function getCustomFilterQuery($filter)
+    {
+        $filter = json_decode($filter, true);
+        if ($filter['type'] === 'Reports') {
+            $query = ' and report_group <> ?';
+        } elseif ($filter['type'] === 'Exports') {
+            $query = ' and report_group = ?';
+        } else {
+            $query = '';
+        }
+
+        $queryData = array('Payroll');
+
+        return array($query, $queryData);
+    }
+
     public $table = 'Reports';
 }

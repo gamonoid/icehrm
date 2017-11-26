@@ -297,6 +297,7 @@ PayrollColumnAdapter.method('getDataMapping', function() {
         "name",
         "colorder",
         "calculation_hook",
+        "deduction_group",
         "editable",
         "enabled"
     ];
@@ -308,6 +309,7 @@ PayrollColumnAdapter.method('getHeaders', function() {
         { "sTitle": "Name"},
         { "sTitle": "Column Order"},
         { "sTitle": "Calculation Method"},
+        { "sTitle": "Calculation Group"},
         { "sTitle": "Editable"},
         { "sTitle": "Enabled"}
     ];
@@ -334,6 +336,7 @@ PayrollColumnAdapter.method('getFormFields', function() {
         [ "id", {"label":"ID","type":"hidden"}],
         [ "name", {"label":"Name","type":"text","validation":""}],
         [ "calculation_hook", {"label":"Predefined Calculations","type":"select2","allow-null":true,"null-label":"None","remote-source":["CalculationHook","code","name"]}],
+        [ "deduction_group", {"label":"Calculation Group","type":"select2","allow-null":true,"null-label":"Common","remote-source":["DeductionGroup","id","name"]}],
         [ "salary_components", {"label":"Salary Components","type":"select2multi","remote-source":["SalaryComponent","id","name"]}],
         [ "deductions", {"label":"Calculation Method","type":"select2multi","remote-source":["Deduction","id","name"]}],
         [ "add_columns", {"label":"Columns to Add","type":"select2multi","remote-source":["PayrollColumn","id","name"]}],
@@ -344,6 +347,12 @@ PayrollColumnAdapter.method('getFormFields', function() {
         [ "default_value", {"label":"Default Value","type":"text","validation":""}],
         fucntionColumnList,
         [ "calculation_function", {"label":"Function","type":"text","validation":"none"}]
+    ];
+});
+
+PayrollColumnAdapter.method('getFilters', function() {
+    return [
+        [ "deduction_group", {"label":"Calculation Group","type":"select2","allow-null":true,"null-label":"Any","remote-source":["DeductionGroup","id","name"]}]
     ];
 });
 

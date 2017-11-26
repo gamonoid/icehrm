@@ -197,9 +197,9 @@ EmployeeAdapter.method('getFormFields', function() {
         [ "department", {"label":"Department","type":"select2","remote-source":["CompanyStructure","id","title"]}],
         [ "supervisor", {"label":"Direct Supervisor","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
         [ "indirect_supervisors", {"label":"Indirect Supervisors","type":"select2multi","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
-        [ "approver1", {"label":"First Level Approver","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
-        [ "approver2", {"label":"Second Level Approver","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
-        [ "approver3", {"label":"Third Level Approver","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
+        [ "approver1", {"label":"First Level Approver","type":"select2","allow-null":true,"null-label":"None","remote-source":["Employee","id","first_name+last_name"]}],
+        [ "approver2", {"label":"Second Level Approver","type":"select2","allow-null":true,"null-label":"None","remote-source":["Employee","id","first_name+last_name"]}],
+        [ "approver3", {"label":"Third Level Approver","type":"select2","allow-null":true,"null-label":"None","remote-source":["Employee","id","first_name+last_name"]}],
         [ "notes", {"label":"Notes","type":"datagroup",
             "form":[
                 [ "note", {"label":"Note","type":"textarea","validation":""}]
@@ -252,7 +252,7 @@ EmployeeAdapter.method('getFilters', function() {
 });
 
 EmployeeAdapter.method('getActionButtonsHtml', function(id) {
-    var html = '<div style="width:110px;"><img class="tableActionButton" src="_BASE_images/user.png" style="cursor:pointer;" rel="tooltip" title="Login as this Employee" onclick="modJs.setAdminProfile(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/view.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="View" onclick="modJs.view(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/edit.png" style="display:none;cursor:pointer;margin-left:15px;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/connect-no.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Terminate Employee" onclick="modJs.terminateEmployee(_id_);return false;"></img></div>';
+    var html = '<div style="width:110px;"><img class="tableActionButton" src="_BASE_images/user.png" style="cursor:pointer;" rel="tooltip" title="Login as this Employee" onclick="modJs.setAdminProfile(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/view.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="View" onclick="modJs.view(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/edit.png" style="display:none;cursor:pointer;margin-left:15px;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/connect-no.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Terminate Employee" onclick="modJs.terminateEmployee(_id_);return false;"></img></div>';
     html = html.replace(/_id_/g,id);
     html = html.replace(/_BASE_/g,this.baseUrl);
     return html;
