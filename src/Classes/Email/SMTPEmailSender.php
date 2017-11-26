@@ -25,7 +25,8 @@ class SMTPEmailSender extends EmailSender
         $fromEmail,
         $replyToEmail = null,
         $ccList = array(),
-        $bccList = array()
+        $bccList = array(),
+        $fromName = ''
     ) {
 
         try {
@@ -76,9 +77,10 @@ class SMTPEmailSender extends EmailSender
             $mail = $smtp->send($toEmail, $headers, $body);
             if (\PEAR::isError($mail)) {
                 LogManager::getInstance()->info("SMTP Error Response:" . $mail->getMessage());
+                return false;
             }
 
-            return $mail;
+            return true;
         } catch (\Exception $e) {
             LogManager::getInstance()->error("Error sending email:" . $e->getMessage());
             return false;

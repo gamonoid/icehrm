@@ -135,6 +135,8 @@ if ($emailEnabled == "1") {
         $emailSender = new \Classes\Email\SNSEmailSender($settingsManager);
     } elseif ($emailMode == "PHP Mailer") {
         $emailSender = new \Classes\Email\PHPMailer($settingsManager);
+    } elseif ($emailMode == "Swift SMTP") {
+        $emailSender = new \Classes\Email\SwiftMailer($settingsManager);
     }
 }
 

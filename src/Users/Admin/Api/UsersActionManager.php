@@ -98,16 +98,17 @@ class UsersActionManager extends SubActionManager
             $ok = $user->Save();
             if (!$ok) {
                 LogManager::getInstance()->info($user->ErrorMsg()."|".json_encode($user));
-                return new IceResponse(IceResponse::ERROR, "Error occured while saving the user");
+                return new IceResponse(IceResponse::ERROR, "Error occurred while saving the user");
             }
             $user->password = "";
             $user = $this->baseService->cleanUpAdoDB($user);
 
+            $mailResponse = false;
             if (!empty($this->emailSender)) {
                 $usersEmailSender = new UsersEmailSender($this->emailSender, $this);
-                $usersEmailSender->sendWelcomeUserEmail($user, $password, $employee);
+                $mailResponse = $usersEmailSender->sendWelcomeUserEmail($user, $password, $employee);
             }
-            return new IceResponse(IceResponse::SUCCESS, $user);
+            return new IceResponse(IceResponse::SUCCESS, [$user, $mailResponse]);
         }
         return new IceResponse(IceResponse::ERROR, "Not Allowed");
     }
