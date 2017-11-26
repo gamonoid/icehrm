@@ -9,6 +9,7 @@
 namespace Classes;
 
 use Metadata\Common\Model\CustomFieldValue;
+use Utils\LogManager;
 
 class CustomFieldManager
 {
@@ -28,12 +29,17 @@ class CustomFieldManager
             $customFieldValue->name = $name;
             $customFieldValue->object_id = $id;
             $customFieldValue->type = $type;
-            $customFieldValue->created = date("Y-md-d H:i:s");
+            $customFieldValue->created = date("Y-m-d H:i:s");
         }
 
         $customFieldValue->value = $value;
-        $customFieldValue->updated = date("Y-md-d H:i:s");
-        $customFieldValue->Save();
+        $customFieldValue->updated = date("Y-m-d H:i:s");
+        $ok = $customFieldValue->Save();
+        if (!$ok) {
+            LogManager::getInstance()->error("Error saving custom field: " . $customFieldValue->ErrorMsg());
+            return false;
+        }
+        return true;
     }
 
     public function getCustomFields($type, $id)
