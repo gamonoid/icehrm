@@ -1270,18 +1270,6 @@ INSERT INTO `FieldNameMappings` (`type`, `name`, `textOrig`, `textMapped`, `disp
   ('Employee', 'notes', 'Notes', 'Notes', 'Form');
 
 
-INSERT INTO `CustomFields` (`type`, `name`, `data`,`display`) VALUES
-  ('Employee', 'custom1', '', 'Hidden'),
-  ('Employee', 'custom2', '', 'Hidden'),
-  ('Employee', 'custom3', '', 'Hidden'),
-  ('Employee', 'custom4', '', 'Hidden'),
-  ('Employee', 'custom5', '', 'Hidden'),
-  ('Employee', 'custom6', '', 'Hidden'),
-  ('Employee', 'custom7', '', 'Hidden'),
-  ('Employee', 'custom8', '', 'Hidden'),
-  ('Employee', 'custom9', '', 'Hidden'),
-  ('Employee', 'custom10', '', 'Hidden');
-
 INSERT INTO `ImmigrationStatus` VALUES
   (1,'Citizen'),
   (2,'Permanent Resident'),
