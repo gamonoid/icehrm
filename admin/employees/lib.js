@@ -197,9 +197,9 @@ EmployeeAdapter.method('getFormFields', function() {
         [ "department", {"label":"Department","type":"select2","remote-source":["CompanyStructure","id","title"]}],
         [ "supervisor", {"label":"Direct Supervisor","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
         [ "indirect_supervisors", {"label":"Indirect Supervisors","type":"select2multi","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
-        [ "approver1", {"label":"First Level Approver","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
-        [ "approver2", {"label":"Second Level Approver","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
-        [ "approver3", {"label":"Third Level Approver","type":"select2","allow-null":true,"remote-source":["Employee","id","first_name+last_name"]}],
+        [ "approver1", {"label":"First Level Approver","type":"select2","allow-null":true,"null-label":"None","remote-source":["Employee","id","first_name+last_name"]}],
+        [ "approver2", {"label":"Second Level Approver","type":"select2","allow-null":true,"null-label":"None","remote-source":["Employee","id","first_name+last_name"]}],
+        [ "approver3", {"label":"Third Level Approver","type":"select2","allow-null":true,"null-label":"None","remote-source":["Employee","id","first_name+last_name"]}],
         [ "notes", {"label":"Notes","type":"datagroup",
             "form":[
                 [ "note", {"label":"Note","type":"textarea","validation":""}]
