@@ -1,15 +1,12 @@
 <?php
 namespace Robo;
 
-use League\Container\Container;
-use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\StringInput;
-use Consolidation\AnnotatedCommand\PassThroughArgsInput;
 use Robo\Contract\BuilderAwareInterface;
+use Robo\Collection\CollectionBuilder;
 use Robo\Common\IO;
 use Robo\Exception\TaskExitException;
-use League\Container\ContainerInterface;
 use League\Container\ContainerAwareInterface;
 use League\Container\ContainerAwareTrait;
 
@@ -37,6 +34,16 @@ class Runner implements ContainerAwareInterface
     protected $dir;
 
     /**
+     * @var string[]
+     */
+    protected $errorConditions = [];
+
+    /**
+     * @var string GitHub Repo for SelfUpdate
+     */
+    protected $selfUpdateRepository = null;
+
+    /**
      * Class Constructor
      *
      * @param null|string $roboClass
@@ -48,6 +55,11 @@ class Runner implements ContainerAwareInterface
         $this->roboClass = $roboClass ? $roboClass : self::ROBOCLASS ;
         $this->roboFile  = $roboFile ? $roboFile : self::ROBOFILE;
         $this->dir = getcwd();
+    }
+
+    protected function errorCondtion($msg, $errorType)
+    {
+        $this->errorConditions[$msg] = $errorType;
     }
 
     /**
@@ -70,7 +82,7 @@ class Runner implements ContainerAwareInterface
             return true;
         }
         if (!file_exists($this->dir)) {
-            $output->writeln("<error>Path `{$this->dir}` is invalid; please provide a valid absolute path to the Robofile to load.</error>");
+            $this->errorCondtion("Path `{$this->dir}` is invalid; please provide a valid absolute path to the Robofile to load.", 'red');
             return false;
         }
 
@@ -79,13 +91,13 @@ class Runner implements ContainerAwareInterface
         $roboFilePath = $realDir . DIRECTORY_SEPARATOR . $this->roboFile;
         if (!file_exists($roboFilePath)) {
             $requestedRoboFilePath = $this->dir . DIRECTORY_SEPARATOR . $this->roboFile;
-            $output->writeln("<error>Requested RoboFile `$requestedRoboFilePath` is invalid, please provide valid absolute path to load Robofile</error>");
+            $this->errorCondtion("Requested RoboFile `$requestedRoboFilePath` is invalid, please provide valid absolute path to load Robofile.", 'red');
             return false;
         }
         require_once $roboFilePath;
 
         if (!class_exists($this->roboClass)) {
-            $output->writeln("<error>Class ".$this->roboClass." was not loaded</error>");
+            $this->errorCondtion("Class {$this->roboClass} was not loaded.", 'red');
             return false;
         }
         return true;
@@ -136,7 +148,10 @@ class Runner implements ContainerAwareInterface
 
         // If we were not provided a container, then create one
         if (!$this->getContainer()) {
-            $container = Robo::createDefaultContainer($input, $output, $app);
+            $userConfig = 'robo.yml';
+            $roboAppConfig = dirname(__DIR__) . '/robo.yml';
+            $config = Robo::createConfiguration([$userConfig, $roboAppConfig]);
+            $container = Robo::createDefaultContainer($input, $output, $app, $config);
             $this->setContainer($container);
             // Automatically register a shutdown function and
             // an error handler when we provide the container.
@@ -146,10 +161,13 @@ class Runner implements ContainerAwareInterface
         if (!$app) {
             $app = Robo::application();
         }
-        if (!isset($commandFiles)) {
-            $this->yell("Robo is not initialized here. Please run `robo init` to create a new RoboFile", 40, 'yellow');
-            $app->addInitRoboFileCommand($this->roboFile, $this->roboClass);
-            $commandFiles = [];
+        if ($app instanceof \Robo\Application) {
+            $app->addSelfUpdateCommand($this->getSelfUpdateRepository());
+            if (!isset($commandFiles)) {
+                $this->errorCondtion("Robo is not initialized here. Please run `robo init` to create a new RoboFile.", 'yellow');
+                $app->addInitRoboFileCommand($this->roboFile, $this->roboClass);
+                $commandFiles = [];
+            }
         }
         $this->registerCommandClasses($app, $commandFiles);
 
@@ -157,6 +175,15 @@ class Runner implements ContainerAwareInterface
             $statusCode = $app->run($input, $output);
         } catch (TaskExitException $e) {
             $statusCode = $e->getCode() ?: 1;
+        }
+
+        // If there were any error conditions in bootstrapping Robo,
+        // print them only if the requested command did not complete
+        // successfully.
+        if ($statusCode) {
+            foreach ($this->errorConditions as $msg => $color) {
+                $this->yell($msg, 40, $color);
+            }
         }
         return $statusCode;
     }
@@ -222,6 +249,9 @@ class Runner implements ContainerAwareInterface
         // If the command class is already an instantiated object, then
         // just use it exactly as it was provided to us.
         if (is_string($commandClass)) {
+            if (!class_exists($commandClass)) {
+                return;
+            }
             $reflectionClass = new \ReflectionClass($commandClass);
             if ($reflectionClass->isAbstract()) {
                 return;
@@ -235,7 +265,7 @@ class Runner implements ContainerAwareInterface
         // ensure that it has a builder.  Every command class needs
         // its own collection builder, as they have references to each other.
         if ($commandClass instanceof BuilderAwareInterface) {
-            $builder = $container->get('collectionBuilder', [$commandClass]);
+            $builder = CollectionBuilder::create($container, $commandClass);
             $commandClass->setBuilder($builder);
         }
         if ($commandClass instanceof ContainerAwareInterface) {
@@ -415,5 +445,21 @@ class Runner implements ContainerAwareInterface
             return true;
         }
         return false;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSelfUpdateRepository()
+    {
+        return $this->selfUpdateRepository;
+    }
+
+    /**
+     * @param string $selfUpdateRepository
+     */
+    public function setSelfUpdateRepository($selfUpdateRepository)
+    {
+        $this->selfUpdateRepository = $selfUpdateRepository;
     }
 }

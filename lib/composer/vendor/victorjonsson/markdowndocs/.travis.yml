@@ -1,9 +1,0 @@
-language: php
-
-php:
-  - 5.5
-
-script:
-  - composer self-update
-  - composer install --no-interaction --prefer-source
-  - phpunit

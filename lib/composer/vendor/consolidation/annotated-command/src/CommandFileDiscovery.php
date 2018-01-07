@@ -40,6 +40,8 @@ class CommandFileDiscovery
     protected $includeFilesAtBase = true;
     /** @var integer */
     protected $searchDepth = 2;
+    /** @var bool */
+    protected $followLinks = false;
 
     public function __construct()
     {
@@ -98,6 +100,16 @@ class CommandFileDiscovery
     public function setSearchDepth($searchDepth)
     {
         $this->searchDepth = $searchDepth;
+        return $this;
+    }
+
+    /**
+     * Specify that the discovery object should follow symlinks. By
+     * default, symlinks are not followed.
+     */
+    public function followLinks($followLinks = true)
+    {
+        $this->followLinks = $followLinks;
         return $this;
     }
 
@@ -325,6 +337,10 @@ class CommandFileDiscovery
             $finder->exclude($item);
         }
 
+        if ($this->followLinks) {
+            $finder->followLinks();
+        }
+
         return $finder;
     }
 
@@ -357,13 +373,14 @@ class CommandFileDiscovery
      */
     protected function joinPaths(array $pathParts)
     {
-        return $this->joinParts(
+        $path = $this->joinParts(
             '/',
             $pathParts,
             function ($item) {
                 return !empty($item);
             }
         );
+        return str_replace(DIRECTORY_SEPARATOR, '/', $path);
     }
 
     /**
@@ -375,6 +392,12 @@ class CommandFileDiscovery
      */
     protected function joinParts($delimiter, $parts, $filterFunction)
     {
+        $parts = array_map(
+            function ($item) use ($delimiter) {
+                return rtrim($item, $delimiter);
+            },
+            $parts
+        );
         return implode(
             $delimiter,
             array_filter($parts, $filterFunction)

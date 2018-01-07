@@ -61,9 +61,6 @@ class Finder implements \IteratorAggregate, \Countable
 
     private static $vcsPatterns = array('.svn', '_svn', 'CVS', '_darcs', '.arch-params', '.monotone', '.bzr', '.git', '.hg');
 
-    /**
-     * Constructor.
-     */
     public function __construct()
     {
         $this->ignore = static::IGNORE_VCS_FILES | static::IGNORE_DOT_FILES;
@@ -72,7 +69,7 @@ class Finder implements \IteratorAggregate, \Countable
     /**
      * Creates a new Finder.
      *
-     * @return Finder A new Finder instance
+     * @return static
      */
     public static function create()
     {
@@ -82,7 +79,7 @@ class Finder implements \IteratorAggregate, \Countable
     /**
      * Restricts the matching to directories only.
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      */
     public function directories()
     {
@@ -94,7 +91,7 @@ class Finder implements \IteratorAggregate, \Countable
     /**
      * Restricts the matching to files only.
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      */
     public function files()
     {
@@ -111,9 +108,9 @@ class Finder implements \IteratorAggregate, \Countable
      *   $finder->depth('> 1') // the Finder will start matching at level 1.
      *   $finder->depth('< 3') // the Finder will descend at most 3 levels of directories below the starting point.
      *
-     * @param int $level The depth level expression
+     * @param string|int $level The depth level expression
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see DepthRangeFilterIterator
      * @see NumberComparator
@@ -137,7 +134,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param string $date A date range string
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see strtotime
      * @see DateRangeFilterIterator
@@ -161,7 +158,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param string $pattern A pattern (a regexp, a glob, or a string)
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see FilenameFilterIterator
      */
@@ -177,7 +174,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param string $pattern A pattern (a regexp, a glob, or a string)
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see FilenameFilterIterator
      */
@@ -198,7 +195,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param string $pattern A pattern (string or regexp)
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see FilecontentFilterIterator
      */
@@ -219,7 +216,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param string $pattern A pattern (string or regexp)
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see FilecontentFilterIterator
      */
@@ -242,7 +239,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param string $pattern A pattern (a regexp or a string)
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see FilenameFilterIterator
      */
@@ -265,7 +262,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param string $pattern A pattern (a regexp or a string)
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see FilenameFilterIterator
      */
@@ -283,9 +280,9 @@ class Finder implements \IteratorAggregate, \Countable
      * $finder->size('<= 1Ki');
      * $finder->size(4);
      *
-     * @param string $size A size range string
+     * @param string|int $size A size range string or an integer
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see SizeRangeFilterIterator
      * @see NumberComparator
@@ -302,7 +299,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param string|array $dirs A directory path or an array of directories
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see ExcludeDirectoryFilterIterator
      */
@@ -318,7 +315,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param bool $ignoreDotFiles Whether to exclude "hidden" files or not
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see ExcludeDirectoryFilterIterator
      */
@@ -338,7 +335,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param bool $ignoreVCS Whether to exclude VCS files or not
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see ExcludeDirectoryFilterIterator
      */
@@ -376,9 +373,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * This can be slow as all the matching files and directories must be retrieved for comparison.
      *
-     * @param \Closure $closure An anonymous function
-     *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see SortableIterator
      */
@@ -394,7 +389,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * This can be slow as all the matching files and directories must be retrieved for comparison.
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see SortableIterator
      */
@@ -410,7 +405,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * This can be slow as all the matching files and directories must be retrieved for comparison.
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see SortableIterator
      */
@@ -428,7 +423,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * This can be slow as all the matching files and directories must be retrieved for comparison.
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see SortableIterator
      */
@@ -448,7 +443,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * This can be slow as all the matching files and directories must be retrieved for comparison.
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see SortableIterator
      */
@@ -466,7 +461,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * This can be slow as all the matching files and directories must be retrieved for comparison.
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see SortableIterator
      */
@@ -483,9 +478,7 @@ class Finder implements \IteratorAggregate, \Countable
      * The anonymous function receives a \SplFileInfo and must return false
      * to remove files.
      *
-     * @param \Closure $closure An anonymous function
-     *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @see CustomFilterIterator
      */
@@ -499,7 +492,7 @@ class Finder implements \IteratorAggregate, \Countable
     /**
      * Forces the following of symlinks.
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      */
     public function followLinks()
     {
@@ -515,7 +508,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param bool $ignore
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      */
     public function ignoreUnreadableDirs($ignore = true)
     {
@@ -529,7 +522,7 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param string|array $dirs A directory path or an array of directories
      *
-     * @return Finder|SplFileInfo[] The current Finder instance
+     * @return $this
      *
      * @throws \InvalidArgumentException if one of the directories does not exist
      */
@@ -590,9 +583,9 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * @param mixed $iterator
      *
-     * @return Finder|SplFileInfo[] The finder
+     * @return $this
      *
-     * @throws \InvalidArgumentException When the given argument is not iterable.
+     * @throws \InvalidArgumentException when the given argument is not iterable
      */
     public function append($iterator)
     {
@@ -611,6 +604,20 @@ class Finder implements \IteratorAggregate, \Countable
         }
 
         return $this;
+    }
+
+    /**
+     * Check if the any results were found.
+     *
+     * @return bool
+     */
+    public function hasResults()
+    {
+        foreach ($this->getIterator() as $_) {
+            return true;
+        }
+
+        return false;
     }
 
     /**

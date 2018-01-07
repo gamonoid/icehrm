@@ -19,12 +19,12 @@ class ExampleAnnotatedCommand extends AnnotatedCommand
     /**
      * Do the main function of the my:cat command.
      */
-    public function myCat($one, $two = '', $flip = false)
+    public function myCat($one, $two = '', $multiple = [], $flip = false)
     {
         if ($flip) {
-            return "{$two}{$one}";
+            return "{$two}{$one}" . implode('', array_reverse($multiple));
         }
-        return "{$one}{$two}";
+        return "{$one}{$two}" . implode('', $multiple);
     }
 
     /**
@@ -37,6 +37,8 @@ class ExampleAnnotatedCommand extends AnnotatedCommand
      * @arg string $one The first parameter.
      * @arg string $two The other parameter.
      * @default $two ''
+     * @option array $multiple An array of values
+     * @default $multiple []
      * @option boolean $flip Whether or not the second parameter should come first in the result.
      * @aliases c
      * @usage bet alpha --flip
@@ -46,9 +48,10 @@ class ExampleAnnotatedCommand extends AnnotatedCommand
     {
         $one = $input->getArgument('one');
         $two = $input->getArgument('two');
+        $multiple = $input->getOption('multiple');
         $flip = $input->getOption('flip');
 
-        $result = $this->myCat($one, $two, $flip);
+        $result = $this->myCat($one, $two, $multiple, $flip);
 
         // We could also just use $output->writeln($result) here,
         // but calling processResults enables the use of output

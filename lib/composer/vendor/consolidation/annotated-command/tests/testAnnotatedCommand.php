@@ -20,10 +20,10 @@ class AnnotatedCommandTests extends \PHPUnit_Framework_TestCase
         $this->assertEquals("This command will concatenate two parameters. If the --flip flag\nis provided, then the result is the concatenation of two and one.", $command->getHelp());
         $this->assertEquals('c', implode(',', $command->getAliases()));
         // Symfony Console composes the synopsis; perhaps we should not test it. Remove if this gives false failures.
-        $this->assertEquals('my:cat [--flip] [--] <one> [<two>]', $command->getSynopsis());
+        $this->assertEquals('my:cat [--multiple MULTIPLE] [--flip] [--] <one> [<two>]', $command->getSynopsis());
         $this->assertEquals('my:cat bet alpha --flip', implode(',', $command->getUsages()));
 
-        $input = new StringInput('my:cat bet alpha --flip');
+        $input = new StringInput('my:cat b alpha --multiple=t --multiple=e --flip');
         $this->assertRunCommandViaApplicationEquals($command, $input, 'alphabet');
     }
 

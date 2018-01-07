@@ -11,9 +11,15 @@
 
 namespace Symfony\Component\Filesystem\Tests;
 
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\Filesystem\Exception\IOException;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\LockHandler;
 
-class LockHandlerTest extends \PHPUnit_Framework_TestCase
+/**
+ * @group legacy
+ */
+class LockHandlerTest extends TestCase
 {
     /**
      * @expectedException \Symfony\Component\Filesystem\Exception\IOException
@@ -37,6 +43,44 @@ class LockHandlerTest extends \PHPUnit_Framework_TestCase
             $this->markTestSkipped('This test will fail if run under superuser');
         }
         new LockHandler('lock', '/');
+    }
+
+    public function testErrorHandlingInLockIfLockPathBecomesUnwritable()
+    {
+        // skip test on Windows; PHP can't easily set file as unreadable on Windows
+        if ('\\' === DIRECTORY_SEPARATOR) {
+            $this->markTestSkipped('This test cannot run on Windows.');
+        }
+
+        $lockPath = sys_get_temp_dir().'/'.uniqid('', true);
+        $e = null;
+        $wrongMessage = null;
+
+        try {
+            mkdir($lockPath);
+
+            $lockHandler = new LockHandler('lock', $lockPath);
+
+            chmod($lockPath, 0444);
+
+            $lockHandler->lock();
+        } catch (IOException $e) {
+            if (false === strpos($e->getMessage(), 'Permission denied')) {
+                $wrongMessage = $e->getMessage();
+            } else {
+                $this->addToAssertionCount(1);
+            }
+        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
+        }
+
+        if (is_dir($lockPath)) {
+            $fs = new Filesystem();
+            $fs->remove($lockPath);
+        }
+
+        $this->assertInstanceOf('Symfony\Component\Filesystem\Exception\IOException', $e, sprintf('Expected IOException to be thrown, got %s instead.', get_class($e)));
+        $this->assertNull($wrongMessage, sprintf('Expected exception message to contain "Permission denied", got "%s" instead.', $wrongMessage));
     }
 
     public function testConstructSanitizeName()

@@ -21,14 +21,14 @@ use InvalidArgumentException;
  *
  * <code>
  * $application = new Monolog\Logger('application');
- * $Api = new Monolog\Logger('Api');
+ * $api = new Monolog\Logger('api');
  *
  * Monolog\Registry::addLogger($application);
- * Monolog\Registry::addLogger($Api);
+ * Monolog\Registry::addLogger($api);
  *
  * function testLogger()
  * {
- *     Monolog\Registry::Api()->addError('Sent to $Api Logger instance');
+ *     Monolog\Registry::api()->addError('Sent to $api Logger instance');
  *     Monolog\Registry::application()->addError('Sent to $application Logger instance');
  * }
  * </code>

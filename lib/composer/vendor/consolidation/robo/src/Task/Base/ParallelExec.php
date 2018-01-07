@@ -1,8 +1,6 @@
 <?php
 namespace Robo\Task\Base;
 
-use Robo\Contract\ProgressIndicatorAwareInterface;
-use Robo\Common\ProgressIndicatorAwareTrait;
 use Robo\Contract\CommandInterface;
 use Robo\Contract\PrintedInterface;
 use Robo\Result;
@@ -22,10 +20,6 @@ use Symfony\Component\Process\Process;
  *   ->run();
  * ?>
  * ```
- *
- *
- * @method \Robo\Task\Base\ParallelExec timeout(int $timeout) stops process if it runs longer then `$timeout` (seconds)
- * @method \Robo\Task\Base\ParallelExec idleTimeout(int $timeout) stops process if it does not output for time longer then `$timeout` (seconds)
  */
 class ParallelExec extends BaseTask implements CommandInterface, PrintedInterface
 {
@@ -45,6 +39,11 @@ class ParallelExec extends BaseTask implements CommandInterface, PrintedInterfac
      * @var null|int
      */
     protected $idleTimeout = null;
+
+    /**
+     * @var null|int
+     */
+    protected $waitInterval = 0;
 
     /**
      * @var bool
@@ -77,11 +76,14 @@ class ParallelExec extends BaseTask implements CommandInterface, PrintedInterfac
      */
     public function process($command)
     {
-        $this->processes[] = new Process($this->receiveCommand($command));
+        // TODO: Symfony 4 requires that we supply the working directory.
+        $this->processes[] = new Process($this->receiveCommand($command), getcwd());
         return $this;
     }
 
     /**
+     * Stops process if it runs longer then `$timeout` (seconds).
+     *
      * @param int $timeout
      *
      * @return $this
@@ -93,6 +95,8 @@ class ParallelExec extends BaseTask implements CommandInterface, PrintedInterfac
     }
 
     /**
+     * Stops process if it does not output for time longer then `$timeout` (seconds).
+     *
      * @param int $idleTimeout
      *
      * @return $this
@@ -100,6 +104,20 @@ class ParallelExec extends BaseTask implements CommandInterface, PrintedInterfac
     public function idleTimeout($idleTimeout)
     {
         $this->idleTimeout = $idleTimeout;
+        return $this;
+    }
+
+    /**
+     * Parallel processing will wait `$waitInterval` seconds after launching each process and before
+     * the next one.
+     *
+     * @param int $waitInterval
+     *
+     * @return $this
+     */
+    public function waitInterval($waitInterval)
+    {
+        $this->waitInterval = $waitInterval;
         return $this;
     }
 
@@ -124,16 +142,20 @@ class ParallelExec extends BaseTask implements CommandInterface, PrintedInterfac
      */
     public function run()
     {
-        foreach ($this->processes as $process) {
-            $process->setIdleTimeout($this->idleTimeout);
-            $process->setTimeout($this->timeout);
-            $process->start();
-            $this->printTaskInfo($process->getCommandLine());
-        }
-
         $this->startProgressIndicator();
-        $running = $this->processes;
+        $running = [];
+        $queue = $this->processes;
+        $nextTime = time();
         while (true) {
+            if (($nextTime <= time()) && !empty($queue)) {
+                $process = array_shift($queue);
+                $process->setIdleTimeout($this->idleTimeout);
+                $process->setTimeout($this->timeout);
+                $process->start();
+                $this->printTaskInfo($process->getCommandLine());
+                $running[] = $process;
+                $nextTime = time() + $this->waitInterval;
+            }
             foreach ($running as $k => $process) {
                 try {
                     $process->checkTimeout();
@@ -152,7 +174,7 @@ class ParallelExec extends BaseTask implements CommandInterface, PrintedInterfac
                     unset($running[$k]);
                 }
             }
-            if (empty($running)) {
+            if (empty($running) && empty($queue)) {
                 break;
             }
             usleep(1000);

@@ -46,6 +46,7 @@ class FormatterOptions
     const DEFAULT_FIELDS = 'default-fields';
     const DEFAULT_STRING_FIELD = 'default-string-field';
     const DELIMITER = 'delimiter';
+    const LIST_DELIMITER = 'list-delimiter';
     const TERMINAL_WIDTH = 'width';
 
     /**
@@ -82,6 +83,18 @@ class FormatterOptions
     {
         return $this->setConfigurationValue(self::TABLE_STYLE, $style);
     }
+
+    public function setDelimiter($delimiter)
+    {
+        return $this->setConfigurationValue(self::DELIMITER, $delimiter);
+    }
+
+    public function setListDelimiter($listDelimiter)
+    {
+        return $this->setConfigurationValue(self::LIST_DELIMITER, $listDelimiter);
+    }
+
+
 
     public function setIncludeFieldLables($includFieldLables)
     {

@@ -12,6 +12,10 @@
 namespace Symfony\Component\Filesystem;
 
 use Symfony\Component\Filesystem\Exception\IOException;
+use Symfony\Component\Lock\Store\FlockStore;
+use Symfony\Component\Lock\Store\SemaphoreStore;
+
+@trigger_error(sprintf('The %s class is deprecated since Symfony 3.4 and will be removed in 4.0. Use %s or %s instead.', LockHandler::class, SemaphoreStore::class, FlockStore::class), E_USER_DEPRECATED);
 
 /**
  * LockHandler class provides a simple abstraction to lock anything by means of
@@ -25,6 +29,8 @@ use Symfony\Component\Filesystem\Exception\IOException;
  * @author Grégoire Pineau <lyrixx@lyrixx.info>
  * @author Romain Neutron <imprec@gmail.com>
  * @author Nicolas Grekas <p@tchwork.com>
+ *
+ * @deprecated since version 3.4, to be removed in 4.0. Use Symfony\Component\Lock\Store\SemaphoreStore or Symfony\Component\Lock\Store\FlockStore instead.
  */
 class LockHandler
 {
@@ -56,7 +62,7 @@ class LockHandler
     /**
      * Lock the resource.
      *
-     * @param bool $blocking wait until the lock is released
+     * @param bool $blocking Wait until the lock is released
      *
      * @return bool Returns true if the lock was acquired, false otherwise
      *
@@ -68,8 +74,12 @@ class LockHandler
             return true;
         }
 
+        $error = null;
+
         // Silence error reporting
-        set_error_handler(function () {});
+        set_error_handler(function ($errno, $msg) use (&$error) {
+            $error = $msg;
+        });
 
         if (!$this->handle = fopen($this->file, 'r')) {
             if ($this->handle = fopen($this->file, 'x')) {
@@ -82,8 +92,7 @@ class LockHandler
         restore_error_handler();
 
         if (!$this->handle) {
-            $error = error_get_last();
-            throw new IOException($error['message'], 0, null, $this->file);
+            throw new IOException($error, 0, null, $this->file);
         }
 
         // On Windows, even if PHP doc says the contrary, LOCK_NB works, see
