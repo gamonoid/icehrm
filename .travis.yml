@@ -4,7 +4,7 @@ before_script:
   - echo "USE mysql;\nUPDATE user SET password=PASSWORD('dev') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 install:
   #- rm $TRAVIS_BUILD_DIR/tools/phpunit
-  #- composer require --dev phpunit/phpunit ^6.0
+  - composer require --dev phpunit/phpunit ~6.5.5
   #- $TRAVIS_BUILD_DIR/vendor/bin/phpunit --version
   #- cp $TRAVIS_BUILD_DIR/vendor/bin/phpunit $TRAVIS_BUILD_DIR/tools
 script: ant build-ci
