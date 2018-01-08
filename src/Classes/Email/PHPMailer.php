@@ -30,7 +30,6 @@ class PHPMailer extends EmailSender
     ) {
 
         try {
-
             if ($fromName) {
                 $fromEmail = $fromName." <".$fromEmail.">";
             }
