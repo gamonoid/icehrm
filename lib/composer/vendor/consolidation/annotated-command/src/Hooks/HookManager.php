@@ -8,12 +8,15 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\ConsoleEvents;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 
 use Consolidation\AnnotatedCommand\ExitCodeInterface;
 use Consolidation\AnnotatedCommand\OutputDataInterface;
 use Consolidation\AnnotatedCommand\AnnotationData;
 use Consolidation\AnnotatedCommand\CommandData;
 use Consolidation\AnnotatedCommand\CommandError;
+use Consolidation\AnnotatedCommand\Hooks\Dispatchers\CommandEventHookDispatcher;
 
 /**
  * Manage named callback hooks
@@ -24,6 +27,7 @@ class HookManager implements EventSubscriberInterface
     /** var CommandInfo[] */
     protected $hookOptions = [];
 
+    const REPLACE_COMMAND_HOOK = 'replace-command';
     const PRE_COMMAND_EVENT = 'pre-command-event';
     const COMMAND_EVENT = 'command-event';
     const POST_COMMAND_EVENT = 'post-command-event';
@@ -50,6 +54,7 @@ class HookManager implements EventSubscriberInterface
     const POST_ALTER_RESULT = 'post-alter';
     const STATUS_DETERMINER = 'status';
     const EXTRACT_OUTPUT = 'extract';
+    const ON_EVENT = 'on-event';
 
     public function __construct()
     {
@@ -115,6 +120,44 @@ class HookManager implements EventSubscriberInterface
         }
         $reflectionClass = new \ReflectionClass($callback[0]);
         return $reflectionClass->getName();
+    }
+
+    /**
+     * Add a replace command hook
+     *
+     * @param type ReplaceCommandHookInterface $provider
+     * @param type string $command_name The name of the command to replace
+     */
+    public function addReplaceCommandHook(ReplaceCommandHookInterface $replaceCommandHook, $name)
+    {
+        $this->hooks[$name][self::REPLACE_COMMAND_HOOK][] = $replaceCommandHook;
+        return $this;
+    }
+
+    public function addPreCommandEventDispatcher(EventDispatcherInterface $eventDispatcher, $name = '*')
+    {
+        $this->hooks[$name][self::PRE_COMMAND_EVENT][] = $eventDispatcher;
+        return $this;
+    }
+
+    public function addCommandEventDispatcher(EventDispatcherInterface $eventDispatcher, $name = '*')
+    {
+        $this->hooks[$name][self::COMMAND_EVENT][] = $eventDispatcher;
+        return $this;
+    }
+
+    public function addPostCommandEventDispatcher(EventDispatcherInterface $eventDispatcher, $name = '*')
+    {
+        $this->hooks[$name][self::POST_COMMAND_EVENT][] = $eventDispatcher;
+        return $this;
+    }
+
+    public function addCommandEvent(EventSubscriberInterface $eventSubscriber)
+    {
+        // Wrap the event subscriber in a dispatcher and add it
+        $dispatcher = new EventDispatcher();
+        $dispatcher->addSubscriber($eventSubscriber);
+        return $this->addCommandEventDispatcher($dispatcher);
     }
 
     /**
@@ -281,30 +324,6 @@ class HookManager implements EventSubscriberInterface
         return $this;
     }
 
-    public function initializeHook(
-        InputInterface $input,
-        $names,
-        AnnotationData $annotationData
-    ) {
-        $providers = $this->getInitializeHooks($names, $annotationData);
-        foreach ($providers as $provider) {
-            $this->callInjectConfigurationHook($provider, $input, $annotationData);
-        }
-    }
-
-    public function optionsHook(
-        \Consolidation\AnnotatedCommand\AnnotatedCommand $command,
-        $names,
-        AnnotationData $annotationData
-    ) {
-        $optionHooks = $this->getOptionHooks($names, $annotationData);
-        foreach ($optionHooks as $optionHook) {
-            $this->callOptionHook($optionHook, $command, $annotationData);
-        }
-        $commandInfoList = $this->getHookOptionsForCommand($command);
-        $command->optionsHookForHookAnnotations($commandInfoList);
-    }
-
     public function getHookOptionsForCommand($command)
     {
         $names = $this->addWildcardHooksToNames($command->getNames(), $command->getAnnotationData());
@@ -323,210 +342,6 @@ class HookManager implements EventSubscriberInterface
             }
         }
         return $result;
-    }
-
-    public function interact(
-        InputInterface $input,
-        OutputInterface $output,
-        $names,
-        AnnotationData $annotationData
-    ) {
-        $interactors = $this->getInteractors($names, $annotationData);
-        foreach ($interactors as $interactor) {
-            $this->callInteractor($interactor, $input, $output, $annotationData);
-        }
-    }
-
-    public function validateArguments($names, CommandData $commandData)
-    {
-        $validators = $this->getValidators($names, $commandData->annotationData());
-        foreach ($validators as $validator) {
-            $validated = $this->callValidator($validator, $commandData);
-            if ($validated === false) {
-                return new CommandError();
-            }
-            if (is_object($validated)) {
-                return $validated;
-            }
-        }
-    }
-
-    /**
-     * Process result and decide what to do with it.
-     * Allow client to add transformation / interpretation
-     * callbacks.
-     */
-    public function alterResult($names, $result, CommandData $commandData)
-    {
-        $processors = $this->getProcessResultHooks($names, $commandData->annotationData());
-        foreach ($processors as $processor) {
-            $result = $this->callProcessor($processor, $result, $commandData);
-        }
-        $alterers = $this->getAlterResultHooks($names, $commandData->annotationData());
-        foreach ($alterers as $alterer) {
-            $result = $this->callProcessor($alterer, $result, $commandData);
-        }
-
-        return $result;
-    }
-
-    /**
-     * Call all status determiners, and see if any of them
-     * know how to convert to a status code.
-     */
-    public function determineStatusCode($names, $result)
-    {
-        // If the result (post-processing) is an object that
-        // implements ExitCodeInterface, then we will ask it
-        // to give us the status code.
-        if ($result instanceof ExitCodeInterface) {
-            return $result->getExitCode();
-        }
-
-        // If the result does not implement ExitCodeInterface,
-        // then we'll see if there is a determiner that can
-        // extract a status code from the result.
-        $determiners = $this->getStatusDeterminers($names);
-        foreach ($determiners as $determiner) {
-            $status = $this->callDeterminer($determiner, $result);
-            if (isset($status)) {
-                return $status;
-            }
-        }
-    }
-
-    /**
-     * Convert the result object to printable output in
-     * structured form.
-     */
-    public function extractOutput($names, $result)
-    {
-        if ($result instanceof OutputDataInterface) {
-            return $result->getOutputData();
-        }
-
-        $extractors = $this->getOutputExtractors($names);
-        foreach ($extractors as $extractor) {
-            $structuredOutput = $this->callExtractor($extractor, $result);
-            if (isset($structuredOutput)) {
-                return $structuredOutput;
-            }
-        }
-
-        return $result;
-    }
-
-    protected function getCommandEventHooks($names)
-    {
-        return $this->getHooks(
-            $names,
-            [
-                self::PRE_COMMAND_EVENT,
-                self::COMMAND_EVENT,
-                self::POST_COMMAND_EVENT
-            ]
-        );
-    }
-
-    protected function getInitializeHooks($names, AnnotationData $annotationData)
-    {
-        return $this->getHooks(
-            $names,
-            [
-                self::PRE_INITIALIZE,
-                self::INITIALIZE,
-                self::POST_INITIALIZE
-            ],
-            $annotationData
-        );
-    }
-
-    protected function getOptionHooks($names, AnnotationData $annotationData)
-    {
-        return $this->getHooks(
-            $names,
-            [
-                self::PRE_OPTION_HOOK,
-                self::OPTION_HOOK,
-                self::POST_OPTION_HOOK
-            ],
-            $annotationData
-        );
-    }
-
-    protected function getInteractors($names, AnnotationData $annotationData)
-    {
-        return $this->getHooks(
-            $names,
-            [
-                self::PRE_INTERACT,
-                self::INTERACT,
-                self::POST_INTERACT
-            ],
-            $annotationData
-        );
-    }
-
-    protected function getValidators($names, AnnotationData $annotationData)
-    {
-        return $this->getHooks(
-            $names,
-            [
-                self::PRE_ARGUMENT_VALIDATOR,
-                self::ARGUMENT_VALIDATOR,
-                self::POST_ARGUMENT_VALIDATOR,
-                self::PRE_COMMAND_HOOK,
-                self::COMMAND_HOOK,
-            ],
-            $annotationData
-        );
-    }
-
-    protected function getProcessResultHooks($names, AnnotationData $annotationData)
-    {
-        return $this->getHooks(
-            $names,
-            [
-                self::PRE_PROCESS_RESULT,
-                self::PROCESS_RESULT,
-                self::POST_PROCESS_RESULT
-            ],
-            $annotationData
-        );
-    }
-
-    protected function getAlterResultHooks($names, AnnotationData $annotationData)
-    {
-        return $this->getHooks(
-            $names,
-            [
-                self::PRE_ALTER_RESULT,
-                self::ALTER_RESULT,
-                self::POST_ALTER_RESULT,
-                self::POST_COMMAND_HOOK,
-            ],
-            $annotationData
-        );
-    }
-
-    protected function getStatusDeterminers($names)
-    {
-        return $this->getHooks(
-            $names,
-            [
-                self::STATUS_DETERMINER,
-            ]
-        );
-    }
-
-    protected function getOutputExtractors($names)
-    {
-        return $this->getHooks(
-            $names,
-            [
-                self::EXTRACT_OUTPUT,
-            ]
-        );
     }
 
     /**
@@ -583,7 +398,7 @@ class HookManager implements EventSubscriberInterface
      *
      * @return callable[]
      */
-    protected function getHook($name, $hook)
+    public function getHook($name, $hook)
     {
         if (isset($this->hooks[$name][$hook])) {
             return $this->hooks[$name][$hook];
@@ -591,103 +406,22 @@ class HookManager implements EventSubscriberInterface
         return [];
     }
 
-    protected function callInjectConfigurationHook($provider, $input, AnnotationData $annotationData)
-    {
-        if ($provider instanceof InitializeHookInterface) {
-            return $provider->applyConfiguration($input, $annotationData);
-        }
-        if (is_callable($provider)) {
-            return $provider($input, $annotationData);
-        }
-    }
-
-    protected function callOptionHook($optionHook, $command, AnnotationData $annotationData)
-    {
-        if ($optionHook instanceof OptionHookInterface) {
-            return $optionHook->getOptions($command, $annotationData);
-        }
-        if (is_callable($optionHook)) {
-            return $optionHook($command, $annotationData);
-        }
-    }
-
-    protected function callInteractor($interactor, $input, $output, AnnotationData $annotationData)
-    {
-        if ($interactor instanceof InteractorInterface) {
-            return $interactor->interact($input, $output, $annotationData);
-        }
-        if (is_callable($interactor)) {
-            return $interactor($input, $output, $annotationData);
-        }
-    }
-
-    protected function callValidator($validator, CommandData $commandData)
-    {
-        if ($validator instanceof ValidatorInterface) {
-            return $validator->validate($commandData);
-        }
-        if (is_callable($validator)) {
-            return $validator($commandData);
-        }
-    }
-
-    protected function callProcessor($processor, $result, CommandData $commandData)
-    {
-        $processed = null;
-        if ($processor instanceof ProcessResultInterface) {
-            $processed = $processor->process($result, $commandData);
-        }
-        if (is_callable($processor)) {
-            $processed = $processor($result, $commandData);
-        }
-        if (isset($processed)) {
-            return $processed;
-        }
-        return $result;
-    }
-
-    protected function callDeterminer($determiner, $result)
-    {
-        if ($determiner instanceof StatusDeterminerInterface) {
-            return $determiner->determineStatusCode($result);
-        }
-        if (is_callable($determiner)) {
-            return $determiner($result);
-        }
-    }
-
-    protected function callExtractor($extractor, $result)
-    {
-        if ($extractor instanceof ExtractOutputInterface) {
-            return $extractor->extractOutput($result);
-        }
-        if (is_callable($extractor)) {
-            return $extractor($result);
-        }
-    }
-
     /**
+     * Call the command event hooks.
+     *
+     * TODO: This should be moved to CommandEventHookDispatcher, which
+     * should become the class that implements EventSubscriberInterface.
+     * This change would break all clients, though, so postpone until next
+     * major release.
+     *
      * @param ConsoleCommandEvent $event
      */
     public function callCommandEventHooks(ConsoleCommandEvent $event)
     {
         /* @var Command $command */
         $command = $event->getCommand();
-        $names = [$command->getName()];
-        $commandEventHooks = $this->getCommandEventHooks($names);
-        foreach ($commandEventHooks as $commandEvent) {
-            if (is_callable($commandEvent)) {
-                $commandEvent($event);
-            }
-        }
-    }
-
-    public function findAndAddHookOptions($command)
-    {
-        if (!$command instanceof \Consolidation\AnnotatedCommand\AnnotatedCommand) {
-            return;
-        }
-        $command->optionsHook();
+        $dispatcher = new CommandEventHookDispatcher($this, [$command->getName()]);
+        $dispatcher->callCommandEventHooks($event);
     }
 
     /**

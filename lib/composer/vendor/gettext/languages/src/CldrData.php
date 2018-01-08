@@ -36,7 +36,7 @@ class CldrData
                 $match = null;
                 foreach ($list as $key => $value) {
                     $variant = '';
-                    if (preg_match('/^(.+)-alt-(short|variant|stand-alone)$/', $key, $match)) {
+                    if (preg_match('/^(.+)-alt-(short|variant|stand-alone|long)$/', $key, $match)) {
                         $key = $match[1];
                         $variant = $match[2];
                     }
@@ -54,17 +54,13 @@ class CldrData
                         case 'Zzzz': // Script: Unknown Script
                             break;
                         default:
-                            if (
-                                ((strlen($key) !== 4) || ($key < 'Qaaa') || ($key > 'Qabx')) // Script: Reserved for private use
-                            ) {
-                                switch ($variant) {
-                                    case 'stand-alone':
-                                        $standAlone[$key] = $value;
-                                        break;
-                                    case '':
-                                        $result[$key] = $value;
-                                        break;
-                                }
+                            switch ($variant) {
+                                case 'stand-alone':
+                                    $standAlone[$key] = $value;
+                                    break;
+                                case '':
+                                    $result[$key] = $value;
+                                    break;
                             }
                             break;
                     }

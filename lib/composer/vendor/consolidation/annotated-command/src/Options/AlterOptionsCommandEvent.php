@@ -58,7 +58,14 @@ class AlterOptionsCommandEvent implements EventSubscriberInterface
                 $input->bind($command->getDefinition());
             }
 
+            // Symfony Console helpfully swaps 'command_name' and 'command'
+            // depending on whether the user entered `help foo` or `--help foo`.
+            // One of these is always `help`, and the other is the command we
+            // are actually interested in.
             $nameOfCommandToDescribe = $event->getInput()->getArgument('command_name');
+            if ($nameOfCommandToDescribe == 'help') {
+                $nameOfCommandToDescribe = $event->getInput()->getArgument('command');
+            }
             $commandToDescribe = $this->application->find($nameOfCommandToDescribe);
             $this->findAndAddHookOptions($commandToDescribe);
         } else {

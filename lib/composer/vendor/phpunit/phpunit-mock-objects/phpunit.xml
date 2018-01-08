@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/5.6/phpunit.xsd"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/6.5/phpunit.xsd"
          bootstrap="tests/bootstrap.php"
-         backupGlobals="false"
          beStrictAboutCoversAnnotation="true"
          beStrictAboutOutputDuringTests="true"
-         beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutTodoAnnotatedTests="true"
          verbose="true">
-    <testsuite>
-        <directory suffix="Test.php">tests</directory>
-        <directory suffix=".phpt">tests</directory>
-    </testsuite>
+    <testsuites>
+        <testsuite name="small">
+            <directory suffix="Test.php">tests</directory>
+        </testsuite>
+
+        <testsuite name="large">
+            <directory suffix=".phpt">tests</directory>
+        </testsuite>
+    </testsuites>
 
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src</directory>
         </whitelist>
     </filter>
+
+    <php>
+        <const name="PHPUNIT_TESTSUITE" value="true"/>
+    </php>
 </phpunit>

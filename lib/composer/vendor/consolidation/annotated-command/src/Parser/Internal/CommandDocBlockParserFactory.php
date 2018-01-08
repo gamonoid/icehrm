@@ -15,14 +15,6 @@ class CommandDocBlockParserFactory
 
     private static function create(CommandInfo $commandInfo, \ReflectionMethod $reflection)
     {
-        if (static::hasReflectionDocBlock3()) {
-            return new CommandDocBlockParser3($commandInfo, $reflection);
-        }
-        return new CommandDocBlockParser2($commandInfo, $reflection);
-    }
-
-    private static function hasReflectionDocBlock3()
-    {
-        return class_exists('phpDocumentor\Reflection\DocBlockFactory') && class_exists('phpDocumentor\Reflection\Types\ContextFactory');
+        return new BespokeDocBlockParser($commandInfo, $reflection);
     }
 }

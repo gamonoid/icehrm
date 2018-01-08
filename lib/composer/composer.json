@@ -5,11 +5,13 @@
         "gettext/gettext": "4.0.0",
         "consolidation/robo": "~1",
         "filp/whoops": "~2.1",
-        "swiftmailer/swiftmailer": "^6.0"
+        "swiftmailer/swiftmailer": "^6",
+		"pear/net_smtp": "~1.7",
+		"pear/mail": "~1.4"
     },
     "require-dev": {
-      "phpunit/phpunit": "5.5.*"
-    },
+      "phpunit/phpunit": "~6.5.5"
+	},
     "autoload": {
       "psr-4": {
         "": "../../src"

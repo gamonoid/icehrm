@@ -1,7 +1,7 @@
 <?php
 namespace Robo\Common;
 
-use Symfony\Component\Process\ProcessUtils;
+use Robo\Common\ProcessUtils;
 
 /**
  * Use this to add arguments and options to the $arguments property.
@@ -46,10 +46,14 @@ trait CommandArguments
      * Pass the provided string in its raw (as provided) form as an argument to executable.
      *
      * @param string $arg
+     *
+     * @return $this
      */
     public function rawArg($arg)
     {
         $this->arguments .= " $arg";
+
+        return $this;
     }
 
     /**
@@ -74,36 +78,51 @@ trait CommandArguments
      *
      * @param string $option
      * @param string $value
+     * @param string $separator
      *
      * @return $this
      */
-    public function option($option, $value = null)
+    public function option($option, $value = null, $separator = ' ')
     {
         if ($option !== null and strpos($option, '-') !== 0) {
             $option = "--$option";
         }
         $this->arguments .= null == $option ? '' : " " . $option;
-        $this->arguments .= null == $value ? '' : " " . static::escape($value);
+        $this->arguments .= null == $value ? '' : $separator . static::escape($value);
         return $this;
     }
 
     /**
-     * Pass multiple options to executable. Value can be a string or array.
+     * Pass multiple options to executable. The associative array contains
+     * the key:value pairs that become `--key value`, for each item in the array.
+     * Values are automatically escaped.
+     */
+    public function options(array $options, $separator = ' ')
+    {
+        foreach ($options as $option => $value) {
+            $this->option($option, $value, $separator);
+        }
+        return $this;
+    }
+
+    /**
+     * Pass an option with multiple values to executable. Value can be a string or array.
      * Option values are automatically escaped.
      *
      * @param string $option
      * @param string|array $value
+     * @param string $separator
      *
      * @return $this
      */
-    public function optionList($option, $value = array())
+    public function optionList($option, $value = array(), $separator = ' ')
     {
         if (is_array($value)) {
             foreach ($value as $item) {
-                $this->optionList($option, $item);
+                $this->optionList($option, $item, $separator);
             }
         } else {
-            $this->option($option, $value);
+            $this->option($option, $value, $separator);
         }
 
         return $this;

@@ -73,7 +73,7 @@ class Language
             $this->categories[] = $category;
         }
         if (empty($this->categories)) {
-            throw new Exception("The language '$id' does not have any plural category");
+            throw new Exception("The language '{$info['id']}' does not have any plural category");
         }
         // Let's sort the categories from 'zero' to 'other'
         usort($this->categories, function (Category $category1, Category $category2) {
@@ -81,7 +81,7 @@ class Language
         });
         // The 'other' category should always be there
         if ($this->categories[count($this->categories) - 1]->id !== CldrData::OTHER_CATEGORY) {
-            throw new Exception("The language '$id' does not have the '".CldrData::OTHER_CATEGORY."' plural category");
+            throw new Exception("The language '{$info['id']}' does not have the '".CldrData::OTHER_CATEGORY."' plural category");
         }
         $this->checkAlwaysTrueCategories();
         $this->checkAlwaysFalseCategories();

@@ -59,14 +59,14 @@ class Directory extends Renderer
         $data = [
             'numClasses'                   => $node->getNumClassesAndTraits(),
             'numTestedClasses'             => $node->getNumTestedClassesAndTraits(),
-            'numMethods'                   => $node->getNumMethods(),
-            'numTestedMethods'             => $node->getNumTestedMethods(),
+            'numMethods'                   => $node->getNumFunctionsAndMethods(),
+            'numTestedMethods'             => $node->getNumTestedFunctionsAndMethods(),
             'linesExecutedPercent'         => $node->getLineExecutedPercent(false),
             'linesExecutedPercentAsString' => $node->getLineExecutedPercent(),
             'numExecutedLines'             => $node->getNumExecutedLines(),
             'numExecutableLines'           => $node->getNumExecutableLines(),
-            'testedMethodsPercent'         => $node->getTestedMethodsPercent(false),
-            'testedMethodsPercentAsString' => $node->getTestedMethodsPercent(),
+            'testedMethodsPercent'         => $node->getTestedFunctionsAndMethodsPercent(false),
+            'testedMethodsPercentAsString' => $node->getTestedFunctionsAndMethodsPercent(),
             'testedClassesPercent'         => $node->getTestedClassesAndTraitsPercent(false),
             'testedClassesPercentAsString' => $node->getTestedClassesAndTraitsPercent()
         ];
@@ -75,7 +75,7 @@ class Directory extends Renderer
             $data['name'] = 'Total';
         } else {
             if ($node instanceof DirectoryNode) {
-                $data['name'] = sprintf(
+                $data['name'] = \sprintf(
                     '<a href="%s/index.html">%s</a>',
                     $node->getName(),
                     $node->getName()
@@ -83,7 +83,7 @@ class Directory extends Renderer
 
                 $data['icon'] = '<span class="glyphicon glyphicon-folder-open"></span> ';
             } else {
-                $data['name'] = sprintf(
+                $data['name'] = \sprintf(
                     '<a href="%s.html">%s</a>',
                     $node->getName(),
                     $node->getName()

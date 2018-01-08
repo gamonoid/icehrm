@@ -29,7 +29,9 @@ class PropertyParser
         $lines = explode("\n", $data);
         foreach ($lines as $line) {
             list($key, $value) = explode(':', trim($line), 2) + ['', ''];
-            $result[$key] = trim($value);
+            if (!empty($key) && !empty($value)) {
+                $result[$key] = trim($value);
+            }
         }
         return $result;
     }

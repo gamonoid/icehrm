@@ -2,7 +2,11 @@
 
 Apply transformations to structured data to write output in different formats.
 
-[![Travis CI](https://travis-ci.org/consolidation/output-formatters.svg?branch=master)](https://travis-ci.org/consolidation/output-formatters) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/consolidation/output-formatters/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/consolidation/output-formatters/?branch=master) [![Coverage Status](https://coveralls.io/repos/github/consolidation/output-formatters/badge.svg?branch=master)](https://coveralls.io/github/consolidation/output-formatters?branch=master) [![License](https://poser.pugx.org/consolidation/output-formatters/license)](https://packagist.org/packages/consolidation/output-formatters)
+[![Travis CI](https://travis-ci.org/consolidation/output-formatters.svg?branch=master)](https://travis-ci.org/consolidation/output-formatters)
+[![Windows CI](https://ci.appveyor.com/api/projects/status/umyfuujca6d2g2k6?svg=true)](https://ci.appveyor.com/project/greg-1-anderson/output-formatters)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/consolidation/output-formatters/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/consolidation/output-formatters/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/consolidation/output-formatters/badge.svg?branch=master)](https://coveralls.io/github/consolidation/output-formatters?branch=master)
+[![License](https://poser.pugx.org/consolidation/output-formatters/license)](https://packagist.org/packages/consolidation/output-formatters)
 
 ## Component Status
 
@@ -50,6 +54,7 @@ Most formatters will operate on any array or ArrayObject data. Some formatters r
 
 - `RowsOfFields`: Each row contains an associative array of field:value pairs. It is also assumed that the fields of each row are the same for every row. This format is ideal for displaying in a table, with labels in the top row.
 - `PropertyList`: Each row contains a field:value pair. Each field is unique. This format is ideal for displaying in a table, with labels in the first column and values in the second common.
+- `ListDataFromKeys`: The result may be structured or unstructured data. When formatted with the --format=list formatter, the result will come from the array keys instead of the array values.
 - `DOMDocument`: The standard PHP DOM document class may be used by functions that need to be able to presicely specify the exact attributes and children when the XML output format is used.
 
 Commands that return table structured data with fields can be filtered and/or re-ordered by using the --fields option. These structured data types can also be formatted into a more generic type such as yaml or json, even after being filtered. This capabilities are not available if the data is returned in a bare php array.

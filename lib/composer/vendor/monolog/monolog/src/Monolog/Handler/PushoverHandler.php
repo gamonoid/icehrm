@@ -14,7 +14,7 @@ namespace Monolog\Handler;
 use Monolog\Logger;
 
 /**
- * Sends notifications through the pushover Api to mobile phones
+ * Sends notifications through the pushover api to mobile phones
  *
  * @author Sebastian Göttschkes <sebastian.goettschkes@googlemail.com>
  * @see    https://www.pushover.net/api
@@ -53,7 +53,7 @@ class PushoverHandler extends SocketHandler
     );
 
     /**
-     * Sounds the Api supports by default
+     * Sounds the api supports by default
      * @see https://pushover.net/api#sounds
      * @var array
      */
@@ -64,7 +64,7 @@ class PushoverHandler extends SocketHandler
     );
 
     /**
-     * @param string       $token             Pushover Api token
+     * @param string       $token             Pushover api token
      * @param string|array $users             Pushover user id or array of ids the message will be sent to
      * @param string       $title             Title sent to the Pushover API
      * @param integer      $level             The minimum logging level at which this handler will be triggered
@@ -80,7 +80,7 @@ class PushoverHandler extends SocketHandler
      */
     public function __construct($token, $users, $title = null, $level = Logger::CRITICAL, $bubble = true, $useSSL = true, $highPriorityLevel = Logger::CRITICAL, $emergencyLevel = Logger::EMERGENCY, $retry = 30, $expire = 25200)
     {
-        $connectionString = $useSSL ? 'ssl://Api.pushover.net:443' : 'Api.pushover.net:80';
+        $connectionString = $useSSL ? 'ssl://api.pushover.net:443' : 'api.pushover.net:80';
         parent::__construct($connectionString, $level, $bubble);
 
         $this->token = $token;
@@ -140,7 +140,7 @@ class PushoverHandler extends SocketHandler
     private function buildHeader($content)
     {
         $header = "POST /1/messages.json HTTP/1.1\r\n";
-        $header .= "Host: Api.pushover.net\r\n";
+        $header .= "Host: api.pushover.net\r\n";
         $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
         $header .= "Content-Length: " . strlen($content) . "\r\n";
         $header .= "\r\n";

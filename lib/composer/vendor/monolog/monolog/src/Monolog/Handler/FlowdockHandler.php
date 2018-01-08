@@ -44,7 +44,7 @@ class FlowdockHandler extends SocketHandler
             throw new MissingExtensionException('The OpenSSL PHP extension is required to use the FlowdockHandler');
         }
 
-        parent::__construct('ssl://Api.flowdock.com:443', $level, $bubble);
+        parent::__construct('ssl://api.flowdock.com:443', $level, $bubble);
         $this->apiToken = $apiToken;
     }
 
@@ -93,7 +93,7 @@ class FlowdockHandler extends SocketHandler
     private function buildHeader($content)
     {
         $header = "POST /v1/messages/team_inbox/" . $this->apiToken . " HTTP/1.1\r\n";
-        $header .= "Host: Api.flowdock.com\r\n";
+        $header .= "Host: api.flowdock.com\r\n";
         $header .= "Content-Type: application/json\r\n";
         $header .= "Content-Length: " . strlen($content) . "\r\n";
         $header .= "\r\n";

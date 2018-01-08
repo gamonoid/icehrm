@@ -60,12 +60,22 @@ class File extends AbstractNode
     /**
      * @var int
      */
-    private $numTestedTraits = 0;
+    private $numClasses = null;
 
     /**
      * @var int
      */
     private $numTestedClasses = 0;
+
+    /**
+     * @var int
+     */
+    private $numTraits = null;
+
+    /**
+     * @var int
+     */
+    private $numTestedTraits = 0;
 
     /**
      * @var int
@@ -110,7 +120,7 @@ class File extends AbstractNode
      */
     public function __construct($name, AbstractNode $parent, array $coverageData, array $testData, $cacheTokens)
     {
-        if (!is_bool($cacheTokens)) {
+        if (!\is_bool($cacheTokens)) {
             throw InvalidArgumentException::create(
                 1,
                 'boolean'
@@ -223,7 +233,21 @@ class File extends AbstractNode
      */
     public function getNumClasses()
     {
-        return count($this->classes);
+        if ($this->numClasses === null) {
+            $this->numClasses = 0;
+
+            foreach ($this->classes as $class) {
+                foreach ($class['methods'] as $method) {
+                    if ($method['executableLines'] > 0) {
+                        $this->numClasses++;
+
+                        continue 2;
+                    }
+                }
+            }
+        }
+
+        return $this->numClasses;
     }
 
     /**
@@ -243,7 +267,21 @@ class File extends AbstractNode
      */
     public function getNumTraits()
     {
-        return count($this->traits);
+        if ($this->numTraits === null) {
+            $this->numTraits = 0;
+
+            foreach ($this->traits as $trait) {
+                foreach ($trait['methods'] as $method) {
+                    if ($method['executableLines'] > 0) {
+                        $this->numTraits++;
+
+                        continue 2;
+                    }
+                }
+            }
+        }
+
+        return $this->numTraits;
     }
 
     /**
@@ -325,7 +363,7 @@ class File extends AbstractNode
      */
     public function getNumFunctions()
     {
-        return count($this->functions);
+        return \count($this->functions);
     }
 
     /**
@@ -412,7 +450,7 @@ class File extends AbstractNode
 
                 $this->numExecutableLines++;
 
-                if (count($this->coverageData[$lineNumber]) > 0) {
+                if (\count($this->coverageData[$lineNumber]) > 0) {
                     if (isset($currentClass)) {
                         $currentClass['executedLines']++;
                     }
@@ -439,8 +477,8 @@ class File extends AbstractNode
                     unset($currentClass);
 
                     if ($classStack) {
-                        end($classStack);
-                        $key          = key($classStack);
+                        \end($classStack);
+                        $key          = \key($classStack);
                         $currentClass = &$classStack[$key];
                         unset($classStack[$key]);
                     }
@@ -455,8 +493,8 @@ class File extends AbstractNode
                     unset($currentFunction);
 
                     if ($functionStack) {
-                        end($functionStack);
-                        $key             = key($functionStack);
+                        \end($functionStack);
+                        $key             = \key($functionStack);
                         $currentFunction = &$functionStack[$key];
                         unset($functionStack[$key]);
                     }
@@ -484,12 +522,12 @@ class File extends AbstractNode
             if ($trait['executableLines'] > 0) {
                 $trait['coverage'] = ($trait['executedLines'] /
                         $trait['executableLines']) * 100;
+
+                if ($trait['coverage'] == 100) {
+                    $this->numTestedClasses++;
+                }
             } else {
                 $trait['coverage'] = 100;
-            }
-
-            if ($trait['coverage'] == 100) {
-                $this->numTestedClasses++;
             }
 
             $trait['crap'] = $this->crap(
@@ -518,17 +556,35 @@ class File extends AbstractNode
             if ($class['executableLines'] > 0) {
                 $class['coverage'] = ($class['executedLines'] /
                         $class['executableLines']) * 100;
+
+                if ($class['coverage'] == 100) {
+                    $this->numTestedClasses++;
+                }
             } else {
                 $class['coverage'] = 100;
-            }
-
-            if ($class['coverage'] == 100) {
-                $this->numTestedClasses++;
             }
 
             $class['crap'] = $this->crap(
                 $class['ccn'],
                 $class['coverage']
+            );
+        }
+
+        foreach ($this->functions as &$function) {
+            if ($function['executableLines'] > 0) {
+                $function['coverage'] = ($function['executedLines'] /
+                        $function['executableLines']) * 100;
+            } else {
+                $function['coverage'] = 100;
+            }
+
+            if ($function['coverage'] == 100) {
+                $this->numTestedFunctions++;
+            }
+
+            $function['crap'] = $this->crap(
+                $function['ccn'],
+                $function['coverage']
             );
         }
     }
@@ -544,6 +600,10 @@ class File extends AbstractNode
         $link = $this->getId() . '.html#';
 
         foreach ($classes as $className => $class) {
+            if (!empty($class['package']['namespace'])) {
+                $className = $class['package']['namespace'] . '\\' . $className;
+            }
+
             $this->classes[$className] = [
                 'className'       => $className,
                 'methods'         => [],
@@ -645,16 +705,16 @@ class File extends AbstractNode
     protected function crap($ccn, $coverage)
     {
         if ($coverage == 0) {
-            return (string) (pow($ccn, 2) + $ccn);
+            return (string) (\pow($ccn, 2) + $ccn);
         }
 
         if ($coverage >= 95) {
             return (string) $ccn;
         }
 
-        return sprintf(
+        return \sprintf(
             '%01.2F',
-            pow($ccn, 2) * pow(1 - $coverage/100, 3) + $ccn
+            \pow($ccn, 2) * \pow(1 - $coverage / 100, 3) + $ccn
         );
     }
 

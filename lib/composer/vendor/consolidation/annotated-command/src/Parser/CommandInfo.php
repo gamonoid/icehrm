@@ -18,6 +18,11 @@ use Consolidation\AnnotatedCommand\AnnotationData;
 class CommandInfo
 {
     /**
+     * Serialization schema version. Incremented every time the serialization schema changes.
+     */
+    const SERIALIZATION_SCHEMA_VERSION = 3;
+
+    /**
      * @var \ReflectionMethod
      */
     protected $reflection;
@@ -26,7 +31,7 @@ class CommandInfo
      * @var boolean
      * @var string
     */
-    protected $docBlockIsParsed;
+    protected $docBlockIsParsed = false;
 
     /**
      * @var string
@@ -69,6 +74,11 @@ class CommandInfo
     protected $aliases = [];
 
     /**
+     * @var InputOption[]
+     */
+    protected $inputOptions;
+
+    /**
      * @var string
      */
     protected $methodName;
@@ -79,32 +89,58 @@ class CommandInfo
     protected $returnType;
 
     /**
-     * @var string
-     */
-    protected $optionParamName;
-
-    /**
      * Create a new CommandInfo class for a particular method of a class.
      *
      * @param string|mixed $classNameOrInstance The name of a class, or an
-     *   instance of it.
+     *   instance of it, or an array of cached data.
      * @param string $methodName The name of the method to get info about.
+     * @param array $cache Cached data
+     * @deprecated Use CommandInfo::create() or CommandInfo::deserialize()
+     *   instead. In the future, this constructor will be protected.
      */
-    public function __construct($classNameOrInstance, $methodName)
+    public function __construct($classNameOrInstance, $methodName, $cache = [])
     {
         $this->reflection = new \ReflectionMethod($classNameOrInstance, $methodName);
         $this->methodName = $methodName;
+        $this->arguments = new DefaultsWithDescriptions();
+        $this->options = new DefaultsWithDescriptions();
+
+        // If the cache came from a newer version, ignore it and
+        // regenerate the cached information.
+        if (!empty($cache) && CommandInfoDeserializer::isValidSerializedData($cache) && !$this->cachedFileIsModified($cache)) {
+            $deserializer = new CommandInfoDeserializer();
+            $deserializer->constructFromCache($this, $cache);
+            $this->docBlockIsParsed = true;
+        } else {
+            $this->constructFromClassAndMethod($classNameOrInstance, $methodName);
+        }
+    }
+
+    public static function create($classNameOrInstance, $methodName)
+    {
+        return new self($classNameOrInstance, $methodName);
+    }
+
+    public static function deserialize($cache)
+    {
+        $cache = (array)$cache;
+        return new self($cache['class'], $cache['method_name'], $cache);
+    }
+
+    public function cachedFileIsModified($cache)
+    {
+        $path = $this->reflection->getFileName();
+        return filemtime($path) != $cache['mtime'];
+    }
+
+    protected function constructFromClassAndMethod($classNameOrInstance, $methodName)
+    {
         $this->otherAnnotations = new AnnotationData();
         // Set up a default name for the command from the method name.
         // This can be overridden via @command or @name annotations.
-        $this->name = $this->convertName($this->reflection->name);
+        $this->name = $this->convertName($methodName);
         $this->options = new DefaultsWithDescriptions($this->determineOptionsFromParameters(), false);
         $this->arguments = $this->determineAgumentClassifications();
-        // Remember the name of the last parameter, if it holds the options.
-        // We will use this information to ignore @param annotations for the options.
-        if (!empty($this->options)) {
-            $this->optionParamName = $this->lastParameterName();
-        }
     }
 
     /**
@@ -139,6 +175,28 @@ class CommandInfo
         return $this;
     }
 
+    /**
+     * Return whether or not this method represents a valid command
+     * or hook.
+     */
+    public function valid()
+    {
+        return !empty($this->name);
+    }
+
+    /**
+     * If higher-level code decides that this CommandInfo is not interesting
+     * or useful (if it is not a command method or a hook method), then
+     * we will mark it as invalid to prevent it from being created as a command.
+     * We still cache a placeholder record for invalid methods, so that we
+     * do not need to re-parse the method again later simply to determine that
+     * it is invalid.
+     */
+    public function invalidate()
+    {
+        $this->name = '';
+    }
+
     public function getReturnType()
     {
         $this->parseDocBlock();
@@ -165,6 +223,15 @@ class CommandInfo
     }
 
     /**
+     * Replace the annotation data.
+     */
+    public function replaceRawAnnotations($annotationData)
+    {
+        $this->otherAnnotations = new AnnotationData((array) $annotationData);
+        return $this;
+    }
+
+    /**
      * Get any annotations included in the docblock comment,
      * also including default values such as @command.  We add
      * in the default @command annotation late, and only in a
@@ -176,27 +243,49 @@ class CommandInfo
      */
     public function getAnnotations()
     {
+        // Also provide the path to the commandfile that these annotations
+        // were pulled from and the classname of that file.
+        $path = $this->reflection->getFileName();
+        $className = $this->reflection->getDeclaringClass()->getName();
         return new AnnotationData(
             $this->getRawAnnotations()->getArrayCopy() +
             [
                 'command' => $this->getName(),
+                '_path' => $path,
+                '_classname' => $className,
             ]
         );
     }
 
     /**
-     * Return a specific named annotation for this command.
+     * Return a specific named annotation for this command as a list.
      *
-     * @param string $annotation The name of the annotation.
-     * @return string
+     * @param string $name The name of the annotation.
+     * @return array|null
      */
-    public function getAnnotation($annotation)
+    public function getAnnotationList($name)
     {
         // hasAnnotation parses the docblock
-        if (!$this->hasAnnotation($annotation)) {
+        if (!$this->hasAnnotation($name)) {
             return null;
         }
-        return $this->otherAnnotations[$annotation];
+        return $this->otherAnnotations->getList($name);
+        ;
+    }
+
+    /**
+     * Return a specific named annotation for this command as a string.
+     *
+     * @param string $name The name of the annotation.
+     * @return string|null
+     */
+    public function getAnnotation($name)
+    {
+        // hasAnnotation parses the docblock
+        if (!$this->hasAnnotation($name)) {
+            return null;
+        }
+        return $this->otherAnnotations->get($name);
     }
 
     /**
@@ -217,6 +306,11 @@ class CommandInfo
      */
     public function addAnnotation($name, $content)
     {
+        // Convert to an array and merge if there are multiple
+        // instances of the same annotation defined.
+        if (isset($this->otherAnnotations[$name])) {
+            $content = array_merge((array) $this->otherAnnotations[$name], (array)$content);
+        }
         $this->otherAnnotations[$name] = $content;
     }
 
@@ -246,7 +340,7 @@ class CommandInfo
      */
     public function setDescription($description)
     {
-        $this->description = $description;
+        $this->description = str_replace("\n", ' ', $description);
         return $this;
     }
 
@@ -294,6 +388,27 @@ class CommandInfo
     }
 
     /**
+     * Get hidden status for the command.
+     * @return bool
+     */
+    public function getHidden()
+    {
+        $this->parseDocBlock();
+        return $this->hasAnnotation('hidden');
+    }
+
+    /**
+     * Set hidden status. List command omits hidden commands.
+     *
+     * @param bool $hidden
+     */
+    public function setHidden($hidden)
+    {
+        $this->hidden = $hidden;
+        return $this;
+    }
+
+    /**
      * Return the examples for this command. This is @usage instead of
      * @example because the later is defined by the phpdoc standard to
      * be example method calls.
@@ -317,6 +432,29 @@ class CommandInfo
     {
         $this->exampleUsage[$usage] = $description;
         return $this;
+    }
+
+    /**
+     * Overwrite all example usages
+     */
+    public function replaceExampleUsages($usages)
+    {
+        $this->exampleUsage = $usages;
+        return $this;
+    }
+
+    /**
+     * Return the topics for this command.
+     *
+     * @return string[]
+     */
+    public function getTopics()
+    {
+        if (!$this->hasAnnotation('topics')) {
+            return [];
+        }
+        $topics = $this->getAnnotation('topics');
+        return explode(',', trim($topics));
     }
 
     /**
@@ -350,14 +488,6 @@ class CommandInfo
     }
 
     /**
-     * Return the name of the last parameter if it holds the options.
-     */
-    public function optionParamName()
-    {
-        return $this->optionParamName;
-    }
-
-    /**
      * Get the inputOptions for the options associated with this CommandInfo
      * object, e.g. via @option annotations, or from
      * $options = ['someoption' => 'defaultvalue'] in the command method
@@ -367,7 +497,30 @@ class CommandInfo
      */
     public function inputOptions()
     {
+        if (!isset($this->inputOptions)) {
+            $this->inputOptions = $this->createInputOptions();
+        }
+        return $this->inputOptions;
+    }
+
+    protected function addImplicitNoOptions()
+    {
+        $opts = $this->options()->getValues();
+        foreach ($opts as $name => $defaultValue) {
+            if ($defaultValue === true) {
+                $key = 'no-' . $name;
+                if (!array_key_exists($key, $opts)) {
+                    $description = "Negate --$name option.";
+                    $this->options()->add($key, $description, false);
+                }
+            }
+        }
+    }
+
+    protected function createInputOptions()
+    {
         $explicitOptions = [];
+        $this->addImplicitNoOptions();
 
         $opts = $this->options()->getValues();
         foreach ($opts as $name => $defaultValue) {
@@ -379,10 +532,28 @@ class CommandInfo
                 list($fullName, $shortcut) = explode('|', $name, 2);
             }
 
-            if (is_bool($defaultValue)) {
+            // Treat the following two cases identically:
+            //   - 'foo' => InputOption::VALUE_OPTIONAL
+            //   - 'foo' => null
+            // The first form is preferred, but we will convert the value
+            // to 'null' for storage as the option default value.
+            if ($defaultValue === InputOption::VALUE_OPTIONAL) {
+                $defaultValue = null;
+            }
+
+            if ($defaultValue === false) {
                 $explicitOptions[$fullName] = new InputOption($fullName, $shortcut, InputOption::VALUE_NONE, $description);
             } elseif ($defaultValue === InputOption::VALUE_REQUIRED) {
                 $explicitOptions[$fullName] = new InputOption($fullName, $shortcut, InputOption::VALUE_REQUIRED, $description);
+            } elseif (is_array($defaultValue)) {
+                $optionality = count($defaultValue) ? InputOption::VALUE_OPTIONAL : InputOption::VALUE_REQUIRED;
+                $explicitOptions[$fullName] = new InputOption(
+                    $fullName,
+                    $shortcut,
+                    InputOption::VALUE_IS_ARRAY | $optionality,
+                    $description,
+                    count($defaultValue) ? $defaultValue : null
+                );
             } else {
                 $explicitOptions[$fullName] = new InputOption($fullName, $shortcut, InputOption::VALUE_OPTIONAL, $description, $defaultValue);
             }
@@ -460,7 +631,7 @@ class CommandInfo
         $result = new DefaultsWithDescriptions();
         $params = $this->reflection->getParameters();
         $optionsFromParameters = $this->determineOptionsFromParameters();
-        if (!empty($optionsFromParameters)) {
+        if ($this->lastParameterIsOptionsArray()) {
             array_pop($params);
         }
         foreach ($params as $param) {
@@ -514,14 +685,26 @@ class CommandInfo
         return $param->getDefaultValue();
     }
 
-    protected function lastParameterName()
+    /**
+     * Determine if the last argument contains $options.
+     *
+     * Two forms indicate options:
+     * - $options = []
+     * - $options = ['flag' => 'default-value']
+     *
+     * Any other form, including `array $foo`, is not options.
+     */
+    protected function lastParameterIsOptionsArray()
     {
         $params = $this->reflection->getParameters();
-        $param = end($params);
-        if (!$param) {
-            return '';
+        if (empty($params)) {
+            return [];
         }
-        return $param->name;
+        $param = end($params);
+        if (!$param->isDefaultValueAvailable()) {
+            return [];
+        }
+        return is_array($param->getDefaultValue());
     }
 
     /**
@@ -529,7 +712,7 @@ class CommandInfo
      * is not associative if its keys are numeric, and numbered sequentially
      * from zero. All other arrays are considered to be associative.
      *
-     * @param arrau $arr The array
+     * @param array $arr The array
      * @return boolean
      */
     protected function isAssoc($arr)

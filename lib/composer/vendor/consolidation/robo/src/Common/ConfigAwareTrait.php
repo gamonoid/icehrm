@@ -3,25 +3,25 @@
 namespace Robo\Common;
 
 use Robo\Robo;
-use Robo\Config;
+use Consolidation\Config\ConfigInterface;
 
 trait ConfigAwareTrait
 {
     /**
-     * @var \Robo\Config
+     * @var ConfigInterface
      */
     protected $config;
 
     /**
      * Set the config management object.
      *
-     * @param \Robo\Config $config
+     * @param ConfigInterface $config
      *
      * @return $this
      *
      * @see \Robo\Contract\ConfigAwareInterface::setConfig()
      */
-    public function setConfig(Config $config)
+    public function setConfig(ConfigInterface $config)
     {
         $this->config = $config;
 
@@ -31,7 +31,7 @@ trait ConfigAwareTrait
     /**
      * Get the config management object.
      *
-     * @return \Robo\Config
+     * @return ConfigInterface
      *
      * @see \Robo\Contract\ConfigAwareInterface::getConfig()
      */
@@ -41,24 +41,56 @@ trait ConfigAwareTrait
     }
 
     /**
+     * Any class that uses ConfigAwareTrait SHOULD override this method
+     * , and define a prefix for its configuration items. This is usually
+     * done in a base class. When used, this method should return a string
+     * that ends with a "."; see BaseTask::configPrefix().
+     *
+     * @return string
+     */
+    protected static function configPrefix()
+    {
+        return '';
+    }
+
+    protected static function configClassIdentifier($classname)
+    {
+        $configIdentifier = strtr($classname, '\\', '.');
+        $configIdentifier = preg_replace('#^(.*\.Task\.|\.)#', '', $configIdentifier);
+
+        return $configIdentifier;
+    }
+
+    protected static function configPostfix()
+    {
+        return '';
+    }
+
+    /**
      * @param string $key
      *
      * @return string
      */
     private static function getClassKey($key)
     {
-        return sprintf('%s.%s', get_called_class(), $key);
+        $configPrefix = static::configPrefix();                            // task.
+        $configClass = static::configClassIdentifier(get_called_class());  // PARTIAL_NAMESPACE.CLASSNAME
+        $configPostFix = static::configPostfix();                          // .settings
+
+        return sprintf('%s%s%s.%s', $configPrefix, $configClass, $configPostFix, $key);
     }
 
     /**
      * @param string $key
      * @param mixed $value
-     *
-     * @deprecated
+     * @param Config|null $config
      */
-    public static function configure($key, $value)
+    public static function configure($key, $value, $config = null)
     {
-        Robo::config()->set(static::getClassKey($key), $value);
+        if (!$config) {
+            $config = Robo::config();
+        }
+        $config->setDefault(static::getClassKey($key), $value);
     }
 
     /**

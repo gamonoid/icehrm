@@ -3,5 +3,4 @@
 phpunit.xml
 build
 vendor
-composer.lock
 main.php
