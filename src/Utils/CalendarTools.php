@@ -49,11 +49,19 @@ class CalendarTools
         return $days;
     }
 
-    public static function addMinutesToDateTime($datetime, $minutes)
+    public static function addMinutesToDateTime($datetime, $minutes, $format = 'Y-m-d H:i:s')
     {
         $time = new \DateTime($datetime);
-        $time->add(new \DateInterval('PT' . $minutes . 'M'));
+        $time = $time->add(new \DateInterval('PT' . $minutes . 'M'));
 
-        return $time->format('Y-m-d H:i:s');
+        return $time->format($format);
+    }
+
+    public static function addMonthsToDateTime($datetime, $months, $format = 'Y-m-d H:i:s')
+    {
+        $time = new \DateTime($datetime);
+        $time = $time->add(new \DateInterval('P' . $months . 'M'));
+
+        return $time->format($format);
     }
 }

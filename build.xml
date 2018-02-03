@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="icehrm-opensource" default="build">
+<project name="icehrm-pro" default="build">
  <!-- By default, we assume all tools to be on the $PATH -->
  <property name="toolsdir" value="${basedir}/tools/"/>
  <property name="destination" value="${basedir}/build/app"/>

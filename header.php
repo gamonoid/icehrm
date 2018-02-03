@@ -20,7 +20,9 @@ along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
 Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
 Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
  */
-
+if (!defined('MODULE_NAME')) {
+    define('MODULE_NAME', $moduleName);
+}
 include 'includes.inc.php';
 if(empty($user)){
     $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";

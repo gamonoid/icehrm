@@ -10,11 +10,11 @@ class v20171126_200303_swift_mail extends AbstractMigration{
 		$setting = new Setting();
 		$setting->Load("name = ?", array('Email: Mode'));
 		if(!empty($setting->id)){
-			$setting->description = 'Require submitting a photo using web cam when marking attendance';
+			$setting->description = 'Update email sender';
 			$setting->meta = '["value", {"label":"Value","type":"select","source":[["SMTP","SMTP"],["Swift SMTP","Swift SMTP"],["PHP Mailer","PHP Mailer"],["SES","Amazon SES"]]}]';
 			$setting->Save();
 		}
-		
+
 		return true;
 	}
 

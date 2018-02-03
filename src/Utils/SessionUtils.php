@@ -23,7 +23,7 @@ class SessionUtils
         session_write_close();
     }
 
-    public function unsetClientSession()
+    public static function unsetClientSession()
     {
         $names = [
             "user",
