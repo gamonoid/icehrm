@@ -10,6 +10,7 @@
 [![License](https://poser.pugx.org/consolidation/robo/license.png)](https://www.versioneye.com/user/projects/57c4a6fe968d64004d97620a?child=57c4a6fe968d64004d97620a#tab-licenses)
 
 [![Build Status](https://travis-ci.org/consolidation/Robo.svg?branch=master)](https://travis-ci.org/consolidation/Robo) 
+[![Windows CI](https://ci.appveyor.com/api/projects/status/0823hnh06pw8ir4d?svg=true)](https://ci.appveyor.com/project/greg-1-anderson/robo)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/consolidation/Robo/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/consolidation/Robo/?branch=master)
 [![Dependency Status](https://www.versioneye.com/user/projects/57c4a6fe968d64004d97620a/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57c4a6fe968d64004d97620a)
 
@@ -88,7 +89,7 @@ class RoboFile extends \Robo\Tasks
 ```
 
 If you execute `robo` you will see this task added to list of available task with name: `test:acceptance`.
-To execute it you shoud run `robo test:acceptance`. You may change path to selenium server by passing new path as a argument:
+To execute it you should run `robo test:acceptance`. You may change path to selenium server by passing new path as a argument:
 
 ```
 robo test:acceptance "C:\Downloads\selenium.jar"

@@ -1,26 +1,22 @@
 <?php
 namespace Robo\Collection;
 
-use Guzzle\Inflection\InflectorInterface;
-use Robo\Config;
-use Robo\Common\Timer;
+use Consolidation\Config\Inject\ConfigForSetters;
+use Robo\Config\Config;
 use Psr\Log\LogLevel;
 use Robo\Contract\InflectionInterface;
 use Robo\Contract\TaskInterface;
 use Robo\Contract\CompletionInterface;
 use Robo\Contract\WrappedTaskInterface;
-use Robo\Collection\NestedCollectionInterface;
-use Robo\LoadAllTasks;
 use Robo\Task\Simulator;
-use Robo\Collection\CompletionWrapper;
-use Robo\Collection\Temporary;
-use Robo\Contract\ConfigAwareInterface;
-use Robo\Common\ConfigAwareTrait;
 use ReflectionClass;
 use Robo\Task\BaseTask;
 use Robo\Contract\BuilderAwareInterface;
 use Robo\Contract\CommandInterface;
-use Robo\Exception\TaskException;
+use Robo\Contract\VerbosityThresholdInterface;
+use Robo\State\StateAwareInterface;
+use Robo\State\StateAwareTrait;
+use Robo\Result;
 
 /**
  * Creates a collection, and adds tasks to it.  The collection builder
@@ -49,8 +45,10 @@ use Robo\Exception\TaskException;
  * In the example above, the `taskDeleteDir` will be called if
  * ```
  */
-class CollectionBuilder extends BaseTask implements NestedCollectionInterface, WrappedTaskInterface, CommandInterface
+class CollectionBuilder extends BaseTask implements NestedCollectionInterface, WrappedTaskInterface, CommandInterface, StateAwareInterface
 {
+    use StateAwareTrait;
+
     /**
      * @var \Robo\Tasks
      */
@@ -77,6 +75,19 @@ class CollectionBuilder extends BaseTask implements NestedCollectionInterface, W
     public function __construct($commandFile)
     {
         $this->commandFile = $commandFile;
+        $this->resetState();
+    }
+
+    public static function create($container, $commandFile)
+    {
+        $builder = new self($commandFile);
+
+        $builder->setLogger($container->get('logger'));
+        $builder->setProgressIndicator($container->get('progressIndicator'));
+        $builder->setConfig($container->get('config'));
+        $builder->setOutputAdapter($container->get('outputAdapter'));
+
+        return $builder;
     }
 
     /**
@@ -147,9 +158,18 @@ class CollectionBuilder extends BaseTask implements NestedCollectionInterface, W
         return $this;
     }
 
-    public function addCode(callable $code)
+  /**
+   * Add arbitrary code to execute as a task.
+   *
+   * @see \Robo\Collection\CollectionInterface::addCode
+   *
+   * @param callable $code
+   * @param int|string $name
+   * @return $this
+   */
+    public function addCode(callable $code, $name = \Robo\Collection\CollectionInterface::UNNAMEDTASK)
     {
-        $this->getCollection()->addCode($code);
+        $this->getCollection()->addCode($code, $name);
         return $this;
     }
 
@@ -245,6 +265,51 @@ class CollectionBuilder extends BaseTask implements NestedCollectionInterface, W
         return $this;
     }
 
+    public function getState()
+    {
+        $collection = $this->getCollection();
+        return $collection->getState();
+    }
+
+    public function storeState($key, $source = '')
+    {
+        return $this->callCollectionStateFuntion(__FUNCTION__, func_get_args());
+    }
+
+    public function deferTaskConfiguration($functionName, $stateKey)
+    {
+        return $this->callCollectionStateFuntion(__FUNCTION__, func_get_args());
+    }
+
+    public function defer($callback)
+    {
+        return $this->callCollectionStateFuntion(__FUNCTION__, func_get_args());
+    }
+
+    protected function callCollectionStateFuntion($functionName, $args)
+    {
+        $currentTask = ($this->currentTask instanceof WrappedTaskInterface) ? $this->currentTask->original() : $this->currentTask;
+
+        array_unshift($args, $currentTask);
+        $collection = $this->getCollection();
+        $fn = [$collection, $functionName];
+
+        call_user_func_array($fn, $args);
+        return $this;
+    }
+
+    public function setVerbosityThreshold($verbosityThreshold)
+    {
+        $currentTask = ($this->currentTask instanceof WrappedTaskInterface) ? $this->currentTask->original() : $this->currentTask;
+        if ($currentTask) {
+            $currentTask->setVerbosityThreshold($verbosityThreshold);
+            return $this;
+        }
+        parent::setVerbosityThreshold($verbosityThreshold);
+        return $this;
+    }
+
+
     /**
      * Return the current task for this collection builder.
      * TODO: Not needed?
@@ -266,6 +331,9 @@ class CollectionBuilder extends BaseTask implements NestedCollectionInterface, W
         $collectionBuilder = new self($this->commandFile);
         $collectionBuilder->inflect($this);
         $collectionBuilder->simulated($this->isSimulated());
+        $collectionBuilder->setVerbosityThreshold($this->verbosityThreshold());
+        $collectionBuilder->setState($this->getState());
+
         return $collectionBuilder;
     }
 
@@ -355,6 +423,7 @@ class CollectionBuilder extends BaseTask implements NestedCollectionInterface, W
             throw new RuntimeException("Can not construct task $name");
         }
         $task = $this->fixTask($task, $args);
+        $this->configureTask($name, $task);
         return $this->addTaskToCollection($task);
     }
 
@@ -366,9 +435,14 @@ class CollectionBuilder extends BaseTask implements NestedCollectionInterface, W
      */
     protected function fixTask($task, $args)
     {
-        $task->inflect($this);
+        if ($task instanceof InflectionInterface) {
+            $task->inflect($this);
+        }
         if ($task instanceof BuilderAwareInterface) {
             $task->setBuilder($this);
+        }
+        if ($task instanceof VerbosityThresholdInterface) {
+            $task->setVerbosityThreshold($this->verbosityThreshold());
         }
 
         // Do not wrap our wrappers.
@@ -403,6 +477,25 @@ class CollectionBuilder extends BaseTask implements NestedCollectionInterface, W
     }
 
     /**
+     * Check to see if there are any setter methods defined in configuration
+     * for this task.
+     */
+    protected function configureTask($taskClass, $task)
+    {
+        $taskClass = static::configClassIdentifier($taskClass);
+        $configurationApplier = new ConfigForSetters($this->getConfig(), $taskClass, 'task.');
+        $configurationApplier->apply($task, 'settings');
+
+        // TODO: If we counted each instance of $taskClass that was called from
+        // this builder, then we could also apply configuration from
+        // "task.{$taskClass}[$N].settings"
+
+        // TODO: If the builder knew what the current command name was,
+        // then we could also search for task configuration under
+        // command-specific keys such as "command.{$commandname}.task.{$taskClass}.settings".
+    }
+
+    /**
      * When we run the collection builder, run everything in the collection.
      *
      * @return \Robo\Result
@@ -413,6 +506,7 @@ class CollectionBuilder extends BaseTask implements NestedCollectionInterface, W
         $result = $this->runTasks();
         $this->stopTimer();
         $result['time'] = $this->getExecutionTime();
+        $result->mergeData($this->getState()->getData());
         return $result;
     }
 
@@ -425,7 +519,8 @@ class CollectionBuilder extends BaseTask implements NestedCollectionInterface, W
     protected function runTasks()
     {
         if (!$this->collection && $this->currentTask) {
-            return $this->currentTask->run();
+            $result = $this->currentTask->run();
+            return Result::ensureResult($this->currentTask, $result);
         }
         return $this->getCollection()->run();
     }
@@ -464,6 +559,7 @@ class CollectionBuilder extends BaseTask implements NestedCollectionInterface, W
         if (!isset($this->collection)) {
             $this->collection = new Collection();
             $this->collection->inflect($this);
+            $this->collection->setState($this->getState());
             $this->collection->setProgressBarAutoDisplayInterval($this->getConfig()->get(Config::PROGRESS_BAR_AUTO_DISPLAY_INTERVAL));
 
             if (isset($this->currentTask)) {

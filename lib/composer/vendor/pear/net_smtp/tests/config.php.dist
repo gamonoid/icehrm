@@ -1,0 +1,15 @@
+<?php
+/**
+ * Copy this file to config.php and customize the following values to
+ * suit your configuration.
+ */
+
+define('TEST_HOSTNAME',     'localhost');
+define('TEST_PORT',         25);
+define('TEST_LOCALHOST',    'localhost');
+define('TEST_AUTH_USER',    'jon');
+define('TEST_AUTH_PASS',    'secret');
+define('TEST_FROM',         'from@example.com');
+define('TEST_TO',           'to@example.com');
+define('TEST_SUBJECT',      'Test Subject');
+define('TEST_BODY',         'Test Body');

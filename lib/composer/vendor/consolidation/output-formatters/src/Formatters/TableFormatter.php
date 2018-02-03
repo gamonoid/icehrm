@@ -80,11 +80,26 @@ class TableFormatter implements FormatterInterface, ValidDataTypesInterface, Ren
         $table->setStyle($options->get(FormatterOptions::TABLE_STYLE, $defaults));
         $isList = $tableTransformer->isList();
         $includeHeaders = $options->get(FormatterOptions::INCLUDE_FIELD_LABELS, $defaults);
+        $listDelimiter = $options->get(FormatterOptions::LIST_DELIMITER, $defaults);
+
+        $headers = $tableTransformer->getHeaders();
+        $data = $tableTransformer->getTableData($includeHeaders && $isList);
+
+        if ($listDelimiter) {
+            if (!empty($headers)) {
+                array_splice($headers, 1, 0, ':');
+            }
+            $data = array_map(function ($item) {
+                array_splice($item, 1, 0, ':');
+                return $item;
+            }, $data);
+        }
+
         if ($includeHeaders && !$isList) {
-            $headers = $tableTransformer->getHeaders();
             $table->setHeaders($headers);
         }
-        $data = $tableTransformer->getTableData($includeHeaders && $isList);
+
+        // todo: $output->getFormatter();
         $data = $this->wrap($headers, $data, $table->getStyle(), $options);
         $table->setRows($data);
         $table->render();

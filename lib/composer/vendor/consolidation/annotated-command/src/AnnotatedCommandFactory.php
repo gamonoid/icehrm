@@ -1,9 +1,14 @@
 <?php
 namespace Consolidation\AnnotatedCommand;
 
+use Consolidation\AnnotatedCommand\Cache\CacheWrapper;
+use Consolidation\AnnotatedCommand\Cache\NullCache;
+use Consolidation\AnnotatedCommand\Cache\SimpleCacheInterface;
 use Consolidation\AnnotatedCommand\Hooks\HookManager;
 use Consolidation\AnnotatedCommand\Options\AutomaticOptionsProviderInterface;
 use Consolidation\AnnotatedCommand\Parser\CommandInfo;
+use Consolidation\AnnotatedCommand\Parser\CommandInfoDeserializer;
+use Consolidation\AnnotatedCommand\Parser\CommandInfoSerializer;
 use Consolidation\OutputFormatters\Options\FormatterOptions;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -27,7 +32,6 @@ class AnnotatedCommandFactory implements AutomaticOptionsProviderInterface
     protected $listeners = [];
 
     /** var AutomaticOptionsProvider[] */
-
     protected $automaticOptionsProviderList = [];
 
     /** var boolean */
@@ -36,8 +40,12 @@ class AnnotatedCommandFactory implements AutomaticOptionsProviderInterface
     /** var CommandInfoAltererInterface */
     protected $commandInfoAlterers = [];
 
+    /** var SimpleCacheInterface */
+    protected $dataStore;
+
     public function __construct()
     {
+        $this->dataStore = new NullCache();
         $this->commandProcessor = new CommandProcessor(new HookManager());
         $this->addAutomaticOptionProvider($this);
     }
@@ -92,6 +100,17 @@ class AnnotatedCommandFactory implements AutomaticOptionsProviderInterface
     public function addListener(CommandCreationListenerInterface $listener)
     {
         $this->listeners[] = $listener;
+        return $this;
+    }
+
+    /**
+     * Add a listener that's just a simple 'callable'.
+     * @param callable $listener
+     */
+    public function addListernerCallback(callable $listener)
+    {
+        $this->addListener(new CommandCreationListener($listener));
+        return $this;
     }
 
     /**
@@ -131,7 +150,95 @@ class AnnotatedCommandFactory implements AutomaticOptionsProviderInterface
         return $this->createCommandsFromClassInfo($commandInfoList, $commandFileInstance, $includeAllPublicMethods);
     }
 
-    public function getCommandInfoListFromClass($classNameOrInstance)
+    public function getCommandInfoListFromClass($commandFileInstance)
+    {
+        $cachedCommandInfoList = $this->getCommandInfoListFromCache($commandFileInstance);
+        $commandInfoList = $this->createCommandInfoListFromClass($commandFileInstance, $cachedCommandInfoList);
+        if (!empty($commandInfoList)) {
+            $cachedCommandInfoList = array_merge($commandInfoList, $cachedCommandInfoList);
+            $this->storeCommandInfoListInCache($commandFileInstance, $cachedCommandInfoList);
+        }
+        return $cachedCommandInfoList;
+    }
+
+    protected function storeCommandInfoListInCache($commandFileInstance, $commandInfoList)
+    {
+        if (!$this->hasDataStore()) {
+            return;
+        }
+        $cache_data = [];
+        $serializer = new CommandInfoSerializer();
+        foreach ($commandInfoList as $i => $commandInfo) {
+            $cache_data[$i] = $serializer->serialize($commandInfo);
+        }
+        $className = get_class($commandFileInstance);
+        $this->getDataStore()->set($className, $cache_data);
+    }
+
+    /**
+     * Get the command info list from the cache
+     *
+     * @param mixed $commandFileInstance
+     * @return array
+     */
+    protected function getCommandInfoListFromCache($commandFileInstance)
+    {
+        $commandInfoList = [];
+        $className = get_class($commandFileInstance);
+        if (!$this->getDataStore()->has($className)) {
+            return [];
+        }
+        $deserializer = new CommandInfoDeserializer();
+
+        $cache_data = $this->getDataStore()->get($className);
+        foreach ($cache_data as $i => $data) {
+            if (CommandInfoDeserializer::isValidSerializedData((array)$data)) {
+                $commandInfoList[$i] = $deserializer->deserialize((array)$data);
+            }
+        }
+        return $commandInfoList;
+    }
+
+    /**
+     * Check to see if this factory has a cache datastore.
+     * @return boolean
+     */
+    public function hasDataStore()
+    {
+        return !($this->dataStore instanceof NullCache);
+    }
+
+    /**
+     * Set a cache datastore for this factory. Any object with 'set' and
+     * 'get' methods is acceptable. The key is the classname being cached,
+     * and the value is a nested associative array of strings.
+     *
+     * TODO: Typehint this to SimpleCacheInterface
+     *
+     * This is not done currently to allow clients to use a generic cache
+     * store that does not itself depend on the annotated-command library.
+     *
+     * @param Mixed $dataStore
+     * @return type
+     */
+    public function setDataStore($dataStore)
+    {
+        if (!($dataStore instanceof SimpleCacheInterface)) {
+            $dataStore = new CacheWrapper($dataStore);
+        }
+        $this->dataStore = $dataStore;
+        return $this;
+    }
+
+    /**
+     * Get the data store attached to this factory.
+     */
+    public function getDataStore()
+    {
+        return $this->dataStore;
+    }
+
+    protected function createCommandInfoListFromClass($classNameOrInstance, $cachedCommandInfoList)
     {
         $commandInfoList = [];
 
@@ -139,13 +246,20 @@ class AnnotatedCommandFactory implements AutomaticOptionsProviderInterface
         // can never be commands.
         $commandMethodNames = array_filter(
             get_class_methods($classNameOrInstance) ?: [],
-            function ($m) {
-                return !preg_match('#^_#', $m);
+            function ($m) use ($classNameOrInstance) {
+                $reflectionMethod = new \ReflectionMethod($classNameOrInstance, $m);
+                return !$reflectionMethod->isStatic() && !preg_match('#^_#', $m);
             }
         );
 
         foreach ($commandMethodNames as $commandMethodName) {
-            $commandInfoList[] = new CommandInfo($classNameOrInstance, $commandMethodName);
+            if (!array_key_exists($commandMethodName, $cachedCommandInfoList)) {
+                $commandInfo = CommandInfo::create($classNameOrInstance, $commandMethodName);
+                if (!static::isCommandOrHookMethod($commandInfo, $this->getIncludeAllPublicMethods())) {
+                    $commandInfo->invalidate();
+                }
+                $commandInfoList[$commandMethodName] =  $commandInfo;
+            }
         }
 
         return $commandInfoList;
@@ -153,7 +267,7 @@ class AnnotatedCommandFactory implements AutomaticOptionsProviderInterface
 
     public function createCommandInfo($classNameOrInstance, $commandMethodName)
     {
-        return new CommandInfo($classNameOrInstance, $commandMethodName);
+        return CommandInfo::create($classNameOrInstance, $commandMethodName);
     }
 
     public function createCommandsFromClassInfo($commandInfoList, $commandFileInstance, $includeAllPublicMethods = null)
@@ -173,27 +287,44 @@ class AnnotatedCommandFactory implements AutomaticOptionsProviderInterface
 
     public function createSelectedCommandsFromClassInfo($commandInfoList, $commandFileInstance, callable $commandSelector)
     {
-        $commandList = [];
+        $commandInfoList = $this->filterCommandInfoList($commandInfoList, $commandSelector);
+        return array_map(
+            function ($commandInfo) use ($commandFileInstance) {
+                return $this->createCommand($commandInfo, $commandFileInstance);
+            },
+            $commandInfoList
+        );
+    }
 
-        foreach ($commandInfoList as $commandInfo) {
-            if ($commandSelector($commandInfo)) {
-                $command = $this->createCommand($commandInfo, $commandFileInstance);
-                $commandList[] = $command;
-            }
-        }
+    protected function filterCommandInfoList($commandInfoList, callable $commandSelector)
+    {
+        return array_filter($commandInfoList, $commandSelector);
+    }
 
-        return $commandList;
+    public static function isCommandOrHookMethod($commandInfo, $includeAllPublicMethods)
+    {
+        return static::isHookMethod($commandInfo) || static::isCommandMethod($commandInfo, $includeAllPublicMethods);
+    }
+
+    public static function isHookMethod($commandInfo)
+    {
+        return $commandInfo->hasAnnotation('hook');
     }
 
     public static function isCommandMethod($commandInfo, $includeAllPublicMethods)
     {
         // Ignore everything labeled @hook
-        if ($commandInfo->hasAnnotation('hook')) {
+        if (static::isHookMethod($commandInfo)) {
             return false;
         }
         // Include everything labeled @command
         if ($commandInfo->hasAnnotation('command')) {
             return true;
+        }
+        // Skip anything that has a missing or invalid name.
+        $commandName = $commandInfo->getName();
+        if (empty($commandName) || preg_match('#[^a-zA-Z0-9:_-]#', $commandName)) {
+            return false;
         }
         // Skip anything named like an accessor ('get' or 'set')
         if (preg_match('#^(get[A-Z]|set[A-Z])#', $commandInfo->getMethodName())) {
@@ -207,7 +338,7 @@ class AnnotatedCommandFactory implements AutomaticOptionsProviderInterface
     public function registerCommandHooksFromClassInfo($commandInfoList, $commandFileInstance)
     {
         foreach ($commandInfoList as $commandInfo) {
-            if ($commandInfo->hasAnnotation('hook')) {
+            if (static::isHookMethod($commandInfo)) {
                 $this->registerCommandHook($commandInfo, $commandFileInstance);
             }
         }
@@ -236,7 +367,7 @@ class AnnotatedCommandFactory implements AutomaticOptionsProviderInterface
     public function registerCommandHook(CommandInfo $commandInfo, $commandFileInstance)
     {
         // Ignore if the command info has no @hook
-        if (!$commandInfo->hasAnnotation('hook')) {
+        if (!static::isHookMethod($commandInfo)) {
             return;
         }
         $hookData = $commandInfo->getAnnotation('hook');

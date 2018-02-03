@@ -37,9 +37,11 @@ $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
 $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
     'SystemSetting','Setting','System','SettingAdapter','{"name":["System:"]}','name',false,$options1
 ));
-$moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
-    'EmailSetting','Setting','Email','SettingAdapter','{"name":["Email:"]}','name',false,$options1
-));
+if (!defined('CLOUD_INSTALLATION')) {
+    $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
+        'EmailSetting', 'Setting', 'Email', 'SettingAdapter', '{"name":["Email:"]}', 'name', false, $options1
+    ));
+}
 $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
     'LeaveSetting','Setting','Leave / PTO','SettingAdapter','{"name":["Leave:"]}','name',false,$options1
 ));

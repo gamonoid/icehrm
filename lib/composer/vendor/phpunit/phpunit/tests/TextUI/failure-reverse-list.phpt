@@ -8,7 +8,7 @@ $_SERVER['argv'][3] = 'FailureTest';
 $_SERVER['argv'][4] = __DIR__ . '/../_files/FailureTest.php';
 
 require __DIR__ . '/../bootstrap.php';
-PHPUnit_TextUI_Command::main();
+PHPUnit\TextUI\Command::main();
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
@@ -19,12 +19,11 @@ Time: %s, Memory: %s
 There were 13 failures:
 
 1) FailureTest::testAssertStringMatchesFormatFile
-Failed asserting that format description matches text.
+Failed asserting that string matches format description.
 --- Expected
 +++ Actual
 @@ @@
 -FOO
--
 +...BAR...
 
 %s:%d
@@ -53,8 +52,8 @@ Failed asserting that two strings are identical.
 --- Expected
 +++ Actual
 @@ @@
--foo
-+bar
+-'foo'
++'bar'
 
 %s:%d
 
@@ -66,7 +65,7 @@ Failed asserting that 2 matches expected 1.
 
 7) FailureTest::testAssertStringMatchesFormat
 message
-Failed asserting that format description matches text.
+Failed asserting that string matches format description.
 --- Expected
 +++ Actual
 @@ @@
@@ -81,10 +80,9 @@ Failed asserting that two strings are equal.
 --- Expected
 +++ Actual
 @@ @@
- 'foo
--bar
-+baz
- '
+ 'foo\n
+-bar\n
++baz\n
 
 %s:%d
 
@@ -114,9 +112,8 @@ Failed asserting that two objects are equal.
  stdClass Object (
 -    'foo' => 'bar'
 +    'bar' => 'foo'
- )
 
-%s:22
+%s:%d
 
 12) FailureTest::testAssertIntegerEqualsInteger
 message
@@ -133,7 +130,6 @@ Failed asserting that two arrays are equal.
  Array (
 -    0 => 1
 +    0 => 2
- )
 
 %s:%d
 

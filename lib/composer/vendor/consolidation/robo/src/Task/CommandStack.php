@@ -6,7 +6,6 @@ use Robo\Common\ExecCommand;
 use Robo\Contract\PrintedInterface;
 use Robo\Result;
 use Robo\Contract\CommandInterface;
-use Robo\Common\DynamicParams;
 use Robo\Exception\TaskException;
 
 abstract class CommandStack extends BaseTask implements CommandInterface, PrintedInterface
@@ -60,8 +59,8 @@ abstract class CommandStack extends BaseTask implements CommandInterface, Printe
             $command = implode(' ', array_filter($command));
         }
 
-        $command = $this->executable . ' ' . $this->stripExecutableFromCommand($command);
-        array_push($this->exec, trim($command));
+        $command      = $this->executable . ' ' . $this->stripExecutableFromCommand($command);
+        $this->exec[] = trim($command);
         return $this;
     }
 
@@ -105,19 +104,31 @@ abstract class CommandStack extends BaseTask implements CommandInterface, Printe
         if (empty($this->exec)) {
             throw new TaskException($this, 'You must add at least one command');
         }
-        if (!$this->stopOnFail) {
+        // If 'stopOnFail' is not set, or if there is only one command to run,
+        // then execute the single command to run.
+        if (!$this->stopOnFail || (count($this->exec) == 1)) {
             $this->printTaskInfo('{command}', ['command' => $this->getCommand()]);
             return $this->executeCommand($this->getCommand());
         }
 
+        // When executing multiple commands in 'stopOnFail' mode, run them
+        // one at a time so that the result will have the exact command
+        // that failed available to the caller. This is at the expense of
+        // losing the output from all successful commands.
+        $data = [];
+        $message = '';
+        $result = null;
         foreach ($this->exec as $command) {
             $this->printTaskInfo("Executing {command}", ['command' => $command]);
             $result = $this->executeCommand($command);
+            $result->accumulateExecutionTime($data);
+            $message = $result->accumulateMessage($message);
+            $data = $result->mergeData($data);
             if (!$result->wasSuccessful()) {
                 return $result;
             }
         }
 
-        return Result::success($this);
+        return $result;
     }
 }

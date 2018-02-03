@@ -4,13 +4,9 @@ namespace Robo\Task\Development;
 use Robo\Exception\TaskException;
 use Robo\Task\BaseTask;
 
-/**
- * @method \Robo\Task\Development\GitHub repo(string)
- * @method \Robo\Task\Development\GitHub owner(string)
- */
 abstract class GitHub extends BaseTask
 {
-    const GITHUB_URL = 'https://Api.github.com';
+    const GITHUB_URL = 'https://api.github.com';
 
     /**
      * @var string
@@ -31,6 +27,11 @@ abstract class GitHub extends BaseTask
      * @var string
      */
     protected $owner;
+
+    /**
+     * @var string
+     */
+    protected $accessToken;
 
     /**
      * @param string $repo
@@ -96,6 +97,17 @@ abstract class GitHub extends BaseTask
     }
 
     /**
+     * @param $accessToken
+     *
+     * @return $this
+     */
+    public function accessToken($token)
+    {
+        $this->accessToken = $token;
+        return $this;
+    }
+
+    /**
      * @param string $uri
      * @param array $params
      * @param string $method
@@ -117,6 +129,10 @@ abstract class GitHub extends BaseTask
 
         if (!empty($this->user)) {
             curl_setopt($ch, CURLOPT_USERPWD, $this->user . ':' . $this->password);
+        }
+
+        if (!empty($this->accessToken)) {
+            $url .= "?access_token=" . $this->accessToken;
         }
 
         curl_setopt_array(

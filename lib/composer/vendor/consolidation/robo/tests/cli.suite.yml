@@ -1,3 +1,0 @@
-class_name: CliGuy
-modules:
-    enabled: [Cli, Filesystem, Asserts, CliHelper]

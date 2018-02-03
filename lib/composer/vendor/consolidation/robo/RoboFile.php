@@ -1,7 +1,5 @@
 <?php
 use Symfony\Component\Finder\Finder;
-use Robo\Result;
-use Robo\Collection\CollectionBuilder;
 
 class RoboFile extends \Robo\Tasks
 {
@@ -46,13 +44,13 @@ class RoboFile extends \Robo\Tasks
         ]
     ) {
         $strict = $options['strict'] ? '' : '-n';
-        $result = $this->taskExec("./vendor/bin/phpcs --standard=PSR2 {$strict} {$file}")->run();
+        $result = $this->taskExec("./vendor/bin/phpcs --standard=PSR2 --exclude=Squiz.Classes.ValidClassName {$strict} {$file}")->run();
         if (!$result->wasSuccessful()) {
             if (!$options['autofix']) {
                 $options['autofix'] = $this->confirm('Would you like to run phpcbf to fix the reported errors?');
             }
             if ($options['autofix']) {
-                $result = $this->taskExec("./vendor/bin/phpcbf --standard=PSR2 {$file}")->run();
+                $result = $this->taskExec("./vendor/bin/phpcbf --standard=PSR2 --exclude=Squiz.Classes.ValidClassName {$file}")->run();
             }
         }
         return $result;
@@ -75,30 +73,45 @@ class RoboFile extends \Robo\Tasks
      */
     public function release($opts = ['beta' => false])
     {
-        $this->yell("Releasing Robo");
-        $stable = true;
-        if ($opts['beta']) {
-            $stable = false;
-            $this->say('non-stable release');
+        $version = \Robo\Robo::VERSION;
+        $stable = !$opts['beta'];
+        if ($stable) {
+            $version = preg_replace('/-.*/', '', $version);
         }
+        else {
+            $version = $this->incrementVersion($version, 'beta');
+        }
+        $this->writeVersion($version);
+        $this->yell("Releasing Robo $version");
 
         $this->docs();
         $this->taskGitStack()
             ->add('-A')
-            ->commit("auto-update")
+            ->commit("Robo release $version")
             ->pull()
             ->push()
             ->run();
 
-        if ($stable) $this->pharPublish();
+        if ($stable) {
+            $this->pharPublish();
+        }
         $this->publish();
 
         $this->taskGitStack()
-            ->tag(\Robo\Robo::VERSION)
+            ->tag($version)
             ->push('origin master --tags')
             ->run();
 
-        if ($stable) $this->versionBump();
+        if ($stable) {
+            $version = $this->incrementVersion($version) . '-dev';
+            $this->writeVersion($version);
+
+            $this->taskGitStack()
+                ->add('-A')
+                ->commit("Prepare for $version")
+                ->push()
+                ->run();
+        }
     }
 
     /**
@@ -110,8 +123,9 @@ class RoboFile extends \Robo\Tasks
      */
     public function changed($addition)
     {
+        $version = preg_replace('/-.*/', '', \Robo\Robo::VERSION);
         return $this->taskChangelog()
-            ->version(\Robo\Robo::VERSION)
+            ->version($version)
             ->change($addition)
             ->run();
     }
@@ -121,18 +135,69 @@ class RoboFile extends \Robo\Tasks
      *
      * @param string $version The new verison for Robo.
      *   Defaults to the next minor (bugfix) version after the current relelase.
+     * @option stage The version stage: dev, alpha, beta or rc. Use empty for stable.
      */
-    public function versionBump($version = '')
+    public function versionBump($version = '', $options = ['stage' => ''])
     {
+        // If the user did not specify a version, then update the current version.
         if (empty($version)) {
-            $versionParts = explode('.', \Robo\Robo::VERSION);
-            $versionParts[count($versionParts)-1]++;
-            $version = implode('.', $versionParts);
+            $version = $this->incrementVersion(\Robo\Robo::VERSION, $options['stage']);
         }
+        return $this->writeVersion($version);
+    }
+
+    /**
+     * Write the specified version string back into the Robo.php file.
+     * @param string $version
+     */
+    protected function writeVersion($version)
+    {
+        // Write the result to a file.
         return $this->taskReplaceInFile(__DIR__.'/src/Robo.php')
-            ->from("VERSION = '".\Robo\Robo::VERSION."'")
+            ->regex("#VERSION = '[^']*'#")
             ->to("VERSION = '".$version."'")
             ->run();
+    }
+
+    /**
+     * Advance to the next SemVer version.
+     *
+     * The behavior depends on the parameter $stage.
+     *   - If $stage is empty, then the patch or minor version of $version is incremented
+     *   - If $stage matches the current stage in the current version, then add one
+     *     to the stage (e.g. alpha3 -> alpha4)
+     *   - If $stage does not match the current stage in the current version, then
+     *     reset to '1' (e.g. alpha4 -> beta1)
+     *
+     * @param string $version A SemVer version
+     * @param string $stage dev, alpha, beta, rc or an empty string for stable.
+     * @return string
+     */
+    protected function incrementVersion($version, $stage = '')
+    {
+        $stable = empty($stage);
+        $versionStageNumber = '0';
+        preg_match('/-([a-zA-Z]*)([0-9]*)/', $version, $match);
+        $match += ['', '', ''];
+        $versionStage = $match[1];
+        $versionStageNumber = $match[2];
+        if ($versionStage != $stage) {
+            $versionStageNumber = 0;
+        }
+        $version = preg_replace('/-.*/', '', $version);
+        $versionParts = explode('.', $version);
+        if ($stable) {
+            $versionParts[count($versionParts)-1]++;
+        }
+        $version = implode('.', $versionParts);
+        if (!$stable) {
+            $version .= '-' . $stage;
+            if ($stage != 'dev') {
+                $versionStageNumber++;
+                $version .= $versionStageNumber;
+            }
+        }
+        return $version;
     }
 
     /**
@@ -194,6 +259,25 @@ class RoboFile extends \Robo\Tasks
                         'setBuilder',
                         'getBuilder',
                         'collectionBuilder',
+                        'setVerbosityThreshold',
+                        'verbosityThreshold',
+                        'setOutputAdapter',
+                        'outputAdapter',
+                        'hasOutputAdapter',
+                        'verbosityMeetsThreshold',
+                        'writeMessage',
+                        'detectInteractive',
+                        'background',
+                        'timeout',
+                        'idleTimeout',
+                        'env',
+                        'envVars',
+                        'setInput',
+                        'interactive',
+                        'silent',
+                        'printed',
+                        'printOutput',
+                        'printMetadata',
                     ];
                     return !in_array($m->name, $undocumentedMethods) && $m->isPublic(); // methods are not documented
                 }
@@ -289,7 +373,8 @@ class RoboFile extends \Robo\Tasks
                 ->args($devProjectsToRemove)
             ->taskComposerInstall()
                 ->dir($roboBuildDir)
-                ->printed(false)
+                ->noScripts()
+                ->printed(true)
                 ->run();
 
         // Exit if the preparation step failed

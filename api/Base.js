@@ -2461,9 +2461,10 @@ IceHRMBase.method('clearFileElement', function (elementName) {
 
 IceHRMBase.method('fixJSON', function (json) {
 	if(this.noJSONRequests == "1"){
-		json = json.replace(/"/g,'|');
+		json = window.btoa(json);
 	}
 	return json;
+
 });
 
 

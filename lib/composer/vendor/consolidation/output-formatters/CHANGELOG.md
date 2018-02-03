@@ -1,5 +1,52 @@
 # Change Log
 
+### 3.1.13 - 29 November 2017
+
+- Allow XML output for RowsOfFields (#60).
+- Allow Symfony 4 components and add make tests run on three versions of Symfony.
+
+### 3.1.12 - 12 October 2017
+
+- Bugfix: Use InputOption::VALUE_REQUIRED instead of InputOption::VALUE_OPTIONAL
+  for injected options such as --format and --fields.
+- Bugfix: Ignore empty properties in the property parser.
+
+### 3.1.11 - 17 August 2017
+
+- Add ListDataFromKeys marker data type.
+
+### 3.1.10 - 6 June 2017
+
+- Typo in CalculateWidths::distributeLongColumns causes failure for some column width distributions
+
+### 3.1.9 - 8 May 2017
+
+- Improve wrapping algorithm
+
+### 3.1.7 - 20 Jan 2017
+
+- Add Windows testing
+
+### 3.1.6 - 8 Jan 2017
+
+- Move victorjonsson/markdowndocs to require-dev
+
+### 3.1.5 - 23 November 2016
+
+- When converting from XML to an array, use the 'id' or 'name' element as the array key value.
+
+### 3.1.4 - 20 November 2016
+
+- Add a 'list delimiter' formatter option, so that we can create a Drush-style table for property lists.
+
+### 3.1.1 ~ 3.1.3 - 18 November 2016
+
+- Fine-tune wordwrapping.
+
+### 3.1.0 - 17 November 2016
+
+- Add wordwrapping to table formatter.
+
 ### 3.0.0 - 14 November 2016
 
 - **Breaking** The RenderCellInterface is now provided a reference to the entire row data. Existing clients need only add the new parameter to their method defnition to update.
@@ -9,10 +56,6 @@
 ### 2.1.0 - 7 November 2016
 
 - Add RenderCellCollections to structured lists, so that commands may add renderers to structured data without defining a new structured data subclass.
-
-
-### 2.0.1 - 4 October 2016
-
 - Throw an exception if the client requests a field that does not exist.
 - Remove unwanted extra layer of nesting when formatting an PropertyList with an array formatter (json, yaml, etc.).
 

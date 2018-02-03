@@ -1407,7 +1407,7 @@ class BaseService
     {
         $noJSONRequests = SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request");
         if ($noJSONRequests."" == "1") {
-            $json = str_replace("|", '"', $json);
+            $json = base64_decode($json);
         }
         return $json;
     }

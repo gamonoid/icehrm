@@ -11,5 +11,5 @@ use Symfony\Component\Console\Input\InputInterface;
  */
 interface InitializeHookInterface
 {
-    public function initialize(InputInterface $input, Annotation $annotationData);
+    public function initialize(InputInterface $input, AnnotationData $annotationData);
 }

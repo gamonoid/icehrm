@@ -129,7 +129,11 @@ class FormulaConverter
                                 $chunk = "$what >= $from && $what <= $to";
                                 break;
                             case '!=':
-                                $chunk = "($what < $from || $what > $to)";
+                                if ($what === 'n' && $from <= 0) {
+                                    $chunk = "$what > $to";
+                                } else {
+                                    $chunk = "($what < $from || $what > $to)";
+                                }
                                 break;
                         }
                     }

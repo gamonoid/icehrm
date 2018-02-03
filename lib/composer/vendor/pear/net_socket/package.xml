@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Net_Socket</name>
+ <channel>pear.php.net</channel>
+ <summary>Network Socket Interface</summary>
+ <description>Net_Socket is a class interface to TCP sockets.  It provides blocking
+  and non-blocking operation, with different reading and writing modes
+  (byte-wise, block-wise, line-wise and special formats like network
+  byte-order ip addresses).</description>
+ <lead>
+  <name>Chuck Hagenbuch</name>
+  <user>chagenbu</user>
+  <email>chuck@horde.org</email>
+  <active>no</active>
+ </lead>
+ <lead>
+  <name>Stig Bakken</name>
+  <user>ssb</user>
+  <email>stig@php.net</email>
+  <active>no</active>
+ </lead>
+ <lead>
+  <name>Aleksander Machniak</name>
+  <user>alec</user>
+  <email>alec@php.net</email>
+  <active>no</active>
+ </lead>
+ <date>2017-04-06</date>
+ <version>
+  <release>1.2.1</release>
+  <api>1.2.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD-2-Clause</license>
+ <notes>
+* Fix BSD-2 licensing
+ </notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <file baseinstalldir="/" name="Net/Socket.php" role="php" />
+   <file baseinstalldir="/" name="README.md" role="doc" />
+   <file baseinstalldir="/" name="LICENSE" role="doc" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.4.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.10.1</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease />
+</package>

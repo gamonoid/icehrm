@@ -11,9 +11,10 @@
 
 namespace Symfony\Component\Filesystem\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
-class FilesystemTestCase extends \PHPUnit_Framework_TestCase
+class FilesystemTestCase extends TestCase
 {
     private $umask;
 
@@ -29,16 +30,42 @@ class FilesystemTestCase extends \PHPUnit_Framework_TestCase
      */
     protected $workspace = null;
 
+    /**
+     * @var null|bool Flag for hard links on Windows
+     */
+    private static $linkOnWindows = null;
+
+    /**
+     * @var null|bool Flag for symbolic links on Windows
+     */
     private static $symlinkOnWindows = null;
 
     public static function setUpBeforeClass()
     {
-        if ('\\' === DIRECTORY_SEPARATOR && null === self::$symlinkOnWindows) {
-            $target = tempnam(sys_get_temp_dir(), 'sl');
-            $link = sys_get_temp_dir().'/sl'.microtime(true).mt_rand();
-            self::$symlinkOnWindows = @symlink($target, $link) && is_link($link);
-            @unlink($link);
-            unlink($target);
+        if ('\\' === DIRECTORY_SEPARATOR) {
+            self::$linkOnWindows = true;
+            $originFile = tempnam(sys_get_temp_dir(), 'li');
+            $targetFile = tempnam(sys_get_temp_dir(), 'li');
+            if (true !== @link($originFile, $targetFile)) {
+                $report = error_get_last();
+                if (is_array($report) && false !== strpos($report['message'], 'error code(1314)')) {
+                    self::$linkOnWindows = false;
+                }
+            } else {
+                @unlink($targetFile);
+            }
+
+            self::$symlinkOnWindows = true;
+            $originDir = tempnam(sys_get_temp_dir(), 'sl');
+            $targetDir = tempnam(sys_get_temp_dir(), 'sl');
+            if (true !== @symlink($originDir, $targetDir)) {
+                $report = error_get_last();
+                if (is_array($report) && false !== strpos($report['message'], 'error code(1314)')) {
+                    self::$symlinkOnWindows = false;
+                }
+            } else {
+                @unlink($targetDir);
+            }
         }
     }
 
@@ -65,7 +92,7 @@ class FilesystemTestCase extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param int    $expectedFilePerms expected file permissions as three digits (i.e. 755)
+     * @param int    $expectedFilePerms Expected file permissions as three digits (i.e. 755)
      * @param string $filePath
      */
     protected function assertFilePermissions($expectedFilePerms, $filePath)
@@ -98,6 +125,17 @@ class FilesystemTestCase extends \PHPUnit_Framework_TestCase
         }
 
         $this->markTestSkipped('Unable to retrieve file group name');
+    }
+
+    protected function markAsSkippedIfLinkIsMissing()
+    {
+        if (!function_exists('link')) {
+            $this->markTestSkipped('link is not supported');
+        }
+
+        if ('\\' === DIRECTORY_SEPARATOR && false === self::$linkOnWindows) {
+            $this->markTestSkipped('link requires "Create hard links" privilege on windows');
+        }
     }
 
     protected function markAsSkippedIfSymlinkIsMissing($relative = false)

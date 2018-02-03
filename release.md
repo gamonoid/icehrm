@@ -1,5 +1,14 @@
-Release note v20.3.0.OS
------------------------
+Release note v21.0.0.OS
+------------------------
+### Features
+ * Fully compatible with php 7.1
+ * Add Net_SMTP via composer (no pear installation needed)
+ 
+### Fixes
+ * Fixes for web servers not supporting JSON in GET request
+ 
+Release note v20.3.0.PRO
+------------------------
 ### Features
  * Employee and Attendance REST Api Released
  * Import/Export for Payroll Configurations

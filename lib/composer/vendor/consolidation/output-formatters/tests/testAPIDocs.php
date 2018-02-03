@@ -18,7 +18,7 @@ class APIDocsTests extends \PHPUnit_Framework_TestCase
         }
 
         $testDocs = tempnam(sys_get_temp_dir(), 'TestAPIDocs.md');
-        $currentDocs = getcwd() . '/docs/Api.md';
+        $currentDocs = getcwd() . '/docs/api.md';
         passthru("vendor/bin/phpdoc-md generate src > $testDocs");
 
         $testDocsContent = file_get_contents($testDocs);
@@ -27,6 +27,6 @@ class APIDocsTests extends \PHPUnit_Framework_TestCase
         $testDocsContent = str_replace (array("\r\n", "\r"), "\n", $testDocsContent);
         $currentDocsContent = str_replace (array("\r\n", "\r"), "\n", $currentDocsContent);
 
-        $this->assertEquals($testDocsContent, $currentDocsContent, "API docuementation out of date. Run 'composer Api' to update.");
+        $this->assertEquals($testDocsContent, $currentDocsContent, "API docuementation out of date. Run 'composer api' to update.");
     }
 }

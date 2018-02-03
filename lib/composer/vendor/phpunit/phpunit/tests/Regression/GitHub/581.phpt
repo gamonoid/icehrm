@@ -8,7 +8,7 @@ $_SERVER['argv'][2] = 'Issue581Test';
 $_SERVER['argv'][3] = __DIR__ . '/581/Issue581Test.php';
 
 require __DIR__ . '/../../bootstrap.php';
-PHPUnit_TextUI_Command::main();
+PHPUnit\TextUI\Command::main();
 ?>
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
@@ -27,14 +27,10 @@ Failed asserting that two objects are equal.
  stdClass Object (
      0 => 1
      1 => 2
-     2 => 'Test\n'
+     2 => 'Test\r\n'
      3 => 4
 -    4 => 5
 +    4 => 1
-     5 => 6
-     6 => 7
-     7 => 8
- )
 
 %s:%i
 

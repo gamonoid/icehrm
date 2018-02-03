@@ -42,6 +42,9 @@ class ReorderFields
     {
         $result = [];
         $firstRow = reset($data);
+        if (!$firstRow) {
+            $firstRow = $fieldLabels;
+        }
         foreach ($fields as $field) {
             if (array_key_exists($field, $firstRow)) {
                 if (array_key_exists($field, $fieldLabels)) {

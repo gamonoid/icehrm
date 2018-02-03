@@ -44,12 +44,32 @@ class XmlSchema implements XmlSchemaInterface
     protected function addXmlDataOrAttribute(\DOMDocument $dom, $xmlParent, $elementName, $key, $value)
     {
         $childElementName = $this->getDefaultElementName($elementName);
-        $elementName = is_numeric($key) ? $childElementName : $key;
+        $elementName = $this->determineElementName($key, $childElementName, $value);
         if (($elementName != $childElementName) && $this->isAttribute($elementName, $key, $value)) {
             $xmlParent->setAttribute($key, $value);
             return;
         }
         $this->addXmlData($dom, $xmlParent, $elementName, $value);
+    }
+
+    protected function determineElementName($key, $childElementName, $value)
+    {
+        if (is_numeric($key)) {
+            return $childElementName;
+        }
+        if (is_object($value)) {
+            $value = (array)$value;
+        }
+        if (!is_array($value)) {
+            return $key;
+        }
+        if (array_key_exists('id', $value) && ($value['id'] == $key)) {
+            return $childElementName;
+        }
+        if (array_key_exists('name', $value) && ($value['name'] == $key)) {
+            return $childElementName;
+        }
+        return $key;
     }
 
     protected function getTopLevelElementName($structuredData)

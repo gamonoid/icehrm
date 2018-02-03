@@ -12,16 +12,19 @@ namespace SebastianBergmann\CodeCoverage\Report\Xml;
 
 class Project extends Node
 {
-    public function __construct($name)
+    /**
+     * @param string $directory
+     */
+    public function __construct($directory)
     {
         $this->init();
-        $this->setProjectName($name);
+        $this->setProjectSourceDirectory($directory);
     }
 
     private function init()
     {
-        $dom = new \DOMDocument;
-        $dom->loadXML('<?xml version="1.0" ?><phpunit xmlns="http://schema.phpunit.de/coverage/1.0"><project/></phpunit>');
+        $dom = new \DOMDocument();
+        $dom->loadXML('<?xml version="1.0" ?><phpunit xmlns="http://schema.phpunit.de/coverage/1.0"><build/><project/></phpunit>');
 
         $this->setContextNode(
             $dom->getElementsByTagNameNS(
@@ -31,9 +34,39 @@ class Project extends Node
         );
     }
 
-    private function setProjectName($name)
+    private function setProjectSourceDirectory($name)
     {
-        $this->getContextNode()->setAttribute('name', $name);
+        $this->getContextNode()->setAttribute('source', $name);
+    }
+
+    /**
+     * @return string
+     */
+    public function getProjectSourceDirectory()
+    {
+        return $this->getContextNode()->getAttribute('source');
+    }
+
+    /**
+     * @return BuildInformation
+     */
+    public function getBuildInformation()
+    {
+        $buildNode = $this->getDom()->getElementsByTagNameNS(
+            'http://schema.phpunit.de/coverage/1.0',
+            'build'
+        )->item(0);
+
+        if (!$buildNode) {
+            $buildNode = $this->getDom()->documentElement->appendChild(
+                $this->getDom()->createElementNS(
+                    'http://schema.phpunit.de/coverage/1.0',
+                    'build'
+                )
+            );
+        }
+
+        return new BuildInformation($buildNode);
     }
 
     public function getTests()
