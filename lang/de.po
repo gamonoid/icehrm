@@ -1207,7 +1207,7 @@ msgid "Last Used Month"
 msgstr "Monat der letzten Verwendung"
 
 msgid "Years of Experience"
-msgstr "Erfahrung in Jahren"
+msgstr "Jahre Erfahrung"
 
 msgid "Designation"
 msgstr "Bezeichnung"
@@ -1225,37 +1225,37 @@ msgid "Referred By"
 msgstr "Empfohlen von"
 
 msgid "Leave Start Date"
-msgstr "Lassen Sie Startdatum"
+msgstr "Urlaubsbeginn"
 
 msgid "Leave End Date"
-msgstr "Lassen Sie Enddatum"
+msgstr "Urlaubsende"
 
 msgid "Reason"
 msgstr "Grund"
 
 msgid "Available Leaves"
-msgstr "Erhältlich Blätter"
+msgstr "Verfügbare Urlaube"
 
 msgid "Approved Leaves"
-msgstr "Genehmigt Blätter"
+msgstr "Genehmigte Urlaube"
 
 msgid "Rejected Leaves"
-msgstr "Abgelehnt Blätter"
+msgstr "Abgelehnte Urlaube"
 
 msgid "Leaves to be Accrued"
-msgstr "Blätter werden Abgegrenzte"
+msgstr "Urlaube zur Übertragung"
 
 msgid "Leaves Carried Forward"
-msgstr "Blätter Vortrag"
+msgstr "Übernommene Urlaubstage"
 
 msgid "Apply Leave"
-msgstr "Bewerben Leave"
+msgstr "Abwesenheit beantragen"
 
 msgid "Filter"
 msgstr "Filter"
 
 msgid "Add New"
-msgstr "Neue hinzufügen"
+msgstr "Neuen Antrag erstellen"
 
 msgid "Time"
 msgstr "Zeit"
@@ -1267,7 +1267,7 @@ msgid "From"
 msgstr "Von"
 
 msgid "To"
-msgstr "Nach"
+msgstr "Bis"
 
 msgid "Created (GMT)"
 msgstr "Erstellt (GMT)"
@@ -1288,37 +1288,37 @@ msgid "Add"
 msgstr "Hinzufügen"
 
 msgid "Reset"
-msgstr "Zurückstellen"
+msgstr "Zurücksetzen"
 
 msgid "Add Time Entry"
-msgstr "In Zeiteintrag"
+msgstr "Zeit eintragen"
 
 msgid "Current Clocked In Status"
-msgstr "Aktuelle In-Status abgestoppt"
+msgstr "Aktueller Einstempelstatus"
 
 msgid "Attendance entry should be within a single day"
-msgstr "Die Teilnahme Eintritt innerhalb eines Tages sein sollte"
+msgstr "Der Teilnahmeeintrag sollte innerhalb eines Tages erstellt werden"
 
 msgid "Account Balance"
 msgstr "Kontostand"
 
 msgid "Plan"
-msgstr "Planen"
+msgstr "Plan"
 
 msgid "Transactions"
 msgstr "Transaktionen"
 
 msgid "Applications"
-msgstr "Anwendungen"
+msgstr "Bewerbungen"
 
 msgid "Attendance Graph"
-msgstr "Die Teilnahme Graph"
+msgstr "Teilnahmegraph"
 
 msgid "Hours in Office vs Hours Worked Graph"
-msgstr "Stunden in Office vs Arbeitsstunden Graph"
+msgstr "Stunden im Büro VS gearbeitete Stunden"
 
 msgid "Company Graph"
-msgstr "Unternehmen Graph"
+msgstr "Unternehmensgraph"
 
 msgid "Company Documents"
 msgstr "Firmendokumente"
@@ -1330,10 +1330,10 @@ msgid "Employee Documents"
 msgstr "Mitarbeiterdokumente"
 
 msgid "Employee Basic Details"
-msgstr "Mitarbeiter Basisdetails"
+msgstr "Mitarbeitergrundinformationen"
 
 msgid "Employees (Direct Reports)"
-msgstr "Mitarbeiter (Direkt Reports)"
+msgstr "Mitarbeiter (Direkt Untergeben)"
 
 msgid "Certifications"
 msgstr "Zertifizierungen"
@@ -1342,73 +1342,73 @@ msgid "Languages"
 msgstr "Sprachen"
 
 msgid "Deactivated Employees"
-msgstr "Deaktiviert Mitarbeiter"
+msgstr "Deaktivierter Mitarbeiter"
 
 msgid "Temporarily Deactivated Employees"
-msgstr "Vorübergehend deaktiviert Mitarbeiter"
+msgstr "Vorübergehend deaktivierte Mitarbeiter"
 
 msgid "Terminated Employee Data"
-msgstr "Abgebrochene Mitarbeiterdaten"
+msgstr "Daten ehemaliger Mitarbeiter"
 
 msgid "Employee Saved Successfully"
 msgstr "Mitarbeiter erfolgreich gespeichert"
 
 msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
-msgstr "Mitarbeiter muss ein Benutzer auf IceHrm anmelden. Wollen Sie nun einen Benutzer für diesen Mitarbeiter zu schaffen?"
+msgstr "Der Mitarbeiter benötigt ein Konto, um sich für IceHrm anmelden zu können. Möchten Sie einen Benutzer für diesen Mitarbeiter erstellen?"
 
 msgid "You can do this later through Users module if required."
-msgstr "Sie können dieses Modul später durch Benutzer tun, wenn erforderlich."
+msgstr "Sie können dies auch später, falls nötig, innerhalb des Benutzermoduls nachholen."
 
 msgid "Expenses Categories"
-msgstr "Die Aufwendungen Kategorien"
+msgstr "Ausgabekategorien"
 
 msgid "Payment Methods"
 msgstr "Zahlungsarten"
 
 msgid "Employee Expenses"
-msgstr "Der Personalaufwand"
+msgstr "Personalauslagen"
 
 msgid "Salary Component Types"
-msgstr "Gehalt Komponententypen"
+msgstr "Gehaltsbestandteilsarten"
 
 msgid "Employee Salary Components"
-msgstr "Mitarbeiter Gehaltskomponenten"
+msgstr "Mitarbeitergehaltsbestandteile"
 
 msgid "Company Payroll"
-msgstr "Unternehmen Payroll"
+msgstr "Unternehmensgehaltsliste"
 
 msgid "Calculation Groups"
-msgstr "Berechnung Gruppen"
+msgstr "Berechnungsgruppen"
 
 msgid "Calculation Methods"
 msgstr "Berechnungsmethoden"
 
 msgid "Payslip Templates"
-msgstr "Payslip Vorlagen"
+msgstr "Gehaltsabrechnungsvorlagen"
 
 msgid "Edit Employment Types"
-msgstr "Bearbeiten Beschäftigungsarten"
+msgstr "Beschäftigungsarten bearbeiten"
 
 msgid "Edit Experience Levels"
-msgstr "Bearbeiten Erfahrungsstufen"
+msgstr "Erfahrungsstufen bearbeiten"
 
 msgid "Edit Job Functions"
-msgstr "Edit Job-Funktionen"
+msgstr "Job-Funktionen bearbeiten"
 
 msgid "Edit Education Levels"
-msgstr "Bearbeiten Bildungsniveau"
+msgstr "Bildungsniveaus bearbeiten"
 
 msgid "Edit Benefits"
-msgstr "Bearbeiten Vorteile"
+msgstr "Vorteile bearbeiten"
 
 msgid "Application"
-msgstr "Anwendung"
+msgstr "Bewerbung"
 
 msgid "Job Titles"
 msgstr "Berufsbezeichnungen"
 
 msgid "Pay Grades"
-msgstr "Besoldungsgruppen"
+msgstr "Gehaltsklasse"
 
 msgid "Training Sessions"
 msgstr "Trainingssitzungen"
@@ -1417,10 +1417,10 @@ msgid "Employee Training Sessions"
 msgstr "Mitarbeiterschulungen"
 
 msgid "Clients"
-msgstr "Clients"
+msgstr "Klienten"
 
 msgid "Employee Projects"
-msgstr "Mitarbeiter Projekte"
+msgstr "Mitarbeiterprojekte"
 
 msgid "Leave Types"
 msgstr "Urlaubsarten"
@@ -1429,25 +1429,25 @@ msgid "Work Week"
 msgstr "Arbeitswoche"
 
 msgid "Holidays"
-msgstr "Ferien"
+msgstr "Feiertage"
 
 msgid "Leave Rules"
-msgstr "Lassen Sie Regeln"
+msgstr "Urlaubstagregelungen"
 
 msgid "Paid Time Off"
 msgstr "Bezahlter Urlaub"
 
 msgid "Leave Groups"
-msgstr "Leave Gruppen"
+msgstr "Abwesenheitsgruppen"
 
 msgid "Edit Leave Groups"
-msgstr "Bearbeiten Leave Gruppen"
+msgstr "Abwesenheitsgruppen bearbeiten"
 
 msgid "Leave Group Employees"
-msgstr "Gruppe verlassen Mitarbeiter"
+msgstr "Mitarbeiter der Abwesenheitsgruppe"
 
 msgid "Employee Leave List"
-msgstr "Mitarbeiter verlassen Liste"
+msgstr "Urlaubsliste der Mitarbeiter"
 
 msgid "Loan Types"
 msgstr "Darlehensarten"
@@ -1459,10 +1459,10 @@ msgid "Travel Requests"
 msgstr "Reisegesuche"
 
 msgid "Overtime Categories"
-msgstr "Überstunden Kategorien"
+msgstr "Überstundenkategorien"
 
 msgid "Leave / PTO"
-msgstr "Lassen Sie / PTO"
+msgstr "Urlaube/Bezahlte Urlaube"
 
 msgid "Other"
 msgstr "Andere"
@@ -1477,10 +1477,10 @@ msgid "Provinces"
 msgstr "Provinzen"
 
 msgid "Currency Types"
-msgstr "Währungstypen"
+msgstr "Währungsarten"
 
 msgid "Employee Custom Fields"
-msgstr "Mitarbeiter Benutzerdefinierte Felder"
+msgstr "Benutzerdefinierte Felder der Mitarbeiter"
 
 msgid "Employee Field Names"
 msgstr "Mitarbeiterfeldnamen"
@@ -1489,109 +1489,109 @@ msgid "My Details"
 msgstr "Meine Details"
 
 msgid "All My Leaves"
-msgstr "All My Leaves"
+msgstr "All meine Urlaubsanfragen"
 
 msgid "Leave Entitlement"
 msgstr "Urlaubsanspruch"
 
 msgid "Approved Leave"
-msgstr "Genehmigt Leave"
+msgstr "Genehmigter Urlaub"
 
 msgid "Pending Leave"
-msgstr "Ausstehend Leave"
+msgstr "Ausstehende Urlaubsanfrage"
 
 msgid "Subordinate Leave"
-msgstr "Untergeordnete Leave"
+msgstr "Untergeordneter Urlaub"
 
 msgid "Cancellation Requests"
-msgstr "Löschungsanträge"
+msgstr "Aufhebungsanfragen"
 
 msgid "Approval Requests"
 msgstr "Genehmigungsanfragen"
 
 msgid "Approved TimeSheets"
-msgstr "Genehmigt Timesheets"
+msgstr "Genehmigte Stundenzettel"
 
 msgid "All My TimeSheets"
-msgstr "All My Timesheets"
+msgstr "Alle Stundenzettel"
 
 msgid "Pending TimeSheets"
-msgstr "Bis Timesheets"
+msgstr "Ausstehende Stundenzettel"
 
 msgid "Subordinate TimeSheets"
-msgstr "Untergeordnete Timesheets"
+msgstr "Untergeordnete Stundenzettel"
 
 msgid "Approved Attendance Sheets"
-msgstr "Genehmigt Anwesenheitslisten"
+msgstr "Genehmigte Anwesenheitslisten"
 
 msgid "All My Attendance Sheets"
-msgstr "All My Anwesenheitslisten"
+msgstr "All meine Anwesenheitslisten"
 
 msgid "Pending Attendance Sheets"
-msgstr "Bis zur Anwesenheitslisten"
+msgstr "Ausstehende Anwesenheitslisten"
 
 msgid "Subordinate Attendance Sheets"
 msgstr "Untergeordnete Anwesenheitslisten"
 
 msgid "Subordinate Overtime Requests"
-msgstr "Untergeordnete Überstunden Anfragen"
+msgstr "Untergeordnete Überstundenanfragen"
 
 msgid "Overtime Request Approval"
-msgstr "Überstunden Genehmigung anfordern"
+msgstr "Überstundenanfragengenehmigung"
 
 msgid "My Training Sessions"
-msgstr "Mein Training Sessions"
+msgstr "Meine Trainingsseminare"
 
 msgid "All Training Sessions"
-msgstr "Alle Schulungen"
+msgstr "Alle Trainingsseminare"
 
 msgid "Training Sessions of Direct Reports"
-msgstr "Schulungen von Direct Reports"
+msgstr "Schulungen direkt Untergebener"
 
 msgid "Subordinate Travel Requests"
-msgstr "Untergeordnete Reiseanträge"
+msgstr "Reiseanträge Untergebener"
 
 msgid "Travel Request Approval"
-msgstr "Reise Genehmigung anfordern"
+msgstr "Reiseanfragenzustimmung"
 
 msgid "Subordinate Expenses"
-msgstr "Untergeordnete Aufwendungen"
+msgstr "Auslagen Untergebener"
 
 msgid "Expenses Approval"
-msgstr "Die Aufwendungen Approval"
+msgstr "Auslagenzustimmung"
 
 msgid "Loans Taken"
 msgstr "Kredite aufgenommen"
 
 msgid "Change Leave Status"
-msgstr "Ändern Sie Leave-Status"
+msgstr "Urlaubsstatus ändern"
 
 msgid "Leave Status"
-msgstr "Lassen-Status"
+msgstr "Urlaubsstatus"
 
 msgid "Status Change Note"
-msgstr "Statusänderung Hinweis"
+msgstr "Statusänderungshinweis"
 
 msgid "Leave Summary"
-msgstr "Lassen Zusammenfassung"
+msgstr "Urlaubszusammenfassung"
 
 msgid "Approved Leave Count"
-msgstr "Genehmigt Leave Count"
+msgstr "Anzahl genehmigter Urlaube"
 
 msgid "Pending Leave Count"
-msgstr "Schwebende Leave Count"
+msgstr "Anzahl ausstehender Urlaube"
 
 msgid "Available Leave Count"
-msgstr "Verfügbar Leave Count"
+msgstr "Anzahl verfügbarer Urlaube"
 
 msgid "Leave Dates"
-msgstr "Lassen Sie Termine"
+msgstr "Urlaubstermine"
 
 msgid "Leave Date"
-msgstr "Lassen Sie Datum"
+msgstr "Urlaubsdatum"
 
 msgid "Leave Notes"
-msgstr "Leave Hinweise"
+msgstr "Urlaubshinweise"
 
 msgid "Apply"
 msgstr "Anwenden"
