@@ -43,7 +43,7 @@ msgid "Quick Access"
 msgstr "Schnellzugriff"
 
 msgid "Switch"
-msgstr "Schalter"
+msgstr "Mitarbeiter wechseln"
 
 msgid "Profile"
 msgstr "Profil"
@@ -1255,7 +1255,7 @@ msgid "Filter"
 msgstr "Filter"
 
 msgid "Add New"
-msgstr "Neuen Antrag erstellen"
+msgstr "Neuen erstellen"
 
 msgid "Time"
 msgstr "Zeit"
