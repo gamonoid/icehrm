@@ -70,11 +70,11 @@ class LanguageManager
         return Json::toString($me->translations);
     }
 
-	public static function getTranslationsObject($lang = null)
-	{
-		$me = self::getInstance($lang);
-		return $me->translations;
-	}
+    public static function getTranslationsObject($lang = null)
+    {
+        $me = self::getInstance($lang);
+        return $me->translations;
+    }
 
     public static function tran($text)
     {
