@@ -1,13 +1,15 @@
 msgid ""
 msgstr ""
-"Content-Transfer-Encoding: 8bit\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Language: Japanese\n"
-"Language-Team: IceHrm\n"
-"Last-Translator: Thilina Hasantha\n"
-"MIME-Version: 1.0\n"
 "Project-Id-Version: 18.0\n"
 "Report-Msgid-Bugs-To: https://icehrm.com\n"
+"Last-Translator: Thilina Hasantha\n"
+"Language-Team: IceHrm\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2018-03-05T05:26:33+05:30\n"
+"PO-Revision-Date: 2018-03-05T05:26:33+05:30\n"
+"Language: Japanese\n"
 
 msgid "Save"
 msgstr "セーブ"
@@ -1566,9 +1568,6 @@ msgstr "借入"
 msgid "Change Leave Status"
 msgstr "脱退ステータスを変更"
 
-msgid "Leave Status"
-msgstr "ステータスを残します"
-
 msgid "Status Change Note"
 msgstr "ステータス変更（注）"
 
@@ -1598,4 +1597,3 @@ msgstr "適用します"
 
 msgid "Back"
 msgstr "バック"
-

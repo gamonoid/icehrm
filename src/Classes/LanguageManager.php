@@ -9,40 +9,45 @@ use Utils\LogManager;
 
 class LanguageManager
 {
-    private static $me = null;
+    private static $me = [];
 
     /* @var \Gettext\Translator $translator */
     private $translator = null;
+    /* @var \Gettext\Translations $translations */
     private $translations = null;
 
     private function __construct()
     {
     }
 
-    private static function getInstance()
+    private static function getInstance($lang = null)
     {
-        if (empty(self::$me)) {
-            self::$me = new LanguageManager();
-            self::$me->loadLanguage();
+        if ($lang === null) {
+            $lang = self::getCurrentLang();
+        }
+        if (empty(self::$me[$lang])) {
+            self::$me[$lang] = new LanguageManager();
+            self::$me[$lang]->initialize($lang);
         }
 
-        return self::$me;
+        return self::$me[$lang];
     }
 
-    private function loadLanguage()
+    private function initialize($lang)
     {
-        $lang = $this->getCurrentLang();
+        $this->loadLanguage($lang);
+    }
+
+    public function loadLanguage($lang)
+    {
         $this->translations = Translations::fromPoFile(APP_BASE_PATH.'lang/'.$lang.'.po');
-        if (file_exists(APP_BASE_PATH.'lang/'.$lang.'-ext.po')) {
-            $this->translations->addFromPoFile(APP_BASE_PATH.'lang/'.$lang.'-ext.po');
-        }
         $t = new Translator();
         $t->loadTranslations($this->translations);
         $t->register();
         $this->translator = $t;
     }
 
-    private function getCurrentLang()
+    private static function getCurrentLang()
     {
         $user = BaseService::getInstance()->getCurrentUser();
         if (empty($user) || empty($user->lang) || $user->lang == "NULL") {
@@ -56,15 +61,20 @@ class LanguageManager
         if (empty($lang) || !file_exists(APP_BASE_PATH.'lang/'.$lang.'.po')) {
             $lang = 'en';
         }
-        LogManager::getInstance()->info("Current Language:".$lang);
         return $lang;
     }
 
-    public static function getTranslations()
+    public static function getTranslations($lang = null)
     {
-        $me = self::getInstance();
+        $me = self::getInstance($lang);
         return Json::toString($me->translations);
     }
+
+	public static function getTranslationsObject($lang = null)
+	{
+		$me = self::getInstance($lang);
+		return $me->translations;
+	}
 
     public static function tran($text)
     {

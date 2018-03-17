@@ -1,13 +1,15 @@
 msgid ""
 msgstr ""
-"Content-Transfer-Encoding: 8bit\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Language: Polish\n"
-"Language-Team: IceHrm\n"
-"Last-Translator: Thilina Hasantha\n"
-"MIME-Version: 1.0\n"
 "Project-Id-Version: 18.0\n"
 "Report-Msgid-Bugs-To: https://icehrm.com\n"
+"Last-Translator: Thilina Hasantha\n"
+"Language-Team: IceHrm\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2018-03-05T05:26:33+05:30\n"
+"PO-Revision-Date: 2018-03-05T05:26:33+05:30\n"
+"Language: Polish\n"
 
 msgid "Save"
 msgstr "Zapisać"
@@ -1566,9 +1568,6 @@ msgstr "Pożyczki zaciągnięte"
 msgid "Change Leave Status"
 msgstr "Pozostawić zmiany statusu"
 
-msgid "Leave Status"
-msgstr "Zostaw status"
-
 msgid "Status Change Note"
 msgstr "Zmiana stanu Uwaga"
 
@@ -1598,4 +1597,3 @@ msgstr "Zastosować"
 
 msgid "Back"
 msgstr "Plecy"
-

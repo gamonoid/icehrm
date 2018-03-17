@@ -715,3 +715,22 @@ table.dataTable{
 .small-box{
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.12), 0 2px 10px 0 rgba(0,0,0,.09);
 }
+
+.help-info{
+    font-size: 25px;
+    color: #367fa9;
+    padding-top: 4px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.ice-form-error {
+    font-size: 1em;
+}
+
+.ice-form-error-control {
+    padding-bottom: 1rem;
+}

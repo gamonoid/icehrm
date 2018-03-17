@@ -1,5 +1,6 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20180305_210100_drop_si_hi_languages';
 $migrationList[] = 'v20171126_200303_swift_mail';
 $migrationList[] = 'v20171003_200302_payroll_meta_export';
 $migrationList[] = 'v20171003_200301_add_deduction_group_payroll';
