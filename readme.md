@@ -90,7 +90,7 @@ Preparing development VM with Vagrant
 ~ $ mysql -udev -pdev dev < /vagrant/core-ext/scripts/icehrm_sample_data.sql
 ```
 
-- Navigate to [](http://clients.app.dev/dev) to load icehrm from VM. (user:admin/pass:admin)
+- Navigate to [http://clients.app.dev/dev](http://clients.app.dev/dev) to load icehrm from VM. (user:admin/pass:admin)
 
 - Unit testing
 
