@@ -12,8 +12,8 @@ class EmployeeAttendanceReport extends CSVReportBuilder implements CSVReportBuil
     public function getMainQuery()
     {
         $query = "SELECT 
-(SELECT `employee_id` from Employees where id = at.employee) as 'Employee',
-(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) from Employees where id = at.employee) as 'Employee',
+(SELECT `employee_id` from Employees where id = at.employee) as 'Employee ID',
+(SELECT concat(`first_name`, ' ', `last_name`) from Employees where id = at.employee) as 'Employee',
 in_time as 'Time In',
 out_time as 'Time Out',
 note as 'Note'

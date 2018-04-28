@@ -91,6 +91,15 @@ include('configureUIManager.php');
 ?><!DOCTYPE html>
 <html>
 <head>
+    <!-- Google Analytics -->
+    <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', '<?=\Classes\BaseService::getInstance()->getGAKey()?>', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+
     <meta charset="utf-8">
     <title><?=$companyName?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -101,6 +110,7 @@ include('configureUIManager.php');
     <link href="<?=BASE_URL?>themecss/bootstrap.min.css" rel="stylesheet">
     <link href="<?=BASE_URL?>themecss/font-awesome.min.css" rel="stylesheet">
     <link href="<?=BASE_URL?>themecss/ionicons.min.css" rel="stylesheet">
+    <link href="<?=BASE_URL?>web/bower_components/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
 
 
 
@@ -177,17 +187,6 @@ include('configureUIManager.php');
 
 </head>
 <body class="skin-blue" data-turbolinks="false">
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', '<?=\Classes\BaseService::getInstance()->getGAKey()?>', 'auto');
-    ga('send','pageview');
-
-</script>
-
 <header id="delegationDiv" class="header">
     <a href="<?=$homeLink?>" class="logo" style="overflow: hidden;font-family: 'Source Sans Pro', sans-serif;">
         <?=\Classes\LanguageManager::tran('Home')?>
@@ -329,10 +328,12 @@ include('configureUIManager.php');
             <h1>
                 <?=\Classes\LanguageManager::tran($meta['label'])?>
                 <small>
-                    <?=\Classes\LanguageManager::tran($meta['menu'])?>&nbsp;&nbsp;
-                    <a href="#" class="helpLink" target="_blank" style="display:none;color:#fff;"><i class="glyphicon glyphicon-question-sign"></i></a>
+                    <?=\Classes\LanguageManager::tran($meta['menu'])?>&nbsp;&nbsp
                 </small>
             </h1>
+            <a href="#" class="helpLink" target="_blank"
+               style="display:none;color:#f4f4f4;font-size: 2.3rem;float: right;margin-top: -30px;text-shadow: 1px 1px 2px black, 0 0 25px #367fa9, 0 0 5px #367fa9;">
+                <i class="fa fa-question-circle"></i></a>
         </section>
 
         <!-- Main content -->

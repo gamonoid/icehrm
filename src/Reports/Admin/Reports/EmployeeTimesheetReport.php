@@ -12,7 +12,7 @@ class EmployeeTimesheetReport extends CSVReportBuilder implements CSVReportBuild
     public function getMainQuery()
     {
         $query = "SELECT 
-(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) 
+(SELECT concat(`first_name`, ' ', `last_name`) 
 from Employees where id = te.employee) as 'Employee',
 (SELECT name from Projects where id = te.project) as 'Project',
 details as 'Details',

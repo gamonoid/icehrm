@@ -1,0 +1,30 @@
+{
+  "name": "d3-timeline",
+  "version": "0.0.5",
+  "main": "src/d3-timeline.js",
+  "ignore": [
+    "examples",
+    "lib",
+    ".bowerrc",
+    ".gitignore",
+    ".git",
+    ".jshintrc",
+    "gruntfile.js",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "d3": ">=3.4.3"
+  },
+  "homepage": "https://github.com/jiahuang/d3-timeline",
+  "_release": "0.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.5",
+    "commit": "743021e35e07c45664386049847455eb5a9669f0"
+  },
+  "_source": "https://github.com/jiahuang/d3-timeline.git",
+  "_target": "^0.0.5",
+  "_originalSource": "d3-timeline",
+  "_direct": true
+}

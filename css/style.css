@@ -734,3 +734,22 @@ table.dataTable{
 .ice-form-error-control {
     padding-bottom: 1rem;
 }
+
+.ice-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    margin-left: -2px;
+    font-size: 1.4rem;
+}
+
+.vis-time-axis.vis-foreground {
+    height: 46px;
+    font-weight: bold;
+    background-color: #F0F0EE;
+}
+
+.vis-item {
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    border: none;
+    background-color: transparent !important;
+}

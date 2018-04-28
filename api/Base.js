@@ -1,23 +1,23 @@
 /*
-This file is part of Ice Framework.
+ This file is part of Ice Framework.
 
-Ice Framework is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+ Ice Framework is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-Ice Framework is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+ Ice Framework is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
+ You should have received a copy of the GNU General Public License
+ along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
 
-------------------------------------------------------------------
+ ------------------------------------------------------------------
 
-Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
-Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
+ Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
+ Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
  */
 
 
@@ -624,12 +624,12 @@ IceHRMBase.method('createTable', function(elementId) {
     var html = "";
     html = this.getTableTopButtonHtml() + this.getTableHTMLTemplate();
     /*
-    if(this.getShowAddNew()){
-        html = this.getTableTopButtonHtml()+'<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="grid"></table></div>';
-    }else{
-        html = '<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="grid"></table></div>';
-    }
-    */
+     if(this.getShowAddNew()){
+     html = this.getTableTopButtonHtml()+'<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="grid"></table></div>';
+     }else{
+     html = '<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="grid"></table></div>';
+     }
+     */
     //Find current page
     var activePage = $('#'+elementId +" .dataTables_paginate .active a").html();
     var start = 0;
@@ -686,13 +686,13 @@ IceHRMBase.method('createTableServer', function(elementId) {
 
     var html = "";
     html = this.getTableTopButtonHtml() + this.getTableHTMLTemplate();
-    /*
-    if(this.getShowAddNew()){
-        html = this.getTableTopButtonHtml()+'<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="grid"></table></div>';
-    }else{
-        html = '<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="grid"></table></div>';
-    }
-    */
+	/*
+	 if(this.getShowAddNew()){
+	 html = this.getTableTopButtonHtml()+'<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="grid"></table></div>';
+	 }else{
+	 html = '<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="grid"></table></div>';
+	 }
+	 */
 
     //Find current page
     var activePage = $('#'+elementId +" .dataTables_paginate .active a").html();
@@ -914,45 +914,60 @@ IceHRMBase.method('showMessage', function(title,message,closeCallback,closeCallb
     var modelId = "";
     if(isPlain){
         modelId = "#plainMessageModel";
-        this.renderModel('plainMessage',title,message);
     }else{
         modelId = "#messageModel";
+    }
+
+    $(modelId).off();
+
+    if(isPlain){
+        this.renderModel('plainMessage',title,message);
+    }else{
         this.renderModel('message',title,message);
     }
 
-    $(modelId).unbind('hide');
-    if(closeCallback != null && closeCallback != undefined){
+    if(closeCallback !== null && closeCallback !== undefined){
+        $(modelId).modal({show:true});
         $(modelId).on('hidden.bs.modal',function(){
             closeCallback.apply(that,closeCallbackData);
-            $(modelId).unbind('hidden.bs.modal');
+            $('.modal-backdrop').remove();
+        });
+    } else {
+        $(modelId).modal({
+            backdrop: 'static'
         });
     }
-    $(modelId).modal({
-        backdrop: 'static'
-    });
 });
 
 IceHRMBase.method('showDomElement', function(title,element,closeCallback,closeCallbackData, isPlain) {
     var that = this;
     var modelId = "";
-    if(isPlain){
+    if (isPlain) {
         modelId = "#dataMessageModel";
-        this.renderModelFromDom('dataMessage',title,element);
-    }else{
+    } else{
         modelId = "#messageModel";
-        this.renderModelFromDom('message',title,element);
     }
 
     $(modelId).unbind('hide');
-    if(closeCallback != null && closeCallback != undefined){
+
+    if(isPlain){
+        this.renderModelFromDom('dataMessage',title,element);
+    }else{
+        this.renderModelFromDom('message',title,element);
+    }
+
+
+    if(closeCallback !== null && closeCallback !== undefined){
+        $(modelId).modal({show:true});
         $(modelId).on('hidden.bs.modal',function(){
             closeCallback.apply(that,closeCallbackData);
-            $(modelId).unbind('hidden.bs.modal');
+            $('.modal-backdrop').remove();
+        });
+    } else {
+        $(modelId).modal({
+            backdrop: 'static'
         });
     }
-    $(modelId).modal({
-        backdrop: 'static'
-    });
 });
 
 IceHRMBase.method('confirmDelete', function() {
@@ -1270,11 +1285,11 @@ IceHRMBase.method('showFilters', function(object) {
         });
     });
 
-    /*
-    $tempDomObj.find('.signatureField').each(function() {
-        $(this).data('signaturePad',new SignaturePad($(this)));
-    });
-    */
+	/*
+	 $tempDomObj.find('.signatureField').each(function() {
+	 $(this).data('signaturePad',new SignaturePad($(this)));
+	 });
+	 */
 
     //var tHtml = $tempDomObj.wrap('<div>').parent().html();
     this.showDomElement("Edit",$tempDomObj,null,null,true);
@@ -1290,7 +1305,7 @@ IceHRMBase.method('showFilters', function(object) {
         return false;
     });
 
-    if(this.filter != undefined && this.filter != null){
+    if (this.filter != undefined && this.filter != null && this.filter != '') {
         this.fillForm(this.filter,"#"+this.getTableName()+"_filter", this.getFilters());
     }
 
@@ -1447,8 +1462,10 @@ IceHRMBase.method('renderForm', function(object) {
 
         }
 
-        if(object != undefined && object != null){
+        if (object != undefined && object != null) {
             this.fillForm(object);
+        } else {
+            this.setDefaultValues();
         }
 
         this.scrollToTop();
@@ -1474,16 +1491,35 @@ IceHRMBase.method('renderForm', function(object) {
 
         if(object != undefined && object != null){
             this.fillForm(object,"#"+randomFormId);
+        } else {
+            this.setDefaultValues("#"+randomFormId);
         }
 
     }
 
     this.postRenderForm(object,$tempDomObj);
-
-
-
 });
 
+IceHRMBase.method('setDefaultValues', function(formId, fields) {
+    if(fields == null || fields == undefined){
+        fields = this.getFormFields();
+    }
+
+    if(formId == null || formId == undefined || formId == ""){
+        formId = "#"+this.getTableName()+'Form';
+    }
+
+
+    for(var i=0;i<fields.length;i++) {
+        if(fields[i][1].type !== 'text' && fields[i][1].type !== 'textarea') {
+            continue;
+        }
+
+        if (fields[i][1].default !== undefined && fields[i][1].default !== null) {
+            $(formId + ' #' + fields[i][0]).val(fields[i][1].default);
+        }
+    }
+});
 
 IceHRMBase.method('retriveItemsAfterSave', function() {
     return true;
@@ -1636,17 +1672,19 @@ IceHRMBase.method('showDataGroup', function(field, object) {
         });
     });
 
-    /*
-    $tempDomObj.find('.signatureField').each(function() {
-        $(this).data('signaturePad',new SignaturePad($(this)));
-    });
-    */
+	/*
+	 $tempDomObj.find('.signatureField').each(function() {
+	 $(this).data('signaturePad',new SignaturePad($(this)));
+	 });
+	 */
 
     this.currentDataGroupField = field;
     this.showDomElement("Add "+field[1]['label'],$tempDomObj,null,null,true);
 
-    if(object != undefined && object != null){
+    if (object != undefined && object != null) {
         this.fillForm(object,"#"+this.getTableName()+"_field_"+field[0], field[1]['form']);
+    } else {
+        this.setDefaultValues("#"+this.getTableName()+"_field_"+field[0], field[1]['form']);
     }
 
 

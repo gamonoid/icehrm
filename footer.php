@@ -4,7 +4,7 @@
 		<script type="text/javascript">
 
 
-		
+
 		for (var prop in modJsList) {
 			if(modJsList.hasOwnProperty(prop)){
 				modJsList[prop].setTranslations(<?=\Classes\LanguageManager::getTranslations()?>);
@@ -35,30 +35,30 @@
 				modJsList[prop].setInstanceId('<?=\Classes\BaseService::getInstance()->getInstanceId()?>');
 				modJsList[prop].setGoogleAnalytics(ga);
 				modJsList[prop].setNoJSONRequests('<?=\Classes\SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request")?>');
-				
+
 			}
-			
+
 	    }
 
 
 		//Other static js objects
-		
+
 		var timeUtils = new TimeUtils();
 		timeUtils.setServerGMToffset('<?=$diffHoursBetweenServerTimezoneWithGMT?>');
-		
+
 		var notificationManager = new NotificationManager();
 		notificationManager.setBaseUrl('<?=CLIENT_BASE_URL?>service.php');
 		notificationManager.setTimeUtils(timeUtils);
-		
-		<?php 
+
+		<?php
 			$notificationTemplates = array();
-			$notificationTemplates['notification'] = file_get_contents(BASE_URL."/templates/notifications/notification.html");
-			$notificationTemplates['notifications'] = file_get_contents(BASE_URL."/templates/notifications/notifications.html");
+			$notificationTemplates['notification'] = file_get_contents(APP_BASE_PATH."/templates/notifications/notification.html");
+			$notificationTemplates['notifications'] = file_get_contents(APP_BASE_PATH."/templates/notifications/notifications.html");
 		?>
 		notificationManager.setTemplates(<?=json_encode($notificationTemplates)?>);
-		
+
 		//-----------------------
-	   
+
 
 		$(document).ready(function() {
 			$('#modTab a').click(function (e) {
@@ -83,20 +83,20 @@
 			var tabName = window.location.hash.substr(1);
 
 			if(tabName!= undefined && tabName != "" && modJsList[tabName] != undefined && modJsList[tabName] != null){
-				$("#"+tabName).click();	
+				$("#"+tabName).click();
 			}else{
                 <?php if(!isset($_REQUEST['action']) && $_REQUEST['action'] != "new"){?>
 				modJs.get([]);
                 <?php } ?>
 			}
-			
+
 
 			notificationManager.getNotifications();
 
 			$("#delegationDiv").on('click', "#notifications", function(e) {
 				$(this).find('.label-danger').remove();
 				notificationManager.clearPendingNotifications();
-				
+
 			});
 
 			$("#switch_emp").select2();
@@ -108,7 +108,7 @@
 			}else{
 				$('.helpLink').hide();
 			}
-			
+
 		});
 		var clientUrl = '<?=CLIENT_BASE_URL?>';
 
@@ -117,7 +117,7 @@
 		$(document).ready(function() {
 
 			$(".dataTables_paginate ul").addClass("pagination");
-			
+
 			var refId = "";
 			<?php if(empty($_REQUEST['m'])){?>
 				<?php if($user->user_level == 'Admin'){?>

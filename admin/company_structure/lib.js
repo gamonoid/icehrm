@@ -48,6 +48,16 @@ CompanyStructureAdapter.method('getFormFields', function() {
 	];
 });
 
+CompanyStructureAdapter.method('postRenderForm', function(object, $tempDomObj) {
+	if (object === undefined
+		|| object === null
+		|| object.id === null
+		|| object.id === undefined || object.id === ''
+	) {
+		$tempDomObj.find('#field_heads').hide();
+	}
+});
+
 
 /*
  * Company Graph
@@ -68,16 +78,16 @@ CompanyGraphAdapter.method('convertToTree', function(data) {
 	ice['title'] = '';
 	ice['name'] = '';
 	ice['children'] = [];
-	
+
 	var parent = null;
-	
+
 	var added = {};
-	
-	
+
+
 	for(var i=0;i<data.length;i++){
-		
+
 		data[i].name = data[i].title;
-		
+
 		if(data[i].parent != null && data[i].parent != undefined){
 			parent = this.findParent(data,data[i].parent);
 			if(parent != null){
@@ -87,17 +97,17 @@ CompanyGraphAdapter.method('convertToTree', function(data) {
 				parent.children.push(data[i]);
 			}
 		}
-		
+
 	}
-	
+
 	for(var i=0;i<data.length;i++){
 		if(data[i].parent == null || data[i].parent == undefined){
 			ice['children'].push(data[i]);
 		}
 	}
-	
+
 	return ice;
-	
+
 });
 
 
@@ -115,10 +125,10 @@ CompanyGraphAdapter.method('createTable', function(elementId) {
 	$("#tabPageCompanyGraph").html("");
 	var that = this;
 	var sourceData = this.sourceData;
-	
+
 	//this.fixCyclicParent(sourceData);
 	var treeData = this.convertToTree(sourceData);
-	
+
 	var m = [20, 120, 20, 120],
     w = 5000 - m[1] - m[3],
     h = 1000 - m[0] - m[2],
@@ -126,20 +136,20 @@ CompanyGraphAdapter.method('createTable', function(elementId) {
 
 	var tree = d3.layout.tree()
 	    .size([h, w]);
-	
+
 	this.diagonal  = d3.svg.diagonal()
 	    .projection(function(d) { return [d.y, d.x]; });
-	
+
 	this.vis = d3.select("#tabPageCompanyGraph").append("svg:svg")
 	    .attr("width", w + m[1] + m[3])
 	    .attr("height", h + m[0] + m[2])
 	    .append("svg:g")
 	    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
-	
+
 	  root = treeData;
 	  root.x0 = h / 2;
 	  root.y0 = 0;
-	
+
 	  function toggleAll(d) {
 	    if (d.children) {
 	      console.log(d.name);
@@ -148,9 +158,9 @@ CompanyGraphAdapter.method('createTable', function(elementId) {
 	    }
 	  }
 	  this.update(root, tree, root);
-	  
-	  
-	
+
+
+
 });
 
 CompanyGraphAdapter.method('update', function(source, tree, root) {
@@ -263,21 +273,21 @@ CompanyGraphAdapter.method('getSourceDataById', function(id) {
 			return this.sourceData[i];
 		}
 	}
-	
+
 	return null;
-	
+
 });
 
 CompanyGraphAdapter.method('fixCyclicParent', function(sourceData) {
 	var errorMsg = "";
 	for(var i=0; i< sourceData.length; i++){
 		var obj = sourceData[i];
-		
-		
+
+
 		var curObj = obj;
 		var parentIdArr = {};
 		parentIdArr[curObj.id] = 1;
-		
+
 		while(curObj.parent != null && curObj.parent != undefined){
 			var parent = this.getSourceDataById(curObj.parent);
 			if(parent == null){
@@ -291,14 +301,14 @@ CompanyGraphAdapter.method('fixCyclicParent', function(sourceData) {
 			curObj = parent;
 		}
 	}
-	
+
 	if(errorMsg != ""){
 		this.showMessage("Company Structure is having a cyclic dependency","We found a cyclic dependency due to following reasons:<br/>"+errorMsg);
 		return false;
 	}
-	
+
 	return true;
-	
+
 });
 
 CompanyGraphAdapter.method('getHelpLink', function () {

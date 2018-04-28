@@ -1,5 +1,8 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20180417_210501_update_menu_names';
+$migrationList[] = 'v20180325_210101_delete_leave_group_employee';
+$migrationList[] = 'v20180317_210200_leave_rule_experience';
 $migrationList[] = 'v20180305_210100_drop_si_hi_languages';
 $migrationList[] = 'v20171126_200303_swift_mail';
 $migrationList[] = 'v20171003_200302_payroll_meta_export';

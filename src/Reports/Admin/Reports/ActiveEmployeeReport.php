@@ -12,7 +12,7 @@ class ActiveEmployeeReport extends CSVReportBuilder implements CSVReportBuilderI
     public function getMainQuery()
     {
         $query = "Select id, employee_id as 'Employee ID',
-concat(`first_name`,' ',`middle_name`,' ', `last_name`) as 'Name',
+concat(`first_name`, ' ', `last_name`) as 'Name',
 (SELECT name from Nationality where id = nationality) as 'Nationality',
 birthday as 'Birthday',
 gender as 'Gender',

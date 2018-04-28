@@ -10,7 +10,7 @@ class TravelRequestReport extends CSVReportBuilder implements CSVReportBuilderIn
     public function getMainQuery()
     {
         $query = "SELECT
-(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) 
+(SELECT concat(`first_name`, ' ', `last_name`) 
 from Employees where id = employee) as 'Employee',
 type as 'Type',
 purpose as 'Purpose',

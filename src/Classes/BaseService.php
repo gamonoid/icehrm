@@ -799,6 +799,7 @@ class BaseService
         $ele = new $nsTable();
 
         $ele->Load('id = ?', array($id));
+
         if (empty($ele->id) || $ele->id !== $id) {
             return new IceResponse(
                 IceResponse::ERROR,
@@ -806,6 +807,10 @@ class BaseService
             );
         }
 
+        $preDeleteResponse = $ele->executePreDeleteActions($ele);
+        if ($preDeleteResponse->getStatus() !== IceResponse::SUCCESS) {
+            return $preDeleteResponse;
+        }
 
         $this->checkSecureAccess("delete", $ele);
 
@@ -1029,7 +1034,6 @@ class BaseService
 
     public function setCurrentAdminProfile($profileId)
     {
-
         if ($profileId == "-1") {
             SessionUtils::saveSessionObject('admin_current_profile', null);
             return;
@@ -1037,25 +1041,12 @@ class BaseService
 
         if ($this->currentUser->user_level == 'Admin') {
             SessionUtils::saveSessionObject('admin_current_profile', $profileId);
-        } elseif ($this->currentUser->user_level == 'Manager') {
-            $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-            $signInMappingFieldTable = ucfirst($signInMappingField);
-            $subordinate = new $signInMappingFieldTable();
-            $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-            $subordinates = $subordinate->Find("supervisor = ?", array($this->currentUser->$signInMappingField));
-            $subFound = false;
-            foreach ($subordinates as $sub) {
-                if ($sub->id == $profileId) {
-                    $subFound = true;
-                    break;
-                }
-            }
-
-            if (!$subFound) {
-                return;
-            }
-
+        } elseif ($this->currentUser->user_level == 'Manager'
+            && $this->canManageEmployee($profileId)
+        ) {
             SessionUtils::saveSessionObject('admin_current_profile', $profileId);
+        } else {
+            SessionUtils::saveSessionObject('admin_current_profile', null);
         }
     }
 
@@ -1594,5 +1585,64 @@ END;
             return $this->modelClassMap[$class];
         }
         return '\\Model\\'.$class;
+    }
+
+    /**
+     * @param $profileId
+     * @return bool
+     */
+    protected function canManageEmployee($profileId)
+    {
+        $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
+        $signInMappingFieldTable = $this->getFullQualifiedModelClassName(ucfirst($signInMappingField));
+        $subordinate = new $signInMappingFieldTable();
+
+        $subordinates = $subordinate->Find("supervisor = ?", array($this->currentUser->$signInMappingField));
+        $subFound = false;
+        foreach ($subordinates as $sub) {
+            if ($sub->id == $profileId) {
+                $subFound = true;
+                break;
+            }
+        }
+
+        $departmentHeadFound = false;
+        $subordinate = new $signInMappingFieldTable();
+        $subordinate->Load('id = ?', array($profileId));
+        if (SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1
+            && CompanyStructure::isHeadOfCompanyStructure(
+                $subordinate->department,
+                $this->currentUser->$signInMappingField
+            )
+        ) {
+            $departmentHeadFound = true;
+        } elseif (SettingsManager::getInstance()->getSetting(
+            'System: Child Company Structure Managers Enabled'
+        ) == '1'
+        ) {
+            $companyStructure = new CompanyStructure();
+            $companyStructure->Load('id = ?', array($subordinate->department));
+            do {
+                if (CompanyStructure::isHeadOfCompanyStructure(
+                    $companyStructure->id,
+                    $this->currentUser->$signInMappingField
+                )
+                ) {
+                    $departmentHeadFound = true;
+                    break;
+                }
+
+                $parentCompanyStructure = $companyStructure->parent;
+                if (!empty($parentCompanyStructure)) {
+                    $companyStructure = new CompanyStructure();
+                    $companyStructure->Load('id = ?', array($parentCompanyStructure));
+                }
+            } while (!empty($companyStructure->id)
+                && !empty($parentCompanyStructure)
+            );
+        }
+
+
+        return $subFound || $departmentHeadFound;
     }
 }

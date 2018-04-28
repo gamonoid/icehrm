@@ -64,4 +64,12 @@ class CalendarTools
 
         return $time->format($format);
     }
+
+    public static function getNumberOfDaysBetweenDates($first, $second)
+    {
+        $timeFirst = new \DateTime($first);
+        $timeSecond = new \DateTime($second);
+        $interval = $timeSecond->diff($timeFirst);
+        return intval($interval->format('%a'));
+    }
 }

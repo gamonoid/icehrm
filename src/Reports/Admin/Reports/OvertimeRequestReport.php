@@ -11,8 +11,8 @@ class OvertimeRequestReport extends CSVReportBuilder implements CSVReportBuilder
     public function getMainQuery()
     {
         $query = "SELECT 
-(SELECT `employee_id` from Employees where id = at.employee) as 'Employee',
-(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) from Employees where id = at.employee) as 'Employee',
+(SELECT `employee_id` from Employees where id = at.employee) as 'Employee ID',
+(SELECT concat(`first_name`, ' ', `last_name`) from Employees where id = at.employee) as 'Employee',
 (SELECT `name` from OvertimeCategories where id = at.category) as 'Category',
 (SELECT `name` from Projects where id = at.project) as 'Project',
 start_time as 'Start Time',

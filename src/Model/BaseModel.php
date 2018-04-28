@@ -79,6 +79,11 @@ class BaseModel extends \ADOdb_Active_Record
         return new IceResponse(IceResponse::SUCCESS, $obj);
     }
 
+    public function executePreDeleteActions($obj)
+    {
+        return new IceResponse(IceResponse::SUCCESS, null);
+    }
+
     public function executePostSaveActions($obj)
     {
     }

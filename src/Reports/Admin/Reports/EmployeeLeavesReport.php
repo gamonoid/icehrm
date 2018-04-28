@@ -12,7 +12,7 @@ class EmployeeLeavesReport extends CSVReportBuilder implements CSVReportBuilderI
     public function getMainQuery()
     {
         $query = "SELECT 
-(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) from Employees where id = employee) 
+(SELECT concat(`first_name`, ' ', `last_name`) from Employees where id = employee) 
 as 'Employee',
 (SELECT name from LeaveTypes where id = leave_type) as 'Leave Type',
 (SELECT name from LeavePeriods where id = leave_period) as 'Leave Period',

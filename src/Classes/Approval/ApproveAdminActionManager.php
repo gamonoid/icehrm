@@ -34,9 +34,9 @@ abstract class ApproveAdminActionManager extends ApproveCommonActionManager
         }
 
         /*
-		if($this->user->user_level != 'Admin' && $this->user->user_level != 'Manager'){
-			return new IceResponse(IceResponse::ERROR,"Only an admin or manager can do this");
-		}*/
+        if($this->user->user_level != 'Admin' && $this->user->user_level != 'Manager'){
+            return new IceResponse(IceResponse::ERROR,"Only an admin or manager can do this");
+        }*/
 
         //Check if this needs to be multi-approved
         $apStatus = 0;

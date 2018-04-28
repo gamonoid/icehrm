@@ -13,10 +13,10 @@ if(!defined('HOME_LINK_OTHERS')){
 }
 
 //Version
-define('VERSION', '21.0.0.PRO');
-define('CACHE_VALUE', '21.0.0.OS');
-define('VERSION_NUMBER', '2100');
-define('VERSION_DATE', '02/02/2018');
+define('VERSION', '22.0.0.OS');
+define('CACHE_VALUE', '22.0.0.OS');
+define('VERSION_NUMBER', '2200');
+define('VERSION_DATE', '28/04/2018');
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','icehrm@gamonoid.com');}
 if(!defined('KEY_PREFIX')){define('KEY_PREFIX','IceHrm');}

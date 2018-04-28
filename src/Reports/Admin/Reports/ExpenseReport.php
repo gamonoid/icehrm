@@ -10,7 +10,7 @@ class ExpenseReport extends CSVReportBuilder implements CSVReportBuilderInterfac
     public function getMainQuery()
     {
         $query = "SELECT
-(SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`) 
+(SELECT concat(`first_name`, ' ', `last_name`) 
 from Employees where id = employee) as 'Employee',
 expense_date as 'Date',
 (SELECT name from ExpensesPaymentMethods where id = payment_method) as 'Payment Method',

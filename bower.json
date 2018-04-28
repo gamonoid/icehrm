@@ -9,6 +9,10 @@
   "homepage": "",
   "dependencies": {
     "simplemde": "^1.11.2",
-    "tinymce": "^4.5.5"
+    "tinymce": "^4.5.5",
+    "d3-timeline": "^0.0.5",
+    "vis": "^4.21.0",
+    "handlebars": "^4.0.11",
+    "material-design-icons": "^3.0.1"
   }
 }
