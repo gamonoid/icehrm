@@ -67,14 +67,14 @@ if(!$isDataFolderExists){
     <!-- Le styles -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 	
-	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../web/js/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="styles.css?v=2" rel="stylesheet">
     
-    <script type="text/javascript" src="../../js/date.js"></script>
-	<script type="text/javascript" src="../../js/json2.js"></script>
-	<script type="text/javascript" src="../../js/CrockfordInheritance.v0.1.js"></script>
+    <script type="text/javascript" src="../../web/js/date.js"></script>
+	<script type="text/javascript" src="../../web/js/json2.js"></script>
+	<script type="text/javascript" src="../../web/js/CrockfordInheritance.v0.1.js"></script>
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="bootstrap/ico/favicon.ico">

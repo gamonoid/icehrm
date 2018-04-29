@@ -8,7 +8,7 @@ define('TWITTER_URL', 'Ice Hrm');
 define('CLIENT_NAME', '_CLIENT_');
 define('APP_BASE_PATH', '_APP_BASE_PATH_');
 define('CLIENT_BASE_PATH', '_CLIENT_BASE_PATH_');
-define('BASE_URL','_BASE_URL_');
+define('BASE_URL','_BASE_URL_web/');
 define('CLIENT_BASE_URL','_CLIENTBASE_URL_');
 
 define('APP_DB', '_APP_DB_');
