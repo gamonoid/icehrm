@@ -22,21 +22,23 @@ class LanguageManagerUnit extends \TestTemplate
         fwrite(STDOUT, __METHOD__ . " End\n");
     }
 
-    public function testGetTranslations() {
+    public function testGetTranslations() 
+    {
 
-    	$enCount = $this->getTranslationCount('en');
+        $enCount = $this->getTranslationCount('en');
 
-	    $this->assertEquals($enCount, $this->getTranslationCount('de'));
-	    $this->assertEquals($enCount, $this->getTranslationCount('es'));
-	    $this->assertEquals($enCount, $this->getTranslationCount('fr'));
-	    $this->assertEquals($enCount, $this->getTranslationCount('it'));
-	    $this->assertEquals($enCount, $this->getTranslationCount('ja'));
-	    $this->assertEquals($enCount, $this->getTranslationCount('pl'));
-	    $this->assertEquals($enCount, $this->getTranslationCount('zh'));
+        $this->assertEquals($enCount, $this->getTranslationCount('de'));
+        $this->assertEquals($enCount, $this->getTranslationCount('es'));
+        $this->assertEquals($enCount, $this->getTranslationCount('fr'));
+        $this->assertEquals($enCount, $this->getTranslationCount('it'));
+        $this->assertEquals($enCount, $this->getTranslationCount('ja'));
+        $this->assertEquals($enCount, $this->getTranslationCount('pl'));
+        $this->assertEquals($enCount, $this->getTranslationCount('zh'));
     }
 
-    private function getTranslationCount($lang) {
-	    $trans = json_decode(LanguageManager::getTranslations($lang), true);
-	    $count = count(array_keys($trans['messages']['']));
+    private function getTranslationCount($lang) 
+    {
+        $trans = json_decode(LanguageManager::getTranslations($lang), true);
+        $count = count(array_keys($trans['messages']['']));
     }
 }

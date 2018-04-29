@@ -5,6 +5,7 @@
 /build
 /deployment/clients/dev/data/
 /deployment/clients/test/data/
+/deployment/clients/local/data/
 /.vagrant
 /app/config.php
 /app/data/*

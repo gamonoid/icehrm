@@ -1,4 +1,8 @@
 <?php
+if (php_sapi_name() != 'cli') {
+    echo "Bye browser";
+    exit();
+}
 /**
  * This is project's console commands configuration for Robo task runner.
  *
