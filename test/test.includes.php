@@ -34,5 +34,5 @@ if (!class_exists('SessionUtils')) {
 if (!class_exists('TestTemplate')) {
     include(dirname(__FILE__).'/TestTemplate.php');
     include(dirname(__FILE__).'/helper/EmployeeTestDataHelper.php');
-    include(APP_BASE_PATH."/includes.inc.php");
+    include(APP_BASE_PATH."core/includes.inc.php");
 }
