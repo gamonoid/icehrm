@@ -2,9 +2,9 @@
 ini_set('error_log', 'data/icehrm.log');
 
 define('CLIENT_NAME', 'icehrm');
-define('APP_BASE_PATH', __DIR__.'/../../../build/app/');
+define('APP_BASE_PATH', __DIR__.'/../../../build/app/core/');
 define('CLIENT_BASE_PATH', __DIR__.'/');
-define('BASE_URL','http://localhost:8888/icehrm-open-dev-base/');
+define('BASE_URL','http://localhost:8888/icehrm-open-dev-base/web/');
 define('CLIENT_BASE_URL','http://localhost:8888/icehrm-open-dev/');
 
 define('APP_DB', 'icehrm_open_dev');

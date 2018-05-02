@@ -2,9 +2,9 @@
 ini_set('error_log', 'data/icehrm.log');
 
 define('CLIENT_NAME', 'icehrmpro');
-define('APP_BASE_PATH', '/vagrant/build/app/');
+define('APP_BASE_PATH', '/vagrant/build/app/core/');
 define('CLIENT_BASE_PATH', '/vagrant/deployment/clients/dev/');
-define('BASE_URL','http://app.app.dev/');
+define('BASE_URL','http://app.app.dev/web/');
 define('CLIENT_BASE_URL','http://clients.app.dev/dev/');
 
 define('APP_DB', 'dev');
