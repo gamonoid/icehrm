@@ -7,7 +7,10 @@
         "filp/whoops": "~2.1",
         "swiftmailer/swiftmailer": "^6.0",
 		"pear/net_smtp": "^1.7",
-		"pear/mail": "^1.4"
+		"pear/mail": "^1.4",
+		"spomky-labs/base64url": "^1.0",
+		"cebe/markdown": "^1.2",
+		"neitanod/forceutf8": "^2.0"
     },
     "require-dev": {
       "phpunit/phpunit": "~6"

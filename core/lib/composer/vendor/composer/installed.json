@@ -1,5 +1,67 @@
 [
     {
+        "name": "cebe/markdown",
+        "version": "1.2.1",
+        "version_normalized": "1.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cebe/markdown.git",
+            "reference": "9bac5e971dd391e2802dca5400bbeacbaea9eb86"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cebe/markdown/zipball/9bac5e971dd391e2802dca5400bbeacbaea9eb86",
+            "reference": "9bac5e971dd391e2802dca5400bbeacbaea9eb86",
+            "shasum": ""
+        },
+        "require": {
+            "lib-pcre": "*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "cebe/indent": "*",
+            "facebook/xhprof": "*@dev",
+            "phpunit/phpunit": "4.1.*"
+        },
+        "time": "2018-03-26T11:24:36+00:00",
+        "bin": [
+            "bin/markdown"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "cebe\\markdown\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Carsten Brandt",
+                "email": "mail@cebe.cc",
+                "homepage": "http://cebe.cc/",
+                "role": "Creator"
+            }
+        ],
+        "description": "A super fast, highly extensible markdown parser for PHP",
+        "homepage": "https://github.com/cebe/markdown#readme",
+        "keywords": [
+            "extensible",
+            "fast",
+            "gfm",
+            "markdown",
+            "markdown-extra"
+        ]
+    },
+    {
         "name": "consolidation/annotated-command",
         "version": "2.8.2",
         "version_normalized": "2.8.2.0",
@@ -27,7 +89,7 @@
             "satooshi/php-coveralls": "^1.0.2 | dev-master",
             "squizlabs/php_codesniffer": "^2.7"
         },
-        "time": "2017-11-29 16:23:23",
+        "time": "2017-11-29T16:23:23+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -83,7 +145,7 @@
         "suggest": {
             "symfony/yaml": "Required to use Consolidation\\Config\\Loader\\YamlConfigLoader"
         },
-        "time": "2017-12-22 17:28:19",
+        "time": "2017-12-22T17:28:19+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -133,7 +195,7 @@
             "satooshi/php-coveralls": "dev-master",
             "squizlabs/php_codesniffer": "2.*"
         },
-        "time": "2017-11-29 01:44:16",
+        "time": "2017-11-29T01:44:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -184,7 +246,7 @@
             "squizlabs/php_codesniffer": "^2.7",
             "victorjonsson/markdowndocs": "^1.3"
         },
-        "time": "2017-11-29 15:25:38",
+        "time": "2017-11-29T15:25:38+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -259,7 +321,7 @@
             "patchwork/jsqueeze": "For minifying JS files in taskMinify",
             "pear/archive_tar": "Allows tar archives to be created and extracted in taskPack and taskExtract, respectively."
         },
-        "time": "2017-12-29 06:48:35",
+        "time": "2017-12-29T06:48:35+00:00",
         "bin": [
             "robo"
         ],
@@ -306,7 +368,7 @@
         "require": {
             "psr/container": "^1.0"
         },
-        "time": "2017-02-14 19:40:03",
+        "time": "2017-02-14T19:40:03+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -339,7 +401,7 @@
         "require": {
             "php": ">=5.3.2"
         },
-        "time": "2017-01-20 21:14:22",
+        "time": "2017-01-20T21:14:22+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -407,7 +469,7 @@
             "phpunit/phpunit": "~4.0",
             "squizlabs/php_codesniffer": "~2.0"
         },
-        "time": "2015-06-14 21:17:01",
+        "time": "2015-06-14T21:17:01+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -456,7 +518,7 @@
         "require": {
             "php": ">=5.3.2"
         },
-        "time": "2014-09-09 13:34:57",
+        "time": "2014-09-09T13:34:57+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -521,7 +583,7 @@
         "suggest": {
             "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
         },
-        "time": "2017-11-15 23:40:40",
+        "time": "2017-11-15T23:40:40+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -581,7 +643,7 @@
             "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
             "whoops/soap": "Formats errors as SOAP responses"
         },
-        "time": "2017-11-23 18:22:44",
+        "time": "2017-11-23T18:22:44+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -647,7 +709,7 @@
             "twig/extensions": "Is necessary if you want to use the Twig extractor",
             "twig/twig": "Is necessary if you want to use the Twig extractor"
         },
-        "time": "2016-06-15 18:14:14",
+        "time": "2016-06-15T18:14:14+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -699,7 +761,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4"
         },
-        "time": "2017-03-23 17:02:28",
+        "time": "2017-03-23T17:02:28+00:00",
         "bin": [
             "bin/export-plural-rules",
             "bin/export-plural-rules.php"
@@ -766,7 +828,7 @@
             "satooshi/php-coveralls": "^1.0.2|dev-master",
             "squizlabs/php_codesniffer": "^2.7"
         },
-        "time": "2017-12-21 22:14:55",
+        "time": "2017-12-21T22:14:55+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -816,7 +878,7 @@
             "satooshi/php-coveralls": "^1.0.2|dev-master",
             "squizlabs/php_codesniffer": "^2.7"
         },
-        "time": "2017-12-16 16:06:03",
+        "time": "2017-12-16T16:06:03+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -869,7 +931,7 @@
         "require-dev": {
             "phpunit/phpunit": "4.*"
         },
-        "time": "2017-05-10 09:20:27",
+        "time": "2017-05-10T09:20:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -950,7 +1012,7 @@
             "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
             "videlalvaro/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib"
         },
-        "time": "2015-03-09 09:58:04",
+        "time": "2015-03-09T09:58:04+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1005,7 +1067,7 @@
             "doctrine/common": "^2.6",
             "phpunit/phpunit": "^4.1"
         },
-        "time": "2017-10-19 19:58:43",
+        "time": "2017-10-19T19:58:43+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1030,6 +1092,42 @@
         ]
     },
     {
+        "name": "neitanod/forceutf8",
+        "version": "v2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/neitanod/forceutf8.git",
+            "reference": "47c883ab2739e7938a8bb0bfd1c29d48c88858de"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/neitanod/forceutf8/zipball/47c883ab2739e7938a8bb0bfd1c29d48c88858de",
+            "reference": "47c883ab2739e7938a8bb0bfd1c29d48c88858de",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2017-05-22T18:50:57+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ForceUTF8\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Sebastián Grignoli",
+                "email": "grignoli@gmail.com"
+            }
+        ],
+        "description": "PHP Class Encoding featuring popular Encoding::toUTF8() function --formerly known as forceUTF8()-- that fixes mixed encoded strings.",
+        "homepage": "https://github.com/neitanod/forceutf8"
+    },
+    {
         "name": "pear/console_getopt",
         "version": "v1.4.1",
         "version_normalized": "1.4.1.0",
@@ -1044,7 +1142,7 @@
             "reference": "82f05cd1aa3edf34e19aa7c8ca312ce13a6a577f",
             "shasum": ""
         },
-        "time": "2015-07-20 20:28:12",
+        "time": "2015-07-20T20:28:12+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1079,6 +1177,66 @@
         "description": "More info available on: http://pear.php.net/package/Console_Getopt"
     },
     {
+        "name": "pear/mail",
+        "version": "v1.4.1",
+        "version_normalized": "1.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pear/Mail.git",
+            "reference": "9609ed5e42ac5b221dfd9af85de005c59d418ee7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pear/Mail/zipball/9609ed5e42ac5b221dfd9af85de005c59d418ee7",
+            "reference": "9609ed5e42ac5b221dfd9af85de005c59d418ee7",
+            "shasum": ""
+        },
+        "require": {
+            "pear/pear-core-minimal": "~1.9",
+            "php": ">=5.2.1"
+        },
+        "require-dev": {
+            "pear/pear": "*"
+        },
+        "suggest": {
+            "pear/net_smtp": "Install optionally via your project's composer.json"
+        },
+        "time": "2017-04-11T17:27:29+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Mail": "./"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "include-path": [
+            "./"
+        ],
+        "license": [
+            "BSD-2-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Chuck Hagenbuch",
+                "email": "chuck@horde.org",
+                "role": "Lead"
+            },
+            {
+                "name": "Richard Heyes",
+                "email": "richard@phpguru.org",
+                "role": "Developer"
+            },
+            {
+                "name": "Aleksander Machniak",
+                "email": "alec@alec.pl",
+                "role": "Developer"
+            }
+        ],
+        "description": "Class that provides multiple interfaces for sending emails.",
+        "homepage": "http://pear.php.net/package/Mail"
+    },
+    {
         "name": "pear/net_smtp",
         "version": "1.7.3",
         "version_normalized": "1.7.3.0",
@@ -1104,7 +1262,7 @@
         "suggest": {
             "pear/auth_sasl": "Install optionally via your project's composer.json"
         },
-        "time": "2017-01-14 18:19:55",
+        "time": "2017-01-14T18:19:55+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1162,7 +1320,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4"
         },
-        "time": "2017-04-06 15:16:38",
+        "time": "2017-04-06T15:16:38+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1218,7 +1376,7 @@
         "replace": {
             "rsky/pear-core-min": "self.version"
         },
-        "time": "2017-02-28 16:46:11",
+        "time": "2017-02-28T16:46:11+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1263,7 +1421,7 @@
         "require-dev": {
             "phpunit/phpunit": "*"
         },
-        "time": "2015-02-10 20:07:52",
+        "time": "2015-02-10T20:07:52+00:00",
         "type": "class",
         "extra": {
             "branch-alias": {
@@ -1320,7 +1478,7 @@
             "phar-io/version": "^1.0.1",
             "php": "^5.6 || ^7.0"
         },
-        "time": "2017-03-05 18:14:27",
+        "time": "2017-03-05T18:14:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1374,7 +1532,7 @@
         "require": {
             "php": "^5.6 || ^7.0"
         },
-        "time": "2017-03-05 17:38:23",
+        "time": "2017-03-05T17:38:23+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1426,7 +1584,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.6"
         },
-        "time": "2017-09-11 18:02:19",
+        "time": "2017-09-11T18:02:19+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1487,7 +1645,7 @@
             "mockery/mockery": "^1.0",
             "phpunit/phpunit": "^6.4"
         },
-        "time": "2017-11-27 17:38:31",
+        "time": "2017-11-27T17:38:31+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1537,7 +1695,7 @@
             "mockery/mockery": "^0.9.4",
             "phpunit/phpunit": "^5.2||^4.8.24"
         },
-        "time": "2017-07-14 14:27:02",
+        "time": "2017-07-14T14:27:02+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1589,7 +1747,7 @@
             "phpspec/phpspec": "^2.5|^3.2",
             "phpunit/phpunit": "^4.8.35 || ^5.7"
         },
-        "time": "2017-11-24 13:59:53",
+        "time": "2017-11-24T13:59:53+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1661,7 +1819,7 @@
         "suggest": {
             "ext-xdebug": "^2.5.5"
         },
-        "time": "2017-12-06 09:29:45",
+        "time": "2017-12-06T09:29:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1711,7 +1869,7 @@
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2017-11-27 13:52:08",
+        "time": "2017-11-27T13:52:08+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1760,7 +1918,7 @@
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2015-06-21 13:50:34",
+        "time": "2015-06-21T13:50:34+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1806,7 +1964,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
         },
-        "time": "2017-02-26 11:10:40",
+        "time": "2017-02-26T11:10:40+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1858,7 +2016,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.2.4"
         },
-        "time": "2017-11-27 05:48:46",
+        "time": "2017-11-27T05:48:46+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1938,7 +2096,7 @@
             "ext-xdebug": "*",
             "phpunit/php-invoker": "^1.1"
         },
-        "time": "2017-12-17 06:31:19",
+        "time": "2017-12-17T06:31:19+00:00",
         "bin": [
             "phpunit"
         ],
@@ -2003,7 +2161,7 @@
         "suggest": {
             "ext-soap": "*"
         },
-        "time": "2018-01-06 05:45:45",
+        "time": "2018-01-06T05:45:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2052,7 +2210,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2017-02-14 16:28:37",
+        "time": "2017-02-14T16:28:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2103,7 +2261,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-10-10 12:19:37",
+        "time": "2016-10-10T12:19:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2155,7 +2313,7 @@
         "require-dev": {
             "phpunit/phpunit": "^5.7 || ^6.0"
         },
-        "time": "2017-03-04 06:30:41",
+        "time": "2017-03-04T06:30:41+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2204,7 +2362,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.4"
         },
-        "time": "2017-12-22 14:50:35",
+        "time": "2017-12-22T14:50:35+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2268,7 +2426,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.2"
         },
-        "time": "2017-08-03 08:09:46",
+        "time": "2017-08-03T08:09:46+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2322,7 +2480,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.1"
         },
-        "time": "2017-07-01 08:51:00",
+        "time": "2017-07-01T08:51:00+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2376,7 +2534,7 @@
             "ext-mbstring": "*",
             "phpunit/phpunit": "^6.0"
         },
-        "time": "2017-04-03 13:19:02",
+        "time": "2017-04-03T13:19:02+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2446,7 +2604,7 @@
         "suggest": {
             "ext-uopz": "*"
         },
-        "time": "2017-04-27 15:39:26",
+        "time": "2017-04-27T15:39:26+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2498,7 +2656,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.0"
         },
-        "time": "2017-08-03 12:35:26",
+        "time": "2017-08-03T12:35:26+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2545,7 +2703,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.0"
         },
-        "time": "2017-03-29 09:07:27",
+        "time": "2017-03-29T09:07:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2592,7 +2750,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.0"
         },
-        "time": "2017-03-03 06:23:57",
+        "time": "2017-03-03T06:23:57+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2644,7 +2802,7 @@
         "require": {
             "php": ">=5.6.0"
         },
-        "time": "2015-07-28 20:34:47",
+        "time": "2015-07-28T20:34:47+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2688,7 +2846,7 @@
         "require": {
             "php": ">=5.6"
         },
-        "time": "2016-10-03 07:35:21",
+        "time": "2016-10-03T07:35:21+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2716,6 +2874,60 @@
         "homepage": "https://github.com/sebastianbergmann/version"
     },
     {
+        "name": "spomky-labs/base64url",
+        "version": "v1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Spomky-Labs/base64url.git",
+            "reference": "ef6d5fb93894063d9cee996022259fd08d6646ea"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Spomky-Labs/base64url/zipball/ef6d5fb93894063d9cee996022259fd08d6646ea",
+            "reference": "ef6d5fb93894063d9cee996022259fd08d6646ea",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.3|^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0|^5.0",
+            "satooshi/php-coveralls": "^1.0"
+        },
+        "time": "2016-01-21T19:50:30+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Base64Url\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Florent Morselli",
+                "homepage": "https://github.com/Spomky-Labs/base64url/contributors"
+            }
+        ],
+        "description": "Base 64 URL Safe Encoding/decoding PHP Library",
+        "homepage": "https://github.com/Spomky-Labs/base64url",
+        "keywords": [
+            "base64",
+            "rfc4648",
+            "safe",
+            "url"
+        ]
+    },
+    {
         "name": "swiftmailer/swiftmailer",
         "version": "v6.0.2",
         "version_normalized": "6.0.2.0",
@@ -2738,7 +2950,7 @@
             "mockery/mockery": "~0.9.1",
             "symfony/phpunit-bridge": "~3.3@dev"
         },
-        "time": "2017-09-30 22:39:41",
+        "time": "2017-09-30T22:39:41+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2810,7 +3022,7 @@
             "symfony/lock": "",
             "symfony/process": ""
         },
-        "time": "2018-01-03 07:37:34",
+        "time": "2018-01-03T07:37:34+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2868,7 +3080,7 @@
         "require-dev": {
             "symfony/http-kernel": "~2.8|~3.0|~4.0"
         },
-        "time": "2018-01-03 17:14:19",
+        "time": "2018-01-03T17:14:19+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2933,7 +3145,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2018-01-03 07:37:34",
+        "time": "2018-01-03T07:37:34+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2984,7 +3196,7 @@
         "require": {
             "php": "^5.5.9|>=7.0.8"
         },
-        "time": "2018-01-03 07:37:34",
+        "time": "2018-01-03T07:37:34+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3035,7 +3247,7 @@
         "require": {
             "php": "^5.5.9|>=7.0.8"
         },
-        "time": "2018-01-03 07:37:34",
+        "time": "2018-01-03T07:37:34+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3089,7 +3301,7 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2017-10-11 12:05:26",
+        "time": "2017-10-11T12:05:26+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3147,7 +3359,7 @@
         "require": {
             "php": "^5.5.9|>=7.0.8"
         },
-        "time": "2018-01-03 07:37:34",
+        "time": "2018-01-03T07:37:34+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3207,7 +3419,7 @@
         "suggest": {
             "symfony/console": "For validating YAML files using the lint command"
         },
-        "time": "2018-01-03 07:37:34",
+        "time": "2018-01-03T07:37:34+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3261,7 +3473,7 @@
             "ext-xmlwriter": "*",
             "php": "^7.0"
         },
-        "time": "2017-04-07 12:08:54",
+        "time": "2017-04-07T12:08:54+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3304,7 +3516,7 @@
             "symfony/debug": "~2.7",
             "symfony/phpunit-bridge": "~2.7"
         },
-        "time": "2016-01-11 14:02:19",
+        "time": "2016-01-11T14:02:19+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3367,7 +3579,7 @@
             "phpunit/phpunit": "^4.6",
             "sebastian/version": "^1.0.1"
         },
-        "time": "2016-11-23 20:04:58",
+        "time": "2016-11-23T20:04:58+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3396,65 +3608,5 @@
             "check",
             "validate"
         ]
-    },
-    {
-        "name": "pear/mail",
-        "version": "v1.4.1",
-        "version_normalized": "1.4.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/pear/Mail.git",
-            "reference": "9609ed5e42ac5b221dfd9af85de005c59d418ee7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/pear/Mail/zipball/9609ed5e42ac5b221dfd9af85de005c59d418ee7",
-            "reference": "9609ed5e42ac5b221dfd9af85de005c59d418ee7",
-            "shasum": ""
-        },
-        "require": {
-            "pear/pear-core-minimal": "~1.9",
-            "php": ">=5.2.1"
-        },
-        "require-dev": {
-            "pear/pear": "*"
-        },
-        "suggest": {
-            "pear/net_smtp": "Install optionally via your project's composer.json"
-        },
-        "time": "2017-04-11 17:27:29",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Mail": "./"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "include-path": [
-            "./"
-        ],
-        "license": [
-            "BSD-2-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Chuck Hagenbuch",
-                "email": "chuck@horde.org",
-                "role": "Lead"
-            },
-            {
-                "name": "Richard Heyes",
-                "email": "richard@phpguru.org",
-                "role": "Developer"
-            },
-            {
-                "name": "Aleksander Machniak",
-                "email": "alec@alec.pl",
-                "role": "Developer"
-            }
-        ],
-        "description": "Class that provides multiple interfaces for sending emails.",
-        "homepage": "http://pear.php.net/package/Mail"
     }
 ]

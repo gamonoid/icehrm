@@ -32,6 +32,9 @@ $appModName = $moduleMainName.'Approval';
 
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
+
+$customFields = \Classes\BaseService::getInstance()->getCustomFields("EmployeeTravelRecord");
+
 $additionalJs = array();
 $additionalJs[] = BASE_URL.'admin/travel/lib.js?v='.$jsVersion;
 include APP_BASE_PATH.'modulejslibs.inc.php';
@@ -72,7 +75,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
 </div>
 <script>
-    var modJsList = new Array();
+    var modJsList = [];
 
     modJsList['tab<?=$moduleMainName?>'] = new <?=$moduleMainName?>Adapter('<?=$moduleMainName?>','<?=$moduleMainName?>');
 
@@ -85,6 +88,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
     <?php if(isset($modulePermissions['perm']['Edit '.$moduleItemName]) && $modulePermissions['perm']['Edit '.$moduleItemName] == "No"){?>
     modJsList['tab<?=$moduleMainName?>'].setShowEdit(false);
     <?php }?>
+    modJsList['tab<?=$moduleMainName?>'].setCustomFields(<?=json_encode($customFields)?>);
 
     modJsList['tab<?=$appModName?>'] = new <?=$moduleMainName?>ApproverAdapter('<?=$appModName?>', '<?=$appModName?>');
     modJsList['tab<?=$appModName?>'].setShowAddNew(false);

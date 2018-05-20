@@ -28,10 +28,10 @@ class SessionUtils
         $names = [
             "user",
             "modulePath",
-            "loginRedirect",
             "admin_current_profile"
         ];
         session_start();
+        setcookie('icehrmLF', '');
         foreach ($names as $name) {
             unset($_SESSION[$name.CLIENT_NAME]);
         }

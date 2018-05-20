@@ -23,7 +23,6 @@ function EmployeeAdapter(endPoint,tab,filter,orderBy) {
     this.hiddenFields = {};
     this.tableFields = {};
     this.formOnlyFields = {};
-    this.customFields = [];
 }
 
 EmployeeAdapter.inherits(SubProfileEnabledAdapterBase);
@@ -75,29 +74,6 @@ EmployeeAdapter.method('preProcessRemoteTableData', function(data, cell, id) {
 
 EmployeeAdapter.method('getTableHTMLTemplate', function() {
     return '<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-striped" id="grid"></table></div>';
-});
-
-
-EmployeeAdapter.method('setCustomFields', function(fields) {
-    var field, parsed;
-    for(var i=0;i<fields.length;i++){
-        field = fields[i];
-        if(field.display != "Hidden" && field.data != "" && field.data != undefined){
-            try{
-                parsed = JSON.parse(field.data);
-                if(parsed == undefined || parsed == null){
-                    continue;
-                }else if(parsed.length != 2){
-                    continue;
-                }else if(parsed[1].type == undefined || parsed[1].type == null){
-                    continue;
-                }
-                this.customFields.push(parsed);
-            }catch(e){
-
-            }
-        }
-    }
 });
 
 EmployeeAdapter.method('getTableFields', function() {
@@ -311,7 +287,7 @@ EmployeeAdapter.method('deleteEmployeeSuccessCallback', function(callBackData) {
 
 
 EmployeeAdapter.method('deleteEmployeeFailCallback', function(callBackData) {
-    this.showMessage("Error occured while deleting Employee", callBackData);
+    this.showMessage("Error occurred while deleting Employee", callBackData);
 });
 
 
@@ -411,7 +387,7 @@ EmployeeAdapter.method('renderEmployee', function(data) {
 
     for(var i=0;i<fields.length;i++) {
         if(this.fieldNameMap[fields[i][0]] != undefined && this.fieldNameMap[fields[i][0]] != null){
-            title = this.fieldNameMap[fields[i][0]].textMapped;
+            title = this.gt(this.fieldNameMap[fields[i][0]].textMapped);
             html = html.replace("#_label_"+fields[i][0]+"_#",title);
         }
     }
@@ -463,7 +439,7 @@ EmployeeAdapter.method('renderEmployee', function(data) {
         for (index in data.customFields) {
 
             if(!data.customFields[index][1]){
-                data.customFields[index][1] = 'Other Details';
+                data.customFields[index][1] = this.gt('Other Details');
             }
 
             sectionId = data.customFields[index][1].toLocaleLowerCase();
@@ -478,8 +454,15 @@ EmployeeAdapter.method('renderEmployee', function(data) {
             }
 
             customFieldHtml = ct;
-            customFieldHtml = customFieldHtml.replace('#_label_#', index);
-            customFieldHtml = customFieldHtml.replace('#_value_#', data.customFields[index][0]);
+            customFieldHtml = customFieldHtml.replace('#_label_#', '');
+            if (data.customFields[index][2] === 'fileupload') {
+                customFieldHtml = customFieldHtml.replace(
+                    '#_value_#',
+                    '<button onclick="download(\''+data.customFields[index][0]+'\');return false;" class="btn btn-mini btn-inverse" type="button">View: '+index+'</button>'
+                );
+            } else {
+                customFieldHtml = customFieldHtml.replace('#_value_#', data.customFields[index][0]);
+            }
             $("#cont_"+sectionId).append($(customFieldHtml));
         }
     }else{
@@ -521,6 +504,7 @@ EmployeeAdapter.method('renderEmployee', function(data) {
     }
     for (var prop in modJs.subModJsList) {
         if(modJs.subModJsList.hasOwnProperty(prop)){
+            modJs.subModJsList[prop].setTranslationsSubModules(this.translations);
             modJs.subModJsList[prop].setPermissions(this.permissions);
             modJs.subModJsList[prop].setFieldTemplates(this.fieldTemplates);
             modJs.subModJsList[prop].setTemplates(this.templates);
@@ -1387,7 +1371,7 @@ EmployeeSubSkillsAdapter.method('forceInjectValuesBeforeSave', function(params) 
 
 EmployeeSubSkillsAdapter.method('getSubHeaderTitle', function() {
     var addBtn = '<button class="btn btn-small btn-success" onclick="modJs.subModJsList[\'tab'+this.tab+'\'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>';
-    return addBtn + "Skills";
+    return addBtn + this.gt("Skills");
 });
 
 EmployeeSubSkillsAdapter.method('getSubItemHtml', function(item, itemDelete, itemEdit) {
@@ -1457,7 +1441,7 @@ EmployeeSubEducationAdapter.method('forceInjectValuesBeforeSave', function(param
 
 EmployeeSubEducationAdapter.method('getSubHeaderTitle', function() {
     var addBtn = '<button class="btn btn-small btn-success" onclick="modJs.subModJsList[\'tab'+this.tab+'\'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>';
-    return addBtn + "Education";
+    return addBtn + this.gt("Education");
 });
 
 EmployeeSubEducationAdapter.method('getSubItemHtml', function(item, itemDelete, itemEdit) {
@@ -1535,7 +1519,7 @@ EmployeeSubCertificationAdapter.method('forceInjectValuesBeforeSave', function(p
 
 EmployeeSubCertificationAdapter.method('getSubHeaderTitle', function() {
     var addBtn = '<button class="btn btn-small btn-success" onclick="modJs.subModJsList[\'tab'+this.tab+'\'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>';
-    return addBtn + "Certifications";
+    return addBtn + this.gt("Certifications");
 });
 
 EmployeeSubCertificationAdapter.method('getSubItemHtml', function(item, itemDelete, itemEdit) {
@@ -1622,7 +1606,7 @@ EmployeeSubLanguageAdapter.method('forceInjectValuesBeforeSave', function(params
 
 EmployeeSubLanguageAdapter.method('getSubHeaderTitle', function() {
     var addBtn = '<button class="btn btn-small btn-success" onclick="modJs.subModJsList[\'tab'+this.tab+'\'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>';
-    return addBtn + "Languages";
+    return addBtn + this.gt("Languages");
 });
 
 EmployeeSubLanguageAdapter.method('getSubItemHtml', function(item, itemDelete, itemEdit) {
@@ -1697,7 +1681,7 @@ EmployeeSubDependentAdapter.method('forceInjectValuesBeforeSave', function(param
 
 EmployeeSubDependentAdapter.method('getSubHeaderTitle', function() {
     var addBtn = '<button class="btn btn-small btn-success" onclick="modJs.subModJsList[\'tab'+this.tab+'\'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>';
-    return addBtn + "Dependents";
+    return addBtn + this.gt("Dependents");
 });
 
 EmployeeSubDependentAdapter.method('getSubItemHtml', function(item, itemDelete, itemEdit) {
@@ -1771,7 +1755,7 @@ EmployeeSubEmergencyContactAdapter.method('forceInjectValuesBeforeSave', functio
 
 EmployeeSubEmergencyContactAdapter.method('getSubHeaderTitle', function() {
     var addBtn = '<button class="btn btn-small btn-success" onclick="modJs.subModJsList[\'tab'+this.tab+'\'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>';
-    return addBtn + "Emergency Contacts";
+    return addBtn + this.gt("Emergency Contacts");
 });
 
 EmployeeSubEmergencyContactAdapter.method('getSubItemHtml', function(item, itemDelete, itemEdit) {
@@ -1851,7 +1835,7 @@ EmployeeSubDocumentAdapter.method('forceInjectValuesBeforeSave', function(params
 
 EmployeeSubDocumentAdapter.method('getSubHeaderTitle', function() {
     var addBtn = '<button class="btn btn-small btn-success" onclick="modJs.subModJsList[\'tab'+this.tab+'\'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>';
-    return addBtn + "Documents";
+    return addBtn + this.gt("Documents");
 });
 
 EmployeeSubDocumentAdapter.method('getSubItemHtml', function(item, itemDelete, itemEdit) {

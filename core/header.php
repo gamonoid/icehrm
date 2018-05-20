@@ -24,10 +24,11 @@ if (!defined('MODULE_NAME')) {
     define('MODULE_NAME', $moduleName);
 }
 include 'includes.inc.php';
+
 if(empty($user)){
-    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    \Utils\SessionUtils::saveSessionObject('loginRedirect',$actual_link);
-    header("Location:".CLIENT_BASE_URL."login.php");
+    $actualLink = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    header("Location:".CLIENT_BASE_URL."login.php?next=".\Base64Url\Base64Url::encode($actualLink));
+    exit();
 }
 
 if(empty($user->default_module)){
@@ -144,6 +145,7 @@ include('configureUIManager.php');
     <link href="<?=BASE_URL?>css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="<?=BASE_URL?>js/select2/select2.css" rel="stylesheet">
     <link href="<?=BASE_URL?>js/bootstrap-colorpicker-2.1.1/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <link href="<?=BASE_URL?>bower_components/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
 
     <link href="<?=BASE_URL?>themecss/AdminLTE.css" rel="stylesheet">
 
@@ -157,6 +159,7 @@ include('configureUIManager.php');
     <script type="text/javascript" src="<?=BASE_URL?>bower_components/tinymce/tinymce.min.js"></script>
     <link href="<?=BASE_URL?>bower_components/simplemde/dist/simplemde.min.css" rel="stylesheet">
     <script type="text/javascript" src="<?=BASE_URL?>bower_components/simplemde/dist/simplemde.min.js"></script>
+    <script type="text/javascript" src="<?=BASE_URL?>bower_components/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
     <script type="text/javascript" src="<?=BASE_URL?>js/signature_pad.js"></script>
     <script type="text/javascript" src="<?=BASE_URL?>js/date.js"></script>
     <script type="text/javascript" src="<?=BASE_URL?>js/json2.js"></script>
@@ -167,6 +170,7 @@ include('configureUIManager.php');
     <script type="text/javascript" src="<?=BASE_URL?>api/FormValidation.js?v=<?=$jsVersion?>"></script>
     <script type="text/javascript" src="<?=BASE_URL?>api/Notifications.js?v=<?=$jsVersion?>"></script>
     <script type="text/javascript" src="<?=BASE_URL?>api/TimeUtils.js?v=<?=$jsVersion?>"></script>
+    <script type="text/javascript" src="<?=BASE_URL?>api/ConversationsAdapter.js?v=<?=$jsVersion?>"></script>
     <script type="text/javascript" src="<?=BASE_URL?>api/AesCrypt.js?v=<?=$jsVersion?>"></script>
     <script type="text/javascript" src="<?=BASE_URL?>api/SocialShare.js?v=<?=$jsVersion?>"></script>
 

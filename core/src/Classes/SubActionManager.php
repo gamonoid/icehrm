@@ -45,6 +45,11 @@ abstract class SubActionManager
         return $this->baseService->getCurrentProfileId();
     }
 
+    public function getCurrentUserProfileId()
+    {
+        return $this->baseService->getCurrentUserProfileId();
+    }
+
     public function setEmailTemplates($emailTemplates)
     {
 

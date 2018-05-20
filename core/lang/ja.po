@@ -1597,3 +1597,309 @@ msgstr "適用します"
 
 msgid "Back"
 msgstr "バック"
+
+msgid "Hours in Time Sheets"
+msgstr "タイムシートで時間"
+
+msgid "HR form"
+msgstr "HRフォーム"
+
+msgid "HR Form Management"
+msgstr "HRフォームの管理"
+
+msgid "Form Name"
+msgstr "フォーム名"
+
+msgid "Fields"
+msgstr "フィールド"
+
+msgid "Employee Froms"
+msgstr "従業員はFroms"
+
+msgid "Share Departments"
+msgstr "株式部門"
+
+msgid "Share Employees"
+msgstr "共有従業員"
+
+msgid "Data Importers"
+msgstr "データ輸入"
+
+msgid "Data Import Files"
+msgstr "データのインポートファイル"
+
+msgid "Data Type"
+msgstr "データ・タイプ"
+
+msgid "Columns"
+msgstr "コラム"
+
+msgid "Field Title"
+msgstr "フィールドのタイトル"
+
+msgid "Depends On"
+msgstr "依存"
+
+msgid "Depends On Field"
+msgstr "フィールドに依存します"
+
+msgid "is Key Field"
+msgstr "キー・フィールドであります"
+
+msgid "is ID Field"
+msgstr "IDフィールドは、"
+
+msgid "Data Import Definitions"
+msgstr "データのインポートの定義"
+
+msgid "File to Import"
+msgstr "インポートするファイル"
+
+msgid "Last Export Results"
+msgstr "最終結果のエクスポート"
+
+msgid "Time and Attendance"
+msgstr "時間と出席"
+
+msgid "Leave Timeline"
+msgstr "タイムラインを残します"
+
+msgid "Insights"
+msgstr "洞察"
+
+msgid "Api Access"
+msgstr "APIアクセス"
+
+msgid "Change User Password"
+msgstr "ユーザパスワードの変更"
+
+msgid "New Password"
+msgstr "新しいパスワード"
+
+msgid "Confirm Password"
+msgstr "パスワードを認証する"
+
+msgid "Change Password"
+msgstr "パスワードを変更する"
+
+msgid "Not Now"
+msgstr "今はやめろ"
+
+msgid "Contact Information"
+msgstr "連絡先"
+
+msgid "Job Details"
+msgstr "仕事の詳細"
+
+msgid "Edit Info"
+msgstr "編集情報"
+
+msgid "Upload Profile Image"
+msgstr "プロフィール画像をアップロード"
+
+msgid "Delete Profile Image"
+msgstr "プロフィール画像を削除します"
+
+msgid "Direct Reports"
+msgstr "直接レポート"
+
+msgid "Other Details"
+msgstr "その他の情報"
+
+msgid "Family"
+msgstr "家族"
+
+msgid "Custom Fields"
+msgstr "カスタムフィールド"
+
+msgid "Means of Transportation"
+msgstr "翻訳の意味"
+
+msgid "Plane"
+msgstr "飛行機"
+
+msgid "Rail"
+msgstr "レール"
+
+msgid "Taxi"
+msgstr "タクシー"
+
+msgid "Own Vehicle"
+msgstr "自車"
+
+msgid "Rented Vehicle"
+msgstr "レンタル車"
+
+msgid "Female"
+msgstr "女性"
+
+msgid "Male"
+msgstr "男性"
+
+msgid "Active"
+msgstr "アクティブ"
+
+msgid "Inactive"
+msgstr "不活発"
+
+msgid "Draft"
+msgstr "ドラフト"
+
+msgid "Not Clocked In"
+msgstr "クロックインではありません"
+
+msgid "Clocked In"
+msgstr "クロックイン"
+
+msgid "File"
+msgstr "ファイル"
+
+msgid "Active Employee Report"
+msgstr "アクティブな従業員レポート"
+
+msgid "Employee Attendance Report"
+msgstr "従業員の出席レポート"
+
+msgid "Employee Details Report"
+msgstr "従業員詳細レポート"
+
+msgid "Employee Leave Entitlement"
+msgstr "従業員の休暇資格"
+
+msgid "Employee Leaves Report"
+msgstr "従業員の葉レポート"
+
+msgid "Employee Time Entry Report"
+msgstr "従業員のタイムエントリレポート"
+
+msgid "Employee Time Sheet Report"
+msgstr "従業員のタイムシートレポート"
+
+msgid "Employee Time Tracking Report"
+msgstr "従業員のタイムトラッキングレポート"
+
+msgid "Expense Report"
+msgstr "経費報告書"
+
+msgid "New Hires Employee Report"
+msgstr "新入社員従業員レポート"
+
+msgid "Overtime Report"
+msgstr "残業レポート"
+
+msgid "Overtime Request Report"
+msgstr "残業リクエストレポート"
+
+msgid "Overtime Summary Report"
+msgstr "残業の概要レポート"
+
+msgid "Payroll Meta Data Export"
+msgstr "給与メタデータのエクスポート"
+
+msgid "Terminated Employee Report"
+msgstr "退職した従業員レポート"
+
+msgid "Travel Request Report"
+msgstr "トラベルリクエストレポート"
+
+msgid "Attendance Report"
+msgstr "出席報告書"
+
+msgid "Client Project Time Report"
+msgstr "クライアントのプロジェクト時間レポート"
+
+msgid "Download Payslips"
+msgstr "ダウンロード給与明細"
+
+msgid "Leaves Report"
+msgstr "報告書は、葉"
+
+msgid "Time Entry Report"
+msgstr "タイムエントリレポート"
+
+msgid "Time Sheet Report"
+msgstr "タイムシートのレポート"
+
+msgid "Time Tracking Report"
+msgstr "タイムトラッキングレポート"
+
+msgid "Data"
+msgstr "データ"
+
+msgid "Processed"
+msgstr "処理されました"
+
+msgid "Not Processed"
+msgstr "処理されていません"
+
+msgid "Elementary Proficiency"
+msgstr "小学校能力"
+
+msgid "Limited Working Proficiency"
+msgstr "リミテッド作業能力"
+
+msgid "Professional Working Proficiency"
+msgstr "プロフェッショナルの作業能力"
+
+msgid "Full Professional Proficiency"
+msgstr "完全なプロフェッショナル能力"
+
+msgid "Native or Bilingual Proficiency"
+msgstr "母国語またはバイリンガル"
+
+msgid "Pending"
+msgstr "保留中"
+
+msgid "Approved"
+msgstr "承認"
+
+msgid "Rejected"
+msgstr "拒否されました"
+
+msgid "Cancelled"
+msgstr "キャンセル"
+
+msgid "Continue"
+msgstr "持続する"
+
+msgid "Cancellation Requested"
+msgstr "キャンセル要求"
+
+msgid "Completed"
+msgstr "完成しました"
+
+msgid "Discussions"
+msgstr "議論"
+
+msgid "Load More"
+msgstr "以上の負荷"
+
+msgid "Show More"
+msgstr "もっと見せる"
+
+msgid "Show Less"
+msgstr "レスを表示"
+
+msgid "Publish"
+msgstr "出版します"
+
+msgid "Announcements"
+msgstr "お知らせ"
+
+msgid "Send"
+msgstr "送ります"
+
+msgid "Display"
+msgstr "表示"
+
+msgid "Public"
+msgstr "パブリック"
+
+msgid "View Announcements"
+msgstr "ビューのお知らせ"
+
+msgid "Conversations"
+msgstr "会話"
+
+msgid "Start Now"
+msgstr "今すぐ開始"

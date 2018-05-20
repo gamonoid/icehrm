@@ -20,4 +20,5 @@ class IceConstants
     const NOTIFICATION_LEAVE = "Leave Module";
     const NOTIFICATION_TIMESHEET = "Time Module";
     const NOTIFICATION_TRAINING = "Training Module";
+    const NOTIFICATION_ANNOUNCEMENT = "Announcements";
 }

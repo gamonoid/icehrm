@@ -26,7 +26,6 @@ function EmployeeAdapter(endPoint) {
     this.hiddenFields = {};
     this.tableFields = {};
     this.formOnlyFields = {};
-    this.customFields = [];
 }
 
 EmployeeAdapter.inherits(AdapterBase);
@@ -50,28 +49,6 @@ EmployeeAdapter.method('setFieldNameMap', function(fields) {
         }
     }
 });
-
-EmployeeAdapter.method('setCustomFields', function(fields) {
-	  var field, parsed;
-	  for(var i=0;i<fields.length;i++){
-	      field = fields[i];
-	      if(field.display != "Hidden" && field.data != "" && field.data != undefined){
-	    	  try{
-	    		parsed = JSON.parse(field.data);
-	    		if(parsed == undefined || parsed == null){
-	    			continue;
-	    		}else if(parsed.length != 2){
-	    			continue;
-	    		}else if(parsed[1].type == undefined || parsed[1].type == null){
-	    			continue;
-	    		}
-	    		this.customFields.push(parsed);
-	    	  }catch(e){
-
-	    	  }
-	      }
-	  }
-	});
 
 EmployeeAdapter.method('getDataMapping', function() {
 	return [
@@ -258,8 +235,8 @@ EmployeeAdapter.method('modEmployeeGetSuccessCallBack' , function(data) {
 
     for(var i=0;i<fields.length;i++) {
         if(this.fieldNameMap[fields[i][0]] != undefined && this.fieldNameMap[fields[i][0]] != null){
-            title = this.fieldNameMap[fields[i][0]].textMapped;
-            html = html.replace("#_label_"+fields[i][0]+"_#",title);
+            var title = this.fieldNameMap[fields[i][0]].textMapped;
+            html = html.replace("#_label_"+fields[i][0]+"_#",this.gt(title));
         }
     }
 
@@ -301,7 +278,7 @@ EmployeeAdapter.method('modEmployeeGetSuccessCallBack' , function(data) {
 		for (index in data.customFields) {
 
 			if(!data.customFields[index][1]){
-				data.customFields[index][1] = 'Other Details';
+				data.customFields[index][1] = this.gt('Other Details');
 			}
 
 			sectionId = data.customFields[index][1].toLocaleLowerCase();
@@ -317,7 +294,14 @@ EmployeeAdapter.method('modEmployeeGetSuccessCallBack' , function(data) {
 
 			customFieldHtml = ct;
 			customFieldHtml = customFieldHtml.replace('#_label_#', index);
-			customFieldHtml = customFieldHtml.replace('#_value_#', data.customFields[index][0]);
+            if (data.customFields[index][2] === 'fileupload') {
+                customFieldHtml = customFieldHtml.replace(
+                    '#_value_#',
+                    '<button onclick="download(\''+data.customFields[index][0]+'\');return false;" class="btn btn-mini btn-inverse" type="button">View: '+index+'</button>'
+                );
+            } else {
+                customFieldHtml = customFieldHtml.replace('#_value_#', data.customFields[index][0]);
+            }
 			$("#cont_"+sectionId).append($(customFieldHtml));
 		}
 	}else{

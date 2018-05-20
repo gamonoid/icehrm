@@ -1597,3 +1597,309 @@ msgstr "Appliquer"
 
 msgid "Back"
 msgstr "Arrière"
+
+msgid "Hours in Time Sheets"
+msgstr "Heures feuilles de temps"
+
+msgid "HR form"
+msgstr "sous forme de ressources humaines"
+
+msgid "HR Form Management"
+msgstr "Gestion du formulaire RH"
+
+msgid "Form Name"
+msgstr "Nom de forme"
+
+msgid "Fields"
+msgstr "Des champs"
+
+msgid "Employee Froms"
+msgstr "employé Froms"
+
+msgid "Share Departments"
+msgstr "Départements Partager"
+
+msgid "Share Employees"
+msgstr "Employés Share"
+
+msgid "Data Importers"
+msgstr "Importateurs de données"
+
+msgid "Data Import Files"
+msgstr "Importer des fichiers de données"
+
+msgid "Data Type"
+msgstr "Type de données"
+
+msgid "Columns"
+msgstr "colonnes"
+
+msgid "Field Title"
+msgstr "Titre terrain"
+
+msgid "Depends On"
+msgstr "Dépend de"
+
+msgid "Depends On Field"
+msgstr "Sur le terrain dépend"
+
+msgid "is Key Field"
+msgstr "est Key Field"
+
+msgid "is ID Field"
+msgstr "est Champ ID"
+
+msgid "Data Import Definitions"
+msgstr "Définitions Importer des données"
+
+msgid "File to Import"
+msgstr "Fichier à importer"
+
+msgid "Last Export Results"
+msgstr "Derniers résultats Export"
+
+msgid "Time and Attendance"
+msgstr "Le temps et la fréquentation"
+
+msgid "Leave Timeline"
+msgstr "Laissez Timeline"
+
+msgid "Insights"
+msgstr "Insights"
+
+msgid "Api Access"
+msgstr "Accès api"
+
+msgid "Change User Password"
+msgstr "Changer mot de passe de l'utilisateur"
+
+msgid "New Password"
+msgstr "nouveau mot de passe"
+
+msgid "Confirm Password"
+msgstr "Confirmez le mot de passe"
+
+msgid "Change Password"
+msgstr "Changer le mot de passe"
+
+msgid "Not Now"
+msgstr "Pas maintenant"
+
+msgid "Contact Information"
+msgstr "Informations de contact"
+
+msgid "Job Details"
+msgstr "Détails du poste"
+
+msgid "Edit Info"
+msgstr "Modifier les informations"
+
+msgid "Upload Profile Image"
+msgstr "Ajouter un profil Photo"
+
+msgid "Delete Profile Image"
+msgstr "Supprimer le profil image"
+
+msgid "Direct Reports"
+msgstr "Rapports directs"
+
+msgid "Other Details"
+msgstr "Autres détails"
+
+msgid "Family"
+msgstr "Famille"
+
+msgid "Custom Fields"
+msgstr "Les champs personnalisés"
+
+msgid "Means of Transportation"
+msgstr "Moyens de transport"
+
+msgid "Plane"
+msgstr "Avion"
+
+msgid "Rail"
+msgstr "Rail"
+
+msgid "Taxi"
+msgstr "Taxi"
+
+msgid "Own Vehicle"
+msgstr "Propre véhicule"
+
+msgid "Rented Vehicle"
+msgstr "véhicule loué"
+
+msgid "Female"
+msgstr "Femelle"
+
+msgid "Male"
+msgstr "Mâle"
+
+msgid "Active"
+msgstr "actif"
+
+msgid "Inactive"
+msgstr "Inactif"
+
+msgid "Draft"
+msgstr "Brouillon"
+
+msgid "Not Clocked In"
+msgstr "Non cadencées"
+
+msgid "Clocked In"
+msgstr "cadencées"
+
+msgid "File"
+msgstr "Fichier"
+
+msgid "Active Employee Report"
+msgstr "Rapport actif employé"
+
+msgid "Employee Attendance Report"
+msgstr "Rapport de présence des employés"
+
+msgid "Employee Details Report"
+msgstr "Rapport de l'employé Détails"
+
+msgid "Employee Leave Entitlement"
+msgstr "Employé droit au congé"
+
+msgid "Employee Leaves Report"
+msgstr "Rapport feuilles des employés"
+
+msgid "Employee Time Entry Report"
+msgstr "Rapport employé à temps d'entrée"
+
+msgid "Employee Time Sheet Report"
+msgstr "Rapport de feuille de temps des employés"
+
+msgid "Employee Time Tracking Report"
+msgstr "Rapport de suivi du temps des employés"
+
+msgid "Expense Report"
+msgstr "Rapport de dépenses"
+
+msgid "New Hires Employee Report"
+msgstr "Nouvelles embauches Rapport de l'employé"
+
+msgid "Overtime Report"
+msgstr "Rapport des heures supplémentaires"
+
+msgid "Overtime Request Report"
+msgstr "Rapport des heures supplémentaires de demande"
+
+msgid "Overtime Summary Report"
+msgstr "Rapport sommaire des heures supplémentaires"
+
+msgid "Payroll Meta Data Export"
+msgstr "Paie Meta Exporter les données"
+
+msgid "Terminated Employee Report"
+msgstr "Rapport de l'employé Terminated"
+
+msgid "Travel Request Report"
+msgstr "Rapport Demande de Voyage"
+
+msgid "Attendance Report"
+msgstr "Rapport de présence"
+
+msgid "Client Project Time Report"
+msgstr "Rapport sur le projet Client Temps"
+
+msgid "Download Payslips"
+msgstr "Télécharger fiches de paie"
+
+msgid "Leaves Report"
+msgstr "Rapport laisse"
+
+msgid "Time Entry Report"
+msgstr "Rapport du temps d'entrée"
+
+msgid "Time Sheet Report"
+msgstr "Rapport de feuille de temps"
+
+msgid "Time Tracking Report"
+msgstr "Rapport de suivi du temps"
+
+msgid "Data"
+msgstr "Les données"
+
+msgid "Processed"
+msgstr "Traité"
+
+msgid "Not Processed"
+msgstr "Non traité"
+
+msgid "Elementary Proficiency"
+msgstr "Notions"
+
+msgid "Limited Working Proficiency"
+msgstr "Compétence professionnelle limitée"
+
+msgid "Professional Working Proficiency"
+msgstr "Compétence professionnelle"
+
+msgid "Full Professional Proficiency"
+msgstr "Capacité professionnelle complète"
+
+msgid "Native or Bilingual Proficiency"
+msgstr "Bilingue ou langue natale"
+
+msgid "Pending"
+msgstr "en attendant"
+
+msgid "Approved"
+msgstr "Approuvé"
+
+msgid "Rejected"
+msgstr "Rejeté"
+
+msgid "Cancelled"
+msgstr "Annulé"
+
+msgid "Continue"
+msgstr "Continuer"
+
+msgid "Cancellation Requested"
+msgstr "Annulation demandée"
+
+msgid "Completed"
+msgstr "Terminé"
+
+msgid "Discussions"
+msgstr "discussions"
+
+msgid "Load More"
+msgstr "Charger plus"
+
+msgid "Show More"
+msgstr "Montre plus"
+
+msgid "Show Less"
+msgstr "Montre moins"
+
+msgid "Publish"
+msgstr "Publier"
+
+msgid "Announcements"
+msgstr "Annonces"
+
+msgid "Send"
+msgstr "Envoyer"
+
+msgid "Display"
+msgstr "Afficher"
+
+msgid "Public"
+msgstr "Publique"
+
+msgid "View Announcements"
+msgstr "Afficher les annonces"
+
+msgid "Conversations"
+msgstr "conversations"
+
+msgid "Start Now"
+msgstr "Commencez maintenant"

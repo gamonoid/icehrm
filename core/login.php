@@ -4,6 +4,12 @@ include("config.base.php");
 include("include.common.php");
 include("server.includes.inc.php");
 
+if (isset($_REQUEST['logout'])) {
+    \Utils\SessionUtils::unsetClientSession();
+    $_COOKIE['icehrmLF'] = '';
+    $user = null;
+}
+
 if (empty($user)) {
 	if (!isset($_REQUEST['f']) && isset($_COOKIE['icehrmLF'])
 		&& $_REQUEST['login'] != 'no' && !isset($_REQUEST['username'])) {
@@ -81,19 +87,22 @@ if (empty($user)) {
 				setcookie('icehrmLF');
 			}
 
-			$redirectUrl = \Utils\SessionUtils::getSessionObject('loginRedirect');
-			if (!empty($redirectUrl)) {
-				header("Location:".$redirectUrl);
-			} else {
+			if (!empty($_REQUEST['next']) && !empty(($loginRedirect = \Base64Url\Base64Url::decode($_REQUEST['next'])))) {
+			    header("Location:" . $loginRedirect);
+			    exit();
+            } else {
 				if ($user->user_level == "Admin") {
 					if (\Utils\SessionUtils::getSessionObject('account_locked') == "1") {
 						header("Location:".CLIENT_BASE_URL."?g=admin&n=billing&m=admin_System");
+                        exit();
 					} else {
 						header("Location:".HOME_LINK_ADMIN);
+                        exit();
 					}
 				} else {
 					if (empty($user->default_module)) {
 						header("Location:".HOME_LINK_OTHERS);
+                        exit();
 					} else {
 						$defaultModule = new \Modules\Common\Model\Module();
 						$defaultModule->Load("id = ?", array($user->default_module));
@@ -103,19 +112,24 @@ if (empty($user)) {
 						$homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&&n=".$defaultModule->name.
 							"&m=".$defaultModule->mod_group."_".str_replace(" ", "_", $defaultModule->menu);
 						header("Location:".$homeLink);
+                        exit();
 					}
 				}
 			}
 		} else {
-			header("Location:".CLIENT_BASE_URL."login.php?f=1");
+		    $next = !empty($_REQUEST['next'])?'&next='.$_REQUEST['next']:'';
+			header("Location:".CLIENT_BASE_URL."login.php?f=1".$next);
+            exit();
 		}
 	}
 } else {
 	if ($user->user_level == "Admin") {
 		header("Location:".HOME_LINK_ADMIN);
+        exit();
 	} else {
 		if (empty($user->default_module)) {
 			header("Location:".HOME_LINK_OTHERS);
+            exit();
 		} else {
 			$defaultModule = new \Modules\Common\Model\Module();
 			$defaultModule->Load("id = ?", array($user->default_module));
@@ -125,6 +139,7 @@ if (empty($user)) {
 			$homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&n=".$defaultModule->name.
 				"&m=".$defaultModule->mod_group."_".str_replace(" ", "_", $defaultModule->menu);
 			header("Location:".$homeLink);
+            exit();
 		}
 	}
 }
@@ -324,6 +339,7 @@ $logoFileUrl = \Classes\UIManager::getInstance()->getCompanyLogoUrl();
 				<h2><img src="<?=$logoFileUrl?>"/></h2>
 				<?php if (!isset($_REQUEST['cp'])) {?>
 					<form id="loginForm" action="login.php" method="POST">
+                        <input type="hidden" id="next" name="next" value="<?=$_REQUEST['next']?>"/>
 						<fieldset>
 							<div class="clearfix">
 								<div class="input-prepend">
@@ -339,7 +355,7 @@ $logoFileUrl = \Classes\UIManager::getInstance()->getCompanyLogoUrl();
 							</div>
 							<div class="clearfix">
 								<div class="checkbox">
-									<label><input id="remember" name="remember" type="checkbox" value="remember" checked>Remember me</label>
+									<label><input id="remember" name="remember" type="checkbox" value="remember">Remember me</label>
 								</div>
 							</div>
 							<?php if (isset($_REQUEST['f'])) {?>

@@ -21,10 +21,10 @@
 		</div>
 	    <div class="row-fluid">
 	    	<div class="col-xs-12" style="font-size:18px;border-bottom: 1px solid #DDD;margin-bottom: 10px;padding-bottom: 10px;">
-				<button id="employeeProfileEditInfo" class="btn btn-small btn-success" onclick="modJs.editEmployee();" style="margin-right:10px;"><i class="fa fa-edit"></i> Edit Info</button>
-				<button id="employeeUploadProfileImage" onclick="showUploadDialog('profile_image__id_','Upload Profile Image','profile_image',_id_,'profile_image__id_','src','url','image');return false;" class="btn btn-small btn-primary" type="button" style="margin-right:10px;"><i class="fa fa-upload"></i> Upload Profile Image</button>
-				<button id="employeeDeleteProfileImage" onclick="modJs.deleteProfileImage(_id_);return false;" class="btn btn-small btn-warning" type="button" style="margin-right:10px;"><i class="fa fa-times"></i> Delete Profile Image</button>
-				<button id="employeeUpdatePassword" onclick="modJs.changePassword();return false;" class="btn btn-small btn-success" type="button" style="margin-right:10px;"><i class="fa fa-lock"></i> Change Password</button>
+				<button id="employeeProfileEditInfo" class="btn btn-small btn-success" onclick="modJs.editEmployee();" style="margin-right:10px;"><i class="fa fa-edit"></i> <t>Edit Info</t></button>
+				<button id="employeeUploadProfileImage" onclick="showUploadDialog('profile_image__id_','Upload Profile Image','profile_image',_id_,'profile_image__id_','src','url','image');return false;" class="btn btn-small btn-primary" type="button" style="margin-right:10px;"><i class="fa fa-upload"></i> <t>Upload Profile Image</t></button>
+				<button id="employeeDeleteProfileImage" onclick="modJs.deleteProfileImage(_id_);return false;" class="btn btn-small btn-warning" type="button" style="margin-right:10px;"><i class="fa fa-times"></i> <t>Delete Profile Image</t></button>
+				<button id="employeeUpdatePassword" onclick="modJs.changePassword();return false;" class="btn btn-small btn-success" type="button" style="margin-right:10px;"><i class="fa fa-lock"></i> <t>Change Password</t></button>
 			</div>
 	    </div>
 
@@ -47,7 +47,7 @@
 
 <div class="row" style="margin-left:10px;">
 	<div class="panel panel-default" style="width:97.5%;">
-		<div class="panel-heading"><h4>Personal Information</h4></div>
+		<div class="panel-heading"><h4><t>Personal Information</t></h4></div>
 		<div class="panel-body">
 		<div class="row-fluid">
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
@@ -89,7 +89,7 @@
 
 <div class="row" style="margin-left:10px;margin-top:20px;">
 	<div class="panel panel-default" style="width:97.5%;">
-	<div class="panel-heading"><h4>Contact Information</h4></div>
+		<div class="panel-heading"><h4><t>Contact Information</t></h4></div>
 		<div class="panel-body">
 		<div class="row-fluid">
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
@@ -134,7 +134,7 @@
 
 <div class="row" style="margin-left:10px;margin-top:20px;">
 	<div class="panel panel-default" style="width:97.5%;">
-	<div class="panel-heading"><h4>Job Details</h4></div>
+		<div class="panel-heading"><h4><t>Job Details</t></h4></div>
 		<div class="panel-body">
 		<div class="row-fluid">
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
@@ -146,11 +146,11 @@
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="employment_status_Name"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Supervisor</label>
+				<label class="control-label col-xs-12" style="font-size:13px;"><t>Supervisor</t></label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="supervisor_Name"></label>
 			</div>
 			<div class="col-xs-6 col-md-3" style="font-size:16px;">
-				<label class="control-label col-xs-12" style="font-size:13px;">Direct Reports</label>
+				<label class="control-label col-xs-12" style="font-size:13px;"><t>Direct Reports</t></label>
 				<label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;" id="subordinates"></label>
 			</div>
 		</div>
@@ -185,7 +185,7 @@
 <div class="modal-content">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><li class="fa fa-times"/></button>
-		<h3 style="font-size: 17px;">Change User Password</h3>
+		<h3 style="font-size: 17px;"><t>Change User Password</t></h3>
 	</div>
 	<div class="modal-body">
 		<form id="adminUsersChangePwd">
@@ -195,14 +195,14 @@
 		</div>
 		</div>
 		<div class="control-group" id="field_newpwd">
-			<label class="control-label" for="newpwd">New Password</label>
+			<label class="control-label" for="newpwd"><t>New Password</t></label>
 			<div class="controls">
 			  	<input class="" type="password" id="newpwd" name="newpwd" value="" class="form-control"/>
 			  	<span class="help-inline" id="help_newpwd"></span>
 			</div>
 		</div>
 		<div class="control-group" id="field_conpwd">
-			<label class="control-label" for="conpwd">Confirm Password</label>
+			<label class="control-label" for="conpwd"><t>Confirm Password</t></label>
 			<div class="controls">
 			  	<input class="" type="password" id="conpwd" name="conpwd" value="" class="form-control"/>
 			  	<span class="help-inline" id="help_conpwd"></span>
@@ -211,8 +211,8 @@
 		</form>
 	</div>
 	<div class="modal-footer">
- 		<button class="btn btn-primary" onclick="modJs.changePasswordConfirm();">Change Password</button>
- 		<button class="btn" onclick="modJs.closeChangePassword();">Not Now</button>
+		<button class="btn btn-primary" onclick="modJs.changePasswordConfirm();"><t>Change Password</t></button>
+		<button class="btn" onclick="modJs.closeChangePassword();"><t>Not Now</t></button>
 	</div>
 </div>
 </div>

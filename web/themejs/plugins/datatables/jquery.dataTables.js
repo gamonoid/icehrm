@@ -174,11 +174,17 @@
 			var mData = _fnGetObjectDataFn( oCol.mData );
 
 			oCol.fnGetData = function (oData, sSpecific) {
-				var innerData = mData( oData, sSpecific );
+				var modData = [];
+				for (var index in oData) {
+					if (oData.hasOwnProperty(index)) {
+                        modData[index] = modJs.gt(oData[index]);
+					}
+				}
+				var innerData = mData( modData, sSpecific );
 
 				if ( oCol.mRender && (sSpecific && sSpecific !== '') )
 				{
-					return mRender( innerData, sSpecific, oData );
+					return mRender( innerData, sSpecific, modData );
 				}
 				return innerData;
 			};

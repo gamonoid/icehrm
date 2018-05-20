@@ -1015,6 +1015,18 @@ class BaseService
     }
 
     /**
+     * Get the Profile id attached to currently logged in user
+     * @method getCurrentProfileId
+     * @return {Integer}
+     */
+    public function getCurrentUserProfileId()
+    {
+        $user = SessionUtils::getSessionObject('user');
+        $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
+        return $user->$signInMappingField;
+    }
+
+    /**
      * Get User by profile id
      * @method getUserFromProfileId
      * @param $profileId {Integer} profile id

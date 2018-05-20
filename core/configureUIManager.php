@@ -11,3 +11,9 @@ foreach($moduleManagers as $moduleManagerObj){
         $moduleManagerObj->initQuickAccessMenu();
     }
 }
+
+$supportedLanguage = new \Metadata\Common\Model\SupportedLanguage();
+$supportedLanguages = $supportedLanguage->Find("1 = 1", []);
+foreach ($supportedLanguages as $supportedLanguage) {
+    \Classes\UIManager::getInstance()->addLanguageMenuItem($supportedLanguage->name);
+}

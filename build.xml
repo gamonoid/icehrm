@@ -45,7 +45,6 @@
          depends="clean"
          description="Prepare for build">
   <mkdir dir="${basedir}/build/api"/>
-  <mkdir dir="${basedir}/build/api"/>
   <mkdir dir="${basedir}/build/coverage"/>
   <mkdir dir="${basedir}/build/logs"/>
   <mkdir dir="${basedir}/build/pdepend"/>
@@ -81,7 +80,7 @@
   <exec executable="${toolsdir}phploc">
    <arg value="--count-tests" />
    <arg path="${basedir}/core/src" />
-   <arg path="${basedir}/tests" />
+   <arg path="${basedir}/test" />
   </exec>
  </target>
 
@@ -95,7 +94,7 @@
    <arg value="--log-xml" />
    <arg path="${basedir}/build/logs/phploc.xml" />
    <arg path="${basedir}/core/src" />
-   <arg path="${basedir}/tests" />
+   <arg path="${basedir}/test" />
   </exec>
  </target>
 

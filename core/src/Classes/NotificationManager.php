@@ -1,6 +1,7 @@
 <?php
 namespace Classes;
 
+use Employees\Common\Model\Employee;
 use Model\Notification;
 use Users\Common\Model\User;
 
@@ -12,6 +13,25 @@ class NotificationManager
     public function setBaseService($baseService)
     {
         $this->baseService = $baseService;
+    }
+
+    public function addNotificationToAll(
+        $message,
+        $action,
+        $type,
+        $fromEmployee,
+        $toUserId = null,
+        $fromSystem = false,
+        $sendEmail = false
+    ) {
+        $employee = new Employee();
+        $employees = $employee->Find('status = ?', array('Active'));
+        foreach ($employees as $employee) {
+            if ($employee->id === $fromEmployee) {
+                continue;
+            }
+            $this->addNotification($employee->id, $message, $action, $type, $toUserId, $fromSystem, $sendEmail);
+        }
     }
 
     public function addNotification(

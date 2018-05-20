@@ -1,8 +1,8 @@
 {
-    "label": "Field Names Setup",
-    "menu": "System",
-    "order": "7",
-    "icon": "fa-sort-alpha-asc",
+    "label": "Employee Custom Fields",
+    "menu": "Admin",
+    "order": "83",
+    "icon": "fa-sliders",
     "user_levels": [
         "Admin"
     ],

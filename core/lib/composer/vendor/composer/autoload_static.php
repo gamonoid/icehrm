@@ -17,6 +17,10 @@ class ComposerStaticInit6d4a28cd96a5bc5d5b97781c062572d9
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'c' => 
+        array (
+            'cebe\\markdown\\' => 14,
+        ),
         'W' => 
         array (
             'Whoops\\' => 7,
@@ -77,6 +81,10 @@ class ComposerStaticInit6d4a28cd96a5bc5d5b97781c062572d9
             'Consolidation\\Config\\' => 21,
             'Consolidation\\AnnotatedCommand\\' => 31,
         ),
+        'B' => 
+        array (
+            'Base64Url\\' => 10,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -85,6 +93,10 @@ class ComposerStaticInit6d4a28cd96a5bc5d5b97781c062572d9
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'cebe\\markdown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cebe/markdown',
         ),
         'Whoops\\' => 
         array (
@@ -194,6 +206,10 @@ class ComposerStaticInit6d4a28cd96a5bc5d5b97781c062572d9
         array (
             0 => __DIR__ . '/..' . '/consolidation/annotated-command/src',
         ),
+        'Base64Url\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spomky-labs/base64url/src',
+        ),
     );
 
     public static $fallbackDirsPsr4 = array (
@@ -232,6 +248,13 @@ class ComposerStaticInit6d4a28cd96a5bc5d5b97781c062572d9
             'Mail' => 
             array (
                 0 => __DIR__ . '/..' . '/pear/mail',
+            ),
+        ),
+        'F' => 
+        array (
+            'ForceUTF8\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/neitanod/forceutf8/src',
             ),
         ),
         'D' => 
@@ -431,7 +454,7 @@ class ComposerStaticInit6d4a28cd96a5bc5d5b97781c062572d9
         'PHPUnit\\Util\\TestDox\\XmlResultPrinter' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TestDox/XmlResultPrinter.php',
         'PHPUnit\\Util\\TextTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TextTestListRenderer.php',
         'PHPUnit\\Util\\Type' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Type.php',
-        'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XML.php',
+        'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml.php',
         'PHPUnit\\Util\\XmlTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XmlTestListRenderer.php',
         'PHPUnit_Framework_MockObject_MockObject' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/MockObject.php',
         'PHP_Timer' => __DIR__ . '/..' . '/phpunit/php-timer/src/Timer.php',

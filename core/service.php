@@ -269,6 +269,22 @@ if($action == 'get'){
 		}
 	}
 
+}else if ($action === 'updateLanguage'){
+    $language = $_POST['language'];
+    $supportedLanguage = new \Metadata\Common\Model\SupportedLanguage();
+    $supportedLanguage->Load('name = ?', [$language]);
+    $ret['status'] = "ERROR";
+    if (!empty($supportedLanguage->id) && $supportedLanguage->name === $language) {
+        $languageUser = new \Users\Common\Model\User();
+        $languageUser->Load('id = ?', [$user->id]);
+        if (!empty($languageUser->id)) {
+            $languageUser->lang = $supportedLanguage->id;
+            $languageUser->Save();
+            $user->lang = $languageUser->lang;
+            \Utils\SessionUtils::saveSessionObject('user', $user);
+            $ret['status'] = "SUCCESS";
+        }
+    }
 }
 
 $res = json_encode($ret);

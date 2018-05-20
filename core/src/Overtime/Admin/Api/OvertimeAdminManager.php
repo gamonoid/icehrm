@@ -35,4 +35,14 @@ class OvertimeAdminManager extends AbstractModuleManager
         $this->addModelClass('EmployeeOvertime');
         $this->addModelClass('EmployeeOvertimeApproval');
     }
+
+    public function initCalculationHooks()
+    {
+        $this->addCalculationHook(
+            'OvertimePayrollUtils_getApprovedTimeInRequests',
+            'Total Hours from Approved Overtime Requests',
+            OvertimePayrollUtils::class,
+            'getApprovedTimeInRequests'
+        );
+    }
 }

@@ -89,21 +89,32 @@ EmployeeTravelRecordAdapter.method('getHeaders', function() {
 });
 
 EmployeeTravelRecordAdapter.method('getFormFields', function() {
-	return [
-        [ "id", {"label":"ID","type":"hidden"}],
-        [ "type", {"label":"Travel Type","type":"select","source":[["Local","Local"],["International","International"]]}],
-        [ "purpose", {"label":"Purpose of Travel","type":"textarea","validation":""}],
-        [ "travel_from", {"label":"Travel From","type":"text","validation":""}],
-        [ "travel_to", {"label":"Travel To","type":"text","validation":""}],
-        [ "travel_date", {"label":"Travel Date","type":"datetime","validation":""}],
-        [ "return_date", {"label":"Return Date","type":"datetime","validation":""}],
-        [ "details", {"label":"Notes","type":"textarea","validation":"none"}],
-        [ "currency", {"label":"Currency","type":"select2","allow-null":false,"remote-source":["CurrencyType","id","code"]}],
-        [ "funding", {"label":"Total Funding Proposed","type":"text","validation":"float"}],
-        [ "attachment1", {"label":"Itinerary / Cab Receipt","type":"fileupload","validation":"none"}],
-        [ "attachment2", {"label":"Other Attachment 1","type":"fileupload","validation":"none"}],
-        [ "attachment3", {"label":"Other Attachment 2","type":"fileupload","validation":"none"}]
-	];
+	return this.addCustomFields([
+        ["id", {"label": "ID", "type": "hidden"}],
+        ["type", {
+            "label": "Means of Transportation",
+            "type": "select",
+            "source": [
+                ["Plane", "Plane"],
+                ["Rail", "Rail"],
+                ["Taxi", "Taxi"],
+                ["Own Vehicle", "Own Vehicle"],
+                ["Rented Vehicle", "Rented Vehicle"],
+                ["Other", "Other"]
+            ]
+        }],
+        ["purpose", {"label": "Purpose of Travel", "type": "textarea", "validation": ""}],
+        ["travel_from", {"label": "Travel From", "type": "text", "validation": ""}],
+        ["travel_to", {"label": "Travel To", "type": "text", "validation": ""}],
+        ["travel_date", {"label": "Travel Date", "type": "datetime", "validation": ""}],
+        ["return_date", {"label": "Return Date", "type": "datetime", "validation": ""}],
+        ["details", {"label": "Notes", "type": "textarea", "validation": "none"}],
+        ["currency", {"label": "Currency", "type": "select2", "allow-null":false, "remote-source": ["CurrencyType", "id", "code"]}],
+        ["funding", {"label": "Total Funding Proposed", "type": "text", "validation": "float", "default":"0.00", "mask":"9{0,10}.99"}],
+        ["attachment1", {"label": "Attachment", "type": "fileupload", "validation": "none"}],
+        ["attachment2", {"label": "Attachment", "type": "fileupload", "validation": "none"}],
+        ["attachment3", {"label": "Attachment", "type": "fileupload", "validation": "none"}]
+	]);
 });
 
 /*

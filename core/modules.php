@@ -133,7 +133,6 @@ foreach ($ams as $am) {
             $arr['label'] = $dbModule->label;
             $arr['icon'] = $dbModule->icon;
             $arr['menu'] = $dbModule->menu;
-            $arr['order'] = $dbModule->mod_order;
             $arr['status'] = $dbModule->status;
             $arr['user_levels'] = json_decode($dbModule->user_levels);
             $arr['user_roles'] = json_decode($dbModule->user_roles);
@@ -195,7 +194,6 @@ foreach ($ams as $am) {
             $arr['label'] = $meta->label;
             $arr['icon'] = $meta->icon;
             $arr['menu'] = $meta->menu;
-            $arr['order'] = $meta->order;
             $arr['status'] = 'Enabled';
             $arr['user_levels'] = $meta->user_levels;
             $arr['user_roles'] = isset($meta->user_roles) ? $meta->user_roles : "";

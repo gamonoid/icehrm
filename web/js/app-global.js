@@ -48,6 +48,7 @@ function closeUploadDialog(success,error,data){
 			}	
 			$('#'+uploadId).show();	
 			$('#'+uploadId+"_download").show();	
+			$('#'+uploadId+"_remove").show();
 		}else if(uploadResultAttr == "id"){
 			if(uploadAttr == "val"){
 				$('#'+uploadId).attr(uploadAttr,fileId);
@@ -59,6 +60,7 @@ function closeUploadDialog(success,error,data){
 			}
 			$('#'+uploadId).show();	
 			$('#'+uploadId+"_download").show();	
+			$('#'+uploadId+"_remove").show();
 		}
 		
 		
@@ -166,4 +168,17 @@ function nl2br(str, is_xhtml) {
 
   return (str + '')
     .replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+}
+
+function updateLanguage(language) {
+    var object = {};
+    object['a'] = "updateLanguage";
+    object['language'] = language;
+    $.post(this.baseUrl, object, function(data) {
+        if(data.status == "SUCCESS"){
+            location.reload();
+        } else {
+            alert("Error occurred while changing language");
+        }
+    },"json");
 }

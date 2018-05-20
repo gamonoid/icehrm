@@ -1,10 +1,11 @@
 <div class="row" id="field__id_">
 	<label class="control-label col-sm-3" for="_id_">_label_</label>
 	<div class="controls col-sm-6">
-		<label id="_id_" name="_id_" type="fileupload" class="control-label uploadInput" style="display:none;" _validation_></label>
-		<button id="_id__download" onclick="download($('#_id_').attr('val'));return false;" class="btn btn-mini btn-inverse" type="button" style="margin-left:30px;margin-top:3px;display:none;"><t>Download</t></button>
-		<button id="_id__upload" onclick="showUploadDialog('_id___rand_','Upload Attachment','_group_',_userId_,'_id_','html','name','_filetypes_');return false;" class="btn btn-mini btn-inverse" type="button" style="margin-top:3px;"><t>Upload</t></button>
-        <button id="_id__remove" onclick="$('#_id_').attr('val','');return false;" class="btn btn-mini btn-inverse" type="button" style="margin-left:30px;margin-top:3px;"><t>Remove</t></button>
+		<label id="_id_" name="_id_" type="fileupload" class="control-label uploadInput" style="display:none;" _validation_><t>Upload&nbsp;</t></label>
+		<span id="_id__remove" onclick="$('#_id_').attr('val','');$('#_id_').html('');$('#_id__download').hide();return false;" class="file-action-icon" style="display:none;"><i class="fa fa-remove text-red"></i></span>
+		<span id="_id__download" onclick="download($('#_id_').attr('val'));return false;" class="file-action-icon" type="button" style="display:none;"><i class="fa fa-cloud-download text-aqua"></i></span>
+		<span id="_id__upload" onclick="showUploadDialog('_id___rand_','Upload Attachment','_group_',_userId_,'_id_','html','name','_filetypes_');return false;" class="file-action-icon"><i class="fa fa-cloud-upload text-green"></i></span>
+
     </div>
 	<div class="controls col-sm-3">
 		<div id="help__id_" class="fa fa-info-circle help-info _hidden_class_help_"

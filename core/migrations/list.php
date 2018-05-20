@@ -1,5 +1,7 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20180514_230002_add_conversation_tables';
+$migrationList[] = 'v20180507_230001_update_travel_record_type';
 $migrationList[] = 'v20180417_210501_update_menu_names';
 $migrationList[] = 'v20180325_210101_delete_leave_group_employee';
 $migrationList[] = 'v20180317_210200_leave_rule_experience';

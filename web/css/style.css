@@ -753,3 +753,91 @@ table.dataTable{
     border: none;
     background-color: transparent !important;
 }
+
+.language-list{
+    width: 80px !important;
+    min-width: 80px !important;
+}
+
+.language-list .flag-icon {
+    font-size:14px;
+    color:#3498db;
+}
+
+.user-block .description2 {
+    margin-left: 10px;
+    color: #999;
+    font-size: 12px;
+}
+
+.chattext {
+    height: 100px;
+}
+
+.file-action-icon {
+    margin-top: 3px;
+    padding: 5px;
+    color: green;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.chat-user-active {
+    background: #e6e6e6;
+}
+
+.chat-user-wrap {
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    border: none;
+    background: #FFF;
+}
+
+.conversation {
+    border-top: 1px solid #ededed;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.conversation-body {
+    padding-left: 60px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.conversation-small {
+    max-height:300px;
+    overflow: hidden;
+}
+
+.chat-message {
+    font-size: 1.5rem;
+    padding: 5px;
+    margin: 0px 10px 10px 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    border: none;
+    width: 97%;
+    display: block;
+    box-sizing: padding-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500;
+}
+
+.chat-message:hover,
+.chat-message:active,
+.chat-message:focus
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+}
+
+.conversation-attachment {
+    background: #f9f9f9;cursor: pointer;width:300px;min-height:60px;margin-left: 50px;
+}
+
+.conversation-save-post {
+    padding: 1px 10px;
+    margin-bottom: 15px;
+}

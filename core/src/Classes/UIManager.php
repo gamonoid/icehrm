@@ -2,6 +2,7 @@
 namespace Classes;
 
 use Classes\ModuleBuilder\ModuleBuilder;
+use Metadata\Common\Model\SupportedLanguage;
 
 class UIManager
 {
@@ -15,9 +16,10 @@ class UIManager
     protected $currentProfileBlock = null;
     protected $switchedProfileBlock = null;
 
-    protected $templates = array();
+    protected $templates = [];
 
-    protected $quickAccessMenuItems = array();
+    protected $quickAccessMenuItems = [];
+    protected $languageMenuItems = [];
 
     private function __construct()
     {
@@ -30,6 +32,16 @@ class UIManager
         }
 
         return self::$me;
+    }
+
+    public function getCurrentProfile()
+    {
+        return $this->currentProfile;
+    }
+
+    public function getSwitchedProfile()
+    {
+        return $this->switchedProfile;
     }
 
     private function getTemplate($name, $type)
@@ -120,22 +132,43 @@ class UIManager
 
     public function getMenuBlocks()
     {
-        $manuItems = array();
+        $menuItems = array();
 
         if (!empty($this->quickAccessMenuItems)) {
             $itemsHtml = $this->getQuickAccessMenuItemsHTML();
             if (!empty($itemsHtml)) {
-                $manuItems[] = new MenuItemTemplate('menuButtonQuick', array("ITEMS"=>$itemsHtml));
+                $menuItems[] = new MenuItemTemplate('menuButtonQuick', array("ITEMS"=>$itemsHtml));
             }
         }
 
-        $manuItems[] = new MenuItemTemplate('menuButtonNotification', array());
+        $menuItems[] = new MenuItemTemplate('menuButtonNotification', array());
         if ($this->user->user_level == "Admin") {
-            $manuItems[] = new MenuItemTemplate('menuButtonSwitchProfile', array());
+            $menuItems[] = new MenuItemTemplate('menuButtonSwitchProfile', array());
+        }
+
+        if (!empty($this->languageMenuItems)) {
+            $itemsHtml = $this->getLanguageMenuItemsHTML();
+            if (!empty($itemsHtml)) {
+                $user = BaseService::getInstance()->getCurrentUser();
+                $supportedLanguage = new SupportedLanguage();
+                $supportedLanguage->Load('id = ?', [$user->lang]);
+                $language = $supportedLanguage->name;
+                if (empty($language)) {
+                    $language = SettingsManager::getInstance()->getSetting('System: Language');
+                }
+                $menuItems[] = new MenuItemTemplate(
+                    'menuButtonLanguage',
+                    array(
+                        "ITEMS" => $itemsHtml,
+                        "CURRENT_LANG" => $language,
+                        "CURRENT_CODE" => $this->getCountryCodeByLanguage($language)
+                    )
+                );
+            }
         }
 
         if (!empty($this->currentProfile)) {
-            $manuItems[] = new MenuItemTemplate('menuButtonProfile', array(
+            $menuItems[] = new MenuItemTemplate('menuButtonProfile', array(
                 "profileImage"=>$this->currentProfile->image,
                 "firstName"=>$this->currentProfile->first_name,
                 "lastName"=>$this->currentProfile->last_name,
@@ -144,7 +177,7 @@ class UIManager
 
             ));
         } else {
-            $manuItems[] = new MenuItemTemplate('menuButtonProfile', array(
+            $menuItems[] = new MenuItemTemplate('menuButtonProfile', array(
                 "profileImage"=>BASE_URL."images/user_male.png",
                 "firstName"=>$this->user->username,
                 "lastName"=>"",
@@ -163,7 +196,7 @@ class UIManager
                 }
             }
 
-            $manuItems[] = new MenuItemTemplate('menuButtonHelp', array(
+            $menuItems[] = new MenuItemTemplate('menuButtonHelp', array(
                 "APP_NAME"=>APP_NAME,
                 "VERSION"=>VERSION,
                 "VERSION_DATE"=>VERSION_DATE,
@@ -171,7 +204,7 @@ class UIManager
             ));
         }
 
-        return $manuItems;
+        return $menuItems;
     }
 
     public function getMenuItemsHTML()
@@ -191,6 +224,11 @@ class UIManager
         $this->quickAccessMenuItems[] = array($newName, $icon, $link, $userLevels);
     }
 
+    public function addLanguageMenuItem($name)
+    {
+        $this->languageMenuItems[] = $name;
+    }
+
     public function getQuickAccessMenuItemsHTML()
     {
         $html = "";
@@ -202,6 +240,32 @@ class UIManager
         }
 
         return $html;
+    }
+
+    public function getLanguageMenuItemsHTML()
+    {
+        $html = "";
+        foreach ($this->languageMenuItems as $item) {
+            $html .= '<a href="#" onclick="updateLanguage(\''.$item.'\');return false;">
+            <span class="flag-icon flag-icon-'.$this->getCountryCodeByLanguage($item).'"></span>
+              <b>'.strtoupper($item).'</b></a>';
+        }
+
+        return $html;
+    }
+
+    protected function getCountryCodeByLanguage($currentLanguage)
+    {
+        $currentCountryCode = $currentLanguage;
+        if ($currentLanguage === 'en') {
+            $currentCountryCode = 'gb';
+        } elseif ($currentLanguage === 'zh') {
+            $currentCountryCode = 'cn';
+        } elseif ($currentLanguage === 'ja') {
+            $currentCountryCode = 'jp';
+        }
+
+        return $currentCountryCode;
     }
 
     /**

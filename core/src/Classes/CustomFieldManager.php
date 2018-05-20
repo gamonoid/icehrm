@@ -76,7 +76,7 @@ class CustomFieldManager
 
             $customFieldsListOrdered[] = $order;
 
-            if ($type == "text" || $type == "textarea") {
+            if ($type == "text" || $type == "textarea" || $type == "fileupload") {
                 $object->customFields[$label] = $cf->value;
             } elseif ($type == 'select' || $type == 'select2') {
                 $options = $customFields[$cf->name]->field_options;
@@ -132,7 +132,7 @@ class CustomFieldManager
                 }
             }
 
-            $object->customFields[$label] = array($object->customFields[$label], $section);
+            $object->customFields[$label] = array($object->customFields[$label], $section, $type);
         }
         array_multisort($customFieldsListOrdered, SORT_DESC, SORT_NUMERIC, $object->customFields);
 

@@ -88,6 +88,10 @@ class LanguageManager
         $pattern = "#<t>(.*?)</t>#";
         preg_match_all($pattern, $string, $matches);
 
+        if (count($matches[0]) === 0) {
+            return self::tran($string);
+        }
+
         for ($i = 0; $i<count($matches[0]); $i++) {
             $tagVal = $matches[1][$i];
             $fullVal = $matches[0][$i];

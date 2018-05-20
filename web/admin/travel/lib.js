@@ -38,7 +38,7 @@ ImmigrationDocumentAdapter.method('getHeaders', function() {
 });
 
 ImmigrationDocumentAdapter.method('getFormFields', function() {
-	return [
+	var fields = [
 	        [ "id", {"label":"ID","type":"hidden"}],
 	        [ "name", {"label":"Name","type":"text","validation":""}],
 	        [ "details", {"label":"Details","type":"textarea","validation":"none"}],
@@ -47,6 +47,12 @@ ImmigrationDocumentAdapter.method('getFormFields', function() {
 	        [ "alert_before_expiry", {"label":"Alert Before Expiry","type":"select","source":[["No","No"],["Yes","Yes"]]}],
 	        [ "alert_before_day_number", {"label":"Days for Expiry Alert","type":"text","validation":""}]
 	];
+
+    for(var i=0;i<this.customFields.length;i++){
+        fields.push(this.customFields[i]);
+    }
+
+    return fields;
 });
 
 
@@ -152,7 +158,7 @@ EmployeeTravelRecordAdminAdapter.method('getHeaders', function() {
 });
 
 EmployeeTravelRecordAdminAdapter.method('getFormFields', function() {
-    return [
+    return this.addCustomFields([
         ["id", {"label": "ID", "type": "hidden"}],
         ["employee", {
             "label": "Employee",
@@ -162,9 +168,16 @@ EmployeeTravelRecordAdminAdapter.method('getFormFields', function() {
             "remote-source": ["Employee", "id", "first_name+last_name", "getActiveSubordinateEmployees"]
         }],
         ["type", {
-            "label": "Travel Type",
+            "label": "Means of Transportation",
             "type": "select",
-            "source": [["Local", "Local"], ["International", "International"]]
+            "source": [
+            	["Plane", "Plane"],
+	            ["Rail", "Rail"],
+	            ["Taxi", "Taxi"],
+	            ["Own Vehicle", "Own Vehicle"],
+	            ["Rented Vehicle", "Rented Vehicle"],
+	            ["Other", "Other"]
+            ]
         }],
         ["purpose", {"label": "Purpose of Travel", "type": "textarea", "validation": ""}],
         ["travel_from", {"label": "Travel From", "type": "text", "validation": ""}],
@@ -173,10 +186,10 @@ EmployeeTravelRecordAdminAdapter.method('getFormFields', function() {
         ["return_date", {"label": "Return Date", "type": "datetime", "validation": ""}],
         ["details", {"label": "Notes", "type": "textarea", "validation": "none"}],
         ["currency", {"label": "Currency", "type": "select2", "allow-null":false, "remote-source": ["CurrencyType", "id", "code"]}],
-        ["funding", {"label": "Total Funding Proposed", "type": "text", "validation": "float"}],
-        ["attachment1", {"label": "Itinerary / Cab Receipt", "type": "fileupload", "validation": "none"}],
-        ["attachment2", {"label": "Other Attachment 1", "type": "fileupload", "validation": "none"}],
-        ["attachment3", {"label": "Other Attachment 2", "type": "fileupload", "validation": "none"}]
-    ];
+        ["funding", {"label": "Total Funding Proposed", "type": "text", "validation": "float", "default":"0.00", "mask":"9{0,10}.99"}],
+        ["attachment1", {"label": "Attachment", "type": "fileupload", "validation": "none"}],
+        ["attachment2", {"label": "Attachment", "type": "fileupload", "validation": "none"}],
+        ["attachment3", {"label": "Attachment", "type": "fileupload", "validation": "none"}]
+    ]);
 });
 

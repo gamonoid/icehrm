@@ -140,7 +140,9 @@ class RoboFile extends \Robo\Tasks
 				if ($tran !== false) {
 					$tran->setTranslation($data[$langColumn]);
 				} else {
-					$trans->insert($data[0], $data[$langColumn]);
+					$trans->insert('', $data[0]);
+                    $tran = $trans->find('', $data[0]);
+                    $tran->setTranslation($data[$langColumn]);
 				}
 			}
 		}

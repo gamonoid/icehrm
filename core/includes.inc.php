@@ -119,7 +119,7 @@ if(is_dir(MODULE_PATH.'/customTemplates/')){
 	$ams = scandir(MODULE_PATH.'/customTemplates/');
 	foreach($ams as $am){
 		if(!is_dir(MODULE_PATH.'/customTemplates/'.$am) && $am != '.' && $am != '..'){
-			$customTemplates[$am] = file_get_contents(MODULE_PATH.'/customTemplates/'.$am);
+			$customTemplates[$am] = t(file_get_contents(MODULE_PATH.'/customTemplates/'.$am));
 		}
 	}
 }
