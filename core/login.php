@@ -159,6 +159,9 @@ if (empty($user) || empty($user->email)) {
 $tuser = \Utils\SessionUtils::getSessionObject('user');
 $logoFileUrl = \Classes\UIManager::getInstance()->getCompanyLogoUrl();
 
+$csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
+\Utils\SessionUtils::saveSessionObject('csrf-login', $csrfToken);
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
