@@ -25,9 +25,9 @@ if (!defined('MODULE_NAME')) {
 }
 include 'includes.inc.php';
 
-if(empty($user)){
-    $actualLink = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    header("Location:".CLIENT_BASE_URL."login.php?next=".\Base64Url\Base64Url::encode($actualLink));
+if(empty($user) || empty($user->email)){
+    $actualLinkArray = explode('/',$_SERVER['REQUEST_URI']);
+    header("Location:".CLIENT_BASE_URL."login.php?next=".\Base64Url\Base64Url::encode($actualLinkArray[count($actualLinkArray) - 1]));
     exit();
 }
 

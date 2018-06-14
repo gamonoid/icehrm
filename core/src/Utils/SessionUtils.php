@@ -28,7 +28,8 @@ class SessionUtils
         $names = [
             "user",
             "modulePath",
-            "admin_current_profile"
+            "admin_current_profile",
+            "csrf-login"
         ];
         session_start();
         setcookie('icehrmLF', '');
