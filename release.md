@@ -1,3 +1,61 @@
+Release note v23.0.1.OS
+------------------------
+This release include some very critical security fixes. We recommend upgrading your installation to latest release.
+
+### Fixes
+ * Fix missing login form CSRF token
+ * Fix risky usage of hashed password in request
+ 
+Release note v23.0.0.OS
+------------------------
+### Features
+ * Loading last used module when revisiting application
+ * Finnish language support (Beta)
+ * Improvements to German, Italian and Chinese language translations
+ * Allow quickly switching languages
+ * Improvements to security for preventing possible LFI attacks
+ * Allow manual date inputs
+ * Custom fields for travel requests
+ * Allow importing approved overtime hours into payroll
+ * Add date and time masks
+ 
+ 
+### Fixes
+ * Fix logout cookie issue, by clearing remember me cookie when logging out
+ * Improve privacy for GDPR
+ * Improvements to file upload field
+ * Fix issue: attendance rest end point not working on php 5.6
+
+Release note v22.0.0.OS
+------------------------
+### Features
+ * Improvements to module naming  
+ 
+### Fixes
+ * Fix issue: filter dialog default values are not selected
+ * Fix issue: department head can be an employee outside the department
+ * Fix issue: department head or supervisor (who has manager leave access) can't use switch employee feature
+ * Fix issue: employee name is not visible on report if middle name is empty
+
+Release note v21.1.0.OS
+------------------------
+### Features
+ * UI improvements (help button and error messages)
+ * Allow adding placeholders to text fields
+ * Improvements to German Translations
+ 
+### Fixes
+ * Fixing notification issues
+
+Release note v21.0.0.OS
+------------------------
+### Features
+ * Fully compatible with php 7.1
+ * Add Net_SMTP via composer (no pear installation needed)
+ 
+### Fixes
+ * Fixes for web servers not supporting JSON in GET request
+ 
 Release note v21.0.0.OS
 ------------------------
 ### Features
