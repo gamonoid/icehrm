@@ -11,4 +11,14 @@ namespace Model;
 class Notification extends BaseModel
 {
     public $table = 'Notifications';
+
+    public function getManagerAccess()
+    {
+        return array();
+    }
+
+    public function getUserAccess()
+    {
+        return array();
+    }
 }

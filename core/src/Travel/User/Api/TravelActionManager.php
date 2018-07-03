@@ -32,4 +32,14 @@ class TravelActionManager extends ApproveModuleActionManager
     {
         return "g=modules&n=travel&m=module_Travel_Management#tabSubordinateEmployeeTravelRecord";
     }
+
+    public function getLogs($req)
+    {
+        return parent::getLogs($req);
+    }
+
+    public function cancel($req)
+    {
+        return parent::cancel($req);
+    }
 }

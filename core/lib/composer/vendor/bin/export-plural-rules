@@ -1,4 +1,1 @@
-#!/usr/bin/env php
-<?php
-
-include 'export-plural-rules.php';
+../gettext/languages/bin/export-plural-rules

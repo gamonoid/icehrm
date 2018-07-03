@@ -24,9 +24,4 @@ class EmploymentStatus extends BaseModel
     {
         return array("get","element","save");
     }
-
-    public function getUserAccess()
-    {
-        return array();
-    }
 }

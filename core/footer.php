@@ -85,7 +85,7 @@
 			if(tabName!= undefined && tabName != "" && modJsList[tabName] != undefined && modJsList[tabName] != null){
 				$("#"+tabName).click();
 			}else{
-                <?php if(!isset($_REQUEST['action']) && $_REQUEST['action'] != "new"){?>
+                <?php if(!isset($_REQUEST['action'])){?>
 				modJs.get([]);
                 <?php } ?>
 			}
@@ -143,6 +143,7 @@
 
 	</script>
 	<?php include 'popups.php';?>
-	<?php include APP_BASE_PATH.'js/bootstrapDataTable.php';?>
+    <script src="<?=BASE_URL?>js/bootstrap-datatable.js"></script>
+
     </body>
 </html>

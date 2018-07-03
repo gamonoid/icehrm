@@ -42,4 +42,14 @@ class ExpensesActionManager extends ApproveAdminActionManager
     {
         return "g=modules&n=expenses&m=module_Finance#tabEmployeeExpenseApproval";
     }
+
+    public function getLogs($req)
+    {
+        return parent::getLogs($req);
+    }
+
+    public function changeStatus($req)
+    {
+        return parent::changeStatus($req);
+    }
 }

@@ -5,11 +5,12 @@ class SessionUtils
 {
     public static function getSessionObject($name)
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         if (isset($_SESSION[$name.CLIENT_NAME])) {
             $obj = $_SESSION[$name.CLIENT_NAME];
         }
-        session_write_close();
         if (empty($obj)) {
             return null;
         }
@@ -18,9 +19,10 @@ class SessionUtils
 
     public static function saveSessionObject($name, $obj)
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $_SESSION[$name.CLIENT_NAME] = json_encode($obj);
-        session_write_close();
     }
 
     public static function unsetClientSession()
@@ -31,7 +33,9 @@ class SessionUtils
             "admin_current_profile",
             "csrf-login"
         ];
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         setcookie('icehrmLF', '');
         foreach ($names as $name) {
             unset($_SESSION[$name.CLIENT_NAME]);

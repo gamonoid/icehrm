@@ -57,14 +57,12 @@ class PayrollActionManager extends SubActionManager
         if (!empty($val)) {
             return $val;
         }
-        //LogManager::getInstance()->info("calculatePayrollEmployee:".$employeeId);
-        //LogManager::getInstance()->info("calculatePayrollColumn:".json_encode($col));
 
         if (!empty($col->calculation_hook)) {
             $sum = BaseService::getInstance()->executeCalculationHook(
                 array($employeeId, $payroll->date_start, $payroll->date_end),
                 $col->calculation_hook,
-                null
+                $col->calculation_function
             );
             $val = number_format(round($sum, 2), 2, '.', '');
             $this->addToCalculationCache($col->id."-".$payroll->id."-".$employeeId, $val);
@@ -120,6 +118,8 @@ class PayrollActionManager extends SubActionManager
 
         if (!$noColumnCalculations) {
             $evalMath = new EvalMath();
+            $evalMath->evaluate('max(x,y) = (y - x) * ceil(tanh(exp(tanh(y - x)) - exp(0))) + x');
+            $evalMath->evaluate('min(x,y) = y - (y - x) * ceil(tanh(exp(tanh(y - x)) - exp(0)))');
 
             if (!empty($col->add_columns) &&
                 !empty(json_decode($col->add_columns, true))) {

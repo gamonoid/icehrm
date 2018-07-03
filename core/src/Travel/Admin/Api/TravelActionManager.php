@@ -42,4 +42,14 @@ class TravelActionManager extends ApproveAdminActionManager
     {
         return "g=modules&n=travel&m=module_Travel_Management#tabEmployeeTravelRecordApproval";
     }
+
+    public function getLogs($req)
+    {
+        return parent::getLogs($req);
+    }
+
+    public function changeStatus($req)
+    {
+        return parent::changeStatus($req);
+    }
 }

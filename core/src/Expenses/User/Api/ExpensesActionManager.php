@@ -32,4 +32,14 @@ class ExpensesActionManager extends ApproveModuleActionManager
     {
         return "g=modules&n=expenses&m=module_Finance#tabSubordinateEmployeeExpense";
     }
+
+    public function getLogs($req)
+    {
+        return parent::getLogs($req);
+    }
+
+    public function cancel($req)
+    {
+        return parent::cancel($req);
+    }
 }

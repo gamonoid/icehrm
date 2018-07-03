@@ -25,8 +25,13 @@ class ChromePHPHandlerTest extends TestCase
         $_SERVER['HTTP_USER_AGENT'] = 'Monolog Test; Chrome/1.0';
     }
 
-    public function testHeaders()
+    /**
+     * @dataProvider agentsProvider
+     */
+    public function testHeaders($agent)
     {
+        $_SERVER['HTTP_USER_AGENT'] = $agent;
+
         $handler = new TestChromePHPHandler();
         $handler->setFormatter($this->getIdentityFormatter());
         $handler->handle($this->getRecord(Logger::DEBUG));
@@ -41,20 +46,30 @@ class ChromePHPHandlerTest extends TestCase
                     'test',
                 ),
                 'request_uri' => '',
-            ))))
+            )))),
         );
 
         $this->assertEquals($expected, $handler->getHeaders());
+    }
+
+    public static function agentsProvider()
+    {
+        return array(
+            array('Monolog Test; Chrome/1.0'),
+            array('Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'),
+            array('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/56.0.2924.76 Chrome/56.0.2924.76 Safari/537.36'),
+            array('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome Safari/537.36'),
+        );
     }
 
     public function testHeadersOverflow()
     {
         $handler = new TestChromePHPHandler();
         $handler->handle($this->getRecord(Logger::DEBUG));
-        $handler->handle($this->getRecord(Logger::WARNING, str_repeat('a', 150*1024)));
+        $handler->handle($this->getRecord(Logger::WARNING, str_repeat('a', 150 * 1024)));
 
         // overflow chrome headers limit
-        $handler->handle($this->getRecord(Logger::WARNING, str_repeat('a', 100*1024)));
+        $handler->handle($this->getRecord(Logger::WARNING, str_repeat('a', 100 * 1024)));
 
         $expected = array(
             'X-ChromeLogger-Data'   => base64_encode(utf8_encode(json_encode(array(
@@ -69,7 +84,7 @@ class ChromePHPHandlerTest extends TestCase
                     ),
                     array(
                         'test',
-                        str_repeat('a', 150*1024),
+                        str_repeat('a', 150 * 1024),
                         'unknown',
                         'warn',
                     ),
@@ -81,7 +96,7 @@ class ChromePHPHandlerTest extends TestCase
                     ),
                 ),
                 'request_uri' => '',
-            ))))
+            )))),
         );
 
         $this->assertEquals($expected, $handler->getHeaders());
@@ -110,7 +125,7 @@ class ChromePHPHandlerTest extends TestCase
                     'test',
                 ),
                 'request_uri' => '',
-            ))))
+            )))),
         );
 
         $this->assertEquals($expected, $handler2->getHeaders());

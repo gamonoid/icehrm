@@ -9,6 +9,8 @@ return array(
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
+    'Google_Service_Exception' => $vendorDir . '/google/apiclient/src/Google/Service/Exception.php',
+    'Google_Service_Resource' => $vendorDir . '/google/apiclient/src/Google/Service/Resource.php',
     'PHPUnit\\Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert.php',
     'PHPUnit\\Framework\\AssertionFailedError' => $vendorDir . '/phpunit/phpunit/src/Framework/AssertionFailedError.php',

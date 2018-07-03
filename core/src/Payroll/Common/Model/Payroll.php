@@ -47,4 +47,8 @@ class Payroll extends BaseModel
         $payrolls = $payroll->Find("id in (".implode(",", $payrollIds).") and status = 'Completed'");
         return $payrolls;
     }
+
+    public function fieldValueMethods() {
+        return ['getEmployeePayrolls'];
+    }
 }

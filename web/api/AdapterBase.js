@@ -374,10 +374,12 @@ AdapterBase.method('getFieldValues', function(fieldMaster,callBackData) {
 			that.requestCache.setData(this.success.key, data);
 
 			callBackData['callBackData'].push(data.data);
-			if(callBackData['callBackSuccess'] != null && callBackData['callBackSuccess'] != undefined){
+			if(callBackData['callBackSuccess'] != null && callBackData['callBackSuccess'] != undefined) {
 				callBackData['callBackData'].push(callBackData['callBackSuccess']);
 			}
 			that.callFunction(callBackData['callBack'],callBackData['callBackData']);
+		} else if (data.message === 'Access violation') {
+			alert('Error : ' + callbackWraper.table + ' ' + data.message);
 		}
 	};
 
@@ -797,12 +799,13 @@ ApproveModuleAdapter.method('getActionButtonsHtml', function(id,data) {
 	html = html.replace('_logs_',viewLogsButton);
 
 	if(this.showDelete){
-		if(data[7] == "Approved"){
+		if (data[7] === "Approved") {
 			html = html.replace('_delete_',requestCancellationButton);
-		}else{
+		} else if(data[7] === "Pending" || this.user.user_level === "Admin") {
 			html = html.replace('_delete_',deleteButton);
+		} else {
+            html = html.replace('_delete_','');
 		}
-
 	}else{
 		html = html.replace('_delete_','');
 	}
@@ -1090,6 +1093,12 @@ TableEditAdapter.method('createTable', function(elementId) {
 		return modJs.validateCellValue($(this), evt, newValue);
 
 	});
+
+	this.afterCreateTable(elementId);
+});
+
+TableEditAdapter.method('afterCreateTable', function(elementId) {
+
 });
 
 TableEditAdapter.method('addCellDataUpdate' , function(colId, rowId, data) {

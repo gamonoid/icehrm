@@ -16,8 +16,7 @@ $customFields = \Classes\BaseService::getInstance()->getCustomFields("Employee")
             <li class="active"><a id="tabEmployee" href="#tabPageEmployee"><?=t('Employees')?></a></li>
         <?php }?>
 
-        <?php if($user->user_level == "Admin"){
-        ?>
+        <?php if ($user->user_level == "Admin") { ?>
 		<li><a id="tabEmployeeSkill" href="#tabPageEmployeeSkill"><?=t('Skills')?></a></li>
 		<li><a id="tabEmployeeEducation" href="#tabPageEmployeeEducation"><?=t('Education')?></a></li>
 		<li><a id="tabEmployeeCertification" href="#tabPageEmployeeCertification"><?=t('Certifications')?></a></li>
@@ -28,8 +27,7 @@ $customFields = \Classes\BaseService::getInstance()->getCustomFields("Employee")
                 <li><a id="tabEmployeeDocument" href="#tabPageEmployeeDocument"><?=t('Documents')?></a></li>
             <?php } ?>
         <?php }?>
-        <?php if($user->user_level == "Admin"){
-        ?>
+        <?php if ($user->user_level == "Admin"){ ?>
         <li class="dropdown">
             <a href="#" id="terminatedEmployeeMenu" class="dropdown-toggle" data-toggle="dropdown" aria-controls="terminatedEmployeeMenu-contents"><?=t('Deactivated Employees')?> <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="terminatedEmployeeMenu" id="terminatedEmployeeMenu-contents">
@@ -37,7 +35,7 @@ $customFields = \Classes\BaseService::getInstance()->getCustomFields("Employee")
                 <li><a id="tabArchivedEmployee" href="#tabPageArchivedEmployee"><?=t('Terminated Employee Data')?></a></li>
             </ul>
         </li>
-        <?php }?>
+        <?php } ?>
 
 	</ul>
 
@@ -131,17 +129,13 @@ $customFields = \Classes\BaseService::getInstance()->getCustomFields("Employee")
 </div>
 <script>
 var modJsList = new Array();
-<?php if($user->user_level != "Admin"){
-?>
+<?php if($user->user_level != "Admin"){ ?>
 modJsList['tabEmployee'] = new EmployeeAdapter('Employee','Employee',{"status":"Active"});
 modJsList['tabEmployee'].setShowAddNew(false);
-<?php
-}else{
-?>
+modJsList['tabEmployee'].setShowDelete(false);
+<?php }else{ ?>
 modJsList['tabEmployee'] = new EmployeeAdapter('Employee','Employee',{"status":"Active"});
-<?php
-}
-?>
+<?php } ?>
 
 modJsList['tabEmployee'].setRemoteTable(true);
 modJsList['tabEmployee'].setFieldNameMap(<?=json_encode($fieldNameMap)?>);

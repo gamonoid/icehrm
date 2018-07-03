@@ -25,9 +25,8 @@ $moduleName = 'users';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
-
+$csrf = \Classes\BaseService::getInstance()->generateCsrf('User');
 ?><div class="span9">
-			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
 		<li class="active"><a id="tabUser" href="#tabPageUser"><?=t('Users')?></a></li>
 		<li class=""><a id="tabUserRole" href="#tabPageUserRole"><?=t('User Roles')?></a></li>
@@ -38,7 +37,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 			<div id="User" class="reviewBlock" data-content="List" style="padding-left:5px;">
 		
 			</div>
-			<div id="UserForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
+			<div id="UserForm" class="reviewBlock" data-content="Form" data-csrf="<?=$csrf?>" style="padding-left:5px;display:none;">
 		
 			</div>
 		</div>
@@ -56,8 +55,9 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 <script>
 var modJsList = new Array();
 modJsList['tabUser'] = new UserAdapter('User');
-<?php if(isset($_REQUEST['action']) && $_REQUEST['action'] == "new" && isset($_REQUEST['object'])){?>
-modJsList['tabUser'].newInitObject = JSON.parse(Base64.decode('<?=$_REQUEST['object']?>'));
+modJsList['tabUser'].setCSRFRequired(true);
+<?php if(isset($_GET['action']) && $_GET['action'] == "new" && isset($_GET['object'])){?>
+modJsList['tabUser'].newInitObject = JSON.parse(Base64.decode('<?=$_GET['object']?>'));
 <?php }?>
 modJsList['tabUserRole'] = new UserRoleAdapter('UserRole');
 var modJs = modJsList['tabUser'];

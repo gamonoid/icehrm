@@ -80,8 +80,6 @@ if (!isset($_REQUEST['objects'])) {
         }
     }
 
-    \Utils\LogManager::getInstance()->debug("Row Count Filter Query:" . $countFilterQuery);
-    \Utils\LogManager::getInstance()->debug("Row Count Filter Query Data:" . json_encode($countFilterQueryData));
 
     if (in_array($table, \Classes\BaseService::getInstance()->userTables)
         && !$skipProfileRestriction && !$isSubOrdinates) {
@@ -89,8 +87,6 @@ if (!isset($_REQUEST['objects'])) {
         $sql = "Select count(id) as count from "
             . $obj->_table . " where " . SIGN_IN_ELEMENT_MAPPING_FIELD_NAME . " = ? " . $countFilterQuery;
         array_unshift($countFilterQueryData, $cemp);
-        \Utils\LogManager::getInstance()->debug("Count Filter Query 1:" . $sql);
-        \Utils\LogManager::getInstance()->debug("Count Filter Query Data 1:" . json_encode($countFilterQueryData));
 
         $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
     } else {
@@ -166,20 +162,12 @@ if (!isset($_REQUEST['objects'])) {
             $sql = "Select count(id) as count from " . $obj->_table .
 	            " where " . $obj->getUserOnlyMeAccessField() . " in (" . $subordinatesIds . ") "
 	            . $countFilterQuery;
-            \Utils\LogManager::getInstance()->debug("Count Filter Query 2:" . $sql);
-            \Utils\LogManager::getInstance()->debug(
-                "Count Filter Query Data 2:" . json_encode($countFilterQueryData)
-            );
             $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
         } else {
             $sql = "Select count(id) as count from " . $obj->_table;
             if (!empty($countFilterQuery)) {
                 $sql .= " where 1=1 " . $countFilterQuery;
             }
-            \Utils\LogManager::getInstance()->debug("Count Filter Query 3:" . $sql);
-            \Utils\LogManager::getInstance()->debug(
-                "Count Filter Query Data 3:" . json_encode($countFilterQueryData)
-            );
             $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
         }
     }
@@ -214,12 +202,23 @@ if (!isset($_REQUEST['objects'])) {
         $row["_org"] = \Classes\BaseService::getInstance()->cleanUpAdoDB($item);
         $output['aaData'][] = $row;
     }
-    echo json_encode($output);
+
+    try {
+        echo \Classes\BaseService::getInstance()->safeJsonEncode($output);
+    } catch (Exception $e) {
+        \Utils\LogManager::getInstance()->error($e->getMessage());
+        echo json_encode(['status' => 'Error']);
+    }
 } else {
     $output = array();
     foreach ($data as $item) {
         unset($item->keysToIgnore);
         $output[] = \Classes\BaseService::getInstance()->cleanUpAdoDB($item);
     }
-    echo json_encode($output);
+    try {
+        echo \Classes\BaseService::getInstance()->safeJsonEncode($output);
+    } catch (Exception $e) {
+        \Utils\LogManager::getInstance()->error($e->getMessage());
+        echo json_encode(['status' => 'Error']);
+    }
 }

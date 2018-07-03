@@ -56,7 +56,7 @@ class RoboFile extends \Robo\Tasks
 			    $count += 1;
 		    }
 	    }
-	    $fp = fopen(CLIENT_BASE_PATH.'data/translations.csv', 'w');
+	    $fp = fopen(CLIENT_BASE_PATH.'data/translations_export.csv', 'w');
 	    foreach ($data as $fields) {
 		    fprintf($fp, chr(0xEF).chr(0xBB).chr(0xBF));
 		    fputcsv($fp, $fields);

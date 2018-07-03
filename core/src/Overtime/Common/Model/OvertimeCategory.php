@@ -24,11 +24,6 @@ class OvertimeCategory extends BaseModel
         return array("get","element","save","delete");
     }
 
-    public function getUserAccess()
-    {
-        return array("get");
-    }
-
     public function getUserOnlyMeAccess()
     {
         return array("get","element");

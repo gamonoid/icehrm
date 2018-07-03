@@ -121,7 +121,7 @@ class BaseService
         $nsTable = $this->getFullQualifiedModelClassName($table);
         $obj = new $nsTable();
 
-        $this->checkSecureAccess("get", $obj);
+        $this->checkSecureAccess("get", $obj, $table, $_REQUEST);
 
         $query = "";
         $queryData = array();
@@ -294,7 +294,7 @@ class BaseService
         }
         $nsTable = $this->getFullQualifiedModelClassName($table);
         $obj = new $nsTable();
-        $this->checkSecureAccess("get", $obj);
+        $this->checkSecureAccess("get", $obj, $table, $_REQUEST);
         $query = "";
         $queryData = array();
         if (!empty($filterStr)) {
@@ -620,47 +620,44 @@ class BaseService
         }
 
         if (!$skipSecurityCheck) {
-            $this->checkSecureAccess("element", $obj);
+            $this->checkSecureAccess("element", $obj, $table, $_POST);
         }
 
-        if (!empty($mappingStr)) {
-            $map = json_decode($mappingStr);
-        }
         if ($obj->id == $id) {
             if (!empty($mappingStr)) {
-                foreach ($map as $k => $v) {
-                    $fTable = $this->getFullQualifiedModelClassName($v[0]);
-                    $tObj = new $fTable();
-                    $tObj->Load($v[1]."= ?", array($obj->$k));
-                    if ($tObj->{$v[1]} == $obj->$k) {
-                        $name = $k."_Name";
-                        $values = explode("+", $v[2]);
-                        if (count($values) == 1) {
-                            $obj->$name = $tObj->{$v[2]};
-                        } else {
-                            $objVal = "";
-                            foreach ($values as $v) {
-                                if ($objVal != "") {
-                                    $objVal .= " ";
-                                }
-                                $objVal .= $tObj->$v;
-                            }
-                            $obj->$name = $objVal;
-                        }
-                    }
-                }
+                $map = json_decode($mappingStr);
+                $obj = $this->enrichObjectMappings($map, $obj);
             }
 
             //Add custom fields
-            $customFields = $this->customFieldManager->getCustomFields($table, $obj->id);
-            foreach ($customFields as $cf) {
-                $obj->{$cf->name} = $cf->value;
-            }
+            $obj = $this->enrichObjectCustomFields($table, $obj);
 
             $obj = $obj->postProcessGetElement($obj);
             return  $this->cleanUpAdoDB($obj->postProcessGetData($obj));
         }
         return null;
+    }
+
+    /**
+     * @param $nameField
+     * @param $targetObject
+     * @return string
+     */
+    private function getCombinedValue($nameField, $targetObject)
+    {
+        $values = explode("+", $nameField);
+        if (count($values) == 1) {
+            return $targetObject->{$nameField};
+        }
+        $objVal = "";
+        foreach ($values as $value) {
+            if ($objVal != "") {
+                $objVal .= " ";
+            }
+            $objVal .= $targetObject->$value;
+        }
+
+        return $objVal;
     }
 
     /**
@@ -674,11 +671,20 @@ class BaseService
 
     public function addElement($table, $obj)
     {
+
         $customFields = array();
         $isAdd = true;
         $nsTable = $this->getFullQualifiedModelClassName($table);
         $ele = new $nsTable();
-        //LogManager::getInstance()->error("Obj:".json_encode($obj));
+
+
+        if ($ele->validateCSRF()
+            && (empty($obj->csrf) || $obj->csrf !== SessionUtils::getSessionObject('csrf-'.$table))) {
+            return new IceResponse(
+                IceResponse::ERROR,
+                "CSRF Error"
+            );
+        }
 
         if (class_exists("\\Classes\\ProVersion")) {
             $pro = new ProVersion();
@@ -722,7 +728,7 @@ class BaseService
             }
         }
 
-        $this->checkSecureAccess("save", $ele);
+        $this->checkSecureAccess("save", $ele, $table, $_POST);
 
         $resp = $ele->validateSave($ele);
         if ($resp->getStatus() != IceResponse::SUCCESS) {
@@ -812,7 +818,7 @@ class BaseService
             return $preDeleteResponse;
         }
 
-        $this->checkSecureAccess("delete", $ele);
+        $this->checkSecureAccess("delete", $ele, $table, $_POST);
 
         if (isset($this->nonDeletables[$table])) {
             $nonDeletableTable = $this->nonDeletables[$table];
@@ -898,10 +904,9 @@ class BaseService
         $ret = array();
         $nsTable = $this->getFullQualifiedModelClassName($table);
         $ele = new $nsTable();
+        $this->checkSecureAccess("get", $ele, $table, $_POST);
         if (!empty($method)) {
-            LogManager::getInstance()->debug("Call method for getFieldValues:".$method);
-            LogManager::getInstance()->debug("Call method params for getFieldValues:".json_decode($methodParams));
-            if (method_exists($ele, $method)) {
+            if (method_exists($ele, $method) && in_array($method, $ele->fieldValueMethods())) {
                 if (!empty($methodParams)) {
                     $list = $ele->$method(json_decode($methodParams));
                 } else {
@@ -1027,6 +1032,17 @@ class BaseService
     }
 
     /**
+     * Check if the current user has switched into another user
+     * @method isEmployeeSwitched
+     * @return {Boolean}
+     */
+    public function isEmployeeSwitched()
+    {
+        $adminEmpId = SessionUtils::getSessionObject('admin_current_profile');
+        return !empty($adminEmpId);
+    }
+
+    /**
      * Get User by profile id
      * @method getUserFromProfileId
      * @param $profileId {Integer} profile id
@@ -1087,83 +1103,25 @@ class BaseService
         return $this->db;
     }
 
-    public function checkSecureAccessOld($type, $object)
-    {
-
-        $accessMatrix = array();
-        if ($this->currentUser->user_level == 'Admin') {
-            $accessMatrix = $object->getAdminAccess();
-            if (in_array($type, $accessMatrix)) {
-                return true;
-            }
-        } elseif ($this->currentUser->user_level == 'Manager') {
-            $accessMatrix = $object->getManagerAccess();
-            if (in_array($type, $accessMatrix)) {
-                return true;
-            } else {
-                $accessMatrix = $object->getUserOnlyMeAccess();
-                $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-                if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()]
-                    == $this->currentUser->$signInMappingField) {
-                    return true;
-                }
-
-                if (in_array($type, $accessMatrix)) {
-                    $field = $object->getUserOnlyMeAccessField();
-                    $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-                    if ($this->currentUser->$signInMappingField."" == $object->$field) {
-                        return true;
-                    }
-                }
-            }
-        } else {
-            $accessMatrix = $object->getUserAccess();
-            if (in_array($type, $accessMatrix)) {
-                return true;
-            } else {
-                $accessMatrix = $object->getUserOnlyMeAccess();
-                $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-                if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()]
-                    == $this->currentUser->$signInMappingField) {
-                    return true;
-                }
-
-                if (in_array($type, $accessMatrix)) {
-                    $field = $object->getUserOnlyMeAccessField();
-                    $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-                    if ($this->currentUser->$signInMappingField."" == $object->$field) {
-                        return true;
-                    }
-                }
-            }
-        }
-
-        $ret['status'] = "ERROR";
-        $ret['message'] = "Access violation";
-        echo json_encode($ret);
-        exit();
-    }
-
     /**
      * Use user level security functions defined in model classes to check whether a given action
      * type is allowed to be executed by the current user on a given object
      * @method checkSecureAccess
      * @param $type {String} Action type
      * @param $object {Object} object to test access
-     * @return {Boolen} true or exit
+     * @param $table
+     * @param $request
+     * @return bool {Boolen} true or exit true or exit
      */
 
-    public function checkSecureAccess($type, $object)
+    public function checkSecureAccess($type, $object, $table, $request)
     {
-
-        if (!empty($this->currentUser->user_roles)) {
-            return true;
-        }
-
         $accessMatrix = array();
 
         //Construct permission method
         $permMethod = "get".$this->currentUser->user_level."Access";
+        $userOnlyMeAccessRequestField = $object->getUserOnlyMeAccessRequestField();
+        $userOnlyMeAccessField = $object->getUserOnlyMeAccessField();
         if (method_exists($object, $permMethod)) {
             $accessMatrix = $object->$permMethod();
         } else {
@@ -1173,32 +1131,36 @@ class BaseService
         if (in_array($type, $accessMatrix)) {
             //The user has required permission, so return true
             return true;
-        } else {
+        } else if (!empty($this->currentUser->$userOnlyMeAccessField)){
             //Now we need to check whther the user has access to his own records
-            $accessMatrix = $object->getUserOnlyMeAccess();
+            if ($this->isEmployeeSwitched()) {
+                $accessMatrix = $object->getUserOnlyMeSwitchedAccess();
+            } else {
+                $accessMatrix = $object->getUserOnlyMeAccess();
+            }
 
-            $userOnlyMeAccessRequestField = $object->getUserOnlyMeAccessRequestField();
 
             //This will check whether user can access his own records using a value in request
-            if (isset($_REQUEST[$object->getUserOnlyMeAccessField()])
-                && isset($this->currentUser->$userOnlyMeAccessRequestField)) {
-                if (in_array($type, $accessMatrix) && $_REQUEST[$object->getUserOnlyMeAccessField()]
-                    == $this->currentUser->$userOnlyMeAccessRequestField) {
+            if (isset($request[$userOnlyMeAccessField])
+                && isset($this->currentUser->$userOnlyMeAccessField)) {
+                if (in_array($type, $accessMatrix) && $request[$userOnlyMeAccessField]
+                    === $this->currentUser->$userOnlyMeAccessRequestField) {
                     return true;
                 }
             }
 
-            //This will check whether user can access his own records using a value in requested object
-            if (in_array($type, $accessMatrix)) {
-                $field = $object->getUserOnlyMeAccessField();
-                if ($this->currentUser->$userOnlyMeAccessRequestField == $object->$field) {
+            // This will check if can query his own records
+            // Employees should be able to update their own records
+            if (!empty($table) && in_array($type, $accessMatrix)) {
+                if (!empty($this->currentUser->$userOnlyMeAccessRequestField)
+                    && in_array($table, $this->userTables) ) {
                     return true;
                 }
             }
         }
 
         $ret['status'] = "ERROR";
-        $ret['message'] = "Access violation";
+        $ret['message'] = $type." ".get_class($object)." Access violation";
         echo json_encode($ret);
         exit();
     }
@@ -1442,7 +1404,7 @@ class BaseService
 
     public function getModuleManager($type, $name)
     {
-        return $this->moduleManagers[$type."_".$name];
+        return isset($this->moduleManagers[$type."_".$name]) ? $this->moduleManagers[$type."_".$name] : null;
     }
 
     public function setEmailSender($emailSender)
@@ -1546,13 +1508,18 @@ class BaseService
         return $this->calculationHooks[$code];
     }
 
-    public function executeCalculationHook($parameters, $code = null)
+    public function executeCalculationHook($parameters, $code, $additionalData = null)
     {
         $ch = BaseService::getInstance()->getCalculationHook($code);
 
         if (empty($ch->code)) {
             return null;
         }
+
+        if (!empty($additionalData)) {
+            $parameters[] = $additionalData;
+        }
+
         $class = $ch->class;
         return call_user_func_array(array(new $class(), $ch->method), $parameters);
     }
@@ -1593,7 +1560,7 @@ END;
 
     public function getFullQualifiedModelClassName($class)
     {
-        if ($this->modelClassMap[$class]) {
+        if (isset($this->modelClassMap[$class])) {
             return $this->modelClassMap[$class];
         }
         return '\\Model\\'.$class;
@@ -1656,5 +1623,104 @@ END;
 
 
         return $subFound || $departmentHeadFound;
+    }
+
+    /**
+     * @param $value
+     * @param int $options
+     * @param int $depth
+     * @return string
+     * @throws \Exception
+     */
+    public function safeJsonEncode($value, $options = 0, $depth = 512){
+        $encoded = json_encode($value, $options, $depth);
+        switch (json_last_error()) {
+            case JSON_ERROR_NONE:
+                return $encoded;
+            case JSON_ERROR_DEPTH:
+                throw new \Exception('Maximum stack depth exceeded');
+            case JSON_ERROR_STATE_MISMATCH:
+                throw new \Exception('Underflow or the modes mismatch');
+            case JSON_ERROR_CTRL_CHAR:
+                throw new \Exception('Unexpected control character found');
+            case JSON_ERROR_SYNTAX:
+                throw new \Exception('Syntax error, malformed JSON');
+            case JSON_ERROR_UTF8:
+                $clean = $this->utf8ize($value);
+                return $this->safeJsonEncode($clean, $options, $depth);
+            default:
+                throw new \Exception('Unknown Json parsing error');
+        }
+    }
+
+    protected function utf8ize($mixed) {
+        if (is_array($mixed)) {
+            foreach ($mixed as $key => $value) {
+                $mixed[$key] = $this->utf8ize($value);
+            }
+        } else if (is_object($mixed)) {
+            foreach ($mixed as $key => $value) {
+                $mixed->$key = $this->utf8ize($value);
+            }
+        } else if (is_string ($mixed)) {
+            return utf8_encode($mixed);
+        }
+        return $mixed;
+    }
+
+    public function generateCsrf($formId) {
+        $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL. $this->currentUser->id);
+        SessionUtils::saveSessionObject('csrf-'.$formId, $csrfToken);
+        return $csrfToken;
+    }
+
+    /**
+     * @param $map
+     * @param $obj
+     * @return mixed
+     */
+    public function enrichObjectMappings($map, $obj)
+    {
+        if (!empty($map)) {
+            foreach ($map as $k => $v) {
+                if (in_array($v[0], array('User', 'Setting'))) {
+                    continue;
+                }
+                $fTable = $this->getFullQualifiedModelClassName($v[0]);
+                $tObj = new $fTable();
+                $name = $k . "_Name";
+                $obj->$name = '';
+                if (isset($v[3]) && $v[3] === true) {
+                    if (!empty($obj->{$k}) && !empty(json_decode($obj->{$k}, true))) {
+                        foreach (json_decode($obj->{$k}, true) as $partialId) {
+                            if ($obj->$name != '') {
+                                $obj->$name .= ', ';
+                            }
+                            $tObj->Load($v[1] . "= ?", array($partialId));
+                            $obj->$name .= $this->getCombinedValue($v[2], $tObj);
+                        }
+                    }
+                } else {
+                    $tObj->Load($v[1] . "= ?", array($obj->$k));
+                    $obj->$name = $this->getCombinedValue($v[2], $tObj);
+                }
+            }
+        }
+        return $obj;
+    }
+
+    /**
+     * @param $table
+     * @param $obj
+     * @return mixed
+     */
+    public function enrichObjectCustomFields($table, $obj)
+    {
+        /** @var CustomFieldManager $customFields */
+        $customFields = $this->customFieldManager->getCustomFields($table, $obj->id);
+        foreach ($customFields as $cf) {
+            $obj->{$cf->name} = $cf->value;
+        }
+        return $obj;
     }
 }

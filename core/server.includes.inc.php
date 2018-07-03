@@ -142,3 +142,10 @@ if ($emailEnabled == "1") {
 }
 
 \Classes\BaseService::getInstance()->setEmailSender($emailSender);
+
+function shutdown()
+{
+    session_write_close();
+}
+
+register_shutdown_function('shutdown');

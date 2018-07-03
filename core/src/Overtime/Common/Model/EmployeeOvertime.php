@@ -8,6 +8,7 @@
 
 namespace Overtime\Common\Model;
 
+use Classes\IceResponse;
 use Classes\SettingsManager;
 use Model\ApproveModel;
 
@@ -65,5 +66,13 @@ class EmployeeOvertime extends ApproveModel
             return true;
         }
         return false;
+    }
+
+    public function validateSave($obj)
+    {
+        if (strtotime($obj->start_time) >= strtotime($obj->end_time)) {
+            return new IceResponse(IceResponse::ERROR, 'Incorrect start and end time');
+        }
+        return new IceResponse(IceResponse::SUCCESS, "");
     }
 }

@@ -26,11 +26,6 @@ class CustomField extends BaseModel
         return array();
     }
 
-    public function getAnonymousAccess()
-    {
-        return array("get","element");
-    }
-
     public function validateSave($obj)
     {
         $type = BaseService::getInstance()->getFullQualifiedModelClassName($obj->type);

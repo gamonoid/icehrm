@@ -224,7 +224,7 @@ class FileService
         return $profile;
     }
 
-    public function getFileUrl($fileName)
+    public function getFileUrl($fileName,  $isExpiring = true)
     {
         $file = new File();
         $file->Load('name = ?', array($fileName));
@@ -244,9 +244,15 @@ class FileService
 
             $expireUrl = $this->getFromCache($fileUrl);
             if (empty($expireUrl)) {
-                $expireUrl = $s3FileSys->generateExpiringURL($fileUrl, 600);
-                $this->saveInCache($fileUrl, $expireUrl, 500);
+                if ($isExpiring) {
+                    $expireUrl = $s3FileSys->generateExpiringURL($fileUrl, 8640000);
+                    $this->saveInCache($fileUrl, $expireUrl, 8640000);
+                } else {
+                    $expireUrl = $s3FileSys->generateExpiringURL($fileUrl, 600);
+                    $this->saveInCache($fileUrl, $expireUrl, 500);
+                }
             }
+
 
             return $expireUrl;
         } else {

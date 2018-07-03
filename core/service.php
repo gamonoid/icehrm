@@ -24,7 +24,6 @@ define('CLIENT_PATH',dirname(__FILE__));
 include ("config.base.php");
 include ("include.common.php");
 
-
 $modulePath = \Utils\SessionUtils::getSessionObject("modulePath");
 if(!defined('MODULE_PATH')){
 	define('MODULE_PATH',$modulePath);
@@ -32,14 +31,15 @@ if(!defined('MODULE_PATH')){
 
 include("server.includes.inc.php");
 
+$userLevelArray = ['Admin', 'Manager', 'Employee', 'Other'];
+
 if($_REQUEST['a'] != "rsp" && $_REQUEST['a'] != "rpc"){
-	if(empty($user)){
+	if(empty($user) || empty($user->email) ||  empty($user->id) || !in_array($user->user_level, $userLevelArray)){
 		$ret['status'] = "ERROR";
 		echo json_encode($ret);
 		exit();
 	}
 }
-
 
 $action = $_REQUEST['a'];
 if($action == 'get'){
@@ -54,11 +54,10 @@ if($action == 'get'){
 	$ret['status'] = "SUCCESS";
 
 }else if($action == 'getElement'){
-	$_REQUEST['sm'] = \Classes\BaseService::getInstance()->fixJSON($_REQUEST['sm']);
 	$ret['object'] = \Classes\BaseService::getInstance()->getElement(
-		$_REQUEST['t'],
-		$_REQUEST['id'],
-		$_REQUEST['sm']
+		$_POST['t'],
+        $_POST['id'],
+        \Classes\BaseService::getInstance()->fixJSON($_POST['sm'])
 	);
 	if(!empty($ret['object'])){
 		$ret['status'] = "SUCCESS";
@@ -66,12 +65,12 @@ if($action == 'get'){
 		$ret['status'] = "ERROR";
 	}
 }else if($action == 'add'){
-	if($_REQUEST['t'] == "Report" || $_REQUEST['t'] == "UserReport"){
-		$data = $reportHandler->handleReport($_REQUEST);
+	if($_POST['t'] == "Report" || $_POST['t'] == "UserReport"){
+		$data = $reportHandler->handleReport($_POST);
 		$ret['status'] = $data[0];
 		$ret['object'] = $data[1];
 	}else{
-		$resp = \Classes\BaseService::getInstance()->addElement($_REQUEST['t'],$_REQUEST);
+		$resp = \Classes\BaseService::getInstance()->addElement($_POST['t'],$_POST);
 		$ret['object'] = $resp->getData();
 		$ret['status'] = $resp->getStatus();
 	}
@@ -79,7 +78,7 @@ if($action == 'get'){
 
 }else if($action == 'delete'){
 	/* @var \Classes\IceResponse $response */
-	$response = \Classes\BaseService::getInstance()->deleteElement($_REQUEST['t'],$_REQUEST['id']);
+	$response = \Classes\BaseService::getInstance()->deleteElement($_POST['t'],$_POST['id']);
 	if($response->getStatus() == \Classes\IceResponse::SUCCESS){
 		$ret['status'] = \Classes\IceResponse::SUCCESS;
 	}else{
@@ -88,11 +87,11 @@ if($action == 'get'){
 
 }else if($action == 'getFieldValues'){
 	$ret['data'] = \Classes\BaseService::getInstance()->getFieldValues(
-		$_REQUEST['t'],
-		$_REQUEST['key'],
-		$_REQUEST['value'],
-		$_REQUEST['method'],
-		$_REQUEST['methodParams']
+        $_POST['t'],
+        $_POST['key'],
+        $_POST['value'],
+        $_POST['method'],
+        $_POST['methodParams']
 	);
 	if($ret['data'] != null){
 		$ret['status'] = "SUCCESS";
@@ -101,7 +100,7 @@ if($action == 'get'){
 	}
 
 }else if($action == 'setAdminEmp'){
-	\Classes\BaseService::getInstance()->setCurrentAdminProfile($_REQUEST['empid']);
+	\Classes\BaseService::getInstance()->setCurrentAdminProfile($_POST['empid']);
 	$ret['status'] = "SUCCESS";
 
 }else if($action == 'ca'){
@@ -113,9 +112,35 @@ if($action == 'get'){
 	$moduleCapsName = ucfirst($modPath[1]);
 	/* @var \Classes\AbstractModuleManager $moduleManager */
 	$moduleManager = \Classes\BaseService::getInstance()->getModuleManager($modPath[0], $modPath[1]);
+
+	if ($moduleManager === null) {
+	    exit();
+    }
+
 	$subAction = $_REQUEST['sa'];
 
 	$apiClass = $moduleManager->getActionManager();
+    $reflectionClass = null;
+    try {
+        $reflectionClass = new ReflectionClass($apiClass);
+    } catch (ReflectionException $e) {
+        exit();
+    }
+    $reflectionMethods = array_filter(
+        $reflectionClass->getMethods(ReflectionMethod::IS_PUBLIC),
+        function ($o) use ($reflectionClass) {
+            return $o->class == $reflectionClass->getName();
+        });
+
+    $methods = [];
+    foreach ($reflectionMethods as $method) {
+        $methods[] = $method->name;
+    }
+
+    if (!in_array($subAction, $methods)) {
+        exit();
+    }
+
 	$apiClass->setUser($user);
 	$apiClass->setBaseService($baseService);
 	$apiClass->setEmailSender($baseService->getEmailSender());
@@ -269,7 +294,7 @@ if($action == 'get'){
 		}
 	}
 
-}else if ($action === 'updateLanguage'){
+} else if ($action === 'updateLanguage'){
     $language = $_POST['language'];
     $supportedLanguage = new \Metadata\Common\Model\SupportedLanguage();
     $supportedLanguage->Load('name = ?', [$language]);
@@ -287,34 +312,9 @@ if($action == 'get'){
     }
 }
 
-$res = json_encode($ret);
-
-if(empty($res) && !empty($ret)){
-    //Do this only if there is a json encoding error
-    if(!empty($ret['object'])) {
-        if (is_array($ret['object'])) {
-            $newObjects = array();
-            foreach ($ret['object'] as $obj) {
-                $newObjects[] = \Classes\BaseService::getInstance()->cleanNonUTFChar($obj);
-            }
-            $ret['object'] = $newObjects;
-        } else {
-            $ret['object'] = \Classes\BaseService::getInstance()->cleanNonUTFChar($ret['object']);
-        }
-    }else if(!empty($ret['data'])){
-        if (is_array($ret['data'])) {
-            $newObjects = array();
-            foreach ($ret['data'] as $obj) {
-                $newObjects[] = \Classes\BaseService::getInstance()->cleanNonUTFChar($obj);
-            }
-            $ret['data'] = $newObjects;
-        } else {
-            $ret['data'] = \Classes\BaseService::getInstance()->cleanNonUTFChar($ret['data']);
-        }
-    }
-
-
-    echo json_encode($ret);
-}else{
-    echo $res;
+try {
+    echo \Classes\BaseService::getInstance()->safeJsonEncode($ret);
+} catch (Exception $e) {
+    \Utils\LogManager::getInstance()->error($e->getMessage());
+    echo json_encode(['status' => 'Error']);
 }

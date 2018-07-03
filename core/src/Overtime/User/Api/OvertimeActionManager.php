@@ -32,4 +32,14 @@ class OvertimeActionManager extends ApproveModuleActionManager
     {
         return "g=modules&n=overtime&m=module_Time_Management#SubordinateEmployeeOvertime";
     }
+
+    public function getLogs($req)
+    {
+        return parent::getLogs($req);
+    }
+
+    public function cancel($req)
+    {
+        return parent::cancel($req);
+    }
 }

@@ -23,9 +23,4 @@ class Certification extends BaseModel
     {
         return array("get","element","save","delete");
     }
-
-    public function getUserAccess()
-    {
-        return array();
-    }
 }

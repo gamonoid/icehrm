@@ -213,5 +213,9 @@ class Employee extends BaseModel
         return $obj;
     }
 
+    public function fieldValueMethods() {
+        return ['getActiveSubordinateEmployees'];
+    }
+
     public $table = 'Employees';
 }

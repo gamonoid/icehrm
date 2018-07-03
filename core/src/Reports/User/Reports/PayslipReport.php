@@ -64,6 +64,14 @@ class PayslipReport extends PDFReportBuilder implements PDFReportBuilderInterfac
                 $data['fields'][] = $field;
             }
         }
+        $employee = BaseService::getInstance()->getElement(
+            'Employee',
+            BaseService::getInstance()->getCurrentProfileId(),
+            null,
+            true
+        );
+        $data['employeeName'] = $employee->first_name.' '.$employee->last_name;
+        $data['payroll'] = $payroll;
         return $data;
     }
 

@@ -89,6 +89,8 @@ $meta = json_decode(file_get_contents(MODULE_PATH."/meta.json"),true);
 
 include('configureUIManager.php');
 
+$chatUserProfile = \Classes\UIManager::getInstance()->getCurrentProfile();
+
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -186,8 +188,6 @@ include('configureUIManager.php');
         var CLIENT_BASE_URL = '<?=CLIENT_BASE_URL?>';
     </script>
     <script type="text/javascript" src="<?=BASE_URL?>js/app-global.js"></script>
-
-
 
 </head>
 <body class="skin-blue" data-turbolinks="false">

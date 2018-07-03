@@ -42,4 +42,14 @@ class OvertimeActionManager extends ApproveAdminActionManager
     {
         return "g=modules&n=overtime&m=module_Time_Management#tabEmployeeOvertimeApproval";
     }
+
+    public function getLogs($req)
+    {
+        return parent::getLogs($req);
+    }
+
+    public function changeStatus($req)
+    {
+        return parent::changeStatus($req);
+    }
 }

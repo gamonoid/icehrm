@@ -166,7 +166,6 @@ abstract class AbstractModuleManager
 
         $data = $this->getDashboardItemData();
         $data['moduleLink'] = $this->getModuleLink();
-        LogManager::getInstance()->info("Module Link:".$data['moduleLink']);
         foreach ($data as $k => $v) {
             $dashboardItem = str_replace("#_".$k."_#", $v, $dashboardItem);
         }

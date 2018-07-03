@@ -11,6 +11,8 @@ return array(
     'PEAR' => array($vendorDir . '/pear/pear_exception'),
     'Net' => array($vendorDir . '/pear/net_smtp', $vendorDir . '/pear/net_socket'),
     'Mail' => array($vendorDir . '/pear/mail'),
+    'Google_Service_' => array($vendorDir . '/google/apiclient-services/src'),
+    'Google_' => array($vendorDir . '/google/apiclient/src'),
     'ForceUTF8\\' => array($vendorDir . '/neitanod/forceutf8/src'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
     'Dflydev\\DotAccessData' => array($vendorDir . '/dflydev/dot-access-data/src'),

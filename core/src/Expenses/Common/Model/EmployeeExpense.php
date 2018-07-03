@@ -33,7 +33,12 @@ class EmployeeExpense extends ApproveModel
 
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        if ($this->status == 'Pending') {
+
+            return array("element","save","delete");
+        }
+
+        return array("get","element","save");
     }
 
     public function getUserAccess()
@@ -43,7 +48,12 @@ class EmployeeExpense extends ApproveModel
 
     public function getUserOnlyMeAccess()
     {
-        return array("element","save","delete");
+        if ($this->status == 'Pending') {
+
+            return array("get","element","save","delete");
+        }
+
+        return array("get","element","save");
     }
 
     public function fieldsNeedToBeApproved()

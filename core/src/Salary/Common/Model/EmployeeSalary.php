@@ -21,16 +21,21 @@ class EmployeeSalary extends BaseModel
 
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        return array();
     }
 
     public function getUserAccess()
     {
-        return array("get");
+        return array();
     }
 
     public function getUserOnlyMeAccess()
     {
-        return array("element","save","delete");
+        return array("get", "element");
+    }
+
+    public function getUserOnlyMeSwitchedAccess()
+    {
+        return array();
     }
 }

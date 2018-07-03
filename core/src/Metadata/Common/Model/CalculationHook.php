@@ -25,10 +25,6 @@ class CalculationHook extends BaseModel
         return array();
     }
 
-    public function getAnonymousAccess()
-    {
-        return array("get","element");
-    }
     // @codingStandardsIgnoreStart
     function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
     {

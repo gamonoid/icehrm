@@ -38,7 +38,7 @@ abstract class ApproveModel extends BaseModel
         //Auto approve if the current user is an admin
 
         if (!empty($currentEmpId)) {
-            $employee = BaseService::getInstance()->getElement('Employee', $currentEmpId);
+            $employee = BaseService::getInstance()->getElement('Employee', $currentEmpId, null, true);
 
             if (!empty($employee->supervisor)) {
                 $notificationMsg = "A new "
@@ -131,7 +131,7 @@ abstract class ApproveModel extends BaseModel
             //Auto approve if the current user is an admin
 
             if (!empty($currentEmpId)) {
-                $employee = BaseService::getInstance()->getElement('Employee', $currentEmpId);
+                $employee = BaseService::getInstance()->getElement('Employee', $currentEmpId, null, true);
 
                 if (!empty($employee->supervisor)) {
                     $notificationMsg = $this->notificationUnitPrefix." "

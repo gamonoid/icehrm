@@ -16,7 +16,6 @@ foreach($crons as $cron){
     if($iceCron->isRunNow()){
         \Utils\LogManager::getInstance()->info(CLIENT_NAME." execute cron :".$cron->name);
         $iceCron->execute();
-        sleep(1);
     }
 }
 

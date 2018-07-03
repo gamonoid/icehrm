@@ -15,7 +15,6 @@
 				modJsList[prop].setEmailTemplates(<?=json_encode($emailTemplates)?>);
 				<?php } ?>
 				modJsList[prop].setUser(<?=json_encode($user)?>);
-//Test
                 <?php if(isset($_REQUEST['action']) && $_REQUEST['action'] == "new"){?>
                 if(modJsList[prop].newInitObject == undefined || modJsList[prop].newInitObject == null){
                     modJsList[prop].initFieldMasterData(null,modJsList[prop].renderForm);
@@ -29,14 +28,8 @@
 				modJsList[prop].setCurrentProfile(<?=json_encode($activeProfile)?>);
 				modJsList[prop].setInstanceId('<?=$baseService->getInstanceId()?>');
 				modJsList[prop].setNoJSONRequests('<?=$noJSONRequests?>');
-				
 			}
-			
 	    }
-
-
-		//Other static js objects
-		
 		var timeUtils = new TimeUtils();
 		timeUtils.setServerGMToffset('<?=$diffHoursBetweenServerTimezoneWithGMT?>');
 		
@@ -44,6 +37,6 @@
 		
 	</script>
 	<?php include 'popups.php';?>
-	<?php include APP_BASE_PATH.'js/bootstrapDataTable.php';?>
+    <script src="<?=BASE_URL?>js/bootstrap-datatable.js"></script>
     </body>
 </html>

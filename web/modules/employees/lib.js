@@ -251,6 +251,8 @@ EmployeeAdapter.method('modEmployeeGetSuccessCallBack' , function(data) {
         $("#"+this.getTableName()+" #" + fields[i][0]+"_Name").html(data[fields[i][0]+"_Name"]);
 	}
 
+    $("#"+this.getTableName()+" #supervisor_Name").html(data["supervisor_Name"]);
+
 	var subordinates = "";
 	for(var i=0;i<data.subordinates.length;i++){
 		if(data.subordinates[i].first_name != undefined && data.subordinates[i].first_name != null){
@@ -350,14 +352,13 @@ EmployeeAdapter.method('changePasswordConfirm', function() {
 	$('#adminUsersChangePwd_error').hide();
 
 	var passwordValidation =  function (str) {
-		var val = /^[a-zA-Z0-9]\w{6,}$/;
-		return str != null && val.test(str);
+        return str.length > 7;
 	};
 
 	var password = $('#adminUsersChangePwd #newpwd').val();
 
 	if(!passwordValidation(password)){
-		$('#adminUsersChangePwd_error').html("Password may contain only letters, numbers and should be longer than 6 characters");
+		$('#adminUsersChangePwd_error').html("Password should be longer than 7 characters");
 		$('#adminUsersChangePwd_error').show();
 		return;
 	}

@@ -87,7 +87,7 @@ class MigrationManager
 
     public function createMigration($file)
     {
-        if (file_exists($this->migrationPath . $file)) {
+        if (file_exists($this->migrationPath . $file) && !is_dir($this->migrationPath . $file)) {
             $migration = new Migration();
             $migration->file = $file;
             $parts = explode("_", $file);

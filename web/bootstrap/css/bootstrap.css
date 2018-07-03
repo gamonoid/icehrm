@@ -3077,19 +3077,6 @@ button.close {
   *margin-left: 0;
 }
 
-.btn:hover {
-  color: #333333;
-  text-decoration: none;
-  background-color: #e6e6e6;
-  *background-color: #d9d9d9;
-  /* Buttons in IE7 don't get borders, so darken on hover */
-
-  background-position: 0 -15px;
-  -webkit-transition: background-position 0.1s linear;
-     -moz-transition: background-position 0.1s linear;
-       -o-transition: background-position 0.1s linear;
-          transition: background-position 0.1s linear;
-}
 
 .btn:focus {
   outline: thin dotted #333;
@@ -3270,14 +3257,16 @@ input[type="button"].btn-block {
 .btn-danger.disabled,
 .btn-danger[disabled] {
   color: #ffffff;
+  /*
   background-color: #bd362f;
-  *background-color: #a9302a;
+  *background-color: #a9302a;*/
 }
 
+/*
 .btn-danger:active,
 .btn-danger.active {
-  background-color: #942a25 \9;
-}
+  /background-color: #942a25 \9;
+}*/
 
 .btn-success {
   color: #ffffff;

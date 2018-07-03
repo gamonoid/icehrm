@@ -26,6 +26,7 @@ use Users\Common\Model\User;
 use Classes\IceResponse;
 use Classes\SubActionManager;
 use Utils\LogManager;
+use Utils\SessionUtils;
 
 class UsersActionManager extends SubActionManager
 {
@@ -59,6 +60,12 @@ class UsersActionManager extends SubActionManager
 
     public function saveUser($req)
     {
+        if (empty($req->csrf) || $req->csrf !== SessionUtils::getSessionObject('csrf-User')) {
+            return new IceResponse(
+                IceResponse::ERROR,
+                "Error saving user"
+            );
+        }
         if ($this->user->user_level == 'Admin') {
             $user = new User();
             $user->Load("email = ?", array($req->email));

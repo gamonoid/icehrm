@@ -23,9 +23,4 @@ class FieldNameMapping extends BaseModel
     {
         return array();
     }
-
-    public function getAnonymousAccess()
-    {
-        return array("get","element");
-    }
 }

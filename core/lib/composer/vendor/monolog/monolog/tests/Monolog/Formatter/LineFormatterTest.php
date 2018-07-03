@@ -44,7 +44,7 @@ class LineFormatterTest extends \PHPUnit_Framework_TestCase
                 'baz' => 'qux',
                 'bool' => false,
                 'null' => null,
-            )
+            ),
         ));
         $this->assertEquals('['.date('Y-m-d').'] meh.ERROR: foo {"foo":"bar","baz":"qux","bool":false,"null":null} []'."\n", $message);
     }
@@ -91,6 +91,20 @@ class LineFormatterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('['.date('Y-m-d').'] meh.ERROR: log  '."\n", $message);
     }
 
+    public function testContextAndExtraReplacement()
+    {
+        $formatter = new LineFormatter('%context.foo% => %extra.foo%');
+        $message = $formatter->format(array(
+            'level_name' => 'ERROR',
+            'channel' => 'meh',
+            'context' => array('foo' => 'bar'),
+            'datetime' => new \DateTime,
+            'extra' => array('foo' => 'xbar'),
+            'message' => 'log',
+        ));
+        $this->assertEquals('bar => xbar', $message);
+    }
+
     public function testDefFormatWithObject()
     {
         $formatter = new LineFormatter(null, 'Y-m-d');
@@ -103,7 +117,7 @@ class LineFormatterTest extends \PHPUnit_Framework_TestCase
             'message' => 'foobar',
         ));
 
-        $this->assertEquals('['.date('Y-m-d').'] meh.ERROR: foobar [] {"foo":"[object] (Monolog\\\\Formatter\\\\TestFoo: {\\"foo\\":\\"foo\\"})","bar":"[object] (Monolog\\\\Formatter\\\\TestBar: {})","baz":[],"res":"[resource]"}'."\n", $message);
+        $this->assertEquals('['.date('Y-m-d').'] meh.ERROR: foobar [] {"foo":"[object] (Monolog\\\\Formatter\\\\TestFoo: {\\"foo\\":\\"foo\\"})","bar":"[object] (Monolog\\\\Formatter\\\\TestBar: bar)","baz":[],"res":"[resource] (stream)"}'."\n", $message);
     }
 
     public function testDefFormatWithException()
@@ -120,7 +134,7 @@ class LineFormatterTest extends \PHPUnit_Framework_TestCase
 
         $path = str_replace('\\/', '/', json_encode(__FILE__));
 
-        $this->assertEquals('['.date('Y-m-d').'] core.CRITICAL: foobar {"exception":"[object] (RuntimeException(code: 0): Foo at '.substr($path, 1, -1).':'.(__LINE__-8).')"} []'."\n", $message);
+        $this->assertEquals('['.date('Y-m-d').'] core.CRITICAL: foobar {"exception":"[object] (RuntimeException(code: 0): Foo at '.substr($path, 1, -1).':'.(__LINE__ - 8).')"} []'."\n", $message);
     }
 
     public function testDefFormatWithPreviousException()
@@ -138,7 +152,7 @@ class LineFormatterTest extends \PHPUnit_Framework_TestCase
 
         $path = str_replace('\\/', '/', json_encode(__FILE__));
 
-        $this->assertEquals('['.date('Y-m-d').'] core.CRITICAL: foobar {"exception":"[object] (RuntimeException(code: 0): Foo at '.substr($path, 1, -1).':'.(__LINE__-8).', LogicException(code: 0): Wut? at '.substr($path, 1, -1).':'.(__LINE__-12).')"} []'."\n", $message);
+        $this->assertEquals('['.date('Y-m-d').'] core.CRITICAL: foobar {"exception":"[object] (RuntimeException(code: 0): Foo at '.substr($path, 1, -1).':'.(__LINE__ - 8).', LogicException(code: 0): Wut? at '.substr($path, 1, -1).':'.(__LINE__ - 12).')"} []'."\n", $message);
     }
 
     public function testBatchFormat()

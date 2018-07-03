@@ -42,6 +42,7 @@ function IceHRMBase() {
 	this.settings = {};
 	this.translations = {};
     this.customFields = [];
+    this.csrfRequired = false;
 }
 
 this.fieldTemplates = null;
@@ -113,6 +114,10 @@ IceHRMBase.method('getUser' , function() {
 
 IceHRMBase.method('setInstanceId' , function(id) {
 	this.instanceId = id;
+});
+
+IceHRMBase.method('setCSRFRequired' , function(val) {
+    this.csrfRequired = val;
 });
 
 IceHRMBase.method('setGoogleAnalytics' , function(ga) {
@@ -1019,9 +1024,12 @@ IceHRMBase.method('save', function(callGetFunction, successCallback) {
 		params = this.forceInjectValuesBeforeSave(params);
 		var msg = this.doCustomValidation(params);
 		if(msg == null){
+            if (this.csrfRequired) {
+                params['csrf'] = $('#'+this.getTableName()+'Form').data('csrf');
+            }
 			var id = $('#'+this.getTableName()+"_submit #id").val();
 			if(id != null && id != undefined && id != ""){
-				$(params).attr('id',id);
+                params['id'] = id;
 			}
 			params = this.makeEmptyDateFieldsNull(params);
 			this.add(params,[],callGetFunction, successCallback);

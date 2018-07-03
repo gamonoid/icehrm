@@ -26,7 +26,7 @@ class BaseModel extends \ADOdb_Active_Record
 
     public function getOtherAccess()
     {
-        return array("get","element","save","delete");
+        return array();
     }
 
     public function getManagerAccess()
@@ -52,6 +52,11 @@ class BaseModel extends \ADOdb_Active_Record
     public function getUserOnlyMeAccess()
     {
         return array("get","element");
+    }
+
+    public function getUserOnlyMeSwitchedAccess()
+    {
+        return $this->getUserOnlyMeAccess();
     }
 
     public function getUserOnlyMeAccessField()
@@ -121,6 +126,14 @@ class BaseModel extends \ADOdb_Active_Record
     public function getDisplayName()
     {
         return get_called_class();
+    }
+
+    public function fieldValueMethods() {
+        return [];
+    }
+
+    public function validateCSRF() {
+        return false;
     }
 
     public function getObjectKeys()

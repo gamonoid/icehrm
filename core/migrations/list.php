@@ -1,5 +1,10 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20180623_240002_update_employee_report';
+$migrationList[] = 'v20180622_240001_set_valid_until_null';
+$migrationList[] = 'v20180615_230402_remove_eh_manager';
+$migrationList[] = 'v20180602_230004_add_gsuite_fields';
+$migrationList[] = 'v20180527_230003_update_menu_names';
 $migrationList[] = 'v20180514_230002_add_conversation_tables';
 $migrationList[] = 'v20180507_230001_update_travel_record_type';
 $migrationList[] = 'v20180417_210501_update_menu_names';

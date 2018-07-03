@@ -558,7 +558,8 @@ SubEmployeeTimeSheetAdapter.method('getCustomTableParams', function() {
 
 SubEmployeeTimeSheetAdapter.method('getFilters', function() {
 	return [
-		[ "employee", {"label":"Employee","type":"select2","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}]
+		[ "employee", {"label":"Employee","type":"select2","allow-null":true,"null-label":"All Employees","remote-source":["Employee","id","first_name+last_name"]}],
+        [ "status", {"label":"Status","type":"select","allow-null":true,"null-label":"All","source":[["Submitted","Submitted"],["Pending","Pending"],["Approved","Approved"], ["Rejected","Rejected"]]}],
 	];
 });
 

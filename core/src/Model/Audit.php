@@ -11,4 +11,14 @@ namespace Model;
 class Audit extends BaseModel
 {
     public $table = 'AuditLog';
+
+    public function getManagerAccess()
+    {
+        return array();
+    }
+
+    public function getUserAccess()
+    {
+        return array();
+    }
 }

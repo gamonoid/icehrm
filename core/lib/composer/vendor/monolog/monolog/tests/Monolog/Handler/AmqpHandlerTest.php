@@ -14,7 +14,6 @@ namespace Monolog\Handler;
 use Monolog\TestCase;
 use Monolog\Logger;
 use PhpAmqpLib\Message\AMQPMessage;
-use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Connection\AMQPConnection;
 
 /**
@@ -66,8 +65,8 @@ class AmqpHandlerTest extends TestCase
             0,
             array(
                 'delivery_mode' => 2,
-                'Content-type' => 'application/json'
-            )
+                'content_type' => 'application/json',
+            ),
         );
 
         $handler->handle($record);
@@ -118,8 +117,8 @@ class AmqpHandlerTest extends TestCase
             null,
             array(
                 'delivery_mode' => 2,
-                'content_type' => 'application/json'
-            )
+                'content_type' => 'application/json',
+            ),
         );
 
         $handler->handle($record);

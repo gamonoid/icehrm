@@ -23,9 +23,4 @@ class CustomFieldValue extends BaseModel
     {
         return array("get","element","save","delete");
     }
-
-    public function getAnonymousAccess()
-    {
-        return array();
-    }
 }

@@ -33,6 +33,9 @@ class EmployeesActionManager extends SubActionManager
     public function terminateEmployee($req)
     {
         $employee = new Employee();
+
+        $this->baseService->checkSecureAccess('delete', $employee, 'Employee', $_POST);
+
         $employee->Load("id = ?", array($req->id));
 
         if (empty($employee->id)) {
@@ -48,8 +51,6 @@ class EmployeesActionManager extends SubActionManager
         }
 
         return new IceResponse(IceResponse::SUCCESS, $employee);
-
-        //$user = BaseService::getInstance()->getUserFromProfileId($employee->id);
     }
 
     public function activateEmployee($req)
@@ -70,8 +71,6 @@ class EmployeesActionManager extends SubActionManager
         }
 
         return new IceResponse(IceResponse::SUCCESS, $employee);
-
-        //$user = BaseService::getInstance()->getUserFromProfileId($employee->id);
     }
 
     public function deleteEmployee($req)

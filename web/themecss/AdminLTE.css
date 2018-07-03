@@ -4888,3 +4888,228 @@ fieldset[disabled] .btn-vk.active {
   max-width: 100%;
   height: auto;
 }
+
+
+/*
+ * Component: Control sidebar. By default, this is the right sidebar.
+ */
+.control-sidebar-bg {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+}
+.control-sidebar-bg,
+.control-sidebar {
+  top: 0;
+  right: -230px;
+  width: 230px;
+  -webkit-transition: right 0.3s ease-in-out;
+  -o-transition: right 0.3s ease-in-out;
+  transition: right 0.3s ease-in-out;
+}
+.control-sidebar {
+  position: absolute;
+  padding-top: 50px;
+  z-index: 1010;
+}
+@media (max-width: 768px) {
+  .control-sidebar {
+    padding-top: 100px;
+  }
+}
+.control-sidebar > .tab-content {
+  padding: 10px 15px;
+}
+.control-sidebar.control-sidebar-open,
+.control-sidebar.control-sidebar-open + .control-sidebar-bg {
+  right: 0;
+}
+.control-sidebar-open .control-sidebar-bg,
+.control-sidebar-open .control-sidebar {
+  right: 0;
+}
+@media (min-width: 768px) {
+  .control-sidebar-open .content-wrapper,
+  .control-sidebar-open .right-side,
+  .control-sidebar-open .main-footer {
+    margin-right: 230px;
+  }
+}
+.nav-tabs.control-sidebar-tabs > li:first-of-type > a,
+.nav-tabs.control-sidebar-tabs > li:first-of-type > a:hover,
+.nav-tabs.control-sidebar-tabs > li:first-of-type > a:focus {
+  border-left-width: 0;
+}
+.nav-tabs.control-sidebar-tabs > li > a {
+  border-radius: 0;
+}
+.nav-tabs.control-sidebar-tabs > li > a,
+.nav-tabs.control-sidebar-tabs > li > a:hover {
+  border-top: none;
+  border-right: none;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.nav-tabs.control-sidebar-tabs > li > a .icon {
+  font-size: 16px;
+}
+.nav-tabs.control-sidebar-tabs > li.active > a,
+.nav-tabs.control-sidebar-tabs > li.active > a:hover,
+.nav-tabs.control-sidebar-tabs > li.active > a:focus,
+.nav-tabs.control-sidebar-tabs > li.active > a:active {
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+@media (max-width: 768px) {
+  .nav-tabs.control-sidebar-tabs {
+    display: table;
+  }
+  .nav-tabs.control-sidebar-tabs > li {
+    display: table-cell;
+  }
+}
+.control-sidebar-heading {
+  font-weight: 400;
+  font-size: 16px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.control-sidebar-subheading {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+}
+.control-sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 -15px;
+}
+.control-sidebar-menu > li > a {
+  display: block;
+  padding: 10px 15px;
+}
+.control-sidebar-menu > li > a:before,
+.control-sidebar-menu > li > a:after {
+  content: " ";
+  display: table;
+}
+.control-sidebar-menu > li > a:after {
+  clear: both;
+}
+.control-sidebar-menu > li > a > .control-sidebar-subheading {
+  margin-top: 0;
+}
+.control-sidebar-menu .menu-icon {
+  float: left;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+}
+.control-sidebar-menu .menu-info {
+  margin-left: 45px;
+  margin-top: 3px;
+}
+.control-sidebar-menu .menu-info > .control-sidebar-subheading {
+  margin: 0;
+}
+.control-sidebar-menu .menu-info > p {
+  margin: 0;
+  font-size: 11px;
+}
+.control-sidebar-menu .progress {
+  margin: 0;
+}
+.control-sidebar-dark {
+  color: #b8c7ce;
+}
+.control-sidebar-dark,
+.control-sidebar-dark + .control-sidebar-bg {
+  background: #222d32;
+}
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs {
+  border-bottom: #1c2529;
+}
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a {
+  background: #181f23;
+  color: #b8c7ce;
+}
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a,
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a:hover,
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a:focus {
+  border-left-color: #141a1d;
+  border-bottom-color: #141a1d;
+}
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a:hover,
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a:focus,
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a:active {
+  background: #1c2529;
+}
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a:hover {
+  color: #fff;
+}
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a,
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:hover,
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:focus,
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:active {
+  background: #222d32;
+  color: #fff;
+}
+.control-sidebar-dark .control-sidebar-heading,
+.control-sidebar-dark .control-sidebar-subheading {
+  color: #fff;
+}
+.control-sidebar-dark .control-sidebar-menu > li > a:hover {
+  background: #1e282c;
+}
+.control-sidebar-dark .control-sidebar-menu > li > a .menu-info > p {
+  color: #b8c7ce;
+}
+.control-sidebar-light {
+  color: #5e5e5e;
+}
+.control-sidebar-light,
+.control-sidebar-light + .control-sidebar-bg {
+  background: #f9fafc;
+  border-left: 1px solid #d2d6de;
+}
+.control-sidebar-light .nav-tabs.control-sidebar-tabs {
+  border-bottom: #d2d6de;
+}
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li > a {
+  background: #e8ecf4;
+  color: #444444;
+}
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li > a,
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li > a:hover,
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li > a:focus {
+  border-left-color: #d2d6de;
+  border-bottom-color: #d2d6de;
+}
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li > a:hover,
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li > a:focus,
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li > a:active {
+  background: #eff1f7;
+}
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li.active > a,
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li.active > a:hover,
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li.active > a:focus,
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li.active > a:active {
+  background: #f9fafc;
+  color: #111;
+}
+.control-sidebar-light .control-sidebar-heading,
+.control-sidebar-light .control-sidebar-subheading {
+  color: #111;
+}
+.control-sidebar-light .control-sidebar-menu {
+  margin-left: -14px;
+}
+.control-sidebar-light .control-sidebar-menu > li > a:hover {
+  background: #f4f4f5;
+}
+.control-sidebar-light .control-sidebar-menu > li > a .menu-info > p {
+  color: #5e5e5e;
+}

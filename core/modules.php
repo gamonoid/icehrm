@@ -39,7 +39,7 @@ function includeModuleManager($type, $name, $data)
     $moduleManagerObj->setModulePath(CLIENT_PATH.'/'.$type.'/'.$name);
 
 
-    if ($data['action']) {
+    if (isset($data['action']) && !empty($data['action'])) {
         $moduleActionManagerClass = $data['manager'];
     } else {
         $moduleActionManagerClass = str_replace('ModulesManager', '', $moduleManagerClass);

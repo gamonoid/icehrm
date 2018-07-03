@@ -289,7 +289,7 @@ class UIManager
         $logoFileName = CLIENT_BASE_PATH."data/logo.png";
         $logoSettings = SettingsManager::getInstance()->getSetting("Company: Logo");
         if (!empty($logoSettings)) {
-            $logoFileName = FileService::getInstance()->getFileUrl($logoSettings);
+            $logoFileName = FileService::getInstance()->getFileUrl($logoSettings, false);
             $logoFileSet = true;
         }
 
