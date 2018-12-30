@@ -5,6 +5,10 @@ IceHrm
 IceHrm is a [HRM software](https://icehrm.com) which enable companies of all sizes to [manage HR activities](https://icehrm.com)
 properly. 
 
+IceHrm is Backed by Glacies
+-----------------
+Build a remote software development team with [Glacies](http://glacies.de)
+
 Useful Links
 -------------
  * IceHrm Opensource Blog: [http://icehrm.org](http://icehrm.org)
