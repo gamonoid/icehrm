@@ -57,7 +57,7 @@ msgid "Help"
 msgstr "Aiuto"
 
 msgid "About"
-msgstr "di"
+msgstr "Info"
 
 msgid "Version"
 msgstr "Versione"
@@ -204,7 +204,7 @@ msgid "Attendance"
 msgstr "Presenze"
 
 msgid "Time Sheets"
-msgstr "Fogli Attivit√†"
+msgstr "Fogli Attività"
 
 msgid "Attendance Sheets"
 msgstr "Fogli Presenze"
@@ -219,7 +219,7 @@ msgid "My Documents"
 msgstr "I Miei Documenti"
 
 msgid "Company"
-msgstr "Societ√†"
+msgstr "Società"
 
 msgid "Staff Directory"
 msgstr "Elenco del Personale"
@@ -360,7 +360,7 @@ msgid "Hours worked Last Week"
 msgstr "Ore lavorate ultima settimana"
 
 msgid "Update Time Sheet"
-msgstr "Gestione Foglio Attivit√†"
+msgstr "Gestione Foglio Attività"
 
 msgid "My Projects"
 msgstr "Miei Progetti"
@@ -495,7 +495,7 @@ msgid "Contact Email"
 msgstr "email"
 
 msgid "Company Url"
-msgstr "URL Societ√†"
+msgstr "URL Società"
 
 msgid "First Contact Date"
 msgstr "Data Primo Contatto"
@@ -522,10 +522,10 @@ msgid "Leaves Group"
 msgstr "Gruppo Permessi"
 
 msgid "Leaves Per Leave Period"
-msgstr "Quantit√† nel Periodo"
+msgstr "Quantità nel Periodo"
 
 msgid "Admin can assign leave to employees"
-msgstr "L'amministratore pu√≤ assegnare questo permesso ai dipendenti"
+msgstr "L'amministratore può assegnare questo permesso ai dipendenti"
 
 msgid "Employees can apply for this leave type"
 msgstr "I dipendenti possono richiedere questo permesso"
@@ -1320,7 +1320,7 @@ msgid "Hours in Office vs Hours Worked Graph"
 msgstr "Ore in Uffice / Grafico Ore Lavorate"
 
 msgid "Company Graph"
-msgstr "Struttura Societ√†"
+msgstr "Struttura Società"
 
 msgid "Company Documents"
 msgstr "Documenti Aziendali"
@@ -1365,7 +1365,7 @@ msgid "Expenses Categories"
 msgstr "Categorie Spese"
 
 msgid "Payment Methods"
-msgstr "Modalit√† Pagamento"
+msgstr "Modalità Pagamento"
 
 msgid "Employee Expenses"
 msgstr "Spese Dipendenti"
@@ -1377,7 +1377,7 @@ msgid "Employee Salary Components"
 msgstr "Componenti Stipendio Dipendenti"
 
 msgid "Company Payroll"
-msgstr "Libro Paga Societ√†"
+msgstr "Libro Paga Società"
 
 msgid "Calculation Groups"
 msgstr "Gruppi di Calcoli"
@@ -1848,7 +1848,7 @@ msgid "Native or Bilingual Proficiency"
 msgstr "Conoscenza madrelingua o bilingue"
 
 msgid "Pending"
-msgstr "in attesa di"
+msgstr "In attesa"
 
 msgid "Approved"
 msgstr "Approvato"
@@ -1869,7 +1869,7 @@ msgid "Completed"
 msgstr "Completato"
 
 msgid "Discussions"
-msgstr "discussioni"
+msgstr "Discussioni"
 
 msgid "Load More"
 msgstr "Carica di più"
@@ -1899,7 +1899,7 @@ msgid "View Announcements"
 msgstr "Visualizza annunci"
 
 msgid "Conversations"
-msgstr "conversazioni"
+msgstr "Conversazioni"
 
 msgid "Start Now"
 msgstr "Avviare ora"
