@@ -1,6 +1,25 @@
+Release note v26.1.0.OS
+------------------------
+
+### Features
+ * Add staff directory module
+ * Update client-side js to ES6
+ * Use npm libraries when possible
+ * Add gulp build for frontend assets
+ * https://github.com/gamonoid/icehrm/issues/169 (https://github.com/gamonoid/icehrm/issues/169)
+ * Updated readme for development setup with vagrant
+
+ 
+### Fixes
+ * Add missing employee details report
+ * Fix: Labels of 'Employee Custom Fields' not displayed (https://github.com/gamonoid/icehrm/issues/146)
+ * Fix: Work week for all counties can not be edited
+ * Fix: Custom fields are not shown under employee profile (https://github.com/gamonoid/icehrm/issues/159)
+ * Fix: Additional buttons shown below timesheet list (https://github.com/gamonoid/icehrm/issues/171)
+
+ 
 Release note v24.0.0.OS
 ------------------------
-This release include some very critical security fixes. We recommend upgrading your installation to latest release.
 
 ### Features
  * Allow passing additional parameters to payroll predefined methods

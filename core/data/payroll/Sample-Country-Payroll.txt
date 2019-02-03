@@ -1,0 +1,188 @@
+{
+    "name": "Sample Country Payroll",
+    "description": "",
+    "deductions": [
+        {
+            "id": "112",
+            "name": "DE - Tax",
+            "componentType": "[]",
+            "component": "[]",
+            "payrollColumn": "131",
+            "rangeAmounts": "[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":0,\"upperCondition\":\"No Upper Limit\",\"upperLimit\":0,\"amount\":\"X * 0.19\",\"id\":\"rangeAmounts_1\"}]"
+        }
+    ],
+    "columns": [
+        {
+            "id": "126",
+            "name": "DE - Basic Salary",
+            "calculation_hook": null,
+            "salary_components": "[\"1\"]",
+            "deductions": "[]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "1",
+            "editable": "Yes",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "127",
+            "name": "DE - Car Allowance",
+            "calculation_hook": null,
+            "salary_components": "[\"3\"]",
+            "deductions": "[]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "2",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "128",
+            "name": "DE - Hours Worked per Month",
+            "calculation_hook": "AttendanceUtil_getTimeWorkedHours",
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "3",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "129",
+            "name": "DE - Hourly Pay",
+            "calculation_hook": null,
+            "salary_components": "[\"5\"]",
+            "deductions": "[]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "4",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "130",
+            "name": "DE - Payment for Hours Worked",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "5",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "[{\"name\":\"X\",\"column\":\"128\",\"id\":\"calculation_columns_1\"},{\"name\":\"Y\",\"column\":\"129\",\"id\":\"calculation_columns_2\"}]",
+            "calculation_function": "X * Y"
+        },
+        {
+            "id": "131",
+            "name": "DE - Gross Salary",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"126\",\"127\",\"130\"]",
+            "sub_columns": "[]",
+            "colorder": "6",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "132",
+            "name": "DE - Tax",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"112\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "7",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "133",
+            "name": "DE - Net Salary",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"131\"]",
+            "sub_columns": "[\"132\"]",
+            "colorder": "8",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        }
+    ],
+    "salaryComponents": [
+        {
+            "id": "1",
+            "name": "Basic Salary",
+            "componentType": "1",
+            "details": null
+        },
+        {
+            "id": "3",
+            "name": "Car Allowance",
+            "componentType": "2",
+            "details": null
+        },
+        {
+            "id": "5",
+            "name": "Regular Hourly Pay",
+            "componentType": "3",
+            "details": null
+        }
+    ],
+    "salaryComponentTypes": [
+        {
+            "id": "1",
+            "code": "B001",
+            "name": "Basic"
+        },
+        {
+            "id": "2",
+            "code": "B002",
+            "name": "Allowance"
+        },
+        {
+            "id": "3",
+            "code": "B003",
+            "name": "Hourly"
+        }
+    ],
+    "samplePayroll": {
+        "name": "Sample Country Payroll",
+        "pay_period": "4",
+        "columns": "[\"126\",\"127\",\"131\",\"129\",\"128\",\"133\",\"130\",\"132\"]",
+        "date_start": "2017-08-01",
+        "date_end": "2017-08-31",
+        "status": "Draft"
+    },
+    "payslipTemplate": {
+        "name": "Sample Payslip Template",
+        "data": "[{\"type\":\"Company Logo\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_1\"},{\"type\":\"Company Name\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_2\"},{\"type\":\"Separators\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_5\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"126\",\"label\":\"Basic Salary\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_3\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"127\",\"label\":\"Car Allowance\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_4\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"130\",\"label\":\"Payment for Hours Worked\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_6\"},{\"type\":\"Separators\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_7\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"131\",\"label\":\"Gross Pay\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_8\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"132\",\"label\":\"Tax 19%\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_9\"},{\"type\":\"Separators\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_10\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"133\",\"label\":\"Net Pay\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_11\"}]",
+        "status": null,
+        "created": "2017-09-08 21:12:40",
+        "updated": "2017-09-08 21:12:40"
+    }
+}

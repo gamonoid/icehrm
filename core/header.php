@@ -18,7 +18,7 @@ along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------
 
 Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
-Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
+Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 if (!defined('MODULE_NAME')) {
     define('MODULE_NAME', $moduleName);
@@ -94,14 +94,18 @@ $chatUserProfile = \Classes\UIManager::getInstance()->getCurrentProfile();
 ?><!DOCTYPE html>
 <html>
 <head>
-    <!-- Google Analytics -->
-    <script>
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', '<?=\Classes\BaseService::getInstance()->getGAKey()?>', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
+    <?php if (!empty(\Classes\BaseService::getInstance()->getGAKey())) { ?>
+        <!-- Google Analytics -->
+        <script>
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', '<?=\Classes\BaseService::getInstance()->getGAKey()?>', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+        <!-- End Google Analytics -->
+    <?php } else { ?>
+        <script>window.ga = [];</script>
+    <?php } ?>
 
     <meta charset="utf-8">
     <title><?=$companyName?></title>
@@ -110,84 +114,20 @@ $chatUserProfile = \Classes\UIManager::getInstance()->getCurrentProfile();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="<?=BASE_URL?>themecss/bootstrap.min.css" rel="stylesheet">
-    <link href="<?=BASE_URL?>themecss/font-awesome.min.css" rel="stylesheet">
-    <link href="<?=BASE_URL?>themecss/ionicons.min.css" rel="stylesheet">
-    <link href="<?=BASE_URL?>bower_components/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
+    <link href="<?=BASE_URL?>dist/third-party.css?v=<?=$cssVersion?>" rel="stylesheet">
+    <script type="text/javascript" src="<?=BASE_URL?>dist/third-party.js?v=<?=$jsVersion?>"></script>
+    <script type="text/javascript" src="<?=BASE_URL?>dist/common.js?v=<?=$jsVersion?>"></script>
 
-
-
-
-    <script type="text/javascript" src="<?=BASE_URL?>js/jquery2.0.2.min.js"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>js/jquery-ui.js"></script>
-
-    <script src="<?=BASE_URL?>themejs/bootstrap.js"></script>
-    <script src="<?=BASE_URL?>js/jquery.placeholder.js"></script>
-    <script src="<?=BASE_URL?>js/base64.js"></script>
-
-
-    <script src="<?=BASE_URL?>js/bootstrap-datepicker.js"></script>
+    <!-- Can not bundle - Start-->
     <script src="<?=BASE_URL?>js/jquery.timepicker.js"></script>
     <script src="<?=BASE_URL?>js/bootstrap-datetimepicker.js"></script>
-    <script src="<?=BASE_URL?>js/select2/select2.min.js"></script>
-    <script src="<?=BASE_URL?>js/bootstrap-colorpicker-2.1.1/js/bootstrap-colorpicker.min.js"></script>
-
-    <!--fullcaledar-->
-
-    <link href="<?=BASE_URL?>js/fullcaledar/fullcalendar.css" rel="stylesheet">
-    <link href="<?=BASE_URL?>js/fullcaledar/fullcalendar.print.css" rel="stylesheet" media="print">
-    <script src="<?=BASE_URL?>js/fullcaledar/lib/moment.min.js"></script>
-    <script src="<?=BASE_URL?>js/fullcaledar/fullcalendar.min.js"></script>
-
-    <script src="<?=BASE_URL?>js/clipboard.js"></script>
-
-    <link href="<?=BASE_URL?>themecss/datatables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="<?=BASE_URL?>css/jquery.timepicker.css" rel="stylesheet">
-    <link href="<?=BASE_URL?>css/datepicker.css" rel="stylesheet">
-    <link href="<?=BASE_URL?>css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-    <link href="<?=BASE_URL?>js/select2/select2.css" rel="stylesheet">
-    <link href="<?=BASE_URL?>js/bootstrap-colorpicker-2.1.1/css/bootstrap-colorpicker.min.css" rel="stylesheet">
     <link href="<?=BASE_URL?>bower_components/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <!-- Can not bundle - End-->
 
-    <link href="<?=BASE_URL?>themecss/AdminLTE.css" rel="stylesheet">
-
-    <script src="<?=BASE_URL?>themejs/plugins/datatables/jquery.dataTables.js?v=<?=$jsVersion?>"></script>
-    <script src="<?=BASE_URL?>themejs/plugins/datatables/dataTables.bootstrap.js?v=<?=$jsVersion?>"></script>
-    <script src="<?=BASE_URL?>themejs/AdminLTE/app.js?v=<?=$jsVersion?>"></script>
-
-
-    <link href="<?=BASE_URL?>css/style.css?v=<?=$cssVersion?>" rel="stylesheet">
-
-    <script type="text/javascript" src="<?=BASE_URL?>bower_components/tinymce/tinymce.min.js"></script>
-    <link href="<?=BASE_URL?>bower_components/simplemde/dist/simplemde.min.css" rel="stylesheet">
-    <script type="text/javascript" src="<?=BASE_URL?>bower_components/simplemde/dist/simplemde.min.js"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>bower_components/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>js/signature_pad.js"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>js/date.js"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>js/json2.js"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>js/CrockfordInheritance.v0.1.js"></script>
-
-    <script type="text/javascript" src="<?=BASE_URL?>api/Base.js?v=<?=$jsVersion?>"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>api/AdapterBase.js?v=<?=$jsVersion?>"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>api/FormValidation.js?v=<?=$jsVersion?>"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>api/Notifications.js?v=<?=$jsVersion?>"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>api/TimeUtils.js?v=<?=$jsVersion?>"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>api/ConversationsAdapter.js?v=<?=$jsVersion?>"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>api/AesCrypt.js?v=<?=$jsVersion?>"></script>
-    <script type="text/javascript" src="<?=BASE_URL?>api/SocialShare.js?v=<?=$jsVersion?>"></script>
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="<?=BASE_URL?>js/html5shiv.js"></script>
-    <script src="<?=BASE_URL?>js/respond.min.js"></script>
-    <![endif]-->
     <script>
         var baseUrl = '<?=CLIENT_BASE_URL?>service.php';
         var CLIENT_BASE_URL = '<?=CLIENT_BASE_URL?>';
     </script>
-    <script type="text/javascript" src="<?=BASE_URL?>js/app-global.js"></script>
 
 </head>
 <body class="skin-blue" data-turbolinks="false">
@@ -214,6 +154,9 @@ $chatUserProfile = \Classes\UIManager::getInstance()->getCurrentProfile();
         </div>
     </nav>
 </header>
+<?php if(\Classes\UIManager::getInstance()->getCurrentLanguageCode() === 'ar') {?>
+    <link href="<?=BASE_URL?>css/rtl.css" rel="stylesheet">
+<?php } ?>
 <div class="wrapper row-offcanvas row-offcanvas-left">
     <div id="iceloader" style="
     width: 100%;

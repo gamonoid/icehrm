@@ -28,9 +28,7 @@ class ApprovalStatusIntegration extends \TestTemplate
         $emp->approver1 = $ids[4];
         $emp->approver2 = $ids[5];
         $emp->approver3 = $ids[6];
-        $emp->Save();
-
-
+        $ok = $emp->Save();
 
         $this->travelRec = new EmployeeTravelRecord();
 

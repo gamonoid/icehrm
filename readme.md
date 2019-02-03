@@ -7,7 +7,7 @@ properly.
 
 IceHrm is Backed by Glacies
 -----------------
-Build a remote software development team with [Glacies](http://glacies.de)
+[Glacies](http://glacies.de)
 
 Useful Links
 -------------
@@ -74,16 +74,29 @@ Preparing development VM with Vagrant
 ~ $ vagrant ssh
 ```
 
-- Install ant build in your VM
+- Setup the Vagrant box
 
 ```
 ~ $ sudo apt-get install ant
+~ $ sudo chmod -R 777 /var/log/nginx
+~ $ cd /vagrant
+~ $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+~ $ sudo apt-get install -y nodejs
+~ $ sudo sed 's/server_name clients.app.dev/server_name clients.icehrm-open.test/g' /etc/nginx/sites-available/clients.app.com > /tmp/clients.app.com
+~ $ sudo mv /tmp/clients.app.com /etc/nginx/sites-available/clients.app.com
+~ $ sudo sed 's/server_name app.app.dev/server_name app.icehrm-open.test/g' /etc/nginx/sites-available/app.app.com > /tmp/app.app.com
+~ $ sudo sed 's#root /vagrant/build/app#root /vagrant#g' /tmp/app.app.com > /tmp/mod.app.app.com
+~ $ sudo mv /tmp/mod.app.app.com /etc/nginx/sites-available/app.app.com
+~ $ npm install
+~ $ sudo npm install -g gulp-cli
+~ $ sudo service php7.0-fpm restart
+~ $ sudo service nginx restart
 ```
 
 - Build Icehrm (your icehrm root directory is mapped to /vagrant/ directory in VM)
 
 ```
-~ $ cd /vagrant
+~ $ gulp
 ~ $ ant buildlocal
 ```
 

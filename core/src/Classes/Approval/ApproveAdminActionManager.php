@@ -129,7 +129,7 @@ abstract class ApproveAdminActionManager extends ApproveCommonActionManager
         $currentEmpId = $this->getCurrentProfileId();
 
         if (!empty($currentEmpId)) {
-            $employee = $this->baseService->getElement('Employee', $currentEmpId);
+            $employee = $this->baseService->getElement('Employee', $currentEmpId, null, true);
 
             $notificationMsg
                 = "Your $itemName has been $obj->status by ".$employee->first_name." ".$employee->last_name;
@@ -151,7 +151,9 @@ abstract class ApproveAdminActionManager extends ApproveCommonActionManager
         if (!empty($sendApprovalEmailto)) {
             $employee = $this->baseService->getElement(
                 'Employee',
-                BaseService::getInstance()->getCurrentProfileId()
+                BaseService::getInstance()->getCurrentProfileId(),
+                null,
+                true
             );
 
             $notificationMsg

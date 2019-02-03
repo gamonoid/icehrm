@@ -1,24 +1,7 @@
 <?php
 /*
-This file is part of iCE Hrm.
-
-iCE Hrm is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-iCE Hrm is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with iCE Hrm. If not, see <http://www.gnu.org/licenses/>.
-
-------------------------------------------------------------------
-
-Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
-Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
 $moduleName = 'employee_TimeSheet';
@@ -79,7 +62,7 @@ $startEndTimeNeeded = \Classes\SettingsManager::getInstance()->getSetting(
 		<div id="Qtsheet" class="reviewBlock" data-content="List" style="padding-left:5px;display:none;overflow-x: auto;">
 
 		</div>
-		<div id="QtsheetDataButtons" style="text-align: right;margin-top: 10px;">
+		<div id="QtsheetDataButtons" style="text-align: right;margin-top: 10px;display:none;">
 			<button class="cancelBtnTable btn" style="margin-right:5px;"><i class="fa fa-times-circle-o"></i> Cancel</button>
 			<button class="saveBtnTable btn btn-primary" style="margin-right:5px;"><i class="fa fa-save"></i> Save</button>
 			<button class="downloadBtnTable btn btn-primary" style="margin-right:5px;"><i class="fa fa-check"></i> Download</button>

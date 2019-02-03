@@ -1,0 +1,14 @@
+{
+	"label":"Staff Directory",
+	"menu":"Company",
+	"order":"1",
+	"icon":"fa-user",
+	"user_levels":["Admin","Manager","Employee"],
+
+	"permissions":
+		{
+
+		},
+	"model_namespace": "\\StaffDirectory\\Common\\Model",
+	"manager": "\\StaffDirectory\\User\\Api\\StaffDirectoryModulesManager"
+}

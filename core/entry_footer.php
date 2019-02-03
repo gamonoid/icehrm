@@ -30,9 +30,7 @@
 				modJsList[prop].setNoJSONRequests('<?=$noJSONRequests?>');
 			}
 	    }
-		var timeUtils = new TimeUtils();
-		timeUtils.setServerGMToffset('<?=$diffHoursBetweenServerTimezoneWithGMT?>');
-		
+
 		var clientUrl = '<?=CLIENT_BASE_URL?>';
 		
 	</script>

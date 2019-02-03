@@ -1,325 +1,79 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
-    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
-    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-    <title>Hello from IceHrm.com</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
-
-    <!-- Web Font / @font-face : BEGIN -->
-    <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
-
-    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
-    <!--[if mso]>
-    <style>
-        * {
-            font-family: sans-serif !important;
-        }
-    </style>
-    <![endif]-->
-
-    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
-    <!--[if !mso]><!-->
-    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
-    <!--<![endif]-->
-
-    <!-- Web Font / @font-face : END -->
-
-    <!-- CSS Reset : BEGIN -->
-    <style>
-
-        /* What it does: Remove spaces around the email design added by some email clients. */
-        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
-        html,
-        body {
-            margin: 0 auto !important;
-            padding: 0 !important;
-            height: 100% !important;
-            width: 100% !important;
-        }
-
-        /* What it does: Stops email clients resizing small text. */
-        * {
-            -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
-        }
-
-        /* What it does: Centers email on Android 4.4 */
-        div[style*="margin: 16px 0"] {
-            margin: 0 !important;
-        }
-
-        /* What it does: Stops Outlook from adding extra spacing to tables. */
-        table,
-        td {
-            mso-table-lspace: 0pt !important;
-            mso-table-rspace: 0pt !important;
-        }
-
-        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
-        table {
-            border-spacing: 0 !important;
-            border-collapse: collapse !important;
-            table-layout: fixed !important;
-            margin: 0 auto !important;
-        }
-        table table table {
-            table-layout: auto;
-        }
-
-        /* What it does: Uses a better rendering method when resizing images in IE. */
-        img {
-            -ms-interpolation-mode:bicubic;
-        }
-
-        /* What it does: A work-around for email clients meddling in triggered links. */
-        *[x-apple-data-detectors],  /* iOS */
-        .unstyle-auto-detected-links *,
-        .aBn {
-            border-bottom: 0 !important;
-            cursor: default !important;
-            color: inherit !important;
-            text-decoration: none !important;
-            font-size: inherit !important;
-            font-family: inherit !important;
-            font-weight: inherit !important;
-            line-height: inherit !important;
-        }
-
-        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
-        .a6S {
-            display: none !important;
-            opacity: 0.01 !important;
-        }
-        /* If the above doesn't work, add a .g-img class to any image in question. */
-        img.g-img + div {
-            display: none !important;
-        }
-
-        /* What it does: Prevents underlining the button text in Windows 10 */
-        .button-link {
-            text-decoration: none !important;
-        }
-
-        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
-        /* Create one of these media queries for each additional viewport size you'd like to fix */
-
-        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
-        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
-            .email-container {
-                min-width: 320px !important;
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css" rel="stylesheet" media="all">
+        @media only screen and (max-width: 600px) {
+            .email-body_inner,
+            .email-footer {
+                width: 100% !important;
             }
         }
-        /* iPhone 6, 6S, 7, 8, and X */
-        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
-            .email-container {
-                min-width: 375px !important;
+        @media only screen and (max-width: 500px) {
+            .button {
+                width: 100% !important;
             }
         }
-        /* iPhone 6+, 7+, and 8+ */
-        @media only screen and (min-device-width: 414px) {
-            .email-container {
-                min-width: 414px !important;
-            }
-        }
-
     </style>
-    <!-- CSS Reset : END -->
-    <!-- Reset list spacing because Outlook ignores much of our inline CSS. -->
-    <!--[if mso]>
-    <style type="text/css">
-        ul,
-        ol {
-            margin: 0 !important;
-        }
-        li {
-            margin-left: 30px !important;
-        }
-        li.list-item-first {
-            margin-top: 0 !important;
-        }
-        li.list-item-last {
-            margin-bottom: 10px !important;
-        }
-    </style>
-    <![endif]-->
-
-    <!-- Progressive Enhancements : BEGIN -->
-    <style>
-
-        /* What it does: Hover styles for buttons */
-        .button-td,
-        .button-a {
-            transition: all 100ms ease-in;
-        }
-        .button-td-primary:hover,
-        .button-a-primary:hover {
-            background: #555555 !important;
-            border-color: #555555 !important;
-        }
-
-        /* Media Queries */
-        @media screen and (max-width: 600px) {
-
-            /* What it does: Adjust typography on small screens to improve readability */
-            .email-container p {
-                font-size: 17px !important;
-            }
-
-        }
-
-    </style>
-    <!-- Progressive Enhancements : END -->
-
-    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
-    <!--[if gte mso 9]>
-    <xml>
-        <o:OfficeDocumentSettings>
-            <o:AllowPNG/>
-            <o:PixelsPerInch>96</o:PixelsPerInch>
-        </o:OfficeDocumentSettings>
-    </xml>
-    <![endif]-->
-
 </head>
-<!--
-	The email background color (#222222) is defined in three places:
-	1. body tag: for most email clients
-	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
-	3. mso conditional: For Windows 10 Mail
--->
-<body width="100%" style="margin: 0; mso-line-height-rule: exactly; background-color: #367fa9;">
-<center style="width: 100%; background-color: #367fa9; text-align: left;">
-    <!--[if mso | IE]>
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;">
-        <tr>
-            <td>
-    <![endif]-->
+<body dir="ltr" style="height: 100%; margin: 0; line-height: 1.4; background-color: #F2F4F6; color: #74787E; -webkit-text-size-adjust: none; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%;">
+<!-- Visually Hidden Preheader Text : BEGIN -->
+<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+    Notification from IceHrm.com
+</div>
+<!-- Visually Hidden Preheader Text : END -->
+<table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%; margin: 0; padding: 0; background-color: #F2F4F6;" bgcolor="#F2F4F6">
+    <tr>
+        <td align="center" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box;">
+            <table class="email-content" width="100%" cellpadding="0" cellspacing="0" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%; margin: 0; padding: 0;">
+                <!-- Logo -->
+                <tr>
+                    <td class="email-masthead" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 25px 0; text-align: center;" align="center">
+                        <a class="email-masthead_name" href="https://icehrm.com" target="_blank" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 16px; font-weight: bold; color: #2F3133; text-decoration: none; text-shadow: 0 1px 0 white;">
 
-    <!-- Visually Hidden Preheader Text : BEGIN -->
-    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-        Notification from IceHrm.com
-    </div>
-    <!-- Visually Hidden Preheader Text : END -->
+                            <img src="#_logourl_#" class="email-logo" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; max-height: 50px;">
 
-    <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
-    <!-- Preview Text Spacing Hack : BEGIN -->
-    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-    </div>
-    <!-- Preview Text Spacing Hack : END -->
-
-    <!--
-        Set the email width. Defined in two places:
-        1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.
-        2. MSO tags for Desktop Windows Outlook enforce a 600px width.
-    -->
-    <div style="max-width: 600px; margin: 0 auto;" class="email-container">
-        <!--[if mso]>
-        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600">
-            <tr>
-                <td>
-        <![endif]-->
-
-        <!-- Email Body : BEGIN -->
-        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0 auto;">
-            <tr>
-                <td>
-                    <br/><br/>
-                </td>
-            </tr>
-            <!-- Hero Image, Flush : BEGIN -->
-            <tr>
-                <td style="background-color: #ffffff;text-align: center;">
-                    <img src="#_logourl_#" width="" height="" alt="alt_text" border="0" style="max-width: 600px; height: auto; background: #FFF; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto;" class="g-img">
-                </td>
-            </tr>
-            <!-- Hero Image, Flush : END -->
-
-            <!-- 1 Column Text + Button : BEGIN -->
-            <tr>
-                <td style="background-color: #ffffff;">
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                        <tr>
-                            <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                #_emailBody_#
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <!-- 1 Column Text + Button : END -->
-
-
-
-            <!-- 1 Column Text : BEGIN -->
-            <tr>
-                <td style="background-color: blanchedalmond;">
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                        <tr>
-                            <td style="padding: 20px; font-family: sans-serif; font-size: 13px; line-height: 20px; color: #555555;">
-                                <p style="margin: 0;">You may login to your IceHrm installation via <a href="#_url_#"><strong>#_url_#</strong>.</p>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <!-- 1 Column Text : END -->
-
-        </table>
-        <!-- Email Body : END -->
-
-        <!-- Email Footer : BEGIN -->
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px;">
-            <tr>
-                <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #FFF;">
-                    IceHrm.com<br><span class="unstyle-auto-detected-links">375, Nawala Road, Nawala, Sri Lanka<br>+44 33 0001 0210 </span>
-                </td>
-            </tr>
-        </table>
-        <!-- Email Footer : END -->
-
-        <!--[if mso]>
-        </td>
-        </tr>
-        </table>
-        <![endif]-->
-    </div>
-
-    <!-- Full Bleed Background Section : BEGIN -->
-    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #3c8dbc;">
-        <tr>
-            <td valign="top">
-                <div style="max-width: 600px; margin: auto;" class="email-container">
-                    <!--[if mso]>
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
-                        <tr>
-                            <td>
-                    <![endif]-->
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                        <tr>
-                            <td style="padding: 20px; text-align: left; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
-                                <p style="margin: 0;">You are receiving this email because your organization has added you as an employee <a href="#_url_#"><strong><font color="405A6A">#_url_#</font></strong></a>. If you are not the intended recipient please inform application admin #_adminEmail_#.</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <!--[if mso]>
+                        </a>
                     </td>
-                    </tr>
-                    </table>
-                    <![endif]-->
-                </div>
-            </td>
-        </tr>
-    </table>
-    <!-- Full Bleed Background Section : END -->
-
-    <!--[if mso | IE]>
-    </td>
+                </tr>
+                <!-- Email Body -->
+                <tr>
+                    <td class="email-body" width="100%" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%; margin: 0; padding: 0; border-top: 1px solid #EDEFF2; border-bottom: 1px solid #EDEFF2; background-color: #FFF;" bgcolor="#FFF">
+                        <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; width: 570px; margin: 0 auto; padding: 0;">
+                            <!-- Body content -->
+                            <tr>
+                                <td class="content-cell" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 35px;">
+                                    <p style="margin-top: 0; color: #74787E; font-size: 16px; line-height: 1.5em; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box;">
+                                        #_emailBody_#
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box;">
+                        <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; width: 570px; margin: 0 auto; padding: 0; text-align: center;">
+                            <tr>
+                                <td class="content-cell" style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 35px;">
+                                    <p class="sub center" style="margin-top: 0; line-height: 1.5em; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; color: #AEAEAE; font-size: 12px; text-align: center;">
+                                        You are receiving this email because your organization has added you as an employee <a href="#_url_#"><strong><font color="405A6A">#_url_#</font></strong></a>. If you are not the intended recipient please inform application admin #_adminEmail_#.
+                                    </p>
+                                    <p class="sub center" style="margin-top: 0; line-height: 1.5em; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; color: #AEAEAE; font-size: 12px; text-align: center;">
+                                        IceHrm.com<br>TP: +44 33 0001 0210 </span>
+                                    </p>
+                                    <p class="sub center" style="margin-top: 0; line-height: 1.5em; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; color: #AEAEAE; font-size: 12px; text-align: center;">
+                                        &copy; 2018 <a href="https://icehrm.com" target="_blank" style="color: #3869D4; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box;">IceHrm</a>. All rights reserved.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
     </tr>
-    </table>
-    <![endif]-->
-</center>
+</table>
 </body>
 </html>

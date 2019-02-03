@@ -10,7 +10,6 @@ if(!$crons){
 
 \Utils\LogManager::getInstance()->info(CLIENT_NAME." cron count :".count($crons));
 foreach($crons as $cron){
-    $count++;
     $iceCron = new \Classes\Cron\IceCron($cron);
     \Utils\LogManager::getInstance()->info(CLIENT_NAME." check cron :".$cron->name);
     if($iceCron->isRunNow()){

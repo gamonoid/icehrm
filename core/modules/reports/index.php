@@ -4,7 +4,6 @@ $moduleName = 'Reports';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 $additionalJs = array();
-$additionalJs[] = BASE_URL.'admin/reports/lib.js?v='.$jsVersion;
 include APP_BASE_PATH.'modulejslibs.inc.php';
 ?>
 <div class="span9">

@@ -19,7 +19,7 @@ along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------
 
 Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
-Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
+Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
 /**
@@ -1131,7 +1131,7 @@ class BaseService
         if (in_array($type, $accessMatrix)) {
             //The user has required permission, so return true
             return true;
-        } else if (!empty($this->currentUser->$userOnlyMeAccessField)){
+        } elseif (!empty($this->currentUser->$userOnlyMeAccessField)) {
             //Now we need to check whther the user has access to his own records
             if ($this->isEmployeeSwitched()) {
                 $accessMatrix = $object->getUserOnlyMeSwitchedAccess();
@@ -1632,7 +1632,8 @@ END;
      * @return string
      * @throws \Exception
      */
-    public function safeJsonEncode($value, $options = 0, $depth = 512){
+    public function safeJsonEncode($value, $options = 0, $depth = 512)
+    {
         $encoded = json_encode($value, $options, $depth);
         switch (json_last_error()) {
             case JSON_ERROR_NONE:
@@ -1653,22 +1654,24 @@ END;
         }
     }
 
-    protected function utf8ize($mixed) {
+    protected function utf8ize($mixed)
+    {
         if (is_array($mixed)) {
             foreach ($mixed as $key => $value) {
                 $mixed[$key] = $this->utf8ize($value);
             }
-        } else if (is_object($mixed)) {
+        } elseif (is_object($mixed)) {
             foreach ($mixed as $key => $value) {
                 $mixed->$key = $this->utf8ize($value);
             }
-        } else if (is_string ($mixed)) {
+        } elseif (is_string($mixed)) {
             return utf8_encode($mixed);
         }
         return $mixed;
     }
 
-    public function generateCsrf($formId) {
+    public function generateCsrf($formId)
+    {
         $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL. $this->currentUser->id);
         SessionUtils::saveSessionObject('csrf-'.$formId, $csrfToken);
         return $csrfToken;

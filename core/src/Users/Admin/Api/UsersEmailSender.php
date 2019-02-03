@@ -18,7 +18,7 @@ class UsersEmailSender
         $this->subActionManager = $subActionManager;
     }
 
-    public function sendWelcomeUserEmail(User $user, string $password, $employee = null)
+    public function sendWelcomeUserEmail(User $user, $password, $employee = null)
     {
 
         $params = array();
@@ -47,7 +47,7 @@ class UsersEmailSender
         } else {
             LogManager::getInstance()->info("[sendWelcomeUserEmail] email is empty");
         }
-        
+
         return false;
     }
 }

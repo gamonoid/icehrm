@@ -21,22 +21,22 @@ msgid "Done"
 msgstr "Gotowe"
 
 msgid "Clocked In Employees"
-msgstr "Taktowany u pracowników"
+msgstr "Zegar w pracownikach"
 
 msgid "Candidates"
 msgstr "Kandydaci"
 
 msgid "View Employees"
-msgstr "Zobacz Pracownicy"
+msgstr "Zobacz pracowników"
 
 msgid "Add a New Employee"
-msgstr "Dodaj nowy pracownik"
+msgstr "Dodaj nowego pracownika"
 
 msgid "Leave Calendar"
-msgstr "Zostaw kalendarz"
+msgstr "Opuść kalendarz"
 
 msgid "Manage Client/Projects"
-msgstr "Zarządzanie klienta / projektów"
+msgstr "Zarządzaj klientem / projektami"
 
 msgid "Home"
 msgstr "Dom"
@@ -54,7 +54,7 @@ msgid "Sign out"
 msgstr "Wyloguj się"
 
 msgid "Help"
-msgstr "Pomoc"
+msgstr "Wsparcie"
 
 msgid "About"
 msgstr "O"
@@ -78,58 +78,58 @@ msgid "Company Structure"
 msgstr "Struktura firmy"
 
 msgid "Job Details Setup"
-msgstr "Praca Szczegóły konfiguracji"
+msgstr "Konfiguracja szczegółów zadania"
 
 msgid "Qualifications Setup"
-msgstr "Kwalifikacje Konfiguracja"
+msgstr "Konfiguracja kwalifikacji"
 
 msgid "Training Setup"
-msgstr "Ustawienia treningowe"
+msgstr "Konfiguracja treningu"
 
 msgid "Projects/Client Setup"
 msgstr "Projekty / Konfiguracja klienta"
 
 msgid "Leave Settings"
-msgstr "Zostaw Ustawienia"
+msgstr "Opuść ustawienia"
 
 msgid "Company Loans"
-msgstr "Spółka Pożyczki"
+msgstr "Pożyczki dla firm"
 
 msgid "Audit Log"
-msgstr "Audit Log"
+msgstr "Dziennik kontroli"
 
 msgid "Employees"
 msgstr "Pracowników"
 
 msgid "Employee History"
-msgstr "Historia urzędnik"
+msgstr "Historia pracownika"
 
 msgid "Document Management"
 msgstr "Zarządzanie dokumentami"
 
 msgid "Travel Administration"
-msgstr "Administracja Travel"
+msgstr "Administracja podróży"
 
 msgid "Expense Administration"
-msgstr "Koszty Administracja"
+msgstr "Administracja kosztami"
 
 msgid "Monitor Attendance"
-msgstr "Monitorować frekwencję"
+msgstr "Monitoruj obecność"
 
 msgid "Performance Charts"
 msgstr "Wykresy wydajności"
 
 msgid "Overtime Administration"
-msgstr "Nadgodziny Administracja"
+msgstr "Praca w godzinach nadliczbowych"
 
 msgid "Admin Reports"
-msgstr "Raporty Admin"
+msgstr "Raporty administratora"
 
 msgid "Reports"
 msgstr "Raporty"
 
 msgid "Report Files"
-msgstr "Pliki Zgłoś"
+msgstr "Zgłoś pliki"
 
 msgid "System"
 msgstr "System"
@@ -150,7 +150,7 @@ msgid "Upgrade"
 msgstr "Aktualizacja"
 
 msgid "Manage Metadata"
-msgstr "Zarządzanie metadanymi"
+msgstr "Zarządzaj metadanymi"
 
 msgid "Field Names Setup"
 msgstr "Konfiguracja nazw pól"
@@ -168,10 +168,10 @@ msgid "Recruitment"
 msgstr "Rekrutacja"
 
 msgid "Recruitment Setup"
-msgstr "Rekrutacja Ustawienia"
+msgstr "Konfiguracja rekrutacji"
 
 msgid "Job Positions"
-msgstr "Stanowisk pracy"
+msgstr "Stanowiska pracy"
 
 msgid "Personal Information"
 msgstr "Informacje osobiste"
@@ -186,13 +186,13 @@ msgid "Dependents"
 msgstr "Ludzie"
 
 msgid "Emergency Contacts"
-msgstr "Awaryjne Kontakt"
+msgstr "Kontakt w razie wypadku"
 
 msgid "Leave"
 msgstr "Opuszczać"
 
 msgid "Leave Management"
-msgstr "Zostaw Zarządzanie"
+msgstr "Opuść zarządzanie"
 
 msgid "Time Management"
 msgstr "Zarządzanie czasem"
@@ -207,10 +207,10 @@ msgid "Time Sheets"
 msgstr "Arkusze czasu"
 
 msgid "Attendance Sheets"
-msgstr "Arkusze Obecność"
+msgstr "Arkusze obecności"
 
 msgid "Overtime Requests"
-msgstr "Wnioski nadliczbowe"
+msgstr "Wnioski o nadgodziny"
 
 msgid "Documents"
 msgstr "Dokumenty"
@@ -222,13 +222,13 @@ msgid "Company"
 msgstr "Firma"
 
 msgid "Staff Directory"
-msgstr "Pracownicy serwisu"
+msgstr "Katalog pracowników"
 
 msgid "Training"
 msgstr "Trening"
 
 msgid "Travel Management"
-msgstr "Travel Management"
+msgstr "Zarządzanie podróżą"
 
 msgid "Travel"
 msgstr "Podróżować"
@@ -243,7 +243,7 @@ msgid "Loans"
 msgstr "Pożyczki"
 
 msgid "User Reports"
-msgstr "Raporty użytkowników"
+msgstr "Raporty użytkownika"
 
 msgid "People"
 msgstr "Ludzie"
@@ -252,28 +252,28 @@ msgid "Manage"
 msgstr "Zarządzanie"
 
 msgid "Departments"
-msgstr "Wydziały"
+msgstr "Departamenty"
 
 msgid "Active Projects"
-msgstr "Projekty aktywne"
+msgstr "Aktywne projekty"
 
 msgid "Update Clients/Projects"
-msgstr "Aktualizuj Klienci / Projekty"
+msgstr "Zaktualizuj klientów / projekty"
 
 msgid "Entries Last Week"
-msgstr "Wpisy Ostatni tydzień"
+msgstr "Wpisy z ostatniego tygodnia"
 
 msgid "Upcoming"
 msgstr "Nadchodzące"
 
 msgid "View / Download Reports"
-msgstr "Obejrzyj / ściągnij Raporty"
+msgstr "Wyświetl / pobierz raporty"
 
 msgid "Generate a Report"
-msgstr "Wygenerować raport"
+msgstr "Wygeneruj raport"
 
 msgid "Configure"
-msgstr "Konfigurowanie"
+msgstr "Skonfiguruj"
 
 msgid "Update"
 msgstr "Aktualizacja"
@@ -282,16 +282,16 @@ msgid "Applicants"
 msgstr "Wnioskodawcy"
 
 msgid "Active Jobs"
-msgstr "Zadania aktywne"
+msgstr "Aktywne zadania"
 
 msgid "Jobs Posted"
-msgstr "Zlecenia"
+msgstr "Jobs wysłany"
 
 msgid "Jobs"
 msgstr "Oferty pracy"
 
 msgid "Courses"
-msgstr "Pola"
+msgstr "Kursy"
 
 msgid "Requests"
 msgstr "Upraszanie"
@@ -312,7 +312,7 @@ msgid "Permissions"
 msgstr "Uprawnienia"
 
 msgid "and"
-msgstr "I"
+msgstr "i"
 
 msgid "Invoices"
 msgstr "Faktury"
@@ -321,10 +321,10 @@ msgid "Make a Payment"
 msgstr "Dokonać płatności"
 
 msgid "Switch Employee"
-msgstr "Przełącznik urzędnik"
+msgstr "Zmień pracownika"
 
 msgid "Select The Employee to Switch Into"
-msgstr "Wybierz pracownika Aby przejść do"
+msgstr "Wybierz pracownika, aby się przełączyć"
 
 msgid "Close"
 msgstr "Blisko"
@@ -336,37 +336,37 @@ msgid "Edit Details"
 msgstr "Edytuj szczegóły"
 
 msgid "View/Edit Profile"
-msgstr "Wyświetl / Edytuj profil"
+msgstr "Wyświetl / edytuj profil"
 
 msgid "Punch In"
 msgstr "Uderzyć w"
 
 msgid "or"
-msgstr "Lub"
+msgstr "lub"
 
 msgid "Punch Out"
 msgstr "Punch Out"
 
 msgid "Record Attendance"
-msgstr "Rekord frekwencji"
+msgstr "Record Attendance"
 
 msgid "Pending Leaves"
-msgstr "Oczekujące Liście"
+msgstr "W oczekiwaniu na liście"
 
 msgid "Check Leave Status"
-msgstr "Sprawdź status Leave"
+msgstr "Sprawdź Pozostaw status"
 
 msgid "Hours worked Last Week"
-msgstr "Przepracowane godziny Ostatni tydzień"
+msgstr "Godziny przepracowane w zeszłym tygodniu"
 
 msgid "Update Time Sheet"
-msgstr "Czas aktualizacji Sheet"
+msgstr "Zaktualizuj arkusz czasu"
 
 msgid "My Projects"
 msgstr "Moje projekty"
 
 msgid "Projects Assigned"
-msgstr "Projekty przeznaczone na określony cel"
+msgstr "Projekty przydzielone"
 
 msgid "More info"
 msgstr "Więcej informacji"
@@ -375,13 +375,13 @@ msgid "Store"
 msgstr "Sklep"
 
 msgid "My Travel"
-msgstr "Moje podróże"
+msgstr "Moja podróż"
 
 msgid "My Expenses"
-msgstr "Moi Wydatki"
+msgstr "Moje wydatki"
 
 msgid "Manage Expenses"
-msgstr "Zarządzania kosztów"
+msgstr "Zarządzaj wydatkami"
 
 msgid "ID"
 msgstr "ID"
@@ -402,19 +402,19 @@ msgid "Time Zone"
 msgstr "Strefa czasowa"
 
 msgid "Parent Structure"
-msgstr "Struktury macierzystej"
+msgstr "Struktura rodzicielska"
 
 msgid "Details"
 msgstr "Detale"
 
 msgid "Heads"
-msgstr "Głowice"
+msgstr "Głowy"
 
 msgid "Code"
 msgstr "Kod"
 
 msgid "Job Title Code"
-msgstr "Stanowisko Code"
+msgstr "Kod tytułu pracy"
 
 msgid "Job Title"
 msgstr "Stanowisko"
@@ -429,16 +429,16 @@ msgid "Currency"
 msgstr "Waluta"
 
 msgid "Min Salary"
-msgstr "Min Wynagrodzenie"
+msgstr "Min. Wynagrodzenie"
 
 msgid "Max Salary"
-msgstr "Maksymalne wynagrodzenie"
+msgstr "Max Salary"
 
 msgid "Pay Grade Name"
-msgstr "Płatna gatunku Nazwa"
+msgstr "Imię i nazwisko płatnika"
 
 msgid "Employment Status"
-msgstr "Status zatrudnienia"
+msgstr "status zatrudnienia"
 
 msgid "Coordinator"
 msgstr "Koordynator"
@@ -447,7 +447,7 @@ msgid "Trainer"
 msgstr "Trener"
 
 msgid "Trainer Details"
-msgstr "Trener Szczegóły"
+msgstr "Szczegóły trenera"
 
 msgid "Payment Type"
 msgstr "Typ płatności"
@@ -459,28 +459,28 @@ msgid "Status"
 msgstr "Status"
 
 msgid "Course"
-msgstr "Kurs"
+msgstr "Kierunek"
 
 msgid "Scheduled Time"
 msgstr "Zaplanowany czas"
 
 msgid "Assignment Due Date"
-msgstr "Przypisanie odejdą"
+msgstr "Data wykonania zadania"
 
 msgid "Delivery Method"
 msgstr "Sposób dostawy"
 
 msgid "Delivery Location"
-msgstr "Dostawa Lokalizacja"
+msgstr "Lokalizacja dostawy"
 
 msgid "Attendance Type"
-msgstr "Obecność Rodzaj"
+msgstr "Typ obecności"
 
 msgid "Attachment"
 msgstr "Załącznik"
 
 msgid "Training Certificate Required"
-msgstr "Szkolenie Świadectwo wymagane"
+msgstr "Wymagany certyfikat szkolenia"
 
 msgid "Employee"
 msgstr "Pracownik"
@@ -492,13 +492,13 @@ msgid "Contact Number"
 msgstr "Numer kontaktowy"
 
 msgid "Contact Email"
-msgstr "Kontakt e-mail"
+msgstr "Kontaktowy adres e-mail"
 
 msgid "Company Url"
-msgstr "Firma Url"
+msgstr "Adres firmy"
 
 msgid "First Contact Date"
-msgstr "First Contact Data"
+msgstr "Data pierwszego kontaktu"
 
 msgid "Client"
 msgstr "Klient"
@@ -507,58 +507,58 @@ msgid "Project"
 msgstr "Projekt"
 
 msgid "Leave Name"
-msgstr "Zostaw Nazwa"
+msgstr "Opuść imię"
 
 msgid "Leave Accrue Enabled"
-msgstr "Zostaw Accrue Włączone"
+msgstr "Pozostaw włączone Accrue"
 
 msgid "Leave Carried Forward"
-msgstr "Zostaw przeniesione"
+msgstr "Pozostaw przeniesione do przodu"
 
 msgid "Leaves Per Year"
-msgstr "Pozostawia za rok"
+msgstr "Liście na rok"
 
 msgid "Leaves Group"
-msgstr "Liście Grupa"
+msgstr "Leaves Group"
 
 msgid "Leaves Per Leave Period"
-msgstr "Pozostawia za Leave Okres"
+msgstr "Liście na okres urlopu"
 
 msgid "Admin can assign leave to employees"
-msgstr "Administrator może przydzielić pracownikom urlopu"
+msgstr "Administrator może przypisać urlop pracownikom"
 
 msgid "Employees can apply for this leave type"
-msgstr "Pracownicy mogą ubiegać się o tego rodzaju urlopu"
+msgstr "Pracownicy mogą ubiegać się o ten rodzaj urlopu"
 
 msgid "Employees can apply beyond the current leave balance"
-msgstr "Pracownicy mogą ubiegać się poza aktualnego salda urlopu"
+msgstr "Pracownicy mogą składać wnioski poza bieżącym saldem urlopowym"
 
 msgid "Percentage of Leaves Carried Forward"
-msgstr "Odsetek Liście przeniesione"
+msgstr "Procent liści przeniesionych do przodu"
 
 msgid "Maximum Carried Forward Amount"
-msgstr "Maksymalna kwota przeniesiona"
+msgstr "Maksymalna kwota przeniesienia"
 
 msgid "Carried Forward Leave Availability Period"
-msgstr "Przeniesionych Leave Okres Dostępności"
+msgstr "Przenieś do przodu Opuść okres dostępności"
 
 msgid "Proportionate leaves on Joined Date"
-msgstr "Proporcjonalnych pozostawia Data przyłączenia"
+msgstr "Proporcjonalne liście w dniu połączenia"
 
 msgid "Send Notification Emails"
-msgstr "Wyślij powiadomienia e-mail"
+msgstr "Wyślij wiadomości e-mail z powiadomieniem"
 
 msgid "Leave Group"
 msgstr "Opuścić grupę"
 
 msgid "Leave Color"
-msgstr "Zostaw Kolor"
+msgstr "Pozostaw kolor"
 
 msgid "Period Start"
-msgstr "Okres Początek"
+msgstr "Początek okresu"
 
 msgid "Period End"
-msgstr "Termin zakończenia"
+msgstr "Koniec okresu"
 
 msgid "Day"
 msgstr "Dzień"
@@ -570,19 +570,19 @@ msgid "Date"
 msgstr "Data"
 
 msgid "Leave Type"
-msgstr "Rodzaj urlopu"
+msgstr "Pozostaw typ"
 
 msgid "Propotionate leaves on Joined Date"
-msgstr "Propotionate pozostawia na Data przyłączenia"
+msgstr "Propotionate leaves on Joined Date"
 
 msgid "Leaves Period"
-msgstr "Pozostawia Period"
+msgstr "Okres liści"
 
 msgid "Leave Amount"
-msgstr "Zostaw Amount"
+msgstr "Opuść kwotę"
 
 msgid "Leave Period"
-msgstr "Zostaw Period"
+msgstr "Opuść okres"
 
 msgid "Note"
 msgstr "Uwaga"
@@ -591,13 +591,13 @@ msgid "All Employees"
 msgstr "Wszyscy pracownicy"
 
 msgid "All Leave Types"
-msgstr "Wszystko Zostaw Rodzaje"
+msgstr "Wszystkie typy urlopu"
 
 msgid "Loan Type"
-msgstr "Kredyt Rodzaj"
+msgstr "Rodzaj pożyczki"
 
 msgid "Loan Start Date"
-msgstr "Kredyt Data rozpoczęcia"
+msgstr "Data rozpoczęcia pożyczki"
 
 msgid "Loan Period (Months)"
 msgstr "Okres kredytowania (miesiące)"
@@ -606,19 +606,19 @@ msgid "Amount"
 msgstr "Ilość"
 
 msgid "Last Installment Date"
-msgstr "Data ostatniej raty"
+msgstr "Data ostatniej naprawy"
 
 msgid "Loan Amount"
 msgstr "Kwota kredytu"
 
 msgid "Monthly Installment"
-msgstr "Miesięcznej raty"
+msgstr "Miesięczna rata"
 
 msgid "Employee Number"
 msgstr "Numer pracownika"
 
 msgid "First Name"
-msgstr "Pierwsze imię"
+msgstr "Imię"
 
 msgid "Middle Name"
 msgstr "Drugie imię"
@@ -639,7 +639,7 @@ msgid "Marital Status"
 msgstr "Stan cywilny"
 
 msgid "Ethnicity"
-msgstr "Pochodzenie"
+msgstr "Etniczność"
 
 msgid "Immigration Status"
 msgstr "Status imigranta"
@@ -651,22 +651,22 @@ msgid "NIC"
 msgstr "NIC"
 
 msgid "Other ID"
-msgstr "Inne ID"
+msgstr "Inny identyfikator"
 
 msgid "Driving License No"
-msgstr "Brak prawa jazdy"
+msgstr "Prawo jazdy nr"
 
 msgid "Pay Grade"
-msgstr "Płatna klasa"
+msgstr "Zapłać klasę"
 
 msgid "Work Station Id"
-msgstr "Work Station Id"
+msgstr "Identyfikator stanowiska pracy"
 
 msgid "Address Line 1"
-msgstr "Adres wiersz 1"
+msgstr "Wiersz adresu 1"
 
 msgid "Address Line 2"
-msgstr "Adres wiersz 2"
+msgstr "Wiersz adresu 2"
 
 msgid "City"
 msgstr "Miasto"
@@ -675,7 +675,7 @@ msgid "Province"
 msgstr "Województwo"
 
 msgid "Postal/Zip Code"
-msgstr "Pocztowy / Kod pocztowy"
+msgstr "Kod pocztowy / pocztowy"
 
 msgid "Home Phone"
 msgstr "Telefon domowy"
@@ -687,16 +687,16 @@ msgid "Work Phone"
 msgstr "Telefon służbowy"
 
 msgid "Work Email"
-msgstr "Pracuj email"
+msgstr "Poczta robocza"
 
 msgid "Private Email"
-msgstr "Prywatna email"
+msgstr "Prywatny e-mail"
 
 msgid "Joined Date"
-msgstr "Data przyłączenia"
+msgstr "Data dołączenia"
 
 msgid "Confirmation Date"
-msgstr "Potwierdzenie Data"
+msgstr "Data potwierdzenia"
 
 msgid "Termination Date"
 msgstr "Data zakończenia"
@@ -708,16 +708,16 @@ msgid "Supervisor"
 msgstr "Kierownik"
 
 msgid "Indirect Supervisors"
-msgstr "Pośrednie nadzorujące"
+msgstr "Pośredni nadzorcy"
 
 msgid "First Level Approver"
-msgstr "Pierwszy poziom zatwierdzająca"
+msgstr "Pierwszy poziom zatwierdzający"
 
 msgid "Second Level Approver"
-msgstr "Drugi poziom zatwierdzająca"
+msgstr "Drugi poziom zatwierdzający"
 
 msgid "Third Level Approver"
-msgstr "Trzeci poziom zatwierdzająca"
+msgstr "Zatwierdzony na trzecim poziomie"
 
 msgid "Notes"
 msgstr "Uwagi"
@@ -732,7 +732,7 @@ msgid "IP Address"
 msgstr "Adres IP"
 
 msgid "Logged In Employee"
-msgstr "Zalogowani Pracownika"
+msgstr "Zalogowany pracownik"
 
 msgid "Skill"
 msgstr "Umiejętność"
@@ -753,7 +753,7 @@ msgid "Certification"
 msgstr "Orzecznictwo"
 
 msgid "Granted On"
-msgstr "Udzielonych na"
+msgstr "Przyznane"
 
 msgid "Valid Thru"
 msgstr "Ważny do"
@@ -765,7 +765,7 @@ msgid "Reading"
 msgstr "Czytanie"
 
 msgid "Speaking"
-msgstr "Mówiąc"
+msgstr "Mówienie"
 
 msgid "Writing"
 msgstr "Pisanie"
@@ -786,19 +786,19 @@ msgid "Id Number"
 msgstr "Numer identyfikacyjny"
 
 msgid "All Job Titles"
-msgstr "Wszystkie Tytuły pracy"
+msgstr "Wszystkie tytuły prac"
 
 msgid "All Departments"
-msgstr "Wszystkie działy"
+msgstr "Wszystkie departamenty"
 
 msgid "Anyone"
-msgstr "Ktokolwiek"
+msgstr "Ktoś"
 
 msgid "Field"
 msgstr "Pole"
 
 msgid "Old Value"
-msgstr "Stary Wartość"
+msgstr "Stara wartość"
 
 msgid "New Value"
 msgstr "Nowa wartość"
@@ -810,16 +810,16 @@ msgid "Created"
 msgstr "Stworzony"
 
 msgid "Notify Expiry"
-msgstr "Informuj Wygaśnięcie"
+msgstr "Powiadom o wygaśnięciu"
 
 msgid "Notify Expiry Before One Month"
-msgstr "Informuj Wygaśnięcie Przed jednego miesiąca"
+msgstr "Powiadom o wygaśnięciu przed upływem miesiąca"
 
 msgid "Notify Expiry Before One Week"
-msgstr "Informuj Wygaśnięcie Przed One Week"
+msgstr "Powiadom o wygaśnięciu przed jednym tygodniem"
 
 msgid "Notify Expiry Before One Day"
-msgstr "Informuj Wygaśnięcie Przed One Day"
+msgstr "Powiadom o wygaśnięciu przed jednym dniem"
 
 msgid "Travel Type"
 msgstr "Rodzaj podróży"
@@ -828,10 +828,10 @@ msgid "Purpose of Travel"
 msgstr "Cel podróży"
 
 msgid "Travel From"
-msgstr "Podróż z"
+msgstr "Podróżuj z"
 
 msgid "Travel To"
-msgstr "Podróżować do"
+msgstr "Podróż do"
 
 msgid "Travel Date"
 msgstr "Data podróży"
@@ -840,22 +840,22 @@ msgid "Return Date"
 msgstr "Data powrotu"
 
 msgid "Total Funding Proposed"
-msgstr "Razem finansowania zaproponowanych"
+msgstr "Całkowite finansowanie proponowane"
 
 msgid "Itinerary / Cab Receipt"
-msgstr "Trasa / Kabina Otrzymanie"
+msgstr "Itinerary / Cab Receipt"
 
 msgid "Other Attachment 1"
-msgstr "Inne Załącznik 1"
+msgstr "Inne załączniki 1"
 
 msgid "Other Attachment 2"
-msgstr "Inne Załącznik 2"
+msgstr "Inne załączniki 2"
 
 msgid "Payment Method"
 msgstr "Metoda płatności"
 
 msgid "Transaction / Ref No"
-msgstr "Transakcja / nr ref"
+msgstr "Transakcja / Nr ref"
 
 msgid "Payee"
 msgstr "Odbiorca płatności"
@@ -873,7 +873,7 @@ msgid "Time-Out"
 msgstr "Koniec czasu"
 
 msgid "Clocked In Status"
-msgstr "Taktowany w stanie"
+msgstr "Status zegara"
 
 msgid "End Date"
 msgstr "Data końcowa"
@@ -888,22 +888,22 @@ msgid "End Time"
 msgstr "Koniec czasu"
 
 msgid "Leave Status"
-msgstr "Zostaw status"
+msgstr "Opuść status"
 
 msgid "Select Client"
-msgstr "Wybierz Client"
+msgstr "Wybierz klienta"
 
 msgid "Not Selected"
 msgstr "Nie zaznaczone"
 
 msgid "Or Project"
-msgstr "Lub projektu"
+msgstr "Lub Project"
 
 msgid "All Projects"
 msgstr "Wszystkie projekty"
 
 msgid "All Status"
-msgstr "Wszystko status"
+msgstr "Cały status"
 
 msgid "Value"
 msgstr "Wartość"
@@ -915,7 +915,7 @@ msgid "User Name"
 msgstr "Nazwa Użytkownika"
 
 msgid "Authentication Email"
-msgstr "Uwierzytelnianie poczty"
+msgstr "E-mail autoryzacyjny"
 
 msgid "User Level"
 msgstr "Poziom użytkownika"
@@ -924,13 +924,13 @@ msgid "Email"
 msgstr "E-mail"
 
 msgid "User Roles"
-msgstr "Role użytkowników"
+msgstr "role użytkowników"
 
 msgid "Default Module"
-msgstr "Moduł Domyślnie"
+msgstr "Domyślny moduł"
 
 msgid "No Default Module"
-msgstr "Nie Moduł Domyślnie"
+msgstr "Brak modułu domyślnego"
 
 msgid "Menu"
 msgstr "Menu"
@@ -957,31 +957,31 @@ msgid "All Modules"
 msgstr "Wszystkie moduły"
 
 msgid "Invoice Period Start"
-msgstr "Faktura Okres Początek"
+msgstr "Rozpoczęcie okresu faktury"
 
 msgid "Invoice Period End"
-msgstr "Faktura koniec okresu"
+msgstr "Koniec okresu fakturowania"
 
 msgid "Due date"
-msgstr "Termin"
+msgstr "Termin płatności"
 
 msgid "Url"
-msgstr "Strona WWW"
+msgstr "Url"
 
 msgid "Original Text"
 msgstr "Oryginalny tekst"
 
 msgid "Mapped Text"
-msgstr "Tekst odwzorowany"
+msgstr "Zmapowany tekst"
 
 msgid "Display Status"
-msgstr "Wyświetlacz statusu"
+msgstr "Wyświetl status"
 
 msgid "Field Type"
 msgstr "Typ pola"
 
 msgid "Field Label"
-msgstr "Pole Label"
+msgstr "Etykieta pola"
 
 msgid "Validation"
 msgstr "Uprawomocnienie"
@@ -993,28 +993,28 @@ msgid "Priority"
 msgstr "Priorytet"
 
 msgid "Display Section"
-msgstr "Sekcja wyświetlacza"
+msgstr "Wyświetl sekcję"
 
 msgid "Salary Component Type"
-msgstr "Wynagrodzenie Składnik Typ"
+msgstr "Typ składnika wynagrodzenia"
 
 msgid "Salary Component"
-msgstr "Wynagrodzenie Komponent"
+msgstr "Wynagrodzenie"
 
 msgid "Pay Frequency"
-msgstr "Częstotliwość płatna"
+msgstr "Frekwencja płacenia"
 
 msgid "Calculation Group"
-msgstr "Obliczanie Grupa"
+msgstr "Grupa obliczeniowa"
 
 msgid "None"
 msgstr "Żaden"
 
 msgid "Calculation Exemptions"
-msgstr "Zwolnienia obliczeniowe"
+msgstr "Wyjątki obliczeniowe"
 
 msgid "Calculations Assigned"
-msgstr "Obliczenia Przypisany"
+msgstr "Obliczenia przypisane"
 
 msgid "Date Start"
 msgstr "Data rozpoczęcia"
@@ -1023,10 +1023,10 @@ msgid "Date End"
 msgstr "Data zakończenia"
 
 msgid "Payslip Template"
-msgstr "Szablon payslip"
+msgstr "Szablon płacy"
 
 msgid "Payroll Columns"
-msgstr "Payroll Kolumny"
+msgstr "Kolumny płac"
 
 msgid "Calculation Method"
 msgstr "Metoda obliczeniowa"
@@ -1038,19 +1038,19 @@ msgid "Enabled"
 msgstr "Włączone"
 
 msgid "Predefined Calculations"
-msgstr "Obliczenia predefiniowane"
+msgstr "Predefiniowane obliczenia"
 
 msgid "Salary Components"
-msgstr "Składników wynagrodzenia"
+msgstr "Składniki wynagrodzeń"
 
 msgid "Columns to Add"
-msgstr "Kolumny do Dodaj"
+msgstr "Kolumny do dodania"
 
 msgid "Columns to Subtract"
-msgstr "Kolumny odjąć"
+msgstr "Kolumny do odejmowania"
 
 msgid "Column Order"
-msgstr "Kolumna Zamówienie"
+msgstr "Zamówienie w kolumnie"
 
 msgid "Default Value"
 msgstr "Domyślna wartość"
@@ -1062,28 +1062,28 @@ msgid "Function"
 msgstr "Funkcjonować"
 
 msgid "Payroll Report Column"
-msgstr "Płace Zgłoś Kolumna"
+msgstr "Kolumna raportu płacowego"
 
 msgid "Calculation Process"
-msgstr "Obliczenia procesowe"
+msgstr "Proces naliczania"
 
 msgid "Payslip Fields"
 msgstr "Payslip Fields"
 
 msgid "Payroll Column"
-msgstr "Płace Kolumna"
+msgstr "Kolumna płac"
 
 msgid "Text"
 msgstr "Tekst"
 
 msgid "Lower Limit Condition"
-msgstr "Dolna granica Warunek"
+msgstr "Warunek dolnego limitu"
 
 msgid "Lower Limit"
 msgstr "Dolna granica"
 
 msgid "Upper Limit Condition"
-msgstr "Górna granica Warunek"
+msgstr "Warunek górnego limitu"
 
 msgid "Upper Limit"
 msgstr "Górna granica"
@@ -1092,10 +1092,10 @@ msgid "Column"
 msgstr "Kolumna"
 
 msgid "Job Code"
-msgstr "Kodeks pracy"
+msgstr "Kod pracy"
 
 msgid "Short Description"
-msgstr "Krótki opis"
+msgstr "krótki opis"
 
 msgid "Requirements"
 msgstr "Wymagania"
@@ -1107,31 +1107,31 @@ msgid "Employment Type"
 msgstr "Rodzaj zatrudnienia"
 
 msgid "Any Employment Type"
-msgstr "Wszelkie Rodzaj zatrudnienia"
+msgstr "Dowolny rodzaj zatrudnienia"
 
 msgid "Experience Level"
 msgstr "Poziom doświadczenia"
 
 msgid "Any Experience Level"
-msgstr "Każdy poziom doświadczenia"
+msgstr "Dowolny poziom doświadczenia"
 
 msgid "Job Function"
 msgstr "Stanowisko"
 
 msgid "Any Job Function"
-msgstr "Wszelkie Stanowisko"
+msgstr "Dowolna funkcja zadania"
 
 msgid "Education Level"
-msgstr "Poziom edukacji"
+msgstr "poziom edukacji"
 
 msgid "Any Education Level"
-msgstr "Wszelkie Wykształcenie Poziom"
+msgstr "Dowolny poziom wykształcenia"
 
 msgid "Show Salary"
-msgstr "Pokaż Wynagrodzenie"
+msgstr "Pokaż wynagrodzenie"
 
 msgid "Salary Min"
-msgstr "Wynagrodzenie minimalne"
+msgstr "Wynagrodzenie Min"
 
 msgid "Salary Max"
 msgstr "Wynagrodzenie Max"
@@ -1146,25 +1146,25 @@ msgid "Image"
 msgstr "Obraz"
 
 msgid "Display Type"
-msgstr "Rodzaj wyświetlacza"
+msgstr "Typ wyświetlania"
 
 msgid "Profile Image"
-msgstr "Zobacz profil"
+msgstr "Zdjęcie profilowe"
 
 msgid "Telephone"
 msgstr "Telefon"
 
 msgid "Resume Title"
-msgstr "Wznowienie Tytuł"
+msgstr "Wznów tytuł"
 
 msgid "Resume"
 msgstr "Wznawianie"
 
 msgid "Resume Headline"
-msgstr "Wznowienie Motto"
+msgstr "Wznów nagłówek"
 
 msgid "Profile Summary"
-msgstr "Podsumowanie profilu"
+msgstr "podsumowanie profilu"
 
 msgid "Work History"
 msgstr "Historia pracy"
@@ -1182,16 +1182,16 @@ msgid "From Year"
 msgstr "Od roku"
 
 msgid "From Month"
-msgstr "Z miesiąca"
+msgstr "Od miesiąca"
 
 msgid "To Year"
-msgstr "Na rok"
+msgstr "Do roku"
 
 msgid "To Month"
-msgstr "Na miesiąc"
+msgstr "Do miesiąca"
 
 msgid "Currently Work Here"
-msgstr "Obecnie praca tutaj"
+msgstr "Obecnie pracuj tutaj"
 
 msgid "Degree/Diploma"
 msgstr "Stopień / Dyplom"
@@ -1203,13 +1203,13 @@ msgid "Skill Level"
 msgstr "Poziom umiejętności"
 
 msgid "Last Used Year"
-msgstr "Ostatnio używany Rok"
+msgstr "Ostatni używany rok"
 
 msgid "Last Used Month"
-msgstr "Ostatnio używany Miesiąc"
+msgstr "Ostatni używany miesiąc"
 
 msgid "Years of Experience"
-msgstr "Lata doświadczenia"
+msgstr "lata doświadczenia"
 
 msgid "Designation"
 msgstr "Przeznaczenie"
@@ -1224,34 +1224,34 @@ msgid "Candidate"
 msgstr "Kandydat"
 
 msgid "Referred By"
-msgstr "Zaproszony przez"
+msgstr "Polecony przez"
 
 msgid "Leave Start Date"
-msgstr "Zostaw Data rozpoczęcia"
+msgstr "Pozostaw datę początkową"
 
 msgid "Leave End Date"
-msgstr "Zostaw Data zakończenia"
+msgstr "Pozostaw datę zakończenia"
 
 msgid "Reason"
 msgstr "Powód"
 
 msgid "Available Leaves"
-msgstr "Dostępne Liście"
+msgstr "Dostępne liście"
 
 msgid "Approved Leaves"
-msgstr "Zatwierdzone Liście"
+msgstr "Zatwierdzone liście"
 
 msgid "Rejected Leaves"
-msgstr "Odrzucony Liście"
+msgstr "Odrzucone Liście"
 
 msgid "Leaves to be Accrued"
-msgstr "Pozostawia się Naliczone"
+msgstr "Liście do naliczenia"
 
 msgid "Leaves Carried Forward"
-msgstr "Liście przeniesione"
+msgstr "Liście przeniesione do przodu"
 
 msgid "Apply Leave"
-msgstr "Zastosuj Leave"
+msgstr "Zastosuj Opuść"
 
 msgid "Filter"
 msgstr "Filtr"
@@ -1272,7 +1272,7 @@ msgid "To"
 msgstr "Do"
 
 msgid "Created (GMT)"
-msgstr "Utworzony (GMT)"
+msgstr "Utworzono (GMT)"
 
 msgid "Download"
 msgstr "Pobieranie"
@@ -1293,13 +1293,13 @@ msgid "Reset"
 msgstr "Nastawić"
 
 msgid "Add Time Entry"
-msgstr "Dodaj czas na wejście"
+msgstr "Dodaj wpis czasowy"
 
 msgid "Current Clocked In Status"
-msgstr "Aktualny Clocked w stanie"
+msgstr "Aktualny status zegara"
 
 msgid "Attendance entry should be within a single day"
-msgstr "Wpis obecności powinna być w ciągu jednego dnia"
+msgstr "Zgłoszenie uczestnictwa powinno się odbyć w ciągu jednego dnia"
 
 msgid "Account Balance"
 msgstr "Bilans konta"
@@ -1314,28 +1314,28 @@ msgid "Applications"
 msgstr "Aplikacje"
 
 msgid "Attendance Graph"
-msgstr "Obecność Graph"
+msgstr "Wykres obecności"
 
 msgid "Hours in Office vs Hours Worked Graph"
-msgstr "Godziny w Urzędzie vs przepracowanych godzin Graph"
+msgstr "Godziny w biurze vs godziny pracował wykres"
 
 msgid "Company Graph"
-msgstr "Firma Graph"
+msgstr "Wykres firmy"
 
 msgid "Company Documents"
 msgstr "Dokumenty firmowe"
 
 msgid "Document Types"
-msgstr "Rodzaje dokumentów"
+msgstr "Typy dokumentów"
 
 msgid "Employee Documents"
 msgstr "Dokumenty pracownicze"
 
 msgid "Employee Basic Details"
-msgstr "Pracownik Podstawowe Szczegóły"
+msgstr "Podstawowe dane pracownika"
 
 msgid "Employees (Direct Reports)"
-msgstr "Pracownicy (Raporty bezpośredni)"
+msgstr "Pracownicy (bezpośrednie raporty)"
 
 msgid "Certifications"
 msgstr "Certyfikaty"
@@ -1344,25 +1344,25 @@ msgid "Languages"
 msgstr "Języki"
 
 msgid "Deactivated Employees"
-msgstr "Dezaktywowane Pracownicy"
+msgstr "Dezaktywowani pracownicy"
 
 msgid "Temporarily Deactivated Employees"
-msgstr "Czasowo Zablokowane Pracownicy"
+msgstr "Tymczasowo zdezaktywowani pracownicy"
 
 msgid "Terminated Employee Data"
-msgstr "Zakończony dane pracownicze"
+msgstr "Zakoń czone dane pracownicze"
 
 msgid "Employee Saved Successfully"
-msgstr "Zapisane Pracownik Pomyślnie"
+msgstr "Pracownik zapisany z powodzeniem"
 
 msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
-msgstr "Potrzebuje pracownik użytkownika, aby zalogować się IceHrm. Czy chcesz utworzyć użytkownika dla tego pracownika teraz?"
+msgstr "Pracownik potrzebuje użytkownika, aby się zalogować do IceHrm. Czy chcesz teraz utworzyć użytkownika dla tego pracownika?"
 
 msgid "You can do this later through Users module if required."
-msgstr "Można to zrobić później, za pomocą modułu użytkowników, jeśli wymagane."
+msgstr "Możesz to zrobić później za pomocą modułu Użytkownicy, jeśli to konieczne."
 
 msgid "Expenses Categories"
-msgstr "Wydatki Kategorie"
+msgstr "Kategorie wydatków"
 
 msgid "Payment Methods"
 msgstr "Metody Płatności"
@@ -1371,52 +1371,52 @@ msgid "Employee Expenses"
 msgstr "Koszty pracownicze"
 
 msgid "Salary Component Types"
-msgstr "Rodzaje Wynagrodzenie składowe"
+msgstr "Typy wynagrodzeń"
 
 msgid "Employee Salary Components"
-msgstr "Pracownik składników wynagrodzenia"
+msgstr "Składniki wynagrodzeń pracowników"
 
 msgid "Company Payroll"
 msgstr "Firma Payroll"
 
 msgid "Calculation Groups"
-msgstr "Obliczenie Grupy"
+msgstr "Grupy obliczeniowe"
 
 msgid "Calculation Methods"
-msgstr "Metody obliczeniowe"
+msgstr "Metody obliczania"
 
 msgid "Payslip Templates"
-msgstr "Payslip Szablony"
+msgstr "Szablony wypłat"
 
 msgid "Edit Employment Types"
-msgstr "Rodzaje Edycja zatrudnienia"
+msgstr "Edytuj typy zatrudnienia"
 
 msgid "Edit Experience Levels"
-msgstr "Poziomy Edycja Doświadczenie"
+msgstr "Edytuj poziomy doświadczenia"
 
 msgid "Edit Job Functions"
-msgstr "Funkcje Edit Job"
+msgstr "Edytuj funkcje zadań"
 
 msgid "Edit Education Levels"
-msgstr "Poziomy Edycja Edukacja"
+msgstr "Edytuj poziomy edukacji"
 
 msgid "Edit Benefits"
-msgstr "Edycja korzyści"
+msgstr "Edytuj zalety"
 
 msgid "Application"
 msgstr "Podanie"
 
 msgid "Job Titles"
-msgstr "Tytuły pracy"
+msgstr "Tytuły prac"
 
 msgid "Pay Grades"
-msgstr "Płatna stopnie"
+msgstr "Płać stopnie"
 
 msgid "Training Sessions"
 msgstr "Szkolenia"
 
 msgid "Employee Training Sessions"
-msgstr "Pracownik Sesje treningowe"
+msgstr "Sesje szkoleniowe pracowników"
 
 msgid "Clients"
 msgstr "Klienci"
@@ -1425,7 +1425,7 @@ msgid "Employee Projects"
 msgstr "Projekty pracownicze"
 
 msgid "Leave Types"
-msgstr "Zostaw Rodzaje"
+msgstr "Pozostaw typy"
 
 msgid "Work Week"
 msgstr "Tydzień pracy"
@@ -1434,37 +1434,37 @@ msgid "Holidays"
 msgstr "Wakacje"
 
 msgid "Leave Rules"
-msgstr "Zostaw regulamin"
+msgstr "Pozostaw reguły"
 
 msgid "Paid Time Off"
 msgstr "Płatny urlop"
 
 msgid "Leave Groups"
-msgstr "Pozostaw Grupy"
+msgstr "Opuść grupy"
 
 msgid "Edit Leave Groups"
-msgstr "Edycja Leave Grupy"
+msgstr "Edytuj Opuść grupy"
 
 msgid "Leave Group Employees"
-msgstr "Zostaw pracowników Grupy"
+msgstr "Zostaw pracowników grupy"
 
 msgid "Employee Leave List"
-msgstr "Pracownik Leave Lista"
+msgstr "Lista opuszczonych pracowników"
 
 msgid "Loan Types"
-msgstr "Rodzaje pożyczkowe"
+msgstr "Rodzaje pożyczek"
 
 msgid "Employee Loans"
-msgstr "Pożyczki pracownicze"
+msgstr "Pożyczki dla pracowników"
 
 msgid "Travel Requests"
-msgstr "Wnioski podróży"
+msgstr "Żądania podróży"
 
 msgid "Overtime Categories"
-msgstr "Kategorie nadliczbowe"
+msgstr "Kategorie nadgodzin"
 
 msgid "Leave / PTO"
-msgstr "Zostaw / WOM"
+msgstr "Pozostaw / WOM"
 
 msgid "Other"
 msgstr "Inny"
@@ -1482,115 +1482,115 @@ msgid "Currency Types"
 msgstr "Rodzaje walut"
 
 msgid "Employee Custom Fields"
-msgstr "Pracownik Pola niestandardowe"
+msgstr "Pola niestandardowe pracownika"
 
 msgid "Employee Field Names"
-msgstr "Pracownik nazwy pól"
+msgstr "Nazwy pól pracownika"
 
 msgid "My Details"
 msgstr "Moje szczegóły"
 
 msgid "All My Leaves"
-msgstr "All My Liście"
+msgstr "Wszystkie moje liście"
 
 msgid "Leave Entitlement"
-msgstr "Zostaw Uprawnienie"
+msgstr "Pozostaw uprawnienia"
 
 msgid "Approved Leave"
-msgstr "Zatwierdzone Leave"
+msgstr "Zatwierdzony urlop"
 
 msgid "Pending Leave"
-msgstr "Oczekuje Leave"
+msgstr "Oczekuje na urlop"
 
 msgid "Subordinate Leave"
-msgstr "Podwładny Leave"
+msgstr "Urlop podwodny"
 
 msgid "Cancellation Requests"
-msgstr "Wnioski anulacji"
+msgstr "Wnioski o anulowanie"
 
 msgid "Approval Requests"
-msgstr "O zatwierdzenie"
+msgstr "Prośby o zatwierdzenie"
 
 msgid "Approved TimeSheets"
-msgstr "Zatwierdzone karty pracy"
+msgstr "Zatwierdzone arkusze czasu"
 
 msgid "All My TimeSheets"
-msgstr "Wszystkie moje karty pracy"
+msgstr "Wszystkie moje arkusze czasu"
 
 msgid "Pending TimeSheets"
-msgstr "Oczekujące ewidencja"
+msgstr "Oczekujące zmiany czasu"
 
 msgid "Subordinate TimeSheets"
-msgstr "Ewidencja czasu pracy podległych"
+msgstr "Podrzędne arkusze czasu"
 
 msgid "Approved Attendance Sheets"
-msgstr "Zatwierdzone Arkusze Obecność"
+msgstr "Zatwierdzone arkusze obecności"
 
 msgid "All My Attendance Sheets"
-msgstr "All My Obecność Arkusze"
+msgstr "Wszystkie moje arkusze obecności"
 
 msgid "Pending Attendance Sheets"
-msgstr "W oczekiwaniu Widzów Sheets"
+msgstr "Oczekujące arkusze obecności"
 
 msgid "Subordinate Attendance Sheets"
-msgstr "Podległych Arkusze Obecność"
+msgstr "Podległe arkusze obecności"
 
 msgid "Subordinate Overtime Requests"
-msgstr "Podległych Wnioski nadliczbowe"
+msgstr "Wnioski o nadgodziny poboczne"
 
 msgid "Overtime Request Approval"
-msgstr "Nadgodziny Zapytanie Zatwierdzenie"
+msgstr "Zgłoszenie prośby o nadgodziny"
 
 msgid "My Training Sessions"
-msgstr "Moi Sesje treningowe"
+msgstr "Moje sesje treningowe"
 
 msgid "All Training Sessions"
-msgstr "Wszystkie sesje treningowe"
+msgstr "Wszystkie sesje szkoleniowe"
 
 msgid "Training Sessions of Direct Reports"
-msgstr "Sesje szkoleniowe Raporty bezpośrednie"
+msgstr "Sesje szkoleniowe z raportów bezpośrednich"
 
 msgid "Subordinate Travel Requests"
-msgstr "Podległych Wnioski podróży"
+msgstr "Podrzędne żądania podróży"
 
 msgid "Travel Request Approval"
-msgstr "Podróż Zapytanie Zatwierdzenie"
+msgstr "Zatwierdzenie wniosku o podróż"
 
 msgid "Subordinate Expenses"
-msgstr "Wydatki podległych"
+msgstr "Podrzędne wydatki"
 
 msgid "Expenses Approval"
-msgstr "Wydatki Zatwierdzenie"
+msgstr "Zatwierdzenie wydatków"
 
 msgid "Loans Taken"
 msgstr "Pożyczki zaciągnięte"
 
 msgid "Change Leave Status"
-msgstr "Pozostawić zmiany statusu"
+msgstr "Zmień pozostaw status"
 
 msgid "Status Change Note"
-msgstr "Zmiana stanu Uwaga"
+msgstr "Zmiana statusu Uwaga"
 
 msgid "Leave Summary"
-msgstr "Zostaw Podsumowanie"
+msgstr "Opuść podsumowanie"
 
 msgid "Approved Leave Count"
-msgstr "Zatwierdzone Leave Hrabia"
+msgstr "Zatwierdzona liczba urlopów"
 
 msgid "Pending Leave Count"
-msgstr "W oczekiwaniu Leave Hrabia"
+msgstr "Trwa oczekiwanie na odejście"
 
 msgid "Available Leave Count"
-msgstr "Dostępne Leave Hrabia"
+msgstr "Dostępne odliczanie"
 
 msgid "Leave Dates"
-msgstr "Pozostaw daty"
+msgstr "Zostaw daty"
 
 msgid "Leave Date"
-msgstr "Zostaw Data"
+msgstr "Opuść datę"
 
 msgid "Leave Notes"
-msgstr "Pozostaw Uwagi"
+msgstr "Pozostaw Notatki"
 
 msgid "Apply"
 msgstr "Zastosować"
@@ -1599,28 +1599,28 @@ msgid "Back"
 msgstr "Plecy"
 
 msgid "Hours in Time Sheets"
-msgstr "Godzin w kartach czasu"
+msgstr "Godziny w arkuszach czasu"
 
 msgid "HR form"
 msgstr "Formularz HR"
 
 msgid "HR Form Management"
-msgstr "Formularz Zarządzanie HR"
+msgstr "Zarządzanie formularzami HR"
 
 msgid "Form Name"
 msgstr "Nazwa formularza"
 
 msgid "Fields"
-msgstr "pola"
+msgstr "Pola"
 
 msgid "Employee Froms"
-msgstr "froms pracownik"
+msgstr "Pracownicy od"
 
 msgid "Share Departments"
-msgstr "Departamenty dzielą"
+msgstr "Udostępnianie działów"
 
 msgid "Share Employees"
-msgstr "Pracownicy Share"
+msgstr "Udostępnij pracowników"
 
 msgid "Data Importers"
 msgstr "Importerzy danych"
@@ -1632,46 +1632,46 @@ msgid "Data Type"
 msgstr "Typ danych"
 
 msgid "Columns"
-msgstr "kolumny"
+msgstr "Kolumny"
 
 msgid "Field Title"
-msgstr "pole Tytuł"
+msgstr "Tytuł pola"
 
 msgid "Depends On"
 msgstr "Zależy od"
 
 msgid "Depends On Field"
-msgstr "Zależy na pole"
+msgstr "Zależy od pola"
 
 msgid "is Key Field"
-msgstr "Pole jest klucz"
+msgstr "jest kluczowym polem"
 
 msgid "is ID Field"
-msgstr "Pole jest ID"
+msgstr "to pole identyfikatora"
 
 msgid "Data Import Definitions"
-msgstr "Import danych Definicje"
+msgstr "Definicje importu danych"
 
 msgid "File to Import"
-msgstr "Plik do importu"
+msgstr "Plik do zaimportowania"
 
 msgid "Last Export Results"
-msgstr "Ostatnio Wyniki eksportu"
+msgstr "Ostatnie wyniki eksportu"
 
 msgid "Time and Attendance"
-msgstr "Rejestracja czasu pracy"
+msgstr "Czas i frekwencja"
 
 msgid "Leave Timeline"
-msgstr "Zostaw Timeline"
+msgstr "Opuść oś czasu"
 
 msgid "Insights"
 msgstr "Insights"
 
 msgid "Api Access"
-msgstr "Dostęp do API"
+msgstr "Dostęp do Api"
 
 msgid "Change User Password"
-msgstr "Zmiana użytkownika Hasło"
+msgstr "Zmień hasło użytkownika"
 
 msgid "New Password"
 msgstr "nowe hasło"
@@ -1695,10 +1695,10 @@ msgid "Edit Info"
 msgstr "Edytuj informacje"
 
 msgid "Upload Profile Image"
-msgstr "Prześlij zdjęcie profilowe"
+msgstr "Prześlij obraz profilu"
 
 msgid "Delete Profile Image"
-msgstr "Usuń Profil obraz"
+msgstr "Usuń obraz profilu"
 
 msgid "Direct Reports"
 msgstr "Bezpośrednie raporty"
@@ -1728,7 +1728,7 @@ msgid "Own Vehicle"
 msgstr "Własny pojazd"
 
 msgid "Rented Vehicle"
-msgstr "wynajęty pojazd"
+msgstr "Wynajmowany pojazd"
 
 msgid "Female"
 msgstr "Płeć żeńska"
@@ -1746,82 +1746,82 @@ msgid "Draft"
 msgstr "Wersja robocza"
 
 msgid "Not Clocked In"
-msgstr "W nie Clocked"
+msgstr "Nieblokowane w"
 
 msgid "Clocked In"
-msgstr "W taktowany"
+msgstr "Zamontowany"
 
 msgid "File"
 msgstr "Plik"
 
 msgid "Active Employee Report"
-msgstr "Pracownik aktywny Report"
+msgstr "Aktywny raport pracowniczy"
 
 msgid "Employee Attendance Report"
-msgstr "Pracownik Frekwencja Report"
+msgstr "Raport obecności pracowników"
 
 msgid "Employee Details Report"
-msgstr "Pracownik Szczegóły Report"
+msgstr "Raport szczegółów pracownika"
 
 msgid "Employee Leave Entitlement"
-msgstr "Pracownik Leave Prawo"
+msgstr "Uprawnienie pracownika do urlopu"
 
 msgid "Employee Leaves Report"
-msgstr "Pracownik Liście Report"
+msgstr "Raport liści pracowników"
 
 msgid "Employee Time Entry Report"
-msgstr "Pracownik Czas Zgłoś Entry"
+msgstr "Raport czasu pracy pracownika"
 
 msgid "Employee Time Sheet Report"
-msgstr "Etat Arkusz Report"
+msgstr "Raport dotyczący czasu pracy pracownika"
 
 msgid "Employee Time Tracking Report"
-msgstr "Pracownik Time Tracking Report"
+msgstr "Raport śledzenia czasu pracownika"
 
 msgid "Expense Report"
 msgstr "Raport z wydatków"
 
 msgid "New Hires Employee Report"
-msgstr "Nowych pracowników Employee Report"
+msgstr "Nowy raport pracownika zatrudniającego"
 
 msgid "Overtime Report"
-msgstr "Raport nadgodziny"
+msgstr "Raport o nadgodzinach"
 
 msgid "Overtime Request Report"
-msgstr "Nadgodziny Zapytanie Report"
+msgstr "Raport żądania nadgodzin"
 
 msgid "Overtime Summary Report"
-msgstr "Nadgodziny Raport zbiorczy"
+msgstr "Raport podsumowujący nadgodziny"
 
 msgid "Payroll Meta Data Export"
-msgstr "Płace Meta Data Export"
+msgstr "Płace Eksport meta danych"
 
 msgid "Terminated Employee Report"
-msgstr "Raport zakończony Employee"
+msgstr "Zakończył raport pracowniczy"
 
 msgid "Travel Request Report"
-msgstr "Zapytanie Travel Report"
+msgstr "Raport żądania podróży"
 
 msgid "Attendance Report"
 msgstr "Lista obecności"
 
 msgid "Client Project Time Report"
-msgstr "Klient Projekt Raport czasowy"
+msgstr "Raport czasu projektu klienta"
 
 msgid "Download Payslips"
-msgstr "Pobierz paski wypłat pensji"
+msgstr "Pobierz Payslips"
 
 msgid "Leaves Report"
-msgstr "Raport pozostawia"
+msgstr "Raport liści"
 
 msgid "Time Entry Report"
-msgstr "Czas Zgłoś Entry"
+msgstr "Raport czasowy"
 
 msgid "Time Sheet Report"
-msgstr "Czas Sheet Report"
+msgstr "Raport dotyczący arkusza czasu"
 
 msgid "Time Tracking Report"
-msgstr "Time Tracking Report"
+msgstr "Raport śledzenia czasu"
 
 msgid "Data"
 msgstr "Dane"
@@ -1854,7 +1854,7 @@ msgid "Approved"
 msgstr "Zatwierdzony"
 
 msgid "Rejected"
-msgstr "odrzucony"
+msgstr "Odrzucono"
 
 msgid "Cancelled"
 msgstr "Anulowany"
@@ -1863,13 +1863,13 @@ msgid "Continue"
 msgstr "dalej"
 
 msgid "Cancellation Requested"
-msgstr "Rezygnacja Zamówiony"
+msgstr "Wniosek o anulowanie"
 
 msgid "Completed"
 msgstr "Zakończony"
 
 msgid "Discussions"
-msgstr "dyskusje"
+msgstr "Dyskusje"
 
 msgid "Load More"
 msgstr "Załaduj więcej"
@@ -1899,7 +1899,64 @@ msgid "View Announcements"
 msgstr "Zobacz ogłoszenia"
 
 msgid "Conversations"
-msgstr "rozmowy"
+msgstr "Rozmowy"
 
 msgid "Start Now"
 msgstr "Zacząć teraz"
+
+msgid "Company Assets"
+msgstr "Majątek firmy"
+
+msgid "Asset Types"
+msgstr "Rodzaje aktywów"
+
+msgid "Asset Name"
+msgstr "Nazwa zasobu"
+
+msgid "Performance"
+msgstr "Wydajność"
+
+msgid "Performance Review"
+msgstr "Przegląd wydajności"
+
+msgid "Performance Reviews"
+msgstr "Recenzje wydajności"
+
+msgid "Review"
+msgstr "Przejrzeć"
+
+msgid "Reviews"
+msgstr "Opinie"
+
+msgid "Review Feedback"
+msgstr "Przejrzyj opinię"
+
+msgid "Review Template"
+msgstr "Szablon recenzji"
+
+msgid "Template"
+msgstr "Szablon"
+
+msgid "Review Date"
+msgstr "Data przeglądu"
+
+msgid "Self Assessment Due On"
+msgstr "Self Assessment Due On"
+
+msgid "Review Period Start"
+msgstr "Rozpocznij przegląd okresu"
+
+msgid "Review Period End"
+msgstr "Koniec okresu przeglądu"
+
+msgid "Attendees"
+msgstr "Uczestnicy"
+
+msgid "Performance Reviews Coordinated by Me"
+msgstr "Recenzje wydajności koordynowane przeze mnie"
+
+msgid "Provide Feedback"
+msgstr "Przekazać opinię"
+
+msgid "Review Status"
+msgstr "Status recenzji"

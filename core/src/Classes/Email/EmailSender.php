@@ -11,7 +11,9 @@ namespace Classes\Email;
 use Classes\Crypt\AesCtr;
 use Classes\UIManager;
 use Employees\Common\Model\Employee;
+use Model\IceEmail;
 use Users\Common\Model\User;
+use Utils\LogManager;
 
 abstract class EmailSender
 {
@@ -22,7 +24,7 @@ abstract class EmailSender
         $this->settings = $settings;
     }
 
-    public function sendEmailFromNotification($notification)
+    public function sendEmailFromNotification($notification, $delayed = false)
     {
         $toEmail = null;
         $user = new User();
@@ -44,15 +46,48 @@ abstract class EmailSender
             if ($action->type == "url") {
                 $emailBody = str_replace("#_url_#", CLIENT_BASE_URL."?".$action->url, $emailBody);
             }
-            $this->sendEmail(
-                'IceHrm Notification from '.$notification->type,
-                $user->email,
-                $emailBody,
-                array(),
-                array(),
-                array()
-            );
+
+            if ($delayed) {
+                $this->sendEmailDelayed(
+                    'IceHrm Notification from '.$notification->type,
+                    $user->email,
+                    $emailBody,
+                    array(),
+                    array(),
+                    array()
+                );
+            } else {
+                $this->sendEmail(
+                    'IceHrm Notification from '.$notification->type,
+                    $user->email,
+                    $emailBody,
+                    array(),
+                    array(),
+                    array()
+                );
+            }
         }
+    }
+
+    public function sendEmailDelayed($subject, $toEmail, $template, $params, $ccList = array(), $bccList = array())
+    {
+        $email = new IceEmail();
+        $email->subject = $subject;
+        $email->toEmail = $toEmail;
+        $email->template = $template;
+        $email->params = json_encode($params);
+        $email->cclist = json_encode($ccList);
+        $email->bcclist = json_encode($bccList);
+        $email->status = 'Pending';
+        $email->created = date('Y-m-d H:i:s');
+        $email->updated = date('Y-m-d H:i:s');
+        $ok = $email->Save();
+        if (!$ok) {
+            LogManager::getInstance()->error("Error Saving Email: ".$email->ErrorMsg());
+            return false;
+        }
+
+        return true;
     }
 
     public function sendEmailFromDB($email)

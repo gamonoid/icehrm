@@ -21,9 +21,8 @@ Vagrant.configure(2) do |config|
   config.vm.hostname = "icehrm.open"
 
   config.hostsupdater.aliases = [
-    "app.dev",
-    "app.app.dev",
-    "clients.app.dev"
+    "app.icehrm-open.test",
+    "clients.icehrm-open.test"
   ]
 
 end

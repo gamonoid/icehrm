@@ -21,6 +21,8 @@ class UIManager
     protected $quickAccessMenuItems = [];
     protected $languageMenuItems = [];
 
+    protected $currentLanguageCode = '';
+
     private function __construct()
     {
     }
@@ -164,6 +166,8 @@ class UIManager
                         "CURRENT_CODE" => $this->getCountryCodeByLanguage($language)
                     )
                 );
+
+                $this->currentLanguageCode = $this->getCountryCodeByLanguage($language);
             }
         }
 
@@ -263,6 +267,10 @@ class UIManager
             $currentCountryCode = 'cn';
         } elseif ($currentLanguage === 'ja') {
             $currentCountryCode = 'jp';
+        } elseif ($currentLanguage === 'sr') {
+            $currentCountryCode = 'rs';
+        } elseif ($currentLanguage === 'sv') {
+            $currentCountryCode = 'se';
         }
 
         return $currentCountryCode;
@@ -298,5 +306,13 @@ class UIManager
         }
 
         return $logoFileName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCurrentLanguageCode()
+    {
+        return $this->currentLanguageCode;
     }
 }

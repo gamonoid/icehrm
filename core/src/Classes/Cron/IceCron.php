@@ -31,7 +31,6 @@ class IceCron
 
     public function isRunNow()
     {
-        LogManager::getInstance()->debug("Cron ".print_r($this->cron, true));
         $lastRunTime = $this->cron->lastrun;
         if (empty($lastRunTime)) {
             LogManager::getInstance()->debug("Cron ".$this->cron->name." is running since last run time is empty");

@@ -41,5 +41,29 @@ class Setting extends BaseModel
         return $obj;
     }
 
+    public function executePostSaveActions($obj)
+    {
+        if (!defined('WEB_ADMIN_BASE_URL')) {
+            return;
+        }
+
+        if ($obj->name == 'Company: Country') {
+            $updateInvUrl = WEB_ADMIN_BASE_URL.'/app/update_instance.php?client='
+                .CLIENT_NAME.'&country='.$obj->value.'&key='.ADMIN_SEC_KEY;
+            $response = file_get_contents($updateInvUrl);
+        }
+
+        if ($obj->name == 'Company: Vat ID') {
+            $updateInvUrl = WEB_ADMIN_BASE_URL.'/app/update_instance.php?client='
+                .CLIENT_NAME.'&vatId='.$obj->value.'&key='.ADMIN_SEC_KEY;
+            $response = file_get_contents($updateInvUrl);
+        }
+    }
+
+    public function executePostUpdateActions($obj)
+    {
+        $this->executePostSaveActions($obj);
+    }
+
     public $table = 'Settings';
 }

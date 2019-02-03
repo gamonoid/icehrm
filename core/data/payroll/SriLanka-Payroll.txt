@@ -1,0 +1,264 @@
+{
+    "name": "Sri Lanka Payroll Calculation",
+    "description": "",
+    "deductions": [
+        {
+            "id": "1",
+            "name": "EPF Employee Contribution",
+            "componentType": "[]",
+            "component": "[]",
+            "payrollColumn": "7",
+            "rangeAmounts": "[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":\"0\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":\"0\",\"amount\":\"X*0.08\",\"id\":\"rangeAmounts_1\"}]"
+        },
+        {
+            "id": "2",
+            "name": "EPF Employer Contribution",
+            "componentType": "[]",
+            "component": "[]",
+            "payrollColumn": "7",
+            "rangeAmounts": "[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":\"0\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":\"0\",\"amount\":\"X*0.12\",\"id\":\"rangeAmounts_1\"}]"
+        },
+        {
+            "id": "3",
+            "name": "ETF Employer Contribution",
+            "componentType": "[]",
+            "component": "[]",
+            "payrollColumn": "7",
+            "rangeAmounts": "[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":\"0\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":\"0\",\"amount\":\"X*0.03\",\"id\":\"rangeAmounts_1\"}]"
+        },
+        {
+            "id": "4",
+            "name": "PAYE Tax",
+            "componentType": "[]",
+            "component": "[]",
+            "payrollColumn": "12",
+            "rangeAmounts": "[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":\"0\",\"upperCondition\":\"lte\",\"upperLimit\":\"62500\",\"amount\":\"0\",\"id\":\"rangeAmounts_1\"},{\"lowerCondition\":\"gt\",\"lowerLimit\":\"62500\",\"upperCondition\":\"lte\",\"upperLimit\":\"104167\",\"amount\":\"X*0.04 - 2500\",\"id\":\"rangeAmounts_2\"},{\"lowerCondition\":\"gt\",\"lowerLimit\":\"104167\",\"upperCondition\":\"lte\",\"upperLimit\":\"145833\",\"amount\":\"X*0.08 - 6667\",\"id\":\"rangeAmounts_3\"},{\"lowerCondition\":\"gt\",\"lowerLimit\":\"145833\",\"upperCondition\":\"lte\",\"upperLimit\":\"187500\",\"amount\":\"X*0.12-12500\",\"id\":\"rangeAmounts_4\"},{\"lowerCondition\":\"gt\",\"lowerLimit\":\"187500\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":\"0\",\"amount\":\"X*0.16 - 20000\",\"id\":\"rangeAmounts_5\"}]"
+        },
+        {
+            "id": "5",
+            "name": "Stamp Duty",
+            "componentType": "[]",
+            "component": "[]",
+            "payrollColumn": "12",
+            "rangeAmounts": "[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":\"0\",\"upperCondition\":\"lte\",\"upperLimit\":\"25000\",\"amount\":\"0\",\"id\":\"rangeAmounts_1\"},{\"lowerCondition\":\"gt\",\"lowerLimit\":\"25000\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":\"0\",\"amount\":\"25\",\"id\":\"rangeAmounts_2\"}]"
+        }
+    ],
+    "columns": [
+        {
+            "id": "5",
+            "name": "LK - Basic Salary",
+            "calculation_hook": null,
+            "salary_components": "[\"1\"]",
+            "deductions": "[]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "5",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "6",
+            "name": "LK - Fixed Allowance",
+            "calculation_hook": null,
+            "salary_components": "[\"2\"]",
+            "deductions": "[]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "6",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "7",
+            "name": "LK - Gross Pay",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"5\",\"6\"]",
+            "sub_columns": "[]",
+            "colorder": "7",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "8",
+            "name": "LK - EPF Employee Contribution",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"1\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "8",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "9",
+            "name": "LK - EPF Employer Contribution",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"2\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "9",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "10",
+            "name": "LK - ETF Employer Contribution",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"3\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "10",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "11",
+            "name": "LK - Total EPF 20%",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"8\",\"9\"]",
+            "sub_columns": "[]",
+            "colorder": "11",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "12",
+            "name": "LK - Total for PAYE",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"7\"]",
+            "sub_columns": "[]",
+            "colorder": "12",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "13",
+            "name": "LK - PAYE Tax",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"4\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "13",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "14",
+            "name": "LK - Stamp Duty",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"5\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "14",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "15",
+            "name": "LK - Total Deductions",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"8\",\"13\",\"14\"]",
+            "sub_columns": "[]",
+            "colorder": "15",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "16",
+            "name": "LK - Salary to Bank",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"7\"]",
+            "sub_columns": "[\"15\"]",
+            "colorder": "16",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        }
+    ],
+    "salaryComponents": [
+        {
+            "id": "1",
+            "name": "Basic Salary",
+            "componentType": "1",
+            "details": null
+        },
+        {
+            "id": "2",
+            "name": "Fixed Allowance",
+            "componentType": "1",
+            "details": null
+        }
+    ],
+    "salaryComponentTypes": [
+        {
+            "id": "1",
+            "code": "B001",
+            "name": "Basic"
+        }
+    ],
+    "samplePayroll": {
+        "name": "Sri Lanka Payroll Sample",
+        "pay_period": "4",
+        "columns": "[\"5\",\"8\",\"9\",\"10\",\"6\",\"7\",\"13\",\"16\",\"14\",\"15\",\"11\",\"12\"]",
+        "date_start": "2016-03-01",
+        "date_end": "2016-03-31",
+        "status": "Draft"
+    },
+    "payslipTemplate": {
+        "name": "Sri Lanka - Default Payslip",
+        "data": "[{\"type\":\"Company Logo\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"fontSize\":\"Normal\",\"fontStyle\":\"Normal\",\"fontColor\":\"#000000\",\"status\":\"Show\",\"id\":\"data_1\"},{\"type\":\"Company Name\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"fontSize\":\"Normal\",\"fontStyle\":\"Normal\",\"fontColor\":\"\",\"status\":\"Show\",\"id\":\"data_2\"},{\"type\":\"Separators\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"fontSize\":\"Normal\",\"fontStyle\":\"Normal\",\"fontColor\":\"\",\"status\":\"Show\",\"id\":\"data_8\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"5\",\"label\":\"Basic Salary\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_3\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"6\",\"label\":\"Fixed Allowance\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_4\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"7\",\"label\":\"Gross Pay\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_11\"},{\"type\":\"Separators\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"fontSize\":\"Normal\",\"fontStyle\":\"Normal\",\"fontColor\":\"\",\"status\":\"Show\",\"id\":\"data_9\"},{\"type\":\"Text\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"Deductions\",\"status\":\"Show\",\"id\":\"data_13\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"8\",\"label\":\"EPF Employee Contribution\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_6\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"13\",\"label\":\"PAYE Tax\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_14\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"14\",\"label\":\"Stamp Duty\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_15\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"15\",\"label\":\"Total Deductions\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_16\"},{\"type\":\"Separators\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_17\"},{\"type\":\"Text\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"Employer Contributions\",\"status\":\"Show\",\"id\":\"data_18\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"9\",\"label\":\"EPF Employer Contribution\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_19\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"7\",\"label\":\"ETF Employer Contribution\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_20\"},{\"type\":\"Separators\",\"payrollColumn\":\"7\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_21\"},{\"type\":\"Text\",\"payrollColumn\":\"7\",\"label\":\"\",\"text\":\"Totals\",\"status\":\"Show\",\"id\":\"data_22\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"11\",\"label\":\"Total EPF 20%\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_23\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"12\",\"label\":\"Total for PAYE\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_24\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"16\",\"label\":\"Net Salary\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_25\"}]",
+        "status": null,
+        "created": "2016-06-29 22:07:12",
+        "updated": "2016-06-29 22:07:12"
+    }
+}
