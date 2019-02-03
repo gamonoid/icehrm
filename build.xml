@@ -11,7 +11,7 @@
  <property name="installpath" value="/var/www/apps.gamonoid.com/icehrm-open-core"/>
 
 <target name="build-ci"
-        depends="prepare,lint,phpcs-ci,copyapp,phpunit"
+        depends="prepare,lint,phpcs-ci"
         description=""/>
 
 <target name="build"
@@ -19,11 +19,11 @@
      description=""/>
 
 <target name="buildlocal"
-        depends="prepare,lint,phpcs,copyapp,phpunit"
+        depends="prepare,lint,phpcs,copyapp"
         description=""/>
 
 <target name="releaseapp"
-        depends="prepare,lint,copyapp,phpunit,release"
+        depends="prepare,lint,copyapp,release"
         description=""/>
 
  <target name="clean"
@@ -135,15 +135,13 @@
    <arg value="--extensions=php" />
    <arg value="--ignore=autoload.php" />
    <arg path="${basedir}/core/src" />
-   <arg path="${basedir}/test/unit" />
-   <arg path="${basedir}/test/integration" />
   </exec>
  </target>
 
  <target name="phpcs-ci"
          depends="prepare"
          description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
-  <exec executable="${toolsdir}phpcs" output="/dev/null" failonerror="true">
+  <exec executable="${toolsdir}phpcs" failonerror="true">
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
    <arg value="--standard=PSR2" />
@@ -312,8 +310,5 @@
 	<gzip destfile="${basedir}/build/release/${env.appname}_${env.Version}.tar.gz" src="${basedir}/build/release/${env.appname}_${env.Version}.tar"/>
 
 </target>
-
-
-
 </project>
 

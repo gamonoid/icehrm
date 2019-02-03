@@ -82,13 +82,19 @@ Preparing development VM with Vagrant
 ~ $ cd /vagrant
 ~ $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 ~ $ sudo apt-get install -y nodejs
+~ $ npm install
+~ $ sudo npm install -g gulp-cli
+```
+
+- Make Changes to enable domain icehrm-open.test in Vagrant Box
+
+```
 ~ $ sudo sed 's/server_name clients.app.dev/server_name clients.icehrm-open.test/g' /etc/nginx/sites-available/clients.app.com > /tmp/clients.app.com
 ~ $ sudo mv /tmp/clients.app.com /etc/nginx/sites-available/clients.app.com
 ~ $ sudo sed 's/server_name app.app.dev/server_name app.icehrm-open.test/g' /etc/nginx/sites-available/app.app.com > /tmp/app.app.com
 ~ $ sudo sed 's#root /vagrant/build/app#root /vagrant#g' /tmp/app.app.com > /tmp/mod.app.app.com
 ~ $ sudo mv /tmp/mod.app.app.com /etc/nginx/sites-available/app.app.com
-~ $ npm install
-~ $ sudo npm install -g gulp-cli
+
 ~ $ sudo service php7.0-fpm restart
 ~ $ sudo service nginx restart
 ```
@@ -100,20 +106,23 @@ Preparing development VM with Vagrant
 ~ $ ant buildlocal
 ```
 
-- Execute table creation scripts
-```
-~ $ mysql -udev -pdev dev < /vagrant/core-ext/scripts/icehrmdb.sql
-~ $ mysql -udev -pdev dev < /vagrant/core-ext/scripts/icehrm_master_data.sql
-~ $ mysql -udev -pdev dev < /vagrant/core-ext/scripts/icehrm_sample_data.sql
-```
+- Navigate to [http://clients.icehrm-open.text/dev](http://clients.icehrm-open.text/dev) to load icehrm from VM. (user:admin/pass:admin)
 
-- Navigate to [http://clients.app.dev/dev](http://clients.app.dev/dev) to load icehrm from VM. (user:admin/pass:admin)
+### Notes to Developers
 
-- Unit testing
-
+- When ever you have done a change to JavaScript or CSS files in icehrm/web
 ```
 ~ $ cd /vagrant
-~ $ phpunit
+~ $ gulp
 ```
+
+
+- When ever you have done a change to icehrm/core/src
+```
+~ $ cd /vagrant
+~ $ ant phpcs-ci
+```
+
+
 
 

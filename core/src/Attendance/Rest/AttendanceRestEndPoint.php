@@ -86,9 +86,9 @@ class AttendanceRestEndPoint extends RestEndPoint
         }
 
         if ($user->user_level !== 'Admin' && !PermissionManager::manipulationAllowed(
-                BaseService::getInstance()->getCurrentProfileId(),
-                $this->getModelObject($parameter)
-            )
+            BaseService::getInstance()->getCurrentProfileId(),
+            $this->getModelObject($parameter)
+        )
         ) {
             return new IceResponse(IceResponse::ERROR, self::RESPONSE_ERR_PERMISSION_DENIED, 403);
         }
