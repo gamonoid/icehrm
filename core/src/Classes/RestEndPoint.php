@@ -50,7 +50,6 @@ class RestEndPoint
             } elseif ($user->user_level !== 'Employee' &&  $user->user_level !== 'Manager') {
                 return new IceResponse(IceResponse::ERROR, self::RESPONSE_ERR_PERMISSION_DENIED, 403);
             }
-            return new IceResponse(IceResponse::ERROR, "Permission denied", 403);
         }
 
         return new IceResponse(IceResponse::SUCCESS);

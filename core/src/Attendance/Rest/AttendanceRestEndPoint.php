@@ -48,6 +48,19 @@ class AttendanceRestEndPoint extends RestEndPoint
 
     public function listEmployeeAttendance(User $user, $parameter)
     {
+
+        if ($user->user_level !== 'Admin' && $user->employee != $parameter) {
+            $employee = new Employee();
+            $employee->Load('id = ?', [$parameter]);
+            if ($employee->supervisor != $user->employee) {
+                return new IceResponse(
+                    IceResponse::ERROR,
+                    self::RESPONSE_ERR_PERMISSION_DENIED,
+                    401
+                );
+            }
+        }
+
         $query = new DataQuery('Attendance');
         $query->addColumn('id');
         $query->addColumn('employee');
@@ -73,9 +86,9 @@ class AttendanceRestEndPoint extends RestEndPoint
         }
 
         if ($user->user_level !== 'Admin' && !PermissionManager::manipulationAllowed(
-            BaseService::getInstance()->getCurrentProfileId(),
-            $this->getModelObject($parameter)
-        )
+                BaseService::getInstance()->getCurrentProfileId(),
+                $this->getModelObject($parameter)
+            )
         ) {
             return new IceResponse(IceResponse::ERROR, self::RESPONSE_ERR_PERMISSION_DENIED, 403);
         }
@@ -107,8 +120,8 @@ class AttendanceRestEndPoint extends RestEndPoint
         if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
             return $permissionResponse;
         }
-
-        $response = BaseService::getInstance()->addElement(self::ELEMENT_NAME, $body);
+        $body['employee'] = (String)$body['employee'];
+        $response = BaseService::getInstance()->addElement(self::ELEMENT_NAME, $body, $body);
         if ($response->getStatus() === IceResponse::SUCCESS) {
             $response = $this->get($user, $response->getData()->id);
             $response->setCode(201);

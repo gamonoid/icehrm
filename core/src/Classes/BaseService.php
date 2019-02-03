@@ -669,7 +669,7 @@ class BaseService
      * @return {Object} newly added or updated element of type $table
      */
 
-    public function addElement($table, $obj)
+    public function addElement($table, $obj, $postObject = null)
     {
 
         $customFields = array();
@@ -728,7 +728,12 @@ class BaseService
             }
         }
 
-        $this->checkSecureAccess("save", $ele, $table, $_POST);
+        if ($postObject === null) {
+            $this->checkSecureAccess("save", $ele, $table, $_POST);
+        } else {
+            $this->checkSecureAccess("save", $ele, $table, $postObject);
+        }
+
 
         $resp = $ele->validateSave($ele);
         if ($resp->getStatus() != IceResponse::SUCCESS) {
@@ -760,12 +765,12 @@ class BaseService
             if ($isAdd) {
                 $this->audit(
                     IceConstants::AUDIT_ERROR,
-                    "Error occured while adding an object to ".$table." \ Error: ".$error
+                    "Error occurred while adding an object to ".$table." \ Error: ".$error
                 );
             } else {
                 $this->audit(
                     IceConstants::AUDIT_ERROR,
-                    "Error occured while editing an object in ".$table." [id:".$ele->id."] \ Error: ".$error
+                    "Error occurred while editing an object in ".$table." [id:".$ele->id."] \ Error: ".$error
                 );
             }
             return new IceResponse(IceResponse::ERROR, $this->findError($error));
