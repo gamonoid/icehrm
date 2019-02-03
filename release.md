@@ -16,6 +16,7 @@ Release note v26.1.0.OS
  * Fix: Work week for all counties can not be edited
  * Fix: Custom fields are not shown under employee profile (https://github.com/gamonoid/icehrm/issues/159)
  * Fix: Additional buttons shown below timesheet list (https://github.com/gamonoid/icehrm/issues/171)
+ * Updates to Italian translations (https://github.com/gamonoid/icehrm/pull/166) by https://github.com/nightwatch75
 
  
 Release note v24.0.0.OS
