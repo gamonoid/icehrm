@@ -18,7 +18,7 @@ along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------
 
 Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
-Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
+Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 namespace Classes;
 
@@ -171,6 +171,8 @@ class FileService
                         $profile->image = BASE_URL."images/user_male.png";
                     }
                 }
+            } elseif (substr($file->filename, 0, 8) === 'https://') {
+                $profile->image = $file->filename;
             } else {
                 $profile->image = CLIENT_BASE_URL.'data/'.$file->filename;
             }
@@ -210,6 +212,8 @@ class FileService
                 }
 
                 $profile->image = $expireUrl;
+            } elseif (substr($file->filename, 0, 8) === 'https://') {
+                $profile->image = $file->filename;
             } else {
                 $profile->image = CLIENT_BASE_URL.'data/'.$file->filename;
             }
@@ -224,7 +228,7 @@ class FileService
         return $profile;
     }
 
-    public function getFileUrl($fileName,  $isExpiring = true)
+    public function getFileUrl($fileName, $isExpiring = true)
     {
         $file = new File();
         $file->Load('name = ?', array($fileName));

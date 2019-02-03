@@ -126,6 +126,7 @@ foreach ($ams as $am) {
                 $dbModule->label = $arr['label'];
                 $dbModule->menu = $arr['menu'];
                 $dbModule->icon = $arr['icon'];
+                $dbModule->mod_order = $arr['order'];
                 $dbModule->Save();
             }
 
@@ -194,6 +195,7 @@ foreach ($ams as $am) {
             $arr['label'] = $meta->label;
             $arr['icon'] = $meta->icon;
             $arr['menu'] = $meta->menu;
+            $arr['order'] = $meta->order;
             $arr['status'] = 'Enabled';
             $arr['user_levels'] = $meta->user_levels;
             $arr['user_roles'] = isset($meta->user_roles) ? $meta->user_roles : "";
@@ -212,6 +214,7 @@ foreach ($ams as $am) {
                     $dbModule->label = $arr['label'];
                     $dbModule->menu = $arr['menu'];
                     $dbModule->icon = $arr['icon'];
+                    $dbModule->mod_order = $arr['order'];
                     $dbModule->Save();
                 }
 

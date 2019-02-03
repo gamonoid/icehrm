@@ -48,7 +48,8 @@ class Payroll extends BaseModel
         return $payrolls;
     }
 
-    public function fieldValueMethods() {
+    public function fieldValueMethods()
+    {
         return ['getEmployeePayrolls'];
     }
 }

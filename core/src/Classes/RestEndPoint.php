@@ -120,6 +120,7 @@ class RestEndPoint
         unset($obj->historyUpdateList);
         unset($obj->oldObjOrig);
         unset($obj->oldObj);
+        unset($obj->_org);
 
         return $obj;
     }
@@ -147,9 +148,13 @@ class RestEndPoint
             $page = intval($_GET['page']);
         }
 
-        $limit = static::DEFAULT_LIMIT;
-        if (isset($_GET['limit']) && intval($_GET['limit']) > 0) {
-            $limit = intval($_GET['limit']);
+        if (!$query->isLengthSet()) {
+            $limit = static::DEFAULT_LIMIT;
+            if (isset($_GET['limit']) && intval($_GET['limit']) > 0) {
+                $limit = intval($_GET['limit']);
+            }
+        } else {
+            $limit = $query->getLength();
         }
 
         $query->setStartPage(($page - 1) * $limit);

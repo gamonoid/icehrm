@@ -1903,3 +1903,60 @@ msgstr "Conversations"
 
 msgid "Start Now"
 msgstr "Start Now"
+
+msgid "Company Assets"
+msgstr "Company Assets"
+
+msgid "Asset Types"
+msgstr "Asset Types"
+
+msgid "Asset Name"
+msgstr "Asset Name"
+
+msgid "Performance"
+msgstr "Performance"
+
+msgid "Performance Review"
+msgstr "Performance Review"
+
+msgid "Performance Reviews"
+msgstr "Performance Reviews"
+
+msgid "Review"
+msgstr "Review"
+
+msgid "Reviews"
+msgstr "Reviews"
+
+msgid "Review Feedback"
+msgstr "Review Feedback"
+
+msgid "Review Template"
+msgstr "Review Template"
+
+msgid "Template"
+msgstr "Template"
+
+msgid "Review Date"
+msgstr "Review Date"
+
+msgid "Self Assessment Due On"
+msgstr "Self Assessment Due On"
+
+msgid "Review Period Start"
+msgstr "Review Period Start"
+
+msgid "Review Period End"
+msgstr "Review Period End"
+
+msgid "Attendees"
+msgstr "Attendees"
+
+msgid "Performance Reviews Coordinated by Me"
+msgstr "Performance Reviews Coordinated by Me"
+
+msgid "Provide Feedback"
+msgstr "Provide Feedback"
+
+msgid "Review Status"
+msgstr "Review Status"

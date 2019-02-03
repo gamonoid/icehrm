@@ -1903,3 +1903,60 @@ msgstr "对话"
 
 msgid "Start Now"
 msgstr "现在开始"
+
+msgid "Company Assets"
+msgstr "公司资产"
+
+msgid "Asset Types"
+msgstr "资产类型"
+
+msgid "Asset Name"
+msgstr "资产名称"
+
+msgid "Performance"
+msgstr "性能"
+
+msgid "Performance Review"
+msgstr "性能评估"
+
+msgid "Performance Reviews"
+msgstr "绩效评估"
+
+msgid "Review"
+msgstr "评论"
+
+msgid "Reviews"
+msgstr "评测"
+
+msgid "Review Feedback"
+msgstr "回顾反馈"
+
+msgid "Review Template"
+msgstr "审核模板"
+
+msgid "Template"
+msgstr "模板"
+
+msgid "Review Date"
+msgstr "审核日期"
+
+msgid "Self Assessment Due On"
+msgstr "到期的自我评估"
+
+msgid "Review Period Start"
+msgstr "查看期间开始"
+
+msgid "Review Period End"
+msgstr "查看期末"
+
+msgid "Attendees"
+msgstr "与会者"
+
+msgid "Performance Reviews Coordinated by Me"
+msgstr "性能评估由我协调"
+
+msgid "Provide Feedback"
+msgstr "提供反馈信息"
+
+msgid "Review Status"
+msgstr "审核状态"

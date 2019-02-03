@@ -1903,3 +1903,60 @@ msgstr "Gespräche"
 
 msgid "Start Now"
 msgstr "Jetzt anfangen"
+
+msgid "Company Assets"
+msgstr "Betriebsvermögen"
+
+msgid "Asset Types"
+msgstr "Asset-Typ"
+
+msgid "Asset Name"
+msgstr "Asset-Name"
+
+msgid "Performance"
+msgstr "Performance"
+
+msgid "Performance Review"
+msgstr "Leistungsbeurteilung"
+
+msgid "Performance Reviews"
+msgstr "Leistungsbeurteilungen"
+
+msgid "Review"
+msgstr "Rezension"
+
+msgid "Reviews"
+msgstr "Bewertungen"
+
+msgid "Review Feedback"
+msgstr "Rückmeldung überprüfen"
+
+msgid "Review Template"
+msgstr "Vorlage überprüfen"
+
+msgid "Template"
+msgstr "Vorlage"
+
+msgid "Review Date"
+msgstr "Prüfungsdatum"
+
+msgid "Self Assessment Due On"
+msgstr "Selbsteinschätzung fällig am"
+
+msgid "Review Period Start"
+msgstr "Überprüfungszeitraum starten"
+
+msgid "Review Period End"
+msgstr "Periodenende überprüfen"
+
+msgid "Attendees"
+msgstr "Teilnehmer"
+
+msgid "Performance Reviews Coordinated by Me"
+msgstr "Performance Reviews koordiniert von mir"
+
+msgid "Provide Feedback"
+msgstr "Rückmeldung geben"
+
+msgid "Review Status"
+msgstr "Überprüfen Sie den Status"

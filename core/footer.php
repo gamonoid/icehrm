@@ -42,13 +42,8 @@
 
 
 		//Other static js objects
-
-		var timeUtils = new TimeUtils();
-		timeUtils.setServerGMToffset('<?=$diffHoursBetweenServerTimezoneWithGMT?>');
-
-		var notificationManager = new NotificationManager();
-		notificationManager.setBaseUrl('<?=CLIENT_BASE_URL?>service.php');
-		notificationManager.setTimeUtils(timeUtils);
+        var timeUtils = setupTimeUtils('<?=$diffHoursBetweenServerTimezoneWithGMT?>');
+        var notificationManager = setupNotifications('<?=CLIENT_BASE_URL?>service.php');
 
 		<?php
 			$notificationTemplates = array();

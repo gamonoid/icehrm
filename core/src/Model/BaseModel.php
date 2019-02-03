@@ -128,11 +128,13 @@ class BaseModel extends \ADOdb_Active_Record
         return get_called_class();
     }
 
-    public function fieldValueMethods() {
+    public function fieldValueMethods()
+    {
         return [];
     }
 
-    public function validateCSRF() {
+    public function validateCSRF()
+    {
         return false;
     }
 

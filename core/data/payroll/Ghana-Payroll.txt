@@ -1,0 +1,312 @@
+{
+    "name": "Ghana Payroll Calculation",
+    "description": "",
+    "deductions": [
+        {
+            "id": "101",
+            "name": "Housing Allowance (10%)",
+            "componentType": "[]",
+            "component": "[\"1\"]",
+            "payrollColumn": null,
+            "rangeAmounts": "[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":0,\"upperCondition\":\"No Upper Limit\",\"upperLimit\":0,\"amount\":\"X*0.1\",\"id\":\"rangeAmounts_1\"}]"
+        },
+        {
+            "id": "102",
+            "name": "Overtime Allowance (10%)",
+            "componentType": "[]",
+            "component": "[\"1\"]",
+            "payrollColumn": null,
+            "rangeAmounts": "[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":0,\"upperCondition\":\"No Upper Limit\",\"upperLimit\":0,\"amount\":\"X*0.1\",\"id\":\"rangeAmounts_1\"}]"
+        },
+        {
+            "id": "103",
+            "name": "SSNIT",
+            "componentType": "[]",
+            "component": "[\"1\"]",
+            "payrollColumn": null,
+            "rangeAmounts": "[{\"lowerCondition\":\"No Lower Limit\",\"lowerLimit\":0,\"upperCondition\":\"No Upper Limit\",\"upperLimit\":0,\"amount\":\"X*0.055\",\"id\":\"rangeAmounts_1\"}]"
+        },
+        {
+            "id": "104",
+            "name": "Tax - Ghana",
+            "componentType": "[]",
+            "component": "[]",
+            "payrollColumn": null,
+            "rangeAmounts": ""
+        },
+        {
+            "id": "106",
+            "name": "Next 108 GHC",
+            "componentType": "[]",
+            "component": "[]",
+            "payrollColumn": "112",
+            "rangeAmounts": "[{\"lowerCondition\":\"gte\",\"lowerLimit\":\"216\",\"upperCondition\":\"lt\",\"upperLimit\":\"324\",\"amount\":\"X*0.05\",\"id\":\"rangeAmounts_1\"},{\"lowerCondition\":\"gte\",\"lowerLimit\":\"324\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":0,\"amount\":\"5.4\",\"id\":\"rangeAmounts_2\"}]"
+        },
+        {
+            "id": "107",
+            "name": "Next 151 GHC",
+            "componentType": "[]",
+            "component": "[]",
+            "payrollColumn": "112",
+            "rangeAmounts": "[{\"lowerCondition\":\"gte\",\"lowerLimit\":\"324\",\"upperCondition\":\"lt\",\"upperLimit\":\"475\",\"amount\":\"(X-324) * 0.1\",\"id\":\"rangeAmounts_1\"},{\"lowerCondition\":\"gte\",\"lowerLimit\":\"259\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":0,\"amount\":\"15.10\",\"id\":\"rangeAmounts_2\"}]"
+        },
+        {
+            "id": "108",
+            "name": "Next 2765 GHC",
+            "componentType": "[]",
+            "component": "[]",
+            "payrollColumn": "112",
+            "rangeAmounts": "[{\"lowerCondition\":\"gte\",\"lowerLimit\":\"475\",\"upperCondition\":\"lt\",\"upperLimit\":\"3240\",\"amount\":\"(X - 475) * 0.175\",\"id\":\"rangeAmounts_1\"},{\"lowerCondition\":\"gte\",\"lowerLimit\":\"3240\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":0,\"amount\":\"483.88\",\"id\":\"rangeAmounts_2\"}]"
+        },
+        {
+            "id": "111",
+            "name": "Remaining after 3240 GHC",
+            "componentType": "[]",
+            "component": "[]",
+            "payrollColumn": "112",
+            "rangeAmounts": "[{\"lowerCondition\":\"gte\",\"lowerLimit\":\"3240\",\"upperCondition\":\"No Upper Limit\",\"upperLimit\":0,\"amount\":\"(X-3240)*0.25\",\"id\":\"rangeAmounts_1\"}]"
+        }
+    ],
+    "columns": [
+        {
+            "id": "105",
+            "name": "GH - Salary (Basic)",
+            "calculation_hook": null,
+            "salary_components": "[\"1\"]",
+            "deductions": "[]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "1",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "106",
+            "name": "GH - Housing Allowance",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"101\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "2",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "107",
+            "name": "GH - Overtime Allowance",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"102\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "3",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "108",
+            "name": "GH - Total",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"106\",\"107\",\"105\"]",
+            "sub_columns": "[]",
+            "colorder": "4",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "109",
+            "name": "GH - SSNIT",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"103\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "5",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "112",
+            "name": "GH - Taxable Income",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"106\",\"105\"]",
+            "sub_columns": "[\"109\"]",
+            "colorder": "7",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "113",
+            "name": "GH - Next 108 GHC",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"106\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "9",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "114",
+            "name": "GH - Next 151 GHC",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"107\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "10",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "115",
+            "name": "GH - Next 2765 GHC",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"108\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "11",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "120",
+            "name": "GH - Remaining after 3240 GHC",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[\"111\"]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "12",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "121",
+            "name": "GH - Overtime Allow. Tax",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[]",
+            "sub_columns": "[]",
+            "colorder": "13",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "[{\"name\":\"O\",\"column\":\"107\",\"id\":\"calculation_columns_1\"}]",
+            "calculation_function": "O*0.05"
+        },
+        {
+            "id": "122",
+            "name": "GH - Total (PAYE Tax)",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"113\",\"114\",\"115\",\"121\",\"120\"]",
+            "sub_columns": "[]",
+            "colorder": "14",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "123",
+            "name": "GH - Deductions - Sub Total",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"109\",\"122\"]",
+            "sub_columns": "[]",
+            "colorder": "15",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        },
+        {
+            "id": "125",
+            "name": "GH - Final Total",
+            "calculation_hook": null,
+            "salary_components": "[]",
+            "deductions": "[]",
+            "add_columns": "[\"108\"]",
+            "sub_columns": "[\"123\"]",
+            "colorder": "16",
+            "editable": "No",
+            "enabled": "Yes",
+            "default_value": "0.00",
+            "calculation_columns": "",
+            "calculation_function": ""
+        }
+    ],
+    "salaryComponents": [
+        {
+            "id": "1",
+            "name": "Basic Salary",
+            "componentType": "1",
+            "details": null
+        }
+    ],
+    "salaryComponentTypes": [
+        {
+            "id": "1",
+            "code": "B001",
+            "name": "Basic"
+        }
+    ],
+    "samplePayroll": {
+        "name": "Germany Payroll Calculation",
+        "pay_period": "4",
+        "columns": "[\"126\",\"127\",\"131\",\"129\",\"128\",\"133\",\"130\",\"132\"]",
+        "date_start": "2017-08-01",
+        "date_end": "2017-08-31",
+        "status": "Draft"
+    },
+    "payslipTemplate": {
+        "name": "Sample Payslip Template",
+        "data": "[{\"type\":\"Company Logo\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_1\"},{\"type\":\"Company Name\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_2\"},{\"type\":\"Separators\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_5\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"126\",\"label\":\"Basic Salary\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_3\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"127\",\"label\":\"Car Allowance\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_4\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"130\",\"label\":\"Payment for Hours Worked\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_6\"},{\"type\":\"Separators\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_7\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"131\",\"label\":\"Gross Pay\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_8\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"132\",\"label\":\"Tax 19%\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_9\"},{\"type\":\"Separators\",\"payrollColumn\":\"NULL\",\"label\":\"\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_10\"},{\"type\":\"Payroll Column\",\"payrollColumn\":\"133\",\"label\":\"Net Pay\",\"text\":\"\",\"status\":\"Show\",\"id\":\"data_11\"}]",
+        "status": null,
+        "created": "2017-09-08 21:12:40",
+        "updated": "2017-09-08 21:12:40"
+    }
+}

@@ -1,0 +1,7 @@
+input, button, select, textarea {
+    direction: rtl;
+}
+
+table {
+    direction: rtl;
+}

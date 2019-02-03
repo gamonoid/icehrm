@@ -1903,3 +1903,60 @@ msgstr "会話"
 
 msgid "Start Now"
 msgstr "今すぐ開始"
+
+msgid "Company Assets"
+msgstr "会社の資産"
+
+msgid "Asset Types"
+msgstr "資産タイプ"
+
+msgid "Asset Name"
+msgstr "資産名"
+
+msgid "Performance"
+msgstr "パフォーマンス"
+
+msgid "Performance Review"
+msgstr "人事考課"
+
+msgid "Performance Reviews"
+msgstr "パフォーマンス・レビュー"
+
+msgid "Review"
+msgstr "レビュー"
+
+msgid "Reviews"
+msgstr "レビュー"
+
+msgid "Review Feedback"
+msgstr "フィードバックを確認する"
+
+msgid "Review Template"
+msgstr "レビューテンプレート"
+
+msgid "Template"
+msgstr "テンプレート"
+
+msgid "Review Date"
+msgstr "レビュー日"
+
+msgid "Self Assessment Due On"
+msgstr "セルフアセスメントの期限"
+
+msgid "Review Period Start"
+msgstr "審査期間の開始"
+
+msgid "Review Period End"
+msgstr "期間終了の確認"
+
+msgid "Attendees"
+msgstr "出席者"
+
+msgid "Performance Reviews Coordinated by Me"
+msgstr "私が調整したパフォーマンスレビュー"
+
+msgid "Provide Feedback"
+msgstr "フィードバックを提供します"
+
+msgid "Review Status"
+msgstr "審査ステータス"

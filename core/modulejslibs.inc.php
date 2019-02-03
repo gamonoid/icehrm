@@ -3,8 +3,8 @@ if(isset($additionalJs)) {
     foreach ($additionalJs as $js) {
         ?>
         <script type="text/javascript" src="<?= $js ?>"></script>
-    <?php
+        <?php
     }
 }
 ?>
-<script type="text/javascript" src="<?=BASE_URL.$group.'/'.$name.'/'?>lib.js?v=<?=$jsVersion?>"></script>
+<script type="text/javascript" src="<?=BASE_URL.$group.'/dist/'.$name.'.js'?>?v=<?=$jsVersion?>"></script>

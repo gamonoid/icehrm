@@ -76,6 +76,16 @@ class EmployeeRestEndPoint extends RestEndPoint
         );
 
         $emp = $this->enrichElement($emp, $mapping);
+        //Get User for the employee
+        $user = new User();
+        $user->Load('employee = ?', [$emp->id]);
+
+        if (!empty($user->id)) {
+            $emp->user_name = $user->username;
+            $emp->user_email = $user->email;
+            $emp->user_level = $user->user_level;
+        }
+
         if (!empty($emp)) {
             $emp = $this->cleanObject($emp);
             $emp = $this->removeNullFields($emp);

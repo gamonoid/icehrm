@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="icehrm-pro" default="build">
+<project name="icehrm" default="build">
  <!-- By default, we assume all tools to be on the $PATH -->
  <property name="toolsdir" value="${basedir}/tools/"/>
  <property name="destination" value="${basedir}/build/app"/>
@@ -11,7 +11,7 @@
  <property name="installpath" value="/var/www/apps.gamonoid.com/icehrm-open-core"/>
 
 <target name="build-ci"
-        depends="prepare,lint,phpcs,copyapp,phpunit"
+        depends="prepare,lint,phpcs-ci,copyapp,phpunit"
         description=""/>
 
 <target name="build"
@@ -80,7 +80,6 @@
   <exec executable="${toolsdir}phploc">
    <arg value="--count-tests" />
    <arg path="${basedir}/core/src" />
-   <arg path="${basedir}/test" />
   </exec>
  </target>
 
@@ -94,7 +93,6 @@
    <arg value="--log-xml" />
    <arg path="${basedir}/build/logs/phploc.xml" />
    <arg path="${basedir}/core/src" />
-   <arg path="${basedir}/test" />
   </exec>
  </target>
 
@@ -145,7 +143,7 @@
  <target name="phpcs-ci"
          depends="prepare"
          description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
-  <exec executable="${toolsdir}phpcs" output="/dev/null">
+  <exec executable="${toolsdir}phpcs" output="/dev/null" failonerror="true">
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
    <arg value="--standard=PSR2" />
@@ -181,10 +179,39 @@
   </exec>
  </target>
 
+<target name="phpunit-sa"
+        description="Run unit tests with PHPUnit">
+    <exec executable="${toolsdir}phpunit" failonerror="true">
+        <arg value="--configuration"/>
+        <arg path="${basedir}/phpunit.xml"/>
+    </exec>
+</target>
+
 <target name="phpdox"
          depends=""
          description="Generate project documentation using phpDox">
   <exec executable="${toolsdir}phpdox"/>
+</target>
+
+<target name="copyjs"
+         description="Copy generated assets">
+
+  <delete includeemptydirs="true">
+   <fileset dir="${destination}">
+    <include name="web/admin/dist/**"/>
+    <include name="web/modules/dist/**"/>
+    <include name="web/dist/**"/>
+   </fileset>
+  </delete>
+
+  <copy todir="${destination}" overwrite="true">
+   <fileset dir="${origin}">
+    <include name="web/admin/dist/**"/>
+    <include name="web/modules/dist/**"/>
+    <include name="web/dist/**"/>
+   </fileset>
+  </copy>
+
 </target>
 
 <target name="copyapp"
@@ -196,11 +223,16 @@
         </fileset>
     </delete>
 
-    <copy todir="${destination}" overwrite="true">
-        <fileset dir="${origin}">
-            <include name="**/*"/>
-        </fileset>
-    </copy>
+	<copy todir="${destination}" overwrite="true">
+	  <fileset dir="${origin}">
+	    <include name="**/*"/>
+        <exclude name="node_modules/**"/>
+        <exclude name="web/admin/src/**"/>
+        <exclude name="web/modules/src/**"/>
+        <exclude name="web/api/**"/>
+        <exclude name="web/api-common/**"/>
+	  </fileset>
+	</copy>
 
     <delete includeemptydirs="true">
         <fileset dir="${destination}">
@@ -219,6 +251,9 @@
             <include name="cache.properties"/>
             <include name="phpdox.xml"/>
             <include name="phpunit.xml"/>
+            <include name="web/admin/dist/*.map"/>
+            <include name="web/modules/dist/*.map"/>
+            <include name="web/dist/*.map"/>
         </fileset>
     </delete>
 

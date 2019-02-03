@@ -30,7 +30,7 @@ class NotificationManager
             if ($employee->id === $fromEmployee) {
                 continue;
             }
-            $this->addNotification($employee->id, $message, $action, $type, $toUserId, $fromSystem, $sendEmail);
+            $this->addNotification($employee->id, $message, $action, $type, $toUserId, $fromSystem, $sendEmail, true);
         }
     }
 
@@ -41,7 +41,8 @@ class NotificationManager
         $type,
         $toUserId = null,
         $fromSystem = false,
-        $sendEmail = false
+        $sendEmail = false,
+        $isEmailDelayed = false
     ) {
     
 
@@ -108,7 +109,7 @@ class NotificationManager
         } elseif ($sendEmail) {
             $emailSender = BaseService::getInstance()->getEmailSender();
             if (!empty($emailSender)) {
-                $emailSender->sendEmailFromNotification($noti);
+                $emailSender->sendEmailFromNotification($noti, $isEmailDelayed);
             }
         }
     }

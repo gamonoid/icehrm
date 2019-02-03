@@ -302,14 +302,13 @@ $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
 		var password = $("#password").val();
 
 		var passwordValidation =  function (str) {
-			var val = /^[a-zA-Z0-9]\w{6,}$/;
-			return str != null && val.test(str);
+		    return str.length > 7;
 		};
 
 
 		if(!passwordValidation(password)){
 			$("#newPasswordFormAlert").show();
-			$("#newPasswordFormAlert").html("Password may contain only letters, numbers and should be longer than 6 characters");
+			$("#newPasswordFormAlert").html("Password should be longer than 7 characters");
 			return;
 		}
 
@@ -330,6 +329,10 @@ $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
 		}catch(e){}
 		$("#loginForm").submit();
 	}
+
+	function authGoogle() {
+        window.location.href = window.location.href.split('login.php')[0] + "login.php?google=1";
+    }
 
 </script>
 <div class="container">

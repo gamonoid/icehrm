@@ -1,5 +1,12 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20190125_260003_attendance_with_map';
+$migrationList[] = 'v20181106_260002_add_arabic_lang';
+$migrationList[] = 'v20181025_260001_dept_based_leave_periods';
+$migrationList[] = 'v20180912_250006_remove_null_users';
+$migrationList[] = 'v20180810_250005_performance_review';
+$migrationList[] = 'v20180808_250004_add_languages';
+$migrationList[] = 'v20180801_240003_asset_management';
 $migrationList[] = 'v20180623_240002_update_employee_report';
 $migrationList[] = 'v20180622_240001_set_valid_until_null';
 $migrationList[] = 'v20180615_230402_remove_eh_manager';
@@ -18,5 +25,6 @@ $migrationList[] = 'v20171001_200201_update_attendance_out';
 $migrationList[] = 'v20170918_200000_add_attendance_image_out';
 $migrationList[] = 'v20170908_200000_payroll_group';
 $migrationList[] = 'v20170702_190500_add_attendance_image';
+$migrationList[] = 'v20170621_190401_report_modifications';
 $migrationList[] = 'v20170310_190401_add_timesheet_changes';
 $migrationList[] = 'v20161116_190001_unique_index_cron_name';

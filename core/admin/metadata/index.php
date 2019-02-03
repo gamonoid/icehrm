@@ -18,7 +18,7 @@ along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------
 
 Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
-Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
+Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
 $moduleName = 'metadata';

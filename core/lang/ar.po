@@ -1,0 +1,1962 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 18.0\n"
+"Report-Msgid-Bugs-To: https://icehrm.com\n"
+"Last-Translator: Thilina Hasantha\n"
+"Language-Team: IceHrm\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2018-11-05T05:26:33+05:30\n"
+"PO-Revision-Date: 2018-11-05T05:26:33+05:30\n"
+"Language: Arabic\n"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Done"
+msgstr "تم إنجازه"
+
+msgid "Clocked In Employees"
+msgstr "سجلت في الموظفين"
+
+msgid "Candidates"
+msgstr "المرشحين"
+
+msgid "View Employees"
+msgstr "عرض الموظفين"
+
+msgid "Add a New Employee"
+msgstr "إضافة موظف جديد"
+
+msgid "Leave Calendar"
+msgstr "تقويم  الاجازات"
+
+msgid "Manage Client/Projects"
+msgstr "إدارة العميل / المشاريع"
+
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
+msgid "Quick Access"
+msgstr "الدخول السريع"
+
+msgid "Switch"
+msgstr "التبديل"
+
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+msgid "Sign out"
+msgstr "خروج"
+
+msgid "Help"
+msgstr "مساعدة"
+
+msgid "About"
+msgstr "حول"
+
+msgid "Version"
+msgstr "الإصدار"
+
+msgid "Release Date"
+msgstr "تاريخ الإصدار"
+
+msgid "Logged In"
+msgstr "تسجيل الدخول"
+
+msgid "Admin"
+msgstr "مشرف النظام"
+
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+msgid "Company Structure"
+msgstr "هيكل الشركة"
+
+msgid "Job Details Setup"
+msgstr "اعداد تفاصيل الوظيفه"
+
+msgid "Qualifications Setup"
+msgstr "إعداد المؤهلات"
+
+msgid "Training Setup"
+msgstr "إعداد التدريب"
+
+msgid "Projects/Client Setup"
+msgstr "المشاريع / إعداد العميل"
+
+msgid "Leave Settings"
+msgstr "اعداد الاجازات"
+
+msgid "Company Loans"
+msgstr "سلف الشركة"
+
+msgid "Audit Log"
+msgstr "سجل التدقيق"
+
+msgid "Employees"
+msgstr "الموظفين"
+
+msgid "Employee History"
+msgstr "تاريخ الموظف"
+
+msgid "Document Management"
+msgstr "إدارة الوثائق"
+
+msgid "Travel Administration"
+msgstr "إدارة السفر"
+
+msgid "Expense Administration"
+msgstr "إدارة النفقات"
+
+msgid "Monitor Attendance"
+msgstr "مراقبة الحضور"
+
+msgid "Performance Charts"
+msgstr "مخططات الأداء"
+
+msgid "Overtime Administration"
+msgstr "العمل الإضافي"
+
+msgid "Admin Reports"
+msgstr "تقرير المشرف"
+
+msgid "Reports"
+msgstr "تقارير"
+
+msgid "Report Files"
+msgstr "ملفات التقارير"
+
+msgid "System"
+msgstr "النظام"
+
+msgid "Settings"
+msgstr "الإعدادات"
+
+msgid "Users"
+msgstr "المستخدمين"
+
+msgid "Manage Modules"
+msgstr "إدارة الوحدات"
+
+msgid "Manage Permissions"
+msgstr "إدارة الأذونات"
+
+msgid "Upgrade"
+msgstr "تحديث"
+
+msgid "Manage Metadata"
+msgstr "إدارة البيانات الوصفية"
+
+msgid "Field Names Setup"
+msgstr "إعداد أسماء الحقول"
+
+msgid "Payroll"
+msgstr "كشف رواتب"
+
+msgid "Salary"
+msgstr "راتب"
+
+msgid "Payroll Reports"
+msgstr "تقارير الرواتب"
+
+msgid "Recruitment"
+msgstr "توظيف"
+
+msgid "Recruitment Setup"
+msgstr "إعداد التوظيف"
+
+msgid "Job Positions"
+msgstr "الوصف الوظيفي"
+
+msgid "Personal Information"
+msgstr "معلومات شخصية"
+
+msgid "Basic Information"
+msgstr "معلومات اساسية"
+
+msgid "Qualifications"
+msgstr "مؤهلات"
+
+msgid "Dependents"
+msgstr "افراد العائلة"
+
+msgid "Emergency Contacts"
+msgstr "جهة اتصال للطوارئ"
+
+msgid "Leave"
+msgstr "إجازة"
+
+msgid "Leave Management"
+msgstr "إدارة الاجازات"
+
+msgid "Time Management"
+msgstr "إدارة الوقت"
+
+msgid "Projects"
+msgstr "مشاريع"
+
+msgid "Attendance"
+msgstr "الحضور"
+
+msgid "Time Sheets"
+msgstr "جداول الوقت"
+
+msgid "Attendance Sheets"
+msgstr "كشف الحضور"
+
+msgid "Overtime Requests"
+msgstr "طلبات العمل الإضافي"
+
+msgid "Documents"
+msgstr "مستندات"
+
+msgid "My Documents"
+msgstr "مستنداتي"
+
+msgid "Company"
+msgstr "شركة"
+
+msgid "Staff Directory"
+msgstr "دليل الموظفين"
+
+msgid "Training"
+msgstr "تدريب"
+
+msgid "Travel Management"
+msgstr "إدارة السفر"
+
+msgid "Travel"
+msgstr "السفر"
+
+msgid "Finance"
+msgstr "المالية"
+
+msgid "Expenses"
+msgstr "نفقات"
+
+msgid "Loans"
+msgstr "السلف"
+
+msgid "User Reports"
+msgstr "تقارير المستخدم"
+
+msgid "People"
+msgstr "اشخاص"
+
+msgid "Manage"
+msgstr "إدارة"
+
+msgid "Departments"
+msgstr "الأقسام"
+
+msgid "Active Projects"
+msgstr "مشاريع نشطة"
+
+msgid "Update Clients/Projects"
+msgstr "تحديث العملاء / المشاريع"
+
+msgid "Entries Last Week"
+msgstr "إدخالات الأسبوع الماضي"
+
+msgid "Upcoming"
+msgstr "القادمة"
+
+msgid "View / Download Reports"
+msgstr "استعراض/تحميل"
+
+msgid "Generate a Report"
+msgstr "توليد تقرير"
+
+msgid "Configure"
+msgstr "تهيئة"
+
+msgid "Update"
+msgstr "تحديث"
+
+msgid "Applicants"
+msgstr "المتقدمين"
+
+msgid "Active Jobs"
+msgstr "وظائف نشطة"
+
+msgid "Jobs Posted"
+msgstr "وظائف تم الإعلان عنها"
+
+msgid "Jobs"
+msgstr "وظائف"
+
+msgid "Courses"
+msgstr "الدورات"
+
+msgid "Requests"
+msgstr "طلبات"
+
+msgid "Document"
+msgstr "وثيقة"
+
+msgid "Management"
+msgstr "إدارة"
+
+msgid "Expense"
+msgstr "مصروف"
+
+msgid "Permission"
+msgstr "الإذن"
+
+msgid "Permissions"
+msgstr "أذونات"
+
+msgid "and"
+msgstr "و"
+
+msgid "Invoices"
+msgstr "الفواتير"
+
+msgid "Make a Payment"
+msgstr "أتم عملية الدفع"
+
+msgid "Switch Employee"
+msgstr "تبديل الموظف"
+
+msgid "Select The Employee to Switch Into"
+msgstr "حدد الموظف للتبديل في"
+
+msgid "Close"
+msgstr "قريب"
+
+msgid "My Profile"
+msgstr "ملفي"
+
+msgid "Edit Details"
+msgstr "عدل التفاصيل"
+
+msgid "View/Edit Profile"
+msgstr "عرض / تحرير الملف الشخصي"
+
+msgid "Punch In"
+msgstr "لكمة في"
+
+msgid "or"
+msgstr "أو"
+
+msgid "Punch Out"
+msgstr "لكمة خارج"
+
+msgid "Record Attendance"
+msgstr "سجل الحضور"
+
+msgid "Pending Leaves"
+msgstr "الاجازات المعقله"
+
+msgid "Check Leave Status"
+msgstr "التحقق من حالة الاجازة"
+
+msgid "Hours worked Last Week"
+msgstr "عملت ساعات في الأسبوع الماضي"
+
+msgid "Update Time Sheet"
+msgstr "تحدث كشف الحضور"
+
+msgid "My Projects"
+msgstr "مشاريعي"
+
+msgid "Projects Assigned"
+msgstr "المشاريع المعينة"
+
+msgid "More info"
+msgstr "مزيد من المعلومات"
+
+msgid "Store"
+msgstr "متجر"
+
+msgid "My Travel"
+msgstr "رحلتي"
+
+msgid "My Expenses"
+msgstr "نفقاتي"
+
+msgid "Manage Expenses"
+msgstr "إدارة النفقات"
+
+msgid "ID"
+msgstr "هوية شخصية"
+
+msgid "Name"
+msgstr "اسم"
+
+msgid "Address"
+msgstr "عنوان"
+
+msgid "Type"
+msgstr "نوع"
+
+msgid "Country"
+msgstr "بلد"
+
+msgid "Time Zone"
+msgstr "وحدة زمنية"
+
+msgid "Parent Structure"
+msgstr "هيكل الوالدين"
+
+msgid "Details"
+msgstr "تفاصيل"
+
+msgid "Heads"
+msgstr "رؤساء"
+
+msgid "Code"
+msgstr "الشفرة"
+
+msgid "Job Title Code"
+msgstr "رمز عنوان الوظيفة"
+
+msgid "Job Title"
+msgstr "عنوان وظيفي"
+
+msgid "Description"
+msgstr "وصف"
+
+msgid "Specification"
+msgstr "تخصيص"
+
+msgid "Currency"
+msgstr "دقة"
+
+msgid "Min Salary"
+msgstr "الحد الأدنى للراتب"
+
+msgid "Max Salary"
+msgstr "الحد الأعلى للراتب"
+
+msgid "Pay Grade Name"
+msgstr "ادفع اسم الصف"
+
+msgid "Employment Status"
+msgstr "الحالة الوظيفية"
+
+msgid "Coordinator"
+msgstr "منسق"
+
+msgid "Trainer"
+msgstr "مدرب"
+
+msgid "Trainer Details"
+msgstr "تفاصيل المدرب"
+
+msgid "Payment Type"
+msgstr "نوع الدفع"
+
+msgid "Cost"
+msgstr "تكلفة"
+
+msgid "Status"
+msgstr "الحالة"
+
+msgid "Course"
+msgstr "دورة"
+
+msgid "Scheduled Time"
+msgstr "جدول زمني"
+
+msgid "Assignment Due Date"
+msgstr "تاريخ الاستحقاق"
+
+msgid "Delivery Method"
+msgstr "طريقة التوصيل"
+
+msgid "Delivery Location"
+msgstr "موقع التسليم"
+
+msgid "Attendance Type"
+msgstr "نوع الحضور"
+
+msgid "Attachment"
+msgstr "المرفق"
+
+msgid "Training Certificate Required"
+msgstr "شهادة التدريب المطلوبة"
+
+msgid "Employee"
+msgstr "موظف"
+
+msgid "Training Session"
+msgstr "دورة تدريبية"
+
+msgid "Contact Number"
+msgstr "رقم الاتصال"
+
+msgid "Contact Email"
+msgstr "تواصل بالبريد الاكتروني"
+
+msgid "Company Url"
+msgstr "عنوان الشركة"
+
+msgid "First Contact Date"
+msgstr "تاريخ الاتصال الأول"
+
+msgid "Client"
+msgstr "عميل"
+
+msgid "Project"
+msgstr "مشروع"
+
+msgid "Leave Name"
+msgstr "اسم المغادر/ المجاز"
+
+msgid "Leave Accrue Enabled"
+msgstr "تفعيل الإجازات المستحقة"
+
+msgid "Leave Carried Forward"
+msgstr "الاجازات التي سيتم ترحيلها"
+
+msgid "Leaves Per Year"
+msgstr "مجموع الاجازات في السنة"
+
+msgid "Leaves Group"
+msgstr "مجموع الاجازات"
+
+msgid "Leaves Per Leave Period"
+msgstr "المغادرة اثناء فترة الاجازة"
+
+msgid "Admin can assign leave to employees"
+msgstr "يمكن المشرف تعيين إجازة للموظفين"
+
+msgid "Employees can apply for this leave type"
+msgstr "يمكن للموظفين التقدم بطلب للحصول على هذا النوع من الإجازات"
+
+msgid "Employees can apply beyond the current leave balance"
+msgstr "يمكن للموظفين تطبيق ما بعد الرصيد الحالي للإجازة"
+
+msgid "Percentage of Leaves Carried Forward"
+msgstr "نسبة الاجازات  المنفذة"
+
+msgid "Maximum Carried Forward Amount"
+msgstr "الحد الاقصي للمبلغ  المنفذ"
+
+msgid "Carried Forward Leave Availability Period"
+msgstr "الفترة الزمنية المتبقية"
+
+msgid "Proportionate leaves on Joined Date"
+msgstr "الاجازات  حسب تاريخ الالتحاق"
+
+msgid "Send Notification Emails"
+msgstr "إرسال رسائل البريد الإلكتروني الإخطار"
+
+msgid "Leave Group"
+msgstr "مجموع الاجازة"
+
+msgid "Leave Color"
+msgstr "نوع الاجازة"
+
+msgid "Period Start"
+msgstr "تاريخ بداية الاجازة"
+
+msgid "Period End"
+msgstr "تاريخ انتهاء الاجازة"
+
+msgid "Day"
+msgstr "يوم"
+
+msgid "For All Countries"
+msgstr "لجميع الدول"
+
+msgid "Date"
+msgstr "تاريخ"
+
+msgid "Leave Type"
+msgstr "نوع الإجازة"
+
+msgid "Propotionate leaves on Joined Date"
+msgstr "Propotionate يترك في تاريخ الانضمام"
+
+msgid "Leaves Period"
+msgstr "فترة الاجازة"
+
+msgid "Leave Amount"
+msgstr "مبلغ الاجازة"
+
+msgid "Leave Period"
+msgstr "فترة الاجازة"
+
+msgid "Note"
+msgstr "ملحوظة"
+
+msgid "All Employees"
+msgstr "كل الموظفين"
+
+msgid "All Leave Types"
+msgstr "جميع أنواع الإجازات"
+
+msgid "Loan Type"
+msgstr "نوع السلف"
+
+msgid "Loan Start Date"
+msgstr "تاريخ بداية السلفه"
+
+msgid "Loan Period (Months)"
+msgstr "مدة السلفة"
+
+msgid "Amount"
+msgstr "المبلغ"
+
+msgid "Last Installment Date"
+msgstr "تاريخ القسط الأخير"
+
+msgid "Loan Amount"
+msgstr "مبلغ السلفة"
+
+msgid "Monthly Installment"
+msgstr "القسط الشهري"
+
+msgid "Employee Number"
+msgstr "رقم الموظف"
+
+msgid "First Name"
+msgstr "الاسم الاول"
+
+msgid "Middle Name"
+msgstr "الاسم الوسطى"
+
+msgid "Last Name"
+msgstr "اللقب"
+
+msgid "Nationality"
+msgstr "جنسية"
+
+msgid "Date of Birth"
+msgstr "تاريخ الولادة"
+
+msgid "Gender"
+msgstr "جنس"
+
+msgid "Marital Status"
+msgstr "الحالة الحالة الإجتماعية"
+
+msgid "Ethnicity"
+msgstr "الأصل العرقي"
+
+msgid "Immigration Status"
+msgstr "نوع الإقامة"
+
+msgid "SSN/NRIC"
+msgstr "رقم الإقامة"
+
+msgid "NIC"
+msgstr "رقم الهوية الوطنية"
+
+msgid "Other ID"
+msgstr "معرف آخر"
+
+msgid "Driving License No"
+msgstr "رخصة القيادة"
+
+msgid "Pay Grade"
+msgstr "دفع الصف"
+
+msgid "Work Station Id"
+msgstr "رقم محطة العمل"
+
+msgid "Address Line 1"
+msgstr "العنوان السطر 1"
+
+msgid "Address Line 2"
+msgstr "سطر العنوان 2"
+
+msgid "City"
+msgstr "مدينة"
+
+msgid "Province"
+msgstr "المحافظة"
+
+msgid "Postal/Zip Code"
+msgstr "البريد / الرمز البريدي"
+
+msgid "Home Phone"
+msgstr "هاتف المنزل"
+
+msgid "Mobile Phone"
+msgstr "هاتف محمول"
+
+msgid "Work Phone"
+msgstr "هاتف عمل"
+
+msgid "Work Email"
+msgstr "البريد الإلكتروني العمل"
+
+msgid "Private Email"
+msgstr "بريد الكتروني خاص"
+
+msgid "Joined Date"
+msgstr "تاريخ الانضمام"
+
+msgid "Confirmation Date"
+msgstr "تاريخ تأكيدا"
+
+msgid "Termination Date"
+msgstr "تاريخ الإنهاء"
+
+msgid "Department"
+msgstr " قسم، أقسام"
+
+msgid "Supervisor"
+msgstr "مشرف"
+
+msgid "Indirect Supervisors"
+msgstr "المشرفون غير المباشرين"
+
+msgid "First Level Approver"
+msgstr "المستوى الأول"
+
+msgid "Second Level Approver"
+msgstr "موافقة المستوى الثاني"
+
+msgid "Third Level Approver"
+msgstr "موافقة المستوى الثالث"
+
+msgid "Notes"
+msgstr "ملاحظات"
+
+msgid "Time (GMT)"
+msgstr "الوقت (GMT)"
+
+msgid "User"
+msgstr "المستعمل"
+
+msgid "IP Address"
+msgstr "عنوان IP"
+
+msgid "Logged In Employee"
+msgstr "تسجيل في الموظف"
+
+msgid "Skill"
+msgstr "مهارة"
+
+msgid "Qualification"
+msgstr "المؤهل"
+
+msgid "Institute"
+msgstr "معهد"
+
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+msgid "Completed On"
+msgstr "اكتملت"
+
+msgid "Certification"
+msgstr "شهادة"
+
+msgid "Granted On"
+msgstr "منح على"
+
+msgid "Valid Thru"
+msgstr "صالح من خلال"
+
+msgid "Language"
+msgstr "لغة"
+
+msgid "Reading"
+msgstr "قراءة"
+
+msgid "Speaking"
+msgstr "تكلم"
+
+msgid "Writing"
+msgstr "جاري الكتابة"
+
+msgid "Understanding"
+msgstr "فهم"
+
+msgid "Date Added"
+msgstr "تم إضافة التاريخ"
+
+msgid "Valid Until"
+msgstr "صالح حتى"
+
+msgid "Relationship"
+msgstr "صلة"
+
+msgid "Id Number"
+msgstr "رقم الهوية"
+
+msgid "All Job Titles"
+msgstr "جميع عناوين الوظائف"
+
+msgid "All Departments"
+msgstr "جميع الإدارات"
+
+msgid "Anyone"
+msgstr "أي واحد"
+
+msgid "Field"
+msgstr "حقل"
+
+msgid "Old Value"
+msgstr "القيمة القديمة"
+
+msgid "New Value"
+msgstr "قيمة جديدة"
+
+msgid "Modified By"
+msgstr "تعديل بواسطة"
+
+msgid "Created"
+msgstr "تم انشاؤوها"
+
+msgid "Notify Expiry"
+msgstr "إخطار انتهاء"
+
+msgid "Notify Expiry Before One Month"
+msgstr "إخطار انتهاء قبل شهر واحد"
+
+msgid "Notify Expiry Before One Week"
+msgstr "إخطار انتهاء قبل أسبوع واحد"
+
+msgid "Notify Expiry Before One Day"
+msgstr "إخطار انتهاء قبل يوم واحد"
+
+msgid "Travel Type"
+msgstr "نوع السفر"
+
+msgid "Purpose of Travel"
+msgstr "الغرض من السفر"
+
+msgid "Travel From"
+msgstr "السفر من"
+
+msgid "Travel To"
+msgstr "يسافر إلى"
+
+msgid "Travel Date"
+msgstr "موعد السفر"
+
+msgid "Return Date"
+msgstr "تاريخ العودة"
+
+msgid "Total Funding Proposed"
+msgstr "مجموع التمويل المقترح"
+
+msgid "Itinerary / Cab Receipt"
+msgstr "خط سير الرحلة / الكابينة"
+
+msgid "Other Attachment 1"
+msgstr "مرفق آخر 1"
+
+msgid "Other Attachment 2"
+msgstr "مرفق آخر 2"
+
+msgid "Payment Method"
+msgstr "طريقة الدفع او السداد"
+
+msgid "Transaction / Ref No"
+msgstr "المعاملة / المرجع لا"
+
+msgid "Payee"
+msgstr "المستفيد"
+
+msgid "Expense Category"
+msgstr "فئة المصاريف"
+
+msgid "Receipt"
+msgstr "إيصال"
+
+msgid "Time-In"
+msgstr "حان الوقت"
+
+msgid "Time-Out"
+msgstr "نفذ الوقت"
+
+msgid "Clocked In Status"
+msgstr "الساعة في حالة"
+
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+msgid "Category"
+msgstr "الفئة"
+
+msgid "Start Time"
+msgstr "وقت البدء"
+
+msgid "End Time"
+msgstr "وقت النهاية"
+
+msgid "Leave Status"
+msgstr "ترك الوضع"
+
+msgid "Select Client"
+msgstr "اختر العميل"
+
+msgid "Not Selected"
+msgstr "لم يتم اختياره"
+
+msgid "Or Project"
+msgstr "أو مشروع"
+
+msgid "All Projects"
+msgstr "جميع المشاريع"
+
+msgid "All Status"
+msgstr "كل الحالة"
+
+msgid "Value"
+msgstr "القيمة"
+
+msgid "Logo"
+msgstr "شعار"
+
+msgid "User Name"
+msgstr "اسم المستخدم"
+
+msgid "Authentication Email"
+msgstr "مصادقة البريد الإلكتروني"
+
+msgid "User Level"
+msgstr "مستوى المستخدم"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "User Roles"
+msgstr "أدوار المستخدمين"
+
+msgid "Default Module"
+msgstr "لوحة التحكم الافتراضي"
+
+msgid "No Default Module"
+msgstr "لوحة التحكم الثانوي"
+
+msgid "Menu"
+msgstr "القائمة الرئيسية"
+
+msgid "Group"
+msgstr "مجموعة"
+
+msgid "Order"
+msgstr "طلب"
+
+msgid "Path"
+msgstr "مسار"
+
+msgid "Label"
+msgstr "ملصق"
+
+msgid "User Levels"
+msgstr "مستويات المستخدم"
+
+msgid "Module"
+msgstr "لوحة تحكم"
+
+msgid "All Modules"
+msgstr "جيمع  الاعدادات"
+
+msgid "Invoice Period Start"
+msgstr "بداية فترة الفاتورة"
+
+msgid "Invoice Period End"
+msgstr "نهاية فترة الفاتورة"
+
+msgid "Due date"
+msgstr "تاريخ الاستحقاق"
+
+msgid "Url"
+msgstr "رابط"
+
+msgid "Original Text"
+msgstr "النص الأصلي"
+
+msgid "Mapped Text"
+msgstr "النص المعين"
+
+msgid "Display Status"
+msgstr "حالة العرض"
+
+msgid "Field Type"
+msgstr "نوع الحقل"
+
+msgid "Field Label"
+msgstr "تسمية الحقول"
+
+msgid "Validation"
+msgstr "التحقق من صحة"
+
+msgid "Field Options"
+msgstr "خيارات الحقل"
+
+msgid "Priority"
+msgstr "أفضلية"
+
+msgid "Display Section"
+msgstr "قسم العرض"
+
+msgid "Salary Component Type"
+msgstr "نوع مكون مسير الرواتب"
+
+msgid "Salary Component"
+msgstr "مكون الراتب"
+
+msgid "Pay Frequency"
+msgstr "يدفع بشكل متكرر"
+
+msgid "Calculation Group"
+msgstr "مجموعة حساب"
+
+msgid "None"
+msgstr "لا شيء"
+
+msgid "Calculation Exemptions"
+msgstr "اعفاءات حسابية"
+
+msgid "Calculations Assigned"
+msgstr "الحسابات المعينة"
+
+msgid "Date Start"
+msgstr "تاريخ البدء"
+
+msgid "Date End"
+msgstr "تاريخ الانتهاء"
+
+msgid "Payslip Template"
+msgstr "نموذج دفع قسيمة مالية"
+
+msgid "Payroll Columns"
+msgstr "أعمدة المرتبات"
+
+msgid "Calculation Method"
+msgstr "طريقة حساب"
+
+msgid "Editable"
+msgstr "قابل للتعديل"
+
+msgid "Enabled"
+msgstr "تمكين"
+
+msgid "Predefined Calculations"
+msgstr "الحسابات المحددة مسبقا"
+
+msgid "Salary Components"
+msgstr "مكونات الراتب"
+
+msgid "Columns to Add"
+msgstr "أعمدة لإضافة"
+
+msgid "Columns to Subtract"
+msgstr "أعمدة لطرح"
+
+msgid "Column Order"
+msgstr "ترتيب العمود"
+
+msgid "Default Value"
+msgstr "القيمة الافتراضية"
+
+msgid "Calculation Columns"
+msgstr "أعمدة الحساب"
+
+msgid "Function"
+msgstr "وظيفة"
+
+msgid "Payroll Report Column"
+msgstr "عمود تقرير الرواتب"
+
+msgid "Calculation Process"
+msgstr "عملية الحساب"
+
+msgid "Payslip Fields"
+msgstr "حقول Payslip"
+
+msgid "Payroll Column"
+msgstr "عمود الرواتب"
+
+msgid "Text"
+msgstr "نص"
+
+msgid "Lower Limit Condition"
+msgstr "شرط الحد الأدنى"
+
+msgid "Lower Limit"
+msgstr "الحد الأدنى"
+
+msgid "Upper Limit Condition"
+msgstr "شرط الحد الأعلى"
+
+msgid "Upper Limit"
+msgstr "الحد الأعلى"
+
+msgid "Column"
+msgstr "عمود"
+
+msgid "Job Code"
+msgstr "كود الوظيفة"
+
+msgid "Short Description"
+msgstr "وصف قصير"
+
+msgid "Requirements"
+msgstr "المتطلبات"
+
+msgid "Benefits"
+msgstr "المستحقات"
+
+msgid "Employment Type"
+msgstr "نوع الوظيفة"
+
+msgid "Any Employment Type"
+msgstr "أي نوع التوظيف"
+
+msgid "Experience Level"
+msgstr "مستوى الخبرة"
+
+msgid "Any Experience Level"
+msgstr "أي مستوى الخبرة"
+
+msgid "Job Function"
+msgstr "وظيفة الوظيفة"
+
+msgid "Any Job Function"
+msgstr "أي وظيفة مهمة"
+
+msgid "Education Level"
+msgstr "مستوى التعليم"
+
+msgid "Any Education Level"
+msgstr "أي مستوى التعليم"
+
+msgid "Show Salary"
+msgstr "إظهار الراتب"
+
+msgid "Salary Min"
+msgstr "الحد الادني لللراتب"
+
+msgid "Salary Max"
+msgstr "الحد الأعلى للراتب"
+
+msgid "Keywords"
+msgstr "الفهرست"
+
+msgid "Closing Date"
+msgstr "الموعد النهائي"
+
+msgid "Image"
+msgstr "صورة"
+
+msgid "Display Type"
+msgstr "نوع العرض"
+
+msgid "Profile Image"
+msgstr "صورة الملف الشخصي"
+
+msgid "Telephone"
+msgstr "هاتف"
+
+msgid "Resume Title"
+msgstr "استئناف عنوان"
+
+msgid "Resume"
+msgstr "استئنف"
+
+msgid "Resume Headline"
+msgstr "استئناف العنوان الرئيسي"
+
+msgid "Profile Summary"
+msgstr "ملخص الملف"
+
+msgid "Work History"
+msgstr "تاريخ العمل"
+
+msgid "Education"
+msgstr "التعليم"
+
+msgid "Skills"
+msgstr "مهارات"
+
+msgid "Referees"
+msgstr "المراجع"
+
+msgid "From Year"
+msgstr "من سنة"
+
+msgid "From Month"
+msgstr "من الشهر"
+
+msgid "To Year"
+msgstr "إلى سنة"
+
+msgid "To Month"
+msgstr "الى الشهر"
+
+msgid "Currently Work Here"
+msgstr "تعمل حاليا هنا"
+
+msgid "Degree/Diploma"
+msgstr "درجة الدبلوم"
+
+msgid "Currently Studying"
+msgstr "الدراسة الحالية"
+
+msgid "Skill Level"
+msgstr "مستوى المهارة"
+
+msgid "Last Used Year"
+msgstr "العام الماضي"
+
+msgid "Last Used Month"
+msgstr "الشهر الماضي الماضي"
+
+msgid "Years of Experience"
+msgstr "سنوات من الخبرة"
+
+msgid "Designation"
+msgstr "تعيين"
+
+msgid "Phone"
+msgstr "هاتف"
+
+msgid "Job"
+msgstr "وظيفة"
+
+msgid "Candidate"
+msgstr "مرشح"
+
+msgid "Referred By"
+msgstr "مرجعي"
+
+msgid "Leave Start Date"
+msgstr "تاريخ بداية الاجازة"
+
+msgid "Leave End Date"
+msgstr "تاريخ بداية الاجازة"
+
+msgid "Reason"
+msgstr "السبب"
+
+msgid "Available Leaves"
+msgstr "الاجازات المتاحة"
+
+msgid "Approved Leaves"
+msgstr "الاجازات المعتمدةو"
+
+msgid "Rejected Leaves"
+msgstr "الاجازات المرفوضة"
+
+msgid "Leaves to be Accrued"
+msgstr "الاجازات المستحقة"
+
+msgid "Leaves Carried Forward"
+msgstr "اجازات تم اجازتها"
+
+msgid "Apply Leave"
+msgstr "التقديم للاجازة"
+
+msgid "Filter"
+msgstr "فلترة"
+
+msgid "Add New"
+msgstr "اضف جديد"
+
+msgid "Time"
+msgstr "زمن"
+
+msgid "Purpose"
+msgstr "غرض"
+
+msgid "From"
+msgstr "من عند"
+
+msgid "To"
+msgstr "إلى"
+
+msgid "Created (GMT)"
+msgstr "تم الإنشاء (GMT)"
+
+msgid "Download"
+msgstr "تحميل"
+
+msgid "Submit"
+msgstr "خضع"
+
+msgid "Upload"
+msgstr "رفع"
+
+msgid "Remove"
+msgstr "إزالة"
+
+msgid "Add"
+msgstr "إضافة"
+
+msgid "Reset"
+msgstr "إعادة تعيين"
+
+msgid "Add Time Entry"
+msgstr "إضافة وقت الدخول"
+
+msgid "Current Clocked In Status"
+msgstr "الحالية في حالة تأهب في الحالة"
+
+msgid "Attendance entry should be within a single day"
+msgstr "يجب أن يكون حضور الحضور في يوم واحد"
+
+msgid "Account Balance"
+msgstr "رصيد الحساب"
+
+msgid "Plan"
+msgstr "خطة"
+
+msgid "Transactions"
+msgstr "المعاملات"
+
+msgid "Applications"
+msgstr "تطبيقات"
+
+msgid "Attendance Graph"
+msgstr "الرسم البياني الحضور"
+
+msgid "Hours in Office vs Hours Worked Graph"
+msgstr "ساعات في المكتب مقابل ساعات العمل الرسم البياني"
+
+msgid "Company Graph"
+msgstr "المخطط البياني للشركة"
+
+msgid "Company Documents"
+msgstr "وثائق الشركة"
+
+msgid "Document Types"
+msgstr "أنواع الوثائق"
+
+msgid "Employee Documents"
+msgstr "وثائق الموظف"
+
+msgid "Employee Basic Details"
+msgstr "الموظف التفاصيل الأساسية"
+
+msgid "Employees (Direct Reports)"
+msgstr "الموظفون (التقارير المباشرة)"
+
+msgid "Certifications"
+msgstr "الشهادات"
+
+msgid "Languages"
+msgstr "اللغات"
+
+msgid "Deactivated Employees"
+msgstr "الموظفين الغير نشطين"
+
+msgid "Temporarily Deactivated Employees"
+msgstr "تم إيقافه  مؤقتا"
+
+msgid "Terminated Employee Data"
+msgstr "بيانات الموظفي  الموقوف"
+
+msgid "Employee Saved Successfully"
+msgstr "الموظف المحفوظة بنجاح"
+
+msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
+msgstr "يحتاج الموظف إلى مستخدم لتسجيل الدخول إلى IceHrm. هل تريد إنشاء مستخدم لهذا الموظف الآن؟"
+
+msgid "You can do this later through Users module if required."
+msgstr "يمكنك القيام بذلك لاحقًا من خلال وحدة المستخدمين إذا لزم الأمر."
+
+msgid "Expenses Categories"
+msgstr "فئات المصروفات"
+
+msgid "Payment Methods"
+msgstr "طرق الدفع"
+
+msgid "Employee Expenses"
+msgstr "نفقات الموظف"
+
+msgid "Salary Component Types"
+msgstr "أنواع مكون الراتب"
+
+msgid "Employee Salary Components"
+msgstr "مكونات راتب الموظف"
+
+msgid "Company Payroll"
+msgstr "كشوفات الرواتب"
+
+msgid "Calculation Groups"
+msgstr "مجموعات الحساب"
+
+msgid "Calculation Methods"
+msgstr "طرق الحساب"
+
+msgid "Payslip Templates"
+msgstr "نماذج قسائم دفع مالية"
+
+msgid "Edit Employment Types"
+msgstr "تحرير أنواع التوظيف"
+
+msgid "Edit Experience Levels"
+msgstr "تعديل مستويات الخبرة"
+
+msgid "Edit Job Functions"
+msgstr "تعديل وظائف الوظيفة"
+
+msgid "Edit Education Levels"
+msgstr "تحرير مستويات التعليم"
+
+msgid "Edit Benefits"
+msgstr "تعديل المستحاقات"
+
+msgid "Application"
+msgstr "حالة الطلب"
+
+msgid "Job Titles"
+msgstr "عناوين الوظيفة"
+
+msgid "Pay Grades"
+msgstr "ادفع الدرجات"
+
+msgid "Training Sessions"
+msgstr "حصص التدريب"
+
+msgid "Employee Training Sessions"
+msgstr "جلسات تدريب الموظفين"
+
+msgid "Clients"
+msgstr "عملاء"
+
+msgid "Employee Projects"
+msgstr "مشاريع الموظفين"
+
+msgid "Leave Types"
+msgstr "أنواع الاجازات/ا لمغادرات"
+
+msgid "Work Week"
+msgstr "أسبوع العمل"
+
+msgid "Holidays"
+msgstr "العطل"
+
+msgid "Leave Rules"
+msgstr "شروط الاجازة"
+
+msgid "Paid Time Off"
+msgstr "أجازة مدفوعة"
+
+msgid "Leave Groups"
+msgstr "ترك مجموعات"
+
+msgid "Edit Leave Groups"
+msgstr "تعديل على مجموعات الاجازات"
+
+msgid "Leave Group Employees"
+msgstr "قائمة باجازات المجموعات"
+
+msgid "Employee Leave List"
+msgstr "قائمة إجازة الموظفين"
+
+msgid "Loan Types"
+msgstr "أنواع السلف"
+
+msgid "Employee Loans"
+msgstr "سلف الموظفين"
+
+msgid "Travel Requests"
+msgstr "طلبات السفر"
+
+msgid "Overtime Categories"
+msgstr "فئات العمل الإضافي"
+
+msgid "Leave / PTO"
+msgstr "اجازات"
+
+msgid "Other"
+msgstr "آخر"
+
+msgid "Modules"
+msgstr "لوحات  تحكم"
+
+msgid "Countries"
+msgstr "بلدان"
+
+msgid "Provinces"
+msgstr "المحافظات"
+
+msgid "Currency Types"
+msgstr "أنواع العملات"
+
+msgid "Employee Custom Fields"
+msgstr "حقول مخصصة للموظفين"
+
+msgid "Employee Field Names"
+msgstr "أسماء حقول الموظفين"
+
+msgid "My Details"
+msgstr "تفاصيلي"
+
+msgid "All My Leaves"
+msgstr "جميع الاجازات"
+
+msgid "Leave Entitlement"
+msgstr "استحقاقات الاجازة"
+
+msgid "Approved Leave"
+msgstr "الإجازة المعتمدة"
+
+msgid "Pending Leave"
+msgstr "في انتظار الإجازة"
+
+msgid "Subordinate Leave"
+msgstr "الإجازة الثانوية"
+
+msgid "Cancellation Requests"
+msgstr "طلبات الإلغاء"
+
+msgid "Approval Requests"
+msgstr "طلبات الموافقة"
+
+msgid "Approved TimeSheets"
+msgstr "جداول زمنية معتمدة"
+
+msgid "All My TimeSheets"
+msgstr "كشف الحضور الكلي"
+
+msgid "Pending TimeSheets"
+msgstr "كشف الحضور قبل التدقيق"
+
+msgid "Subordinate TimeSheets"
+msgstr "جداول زمنية فرعية"
+
+msgid "Approved Attendance Sheets"
+msgstr "كشف الحضور المعتمد"
+
+msgid "All My Attendance Sheets"
+msgstr "كشف بجميع كشوفاتا لحضور"
+
+msgid "Pending Attendance Sheets"
+msgstr "كشف الحضور المعلقه"
+
+msgid "Subordinate Attendance Sheets"
+msgstr "كشوفات الحضور الثانوية"
+
+msgid "Subordinate Overtime Requests"
+msgstr "طلبات العلوات الرئيسية"
+
+msgid "Overtime Request Approval"
+msgstr "موافقة الطلب الإضافي"
+
+msgid "My Training Sessions"
+msgstr "جلسات التدريب الخاصة بي"
+
+msgid "All Training Sessions"
+msgstr "كل الدورات التدريبية"
+
+msgid "Training Sessions of Direct Reports"
+msgstr "الدورات التدريبية للتقارير المباشرة"
+
+msgid "Subordinate Travel Requests"
+msgstr "طلبات السفر الثانوية"
+
+msgid "Travel Request Approval"
+msgstr "الموافقة على طلب السفر"
+
+msgid "Subordinate Expenses"
+msgstr "النفقات الثانوية"
+
+msgid "Expenses Approval"
+msgstr "الموافقة على المصروفات"
+
+msgid "Loans Taken"
+msgstr "السلف التي تم منحها"
+
+msgid "Change Leave Status"
+msgstr "تغيير وضع الإجازة"
+
+msgid "Status Change Note"
+msgstr "ملاحظة تغيير الحالة"
+
+msgid "Leave Summary"
+msgstr "ملخص الا جازات"
+
+msgid "Approved Leave Count"
+msgstr "عدد الإجازات المعتمدة"
+
+msgid "Pending Leave Count"
+msgstr "مجموع الاجازات المعلقة"
+
+msgid "Available Leave Count"
+msgstr "مجموع الاجازات المتاحة"
+
+msgid "Leave Dates"
+msgstr "تاريخ الاجازة"
+
+msgid "Leave Date"
+msgstr "تاريخ الاجازة"
+
+msgid "Leave Notes"
+msgstr "ترك ملاحظات"
+
+msgid "Apply"
+msgstr "التقديم  للاجازة"
+
+msgid "Back"
+msgstr "الى الخلف"
+
+msgid "Hours in Time Sheets"
+msgstr "ساعات في جداول الوقت"
+
+msgid "HR form"
+msgstr "نماذج الموارد البشرية"
+
+msgid "HR Form Management"
+msgstr "إدارة نموذج الموارد البشرية"
+
+msgid "Form Name"
+msgstr "اسم النموذج"
+
+msgid "Fields"
+msgstr "مجالات"
+
+msgid "Employee Froms"
+msgstr "Froms الموظف"
+
+msgid "Share Departments"
+msgstr "شارك الأقسام"
+
+msgid "Share Employees"
+msgstr "مشاركة الموظفين"
+
+msgid "Data Importers"
+msgstr "مستوردين البيانات"
+
+msgid "Data Import Files"
+msgstr "ملفات استيراد البيانات"
+
+msgid "Data Type"
+msgstr "نوع البيانات"
+
+msgid "Columns"
+msgstr "أعمدة"
+
+msgid "Field Title"
+msgstr "عنوان الحقل"
+
+msgid "Depends On"
+msgstr "يعتمد على"
+
+msgid "Depends On Field"
+msgstr "يعتمد على الميدان"
+
+msgid "is Key Field"
+msgstr "هو الحقل الرئيسي"
+
+msgid "is ID Field"
+msgstr "هو حقل ID"
+
+msgid "Data Import Definitions"
+msgstr "تعريفات استيراد البيانات"
+
+msgid "File to Import"
+msgstr "ملف لاستيراد"
+
+msgid "Last Export Results"
+msgstr "آخر نتائج التصدير"
+
+msgid "Time and Attendance"
+msgstr "الوقت والحضور"
+
+msgid "Leave Timeline"
+msgstr "الجدول الزمني للاجازات"
+
+msgid "Insights"
+msgstr "أفكارا"
+
+msgid "Api Access"
+msgstr "الدخول الى"
+
+msgid "Change User Password"
+msgstr "تغيير كلمة مرور المستخدم"
+
+msgid "New Password"
+msgstr "كلمة السر الجديدة"
+
+msgid "Confirm Password"
+msgstr "تأكيد كلمة المرور"
+
+msgid "Change Password"
+msgstr "غير كلمة السر"
+
+msgid "Not Now"
+msgstr "ليس الان"
+
+msgid "Contact Information"
+msgstr "معلومات للتواصل"
+
+msgid "Job Details"
+msgstr "تفاصيل الوظيفة"
+
+msgid "Edit Info"
+msgstr "تحرير المعلومات"
+
+msgid "Upload Profile Image"
+msgstr "تحميل صورة الملف الشخصي"
+
+msgid "Delete Profile Image"
+msgstr "حذف صورة الملف الشخصي"
+
+msgid "Direct Reports"
+msgstr "تقارير مباشرة"
+
+msgid "Other Details"
+msgstr "تفاصيل أخرى"
+
+msgid "Family"
+msgstr "عائلة"
+
+msgid "Custom Fields"
+msgstr "الحقول المخصصة"
+
+msgid "Means of Transportation"
+msgstr "وسائل النقل"
+
+msgid "Plane"
+msgstr "طائرة"
+
+msgid "Rail"
+msgstr "سكة حديدية"
+
+msgid "Taxi"
+msgstr "سيارة اجره"
+
+msgid "Own Vehicle"
+msgstr "المركبات الخاصة"
+
+msgid "Rented Vehicle"
+msgstr "سيارة مستأجرة"
+
+msgid "Female"
+msgstr "إناثا"
+
+msgid "Male"
+msgstr "الذكر"
+
+msgid "Active"
+msgstr "نشيط"
+
+msgid "Inactive"
+msgstr "غير نشط"
+
+msgid "Draft"
+msgstr "مشروع"
+
+msgid "Not Clocked In"
+msgstr "غير مسجلة"
+
+msgid "Clocked In"
+msgstr "سجلت في"
+
+msgid "File"
+msgstr "ملف"
+
+msgid "Active Employee Report"
+msgstr "تقرير الموظف النشط"
+
+msgid "Employee Attendance Report"
+msgstr "تقرير حضور الموظف"
+
+msgid "Employee Details Report"
+msgstr "تقرير تفاصيل الموظف"
+
+msgid "Employee Leave Entitlement"
+msgstr "حساب استحقاق الموظف"
+
+msgid "Employee Leaves Report"
+msgstr "تقرير أوراق الموظف"
+
+msgid "Employee Time Entry Report"
+msgstr "تقرير إدخال وقت الموظف"
+
+msgid "Employee Time Sheet Report"
+msgstr "تقرير صحيفة وقت الموظف"
+
+msgid "Employee Time Tracking Report"
+msgstr "تقرير تتبع وقت الموظف"
+
+msgid "Expense Report"
+msgstr "تقرير المصاريف"
+
+msgid "New Hires Employee Report"
+msgstr "تقرير توظيف الموظفين الجدد"
+
+msgid "Overtime Report"
+msgstr "تقرير العمل الإضافي"
+
+msgid "Overtime Request Report"
+msgstr "تقرير طلب العمل الإضافي"
+
+msgid "Overtime Summary Report"
+msgstr "تقرير ملخص العمل الإضافي"
+
+msgid "Payroll Meta Data Export"
+msgstr "رواتب ميتا تصدير البيانات"
+
+msgid "Terminated Employee Report"
+msgstr "تقرير الموظف المنتهي"
+
+msgid "Travel Request Report"
+msgstr "تقرير طلب السفر"
+
+msgid "Attendance Report"
+msgstr "تقرير الحضور"
+
+msgid "Client Project Time Report"
+msgstr "تقرير وقت مشروع العميل"
+
+msgid "Download Payslips"
+msgstr "تنزيل Payslips"
+
+msgid "Leaves Report"
+msgstr "تقرير يترك"
+
+msgid "Time Entry Report"
+msgstr "تقرير إدخال الوقت"
+
+msgid "Time Sheet Report"
+msgstr "تقرير صحيفة الوقت"
+
+msgid "Time Tracking Report"
+msgstr "تقرير تتبع الوقت"
+
+msgid "Data"
+msgstr "البيانات"
+
+msgid "Processed"
+msgstr "معالجة"
+
+msgid "Not Processed"
+msgstr "غير معالج"
+
+msgid "Elementary Proficiency"
+msgstr "الكفاءة الابتدائية"
+
+msgid "Limited Working Proficiency"
+msgstr "مهارة العمل المحدودة"
+
+msgid "Professional Working Proficiency"
+msgstr "مهارة العمل المهنية"
+
+msgid "Full Professional Proficiency"
+msgstr "الكفاءة المهنية الكاملة"
+
+msgid "Native or Bilingual Proficiency"
+msgstr "إجادة اللغة أو لغتهم الأم"
+
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+msgid "Approved"
+msgstr "وافق"
+
+msgid "Rejected"
+msgstr "مرفوض"
+
+msgid "Cancelled"
+msgstr "ألغيت"
+
+msgid "Continue"
+msgstr "استمر"
+
+msgid "Cancellation Requested"
+msgstr "الإلغاء المطلوب"
+
+msgid "Completed"
+msgstr "منجز"
+
+msgid "Discussions"
+msgstr "مناقشات"
+
+msgid "Load More"
+msgstr "تحميل المزيد"
+
+msgid "Show More"
+msgstr "أظهر المزيد"
+
+msgid "Show Less"
+msgstr "عرض أقل"
+
+msgid "Publish"
+msgstr "نشر"
+
+msgid "Announcements"
+msgstr "الإعلانات"
+
+msgid "Send"
+msgstr "إرسال"
+
+msgid "Display"
+msgstr "عرض"
+
+msgid "Public"
+msgstr "عامة"
+
+msgid "View Announcements"
+msgstr "عرض الإعلانات"
+
+msgid "Conversations"
+msgstr "المحادثات"
+
+msgid "Start Now"
+msgstr "ابدأ الآن"
+
+msgid "Company Assets"
+msgstr "أصول الشركة"
+
+msgid "Asset Types"
+msgstr "أنواع الأصول"
+
+msgid "Asset Name"
+msgstr "اسم الأصل"
+
+msgid "Performance"
+msgstr "أداء"
+
+msgid "Performance Review"
+msgstr "مراجعة الأداء"
+
+msgid "Performance Reviews"
+msgstr "استعراضات الأداء"
+
+msgid "Review"
+msgstr "إعادة النظر"
+
+msgid "Reviews"
+msgstr "التعليقات"
+
+msgid "Review Feedback"
+msgstr "مراجعة التعليقات"
+
+msgid "Review Template"
+msgstr "مراجعة القالب"
+
+msgid "Template"
+msgstr "نموذج"
+
+msgid "Review Date"
+msgstr "تاريخ المراجعة"
+
+msgid "Self Assessment Due On"
+msgstr "التقييم الذاتي المستحق"
+
+msgid "Review Period Start"
+msgstr "مراجعة بداية الفترة"
+
+msgid "Review Period End"
+msgstr "مراجعة نهاية الفترة"
+
+msgid "Attendees"
+msgstr "الحاضرين"
+
+msgid "Performance Reviews Coordinated by Me"
+msgstr "استعراض الأداء منسق من قبل"
+
+msgid "Provide Feedback"
+msgstr "تقديم التغذية الراجعة"
+
+msgid "Review Status"
+msgstr "مراجعة الحالة"

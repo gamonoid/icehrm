@@ -1,24 +1,7 @@
 <?php
 /*
-This file is part of iCE Hrm.
-
-iCE Hrm is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-iCE Hrm is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with iCE Hrm. If not, see <http://www.gnu.org/licenses/>.
-
-------------------------------------------------------------------
-
-Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
-Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
 $moduleName = 'employees';
@@ -28,19 +11,26 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 $fieldNameMap = \Classes\BaseService::getInstance()->getFieldNameMappings("Employee");
 $customFields = \Classes\BaseService::getInstance()->getCustomFields("Employee");
 
-if (\Classes\SettingsManager::getInstance()->getSetting("Api: REST Api Enabled") == "1") {
-	$user = \Classes\BaseService::getInstance()->getCurrentUser();
-	if (empty($user)) {
-		return;
-	}
-	$dbUser = new \Users\Common\Model\User();
-	$dbUser->Load("id = ?", array($user->id));
-	$resp = \Classes\RestApiManager::getInstance()->getAccessTokenForUser($dbUser);
-	if ($resp->getStatus() != \Classes\IceResponse::SUCCESS) {
-		\Utils\LogManager::getInstance()->error(
-			"Error occurred while creating REST Api access token for ".$user->username
-		);
-	}
+$restApiBase = '';
+$user = \Classes\BaseService::getInstance()->getCurrentUser();
+if (empty($user)) {
+    return;
+}
+$dbUser = new \Users\Common\Model\User();
+$dbUser->Load("id = ?", array($user->id));
+$resp = \Classes\RestApiManager::getInstance()->getAccessTokenForUser($dbUser);
+if ($resp->getStatus() != \Classes\IceResponse::SUCCESS) {
+    \Utils\LogManager::getInstance()->error(
+        "Error occurred while creating REST Api access token for ".$user->username
+    );
+}
+
+if (defined('SYM_CLIENT')) {
+    $restApiBase = WEB_APP_BASE_URL.'/api/'.SYM_CLIENT.'/';
+} else if (defined('REST_API_BASE')){
+    $restApiBase = REST_API_BASE;
+} else {
+    $restApiBase = CLIENT_BASE_PATH.'api/';
 }
 ?>
 <script type="text/javascript" src="<?=BASE_URL.'js/d3js/d3.js?v='.$jsVersion?>"></script>
@@ -93,11 +83,17 @@ path.link {
 			<div class="row">
 				<div class="panel panel-default" style="width:97.5%;">
 					<div class="panel-heading"><h4>Api Access Token</h4></div>
-					<div class="panel-body">
+					<div class="panel-body" id="apiToken">
 						<?=$resp->getData()?>
 					</div>
-			</div>
-		</div>
+			    </div>
+                <div class="panel panel-default" style="width:97.5%;">
+                    <div class="panel-heading"><h4>Mobile Authentication Code</h4></div>
+                    <div class="panel-body" id="apiToken">
+                        <canvas id="apiQRcode"></canvas>
+                    </div>
+                </div>
+		    </div>
 		<?php } ?>
 	</div>
 
@@ -109,6 +105,9 @@ modJsList['tabEmployee'].setFieldNameMap(<?=json_encode($fieldNameMap)?>);
 modJsList['tabEmployee'].setCustomFields(<?=json_encode($customFields)?>);
 modJsList['tabCompanyGraph'] = new CompanyGraphAdapter('CompanyStructure');
 modJsList['tabApiAccess'] = new ApiAccessAdapter('ApiAccess');
+
+modJsList['tabApiAccess'].setApiUrl('<?=$restApiBase?>');
+modJsList['tabApiAccess'].setToken('<?=$resp->getData()?>');
 
 var modJs = modJsList['tabEmployee'];
 

@@ -1,5 +1,13 @@
-function ConversationsAdapter(endPoint,tab,filter,orderBy) {
-    this.initAdapter(endPoint,tab,filter,orderBy);
+/*
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ */
+/* global showUploadDialog */
+import AdapterBase from './AdapterBase';
+
+class ConversationsAdapter extends AdapterBase {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
     this.topLimit = 0;
     this.bottomLimit = 0;
     this.conversations = [];
@@ -10,339 +18,335 @@ function ConversationsAdapter(endPoint,tab,filter,orderBy) {
     this.pageSize = 6;
     this.currentPage = 1;
     this.hasMoreData = true;
-    this.searchTerm = "";
+    this.searchTerm = '';
     this.searchInput = null;
     this.timer = null;
     this.timeoutDelay = 0;
     this.topLimitUpdated = false;
-}
+  }
 
-ConversationsAdapter.inherits(AdapterBase);
-
-ConversationsAdapter.method('getDataMapping', function() {
+  getDataMapping() {
     return [];
-});
+  }
 
-ConversationsAdapter.method('getHeaders', function() {
+  getHeaders() {
     return [];
-});
+  }
 
-ConversationsAdapter.method('getFormFields', function() {
+  getFormFields() {
     return [];
-});
+  }
 
-ConversationsAdapter.method('addConversation', function() {
-    var object = this.validateCreateConversation();
+  addConversation() {
+    const object = this.validateCreateConversation();
 
     if (!object) {
-        return false;
+      return false;
     }
     object.type = this.type;
     object.clienttime = (new Date()).getTimezoneOffset();
-    var reqJson = JSON.stringify(object);
-    var callBackData = [];
-    callBackData['callBackData'] = [];
-    callBackData['callBackSuccess'] = 'addConversationSuccessCallBack';
-    callBackData['callBackFail'] = 'addConversationFailCallBack';
+    const reqJson = JSON.stringify(object);
+    const callBackData = [];
+    callBackData.callBackData = [];
+    callBackData.callBackSuccess = 'addConversationSuccessCallBack';
+    callBackData.callBackFail = 'addConversationFailCallBack';
 
-    this.customAction('addConversation','modules=conversations',reqJson,callBackData);
-});
+    this.customAction('addConversation', 'modules=conversations', reqJson, callBackData);
+    return true;
+  }
 
-ConversationsAdapter.method('clearInputs', function() {
+  clearInputs() {
     $('#contentMessage').data('simplemde').value('');
     $('#attachment').html(this.gt('Attach File'));
     $('#attachment_remove').hide();
     $('#attachment_download').hide();
-});
+  }
 
-ConversationsAdapter.method('uploadPostAttachment', function() {
-    var rand = this.generateRandom(14);
-    showUploadDialog('attachment_'+rand,'Upload Attachment','Conversation',1,'attachment','html','name','all');
-});
+  uploadPostAttachment() {
+    const rand = this.generateRandom(14);
+    showUploadDialog(`attachment_${rand}`, 'Upload Attachment', 'Conversation', 1, 'attachment', 'html', 'name', 'all');
+  }
 
-ConversationsAdapter.method('setConversationType', function(type) {
+  setConversationType(type) {
     this.type = type;
-});
+  }
 
-ConversationsAdapter.method('addConversationSuccessCallBack', function(callBackData) {
+  addConversationSuccessCallBack() {
     this.clearInputs();
     this.getConversations(this.topLimit, this.pageSize, true);
-});
+  }
 
-ConversationsAdapter.method('addConversationFailCallBack', function(callBackData) {
+  addConversationFailCallBack() {
 
-});
+  }
 
-ConversationsAdapter.method('deleteConversation', function(id) {
-    var object = {id: id};
-    var reqJson = JSON.stringify(object);
-    var callBackData = [];
-    callBackData['callBackData'] = [];
-    callBackData['callBackSuccess'] = 'deleteConversationSuccessCallBack';
-    callBackData['callBackFail'] = 'deleteConversationFailCallBack';
+  deleteConversation(id) {
+    const object = { id };
+    const reqJson = JSON.stringify(object);
+    const callBackData = [];
+    callBackData.callBackData = [];
+    callBackData.callBackSuccess = 'deleteConversationSuccessCallBack';
+    callBackData.callBackFail = 'deleteConversationFailCallBack';
 
-    this.customAction('deleteConversation','modules=conversations',reqJson,callBackData);
-});
+    this.customAction('deleteConversation', 'modules=conversations', reqJson, callBackData);
+  }
 
 
+  deleteConversationSuccessCallBack(callBackData) {
+    $(`#obj_${callBackData}`).fadeOut();
+  }
 
-ConversationsAdapter.method('deleteConversationSuccessCallBack', function(callBackData) {
-    $('#obj_'+callBackData).fadeOut();
-});
+  deleteConversationFailCallBack() {
 
-ConversationsAdapter.method('deleteConversationFailCallBack', function(callBackData) {
+  }
 
-});
-
-ConversationsAdapter.method('toggleConversationSize', function(id) {
-    $('#obj_'+id).find('.conversation-body').toggleClass('conversation-small');
-    if ($('#obj_'+id).find('.conversation-body').hasClass('conversation-small')) {
-        $('#obj_'+id).find('.conversation-expand-label').html(this.gt('Show More'));
+  toggleConversationSize(id) {
+    $(`#obj_${id}`).find('.conversation-body').toggleClass('conversation-small');
+    if ($(`#obj_${id}`).find('.conversation-body').hasClass('conversation-small')) {
+      $(`#obj_${id}`).find('.conversation-expand-label').html(this.gt('Show More'));
     } else {
-        $('#obj_'+id).find('.conversation-expand-label').html(this.gt('Show Less'));
+      $(`#obj_${id}`).find('.conversation-expand-label').html(this.gt('Show Less'));
     }
-});
+  }
 
 
-ConversationsAdapter.method('getConversations', function(start, limit, addToTop) {
-    var reqJson = JSON.stringify({
-        start: start,
-        limit: limit,
-        top: addToTop,
-        type: this.type
+  getConversations(start, limit, addToTop) {
+    const reqJson = JSON.stringify({
+      start,
+      limit,
+      top: addToTop,
+      type: this.type,
     });
-    var callBackData = [addToTop];
-    callBackData['callBackData'] = callBackData;
-    callBackData['callBackSuccess'] = 'getConversationsSuccessCallBack';
-    callBackData['callBackFail'] = 'getConversationsFailCallBack';
+    const callBackData = [addToTop];
+    callBackData.callBackData = callBackData;
+    callBackData.callBackSuccess = 'getConversationsSuccessCallBack';
+    callBackData.callBackFail = 'getConversationsFailCallBack';
     this.showConversationLoader();
-    this.customAction('getConversations','modules=conversations',reqJson,callBackData);
-});
+    this.customAction('getConversations', 'modules=conversations', reqJson, callBackData);
+  }
 
 
-
-ConversationsAdapter.method('getConversationsSuccessCallBack', function(addToTop, serverData) {
+  getConversationsSuccessCallBack(addToTop, serverData) {
     this.hideLoader();
-    var data = [];
-    if(!addToTop && serverData.length > this.pageSize){
-        this.hasMoreData = true;
-        serverData.pop();
-        this.loadMoreButton.removeAttr('disabled');
-        this.loadMoreButton.show();
+    const data = [];
+    if (!addToTop && serverData.length > this.pageSize) {
+      this.hasMoreData = true;
+      serverData.pop();
+      this.loadMoreButton.removeAttr('disabled');
+      this.loadMoreButton.show();
     } else if (!addToTop) {
-        this.hasMoreData = false;
-        this.loadMoreButton.hide();
+      this.hasMoreData = false;
+      this.loadMoreButton.hide();
     }
 
     if (!addToTop) {
-        this.scrollToElementBottom(this.container);
+      this.scrollToElementBottom(this.container);
     }
 
-    for(var i=0;i<serverData.length;i++){
-        data.push(this.preProcessTableData(serverData[i]));
+    for (let i = 0; i < serverData.length; i++) {
+      data.push(this.preProcessTableData(serverData[i]));
     }
     this.sourceData = serverData;
     this.topLimitUpdated = false;
-    for(var i=0;i<data.length;i++){
-        this.renderObject(data[i], addToTop);
-        if (data[i].timeint < this.bottomLimit || this.bottomLimit === 0) {
-            this.bottomLimit = data[i].timeint;
-        }
+    for (let i = 0; i < data.length; i++) {
+      this.renderObject(data[i], addToTop);
+      if (data[i].timeint < this.bottomLimit || this.bottomLimit === 0) {
+        this.bottomLimit = data[i].timeint;
+      }
 
-        if (data[i].timeint > this.topLimit || this.topLimit === 0) {
-            this.topLimit = data[i].timeint;
-            this.topLimitUpdated = true;
-        }
+      if (data[i].timeint > this.topLimit || this.topLimit === 0) {
+        this.topLimit = data[i].timeint;
+        this.topLimitUpdated = true;
+      }
     }
     this.hideConversationLoader();
-});
+  }
 
-ConversationsAdapter.method('getConversationsFailCallBack', function(callBackData) {
+  getConversationsFailCallBack() {
     this.hideLoader();
     this.hideConversationLoader();
     if (this.timer !== null) {
-        clearTimeout(this.timer);
-        this.timer = null;
+      clearTimeout(this.timer);
+      this.timer = null;
     }
-});
+  }
 
 
-ConversationsAdapter.method('getObjectHTML', function(object) {
-    var t = this.getCustomTemplate(this.getTemplateName());
+  getObjectHTML(object) {
+    let t = this.getCustomTemplate(this.getTemplateName());
     t = t.replace(new RegExp('#_id_#', 'g'), object.id);
     t = t.replace(new RegExp('#_message_#', 'g'), object.message);
     t = t.replace(new RegExp('#_employeeName_#', 'g'), object.employeeName);
     t = t.replace(new RegExp('#_employeeImage_#', 'g'), object.employeeImage);
     t = t.replace(new RegExp('#_date_#', 'g'), object.date);
 
-    if (object.attachment !== '' && object.attachment !== null &&  object.attachment !== undefined) {
-        var at = this.getCustomTemplate('attachment.html');
-        at = at.replace(new RegExp('#_attachment_#', 'g'), object.attachment);
-        at = at.replace(new RegExp('#_icon_#', 'g'), this.getIconByFileType(object.file.type));
-        at = at.replace(new RegExp('#_color_#', 'g'), this.getColorByFileType(object.file.type));
-        at = at.replace(new RegExp('#_name_#', 'g'), object.file.name);
-        at = at.replace(new RegExp('#_size_#', 'g'), object.file.size_text);
-        t = t.replace(new RegExp('#_attachment_#', 'g'), at);
+    if (object.attachment !== '' && object.attachment !== null && object.attachment !== undefined) {
+      let at = this.getCustomTemplate('attachment.html');
+      at = at.replace(new RegExp('#_attachment_#', 'g'), object.attachment);
+      at = at.replace(new RegExp('#_icon_#', 'g'), this.getIconByFileType(object.file.type));
+      at = at.replace(new RegExp('#_color_#', 'g'), this.getColorByFileType(object.file.type));
+      at = at.replace(new RegExp('#_name_#', 'g'), object.file.name);
+      at = at.replace(new RegExp('#_size_#', 'g'), object.file.size_text);
+      t = t.replace(new RegExp('#_attachment_#', 'g'), at);
     } else {
-        t = t.replace(new RegExp('#_attachment_#', 'g'), '');
+      t = t.replace(new RegExp('#_attachment_#', 'g'), '');
     }
 
     return t;
+  }
 
-});
-
-ConversationsAdapter.method('setPageSize', function(pageSize) {
+  setPageSize(pageSize) {
     this.pageSize = pageSize;
-});
+  }
 
-ConversationsAdapter.method('addDomEvents', function(object) {
+  // eslint-disable-next-line no-unused-vars
+  addDomEvents(object) {
 
-});
+  }
 
-ConversationsAdapter.method('getTemplateName', function() {
+  getTemplateName() {
     return 'conversation.html';
-});
+  }
 
-ConversationsAdapter.method('renderObject', function(object, addToTop) {
+  renderObject(object, addToTop) {
+    const objDom = this.getObjectDom(object.id);
 
-    var objDom = this.getObjectDom(object.id);
-
-    var html = this.getObjectHTML(object);
-    var domObj = $(html);
+    const html = this.getObjectHTML(object);
+    const domObj = $(html);
 
 
-    if (objDom  !== undefined && objDom !== null) {
-        objDom.replace(domObj);
+    if (objDom !== undefined && objDom !== null) {
+      objDom.replace(domObj);
     } else if (addToTop) {
-        this.container.prepend(domObj);
-        $('#obj_'+object.id).css('background-color', '#FFF8DC');
-        $('#obj_'+object.id).fadeIn('slow');
-        $('#obj_'+object.id).animate({backgroundColor: '#FFF'}, 'slow');
+      this.container.prepend(domObj);
+      $(`#obj_${object.id}`).css('background-color', '#FFF8DC');
+      $(`#obj_${object.id}`).fadeIn('slow');
+      $(`#obj_${object.id}`).animate({ backgroundColor: '#FFF' }, 'slow');
     } else {
-        this.container.append(domObj);
-        $('#obj_'+object.id).fadeIn('slow');
+      this.container.append(domObj);
+      $(`#obj_${object.id}`).fadeIn('slow');
     }
 
     if (domObj.find('.conversation-body').prop('scrollHeight') > 290) {
-        domObj.find('.conversation-expand').show();
+      domObj.find('.conversation-expand').show();
     }
 
     if (object.actionDelete === 1) {
-        domObj.find('.delete-button').show();
+      domObj.find('.delete-button').show();
     }
 
     this.addDomEvents(domObj);
-});
+  }
 
-ConversationsAdapter.method('setContainer', function(container) {
+  setContainer(container) {
     this.container = container;
-});
+  }
 
-ConversationsAdapter.method('setLoadMoreButton', function(loadMoreButton) {
-    var that = this;
+  setLoadMoreButton(loadMoreButton) {
+    const that = this;
     this.loadMoreButton = loadMoreButton;
-    this.loadMoreButton.off().on('click',function(){
-            that.loadMoreButton.attr('disabled','disabled');
-            that.loadMore([]);
-        }
-    );
-});
+    this.loadMoreButton.off().on('click', () => {
+      that.loadMoreButton.attr('disabled', 'disabled');
+      that.loadMore([]);
+    });
+  }
 
-ConversationsAdapter.method('showLoadError', function(msg) {
-    $("#"+this.getTableName()+"_error").html(msg);
-    $("#"+this.getTableName()+"_error").show();
-});
+  showLoadError(msg) {
+    $(`#${this.getTableName()}_error`).html(msg);
+    $(`#${this.getTableName()}_error`).show();
+  }
 
-ConversationsAdapter.method('hideLoadError', function() {
-    $("#"+this.getTableName()+"_error").hide();
-});
+  hideLoadError() {
+    $(`#${this.getTableName()}_error`).hide();
+  }
 
-ConversationsAdapter.method('setSearchBox', function(searchInput) {
-    var that = this;
+  setSearchBox(searchInput) {
+    const that = this;
     this.searchInput = searchInput;
     this.searchInput.off();
-    this.searchInput.keydown(function(event){
-        var val = $(this).val();
-        if ( event.which == 13 ) {
-            event.preventDefault();
-            that.search([]);
-        }else if(( event.which == 8 ||  event.which == 46) && val.length == 1 && that.searchTerm != ''){
-            that.search([]);
-        }
+    this.searchInput.keydown(function (event) {
+      const val = $(this).val();
+      if (event.which === 13) {
+        event.preventDefault();
+        that.search([]);
+      } else if ((event.which === 8 || event.which === 46) && val.length === 1 && that.searchTerm !== '') {
+        that.search([]);
+      }
     });
-});
+  }
 
-ConversationsAdapter.method('getObjectDom', function(id) {
-    obj =  this.container.find("#obj_"+id);
-    if(obj.length){
-        return obj;
+  getObjectDom(id) {
+    const obj = this.container.find(`#obj_${id}`);
+    if (obj.length) {
+      return obj;
     }
     return null;
-});
+  }
 
-ConversationsAdapter.method('loadMore', function(callBackData) {
-    if(!this.hasMoreData){
-        return;
+  loadMore(callBackData) {
+    if (!this.hasMoreData) {
+      return;
     }
     this.currentPage++;
     this.get(callBackData, true);
-});
+  }
 
-ConversationsAdapter.method('get', function(callBackData, loadMore) {
-    var that = this;
+  get(callBackData, loadMore) {
+    const that = this;
 
     this.hideLoadError();
 
-    if(!loadMore){
-        this.currentPage = 1;
-        if(this.container != null){
-            this.container.html('');
-        }
-        this.hasMoreData = true;
-        this.tableData = [];
+    if (!loadMore) {
+      this.currentPage = 1;
+      if (this.container != null) {
+        this.container.html('');
+      }
+      this.hasMoreData = true;
+      this.tableData = [];
     }
 
     this.start = (this.currentPage === 1) ? 0 : this.bottomLimit;
 
-    this.container = $("#"+this.getTableName()).find('.objectList');
+    this.container = $(`#${this.getTableName()}`).find('.objectList');
 
     that.showLoader();
 
     this.getConversations(this.start, this.pageSize, false);
 
     if (this.timer === null && that.getTimeout() > 0) {
-        this.timeoutDelay = 0;
-        this.timer = setTimeout(function tick() {
-            that.getConversations(that.topLimit, that.pageSize, true);
-            that.timeoutDelay += that.getTimeout();
-            if (that.topLimitUpdated) {
-                that.timeoutDelay = 0;
-            }
-            that.timer = setTimeout(tick, that.getTimeout() + that.timeoutDelay);
-        }, that.getTimeout() + that.timeoutDelay);
+      this.timeoutDelay = 0;
+      this.timer = setTimeout(function tick() {
+        that.getConversations(that.topLimit, that.pageSize, true);
+        that.timeoutDelay += that.getTimeout();
+        if (that.topLimitUpdated) {
+          that.timeoutDelay = 0;
+        }
+        that.timer = setTimeout(tick, that.getTimeout() + that.timeoutDelay);
+      }, that.getTimeout() + that.timeoutDelay);
     }
+  }
 
-});
-
-ConversationsAdapter.method('getTimeout', function() {
+  getTimeout() {
     return 0;
-});
+  }
 
-ConversationsAdapter.method('getTimeoutUpper', function() {
+  getTimeoutUpper() {
     return 0;
-});
+  }
 
-ConversationsAdapter.method('showConversationLoader', function() {
-    //Do nothing
-});
+  showConversationLoader() {
+    // Do nothing
+  }
 
-ConversationsAdapter.method('hideConversationLoader', function() {
-    //Do nothing
-});
+  hideConversationLoader() {
+    // Do nothing
+  }
 
-ConversationsAdapter.method('search', function(callBackData) {
-    this.searchTerm = $("#"+this.getTableName()+"_search").val();
+  search(callBackData) {
+    this.searchTerm = $(`#${this.getTableName()}_search`).val();
 
     this.get(callBackData);
+  }
+}
 
-});
+export default ConversationsAdapter;

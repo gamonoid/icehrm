@@ -1903,3 +1903,60 @@ msgstr "conversazioni"
 
 msgid "Start Now"
 msgstr "Avviare ora"
+
+msgid "Company Assets"
+msgstr "I beni aziendali"
+
+msgid "Asset Types"
+msgstr "Tipi di cespite"
+
+msgid "Asset Name"
+msgstr "Asset Nome"
+
+msgid "Performance"
+msgstr "Prestazione"
+
+msgid "Performance Review"
+msgstr "Valutazione delle prestazioni"
+
+msgid "Performance Reviews"
+msgstr "Recensioni sulle prestazioni"
+
+msgid "Review"
+msgstr "Revisione"
+
+msgid "Reviews"
+msgstr "Recensioni"
+
+msgid "Review Feedback"
+msgstr "Rivedi il feedback"
+
+msgid "Review Template"
+msgstr "Modello di recensione"
+
+msgid "Template"
+msgstr "Modello"
+
+msgid "Review Date"
+msgstr "Data della recensione"
+
+msgid "Self Assessment Due On"
+msgstr "Autovalutazione dovuta"
+
+msgid "Review Period Start"
+msgstr "Esaminare l'inizio del periodo"
+
+msgid "Review Period End"
+msgstr "Revisione periodo fine"
+
+msgid "Attendees"
+msgstr "I partecipanti"
+
+msgid "Performance Reviews Coordinated by Me"
+msgstr "Recensioni sulle prestazioni coordinate da me"
+
+msgid "Provide Feedback"
+msgstr "Fornire un feedback"
+
+msgid "Review Status"
+msgstr "Verifica lo stato"

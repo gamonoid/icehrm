@@ -5,7 +5,7 @@ This file is part of Ice Framework.
 ------------------------------------------------------------------
 
 Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
-Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilinah)
+Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
 $moduleName = 'fieldnames';

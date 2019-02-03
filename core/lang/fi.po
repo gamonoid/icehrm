@@ -1,0 +1,1962 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 18.0\n"
+"Report-Msgid-Bugs-To: https://icehrm.com\n"
+"Last-Translator: Thilina Hasantha\n"
+"Language-Team: IceHrm\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2018-05-20T05:26:33+05:30\n"
+"PO-Revision-Date: 2018-05-20T05:26:33+05:30\n"
+"Language: Finnish\n"
+
+msgid "Save"
+msgstr "Tallentaa"
+
+msgid "Cancel"
+msgstr "Peruuttaa"
+
+msgid "Done"
+msgstr "Tehty"
+
+msgid "Clocked In Employees"
+msgstr "Kellotetaan Työntekijät"
+
+msgid "Candidates"
+msgstr "ehdokkaat"
+
+msgid "View Employees"
+msgstr "Näytä Työntekijät"
+
+msgid "Add a New Employee"
+msgstr "Lisää uusi työntekijä"
+
+msgid "Leave Calendar"
+msgstr "jätä Kalenteri"
+
+msgid "Manage Client/Projects"
+msgstr "Hallitse Client / Projektit"
+
+msgid "Home"
+msgstr "Koti"
+
+msgid "Quick Access"
+msgstr "Nopea pääsy"
+
+msgid "Switch"
+msgstr "Vaihtaa"
+
+msgid "Profile"
+msgstr "Profiili"
+
+msgid "Sign out"
+msgstr "Kirjaudu ulos"
+
+msgid "Help"
+msgstr "auta"
+
+msgid "About"
+msgstr "Noin"
+
+msgid "Version"
+msgstr "Versio"
+
+msgid "Release Date"
+msgstr "Julkaisupäivä"
+
+msgid "Logged In"
+msgstr "Kirjautunut sisään"
+
+msgid "Admin"
+msgstr "admin"
+
+msgid "Dashboard"
+msgstr "kojelauta"
+
+msgid "Company Structure"
+msgstr "Yhtiön rakenne"
+
+msgid "Job Details Setup"
+msgstr "Työn tiedot Asetukset"
+
+msgid "Qualifications Setup"
+msgstr "pätevyys Asennus"
+
+msgid "Training Setup"
+msgstr "koulutus Setup"
+
+msgid "Projects/Client Setup"
+msgstr "Projektit / Client Setup"
+
+msgid "Leave Settings"
+msgstr "jätä asetukset"
+
+msgid "Company Loans"
+msgstr "Yritys Lainat"
+
+msgid "Audit Log"
+msgstr "Tarkastusloki"
+
+msgid "Employees"
+msgstr "Työntekijät"
+
+msgid "Employee History"
+msgstr "työntekijän History"
+
+msgid "Document Management"
+msgstr "Document Management"
+
+msgid "Travel Administration"
+msgstr "hallinto"
+
+msgid "Expense Administration"
+msgstr "kustannuksella hallinto"
+
+msgid "Monitor Attendance"
+msgstr "Monitor Läsnäolo"
+
+msgid "Performance Charts"
+msgstr "suorituskyky kaaviot"
+
+msgid "Overtime Administration"
+msgstr "ylityöt hallinto"
+
+msgid "Admin Reports"
+msgstr "admin Raportit"
+
+msgid "Reports"
+msgstr "raportit"
+
+msgid "Report Files"
+msgstr "raporttitiedostot"
+
+msgid "System"
+msgstr "järjestelmä"
+
+msgid "Settings"
+msgstr "asetukset"
+
+msgid "Users"
+msgstr "käyttäjät"
+
+msgid "Manage Modules"
+msgstr "moduulien hallinta"
+
+msgid "Manage Permissions"
+msgstr "Hallitse Oikeudet"
+
+msgid "Upgrade"
+msgstr "parantaa"
+
+msgid "Manage Metadata"
+msgstr "hallita metatietoa"
+
+msgid "Field Names Setup"
+msgstr "Kenttien nimet Setup"
+
+msgid "Payroll"
+msgstr "Payroll"
+
+msgid "Salary"
+msgstr "palkkaus"
+
+msgid "Payroll Reports"
+msgstr "Payroll raportit"
+
+msgid "Recruitment"
+msgstr "rekrytointi"
+
+msgid "Recruitment Setup"
+msgstr "rekrytointi Setup"
+
+msgid "Job Positions"
+msgstr "työpaikat"
+
+msgid "Personal Information"
+msgstr "Henkilökohtaisia ​​tietoja"
+
+msgid "Basic Information"
+msgstr "Perustiedot"
+
+msgid "Qualifications"
+msgstr "edellytykset"
+
+msgid "Dependents"
+msgstr "huollettavien"
+
+msgid "Emergency Contacts"
+msgstr "Emergency Yhteydet"
+
+msgid "Leave"
+msgstr "jättää"
+
+msgid "Leave Management"
+msgstr "jätä Management"
+
+msgid "Time Management"
+msgstr "Ajanhallinta"
+
+msgid "Projects"
+msgstr "projektit"
+
+msgid "Attendance"
+msgstr "läsnäolo"
+
+msgid "Time Sheets"
+msgstr "ajankäyttölomakkeet"
+
+msgid "Attendance Sheets"
+msgstr "läsnäolo Sheets"
+
+msgid "Overtime Requests"
+msgstr "ylityöt pyynnöt"
+
+msgid "Documents"
+msgstr "asiakirjat"
+
+msgid "My Documents"
+msgstr "Omat tiedostot"
+
+msgid "Company"
+msgstr "Yhtiö"
+
+msgid "Staff Directory"
+msgstr "henkilökunta Directory"
+
+msgid "Training"
+msgstr "koulutus"
+
+msgid "Travel Management"
+msgstr "Matkanjärjestäjä"
+
+msgid "Travel"
+msgstr "Matkustaa"
+
+msgid "Finance"
+msgstr "Rahoittaa"
+
+msgid "Expenses"
+msgstr "Kulut"
+
+msgid "Loans"
+msgstr "lainat"
+
+msgid "User Reports"
+msgstr "Käyttäjän raportit"
+
+msgid "People"
+msgstr "Ihmiset"
+
+msgid "Manage"
+msgstr "hoitaa"
+
+msgid "Departments"
+msgstr "osastot"
+
+msgid "Active Projects"
+msgstr "aktiivisia projekteja"
+
+msgid "Update Clients/Projects"
+msgstr "Päivitä Asiakkaat / Projektit"
+
+msgid "Entries Last Week"
+msgstr "Merkinnät Viime viikolla"
+
+msgid "Upcoming"
+msgstr "tuleva"
+
+msgid "View / Download Reports"
+msgstr "Katso / Lataa raportit"
+
+msgid "Generate a Report"
+msgstr "Luoda raportin"
+
+msgid "Configure"
+msgstr "Määritä"
+
+msgid "Update"
+msgstr "Päivittää"
+
+msgid "Applicants"
+msgstr "hakijat"
+
+msgid "Active Jobs"
+msgstr "aktiiviset työt"
+
+msgid "Jobs Posted"
+msgstr "Työpaikat Lähettäjä"
+
+msgid "Jobs"
+msgstr "Työpaikat"
+
+msgid "Courses"
+msgstr "Kurssit"
+
+msgid "Requests"
+msgstr "Pyynnöt"
+
+msgid "Document"
+msgstr "Asiakirja"
+
+msgid "Management"
+msgstr "johto"
+
+msgid "Expense"
+msgstr "kulu"
+
+msgid "Permission"
+msgstr "Lupa"
+
+msgid "Permissions"
+msgstr "käyttöoikeudet"
+
+msgid "and"
+msgstr "ja"
+
+msgid "Invoices"
+msgstr "laskut"
+
+msgid "Make a Payment"
+msgstr "Suorita maksu"
+
+msgid "Switch Employee"
+msgstr "kytkin työntekijä"
+
+msgid "Select The Employee to Switch Into"
+msgstr "Valitse The Työntekijä muututtava"
+
+msgid "Close"
+msgstr "kiinni"
+
+msgid "My Profile"
+msgstr "Profiilini"
+
+msgid "Edit Details"
+msgstr "edit yksityiskohdat"
+
+msgid "View/Edit Profile"
+msgstr "Näytä / Muokkaa profiilia"
+
+msgid "Punch In"
+msgstr "alkaa työt"
+
+msgid "or"
+msgstr "tai"
+
+msgid "Punch Out"
+msgstr "lopettaa työt"
+
+msgid "Record Attendance"
+msgstr "ennätysmäärän osanottajia"
+
+msgid "Pending Leaves"
+msgstr "Odottaa lehdet"
+
+msgid "Check Leave Status"
+msgstr "Tarkista Jätä tila"
+
+msgid "Hours worked Last Week"
+msgstr "Tehdyt työtunnit Viime viikolla"
+
+msgid "Update Time Sheet"
+msgstr "Päivitys kellokortti"
+
+msgid "My Projects"
+msgstr "Omat projektit"
+
+msgid "Projects Assigned"
+msgstr "hankkeisiin sidotut"
+
+msgid "More info"
+msgstr "Lisätietoja"
+
+msgid "Store"
+msgstr "myymälä"
+
+msgid "My Travel"
+msgstr "My Travel"
+
+msgid "My Expenses"
+msgstr "kuluni"
+
+msgid "Manage Expenses"
+msgstr "hallita kuluja"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "Address"
+msgstr "Osoite"
+
+msgid "Type"
+msgstr "Tyyppi"
+
+msgid "Country"
+msgstr "Maa"
+
+msgid "Time Zone"
+msgstr "Aikavyöhyke"
+
+msgid "Parent Structure"
+msgstr "emorakennetta"
+
+msgid "Details"
+msgstr "Yksityiskohdat"
+
+msgid "Heads"
+msgstr "Heads"
+
+msgid "Code"
+msgstr "Koodi"
+
+msgid "Job Title Code"
+msgstr "Työtehtävä Koodi"
+
+msgid "Job Title"
+msgstr "Työnimike"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Specification"
+msgstr "määrittely"
+
+msgid "Currency"
+msgstr "valuutta"
+
+msgid "Min Salary"
+msgstr "min Palkka"
+
+msgid "Max Salary"
+msgstr "max Palkka"
+
+msgid "Pay Grade Name"
+msgstr "Palkkausluokkaan Name"
+
+msgid "Employment Status"
+msgstr "Työllisyystilanne"
+
+msgid "Coordinator"
+msgstr "koordinaattori"
+
+msgid "Trainer"
+msgstr "Kouluttaja"
+
+msgid "Trainer Details"
+msgstr "kouluttaja tiedot"
+
+msgid "Payment Type"
+msgstr "Maksutapa"
+
+msgid "Cost"
+msgstr "Kustannus"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Course"
+msgstr "kurssi"
+
+msgid "Scheduled Time"
+msgstr "Sovittu aika"
+
+msgid "Assignment Due Date"
+msgstr "Tehtävä Eräpäivä"
+
+msgid "Delivery Method"
+msgstr "toimitustapa"
+
+msgid "Delivery Location"
+msgstr "toimitus Sijainti"
+
+msgid "Attendance Type"
+msgstr "läsnäolo Tyyppi"
+
+msgid "Attachment"
+msgstr "liite"
+
+msgid "Training Certificate Required"
+msgstr "Ajolupa Pakollinen"
+
+msgid "Employee"
+msgstr "Työntekijä"
+
+msgid "Training Session"
+msgstr "Harjoittelusessio"
+
+msgid "Contact Number"
+msgstr "Yhteysnumero"
+
+msgid "Contact Email"
+msgstr "Yhteydenotto Sähköposti"
+
+msgid "Company Url"
+msgstr "Yrityksen URL-osoite"
+
+msgid "First Contact Date"
+msgstr "First Contact Date"
+
+msgid "Client"
+msgstr "Asiakas"
+
+msgid "Project"
+msgstr "projekti"
+
+msgid "Leave Name"
+msgstr "jätä Name"
+
+msgid "Leave Accrue Enabled"
+msgstr "Jätä Kirjaus Käytössä"
+
+msgid "Leave Carried Forward"
+msgstr "Jätä läpikäyneet"
+
+msgid "Leaves Per Year"
+msgstr "Leaves euroa vuodessa"
+
+msgid "Leaves Group"
+msgstr "lehdet Group"
+
+msgid "Leaves Per Leave Period"
+msgstr "Leaves Per äitiysloman"
+
+msgid "Admin can assign leave to employees"
+msgstr "Admin voi antaa lupaa työntekijöille"
+
+msgid "Employees can apply for this leave type"
+msgstr "Työntekijät voivat hakea tätä lupaa tyyppi"
+
+msgid "Employees can apply beyond the current leave balance"
+msgstr "Työntekijät voivat hakea yli nykyisten loman saldo"
+
+msgid "Percentage of Leaves Carried Forward"
+msgstr "Prosenttiosuus Lehdet läpikäyneet"
+
+msgid "Maximum Carried Forward Amount"
+msgstr "Maksimi läpikäyneet Määrä"
+
+msgid "Carried Forward Leave Availability Period"
+msgstr "Läpikäyneet Jätä saatavuusaika"
+
+msgid "Proportionate leaves on Joined Date"
+msgstr "Suhteutettuja lähtee Liittymispäivä"
+
+msgid "Send Notification Emails"
+msgstr "Send ilmoitussähköpostit"
+
+msgid "Leave Group"
+msgstr "Jätä ryhmä"
+
+msgid "Leave Color"
+msgstr "jätä Väri"
+
+msgid "Period Start"
+msgstr "alkamiseen"
+
+msgid "Period End"
+msgstr "kauden lopussa"
+
+msgid "Day"
+msgstr "Päivä"
+
+msgid "For All Countries"
+msgstr "Kaikille maille"
+
+msgid "Date"
+msgstr "Treffi"
+
+msgid "Leave Type"
+msgstr "leave Tyyppi"
+
+msgid "Propotionate leaves on Joined Date"
+msgstr "Propotionate lähtee Liittymispäivä"
+
+msgid "Leaves Period"
+msgstr "lehdet Period"
+
+msgid "Leave Amount"
+msgstr "jätä Määrä"
+
+msgid "Leave Period"
+msgstr "jätä Period"
+
+msgid "Note"
+msgstr "Huomautus"
+
+msgid "All Employees"
+msgstr "Kaikki työntekijät"
+
+msgid "All Leave Types"
+msgstr "Kaikki Jätä tyypit"
+
+msgid "Loan Type"
+msgstr "lainan tyyppi"
+
+msgid "Loan Start Date"
+msgstr "Lainan aloituspäivä"
+
+msgid "Loan Period (Months)"
+msgstr "Laina-aika (kk)"
+
+msgid "Amount"
+msgstr "Määrä"
+
+msgid "Last Installment Date"
+msgstr "Viime lyhennyspäivänä"
+
+msgid "Loan Amount"
+msgstr "Lainan määrä"
+
+msgid "Monthly Installment"
+msgstr "kuukausierä"
+
+msgid "Employee Number"
+msgstr "työntekijänumero"
+
+msgid "First Name"
+msgstr "Etunimi"
+
+msgid "Middle Name"
+msgstr "Toinen nimi"
+
+msgid "Last Name"
+msgstr "Sukunimi"
+
+msgid "Nationality"
+msgstr "kansalaisuus"
+
+msgid "Date of Birth"
+msgstr "Syntymäaika"
+
+msgid "Gender"
+msgstr "sukupuoli"
+
+msgid "Marital Status"
+msgstr "Siviilisääty"
+
+msgid "Ethnicity"
+msgstr "etnisyys"
+
+msgid "Immigration Status"
+msgstr "Maahanmuuttostatus"
+
+msgid "SSN/NRIC"
+msgstr "SSN / NRIC"
+
+msgid "NIC"
+msgstr "NIC"
+
+msgid "Other ID"
+msgstr "Muut tunnus"
+
+msgid "Driving License No"
+msgstr "Ajokortti ei"
+
+msgid "Pay Grade"
+msgstr "palkkausluokkaan"
+
+msgid "Work Station Id"
+msgstr "Työasema tunnus"
+
+msgid "Address Line 1"
+msgstr "Osoiterivi 1"
+
+msgid "Address Line 2"
+msgstr "Osoiterivi 2"
+
+msgid "City"
+msgstr "Kaupunki"
+
+msgid "Province"
+msgstr "maakunta"
+
+msgid "Postal/Zip Code"
+msgstr "Posti- / Postinumero"
+
+msgid "Home Phone"
+msgstr "Kotipuhelin"
+
+msgid "Mobile Phone"
+msgstr "Kännykkä"
+
+msgid "Work Phone"
+msgstr "Työpuhelin"
+
+msgid "Work Email"
+msgstr "työ sähköposti"
+
+msgid "Private Email"
+msgstr "yksityinen Sähköposti"
+
+msgid "Joined Date"
+msgstr "Liittymispäivä"
+
+msgid "Confirmation Date"
+msgstr "Vahvistamispäivämäärä"
+
+msgid "Termination Date"
+msgstr "Irtisanomispäivä"
+
+msgid "Department"
+msgstr "osasto"
+
+msgid "Supervisor"
+msgstr "Valvoja"
+
+msgid "Indirect Supervisors"
+msgstr "epäsuora Esimiehet"
+
+msgid "First Level Approver"
+msgstr "Ensimmäisen tason Hyväksyjä"
+
+msgid "Second Level Approver"
+msgstr "Toinen taso Hyväksyjä"
+
+msgid "Third Level Approver"
+msgstr "Kolmas taso Hyväksyjä"
+
+msgid "Notes"
+msgstr "Huomautuksia"
+
+msgid "Time (GMT)"
+msgstr "(GMT)"
+
+msgid "User"
+msgstr "käyttäjä"
+
+msgid "IP Address"
+msgstr "IP-osoite"
+
+msgid "Logged In Employee"
+msgstr "Kirjautunut Työntekijä"
+
+msgid "Skill"
+msgstr "Taito"
+
+msgid "Qualification"
+msgstr "pätevyys"
+
+msgid "Institute"
+msgstr "instituutti"
+
+msgid "Start Date"
+msgstr "Aloituspäivämäärä"
+
+msgid "Completed On"
+msgstr "Valmistunut"
+
+msgid "Certification"
+msgstr "sertifiointi"
+
+msgid "Granted On"
+msgstr "myönnetty"
+
+msgid "Valid Thru"
+msgstr "Voimassa jonnekin asti"
+
+msgid "Language"
+msgstr "Kieli"
+
+msgid "Reading"
+msgstr "lukeminen"
+
+msgid "Speaking"
+msgstr "Puhuminen"
+
+msgid "Writing"
+msgstr "Kirjoittaminen"
+
+msgid "Understanding"
+msgstr "Ymmärtäminen"
+
+msgid "Date Added"
+msgstr "lisäyspäivämäärä"
+
+msgid "Valid Until"
+msgstr "voimassa"
+
+msgid "Relationship"
+msgstr "yhteys"
+
+msgid "Id Number"
+msgstr "ID-numero"
+
+msgid "All Job Titles"
+msgstr "Kaikki tehtävänimikkeet"
+
+msgid "All Departments"
+msgstr "kaikki osastot"
+
+msgid "Anyone"
+msgstr "kukaan"
+
+msgid "Field"
+msgstr "Ala"
+
+msgid "Old Value"
+msgstr "vanha arvo"
+
+msgid "New Value"
+msgstr "uusi arvo"
+
+msgid "Modified By"
+msgstr "Muokannut"
+
+msgid "Created"
+msgstr "Luotu"
+
+msgid "Notify Expiry"
+msgstr "Ilmoita päättyminen"
+
+msgid "Notify Expiry Before One Month"
+msgstr "Muistuta päättyminen Ennen Yksi kuukausi"
+
+msgid "Notify Expiry Before One Week"
+msgstr "Muistuta päättyminen Ennen Viikko"
+
+msgid "Notify Expiry Before One Day"
+msgstr "Muistuta päättyminen ennen One Day"
+
+msgid "Travel Type"
+msgstr "mittatilaa"
+
+msgid "Purpose of Travel"
+msgstr "Matkan tarkoitusta"
+
+msgid "Travel From"
+msgstr "matkasta"
+
+msgid "Travel To"
+msgstr "Matkusta"
+
+msgid "Travel Date"
+msgstr "matkustuspäivästä"
+
+msgid "Return Date"
+msgstr "Palautuspäivä"
+
+msgid "Total Funding Proposed"
+msgstr "Kokonaisrahoitus Ehdotettu"
+
+msgid "Itinerary / Cab Receipt"
+msgstr "Matkasuunnitelma / Cab kuitti"
+
+msgid "Other Attachment 1"
+msgstr "Muut Liite 1"
+
+msgid "Other Attachment 2"
+msgstr "Muut Liite 2"
+
+msgid "Payment Method"
+msgstr "Maksutapa"
+
+msgid "Transaction / Ref No"
+msgstr "Transaction / Ref No"
+
+msgid "Payee"
+msgstr "saaja"
+
+msgid "Expense Category"
+msgstr "kululuokassa"
+
+msgid "Receipt"
+msgstr "kuitti"
+
+msgid "Time-In"
+msgstr "Aika-In"
+
+msgid "Time-Out"
+msgstr "Aikalisä"
+
+msgid "Clocked In Status"
+msgstr "Kellotetaan tila"
+
+msgid "End Date"
+msgstr "Päättymispäivä"
+
+msgid "Category"
+msgstr "Kategoria"
+
+msgid "Start Time"
+msgstr "Aloitusaika"
+
+msgid "End Time"
+msgstr "Loppu aika"
+
+msgid "Leave Status"
+msgstr "jätä tila"
+
+msgid "Select Client"
+msgstr "Valitse Client"
+
+msgid "Not Selected"
+msgstr "Ei valittu"
+
+msgid "Or Project"
+msgstr "tai Projekti"
+
+msgid "All Projects"
+msgstr "kaikki hankkeet"
+
+msgid "All Status"
+msgstr "kaikki tila"
+
+msgid "Value"
+msgstr "Arvo"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "User Name"
+msgstr "käyttäjätunnus"
+
+msgid "Authentication Email"
+msgstr "Authentication Sähköposti"
+
+msgid "User Level"
+msgstr "käyttäjätaso"
+
+msgid "Email"
+msgstr "Sähköposti"
+
+msgid "User Roles"
+msgstr "käyttäjärooleista"
+
+msgid "Default Module"
+msgstr "Oletus Module"
+
+msgid "No Default Module"
+msgstr "Ei Oletus Module"
+
+msgid "Menu"
+msgstr "valikko"
+
+msgid "Group"
+msgstr "Ryhmä"
+
+msgid "Order"
+msgstr "Tilata"
+
+msgid "Path"
+msgstr "polku"
+
+msgid "Label"
+msgstr "etiketti"
+
+msgid "User Levels"
+msgstr "käyttäjätasoja"
+
+msgid "Module"
+msgstr "Moduuli"
+
+msgid "All Modules"
+msgstr "kaikki moduulit"
+
+msgid "Invoice Period Start"
+msgstr "Lasku alkamiseen"
+
+msgid "Invoice Period End"
+msgstr "Lasku kauden lopussa"
+
+msgid "Due date"
+msgstr "Eräpäivä"
+
+msgid "Url"
+msgstr "url"
+
+msgid "Original Text"
+msgstr "alkuperäinen teksti"
+
+msgid "Mapped Text"
+msgstr "kartoitettu teksti"
+
+msgid "Display Status"
+msgstr "näyttö tila"
+
+msgid "Field Type"
+msgstr "kentän tyyppi"
+
+msgid "Field Label"
+msgstr "kenttä Label"
+
+msgid "Validation"
+msgstr "Validation"
+
+msgid "Field Options"
+msgstr "kenttä Vaihtoehdot"
+
+msgid "Priority"
+msgstr "prioriteetti"
+
+msgid "Display Section"
+msgstr "näyttö §"
+
+msgid "Salary Component Type"
+msgstr "Palkanosa Tyyppi"
+
+msgid "Salary Component"
+msgstr "palkanosa"
+
+msgid "Pay Frequency"
+msgstr "Maksu Taajuus"
+
+msgid "Calculation Group"
+msgstr "laskelma Group"
+
+msgid "None"
+msgstr "Ei mitään"
+
+msgid "Calculation Exemptions"
+msgstr "laskelma Poikkeukset"
+
+msgid "Calculations Assigned"
+msgstr "laskelmat sidotut"
+
+msgid "Date Start"
+msgstr "date Start"
+
+msgid "Date End"
+msgstr "Päättymispäivä"
+
+msgid "Payslip Template"
+msgstr "palkkalaskelma malli"
+
+msgid "Payroll Columns"
+msgstr "Payroll sarakkeet"
+
+msgid "Calculation Method"
+msgstr "Laskentamenetelmä"
+
+msgid "Editable"
+msgstr "muokattavissa"
+
+msgid "Enabled"
+msgstr "käytössä"
+
+msgid "Predefined Calculations"
+msgstr "Predefined Laskelmat"
+
+msgid "Salary Components"
+msgstr "palkanosia"
+
+msgid "Columns to Add"
+msgstr "Sarakkeita Lisää"
+
+msgid "Columns to Subtract"
+msgstr "Sarakkeita Vähennä"
+
+msgid "Column Order"
+msgstr "sarake Tilaa"
+
+msgid "Default Value"
+msgstr "Oletusarvo"
+
+msgid "Calculation Columns"
+msgstr "laskelma sarakkeet"
+
+msgid "Function"
+msgstr "toiminto"
+
+msgid "Payroll Report Column"
+msgstr "Palkkaraportti sarake"
+
+msgid "Calculation Process"
+msgstr "laskentaprosessi"
+
+msgid "Payslip Fields"
+msgstr "palkkalaskelma Fields"
+
+msgid "Payroll Column"
+msgstr "Payroll sarake"
+
+msgid "Text"
+msgstr "Teksti"
+
+msgid "Lower Limit Condition"
+msgstr "Alaraja kunto"
+
+msgid "Lower Limit"
+msgstr "Alaraja"
+
+msgid "Upper Limit Condition"
+msgstr "Yläraja kunto"
+
+msgid "Upper Limit"
+msgstr "Yläraja"
+
+msgid "Column"
+msgstr "sarake"
+
+msgid "Job Code"
+msgstr "Työpaikkakoodi"
+
+msgid "Short Description"
+msgstr "Lyhyt kuvaus"
+
+msgid "Requirements"
+msgstr "vaatimukset"
+
+msgid "Benefits"
+msgstr "hyötyjä"
+
+msgid "Employment Type"
+msgstr "työllisyys tyyppi"
+
+msgid "Any Employment Type"
+msgstr "Ei väliä Työllisyystilanne Tyyppi"
+
+msgid "Experience Level"
+msgstr "Kokemustaso"
+
+msgid "Any Experience Level"
+msgstr "Mitään kokemusta taso"
+
+msgid "Job Function"
+msgstr "Työnkuva"
+
+msgid "Any Job Function"
+msgstr "Tahansa Työnkuva"
+
+msgid "Education Level"
+msgstr "Koulutustaso"
+
+msgid "Any Education Level"
+msgstr "Tahansa Koulutustaso"
+
+msgid "Show Salary"
+msgstr "Näytä Palkka"
+
+msgid "Salary Min"
+msgstr "Palkka Min"
+
+msgid "Salary Max"
+msgstr "Palkka Max"
+
+msgid "Keywords"
+msgstr "Avainsanat"
+
+msgid "Closing Date"
+msgstr "Sulkemispäivä"
+
+msgid "Image"
+msgstr "Kuva"
+
+msgid "Display Type"
+msgstr "Näytön tyyppi"
+
+msgid "Profile Image"
+msgstr "profile Image"
+
+msgid "Telephone"
+msgstr "Puhelin"
+
+msgid "Resume Title"
+msgstr "Jatka Otsikko"
+
+msgid "Resume"
+msgstr "Jatkaa"
+
+msgid "Resume Headline"
+msgstr "Jatka Headline"
+
+msgid "Profile Summary"
+msgstr "profiilin yhteenveto"
+
+msgid "Work History"
+msgstr "Työhistoria"
+
+msgid "Education"
+msgstr "koulutus"
+
+msgid "Skills"
+msgstr "Skills"
+
+msgid "Referees"
+msgstr "erotuomarit"
+
+msgid "From Year"
+msgstr "Vuodesta"
+
+msgid "From Month"
+msgstr "Kuukausi"
+
+msgid "To Year"
+msgstr "vuoteen"
+
+msgid "To Month"
+msgstr "kuukauteen"
+
+msgid "Currently Work Here"
+msgstr "Nykyisin täällä töissä"
+
+msgid "Degree/Diploma"
+msgstr "Tutkinto / Diploma"
+
+msgid "Currently Studying"
+msgstr "Opiskelee tällä hetkellä"
+
+msgid "Skill Level"
+msgstr "Taitotaso"
+
+msgid "Last Used Year"
+msgstr "Käytetty viimeksi vuonna"
+
+msgid "Last Used Month"
+msgstr "Käytetty viimeksi kuukausi"
+
+msgid "Years of Experience"
+msgstr "vuosien kokemus"
+
+msgid "Designation"
+msgstr "nimitys"
+
+msgid "Phone"
+msgstr "Puhelin"
+
+msgid "Job"
+msgstr "Job"
+
+msgid "Candidate"
+msgstr "ehdokas"
+
+msgid "Referred By"
+msgstr "Viitannut"
+
+msgid "Leave Start Date"
+msgstr "Jätä aloituspäivä"
+
+msgid "Leave End Date"
+msgstr "Jätä Päättymispäivä"
+
+msgid "Reason"
+msgstr "Syy"
+
+msgid "Available Leaves"
+msgstr "käytettävissä lehdet"
+
+msgid "Approved Leaves"
+msgstr "hyväksytty lehdet"
+
+msgid "Rejected Leaves"
+msgstr "hylätty lehdet"
+
+msgid "Leaves to be Accrued"
+msgstr "Lähtee kertyvät"
+
+msgid "Leaves Carried Forward"
+msgstr "Lehdet läpikäyneet"
+
+msgid "Apply Leave"
+msgstr "Levitä Jätä"
+
+msgid "Filter"
+msgstr "Suodattaa"
+
+msgid "Add New"
+msgstr "Lisää uusi"
+
+msgid "Time"
+msgstr "Aika"
+
+msgid "Purpose"
+msgstr "Tarkoitus"
+
+msgid "From"
+msgstr "alkaen"
+
+msgid "To"
+msgstr "jotta"
+
+msgid "Created (GMT)"
+msgstr "Luotu (GMT)"
+
+msgid "Download"
+msgstr "ladata"
+
+msgid "Submit"
+msgstr "Lähetä"
+
+msgid "Upload"
+msgstr "upload"
+
+msgid "Remove"
+msgstr "Poistaa"
+
+msgid "Add"
+msgstr "Lisätä"
+
+msgid "Reset"
+msgstr "asettaa uudelleen"
+
+msgid "Add Time Entry"
+msgstr "Lisää Time Entry"
+
+msgid "Current Clocked In Status"
+msgstr "Nykyinen kellotetaan tila"
+
+msgid "Attendance entry should be within a single day"
+msgstr "Läsnäolo merkintä tulee olla yhden päivän"
+
+msgid "Account Balance"
+msgstr "Tilin saldo"
+
+msgid "Plan"
+msgstr "Suunnitelma"
+
+msgid "Transactions"
+msgstr "liiketoimet"
+
+msgid "Applications"
+msgstr "Sovellukset"
+
+msgid "Attendance Graph"
+msgstr "läsnäolo Graph"
+
+msgid "Hours in Office vs Hours Worked Graph"
+msgstr "Tuntia Office vs työtunnit Graph"
+
+msgid "Company Graph"
+msgstr "Yritys Graph"
+
+msgid "Company Documents"
+msgstr "yrityksen asiakirjojen"
+
+msgid "Document Types"
+msgstr "Dokumentointityypit"
+
+msgid "Employee Documents"
+msgstr "työntekijän asiakirjat"
+
+msgid "Employee Basic Details"
+msgstr "Työntekijän perustiedot"
+
+msgid "Employees (Direct Reports)"
+msgstr "Työntekijät (Direct raportit)"
+
+msgid "Certifications"
+msgstr "sertifioinnit"
+
+msgid "Languages"
+msgstr "Kieli (kielet"
+
+msgid "Deactivated Employees"
+msgstr "deaktivoitu Työntekijät"
+
+msgid "Temporarily Deactivated Employees"
+msgstr "Tilapäisesti pois päältä Työntekijät"
+
+msgid "Terminated Employee Data"
+msgstr "Lopetetaan Työntekijän Data"
+
+msgid "Employee Saved Successfully"
+msgstr "Työntekijän tallennettu"
+
+msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
+msgstr "Työntekijän tarvitsee User kirjautua IceHrm. Haluatko luoda käyttäjälle tälle työntekijälle nyt?"
+
+msgid "You can do this later through Users module if required."
+msgstr "Voit tehdä tämän myöhemmin läpi käyttäjämoduuleille tarvittaessa."
+
+msgid "Expenses Categories"
+msgstr "kuluerät"
+
+msgid "Payment Methods"
+msgstr "maksutavat"
+
+msgid "Employee Expenses"
+msgstr "Henkilöstökulut"
+
+msgid "Salary Component Types"
+msgstr "Palkanosa tyypit"
+
+msgid "Employee Salary Components"
+msgstr "Työntekijä Palkka Komponentit"
+
+msgid "Company Payroll"
+msgstr "Yritys Payroll"
+
+msgid "Calculation Groups"
+msgstr "laskelma Ryhmät"
+
+msgid "Calculation Methods"
+msgstr "laskentamenetelmät"
+
+msgid "Payslip Templates"
+msgstr "palkkalaskelma Mallit"
+
+msgid "Edit Employment Types"
+msgstr "Edit Työllisyys tyypit"
+
+msgid "Edit Experience Levels"
+msgstr "Edit kokemusten tasoja"
+
+msgid "Edit Job Functions"
+msgstr "Edit työtehtäviinsä"
+
+msgid "Edit Education Levels"
+msgstr "Edit koulutustasoa"
+
+msgid "Edit Benefits"
+msgstr "Edit Hyödyt"
+
+msgid "Application"
+msgstr "hakemus"
+
+msgid "Job Titles"
+msgstr "Tehtävänimikkeitä"
+
+msgid "Pay Grades"
+msgstr "Maksu asteet"
+
+msgid "Training Sessions"
+msgstr "Koulutustilaisuudet"
+
+msgid "Employee Training Sessions"
+msgstr "Työntekijän koulutukset"
+
+msgid "Clients"
+msgstr "asiakkaat"
+
+msgid "Employee Projects"
+msgstr "työntekijän Projektit"
+
+msgid "Leave Types"
+msgstr "jätä tyypit"
+
+msgid "Work Week"
+msgstr "Työviikko"
+
+msgid "Holidays"
+msgstr "Lomat"
+
+msgid "Leave Rules"
+msgstr "jätä Säännöt"
+
+msgid "Paid Time Off"
+msgstr "Palkalliseen"
+
+msgid "Leave Groups"
+msgstr "leave Ryhmät"
+
+msgid "Edit Leave Groups"
+msgstr "Edit Jätä Ryhmät"
+
+msgid "Leave Group Employees"
+msgstr "Jätä Group Työntekijät"
+
+msgid "Employee Leave List"
+msgstr "Työntekijän Jätä List"
+
+msgid "Loan Types"
+msgstr "lainatyyppien"
+
+msgid "Employee Loans"
+msgstr "työntekijän Lainat"
+
+msgid "Travel Requests"
+msgstr "Travel pyynnöt"
+
+msgid "Overtime Categories"
+msgstr "ylityöt Luokat"
+
+msgid "Leave / PTO"
+msgstr "Jätä / PTO"
+
+msgid "Other"
+msgstr "muut"
+
+msgid "Modules"
+msgstr "moduulit"
+
+msgid "Countries"
+msgstr "Maat"
+
+msgid "Provinces"
+msgstr "maakunnat"
+
+msgid "Currency Types"
+msgstr "valuutta tyypit"
+
+msgid "Employee Custom Fields"
+msgstr "Työntekijän Erikoiskentät"
+
+msgid "Employee Field Names"
+msgstr "Työntekijän Kenttien nimet"
+
+msgid "My Details"
+msgstr "Minun yksityiskohtani"
+
+msgid "All My Leaves"
+msgstr "Kaikki My Lehdet"
+
+msgid "Leave Entitlement"
+msgstr "lomaoikeuden"
+
+msgid "Approved Leave"
+msgstr "hyväksytty Jätä"
+
+msgid "Pending Leave"
+msgstr "vireillä Jätä"
+
+msgid "Subordinate Leave"
+msgstr "alisteinen Jätä"
+
+msgid "Cancellation Requests"
+msgstr "peruutuspyyntöjä"
+
+msgid "Approval Requests"
+msgstr "hyväksymispyyntöjä"
+
+msgid "Approved TimeSheets"
+msgstr "hyväksytty kellokortit"
+
+msgid "All My TimeSheets"
+msgstr "Kaikki My kellokortit"
+
+msgid "Pending TimeSheets"
+msgstr "Odottaa kellokortit"
+
+msgid "Subordinate TimeSheets"
+msgstr "alisteinen kellokortit"
+
+msgid "Approved Attendance Sheets"
+msgstr "Hyväksytty osanottajaluetteloista"
+
+msgid "All My Attendance Sheets"
+msgstr "Kaikki My osanottajaluetteloista"
+
+msgid "Pending Attendance Sheets"
+msgstr "Odottaa osanottajaluetteloista"
+
+msgid "Subordinate Attendance Sheets"
+msgstr "Alisteinen osanottajaluetteloista"
+
+msgid "Subordinate Overtime Requests"
+msgstr "Alisteinen Ylityöt pyynnöt"
+
+msgid "Overtime Request Approval"
+msgstr "Ylityöt hakea hyväksyntää"
+
+msgid "My Training Sessions"
+msgstr "Treenikuvioihin"
+
+msgid "All Training Sessions"
+msgstr "Kaikki koulutukset"
+
+msgid "Training Sessions of Direct Reports"
+msgstr "Koulutustilaisuudet Direct Reports"
+
+msgid "Subordinate Travel Requests"
+msgstr "Alisteinen matka pyynnöt"
+
+msgid "Travel Request Approval"
+msgstr "Matkapyyntö hyväksyntä"
+
+msgid "Subordinate Expenses"
+msgstr "alisteinen kulut"
+
+msgid "Expenses Approval"
+msgstr "kulut hyväksyntä"
+
+msgid "Loans Taken"
+msgstr "otettujen lainojen"
+
+msgid "Change Leave Status"
+msgstr "Vaihtaminen anna tila"
+
+msgid "Status Change Note"
+msgstr "Tila Päivitystieto"
+
+msgid "Leave Summary"
+msgstr "jätä Yhteenveto"
+
+msgid "Approved Leave Count"
+msgstr "Hyväksytty Jätä Count"
+
+msgid "Pending Leave Count"
+msgstr "Odottaa Jätä Count"
+
+msgid "Available Leave Count"
+msgstr "Käytettävissä Jätä Count"
+
+msgid "Leave Dates"
+msgstr "jätä Päivämäärät"
+
+msgid "Leave Date"
+msgstr "jätä Date"
+
+msgid "Leave Notes"
+msgstr "leave Huomautuksia"
+
+msgid "Apply"
+msgstr "Käytä"
+
+msgid "Back"
+msgstr "Takaisin"
+
+msgid "Hours in Time Sheets"
+msgstr "Tuntia ajankäyttölomakkeet"
+
+msgid "HR form"
+msgstr "HR muodossa"
+
+msgid "HR Form Management"
+msgstr "HR Form Management"
+
+msgid "Form Name"
+msgstr "lomakkeen nimi"
+
+msgid "Fields"
+msgstr "Fields"
+
+msgid "Employee Froms"
+msgstr "työntekijän Forms"
+
+msgid "Share Departments"
+msgstr "Jaa Osastot"
+
+msgid "Share Employees"
+msgstr "Jaa Työntekijät"
+
+msgid "Data Importers"
+msgstr "data maahantuojat"
+
+msgid "Data Import Files"
+msgstr "Tietojen Tuo tiedostoja"
+
+msgid "Data Type"
+msgstr "Tietotyyppi"
+
+msgid "Columns"
+msgstr "pylväät"
+
+msgid "Field Title"
+msgstr "kenttä Otsikko"
+
+msgid "Depends On"
+msgstr "Riippuu"
+
+msgid "Depends On Field"
+msgstr "Riippuu Field"
+
+msgid "is Key Field"
+msgstr "on Key Field"
+
+msgid "is ID Field"
+msgstr "ID-Field"
+
+msgid "Data Import Definitions"
+msgstr "Tietojen tuonti Määritelmät"
+
+msgid "File to Import"
+msgstr "Tuotava tiedosto"
+
+msgid "Last Export Results"
+msgstr "Last Vie tulokset"
+
+msgid "Time and Attendance"
+msgstr "Aikaa ja läsnäoloa"
+
+msgid "Leave Timeline"
+msgstr "jätä Aikajana"
+
+msgid "Insights"
+msgstr "Näkemyksiä"
+
+msgid "Api Access"
+msgstr "API-käyttö"
+
+msgid "Change User Password"
+msgstr "Vaihda käyttäjän salasana"
+
+msgid "New Password"
+msgstr "uusi salasana"
+
+msgid "Confirm Password"
+msgstr "Vahvista salasana"
+
+msgid "Change Password"
+msgstr "Vaihda salasana"
+
+msgid "Not Now"
+msgstr "Ei nyt"
+
+msgid "Contact Information"
+msgstr "Yhteystiedot"
+
+msgid "Job Details"
+msgstr "työn tiedot"
+
+msgid "Edit Info"
+msgstr "Muokkaa tietoja"
+
+msgid "Upload Profile Image"
+msgstr "Lataa Profile Image"
+
+msgid "Delete Profile Image"
+msgstr "Poista profiili kuva"
+
+msgid "Direct Reports"
+msgstr "Suorat raportit"
+
+msgid "Other Details"
+msgstr "Muut yksityiskohdat"
+
+msgid "Family"
+msgstr "Perhe"
+
+msgid "Custom Fields"
+msgstr "Erikoiskentät"
+
+msgid "Means of Transportation"
+msgstr "Liikenneväline"
+
+msgid "Plane"
+msgstr "kone"
+
+msgid "Rail"
+msgstr "kisko"
+
+msgid "Taxi"
+msgstr "Taksi"
+
+msgid "Own Vehicle"
+msgstr "oma auto"
+
+msgid "Rented Vehicle"
+msgstr "vuokrattu ajoneuvo"
+
+msgid "Female"
+msgstr "Nainen"
+
+msgid "Male"
+msgstr "Uros"
+
+msgid "Active"
+msgstr "aktiivinen"
+
+msgid "Inactive"
+msgstr "Epäaktiivinen"
+
+msgid "Draft"
+msgstr "Luonnos"
+
+msgid "Not Clocked In"
+msgstr "Ei kellotetaan"
+
+msgid "Clocked In"
+msgstr "kellotetaan"
+
+msgid "File"
+msgstr "tiedosto"
+
+msgid "Active Employee Report"
+msgstr "Henkilöstön aktiivinen Raportti"
+
+msgid "Employee Attendance Report"
+msgstr "Työntekijän läsnäolo Raportti"
+
+msgid "Employee Details Report"
+msgstr "Työntekijän tiedot -raportti"
+
+msgid "Employee Leave Entitlement"
+msgstr "Työntekijän lomaoikeuden"
+
+msgid "Employee Leaves Report"
+msgstr "Henkilö poistuu Raportti"
+
+msgid "Employee Time Entry Report"
+msgstr "Työntekijän Time Saapumisilmoitus"
+
+msgid "Employee Time Sheet Report"
+msgstr "Työntekijän kellokortti raportti"
+
+msgid "Employee Time Tracking Report"
+msgstr "Työntekijän Aika seuranta Raportti"
+
+msgid "Expense Report"
+msgstr "kuluraportin"
+
+msgid "New Hires Employee Report"
+msgstr "Uudet työntekijät Työntekijöiden Raportti"
+
+msgid "Overtime Report"
+msgstr "ylityöt Raportti"
+
+msgid "Overtime Request Report"
+msgstr "Ylityöt Pyyntö Raportti"
+
+msgid "Overtime Summary Report"
+msgstr "Ylityöt yhteenvetoraportti"
+
+msgid "Payroll Meta Data Export"
+msgstr "Payroll Meta Data Export"
+
+msgid "Terminated Employee Report"
+msgstr "Lopetetaan Työntekijän Raportti"
+
+msgid "Travel Request Report"
+msgstr "Matkapyyntö Raportti"
+
+msgid "Attendance Report"
+msgstr "läsnäolo Raportti"
+
+msgid "Client Project Time Report"
+msgstr "Asiakkaan projektin ajan Raportti"
+
+msgid "Download Payslips"
+msgstr "Lataa Ruotsin vakuutuskassa"
+
+msgid "Leaves Report"
+msgstr "leaves Raportti"
+
+msgid "Time Entry Report"
+msgstr "Aika Saapumisilmoitus"
+
+msgid "Time Sheet Report"
+msgstr "Kellokortti Raportti"
+
+msgid "Time Tracking Report"
+msgstr "Aika seuranta Raportti"
+
+msgid "Data"
+msgstr "data"
+
+msgid "Processed"
+msgstr "jalostettu"
+
+msgid "Not Processed"
+msgstr "Käsittelemätön"
+
+msgid "Elementary Proficiency"
+msgstr "Elementary Taitotaso"
+
+msgid "Limited Working Proficiency"
+msgstr "Rajoitettu Working Taitotaso"
+
+msgid "Professional Working Proficiency"
+msgstr "Professional Working Taitotaso"
+
+msgid "Full Professional Proficiency"
+msgstr "Täysi ammattitaitoa"
+
+msgid "Native or Bilingual Proficiency"
+msgstr "Natiivi tai Kaksikielinen Taitotaso"
+
+msgid "Pending"
+msgstr "odotettaessa"
+
+msgid "Approved"
+msgstr "hyväksytty"
+
+msgid "Rejected"
+msgstr "hylätty"
+
+msgid "Cancelled"
+msgstr "peruttu"
+
+msgid "Continue"
+msgstr "Jatkaa"
+
+msgid "Cancellation Requested"
+msgstr "Peruutettu"
+
+msgid "Completed"
+msgstr "valmistunut"
+
+msgid "Discussions"
+msgstr "Keskustelut"
+
+msgid "Load More"
+msgstr "Lataa lisää"
+
+msgid "Show More"
+msgstr "Näytä lisää"
+
+msgid "Show Less"
+msgstr "Näytä vähemmän"
+
+msgid "Publish"
+msgstr "Julkaista"
+
+msgid "Announcements"
+msgstr "Ilmoitukset"
+
+msgid "Send"
+msgstr "Lähettää"
+
+msgid "Display"
+msgstr "Näyttö"
+
+msgid "Public"
+msgstr "Julkinen"
+
+msgid "View Announcements"
+msgstr "Näytä ilmoitukset"
+
+msgid "Conversations"
+msgstr "keskustelut"
+
+msgid "Start Now"
+msgstr "Aloita nyt"
+
+msgid "Company Assets"
+msgstr "Yhtiön omaisuuden"
+
+msgid "Asset Types"
+msgstr "Omaisuuslajien"
+
+msgid "Asset Name"
+msgstr "Sisällön nimi"
+
+msgid "Performance"
+msgstr "Esitys"
+
+msgid "Performance Review"
+msgstr "Arvio suoriutumisesta"
+
+msgid "Performance Reviews"
+msgstr "Suorituskykyarviot"
+
+msgid "Review"
+msgstr "Arvostelu"
+
+msgid "Reviews"
+msgstr "Arvostelut"
+
+msgid "Review Feedback"
+msgstr "Tarkista palautetta"
+
+msgid "Review Template"
+msgstr "Tarkastelumalli"
+
+msgid "Template"
+msgstr "Sapluuna"
+
+msgid "Review Date"
+msgstr "Tarkastuspäivämäärä"
+
+msgid "Self Assessment Due On"
+msgstr "Itsearviointi johtuu siitä"
+
+msgid "Review Period Start"
+msgstr "Tarkastelujakso alkaa"
+
+msgid "Review Period End"
+msgstr "Tarkastelujakson päättyminen"
+
+msgid "Attendees"
+msgstr "Osallistujat"
+
+msgid "Performance Reviews Coordinated by Me"
+msgstr "Suoritusarviointi Koordinoi minua"
+
+msgid "Provide Feedback"
+msgstr "Antaa palautetta"
+
+msgid "Review Status"
+msgstr "Tarkista tila"

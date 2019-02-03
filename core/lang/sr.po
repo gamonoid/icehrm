@@ -1,0 +1,1962 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2018-08-08T06:17:30+05:30\n"
+"PO-Revision-Date: 2018-08-08T06:17:30+05:30\n"
+"Language: Serbian\n"
+
+msgid "Save"
+msgstr "Sačuvati"
+
+msgid "Cancel"
+msgstr "Poništiti,otkazati"
+
+msgid "Done"
+msgstr "Gotovo"
+
+msgid "Clocked In Employees"
+msgstr "Цлоцкед У запослених"
+
+msgid "Candidates"
+msgstr "Kandidati"
+
+msgid "View Employees"
+msgstr "Pogledati zaposlene"
+
+msgid "Add a New Employee"
+msgstr "Dodati novog zaposlenog,zaposliti nekoga"
+
+msgid "Leave Calendar"
+msgstr "Napustite kalendar"
+
+msgid "Manage Client/Projects"
+msgstr "Upravljanje klijentima/projektima"
+
+msgid "Home"
+msgstr "Kuća"
+
+msgid "Quick Access"
+msgstr "Brz pristup"
+
+msgid "Switch"
+msgstr "Prekidač/prekinuti/zameniti"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Sign out"
+msgstr "Odjava"
+
+msgid "Help"
+msgstr "Pomoć"
+
+msgid "About"
+msgstr "O tome"
+
+msgid "Version"
+msgstr "Verzija"
+
+msgid "Release Date"
+msgstr "Datum izlaska"
+
+msgid "Logged In"
+msgstr "Prijavljen/ulogovan"
+
+msgid "Admin"
+msgstr "Admin"
+
+msgid "Dashboard"
+msgstr "Komandna tabla"
+
+msgid "Company Structure"
+msgstr "Struktura kompanije"
+
+msgid "Job Details Setup"
+msgstr "Postavljanje detalja o poslu"
+
+msgid "Qualifications Setup"
+msgstr "Postavljanje kvalifikacija"
+
+msgid "Training Setup"
+msgstr "Podešavanja za obuku/trening"
+
+msgid "Projects/Client Setup"
+msgstr "Podešavanja projekata/klijenata"
+
+msgid "Leave Settings"
+msgstr "Napustiti/Ostaviti podešavanja"
+
+msgid "Company Loans"
+msgstr "Krediti/pozajmice kompanije"
+
+msgid "Audit Log"
+msgstr "Duga revizija"
+
+msgid "Employees"
+msgstr "Zaposleni"
+
+msgid "Employee History"
+msgstr "Istorija zaposlenog"
+
+msgid "Document Management"
+msgstr "Upravljanje dokumentima"
+
+msgid "Travel Administration"
+msgstr "Administracija putovanja"
+
+msgid "Expense Administration"
+msgstr "Administracija rashoda"
+
+msgid "Monitor Attendance"
+msgstr "Prisustvo monitora"
+
+msgid "Performance Charts"
+msgstr "Tabele performansi"
+
+msgid "Overtime Administration"
+msgstr "Administracija za prekovremeni rad"
+
+msgid "Admin Reports"
+msgstr "Izveštaji admina"
+
+msgid "Reports"
+msgstr "Izveštaji"
+
+msgid "Report Files"
+msgstr "Izveštaj fajlova"
+
+msgid "System"
+msgstr "Sistem"
+
+msgid "Settings"
+msgstr "Podešavanja"
+
+msgid "Users"
+msgstr "Korisnici"
+
+msgid "Manage Modules"
+msgstr "Upravljanje modulima"
+
+msgid "Manage Permissions"
+msgstr "Upravljanje dozvolama"
+
+msgid "Upgrade"
+msgstr "Nadogradnja"
+
+msgid "Manage Metadata"
+msgstr "Upravljanje metapodatcima"
+
+msgid "Field Names Setup"
+msgstr "Podešavanja imena polja"
+
+msgid "Payroll"
+msgstr "Platni spisak"
+
+msgid "Salary"
+msgstr "Plata"
+
+msgid "Payroll Reports"
+msgstr "Platni izveštaj"
+
+msgid "Recruitment"
+msgstr "Zapošljavanje"
+
+msgid "Recruitment Setup"
+msgstr "Postavke zapošljavanja"
+
+msgid "Job Positions"
+msgstr "Pozicije posla"
+
+msgid "Personal Information"
+msgstr "Lična informacija"
+
+msgid "Basic Information"
+msgstr "Osnovna informacija"
+
+msgid "Qualifications"
+msgstr "Kvalifikacije"
+
+msgid "Dependents"
+msgstr "Zavisinici"
+
+msgid "Emergency Contacts"
+msgstr "Kontakt za hitne slučajeve"
+
+msgid "Leave"
+msgstr "Ostaviti/napustiti"
+
+msgid "Leave Management"
+msgstr "Napustiti upravljanje"
+
+msgid "Time Management"
+msgstr "Upravljanje vremenom"
+
+msgid "Projects"
+msgstr "Projekti"
+
+msgid "Attendance"
+msgstr "Pohađanje"
+
+msgid "Time Sheets"
+msgstr "Vremenski listovi"
+
+msgid "Attendance Sheets"
+msgstr "Prisutni listovi"
+
+msgid "Overtime Requests"
+msgstr "Prekovremeni zahtevi"
+
+msgid "Documents"
+msgstr "Dokumenti"
+
+msgid "My Documents"
+msgstr "Moji dokumenti"
+
+msgid "Company"
+msgstr "Kompanija"
+
+msgid "Staff Directory"
+msgstr "Direktorijum osoblja"
+
+msgid "Training"
+msgstr "Obuka/trening"
+
+msgid "Travel Management"
+msgstr "Upravljanje putovanjem"
+
+msgid "Travel"
+msgstr "Putovanje"
+
+msgid "Finance"
+msgstr "Finansije"
+
+msgid "Expenses"
+msgstr "Troškovi"
+
+msgid "Loans"
+msgstr "Krediti/pozajmice"
+
+msgid "User Reports"
+msgstr "Korisnički izveštaji"
+
+msgid "People"
+msgstr "Ljudi"
+
+msgid "Manage"
+msgstr "Upravljati"
+
+msgid "Departments"
+msgstr "Odeljenja"
+
+msgid "Active Projects"
+msgstr "Aktivni projekti"
+
+msgid "Update Clients/Projects"
+msgstr "Ažuriranje klijenata/projekata"
+
+msgid "Entries Last Week"
+msgstr "Unosi prošle nedelje"
+
+msgid "Upcoming"
+msgstr "Predstojeći"
+
+msgid "View / Download Reports"
+msgstr "Pogledati/preuzeti izveštaje"
+
+msgid "Generate a Report"
+msgstr "Generisati izveštaj"
+
+msgid "Configure"
+msgstr "Konfigurisati"
+
+msgid "Update"
+msgstr "Ažurirati"
+
+msgid "Applicants"
+msgstr "Aplikanti/podnositelji"
+
+msgid "Active Jobs"
+msgstr "Aktivni poslovi"
+
+msgid "Jobs Posted"
+msgstr "Objavljeni poslovi"
+
+msgid "Jobs"
+msgstr "Poslovi"
+
+msgid "Courses"
+msgstr "Kursevi"
+
+msgid "Requests"
+msgstr "Zahtevi"
+
+msgid "Document"
+msgstr "Dokument"
+
+msgid "Management"
+msgstr "Upravljanje/menadžment"
+
+msgid "Expense"
+msgstr "Trošak"
+
+msgid "Permission"
+msgstr "Dozvola"
+
+msgid "Permissions"
+msgstr "Dozvole"
+
+msgid "and"
+msgstr "I"
+
+msgid "Invoices"
+msgstr "Fakture"
+
+msgid "Make a Payment"
+msgstr "Izvršiti uplatu"
+
+msgid "Switch Employee"
+msgstr "Zameniti/prebaciti zaposlenog"
+
+msgid "Select The Employee to Switch Into"
+msgstr "Izaberite zaposlenog za prelazak na"
+
+msgid "Close"
+msgstr "Blizu"
+
+msgid "My Profile"
+msgstr "Moj profil"
+
+msgid "Edit Details"
+msgstr "Urediti detalje"
+
+msgid "View/Edit Profile"
+msgstr "Pogledaj/uredi profil"
+
+msgid "Punch In"
+msgstr "Udariti u"
+
+msgid "or"
+msgstr "Ili"
+
+msgid "Punch Out"
+msgstr "Udarac"
+
+msgid "Record Attendance"
+msgstr "Evidentiranje prisustva"
+
+msgid "Pending Leaves"
+msgstr "Na čekanju"
+
+msgid "Check Leave Status"
+msgstr "Proverite status odlaska"
+
+msgid "Hours worked Last Week"
+msgstr "Radnin sati prošle nedelje"
+
+msgid "Update Time Sheet"
+msgstr "Ažurirati vremenski list"
+
+msgid "My Projects"
+msgstr "Moji projekti"
+
+msgid "Projects Assigned"
+msgstr "Dodeljeni projekti"
+
+msgid "More info"
+msgstr "Više informacija"
+
+msgid "Store"
+msgstr "Prodavnica"
+
+msgid "My Travel"
+msgstr "Moje putovanje"
+
+msgid "My Expenses"
+msgstr "Moji troškovi"
+
+msgid "Manage Expenses"
+msgstr "Upravljanje troškovima"
+
+msgid "ID"
+msgstr "Lična karta"
+
+msgid "Name"
+msgstr "Ime"
+
+msgid "Address"
+msgstr "Adresa"
+
+msgid "Type"
+msgstr "Tip"
+
+msgid "Country"
+msgstr "Država"
+
+msgid "Time Zone"
+msgstr "Vremenska zona"
+
+msgid "Parent Structure"
+msgstr "Roditeljska struka"
+
+msgid "Details"
+msgstr "Detalji"
+
+msgid "Heads"
+msgstr "Glave"
+
+msgid "Code"
+msgstr "Kod/Šifra"
+
+msgid "Job Title Code"
+msgstr "Šifra naslova posla"
+
+msgid "Job Title"
+msgstr "Naziv posla/zvanje"
+
+msgid "Description"
+msgstr "Opis"
+
+msgid "Specification"
+msgstr "Specifikacija"
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Min Salary"
+msgstr "Minimalna plata"
+
+msgid "Max Salary"
+msgstr "Maksimalna plata"
+
+msgid "Pay Grade Name"
+msgstr "Platno ime"
+
+msgid "Employment Status"
+msgstr "Radni status"
+
+msgid "Coordinator"
+msgstr "Koordinator"
+
+msgid "Trainer"
+msgstr "Trener"
+
+msgid "Trainer Details"
+msgstr "Detalji trenera"
+
+msgid "Payment Type"
+msgstr "Vrsta/tip plaćanja"
+
+msgid "Cost"
+msgstr "Cena"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Course"
+msgstr "Kurs"
+
+msgid "Scheduled Time"
+msgstr "Ugovoreno/dogovoreno vreme"
+
+msgid "Assignment Due Date"
+msgstr "Rok dospeća"
+
+msgid "Delivery Method"
+msgstr "Način dostave"
+
+msgid "Delivery Location"
+msgstr "Lokacija dostavljanja"
+
+msgid "Attendance Type"
+msgstr "Vrsta/tip prisustva"
+
+msgid "Attachment"
+msgstr "Prilog"
+
+msgid "Training Certificate Required"
+msgstr "Potreban sertifikat obuke"
+
+msgid "Employee"
+msgstr "Zaposleni"
+
+msgid "Training Session"
+msgstr "Trening"
+
+msgid "Contact Number"
+msgstr "Broj kontakta"
+
+msgid "Contact Email"
+msgstr "Imejl kontakt"
+
+msgid "Company Url"
+msgstr "Kompanija URL"
+
+msgid "First Contact Date"
+msgstr "Datum prvog kontakta"
+
+msgid "Client"
+msgstr "Klijent"
+
+msgid "Project"
+msgstr "Projekat"
+
+msgid "Leave Name"
+msgstr "Ostaviti ime"
+
+msgid "Leave Accrue Enabled"
+msgstr "Ostaviti akumulaciju omogućenu"
+
+msgid "Leave Carried Forward"
+msgstr "Ostanite preneti"
+
+msgid "Leaves Per Year"
+msgstr "Godišnji odlasci"
+
+msgid "Leaves Group"
+msgstr "Ostavljati grupu"
+
+msgid "Leaves Per Leave Period"
+msgstr "Odlasci po periodu odmora"
+
+msgid "Admin can assign leave to employees"
+msgstr "Admin može da dopusti odsustvo zaposlenom"
+
+msgid "Employees can apply for this leave type"
+msgstr "Zaposleni može podneti zahtev za ovu vrstu odmora"
+
+msgid "Employees can apply beyond the current leave balance"
+msgstr "Zaposleni mogu da se prijave za tekući odmor"
+
+msgid "Percentage of Leaves Carried Forward"
+msgstr "Procenat prenetih odmora"
+
+msgid "Maximum Carried Forward Amount"
+msgstr "Maksimalni iznos prenet"
+
+msgid "Carried Forward Leave Availability Period"
+msgstr "Пренесен одсуство Доступност период"
+
+msgid "Proportionate leaves on Joined Date"
+msgstr "Сразмерне лишће на Датум регистрације"
+
+msgid "Send Notification Emails"
+msgstr "Слање имејлова са обавештењем"
+
+msgid "Leave Group"
+msgstr "Оставите Гроуп"
+
+msgid "Leave Color"
+msgstr "Оставите Цолор"
+
+msgid "Period Start"
+msgstr "период Почетак"
+
+msgid "Period End"
+msgstr "период Крај"
+
+msgid "Day"
+msgstr "дан"
+
+msgid "For All Countries"
+msgstr "За све земље"
+
+msgid "Date"
+msgstr "датум"
+
+msgid "Leave Type"
+msgstr "Оставите Тип"
+
+msgid "Propotionate leaves on Joined Date"
+msgstr "Пропотионате оставља на Датум регистрације"
+
+msgid "Leaves Period"
+msgstr "Леавес Период"
+
+msgid "Leave Amount"
+msgstr "Оставите износ"
+
+msgid "Leave Period"
+msgstr "Оставите Период"
+
+msgid "Note"
+msgstr "Белешка"
+
+msgid "All Employees"
+msgstr "Сви запослени"
+
+msgid "All Leave Types"
+msgstr "Све Остави Типови"
+
+msgid "Loan Type"
+msgstr "Тип кредита"
+
+msgid "Loan Start Date"
+msgstr "Кредит Датум почетка"
+
+msgid "Loan Period (Months)"
+msgstr "Рок кредита (месеци)"
+
+msgid "Amount"
+msgstr "Износ"
+
+msgid "Last Installment Date"
+msgstr "Последњи рате Датум"
+
+msgid "Loan Amount"
+msgstr "Износ позајмице"
+
+msgid "Monthly Installment"
+msgstr "месечну рату"
+
+msgid "Employee Number"
+msgstr "Број радника"
+
+msgid "First Name"
+msgstr "Име"
+
+msgid "Middle Name"
+msgstr "Средње име"
+
+msgid "Last Name"
+msgstr "Презиме"
+
+msgid "Nationality"
+msgstr "националност"
+
+msgid "Date of Birth"
+msgstr "Датум рођења"
+
+msgid "Gender"
+msgstr "пол"
+
+msgid "Marital Status"
+msgstr "Брачно стање"
+
+msgid "Ethnicity"
+msgstr "Етничка припадност"
+
+msgid "Immigration Status"
+msgstr "Имиграциони статус"
+
+msgid "SSN/NRIC"
+msgstr "ССН / НРИЦ"
+
+msgid "NIC"
+msgstr "НИЦ"
+
+msgid "Other ID"
+msgstr "Други ИД"
+
+msgid "Driving License No"
+msgstr "Дривинг Лиценсе"
+
+msgid "Pay Grade"
+msgstr "Платног разреда"
+
+msgid "Work Station Id"
+msgstr "Радна станица Ид"
+
+msgid "Address Line 1"
+msgstr "Адреса Линија 1"
+
+msgid "Address Line 2"
+msgstr "Адреса 2"
+
+msgid "City"
+msgstr "град"
+
+msgid "Province"
+msgstr "провинција"
+
+msgid "Postal/Zip Code"
+msgstr "Поштански / поштански број"
+
+msgid "Home Phone"
+msgstr "Кућни телефон"
+
+msgid "Mobile Phone"
+msgstr "Мобилни телефон"
+
+msgid "Work Phone"
+msgstr "rad телефона"
+
+msgid "Work Email"
+msgstr "rad-маил"
+
+msgid "Private Email"
+msgstr "Приватно Е-маил"
+
+msgid "Joined Date"
+msgstr "Датум регистрације"
+
+msgid "Confirmation Date"
+msgstr "Потврда Датум"
+
+msgid "Termination Date"
+msgstr "Датум завршетка"
+
+msgid "Department"
+msgstr "одељење"
+
+msgid "Supervisor"
+msgstr "Надзорник"
+
+msgid "Indirect Supervisors"
+msgstr "индиректни Супервизори"
+
+msgid "First Level Approver"
+msgstr "Први ниво одобраватељ"
+
+msgid "Second Level Approver"
+msgstr "Други ниво одобраватељ"
+
+msgid "Third Level Approver"
+msgstr "Трећи ниво одобраватељ"
+
+msgid "Notes"
+msgstr "белешке"
+
+msgid "Time (GMT)"
+msgstr "Време (ГМТ)"
+
+msgid "User"
+msgstr "корисник"
+
+msgid "IP Address"
+msgstr "ИП адреса"
+
+msgid "Logged In Employee"
+msgstr "Пријављени У запосленог"
+
+msgid "Skill"
+msgstr "Вештина"
+
+msgid "Qualification"
+msgstr "квалификација"
+
+msgid "Institute"
+msgstr "Институт"
+
+msgid "Start Date"
+msgstr "Старт Дате"
+
+msgid "Completed On"
+msgstr "Завршено"
+
+msgid "Certification"
+msgstr "потврда"
+
+msgid "Granted On"
+msgstr "одобрено"
+
+msgid "Valid Thru"
+msgstr "važi до"
+
+msgid "Language"
+msgstr "Језик"
+
+msgid "Reading"
+msgstr "читање"
+
+msgid "Speaking"
+msgstr "говор"
+
+msgid "Writing"
+msgstr "писање"
+
+msgid "Understanding"
+msgstr "разумевање"
+
+msgid "Date Added"
+msgstr "Датум додавања"
+
+msgid "Valid Until"
+msgstr "Исправно до"
+
+msgid "Relationship"
+msgstr "Однос"
+
+msgid "Id Number"
+msgstr "ИД број"
+
+msgid "All Job Titles"
+msgstr "Све Јоб Титлес"
+
+msgid "All Departments"
+msgstr "sve Катедре"
+
+msgid "Anyone"
+msgstr "Било ко"
+
+msgid "Field"
+msgstr "поље"
+
+msgid "Old Value"
+msgstr "Старо Вредност"
+
+msgid "New Value"
+msgstr "нова вредност"
+
+msgid "Modified By"
+msgstr "Модификована"
+
+msgid "Created"
+msgstr "направљена"
+
+msgid "Notify Expiry"
+msgstr "Нотифи истека"
+
+msgid "Notify Expiry Before One Month"
+msgstr "Обавести истека Пре месец дана"
+
+msgid "Notify Expiry Before One Week"
+msgstr "Обавести истека Пре једне седмице"
+
+msgid "Notify Expiry Before One Day"
+msgstr "Обавести истека Пре Оне Даи"
+
+msgid "Travel Type"
+msgstr "травел Тип"
+
+msgid "Purpose of Travel"
+msgstr "Сврха путовања"
+
+msgid "Travel From"
+msgstr "травел Од"
+
+msgid "Travel To"
+msgstr "Путују у"
+
+msgid "Travel Date"
+msgstr "датум путовања"
+
+msgid "Return Date"
+msgstr "Датум повратка"
+
+msgid "Total Funding Proposed"
+msgstr "Укупно финансирање Предложена"
+
+msgid "Itinerary / Cab Receipt"
+msgstr "Путопис / Кабина Пријем"
+
+msgid "Other Attachment 1"
+msgstr "Друго Прилог 1"
+
+msgid "Other Attachment 2"
+msgstr "Друго Прилог 2"
+
+msgid "Payment Method"
+msgstr "Начин плаћања"
+
+msgid "Transaction / Ref No"
+msgstr "Трансакција / Реф Но"
+
+msgid "Payee"
+msgstr "прималац"
+
+msgid "Expense Category"
+msgstr "Расходи Категорија"
+
+msgid "Receipt"
+msgstr "Признаница"
+
+msgid "Time-In"
+msgstr "Време у"
+
+msgid "Time-Out"
+msgstr "Пауза у утакмици"
+
+msgid "Clocked In Status"
+msgstr "Цлоцкед у статусу"
+
+msgid "End Date"
+msgstr "Крајњи датум"
+
+msgid "Category"
+msgstr "Категорија"
+
+msgid "Start Time"
+msgstr "Почетно време"
+
+msgid "End Time"
+msgstr "Време завршетка"
+
+msgid "Leave Status"
+msgstr "Оставите Статус"
+
+msgid "Select Client"
+msgstr "Избор klijent"
+
+msgid "Not Selected"
+msgstr "Није изабран"
+
+msgid "Or Project"
+msgstr "или пројекта"
+
+msgid "All Projects"
+msgstr "Сви пројекти"
+
+msgid "All Status"
+msgstr "све статус"
+
+msgid "Value"
+msgstr "вредност"
+
+msgid "Logo"
+msgstr "лого"
+
+msgid "User Name"
+msgstr "Корисничко име"
+
+msgid "Authentication Email"
+msgstr "аутхентицатион-маил"
+
+msgid "User Level"
+msgstr "Корисник Ниво"
+
+msgid "Email"
+msgstr "емаил"
+
+msgid "User Roles"
+msgstr "усер Улоге"
+
+msgid "Default Module"
+msgstr "Уобичајено Модул"
+
+msgid "No Default Module"
+msgstr "Но Уобичајено Модул"
+
+msgid "Menu"
+msgstr "Мени"
+
+msgid "Group"
+msgstr "Група"
+
+msgid "Order"
+msgstr "ред"
+
+msgid "Path"
+msgstr "путања"
+
+msgid "Label"
+msgstr "Етикета"
+
+msgid "User Levels"
+msgstr "Кориснички нивои"
+
+msgid "Module"
+msgstr "модул"
+
+msgid "All Modules"
+msgstr "Сви модули"
+
+msgid "Invoice Period Start"
+msgstr "Фактура период Почетак"
+
+msgid "Invoice Period End"
+msgstr "Фактура период Крај"
+
+msgid "Due date"
+msgstr "Рок предаје"
+
+msgid "Url"
+msgstr "урл"
+
+msgid "Original Text"
+msgstr "Оригинални текст"
+
+msgid "Mapped Text"
+msgstr "Маппед Текст"
+
+msgid "Display Status"
+msgstr "дисплаи статус"
+
+msgid "Field Type"
+msgstr "поље Тип"
+
+msgid "Field Label"
+msgstr "поље Ознака"
+
+msgid "Validation"
+msgstr "потврђивање"
+
+msgid "Field Options"
+msgstr "Фиелд Опције"
+
+msgid "Priority"
+msgstr "приоритет"
+
+msgid "Display Section"
+msgstr "дисплаи Секција"
+
+msgid "Salary Component Type"
+msgstr "Плата Тип компоненте"
+
+msgid "Salary Component"
+msgstr "плата Компонента"
+
+msgid "Pay Frequency"
+msgstr "Плати Фреквенција"
+
+msgid "Calculation Group"
+msgstr "Обрачун Група"
+
+msgid "None"
+msgstr "Ниједан"
+
+msgid "Calculation Exemptions"
+msgstr "цалцулатион Изузеци"
+
+msgid "Calculations Assigned"
+msgstr "прорачуни Ассигнед"
+
+msgid "Date Start"
+msgstr "Датум почетка"
+
+msgid "Date End"
+msgstr "Датум Крај"
+
+msgid "Payslip Template"
+msgstr "Паислип Шаблон"
+
+msgid "Payroll Columns"
+msgstr "платни Колоне"
+
+msgid "Calculation Method"
+msgstr "Метод обрачуна"
+
+msgid "Editable"
+msgstr "едитабле"
+
+msgid "Enabled"
+msgstr "omogućeno"
+
+msgid "Predefined Calculations"
+msgstr "предефинисани калкулације"
+
+msgid "Salary Components"
+msgstr "Салари компоненте"
+
+msgid "Columns to Add"
+msgstr "Колоне за додавање"
+
+msgid "Columns to Subtract"
+msgstr "Колоне за одузимање"
+
+msgid "Column Order"
+msgstr "Редослед колона"
+
+msgid "Default Value"
+msgstr "Задана вриједност"
+
+msgid "Calculation Columns"
+msgstr "цалцулатион Колоне"
+
+msgid "Function"
+msgstr "функција"
+
+msgid "Payroll Report Column"
+msgstr "Паиролл Извештај Колона"
+
+msgid "Calculation Process"
+msgstr "Обрачун Процес"
+
+msgid "Payslip Fields"
+msgstr "Паислип Поља"
+
+msgid "Payroll Column"
+msgstr "паиролл Колона"
+
+msgid "Text"
+msgstr "текст"
+
+msgid "Lower Limit Condition"
+msgstr "Доња граница Стање"
+
+msgid "Lower Limit"
+msgstr "Доња граница"
+
+msgid "Upper Limit Condition"
+msgstr "Горња граница Стање"
+
+msgid "Upper Limit"
+msgstr "Горња граница"
+
+msgid "Column"
+msgstr "колона"
+
+msgid "Job Code"
+msgstr "посао код"
+
+msgid "Short Description"
+msgstr "Кратак опис"
+
+msgid "Requirements"
+msgstr "zahtevi"
+
+msgid "Benefits"
+msgstr "Предности"
+
+msgid "Employment Type"
+msgstr "Тип запослења"
+
+msgid "Any Employment Type"
+msgstr "Било која врста запослења"
+
+msgid "Experience Level"
+msgstr "опита"
+
+msgid "Any Experience Level"
+msgstr "Било опита"
+
+msgid "Job Function"
+msgstr "Функција посла"
+
+msgid "Any Job Function"
+msgstr "Било посла Функција"
+
+msgid "Education Level"
+msgstr "Образовни ниво"
+
+msgid "Any Education Level"
+msgstr "Било Нивеау"
+
+msgid "Show Salary"
+msgstr "схов плата"
+
+msgid "Salary Min"
+msgstr "плата Мин"
+
+msgid "Salary Max"
+msgstr "плата Макс"
+
+msgid "Keywords"
+msgstr "Кључне речи"
+
+msgid "Closing Date"
+msgstr "Дан затварања"
+
+msgid "Image"
+msgstr "Слика"
+
+msgid "Display Type"
+msgstr "Тип екрана"
+
+msgid "Profile Image"
+msgstr "Профил Слика"
+
+msgid "Telephone"
+msgstr "телефон"
+
+msgid "Resume Title"
+msgstr "nastavi Титле"
+
+msgid "Resume"
+msgstr "Резиме"
+
+msgid "Resume Headline"
+msgstr "Наслов резимеа"
+
+msgid "Profile Summary"
+msgstr "профил Преглед"
+
+msgid "Work History"
+msgstr "Радно искуство"
+
+msgid "Education"
+msgstr "образовање"
+
+msgid "Skills"
+msgstr "вештине"
+
+msgid "Referees"
+msgstr "sudije"
+
+msgid "From Year"
+msgstr "od године"
+
+msgid "From Month"
+msgstr "od мјесеца"
+
+msgid "To Year"
+msgstr "da би Иеар"
+
+msgid "To Month"
+msgstr "на месец"
+
+msgid "Currently Work Here"
+msgstr "Тренутно радим овде"
+
+msgid "Degree/Diploma"
+msgstr "Степен / диплома"
+
+msgid "Currently Studying"
+msgstr "Тренутно студира"
+
+msgid "Skill Level"
+msgstr "Ниво вештина"
+
+msgid "Last Used Year"
+msgstr "Последњи Половни Година"
+
+msgid "Last Used Month"
+msgstr "Последњи Половни месец"
+
+msgid "Years of Experience"
+msgstr "Године искуства"
+
+msgid "Designation"
+msgstr "ознака"
+
+msgid "Phone"
+msgstr "телефон"
+
+msgid "Job"
+msgstr "посао"
+
+msgid "Candidate"
+msgstr "Кандидат"
+
+msgid "Referred By"
+msgstr "Препоручени од"
+
+msgid "Leave Start Date"
+msgstr "Оставите Старт Дате"
+
+msgid "Leave End Date"
+msgstr "Оставите Датум завршетка"
+
+msgid "Reason"
+msgstr "Разлог"
+
+msgid "Available Leaves"
+msgstr "Доступне Лишће"
+
+msgid "Approved Leaves"
+msgstr "odobreni Лишће"
+
+msgid "Rejected Leaves"
+msgstr "одбијени Лишће"
+
+msgid "Leaves to be Accrued"
+msgstr "Оставља се Обрачуната"
+
+msgid "Leaves Carried Forward"
+msgstr "Лишће пренет"
+
+msgid "Apply Leave"
+msgstr "Примени Леаве"
+
+msgid "Filter"
+msgstr "филтер"
+
+msgid "Add New"
+msgstr "Додај нови"
+
+msgid "Time"
+msgstr "време"
+
+msgid "Purpose"
+msgstr "сврха"
+
+msgid "From"
+msgstr "од"
+
+msgid "To"
+msgstr "До"
+
+msgid "Created (GMT)"
+msgstr "Направљено (ГМТ)"
+
+msgid "Download"
+msgstr "Преузимање"
+
+msgid "Submit"
+msgstr "прихвати"
+
+msgid "Upload"
+msgstr "Отпремити"
+
+msgid "Remove"
+msgstr "уклонити"
+
+msgid "Add"
+msgstr "Додати"
+
+msgid "Reset"
+msgstr "Ресетовати"
+
+msgid "Add Time Entry"
+msgstr "Додај Тиме унос"
+
+msgid "Current Clocked In Status"
+msgstr "Тренутни тактовима у статусу"
+
+msgid "Attendance entry should be within a single day"
+msgstr "унос Присуство би требало да буду у једном дану"
+
+msgid "Account Balance"
+msgstr "Стање на рачуну"
+
+msgid "Plan"
+msgstr "План"
+
+msgid "Transactions"
+msgstr "transakcije"
+
+msgid "Applications"
+msgstr "aplikacije"
+
+msgid "Attendance Graph"
+msgstr "Присуство Графикон"
+
+msgid "Hours in Office vs Hours Worked Graph"
+msgstr "Сати у канцеларији вс радних сати Граф"
+
+msgid "Company Graph"
+msgstr "Фирма Граф"
+
+msgid "Company Documents"
+msgstr "Компанија Документи"
+
+msgid "Document Types"
+msgstr "Врсте докумената"
+
+msgid "Employee Documents"
+msgstr "запослених Документи"
+
+msgid "Employee Basic Details"
+msgstr "Запослени Основни Детаљи"
+
+msgid "Employees (Direct Reports)"
+msgstr "Запослени (Дирецт Репортс)"
+
+msgid "Certifications"
+msgstr "sertifikati"
+
+msgid "Languages"
+msgstr "Језици"
+
+msgid "Deactivated Employees"
+msgstr "Деактивирани Запослени"
+
+msgid "Temporarily Deactivated Employees"
+msgstr "Привремено деактивиран Запослени"
+
+msgid "Terminated Employee Data"
+msgstr "Раскинут података о запосленима"
+
+msgid "Employee Saved Successfully"
+msgstr "Запослени Савед Успешно"
+
+msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
+msgstr "треба корисника да Улогујте се ИцеХрм радник. Да ли желите да креирате корисника за овог радника сада?"
+
+msgid "You can do this later through Users module if required."
+msgstr "Можете то учинити касније кроз корисника модула ако је то потребно."
+
+msgid "Expenses Categories"
+msgstr "troškovi Категорије"
+
+msgid "Payment Methods"
+msgstr "Начини плаћања"
+
+msgid "Employee Expenses"
+msgstr "Трошкови запослених"
+
+msgid "Salary Component Types"
+msgstr "Плата Цомпонент Типови"
+
+msgid "Employee Salary Components"
+msgstr "Запослених плата компоненте"
+
+msgid "Company Payroll"
+msgstr "kompanija Плате"
+
+msgid "Calculation Groups"
+msgstr "цалцулатион Групе"
+
+msgid "Calculation Methods"
+msgstr "цалцулатион Методе"
+
+msgid "Payslip Templates"
+msgstr "Паислип šablon"
+
+msgid "Edit Employment Types"
+msgstr "Врсте едит запошљавање"
+
+msgid "Edit Experience Levels"
+msgstr "Едит Искуство Нивои"
+
+msgid "Edit Job Functions"
+msgstr "Едит Јоб Функције"
+
+msgid "Edit Education Levels"
+msgstr "Нивои едит Едуцатион"
+
+msgid "Edit Benefits"
+msgstr "Измена Предности"
+
+msgid "Application"
+msgstr "Апликација"
+
+msgid "Job Titles"
+msgstr "Пословни наслови"
+
+msgid "Pay Grades"
+msgstr "платне разреде"
+
+msgid "Training Sessions"
+msgstr "Тренинзи"
+
+msgid "Employee Training Sessions"
+msgstr "Тренинг запослених Сессии"
+
+msgid "Clients"
+msgstr "Клијенти"
+
+msgid "Employee Projects"
+msgstr "Пројекти запослених"
+
+msgid "Leave Types"
+msgstr "Оставите Типови"
+
+msgid "Work Week"
+msgstr "Радна недеља"
+
+msgid "Holidays"
+msgstr "празници"
+
+msgid "Leave Rules"
+msgstr "Оставите Правила"
+
+msgid "Paid Time Off"
+msgstr "Плаћени слободног времена"
+
+msgid "Leave Groups"
+msgstr "Оставите Групе"
+
+msgid "Edit Leave Groups"
+msgstr "Едит одсуство Групе"
+
+msgid "Leave Group Employees"
+msgstr "Оставите Гроуп Запослени"
+
+msgid "Employee Leave List"
+msgstr "Запослени одсуство Листа"
+
+msgid "Loan Types"
+msgstr "Врсте кредита"
+
+msgid "Employee Loans"
+msgstr "запослених Кредити"
+
+msgid "Travel Requests"
+msgstr "Травел Захтеви"
+
+msgid "Overtime Categories"
+msgstr "прековремени рад Категорије"
+
+msgid "Leave / PTO"
+msgstr "Оставите / ПТО"
+
+msgid "Other"
+msgstr "други"
+
+msgid "Modules"
+msgstr "Модули"
+
+msgid "Countries"
+msgstr "zemlje"
+
+msgid "Provinces"
+msgstr "провинција"
+
+msgid "Currency Types"
+msgstr "Валута Типови"
+
+msgid "Employee Custom Fields"
+msgstr "Запослени Прилагођени Поља"
+
+msgid "Employee Field Names"
+msgstr "Запослених Фиелд Имена"
+
+msgid "My Details"
+msgstr "Моји Детаљи"
+
+msgid "All My Leaves"
+msgstr "Алл Ми Лишће"
+
+msgid "Leave Entitlement"
+msgstr "Оставити право"
+
+msgid "Approved Leave"
+msgstr "odobreno одсуство"
+
+msgid "Pending Leave"
+msgstr "Чека одобрење"
+
+msgid "Subordinate Leave"
+msgstr "подређени одсуство"
+
+msgid "Cancellation Requests"
+msgstr "отказивања Захтеви"
+
+msgid "Approval Requests"
+msgstr "одобравање захтева"
+
+msgid "Approved TimeSheets"
+msgstr "odobreni тимесхеетс"
+
+msgid "All My TimeSheets"
+msgstr "Алл Ми тимесхеетс"
+
+msgid "Pending TimeSheets"
+msgstr "чекању тимесхеетс"
+
+msgid "Subordinate TimeSheets"
+msgstr "подређених тимесхеетс"
+
+msgid "Approved Attendance Sheets"
+msgstr "Одобрени Зрители листови"
+
+msgid "All My Attendance Sheets"
+msgstr "Алл Ми Зрители листови"
+
+msgid "Pending Attendance Sheets"
+msgstr "У току присуствовање Схеетс"
+
+msgid "Subordinate Attendance Sheets"
+msgstr "Подређених Зрители листови"
+
+msgid "Subordinate Overtime Requests"
+msgstr "Подређених Овертиме Захтеви"
+
+msgid "Overtime Request Approval"
+msgstr "Прековремени рад тражи одобрење"
+
+msgid "My Training Sessions"
+msgstr "Моји Тренинзи"
+
+msgid "All Training Sessions"
+msgstr "Све Тренинзи"
+
+msgid "Training Sessions of Direct Reports"
+msgstr "Тренинзи директних извештаја"
+
+msgid "Subordinate Travel Requests"
+msgstr "Подређених Травел Захтеви"
+
+msgid "Travel Request Approval"
+msgstr "Травел тражи одобрење"
+
+msgid "Subordinate Expenses"
+msgstr "подређених Трошкови"
+
+msgid "Expenses Approval"
+msgstr "troškovi одобрења"
+
+msgid "Loans Taken"
+msgstr "krediti Такен"
+
+msgid "Change Leave Status"
+msgstr "Промени Леаве Статус"
+
+msgid "Status Change Note"
+msgstr "Статус Промени Белешка"
+
+msgid "Leave Summary"
+msgstr "Оставите Суммари"
+
+msgid "Approved Leave Count"
+msgstr "Одобрено одсуство Точка"
+
+msgid "Pending Leave Count"
+msgstr "Чека одобрење Точка"
+
+msgid "Available Leave Count"
+msgstr "Доступно одсуство Точка"
+
+msgid "Leave Dates"
+msgstr "Оставите Датуми"
+
+msgid "Leave Date"
+msgstr "Оставите Дате"
+
+msgid "Leave Notes"
+msgstr "Оставите Белешке"
+
+msgid "Apply"
+msgstr "Применити"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Hours in Time Sheets"
+msgstr "Сати у Тиме Схеетс"
+
+msgid "HR form"
+msgstr "БА образац"
+
+msgid "HR Form Management"
+msgstr "БА Образац за управљање"
+
+msgid "Form Name"
+msgstr "форма Име"
+
+msgid "Fields"
+msgstr "Поља"
+
+msgid "Employee Froms"
+msgstr "zaposleni фромс"
+
+msgid "Share Departments"
+msgstr "Схаре Катедре"
+
+msgid "Share Employees"
+msgstr "Схаре Запослени"
+
+msgid "Data Importers"
+msgstr "uvoznici података"
+
+msgid "Data Import Files"
+msgstr "Увоз података датотеке"
+
+msgid "Data Type"
+msgstr "Тип података"
+
+msgid "Columns"
+msgstr "kolone"
+
+msgid "Field Title"
+msgstr "поље Наслов"
+
+msgid "Depends On"
+msgstr "Зависи од"
+
+msgid "Depends On Field"
+msgstr "Зависи на терену"
+
+msgid "is Key Field"
+msgstr "је кључ Поље"
+
+msgid "is ID Field"
+msgstr "је ИД Поље"
+
+msgid "Data Import Definitions"
+msgstr "Увоз података Дефиниције"
+
+msgid "File to Import"
+msgstr "Филе да увози"
+
+msgid "Last Export Results"
+msgstr "Последњи извозне резултате"
+
+msgid "Time and Attendance"
+msgstr "Време и Гледалаца"
+
+msgid "Leave Timeline"
+msgstr "Оставите Тимелине"
+
+msgid "Insights"
+msgstr "Увид"
+
+msgid "Api Access"
+msgstr "апи приступ"
+
+msgid "Change User Password"
+msgstr "Промена Корисник Лозинка"
+
+msgid "New Password"
+msgstr "Нова лозинка"
+
+msgid "Confirm Password"
+msgstr "Потврди лозинку"
+
+msgid "Change Password"
+msgstr "Промени лозинку"
+
+msgid "Not Now"
+msgstr "Не сада"
+
+msgid "Contact Information"
+msgstr "Контакт информације"
+
+msgid "Job Details"
+msgstr "Детаљи о послу"
+
+msgid "Edit Info"
+msgstr "едит информације"
+
+msgid "Upload Profile Image"
+msgstr "Уплоад Слика профила"
+
+msgid "Delete Profile Image"
+msgstr "Брисање профила Имаге"
+
+msgid "Direct Reports"
+msgstr "Директни извештаји"
+
+msgid "Other Details"
+msgstr "Остали детаљи"
+
+msgid "Family"
+msgstr "Породица"
+
+msgid "Custom Fields"
+msgstr "прилагођена област"
+
+msgid "Means of Transportation"
+msgstr "Видови превоза"
+
+msgid "Plane"
+msgstr "авион"
+
+msgid "Rail"
+msgstr "шина"
+
+msgid "Taxi"
+msgstr "такси"
+
+msgid "Own Vehicle"
+msgstr "sopstveni возила"
+
+msgid "Rented Vehicle"
+msgstr "изнајмљена возила"
+
+msgid "Female"
+msgstr "Зенски пол"
+
+msgid "Male"
+msgstr "Мушки"
+
+msgid "Active"
+msgstr "активан"
+
+msgid "Inactive"
+msgstr "неактиван"
+
+msgid "Draft"
+msgstr "нацрт"
+
+msgid "Not Clocked In"
+msgstr "Није цлоцкед У"
+
+msgid "Clocked In"
+msgstr "цлоцкед У"
+
+msgid "File"
+msgstr "фајл"
+
+msgid "Active Employee Report"
+msgstr "Активан запослених Извештај"
+
+msgid "Employee Attendance Report"
+msgstr "Запослени Присуство Извештај"
+
+msgid "Employee Details Report"
+msgstr "Запослени Детаљи Извештај"
+
+msgid "Employee Leave Entitlement"
+msgstr "Запослени одсуство Право"
+
+msgid "Employee Leaves Report"
+msgstr "Запослени напусти Извештај"
+
+msgid "Employee Time Entry Report"
+msgstr "Запослени Време Ступање Извештај"
+
+msgid "Employee Time Sheet Report"
+msgstr "Запослени Време лист Извештај"
+
+msgid "Employee Time Tracking Report"
+msgstr "Запослени Време праћење извештај"
+
+msgid "Expense Report"
+msgstr "Расходи извештај"
+
+msgid "New Hires Employee Report"
+msgstr "Ново запошљавање запослених Извештај"
+
+msgid "Overtime Report"
+msgstr "прековремени рад Извештај"
+
+msgid "Overtime Request Report"
+msgstr "Прековремени Упит Извештај"
+
+msgid "Overtime Summary Report"
+msgstr "Прековремени Преглед Извештај"
+
+msgid "Payroll Meta Data Export"
+msgstr "Платни списак Мета подаци Извоз"
+
+msgid "Terminated Employee Report"
+msgstr "Раскинут запослених Извештај"
+
+msgid "Travel Request Report"
+msgstr "Травел Упит Извештај"
+
+msgid "Attendance Report"
+msgstr "Присуство Извештај"
+
+msgid "Client Project Time Report"
+msgstr "Клијент Пројекат Време Извештај"
+
+msgid "Download Payslips"
+msgstr "Довнлоад платне листе"
+
+msgid "Leaves Report"
+msgstr "Леавес Репорт"
+
+msgid "Time Entry Report"
+msgstr "Време Ступање Извештај"
+
+msgid "Time Sheet Report"
+msgstr "Време лист Извештај"
+
+msgid "Time Tracking Report"
+msgstr "Време за праћење извештај"
+
+msgid "Data"
+msgstr "подаци"
+
+msgid "Processed"
+msgstr "обрађен"
+
+msgid "Not Processed"
+msgstr "Није обрађено"
+
+msgid "Elementary Proficiency"
+msgstr "Основно стручности"
+
+msgid "Limited Working Proficiency"
+msgstr "Лимитед владение"
+
+msgid "Professional Working Proficiency"
+msgstr "Стручни владение"
+
+msgid "Full Professional Proficiency"
+msgstr "Фулл професионалној стручности"
+
+msgid "Native or Bilingual Proficiency"
+msgstr "Нативе или двојезично Стручност"
+
+msgid "Pending"
+msgstr "нерешен"
+
+msgid "Approved"
+msgstr "одобрен"
+
+msgid "Rejected"
+msgstr "Одбијен"
+
+msgid "Cancelled"
+msgstr "отказан"
+
+msgid "Continue"
+msgstr "Настави"
+
+msgid "Cancellation Requested"
+msgstr "Отказивање Тражени"
+
+msgid "Completed"
+msgstr "завршен"
+
+msgid "Discussions"
+msgstr "Дискусије"
+
+msgid "Load More"
+msgstr "Учитај више"
+
+msgid "Show More"
+msgstr "Прикажи више"
+
+msgid "Show Less"
+msgstr "схов Мање"
+
+msgid "Publish"
+msgstr "објавити"
+
+msgid "Announcements"
+msgstr "Најаве"
+
+msgid "Send"
+msgstr "послати"
+
+msgid "Display"
+msgstr "Приказ"
+
+msgid "Public"
+msgstr "јавност"
+
+msgid "View Announcements"
+msgstr "Погледај Најаве"
+
+msgid "Conversations"
+msgstr "razgovori"
+
+msgid "Start Now"
+msgstr "Почни сад"
+
+msgid "Company Assets"
+msgstr "Компанија aktiva"
+
+msgid "Asset Types"
+msgstr "Врсте средстава"
+
+msgid "Asset Name"
+msgstr "Назив дела"
+
+msgid "Performance"
+msgstr "Перформансе"
+
+msgid "Performance Review"
+msgstr "Преглед учинка"
+
+msgid "Performance Reviews"
+msgstr "Коментар наступа"
+
+msgid "Review"
+msgstr "Прегледајте"
+
+msgid "Reviews"
+msgstr "Коментара"
+
+msgid "Review Feedback"
+msgstr "Прегледајте повратне информације"
+
+msgid "Review Template"
+msgstr "Шаблон за преглед"
+
+msgid "Template"
+msgstr "Шаблон"
+
+msgid "Review Date"
+msgstr "Датум прегледа"
+
+msgid "Self Assessment Due On"
+msgstr "Довољно самопроцјена"
+
+msgid "Review Period Start"
+msgstr "Почетни период прегледа"
+
+msgid "Review Period End"
+msgstr "Крајњи рок прегледа"
+
+msgid "Attendees"
+msgstr "Учесници"
+
+msgid "Performance Reviews Coordinated by Me"
+msgstr "Перформанце Ревиевс Цоординатед би Ме"
+
+msgid "Provide Feedback"
+msgstr "Дају повратне информације"
+
+msgid "Review Status"
+msgstr "Статус прегледа"

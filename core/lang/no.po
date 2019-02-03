@@ -1,0 +1,1962 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2018-08-08T06:20:21+05:30\n"
+"PO-Revision-Date: 2018-08-08T06:20:21+05:30\n"
+"Language: Norwegian\n"
+
+msgid "Save"
+msgstr "Lagre"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Done"
+msgstr "Ferdig"
+
+msgid "Clocked In Employees"
+msgstr "Klokka i ansatte"
+
+msgid "Candidates"
+msgstr "kandidater"
+
+msgid "View Employees"
+msgstr "Se ansatte"
+
+msgid "Add a New Employee"
+msgstr "Legg til en ny ansatt"
+
+msgid "Leave Calendar"
+msgstr "Legg igjen kalenderen"
+
+msgid "Manage Client/Projects"
+msgstr "Administrer klient / prosjekter"
+
+msgid "Home"
+msgstr "Hjem"
+
+msgid "Quick Access"
+msgstr "Rask tilgang"
+
+msgid "Switch"
+msgstr "Bytte om"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Sign out"
+msgstr "Logg ut"
+
+msgid "Help"
+msgstr "Hjelp"
+
+msgid "About"
+msgstr "Handle om"
+
+msgid "Version"
+msgstr "Versjon"
+
+msgid "Release Date"
+msgstr "Utgivelsesdato"
+
+msgid "Logged In"
+msgstr "Logget inn"
+
+msgid "Admin"
+msgstr "admin"
+
+msgid "Dashboard"
+msgstr "dashbord"
+
+msgid "Company Structure"
+msgstr "Selskapsstruktur"
+
+msgid "Job Details Setup"
+msgstr "Jobbdetaljer Setup"
+
+msgid "Qualifications Setup"
+msgstr "Kvalifikasjonsoppsett"
+
+msgid "Training Setup"
+msgstr "Opplæringsoppsett"
+
+msgid "Projects/Client Setup"
+msgstr "Prosjekter / Klientoppsett"
+
+msgid "Leave Settings"
+msgstr "Forlat innstillinger"
+
+msgid "Company Loans"
+msgstr "Selskapslån"
+
+msgid "Audit Log"
+msgstr "Revisjonslogg"
+
+msgid "Employees"
+msgstr "medarbeidere"
+
+msgid "Employee History"
+msgstr "Ansattes historie"
+
+msgid "Document Management"
+msgstr "Dokumenthåndtering"
+
+msgid "Travel Administration"
+msgstr "Reiseadministrasjon"
+
+msgid "Expense Administration"
+msgstr "Utgifter Administrasjon"
+
+msgid "Monitor Attendance"
+msgstr "Monitor Attendance"
+
+msgid "Performance Charts"
+msgstr "Prestasjonsdiagrammer"
+
+msgid "Overtime Administration"
+msgstr "Overtid Administrasjon"
+
+msgid "Admin Reports"
+msgstr "Admin Rapporter"
+
+msgid "Reports"
+msgstr "rapporter"
+
+msgid "Report Files"
+msgstr "Rapporter filer"
+
+msgid "System"
+msgstr "System"
+
+msgid "Settings"
+msgstr "innstillinger"
+
+msgid "Users"
+msgstr "brukere"
+
+msgid "Manage Modules"
+msgstr "Administrer moduler"
+
+msgid "Manage Permissions"
+msgstr "Administrer tillatelser"
+
+msgid "Upgrade"
+msgstr "Oppgradering"
+
+msgid "Manage Metadata"
+msgstr "Administrer metadata"
+
+msgid "Field Names Setup"
+msgstr "Feltnavn Oppsett"
+
+msgid "Payroll"
+msgstr "lønn"
+
+msgid "Salary"
+msgstr "Lønn"
+
+msgid "Payroll Reports"
+msgstr "Lønnsrapporter"
+
+msgid "Recruitment"
+msgstr "Rekruttering"
+
+msgid "Recruitment Setup"
+msgstr "Rekruttering Oppsett"
+
+msgid "Job Positions"
+msgstr "Jobbposisjoner"
+
+msgid "Personal Information"
+msgstr "Personlig informasjon"
+
+msgid "Basic Information"
+msgstr "Grunnleggende informasjon"
+
+msgid "Qualifications"
+msgstr "kvalifikasjoner"
+
+msgid "Dependents"
+msgstr "Avhengige"
+
+msgid "Emergency Contacts"
+msgstr "Nødkontakter"
+
+msgid "Leave"
+msgstr "Permisjon"
+
+msgid "Leave Management"
+msgstr "Forlate ledelsen"
+
+msgid "Time Management"
+msgstr "Tidsfordriv"
+
+msgid "Projects"
+msgstr "prosjekter"
+
+msgid "Attendance"
+msgstr "Deltakelse"
+
+msgid "Time Sheets"
+msgstr "Tidssider"
+
+msgid "Attendance Sheets"
+msgstr "Deltakelsesark"
+
+msgid "Overtime Requests"
+msgstr "Overtidssøknader"
+
+msgid "Documents"
+msgstr "dokumenter"
+
+msgid "My Documents"
+msgstr "Mine dokumenter"
+
+msgid "Company"
+msgstr "Selskap"
+
+msgid "Staff Directory"
+msgstr "Staff Directory"
+
+msgid "Training"
+msgstr "Opplæring"
+
+msgid "Travel Management"
+msgstr "Reiseledelse"
+
+msgid "Travel"
+msgstr "Reise"
+
+msgid "Finance"
+msgstr "Finansiere"
+
+msgid "Expenses"
+msgstr "utgifter"
+
+msgid "Loans"
+msgstr "lån"
+
+msgid "User Reports"
+msgstr "Brukerrapporter"
+
+msgid "People"
+msgstr "Mennesker"
+
+msgid "Manage"
+msgstr "Få til"
+
+msgid "Departments"
+msgstr "avdelinger"
+
+msgid "Active Projects"
+msgstr "Aktive prosjekter"
+
+msgid "Update Clients/Projects"
+msgstr "Oppdater klienter / prosjekter"
+
+msgid "Entries Last Week"
+msgstr "Innlegg forrige uke"
+
+msgid "Upcoming"
+msgstr "kommende"
+
+msgid "View / Download Reports"
+msgstr "Se / Last ned rapporter"
+
+msgid "Generate a Report"
+msgstr "Generer en rapport"
+
+msgid "Configure"
+msgstr "Konfigurer"
+
+msgid "Update"
+msgstr "Oppdater"
+
+msgid "Applicants"
+msgstr "søkere"
+
+msgid "Active Jobs"
+msgstr "Aktive jobber"
+
+msgid "Jobs Posted"
+msgstr "Jobs Postet"
+
+msgid "Jobs"
+msgstr "Arbeidsplasser"
+
+msgid "Courses"
+msgstr "kurs"
+
+msgid "Requests"
+msgstr "Forespørsler"
+
+msgid "Document"
+msgstr "Dokument"
+
+msgid "Management"
+msgstr "Ledelse"
+
+msgid "Expense"
+msgstr "Kostnader"
+
+msgid "Permission"
+msgstr "Tillatelse"
+
+msgid "Permissions"
+msgstr "tillatelser"
+
+msgid "and"
+msgstr "og"
+
+msgid "Invoices"
+msgstr "fakturaer"
+
+msgid "Make a Payment"
+msgstr "Gjennomføre en betaling"
+
+msgid "Switch Employee"
+msgstr "Bytt medarbeider"
+
+msgid "Select The Employee to Switch Into"
+msgstr "Velg medarbeider å bytte til"
+
+msgid "Close"
+msgstr "Lukk"
+
+msgid "My Profile"
+msgstr "Min profil"
+
+msgid "Edit Details"
+msgstr "Rediger detaljer"
+
+msgid "View/Edit Profile"
+msgstr "Se / rediger profil"
+
+msgid "Punch In"
+msgstr "Punch In"
+
+msgid "or"
+msgstr "eller"
+
+msgid "Punch Out"
+msgstr "Slå ut"
+
+msgid "Record Attendance"
+msgstr "Registrer oppmøte"
+
+msgid "Pending Leaves"
+msgstr "Venter på bladene"
+
+msgid "Check Leave Status"
+msgstr "Sjekk etterstatus"
+
+msgid "Hours worked Last Week"
+msgstr "Timer jobbet i forrige uke"
+
+msgid "Update Time Sheet"
+msgstr "Oppdater tidsskrift"
+
+msgid "My Projects"
+msgstr "Mine prosjekter"
+
+msgid "Projects Assigned"
+msgstr "Prosjekter tilordnet"
+
+msgid "More info"
+msgstr "Mer informasjon"
+
+msgid "Store"
+msgstr "butikk"
+
+msgid "My Travel"
+msgstr "Min reise"
+
+msgid "My Expenses"
+msgstr "Mine utgifter"
+
+msgid "Manage Expenses"
+msgstr "Administrer utgifter"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "Address"
+msgstr "Adresse"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Country"
+msgstr "Land"
+
+msgid "Time Zone"
+msgstr "Tidssone"
+
+msgid "Parent Structure"
+msgstr "Foreldrestruktur"
+
+msgid "Details"
+msgstr "detaljer"
+
+msgid "Heads"
+msgstr "Heads"
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "Job Title Code"
+msgstr "Jobbtittelkode"
+
+msgid "Job Title"
+msgstr "Jobbtittel"
+
+msgid "Description"
+msgstr "Beskrivelse"
+
+msgid "Specification"
+msgstr "spesifikasjon"
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Min Salary"
+msgstr "Min lønn"
+
+msgid "Max Salary"
+msgstr "Maksimal lønn"
+
+msgid "Pay Grade Name"
+msgstr "Betalingsgrad Navn"
+
+msgid "Employment Status"
+msgstr "Sysselsettingsstatus"
+
+msgid "Coordinator"
+msgstr "koordinator"
+
+msgid "Trainer"
+msgstr "Trener"
+
+msgid "Trainer Details"
+msgstr "Trenerdetaljer"
+
+msgid "Payment Type"
+msgstr "Betalings type"
+
+msgid "Cost"
+msgstr "Koste"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Course"
+msgstr "Kurs"
+
+msgid "Scheduled Time"
+msgstr "Planlagt tid"
+
+msgid "Assignment Due Date"
+msgstr "Oppdrag forfallsdato"
+
+msgid "Delivery Method"
+msgstr "Leverings metode"
+
+msgid "Delivery Location"
+msgstr "Leveringssted"
+
+msgid "Attendance Type"
+msgstr "Tilstedeværelsestype"
+
+msgid "Attachment"
+msgstr "Vedlegg"
+
+msgid "Training Certificate Required"
+msgstr "Treningsbevis nødvendig"
+
+msgid "Employee"
+msgstr "Ansatt"
+
+msgid "Training Session"
+msgstr "Treningsøkt"
+
+msgid "Contact Number"
+msgstr "Kontakt nummer"
+
+msgid "Contact Email"
+msgstr "Kontakt Epost"
+
+msgid "Company Url"
+msgstr "Firma Url"
+
+msgid "First Contact Date"
+msgstr "Første kontaktdato"
+
+msgid "Client"
+msgstr "Klient"
+
+msgid "Project"
+msgstr "Prosjekt"
+
+msgid "Leave Name"
+msgstr "Gi etternavn"
+
+msgid "Leave Accrue Enabled"
+msgstr "Forlate akkumulert aktivert"
+
+msgid "Leave Carried Forward"
+msgstr "La kjørt fremover"
+
+msgid "Leaves Per Year"
+msgstr "Blad per år"
+
+msgid "Leaves Group"
+msgstr "Leaves Group"
+
+msgid "Leaves Per Leave Period"
+msgstr "Blader per permisjonstid"
+
+msgid "Admin can assign leave to employees"
+msgstr "Admin kan tildele permisjon til ansatte"
+
+msgid "Employees can apply for this leave type"
+msgstr "Ansatte kan søke om denne permisjonen"
+
+msgid "Employees can apply beyond the current leave balance"
+msgstr "Ansatte kan søke utover den nåværende permisjonen"
+
+msgid "Percentage of Leaves Carried Forward"
+msgstr "Prosentandel av blader fremført"
+
+msgid "Maximum Carried Forward Amount"
+msgstr "Maksimum Carried Forward Amount"
+
+msgid "Carried Forward Leave Availability Period"
+msgstr "Bragt fremover Forlengelsesperiode"
+
+msgid "Proportionate leaves on Joined Date"
+msgstr "Proportionelle blader på Forbundet dato"
+
+msgid "Send Notification Emails"
+msgstr "Send varsel e-post"
+
+msgid "Leave Group"
+msgstr "Forlat gruppe"
+
+msgid "Leave Color"
+msgstr "La farge"
+
+msgid "Period Start"
+msgstr "Periode Start"
+
+msgid "Period End"
+msgstr "Periodens slutt"
+
+msgid "Day"
+msgstr "Dag"
+
+msgid "For All Countries"
+msgstr "For alle land"
+
+msgid "Date"
+msgstr "Dato"
+
+msgid "Leave Type"
+msgstr "Forlat Type"
+
+msgid "Propotionate leaves on Joined Date"
+msgstr "Propotionate forlater på Forbundet dato"
+
+msgid "Leaves Period"
+msgstr "Bladperiode"
+
+msgid "Leave Amount"
+msgstr "Forlate beløp"
+
+msgid "Leave Period"
+msgstr "Permisjonstid"
+
+msgid "Note"
+msgstr "Merk"
+
+msgid "All Employees"
+msgstr "Alle ansatte"
+
+msgid "All Leave Types"
+msgstr "Alle permitter"
+
+msgid "Loan Type"
+msgstr "Låntype"
+
+msgid "Loan Start Date"
+msgstr "Lånets startdato"
+
+msgid "Loan Period (Months)"
+msgstr "Låneperiode (måneder)"
+
+msgid "Amount"
+msgstr "Beløp"
+
+msgid "Last Installment Date"
+msgstr "Siste avbetalingsdato"
+
+msgid "Loan Amount"
+msgstr "Lånebeløp"
+
+msgid "Monthly Installment"
+msgstr "Månedlig avdrag"
+
+msgid "Employee Number"
+msgstr "Ansatt nummer"
+
+msgid "First Name"
+msgstr "Fornavn"
+
+msgid "Middle Name"
+msgstr "Mellomnavn"
+
+msgid "Last Name"
+msgstr "Etternavn"
+
+msgid "Nationality"
+msgstr "Nasjonalitet"
+
+msgid "Date of Birth"
+msgstr "Fødselsdato"
+
+msgid "Gender"
+msgstr "Kjønn"
+
+msgid "Marital Status"
+msgstr "Sivilstatus"
+
+msgid "Ethnicity"
+msgstr "etnisitet"
+
+msgid "Immigration Status"
+msgstr "Innvandringsstatus"
+
+msgid "SSN/NRIC"
+msgstr "SSN / NRIC"
+
+msgid "NIC"
+msgstr "NIC"
+
+msgid "Other ID"
+msgstr "Annen ID"
+
+msgid "Driving License No"
+msgstr "Kjøringsnummer nr"
+
+msgid "Pay Grade"
+msgstr "Lønnsnivå"
+
+msgid "Work Station Id"
+msgstr "Arbeidsstasjon-ID"
+
+msgid "Address Line 1"
+msgstr "Adresselinje 1"
+
+msgid "Address Line 2"
+msgstr "Adresselinje 2"
+
+msgid "City"
+msgstr "By"
+
+msgid "Province"
+msgstr "Provins"
+
+msgid "Postal/Zip Code"
+msgstr "Post / postnummer"
+
+msgid "Home Phone"
+msgstr "Hjemmetelefon"
+
+msgid "Mobile Phone"
+msgstr "Mobiltelefon"
+
+msgid "Work Phone"
+msgstr "Jobbtelefon"
+
+msgid "Work Email"
+msgstr "Arbeids-e-post"
+
+msgid "Private Email"
+msgstr "Privat e-post"
+
+msgid "Joined Date"
+msgstr "Forbundet dato"
+
+msgid "Confirmation Date"
+msgstr "Bekreftelsesdato"
+
+msgid "Termination Date"
+msgstr "Sluttdato"
+
+msgid "Department"
+msgstr "Avdeling"
+
+msgid "Supervisor"
+msgstr "Supervisor"
+
+msgid "Indirect Supervisors"
+msgstr "Indirekte Tilsynsførere"
+
+msgid "First Level Approver"
+msgstr "Første nivå godkjent"
+
+msgid "Second Level Approver"
+msgstr "Second Level Approver"
+
+msgid "Third Level Approver"
+msgstr "Tredje nivå godkjent"
+
+msgid "Notes"
+msgstr "Merknader"
+
+msgid "Time (GMT)"
+msgstr "Tid (GMT)"
+
+msgid "User"
+msgstr "Bruker"
+
+msgid "IP Address"
+msgstr "IP adresse"
+
+msgid "Logged In Employee"
+msgstr "Logget på medarbeider"
+
+msgid "Skill"
+msgstr "Ferdighet"
+
+msgid "Qualification"
+msgstr "Kvalifikasjon"
+
+msgid "Institute"
+msgstr "Institutt"
+
+msgid "Start Date"
+msgstr "Startdato"
+
+msgid "Completed On"
+msgstr "Fullført På"
+
+msgid "Certification"
+msgstr "sertifisering"
+
+msgid "Granted On"
+msgstr "Granted On"
+
+msgid "Valid Thru"
+msgstr "Gyldig gjennom"
+
+msgid "Language"
+msgstr "Språk"
+
+msgid "Reading"
+msgstr "Lesning"
+
+msgid "Speaking"
+msgstr "snakker"
+
+msgid "Writing"
+msgstr "skrive"
+
+msgid "Understanding"
+msgstr "forståelse"
+
+msgid "Date Added"
+msgstr "Dato lagt til"
+
+msgid "Valid Until"
+msgstr "Gyldig til"
+
+msgid "Relationship"
+msgstr "Forhold"
+
+msgid "Id Number"
+msgstr "ID-nummer"
+
+msgid "All Job Titles"
+msgstr "Alle jobbtitler"
+
+msgid "All Departments"
+msgstr "Alle avdelinger"
+
+msgid "Anyone"
+msgstr "Hvem som helst"
+
+msgid "Field"
+msgstr "Felt"
+
+msgid "Old Value"
+msgstr "Gamle verdi"
+
+msgid "New Value"
+msgstr "Ny verdi"
+
+msgid "Modified By"
+msgstr "Modifisert av"
+
+msgid "Created"
+msgstr "laget"
+
+msgid "Notify Expiry"
+msgstr "Meld utløp"
+
+msgid "Notify Expiry Before One Month"
+msgstr "Meld utløp før en måned"
+
+msgid "Notify Expiry Before One Week"
+msgstr "Varsel utløp før en uke"
+
+msgid "Notify Expiry Before One Day"
+msgstr "Varsel utløp før en dag"
+
+msgid "Travel Type"
+msgstr "Reisetype"
+
+msgid "Purpose of Travel"
+msgstr "Hensikt med reisen"
+
+msgid "Travel From"
+msgstr "Reise fra"
+
+msgid "Travel To"
+msgstr "Reise til"
+
+msgid "Travel Date"
+msgstr "Reisedato"
+
+msgid "Return Date"
+msgstr "Returdato"
+
+msgid "Total Funding Proposed"
+msgstr "Samlet finansiering foreslått"
+
+msgid "Itinerary / Cab Receipt"
+msgstr "Reiseplan / Cab-kvittering"
+
+msgid "Other Attachment 1"
+msgstr "Annet vedlegg 1"
+
+msgid "Other Attachment 2"
+msgstr "Annet vedlegg 2"
+
+msgid "Payment Method"
+msgstr "Betalingsmetode"
+
+msgid "Transaction / Ref No"
+msgstr "Transaksjon / Ref nr"
+
+msgid "Payee"
+msgstr "betalingsmottaker"
+
+msgid "Expense Category"
+msgstr "Utgiftskategori"
+
+msgid "Receipt"
+msgstr "Kvittering"
+
+msgid "Time-In"
+msgstr "Time-In"
+
+msgid "Time-Out"
+msgstr "Pause"
+
+msgid "Clocked In Status"
+msgstr "Klokka i status"
+
+msgid "End Date"
+msgstr "Sluttdato"
+
+msgid "Category"
+msgstr "Kategori"
+
+msgid "Start Time"
+msgstr "Starttid"
+
+msgid "End Time"
+msgstr "Sluttid"
+
+msgid "Leave Status"
+msgstr "Forlatstatus"
+
+msgid "Select Client"
+msgstr "Velg klient"
+
+msgid "Not Selected"
+msgstr "Ikke valgt"
+
+msgid "Or Project"
+msgstr "Eller prosjekt"
+
+msgid "All Projects"
+msgstr "Alle prosjekter"
+
+msgid "All Status"
+msgstr "All status"
+
+msgid "Value"
+msgstr "Verdi"
+
+msgid "Logo"
+msgstr "logo"
+
+msgid "User Name"
+msgstr "Brukernavn"
+
+msgid "Authentication Email"
+msgstr "Autentiserings-e-post"
+
+msgid "User Level"
+msgstr "Brukernivå"
+
+msgid "Email"
+msgstr "e-post"
+
+msgid "User Roles"
+msgstr "Brukerroller"
+
+msgid "Default Module"
+msgstr "Standardmodul"
+
+msgid "No Default Module"
+msgstr "Ingen standardmodul"
+
+msgid "Menu"
+msgstr "Meny"
+
+msgid "Group"
+msgstr "Gruppe"
+
+msgid "Order"
+msgstr "Rekkefølge"
+
+msgid "Path"
+msgstr "Sti"
+
+msgid "Label"
+msgstr "Merkelapp"
+
+msgid "User Levels"
+msgstr "Brukernivåer"
+
+msgid "Module"
+msgstr "modul"
+
+msgid "All Modules"
+msgstr "Alle moduler"
+
+msgid "Invoice Period Start"
+msgstr "Faktura Periode Start"
+
+msgid "Invoice Period End"
+msgstr "Faktura Periode End"
+
+msgid "Due date"
+msgstr "Tidsfrist"
+
+msgid "Url"
+msgstr "url"
+
+msgid "Original Text"
+msgstr "Opprinnelig tekst"
+
+msgid "Mapped Text"
+msgstr "Mappet tekst"
+
+msgid "Display Status"
+msgstr "Visningsstatus"
+
+msgid "Field Type"
+msgstr "Feltype"
+
+msgid "Field Label"
+msgstr "Feltetikett"
+
+msgid "Validation"
+msgstr "Validering"
+
+msgid "Field Options"
+msgstr "Feltalternativer"
+
+msgid "Priority"
+msgstr "Prioritet"
+
+msgid "Display Section"
+msgstr "Skjermseksjon"
+
+msgid "Salary Component Type"
+msgstr "Lønn Komponenttype"
+
+msgid "Salary Component"
+msgstr "Lønnskomponent"
+
+msgid "Pay Frequency"
+msgstr "Betalingsfrekvens"
+
+msgid "Calculation Group"
+msgstr "Beregningsgruppe"
+
+msgid "None"
+msgstr "Ingen"
+
+msgid "Calculation Exemptions"
+msgstr "Beregningsfritak"
+
+msgid "Calculations Assigned"
+msgstr "Beregninger Tilordnet"
+
+msgid "Date Start"
+msgstr "Dato Start"
+
+msgid "Date End"
+msgstr "Dato slutt"
+
+msgid "Payslip Template"
+msgstr "Payslip Mal"
+
+msgid "Payroll Columns"
+msgstr "Lønn kolonnene"
+
+msgid "Calculation Method"
+msgstr "Beregningsmetode"
+
+msgid "Editable"
+msgstr "redigerbar"
+
+msgid "Enabled"
+msgstr "aktivert"
+
+msgid "Predefined Calculations"
+msgstr "Fordefinerte beregninger"
+
+msgid "Salary Components"
+msgstr "Lønnskomponenter"
+
+msgid "Columns to Add"
+msgstr "Kolonner å legge til"
+
+msgid "Columns to Subtract"
+msgstr "Kolonner å trekke fra"
+
+msgid "Column Order"
+msgstr "Kolonneordre"
+
+msgid "Default Value"
+msgstr "Standardverdi"
+
+msgid "Calculation Columns"
+msgstr "Beregningskolonner"
+
+msgid "Function"
+msgstr "Funksjon"
+
+msgid "Payroll Report Column"
+msgstr "Lønn rapport kolonne"
+
+msgid "Calculation Process"
+msgstr "Beregningsprosess"
+
+msgid "Payslip Fields"
+msgstr "Payslip Fields"
+
+msgid "Payroll Column"
+msgstr "Lønnssammensetning"
+
+msgid "Text"
+msgstr "Tekst"
+
+msgid "Lower Limit Condition"
+msgstr "Nedre grensebetingelse"
+
+msgid "Lower Limit"
+msgstr "Nedre grense"
+
+msgid "Upper Limit Condition"
+msgstr "Øvre grensebetingelse"
+
+msgid "Upper Limit"
+msgstr "Øvre grense"
+
+msgid "Column"
+msgstr "Kolonne"
+
+msgid "Job Code"
+msgstr "Jobbkode"
+
+msgid "Short Description"
+msgstr "Kort beskrivelse"
+
+msgid "Requirements"
+msgstr "Krav"
+
+msgid "Benefits"
+msgstr "fordeler"
+
+msgid "Employment Type"
+msgstr "Sysselsettingstype"
+
+msgid "Any Employment Type"
+msgstr "Eventuelle sysselsettingstype"
+
+msgid "Experience Level"
+msgstr "Erfaringsnivå"
+
+msgid "Any Experience Level"
+msgstr "Eventuelt nivå"
+
+msgid "Job Function"
+msgstr "Jobbfunksjon"
+
+msgid "Any Job Function"
+msgstr "Eventuell jobbfunksjon"
+
+msgid "Education Level"
+msgstr "Utdanningsnivå"
+
+msgid "Any Education Level"
+msgstr "Eventuelle utdanningsnivå"
+
+msgid "Show Salary"
+msgstr "Vis lønn"
+
+msgid "Salary Min"
+msgstr "Lønn Min"
+
+msgid "Salary Max"
+msgstr "Lønn Maks"
+
+msgid "Keywords"
+msgstr "nøkkelord"
+
+msgid "Closing Date"
+msgstr "Sluttdato"
+
+msgid "Image"
+msgstr "Bilde"
+
+msgid "Display Type"
+msgstr "Skjermtype"
+
+msgid "Profile Image"
+msgstr "Profilbilde"
+
+msgid "Telephone"
+msgstr "Telefon"
+
+msgid "Resume Title"
+msgstr "Gjenoppta Tittel"
+
+msgid "Resume"
+msgstr "Gjenoppta"
+
+msgid "Resume Headline"
+msgstr "Fortsett overskrift"
+
+msgid "Profile Summary"
+msgstr "profilsammendrag"
+
+msgid "Work History"
+msgstr "Arbeidshistorie"
+
+msgid "Education"
+msgstr "utdanning"
+
+msgid "Skills"
+msgstr "ferdigheter"
+
+msgid "Referees"
+msgstr "dommere"
+
+msgid "From Year"
+msgstr "Fra år"
+
+msgid "From Month"
+msgstr "Fra måned"
+
+msgid "To Year"
+msgstr "Til år"
+
+msgid "To Month"
+msgstr "Til måned"
+
+msgid "Currently Work Here"
+msgstr "For tiden jobber her"
+
+msgid "Degree/Diploma"
+msgstr "Grad / Diploma"
+
+msgid "Currently Studying"
+msgstr "Studerer fortiden"
+
+msgid "Skill Level"
+msgstr "Ferdighetsnivå"
+
+msgid "Last Used Year"
+msgstr "Sist brukt år"
+
+msgid "Last Used Month"
+msgstr "Sist brukt måned"
+
+msgid "Years of Experience"
+msgstr "År med erfaring"
+
+msgid "Designation"
+msgstr "betegnelse"
+
+msgid "Phone"
+msgstr "telefon"
+
+msgid "Job"
+msgstr "Jobb"
+
+msgid "Candidate"
+msgstr "Kandidat"
+
+msgid "Referred By"
+msgstr "Henvist av"
+
+msgid "Leave Start Date"
+msgstr "La startdato"
+
+msgid "Leave End Date"
+msgstr "Forlat sluttdato"
+
+msgid "Reason"
+msgstr "Grunnen til"
+
+msgid "Available Leaves"
+msgstr "Tilgjengelige blader"
+
+msgid "Approved Leaves"
+msgstr "Godkjente blad"
+
+msgid "Rejected Leaves"
+msgstr "Forkastte blader"
+
+msgid "Leaves to be Accrued"
+msgstr "Blader som skal påløpe"
+
+msgid "Leaves Carried Forward"
+msgstr "Blader transporteres fremover"
+
+msgid "Apply Leave"
+msgstr "Søk på permisjon"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Add New"
+msgstr "Legg til ny"
+
+msgid "Time"
+msgstr "Tid"
+
+msgid "Purpose"
+msgstr "Hensikt"
+
+msgid "From"
+msgstr "Fra"
+
+msgid "To"
+msgstr "Til"
+
+msgid "Created (GMT)"
+msgstr "Opprettet (GMT)"
+
+msgid "Download"
+msgstr "nedlasting"
+
+msgid "Submit"
+msgstr "Sende inn"
+
+msgid "Upload"
+msgstr "Laste opp"
+
+msgid "Remove"
+msgstr "Fjerne"
+
+msgid "Add"
+msgstr "Legg til"
+
+msgid "Reset"
+msgstr "tilbakestille"
+
+msgid "Add Time Entry"
+msgstr "Legg til tidsinngang"
+
+msgid "Current Clocked In Status"
+msgstr "Nåværende Clocked In Status"
+
+msgid "Attendance entry should be within a single day"
+msgstr "Oppmøte oppføring bør være innen en enkelt dag"
+
+msgid "Account Balance"
+msgstr "Saldo"
+
+msgid "Plan"
+msgstr "Plan"
+
+msgid "Transactions"
+msgstr "transaksjoner"
+
+msgid "Applications"
+msgstr "applikasjoner"
+
+msgid "Attendance Graph"
+msgstr "Deltakelsesgraf"
+
+msgid "Hours in Office vs Hours Worked Graph"
+msgstr "Timer i Office vs Timer Arbeidet Graf"
+
+msgid "Company Graph"
+msgstr "Bedriftsgraf"
+
+msgid "Company Documents"
+msgstr "Bedriftsdokumenter"
+
+msgid "Document Types"
+msgstr "Dokumenttyper"
+
+msgid "Employee Documents"
+msgstr "Ansattsdokumenter"
+
+msgid "Employee Basic Details"
+msgstr "Ansatte Grunnleggende Detaljer"
+
+msgid "Employees (Direct Reports)"
+msgstr "Ansatte (Direkte rapporter)"
+
+msgid "Certifications"
+msgstr "sertifiseringer"
+
+msgid "Languages"
+msgstr "språk"
+
+msgid "Deactivated Employees"
+msgstr "Deaktivert Ansatte"
+
+msgid "Temporarily Deactivated Employees"
+msgstr "Midlertidig deaktiverte ansatte"
+
+msgid "Terminated Employee Data"
+msgstr "Avsluttet Ansattes Data"
+
+msgid "Employee Saved Successfully"
+msgstr "Ansatte lagret suksessfullt"
+
+msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
+msgstr "Ansatte trenger en bruker for å logge på IceHrm. Vil du opprette en bruker for denne ansatt nå?"
+
+msgid "You can do this later through Users module if required."
+msgstr "Du kan gjøre dette senere via Brukermodul hvis nødvendig."
+
+msgid "Expenses Categories"
+msgstr "Utgifter Kategorier"
+
+msgid "Payment Methods"
+msgstr "betalingsmetoder"
+
+msgid "Employee Expenses"
+msgstr "Ansatteutgifter"
+
+msgid "Salary Component Types"
+msgstr "Lønnskomponenttyper"
+
+msgid "Employee Salary Components"
+msgstr "Ansattes lønnskomponenter"
+
+msgid "Company Payroll"
+msgstr "Bedriftslønn"
+
+msgid "Calculation Groups"
+msgstr "Beregningsgrupper"
+
+msgid "Calculation Methods"
+msgstr "Beregningsmetode"
+
+msgid "Payslip Templates"
+msgstr "Payslip Maler"
+
+msgid "Edit Employment Types"
+msgstr "Rediger sysselsettingstyper"
+
+msgid "Edit Experience Levels"
+msgstr "Rediger opplevelsesnivåer"
+
+msgid "Edit Job Functions"
+msgstr "Rediger jobbfunksjoner"
+
+msgid "Edit Education Levels"
+msgstr "Rediger utdanningsnivåer"
+
+msgid "Edit Benefits"
+msgstr "Rediger fordeler"
+
+msgid "Application"
+msgstr "applikasjon"
+
+msgid "Job Titles"
+msgstr "Jobb titler"
+
+msgid "Pay Grades"
+msgstr "Betal karakterer"
+
+msgid "Training Sessions"
+msgstr "Trenings økt"
+
+msgid "Employee Training Sessions"
+msgstr "Ansattes treningsøkter"
+
+msgid "Clients"
+msgstr "klienter"
+
+msgid "Employee Projects"
+msgstr "Ansatteprosjekter"
+
+msgid "Leave Types"
+msgstr "Oppgi Typer"
+
+msgid "Work Week"
+msgstr "Arbeidsuke"
+
+msgid "Holidays"
+msgstr "Holidays"
+
+msgid "Leave Rules"
+msgstr "Legg igjen regler"
+
+msgid "Paid Time Off"
+msgstr "Betalt fritid"
+
+msgid "Leave Groups"
+msgstr "Forlat grupper"
+
+msgid "Edit Leave Groups"
+msgstr "Rediger Forlat Grupper"
+
+msgid "Leave Group Employees"
+msgstr "Forlat konsernmedarbeidere"
+
+msgid "Employee Leave List"
+msgstr "Medarbeiderliste"
+
+msgid "Loan Types"
+msgstr "Låntyper"
+
+msgid "Employee Loans"
+msgstr "Ansatte Lån"
+
+msgid "Travel Requests"
+msgstr "Reiseforespørsler"
+
+msgid "Overtime Categories"
+msgstr "Overtidskategorier"
+
+msgid "Leave / PTO"
+msgstr "Forlat / PTO"
+
+msgid "Other"
+msgstr "Annen"
+
+msgid "Modules"
+msgstr "moduler"
+
+msgid "Countries"
+msgstr "land"
+
+msgid "Provinces"
+msgstr "Fylker"
+
+msgid "Currency Types"
+msgstr "Valutatyper"
+
+msgid "Employee Custom Fields"
+msgstr "Ansattes tilpassede felt"
+
+msgid "Employee Field Names"
+msgstr "Ansattes feltnavn"
+
+msgid "My Details"
+msgstr "Mine detaljer"
+
+msgid "All My Leaves"
+msgstr "Alle mine blader"
+
+msgid "Leave Entitlement"
+msgstr "Forlate rettighetene"
+
+msgid "Approved Leave"
+msgstr "Godkjent permisjon"
+
+msgid "Pending Leave"
+msgstr "Venter på permisjon"
+
+msgid "Subordinate Leave"
+msgstr "Underordnet permisjon"
+
+msgid "Cancellation Requests"
+msgstr "Avbestillingsanmodninger"
+
+msgid "Approval Requests"
+msgstr "Godkjenningsforespørsler"
+
+msgid "Approved TimeSheets"
+msgstr "Godkjente TimeSheets"
+
+msgid "All My TimeSheets"
+msgstr "Alle Mine TimeSheets"
+
+msgid "Pending TimeSheets"
+msgstr "Venter på TimeSheets"
+
+msgid "Subordinate TimeSheets"
+msgstr "Underordnede TimeSheets"
+
+msgid "Approved Attendance Sheets"
+msgstr "Godkjente oppmøteark"
+
+msgid "All My Attendance Sheets"
+msgstr "Alle Mine Tilskuerark"
+
+msgid "Pending Attendance Sheets"
+msgstr "Venter på deltagelsesark"
+
+msgid "Subordinate Attendance Sheets"
+msgstr "Underordnede møtesteder"
+
+msgid "Subordinate Overtime Requests"
+msgstr "Underordnede Overtidsforespørsler"
+
+msgid "Overtime Request Approval"
+msgstr "Overtidsforespørsel godkjenning"
+
+msgid "My Training Sessions"
+msgstr "Mine treningsøkter"
+
+msgid "All Training Sessions"
+msgstr "Alle treningsøkter"
+
+msgid "Training Sessions of Direct Reports"
+msgstr "Treningsøkter av direkte rapporter"
+
+msgid "Subordinate Travel Requests"
+msgstr "Underordnede reiseforespørsler"
+
+msgid "Travel Request Approval"
+msgstr "Reiseforespørsel Godkjenning"
+
+msgid "Subordinate Expenses"
+msgstr "Underordnede kostnader"
+
+msgid "Expenses Approval"
+msgstr "Utgifter godkjenning"
+
+msgid "Loans Taken"
+msgstr "Lån tatt"
+
+msgid "Change Leave Status"
+msgstr "Endre forlatt status"
+
+msgid "Status Change Note"
+msgstr "Status Endre Note"
+
+msgid "Leave Summary"
+msgstr "Oppsummering"
+
+msgid "Approved Leave Count"
+msgstr "Godkjent avstandstid"
+
+msgid "Pending Leave Count"
+msgstr "Avventer permittering"
+
+msgid "Available Leave Count"
+msgstr "Tilgjengelig permittering"
+
+msgid "Leave Dates"
+msgstr "Oppgi datoer"
+
+msgid "Leave Date"
+msgstr "Oppgi dato"
+
+msgid "Leave Notes"
+msgstr "Legg igjen notater"
+
+msgid "Apply"
+msgstr "Søke om"
+
+msgid "Back"
+msgstr "Tilbake"
+
+msgid "Hours in Time Sheets"
+msgstr "Hours in Time Sheets"
+
+msgid "HR form"
+msgstr "HR-skjema"
+
+msgid "HR Form Management"
+msgstr "HR Form Management"
+
+msgid "Form Name"
+msgstr "Form Navn"
+
+msgid "Fields"
+msgstr "Enger"
+
+msgid "Employee Froms"
+msgstr "Ansatt Froms"
+
+msgid "Share Departments"
+msgstr "Del avdelinger"
+
+msgid "Share Employees"
+msgstr "Del ansatte"
+
+msgid "Data Importers"
+msgstr "Dataimportører"
+
+msgid "Data Import Files"
+msgstr "Dataimportfiler"
+
+msgid "Data Type"
+msgstr "Data-type"
+
+msgid "Columns"
+msgstr "kolonner"
+
+msgid "Field Title"
+msgstr "Feltittel"
+
+msgid "Depends On"
+msgstr "Kommer an på"
+
+msgid "Depends On Field"
+msgstr "Avhenger av feltet"
+
+msgid "is Key Field"
+msgstr "er nøkkelfelt"
+
+msgid "is ID Field"
+msgstr "er ID-feltet"
+
+msgid "Data Import Definitions"
+msgstr "Data Import Definisjoner"
+
+msgid "File to Import"
+msgstr "Fil å importere"
+
+msgid "Last Export Results"
+msgstr "Siste eksportresultater"
+
+msgid "Time and Attendance"
+msgstr "Tid og tilstedeværelse"
+
+msgid "Leave Timeline"
+msgstr "Forlate tidslinjen"
+
+msgid "Insights"
+msgstr "innsikt"
+
+msgid "Api Access"
+msgstr "Api Access"
+
+msgid "Change User Password"
+msgstr "Endre brukerpassord"
+
+msgid "New Password"
+msgstr "Nytt passord"
+
+msgid "Confirm Password"
+msgstr "bekreft passord"
+
+msgid "Change Password"
+msgstr "Bytt passord"
+
+msgid "Not Now"
+msgstr "Ikke nå"
+
+msgid "Contact Information"
+msgstr "Kontaktinformasjon"
+
+msgid "Job Details"
+msgstr "Jobbdetaljer"
+
+msgid "Edit Info"
+msgstr "Rediger Info"
+
+msgid "Upload Profile Image"
+msgstr "Last opp profilbilde"
+
+msgid "Delete Profile Image"
+msgstr "Slett profilbilde"
+
+msgid "Direct Reports"
+msgstr "Direkte rapporter"
+
+msgid "Other Details"
+msgstr "Andre detaljer"
+
+msgid "Family"
+msgstr "Familie"
+
+msgid "Custom Fields"
+msgstr "Egendefinerte felt"
+
+msgid "Means of Transportation"
+msgstr "Transportmidler"
+
+msgid "Plane"
+msgstr "fly"
+
+msgid "Rail"
+msgstr "Rail"
+
+msgid "Taxi"
+msgstr "Taxi"
+
+msgid "Own Vehicle"
+msgstr "Egen kjøretøy"
+
+msgid "Rented Vehicle"
+msgstr "Leiebil"
+
+msgid "Female"
+msgstr "Hunn"
+
+msgid "Male"
+msgstr "mann"
+
+msgid "Active"
+msgstr "Aktiv"
+
+msgid "Inactive"
+msgstr "inaktiv"
+
+msgid "Draft"
+msgstr "utkast"
+
+msgid "Not Clocked In"
+msgstr "Ikke klokket inn"
+
+msgid "Clocked In"
+msgstr "Klokket inn"
+
+msgid "File"
+msgstr "Fil"
+
+msgid "Active Employee Report"
+msgstr "Aktiv ansattes rapport"
+
+msgid "Employee Attendance Report"
+msgstr "Medarbeidsrapport"
+
+msgid "Employee Details Report"
+msgstr "Medarbeiderdetaljer"
+
+msgid "Employee Leave Entitlement"
+msgstr "Rettighetshaver for arbeidstakere"
+
+msgid "Employee Leaves Report"
+msgstr "Medarbeiderbladrapport"
+
+msgid "Employee Time Entry Report"
+msgstr "Tidspunkt for arbeidstakere"
+
+msgid "Employee Time Sheet Report"
+msgstr "Arbeidsbladets tidsrapport"
+
+msgid "Employee Time Tracking Report"
+msgstr "Medarbeider Tidsporingsrapport"
+
+msgid "Expense Report"
+msgstr "Utgiftsrapport"
+
+msgid "New Hires Employee Report"
+msgstr "New Hires Employee Report"
+
+msgid "Overtime Report"
+msgstr "Overtidsrapport"
+
+msgid "Overtime Request Report"
+msgstr "Overtidsforespørselsrapport"
+
+msgid "Overtime Summary Report"
+msgstr "Sammendragsoversikt over tid"
+
+msgid "Payroll Meta Data Export"
+msgstr "Lønn Meta Data Export"
+
+msgid "Terminated Employee Report"
+msgstr "Avsluttet Medarbeiderrapport"
+
+msgid "Travel Request Report"
+msgstr "Reiseforespørselsrapport"
+
+msgid "Attendance Report"
+msgstr "Deltakelsesrapport"
+
+msgid "Client Project Time Report"
+msgstr "Klienten Prosjekt Tidsrapport"
+
+msgid "Download Payslips"
+msgstr "Last ned lønnsslipp"
+
+msgid "Leaves Report"
+msgstr "Leaves Report"
+
+msgid "Time Entry Report"
+msgstr "Tidsmeldingsrapport"
+
+msgid "Time Sheet Report"
+msgstr "Tidsrapport"
+
+msgid "Time Tracking Report"
+msgstr "Tidsporingsrapport"
+
+msgid "Data"
+msgstr "Data"
+
+msgid "Processed"
+msgstr "Bearbeidet"
+
+msgid "Not Processed"
+msgstr "Ikke behandlet"
+
+msgid "Elementary Proficiency"
+msgstr "Elementær ferdighet"
+
+msgid "Limited Working Proficiency"
+msgstr "Begrenset yrkeskompetanse"
+
+msgid "Professional Working Proficiency"
+msgstr "Profesjonell yrkeskompetanse"
+
+msgid "Full Professional Proficiency"
+msgstr "Full profesjonell ferdighet"
+
+msgid "Native or Bilingual Proficiency"
+msgstr "Native eller tospråklig ferdighet"
+
+msgid "Pending"
+msgstr "I påvente av"
+
+msgid "Approved"
+msgstr "godkjent"
+
+msgid "Rejected"
+msgstr "avvist"
+
+msgid "Cancelled"
+msgstr "avbrutt"
+
+msgid "Continue"
+msgstr "Fortsette"
+
+msgid "Cancellation Requested"
+msgstr "Avbestilling Forespurt"
+
+msgid "Completed"
+msgstr "fullført"
+
+msgid "Discussions"
+msgstr "diskusjoner"
+
+msgid "Load More"
+msgstr "Last mer"
+
+msgid "Show More"
+msgstr "Vis mer"
+
+msgid "Show Less"
+msgstr "Vis mindre"
+
+msgid "Publish"
+msgstr "publisere"
+
+msgid "Announcements"
+msgstr "Kunngjøringer"
+
+msgid "Send"
+msgstr "Sende"
+
+msgid "Display"
+msgstr "Vise"
+
+msgid "Public"
+msgstr "Offentlig"
+
+msgid "View Announcements"
+msgstr "Se kunngjøringer"
+
+msgid "Conversations"
+msgstr "samtaler"
+
+msgid "Start Now"
+msgstr "Start nå"
+
+msgid "Company Assets"
+msgstr "Selskapets eiendeler"
+
+msgid "Asset Types"
+msgstr "Eiendomstyper"
+
+msgid "Asset Name"
+msgstr "Aktivnavn"
+
+msgid "Performance"
+msgstr "Opptreden"
+
+msgid "Performance Review"
+msgstr "Prestasjonsvurdering"
+
+msgid "Performance Reviews"
+msgstr "Ytelse Anmeldelser"
+
+msgid "Review"
+msgstr "Anmeldelse"
+
+msgid "Reviews"
+msgstr "anmeldelser"
+
+msgid "Review Feedback"
+msgstr "Gå gjennom tilbakemelding"
+
+msgid "Review Template"
+msgstr "Gjennomgå mal"
+
+msgid "Template"
+msgstr "Mal"
+
+msgid "Review Date"
+msgstr "Evalueringsdato"
+
+msgid "Self Assessment Due On"
+msgstr "Egen vurdering på grunn av"
+
+msgid "Review Period Start"
+msgstr "Gjennomgå Periode Start"
+
+msgid "Review Period End"
+msgstr "Gjennomgå periodens slutt"
+
+msgid "Attendees"
+msgstr "Deltakere"
+
+msgid "Performance Reviews Coordinated by Me"
+msgstr "Ytelsesvurderinger Koordinert av meg"
+
+msgid "Provide Feedback"
+msgstr "Gi tilbakemelding"
+
+msgid "Review Status"
+msgstr "Review Status"

@@ -27,7 +27,10 @@ class EmployeesActionManager extends SubActionManager
 
         $cempObj = new Employee();
         $cempObj->Load("id = ?", array($cemp));
-        if ($obj->getUserOnlyMeAccessField() == 'id' &&
+
+        if ($this->user->user_level == 'Admin') {
+            $id = $req->id;
+        } elseif ($obj->getUserOnlyMeAccessField() == 'id' &&
             SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 &&
             CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)) {
             $subordinates = $obj->Find("supervisor = ?", array($cemp));

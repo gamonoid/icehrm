@@ -4,6 +4,8 @@ namespace Employees\Common\Model;
 use Classes\BaseService;
 use Classes\FileService;
 use Classes\IceResponse;
+use Company\Common\Model\CompanyStructure;
+use Metadata\Common\Model\Country;
 use Model\BaseModel;
 
 class Employee extends BaseModel
@@ -213,8 +215,24 @@ class Employee extends BaseModel
         return $obj;
     }
 
-    public function fieldValueMethods() {
+    public function fieldValueMethods()
+    {
         return ['getActiveSubordinateEmployees'];
+    }
+
+    public static function getCurrentEmployeeCompanyStructureCountry()
+    {
+        $cemp = BaseService::getInstance()->getCurrentProfileId();
+        $employee = new Employee();
+        $employee->Load('id = ?', [$cemp]);
+
+        $companyStructure = new CompanyStructure();
+        $companyStructure->Load('id = ?', [$employee->department]);
+
+        $country = new Country();
+        $country->Load('code = ?', [$companyStructure->country]);
+
+        return $country->id;
     }
 
     public $table = 'Employees';
