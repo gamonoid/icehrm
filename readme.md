@@ -5,13 +5,23 @@ IceHrm
 IceHrm is a [HRM software](https://icehrm.com) which enable companies of all sizes to [manage HR activities](https://icehrm.com)
 properly. 
 
-IceHrm is Backed by Glacies
------------------
-[Glacies](http://glacies.de)
+IceHrm Mobile App (Beta)
+------------------------
+
+[Setup to IceHrm App with Your Account](https://icehrm.gitbook.io/icehrm/part-1/icehrm-mobile)
+
+<a href="https://itunes.apple.com/gb/app/icehrm/id1450757357?mt=8" target="_blank">
+<img width="200" src="https://s3.amazonaws.com/icehrm-public/images/appstore-icon.png">
+</a>
+
+<a href="https://play.google.com/store/apps/details?id=com.icehrm.mobile" target="_blank">
+<img width="200" src="https://s3.amazonaws.com/icehrm-public/images/playstore-icon.png">
+</a>
+
 
 Useful Links
 -------------
- * IceHrm Opensource Blog: [http://icehrm.org](http://icehrm.org)
+ * User Guide: [https://icehrm.gitbook.io/icehrm/](https://icehrm.gitbook.io/icehrm/)
  * IceHrm Cloud Hosting: [https://icehrm.com](https://icehrm.com)
  * IceHrm Documentation (Opensource and Commercial): [http://blog.icehrm.com](http://blog.icehrm.com)
  * IceHrm Blog: [https://icehrm.com/blog](http://icehrm.com/blog)
@@ -19,6 +29,7 @@ Useful Links
  * Report Issues: [https://github.com/gamonoid/icehrm/issues](https://github.com/gamonoid/icehrm/issues)
  * Feature Requests: [https://bitbucket.org/thilina/icehrm-opensource/issues](https://bitbucket.org/thilina/icehrm-opensource/issues)
  * Community Support: [http://stackoverflow.com/search?q=icehrm](http://stackoverflow.com/search?q=icehrm)
+ * IceHrm Opensource Blog: [http://icehrm.org](http://icehrm.org)
 
 Installation
 ------------
