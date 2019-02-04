@@ -1,9 +1,10 @@
-Release note v26.1.0.OS
+Release note v26.2.0.OS
 ------------------------
 
 ### Features
  * Add staff directory module
  * Update client-side js to ES6
+ * Compatible with IceHrm Mobile App
  * Use npm libraries when possible
  * Add gulp build for frontend assets
  * https://github.com/gamonoid/icehrm/issues/169 (https://github.com/gamonoid/icehrm/issues/169)
