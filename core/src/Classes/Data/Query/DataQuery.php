@@ -175,7 +175,7 @@ class DataQuery
     /**
      * @return bool
      */
-    public function isLengthSet(): bool
+    public function isLengthSet()
     {
         return $this->isLengthSet;
     }
