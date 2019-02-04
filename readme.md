@@ -117,7 +117,7 @@ Preparing development VM with Vagrant
 ~ $ ant buildlocal
 ```
 
-- Navigate to [http://clients.icehrm-open.text/dev](http://clients.icehrm-open.text/dev) to load icehrm from VM. (user:admin/pass:admin)
+- Navigate to [http://clients.icehrm-open.test/dev](http://clients.icehrm-open.test/dev) to load icehrm from VM. (user:admin/pass:admin)
 
 ### Notes to Developers
 

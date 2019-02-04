@@ -7,7 +7,7 @@ Release note v26.2.0.OS
  * Compatible with IceHrm Mobile App
  * Use npm libraries when possible
  * Add gulp build for frontend assets
- * https://github.com/gamonoid/icehrm/issues/169 (https://github.com/gamonoid/icehrm/issues/169)
+ * Allow generating QR code with rest api key (https://github.com/gamonoid/icehrm/issues/169)
  * Updated readme for development setup with vagrant
 
  
