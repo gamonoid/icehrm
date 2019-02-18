@@ -9,6 +9,7 @@
 namespace Metadata\Admin\Api;
 
 use Classes\AbstractModuleManager;
+use Metadata\Rest\MetadataRestEndPoint;
 
 class MetadataAdminManager extends AbstractModuleManager
 {
@@ -36,5 +37,18 @@ class MetadataAdminManager extends AbstractModuleManager
         $this->addModelClass('CalculationHook');
         $this->addModelClass('SupportedLanguage');
         $this->addModelClass('CustomFieldValue');
+    }
+
+    public function setupRestEndPoints()
+    {
+        \Classes\Macaw::get(REST_API_PATH.'meta/currency', function () {
+            $restEndPoint = new MetadataRestEndPoint();
+            $restEndPoint->process('getCurrency', []);
+        });
+
+        \Classes\Macaw::get(REST_API_PATH.'meta/countries', function () {
+            $restEndPoint = new MetadataRestEndPoint();
+            $restEndPoint->process('getCountries', []);
+        });
     }
 }
