@@ -50,5 +50,10 @@ class MetadataAdminManager extends AbstractModuleManager
             $restEndPoint = new MetadataRestEndPoint();
             $restEndPoint->process('getCountries', []);
         });
+
+        \Classes\Macaw::get(REST_API_PATH.'meta/mobile-modules', function () {
+            $restEndPoint = new MetadataRestEndPoint();
+            $restEndPoint->process('getMobileModules', []);
+        });
     }
 }
