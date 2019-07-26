@@ -1,5 +1,6 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20190707_260006_google_map_api';
 $migrationList[] = 'v20190707_260005_attendance_location';
 $migrationList[] = 'v20190707_260004_attendance_out_map';
 $migrationList[] = 'v20190630_260603_add_dept_leave_to_rule';

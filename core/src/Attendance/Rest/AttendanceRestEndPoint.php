@@ -90,9 +90,9 @@ class AttendanceRestEndPoint extends RestEndPoint
         }
 
         if ($user->user_level !== 'Admin' && !PermissionManager::manipulationAllowed(
-            BaseService::getInstance()->getCurrentProfileId(),
-            $this->getModelObject($parameter)
-        )
+                BaseService::getInstance()->getCurrentProfileId(),
+                $this->getModelObject($parameter)
+            )
         ) {
             return new IceResponse(IceResponse::ERROR, self::RESPONSE_ERR_PERMISSION_DENIED, 403);
         }
@@ -392,13 +392,9 @@ class AttendanceRestEndPoint extends RestEndPoint
 &markers=color:red%7Clabel:C%7C$location
 &key=".SettingsManager::getInstance()->getSetting('System: Google Maps Api Key');
 
-        LogManager::getInstance()->info('Url:'.$url);
 
         $data = file_get_contents($url);
-
-        //LogManager::getInstance()->info('Data:'.$data);
         if (!empty($data)) {
-            //LogManager::getInstance()->info('Data Base64:'.base64_encode($data));
             return'data:image/png;base64,' . base64_encode($data);
         }
 
