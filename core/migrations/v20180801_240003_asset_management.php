@@ -13,8 +13,8 @@ create table `AssetTypes` (
 	`name` varchar(35) NOT NULL,
 	`description` TEXT NULL,
 	`attachment` varchar(100) NULL,
-	`created` DATETIME default '0000-00-00 00:00:00',
-	`updated` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
+	`updated` DATETIME default NULL,
 	primary key  (`id`)
 ) engine=innodb default charset=utf8;
 SQL;
@@ -30,8 +30,8 @@ create table `CompanyAssets` (
 	`employee` bigint(20) NULL,
 	`department` bigint(20) NULL,
 	`description` TEXT NULL,
-	`created` DATETIME default '0000-00-00 00:00:00',
-	`updated` DATETIME default '0000-00-00 00:00:00',
+	`created` DATETIME default NULL,
+	`updated` DATETIME default NULL,
 	primary key  (`id`),
 	CONSTRAINT `Fk_CompanyAssets_AssetTypes` FOREIGN KEY (`type`) REFERENCES `AssetTypes` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
 	CONSTRAINT `Fk_CompanyAssets_Employees` FOREIGN KEY (`employee`) REFERENCES `Employees` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,

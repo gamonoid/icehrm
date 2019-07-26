@@ -1,6 +1,6 @@
 /*
-Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
-Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
 import FormValidation from '../../../api/FormValidation';
@@ -37,12 +37,8 @@ class UserAdapter extends AdapterBase {
         label: 'Employee', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
       }],
       ['user_level', { label: 'User Level', type: 'select', source: [['Admin', 'Admin'], ['Manager', 'Manager'], ['Employee', 'Employee'], ['Other', 'Other']] }],
-      ['user_roles', { label: 'User Roles', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
       ['lang', {
         label: 'Language', type: 'select2', 'allow-null': true, 'remote-source': ['SupportedLanguage', 'id', 'description'],
-      }],
-      ['default_module', {
-        label: 'Default Module', type: 'select2', 'null-label': 'No Default Module', 'allow-null': true, 'remote-source': ['Module', 'id', 'menu+label'],
       }],
     ];
   }

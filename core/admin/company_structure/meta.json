@@ -2,7 +2,7 @@
   "label":"Company Structure",
   "menu":"Admin",
   "order":"2",
-  "icon":"fa-building-o",
+  "icon":"fa-building",
   "user_levels":["Admin","Manager"],
   "dashboardPosition":2,
 

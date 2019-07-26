@@ -2,7 +2,7 @@
     "label": "Attendance",
     "menu": "Time Management",
     "order": "2",
-    "icon": "fa-clock-o",
+    "icon": "fa-clock",
     "user_levels": [
         "Admin",
         "Manager",

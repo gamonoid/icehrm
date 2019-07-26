@@ -1,6 +1,6 @@
 /*
-Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
-Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
 /* eslint-disable prefer-destructuring,no-restricted-globals */

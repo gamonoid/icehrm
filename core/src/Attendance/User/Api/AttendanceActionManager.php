@@ -17,6 +17,7 @@ use Classes\SettingsManager;
 use Classes\SubActionManager;
 use TimeSheets\Common\Model\EmployeeTimeSheet;
 use Utils\LogManager;
+use Utils\NetworkUtils;
 
 class AttendanceActionManager extends SubActionManager
 {
@@ -132,6 +133,7 @@ class AttendanceActionManager extends SubActionManager
             $openPunch->out_time = $dateTime;
             $openPunch->note = $req->note;
             $openPunch->image_out = $req->image;
+            $openPunch->out_ip = NetworkUtils::getClientIp();
             $this->baseService->audit(IceConstants::AUDIT_ACTION, "Punch Out \ time:".$openPunch->out_time);
         } else {
             $openPunch->in_time = $dateTime;
@@ -139,6 +141,7 @@ class AttendanceActionManager extends SubActionManager
             $openPunch->note = $req->note;
             $openPunch->image_in = $req->image;
             $openPunch->employee = $employee->id;
+            $openPunch->in_ip = NetworkUtils::getClientIp();
             $this->baseService->audit(IceConstants::AUDIT_ACTION, "Punch In \ time:".$openPunch->in_time);
         }
         $ok = $openPunch->Save();

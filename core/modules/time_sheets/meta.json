@@ -2,7 +2,7 @@
 	"label":"Time Sheets",
 	"menu":"Time Management",
 	"order":"3",
-	"icon":"fa-check-circle-o",
+	"icon":"fa-stopwatch",
 	"user_levels":["Admin","Manager","Employee"],
 	  "dashboardPosition":104,
 

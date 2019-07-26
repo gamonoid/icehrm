@@ -1,11 +1,11 @@
 <div class="user-panel">
 	<button type="button" onclick="modJs.setAdminProfile('-1');return false;"><li class="fa fa-times"/></button>
     <div class="pull-left image">
-        <img src="#_profileImage_#" class="img-circle" alt="User Image" />
+        <img src="#_profileImage_#" class="img-circle" alt="User Image" onclick="location.href='#_profile_url_#'" style="cursor: pointer;"/>
     </div>
     <div class="pull-left info">
-        <p>#_firstName_# #_lastName_#</p>
+        <p><a href="#_profile_url_#">#_firstName_# #_lastName_#</a></p>
 
-        <a href="#"><i class="fa fa-circle text-warning"></i> <t>Changed To</t> </a>
+        <a href="#_profile_url_#"><i class="fa fa-circle text-warning"></i> <t>Changed To</t> </a>
     </div>
 </div>

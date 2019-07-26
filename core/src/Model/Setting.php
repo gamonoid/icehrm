@@ -9,6 +9,7 @@
 namespace Model;
 
 use Classes\BaseService;
+use Classes\IceResponse;
 use Classes\RestApiManager;
 use Users\Common\Model\User;
 
@@ -41,10 +42,10 @@ class Setting extends BaseModel
         return $obj;
     }
 
-    public function executePostSaveActions($obj)
+    public function validateSave($obj)
     {
         if (!defined('WEB_ADMIN_BASE_URL')) {
-            return;
+            return new IceResponse(IceResponse::SUCCESS, "");
         }
 
         if ($obj->name == 'Company: Country') {
@@ -57,12 +58,42 @@ class Setting extends BaseModel
             $updateInvUrl = WEB_ADMIN_BASE_URL.'/app/update_instance.php?client='
                 .CLIENT_NAME.'&vatId='.$obj->value.'&key='.ADMIN_SEC_KEY;
             $response = file_get_contents($updateInvUrl);
+            $response = json_decode($response, true);
+            if ($response['status'] === IceResponse::ERROR) {
+                return new IceResponse(IceResponse::ERROR, $response['data']);
+            }
         }
+        return new IceResponse(IceResponse::SUCCESS, "");
+    }
+
+    public function executePreSaveActions($obj)
+    {
+        if ($obj->name == 'Leave: Select Leave Period from Employee Department Country') {
+            $oldSetting = new Setting();
+            $oldSetting->Load('name = ?', ['Leave: Select Leave Period from Employee Department Country']);
+            if (class_exists('\Leaves\Common\Model\EmployeeLeave')) {
+                $employeeLeave = new \Leaves\Common\Model\EmployeeLeave();
+                $employeeLeaves = $employeeLeave->Find("1 = 1 limit 1", []);
+                if (count($employeeLeaves) === 1) {
+                    $obj->value = $oldSetting->value;
+                }
+            }
+        }
+
+        return new IceResponse(IceResponse::SUCCESS, $obj);
+    }
+
+    public function executePreUpdateActions($obj)
+    {
+        return $this->executePreSaveActions($obj);
+    }
+
+    public function executePostSaveActions($obj)
+    {
     }
 
     public function executePostUpdateActions($obj)
     {
-        $this->executePostSaveActions($obj);
     }
 
     public $table = 'Settings';

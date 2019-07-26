@@ -1,6 +1,6 @@
 /*
-Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
-Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
 import AdapterBase from '../../../api/AdapterBase';
@@ -162,6 +162,25 @@ class AttendanceAdapter extends AdapterBase {
   }
 
   getImagesSuccessCallback(callBackData) {
+    $('#attendnaceMapCanvasIn').remove();
+    $('#attendnaceCanvasInWrapper').html('<canvas id="attendnaceCanvasIn" height="156" width="208" style="border: 1px #222 dotted;"></canvas>');
+
+    $('#attendnaceCanvasOut').remove();
+    $('#attendnaceCanvasOutWrapper').html('<canvas id="attendnaceCanvasOut" height="156" width="208" style="border: 1px #222 dotted;"></canvas>');
+
+    $('#attendnaceCanvasPunchInTime').html('');
+    $('#attendnaceCanvasPunchOutTime').html('');
+    $('#punchInLocation').html('');
+    $('#punchOutLocation').html('');
+    $('#punchInIp').html('');
+    $('#punchOutIp').html('');
+
+    $('#attendnaceMapCanvasIn').remove();
+    $('#attendnaceMapCanvasInWrapper').html('<canvas id="attendnaceMapCanvasIn" height="156" width="208" style="border: 1px #222 dotted;"></canvas>');
+
+    $('#attendnaceMapCanvasOut').remove();
+    $('#attendnaceMapCanvasOutWrapper').html('<canvas id="attendnaceMapCanvasOut" height="156" width="208" style="border: 1px #222 dotted;"></canvas>');
+
     $('#attendancePhotoModel').modal('show');
     $('#attendnaceCanvasEmp').html(callBackData.employee_Name);
     if (callBackData.in_time) {
@@ -169,6 +188,7 @@ class AttendanceAdapter extends AdapterBase {
     }
 
     if (callBackData.image_in) {
+      $('#attendancePhoto').show();
       const myCanvas = document.getElementById('attendnaceCanvasIn');
       const ctx = myCanvas.getContext('2d');
       const img = new Image();
@@ -183,6 +203,7 @@ class AttendanceAdapter extends AdapterBase {
     }
 
     if (callBackData.image_out) {
+      $('#attendancePhoto').show();
       const myCanvas = document.getElementById('attendnaceCanvasOut');
       const ctx = myCanvas.getContext('2d');
       const img = new Image();
@@ -190,6 +211,45 @@ class AttendanceAdapter extends AdapterBase {
         ctx.drawImage(img, 0, 0); // Or at whatever offset you like
       };
       img.src = callBackData.image_out;
+    }
+
+    if (callBackData.map_lat) {
+      $('#attendanceMap').show();
+      $('#punchInLocation').html(`${callBackData.map_lat},${callBackData.map_lng}`);
+    }
+
+    if (callBackData.map_out_lat) {
+      $('#attendanceMap').show();
+      $('#punchOutLocation').html(`${callBackData.map_out_lat},${callBackData.map_out_lng}`);
+    }
+
+    if (callBackData.in_ip) {
+      $('#punchInIp').html(callBackData.in_ip);
+    }
+    if (callBackData.out_ip) {
+      $('#punchOutIp').html(callBackData.out_ip);
+    }
+
+    if (callBackData.map_snapshot) {
+      $('#attendanceMap').show();
+      const myCanvas = document.getElementById('attendnaceMapCanvasIn');
+      const ctx = myCanvas.getContext('2d');
+      const img = new Image();
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0); // Or at whatever offset you like
+      };
+      img.src = callBackData.map_snapshot;
+    }
+
+    if (callBackData.map_out_snapshot) {
+      $('#attendanceMap').show();
+      const myCanvas = document.getElementById('attendnaceMapCanvasOut');
+      const ctx = myCanvas.getContext('2d');
+      const img = new Image();
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0); // Or at whatever offset you like
+      };
+      img.src = callBackData.map_out_snapshot;
     }
   }
 
@@ -201,7 +261,7 @@ class AttendanceAdapter extends AdapterBase {
   getActionButtonsHtml(id, data) {
     const editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
     const deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
-    const photoButton = '<img class="tableActionButton" src="_BASE_images/cam.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Show Photo" onclick="modJs.showPunchImages(_id_);return false;"></img>';
+    const photoButton = '<img class="tableActionButton" src="_BASE_images/map.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Show Photo" onclick="modJs.showPunchImages(_id_);return false;"></img>';
 
     let html;
     if (this.photoAttendance === 1) {

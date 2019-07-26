@@ -841,3 +841,42 @@ table.dataTable{
     padding: 1px 10px;
     margin-bottom: 15px;
 }
+
+.leave-entitlement-block-title {
+    font-size: 16px;
+    border-bottom: solid 1px #DDD;
+    padding-bottom: 10px;
+}
+
+.leave-entitlement-block-validtext {
+    color: darkred;
+    display: block;
+    font-weight: 800;
+}
+
+.leave-entitlement-block {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.flex-container {
+    align-items: stretch;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.list-group-item:first-child {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.list-group-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.recruiter-image {
+    width: 100%;
+    margin-top: 20px;
+}

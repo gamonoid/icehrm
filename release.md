@@ -1,3 +1,19 @@
+Release note v26.6.0.OS
+------------------------
+
+### Features
+ * Improvements to UI
+ * Track location of the employee when marking attendance
+ * Improvements to translations
+ * Compatible with location tracking with icehrm mobile app
+
+### Fixes
+ * Order projects by name on timesheets
+ * Link home page user profile to employee profile update page
+ * Fix issues related to configuring Api with mobile app
+ * Upgrade npm missing dependencies
+
+ 
 Release note v26.2.0.OS
 ------------------------
 

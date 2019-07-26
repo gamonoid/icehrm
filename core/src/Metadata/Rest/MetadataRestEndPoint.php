@@ -1,6 +1,7 @@
 <?php
 namespace Metadata\Rest;
 
+use Classes\BaseService;
 use Classes\Data\Query\DataQuery;
 use Classes\IceResponse;
 use Classes\RestEndPoint;
@@ -44,6 +45,8 @@ class MetadataRestEndPoint extends RestEndPoint
         $module = new Module();
         $modules = $module->Find('name = ? and mod_group = ? and status = ?', [$name, 'user', 'Enabled']);
 
-        return count($modules) > 0;
+        BaseService::getInstance()->initializePro();
+
+        return count($modules) > 0 && BaseService::getInstance()->isModuleEnabled('modules', $name);
     }
 }

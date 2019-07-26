@@ -1,27 +1,5 @@
 <?php
 
-/*
-This file is part of Ice Framework.
-
-Ice Framework is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-Ice Framework is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with Ice Framework. If not, see <http://www.gnu.org/licenses/>.
-
-------------------------------------------------------------------
-
-Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
-Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
- */
-
 /**
  * BaseService class serves as the core logic for managing the application and for handling most
  * of the tasks related to retriving and saving data. This can be referred within any module using
@@ -73,6 +51,8 @@ class BaseService
     public $migrationManager = null;
     public $modelClassMap = array();
     public $currentProfileId = false;
+
+    protected $pro = null;
 
     private static $me = null;
 
@@ -1098,6 +1078,42 @@ class BaseService
         return $obj;
     }
 
+    public function cleanUpIgnoreKeys($obj)
+    {
+        unset($obj->keysToIgnore);
+
+        return $obj;
+    }
+
+    public function cleanUpApprovalModelParameters($obj)
+    {
+        unset($obj->notificationModuleName);
+        unset($obj->notificationUnitName);
+        unset($obj->notificationUnitPrefix);
+        unset($obj->notificationUnitAdminUrl);
+        unset($obj->preApproveSettingName);
+
+        return $obj;
+    }
+
+    public function cleanUpAll($obj)
+    {
+        $obj = $this->cleanUpAdoDB($obj);
+        $obj = $this->cleanUpIgnoreKeys($obj);
+
+        return $obj;
+    }
+
+    public function cleanUpUser($obj)
+    {
+        $obj = $this->cleanUpAdoDB($obj);
+        unset($obj->password);
+        unset($obj->login_hash);
+        unset($obj->googleUserData);
+
+        return $obj;
+    }
+
     public function setDB($db)
     {
         $this->db = $db;
@@ -1527,6 +1543,26 @@ class BaseService
 
         $class = $ch->class;
         return call_user_func_array(array(new $class(), $ch->method), $parameters);
+    }
+
+    public function initializePro()
+    {
+        $this->pro = null;
+        if (class_exists('\\Classes\\ProVersion')) {
+            $pro = new ProVersion();
+            if (method_exists($pro, 'isModuleEnabled')) {
+                $this->pro = $pro;
+            }
+        }
+    }
+
+    public function isModuleEnabled($type, $name)
+    {
+        if ($this->pro === null) {
+            return true;
+        }
+
+        return $this->pro->isModuleEnabled($type, $name);
     }
 
     public function cleanNonUTFChar($obj)

@@ -22,7 +22,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
-    "gulp": "~4.0.0",
+    "gulp": "^4.0.2",
     "gulp-minify": "^3.1.0",
     "gulp-obfuscate": "^0.2.9",
     "gulp-sourcemaps": "^2.6.4",
@@ -32,7 +32,8 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "event-stream": "^3.3.6",
+    "d3": "^5.9.1",
+    "event-stream": "^4.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-copy": "^1.1.0",
     "gulp-rename": "^1.4.0",

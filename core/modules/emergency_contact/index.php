@@ -5,6 +5,7 @@
  */
 
 $moduleName = 'emergency_contact';
+$moduleGroup = 'modules';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';

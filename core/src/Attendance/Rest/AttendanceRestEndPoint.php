@@ -9,9 +9,11 @@ use Classes\IceResponse;
 use Classes\LanguageManager;
 use Classes\PermissionManager;
 use Classes\RestEndPoint;
+use Classes\SettingsManager;
 use Employees\Common\Model\Employee;
 use Users\Common\Model\User;
 use Utils\LogManager;
+use Utils\NetworkUtils;
 
 class AttendanceRestEndPoint extends RestEndPoint
 {
@@ -163,7 +165,7 @@ class AttendanceRestEndPoint extends RestEndPoint
 
         $openPunch = $this->getOpenPunch($user, $body['employee'], $body['in_time']);
 
-        if ($openPunch->getStatus() === IceResponse::SUCCESS && !empty($openPunch->getData()['attendnace'])) {
+        if ($openPunch->getStatus() === IceResponse::SUCCESS && !empty($openPunch->getData()['attendance'])) {
             return new IceResponse(IceResponse::ERROR, 'User has already punched in for the day ', 400);
         }
 
@@ -172,7 +174,17 @@ class AttendanceRestEndPoint extends RestEndPoint
             return $permissionResponse;
         }
 
-        $response = BaseService::getInstance()->addElement(self::ELEMENT_NAME, $body);
+        $response = $this->savePunch(
+            $body['employee'],
+            $body['in_time'],
+            $body['note'],
+            null,
+            null,
+            $body['latitude'],
+            $body['longitude'],
+            NetworkUtils::getClientIp()
+        );
+
         if ($response->getStatus() === IceResponse::SUCCESS) {
             $attendance = $this->cleanObject($response->getData());
             $response->setData($attendance);
@@ -211,7 +223,10 @@ class AttendanceRestEndPoint extends RestEndPoint
             $attendance->in_time,
             $body['note'],
             $body['out_time'],
-            $attendance->id
+            $attendance->id,
+            $body['latitude'],
+            $body['longitude'],
+            NetworkUtils::getClientIp()
         );
 
         if ($response->getStatus() === IceResponse::SUCCESS) {
@@ -262,7 +277,7 @@ class AttendanceRestEndPoint extends RestEndPoint
         }
     }
 
-    protected function savePunch($employeeId, $inDateTime, $note = null, $outDateTime = null, $id = null)
+    protected function savePunch($employeeId, $inDateTime, $note = null, $outDateTime = null, $id = null, $latitude = null, $longitude = null, $ip = null)
     {
         $employee = BaseService::getInstance()->getElement(
             'Employee',
@@ -339,8 +354,16 @@ class AttendanceRestEndPoint extends RestEndPoint
         $attendance->in_time = $inDateTime;
         if (empty($outDateTime)) {
             $attendance->out_time = null;
+            $attendance->map_lat = $latitude;
+            $attendance->map_lng = $longitude;
+            $attendance->map_snapshot = $this->generateMapLocationImage($latitude, $longitude);
+            $attendance->in_ip = $ip;
         } else {
             $attendance->out_time = $outDateTime;
+            $attendance->map_out_lat = $latitude;
+            $attendance->map_out_lng = $longitude;
+            $attendance->map_out_snapshot = $this->generateMapLocationImage($latitude, $longitude);
+            $attendance->out_ip = $ip;
         }
 
         $attendance->employee = $employeeId;
@@ -351,5 +374,35 @@ class AttendanceRestEndPoint extends RestEndPoint
             return new IceResponse(IceResponse::ERROR, "Error occurred while saving attendance");
         }
         return new IceResponse(IceResponse::SUCCESS, $attendance);
+    }
+
+    protected function generateMapLocationImage($latitude, $longitude)
+    {
+        if (empty(SettingsManager::getInstance()->getSetting('System: Google Maps Api Key'))
+            || empty($latitude)
+            || empty($longitude)
+        ) {
+            return null;
+        }
+
+        $location = sprintf('%s,%s', $latitude, $longitude);
+
+        $url = "https://maps.googleapis.com/maps/api/staticmap?&zoom=15&size=210x175&maptype=roadmap
+&markers=color:blue%7Clabel:S%7C$location&markers=color:green%7Clabel:G%7C$location
+&markers=color:red%7Clabel:C%7C$location
+&key=".SettingsManager::getInstance()->getSetting('System: Google Maps Api Key');
+
+        LogManager::getInstance()->info('Url:'.$url);
+
+        $data = file_get_contents($url);
+
+        //LogManager::getInstance()->info('Data:'.$data);
+        if (!empty($data)) {
+            //LogManager::getInstance()->info('Data Base64:'.base64_encode($data));
+            return'data:image/png;base64,' . base64_encode($data);
+        }
+
+        return null;
+
     }
 }

@@ -82,4 +82,9 @@ class Project extends BaseModel
 
         return $employeeProjects;
     }
+
+    public function fieldValueMethods()
+    {
+        return ['getEmployeeProjects'];
+    }
 }

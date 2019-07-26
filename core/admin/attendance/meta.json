@@ -2,7 +2,7 @@
     "label": "Monitor Attendance",
     "menu": "Employees",
     "order": "8",
-    "icon": "fa-clock-o",
+    "icon": "fa-clock",
     "user_levels": [
         "Admin",
         "Manager"

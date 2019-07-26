@@ -1,14 +1,11 @@
 <?php
 /*
-This file is part of Ice Framework.
-
-------------------------------------------------------------------
-
-Original work Copyright (c) 2012 [Gamonoid Media Pvt. Ltd]
-Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
 $moduleName = 'fieldnames';
+$moduleGroup = 'admin';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';

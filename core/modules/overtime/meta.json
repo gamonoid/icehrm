@@ -2,7 +2,7 @@
     "label": "Overtime Requests",
     "menu": "Time Management",
     "order": "5",
-    "icon": "fa-align-center",
+    "icon": "fa-calendar-plus",
     "user_levels": [
         "Admin",
         "Manager",

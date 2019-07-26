@@ -5,6 +5,7 @@
  */
 
 $moduleName = 'travel';
+$moduleGroup = 'modules';
 $moduleMainName = "EmployeeTravelRecord"; // for creating module js lib
 $subModuleMainName = "SubordinateEmployeeTravelRecord";
 $moduleItemName = "Travel Request"; // For permissions

@@ -2,7 +2,7 @@
     "label": "Salary",
     "menu": "Payroll",
     "order": "1",
-    "icon": "fa-money",
+    "icon": "fa-money-check-alt",
     "user_levels": [
         "Admin"
     ],

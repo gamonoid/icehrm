@@ -228,7 +228,7 @@ class MigrationManager
         if (count($migrationList) > 0 && (empty($migration->id) || $migrationList[0].".php" != $migration->file)) {
             LogManager::getInstance()->info("ensureMigrations - execute migrations");
             $this->queueMigrations();
-            $this->runPendingMigrations();
         }
+        $this->runPendingMigrations();
     }
 }

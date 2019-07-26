@@ -65,11 +65,28 @@ class CalendarTools
         return $time->format($format);
     }
 
-    public static function getNumberOfDaysBetweenDates($first, $second)
+    public static function getNumberOfDaysBetweenDates($later, $earlier)
     {
-        $timeFirst = new \DateTime($first);
-        $timeSecond = new \DateTime($second);
+        $timeFirst = new \DateTime($later);
+        $timeSecond = new \DateTime($earlier);
         $interval = $timeSecond->diff($timeFirst);
-        return intval($interval->format('%a'));
+        return intval($interval->format('%a')) + 1;
+    }
+
+    public static function getNumberOfMonthsBetweenDates($date1, $date2)
+    {
+        $begin = new \DateTime($date1);
+        $end = new \DateTime($date2);
+        $end = $end->modify('+1 day');
+
+        $interval = \DateInterval::createFromDateString('1 month');
+
+        $period = new \DatePeriod($begin, $interval, $end);
+        $counter = 0;
+        foreach ($period as $dt) {
+            $counter++;
+        }
+
+        return $counter;
     }
 }

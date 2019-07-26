@@ -2,7 +2,7 @@
     "label": "Loans",
     "menu": "Finance",
     "order": "3",
-    "icon": "fa-shield",
+    "icon": "fa-money-check",
     "user_levels": [
         "Admin",
         "Manager",

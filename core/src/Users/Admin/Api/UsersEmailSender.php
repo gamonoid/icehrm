@@ -47,7 +47,7 @@ class UsersEmailSender
         } else {
             LogManager::getInstance()->info("[sendWelcomeUserEmail] email is empty");
         }
-
+        
         return false;
     }
 }

@@ -9,6 +9,7 @@
 namespace Settings\Admin\Api;
 
 use Classes\AbstractModuleManager;
+use Settings\Rest\SettingsRestEndPoint;
 
 class SettingsAdminManager extends AbstractModuleManager
 {
@@ -34,5 +35,13 @@ class SettingsAdminManager extends AbstractModuleManager
     public function getInitializer()
     {
         return new SettingsInitialize();
+    }
+
+    public function setupRestEndPoints()
+    {
+        \Classes\Macaw::get(REST_API_PATH.'settings', function () {
+            $restEndPoint = new SettingsRestEndPoint();
+            $restEndPoint->process('getMobileSettings', []);
+        });
     }
 }

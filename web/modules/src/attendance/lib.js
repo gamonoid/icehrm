@@ -1,9 +1,9 @@
 /*
-Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
-Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-/* global modJs, modJsList */
+/* global modJs, modJsList, webkitURL */
 
 import AdapterBase from '../../../api/AdapterBase';
 import FormValidation from '../../../api/FormValidation';
@@ -249,7 +249,8 @@ class AttendanceAdapter extends AdapterBase {
       // Get access to the camera!
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
-          video.src = window.URL.createObjectURL(stream);
+          //video.src = (window.URL ? window.URL : webkitURL).createObjectURL(stream);
+          video.srcObject = stream;
           video.play();
         });
       }

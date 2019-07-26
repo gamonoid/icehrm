@@ -5,6 +5,7 @@
  */
 
 $moduleName = 'overtime';
+$moduleGroup = 'modules';
 $moduleMainName = "EmployeeOvertime"; // for creating module js lib
 $subModuleMainName = "SubordinateEmployeeOvertime";
 $moduleItemName = "Overtime Request"; // For permissions

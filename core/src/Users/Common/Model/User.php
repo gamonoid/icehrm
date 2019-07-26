@@ -8,7 +8,6 @@ namespace Users\Common\Model;
 use Classes\BaseService;
 use Model\BaseModel;
 use Classes\IceResponse;
-use Modules\Common\Model\Module;
 
 class User extends BaseModel
 {
@@ -54,23 +53,6 @@ class User extends BaseModel
                         You are not allowed to revoke your admin rights"
                     );
                 }
-            }
-        }
-
-        //Check if the user have rights to the default module
-        if (!empty($obj->default_module)) {
-            $module = new Module();
-            $module->Load("id = ?", array($obj->default_module));
-            if ($module->mod_group == "user") {
-                $module->mod_group = "modules";
-            }
-            $moduleManager = BaseService::getInstance()->getModuleManager($module->mod_group, $module->name);
-            if (!BaseService::getInstance()->isModuleAllowedForGivenUser($moduleManager, $obj)) {
-                return new IceResponse(
-                    IceResponse::ERROR,
-                    "This module can not be set as the default module for 
-                    the user since the user do not have access to this module"
-                );
             }
         }
 

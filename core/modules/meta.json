@@ -1,13 +1,13 @@
 {
 "Discussions":"fa-comments",
-"Personal Information":"fa-male",
-"Leave":"fa-calendar-o",
-"Time Management":"fa-clock-o",
-"Documents":"fa-files-o",
+"Personal Information":"fa-grip-horizontal",
+"Leave":"fa-calendar-alt",
+"Time Management":"fa-hourglass-half",
+"Documents":"fa-file-alt",
 "Company":"fa-building",
 "Training":"fa-briefcase",
-"Performance":"fa-crosshairs",
-"Travel Management":"fa-plane",
-"Finance":"fa-money",
-"User Reports":"fa-file-text"
+"Performance":"fa-bezier-curve",
+"Travel Management":"fa-globe",
+"Finance":"fa-calculator",
+"User Reports":"fa-book-reader"
 }

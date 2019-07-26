@@ -8,6 +8,18 @@
 
 namespace Model;
 
+/**
+ * Class Cron
+ * @package Model
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $class
+ * @property int $frequency
+ * @property int $time
+ * @property string $type
+ * @property string $status
+ */
 class Cron extends BaseModel
 {
     public $table = 'Crons';

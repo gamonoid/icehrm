@@ -15,7 +15,7 @@
 				<?php if(isset($emailTemplates)){?>
 				modJsList[prop].setEmailTemplates(<?=json_encode($emailTemplates)?>);
 				<?php } ?>
-				modJsList[prop].setUser(<?=json_encode($user)?>);
+				modJsList[prop].setUser(<?=json_encode(\Classes\BaseService::getInstance()->cleanUpUser($user))?>);
                 <?php if(isset($_REQUEST['action']) && $_REQUEST['action'] == "new"){?>
                 if(modJsList[prop].newInitObject == undefined || modJsList[prop].newInitObject == null){
                     modJsList[prop].initFieldMasterData(null,modJsList[prop].renderForm);

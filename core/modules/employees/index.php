@@ -5,6 +5,7 @@
  */
 
 $moduleName = 'employees';
+$moduleGroup = 'modules';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
@@ -30,7 +31,7 @@ if (defined('SYM_CLIENT')) {
 } else if (defined('REST_API_BASE')){
     $restApiBase = REST_API_BASE;
 } else {
-    $restApiBase = CLIENT_BASE_PATH.'api/';
+    $restApiBase = CLIENT_BASE_URL.'api/';
 }
 ?>
 <script type="text/javascript" src="<?=BASE_URL.'js/d3js/d3.js?v='.$jsVersion?>"></script>

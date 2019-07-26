@@ -4,7 +4,8 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-$moduleName = 'salary';
+$moduleName = 'staffdirectory';
+$moduleGroup = 'modules';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';

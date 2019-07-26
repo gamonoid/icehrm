@@ -2,7 +2,7 @@
     "label": "Employee Custom Fields",
     "menu": "Admin",
     "order": "83",
-    "icon": "fa-sliders",
+    "icon": "fa-ruler-horizontal",
     "user_levels": [
         "Admin"
     ],

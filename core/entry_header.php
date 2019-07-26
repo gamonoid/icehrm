@@ -1,9 +1,5 @@
 <?php
-$logoFileName = CLIENT_BASE_PATH."data/logo.png";
-$logoFileUrl = CLIENT_BASE_URL."data/logo.png";
-if(!file_exists($logoFileName)){
-	$logoFileUrl = BASE_URL."images/logo.png";
-}
+$logoFileUrl = \Classes\UIManager::getInstance()->getCompanyLogoUrl();
 ?><!DOCTYPE html>
 <html>
     <head>

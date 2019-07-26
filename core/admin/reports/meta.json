@@ -2,7 +2,7 @@
     "label": "Reports",
     "menu": "Admin Reports",
     "order": "1",
-    "icon": "fa-file-o",
+    "icon": "fa-window-maximize",
     "user_levels": [
         "Admin",
         "Manager"

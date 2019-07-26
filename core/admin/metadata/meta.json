@@ -2,7 +2,7 @@
     "label": "Manage Metadata",
     "menu": "System",
     "order": "6",
-    "icon": "fa-sort-alpha-asc",
+    "icon": "fa-microchip",
     "user_levels": [
         "Admin"
     ],

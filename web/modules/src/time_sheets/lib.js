@@ -1,6 +1,6 @@
 /*
-Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
-Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
 /* global modJs, modJsList, moment */
@@ -408,6 +408,7 @@ class SubEmployeeTimeSheetAdapter extends EmployeeTimeSheetAdapter {
       'employee',
       'date_start',
       'date_end',
+      'total_time',
       'status',
     ];
   }
@@ -418,6 +419,7 @@ class SubEmployeeTimeSheetAdapter extends EmployeeTimeSheetAdapter {
       { sTitle: 'Employee', bSearchable: true },
       { sTitle: 'Start Date', bSearchable: true },
       { sTitle: 'End Date', bSearchable: true },
+      { sTitle: 'Total Time', bSearchable: false },
       { sTitle: 'Status' },
     ];
   }

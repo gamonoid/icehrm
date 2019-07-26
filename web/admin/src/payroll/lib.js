@@ -1,6 +1,6 @@
 /*
-Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
-Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 /* global modJs, modJsList */
 import AdapterBase from '../../../api/AdapterBase';
@@ -594,10 +594,12 @@ class PayslipTemplateAdapter extends AdapterBase {
           if (data.payrollColumn === 'NULL') {
             res.valid = false;
             res.message = 'Please select payroll column';
-          } else {
-            data.payrollColumn = 'NULL';
           }
-        } else if (data.type === 'Text') {
+        } else {
+          data.payrollColumn = 'NULL';
+        }
+
+        if (data.type === 'Text') {
           if (data.text === '') {
             res.valid = false;
             res.message = 'Text can not be empty';

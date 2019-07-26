@@ -2,7 +2,7 @@
     "label": "Projects",
     "menu": "Time Management",
     "order": "1",
-    "icon": "fa-pencil-square",
+    "icon": "fa-project-diagram",
     "user_levels": [
         "Admin",
         "Manager",

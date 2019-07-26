@@ -4,7 +4,8 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-$moduleName = 'employee_TimeSheet';
+$moduleName = 'time_sheets';
+$moduleGroup = 'modules';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
@@ -97,7 +98,7 @@ modJsList['tabSubEmployeeTimeSheetAll'].setNeedStartEndTime(<?=$startEndTimeNeed
 modJsList['tabEmployeeTimeEntry'] = new EmployeeTimeEntryAdapter('EmployeeTimeEntry','EmployeeTimeEntry','','');
 modJsList['tabEmployeeTimeEntry'].setShowAddNew(false);
 
-modJsList['tabQtsheet'] = new QtsheetAdapter('Qtsheet','Qtsheet');
+modJsList['tabQtsheet'] = new QtsheetAdapter('Qtsheet','Qtsheet','','name');
 modJsList['tabQtsheet'].setRemoteTable(false);
 modJsList['tabQtsheet'].setShowAddNew(false);
 modJsList['tabQtsheet'].setModulePath('modules=time_sheets');

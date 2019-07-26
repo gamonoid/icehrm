@@ -301,10 +301,10 @@ class TimeSheetsActionManager extends SubActionManager
         $project = new $rowTable();
 
         if (SettingsManager::getInstance()->getSetting("Projects: Make All Projects Available to Employees") == "1") {
-            $projectList = $project->Find("1 = 1");
+            $projectList = $project->Find("1 = 1 order by name");
         } else {
             $projectList = $project->Find(
-                "id in (select project from EmployeeProjects where employee = ?)",
+                "id in (select project from EmployeeProjects where employee = ?) order by name",
                 array(BaseService::getInstance()->getCurrentProfileId())
             );
         }

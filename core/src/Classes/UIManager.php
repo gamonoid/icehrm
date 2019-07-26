@@ -87,37 +87,43 @@ class UIManager
             $this->currentProfileBlock = array(
                 "profileImage"=>$profileCurrent->image,
                 "firstName"=>$profileCurrent->first_name,
-                "lastName"=>$profileCurrent->last_name
+                "lastName"=>$profileCurrent->last_name,
+                "profile_url"=>CLIENT_BASE_URL.'?g=admin&n=employees&m=admin_Employees',
             );
 
             $this->switchedProfileBlock = array(
                 "profileImage"=>$profileSwitched->image,
                 "firstName"=>$profileSwitched->first_name,
-                "lastName"=>$profileSwitched->last_name
+                "lastName"=>$profileSwitched->last_name,
+                "profile_url"=>CLIENT_BASE_URL.'?g=modules&n=employees&m=module_Personal_Information',
             );
         } elseif (!empty($profileCurrent)) {
             $this->currentProfileBlock = array(
                 "profileImage"=>$profileCurrent->image,
                 "firstName"=>$profileCurrent->first_name,
-                "lastName"=>$profileCurrent->last_name
+                "lastName"=>$profileCurrent->last_name,
+                "profile_url"=>CLIENT_BASE_URL.'?g=modules&n=employees&m=module_Personal_Information',
             );
         } elseif (!empty($profileSwitched)) {
             $this->currentProfileBlock = array(
                 "profileImage"=>BASE_URL."images/user_male.png",
                 "firstName"=>$this->user->username,
-                "lastName"=>""
+                "lastName"=>"",
+                "profile_url"=>CLIENT_BASE_URL.'?g=admin&n=employees&m=admin_Employees',
             );
 
             $this->switchedProfileBlock = array(
                 "profileImage"=>$profileSwitched->image,
                 "firstName"=>$profileSwitched->first_name,
-                "lastName"=>$profileSwitched->last_name
+                "lastName"=>$profileSwitched->last_name,
+                "profile_url"=>CLIENT_BASE_URL.'?g=modules&n=employees&m=module_Personal_Information',
             );
         } else {
             $this->currentProfileBlock = array(
                 "profileImage"=>BASE_URL."images/user_male.png",
                 "firstName"=>$this->user->username,
-                "lastName"=>""
+                "lastName"=>"",
+                "profile_url"=>CLIENT_BASE_URL.'?g=admin&n=employees&m=admin_Employees',
             );
         }
     }

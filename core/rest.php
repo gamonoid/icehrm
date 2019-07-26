@@ -10,7 +10,7 @@ if(\Classes\SettingsManager::getInstance()->getSetting('Api: REST Api Enabled') 
 
 	if (defined('SYM_CLIENT')) {
 		define('REST_API_PATH', '/'.SYM_CLIENT.'/');
-	} else {
+	} else if (!defined('REST_API_PATH')){
 		define('REST_API_PATH', '/');
 	}
 

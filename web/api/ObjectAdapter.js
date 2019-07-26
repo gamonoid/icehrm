@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+   Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 import AdapterBase from './AdapterBase';
@@ -164,29 +164,37 @@ class ObjectAdapter extends AdapterBase {
       return;
     }
 
-    if (this.getFilters() == null) {
-      $(`#${this.getTableName()}_filterBtn`).hide();
-      $(`#${this.getTableName()}_resetFilters`).hide();
-    } else {
-      $(`#${this.getTableName()}_filterBtn`).show();
-      $(`#${this.getTableName()}_resetFilters`).show();
-      if (this.currentFilterString !== '' && this.currentFilterString != null) {
-        $(`#${this.getTableName()}_resetFilters`).html(`${this.currentFilterString}<i class="fa fa-times"></i>`);
-      } else {
-        $(`#${this.getTableName()}_resetFilters`).html('Reset Filters');
+    try {
+      if (this.getFilters() == null) {
+        $(`#${this.getTableName()}_filterBtn`).hide();
         $(`#${this.getTableName()}_resetFilters`).hide();
+      } else {
+        $(`#${this.getTableName()}_filterBtn`).show();
+        $(`#${this.getTableName()}_resetFilters`).show();
+        if (this.currentFilterString !== '' && this.currentFilterString != null) {
+          $(`#${this.getTableName()}_resetFilters`).html(`${this.currentFilterString}<i class="fa fa-times"></i>`);
+        } else {
+          $(`#${this.getTableName()}_resetFilters`).html('Reset Filters');
+          $(`#${this.getTableName()}_resetFilters`).hide();
+        }
       }
+    } catch (error) {
+      // Do nothing
     }
 
     $(`#${this.getTableName()}`).find('.search-controls').show();
     if (serverData.length > this.pageSize) {
       this.hasMoreData = true;
       serverData.pop();
-      this.loadMoreButton.removeAttr('disabled');
-      this.loadMoreButton.show();
+      if (this.loadMoreButton !== null) {
+        this.loadMoreButton.removeAttr('disabled');
+        this.loadMoreButton.show();
+      }
     } else {
       this.hasMoreData = false;
-      this.loadMoreButton.hide();
+      if (this.loadMoreButton !== null) {
+        this.loadMoreButton.hide();
+      }
     }
 
     this.scrollToElementBottom(this.container);

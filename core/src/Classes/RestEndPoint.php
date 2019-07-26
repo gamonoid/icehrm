@@ -3,6 +3,7 @@ namespace Classes;
 
 use Classes\Data\DataReader;
 use Classes\Data\Query\DataQuery;
+use Classes\Upload\Uploader;
 use Employees\Common\Model\Employee;
 use Users\Common\Model\User;
 use Utils\SessionUtils;
@@ -326,5 +327,27 @@ class RestEndPoint
     {
         $inputJSON = file_get_contents('php://input');
         return json_decode($inputJSON, true);
+    }
+
+    protected function getFile()
+    {
+        return $_FILES;
+    }
+
+    public function uploadFile(User $user)
+    {
+        $fileData = $this->getFile();
+        $postData = [
+            'file_name' => '_NEW_',
+            'user' => $user->employee,
+            'file_group' => static::ELEMENT_NAME
+        ];
+
+        $fileResponse = Uploader::upload($postData, $fileData);
+        if ($fileResponse->getStatus() === IceResponse::SUCCESS) {
+            return new IceResponse(IceResponse::SUCCESS, ['data' => $fileResponse->getData()], 201);
+        }
+
+        return $fileResponse;
     }
 }

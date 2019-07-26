@@ -49,7 +49,8 @@ gulp.task('pack-js', (done) => {
 gulp.task('pack-css', (done) => {
   gulp.src([
     'web/themecss/bootstrap.min.css',
-    'web/themecss/font-awesome.min.css',
+    'web/themecss/fa-all-5.8.2.min.css',
+    //'web/themecss/font-awesome.css',
     'web/themecss/ionicons.min.css',
     'web/bower_components/material-design-icons/iconfont/material-icons.css',
     'web/js/fullcaledar/fullcalendar.css',
@@ -60,6 +61,7 @@ gulp.task('pack-css', (done) => {
     'web/js/select2/select2.css',
     'web/js/bootstrap-colorpicker-2.1.1/css/bootstrap-colorpicker.css',
     'web/themecss/AdminLTE.css',
+    'web/css/fa-animations.css',
     'web/css/style.css',
     'web/bower_components/simplemde/dist/simplemde.min.css',
   ])
@@ -106,6 +108,7 @@ gulp.task('api-common', (done) => {
           reserved: [
             'Aes',
             'RequestCache',
+            'SocialShare',
             'setupTimeUtils',
             'setupNotifications',
           ],

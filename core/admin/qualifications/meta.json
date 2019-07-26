@@ -2,7 +2,7 @@
     "label": "Qualifications Setup",
     "menu": "Admin",
     "order": "4",
-    "icon": "fa-check-square-o",
+    "icon": "fa-check-square",
     "user_levels": [
         "Admin",
         "Manager"

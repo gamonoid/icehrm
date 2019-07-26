@@ -5,6 +5,7 @@
  */
 
 $moduleName = 'company_structure';
+$moduleGroup = 'admin';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
@@ -40,7 +41,7 @@ path.link {
 		<li class="active"><a id="tabCompanyStructure" href="#tabPageCompanyStructure"><?=t('Company Structure')?></a></li>
 		<li><a id="tabCompanyGraph" href="#tabPageCompanyGraph"><?=t('Company Graph')?></a></li>
 	</ul>
-	 
+
 	<div class="tab-content">
 		<div class="tab-pane active" id="tabPageCompanyStructure">
 			<div id="CompanyStructure" class="reviewBlock" data-content="List" style="padding-left:5px;">
