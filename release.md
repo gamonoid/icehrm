@@ -3,7 +3,7 @@ Release note v26.6.0.OS
 
 ### Features
  * Improvements to UI
- * Track location of the employee when marking attendance
+ * Track IP and location of the employee when marking attendance
  * Improvements to translations
  * Compatible with location tracking with icehrm mobile app
 
