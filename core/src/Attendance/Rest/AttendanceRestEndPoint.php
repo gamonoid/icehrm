@@ -90,9 +90,9 @@ class AttendanceRestEndPoint extends RestEndPoint
         }
 
         if ($user->user_level !== 'Admin' && !PermissionManager::manipulationAllowed(
-                BaseService::getInstance()->getCurrentProfileId(),
-                $this->getModelObject($parameter)
-            )
+            BaseService::getInstance()->getCurrentProfileId(),
+            $this->getModelObject($parameter)
+        )
         ) {
             return new IceResponse(IceResponse::ERROR, self::RESPONSE_ERR_PERMISSION_DENIED, 403);
         }
@@ -277,8 +277,16 @@ class AttendanceRestEndPoint extends RestEndPoint
         }
     }
 
-    protected function savePunch($employeeId, $inDateTime, $note = null, $outDateTime = null, $id = null, $latitude = null, $longitude = null, $ip = null)
-    {
+    protected function savePunch(
+        $employeeId,
+        $inDateTime,
+        $note = null,
+        $outDateTime = null,
+        $id = null,
+        $latitude = null,
+        $longitude = null,
+        $ip = null
+    ) {
         $employee = BaseService::getInstance()->getElement(
             'Employee',
             $employeeId,
@@ -399,6 +407,5 @@ class AttendanceRestEndPoint extends RestEndPoint
         }
 
         return null;
-
     }
 }

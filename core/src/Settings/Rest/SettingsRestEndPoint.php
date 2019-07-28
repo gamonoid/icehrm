@@ -3,7 +3,6 @@
 
 namespace Settings\Rest;
 
-
 use Classes\IceResponse;
 use Classes\RestEndPoint;
 use Classes\SettingsManager;

@@ -35,25 +35,27 @@ class Timezone extends BaseModel
                 $modifiedTimeZones[] = $tz;
             } catch (\Exception $e) {
             }
-
         }
 
-        usort($modifiedTimeZones, function ($a, $b) { return strcmp($a->details, $b->details); });
+        usort($modifiedTimeZones, function ($a, $b) {
+            return strcmp($a->details, $b->details);
+        });
         return $modifiedTimeZones;
     }
 
-    public function formatOffset($offset) {
+    public function formatOffset($offset)
+    {
         $hours = $offset / 3600;
         $remainder = $offset % 3600;
         $sign = $hours > 0 ? '+' : '-';
         $hour = (int) abs($hours);
         $minutes = (int) abs($remainder / 60);
 
-        if ($hour == 0 AND $minutes == 0) {
+        if ($hour == 0 and $minutes == 0) {
             $sign = ' ';
         }
         return 'GMT' . $sign . str_pad($hour, 2, '0', STR_PAD_LEFT)
-        .':'. str_pad($minutes,2, '0');
+        .':'. str_pad($minutes, 2, '0');
     }
 
     public function fieldValueMethods()
