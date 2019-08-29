@@ -15,14 +15,12 @@ Vagrant.configure(2) do |config|
 
 
   config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys AA8E81B4331F7F50
     sudo apt-get update
+    chmod ugo+x /vagrant/deployment/vagrant/runonce.sh
+    sh /vagrant/deployment/vagrant/runonce.sh
   SHELL
 
   config.vm.hostname = "icehrm.open"
-
-  config.hostsupdater.aliases = [
-    "app.icehrm-open.test",
-    "clients.icehrm-open.test"
-  ]
 
 end

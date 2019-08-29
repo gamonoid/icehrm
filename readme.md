@@ -70,9 +70,6 @@ Preparing development VM with Vagrant
 
 - Install Vagrant [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
-- Install Vagrant host updater plugin [https://github.com/cogitatio/vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater)
-
-
 - Run vagrant up in icehrm root directory (this will download icehrm vagrant image which is  ~1 GB)
 
 ```
@@ -85,53 +82,21 @@ Preparing development VM with Vagrant
 ~ $ vagrant ssh
 ```
 
-- Setup the Vagrant box
+- Add following entries to the end of the host file to map icehrm domains to VagrantBox (on MacOS and Linux this is /etc/hosts | on windows this is Windows\System32\Drivers\etc\hosts)
 
 ```
-~ $ sudo apt-get install ant
-~ $ sudo chmod -R 777 /var/log/nginx
-~ $ cd /vagrant
-~ $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-~ $ sudo apt-get install -y nodejs
-~ $ npm install
-~ $ sudo npm install -g gulp-cli
-```
-
-- Make Changes to enable domain icehrm-open.test in Vagrant Box
-
-```
-~ $ sudo sed 's/server_name clients.app.dev/server_name clients.icehrm-open.test/g' /etc/nginx/sites-available/clients.app.com > /tmp/clients.app.com
-~ $ sudo mv /tmp/clients.app.com /etc/nginx/sites-available/clients.app.com
-~ $ sudo sed 's/server_name app.app.dev/server_name app.icehrm-open.test/g' /etc/nginx/sites-available/app.app.com > /tmp/app.app.com
-~ $ sudo sed 's#root /vagrant/build/app#root /vagrant#g' /tmp/app.app.com > /tmp/mod.app.app.com
-~ $ sudo mv /tmp/mod.app.app.com /etc/nginx/sites-available/app.app.com
-
-~ $ sudo service php7.0-fpm restart
-~ $ sudo service nginx restart
-```
-
-- Build Icehrm (your icehrm root directory is mapped to /vagrant/ directory in VM)
-
-```
-~ $ gulp
-~ $ ant buildlocal
+192.168.40.40   app.icehrm-open.test
+192.168.40.40   clients.icehrm-open.test
 ```
 
 - Navigate to [http://clients.icehrm-open.test/dev](http://clients.icehrm-open.test/dev) to load icehrm from VM. (user:admin/pass:admin)
 
 ### Notes to Developers
 
-- When ever you have done a change to JavaScript or CSS files in icehrm/web
+- When ever you have done a change to JavaScript or CSS files in icehrm/web rebuild the frontend
 ```
 ~ $ cd /vagrant
 ~ $ gulp
-```
-
-
-- When ever you have done a change to icehrm/core/src
-```
-~ $ cd /vagrant
-~ $ ant phpcs-ci
 ```
 
 
