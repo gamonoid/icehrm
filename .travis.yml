@@ -1,13 +1,7 @@
 services:
   - mysql
-addons:
-  apt:
-    sources:
-      - mysql-5.7-trusty
-    packages:
-      - mysql-server
 before_script:
-  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('dev') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+  - echo "USE mysql;\nUPDATE user SET authentication_string=PASSWORD('dev') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 install:
   #- rm $TRAVIS_BUILD_DIR/tools/phpunit
   #- composer require --dev phpunit/phpunit ~6.5.5
