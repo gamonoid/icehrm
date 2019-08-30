@@ -1,5 +1,11 @@
 services:
   - mysql
+addons:
+  apt:
+    sources:
+      - mysql-5.7-trusty
+    packages:
+      - mysql-server
 before_script:
   - echo "USE mysql;\nUPDATE user SET password=PASSWORD('dev') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 install:
