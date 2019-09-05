@@ -35,7 +35,16 @@ abstract class AbstractDataImporter implements DataImporter
     public function processHeader($data)
     {
         $columns = $this->dataImport->columns;
-        $headers = json_decode($columns);
+
+            $headers = json_decode($columns);
+         while(sizeof($headers)!=sizeof($data)){
+            $name = $data[sizeof($headers)];
+            $test = (object)["name" => $name, "title" => "", "type" => "Normal", "dependOn" => "NULL", "dependOnField" => "", "isKeyField" => "No", "idField" => "No", "id" => "columns_36"];
+
+            array_push($headers, $test);
+        }
+
+        LogManager::getInstance()->info("test --------------");
 
         $counter = 0;
         foreach ($headers as $column) {
@@ -69,6 +78,7 @@ abstract class AbstractDataImporter implements DataImporter
     {
         $this->dataImport = new DataImport();
         $this->dataImport->Load("id =?", array($dataImportId));
+
     }
 
     public function updateCustomFields()
