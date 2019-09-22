@@ -13,7 +13,9 @@ use Classes\BaseService;
 use Classes\IceResponse;
 use Classes\SubActionManager;
 use Dependents\Common\Model\EmployeeDependent;
-use Documents\Common\Model\EmployeeDocument;
+// This following class 'EmployeeDocument' is nowhere to be found which causes a
+// 500 (Internal Server Error) when archiving a terminated employee.
+//use Documents\Common\Model\EmployeeDocument;
 use EmergencyContacts\Common\Model\EmergencyContact;
 use Employees\Common\Model\ArchivedEmployee;
 use Employees\Common\Model\Employee;
@@ -115,7 +117,9 @@ class EmployeesActionManager extends SubActionManager
         $data->timesheets = $this->getEmployeeData($employee->id, new EmployeeTimeSheet());
         $data->timesheetEntries = $this->getEmployeeData($employee->id, new EmployeeTimeEntry());
         $data->attendance = $this->getEmployeeData($employee->id, new Attendance());
-        $data->documents = $this->getEmployeeData($employee->id, new EmployeeDocument());
+        // This following class 'EmployeeDocument' is nowhere to be found which causes a
+        // 500 (Internal Server Error) when archiving a terminated employee.
+        // $data->documents = $this->getEmployeeData($employee->id, new EmployeeDocument());
         $data->travelRecords = $this->getEmployeeData($employee->id, new EmployeeTravelRecord());
         $data->qualificationSkills = $this->getEmployeeData($employee->id, new EmployeeSkill());
         $data->qualificationEducation = $this->getEmployeeData($employee->id, new EmployeeEducation());
