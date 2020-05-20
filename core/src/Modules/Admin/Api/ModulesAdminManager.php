@@ -31,10 +31,10 @@ class ModulesAdminManager extends AbstractModuleManager
     public function initQuickAccessMenu()
     {
         UIManager::getInstance()->addQuickAccessMenuItem(
-            "Setup Modules",
-            "fa-cogs",
-            CLIENT_BASE_URL."?g=admin&n=modules&m=admin_System",
-            array("Admin")
+            'Setup Modules',
+            'fa-cogs',
+            CLIENT_BASE_URL.'?g=admin&n=modules&m=admin_System',
+            array('Admin')
         );
     }
 }

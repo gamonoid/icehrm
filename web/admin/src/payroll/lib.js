@@ -6,6 +6,12 @@
 import AdapterBase from '../../../api/AdapterBase';
 import TableEditAdapter from '../../../api/TableEditAdapter';
 
+require('codemirror/mode/javascript/javascript');
+require('codemirror/addon/edit/closebrackets');
+require('codemirror/addon/display/autorefresh');
+const CodeMirror = require('codemirror');
+
+
 /**
  * PaydayAdapter
  */
@@ -102,7 +108,7 @@ class PayrollAdapter extends AdapterBase {
         label: 'Pay Frequency', type: 'select', 'remote-source': ['PayFrequency', 'id', 'name'], sort: 'none',
       }],
       ['deduction_group', {
-        label: 'Calculation Group', type: 'select', 'remote-source': ['DeductionGroup', 'id', 'name'], sort: 'none',
+        label: 'Payroll Group', type: 'select', 'remote-source': ['DeductionGroup', 'id', 'name'], sort: 'none',
       }],
       ['payslipTemplate', { label: 'Payslip Template', type: 'select', 'remote-source': ['PayslipTemplate', 'id', 'name'] }],
       ['department', {
@@ -192,6 +198,10 @@ class PayrollAdapter extends AdapterBase {
     modJsList.tabPayrollData.setCurrentPayroll(null);
     super.get(callBackData);
   }
+
+  getHelpLink() {
+    return 'https://icehrm.gitbook.io/icehrm/payroll-and-expenses/payroll-management';
+  }
 }
 
 
@@ -258,6 +268,10 @@ class PayrollDataAdapter extends TableEditAdapter {
 
     document.body.removeChild(element);
   }
+
+  getHelpLink() {
+    return 'https://icehrm.gitbook.io/icehrm/payroll-and-expenses/payroll-management';
+  }
 }
 
 
@@ -266,6 +280,11 @@ class PayrollDataAdapter extends TableEditAdapter {
  */
 
 class PayrollColumnAdapter extends AdapterBase {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
+    this.codeMirror = CodeMirror;
+  }
+
   getDataMapping() {
     return [
       'id',
@@ -284,7 +303,7 @@ class PayrollColumnAdapter extends AdapterBase {
       { sTitle: 'Name' },
       { sTitle: 'Column Order' },
       { sTitle: 'Calculation Method' },
-      { sTitle: 'Calculation Group' },
+      { sTitle: 'Payroll Group' },
       { sTitle: 'Editable' },
       { sTitle: 'Enabled' },
     ];
@@ -314,7 +333,7 @@ class PayrollColumnAdapter extends AdapterBase {
         label: 'Predefined Calculations', type: 'select2', 'allow-null': true, 'null-label': 'None', 'remote-source': ['CalculationHook', 'code', 'name'],
       }],
       ['deduction_group', {
-        label: 'Calculation Group', type: 'select2', 'allow-null': true, 'null-label': 'Common', 'remote-source': ['DeductionGroup', 'id', 'name'],
+        label: 'Payroll Group', type: 'select2', 'allow-null': true, 'null-label': 'Common', 'remote-source': ['DeductionGroup', 'id', 'name'],
       }],
       ['salary_components', { label: 'Salary Components', type: 'select2multi', 'remote-source': ['SalaryComponent', 'id', 'name'] }],
       ['deductions', { label: 'Calculation Method', type: 'select2multi', 'remote-source': ['Deduction', 'id', 'name'] }],
@@ -325,16 +344,21 @@ class PayrollColumnAdapter extends AdapterBase {
       ['enabled', { label: 'Enabled', type: 'select', source: [['Yes', 'Yes'], ['No', 'No']] }],
       ['default_value', { label: 'Default Value', type: 'text', validation: '' }],
       fucntionColumnList,
-      ['calculation_function', { label: 'Function', type: 'text', validation: 'none' }],
+      ['function_type', { label: 'Function Type', type: 'select', source: [['Advanced', 'Advanced'], ['Simple', 'Simple']] }],
+      ['calculation_function', { label: 'Function', type: 'code', validation: 'none' }],
     ];
   }
 
   getFilters() {
     return [
       ['deduction_group', {
-        label: 'Calculation Group', type: 'select2', 'allow-null': true, 'null-label': 'Any', 'remote-source': ['DeductionGroup', 'id', 'name'],
+        label: 'Payroll Group', type: 'select2', 'allow-null': false, 'remote-source': ['DeductionGroup', 'id', 'name'],
       }],
     ];
+  }
+
+  getHelpLink() {
+    return 'https://icehrm.gitbook.io/icehrm/payroll-and-expenses/payroll-management';
   }
 }
 
@@ -388,7 +412,7 @@ class PayrollEmployeeAdapter extends AdapterBase {
       { sTitle: 'ID', bVisible: false },
       { sTitle: 'Employee' },
       { sTitle: 'Pay Frequency' },
-      { sTitle: 'Calculation Group' },
+      { sTitle: 'Payroll Group' },
       { sTitle: 'Currency' },
     ];
   }
@@ -400,7 +424,7 @@ class PayrollEmployeeAdapter extends AdapterBase {
       ['pay_frequency', { label: 'Pay Frequency', type: 'select2', 'remote-source': ['PayFrequency', 'id', 'name'] }],
       ['currency', { label: 'Currency', type: 'select2', 'remote-source': ['CurrencyType', 'id', 'code'] }],
       ['deduction_group', {
-        label: 'Calculation Group', type: 'select2', 'allow-null': true, 'null-label': 'None', 'remote-source': ['DeductionGroup', 'id', 'name'],
+        label: 'Payroll Group', type: 'select2', 'allow-null': true, 'null-label': 'None', 'remote-source': ['DeductionGroup', 'id', 'name'],
       }],
       ['deduction_exemptions', {
         label: 'Calculation Exemptions', type: 'select2multi', 'remote-source': ['Deduction', 'id', 'name'], validation: 'none',
@@ -436,7 +460,7 @@ class DeductionAdapter extends AdapterBase {
     return [
       { sTitle: 'ID', bVisible: false },
       { sTitle: 'Name' },
-      { sTitle: 'Calculation Group' },
+      { sTitle: 'Payroll Group' },
     ];
   }
 
@@ -507,7 +531,7 @@ class DeductionAdapter extends AdapterBase {
       }],
       rangeAmounts,
       ['deduction_group', {
-        label: 'Calculation Group', type: 'select2', 'allow-null': true, 'null-label': 'None', 'remote-source': ['DeductionGroup', 'id', 'name'],
+        label: 'Payroll Group', type: 'select2', 'allow-null': false, 'remote-source': ['DeductionGroup', 'id', 'name'],
       }],
 
     ];
@@ -542,6 +566,46 @@ class DeductionGroupAdapter extends AdapterBase {
       ['name', { label: 'Name', type: 'text', validation: '' }],
       ['description', { label: 'Details', type: 'textarea', validation: 'none' }],
     ];
+  }
+
+  getActionButtonsHtml(id) {
+
+    let html = '<div style="width:150px;">'
+        + '<img class="tableActionButton" src="_BASE_images/edit.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>'
+        + '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deletePayrollGroup(_id_);return false;"></img>'
+        + '<img class="tableActionButton" src="_BASE_images/clone.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Duplicate" onclick="modJs.copyRow(_id_);return false;"></img>'
+        + '</div>';
+    html = html.replace(/_id_/g, id);
+    html = html.replace(/_BASE_/g, this.baseUrl);
+    return html;
+  }
+
+  deletePayrollGroup(id) {
+    if (confirm('Are you sure you want to delete this payroll group? Deleting the payroll group will delete all the Payroll columns and Saved calculations attached to this Payroll Group')) {
+      // Terminate
+    } else {
+      return;
+    }
+
+    const params = {};
+    params.id = id;
+    const reqJson = JSON.stringify(params);
+    const callBackData = [];
+    callBackData.callBackData = [];
+    callBackData.callBackSuccess = 'deletePayrollGroupSuccessCallback';
+    callBackData.callBackFail = 'deletePayrollGroupFailCallback';
+
+    this.customAction('deletePayrollGroup', 'admin=payroll', reqJson, callBackData);
+  }
+
+  deletePayrollGroupSuccessCallback(callBackData) {
+    this.showMessage('Success', 'Payroll Group Deleted ');
+    this.get([]);
+  }
+
+
+  deletePayrollGroupFailCallback(callBackData) {
+    this.showMessage('Error occured while deleting Payroll Group', callBackData);
   }
 }
 

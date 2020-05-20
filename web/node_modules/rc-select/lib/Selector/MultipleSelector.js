@@ -1,0 +1,224 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _CSSMotionList = _interopRequireDefault(require("rc-animate/lib/CSSMotionList"));
+
+var _TransBtn = _interopRequireDefault(require("../TransBtn"));
+
+var _Input = _interopRequireDefault(require("./Input"));
+
+var _useLayoutEffect = _interopRequireDefault(require("../hooks/useLayoutEffect"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var REST_TAG_KEY = '__RC_SELECT_MAX_REST_COUNT__';
+
+var SelectSelector = function SelectSelector(_ref) {
+  var id = _ref.id,
+      prefixCls = _ref.prefixCls,
+      values = _ref.values,
+      open = _ref.open,
+      searchValue = _ref.searchValue,
+      inputRef = _ref.inputRef,
+      placeholder = _ref.placeholder,
+      disabled = _ref.disabled,
+      mode = _ref.mode,
+      showSearch = _ref.showSearch,
+      autoFocus = _ref.autoFocus,
+      autoComplete = _ref.autoComplete,
+      accessibilityIndex = _ref.accessibilityIndex,
+      tabIndex = _ref.tabIndex,
+      removeIcon = _ref.removeIcon,
+      choiceTransitionName = _ref.choiceTransitionName,
+      maxTagCount = _ref.maxTagCount,
+      maxTagTextLength = _ref.maxTagTextLength,
+      _ref$maxTagPlaceholde = _ref.maxTagPlaceholder,
+      maxTagPlaceholder = _ref$maxTagPlaceholde === void 0 ? function (omittedValues) {
+    return "+ ".concat(omittedValues.length, " ...");
+  } : _ref$maxTagPlaceholde,
+      tagRender = _ref.tagRender,
+      onSelect = _ref.onSelect,
+      onInputChange = _ref.onInputChange,
+      onInputPaste = _ref.onInputPaste,
+      onInputKeyDown = _ref.onInputKeyDown,
+      onInputMouseDown = _ref.onInputMouseDown;
+
+  var _React$useState = _react.default.useState(false),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      motionAppear = _React$useState2[0],
+      setMotionAppear = _React$useState2[1];
+
+  var measureRef = _react.default.useRef(null);
+
+  var _React$useState3 = _react.default.useState(0),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      inputWidth = _React$useState4[0],
+      setInputWidth = _React$useState4[1]; // ===================== Motion ======================
+
+
+  _react.default.useEffect(function () {
+    setMotionAppear(true);
+  }, []); // ===================== Search ======================
+
+
+  var inputValue = open ? searchValue : '';
+  var inputEditable = mode === 'tags' || open && showSearch; // We measure width and set to the input immediately
+
+  (0, _useLayoutEffect.default)(function () {
+    setInputWidth(measureRef.current.scrollWidth);
+  }, [inputValue]); // ==================== Selection ====================
+
+  var displayValues = values; // Cut by `maxTagCount`
+
+  var restCount;
+
+  if (typeof maxTagCount === 'number') {
+    restCount = values.length - maxTagCount;
+    displayValues = values.slice(0, maxTagCount);
+  } // Update by `maxTagTextLength`
+
+
+  if (typeof maxTagTextLength === 'number') {
+    displayValues = displayValues.map(function (_ref2) {
+      var label = _ref2.label,
+          rest = _objectWithoutProperties(_ref2, ["label"]);
+
+      var displayLabel = label;
+
+      if (typeof label === 'string' || typeof label === 'number') {
+        var strLabel = String(displayLabel);
+
+        if (strLabel.length > maxTagTextLength) {
+          displayLabel = "".concat(strLabel.slice(0, maxTagTextLength), "...");
+        }
+      }
+
+      return _objectSpread({}, rest, {
+        label: displayLabel
+      });
+    });
+  } // Fill rest
+
+
+  if (restCount > 0) {
+    displayValues.push({
+      key: REST_TAG_KEY,
+      label: typeof maxTagPlaceholder === 'function' ? maxTagPlaceholder(values.slice(maxTagCount)) : maxTagPlaceholder
+    });
+  }
+
+  var selectionNode = _react.default.createElement(_CSSMotionList.default, {
+    component: false,
+    keys: displayValues,
+    motionName: choiceTransitionName,
+    motionAppear: motionAppear
+  }, function (_ref3) {
+    var key = _ref3.key,
+        label = _ref3.label,
+        value = _ref3.value,
+        itemDisabled = _ref3.disabled,
+        className = _ref3.className,
+        style = _ref3.style;
+    var mergedKey = key || value;
+    var closable = key !== REST_TAG_KEY && !itemDisabled;
+
+    var onMouseDown = function onMouseDown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+    };
+
+    var onClose = function onClose(event) {
+      if (event) event.stopPropagation();
+      onSelect(value, {
+        selected: false
+      });
+    };
+
+    return typeof tagRender === 'function' ? _react.default.createElement("span", {
+      key: mergedKey,
+      onMouseDown: onMouseDown,
+      className: className,
+      style: style
+    }, tagRender({
+      label: label,
+      value: value,
+      disabled: itemDisabled,
+      closable: closable,
+      onClose: onClose
+    })) : _react.default.createElement("span", {
+      key: mergedKey,
+      className: (0, _classnames.default)(className, "".concat(prefixCls, "-selection-item"), _defineProperty({}, "".concat(prefixCls, "-selection-item-disabled"), itemDisabled)),
+      style: style
+    }, _react.default.createElement("span", {
+      className: "".concat(prefixCls, "-selection-item-content")
+    }, label), closable && _react.default.createElement(_TransBtn.default, {
+      className: "".concat(prefixCls, "-selection-item-remove"),
+      onMouseDown: onMouseDown,
+      onClick: onClose,
+      customizeIcon: removeIcon
+    }, "\xD7"));
+  });
+
+  return _react.default.createElement(_react.default.Fragment, null, selectionNode, _react.default.createElement("span", {
+    className: "".concat(prefixCls, "-selection-search"),
+    style: {
+      width: inputWidth
+    }
+  }, _react.default.createElement(_Input.default, {
+    ref: inputRef,
+    open: open,
+    prefixCls: prefixCls,
+    id: id,
+    inputElement: null,
+    disabled: disabled,
+    autoFocus: autoFocus,
+    autoComplete: autoComplete,
+    editable: inputEditable,
+    accessibilityIndex: accessibilityIndex,
+    value: inputValue,
+    onKeyDown: onInputKeyDown,
+    onMouseDown: onInputMouseDown,
+    onChange: onInputChange,
+    onPaste: onInputPaste,
+    tabIndex: tabIndex
+  }), _react.default.createElement("span", {
+    ref: measureRef,
+    className: "".concat(prefixCls, "-selection-search-mirror"),
+    "aria-hidden": true
+  }, inputValue, "\xA0")), !values.length && !inputValue && _react.default.createElement("span", {
+    className: "".concat(prefixCls, "-selection-placeholder")
+  }, placeholder));
+};
+
+var _default = SelectSelector;
+exports.default = _default;

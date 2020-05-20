@@ -97,18 +97,16 @@ class AttendanceRestEndPoint extends RestEndPoint
             return new IceResponse(IceResponse::ERROR, self::RESPONSE_ERR_PERMISSION_DENIED, 403);
         }
 
-        $mapping = [
-            "employee" => ["Employee", "id", "first_name+last_name"],
-        ];
+        $mapping = '{"employee": [ "Employee", "id", "first_name+last_name" ]}';
 
         $emp = BaseService::getInstance()->getElement(
             self::ELEMENT_NAME,
             $parameter,
-            json_encode($mapping),
+            null,
             true
         );
 
-        $emp = $this->enrichElement($emp, $mapping);
+        $emp = $this->enrichElement($emp, json_decode($mapping));
         if (!empty($emp)) {
             $emp = $this->cleanObject($emp);
             return new IceResponse(IceResponse::SUCCESS, $emp);

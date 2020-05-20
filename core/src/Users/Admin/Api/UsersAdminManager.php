@@ -2,7 +2,9 @@
 namespace Users\Admin\Api;
 
 use Classes\AbstractModuleManager;
+use Classes\Macaw;
 use Users\Common\Model\User;
+use Users\Rest\UserRestEndPoint;
 
 class UsersAdminManager extends AbstractModuleManager
 {
@@ -32,5 +34,13 @@ class UsersAdminManager extends AbstractModuleManager
         $user = new User();
         $data['numberOfUsers'] = $user->Count("1 = 1");
         return $data;
+    }
+
+    public function setupRestEndPoints()
+    {
+        Macaw::post(REST_API_PATH.'oauth/token', function ($pathParams) {
+            $userRestEndpoint = new UserRestEndPoint();
+            $userRestEndpoint->process('post', $pathParams, false);
+        });
     }
 }

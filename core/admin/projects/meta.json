@@ -1,5 +1,5 @@
 {
-    "label": "Projects\/Client Setup",
+    "label": "Projects",
     "menu": "Admin",
     "order": "51",
     "icon": "fa-list-alt",
@@ -12,10 +12,7 @@
         "Manager": {
             "Add Projects": "Yes",
             "Edit Projects": "Yes",
-            "Delete Projects": "No",
-            "Add Clients": "Yes",
-            "Edit Clients": "Yes",
-            "Delete Clients": "No"
+            "Delete Projects": "No"
         }
     },
     "model_namespace": "\\Projects\\Common\\Model",

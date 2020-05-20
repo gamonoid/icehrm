@@ -1960,3 +1960,15 @@ msgstr "提供反馈信息"
 
 msgid "Review Status"
 msgstr "审核状态"
+
+msgid "Payroll Employees"
+msgstr "薪资员工"
+
+msgid "Payroll Groups"
+msgstr "工资组"
+
+msgid "Saved Calculations"
+msgstr "保存的计算"
+
+msgid "Total Leave Days"
+msgstr "休假总天数"

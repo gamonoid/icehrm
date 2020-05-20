@@ -1,7 +1,12 @@
 <?php
 namespace Model;
 
+use Classes\BaseService;
 use Classes\IceResponse;
+use Classes\ModuleAccess;
+use Classes\ModuleAccessService;
+use Modules\Common\Model\Module;
+use Utils\LogManager;
 
 class BaseModel extends \ADOdb_Active_Record
 {
@@ -24,9 +29,62 @@ class BaseModel extends \ADOdb_Active_Record
         return array("get","element","save","delete");
     }
 
-    public function getOtherAccess()
+    private function getRestrictedAccess($userRoles, $allowedAccessMatrix)
     {
-        return array();
+        if (empty($userRoles)) {
+            return $this->getDefaultAccessLevel();
+        }
+
+        $userRoles = json_decode($userRoles, true);
+
+        if (empty($userRoles)) {
+            return $this->getDefaultAccessLevel();
+        }
+
+        $moduleAccessData = $this->getModuleAccess();
+        if (empty($moduleAccessData)) {
+            return $this->getDefaultAccessLevel();
+        }
+
+        $modules = [];
+        /** @var ModuleAccess $moduleAccess */
+        foreach ($moduleAccessData as $moduleAccess) {
+            $modules[] = ModuleAccessService::getInstance()->getModule(
+                $moduleAccess->getName(),
+                $moduleAccess->getGroup()
+            );
+        }
+
+        if (empty($modules)) {
+            return $this->getDefaultAccessLevel();
+        }
+
+        foreach ($modules as $module) {
+            if (empty($module->user_roles) || $module->user_roles == '[]') {
+                continue;
+            }
+
+            if (count(array_intersect($userRoles, json_decode($module->user_roles, true))) > 0) {
+                return $allowedAccessMatrix;
+            }
+        }
+
+        return $this->getDefaultAccessLevel();
+    }
+
+    public function getRestrictedAdminAccess($userRoles)
+    {
+        return $this->getRestrictedAccess($userRoles, $this->getAdminAccess());
+    }
+
+    public function getRestrictedManagerAccess($userRoles)
+    {
+        return $this->getRestrictedAccess($userRoles, $this->getAdminAccess());
+    }
+
+    public function getRestrictedEmployeeAccess($userRoles)
+    {
+        return $this->getRestrictedAccess($userRoles, $this->getAdminAccess());
     }
 
     public function getManagerAccess()
@@ -69,6 +127,11 @@ class BaseModel extends \ADOdb_Active_Record
         return "employee";
     }
 
+    public function getModuleAccess()
+    {
+        return [];
+    }
+
     public function validateSave($obj)
     {
         return new IceResponse(IceResponse::SUCCESS, "");
@@ -109,7 +172,7 @@ class BaseModel extends \ADOdb_Active_Record
 
     public function getDefaultAccessLevel()
     {
-        return array("get","element","save","delete");
+        return $this->getAnonymousAccess();
     }
 
     public function getVirtualFields()
@@ -125,7 +188,7 @@ class BaseModel extends \ADOdb_Active_Record
 
     public function getDisplayName()
     {
-        return get_called_class();
+        return $this->getEntity();
     }
 
     public function fieldValueMethods()
@@ -179,4 +242,67 @@ class BaseModel extends \ADOdb_Active_Record
 
         return $keys;
     }
+
+    // @codingStandardsIgnoreStart
+
+    public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
+    {
+        if ($cache && BaseService::getInstance()->queryCacheEnabled()) {
+            $data = BaseService::getInstance()->getCacheService()->getDBQuery($this->getEntity(),$whereOrderBy, $bindarr);
+            if ($data !== null) {
+                return $data;
+            }
+        }
+
+        $data = parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
+
+        if (empty($data)) {
+            return $data;
+        }
+
+        if ($cache && BaseService::getInstance()->queryCacheEnabled()) {
+            BaseService::getInstance()->getCacheService()->setDBQuery($this->getEntity(),$whereOrderBy, $bindarr, $data);
+        }
+
+        return $data;
+    }
+
+    protected function getEntity()
+    {
+        $data = explode('\\', get_called_class());
+        return end($data);
+    }
+
+    public function Save()
+    {
+        $ok = parent::Save();
+        if (!$ok) {
+            $message = sprintf('%s: (%s) %s', 'Error saving :', $this->ErrorMsg(), json_encode($this));
+            LogManager::getInstance()->error($message);
+            LogManager::getInstance()->notifyException(new \Exception($message));
+        }
+        if (BaseService::getInstance()->queryCacheEnabled()) {
+            BaseService::getInstance()->getCacheService()->deleteByEntity($this->getEntity());
+        }
+
+
+        return $ok;
+    }
+
+    public function Delete()
+    {
+        $ok = parent::Delete();
+        if (!$ok) {
+            $message = sprintf('%s: (%s) %s', 'Error deleting', $this->ErrorMsg(), json_encode($this));
+            LogManager::getInstance()->error($message);
+            LogManager::getInstance()->notifyException(new \Exception($message));
+        }
+
+        if (BaseService::getInstance()->queryCacheEnabled()) {
+            BaseService::getInstance()->getCacheService()->deleteByEntity($this->getEntity());
+        }
+
+        return $ok;
+    }
+    // @codingStandardsIgnoreEnd
 }

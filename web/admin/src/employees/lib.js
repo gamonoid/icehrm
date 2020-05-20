@@ -296,7 +296,7 @@ class EmployeeSubLanguageAdapter extends SubAdapterBase {
   }
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 }
 
@@ -504,16 +504,13 @@ class EmployeeSubDocumentAdapter extends SubAdapterBase {
 
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 }
 
 class SubProfileEnabledAdapterBase extends AdapterBase {
   isSubProfileTable() {
-    if (this.user.user_level === 'Admin') {
-      return false;
-    }
-    return true;
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin'
   }
 }
 
@@ -592,7 +589,7 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
     const newTableFields = [];
     for (let i = 0; i < tableFields.length; i++) {
       if ((this.hiddenFields[tableFields[i]] === undefined || this.hiddenFields[tableFields[i]] === null)
-                && (this.formOnlyFields[tableFields[i]] === undefined || this.formOnlyFields[tableFields[i]] === null)) {
+        && (this.formOnlyFields[tableFields[i]] === undefined || this.formOnlyFields[tableFields[i]] === null)) {
         newTableFields.push(tableFields[i]);
       }
     }
@@ -610,7 +607,7 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
 
     for (let i = 0; i < tableFields.length; i++) {
       if ((this.hiddenFields[tableFields[i]] === undefined || this.hiddenFields[tableFields[i]] === null)
-                && (this.formOnlyFields[tableFields[i]] === undefined || this.formOnlyFields[tableFields[i]] === null)) {
+        && (this.formOnlyFields[tableFields[i]] === undefined || this.formOnlyFields[tableFields[i]] === null)) {
         if (this.fieldNameMap[tableFields[i]] !== undefined && this.fieldNameMap[tableFields[i]] !== null) {
           title = this.fieldNameMap[tableFields[i]].textMapped;
           if (title === undefined || title === null || title === '') {
@@ -639,7 +636,7 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
       ['nationality', { label: 'Nationality', type: 'select2', 'remote-source': ['Nationality', 'id', 'name'] }],
       ['birthday', { label: 'Date of Birth', type: 'date', validation: '' }],
-      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female']] }],
+      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Divers', 'Divers']] }],
       ['marital_status', { label: 'Marital Status', type: 'select', source: [['Married', 'Married'], ['Single', 'Single'], ['Divorced', 'Divorced'], ['Widowed', 'Widowed'], ['Other', 'Other']] }],
       ['ethnicity', {
         label: 'Ethnicity', type: 'select2', 'allow-null': true, 'remote-source': ['Ethnicity', 'id', 'name'],
@@ -752,7 +749,7 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
       deleteBtn = '';
     }
     // eslint-disable-next-line max-len
-    let html = `<div style="width:110px;"><img class="tableActionButton" src="_BASE_images/user.png" style="cursor:pointer;" rel="tooltip" title="Login as this Employee" onclick="modJs.setAdminProfile(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/view.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="View" onclick="modJs.view(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/edit.png" style="display:none;cursor:pointer;margin-left:15px;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>${deleteBtn}</div>`;
+    let html = `<div style="width:110px;"><img class="tableActionButton" src="_BASE_images/user.png" style="cursor:pointer;" rel="tooltip" title="Login as this Employee" onclick="modJs.setAdminProfile(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/view.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="View" onclick="modJs.view(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>${deleteBtn}</div>`;
     html = html.replace(/_id_/g, id);
     html = html.replace(/_BASE_/g, this.baseUrl);
     return html;
@@ -1141,7 +1138,7 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
       ['nationality', { label: 'Nationality', type: 'select2', 'remote-source': ['Nationality', 'id', 'name'] }],
       ['birthday', { label: 'Date of Birth', type: 'date', validation: '' }],
-      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female']] }],
+      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Divers', 'Divers']] }],
       ['marital_status', { label: 'Marital Status', type: 'select', source: [['Married', 'Married'], ['Single', 'Single'], ['Divorced', 'Divorced'], ['Widowed', 'Widowed'], ['Other', 'Other']] }],
       ['ssn_num', { label: 'SSN/NRIC', type: 'text', validation: 'none' }],
       ['nic_num', { label: 'NIC', type: 'text', validation: 'none' }],
@@ -1269,7 +1266,7 @@ class ArchivedEmployeeAdapter extends SubProfileEnabledAdapterBase {
       ['first_name', { label: 'First Name', type: 'text', validation: '' }],
       ['middle_name', { label: 'Middle Name', type: 'text', validation: 'none' }],
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
-      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female']] }],
+      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Divers', 'Divers']] }],
       ['ssn_num', { label: 'SSN/NRIC', type: 'text', validation: 'none' }],
       ['nic_num', { label: 'NIC', type: 'text', validation: 'none' }],
       ['other_id', { label: 'Other ID', type: 'text', validation: 'none' }],
@@ -1371,7 +1368,7 @@ class EmployeeSkillAdapter extends SubProfileEnabledAdapterBase {
   }
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 }
 
@@ -1440,7 +1437,7 @@ class EmployeeEducationAdapter extends SubProfileEnabledAdapterBase {
   }
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 }
 
@@ -1510,7 +1507,7 @@ class EmployeeCertificationAdapter extends SubProfileEnabledAdapterBase {
 
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 }
 
@@ -1588,7 +1585,7 @@ class EmployeeLanguageAdapter extends SubProfileEnabledAdapterBase {
   }
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 }
 
@@ -1651,7 +1648,7 @@ class EmployeeDependentAdapter extends SubProfileEnabledAdapterBase {
   }
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 }
 
@@ -1717,7 +1714,7 @@ class EmergencyContactAdapter extends SubProfileEnabledAdapterBase {
   }
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 }
 
@@ -1780,7 +1777,7 @@ class EmployeeImmigrationAdapter extends SubProfileEnabledAdapterBase {
   }
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 }
 
@@ -1850,7 +1847,7 @@ class EmployeeDocumentAdapter extends AdapterBase {
   }
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 }
 

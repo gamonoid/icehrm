@@ -42,7 +42,7 @@ class IceCron
         $time = intval($this->cron->time);
 
         if (empty($frequency) || !is_int($frequency)) {
-            LogManager::getInstance()->debug(
+            LogManager::getInstance()->error(
                 "Cron ".$this->cron->name." is not running since frequency is not an integer"
             );
             return false;

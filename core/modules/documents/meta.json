@@ -1,0 +1,26 @@
+{
+    "label": "My Documents",
+    "menu": "Documents",
+    "order": "1",
+    "icon": "fa-file",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "dashboardPosition": 106,
+    "permissions": {
+        "Manager": {
+            "Add Documents": "Yes",
+            "Edit Documents": "Yes",
+            "Delete Documents": "Yes"
+        },
+        "Employee": {
+            "Add Documents": "Yes",
+            "Edit Documents": "Yes",
+            "Delete Documents": "Yes"
+        }
+    },
+    "model_namespace": "\\Documents\\Common\\Model",
+    "manager": "\\Documents\\User\\Api\\DocumentsModulesManager"
+}

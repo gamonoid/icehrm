@@ -8,6 +8,8 @@
 
 namespace Model;
 
+use Classes\ModuleAccess;
+
 class UserReport extends BaseModel
 {
     public function getAdminAccess()
@@ -23,6 +25,13 @@ class UserReport extends BaseModel
     public function getUserAccess()
     {
         return array("get","element");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('reports', 'user'),
+        ];
     }
 
     public function postProcessGetData($entry)

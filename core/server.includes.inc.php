@@ -55,6 +55,20 @@ $migrationManager->setMigrationPath(APP_BASE_PATH .'/migrations/');
 
 $notificationManager->setBaseService($baseService);
 
+if (defined('REDIS_SERVER_URI')
+    && !empty(REDIS_SERVER_URI)
+    && defined('QUERY_CACHE_TYPE')
+    && QUERY_CACHE_TYPE === 'redis'
+) {
+    \Classes\BaseService::getInstance()->setCacheService(
+        new \Classes\RedisCacheService(REDIS_SERVER_URI, CLIENT_NAME)
+    );
+} else {
+    \Classes\BaseService::getInstance()->setCacheService(
+        new \Classes\MemoryCacheService(CLIENT_NAME)
+    );
+}
+
 $noJSONRequests = \Classes\SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request");
 
 $debugMode = \Classes\SettingsManager::getInstance()->getSetting("System: Debug Mode");
@@ -146,6 +160,16 @@ if ($emailEnabled == "1") {
 function shutdown()
 {
     session_write_close();
+    $error = error_get_last();
+    if (!empty($error) && isset($error['type']) && in_array($error['type'], [E_ERROR, E_PARSE])) {
+        \Utils\LogManager::getInstance()->notifyException(new ErrorException(
+            $error['message'],
+            0,
+            1,
+            $error['file'],
+            $error['line']
+        ));
+    }
 }
 
 register_shutdown_function('shutdown');

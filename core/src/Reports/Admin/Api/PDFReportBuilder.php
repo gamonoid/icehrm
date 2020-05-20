@@ -36,8 +36,7 @@ class PDFReportBuilder extends ReportBuilder
             $path = APP_BASE_PATH."admin/reports/customTemplates/";
         }
         $loader = new \Twig_Loader_Filesystem($path);
-        $twigOptions = array();
-        //false
+
         if (defined('CACHE_THEME') && CACHE_THEME) {
             $twigOptions = array(
             );
@@ -81,6 +80,7 @@ class PDFReportBuilder extends ReportBuilder
                 $fileFullName = $fileFullNamePdf;
             }
         } catch (\Exception $exp) {
+            LogManager::getInstance()->notifyException($exp);
         }
         return array($fileFirstPart, $fileName, $fileFullName);
     }

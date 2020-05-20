@@ -1,6 +1,7 @@
 <?php
 namespace Employees\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class ArchivedEmployee extends BaseModel
@@ -29,6 +30,13 @@ class ArchivedEmployee extends BaseModel
     public function getUserOnlyMeAccessField()
     {
         return "id";
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('employees', 'admin'),
+        ];
     }
 
     public $table = 'ArchivedEmployees';

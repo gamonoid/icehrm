@@ -1960,3 +1960,15 @@ msgstr "Ge feedback"
 
 msgid "Review Status"
 msgstr "Granska status"
+
+msgid "Payroll Employees"
+msgstr "Löneanställda"
+
+msgid "Payroll Groups"
+msgstr "Lönegrupper"
+
+msgid "Saved Calculations"
+msgstr "Sparade beräkningar"
+
+msgid "Total Leave Days"
+msgstr "Totalt ledighet dagar"

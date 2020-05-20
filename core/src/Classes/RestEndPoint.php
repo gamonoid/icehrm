@@ -5,11 +5,38 @@ use Classes\Data\DataReader;
 use Classes\Data\Query\DataQuery;
 use Classes\Upload\Uploader;
 use Employees\Common\Model\Employee;
+use Model\BaseModel;
 use Users\Common\Model\User;
 use Utils\SessionUtils;
 
 class RestEndPoint
 {
+    /*
+    200
+    GET/PUT
+    Response entity details or list of entities.
+
+    201
+    POST
+    To create a new entity.
+
+    400
+    GET/POST/PUT/DELETE
+    Request payload and query params validation error
+
+    401
+    GET/POST/PUT/DELETE
+    Authentication error
+
+    403
+    GET/POST/PUT/DELETE
+    Authorization issue
+
+    404
+    GET/POST/PUT/DELETE
+    We don’t have the endpoint
+
+     */
     const RESPONSE_ERR_ENTITY_NOT_FOUND = 'Entity not found';
     const RESPONSE_ERR_PERMISSION_DENIED = 'Permission denied';
     const RESPONSE_ERR_UNPROCESSABLE = 'Unprocessable Entity';
@@ -18,6 +45,8 @@ class RestEndPoint
     const DEFAULT_LIMIT = 50;
 
     const ELEMENT_NAME = '';
+
+    protected $cachedObjects = [];
 
     public function getModelObject($id)
     {
@@ -56,21 +85,38 @@ class RestEndPoint
         return new IceResponse(IceResponse::SUCCESS);
     }
 
-    public function process($type, $parameters = [])
+    public function process($type, $parameters = [], $requireAccessToken = true)
     {
+        if ($parameters === null) {
+            $parameters = [];
+        }
+
         if (!is_array($parameters)) {
             $parameters = [$parameters];
         }
-        $accessTokenValidation = $this->validateAccessToken();
-        if (!empty($accessTokenValidation) && $accessTokenValidation->getStatus() == IceResponse::ERROR) {
-            $resp = $accessTokenValidation;
-        } else {
+
+        if ($requireAccessToken) {
+            $accessTokenValidation = $this->validateAccessToken();
+            if (!empty($accessTokenValidation) && $accessTokenValidation->getStatus() == IceResponse::ERROR) {
+                $resp = $accessTokenValidation;
+
+                return $this->sendResponse($resp);
+            }
+
             BaseService::getInstance()->setCurrentUser($accessTokenValidation->getData());
             SessionUtils::saveSessionObject('user', $accessTokenValidation->getData());
             array_unshift($parameters, $accessTokenValidation->getData());
-            $resp = call_user_func_array(array($this, $type), $parameters);
+        } else {
+            array_unshift($parameters, new User());
         }
 
+        $resp = call_user_func_array(array($this, $type), $parameters);
+
+        return $this->sendResponse($resp);
+    }
+
+    protected function sendResponse($resp)
+    {
         header('Content-Type: application/json');
 
         if ($resp->getStatus() == IceResponse::SUCCESS && $resp->getCode() == null) {
@@ -91,25 +137,64 @@ class RestEndPoint
             );
             $this->printResponse(array("error" => [$messages]));
         }
+
+        return true;
     }
 
+    /**
+     * @param BaseModel $obj
+     * @param $map
+     * @return mixed
+     */
     protected function enrichElement($obj, $map)
     {
-        if (!empty($map)) {
-            foreach ($map as $k => $v) {
-                if ($obj->$k !== null) {
-                    $obj->$k = [
-                        'type' => $v[0],
-                        $v[1] => $obj->$k,
-                        'display' => $obj->{$k . '_Name'}
-                    ];
-                } else {
-                    unset($obj->$k);
-                }
-                unset($obj->{$k . '_Name'});
+        if (empty($map)) {
+            return $obj;
+        }
+
+        foreach ($map as $k => $v) {
+            $fTable = BaseService::getInstance()->getFullQualifiedModelClassName($v[0]);
+            $tObj = new $fTable();
+            $tObjArr = $tObj->Find($v[1] . "= ?", [$obj->$k], true);
+            if (!is_array($tObjArr) || empty($tObjArr[0])) {
+                continue;
+            }
+            $obj->$k = [
+                'type' => $v[0],
+                $v[1] => $obj->$k,
+                'display' => $this->getCombinedValue($v[2], $tObjArr[0])
+            ];
+        }
+
+        return $obj;
+    }
+
+    protected function enrichElements($items, $map)
+    {
+        return array_map(function ($item) use ($map) {
+            return $this->enrichElement($item, $map);
+        }, $items);
+    }
+
+    protected function getCombinedValue($nameField, $targetObject)
+    {
+        $values = explode("+", $nameField);
+        if (count($values) == 1) {
+            return $targetObject->{$nameField};
+        }
+        $objVal = '';
+        foreach ($values as $value) {
+            if ($objVal != "") {
+                $objVal .= " ";
+            }
+            if (substr($value, 0, 1) !== ':') {
+                $objVal .= $targetObject->{$value};
+            } else {
+                $objVal .= substr($value, 1);
             }
         }
-        return $obj;
+
+        return $objVal;
     }
 
     protected function cleanObject($obj)
@@ -164,6 +249,10 @@ class RestEndPoint
         $output = array();
         $columns = $query->getColumns();
         foreach ($data as $item) {
+            if (!empty($query->getFieldMapping())) {
+                $map = json_decode($query->getFieldMapping(), true);
+                $item = $this->enrichElement($item, $map);
+            }
             if (!empty($columns)) {
                 $obj = new \stdClass();
                 foreach ($columns as $column) {

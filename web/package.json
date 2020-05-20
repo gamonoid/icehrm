@@ -1,0 +1,17 @@
+{
+  "name": "icehrm-web",
+  "version": "",
+  "description": "Simple HR Management",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "antd": "^4.1.4",
+    "codemirror": "^5.49.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

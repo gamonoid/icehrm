@@ -1960,3 +1960,15 @@ msgstr "Provide Feedback"
 
 msgid "Review Status"
 msgstr "Review Status"
+
+msgid "Payroll Employees"
+msgstr "Payroll Employees"
+
+msgid "Payroll Groups"
+msgstr "Payroll Groups"
+
+msgid "Saved Calculations"
+msgstr "Saved Calculations"
+
+msgid "Total Leave Days"
+msgstr "Total Leave Days"

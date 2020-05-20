@@ -8,6 +8,7 @@
 
 namespace FieldNames\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class FieldNameMapping extends BaseModel
@@ -22,5 +23,12 @@ class FieldNameMapping extends BaseModel
     public function getUserAccess()
     {
         return array();
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('fieldnames', 'admin'),
+        ];
     }
 }

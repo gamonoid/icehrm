@@ -2,6 +2,7 @@
 namespace Company\Common\Model;
 
 use Model\BaseModel;
+use Utils\LogManager;
 
 class Timezone extends BaseModel
 {
@@ -22,6 +23,11 @@ class Timezone extends BaseModel
         return array("get","element");
     }
 
+    public function getAnonymousAccess()
+    {
+        return array("get","element");
+    }
+
     public function getTimezonesWithOffset()
     {
         $tz = new Timezone();
@@ -34,6 +40,7 @@ class Timezone extends BaseModel
                 $tz->details = sprintf("(%s) %s", $this->formatOffset($z->getOffset($c)), $tz->name);
                 $modifiedTimeZones[] = $tz;
             } catch (\Exception $e) {
+                LogManager::getInstance()->notifyException($e);
             }
         }
 

@@ -5,6 +5,7 @@
  */
 namespace Users\Admin\Api;
 
+use Classes\PasswordManager;
 use Users\Common\Model\User;
 use Classes\IceResponse;
 use Classes\SubActionManager;
@@ -31,7 +32,13 @@ class UsersActionManager extends SubActionManager
                     "Please save the user first"
                 );
             }
-            $user->password = md5($req->pwd);
+
+            $passwordStrengthResponse = PasswordManager::isQualifiedPassword($req->pwd);
+            if ($passwordStrengthResponse->getStatus() === IceResponse::ERROR) {
+                return $passwordStrengthResponse;
+            }
+
+            $user->password = PasswordManager::createPasswordHash($req->pwd);
             $ok = $user->Save();
             if (!$ok) {
                 return new IceResponse(IceResponse::ERROR, $user->ErrorMsg());

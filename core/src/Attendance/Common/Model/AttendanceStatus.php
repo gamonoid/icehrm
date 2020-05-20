@@ -8,6 +8,7 @@
 
 namespace Attendance\Common\Model;
 
+use Classes\ModuleAccess;
 use Classes\SettingsManager;
 use Employees\Common\Model\Employee;
 use Model\BaseModel;
@@ -135,5 +136,13 @@ class AttendanceStatus extends BaseModel
     public function getUserOnlyMeAccess()
     {
         return array("element","save","delete");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('attendance', 'admin'),
+            new ModuleAccess('attendance', 'user'),
+        ];
     }
 }

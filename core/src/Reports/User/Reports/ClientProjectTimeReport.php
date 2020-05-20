@@ -9,7 +9,7 @@ use Metadata\Common\Model\Country;
 use Reports\Admin\Api\PDFReportBuilder;
 use Reports\Admin\Api\PDFReportBuilderInterface;
 use Employees\Common\Model\Employee;
-use Projects\Common\Model\Client;
+use Clients\Common\Model\Client;
 use Projects\Common\Model\Project;
 use TimeSheets\Common\Model\EmployeeTimeEntry;
 use Utils\CalendarTools;

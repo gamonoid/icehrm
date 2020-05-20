@@ -6,6 +6,7 @@
 
 namespace Users\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class UserRole extends BaseModel
@@ -18,6 +19,13 @@ class UserRole extends BaseModel
     public function getUserAccess()
     {
         return array();
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('users', 'admin'),
+        ];
     }
 
     public $table = 'UserRoles';

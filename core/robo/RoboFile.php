@@ -21,12 +21,12 @@ class RoboFile extends \Robo\Tasks
     }
 
 
-    function hello(array $world)
+    public function hello(array $world)
     {
         $this->say("Hello, " . implode(', ', $world));
     }
 
-    function languageList($client) {
+    public function languageList($client) {
 	    $this->includeCientConfig($client);
 	    $this->say("Supported Languages for ". $client);
 	    $language = new \Metadata\Common\Model\SupportedLanguage();
@@ -35,7 +35,7 @@ class RoboFile extends \Robo\Tasks
 	    $this->say(print_r(array_column($langs, 'name'), true));
     }
 
-    function languageExport($client) {
+    public function languageExport($client) {
 	    $this->includeCientConfig($client);
 	    $language = new \Metadata\Common\Model\SupportedLanguage();
 	    $languages = $language->Find('1 = 1 order by id');
@@ -65,7 +65,7 @@ class RoboFile extends \Robo\Tasks
 	    $this->say('File saved');
     }
 
-	function languageImport($client, $file) {
+    public function languageImport($client, $file) {
 		$this->includeCientConfig($client);
 
 		$language = new \Metadata\Common\Model\SupportedLanguage();
@@ -79,7 +79,7 @@ class RoboFile extends \Robo\Tasks
 		}
 	}
 
-    function migrate($client, $action){
+    public function migrate($client, $action){
         $this->includeCientConfig($client);
         $this->say("DB Migrating " . $action . " for ". $client);
         $migrationManager = new \Classes\Migration\MigrationManager();
@@ -88,7 +88,7 @@ class RoboFile extends \Robo\Tasks
         $this->say("DB Migrating Result : " . print_r($res, true));
     }
 
-    function migrateAll($client){
+    public function migrateAll($client){
         $this->includeCientConfig($client);
         $this->say("Run all pending migrations " . " for ". $client);
         $migrationManager = new \Classes\Migration\MigrationManager();
@@ -106,6 +106,92 @@ class RoboFile extends \Robo\Tasks
             }
         }
         $this->say("DB Migration Completed !!!");
+    }
+
+    public function resetDb($client){
+        $this->includeCientConfig($client);
+        $connection = new mysqli(APP_HOST, APP_USERNAME, APP_PASSWORD);
+
+        if ($connection->connect_error) {
+            $this->say("Connection failed: " . $connection->connect_error);
+            exit(1);
+        }
+
+        $this->executeQuery($connection, sprintf('DROP DATABASE %s', APP_DB));
+        $this->executeQuery($connection, sprintf('CREATE DATABASE %s', APP_DB));
+
+        $this->executeQuery(
+            $connection,
+            sprintf("GRANT ALL ON %s.* to '%s'@'localhost'", APP_DB, APP_USERNAME)
+        );
+
+        $this->say("DB Reset Successful");
+    }
+
+    public function createTables($client){
+        $this->includeCientConfig($client);
+        $connection = new mysqli(APP_HOST, APP_USERNAME, APP_PASSWORD);
+
+        if ($connection->connect_error) {
+            $this->say("Connection failed: " . $connection->connect_error);
+            exit(1);
+        }
+
+        $this->executeQuery($connection, sprintf('use %s', APP_DB));
+
+
+        //Run create table script
+        $insql = file_get_contents(APP_BASE_PATH."scripts/icehrmdb.sql");
+        $sql_list = preg_split('/;/',$insql);
+        foreach($sql_list as $sql){
+            if (preg_match('/^\s+$/', $sql) || $sql == '') { # skip empty lines
+                continue;
+            }
+            $this->executeQuery($connection, $sql);
+        }
+
+        //Run master data script
+        $insql = file_get_contents(APP_BASE_PATH."scripts/icehrm_master_data.sql");
+        $sql_list = preg_split('/;/',$insql);
+        foreach($sql_list as $sql){
+            if (preg_match('/^\s+$/', $sql) || $sql == '') { # skip empty lines
+                continue;
+            }
+            $this->executeQuery($connection, $sql);
+        }
+
+        $this->say("Create Tables Successful");
+    }
+
+    public function executeFixtures($client){
+        $this->includeCientConfig($client);
+        $connection = new mysqli(APP_HOST, APP_USERNAME, APP_PASSWORD);
+
+        if ($connection->connect_error) {
+            $this->say("Connection failed: " . $connection->connect_error);
+            exit(1);
+        }
+
+        $this->executeQuery($connection, sprintf('use %s', APP_DB));
+
+        $insql = file_get_contents(APP_BASE_PATH."scripts/icehrm_fixtures.sql");
+        $sql_list = preg_split('/;/',$insql);
+        foreach($sql_list as $sql){
+            if (preg_match('/^\s+$/', $sql) || $sql == '') { # skip empty lines
+                continue;
+            }
+            $this->executeQuery($connection, $sql);
+        }
+
+        $this->say("Execute Fixtures Successful : ");
+    }
+
+    private function executeQuery($connection, $sql) {
+        $connection->query($sql);
+        if ($connection->error) {
+            $this->say($connection->error);
+            $this->say($sql);
+        }
     }
 
 	/**

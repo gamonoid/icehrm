@@ -6,25 +6,10 @@ include("server.includes.inc.php");
 
 if (isset($_REQUEST['logout'])) {
     \Utils\SessionUtils::unsetClientSession();
-    $_COOKIE['icehrmLF'] = '';
     $user = null;
 }
-$hashedPwd = null;
-if (empty($user) || empty($user->email)) {
-	if (!isset($_REQUEST['f']) && isset($_COOKIE['icehrmLF'])
-		&& $_REQUEST['login'] != 'no' && !isset($_REQUEST['username'])) {
-		$tempUser = new \Users\Common\Model\User();
-		$tempUser->Load("login_hash = ?", array($_COOKIE['icehrmLF']));
 
-		if (!empty($tempUser->id) &&
-			sha1($tempUser->email."_".$tempUser->password) == $_COOKIE['icehrmLF']) {
-			$_REQUEST['username'] = $tempUser->username;
-			$_REQUEST['password'] = $tempUser->password;
-			$hashedPwd = $tempUser->password;
-			$_REQUEST['remember'] = true;
-            $cookieLogin = true;
-		}
-	}
+if (empty($user) || empty($user->email)) {
 
 	if (!empty($_REQUEST['username']) && !empty($_REQUEST['password'])) {
 		$suser = null;
@@ -48,19 +33,22 @@ if (empty($user) || empty($user->email)) {
 			}
 		}
 
-		if (!isset($hashedPwd)) {
-			$hashedPwd = md5($_REQUEST['password']);
-		}
-
 		if (empty($suser)) {
 			$suser = new \Users\Common\Model\User();
 			$suser->Load(
-				"(username = ? or email = ?) and password = ?",
-				array($_REQUEST['username'], $_REQUEST['username'], $hashedPwd)
+				"username = ? or email = ?",
+				[
+                    $_REQUEST['username'],
+                    $_REQUEST['username'],
+                ]
 			);
+
+			if (!\Classes\PasswordManager::verifyPassword($_REQUEST['password'], $suser->password)) {
+                $suser = null;
+            }
 		}
 
-		if (empty($suser->username) || empty($suser->email)) {
+        if (empty($suser)) {
             $next = !empty($_REQUEST['next'])?'&next='.$_REQUEST['next']:'';
             header("Location:".CLIENT_BASE_URL."login.php?f=1".$next);
             exit();
@@ -68,13 +56,13 @@ if (empty($user) || empty($user->email)) {
 
         $loginCsrf = \Utils\SessionUtils::getSessionObject('csrf-login');
 
-        if (!$cookieLogin && ($_REQUEST['csrf'] != $loginCsrf || empty($_REQUEST['csrf']))) {
+        if ($_REQUEST['csrf'] != $loginCsrf || empty($_REQUEST['csrf'])) {
             $next = !empty($_REQUEST['next'])?'&next='.$_REQUEST['next']:'';
             header("Location:".CLIENT_BASE_URL."login.php?f=1".$next);
             exit();
         }
 
-		if ($suser->password === $hashedPwd || $ssoUserLoaded) {
+		if (!empty($suser)) {
 			$user = $suser;
 			\Utils\SessionUtils::saveSessionObject('user', $user);
 			$suser->last_login = date("Y-m-d H:i:s");
@@ -83,20 +71,6 @@ if (empty($user) || empty($user->email)) {
 			if (!$ssoUserLoaded && !empty(\Classes\BaseService::getInstance()->auditManager)) {
 				\Classes\BaseService::getInstance()->auditManager->user = $user;
 				\Classes\BaseService::getInstance()->audit(\Classes\IceConstants::AUDIT_AUTHENTICATION, "User Login");
-			}
-
-			if (!$ssoUserLoaded && isset($_REQUEST['remember'])) {
-				//Add cookie
-				$suser->login_hash = sha1($suser->email."_".$suser->password);
-				$suser->Save();
-
-				setcookie('icehrmLF', $suser->login_hash, strtotime('+30 days'));
-			} else if (!isset($_REQUEST['remember'])) {
-				setcookie('icehrmLF', '');
-			}
-
-			if (!isset($_REQUEST['remember'])) {
-				setcookie('icehrmLF');
 			}
 
 			if (!empty($_REQUEST['next']) && !empty(($loginRedirect = \Base64Url\Base64Url::decode($_REQUEST['next'])))) {
@@ -370,11 +344,6 @@ $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
 								<div class="input-prepend">
 									<span class="add-on"><i class="icon-lock"></i></span>
 									<input class="span2" type="password" id="password" name="password" placeholder="Password">
-								</div>
-							</div>
-							<div class="clearfix">
-								<div class="checkbox">
-									<label><input id="remember" name="remember" type="checkbox" value="remember">Remember me</label>
 								</div>
 							</div>
 							<?php if (isset($_REQUEST['f'])) {?>

@@ -14,6 +14,13 @@ use Model\BaseModel;
 
 class PermissionManager
 {
+    const RESTRICTED_USER_LEVELS = ['Restricted Admin', 'Restricted Manager', 'Restricted Employee'];
+
+    public function isRestrictedUserLevel($userLevel)
+    {
+        return in_array($userLevel, self::RESTRICTED_USER_LEVELS);
+    }
+
     public static function manipulationAllowed($employeeId, BaseModel $object)
     {
         $subIds = self::getSubordinateIds($employeeId, $object->allowIndirectMapping());

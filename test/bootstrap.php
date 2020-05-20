@@ -8,9 +8,9 @@ $dropDBCommand = 'echo "DROP DATABASE IF EXISTS ' . APP_DB . '"| mysql -u' . MYS
 $createDBCommand = 'echo "CREATE DATABASE '.APP_DB.'"| mysql -u'.MYSQL_ROOT_USER.' -p'.MYSQL_ROOT_PASS;
 
 
-echo "Drop DB Command:".$dropDBCommand."\r\n";
+//echo "Drop DB Command:".$dropDBCommand."\r\n";
 exec($dropDBCommand);
-echo "Create DB Command:".$createDBCommand."\r\n";
+//echo "Create DB Command:".$createDBCommand."\r\n";
 exec($createDBCommand);
 
 //Run create table script
@@ -20,9 +20,9 @@ $scripts = array(
 );
 
 foreach ($scripts as $insql) {
-    echo $insql."\r\n";
+    //echo $insql."\r\n";
     $command = "cat ".$insql."| mysql -u".MYSQL_ROOT_USER." -p".MYSQL_ROOT_PASS." '".APP_DB."'";
     exec($command);
 }
 include(dirname(__FILE__).'/test.includes.php');
-echo "Bootstrapping done!!"."\r\n";
+//echo "Bootstrapping done!!"."\r\n";

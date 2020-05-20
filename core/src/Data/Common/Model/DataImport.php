@@ -1,6 +1,7 @@
 <?php
 namespace Data\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class DataImport extends BaseModel
@@ -15,5 +16,12 @@ class DataImport extends BaseModel
     public function getUserAccess()
     {
         return array("get","element");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('data', 'admin'),
+        ];
     }
 }

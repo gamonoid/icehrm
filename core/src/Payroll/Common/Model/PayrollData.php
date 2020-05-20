@@ -8,6 +8,7 @@
 
 namespace Payroll\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class PayrollData extends BaseModel
@@ -27,5 +28,12 @@ class PayrollData extends BaseModel
     public function getUserAccess()
     {
         return array();
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('payroll', 'admin'),
+        ];
     }
 }

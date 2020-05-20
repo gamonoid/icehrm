@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Api Common</title>
+    <script src="../js/jquery.js"></script>
+    <script src="bundle.js"></script>
+</head>
+<body>
+
+<script type="application/javascript">
+
+    window.onload = function () {
+       document.querySelector('#time').innerHTML
+           = new Date().toISOString().slice(0, 19).replace('T', ' ');
+       timeUtils = setupTimeUtils(5.5);
+       timeUtils.convertToRelativeTime($('#time'));
+    };
+
+    var requestCache = new RequestCache();
+    requestCache.setData('123', {'abc':123});
+    console.log(requestCache.getData('123'));
+
+
+</script>
+<span id="time"></span>
+</body>
+</html>

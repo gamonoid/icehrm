@@ -26,6 +26,7 @@ class EmailSenderTask implements IceTask
                 $emailSender->sendEmailFromDB($email);
             } catch (\Exception $e) {
                 LogManager::getInstance()->error("Error sending email:".$e->getMessage());
+                LogManager::getInstance()->notifyException($e);
             }
 
             $email->status = 'Sent';

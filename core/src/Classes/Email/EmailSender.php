@@ -8,9 +8,10 @@
 
 namespace Classes\Email;
 
-use Classes\Crypt\AesCtr;
+use Classes\PasswordManager;
 use Classes\UIManager;
 use Employees\Common\Model\Employee;
+use Model\EmailLogEntry;
 use Model\IceEmail;
 use Users\Common\Model\User;
 use Utils\LogManager;
@@ -145,7 +146,16 @@ abstract class EmailSender
             $emailBody = str_replace("#_".$k."_#", $v, $emailBody);
         }
 
-        return $this->sendMail($subject, $emailBody, $toEmail, $fromEmail, $user->email, $ccList, $bccList, APP_NAME);
+        return $this->sendEmailWithLogging(
+            $subject,
+            $emailBody,
+            $toEmail,
+            $fromEmail,
+            $user->email,
+            $ccList,
+            $bccList,
+            APP_NAME
+        );
     }
 
     public function sendEmailWithoutWrap($subject, $toEmail, $template, $params, $ccList = array(), $bccList = array())
@@ -181,7 +191,47 @@ abstract class EmailSender
             $emailBody = str_replace("#_".$k."_#", $v, $emailBody);
         }
 
-        $this->sendMail($subject, $emailBody, $toEmail, $fromEmail, $user->email, $ccList, $bccList);
+        $this->sendEmailWithLogging($subject, $emailBody, $toEmail, $fromEmail, $user->email, $ccList, $bccList);
+    }
+
+    protected function sendEmailWithLogging(
+        $subject,
+        $body,
+        $toEmail,
+        $fromEmail,
+        $replyToEmail = null,
+        $ccList = array(),
+        $bccList = array(),
+        $fromName = null
+    ) {
+        $emailLogEntry = new EmailLogEntry();
+        $emailLogEntry->subject = $subject;
+        $emailLogEntry->toEmail = $toEmail;
+        $emailLogEntry->body = $body;
+        $emailLogEntry->cclist = implode(',', $ccList);
+        $emailLogEntry->bcclist = implode(',', $bccList);
+        $emailLogEntry->created = date('Y-m-d H:i:s');
+        $emailLogEntry->updated = date('Y-m-d H:i:s');
+
+        $result = $this->sendMail(
+            $subject,
+            $body,
+            $toEmail,
+            $fromEmail,
+            $replyToEmail,
+            $ccList,
+            $bccList,
+            $fromName
+        );
+
+        $emailLogEntry->status = $result ? 'Sent' : 'Failed';
+        $ok = $emailLogEntry->Save();
+
+        if (!$ok) {
+            LogManager::getInstance()->error('Error adding email log for '.json_encode([$toEmail, $subject, $body]));
+        }
+
+        return $result;
     }
 
     abstract protected function sendMail(
@@ -211,15 +261,8 @@ abstract class EmailSender
         //$params['user'] = $user->first_name." ".$user->last_name;
         $params['url'] = CLIENT_BASE_URL;
 
-        $newPassHash = array();
-        $newPassHash["CLIENT_NAME"] = CLIENT_NAME;
-        $newPassHash["oldpass"] = $user->password;
-        $newPassHash["email"] = $user->email;
-        $newPassHash["time"] = time();
-        $json = json_encode($newPassHash);
+        $encJson = PasswordManager::createPasswordRestKey($user);
 
-        $encJson = AesCtr::encrypt($json, $user->password, 256);
-        $encJson = urlencode($user->id."-".$encJson);
         $params['passurl'] = CLIENT_BASE_URL."service.php?a=rsp&key=".$encJson;
 
         $emailBody = file_get_contents(APP_BASE_PATH.'/templates/email/passwordReset.html');

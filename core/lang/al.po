@@ -1,0 +1,1962 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 18.0\n"
+"Report-Msgid-Bugs-To: https://icehrm.com\n"
+"Last-Translator: Uran Ismaili\n"
+"Language-Team: DoniFoods\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-05-11T05:26:33+05:30\n"
+"PO-Revision-Date: 2020-05-11T05:26:33+05:30\n"
+"Language: Albanian\n"
+
+msgid "Save"
+msgstr "Ruaj"
+
+msgid "Cancel"
+msgstr "Anulo"
+
+msgid "Done"
+msgstr "I/E bërë"
+
+msgid "Clocked In Employees"
+msgstr "Punonjësit me kohë të regjistruar"
+
+msgid "Candidates"
+msgstr "Kandidatët"
+
+msgid "View Employees"
+msgstr "Shiko punonjësit"
+
+msgid "Add a New Employee"
+msgstr "Shto punonjës të ri"
+
+msgid "Leave Calendar"
+msgstr "Kalendari i ditëve të lira"
+
+msgid "Manage Client/Projects"
+msgstr "Menaxho Klientin / Projektet"
+
+msgid "Home"
+msgstr "Ballina / Shtëpi"
+
+msgid "Quick Access"
+msgstr "Qasje e shpejtë"
+
+msgid "Switch"
+msgstr "Ndrysho"
+
+msgid "Profile"
+msgstr "Profili"
+
+msgid "Sign out"
+msgstr "Shkyçu"
+
+msgid "Help"
+msgstr "Ndihmë"
+
+msgid "About"
+msgstr "Në lidhje me"
+
+msgid "Version"
+msgstr "Versioni"
+
+msgid "Release Date"
+msgstr "Data e lëshimit"
+
+msgid "Logged In"
+msgstr "I/E kyçur"
+
+msgid "Admin"
+msgstr "Admin"
+
+msgid "Dashboard"
+msgstr "Paneli komandues"
+
+msgid "Company Structure"
+msgstr "Struktura e kompanisë"
+
+msgid "Job Details Setup"
+msgstr "Konfigurimi i detaleve të vendit të punës"
+
+msgid "Qualifications Setup"
+msgstr "Konfigurimi i kualifikimeve"
+
+msgid "Training Setup"
+msgstr "Konfigurimi i trajnimit"
+
+msgid "Projects/Client Setup"
+msgstr "Konfigurimi i projekteve / klientit"
+
+msgid "Leave Settings"
+msgstr "Cilësimet e pushimit"
+
+msgid "Company Loans"
+msgstr "Kreditë e kompanisë"
+
+msgid "Audit Log"
+msgstr "Log-u i auditimit"
+
+msgid "Employees"
+msgstr "Punonjësit"
+
+msgid "Employee History"
+msgstr "Historia e punonjësit"
+
+msgid "Document Management"
+msgstr "Menaxhimi i dokumenteve"
+
+msgid "Travel Administration"
+msgstr "Administrimi i udhëtimeve"
+
+msgid "Expense Administration"
+msgstr "Administrimi i shpenzimit"
+
+msgid "Monitor Attendance"
+msgstr "Monitoro pjesëmarrjen"
+
+msgid "Performance Charts"
+msgstr "Grafikët e performancës"
+
+msgid "Overtime Administration"
+msgstr "Administrimi i orëve shtesë"
+
+msgid "Admin Reports"
+msgstr "Raportet e Admin"
+
+msgid "Reports"
+msgstr "Raportet"
+
+msgid "Report Files"
+msgstr "Datotekat e raporteve"
+
+msgid "System"
+msgstr "Sistemi"
+
+msgid "Settings"
+msgstr "Cilësimet"
+
+msgid "Users"
+msgstr "Përdoruesit"
+
+msgid "Manage Modules"
+msgstr "Menaxho modulet"
+
+msgid "Manage Permissions"
+msgstr "Menaxho autorizimet"
+
+msgid "Upgrade"
+msgstr "Ngrite"
+
+msgid "Manage MetaData"
+msgstr "Menaxho Meta Data-t"
+
+msgid "Field Names Setup"
+msgstr "Konfigurimi i emërtimeve të fushave"
+
+msgid "Payroll"
+msgstr "Listë-pagesa"
+
+msgid "Salary"
+msgstr "Paga"
+
+msgid "Payroll Reports"
+msgstr "Raportet e pagave"
+
+msgid "Recruitment"
+msgstr "Rekrutim/i"
+
+msgid "Recruitment Setup"
+msgstr "Konfigurimi i rekrutimit"
+
+msgid "Job Positions"
+msgstr "Pozita e vendit të punës"
+
+msgid "Personal Information"
+msgstr "Informatat personale"
+
+msgid "Basic Information"
+msgstr "Informatat bazike"
+
+msgid "Qualifications"
+msgstr "Kualifikimet"
+
+msgid "Dependents"
+msgstr "Vartësit"
+
+msgid "Emergency Contacts"
+msgstr "Kontaktet emergjente"
+
+msgid "Leave"
+msgstr "Pushimi"
+
+msgid "Leave Management"
+msgstr "Menaxhimi i pushimit"
+
+msgid "Time Management"
+msgstr "Menaxhimi i kohës"
+
+msgid "Projects"
+msgstr "Projektet"
+
+msgid "Attendance"
+msgstr "Pjesëmarrja/e"
+
+msgid "Time Sheets"
+msgstr "Fletë-kohët"
+
+msgid "Attendance Sheets"
+msgstr "Fletë-pjesëmarrjet"
+
+msgid "Overtime Requests"
+msgstr "Kërkesat për orë shtesë"
+
+msgid "Documents"
+msgstr "Dokumentet"
+
+msgid "My Documents"
+msgstr "Dokumentet e mia"
+
+msgid "Company"
+msgstr "Kompania"
+
+msgid "Staff Directory"
+msgstr "Direktoriumi i personelit"
+
+msgid "Training"
+msgstr "Trajnim/i"
+
+msgid "Travel Management"
+msgstr "Menaxhimi i udhëtimit"
+
+msgid "Travel"
+msgstr "Udhëtim"
+
+msgid "Finance"
+msgstr "Financat"
+
+msgid "Expenses"
+msgstr "Shpenzimet"
+
+msgid "Loans"
+msgstr "Kreditë"
+
+msgid "User Reports"
+msgstr "Raportet e përdoruesit"
+
+msgid "People"
+msgstr "Njerëzit"
+
+msgid "Manage"
+msgstr "Menaxho"
+
+msgid "Departments"
+msgstr "Departamentet"
+
+msgid "Active Projects"
+msgstr "Projektet aktive"
+
+msgid "Update Clients/Projects"
+msgstr "Azhurno Klientët / Projektet"
+
+msgid "Entries Last Week"
+msgstr "Shënimet për javën e fundit"
+
+msgid "Upcoming"
+msgstr "Në vijim / Të ardhshëm"
+
+msgid "View / Download Reports"
+msgstr "Shiko / Shkarko raportet"
+
+msgid "Generate a Report"
+msgstr "Gjenero raportin"
+
+msgid "Configure"
+msgstr "Konfiguro"
+
+msgid "Update"
+msgstr "Azhurno"
+
+msgid "Applicants"
+msgstr "Aplikantët"
+
+msgid "Active Jobs"
+msgstr "Vendet e punës aktive"
+
+msgid "Jobs Posted"
+msgstr "Vendet e punës të shpallura"
+
+msgid "Jobs"
+msgstr "Vendet e punës"
+
+msgid "Courses"
+msgstr "Kurset"
+
+msgid "Requests"
+msgstr "Kërkesat"
+
+msgid "Document"
+msgstr "Dokumenti"
+
+msgid "Management"
+msgstr "Menaxhmenti"
+
+msgid "Expense"
+msgstr "Shpenzim"
+
+msgid "Permission"
+msgstr "Leje"
+
+msgid "Permissions"
+msgstr "Lejet"
+
+msgid "and"
+msgstr "dhe"
+
+msgid "Invoices"
+msgstr "Faturat"
+
+msgid "Make a Payment"
+msgstr "Kryej pagesë/n"
+
+msgid "Switch Employee"
+msgstr "Ndrysho punonjësin"
+
+msgid "Select The Employee to Switch Into"
+msgstr "Zgjidh punonjësin për të kaluar tek"
+
+msgid "Close"
+msgstr "Mbyll"
+
+msgid "My Profile"
+msgstr "Profili im"
+
+msgid "Edit Details"
+msgstr "Ndrysho detalet"
+
+msgid "View/Edit Profile"
+msgstr "Shiko / Ndrysho profilin"
+
+msgid "Punch In"
+msgstr "Koha hyrje"
+
+msgid "or"
+msgstr "ose"
+
+msgid "Punch Out"
+msgstr "Koha dalje"
+
+msgid "Record Attendance"
+msgstr "Evidentimi i pjesëmarrjes"
+
+msgid "Pending Leaves"
+msgstr "Pushimet në pritje"
+
+msgid "Check Leave Status"
+msgstr "Kontrollo statusin e pushimit"
+
+msgid "Hours worked Last Week"
+msgstr "Orët e punuara javën e kaluar"
+
+msgid "Update Time Sheet"
+msgstr "Azhurno fletë-kohën"
+
+msgid "My Projects"
+msgstr "Projektet e mia"
+
+msgid "Projects Assigned"
+msgstr "Projektet e caktuara"
+
+msgid "More info"
+msgstr "Më shumë informata"
+
+msgid "Store"
+msgstr "Dyqan / Ruaj"
+
+msgid "My Travel"
+msgstr "Udhëtimi im"
+
+msgid "My Expenses"
+msgstr "Shpenzimet e mia"
+
+msgid "Manage Expenses"
+msgstr "Menaxho shpenzimet"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Name"
+msgstr "Emri"
+
+msgid "Address"
+msgstr "Adresa"
+
+msgid "Type"
+msgstr "Lloji"
+
+msgid "Country"
+msgstr "Shteti"
+
+msgid "Time Zone"
+msgstr "Zona kohore"
+
+msgid "Parent Structure"
+msgstr "Struktura prindërore"
+
+msgid "Details"
+msgstr "Detalet"
+
+msgid "Heads"
+msgstr "Kryesuesit / Titujt"
+
+msgid "Code"
+msgstr "Kodi"
+
+msgid "Job Title Code"
+msgstr "Kodi i titullit të vendit të punës"
+
+msgid "Job Title"
+msgstr "Titulli i vendit të punës"
+
+msgid "Description"
+msgstr "Përshkrimi"
+
+msgid "Specification"
+msgstr "Specifikim"
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Min Salary"
+msgstr "Paga minimale"
+
+msgid "Max Salary"
+msgstr "Paga maksimale"
+
+msgid "Pay Grade Name"
+msgstr "Emërtimi i shkallës së pagesës"
+
+msgid "Employment Status"
+msgstr "Statusi i punësimit"
+
+msgid "Coordinator"
+msgstr "Koordinatori"
+
+msgid "Trainer"
+msgstr "Trajneri"
+
+msgid "Trainer Details"
+msgstr "Detalet e trajnerit"
+
+msgid "Payment Type"
+msgstr "Lloji i pagesës"
+
+msgid "Cost"
+msgstr "Kostoja"
+
+msgid "Status"
+msgstr "Statusi"
+
+msgid "Course"
+msgstr "Kursi"
+
+msgid "Scheduled Time"
+msgstr "Koha e planifikuar"
+
+msgid "Assignment Due Date"
+msgstr "Caktimi i datës së pritur"
+
+msgid "Delivery Method"
+msgstr "Metoda e liferimit"
+
+msgid "Delivery Location"
+msgstr "Lokacioni i liferimit"
+
+msgid "Attendance Type"
+msgstr "Lloji i pjesëmarrjes"
+
+msgid "Attachment"
+msgstr "Bashkëngjitje"
+
+msgid "Training Certificate Required"
+msgstr "Kërkohet certifikata e trajnimit"
+
+msgid "Employee"
+msgstr "Punonjës/i"
+
+msgid "Training Session"
+msgstr "Sesioni i trajnimit"
+
+msgid "Contact Number"
+msgstr "Numri i kontaktit"
+
+msgid "Contact Email"
+msgstr "E-mail për kontakt"
+
+msgid "Company Url"
+msgstr "Url e kompanisë"
+
+msgid "First Contact Date"
+msgstr "Data e parë e kontaktit"
+
+msgid "Client"
+msgstr "Klienti"
+
+msgid "Project"
+msgstr "Projekti"
+
+msgid "Leave Name"
+msgstr "Emërtimi i pushimit"
+
+msgid "Leave Accrue Enabled"
+msgstr "Akumulimi i ditëve të lira është i lejuar"
+
+msgid "Leave Carried Forward"
+msgstr "Pushimi i bartur"
+
+msgid "Leaves Per Year"
+msgstr "Pushime/t për vit"
+
+msgid "Leaves Group"
+msgstr "Grupi i pushimeve"
+
+msgid "Leaves Per Leave Period"
+msgstr "Pushime/t për periudhë pushimi"
+
+msgid "Admin can assign leave to employees"
+msgstr "Admin mund të caktojë pushimin për punonjësit"
+
+msgid "Employees can apply for this leave type"
+msgstr "Punonjësit mund të aplikojnë për këtë lloj pushimi"
+
+msgid "Employees can apply beyond the current leave balance"
+msgstr "Punonjësit mund të aplikojnë për pushim jashtë gjendjes aktuale"
+
+msgid "Percentage of Leaves Carried Forward"
+msgstr "Përqindja e pushimeve të bartura"
+
+msgid "Maximum Carried Forward Amount"
+msgstr "Shuma maksimale e pushimit të bartur"
+
+msgid "Carried Forward Leave Availability Period"
+msgstr "Periudha e lejuar e  bartjes së pushimit"
+
+msgid "Proportionate leaves on Joined Date"
+msgstr "Përpjesëto pushimet sipas datës së bashkimit"
+
+msgid "Send Notification Emails"
+msgstr "Dërgo e-mail njoftimi"
+
+msgid "Leave Group"
+msgstr "Grupi i pushimit"
+
+msgid "Leave Color"
+msgstr "Ngjyra e pushimit"
+
+msgid "Period Start"
+msgstr "Fillimi i periudhës"
+
+msgid "Period End"
+msgstr "Fundi i periudhës"
+
+msgid "Day"
+msgstr "Dita"
+
+msgid "For All Countries"
+msgstr "Për të gjitha shtetet"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Leave Type"
+msgstr "Lloji i pushimit"
+
+msgid "Propotionate leaves on Joined Date"
+msgstr "Përpjesëto pushimet sipas datës së bashkimit"
+
+msgid "Leaves Period"
+msgstr "Periudha e pushimeve"
+
+msgid "Leave Amount"
+msgstr "Shuma e ditëve të lira"
+
+msgid "Leave Period"
+msgstr "Periudha e pushimit"
+
+msgid "Note"
+msgstr "Shënim"
+
+msgid "All Employees"
+msgstr "Të gjithë punonjësit"
+
+msgid "All Leave Types"
+msgstr "Të gjitha llojet e pushimeve"
+
+msgid "Loan Type"
+msgstr "Lloji i kredisë"
+
+msgid "Loan Start Date"
+msgstr "Data e fillimit të kredisë"
+
+msgid "Loan Period (Months)"
+msgstr "Periudha e kredisë (Muaj)"
+
+msgid "Amount"
+msgstr "Shuma"
+
+msgid "Last Installment Date"
+msgstr "Data e këstit të fundit"
+
+msgid "Loan Amount"
+msgstr "Shuma e kredisë"
+
+msgid "Monthly Installment"
+msgstr "Kësti mujor"
+
+msgid "Employee Number"
+msgstr "Numri punonjësit"
+
+msgid "First Name"
+msgstr "Emri"
+
+msgid "Middle Name"
+msgstr "Emri i mesëm"
+
+msgid "Last Name"
+msgstr "Mbiemri"
+
+msgid "Nationality"
+msgstr "Kombësia"
+
+msgid "Date of Birth"
+msgstr "Data e lindjes"
+
+msgid "Gender"
+msgstr "Gjinia"
+
+msgid "Marital Status"
+msgstr "Statusi martesor"
+
+msgid "Ethnicity"
+msgstr "Përkatësia etnike"
+
+msgid "Immigration Status"
+msgstr "Statusi i emigracionit"
+
+msgid "SSN/NRIC"
+msgstr "SSN / NRIC"
+
+msgid "NIC"
+msgstr "NIC"
+
+msgid "Other ID"
+msgstr "ID tjetër"
+
+msgid "Driving License No"
+msgstr "Nr. i lejes së vozitjes"
+
+msgid "Pay Grade"
+msgstr "Shkalla e pagesës"
+
+msgid "Work Station Id"
+msgstr "ID e vendit të punës"
+
+msgid "Address Line 1"
+msgstr "Adresa rreshti 1"
+
+msgid "Address Line 2"
+msgstr "Adresa rreshti 2"
+
+msgid "City"
+msgstr "Qyteti"
+
+msgid "Province"
+msgstr "Provinca"
+
+msgid "Postal/Zip Code"
+msgstr "Kodi postarë"
+
+msgid "Home Phone"
+msgstr "Telefoni shtëpiak"
+
+msgid "Mobile Phone"
+msgstr "Telefoni mobil"
+
+msgid "Work Phone"
+msgstr "Telefoni zyrtarë"
+
+msgid "Work Email"
+msgstr "E-mail zyrtarë"
+
+msgid "Private Email"
+msgstr "E-mail privat"
+
+msgid "Joined Date"
+msgstr "Data e bashkimit"
+
+msgid "Confirmation Date"
+msgstr "Data e konfirmimit"
+
+msgid "Termination Date"
+msgstr "Data e ndërprerjes"
+
+msgid "Department"
+msgstr "Departamenti"
+
+msgid "Supervisor"
+msgstr "Mbikëqyrës/i"
+
+msgid "Indirect Supervisors"
+msgstr "Mbikëqyrësit indirekt"
+
+msgid "First Level Approver"
+msgstr "Miratuesi i nivelit të parë"
+
+msgid "Second Level Approver"
+msgstr "Miratuesi i nivelit të dytë"
+
+msgid "Third Level Approver"
+msgstr "Miratuesi i nivelit të tretë"
+
+msgid "Notes"
+msgstr "Shënime"
+
+msgid "Time (GMT)"
+msgstr "Koha (GMT)"
+
+msgid "User"
+msgstr "Përdorues/i"
+
+msgid "IP Address"
+msgstr "IP adresa"
+
+msgid "Logged In Employee"
+msgstr "Punonjësi i kyçur"
+
+msgid "Skill"
+msgstr "Aftësi"
+
+msgid "Qualification"
+msgstr "Kualifikimi"
+
+msgid "Institute"
+msgstr "Instituti"
+
+msgid "Start Date"
+msgstr "Data e fillimit"
+
+msgid "Completed On"
+msgstr "I/E kompletuar më"
+
+msgid "Certification"
+msgstr "Vërtetimi"
+
+msgid "Granted On"
+msgstr "Është dhënë me"
+
+msgid "Valid Thru"
+msgstr "I/E vlefshme deri"
+
+msgid "Language"
+msgstr "Gjuha"
+
+msgid "Reading"
+msgstr "Lexim"
+
+msgid "Speaking"
+msgstr "Flasje"
+
+msgid "Writing"
+msgstr "Shkrim"
+
+msgid "Understanding"
+msgstr "Të kuptuarit / Kuptim"
+
+msgid "Date Added"
+msgstr "Data e shtimit"
+
+msgid "Valid Until"
+msgstr "I/E vlefshme deri"
+
+msgid "Relationship"
+msgstr "Marrëdhënia"
+
+msgid "Id Number"
+msgstr "ID Numri"
+
+msgid "All Job Titles"
+msgstr "Të gjitha pozitat e punës"
+
+msgid "All Departments"
+msgstr "Të gjitha departamentet"
+
+msgid "Anyone"
+msgstr "Secili"
+
+msgid "Field"
+msgstr "Fushë/a"
+
+msgid "Old Value"
+msgstr "Vlera e vjetër"
+
+msgid "New Value"
+msgstr "Vlerë/a e re"
+
+msgid "Modified By"
+msgstr "Modifikuar nga"
+
+msgid "Created"
+msgstr "Krijuar"
+
+msgid "Notify Expiry"
+msgstr "Lajmëro skadimin"
+
+msgid "Notify Expiry Before One Month"
+msgstr "Lajmëro skadimin një muaj para"
+
+msgid "Notify Expiry Before One Week"
+msgstr "Lajmëro skadimin një javë para"
+
+msgid "Notify Expiry Before One Day"
+msgstr "Lajmëro skadimin një ditë para"
+
+msgid "Travel Type"
+msgstr "Lloji i udhëtimit"
+
+msgid "Purpose of Travel"
+msgstr "Qëllimi i udhëtimit"
+
+msgid "Travel From"
+msgstr "Formulari i udhëtimit"
+
+msgid "Travel To"
+msgstr "Udhëtim deri"
+
+msgid "Travel Date"
+msgstr "Data e udhëtimit"
+
+msgid "Return Date"
+msgstr "Data e kthimit"
+
+msgid "Total Funding Proposed"
+msgstr "Gjithsej financimi i propozuar"
+
+msgid "Itinerary / Cab Receipt"
+msgstr "Itinerari / Kuponi"
+
+msgid "Other Attachment 1"
+msgstr "Bashkëngjitja/e tjetër 1"
+
+msgid "Other Attachment 2"
+msgstr "Bashkëngjitja/e tjetër 2"
+
+msgid "Payment Method"
+msgstr "Mënyra e pagesës"
+
+msgid "Transaction / Ref No"
+msgstr "Nr. i transaksionit / Ref"
+
+msgid "Payee"
+msgstr "Personi për t'u paguar"
+
+msgid "Expense Category"
+msgstr "Kategoria e shpenzimit"
+
+msgid "Receipt"
+msgstr "Faturë"
+
+msgid "Time-In"
+msgstr "Koha-Hyrje"
+
+msgid "Time-Out"
+msgstr "Koha-Dalje"
+
+msgid "Clocked In Status"
+msgstr "Statusi i kohës së regjistruar"
+
+msgid "End Date"
+msgstr "Data e përfundimit"
+
+msgid "Category"
+msgstr "Kategoria"
+
+msgid "Start Time"
+msgstr "Koha e fillimit"
+
+msgid "End Time"
+msgstr "Koha e përfundimit"
+
+msgid "Leave Status"
+msgstr "Statusi i pushimit"
+
+msgid "Select Client"
+msgstr "Zgjidh klientin"
+
+msgid "Not Selected"
+msgstr "I/E pa përzgjedhur"
+
+msgid "Or Project"
+msgstr "ose projekt/in"
+
+msgid "All Projects"
+msgstr "Të gjitha projektet"
+
+msgid "All Status"
+msgstr "Të gjitha statuset"
+
+msgid "Value"
+msgstr "Vlera"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "User Name"
+msgstr "Emri i përdoruesit"
+
+msgid "Authentication Email"
+msgstr "E-mail për autentifikim"
+
+msgid "User Level"
+msgstr "Niveli përdoruesit"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "User Roles"
+msgstr "Rolet e përdoruesit"
+
+msgid "Default Module"
+msgstr "Modul/i i parazgjedhur"
+
+msgid "No Default Module"
+msgstr "Nr. I modulit të parazgjedhur / Nuk ka modul të parazgjedhur"
+
+msgid "Menu"
+msgstr "Meny"
+
+msgid "Group"
+msgstr "Grupi"
+
+msgid "Order"
+msgstr "Urdhëresë"
+
+msgid "Path"
+msgstr "Shtegu"
+
+msgid "Label"
+msgstr "Etiketë/a"
+
+msgid "User Levels"
+msgstr "Nivelet e përdoruesit"
+
+msgid "Module"
+msgstr "Modul/i"
+
+msgid "All Modules"
+msgstr "Të gjitha modulet"
+
+msgid "Invoice Period Start"
+msgstr "Fillimi i periudhës së faturimit"
+
+msgid "Invoice Period End"
+msgstr "Përfundimi i periudhës së faturimit"
+
+msgid "Due date"
+msgstr "Data e caktuar"
+
+msgid "Url"
+msgstr "Url"
+
+msgid "Original Text"
+msgstr "Teksti origjinal"
+
+msgid "Mapped Text"
+msgstr "Tekst i theksuar"
+
+msgid "Display Status"
+msgstr "Statusi i shfaqjes"
+
+msgid "Field Type"
+msgstr "Lloji i fushës"
+
+msgid "Field Label"
+msgstr "Etiketa e fushës"
+
+msgid "Validation"
+msgstr "Validimi"
+
+msgid "Field Options"
+msgstr "Opsionet e fushave"
+
+msgid "Priority"
+msgstr "Prioriteti"
+
+msgid "Display Section"
+msgstr "Seksioni i shfaqjes"
+
+msgid "Salary Component Type"
+msgstr "Lloji i komponentit të pagës"
+
+msgid "Salary Component"
+msgstr "Komponent i pagës"
+
+msgid "Pay Frequency"
+msgstr "Frekuenca e pagesës"
+
+msgid "Calculation Group"
+msgstr "Grupi përllogaritës"
+
+msgid "None"
+msgstr "Asnjë"
+
+msgid "Calculation Exemptions"
+msgstr "Përjashtimet përllogaritëse"
+
+msgid "Calculations Assigned"
+msgstr "Përllogaritjet e caktuara"
+
+msgid "Date Start"
+msgstr "Data e fillimit"
+
+msgid "Date End"
+msgstr "Data e përfundimit"
+
+msgid "Payslip Template"
+msgstr "Shablloni i fletë-pagesës"
+
+msgid "Payroll Columns"
+msgstr "Kolonat e listë-pagesës"
+
+msgid "Calculation Method"
+msgstr "Metoda përllogaritëse"
+
+msgid "Editable"
+msgstr "I/E ndryshueshme"
+
+msgid "Enabled"
+msgstr "Aktivizuar"
+
+msgid "Predefined Calculations"
+msgstr "Llogaritjet paracaktuara"
+
+msgid "Salary Components"
+msgstr "Komponentët e pagës"
+
+msgid "Columns to Add"
+msgstr "Kolonat për të shtuar"
+
+msgid "Columns to Subtract"
+msgstr "Kolonat për të zbritur"
+
+msgid "Column Order"
+msgstr "Renditja e kolonës"
+
+msgid "Default Value"
+msgstr "Vlera e parazgjedhur"
+
+msgid "Calculation Columns"
+msgstr "Kolonat përllogaritëse"
+
+msgid "Function"
+msgstr "Funksioni"
+
+msgid "Payroll Report Column"
+msgstr "Kolona e raportit të listë-pagesës"
+
+msgid "Calculation Process"
+msgstr "Procesi i përllogaritjes"
+
+msgid "Payslip Fields"
+msgstr "Fushat e fletë-pagesës"
+
+msgid "Payroll Column"
+msgstr "Kolona e listë-pagesës"
+
+msgid "Text"
+msgstr "Tekst"
+
+msgid "Lower Limit Condition"
+msgstr "Gjendja e limitit të poshtëm"
+
+msgid "Lower Limit"
+msgstr "Limiti i poshtëm"
+
+msgid "Upper Limit Condition"
+msgstr "Gjendja e limitit të epërm"
+
+msgid "Upper Limit"
+msgstr "Limiti i epërm"
+
+msgid "Column"
+msgstr "Kolona"
+
+msgid "Job Code"
+msgstr "Kodi i vendit të punës"
+
+msgid "Short Description"
+msgstr "Përshkrim i shkurtër"
+
+msgid "Requirements"
+msgstr "Kërkesat"
+
+msgid "Benefits"
+msgstr "Përfitimet"
+
+msgid "Employment Type"
+msgstr "Lloji i punësimit"
+
+msgid "Any Employment Type"
+msgstr "Çdo lloj punësimi"
+
+msgid "Experience Level"
+msgstr "Niveli i eksperiencës"
+
+msgid "Any Experience Level"
+msgstr "Çdo nivel eksperience"
+
+msgid "Job Function"
+msgstr "Funksioni i vendit të punës"
+
+msgid "Any Job Function"
+msgstr "Secili funksion pune"
+
+msgid "Education Level"
+msgstr "Niveli i edukimit"
+
+msgid "Any Education Level"
+msgstr "Çdo nivel edukimi"
+
+msgid "Show Salary"
+msgstr "Shfaq pagën"
+
+msgid "Salary Min"
+msgstr "Paga minimale"
+
+msgid "Salary Max"
+msgstr "Paga maksimale"
+
+msgid "Keywords"
+msgstr "Fjalët kyçe"
+
+msgid "Closing Date"
+msgstr "Data e mbylljes"
+
+msgid "Image"
+msgstr "Foto"
+
+msgid "Display Type"
+msgstr "Lloji i shfaqjes"
+
+msgid "Profile Image"
+msgstr "Foto e profilit"
+
+msgid "Telephone"
+msgstr "Telefon/i"
+
+msgid "Resume Title"
+msgstr "Titulli i biografisë"
+
+msgid "Resume"
+msgstr "Biografia"
+
+msgid "Resume Headline"
+msgstr "Titulli i biografisë"
+
+msgid "Profile Summary"
+msgstr "Përmbledhje e profilit"
+
+msgid "Work History"
+msgstr "Historia e punës"
+
+msgid "Education"
+msgstr "Edukimi"
+
+msgid "Skills"
+msgstr "Aftësitë"
+
+msgid "Referees"
+msgstr "Referuesit"
+
+msgid "From Year"
+msgstr "Prej vitit"
+
+msgid "From Month"
+msgstr "Prej muajit"
+
+msgid "To Year"
+msgstr "deri në vitin"
+
+msgid "To Month"
+msgstr "deri në muajin"
+
+msgid "Currently Work Here"
+msgstr "Aktualisht punon këtu"
+
+msgid "Degree/Diploma"
+msgstr "Shkalla / Diploma"
+
+msgid "Currently Studying"
+msgstr "Aktualisht studion"
+
+msgid "Skill Level"
+msgstr "Niveli aftësisë"
+
+msgid "Last Used Year"
+msgstr "Viti i fundit i përdorimit"
+
+msgid "Last Used Month"
+msgstr "Muaji i fundit i përdorimit"
+
+msgid "Years of Experience"
+msgstr "Vitet e përvojës"
+
+msgid "Designation"
+msgstr "Përcaktimi"
+
+msgid "Phone"
+msgstr "Telefon/i"
+
+msgid "Job"
+msgstr "Vendi i punës"
+
+msgid "Candidate"
+msgstr "Kandidati"
+
+msgid "Referred By"
+msgstr "Referuar nga"
+
+msgid "Leave Start Date"
+msgstr "Data e fillimit të pushimit"
+
+msgid "Leave End Date"
+msgstr "Data e përfundimit të pushimit"
+
+msgid "Reason"
+msgstr "Arsyeja"
+
+msgid "Available Leaves"
+msgstr "Pushimet në dispozicion"
+
+msgid "Approved Leaves"
+msgstr "Pushimet e miratuara"
+
+msgid "Rejected Leaves"
+msgstr "Pushimet refuzuara"
+
+msgid "Leaves to be Accrued"
+msgstr "Pushimet që duhet të akumulohen"
+
+msgid "Leaves Carried Forward"
+msgstr "Pushimet e bartura"
+
+msgid "Apply Leave"
+msgstr "Apliko për pushim"
+
+msgid "Filter"
+msgstr "Filtri"
+
+msgid "Add New"
+msgstr "Shto të ri"
+
+msgid "Time"
+msgstr "Koha"
+
+msgid "Purpose"
+msgstr "Qëllimi"
+
+msgid "From"
+msgstr "Prej"
+
+msgid "To"
+msgstr "Deri / Për"
+
+msgid "Created (GMT)"
+msgstr "Krijuar (GMT)"
+
+msgid "Download"
+msgstr "Shkarko"
+
+msgid "Submit"
+msgstr "Parashtro"
+
+msgid "Upload"
+msgstr "Ngarko"
+
+msgid "Remove"
+msgstr "Hiq"
+
+msgid "Add"
+msgstr "Shto"
+
+msgid "Reset"
+msgstr "Rivë"
+
+msgid "Add Time Entry"
+msgstr "Shto kohën hyrëse"
+
+msgid "Current Clocked In Status"
+msgstr "Statusi i kohës së regjistruar aktuale"
+
+msgid "Attendance entry should be within a single day"
+msgstr "Shënimi i pjesëmarrjes duhet të jetë brenda një dite të vetme"
+
+msgid "Account Balance"
+msgstr "Gjendja e llogarisë"
+
+msgid "Plan"
+msgstr "Plan/i"
+
+msgid "Transactions"
+msgstr "Transaksionet"
+
+msgid "Applications"
+msgstr "Aplikacionet"
+
+msgid "Attendance Graph"
+msgstr "Grafiku i pjesëmarrjes"
+
+msgid "Hours in Office vs Hours Worked Graph"
+msgstr "Grafiku i orëve në zyrë kundrejt orëve në punë"
+
+msgid "Company Graph"
+msgstr "Grafikët e kompanisë"
+
+msgid "Company Documents"
+msgstr "Dokumentet e kompanisë"
+
+msgid "Document Types"
+msgstr "Llojet e dokumenteve"
+
+msgid "Employee Documents"
+msgstr "Dokumentet e punonjësit"
+
+msgid "Employee Basic Details"
+msgstr "Detalet bazike të punonjësit"
+
+msgid "Employees (Direct Reports)"
+msgstr "Punonjësit (Raportet e drejtpërdrejta)"
+
+msgid "Certifications"
+msgstr "Vërtetimet"
+
+msgid "Languages"
+msgstr "Gjuhët"
+
+msgid "Deactivated Employees"
+msgstr "Punonjësit e çaktivizuar"
+
+msgid "Temporarily Deactivated Employees"
+msgstr "Punonjësit përkohësisht të çaktivizuar"
+
+msgid "Terminated Employee Data"
+msgstr "Të dhënat për punonjësit e ndërprerë"
+
+msgid "Employee Saved Successfully"
+msgstr "Punonjësi i ruajt me sukses"
+
+msgid "Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?"
+msgstr "Punonjësit i nevojitet qasje si përdorues për t'u identifikuar në IceHrm. A dëshironi që të krijoni një përdorues për këtë punonjës tani?"
+
+msgid "You can do this later through Users module if required."
+msgstr "Ju mund ta bëni këtë më vonë përmes modulit të përdoruesit në rast se kërkohet."
+
+msgid "Expenses Categories"
+msgstr "Kategoritë e shpenzimeve"
+
+msgid "Payment Methods"
+msgstr "Mënyrat e pagesës"
+
+msgid "Employee Expenses"
+msgstr "Shpenzimet e punonjësit"
+
+msgid "Salary Component Types"
+msgstr "Llojet komponentëve të pagës"
+
+msgid "Employee Salary Components"
+msgstr "Komponentët e pagës së punonjësit"
+
+msgid "Company Payroll"
+msgstr "Listë-pagesa e kompanisë"
+
+msgid "Calculation Groups"
+msgstr "Grupet përllogaritëse"
+
+msgid "Calculation Methods"
+msgstr "Metodat përllogaritëse"
+
+msgid "Payslip Templates"
+msgstr "Shabllonet e fletë-pagesës"
+
+msgid "Edit Employment Types"
+msgstr "Ndrysho llojet e punësimit"
+
+msgid "Edit Experience Levels"
+msgstr "Ndrysho nivelet e përvojave"
+
+msgid "Edit Job Functions"
+msgstr "Ndrysho funksionet e punës"
+
+msgid "Edit Education Levels"
+msgstr "Ndrysho nivelet e edukimit"
+
+msgid "Edit Benefits"
+msgstr "Ndrysho përfitimet"
+
+msgid "Application"
+msgstr "Aplikacion"
+
+msgid "Job Titles"
+msgstr "Titujt e vendeve të punës"
+
+msgid "Pay Grades"
+msgstr "Shkallët e pagesës"
+
+msgid "Training Sessions"
+msgstr "Sesionet e trajnimit"
+
+msgid "Employee Training Sessions"
+msgstr "Sesionet e trajnimit të punonjësit"
+
+msgid "Clients"
+msgstr "Klientët"
+
+msgid "Employee Projects"
+msgstr "Projektet e punonjësit"
+
+msgid "Leave Types"
+msgstr "Llojet e pushimit"
+
+msgid "Work Week"
+msgstr "Java e punës"
+
+msgid "Holidays"
+msgstr "Festat"
+
+msgid "Leave Rules"
+msgstr "Rregullat e pushimit"
+
+msgid "Paid Time Off"
+msgstr "Ditët e lira me pagesë"
+
+msgid "Leave Groups"
+msgstr "Grupet e pushimit"
+
+msgid "Edit Leave Groups"
+msgstr "Ndrysho grupet e pushimit"
+
+msgid "Leave Group Employees"
+msgstr "Punonjësit e grupit të pushimit"
+
+msgid "Employee Leave List"
+msgstr "Lista e pushimit të punonjësit"
+
+msgid "Loan Types"
+msgstr "Llojet e kredisë"
+
+msgid "Employee Loans"
+msgstr "Kreditë e punonjësit"
+
+msgid "Travel Requests"
+msgstr "Kërkesat për udhëtim"
+
+msgid "Overtime Categories"
+msgstr "Kategoritë e orëve shtesë"
+
+msgid "Leave / PTO"
+msgstr "Pushimi / Ditët e lira"
+
+msgid "Other"
+msgstr "Tjetër/rë"
+
+msgid "Modules"
+msgstr "Modulet"
+
+msgid "Countries"
+msgstr "Shtetet"
+
+msgid "Provinces"
+msgstr "Provincat"
+
+msgid "Currency Types"
+msgstr "Llojet e valutave"
+
+msgid "Employee Custom Fields"
+msgstr "Fushat e personalizuara të punonjësit"
+
+msgid "Employee Field Names"
+msgstr "Emërtimet e fushave të punonjësit"
+
+msgid "My Details"
+msgstr "Detalet e mia"
+
+msgid "All My Leaves"
+msgstr "Të gjitha pushimet e mia"
+
+msgid "Leave Entitlement"
+msgstr "E drejta e pushimit"
+
+msgid "Approved Leave"
+msgstr "Pushimi i miratuar"
+
+msgid "Pending Leave"
+msgstr "Pushimi në pritje"
+
+msgid "Subordinate Leave"
+msgstr "Pushim vartës / Nënrendit pushimin"
+
+msgid "Cancellation Requests"
+msgstr "Kërkesat për anulim"
+
+msgid "Approval Requests"
+msgstr "Kërkesat për miratim"
+
+msgid "Approved TimeSheets"
+msgstr "Fletë-kohët e miratuara"
+
+msgid "All My TimeSheets"
+msgstr "Të gjitha fletë-kohët e mia"
+
+msgid "Pending TimeSheets"
+msgstr "Fletë-kohët në pritje"
+
+msgid "Subordinate TimeSheets"
+msgstr "Fletë-kohët vartëse"
+
+msgid "Approved Attendance Sheets"
+msgstr "Fletë-pjesëmarrjet e miratuara"
+
+msgid "All My Attendance Sheets"
+msgstr "Të gjitha fletë-pjesëmarrjet e mia"
+
+msgid "Pending Attendance Sheets"
+msgstr "Fletë-pjesëmarrjet në pritje"
+
+msgid "Subordinate Attendance Sheets"
+msgstr "Fletë-pjesëmarrjet vartëse"
+
+msgid "Subordinate Overtime Requests"
+msgstr "Kërkesat vartëse jashtë orarit"
+
+msgid "Overtime Request Approval"
+msgstr "Miratimi i kërkesave për orë shtesë"
+
+msgid "My Training Sessions"
+msgstr "Sesionet e trajnimit të mia"
+
+msgid "All Training Sessions"
+msgstr "Të gjitha seancat e trajnimeve"
+
+msgid "Training Sessions of Direct Reports"
+msgstr "Sesionet e trajnimit të raporteve direkte"
+
+msgid "Subordinate Travel Requests"
+msgstr "Kërkesat vartëse të udhëtimit"
+
+msgid "Travel Request Approval"
+msgstr "Miratimi i kërkesave për udhëtim"
+
+msgid "Subordinate Expenses"
+msgstr "Shpenzimet vartëse"
+
+msgid "Expenses Approval"
+msgstr "Miratimi i shpenzimeve"
+
+msgid "Loans Taken"
+msgstr "Kreditë e pranuara"
+
+msgid "Change Leave Status"
+msgstr "Ndrysho statusin e pushimit"
+
+msgid "Status Change Note"
+msgstr "Shënime mbi ndryshimin e statusit"
+
+msgid "Leave Summary"
+msgstr "Përmbledhje e pushimit"
+
+msgid "Approved Leave Count"
+msgstr "Numri i pushimeve të miratuara"
+
+msgid "Pending Leave Count"
+msgstr "Numri i pushimeve në pritje"
+
+msgid "Available Leave Count"
+msgstr "Numri i pushimeve në dispozicion"
+
+msgid "Leave Dates"
+msgstr "Datat e pushimit"
+
+msgid "Leave Date"
+msgstr "Data e pushimit"
+
+msgid "Leave Notes"
+msgstr "Shënimet e pushimit"
+
+msgid "Apply"
+msgstr "Apliko"
+
+msgid "Back"
+msgstr "Prapa"
+
+msgid "Hours in Time Sheets"
+msgstr "Orët në fletë-kohë"
+
+msgid "HR form"
+msgstr "Formularë i BNj"
+
+msgid "HR Form Management"
+msgstr "Menaxhimi me formularët e BNj"
+
+msgid "Form Name"
+msgstr "Emri i formularit"
+
+msgid "Fields"
+msgstr "Fushat"
+
+msgid "Employee Froms"
+msgstr "Formularët e punonjësit"
+
+msgid "Share Departments"
+msgstr "Shpërndaj departamentet"
+
+msgid "Share Employees"
+msgstr "Shpërndaj punonjësit"
+
+msgid "Data Importers"
+msgstr "Importuesit e të dhënave"
+
+msgid "Data Import Files"
+msgstr "Datotekat e importimit të të dhënave"
+
+msgid "Data Type"
+msgstr "Lloji i të dhënave"
+
+msgid "Columns"
+msgstr "Kolonat"
+
+msgid "Field Title"
+msgstr "Titulli i fushës"
+
+msgid "Depends On"
+msgstr "Varet nga"
+
+msgid "Depends On Field"
+msgstr "Varet nga fusha"
+
+msgid "is Key Field"
+msgstr "është fushë çelës kyç"
+
+msgid "is ID Field"
+msgstr "është fushë ID"
+
+msgid "Data Import Definitions"
+msgstr "Përkufizimet e importimit të të dhënave"
+
+msgid "File to Import"
+msgstr "Datoteka për import"
+
+msgid "Last Export Results"
+msgstr "Rezultatet e fundit të eksportit"
+
+msgid "Time and Attendance"
+msgstr "Koha dhe pjesëmarrja"
+
+msgid "Leave Timeline"
+msgstr "Kronologjia e pushimit"
+
+msgid "Insights"
+msgstr "Vështrimet"
+
+msgid "Api Access"
+msgstr "Qasja Api"
+
+msgid "Change User Password"
+msgstr "Ndrysho fjalëkalimin e përdoruesit"
+
+msgid "New Password"
+msgstr "Fjalëkalim i ri"
+
+msgid "Confirm Password"
+msgstr "Konfirmo fjalëkalimin"
+
+msgid "Change Password"
+msgstr "Ndrysho fjalëkalimin"
+
+msgid "Not Now"
+msgstr "Jo tani"
+
+msgid "Contact Information"
+msgstr "Të dhënat për kontakt"
+
+msgid "Job Details"
+msgstr "Detalet e vendit të punës"
+
+msgid "Edit Info"
+msgstr "Ndrysho informatat"
+
+msgid "Upload Profile Image"
+msgstr "Ngarko foto të profilit"
+
+msgid "Delete Profile Image"
+msgstr "Fshi foton e profilit"
+
+msgid "Direct Reports"
+msgstr "Raportet direkte"
+
+msgid "Other Details"
+msgstr "Detalet tjera"
+
+msgid "Family"
+msgstr "Familja/e"
+
+msgid "Custom Fields"
+msgstr "Fushat e personalizuara"
+
+msgid "Means of Transportation"
+msgstr "Mjetet e transportit"
+
+msgid "Plane"
+msgstr "Aeroplan"
+
+msgid "Rail"
+msgstr "Tren"
+
+msgid "Taxi"
+msgstr "Taksi"
+
+msgid "Own Vehicle"
+msgstr "Automjet privat"
+
+msgid "Rented Vehicle"
+msgstr "Automjet me qira"
+
+msgid "Female"
+msgstr "Femër"
+
+msgid "Male"
+msgstr "Mashkull"
+
+msgid "Active"
+msgstr "Aktiv(e)"
+
+msgid "Inactive"
+msgstr "Joaktiv(e)"
+
+msgid "Draft"
+msgstr "Draft"
+
+msgid "Not Clocked In"
+msgstr "Pa kohë të regjistruar"
+
+msgid "Clocked In"
+msgstr "Koha e regjistruar"
+
+msgid "File"
+msgstr "Datoteka"
+
+msgid "Active Employee Report"
+msgstr "Raporti i punonjësve aktiv"
+
+msgid "Employee Attendance Report"
+msgstr "Raporti i pjesëmarrjes së punonjësit"
+
+msgid "Employee Details Report"
+msgstr "Raporti i detajeve të punonjësit"
+
+msgid "Employee Leave Entitlement"
+msgstr "Të drejtat e pushimit të punëtorit"
+
+msgid "Employee Leaves Report"
+msgstr "Raporti i pushimeve të punonjësit"
+
+msgid "Employee Time Entry Report"
+msgstr "Raporti i kohës së hyrjes së punonjësit"
+
+msgid "Employee Time Sheet Report"
+msgstr "Raporti i fletë-kohës së punonjësit"
+
+msgid "Employee Time Tracking Report"
+msgstr "Raporti i përcjelljes kohore të punonjësit"
+
+msgid "Expense Report"
+msgstr "Raporti i shpenzimit"
+
+msgid "New Hires Employee Report"
+msgstr "Raporti i punësimeve të reja"
+
+msgid "Overtime Report"
+msgstr "Raporti i orëve shtesë"
+
+msgid "Overtime Request Report"
+msgstr "Raporti i kërkesave për orë shtesë"
+
+msgid "Overtime Summary Report"
+msgstr "Raporti përmbledhës për orë shtesë"
+
+msgid "Payroll Meta Data Export"
+msgstr "Eksporti Meta Data i listë-pagesës"
+
+msgid "Terminated Employee Report"
+msgstr "Raporti për punonjësit e ndërprerë"
+
+msgid "Travel Request Report"
+msgstr "Raporti i kërkesave për udhëtim"
+
+msgid "Attendance Report"
+msgstr "Raporti i pjesëmarrjes"
+
+msgid "Client Project Time Report"
+msgstr "Koha e projektit të klientit"
+
+msgid "Download Payslips"
+msgstr "Shkarko fletë-pagesat"
+
+msgid "Leaves Report"
+msgstr "Raporti i pushimeve"
+
+msgid "Time Entry Report"
+msgstr "Raporti i kohës së hyrjes"
+
+msgid "Time Sheet Report"
+msgstr "Raporti i fletë-kohës"
+
+msgid "Time Tracking Report"
+msgstr "Raporti i përcjelljes kohore"
+
+msgid "Data"
+msgstr "Të dhënat"
+
+msgid "Processed"
+msgstr "I/E procesuar"
+
+msgid "Not Processed"
+msgstr "I/E pa procesuar"
+
+msgid "Elementary Proficiency"
+msgstr "Aftësi elementare"
+
+msgid "Limited Working Proficiency"
+msgstr "Aftësi e kufizuar e punës"
+
+msgid "Professional Working Proficiency"
+msgstr "Aftësi profesionale e punës"
+
+msgid "Full Professional Proficiency"
+msgstr "Aftësi e plotë profesionale"
+
+msgid "Native or Bilingual Proficiency"
+msgstr "Aftësi amtare ose dygjuhësore"
+
+msgid "Pending"
+msgstr "Në pritje"
+
+msgid "Approved"
+msgstr "I/e miratuar"
+
+msgid "Rejected"
+msgstr "I/E refuzuar"
+
+msgid "Cancelled"
+msgstr "Anuluar"
+
+msgid "Continue"
+msgstr "Vazhdo"
+
+msgid "Cancellation Requested"
+msgstr "Anulimi i kërkuar"
+
+msgid "Completed"
+msgstr "I/E kompletuar"
+
+msgid "Discussions"
+msgstr "Diskutimet"
+
+msgid "Load More"
+msgstr "Ngarko më shumë"
+
+msgid "Show More"
+msgstr "Shfaq më shumë"
+
+msgid "Show Less"
+msgstr "Shfaq më pak"
+
+msgid "Publish"
+msgstr "Publiko"
+
+msgid "Announcements"
+msgstr "Njoftimet"
+
+msgid "Send"
+msgstr "Dërgo"
+
+msgid "Display"
+msgstr "Shfaq"
+
+msgid "Public"
+msgstr "Publik/e"
+
+msgid "View Announcements"
+msgstr "Shiko njoftimet"
+
+msgid "Conversations"
+msgstr "Bisedat"
+
+msgid "Start Now"
+msgstr "Fillo tani"
+
+msgid "Company Assets"
+msgstr "Asetet e kompanisë"
+
+msgid "Asset Types"
+msgstr "Llojet e aseteve"
+
+msgid "Asset Name"
+msgstr "Emri i asetit"
+
+msgid "Performance"
+msgstr "Performanca"
+
+msgid "Performance Review"
+msgstr "Shqyrtimi i performancës"
+
+msgid "Performance Reviews"
+msgstr "Shqyrtimet e performancës"
+
+msgid "Review"
+msgstr "Shqyrtim / Shqyrto"
+
+msgid "Reviews"
+msgstr "Shqyrtimet"
+
+msgid "Review Feedback"
+msgstr "Feedback i shqyrtimit"
+
+msgid "Review Template"
+msgstr "Shabllon shqyrtimi"
+
+msgid "Template"
+msgstr "Shabllon"
+
+msgid "Review Date"
+msgstr "Data e shqyrtimit"
+
+msgid "Self Assessment Due On"
+msgstr "Vetëvlerësimi skadon më / për shkak të"
+
+msgid "Review Period Start"
+msgstr "Periudha e fillimit të shqyrtimit"
+
+msgid "Review Period End"
+msgstr "Periudha e mbarimit të shqyrtimit"
+
+msgid "Attendees"
+msgstr "Pjesëmarrësit"
+
+msgid "Performance Reviews Coordinated by Me"
+msgstr "Shqyrtimet e performancës të koordinuara prej meje"
+
+msgid "Provide Feedback"
+msgstr "Siguro Feedback"
+
+msgid "Review Status"
+msgstr "Statusi i shqyrtimit"

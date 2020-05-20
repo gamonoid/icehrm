@@ -1960,3 +1960,15 @@ msgstr "フィードバックを提供します"
 
 msgid "Review Status"
 msgstr "審査ステータス"
+
+msgid "Payroll Employees"
+msgstr "給与計算従業員"
+
+msgid "Payroll Groups"
+msgstr "給与グループ"
+
+msgid "Saved Calculations"
+msgstr "保存された計算"
+
+msgid "Total Leave Days"
+msgstr "総休暇日数"

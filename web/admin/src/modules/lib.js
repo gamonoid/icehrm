@@ -39,13 +39,14 @@ class ModuleAdapter extends AdapterBase {
       ['id', { label: 'ID', type: 'hidden' }],
       ['label', { label: 'Label', type: 'text', validation: '' }],
       ['status', { label: 'Status', type: 'select', source: [['Enabled', 'Enabled'], ['Disabled', 'Disabled']] }],
-      ['user_levels', { label: 'User Levels', type: 'select2multi', source: [['Admin', 'Admin'], ['Manager', 'Manager'], ['Employee', 'Employee'], ['Other', 'Other']] }],
+      ['user_levels', { label: 'User Levels', type: 'select2multi', source: [['Admin', 'Admin'], ['Manager', 'Manager'], ['Employee', 'Employee']] }],
       ['user_roles', { label: 'User Roles', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
     ];
   }
 
 
   getActionButtonsHtml(id, data) {
+    /*
     const nonEditableFields = {};
     nonEditableFields['admin_Company Structure'] = 1;
     nonEditableFields.admin_Employees = 1;
@@ -65,6 +66,7 @@ class ModuleAdapter extends AdapterBase {
     if (nonEditableFields[`${data[3]}_${data[1]}`] === 1) {
       return '';
     }
+     */
     let html = '<div style="width:80px;"><img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"/></div>';
     html = html.replace(/_id_/g, id);
     html = html.replace(/_BASE_/g, this.baseUrl);

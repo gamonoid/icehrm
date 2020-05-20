@@ -24,11 +24,34 @@ class EmployeeRestEndPoint extends RestEndPoint
     {
         $query = new DataQuery('Employee');
 
+        $mapping = <<<JSON
+{
+  "job_title": [ "JobTitle", "id", "name" ],
+  "country": [ "Country", "code", "name" ],
+  "province": [ "Province", "id", "name" ],
+  "department": [ "CompanyStructure", "id", "title" ],
+  "supervisor": [ "Employee", "id", "first_name+last_name" ]
+}
+JSON;
+        $query->setFieldMapping($mapping);
+
         $limit = self::DEFAULT_LIMIT;
         if (isset($_GET['limit']) && intval($_GET['limit']) > 0) {
             $limit = intval($_GET['limit']);
         }
         $query->setLength($limit);
+
+        if (!empty($_GET['filters'])) {
+            $query->setFilters($_GET['filters']);
+        }
+
+        if (isset($_GET['sortField']) && !empty($_GET['sortField'])) {
+            $query->setSortColumn($_GET['sortField']);
+            $query->setSortingEnabled(true);
+            $query->setSortOrder(
+                empty($_GET['sortOrder']) || $_GET['sortOrder'] === 'ascend' ? 'ASC' : 'DESC'
+            );
+        }
 
         if ($user->user_level !== 'Admin') {
             $query->setIsSubOrdinates(true);
@@ -55,27 +78,36 @@ class EmployeeRestEndPoint extends RestEndPoint
             return new IceResponse(IceResponse::ERROR, "Permission denied", 403);
         }
 
-        $mapping = [
-            "nationality" => ["Nationality","id","name"],
-            "ethnicity" => ["Ethnicity","id","name"],
-            "immigration_status" => ["ImmigrationStatus","id","name"],
-            "employment_status" => ["EmploymentStatus","id","name"],
-            "job_title" => ["JobTitle","id","name"],
-            "pay_grade" => ["PayGrade","id","name"],
-            "country" => ["Country","code","name"],
-            "province" => ["Province","id","name"],
-            "department" => ["CompanyStructure","id","title"],
-            "supervisor" => [self::ELEMENT_NAME,"id","first_name+last_name"],
-        ];
+        // https://csvjson.com/json_beautifier
+
+
+        $mapping = <<<JSON
+{
+  "nationality": [ "Nationality", "id", "name" ],
+  "ethnicity": [ "Ethnicity", "id", "name" ],
+  "immigration_status": [ "ImmigrationStatus", "id", "name" ],
+  "employment_status": [ "EmploymentStatus", "id", "name" ],
+  "job_title": [ "JobTitle", "id", "name" ],
+  "pay_grade": [ "PayGrade", "id", "name" ],
+  "country": [ "Country", "code", "name" ],
+  "province": [ "Province", "id", "name" ],
+  "department": [ "CompanyStructure", "id", "title" ],
+  "supervisor": [ "Employee", "id", "first_name+last_name" ],
+  "indirect_supervisors": [ "Employee", "id", "first_name+last_name" ],
+  "approver1": [ "Employee", "id", "first_name+last_name" ],
+  "approver2": [ "Employee", "id", "first_name+last_name" ],
+  "approver3": [ "Employee", "id", "first_name+last_name" ]
+}
+JSON;
 
         $emp = BaseService::getInstance()->getElement(
             self::ELEMENT_NAME,
             $parameter,
-            json_encode($mapping),
+            null,
             true
         );
 
-        $emp = $this->enrichElement($emp, $mapping);
+        $emp = $this->enrichElement($emp, json_decode($mapping, true));
         //Get User for the employee
         $user = new User();
         $user->Load('employee = ?', [$emp->id]);

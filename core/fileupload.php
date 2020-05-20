@@ -78,8 +78,8 @@ class qqFileUploader {
         }
 
         $size = $this->file->getSize();
-        \Utils\LogManager::getInstance()->info('file size ='.$size);
-        \Utils\LogManager::getInstance()->info('file size limit ='.$this->sizeLimit);
+        \Utils\LogManager::getInstance()->debug('file size ='.$size);
+        \Utils\LogManager::getInstance()->debug('file size limit ='.$this->sizeLimit);
         if ($size == 0) {
             return array('success'=>0,'error' => 'File is empty');
         }
@@ -149,9 +149,6 @@ $s3WebUrl = \Classes\SettingsManager::getInstance()->getSetting("Files: S3 Web U
 
 $uploadedToS3 = false;
 
-\Utils\LogManager::getInstance()->info(
-    $uploadFilesToS3."|".$uploadFilesToS3Key."|".$uploadFilesToS3Secret."|".$s3Bucket."|".$s3WebUrl."|".CLIENT_NAME
-);
 $localFile = CLIENT_BASE_PATH.'data/'.$result['filename'];
 $f_size = filesize($localFile);
 if($uploadFilesToS3.'' == '1' && !empty($uploadFilesToS3Key) && !empty($uploadFilesToS3Secret) &&
@@ -159,9 +156,9 @@ if($uploadFilesToS3.'' == '1' && !empty($uploadFilesToS3Key) && !empty($uploadFi
 
 
     $uploadname = CLIENT_NAME."/".$result['filename'];
-    \Utils\LogManager::getInstance()->info("Upload file to s3:".$uploadname);
-    \Utils\LogManager::getInstance()->info("Local file:".$localFile);
-    \Utils\LogManager::getInstance()->info("Local file size:".$f_size);
+    \Utils\LogManager::getInstance()->debug("Upload file to s3:".$uploadname);
+    \Utils\LogManager::getInstance()->debug("Local file:".$localFile);
+    \Utils\LogManager::getInstance()->debug("Local file size:".$f_size);
 
 
     $s3FileSys = new \Classes\S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);

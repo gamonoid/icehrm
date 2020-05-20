@@ -1,0 +1,14 @@
+{
+    "label": "Document Management",
+    "menu": "Employees",
+    "order": "2",
+    "icon": "fa-file-alt",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "dashboardPosition": 13,
+    "permissions": [],
+    "model_namespace": "\\Documents\\Common\\Model",
+    "manager": "\\Documents\\Admin\\Api\\DocumentsAdminManager"
+}

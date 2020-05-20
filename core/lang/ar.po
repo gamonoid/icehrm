@@ -1960,3 +1960,15 @@ msgstr "تقديم التغذية الراجعة"
 
 msgid "Review Status"
 msgstr "مراجعة الحالة"
+
+msgid "Payroll Employees"
+msgstr "موظفي الرواتب"
+
+msgid "Payroll Groups"
+msgstr "مجموعات الرواتب"
+
+msgid "Saved Calculations"
+msgstr "الحسابات المحفوظة"
+
+msgid "Total Leave Days"
+msgstr "إجمالي أيام الإجازة"

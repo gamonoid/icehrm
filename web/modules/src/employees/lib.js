@@ -133,7 +133,7 @@ class EmployeeAdapter extends AdapterBase {
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
       ['nationality', { label: 'Nationality', type: 'select2', 'remote-source': ['Nationality', 'id', 'name'] }],
       ['birthday', { label: 'Date of Birth', type: 'date', validation: '' }],
-      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female']] }],
+      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Divers', 'Divers']] }],
       ['marital_status', { label: 'Marital Status', type: 'select', source: [['Married', 'Married'], ['Single', 'Single'], ['Divorced', 'Divorced'], ['Widowed', 'Widowed'], ['Other', 'Other']] }],
       ssn_num,
       ['nic_num', { label: 'NIC', type: 'text', validation: 'none' }],
@@ -334,28 +334,28 @@ class EmployeeAdapter extends AdapterBase {
     $('#adminUsersModel').modal('show');
     $('#adminUsersChangePwd #newpwd').val('');
     $('#adminUsersChangePwd #conpwd').val('');
+    $('#adminUsersChangePwd_error').hide();
   }
 
   changePasswordConfirm() {
     $('#adminUsersChangePwd_error').hide();
 
-    const passwordValidation = function (str) {
-      return str.length > 7;
-    };
-
     const password = $('#adminUsersChangePwd #newpwd').val();
-
-    if (!passwordValidation(password)) {
-      $('#adminUsersChangePwd_error').html('Password should be longer than 7 characters');
-      $('#adminUsersChangePwd_error').show();
-      return;
-    }
-
     const conPassword = $('#adminUsersChangePwd #conpwd').val();
 
     if (conPassword !== password) {
       $('#adminUsersChangePwd_error').html("Passwords don't match");
       $('#adminUsersChangePwd_error').show();
+
+      return;
+    }
+
+    const validatePasswordResult = this.validatePassword(password);
+
+    if (validatePasswordResult != null) {
+      $('#adminUsersChangePwd_error').html(validatePasswordResult);
+      $('#adminUsersChangePwd_error').show();
+
       return;
     }
 
@@ -502,7 +502,7 @@ class CompanyGraphAdapter extends CompanyStructureAdapter {
       .size([h, w]);
 
     this.diagonal = d3.svg.diagonal()
-      .projection(d => [d.y, d.x]);
+      .projection((d) => [d.y, d.x]);
 
     this.vis = d3.select('#tabPageCompanyGraph').append('svg:svg')
       .attr('width', w + m[1] + m[3])
@@ -537,34 +537,34 @@ class CompanyGraphAdapter extends CompanyStructureAdapter {
     // Update the nodes�
     const node = that.vis.selectAll('g.node')
       // eslint-disable-next-line no-return-assign
-      .data(nodes, d => d.id || (d.id = ++that.nodeIdCounter));
+      .data(nodes, (d) => d.id || (d.id = ++that.nodeIdCounter));
 
     // Enter any new nodes at the parent's previous position.
     const nodeEnter = node.enter().append('svg:g')
       .attr('class', 'node')
-      .attr('transform', d => `translate(${source.y0},${source.x0})`)
+      .attr('transform', (d) => `translate(${source.y0},${source.x0})`)
       .on('click', (d) => { that.toggle(d); that.update(d, tree, root); });
 
     nodeEnter.append('svg:circle')
       .attr('r', 1e-6)
       // eslint-disable-next-line no-underscore-dangle
-      .style('fill', d => (d._children ? 'lightsteelblue' : '#fff'));
+      .style('fill', (d) => (d._children ? 'lightsteelblue' : '#fff'));
 
     nodeEnter.append('svg:text')
-      .attr('x', d => (d.children || d._children ? -10 : 10))
+      .attr('x', (d) => (d.children || d._children ? -10 : 10))
       .attr('dy', '.35em')
-      .attr('text-anchor', d => (d.children || d._children ? 'end' : 'start'))
-      .text(d => d.name)
+      .attr('text-anchor', (d) => (d.children || d._children ? 'end' : 'start'))
+      .text((d) => d.name)
       .style('fill-opacity', 1e-6);
 
     // Transition nodes to their new position.
     const nodeUpdate = node.transition()
       .duration(duration)
-      .attr('transform', d => `translate(${d.y},${d.x})`);
+      .attr('transform', (d) => `translate(${d.y},${d.x})`);
 
     nodeUpdate.select('circle')
       .attr('r', 4.5)
-      .style('fill', d => (d._children ? 'lightsteelblue' : '#fff'));
+      .style('fill', (d) => (d._children ? 'lightsteelblue' : '#fff'));
 
     nodeUpdate.select('text')
       .style('fill-opacity', 1);
@@ -572,7 +572,7 @@ class CompanyGraphAdapter extends CompanyStructureAdapter {
     // Transition exiting nodes to the parent's new position.
     const nodeExit = node.exit().transition()
       .duration(duration)
-      .attr('transform', d => `translate(${source.y},${source.x})`)
+      .attr('transform', (d) => `translate(${source.y},${source.x})`)
       .remove();
 
     nodeExit.select('circle')
@@ -583,7 +583,7 @@ class CompanyGraphAdapter extends CompanyStructureAdapter {
 
     // Update the links�
     const link = that.vis.selectAll('path.link')
-      .data(tree.links(nodes), d => d.target.id);
+      .data(tree.links(nodes), (d) => d.target.id);
 
     // Enter any new links at the parent's previous position.
     link.enter().insert('svg:path', 'g')
@@ -695,7 +695,7 @@ class ApiAccessAdapter extends AdapterBase {
   }
 
   setApiUrl(apiUrl) {
-    this.apiUrl = apiUrl;``
+    this.apiUrl = apiUrl; '';
   }
 
   setToken(token) {

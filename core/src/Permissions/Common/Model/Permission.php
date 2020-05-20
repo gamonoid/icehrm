@@ -8,6 +8,7 @@
 
 namespace Permissions\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class Permission extends BaseModel
@@ -22,5 +23,12 @@ class Permission extends BaseModel
     public function getUserAccess()
     {
         return array();
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('permissions', 'admin'),
+        ];
     }
 }

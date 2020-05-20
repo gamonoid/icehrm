@@ -8,6 +8,7 @@
 
 namespace Qualifications\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class EmployeeSkill extends BaseModel
@@ -32,5 +33,14 @@ class EmployeeSkill extends BaseModel
     public function getUserOnlyMeAccess()
     {
         return array("element","save","delete");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('qualifications', 'admin'),
+            new ModuleAccess('employees', 'admin'),
+            new ModuleAccess('employees', 'user'),
+        ];
     }
 }

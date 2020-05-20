@@ -1960,3 +1960,15 @@ msgstr "Fournir une réponse"
 
 msgid "Review Status"
 msgstr "Statut de la révision"
+
+msgid "Payroll Employees"
+msgstr "Salariés"
+
+msgid "Payroll Groups"
+msgstr "Groupes de paie"
+
+msgid "Saved Calculations"
+msgstr "Calculs sauvegardés"
+
+msgid "Total Leave Days"
+msgstr "Nombre total de jours de congé"

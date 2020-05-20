@@ -13,6 +13,7 @@ $csrf = \Classes\BaseService::getInstance()->generateCsrf('User');
 ?><div class="span9">
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
 		<li class="active"><a id="tabUser" href="#tabPageUser"><?=t('Users')?></a></li>
+		<li class=""><a id="tabUserRole" href="#tabPageUserRole"><?=t('Users Roles')?></a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -24,21 +25,22 @@ $csrf = \Classes\BaseService::getInstance()->generateCsrf('User');
 
 			</div>
 		</div>
-<!--        <div class="tab-pane" id="tabPageUserRole">-->
-<!--            <div id="UserRole" class="reviewBlock" data-content="List" style="padding-left:5px;">-->
-<!---->
-<!--            </div>-->
-<!--            <div id="UserRoleForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">-->
-<!---->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="tab-pane" id="tabPageUserRole">
+            <div id="UserRole" class="reviewBlock" data-content="List" style="padding-left:5px;">
+
+            </div>
+            <div id="UserRoleForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
+
+            </div>
+        </div>
 	</div>
 
 </div>
 <script>
-var modJsList = new Array();
+var modJsList = [];
 modJsList['tabUser'] = new UserAdapter('User');
 modJsList['tabUser'].setCSRFRequired(true);
+modJsList['tabUser'].setRemoteTable(true);;
 <?php if(isset($_GET['action']) && $_GET['action'] == "new" && isset($_GET['object'])){?>
 modJsList['tabUser'].newInitObject = JSON.parse(Base64.decode('<?=$_GET['object']?>'));
 <?php }?>

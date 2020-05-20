@@ -8,6 +8,7 @@
 
 namespace Loans\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class EmployeeCompanyLoan extends BaseModel
@@ -32,5 +33,13 @@ class EmployeeCompanyLoan extends BaseModel
     public function getUserOnlyMeAccess()
     {
         return array("get","element");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('loans', 'admin'),
+            new ModuleAccess('loans', 'user'),
+        ];
     }
 }

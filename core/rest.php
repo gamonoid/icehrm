@@ -1,5 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: DELETE, POST, GET, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 header('Content-Type: application/json');
 define('CLIENT_PATH',dirname(__FILE__));
 include ("config.base.php");
@@ -17,9 +19,16 @@ if(\Classes\SettingsManager::getInstance()->getSetting('Api: REST Api Enabled') 
 
 	\Utils\LogManager::getInstance()->info("Request: " . $_REQUEST);
 
-	\Classes\Macaw::get(REST_API_PATH . 'echo', function () {
+    if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+        http_response_code(200);
+        exit();
+    }
+
+	$echoRoute = \Classes\Macaw::get(REST_API_PATH . 'echo', function () {
 		echo "Echo " . rand();
 	});
+
+    \Utils\LogManager::getInstance()->debug('Api registered URI: '.$echoRoute);
 
 	$moduleManagers = \Classes\BaseService::getInstance()->getModuleManagers();
 
@@ -27,6 +36,10 @@ if(\Classes\SettingsManager::getInstance()->getSetting('Api: REST Api Enabled') 
 
 		$moduleManagerObj->setupRestEndPoints();
 	}
+    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $method = $_SERVER['REQUEST_METHOD'];
+    \Utils\LogManager::getInstance()->debug('Api dispatch URI: '.$uri);
+    \Utils\LogManager::getInstance()->debug('Api dispatch method: '.$uri);
 	if (!defined('SYM_CLIENT')) {
 		//For hosted installations, dispatch will be done in app/index
 		\Classes\Macaw::dispatch();

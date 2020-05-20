@@ -17,6 +17,14 @@ $_REQUEST['sm'] = \Classes\BaseService::getInstance()->fixJSON($_REQUEST['sm']);
 $_REQUEST['cl'] = \Classes\BaseService::getInstance()->fixJSON($_REQUEST['cl']);
 $_REQUEST['ft'] = \Classes\BaseService::getInstance()->fixJSON($_REQUEST['ft']);
 
+// Domain aware input cleanup
+$cleaner = new \Classes\DomainAwareInputCleaner();
+$_REQUEST['t'] = $cleaner->cleanTableColumn($_REQUEST['t']);
+$_REQUEST['ft'] = $cleaner->cleanFilters($_REQUEST['ft']);
+$_REQUEST['ob'] = $cleaner->cleanOrderBy($_REQUEST['ob']);
+$_REQUEST['sSearch'] = $cleaner->cleanSearch($_REQUEST['sSearch']);
+$_REQUEST['cl'] = $cleaner->cleanColumns($_REQUEST['cl']);
+
 $columns = json_decode($_REQUEST['cl'], true);
 $columns[] = "id";
 $table = $_REQUEST['t'];
@@ -207,6 +215,7 @@ if (!isset($_REQUEST['objects'])) {
         echo \Classes\BaseService::getInstance()->safeJsonEncode($output);
     } catch (Exception $e) {
         \Utils\LogManager::getInstance()->error($e->getMessage());
+        \Utils\LogManager::getInstance()->notifyException($e);
         echo json_encode(['status' => 'Error']);
     }
 } else {

@@ -59,7 +59,7 @@ class DataQuery
     }
 
     /**
-     * @return array
+     * @return string
      */
     public function getFieldMapping()
     {
@@ -197,7 +197,7 @@ class DataQuery
     }
 
     /**
-     * @param array $fieldMapping
+     * @param string $fieldMapping
      */
     public function setFieldMapping($fieldMapping)
     {
@@ -205,9 +205,9 @@ class DataQuery
     }
 
     /**
-     * @param array $filters
+     * @param $filters
      */
-    public function setFilters(array $filters)
+    public function setFilters($filters)
     {
         $this->filters = $filters;
     }
@@ -229,9 +229,9 @@ class DataQuery
     }
 
     /**
-     * @param bool $sortColumn
+     * @param string $sortColumn
      */
-    public function setSortColumn(bool $sortColumn)
+    public function setSortColumn($sortColumn)
     {
         $this->sortColumn = $sortColumn;
     }

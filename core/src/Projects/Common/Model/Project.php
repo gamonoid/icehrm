@@ -9,7 +9,9 @@
 namespace Projects\Common\Model;
 
 use Classes\BaseService;
+use Classes\ModuleAccess;
 use Classes\SettingsManager;
+use Clients\Common\Model\Client;
 use Model\BaseModel;
 
 class Project extends BaseModel
@@ -86,5 +88,12 @@ class Project extends BaseModel
     public function fieldValueMethods()
     {
         return ['getEmployeeProjects'];
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('projects', 'admin'),
+        ];
     }
 }

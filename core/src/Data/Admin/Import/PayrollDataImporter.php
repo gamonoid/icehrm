@@ -315,4 +315,8 @@ class PayrollDataImporter implements DataImporter
     {
         return $this->lastStatus;
     }
+
+    public function setModelObjectName($name)
+    {
+    }
 }

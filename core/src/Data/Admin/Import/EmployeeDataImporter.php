@@ -13,6 +13,11 @@ class EmployeeDataImporter extends AbstractDataImporter
         return "\\Employees\\Common\\Model\\Employee";
     }
 
+    public function getModelObjectName()
+    {
+        return 'Employee';
+    }
+
     public function fixBeforeSave($object, $data)
     {
 

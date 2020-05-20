@@ -8,6 +8,7 @@
 
 namespace Salary\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class EmployeeSalary extends BaseModel
@@ -37,5 +38,12 @@ class EmployeeSalary extends BaseModel
     public function getUserOnlyMeSwitchedAccess()
     {
         return array();
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('salary', 'admin'),
+        ];
     }
 }

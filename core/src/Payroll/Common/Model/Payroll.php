@@ -9,6 +9,7 @@
 namespace Payroll\Common\Model;
 
 use Classes\BaseService;
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class Payroll extends BaseModel
@@ -51,5 +52,12 @@ class Payroll extends BaseModel
     public function fieldValueMethods()
     {
         return ['getEmployeePayrolls'];
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('payroll', 'admin'),
+        ];
     }
 }

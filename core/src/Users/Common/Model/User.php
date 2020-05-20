@@ -6,11 +6,16 @@
 namespace Users\Common\Model;
 
 use Classes\BaseService;
+use Classes\ModuleAccess;
+use Classes\ModuleAccessService;
+use Classes\PermissionManager;
 use Model\BaseModel;
 use Classes\IceResponse;
 
 class User extends BaseModel
 {
+    public $table = 'Users';
+
     public function getAdminAccess()
     {
         return array("get","element","save","delete");
@@ -45,19 +50,50 @@ class User extends BaseModel
             $oldUser = new User();
             $oldUser->Load("id = ?", array($obj->id));
             if ($oldUser->user_level != $obj->user_level && $oldUser->user_level == 'Admin') {
-                $adminUsers = $userTemp->Find("user_level = ?", array("Admin"));
+                $adminUsers = $userTemp->Find("user_level = ?", array('Admin'));
                 if (count($adminUsers) == 1 && $adminUsers[0]->id == $obj->id) {
                     return new IceResponse(
                         IceResponse::ERROR,
-                        "You are the only admin user for the application.
-                        You are not allowed to revoke your admin rights"
+                        'You are not allowed to revoke your admin rights'
                     );
                 }
             }
         }
 
+        $permissionManager = new PermissionManager();
+        if ($permissionManager->isRestrictedUserLevel($obj->user_level) && empty($obj->default_module)) {
+            return new IceResponse(
+                IceResponse::ERROR,
+                'Restricted users must always have a default module'
+            );
+        }
+
+        if (!empty($obj->default_module)
+            && !ModuleAccessService::getInstance()->isModuleEnabledForUser($obj->default_module, $obj)
+        ) {
+            return new IceResponse(
+                IceResponse::ERROR,
+                'Selected default module is not allowed for the user'
+            );
+        }
+
         return new IceResponse(IceResponse::SUCCESS, "");
     }
 
-    public $table = 'Users';
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('users', 'admin'),
+        ];
+    }
+
+    public function postProcessGetData($obj)
+    {
+        return BaseService::getInstance()->cleanUpUser($obj);
+    }
+
+    public function postProcessGetElement($obj)
+    {
+        return BaseService::getInstance()->cleanUpUser($obj);
+    }
 }

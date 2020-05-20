@@ -52,6 +52,8 @@ class BaseService
     public $modelClassMap = array();
     public $currentProfileId = false;
 
+    protected $cacheService = null;
+
     protected $pro = null;
 
     private static $me = null;
@@ -109,14 +111,11 @@ class BaseService
             $filter = json_decode($filterStr, true);
 
             if (!empty($filter)) {
-                LogManager::getInstance()->debug("Building filter query");
                 if (method_exists($obj, 'getCustomFilterQuery')) {
-                    LogManager::getInstance()->debug("Method: getCustomFilterQuery exists");
                     $response = $obj->getCustomFilterQuery($filter);
                     $query = $response[0];
                     $queryData = $response[1];
                 } else {
-                    LogManager::getInstance()->debug("Method: getCustomFilterQuery not found");
                     $defaultFilterResp = $this->buildDefaultFilterQuery($filter);
                     $query = $defaultFilterResp[0];
                     $queryData = $defaultFilterResp[1];
@@ -134,8 +133,6 @@ class BaseService
             $cemp = $this->getCurrentProfileId();
             if (!empty($cemp)) {
                 $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-                LogManager::getInstance()->debug("Query: ".$signInMappingField." = ?".$query.$orderBy);
-                LogManager::getInstance()->debug("Query Data: ".print_r(array_merge(array($cemp), $queryData), true));
                 $list = $obj->Find($signInMappingField." = ?".$query.$orderBy, array_merge(array($cemp), $queryData));
             } else {
                 $list = array();
@@ -194,14 +191,14 @@ class BaseService
                         $query.=" and (";
                     }
 
-                    $query.=$k." like ?";
+                    $query.=$k." = ?";
 
                     if ($i < $length -1) {
                         $query.=" or ";
                     } else {
                         $query.=")";
                     }
-                    $queryData[] = "%".$v[$i]."%";
+                    $queryData[] = $v[$i];
                 }
             } else {
                 if (!empty($v) && $v != 'NULL') {
@@ -229,6 +226,132 @@ class BaseService
         $data['order'] = $req['sSortDir_0'];
 
         return $data;
+    }
+
+    public function getDataCount()
+    {
+        //Get Total row count
+        $totalRows = 0;
+
+        if (!isset($_REQUEST['objects'])) {
+            $countFilterQuery = "";
+            $countFilterQueryData = array();
+            if (!empty($_REQUEST['ft'])) {
+                $filter = json_decode($_REQUEST['ft']);
+                if (!empty($filter)) {
+                    \Utils\LogManager::getInstance()->debug("Filter:" . print_r($filter, true));
+                    if (method_exists($obj, 'getCustomFilterQuery')) {
+                        $response = $obj->getCustomFilterQuery($filter);
+                        $countFilterQuery = $response[0];
+                        $countFilterQueryData = $response[1];
+                    } else {
+                        $defaultFilterResp = \Classes\BaseService::getInstance()->buildDefaultFilterQuery($filter);
+                        $countFilterQuery = $defaultFilterResp[0];
+                        $countFilterQueryData = $defaultFilterResp[1];
+                    }
+                }
+            }
+
+
+            if (in_array($table, \Classes\BaseService::getInstance()->userTables)
+                && !$skipProfileRestriction && !$isSubOrdinates) {
+                $cemp = \Classes\BaseService::getInstance()->getCurrentProfileId();
+                $sql = "Select count(id) as count from "
+                    . $obj->_table . " where " . SIGN_IN_ELEMENT_MAPPING_FIELD_NAME . " = ? " . $countFilterQuery;
+                array_unshift($countFilterQueryData, $cemp);
+
+                $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
+            } else {
+                if ($isSubOrdinates) {
+                    $cemp = \Classes\BaseService::getInstance()->getCurrentProfileId();
+                    $profileClass = \Classes\BaseService::getInstance()->getFullQualifiedModelClassName(
+                        ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME)
+                    );
+                    $subordinate = new $profileClass();
+                    $subordinates = $subordinate->Find("supervisor = ?", array($cemp));
+
+                    $cempObj = new \Employees\Common\Model\Employee();
+                    $cempObj->Load("id = ?", array($cemp));
+
+                    if ($obj->getUserOnlyMeAccessField() == 'id'
+                        && \Classes\SettingsManager::getInstance()->getSetting(
+                            'System: Company Structure Managers Enabled'
+                        ) == 1
+                        && \Company\Common\Model\CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)
+                    ) {
+                        if (empty($subordinates)) {
+                            $subordinates = array();
+                        }
+
+                        $childCompaniesIds = array();
+                        if (\Classes\SettingsManager::getInstance()->getSetting(
+                            'System: Child Company Structure Managers Enabled'
+                        ) == '1'
+                        ) {
+                            $childCompaniesResp = \Company\Common\Model\CompanyStructure::getAllChildCompanyStructures(
+                                $cempObj->department
+                            );
+                            $childCompanies = $childCompaniesResp->getObject();
+
+                            foreach ($childCompanies as $cc) {
+                                $childCompaniesIds[] = $cc->id;
+                            }
+                        } else {
+                            $childCompaniesIds[] = $cempObj->department;
+                        }
+
+                        if (!empty($childCompaniesIds)) {
+                            $childStructureSubordinates = $subordinate->Find(
+                                "department in (" . implode(',', $childCompaniesIds) . ") and id != ?",
+                                array($cemp)
+                            );
+                            $subordinates = array_merge($subordinates, $childStructureSubordinates);
+                        }
+                    }
+
+                    $subordinatesIds = "";
+                    foreach ($subordinates as $sub) {
+                        if ($subordinatesIds != "") {
+                            $subordinatesIds .= ",";
+                        }
+                        $subordinatesIds .= $sub->id;
+                    }
+                    if ($obj->allowIndirectMapping()) {
+                        $indeirectEmployees = $subordinate->Find(
+                            "indirect_supervisors IS NOT NULL and indirect_supervisors <> '' and status = 'Active'",
+                            array()
+                        );
+                        foreach ($indeirectEmployees as $ie) {
+                            $indirectSupervisors = json_decode($ie->indirect_supervisors, true);
+                            if (in_array($cemp, $indirectSupervisors)) {
+                                if ($subordinatesIds != "") {
+                                    $subordinatesIds .= ",";
+                                }
+                                $subordinatesIds .= $ie->id;
+                            }
+                        }
+                    }
+                    $sql = "Select count(id) as count from " . $obj->_table .
+                        " where " . $obj->getUserOnlyMeAccessField() . " in (" . $subordinatesIds . ") "
+                        . $countFilterQuery;
+                    $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
+                } else {
+                    $sql = "Select count(id) as count from " . $obj->_table;
+                    if (!empty($countFilterQuery)) {
+                        $sql .= " where 1=1 " . $countFilterQuery;
+                    }
+                    $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
+                }
+            }
+        }
+
+        if (isset($rowCount) && !empty($rowCount)) {
+            foreach ($rowCount as $cnt) {
+                $totalRows = $cnt['count'];
+            }
+        }
+
+        return $totalRows;
     }
 
     /**
@@ -545,7 +668,13 @@ class BaseService
         foreach ($map as $k => $v) {
             $fTable = $this->getFullQualifiedModelClassName($v[0]);
             $tObj = new $fTable();
-            $tObj->Load($v[1]."= ?", array($item->$k));
+            $tObj = $tObj->Find($v[1]."= ?", array($item->$k));
+
+            if (is_array($tObj)) {
+                $tObj = $tObj[0];
+            } else {
+                continue;
+            }
 
             if ($tObj->{$v[1]} == $item->$k) {
                 $v[2] = str_replace("+", " ", $v[2]);
@@ -556,11 +685,11 @@ class BaseService
                     $item->$k = $tObj->{$v[2]};
                 } else {
                     $objVal = "";
-                    foreach ($values as $v) {
+                    foreach ($values as $val2) {
                         if ($objVal != "") {
                             $objVal .= " ";
                         }
-                        $objVal .= $tObj->$v;
+                        $objVal .= $tObj->$val2;
                     }
                     $idField = $k."_id";
                     $item->$idField = $item->$k;
@@ -629,12 +758,16 @@ class BaseService
         if (count($values) == 1) {
             return $targetObject->{$nameField};
         }
-        $objVal = "";
+        $objVal = '';
         foreach ($values as $value) {
             if ($objVal != "") {
                 $objVal .= " ";
             }
-            $objVal .= $targetObject->$value;
+            if (substr($value, 0, 1) !== ':') {
+                $objVal .= $targetObject->{$value};
+            } else {
+                $objVal .= substr($value, 1);
+            }
         }
 
         return $objVal;
@@ -646,7 +779,9 @@ class BaseService
      * @param $table {String} model class name of the table to add data (e.g for Users table model class name is User)
      * @param $obj {Array} an associative array with field names and values for the new object.
      * If the object id is not empty an existing object will be updated
-     * @return {Object} newly added or updated element of type $table
+     * @param null $postObject
+     * @return IceResponse {Object} newly added or updated element of type $table newly added or updated
+     * element of type $table
      */
 
     public function addElement($table, $obj, $postObject = null)
@@ -757,7 +892,6 @@ class BaseService
         }
 
         $customFields = $ele->getCustomFields($obj);
-        LogManager::getInstance()->error("Custom:".json_encode($customFields));
         foreach ($obj as $k => $v) {
             if (isset($customFields[$k])) {
                 $this->customFieldManager->addCustomField($table, $ele->id, $k, $v);
@@ -898,7 +1032,7 @@ class BaseService
                     $list = $ele->$method(array());
                 }
             } else {
-                LogManager::getInstance()->debug("Could not find method:".$method." in Class:".$table);
+                LogManager::getInstance()->error("Could not find method:".$method." in Class:".$table);
                 $list = $ele->Find('1 = 1', array());
             }
         } else {
@@ -1106,10 +1240,12 @@ class BaseService
 
     public function cleanUpUser($obj)
     {
-        $obj = $this->cleanUpAdoDB($obj);
+        $obj = $this->cleanUpAll($obj);
         unset($obj->password);
         unset($obj->login_hash);
         unset($obj->googleUserData);
+        unset($obj->wrong_password_count);
+        unset($obj->last_wrong_attempt_at);
 
         return $obj;
     }
@@ -1137,14 +1273,12 @@ class BaseService
 
     public function checkSecureAccess($type, $object, $table, $request)
     {
-        $accessMatrix = array();
-
         //Construct permission method
-        $permMethod = "get".$this->currentUser->user_level."Access";
+        $permMethod = "get".str_replace(' ', '', $this->currentUser->user_level)."Access";
         $userOnlyMeAccessRequestField = $object->getUserOnlyMeAccessRequestField();
         $userOnlyMeAccessField = $object->getUserOnlyMeAccessField();
         if (method_exists($object, $permMethod)) {
-            $accessMatrix = $object->$permMethod();
+            $accessMatrix = $object->$permMethod($this->currentUser->user_roles);
         } else {
             $accessMatrix = $object->getDefaultAccessLevel();
         }
@@ -1174,7 +1308,7 @@ class BaseService
             // Employees should be able to update their own records
             if (!empty($table) && in_array($type, $accessMatrix)) {
                 if (!empty($this->currentUser->$userOnlyMeAccessRequestField)
-                    && in_array($table, $this->userTables) ) {
+                    && in_array($table, $this->userTables)) {
                     return true;
                 }
             }
@@ -1183,7 +1317,15 @@ class BaseService
         $ret['status'] = "ERROR";
         $ret['message'] = $type." ".get_class($object)." Access violation";
         echo json_encode($ret);
-        exit();
+        $exception = new \Exception(
+            sprintf(
+                '%s : %s',
+                'Access violation',
+                json_encode([$type, $table, get_class($object), $request, json_encode($this->currentUser)])
+            )
+        );
+        LogManager::getInstance()->notifyException($exception);
+        throw $exception;
     }
 
     public function getInstanceId()
@@ -1740,13 +1882,19 @@ END;
                             if ($obj->$name != '') {
                                 $obj->$name .= ', ';
                             }
-                            $tObj->Load($v[1] . "= ?", array($partialId));
-                            $obj->$name .= $this->getCombinedValue($v[2], $tObj);
+                            $tObjArr = $tObj->Find($v[1] . "= ?", [$partialId]);
+                            if (!is_array($tObjArr) || empty($tObjArr[0])) {
+                                continue;
+                            }
+                            $obj->$name .= $this->getCombinedValue($v[2], $tObjArr[0]);
                         }
                     }
                 } else {
-                    $tObj->Load($v[1] . "= ?", array($obj->$k));
-                    $obj->$name = $this->getCombinedValue($v[2], $tObj);
+                    $tObjArr = $tObj->Find($v[1] . "= ?", [$obj->$k]);
+                    if (!is_array($tObjArr) || empty($tObjArr[0])) {
+                        continue;
+                    }
+                    $obj->$name = $this->getCombinedValue($v[2], $tObjArr[0]);
                 }
             }
         }
@@ -1766,5 +1914,26 @@ END;
             $obj->{$cf->name} = $cf->value;
         }
         return $obj;
+    }
+
+    /**
+     * @return RedisCacheService
+     */
+    public function getCacheService()
+    {
+        return $this->cacheService;
+    }
+
+    /**
+     * @param CacheService $redisCacheService
+     */
+    public function setCacheService($redisCacheService)
+    {
+        $this->cacheService = $redisCacheService;
+    }
+
+    public function queryCacheEnabled()
+    {
+        return defined('QUERY_CACHE') && QUERY_CACHE === true;
     }
 }

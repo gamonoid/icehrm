@@ -30,8 +30,6 @@ class ProjectsAdminManager extends AbstractModuleManager
 
     public function setupModuleClassDefinitions()
     {
-
-        $this->addModelClass('Client');
         $this->addModelClass('Project');
     }
 
@@ -46,10 +44,10 @@ class ProjectsAdminManager extends AbstractModuleManager
     public function initQuickAccessMenu()
     {
         UIManager::getInstance()->addQuickAccessMenuItem(
-            "Manage Client/Projects",
-            "fa-list-alt",
-            CLIENT_BASE_URL."?g=admin&n=projects&m=admin_Admin",
-            array("Admin","Manager")
+            'Manage Client/Projects',
+            'fa-list-alt',
+            CLIENT_BASE_URL.'?g=admin&n=projects&m=admin_Admin',
+            array('Admin','Manager')
         );
     }
 }

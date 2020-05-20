@@ -9,6 +9,7 @@
 namespace Overtime\Common\Model;
 
 use Classes\IceResponse;
+use Classes\ModuleAccess;
 use Classes\SettingsManager;
 use Model\ApproveModel;
 
@@ -74,5 +75,13 @@ class EmployeeOvertime extends ApproveModel
             return new IceResponse(IceResponse::ERROR, 'Incorrect start and end time');
         }
         return new IceResponse(IceResponse::SUCCESS, "");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('overtime', 'admin'),
+            new ModuleAccess('overtime', 'user'),
+        ];
     }
 }

@@ -1,8 +1,8 @@
 {
-"Admin":"fa-cubes",
-"Employees":"fa-grip-horizontal",
-"Admin Reports":"fa-book-reader",
-"System":"fa-cogs",
-"Insights":"fa-chart-line",
-"Payroll":"fa-file-archive"
+  "Admin": "fa-cubes",
+  "Employees": "fa-grip-horizontal",
+  "Admin Reports": "fa-book-reader",
+  "System": "fa-cogs",
+  "Insights": "fa-chart-line",
+  "Payroll": "fa-file-archive"
 }
