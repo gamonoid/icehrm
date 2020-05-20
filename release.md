@@ -2,15 +2,21 @@ Release note v26.6.0.OS
 ------------------------
 
 ### Features
- * Improvements to UI
- * Track IP and location of the employee when marking attendance
+ * Some Improvements to UI such as updating Icons and upgrading font-awesome to its latest version
+ * Tracking IP and location of the employee when marking attendance, this is done when updating attendance via mobile
+ * Ability to control location tracking via mobile using server side settings
  * Improvements to translations
  * Compatible with location tracking with icehrm mobile app
+ 
+### Mobile App
+ * This release is coupled with mobile application release on AppStore (https://apple.co/2Yrtxoy) and Google Play (http://bit.ly/2OkMmKe)
 
 ### Fixes
- * Order projects by name on timesheets
+ * Order projects by name on Timesheet project listing (This is to make it easier to edit timesheets with many projects)
  * Link home page user profile to employee profile update page
  * Fix issues related to configuring Api with mobile app
+ 
+### Security Improvements
  * Upgrade npm missing dependencies
 
  
