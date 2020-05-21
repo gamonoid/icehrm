@@ -14,4 +14,5 @@ node_modules/*
 web/dist/*.map
 web/admin/dist/*.map
 web/modules/dist/*.map
-docker/db_data
+docker/development/db_data
+docker/prod/db_data

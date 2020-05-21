@@ -2,22 +2,42 @@ FROM alpine:3.11
 LABEL Maintainer="Thilina, Pituwala <thilina@icehrm.com>" \
       Description="IceHrm Docker Container with Nginx 1.16 & PHP-FPM 7.3 based on Alpine Linux."
 
+ENV PHPIZE_DEPS \
+		autoconf \
+		dpkg-dev dpkg \
+		file \
+		g++ \
+		gcc \
+		libc-dev \
+		make \
+		pkgconf \
+		musl-dev \
+		re2c \
+		php7-dev \
+		php7-pear
+
+RUN apk --no-cache add bind-tools
+
 # Install packages
-RUN apk --no-cache add php7 php7-fpm php7-opcache php7-mysqli php7-json php7-openssl php7-curl \
-    php7-zlib php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session \
-    php7-mbstring php7-gd nginx supervisor curl
+RUN apk --no-cache add php php-fpm php-opcache php-mysqli php-json php-openssl php-curl \
+    php-zlib php-xml php-phar php-intl php-dom php-xmlreader php-ctype php-session \
+    php-mbstring php-gd nginx supervisor curl
+
+# Install xdebug
+RUN apk add --no-cache $PHPIZE_DEPS \
+    && pecl install xdebug-2.9.5
 
 # Configure nginx
-COPY docker/config/nginx.conf /etc/nginx/nginx.conf
+COPY docker/development/config/nginx.conf /etc/nginx/nginx.conf
 # Remove default server definition
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Configure PHP-FPM
-COPY docker/config/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
-COPY docker/config/php.ini /etc/php7/conf.d/custom.ini
+COPY docker/development/config/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
+COPY docker/development/config/php.ini /etc/php7/conf.d/custom.ini
 
 # Configure supervisord
-COPY docker/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY docker/development/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Setup document root
 RUN mkdir -p /var/www/html
@@ -37,7 +57,8 @@ COPY --chown=nobody ./app /var/www/html/app/
 COPY --chown=nobody ./core /var/www/html/core/
 COPY --chown=nobody ./web /var/www/html/web/
 COPY --chown=nobody ./index.php /var/www/html/index.php
-COPY --chown=nobody ./docker/config/config.php /var/www/html/app/config.php
+COPY --chown=nobody ./docker/development/config/config.php /var/www/html/app/config.php
+COPY --chown=nobody ./docker/development/config/info.php /var/www/html/app/info.php
 
 # Expose the port nginx is reachable on
 EXPOSE 8080

@@ -10,14 +10,12 @@ services:
       MYSQL_PASSWORD: dev
       MYSQL_DATABASE: dev
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/setup.sql
-      - ./db_data:/var/lib/mysql
+      - ./docker/prod/init.sql:/docker-entrypoint-initdb.d/setup.sql
+      - ./docker/prod/db_data:/var/lib/mysql
 
   icehrm:
     build: .
     ports:
-      - 8080:8080
-    links:
-      - mysql
+      - 80:80
 volumes:
   db_data:

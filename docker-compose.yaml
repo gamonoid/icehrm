@@ -1,4 +1,4 @@
-version: "3.5"
+version: "2.4"
 services:
   mysql:
     image: mysql:5.7
@@ -10,8 +10,8 @@ services:
       MYSQL_PASSWORD: dev
       MYSQL_DATABASE: dev
     volumes:
-      - ./docker/init.sql:/docker-entrypoint-initdb.d/setup.sql
-      - ./docker/db_data:/var/lib/mysql
+      - ./docker/development/init.sql:/docker-entrypoint-initdb.d/setup.sql
+      - ./docker/development/db_data:/var/lib/mysql
 
   icehrm:
     build: .
