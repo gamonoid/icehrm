@@ -1,10 +1,15 @@
 <img src="web/images/logo-sq.png" align="right" />
+
 IceHrm
 ===========
 [![Build Status](https://travis-ci.org/gamonoid/icehrm.svg?branch=master)](https://travis-ci.org/gamonoid/icehrm)
 
+
 IceHrm is a [HRM software](https://icehrm.com) which enable companies of all sizes to [manage HR activities](https://icehrm.com)
-properly. 
+properly.
+- [IceHrm Demo](https://icehrm.com/icehrm-demo) 
+- Feature rich version of IceHrm (IceHrmPro) is available at [https://icehrm.com/purchase-icehrmpro](https://icehrm.com/purchase-icehrmpro)
+
 
 IceHrm Mobile App (Beta)
 ------------------------
