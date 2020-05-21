@@ -14,4 +14,4 @@ node_modules/*
 web/dist/*.map
 web/admin/dist/*.map
 web/modules/dist/*.map
-.gitkeep
+docker/db_data

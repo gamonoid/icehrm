@@ -1,0 +1,23 @@
+version: "3.5"
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: IceHrmR00t
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
+      MYSQL_DATABASE: dev
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/setup.sql
+      - ./db_data:/var/lib/mysql
+
+  icehrm:
+    build: .
+    ports:
+      - 8080:8080
+    links:
+      - mysql
+volumes:
+  db_data:
