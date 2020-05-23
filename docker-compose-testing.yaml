@@ -19,6 +19,21 @@ services:
       dockerfile: Dockerfile-testing
     ports:
       - 8090:8090
+    logging:
+      driver: none
 
+  # Cypress container
+  cypress:
+    # the Docker image to use from https://github.com/cypress-io/cypress-docker-images
+    image: "cypress/included:3.2.0"
+    depends_on:
+      - icehrm-testing
+    environment:
+      # pass base url to test pointing at the web application
+      - CYPRESS_baseUrl=http://icehrm-testing:8090
+    # share the current folder as volume to avoid copying
+    working_dir: /e2e
+    volumes:
+      - ./test/frontend:/e2e
 volumes:
   db_data:

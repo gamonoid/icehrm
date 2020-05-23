@@ -4,8 +4,8 @@ ini_set('error_log', 'data/icehrm.log');
 define('CLIENT_NAME', 'icehrm');
 define('APP_BASE_PATH', '/var/www/html/core/');
 define('CLIENT_BASE_PATH', '/var/www/html/app/');
-define('BASE_URL','http://icehrm:8090/web/');
-define('CLIENT_BASE_URL','http://icehrm:8090/app/');
+define('BASE_URL','http://icehrm-testing:8090/web/');
+define('CLIENT_BASE_URL','http://icehrm-testing:8090/app/');
 
 define('APP_DB', 'icehrm');
 define('APP_USERNAME', 'testing');

@@ -63,21 +63,10 @@ class IceCypressTest {
 
   clickSave(cy) {
     cy.get(`#${this.element}Form .saveBtn`).should("be.visible").click();
+    cy.wait(config.WAIT_TIME);
   }
 
   editElementValidate(cy, validation = [], editButtonSelector) {
-    if (this.isRemoteTable) {
-      cy.server().route('GET', `/${config.URL_PREFIX}/data.php*`).as('getAfterSave');
-    } else {
-      cy.server().route('POST', `/${config.URL_PREFIX}/service.php*`).as('getAfterSave');
-    }
-
-    // Wait for data table response
-    if (config.WAIT_ON_TIME) {
-      cy.wait(config.WAIT_TIME);
-    } else {
-      cy.wait('@getAfterSave').its('status').should('be', config.DEFAULT_STATUS);
-    }
 
     cy.server().route('POST', `/${config.URL_PREFIX}/service.php*`).as('getElementAfterSave');
     // Click on edit and wait
@@ -85,11 +74,7 @@ class IceCypressTest {
       .should("be.visible")
       .click();
 
-    if (config.WAIT_ON_TIME) {
-      cy.wait(config.WAIT_TIME);
-    } else {
-      cy.wait('@getElementAfterSave').its('status').should('be', config.DEFAULT_STATUS);
-    }
+    cy.wait('@getElementAfterSave').its('status').should('be', config.DEFAULT_STATUS);
 
     validation.forEach((item) => {
       cy.get(item[0]).then(element => expect(element.val()).eq(item[1]));
