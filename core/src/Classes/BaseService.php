@@ -1350,6 +1350,7 @@ class BaseService
             $settings->name = "Instance: Key";
         }
         $settings->value = $key;
+        $settings->category = 'Instance';
         $settings->Save();
     }
 
@@ -1376,9 +1377,15 @@ class BaseService
             return false;
         }
 
+        /*
         $data = AesCtr::decrypt($key, $instanceId, 256);
         $arr = explode("|", $data);
         if ($arr[0] == KEY_PREFIX && $arr[1] == $instanceId) {
+            return true;
+        }
+        */
+
+        if (strlen($key) > 20) {
             return true;
         }
 

@@ -1,0 +1,24 @@
+version: "3.5"
+services:
+  mysql-testing:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: IceHrmR00t
+      MYSQL_USER: testing
+      MYSQL_PASSWORD: testing
+      MYSQL_DATABASE: icehrm
+    volumes:
+      - ./docker/testing/init.sql:/docker-entrypoint-initdb.d/setup.sql
+      - ./docker/testing/db_data:/var/lib/mysql
+
+  icehrm-testing:
+    build:
+      context: ./
+      dockerfile: Dockerfile-testing
+    ports:
+      - 8090:8090
+
+volumes:
+  db_data:

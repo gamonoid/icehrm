@@ -13,8 +13,9 @@ class RoboFile extends \Robo\Tasks
 {
     private function includeCientConfig($client){
         include dirname(__FILE__)."/../config.base.php";
-        include ALL_CLIENT_BASE_PATH. $client . "/config.php";
+        //include ALL_CLIENT_BASE_PATH. $client . "/config.php";
 
+        include (dirname(__FILE__)."/../../app/config.php");
         include (dirname(__FILE__)."/../include.common.php");
 
         include(dirname(__FILE__)."/../server.includes.inc.php");

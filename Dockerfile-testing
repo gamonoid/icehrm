@@ -8,16 +8,16 @@ RUN apk --no-cache add php7 php7-fpm php7-opcache php7-mysqli php7-json php7-ope
     php7-mbstring php7-gd nginx supervisor curl
 
 # Configure nginx
-COPY docker/prod/config/nginx.conf /etc/nginx/nginx.conf
+COPY docker/testing/config/nginx.conf /etc/nginx/nginx.conf
 # Remove default server definition
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Configure PHP-FPM
-COPY docker/prod/config/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
-COPY docker/prod/config/php.ini /etc/php7/conf.d/custom.ini
+COPY docker/testing/config/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
+COPY docker/testing/config/php.ini /etc/php7/conf.d/custom.ini
 
 # Configure supervisord
-COPY docker/prod/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY docker/testing/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Setup document root
 RUN mkdir -p /var/www/html
@@ -37,13 +37,14 @@ COPY --chown=nobody ./app /var/www/html/app/
 COPY --chown=nobody ./core /var/www/html/core/
 COPY --chown=nobody ./web /var/www/html/web/
 COPY --chown=nobody ./index.php /var/www/html/index.php
-COPY --chown=nobody ./docker/prod/config/config.php /var/www/html/app/config.php
+COPY --chown=nobody ./docker/testing/config/config.php /var/www/html/app/config.php
+COPY --chown=nobody ./docker/testing/config/reset-db.php /var/www/html/app/reset-db.php
 
 # Expose the port nginx is reachable on
-EXPOSE 80
+EXPOSE 8090
 
 # Let supervisord start nginx & php-fpm
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
 # Configure a healthcheck to validate that everything is up&running
-HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8082/fpm-ping
+HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8091/fpm-ping

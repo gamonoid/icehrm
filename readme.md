@@ -106,5 +106,17 @@ Preparing development VM with Vagrant
 ```
 
 
+### Docker Setup
+
+docker run -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0
+
+vagrant ssh -c 'cd /vagrant/core/robo; php robo.phar reset:db test; php robo.phar create:tables test; php robo.phar migrate:all test; php robo.phar execute:fixtures test'
+
+docker-compose up --build
+
+docker-compose -f docker-compose-testing.yaml up
+
+
+docker-compose -f docker-compose-testing.yaml up --exit-code-from cypress
 
 

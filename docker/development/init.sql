@@ -1,4 +1,4 @@
-use dev;
+use icehrm;
 
 create table `CompanyStructures` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -2957,5 +2957,7 @@ REPLACE INTO `UserReports` (`name`, `details`, `parameters`, `query`, `paramOrde
      'PayslipReport', '["payroll"]', 'Class','Finance','PDF');
 
 
-
+INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
+  ('Instance : ID', '0847429146712c108e23c435e8f93b4d', '',''),
+  ('Instance: Key', 'UQHEYBx9H1eNR66nhNCNCz1WCDDhkjtx1OuJbO3ZQMt+8tfSGvuOH/YEHntRajY=', '','');
 

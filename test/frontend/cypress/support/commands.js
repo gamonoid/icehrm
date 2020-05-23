@@ -27,12 +27,13 @@ const config = require('./config');
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', (user, password) => {
-  cy.visit(`${config.BASE_URL}login.php`);
+  cy.visit(`${config.BASE_URL}logout.php`);
   cy.get('#username').type(user).should('have.value', user);
   cy.get('#password').type(password).should('have.value', password);
   cy.get('.btn').first().click();
 });
 
 Cypress.Commands.add('resetDatabase', () => {
-  cy.exec('vagrant ssh -c \'cd /vagrant/core/robo; php robo.phar reset:db test; php robo.phar create:tables test; php robo.phar migrate:all test; php robo.phar execute:fixtures test\'');
+  cy.visit(`${config.BASE_URL}reset-db.php`);
+  //cy.exec('vagrant ssh -c \'cd /vagrant/core/robo; php robo.phar reset:db test; php robo.phar create:tables test; php robo.phar migrate:all test; php robo.phar execute:fixtures test\'');
 });
