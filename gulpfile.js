@@ -154,6 +154,7 @@ gulp.task('admin-js', (done) => {
   let files = [
     'attendance',
     'company_structure',
+    'clients',
     'dashboard',
     'data',
     'documents',

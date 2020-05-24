@@ -6,8 +6,9 @@
  * Time: 5:53 PM
  */
 
-namespace Projects\Common\Model;
+namespace Clients\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class Client extends BaseModel
@@ -21,5 +22,12 @@ class Client extends BaseModel
     public function getManagerAccess()
     {
         return array("get","element","save","delete");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('clients', 'admin'),
+        ];
     }
 }
