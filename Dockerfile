@@ -53,12 +53,6 @@ USER nobody
 
 # Add application
 WORKDIR /var/www/html
-COPY --chown=nobody ./app /var/www/html/app/
-COPY --chown=nobody ./core /var/www/html/core/
-COPY --chown=nobody ./web /var/www/html/web/
-COPY --chown=nobody ./index.php /var/www/html/index.php
-COPY --chown=nobody ./docker/development/config/config.php /var/www/html/app/config.php
-COPY --chown=nobody ./docker/development/config/info.php /var/www/html/app/info.php
 
 # Expose the port nginx is reachable on
 EXPOSE 8080

@@ -18,8 +18,6 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./app:/var/www/html/app
-      - ./web:/var/www/html/web
-      - ./core:/var/www/html/core
+      - .:/var/www/html
 volumes:
   db_data:
