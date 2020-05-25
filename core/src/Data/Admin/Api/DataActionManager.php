@@ -44,10 +44,12 @@ class DataActionManager extends SubActionManager
 
         $processClass = '\\Data\Admin\Import\\'.$dataImport->dataType;
         $processObj = new $processClass();
-
+        $processObj->setModelObjectName($dataImport->objectType);
         $res = $processObj->process($data, $dataImport->id);
         if ($processObj->getLastStatus() === IceResponse::SUCCESS) {
             $dataFile->status = "Processed";
+        } else {
+            $dataFile->status = "Failed";
         }
         $dataFile->details = json_encode($res, JSON_PRETTY_PRINT);
         $dataFile->Save();
@@ -56,5 +58,30 @@ class DataActionManager extends SubActionManager
 
     private function processHeader($dataImportId, $data)
     {
+    }
+
+    public function downloadTemplate($req)
+    {
+        $dataImport = new DataImport();
+        $dataImport->Load("id =?", array($req->id));
+
+        $columns = json_decode($dataImport->columns);
+
+        $headers = [];
+        $sample = [];
+
+        foreach ($columns as $column) {
+            $headers[] = $column->name;
+            $sample[] = $column->sampleValue;
+        }
+
+        $output = fopen('php://output', 'w');
+        header('Content-Type:application/csv');
+        header('Content-Disposition:attachment;filename='.$dataImport->name.'.csv');
+        fputcsv($output, $headers);
+        fputcsv($output, $sample);
+        fclose($output);
+        ob_flush();
+        flush();
     }
 }

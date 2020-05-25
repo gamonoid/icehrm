@@ -1960,3 +1960,15 @@ msgstr "Gi tilbakemelding"
 
 msgid "Review Status"
 msgstr "Review Status"
+
+msgid "Payroll Employees"
+msgstr "Lønnsansatte"
+
+msgid "Payroll Groups"
+msgstr "Lønnsgrupper"
+
+msgid "Saved Calculations"
+msgstr "Lagrede beregninger"
+
+msgid "Total Leave Days"
+msgstr "Totalt permisjonsdager"

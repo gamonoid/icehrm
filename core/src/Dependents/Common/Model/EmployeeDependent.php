@@ -2,6 +2,7 @@
 
 namespace Dependents\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class EmployeeDependent extends BaseModel
@@ -26,5 +27,13 @@ class EmployeeDependent extends BaseModel
     public function getUserOnlyMeAccess()
     {
         return array("element","save","delete");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('employees', 'admin'),
+            new ModuleAccess('employees', 'user'),
+        ];
     }
 }

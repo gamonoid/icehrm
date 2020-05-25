@@ -1960,3 +1960,15 @@ msgstr "Suministre realimentación"
 
 msgid "Review Status"
 msgstr "Estado de revisión"
+
+msgid "Payroll Employees"
+msgstr "Empleados de la nómina"
+
+msgid "Payroll Groups"
+msgstr "Grupos de Nómina"
+
+msgid "Saved Calculations"
+msgstr "Cálculos guardados"
+
+msgid "Total Leave Days"
+msgstr "Total de días de permiso"

@@ -61,6 +61,10 @@ class CompanyStructureAdapter extends AdapterBase {
       $tempDomObj.find('#field_heads').hide();
     }
   }
+
+  getHelpLink() {
+    return 'https://icehrm.gitbook.io/icehrm/employees/employee-information-setup';
+  }
 }
 
 
@@ -304,7 +308,7 @@ class CompanyGraphAdapter extends CompanyStructureAdapter {
   }
 
   getHelpLink() {
-    return 'https://thilinah.gitbooks.io/icehrm-guide/content/employee-information-setup.html';
+    return 'https://icehrm.gitbook.io/icehrm/employees/employee-information-setup';
   }
 }
 

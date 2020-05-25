@@ -8,6 +8,7 @@
 
 namespace Employees\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class EmploymentStatus extends BaseModel
@@ -23,5 +24,13 @@ class EmploymentStatus extends BaseModel
     public function getManagerAccess()
     {
         return array("get","element","save");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('employees', 'admin'),
+            new ModuleAccess('employees', 'user'),
+        ];
     }
 }

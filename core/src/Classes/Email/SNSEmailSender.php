@@ -77,6 +77,7 @@ class SNSEmailSender extends EmailSender
             return true;
         } catch (\Exception $e) {
             LogManager::getInstance()->error("Error sending email:" . $e->getMessage());
+            LogManager::getInstance()->notifyException($e);
             return false;
         }
     }

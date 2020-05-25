@@ -8,6 +8,8 @@
 
 namespace Model;
 
+use Classes\ModuleAccess;
+
 class Audit extends BaseModel
 {
     public $table = 'AuditLog';
@@ -20,5 +22,12 @@ class Audit extends BaseModel
     public function getUserAccess()
     {
         return array();
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('audit', 'admin'),
+        ];
     }
 }

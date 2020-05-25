@@ -99,10 +99,7 @@ class ApproveAdminAdapter extends LogViewAdapter {
   }
 
   isSubProfileTable() {
-    if (this.user.user_level == 'Admin') {
-      return false;
-    }
-    return true;
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 
   getStatusOptionsData(currentStatus) {

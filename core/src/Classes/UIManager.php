@@ -150,7 +150,7 @@ class UIManager
         }
 
         $menuItems[] = new MenuItemTemplate('menuButtonNotification', array());
-        if ($this->user->user_level == "Admin") {
+        if ($this->user->user_level == 'Admin') {
             $menuItems[] = new MenuItemTemplate('menuButtonSwitchProfile', array());
         }
 
@@ -197,7 +197,7 @@ class UIManager
             ));
         }
 
-        if ($this->user->user_level == "Admin") {
+        if ($this->user->user_level == 'Admin') {
             $other = '';
             if (class_exists('\\Classes\\ProVersion')) {
                 $pro = new ProVersion();

@@ -22,6 +22,8 @@ abstract class AbstractDataImporter implements DataImporter
     protected $columnsCompeted = array();
     protected $relatedColumns = array();
 
+    protected $status = IceResponse::SUCCESS;
+
     public function getResult()
     {
         return $this->rowObjects;
@@ -38,23 +40,47 @@ abstract class AbstractDataImporter implements DataImporter
         $headers = json_decode($columns);
 
         $counter = 0;
+        $expectedColumnOrder = [];
+        $actualColumnOrder = [];
+        $headerValidationFailed = false;
+
+        if (count($headers) != count($data)) {
+            if ($headerValidationFailed) {
+                return new IceResponse(
+                    IceResponse::ERROR,
+                    [
+                        'Column count in the file do not match the header count'
+                    ]
+                );
+            }
+        }
+
+        foreach ($headers as $testColumn) {
+            $expectedColumnOrder[] = $testColumn->name;
+            $actualColumnOrder[] = $data[$counter];
+            if (trim($testColumn->name) !==  trim($data[$counter])) {
+                $headerValidationFailed = true;
+            }
+
+            $counter++;
+        }
+
+        if ($headerValidationFailed) {
+            return new IceResponse(
+                IceResponse::ERROR,
+                [
+                    'expected' => $expectedColumnOrder,
+                    'actual'=> $actualColumnOrder
+                ]
+            );
+        }
+
+        $counter = 0;
         foreach ($headers as $column) {
             $this->headerMapping[] = $column;
             if ($column->idField == "Yes") {
                 $this->primaryKeyColumn = $counter;
             }
-            //Update related columns
-            if (($column->type == "Reference" || $column->type == "Attached") && $column->isKeyField == "Yes") {
-                $this->relatedColumns[$counter] = array();
-                for ($i = 0; $i< count($headers); $i++) {
-                    $columnNew = $headers[$i];
-                    if ($columnNew->id != $column->id &&
-                        $columnNew->dependOn == $column->dependOn && $column->dependOn != "NULL") {
-                        $this->relatedColumns[$counter][$i] = $columnNew;
-                    }
-                }
-            }
-
             $counter++;
         }
 
@@ -63,6 +89,7 @@ abstract class AbstractDataImporter implements DataImporter
         $this->objectKeys = $obj->getObjectKeys();
 
         $this->updateCustomFields();
+        return new IceResponse(IceResponse::SUCCESS);
     }
 
     public function setDataImportId($dataImportId)
@@ -74,24 +101,11 @@ abstract class AbstractDataImporter implements DataImporter
     public function updateCustomFields()
     {
         $customField = new CustomField();
-        $customFields = $customField->Find("type = ?", array($this->getModelObject()));
+        $customFields = $customField->Find("type = ?", array($this->getModelObjectName()));
         $this->customFields = array();
         foreach ($customFields as $cf) {
             $this->customFields[$cf->name] = $cf;
         }
-    }
-
-    public function addCustomField($column)
-    {
-        $customField = new CustomField();
-        $customField->type = $this->getModelObject();
-        $customField->name = $column->name;
-        $customField->display = "Form";
-        $customField->field_type = "text";
-        $customField->field_label = $column->title;
-        $customField->field_validation = "none";
-        $customField->display_order = 0;
-        $customField->Save();
     }
 
     public function markCellCompleted($row, $col)
@@ -136,48 +150,15 @@ abstract class AbstractDataImporter implements DataImporter
             }
         }
 
-        //Check for non existing column names
-        if (!isset($this->objectKeys[$headerColumn->name])) {
-            if (!isset($this->customFields[$headerColumn->name])) {
-                $this->addCustomField($headerColumn);
-                $this->updateCustomFields();
-            }
-        }
-
         if ($headerColumn->type == "Normal") {
             $this->rowObjects[$row]->{$headerColumn->name} = $data;
-        } elseif ($headerColumn->type == "Reference" || $headerColumn->type == "Attached") {
-            if ($headerColumn->isKeyField == "Yes") {
-                $hcClass = BaseService::getInstance()->getFullQualifiedModelClassName($headerColumn->dependOn);
-                $hcField = $headerColumn->dependOnField;
-                /* @var \Model\BaseModel $hcObject */
-                $hcObject = new $hcClass();
-                if ($headerColumn->type == "Attached" && !empty($this->rowObjects[$row]->id)) {
-                    $hcObject->Load("$hcField = ? and employee = ?", array($data,$this->rowObjects[$row]->id));
-                } else {
-                    $hcObject->Load("$hcField = ?", array($data));
-                }
-
-                $hcObject->{$hcField} = $data;
-                foreach ($this->relatedColumns[$column] as $key => $val) {
-                    $tempValName = $val->name;
-                    if (strstr($val->name, "/")) {
-                        $tempValName = explode("/", $val->name)[1];
-                    }
-                    $hcObject->{$tempValName} = $allData[$key];
-                    $this->markCellCompleted($row, $key);
-                }
-
-                if ($headerColumn->type == "Reference") {
-                    $hcObject->Save();
-                } else {
-                    if (!isset($this->attachedObjects[$row])) {
-                        $this->attachedObjects[$row] = array();
-                    }
-                    $this->attachedObjects[$row][] = $hcObject;
-                }
-                $this->rowObjects[$row]->{$headerColumn->name} = $hcObject->id;
-            }
+        } elseif ($headerColumn->type == "Reference") {
+            $hcClass = BaseService::getInstance()->getFullQualifiedModelClassName($headerColumn->dependOn);
+            $hcField = $headerColumn->dependOnField;
+            /* @var \Model\BaseModel $hcObject */
+            $hcObject = new $hcClass();
+            $hcObject->Load("$hcField = ?", array($data));
+            $this->rowObjects[$row]->{$headerColumn->name} = $hcObject->id;
         }
 
         $this->markCellCompleted($row, $column);
@@ -215,18 +196,8 @@ abstract class AbstractDataImporter implements DataImporter
                 foreach ($this->rowObjects[$row] as $k => $v) {
                     if (isset($customFields[$k])) {
                         BaseService::getInstance()->customFieldManager
-                            ->addCustomField($class, $this->rowObjects[$row]->id, $k, $v);
+                            ->addCustomField($this->getModelObjectName(), $this->rowObjects[$row]->id, $k, $v);
                         $result['CustomFields'][] = array($class, $this->rowObjects[$row]->id, $k, $v);
-                    }
-                }
-
-                if (!empty($this->attachedObjects[$row])) {
-                    /* @var \Model\BaseModel $aObj */
-                    foreach ($this->attachedObjects[$row] as $aObj) {
-                        $aObj->employee = $this->rowObjects[$row]->id;
-
-                        $aObj->Save();
-                        $result['attachedObjects'][] = $aObj;
                     }
                 }
             }
@@ -238,6 +209,10 @@ abstract class AbstractDataImporter implements DataImporter
     }
 
     abstract public function getModelObject();
+    abstract public function getModelObjectName();
+    public function setModelObjectName($name)
+    {
+    }
     public function isDuplicate($obj)
     {
         return false;
@@ -264,7 +239,12 @@ abstract class AbstractDataImporter implements DataImporter
             $cells = str_getcsv($line, ",");
             if ($headerProcessed === false) {
                 $this->setDataImportId($dataImportId);
-                $this->processHeader($cells);
+                $result = $this->processHeader($cells);
+                if ($result->getStatus() === IceResponse::ERROR) {
+                    $this->status = IceResponse::ERROR;
+                    $this->rowObjects = $result->getData();
+                    return $result->getData();
+                }
                 $headerProcessed = true;
             } else {
                 $result = $this->processDataRow($counter, $cells);
@@ -278,6 +258,6 @@ abstract class AbstractDataImporter implements DataImporter
 
     public function getLastStatus()
     {
-        return IceResponse::SUCCESS;
+        return $this->status;
     }
 }

@@ -8,6 +8,7 @@
 
 namespace Metadata\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class Ethnicity extends BaseModel
@@ -27,5 +28,12 @@ class Ethnicity extends BaseModel
     public function getAnonymousAccess()
     {
         return array("get","element");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('metadata', 'admin'),
+        ];
     }
 }

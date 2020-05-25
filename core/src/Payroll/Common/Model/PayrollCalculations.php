@@ -9,6 +9,7 @@
 namespace Payroll\Common\Model;
 
 use Attendance\Common\Model\Attendance;
+use Classes\ModuleAccess;
 use Model\BaseModel;
 use Salary\Common\Model\EmployeeSalary;
 use TimeSheets\Common\Model\EmployeeTimeSheet;
@@ -118,5 +119,12 @@ class PayrollCalculations extends BaseModel
         $hoursPartialUnapproved = $hours + ($minutes/60);
 
         return round($hoursPartial, 2) . "(".round($hoursPartialUnapproved, 2).")";
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('payroll', 'admin'),
+        ];
     }
 }

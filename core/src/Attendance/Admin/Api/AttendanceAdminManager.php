@@ -29,32 +29,32 @@ class AttendanceAdminManager extends AbstractModuleManager
 
     public function setupRestEndPoints()
     {
-        \Classes\Macaw::get(REST_API_PATH.'attendance/(:num)', function ($pathParams) {
+        \Classes\Macaw::get(REST_API_PATH.'attendance/(:num)', function ($pathParams = null) {
             $restEndPoint = new AttendanceRestEndPoint();
             $restEndPoint->process('get', $pathParams);
         });
 
-        \Classes\Macaw::get(REST_API_PATH.'attendance', function ($pathParams) {
+        \Classes\Macaw::get(REST_API_PATH.'attendance', function ($pathParams = null) {
             $restEndPoint = new AttendanceRestEndPoint();
             $restEndPoint->process('listAll', $pathParams);
         });
 
-        \Classes\Macaw::get(REST_API_PATH.'employee/(:num)/attendance', function ($pathParams) {
+        \Classes\Macaw::get(REST_API_PATH.'employee/(:num)/attendance', function ($pathParams = null) {
             $restEndPoint = new AttendanceRestEndPoint();
             $restEndPoint->process('listEmployeeAttendance', $pathParams);
         });
 
-        \Classes\Macaw::post(REST_API_PATH.'attendance', function ($pathParams) {
+        \Classes\Macaw::post(REST_API_PATH.'attendance', function ($pathParams = null) {
             $restEndPoint = new AttendanceRestEndPoint();
             $restEndPoint->process('post', $pathParams);
         });
 
-        \Classes\Macaw::delete(REST_API_PATH.'attendance/(:num)', function ($pathParams) {
+        \Classes\Macaw::delete(REST_API_PATH.'attendance/(:num)', function ($pathParams = null) {
             $restEndPoint = new AttendanceRestEndPoint();
             $restEndPoint->process('delete', $pathParams);
         });
 
-        \Classes\Macaw::post(REST_API_PATH.'attendance/punch-in', function ($pathParams) {
+        \Classes\Macaw::post(REST_API_PATH.'attendance/punch-in', function ($pathParams = null) {
             $restEndPoint = new AttendanceRestEndPoint();
             $restEndPoint->process('punchIn', $pathParams);
         });
@@ -64,7 +64,7 @@ class AttendanceAdminManager extends AbstractModuleManager
             $restEndPoint->process('getOpenPunch', [$employeeId, $date]);
         });
 
-        \Classes\Macaw::post(REST_API_PATH.'attendance/punch-out', function ($pathParams) {
+        \Classes\Macaw::post(REST_API_PATH.'attendance/punch-out', function ($pathParams = null) {
             $restEndPoint = new AttendanceRestEndPoint();
             $restEndPoint->process('punchOut', $pathParams);
         });
@@ -85,10 +85,10 @@ class AttendanceAdminManager extends AbstractModuleManager
     public function initQuickAccessMenu()
     {
         UIManager::getInstance()->addQuickAccessMenuItem(
-            "Clocked In Employees",
-            "fa-clock-o",
-            CLIENT_BASE_URL."?g=admin&n=attendance&m=admin_Employees#tabAttendanceStatus",
-            array("Admin","Manager")
+            'Clocked In Employees',
+            'fa-clock-o',
+            CLIENT_BASE_URL.'?g=admin&n=attendance&m=admin_Employees#tabAttendanceStatus',
+            array('Admin','Manager')
         );
     }
 

@@ -52,7 +52,6 @@ class LanguageManager
         $user = BaseService::getInstance()->getCurrentUser();
         if (empty($user) || empty($user->lang) || $user->lang == "NULL") {
             $lang = SettingsManager::getInstance()->getSetting('System: Language');
-            LogManager::getInstance()->info("System Lang:".$lang);
         } else {
             $supportedLang = new SupportedLanguage();
             $supportedLang->Load("id = ?", array($user->lang));

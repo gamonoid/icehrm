@@ -32,8 +32,7 @@ class AesCtr extends Aes
       // key expansion) - gives us well encrypted key
         $nBytes = $nBits/8;  // no bytes in key
         $pwBytes = array();
-        for ($i = 0; $i<$nBytes;
-        $i++) {
+        for ($i = 0; $i<$nBytes; $i++) {
             $pwBytes[$i] = ord(substr($password, $i, 1)) & 0xff;
         }
         $key = Aes::cipher($pwBytes, Aes::keyExpansion($pwBytes));
@@ -47,23 +46,19 @@ class AesCtr extends Aes
         $nonceSec = floor($nonce/1000);
         $nonceRnd = floor(rand(0, 0xffff));
 
-        for ($i = 0; $i<2;
-        $i++) {
+        for ($i = 0; $i<2; $i++) {
             $counterBlock[$i]   = self::urs($nonceMs, $i*8) & 0xff;
         }
-        for ($i = 0; $i<2;
-        $i++) {
+        for ($i = 0; $i<2; $i++) {
             $counterBlock[$i+2] = self::urs($nonceRnd, $i*8) & 0xff;
         }
-        for ($i = 0; $i<4;
-        $i++) {
+        for ($i = 0; $i<4; $i++) {
             $counterBlock[$i+4] = self::urs($nonceSec, $i*8) & 0xff;
         }
 
       // and convert it to a string to go on the front of the ciphertext
         $ctrTxt = '';
-        for ($i = 0; $i<8;
-        $i++) {
+        for ($i = 0; $i<8; $i++) {
             $ctrTxt .= chr($counterBlock[$i]);
         }
 
@@ -77,12 +72,10 @@ class AesCtr extends Aes
         for ($b = 0; $b<$blockCount; $b++) {
           // set counter (block #) in last 8 bytes of counter block (leaving nonce in 1st 8 bytes)
           // done in two stages for 32-bit ops: using two words allows us to go past 2^32 blocks (68GB)
-            for ($c = 0; $c<4;
-            $c++) {
+            for ($c = 0; $c<4; $c++) {
                 $counterBlock[15-$c] = self::urs($b, $c*8) & 0xff;
             }
-            for ($c = 0; $c<4;
-            $c++) {
+            for ($c = 0; $c<4; $c++) {
                 $counterBlock[15-$c-4] = self::urs($b/0x100000000, $c*8);
             }
 
@@ -124,8 +117,7 @@ class AesCtr extends Aes
       // use AES to encrypt password (mirroring encrypt routine)
         $nBytes = $nBits/8;  // no bytes in key
         $pwBytes = array();
-        for ($i = 0; $i<$nBytes;
-        $i++) {
+        for ($i = 0; $i<$nBytes; $i++) {
             $pwBytes[$i] = ord(substr($password, $i, 1)) & 0xff;
         }
         $key = Aes::cipher($pwBytes, Aes::keyExpansion($pwBytes));
@@ -134,8 +126,7 @@ class AesCtr extends Aes
       // recover nonce from 1st element of ciphertext
         $counterBlock = array();
         $ctrTxt = substr($ciphertext, 0, 8);
-        for ($i = 0; $i<8;
-        $i++) {
+        for ($i = 0; $i<8; $i++) {
             $counterBlock[$i] = ord(substr($ctrTxt, $i, 1));
         }
 
@@ -145,8 +136,7 @@ class AesCtr extends Aes
       // separate ciphertext into blocks (skipping past initial 8 bytes)
         $nBlocks = ceil((strlen($ciphertext)-8) / $blockSize);
         $ct = array();
-        for ($b = 0; $b<$nBlocks;
-        $b++) {
+        for ($b = 0; $b<$nBlocks; $b++) {
             $ct[$b] = substr($ciphertext, 8+$b*$blockSize, 16);
         }
         $ciphertext = $ct;  // ciphertext is now array of block-length strings
@@ -156,12 +146,10 @@ class AesCtr extends Aes
 
         for ($b = 0; $b<$nBlocks; $b++) {
           // set counter (block #) in last 8 bytes of counter block (leaving nonce in 1st 8 bytes)
-            for ($c = 0; $c<4;
-            $c++) {
+            for ($c = 0; $c<4; $c++) {
                 $counterBlock[15-$c] = self::urs($b, $c*8) & 0xff;
             }
-            for ($c = 0; $c<4;
-            $c++) {
+            for ($c = 0; $c<4; $c++) {
                 $counterBlock[15-$c-4] = self::urs(($b+1)/0x100000000-1, $c*8) & 0xff;
             }
 

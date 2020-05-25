@@ -37,6 +37,7 @@ class S3FileSystem
             ));
         } catch (\Exception $e) {
             LogManager::getInstance()->error($e->getMessage());
+            LogManager::getInstance()->error($e);
             return null;
         }
 
@@ -60,7 +61,8 @@ class S3FileSystem
                     'Key'    => $key
             ));
         } catch (\Exception $e) {
-            LogManager::getInstance()->info($e->getMessage());
+            LogManager::getInstance()->error($e->getMessage());
+            LogManager::getInstance()->notifyException($e);
             return null;
         }
 

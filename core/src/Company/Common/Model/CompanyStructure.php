@@ -2,6 +2,7 @@
 namespace Company\Common\Model;
 
 use Classes\IceResponse;
+use Classes\ModuleAccess;
 use Employees\Common\Model\Employee;
 use Model\BaseModel;
 
@@ -16,12 +17,20 @@ class CompanyStructure extends BaseModel
 
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element");
     }
 
     public function getUserAccess()
     {
         return array("get","element");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('employees', 'admin'),
+            new ModuleAccess('employees', 'user'),
+        ];
     }
 
     public function validateSave($obj)

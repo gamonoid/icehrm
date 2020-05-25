@@ -55,6 +55,7 @@ $fieldTemplates['colorpick'] = file_get_contents(CLIENT_PATH.'/templates/fields/
 $fieldTemplates['signature'] = file_get_contents(CLIENT_PATH.'/templates/fields/signature.html');
 $fieldTemplates['simplemde'] = file_get_contents(CLIENT_PATH.'/templates/fields/simplemde.html');
 $fieldTemplates['tinymce'] = file_get_contents(CLIENT_PATH.'/templates/fields/tinymce.html');
+$fieldTemplates['code'] = file_get_contents(CLIENT_PATH.'/templates/fields/code.html');
 
 $templates = array();
 $templates['formTemplate'] = file_get_contents(CLIENT_PATH.'/templates/form_template.html');

@@ -8,6 +8,7 @@
 
 namespace Overtime\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class OvertimeCategory extends BaseModel
@@ -27,5 +28,12 @@ class OvertimeCategory extends BaseModel
     public function getUserOnlyMeAccess()
     {
         return array("get","element");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('overtime', 'admin'),
+        ];
     }
 }

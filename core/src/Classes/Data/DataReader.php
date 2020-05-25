@@ -14,8 +14,8 @@ class DataReader
         $sortData = $query->getSortingData();
         $data = \Classes\BaseService::getInstance()->getData(
             $table,
-            $query->getFieldMapping(),
-            json_encode($query->getFilters()),
+            null,
+            $query->getFilters(),
             $query->getOrderBy(),
             $sLimit,
             json_encode($query->getColumns()),

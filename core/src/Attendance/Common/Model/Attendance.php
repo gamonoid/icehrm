@@ -8,6 +8,7 @@
 
 namespace Attendance\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class Attendance extends BaseModel
@@ -32,5 +33,14 @@ class Attendance extends BaseModel
     public function getUserOnlyMeAccess()
     {
         return array('element','save','delete');
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('attendance', 'admin'),
+            new ModuleAccess('attendance', 'user'),
+            new ModuleAccess('attendance_sheets', 'user'),
+        ];
     }
 }

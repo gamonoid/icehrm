@@ -51,10 +51,11 @@ class PHPMailer extends EmailSender
             }
             $headers .= 'ReplyTo: ' . $replyToEmail . "\r\n";
             $headers .= 'Ice-Mailer: PHP/' . phpversion();
-            
+
             return mail($toEmail, $subject, $body, $headers);
         } catch (\Exception $e) {
             LogManager::getInstance()->error("Error sending email:" . $e->getMessage());
+            LogManager::getInstance()->notifyException($e);
             return false;
         }
     }

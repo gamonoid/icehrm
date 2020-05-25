@@ -8,6 +8,7 @@
 
 namespace TimeSheets\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 use Utils\CalendarTools;
 
@@ -59,7 +60,7 @@ class EmployeeTimeSheet extends BaseModel
         }
 
         $totMinutes = round($seconds / 60);
-        
+
         return $totMinutes;
     }
 
@@ -87,5 +88,12 @@ class EmployeeTimeSheet extends BaseModel
             $entry->days[] = [$dayObj->format('Y-m-d'), $dayObj->format("(D) d M")];
         }
         return $entry;
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('time_sheets', 'user'),
+        ];
     }
 }

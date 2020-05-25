@@ -1960,3 +1960,15 @@ msgstr "Fornire un feedback"
 
 msgid "Review Status"
 msgstr "Verifica lo stato"
+
+msgid "Payroll Employees"
+msgstr "Personale dipendente"
+
+msgid "Payroll Groups"
+msgstr "Gruppi di lavoro"
+
+msgid "Saved Calculations"
+msgstr "Calcoli salvati"
+
+msgid "Total Leave Days"
+msgstr "Giorni di congedo totali"

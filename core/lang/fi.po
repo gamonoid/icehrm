@@ -1960,3 +1960,15 @@ msgstr "Antaa palautetta"
 
 msgid "Review Status"
 msgstr "Tarkista tila"
+
+msgid "Payroll Employees"
+msgstr "Palkanlaskennan työntekijät"
+
+msgid "Payroll Groups"
+msgstr "Palkanlaskentaryhmät"
+
+msgid "Saved Calculations"
+msgstr "Tallennetut laskelmat"
+
+msgid "Total Leave Days"
+msgstr "Kokonaislomapäivät"

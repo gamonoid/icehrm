@@ -8,6 +8,7 @@
 
 namespace Employees\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class EmployeeApproval extends BaseModel
@@ -28,5 +29,13 @@ class EmployeeApproval extends BaseModel
     public function getUserAccess()
     {
         return array();
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('employees', 'admin'),
+            new ModuleAccess('employees', 'user'),
+        ];
     }
 }

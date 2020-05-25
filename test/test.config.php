@@ -14,12 +14,12 @@ define('CLIENT_NAME', 'app');
 if (!defined('MYSQL_ROOT_USER') || !defined('MYSQL_ROOT_PASS')) {
     //Tests running on vagrant
     define('APP_BASE_PATH', TEST_BASE_PATH.'../core/');
-    define('CLIENT_BASE_PATH', TEST_BASE_PATH.'../../deployment/clients/test/');
-    define('BASE_URL', 'http://app.app.dev/');
-    define('CLIENT_BASE_URL', 'http://clients.app.dev/dev/');
+    define('CLIENT_BASE_PATH', TEST_BASE_PATH.'../deployment/clients/test/');
+    define('BASE_URL', 'http://app.app.test/');
+    define('CLIENT_BASE_URL', 'http://clients.app.test/dev/');
 } else {
     //Tests running on deploy
-    define('APP_BASE_PATH', realpath(dirname(__FILE__).'/../app')."/core/");
+    define('APP_BASE_PATH', realpath(dirname(__FILE__).'/../app/core')."/");
     define('CLIENT_BASE_PATH', APP_BASE_PATH.'');
     define('BASE_URL', 'http://apps.gamonoid.com/icehrmcore/');
     define('CLIENT_BASE_URL', 'http://apps.gamonoid.com/icehrm/');

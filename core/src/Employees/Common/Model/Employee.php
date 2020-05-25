@@ -4,6 +4,7 @@ namespace Employees\Common\Model;
 use Classes\BaseService;
 use Classes\FileService;
 use Classes\IceResponse;
+use Classes\ModuleAccess;
 use Company\Common\Model\CompanyStructure;
 use Metadata\Common\Model\Country;
 use Model\BaseModel;
@@ -233,6 +234,14 @@ class Employee extends BaseModel
         $country->Load('code = ?', [$companyStructure->country]);
 
         return $country->id;
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('employees', 'admin'),
+            new ModuleAccess('employees', 'user'),
+        ];
     }
 
     public $table = 'Employees';

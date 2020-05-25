@@ -10,6 +10,7 @@ namespace FieldNames\Common\Model;
 
 use Classes\BaseService;
 use Classes\IceResponse;
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class CustomField extends BaseModel
@@ -55,5 +56,12 @@ class CustomField extends BaseModel
         }
 
         return new IceResponse(IceResponse::SUCCESS, "");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('fieldnames', 'admin'),
+        ];
     }
 }

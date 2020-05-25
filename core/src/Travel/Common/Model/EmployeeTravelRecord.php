@@ -8,6 +8,7 @@
 
 namespace Travel\Common\Model;
 
+use Classes\ModuleAccess;
 use Classes\SettingsManager;
 use Model\ApproveModel;
 
@@ -70,5 +71,13 @@ class EmployeeTravelRecord extends ApproveModel
             return true;
         }
         return false;
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('travel', 'admin'),
+            new ModuleAccess('travel', 'user'),
+        ];
     }
 }

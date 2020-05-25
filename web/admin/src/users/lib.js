@@ -36,9 +36,26 @@ class UserAdapter extends AdapterBase {
       ['employee', {
         label: 'Employee', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
       }],
-      ['user_level', { label: 'User Level', type: 'select', source: [['Admin', 'Admin'], ['Manager', 'Manager'], ['Employee', 'Employee'], ['Other', 'Other']] }],
+      ['user_level',
+        {
+          label: 'User Level',
+          type: 'select',
+          source: [
+            ['Admin', 'Admin'],
+            ['Manager', 'Manager'],
+            ['Employee', 'Employee'],
+            ['Restricted Admin', 'Restricted Admin'],
+            ['Restricted Manager', 'Restricted Manager'],
+            ['Restricted Employee', 'Restricted Employee'],
+          ],
+        },
+      ],
+      ['user_roles', { label: 'User Roles', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
       ['lang', {
         label: 'Language', type: 'select2', 'allow-null': true, 'remote-source': ['SupportedLanguage', 'id', 'description'],
+      }],
+      ['default_module', {
+        label: 'Default Module', type: 'select2', 'null-label': 'No Default Module', 'allow-null': true, 'remote-source': ['Module', 'id', 'name', 'getUserModules'],
       }],
     ];
   }
@@ -53,6 +70,7 @@ class UserAdapter extends AdapterBase {
     $('#adminUsersModel').modal('show');
     $('#adminUsersChangePwd #newpwd').val('');
     $('#adminUsersChangePwd #conpwd').val('');
+    $('#adminUsersChangePwd_error').hide();
   }
 
   saveUserSuccessCallBack(callBackData, serverData) {
@@ -71,7 +89,7 @@ class UserAdapter extends AdapterBase {
 
   doCustomValidation(params) {
     let msg = null;
-    if ((params.user_level !== 'Admin' && params.user_level !== 'Other') && params.employee === 'NULL') {
+    if ((params.user_level !== 'Admin' && params.user_level !== 'Restricted Admin') && params.employee === 'NULL') {
       msg = 'For this user type, you have to assign an employee when adding or editing the user.<br/>';
       msg += " You may create a new employee through 'Admin'->'Employees' menu";
     }
@@ -112,23 +130,23 @@ class UserAdapter extends AdapterBase {
   changePasswordConfirm() {
     $('#adminUsersChangePwd_error').hide();
 
-    const passwordValidation = function (str) {
-      return str.length > 7;
-    };
-
     const password = $('#adminUsersChangePwd #newpwd').val();
-
-    if (!passwordValidation(password)) {
-      $('#adminUsersChangePwd_error').html('Password should be longer than 7 characters');
-      $('#adminUsersChangePwd_error').show();
-      return;
-    }
 
     const conPassword = $('#adminUsersChangePwd #conpwd').val();
 
     if (conPassword !== password) {
       $('#adminUsersChangePwd_error').html("Passwords don't match");
       $('#adminUsersChangePwd_error').show();
+
+      return;
+    }
+
+    const validatePasswordResult = this.validatePassword(password);
+
+    if (validatePasswordResult != null) {
+      $('#adminUsersChangePwd_error').html(validatePasswordResult);
+      $('#adminUsersChangePwd_error').show();
+
       return;
     }
 

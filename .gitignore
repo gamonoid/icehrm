@@ -2,6 +2,7 @@
 .buildpath
 .project
 .idea/
+app/config.php
 build
 deployment/clients/dev/data/
 deployment/clients/test/data/
@@ -14,4 +15,11 @@ node_modules/*
 web/dist/*.map
 web/admin/dist/*.map
 web/modules/dist/*.map
-.gitkeep
+docker/development/db_data
+docker/prod/db_data
+docker/prod/app_data
+docker/testing/db_data
+test/frontend/cypress/videos/*
+test/frontend/cypress/screenshots/*
+test/frontend/node_modules/*
+

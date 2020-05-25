@@ -35,6 +35,13 @@ class CalendarTools
         return $hours;
     }
 
+    public static function getTimeDiffInMinutes($start, $end)
+    {
+        $diff = strtotime($end) - strtotime($start);
+        $minutes = round($diff/(60), 2);
+        return $minutes;
+    }
+
     public static function getDaysBetweenDates($start, $end)
     {
         $begin = new \DateTime($start);
@@ -65,6 +72,14 @@ class CalendarTools
         return $time->format($format);
     }
 
+    public static function subtractMonthsFromDateTime($datetime, $months, $format = 'Y-m-d H:i:s')
+    {
+        $time = new \DateTime($datetime);
+        $time = $time->sub(new \DateInterval('P' . $months . 'M'));
+
+        return $time->format($format);
+    }
+
     public static function getNumberOfDaysBetweenDates($later, $earlier)
     {
         $timeFirst = new \DateTime($later);
@@ -88,5 +103,17 @@ class CalendarTools
         }
 
         return $counter;
+    }
+
+    public static function getYearFromDate($date)
+    {
+        $date = \DateTime::createFromFormat("Y-m-d", $date);
+        return $date->format("Y");
+    }
+
+    public static function assignYearToDate($date, $year)
+    {
+        $date = \DateTime::createFromFormat("Y-m-d", $date);
+        return sprintf('%s-%s', $year, $date->format("m-d"));
     }
 }

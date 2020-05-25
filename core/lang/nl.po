@@ -1960,3 +1960,15 @@ msgstr "Geef feedback"
 
 msgid "Review Status"
 msgstr "Status bekijken"
+
+msgid "Payroll Employees"
+msgstr "Loonlijstwerknemers"
+
+msgid "Payroll Groups"
+msgstr "Salarisgroepen"
+
+msgid "Saved Calculations"
+msgstr "Opgeslagen berekeningen"
+
+msgid "Total Leave Days"
+msgstr "Totaal aantal verlofdagen"

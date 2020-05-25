@@ -11,11 +11,11 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 </style>
 <div class="span9">
     <ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-        <li class="active"><a id="tabPayrollEmployee" href="#tabPagePayrollEmployee"><?=t('Company Payroll')?></a></li>
+        <li class="active"><a id="tabPayrollEmployee" href="#tabPagePayrollEmployee"><?=t('Payroll Employees')?></a></li>
         <li class=""><a id="tabPayroll" href="#tabPagePayroll"><?=t('Payroll Reports')?></a></li>
         <li class=""><a id="tabPayrollColumn" href="#tabPagePayrollColumn"><?=t('Payroll Columns')?></a></li>
-        <li class=""><a id="tabDeductionGroup" href="#tabPageDeductionGroup"><?=t('Calculation Groups')?></a></li>
-        <li class=""><a id="tabDeduction" href="#tabPageDeduction"><?=t('Calculation Methods')?></a></li>
+        <li class=""><a id="tabDeductionGroup" href="#tabPageDeductionGroup"><?=t('Payroll Groups')?></a></li>
+        <li class=""><a id="tabDeduction" href="#tabPageDeduction"><?=t('Saved Calculations')?></a></li>
         <li class=""><a id="tabPayslipTemplate" href="#tabPagePayslipTemplate"><?=t('Payslip Templates')?></a></li>
     </ul>
 

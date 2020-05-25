@@ -1960,3 +1960,15 @@ msgstr "Дају повратне информације"
 
 msgid "Review Status"
 msgstr "Статус прегледа"
+
+msgid "Payroll Employees"
+msgstr "Запослени са платним списковима"
+
+msgid "Payroll Groups"
+msgstr "Платне групе"
+
+msgid "Saved Calculations"
+msgstr "Сачуване калкулације"
+
+msgid "Total Leave Days"
+msgstr "Укупни дани одмора"

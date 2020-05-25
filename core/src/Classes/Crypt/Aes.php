@@ -23,8 +23,7 @@ class Aes
         $Nr = count($w)/$Nb - 1; // no of rounds: 10/12/14 for 128/192/256-bit keys
 
         $state = array();  // initialise 4xNb byte-array 'state' with input [�3.4]
-        for ($i = 0; $i<4*$Nb;
-        $i++) {
+        for ($i = 0; $i<4*$Nb; $i++) {
             $state[$i%4][floor($i/4)] = $input[$i];
         }
 
@@ -42,8 +41,7 @@ class Aes
         $state = self::addRoundKey($state, $w, $Nr, $Nb);
 
         $output = array(4*$Nb);  // convert state to 1-d array before returning [�3.4]
-        for ($i = 0; $i<4*$Nb;
-        $i++) {
+        for ($i = 0; $i<4*$Nb; $i++) {
             $output[$i] = $state[$i%4][floor($i/4)];
         }
         return $output;
@@ -53,8 +51,7 @@ class Aes
     {
   // xor Round Key into state S [�5.1.4]
         for ($r = 0; $r<4; $r++) {
-            for ($c = 0; $c<$Nb;
-            $c++) {
+            for ($c = 0; $c<$Nb; $c++) {
                 $state[$r][$c] ^= $w[$rnd*4+$c][$r];
             }
         }
@@ -65,8 +62,7 @@ class Aes
     {
     // apply SBox to state S [�5.1.1]
         for ($r = 0; $r<4; $r++) {
-            for ($c = 0; $c<$Nb;
-            $c++) {
+            for ($c = 0; $c<$Nb; $c++) {
                 $s[$r][$c] = self::$sBox[$s[$r][$c]];
             }
         }
@@ -78,12 +74,10 @@ class Aes
     // shift row r of state S left by r bytes [�5.1.2]
         $t = array(4);
         for ($r = 1; $r<4; $r++) {
-            for ($c = 0; $c<4;
-            $c++) {
+            for ($c = 0; $c<4; $c++) {
                 $t[$c] = $s[$r][($c+$r)%$Nb];  // shift into temp copy
             }
-            for ($c = 0; $c<4;
-            $c++) {
+            for ($c = 0; $c<4; $c++) {
                 $s[$r][$c] = $t[$c];           // and copy back
             }
         }          // note that this will work for Nb=4,5,6, but not 7,8 (always 4 for AES):
@@ -133,21 +127,18 @@ class Aes
 
         for ($i = $Nk; $i<($Nb*($Nr+1)); $i++) {
             $w[$i] = array();
-            for ($t = 0; $t<4;
-            $t++) {
+            for ($t = 0; $t<4; $t++) {
                 $temp[$t] = $w[$i-1][$t];
             }
             if ($i % $Nk == 0) {
                 $temp = self::subWord(self::rotWord($temp));
-                for ($t = 0; $t<4;
-                $t++) {
+                for ($t = 0; $t<4; $t++) {
                     $temp[$t] ^= self::$rCon[$i/$Nk][$t];
                 }
             } elseif ($Nk > 6 && $i%$Nk == 4) {
                 $temp = self::subWord($temp);
             }
-            for ($t = 0; $t<4;
-            $t++) {
+            for ($t = 0; $t<4; $t++) {
                 $w[$i][$t] = $w[$i-$Nk][$t] ^ $temp[$t];
             }
         }
@@ -157,8 +148,7 @@ class Aes
     private static function subWord($w)
     {
     // apply SBox to 4-byte word w
-        for ($i = 0; $i<4;
-        $i++) {
+        for ($i = 0; $i<4; $i++) {
             $w[$i] = self::$sBox[$w[$i]];
         }
         return $w;
@@ -168,8 +158,7 @@ class Aes
     {
     // rotate 4-byte word w left by one byte
         $tmp = $w[0];
-        for ($i = 0; $i<3;
-        $i++) {
+        for ($i = 0; $i<3; $i++) {
             $w[$i] = $w[$i+1];
         }
         $w[3] = $tmp;

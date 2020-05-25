@@ -35,6 +35,7 @@ class FileService
 
             return null;
         } catch (\Exception $e) {
+            LogManager::getInstance()->notifyException($e);
             return null;
         }
     }
@@ -51,6 +52,7 @@ class FileService
             }
             $this->memcache->set($key, $data, $expire);
         } catch (\Exception $e) {
+            LogManager::getInstance()->notifyException($e);
         }
     }
 
@@ -144,6 +146,7 @@ class FileService
                     $profile->image = $expireUrl;
                 } catch (\Exception $e) {
                     LogManager::getInstance()->error("Error generating profile image: ".$e->getMessage());
+                    LogManager::getInstance()->notifyException($e);
                     if ($profile->gender == 'Female') {
                         $profile->image = BASE_URL."images/user_female.png";
                     } else {

@@ -381,7 +381,8 @@
             "MIT"
         ],
         "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-        "homepage": "https://github.com/container-interop/container-interop"
+        "homepage": "https://github.com/container-interop/container-interop",
+        "abandoned": "psr/container"
     },
     {
         "name": "dflydev/dot-access-data",
@@ -732,12 +733,12 @@
         "version_normalized": "4.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/oscarotero/Gettext.git",
+            "url": "https://github.com/php-gettext/Gettext.git",
             "reference": "7efdd4a01afd7fab85a90fb64fb88eeaef06f3b1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/oscarotero/Gettext/zipball/7efdd4a01afd7fab85a90fb64fb88eeaef06f3b1",
+            "url": "https://api.github.com/repos/php-gettext/Gettext/zipball/7efdd4a01afd7fab85a90fb64fb88eeaef06f3b1",
             "reference": "7efdd4a01afd7fab85a90fb64fb88eeaef06f3b1",
             "shasum": ""
         },
@@ -794,12 +795,12 @@
         "version_normalized": "2.3.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/mlocati/cldr-to-gettext-plural-rules.git",
+            "url": "https://github.com/php-gettext/Languages.git",
             "reference": "49c39e51569963cc917a924b489e7025bfb9d8c7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/mlocati/cldr-to-gettext-plural-rules/zipball/49c39e51569963cc917a924b489e7025bfb9d8c7",
+            "url": "https://api.github.com/repos/php-gettext/Languages/zipball/49c39e51569963cc917a924b489e7025bfb9d8c7",
             "reference": "49c39e51569963cc917a924b489e7025bfb9d8c7",
             "shasum": ""
         },
@@ -857,12 +858,12 @@
         "version_normalized": "2.2.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/google/google-api-php-client.git",
+            "url": "https://github.com/googleapis/google-api-php-client.git",
             "reference": "b69b8ac4bf6501793c389d4e013a79d09c85c5f2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/google/google-api-php-client/zipball/b69b8ac4bf6501793c389d4e013a79d09c85c5f2",
+            "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/b69b8ac4bf6501793c389d4e013a79d09c85c5f2",
             "reference": "b69b8ac4bf6501793c389d4e013a79d09c85c5f2",
             "shasum": ""
         },
@@ -918,12 +919,12 @@
         "version_normalized": "0.61.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/google/google-api-php-client-services.git",
+            "url": "https://github.com/googleapis/google-api-php-client-services.git",
             "reference": "f7221039fda179b3f5096a6272b38706f2a6fcd0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/f7221039fda179b3f5096a6272b38706f2a6fcd0",
+            "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/f7221039fda179b3f5096a6272b38706f2a6fcd0",
             "reference": "f7221039fda179b3f5096a6272b38706f2a6fcd0",
             "shasum": ""
         },
@@ -957,12 +958,12 @@
         "version_normalized": "1.3.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/google/google-auth-library-php.git",
+            "url": "https://github.com/googleapis/google-auth-library-php.git",
             "reference": "8f7c96146b2c62d3f4c6bbc4b5bb8a8e396b0b71"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/google/google-auth-library-php/zipball/8f7c96146b2c62d3f4c6bbc4b5bb8a8e396b0b71",
+            "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/8f7c96146b2c62d3f4c6bbc4b5bb8a8e396b0b71",
             "reference": "8f7c96146b2c62d3f4c6bbc4b5bb8a8e396b0b71",
             "shasum": ""
         },
@@ -2673,6 +2674,59 @@
         "keywords": [
             "mock",
             "xunit"
+        ],
+        "abandoned": true
+    },
+    {
+        "name": "predis/predis",
+        "version": "v1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nrk/predis.git",
+            "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+            "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.8"
+        },
+        "suggest": {
+            "ext-curl": "Allows access to Webdis when paired with phpiredis",
+            "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+        },
+        "time": "2016-06-16T16:22:20+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Predis\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Daniele Alessandri",
+                "email": "suppakilla@gmail.com",
+                "homepage": "http://clorophilla.net"
+            }
+        ],
+        "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+        "homepage": "http://github.com/nrk/predis",
+        "keywords": [
+            "nosql",
+            "predis",
+            "redis"
         ]
     },
     {

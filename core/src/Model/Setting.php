@@ -10,6 +10,7 @@ namespace Model;
 
 use Classes\BaseService;
 use Classes\IceResponse;
+use Classes\ModuleAccess;
 use Classes\RestApiManager;
 use Users\Common\Model\User;
 
@@ -28,6 +29,13 @@ class Setting extends BaseModel
     public function getUserAccess()
     {
         return array();
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('settings', 'admin'),
+        ];
     }
 
     public function postProcessGetElement($obj)

@@ -60,9 +60,9 @@ abstract class ApproveModel extends BaseModel
 
                 if ($user->user_level == "Admin") {
                     //Auto approve
-                    $obj->status = "Approved";
-                    $notificationMsg = "Your ".$this->notificationUnitName
-                        ." is auto approved since you are an administrator and do not have any supervisor assigned";
+                    $obj->status = 'Approved';
+                    $notificationMsg = 'Your '.$this->notificationUnitName
+                        .' is auto approved since you are an administrator and do not have any supervisor assigned';
                     BaseService::getInstance()->notificationManager->addNotification(
                         null,
                         $notificationMsg,
@@ -76,11 +76,11 @@ abstract class ApproveModel extends BaseModel
                     //If the user do not have a supervisor, notify all admins
                     $admins = BaseService::getInstance()->getAllAdmins();
                     foreach ($admins as $admin) {
-                        $notificationMsg = "A new ".$this->notificationUnitName." has been added by "
-                            .$employee->first_name . " " . $employee->last_name . ". Please visit "
+                        $notificationMsg = 'A new '.$this->notificationUnitName.' has been added by '
+                            .$employee->first_name . ' ' . $employee->last_name . '. Please visit '
                             .$this->notificationModuleName
-                            ." module to review it. You are getting this notification since you are an "
-                            ."administrator and the user do not have any supervisor assigned.";
+                            .' module to review it. You are getting this notification since you are an '
+                            .'administrator and the user do not have any supervisor assigned.';
                         BaseService::getInstance()->notificationManager->addNotification(
                             null,
                             $notificationMsg,
@@ -151,22 +151,22 @@ abstract class ApproveModel extends BaseModel
                 } else {
                     $user = BaseService::getInstance()->getCurrentUser();
 
-                    if ($user->user_level == "Admin") {
+                    if ($user->user_level == 'Admin') {
                     } else {
                         //If the user do not have a supervisor, notify all admins
                         $admins = BaseService::getInstance()->getAllAdmins();
                         foreach ($admins as $admin) {
-                            $notificationMsg = $this->notificationUnitPrefix." "
-                                .$this->notificationUnitName." request has been updated by "
-                                .$employee->first_name . " " . $employee->last_name
-                                .". Please visit ".$this->notificationModuleName
-                                ." module to review it. You are getting this notification since you are "
-                                ."an administrator and the user do not have any supervisor assigned.";
+                            $notificationMsg = $this->notificationUnitPrefix.' '
+                                .$this->notificationUnitName.' request has been updated by '
+                                .$employee->first_name . ' ' . $employee->last_name
+                                .'. Please visit '.$this->notificationModuleName
+                                .' module to review it. You are getting this notification since you are '
+                                .'an administrator and the user do not have any supervisor assigned.';
                             BaseService::getInstance()->notificationManager->addNotification(
                                 null,
                                 $notificationMsg,
                                 '{"type":"url","url":"g=admin&n=travel&m=admin_Employees"}',
-                                "Travel Module",
+                                'Travel Module',
                                 $admin->id,
                                 false,
                                 $sendNotificationEmail

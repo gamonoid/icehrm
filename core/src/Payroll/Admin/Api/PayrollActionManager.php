@@ -14,6 +14,7 @@ use Classes\SubActionManager;
 use Company\Common\Model\CompanyStructure;
 use Employees\Common\Model\Employee;
 use Payroll\Common\Model\Deduction;
+use Payroll\Common\Model\DeductionGroup;
 use Payroll\Common\Model\Payroll;
 use Payroll\Common\Model\PayrollCalculations;
 use Payroll\Common\Model\PayrollColumn;
@@ -23,6 +24,8 @@ use Salary\Common\Model\PayrollEmployee;
 use Salary\Common\Model\SalaryComponent;
 use Utils\LogManager;
 use Utils\Math\EvalMath;
+use Utils\ScriptRunner;
+use Classes\Migration\AbstractMigration;
 
 class PayrollActionManager extends SubActionManager
 {
@@ -52,19 +55,24 @@ class PayrollActionManager extends SubActionManager
         $payrollEmployeeId,
         $noColumnCalculations = false
     ) {
-    
+
         $val = $this->getFromCalculationCache($col->id."-".$payroll->id."-".$employeeId);
         if (!empty($val)) {
             return $val;
         }
 
         if (!empty($col->calculation_hook)) {
-            $sum = BaseService::getInstance()->executeCalculationHook(
+            $valueData = BaseService::getInstance()->executeCalculationHook(
                 array($employeeId, $payroll->date_start, $payroll->date_end),
                 $col->calculation_hook,
                 $col->calculation_function
             );
-            $val = number_format(round($sum, 2), 2, '.', '');
+            if (is_array($valueData) && $valueData[0] == 'string') {
+                $val = $valueData[1];
+            } else {
+                $val = number_format(round($valueData, 2), 2, '.', '');
+            }
+
             $this->addToCalculationCache($col->id."-".$payroll->id."-".$employeeId, $val);
             return $val;
         }
@@ -118,8 +126,10 @@ class PayrollActionManager extends SubActionManager
 
         if (!$noColumnCalculations) {
             $evalMath = new EvalMath();
-            $evalMath->evaluate('max(x,y) = (y - x) * ceil(tanh(exp(tanh(y - x)) - exp(0))) + x');
-            $evalMath->evaluate('min(x,y) = y - (y - x) * ceil(tanh(exp(tanh(y - x)) - exp(0)))');
+            if ($col->function_type === 'Simple') {
+                $evalMath->evaluate('max(x,y) = (y - x) * ceil(tanh(exp(tanh(y - x)) - exp(0))) + x');
+                $evalMath->evaluate('min(x,y) = y - (y - x) * ceil(tanh(exp(tanh(y - x)) - exp(0)))');
+            }
 
             if (!empty($col->add_columns) &&
                 !empty(json_decode($col->add_columns, true))) {
@@ -157,17 +167,27 @@ class PayrollActionManager extends SubActionManager
                 !empty(json_decode($col->calculation_columns, true)) && !empty($col->calculation_function)) {
                 $cc = json_decode($col->calculation_columns);
                 $func = $col->calculation_function;
+                $variableList = [];
                 foreach ($cc as $c) {
                     $value = $this->getFromCalculationCache($c->column."-".$payroll->id."-".$employeeId);
-                    if (empty($value)) {
-                        $value = 0.00;
+                    if ($col->function_type === 'Simple') {
+                        if (empty($value)) {
+                            $value = 0.00;
+                        }
+                        $func = str_replace($c->name, $value, $func);
+                    } else {
+                        $variableList[$c->name] = $value;
                     }
-                    $func = str_replace($c->name, $value, $func);
                 }
                 try {
-                    $sum += $evalMath->evaluate($func);
+                    if ($col->function_type === 'Simple') {
+                        $sum += $evalMath->evaluate($func);
+                    } else {
+                        $sum = ScriptRunner::executeJs($variableList, $func);
+                    }
                 } catch (\Exception $e) {
-                    LogManager::getInstance()->info("Error:".$e->getMessage());
+                    LogManager::getInstance()->error("Error:".$e->getMessage());
+                    LogManager::getInstance()->notifyException($e);
                 }
             }
         }
@@ -494,5 +514,63 @@ class PayrollActionManager extends SubActionManager
         }
 
         return new IceResponse(IceResponse::SUCCESS, true);
+    }
+
+    public function deletePayrollGroup($req)
+    {
+        $employee = new PayrollEmployee();
+        $report = new Payroll();
+        $payrollGroup = new DeductionGroup();
+        $payrollColumn = new PayrollColumn();
+        $calcMethod =new Deduction();
+
+
+        $payrollGroup->Load("id = ?", array($req->id));
+        if (empty($payrollGroup->id)) {
+            return new IceResponse(IceResponse::ERROR);
+        }
+
+        $this->baseService->checkSecureAccess('delete', $payrollGroup, 'DeductionGroup', $_POST);
+        $this->baseService->checkSecureAccess('delete', $payrollColumn, 'payrollColumn', $_POST);
+        $this->baseService->checkSecureAccess('delete', $calcMethod, 'Deduction', $_POST);
+
+        $employee->Load("deduction_group = ?", $payrollGroup->id);
+        $report->Load("deduction_group = ?", $payrollGroup->id);
+        $payrollColumn->Load("deduction_group = ?", $payrollGroup->id);
+        $calcMethod->Load("deduction_group = ?", $payrollGroup->id);
+
+        if (!empty($employee->id)) {
+            return new IceResponse(
+                IceResponse::ERROR,
+                "There are employees attached to this payroll group,
+                 please re-assign employees to a different payroll group"
+            );
+        }
+
+        if (!empty($report->id)) {
+            return new IceResponse(
+                IceResponse::ERROR,
+                "There are payroll reports attached to this group, 
+                please move the payroll reports to a different payroll group before deleting this group"
+            );
+        }
+
+        BaseService::getInstance()->getDB()->Execute(
+            'DELETE FROM PayrollColumns WHERE deduction_group= ? ',
+            array($req->id)
+        );
+        BaseService::getInstance()->getDB()->Execute(
+            'DELETE FROM Deductions WHERE deduction_group= ? ',
+            array($req->id)
+        );
+        $ok = $payrollGroup->Delete();
+        if (!$ok) {
+            return new IceResponse(
+                IceResponse::ERROR,
+                "Error occurred while deleting payroll group"
+            );
+        }
+
+        return new IceResponse(IceResponse::SUCCESS);
     }
 }

@@ -69,7 +69,7 @@ class TimeSheetsActionManager extends SubActionManager
         $timeSheet->status = $req->status;
 
         //Auto approve admin timesheets
-        if ($req->status == 'Submitted' && BaseService::getInstance()->getCurrentUser()->user_level == "Admin") {
+        if ($req->status == 'Submitted' && BaseService::getInstance()->getCurrentUser()->user_level == 'Admin') {
             $timeSheet->status = 'Approved';
         }
 
@@ -215,11 +215,13 @@ class TimeSheetsActionManager extends SubActionManager
             $data[] = $this->workScheduleToEvent($leave);
         }
 
-        $holiday = new HoliDay();
-        $holidays = $holiday->Find("1=1", array());
+        if (class_exists('\Leaves\Common\Model\HoliDay')) {
+            $holiday = new HoliDay();
+            $holidays = $holiday->Find("1=1", array());
 
-        foreach ($holidays as $holiday) {
-            $data[] = $this->holidayToEvent($holiday);
+            foreach ($holidays as $holiday) {
+                $data[] = $this->holidayToEvent($holiday);
+            }
         }
 
         echo json_encode($data);

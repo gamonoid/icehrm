@@ -49,7 +49,7 @@ class LDAPManager
         ldap_set_option($ldap, LDAP_OPT_REFERRALS, 0);
 
         // verify user and password
-        $bind = @ldap_bind($ldap, $managerDN, $managerPassword);
+        $bind = ldap_bind($ldap, $managerDN, $managerPassword);
 
         LogManager::getInstance()->debug("LDAP Manager Bind:".print_r($bind, true));
 
@@ -60,6 +60,7 @@ class LDAPManager
             $result = ldap_search($ldap, $ldap_dn, $filter);
             LogManager::getInstance()->debug("LDAP Search Result:".print_r($result, true));
             if (!$result) {
+                LogManager::getInstance()->error("Unable to search LDAP server");
                 exit("Unable to search LDAP server");
             }
             $entries = ldap_get_entries($ldap, $result);

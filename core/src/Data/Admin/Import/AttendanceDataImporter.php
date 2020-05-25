@@ -14,6 +14,11 @@ class AttendanceDataImporter extends AbstractDataImporter
         return "\\Attendance\\Common\\Model\\Attendance";
     }
 
+    public function getModelObjectName()
+    {
+        return 'Attendance';
+    }
+
     public function fixBeforeSave($object, $data)
     {
         return $object;

@@ -1,5 +1,19 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20200518_270011_add_al_language';
+$migrationList[] = 'v20200429_270010_setting_groups';
+$migrationList[] = 'v20200411_270009_email_log';
+$migrationList[] = 'v20200316_270006_add_provinces';
+$migrationList[] = 'v20200404_270006_password_rate_limit';
+$migrationList[] = 'v20200224_270004_update_module_names';
+$migrationList[] = 'v20191121_270008_custom_user_roles';
+$migrationList[] = 'v20191121_270007_team_management';
+$migrationList[] = 'v20191118_270006_update_data_importers';
+$migrationList[] = 'v20191024_270005_update_data_importers';
+$migrationList[] = 'v20191024_270004_add_object_type_import';
+$migrationList[] = 'v20191024_270003_payroll_column_function';
+$migrationList[] = 'v20190919_260008_employee_leave_periods';
+$migrationList[] = 'v20190805_260007_fix_expense_table';
 $migrationList[] = 'v20190707_260006_google_map_api';
 $migrationList[] = 'v20190707_260005_attendance_location';
 $migrationList[] = 'v20190707_260004_attendance_out_map';

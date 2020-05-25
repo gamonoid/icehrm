@@ -2,6 +2,7 @@
 namespace Data\Common\Model;
 
 use Classes\IceResponse;
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class DataImportFile extends BaseModel
@@ -24,5 +25,12 @@ class DataImportFile extends BaseModel
             $obj->status = "Not Processed";
         }
         return new IceResponse(IceResponse::SUCCESS, $obj);
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('data', 'admin'),
+        ];
     }
 }

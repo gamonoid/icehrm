@@ -1,0 +1,52 @@
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = exports.HOOK_MARK = void 0;
+
+var React = _interopRequireWildcard(require("react"));
+
+var _warning = _interopRequireDefault(require("warning"));
+
+var HOOK_MARK = 'RC_FORM_INTERNAL_HOOKS'; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+exports.HOOK_MARK = HOOK_MARK;
+
+var warningFunc = function warningFunc() {
+  (0, _warning.default)(false, 'Can not find FormContext. Please make sure you wrap Field under Form.');
+};
+
+var Context = React.createContext({
+  getFieldValue: warningFunc,
+  getFieldsValue: warningFunc,
+  getFieldError: warningFunc,
+  getFieldsError: warningFunc,
+  isFieldsTouched: warningFunc,
+  isFieldTouched: warningFunc,
+  isFieldValidating: warningFunc,
+  isFieldsValidating: warningFunc,
+  resetFields: warningFunc,
+  setFields: warningFunc,
+  setFieldsValue: warningFunc,
+  validateFields: warningFunc,
+  submit: warningFunc,
+  getInternalHooks: function getInternalHooks() {
+    warningFunc();
+    return {
+      dispatch: warningFunc,
+      registerField: warningFunc,
+      useSubscribe: warningFunc,
+      setInitialValues: warningFunc,
+      setCallbacks: warningFunc,
+      getFields: warningFunc,
+      setValidateMessages: warningFunc
+    };
+  }
+});
+var _default = Context;
+exports.default = _default;

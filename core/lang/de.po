@@ -1960,3 +1960,15 @@ msgstr "Rückmeldung geben"
 
 msgid "Review Status"
 msgstr "Überprüfen Sie den Status"
+
+msgid "Payroll Employees"
+msgstr "Mitarbeiter der Gehaltsabrechnung"
+
+msgid "Payroll Groups"
+msgstr "Gehaltsabrechnungs-Gruppen"
+
+msgid "Saved Calculations"
+msgstr "Gespeicherte Berechnungen"
+
+msgid "Total Leave Days"
+msgstr "Gesamturlaubstage"

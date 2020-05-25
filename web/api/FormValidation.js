@@ -180,6 +180,8 @@ class FormValidation {
           }
         } else if (inputObject.hasClass('simplemde')) {
           inputValue = $(`#${that.formId} #${id}`).data('simplemde').value();
+        } else if (inputObject.hasClass('code')) {
+          inputValue = $(`#${that.formId} #${id}`).data('codemirror').getValue();
         } else if (inputObject.hasClass('tinymce')) {
           inputValue = tinyMCE.get(id).getContent({ format: 'raw' });
         } else {

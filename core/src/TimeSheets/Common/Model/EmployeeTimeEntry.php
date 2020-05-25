@@ -10,6 +10,7 @@ namespace TimeSheets\Common\Model;
 
 use Attendance\Common\Model\Attendance;
 use Classes\IceResponse;
+use Classes\ModuleAccess;
 use Classes\SettingsManager;
 use Model\BaseModel;
 
@@ -53,5 +54,12 @@ class EmployeeTimeEntry extends BaseModel
             }
         }
         return new IceResponse(IceResponse::SUCCESS, "");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('time_sheets', 'user'),
+        ];
     }
 }

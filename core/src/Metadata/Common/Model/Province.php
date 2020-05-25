@@ -8,6 +8,7 @@
 
 namespace Metadata\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class Province extends BaseModel
@@ -22,5 +23,12 @@ class Province extends BaseModel
     public function getAnonymousAccess()
     {
         return array("get", "element");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('metadata', 'admin'),
+        ];
     }
 }

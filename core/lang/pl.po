@@ -1960,3 +1960,15 @@ msgstr "Przekazać opinię"
 
 msgid "Review Status"
 msgstr "Status recenzji"
+
+msgid "Payroll Employees"
+msgstr "Lista płac Pracownicy"
+
+msgid "Payroll Groups"
+msgstr "Grupy płacowe"
+
+msgid "Saved Calculations"
+msgstr "Zaoszczędzone obliczenia"
+
+msgid "Total Leave Days"
+msgstr "Łącznie Dni Urlopu"

@@ -158,7 +158,7 @@ $chatUserProfile = \Classes\UIManager::getInstance()->getCurrentProfile();
             <ul class="sidebar-menu">
 
 
-                <?php if($user->user_level == 'Admin' || $user->user_level == 'Manager' || $user->user_level == 'Other'){?>
+                <?php if($user->user_level == 'Admin' || $user->user_level == 'Manager' || $user->user_level == 'Restricted Admin' || $user->user_level == 'Restricted Manager'){?>
 
                     <?php foreach($adminModules as $menu){?>
                         <?php if(count($menu['menu']) == 0){continue;}?>

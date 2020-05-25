@@ -8,6 +8,7 @@
 
 namespace Metadata\Common\Model;
 
+use Classes\ModuleAccess;
 use Classes\SettingsManager;
 use Model\BaseModel;
 
@@ -46,4 +47,11 @@ class CurrencyType extends BaseModel
         return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
     }
     // @codingStandardsIgnoreEnd
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('metadata', 'admin'),
+        ];
+    }
 }

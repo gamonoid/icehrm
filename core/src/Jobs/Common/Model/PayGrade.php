@@ -8,6 +8,7 @@
 
 namespace Jobs\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class PayGrade extends BaseModel
@@ -17,5 +18,12 @@ class PayGrade extends BaseModel
     public function getAdminAccess()
     {
         return array("get","element","save","delete");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('employees', 'admin'),
+        ];
     }
 }

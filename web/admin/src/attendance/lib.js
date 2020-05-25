@@ -149,7 +149,7 @@ class AttendanceAdapter extends AdapterBase {
   }
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 
   showPunchImages(id) {
@@ -190,12 +190,16 @@ class AttendanceAdapter extends AdapterBase {
     if (callBackData.image_in) {
       $('#attendancePhoto').show();
       const myCanvas = document.getElementById('attendnaceCanvasIn');
-      const ctx = myCanvas.getContext('2d');
-      const img = new Image();
-      img.onload = function () {
-        ctx.drawImage(img, 0, 0); // Or at whatever offset you like
-      };
-      img.src = callBackData.image_in;
+      try {
+        const ctx = myCanvas.getContext('2d');
+        const img = new Image();
+        img.onload = function () {
+          ctx.drawImage(img, 0, 0); // Or at whatever offset you like
+        };
+        img.src = callBackData.image_in;
+      } catch (e) {
+        console.log(e);
+      }
     }
 
     if (callBackData.out_time) {
@@ -205,12 +209,16 @@ class AttendanceAdapter extends AdapterBase {
     if (callBackData.image_out) {
       $('#attendancePhoto').show();
       const myCanvas = document.getElementById('attendnaceCanvasOut');
-      const ctx = myCanvas.getContext('2d');
-      const img = new Image();
-      img.onload = function () {
-        ctx.drawImage(img, 0, 0); // Or at whatever offset you like
-      };
-      img.src = callBackData.image_out;
+      try {
+        const ctx = myCanvas.getContext('2d');
+        const img = new Image();
+        img.onload = function () {
+          ctx.drawImage(img, 0, 0); // Or at whatever offset you like
+        };
+        img.src = callBackData.image_out;
+      } catch (e) {
+        console.log(e);
+      }
     }
 
     if (callBackData.map_lat) {
@@ -233,23 +241,31 @@ class AttendanceAdapter extends AdapterBase {
     if (callBackData.map_snapshot) {
       $('#attendanceMap').show();
       const myCanvas = document.getElementById('attendnaceMapCanvasIn');
-      const ctx = myCanvas.getContext('2d');
-      const img = new Image();
-      img.onload = function () {
-        ctx.drawImage(img, 0, 0); // Or at whatever offset you like
-      };
-      img.src = callBackData.map_snapshot;
+      try {
+        const ctx = myCanvas.getContext('2d');
+        const img = new Image();
+        img.onload = function () {
+          ctx.drawImage(img, 0, 0); // Or at whatever offset you like
+        };
+        img.src = callBackData.map_snapshot;
+      } catch (e) {
+        console.log(e);
+      }
     }
 
     if (callBackData.map_out_snapshot) {
       $('#attendanceMap').show();
       const myCanvas = document.getElementById('attendnaceMapCanvasOut');
-      const ctx = myCanvas.getContext('2d');
-      const img = new Image();
-      img.onload = function () {
-        ctx.drawImage(img, 0, 0); // Or at whatever offset you like
-      };
-      img.src = callBackData.map_out_snapshot;
+      try {
+        const ctx = myCanvas.getContext('2d');
+        const img = new Image();
+        img.onload = function () {
+          ctx.drawImage(img, 0, 0); // Or at whatever offset you like
+        };
+        img.src = callBackData.map_out_snapshot;
+      } catch (e) {
+        console.log(e);
+      }
     }
   }
 
@@ -261,7 +277,7 @@ class AttendanceAdapter extends AdapterBase {
   getActionButtonsHtml(id, data) {
     const editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
     const deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
-    const photoButton = '<img class="tableActionButton" src="_BASE_images/map.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Show Photo" onclick="modJs.showPunchImages(_id_);return false;"></img>';
+    const photoButton = '<img class="tableActionButton" src="_BASE_images/map.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Show Location Details" onclick="modJs.showPunchImages(_id_);return false;"></img>';
 
     let html;
     if (this.photoAttendance === 1) {
@@ -287,6 +303,10 @@ class AttendanceAdapter extends AdapterBase {
     html = html.replace(/_id_/g, id);
     html = html.replace(/_BASE_/g, this.baseUrl);
     return html;
+  }
+
+  getHelpLink() {
+    return 'https://icehrm.gitbook.io/icehrm/time-and-attendance/attendance-time-management';
   }
 }
 
@@ -342,7 +362,11 @@ class AttendanceStatusAdapter extends AdapterBase {
 
 
   isSubProfileTable() {
-    return this.user.user_level !== 'Admin';
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
+  }
+
+  getHelpLink() {
+    return 'https://icehrm.gitbook.io/icehrm/time-and-attendance/attendance-time-management';
   }
 }
 

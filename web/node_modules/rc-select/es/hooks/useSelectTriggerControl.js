@@ -1,0 +1,28 @@
+import * as React from 'react';
+export default function useSelectTriggerControl(elements, open, triggerOpen) {
+  var propsRef = React.useRef(null);
+  propsRef.current = {
+    elements: elements.filter(function (e) {
+      return e;
+    }),
+    open: open,
+    triggerOpen: triggerOpen
+  };
+  React.useEffect(function () {
+    function onGlobalMouseDown(event) {
+      var target = event.target;
+
+      if (propsRef.current.open && propsRef.current.elements.every(function (element) {
+        return !element.contains(target) && element !== target;
+      })) {
+        // Should trigger close
+        propsRef.current.triggerOpen(false);
+      }
+    }
+
+    window.addEventListener('mousedown', onGlobalMouseDown);
+    return function () {
+      return window.removeEventListener('mousedown', onGlobalMouseDown);
+    };
+  }, []);
+}

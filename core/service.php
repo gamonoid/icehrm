@@ -1,4 +1,12 @@
 <?php
+
+use Classes\BaseService;
+use Classes\IceResponse;
+use Classes\PasswordManager;
+use Metadata\Common\Model\SupportedLanguage;
+use Users\Common\Model\User;
+use Utils\LogManager;
+
 define('CLIENT_PATH',dirname(__FILE__));
 include ("config.base.php");
 include ("include.common.php");
@@ -10,7 +18,7 @@ if(!defined('MODULE_PATH')){
 
 include("server.includes.inc.php");
 
-$userLevelArray = ['Admin', 'Manager', 'Employee', 'Other', 'Anonymous'];
+$userLevelArray = ['Admin', 'Manager', 'Employee', 'Restricted Admin', 'Restricted Manager', 'Restricted Employee', 'Anonymous'];
 
 if($_REQUEST['a'] != "rsp" && $_REQUEST['a'] != "rpc"){
 	if(empty($user) || empty($user->email) ||  empty($user->id) || !in_array($user->user_level, $userLevelArray)){
@@ -20,11 +28,19 @@ if($_REQUEST['a'] != "rsp" && $_REQUEST['a'] != "rpc"){
 	}
 }
 
+// Domain aware input cleanup
+$cleaner = new \Classes\DomainAwareInputCleaner();
+if (isset($_REQUEST['t'])) { $_REQUEST['t'] = $cleaner->cleanTableColumn($_REQUEST['t']); }
+if (isset($_REQUEST['ft'])) { $_REQUEST['ft'] = $cleaner->cleanFilters($_REQUEST['ft']); }
+if (isset($_REQUEST['ob'])) { $_REQUEST['ob'] = $cleaner->cleanOrderBy($_REQUEST['ob']); }
+if (isset($_REQUEST['sSearch'])) { $_REQUEST['sSearch'] = $cleaner->cleanSearch($_REQUEST['sSearch']); }
+if (isset($_REQUEST['cl'])) { $_REQUEST['cl'] = $cleaner->cleanColumns($_REQUEST['cl']); }
+
 $action = $_REQUEST['a'];
 if($action == 'get'){
-	$_REQUEST['sm'] = \Classes\BaseService::getInstance()->fixJSON($_REQUEST['sm']);
-	$_REQUEST['ft'] = \Classes\BaseService::getInstance()->fixJSON($_REQUEST['ft']);
-	$ret['object'] = \Classes\BaseService::getInstance()->get(
+	$_REQUEST['sm'] = BaseService::getInstance()->fixJSON($_REQUEST['sm']);
+	$_REQUEST['ft'] = BaseService::getInstance()->fixJSON($_REQUEST['ft']);
+	$ret['object'] = BaseService::getInstance()->get(
 		$_REQUEST['t'],
 		$_REQUEST['sm'],
 		$_REQUEST['ft'],
@@ -33,10 +49,10 @@ if($action == 'get'){
 	$ret['status'] = "SUCCESS";
 
 }else if($action == 'getElement'){
-	$ret['object'] = \Classes\BaseService::getInstance()->getElement(
+	$ret['object'] = BaseService::getInstance()->getElement(
 		$_POST['t'],
         $_POST['id'],
-        \Classes\BaseService::getInstance()->fixJSON($_POST['sm'])
+        BaseService::getInstance()->fixJSON($_POST['sm'])
 	);
 	if(!empty($ret['object'])){
 		$ret['status'] = "SUCCESS";
@@ -49,23 +65,23 @@ if($action == 'get'){
 		$ret['status'] = $data[0];
 		$ret['object'] = $data[1];
 	}else{
-		$resp = \Classes\BaseService::getInstance()->addElement($_POST['t'],$_POST);
+		$resp = BaseService::getInstance()->addElement($_POST['t'],$_POST);
 		$ret['object'] = $resp->getData();
 		$ret['status'] = $resp->getStatus();
 	}
 
 
 }else if($action == 'delete'){
-	/* @var \Classes\IceResponse $response */
-	$response = \Classes\BaseService::getInstance()->deleteElement($_POST['t'],$_POST['id']);
-	if($response->getStatus() == \Classes\IceResponse::SUCCESS){
-		$ret['status'] = \Classes\IceResponse::SUCCESS;
+	/* @var IceResponse $response */
+	$response = BaseService::getInstance()->deleteElement($_POST['t'],$_POST['id']);
+	if($response->getStatus() == IceResponse::SUCCESS){
+		$ret['status'] = IceResponse::SUCCESS;
 	}else{
-		$ret['status'] = \Classes\IceResponse::ERROR;
+		$ret['status'] = IceResponse::ERROR;
 	}
 
 }else if($action == 'getFieldValues'){
-	$ret['data'] = \Classes\BaseService::getInstance()->getFieldValues(
+	$ret['data'] = BaseService::getInstance()->getFieldValues(
         $_POST['t'],
         $_POST['key'],
         $_POST['value'],
@@ -79,18 +95,18 @@ if($action == 'get'){
 	}
 
 }else if($action == 'setAdminEmp'){
-	\Classes\BaseService::getInstance()->setCurrentAdminProfile($_POST['empid']);
+	BaseService::getInstance()->setCurrentAdminProfile($_POST['empid']);
 	$ret['status'] = "SUCCESS";
 
 }else if($action == 'ca'){
 	if(isset($_REQUEST['req'])){
-		$_REQUEST['req'] = \Classes\BaseService::getInstance()->fixJSON($_REQUEST['req']);
+		$_REQUEST['req'] = BaseService::getInstance()->fixJSON($_REQUEST['req']);
 	}
 	$mod = $_REQUEST['mod'];
 	$modPath = explode("=", $mod);
 	$moduleCapsName = ucfirst($modPath[1]);
 	/* @var \Classes\AbstractModuleManager $moduleManager */
-	$moduleManager = \Classes\BaseService::getInstance()->getModuleManager($modPath[0], $modPath[1]);
+	$moduleManager = BaseService::getInstance()->getModuleManager($modPath[0], $modPath[1]);
 
 	if ($moduleManager === null) {
 	    exit();
@@ -185,70 +201,59 @@ if($action == 'get'){
 	exit;
 
 }else if($action == 'rsp'){ // linked clicked from password change email
-	$user = new \Users\Common\Model\User();
+	$user = new User();
 	if(!empty($_REQUEST['key'])){
-		$arr = explode("-", $_REQUEST['key']);
-		$userId = $arr[0];
-		$keyArr = array_shift($arr);
-		if(count($keyArr) > 1){
-			$key = implode("-", $arr);
-		}else{
-			$key = $arr[0];
-		}
+        $user = PasswordManager::verifyPasswordRestKey($_REQUEST['key']);
+	    if ($user !== false && $user instanceof User && !empty($user->id)) {
+            if(empty($_REQUEST['now'])){
+                header("Location:".CLIENT_BASE_URL."login.php?cp=1&key=".$_REQUEST['key']);
+                exit();
+            }else{
+                if(!empty($_REQUEST['pwd'])){
+                    $passwordCheck = PasswordManager::isQualifiedPassword($_REQUEST['pwd']);
+                    if($passwordCheck->getStatus() === IceResponse::SUCCESS){
+                        $user->password = PasswordManager::createPasswordHash($_REQUEST['pwd']);
+                        $user->Save();
+                        LogManager::getInstance()->info("User password changed [$user->id]");
+                        $ret['status'] = "SUCCESS";
+                    }else{
+                        $ret['status'] = "ERROR";
+                        $ret['message'] = $passwordCheck->getData();
+                    }
+                }
+            }
 
-		$user->Load("id = ?",array($userId));
-		if(!empty($user->id)){
-			\Utils\LogManager::getInstance()->info("Key : ".$key);
-			$data = \Classes\Crypt\AesCtr::decrypt($key, $user->password, 256);
-			if(empty($data)){
-				$ret['status'] = "ERROR";
-				$ret['message'] = "Invalid Key for changing password, error decrypting data";
-			}else{
-				$data = json_decode($data,true);
-				if($data['CLIENT_NAME'] != CLIENT_NAME || $data['email'] != $user->email){
-					$ret['status'] = "ERROR";
-					$ret['message'] = "Invalid Key for changing password, keys do not match";
-				}else{
-					if(empty($_REQUEST['now'])){
-						\Utils\LogManager::getInstance()->info("now not defined");
-						header("Location:".CLIENT_BASE_URL."login.php?cp=1&key=".$_REQUEST['key']);
-					}else{
-						if(!empty($_REQUEST['pwd'])){
-							if(strlen($_REQUEST['pwd']) >= 6){
-								$user->password = md5($_REQUEST['pwd']);
-								$user->Save();
-								\Utils\LogManager::getInstance()->info("user password changed");
-								$ret['status'] = "SUCCESS";
-							}else{
-								$ret['status'] = "ERROR";
-								$ret['message'] = "Password may contain only letters, numbers and should be longer than 6 characters";
-							}
-						}
-
-					}
-
-				}
-			}
-
-
-		}else{
-			$ret['status'] = "ERROR";
-				$ret['message'] = "Invalid Key for changing password, user not found";
-		}
-
+        } else {
+            $ret['status'] = "ERROR";
+            $ret['message'] = "Error verifying password reset request";
+        }
 
 	}else{
-
+        $ret['status'] = "ERROR";
+        $ret['message'] = "Invalid request";
 	}
 
 }else if($action == 'rpc'){
-	if($emailSender->sendResetPasswordEmail($_REQUEST['id'])){
-		$ret['status'] = "SUCCESS";
-		$ret['message'] = "An email has been sent to you with instructions for changing password";
-	}else{
-		$ret['status'] = "ERROR";
-		$ret['message'] = "You have entered an incorrect email or user id";
-	}
+    try {
+        $user = new User();
+        $user->Load("email = ? or username = ?", [$_REQUEST['id'], $_REQUEST['id']]);
+        if (empty($user->id)) {
+            $ret['status'] = "ERROR";
+            $ret['message'] = "Invalid request";
+        } else if (($passwordChangeWaitingMinutes = PasswordManager::passwordChangeWaitingTimeMinutes($user)) > 0) {
+            $ret['status'] = "ERROR";
+            $ret['message'] = "Wait another $passwordChangeWaitingMinutes minutes to request a password change again";
+        } else if ($emailSender->sendResetPasswordEmail($_REQUEST['id'])) {
+            $ret['status'] = "SUCCESS";
+            $ret['message'] = "An email has been sent to you with instructions for changing password";
+        } else {
+            $ret['status'] = "ERROR";
+            $ret['message'] = "You have entered an incorrect email or user id";
+        }
+    } catch (Exception $e) {
+        LogManager::getInstance()->error('Error occurred while changing password:'.$e->getMessage());
+        LogManager::getInstance()->notifyException($e);
+    }
 
 }else if($action == 'getNotifications'){
 	$ret['data'] = $notificationManager->getLatestNotificationsAndCounts($user->id);
@@ -275,11 +280,11 @@ if($action == 'get'){
 
 } else if ($action === 'updateLanguage'){
     $language = $_POST['language'];
-    $supportedLanguage = new \Metadata\Common\Model\SupportedLanguage();
+    $supportedLanguage = new SupportedLanguage();
     $supportedLanguage->Load('name = ?', [$language]);
     $ret['status'] = "ERROR";
     if (!empty($supportedLanguage->id) && $supportedLanguage->name === $language) {
-        $languageUser = new \Users\Common\Model\User();
+        $languageUser = new User();
         $languageUser->Load('id = ?', [$user->id]);
         if (!empty($languageUser->id)) {
             $languageUser->lang = $supportedLanguage->id;
@@ -292,8 +297,9 @@ if($action == 'get'){
 }
 
 try {
-    echo \Classes\BaseService::getInstance()->safeJsonEncode($ret);
+    echo BaseService::getInstance()->safeJsonEncode($ret);
 } catch (Exception $e) {
-    \Utils\LogManager::getInstance()->error($e->getMessage());
+    LogManager::getInstance()->error($e->getMessage());
+    LogManager::getInstance()->notifyException($e);
     echo json_encode(['status' => 'Error']);
 }

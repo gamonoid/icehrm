@@ -9,6 +9,7 @@
 namespace Metadata\Common\Model;
 
 use Classes\BaseService;
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class CalculationHook extends BaseModel

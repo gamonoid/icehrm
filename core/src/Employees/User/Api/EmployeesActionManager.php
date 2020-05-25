@@ -11,11 +11,13 @@ namespace Employees\User\Api;
 use Classes\BaseService;
 use Classes\FileService;
 use Classes\IceResponse;
+use Classes\PasswordManager;
 use Classes\SettingsManager;
 use Classes\SubActionManager;
 use Company\Common\Model\CompanyStructure;
 use Employees\Common\Model\Employee;
 use Users\Common\Model\User;
+use Utils\LogManager;
 
 class EmployeesActionManager extends SubActionManager
 {
@@ -104,6 +106,7 @@ class EmployeesActionManager extends SubActionManager
         try {
             $employee = BaseService::getInstance()->customFieldManager->enrichObjectCustomFields('Employee', $employee);
         } catch (\Exception $e) {
+            LogManager::getInstance()->notifyException($e);
         }
 
         if (empty($employee->id)) {
@@ -143,11 +146,18 @@ class EmployeesActionManager extends SubActionManager
         if (empty($user->id)) {
             return new IceResponse(IceResponse::ERROR, "Error occurred while changing password");
         }
-        $user->password = md5($req->pwd);
+
+        $passwordStrengthResponse = PasswordManager::isQualifiedPassword($req->pwd);
+        if ($passwordStrengthResponse->getStatus() === IceResponse::ERROR) {
+            return $passwordStrengthResponse;
+        }
+
+        $user->password = PasswordManager::createPasswordHash($req->pwd);
         $ok = $user->Save();
         if (!$ok) {
             return new IceResponse(IceResponse::ERROR, $user->ErrorMsg());
         }
+
         return new IceResponse(IceResponse::SUCCESS, $user);
     }
 }

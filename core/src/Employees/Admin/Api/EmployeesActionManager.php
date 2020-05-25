@@ -13,7 +13,6 @@ use Classes\BaseService;
 use Classes\IceResponse;
 use Classes\SubActionManager;
 use Dependents\Common\Model\EmployeeDependent;
-use Documents\Common\Model\EmployeeDocument;
 use EmergencyContacts\Common\Model\EmergencyContact;
 use Employees\Common\Model\ArchivedEmployee;
 use Employees\Common\Model\Employee;
@@ -26,6 +25,7 @@ use Salary\Common\Model\EmployeeSalary;
 use TimeSheets\Common\Model\EmployeeTimeEntry;
 use TimeSheets\Common\Model\EmployeeTimeSheet;
 use Travel\Common\Model\EmployeeTravelRecord;
+use Utils\LogManager;
 
 class EmployeesActionManager extends SubActionManager
 {
@@ -64,7 +64,6 @@ class EmployeesActionManager extends SubActionManager
 
         $employee->termination_date = null;
         $employee->status = 'Active';
-
         $ok = $employee->Save();
         if (!$ok) {
             return new IceResponse(IceResponse::ERROR, "Error occurred while activating employee");
@@ -114,8 +113,16 @@ class EmployeesActionManager extends SubActionManager
 
         $data->timesheets = $this->getEmployeeData($employee->id, new EmployeeTimeSheet());
         $data->timesheetEntries = $this->getEmployeeData($employee->id, new EmployeeTimeEntry());
-        $data->attendance = $this->getEmployeeData($employee->id, new Attendance());
-        $data->documents = $this->getEmployeeData($employee->id, new EmployeeDocument());
+
+        $attendnace = $this->getEmployeeData($employee->id, new Attendance());
+        $data->attendance = array_map(function ($item) {
+            $item->image_in = '';
+            $item->image_out = '';
+        }, $attendnace);
+
+        if (class_exists('\Documents\Common\Model\EmployeeDocument')) {
+            $data->documents = $this->getEmployeeData($employee->id, new \Documents\Common\Model\EmployeeDocument());
+        }
         $data->travelRecords = $this->getEmployeeData($employee->id, new EmployeeTravelRecord());
         $data->qualificationSkills = $this->getEmployeeData($employee->id, new EmployeeSkill());
         $data->qualificationEducation = $this->getEmployeeData($employee->id, new EmployeeEducation());
@@ -130,12 +137,14 @@ class EmployeesActionManager extends SubActionManager
 
         $ok = $archived->Save();
         if (!$ok) {
+            LogManager::getInstance()->error('Error occurred while archiving employee :'.$archived->ErrorMsg());
             return new IceResponse(IceResponse::ERROR, "Error occurred while archiving employee");
         }
 
 
         $ok = $employee->Delete();
         if (!$ok) {
+            LogManager::getInstance()->error('Error occurred while deleting employee :'.$employee->ErrorMsg());
             return new IceResponse(IceResponse::ERROR, "Error occurred while deleting employee");
         }
 

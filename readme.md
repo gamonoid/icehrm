@@ -1,9 +1,40 @@
+<img src="web/images/logo-sq.png" align="right" />
+
 IceHrm
 ===========
 [![Build Status](https://travis-ci.org/gamonoid/icehrm.svg?branch=master)](https://travis-ci.org/gamonoid/icehrm)
 
+
 IceHrm is a [HRM software](https://icehrm.com) which enable companies of all sizes to [manage HR activities](https://icehrm.com)
-properly. 
+properly.
+- [IceHrm Demo](https://icehrm.com/icehrm-demo) 
+- Feature rich version of IceHrm (IceHrmPro) is available at [https://icehrm.com/purchase-icehrmpro](https://icehrm.com/purchase-icehrmpro)
+
+Getting started
+---------------
+
+The easiest way to run IceHrm is using docker
+- Install docker on Mac, Windows or Linux [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
+
+For Linux you need to install docker compose separately here [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
+
+
+```
+$ git clone https://github.com/gamonoid/icehrm.git
+$ cd icehrm
+$ docker-compose -f docker-compose-prod.yaml up -d
+```
+
+- Visit [http://localhost:8070/](http://localhost:8070/) to load icehrm, that's it
+
+You can find database and app data under `icehrm/docker/production` 
+
+When you want to kill the docker containers
+
+```
+docker-compose -f docker-compose-prod.yaml down
+```
+
 
 IceHrm Mobile App (Beta)
 ------------------------
@@ -31,8 +62,8 @@ Useful Links
  * Community Support: [http://stackoverflow.com/search?q=icehrm](http://stackoverflow.com/search?q=icehrm)
  * IceHrm Opensource Blog: [http://icehrm.org](http://icehrm.org)
 
-Installation
-------------
+Installation without Docker
+---------------------------
  * Download the latest release https://github.com/gamonoid/icehrm/releases/latest
 
  * Copy the downloaded file to the path you want to install iCE Hrm in your server and extract.
@@ -60,45 +91,56 @@ Refer: [http://blog.icehrm.com/docs/upgrade/](http://blog.icehrm.com/docs/upgrad
 Setup IceHrm Development Environment
 ------------------------------------
 
-IceHrm development environment is packaged as a Vagrant box. I includes php7, nginx, phpunit and other
-software required for running icehrm
+IceHrm uses docker to setup development environment
 
-Preparing development VM with Vagrant
--------------------------------------
 
 - Clone icehrm from https://github.com/gamonoid/icehrm.git or download the source
 
-- Install Vagrant [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
-
-- Run vagrant up in icehrm root directory (this will download icehrm vagrant image which is  ~1 GB)
-
 ```
-~ $ vagrant up
+$ git clone https://github.com/gamonoid/icehrm.git
+$ cd icehrm
+$ docker-compose up
 ```
 
-- Run vagrant ssh to login to the Virtual machine
+- Load icehrm Development preview
 
 ```
-~ $ vagrant ssh
+http://localhost:8080
 ```
 
-- Add following entries to the end of the host file to map icehrm domains to VagrantBox (on MacOS and Linux this is /etc/hosts | on windows this is Windows\System32\Drivers\etc\hosts)
+- Make some changes and the changes will be reflected on the above url 
+
+- Run e2e (cypress) tests
 
 ```
-192.168.40.40   app.icehrm-open.test
-192.168.40.40   clients.icehrm-open.test
+docker-compose -f docker-compose-testing.yaml up --exit-code-from cypress
+```
+
+- When you are ready to push your changes to production, make sure to build the production images
+```
+$ docker-compose -f docker-compose-prod.yaml up -d --build
 ```
 
 - Navigate to [http://clients.icehrm-open.test/dev](http://clients.icehrm-open.test/dev) to load icehrm from VM. (user:admin/pass:admin)
 
-### Notes to Developers
+### Building frontend assets
 
-- When ever you have done a change to JavaScript or CSS files in icehrm/web rebuild the frontend
+- When ever you have done a change to JavaScript or CSS files in icehrm/web you need to rebuild the frontend
+
+- First make sure you have all the dependencies (just doing this once is enough)
 ```
-~ $ cd /vagrant
-~ $ gulp
+$ cd icehrm/web
+$ npm install
+$ cd ..
+$ npm install
 ```
 
+- Then run gulp
+```
+$ gulp
+```
 
-
-
+- If you have only changed an admin module and you know which module it is
+```
+$ gulp admin-js --memployees
+```

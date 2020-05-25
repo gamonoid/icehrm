@@ -8,6 +8,7 @@
 
 namespace Travel\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class ImmigrationDocument extends BaseModel
@@ -32,5 +33,13 @@ class ImmigrationDocument extends BaseModel
     public function getUserOnlyMeAccess()
     {
         return array("get","element");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('employees', 'admin'),
+            new ModuleAccess('employees', 'user'),
+        ];
     }
 }

@@ -9,6 +9,7 @@
 namespace Projects\Common\Model;
 
 use Classes\IceResponse;
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class EmployeeProject extends BaseModel
@@ -49,5 +50,13 @@ class EmployeeProject extends BaseModel
             $obj->status = "Current";
         }
         return new IceResponse(IceResponse::SUCCESS, $obj);
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('projects', 'admin'),
+            new ModuleAccess('projects', 'user'),
+        ];
     }
 }

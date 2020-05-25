@@ -8,6 +8,7 @@
 
 namespace Payroll\Common\Model;
 
+use Classes\ModuleAccess;
 use Model\BaseModel;
 
 class DeductionGroup extends BaseModel
@@ -22,5 +23,12 @@ class DeductionGroup extends BaseModel
     public function getUserAccess()
     {
         return array("get","element");
+    }
+
+    public function getModuleAccess()
+    {
+        return [
+            new ModuleAccess('payroll', 'admin'),
+        ];
     }
 }

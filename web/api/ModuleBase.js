@@ -1010,8 +1010,41 @@ class ModuleBase {
     return params;
   }
 
+  validatePassword(password) {
+    if (password.length < 8) {
+      return this.gt('Password too short');
+    }
+
+    if (password.length > 20) {
+      return this.gt('Password too long');
+    }
+
+    const numberTester = /.*[0-9]+.*$/;
+    if (!password.match(numberTester)) {
+      return this.gt('Password must include at least one number');
+    }
+
+    const lowerTester = /.*[a-z]+.*$/;
+    if (!password.match(lowerTester)) {
+      return this.gt('Password must include at least one lowercase letter');
+    }
+
+    const upperTester = /.*[A-Z]+.*$/;
+    if (!password.match(upperTester)) {
+      return this.gt('Password must include at least one uppercase letter');
+    }
+
+    const symbolTester = /.*[\W]+.*$/;
+    if (!password.match(symbolTester)) {
+      return this.gt('Password must include at least one symbol');
+    }
+
+    return null;
+  }
+
   /**
-     * Override this method to inject attitional parameters or modify existing parameters retrived from add/edit form before sending to the server
+     * Override this method to inject attitional parameters or modify existing parameters retrived from
+     * add/edit form before sending to the server
      * @method forceInjectValuesBeforeSave
      * @param params {Array} keys and values in form
      * @returns {Array} modified parameters
@@ -1344,6 +1377,20 @@ class ModuleBase {
       $(this).data('simplemde', simplemde);
       // simplemde.value($(this).val());
     });
+
+    const codeMirror = this.codeMirror;
+    if (codeMirror) {
+      $tempDomObj.find('.code').each(function () {
+        const editor = codeMirror.fromTextArea($(this)[0], {
+          lineNumbers: false,
+          matchBrackets: true,
+          continueComments: 'Enter',
+          extraKeys: { 'Ctrl-Q': 'toggleComment' },
+        });
+        $(this).data('codemirror', editor);
+      });
+    }
+
 
     // $tempDomObj.find('.select2Field').select2();
     $tempDomObj.find('.select2Field').each(function () {
@@ -2050,6 +2097,11 @@ class ModuleBase {
         }
       } else if (fields[i][1].type === 'simplemde') {
         $(`${formId} #${fields[i][0]}`).data('simplemde').value(object[fields[i][0]]);
+      } else if (fields[i][1].type === 'code') {
+        const cm = $(`${formId} #${fields[i][0]}`).data('codemirror');
+        if (cm) {
+          cm.getDoc().setValue(object[fields[i][0]]);
+        }
       } else {
         $(`${formId} #${fields[i][0]}`).val(object[fields[i][0]]);
       }
@@ -2079,10 +2131,8 @@ class ModuleBase {
         field[1].label = `${field[1].label}<font class="redFont">*</font>`;
       }
     }
-    if (field[1].type === 'text' || field[1].type === 'textarea' || field[1].type === 'hidden' || field[1].type === 'label' || field[1].type === 'placeholder') {
-      t = t.replace(/_id_/g, field[0]);
-      t = t.replace(/_label_/g, field[1].label);
-    } else if (field[1].type === 'select' || field[1].type === 'select2' || field[1].type === 'select2multi') {
+
+    if (field[1].type === 'select' || field[1].type === 'select2' || field[1].type === 'select2multi') {
       t = t.replace(/_id_/g, field[0]);
       t = t.replace(/_label_/g, field[1].label);
       if (field[1].source !== undefined && field[1].source != null) {
@@ -2129,6 +2179,9 @@ class ModuleBase {
       t = t.replace(/_id_/g, field[0]);
       t = t.replace(/_label_/g, field[1].label);
     } else if (field[1].type === 'tinymce' || field[1].type === 'simplemde') {
+      t = t.replace(/_id_/g, field[0]);
+      t = t.replace(/_label_/g, field[1].label);
+    } else {
       t = t.replace(/_id_/g, field[0]);
       t = t.replace(/_label_/g, field[1].label);
     }

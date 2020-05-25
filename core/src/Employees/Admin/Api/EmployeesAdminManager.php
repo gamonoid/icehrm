@@ -9,6 +9,7 @@
 namespace Employees\Admin\Api;
 
 use Classes\AbstractModuleManager;
+use Classes\Macaw;
 use Classes\UIManager;
 use Employees\Common\Model\Employee;
 use Employees\Rest\EmployeeRestEndPoint;
@@ -26,32 +27,32 @@ class EmployeesAdminManager extends AbstractModuleManager
 
     public function setupRestEndPoints()
     {
-        \Classes\Macaw::get(REST_API_PATH.'employees/me', function () {
+        Macaw::get(REST_API_PATH.'employees/me', function () {
             $empRestEndPoint = new EmployeeRestEndPoint();
             $empRestEndPoint->process('get', 'me');
         });
 
-        \Classes\Macaw::get(REST_API_PATH.'employees/(:num)', function ($pathParams) {
+        Macaw::get(REST_API_PATH.'employees/(:num)', function ($pathParams) {
             $empRestEndPoint = new EmployeeRestEndPoint();
             $empRestEndPoint->process('get', $pathParams);
         });
 
-        \Classes\Macaw::get(REST_API_PATH.'employees', function () {
+        Macaw::get(REST_API_PATH.'employees', function () {
             $empRestEndPoint = new EmployeeRestEndPoint();
             $empRestEndPoint->process('listAll');
         });
 
-        \Classes\Macaw::post(REST_API_PATH.'employees', function () {
+        Macaw::post(REST_API_PATH.'employees', function () {
             $empRestEndPoint = new EmployeeRestEndPoint();
             $empRestEndPoint->process('post');
         });
 
-        \Classes\Macaw::put(REST_API_PATH.'employees/(:num)', function ($pathParams) {
+        Macaw::put(REST_API_PATH.'employees/(:num)', function ($pathParams) {
             $empRestEndPoint = new EmployeeRestEndPoint();
             $empRestEndPoint->process('put', $pathParams);
         });
 
-        \Classes\Macaw::delete(REST_API_PATH.'employees/(:num)', function ($pathParams) {
+        Macaw::delete(REST_API_PATH.'employees/(:num)', function ($pathParams) {
             $empRestEndPoint = new EmployeeRestEndPoint();
             $empRestEndPoint->process('delete', $pathParams);
         });
@@ -86,16 +87,26 @@ class EmployeesAdminManager extends AbstractModuleManager
     public function initQuickAccessMenu()
     {
         UIManager::getInstance()->addQuickAccessMenuItem(
-            "View Employees",
-            "fa-users",
-            CLIENT_BASE_URL."?g=admin&n=employees&m=admin_Employees",
-            array("Admin","Manager")
+            'View Employees',
+            'fa-users',
+            CLIENT_BASE_URL.'?g=admin&n=employees&m=admin_Employees',
+            array('Admin','Manager')
         );
         UIManager::getInstance()->addQuickAccessMenuItem(
-            "Add a New Employee",
-            "fa-edit",
-            CLIENT_BASE_URL."?g=admin&n=employees&m=admin_Employees&action=new",
-            array("Admin")
+            'Add a New Employee',
+            'fa-edit',
+            CLIENT_BASE_URL.'?g=admin&n=employees&m=admin_Employees&action=new',
+            array('Admin')
+        );
+    }
+
+    public function initCalculationHooks()
+    {
+        $this->addCalculationHook(
+            'EmployeeData_getFieldValue',
+            'Get Employee Data',
+            EmployeeUtil::class,
+            'getEmployeeDataField'
         );
     }
 }
