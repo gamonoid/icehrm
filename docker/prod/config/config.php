@@ -1,5 +1,5 @@
 <?php
-ini_set('error_log', 'data/icehrm.log');
+ini_set('error_log', '/var/www/html/app/data/icehrm.log');
 
 define('CLIENT_NAME', 'icehrm');
 define('APP_BASE_PATH', '/var/www/html/core/');
@@ -16,3 +16,5 @@ define('APP_CON_STR', 'mysqli://'.APP_USERNAME.':'.APP_PASSWORD.'@'.APP_HOST.'/'
 //file upload
 define('FILE_TYPES', 'jpg,png,jpeg');
 define('MAX_FILE_SIZE_KB', 10 * 1024);
+
+define('LOG_STDERR', '1');

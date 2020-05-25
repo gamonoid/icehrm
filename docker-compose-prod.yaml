@@ -21,6 +21,13 @@ services:
       - 8070:8070
     volumes:
       - ./docker/prod/app_data:/var/www/html/app/data
+
+  icehrm-worker:
+    build:
+      context: ./
+      dockerfile: Dockerfile-worker
+      args:
+        - EXE_ENV=prod
 volumes:
   db_data:
   app_data:

@@ -19,5 +19,12 @@ services:
       - 8080:8080
     volumes:
       - .:/var/www/html
+
+  icehrm-worker-dev:
+    build:
+      context: ./
+      dockerfile: Dockerfile-worker
+      args:
+        - EXE_ENV=development
 volumes:
   db_data:
