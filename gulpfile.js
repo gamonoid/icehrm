@@ -12,10 +12,21 @@ const es = require('event-stream');
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
 const copy = require('gulp-copy');
+const babel = require('gulp-babel');
+const less = require('gulp-less');
+const path = require('path');
+const cleanCSS = require('gulp-clean-css');
 
 const paths = {
   pages: ['src/*.html'],
 };
+
+let mod = process.argv.filter((item) => item.substr(0, 3) === '--m');
+if (mod.length === 1) {
+  mod = mod[0].substr(3);
+} else {
+  mod = null;
+}
 
 gulp.task('pack-js', (done) => {
   gulp.src([
@@ -46,11 +57,23 @@ gulp.task('pack-js', (done) => {
   done();
 });
 
+gulp.task('compile-ant-less', (done) => {
+  gulp.src([
+    'web/node_modules/antd/dist/antd.less',
+  ]).pipe(less({
+    paths: [path.join(__dirname, 'less', 'includes')],
+    javascriptEnabled: true,
+  }))
+    .pipe(concat('antd.css'))
+    .pipe(gulp.dest('web/dist'));
+  done();
+});
+
 gulp.task('pack-css', (done) => {
   gulp.src([
     'web/themecss/bootstrap.min.css',
     'web/themecss/fa-all-5.8.2.min.css',
-    //'web/themecss/font-awesome.css',
+    // 'web/themecss/font-awesome.css',
     'web/themecss/ionicons.min.css',
     'web/bower_components/material-design-icons/iconfont/material-icons.css',
     'web/js/fullcaledar/fullcalendar.css',
@@ -64,7 +87,10 @@ gulp.task('pack-css', (done) => {
     'web/css/fa-animations.css',
     'web/css/style.css',
     'web/bower_components/simplemde/dist/simplemde.min.css',
+    'web/node_modules/codemirror/lib/codemirror.css',
+    'web/dist/antd.css',
   ])
+    .pipe(cleanCSS())
     .pipe(concat('third-party.css'))
     .pipe(gulp.dest('web/dist'));
   done();
@@ -95,8 +121,9 @@ gulp.task('api-common', (done) => {
     packageCache: {},
   })
     .transform('babelify', {
-      presets: ['es2015'], extensions: ['.js'],
+      presets: ['@babel/preset-env', '@babel/preset-react'], extensions: ['.js', '.jsx'],
     })
+    .transform(require('browserify-css'))
     .bundle()
     .pipe(source('common.js'))
     .pipe(buffer())
@@ -124,11 +151,13 @@ gulp.task('api-common', (done) => {
 gulp.task('admin-js', (done) => {
   // we define our input files, which we want to have
   // bundled:
-  const files = [
+  let files = [
     'attendance',
     'company_structure',
+    'clients',
     'dashboard',
     'data',
+    'documents',
     'employees',
     'fieldnames',
     'jobs',
@@ -146,8 +175,13 @@ gulp.task('admin-js', (done) => {
     'travel',
     'users',
   ];
-    // map them to our stream function
-  const tasks = files.map(entry => browserify({
+
+  if (mod != null) {
+    files = files.filter((item) => item === mod);
+  }
+
+  // map them to our stream function
+  const tasks = files.map((entry) => browserify({
     entries: [`web/admin/src/${entry}/index.js`],
     basedir: '.',
     debug: true,
@@ -155,11 +189,15 @@ gulp.task('admin-js', (done) => {
     packageCache: {},
   })
     .transform('babelify', {
-      presets: ['es2015'], extensions: ['.js'],
+      plugins: [
+        ['@babel/plugin-proposal-class-properties', { loose: true }],
+      ],
+      presets: ['@babel/preset-env', '@babel/preset-react'],
+      extensions: ['.js', '.jsx'],
     })
+    .transform(require('browserify-css'))
     .bundle()
     .pipe(source(`${entry}/lib.js`))
-  // rename them to have "bundle as postfix"
     .pipe(rename(`${entry}.js`))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
@@ -173,17 +211,18 @@ gulp.task('admin-js', (done) => {
     ))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./web/admin/dist/')));
-    // create a merged stream
+  // create a merged stream
   es.merge.apply(null, tasks).on('end', done);
 });
 
 gulp.task('modules-js', (done) => {
   // we define our input files, which we want to have
   // bundled:
-  const files = [
+  let files = [
     'attendance',
     'dashboard',
     'dependents',
+    'documents',
     'emergency_contact',
     'employees',
     'loans',
@@ -196,8 +235,13 @@ gulp.task('modules-js', (done) => {
     'time_sheets',
     'travel',
   ];
-    // map them to our stream function
-  const tasks = files.map(entry => browserify({
+
+  if (mod != null) {
+    files = files.filter((item) => item === mod);
+  }
+
+  // map them to our stream function
+  const tasks = files.map((entry) => browserify({
     entries: [`web/modules/src/${entry}/index.js`],
     basedir: '.',
     debug: true,
@@ -205,11 +249,11 @@ gulp.task('modules-js', (done) => {
     packageCache: {},
   })
     .transform('babelify', {
-      presets: ['es2015'], extensions: ['.js'],
+      presets: ['@babel/preset-env', '@babel/preset-react'], extensions: ['.js', '.jsx'],
     })
+    .transform(require('browserify-css'))
     .bundle()
     .pipe(source(`${entry}/lib.js`))
-  // rename them to have "bundle as postfix"
     .pipe(rename(`${entry}.js`))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
@@ -223,11 +267,12 @@ gulp.task('modules-js', (done) => {
     ))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./web/modules/dist/')));
-    // create a merged stream
+  // create a merged stream
   es.merge.apply(null, tasks).on('end', done);
 });
 
 gulp.task('default', gulp.series(
+  'compile-ant-less',
   'pack-js',
   'pack-css',
   'copy-assets',

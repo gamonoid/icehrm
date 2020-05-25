@@ -20,9 +20,14 @@ class IceCypressTest {
     cy.server().route('GET', `/${config.URL_PREFIX}/service.php*`).as('getElement');
     cy.get(`#${this.element} table tbody`).find('tr').first()
       .find(viewButtonSelector || `.center div img[${this.titleDataAttributeName}='View']`)
+      .should("be.visible")
       .click();
 
-    cy.wait('@getElement').its('status').should('be', config.DEFAULT_WAIT_TIME);
+    if (config.WAIT_ON_TIME) {
+      cy.wait(config.WAIT_TIME);
+    } else {
+      cy.wait('@getElement').its('status').should('be', config.DEFAULT_STATUS);
+    }
   }
 
   viewElementValidate(cy, validation = []) {
@@ -34,9 +39,14 @@ class IceCypressTest {
   editElement(cy, update, editButtonSelector = null) {
     cy.server().route('POST', `/${config.URL_PREFIX}/service.php*`).as('getElement');
     cy.get(`#${this.element} table tbody`).find('tr').first().find(editButtonSelector || `.center div img[${this.titleDataAttributeName}='Edit']`)
+      .should("be.visible")
       .click();
 
-    cy.wait('@getElement').its('status').should('be', config.DEFAULT_WAIT_TIME);
+    if (config.WAIT_ON_TIME) {
+      cy.wait(config.WAIT_TIME);
+    } else {
+      cy.wait('@getElement').its('status').should('be', config.DEFAULT_STATUS);
+    }
 
     update.forEach((item) => {
       cy.get(item[0]).clear().type(item[1]).should('have.value', item[1]);
@@ -44,32 +54,27 @@ class IceCypressTest {
   }
 
   select2Click(id, value) {
-    cy.get(`#s2id_${id}`).click();
+    cy.get(`#s2id_${id}`).should("be.visible").click();
     cy.focused().clear().type(value).should('have.value', value);
     cy.get('.select2-drop:visible').find('.select2-results li').first()
+      .should("be.visible")
       .click();
   }
 
   clickSave(cy) {
-    cy.get(`#${this.element}Form .saveBtn`).click();
+    cy.get(`#${this.element}Form .saveBtn`).should("be.visible").click();
+    cy.wait(config.WAIT_TIME);
   }
 
   editElementValidate(cy, validation = [], editButtonSelector) {
-    if (this.isRemoteTable) {
-      cy.server().route('GET', `/${config.URL_PREFIX}/data.php*`).as('getAfterSave');
-    } else {
-      cy.server().route('POST', `/${config.URL_PREFIX}/service.php*`).as('getAfterSave');
-    }
-
-    // Wait for data table response
-    cy.wait('@getAfterSave').its('status').should('be', config.DEFAULT_WAIT_TIME);
 
     cy.server().route('POST', `/${config.URL_PREFIX}/service.php*`).as('getElementAfterSave');
     // Click on edit and wait
     cy.get(`#${this.element} table tbody`).find('tr').first().find(editButtonSelector || `.center div img[${this.titleDataAttributeName}='Edit']`)
+      .should("be.visible")
       .click();
 
-    cy.wait('@getElementAfterSave').its('status').should('be', config.DEFAULT_WAIT_TIME);
+    cy.wait('@getElementAfterSave').its('status').should('be', config.DEFAULT_STATUS);
 
     validation.forEach((item) => {
       cy.get(item[0]).then(element => expect(element.val()).eq(item[1]));
@@ -95,7 +100,11 @@ class IceCypressTest {
     cy.visit(`${config.BASE_URL}?${this.moduleUrl}`);
 
     // Wait for data table response
-    cy.wait('@get').its('status').should('be', config.DEFAULT_WAIT_TIME);
+    if (config.WAIT_ON_TIME) {
+      cy.wait(config.WAIT_TIME);
+    } else {
+      cy.wait('@get').its('status').should('be', config.DEFAULT_STATUS);
+    }
   }
 
   switchTab(cy, tabName = null) {
@@ -104,8 +113,12 @@ class IceCypressTest {
     } else {
       cy.server().route('POST', `/${config.URL_PREFIX}/service.php*`).as('getTab');
     }
-    cy.get(tabName || `#tab${this.element}`).click();
-    cy.wait('@getTab').its('status').should('be', config.DEFAULT_WAIT_TIME);
+    cy.get(tabName || `#tab${this.element}`).should("be.visible").click();
+    if (config.WAIT_ON_TIME) {
+      cy.wait(config.WAIT_TIME);
+    } else {
+      cy.wait('@getTab').its('status').should('be', config.DEFAULT_STATUS);
+    }
   }
 }
 

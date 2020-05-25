@@ -22,10 +22,15 @@ class LogManager
         if (empty(self::$me)) {
             self::$me = new LogManager();
             self::$me->log = new Logger(APP_NAME);
-            if (is_writable(ini_get('error_log'))) {
+
+            if (defined('LOG_STDERR') && LOG_STDERR === '1') {
+                self::$me->log->pushHandler(new StreamHandler('php://stderr', LOG_LEVEL));
+            } else if (is_writable(ini_get('error_log'))) {
                 self::$me->log->pushHandler(new StreamHandler(ini_get('error_log'), LOG_LEVEL));
             } elseif (is_writable(CLIENT_BASE_PATH.'data/app.log')) {
                 self::$me->log->pushHandler(new StreamHandler(CLIENT_BASE_PATH.'data/app.log', LOG_LEVEL));
+            } else {
+                self::$me->log->pushHandler(new StreamHandler('php://stderr', LOG_LEVEL));
             }
         }
         return self::$me;

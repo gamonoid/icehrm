@@ -1,0 +1,39 @@
+version: "3.5"
+services:
+  mysql-testing:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: IceHrmR00t
+      MYSQL_USER: testing
+      MYSQL_PASSWORD: testing
+      MYSQL_DATABASE: icehrm
+    volumes:
+      - ./docker/testing/init.sql:/docker-entrypoint-initdb.d/setup.sql
+      - ./docker/testing/db_data:/var/lib/mysql
+
+  icehrm-testing:
+    build:
+      context: ./
+      dockerfile: Dockerfile-testing
+    ports:
+      - 8090:8090
+    logging:
+      driver: none
+
+  # Cypress container
+  cypress:
+    # the Docker image to use from https://github.com/cypress-io/cypress-docker-images
+    image: "cypress/included:3.2.0"
+    depends_on:
+      - icehrm-testing
+    environment:
+      # pass base url to test pointing at the web application
+      - CYPRESS_baseUrl=http://icehrm-testing:8090
+    # share the current folder as volume to avoid copying
+    working_dir: /e2e
+    volumes:
+      - ./test/frontend:/e2e
+volumes:
+  db_data:

@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^3.4.1",
+    "cypress": "^3.8.3",
     "eslint-config-airbnb": "^18.0.1"
   }
 }
