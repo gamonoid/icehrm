@@ -35,6 +35,8 @@ When you want to kill the docker containers
 docker-compose -f docker-compose-prod.yaml down
 ```
 
+For setting up your development environment watch [https://www.youtube.com/watch?v=sz8OV_ON6S8](https://www.youtube.com/watch?v=sz8OV_ON6S8)
+
 
 IceHrm Mobile App (Beta)
 ------------------------
