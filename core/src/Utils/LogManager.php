@@ -25,7 +25,7 @@ class LogManager
 
             if (defined('LOG_STDERR') && LOG_STDERR === '1') {
                 self::$me->log->pushHandler(new StreamHandler('php://stderr', LOG_LEVEL));
-            } else if (is_writable(ini_get('error_log'))) {
+            } elseif (is_writable(ini_get('error_log'))) {
                 self::$me->log->pushHandler(new StreamHandler(ini_get('error_log'), LOG_LEVEL));
             } elseif (is_writable(CLIENT_BASE_PATH.'data/app.log')) {
                 self::$me->log->pushHandler(new StreamHandler(CLIENT_BASE_PATH.'data/app.log', LOG_LEVEL));

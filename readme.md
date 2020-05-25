@@ -103,12 +103,7 @@ $ git clone https://github.com/gamonoid/icehrm.git
 $ cd icehrm
 $ docker-compose up
 ```
-
-- Load icehrm Development preview
-
-```
-http://localhost:8080
-```
+- Navigate to [http://localhost:8080](http://localhost:8080) to load icehrm. (user:admin/pass:admin)
 
 - Make some changes and the changes will be reflected on the above url 
 
@@ -122,8 +117,6 @@ docker-compose -f docker-compose-testing.yaml up --exit-code-from cypress
 ```
 $ docker-compose -f docker-compose-prod.yaml up -d --build
 ```
-
-- Navigate to [http://clients.icehrm-open.test/dev](http://clients.icehrm-open.test/dev) to load icehrm from VM. (user:admin/pass:admin)
 
 ### Building frontend assets
 

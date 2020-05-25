@@ -66,7 +66,7 @@ class PayrollDataExport extends ReportBuilder implements ReportBuilderInterface
                 'editable' => $col->editable,
                 'enabled' => $col->enabled,
                 'default_value' => $col->default_value,
-                'calculation_columns' => $col->calculation_columns, //[{"name":"O","column":"107","id":"calculation_columns_1"}]
+                'calculation_columns' => $col->calculation_columns,
                 'calculation_function' => $col->calculation_function,
             ];
 

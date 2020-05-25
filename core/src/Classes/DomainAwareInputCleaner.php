@@ -3,7 +3,6 @@
 
 namespace Classes;
 
-
 class DomainAwareInputCleaner
 {
     public function cleanTableColumn($input)
@@ -72,7 +71,8 @@ class DomainAwareInputCleaner
         return $filters;
     }
 
-    public function cleanSearch($searchTerm) {
+    public function cleanSearch($searchTerm)
+    {
         if (!$this->isValidFilterValue($searchTerm)) {
             return '';
         }
