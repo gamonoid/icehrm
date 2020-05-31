@@ -25,7 +25,7 @@ $ cd icehrm
 $ docker-compose -f docker-compose-prod.yaml up -d
 ```
 
-- Visit [http://localhost:8070/](http://localhost:8070/) to load icehrm, that's it
+- Visit [http://localhost:8070/](http://localhost:8070/) to load icehrm
 
 You can find database and app data under `icehrm/docker/production` 
 
@@ -36,6 +36,9 @@ docker-compose -f docker-compose-prod.yaml down
 ```
 
 For setting up your development environment watch [https://www.youtube.com/watch?v=sz8OV_ON6S8](https://www.youtube.com/watch?v=sz8OV_ON6S8)
+
+
+Refer [docker documentation](https://docs.docker.com/develop/dev-best-practices/) for best practices 
 
 
 IceHrm Mobile App (Beta)

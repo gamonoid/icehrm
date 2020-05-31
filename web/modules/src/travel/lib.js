@@ -170,7 +170,13 @@ class EmployeeTravelRecordApproverAdapter extends EmployeeTravelRecordAdminAdapt
  */
 
 class SubordinateEmployeeTravelRecordAdapter extends EmployeeTravelRecordAdminAdapter {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
+    this.itemName = 'Travel';
+    this.itemNameLower = 'employeetravelrecord';
+    this.modulePathName = 'travel';
 
+  }
 }
 
 module.exports = {

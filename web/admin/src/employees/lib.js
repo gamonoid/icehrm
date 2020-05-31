@@ -749,7 +749,12 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
       deleteBtn = '';
     }
     // eslint-disable-next-line max-len
-    let html = `<div style="width:110px;"><img class="tableActionButton" src="_BASE_images/user.png" style="cursor:pointer;" rel="tooltip" title="Login as this Employee" onclick="modJs.setAdminProfile(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/view.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="View" onclick="modJs.view(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>${deleteBtn}</div>`;
+    let html = `<div style="width:120px;">
+<img class="tableActionButton" src="_BASE_images/user.png" style="cursor:pointer;" rel="tooltip" title="Login as this Employee" onclick="modJs.setAdminProfile(_id_);return false;"></img>
+<img class="tableActionButton" src="_BASE_images/view.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="View" onclick="modJs.view(_id_);return false;"></img>
+<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>
+${deleteBtn}
+</div>`;
     html = html.replace(/_id_/g, id);
     html = html.replace(/_BASE_/g, this.baseUrl);
     return html;
@@ -1213,7 +1218,7 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
 
   getActionButtonsHtml(id) {
     // eslint-disable-next-line max-len
-    let html = `<div style="width:110px;">
+    let html = `<div style="width:120px;">
 <img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>
 <img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Archive Employee" onclick="modJs.deleteEmployee(_id_);return false;"></img>
 <img class="tableActionButton" src="_BASE_images/redo.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Restore Employee" onclick="modJs.activateEmployee(_id_);return false;"></img>
@@ -1298,7 +1303,7 @@ class ArchivedEmployeeAdapter extends SubProfileEnabledAdapterBase {
 
   getActionButtonsHtml(id) {
     // eslint-disable-next-line max-len
-    let html = '<div style="width:110px;"><img class="tableActionButton" src="_BASE_images/download.png" style="cursor:pointer;" rel="tooltip" title="Download Archived Data" onclick="modJs.download(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Remove Archived Data" onclick="modJs.deleteRow(_id_);return false;"></img></div>';
+    let html = '<div style="width:120px;"><img class="tableActionButton" src="_BASE_images/download.png" style="cursor:pointer;" rel="tooltip" title="Download Archived Data" onclick="modJs.download(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Remove Archived Data" onclick="modJs.deleteRow(_id_);return false;"></img></div>';
     html = html.replace(/_id_/g, id);
     html = html.replace(/_BASE_/g, this.baseUrl);
     return html;

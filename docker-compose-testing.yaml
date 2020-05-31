@@ -21,6 +21,8 @@ services:
       - 8090:8090
     logging:
       driver: none
+    depends_on:
+      - mysql-testing
 
   # Cypress container
   cypress:
