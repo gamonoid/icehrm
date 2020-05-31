@@ -56,7 +56,7 @@ class PaydayAdapter extends AdapterBase {
   getActionButtonsHtml(id, data) {
     const editButton = '<input type="checkbox" class="paydayCheck" id="payday__id_" name="payday__id_" value="checkbox_payday__id_"/>';
 
-    let html = '<div style="width:120px;">_edit_</div>';
+    let html = '<div style="width:130px;">_edit_</div>';
     html = html.replace('_edit_', editButton);
 
     html = html.replace(/_id_/g, id);
@@ -160,7 +160,7 @@ class PayrollAdapter extends AdapterBase {
     const deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
     const cloneButton = '<img class="tableActionButton" src="_BASE_images/clone.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Copy" onclick="modJs.copyRow(_id_);return false;"></img>';
 
-    let html = '<div style="width:120px;">_edit__process__clone__delete_</div>';
+    let html = '<div style="width:130px;">_edit__process__clone__delete_</div>';
 
 
     if (this.showAddNew) {
