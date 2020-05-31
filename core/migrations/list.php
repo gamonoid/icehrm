@@ -1,5 +1,6 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20200530_270009_update_module_names';
 $migrationList[] = 'v20200518_270011_add_al_language';
 $migrationList[] = 'v20200429_270010_setting_groups';
 $migrationList[] = 'v20200411_270009_email_log';
