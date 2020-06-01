@@ -1,3 +1,25 @@
+## Release note v27.0.0.OS
+
+### New features
+* Employee document management is now available for open-source version
+* UI/UX improvements (new fonts / better spacing)
+* Payroll module improvements
+* Security improvements to password policy
+* Albanian language is now available
+* Ability to deploy using docker
+
+### For developers
+* Developer environment based on docker [https://www.youtube.com/watch?v=sz8OV_ON6S8](https://www.youtube.com/watch?v=sz8OV_ON6S8)
+* [Developer guide](https://icehrm.gitbook.io/icehrm/developer-guide/create-new-module)
+* Fully support from php 7.0 upto 7.4 (php 5.6 support is deprecated and not recommended)
+
+### Bug fixes
+* Fixes to newly found vulnerabilities (https://github.com/gamonoid/icehrm/issues/213): credits to: [Talos](https://talosintelligence.com/)
+* Fixed the travel request approval for managers
+* Fixed the issue with attendance source IP display
+* Fixing Api issues in PHP 7.3
+
+
 Release note v26.6.0.OS
 ------------------------
 
