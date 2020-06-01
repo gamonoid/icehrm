@@ -69,7 +69,7 @@ class LogManager
         return $this->logCollector;
     }
 
-    public function notifyException(\Throwable $error)
+    public function notifyException($error)
     {
         if ($this->isNewRelicActive()) {
             newrelic_notice_error(sprintf('(client=%s) %s', CLIENT_NAME, $error->getMessage()), $error);

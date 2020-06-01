@@ -11,7 +11,7 @@
 ### For developers
 * Developer environment based on docker [https://www.youtube.com/watch?v=sz8OV_ON6S8](https://www.youtube.com/watch?v=sz8OV_ON6S8)
 * [Developer guide](https://icehrm.gitbook.io/icehrm/developer-guide/create-new-module)
-* Fully support from php 7.0 upto 7.4 (php 5.6 support is deprecated and not recommended)
+* Fully supports all php versions >= 5.6 upto v7.3 (php 5.6 support is deprecated and not recommended)
 
 ### Bug fixes
 * Fixes to newly found vulnerabilities (https://github.com/gamonoid/icehrm/issues/213): credits to: [Talos](https://talosintelligence.com/)
