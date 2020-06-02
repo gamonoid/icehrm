@@ -1336,6 +1336,7 @@ class BaseService
         if ($settings->name != "Instance : ID" || empty($settings->value)) {
             $settings->value = md5(time());
             $settings->name = "Instance : ID";
+            $settings->category = "Instance";
             $settings->Save();
         }
 
@@ -1348,6 +1349,7 @@ class BaseService
         $settings->Load("name = ?", array("Instance: Key"));
         if ($settings->name != "Instance: Key") {
             $settings->name = "Instance: Key";
+            $settings->category = "Instance";
         }
         $settings->value = $key;
         $settings->Save();
