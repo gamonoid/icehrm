@@ -22,4 +22,4 @@ docker/testing/db_data
 test/frontend/cypress/videos/*
 test/frontend/cypress/screenshots/*
 test/frontend/node_modules/*
-
+!deployment/vagrant/ssl/icehrm.key
