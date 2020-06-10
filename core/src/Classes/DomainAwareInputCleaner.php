@@ -1,6 +1,4 @@
 <?php
-
-
 namespace Classes;
 
 class DomainAwareInputCleaner
@@ -92,6 +90,6 @@ class DomainAwareInputCleaner
 
     private function isValidFilterValue($input)
     {
-        return !!preg_match('/^[-_: \p{L}]+$/u', $input);
+        return !!preg_match('/^[-_: \d\p{L}]+$/u', $input);
     }
 }

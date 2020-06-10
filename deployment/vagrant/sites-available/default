@@ -1,0 +1,50 @@
+server {
+	listen 80;
+	listen [::]:80;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+
+    root /vagrant;
+
+    # Add index.php to the list if you are using PHP
+    index index.html index.php;
+
+    server_name icehrm.test;
+
+    ssl_certificate     /etc/nginx/ssl/icehrm.crt;
+    ssl_certificate_key /etc/nginx/ssl/icehrm.key;
+    ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
+
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ =404;
+    }
+
+    location /core/ {
+        deny all;
+    }
+
+    # pass PHP scripts to FastCGI server
+    #
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+
+        # With php-fpm (or other unix sockets):
+        fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+    #    # With php-cgi (or other tcp sockets):
+    #    fastcgi_pass 127.0.0.1:9000;
+    }
+
+    # deny access to .htaccess files, if Apache's document root
+    # concurs with nginx's one
+    #
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location /app/api/ {
+    	try_files $uri /app/api/index.php?/$uri&$args;
+	}
+}
