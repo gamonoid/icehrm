@@ -136,6 +136,8 @@ $logoFileUrl = \Classes\UIManager::getInstance()->getCompanyLogoUrl();
 $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
 \Utils\SessionUtils::saveSessionObject('csrf-login', $csrfToken);
 
+$refLink = base64_encode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -328,7 +330,7 @@ $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
 	<div class="content" style="margin-top:100px;">
 		<div class="row">
 			<div class="login-form">
-				<h2><img src="<?=$logoFileUrl?>"/></h2>
+				<h2><a href="https://icehrm.com?ref=<?=$refLink?>" target="_blank"><img alt="The HR App to Fit All Your Needs, such as Employee, Time, Vacation and Expense Management" src="<?=$logoFileUrl?>"/></a></h2>
 				<?php if (!isset($_REQUEST['cp'])) {?>
 					<form id="loginForm" action="login.php" method="POST">
                         <input type="hidden" id="next" name="next" value="<?=$_REQUEST['next']?>"/>
