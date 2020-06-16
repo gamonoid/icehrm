@@ -67,11 +67,11 @@ class DataQuery
     }
 
     /**
-     * @return array
+     * @return string
      */
     public function getFilters()
     {
-        return $this->filters;
+        return empty($this->filters) ? '' : json_encode($this->filters);
     }
 
     /**
