@@ -22,6 +22,7 @@ For Linux you need to install docker compose separately here [https://docs.docke
 ```
 $ git clone https://github.com/gamonoid/icehrm.git
 $ cd icehrm
+$ touch app/data/icehrm.log (or create the file manually)
 $ docker-compose -f docker-compose-prod.yaml up -d
 ```
 
