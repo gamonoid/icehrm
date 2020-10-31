@@ -233,6 +233,7 @@
         <exclude name="web/components/**"/>
         <exclude name="web/themecss/**"/>
         <exclude name="web/themejs/**"/>
+        <exclude name="docs/**"/>
 	  </fileset>
 	</copy>
 
