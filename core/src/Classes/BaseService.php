@@ -292,8 +292,8 @@ class BaseService
 
                         $childCompaniesIds = array();
                         if (\Classes\SettingsManager::getInstance()->getSetting(
-                            'System: Child Company Structure Managers Enabled'
-                        ) == '1'
+                                'System: Child Company Structure Managers Enabled'
+                            ) == '1'
                         ) {
                             $childCompaniesResp = \Company\Common\Model\CompanyStructure::getAllChildCompanyStructures(
                                 $cempObj->department
@@ -486,8 +486,8 @@ class BaseService
 
                         $childCompaniesIds = array();
                         if (SettingsManager::getInstance()->getSetting(
-                            'System: Child Company Structure Managers Enabled'
-                        ) == '1'
+                                'System: Child Company Structure Managers Enabled'
+                            ) == '1'
                         ) {
                             $childCompaniesResp = CompanyStructure::getAllChildCompanyStructures($cempObj->department);
                             $childCompanies = $childCompaniesResp->getObject();
@@ -567,8 +567,8 @@ class BaseService
 
                     $childCompaniesIds = array();
                     if (SettingsManager::getInstance()->getSetting(
-                        'System: Child Company Structure Managers Enabled'
-                    ) == '1'
+                            'System: Child Company Structure Managers Enabled'
+                        ) == '1'
                     ) {
                         $childCompaniesResp = CompanyStructure::getAllChildCompanyStructures($cempObj->department);
                         $childCompanies = $childCompaniesResp->getObject();
@@ -1376,11 +1376,15 @@ class BaseService
             return false;
         }
 
-        $data = AesCtr::decrypt($key, $instanceId, 256);
-        $arr = explode("|", $data);
-        if ($arr[0] == KEY_PREFIX && $arr[1] == $instanceId) {
+        if (strlen($key) > 7) {
             return true;
         }
+
+//        $data = AesCtr::decrypt($key, $instanceId, 256);
+//        $arr = explode("|", $data);
+//        if ($arr[0] == KEY_PREFIX && $arr[1] == $instanceId) {
+//            return true;
+//        }
 
         return false;
     }
@@ -1779,8 +1783,8 @@ END;
         ) {
             $departmentHeadFound = true;
         } elseif (SettingsManager::getInstance()->getSetting(
-            'System: Child Company Structure Managers Enabled'
-        ) == '1'
+                'System: Child Company Structure Managers Enabled'
+            ) == '1'
         ) {
             $companyStructure = new CompanyStructure();
             $companyStructure->Load('id = ?', array($subordinate->department));
@@ -1800,7 +1804,7 @@ END;
                     $companyStructure->Load('id = ?', array($parentCompanyStructure));
                 }
             } while (!empty($companyStructure->id)
-                && !empty($parentCompanyStructure)
+            && !empty($parentCompanyStructure)
             );
         }
 
