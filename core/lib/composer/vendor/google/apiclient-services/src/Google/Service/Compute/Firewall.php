@@ -26,8 +26,11 @@ class Google_Service_Compute_Firewall extends Google_Collection
   public $description;
   public $destinationRanges;
   public $direction;
+  public $disabled;
   public $id;
   public $kind;
+  protected $logConfigType = 'Google_Service_Compute_FirewallLogConfig';
+  protected $logConfigDataType = '';
   public $name;
   public $network;
   public $priority;
@@ -98,6 +101,14 @@ class Google_Service_Compute_Firewall extends Google_Collection
   {
     return $this->direction;
   }
+  public function setDisabled($disabled)
+  {
+    $this->disabled = $disabled;
+  }
+  public function getDisabled()
+  {
+    return $this->disabled;
+  }
   public function setId($id)
   {
     $this->id = $id;
@@ -113,6 +124,20 @@ class Google_Service_Compute_Firewall extends Google_Collection
   public function getKind()
   {
     return $this->kind;
+  }
+  /**
+   * @param Google_Service_Compute_FirewallLogConfig
+   */
+  public function setLogConfig(Google_Service_Compute_FirewallLogConfig $logConfig)
+  {
+    $this->logConfig = $logConfig;
+  }
+  /**
+   * @return Google_Service_Compute_FirewallLogConfig
+   */
+  public function getLogConfig()
+  {
+    return $this->logConfig;
   }
   public function setName($name)
   {

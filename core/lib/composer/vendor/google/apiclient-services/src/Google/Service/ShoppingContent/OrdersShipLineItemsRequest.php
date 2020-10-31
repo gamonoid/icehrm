@@ -18,23 +18,13 @@
 class Google_Service_ShoppingContent_OrdersShipLineItemsRequest extends Google_Collection
 {
   protected $collection_key = 'shipmentInfos';
-  public $carrier;
   protected $lineItemsType = 'Google_Service_ShoppingContent_OrderShipmentLineItemShipment';
   protected $lineItemsDataType = 'array';
   public $operationId;
-  public $shipmentId;
+  public $shipmentGroupId;
   protected $shipmentInfosType = 'Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo';
   protected $shipmentInfosDataType = 'array';
-  public $trackingId;
 
-  public function setCarrier($carrier)
-  {
-    $this->carrier = $carrier;
-  }
-  public function getCarrier()
-  {
-    return $this->carrier;
-  }
   /**
    * @param Google_Service_ShoppingContent_OrderShipmentLineItemShipment
    */
@@ -57,13 +47,13 @@ class Google_Service_ShoppingContent_OrdersShipLineItemsRequest extends Google_C
   {
     return $this->operationId;
   }
-  public function setShipmentId($shipmentId)
+  public function setShipmentGroupId($shipmentGroupId)
   {
-    $this->shipmentId = $shipmentId;
+    $this->shipmentGroupId = $shipmentGroupId;
   }
-  public function getShipmentId()
+  public function getShipmentGroupId()
   {
-    return $this->shipmentId;
+    return $this->shipmentGroupId;
   }
   /**
    * @param Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo
@@ -78,13 +68,5 @@ class Google_Service_ShoppingContent_OrdersShipLineItemsRequest extends Google_C
   public function getShipmentInfos()
   {
     return $this->shipmentInfos;
-  }
-  public function setTrackingId($trackingId)
-  {
-    $this->trackingId = $trackingId;
-  }
-  public function getTrackingId()
-  {
-    return $this->trackingId;
   }
 }

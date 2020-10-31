@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo;
 
 use Consolidation\AnnotatedCommand\ExitCodeInterface;
@@ -40,7 +41,7 @@ class ResultData extends Data implements ExitCodeInterface, OutputDataInterface
      * @param string $message
      * @param array $data
      *
-     * @return \Robo\ResultData
+     * @return static
      */
     public static function message($message, $data = [])
     {
@@ -51,7 +52,7 @@ class ResultData extends Data implements ExitCodeInterface, OutputDataInterface
      * @param string $message
      * @param array $data
      *
-     * @return \Robo\ResultData
+     * @return static
      */
     public static function cancelled($message = '', $data = [])
     {

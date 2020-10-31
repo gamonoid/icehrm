@@ -13,8 +13,21 @@ use Consolidation\OutputFormatters\Transformations\PropertyListTableTransformati
  * key : value pair.  The keys must be unique, as is typically
  * the case for associative arrays.
  */
-class PropertyList extends AbstractStructuredList
+class PropertyList extends AbstractStructuredList implements ConversionInterface
 {
+    /**
+     * @inheritdoc
+     */
+    public function convert(FormatterOptions $options)
+    {
+        $defaults = $this->defaultOptions();
+        $fields = $this->getFields($options, $defaults);
+        if (FieldProcessor::hasUnstructuredFieldAccess($fields)) {
+            return new UnstructuredData($this->getArrayCopy());
+        }
+        return $this;
+    }
+
     /**
      * Restructure this data for output by converting it into a table
      * transformation object.

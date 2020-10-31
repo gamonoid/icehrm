@@ -1,0 +1,578 @@
+eZ component: ConsoleTools, Design, 1.3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:Author: Tobias Schlitt
+:Revision: $Rev$
+:Date: $Date$
+:Status: Draft
+
+.. contents::
+
+=====
+Scope
+=====
+
+The scope of this document is to describe the enhancements of the ConsoleTools
+component for version 1.3 of the component. The following features are part of
+this design document:
+
+- Basic dialog system to interact with a user through STDIN.
+- Enhanced handling of arguments (including help output).
+
+This document describes a new range of classes, which will be added to
+ConsoleTools, to fulfill this needs.
+
+=============
+Dialog system
+=============
+
+Design overview
+===============
+
+The following section gives a brief introduction of the concept of a simple
+dialog system that enables the developer of a console based application to
+interact with the user through STDIN.
+
+Clarification of terms
+----------------------
+
+User
+^^^^
+
+The "user" is the person using a program and interacting with it during
+runtime. The user has no knowledge about the internals and must be guided
+through the dialog system he is interacting with. The term "user" in case of
+this document is _not_ the developer using the described component, but the
+user who interacts with the final program.
+
+Developer
+^^^^^^^^^
+
+In contrast to the "user", the term "developer" in this document refers to the
+person who creates a program, using the described component.
+
+Dialog
+^^^^^^
+
+The basic idea of a new mechanism to interact with the user through STDIN in
+this document is called a "dialog".  A dialog is presented to the user by a
+certain amount of output it generates and a certain amount of input it
+requests afterwards.
+
+Basic design
+------------
+
+The core of the new feature described in this document is a dialog. The dialog
+is an object, must have the following capabilities:
+
+- Presents itself to the user on the command line
+- Requests data  from the user through STDIN.
+- Validate the result for its purpose.
+- Return the result to the developer.
+
+A dialog is usually used in a loop, which displays the dialog over and over again
+until it received a valid result.
+
+Class design
+============
+
+The following classes will realize the idea of dialogs in ConsoleTools.
+
+ezcConsoleDialog
+----------------
+
+This interface describes the external API, which is commonly used by developers
+and other classes to interact with a dialog object. Each dialog class must
+implement this interface.
+
+__construct( ezcConsoleOutput $output, ezcConsoleDialogOptions $options )
+  The constructor of a dialog receives an instance of ezcConsoleOutput, which
+  it must use for presenting its output, when requested. In addition, it can
+  receive an option object, which must be an instance or subclass instance of
+  ezcConsoleDialogOptions.
+hasValidResult()
+  This method must return a boolean value, which indicates, if the dialog
+  already received a result from the user, which is valid in its context.
+getResult()
+  After the hasValidResult() method returned true, this method will return the
+  value received from the dialog.
+display()
+  Using this method, the developer can instruct the dialog object to display
+  itself to the user. The dialog must use the instance of eczConsoleOutput it
+  received in the constructor for displaying.
+reset()
+  This method resets the dialog internally to the state it had directly after
+  construction, so that it can be reused by the developer.
+
+In addition to this interface, an implementation of ezcConsoleDialog can
+contain a set of static factory methods, which return a dialog in a
+pre-configured state (for example a standard yes/no question, where only the
+text needs to be set).
+
+ezcConsoleDialogOptions
+-----------------------
+
+This is the base option class, which must be accepted by a dialog. It contains
+options, which must be valid for each dialog class. A dialog class may request,
+that the options it receives are instances of a subclass, if it expects
+additional options. Each of the options defined in ezcConsoleDialogOptions must
+also be available in this subclass. Every option defined must have a sensible
+default value, so that there is no need for the developer to change it.
+
+The base option class provides the following options:
+
+format
+  The name of the format this dialog uses to be displayed. The format
+  identifier must be defined in the ezcConsoleOutput instance submitted to the
+  constructor of the dialog.
+validator
+  An instance of ezcConsoleDialogValidator. This validator is responsible for
+  validation and manipulation of the result a dialog received from the user. An
+  implementation of ezcConsoleDialog may require a specific sub-class of
+  ezcConsoleDialogValidator here (e.g. for a menu dialog, which requires a
+  special validator object to work).
+
+ezcConsoleDialogViewer
+----------------------
+
+The ezcConsoleDialogViewer class provides a set of static convenience methods
+that can be used by a developer that works with dialogs and by a developer that
+creates new dialogs. These methods are:
+
+displayDialog( ezcConsoleDialog $dialog ) [static]
+  This method is recommended to be used for displaying dialogs. It performs the
+  typical loop: Display the dialog over and over again until it received a
+  valid result. When this state is reached, it returns the dialogs value.
+readLine( $trim = true ) [static]
+  The readLine() method is commonly used in a dialog implementation to read a
+  line from standard in. It returns the input provided by a user, optionally
+  trimmed of leading and trailing white spaces.
+
+ezcConsoleDialogValidator
+-------------------------
+
+The ezcConsoleValidator interface provides signatures for methods that can be used
+by a dialog to validate the result it retrieved. The validator is configured by
+the user and submitted to the dialog via an option (if a dialog supports this
+mechanism).
+
+__construct( ... )
+  The signature of the constructor is left to the validator implementation to
+  retrieve settings (e.g. the valid results).
+validate( mixed $result )
+  This method is responsible for validating a given result.  The dialog will
+  submit the result it received to this method which will indicate if the
+  result was valid by a boolean value. To manipulate / fix a retrieved result,
+  the dialog implementation can call the fixup() method.
+fixup( mixed $result )
+  A validator can try to fix a given result to be valid. This manipulation can
+  be omitted by simply returning the result again. An example for a fixup would
+  be to convert a date information into a Unix timestamp using strtotime(). The
+  validate method would then expect an integer value > 0. The dialog
+  implementation is responsible for calling fixup() as it thinks is appropriate
+  (e.g. always before calling validate(), only if validate() fails, never).
+
+Dialog implementations
+======================
+
+The new feature set comes with a collection of basic dialog implementations,
+which will be described in this section.
+
+ezcConsoleQuestionDialog
+------------------------
+
+The ezcConsoleQuestionDialog is the most basic imaginable dialog. It asks the
+user a simply question and expects a certain answer. A typical output from an
+ezcConsoleQuestionDialog object could look like this: ::
+
+    Do you want to continue? (y/n) 
+
+This dialog implementation provides a set of rudimentary options, which can be
+used to customize its appearance and enhance its capabilities. For this
+purpose, it comes with a custom options class ezcConsoleQuestionDialogOptions,
+that accepts the following options in addition to those provided by
+ezcConsoleDialogOptions:
+
+text
+  This option defines the main "question" text, displayed to the user.
+validator
+  The validator is an instance of ezcConsoleQuestionDialogValidator. For
+  implementation details, see further below.
+showResults
+  If this boolean option is set to true, the dialog will display the possible
+  result values behind the question text itself (retrieved from the validator).
+  If a default value is provided, it will also indicate, which one this is. For
+  example: ::
+    
+    Do you want to continue? (y/n) [y]
+
+  While here "y" and "n" are valid results and "y" is the default result, which
+  is selected when simply skipping this question by hitting just <RETURN>.
+
+ezcConsoleQuestionDialogValidator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The interface if ezcConsoleQuestionValidator inherits from
+ezcConsoleDialogValidator and adds the following methods:
+
+getResultString()
+  This method returns the result string to be displayed if the option
+  "showResults" is true in the ezcConsoleQuestionDialogOptions object.
+
+Concrete implementations of these interface are:
+
+ezcConsoleQuestionDialogTypeValidator
+  This validator checks the result to be of a given type (e.g. int, float). It
+  optionally checks if the result is in a given range (e.g. [0-100]).
+ezcConsoleQuestionDialogCollectionValidator
+  This validator checks the result against a given collection of pre-defined
+  values (e.g. "y" and "n"). Beside that, it can perform basic operations on
+  the result before checking it (like strtolower()).
+ezcConsoleQuestionDialogRegexValidator
+  This validator checks the result against a given regex (e.g.
+  "/([0-2]?[0-9])[:.]([0-6]?[0-9])/" for validation of a time value). In addition
+  it can perform a manipulation using this regex with a given (e.g. "\1:\2" to
+  unify the time value given).
+
+ezcConsoleMenuDialog
+--------------------
+
+The second dialog implementation shipped with ConsoleTools is the menu dialog,
+which is an enhanced version of the question dialog. The menu dialog will
+display an ordered set of options and let the user select one of these. A
+typical menu can look like this: ::
+
+    You can choose one of the following actions.
+
+    1)  Create something new
+    2)  Edit something
+    3)  Delete something
+    4)  Do something else
+
+    Please choose an action: 
+
+The menu dialog also comes with its own set of options, the
+ezcConsoleMenuDialogOptions:
+
+text
+  The text displayed before the menu.
+selectionText
+  The text displayed after the menu to indicate to the user that he should make
+  a selection.
+markerChar
+  The marker character used to divide the marker of a menu entry (e.g. the
+  number) from the menu value (the text of a menu entry).
+validator
+  The validator must be an instance of ezcConsoleMenuDialogValidator.
+
+ezcConsoleMenuDialogValidator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In contrast to ezcConsoleQuestionDialogValidator, this is not an interface, but
+a concrete implementation of ezcConsoleDialogValidator. The menu validator
+offers 2 properties to determine the menu entries:
+
+$entries
+  An array of entries shown as the menu. The keys of this array represent the
+  markers of the menu entries, the values represent the text shown.
+
+In addition, the validator can be configured to perform a manipulation on the
+result like the ezcConsoleQuestionDialogCollectionValidator (e.g.
+strtolower()).
+
+==============================
+Enhanced handling of arguments
+==============================
+
+Design overview
+===============
+
+The current functionality for handling options and arguments for a console
+based application in eZ Components (mainly the class ezcConsoleInput) has only
+rudimentary support for dealing with arguments. The current possibility is to
+either switch arguments on or off and does not allow to specify the following
+things:
+
+- How many arguments are possible
+- Which arguments are mandatory/optional
+- Names and types for the arguments.
+
+The goal of this design section is to provide these 3 features for argument
+handling.
+
+Clarification of terms
+----------------------
+
+Parameter
+^^^^^^^^^
+
+The term parameter is a generic term, which covers options and arguments
+together.
+
+Option
+^^^^^^
+
+An option for a console based application is specified using a short or a long
+name and can (optionally) carry a value of a given type. Short names are built
+using "-<name>" syntax, long names use "--<name>". Options are already handled
+by the ezcConsoleInput class, using objects of ezcConsoleOption.
+
+Example: ::
+
+    foo.php --save "bar.txt" -a
+
+"--save" is a long name and the parameter carries a string value "bar.txt".
+"-a" is a short name of an option, while this option does not carry any value.
+
+Argument
+^^^^^^^^
+
+In contrast to an option, an argument is not specified using a specific name, but
+by by the order of submission to the program. Arguments can only be given to a
+program, after all options have been specified.
+
+Example: ::
+
+    foo.php --save "bar.txt" -a -- "baz" 23
+    
+"baz" is the value of the first argument, 23 the value of the second one.
+
+Arguments separator
+^^^^^^^^^^^^^^^^^^^
+
+In some cases the semantic for specifying parameters on the console is not
+deterministic. Since the algorithm used to parse parameters cannot handle
+nondeterministic semantics, a separator must be used to determine the border
+between options and arguments. The separator used is "-- ", which indicates
+that anything following it is an argument and does not belong to the option
+before it. The seperator is not mandatory and must only be used in cases where
+the parsing would not be deterministic.
+
+Example: ::
+
+    foo.php --save "bar.txt" -a "baz" 23
+    foo.php --save "bar.txt" -a -- "baz" 23
+
+In the first line, it is not possible to determine if "baz" is the value for
+the parameter "-a" or if it is an argument. The second line clarifies this.
+
+Basic design
+------------
+
+The core of the new functionality is built upon 2 classes:
+
+- ezcConsoleArguments
+- ezcConsoleArgument
+
+The first one is a collection class, which takes care of holding all arguments.
+The second one is a struct class, which handles 1 specific argument.
+
+Class design
+============
+
+ezcConsoleArgument
+------------------
+
+This struct class represents a single argument and defines the following
+properties:
+
+name
+  A descriptive name for the argument. This name is used for 2 purposes:
+  - Displaying it in the help text generated by ezcConsoleInput.
+  - Identifying and retrieving the object from the argument collection.
+  This property is mandatory and may not be left out.
+type
+  The data type of the argument. The type is used for validation purposes when
+  the parameter string of the console application is parsed and is indicated to
+  the user in the help text generated by ezcConsoleInput. The default for this
+  property will be ezcConsoleInput::TYPE_STRING. ezcConsoleInput::TYPE_NONE
+  will not be allowed.
+shorthelp
+  A short help text, which is used by ezcConsoleInput when generating a short
+  help output. A sensible default will be set for this property.
+longhelp
+  A long help text, which is used by ezcConsoleInput when generating a long
+  help output. A sensible default will be set for this property.
+mandatory
+  This boolean flag specifies if an argument is mandatory or optional. Since
+  ezcConsoleArguments is an ordered collection, all arguments following an
+  optional argument will be handled as optional, too. The default value for
+  this property is true.
+default
+  This property carries the default value for optional arguments. If these are
+  not submitted, the default value will be used as the value property. If no
+  default value was explicitly defined, it is null and therefore the value
+  property will be null, if the argument was not submitted.
+multiple
+  This booloan property determines, if an argument can carry multiple values.
+  The default here is false. If this is set to true, no more arguments may
+  follow the current argument, since multiple defines the number of values to
+  be undefined. If arguments would follow, the parameter string would be
+  non-deterministic. Therefore all following arguments are silently ignored.
+  For arguments with this property true, the returned value is an array. The
+  default value may be an array, too.
+value
+  This property is not meant to be set by the developer directly, but by
+  ezcConsoleInput while parsing the parameter string of the application. It
+  will contain the value submitted for the argument after parsing. If this
+  argument was not submitted, the value of the default property will be set
+  here.
+
+ezcConsoleArguments
+-------------------
+
+This collection class carries the arguments for an application. It keeps track
+of the order of the ezcConsoleArgument objects and offers 2 access methods for
+them:
+
+- By their order (using numeric identification)
+- By their name
+
+For these purpose, the ArrayAccess and Iterator interfaces provided by PHP will
+be implemented in this class. ArrayAccess will be used for both variants of
+access, while Iterator will iterate of the numeric order of the arguments.
+Argument names must be unique. The registration of new arguments is only
+allowed by number. The retrival is also allowed by name.
+
+The class does not offer any additional methods to deal with arguments and
+purely relies on the given interfaces.
+
+Integration aspects
+===================
+
+The current design of ezcConsoleInput is not designed to handle arguments in
+the planned way. Therefore its API must be changed slightly. Naturally this
+will be done maintaining BC. The following changes are planned:
+
+Property $argumentDefinition
+----------------------------
+
+Since ezcConsoleInput already has a property $arguments, which carries the
+values of submitted arguments in an array, a new property will be introduced to
+carry the instance of ezcConsoleArguments. By default, this property will be
+null, which indicates, that the old manor of handling arguments is used.
+
+If ezcConsoleArguments is used, the preferred way of retrieving argument values
+is, to use the ezcConsoleArgument struct of the specific argument. The
+$arguments property of ezcConsoleInput will still be set and contain the values
+of the provided arguments.
+
+Switching arguments on/off
+--------------------------
+
+The ezcConsoleOption class allows to switch arguments on or off for a console
+call to the application using its property $arguments. This behaviour will not
+be changed. If an option defines that arguments are not allowed, if it is
+submitted, all defined arguments will not be allowed.
+
+It is possible, that this behaviour will be enhanced in the future, so that
+options can define a filter rule for arguments instead of a boolean on/off
+switch. But this feature is not in scope of the design given here.
+
+Usage example
+=============
+
+The following example shows the basic of the newly created API.
+
+Using arguments
+---------------
+
+::
+
+    $input = new ezcConsoleInput();
+    $input->argumentDefinition = new ezcConsoleArguments();
+
+    // First argument
+    $input->argumentDefinition[] = new ezcConsoleArgument(
+        "infile",
+        ezcConsoleInput::TYPE_STRING,
+        "The file to read from.",
+        "The input file, from which the content to process is read.",
+    );
+
+    // Second argument
+    $input->argumentDefinition[1] = new ezcConsoleArgument(
+        "outfile"
+    );
+    $input->argumentDefinition[1]->shorthelp = "Output file.";
+    $input->argumentDefinition[1]->longhelp  = "File to output generated
+        content to. Output will be printed to STDOUT if left out.";
+    $input->argumentDefinition[1]->mandatory = false;
+    $input->argumentDefinition[1]->default   = "php://output;
+
+    try
+    {
+        $input->process();
+    }
+    catch ( ezcConsoleMissingArgumentException $e )
+    {
+        // Only the first argument will possibly trigger this
+        die( "Argument {$e->argument->name} missing!" );
+    }
+
+    // The first argument is always present if no exception occured
+    $inFile  = fopen( $input->argumentDefinition["infile"]->value, "r" );
+    // The second one is optional, but has a default
+    $outFile = fopen( $input->argumentDefinition["infile"]->value, "w" );
+
+Generating help
+---------------
+    
+::
+    
+    $input = new ezcConsoleInput();
+    $input->argumentDefinition = new ezcConsoleArguments();
+
+    // First argument
+    $input->argumentDefinition[] = new ezcConsoleArgument(
+        "file",
+        ezcConsoleInput::TYPE_STRING,
+        "Output file.",
+        "File to output generated
+    );
+
+    // Second argument
+    $input->argumentDefinition[] = new ezcConsoleArgument(
+        "bytes",
+        ezcConsoleInput::TYPE_INT,
+        "Bytes to write.",
+        "The number of bytes written to the output file. If left out,
+             everything will be written.",
+        false,
+        -1
+    );
+
+    echo $input->getHelpiText( "Some example program." );
+
+Generates: ::
+
+    Usage: test.php [--] <string:file> [<int:bytes>]
+    Some example program
+
+    Arguments:
+    <string:file>       Output file.
+    <int:bytes> = -1    Bytes to write.
+
+Open issues
+===========
+
+- The access of arguments by number and name is comfortable, but (as described
+  above) not reliable, if 2 parameters have the same name. It also makes
+  implementation more complex (if a parameter is removed, namesake has to come
+  in place. So, do we want this or not?
+- The property name $argumentsDefinition is OK for the definition part, but
+  does actually not make sense, if you access it later to retrieve the value.
+  Any better naming solution?
+- It is sometimes sensible to allow that for 1 argument multiple values are
+  submitted (e.g. if you expect an undefined number of file names). To resolve
+  this, we need to invent a property "multiple" for the ezcConsoleArgument
+  struct. If multiple is defined for 1 argument, no more arguments must follow,
+  since the algorithm could not determine easily where the multiple values for
+  the argument end. Do we need this functionality (now)?
+
+
+..
+   Local Variables:
+   mode: rst
+   fill-column: 79
+   End: 
+   vim: et syn=rst tw=79

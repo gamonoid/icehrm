@@ -33,7 +33,6 @@ class Google_Service_AdExchangeBuyer_CreativeNativeAd extends Google_Collection
   protected $logoDataType = '';
   public $price;
   public $starRating;
-  public $store;
   public $videoURL;
 
   public function setAdvertiser($advertiser)
@@ -149,14 +148,6 @@ class Google_Service_AdExchangeBuyer_CreativeNativeAd extends Google_Collection
   public function getStarRating()
   {
     return $this->starRating;
-  }
-  public function setStore($store)
-  {
-    $this->store = $store;
-  }
-  public function getStore()
-  {
-    return $this->store;
   }
   public function setVideoURL($videoURL)
   {

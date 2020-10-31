@@ -19,10 +19,13 @@ class Google_Service_BigQueryDataTransfer_TransferRun extends Google_Model
 {
   public $dataSourceId;
   public $destinationDatasetId;
+  protected $emailPreferencesType = 'Google_Service_BigQueryDataTransfer_EmailPreferences';
+  protected $emailPreferencesDataType = '';
   public $endTime;
   protected $errorStatusType = 'Google_Service_BigQueryDataTransfer_Status';
   protected $errorStatusDataType = '';
   public $name;
+  public $notificationPubsubTopic;
   public $params;
   public $runTime;
   public $schedule;
@@ -47,6 +50,20 @@ class Google_Service_BigQueryDataTransfer_TransferRun extends Google_Model
   public function getDestinationDatasetId()
   {
     return $this->destinationDatasetId;
+  }
+  /**
+   * @param Google_Service_BigQueryDataTransfer_EmailPreferences
+   */
+  public function setEmailPreferences(Google_Service_BigQueryDataTransfer_EmailPreferences $emailPreferences)
+  {
+    $this->emailPreferences = $emailPreferences;
+  }
+  /**
+   * @return Google_Service_BigQueryDataTransfer_EmailPreferences
+   */
+  public function getEmailPreferences()
+  {
+    return $this->emailPreferences;
   }
   public function setEndTime($endTime)
   {
@@ -77,6 +94,14 @@ class Google_Service_BigQueryDataTransfer_TransferRun extends Google_Model
   public function getName()
   {
     return $this->name;
+  }
+  public function setNotificationPubsubTopic($notificationPubsubTopic)
+  {
+    $this->notificationPubsubTopic = $notificationPubsubTopic;
+  }
+  public function getNotificationPubsubTopic()
+  {
+    return $this->notificationPubsubTopic;
   }
   public function setParams($params)
   {

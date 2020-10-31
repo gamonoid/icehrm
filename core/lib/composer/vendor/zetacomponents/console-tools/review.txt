@@ -1,0 +1,140 @@
+> Comments by: Raymond Bosman (12-12-2005)
+> ----------------------------------------
+> General:
+> - Check directory structure, if you add more structures to Struct directory
+>   then there is no real separaration between the different tools. 
+
+> Parameter:
+> - Should use struct.
+
+Done.
+
+> - What does excludes dO?
+
+Exclude another parameter, if this one is used. Hope this is clearer now,
+since I updated lots of docs while refactoring.
+
+> Output:
+> - Should use struct instead of the options array.
+
+Done.
+
+> Progressbar:
+> - Should use struct instead of the options array.
+
+Done.
+
+> StatusBar:
+> - For sake of compatibility, use struct instead of the options array.
+> StatusBar:
+> - Use struct instead of the options array.
+
+# Looks like the same to me...
+I changed that to properties to not use a class for 2 simple types. Please
+object if I should really make a struct.
+
+Comments by Jan Borsodi (15-12-2005)
+------------------------------------
+
+> General:
+> - Check the coding standard, spacing is not correct in many places.
+
+Thanks for the hint. I tried my best to fix it. Can you point me to extreme cases 
+where I maybe missed it?
+
+> - Why have a 'break' after a 'return' in switch/case statements?
+
+Just for completness. I learned it that way "no case without break" and that
+rule was quite usefull in many cases. If it disturbs you, let me know and I
+will remove it.
+
+Update 20-12-2005:
+
+Removed the break.
+
+> ezcConsoleParameter::getValues
+> - I think maybe the name should be getResult, getOptionResult or getOptionValues
+> - Alternatively the process() method could return a result object which has the
+>   options and arguments stored.
+>   $result = $p->process();
+>   if ( $result->options['help'] );
+>   var_dump( $result->arguments );
+> 
+>   This removes the need for the class to both handle registration/processing
+>   as well as being a storage device.
+
+I don't think this is a good idea, please take a look how the new
+ezcConsoleInput. About the renaming of getValues() I'm quite open, since
+usually it is intended that you to "$input->getParam('h')->value;".
+
+> ezcConsoleParameter::getParam
+> - I think the name is misleading, when I first saw it I though it returned
+>   the input value. I think it should be more clearer that the option definition
+>   is returned by changing the name. This for all the other param methods too.
+
+This is already implemented by the move to use of ezcConsoleOption.
+
+> ezcConsoleParameter::fromString
+> - This should get a different name, I first though that this returned the 
+> parameter definitions but it actually registers them.
+>  I suggest registerOptionString().
+
+Like before, the naming does not really matter to me. Please let me know, if I
+should finally change that.
+
+Update 20-12-2005:
+
+Renamed the method.
+
+> ezcConsoleStatusbar
+>  I'm not sure what the purpose of this is. I think we should have a class 
+> which outputs status in similar way which is done in eZ publish (the block 
+> based output). This not only breaks at a given column but can also show the 
+> progress on each line if the total value is known.
+> 
+> e.g.
+> 
+> ............................................................ 40%
+> ...................x........................................ 80%
+> ............................                                 100%
+
+The statusbar is implemented as I understood your defintion by now. I'm sure I
+can implement it in the way you want it, but I'm not sure this will work for
+beta2.
+
+ezcConsoleTable
+- Coding standard is not followed all places.
+- The doc for the class needs more work, it doesn't really explain how to use 
+all of its features.
+
+> ezcConsoleTable::__get/__set:
+> - The property handling is inconsistent, one of them is a protected variable while
+>   the others are handled in an array.
+> - The property array should be named properties not settings.
+
+Fixed by the whole refactoring.
+
+> ezcConsoleTable::setOptions:
+> - Why is this present when you can set them with a member variable, either only have the method
+>   or use the property. Also the method sets them as array entries while $options is now an object.
+
+Fixed by the whole refactoring.
+
+> ezcConsoleTable::setSettings:
+> - Similar issue as setOptions, also no documentation of which settings one can set.
+
+Fixed by the whole refactoring.
+
+
+Comments by Derick
+==================
+ezcConsoleTableOptions::__construct has no good documentation for the
+parameters.
+
+ezcConsoleOutputFormats should not be in the structs directory as it is no
+struct.
+
+ezcConsoleOptionRule, ezcConsoleOutputFormat and ezcConsoleProgressbarOptions
+are not real structs so they should not go into the structs directory. They are
+not real structs because they have additional checks for value's ranges. Also
+change the word "struct" in its docs to "class".

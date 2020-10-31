@@ -17,7 +17,7 @@
 
 class Google_Service_DLP_GooglePrivacyDlpV2InspectConfig extends Google_Collection
 {
-  protected $collection_key = 'infoTypes';
+  protected $collection_key = 'ruleSet';
   public $contentOptions;
   protected $customInfoTypesType = 'Google_Service_DLP_GooglePrivacyDlpV2CustomInfoType';
   protected $customInfoTypesDataType = 'array';
@@ -28,6 +28,8 @@ class Google_Service_DLP_GooglePrivacyDlpV2InspectConfig extends Google_Collecti
   protected $limitsType = 'Google_Service_DLP_GooglePrivacyDlpV2FindingLimits';
   protected $limitsDataType = '';
   public $minLikelihood;
+  protected $ruleSetType = 'Google_Service_DLP_GooglePrivacyDlpV2InspectionRuleSet';
+  protected $ruleSetDataType = 'array';
 
   public function setContentOptions($contentOptions)
   {
@@ -102,5 +104,19 @@ class Google_Service_DLP_GooglePrivacyDlpV2InspectConfig extends Google_Collecti
   public function getMinLikelihood()
   {
     return $this->minLikelihood;
+  }
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2InspectionRuleSet
+   */
+  public function setRuleSet($ruleSet)
+  {
+    $this->ruleSet = $ruleSet;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2InspectionRuleSet
+   */
+  public function getRuleSet()
+  {
+    return $this->ruleSet;
   }
 }

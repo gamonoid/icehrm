@@ -26,7 +26,7 @@ class AttendanceRestEndPoint extends RestEndPoint
         return $obj;
     }
 
-    public function listAll(User $user)
+    public function listAll(User $user, $parameter = null)
     {
         $query = new DataQuery('Attendance');
         $query->addColumn('id');
@@ -237,8 +237,12 @@ class AttendanceRestEndPoint extends RestEndPoint
         return new IceResponse(IceResponse::ERROR, $response->getData(), 400);
     }
 
-    protected function findAttendance($employeeId, $date)
+    public function findAttendance($employeeId, $date)
     {
+        if ($date === 'today') {
+            $date = explode(' ', $this->getServerTime())[0];
+        }
+
         if (strpos($date, ' ')) {
             $date = explode(' ', $date)[0];
         }

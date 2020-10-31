@@ -17,11 +17,22 @@
 
 class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta2VideoAnnotationProgress extends Google_Model
 {
+  public $feature;
   public $inputUri;
   public $progressPercent;
+  protected $segmentType = 'Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta2VideoSegment';
+  protected $segmentDataType = '';
   public $startTime;
   public $updateTime;
 
+  public function setFeature($feature)
+  {
+    $this->feature = $feature;
+  }
+  public function getFeature()
+  {
+    return $this->feature;
+  }
   public function setInputUri($inputUri)
   {
     $this->inputUri = $inputUri;
@@ -37,6 +48,20 @@ class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta2V
   public function getProgressPercent()
   {
     return $this->progressPercent;
+  }
+  /**
+   * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta2VideoSegment
+   */
+  public function setSegment(Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta2VideoSegment $segment)
+  {
+    $this->segment = $segment;
+  }
+  /**
+   * @return Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta2VideoSegment
+   */
+  public function getSegment()
+  {
+    return $this->segment;
   }
   public function setStartTime($startTime)
   {

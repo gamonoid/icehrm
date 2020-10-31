@@ -15,8 +15,11 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1WebhookRequest extends Google_Model
+class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1WebhookRequest extends Google_Collection
 {
+  protected $collection_key = 'alternativeQueryResults';
+  protected $alternativeQueryResultsType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1QueryResult';
+  protected $alternativeQueryResultsDataType = 'array';
   protected $originalDetectIntentRequestType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1OriginalDetectIntentRequest';
   protected $originalDetectIntentRequestDataType = '';
   protected $queryResultType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1QueryResult';
@@ -24,6 +27,20 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1WebhookRequest exten
   public $responseId;
   public $session;
 
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1QueryResult
+   */
+  public function setAlternativeQueryResults($alternativeQueryResults)
+  {
+    $this->alternativeQueryResults = $alternativeQueryResults;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1QueryResult
+   */
+  public function getAlternativeQueryResults()
+  {
+    return $this->alternativeQueryResults;
+  }
   /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1OriginalDetectIntentRequest
    */

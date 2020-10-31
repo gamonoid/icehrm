@@ -4,12 +4,6 @@ namespace Consolidation\OutputFormatters\StructuredData;
 interface TableDataInterface
 {
     /**
-     * Return the original data for this table.  Used by any
-     * formatter that is -not- a table.
-     */
-    public function getOriginalData();
-
-    /**
      * Convert structured data into a form suitable for use
      * by the table formatter.
      *

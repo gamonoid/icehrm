@@ -18,9 +18,25 @@
 class Google_Service_ServiceBroker_GoogleIamV1Binding extends Google_Collection
 {
   protected $collection_key = 'members';
+  protected $conditionType = 'Google_Service_ServiceBroker_GoogleTypeExpr';
+  protected $conditionDataType = '';
   public $members;
   public $role;
 
+  /**
+   * @param Google_Service_ServiceBroker_GoogleTypeExpr
+   */
+  public function setCondition(Google_Service_ServiceBroker_GoogleTypeExpr $condition)
+  {
+    $this->condition = $condition;
+  }
+  /**
+   * @return Google_Service_ServiceBroker_GoogleTypeExpr
+   */
+  public function getCondition()
+  {
+    return $this->condition;
+  }
   public function setMembers($members)
   {
     $this->members = $members;

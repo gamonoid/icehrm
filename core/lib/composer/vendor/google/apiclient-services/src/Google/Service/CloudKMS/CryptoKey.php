@@ -25,6 +25,8 @@ class Google_Service_CloudKMS_CryptoKey extends Google_Model
   protected $primaryDataType = '';
   public $purpose;
   public $rotationPeriod;
+  protected $versionTemplateType = 'Google_Service_CloudKMS_CryptoKeyVersionTemplate';
+  protected $versionTemplateDataType = '';
 
   public function setCreateTime($createTime)
   {
@@ -87,5 +89,19 @@ class Google_Service_CloudKMS_CryptoKey extends Google_Model
   public function getRotationPeriod()
   {
     return $this->rotationPeriod;
+  }
+  /**
+   * @param Google_Service_CloudKMS_CryptoKeyVersionTemplate
+   */
+  public function setVersionTemplate(Google_Service_CloudKMS_CryptoKeyVersionTemplate $versionTemplate)
+  {
+    $this->versionTemplate = $versionTemplate;
+  }
+  /**
+   * @return Google_Service_CloudKMS_CryptoKeyVersionTemplate
+   */
+  public function getVersionTemplate()
+  {
+    return $this->versionTemplate;
   }
 }

@@ -23,6 +23,8 @@ class Google_Service_Vision_ImageContext extends Google_Collection
   public $languageHints;
   protected $latLongRectType = 'Google_Service_Vision_LatLongRect';
   protected $latLongRectDataType = '';
+  protected $productSearchParamsType = 'Google_Service_Vision_ProductSearchParams';
+  protected $productSearchParamsDataType = '';
   protected $webDetectionParamsType = 'Google_Service_Vision_WebDetectionParams';
   protected $webDetectionParamsDataType = '';
 
@@ -61,6 +63,20 @@ class Google_Service_Vision_ImageContext extends Google_Collection
   public function getLatLongRect()
   {
     return $this->latLongRect;
+  }
+  /**
+   * @param Google_Service_Vision_ProductSearchParams
+   */
+  public function setProductSearchParams(Google_Service_Vision_ProductSearchParams $productSearchParams)
+  {
+    $this->productSearchParams = $productSearchParams;
+  }
+  /**
+   * @return Google_Service_Vision_ProductSearchParams
+   */
+  public function getProductSearchParams()
+  {
+    return $this->productSearchParams;
   }
   /**
    * @param Google_Service_Vision_WebDetectionParams

@@ -70,6 +70,14 @@ include('configureUIManager.php');
 
 $chatUserProfile = \Classes\UIManager::getInstance()->getCurrentProfile();
 
+if (defined('SYM_CLIENT')) {
+    $restApiBase = WEB_APP_BASE_URL.'/api/'.SYM_CLIENT.'/';
+} else if (defined('REST_API_BASE')){
+    $restApiBase = REST_API_BASE;
+} else {
+    $restApiBase = CLIENT_BASE_URL.'api/';
+}
+
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -249,19 +257,6 @@ $chatUserProfile = \Classes\UIManager::getInstance()->getCurrentProfile();
 
     <!-- Right side column. Contains the navbar and content of the page -->
     <aside class="right-side">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                <?=\Classes\LanguageManager::tran($meta['label'])?>
-                <small>
-                    <?=\Classes\LanguageManager::tran($meta['menu'])?>&nbsp;&nbsp
-                </small>
-            </h1>
-            <a href="#" class="helpLink" target="_blank"
-               style="display:none;color:#f4f4f4;font-size: 2.3rem;float: right;margin-top: -30px;text-shadow: 1px 1px 2px black, 0 0 25px #367fa9, 0 0 5px #367fa9;">
-                <i class="fa fa-question-circle"></i></a>
-        </section>
-
         <!-- Main content -->
         <section class="content">
 

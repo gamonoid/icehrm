@@ -18,11 +18,20 @@
 class Google_Service_AndroidManagement_WebToken extends Google_Collection
 {
   protected $collection_key = 'permissions';
+  public $enabledFeatures;
   public $name;
   public $parentFrameUrl;
   public $permissions;
   public $value;
 
+  public function setEnabledFeatures($enabledFeatures)
+  {
+    $this->enabledFeatures = $enabledFeatures;
+  }
+  public function getEnabledFeatures()
+  {
+    return $this->enabledFeatures;
+  }
   public function setName($name)
   {
     $this->name = $name;

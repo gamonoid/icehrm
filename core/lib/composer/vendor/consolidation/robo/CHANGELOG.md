@@ -1,5 +1,113 @@
 # Changelog
 
+### 1.4.13 - 10/10/2020
+
+- Allow symfony/finder ^5 (#992)
+- Fix #981: PHP 7.3 compatibility fixes (#982)
+
+### 1.4.12 2/18/2020
+
+- Fixed #922: PHP 7.4 compatibility. (#923) (#928)
+- Test on PHP 7.4. Backport removal of Codeception to 1.x branch. (#925)
+- Copy branches documentation to the 1.x branch.
+- Fix incosistent white space formatting in code example. (#916)
+- Viktor Szépe extract() is not our friend (#903)
+- Viktor Szépe Old variables in ImageMinify (#904)
+- Viktor Szépe RuntimeException used realtively (#905)
+
+### 1.4.11 10/29/2019
+
+- Deprecate $this->io() and provide style injector instead. (#910)
+- Jordon Replogle Changed leafo to scssphp as leafo is archived (#900)
+- Patrick Kollitsch Add missing code formatting to sample code (#861)
+- Patrick Kollitsch Adding documentation as option to pull_request_template.md (#862)
+- RTLcoil Tiny formatting fix in README (#874)
+- Tal Ater Updated README with command for initiating a RoboFile (#875)
+
+### 1.4.10 7/29/2019
+
+* Allow default argument for confirm() questions by Dane Powell (#850)
+* Allow command classes to end in Commands or Command by Jelle Sebreghts (#878)
+* ImageMinify: Prevent undefined variable error by Dan (#852) (#854)
+* Add sample with changed file handling to Base/Watch documentation by Patrick Kollitsch (#847)
+* Clearer explanation of --load-from option by Jordan Koplowicz (#872)
+* Fix PHPDoc @param and @return type hints by Andor (#886)
+* Update PHPDoc mismatch by Filippo Tessarotto (#883)
+
+### 1.4.7 - 1.4.9 2/19/2019
+
+* Re-release 1.4.6 to remove artifacts inadvertantly added to tagged release.
+
+### 1.4.6 2/16/2019
+
+* Simplify ConfigAwareTrait to avoid probem with downstream clients.
+
+### 1.4.5 2/15/2019
+
+* Extend ConfigAwareTrait from consolidation config (#838)
+
+### 1.4.4 2/8/2019
+
+* Add stderr() convenience method to Robo\Common\OutputAwareTrait.
+
+### 1.4.0 - 1.4.3 1/2/2019
+
+* BUGFIX: Back out 1.3.5, which contained breaking changes. Create a 1.x branch for continuation of compatible versions, and move breaking code to 2.x development (on master branch).
+
+### 1.3.4 12/20/2018
+
+* Allow for aborting completions or rollbacks by James Sansbury (#815)
+* BUGFIX: Allow commands to declare '@param InputInterface' to satisfy code style checks
+
+### 1.3.3 12/13/2018
+
+* Add StdinHandler to the standard Robo DI container (#814)
+* BUGFIX: Add test to ensure rollback order is in reverse by James Sansbury (#812)
+* BUGFIX: Fix the main Robo script entrypoint to work as a phar. (#811)
+
+### 1.3.2 11/21/2018
+
+* Update to Composer Test Scenarios 3 (#803)
+* Support Windows line endings in ".semver" file by Cédric Belin (#788)
+* Ensure that environment variables are preserved in Exec by James Sansbury (#769)
+* Correct Doxygen in \Robo\Task\Composer\loadTasks. (#772)
+
+### 1.3.1 8/17/2018
+
+* Move self:update command to consolidation/self-update project.
+* Fix overzealous shebang function (#759)
+* Actualize RoboFile of Codeception project link url in RADME.php by Valerij Ivashchenko (#756)
+* Workaround - Move g1a/composer-test-scenarios from require-dev to require.
+* Add --no-progress --no-suggest back in.
+* Tell dependencies.io to use --no-dev when determining if a PR should be made.
+* Omit --no-dev when the PR is actually being composed.
+* Add `Events` as third parameter in watch function (#751)
+
+### 1.3.0 5/26/2018
+
+* Add EnvConfig to Robo: set configuration values via environment variables (#737)
+
+### 1.2.4 5/25/2018
+
+* Update 'Robo as a Framework' documentation to recommend https://github.com/g1a/starter
+* Allow CommandStack to exec other tasks by Scott Falkingham (#726)
+* Fix double escape when specifying a remoteShell with rsync by Rob Peck (#715)
+
+### 1.2.3 4/5/2018
+
+* Hide progress indicator prior to 'exec'. (#707)
+* Dependencies.io config for version 2 preview by Dave Gaeddert (#699)
+* Fix path to test script in try:para
+* Correctly parameterize the app name in the self:update command help text.
+* Refuse to start 'release' script if phar.readonly is set.
+
+### 1.2.2 2/27/2018
+
+* Experimental robo plugin mechanism (backwards compatibility not yet guarenteed)
+* Allow traits to be documented
+* Do not export scenarios directory
+* *Breaking* Typo in `\Robo\Runner:errorCondtion()` fixed as `\Robo\Runner:errorCondition()`.
+
 ### 1.2.1 12/28/2017
 
 * Fixes to tests / build only.

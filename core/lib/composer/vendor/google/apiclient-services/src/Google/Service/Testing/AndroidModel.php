@@ -21,7 +21,9 @@ class Google_Service_Testing_AndroidModel extends Google_Collection
   public $brand;
   public $codename;
   public $form;
+  public $formFactor;
   public $id;
+  public $lowFpsVideoRecording;
   public $manufacturer;
   public $name;
   public $screenDensity;
@@ -30,7 +32,7 @@ class Google_Service_Testing_AndroidModel extends Google_Collection
   public $supportedAbis;
   public $supportedVersionIds;
   public $tags;
-  public $videoRecordingNotSupported;
+  public $thumbnailUrl;
 
   public function setBrand($brand)
   {
@@ -56,6 +58,14 @@ class Google_Service_Testing_AndroidModel extends Google_Collection
   {
     return $this->form;
   }
+  public function setFormFactor($formFactor)
+  {
+    $this->formFactor = $formFactor;
+  }
+  public function getFormFactor()
+  {
+    return $this->formFactor;
+  }
   public function setId($id)
   {
     $this->id = $id;
@@ -63,6 +73,14 @@ class Google_Service_Testing_AndroidModel extends Google_Collection
   public function getId()
   {
     return $this->id;
+  }
+  public function setLowFpsVideoRecording($lowFpsVideoRecording)
+  {
+    $this->lowFpsVideoRecording = $lowFpsVideoRecording;
+  }
+  public function getLowFpsVideoRecording()
+  {
+    return $this->lowFpsVideoRecording;
   }
   public function setManufacturer($manufacturer)
   {
@@ -128,12 +146,12 @@ class Google_Service_Testing_AndroidModel extends Google_Collection
   {
     return $this->tags;
   }
-  public function setVideoRecordingNotSupported($videoRecordingNotSupported)
+  public function setThumbnailUrl($thumbnailUrl)
   {
-    $this->videoRecordingNotSupported = $videoRecordingNotSupported;
+    $this->thumbnailUrl = $thumbnailUrl;
   }
-  public function getVideoRecordingNotSupported()
+  public function getThumbnailUrl()
   {
-    return $this->videoRecordingNotSupported;
+    return $this->thumbnailUrl;
   }
 }

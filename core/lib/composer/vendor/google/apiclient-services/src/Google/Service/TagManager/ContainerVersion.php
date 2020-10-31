@@ -21,10 +21,14 @@ class Google_Service_TagManager_ContainerVersion extends Google_Collection
   public $accountId;
   protected $builtInVariableType = 'Google_Service_TagManager_BuiltInVariable';
   protected $builtInVariableDataType = 'array';
+  protected $clientType = 'Google_Service_TagManager_Client';
+  protected $clientDataType = 'array';
   protected $containerType = 'Google_Service_TagManager_Container';
   protected $containerDataType = '';
   public $containerId;
   public $containerVersionId;
+  protected $customTemplateType = 'Google_Service_TagManager_CustomTemplate';
+  protected $customTemplateDataType = 'array';
   public $deleted;
   public $description;
   public $fingerprint;
@@ -65,6 +69,20 @@ class Google_Service_TagManager_ContainerVersion extends Google_Collection
     return $this->builtInVariable;
   }
   /**
+   * @param Google_Service_TagManager_Client
+   */
+  public function setClient($client)
+  {
+    $this->client = $client;
+  }
+  /**
+   * @return Google_Service_TagManager_Client
+   */
+  public function getClient()
+  {
+    return $this->client;
+  }
+  /**
    * @param Google_Service_TagManager_Container
    */
   public function setContainer(Google_Service_TagManager_Container $container)
@@ -93,6 +111,20 @@ class Google_Service_TagManager_ContainerVersion extends Google_Collection
   public function getContainerVersionId()
   {
     return $this->containerVersionId;
+  }
+  /**
+   * @param Google_Service_TagManager_CustomTemplate
+   */
+  public function setCustomTemplate($customTemplate)
+  {
+    $this->customTemplate = $customTemplate;
+  }
+  /**
+   * @return Google_Service_TagManager_CustomTemplate
+   */
+  public function getCustomTemplate()
+  {
+    return $this->customTemplate;
   }
   public function setDeleted($deleted)
   {

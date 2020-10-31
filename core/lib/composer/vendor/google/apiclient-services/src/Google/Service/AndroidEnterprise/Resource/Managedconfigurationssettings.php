@@ -26,8 +26,7 @@
 class Google_Service_AndroidEnterprise_Resource_Managedconfigurationssettings extends Google_Service_Resource
 {
   /**
-   * Lists all the managed configurations settings for the specified app. Only the
-   * ID and the name is set.
+   * Lists all the managed configurations settings for the specified app.
    * (managedconfigurationssettings.listManagedconfigurationssettings)
    *
    * @param string $enterpriseId The ID of the enterprise.

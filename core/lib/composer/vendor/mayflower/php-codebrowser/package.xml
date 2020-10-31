@@ -1,0 +1,518 @@
+<?xml version="1.0"?>
+<package version="2.0" xmlns="http://pear.php.net/dtd/package-2.0"
+  xmlns:tasks="http://pear.php.net/dtd/tasks-1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+                      http://pear.php.net/dtd/tasks-1.0.xsd
+                      http://pear.php.net/dtd/package-2.0
+                      http://pear.php.net/dtd/package-2.0.xsd">
+
+  <name>PHP_CodeBrowser</name>
+
+  <channel>pear.phpqatools.org</channel>
+
+  <summary>A code browser that augments the code with information from various QA tools.</summary>
+  <description>A code browser that augments the code with information from various QA tools.</description>
+
+  <lead>
+    <name>Simon Kohlmeyer</name>
+    <user>simon</user>
+    <email>simon.kohlmeyer@mayflower.de</email>
+    <active>yes</active>
+  </lead>
+
+  <date>2013-10-06</date>
+
+  <version>
+    <release>1.0.4</release>
+    <api>1.0.0</api>
+  </version>
+
+  <stability>
+    <release>stable</release>
+    <api>stable</api>
+  </stability>
+
+  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+  <notes>http://github.com/Mayflower/PHP_CodeBrowser/blob/master/CHANGELOG.markdown</notes>
+
+  <contents>
+    <dir name="/">
+      <dir name="src">
+        <dir name="Helper">
+          <file name="IOHelper.php" role="php">
+            <tasks:replace from="@package_version@" to="version" type="package-info" />
+          </file>
+        </dir> <!-- /Helper -->
+        <dir name="Plugins">
+          <file name="ErrorCPD.php" role="php">
+            <tasks:replace from="@package_version@" to="version" type="package-info" />
+          </file>
+          <file name="ErrorCRAP.php" role="php">
+            <tasks:replace from="@package_version@" to="version" type="package-info" />
+          </file>
+          <file name="ErrorCheckstyle.php" role="php">
+            <tasks:replace from="@package_version@" to="version" type="package-info" />
+          </file>
+          <file name="ErrorCoverage.php" role="php">
+            <tasks:replace from="@package_version@" to="version" type="package-info" />
+          </file>
+          <file name="ErrorPMD.php" role="php">
+            <tasks:replace from="@package_version@" to="version" type="package-info" />
+          </file>
+          <file name="ErrorPadawan.php" role="php">
+            <tasks:replace from="@package_version@" to="version" type="package-info" />
+          </file>
+        </dir> <!-- /Plugins -->
+        <dir name="View">
+          <file name="ViewAbstract.php" role="php">
+            <tasks:replace from="@package_version@" to="version" type="package-info" />
+          </file>
+          <file name="ViewReview.php" role="php">
+            <tasks:replace from="@package_version@" to="version" type="package-info" />
+          </file>
+        </dir> <!-- /View -->
+        <file name="Autoload.php" role="php">
+          <tasks:replace from="@package_version@" to="version" type="package-info" />
+        </file>
+        <file name="CLIController.php" role="php">
+          <tasks:replace from="@package_version@" to="version" type="package-info" />
+          <tasks:replace from="@php_dir@" to="php_dir" type="pear-config" />
+          <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
+          <tasks:replace from="@release_date@" to="release_date" type="package-info" />
+        </file>
+        <file name="File.php" role="php">
+          <tasks:replace from="@package_version@" to="version" type="package-info" />
+        </file>
+        <file name="Issue.php" role="php">
+          <tasks:replace from="@package_version@" to="version" type="package-info" />
+        </file>
+        <file name="IssueXml.php" role="php">
+          <tasks:replace from="@package_version@" to="version" type="package-info" />
+        </file>
+        <file name="PluginsAbstract.php" role="php">
+          <tasks:replace from="@package_version@" to="version" type="package-info" />
+        </file>
+        <file name="SourceHandler.php" role="php">
+          <tasks:replace from="@package_version@" to="version" type="package-info" />
+        </file>
+      </dir> <!-- /src -->
+
+      <dir name="templates">
+        <dir name="css">
+          <file name="cruisecontrol.css" role="data" />
+          <file name="global.css" role="data" />
+          <file name="review.css" role="data" />
+          <file name="tree.css" role="data" />
+        </dir> <!-- /css -->
+        <dir name="img">
+          <file name="background.gif" role="data" />
+          <file name="base.gif" role="data" />
+          <file name="cd.gif" role="data" />
+          <file name="empty.gif" role="data" />
+          <file name="folder.gif" role="data" />
+          <file name="folderopen.gif" role="data" />
+          <file name="globe.gif" role="data" />
+          <file name="imgfolder.gif" role="data" />
+          <file name="join.gif" role="data" />
+          <file name="joinbottom.gif" role="data" />
+          <file name="line.gif" role="data" />
+          <file name="minus.gif" role="data" />
+          <file name="minusbottom.gif" role="data" />
+          <file name="musicfolder.gif" role="data" />
+          <file name="nolines_minus.gif" role="data" />
+          <file name="nolines_plus.gif" role="data" />
+          <file name="page.gif" role="data" />
+          <file name="page.png" role="data" />
+          <file name="plus.gif" role="data" />
+          <file name="plusbottom.gif" role="data" />
+          <file name="question.gif" role="data" />
+          <file name="separator.gif" role="data" />
+          <file name="slider.gif" role="data" />
+          <file name="tab-active.png" role="data" />
+          <file name="trash.gif" role="data" />
+          <file name="treeToggle-collapsed.png" role="data" />
+          <file name="treeToggle-extended.png" role="data" />
+          <file name="treeToggle.gif" role="data" />
+        </dir> <!-- /img -->
+        <dir name="js">
+          <dir name="jquery.cluetip">
+            <dir name="images">
+              <file name="arrowdown.gif" role="data" />
+              <file name="arrowleft.gif" role="data" />
+              <file name="arrowright.gif" role="data" />
+              <file name="arrowup.gif" role="data" />
+              <file name="bl.gif" role="data" />
+              <file name="bl.png" role="data" />
+              <file name="br.gif" role="data" />
+              <file name="br.png" role="data" />
+              <file name="darrowdown.gif" role="data" />
+              <file name="darrowleft.gif" role="data" />
+              <file name="darrowright.gif" role="data" />
+              <file name="darrowup.gif" role="data" />
+              <file name="itunes.png" role="data" />
+              <file name="rarrowdown.gif" role="data" />
+              <file name="rarrowleft.gif" role="data" />
+              <file name="rarrowright.gif" role="data" />
+              <file name="rarrowup.gif" role="data" />
+              <file name="tl.gif" role="data" />
+              <file name="tl.png" role="data" />
+              <file name="tr.gif" role="data" />
+              <file name="tr.png" role="data" />
+              <file name="wait.gif" role="data" />
+            </dir> <!-- /images -->
+            <dir name="lib">
+              <file name="jquery.bgiframe.min.js" role="data" />
+              <file name="jquery.hoverIntent.js" role="data" />
+            </dir> <!-- /lib -->
+            <file name="jquery.cluetip.css" role="data" />
+            <file name="jquery.cluetip.min.js" role="data" />
+          </dir> <!-- /jquery.cluetip -->
+          <dir name="jquery.jstree">
+            <dir name="themes">
+              <dir name="default">
+                <file name="d.png" role="data" />
+                <file name="dot_for_ie.gif" role="data" />
+                <file name="style.css" role="data" />
+                <file name="throbber.gif" role="data" />
+              </dir> <!-- /default -->
+            </dir> <!-- /themes -->
+            <file name="jquery.jstree.min.js" role="data" />
+          </dir> <!-- /jquery.jstree -->
+          <dir name="jquery.sidebar">
+            <dir name="css">
+              <dir name="codebrowser">
+                <file name="inject-bottom.png" role="data" />
+                <file name="inject-left.png" role="data" />
+                <file name="inject-right.png" role="data" />
+                <file name="inject-top.png" role="data" />
+                <file name="sidebar.css" role="data" />
+              </dir> <!-- /codebrowser -->
+            </dir> <!-- /css -->
+            <file name="jquery.sidebar.js" role="data" />
+            <file name="jquery-ui-1.7.2.custom.min.js" role="data" />
+          </dir> <!-- /jquery.sidebar -->
+          <file name="jquery-1.4.2.min.js" role="data" />
+          <file name="jquery.history.js" role="data" />
+          <file name="review.js" role="data" />
+          <file name="tree.js" role="data" />
+        </dir> <!-- /js -->
+        <file name="index.tpl" role="data" />
+        <file name="noErrors.tpl" role="data" />
+        <file name="review.tpl" role="data" />
+      </dir> <!-- /templates -->
+
+      <dir name="bin">
+        <file name="phpcb.bat" role="script">
+          <tasks:replace from="@bin_dir@" to="bin_dir" type="pear-config" />
+          <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
+          <tasks:windowseol/>
+        </file>
+        <file name="phpcb.php" role="script">
+          <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
+          <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
+          <tasks:replace from="@php_dir@" to="php_dir" type="pear-config" />
+        </file>
+      </dir> <!-- /scripts -->
+
+      <file name="CHANGELOG.markdown" role="doc" />
+      <file name="LICENSE" role="doc" />
+      <file name="README.markdown" role="doc" />
+    </dir> <!-- / -->
+
+  </contents>
+
+  <dependencies>
+    <required>
+      <php>
+        <min>5.2.6</min>
+      </php>
+      <pearinstaller>
+        <min>1.8.1</min>
+      </pearinstaller>
+      <package>
+        <name>Console_CommandLine</name>
+        <channel>pear.php.net</channel>
+        <min>1.1.3</min>
+      </package>
+      <package>
+        <name>File_Iterator</name>
+        <channel>pear.phpunit.de</channel>
+        <min>1.3.0</min>
+      </package>
+      <package>
+        <name>Log</name>
+        <channel>pear.php.net</channel>
+        <min>1.12.1</min>
+      </package>
+      <extension>
+        <name>dom</name>
+      </extension>
+      <extension>
+        <name>pcre</name>
+      </extension>
+      <extension>
+        <name>spl</name>
+      </extension>
+    </required>
+
+    <optional>
+      <package>
+        <name>Text_Highlighter</name>
+        <channel>pear.php.net</channel>
+        <min>0.7.1</min>
+      </package>
+      <package>
+        <name>PHPUnit</name>
+        <channel>pear.phpunit.de</channel>
+        <min>3.4.0</min>
+      </package>
+      <package>
+        <name>PHP_CodeSniffer</name>
+        <channel>pear.php.net</channel>
+        <min>1.2.0</min>
+      </package>
+      <package>
+        <name>PhpDocumentor</name>
+        <channel>pear.php.net</channel>
+        <min>1.4.3</min>
+      </package>
+      <extension>
+          <name>mbstring</name>
+      </extension>
+    </optional>
+  </dependencies>
+
+  <phprelease>
+    <installconditions>
+      <os>
+        <name>windows</name>
+      </os>
+    </installconditions>
+    <filelist>
+      <install as="PHP_CodeBrowser/Helper/IOHelper.php"         name="src/Helper/IOHelper.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorCPD.php"        name="src/Plugins/ErrorCPD.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorCRAP.php"       name="src/Plugins/ErrorCRAP.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorCheckstyle.php" name="src/Plugins/ErrorCheckstyle.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorCoverage.php"   name="src/Plugins/ErrorCoverage.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorPMD.php"        name="src/Plugins/ErrorPMD.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorPadawan.php"    name="src/Plugins/ErrorPadawan.php" />
+      <install as="PHP_CodeBrowser/View/ViewReview.php"         name="src/View/ViewReview.php" />
+      <install as="PHP_CodeBrowser/View/ViewAbstract.php"       name="src/View/ViewAbstract.php" />
+      <install as="PHP_CodeBrowser/Autoload.php"                name="src/Autoload.php" />
+      <install as="PHP_CodeBrowser/CLIController.php"           name="src/CLIController.php" />
+      <install as="PHP_CodeBrowser/File.php"                    name="src/File.php" />
+      <install as="PHP_CodeBrowser/Issue.php"                   name="src/Issue.php" />
+      <install as="PHP_CodeBrowser/IssueXml.php"                name="src/IssueXml.php" />
+      <install as="PHP_CodeBrowser/PluginsAbstract.php"         name="src/PluginsAbstract.php" />
+      <install as="PHP_CodeBrowser/SourceHandler.php"           name="src/SourceHandler.php" />
+      <install as="phpcb.bat"                                   name="bin/phpcb.bat" />
+      <install as="phpcb"                                       name="bin/phpcb.php" />
+    </filelist>
+  </phprelease>
+  <phprelease>
+    <filelist>
+      <install as="PHP_CodeBrowser/Helper/IOHelper.php"         name="src/Helper/IOHelper.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorCPD.php"        name="src/Plugins/ErrorCPD.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorCRAP.php"       name="src/Plugins/ErrorCRAP.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorCheckstyle.php" name="src/Plugins/ErrorCheckstyle.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorCoverage.php"   name="src/Plugins/ErrorCoverage.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorPMD.php"        name="src/Plugins/ErrorPMD.php" />
+      <install as="PHP_CodeBrowser/Plugins/ErrorPadawan.php"    name="src/Plugins/ErrorPadawan.php" />
+      <install as="PHP_CodeBrowser/View/ViewReview.php"         name="src/View/ViewReview.php" />
+      <install as="PHP_CodeBrowser/View/ViewAbstract.php"       name="src/View/ViewAbstract.php" />
+      <install as="PHP_CodeBrowser/Autoload.php"                name="src/Autoload.php" />
+      <install as="PHP_CodeBrowser/CLIController.php"           name="src/CLIController.php" />
+      <install as="PHP_CodeBrowser/File.php"                    name="src/File.php" />
+      <install as="PHP_CodeBrowser/Issue.php"                   name="src/Issue.php" />
+      <install as="PHP_CodeBrowser/IssueXml.php"                name="src/IssueXml.php" />
+      <install as="PHP_CodeBrowser/PluginsAbstract.php"         name="src/PluginsAbstract.php" />
+      <install as="PHP_CodeBrowser/SourceHandler.php"           name="src/SourceHandler.php" />
+      <install as="phpcb"                                       name="bin/phpcb.php" />
+      <ignore                                                   name="bin/phpcb.bat" />
+    </filelist>
+  </phprelease>
+
+  <changelog>
+    <release>
+      <version>
+        <release>0.1.0</release>
+        <api>1.0.0</api>
+      </version>
+      <stability>
+        <release>alpha</release>
+        <api>alpha</api>
+      </stability>
+      <date>2009-11-25</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+      <notes>
+      Initial release of PHP_CodeBrowser
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>0.1.1</release>
+        <api>1.0.0</api>
+      </version>
+      <stability>
+        <release>alpha</release>
+        <api>alpha</api>
+      </stability>
+      <date>2009-11-30</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+      <notes>
+      - fixed PHP_CodeBrowser error, in case of project does not has any error log files or only empty error log files.
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>0.1.2</release>
+        <api>1.0.0</api>
+      </version>
+      <stability>
+        <release>alpha</release>
+        <api>alpha</api>
+      </stability>
+      <date>2010-03-23</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+      <notes>
+      - Added additional view if source has no errors or valid XML files
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>0.1.3</release>
+        <api>1.0.0</api>
+      </version>
+      <stability>
+        <release>alpha</release>
+        <api>alpha</api>
+      </stability>
+      <date>2010-04-16</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+      <notes>
+      - Fixed filename mismatch
+      - Improved execution time output
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>0.1.4</release>
+        <api>1.0.0</api>
+      </version>
+      <stability>
+        <release>alpha</release>
+        <api>alpha</api>
+      </stability>
+      <date>2010-06-30</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+      <notes>
+      - Fixed missing line numbers bug in PMD plugin
+      - Fixed bug in PMD plugin (Issue #5)
+      - Now using Sebastian Bergmann's PHP_Timer utility
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>0.9.0</release>
+        <api>1.0.0</api>
+      </version>
+      <stability>
+        <release>beta</release>
+        <api>beta</api>
+      </stability>
+      <date>2010-08-12</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+      <notes>
+      - Added support for CRAP when using logs from PHPUnit 3.5
+      - Improved performance
+      - Now using jQuery as JavaScript framework
+      - Added --exclude and --excludePCRE option
+      - Allowed multiple --source options
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>0.9.1</release>
+        <api>1.0.0</api>
+      </version>
+      <stability>
+        <release>beta</release>
+        <api>beta</api>
+      </stability>
+      <date>2010-09-02</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+      <notes>
+      - Fixed various Windows-related issues.
+      - Added error/warning count to the file tree.
+      - Added a commandline switch to debug exclude options.
+      - Made XHTML output W3C-compliant.
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>1.0.0</release>
+        <api>1.0.0</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <date>2010-12-13</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+      <notes>
+      - Added --ignore option.
+      - Fixed a few bugs.
+      - Improved windows support.
+      </notes>
+    </release>
+    <release>
+        <version>
+            <release>1.0.2</release>
+            <api>1.0.0</api>
+        </version>
+        <stability>
+            <release>stable</release>
+            <api>stable</api>
+        </stability>
+        <date>2012-01-16</date>
+        <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+        <notes>
+            - Fixed some bugs.
+            - Allow custom extensions for php files.
+        </notes>
+    </release>
+    <release>
+        <version>
+            <release>1.0.3</release>
+            <api>1.0.0</api>
+        </version>
+        <stability>
+            <release>stable</release>
+            <api>stable</api>
+        </stability>
+        <date>2012-04-23</date>
+        <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+        <notes>
+            - If mbstring is available, we'll now try to detect file encodings
+            - Allow the exclusion of files without errors
+        </notes>
+    </release>
+    <release>
+        <version>
+            <release>1.0.4</release>
+            <api>1.0.0</api>
+        </version>
+        <stability>
+            <release>stable</release>
+            <api>stable</api>
+        </stability>
+        <date>2013-10-06</date>
+        <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+        <notes>
+            - Fix invalid XML errors
+        </notes>
+    </release>
+  </changelog>
+</package>
+

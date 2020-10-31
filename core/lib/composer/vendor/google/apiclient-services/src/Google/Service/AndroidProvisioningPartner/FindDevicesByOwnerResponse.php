@@ -21,6 +21,7 @@ class Google_Service_AndroidProvisioningPartner_FindDevicesByOwnerResponse exten
   protected $devicesType = 'Google_Service_AndroidProvisioningPartner_Device';
   protected $devicesDataType = 'array';
   public $nextPageToken;
+  public $totalSize;
 
   /**
    * @param Google_Service_AndroidProvisioningPartner_Device
@@ -43,5 +44,13 @@ class Google_Service_AndroidProvisioningPartner_FindDevicesByOwnerResponse exten
   public function getNextPageToken()
   {
     return $this->nextPageToken;
+  }
+  public function setTotalSize($totalSize)
+  {
+    $this->totalSize = $totalSize;
+  }
+  public function getTotalSize()
+  {
+    return $this->totalSize;
   }
 }

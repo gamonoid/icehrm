@@ -19,6 +19,7 @@ class Google_Service_DLP_GooglePrivacyDlpV2CreateJobTriggerRequest extends Googl
 {
   protected $jobTriggerType = 'Google_Service_DLP_GooglePrivacyDlpV2JobTrigger';
   protected $jobTriggerDataType = '';
+  public $locationId;
   public $triggerId;
 
   /**
@@ -34,6 +35,14 @@ class Google_Service_DLP_GooglePrivacyDlpV2CreateJobTriggerRequest extends Googl
   public function getJobTrigger()
   {
     return $this->jobTrigger;
+  }
+  public function setLocationId($locationId)
+  {
+    $this->locationId = $locationId;
+  }
+  public function getLocationId()
+  {
+    return $this->locationId;
   }
   public function setTriggerId($triggerId)
   {

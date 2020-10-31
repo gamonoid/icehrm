@@ -31,9 +31,6 @@ class Google_Service_ShoppingContent_Resource_Productstatuses extends Google_Ser
    *
    * @param Google_Service_ShoppingContent_ProductstatusesCustomBatchRequest $postBody
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param bool includeAttributes Flag to include full product data in the
-   * results of this request. The default value is false.
    * @return Google_Service_ShoppingContent_ProductstatusesCustomBatchResponse
    */
   public function custombatch(Google_Service_ShoppingContent_ProductstatusesCustomBatchRequest $postBody, $optParams = array())
@@ -48,14 +45,12 @@ class Google_Service_ShoppingContent_Resource_Productstatuses extends Google_Ser
    *
    * @param string $merchantId The ID of the account that contains the product.
    * This account cannot be a multi-client account.
-   * @param string $productId The REST id of the product.
+   * @param string $productId The REST ID of the product.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string destinations If set, only issues for the specified
    * destinations are returned, otherwise only issues for the Shopping
    * destination.
-   * @opt_param bool includeAttributes Flag to include full product data in the
-   * result of this get request. The default value is false.
    * @return Google_Service_ShoppingContent_ProductStatus
    */
   public function get($merchantId, $productId, $optParams = array())
@@ -75,11 +70,6 @@ class Google_Service_ShoppingContent_Resource_Productstatuses extends Google_Ser
    * @opt_param string destinations If set, only issues for the specified
    * destinations are returned, otherwise only issues for the Shopping
    * destination.
-   * @opt_param bool includeAttributes Flag to include full product data in the
-   * results of the list request. The default value is false.
-   * @opt_param bool includeInvalidInsertedItems Flag to include the invalid
-   * inserted items in the result of the list request. By default the invalid
-   * items are not shown (the default value is false).
    * @opt_param string maxResults The maximum number of product statuses to return
    * in the response, used for paging.
    * @opt_param string pageToken The token returned by the previous request.

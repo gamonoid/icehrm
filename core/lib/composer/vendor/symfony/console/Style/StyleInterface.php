@@ -34,6 +34,8 @@ interface StyleInterface
 
     /**
      * Formats a list.
+     *
+     * @param array $elements
      */
     public function listing(array $elements);
 
@@ -81,6 +83,9 @@ interface StyleInterface
 
     /**
      * Formats a table.
+     *
+     * @param array $headers
+     * @param array $rows
      */
     public function table(array $headers, array $rows);
 

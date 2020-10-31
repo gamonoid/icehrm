@@ -26,7 +26,8 @@
 class Google_Service_Plus_Resource_Activities extends Google_Service_Resource
 {
   /**
-   * Get an activity. (activities.get)
+   * Shut down. See https://developers.google.com/+/api-shutdown for more details.
+   * (activities.get)
    *
    * @param string $activityId The ID of the activity to get.
    * @param array $optParams Optional parameters.
@@ -39,7 +40,7 @@ class Google_Service_Plus_Resource_Activities extends Google_Service_Resource
     return $this->call('get', array($params), "Google_Service_Plus_Activity");
   }
   /**
-   * List all of the activities in the specified collection for a particular user.
+   * Shut down. See https://developers.google.com/+/api-shutdown for more details.
    * (activities.listActivities)
    *
    * @param string $userId The ID of the user to get activities for. The special
@@ -62,7 +63,8 @@ class Google_Service_Plus_Resource_Activities extends Google_Service_Resource
     return $this->call('list', array($params), "Google_Service_Plus_ActivityFeed");
   }
   /**
-   * Search public activities. (activities.search)
+   * Shut down. See https://developers.google.com/+/api-shutdown for more details.
+   * (activities.search)
    *
    * @param string $query Full-text search query string.
    * @param array $optParams Optional parameters.

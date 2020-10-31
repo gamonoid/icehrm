@@ -28,11 +28,11 @@ class Google_Service_BigQueryDataTransfer_Resource_ProjectsTransferConfigs exten
   /**
    * Creates a new data transfer configuration. (transferConfigs.create)
    *
-   * @param string $parent The BigQuery project id where the transfer
+   * @param string $parent Required. The BigQuery project id where the transfer
    * configuration should be created. Must be in the format
-   * projects/{project_id}/locations/{location_id} If specified location and
-   * location of the destination bigquery dataset do not match - the request will
-   * fail.
+   * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
+   * specified location and location of the destination bigquery dataset do not
+   * match - the request will fail.
    * @param Google_Service_BigQueryDataTransfer_TransferConfig $postBody
    * @param array $optParams Optional parameters.
    *
@@ -40,17 +40,25 @@ class Google_Service_BigQueryDataTransfer_Resource_ProjectsTransferConfigs exten
    * with this transfer configuration. This is required if new credentials are
    * needed, as indicated by `CheckValidCreds`. In order to obtain
    * authorization_code, please make a request to
-   * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id==_uri=
-   *
-   * * client_id should be OAuth client_id of BigQuery DTS API for the given
-   * data source returned by ListDataSources method. * data_source_scopes are the
+   * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id==_uri= *
+   * client_id should be OAuth client_id of BigQuery DTS API for the given data
+   * source returned by ListDataSources method. * data_source_scopes are the
    * scopes returned by ListDataSources method. * redirect_uri is an optional
-   * parameter. If not specified, then   authorization code is posted to the
-   * opener of authorization flow window.   Otherwise it will be sent to the
-   * redirect uri. A special value of   urn:ietf:wg:oauth:2.0:oob means that
-   * authorization code should be   returned in the title bar of the browser, with
-   * the page text prompting   the user to copy the code and paste it in the
-   * application.
+   * parameter. If not specified, then authorization code is posted to the opener
+   * of authorization flow window. Otherwise it will be sent to the redirect uri.
+   * A special value of urn:ietf:wg:oauth:2.0:oob means that authorization code
+   * should be returned in the title bar of the browser, with the page text
+   * prompting the user to copy the code and paste it in the application.
+   * @opt_param string versionInfo Optional version info. If users want to find a
+   * very recent access token, that is, immediately after approving access, users
+   * have to set the version_info claim in the token request. To obtain the
+   * version_info, users must use the "none+gsession" response type. which be
+   * return a version_info back in the authorization response which be be put in a
+   * JWT claim in the token request.
+   * @opt_param string serviceAccountName Optional service account name. If this
+   * field is set, transfer config will be created with this service account
+   * credentials. It requires that requesting user calling this API has
+   * permissions to act as this service account.
    * @return Google_Service_BigQueryDataTransfer_TransferConfig
    */
   public function create($parent, Google_Service_BigQueryDataTransfer_TransferConfig $postBody, $optParams = array())
@@ -63,8 +71,10 @@ class Google_Service_BigQueryDataTransfer_Resource_ProjectsTransferConfigs exten
    * Deletes a data transfer configuration, including any associated transfer runs
    * and logs. (transferConfigs.delete)
    *
-   * @param string $name The field will contain name of the resource requested,
-   * for example: `projects/{project_id}/transferConfigs/{config_id}`
+   * @param string $name Required. The field will contain name of the resource
+   * requested, for example: `projects/{project_id}/transferConfigs/{config_id}`
+   * or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * @param array $optParams Optional parameters.
    * @return Google_Service_BigQueryDataTransfer_BigquerydatatransferEmpty
    */
@@ -77,8 +87,10 @@ class Google_Service_BigQueryDataTransfer_Resource_ProjectsTransferConfigs exten
   /**
    * Returns information about a data transfer config. (transferConfigs.get)
    *
-   * @param string $name The field will contain name of the resource requested,
-   * for example: `projects/{project_id}/transferConfigs/{config_id}`
+   * @param string $name Required. The field will contain name of the resource
+   * requested, for example: `projects/{project_id}/transferConfigs/{config_id}`
+   * or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * @param array $optParams Optional parameters.
    * @return Google_Service_BigQueryDataTransfer_TransferConfig
    */
@@ -92,8 +104,9 @@ class Google_Service_BigQueryDataTransfer_Resource_ProjectsTransferConfigs exten
    * Returns information about all data transfers in the project.
    * (transferConfigs.listProjectsTransferConfigs)
    *
-   * @param string $parent The BigQuery project id for which data sources should
-   * be returned: `projects/{project_id}`.
+   * @param string $parent Required. The BigQuery project id for which data
+   * sources should be returned: `projects/{project_id}` or
+   * `projects/{project_id}/locations/{location_id}`
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken Pagination token, which can be used to request a
@@ -117,29 +130,41 @@ class Google_Service_BigQueryDataTransfer_Resource_ProjectsTransferConfigs exten
    * are not updated. (transferConfigs.patch)
    *
    * @param string $name The resource name of the transfer config. Transfer config
-   * names have the form `projects/{project_id}/transferConfigs/{config_id}`.
-   * Where `config_id` is usually a uuid, even though it is not guaranteed or
-   * required. The name is ignored when creating a transfer config.
+   * names have the form of
+   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`. The
+   * name is automatically generated based on the config_id specified in
+   * CreateTransferConfigRequest along with project_id and region. If config_id is
+   * not provided, usually a uuid, even though it is not guaranteed or required,
+   * will be generated for config_id.
    * @param Google_Service_BigQueryDataTransfer_TransferConfig $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask Required list of fields to be updated in this
-   * request.
    * @opt_param string authorizationCode Optional OAuth2 authorization code to use
    * with this transfer configuration. If it is provided, the transfer
    * configuration will be associated with the authorizing user. In order to
    * obtain authorization_code, please make a request to
-   * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id==_uri=
-   *
-   * * client_id should be OAuth client_id of BigQuery DTS API for the given
-   * data source returned by ListDataSources method. * data_source_scopes are the
+   * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id==_uri= *
+   * client_id should be OAuth client_id of BigQuery DTS API for the given data
+   * source returned by ListDataSources method. * data_source_scopes are the
    * scopes returned by ListDataSources method. * redirect_uri is an optional
-   * parameter. If not specified, then   authorization code is posted to the
-   * opener of authorization flow window.   Otherwise it will be sent to the
-   * redirect uri. A special value of   urn:ietf:wg:oauth:2.0:oob means that
-   * authorization code should be   returned in the title bar of the browser, with
-   * the page text prompting   the user to copy the code and paste it in the
-   * application.
+   * parameter. If not specified, then authorization code is posted to the opener
+   * of authorization flow window. Otherwise it will be sent to the redirect uri.
+   * A special value of urn:ietf:wg:oauth:2.0:oob means that authorization code
+   * should be returned in the title bar of the browser, with the page text
+   * prompting the user to copy the code and paste it in the application.
+   * @opt_param string updateMask Required. Required list of fields to be updated
+   * in this request.
+   * @opt_param string serviceAccountName Optional service account name. If this
+   * field is set and "service_account_name" is set in update_mask, transfer
+   * config will be updated to use this service account credentials. It requires
+   * that requesting user calling this API has permissions to act as this service
+   * account.
+   * @opt_param string versionInfo Optional version info. If users want to find a
+   * very recent access token, that is, immediately after approving access, users
+   * have to set the version_info claim in the token request. To obtain the
+   * version_info, users must use the "none+gsession" response type. which be
+   * return a version_info back in the authorization response which be be put in a
+   * JWT claim in the token request.
    * @return Google_Service_BigQueryDataTransfer_TransferConfig
    */
   public function patch($name, Google_Service_BigQueryDataTransfer_TransferConfig $postBody, $optParams = array())
@@ -152,10 +177,12 @@ class Google_Service_BigQueryDataTransfer_Resource_ProjectsTransferConfigs exten
    * Creates transfer runs for a time range [start_time, end_time]. For each date
    * - or whatever granularity the data source supports - in the range, one
    * transfer run is created. Note that runs are created per UTC time in the time
-   * range. (transferConfigs.scheduleRuns)
+   * range. DEPRECATED: use StartManualTransferRuns instead.
+   * (transferConfigs.scheduleRuns)
    *
-   * @param string $parent Transfer configuration name in the form:
-   * `projects/{project_id}/transferConfigs/{config_id}`.
+   * @param string $parent Required. Transfer configuration name in the form:
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * @param Google_Service_BigQueryDataTransfer_ScheduleTransferRunsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_BigQueryDataTransfer_ScheduleTransferRunsResponse
@@ -165,5 +192,24 @@ class Google_Service_BigQueryDataTransfer_Resource_ProjectsTransferConfigs exten
     $params = array('parent' => $parent, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('scheduleRuns', array($params), "Google_Service_BigQueryDataTransfer_ScheduleTransferRunsResponse");
+  }
+  /**
+   * Start manual transfer runs to be executed now with schedule_time equal to
+   * current time. The transfer runs can be created for a time range where the
+   * run_time is between start_time (inclusive) and end_time (exclusive), or for a
+   * specific run_time. (transferConfigs.startManualRuns)
+   *
+   * @param string $parent Transfer configuration name in the form:
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+   * @param Google_Service_BigQueryDataTransfer_StartManualTransferRunsRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_BigQueryDataTransfer_StartManualTransferRunsResponse
+   */
+  public function startManualRuns($parent, Google_Service_BigQueryDataTransfer_StartManualTransferRunsRequest $postBody, $optParams = array())
+  {
+    $params = array('parent' => $parent, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('startManualRuns', array($params), "Google_Service_BigQueryDataTransfer_StartManualTransferRunsResponse");
   }
 }

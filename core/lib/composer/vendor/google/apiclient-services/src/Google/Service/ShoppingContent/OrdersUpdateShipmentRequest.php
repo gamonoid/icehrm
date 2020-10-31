@@ -18,10 +18,14 @@
 class Google_Service_ShoppingContent_OrdersUpdateShipmentRequest extends Google_Model
 {
   public $carrier;
+  public $deliveryDate;
+  public $lastPickupDate;
   public $operationId;
+  public $readyPickupDate;
   public $shipmentId;
   public $status;
   public $trackingId;
+  public $undeliveredDate;
 
   public function setCarrier($carrier)
   {
@@ -31,6 +35,22 @@ class Google_Service_ShoppingContent_OrdersUpdateShipmentRequest extends Google_
   {
     return $this->carrier;
   }
+  public function setDeliveryDate($deliveryDate)
+  {
+    $this->deliveryDate = $deliveryDate;
+  }
+  public function getDeliveryDate()
+  {
+    return $this->deliveryDate;
+  }
+  public function setLastPickupDate($lastPickupDate)
+  {
+    $this->lastPickupDate = $lastPickupDate;
+  }
+  public function getLastPickupDate()
+  {
+    return $this->lastPickupDate;
+  }
   public function setOperationId($operationId)
   {
     $this->operationId = $operationId;
@@ -38,6 +58,14 @@ class Google_Service_ShoppingContent_OrdersUpdateShipmentRequest extends Google_
   public function getOperationId()
   {
     return $this->operationId;
+  }
+  public function setReadyPickupDate($readyPickupDate)
+  {
+    $this->readyPickupDate = $readyPickupDate;
+  }
+  public function getReadyPickupDate()
+  {
+    return $this->readyPickupDate;
   }
   public function setShipmentId($shipmentId)
   {
@@ -62,5 +90,13 @@ class Google_Service_ShoppingContent_OrdersUpdateShipmentRequest extends Google_
   public function getTrackingId()
   {
     return $this->trackingId;
+  }
+  public function setUndeliveredDate($undeliveredDate)
+  {
+    $this->undeliveredDate = $undeliveredDate;
+  }
+  public function getUndeliveredDate()
+  {
+    return $this->undeliveredDate;
   }
 }

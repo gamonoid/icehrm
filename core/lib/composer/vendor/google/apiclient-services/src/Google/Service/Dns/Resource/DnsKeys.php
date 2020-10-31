@@ -30,16 +30,16 @@ class Google_Service_Dns_Resource_DnsKeys extends Google_Service_Resource
    *
    * @param string $project Identifies the project addressed by this request.
    * @param string $managedZone Identifies the managed zone addressed by this
-   * request. Can be the managed zone name or id.
+   * request. Can be the managed zone name or ID.
    * @param string $dnsKeyId The identifier of the requested DnsKey.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string clientOperationId For mutating operation requests only. An
-   * optional identifier specified by the client. Must be unique for operation
-   * resources in the Operations collection.
    * @opt_param string digestType An optional comma-separated list of digest types
    * to compute and display for key signing keys. If omitted, the recommended
    * digest type will be computed and displayed.
+   * @opt_param string clientOperationId For mutating operation requests only. An
+   * optional identifier specified by the client. Must be unique for operation
+   * resources in the Operations collection.
    * @return Google_Service_Dns_DnsKey
    */
   public function get($project, $managedZone, $dnsKeyId, $optParams = array())
@@ -53,14 +53,14 @@ class Google_Service_Dns_Resource_DnsKeys extends Google_Service_Resource
    *
    * @param string $project Identifies the project addressed by this request.
    * @param string $managedZone Identifies the managed zone addressed by this
-   * request. Can be the managed zone name or id.
+   * request. Can be the managed zone name or ID.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param int maxResults Optional. Maximum number of results to be returned.
+   * If unspecified, the server will decide how many results to return.
    * @opt_param string digestType An optional comma-separated list of digest types
    * to compute and display for key signing keys. If omitted, the recommended
    * digest type will be computed and displayed.
-   * @opt_param int maxResults Optional. Maximum number of results to be returned.
-   * If unspecified, the server will decide how many results to return.
    * @opt_param string pageToken Optional. A tag returned by a previous list
    * request that was truncated. Use this parameter to continue a previous list
    * request.

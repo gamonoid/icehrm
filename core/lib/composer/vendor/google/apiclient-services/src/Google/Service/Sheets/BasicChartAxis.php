@@ -23,6 +23,8 @@ class Google_Service_Sheets_BasicChartAxis extends Google_Model
   public $title;
   protected $titleTextPositionType = 'Google_Service_Sheets_TextPosition';
   protected $titleTextPositionDataType = '';
+  protected $viewWindowOptionsType = 'Google_Service_Sheets_ChartAxisViewWindowOptions';
+  protected $viewWindowOptionsDataType = '';
 
   /**
    * @param Google_Service_Sheets_TextFormat
@@ -67,5 +69,19 @@ class Google_Service_Sheets_BasicChartAxis extends Google_Model
   public function getTitleTextPosition()
   {
     return $this->titleTextPosition;
+  }
+  /**
+   * @param Google_Service_Sheets_ChartAxisViewWindowOptions
+   */
+  public function setViewWindowOptions(Google_Service_Sheets_ChartAxisViewWindowOptions $viewWindowOptions)
+  {
+    $this->viewWindowOptions = $viewWindowOptions;
+  }
+  /**
+   * @return Google_Service_Sheets_ChartAxisViewWindowOptions
+   */
+  public function getViewWindowOptions()
+  {
+    return $this->viewWindowOptions;
   }
 }

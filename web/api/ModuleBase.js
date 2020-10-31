@@ -16,6 +16,7 @@ class ModuleBase {
     this.createRemoteTable = false;
     this.instanceId = 'None';
     this.ga = [];
+    this.showAddNew = true;
     this.showEdit = true;
     this.showDelete = true;
     this.showSave = true;
@@ -33,8 +34,8 @@ class ModuleBase {
     this.templates = null;
     this.customTemplates = null;
     this.emailTemplates = null;
-    this.fieldMasterData = null;
-    this.fieldMasterDataKeys = null;
+    this.fieldMasterData = {};
+    this.fieldMasterDataKeys = {};
     this.fieldMasterDataCallback = null;
     this.sourceMapping = null;
     this.currentId = null;
@@ -43,11 +44,20 @@ class ModuleBase {
     this.currentProfile = null;
     this.permissions = {};
     this.baseUrl = null;
+    this.that = this;
   }
 
   // eslint-disable-next-line no-unused-vars
   init(appName, currentView, dataUrl, permissions) {
 
+  }
+
+  initForm() {
+
+  }
+
+  setObjectTypeName(objectTypeName) {
+    this.objectTypeName = objectTypeName;
   }
 
   /**
@@ -216,15 +226,58 @@ class ModuleBase {
      *  }
      */
   initFieldMasterData(callback, loadAllCallback, loadAllCallbackData) {
-    let values;
-    if (this.showAddNew === undefined || this.showAddNew == null) {
-      this.showAddNew = true;
-    }
     this.fieldMasterData = {};
     this.fieldMasterDataKeys = {};
     this.fieldMasterDataCallback = loadAllCallback;
     this.fieldMasterDataCallbackData = loadAllCallbackData;
+
+    const remoteSourceFields = this.getRemoteSourceFields();
+
+    for (let i = 0; i < remoteSourceFields.length; i++) {
+      const fieldRemote = remoteSourceFields[i];
+      if (fieldRemote[1]['remote-source'] !== undefined && fieldRemote[1]['remote-source'] != null) {
+        let key = `${fieldRemote[1]['remote-source'][0]}_${fieldRemote[1]['remote-source'][1]}_${fieldRemote[1]['remote-source'][2]}`;
+        if (fieldRemote[1]['remote-source'].length === 4) {
+          key = `${key}_${fieldRemote[1]['remote-source'][3]}`;
+        }
+        this.fieldMasterDataKeys[key] = false;
+
+        const callBackData = {};
+        callBackData.callBack = 'initFieldMasterDataResponse';
+        callBackData.callBackData = [key];
+        if (callback !== null && callback !== undefined) {
+          callBackData.callBackSuccess = callback;
+        }
+        this.getFieldValues(fieldRemote[1]['remote-source'], callBackData);
+      }
+    }
+  }
+
+
+  initSourceMappings() {
     this.sourceMapping = {};
+
+    const remoteSourceFields = this.getRemoteSourceFields();
+
+    for (let i = 0; i < remoteSourceFields.length; i++) {
+      const fieldRemote = remoteSourceFields[i];
+      if (fieldRemote[1]['remote-source'] !== undefined && fieldRemote[1]['remote-source'] != null) {
+        this.sourceMapping[fieldRemote[0]] = fieldRemote[1]['remote-source'];
+      }
+    }
+  }
+
+  getRemoteSourceKey(field) {
+    let key = `${field[1]['remote-source'][0]}_${field[1]['remote-source'][1]}_${field[1]['remote-source'][2]}`;
+    if (field[1]['remote-source'].length > 3) {
+      key = `${key}_${field[1]['remote-source'][3]}`;
+    }
+
+    return key;
+  }
+
+  getRemoteSourceFields() {
+    let values;
     const fields = this.getFormFields();
     const filterFields = this.getFilters();
 
@@ -237,7 +290,6 @@ class ModuleBase {
       }
     }
 
-
     const remoteSourceFields = [];
     const remoteSourceFieldKeys = [];
     let field = null;
@@ -245,16 +297,16 @@ class ModuleBase {
     for (let i = 0; i < fields.length; i++) {
       field = fields[i];
       if (field[1]['remote-source'] !== undefined && field[1]['remote-source'] !== null) {
-        const key = `${field[1]['remote-source'][0]}_${field[1]['remote-source'][1]}_${field[1]['remote-source'][2]}`;
-        // if(remoteSourceFieldKeys.indexOf(key) < 0){
-        remoteSourceFields.push(field);
-        remoteSourceFieldKeys.push(key);
-        // }
+        const key = this.getRemoteSourceKey(field);
+        if (remoteSourceFieldKeys.indexOf(key) < 0) {
+          remoteSourceFields.push(field);
+          remoteSourceFieldKeys.push(key);
+        }
       } else if (field[1].form !== undefined && field[1].form !== null) {
         for (let j = 0; j < field[1].form.length; j++) {
           fieldSub = field[1].form[j];
           if (fieldSub[1]['remote-source'] !== undefined && fieldSub[1]['remote-source'] !== null) {
-            const key = `${fieldSub[1]['remote-source'][0]}_${fieldSub[1]['remote-source'][1]}_${fieldSub[1]['remote-source'][2]}`;
+            const key = this.getRemoteSourceKey(fieldSub);
             if (remoteSourceFieldKeys.indexOf(key) < 0) {
               remoteSourceFields.push(fieldSub);
               remoteSourceFieldKeys.push(key);
@@ -264,22 +316,7 @@ class ModuleBase {
       }
     }
 
-    for (let i = 0; i < remoteSourceFields.length; i++) {
-      const fieldRemote = remoteSourceFields[i];
-      if (fieldRemote[1]['remote-source'] !== undefined && fieldRemote[1]['remote-source'] != null) {
-        const key = `${fieldRemote[1]['remote-source'][0]}_${fieldRemote[1]['remote-source'][1]}_${fieldRemote[1]['remote-source'][2]}`;
-        this.fieldMasterDataKeys[key] = false;
-        this.sourceMapping[fieldRemote[0]] = fieldRemote[1]['remote-source'];
-
-        const callBackData = {};
-        callBackData.callBack = 'initFieldMasterDataResponse';
-        callBackData.callBackData = [key];
-        if (callback !== null && callback !== undefined) {
-          callBackData.callBackSuccess = callback;
-        }
-        this.getFieldValues(fieldRemote[1]['remote-source'], callBackData);
-      }
-    }
+    return remoteSourceFields;
   }
 
   /**
@@ -761,6 +798,10 @@ class ModuleBase {
 
   }
 
+  getTableColumns() {
+    return [];
+  }
+
   getTableData() {
 
   }
@@ -1120,6 +1161,9 @@ class ModuleBase {
     for (const prop in filters) {
       if (filters.hasOwnProperty(prop)) {
         values = this.getMetaFieldValues(prop, filterFields);
+        if (!values) {
+          continue;
+        }
         value = '';
         valueOrig = null;
 
@@ -1622,7 +1666,7 @@ class ModuleBase {
     $(`#${field[0]}_div`).html('');
   }
 
-  showDataGroup(field, object) {
+  showDataGroup(field, object, callback) {
     let formHtml = this.templates.datagroupTemplate;
     let html = '';
     const fields = field[1].form;
@@ -1698,7 +1742,7 @@ class ModuleBase {
         e.preventDefault();
         e.stopPropagation();
         try {
-          modJs.editDataGroup();
+          modJs.editDataGroup(callback);
         } catch (err) {
           console.log(`Error editing data group: ${err.message}`);
         }
@@ -1709,7 +1753,7 @@ class ModuleBase {
         e.preventDefault();
         e.stopPropagation();
         try {
-          modJs.addDataGroup();
+          modJs.addDataGroup(callback);
         } catch (err) {
           console.log(`Error adding data group: ${err.message}`);
         }
@@ -1718,9 +1762,9 @@ class ModuleBase {
     }
   }
 
-  addDataGroup() {
-    const field = this.currentDataGroupField; let
-      tempParams;
+  addDataGroup(callback, existingData) {
+    const field = this.currentDataGroupField;
+    let tempParams;
     $(`#${this.getTableName()}_field_${field[0]}_error`).html('');
     $(`#${this.getTableName()}_field_${field[0]}_error`).hide();
     const validator = new FormValidation(`${this.getTableName()}_field_${field[0]}`, true, { ShowPopup: false, LabelErrorClass: 'error' });
@@ -1736,10 +1780,14 @@ class ModuleBase {
           return false;
         }
       }
-
-      let val = $(`#${field[0]}`).val();
-      if (val === '') {
-        val = '[]';
+      let val = '[]';
+      if (existingData) {
+        val = existingData;
+      } else {
+        val = $(`#${field[0]}`).val();
+        if (val === '' || val == null) {
+          val = '[]';
+        }
       }
       const data = JSON.parse(val);
 
@@ -1754,6 +1802,9 @@ class ModuleBase {
       val = JSON.stringify(data);
 
       const html = this.dataGroupToHtml(val, field);
+      if (callback) {
+        callback(val);
+      }
 
       $(`#${field[0]}_div`).html('');
       $(`#${field[0]}_div`).append(html);
@@ -1823,12 +1874,12 @@ class ModuleBase {
     });
   }
 
-  orderDataGroup(field) {
+  orderDataGroup(field, callback) {
     const newArr = []; let
       id;
     const list = $(`#${field[0]}_div_inner [fieldid='${field[0]}_div']`);
     let val = $(`#${field[0]}`).val();
-    if (val === '') {
+    if (val === '' || val == null) {
       val = '[]';
     }
     const data = JSON.parse(val);
@@ -1843,10 +1894,14 @@ class ModuleBase {
     });
 
     $(`#${field[0]}`).val(JSON.stringify(newArr));
+
+    if (callback != null) {
+      callback(newArr);
+    }
   }
 
 
-  editDataGroup() {
+  editDataGroup(callback, existingData) {
     const field = this.currentDataGroupField;
     const id = this.currentDataGroupItemId;
     const validator = new FormValidation(`${this.getTableName()}_field_${field[0]}`, true, { ShowPopup: false, LabelErrorClass: 'error' });
@@ -1866,9 +1921,14 @@ class ModuleBase {
 
 
       if (this.doCustomFilterValidation(params)) {
-        let val = $(`#${field[0]}`).val();
-        if (val === '') {
-          val = '[]';
+        let val = '[]';
+        if (existingData) {
+          val = existingData;
+        } else {
+          val = $(`#${field[0]}`).val();
+          if (val === '' || val == null) {
+            val = '[]';
+          }
         }
         const data = JSON.parse(val);
 
@@ -1897,6 +1957,10 @@ class ModuleBase {
 
         const html = this.dataGroupToHtml(val, field);
 
+        if (callback) {
+          callback(newVals);
+        }
+
         this.orderDataGroup(field);
 
         $(`#${field[0]}_div`).html('');
@@ -1914,10 +1978,15 @@ class ModuleBase {
     return true;
   }
 
-  editDataGroupItem(id) {
+  editDataGroupItem(id, existingData, field) {
     const fieldId = id.substring(0, id.lastIndexOf('_'));
 
-    const val = $(`#${fieldId}`).val();
+    let val;
+    if (existingData) {
+      val = decodeURI(existingData);
+    } else {
+      val = $(`#${fieldId}`).val();
+    }
     const data = JSON.parse(val);
 
     let editVal = {};
@@ -1929,7 +1998,13 @@ class ModuleBase {
       }
     }
 
-    this.showDataGroup($(`#${fieldId}`).data('field'), editVal);
+    if (field) {
+      field = JSON.parse(decodeURI(field));
+    } else {
+      field = $(`#${fieldId}`).data('field');
+    }
+
+    this.showDataGroup(field, editVal);
   }
 
   dataGroupGetNextAutoIncrementId(data) {
@@ -1950,10 +2025,15 @@ class ModuleBase {
   }
 
 
-  deleteDataGroupItem(id) {
+  deleteDataGroupItem(id, existingData) {
     const fieldId = id.substring(0, id.lastIndexOf('_'));
 
-    const val = $(`#${fieldId}`).val();
+    let val;
+    if (existingData) {
+      val = decodeURI(existingData);
+    } else {
+      val = $(`#${fieldId}`).val();
+    }
     const data = JSON.parse(val);
 
     const newVal = [];
@@ -2138,7 +2218,10 @@ class ModuleBase {
       if (field[1].source !== undefined && field[1].source != null) {
         t = t.replace('_options_', this.renderFormSelectOptions(field[1].source, field));
       } else if (field[1]['remote-source'] !== undefined && field[1]['remote-source'] != null) {
-        const key = `${field[1]['remote-source'][0]}_${field[1]['remote-source'][1]}_${field[1]['remote-source'][2]}`;
+        let key = `${field[1]['remote-source'][0]}_${field[1]['remote-source'][1]}_${field[1]['remote-source'][2]}`;
+        if (field[1]['remote-source'].length === 4) {
+          key = `${key}_${field[1]['remote-source'][3]}`;
+        }
         t = t.replace('_options_', this.renderFormSelectOptionsRemote(this.fieldMasterData[key], field));
       }
     } else if (field[1].type === 'colorpick') {
@@ -2575,6 +2658,20 @@ class ModuleBase {
     }
 
     return fields;
+  }
+
+  getImageUrlFromName(firstName, lastName) {
+    let seed = firstName.substring(0, 1);
+    if (!lastName && lastName.length > 0) {
+      seed += firstName.substring(firstName.length - 1, 1);
+    } else {
+      seed += lastName.substring(0, 1);
+    }
+
+    const arr = `${firstName}${lastName}`.split('');
+    seed += arr.reduce((acc, item) => parseInt(item.charCodeAt(0), 10) + acc, 0);
+
+    return `https://avatars.dicebear.com/api/initials/:${seed}.svg`;
   }
 }
 

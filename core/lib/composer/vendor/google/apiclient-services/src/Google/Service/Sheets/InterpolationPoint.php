@@ -19,6 +19,8 @@ class Google_Service_Sheets_InterpolationPoint extends Google_Model
 {
   protected $colorType = 'Google_Service_Sheets_Color';
   protected $colorDataType = '';
+  protected $colorStyleType = 'Google_Service_Sheets_ColorStyle';
+  protected $colorStyleDataType = '';
   public $type;
   public $value;
 
@@ -35,6 +37,20 @@ class Google_Service_Sheets_InterpolationPoint extends Google_Model
   public function getColor()
   {
     return $this->color;
+  }
+  /**
+   * @param Google_Service_Sheets_ColorStyle
+   */
+  public function setColorStyle(Google_Service_Sheets_ColorStyle $colorStyle)
+  {
+    $this->colorStyle = $colorStyle;
+  }
+  /**
+   * @return Google_Service_Sheets_ColorStyle
+   */
+  public function getColorStyle()
+  {
+    return $this->colorStyle;
   }
   public function setType($type)
   {

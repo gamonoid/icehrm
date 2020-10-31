@@ -79,8 +79,7 @@ class Google_Service_SQLAdmin_Resource_Databases extends Google_Service_Resource
    * Lists databases in the specified Cloud SQL instance.
    * (databases.listDatabases)
    *
-   * @param string $project Project ID of the project for which to list Cloud SQL
-   * instances.
+   * @param string $project Project ID of the project that contains the instance.
    * @param string $instance Cloud SQL instance ID. This does not include the
    * project ID.
    * @param array $optParams Optional parameters.
@@ -93,8 +92,8 @@ class Google_Service_SQLAdmin_Resource_Databases extends Google_Service_Resource
     return $this->call('list', array($params), "Google_Service_SQLAdmin_DatabasesListResponse");
   }
   /**
-   * Updates a resource containing information about a database inside a Cloud SQL
-   * instance. This method supports patch semantics. (databases.patch)
+   * Partially updates a resource containing information about a database inside a
+   * Cloud SQL instance. This method supports patch semantics. (databases.patch)
    *
    * @param string $project Project ID of the project that contains the instance.
    * @param string $instance Database instance ID. This does not include the

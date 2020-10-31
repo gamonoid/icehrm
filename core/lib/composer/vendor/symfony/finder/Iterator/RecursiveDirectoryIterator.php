@@ -37,6 +37,8 @@ class RecursiveDirectoryIterator extends \RecursiveDirectoryIterator
     private $directorySeparator = '/';
 
     /**
+     * Constructor.
+     *
      * @param string $path
      * @param int    $flags
      * @param bool   $ignoreUnreadableDirs

@@ -19,6 +19,9 @@ class Google_Service_ShoppingContent_AccountUser extends Google_Model
 {
   public $admin;
   public $emailAddress;
+  public $orderManager;
+  public $paymentsAnalyst;
+  public $paymentsManager;
 
   public function setAdmin($admin)
   {
@@ -35,5 +38,29 @@ class Google_Service_ShoppingContent_AccountUser extends Google_Model
   public function getEmailAddress()
   {
     return $this->emailAddress;
+  }
+  public function setOrderManager($orderManager)
+  {
+    $this->orderManager = $orderManager;
+  }
+  public function getOrderManager()
+  {
+    return $this->orderManager;
+  }
+  public function setPaymentsAnalyst($paymentsAnalyst)
+  {
+    $this->paymentsAnalyst = $paymentsAnalyst;
+  }
+  public function getPaymentsAnalyst()
+  {
+    return $this->paymentsAnalyst;
+  }
+  public function setPaymentsManager($paymentsManager)
+  {
+    $this->paymentsManager = $paymentsManager;
+  }
+  public function getPaymentsManager()
+  {
+    return $this->paymentsManager;
   }
 }

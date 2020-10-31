@@ -19,11 +19,11 @@
  * Service definition for Dns (v1).
  *
  * <p>
- * Configures and serves authoritative DNS records.</p>
+</p>
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://developers.google.com/cloud-dns" target="_blank">Documentation</a>
+ * <a href="http://developers.google.com/cloud-dns" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
@@ -47,19 +47,22 @@ class Google_Service_Dns extends Google_Service
   public $dnsKeys;
   public $managedZoneOperations;
   public $managedZones;
+  public $policies;
   public $projects;
   public $resourceRecordSets;
   
   /**
    * Constructs the internal representation of the Dns service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'dns/v1/projects/';
+    $this->rootUrl = $rootUrl ?: 'https://dns.googleapis.com/';
+    $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'dns';
 
@@ -70,7 +73,7 @@ class Google_Service_Dns extends Google_Service
         array(
           'methods' => array(
             'create' => array(
-              'path' => '{project}/managedZones/{managedZone}/changes',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}/changes',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'project' => array(
@@ -89,7 +92,7 @@ class Google_Service_Dns extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => '{project}/managedZones/{managedZone}/changes/{changeId}',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}/changes/{changeId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
@@ -113,7 +116,7 @@ class Google_Service_Dns extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{project}/managedZones/{managedZone}/changes',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}/changes',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
@@ -126,6 +129,10 @@ class Google_Service_Dns extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
@@ -135,10 +142,6 @@ class Google_Service_Dns extends Google_Service
                   'type' => 'string',
                 ),
                 'sortBy' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -154,7 +157,7 @@ class Google_Service_Dns extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => '{project}/managedZones/{managedZone}/dnsKeys/{dnsKeyId}',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}/dnsKeys/{dnsKeyId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
@@ -172,17 +175,17 @@ class Google_Service_Dns extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'clientOperationId' => array(
+                'digestType' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'digestType' => array(
+                'clientOperationId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
               ),
             ),'list' => array(
-              'path' => '{project}/managedZones/{managedZone}/dnsKeys',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}/dnsKeys',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
@@ -195,13 +198,13 @@ class Google_Service_Dns extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'digestType' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'digestType' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
@@ -219,7 +222,7 @@ class Google_Service_Dns extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => '{project}/managedZones/{managedZone}/operations/{operation}',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}/operations/{operation}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
@@ -243,7 +246,7 @@ class Google_Service_Dns extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{project}/managedZones/{managedZone}/operations',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}/operations',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
@@ -280,7 +283,7 @@ class Google_Service_Dns extends Google_Service
         array(
           'methods' => array(
             'create' => array(
-              'path' => '{project}/managedZones',
+              'path' => 'dns/v1/projects/{project}/managedZones',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'project' => array(
@@ -294,7 +297,7 @@ class Google_Service_Dns extends Google_Service
                 ),
               ),
             ),'delete' => array(
-              'path' => '{project}/managedZones/{managedZone}',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'project' => array(
@@ -313,7 +316,7 @@ class Google_Service_Dns extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => '{project}/managedZones/{managedZone}',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
@@ -332,13 +335,17 @@ class Google_Service_Dns extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{project}/managedZones',
+              'path' => 'dns/v1/projects/{project}/managedZones',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'dnsName' => array(
                   'location' => 'query',
@@ -348,13 +355,9 @@ class Google_Service_Dns extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
               ),
             ),'patch' => array(
-              'path' => '{project}/managedZones/{managedZone}',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}',
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'project' => array(
@@ -373,7 +376,7 @@ class Google_Service_Dns extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => '{project}/managedZones/{managedZone}',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'project' => array(
@@ -395,6 +398,124 @@ class Google_Service_Dns extends Google_Service
           )
         )
     );
+    $this->policies = new Google_Service_Dns_Resource_Policies(
+        $this,
+        $this->serviceName,
+        'policies',
+        array(
+          'methods' => array(
+            'create' => array(
+              'path' => 'dns/v1/projects/{project}/policies',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'clientOperationId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
+            ),'delete' => array(
+              'path' => 'dns/v1/projects/{project}/policies/{policy}',
+              'httpMethod' => 'DELETE',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'policy' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'clientOperationId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
+            ),'get' => array(
+              'path' => 'dns/v1/projects/{project}/policies/{policy}',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'policy' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'clientOperationId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
+            ),'list' => array(
+              'path' => 'dns/v1/projects/{project}/policies',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
+            ),'patch' => array(
+              'path' => 'dns/v1/projects/{project}/policies/{policy}',
+              'httpMethod' => 'PATCH',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'policy' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'clientOperationId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
+            ),'update' => array(
+              'path' => 'dns/v1/projects/{project}/policies/{policy}',
+              'httpMethod' => 'PUT',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'policy' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'clientOperationId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
+            ),
+          )
+        )
+    );
     $this->projects = new Google_Service_Dns_Resource_Projects(
         $this,
         $this->serviceName,
@@ -402,7 +523,7 @@ class Google_Service_Dns extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => '{project}',
+              'path' => 'dns/v1/projects/{project}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
@@ -426,7 +547,7 @@ class Google_Service_Dns extends Google_Service
         array(
           'methods' => array(
             'list' => array(
-              'path' => '{project}/managedZones/{managedZone}/rrsets',
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}/rrsets',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
@@ -439,9 +560,9 @@ class Google_Service_Dns extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'maxResults' => array(
+                'type' => array(
                   'location' => 'query',
-                  'type' => 'integer',
+                  'type' => 'string',
                 ),
                 'name' => array(
                   'location' => 'query',
@@ -451,9 +572,9 @@ class Google_Service_Dns extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'type' => array(
+                'maxResults' => array(
                   'location' => 'query',
-                  'type' => 'string',
+                  'type' => 'integer',
                 ),
               ),
             ),

@@ -1972,3 +1972,18 @@ msgstr "Lagrede beregninger"
 
 msgid "Total Leave Days"
 msgstr "Totalt permisjonsdager"
+
+msgid "Actions"
+msgstr "Handlinger"
+
+msgid "Edit"
+msgstr "Redigere"
+
+msgid "View"
+msgstr "Utsikt"
+
+msgid "Delete"
+msgstr "Slett"
+
+msgid "Copy"
+msgstr "Kopiere"

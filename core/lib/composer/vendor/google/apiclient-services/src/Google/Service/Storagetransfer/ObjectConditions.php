@@ -20,6 +20,8 @@ class Google_Service_Storagetransfer_ObjectConditions extends Google_Collection
   protected $collection_key = 'includePrefixes';
   public $excludePrefixes;
   public $includePrefixes;
+  public $lastModifiedBefore;
+  public $lastModifiedSince;
   public $maxTimeElapsedSinceLastModification;
   public $minTimeElapsedSinceLastModification;
 
@@ -38,6 +40,22 @@ class Google_Service_Storagetransfer_ObjectConditions extends Google_Collection
   public function getIncludePrefixes()
   {
     return $this->includePrefixes;
+  }
+  public function setLastModifiedBefore($lastModifiedBefore)
+  {
+    $this->lastModifiedBefore = $lastModifiedBefore;
+  }
+  public function getLastModifiedBefore()
+  {
+    return $this->lastModifiedBefore;
+  }
+  public function setLastModifiedSince($lastModifiedSince)
+  {
+    $this->lastModifiedSince = $lastModifiedSince;
+  }
+  public function getLastModifiedSince()
+  {
+    return $this->lastModifiedSince;
   }
   public function setMaxTimeElapsedSinceLastModification($maxTimeElapsedSinceLastModification)
   {

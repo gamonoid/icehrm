@@ -3,13 +3,13 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
 /**
  * JobTitleAdapter
  */
 
-class JobTitleAdapter extends AdapterBase {
+class JobTitleAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -36,8 +36,19 @@ class JobTitleAdapter extends AdapterBase {
     ];
   }
 
-  getHelpLink() {
-    return 'http://blog.icehrm.com/docs/jobdetails/';
+  getTableColumns() {
+    return [
+      {
+        title: 'Job Title Code',
+        dataIndex: 'code',
+        sorter: true,
+      },
+      {
+        title: 'Job Title',
+        dataIndex: 'name',
+        sorter: true,
+      },
+    ];
   }
 }
 
@@ -46,7 +57,7 @@ class JobTitleAdapter extends AdapterBase {
  * PayGradeAdapter
  */
 
-class PayGradeAdapter extends AdapterBase {
+class PayGradeAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -77,6 +88,28 @@ class PayGradeAdapter extends AdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Currency',
+        dataIndex: 'currency',
+      },
+      {
+        title: 'Min Salary',
+        dataIndex: 'min_salary',
+      },
+      {
+        title: 'Max Salary',
+        dataIndex: 'max_salary',
+      },
+    ];
+  }
+
   doCustomValidation(params) {
     try {
       if (parseFloat(params.min_salary) > parseFloat(params.max_salary)) {
@@ -94,7 +127,7 @@ class PayGradeAdapter extends AdapterBase {
  * EmploymentStatusAdapter
  */
 
-class EmploymentStatusAdapter extends AdapterBase {
+class EmploymentStatusAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -116,6 +149,20 @@ class EmploymentStatusAdapter extends AdapterBase {
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Employment Status', type: 'text' }],
       ['description', { label: 'Description', type: 'textarea', validation: '' }],
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Employment Status',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Description',
+        dataIndex: 'description',
+      },
     ];
   }
 }

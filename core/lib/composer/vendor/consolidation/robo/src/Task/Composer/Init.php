@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Composer;
 
 /**
@@ -19,6 +20,8 @@ class Init extends Base
     protected $action = 'init';
 
     /**
+     * @param string $projectName
+     *
      * @return $this
      */
     public function projectName($projectName)
@@ -28,6 +31,8 @@ class Init extends Base
     }
 
     /**
+     * @param string $description
+     *
      * @return $this
      */
     public function description($description)
@@ -37,6 +42,8 @@ class Init extends Base
     }
 
     /**
+     * @param string $author
+     *
      * @return $this
      */
     public function author($author)
@@ -46,6 +53,8 @@ class Init extends Base
     }
 
     /**
+     * @param string $type
+     *
      * @return $this
      */
     public function projectType($type)
@@ -55,6 +64,8 @@ class Init extends Base
     }
 
     /**
+     * @param string $homepage
+     *
      * @return $this
      */
     public function homepage($homepage)
@@ -65,6 +76,10 @@ class Init extends Base
 
     /**
      * 'require' is a keyword, so it cannot be a method name.
+     *
+     * @param string $project
+     * @param null|string $version
+     *
      * @return $this
      */
     public function dependency($project, $version = null)
@@ -77,6 +92,8 @@ class Init extends Base
     }
 
     /**
+     * @param string $stability
+     *
      * @return $this
      */
     public function stability($stability)
@@ -86,6 +103,8 @@ class Init extends Base
     }
 
     /**
+     * @param string $license
+     *
      * @return $this
      */
     public function license($license)
@@ -95,6 +114,8 @@ class Init extends Base
     }
 
     /**
+     * @param string $repository
+     *
      * @return $this
      */
     public function repository($repository)

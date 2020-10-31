@@ -23,6 +23,8 @@ class Google_Service_CloudComposer_EnvironmentConfig extends Google_Model
   protected $nodeConfigType = 'Google_Service_CloudComposer_NodeConfig';
   protected $nodeConfigDataType = '';
   public $nodeCount;
+  protected $privateEnvironmentConfigType = 'Google_Service_CloudComposer_PrivateEnvironmentConfig';
+  protected $privateEnvironmentConfigDataType = '';
   protected $softwareConfigType = 'Google_Service_CloudComposer_SoftwareConfig';
   protected $softwareConfigDataType = '';
 
@@ -71,6 +73,20 @@ class Google_Service_CloudComposer_EnvironmentConfig extends Google_Model
   public function getNodeCount()
   {
     return $this->nodeCount;
+  }
+  /**
+   * @param Google_Service_CloudComposer_PrivateEnvironmentConfig
+   */
+  public function setPrivateEnvironmentConfig(Google_Service_CloudComposer_PrivateEnvironmentConfig $privateEnvironmentConfig)
+  {
+    $this->privateEnvironmentConfig = $privateEnvironmentConfig;
+  }
+  /**
+   * @return Google_Service_CloudComposer_PrivateEnvironmentConfig
+   */
+  public function getPrivateEnvironmentConfig()
+  {
+    return $this->privateEnvironmentConfig;
   }
   /**
    * @param Google_Service_CloudComposer_SoftwareConfig

@@ -1,0 +1,229 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body.codebrowser {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	background-color: #fff;
+}
+
+.codebrowser .test {
+	color: blue;
+}
+
+.codebrowser a {
+	color: #2e3436;
+	padding: 2px;
+	text-decoration: none;
+}
+
+.codebrowser a:hover {
+	text-decoration: underline;
+}
+
+/** start Tooltip Styles **/
+.codebrowser .prototip {
+	width: 300px;
+	position: absolute;
+}
+
+.codebrowser .prototip .effectWrapper {
+	position: relative;
+}
+
+.codebrowser .prototip .tooltip {
+	position: relative;
+}
+
+.codebrowser .prototip .toolbar {
+	position: relative;
+	display: block;
+}
+
+.codebrowser .prototip .tooltip .title, .tooltip .message {
+	border: 5px solid #808080;
+	padding: 5px;
+	width: 100%;
+}
+
+.codebrowser .prototip .tooltip .title {
+	color: #808080;
+	font: italic 17px Georgia, serif;
+	display: block;
+	border-bottom: none;
+}
+
+.codebrowser .tooltip .message {
+	border-top: none;
+	color: #fff;
+	font: 11px Arial, Helvetica, sans-serif;
+	display: block;
+	background-color: #808080;
+}
+/** end Tooltip Styles **/
+
+.codebrowser .header {
+	padding: 5px 5px 10px 20px;
+}
+
+.codebrowser .filepath {
+	background-color: #fff;
+	color: #555753;
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 5px 20px 5px 30px;
+	background-image: url(./../img/page.gif);
+	background-repeat: no-repeat;
+	background-position: 4px center;
+	margin: 5px;
+}
+
+.codebrowser .sourcecode {
+	padding: 0px;
+	margin: 0px;
+	width: 98%;
+}
+
+.codebrowser .filelist {
+	margin: 5px;
+}
+
+.codebrowser .filelist td {
+	background-color: #ffffff;
+	padding: 5px;
+}
+
+.codebrowser .filelist table {
+	background-color: #fff;
+	border: none;
+}
+
+
+.codebrowser .filelist a {
+	background-image: url(./../img/page.gif);
+	background-position: center left;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+}
+
+.codebrowser .tree {
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+.codebrowser .filelist tr.file {
+	background-color: #F3F3F0;
+}
+
+
+
+.codebrowser ol.code li.transparent {
+	background-color: transparent;
+}
+
+.codebrowser ol.code li code {
+	font: 1.2em courier, monospace;
+	color: #c30;
+	white-space: pre;
+	padding-left: 0.5em;
+}
+
+.codebrowser .code .comment {
+	color: #939399;
+}
+
+.codebrowser .code .default {
+	color: #44c;
+}
+
+.codebrowser .code .keyword {
+	color: #373;
+}
+
+.codebrowser .code .string {
+	color: #c30;
+}
+
+.dTreeNode a img {
+    margin-left: -2px;
+}
+
+.codebrowser .dtree {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #555753;
+	white-space: nowrap;
+}
+
+.codebrowser .dtree img {
+	border: 0px;
+	vertical-align: middle;
+}
+
+.codebrowser .dtree a {
+	color: #437610;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.codebrowser .dtree a.node, .dtree a.nodeSel {
+	white-space: nowrap;
+	padding: 1px 2px 1px 2px;
+}
+
+.codebrowser .dtree a.node:hover, .dtree a.nodeSel:hover {
+	color: #ffffff;
+	background: transparent url(./../img/tab-active.png) repeat-x scroll 0 0 ;
+	text-decoration: none;
+	padding: 3px;
+}
+
+.codebrowser .dtree a.nodeSel {
+	background-color: #c0d2ec;
+}
+
+.codebrowser .dtree .clip {
+	overflow: hidden;
+}
+
+/** Sidebar Styles **/
+.codebrowser #sideBar {
+	position: fixed;
+	width: auto;
+	height: auto;
+	top: 80px;
+	right: 0px;
+	background-image:url(./../img/background.gif);
+	background-position:top left;
+	background-repeat:repeat-y;
+	text-align: left;
+}
+
+.codebrowser #sideBarTab {
+	float: left;
+	height: 137px;
+	width: 28px;
+	background-image:url(./../img/slider.gif);
+	background-repeat: no-repeat;
+}
+
+.codebrowser #sideBarContents {
+	float: left;
+	overflow: hidden !important;
+	width: 600px;
+	height: 400px;
+}
+
+.codebrowser #sideBarContentsInner {
+	width: 580px;
+	overflow: auto;
+	height: 380px;
+	margin: 10px;
+}

@@ -16,10 +16,10 @@
  */
 
 /**
- * Service definition for Dfareporting (v3.1).
+ * Service definition for Dfareporting (v3.4).
  *
  * <p>
- * Manages your DoubleClick Campaign Manager ad campaigns and reports.</p>
+ * Manage your DoubleClick Campaign Manager ad campaigns and reports.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -63,8 +63,8 @@ class Google_Service_Dfareporting extends Google_Service
   public $creativeFields;
   public $creativeGroups;
   public $creatives;
+  public $customEvents;
   public $dimensionValues;
-  public $directorySiteContacts;
   public $directorySites;
   public $dynamicTargetingKeys;
   public $eventTags;
@@ -107,14 +107,16 @@ class Google_Service_Dfareporting extends Google_Service
   /**
    * Constructs the internal representation of the Dfareporting service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'dfareporting/v3.1/';
-    $this->version = 'v3.1';
+    $this->rootUrl = $rootUrl ?: 'https://dfareporting.googleapis.com/';
+    $this->servicePath = 'dfareporting/v3.4/';
+    $this->batchPath = 'batch';
+    $this->version = 'v3.4';
     $this->serviceName = 'dfareporting';
 
     $this->accountActiveAdSummaries = new Google_Service_Dfareporting_Resource_AccountActiveAdSummaries(
@@ -252,18 +254,18 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'active' => array(
+                'maxResults' => array(
                   'location' => 'query',
-                  'type' => 'boolean',
+                  'type' => 'integer',
                 ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'maxResults' => array(
+                'sortOrder' => array(
                   'location' => 'query',
-                  'type' => 'integer',
+                  'type' => 'string',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
@@ -277,7 +279,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
+                'userRoleId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -285,9 +287,9 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'userRoleId' => array(
+                'active' => array(
                   'location' => 'query',
-                  'type' => 'string',
+                  'type' => 'boolean',
                 ),
               ),
             ),'patch' => array(
@@ -349,24 +351,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'active' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'searchString' => array(
+                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -374,9 +359,26 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
+                'active' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ),
               ),
             ),'patch' => array(
@@ -448,63 +450,18 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'active' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'advertiserId' => array(
+                'overriddenEventTagId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'archived' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'audienceSegmentIds' => array(
+                'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
-                ),
-                'campaignIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'compatibility' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'creativeIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'creativeOptimizationConfigurationIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'dynamicClickTracker' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
-                'landingPageIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'overriddenEventTagId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
@@ -515,37 +472,82 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'remarketingListIds' => array(
+                'active' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'creativeIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'searchString' => array(
+                'sslCompliant' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'advertiserId' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'sslRequired' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'dynamicClickTracker' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
                 'sizeIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sslCompliant' => array(
+                'sortField' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'archived' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'sslRequired' => array(
+                'remarketingListIds' => array(
                   'location' => 'query',
-                  'type' => 'boolean',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'creativeOptimizationConfigurationIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'compatibility' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'type' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'audienceSegmentIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'landingPageIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'campaignIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
@@ -635,28 +637,28 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'ids' => array(
+                'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
                 ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
                 'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -730,7 +732,32 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'searchString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'advertiserIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'sortField' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'subaccountId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
@@ -739,7 +766,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'ids' => array(
+                'campaignIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
@@ -747,26 +774,6 @@ class Google_Service_Dfareporting extends Google_Service
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortOrder' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'subaccountId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),'patch' => array(
@@ -838,20 +845,48 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'advertiserGroupIds' => array(
+                'sortField' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'status' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
+                ),
+                'onlyParent' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
                 ),
                 'floodlightConfigurationIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'ids' => array(
+                'searchString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'advertiserGroupIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
+                ),
+                'subaccountId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'includeAdvertisersWithoutGroupsOnly' => array(
                   'location' => 'query',
@@ -860,34 +895,6 @@ class Google_Service_Dfareporting extends Google_Service
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
-                ),
-                'onlyParent' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortOrder' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'status' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'subaccountId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),'patch' => array(
@@ -974,10 +981,6 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -985,6 +988,10 @@ class Google_Service_Dfareporting extends Google_Service
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),
@@ -1031,29 +1038,6 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'advertiserGroupIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'advertiserIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'archived' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'atLeastOneOptimizationActivity' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'excludedIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -1063,7 +1047,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'overriddenEventTagId' => array(
+                'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1071,11 +1055,29 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'searchString' => array(
+                'excludedIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'advertiserGroupIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'atLeastOneOptimizationActivity' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'archived' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'subaccountId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortField' => array(
+                'overriddenEventTagId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1083,7 +1085,12 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'subaccountId' => array(
+                'advertiserIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1147,43 +1154,43 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'action' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
-                'maxChangeTime' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'minChangeTime' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
                 'objectIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'objectType' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageToken' => array(
+                'minChangeTime' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
                 'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'action' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'maxChangeTime' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'objectType' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
                 'userProfileIds' => array(
                   'location' => 'query',
@@ -1215,14 +1222,14 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
+                'namePrefix' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'dartIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
-                'namePrefix' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
                 'regionDartIds' => array(
                   'location' => 'query',
@@ -1324,16 +1331,11 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'pageToken' => array(
+                'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1341,13 +1343,18 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortField' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ),
               ),
             ),'patch' => array(
@@ -1549,23 +1556,23 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'sortField' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
                 'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1664,10 +1671,13 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'advertiserIds' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
+                ),
+                'searchString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'ids' => array(
                   'location' => 'query',
@@ -1678,13 +1688,10 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'pageToken' => array(
+                'advertiserIds' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+                  'repeated' => true,
                 ),
                 'sortField' => array(
                   'location' => 'query',
@@ -1764,27 +1771,27 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'advertiserIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
                 'groupNumber' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'advertiserIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ),
                 'searchString' => array(
                   'location' => 'query',
@@ -1794,9 +1801,9 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
+                'maxResults' => array(
                   'location' => 'query',
-                  'type' => 'string',
+                  'type' => 'integer',
                 ),
               ),
             ),'patch' => array(
@@ -1868,41 +1875,6 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'active' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'advertiserId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'archived' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'campaignId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'companionCreativeIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'creativeFieldIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -1912,7 +1884,47 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
+                'advertiserId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'types' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'creativeFieldIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
                 'searchString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'archived' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'companionCreativeIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'active' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'studioCreativeId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1921,22 +1933,17 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
+                'campaignId' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'studioCreativeId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'types' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
                 ),
               ),
             ),'patch' => array(
@@ -1968,6 +1975,26 @@ class Google_Service_Dfareporting extends Google_Service
           )
         )
     );
+    $this->customEvents = new Google_Service_Dfareporting_Resource_CustomEvents(
+        $this,
+        $this->serviceName,
+        'customEvents',
+        array(
+          'methods' => array(
+            'batchinsert' => array(
+              'path' => 'userprofiles/{profileId}/customEvents/batchinsert',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'profileId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),
+          )
+        )
+    );
     $this->dimensionValues = new Google_Service_Dfareporting_Resource_DimensionValues(
         $this,
         $this->serviceName,
@@ -1988,71 +2015,6 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'integer',
                 ),
                 'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->directorySiteContacts = new Google_Service_Dfareporting_Resource_DirectorySiteContacts(
-        $this,
-        $this->serviceName,
-        'directorySiteContacts',
-        array(
-          'methods' => array(
-            'get' => array(
-              'path' => 'userprofiles/{profileId}/directorySiteContacts/{id}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'profileId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'id' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'list' => array(
-              'path' => 'userprofiles/{profileId}/directorySiteContacts',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'profileId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'directorySiteIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -2101,27 +2063,11 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'acceptsInStreamVideoPlacements' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'acceptsInterstitialPlacements' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'acceptsPublisherPaidPlacements' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'active' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'countryId' => array(
+                'dfpNetworkCode' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'dfpNetworkCode' => array(
+                'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -2130,29 +2076,37 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'maxResults' => array(
+                'acceptsInStreamVideoPlacements' => array(
                   'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'parentId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+                  'type' => 'boolean',
                 ),
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'acceptsInterstitialPlacements' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'active' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'acceptsPublisherPaidPlacements' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
                 ),
               ),
             ),
@@ -2209,6 +2163,10 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'objectId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'advertiserId' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -2217,10 +2175,6 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
-                'objectId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
                 'objectType' => array(
                   'location' => 'query',
@@ -2286,21 +2240,17 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'sortField' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'adId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'advertiserId' => array(
+                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'campaignId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'definitionsOnly' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ),
                 'enabled' => array(
                   'location' => 'query',
@@ -2311,20 +2261,24 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'ids' => array(
+                'definitionsOnly' => array(
                   'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
+                  'type' => 'boolean',
                 ),
                 'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortField' => array(
+                'advertiserId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'campaignId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -2388,15 +2342,11 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
+                'scope' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'scope' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -2407,6 +2357,10 @@ class Google_Service_Dfareporting extends Google_Service
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),
@@ -2482,39 +2436,13 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'advertiserId' => array(
+                'maxResults' => array(
                   'location' => 'query',
-                  'type' => 'string',
-                ),
-                'floodlightActivityGroupIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'floodlightActivityGroupName' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'floodlightActivityGroupTagString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'floodlightActivityGroupType' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+                  'type' => 'integer',
                 ),
                 'floodlightConfigurationId' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
@@ -2524,15 +2452,41 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortField' => array(
+                'advertiserId' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'floodlightActivityGroupTagString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'tagString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'floodlightActivityGroupType' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'floodlightActivityGroupIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'tagString' => array(
+                'floodlightActivityGroupName' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -2606,6 +2560,18 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'type' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'advertiserId' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -2614,32 +2580,20 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'type' => array(
+                'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -2778,42 +2732,42 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'inPlan' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'orderId' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
+                'type' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'sortField' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'inPlan' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
                 ),
                 'siteId' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'sortField' => array(
+                'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
+                  'repeated' => true,
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
                 'sortOrder' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'type' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -2892,12 +2846,16 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'directories' => array(
+                'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'ids' => array(
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'directories' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
@@ -2905,10 +2863,6 @@ class Google_Service_Dfareporting extends Google_Service
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
                 'searchString' => array(
                   'location' => 'query',
@@ -3064,40 +3018,40 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'approved' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
+                'searchString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'approved' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'sortField' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'orderId' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'siteId' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
-                'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
@@ -3148,33 +3102,33 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'siteId' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'sortField' => array(
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'searchString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -3223,64 +3177,43 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'advertiserIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'archived' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'campaignIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
                 'contentCategoryIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
+                ),
+                'maxStartDate' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'siteIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'archived' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
                 ),
                 'directorySiteIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'maxEndDate' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'maxStartDate' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'minEndDate' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'minStartDate' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'placementGroupType' => array(
+                'campaignIds' => array(
                   'location' => 'query',
                   'type' => 'string',
+                  'repeated' => true,
                 ),
-                'placementStrategyIds' => array(
+                'advertiserIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
@@ -3290,11 +3223,15 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'searchString' => array(
+                'placementGroupType' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'siteIds' => array(
+                'minEndDate' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'placementStrategyIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
@@ -3303,9 +3240,26 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
+                'searchString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'maxEndDate' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'minStartDate' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ),
               ),
             ),'patch' => array(
@@ -3392,6 +3346,18 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'sortField' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -3401,19 +3367,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -3462,19 +3416,19 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'campaignId' => array(
+                'tagFormats' => array(
                   'location' => 'query',
                   'type' => 'string',
+                  'repeated' => true,
                 ),
                 'placementIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'tagFormats' => array(
+                'campaignId' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
                 ),
               ),
             ),'get' => array(
@@ -3511,41 +3465,25 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'advertiserIds' => array(
+                'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
-                'archived' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ),
                 'campaignIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'compatibilities' => array(
+                'maxStartDate' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
                 ),
-                'contentCategoryIds' => array(
+                'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
                 ),
-                'directorySiteIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'groupIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'ids' => array(
+                'sizeIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
@@ -3554,39 +3492,9 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'maxStartDate' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'minEndDate' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'minStartDate' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'paymentSource' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'placementStrategyIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'pricingTypes' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
                 ),
                 'searchString' => array(
                   'location' => 'query',
@@ -3597,18 +3505,64 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'sizeIds' => array(
+                'compatibilities' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'sortField' => array(
+                'advertiserIds' => array(
                   'location' => 'query',
                   'type' => 'string',
+                  'repeated' => true,
+                ),
+                'directorySiteIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'minStartDate' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'placementStrategyIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'paymentSource' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'archived' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'pricingTypes' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'groupIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'contentCategoryIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'minEndDate' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),'patch' => array(
@@ -3740,21 +3694,25 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
                 'advertiserIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
+                ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
+                'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -3762,11 +3720,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortOrder' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -3825,7 +3779,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'remarketingListId' => array(
+                'id' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'required' => true,
@@ -3894,13 +3848,9 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'floodlightActivityId' => array(
+                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
                 ),
                 'name' => array(
                   'location' => 'query',
@@ -3914,7 +3864,11 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'floodlightActivityId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -4003,6 +3957,10 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'sortField' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
@@ -4012,10 +3970,6 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                 ),
                 'scope' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -4141,15 +4095,15 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
                 'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -4198,30 +4152,46 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'acceptsInStreamVideoPlacements' => array(
+                'subaccountId' => array(
                   'location' => 'query',
-                  'type' => 'boolean',
+                  'type' => 'string',
                 ),
-                'acceptsInterstitialPlacements' => array(
+                'pageToken' => array(
                   'location' => 'query',
-                  'type' => 'boolean',
+                  'type' => 'string',
                 ),
-                'acceptsPublisherPaidPlacements' => array(
+                'sortField' => array(
                   'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'adWordsSite' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'approved' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
+                  'type' => 'string',
                 ),
                 'campaignIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
+                ),
+                'acceptsPublisherPaidPlacements' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'unmappedSite' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'acceptsInStreamVideoPlacements' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'searchString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'adWordsSite' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
                 ),
                 'directorySiteIds' => array(
                   'location' => 'query',
@@ -4233,31 +4203,15 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'maxResults' => array(
+                'acceptsInterstitialPlacements' => array(
                   'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+                  'type' => 'boolean',
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'subaccountId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'unmappedSite' => array(
+                'approved' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
@@ -4331,22 +4285,22 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
                 'height' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'width' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
                 'iabStandard' => array(
                   'location' => 'query',
                   'type' => 'boolean',
-                ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'width' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
                 ),
               ),
             ),
@@ -4393,26 +4347,26 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'ids' => array(
+                'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'searchString' => array(
+                'maxResults' => array(
                   'location' => 'query',
-                  'type' => 'string',
+                  'type' => 'integer',
                 ),
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
@@ -4483,19 +4437,19 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'active' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'name' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageToken' => array(
+                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -4503,9 +4457,9 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
+                'active' => array(
                   'location' => 'query',
-                  'type' => 'string',
+                  'type' => 'boolean',
                 ),
               ),
             ),
@@ -4561,23 +4515,23 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
+                'searchString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'sortOrder' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'sortField' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -4765,28 +4719,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'accountUserRoleOnly' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'searchString' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -4794,7 +4727,28 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
                 'subaccountId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'accountUserRoleOnly' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'searchString' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'ids' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
+                'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),

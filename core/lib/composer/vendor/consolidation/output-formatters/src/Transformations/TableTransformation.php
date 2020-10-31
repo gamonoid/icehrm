@@ -3,12 +3,18 @@ namespace Consolidation\OutputFormatters\Transformations;
 
 use Consolidation\OutputFormatters\StructuredData\TableDataInterface;
 use Consolidation\OutputFormatters\StructuredData\OriginalDataInterface;
+use Consolidation\OutputFormatters\StructuredData\MetadataHolderInterface;
+use Consolidation\OutputFormatters\Options\FormatterOptions;
+use Consolidation\OutputFormatters\Formatters\TsvFormatter;
+use Symfony\Component\Console\Output\BufferedOutput;
 
-class TableTransformation extends \ArrayObject implements TableDataInterface, OriginalDataInterface
+class TableTransformation extends \ArrayObject implements TableDataInterface, StringTransformationInterface, OriginalDataInterface
 {
     protected $headers;
     protected $rowLabels;
     protected $layout;
+    /** @var MetadataHolderInterface */
+    protected $originalData;
 
     const TABLE_LAYOUT = 'table';
     const LIST_LAYOUT = 'list';
@@ -35,6 +41,22 @@ class TableTransformation extends \ArrayObject implements TableDataInterface, Or
     public function isList()
     {
         return $this->layout == self::LIST_LAYOUT;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function simplifyToString(FormatterOptions $options)
+    {
+        $alternateFormatter = new TsvFormatter();
+        $output = new BufferedOutput();
+
+        try {
+            $data = $alternateFormatter->validate($this->getArrayCopy());
+            $alternateFormatter->write($output, $this->getArrayCopy(), $options);
+        } catch (\Exception $e) {
+        }
+        return $output->fetch();
     }
 
     protected static function transformRows($data, $fieldLabels)
@@ -83,7 +105,15 @@ class TableTransformation extends \ArrayObject implements TableDataInterface, Or
 
     public function getOriginalData()
     {
+        if (isset($this->originalData)) {
+            return $this->originalData->reconstruct($this->getArrayCopy(), $this->originalData->getMetadata());
+        }
         return $this->getArrayCopy();
+    }
+
+    public function setOriginalData(MetadataHolderInterface $data)
+    {
+        $this->originalData = $data;
     }
 
     public function getTableData($includeRowKey = false)

@@ -23,10 +23,15 @@ class Google_Service_BigQueryDataTransfer_TransferConfig extends Google_Model
   public $destinationDatasetId;
   public $disabled;
   public $displayName;
+  protected $emailPreferencesType = 'Google_Service_BigQueryDataTransfer_EmailPreferences';
+  protected $emailPreferencesDataType = '';
   public $name;
   public $nextRunTime;
+  public $notificationPubsubTopic;
   public $params;
   public $schedule;
+  protected $scheduleOptionsType = 'Google_Service_BigQueryDataTransfer_ScheduleOptions';
+  protected $scheduleOptionsDataType = '';
   public $state;
   public $updateTime;
   public $userId;
@@ -79,6 +84,20 @@ class Google_Service_BigQueryDataTransfer_TransferConfig extends Google_Model
   {
     return $this->displayName;
   }
+  /**
+   * @param Google_Service_BigQueryDataTransfer_EmailPreferences
+   */
+  public function setEmailPreferences(Google_Service_BigQueryDataTransfer_EmailPreferences $emailPreferences)
+  {
+    $this->emailPreferences = $emailPreferences;
+  }
+  /**
+   * @return Google_Service_BigQueryDataTransfer_EmailPreferences
+   */
+  public function getEmailPreferences()
+  {
+    return $this->emailPreferences;
+  }
   public function setName($name)
   {
     $this->name = $name;
@@ -95,6 +114,14 @@ class Google_Service_BigQueryDataTransfer_TransferConfig extends Google_Model
   {
     return $this->nextRunTime;
   }
+  public function setNotificationPubsubTopic($notificationPubsubTopic)
+  {
+    $this->notificationPubsubTopic = $notificationPubsubTopic;
+  }
+  public function getNotificationPubsubTopic()
+  {
+    return $this->notificationPubsubTopic;
+  }
   public function setParams($params)
   {
     $this->params = $params;
@@ -110,6 +137,20 @@ class Google_Service_BigQueryDataTransfer_TransferConfig extends Google_Model
   public function getSchedule()
   {
     return $this->schedule;
+  }
+  /**
+   * @param Google_Service_BigQueryDataTransfer_ScheduleOptions
+   */
+  public function setScheduleOptions(Google_Service_BigQueryDataTransfer_ScheduleOptions $scheduleOptions)
+  {
+    $this->scheduleOptions = $scheduleOptions;
+  }
+  /**
+   * @return Google_Service_BigQueryDataTransfer_ScheduleOptions
+   */
+  public function getScheduleOptions()
+  {
+    return $this->scheduleOptions;
   }
   public function setState($state)
   {

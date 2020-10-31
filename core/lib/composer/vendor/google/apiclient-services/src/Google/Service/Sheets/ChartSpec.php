@@ -15,17 +15,24 @@
  * the License.
  */
 
-class Google_Service_Sheets_ChartSpec extends Google_Model
+class Google_Service_Sheets_ChartSpec extends Google_Collection
 {
+  protected $collection_key = 'sortSpecs';
   public $altText;
   protected $backgroundColorType = 'Google_Service_Sheets_Color';
   protected $backgroundColorDataType = '';
+  protected $backgroundColorStyleType = 'Google_Service_Sheets_ColorStyle';
+  protected $backgroundColorStyleDataType = '';
   protected $basicChartType = 'Google_Service_Sheets_BasicChartSpec';
   protected $basicChartDataType = '';
   protected $bubbleChartType = 'Google_Service_Sheets_BubbleChartSpec';
   protected $bubbleChartDataType = '';
   protected $candlestickChartType = 'Google_Service_Sheets_CandlestickChartSpec';
   protected $candlestickChartDataType = '';
+  protected $dataSourceChartPropertiesType = 'Google_Service_Sheets_DataSourceChartProperties';
+  protected $dataSourceChartPropertiesDataType = '';
+  protected $filterSpecsType = 'Google_Service_Sheets_FilterSpec';
+  protected $filterSpecsDataType = 'array';
   public $fontName;
   public $hiddenDimensionStrategy;
   protected $histogramChartType = 'Google_Service_Sheets_HistogramChartSpec';
@@ -35,6 +42,10 @@ class Google_Service_Sheets_ChartSpec extends Google_Model
   protected $orgChartDataType = '';
   protected $pieChartType = 'Google_Service_Sheets_PieChartSpec';
   protected $pieChartDataType = '';
+  protected $scorecardChartType = 'Google_Service_Sheets_ScorecardChartSpec';
+  protected $scorecardChartDataType = '';
+  protected $sortSpecsType = 'Google_Service_Sheets_SortSpec';
+  protected $sortSpecsDataType = 'array';
   public $subtitle;
   protected $subtitleTextFormatType = 'Google_Service_Sheets_TextFormat';
   protected $subtitleTextFormatDataType = '';
@@ -71,6 +82,20 @@ class Google_Service_Sheets_ChartSpec extends Google_Model
   public function getBackgroundColor()
   {
     return $this->backgroundColor;
+  }
+  /**
+   * @param Google_Service_Sheets_ColorStyle
+   */
+  public function setBackgroundColorStyle(Google_Service_Sheets_ColorStyle $backgroundColorStyle)
+  {
+    $this->backgroundColorStyle = $backgroundColorStyle;
+  }
+  /**
+   * @return Google_Service_Sheets_ColorStyle
+   */
+  public function getBackgroundColorStyle()
+  {
+    return $this->backgroundColorStyle;
   }
   /**
    * @param Google_Service_Sheets_BasicChartSpec
@@ -113,6 +138,34 @@ class Google_Service_Sheets_ChartSpec extends Google_Model
   public function getCandlestickChart()
   {
     return $this->candlestickChart;
+  }
+  /**
+   * @param Google_Service_Sheets_DataSourceChartProperties
+   */
+  public function setDataSourceChartProperties(Google_Service_Sheets_DataSourceChartProperties $dataSourceChartProperties)
+  {
+    $this->dataSourceChartProperties = $dataSourceChartProperties;
+  }
+  /**
+   * @return Google_Service_Sheets_DataSourceChartProperties
+   */
+  public function getDataSourceChartProperties()
+  {
+    return $this->dataSourceChartProperties;
+  }
+  /**
+   * @param Google_Service_Sheets_FilterSpec
+   */
+  public function setFilterSpecs($filterSpecs)
+  {
+    $this->filterSpecs = $filterSpecs;
+  }
+  /**
+   * @return Google_Service_Sheets_FilterSpec
+   */
+  public function getFilterSpecs()
+  {
+    return $this->filterSpecs;
   }
   public function setFontName($fontName)
   {
@@ -179,6 +232,34 @@ class Google_Service_Sheets_ChartSpec extends Google_Model
   public function getPieChart()
   {
     return $this->pieChart;
+  }
+  /**
+   * @param Google_Service_Sheets_ScorecardChartSpec
+   */
+  public function setScorecardChart(Google_Service_Sheets_ScorecardChartSpec $scorecardChart)
+  {
+    $this->scorecardChart = $scorecardChart;
+  }
+  /**
+   * @return Google_Service_Sheets_ScorecardChartSpec
+   */
+  public function getScorecardChart()
+  {
+    return $this->scorecardChart;
+  }
+  /**
+   * @param Google_Service_Sheets_SortSpec
+   */
+  public function setSortSpecs($sortSpecs)
+  {
+    $this->sortSpecs = $sortSpecs;
+  }
+  /**
+   * @return Google_Service_Sheets_SortSpec
+   */
+  public function getSortSpecs()
+  {
+    return $this->sortSpecs;
   }
   public function setSubtitle($subtitle)
   {

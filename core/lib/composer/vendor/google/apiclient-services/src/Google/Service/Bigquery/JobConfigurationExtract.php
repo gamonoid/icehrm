@@ -24,8 +24,11 @@ class Google_Service_Bigquery_JobConfigurationExtract extends Google_Collection
   public $destinationUris;
   public $fieldDelimiter;
   public $printHeader;
+  protected $sourceModelType = 'Google_Service_Bigquery_ModelReference';
+  protected $sourceModelDataType = '';
   protected $sourceTableType = 'Google_Service_Bigquery_TableReference';
   protected $sourceTableDataType = '';
+  public $useAvroLogicalTypes;
 
   public function setCompression($compression)
   {
@@ -76,6 +79,20 @@ class Google_Service_Bigquery_JobConfigurationExtract extends Google_Collection
     return $this->printHeader;
   }
   /**
+   * @param Google_Service_Bigquery_ModelReference
+   */
+  public function setSourceModel(Google_Service_Bigquery_ModelReference $sourceModel)
+  {
+    $this->sourceModel = $sourceModel;
+  }
+  /**
+   * @return Google_Service_Bigquery_ModelReference
+   */
+  public function getSourceModel()
+  {
+    return $this->sourceModel;
+  }
+  /**
    * @param Google_Service_Bigquery_TableReference
    */
   public function setSourceTable(Google_Service_Bigquery_TableReference $sourceTable)
@@ -88,5 +105,13 @@ class Google_Service_Bigquery_JobConfigurationExtract extends Google_Collection
   public function getSourceTable()
   {
     return $this->sourceTable;
+  }
+  public function setUseAvroLogicalTypes($useAvroLogicalTypes)
+  {
+    $this->useAvroLogicalTypes = $useAvroLogicalTypes;
+  }
+  public function getUseAvroLogicalTypes()
+  {
+    return $this->useAvroLogicalTypes;
   }
 }

@@ -10,8 +10,21 @@ use Consolidation\OutputFormatters\Options\FormatterOptions;
  *
  * It is presumed that every row contains the same keys.
  */
-class RowsOfFields extends AbstractStructuredList
+class RowsOfFields extends AbstractStructuredList implements ConversionInterface
 {
+    /**
+     * @inheritdoc
+     */
+    public function convert(FormatterOptions $options)
+    {
+        $defaults = $this->defaultOptions();
+        $fields = $this->getFields($options, $defaults);
+        if (FieldProcessor::hasUnstructuredFieldAccess($fields)) {
+            return new UnstructuredListData($this->getArrayCopy());
+        }
+        return $this;
+    }
+
     /**
      * Restructure this data for output by converting it into a table
      * transformation object.

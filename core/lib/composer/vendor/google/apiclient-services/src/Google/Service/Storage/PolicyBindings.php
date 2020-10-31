@@ -18,14 +18,21 @@
 class Google_Service_Storage_PolicyBindings extends Google_Collection
 {
   protected $collection_key = 'members';
-  public $condition;
+  protected $conditionType = 'Google_Service_Storage_Expr';
+  protected $conditionDataType = '';
   public $members;
   public $role;
 
-  public function setCondition($condition)
+  /**
+   * @param Google_Service_Storage_Expr
+   */
+  public function setCondition(Google_Service_Storage_Expr $condition)
   {
     $this->condition = $condition;
   }
+  /**
+   * @return Google_Service_Storage_Expr
+   */
   public function getCondition()
   {
     return $this->condition;

@@ -42,8 +42,8 @@ class Google_Service_Doubleclicksearch_Resource_Conversion extends Google_Servic
    * @param array $optParams Optional parameters.
    *
    * @opt_param string adGroupId Numeric ID of the ad group.
-   * @opt_param string adId Numeric ID of the ad.
    * @opt_param string campaignId Numeric ID of the campaign.
+   * @opt_param string adId Numeric ID of the ad.
    * @opt_param string criterionId Numeric ID of the criterion.
    * @return Google_Service_Doubleclicksearch_ConversionList
    */
@@ -66,30 +66,6 @@ class Google_Service_Doubleclicksearch_Resource_Conversion extends Google_Servic
     $params = array('postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Doubleclicksearch_ConversionList");
-  }
-  /**
-   * Updates a batch of conversions in DoubleClick Search. This method supports
-   * patch semantics. (conversion.patch)
-   *
-   * @param string $advertiserId Numeric ID of the advertiser.
-   * @param string $agencyId Numeric ID of the agency.
-   * @param int $endDate Last date (inclusive) on which to retrieve conversions.
-   * Format is yyyymmdd.
-   * @param string $engineAccountId Numeric ID of the engine account.
-   * @param int $rowCount The number of conversions to return per call.
-   * @param int $startDate First date (inclusive) on which to retrieve
-   * conversions. Format is yyyymmdd.
-   * @param string $startRow The 0-based starting index for retrieving conversions
-   * results.
-   * @param Google_Service_Doubleclicksearch_ConversionList $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Doubleclicksearch_ConversionList
-   */
-  public function patch($advertiserId, $agencyId, $endDate, $engineAccountId, $rowCount, $startDate, $startRow, Google_Service_Doubleclicksearch_ConversionList $postBody, $optParams = array())
-  {
-    $params = array('advertiserId' => $advertiserId, 'agencyId' => $agencyId, 'endDate' => $endDate, 'engineAccountId' => $engineAccountId, 'rowCount' => $rowCount, 'startDate' => $startDate, 'startRow' => $startRow, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_Doubleclicksearch_ConversionList");
   }
   /**
    * Updates a batch of conversions in DoubleClick Search. (conversion.update)

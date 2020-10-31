@@ -1868,12 +1868,13 @@ legend {
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
-
+/*
 label {
   display: inline-block;
   margin-bottom: 5px;
   font-weight: bold;
 }
+*/
 
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -5943,7 +5944,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1040;
+  z-index: 2040;
   display: none;
   overflow: auto;
   overflow-y: scroll;

@@ -21,6 +21,8 @@ class Google_Service_Sheets_Response extends Google_Model
   protected $addBandingDataType = '';
   protected $addChartType = 'Google_Service_Sheets_AddChartResponse';
   protected $addChartDataType = '';
+  protected $addDataSourceType = 'Google_Service_Sheets_AddDataSourceResponse';
+  protected $addDataSourceDataType = '';
   protected $addDimensionGroupType = 'Google_Service_Sheets_AddDimensionGroupResponse';
   protected $addDimensionGroupDataType = '';
   protected $addFilterViewType = 'Google_Service_Sheets_AddFilterViewResponse';
@@ -31,6 +33,8 @@ class Google_Service_Sheets_Response extends Google_Model
   protected $addProtectedRangeDataType = '';
   protected $addSheetType = 'Google_Service_Sheets_AddSheetResponse';
   protected $addSheetDataType = '';
+  protected $addSlicerType = 'Google_Service_Sheets_AddSlicerResponse';
+  protected $addSlicerDataType = '';
   protected $createDeveloperMetadataType = 'Google_Service_Sheets_CreateDeveloperMetadataResponse';
   protected $createDeveloperMetadataDataType = '';
   protected $deleteConditionalFormatRuleType = 'Google_Service_Sheets_DeleteConditionalFormatRuleResponse';
@@ -39,14 +43,22 @@ class Google_Service_Sheets_Response extends Google_Model
   protected $deleteDeveloperMetadataDataType = '';
   protected $deleteDimensionGroupType = 'Google_Service_Sheets_DeleteDimensionGroupResponse';
   protected $deleteDimensionGroupDataType = '';
+  protected $deleteDuplicatesType = 'Google_Service_Sheets_DeleteDuplicatesResponse';
+  protected $deleteDuplicatesDataType = '';
   protected $duplicateFilterViewType = 'Google_Service_Sheets_DuplicateFilterViewResponse';
   protected $duplicateFilterViewDataType = '';
   protected $duplicateSheetType = 'Google_Service_Sheets_DuplicateSheetResponse';
   protected $duplicateSheetDataType = '';
   protected $findReplaceType = 'Google_Service_Sheets_FindReplaceResponse';
   protected $findReplaceDataType = '';
+  protected $refreshDataSourceType = 'Google_Service_Sheets_RefreshDataSourceResponse';
+  protected $refreshDataSourceDataType = '';
+  protected $trimWhitespaceType = 'Google_Service_Sheets_TrimWhitespaceResponse';
+  protected $trimWhitespaceDataType = '';
   protected $updateConditionalFormatRuleType = 'Google_Service_Sheets_UpdateConditionalFormatRuleResponse';
   protected $updateConditionalFormatRuleDataType = '';
+  protected $updateDataSourceType = 'Google_Service_Sheets_UpdateDataSourceResponse';
+  protected $updateDataSourceDataType = '';
   protected $updateDeveloperMetadataType = 'Google_Service_Sheets_UpdateDeveloperMetadataResponse';
   protected $updateDeveloperMetadataDataType = '';
   protected $updateEmbeddedObjectPositionType = 'Google_Service_Sheets_UpdateEmbeddedObjectPositionResponse';
@@ -79,6 +91,20 @@ class Google_Service_Sheets_Response extends Google_Model
   public function getAddChart()
   {
     return $this->addChart;
+  }
+  /**
+   * @param Google_Service_Sheets_AddDataSourceResponse
+   */
+  public function setAddDataSource(Google_Service_Sheets_AddDataSourceResponse $addDataSource)
+  {
+    $this->addDataSource = $addDataSource;
+  }
+  /**
+   * @return Google_Service_Sheets_AddDataSourceResponse
+   */
+  public function getAddDataSource()
+  {
+    return $this->addDataSource;
   }
   /**
    * @param Google_Service_Sheets_AddDimensionGroupResponse
@@ -151,6 +177,20 @@ class Google_Service_Sheets_Response extends Google_Model
     return $this->addSheet;
   }
   /**
+   * @param Google_Service_Sheets_AddSlicerResponse
+   */
+  public function setAddSlicer(Google_Service_Sheets_AddSlicerResponse $addSlicer)
+  {
+    $this->addSlicer = $addSlicer;
+  }
+  /**
+   * @return Google_Service_Sheets_AddSlicerResponse
+   */
+  public function getAddSlicer()
+  {
+    return $this->addSlicer;
+  }
+  /**
    * @param Google_Service_Sheets_CreateDeveloperMetadataResponse
    */
   public function setCreateDeveloperMetadata(Google_Service_Sheets_CreateDeveloperMetadataResponse $createDeveloperMetadata)
@@ -207,6 +247,20 @@ class Google_Service_Sheets_Response extends Google_Model
     return $this->deleteDimensionGroup;
   }
   /**
+   * @param Google_Service_Sheets_DeleteDuplicatesResponse
+   */
+  public function setDeleteDuplicates(Google_Service_Sheets_DeleteDuplicatesResponse $deleteDuplicates)
+  {
+    $this->deleteDuplicates = $deleteDuplicates;
+  }
+  /**
+   * @return Google_Service_Sheets_DeleteDuplicatesResponse
+   */
+  public function getDeleteDuplicates()
+  {
+    return $this->deleteDuplicates;
+  }
+  /**
    * @param Google_Service_Sheets_DuplicateFilterViewResponse
    */
   public function setDuplicateFilterView(Google_Service_Sheets_DuplicateFilterViewResponse $duplicateFilterView)
@@ -249,6 +303,34 @@ class Google_Service_Sheets_Response extends Google_Model
     return $this->findReplace;
   }
   /**
+   * @param Google_Service_Sheets_RefreshDataSourceResponse
+   */
+  public function setRefreshDataSource(Google_Service_Sheets_RefreshDataSourceResponse $refreshDataSource)
+  {
+    $this->refreshDataSource = $refreshDataSource;
+  }
+  /**
+   * @return Google_Service_Sheets_RefreshDataSourceResponse
+   */
+  public function getRefreshDataSource()
+  {
+    return $this->refreshDataSource;
+  }
+  /**
+   * @param Google_Service_Sheets_TrimWhitespaceResponse
+   */
+  public function setTrimWhitespace(Google_Service_Sheets_TrimWhitespaceResponse $trimWhitespace)
+  {
+    $this->trimWhitespace = $trimWhitespace;
+  }
+  /**
+   * @return Google_Service_Sheets_TrimWhitespaceResponse
+   */
+  public function getTrimWhitespace()
+  {
+    return $this->trimWhitespace;
+  }
+  /**
    * @param Google_Service_Sheets_UpdateConditionalFormatRuleResponse
    */
   public function setUpdateConditionalFormatRule(Google_Service_Sheets_UpdateConditionalFormatRuleResponse $updateConditionalFormatRule)
@@ -261,6 +343,20 @@ class Google_Service_Sheets_Response extends Google_Model
   public function getUpdateConditionalFormatRule()
   {
     return $this->updateConditionalFormatRule;
+  }
+  /**
+   * @param Google_Service_Sheets_UpdateDataSourceResponse
+   */
+  public function setUpdateDataSource(Google_Service_Sheets_UpdateDataSourceResponse $updateDataSource)
+  {
+    $this->updateDataSource = $updateDataSource;
+  }
+  /**
+   * @return Google_Service_Sheets_UpdateDataSourceResponse
+   */
+  public function getUpdateDataSource()
+  {
+    return $this->updateDataSource;
   }
   /**
    * @param Google_Service_Sheets_UpdateDeveloperMetadataResponse

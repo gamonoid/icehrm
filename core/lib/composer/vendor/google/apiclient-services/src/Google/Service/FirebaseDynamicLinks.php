@@ -41,13 +41,15 @@ class Google_Service_FirebaseDynamicLinks extends Google_Service
   /**
    * Constructs the internal representation of the FirebaseDynamicLinks service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://firebasedynamiclinks.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://firebasedynamiclinks.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'firebasedynamiclinks';
 
@@ -98,9 +100,17 @@ class Google_Service_FirebaseDynamicLinks extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
+                'sdkVersion' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
               ),
             ),'installAttribution' => array(
               'path' => 'v1/installAttribution',
+              'httpMethod' => 'POST',
+              'parameters' => array(),
+            ),'reopenAttribution' => array(
+              'path' => 'v1/reopenAttribution',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),

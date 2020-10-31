@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Composer;
 
 /**
@@ -19,6 +20,8 @@ class Remove extends Base
     protected $action = 'remove';
 
     /**
+     * @param bool $dev
+     *
      * @return $this
      */
     public function dev($dev = true)
@@ -30,6 +33,8 @@ class Remove extends Base
     }
 
     /**
+     * @param bool $noProgress
+     *
      * @return $this
      */
     public function noProgress($noProgress = true)
@@ -41,6 +46,8 @@ class Remove extends Base
     }
 
     /**
+     * @param bool $noUpdate
+     *
      * @return $this
      */
     public function noUpdate($noUpdate = true)
@@ -52,6 +59,8 @@ class Remove extends Base
     }
 
     /**
+     * @param bool $updateNoDev
+     *
      * @return $this
      */
     public function updateNoDev($updateNoDev = true)
@@ -63,6 +72,8 @@ class Remove extends Base
     }
 
     /**
+     * @param bool $updateWithDependencies
+     *
      * @return $this
      */
     public function noUpdateWithDependencies($updateWithDependencies = true)

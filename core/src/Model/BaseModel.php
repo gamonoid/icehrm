@@ -6,6 +6,7 @@ use Classes\IceResponse;
 use Classes\ModuleAccess;
 use Classes\ModuleAccessService;
 use Modules\Common\Model\Module;
+use Users\Common\Model\UserRole;
 use Utils\LogManager;
 
 class BaseModel extends \ADOdb_Active_Record
@@ -29,21 +30,21 @@ class BaseModel extends \ADOdb_Active_Record
         return array("get","element","save","delete");
     }
 
-    private function getRestrictedAccess($userRoles, $allowedAccessMatrix)
+    public function getMatchingUserRoles($userRoles)
     {
         if (empty($userRoles)) {
-            return $this->getDefaultAccessLevel();
+            return false;
         }
 
         $userRoles = json_decode($userRoles, true);
 
         if (empty($userRoles)) {
-            return $this->getDefaultAccessLevel();
+            return false;
         }
 
         $moduleAccessData = $this->getModuleAccess();
         if (empty($moduleAccessData)) {
-            return $this->getDefaultAccessLevel();
+            return false;
         }
 
         $modules = [];
@@ -56,35 +57,69 @@ class BaseModel extends \ADOdb_Active_Record
         }
 
         if (empty($modules)) {
-            return $this->getDefaultAccessLevel();
+            return false;
         }
 
         foreach ($modules as $module) {
             if (empty($module->user_roles) || $module->user_roles == '[]') {
                 continue;
             }
-
-            if (count(array_intersect($userRoles, json_decode($module->user_roles, true))) > 0) {
-                return $allowedAccessMatrix;
+            $matchingUserRoles = array_intersect($userRoles, json_decode($module->user_roles, true));
+            if (count($matchingUserRoles) > 0) {
+                return $matchingUserRoles;
             }
         }
 
-        return $this->getDefaultAccessLevel();
+        return false;
     }
 
-    public function getRestrictedAdminAccess($userRoles)
+    public function getRoleBasedAccess($userLevel, $userRoles)
     {
-        return $this->getRestrictedAccess($userRoles, $this->getAdminAccess());
+        $permissionMethod = "get".str_replace(' ', '', $userLevel)."Access";
+        $allowedAccessMatrix = $this->$permissionMethod();
+
+        $userRoles = $this->getMatchingUserRoles($userRoles);
+        if ($userRoles === false) {
+            return $allowedAccessMatrix === null ? $this->getDefaultAccessLevel() : $allowedAccessMatrix;
+        }
+
+        $permissions = $allowedAccessMatrix === null ? $this->getDefaultAccessLevel() : $allowedAccessMatrix;
+        ;
+        foreach ($userRoles as $role) {
+            $userRole = new UserRole();
+            $userRole->Load('id = ?', [$role]);
+            try {
+                $userRolePermissions = json_decode($userRole->additional_permissions);
+                foreach ($userRolePermissions as $tablePermissions) {
+                    if ($tablePermissions->table === $this->table) {
+                        $permissions = array_unique(
+                            array_merge(
+                                $permissions,
+                                json_decode($tablePermissions->permissions, true)
+                            )
+                        );
+                    }
+                }
+            } catch (\Exception $e) {
+            }
+        }
+
+        return $permissions;
     }
 
-    public function getRestrictedManagerAccess($userRoles)
+    public function getRestrictedAdminAccess()
     {
-        return $this->getRestrictedAccess($userRoles, $this->getAdminAccess());
+        return $this->getAdminAccess();
     }
 
-    public function getRestrictedEmployeeAccess($userRoles)
+    public function getRestrictedManagerAccess()
     {
-        return $this->getRestrictedAccess($userRoles, $this->getAdminAccess());
+        return $this->getManagerAccess();
+    }
+
+    public function getRestrictedEmployeeAccess()
+    {
+        return $this->getEmployeeAccess();
     }
 
     public function getManagerAccess()

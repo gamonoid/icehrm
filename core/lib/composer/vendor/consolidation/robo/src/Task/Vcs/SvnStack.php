@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Vcs;
 
 use Robo\Contract\CommandInterface;
@@ -34,7 +35,7 @@ class SvnStack extends CommandStack implements CommandInterface
     protected $stopOnFail = false;
 
     /**
-     * @var \Robo\Result
+     * {@inheritdoc}
      */
     protected $result;
 
@@ -60,7 +61,7 @@ class SvnStack extends CommandStack implements CommandInterface
      *
      * @param string $path
      *
-     * @return $this;
+     * @return $this
      */
     public function update($path = '')
     {

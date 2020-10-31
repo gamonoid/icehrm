@@ -19,6 +19,7 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1OriginalDetectIntent
 {
   public $payload;
   public $source;
+  public $version;
 
   public function setPayload($payload)
   {
@@ -35,5 +36,13 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1OriginalDetectIntent
   public function getSource()
   {
     return $this->source;
+  }
+  public function setVersion($version)
+  {
+    $this->version = $version;
+  }
+  public function getVersion()
+  {
+    return $this->version;
   }
 }

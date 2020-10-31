@@ -21,6 +21,8 @@ class Google_Service_DLP_GooglePrivacyDlpV2PrimitiveTransformation extends Googl
   protected $bucketingConfigDataType = '';
   protected $characterMaskConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2CharacterMaskConfig';
   protected $characterMaskConfigDataType = '';
+  protected $cryptoDeterministicConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2CryptoDeterministicConfig';
+  protected $cryptoDeterministicConfigDataType = '';
   protected $cryptoHashConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2CryptoHashConfig';
   protected $cryptoHashConfigDataType = '';
   protected $cryptoReplaceFfxFpeConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig';
@@ -65,6 +67,20 @@ class Google_Service_DLP_GooglePrivacyDlpV2PrimitiveTransformation extends Googl
   public function getCharacterMaskConfig()
   {
     return $this->characterMaskConfig;
+  }
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2CryptoDeterministicConfig
+   */
+  public function setCryptoDeterministicConfig(Google_Service_DLP_GooglePrivacyDlpV2CryptoDeterministicConfig $cryptoDeterministicConfig)
+  {
+    $this->cryptoDeterministicConfig = $cryptoDeterministicConfig;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2CryptoDeterministicConfig
+   */
+  public function getCryptoDeterministicConfig()
+  {
+    return $this->cryptoDeterministicConfig;
   }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2CryptoHashConfig

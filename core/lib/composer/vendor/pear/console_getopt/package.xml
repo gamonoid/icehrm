@@ -21,13 +21,12 @@ short and long options.</description>
   <name>Greg Beaver</name>
   <user>cellog</user>
   <email>cellog@php.net</email>
-  <active>yes</active>
+  <active>no</active>
  </helper>
 
- <date>2015-07-20</date>
- <time>22:21:23</time>
+ <date>2019-11-20</date>
  <version>
-  <release>1.4.1</release>
+  <release>1.4.3</release>
   <api>1.4.0</api>
  </version>
  <stability>
@@ -37,7 +36,8 @@ short and long options.</description>
  <license uri="http://opensource.org/licenses/bsd-license.php">BSD-2-Clause</license>
 
  <notes>
-* Fix unit test on PHP 7 [cweiske]
+* PR #4:  Fix PHP 7.4 deprecation: array/string curly braces access
+* PR #5:  fix phplint warnings
  </notes>
 
  <contents>
@@ -75,6 +75,39 @@ short and long options.</description>
  <phprelease />
 
  <changelog>
+
+  <release>
+    <date>2019-11-20</date>
+    <version>
+     <release>1.4.3</release>
+     <api>1.4.0</api>
+    </version>
+    <stability>
+     <release>stable</release>
+     <api>stable</api>
+    </stability>
+    <license uri="http://opensource.org/licenses/bsd-license.php">BSD-2-Clause</license>
+    <notes>
+    * PR #4:  Fix PHP 7.4 deprecation: array/string curly braces access
+    * PR #5:  fix phplint warnings
+    </notes>
+  </release>
+
+  <release>
+    <date>2019-02-06</date>
+    <version>
+     <release>1.4.2</release>
+     <api>1.4.0</api>
+    </version>
+    <stability>
+     <release>stable</release>
+     <api>stable</api>
+    </stability>
+    <license uri="http://opensource.org/licenses/bsd-license.php">BSD-2-Clause</license>
+    <notes>
+    * Remove use of each(), which is removed in PHP 8
+    </notes>
+  </release>
 
   <release>
     <date>2015-07-20</date>

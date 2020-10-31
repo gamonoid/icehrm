@@ -15,17 +15,43 @@
  * the License.
  */
 
-class Google_Service_Translate_DetectLanguageRequest extends Google_Collection
+class Google_Service_Translate_DetectLanguageRequest extends Google_Model
 {
-  protected $collection_key = 'q';
-  public $q;
+  public $content;
+  public $labels;
+  public $mimeType;
+  public $model;
 
-  public function setQ($q)
+  public function setContent($content)
   {
-    $this->q = $q;
+    $this->content = $content;
   }
-  public function getQ()
+  public function getContent()
   {
-    return $this->q;
+    return $this->content;
+  }
+  public function setLabels($labels)
+  {
+    $this->labels = $labels;
+  }
+  public function getLabels()
+  {
+    return $this->labels;
+  }
+  public function setMimeType($mimeType)
+  {
+    $this->mimeType = $mimeType;
+  }
+  public function getMimeType()
+  {
+    return $this->mimeType;
+  }
+  public function setModel($model)
+  {
+    $this->model = $model;
+  }
+  public function getModel()
+  {
+    return $this->model;
   }
 }

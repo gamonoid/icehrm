@@ -25,7 +25,6 @@ use Google\Auth\Credentials\UserRefreshCredentials;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Ring\Client\StreamHandler;
-use GuzzleHttp\Psr7;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Log\LoggerInterface;
@@ -39,10 +38,10 @@ use Monolog\Handler\SyslogHandler as MonologSyslogHandler;
  */
 class Google_Client
 {
-  const LIBVER = "2.2.1";
+  const LIBVER = "2.7.2";
   const USER_AGENT_SUFFIX = "google-api-php-client/";
-  const OAUTH2_REVOKE_URI = 'https://accounts.google.com/o/oauth2/revoke';
-  const OAUTH2_TOKEN_URI = 'https://www.googleapis.com/oauth2/v4/token';
+  const OAUTH2_REVOKE_URI = 'https://oauth2.googleapis.com/revoke';
+  const OAUTH2_TOKEN_URI = 'https://oauth2.googleapis.com/token';
   const OAUTH2_AUTH_URL = 'https://accounts.google.com/o/oauth2/auth';
   const API_BASE_PATH = 'https://www.googleapis.com';
 
@@ -103,6 +102,16 @@ class Google_Client
           // https://developers.google.com/console
           'client_id' => '',
           'client_secret' => '',
+
+          // Path to JSON credentials or an array representing those credentials
+          // @see Google_Client::setAuthConfig
+          'credentials' => null,
+          // @see Google_Client::setScopes
+          'scopes' => null,
+          // Sets X-Goog-User-Project, which specifies a user project to bill
+          // for access charges associated with the request
+          'quota_project' => null,
+
           'redirect_uri' => null,
           'state' => null,
 
@@ -131,6 +140,7 @@ class Google_Client
           // Task Runner retry configuration
           // @see Google_Task_Runner
           'retry' => array(),
+          'retry_map' => null,
 
           // cache config for downstream auth caching
           'cache_config' => [],
@@ -142,9 +152,36 @@ class Google_Client
           // Service class used in Google_Client::verifyIdToken.
           // Explicitly pass this in to avoid setting JWT::$leeway
           'jwt' => null,
+
+          // Setting api_format_v2 will return more detailed error messages
+          // from certain APIs.
+          'api_format_v2' => false
         ],
         $config
     );
+
+    if (!is_null($this->config['credentials'])) {
+      $this->setAuthConfig($this->config['credentials']);
+      unset($this->config['credentials']);
+    }
+
+    if (!is_null($this->config['scopes'])) {
+      $this->setScopes($this->config['scopes']);
+      unset($this->config['scopes']);
+    }
+
+    // Set a default token callback to update the in-memory access token
+    if (is_null($this->config['token_callback'])) {
+      $this->config['token_callback'] = function ($cacheKey, $newAccessToken) {
+        $this->setAccessToken(
+            [
+              'access_token' => $newAccessToken,
+              'expires_in' => 3600, // Google default
+              'created' => time(),
+            ]
+        );
+      };
+    }
   }
 
   /**
@@ -211,7 +248,7 @@ class Google_Client
 
   /**
    * Fetches a fresh access token with a given assertion token.
-   * @param $assertionCredentials optional.
+   * @param ClientInterface $authHttp optional.
    * @return array access token
    */
   public function fetchAccessTokenWithAssertion(ClientInterface $authHttp = null)
@@ -412,6 +449,17 @@ class Google_Client
   }
 
   /**
+   * Set the access token used for requests.
+   *
+   * Note that at the time requests are sent, tokens are cached. A token will be
+   * cached for each combination of service and authentication scopes. If a
+   * cache pool is not provided, creating a new instance of the client will
+   * allow modification of access tokens. If a persistent cache pool is
+   * provided, in order to change the access token, you must clear the cached
+   * token by calling `$client->getCache()->clear()`. (Use caution in this case,
+   * as calling `clear()` will remove all cache items, including any items not
+   * related to Google API PHP Client.)
+   *
    * @param string|array $token
    * @throws InvalidArgumentException
    */
@@ -441,11 +489,16 @@ class Google_Client
     return $this->token;
   }
 
+  /**
+   * @return string|null
+   */
   public function getRefreshToken()
   {
     if (isset($this->token['refresh_token'])) {
       return $this->token['refresh_token'];
     }
+
+    return null;
   }
 
   /**
@@ -480,6 +533,9 @@ class Google_Client
     return ($created + ($this->token['expires_in'] - 30)) < time();
   }
 
+  /**
+   * @deprecated See UPGRADING.md for more information
+   */
   public function getAuth()
   {
     throw new BadMethodCallException(
@@ -487,6 +543,9 @@ class Google_Client
     );
   }
 
+  /**
+   * @deprecated See UPGRADING.md for more information
+   */
   public function setAuth($auth)
   {
     throw new BadMethodCallException(
@@ -626,6 +685,9 @@ class Google_Client
    * If no value is specified and the user has not previously authorized
    * access, then the user is shown a consent screen.
    * @param $prompt string
+   *  {@code "none"} Do not display any authentication or consent screens. Must not be specified with other values.
+   *  {@code "consent"} Prompt the user for consent.
+   *  {@code "select_account"} Prompt the user to select an account.
    */
   public function setPrompt($prompt)
   {
@@ -667,7 +729,7 @@ class Google_Client
    * Revoke an OAuth2 access token or refresh token. This method will revoke the current access
    * token, if a token isn't provided.
    *
-   * @param string|null $token The token (access token or a refresh token) that should be revoked.
+   * @param string|array|null $token The token (access token or a refresh token) that should be revoked.
    * @return boolean Returns True if the revocation was successful, otherwise False.
    */
   public function revokeToken($token = null)
@@ -683,7 +745,8 @@ class Google_Client
    * Verify an id_token. This method will verify the current id_token, if one
    * isn't provided.
    *
-   * @throws LogicException
+   * @throws LogicException If no token was provided and no token was set using `setAccessToken`.
+   * @throws UnexpectedValueException If the token is not a valid JWT.
    * @param string|null $idToken The token (id_token) that should be verified.
    * @return array|false Returns the token payload as an array if the verification was
    * successful, false otherwise.
@@ -715,13 +778,16 @@ class Google_Client
   /**
    * Set the scopes to be requested. Must be called before createAuthUrl().
    * Will remove any previously configured scopes.
-   * @param array $scopes, ie: array('https://www.googleapis.com/auth/plus.login',
-   * 'https://www.googleapis.com/auth/moderator')
+   * @param string|array $scope_or_scopes, ie:
+   *    array(
+   *        'https://www.googleapis.com/auth/plus.login',
+   *        'https://www.googleapis.com/auth/moderator'
+   *    );
    */
-  public function setScopes($scopes)
+  public function setScopes($scope_or_scopes)
   {
     $this->requestedScopes = array();
-    $this->addScope($scopes);
+    $this->addScope($scope_or_scopes);
   }
 
   /**
@@ -753,7 +819,7 @@ class Google_Client
   }
 
   /**
-   * @return array
+   * @return string|null
    * @visible For Testing
    */
   public function prepareScopes()
@@ -769,23 +835,49 @@ class Google_Client
    * Helper method to execute deferred HTTP requests.
    *
    * @param $request Psr\Http\Message\RequestInterface|Google_Http_Batch
+   * @param string $expectedClass
    * @throws Google_Exception
    * @return object of the type of the expected class or Psr\Http\Message\ResponseInterface.
    */
   public function execute(RequestInterface $request, $expectedClass = null)
   {
-    $request = $request->withHeader(
-        'User-Agent',
-        $this->config['application_name']
-        . " " . self::USER_AGENT_SUFFIX
-        . $this->getLibraryVersion()
-    );
+    $request = $request
+        ->withHeader(
+            'User-Agent',
+            sprintf(
+                '%s %s%s',
+                $this->config['application_name'],
+                self::USER_AGENT_SUFFIX,
+                $this->getLibraryVersion()
+            )
+        )
+        ->withHeader(
+            'x-goog-api-client',
+            sprintf(
+                'gl-php/%s gdcl/%s',
+                phpversion(),
+                $this->getLibraryVersion()
+            )
+        );
+
+    if ($this->config['api_format_v2']) {
+        $request = $request->withHeader(
+            'X-GOOG-API-FORMAT-VERSION',
+            2
+        );
+    }
 
     // call the authorize method
     // this is where most of the grunt work is done
     $http = $this->authorize();
 
-    return Google_Http_REST::execute($http, $request, $expectedClass, $this->config['retry']);
+    return Google_Http_REST::execute(
+        $http,
+        $request,
+        $expectedClass,
+        $this->config['retry'],
+        $this->config['retry_map']
+    );
   }
 
   /**
@@ -846,7 +938,7 @@ class Google_Client
   {
     if (is_string($config)) {
       if (!file_exists($config)) {
-        throw new InvalidArgumentException('file does not exist');
+        throw new InvalidArgumentException(sprintf('file "%s" does not exist', $config));
       }
 
       $json = file_get_contents($config);
@@ -886,7 +978,7 @@ class Google_Client
   /**
    * Use when the service account has been delegated domain wide access.
    *
-   * @param string subject an email address account to impersonate
+   * @param string $subject an email address account to impersonate
    */
   public function setSubject($subject)
   {
@@ -968,7 +1060,7 @@ class Google_Client
   }
 
   /**
-   * @return Google\Auth\CacheInterface Cache implementation
+   * @param array $cacheConfig
    */
   public function setCacheConfig(array $cacheConfig)
   {
@@ -1035,24 +1127,43 @@ class Google_Client
     return $this->http;
   }
 
+  /**
+   * Set the API format version.
+   *
+   * `true` will use V2, which may return more useful error messages.
+   *
+   * @param bool $value
+   */
+  public function setApiFormatV2($value)
+  {
+    $this->config['api_format_v2'] = (bool) $value;
+  }
+
   protected function createDefaultHttpClient()
   {
-    $options = ['exceptions' => false];
+    $guzzleVersion = null;
+    if (defined('\GuzzleHttp\ClientInterface::MAJOR_VERSION')) {
+      $guzzleVersion = ClientInterface::MAJOR_VERSION;
+    } elseif (defined('\GuzzleHttp\ClientInterface::VERSION')) {
+      $guzzleVersion = (int)substr(ClientInterface::VERSION, 0, 1);
+    }
 
-    $version = ClientInterface::VERSION;
-    if ('5' === $version[0]) {
+    $options = ['exceptions' => false];
+    if (5 === $guzzleVersion) {
       $options = [
         'base_url' => $this->config['base_path'],
         'defaults' => $options,
       ];
       if ($this->isAppEngine()) {
         // set StreamHandler on AppEngine by default
-        $options['handler']  = new StreamHandler();
+        $options['handler'] = new StreamHandler();
         $options['defaults']['verify'] = '/etc/ca-certificates.crt';
       }
-    } else {
-      // guzzle 6
+    } elseif (6 === $guzzleVersion || 7 === $guzzleVersion) {
+      // guzzle 6 or 7
       $options['base_uri'] = $this->config['base_path'];
+    } else {
+      throw new LogicException('Could not find supported version of Guzzle.');
     }
 
     return new Client($options);
@@ -1071,10 +1182,20 @@ class Google_Client
         'client_email' => $this->config['client_email'],
         'private_key' => $signingKey,
         'type' => 'service_account',
+        'quota_project_id' => $this->config['quota_project'],
       );
-      $credentials = CredentialsLoader::makeCredentials($scopes, $serviceAccountCredentials);
+      $credentials = CredentialsLoader::makeCredentials(
+          $scopes,
+          $serviceAccountCredentials
+      );
     } else {
-      $credentials = ApplicationDefaultCredentials::getCredentials($scopes);
+      $credentials = ApplicationDefaultCredentials::getCredentials(
+          $scopes,
+          null,
+          null,
+          null,
+          $this->config['quota_project']
+      );
     }
 
     // for service account domain-wide authority (impersonating a user)

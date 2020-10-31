@@ -26,7 +26,7 @@
 class Google_Service_Calendar_Resource_CalendarList extends Google_Service_Resource
 {
   /**
-   * Deletes an entry on the user's calendar list. (calendarList.delete)
+   * Removes a calendar from the user's calendar list. (calendarList.delete)
    *
    * @param string $calendarId Calendar identifier. To retrieve calendar IDs call
    * the calendarList.list method. If you want to access the primary calendar of
@@ -40,7 +40,7 @@ class Google_Service_Calendar_Resource_CalendarList extends Google_Service_Resou
     return $this->call('delete', array($params));
   }
   /**
-   * Returns an entry on the user's calendar list. (calendarList.get)
+   * Returns a calendar from the user's calendar list. (calendarList.get)
    *
    * @param string $calendarId Calendar identifier. To retrieve calendar IDs call
    * the calendarList.list method. If you want to access the primary calendar of
@@ -55,7 +55,8 @@ class Google_Service_Calendar_Resource_CalendarList extends Google_Service_Resou
     return $this->call('get', array($params), "Google_Service_Calendar_CalendarListEntry");
   }
   /**
-   * Adds an entry to the user's calendar list. (calendarList.insert)
+   * Inserts an existing calendar into the user's calendar list.
+   * (calendarList.insert)
    *
    * @param Google_Service_Calendar_CalendarListEntry $postBody
    * @param array $optParams Optional parameters.
@@ -73,21 +74,20 @@ class Google_Service_Calendar_Resource_CalendarList extends Google_Service_Resou
     return $this->call('insert', array($params), "Google_Service_Calendar_CalendarListEntry");
   }
   /**
-   * Returns entries on the user's calendar list. (calendarList.listCalendarList)
+   * Returns the calendars on the user's calendar list.
+   * (calendarList.listCalendarList)
    *
    * @param array $optParams Optional parameters.
    *
+   * @opt_param bool showHidden Whether to show hidden entries. Optional. The
+   * default is False.
+   * @opt_param string minAccessRole The minimum access role for the user in the
+   * returned entries. Optional. The default is no restriction.
    * @opt_param int maxResults Maximum number of entries returned on one result
    * page. By default the value is 100 entries. The page size can never be larger
    * than 250 entries. Optional.
-   * @opt_param string minAccessRole The minimum access role for the user in the
-   * returned entries. Optional. The default is no restriction.
    * @opt_param string pageToken Token specifying which result page to return.
    * Optional.
-   * @opt_param bool showDeleted Whether to include deleted calendar list entries
-   * in the result. Optional. The default is False.
-   * @opt_param bool showHidden Whether to show hidden entries. Optional. The
-   * default is False.
    * @opt_param string syncToken Token obtained from the nextSyncToken field
    * returned on the last page of results from the previous list request. It makes
    * the result of this list request contain only entries that have changed since
@@ -100,6 +100,8 @@ class Google_Service_Calendar_Resource_CalendarList extends Google_Service_Resou
    * 410 GONE response code and the client should clear its storage and perform a
    * full synchronization without any syncToken. Learn more about incremental
    * synchronization. Optional. The default is to return all entries.
+   * @opt_param bool showDeleted Whether to include deleted calendar list entries
+   * in the result. Optional. The default is False.
    * @return Google_Service_Calendar_CalendarList
    */
   public function listCalendarList($optParams = array())
@@ -109,8 +111,8 @@ class Google_Service_Calendar_Resource_CalendarList extends Google_Service_Resou
     return $this->call('list', array($params), "Google_Service_Calendar_CalendarList");
   }
   /**
-   * Updates an entry on the user's calendar list. This method supports patch
-   * semantics. (calendarList.patch)
+   * Updates an existing calendar on the user's calendar list. This method
+   * supports patch semantics. (calendarList.patch)
    *
    * @param string $calendarId Calendar identifier. To retrieve calendar IDs call
    * the calendarList.list method. If you want to access the primary calendar of
@@ -131,7 +133,8 @@ class Google_Service_Calendar_Resource_CalendarList extends Google_Service_Resou
     return $this->call('patch', array($params), "Google_Service_Calendar_CalendarListEntry");
   }
   /**
-   * Updates an entry on the user's calendar list. (calendarList.update)
+   * Updates an existing calendar on the user's calendar list.
+   * (calendarList.update)
    *
    * @param string $calendarId Calendar identifier. To retrieve calendar IDs call
    * the calendarList.list method. If you want to access the primary calendar of
@@ -157,17 +160,15 @@ class Google_Service_Calendar_Resource_CalendarList extends Google_Service_Resou
    * @param Google_Service_Calendar_Channel $postBody
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string pageToken Token specifying which result page to return.
+   * Optional.
    * @opt_param int maxResults Maximum number of entries returned on one result
    * page. By default the value is 100 entries. The page size can never be larger
    * than 250 entries. Optional.
    * @opt_param string minAccessRole The minimum access role for the user in the
    * returned entries. Optional. The default is no restriction.
-   * @opt_param string pageToken Token specifying which result page to return.
-   * Optional.
    * @opt_param bool showDeleted Whether to include deleted calendar list entries
    * in the result. Optional. The default is False.
-   * @opt_param bool showHidden Whether to show hidden entries. Optional. The
-   * default is False.
    * @opt_param string syncToken Token obtained from the nextSyncToken field
    * returned on the last page of results from the previous list request. It makes
    * the result of this list request contain only entries that have changed since
@@ -180,6 +181,8 @@ class Google_Service_Calendar_Resource_CalendarList extends Google_Service_Resou
    * 410 GONE response code and the client should clear its storage and perform a
    * full synchronization without any syncToken. Learn more about incremental
    * synchronization. Optional. The default is to return all entries.
+   * @opt_param bool showHidden Whether to show hidden entries. Optional. The
+   * default is False.
    * @return Google_Service_Calendar_Channel
    */
   public function watch(Google_Service_Calendar_Channel $postBody, $optParams = array())

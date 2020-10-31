@@ -28,7 +28,7 @@ class Google_Service_Groupssettings_Resource_Groups extends Google_Service_Resou
   /**
    * Gets one resource by id. (groups.get)
    *
-   * @param string $groupUniqueId The resource ID
+   * @param string $groupUniqueId The group's email address.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Groupssettings_Groups
    */
@@ -42,7 +42,7 @@ class Google_Service_Groupssettings_Resource_Groups extends Google_Service_Resou
    * Updates an existing resource. This method supports patch semantics.
    * (groups.patch)
    *
-   * @param string $groupUniqueId The resource ID
+   * @param string $groupUniqueId The group's email address.
    * @param Google_Service_Groupssettings_Groups $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Groupssettings_Groups
@@ -56,7 +56,7 @@ class Google_Service_Groupssettings_Resource_Groups extends Google_Service_Resou
   /**
    * Updates an existing resource. (groups.update)
    *
-   * @param string $groupUniqueId The resource ID
+   * @param string $groupUniqueId The group's email address.
    * @param Google_Service_Groupssettings_Groups $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Groupssettings_Groups

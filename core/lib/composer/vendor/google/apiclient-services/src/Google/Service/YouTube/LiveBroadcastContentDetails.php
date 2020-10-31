@@ -21,6 +21,7 @@ class Google_Service_YouTube_LiveBroadcastContentDetails extends Google_Model
   public $boundStreamLastUpdateTimeMs;
   public $closedCaptionsType;
   public $enableAutoStart;
+  public $enableAutoStop;
   public $enableClosedCaptions;
   public $enableContentEncryption;
   public $enableDvr;
@@ -33,7 +34,6 @@ class Google_Service_YouTube_LiveBroadcastContentDetails extends Google_Model
   public $projection;
   public $recordFromStart;
   public $startWithSlate;
-  public $stereoLayout;
 
   public function setBoundStreamId($boundStreamId)
   {
@@ -66,6 +66,14 @@ class Google_Service_YouTube_LiveBroadcastContentDetails extends Google_Model
   public function getEnableAutoStart()
   {
     return $this->enableAutoStart;
+  }
+  public function setEnableAutoStop($enableAutoStop)
+  {
+    $this->enableAutoStop = $enableAutoStop;
+  }
+  public function getEnableAutoStop()
+  {
+    return $this->enableAutoStop;
   }
   public function setEnableClosedCaptions($enableClosedCaptions)
   {
@@ -160,13 +168,5 @@ class Google_Service_YouTube_LiveBroadcastContentDetails extends Google_Model
   public function getStartWithSlate()
   {
     return $this->startWithSlate;
-  }
-  public function setStereoLayout($stereoLayout)
-  {
-    $this->stereoLayout = $stereoLayout;
-  }
-  public function getStereoLayout()
-  {
-    return $this->stereoLayout;
   }
 }

@@ -26,8 +26,9 @@
 class Google_Service_Logging_Resource_Entries extends Google_Service_Resource
 {
   /**
-   * Lists log entries. Use this method to retrieve log entries from Stackdriver
-   * Logging. For ways to export log entries, see Exporting Logs.
+   * Lists log entries. Use this method to retrieve log entries that originated
+   * from a project/folder/organization/billing account. For ways to export log
+   * entries, see Exporting Logs (https://cloud.google.com/logging/docs/export).
    * (entries.listEntries)
    *
    * @param Google_Service_Logging_ListLogEntriesRequest $postBody
@@ -41,12 +42,12 @@ class Google_Service_Logging_Resource_Entries extends Google_Service_Resource
     return $this->call('list', array($params), "Google_Service_Logging_ListLogEntriesResponse");
   }
   /**
-   * Writes log entries to Stackdriver Logging. This API method is the only way to
-   * send log entries to Stackdriver Logging. This method is used, directly or
-   * indirectly, by the Stackdriver Logging agent (fluentd) and all logging
-   * libraries configured to use Stackdriver Logging. A single request may contain
-   * log entries for a maximum of 1000 different resources (projects,
-   * organizations, billing accounts or folders) (entries.write)
+   * Writes log entries to Logging. This API method is the only way to send log
+   * entries to Logging. This method is used, directly or indirectly, by the
+   * Logging agent (fluentd) and all logging libraries configured to use Logging.
+   * A single request may contain log entries for a maximum of 1000 different
+   * resources (projects, organizations, billing accounts or folders)
+   * (entries.write)
    *
    * @param Google_Service_Logging_WriteLogEntriesRequest $postBody
    * @param array $optParams Optional parameters.

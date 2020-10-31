@@ -57,6 +57,9 @@ class ReorderFields
 
     protected function getSelectedFieldKeys($fields, $fieldLabels)
     {
+        if (empty($fieldLabels)) {
+            return [];
+        }
         if (is_string($fields)) {
             $fields = explode(',', $fields);
         }

@@ -33,25 +33,19 @@ class Google_Service_Pagespeedonline_Resource_Pagespeedapi extends Google_Servic
    * @param string $url The URL to fetch and analyze
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool filter_third_party_resources Indicates if third party
-   * resources should be filtered out before PageSpeed analysis.
+   * @opt_param string category A Lighthouse category to run; if none are given,
+   * only Performance category will be run
    * @opt_param string locale The locale used to localize formatted results
-   * @opt_param string rule A PageSpeed rule to run; if none are given, all rules
-   * are run
-   * @opt_param bool screenshot Indicates if binary data containing a screenshot
-   * should be included
-   * @opt_param bool snapshots Indicates if binary data containing snapshot images
-   * should be included
    * @opt_param string strategy The analysis strategy (desktop or mobile) to use,
    * and desktop is the default
    * @opt_param string utm_campaign Campaign name for analytics.
    * @opt_param string utm_source Campaign source for analytics.
-   * @return Google_Service_Pagespeedonline_PagespeedApiPagespeedResponseV4
+   * @return Google_Service_Pagespeedonline_PagespeedApiPagespeedResponseV5
    */
   public function runpagespeed($url, $optParams = array())
   {
     $params = array('url' => $url);
     $params = array_merge($params, $optParams);
-    return $this->call('runpagespeed', array($params), "Google_Service_Pagespeedonline_PagespeedApiPagespeedResponseV4");
+    return $this->call('runpagespeed', array($params), "Google_Service_Pagespeedonline_PagespeedApiPagespeedResponseV5");
   }
 }

@@ -46,7 +46,7 @@ class CommandTest extends TestCase
      */
     public function testCommandNameCannotBeEmpty()
     {
-        (new Application())->add(new Command());
+        new Command();
     }
 
     public function testSetApplication()

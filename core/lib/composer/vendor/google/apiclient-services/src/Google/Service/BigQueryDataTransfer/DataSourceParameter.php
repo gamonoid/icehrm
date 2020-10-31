@@ -19,6 +19,7 @@ class Google_Service_BigQueryDataTransfer_DataSourceParameter extends Google_Col
 {
   protected $collection_key = 'fields';
   public $allowedValues;
+  public $deprecated;
   public $description;
   public $displayName;
   protected $fieldsType = 'Google_Service_BigQueryDataTransfer_DataSourceParameter';
@@ -42,6 +43,14 @@ class Google_Service_BigQueryDataTransfer_DataSourceParameter extends Google_Col
   public function getAllowedValues()
   {
     return $this->allowedValues;
+  }
+  public function setDeprecated($deprecated)
+  {
+    $this->deprecated = $deprecated;
+  }
+  public function getDeprecated()
+  {
+    return $this->deprecated;
   }
   public function setDescription($description)
   {

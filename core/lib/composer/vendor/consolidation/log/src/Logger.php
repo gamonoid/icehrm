@@ -22,7 +22,7 @@ use Symfony\Component\Console\Input\StringInput;
  *
  * @author Greg Anderson <greg.1.anderson@greenknowe.org>
  */
-class Logger extends AbstractLogger // extends ConsoleLogger
+class Logger extends AbstractLogger implements StylableLoggerInterface // extends ConsoleLogger
 {
     /**
      * @var OutputInterface
@@ -229,7 +229,6 @@ class Logger extends AbstractLogger // extends ConsoleLogger
      * Send all log messages to stderr. Symfony should have the same default.
      * See: https://en.wikipedia.org/wiki/Standard_streams
      *   "Standard error was added to Unix after several wasted phototypesetting runs ended with error messages being typeset instead of displayed on the user's terminal."
-     *
      */
     private $formatLevelMap = [
         LogLevel::EMERGENCY => self::ERROR,

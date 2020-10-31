@@ -17,12 +17,37 @@
 
 class Google_Service_Dialogflow_GoogleCloudDialogflowV2DetectIntentResponse extends Google_Model
 {
+  public $outputAudio;
+  protected $outputAudioConfigType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2OutputAudioConfig';
+  protected $outputAudioConfigDataType = '';
   protected $queryResultType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2QueryResult';
   protected $queryResultDataType = '';
   public $responseId;
   protected $webhookStatusType = 'Google_Service_Dialogflow_GoogleRpcStatus';
   protected $webhookStatusDataType = '';
 
+  public function setOutputAudio($outputAudio)
+  {
+    $this->outputAudio = $outputAudio;
+  }
+  public function getOutputAudio()
+  {
+    return $this->outputAudio;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2OutputAudioConfig
+   */
+  public function setOutputAudioConfig(Google_Service_Dialogflow_GoogleCloudDialogflowV2OutputAudioConfig $outputAudioConfig)
+  {
+    $this->outputAudioConfig = $outputAudioConfig;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2OutputAudioConfig
+   */
+  public function getOutputAudioConfig()
+  {
+    return $this->outputAudioConfig;
+  }
   /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2QueryResult
    */

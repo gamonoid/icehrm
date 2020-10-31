@@ -17,13 +17,35 @@
 
 class Google_Service_Compute_PathMatcher extends Google_Collection
 {
-  protected $collection_key = 'pathRules';
+  protected $collection_key = 'routeRules';
+  protected $defaultRouteActionType = 'Google_Service_Compute_HttpRouteAction';
+  protected $defaultRouteActionDataType = '';
   public $defaultService;
+  protected $defaultUrlRedirectType = 'Google_Service_Compute_HttpRedirectAction';
+  protected $defaultUrlRedirectDataType = '';
   public $description;
+  protected $headerActionType = 'Google_Service_Compute_HttpHeaderAction';
+  protected $headerActionDataType = '';
   public $name;
   protected $pathRulesType = 'Google_Service_Compute_PathRule';
   protected $pathRulesDataType = 'array';
+  protected $routeRulesType = 'Google_Service_Compute_HttpRouteRule';
+  protected $routeRulesDataType = 'array';
 
+  /**
+   * @param Google_Service_Compute_HttpRouteAction
+   */
+  public function setDefaultRouteAction(Google_Service_Compute_HttpRouteAction $defaultRouteAction)
+  {
+    $this->defaultRouteAction = $defaultRouteAction;
+  }
+  /**
+   * @return Google_Service_Compute_HttpRouteAction
+   */
+  public function getDefaultRouteAction()
+  {
+    return $this->defaultRouteAction;
+  }
   public function setDefaultService($defaultService)
   {
     $this->defaultService = $defaultService;
@@ -32,6 +54,20 @@ class Google_Service_Compute_PathMatcher extends Google_Collection
   {
     return $this->defaultService;
   }
+  /**
+   * @param Google_Service_Compute_HttpRedirectAction
+   */
+  public function setDefaultUrlRedirect(Google_Service_Compute_HttpRedirectAction $defaultUrlRedirect)
+  {
+    $this->defaultUrlRedirect = $defaultUrlRedirect;
+  }
+  /**
+   * @return Google_Service_Compute_HttpRedirectAction
+   */
+  public function getDefaultUrlRedirect()
+  {
+    return $this->defaultUrlRedirect;
+  }
   public function setDescription($description)
   {
     $this->description = $description;
@@ -39,6 +75,20 @@ class Google_Service_Compute_PathMatcher extends Google_Collection
   public function getDescription()
   {
     return $this->description;
+  }
+  /**
+   * @param Google_Service_Compute_HttpHeaderAction
+   */
+  public function setHeaderAction(Google_Service_Compute_HttpHeaderAction $headerAction)
+  {
+    $this->headerAction = $headerAction;
+  }
+  /**
+   * @return Google_Service_Compute_HttpHeaderAction
+   */
+  public function getHeaderAction()
+  {
+    return $this->headerAction;
   }
   public function setName($name)
   {
@@ -61,5 +111,19 @@ class Google_Service_Compute_PathMatcher extends Google_Collection
   public function getPathRules()
   {
     return $this->pathRules;
+  }
+  /**
+   * @param Google_Service_Compute_HttpRouteRule
+   */
+  public function setRouteRules($routeRules)
+  {
+    $this->routeRules = $routeRules;
+  }
+  /**
+   * @return Google_Service_Compute_HttpRouteRule
+   */
+  public function getRouteRules()
+  {
+    return $this->routeRules;
   }
 }

@@ -22,7 +22,6 @@ class Google_Service_CloudTasks_RetryConfig extends Google_Model
   public $maxDoublings;
   public $maxRetryDuration;
   public $minBackoff;
-  public $unlimitedAttempts;
 
   public function setMaxAttempts($maxAttempts)
   {
@@ -63,13 +62,5 @@ class Google_Service_CloudTasks_RetryConfig extends Google_Model
   public function getMinBackoff()
   {
     return $this->minBackoff;
-  }
-  public function setUnlimitedAttempts($unlimitedAttempts)
-  {
-    $this->unlimitedAttempts = $unlimitedAttempts;
-  }
-  public function getUnlimitedAttempts()
-  {
-    return $this->unlimitedAttempts;
   }
 }

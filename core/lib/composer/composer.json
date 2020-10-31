@@ -1,4 +1,11 @@
 {
+    "config": {
+      "bin-dir": "../../../bin",
+      "process-timeout": 500,
+      "platform": {
+        "php": "7.0"
+      }
+    },
 	"require": {
     	"monolog/monolog": "^1.23",
         "twig/twig": "1.23.*",
@@ -12,10 +19,18 @@
 		"cebe/markdown": "^1.2",
 		"neitanod/forceutf8": "^2.0",
 		"google/apiclient": "^2.2",
-		"predis/predis": "^1.1"
+		"predis/predis": "^1.1",
+        "firebase/php-jwt": "^5.2",
+        "pimple/pimple": "^3.2"
     },
     "require-dev": {
-      "phpunit/phpunit": "~6"
+      "phpunit/phpunit": "~6",
+      "pdepend/pdepend": "2.5.*",
+      "phploc/phploc": "4.0.*",
+      "phpmd/phpmd": "2.3.*",
+      "sebastian/phpcpd": "1.4.*",
+      "mayflower/php-codebrowser": "~1.1",
+      "squizlabs/php_codesniffer": "2.*"
 	},
     "autoload": {
       "psr-4": {

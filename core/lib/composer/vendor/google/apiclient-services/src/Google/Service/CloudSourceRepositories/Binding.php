@@ -18,9 +18,25 @@
 class Google_Service_CloudSourceRepositories_Binding extends Google_Collection
 {
   protected $collection_key = 'members';
+  protected $conditionType = 'Google_Service_CloudSourceRepositories_Expr';
+  protected $conditionDataType = '';
   public $members;
   public $role;
 
+  /**
+   * @param Google_Service_CloudSourceRepositories_Expr
+   */
+  public function setCondition(Google_Service_CloudSourceRepositories_Expr $condition)
+  {
+    $this->condition = $condition;
+  }
+  /**
+   * @return Google_Service_CloudSourceRepositories_Expr
+   */
+  public function getCondition()
+  {
+    return $this->condition;
+  }
   public function setMembers($members)
   {
     $this->members = $members;

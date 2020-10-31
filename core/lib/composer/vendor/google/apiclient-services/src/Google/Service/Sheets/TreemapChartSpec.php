@@ -23,6 +23,8 @@ class Google_Service_Sheets_TreemapChartSpec extends Google_Model
   protected $colorScaleDataType = '';
   protected $headerColorType = 'Google_Service_Sheets_Color';
   protected $headerColorDataType = '';
+  protected $headerColorStyleType = 'Google_Service_Sheets_ColorStyle';
+  protected $headerColorStyleDataType = '';
   public $hideTooltips;
   public $hintedLevels;
   protected $labelsType = 'Google_Service_Sheets_ChartData';
@@ -78,6 +80,20 @@ class Google_Service_Sheets_TreemapChartSpec extends Google_Model
   public function getHeaderColor()
   {
     return $this->headerColor;
+  }
+  /**
+   * @param Google_Service_Sheets_ColorStyle
+   */
+  public function setHeaderColorStyle(Google_Service_Sheets_ColorStyle $headerColorStyle)
+  {
+    $this->headerColorStyle = $headerColorStyle;
+  }
+  /**
+   * @return Google_Service_Sheets_ColorStyle
+   */
+  public function getHeaderColorStyle()
+  {
+    return $this->headerColorStyle;
   }
   public function setHideTooltips($hideTooltips)
   {

@@ -21,6 +21,7 @@ class Google_Service_Dataflow_LeaseWorkItemRequest extends Google_Collection
   public $currentWorkerTime;
   public $location;
   public $requestedLeaseDuration;
+  public $unifiedWorkerRequest;
   public $workItemTypes;
   public $workerCapabilities;
   public $workerId;
@@ -48,6 +49,14 @@ class Google_Service_Dataflow_LeaseWorkItemRequest extends Google_Collection
   public function getRequestedLeaseDuration()
   {
     return $this->requestedLeaseDuration;
+  }
+  public function setUnifiedWorkerRequest($unifiedWorkerRequest)
+  {
+    $this->unifiedWorkerRequest = $unifiedWorkerRequest;
+  }
+  public function getUnifiedWorkerRequest()
+  {
+    return $this->unifiedWorkerRequest;
   }
   public function setWorkItemTypes($workItemTypes)
   {

@@ -39,6 +39,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    */
@@ -62,6 +64,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Google_Service_Storage_ObjectAccessControl
@@ -84,6 +88,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Google_Service_Storage_ObjectAccessControl
@@ -105,6 +111,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Google_Service_Storage_ObjectAccessControls
@@ -129,6 +137,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Google_Service_Storage_ObjectAccessControl
@@ -153,6 +163,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Google_Service_Storage_ObjectAccessControl

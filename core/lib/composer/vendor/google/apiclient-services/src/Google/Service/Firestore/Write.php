@@ -15,8 +15,9 @@
  * the License.
  */
 
-class Google_Service_Firestore_Write extends Google_Model
+class Google_Service_Firestore_Write extends Google_Collection
 {
+  protected $collection_key = 'updateTransforms';
   protected $currentDocumentType = 'Google_Service_Firestore_Precondition';
   protected $currentDocumentDataType = '';
   public $delete;
@@ -26,6 +27,8 @@ class Google_Service_Firestore_Write extends Google_Model
   protected $updateDataType = '';
   protected $updateMaskType = 'Google_Service_Firestore_DocumentMask';
   protected $updateMaskDataType = '';
+  protected $updateTransformsType = 'Google_Service_Firestore_FieldTransform';
+  protected $updateTransformsDataType = 'array';
 
   /**
    * @param Google_Service_Firestore_Precondition
@@ -90,5 +93,19 @@ class Google_Service_Firestore_Write extends Google_Model
   public function getUpdateMask()
   {
     return $this->updateMask;
+  }
+  /**
+   * @param Google_Service_Firestore_FieldTransform
+   */
+  public function setUpdateTransforms($updateTransforms)
+  {
+    $this->updateTransforms = $updateTransforms;
+  }
+  /**
+   * @return Google_Service_Firestore_FieldTransform
+   */
+  public function getUpdateTransforms()
+  {
+    return $this->updateTransforms;
   }
 }

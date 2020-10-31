@@ -22,6 +22,10 @@ abstract class AbstractModuleManager
     private $moduleType = null;
     private $actionManager = null;
 
+    public function initialize()
+    {
+    }
+
     /**
      * Override this method in module manager class to define user classes.
      * A user class is a class that is mapped to a table having a field named profile.

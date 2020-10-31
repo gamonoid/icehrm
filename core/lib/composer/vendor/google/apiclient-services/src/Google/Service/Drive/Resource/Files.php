@@ -27,24 +27,32 @@ class Google_Service_Drive_Resource_Files extends Google_Service_Resource
 {
   /**
    * Creates a copy of a file and applies any requested updates with patch
-   * semantics. (files.copy)
+   * semantics. Folders cannot be copied. (files.copy)
    *
    * @param string $fileId The ID of the file.
    * @param Google_Service_Drive_DriveFile $postBody
    * @param array $optParams Optional parameters.
    *
+   * @opt_param bool enforceSingleParent Set to true to opt in to API behavior
+   * that aims for all items to have exactly one parent. This parameter only takes
+   * effect if the item is not in a shared drive. Requests that specify more than
+   * one parent fail.
    * @opt_param bool ignoreDefaultVisibility Whether to ignore the domain's
    * default visibility settings for the created file. Domain administrators can
    * choose to make all uploaded files visible to the domain by default; this
    * parameter bypasses that behavior for the request. Permissions are still
    * inherited from parent folders.
+   * @opt_param string includePermissionsForView Specifies which additional view's
+   * permissions to include in the response. Only 'published' is supported.
    * @opt_param bool keepRevisionForever Whether to set the 'keepForever' field in
    * the new head revision. This is only applicable to files with binary content
-   * in Drive.
+   * in Google Drive. Only 200 revisions for the file can be kept forever. If the
+   * limit is reached, try deleting pinned revisions.
    * @opt_param string ocrLanguage A language hint for OCR processing during image
    * import (ISO 639-1 code).
-   * @opt_param bool supportsTeamDrives Whether the requesting application
-   * supports Team Drives.
+   * @opt_param bool supportsAllDrives Whether the requesting application supports
+   * both My Drives and shared drives.
+   * @opt_param bool supportsTeamDrives Deprecated use supportsAllDrives instead.
    * @return Google_Service_Drive_DriveFile
    */
   public function copy($fileId, Google_Service_Drive_DriveFile $postBody, $optParams = array())
@@ -59,18 +67,26 @@ class Google_Service_Drive_Resource_Files extends Google_Service_Resource
    * @param Google_Service_Drive_DriveFile $postBody
    * @param array $optParams Optional parameters.
    *
+   * @opt_param bool enforceSingleParent Set to true to opt in to API behavior
+   * that aims for all items to have exactly one parent. This parameter only takes
+   * effect if the item is not in a shared drive. Requests that specify more than
+   * one parent fail.
    * @opt_param bool ignoreDefaultVisibility Whether to ignore the domain's
    * default visibility settings for the created file. Domain administrators can
    * choose to make all uploaded files visible to the domain by default; this
    * parameter bypasses that behavior for the request. Permissions are still
    * inherited from parent folders.
+   * @opt_param string includePermissionsForView Specifies which additional view's
+   * permissions to include in the response. Only 'published' is supported.
    * @opt_param bool keepRevisionForever Whether to set the 'keepForever' field in
    * the new head revision. This is only applicable to files with binary content
-   * in Drive.
+   * in Google Drive. Only 200 revisions for the file can be kept forever. If the
+   * limit is reached, try deleting pinned revisions.
    * @opt_param string ocrLanguage A language hint for OCR processing during image
    * import (ISO 639-1 code).
-   * @opt_param bool supportsTeamDrives Whether the requesting application
-   * supports Team Drives.
+   * @opt_param bool supportsAllDrives Whether the requesting application supports
+   * both My Drives and shared drives.
+   * @opt_param bool supportsTeamDrives Deprecated use supportsAllDrives instead.
    * @opt_param bool useContentAsIndexableText Whether to use the uploaded content
    * as indexable text.
    * @return Google_Service_Drive_DriveFile
@@ -83,15 +99,21 @@ class Google_Service_Drive_Resource_Files extends Google_Service_Resource
   }
   /**
    * Permanently deletes a file owned by the user without moving it to the trash.
-   * If the file belongs to a Team Drive the user must be an organizer on the
+   * If the file belongs to a shared drive the user must be an organizer on the
    * parent. If the target is a folder, all descendants owned by the user are also
    * deleted. (files.delete)
    *
    * @param string $fileId The ID of the file.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool supportsTeamDrives Whether the requesting application
-   * supports Team Drives.
+   * @opt_param bool enforceSingleParent Set to true to opt in to API behavior
+   * that aims for all items to have exactly one parent. This parameter will only
+   * take effect if the item is not in a shared drive. If an item's last parent is
+   * deleted but the item itself is not, the item will be placed under its owner's
+   * root.
+   * @opt_param bool supportsAllDrives Whether the requesting application supports
+   * both My Drives and shared drives.
+   * @opt_param bool supportsTeamDrives Deprecated use supportsAllDrives instead.
    */
   public function delete($fileId, $optParams = array())
   {
@@ -103,6 +125,12 @@ class Google_Service_Drive_Resource_Files extends Google_Service_Resource
    * Permanently deletes all of the user's trashed files. (files.emptyTrash)
    *
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param bool enforceSingleParent Set to true to opt in to API behavior
+   * that aims for all items to have exactly one parent. This parameter will only
+   * take effect if the item is not in a shared drive. If an item's last parent is
+   * deleted but the item itself is not, the item will be placed under its owner's
+   * root.
    */
   public function emptyTrash($optParams = array())
   {
@@ -127,7 +155,7 @@ class Google_Service_Drive_Resource_Files extends Google_Service_Resource
     return $this->call('export', array($params));
   }
   /**
-   * Generates a set of file IDs which can be provided in create requests.
+   * Generates a set of file IDs which can be provided in create or copy requests.
    * (files.generateIds)
    *
    * @param array $optParams Optional parameters.
@@ -152,8 +180,11 @@ class Google_Service_Drive_Resource_Files extends Google_Service_Resource
    * @opt_param bool acknowledgeAbuse Whether the user is acknowledging the risk
    * of downloading known malware or other abusive files. This is only applicable
    * when alt=media.
-   * @opt_param bool supportsTeamDrives Whether the requesting application
-   * supports Team Drives.
+   * @opt_param string includePermissionsForView Specifies which additional view's
+   * permissions to include in the response. Only 'published' is supported.
+   * @opt_param bool supportsAllDrives Whether the requesting application supports
+   * both My Drives and shared drives.
+   * @opt_param bool supportsTeamDrives Deprecated use supportsAllDrives instead.
    * @return Google_Service_Drive_DriveFile
    */
   public function get($fileId, $optParams = array())
@@ -167,15 +198,22 @@ class Google_Service_Drive_Resource_Files extends Google_Service_Resource
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string corpora Comma-separated list of bodies of items
-   * (files/documents) to which the query applies. Supported bodies are 'user',
-   * 'domain', 'teamDrive' and 'allTeamDrives'. 'allTeamDrives' must be combined
-   * with 'user'; all other values must be used in isolation. Prefer 'user' or
-   * 'teamDrive' to 'allTeamDrives' for efficiency.
+   * @opt_param string corpora Groupings of files to which the query applies.
+   * Supported groupings are: 'user' (files created by, opened by, or shared
+   * directly with the user), 'drive' (files in the specified shared drive as
+   * indicated by the 'driveId'), 'domain' (files shared to the user's domain),
+   * and 'allDrives' (A combination of 'user' and 'drive' for all drives where the
+   * user is a member). When able, use 'user' or 'drive', instead of 'allDrives',
+   * for efficiency.
    * @opt_param string corpus The source of files to list. Deprecated: use
    * 'corpora' instead.
-   * @opt_param bool includeTeamDriveItems Whether Team Drive items should be
-   * included in results.
+   * @opt_param string driveId ID of the shared drive to search.
+   * @opt_param bool includeItemsFromAllDrives Whether both My Drive and shared
+   * drive items should be included in results.
+   * @opt_param string includePermissionsForView Specifies which additional view's
+   * permissions to include in the response. Only 'published' is supported.
+   * @opt_param bool includeTeamDriveItems Deprecated use
+   * includeItemsFromAllDrives instead.
    * @opt_param string orderBy A comma-separated list of sort keys. Valid keys are
    * 'createdTime', 'folder', 'modifiedByMeTime', 'modifiedTime', 'name',
    * 'name_natural', 'quotaBytesUsed', 'recency', 'sharedWithMeTime', 'starred',
@@ -194,9 +232,10 @@ class Google_Service_Drive_Resource_Files extends Google_Service_Resource
    * for Files" guide for supported syntax.
    * @opt_param string spaces A comma-separated list of spaces to query within the
    * corpus. Supported values are 'drive', 'appDataFolder' and 'photos'.
-   * @opt_param bool supportsTeamDrives Whether the requesting application
-   * supports Team Drives.
-   * @opt_param string teamDriveId ID of Team Drive to search.
+   * @opt_param bool supportsAllDrives Whether the requesting application supports
+   * both My Drives and shared drives.
+   * @opt_param bool supportsTeamDrives Deprecated use supportsAllDrives instead.
+   * @opt_param string teamDriveId Deprecated use driveId instead.
    * @return Google_Service_Drive_FileList
    */
   public function listFiles($optParams = array())
@@ -206,22 +245,34 @@ class Google_Service_Drive_Resource_Files extends Google_Service_Resource
     return $this->call('list', array($params), "Google_Service_Drive_FileList");
   }
   /**
-   * Updates a file's metadata and/or content with patch semantics. (files.update)
+   * Updates a file's metadata and/or content. This method supports patch
+   * semantics. (files.update)
    *
    * @param string $fileId The ID of the file.
    * @param Google_Service_Drive_DriveFile $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string addParents A comma-separated list of parent IDs to add.
+   * @opt_param bool enforceSingleParent Set to true to opt in to API behavior
+   * that aims for all items to have exactly one parent. This parameter only takes
+   * effect if the item is not in a shared drive. If the item's owner makes a
+   * request to add a single parent, the item is removed from all current folders
+   * and placed in the requested folder. Other requests that increase the number
+   * of parents fail, except when the canAddMyDriveParent file capability is true
+   * and a single parent is being added.
+   * @opt_param string includePermissionsForView Specifies which additional view's
+   * permissions to include in the response. Only 'published' is supported.
    * @opt_param bool keepRevisionForever Whether to set the 'keepForever' field in
    * the new head revision. This is only applicable to files with binary content
-   * in Drive.
+   * in Google Drive. Only 200 revisions for the file can be kept forever. If the
+   * limit is reached, try deleting pinned revisions.
    * @opt_param string ocrLanguage A language hint for OCR processing during image
    * import (ISO 639-1 code).
    * @opt_param string removeParents A comma-separated list of parent IDs to
    * remove.
-   * @opt_param bool supportsTeamDrives Whether the requesting application
-   * supports Team Drives.
+   * @opt_param bool supportsAllDrives Whether the requesting application supports
+   * both My Drives and shared drives.
+   * @opt_param bool supportsTeamDrives Deprecated use supportsAllDrives instead.
    * @opt_param bool useContentAsIndexableText Whether to use the uploaded content
    * as indexable text.
    * @return Google_Service_Drive_DriveFile
@@ -242,8 +293,11 @@ class Google_Service_Drive_Resource_Files extends Google_Service_Resource
    * @opt_param bool acknowledgeAbuse Whether the user is acknowledging the risk
    * of downloading known malware or other abusive files. This is only applicable
    * when alt=media.
-   * @opt_param bool supportsTeamDrives Whether the requesting application
-   * supports Team Drives.
+   * @opt_param string includePermissionsForView Specifies which additional view's
+   * permissions to include in the response. Only 'published' is supported.
+   * @opt_param bool supportsAllDrives Whether the requesting application supports
+   * both My Drives and shared drives.
+   * @opt_param bool supportsTeamDrives Deprecated use supportsAllDrives instead.
    * @return Google_Service_Drive_Channel
    */
   public function watch($fileId, Google_Service_Drive_Channel $postBody, $optParams = array())

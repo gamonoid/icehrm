@@ -18,15 +18,14 @@
 class Google_Service_Customsearch_Search extends Google_Collection
 {
   protected $collection_key = 'promotions';
-  protected $contextType = 'Google_Service_Customsearch_Context';
-  protected $contextDataType = '';
+  public $context;
   protected $itemsType = 'Google_Service_Customsearch_Result';
   protected $itemsDataType = 'array';
   public $kind;
   protected $promotionsType = 'Google_Service_Customsearch_Promotion';
   protected $promotionsDataType = 'array';
-  protected $queriesType = 'Google_Service_Customsearch_Query';
-  protected $queriesDataType = 'map';
+  protected $queriesType = 'Google_Service_Customsearch_SearchQueries';
+  protected $queriesDataType = '';
   protected $searchInformationType = 'Google_Service_Customsearch_SearchSearchInformation';
   protected $searchInformationDataType = '';
   protected $spellingType = 'Google_Service_Customsearch_SearchSpelling';
@@ -34,16 +33,10 @@ class Google_Service_Customsearch_Search extends Google_Collection
   protected $urlType = 'Google_Service_Customsearch_SearchUrl';
   protected $urlDataType = '';
 
-  /**
-   * @param Google_Service_Customsearch_Context
-   */
-  public function setContext(Google_Service_Customsearch_Context $context)
+  public function setContext($context)
   {
     $this->context = $context;
   }
-  /**
-   * @return Google_Service_Customsearch_Context
-   */
   public function getContext()
   {
     return $this->context;
@@ -85,14 +78,14 @@ class Google_Service_Customsearch_Search extends Google_Collection
     return $this->promotions;
   }
   /**
-   * @param Google_Service_Customsearch_Query
+   * @param Google_Service_Customsearch_SearchQueries
    */
-  public function setQueries($queries)
+  public function setQueries(Google_Service_Customsearch_SearchQueries $queries)
   {
     $this->queries = $queries;
   }
   /**
-   * @return Google_Service_Customsearch_Query
+   * @return Google_Service_Customsearch_SearchQueries
    */
   public function getQueries()
   {

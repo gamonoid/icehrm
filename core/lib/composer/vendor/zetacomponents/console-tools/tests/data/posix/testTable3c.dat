@@ -1,0 +1,11 @@
+[0m+---------+---------+---------+[0m
+[0m|[0m [31;1mParameter[0m [0m|[0m [0mShortcut[0m [0m|[0m [0mDescrition[0m [0m|[0m
+[35;1m+---------+---------+---------+[0m
+[35;1m|[0m [0mAppend text to a file. This parameter takes a string value and may be used multiple times.[0m [35;1m|[0m [0m--append[0m [35;1m|[0m [0m-a     [0m [35;1m|[0m
+[35;1m+---------+---------+---------+[0m
+[35;1m|[0m [0mPrepend text to a file. This parameter takes a string value and may be used multiple times.[0m [35;1m|[0m [0m--prepend[0m [35;1m|[0m [0m-p     [0m [35;1m|[0m
+[35;1m+---------+---------+---------+[0m
+[0m|[0m [0mForces the action desired without paying attention to any errors.[0m [0m|[0m [0m--force[0m [0m|[0m [0m-f     [0m [0m|[0m
+[0m+---------+---------+---------+[0m
+[0m|[0m [0mSilence all kinds of warnings issued by this program.[0m [0m|[0m [0m--silent[0m [0m|[0m [0m-s     [0m [0m|[0m
+[0m+---------+---------+---------+[0m

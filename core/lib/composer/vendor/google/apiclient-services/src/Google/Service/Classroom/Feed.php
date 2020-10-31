@@ -19,6 +19,8 @@ class Google_Service_Classroom_Feed extends Google_Model
 {
   protected $courseRosterChangesInfoType = 'Google_Service_Classroom_CourseRosterChangesInfo';
   protected $courseRosterChangesInfoDataType = '';
+  protected $courseWorkChangesInfoType = 'Google_Service_Classroom_CourseWorkChangesInfo';
+  protected $courseWorkChangesInfoDataType = '';
   public $feedType;
 
   /**
@@ -34,6 +36,20 @@ class Google_Service_Classroom_Feed extends Google_Model
   public function getCourseRosterChangesInfo()
   {
     return $this->courseRosterChangesInfo;
+  }
+  /**
+   * @param Google_Service_Classroom_CourseWorkChangesInfo
+   */
+  public function setCourseWorkChangesInfo(Google_Service_Classroom_CourseWorkChangesInfo $courseWorkChangesInfo)
+  {
+    $this->courseWorkChangesInfo = $courseWorkChangesInfo;
+  }
+  /**
+   * @return Google_Service_Classroom_CourseWorkChangesInfo
+   */
+  public function getCourseWorkChangesInfo()
+  {
+    return $this->courseWorkChangesInfo;
   }
   public function setFeedType($feedType)
   {

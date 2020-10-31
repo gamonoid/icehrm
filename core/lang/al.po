@@ -1960,3 +1960,33 @@ msgstr "Siguro Feedback"
 
 msgid "Review Status"
 msgstr "Statusi i shqyrtimit"
+
+msgid "Manage Metadata"
+msgstr "Menaxho Meta Data-t"
+
+msgid "Payroll Employees"
+msgstr "Punonjësit e pagave"
+
+msgid "Payroll Groups"
+msgstr "Grupet e pagave"
+
+msgid "Saved Calculations"
+msgstr "Llogaritjet e ruajtura"
+
+msgid "Total Leave Days"
+msgstr "Ditët totale të pushimeve"
+
+msgid "Actions"
+msgstr "Veprimet"
+
+msgid "Edit"
+msgstr "Redakto"
+
+msgid "View"
+msgstr "Pamje"
+
+msgid "Delete"
+msgstr "Fshije"
+
+msgid "Copy"
+msgstr "Kopjoni"

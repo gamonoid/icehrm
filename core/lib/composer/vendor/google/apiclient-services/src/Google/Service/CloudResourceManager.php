@@ -19,8 +19,8 @@
  * Service definition for CloudResourceManager (v2).
  *
  * <p>
- * The Google Cloud Resource Manager API provides methods for creating, reading,
- * and updating project metadata.</p>
+ * Creates, reads, and updates metadata for Google Cloud Platform resource
+ * containers.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -39,17 +39,20 @@ class Google_Service_CloudResourceManager extends Google_Service
       "https://www.googleapis.com/auth/cloud-platform.read-only";
 
   public $folders;
+  public $operations;
   
   /**
    * Constructs the internal representation of the CloudResourceManager service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://cloudresourcemanager.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://cloudresourcemanager.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v2';
     $this->serviceName = 'cloudresourcemanager';
 
@@ -102,10 +105,6 @@ class Google_Service_CloudResourceManager extends Google_Service
               'path' => 'v2/folders',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'parent' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -113,6 +112,10 @@ class Google_Service_CloudResourceManager extends Google_Service
                 'showDeleted' => array(
                   'location' => 'query',
                   'type' => 'boolean',
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
@@ -170,6 +173,26 @@ class Google_Service_CloudResourceManager extends Google_Service
             ),'undelete' => array(
               'path' => 'v2/{+name}:undelete',
               'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->operations = new Google_Service_CloudResourceManager_Resource_Operations(
+        $this,
+        $this->serviceName,
+        'operations',
+        array(
+          'methods' => array(
+            'get' => array(
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'GET',
               'parameters' => array(
                 'name' => array(
                   'location' => 'path',

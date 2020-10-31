@@ -24,6 +24,8 @@ class Google_Service_CloudBuild_BuildStep extends Google_Collection
   public $env;
   public $id;
   public $name;
+  protected $pullTimingType = 'Google_Service_CloudBuild_TimeSpan';
+  protected $pullTimingDataType = '';
   public $secretEnv;
   public $status;
   public $timeout;
@@ -80,6 +82,20 @@ class Google_Service_CloudBuild_BuildStep extends Google_Collection
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param Google_Service_CloudBuild_TimeSpan
+   */
+  public function setPullTiming(Google_Service_CloudBuild_TimeSpan $pullTiming)
+  {
+    $this->pullTiming = $pullTiming;
+  }
+  /**
+   * @return Google_Service_CloudBuild_TimeSpan
+   */
+  public function getPullTiming()
+  {
+    return $this->pullTiming;
   }
   public function setSecretEnv($secretEnv)
   {

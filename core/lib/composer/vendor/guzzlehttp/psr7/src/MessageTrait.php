@@ -1,4 +1,5 @@
 <?php
+
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
@@ -17,7 +18,7 @@ trait MessageTrait
     /** @var string */
     private $protocol = '1.1';
 
-    /** @var StreamInterface */
+    /** @var StreamInterface|null */
     private $stream;
 
     public function getProtocolVersion()
@@ -66,11 +67,8 @@ trait MessageTrait
 
     public function withHeader($header, $value)
     {
-        if (!is_array($value)) {
-            $value = [$value];
-        }
-
-        $value = $this->trimHeaderValues($value);
+        $this->assertHeader($header);
+        $value = $this->normalizeHeaderValue($value);
         $normalized = strtolower($header);
 
         $new = clone $this;
@@ -85,11 +83,8 @@ trait MessageTrait
 
     public function withAddedHeader($header, $value)
     {
-        if (!is_array($value)) {
-            $value = [$value];
-        }
-
-        $value = $this->trimHeaderValues($value);
+        $this->assertHeader($header);
+        $value = $this->normalizeHeaderValue($value);
         $normalized = strtolower($header);
 
         $new = clone $this;
@@ -123,7 +118,7 @@ trait MessageTrait
     public function getBody()
     {
         if (!$this->stream) {
-            $this->stream = stream_for('');
+            $this->stream = Utils::streamFor('');
         }
 
         return $this->stream;
@@ -144,11 +139,13 @@ trait MessageTrait
     {
         $this->headerNames = $this->headers = [];
         foreach ($headers as $header => $value) {
-            if (!is_array($value)) {
-                $value = [$value];
+            if (is_int($header)) {
+                // Numeric array keys are converted to int by PHP but having a header name '123' is not forbidden by the spec
+                // and also allowed in withHeader(). So we need to cast it to string again for the following assertion to pass.
+                $header = (string) $header;
             }
-
-            $value = $this->trimHeaderValues($value);
+            $this->assertHeader($header);
+            $value = $this->normalizeHeaderValue($value);
             $normalized = strtolower($header);
             if (isset($this->headerNames[$normalized])) {
                 $header = $this->headerNames[$normalized];
@@ -158,6 +155,19 @@ trait MessageTrait
                 $this->headers[$header] = $value;
             }
         }
+    }
+
+    private function normalizeHeaderValue($value)
+    {
+        if (!is_array($value)) {
+            return $this->trimHeaderValues([$value]);
+        }
+
+        if (count($value) === 0) {
+            throw new \InvalidArgumentException('Header value can not be an empty array.');
+        }
+
+        return $this->trimHeaderValues($value);
     }
 
     /**
@@ -177,7 +187,28 @@ trait MessageTrait
     private function trimHeaderValues(array $values)
     {
         return array_map(function ($value) {
-            return trim($value, " \t");
-        }, $values);
+            if (!is_scalar($value) && null !== $value) {
+                throw new \InvalidArgumentException(sprintf(
+                    'Header value must be scalar or null but %s provided.',
+                    is_object($value) ? get_class($value) : gettype($value)
+                ));
+            }
+
+            return trim((string) $value, " \t");
+        }, array_values($values));
+    }
+
+    private function assertHeader($header)
+    {
+        if (!is_string($header)) {
+            throw new \InvalidArgumentException(sprintf(
+                'Header name must be a string but %s provided.',
+                is_object($header) ? get_class($header) : gettype($header)
+            ));
+        }
+
+        if ($header === '') {
+            throw new \InvalidArgumentException('Header name can not be empty.');
+        }
     }
 }

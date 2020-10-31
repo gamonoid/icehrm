@@ -29,8 +29,10 @@ class Google_Service_FirebaseDynamicLinks_GetIosPostInstallAttributionResponse e
   public $requestedLink;
   public $resolvedLink;
   public $utmCampaign;
+  public $utmContent;
   public $utmMedium;
   public $utmSource;
+  public $utmTerm;
 
   public function setAppMinimumVersion($appMinimumVersion)
   {
@@ -128,6 +130,14 @@ class Google_Service_FirebaseDynamicLinks_GetIosPostInstallAttributionResponse e
   {
     return $this->utmCampaign;
   }
+  public function setUtmContent($utmContent)
+  {
+    $this->utmContent = $utmContent;
+  }
+  public function getUtmContent()
+  {
+    return $this->utmContent;
+  }
   public function setUtmMedium($utmMedium)
   {
     $this->utmMedium = $utmMedium;
@@ -143,5 +153,13 @@ class Google_Service_FirebaseDynamicLinks_GetIosPostInstallAttributionResponse e
   public function getUtmSource()
   {
     return $this->utmSource;
+  }
+  public function setUtmTerm($utmTerm)
+  {
+    $this->utmTerm = $utmTerm;
+  }
+  public function getUtmTerm()
+  {
+    return $this->utmTerm;
   }
 }

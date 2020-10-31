@@ -23,9 +23,14 @@ class Google_Service_Testing_TestSpecification extends Google_Model
   protected $androidRoboTestDataType = '';
   protected $androidTestLoopType = 'Google_Service_Testing_AndroidTestLoop';
   protected $androidTestLoopDataType = '';
-  public $autoGoogleLogin;
   public $disablePerformanceMetrics;
   public $disableVideoRecording;
+  protected $iosTestLoopType = 'Google_Service_Testing_IosTestLoop';
+  protected $iosTestLoopDataType = '';
+  protected $iosTestSetupType = 'Google_Service_Testing_IosTestSetup';
+  protected $iosTestSetupDataType = '';
+  protected $iosXcTestType = 'Google_Service_Testing_IosXcTest';
+  protected $iosXcTestDataType = '';
   protected $testSetupType = 'Google_Service_Testing_TestSetup';
   protected $testSetupDataType = '';
   public $testTimeout;
@@ -72,14 +77,6 @@ class Google_Service_Testing_TestSpecification extends Google_Model
   {
     return $this->androidTestLoop;
   }
-  public function setAutoGoogleLogin($autoGoogleLogin)
-  {
-    $this->autoGoogleLogin = $autoGoogleLogin;
-  }
-  public function getAutoGoogleLogin()
-  {
-    return $this->autoGoogleLogin;
-  }
   public function setDisablePerformanceMetrics($disablePerformanceMetrics)
   {
     $this->disablePerformanceMetrics = $disablePerformanceMetrics;
@@ -95,6 +92,48 @@ class Google_Service_Testing_TestSpecification extends Google_Model
   public function getDisableVideoRecording()
   {
     return $this->disableVideoRecording;
+  }
+  /**
+   * @param Google_Service_Testing_IosTestLoop
+   */
+  public function setIosTestLoop(Google_Service_Testing_IosTestLoop $iosTestLoop)
+  {
+    $this->iosTestLoop = $iosTestLoop;
+  }
+  /**
+   * @return Google_Service_Testing_IosTestLoop
+   */
+  public function getIosTestLoop()
+  {
+    return $this->iosTestLoop;
+  }
+  /**
+   * @param Google_Service_Testing_IosTestSetup
+   */
+  public function setIosTestSetup(Google_Service_Testing_IosTestSetup $iosTestSetup)
+  {
+    $this->iosTestSetup = $iosTestSetup;
+  }
+  /**
+   * @return Google_Service_Testing_IosTestSetup
+   */
+  public function getIosTestSetup()
+  {
+    return $this->iosTestSetup;
+  }
+  /**
+   * @param Google_Service_Testing_IosXcTest
+   */
+  public function setIosXcTest(Google_Service_Testing_IosXcTest $iosXcTest)
+  {
+    $this->iosXcTest = $iosXcTest;
+  }
+  /**
+   * @return Google_Service_Testing_IosXcTest
+   */
+  public function getIosXcTest()
+  {
+    return $this->iosXcTest;
   }
   /**
    * @param Google_Service_Testing_TestSetup

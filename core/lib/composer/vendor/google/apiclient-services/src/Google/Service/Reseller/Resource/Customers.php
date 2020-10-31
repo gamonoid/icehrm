@@ -62,7 +62,7 @@ class Google_Service_Reseller_Resource_Customers extends Google_Service_Resource
     return $this->call('insert', array($params), "Google_Service_Reseller_Customer");
   }
   /**
-   * Update a customer account's settings. This method supports patch semantics.
+   * Patch a customer account's settings via Apiary Patch Orchestration
    * (customers.patch)
    *
    * @param string $customerId Either the customer's primary domain name or the

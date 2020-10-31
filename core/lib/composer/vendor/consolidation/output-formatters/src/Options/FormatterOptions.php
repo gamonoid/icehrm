@@ -44,10 +44,15 @@ class FormatterOptions
     const ROW_LABELS = 'row-labels';
     const FIELD_LABELS = 'field-labels';
     const DEFAULT_FIELDS = 'default-fields';
+    const DEFAULT_TABLE_FIELDS = 'default-table-fields';
     const DEFAULT_STRING_FIELD = 'default-string-field';
     const DELIMITER = 'delimiter';
+    const CSV_ENCLOSURE = 'csv-enclosure';
+    const CSV_ESCAPE_CHAR = 'csv-escape-char';
     const LIST_DELIMITER = 'list-delimiter';
     const TERMINAL_WIDTH = 'width';
+    const METADATA_TEMPLATE = 'metadata-template';
+    const HUMAN_READABLE = 'human-readable';
 
     /**
      * Create a new FormatterOptions with the configuration data and the
@@ -87,6 +92,16 @@ class FormatterOptions
     public function setDelimiter($delimiter)
     {
         return $this->setConfigurationValue(self::DELIMITER, $delimiter);
+    }
+
+    public function setCsvEnclosure($enclosure)
+    {
+        return $this->setConfigurationValue(self::CSV_ENCLOSURE, $enclosure);
+    }
+
+    public function setCsvEscapeChar($escapeChar)
+    {
+        return $this->setConfigurationValue(self::CSV_ESCAPE_CHAR, $escapeChar);
     }
 
     public function setListDelimiter($listDelimiter)
@@ -129,6 +144,11 @@ class FormatterOptions
     public function setWidth($width)
     {
         return $this->setConfigurationValue(self::TERMINAL_WIDTH, $width);
+    }
+
+    public function setHumanReadable($isHumanReadable = true)
+    {
+        return $this->setConfigurationValue(self::HUMAN_READABLE, $isHumanReadable);
     }
 
     /**

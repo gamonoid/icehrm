@@ -19,6 +19,8 @@ class Google_Service_Sheets_HistogramSeries extends Google_Model
 {
   protected $barColorType = 'Google_Service_Sheets_Color';
   protected $barColorDataType = '';
+  protected $barColorStyleType = 'Google_Service_Sheets_ColorStyle';
+  protected $barColorStyleDataType = '';
   protected $dataType = 'Google_Service_Sheets_ChartData';
   protected $dataDataType = '';
 
@@ -35,6 +37,20 @@ class Google_Service_Sheets_HistogramSeries extends Google_Model
   public function getBarColor()
   {
     return $this->barColor;
+  }
+  /**
+   * @param Google_Service_Sheets_ColorStyle
+   */
+  public function setBarColorStyle(Google_Service_Sheets_ColorStyle $barColorStyle)
+  {
+    $this->barColorStyle = $barColorStyle;
+  }
+  /**
+   * @return Google_Service_Sheets_ColorStyle
+   */
+  public function getBarColorStyle()
+  {
+    return $this->barColorStyle;
   }
   /**
    * @param Google_Service_Sheets_ChartData

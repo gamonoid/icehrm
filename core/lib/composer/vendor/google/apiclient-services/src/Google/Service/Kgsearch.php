@@ -37,13 +37,15 @@ class Google_Service_Kgsearch extends Google_Service
   /**
    * Constructs the internal representation of the Kgsearch service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://kgsearch.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://kgsearch.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'kgsearch';
 
@@ -57,24 +59,28 @@ class Google_Service_Kgsearch extends Google_Service
               'path' => 'v1/entities:search',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'prefix' => array(
+                'limit' => array(
                   'location' => 'query',
-                  'type' => 'boolean',
+                  'type' => 'integer',
                 ),
                 'query' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'types' => array(
+                'languages' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
+                ),
+                'prefix' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
                 ),
                 'indent' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'languages' => array(
+                'types' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
@@ -83,10 +89,6 @@ class Google_Service_Kgsearch extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
-                'limit' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
                 ),
               ),
             ),

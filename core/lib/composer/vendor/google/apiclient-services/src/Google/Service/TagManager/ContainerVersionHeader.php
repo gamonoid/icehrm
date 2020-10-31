@@ -22,6 +22,7 @@ class Google_Service_TagManager_ContainerVersionHeader extends Google_Model
   public $containerVersionId;
   public $deleted;
   public $name;
+  public $numCustomTemplates;
   public $numMacros;
   public $numRules;
   public $numTags;
@@ -69,6 +70,14 @@ class Google_Service_TagManager_ContainerVersionHeader extends Google_Model
   public function getName()
   {
     return $this->name;
+  }
+  public function setNumCustomTemplates($numCustomTemplates)
+  {
+    $this->numCustomTemplates = $numCustomTemplates;
+  }
+  public function getNumCustomTemplates()
+  {
+    return $this->numCustomTemplates;
   }
   public function setNumMacros($numMacros)
   {

@@ -61,7 +61,7 @@ class Google_Service_Dfareporting_Resource_FloodlightConfigurations extends Goog
    * semantics. (floodlightConfigurations.patch)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $id Floodlight configuration ID.
+   * @param string $id FloodlightConfiguration ID.
    * @param Google_Service_Dfareporting_FloodlightConfiguration $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_FloodlightConfiguration

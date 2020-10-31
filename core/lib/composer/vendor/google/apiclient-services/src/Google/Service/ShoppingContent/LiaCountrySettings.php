@@ -25,6 +25,8 @@ class Google_Service_ShoppingContent_LiaCountrySettings extends Google_Model
   protected $inventoryDataType = '';
   protected $onDisplayToOrderType = 'Google_Service_ShoppingContent_LiaOnDisplayToOrderSettings';
   protected $onDisplayToOrderDataType = '';
+  protected $posDataProviderType = 'Google_Service_ShoppingContent_LiaPosDataProvider';
+  protected $posDataProviderDataType = '';
   public $storePickupActive;
 
   /**
@@ -84,6 +86,20 @@ class Google_Service_ShoppingContent_LiaCountrySettings extends Google_Model
   public function getOnDisplayToOrder()
   {
     return $this->onDisplayToOrder;
+  }
+  /**
+   * @param Google_Service_ShoppingContent_LiaPosDataProvider
+   */
+  public function setPosDataProvider(Google_Service_ShoppingContent_LiaPosDataProvider $posDataProvider)
+  {
+    $this->posDataProvider = $posDataProvider;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_LiaPosDataProvider
+   */
+  public function getPosDataProvider()
+  {
+    return $this->posDataProvider;
   }
   public function setStorePickupActive($storePickupActive)
   {

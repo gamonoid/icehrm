@@ -20,6 +20,8 @@ class Google_Service_AdExchangeBuyerII_Creative extends Google_Collection
   protected $collection_key = 'vendorIds';
   public $accountId;
   public $adChoicesDestinationUrl;
+  protected $adTechnologyProvidersType = 'Google_Service_AdExchangeBuyerII_AdTechnologyProviders';
+  protected $adTechnologyProvidersDataType = '';
   public $advertiserName;
   public $agencyId;
   public $apiUpdateTime;
@@ -29,13 +31,12 @@ class Google_Service_AdExchangeBuyerII_Creative extends Google_Collection
   protected $correctionsDataType = 'array';
   public $creativeId;
   public $dealsStatus;
+  public $declaredClickThroughUrls;
   public $detectedAdvertiserIds;
   public $detectedDomains;
   public $detectedLanguages;
   public $detectedProductCategories;
   public $detectedSensitiveCategories;
-  protected $filteringStatsType = 'Google_Service_AdExchangeBuyerII_FilteringStats';
-  protected $filteringStatsDataType = '';
   protected $htmlType = 'Google_Service_AdExchangeBuyerII_HtmlContent';
   protected $htmlDataType = '';
   public $impressionTrackingUrls;
@@ -65,6 +66,20 @@ class Google_Service_AdExchangeBuyerII_Creative extends Google_Collection
   public function getAdChoicesDestinationUrl()
   {
     return $this->adChoicesDestinationUrl;
+  }
+  /**
+   * @param Google_Service_AdExchangeBuyerII_AdTechnologyProviders
+   */
+  public function setAdTechnologyProviders(Google_Service_AdExchangeBuyerII_AdTechnologyProviders $adTechnologyProviders)
+  {
+    $this->adTechnologyProviders = $adTechnologyProviders;
+  }
+  /**
+   * @return Google_Service_AdExchangeBuyerII_AdTechnologyProviders
+   */
+  public function getAdTechnologyProviders()
+  {
+    return $this->adTechnologyProviders;
   }
   public function setAdvertiserName($advertiserName)
   {
@@ -136,6 +151,14 @@ class Google_Service_AdExchangeBuyerII_Creative extends Google_Collection
   {
     return $this->dealsStatus;
   }
+  public function setDeclaredClickThroughUrls($declaredClickThroughUrls)
+  {
+    $this->declaredClickThroughUrls = $declaredClickThroughUrls;
+  }
+  public function getDeclaredClickThroughUrls()
+  {
+    return $this->declaredClickThroughUrls;
+  }
   public function setDetectedAdvertiserIds($detectedAdvertiserIds)
   {
     $this->detectedAdvertiserIds = $detectedAdvertiserIds;
@@ -175,20 +198,6 @@ class Google_Service_AdExchangeBuyerII_Creative extends Google_Collection
   public function getDetectedSensitiveCategories()
   {
     return $this->detectedSensitiveCategories;
-  }
-  /**
-   * @param Google_Service_AdExchangeBuyerII_FilteringStats
-   */
-  public function setFilteringStats(Google_Service_AdExchangeBuyerII_FilteringStats $filteringStats)
-  {
-    $this->filteringStats = $filteringStats;
-  }
-  /**
-   * @return Google_Service_AdExchangeBuyerII_FilteringStats
-   */
-  public function getFilteringStats()
-  {
-    return $this->filteringStats;
   }
   /**
    * @param Google_Service_AdExchangeBuyerII_HtmlContent

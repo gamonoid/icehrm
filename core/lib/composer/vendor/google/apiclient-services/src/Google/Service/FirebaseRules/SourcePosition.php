@@ -18,6 +18,8 @@
 class Google_Service_FirebaseRules_SourcePosition extends Google_Model
 {
   public $column;
+  public $currentOffset;
+  public $endOffset;
   public $fileName;
   public $line;
 
@@ -28,6 +30,22 @@ class Google_Service_FirebaseRules_SourcePosition extends Google_Model
   public function getColumn()
   {
     return $this->column;
+  }
+  public function setCurrentOffset($currentOffset)
+  {
+    $this->currentOffset = $currentOffset;
+  }
+  public function getCurrentOffset()
+  {
+    return $this->currentOffset;
+  }
+  public function setEndOffset($endOffset)
+  {
+    $this->endOffset = $endOffset;
+  }
+  public function getEndOffset()
+  {
+    return $this->endOffset;
   }
   public function setFileName($fileName)
   {

@@ -17,12 +17,16 @@
 
 class Google_Service_ServiceUsage_MetricDescriptor extends Google_Collection
 {
-  protected $collection_key = 'labels';
+  protected $collection_key = 'monitoredResourceTypes';
   public $description;
   public $displayName;
   protected $labelsType = 'Google_Service_ServiceUsage_LabelDescriptor';
   protected $labelsDataType = 'array';
+  public $launchStage;
+  protected $metadataType = 'Google_Service_ServiceUsage_MetricDescriptorMetadata';
+  protected $metadataDataType = '';
   public $metricKind;
+  public $monitoredResourceTypes;
   public $name;
   public $type;
   public $unit;
@@ -58,6 +62,28 @@ class Google_Service_ServiceUsage_MetricDescriptor extends Google_Collection
   {
     return $this->labels;
   }
+  public function setLaunchStage($launchStage)
+  {
+    $this->launchStage = $launchStage;
+  }
+  public function getLaunchStage()
+  {
+    return $this->launchStage;
+  }
+  /**
+   * @param Google_Service_ServiceUsage_MetricDescriptorMetadata
+   */
+  public function setMetadata(Google_Service_ServiceUsage_MetricDescriptorMetadata $metadata)
+  {
+    $this->metadata = $metadata;
+  }
+  /**
+   * @return Google_Service_ServiceUsage_MetricDescriptorMetadata
+   */
+  public function getMetadata()
+  {
+    return $this->metadata;
+  }
   public function setMetricKind($metricKind)
   {
     $this->metricKind = $metricKind;
@@ -65,6 +91,14 @@ class Google_Service_ServiceUsage_MetricDescriptor extends Google_Collection
   public function getMetricKind()
   {
     return $this->metricKind;
+  }
+  public function setMonitoredResourceTypes($monitoredResourceTypes)
+  {
+    $this->monitoredResourceTypes = $monitoredResourceTypes;
+  }
+  public function getMonitoredResourceTypes()
+  {
+    return $this->monitoredResourceTypes;
   }
   public function setName($name)
   {

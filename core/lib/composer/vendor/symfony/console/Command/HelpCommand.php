@@ -56,6 +56,11 @@ EOF
         ;
     }
 
+    /**
+     * Sets the command.
+     *
+     * @param Command $command The command to set
+     */
     public function setCommand(Command $command)
     {
         $this->command = $command;

@@ -19,7 +19,8 @@
  * Service definition for PolyService (v1).
  *
  * <p>
- * The Poly API provides read-only access to assets hosted on poly.google.com.</p>
+ * The Poly API provides read access to assets hosted on poly.google.com to all,
+ * and upload access to poly.google.com for whitelisted accounts.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -39,13 +40,15 @@ class Google_Service_PolyService extends Google_Service
   /**
    * Constructs the internal representation of the PolyService service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://poly.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://poly.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'poly';
 
@@ -69,11 +72,11 @@ class Google_Service_PolyService extends Google_Service
               'path' => 'v1/assets',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'pageToken' => array(
+                'maxComplexity' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'maxComplexity' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -121,14 +124,6 @@ class Google_Service_PolyService extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'format' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
@@ -138,6 +133,14 @@ class Google_Service_PolyService extends Google_Service
                   'type' => 'string',
                 ),
                 'orderBy' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'format' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),

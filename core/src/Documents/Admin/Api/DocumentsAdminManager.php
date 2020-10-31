@@ -2,9 +2,15 @@
 namespace Documents\Admin\Api;
 
 use Classes\AbstractModuleManager;
+use Classes\SystemTasks\SystemTasksService;
 
 class DocumentsAdminManager extends AbstractModuleManager
 {
+
+    public function initialize()
+    {
+        SystemTasksService::getInstance()->registerTaskCreator((new DocumentTaskCreator()));
+    }
 
     public function initializeUserClasses()
     {

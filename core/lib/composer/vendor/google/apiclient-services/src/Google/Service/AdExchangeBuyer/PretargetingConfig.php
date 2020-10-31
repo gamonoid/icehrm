@@ -34,6 +34,7 @@ class Google_Service_AdExchangeBuyer_PretargetingConfig extends Google_Collectio
   public $isActive;
   public $kind;
   public $languages;
+  public $maximumQps;
   public $minimumViewabilityDecile;
   public $mobileCarriers;
   public $mobileDevices;
@@ -172,6 +173,14 @@ class Google_Service_AdExchangeBuyer_PretargetingConfig extends Google_Collectio
   public function getLanguages()
   {
     return $this->languages;
+  }
+  public function setMaximumQps($maximumQps)
+  {
+    $this->maximumQps = $maximumQps;
+  }
+  public function getMaximumQps()
+  {
+    return $this->maximumQps;
   }
   public function setMinimumViewabilityDecile($minimumViewabilityDecile)
   {

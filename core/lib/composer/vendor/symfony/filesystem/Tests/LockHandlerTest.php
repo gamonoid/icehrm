@@ -16,9 +16,6 @@ use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\LockHandler;
 
-/**
- * @group legacy
- */
 class LockHandlerTest extends TestCase
 {
     /**

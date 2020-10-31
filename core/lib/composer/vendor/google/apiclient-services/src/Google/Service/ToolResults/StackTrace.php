@@ -17,18 +17,8 @@
 
 class Google_Service_ToolResults_StackTrace extends Google_Model
 {
-  public $clusterId;
   public $exception;
-  public $reportId;
 
-  public function setClusterId($clusterId)
-  {
-    $this->clusterId = $clusterId;
-  }
-  public function getClusterId()
-  {
-    return $this->clusterId;
-  }
   public function setException($exception)
   {
     $this->exception = $exception;
@@ -36,13 +26,5 @@ class Google_Service_ToolResults_StackTrace extends Google_Model
   public function getException()
   {
     return $this->exception;
-  }
-  public function setReportId($reportId)
-  {
-    $this->reportId = $reportId;
-  }
-  public function getReportId()
-  {
-    return $this->reportId;
   }
 }

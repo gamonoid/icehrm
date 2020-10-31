@@ -43,6 +43,7 @@ class Google_Service_Classroom_CourseWork extends Google_Collection
   public $state;
   public $submissionModificationMode;
   public $title;
+  public $topicId;
   public $updateTime;
   public $workType;
 
@@ -233,6 +234,14 @@ class Google_Service_Classroom_CourseWork extends Google_Collection
   public function getTitle()
   {
     return $this->title;
+  }
+  public function setTopicId($topicId)
+  {
+    $this->topicId = $topicId;
+  }
+  public function getTopicId()
+  {
+    return $this->topicId;
   }
   public function setUpdateTime($updateTime)
   {

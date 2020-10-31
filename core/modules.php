@@ -29,6 +29,8 @@ if (\Classes\SettingsManager::getInstance()->getSetting("System: Reset Module Na
     \Classes\SettingsManager::getInstance()->setSetting("System: Reset Module Names", "0");
 }
 
+\Classes\BaseService::getInstance()->initializePro();
+
 function includeModuleManager($type, $name, $data)
 {
     $moduleManagerClass = $data['manager'];
@@ -88,11 +90,13 @@ $userDbModules = $dbModule->Find("mod_group = ?", array("user"));
 $adminDBModuleList = array();
 foreach ($adminDbModules as $dbm) {
     $adminDBModuleList[$dbm->name] = $dbm;
+    \Classes\ModuleAccessService::getInstance()->setModule($dbm->name, 'admin', $dbm);
 }
 
 $userDBModuleList = array();
 foreach ($userDbModules as $dbm) {
     $userDBModuleList[$dbm->name] = $dbm;
+    \Classes\ModuleAccessService::getInstance()->setModule($dbm->name, 'user', $dbm);
 }
 
 $adminModulesTemp = array();
@@ -100,6 +104,9 @@ $ams = scandir(CLIENT_PATH.'/admin/');
 $currentLocation = 0;
 foreach ($ams as $am) {
     if (is_dir(CLIENT_PATH.'/admin/'.$am) && $am != '.' && $am != '..') {
+        if (!\Classes\BaseService::getInstance()->isModuleEnabled('admin', $am)) {
+            continue;
+        }
         $meta = json_decode(file_get_contents(CLIENT_PATH.'/admin/'.$am.'/meta.json'));
 
         $arr = array();
@@ -136,7 +143,10 @@ foreach ($ams as $am) {
             $arr['menu'] = $dbModule->menu;
             $arr['status'] = $dbModule->status;
             $arr['user_levels'] = json_decode($dbModule->user_levels);
-            $arr['user_roles'] = json_decode($dbModule->user_roles);
+            $arr['user_roles'] = empty($dbModule->user_roles)
+                ? [] : json_decode($dbModule->user_roles);
+            $arr['user_roles_blacklist'] = empty($dbModule->user_roles_blacklist)
+                ? [] : json_decode($dbModule->user_roles_blacklist);
         } else {
             $dbModule = new \Modules\Common\Model\Module();
             $dbModule->menu = $arr['menu'];
@@ -188,6 +198,9 @@ $ams = scandir(CLIENT_PATH.'/modules/');
 foreach ($ams as $am) {
     try {
         if (is_dir(CLIENT_PATH . '/modules/' . $am) && $am != '.' && $am != '..') {
+            if (!\Classes\BaseService::getInstance()->isModuleEnabled('modules', $am)) {
+                continue;
+            }
             $meta = json_decode(file_get_contents(CLIENT_PATH . '/modules/' . $am . '/meta.json'));
 
             $arr = array();
@@ -225,7 +238,10 @@ foreach ($ams as $am) {
                 $arr['order'] = $dbModule->mod_order;
                 $arr['status'] = $dbModule->status;
                 $arr['user_levels'] = json_decode($dbModule->user_levels);
-                $arr['user_roles'] = json_decode($dbModule->user_roles);
+                $arr['user_roles'] = empty($dbModule->user_roles)
+                    ? [] :json_decode($dbModule->user_roles);
+                $arr['user_roles_blacklist'] = empty($dbModule->user_roles_blacklist)
+                    ? [] : json_decode($dbModule->user_roles_blacklist);
             } else {
                 $dbModule = new \Modules\Common\Model\Module();
                 $dbModule->menu = $arr['menu'];
@@ -328,13 +344,23 @@ foreach ($userModulesTemp as $k => $v) {
 //Remove modules having no permissions
 if (!empty($user)) {
     if (!empty($user->user_roles)) {
-        $userRoles = json_decode($user->user_roles, true);
+        try {
+            $userRoles = json_decode($user->user_roles, true);
+        } catch (Exception $e) {
+            $userRoles = [];
+        }
     } else {
-        $userRoles = array();
+        $userRoles = [];
     }
 
     foreach ($adminModules as $fk => $menu) {
         foreach ($menu['menu'] as $key => $item) {
+            // If the user's once of the user roles are blacklisted for the module
+            $commonRoles = array_intersect($item['user_roles_blacklist'], $userRoles);
+            if (!empty($commonRoles)) {
+                unset($adminModules[$fk]['menu'][$key]);
+            }
+
             if (!in_array($user->user_level, $item['user_levels'])) {
                 if (!empty($userRoles)) {
                     $commonRoles = array_intersect($item['user_roles'], $userRoles);
@@ -350,6 +376,11 @@ if (!empty($user)) {
 
     foreach ($userModules as $fk => $menu) {
         foreach ($menu['menu'] as $key => $item) {
+            // If the user's once of the user roles are blacklisted for the module
+            $commonRoles = array_intersect($item['user_roles_blacklist'], $userRoles);
+            if (!empty($commonRoles)) {
+                unset($userModules[$fk]['menu'][$key]);
+            }
             if (!in_array($user->user_level, $item['user_levels'])) {
                 if (!empty($userRoles)) {
                     $commonRoles = array_intersect($item['user_roles'], $userRoles);

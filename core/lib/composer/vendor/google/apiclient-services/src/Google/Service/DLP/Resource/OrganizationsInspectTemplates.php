@@ -27,10 +27,22 @@ class Google_Service_DLP_Resource_OrganizationsInspectTemplates extends Google_S
 {
   /**
    * Creates an InspectTemplate for re-using frequently used configuration for
-   * inspecting content, images, and storage. (inspectTemplates.create)
+   * inspecting content, images, and storage. See
+   * https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * (inspectTemplates.create)
    *
-   * @param string $parent The parent resource name, for example projects/my-
-   * project-id or organizations/my-org-id.
+   * @param string $parent Required. Parent resource name. The format of this
+   * value varies depending on the scope of the request (project or organization)
+   * and whether you have [specified a processing
+   * location](https://cloud.google.com/dlp/docs/specifying-location): + Projects
+   * scope, location specified: `projects/`PROJECT_ID`/locations/`LOCATION_ID +
+   * Projects scope, no location specified (defaults to global):
+   * `projects/`PROJECT_ID + Organizations scope, location specified:
+   * `organizations/`ORG_ID`/locations/`LOCATION_ID + Organizations scope, no
+   * location specified (defaults to global): `organizations/`ORG_ID The following
+   * example `parent` string specifies a parent project with the identifier
+   * `example-project`, and specifies the `europe-west3` location for processing
+   * data: parent=projects/example-project/locations/europe-west3
    * @param Google_Service_DLP_GooglePrivacyDlpV2CreateInspectTemplateRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_DLP_GooglePrivacyDlpV2InspectTemplate
@@ -42,11 +54,13 @@ class Google_Service_DLP_Resource_OrganizationsInspectTemplates extends Google_S
     return $this->call('create', array($params), "Google_Service_DLP_GooglePrivacyDlpV2InspectTemplate");
   }
   /**
-   * Deletes an InspectTemplate. (inspectTemplates.delete)
+   * Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-
+   * templates to learn more. (inspectTemplates.delete)
    *
-   * @param string $name Resource name of the organization and inspectTemplate to
-   * be deleted, for example `organizations/433245324/inspectTemplates/432452342`
-   * or projects/project-id/inspectTemplates/432452342.
+   * @param string $name Required. Resource name of the organization and
+   * inspectTemplate to be deleted, for example
+   * `organizations/433245324/inspectTemplates/432452342` or projects/project-
+   * id/inspectTemplates/432452342.
    * @param array $optParams Optional parameters.
    * @return Google_Service_DLP_GoogleProtobufEmpty
    */
@@ -57,11 +71,13 @@ class Google_Service_DLP_Resource_OrganizationsInspectTemplates extends Google_S
     return $this->call('delete', array($params), "Google_Service_DLP_GoogleProtobufEmpty");
   }
   /**
-   * Gets an InspectTemplate. (inspectTemplates.get)
+   * Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-
+   * templates to learn more. (inspectTemplates.get)
    *
-   * @param string $name Resource name of the organization and inspectTemplate to
-   * be read, for example `organizations/433245324/inspectTemplates/432452342` or
-   * projects/project-id/inspectTemplates/432452342.
+   * @param string $name Required. Resource name of the organization and
+   * inspectTemplate to be read, for example
+   * `organizations/433245324/inspectTemplates/432452342` or projects/project-
+   * id/inspectTemplates/432452342.
    * @param array $optParams Optional parameters.
    * @return Google_Service_DLP_GooglePrivacyDlpV2InspectTemplate
    */
@@ -72,16 +88,35 @@ class Google_Service_DLP_Resource_OrganizationsInspectTemplates extends Google_S
     return $this->call('get', array($params), "Google_Service_DLP_GooglePrivacyDlpV2InspectTemplate");
   }
   /**
-   * Lists InspectTemplates. (inspectTemplates.listOrganizationsInspectTemplates)
+   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-
+   * templates to learn more. (inspectTemplates.listOrganizationsInspectTemplates)
    *
-   * @param string $parent The parent resource name, for example projects/my-
-   * project-id or organizations/my-org-id.
+   * @param string $parent Required. Parent resource name. The format of this
+   * value varies depending on the scope of the request (project or organization)
+   * and whether you have [specified a processing
+   * location](https://cloud.google.com/dlp/docs/specifying-location): + Projects
+   * scope, location specified: `projects/`PROJECT_ID`/locations/`LOCATION_ID +
+   * Projects scope, no location specified (defaults to global):
+   * `projects/`PROJECT_ID + Organizations scope, location specified:
+   * `organizations/`ORG_ID`/locations/`LOCATION_ID + Organizations scope, no
+   * location specified (defaults to global): `organizations/`ORG_ID The following
+   * example `parent` string specifies a parent project with the identifier
+   * `example-project`, and specifies the `europe-west3` location for processing
+   * data: parent=projects/example-project/locations/europe-west3
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string pageToken Optional page token to continue retrieval. Comes
-   * from previous call to `ListInspectTemplates`.
-   * @opt_param int pageSize Optional size of the page, can be limited by server.
-   * If zero server returns a page of max size 100.
+   * @opt_param string pageToken Page token to continue retrieval. Comes from
+   * previous call to `ListInspectTemplates`.
+   * @opt_param string locationId Deprecated. This field has no effect.
+   * @opt_param string orderBy Comma separated list of fields to order by,
+   * followed by `asc` or `desc` postfix. This list is case-insensitive, default
+   * sorting order is ascending, redundant space characters are insignificant.
+   * Example: `name asc,update_time, create_time desc` Supported fields are: -
+   * `create_time`: corresponds to time the template was created. - `update_time`:
+   * corresponds to time the template was last updated. - `name`: corresponds to
+   * template's name. - `display_name`: corresponds to template's display name.
+   * @opt_param int pageSize Size of the page, can be limited by server. If zero
+   * server returns a page of max size 100.
    * @return Google_Service_DLP_GooglePrivacyDlpV2ListInspectTemplatesResponse
    */
   public function listOrganizationsInspectTemplates($parent, $optParams = array())
@@ -91,11 +126,13 @@ class Google_Service_DLP_Resource_OrganizationsInspectTemplates extends Google_S
     return $this->call('list', array($params), "Google_Service_DLP_GooglePrivacyDlpV2ListInspectTemplatesResponse");
   }
   /**
-   * Updates the InspectTemplate. (inspectTemplates.patch)
+   * Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-
+   * templates to learn more. (inspectTemplates.patch)
    *
-   * @param string $name Resource name of organization and inspectTemplate to be
-   * updated, for example `organizations/433245324/inspectTemplates/432452342` or
-   * projects/project-id/inspectTemplates/432452342.
+   * @param string $name Required. Resource name of organization and
+   * inspectTemplate to be updated, for example
+   * `organizations/433245324/inspectTemplates/432452342` or projects/project-
+   * id/inspectTemplates/432452342.
    * @param Google_Service_DLP_GooglePrivacyDlpV2UpdateInspectTemplateRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_DLP_GooglePrivacyDlpV2InspectTemplate

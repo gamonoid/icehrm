@@ -4,10 +4,16 @@ namespace Attendance\Admin\Api;
 use Attendance\Common\Model\Attendance;
 use Attendance\Rest\AttendanceRestEndPoint;
 use Classes\AbstractModuleManager;
+use Classes\SystemTasks\SystemTasksService;
 use Classes\UIManager;
 
 class AttendanceAdminManager extends AbstractModuleManager
 {
+
+    public function initialize()
+    {
+        SystemTasksService::getInstance()->registerTaskCreator((new AttendanceTaskCreator()));
+    }
 
     public function initializeUserClasses()
     {

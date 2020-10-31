@@ -1,7 +1,7 @@
 <phpunit bootstrap="vendor/autoload.php" colors="true">
   <testsuites>
     <testsuite name="annotation-command">
-      <directory prefix="test" suffix=".php">tests</directory>
+      <directory prefix="" suffix="Test.php">tests</directory>
     </testsuite>
   </testsuites>
   <logging>

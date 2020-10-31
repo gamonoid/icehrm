@@ -26,10 +26,14 @@
 class Google_Service_Dialogflow_Resource_ProjectsAgentSessionsContexts extends Google_Service_Resource
 {
   /**
-   * Creates a context. (contexts.create)
+   * Creates a context. If the specified context already exists, overrides the
+   * context. (contexts.create)
    *
    * @param string $parent Required. The session to create a context for. Format:
-   * `projects//agent/sessions/`.
+   * `projects//agent/sessions/` or
+   * `projects//agent/environments//users//sessions/`. If `Environment ID` is not
+   * specified, we assume default 'draft' environment. If `User ID` is not
+   * specified, we assume default '-' user.
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2Context $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2Context
@@ -44,7 +48,10 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentSessionsContexts extends G
    * Deletes the specified context. (contexts.delete)
    *
    * @param string $name Required. The name of the context to delete. Format:
-   * `projects//agent/sessions//contexts/`.
+   * `projects//agent/sessions//contexts/` or
+   * `projects//agent/environments//users//sessions//contexts/`. If `Environment
+   * ID` is not specified, we assume default 'draft' environment. If `User ID` is
+   * not specified, we assume default '-' user.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dialogflow_GoogleProtobufEmpty
    */
@@ -58,7 +65,10 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentSessionsContexts extends G
    * Retrieves the specified context. (contexts.get)
    *
    * @param string $name Required. The name of the context. Format:
-   * `projects//agent/sessions//contexts/`.
+   * `projects//agent/sessions//contexts/` or
+   * `projects//agent/environments//users//sessions//contexts/`. If `Environment
+   * ID` is not specified, we assume default 'draft' environment. If `User ID` is
+   * not specified, we assume default '-' user.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2Context
    */
@@ -73,7 +83,10 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentSessionsContexts extends G
    * (contexts.listProjectsAgentSessionsContexts)
    *
    * @param string $parent Required. The session to list all contexts from.
-   * Format: `projects//agent/sessions/`.
+   * Format: `projects//agent/sessions/` or
+   * `projects//agent/environments//users//sessions/`. If `Environment ID` is not
+   * specified, we assume default 'draft' environment. If `User ID` is not
+   * specified, we assume default '-' user.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken Optional. The next_page_token value returned from
@@ -92,7 +105,15 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentSessionsContexts extends G
    * Updates the specified context. (contexts.patch)
    *
    * @param string $name Required. The unique identifier of the context. Format:
-   * `projects//agent/sessions//contexts/`.
+   * `projects//agent/sessions//contexts/`, or
+   * `projects//agent/environments//users//sessions//contexts/`. The `Context ID`
+   * is always converted to lowercase, may only contain characters in a-zA-Z0-9_-%
+   * and may be at most 250 bytes long. If `Environment ID` is not specified, we
+   * assume default 'draft' environment. If `User ID` is not specified, we assume
+   * default '-' user. The following context names are reserved for internal use
+   * by Dialogflow. You should not use these contexts or create contexts with
+   * these names: * `__system_counters__` * `*_id_dialog_context` *
+   * `*_dialog_params_size`
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2Context $postBody
    * @param array $optParams Optional parameters.
    *

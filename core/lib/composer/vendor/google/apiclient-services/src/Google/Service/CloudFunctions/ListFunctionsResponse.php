@@ -17,10 +17,11 @@
 
 class Google_Service_CloudFunctions_ListFunctionsResponse extends Google_Collection
 {
-  protected $collection_key = 'functions';
+  protected $collection_key = 'unreachable';
   protected $functionsType = 'Google_Service_CloudFunctions_CloudFunction';
   protected $functionsDataType = 'array';
   public $nextPageToken;
+  public $unreachable;
 
   /**
    * @param Google_Service_CloudFunctions_CloudFunction
@@ -43,5 +44,13 @@ class Google_Service_CloudFunctions_ListFunctionsResponse extends Google_Collect
   public function getNextPageToken()
   {
     return $this->nextPageToken;
+  }
+  public function setUnreachable($unreachable)
+  {
+    $this->unreachable = $unreachable;
+  }
+  public function getUnreachable()
+  {
+    return $this->unreachable;
   }
 }

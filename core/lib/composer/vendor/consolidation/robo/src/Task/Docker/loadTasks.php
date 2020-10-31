@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Docker;
 
 trait loadTasks
@@ -6,7 +7,7 @@ trait loadTasks
     /**
      * @param string $image
      *
-     * @return \Robo\Task\Docker\Run
+     * @return \Robo\Task\Docker\Run|\Robo\Collection\CollectionBuilder
      */
     protected function taskDockerRun($image)
     {
@@ -16,7 +17,7 @@ trait loadTasks
     /**
      * @param string $image
      *
-     * @return \Robo\Task\Docker\Pull
+     * @return \Robo\Task\Docker\Pull|\Robo\Collection\CollectionBuilder
      */
     protected function taskDockerPull($image)
     {
@@ -26,7 +27,7 @@ trait loadTasks
     /**
      * @param string $path
      *
-     * @return \Robo\Task\Docker\Build
+     * @return \Robo\Task\Docker\Build|\Robo\Collection\CollectionBuilder
      */
     protected function taskDockerBuild($path = '.')
     {
@@ -36,7 +37,7 @@ trait loadTasks
     /**
      * @param string|\Robo\Task\Docker\Result $cidOrResult
      *
-     * @return \Robo\Task\Docker\Stop
+     * @return \Robo\Task\Docker\Stop|\Robo\Collection\CollectionBuilder
      */
     protected function taskDockerStop($cidOrResult)
     {
@@ -46,7 +47,7 @@ trait loadTasks
     /**
      * @param string|\Robo\Task\Docker\Result $cidOrResult
      *
-     * @return \Robo\Task\Docker\Commit
+     * @return \Robo\Task\Docker\Commit|\Robo\Collection\CollectionBuilder
      */
     protected function taskDockerCommit($cidOrResult)
     {
@@ -56,7 +57,7 @@ trait loadTasks
     /**
      * @param string|\Robo\Task\Docker\Result $cidOrResult
      *
-     * @return \Robo\Task\Docker\Start
+     * @return \Robo\Task\Docker\Start|\Robo\Collection\CollectionBuilder
      */
     protected function taskDockerStart($cidOrResult)
     {
@@ -66,7 +67,7 @@ trait loadTasks
     /**
      * @param string|\Robo\Task\Docker\Result $cidOrResult
      *
-     * @return \Robo\Task\Docker\Remove
+     * @return \Robo\Task\Docker\Remove|\Robo\Collection\CollectionBuilder
      */
     protected function taskDockerRemove($cidOrResult)
     {
@@ -76,7 +77,7 @@ trait loadTasks
     /**
      * @param string|\Robo\Task\Docker\Result $cidOrResult
      *
-     * @return \Robo\Task\Docker\Exec
+     * @return \Robo\Task\Docker\Exec|\Robo\Collection\CollectionBuilder
      */
     protected function taskDockerExec($cidOrResult)
     {

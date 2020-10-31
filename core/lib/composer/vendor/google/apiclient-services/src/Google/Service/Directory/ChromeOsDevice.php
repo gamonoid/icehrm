@@ -17,23 +17,33 @@
 
 class Google_Service_Directory_ChromeOsDevice extends Google_Collection
 {
-  protected $collection_key = 'recentUsers';
+  protected $collection_key = 'systemRamFreeReports';
   protected $activeTimeRangesType = 'Google_Service_Directory_ChromeOsDeviceActiveTimeRanges';
   protected $activeTimeRangesDataType = 'array';
   public $annotatedAssetId;
   public $annotatedLocation;
   public $annotatedUser;
+  public $autoUpdateExpiration;
   public $bootMode;
+  protected $cpuStatusReportsType = 'Google_Service_Directory_ChromeOsDeviceCpuStatusReports';
+  protected $cpuStatusReportsDataType = 'array';
   protected $deviceFilesType = 'Google_Service_Directory_ChromeOsDeviceDeviceFiles';
   protected $deviceFilesDataType = 'array';
   public $deviceId;
+  protected $diskVolumeReportsType = 'Google_Service_Directory_ChromeOsDeviceDiskVolumeReports';
+  protected $diskVolumeReportsDataType = 'array';
+  public $dockMacAddress;
   public $etag;
   public $ethernetMacAddress;
+  public $ethernetMacAddress0;
   public $firmwareVersion;
   public $kind;
   public $lastEnrollmentTime;
+  protected $lastKnownNetworkType = 'Google_Service_Directory_ChromeOsDeviceLastKnownNetwork';
+  protected $lastKnownNetworkDataType = 'array';
   public $lastSync;
   public $macAddress;
+  public $manufactureDate;
   public $meid;
   public $model;
   public $notes;
@@ -46,6 +56,9 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   public $serialNumber;
   public $status;
   public $supportEndDate;
+  protected $systemRamFreeReportsType = 'Google_Service_Directory_ChromeOsDeviceSystemRamFreeReports';
+  protected $systemRamFreeReportsDataType = 'array';
+  public $systemRamTotal;
   protected $tpmVersionInfoType = 'Google_Service_Directory_ChromeOsDeviceTpmVersionInfo';
   protected $tpmVersionInfoDataType = '';
   public $willAutoRenew;
@@ -88,6 +101,14 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   {
     return $this->annotatedUser;
   }
+  public function setAutoUpdateExpiration($autoUpdateExpiration)
+  {
+    $this->autoUpdateExpiration = $autoUpdateExpiration;
+  }
+  public function getAutoUpdateExpiration()
+  {
+    return $this->autoUpdateExpiration;
+  }
   public function setBootMode($bootMode)
   {
     $this->bootMode = $bootMode;
@@ -95,6 +116,20 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   public function getBootMode()
   {
     return $this->bootMode;
+  }
+  /**
+   * @param Google_Service_Directory_ChromeOsDeviceCpuStatusReports
+   */
+  public function setCpuStatusReports($cpuStatusReports)
+  {
+    $this->cpuStatusReports = $cpuStatusReports;
+  }
+  /**
+   * @return Google_Service_Directory_ChromeOsDeviceCpuStatusReports
+   */
+  public function getCpuStatusReports()
+  {
+    return $this->cpuStatusReports;
   }
   /**
    * @param Google_Service_Directory_ChromeOsDeviceDeviceFiles
@@ -118,6 +153,28 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   {
     return $this->deviceId;
   }
+  /**
+   * @param Google_Service_Directory_ChromeOsDeviceDiskVolumeReports
+   */
+  public function setDiskVolumeReports($diskVolumeReports)
+  {
+    $this->diskVolumeReports = $diskVolumeReports;
+  }
+  /**
+   * @return Google_Service_Directory_ChromeOsDeviceDiskVolumeReports
+   */
+  public function getDiskVolumeReports()
+  {
+    return $this->diskVolumeReports;
+  }
+  public function setDockMacAddress($dockMacAddress)
+  {
+    $this->dockMacAddress = $dockMacAddress;
+  }
+  public function getDockMacAddress()
+  {
+    return $this->dockMacAddress;
+  }
   public function setEtag($etag)
   {
     $this->etag = $etag;
@@ -133,6 +190,14 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   public function getEthernetMacAddress()
   {
     return $this->ethernetMacAddress;
+  }
+  public function setEthernetMacAddress0($ethernetMacAddress0)
+  {
+    $this->ethernetMacAddress0 = $ethernetMacAddress0;
+  }
+  public function getEthernetMacAddress0()
+  {
+    return $this->ethernetMacAddress0;
   }
   public function setFirmwareVersion($firmwareVersion)
   {
@@ -158,6 +223,20 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   {
     return $this->lastEnrollmentTime;
   }
+  /**
+   * @param Google_Service_Directory_ChromeOsDeviceLastKnownNetwork
+   */
+  public function setLastKnownNetwork($lastKnownNetwork)
+  {
+    $this->lastKnownNetwork = $lastKnownNetwork;
+  }
+  /**
+   * @return Google_Service_Directory_ChromeOsDeviceLastKnownNetwork
+   */
+  public function getLastKnownNetwork()
+  {
+    return $this->lastKnownNetwork;
+  }
   public function setLastSync($lastSync)
   {
     $this->lastSync = $lastSync;
@@ -173,6 +252,14 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   public function getMacAddress()
   {
     return $this->macAddress;
+  }
+  public function setManufactureDate($manufactureDate)
+  {
+    $this->manufactureDate = $manufactureDate;
+  }
+  public function getManufactureDate()
+  {
+    return $this->manufactureDate;
   }
   public function setMeid($meid)
   {
@@ -267,6 +354,28 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   public function getSupportEndDate()
   {
     return $this->supportEndDate;
+  }
+  /**
+   * @param Google_Service_Directory_ChromeOsDeviceSystemRamFreeReports
+   */
+  public function setSystemRamFreeReports($systemRamFreeReports)
+  {
+    $this->systemRamFreeReports = $systemRamFreeReports;
+  }
+  /**
+   * @return Google_Service_Directory_ChromeOsDeviceSystemRamFreeReports
+   */
+  public function getSystemRamFreeReports()
+  {
+    return $this->systemRamFreeReports;
+  }
+  public function setSystemRamTotal($systemRamTotal)
+  {
+    $this->systemRamTotal = $systemRamTotal;
+  }
+  public function getSystemRamTotal()
+  {
+    return $this->systemRamTotal;
   }
   /**
    * @param Google_Service_Directory_ChromeOsDeviceTpmVersionInfo

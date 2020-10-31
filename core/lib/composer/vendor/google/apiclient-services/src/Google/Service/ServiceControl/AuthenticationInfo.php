@@ -15,10 +15,15 @@
  * the License.
  */
 
-class Google_Service_ServiceControl_AuthenticationInfo extends Google_Model
+class Google_Service_ServiceControl_AuthenticationInfo extends Google_Collection
 {
+  protected $collection_key = 'serviceAccountDelegationInfo';
   public $authoritySelector;
   public $principalEmail;
+  public $principalSubject;
+  protected $serviceAccountDelegationInfoType = 'Google_Service_ServiceControl_ServiceAccountDelegationInfo';
+  protected $serviceAccountDelegationInfoDataType = 'array';
+  public $serviceAccountKeyName;
   public $thirdPartyPrincipal;
 
   public function setAuthoritySelector($authoritySelector)
@@ -36,6 +41,36 @@ class Google_Service_ServiceControl_AuthenticationInfo extends Google_Model
   public function getPrincipalEmail()
   {
     return $this->principalEmail;
+  }
+  public function setPrincipalSubject($principalSubject)
+  {
+    $this->principalSubject = $principalSubject;
+  }
+  public function getPrincipalSubject()
+  {
+    return $this->principalSubject;
+  }
+  /**
+   * @param Google_Service_ServiceControl_ServiceAccountDelegationInfo
+   */
+  public function setServiceAccountDelegationInfo($serviceAccountDelegationInfo)
+  {
+    $this->serviceAccountDelegationInfo = $serviceAccountDelegationInfo;
+  }
+  /**
+   * @return Google_Service_ServiceControl_ServiceAccountDelegationInfo
+   */
+  public function getServiceAccountDelegationInfo()
+  {
+    return $this->serviceAccountDelegationInfo;
+  }
+  public function setServiceAccountKeyName($serviceAccountKeyName)
+  {
+    $this->serviceAccountKeyName = $serviceAccountKeyName;
+  }
+  public function getServiceAccountKeyName()
+  {
+    return $this->serviceAccountKeyName;
   }
   public function setThirdPartyPrincipal($thirdPartyPrincipal)
   {

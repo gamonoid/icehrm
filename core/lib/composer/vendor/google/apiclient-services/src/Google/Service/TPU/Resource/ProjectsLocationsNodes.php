@@ -99,20 +99,6 @@ class Google_Service_TPU_Resource_ProjectsLocationsNodes extends Google_Service_
     return $this->call('reimage', array($params), "Google_Service_TPU_Operation");
   }
   /**
-   * Resets a node, which stops and starts the VM. (nodes.reset)
-   *
-   * @param string $name The resource name.
-   * @param Google_Service_TPU_ResetNodeRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_TPU_Operation
-   */
-  public function reset($name, Google_Service_TPU_ResetNodeRequest $postBody, $optParams = array())
-  {
-    $params = array('name' => $name, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('reset', array($params), "Google_Service_TPU_Operation");
-  }
-  /**
    * Starts a node. (nodes.start)
    *
    * @param string $name The resource name.

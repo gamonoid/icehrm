@@ -28,7 +28,7 @@ class Google_Service_PolyService_Resource_Assets extends Google_Service_Resource
   /**
    * Returns detailed information about an asset given its name. PRIVATE assets
    * are returned only if  the currently authenticated user (via OAuth token) is
-   * the author of the asset. (assets.get)
+   * the author of the  asset. (assets.get)
    *
    * @param string $name Required. An asset's name in the form
    * `assets/{ASSET_ID}`.
@@ -47,12 +47,12 @@ class Google_Service_PolyService_Resource_Assets extends Google_Service_Resource
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string pageToken Specifies a continuation token from a previous
-   * search whose results were split into multiple pages. To get the next page,
-   * submit the same request specifying the value from next_page_token.
    * @opt_param string maxComplexity Returns assets that are of the specified
    * complexity or less. Defaults to COMPLEX. For example, a request for MEDIUM
    * assets also includes SIMPLE assets.
+   * @opt_param string pageToken Specifies a continuation token from a previous
+   * search whose results were split into multiple pages. To get the next page,
+   * submit the same request specifying the value from next_page_token.
    * @opt_param int pageSize The maximum number of assets to be returned. This
    * value must be between `1` and `100`. Defaults to `20`.
    * @opt_param string keywords One or more search terms to be matched against all

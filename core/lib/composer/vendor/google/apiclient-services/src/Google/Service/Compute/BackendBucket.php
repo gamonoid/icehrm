@@ -18,6 +18,8 @@
 class Google_Service_Compute_BackendBucket extends Google_Model
 {
   public $bucketName;
+  protected $cdnPolicyType = 'Google_Service_Compute_BackendBucketCdnPolicy';
+  protected $cdnPolicyDataType = '';
   public $creationTimestamp;
   public $description;
   public $enableCdn;
@@ -33,6 +35,20 @@ class Google_Service_Compute_BackendBucket extends Google_Model
   public function getBucketName()
   {
     return $this->bucketName;
+  }
+  /**
+   * @param Google_Service_Compute_BackendBucketCdnPolicy
+   */
+  public function setCdnPolicy(Google_Service_Compute_BackendBucketCdnPolicy $cdnPolicy)
+  {
+    $this->cdnPolicy = $cdnPolicy;
+  }
+  /**
+   * @return Google_Service_Compute_BackendBucketCdnPolicy
+   */
+  public function getCdnPolicy()
+  {
+    return $this->cdnPolicy;
   }
   public function setCreationTimestamp($creationTimestamp)
   {

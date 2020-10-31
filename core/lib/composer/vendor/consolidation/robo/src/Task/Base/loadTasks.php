@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Base;
 
 trait loadTasks
@@ -6,7 +7,7 @@ trait loadTasks
     /**
      * @param string|\Robo\Contract\CommandInterface $command
      *
-     * @return Exec
+     * @return \Robo\Task\Base\Exec|\Robo\Collection\CollectionBuilder
      */
     protected function taskExec($command)
     {
@@ -14,7 +15,7 @@ trait loadTasks
     }
 
     /**
-     * @return ExecStack
+     * @return \Robo\Task\Base\ExecStack|\Robo\Collection\CollectionBuilder
      */
     protected function taskExecStack()
     {
@@ -22,7 +23,7 @@ trait loadTasks
     }
 
     /**
-     * @return ParallelExec
+     * @return \Robo\Task\Base\ParallelExec|\Robo\Collection\CollectionBuilder
      */
     protected function taskParallelExec()
     {
@@ -30,8 +31,9 @@ trait loadTasks
     }
 
     /**
-     * @param $command
-     * @return SymfonyCommand
+     * @param \Symfony\Component\Console\Command\Command $command
+     *
+     * @return \Robo\Task\Base\SymfonyCommand|\Robo\Collection\CollectionBuilder
      */
     protected function taskSymfonyCommand($command)
     {
@@ -39,7 +41,7 @@ trait loadTasks
     }
 
     /**
-     * @return Watch
+     * @return \Robo\Task\Base\Watch|\Robo\Collection\CollectionBuilder
      */
     protected function taskWatch()
     {

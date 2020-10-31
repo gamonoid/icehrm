@@ -18,9 +18,18 @@
 class Google_Service_CloudBuild_ListBuildTriggersResponse extends Google_Collection
 {
   protected $collection_key = 'triggers';
+  public $nextPageToken;
   protected $triggersType = 'Google_Service_CloudBuild_BuildTrigger';
   protected $triggersDataType = 'array';
 
+  public function setNextPageToken($nextPageToken)
+  {
+    $this->nextPageToken = $nextPageToken;
+  }
+  public function getNextPageToken()
+  {
+    return $this->nextPageToken;
+  }
   /**
    * @param Google_Service_CloudBuild_BuildTrigger
    */

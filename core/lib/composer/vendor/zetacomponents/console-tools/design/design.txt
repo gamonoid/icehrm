@@ -1,0 +1,114 @@
+eZ publish Enterprise Component: ConsoleTools, Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Introduction
+============
+
+Purpose of the ConsoleTools package
+-----------------------------------
+
+The ConsoleTools package will contain several classes to support comfortable
+development of console based applications. These classes shall be designed as
+independant as possible from each other to let the user flexibly choose, which
+ones he likes to use and which not.
+
+Aimed features are:
+
+- Comfortable handling of options and parameters (long, short, values,...)
+- Formatting assistance for console output (placing, colors,...)
+- Convenience functionality to deal with Windoze and Unix based systems
+
+Current implementation
+----------------------
+
+Included classes
+^^^^^^^^^^^^^^^^
+
+2 classes are directly involved in the CLI handling.
+
+eZScript
+    General initiallization and shutdown script functionality. Very eZ 
+    publish specific. Handles initialization of database connection for 
+    example, but also some CLI related actions like shutting down every
+    thing cleanly and returning an exit code.
+
+eZCLI
+    Handles general console output, formating and option parsing.
+
+External classes
+^^^^^^^^^^^^^^^^
+
+Beside that, there are dependencies to log/debug/whatever and the following
+ones.
+
+eZTextCodec
+    Base clase for drivers that convert text between different output formats.
+    Currently has 1 extending class: eZCodePageCodec. Part of the I18N
+    package.
+
+General involved classes:
+eZPublishSDK, eZDebug, eZINI, eZDebugSetting, eZExecution, 
+eZExtension, eZDB, eZSession, eZUser, eZModule
+
+General notes
+-------------
+
+The functionality for console handling seems to be widly spread over the
+current eZ publish classes. Beside that, it is not quite feature complete and
+mixed around with web handling classes.
+
+Requirenments
+=============
+
+Design goals
+------------
+
+The command line handling classes should be redesigned completly, since it's
+currently messed up with web related stuff and fully integrated with eZ
+publish.
+
+Following functionality will be included:
+
+- General in and output handling functionality
+
+- Output strings
+
+  - Style output (color, underline?, ...)
+  - Position change
+  - Error/notice/warning support
+
+- Handling of options
+
+  - Long / short options
+  - Dealing with help output
+  - Optional and required stuff
+  - Dependencies and exclusion of options
+  
+- Handling of advanced output
+
+  - Progress bars (single, keep multiple in mind)
+  - Tables
+
+All parts should be as independant as possible. Some parts depend quite hardly
+on the output itself, this is ok. Option parsing and handling should _not_
+depend on the output class.
+
+Design
+======
+
+The design for this package has been splitted into 3 categories of classes:
+
+Output
+    This type of classes provide low level output functionality for console
+    based applications (like styling text, line breaking,...).
+Generation
+    This type of classes provide more advanced outputing features (like
+    generating structures of text automatically, providing advances
+    tools,...). This type of classes depends on the Output classes described
+    above, since they output data.
+Handling
+    This type of classes is independant of both above shown categories and
+    provides features for handling common functions in console based
+    applications. Since they do not have to output directly, there is no need
+    to depend on output functionality.
+

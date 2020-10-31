@@ -35,7 +35,7 @@ class AttendanceAdapter extends AdapterBase {
   getFormFields() {
     return [
       ['employee', {
-        label: 'Employee', type: 'select2', 'allow-null': false, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
+        label: 'Employee', type: 'select2', 'allow-null': false, 'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
       }],
       ['id', { label: 'ID', type: 'hidden' }],
       ['in_time', { label: 'Time-In', type: 'datetime' }],

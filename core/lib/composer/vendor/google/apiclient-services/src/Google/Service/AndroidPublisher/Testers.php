@@ -17,9 +17,8 @@
 
 class Google_Service_AndroidPublisher_Testers extends Google_Collection
 {
-  protected $collection_key = 'googlePlusCommunities';
+  protected $collection_key = 'googleGroups';
   public $googleGroups;
-  public $googlePlusCommunities;
 
   public function setGoogleGroups($googleGroups)
   {
@@ -28,13 +27,5 @@ class Google_Service_AndroidPublisher_Testers extends Google_Collection
   public function getGoogleGroups()
   {
     return $this->googleGroups;
-  }
-  public function setGooglePlusCommunities($googlePlusCommunities)
-  {
-    $this->googlePlusCommunities = $googlePlusCommunities;
-  }
-  public function getGooglePlusCommunities()
-  {
-    return $this->googlePlusCommunities;
   }
 }

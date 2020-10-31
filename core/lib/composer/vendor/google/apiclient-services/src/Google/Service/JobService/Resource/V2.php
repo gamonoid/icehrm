@@ -31,6 +31,9 @@ class Google_Service_JobService_Resource_V2 extends Google_Service_Resource
    *
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string type Optional.
+   *
+   * The completion topic. The default is CompletionType.COMBINED.
    * @opt_param string companyName Optional.
    *
    * If provided, restricts completion to the specified company.
@@ -57,9 +60,6 @@ class Google_Service_JobService_Resource_V2 extends Google_Service_Resource
    *
    * For CompletionType.COMBINED type, only open jobs with same language_code or
    * companies having open jobs with same language_code are returned.
-   * @opt_param string type Optional.
-   *
-   * The completion topic. The default is CompletionType.COMBINED.
    * @return Google_Service_JobService_CompleteQueryResponse
    */
   public function complete($optParams = array())

@@ -69,7 +69,10 @@ class TimeSheetsActionManager extends SubActionManager
         $timeSheet->status = $req->status;
 
         //Auto approve admin timesheets
-        if ($req->status == 'Submitted' && BaseService::getInstance()->getCurrentUser()->user_level == 'Admin') {
+        if ($req->status == 'Submitted'
+            && BaseService::getInstance()->getCurrentUser()->user_level == 'Admin'
+            && empty($employee->supervisor)
+        ) {
             $timeSheet->status = 'Approved';
         }
 

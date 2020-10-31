@@ -17,6 +17,7 @@
 
 class Google_Service_ToolResults_TestIssue extends Google_Model
 {
+  public $category;
   public $errorMessage;
   public $severity;
   protected $stackTraceType = 'Google_Service_ToolResults_StackTrace';
@@ -25,6 +26,14 @@ class Google_Service_ToolResults_TestIssue extends Google_Model
   protected $warningType = 'Google_Service_ToolResults_Any';
   protected $warningDataType = '';
 
+  public function setCategory($category)
+  {
+    $this->category = $category;
+  }
+  public function getCategory()
+  {
+    return $this->category;
+  }
   public function setErrorMessage($errorMessage)
   {
     $this->errorMessage = $errorMessage;

@@ -25,6 +25,8 @@ class Google_Service_Bigquery_TableListTables extends Google_Model
   public $id;
   public $kind;
   public $labels;
+  protected $rangePartitioningType = 'Google_Service_Bigquery_RangePartitioning';
+  protected $rangePartitioningDataType = '';
   protected $tableReferenceType = 'Google_Service_Bigquery_TableReference';
   protected $tableReferenceDataType = '';
   protected $timePartitioningType = 'Google_Service_Bigquery_TimePartitioning';
@@ -94,6 +96,20 @@ class Google_Service_Bigquery_TableListTables extends Google_Model
   public function getLabels()
   {
     return $this->labels;
+  }
+  /**
+   * @param Google_Service_Bigquery_RangePartitioning
+   */
+  public function setRangePartitioning(Google_Service_Bigquery_RangePartitioning $rangePartitioning)
+  {
+    $this->rangePartitioning = $rangePartitioning;
+  }
+  /**
+   * @return Google_Service_Bigquery_RangePartitioning
+   */
+  public function getRangePartitioning()
+  {
+    return $this->rangePartitioning;
   }
   /**
    * @param Google_Service_Bigquery_TableReference

@@ -30,6 +30,8 @@ class Google_Service_ToolResults_Step extends Google_Collection
   public $hasImages;
   protected $labelsType = 'Google_Service_ToolResults_StepLabelsEntry';
   protected $labelsDataType = 'array';
+  protected $multiStepType = 'Google_Service_ToolResults_MultiStep';
+  protected $multiStepDataType = '';
   public $name;
   protected $outcomeType = 'Google_Service_ToolResults_Outcome';
   protected $outcomeDataType = '';
@@ -127,6 +129,20 @@ class Google_Service_ToolResults_Step extends Google_Collection
   public function getLabels()
   {
     return $this->labels;
+  }
+  /**
+   * @param Google_Service_ToolResults_MultiStep
+   */
+  public function setMultiStep(Google_Service_ToolResults_MultiStep $multiStep)
+  {
+    $this->multiStep = $multiStep;
+  }
+  /**
+   * @return Google_Service_ToolResults_MultiStep
+   */
+  public function getMultiStep()
+  {
+    return $this->multiStep;
   }
   public function setName($name)
   {

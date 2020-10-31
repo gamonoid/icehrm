@@ -20,6 +20,7 @@ class Google_Service_Dataflow_Job extends Google_Collection
   protected $collection_key = 'tempFiles';
   public $clientRequestId;
   public $createTime;
+  public $createdFromSnapshotId;
   public $currentState;
   public $currentStateTime;
   protected $environmentType = 'Google_Service_Dataflow_Environment';
@@ -27,6 +28,8 @@ class Google_Service_Dataflow_Job extends Google_Collection
   protected $executionInfoType = 'Google_Service_Dataflow_JobExecutionInfo';
   protected $executionInfoDataType = '';
   public $id;
+  protected $jobMetadataType = 'Google_Service_Dataflow_JobMetadata';
+  protected $jobMetadataDataType = '';
   public $labels;
   public $location;
   public $name;
@@ -38,8 +41,10 @@ class Google_Service_Dataflow_Job extends Google_Collection
   public $requestedState;
   protected $stageStatesType = 'Google_Service_Dataflow_ExecutionStageState';
   protected $stageStatesDataType = 'array';
+  public $startTime;
   protected $stepsType = 'Google_Service_Dataflow_Step';
   protected $stepsDataType = 'array';
+  public $stepsLocation;
   public $tempFiles;
   public $transformNameMapping;
   public $type;
@@ -59,6 +64,14 @@ class Google_Service_Dataflow_Job extends Google_Collection
   public function getCreateTime()
   {
     return $this->createTime;
+  }
+  public function setCreatedFromSnapshotId($createdFromSnapshotId)
+  {
+    $this->createdFromSnapshotId = $createdFromSnapshotId;
+  }
+  public function getCreatedFromSnapshotId()
+  {
+    return $this->createdFromSnapshotId;
   }
   public function setCurrentState($currentState)
   {
@@ -111,6 +124,20 @@ class Google_Service_Dataflow_Job extends Google_Collection
   public function getId()
   {
     return $this->id;
+  }
+  /**
+   * @param Google_Service_Dataflow_JobMetadata
+   */
+  public function setJobMetadata(Google_Service_Dataflow_JobMetadata $jobMetadata)
+  {
+    $this->jobMetadata = $jobMetadata;
+  }
+  /**
+   * @return Google_Service_Dataflow_JobMetadata
+   */
+  public function getJobMetadata()
+  {
+    return $this->jobMetadata;
   }
   public function setLabels($labels)
   {
@@ -196,6 +223,14 @@ class Google_Service_Dataflow_Job extends Google_Collection
   {
     return $this->stageStates;
   }
+  public function setStartTime($startTime)
+  {
+    $this->startTime = $startTime;
+  }
+  public function getStartTime()
+  {
+    return $this->startTime;
+  }
   /**
    * @param Google_Service_Dataflow_Step
    */
@@ -209,6 +244,14 @@ class Google_Service_Dataflow_Job extends Google_Collection
   public function getSteps()
   {
     return $this->steps;
+  }
+  public function setStepsLocation($stepsLocation)
+  {
+    $this->stepsLocation = $stepsLocation;
+  }
+  public function getStepsLocation()
+  {
+    return $this->stepsLocation;
   }
   public function setTempFiles($tempFiles)
   {

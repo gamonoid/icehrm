@@ -35,6 +35,8 @@ class Google_Service_Storage_Resource_BucketAccessControls extends Google_Servic
    * allAuthenticatedUsers.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    */
@@ -54,6 +56,8 @@ class Google_Service_Storage_Resource_BucketAccessControls extends Google_Servic
    * allAuthenticatedUsers.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Google_Service_Storage_BucketAccessControl
@@ -72,6 +76,8 @@ class Google_Service_Storage_Resource_BucketAccessControls extends Google_Servic
    * @param Google_Service_Storage_BucketAccessControl $postBody
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Google_Service_Storage_BucketAccessControl
@@ -89,6 +95,8 @@ class Google_Service_Storage_Resource_BucketAccessControls extends Google_Servic
    * @param string $bucket Name of a bucket.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Google_Service_Storage_BucketAccessControls
@@ -109,6 +117,8 @@ class Google_Service_Storage_Resource_BucketAccessControls extends Google_Servic
    * @param Google_Service_Storage_BucketAccessControl $postBody
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Google_Service_Storage_BucketAccessControl
@@ -129,6 +139,8 @@ class Google_Service_Storage_Resource_BucketAccessControls extends Google_Servic
    * @param Google_Service_Storage_BucketAccessControl $postBody
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string provisionalUserProject The project to be billed for this
+   * request if the target bucket is requester-pays bucket.
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Google_Service_Storage_BucketAccessControl

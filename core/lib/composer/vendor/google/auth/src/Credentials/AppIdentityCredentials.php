@@ -24,6 +24,8 @@ namespace Google\Auth\Credentials;
  */
 use google\appengine\api\app_identity\AppIdentityService;
 use Google\Auth\CredentialsLoader;
+use Google\Auth\ProjectIdProviderInterface;
+use Google\Auth\SignBlobInterface;
 
 /**
  * AppIdentityCredentials supports authorization on Google App Engine.
@@ -31,38 +33,53 @@ use Google\Auth\CredentialsLoader;
  * It can be used to authorize requests using the AuthTokenMiddleware or
  * AuthTokenSubscriber, but will only succeed if being run on App Engine:
  *
- *   use Google\Auth\Credentials\AppIdentityCredentials;
- *   use Google\Auth\Middleware\AuthTokenMiddleware;
- *   use GuzzleHttp\Client;
- *   use GuzzleHttp\HandlerStack;
+ * Example:
+ * ```
+ * use Google\Auth\Credentials\AppIdentityCredentials;
+ * use Google\Auth\Middleware\AuthTokenMiddleware;
+ * use GuzzleHttp\Client;
+ * use GuzzleHttp\HandlerStack;
  *
- *   $gae = new AppIdentityCredentials('https://www.googleapis.com/auth/books');
- *   $middleware = new AuthTokenMiddleware($gae);
- *   $stack = HandlerStack::create();
- *   $stack->push($middleware);
+ * $gae = new AppIdentityCredentials('https://www.googleapis.com/auth/books');
+ * $middleware = new AuthTokenMiddleware($gae);
+ * $stack = HandlerStack::create();
+ * $stack->push($middleware);
  *
- *   $client = new Client([
- *       'handler' => $stack,
- *       'base_uri' => 'https://www.googleapis.com/books/v1',
- *       'auth' => 'google_auth'
- *   ]);
+ * $client = new Client([
+ *     'handler' => $stack,
+ *     'base_uri' => 'https://www.googleapis.com/books/v1',
+ *     'auth' => 'google_auth'
+ * ]);
  *
- *   $res = $client->get('volumes?q=Henry+David+Thoreau&country=US');
+ * $res = $client->get('volumes?q=Henry+David+Thoreau&country=US');
+ * ```
  */
-class AppIdentityCredentials extends CredentialsLoader
+class AppIdentityCredentials extends CredentialsLoader implements
+    SignBlobInterface,
+    ProjectIdProviderInterface
 {
     /**
      * Result of fetchAuthToken.
      *
-     * @array
+     * @var array
      */
     protected $lastReceivedToken;
 
     /**
      * Array of OAuth2 scopes to be requested.
+     *
+     * @var array
      */
     private $scope;
 
+    /**
+     * @var string
+     */
+    private $clientName;
+
+    /**
+     * @param array $scope One or more scopes.
+     */
     public function __construct($scope = array())
     {
         $this->scope = $scope;
@@ -73,7 +90,7 @@ class AppIdentityCredentials extends CredentialsLoader
      * SERVER_SOFTWARE environment variable (prod) or the APPENGINE_RUNTIME
      * environment variable (dev).
      *
-     * @return true if this an App Engine Instance, false otherwise
+     * @return bool true if this an App Engine Instance, false otherwise
      */
     public static function onAppEngine()
     {
@@ -98,28 +115,17 @@ class AppIdentityCredentials extends CredentialsLoader
      * the GuzzleHttp\ClientInterface instance passed in will not be used.
      *
      * @param callable $httpHandler callback which delivers psr7 request
-     *
-     * @return array the auth metadata:
-     *  array(2) {
-     *   ["access_token"]=>
-     *   string(3) "xyz"
-     *   ["expiration_time"]=>
-     *   string(10) "1444339905"
-     *  }
-     *
-     * @throws \Exception
+     * @return array A set of auth related metadata, containing the following
+     *     keys:
+     *         - access_token (string)
+     *         - expiration_time (string)
      */
     public function fetchAuthToken(callable $httpHandler = null)
     {
-        if (!self::onAppEngine()) {
-            return array();
-        }
-
-        if (!class_exists('google\appengine\api\app_identity\AppIdentityService')) {
-            throw new \Exception(
-                'This class must be run in App Engine, or you must include the AppIdentityService '
-                . 'mock class defined in tests/mocks/AppIdentityService.php'
-            );
+        try {
+            $this->checkAppEngineContext();
+        } catch (\Exception $e) {
+            return [];
         }
 
         // AppIdentityService expects an array when multiple scopes are supplied
@@ -129,6 +135,61 @@ class AppIdentityCredentials extends CredentialsLoader
         $this->lastReceivedToken = $token;
 
         return $token;
+    }
+
+    /**
+     * Sign a string using AppIdentityService.
+     *
+     * @param string $stringToSign The string to sign.
+     * @param bool $forceOpenSsl [optional] Does not apply to this credentials
+     *        type.
+     * @return string The signature, base64-encoded.
+     * @throws \Exception If AppEngine SDK or mock is not available.
+     */
+    public function signBlob($stringToSign, $forceOpenSsl = false)
+    {
+        $this->checkAppEngineContext();
+
+        return base64_encode(AppIdentityService::signForApp($stringToSign)['signature']);
+    }
+
+    /**
+     * Get the project ID from AppIdentityService.
+     *
+     * Returns null if AppIdentityService is unavailable.
+     *
+     * @param callable $httpHandler Not used by this type.
+     * @return string|null
+     */
+    public function getProjectId(callable $httpHander = null)
+    {
+        try {
+            $this->checkAppEngineContext();
+        } catch (\Exception $e) {
+            return null;
+        }
+
+        return AppIdentityService::getApplicationId();
+    }
+
+    /**
+     * Get the client name from AppIdentityService.
+     *
+     * Subsequent calls to this method will return a cached value.
+     *
+     * @param callable $httpHandler Not used in this implementation.
+     * @return string
+     * @throws \Exception If AppEngine SDK or mock is not available.
+     */
+    public function getClientName(callable $httpHandler = null)
+    {
+        $this->checkAppEngineContext();
+
+        if (!$this->clientName) {
+            $this->clientName = AppIdentityService::getServiceAccountName();
+        }
+
+        return $this->clientName;
     }
 
     /**
@@ -155,5 +216,15 @@ class AppIdentityCredentials extends CredentialsLoader
     public function getCacheKey()
     {
         return '';
+    }
+
+    private function checkAppEngineContext()
+    {
+        if (!self::onAppEngine() || !class_exists('google\appengine\api\app_identity\AppIdentityService')) {
+            throw new \Exception(
+                'This class must be run in App Engine, or you must include the AppIdentityService '
+                . 'mock class defined in tests/mocks/AppIdentityService.php'
+            );
+        }
     }
 }

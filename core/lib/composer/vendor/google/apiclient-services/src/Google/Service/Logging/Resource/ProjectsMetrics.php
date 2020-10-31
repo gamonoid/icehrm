@@ -28,9 +28,9 @@ class Google_Service_Logging_Resource_ProjectsMetrics extends Google_Service_Res
   /**
    * Creates a logs-based metric. (metrics.create)
    *
-   * @param string $parent The resource name of the project in which to create the
-   * metric: "projects/[PROJECT_ID]" The new metric must be provided in the
-   * request.
+   * @param string $parent Required. The resource name of the project in which to
+   * create the metric: "projects/[PROJECT_ID]" The new metric must be provided in
+   * the request.
    * @param Google_Service_Logging_LogMetric $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Logging_LogMetric
@@ -44,8 +44,8 @@ class Google_Service_Logging_Resource_ProjectsMetrics extends Google_Service_Res
   /**
    * Deletes a logs-based metric. (metrics.delete)
    *
-   * @param string $metricName The resource name of the metric to delete:
-   * "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
+   * @param string $metricName Required. The resource name of the metric to
+   * delete: "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @param array $optParams Optional parameters.
    * @return Google_Service_Logging_LoggingEmpty
    */
@@ -58,7 +58,7 @@ class Google_Service_Logging_Resource_ProjectsMetrics extends Google_Service_Res
   /**
    * Gets a logs-based metric. (metrics.get)
    *
-   * @param string $metricName The resource name of the desired metric:
+   * @param string $metricName Required. The resource name of the desired metric:
    * "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @param array $optParams Optional parameters.
    * @return Google_Service_Logging_LogMetric
@@ -94,10 +94,11 @@ class Google_Service_Logging_Resource_ProjectsMetrics extends Google_Service_Res
   /**
    * Creates or updates a logs-based metric. (metrics.update)
    *
-   * @param string $metricName The resource name of the metric to update:
-   * "projects/[PROJECT_ID]/metrics/[METRIC_ID]" The updated metric must be
-   * provided in the request and it's name field must be the same as [METRIC_ID]
-   * If the metric does not exist in [PROJECT_ID], then a new metric is created.
+   * @param string $metricName Required. The resource name of the metric to
+   * update: "projects/[PROJECT_ID]/metrics/[METRIC_ID]" The updated metric must
+   * be provided in the request and it's name field must be the same as
+   * [METRIC_ID] If the metric does not exist in [PROJECT_ID], then a new metric
+   * is created.
    * @param Google_Service_Logging_LogMetric $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Logging_LogMetric

@@ -192,8 +192,30 @@ if (isset($rowCount) && !empty($rowCount)) {
 /*
  * Output
  */
+if (isset($_REQUEST['version']) && $_REQUEST['version'] === 'v2') {
+    $output = [
+        "totalRecords" => $totalRows,
+        "totalDisplayRecords" => $totalRows,
+        "objects" => []
+    ];
 
-if (!isset($_REQUEST['objects'])) {
+    foreach ($data as $item) {
+        $row = new stdClass();
+        $colCount = count($columns);
+        for ($i = 0; $i < $colCount; $i++) {
+            $row->{$columns[$i]} = $item->{$columns[$i]};
+        }
+        $output['objects'][] = $row;
+    }
+
+    try {
+        echo \Classes\BaseService::getInstance()->safeJsonEncode($output);
+    } catch (Exception $e) {
+        \Utils\LogManager::getInstance()->error($e->getMessage());
+        \Utils\LogManager::getInstance()->notifyException($e);
+        echo json_encode(['status' => 'Error']);
+    }
+}else if (!isset($_REQUEST['objects'])) {
     $output = array(
         "sEcho" => intval($_REQUEST['sEcho']),
         "iTotalRecords" => $totalRows,

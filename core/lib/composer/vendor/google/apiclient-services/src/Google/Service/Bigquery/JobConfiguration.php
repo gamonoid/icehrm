@@ -23,6 +23,7 @@ class Google_Service_Bigquery_JobConfiguration extends Google_Model
   protected $extractType = 'Google_Service_Bigquery_JobConfigurationExtract';
   protected $extractDataType = '';
   public $jobTimeoutMs;
+  public $jobType;
   public $labels;
   protected $loadType = 'Google_Service_Bigquery_JobConfigurationLoad';
   protected $loadDataType = '';
@@ -72,6 +73,14 @@ class Google_Service_Bigquery_JobConfiguration extends Google_Model
   public function getJobTimeoutMs()
   {
     return $this->jobTimeoutMs;
+  }
+  public function setJobType($jobType)
+  {
+    $this->jobType = $jobType;
+  }
+  public function getJobType()
+  {
+    return $this->jobType;
   }
   public function setLabels($labels)
   {

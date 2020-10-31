@@ -28,7 +28,7 @@ class Google_Service_Fitness_Resource_UsersDataset extends Google_Service_Resour
   /**
    * Aggregates data of a certain type or stream into buckets divided by a given
    * type of boundary. Multiple data sets of multiple types and from multiple
-   * sources can be aggreated into exactly one bucket type per request.
+   * sources can be aggregated into exactly one bucket type per request.
    * (dataset.aggregate)
    *
    * @param string $userId Aggregate data for the person identified. Use me to

@@ -19,6 +19,8 @@ class Google_Service_CloudComposer_NodeConfig extends Google_Collection
 {
   protected $collection_key = 'tags';
   public $diskSizeGb;
+  protected $ipAllocationPolicyType = 'Google_Service_CloudComposer_IPAllocationPolicy';
+  protected $ipAllocationPolicyDataType = '';
   public $location;
   public $machineType;
   public $network;
@@ -34,6 +36,20 @@ class Google_Service_CloudComposer_NodeConfig extends Google_Collection
   public function getDiskSizeGb()
   {
     return $this->diskSizeGb;
+  }
+  /**
+   * @param Google_Service_CloudComposer_IPAllocationPolicy
+   */
+  public function setIpAllocationPolicy(Google_Service_CloudComposer_IPAllocationPolicy $ipAllocationPolicy)
+  {
+    $this->ipAllocationPolicy = $ipAllocationPolicy;
+  }
+  /**
+   * @return Google_Service_CloudComposer_IPAllocationPolicy
+   */
+  public function getIpAllocationPolicy()
+  {
+    return $this->ipAllocationPolicy;
   }
   public function setLocation($location)
   {

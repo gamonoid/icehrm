@@ -26,12 +26,11 @@
 class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Google_Service_Resource
 {
   /**
-   * Gets multiple documents.
+   * Gets multiple documents. Documents returned by this method are not guaranteed
+   * to be returned in the same order that they were requested.
+   * (documents.batchGet)
    *
-   * Documents returned by this method are not guaranteed to be returned in the
-   * same order that they were requested. (documents.batchGet)
-   *
-   * @param string $database The database name. In the format:
+   * @param string $database Required. The database name. In the format:
    * `projects/{project_id}/databases/{database_id}`.
    * @param Google_Service_Firestore_BatchGetDocumentsRequest $postBody
    * @param array $optParams Optional parameters.
@@ -44,9 +43,29 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
     return $this->call('batchGet', array($params), "Google_Service_Firestore_BatchGetDocumentsResponse");
   }
   /**
+   * Applies a batch of write operations. The BatchWrite method does not apply the
+   * write operations atomically and can apply them out of order. Method does not
+   * allow more than one write per document. Each write succeeds or fails
+   * independently. See the BatchWriteResponse for the success status of each
+   * write. If you require an atomically applied set of writes, use Commit
+   * instead. (documents.batchWrite)
+   *
+   * @param string $database Required. The database name. In the format:
+   * `projects/{project_id}/databases/{database_id}`.
+   * @param Google_Service_Firestore_BatchWriteRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Firestore_BatchWriteResponse
+   */
+  public function batchWrite($database, Google_Service_Firestore_BatchWriteRequest $postBody, $optParams = array())
+  {
+    $params = array('database' => $database, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('batchWrite', array($params), "Google_Service_Firestore_BatchWriteResponse");
+  }
+  /**
    * Starts a new transaction. (documents.beginTransaction)
    *
-   * @param string $database The database name. In the format:
+   * @param string $database Required. The database name. In the format:
    * `projects/{project_id}/databases/{database_id}`.
    * @param Google_Service_Firestore_BeginTransactionRequest $postBody
    * @param array $optParams Optional parameters.
@@ -62,7 +81,7 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
    * Commits a transaction, while optionally updating documents.
    * (documents.commit)
    *
-   * @param string $database The database name. In the format:
+   * @param string $database Required. The database name. In the format:
    * `projects/{project_id}/databases/{database_id}`.
    * @param Google_Service_Firestore_CommitRequest $postBody
    * @param array $optParams Optional parameters.
@@ -77,20 +96,18 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
   /**
    * Creates a new document. (documents.createDocument)
    *
-   * @param string $parent The parent resource. For example:
+   * @param string $parent Required. The parent resource. For example:
    * `projects/{project_id}/databases/{database_id}/documents` or `projects/{proje
    * ct_id}/databases/{database_id}/documents/chatrooms/{chatroom_id}`
-   * @param string $collectionId The collection ID, relative to `parent`, to list.
-   * For example: `chatrooms`.
+   * @param string $collectionId Required. The collection ID, relative to
+   * `parent`, to list. For example: `chatrooms`.
    * @param Google_Service_Firestore_Document $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string documentId The client-assigned document ID to use for this
-   * document.
-   *
-   * Optional. If not specified, an ID will be assigned by the service.
    * @opt_param string mask.fieldPaths The list of field paths in the mask. See
    * Document.fields for a field path syntax reference.
+   * @opt_param string documentId The client-assigned document ID to use for this
+   * document. Optional. If not specified, an ID will be assigned by the service.
    * @return Google_Service_Firestore_Document
    */
   public function createDocument($parent, $collectionId, Google_Service_Firestore_Document $postBody, $optParams = array())
@@ -102,15 +119,15 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
   /**
    * Deletes a document. (documents.delete)
    *
-   * @param string $name The resource name of the Document to delete. In the
-   * format:
+   * @param string $name Required. The resource name of the Document to delete. In
+   * the format:
    * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string currentDocument.updateTime When set, the target document
-   * must exist and have been last updated at that time.
    * @opt_param bool currentDocument.exists When set to `true`, the target
    * document must exist. When set to `false`, the target document must not exist.
+   * @opt_param string currentDocument.updateTime When set, the target document
+   * must exist and have been last updated at that time.
    * @return Google_Service_Firestore_FirestoreEmpty
    */
   public function delete($name, $optParams = array())
@@ -122,15 +139,16 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
   /**
    * Gets a single document. (documents.get)
    *
-   * @param string $name The resource name of the Document to get. In the format:
+   * @param string $name Required. The resource name of the Document to get. In
+   * the format:
    * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string readTime Reads the version of the document at the given
+   * time. This may not be older than 270 seconds.
    * @opt_param string transaction Reads the document in a transaction.
    * @opt_param string mask.fieldPaths The list of field paths in the mask. See
    * Document.fields for a field path syntax reference.
-   * @opt_param string readTime Reads the version of the document at the given
-   * time. This may not be older than 60 seconds.
    * @return Google_Service_Firestore_Document
    */
   public function get($name, $optParams = array())
@@ -142,31 +160,30 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
   /**
    * Lists documents. (documents.listProjectsDatabasesDocuments)
    *
-   * @param string $parent The parent resource name. In the format:
+   * @param string $parent Required. The parent resource name. In the format:
    * `projects/{project_id}/databases/{database_id}/documents` or
    * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
    * For example: `projects/my-project/databases/my-database/documents` or
    * `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
-   * @param string $collectionId The collection ID, relative to `parent`, to list.
-   * For example: `chatrooms` or `messages`.
+   * @param string $collectionId Required. The collection ID, relative to
+   * `parent`, to list. For example: `chatrooms` or `messages`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string orderBy The order to sort results by. For example:
-   * `priority desc, name`.
-   * @opt_param string readTime Reads documents as they were at the given time.
-   * This may not be older than 60 seconds.
-   * @opt_param bool showMissing If the list should show missing documents. A
-   * missing document is a document that does not exist but has sub-documents.
-   * These documents will be returned with a key but will not have fields,
-   * Document.create_time, or Document.update_time set.
-   *
-   * Requests with `show_missing` may not specify `where` or `order_by`.
-   * @opt_param string pageToken The `next_page_token` value returned from a
-   * previous List request, if any.
+   * @opt_param string transaction Reads documents in a transaction.
    * @opt_param string mask.fieldPaths The list of field paths in the mask. See
    * Document.fields for a field path syntax reference.
    * @opt_param int pageSize The maximum number of documents to return.
-   * @opt_param string transaction Reads documents in a transaction.
+   * @opt_param bool showMissing If the list should show missing documents. A
+   * missing document is a document that does not exist but has sub-documents.
+   * These documents will be returned with a key but will not have fields,
+   * Document.create_time, or Document.update_time set. Requests with
+   * `show_missing` may not specify `where` or `order_by`.
+   * @opt_param string readTime Reads documents as they were at the given time.
+   * This may not be older than 270 seconds.
+   * @opt_param string pageToken The `next_page_token` value returned from a
+   * previous List request, if any.
+   * @opt_param string orderBy The order to sort results by. For example:
+   * `priority desc, name`.
    * @return Google_Service_Firestore_ListDocumentsResponse
    */
   public function listProjectsDatabasesDocuments($parent, $collectionId, $optParams = array())
@@ -179,7 +196,7 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
    * Lists all the collection IDs underneath a document.
    * (documents.listCollectionIds)
    *
-   * @param string $parent The parent document. In the format:
+   * @param string $parent Required. The parent document. In the format:
    * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
    * For example: `projects/my-project/databases/my-database/documents/chatrooms
    * /my-chatroom`
@@ -196,7 +213,7 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
   /**
    * Listens to changes. (documents.listen)
    *
-   * @param string $database The database name. In the format:
+   * @param string $database Required. The database name. In the format:
    * `projects/{project_id}/databases/{database_id}`.
    * @param Google_Service_Firestore_ListenRequest $postBody
    * @param array $optParams Optional parameters.
@@ -209,6 +226,25 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
     return $this->call('listen', array($params), "Google_Service_Firestore_ListenResponse");
   }
   /**
+   * Partitions a query by returning partition cursors that can be used to run the
+   * query in parallel. The returned partition cursors are split points that can
+   * be used by RunQuery as starting/end points for the query results.
+   * (documents.partitionQuery)
+   *
+   * @param string $parent Required. The parent resource name. In the format:
+   * `projects/{project_id}/databases/{database_id}/documents`. Document resource
+   * names are not supported; only database resource names can be specified.
+   * @param Google_Service_Firestore_PartitionQueryRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Firestore_PartitionQueryResponse
+   */
+  public function partitionQuery($parent, Google_Service_Firestore_PartitionQueryRequest $postBody, $optParams = array())
+  {
+    $params = array('parent' => $parent, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('partitionQuery', array($params), "Google_Service_Firestore_PartitionQueryResponse");
+  }
+  /**
    * Updates or inserts a document. (documents.patch)
    *
    * @param string $name The resource name of the document, for example
@@ -216,14 +252,14 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
    * @param Google_Service_Firestore_Document $postBody
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string currentDocument.updateTime When set, the target document
+   * must exist and have been last updated at that time.
    * @opt_param bool currentDocument.exists When set to `true`, the target
    * document must exist. When set to `false`, the target document must not exist.
    * @opt_param string updateMask.fieldPaths The list of field paths in the mask.
    * See Document.fields for a field path syntax reference.
    * @opt_param string mask.fieldPaths The list of field paths in the mask. See
    * Document.fields for a field path syntax reference.
-   * @opt_param string currentDocument.updateTime When set, the target document
-   * must exist and have been last updated at that time.
    * @return Google_Service_Firestore_Document
    */
   public function patch($name, Google_Service_Firestore_Document $postBody, $optParams = array())
@@ -235,7 +271,7 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
   /**
    * Rolls back a transaction. (documents.rollback)
    *
-   * @param string $database The database name. In the format:
+   * @param string $database Required. The database name. In the format:
    * `projects/{project_id}/databases/{database_id}`.
    * @param Google_Service_Firestore_RollbackRequest $postBody
    * @param array $optParams Optional parameters.
@@ -250,7 +286,7 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
   /**
    * Runs a query. (documents.runQuery)
    *
-   * @param string $parent The parent resource name. In the format:
+   * @param string $parent Required. The parent resource name. In the format:
    * `projects/{project_id}/databases/{database_id}/documents` or
    * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
    * For example: `projects/my-project/databases/my-database/documents` or
@@ -268,7 +304,7 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
   /**
    * Streams batches of document updates and deletes, in order. (documents.write)
    *
-   * @param string $database The database name. In the format:
+   * @param string $database Required. The database name. In the format:
    * `projects/{project_id}/databases/{database_id}`. This is only required in the
    * first message.
    * @param Google_Service_Firestore_WriteRequest $postBody

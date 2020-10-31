@@ -44,13 +44,15 @@ class Google_Service_Proximitybeacon extends Google_Service
   /**
    * Constructs the internal representation of the Proximitybeacon service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://proximitybeacon.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://proximitybeacon.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1beta1';
     $this->serviceName = 'proximitybeacon';
 
@@ -207,11 +209,11 @@ class Google_Service_Proximitybeacon extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'namespacedType' => array(
+                'projectId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'projectId' => array(
+                'namespacedType' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -253,11 +255,11 @@ class Google_Service_Proximitybeacon extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'namespacedType' => array(
+                'projectId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'projectId' => array(
+                'namespacedType' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),

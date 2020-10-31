@@ -24,7 +24,7 @@
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://cloud.google.com/storage/transfer" target="_blank">Documentation</a>
+ * <a href="https://cloud.google.com/storage-transfer/docs" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
@@ -42,13 +42,15 @@ class Google_Service_Storagetransfer extends Google_Service
   /**
    * Constructs the internal representation of the Storagetransfer service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://storagetransfer.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://storagetransfer.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'storagetransfer';
 
@@ -143,16 +145,6 @@ class Google_Service_Storagetransfer extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'delete' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
             ),'get' => array(
               'path' => 'v1/{+name}',
               'httpMethod' => 'GET',
@@ -176,13 +168,13 @@ class Google_Service_Storagetransfer extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),'pause' => array(

@@ -20,6 +20,7 @@ class Google_Service_SQLAdmin_RestoreBackupContext extends Google_Model
   public $backupRunId;
   public $instanceId;
   public $kind;
+  public $project;
 
   public function setBackupRunId($backupRunId)
   {
@@ -44,5 +45,13 @@ class Google_Service_SQLAdmin_RestoreBackupContext extends Google_Model
   public function getKind()
   {
     return $this->kind;
+  }
+  public function setProject($project)
+  {
+    $this->project = $project;
+  }
+  public function getProject()
+  {
+    return $this->project;
   }
 }

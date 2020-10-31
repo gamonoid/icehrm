@@ -20,6 +20,8 @@ class Google_Service_JobService_CreateJobRequest extends Google_Model
   public $disableStreetAddressResolution;
   protected $jobType = 'Google_Service_JobService_Job';
   protected $jobDataType = '';
+  protected $processingOptionsType = 'Google_Service_JobService_JobProcessingOptions';
+  protected $processingOptionsDataType = '';
 
   public function setDisableStreetAddressResolution($disableStreetAddressResolution)
   {
@@ -42,5 +44,19 @@ class Google_Service_JobService_CreateJobRequest extends Google_Model
   public function getJob()
   {
     return $this->job;
+  }
+  /**
+   * @param Google_Service_JobService_JobProcessingOptions
+   */
+  public function setProcessingOptions(Google_Service_JobService_JobProcessingOptions $processingOptions)
+  {
+    $this->processingOptions = $processingOptions;
+  }
+  /**
+   * @return Google_Service_JobService_JobProcessingOptions
+   */
+  public function getProcessingOptions()
+  {
+    return $this->processingOptions;
   }
 }

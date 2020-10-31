@@ -1972,3 +1972,18 @@ msgstr "الحسابات المحفوظة"
 
 msgid "Total Leave Days"
 msgstr "إجمالي أيام الإجازة"
+
+msgid "Actions"
+msgstr "أجراءات"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "View"
+msgstr "رأي"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Copy"
+msgstr "نسخ"

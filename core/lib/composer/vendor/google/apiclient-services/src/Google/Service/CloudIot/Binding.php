@@ -18,9 +18,34 @@
 class Google_Service_CloudIot_Binding extends Google_Collection
 {
   protected $collection_key = 'members';
+  public $bindingId;
+  protected $conditionType = 'Google_Service_CloudIot_Expr';
+  protected $conditionDataType = '';
   public $members;
   public $role;
 
+  public function setBindingId($bindingId)
+  {
+    $this->bindingId = $bindingId;
+  }
+  public function getBindingId()
+  {
+    return $this->bindingId;
+  }
+  /**
+   * @param Google_Service_CloudIot_Expr
+   */
+  public function setCondition(Google_Service_CloudIot_Expr $condition)
+  {
+    $this->condition = $condition;
+  }
+  /**
+   * @return Google_Service_CloudIot_Expr
+   */
+  public function getCondition()
+  {
+    return $this->condition;
+  }
   public function setMembers($members)
   {
     $this->members = $members;

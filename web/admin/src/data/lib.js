@@ -188,7 +188,7 @@ class DataImportAdapter extends AdapterBase {
     const deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
     const cloneButton = '<img class="tableActionButton" src="_BASE_images/clone.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Copy" onclick="modJs.copyRow(_id_);return false;"></img>';
 
-    let html = '<div style="width:130px;">_edit__download__clone__delete_</div>';
+    let html = '<div style="width:132px;">_edit__download__clone__delete_</div>';
 
 
     if (this.showAddNew) {
@@ -268,7 +268,7 @@ class DataImportFileAdapter extends AdapterBase {
     const deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
     const cloneButton = '<img class="tableActionButton" src="_BASE_images/clone.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Copy" onclick="modJs.copyRow(_id_);return false;"></img>';
 
-    let html = '<div style="width:130px;">_edit__process__clone__delete_</div>';
+    let html = '<div style="width:132px;">_edit__process__clone__delete_</div>';
 
 
     if (this.showAddNew) {

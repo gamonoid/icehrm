@@ -17,9 +17,18 @@
 
 class Google_Service_AdExchangeBuyerII_RowDimensions extends Google_Model
 {
+  public $publisherIdentifier;
   protected $timeIntervalType = 'Google_Service_AdExchangeBuyerII_TimeInterval';
   protected $timeIntervalDataType = '';
 
+  public function setPublisherIdentifier($publisherIdentifier)
+  {
+    $this->publisherIdentifier = $publisherIdentifier;
+  }
+  public function getPublisherIdentifier()
+  {
+    return $this->publisherIdentifier;
+  }
   /**
    * @param Google_Service_AdExchangeBuyerII_TimeInterval
    */

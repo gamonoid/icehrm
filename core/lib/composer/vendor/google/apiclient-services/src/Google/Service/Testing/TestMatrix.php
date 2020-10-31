@@ -22,7 +22,9 @@ class Google_Service_Testing_TestMatrix extends Google_Collection
   protected $clientInfoDataType = '';
   protected $environmentMatrixType = 'Google_Service_Testing_EnvironmentMatrix';
   protected $environmentMatrixDataType = '';
+  public $flakyTestAttempts;
   public $invalidMatrixDetails;
+  public $outcomeSummary;
   public $projectId;
   protected $resultStorageType = 'Google_Service_Testing_ResultStorage';
   protected $resultStorageDataType = '';
@@ -62,6 +64,14 @@ class Google_Service_Testing_TestMatrix extends Google_Collection
   {
     return $this->environmentMatrix;
   }
+  public function setFlakyTestAttempts($flakyTestAttempts)
+  {
+    $this->flakyTestAttempts = $flakyTestAttempts;
+  }
+  public function getFlakyTestAttempts()
+  {
+    return $this->flakyTestAttempts;
+  }
   public function setInvalidMatrixDetails($invalidMatrixDetails)
   {
     $this->invalidMatrixDetails = $invalidMatrixDetails;
@@ -69,6 +79,14 @@ class Google_Service_Testing_TestMatrix extends Google_Collection
   public function getInvalidMatrixDetails()
   {
     return $this->invalidMatrixDetails;
+  }
+  public function setOutcomeSummary($outcomeSummary)
+  {
+    $this->outcomeSummary = $outcomeSummary;
+  }
+  public function getOutcomeSummary()
+  {
+    return $this->outcomeSummary;
   }
   public function setProjectId($projectId)
   {

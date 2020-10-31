@@ -27,8 +27,8 @@ class Google_Service_ShoppingContent_LiasettingsCustomBatchRequestEntry extends 
   protected $liaSettingsDataType = '';
   public $merchantId;
   public $method;
+  public $posDataProviderId;
   public $posExternalAccountId;
-  public $posProviderId;
 
   public function setAccountId($accountId)
   {
@@ -108,6 +108,14 @@ class Google_Service_ShoppingContent_LiasettingsCustomBatchRequestEntry extends 
   {
     return $this->method;
   }
+  public function setPosDataProviderId($posDataProviderId)
+  {
+    $this->posDataProviderId = $posDataProviderId;
+  }
+  public function getPosDataProviderId()
+  {
+    return $this->posDataProviderId;
+  }
   public function setPosExternalAccountId($posExternalAccountId)
   {
     $this->posExternalAccountId = $posExternalAccountId;
@@ -115,13 +123,5 @@ class Google_Service_ShoppingContent_LiasettingsCustomBatchRequestEntry extends 
   public function getPosExternalAccountId()
   {
     return $this->posExternalAccountId;
-  }
-  public function setPosProviderId($posProviderId)
-  {
-    $this->posProviderId = $posProviderId;
-  }
-  public function getPosProviderId()
-  {
-    return $this->posProviderId;
   }
 }

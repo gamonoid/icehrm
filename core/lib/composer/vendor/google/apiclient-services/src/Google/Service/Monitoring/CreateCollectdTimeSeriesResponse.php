@@ -20,6 +20,8 @@ class Google_Service_Monitoring_CreateCollectdTimeSeriesResponse extends Google_
   protected $collection_key = 'payloadErrors';
   protected $payloadErrorsType = 'Google_Service_Monitoring_CollectdPayloadError';
   protected $payloadErrorsDataType = 'array';
+  protected $summaryType = 'Google_Service_Monitoring_CreateTimeSeriesSummary';
+  protected $summaryDataType = '';
 
   /**
    * @param Google_Service_Monitoring_CollectdPayloadError
@@ -34,5 +36,19 @@ class Google_Service_Monitoring_CreateCollectdTimeSeriesResponse extends Google_
   public function getPayloadErrors()
   {
     return $this->payloadErrors;
+  }
+  /**
+   * @param Google_Service_Monitoring_CreateTimeSeriesSummary
+   */
+  public function setSummary(Google_Service_Monitoring_CreateTimeSeriesSummary $summary)
+  {
+    $this->summary = $summary;
+  }
+  /**
+   * @return Google_Service_Monitoring_CreateTimeSeriesSummary
+   */
+  public function getSummary()
+  {
+    return $this->summary;
   }
 }

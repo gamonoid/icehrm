@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the Comparator package.
+ * This file is part of sebastian/comparator.
  *
  * (c) Sebastian Bergmann <sebastian@phpunit.de>
  *
@@ -45,21 +45,20 @@ class DateTimeComparator extends ObjectComparator
     {
         /** @var \DateTimeInterface $expected */
         /** @var \DateTimeInterface $actual */
+        $delta = new \DateInterval(\sprintf('PT%dS', \abs($delta)));
 
-        $delta = new \DateInterval(sprintf('PT%dS', abs($delta)));
+        $actualClone = (clone $actual)
+            ->setTimezone(new \DateTimeZone('UTC'));
 
-        $actualClone = clone $actual;
-        $actualClone->setTimezone(new \DateTimeZone('UTC'));
+        $expectedLower = (clone $expected)
+            ->setTimezone(new \DateTimeZone('UTC'))
+            ->sub($delta);
 
-        $expectedLower = clone $expected;
-        $expectedLower->setTimezone(new \DateTimeZone('UTC'));
-        $expectedLower->sub($delta);
+        $expectedUpper = (clone $expected)
+            ->setTimezone(new \DateTimeZone('UTC'))
+            ->add($delta);
 
-        $expectedUpper = clone $expected;
-        $expectedUpper->setTimezone(new \DateTimeZone('UTC'));
-        $expectedUpper->add($delta);
-
-        if ($actual < $expectedLower || $actual > $expectedUpper) {
+        if ($actualClone < $expectedLower || $actualClone > $expectedUpper) {
             throw new ComparisonFailure(
                 $expected,
                 $actual,

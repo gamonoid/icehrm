@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Common;
 
 use Robo\Result;
@@ -124,6 +125,9 @@ trait ExecCommand
         return $cmd;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function getCommandDescription()
     {
         return $this->process->getCommandLine();

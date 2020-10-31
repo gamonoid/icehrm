@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Composer;
 
 /**
@@ -18,11 +19,24 @@ class CreateProject extends Base
      */
     protected $action = 'create-project';
 
+    /**
+     * @var
+     */
     protected $source;
+
+    /**
+     * @var string
+     */
     protected $target = '';
+
+    /**
+     * @var string
+     */
     protected $version = '';
 
     /**
+     * @param string $source
+     *
      * @return $this
      */
     public function source($source)
@@ -32,6 +46,8 @@ class CreateProject extends Base
     }
 
     /**
+     * @param string $target
+     *
      * @return $this
      */
     public function target($target)
@@ -41,6 +57,8 @@ class CreateProject extends Base
     }
 
     /**
+     * @param string $version
+     *
      * @return $this
      */
     public function version($version)
@@ -49,6 +67,11 @@ class CreateProject extends Base
         return $this;
     }
 
+    /**
+     * @param bool $keep
+     *
+     * @return $this
+     */
     public function keepVcs($keep = true)
     {
         if ($keep) {
@@ -57,6 +80,11 @@ class CreateProject extends Base
         return $this;
     }
 
+    /**
+     * @param bool $noInstall
+     *
+     * @return $this
+     */
     public function noInstall($noInstall = true)
     {
         if ($noInstall) {
@@ -66,6 +94,8 @@ class CreateProject extends Base
     }
 
     /**
+     * @param string $repository
+     *
      * @return $this
      */
     public function repository($repository)
@@ -77,6 +107,8 @@ class CreateProject extends Base
     }
 
     /**
+     * @param string $stability
+     *
      * @return $this
      */
     public function stability($stability)
@@ -87,6 +119,9 @@ class CreateProject extends Base
         return $this;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function buildCommand()
     {
         $this->arg($this->source);

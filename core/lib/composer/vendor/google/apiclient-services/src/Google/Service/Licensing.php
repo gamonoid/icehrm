@@ -19,11 +19,12 @@
  * Service definition for Licensing (v1).
  *
  * <p>
- * Views and manages licenses for your domain.</p>
+ * The Google Enterprise License Manager API's allows you to license apps for
+ * all the users of a domain managed by you.</p>
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://developers.google.com/google-apps/licensing/" target="_blank">Documentation</a>
+ * <a href="https://developers.google.com/admin-sdk/licensing/" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
@@ -39,13 +40,15 @@ class Google_Service_Licensing extends Google_Service
   /**
    * Constructs the internal representation of the Licensing service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'apps/licensing/v1/product/';
+    $this->rootUrl = $rootUrl ?: 'https://licensing.googleapis.com/';
+    $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'licensing';
 
@@ -56,7 +59,7 @@ class Google_Service_Licensing extends Google_Service
         array(
           'methods' => array(
             'delete' => array(
-              'path' => '{productId}/sku/{skuId}/user/{userId}',
+              'path' => 'apps/licensing/v1/product/{productId}/sku/{skuId}/user/{userId}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'productId' => array(
@@ -76,7 +79,7 @@ class Google_Service_Licensing extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => '{productId}/sku/{skuId}/user/{userId}',
+              'path' => 'apps/licensing/v1/product/{productId}/sku/{skuId}/user/{userId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'productId' => array(
@@ -96,7 +99,7 @@ class Google_Service_Licensing extends Google_Service
                 ),
               ),
             ),'insert' => array(
-              'path' => '{productId}/sku/{skuId}/user',
+              'path' => 'apps/licensing/v1/product/{productId}/sku/{skuId}/user',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'productId' => array(
@@ -111,7 +114,7 @@ class Google_Service_Licensing extends Google_Service
                 ),
               ),
             ),'listForProduct' => array(
-              'path' => '{productId}/users',
+              'path' => 'apps/licensing/v1/product/{productId}/users',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'productId' => array(
@@ -134,7 +137,7 @@ class Google_Service_Licensing extends Google_Service
                 ),
               ),
             ),'listForProductAndSku' => array(
-              'path' => '{productId}/sku/{skuId}/users',
+              'path' => 'apps/licensing/v1/product/{productId}/sku/{skuId}/users',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'productId' => array(
@@ -162,7 +165,7 @@ class Google_Service_Licensing extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => '{productId}/sku/{skuId}/user/{userId}',
+              'path' => 'apps/licensing/v1/product/{productId}/sku/{skuId}/user/{userId}',
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'productId' => array(
@@ -182,7 +185,7 @@ class Google_Service_Licensing extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => '{productId}/sku/{skuId}/user/{userId}',
+              'path' => 'apps/licensing/v1/product/{productId}/sku/{skuId}/user/{userId}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'productId' => array(

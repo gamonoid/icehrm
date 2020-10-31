@@ -1,5 +1,11 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20201028_280002_update_gender';
+$migrationList[] = 'v20201028_280001_update_module_names';
+$migrationList[] = 'v20201017_271101_switch_off_photo_att';
+$migrationList[] = 'v20200828_270102_module_user_role_blacklist';
+$migrationList[] = 'v20200828_270101_user_role_additional';
+$migrationList[] = 'v20200620_270014_update_module_names';
 $migrationList[] = 'v20200530_270009_update_module_names';
 $migrationList[] = 'v20200518_270011_add_al_language';
 $migrationList[] = 'v20200429_270010_setting_groups';

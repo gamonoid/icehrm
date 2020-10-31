@@ -2,9 +2,12 @@
 namespace Consolidation\OutputFormatters\StructuredData;
 
 use Consolidation\OutputFormatters\Options\FormatterOptions;
+use Consolidation\OutputFormatters\Formatters\FormatterAwareInterface;
+use Consolidation\OutputFormatters\Formatters\FormatterAwareTrait;
 
 trait RenderCellCollectionTrait
 {
+    use FormatterAwareTrait;
 
     /** @var RenderCellInterface[] */
     protected $rendererList = [
@@ -49,10 +52,10 @@ trait RenderCellCollectionTrait
         );
 
         foreach ($flattenedRendererList as $renderer) {
-            $cellData = $renderer->renderCell($key, $cellData, $options, $rowData);
-            if (is_string($cellData)) {
-                return $cellData;
+            if ($renderer instanceof FormatterAwareInterface) {
+                $renderer->setFormatter($this->getFormatter());
             }
+            $cellData = $renderer->renderCell($key, $cellData, $options, $rowData);
         }
         return $cellData;
     }

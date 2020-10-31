@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Development;
 
 use Robo\Result;
@@ -21,7 +22,7 @@ class SemVer implements TaskInterface
 {
     const SEMVER = "---\n:major: %d\n:minor: %d\n:patch: %d\n:special: '%s'\n:metadata: '%s'";
 
-    const REGEX = "/^\-\-\-\n:major:\s(0|[1-9]\d*)\n:minor:\s(0|[1-9]\d*)\n:patch:\s(0|[1-9]\d*)\n:special:\s'([a-zA-z0-9]*\.?(?:0|[1-9]\d*)?)'\n:metadata:\s'((?:0|[1-9]\d*)?(?:\.[a-zA-z0-9\.]*)?)'/";
+    const REGEX = "/^\-\-\-\r?\n:major:\s(0|[1-9]\d*)\r?\n:minor:\s(0|[1-9]\d*)\r?\n:patch:\s(0|[1-9]\d*)\r?\n:special:\s'([a-zA-z0-9]*\.?(?:0|[1-9]\d*)?)'\r?\n:metadata:\s'((?:0|[1-9]\d*)?(?:\.[a-zA-z0-9\.]*)?)'/";
 
     const REGEX_STRING = '/^(?<major>[0-9]+)\.(?<minor>[0-9]+)\.(?<patch>[0-9]+)(|-(?<special>[0-9a-zA-Z.]+))(|\+(?<metadata>[0-9a-zA-Z.]+))$/';
 
@@ -88,6 +89,11 @@ class SemVer implements TaskInterface
         return str_replace($search, $replace, $this->format);
     }
 
+    /**
+     * @param string $version
+     *
+     * @return $this
+     */
     public function version($version)
     {
         $this->parseString($version);
@@ -220,14 +226,25 @@ class SemVer implements TaskInterface
         if (empty($this->path)) {
             return true;
         }
-        extract($this->version);
-        $semver = sprintf(self::SEMVER, $major, $minor, $patch, $special, $metadata);
+        $semver = sprintf(
+            self::SEMVER,
+            $this->version['major'],
+            $this->version['minor'],
+            $this->version['patch'],
+            $this->version['special'],
+            $this->version['metadata']
+        );
         if (is_writeable($this->path) === false || file_put_contents($this->path, $semver) === false) {
             throw new TaskException($this, 'Failed to write semver file.');
         }
         return true;
     }
 
+    /**
+     * @param string $semverString
+     *
+     * @throws \Robo\Exception\TaskException
+     */
     protected function parseString($semverString)
     {
         if (!preg_match_all(self::REGEX_STRING, $semverString, $matches)) {
@@ -241,6 +258,8 @@ class SemVer implements TaskInterface
     }
 
     /**
+     * @param string $semverFileContents
+     *
      * @throws \Robo\Exception\TaskException
      */
     protected function parseFile($semverFileContents)

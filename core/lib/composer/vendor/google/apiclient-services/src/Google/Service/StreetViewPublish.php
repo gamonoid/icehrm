@@ -42,13 +42,15 @@ class Google_Service_StreetViewPublish extends Google_Service
   /**
    * Constructs the internal representation of the StreetViewPublish service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://streetviewpublish.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://streetviewpublish.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'streetviewpublish';
 
@@ -80,6 +82,10 @@ class Google_Service_StreetViewPublish extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ),
+                'languageCode' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'view' => array(
                   'location' => 'query',
@@ -131,6 +137,10 @@ class Google_Service_StreetViewPublish extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
+                'languageCode' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
               ),
             ),'batchUpdate' => array(
               'path' => 'v1/photos:batchUpdate',
@@ -144,15 +154,19 @@ class Google_Service_StreetViewPublish extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
+                'languageCode' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'view' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),

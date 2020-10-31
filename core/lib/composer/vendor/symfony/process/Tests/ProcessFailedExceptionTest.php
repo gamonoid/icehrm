@@ -29,12 +29,10 @@ class ProcessFailedExceptionTest extends TestCase
             ->method('isSuccessful')
             ->will($this->returnValue(true));
 
-        if (method_exists($this, 'expectException')) {
-            $this->expectException(\InvalidArgumentException::class);
-            $this->expectExceptionMessage('Expected a failed process, but the given process was successful.');
-        } else {
-            $this->setExpectedException(\InvalidArgumentException::class, 'Expected a failed process, but the given process was successful.');
-        }
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}(
+            '\InvalidArgumentException',
+            'Expected a failed process, but the given process was successful.'
+        );
 
         new ProcessFailedException($process);
     }

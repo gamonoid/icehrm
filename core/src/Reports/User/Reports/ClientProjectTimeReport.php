@@ -32,7 +32,7 @@ class ClientProjectTimeReport extends PDFReportBuilder implements PDFReportBuild
         $projects = $project->Find("client = ?", array($request['client']));
 
         $projectsStr = "";
-        $projectIds = '';
+        $projectIds = [];
         $projectsMap = array();
         foreach ($projects as $pro) {
             $projectIds[] = $pro->id;

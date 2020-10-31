@@ -20,6 +20,8 @@ class Google_Service_Testing_AndroidRoboTest extends Google_Collection
   protected $collection_key = 'startingIntents';
   protected $appApkType = 'Google_Service_Testing_FileReference';
   protected $appApkDataType = '';
+  protected $appBundleType = 'Google_Service_Testing_AppBundle';
+  protected $appBundleDataType = '';
   public $appInitialActivity;
   public $appPackageId;
   public $maxDepth;
@@ -44,6 +46,20 @@ class Google_Service_Testing_AndroidRoboTest extends Google_Collection
   public function getAppApk()
   {
     return $this->appApk;
+  }
+  /**
+   * @param Google_Service_Testing_AppBundle
+   */
+  public function setAppBundle(Google_Service_Testing_AppBundle $appBundle)
+  {
+    $this->appBundle = $appBundle;
+  }
+  /**
+   * @return Google_Service_Testing_AppBundle
+   */
+  public function getAppBundle()
+  {
+    return $this->appBundle;
   }
   public function setAppInitialActivity($appInitialActivity)
   {

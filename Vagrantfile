@@ -13,13 +13,15 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.provision "shell", inline: <<-SHELL
+    	sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+        systemctl restart sshd.service
 		sudo service nginx restart
     SHELL
 
-    config.vm.hostname = "icehrm.test"
+    config.vm.hostname = "icehrm.os"
 
     config.hostsupdater.aliases = [
-        "icehrm.test"
+        "icehrm.os"
      ]
 end
 

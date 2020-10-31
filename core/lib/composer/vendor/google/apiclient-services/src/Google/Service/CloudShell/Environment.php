@@ -21,12 +21,12 @@ class Google_Service_CloudShell_Environment extends Google_Collection
   public $dockerImage;
   public $id;
   public $name;
-  protected $publicKeysType = 'Google_Service_CloudShell_PublicKey';
-  protected $publicKeysDataType = 'array';
+  public $publicKeys;
   public $sshHost;
   public $sshPort;
   public $sshUsername;
   public $state;
+  public $webHost;
 
   public function setDockerImage($dockerImage)
   {
@@ -52,16 +52,10 @@ class Google_Service_CloudShell_Environment extends Google_Collection
   {
     return $this->name;
   }
-  /**
-   * @param Google_Service_CloudShell_PublicKey
-   */
   public function setPublicKeys($publicKeys)
   {
     $this->publicKeys = $publicKeys;
   }
-  /**
-   * @return Google_Service_CloudShell_PublicKey
-   */
   public function getPublicKeys()
   {
     return $this->publicKeys;
@@ -97,5 +91,13 @@ class Google_Service_CloudShell_Environment extends Google_Collection
   public function getState()
   {
     return $this->state;
+  }
+  public function setWebHost($webHost)
+  {
+    $this->webHost = $webHost;
+  }
+  public function getWebHost()
+  {
+    return $this->webHost;
   }
 }

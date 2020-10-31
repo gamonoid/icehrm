@@ -1,0 +1,11 @@
++---------+---------+---------+
+| Parameter | Shortcut | Descrition |
++---------+---------+---------+
+| Append text to a file. This parameter takes a string value and may be used multiple times. | --append | -a      |
++---------+---------+---------+
+| Prepend text to a file. This parameter takes a string value and may be used multiple times. | --prepend | -p      |
++---------+---------+---------+
+| Forces the action desired without paying attention to any errors. | --force | -f      |
++---------+---------+---------+
+| Silence all kinds of warnings issued by this program. | --silent | -s      |
++---------+---------+---------+

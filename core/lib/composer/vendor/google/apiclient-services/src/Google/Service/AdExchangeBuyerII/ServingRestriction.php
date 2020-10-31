@@ -20,6 +20,8 @@ class Google_Service_AdExchangeBuyerII_ServingRestriction extends Google_Collect
   protected $collection_key = 'disapprovalReasons';
   protected $contextsType = 'Google_Service_AdExchangeBuyerII_ServingContext';
   protected $contextsDataType = 'array';
+  protected $disapprovalType = 'Google_Service_AdExchangeBuyerII_Disapproval';
+  protected $disapprovalDataType = '';
   protected $disapprovalReasonsType = 'Google_Service_AdExchangeBuyerII_Disapproval';
   protected $disapprovalReasonsDataType = 'array';
   public $status;
@@ -37,6 +39,20 @@ class Google_Service_AdExchangeBuyerII_ServingRestriction extends Google_Collect
   public function getContexts()
   {
     return $this->contexts;
+  }
+  /**
+   * @param Google_Service_AdExchangeBuyerII_Disapproval
+   */
+  public function setDisapproval(Google_Service_AdExchangeBuyerII_Disapproval $disapproval)
+  {
+    $this->disapproval = $disapproval;
+  }
+  /**
+   * @return Google_Service_AdExchangeBuyerII_Disapproval
+   */
+  public function getDisapproval()
+  {
+    return $this->disapproval;
   }
   /**
    * @param Google_Service_AdExchangeBuyerII_Disapproval

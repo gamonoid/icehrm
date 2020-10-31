@@ -25,6 +25,8 @@ class Google_Service_SQLAdmin_Database extends Google_Model
   public $name;
   public $project;
   public $selfLink;
+  protected $sqlserverDatabaseDetailsType = 'Google_Service_SQLAdmin_SqlServerDatabaseDetails';
+  protected $sqlserverDatabaseDetailsDataType = '';
 
   public function setCharset($charset)
   {
@@ -89,5 +91,19 @@ class Google_Service_SQLAdmin_Database extends Google_Model
   public function getSelfLink()
   {
     return $this->selfLink;
+  }
+  /**
+   * @param Google_Service_SQLAdmin_SqlServerDatabaseDetails
+   */
+  public function setSqlserverDatabaseDetails(Google_Service_SQLAdmin_SqlServerDatabaseDetails $sqlserverDatabaseDetails)
+  {
+    $this->sqlserverDatabaseDetails = $sqlserverDatabaseDetails;
+  }
+  /**
+   * @return Google_Service_SQLAdmin_SqlServerDatabaseDetails
+   */
+  public function getSqlserverDatabaseDetails()
+  {
+    return $this->sqlserverDatabaseDetails;
   }
 }

@@ -38,6 +38,7 @@ class Google_Service_Logging_LogEntry extends Google_Model
   public $textPayload;
   public $timestamp;
   public $trace;
+  public $traceSampled;
 
   /**
    * @param Google_Service_Logging_HttpRequest
@@ -196,5 +197,13 @@ class Google_Service_Logging_LogEntry extends Google_Model
   public function getTrace()
   {
     return $this->trace;
+  }
+  public function setTraceSampled($traceSampled)
+  {
+    $this->traceSampled = $traceSampled;
+  }
+  public function getTraceSampled()
+  {
+    return $this->traceSampled;
   }
 }

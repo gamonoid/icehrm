@@ -20,10 +20,12 @@ class Google_Service_YouTube_VideoStatus extends Google_Model
   public $embeddable;
   public $failureReason;
   public $license;
+  public $madeForKids;
   public $privacyStatus;
   public $publicStatsViewable;
   public $publishAt;
   public $rejectionReason;
+  public $selfDeclaredMadeForKids;
   public $uploadStatus;
 
   public function setEmbeddable($embeddable)
@@ -49,6 +51,14 @@ class Google_Service_YouTube_VideoStatus extends Google_Model
   public function getLicense()
   {
     return $this->license;
+  }
+  public function setMadeForKids($madeForKids)
+  {
+    $this->madeForKids = $madeForKids;
+  }
+  public function getMadeForKids()
+  {
+    return $this->madeForKids;
   }
   public function setPrivacyStatus($privacyStatus)
   {
@@ -81,6 +91,14 @@ class Google_Service_YouTube_VideoStatus extends Google_Model
   public function getRejectionReason()
   {
     return $this->rejectionReason;
+  }
+  public function setSelfDeclaredMadeForKids($selfDeclaredMadeForKids)
+  {
+    $this->selfDeclaredMadeForKids = $selfDeclaredMadeForKids;
+  }
+  public function getSelfDeclaredMadeForKids()
+  {
+    return $this->selfDeclaredMadeForKids;
   }
   public function setUploadStatus($uploadStatus)
   {

@@ -24,6 +24,8 @@ class FileTypeFilterIterator extends FilterIterator
     private $mode;
 
     /**
+     * Constructor.
+     *
      * @param \Iterator $iterator The Iterator to filter
      * @param int       $mode     The mode (self::ONLY_FILES or self::ONLY_DIRECTORIES)
      */

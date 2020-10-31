@@ -86,25 +86,6 @@ class Google_Service_TagManager_Resource_AccountsContainersEnvironments extends 
     return $this->call('list', array($params), "Google_Service_TagManager_ListEnvironmentsResponse");
   }
   /**
-   * Updates a GTM Environment. This method supports patch semantics.
-   * (environments.patch)
-   *
-   * @param string $path GTM Environment's API relative path. Example:
-   * accounts/{account_id}/containers/{container_id}/environments/{environment_id}
-   * @param Google_Service_TagManager_Environment $postBody
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string fingerprint When provided, this fingerprint must match the
-   * fingerprint of the environment in storage.
-   * @return Google_Service_TagManager_Environment
-   */
-  public function patch($path, Google_Service_TagManager_Environment $postBody, $optParams = array())
-  {
-    $params = array('path' => $path, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_TagManager_Environment");
-  }
-  /**
    * Re-generates the authorization code for a GTM Environment.
    * (environments.reauthorize)
    *

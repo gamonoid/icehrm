@@ -17,6 +17,8 @@
 
 class Google_Service_SQLAdmin_ImportContext extends Google_Model
 {
+  protected $bakImportOptionsType = 'Google_Service_SQLAdmin_ImportContextBakImportOptions';
+  protected $bakImportOptionsDataType = '';
   protected $csvImportOptionsType = 'Google_Service_SQLAdmin_ImportContextCsvImportOptions';
   protected $csvImportOptionsDataType = '';
   public $database;
@@ -25,6 +27,20 @@ class Google_Service_SQLAdmin_ImportContext extends Google_Model
   public $kind;
   public $uri;
 
+  /**
+   * @param Google_Service_SQLAdmin_ImportContextBakImportOptions
+   */
+  public function setBakImportOptions(Google_Service_SQLAdmin_ImportContextBakImportOptions $bakImportOptions)
+  {
+    $this->bakImportOptions = $bakImportOptions;
+  }
+  /**
+   * @return Google_Service_SQLAdmin_ImportContextBakImportOptions
+   */
+  public function getBakImportOptions()
+  {
+    return $this->bakImportOptions;
+  }
   /**
    * @param Google_Service_SQLAdmin_ImportContextCsvImportOptions
    */

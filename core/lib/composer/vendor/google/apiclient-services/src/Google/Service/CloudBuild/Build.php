@@ -27,13 +27,16 @@ class Google_Service_CloudBuild_Build extends Google_Collection
   public $images;
   public $logUrl;
   public $logsBucket;
+  public $name;
   protected $optionsType = 'Google_Service_CloudBuild_BuildOptions';
   protected $optionsDataType = '';
   public $projectId;
+  public $queueTtl;
   protected $resultsType = 'Google_Service_CloudBuild_Results';
   protected $resultsDataType = '';
   protected $secretsType = 'Google_Service_CloudBuild_Secret';
   protected $secretsDataType = 'array';
+  public $serviceAccount;
   protected $sourceType = 'Google_Service_CloudBuild_Source';
   protected $sourceDataType = '';
   protected $sourceProvenanceType = 'Google_Service_CloudBuild_SourceProvenance';
@@ -119,6 +122,14 @@ class Google_Service_CloudBuild_Build extends Google_Collection
   {
     return $this->logsBucket;
   }
+  public function setName($name)
+  {
+    $this->name = $name;
+  }
+  public function getName()
+  {
+    return $this->name;
+  }
   /**
    * @param Google_Service_CloudBuild_BuildOptions
    */
@@ -140,6 +151,14 @@ class Google_Service_CloudBuild_Build extends Google_Collection
   public function getProjectId()
   {
     return $this->projectId;
+  }
+  public function setQueueTtl($queueTtl)
+  {
+    $this->queueTtl = $queueTtl;
+  }
+  public function getQueueTtl()
+  {
+    return $this->queueTtl;
   }
   /**
    * @param Google_Service_CloudBuild_Results
@@ -168,6 +187,14 @@ class Google_Service_CloudBuild_Build extends Google_Collection
   public function getSecrets()
   {
     return $this->secrets;
+  }
+  public function setServiceAccount($serviceAccount)
+  {
+    $this->serviceAccount = $serviceAccount;
+  }
+  public function getServiceAccount()
+  {
+    return $this->serviceAccount;
   }
   /**
    * @param Google_Service_CloudBuild_Source

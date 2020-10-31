@@ -116,8 +116,8 @@ class Google_Service_Logging_Resource_OrganizationsExclusions extends Google_Ser
    * @param Google_Service_Logging_LogExclusion $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask Required. A nonempty list of fields to change in
-   * the existing exclusion. New values for the fields are taken from the
+   * @opt_param string updateMask Required. A non-empty list of fields to change
+   * in the existing exclusion. New values for the fields are taken from the
    * corresponding fields in the LogExclusion included in this request. Fields not
    * mentioned in update_mask are not changed and are ignored in the request.For
    * example, to change the filter and description of an exclusion, specify an

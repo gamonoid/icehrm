@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Filesystem;
 
 use Robo\Common\ResourceExistenceChecker;
@@ -23,6 +24,8 @@ class CopyDir extends BaseDir
     /**
      * Explicitly declare our consturctor, so that
      * our copyDir() method does not look like a php4 constructor.
+     *
+     * @param string|string[] $dirs
      */
     public function __construct($dirs)
     {
@@ -140,6 +143,12 @@ class CopyDir extends BaseDir
 
     /**
      * Check to see if the current item is excluded.
+     *
+     * @param string $file
+     * @param string $src
+     * @param string $parent
+     *
+     * @return bool
      */
     protected function excluded($file, $src, $parent)
     {
@@ -154,6 +163,10 @@ class CopyDir extends BaseDir
     /**
      * Avoid problems comparing paths on Windows that may have a
      * combination of DIRECTORY_SEPARATOR and /.
+     *
+     * @param string$item
+     *
+     * @return string
      */
     protected function simplifyForCompare($item)
     {

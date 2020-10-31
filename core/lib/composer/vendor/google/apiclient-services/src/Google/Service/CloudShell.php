@@ -36,17 +36,20 @@ class Google_Service_CloudShell extends Google_Service
       "https://www.googleapis.com/auth/cloud-platform";
 
   public $operations;
+  public $users_environments;
   
   /**
    * Constructs the internal representation of the CloudShell service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://cloudshell.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://cloudshell.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'cloudshell';
 
@@ -95,10 +98,6 @@ class Google_Service_CloudShell extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'filter' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -106,6 +105,70 @@ class Google_Service_CloudShell extends Google_Service
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'filter' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->users_environments = new Google_Service_CloudShell_Resource_UsersEnvironments(
+        $this,
+        $this->serviceName,
+        'environments',
+        array(
+          'methods' => array(
+            'addPublicKey' => array(
+              'path' => 'v1/{+environment}:addPublicKey',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'environment' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'authorize' => array(
+              'path' => 'v1/{+name}:authorize',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'get' => array(
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'removePublicKey' => array(
+              'path' => 'v1/{+environment}:removePublicKey',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'environment' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'start' => array(
+              'path' => 'v1/{+name}:start',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
                 ),
               ),
             ),

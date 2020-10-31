@@ -20,6 +20,7 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageListSelect e
   protected $collection_key = 'items';
   protected $itemsType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageListSelectItem';
   protected $itemsDataType = 'array';
+  public $subtitle;
   public $title;
 
   /**
@@ -35,6 +36,14 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageListSelect e
   public function getItems()
   {
     return $this->items;
+  }
+  public function setSubtitle($subtitle)
+  {
+    $this->subtitle = $subtitle;
+  }
+  public function getSubtitle()
+  {
+    return $this->subtitle;
   }
   public function setTitle($title)
   {

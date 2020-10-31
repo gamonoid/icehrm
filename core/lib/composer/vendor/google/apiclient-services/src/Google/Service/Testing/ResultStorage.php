@@ -19,6 +19,7 @@ class Google_Service_Testing_ResultStorage extends Google_Model
 {
   protected $googleCloudStorageType = 'Google_Service_Testing_GoogleCloudStorage';
   protected $googleCloudStorageDataType = '';
+  public $resultsUrl;
   protected $toolResultsExecutionType = 'Google_Service_Testing_ToolResultsExecution';
   protected $toolResultsExecutionDataType = '';
   protected $toolResultsHistoryType = 'Google_Service_Testing_ToolResultsHistory';
@@ -37,6 +38,14 @@ class Google_Service_Testing_ResultStorage extends Google_Model
   public function getGoogleCloudStorage()
   {
     return $this->googleCloudStorage;
+  }
+  public function setResultsUrl($resultsUrl)
+  {
+    $this->resultsUrl = $resultsUrl;
+  }
+  public function getResultsUrl()
+  {
+    return $this->resultsUrl;
   }
   /**
    * @param Google_Service_Testing_ToolResultsExecution

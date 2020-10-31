@@ -1,6 +1,7 @@
 <?php
 namespace Consolidation\AnnotatedCommand;
 
+use Consolidation\OutputFormatters\Options\FormatterOptions;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -14,41 +15,42 @@ class CommandData
     /** var OutputInterface */
     protected $output;
     /** var boolean */
-    protected $usesInputInterface;
-    /** var boolean */
-    protected $usesOutputInterface;
-    /** var boolean */
     protected $includeOptionsInArgs;
     /** var array */
     protected $specialDefaults = [];
+    /** @var string[] */
+    protected $injectedInstances = [];
+    /** @var FormatterOptions */
+    protected $formatterOptions;
 
     public function __construct(
         AnnotationData $annotationData,
         InputInterface $input,
-        OutputInterface $output,
-        $usesInputInterface = false,
-        $usesOutputInterface = false
+        OutputInterface $output
     ) {
         $this->annotationData = $annotationData;
         $this->input = $input;
         $this->output = $output;
-        $this->usesInputInterface = false;
-        $this->usesOutputInterface = false;
         $this->includeOptionsInArgs = true;
     }
 
     /**
-     * For internal use only; indicates that the function to be called
-     * should be passed an InputInterface &/or an OutputInterface.
-     * @param booean $usesInputInterface
-     * @param boolean $usesOutputInterface
-     * @return self
+     * For internal use only; inject an instance to be passed back
+     * to the command callback as a parameter.
      */
-    public function setUseIOInterfaces($usesInputInterface, $usesOutputInterface)
+    public function injectInstance($injectedInstance)
     {
-        $this->usesInputInterface = $usesInputInterface;
-        $this->usesOutputInterface = $usesOutputInterface;
+        array_unshift($this->injectedInstances, $injectedInstance);
         return $this;
+    }
+
+    /**
+     * Provide a reference to the instances that will be added to the
+     * beginning of the parameter list when the command callback is invoked.
+     */
+    public function injectedInstances()
+    {
+        return $this->injectedInstances;
     }
 
     /**
@@ -64,6 +66,16 @@ class CommandData
     public function annotationData()
     {
         return $this->annotationData;
+    }
+
+    public function formatterOptions()
+    {
+        return $this->formatterOptions;
+    }
+
+    public function setFormatterOptions($formatterOptions)
+    {
+        $this->formatterOptions = $formatterOptions;
     }
 
     public function input()
@@ -170,14 +182,8 @@ class CommandData
         // will be the command name. The Application alters the
         // input definition to match, adding a 'command' argument
         // to the beginning.
-        array_shift($args);
-
-        if ($this->usesOutputInterface) {
-            array_unshift($args, $this->output());
-        }
-
-        if ($this->usesInputInterface) {
-            array_unshift($args, $this->input());
+        if ($this->input->hasArgument('command')) {
+            array_shift($args);
         }
 
         return $args;

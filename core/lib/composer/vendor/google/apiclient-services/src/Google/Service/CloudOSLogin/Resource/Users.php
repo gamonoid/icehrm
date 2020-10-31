@@ -29,8 +29,14 @@ class Google_Service_CloudOSLogin_Resource_Users extends Google_Service_Resource
    * Retrieves the profile information used for logging in to a virtual machine on
    * Google Compute Engine. (users.getLoginProfile)
    *
-   * @param string $name The unique ID for the user in format `users/{user}`.
+   * @param string $name Required. The unique ID for the user in format
+   * `users/{user}`.
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param string projectId The project ID of the Google Cloud Platform
+   * project.
+   * @opt_param string systemId A system ID for filtering the results of the
+   * request.
    * @return Google_Service_CloudOSLogin_LoginProfile
    */
   public function getLoginProfile($name, $optParams = array())
@@ -44,7 +50,8 @@ class Google_Service_CloudOSLogin_Resource_Users extends Google_Service_Resource
    * account information is set when no username and UID exist as part of the
    * login profile. (users.importSshPublicKey)
    *
-   * @param string $parent The unique ID for the user in format `users/{user}`.
+   * @param string $parent Required. The unique ID for the user in format
+   * `users/{user}`.
    * @param Google_Service_CloudOSLogin_SshPublicKey $postBody
    * @param array $optParams Optional parameters.
    *

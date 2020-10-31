@@ -25,6 +25,7 @@ class Google_Service_Compute_Autoscaler extends Google_Collection
   public $id;
   public $kind;
   public $name;
+  public $recommendedSize;
   public $region;
   public $selfLink;
   public $status;
@@ -86,6 +87,14 @@ class Google_Service_Compute_Autoscaler extends Google_Collection
   public function getName()
   {
     return $this->name;
+  }
+  public function setRecommendedSize($recommendedSize)
+  {
+    $this->recommendedSize = $recommendedSize;
+  }
+  public function getRecommendedSize()
+  {
+    return $this->recommendedSize;
   }
   public function setRegion($region)
   {

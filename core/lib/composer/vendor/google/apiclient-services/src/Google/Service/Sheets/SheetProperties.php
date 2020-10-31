@@ -17,6 +17,8 @@
 
 class Google_Service_Sheets_SheetProperties extends Google_Model
 {
+  protected $dataSourceSheetPropertiesType = 'Google_Service_Sheets_DataSourceSheetProperties';
+  protected $dataSourceSheetPropertiesDataType = '';
   protected $gridPropertiesType = 'Google_Service_Sheets_GridProperties';
   protected $gridPropertiesDataType = '';
   public $hidden;
@@ -26,8 +28,24 @@ class Google_Service_Sheets_SheetProperties extends Google_Model
   public $sheetType;
   protected $tabColorType = 'Google_Service_Sheets_Color';
   protected $tabColorDataType = '';
+  protected $tabColorStyleType = 'Google_Service_Sheets_ColorStyle';
+  protected $tabColorStyleDataType = '';
   public $title;
 
+  /**
+   * @param Google_Service_Sheets_DataSourceSheetProperties
+   */
+  public function setDataSourceSheetProperties(Google_Service_Sheets_DataSourceSheetProperties $dataSourceSheetProperties)
+  {
+    $this->dataSourceSheetProperties = $dataSourceSheetProperties;
+  }
+  /**
+   * @return Google_Service_Sheets_DataSourceSheetProperties
+   */
+  public function getDataSourceSheetProperties()
+  {
+    return $this->dataSourceSheetProperties;
+  }
   /**
    * @param Google_Service_Sheets_GridProperties
    */
@@ -95,6 +113,20 @@ class Google_Service_Sheets_SheetProperties extends Google_Model
   public function getTabColor()
   {
     return $this->tabColor;
+  }
+  /**
+   * @param Google_Service_Sheets_ColorStyle
+   */
+  public function setTabColorStyle(Google_Service_Sheets_ColorStyle $tabColorStyle)
+  {
+    $this->tabColorStyle = $tabColorStyle;
+  }
+  /**
+   * @return Google_Service_Sheets_ColorStyle
+   */
+  public function getTabColorStyle()
+  {
+    return $this->tabColorStyle;
   }
   public function setTitle($title)
   {

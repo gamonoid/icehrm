@@ -44,7 +44,7 @@ class CompanyDocument extends BaseModel
     }
 
     // @codingStandardsIgnoreStart
-    public function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
+    public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
         // @codingStandardsIgnoreEnd
         $res = parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);

@@ -1972,3 +1972,18 @@ msgstr "Saved Calculations"
 
 msgid "Total Leave Days"
 msgstr "Total Leave Days"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "View"
+msgstr "View"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Copy"
+msgstr "Copy"

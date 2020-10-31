@@ -48,10 +48,10 @@ class Google_Service_AndroidEnterprise_Resource_Enterprises extends Google_Servi
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string completionToken The Completion token initially returned by
-   * GenerateSignupUrl.
    * @opt_param string enterpriseToken The Enterprise token appended to the
    * Callback URL.
+   * @opt_param string completionToken The Completion token initially returned by
+   * GenerateSignupUrl.
    * @return Google_Service_AndroidEnterprise_Enterprise
    */
   public function completeSignup($optParams = array())
@@ -78,25 +78,10 @@ class Google_Service_AndroidEnterprise_Resource_Enterprises extends Google_Servi
     return $this->call('createWebToken', array($params), "Google_Service_AndroidEnterprise_AdministratorWebToken");
   }
   /**
-   * Deletes the binding between the EMM and enterprise. This is now deprecated.
-   * Use this method only to unenroll customers that were previously enrolled with
-   * the insert call, then enroll them again with the enroll call.
-   * (enterprises.delete)
-   *
-   * @param string $enterpriseId The ID of the enterprise.
-   * @param array $optParams Optional parameters.
-   */
-  public function delete($enterpriseId, $optParams = array())
-  {
-    $params = array('enterpriseId' => $enterpriseId);
-    $params = array_merge($params, $optParams);
-    return $this->call('delete', array($params));
-  }
-  /**
    * Enrolls an enterprise with the calling EMM. (enterprises.enroll)
    *
-   * @param string $token The token provided by the enterprise to register the
-   * EMM.
+   * @param string $token Required. The token provided by the enterprise to
+   * register the EMM.
    * @param Google_Service_AndroidEnterprise_Enterprise $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_AndroidEnterprise_Enterprise
@@ -142,33 +127,17 @@ class Google_Service_AndroidEnterprise_Resource_Enterprises extends Google_Servi
     return $this->call('get', array($params), "Google_Service_AndroidEnterprise_Enterprise");
   }
   /**
-   * Deprecated and unused. (enterprises.getAndroidDevicePolicyConfig)
-   *
-   * @param string $enterpriseId The ID of the enterprise.
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_AndroidEnterprise_AndroidDevicePolicyConfig
-   */
-  public function getAndroidDevicePolicyConfig($enterpriseId, $optParams = array())
-  {
-    $params = array('enterpriseId' => $enterpriseId);
-    $params = array_merge($params, $optParams);
-    return $this->call('getAndroidDevicePolicyConfig', array($params), "Google_Service_AndroidEnterprise_AndroidDevicePolicyConfig");
-  }
-  /**
    * Returns a service account and credentials. The service account can be bound
    * to the enterprise by calling setAccount. The service account is unique to
    * this enterprise and EMM, and will be deleted if the enterprise is unbound.
-   * The credentials contain private key data and are not stored server-side.
-   *
-   * This method can only be called after calling Enterprises.Enroll or
+   * The credentials contain private key data and are not stored server-side. This
+   * method can only be called after calling Enterprises.Enroll or
    * Enterprises.CompleteSignup, and before Enterprises.SetAccount; at other times
-   * it will return an error.
-   *
-   * Subsequent calls after the first will generate a new, unique set of
-   * credentials, and invalidate the previously generated credentials.
-   *
-   * Once the service account is bound to the enterprise, it can be managed using
-   * the serviceAccountKeys resource. (enterprises.getServiceAccount)
+   * it will return an error. Subsequent calls after the first will generate a
+   * new, unique set of credentials, and invalidate the previously generated
+   * credentials. Once the service account is bound to the enterprise, it can be
+   * managed using the serviceAccountKeys resource.
+   * (enterprises.getServiceAccount)
    *
    * @param string $enterpriseId The ID of the enterprise.
    * @param array $optParams Optional parameters.
@@ -199,30 +168,14 @@ class Google_Service_AndroidEnterprise_Resource_Enterprises extends Google_Servi
     return $this->call('getStoreLayout', array($params), "Google_Service_AndroidEnterprise_StoreLayout");
   }
   /**
-   * Establishes the binding between the EMM and an enterprise. This is now
-   * deprecated; use enroll instead. (enterprises.insert)
-   *
-   * @param string $token The token provided by the enterprise to register the
-   * EMM.
-   * @param Google_Service_AndroidEnterprise_Enterprise $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_AndroidEnterprise_Enterprise
-   */
-  public function insert($token, Google_Service_AndroidEnterprise_Enterprise $postBody, $optParams = array())
-  {
-    $params = array('token' => $token, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('insert', array($params), "Google_Service_AndroidEnterprise_Enterprise");
-  }
-  /**
    * Looks up an enterprise by domain name. This is only supported for enterprises
    * created via the Google-initiated creation flow. Lookup of the id is not
    * needed for enterprises created via the EMM-initiated flow since the EMM
    * learns the enterprise ID in the callback specified in the
    * Enterprises.generateSignupUrl call. (enterprises.listEnterprises)
    *
-   * @param string $domain The exact primary domain name of the enterprise to look
-   * up.
+   * @param string $domain Required. The exact primary domain name of the
+   * enterprise to look up.
    * @param array $optParams Optional parameters.
    * @return Google_Service_AndroidEnterprise_EnterprisesListResponse
    */
@@ -296,24 +249,10 @@ class Google_Service_AndroidEnterprise_Resource_Enterprises extends Google_Servi
     return $this->call('setAccount', array($params), "Google_Service_AndroidEnterprise_EnterpriseAccount");
   }
   /**
-   * Deprecated and unused. (enterprises.setAndroidDevicePolicyConfig)
-   *
-   * @param string $enterpriseId The ID of the enterprise.
-   * @param Google_Service_AndroidEnterprise_AndroidDevicePolicyConfig $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_AndroidEnterprise_AndroidDevicePolicyConfig
-   */
-  public function setAndroidDevicePolicyConfig($enterpriseId, Google_Service_AndroidEnterprise_AndroidDevicePolicyConfig $postBody, $optParams = array())
-  {
-    $params = array('enterpriseId' => $enterpriseId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('setAndroidDevicePolicyConfig', array($params), "Google_Service_AndroidEnterprise_AndroidDevicePolicyConfig");
-  }
-  /**
    * Sets the store layout for the enterprise. By default, storeLayoutType is set
    * to "basic" and the basic store layout is enabled. The basic layout only
    * contains apps approved by the admin, and that have been added to the
-   * available product set for a user (using the  setAvailableProductSet call).
+   * available product set for a user (using the setAvailableProductSet call).
    * Apps on the page are sorted in order of their product ID value. If you create
    * a custom store layout (by setting storeLayoutType = "custom" and setting a
    * homepage), the basic store layout is disabled. (enterprises.setStoreLayout)

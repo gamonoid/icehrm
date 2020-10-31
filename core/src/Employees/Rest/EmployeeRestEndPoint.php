@@ -3,6 +3,7 @@ namespace Employees\Rest;
 
 use Classes\BaseService;
 use Classes\Data\Query\DataQuery;
+use Classes\Data\Query\Filter;
 use Classes\IceResponse;
 use Classes\PermissionManager;
 use Classes\RestEndPoint;
@@ -20,10 +21,10 @@ class EmployeeRestEndPoint extends RestEndPoint
         return $obj;
     }
 
-    public function listAll(User $user)
+    public function listAll(User $user, $parameter = null)
     {
         $query = new DataQuery('Employee');
-
+        $query->addFilter(new Filter('employee', $parameter));
         $mapping = <<<JSON
 {
   "job_title": [ "JobTitle", "id", "name" ],

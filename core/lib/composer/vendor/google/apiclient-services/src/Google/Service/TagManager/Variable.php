@@ -23,6 +23,8 @@ class Google_Service_TagManager_Variable extends Google_Collection
   public $disablingTriggerId;
   public $enablingTriggerId;
   public $fingerprint;
+  protected $formatValueType = 'Google_Service_TagManager_VariableFormatValue';
+  protected $formatValueDataType = '';
   public $name;
   public $notes;
   protected $parameterType = 'Google_Service_TagManager_Parameter';
@@ -75,6 +77,20 @@ class Google_Service_TagManager_Variable extends Google_Collection
   public function getFingerprint()
   {
     return $this->fingerprint;
+  }
+  /**
+   * @param Google_Service_TagManager_VariableFormatValue
+   */
+  public function setFormatValue(Google_Service_TagManager_VariableFormatValue $formatValue)
+  {
+    $this->formatValue = $formatValue;
+  }
+  /**
+   * @return Google_Service_TagManager_VariableFormatValue
+   */
+  public function getFormatValue()
+  {
+    return $this->formatValue;
   }
   public function setName($name)
   {

@@ -20,7 +20,11 @@ class Google_Service_Reports_ActivityEventsParameters extends Google_Collection
   protected $collection_key = 'multiValue';
   public $boolValue;
   public $intValue;
+  protected $messageValueType = 'Google_Service_Reports_ActivityEventsParametersMessageValue';
+  protected $messageValueDataType = '';
   public $multiIntValue;
+  protected $multiMessageValueType = 'Google_Service_Reports_ActivityEventsParametersMultiMessageValue';
+  protected $multiMessageValueDataType = 'array';
   public $multiValue;
   public $name;
   public $value;
@@ -41,6 +45,20 @@ class Google_Service_Reports_ActivityEventsParameters extends Google_Collection
   {
     return $this->intValue;
   }
+  /**
+   * @param Google_Service_Reports_ActivityEventsParametersMessageValue
+   */
+  public function setMessageValue(Google_Service_Reports_ActivityEventsParametersMessageValue $messageValue)
+  {
+    $this->messageValue = $messageValue;
+  }
+  /**
+   * @return Google_Service_Reports_ActivityEventsParametersMessageValue
+   */
+  public function getMessageValue()
+  {
+    return $this->messageValue;
+  }
   public function setMultiIntValue($multiIntValue)
   {
     $this->multiIntValue = $multiIntValue;
@@ -48,6 +66,20 @@ class Google_Service_Reports_ActivityEventsParameters extends Google_Collection
   public function getMultiIntValue()
   {
     return $this->multiIntValue;
+  }
+  /**
+   * @param Google_Service_Reports_ActivityEventsParametersMultiMessageValue
+   */
+  public function setMultiMessageValue($multiMessageValue)
+  {
+    $this->multiMessageValue = $multiMessageValue;
+  }
+  /**
+   * @return Google_Service_Reports_ActivityEventsParametersMultiMessageValue
+   */
+  public function getMultiMessageValue()
+  {
+    return $this->multiMessageValue;
   }
   public function setMultiValue($multiValue)
   {

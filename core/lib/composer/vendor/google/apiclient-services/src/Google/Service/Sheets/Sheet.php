@@ -17,7 +17,7 @@
 
 class Google_Service_Sheets_Sheet extends Google_Collection
 {
-  protected $collection_key = 'rowGroups';
+  protected $collection_key = 'slicers';
   protected $bandedRangesType = 'Google_Service_Sheets_BandedRange';
   protected $bandedRangesDataType = 'array';
   protected $basicFilterType = 'Google_Service_Sheets_BasicFilter';
@@ -42,6 +42,8 @@ class Google_Service_Sheets_Sheet extends Google_Collection
   protected $protectedRangesDataType = 'array';
   protected $rowGroupsType = 'Google_Service_Sheets_DimensionGroup';
   protected $rowGroupsDataType = 'array';
+  protected $slicersType = 'Google_Service_Sheets_Slicer';
+  protected $slicersDataType = 'array';
 
   /**
    * @param Google_Service_Sheets_BandedRange
@@ -210,5 +212,19 @@ class Google_Service_Sheets_Sheet extends Google_Collection
   public function getRowGroups()
   {
     return $this->rowGroups;
+  }
+  /**
+   * @param Google_Service_Sheets_Slicer
+   */
+  public function setSlicers($slicers)
+  {
+    $this->slicers = $slicers;
+  }
+  /**
+   * @return Google_Service_Sheets_Slicer
+   */
+  public function getSlicers()
+  {
+    return $this->slicers;
   }
 }

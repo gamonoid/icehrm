@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Testing;
 
 trait loadTasks
@@ -6,7 +7,7 @@ trait loadTasks
     /**
      * @param null|string $pathToCodeception
      *
-     * @return \Robo\Task\Testing\Codecept
+     * @return \Robo\Task\Testing\Codecept|\Robo\Collection\CollectionBuilder
      */
     protected function taskCodecept($pathToCodeception = null)
     {
@@ -16,7 +17,7 @@ trait loadTasks
     /**
      * @param null|string $pathToPhpUnit
      *
-     * @return \Robo\Task\Testing\PHPUnit
+     * @return \Robo\Task\Testing\PHPUnit|\Robo\Collection\CollectionBuilder
      */
     protected function taskPhpUnit($pathToPhpUnit = null)
     {
@@ -24,9 +25,9 @@ trait loadTasks
     }
 
     /**
-     * @param null $pathToPhpspec
+     * @param null|string $pathToPhpspec
      *
-     * @return \Robo\Task\Testing\Phpspec
+     * @return \Robo\Task\Testing\Phpspec|\Robo\Collection\CollectionBuilder
      */
     protected function taskPhpspec($pathToPhpspec = null)
     {
@@ -34,9 +35,9 @@ trait loadTasks
     }
 
     /**
-     * @param null $pathToAtoum
+     * @param null|string $pathToAtoum
      *
-     * @return \Robo\Task\Testing\Atoum
+     * @return \Robo\Task\Testing\Atoum|\Robo\Collection\CollectionBuilder
      */
     protected function taskAtoum($pathToAtoum = null)
     {
@@ -44,9 +45,9 @@ trait loadTasks
     }
 
     /**
-     * @param null $pathToBehat
+     * @param null|string $pathToBehat
      *
-     * @return \Robo\Task\Testing\Behat
+     * @return \Robo\Task\Testing\Behat|\Robo\Collection\CollectionBuilder
      */
     protected function taskBehat($pathToBehat = null)
     {

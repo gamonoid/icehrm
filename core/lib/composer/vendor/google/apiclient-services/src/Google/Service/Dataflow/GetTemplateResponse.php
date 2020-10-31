@@ -19,8 +19,11 @@ class Google_Service_Dataflow_GetTemplateResponse extends Google_Model
 {
   protected $metadataType = 'Google_Service_Dataflow_TemplateMetadata';
   protected $metadataDataType = '';
+  protected $runtimeMetadataType = 'Google_Service_Dataflow_RuntimeMetadata';
+  protected $runtimeMetadataDataType = '';
   protected $statusType = 'Google_Service_Dataflow_Status';
   protected $statusDataType = '';
+  public $templateType;
 
   /**
    * @param Google_Service_Dataflow_TemplateMetadata
@@ -37,6 +40,20 @@ class Google_Service_Dataflow_GetTemplateResponse extends Google_Model
     return $this->metadata;
   }
   /**
+   * @param Google_Service_Dataflow_RuntimeMetadata
+   */
+  public function setRuntimeMetadata(Google_Service_Dataflow_RuntimeMetadata $runtimeMetadata)
+  {
+    $this->runtimeMetadata = $runtimeMetadata;
+  }
+  /**
+   * @return Google_Service_Dataflow_RuntimeMetadata
+   */
+  public function getRuntimeMetadata()
+  {
+    return $this->runtimeMetadata;
+  }
+  /**
    * @param Google_Service_Dataflow_Status
    */
   public function setStatus(Google_Service_Dataflow_Status $status)
@@ -49,5 +66,13 @@ class Google_Service_Dataflow_GetTemplateResponse extends Google_Model
   public function getStatus()
   {
     return $this->status;
+  }
+  public function setTemplateType($templateType)
+  {
+    $this->templateType = $templateType;
+  }
+  public function getTemplateType()
+  {
+    return $this->templateType;
   }
 }

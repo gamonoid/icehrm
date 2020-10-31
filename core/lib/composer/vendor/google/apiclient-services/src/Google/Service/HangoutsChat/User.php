@@ -18,6 +18,7 @@
 class Google_Service_HangoutsChat_User extends Google_Model
 {
   public $displayName;
+  public $domainId;
   public $name;
   public $type;
 
@@ -28,6 +29,14 @@ class Google_Service_HangoutsChat_User extends Google_Model
   public function getDisplayName()
   {
     return $this->displayName;
+  }
+  public function setDomainId($domainId)
+  {
+    $this->domainId = $domainId;
+  }
+  public function getDomainId()
+  {
+    return $this->domainId;
   }
   public function setName($name)
   {

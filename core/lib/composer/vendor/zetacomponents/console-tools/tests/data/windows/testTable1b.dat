@@ -1,0 +1,20 @@
++------------+------------+------------+
+| Heading    | Longer     | Head 3     |
+| no. 1      | heading    |            |
+|            | no. 2      |            |
++------------+------------+------------+
+| Data cell  | Data cell  | Data cell  |
+| 1          | 2          | 3          |
++------------+------------+------------+
+| Long long  | Data cell  | Data cell  |
+| data cell  | 4          | 5          |
+| with even  |            |            |
+| more text  |            |            |
+| in it...   |            |            |
++------------+------------+------------+
+| a b c d e  | Data cell  | Data cell  |
+| f g h i j  |            |            |
+| k l m n o  |            |            |
+| p q r s t  |            |            |
+| u v w x    |            |            |
++------------+------------+------------+

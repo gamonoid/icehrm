@@ -74,7 +74,7 @@ class System
             $offset = 0;
             foreach ($av as $a) {
                 $b = trim($a[0]);
-                if ($b{0} == '"' || $b{0} == "'") {
+                if ($b[0] == '"' || $b[0] == "'") {
                     continue;
                 }
 
@@ -265,7 +265,7 @@ class System
             } elseif ($opt[0] == 'm') {
                 // if the mode is clearly an octal number (starts with 0)
                 // convert it to decimal
-                if (strlen($opt[1]) && $opt[1]{0} == '0') {
+                if (strlen($opt[1]) && $opt[1][0] == '0') {
                     $opt[1] = octdec($opt[1]);
                 } else {
                     // convert to int
@@ -315,7 +315,7 @@ class System
      * 2) System::cat('sample.txt test.txt > final.txt');
      * 3) System::cat('sample.txt test.txt >> final.txt');
      *
-     * Note: as the class use fopen, urls should work also (test that)
+     * Note: as the class use fopen, urls should work also
      *
      * @param    string  $args   the arguments
      * @return   boolean true on success
@@ -480,7 +480,7 @@ class System
         if ($var = isset($_ENV['TMPDIR']) ? $_ENV['TMPDIR'] : getenv('TMPDIR')) {
             return $var;
         }
-        return realpath('/tmp');
+        return realpath(function_exists('sys_get_temp_dir') ? sys_get_temp_dir() : '/tmp');
     }
 
     /**
@@ -527,8 +527,14 @@ class System
         foreach ($exe_suffixes as $suff) {
             foreach ($path_elements as $dir) {
                 $file = $dir . DIRECTORY_SEPARATOR . $program . $suff;
-                if (is_executable($file)) {
+                // It's possible to run a .bat on Windows that is_executable
+                // would return false for. The is_executable check is meaningless...
+                if (OS_WINDOWS) {
                     return $file;
+                } else {
+                    if (is_executable($file)) {
+                        return $file;
+                    }
                 }
             }
         }

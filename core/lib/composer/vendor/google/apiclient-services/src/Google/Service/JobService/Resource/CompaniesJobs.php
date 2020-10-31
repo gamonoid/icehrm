@@ -68,7 +68,7 @@ class Google_Service_JobService_Resource_CompaniesJobs extends Google_Service_Re
    * The requisition ID, also known as posting ID, assigned by the company to the
    * job.
    *
-   * The number of allowable characters is 225.
+   * The maximum number of allowable characters is 225.
    * @return Google_Service_JobService_ListCompanyJobsResponse
    */
   public function listCompaniesJobs($companyName, $optParams = array())

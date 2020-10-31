@@ -17,11 +17,20 @@
 
 class Google_Service_Slides_CreateLineRequest extends Google_Model
 {
+  public $category;
   protected $elementPropertiesType = 'Google_Service_Slides_PageElementProperties';
   protected $elementPropertiesDataType = '';
   public $lineCategory;
   public $objectId;
 
+  public function setCategory($category)
+  {
+    $this->category = $category;
+  }
+  public function getCategory()
+  {
+    return $this->category;
+  }
   /**
    * @param Google_Service_Slides_PageElementProperties
    */

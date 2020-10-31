@@ -19,6 +19,7 @@ class Google_Service_CloudRedis_Instance extends Google_Model
 {
   public $alternativeLocationId;
   public $authorizedNetwork;
+  public $connectMode;
   public $createTime;
   public $currentLocationId;
   public $displayName;
@@ -27,6 +28,7 @@ class Google_Service_CloudRedis_Instance extends Google_Model
   public $locationId;
   public $memorySizeGb;
   public $name;
+  public $persistenceIamIdentity;
   public $port;
   public $redisConfigs;
   public $redisVersion;
@@ -50,6 +52,14 @@ class Google_Service_CloudRedis_Instance extends Google_Model
   public function getAuthorizedNetwork()
   {
     return $this->authorizedNetwork;
+  }
+  public function setConnectMode($connectMode)
+  {
+    $this->connectMode = $connectMode;
+  }
+  public function getConnectMode()
+  {
+    return $this->connectMode;
   }
   public function setCreateTime($createTime)
   {
@@ -114,6 +124,14 @@ class Google_Service_CloudRedis_Instance extends Google_Model
   public function getName()
   {
     return $this->name;
+  }
+  public function setPersistenceIamIdentity($persistenceIamIdentity)
+  {
+    $this->persistenceIamIdentity = $persistenceIamIdentity;
+  }
+  public function getPersistenceIamIdentity()
+  {
+    return $this->persistenceIamIdentity;
   }
   public function setPort($port)
   {

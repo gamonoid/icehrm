@@ -19,6 +19,7 @@ class Google_Service_Compute_SSLHealthCheck extends Google_Model
 {
   public $port;
   public $portName;
+  public $portSpecification;
   public $proxyHeader;
   public $request;
   public $response;
@@ -38,6 +39,14 @@ class Google_Service_Compute_SSLHealthCheck extends Google_Model
   public function getPortName()
   {
     return $this->portName;
+  }
+  public function setPortSpecification($portSpecification)
+  {
+    $this->portSpecification = $portSpecification;
+  }
+  public function getPortSpecification()
+  {
+    return $this->portSpecification;
   }
   public function setProxyHeader($proxyHeader)
   {

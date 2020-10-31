@@ -21,6 +21,7 @@ class Google_Service_DoubleClickBidManager_QuerySchedule extends Google_Model
   public $frequency;
   public $nextRunMinuteOfDay;
   public $nextRunTimezoneCode;
+  public $startTimeMs;
 
   public function setEndTimeMs($endTimeMs)
   {
@@ -53,5 +54,13 @@ class Google_Service_DoubleClickBidManager_QuerySchedule extends Google_Model
   public function getNextRunTimezoneCode()
   {
     return $this->nextRunTimezoneCode;
+  }
+  public function setStartTimeMs($startTimeMs)
+  {
+    $this->startTimeMs = $startTimeMs;
+  }
+  public function getStartTimeMs()
+  {
+    return $this->startTimeMs;
   }
 }

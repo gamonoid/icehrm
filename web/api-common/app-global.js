@@ -59,6 +59,8 @@ function closeUploadDialog(success, error, data) {
       $(`#${uploadId}`).show();
       $(`#${uploadId}_download`).show();
       $(`#${uploadId}_remove`).show();
+    } else if (uploadAttr === 'function') {
+      modJs.callFunction(uploadResultAttr);
     }
   } else {
     // popupUpload.close();
@@ -174,9 +176,17 @@ function updateLanguage(language) {
   }, 'json');
 }
 
-$(document).ready(function() {
+function switchTab(name, filter) {
+  if (filter) {
+    modJsList[name].setFilter(filter);
+  }
+  $('html,body').scrollTop(0);
+  $(`#${name}`).trigger('click');
+}
+
+$(document).ready(() => {
   $('.treeview-menu a').hover(
-    function () { $(this).find('.fa').addClass('faa-horizontal'); $(this).find('.fa').addClass('animated') },
-    function () { $(this).find('.fa').removeClass('faa-horizontal'); $(this).find('.fa').removeClass('animated');},
+    function () { $(this).find('.fa').addClass('faa-horizontal'); $(this).find('.fa').addClass('animated'); },
+    function () { $(this).find('.fa').removeClass('faa-horizontal'); $(this).find('.fa').removeClass('animated'); },
   );
 });

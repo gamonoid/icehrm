@@ -7,7 +7,7 @@ use Classes\Data\Query\DataQuery;
 
 class StaffDirectoryRestEndPoint extends RestEndPoint
 {
-    public function listAll(User $user)
+    public function listAll(User $user, $parameter = null)
     {
         $query = new DataQuery('StaffDirectory');
         $query->setFieldMapping(

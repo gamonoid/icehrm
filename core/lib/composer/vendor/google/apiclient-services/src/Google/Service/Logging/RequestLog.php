@@ -48,6 +48,7 @@ class Google_Service_Logging_RequestLog extends Google_Collection
   public $taskName;
   public $taskQueueName;
   public $traceId;
+  public $traceSampled;
   public $urlMapEntry;
   public $userAgent;
   public $versionId;
@@ -288,6 +289,14 @@ class Google_Service_Logging_RequestLog extends Google_Collection
   public function getTraceId()
   {
     return $this->traceId;
+  }
+  public function setTraceSampled($traceSampled)
+  {
+    $this->traceSampled = $traceSampled;
+  }
+  public function getTraceSampled()
+  {
+    return $this->traceSampled;
   }
   public function setUrlMapEntry($urlMapEntry)
   {

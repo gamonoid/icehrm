@@ -19,7 +19,10 @@ class Google_Service_ShoppingContent_Order extends Google_Collection
 {
   protected $collection_key = 'shipments';
   public $acknowledged;
-  public $channelType;
+  protected $annotationsType = 'Google_Service_ShoppingContent_OrderOrderAnnotation';
+  protected $annotationsDataType = 'array';
+  protected $billingAddressType = 'Google_Service_ShoppingContent_OrderAddress';
+  protected $billingAddressDataType = '';
   protected $customerType = 'Google_Service_ShoppingContent_OrderCustomer';
   protected $customerDataType = '';
   protected $deliveryDetailsType = 'Google_Service_ShoppingContent_OrderDeliveryDetails';
@@ -30,11 +33,13 @@ class Google_Service_ShoppingContent_Order extends Google_Collection
   protected $lineItemsDataType = 'array';
   public $merchantId;
   public $merchantOrderId;
-  protected $netAmountType = 'Google_Service_ShoppingContent_Price';
-  protected $netAmountDataType = '';
-  protected $paymentMethodType = 'Google_Service_ShoppingContent_OrderPaymentMethod';
-  protected $paymentMethodDataType = '';
+  protected $netPriceAmountType = 'Google_Service_ShoppingContent_Price';
+  protected $netPriceAmountDataType = '';
+  protected $netTaxAmountType = 'Google_Service_ShoppingContent_Price';
+  protected $netTaxAmountDataType = '';
   public $paymentStatus;
+  protected $pickupDetailsType = 'Google_Service_ShoppingContent_OrderPickupDetails';
+  protected $pickupDetailsDataType = '';
   public $placedDate;
   protected $promotionsType = 'Google_Service_ShoppingContent_OrderPromotion';
   protected $promotionsDataType = 'array';
@@ -46,8 +51,8 @@ class Google_Service_ShoppingContent_Order extends Google_Collection
   protected $shippingCostDataType = '';
   protected $shippingCostTaxType = 'Google_Service_ShoppingContent_Price';
   protected $shippingCostTaxDataType = '';
-  public $shippingOption;
   public $status;
+  public $taxCollector;
 
   public function setAcknowledged($acknowledged)
   {
@@ -57,13 +62,33 @@ class Google_Service_ShoppingContent_Order extends Google_Collection
   {
     return $this->acknowledged;
   }
-  public function setChannelType($channelType)
+  /**
+   * @param Google_Service_ShoppingContent_OrderOrderAnnotation
+   */
+  public function setAnnotations($annotations)
   {
-    $this->channelType = $channelType;
+    $this->annotations = $annotations;
   }
-  public function getChannelType()
+  /**
+   * @return Google_Service_ShoppingContent_OrderOrderAnnotation
+   */
+  public function getAnnotations()
   {
-    return $this->channelType;
+    return $this->annotations;
+  }
+  /**
+   * @param Google_Service_ShoppingContent_OrderAddress
+   */
+  public function setBillingAddress(Google_Service_ShoppingContent_OrderAddress $billingAddress)
+  {
+    $this->billingAddress = $billingAddress;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_OrderAddress
+   */
+  public function getBillingAddress()
+  {
+    return $this->billingAddress;
   }
   /**
    * @param Google_Service_ShoppingContent_OrderCustomer
@@ -142,30 +167,30 @@ class Google_Service_ShoppingContent_Order extends Google_Collection
   /**
    * @param Google_Service_ShoppingContent_Price
    */
-  public function setNetAmount(Google_Service_ShoppingContent_Price $netAmount)
+  public function setNetPriceAmount(Google_Service_ShoppingContent_Price $netPriceAmount)
   {
-    $this->netAmount = $netAmount;
+    $this->netPriceAmount = $netPriceAmount;
   }
   /**
    * @return Google_Service_ShoppingContent_Price
    */
-  public function getNetAmount()
+  public function getNetPriceAmount()
   {
-    return $this->netAmount;
+    return $this->netPriceAmount;
   }
   /**
-   * @param Google_Service_ShoppingContent_OrderPaymentMethod
+   * @param Google_Service_ShoppingContent_Price
    */
-  public function setPaymentMethod(Google_Service_ShoppingContent_OrderPaymentMethod $paymentMethod)
+  public function setNetTaxAmount(Google_Service_ShoppingContent_Price $netTaxAmount)
   {
-    $this->paymentMethod = $paymentMethod;
+    $this->netTaxAmount = $netTaxAmount;
   }
   /**
-   * @return Google_Service_ShoppingContent_OrderPaymentMethod
+   * @return Google_Service_ShoppingContent_Price
    */
-  public function getPaymentMethod()
+  public function getNetTaxAmount()
   {
-    return $this->paymentMethod;
+    return $this->netTaxAmount;
   }
   public function setPaymentStatus($paymentStatus)
   {
@@ -174,6 +199,20 @@ class Google_Service_ShoppingContent_Order extends Google_Collection
   public function getPaymentStatus()
   {
     return $this->paymentStatus;
+  }
+  /**
+   * @param Google_Service_ShoppingContent_OrderPickupDetails
+   */
+  public function setPickupDetails(Google_Service_ShoppingContent_OrderPickupDetails $pickupDetails)
+  {
+    $this->pickupDetails = $pickupDetails;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_OrderPickupDetails
+   */
+  public function getPickupDetails()
+  {
+    return $this->pickupDetails;
   }
   public function setPlacedDate($placedDate)
   {
@@ -253,14 +292,6 @@ class Google_Service_ShoppingContent_Order extends Google_Collection
   {
     return $this->shippingCostTax;
   }
-  public function setShippingOption($shippingOption)
-  {
-    $this->shippingOption = $shippingOption;
-  }
-  public function getShippingOption()
-  {
-    return $this->shippingOption;
-  }
   public function setStatus($status)
   {
     $this->status = $status;
@@ -268,5 +299,13 @@ class Google_Service_ShoppingContent_Order extends Google_Collection
   public function getStatus()
   {
     return $this->status;
+  }
+  public function setTaxCollector($taxCollector)
+  {
+    $this->taxCollector = $taxCollector;
+  }
+  public function getTaxCollector()
+  {
+    return $this->taxCollector;
   }
 }

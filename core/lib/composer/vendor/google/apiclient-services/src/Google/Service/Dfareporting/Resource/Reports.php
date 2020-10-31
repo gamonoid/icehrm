@@ -72,11 +72,11 @@ class Google_Service_Dfareporting_Resource_Reports extends Google_Service_Resour
    * @param string $profileId The DFA user profile ID.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string sortField The field by which to sort the list.
    * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string pageToken The value of the nextToken from the previous
    * result page.
    * @opt_param string scope The scope that defines which results are returned.
-   * @opt_param string sortField The field by which to sort the list.
    * @opt_param string sortOrder Order of sorted results.
    * @return Google_Service_Dfareporting_ReportList
    */
@@ -87,7 +87,8 @@ class Google_Service_Dfareporting_Resource_Reports extends Google_Service_Resour
     return $this->call('list', array($params), "Google_Service_Dfareporting_ReportList");
   }
   /**
-   * Updates a report. This method supports patch semantics. (reports.patch)
+   * Updates an existing report. This method supports patch semantics.
+   * (reports.patch)
    *
    * @param string $profileId The DFA user profile ID.
    * @param string $reportId The ID of the report.

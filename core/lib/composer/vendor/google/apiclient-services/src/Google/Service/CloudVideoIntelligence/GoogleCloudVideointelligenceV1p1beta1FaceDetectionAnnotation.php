@@ -15,40 +15,16 @@
  * the License.
  */
 
-class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta1FaceDetectionAnnotation extends Google_Collection
+class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta1FaceDetectionAnnotation extends Google_Model
 {
-  protected $collection_key = 'segments';
-  protected $framesType = 'Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta1FaceDetectionFrame';
-  protected $framesDataType = 'array';
-  protected $segmentsType = 'Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta1FaceSegment';
-  protected $segmentsDataType = 'array';
+  public $version;
 
-  /**
-   * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta1FaceDetectionFrame
-   */
-  public function setFrames($frames)
+  public function setVersion($version)
   {
-    $this->frames = $frames;
+    $this->version = $version;
   }
-  /**
-   * @return Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta1FaceDetectionFrame
-   */
-  public function getFrames()
+  public function getVersion()
   {
-    return $this->frames;
-  }
-  /**
-   * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta1FaceSegment
-   */
-  public function setSegments($segments)
-  {
-    $this->segments = $segments;
-  }
-  /**
-   * @return Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta1FaceSegment
-   */
-  public function getSegments()
-  {
-    return $this->segments;
+    return $this->version;
   }
 }

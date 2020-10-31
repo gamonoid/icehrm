@@ -23,6 +23,8 @@ class Google_Service_DLP_GooglePrivacyDlpV2StorageConfig extends Google_Model
   protected $cloudStorageOptionsDataType = '';
   protected $datastoreOptionsType = 'Google_Service_DLP_GooglePrivacyDlpV2DatastoreOptions';
   protected $datastoreOptionsDataType = '';
+  protected $hybridOptionsType = 'Google_Service_DLP_GooglePrivacyDlpV2HybridOptions';
+  protected $hybridOptionsDataType = '';
   protected $timespanConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2TimespanConfig';
   protected $timespanConfigDataType = '';
 
@@ -67,6 +69,20 @@ class Google_Service_DLP_GooglePrivacyDlpV2StorageConfig extends Google_Model
   public function getDatastoreOptions()
   {
     return $this->datastoreOptions;
+  }
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2HybridOptions
+   */
+  public function setHybridOptions(Google_Service_DLP_GooglePrivacyDlpV2HybridOptions $hybridOptions)
+  {
+    $this->hybridOptions = $hybridOptions;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2HybridOptions
+   */
+  public function getHybridOptions()
+  {
+    return $this->hybridOptions;
   }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2TimespanConfig

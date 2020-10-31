@@ -28,12 +28,13 @@ class Google_Service_CloudDebugger_Resource_DebuggerDebuggeesBreakpoints extends
   /**
    * Deletes the breakpoint from the debuggee. (breakpoints.delete)
    *
-   * @param string $debuggeeId ID of the debuggee whose breakpoint to delete.
-   * @param string $breakpointId ID of the breakpoint to delete.
+   * @param string $debuggeeId Required. ID of the debuggee whose breakpoint to
+   * delete.
+   * @param string $breakpointId Required. ID of the breakpoint to delete.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string clientVersion The client version making the call. Schema:
-   * `domain/type/version` (e.g., `google.com/intellij/v1`).
+   * @opt_param string clientVersion Required. The client version making the call.
+   * Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
    * @return Google_Service_CloudDebugger_ClouddebuggerEmpty
    */
   public function delete($debuggeeId, $breakpointId, $optParams = array())
@@ -45,12 +46,13 @@ class Google_Service_CloudDebugger_Resource_DebuggerDebuggeesBreakpoints extends
   /**
    * Gets breakpoint information. (breakpoints.get)
    *
-   * @param string $debuggeeId ID of the debuggee whose breakpoint to get.
-   * @param string $breakpointId ID of the breakpoint to get.
+   * @param string $debuggeeId Required. ID of the debuggee whose breakpoint to
+   * get.
+   * @param string $breakpointId Required. ID of the breakpoint to get.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string clientVersion The client version making the call. Schema:
-   * `domain/type/version` (e.g., `google.com/intellij/v1`).
+   * @opt_param string clientVersion Required. The client version making the call.
+   * Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
    * @return Google_Service_CloudDebugger_GetBreakpointResponse
    */
   public function get($debuggeeId, $breakpointId, $optParams = array())
@@ -63,27 +65,28 @@ class Google_Service_CloudDebugger_Resource_DebuggerDebuggeesBreakpoints extends
    * Lists all breakpoints for the debuggee.
    * (breakpoints.listDebuggerDebuggeesBreakpoints)
    *
-   * @param string $debuggeeId ID of the debuggee whose breakpoints to list.
+   * @param string $debuggeeId Required. ID of the debuggee whose breakpoints to
+   * list.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string waitToken A wait token that, if specified, blocks the call
-   * until the breakpoints list has changed, or a server selected timeout has
-   * expired.  The value should be set from the last response. The error code
-   * `google.rpc.Code.ABORTED` (RPC) is returned on wait timeout, which should be
-   * called again with the same `wait_token`.
-   * @opt_param string clientVersion The client version making the call. Schema:
-   * `domain/type/version` (e.g., `google.com/intellij/v1`).
-   * @opt_param string action.value Only breakpoints with the specified action
-   * will pass the filter.
    * @opt_param bool includeInactive When set to `true`, the response includes
    * active and inactive breakpoints. Otherwise, it includes only active
    * breakpoints.
-   * @opt_param bool includeAllUsers When set to `true`, the response includes the
-   * list of breakpoints set by any user. Otherwise, it includes only breakpoints
-   * set by the caller.
+   * @opt_param string action.value Only breakpoints with the specified action
+   * will pass the filter.
+   * @opt_param string clientVersion Required. The client version making the call.
+   * Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
    * @opt_param bool stripResults This field is deprecated. The following fields
    * are always stripped out of the result: `stack_frames`,
    * `evaluated_expressions` and `variable_table`.
+   * @opt_param string waitToken A wait token that, if specified, blocks the call
+   * until the breakpoints list has changed, or a server selected timeout has
+   * expired. The value should be set from the last response. The error code
+   * `google.rpc.Code.ABORTED` (RPC) is returned on wait timeout, which should be
+   * called again with the same `wait_token`.
+   * @opt_param bool includeAllUsers When set to `true`, the response includes the
+   * list of breakpoints set by any user. Otherwise, it includes only breakpoints
+   * set by the caller.
    * @return Google_Service_CloudDebugger_ListBreakpointsResponse
    */
   public function listDebuggerDebuggeesBreakpoints($debuggeeId, $optParams = array())
@@ -95,13 +98,15 @@ class Google_Service_CloudDebugger_Resource_DebuggerDebuggeesBreakpoints extends
   /**
    * Sets the breakpoint to the debuggee. (breakpoints.set)
    *
-   * @param string $debuggeeId ID of the debuggee where the breakpoint is to be
-   * set.
+   * @param string $debuggeeId Required. ID of the debuggee where the breakpoint
+   * is to be set.
    * @param Google_Service_CloudDebugger_Breakpoint $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string clientVersion The client version making the call. Schema:
-   * `domain/type/version` (e.g., `google.com/intellij/v1`).
+   * @opt_param string clientVersion Required. The client version making the call.
+   * Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+   * @opt_param string canaryOption The canary option set by the user upon setting
+   * breakpoint.
    * @return Google_Service_CloudDebugger_SetBreakpointResponse
    */
   public function set($debuggeeId, Google_Service_CloudDebugger_Breakpoint $postBody, $optParams = array())

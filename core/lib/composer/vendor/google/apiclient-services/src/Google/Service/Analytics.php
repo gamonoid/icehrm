@@ -58,6 +58,7 @@ class Google_Service_Analytics extends Google_Service
   public $management_accountSummaries;
   public $management_accountUserLinks;
   public $management_accounts;
+  public $management_clientId;
   public $management_customDataSources;
   public $management_customDimensions;
   public $management_customMetrics;
@@ -81,13 +82,15 @@ class Google_Service_Analytics extends Google_Service
   /**
    * Constructs the internal representation of the Analytics service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://www.googleapis.com/';
     $this->servicePath = 'analytics/v3/';
+    $this->batchPath = 'batch/analytics/v3';
     $this->version = 'v3';
     $this->serviceName = 'analytics';
 
@@ -372,6 +375,20 @@ class Google_Service_Analytics extends Google_Service
                   'type' => 'integer',
                 ),
               ),
+            ),
+          )
+        )
+    );
+    $this->management_clientId = new Google_Service_Analytics_Resource_ManagementClientId(
+        $this,
+        $this->serviceName,
+        'clientId',
+        array(
+          'methods' => array(
+            'hashClientId' => array(
+              'path' => 'management/clientId:hashClientId',
+              'httpMethod' => 'POST',
+              'parameters' => array(),
             ),
           )
         )

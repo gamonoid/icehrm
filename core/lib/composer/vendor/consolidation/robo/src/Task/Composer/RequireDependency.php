@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Composer;
 
 /**
@@ -20,6 +21,10 @@ class RequireDependency extends Base
 
     /**
      * 'require' is a keyword, so it cannot be a method name.
+     *
+     * @param string $project
+     * @param null|string $version
+     *
      * @return $this
      */
     public function dependency($project, $version = null)

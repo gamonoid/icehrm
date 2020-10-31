@@ -22,6 +22,8 @@ class Google_Service_Testing_TestExecution extends Google_Model
   public $id;
   public $matrixId;
   public $projectId;
+  protected $shardType = 'Google_Service_Testing_Shard';
+  protected $shardDataType = '';
   public $state;
   protected $testDetailsType = 'Google_Service_Testing_TestDetails';
   protected $testDetailsDataType = '';
@@ -68,6 +70,20 @@ class Google_Service_Testing_TestExecution extends Google_Model
   public function getProjectId()
   {
     return $this->projectId;
+  }
+  /**
+   * @param Google_Service_Testing_Shard
+   */
+  public function setShard(Google_Service_Testing_Shard $shard)
+  {
+    $this->shard = $shard;
+  }
+  /**
+   * @return Google_Service_Testing_Shard
+   */
+  public function getShard()
+  {
+    return $this->shard;
   }
   public function setState($state)
   {

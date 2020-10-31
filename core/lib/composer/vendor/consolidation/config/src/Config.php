@@ -3,9 +3,12 @@
 namespace Consolidation\Config;
 
 use Dflydev\DotAccessData\Data;
+use Consolidation\Config\Util\ConfigInterpolatorInterface;
+use Consolidation\Config\Util\ConfigInterpolatorTrait;
 
-class Config implements ConfigInterface
+class Config implements ConfigInterface, ConfigInterpolatorInterface
 {
+    use ConfigInterpolatorTrait;
 
     /**
      * @var Data

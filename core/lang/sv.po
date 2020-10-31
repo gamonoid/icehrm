@@ -1972,3 +1972,18 @@ msgstr "Sparade beräkningar"
 
 msgid "Total Leave Days"
 msgstr "Totalt ledighet dagar"
+
+msgid "Actions"
+msgstr "Insatser"
+
+msgid "Edit"
+msgstr "Redigera"
+
+msgid "View"
+msgstr "Se"
+
+msgid "Delete"
+msgstr "Radera"
+
+msgid "Copy"
+msgstr "Kopiera"

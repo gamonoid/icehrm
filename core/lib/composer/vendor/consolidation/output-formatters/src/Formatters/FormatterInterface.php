@@ -10,9 +10,9 @@ interface FormatterInterface
      * Given structured data, apply appropriate
      * formatting, and return a printable string.
      *
+     * @param OutputInterface output stream to write to
      * @param mixed $data Structured data to format
-     *
-     * @return string
+     * @param FormatterOptions formating options
      */
     public function write(OutputInterface $output, $data, FormatterOptions $options);
 }

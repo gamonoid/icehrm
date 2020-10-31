@@ -26,36 +26,37 @@
 class Google_Service_Storagetransfer_Resource_TransferOperations extends Google_Service_Resource
 {
   /**
-   * Cancels a transfer. Use the get method to check whether the cancellation
-   * succeeded or whether the operation completed despite cancellation.
-   * (transferOperations.cancel)
+   * Cancels a transfer. Use the transferOperations.get method to check if the
+   * cancellation succeeded or if the operation completed despite the `cancel`
+   * request. When you cancel an operation, the currently running transfer is
+   * interrupted. For recurring transfer jobs, the next instance of the transfer
+   * job will still run. For example, if your job is configured to run every day
+   * at 1pm and you cancel Monday's operation at 1:05pm, Monday's transfer will
+   * stop. However, a transfer job will still be attempted on Tuesday. This
+   * applies only to currently running operations. If an operation is not
+   * currently running, `cancel` does nothing. *Caution:* Canceling a transfer job
+   * can leave your data in an unknown state. We recommend that you restore the
+   * state at both the destination and the source after the `cancel` request
+   * completes so that your data is in a consistent state. When you cancel a job,
+   * the next job computes a delta of files and may repair any inconsistent state.
+   * For instance, if you run a job every day, and today's job found 10 new files
+   * and transferred five files before you canceled the job, tomorrow's transfer
+   * operation will compute a new delta with the five files that were not copied
+   * today plus any new files discovered tomorrow. (transferOperations.cancel)
    *
    * @param string $name The name of the operation resource to be cancelled.
+   * @param Google_Service_Storagetransfer_CancelOperationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Storagetransfer_StoragetransferEmpty
    */
-  public function cancel($name, $optParams = array())
+  public function cancel($name, Google_Service_Storagetransfer_CancelOperationRequest $postBody, $optParams = array())
   {
-    $params = array('name' => $name);
+    $params = array('name' => $name, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('cancel', array($params), "Google_Service_Storagetransfer_StoragetransferEmpty");
   }
   /**
-   * This method is not supported and the server returns `UNIMPLEMENTED`.
-   * (transferOperations.delete)
-   *
-   * @param string $name The name of the operation resource to be deleted.
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Storagetransfer_StoragetransferEmpty
-   */
-  public function delete($name, $optParams = array())
-  {
-    $params = array('name' => $name);
-    $params = array_merge($params, $optParams);
-    return $this->call('delete', array($params), "Google_Service_Storagetransfer_StoragetransferEmpty");
-  }
-  /**
-   * Gets the latest state of a long-running operation.  Clients can use this
+   * Gets the latest state of a long-running operation. Clients can use this
    * method to poll the operation result at intervals as recommended by the API
    * service. (transferOperations.get)
    *
@@ -70,30 +71,22 @@ class Google_Service_Storagetransfer_Resource_TransferOperations extends Google_
     return $this->call('get', array($params), "Google_Service_Storagetransfer_Operation");
   }
   /**
-   * Lists operations that match the specified filter in the request. If the
-   * server doesn't support this method, it returns `UNIMPLEMENTED`.
+   * Lists transfer operations. (transferOperations.listTransferOperations)
    *
-   * NOTE: the `name` binding allows API services to override the binding to use
-   * different resource name schemes, such as `users/operations`. To override the
-   * binding, API services can add a binding such as
-   * `"/v1/{name=users}/operations"` to their service configuration. For backwards
-   * compatibility, the default name includes the operations collection id,
-   * however overriding users must ensure the name binding is the parent resource,
-   * without the operations collection id.
-   * (transferOperations.listTransferOperations)
-   *
-   * @param string $name The value `transferOperations`.
+   * @param string $name Required. The value `transferOperations`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string filter A list of query parameters specified as JSON text in
-   * the form of {\"project_id\" : \"my_project_id\", \"job_names\" : [\"jobid1\",
-   * \"jobid2\",...], \"operation_names\" : [\"opid1\", \"opid2\",...],
-   * \"transfer_statuses\":[\"status1\", \"status2\",...]}. Since `job_names`,
+   * @opt_param string filter Required. A list of query parameters specified as
+   * JSON text in the form of: {"project_id":"my_project_id",
+   * "job_names":["jobid1","jobid2",...], "operation_names":["opid1","opid2",...],
+   * "transfer_statuses":["status1","status2",...]}. Since `job_names`,
    * `operation_names`, and `transfer_statuses` support multiple values, they must
-   * be specified with array notation. `job_names`, `operation_names`, and
-   * `transfer_statuses` are optional.
-   * @opt_param string pageToken The list page token.
+   * be specified with array notation. `project``_``id` is required. `job_names`,
+   * `operation_names`, and `transfer_statuses` are optional. The valid values for
+   * `transfer_statuses` are case-insensitive: IN_PROGRESS, PAUSED, SUCCESS,
+   * FAILED, and ABORTED.
    * @opt_param int pageSize The list page size. The max allowed value is 256.
+   * @opt_param string pageToken The list page token.
    * @return Google_Service_Storagetransfer_ListOperationsResponse
    */
   public function listTransferOperations($name, $optParams = array())
@@ -105,7 +98,7 @@ class Google_Service_Storagetransfer_Resource_TransferOperations extends Google_
   /**
    * Pauses a transfer operation. (transferOperations.pause)
    *
-   * @param string $name The name of the transfer operation. Required.
+   * @param string $name Required. The name of the transfer operation.
    * @param Google_Service_Storagetransfer_PauseTransferOperationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Storagetransfer_StoragetransferEmpty
@@ -119,7 +112,7 @@ class Google_Service_Storagetransfer_Resource_TransferOperations extends Google_
   /**
    * Resumes a transfer operation that is paused. (transferOperations.resume)
    *
-   * @param string $name The name of the transfer operation. Required.
+   * @param string $name Required. The name of the transfer operation.
    * @param Google_Service_Storagetransfer_ResumeTransferOperationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Storagetransfer_StoragetransferEmpty

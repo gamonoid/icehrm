@@ -22,9 +22,6 @@ class Google_Service_Dfareporting_DirectorySiteSettings extends Google_Model
   protected $dfpSettingsDataType = '';
   public $instreamVideoPlacementAccepted;
   public $interstitialPlacementAccepted;
-  public $nielsenOcrOptOut;
-  public $verificationTagOptOut;
-  public $videoActiveViewOptOut;
 
   public function setActiveViewOptOut($activeViewOptOut)
   {
@@ -63,29 +60,5 @@ class Google_Service_Dfareporting_DirectorySiteSettings extends Google_Model
   public function getInterstitialPlacementAccepted()
   {
     return $this->interstitialPlacementAccepted;
-  }
-  public function setNielsenOcrOptOut($nielsenOcrOptOut)
-  {
-    $this->nielsenOcrOptOut = $nielsenOcrOptOut;
-  }
-  public function getNielsenOcrOptOut()
-  {
-    return $this->nielsenOcrOptOut;
-  }
-  public function setVerificationTagOptOut($verificationTagOptOut)
-  {
-    $this->verificationTagOptOut = $verificationTagOptOut;
-  }
-  public function getVerificationTagOptOut()
-  {
-    return $this->verificationTagOptOut;
-  }
-  public function setVideoActiveViewOptOut($videoActiveViewOptOut)
-  {
-    $this->videoActiveViewOptOut = $videoActiveViewOptOut;
-  }
-  public function getVideoActiveViewOptOut()
-  {
-    return $this->videoActiveViewOptOut;
   }
 }

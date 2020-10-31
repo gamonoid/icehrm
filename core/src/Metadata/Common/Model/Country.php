@@ -27,7 +27,7 @@ class Country extends BaseModel
     }
 
     // @codingStandardsIgnoreStart
-    function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
+    public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
         $allowedCountriesStr = SettingsManager::getInstance()->getSetting('System: Allowed Countries');
         $allowedCountries = array();

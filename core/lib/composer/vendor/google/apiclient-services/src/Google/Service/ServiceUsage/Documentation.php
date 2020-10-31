@@ -24,6 +24,7 @@ class Google_Service_ServiceUsage_Documentation extends Google_Collection
   protected $pagesDataType = 'array';
   protected $rulesType = 'Google_Service_ServiceUsage_DocumentationRule';
   protected $rulesDataType = 'array';
+  public $serviceRootUrl;
   public $summary;
 
   public function setDocumentationRootUrl($documentationRootUrl)
@@ -69,6 +70,14 @@ class Google_Service_ServiceUsage_Documentation extends Google_Collection
   public function getRules()
   {
     return $this->rules;
+  }
+  public function setServiceRootUrl($serviceRootUrl)
+  {
+    $this->serviceRootUrl = $serviceRootUrl;
+  }
+  public function getServiceRootUrl()
+  {
+    return $this->serviceRootUrl;
   }
   public function setSummary($summary)
   {

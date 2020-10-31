@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Common;
 
 class TimeKeeper
@@ -44,9 +45,10 @@ class TimeKeeper
     }
 
     /**
-     * Format a duration into a human-readable time
+     * Format a duration into a human-readable time.
      *
-     * @param float $duration Duration in seconds, with fractional component
+     * @param float $duration
+     *   Duration in seconds, with fractional component.
      *
      * @return string
      */
@@ -64,6 +66,6 @@ class TimeKeeper
         if ($duration > self::MINUTE) {
             return gmdate("i:s", $duration);
         }
-        return round($duration, 3).'s';
+        return round($duration, 3) . 's';
     }
 }

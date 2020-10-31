@@ -20,6 +20,8 @@ class Google_Service_ServiceControl_AuthorizationInfo extends Google_Model
   public $granted;
   public $permission;
   public $resource;
+  protected $resourceAttributesType = 'Google_Service_ServiceControl_ServicecontrolResource';
+  protected $resourceAttributesDataType = '';
 
   public function setGranted($granted)
   {
@@ -44,5 +46,19 @@ class Google_Service_ServiceControl_AuthorizationInfo extends Google_Model
   public function getResource()
   {
     return $this->resource;
+  }
+  /**
+   * @param Google_Service_ServiceControl_ServicecontrolResource
+   */
+  public function setResourceAttributes(Google_Service_ServiceControl_ServicecontrolResource $resourceAttributes)
+  {
+    $this->resourceAttributes = $resourceAttributes;
+  }
+  /**
+   * @return Google_Service_ServiceControl_ServicecontrolResource
+   */
+  public function getResourceAttributes()
+  {
+    return $this->resourceAttributes;
   }
 }

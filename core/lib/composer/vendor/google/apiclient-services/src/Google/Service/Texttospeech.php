@@ -16,7 +16,7 @@
  */
 
 /**
- * Service definition for Texttospeech (v1beta1).
+ * Service definition for Texttospeech (v1).
  *
  * <p>
  * Synthesizes natural-sounding speech by applying powerful neural network
@@ -41,14 +41,16 @@ class Google_Service_Texttospeech extends Google_Service
   /**
    * Constructs the internal representation of the Texttospeech service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://texttospeech.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://texttospeech.googleapis.com/';
     $this->servicePath = '';
-    $this->version = 'v1beta1';
+    $this->batchPath = 'batch';
+    $this->version = 'v1';
     $this->serviceName = 'texttospeech';
 
     $this->text = new Google_Service_Texttospeech_Resource_Text(
@@ -58,7 +60,7 @@ class Google_Service_Texttospeech extends Google_Service
         array(
           'methods' => array(
             'synthesize' => array(
-              'path' => 'v1beta1/text:synthesize',
+              'path' => 'v1/text:synthesize',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),
@@ -72,7 +74,7 @@ class Google_Service_Texttospeech extends Google_Service
         array(
           'methods' => array(
             'list' => array(
-              'path' => 'v1beta1/voices',
+              'path' => 'v1/voices',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'languageCode' => array(

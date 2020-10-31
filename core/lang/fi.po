@@ -1972,3 +1972,18 @@ msgstr "Tallennetut laskelmat"
 
 msgid "Total Leave Days"
 msgstr "Kokonaislomapäivät"
+
+msgid "Actions"
+msgstr "Toiminnot"
+
+msgid "Edit"
+msgstr "Muokata"
+
+msgid "View"
+msgstr "Näytä"
+
+msgid "Delete"
+msgstr "Poistaa"
+
+msgid "Copy"
+msgstr "Kopio"

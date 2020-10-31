@@ -26,15 +26,10 @@
 class Google_Service_AbusiveExperienceReport_Resource_Sites extends Google_Service_Resource
 {
   /**
-   * Gets a summary of the abusive experience rating of a site. (sites.get)
+   * Gets a site's Abusive Experience Report summary. (sites.get)
    *
-   * @param string $name The required site name. This is the site property whose
-   * abusive experiences have been reviewed, and it must be URL-encoded. For
-   * example, sites/https%3A%2F%2Fwww.google.com. The server will return an error
-   * of BAD_REQUEST if this field is not filled in. Note that if the site property
-   * is not yet verified in Search Console, the reportUrl field returned by the
-   * API will lead to the verification page, prompting the user to go through that
-   * process before they can gain access to the Abusive Experience Report.
+   * @param string $name Required. The name of the site whose summary to get, e.g.
+   * `sites/http%3A%2F%2Fwww.google.com%2F`. Format: `sites/{site}`
    * @param array $optParams Optional parameters.
    * @return Google_Service_AbusiveExperienceReport_SiteSummaryResponse
    */

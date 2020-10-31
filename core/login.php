@@ -4,6 +4,9 @@ include("config.base.php");
 include("include.common.php");
 include("server.includes.inc.php");
 
+$companyName = \Classes\SettingsManager::getInstance()->getSetting('Company: Name');
+$gsuiteEnabled = \Classes\SettingsManager::getInstance()->getSetting('System: G Suite Enabled');
+
 if (isset($_REQUEST['logout'])) {
     \Utils\SessionUtils::unsetClientSession();
     $user = null;
@@ -11,42 +14,42 @@ if (isset($_REQUEST['logout'])) {
 
 if (empty($user) || empty($user->email)) {
 
-	if (!empty($_REQUEST['username']) && !empty($_REQUEST['password'])) {
-		$suser = null;
-		$ssoUserLoaded = false;
+    if (!empty($_REQUEST['username']) && !empty($_REQUEST['password'])) {
+        $suser = null;
+        $ssoUserLoaded = false;
 
-		if($_REQUEST['username'] != "admin") {
-			if (\Classes\SettingsManager::getInstance()->getSetting("LDAP: Enabled") == "1") {
-				$ldapResp = \Classes\LDAPManager::getInstance()->checkLDAPLogin($_REQUEST['username'], $_REQUEST['password']);
-				if ($ldapResp->getStatus() == \Classes\IceResponse::ERROR) {
-					header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
-					exit();
-				} else {
-					$suser = new \Users\Common\Model\User();
-					$suser->Load("username = ?", array($_REQUEST['username']));
-					if (empty($suser)) {
-						header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
-						exit();
-					}
-					$ssoUserLoaded = true;
-				}
-			}
-		}
+        if($_REQUEST['username'] != "admin") {
+            if (\Classes\SettingsManager::getInstance()->getSetting("LDAP: Enabled") == "1") {
+                $ldapResp = \Classes\LDAPManager::getInstance()->checkLDAPLogin($_REQUEST['username'], $_REQUEST['password']);
+                if ($ldapResp->getStatus() == \Classes\IceResponse::ERROR) {
+                    header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
+                    exit();
+                } else {
+                    $suser = new \Users\Common\Model\User();
+                    $suser->Load("username = ?", array($_REQUEST['username']));
+                    if (empty($suser)) {
+                        header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
+                        exit();
+                    }
+                    $ssoUserLoaded = true;
+                }
+            }
+        }
 
-		if (empty($suser)) {
-			$suser = new \Users\Common\Model\User();
-			$suser->Load(
-				"username = ? or email = ?",
-				[
+        if (empty($suser)) {
+            $suser = new \Users\Common\Model\User();
+            $suser->Load(
+                "username = ? or email = ?",
+                [
                     $_REQUEST['username'],
                     $_REQUEST['username'],
                 ]
-			);
+            );
 
-			if (!\Classes\PasswordManager::verifyPassword($_REQUEST['password'], $suser->password)) {
+            if (!\Classes\PasswordManager::verifyPassword($_REQUEST['password'], $suser->password)) {
                 $suser = null;
             }
-		}
+        }
 
         if (empty($suser)) {
             $next = !empty($_REQUEST['next'])?'&next='.$_REQUEST['next']:'';
@@ -62,72 +65,72 @@ if (empty($user) || empty($user->email)) {
             exit();
         }
 
-		if (!empty($suser)) {
-			$user = $suser;
-			\Utils\SessionUtils::saveSessionObject('user', $user);
-			$suser->last_login = date("Y-m-d H:i:s");
-			$suser->Save();
+        if (!empty($suser)) {
+            $user = $suser;
+            \Utils\SessionUtils::saveSessionObject('user', $user);
+            $suser->last_login = date("Y-m-d H:i:s");
+            $suser->Save();
 
-			if (!$ssoUserLoaded && !empty(\Classes\BaseService::getInstance()->auditManager)) {
-				\Classes\BaseService::getInstance()->auditManager->user = $user;
-				\Classes\BaseService::getInstance()->audit(\Classes\IceConstants::AUDIT_AUTHENTICATION, "User Login");
-			}
+            if (!$ssoUserLoaded && !empty(\Classes\BaseService::getInstance()->auditManager)) {
+                \Classes\BaseService::getInstance()->auditManager->user = $user;
+                \Classes\BaseService::getInstance()->audit(\Classes\IceConstants::AUDIT_AUTHENTICATION, "User Login");
+            }
 
-			if (!empty($_REQUEST['next']) && !empty(($loginRedirect = \Base64Url\Base64Url::decode($_REQUEST['next'])))) {
-			    header("Location:" . CLIENT_BASE_URL.$loginRedirect);
-			    exit();
+            if (!empty($_REQUEST['next']) && !empty(($loginRedirect = \Base64Url\Base64Url::decode($_REQUEST['next'])))) {
+                header("Location:" . CLIENT_BASE_URL.$loginRedirect);
+                exit();
             } else {
-				if ($user->user_level == "Admin") {
-					if (\Utils\SessionUtils::getSessionObject('account_locked') == "1") {
-						header("Location:".CLIENT_BASE_URL."?g=admin&n=billing&m=admin_System");
+                if ($user->user_level == "Admin") {
+                    if (\Utils\SessionUtils::getSessionObject('account_locked') == "1") {
+                        header("Location:".CLIENT_BASE_URL."?g=admin&n=billing&m=admin_System");
                         exit();
-					} else {
-						header("Location:".HOME_LINK_ADMIN);
+                    } else {
+                        header("Location:".HOME_LINK_ADMIN);
                         exit();
-					}
-				} else {
-					if (empty($user->default_module)) {
-						header("Location:".HOME_LINK_OTHERS);
+                    }
+                } else {
+                    if (empty($user->default_module)) {
+                        header("Location:".HOME_LINK_OTHERS);
                         exit();
-					} else {
-						$defaultModule = new \Modules\Common\Model\Module();
-						$defaultModule->Load("id = ?", array($user->default_module));
-						if ($defaultModule->mod_group == "user") {
-							$defaultModule->mod_group = "modules";
-						}
-						$homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&&n=".$defaultModule->name.
-							"&m=".$defaultModule->mod_group."_".str_replace(" ", "_", $defaultModule->menu);
-						header("Location:".$homeLink);
+                    } else {
+                        $defaultModule = new \Modules\Common\Model\Module();
+                        $defaultModule->Load("id = ?", array($user->default_module));
+                        if ($defaultModule->mod_group == "user") {
+                            $defaultModule->mod_group = "modules";
+                        }
+                        $homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&&n=".$defaultModule->name.
+                            "&m=".$defaultModule->mod_group."_".str_replace(" ", "_", $defaultModule->menu);
+                        header("Location:".$homeLink);
                         exit();
-					}
-				}
-			}
-		} else {
-		    $next = !empty($_REQUEST['next'])?'&next='.$_REQUEST['next']:'';
-			header("Location:".CLIENT_BASE_URL."login.php?f=1".$next);
+                    }
+                }
+            }
+        } else {
+            $next = !empty($_REQUEST['next'])?'&next='.$_REQUEST['next']:'';
+            header("Location:".CLIENT_BASE_URL."login.php?f=1".$next);
             exit();
-		}
-	}
+        }
+    }
 } else {
-	if ($user->user_level == "Admin") {
-		header("Location:".HOME_LINK_ADMIN);
+    if ($user->user_level == "Admin") {
+        header("Location:".HOME_LINK_ADMIN);
         exit();
-	} else {
-		if (empty($user->default_module)) {
-			header("Location:".HOME_LINK_OTHERS);
+    } else {
+        if (empty($user->default_module)) {
+            header("Location:".HOME_LINK_OTHERS);
             exit();
-		} else {
-			$defaultModule = new \Modules\Common\Model\Module();
-			$defaultModule->Load("id = ?", array($user->default_module));
-			if ($defaultModule->mod_group == "user") {
-				$defaultModule->mod_group = "modules";
-			}
-			$homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&n=".$defaultModule->name.
-				"&m=".$defaultModule->mod_group."_".str_replace(" ", "_", $defaultModule->menu);
-			header("Location:".$homeLink);
+        } else {
+            $defaultModule = new \Modules\Common\Model\Module();
+            $defaultModule->Load("id = ?", array($user->default_module));
+            if ($defaultModule->mod_group == "user") {
+                $defaultModule->mod_group = "modules";
+            }
+            $homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&n=".$defaultModule->name.
+                "&m=".$defaultModule->mod_group."_".str_replace(" ", "_", $defaultModule->menu);
+            header("Location:".$homeLink);
             exit();
-		}
-	}
+        }
+    }
 }
 
 $tuser = \Utils\SessionUtils::getSessionObject('user');
@@ -135,271 +138,243 @@ $logoFileUrl = \Classes\UIManager::getInstance()->getCompanyLogoUrl();
 
 $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
 \Utils\SessionUtils::saveSessionObject('csrf-login', $csrfToken);
-
-$refLink = base64_encode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
-
 ?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title><?=APP_NAME?> Login</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
+<html lang="en" style="
+    width: 97.5%;
+    height: 100%;
+    display: table;
+"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IceHrm Login</title>
+    <link rel="shortcut icon" href="<?=BASE_URL?>image/favicon.ico" type="image/x-icon">
 
-	<!-- Le styles -->
-	<link href="<?=BASE_URL?>bootstrap/css/bootstrap.css" rel="stylesheet">
-
-	<script type="text/javascript" src="<?=BASE_URL?>js/jquery-1.8.1.js"></script>
-	<script src="<?=BASE_URL?>bootstrap/js/bootstrap.js"></script>
-	<script src="<?=BASE_URL?>js/jquery.placeholder.js"></script>
-	<script src="<?=BASE_URL?>js/jquery.dataTables.js"></script>
-	<script src="<?=BASE_URL?>js/bootstrap-datepicker.js"></script>
-	<link href="<?=BASE_URL?>bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="<?=BASE_URL?>css/DT_bootstrap.css?v=0.4" rel="stylesheet">
-	<link href="<?=BASE_URL?>css/datepicker.css" rel="stylesheet">
-	<link href="<?=BASE_URL?>css/style.css?v=<?=$cssVersion?>" rel="stylesheet">
-
-	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	<script src="<?=BASE_URL?>js/html5.js"></script>
-	<![endif]-->
-
-	<style type="text/css">
-		/* Override some defaults */
-		html, body {
-			background-color: #829AA8;
-		}
-		body {
-			padding-top: 40px;
-		}
-		.container {
-			width: 300px;
-		}
-
-		/* The white background content wrapper */
-		.container > .content {
-			min-height: 0px !important;
-			background-color: #fff;
-			padding: 20px;
-			margin: 0 -20px;
-			-webkit-border-radius:0px;
-			-moz-border-radius:0px;
-			border-radius: 0px;
-			-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-			-moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-			box-shadow: 0 1px 2px rgba(0,0,0,.15);
-		}
-
-		.login-form {
-			margin-left: 65px;
-		}
-
-		legend {
-			margin-right: -50px;
-			font-weight: bold;
-			color: #404040;
-		}
-
-		.add-on{
-			-webkit-border-radius:0px;
-			-moz-border-radius:0px;
-			border-radius: 0px;
-		}
-
-		input{
-			-webkit-border-radius:0px;
-			-moz-border-radius:0px;
-			border-radius: 0px;
-		}
-
-	</style>
-
-
+    <link href="<?=BASE_URL?>dist/login.css?v=<?=$cssVersion?>" rel="stylesheet">
+    <script src="<?=BASE_URL?>dist/login.js"></script>
 </head>
 
-<body>
-
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" class="" style="
+    height: 100%;
+">
 <script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	ga('create', '<?=\Classes\BaseService::getInstance()->getGAKey()?>', 'gamonoid.com');
-	ga('send', 'pageview');
+  ga('create', '<?=\Classes\BaseService::getInstance()->getGAKey()?>', 'gamonoid.com');
+  ga('send', 'pageview');
 
 </script>
-
 <script type="text/javascript">
-	var key = "";
-	<?php if (isset($_REQUEST['key'])) {?>
-	key = '<?=$_REQUEST['key']?>';
-	key = key.replace(/ /g,"+");
-	<?php }?>
-
-	$(document).ready(function() {
-		$(window).keydown(function(event){
-			if(event.keyCode == 13) {
-				event.preventDefault();
-				return false;
-			}
-		});
-
-		$("#password").keydown(function(event){
-			if(event.keyCode == 13) {
-				submitLogin();
-				return false;
-			}
-		});
-	});
-
-	function showForgotPassword(){
-		$("#loginForm").hide();
-		$("#requestPasswordChangeForm").show();
-	}
-
-	function requestPasswordChange(){
-		$("#requestPasswordChangeFormAlert").hide();
-		var id = $("#usernameChange").val();
-		$.post("service.php", {'a':'rpc','id':id}, function(data) {
-			if(data.status == "SUCCESS"){
-				$("#requestPasswordChangeFormAlert").show();
-				$("#requestPasswordChangeFormAlert").html(data.message);
-			}else{
-				$("#requestPasswordChangeFormAlert").show();
-				$("#requestPasswordChangeFormAlert").html(data.message);
-			}
-		},"json");
-	}
-
-	function changePassword(){
-		$("#newPasswordFormAlert").hide();
-		var password = $("#password").val();
-
-		var passwordValidation =  function (str) {
-		    return str.length > 7;
-		};
-
-
-		if(!passwordValidation(password)){
-			$("#newPasswordFormAlert").show();
-			$("#newPasswordFormAlert").html("Password should be longer than 7 characters");
-			return;
-		}
-
-
-		$.post("service.php", {'a':'rsp','key':key,'pwd':password,"now":"1"}, function(data) {
-			if(data.status == "SUCCESS"){
-				top.location.href = "login.php?c=1";
-			}else{
-				$("#newPasswordFormAlert").show();
-				$("#newPasswordFormAlert").html(data.message);
-			}
-		},"json");
-	}
-
-	function submitLogin(){
-		try{
-			localStorage.clear();
-		}catch(e){}
-		$("#loginForm").submit();
-	}
-
-	function authGoogle() {
-        window.location.href = window.location.href.split('login.php')[0] + "login.php?google=1";
-    }
-
+  var key = "";
+  <?php if (isset($_REQUEST['key'])) {?>
+  key = '<?=$_REQUEST['key']?>';
+  key = key.replace(/ /g,"+");
+  <?php }?>
 </script>
-<div class="container">
-	<?php if (defined('DEMO_MODE')) {?>
-		<div class="content" style="top: 30px;
-            position: absolute;
-            left: 50px;
-            width: 380px;
-            height: 100px;">
 
-			<ul class="list-group" style="font-size:12px;">
-				<li style="padding-bottom:3px;" class="list-group-item">Admin: (Username = admin/ Password = admin)</li>
-				<li style="padding-bottom:3px;" class="list-group-item">Manager: (Username = manager/ Password = demouserpwd)</li>
-				<li style="padding-bottom:3px;" class="list-group-item">User: (Username = user1/ Password = demouserpwd)</li>
-				<li style="padding-bottom:3px;" class="list-group-item">User: (Username = user2/ Password = demouserpwd)</li>
-			</ul>
-		</div>
-	<?php }?>
-	<div class="content" style="margin-top:100px;">
-		<div class="row">
-			<div class="login-form">
-				<h2><a href="https://icehrm.com?ref=<?=$refLink?>" target="_blank"><img alt="The HR App to Fit All Your Needs, such as Employee, Time, Vacation and Expense Management" src="<?=$logoFileUrl?>"/></a></h2>
-				<?php if (!isset($_REQUEST['cp'])) {?>
-					<form id="loginForm" action="login.php" method="POST">
-                        <input type="hidden" id="next" name="next" value="<?=$_REQUEST['next']?>"/>
-                        <input type="hidden" id="csrf" name="csrf" value="<?=$csrfToken?>"/>
-						<fieldset>
-							<div class="clearfix">
-								<div class="input-prepend">
-									<span class="add-on"><i class="icon-user"></i></span>
-									<input class="span2" type="text" id="username" name="username" placeholder="Username">
-								</div>
-							</div>
-							<div class="clearfix">
-								<div class="input-prepend">
-									<span class="add-on"><i class="icon-lock"></i></span>
-									<input class="span2" type="password" id="password" name="password" placeholder="Password">
-								</div>
-							</div>
-							<?php if (isset($_REQUEST['f'])) {?>
-								<div class="clearfix alert alert-error" style="font-size:11px;width:147px;margin-bottom: 5px;">
-									Login failed
-									<?php if (isset($_REQUEST['fm'])) {
-										echo $_REQUEST['fm'];
-									}?>
-								</div>
-							<?php } ?>
-							<?php if (isset($_REQUEST['c'])) {?>
-								<div class="clearfix alert alert-info" style="font-size:11px;width:147px;margin-bottom: 5px;">
-									Password changed successfully
-								</div>
-							<?php } ?>
-							<button class="btn" style="margin-top: 5px;" type="button" onclick="submitLogin();return false;">Sign in&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
-						</fieldset>
-						<div class="clearfix">
-							<a href="" onclick="showForgotPassword();return false;" style="float:left;margin-top: 10px;">Forgot password</a>
-						</div>
-					</form>
-					<form id="requestPasswordChangeForm" style="display:none;" action="">
-						<fieldset>
-							<div class="clearfix">
-								<div class="input-prepend">
-									<span class="add-on"><i class="icon-user"></i></span>
-									<input class="span2" type="text" id="usernameChange" name="usernameChange" placeholder="Username or Email">
-								</div>
-							</div>
-							<div id="requestPasswordChangeFormAlert" class="clearfix alert alert-info" style="font-size:11px;width:147px;margin-bottom: 5px;display:none;">
+<div style="
+    height: 100%;
+">
+    <div class="row no-gutters" style="
+    height: 100%;
+">
+        <div class="col-lg-5 col-md-5">
+            <div class="pt-10 pb-6 pl-11 pr-12 bg-black-2 h-100 d-flex flex-column dark-mode-texts">
+                <div class="pb-9">
+                    <h3 class="font-size-7 text-white line-height-reset pb-4 line-height-1p4">
+                        <?=empty($companyName) || $companyName === 'Sample Company Pvt Ltd' ? 'IceHrm Login' : $companyName?>
+                    </h3>
+                    <p class="mb-0 font-size-4 text-white">Log in to continue to your IceHrm account</p>
+                    <?php if (false || defined('DEMO_MODE')) {?>
+                        <br />
+                        <br />
+                        <div class="col-md-12">
+                            <a href="#" class="media bg-white rounded-4 pl-8 pt-9 pb-9 pr-7 hover-shadow-1 mb-9 shadow-8">
+                                <div class="text-pink bg-pink-opacity-1 circle-56 font-size-6 mr-7">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <!-- Category Content -->
+                                <div class="">
+                                    <h5 class="font-size-5 font-weight-semibold text-black-2 line-height-reset font-weight-bold mb-1">Demo Logins</h5>
+                                    <p class="font-size-3 font-weight-normal text-gray mb-0">Admin: (Username = admin/ Password = admin)</p>
+                                    <p class="font-size-3 font-weight-normal text-gray mb-0">Manager: (Username = manager/ Password = demouserpwd)</p>
+                                    <p class="font-size-3 font-weight-normal text-gray mb-0">User: (Username = user1/ Password = demouserpwd)</p>
+                                    <p class="font-size-3 font-weight-normal text-gray mb-0">User: (Username = user2/ Password = demouserpwd)</p>
+                                </div>
+                            </a>
+                        </div>
+                    <?php } else {?>
+                        <img src="<?=BASE_URL?>images/icehrm-login.png" style="width:80%;margin-top: 20%;"/>
+<!--                        <div class="col-md-12">-->
+<!--                            <a href="#" class="media bg-white rounded-4 pl-8 pt-9 pb-9 pr-7 hover-shadow-1 mb-9 shadow-8">-->
+<!--                                <div class="text-light-blue bg-light-blue-opacity-1 circle-56 font-size-6 mr-7">-->
+<!--                                    <i class="fas fa-user"></i>-->
+<!--                                </div>-->
+<!--
+                                <div class="">-->
+<!--                                    <p class="font-size-3 font-weight-normal text-gray mb-0">-->
+<!--                                        Organize company HR processes and make your employees happy and productive-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </div>-->
+                    <?php }?>
+                </div>
+                <div class="border-top border-default-color-2 mt-auto">
+                    <div class="d-flex mx-n9 pt-6 flex-xs-row flex-column">
+                        <div class="pt-5 px-3">
+                            <a href="https://www.linkedin.com/company/ice-hrm---human-resource-management" target="_blank">
+                                <p class="bg-white circle-56 font-size-6 mr-7">
+                                    <i class="fab fa-linkedin"></i>
+                                </p>
+                            </a>
+                        </div>
+                        <div class="pt-5 px-3">
+                            <a href="https://www.facebook.com/icehrm" target="_blank">
+                            <p class="bg-white circle-56 font-size-6 mr-7">
+                                <i class="fab fa-facebook-square"></i>
+                            </p>
+                            </a>
+                        </div>
+                        <div class="pt-5 px-3">
+                            <a href="https://twitter.com/icehrmapp" target="_blank">
+                                <p class="bg-white circle-56 font-size-6 mr-7">
+                                    <i class="fab fa-twitter-square"></i>
+                                </p>
+                            </a>
+                        </div>
+                        <div class="pt-5 px-3">
+                            <a href="https://github.com/gamonoid/icehrm" target="_blank">
+                                <p class="bg-white circle-56 font-size-6 mr-7">
+                                    <i class="fab fa-github-square"></i>
+                                </p>
+                            </a>
+                        </div>
+                        <div class="pt-5 px-3">
+                            <a href="https://icehrm.com" target="_blank">
+                                <p class="bg-white circle-56 font-size-6 mr-7">
+                                    <i class="fas fa-blog"></i>
+                                </p>
+                            </a>
+                        </div>
+                        <div class="pt-5 px-3">
+                            <a href="https://icehrm.gitbook.io/icehrm/" target="_blank">
+                                <p class="bg-white circle-56 font-size-6 mr-7">
+                                    <i class="fas fa-question-circle"></i>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-7">
+            <div class="row" style="padding-top:12%;">
+                <div class="col-lg-3 col-md-2 col-xs-1"></div>
+                <div class="col-lg-6 col-md-8 col-xs-10">
+                    <div class="bg-white-2 h-100 px-11 pt-11 pb-7">
+                        <div class="row d-flex justify-content-center">
+                            <img src="<?=$logoFileUrl?>"/>
+                        </div>
+                        <hr/>
+                        <?php if ($gsuiteEnabled) {?>
+                            <div class="row">
+                                <div class="col-4 col-xs-12">
 
-							</div>
-							<button class="btn" style="margin-top: 5px;" type="button" onclick="requestPasswordChange();return false;">Request Password Change&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
-						</fieldset>
-					</form>
-				<?php } else {?>
-					<form id="newPasswordForm" action="">
-						<fieldset>
-							<div class="clearfix">
-								<div class="input-prepend">
-									<span class="add-on"><i class="icon-lock"></i></span>
-									<input class="span2" type="password" id="password" name="password" placeholder="New Password">
-								</div>
-							</div>
-							<div id="newPasswordFormAlert" class="clearfix alert alert-error" style="font-size:11px;width:147px;margin-bottom: 5px;display:none;">
+                                </div>
+                                <div class="col-4 col-xs-12">
+                                    <a onclick="authGoogle(); return false;" class="font-size-4 font-weight-semibold position-relative text-white bg-poppy h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i class="fab fa-google pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span class="d-none d-xs-block">Log in with Google</span></a>
+                                </div>
+                                <div class="col-4 col-xs-12">
 
-							</div>
-							<button class="btn" style="margin-top: 5px;" type="button" onclick="changePassword();return false;">Change Password&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
-						</fieldset>
-					</form>
-				<?php }?>
-			</div>
-		</div>
-	</div>
-</div> <!-- /container -->
-</body>
-</html>
+                                </div>
+                            </div>
+                            <div class="or-devider">
+                                <span class="font-size-3 line-height-reset ">Or</span>
+                            </div>
+                        <?php }?>
+                        <?php if (!isset($_REQUEST['cp'])) {?>
+                        <form id="loginForm" action="login.php" method="POST">
+                            <input type="hidden" id="next" name="next" value="<?=$_REQUEST['next']?>"/>
+                            <input type="hidden" id="csrf" name="csrf" value="<?=$csrfToken?>"/>
+                            <div class="form-group">
+                                <label for="username" class="font-size-4 text-black-2 font-weight-semibold line-height-reset">E-mail or Username</label>
+                                <input class="form-control" placeholder="Enter username or email" id="username" name="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="font-size-4 text-black-2 font-weight-semibold line-height-reset">Password</label>
+                                <div class="position-relative">
+                                    <input type="password" id="password" name="password" class="form-control" id="password" placeholder="Enter password">
+                                    <a href="#" class="show-password pos-abs-cr fas mr-6 text-black-2" data-show-pass="password"></a>
+                                </div>
+                            </div>
+                            <?php if (isset($_REQUEST['f'])) {?>
+                                <div class="alert alert-danger" role="alert">
+                                    <i class="fa fa-theater-masks" style="padding-right: 10px;"></i> Login failed
+                                    <?php if (isset($_REQUEST['fm'])) {
+                                        echo $_REQUEST['fm'];
+                                    }?>
+                                </div>
+                            <?php } ?>
+                            <?php if (isset($_REQUEST['c'])) {?>
+                                <div class="alert alert-info" role="alert">
+                                    Password changed successfully
+                                </div>
+                            <?php } ?>
+                            <div class="form-group d-flex flex-wrap justify-content-between">
+<!--                                <label for="terms-check" class="gr-check-input d-flex  mr-3">-->
+<!--                                    <input class="d-none" type="checkbox" id="terms-check">-->
+<!--                                    <span class="checkbox mr-5"></span>-->
+<!--                                    <span class="font-size-3 mb-0 line-height-reset mb-1 d-block">Remember password</span>-->
+<!--                                </label>-->
+                            </div>
+                            <div class="form-group mb-8">
+                                <button class="btn btn-info btn-medium w-100 rounded-5 text-uppercase" type="button" onclick="submitLogin();return false;">Log in </button>
+                            </div>
+                            <p class="font-size-4 text-center heading-default-color">Can't remember your password? <a href="" class="text-info" onclick="showForgotPassword();return false;">Reset Password</a></p>
+                        </form>
+                        <form id="requestPasswordChangeForm" style="display:none;" action="">
+                            <div class="form-group">
+                                <label for="username" class="font-size-4 text-black-2 font-weight-semibold line-height-reset">E-mail or Username</label>
+                                <input class="form-control" placeholder="Enter username or email" id="usernameChange" name="usernameChange">
+                            </div>
+                            <div id="requestPasswordChangeFormAlert" class="alert alert-warning" role="alert" style="display: none;">
+
+                            </div>
+                            <div class="form-group mb-8">
+                                <button class="btn btn-info btn-medium w-100 rounded-5 text-uppercase" type="button" onclick="requestPasswordChange();return false;">Request Password Change&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
+                            </div>
+                            <div class="form-group mb-8">
+                                <button class="btn btn-outline-info btn-small w-100 rounded-5 text-uppercase" type="button" onclick="window.location = '<?=CLIENT_BASE_URL?>/login.php'">Back&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
+                            </div>
+                        </form>
+                        <?php } else {?>
+                            <form id="newPasswordForm" action="">
+                                <div class="form-group">
+                                    <label for="password" class="font-size-4 text-black-2 font-weight-semibold line-height-reset">Password</label>
+                                    <div class="position-relative">
+                                        <input type="password" id="password" name="password" class="form-control" id="password" placeholder="Enter new password">
+                                        <a href="#" class="show-password pos-abs-cr fas mr-6 text-black-2" data-show-pass="password"></a>
+                                    </div>
+                                </div>
+                                <div id="newPasswordFormAlert" class="alert alert-warning" role="alert" style="display: none;">
+
+                                </div>
+                                <div class="form-group mb-8">
+                                    <button class="btn btn-info btn-medium w-100 rounded-5 text-uppercase" type="button" onclick="changePassword(key);return false;">Change Password <span class="icon-arrow-right"></span></button>
+                                </div>
+                            </form>
+                        <?php }?>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2 col-xs-1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body></html>

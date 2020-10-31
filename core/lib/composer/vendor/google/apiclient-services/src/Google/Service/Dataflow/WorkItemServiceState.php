@@ -18,7 +18,11 @@
 class Google_Service_Dataflow_WorkItemServiceState extends Google_Collection
 {
   protected $collection_key = 'metricShortId';
+  protected $completeWorkStatusType = 'Google_Service_Dataflow_Status';
+  protected $completeWorkStatusDataType = '';
   public $harnessData;
+  protected $hotKeyDetectionType = 'Google_Service_Dataflow_HotKeyDetection';
+  protected $hotKeyDetectionDataType = '';
   public $leaseExpireTime;
   protected $metricShortIdType = 'Google_Service_Dataflow_MetricShortId';
   protected $metricShortIdDataType = 'array';
@@ -31,6 +35,20 @@ class Google_Service_Dataflow_WorkItemServiceState extends Google_Collection
   protected $suggestedStopPositionType = 'Google_Service_Dataflow_Position';
   protected $suggestedStopPositionDataType = '';
 
+  /**
+   * @param Google_Service_Dataflow_Status
+   */
+  public function setCompleteWorkStatus(Google_Service_Dataflow_Status $completeWorkStatus)
+  {
+    $this->completeWorkStatus = $completeWorkStatus;
+  }
+  /**
+   * @return Google_Service_Dataflow_Status
+   */
+  public function getCompleteWorkStatus()
+  {
+    return $this->completeWorkStatus;
+  }
   public function setHarnessData($harnessData)
   {
     $this->harnessData = $harnessData;
@@ -38,6 +56,20 @@ class Google_Service_Dataflow_WorkItemServiceState extends Google_Collection
   public function getHarnessData()
   {
     return $this->harnessData;
+  }
+  /**
+   * @param Google_Service_Dataflow_HotKeyDetection
+   */
+  public function setHotKeyDetection(Google_Service_Dataflow_HotKeyDetection $hotKeyDetection)
+  {
+    $this->hotKeyDetection = $hotKeyDetection;
+  }
+  /**
+   * @return Google_Service_Dataflow_HotKeyDetection
+   */
+  public function getHotKeyDetection()
+  {
+    return $this->hotKeyDetection;
   }
   public function setLeaseExpireTime($leaseExpireTime)
   {

@@ -30,6 +30,8 @@ class Google_Service_PolyService_Asset extends Google_Collection
   public $name;
   protected $presentationParamsType = 'Google_Service_PolyService_PresentationParams';
   protected $presentationParamsDataType = '';
+  protected $remixInfoType = 'Google_Service_PolyService_RemixInfo';
+  protected $remixInfoDataType = '';
   protected $thumbnailType = 'Google_Service_PolyService_PolyFile';
   protected $thumbnailDataType = '';
   public $updateTime;
@@ -126,6 +128,20 @@ class Google_Service_PolyService_Asset extends Google_Collection
   public function getPresentationParams()
   {
     return $this->presentationParams;
+  }
+  /**
+   * @param Google_Service_PolyService_RemixInfo
+   */
+  public function setRemixInfo(Google_Service_PolyService_RemixInfo $remixInfo)
+  {
+    $this->remixInfo = $remixInfo;
+  }
+  /**
+   * @return Google_Service_PolyService_RemixInfo
+   */
+  public function getRemixInfo()
+  {
+    return $this->remixInfo;
   }
   /**
    * @param Google_Service_PolyService_PolyFile

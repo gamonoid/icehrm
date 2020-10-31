@@ -4,12 +4,13 @@
  */
 
 import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from "../../../api/ReactModalAdapterBase";
 
 /**
  * SkillAdapter
  */
 
-class SkillAdapter extends AdapterBase {
+class SkillAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -34,8 +35,18 @@ class SkillAdapter extends AdapterBase {
     ];
   }
 
-  getHelpLink() {
-    return 'http://blog.icehrm.com/docs/qualifications/';
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Description',
+        dataIndex: 'description',
+      },
+    ];
   }
 }
 
@@ -44,7 +55,7 @@ class SkillAdapter extends AdapterBase {
  * EducationAdapter
  */
 
-class EducationAdapter extends AdapterBase {
+class EducationAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -66,6 +77,20 @@ class EducationAdapter extends AdapterBase {
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'text' }],
       ['description', { label: 'Description', type: 'textarea', validation: '' }],
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Description',
+        dataIndex: 'description',
+      },
     ];
   }
 }
@@ -75,7 +100,7 @@ class EducationAdapter extends AdapterBase {
  * CertificationAdapter
  */
 
-class CertificationAdapter extends AdapterBase {
+class CertificationAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -97,6 +122,20 @@ class CertificationAdapter extends AdapterBase {
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'text' }],
       ['description', { label: 'Description', type: 'textarea', validation: '' }],
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Description',
+        dataIndex: 'description',
+      },
     ];
   }
 }
@@ -106,7 +145,7 @@ class CertificationAdapter extends AdapterBase {
  * LanguageAdapter
  */
 
-class LanguageAdapter extends AdapterBase {
+class LanguageAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -128,6 +167,20 @@ class LanguageAdapter extends AdapterBase {
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'text' }],
       ['description', { label: 'Description', type: 'textarea', validation: '' }],
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Description',
+        dataIndex: 'description',
+      },
     ];
   }
 }

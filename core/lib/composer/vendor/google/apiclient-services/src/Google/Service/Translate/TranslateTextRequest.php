@@ -17,20 +17,53 @@
 
 class Google_Service_Translate_TranslateTextRequest extends Google_Collection
 {
-  protected $collection_key = 'q';
-  public $format;
+  protected $collection_key = 'contents';
+  public $contents;
+  protected $glossaryConfigType = 'Google_Service_Translate_TranslateTextGlossaryConfig';
+  protected $glossaryConfigDataType = '';
+  public $labels;
+  public $mimeType;
   public $model;
-  public $q;
-  public $source;
-  public $target;
+  public $sourceLanguageCode;
+  public $targetLanguageCode;
 
-  public function setFormat($format)
+  public function setContents($contents)
   {
-    $this->format = $format;
+    $this->contents = $contents;
   }
-  public function getFormat()
+  public function getContents()
   {
-    return $this->format;
+    return $this->contents;
+  }
+  /**
+   * @param Google_Service_Translate_TranslateTextGlossaryConfig
+   */
+  public function setGlossaryConfig(Google_Service_Translate_TranslateTextGlossaryConfig $glossaryConfig)
+  {
+    $this->glossaryConfig = $glossaryConfig;
+  }
+  /**
+   * @return Google_Service_Translate_TranslateTextGlossaryConfig
+   */
+  public function getGlossaryConfig()
+  {
+    return $this->glossaryConfig;
+  }
+  public function setLabels($labels)
+  {
+    $this->labels = $labels;
+  }
+  public function getLabels()
+  {
+    return $this->labels;
+  }
+  public function setMimeType($mimeType)
+  {
+    $this->mimeType = $mimeType;
+  }
+  public function getMimeType()
+  {
+    return $this->mimeType;
   }
   public function setModel($model)
   {
@@ -40,28 +73,20 @@ class Google_Service_Translate_TranslateTextRequest extends Google_Collection
   {
     return $this->model;
   }
-  public function setQ($q)
+  public function setSourceLanguageCode($sourceLanguageCode)
   {
-    $this->q = $q;
+    $this->sourceLanguageCode = $sourceLanguageCode;
   }
-  public function getQ()
+  public function getSourceLanguageCode()
   {
-    return $this->q;
+    return $this->sourceLanguageCode;
   }
-  public function setSource($source)
+  public function setTargetLanguageCode($targetLanguageCode)
   {
-    $this->source = $source;
+    $this->targetLanguageCode = $targetLanguageCode;
   }
-  public function getSource()
+  public function getTargetLanguageCode()
   {
-    return $this->source;
-  }
-  public function setTarget($target)
-  {
-    $this->target = $target;
-  }
-  public function getTarget()
-  {
-    return $this->target;
+    return $this->targetLanguageCode;
   }
 }

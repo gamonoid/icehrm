@@ -19,11 +19,7 @@ class Google_Service_Dfareporting_SiteSettings extends Google_Model
 {
   public $activeViewOptOut;
   public $adBlockingOptOut;
-  protected $creativeSettingsType = 'Google_Service_Dfareporting_CreativeSettings';
-  protected $creativeSettingsDataType = '';
   public $disableNewCookie;
-  protected $lookbackConfigurationType = 'Google_Service_Dfareporting_LookbackConfiguration';
-  protected $lookbackConfigurationDataType = '';
   protected $tagSettingType = 'Google_Service_Dfareporting_TagSetting';
   protected $tagSettingDataType = '';
   public $videoActiveViewOptOutTemplate;
@@ -45,20 +41,6 @@ class Google_Service_Dfareporting_SiteSettings extends Google_Model
   {
     return $this->adBlockingOptOut;
   }
-  /**
-   * @param Google_Service_Dfareporting_CreativeSettings
-   */
-  public function setCreativeSettings(Google_Service_Dfareporting_CreativeSettings $creativeSettings)
-  {
-    $this->creativeSettings = $creativeSettings;
-  }
-  /**
-   * @return Google_Service_Dfareporting_CreativeSettings
-   */
-  public function getCreativeSettings()
-  {
-    return $this->creativeSettings;
-  }
   public function setDisableNewCookie($disableNewCookie)
   {
     $this->disableNewCookie = $disableNewCookie;
@@ -66,20 +48,6 @@ class Google_Service_Dfareporting_SiteSettings extends Google_Model
   public function getDisableNewCookie()
   {
     return $this->disableNewCookie;
-  }
-  /**
-   * @param Google_Service_Dfareporting_LookbackConfiguration
-   */
-  public function setLookbackConfiguration(Google_Service_Dfareporting_LookbackConfiguration $lookbackConfiguration)
-  {
-    $this->lookbackConfiguration = $lookbackConfiguration;
-  }
-  /**
-   * @return Google_Service_Dfareporting_LookbackConfiguration
-   */
-  public function getLookbackConfiguration()
-  {
-    return $this->lookbackConfiguration;
   }
   /**
    * @param Google_Service_Dfareporting_TagSetting

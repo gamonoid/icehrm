@@ -1,9 +1,9 @@
 <?php
+
 namespace Robo\Task;
 
 use Robo\Common\InflectionTrait;
 use Robo\Contract\InflectionInterface;
-
 use Robo\Common\TaskIO;
 use Robo\Contract\TaskInterface;
 use Robo\Contract\ProgressIndicatorAwareInterface;
@@ -23,6 +23,8 @@ abstract class BaseTask implements TaskInterface, LoggerAwareInterface, Verbosit
      * ConfigAwareInterface uses this to decide where configuration
      * items come from. Default is this prefix + class name + key,
      * e.g. `task.Remote.Ssh.remoteDir`.
+     *
+     * @return string
      */
     protected static function configPrefix()
     {
@@ -33,6 +35,8 @@ abstract class BaseTask implements TaskInterface, LoggerAwareInterface, Verbosit
      * ConfigAwareInterface uses this to decide where configuration
      * items come from. Default is this prefix + class name + key,
      * e.g. `task.Ssh.remoteDir`.
+     *
+     * @return string
      */
     protected static function configPostfix()
     {

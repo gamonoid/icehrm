@@ -18,6 +18,7 @@
 class Google_Service_ToolResults_InconclusiveDetail extends Google_Model
 {
   public $abortedByUser;
+  public $hasErrorLogs;
   public $infrastructureFailure;
 
   public function setAbortedByUser($abortedByUser)
@@ -27,6 +28,14 @@ class Google_Service_ToolResults_InconclusiveDetail extends Google_Model
   public function getAbortedByUser()
   {
     return $this->abortedByUser;
+  }
+  public function setHasErrorLogs($hasErrorLogs)
+  {
+    $this->hasErrorLogs = $hasErrorLogs;
+  }
+  public function getHasErrorLogs()
+  {
+    return $this->hasErrorLogs;
   }
   public function setInfrastructureFailure($infrastructureFailure)
   {

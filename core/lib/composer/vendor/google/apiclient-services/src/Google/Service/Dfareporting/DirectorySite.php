@@ -18,12 +18,6 @@
 class Google_Service_Dfareporting_DirectorySite extends Google_Collection
 {
   protected $collection_key = 'interstitialTagFormats';
-  public $active;
-  protected $contactAssignmentsType = 'Google_Service_Dfareporting_DirectorySiteContactAssignment';
-  protected $contactAssignmentsDataType = 'array';
-  public $countryId;
-  public $currencyId;
-  public $description;
   public $id;
   protected $idDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $idDimensionValueDataType = '';
@@ -31,57 +25,10 @@ class Google_Service_Dfareporting_DirectorySite extends Google_Collection
   public $interstitialTagFormats;
   public $kind;
   public $name;
-  public $parentId;
   protected $settingsType = 'Google_Service_Dfareporting_DirectorySiteSettings';
   protected $settingsDataType = '';
   public $url;
 
-  public function setActive($active)
-  {
-    $this->active = $active;
-  }
-  public function getActive()
-  {
-    return $this->active;
-  }
-  /**
-   * @param Google_Service_Dfareporting_DirectorySiteContactAssignment
-   */
-  public function setContactAssignments($contactAssignments)
-  {
-    $this->contactAssignments = $contactAssignments;
-  }
-  /**
-   * @return Google_Service_Dfareporting_DirectorySiteContactAssignment
-   */
-  public function getContactAssignments()
-  {
-    return $this->contactAssignments;
-  }
-  public function setCountryId($countryId)
-  {
-    $this->countryId = $countryId;
-  }
-  public function getCountryId()
-  {
-    return $this->countryId;
-  }
-  public function setCurrencyId($currencyId)
-  {
-    $this->currencyId = $currencyId;
-  }
-  public function getCurrencyId()
-  {
-    return $this->currencyId;
-  }
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
   public function setId($id)
   {
     $this->id = $id;
@@ -135,14 +82,6 @@ class Google_Service_Dfareporting_DirectorySite extends Google_Collection
   public function getName()
   {
     return $this->name;
-  }
-  public function setParentId($parentId)
-  {
-    $this->parentId = $parentId;
-  }
-  public function getParentId()
-  {
-    return $this->parentId;
   }
   /**
    * @param Google_Service_Dfareporting_DirectorySiteSettings

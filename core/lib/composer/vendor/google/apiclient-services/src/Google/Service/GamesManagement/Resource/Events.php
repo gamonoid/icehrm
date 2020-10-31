@@ -28,8 +28,7 @@ class Google_Service_GamesManagement_Resource_Events extends Google_Service_Reso
   /**
    * Resets all player progress on the event with the given ID for the currently
    * authenticated player. This method is only accessible to whitelisted tester
-   * accounts for your application. All quests for this player that use the event
-   * will also be reset. (events.reset)
+   * accounts for your application. (events.reset)
    *
    * @param string $eventId The ID of the event.
    * @param array $optParams Optional parameters.
@@ -43,8 +42,7 @@ class Google_Service_GamesManagement_Resource_Events extends Google_Service_Reso
   /**
    * Resets all player progress on all events for the currently authenticated
    * player. This method is only accessible to whitelisted tester accounts for
-   * your application. All quests for this player will also be reset.
-   * (events.resetAll)
+   * your application. (events.resetAll)
    *
    * @param array $optParams Optional parameters.
    */
@@ -56,8 +54,7 @@ class Google_Service_GamesManagement_Resource_Events extends Google_Service_Reso
   }
   /**
    * Resets all draft events for all players. This method is only available to
-   * user accounts for your developer console. All quests that use any of these
-   * events will also be reset. (events.resetAllForAllPlayers)
+   * user accounts for your developer console. (events.resetAllForAllPlayers)
    *
    * @param array $optParams Optional parameters.
    */
@@ -70,8 +67,7 @@ class Google_Service_GamesManagement_Resource_Events extends Google_Service_Reso
   /**
    * Resets the event with the given ID for all players. This method is only
    * available to user accounts for your developer console. Only draft events can
-   * be reset. All quests that use the event will also be reset.
-   * (events.resetForAllPlayers)
+   * be reset. (events.resetForAllPlayers)
    *
    * @param string $eventId The ID of the event.
    * @param array $optParams Optional parameters.
@@ -85,8 +81,7 @@ class Google_Service_GamesManagement_Resource_Events extends Google_Service_Reso
   /**
    * Resets events with the given IDs for all players. This method is only
    * available to user accounts for your developer console. Only draft events may
-   * be reset. All quests that use any of the events will also be reset.
-   * (events.resetMultipleForAllPlayers)
+   * be reset. (events.resetMultipleForAllPlayers)
    *
    * @param Google_Service_GamesManagement_EventsResetMultipleForAllRequest $postBody
    * @param array $optParams Optional parameters.

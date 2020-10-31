@@ -20,29 +20,102 @@
     },
     "require": {
         "php": ">=5.4.0",
+        "dflydev/dot-access-data": "^1.1.0",
         "symfony/console": "^2.8|^3|^4",
-        "symfony/finder": "^2.5|^3|^4"
+        "symfony/finder": "^2.5|^3|^4|^5"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8",
-        "satooshi/php-coveralls": "^1.0.2 | dev-master",
+        "g1a/composer-test-scenarios": "^3",
+        "php-coveralls/php-coveralls": "^1",
+        "phpunit/phpunit": "^5.7.27",
         "squizlabs/php_codesniffer": "^2.7",
+        "symfony/var-dumper": "^2.8|^3|^4",
         "victorjonsson/markdowndocs": "^1.3"
+    },
+    "suggest": {
+        "symfony/var-dumper": "For using the var_dump formatter"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "platform": {
+            "php": "5.6.32"
+        }
     },
     "scripts": {
         "api": "phpdoc-md generate src > docs/api.md",
         "cs": "phpcs --standard=PSR2 -n src",
         "cbf": "phpcbf --standard=PSR2 -n src",
-        "test": "phpunit --colors=always"
+        "unit": "phpunit --colors=always",
+        "lint": [
+            "find src -name '*.php' -print0 | xargs -0 -n1 php -l",
+            "find tests/src -name '*.php' -print0 | xargs -0 -n1 php -l"
+        ],
+        "test": [
+            "@lint",
+            "@unit",
+            "@cs"
+        ]
     },
     "extra": {
+        "scenarios": {
+            "finder5": {
+                "require": {
+                    "symfony/finder": "^5"
+                },
+                "config": {
+                    "platform": {
+                        "php": "7.2.5"
+                    }
+                }                
+            },
+            "symfony4": {
+                "require": {
+                    "symfony/console": "^4.0"
+                },
+                "require-dev": {
+                    "phpunit/phpunit": "^6"
+                },
+                "config": {
+                    "platform": {
+                        "php": "7.1.3"
+                    }
+                }
+            },
+            "symfony3": {
+                "require": {
+                    "symfony/console": "^3.4",
+                    "symfony/finder": "^3.4",
+                    "symfony/var-dumper": "^3.4"
+                },
+                "config": {
+                    "platform": {
+                        "php": "5.6.32"
+                    }
+                }
+            },
+            "symfony2": {
+                "require": {
+                    "symfony/console": "^2.8"
+                },
+                "require-dev": {
+                    "phpunit/phpunit": "^4.8.36"
+                },
+                "remove": [
+                    "php-coveralls/php-coveralls"
+                ],
+                "config": {
+                    "platform": {
+                        "php": "5.4.8"
+                    }
+                },
+                "scenario-options": {
+                    "create-lockfile": "false"
+                }
+            }
+        },
         "branch-alias": {
             "dev-master": "3.x-dev"
-        }
-    },
-    "config": {
-        "platform": {
-            "php": "5.6"
         }
     }
 }

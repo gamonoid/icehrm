@@ -18,7 +18,6 @@
 class Google_Service_Script_GoogleAppsScriptTypeProcess extends Google_Model
 {
   public $duration;
-  public $executingUser;
   public $functionName;
   public $processStatus;
   public $processType;
@@ -33,14 +32,6 @@ class Google_Service_Script_GoogleAppsScriptTypeProcess extends Google_Model
   public function getDuration()
   {
     return $this->duration;
-  }
-  public function setExecutingUser($executingUser)
-  {
-    $this->executingUser = $executingUser;
-  }
-  public function getExecutingUser()
-  {
-    return $this->executingUser;
   }
   public function setFunctionName($functionName)
   {

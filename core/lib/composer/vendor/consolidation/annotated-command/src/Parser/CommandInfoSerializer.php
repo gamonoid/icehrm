@@ -23,6 +23,7 @@ class CommandInfoSerializer
             'class' => $className,
             'method_name' => $commandInfo->getMethodName(),
             'mtime' => filemtime($path),
+            'injected_classes' => [],
         ];
 
         // If this is a valid method / hook, then add more information.
@@ -38,6 +39,7 @@ class CommandInfoSerializer
             ];
             $info['arguments'] = $this->serializeDefaultsWithDescriptions($commandInfo->arguments());
             $info['options'] = $this->serializeDefaultsWithDescriptions($commandInfo->options());
+            $info['injected_classes'] = $commandInfo->getInjectedClasses();
         }
 
         return $info;

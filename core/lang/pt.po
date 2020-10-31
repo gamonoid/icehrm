@@ -1972,3 +1972,18 @@ msgstr "Cálculos economizados"
 
 msgid "Total Leave Days"
 msgstr "Total de dias de férias"
+
+msgid "Actions"
+msgstr "Acções"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "View"
+msgstr "Ver"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "Copy"
+msgstr "Cópia"

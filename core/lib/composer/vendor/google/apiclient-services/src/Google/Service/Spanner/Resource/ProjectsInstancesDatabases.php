@@ -45,7 +45,9 @@ class Google_Service_Spanner_Resource_ProjectsInstancesDatabases extends Google_
     return $this->call('create', array($params), "Google_Service_Spanner_Operation");
   }
   /**
-   * Drops (aka deletes) a Cloud Spanner database. (databases.dropDatabase)
+   * Drops (aka deletes) a Cloud Spanner database. Completed backups for the
+   * database will be retained according to their `expire_time`.
+   * (databases.dropDatabase)
    *
    * @param string $database Required. The database to be dropped.
    * @param array $optParams Optional parameters.
@@ -77,6 +79,7 @@ class Google_Service_Spanner_Resource_ProjectsInstancesDatabases extends Google_
    * queried using the Operations API. (databases.getDdl)
    *
    * @param string $database Required. The database whose schema we wish to get.
+   * Values are of the form `projects//instances//databases/`
    * @param array $optParams Optional parameters.
    * @return Google_Service_Spanner_GetDatabaseDdlResponse
    */
@@ -87,11 +90,11 @@ class Google_Service_Spanner_Resource_ProjectsInstancesDatabases extends Google_
     return $this->call('getDdl', array($params), "Google_Service_Spanner_GetDatabaseDdlResponse");
   }
   /**
-   * Gets the access control policy for a database resource. Returns an empty
-   * policy if a database exists but does not have a policy set.
-   *
+   * Gets the access control policy for a database or backup resource. Returns an
+   * empty policy if a database or backup exists but does not have a policy set.
    * Authorization requires `spanner.databases.getIamPolicy` permission on
-   * resource. (databases.getIamPolicy)
+   * resource. For backups, authorization requires `spanner.backups.getIamPolicy`
+   * permission on resource. (databases.getIamPolicy)
    *
    * @param string $resource REQUIRED: The Cloud Spanner resource for which the
    * policy is being retrieved. The format is `projects//instances/` for instance
@@ -126,11 +129,39 @@ class Google_Service_Spanner_Resource_ProjectsInstancesDatabases extends Google_
     return $this->call('list', array($params), "Google_Service_Spanner_ListDatabasesResponse");
   }
   /**
-   * Sets the access control policy on a database resource. Replaces any existing
-   * policy.
+   * Create a new database by restoring from a completed backup. The new database
+   * must be in the same project and in an instance with the same instance
+   * configuration as the instance containing the backup. The returned database
+   * long-running operation has a name of the format
+   * `projects//instances//databases//operations/`, and can be used to track the
+   * progress of the operation, and to cancel it. The metadata field type is
+   * RestoreDatabaseMetadata. The response type is Database, if successful.
+   * Cancelling the returned operation will stop the restore and delete the
+   * database. There can be only one database being restored into an instance at a
+   * time. Once the restore operation completes, a new restore operation can be
+   * initiated, without waiting for the optimize operation associated with the
+   * first restore to complete. (databases.restore)
    *
-   * Authorization requires `spanner.databases.setIamPolicy` permission on
-   * resource. (databases.setIamPolicy)
+   * @param string $parent Required. The name of the instance in which to create
+   * the restored database. This instance must be in the same project and have the
+   * same instance configuration as the instance containing the source backup.
+   * Values are of the form `projects//instances/`.
+   * @param Google_Service_Spanner_RestoreDatabaseRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Spanner_Operation
+   */
+  public function restore($parent, Google_Service_Spanner_RestoreDatabaseRequest $postBody, $optParams = array())
+  {
+    $params = array('parent' => $parent, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('restore', array($params), "Google_Service_Spanner_Operation");
+  }
+  /**
+   * Sets the access control policy on a database or backup resource. Replaces any
+   * existing policy. Authorization requires `spanner.databases.setIamPolicy`
+   * permission on resource. For backups, authorization requires
+   * `spanner.backups.setIamPolicy` permission on resource.
+   * (databases.setIamPolicy)
    *
    * @param string $resource REQUIRED: The Cloud Spanner resource for which the
    * policy is being set. The format is `projects//instances/` for instance
@@ -146,12 +177,13 @@ class Google_Service_Spanner_Resource_ProjectsInstancesDatabases extends Google_
     return $this->call('setIamPolicy', array($params), "Google_Service_Spanner_Policy");
   }
   /**
-   * Returns permissions that the caller has on the specified database resource.
-   *
-   * Attempting this RPC on a non-existent Cloud Spanner database will result in a
-   * NOT_FOUND error if the user has `spanner.databases.list` permission on the
-   * containing Cloud Spanner instance. Otherwise returns an empty set of
-   * permissions. (databases.testIamPermissions)
+   * Returns permissions that the caller has on the specified database or backup
+   * resource. Attempting this RPC on a non-existent Cloud Spanner database will
+   * result in a NOT_FOUND error if the user has `spanner.databases.list`
+   * permission on the containing Cloud Spanner instance. Otherwise returns an
+   * empty set of permissions. Calling this method on a backup that does not exist
+   * will result in a NOT_FOUND error if the user has `spanner.backups.list`
+   * permission on the containing instance. (databases.testIamPermissions)
    *
    * @param string $resource REQUIRED: The Cloud Spanner resource for which
    * permissions are being tested. The format is `projects//instances/` for
@@ -171,7 +203,7 @@ class Google_Service_Spanner_Resource_ProjectsInstancesDatabases extends Google_
    * Updates the schema of a Cloud Spanner database by creating/altering/dropping
    * tables, columns, indexes, etc. The returned long-running operation will have
    * a name of the format `/operations/` and can be used to track execution of the
-   * schema change(s). The metadata field type is UpdateDatabaseDdlMetadata.  The
+   * schema change(s). The metadata field type is UpdateDatabaseDdlMetadata. The
    * operation has no response. (databases.updateDdl)
    *
    * @param string $database Required. The database to update.

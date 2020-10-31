@@ -1,5 +1,43 @@
 # Change Log
 
+### 3.5.1 - 10 October 2020
+
+- Allow symfony/finder ^5 in output-formatters 3.x. (#87)
+
+### 3.5.0 - 30 May 2019
+
+- Add `@default-table-fields` to specify the fields to use with the table formatter and other "human readable" output formats.
+
+### 3.4.1 - 13 March 2019
+
+- Add enclosure and escape character options for CsvFormatter. (#79)
+
+### 3.4.0 - 19 October 2018
+
+- Add an UnstucturedInterface marker interface, and update the 'string' format to not accept data types that implement this interface unless they also implement StringTransformationInterface.
+
+### 3.3.2 - 18 October 2018
+
+- Add a 'null' output formatter that accepts all data types and never produces output
+
+### 3.3.0 & 3.3.1 - 15 October 2018
+
+- Add UnstructuredListData and UnstructuredData to replace deprecated ListDataFromKeys
+- Support --field and --fields in commands that return UnstructuredData / UnstructuredListData
+- Support field remapping, e.g. `--fields=original as remapped`
+- Support field addressing, e.g. `--fields=a.b.c`
+- Automatically convert from RowsOfFields to UnstruturedListData and from PropertyList to UnstructuredData when user utilizes field remapping or field addressing features.
+
+### 3.2.1 - 25 May 2018
+
+- Rename g1a/composer-test-scenarios
+
+### 3.2.0 - 20 March 2018
+
+- Add RowsOfFieldsWithMetadata: allows commands to return an object with metadata that shows up in yaml/json (& etc.) formats, but is not shown in table/csv (& etc.).
+- Add NumericCellRenderer: allows commands to attach a renderer that will right-justify and add commas to numbers in a column.
+- Add optional var_dump output format.
+
 ### 3.1.13 - 29 November 2017
 
 - Allow XML output for RowsOfFields (#60).

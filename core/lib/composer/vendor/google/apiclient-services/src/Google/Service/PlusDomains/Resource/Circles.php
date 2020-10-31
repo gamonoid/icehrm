@@ -26,54 +26,8 @@
 class Google_Service_PlusDomains_Resource_Circles extends Google_Service_Resource
 {
   /**
-   * Add a person to a circle. Google+ limits certain circle operations, including
-   * the number of circle adds. Learn More. (circles.addPeople)
-   *
-   * @param string $circleId The ID of the circle to add the person to.
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string email Email of the people to add to the circle. Optional,
-   * can be repeated.
-   * @opt_param string userId IDs of the people to add to the circle. Optional,
-   * can be repeated.
-   * @return Google_Service_PlusDomains_Circle
-   */
-  public function addPeople($circleId, $optParams = array())
-  {
-    $params = array('circleId' => $circleId);
-    $params = array_merge($params, $optParams);
-    return $this->call('addPeople', array($params), "Google_Service_PlusDomains_Circle");
-  }
-  /**
-   * Get a circle. (circles.get)
-   *
-   * @param string $circleId The ID of the circle to get.
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_PlusDomains_Circle
-   */
-  public function get($circleId, $optParams = array())
-  {
-    $params = array('circleId' => $circleId);
-    $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_PlusDomains_Circle");
-  }
-  /**
-   * Create a new circle for the authenticated user. (circles.insert)
-   *
-   * @param string $userId The ID of the user to create the circle on behalf of.
-   * The value "me" can be used to indicate the authenticated user.
-   * @param Google_Service_PlusDomains_Circle $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_PlusDomains_Circle
-   */
-  public function insert($userId, Google_Service_PlusDomains_Circle $postBody, $optParams = array())
-  {
-    $params = array('userId' => $userId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('insert', array($params), "Google_Service_PlusDomains_Circle");
-  }
-  /**
-   * List all of the circles for a user. (circles.listCircles)
+   * Shut down. See https://developers.google.com/+/api-shutdown for more details.
+   * (circles.listCircles)
    *
    * @param string $userId The ID of the user to get circles for. The special
    * value "me" can be used to indicate the authenticated user.
@@ -92,63 +46,5 @@ class Google_Service_PlusDomains_Resource_Circles extends Google_Service_Resourc
     $params = array('userId' => $userId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_PlusDomains_CircleFeed");
-  }
-  /**
-   * Update a circle's description. This method supports patch semantics.
-   * (circles.patch)
-   *
-   * @param string $circleId The ID of the circle to update.
-   * @param Google_Service_PlusDomains_Circle $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_PlusDomains_Circle
-   */
-  public function patch($circleId, Google_Service_PlusDomains_Circle $postBody, $optParams = array())
-  {
-    $params = array('circleId' => $circleId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_PlusDomains_Circle");
-  }
-  /**
-   * Delete a circle. (circles.remove)
-   *
-   * @param string $circleId The ID of the circle to delete.
-   * @param array $optParams Optional parameters.
-   */
-  public function remove($circleId, $optParams = array())
-  {
-    $params = array('circleId' => $circleId);
-    $params = array_merge($params, $optParams);
-    return $this->call('remove', array($params));
-  }
-  /**
-   * Remove a person from a circle. (circles.removePeople)
-   *
-   * @param string $circleId The ID of the circle to remove the person from.
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string email Email of the people to add to the circle. Optional,
-   * can be repeated.
-   * @opt_param string userId IDs of the people to remove from the circle.
-   * Optional, can be repeated.
-   */
-  public function removePeople($circleId, $optParams = array())
-  {
-    $params = array('circleId' => $circleId);
-    $params = array_merge($params, $optParams);
-    return $this->call('removePeople', array($params));
-  }
-  /**
-   * Update a circle's description. (circles.update)
-   *
-   * @param string $circleId The ID of the circle to update.
-   * @param Google_Service_PlusDomains_Circle $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_PlusDomains_Circle
-   */
-  public function update($circleId, Google_Service_PlusDomains_Circle $postBody, $optParams = array())
-  {
-    $params = array('circleId' => $circleId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('update', array($params), "Google_Service_PlusDomains_Circle");
   }
 }

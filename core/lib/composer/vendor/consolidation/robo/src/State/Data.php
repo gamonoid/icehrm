@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\State;
 
 /**
@@ -40,7 +41,7 @@ class Data extends \ArrayObject
     }
 
     /**
-     * @param string message
+     * @param string $message
      */
     public function setMessage($message)
     {
@@ -52,7 +53,7 @@ class Data extends \ArrayObject
      * existing in this result takes precedence over the
      * data in the Result being merged.
      *
-     * @param \Robo\ResultData $result
+     * @param \Robo\State\Data $result
      *
      * @return $this
      */
@@ -123,6 +124,10 @@ class Data extends \ArrayObject
 
     /**
      * Accumulate execution time
+     *
+     * @param array|float $duration
+     *
+     * @return null|float
      */
     public function accumulateExecutionTime($duration)
     {
@@ -136,6 +141,10 @@ class Data extends \ArrayObject
 
     /**
      * Accumulate the message.
+     *
+     * @param string $message
+     *
+     * @return string
      */
     public function accumulateMessage($message)
     {

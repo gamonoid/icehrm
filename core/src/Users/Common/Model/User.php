@@ -60,8 +60,7 @@ class User extends BaseModel
             }
         }
 
-        $permissionManager = new PermissionManager();
-        if ($permissionManager->isRestrictedUserLevel($obj->user_level) && empty($obj->default_module)) {
+        if (PermissionManager::isRestrictedUserLevel($obj->user_level) && empty($obj->default_module)) {
             return new IceResponse(
                 IceResponse::ERROR,
                 'Restricted users must always have a default module'

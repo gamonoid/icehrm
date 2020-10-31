@@ -19,6 +19,8 @@ class Google_Service_Sheets_BubbleChartSpec extends Google_Model
 {
   protected $bubbleBorderColorType = 'Google_Service_Sheets_Color';
   protected $bubbleBorderColorDataType = '';
+  protected $bubbleBorderColorStyleType = 'Google_Service_Sheets_ColorStyle';
+  protected $bubbleBorderColorStyleDataType = '';
   protected $bubbleLabelsType = 'Google_Service_Sheets_ChartData';
   protected $bubbleLabelsDataType = '';
   public $bubbleMaxRadiusSize;
@@ -49,6 +51,20 @@ class Google_Service_Sheets_BubbleChartSpec extends Google_Model
   public function getBubbleBorderColor()
   {
     return $this->bubbleBorderColor;
+  }
+  /**
+   * @param Google_Service_Sheets_ColorStyle
+   */
+  public function setBubbleBorderColorStyle(Google_Service_Sheets_ColorStyle $bubbleBorderColorStyle)
+  {
+    $this->bubbleBorderColorStyle = $bubbleBorderColorStyle;
+  }
+  /**
+   * @return Google_Service_Sheets_ColorStyle
+   */
+  public function getBubbleBorderColorStyle()
+  {
+    return $this->bubbleBorderColorStyle;
   }
   /**
    * @param Google_Service_Sheets_ChartData

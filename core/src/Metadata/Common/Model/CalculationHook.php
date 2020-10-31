@@ -27,7 +27,7 @@ class CalculationHook extends BaseModel
     }
 
     // @codingStandardsIgnoreStart
-    function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
+    public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
         return BaseService::getInstance()->getCalculationHooks();
     }

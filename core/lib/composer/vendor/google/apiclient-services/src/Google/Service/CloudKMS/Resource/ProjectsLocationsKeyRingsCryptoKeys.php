@@ -26,9 +26,8 @@
 class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys extends Google_Service_Resource
 {
   /**
-   * Create a new CryptoKey within a KeyRing.
-   *
-   * CryptoKey.purpose is required. (cryptoKeys.create)
+   * Create a new CryptoKey within a KeyRing. CryptoKey.purpose and
+   * CryptoKey.version_template.algorithm are required. (cryptoKeys.create)
    *
    * @param string $parent Required. The name of the KeyRing associated with the
    * CryptoKeys.
@@ -37,6 +36,10 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys exten
    *
    * @opt_param string cryptoKeyId Required. It must be unique within a KeyRing
    * and match the regular expression `[a-zA-Z0-9_-]{1,63}`
+   * @opt_param bool skipInitialVersionCreation If set to true, the request will
+   * create a CryptoKey without any CryptoKeyVersions. You must manually call
+   * CreateCryptoKeyVersion or ImportCryptoKeyVersion before you can use this
+   * CryptoKey.
    * @return Google_Service_CloudKMS_CryptoKey
    */
   public function create($parent, Google_Service_CloudKMS_CryptoKey $postBody, $optParams = array())
@@ -46,7 +49,8 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys exten
     return $this->call('create', array($params), "Google_Service_CloudKMS_CryptoKey");
   }
   /**
-   * Decrypts data that was protected by Encrypt. (cryptoKeys.decrypt)
+   * Decrypts data that was protected by Encrypt. The CryptoKey.purpose must be
+   * ENCRYPT_DECRYPT. (cryptoKeys.decrypt)
    *
    * @param string $name Required. The resource name of the CryptoKey to use for
    * decryption. The server will choose the appropriate version.
@@ -61,13 +65,12 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys exten
     return $this->call('decrypt', array($params), "Google_Service_CloudKMS_DecryptResponse");
   }
   /**
-   * Encrypts data, so that it can only be recovered by a call to Decrypt.
-   * (cryptoKeys.encrypt)
+   * Encrypts data, so that it can only be recovered by a call to Decrypt. The
+   * CryptoKey.purpose must be ENCRYPT_DECRYPT. (cryptoKeys.encrypt)
    *
    * @param string $name Required. The resource name of the CryptoKey or
-   * CryptoKeyVersion to use for encryption.
-   *
-   * If a CryptoKey is specified, the server will use its primary version.
+   * CryptoKeyVersion to use for encryption. If a CryptoKey is specified, the
+   * server will use its primary version.
    * @param Google_Service_CloudKMS_EncryptRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudKMS_EncryptResponse
@@ -82,7 +85,7 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys exten
    * Returns metadata for a given CryptoKey, as well as its primary
    * CryptoKeyVersion. (cryptoKeys.get)
    *
-   * @param string $name The name of the CryptoKey to get.
+   * @param string $name Required. The name of the CryptoKey to get.
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudKMS_CryptoKey
    */
@@ -100,6 +103,15 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys exten
    * requested. See the operation documentation for the appropriate value for this
    * field.
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param int options.requestedPolicyVersion Optional. The policy format
+   * version to be returned. Valid values are 0, 1, and 3. Requests specifying an
+   * invalid value will be rejected. Requests for policies with any conditional
+   * bindings must specify version 3. Policies without any conditional bindings
+   * may specify any valid value or leave the field unset. To learn which
+   * resources support conditions in their IAM policies, see the [IAM
+   * documentation](https://cloud.google.com/iam/help/conditions/resource-
+   * policies).
    * @return Google_Service_CloudKMS_Policy
    */
   public function getIamPolicy($resource, $optParams = array())
@@ -115,12 +127,21 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys exten
    * the format `projects/locations/keyRings`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string pageToken Optional pagination token, returned earlier via
-   * ListCryptoKeysResponse.next_page_token.
-   * @opt_param int pageSize Optional limit on the number of CryptoKeys to include
-   * in the response.  Further CryptoKeys can subsequently be obtained by
-   * including the ListCryptoKeysResponse.next_page_token in a subsequent request.
-   * If unspecified, the server will pick an appropriate default.
+   * @opt_param string versionView The fields of the primary version to include in
+   * the response.
+   * @opt_param string pageToken Optional. Optional pagination token, returned
+   * earlier via ListCryptoKeysResponse.next_page_token.
+   * @opt_param string orderBy Optional. Specify how the results should be sorted.
+   * If not specified, the results will be sorted in the default order. For more
+   * information, see [Sorting and filtering list
+   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
+   * @opt_param string filter Optional. Only include resources that match the
+   * filter in the response. For more information, see [Sorting and filtering list
+   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
+   * @opt_param int pageSize Optional. Optional limit on the number of CryptoKeys
+   * to include in the response. Further CryptoKeys can subsequently be obtained
+   * by including the ListCryptoKeysResponse.next_page_token in a subsequent
+   * request. If unspecified, the server will pick an appropriate default.
    * @return Google_Service_CloudKMS_ListCryptoKeysResponse
    */
   public function listProjectsLocationsKeyRingsCryptoKeys($parent, $optParams = array())
@@ -137,7 +158,7 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys exten
    * @param Google_Service_CloudKMS_CryptoKey $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask Required list of fields to be updated in this
+   * @opt_param string updateMask Required. List of fields to be updated in this
    * request.
    * @return Google_Service_CloudKMS_CryptoKey
    */
@@ -149,7 +170,8 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys exten
   }
   /**
    * Sets the access control policy on the specified resource. Replaces any
-   * existing policy. (cryptoKeys.setIamPolicy)
+   * existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and
+   * `PERMISSION_DENIED` errors. (cryptoKeys.setIamPolicy)
    *
    * @param string $resource REQUIRED: The resource for which the policy is being
    * specified. See the operation documentation for the appropriate value for this
@@ -167,11 +189,10 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys exten
   /**
    * Returns permissions that a caller has on the specified resource. If the
    * resource does not exist, this will return an empty set of permissions, not a
-   * NOT_FOUND error.
-   *
-   * Note: This operation is designed to be used for building permission-aware UIs
-   * and command-line tools, not for authorization checking. This operation may
-   * "fail open" without warning. (cryptoKeys.testIamPermissions)
+   * `NOT_FOUND` error. Note: This operation is designed to be used for building
+   * permission-aware UIs and command-line tools, not for authorization checking.
+   * This operation may "fail open" without warning.
+   * (cryptoKeys.testIamPermissions)
    *
    * @param string $resource REQUIRED: The resource for which the policy detail is
    * being requested. See the operation documentation for the appropriate value
@@ -187,10 +208,10 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys exten
     return $this->call('testIamPermissions', array($params), "Google_Service_CloudKMS_TestIamPermissionsResponse");
   }
   /**
-   * Update the version of a CryptoKey that will be used in Encrypt
-   * (cryptoKeys.updatePrimaryVersion)
+   * Update the version of a CryptoKey that will be used in Encrypt. Returns an
+   * error if called on an asymmetric key. (cryptoKeys.updatePrimaryVersion)
    *
-   * @param string $name The resource name of the CryptoKey to update.
+   * @param string $name Required. The resource name of the CryptoKey to update.
    * @param Google_Service_CloudKMS_UpdateCryptoKeyPrimaryVersionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudKMS_CryptoKey

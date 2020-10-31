@@ -18,6 +18,8 @@
 class Google_Service_DLP_GooglePrivacyDlpV2RedactImageResponse extends Google_Model
 {
   public $extractedText;
+  protected $inspectResultType = 'Google_Service_DLP_GooglePrivacyDlpV2InspectResult';
+  protected $inspectResultDataType = '';
   public $redactedImage;
 
   public function setExtractedText($extractedText)
@@ -27,6 +29,20 @@ class Google_Service_DLP_GooglePrivacyDlpV2RedactImageResponse extends Google_Mo
   public function getExtractedText()
   {
     return $this->extractedText;
+  }
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2InspectResult
+   */
+  public function setInspectResult(Google_Service_DLP_GooglePrivacyDlpV2InspectResult $inspectResult)
+  {
+    $this->inspectResult = $inspectResult;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2InspectResult
+   */
+  public function getInspectResult()
+  {
+    return $this->inspectResult;
   }
   public function setRedactedImage($redactedImage)
   {

@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Collection;
 
 use Robo\Result;
@@ -39,16 +40,34 @@ class TaskForEach extends BaseTask implements NestedCollectionInterface, Builder
      */
     protected $context = [];
 
-    protected $iterable;
+    /**
+     * @var array $iterable
+     */
+    protected $iterable = [];
 
     /**
      * @var \Robo\Collection\NestedCollectionInterface
      */
     protected $parentCollection;
 
-    public function __construct($iterable)
+    /**
+     * @var array $iterable
+     */
+    public function __construct($iterable = [])
+    {
+        $this->setIterable($iterable);
+    }
+
+    /**
+     * @param array $iterable
+     *
+     * @return $this
+     */
+    public function setIterable($iterable)
     {
         $this->iterable = $iterable;
+
+        return $this;
     }
 
     /**
@@ -92,7 +111,7 @@ class TaskForEach extends BaseTask implements NestedCollectionInterface, Builder
     /**
      * @param callable $fn
      *
-     * @return \Robo\Collection\TaskForEach
+     * @return $this
      */
     public function call(callable $fn)
     {
@@ -106,7 +125,7 @@ class TaskForEach extends BaseTask implements NestedCollectionInterface, Builder
     /**
      * @param callable $fn
      *
-     * @return \Robo\Collection\TaskForEach
+     * @return $this
      */
     public function withBuilder(callable $fn)
     {
@@ -149,7 +168,7 @@ class TaskForEach extends BaseTask implements NestedCollectionInterface, Builder
     public function progressIndicatorSteps()
     {
         $multiplier = count($this->functionStack);
-        if (!empty($this->countingStack)) {
+        if (!empty($this->countingStack) && count($this->iterable)) {
             $value = reset($this->iterable);
             $key = key($this->iterable);
             foreach ($this->countingStack as $fn) {

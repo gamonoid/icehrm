@@ -19,10 +19,10 @@ class Google_Service_CloudTasks_AppEngineHttpRequest extends Google_Model
 {
   protected $appEngineRoutingType = 'Google_Service_CloudTasks_AppEngineRouting';
   protected $appEngineRoutingDataType = '';
+  public $body;
   public $headers;
   public $httpMethod;
-  public $payload;
-  public $relativeUrl;
+  public $relativeUri;
 
   /**
    * @param Google_Service_CloudTasks_AppEngineRouting
@@ -37,6 +37,14 @@ class Google_Service_CloudTasks_AppEngineHttpRequest extends Google_Model
   public function getAppEngineRouting()
   {
     return $this->appEngineRouting;
+  }
+  public function setBody($body)
+  {
+    $this->body = $body;
+  }
+  public function getBody()
+  {
+    return $this->body;
   }
   public function setHeaders($headers)
   {
@@ -54,20 +62,12 @@ class Google_Service_CloudTasks_AppEngineHttpRequest extends Google_Model
   {
     return $this->httpMethod;
   }
-  public function setPayload($payload)
+  public function setRelativeUri($relativeUri)
   {
-    $this->payload = $payload;
+    $this->relativeUri = $relativeUri;
   }
-  public function getPayload()
+  public function getRelativeUri()
   {
-    return $this->payload;
-  }
-  public function setRelativeUrl($relativeUrl)
-  {
-    $this->relativeUrl = $relativeUrl;
-  }
-  public function getRelativeUrl()
-  {
-    return $this->relativeUrl;
+    return $this->relativeUri;
   }
 }

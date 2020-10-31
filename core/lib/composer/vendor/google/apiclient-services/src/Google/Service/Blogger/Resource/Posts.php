@@ -26,10 +26,10 @@
 class Google_Service_Blogger_Resource_Posts extends Google_Service_Resource
 {
   /**
-   * Delete a post by ID. (posts.delete)
+   * Deletes a post by blog id and post id. (posts.delete)
    *
-   * @param string $blogId The ID of the Blog.
-   * @param string $postId The ID of the Post.
+   * @param string $blogId
+   * @param string $postId
    * @param array $optParams Optional parameters.
    */
   public function delete($blogId, $postId, $optParams = array())
@@ -39,21 +39,16 @@ class Google_Service_Blogger_Resource_Posts extends Google_Service_Resource
     return $this->call('delete', array($params));
   }
   /**
-   * Get a post by ID. (posts.get)
+   * Gets a post by blog id and post id (posts.get)
    *
-   * @param string $blogId ID of the blog to fetch the post from.
-   * @param string $postId The ID of the post
+   * @param string $blogId
+   * @param string $postId
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool fetchBody Whether the body content of the post is included
-   * (default: true). This should be set to false when the post bodies are not
-   * required, to help minimize traffic.
-   * @opt_param bool fetchImages Whether image URL metadata for each post is
-   * included (default: false).
-   * @opt_param string maxComments Maximum number of comments to pull back on a
-   * post.
-   * @opt_param string view Access level with which to view the returned result.
-   * Note that some fields require elevated access.
+   * @opt_param string maxComments
+   * @opt_param bool fetchBody
+   * @opt_param string view
+   * @opt_param bool fetchImages
    * @return Google_Service_Blogger_Post
    */
   public function get($blogId, $postId, $optParams = array())
@@ -63,16 +58,14 @@ class Google_Service_Blogger_Resource_Posts extends Google_Service_Resource
     return $this->call('get', array($params), "Google_Service_Blogger_Post");
   }
   /**
-   * Retrieve a Post by Path. (posts.getByPath)
+   * Gets a post by path. (posts.getByPath)
    *
-   * @param string $blogId ID of the blog to fetch the post from.
-   * @param string $path Path of the Post to retrieve.
+   * @param string $blogId
+   * @param string $path
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string maxComments Maximum number of comments to pull back on a
-   * post.
-   * @opt_param string view Access level with which to view the returned result.
-   * Note that some fields require elevated access.
+   * @opt_param string view
+   * @opt_param string maxComments
    * @return Google_Service_Blogger_Post
    */
   public function getByPath($blogId, $path, $optParams = array())
@@ -82,18 +75,15 @@ class Google_Service_Blogger_Resource_Posts extends Google_Service_Resource
     return $this->call('getByPath', array($params), "Google_Service_Blogger_Post");
   }
   /**
-   * Add a post. (posts.insert)
+   * Inserts a post. (posts.insert)
    *
-   * @param string $blogId ID of the blog to add the post to.
+   * @param string $blogId
    * @param Google_Service_Blogger_Post $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool fetchBody Whether the body content of the post is included
-   * with the result (default: true).
-   * @opt_param bool fetchImages Whether image URL metadata for each post is
-   * included in the returned result (default: false).
-   * @opt_param bool isDraft Whether to create the post as a draft (default:
-   * false).
+   * @opt_param bool fetchImages
+   * @opt_param bool isDraft
+   * @opt_param bool fetchBody
    * @return Google_Service_Blogger_Post
    */
   public function insert($blogId, Google_Service_Blogger_Post $postBody, $optParams = array())
@@ -103,27 +93,21 @@ class Google_Service_Blogger_Resource_Posts extends Google_Service_Resource
     return $this->call('insert', array($params), "Google_Service_Blogger_Post");
   }
   /**
-   * Retrieves a list of posts, possibly filtered. (posts.listPosts)
+   * Lists posts. (posts.listPosts)
    *
-   * @param string $blogId ID of the blog to fetch posts from.
+   * @param string $blogId
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string endDate Latest post date to fetch, a date-time with RFC
-   * 3339 formatting.
-   * @opt_param bool fetchBodies Whether the body content of posts is included
-   * (default: true). This should be set to false when the post bodies are not
-   * required, to help minimize traffic.
-   * @opt_param bool fetchImages Whether image URL metadata for each post is
-   * included.
-   * @opt_param string labels Comma-separated list of labels to search for.
-   * @opt_param string maxResults Maximum number of posts to fetch.
-   * @opt_param string orderBy Sort search results
-   * @opt_param string pageToken Continuation token if the request is paged.
-   * @opt_param string startDate Earliest post date to fetch, a date-time with RFC
-   * 3339 formatting.
-   * @opt_param string status Statuses to include in the results.
-   * @opt_param string view Access level with which to view the returned result.
-   * Note that some fields require escalated access.
+   * @opt_param string endDate
+   * @opt_param string pageToken
+   * @opt_param string maxResults
+   * @opt_param string startDate
+   * @opt_param string labels
+   * @opt_param string status
+   * @opt_param string orderBy
+   * @opt_param string view
+   * @opt_param bool fetchImages
+   * @opt_param bool fetchBodies
    * @return Google_Service_Blogger_PostList
    */
   public function listPosts($blogId, $optParams = array())
@@ -133,23 +117,18 @@ class Google_Service_Blogger_Resource_Posts extends Google_Service_Resource
     return $this->call('list', array($params), "Google_Service_Blogger_PostList");
   }
   /**
-   * Update a post. This method supports patch semantics. (posts.patch)
+   * Patches a post. (posts.patch)
    *
-   * @param string $blogId The ID of the Blog.
-   * @param string $postId The ID of the Post.
+   * @param string $blogId
+   * @param string $postId
    * @param Google_Service_Blogger_Post $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool fetchBody Whether the body content of the post is included
-   * with the result (default: true).
-   * @opt_param bool fetchImages Whether image URL metadata for each post is
-   * included in the returned result (default: false).
-   * @opt_param string maxComments Maximum number of comments to retrieve with the
-   * returned post.
-   * @opt_param bool publish Whether a publish action should be performed when the
-   * post is updated (default: false).
-   * @opt_param bool revert Whether a revert action should be performed when the
-   * post is updated (default: false).
+   * @opt_param bool publish
+   * @opt_param bool fetchBody
+   * @opt_param string maxComments
+   * @opt_param bool revert
+   * @opt_param bool fetchImages
    * @return Google_Service_Blogger_Post
    */
   public function patch($blogId, $postId, Google_Service_Blogger_Post $postBody, $optParams = array())
@@ -159,18 +138,13 @@ class Google_Service_Blogger_Resource_Posts extends Google_Service_Resource
     return $this->call('patch', array($params), "Google_Service_Blogger_Post");
   }
   /**
-   * Publishes a draft post, optionally at the specific time of the given
-   * publishDate parameter. (posts.publish)
+   * Publishes a post. (posts.publish)
    *
-   * @param string $blogId The ID of the Blog.
-   * @param string $postId The ID of the Post.
+   * @param string $blogId
+   * @param string $postId
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string publishDate Optional date and time to schedule the
-   * publishing of the Blog. If no publishDate parameter is given, the post is
-   * either published at the a previously saved schedule date (if present), or the
-   * current time. If a future date is given, the post will be scheduled to be
-   * published.
+   * @opt_param string publishDate
    * @return Google_Service_Blogger_Post
    */
   public function publish($blogId, $postId, $optParams = array())
@@ -180,10 +154,10 @@ class Google_Service_Blogger_Resource_Posts extends Google_Service_Resource
     return $this->call('publish', array($params), "Google_Service_Blogger_Post");
   }
   /**
-   * Revert a published or scheduled post to draft state. (posts.revert)
+   * Reverts a published or scheduled post to draft state. (posts.revert)
    *
-   * @param string $blogId The ID of the Blog.
-   * @param string $postId The ID of the Post.
+   * @param string $blogId
+   * @param string $postId
    * @param array $optParams Optional parameters.
    * @return Google_Service_Blogger_Post
    */
@@ -194,16 +168,15 @@ class Google_Service_Blogger_Resource_Posts extends Google_Service_Resource
     return $this->call('revert', array($params), "Google_Service_Blogger_Post");
   }
   /**
-   * Search for a post. (posts.search)
+   * Searches for posts matching given query terms in the specified blog.
+   * (posts.search)
    *
-   * @param string $blogId ID of the blog to fetch the post from.
-   * @param string $q Query terms to search this blog for matching posts.
+   * @param string $blogId
+   * @param string $q
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool fetchBodies Whether the body content of posts is included
-   * (default: true). This should be set to false when the post bodies are not
-   * required, to help minimize traffic.
-   * @opt_param string orderBy Sort search results
+   * @opt_param bool fetchBodies
+   * @opt_param string orderBy
    * @return Google_Service_Blogger_PostList
    */
   public function search($blogId, $q, $optParams = array())
@@ -213,23 +186,18 @@ class Google_Service_Blogger_Resource_Posts extends Google_Service_Resource
     return $this->call('search', array($params), "Google_Service_Blogger_PostList");
   }
   /**
-   * Update a post. (posts.update)
+   * Updates a post by blog id and post id. (posts.update)
    *
-   * @param string $blogId The ID of the Blog.
-   * @param string $postId The ID of the Post.
+   * @param string $blogId
+   * @param string $postId
    * @param Google_Service_Blogger_Post $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool fetchBody Whether the body content of the post is included
-   * with the result (default: true).
-   * @opt_param bool fetchImages Whether image URL metadata for each post is
-   * included in the returned result (default: false).
-   * @opt_param string maxComments Maximum number of comments to retrieve with the
-   * returned post.
-   * @opt_param bool publish Whether a publish action should be performed when the
-   * post is updated (default: false).
-   * @opt_param bool revert Whether a revert action should be performed when the
-   * post is updated (default: false).
+   * @opt_param string maxComments
+   * @opt_param bool publish
+   * @opt_param bool fetchImages
+   * @opt_param bool fetchBody
+   * @opt_param bool revert
    * @return Google_Service_Blogger_Post
    */
   public function update($blogId, $postId, Google_Service_Blogger_Post $postBody, $optParams = array())

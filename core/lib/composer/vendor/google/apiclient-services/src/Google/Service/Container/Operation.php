@@ -15,13 +15,20 @@
  * the License.
  */
 
-class Google_Service_Container_Operation extends Google_Model
+class Google_Service_Container_Operation extends Google_Collection
 {
+  protected $collection_key = 'nodepoolConditions';
+  protected $clusterConditionsType = 'Google_Service_Container_StatusCondition';
+  protected $clusterConditionsDataType = 'array';
   public $detail;
   public $endTime;
   public $location;
   public $name;
+  protected $nodepoolConditionsType = 'Google_Service_Container_StatusCondition';
+  protected $nodepoolConditionsDataType = 'array';
   public $operationType;
+  protected $progressType = 'Google_Service_Container_OperationProgress';
+  protected $progressDataType = '';
   public $selfLink;
   public $startTime;
   public $status;
@@ -29,6 +36,20 @@ class Google_Service_Container_Operation extends Google_Model
   public $targetLink;
   public $zone;
 
+  /**
+   * @param Google_Service_Container_StatusCondition
+   */
+  public function setClusterConditions($clusterConditions)
+  {
+    $this->clusterConditions = $clusterConditions;
+  }
+  /**
+   * @return Google_Service_Container_StatusCondition
+   */
+  public function getClusterConditions()
+  {
+    return $this->clusterConditions;
+  }
   public function setDetail($detail)
   {
     $this->detail = $detail;
@@ -61,6 +82,20 @@ class Google_Service_Container_Operation extends Google_Model
   {
     return $this->name;
   }
+  /**
+   * @param Google_Service_Container_StatusCondition
+   */
+  public function setNodepoolConditions($nodepoolConditions)
+  {
+    $this->nodepoolConditions = $nodepoolConditions;
+  }
+  /**
+   * @return Google_Service_Container_StatusCondition
+   */
+  public function getNodepoolConditions()
+  {
+    return $this->nodepoolConditions;
+  }
   public function setOperationType($operationType)
   {
     $this->operationType = $operationType;
@@ -68,6 +103,20 @@ class Google_Service_Container_Operation extends Google_Model
   public function getOperationType()
   {
     return $this->operationType;
+  }
+  /**
+   * @param Google_Service_Container_OperationProgress
+   */
+  public function setProgress(Google_Service_Container_OperationProgress $progress)
+  {
+    $this->progress = $progress;
+  }
+  /**
+   * @return Google_Service_Container_OperationProgress
+   */
+  public function getProgress()
+  {
+    return $this->progress;
   }
   public function setSelfLink($selfLink)
   {

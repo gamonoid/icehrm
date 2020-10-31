@@ -31,16 +31,18 @@ class CommandProcessor implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
 
-    /** var HookManager */
+    /** @var HookManager */
     protected $hookManager;
-    /** var FormatterManager */
+    /** @var FormatterManager */
     protected $formatterManager;
-    /** var callable */
-    protected $displayErrorFunction;
-    /** var PrepareFormatterOptions[] */
+    /** @var PrepareFormatterOptions[] */
     protected $prepareOptionsList = [];
-    /** var boolean */
+    /** @var boolean */
     protected $passExceptions;
+    /** @var ResultWriter */
+    protected $resultWriter;
+    /** @var ParameterInjection */
+    protected $parameterInjection;
 
     public function __construct(HookManager $hookManager)
     {
@@ -56,6 +58,32 @@ class CommandProcessor implements LoggerAwareInterface
         return $this->hookManager;
     }
 
+    public function resultWriter()
+    {
+        if (!$this->resultWriter) {
+            $this->setResultWriter(new ResultWriter());
+        }
+        return $this->resultWriter;
+    }
+
+    public function setResultWriter($resultWriter)
+    {
+        $this->resultWriter = $resultWriter;
+    }
+
+    public function parameterInjection()
+    {
+        if (!$this->parameterInjection) {
+            $this->setParameterInjection(new ParameterInjection());
+        }
+        return $this->parameterInjection;
+    }
+
+    public function setParameterInjection($parameterInjection)
+    {
+        $this->parameterInjection = $parameterInjection;
+    }
+
     public function addPrepareFormatter(PrepareFormatter $preparer)
     {
         $this->prepareOptionsList[] = $preparer;
@@ -64,13 +92,13 @@ class CommandProcessor implements LoggerAwareInterface
     public function setFormatterManager(FormatterManager $formatterManager)
     {
         $this->formatterManager = $formatterManager;
+        $this->resultWriter()->setFormatterManager($formatterManager);
         return $this;
     }
 
     public function setDisplayErrorFunction(callable $fn)
     {
-        $this->displayErrorFunction = $fn;
-        return $this;
+        $this->resultWriter()->setDisplayErrorFunction($fn);
     }
 
     /**
@@ -169,6 +197,9 @@ class CommandProcessor implements LoggerAwareInterface
             return $validated;
         }
 
+        // Once we have validated the optins, create the formatter options.
+        $this->createFormatterOptions($commandData);
+
         $replaceDispatcher = new ReplaceCommandHookDispatcher($this->hookManager(), $names);
         if ($this->logger) {
             $replaceDispatcher->setLogger($this->logger);
@@ -189,119 +220,6 @@ class CommandProcessor implements LoggerAwareInterface
     }
 
     /**
-     * Handle the result output and status code calculation.
-     */
-    public function handleResults(OutputInterface $output, $names, $result, CommandData $commandData)
-    {
-        $statusCodeDispatcher = new StatusDeterminerHookDispatcher($this->hookManager(), $names);
-        $status = $statusCodeDispatcher->determineStatusCode($result);
-        // If the result is an integer and no separate status code was provided, then use the result as the status and do no output.
-        if (is_integer($result) && !isset($status)) {
-            return $result;
-        }
-        $status = $this->interpretStatusCode($status);
-
-        // Get the structured output, the output stream and the formatter
-        $extractDispatcher = new ExtracterHookDispatcher($this->hookManager(), $names);
-        $structuredOutput = $extractDispatcher->extractOutput($result);
-        $output = $this->chooseOutputStream($output, $status);
-        if ($status != 0) {
-            return $this->writeErrorMessage($output, $status, $structuredOutput, $result);
-        }
-        if ($this->dataCanBeFormatted($structuredOutput) && isset($this->formatterManager)) {
-            return $this->writeUsingFormatter($output, $structuredOutput, $commandData);
-        }
-        return $this->writeCommandOutput($output, $structuredOutput);
-    }
-
-    protected function dataCanBeFormatted($structuredOutput)
-    {
-        if (!isset($this->formatterManager)) {
-            return false;
-        }
-        return
-            is_object($structuredOutput) ||
-            is_array($structuredOutput);
-    }
-
-    /**
-     * Run the main command callback
-     */
-    protected function runCommandCallback($commandCallback, CommandData $commandData)
-    {
-        $result = false;
-        try {
-            $args = $commandData->getArgsAndOptions();
-            $result = call_user_func_array($commandCallback, $args);
-        } catch (\Exception $e) {
-            $result = $this->commandErrorForException($e);
-        }
-        return $result;
-    }
-
-    /**
-     * Determine the formatter that should be used to render
-     * output.
-     *
-     * If the user specified a format via the --format option,
-     * then always return that.  Otherwise, return the default
-     * format, unless --pipe was specified, in which case
-     * return the default pipe format, format-pipe.
-     *
-     * n.b. --pipe is a handy option introduced in Drush 2
-     * (or perhaps even Drush 1) that indicates that the command
-     * should select the output format that is most appropriate
-     * for use in scripts (e.g. to pipe to another command).
-     *
-     * @return string
-     */
-    protected function getFormat(FormatterOptions $options)
-    {
-        // In Symfony Console, there is no way for us to differentiate
-        // between the user specifying '--format=table', and the user
-        // not specifying --format when the default value is 'table'.
-        // Therefore, we must make --field always override --format; it
-        // cannot become the default value for --format.
-        if ($options->get('field')) {
-            return 'string';
-        }
-        $defaults = [];
-        if ($options->get('pipe')) {
-            return $options->get('pipe-format', [], 'tsv');
-        }
-        return $options->getFormat($defaults);
-    }
-
-    /**
-     * Determine whether we should use stdout or stderr.
-     */
-    protected function chooseOutputStream(OutputInterface $output, $status)
-    {
-        // If the status code indicates an error, then print the
-        // result to stderr rather than stdout
-        if ($status && ($output instanceof ConsoleOutputInterface)) {
-            return $output->getErrorOutput();
-        }
-        return $output;
-    }
-
-    /**
-     * Call the formatter to output the provided data.
-     */
-    protected function writeUsingFormatter(OutputInterface $output, $structuredOutput, CommandData $commandData)
-    {
-        $formatterOptions = $this->createFormatterOptions($commandData);
-        $format = $this->getFormat($formatterOptions);
-        $this->formatterManager->write(
-            $output,
-            $format,
-            $structuredOutput,
-            $formatterOptions
-        );
-        return 0;
-    }
-
-    /**
      * Create a FormatterOptions object for use in writing the formatted output.
      * @param CommandData $commandData
      * @return FormatterOptions
@@ -313,51 +231,38 @@ class CommandProcessor implements LoggerAwareInterface
         foreach ($this->prepareOptionsList as $preparer) {
             $preparer->prepare($commandData, $formatterOptions);
         }
+        $commandData->setFormatterOptions($formatterOptions);
         return $formatterOptions;
     }
 
     /**
-     * Description
-     * @param OutputInterface $output
-     * @param int $status
-     * @param string $structuredOutput
-     * @param mixed $originalResult
-     * @return type
+     * Handle the result output and status code calculation.
      */
-    protected function writeErrorMessage($output, $status, $structuredOutput, $originalResult)
+    public function handleResults(OutputInterface $output, $names, $result, CommandData $commandData)
     {
-        if (isset($this->displayErrorFunction)) {
-            call_user_func($this->displayErrorFunction, $output, $structuredOutput, $status, $originalResult);
-        } else {
-            $this->writeCommandOutput($output, $structuredOutput);
-        }
-        return $status;
+        $statusCodeDispatcher = new StatusDeterminerHookDispatcher($this->hookManager(), $names);
+        $extractDispatcher = new ExtracterHookDispatcher($this->hookManager(), $names);
+
+        return $this->resultWriter()->handle($output, $result, $commandData, $statusCodeDispatcher, $extractDispatcher);
     }
 
     /**
-     * If the result object is a string, then print it.
+     * Run the main command callback
      */
-    protected function writeCommandOutput(
-        OutputInterface $output,
-        $structuredOutput
-    ) {
-        // If there is no formatter, we will print strings,
-        // but can do no more than that.
-        if (is_string($structuredOutput)) {
-            $output->writeln($structuredOutput);
+    protected function runCommandCallback($commandCallback, CommandData $commandData)
+    {
+        $result = false;
+        try {
+            $args = $this->parameterInjection()->args($commandData);
+            $result = call_user_func_array($commandCallback, $args);
+        } catch (\Exception $e) {
+            $result = $this->commandErrorForException($e);
         }
-        return 0;
+        return $result;
     }
 
-    /**
-     * If a status code was set, then return it; otherwise,
-     * presume success.
-     */
-    protected function interpretStatusCode($status)
+    public function injectIntoCommandData($commandData, $injectedClasses)
     {
-        if (isset($status)) {
-            return $status;
-        }
-        return 0;
+        $this->parameterInjection()->injectIntoCommandData($commandData, $injectedClasses);
     }
 }

@@ -65,6 +65,7 @@ class ModuleAccessService
             return count(array_intersect($userRoles, $moduleUserRoles)) > 0;
         }
 
-        return in_array($user->user_level, $moduleUserLevels);
+        return in_array($user->user_level, $moduleUserLevels)
+            || count(array_intersect($userRoles, $moduleUserRoles)) > 0;
     }
 }

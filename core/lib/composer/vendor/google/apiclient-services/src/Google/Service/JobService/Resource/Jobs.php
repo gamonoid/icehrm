@@ -26,7 +26,7 @@
 class Google_Service_JobService_Resource_Jobs extends Google_Service_Resource
 {
   /**
-   * Deletes a list of Jobs by filter. (jobs.batchDelete)
+   * Deletes a list of Job postings by filter. (jobs.batchDelete)
    *
    * @param Google_Service_JobService_BatchDeleteJobsRequest $postBody
    * @param array $optParams Optional parameters.
@@ -143,6 +143,20 @@ class Google_Service_JobService_Resource_Jobs extends Google_Service_Resource
    *
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string filter Required.
+   *
+   * The filter string specifies the jobs to be enumerated.
+   *
+   * Supported operator: =, AND
+   *
+   * The fields eligible for filtering are:
+   *
+   * * `companyName` (Required) * `requisitionId` (Optional)
+   *
+   * Sample Query:
+   *
+   * * companyName = "companies/123" * companyName = "companies/123" AND
+   * requisitionId = "req-1"
    * @opt_param string pageToken Optional.
    *
    * The starting point of a query result.
@@ -162,20 +176,6 @@ class Google_Service_JobService_Resource_Jobs extends Google_Service_Resource
    * A typical use case is to synchronize job repositories.
    *
    * Defaults to false.
-   * @opt_param string filter Required.
-   *
-   * The filter string specifies the jobs to be enumerated.
-   *
-   * Supported operator: =, AND
-   *
-   * The fields eligible for filtering are:
-   *
-   * * `companyName` (Required) * `requisitionId` (Optional)
-   *
-   * Sample Query:
-   *
-   * * companyName = "companies/123" * companyName = "companies/123" AND
-   * requisitionId = "req-1"
    * @return Google_Service_JobService_ListJobsResponse
    */
   public function listJobs($optParams = array())
@@ -185,9 +185,9 @@ class Google_Service_JobService_Resource_Jobs extends Google_Service_Resource
     return $this->call('list', array($params), "Google_Service_JobService_ListJobsResponse");
   }
   /**
-   * Updates the specified job.
+   * Updates specified job.
    *
-   * Typically, the updated contents become visible in search results within 10
+   * Typically, updated contents become visible in search results within 10
    * seconds, but it may take up to 5 minutes. (jobs.patch)
    *
    * @param string $name Required during job update.
@@ -224,9 +224,10 @@ class Google_Service_JobService_Resource_Jobs extends Google_Service_Resource
   /**
    * Searches for jobs using the provided SearchJobsRequest.
    *
-   * This call is intended to use for large, periodic tasks such as email alert
-   * processing, and has different algorithmic adjustments that are targeted to
-   * passive job seekers.
+   * This API call is intended for the use case of targeting passive job seekers
+   * (for example, job seekers who have signed up to receive email alerts about
+   * potential job opportunities), and has different algorithmic adjustments that
+   * are targeted to passive job seekers.
    *
    * This call constrains the visibility of jobs present in the database, and only
    * returns jobs the caller has permission to search against.

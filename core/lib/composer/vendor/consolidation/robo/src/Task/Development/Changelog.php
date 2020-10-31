@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Development;
 
 use Robo\Task\BaseTask;
@@ -216,7 +217,7 @@ class Changelog extends BaseTask implements BuilderAwareInterface
     }
 
     /**
-     * @return \Robo\Result|string
+     * @return string
      */
     protected function generateBody()
     {
@@ -235,7 +236,7 @@ class Changelog extends BaseTask implements BuilderAwareInterface
     }
 
     /**
-     * @param $i
+     * @param string $i
      *
      * @return string
      */

@@ -157,7 +157,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><li class="fa fa-times"/></button>
-					<h3 id="myModalLabel"><?=t('Switch Employee')?></h3>
+					<h4 id="myModalLabel"><?=t('Switch Employee')?></h4>
 				</div>
 				<div class="modal-body">
 					<p><?=t('Select The Employee to Switch Into')?></p>

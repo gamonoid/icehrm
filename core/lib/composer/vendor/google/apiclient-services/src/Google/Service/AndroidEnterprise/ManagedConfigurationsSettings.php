@@ -15,24 +15,12 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ManagedConfigurationsSettings extends Google_Collection
+class Google_Service_AndroidEnterprise_ManagedConfigurationsSettings extends Google_Model
 {
-  protected $collection_key = 'managedProperty';
-  public $kind;
   public $lastUpdatedTimestampMillis;
-  protected $managedPropertyType = 'Google_Service_AndroidEnterprise_ManagedProperty';
-  protected $managedPropertyDataType = 'array';
   public $mcmId;
   public $name;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
   public function setLastUpdatedTimestampMillis($lastUpdatedTimestampMillis)
   {
     $this->lastUpdatedTimestampMillis = $lastUpdatedTimestampMillis;
@@ -40,20 +28,6 @@ class Google_Service_AndroidEnterprise_ManagedConfigurationsSettings extends Goo
   public function getLastUpdatedTimestampMillis()
   {
     return $this->lastUpdatedTimestampMillis;
-  }
-  /**
-   * @param Google_Service_AndroidEnterprise_ManagedProperty
-   */
-  public function setManagedProperty($managedProperty)
-  {
-    $this->managedProperty = $managedProperty;
-  }
-  /**
-   * @return Google_Service_AndroidEnterprise_ManagedProperty
-   */
-  public function getManagedProperty()
-  {
-    return $this->managedProperty;
   }
   public function setMcmId($mcmId)
   {

@@ -17,10 +17,11 @@
 
 class Google_Service_TPU_ListAcceleratorTypesResponse extends Google_Collection
 {
-  protected $collection_key = 'acceleratorTypes';
+  protected $collection_key = 'unreachable';
   protected $acceleratorTypesType = 'Google_Service_TPU_AcceleratorType';
   protected $acceleratorTypesDataType = 'array';
   public $nextPageToken;
+  public $unreachable;
 
   /**
    * @param Google_Service_TPU_AcceleratorType
@@ -43,5 +44,13 @@ class Google_Service_TPU_ListAcceleratorTypesResponse extends Google_Collection
   public function getNextPageToken()
   {
     return $this->nextPageToken;
+  }
+  public function setUnreachable($unreachable)
+  {
+    $this->unreachable = $unreachable;
+  }
+  public function getUnreachable()
+  {
+    return $this->unreachable;
   }
 }

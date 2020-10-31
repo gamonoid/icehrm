@@ -6,12 +6,15 @@
 /* eslint-disable camelcase,no-underscore-dangle */
 
 /* global d3 */
-
+import React from 'react';
+import ReactDOM from 'react-dom';
 import QRCode from 'qrcode';
 import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
+import EmployeeProfile from './components/EmployeeProfile';
 
 
-class EmployeeAdapter extends AdapterBase {
+class EmployeeAdapter extends ReactModalAdapterBase {
   constructor(endPoint, tab, filter, orderBy) {
     super(endPoint, tab, filter, orderBy);
     this.fieldNameMap = {};
@@ -60,6 +63,48 @@ class EmployeeAdapter extends AdapterBase {
       { sTitle: 'Gender' },
       { sTitle: 'Supervisor' },
     ];
+  }
+
+  initTable() {
+    this.initProfile();
+  }
+
+  initProfile(employee) {
+    const tableDom = document.getElementById(`${this.tab}`);
+    this.tableContainer = React.createRef();
+    ReactDOM.render(
+      <EmployeeProfile
+        ref={this.tableContainer}
+        adapter={this}
+        element={employee}
+      />,
+      tableDom,
+    );
+
+    this.tableContainer.current.setLoading(!employee);
+  }
+
+  get() {
+    this.initTable();
+    this.masterDataReader.updateAllMasterData()
+      .then(() => {
+        this.viewElement();
+      });
+
+    this.trackEvent('get', this.tab, this.table);
+  }
+
+  edit(id) {
+    this.setTableLoading(true);
+    this.currentId = id;
+    this.getElement(id, []);
+  }
+
+  getFormOptions() {
+    return {
+      width: 1024,
+      twoColumnLayout: false,
+    };
   }
 
   getFormFields() {
@@ -133,7 +178,7 @@ class EmployeeAdapter extends AdapterBase {
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
       ['nationality', { label: 'Nationality', type: 'select2', 'remote-source': ['Nationality', 'id', 'name'] }],
       ['birthday', { label: 'Date of Birth', type: 'date', validation: '' }],
-      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Divers', 'Divers']] }],
+      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Other', 'Other']] }],
       ['marital_status', { label: 'Marital Status', type: 'select', source: [['Married', 'Married'], ['Single', 'Single'], ['Divorced', 'Divorced'], ['Widowed', 'Widowed'], ['Other', 'Other']] }],
       ssn_num,
       ['nic_num', { label: 'NIC', type: 'text', validation: 'none' }],
@@ -179,14 +224,96 @@ class EmployeeAdapter extends AdapterBase {
     return newFields;
   }
 
+  getMappedFields() {
+    const fields = this.getFormFields();
+    const steps = [
+      {
+        title: this.gt('Personal'),
+        description: this.gt('Personal Information'),
+        fields: [
+          'id',
+          'employee_id',
+          'first_name',
+          'middle_name',
+          'last_name',
+          'nationality',
+          'birthday',
+          'gender',
+          'marital_status',
+          'ethnicity',
+        ],
+      },
+      {
+        title: this.gt('Identification'),
+        description: this.gt('Personal Information'),
+        fields: [
+          'immigration_status',
+          'ssn_num',
+          'nic_num',
+          'other_id',
+          'driving_license',
+        ],
+      },
+      {
+        title: this.gt('Work'),
+        description: this.gt('Work related details'),
+        fields: [
+          'employment_status',
+          'department',
+          'job_title',
+          'pay_grade',
+          'joined_date',
+          'confirmation_date',
+          'termination_date',
+          'work_station_id',
+        ],
+      },
+      {
+        title: this.gt('Contact'),
+        description: this.gt('Contact details'),
+        fields: [
+          'address1', 'address2',
+          'city', 'country',
+          'province', 'postal_code',
+          'home_phone', 'mobile_phone',
+          'work_phone', 'work_email',
+          'private_email',
+        ],
+      },
+    ];
+
+    if (this.customFields.length > 0) {
+      steps.push({
+        title: this.gt('Other'),
+        description: this.gt('Additional details'),
+        fields: this.customFields.map((item) => item[0]),
+      });
+    }
+
+    return this.addActualFields(steps, fields);
+  }
+
+  addActualFields(steps, fields) {
+    return steps.map((item) => {
+      item.fields = item.fields.reduce((acc, fieldName) => {
+        const field = fields.find(([name]) => name === fieldName);
+        if (field) {
+          acc.push(field);
+        }
+        return acc;
+      }, []);
+
+      return item;
+    });
+  }
+
   getSourceMapping() {
     const k = this.sourceMapping;
     k.supervisor = ['Employee', 'id', 'first_name+last_name'];
     return k;
   }
 
-
-  get() {
+  viewElement(id) {
     const sourceMappingJson = JSON.stringify(this.getSourceMapping());
 
     const req = { map: sourceMappingJson };
@@ -218,6 +345,13 @@ class EmployeeAdapter extends AdapterBase {
   }
 
   modEmployeeGetSuccessCallBack(data) {
+    const currentEmpId = data[1];
+    const userEmpId = data[2];
+    const [element] = data;
+    this.initProfile(element);
+  }
+
+  modEmployeeGetSuccessCallBack1(data) {
     const fields = this.getFormFields();
     const currentEmpId = data[1];
     const userEmpId = data[2];
@@ -692,10 +826,6 @@ class ApiAccessAdapter extends AdapterBase {
   getFormFields() {
     return [
     ];
-  }
-
-  setApiUrl(apiUrl) {
-    this.apiUrl = apiUrl; '';
   }
 
   setToken(token) {

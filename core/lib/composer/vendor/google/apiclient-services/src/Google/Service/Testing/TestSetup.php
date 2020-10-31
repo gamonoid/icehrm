@@ -23,11 +23,14 @@ class Google_Service_Testing_TestSetup extends Google_Collection
   protected $additionalApksType = 'Google_Service_Testing_Apk';
   protected $additionalApksDataType = 'array';
   public $directoriesToPull;
+  public $dontAutograntPermissions;
   protected $environmentVariablesType = 'Google_Service_Testing_EnvironmentVariable';
   protected $environmentVariablesDataType = 'array';
   protected $filesToPushType = 'Google_Service_Testing_DeviceFile';
   protected $filesToPushDataType = 'array';
   public $networkProfile;
+  protected $systraceType = 'Google_Service_Testing_SystraceSetup';
+  protected $systraceDataType = '';
 
   /**
    * @param Google_Service_Testing_Account
@@ -65,6 +68,14 @@ class Google_Service_Testing_TestSetup extends Google_Collection
   {
     return $this->directoriesToPull;
   }
+  public function setDontAutograntPermissions($dontAutograntPermissions)
+  {
+    $this->dontAutograntPermissions = $dontAutograntPermissions;
+  }
+  public function getDontAutograntPermissions()
+  {
+    return $this->dontAutograntPermissions;
+  }
   /**
    * @param Google_Service_Testing_EnvironmentVariable
    */
@@ -100,5 +111,19 @@ class Google_Service_Testing_TestSetup extends Google_Collection
   public function getNetworkProfile()
   {
     return $this->networkProfile;
+  }
+  /**
+   * @param Google_Service_Testing_SystraceSetup
+   */
+  public function setSystrace(Google_Service_Testing_SystraceSetup $systrace)
+  {
+    $this->systrace = $systrace;
+  }
+  /**
+   * @return Google_Service_Testing_SystraceSetup
+   */
+  public function getSystrace()
+  {
+    return $this->systrace;
   }
 }

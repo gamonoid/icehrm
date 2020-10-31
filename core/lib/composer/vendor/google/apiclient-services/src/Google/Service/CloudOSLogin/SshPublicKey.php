@@ -20,6 +20,7 @@ class Google_Service_CloudOSLogin_SshPublicKey extends Google_Model
   public $expirationTimeUsec;
   public $fingerprint;
   public $key;
+  public $name;
 
   public function setExpirationTimeUsec($expirationTimeUsec)
   {
@@ -44,5 +45,13 @@ class Google_Service_CloudOSLogin_SshPublicKey extends Google_Model
   public function getKey()
   {
     return $this->key;
+  }
+  public function setName($name)
+  {
+    $this->name = $name;
+  }
+  public function getName()
+  {
+    return $this->name;
   }
 }

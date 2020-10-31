@@ -45,22 +45,26 @@ class Google_Service_AndroidPublisher extends Google_Service
   public $edits_testers;
   public $edits_tracks;
   public $inappproducts;
+  public $internalappsharingartifacts;
   public $orders;
   public $purchases_products;
   public $purchases_subscriptions;
   public $purchases_voidedpurchases;
   public $reviews;
+  public $systemapks_variants;
   
   /**
    * Constructs the internal representation of the AndroidPublisher service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'androidpublisher/v3/applications/';
+    $this->rootUrl = $rootUrl ?: 'https://androidpublisher.googleapis.com/';
+    $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v3';
     $this->serviceName = 'androidpublisher';
 
@@ -71,7 +75,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'commit' => array(
-              'path' => '{packageName}/edits/{editId}:commit',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}:commit',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -86,7 +90,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'delete' => array(
-              'path' => '{packageName}/edits/{editId}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'packageName' => array(
@@ -101,7 +105,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => '{packageName}/edits/{editId}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -116,7 +120,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'insert' => array(
-              'path' => '{packageName}/edits',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -126,7 +130,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'validate' => array(
-              'path' => '{packageName}/edits/{editId}:validate',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}:validate',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -151,7 +155,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'addexternallyhosted' => array(
-              'path' => '{packageName}/edits/{editId}/apks/externallyHosted',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/apks/externallyHosted',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -166,7 +170,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{packageName}/edits/{editId}/apks',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/apks',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -181,7 +185,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'upload' => array(
-              'path' => '{packageName}/edits/{editId}/apks',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/apks',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -206,7 +210,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'list' => array(
-              'path' => '{packageName}/edits/{editId}/bundles',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/bundles',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -221,7 +225,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'upload' => array(
-              'path' => '{packageName}/edits/{editId}/bundles',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/bundles',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -233,6 +237,10 @@ class Google_Service_AndroidPublisher extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ),
+                'ackBundleInstallationWarning' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
                 ),
               ),
             ),
@@ -246,7 +254,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'upload' => array(
-              'path' => '{packageName}/edits/{editId}/apks/{apkVersionCode}/deobfuscationFiles/{deobfuscationFileType}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/deobfuscationFiles/{deobfuscationFileType}',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -281,7 +289,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => '{packageName}/edits/{editId}/details',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/details',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -296,7 +304,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => '{packageName}/edits/{editId}/details',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/details',
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'packageName' => array(
@@ -311,7 +319,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => '{packageName}/edits/{editId}/details',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/details',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'packageName' => array(
@@ -336,7 +344,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => '{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -361,7 +369,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => '{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}',
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'packageName' => array(
@@ -386,7 +394,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => '{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'packageName' => array(
@@ -411,7 +419,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'upload' => array(
-              'path' => '{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -446,7 +454,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'delete' => array(
-              'path' => '{packageName}/edits/{editId}/listings/{language}/{imageType}/{imageId}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/listings/{language}/{imageType}/{imageId}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'packageName' => array(
@@ -476,7 +484,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'deleteall' => array(
-              'path' => '{packageName}/edits/{editId}/listings/{language}/{imageType}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/listings/{language}/{imageType}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'packageName' => array(
@@ -501,7 +509,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{packageName}/edits/{editId}/listings/{language}/{imageType}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/listings/{language}/{imageType}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -526,7 +534,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'upload' => array(
-              'path' => '{packageName}/edits/{editId}/listings/{language}/{imageType}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/listings/{language}/{imageType}',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -561,7 +569,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'delete' => array(
-              'path' => '{packageName}/edits/{editId}/listings/{language}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/listings/{language}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'packageName' => array(
@@ -581,7 +589,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'deleteall' => array(
-              'path' => '{packageName}/edits/{editId}/listings',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/listings',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'packageName' => array(
@@ -596,7 +604,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => '{packageName}/edits/{editId}/listings/{language}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/listings/{language}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -616,7 +624,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{packageName}/edits/{editId}/listings',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/listings',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -631,7 +639,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => '{packageName}/edits/{editId}/listings/{language}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/listings/{language}',
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'packageName' => array(
@@ -651,7 +659,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => '{packageName}/edits/{editId}/listings/{language}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/listings/{language}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'packageName' => array(
@@ -681,7 +689,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => '{packageName}/edits/{editId}/testers/{track}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/testers/{track}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -701,7 +709,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => '{packageName}/edits/{editId}/testers/{track}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/testers/{track}',
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'packageName' => array(
@@ -721,7 +729,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => '{packageName}/edits/{editId}/testers/{track}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/testers/{track}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'packageName' => array(
@@ -751,7 +759,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => '{packageName}/edits/{editId}/tracks/{track}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/tracks/{track}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -771,7 +779,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{packageName}/edits/{editId}/tracks',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/tracks',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -786,7 +794,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => '{packageName}/edits/{editId}/tracks/{track}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/tracks/{track}',
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'packageName' => array(
@@ -806,7 +814,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => '{packageName}/edits/{editId}/tracks/{track}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/edits/{editId}/tracks/{track}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'packageName' => array(
@@ -836,7 +844,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'delete' => array(
-              'path' => '{packageName}/inappproducts/{sku}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/inappproducts/{sku}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'packageName' => array(
@@ -851,7 +859,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => '{packageName}/inappproducts/{sku}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/inappproducts/{sku}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -866,7 +874,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'insert' => array(
-              'path' => '{packageName}/inappproducts',
+              'path' => 'androidpublisher/v3/applications/{packageName}/inappproducts',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -880,7 +888,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{packageName}/inappproducts',
+              'path' => 'androidpublisher/v3/applications/{packageName}/inappproducts',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -888,11 +896,11 @@ class Google_Service_AndroidPublisher extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'maxResults' => array(
+                'startIndex' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'startIndex' => array(
+                'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
@@ -902,7 +910,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => '{packageName}/inappproducts/{sku}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/inappproducts/{sku}',
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'packageName' => array(
@@ -921,7 +929,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => '{packageName}/inappproducts/{sku}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/inappproducts/{sku}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'packageName' => array(
@@ -943,6 +951,36 @@ class Google_Service_AndroidPublisher extends Google_Service
           )
         )
     );
+    $this->internalappsharingartifacts = new Google_Service_AndroidPublisher_Resource_Internalappsharingartifacts(
+        $this,
+        $this->serviceName,
+        'internalappsharingartifacts',
+        array(
+          'methods' => array(
+            'uploadapk' => array(
+              'path' => 'androidpublisher/v3/applications/internalappsharing/{packageName}/artifacts/apk',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'packageName' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'uploadbundle' => array(
+              'path' => 'androidpublisher/v3/applications/internalappsharing/{packageName}/artifacts/bundle',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'packageName' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),
+          )
+        )
+    );
     $this->orders = new Google_Service_AndroidPublisher_Resource_Orders(
         $this,
         $this->serviceName,
@@ -950,7 +988,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'refund' => array(
-              'path' => '{packageName}/orders/{orderId}:refund',
+              'path' => 'androidpublisher/v3/applications/{packageName}/orders/{orderId}:refund',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -978,8 +1016,28 @@ class Google_Service_AndroidPublisher extends Google_Service
         'products',
         array(
           'methods' => array(
-            'get' => array(
-              'path' => '{packageName}/purchases/products/{productId}/tokens/{token}',
+            'acknowledge' => array(
+              'path' => 'androidpublisher/v3/applications/{packageName}/purchases/products/{productId}/tokens/{token}:acknowledge',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'packageName' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'productId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'token' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'get' => array(
+              'path' => 'androidpublisher/v3/applications/{packageName}/purchases/products/{productId}/tokens/{token}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -1008,8 +1066,8 @@ class Google_Service_AndroidPublisher extends Google_Service
         'subscriptions',
         array(
           'methods' => array(
-            'cancel' => array(
-              'path' => '{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:cancel',
+            'acknowledge' => array(
+              'path' => 'androidpublisher/v3/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:acknowledge',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -1028,8 +1086,23 @@ class Google_Service_AndroidPublisher extends Google_Service
                   'required' => true,
                 ),
               ),
+            ),'cancel' => array(
+              'path' => 'androidpublisher/v3/applications/{packageName}/purchases/subscriptions/tokens/{token}:cancel',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'packageName' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'token' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
             ),'defer' => array(
-              'path' => '{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:defer',
+              'path' => 'androidpublisher/v3/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:defer',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -1049,7 +1122,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => '{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -1069,7 +1142,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'refund' => array(
-              'path' => '{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:refund',
+              'path' => 'androidpublisher/v3/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:refund',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -1089,7 +1162,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'revoke' => array(
-              'path' => '{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:revoke',
+              'path' => 'androidpublisher/v3/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:revoke',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -1119,7 +1192,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'list' => array(
-              'path' => '{packageName}/purchases/voidedpurchases',
+              'path' => 'androidpublisher/v3/applications/{packageName}/purchases/voidedpurchases',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -1127,13 +1200,17 @@ class Google_Service_AndroidPublisher extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
                 'endTime' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'maxResults' => array(
+                'token' => array(
                   'location' => 'query',
-                  'type' => 'integer',
+                  'type' => 'string',
                 ),
                 'startIndex' => array(
                   'location' => 'query',
@@ -1143,9 +1220,9 @@ class Google_Service_AndroidPublisher extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'token' => array(
+                'type' => array(
                   'location' => 'query',
-                  'type' => 'string',
+                  'type' => 'integer',
                 ),
               ),
             ),
@@ -1159,7 +1236,7 @@ class Google_Service_AndroidPublisher extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => '{packageName}/reviews/{reviewId}',
+              'path' => 'androidpublisher/v3/applications/{packageName}/reviews/{reviewId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -1178,21 +1255,13 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{packageName}/reviews',
+              'path' => 'androidpublisher/v3/applications/{packageName}/reviews',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'startIndex' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
                 ),
                 'token' => array(
                   'location' => 'query',
@@ -1202,9 +1271,17 @@ class Google_Service_AndroidPublisher extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'startIndex' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
               ),
             ),'reply' => array(
-              'path' => '{packageName}/reviews/{reviewId}:reply',
+              'path' => 'androidpublisher/v3/applications/{packageName}/reviews/{reviewId}:reply',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -1213,6 +1290,86 @@ class Google_Service_AndroidPublisher extends Google_Service
                   'required' => true,
                 ),
                 'reviewId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->systemapks_variants = new Google_Service_AndroidPublisher_Resource_SystemapksVariants(
+        $this,
+        $this->serviceName,
+        'variants',
+        array(
+          'methods' => array(
+            'create' => array(
+              'path' => 'androidpublisher/v3/applications/{packageName}/systemApks/{versionCode}/variants',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'packageName' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'versionCode' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'download' => array(
+              'path' => 'androidpublisher/v3/applications/{packageName}/systemApks/{versionCode}/variants/{variantId}:download',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'packageName' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'versionCode' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'variantId' => array(
+                  'location' => 'path',
+                  'type' => 'integer',
+                  'required' => true,
+                ),
+              ),
+            ),'get' => array(
+              'path' => 'androidpublisher/v3/applications/{packageName}/systemApks/{versionCode}/variants/{variantId}',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'packageName' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'versionCode' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'variantId' => array(
+                  'location' => 'path',
+                  'type' => 'integer',
+                  'required' => true,
+                ),
+              ),
+            ),'list' => array(
+              'path' => 'androidpublisher/v3/applications/{packageName}/systemApks/{versionCode}/variants',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'packageName' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'versionCode' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,

@@ -21,6 +21,7 @@ class Google_Service_FirebaseDynamicLinks_CreateManagedShortLinkRequest extends 
   protected $dynamicLinkInfoDataType = '';
   public $longDynamicLink;
   public $name;
+  public $sdkVersion;
   protected $suffixType = 'Google_Service_FirebaseDynamicLinks_Suffix';
   protected $suffixDataType = '';
 
@@ -53,6 +54,14 @@ class Google_Service_FirebaseDynamicLinks_CreateManagedShortLinkRequest extends 
   public function getName()
   {
     return $this->name;
+  }
+  public function setSdkVersion($sdkVersion)
+  {
+    $this->sdkVersion = $sdkVersion;
+  }
+  public function getSdkVersion()
+  {
+    return $this->sdkVersion;
   }
   /**
    * @param Google_Service_FirebaseDynamicLinks_Suffix

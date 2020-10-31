@@ -268,7 +268,7 @@ class UIManager
     {
         $currentCountryCode = $currentLanguage;
         if ($currentLanguage === 'en') {
-            $currentCountryCode = 'gb';
+            $currentCountryCode = 'un';
         } elseif ($currentLanguage === 'zh') {
             $currentCountryCode = 'cn';
         } elseif ($currentLanguage === 'ja') {

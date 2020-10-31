@@ -29,7 +29,9 @@ class Google_Service_Dataflow_Resource_ProjectsLocationsJobsWorkItems extends Go
    * Leases a dataflow WorkItem to run. (workItems.lease)
    *
    * @param string $projectId Identifies the project this worker belongs to.
-   * @param string $location The location which contains the WorkItem's job.
+   * @param string $location The [regional endpoint]
+   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
+   * contains the WorkItem's job.
    * @param string $jobId Identifies the workflow job this worker belongs to.
    * @param Google_Service_Dataflow_LeaseWorkItemRequest $postBody
    * @param array $optParams Optional parameters.
@@ -46,7 +48,9 @@ class Google_Service_Dataflow_Resource_ProjectsLocationsJobsWorkItems extends Go
    * (workItems.reportStatus)
    *
    * @param string $projectId The project which owns the WorkItem's job.
-   * @param string $location The location which contains the WorkItem's job.
+   * @param string $location The [regional endpoint]
+   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
+   * contains the WorkItem's job.
    * @param string $jobId The job which the WorkItem is part of.
    * @param Google_Service_Dataflow_ReportWorkItemStatusRequest $postBody
    * @param array $optParams Optional parameters.
