@@ -23,7 +23,7 @@ web/modules/dist/*.map
 test/frontend/cypress/videos/*
 test/frontend/cypress/screenshots/*
 .gitkeep
-#web/node_modules
+web/node_modules
 /frontend/node_modules/*
 docker/development/db_data
 docker/prod/db_data
