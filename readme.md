@@ -7,7 +7,7 @@ IceHrm
 
 IceHrm is a [HRM software](https://icehrm.com) which enable companies of all sizes to [manage HR activities](https://icehrm.com)
 properly.
-- [IceHrm Demo](https://icehrm-open.gamonoid.com) 
+- [IceHrm Demo](https://icehrm.com/icehrm-demo) 
 - Feature-rich version of IceHrm (IceHrmPro) is available at [https://icehrm.com/purchase-icehrmpro](https://icehrm.com/purchase-icehrmpro)
 
 ![](docs/images/icehrm-employee-list.png)
