@@ -11,6 +11,7 @@ properly.
 - Feature-rich version of IceHrm (IceHrmPro) is available at [https://icehrm.com/purchase-icehrmpro](https://icehrm.com/purchase-icehrmpro)
 
 ![](docs/images/icehrm-employee-list.png)
+&nbsp;&nbsp;&nbsp;&nbsp;
 ![](docs/images/icehrm-dashboard.png)
 
 Getting started
