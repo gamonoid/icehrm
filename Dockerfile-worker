@@ -27,6 +27,5 @@ COPY ./docker/$EXE_ENV/config/config.php /var/www/html/app/config.php
 
 
 COPY ./docker/worker/config/ice-cron /etc/crontabs/root
-RUN rm /var/www/html/app/data/icehrm.log
 
 CMD /usr/sbin/crond -f -l 8
