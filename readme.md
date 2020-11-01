@@ -1,5 +1,3 @@
-<img src="web/images/logo-sq.png" align="right" />
-
 IceHrm
 ===========
 [![Build Status](https://travis-ci.org/gamonoid/icehrm.svg?branch=master)](https://travis-ci.org/gamonoid/icehrm)
