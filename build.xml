@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="icehrm" default="build">
  <!-- By default, we assume all tools to be on the $PATH -->
- <property name="toolsdir" value="${basedir}/tools/"/>
+ <property name="toolsdir" value="${basedir}/bin/"/>
  <property name="destination" value="${basedir}/build/app"/>
  <property name="testdir" value="${basedir}/build/test"/>
  <property name="origin" value="${basedir}"/>

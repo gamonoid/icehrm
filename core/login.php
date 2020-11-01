@@ -277,7 +277,7 @@ $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
                 <div class="col-lg-6 col-md-8 col-xs-10">
                     <div class="bg-white-2 h-100 px-11 pt-11 pb-7">
                         <div class="row d-flex justify-content-center">
-                            <img src="<?=$logoFileUrl?>"/>
+                            <img src="<?=$logoFileUrl?>" style="max-width:100%;max-height:280px;"/>
                         </div>
                         <hr/>
                         <?php if ($gsuiteEnabled) {?>
