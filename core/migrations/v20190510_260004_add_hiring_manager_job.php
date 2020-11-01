@@ -86,20 +86,6 @@ SQL;
 SQL;
         $this->executeQuery($sql);
 
-        try {
-            $candidate = new Candidate();
-            $candidates = $candidate->Find('1 = 1');
-            foreach ($candidates as $candidate) {
-                $jobApplication = new Application();
-                $jobApplications = $jobApplication->Find('candidate = ? order by created desc limit 1', [$candidate->id]);
-                if (is_array($jobApplications) && count($jobApplications) === 1) {
-                    $candidate->jobId = $jobApplications[0]->job;
-                    $candidate->Save();
-                }
-            }
-        } catch (\Exception $e) {
-        }
-
         return true;
     }
 }
