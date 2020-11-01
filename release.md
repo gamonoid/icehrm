@@ -1,3 +1,26 @@
+## Release note v28.1.0.OS
+
+### 🧲 New features
+
+* Custom user role permissions
+* Employee edit form updated
+* Employee daily task list
+* Attendance and employee distribution charts on dashboard
+* Improvements to company structure module
+* Improved tables for displaying data in several modules
+* Faster data loading (specially for employee module)
+* Initials based profile pictures
+* Re-designed login page
+* Re-designed user profile page
+* Improvements to filtering
+* New REST endpoints for employee qualifications 
+
+### 🐛 Bug fixes
+* Fixed, issue with managers being able to create performance reviews for employees who are not their direct reports
+* Fixed, issues related to using full profile image instead of using smaller version of profile image
+* Changing third gender to other
+* Improvements and fixes for internal frontend data caching
+
 ## Release note v27.0.0.OS
 
 ### New features
