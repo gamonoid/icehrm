@@ -17,12 +17,31 @@
 
 class Google_Service_SQLAdmin_BackupConfiguration extends Google_Model
 {
+  protected $backupRetentionSettingsType = 'Google_Service_SQLAdmin_BackupRetentionSettings';
+  protected $backupRetentionSettingsDataType = '';
   public $binaryLogEnabled;
   public $enabled;
   public $kind;
+  public $location;
+  public $pointInTimeRecoveryEnabled;
   public $replicationLogArchivingEnabled;
   public $startTime;
+  public $transactionLogRetentionDays;
 
+  /**
+   * @param Google_Service_SQLAdmin_BackupRetentionSettings
+   */
+  public function setBackupRetentionSettings(Google_Service_SQLAdmin_BackupRetentionSettings $backupRetentionSettings)
+  {
+    $this->backupRetentionSettings = $backupRetentionSettings;
+  }
+  /**
+   * @return Google_Service_SQLAdmin_BackupRetentionSettings
+   */
+  public function getBackupRetentionSettings()
+  {
+    return $this->backupRetentionSettings;
+  }
   public function setBinaryLogEnabled($binaryLogEnabled)
   {
     $this->binaryLogEnabled = $binaryLogEnabled;
@@ -47,6 +66,22 @@ class Google_Service_SQLAdmin_BackupConfiguration extends Google_Model
   {
     return $this->kind;
   }
+  public function setLocation($location)
+  {
+    $this->location = $location;
+  }
+  public function getLocation()
+  {
+    return $this->location;
+  }
+  public function setPointInTimeRecoveryEnabled($pointInTimeRecoveryEnabled)
+  {
+    $this->pointInTimeRecoveryEnabled = $pointInTimeRecoveryEnabled;
+  }
+  public function getPointInTimeRecoveryEnabled()
+  {
+    return $this->pointInTimeRecoveryEnabled;
+  }
   public function setReplicationLogArchivingEnabled($replicationLogArchivingEnabled)
   {
     $this->replicationLogArchivingEnabled = $replicationLogArchivingEnabled;
@@ -62,5 +97,13 @@ class Google_Service_SQLAdmin_BackupConfiguration extends Google_Model
   public function getStartTime()
   {
     return $this->startTime;
+  }
+  public function setTransactionLogRetentionDays($transactionLogRetentionDays)
+  {
+    $this->transactionLogRetentionDays = $transactionLogRetentionDays;
+  }
+  public function getTransactionLogRetentionDays()
+  {
+    return $this->transactionLogRetentionDays;
   }
 }

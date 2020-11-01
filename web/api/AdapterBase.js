@@ -4,8 +4,10 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+import IceApiClient from './IceApiClient';
 import ModuleBase from './ModuleBase';
 import RequestCache from '../api-common/RequestCache';
+import MasterDataReader from './MasterDataReader';
 
 class AdapterBase extends ModuleBase {
   constructor(endPoint, tab, filter, orderBy) {
@@ -48,6 +50,18 @@ class AdapterBase extends ModuleBase {
     this.requestCache = new RequestCache();
   }
 
+  initMasterDataReader() {
+    this.masterDataReader = new MasterDataReader(this);
+  }
+
+  setupApiClient(token) {
+    this.apiClient = new IceApiClient(this.apiUrl, token);
+  }
+
+  setApiUrl(apiUrl) {
+    this.apiUrl = apiUrl;
+  }
+
   setFilter(filter) {
     this.filter = filter;
   }
@@ -84,6 +98,19 @@ class AdapterBase extends ModuleBase {
     return this.orderBy;
   }
 
+  getFile(name) {
+    this.trackEvent('file', name);
+    return new Promise((resolve, reject) => {
+      $.getJSON(this.moduleRelativeURL, { a: 'file', name }, (data) => {
+        if (data.status === 'SUCCESS') {
+          resolve(data.data);
+        } else {
+          reject();
+        }
+      }).fail(() => reject());
+    });
+  }
+
   /**
      * @method add
      * @param object {Array} object data to be added to database
@@ -108,7 +135,13 @@ class AdapterBase extends ModuleBase {
       } else {
         that.addFailCallBack(getFunctionCallBackData, data.object);
       }
-    }, 'json').always(() => { that.hideLoader(); });
+    }, 'json')
+      .fail((e) => {
+        if (e.status === 403) {
+          that.showMessage('Access Forbidden', e.responseJSON.message);
+        }
+      })
+      .always(() => { that.hideLoader(); });
     this.trackEvent('add', this.tab, this.table);
   }
 
@@ -143,7 +176,13 @@ class AdapterBase extends ModuleBase {
       } else {
         that.deleteFailCallBack(callBackData, data.object);
       }
-    }, 'json').always(() => { that.hideLoader(); });
+    }, 'json')
+      .fail((e) => {
+        if (e.status === 403) {
+          that.showMessage('Access Forbidden', e.responseJSON.message);
+        }
+      })
+      .always(() => { that.hideLoader(); });
     this.trackEvent('delete', this.tab, this.table);
   }
 
@@ -192,7 +231,13 @@ class AdapterBase extends ModuleBase {
       } else {
         that.getFailCallBack(callBackData, data.object);
       }
-    }, 'json').always(() => { that.hideLoader(); });
+    }, 'json')
+      .fail((e) => {
+        if (e.status === 403) {
+          that.showMessage('Access Forbidden', e.responseJSON.message);
+        }
+      })
+      .always(() => { that.hideLoader(); });
 
     that.initFieldMasterData();
 
@@ -299,7 +344,13 @@ class AdapterBase extends ModuleBase {
       } else {
         that.getElementFailCallBack.apply(that, [callBackData, data.object]);
       }
-    }, 'json').always(() => { that.hideLoader(); });
+    }, 'json')
+      .fail((e) => {
+        if (e.status === 403) {
+          that.showMessage('Access Forbidden', e.responseJSON.message);
+        }
+      })
+      .always(() => { that.hideLoader(); });
     this.trackEvent('getElement', this.tab, this.table);
   }
 
@@ -357,30 +408,30 @@ class AdapterBase extends ModuleBase {
         }
         that.callFunction(callBackData.callBack, callBackData.callBackData);
       }
-    }
-
-    const callbackWraper = function (data) {
-      if (data.status === 'SUCCESS') {
-        that.requestCache.setData(this.success.key, data);
-        const localCallBackData = callBackData;
-        localCallBackData.callBackData = [callBackData.callBackData[0]];
-        localCallBackData.callBackData.push(data.data);
-        if (localCallBackData.callBackSuccess !== null && localCallBackData.callBackSuccess !== undefined) {
-          localCallBackData.callBackData.push(callBackData.callBackSuccess);
+    } else {
+      const callbackWraper = function (data) {
+        if (data.status === 'SUCCESS') {
+          that.requestCache.setData(this.success.key, data);
+          const localCallBackData = callBackData;
+          localCallBackData.callBackData = [callBackData.callBackData[0]];
+          localCallBackData.callBackData.push(data.data);
+          if (localCallBackData.callBackSuccess !== null && localCallBackData.callBackSuccess !== undefined) {
+            localCallBackData.callBackData.push(callBackData.callBackSuccess);
+          }
+          that.callFunction(localCallBackData.callBack, localCallBackData.callBackData);
+        } else if (data.message === 'Access violation') {
+          alert(`Error : ${callbackWraper.table} ${data.message}`);
         }
-        that.callFunction(localCallBackData.callBack, localCallBackData.callBackData);
-      } else if (data.message === 'Access violation') {
-        alert(`Error : ${callbackWraper.table} ${data.message}`);
-      }
-    };
+      };
 
-    callbackWraper.key = key;
-    // eslint-disable-next-line prefer-destructuring
-    callbackWraper.table = fieldMaster[0];
+      callbackWraper.key = key;
+      // eslint-disable-next-line prefer-destructuring
+      callbackWraper.table = fieldMaster[0];
 
-    $.post(this.moduleRelativeURL, {
-      t: fieldMaster[0], key: fieldMaster[1], value: fieldMaster[2], method, methodParams, a: 'getFieldValues',
-    }, callbackWraper, 'json');
+      $.post(this.moduleRelativeURL, {
+        t: fieldMaster[0], key: fieldMaster[1], value: fieldMaster[2], method, methodParams, a: 'getFieldValues',
+      }, callbackWraper, 'json');
+    }
   }
 
   setAdminProfile(empId) {

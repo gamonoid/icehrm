@@ -18,6 +18,8 @@
 class Google_Service_Directory_Building extends Google_Collection
 {
   protected $collection_key = 'floorNames';
+  protected $addressType = 'Google_Service_Directory_BuildingAddress';
+  protected $addressDataType = '';
   public $buildingId;
   public $buildingName;
   protected $coordinatesType = 'Google_Service_Directory_BuildingCoordinates';
@@ -27,6 +29,20 @@ class Google_Service_Directory_Building extends Google_Collection
   public $floorNames;
   public $kind;
 
+  /**
+   * @param Google_Service_Directory_BuildingAddress
+   */
+  public function setAddress(Google_Service_Directory_BuildingAddress $address)
+  {
+    $this->address = $address;
+  }
+  /**
+   * @return Google_Service_Directory_BuildingAddress
+   */
+  public function getAddress()
+  {
+    return $this->address;
+  }
   public function setBuildingId($buildingId)
   {
     $this->buildingId = $buildingId;

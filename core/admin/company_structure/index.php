@@ -4,6 +4,9 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Classes\PermissionManager;
+use Company\Common\Model\CompanyStructure;
+
 $moduleName = 'company_structure';
 $moduleGroup = 'admin';
 define('MODULE_PATH',dirname(__FILE__));
@@ -44,12 +47,9 @@ path.link {
 
 	<div class="tab-content">
 		<div class="tab-pane active" id="tabPageCompanyStructure">
-			<div id="CompanyStructure" class="reviewBlock" data-content="List" style="padding-left:5px;">
-
-			</div>
-			<div id="CompanyStructureForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-
-			</div>
+			<div id="CompanyStructureTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+            <div id="CompanyStructureForm"></div>
+            <div id="CompanyStructureFilterForm"></div>
 		</div>
 		<div class="tab-pane reviewBlock" id="tabPageCompanyGraph" style="overflow-x: scroll;">
 
@@ -57,24 +57,15 @@ path.link {
 	</div>
 
 </div>
+<?php
+$moduleData = [
+    'user_level' => $user->user_level,
+    'permissions' => [
+        'CompanyStructure' => PermissionManager::checkGeneralAccess(new CompanyStructure()),
+    ]
+];
+?>
 <script>
-var modJsList = new Array();
-modJsList['tabCompanyStructure'] 	= new CompanyStructureAdapter('CompanyStructure');
-
-<?php if(isset($modulePermissions['perm']['Add Company Structure']) && $modulePermissions['perm']['Add Company Structure'] == "No"){?>
-modJsList['tabCompanyStructure'].setShowAddNew(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Delete Company Structure']) && $modulePermissions['perm']['Delete Company Structure'] == "No"){?>
-modJsList['tabCompanyStructure'].setShowDelete(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Edit Company Structure']) && $modulePermissions['perm']['Edit Company Structure'] == "No"){?>
-modJsList['tabCompanyStructure'].setShowEdit(false);
-<?php }?>
-
-
-modJsList['tabCompanyGraph'] = new CompanyGraphAdapter('CompanyStructure');
-
-var modJs = modJsList['tabCompanyStructure'];
-
+  initAdminCompanyStructure(<?=json_encode($moduleData)?>);
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>

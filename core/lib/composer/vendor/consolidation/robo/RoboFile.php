@@ -5,6 +5,10 @@ class RoboFile extends \Robo\Tasks
 {
     /**
      * Run the Robo unit tests.
+     *
+     * n.b. The CI jobs use `composer unit` rather than this function
+     * to run the tests. This command also runs the remaining Codeception
+     * tests. You must re-add Codeception to the project to use this.
      */
     public function test(array $args, $options =
         [
@@ -12,7 +16,11 @@ class RoboFile extends \Robo\Tasks
             'coverage' => false
         ])
     {
-        $taskCodecept = $this->taskCodecept()
+        $collection = $this->collectionBuilder();
+
+        $taskPHPUnit = $collection->taskPHPUnit();
+
+        $taskCodecept = $collection->taskCodecept()
             ->args($args);
 
         if ($options['coverage']) {
@@ -22,7 +30,7 @@ class RoboFile extends \Robo\Tasks
             $taskCodecept->coverageHtml('../../build/logs/coverage');
         }
 
-        return $taskCodecept->run();
+        return $collection;
      }
 
     /**
@@ -59,8 +67,9 @@ class RoboFile extends \Robo\Tasks
     /**
      * Generate a new Robo task that wraps an existing utility class.
      *
-     * @param $className The name of the existing utility class to wrap.
-     * @param $wrapperClassName The name of the wrapper class to create. Optional.
+     * @param string $className The name of the existing utility class to wrap.
+     * @param string $wrapperClassName The name of the wrapper class to create. Optional.
+     *
      * @usage generate:task 'Symfony\Component\Filesystem\Filesystem' FilesystemStack
      */
     public function generateTask($className, $wrapperClassName = "")
@@ -73,6 +82,8 @@ class RoboFile extends \Robo\Tasks
      */
     public function release($opts = ['beta' => false])
     {
+        $this->checkPharReadonly();
+
         $version = \Robo\Robo::VERSION;
         $stable = !$opts['beta'];
         if ($stable) {
@@ -92,17 +103,14 @@ class RoboFile extends \Robo\Tasks
             ->push()
             ->run();
 
-        if ($stable) {
-            $this->pharPublish();
-        }
         $this->publish();
-
         $this->taskGitStack()
             ->tag($version)
-            ->push('origin master --tags')
+            ->push('origin 1.x --tags')
             ->run();
 
         if ($stable) {
+            $this->pharPublish();
             $version = $this->incrementVersion($version) . '-dev';
             $this->writeVersion($version);
 
@@ -318,7 +326,7 @@ class RoboFile extends \Robo\Tasks
         return $this->collectionBuilder()
             ->taskGitStack()
                 ->checkout('site')
-                ->merge('master')
+                ->merge('1.x')
             ->completion($this->taskGitStack()->checkout($current_branch))
             ->taskFilesystemStack()
                 ->copy('CHANGELOG.md', 'docs/changelog.md')
@@ -332,6 +340,8 @@ class RoboFile extends \Robo\Tasks
      */
     public function pharBuild()
     {
+        $this->checkPharReadonly();
+
         // Create a collection builder to hold the temporary
         // directory until the pack phar task runs.
         $collection = $this->collectionBuilder();
@@ -405,6 +415,13 @@ class RoboFile extends \Robo\Tasks
             ->run();
     }
 
+    protected function checkPharReadonly()
+    {
+        if (ini_get('phar.readonly')) {
+            throw new \Exception('Must set "phar.readonly = Off" in php.ini to build phars.');
+        }
+    }
+
     /**
      * The phar:build command removes the project requirements from the
      * 'require-dev' section that are not in the 'suggest' section.
@@ -456,7 +473,7 @@ class RoboFile extends \Robo\Tasks
                 ->add('robotheme/robo.phar')
                 ->commit('Update robo.phar to ' . \Robo\Robo::VERSION)
                 ->push('origin site')
-                ->checkout('master')
+                ->checkout('1.x')
                 ->run();
     }
 }

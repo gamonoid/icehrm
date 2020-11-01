@@ -23,6 +23,8 @@ class Google_Service_Sheets_SpreadsheetProperties extends Google_Model
   protected $iterativeCalculationSettingsType = 'Google_Service_Sheets_IterativeCalculationSettings';
   protected $iterativeCalculationSettingsDataType = '';
   public $locale;
+  protected $spreadsheetThemeType = 'Google_Service_Sheets_SpreadsheetTheme';
+  protected $spreadsheetThemeDataType = '';
   public $timeZone;
   public $title;
 
@@ -69,6 +71,20 @@ class Google_Service_Sheets_SpreadsheetProperties extends Google_Model
   public function getLocale()
   {
     return $this->locale;
+  }
+  /**
+   * @param Google_Service_Sheets_SpreadsheetTheme
+   */
+  public function setSpreadsheetTheme(Google_Service_Sheets_SpreadsheetTheme $spreadsheetTheme)
+  {
+    $this->spreadsheetTheme = $spreadsheetTheme;
+  }
+  /**
+   * @return Google_Service_Sheets_SpreadsheetTheme
+   */
+  public function getSpreadsheetTheme()
+  {
+    return $this->spreadsheetTheme;
   }
   public function setTimeZone($timeZone)
   {

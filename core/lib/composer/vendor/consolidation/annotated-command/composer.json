@@ -19,36 +19,95 @@
         }
     },
     "require": {
-        "php": ">=5.4.0",
-        "consolidation/output-formatters": "^3.1.12",
+        "php": ">=5.4.5",
+        "consolidation/output-formatters": "^3.5.1",
         "psr/log": "^1",
         "symfony/console": "^2.8|^3|^4",
         "symfony/event-dispatcher": "^2.5|^3|^4",
-        "symfony/finder": "^2.5|^3|^4"
+        "symfony/finder": "^2.5|^3|^4|^5"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8",
-        "satooshi/php-coveralls": "^1.0.2 | dev-master",
+        "phpunit/phpunit": "^6",
+        "php-coveralls/php-coveralls": "^1",
+        "g1a/composer-test-scenarios": "^3",
         "squizlabs/php_codesniffer": "^2.7"
     },
     "config": {
         "optimize-autoloader": true,
-        "preferred-install": "dist",
         "sort-packages": true,
         "platform": {
-            "php": "5.6"
+            "php": "7.0.8"
         }
     },
     "scripts": {
         "cs": "phpcs --standard=PSR2 -n src",
         "cbf": "phpcbf --standard=PSR2 -n src",
         "unit": "SHELL_INTERACTIVE=true phpunit --colors=always",
+        "lint": [
+            "find src -name '*.php' -print0 | xargs -0 -n1 php -l",
+            "find tests/src -name '*.php' -print0 | xargs -0 -n1 php -l"
+        ],
         "test": [
+            "@lint",
             "@unit",
             "@cs"
         ]
     },
     "extra": {
+        "scenarios": {
+            "finder5": {
+                "require": {
+                    "symfony/finder": "^5"
+                },
+                "config": {
+                    "platform": {
+                        "php": "7.2.5"
+                    }
+                }                
+            },
+            "symfony4": {
+                "require": {
+                    "symfony/console": "^4.0"
+                },
+                "config": {
+                    "platform": {
+                        "php": "7.1.3"
+                    }
+                }
+            },
+            "symfony2": {
+                "require": {
+                    "symfony/console": "^2.8"
+                },
+                "require-dev": {
+                    "phpunit/phpunit": "^4.8.36"
+                },
+                "remove": [
+                    "php-coveralls/php-coveralls"
+                ],
+                "config": {
+                    "platform": {
+                        "php": "5.4.8"
+                    }
+                },
+                "scenario-options": {
+                    "create-lockfile": "false"
+                }
+            },
+            "phpunit4": {
+                "require-dev": {
+                    "phpunit/phpunit": "^4.8.36"
+                },
+                "remove": [
+                    "php-coveralls/php-coveralls"
+                ],
+                "config": {
+                    "platform": {
+                        "php": "5.4.8"
+                    }
+                }
+            }
+        },
         "branch-alias": {
             "dev-master": "2.x-dev"
         }

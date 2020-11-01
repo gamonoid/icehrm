@@ -1972,3 +1972,18 @@ msgstr "Opgeslagen berekeningen"
 
 msgid "Total Leave Days"
 msgstr "Totaal aantal verlofdagen"
+
+msgid "Actions"
+msgstr "Acties"
+
+msgid "Edit"
+msgstr "Bewerk"
+
+msgid "View"
+msgstr "Bekijk"
+
+msgid "Delete"
+msgstr "Verwijder"
+
+msgid "Copy"
+msgstr "Kopieer"

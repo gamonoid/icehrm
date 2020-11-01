@@ -20,6 +20,8 @@ class Google_Service_Testing_AndroidTestLoop extends Google_Collection
   protected $collection_key = 'scenarios';
   protected $appApkType = 'Google_Service_Testing_FileReference';
   protected $appApkDataType = '';
+  protected $appBundleType = 'Google_Service_Testing_AppBundle';
+  protected $appBundleDataType = '';
   public $appPackageId;
   public $scenarioLabels;
   public $scenarios;
@@ -37,6 +39,20 @@ class Google_Service_Testing_AndroidTestLoop extends Google_Collection
   public function getAppApk()
   {
     return $this->appApk;
+  }
+  /**
+   * @param Google_Service_Testing_AppBundle
+   */
+  public function setAppBundle(Google_Service_Testing_AppBundle $appBundle)
+  {
+    $this->appBundle = $appBundle;
+  }
+  /**
+   * @return Google_Service_Testing_AppBundle
+   */
+  public function getAppBundle()
+  {
+    return $this->appBundle;
   }
   public function setAppPackageId($appPackageId)
   {

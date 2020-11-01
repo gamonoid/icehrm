@@ -17,7 +17,7 @@
 
 class Google_Service_Compute_Router extends Google_Collection
 {
-  protected $collection_key = 'interfaces';
+  protected $collection_key = 'nats';
   protected $bgpType = 'Google_Service_Compute_RouterBgp';
   protected $bgpDataType = '';
   protected $bgpPeersType = 'Google_Service_Compute_RouterBgpPeer';
@@ -29,6 +29,8 @@ class Google_Service_Compute_Router extends Google_Collection
   protected $interfacesDataType = 'array';
   public $kind;
   public $name;
+  protected $natsType = 'Google_Service_Compute_RouterNat';
+  protected $natsDataType = 'array';
   public $network;
   public $region;
   public $selfLink;
@@ -114,6 +116,20 @@ class Google_Service_Compute_Router extends Google_Collection
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param Google_Service_Compute_RouterNat
+   */
+  public function setNats($nats)
+  {
+    $this->nats = $nats;
+  }
+  /**
+   * @return Google_Service_Compute_RouterNat
+   */
+  public function getNats()
+  {
+    return $this->nats;
   }
   public function setNetwork($network)
   {

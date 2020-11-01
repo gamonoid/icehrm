@@ -22,6 +22,7 @@ class Google_Service_Dataflow_ParameterMetadata extends Google_Collection
   public $isOptional;
   public $label;
   public $name;
+  public $paramType;
   public $regexes;
 
   public function setHelpText($helpText)
@@ -55,6 +56,14 @@ class Google_Service_Dataflow_ParameterMetadata extends Google_Collection
   public function getName()
   {
     return $this->name;
+  }
+  public function setParamType($paramType)
+  {
+    $this->paramType = $paramType;
+  }
+  public function getParamType()
+  {
+    return $this->paramType;
   }
   public function setRegexes($regexes)
   {

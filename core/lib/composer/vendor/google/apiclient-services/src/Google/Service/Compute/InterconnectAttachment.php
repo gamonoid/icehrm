@@ -15,24 +15,60 @@
  * the License.
  */
 
-class Google_Service_Compute_InterconnectAttachment extends Google_Model
+class Google_Service_Compute_InterconnectAttachment extends Google_Collection
 {
+  protected $collection_key = 'candidateSubnets';
+  public $adminEnabled;
+  public $bandwidth;
+  public $candidateSubnets;
   public $cloudRouterIpAddress;
   public $creationTimestamp;
   public $customerRouterIpAddress;
   public $description;
+  public $edgeAvailabilityDomain;
   public $googleReferenceId;
   public $id;
   public $interconnect;
   public $kind;
   public $name;
   public $operationalStatus;
+  public $pairingKey;
+  public $partnerAsn;
+  protected $partnerMetadataType = 'Google_Service_Compute_InterconnectAttachmentPartnerMetadata';
+  protected $partnerMetadataDataType = '';
   protected $privateInterconnectInfoType = 'Google_Service_Compute_InterconnectAttachmentPrivateInfo';
   protected $privateInterconnectInfoDataType = '';
   public $region;
   public $router;
   public $selfLink;
+  public $state;
+  public $type;
+  public $vlanTag8021q;
 
+  public function setAdminEnabled($adminEnabled)
+  {
+    $this->adminEnabled = $adminEnabled;
+  }
+  public function getAdminEnabled()
+  {
+    return $this->adminEnabled;
+  }
+  public function setBandwidth($bandwidth)
+  {
+    $this->bandwidth = $bandwidth;
+  }
+  public function getBandwidth()
+  {
+    return $this->bandwidth;
+  }
+  public function setCandidateSubnets($candidateSubnets)
+  {
+    $this->candidateSubnets = $candidateSubnets;
+  }
+  public function getCandidateSubnets()
+  {
+    return $this->candidateSubnets;
+  }
   public function setCloudRouterIpAddress($cloudRouterIpAddress)
   {
     $this->cloudRouterIpAddress = $cloudRouterIpAddress;
@@ -64,6 +100,14 @@ class Google_Service_Compute_InterconnectAttachment extends Google_Model
   public function getDescription()
   {
     return $this->description;
+  }
+  public function setEdgeAvailabilityDomain($edgeAvailabilityDomain)
+  {
+    $this->edgeAvailabilityDomain = $edgeAvailabilityDomain;
+  }
+  public function getEdgeAvailabilityDomain()
+  {
+    return $this->edgeAvailabilityDomain;
   }
   public function setGoogleReferenceId($googleReferenceId)
   {
@@ -113,6 +157,36 @@ class Google_Service_Compute_InterconnectAttachment extends Google_Model
   {
     return $this->operationalStatus;
   }
+  public function setPairingKey($pairingKey)
+  {
+    $this->pairingKey = $pairingKey;
+  }
+  public function getPairingKey()
+  {
+    return $this->pairingKey;
+  }
+  public function setPartnerAsn($partnerAsn)
+  {
+    $this->partnerAsn = $partnerAsn;
+  }
+  public function getPartnerAsn()
+  {
+    return $this->partnerAsn;
+  }
+  /**
+   * @param Google_Service_Compute_InterconnectAttachmentPartnerMetadata
+   */
+  public function setPartnerMetadata(Google_Service_Compute_InterconnectAttachmentPartnerMetadata $partnerMetadata)
+  {
+    $this->partnerMetadata = $partnerMetadata;
+  }
+  /**
+   * @return Google_Service_Compute_InterconnectAttachmentPartnerMetadata
+   */
+  public function getPartnerMetadata()
+  {
+    return $this->partnerMetadata;
+  }
   /**
    * @param Google_Service_Compute_InterconnectAttachmentPrivateInfo
    */
@@ -150,5 +224,29 @@ class Google_Service_Compute_InterconnectAttachment extends Google_Model
   public function getSelfLink()
   {
     return $this->selfLink;
+  }
+  public function setState($state)
+  {
+    $this->state = $state;
+  }
+  public function getState()
+  {
+    return $this->state;
+  }
+  public function setType($type)
+  {
+    $this->type = $type;
+  }
+  public function getType()
+  {
+    return $this->type;
+  }
+  public function setVlanTag8021q($vlanTag8021q)
+  {
+    $this->vlanTag8021q = $vlanTag8021q;
+  }
+  public function getVlanTag8021q()
+  {
+    return $this->vlanTag8021q;
   }
 }

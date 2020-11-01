@@ -30,7 +30,7 @@ class Google_Service_CloudIot_Resource_ProjectsLocationsRegistriesDevicesConfigV
    * (i.e.: newest first).
    * (configVersions.listProjectsLocationsRegistriesDevicesConfigVersions)
    *
-   * @param string $name The name of the device. For example,
+   * @param string $name Required. The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @param array $optParams Optional parameters.

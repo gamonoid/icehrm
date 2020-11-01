@@ -20,6 +20,7 @@ class Google_Service_Compute_RegionInstanceGroupManagersListInstancesResponse ex
   protected $collection_key = 'managedInstances';
   protected $managedInstancesType = 'Google_Service_Compute_ManagedInstance';
   protected $managedInstancesDataType = 'array';
+  public $nextPageToken;
 
   /**
    * @param Google_Service_Compute_ManagedInstance
@@ -34,5 +35,13 @@ class Google_Service_Compute_RegionInstanceGroupManagersListInstancesResponse ex
   public function getManagedInstances()
   {
     return $this->managedInstances;
+  }
+  public function setNextPageToken($nextPageToken)
+  {
+    $this->nextPageToken = $nextPageToken;
+  }
+  public function getNextPageToken()
+  {
+    return $this->nextPageToken;
   }
 }

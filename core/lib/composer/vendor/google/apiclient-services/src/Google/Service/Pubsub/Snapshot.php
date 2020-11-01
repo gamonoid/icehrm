@@ -18,6 +18,7 @@
 class Google_Service_Pubsub_Snapshot extends Google_Model
 {
   public $expireTime;
+  public $labels;
   public $name;
   public $topic;
 
@@ -28,6 +29,14 @@ class Google_Service_Pubsub_Snapshot extends Google_Model
   public function getExpireTime()
   {
     return $this->expireTime;
+  }
+  public function setLabels($labels)
+  {
+    $this->labels = $labels;
+  }
+  public function getLabels()
+  {
+    return $this->labels;
   }
   public function setName($name)
   {

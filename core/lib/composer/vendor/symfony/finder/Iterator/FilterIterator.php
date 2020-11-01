@@ -18,8 +18,6 @@ namespace Symfony\Component\Finder\Iterator;
  * @see https://bugs.php.net/68557
  *
  * @author Alex Bogomazov
- *
- * @deprecated since 3.4, to be removed in 4.0.
  */
 abstract class FilterIterator extends \FilterIterator
 {

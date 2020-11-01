@@ -85,20 +85,6 @@ class Google_Service_TagManager_Resource_AccountsContainersWorkspaces extends Go
     return $this->call('get', array($params), "Google_Service_TagManager_Workspace");
   }
   /**
-   * Gets a GTM Workspace Proposal. (workspaces.getProposal)
-   *
-   * @param string $path GTM workspace proposal's relative path: Example:
-   * accounts/{aid}/containers/{cid}/workspace/{wid}/workspace_proposal
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_TagManager_WorkspaceProposal
-   */
-  public function getProposal($path, $optParams = array())
-  {
-    $params = array('path' => $path);
-    $params = array_merge($params, $optParams);
-    return $this->call('getProposal', array($params), "Google_Service_TagManager_WorkspaceProposal");
-  }
-  /**
    * Finds conflicting and modified entities in the workspace.
    * (workspaces.getStatus)
    *
@@ -197,20 +183,5 @@ class Google_Service_TagManager_Resource_AccountsContainersWorkspaces extends Go
     $params = array('path' => $path, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_TagManager_Workspace");
-  }
-  /**
-   * Updates a GTM Workspace Proposal. (workspaces.updateProposal)
-   *
-   * @param string $path GTM workspace proposal's relative path: Example:
-   * accounts/{aid}/containers/{cid}/workspace/{wid}/workspace_proposal
-   * @param Google_Service_TagManager_UpdateWorkspaceProposalRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_TagManager_WorkspaceProposal
-   */
-  public function updateProposal($path, Google_Service_TagManager_UpdateWorkspaceProposalRequest $postBody, $optParams = array())
-  {
-    $params = array('path' => $path, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('updateProposal', array($params), "Google_Service_TagManager_WorkspaceProposal");
   }
 }

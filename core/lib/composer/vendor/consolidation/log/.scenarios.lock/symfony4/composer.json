@@ -1,0 +1,60 @@
+{
+    "name": "consolidation/log",
+    "description": "Improved Psr-3 / Psr\\Log logger based on Symfony Console components.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Greg Anderson",
+            "email": "greg.1.anderson@greenknowe.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Consolidation\\Log\\": "../../src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Consolidation\\TestUtils\\": "../../tests/src"
+        }
+    },
+    "require": {
+        "symfony/console": "^4.0",
+        "php": ">=5.4.5",
+        "psr/log": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6",
+        "g1a/composer-test-scenarios": "^3",
+        "php-coveralls/php-coveralls": "^1",
+        "squizlabs/php_codesniffer": "^2"
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "cs": "phpcs -n --standard=PSR2 src",
+        "cbf": "phpcbf -n --standard=PSR2 src",
+        "unit": "phpunit",
+        "lint": [
+            "find src -name '*.php' -print0 | xargs -0 -n1 php -l",
+            "find tests/src -name '*.php' -print0 | xargs -0 -n1 php -l"
+        ],
+        "test": [
+            "@lint",
+            "@unit",
+            "@cs"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.1.3"
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "vendor-dir": "../../vendor"
+    }
+}

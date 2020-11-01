@@ -20,6 +20,8 @@ class Google_Service_Spanner_ResultSetStats extends Google_Model
   protected $queryPlanType = 'Google_Service_Spanner_QueryPlan';
   protected $queryPlanDataType = '';
   public $queryStats;
+  public $rowCountExact;
+  public $rowCountLowerBound;
 
   /**
    * @param Google_Service_Spanner_QueryPlan
@@ -42,5 +44,21 @@ class Google_Service_Spanner_ResultSetStats extends Google_Model
   public function getQueryStats()
   {
     return $this->queryStats;
+  }
+  public function setRowCountExact($rowCountExact)
+  {
+    $this->rowCountExact = $rowCountExact;
+  }
+  public function getRowCountExact()
+  {
+    return $this->rowCountExact;
+  }
+  public function setRowCountLowerBound($rowCountLowerBound)
+  {
+    $this->rowCountLowerBound = $rowCountLowerBound;
+  }
+  public function getRowCountLowerBound()
+  {
+    return $this->rowCountLowerBound;
   }
 }

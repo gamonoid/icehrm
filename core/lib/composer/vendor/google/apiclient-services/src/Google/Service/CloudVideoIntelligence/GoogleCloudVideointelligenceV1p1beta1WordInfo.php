@@ -17,10 +17,20 @@
 
 class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta1WordInfo extends Google_Model
 {
+  public $confidence;
   public $endTime;
+  public $speakerTag;
   public $startTime;
   public $word;
 
+  public function setConfidence($confidence)
+  {
+    $this->confidence = $confidence;
+  }
+  public function getConfidence()
+  {
+    return $this->confidence;
+  }
   public function setEndTime($endTime)
   {
     $this->endTime = $endTime;
@@ -28,6 +38,14 @@ class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta
   public function getEndTime()
   {
     return $this->endTime;
+  }
+  public function setSpeakerTag($speakerTag)
+  {
+    $this->speakerTag = $speakerTag;
+  }
+  public function getSpeakerTag()
+  {
+    return $this->speakerTag;
   }
   public function setStartTime($startTime)
   {

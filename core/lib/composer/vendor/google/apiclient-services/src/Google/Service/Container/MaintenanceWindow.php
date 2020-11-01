@@ -19,6 +19,10 @@ class Google_Service_Container_MaintenanceWindow extends Google_Model
 {
   protected $dailyMaintenanceWindowType = 'Google_Service_Container_DailyMaintenanceWindow';
   protected $dailyMaintenanceWindowDataType = '';
+  protected $maintenanceExclusionsType = 'Google_Service_Container_TimeWindow';
+  protected $maintenanceExclusionsDataType = 'map';
+  protected $recurringWindowType = 'Google_Service_Container_RecurringTimeWindow';
+  protected $recurringWindowDataType = '';
 
   /**
    * @param Google_Service_Container_DailyMaintenanceWindow
@@ -33,5 +37,33 @@ class Google_Service_Container_MaintenanceWindow extends Google_Model
   public function getDailyMaintenanceWindow()
   {
     return $this->dailyMaintenanceWindow;
+  }
+  /**
+   * @param Google_Service_Container_TimeWindow
+   */
+  public function setMaintenanceExclusions($maintenanceExclusions)
+  {
+    $this->maintenanceExclusions = $maintenanceExclusions;
+  }
+  /**
+   * @return Google_Service_Container_TimeWindow
+   */
+  public function getMaintenanceExclusions()
+  {
+    return $this->maintenanceExclusions;
+  }
+  /**
+   * @param Google_Service_Container_RecurringTimeWindow
+   */
+  public function setRecurringWindow(Google_Service_Container_RecurringTimeWindow $recurringWindow)
+  {
+    $this->recurringWindow = $recurringWindow;
+  }
+  /**
+   * @return Google_Service_Container_RecurringTimeWindow
+   */
+  public function getRecurringWindow()
+  {
+    return $this->recurringWindow;
   }
 }

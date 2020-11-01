@@ -28,8 +28,8 @@ class Google_Service_CloudOSLogin_Resource_UsersProjects extends Google_Service_
   /**
    * Deletes a POSIX account. (projects.delete)
    *
-   * @param string $name A reference to the POSIX account to update. POSIX
-   * accounts are identified by the project ID they are associated with. A
+   * @param string $name Required. A reference to the POSIX account to update.
+   * POSIX accounts are identified by the project ID they are associated with. A
    * reference to the POSIX account is in format
    * `users/{user}/projects/{project}`.
    * @param array $optParams Optional parameters.

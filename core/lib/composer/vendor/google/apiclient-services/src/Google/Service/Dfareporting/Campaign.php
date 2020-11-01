@@ -52,8 +52,6 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   public $kind;
   protected $lastModifiedInfoType = 'Google_Service_Dfareporting_LastModifiedInfo';
   protected $lastModifiedInfoDataType = '';
-  protected $lookbackConfigurationType = 'Google_Service_Dfareporting_LookbackConfiguration';
-  protected $lookbackConfigurationDataType = '';
   public $name;
   public $nielsenOcrEnabled;
   public $startDate;
@@ -309,20 +307,6 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   public function getLastModifiedInfo()
   {
     return $this->lastModifiedInfo;
-  }
-  /**
-   * @param Google_Service_Dfareporting_LookbackConfiguration
-   */
-  public function setLookbackConfiguration(Google_Service_Dfareporting_LookbackConfiguration $lookbackConfiguration)
-  {
-    $this->lookbackConfiguration = $lookbackConfiguration;
-  }
-  /**
-   * @return Google_Service_Dfareporting_LookbackConfiguration
-   */
-  public function getLookbackConfiguration()
-  {
-    return $this->lookbackConfiguration;
   }
   public function setName($name)
   {

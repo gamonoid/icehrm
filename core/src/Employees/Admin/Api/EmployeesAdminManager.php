@@ -12,7 +12,11 @@ use Classes\AbstractModuleManager;
 use Classes\Macaw;
 use Classes\UIManager;
 use Employees\Common\Model\Employee;
+use Employees\Rest\EmployeeCertificationsRestEndPoint;
+use Employees\Rest\EmployeeEducationRestEndPoint;
+use Employees\Rest\EmployeeLanguageRestEndPoint;
 use Employees\Rest\EmployeeRestEndPoint;
+use Employees\Rest\EmployeeSkillsRestEndPoint;
 
 class EmployeesAdminManager extends AbstractModuleManager
 {
@@ -55,6 +59,30 @@ class EmployeesAdminManager extends AbstractModuleManager
         Macaw::delete(REST_API_PATH.'employees/(:num)', function ($pathParams) {
             $empRestEndPoint = new EmployeeRestEndPoint();
             $empRestEndPoint->process('delete', $pathParams);
+        });
+
+        // Employee skills
+        Macaw::get(REST_API_PATH.'employees/(:num)/skills', function ($pathParams) {
+            $empRestEndPoint = new EmployeeSkillsRestEndPoint();
+            $empRestEndPoint->process('listAll', $pathParams);
+        });
+
+        // Employee education
+        Macaw::get(REST_API_PATH.'employees/(:num)/educations', function ($pathParams) {
+            $empRestEndPoint = new EmployeeEducationRestEndpoint();
+            $empRestEndPoint->process('listAll', $pathParams);
+        });
+
+        // Employee certifications
+        Macaw::get(REST_API_PATH.'employees/(:num)/certifications', function ($pathParams) {
+            $empRestEndPoint = new EmployeeCertificationsRestEndpoint();
+            $empRestEndPoint->process('listAll', $pathParams);
+        });
+
+        // Employee languages
+        Macaw::get(REST_API_PATH.'employees/(:num)/languages', function ($pathParams) {
+            $empRestEndPoint = new EmployeeLanguageRestEndpoint();
+            $empRestEndPoint->process('listAll', $pathParams);
         });
     }
 

@@ -26,6 +26,23 @@
 class Google_Service_Vault_Resource_MattersHolds extends Google_Service_Resource
 {
   /**
+   * Adds HeldAccounts to a hold. Returns a list of accounts that have been
+   * successfully added. Accounts can only be added to an existing account-based
+   * hold. (holds.addHeldAccounts)
+   *
+   * @param string $matterId The matter ID.
+   * @param string $holdId The hold ID.
+   * @param Google_Service_Vault_AddHeldAccountsRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Vault_AddHeldAccountsResponse
+   */
+  public function addHeldAccounts($matterId, $holdId, Google_Service_Vault_AddHeldAccountsRequest $postBody, $optParams = array())
+  {
+    $params = array('matterId' => $matterId, 'holdId' => $holdId, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('addHeldAccounts', array($params), "Google_Service_Vault_AddHeldAccountsResponse");
+  }
+  /**
    * Creates a hold in the given matter. (holds.create)
    *
    * @param string $matterId The matter ID.
@@ -90,6 +107,23 @@ class Google_Service_Vault_Resource_MattersHolds extends Google_Service_Resource
     $params = array('matterId' => $matterId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Vault_ListHoldsResponse");
+  }
+  /**
+   * Removes HeldAccounts from a hold. Returns a list of statuses in the same
+   * order as the request. If this request leaves the hold with no held accounts,
+   * the hold will not apply to any accounts. (holds.removeHeldAccounts)
+   *
+   * @param string $matterId The matter ID.
+   * @param string $holdId The hold ID.
+   * @param Google_Service_Vault_RemoveHeldAccountsRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Vault_RemoveHeldAccountsResponse
+   */
+  public function removeHeldAccounts($matterId, $holdId, Google_Service_Vault_RemoveHeldAccountsRequest $postBody, $optParams = array())
+  {
+    $params = array('matterId' => $matterId, 'holdId' => $holdId, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('removeHeldAccounts', array($params), "Google_Service_Vault_RemoveHeldAccountsResponse");
   }
   /**
    * Updates the OU and/or query parameters of a hold. You cannot add accounts to

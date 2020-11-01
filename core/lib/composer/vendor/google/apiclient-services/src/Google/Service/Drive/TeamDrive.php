@@ -27,6 +27,8 @@ class Google_Service_Drive_TeamDrive extends Google_Model
   public $id;
   public $kind;
   public $name;
+  protected $restrictionsType = 'Google_Service_Drive_TeamDriveRestrictions';
+  protected $restrictionsDataType = '';
   public $themeId;
 
   /**
@@ -104,6 +106,20 @@ class Google_Service_Drive_TeamDrive extends Google_Model
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param Google_Service_Drive_TeamDriveRestrictions
+   */
+  public function setRestrictions(Google_Service_Drive_TeamDriveRestrictions $restrictions)
+  {
+    $this->restrictions = $restrictions;
+  }
+  /**
+   * @return Google_Service_Drive_TeamDriveRestrictions
+   */
+  public function getRestrictions()
+  {
+    return $this->restrictions;
   }
   public function setThemeId($themeId)
   {

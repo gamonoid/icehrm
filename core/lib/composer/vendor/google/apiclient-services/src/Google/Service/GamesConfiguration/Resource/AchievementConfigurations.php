@@ -78,7 +78,7 @@ class Google_Service_GamesConfiguration_Resource_AchievementConfigurations exten
    *
    * @opt_param int maxResults The maximum number of resource configurations to
    * return in the response, used for paging. For any response, the actual number
-   * of resources returned may be less than the specified maxResults.
+   * of resources returned may be less than the specified `maxResults`.
    * @opt_param string pageToken The token returned by the previous request.
    * @return Google_Service_GamesConfiguration_AchievementConfigurationListResponse
    */
@@ -87,21 +87,6 @@ class Google_Service_GamesConfiguration_Resource_AchievementConfigurations exten
     $params = array('applicationId' => $applicationId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_GamesConfiguration_AchievementConfigurationListResponse");
-  }
-  /**
-   * Update the metadata of the achievement configuration with the given ID. This
-   * method supports patch semantics. (achievementConfigurations.patch)
-   *
-   * @param string $achievementId The ID of the achievement used by this method.
-   * @param Google_Service_GamesConfiguration_AchievementConfiguration $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_GamesConfiguration_AchievementConfiguration
-   */
-  public function patch($achievementId, Google_Service_GamesConfiguration_AchievementConfiguration $postBody, $optParams = array())
-  {
-    $params = array('achievementId' => $achievementId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_GamesConfiguration_AchievementConfiguration");
   }
   /**
    * Update the metadata of the achievement configuration with the given ID.

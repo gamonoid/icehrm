@@ -17,11 +17,20 @@
 
 class Google_Service_PeopleService_Gender extends Google_Model
 {
+  public $addressMeAs;
   public $formattedValue;
   protected $metadataType = 'Google_Service_PeopleService_FieldMetadata';
   protected $metadataDataType = '';
   public $value;
 
+  public function setAddressMeAs($addressMeAs)
+  {
+    $this->addressMeAs = $addressMeAs;
+  }
+  public function getAddressMeAs()
+  {
+    return $this->addressMeAs;
+  }
   public function setFormattedValue($formattedValue)
   {
     $this->formattedValue = $formattedValue;

@@ -127,9 +127,6 @@ if(empty($saveFileName) || $saveFileName == "_NEW_"){
     $saveFileName = str_replace(".", "-", $saveFileName);
 }
 
-$file = new \Model\File();
-$file->Load("name = ?",array($saveFileName));
-
 // list of valid extensions, ex. array("jpeg", "xml", "bmp")
 
 $allowedExtensions = explode(',', "csv,doc,xls,docx,xlsx,txt,ppt,pptx,rtf,pdf,xml,jpg,bmp,gif,png,jpeg");
@@ -173,10 +170,17 @@ if($uploadFilesToS3.'' == '1' && !empty($uploadFilesToS3Key) && !empty($uploadFi
 }
 
 if($result['success'] == 1){
+    if ($_POST['file_group'] === 'profile_image' && !empty($_POST['user'])) {
+        \Classes\FileService::getInstance()->deleteProfileImage(intval($_POST['user']));
+    }
+
+    $file = new \Model\File();
+    $file->Load("name = ?",array($saveFileName));
     $file->name = $saveFileName;
     $file->filename = $result['filename'];
     $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
     $file->$signInMappingField = $_POST['user']=="_NONE_"?null:$_POST['user'];
+
     $file->file_group = $_POST['file_group'];
     $file->size = $f_size;
     $file->size_text = \Classes\FileService::getInstance()->getReadableSize($f_size);

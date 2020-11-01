@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\ApiGen;
 
 trait loadTasks
@@ -6,7 +7,7 @@ trait loadTasks
     /**
      * @param null|string $pathToApiGen
      *
-     * @return \Robo\Task\ApiGen\ApiGen
+     * @return \Robo\Task\ApiGen\ApiGen|\Robo\Collection\CollectionBuilder
      */
     protected function taskApiGen($pathToApiGen = null)
     {

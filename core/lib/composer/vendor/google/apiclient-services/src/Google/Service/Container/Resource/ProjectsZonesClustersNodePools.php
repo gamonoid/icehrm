@@ -26,15 +26,16 @@
 class Google_Service_Container_Resource_ProjectsZonesClustersNodePools extends Google_Service_Resource
 {
   /**
-   * Sets the autoscaling settings for a specific node pool.
+   * Sets the autoscaling settings for the specified node pool.
    * (nodePools.autoscaling)
    *
    * @param string $projectId Deprecated. The Google Developers Console [project
    * ID or project number](https://support.google.com/cloud/answer/6158840). This
    * field has been deprecated and replaced by the name field.
    * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster resides. This
-   * field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * @param string $clusterId Deprecated. The name of the cluster to upgrade. This
    * field has been deprecated and replaced by the name field.
    * @param string $nodePoolId Deprecated. The name of the node pool to upgrade.
@@ -57,8 +58,9 @@ class Google_Service_Container_Resource_ProjectsZonesClustersNodePools extends G
    * number](https://developers.google.com/console/help/new/#projectnumber). This
    * field has been deprecated and replaced by the parent field.
    * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster resides. This
-   * field has been deprecated and replaced by the parent field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the parent
+   * field.
    * @param string $clusterId Deprecated. The name of the cluster. This field has
    * been deprecated and replaced by the parent field.
    * @param Google_Service_Container_CreateNodePoolRequest $postBody
@@ -79,8 +81,9 @@ class Google_Service_Container_Resource_ProjectsZonesClustersNodePools extends G
    * number](https://developers.google.com/console/help/new/#projectnumber). This
    * field has been deprecated and replaced by the name field.
    * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster resides. This
-   * field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * @param string $clusterId Deprecated. The name of the cluster. This field has
    * been deprecated and replaced by the name field.
    * @param string $nodePoolId Deprecated. The name of the node pool to delete.
@@ -89,7 +92,7 @@ class Google_Service_Container_Resource_ProjectsZonesClustersNodePools extends G
    *
    * @opt_param string name The name (project, location, cluster, node pool id) of
    * the node pool to delete. Specified in the format
-   * 'projects/locations/clusters/nodePools'.
+   * `projects/locations/clusters/nodePools`.
    * @return Google_Service_Container_Operation
    */
   public function delete($projectId, $zone, $clusterId, $nodePoolId, $optParams = array())
@@ -99,15 +102,16 @@ class Google_Service_Container_Resource_ProjectsZonesClustersNodePools extends G
     return $this->call('delete', array($params), "Google_Service_Container_Operation");
   }
   /**
-   * Retrieves the node pool requested. (nodePools.get)
+   * Retrieves the requested node pool. (nodePools.get)
    *
    * @param string $projectId Deprecated. The Google Developers Console [project
    * ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber). This
    * field has been deprecated and replaced by the name field.
    * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster resides. This
-   * field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * @param string $clusterId Deprecated. The name of the cluster. This field has
    * been deprecated and replaced by the name field.
    * @param string $nodePoolId Deprecated. The name of the node pool. This field
@@ -116,7 +120,7 @@ class Google_Service_Container_Resource_ProjectsZonesClustersNodePools extends G
    *
    * @opt_param string name The name (project, location, cluster, node pool id) of
    * the node pool to get. Specified in the format
-   * 'projects/locations/clusters/nodePools'.
+   * `projects/locations/clusters/nodePools`.
    * @return Google_Service_Container_NodePool
    */
   public function get($projectId, $zone, $clusterId, $nodePoolId, $optParams = array())
@@ -134,15 +138,16 @@ class Google_Service_Container_Resource_ProjectsZonesClustersNodePools extends G
    * number](https://developers.google.com/console/help/new/#projectnumber). This
    * field has been deprecated and replaced by the parent field.
    * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster resides. This
-   * field has been deprecated and replaced by the parent field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the parent
+   * field.
    * @param string $clusterId Deprecated. The name of the cluster. This field has
    * been deprecated and replaced by the parent field.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string parent The parent (project, location, cluster id) where the
    * node pools will be listed. Specified in the format
-   * 'projects/locations/clusters'.
+   * `projects/locations/clusters`.
    * @return Google_Service_Container_ListNodePoolsResponse
    */
   public function listProjectsZonesClustersNodePools($projectId, $zone, $clusterId, $optParams = array())
@@ -152,15 +157,16 @@ class Google_Service_Container_Resource_ProjectsZonesClustersNodePools extends G
     return $this->call('list', array($params), "Google_Service_Container_ListNodePoolsResponse");
   }
   /**
-   * Roll back the previously Aborted or Failed NodePool upgrade. This will be an
-   * no-op if the last upgrade successfully completed. (nodePools.rollback)
+   * Rolls back a previously Aborted or Failed NodePool upgrade. This makes no
+   * changes if the last upgrade successfully completed. (nodePools.rollback)
    *
    * @param string $projectId Deprecated. The Google Developers Console [project
    * ID or project number](https://support.google.com/cloud/answer/6158840). This
    * field has been deprecated and replaced by the name field.
    * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster resides. This
-   * field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * @param string $clusterId Deprecated. The name of the cluster to rollback.
    * This field has been deprecated and replaced by the name field.
    * @param string $nodePoolId Deprecated. The name of the node pool to rollback.
@@ -182,8 +188,9 @@ class Google_Service_Container_Resource_ProjectsZonesClustersNodePools extends G
    * ID or project number](https://support.google.com/cloud/answer/6158840). This
    * field has been deprecated and replaced by the name field.
    * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster resides. This
-   * field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * @param string $clusterId Deprecated. The name of the cluster to update. This
    * field has been deprecated and replaced by the name field.
    * @param string $nodePoolId Deprecated. The name of the node pool to update.
@@ -205,8 +212,9 @@ class Google_Service_Container_Resource_ProjectsZonesClustersNodePools extends G
    * ID or project number](https://support.google.com/cloud/answer/6158840). This
    * field has been deprecated and replaced by the name field.
    * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster resides. This
-   * field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * @param string $clusterId Deprecated. The name of the cluster to update. This
    * field has been deprecated and replaced by the name field.
    * @param string $nodePoolId Deprecated. The name of the node pool to update.
@@ -222,15 +230,16 @@ class Google_Service_Container_Resource_ProjectsZonesClustersNodePools extends G
     return $this->call('setSize', array($params), "Google_Service_Container_Operation");
   }
   /**
-   * Updates the version and/or image type for a specific node pool.
+   * Updates the version and/or image type for the specified node pool.
    * (nodePools.update)
    *
    * @param string $projectId Deprecated. The Google Developers Console [project
    * ID or project number](https://support.google.com/cloud/answer/6158840). This
    * field has been deprecated and replaced by the name field.
    * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) in which the cluster resides. This
-   * field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * @param string $clusterId Deprecated. The name of the cluster to upgrade. This
    * field has been deprecated and replaced by the name field.
    * @param string $nodePoolId Deprecated. The name of the node pool to upgrade.

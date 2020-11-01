@@ -19,8 +19,7 @@ class Google_Service_TagManager_Environment extends Google_Model
 {
   public $accountId;
   public $authorizationCode;
-  protected $authorizationTimestampType = 'Google_Service_TagManager_Timestamp';
-  protected $authorizationTimestampDataType = '';
+  public $authorizationTimestamp;
   public $containerId;
   public $containerVersionId;
   public $description;
@@ -50,16 +49,10 @@ class Google_Service_TagManager_Environment extends Google_Model
   {
     return $this->authorizationCode;
   }
-  /**
-   * @param Google_Service_TagManager_Timestamp
-   */
-  public function setAuthorizationTimestamp(Google_Service_TagManager_Timestamp $authorizationTimestamp)
+  public function setAuthorizationTimestamp($authorizationTimestamp)
   {
     $this->authorizationTimestamp = $authorizationTimestamp;
   }
-  /**
-   * @return Google_Service_TagManager_Timestamp
-   */
   public function getAuthorizationTimestamp()
   {
     return $this->authorizationTimestamp;

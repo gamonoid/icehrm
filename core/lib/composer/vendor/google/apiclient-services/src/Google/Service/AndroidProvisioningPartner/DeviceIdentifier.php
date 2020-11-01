@@ -20,6 +20,7 @@ class Google_Service_AndroidProvisioningPartner_DeviceIdentifier extends Google_
   public $imei;
   public $manufacturer;
   public $meid;
+  public $model;
   public $serialNumber;
 
   public function setImei($imei)
@@ -45,6 +46,14 @@ class Google_Service_AndroidProvisioningPartner_DeviceIdentifier extends Google_
   public function getMeid()
   {
     return $this->meid;
+  }
+  public function setModel($model)
+  {
+    $this->model = $model;
+  }
+  public function getModel()
+  {
+    return $this->model;
   }
   public function setSerialNumber($serialNumber)
   {

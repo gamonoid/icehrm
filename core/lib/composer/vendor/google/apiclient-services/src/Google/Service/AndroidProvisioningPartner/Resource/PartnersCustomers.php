@@ -28,8 +28,9 @@ class Google_Service_AndroidProvisioningPartner_Resource_PartnersCustomers exten
   /**
    * Creates a customer for zero-touch enrollment. After the method returns
    * successfully, admin and owner roles can manage devices and EMM configs by
-   * calling API methods or using their zero-touch enrollment portal. The API
-   * doesn't notify the customer that they have access. (customers.create)
+   * calling API methods or using their zero-touch enrollment portal. The customer
+   * receives an email that welcomes them to zero-touch enrollment and explains
+   * how to sign into the portal. (customers.create)
    *
    * @param string $parent Required. The parent resource ID in the format
    * `partners/[PARTNER_ID]` that identifies the reseller.
@@ -51,6 +52,11 @@ class Google_Service_AndroidProvisioningPartner_Resource_PartnersCustomers exten
    *
    * @param string $partnerId Required. The ID of the reseller partner.
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param int pageSize The maximum number of results to be returned. If not
+   * specified or 0, all the records are returned.
+   * @opt_param string pageToken A token identifying a page of results returned by
+   * the server.
    * @return Google_Service_AndroidProvisioningPartner_ListCustomersResponse
    */
   public function listPartnersCustomers($partnerId, $optParams = array())

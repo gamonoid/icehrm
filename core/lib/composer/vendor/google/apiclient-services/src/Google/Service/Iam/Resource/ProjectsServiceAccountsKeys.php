@@ -26,13 +26,13 @@
 class Google_Service_Iam_Resource_ProjectsServiceAccountsKeys extends Google_Service_Resource
 {
   /**
-   * Creates a ServiceAccountKey and returns it. (keys.create)
+   * Creates a ServiceAccountKey. (keys.create)
    *
-   * @param string $name The resource name of the service account in the following
-   * format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a
-   * wildcard for the `PROJECT_ID` will infer the project from the account. The
-   * `ACCOUNT` value can be the `email` address or the `unique_id` of the service
-   * account.
+   * @param string $name Required. The resource name of the service account in the
+   * following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using
+   * `-` as a wildcard for the `PROJECT_ID` will infer the project from the
+   * account. The `ACCOUNT` value can be the `email` address or the `unique_id` of
+   * the service account.
    * @param Google_Service_Iam_CreateServiceAccountKeyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Iam_ServiceAccountKey
@@ -44,10 +44,12 @@ class Google_Service_Iam_Resource_ProjectsServiceAccountsKeys extends Google_Ser
     return $this->call('create', array($params), "Google_Service_Iam_ServiceAccountKey");
   }
   /**
-   * Deletes a ServiceAccountKey. (keys.delete)
+   * Deletes a ServiceAccountKey. Deleting a service account key does not revoke
+   * short-lived credentials that have been issued based on the service account
+   * key. (keys.delete)
    *
-   * @param string $name The resource name of the service account key in the
-   * following format:
+   * @param string $name Required. The resource name of the service account key in
+   * the following format:
    * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`. Using `-` as a
    * wildcard for the `PROJECT_ID` will infer the project from the account. The
    * `ACCOUNT` value can be the `email` address or the `unique_id` of the service
@@ -62,15 +64,14 @@ class Google_Service_Iam_Resource_ProjectsServiceAccountsKeys extends Google_Ser
     return $this->call('delete', array($params), "Google_Service_Iam_IamEmpty");
   }
   /**
-   * Gets the ServiceAccountKey by key id. (keys.get)
+   * Gets a ServiceAccountKey. (keys.get)
    *
-   * @param string $name The resource name of the service account key in the
-   * following format:
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
-   *
-   * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the
-   * account. The `ACCOUNT` value can be the `email` address or the `unique_id` of
-   * the service account.
+   * @param string $name Required. The resource name of the service account key in
+   * the following format:
+   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`. Using `-` as a
+   * wildcard for the `PROJECT_ID` will infer the project from the account. The
+   * `ACCOUNT` value can be the `email` address or the `unique_id` of the service
+   * account.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string publicKeyType The output format of the public key
@@ -84,12 +85,12 @@ class Google_Service_Iam_Resource_ProjectsServiceAccountsKeys extends Google_Ser
     return $this->call('get', array($params), "Google_Service_Iam_ServiceAccountKey");
   }
   /**
-   * Lists ServiceAccountKeys. (keys.listProjectsServiceAccountsKeys)
+   * Lists every ServiceAccountKey for a service account.
+   * (keys.listProjectsServiceAccountsKeys)
    *
-   * @param string $name The resource name of the service account in the following
-   * format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-   *
-   * Using `-` as a wildcard for the `PROJECT_ID`, will infer the project from the
+   * @param string $name Required. The resource name of the service account in the
+   * following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using
+   * `-` as a wildcard for the `PROJECT_ID`, will infer the project from the
    * account. The `ACCOUNT` value can be the `email` address or the `unique_id` of
    * the service account.
    * @param array $optParams Optional parameters.
@@ -104,5 +105,24 @@ class Google_Service_Iam_Resource_ProjectsServiceAccountsKeys extends Google_Ser
     $params = array('name' => $name);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Iam_ListServiceAccountKeysResponse");
+  }
+  /**
+   * Creates a ServiceAccountKey, using a public key that you provide.
+   * (keys.upload)
+   *
+   * @param string $name The resource name of the service account in the following
+   * format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a
+   * wildcard for the `PROJECT_ID` will infer the project from the account. The
+   * `ACCOUNT` value can be the `email` address or the `unique_id` of the service
+   * account.
+   * @param Google_Service_Iam_UploadServiceAccountKeyRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Iam_ServiceAccountKey
+   */
+  public function upload($name, Google_Service_Iam_UploadServiceAccountKeyRequest $postBody, $optParams = array())
+  {
+    $params = array('name' => $name, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('upload', array($params), "Google_Service_Iam_ServiceAccountKey");
   }
 }

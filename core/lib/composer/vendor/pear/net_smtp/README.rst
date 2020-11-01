@@ -35,7 +35,7 @@ parameter::
 is now enabled by default. Although not recommended, `$socket_options` can be
 used to disable peer verification (as shown above).
 
-.. _OpenSSL changes: http://php.net/manual/en/migration56.openssl.php
+.. _OpenSSL changes: https://php.net/manual/en/migration56.openssl.php
 
 The ``Auth_SASL`` Package
 -------------------------
@@ -56,7 +56,7 @@ error occurs.  The standard way to check for a PEAR_Error object is by using
         die($error->getMessage());
     }
 
-.. _PEAR::isError(): http://pear.php.net/manual/en/core.pear.pear.iserror.php
+.. _PEAR::isError(): https://pear.php.net/manual/en/core.pear.pear.iserror.php
 
 SMTP Authentication
 ===================
@@ -65,19 +65,36 @@ The Net_SMTP package supports the SMTP authentication standard (as defined
 by RFC-2554_).  The Net_SMTP package supports the following authentication
 methods, in order of preference:
 
-.. _RFC-2554: http://www.ietf.org/rfc/rfc2554.txt
+.. _RFC-2554: https://www.ietf.org/rfc/rfc2554.txt
+
+GSSAPI
+------
+
+The GSSAPI authentication method uses Kerberos 5 protocol (RFC-4120_).
+Does not use user/password.
+Requires Service Principal ``gssapi_principal`` parameter and
+has an optional Credentials Cache ``gssapi_cname`` parameter.
+Requires DNS and Key Distribution Center (KDC) setup.
+It is considered the most secure method of SMTP authentication.
+
+**Note:** The GSSAPI authentication method is only supported
+if the krb5_ php extension is available.
+
+.. _RFC-4120: https://tools.ietf.org/html/rfc4120
+.. _krb5: https://pecl.php.net/package/krb5
 
 DIGEST-MD5
 ----------
 
 The DIGEST-MD5 authentication method uses `RSA Data Security Inc.`_'s MD5
-Message Digest algorithm.  It is considered the most secure method of SMTP
-authentication.
+Message Digest algorithm.  It is considered a more secure method of SMTP
+authentication than PLAIN or LOGIN, while still vulnerable to MitM attacks
+without TLS/SSL.
 
 **Note:** The DIGEST-MD5 authentication method is only supported if the
 AUTH_SASL_ package is available.
 
-.. _RSA Data Security Inc.: http://www.rsasecurity.com/
+.. _RSA Data Security Inc.: https://www.rsasecurity.com/
 
 CRAM-MD5
 --------
@@ -97,13 +114,21 @@ Base64_ encoding scheme.  Because decrypting a Base64-encoded string is
 trivial, LOGIN is not considered a secure authentication method and should
 be avoided.
 
-.. _Base64: http://www.php.net/manual/en/function.base64-encode.php
+.. _Base64: https://www.php.net/manual/en/function.base64-encode.php
 
 PLAIN
 -----
 
 The PLAIN authentication method sends the user's password in plain text.
 This method of authentication is not secure and should be avoided.
+
+XOAUTH2
+-------
+
+The XOAUTH2 authentication method sends a username and an OAuth2 access token
+as per `Gmail's SASL XOAUTH2 documentation`__.
+
+.. __: https://developers.google.com/gmail/imap/xoauth2-protocol#smtp_protocol_exchange
 
 Secure Connections
 ==================
@@ -116,7 +141,7 @@ establish a secure connection to the remote SMTP server::
 This example connects to ``mail.example.com`` on port 465 (a common SMTPS
 port) using the ``ssl://`` transport.
 
-.. _secure socket transports: http://www.php.net/transports
+.. _secure socket transports: https://www.php.net/transports
 
 Sending Data
 ============
@@ -177,7 +202,7 @@ function `by reference`_.  This means that you can operate directly on
 ``$data``.  It also the overhead of copying a large ``$data`` string to and
 from the ``quotedata()`` method.
 
-.. _by reference: http://www.php.net/manual/en/language.references.pass.php
+.. _by reference: https://www.php.net/manual/en/language.references.pass.php
 
 Server Responses
 ================
@@ -260,8 +285,8 @@ using the Net_SMTP package::
     /* Disconnect from the SMTP server. */
     $smtp->disconnect();
 
-.. _PEAR_Error: http://pear.php.net/manual/en/core.pear.pear-error.php
-.. _Net_Socket: http://pear.php.net/package/Net_Socket
-.. _Auth_SASL: http://pear.php.net/package/Auth_SASL
+.. _PEAR_Error: https://pear.php.net/manual/en/core.pear.pear-error.php
+.. _Net_Socket: https://pear.php.net/package/Net_Socket
+.. _Auth_SASL: https://pear.php.net/package/Auth_SASL
 
 .. vim: tabstop=4 shiftwidth=4 softtabstop=4 expandtab textwidth=78 ft=rst:

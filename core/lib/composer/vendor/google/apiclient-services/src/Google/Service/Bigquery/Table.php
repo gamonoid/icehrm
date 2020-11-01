@@ -33,12 +33,22 @@ class Google_Service_Bigquery_Table extends Google_Model
   public $labels;
   public $lastModifiedTime;
   public $location;
+  protected $materializedViewType = 'Google_Service_Bigquery_MaterializedViewDefinition';
+  protected $materializedViewDataType = '';
+  protected $modelType = 'Google_Service_Bigquery_ModelDefinition';
+  protected $modelDataType = '';
   public $numBytes;
   public $numLongTermBytes;
+  public $numPhysicalBytes;
   public $numRows;
+  protected $rangePartitioningType = 'Google_Service_Bigquery_RangePartitioning';
+  protected $rangePartitioningDataType = '';
+  public $requirePartitionFilter;
   protected $schemaType = 'Google_Service_Bigquery_TableSchema';
   protected $schemaDataType = '';
   public $selfLink;
+  protected $snapshotDefinitionType = 'Google_Service_Bigquery_SnapshotDefinition';
+  protected $snapshotDefinitionDataType = '';
   protected $streamingBufferType = 'Google_Service_Bigquery_Streamingbuffer';
   protected $streamingBufferDataType = '';
   protected $tableReferenceType = 'Google_Service_Bigquery_TableReference';
@@ -171,6 +181,34 @@ class Google_Service_Bigquery_Table extends Google_Model
   {
     return $this->location;
   }
+  /**
+   * @param Google_Service_Bigquery_MaterializedViewDefinition
+   */
+  public function setMaterializedView(Google_Service_Bigquery_MaterializedViewDefinition $materializedView)
+  {
+    $this->materializedView = $materializedView;
+  }
+  /**
+   * @return Google_Service_Bigquery_MaterializedViewDefinition
+   */
+  public function getMaterializedView()
+  {
+    return $this->materializedView;
+  }
+  /**
+   * @param Google_Service_Bigquery_ModelDefinition
+   */
+  public function setModel(Google_Service_Bigquery_ModelDefinition $model)
+  {
+    $this->model = $model;
+  }
+  /**
+   * @return Google_Service_Bigquery_ModelDefinition
+   */
+  public function getModel()
+  {
+    return $this->model;
+  }
   public function setNumBytes($numBytes)
   {
     $this->numBytes = $numBytes;
@@ -187,6 +225,14 @@ class Google_Service_Bigquery_Table extends Google_Model
   {
     return $this->numLongTermBytes;
   }
+  public function setNumPhysicalBytes($numPhysicalBytes)
+  {
+    $this->numPhysicalBytes = $numPhysicalBytes;
+  }
+  public function getNumPhysicalBytes()
+  {
+    return $this->numPhysicalBytes;
+  }
   public function setNumRows($numRows)
   {
     $this->numRows = $numRows;
@@ -194,6 +240,28 @@ class Google_Service_Bigquery_Table extends Google_Model
   public function getNumRows()
   {
     return $this->numRows;
+  }
+  /**
+   * @param Google_Service_Bigquery_RangePartitioning
+   */
+  public function setRangePartitioning(Google_Service_Bigquery_RangePartitioning $rangePartitioning)
+  {
+    $this->rangePartitioning = $rangePartitioning;
+  }
+  /**
+   * @return Google_Service_Bigquery_RangePartitioning
+   */
+  public function getRangePartitioning()
+  {
+    return $this->rangePartitioning;
+  }
+  public function setRequirePartitionFilter($requirePartitionFilter)
+  {
+    $this->requirePartitionFilter = $requirePartitionFilter;
+  }
+  public function getRequirePartitionFilter()
+  {
+    return $this->requirePartitionFilter;
   }
   /**
    * @param Google_Service_Bigquery_TableSchema
@@ -216,6 +284,20 @@ class Google_Service_Bigquery_Table extends Google_Model
   public function getSelfLink()
   {
     return $this->selfLink;
+  }
+  /**
+   * @param Google_Service_Bigquery_SnapshotDefinition
+   */
+  public function setSnapshotDefinition(Google_Service_Bigquery_SnapshotDefinition $snapshotDefinition)
+  {
+    $this->snapshotDefinition = $snapshotDefinition;
+  }
+  /**
+   * @return Google_Service_Bigquery_SnapshotDefinition
+   */
+  public function getSnapshotDefinition()
+  {
+    return $this->snapshotDefinition;
   }
   /**
    * @param Google_Service_Bigquery_Streamingbuffer

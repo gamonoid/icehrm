@@ -20,7 +20,9 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1Job extends Googl
   public $createTime;
   public $endTime;
   public $errorMessage;
+  public $etag;
   public $jobId;
+  public $labels;
   protected $predictionInputType = 'Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1PredictionInput';
   protected $predictionInputDataType = '';
   protected $predictionOutputType = 'Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1PredictionOutput';
@@ -56,6 +58,14 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1Job extends Googl
   {
     return $this->errorMessage;
   }
+  public function setEtag($etag)
+  {
+    $this->etag = $etag;
+  }
+  public function getEtag()
+  {
+    return $this->etag;
+  }
   public function setJobId($jobId)
   {
     $this->jobId = $jobId;
@@ -63,6 +73,14 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1Job extends Googl
   public function getJobId()
   {
     return $this->jobId;
+  }
+  public function setLabels($labels)
+  {
+    $this->labels = $labels;
+  }
+  public function getLabels()
+  {
+    return $this->labels;
   }
   /**
    * @param Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1PredictionInput

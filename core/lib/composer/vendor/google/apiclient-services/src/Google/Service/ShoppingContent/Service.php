@@ -26,9 +26,14 @@ class Google_Service_ShoppingContent_Service extends Google_Collection
   public $eligibility;
   protected $minimumOrderValueType = 'Google_Service_ShoppingContent_Price';
   protected $minimumOrderValueDataType = '';
+  protected $minimumOrderValueTableType = 'Google_Service_ShoppingContent_MinimumOrderValueTable';
+  protected $minimumOrderValueTableDataType = '';
   public $name;
+  protected $pickupServiceType = 'Google_Service_ShoppingContent_PickupCarrierService';
+  protected $pickupServiceDataType = '';
   protected $rateGroupsType = 'Google_Service_ShoppingContent_RateGroup';
   protected $rateGroupsDataType = 'array';
+  public $shipmentType;
 
   public function setActive($active)
   {
@@ -90,6 +95,20 @@ class Google_Service_ShoppingContent_Service extends Google_Collection
   {
     return $this->minimumOrderValue;
   }
+  /**
+   * @param Google_Service_ShoppingContent_MinimumOrderValueTable
+   */
+  public function setMinimumOrderValueTable(Google_Service_ShoppingContent_MinimumOrderValueTable $minimumOrderValueTable)
+  {
+    $this->minimumOrderValueTable = $minimumOrderValueTable;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_MinimumOrderValueTable
+   */
+  public function getMinimumOrderValueTable()
+  {
+    return $this->minimumOrderValueTable;
+  }
   public function setName($name)
   {
     $this->name = $name;
@@ -97,6 +116,20 @@ class Google_Service_ShoppingContent_Service extends Google_Collection
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param Google_Service_ShoppingContent_PickupCarrierService
+   */
+  public function setPickupService(Google_Service_ShoppingContent_PickupCarrierService $pickupService)
+  {
+    $this->pickupService = $pickupService;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_PickupCarrierService
+   */
+  public function getPickupService()
+  {
+    return $this->pickupService;
   }
   /**
    * @param Google_Service_ShoppingContent_RateGroup
@@ -111,5 +144,13 @@ class Google_Service_ShoppingContent_Service extends Google_Collection
   public function getRateGroups()
   {
     return $this->rateGroups;
+  }
+  public function setShipmentType($shipmentType)
+  {
+    $this->shipmentType = $shipmentType;
+  }
+  public function getShipmentType()
+  {
+    return $this->shipmentType;
   }
 }

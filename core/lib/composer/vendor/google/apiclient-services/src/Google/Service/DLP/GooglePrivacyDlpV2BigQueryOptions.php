@@ -18,13 +18,30 @@
 class Google_Service_DLP_GooglePrivacyDlpV2BigQueryOptions extends Google_Collection
 {
   protected $collection_key = 'identifyingFields';
+  protected $excludedFieldsType = 'Google_Service_DLP_GooglePrivacyDlpV2FieldId';
+  protected $excludedFieldsDataType = 'array';
   protected $identifyingFieldsType = 'Google_Service_DLP_GooglePrivacyDlpV2FieldId';
   protected $identifyingFieldsDataType = 'array';
   public $rowsLimit;
+  public $rowsLimitPercent;
   public $sampleMethod;
   protected $tableReferenceType = 'Google_Service_DLP_GooglePrivacyDlpV2BigQueryTable';
   protected $tableReferenceDataType = '';
 
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2FieldId
+   */
+  public function setExcludedFields($excludedFields)
+  {
+    $this->excludedFields = $excludedFields;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2FieldId
+   */
+  public function getExcludedFields()
+  {
+    return $this->excludedFields;
+  }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2FieldId
    */
@@ -46,6 +63,14 @@ class Google_Service_DLP_GooglePrivacyDlpV2BigQueryOptions extends Google_Collec
   public function getRowsLimit()
   {
     return $this->rowsLimit;
+  }
+  public function setRowsLimitPercent($rowsLimitPercent)
+  {
+    $this->rowsLimitPercent = $rowsLimitPercent;
+  }
+  public function getRowsLimitPercent()
+  {
+    return $this->rowsLimitPercent;
   }
   public function setSampleMethod($sampleMethod)
   {

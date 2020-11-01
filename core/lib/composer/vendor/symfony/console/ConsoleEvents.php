@@ -24,6 +24,8 @@ final class ConsoleEvents
      * before they are handled to the command.
      *
      * @Event("Symfony\Component\Console\Event\ConsoleCommandEvent")
+     *
+     * @var string
      */
     const COMMAND = 'console.command';
 
@@ -32,6 +34,8 @@ final class ConsoleEvents
      * executed by the console.
      *
      * @Event("Symfony\Component\Console\Event\ConsoleTerminateEvent")
+     *
+     * @var string
      */
     const TERMINATE = 'console.terminate';
 
@@ -44,6 +48,8 @@ final class ConsoleEvents
      *
      * @Event("Symfony\Component\Console\Event\ConsoleExceptionEvent")
      *
+     * @var string
+     *
      * @deprecated The console.exception event is deprecated since version 3.3 and will be removed in 4.0. Use the console.error event instead.
      */
     const EXCEPTION = 'console.exception';
@@ -55,6 +61,8 @@ final class ConsoleEvents
      * to modify the thrown exception.
      *
      * @Event("Symfony\Component\Console\Event\ConsoleErrorEvent")
+     *
+     * @var string
      */
     const ERROR = 'console.error';
 }

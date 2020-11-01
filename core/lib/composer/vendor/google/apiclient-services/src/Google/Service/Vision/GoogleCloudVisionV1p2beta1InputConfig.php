@@ -17,10 +17,19 @@
 
 class Google_Service_Vision_GoogleCloudVisionV1p2beta1InputConfig extends Google_Model
 {
+  public $content;
   protected $gcsSourceType = 'Google_Service_Vision_GoogleCloudVisionV1p2beta1GcsSource';
   protected $gcsSourceDataType = '';
   public $mimeType;
 
+  public function setContent($content)
+  {
+    $this->content = $content;
+  }
+  public function getContent()
+  {
+    return $this->content;
+  }
   /**
    * @param Google_Service_Vision_GoogleCloudVisionV1p2beta1GcsSource
    */

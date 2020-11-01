@@ -19,6 +19,7 @@ class Google_Service_DLP_GooglePrivacyDlpV2CloudStorageOptions extends Google_Co
 {
   protected $collection_key = 'fileTypes';
   public $bytesLimitPerFile;
+  public $bytesLimitPerFilePercent;
   protected $fileSetType = 'Google_Service_DLP_GooglePrivacyDlpV2FileSet';
   protected $fileSetDataType = '';
   public $fileTypes;
@@ -32,6 +33,14 @@ class Google_Service_DLP_GooglePrivacyDlpV2CloudStorageOptions extends Google_Co
   public function getBytesLimitPerFile()
   {
     return $this->bytesLimitPerFile;
+  }
+  public function setBytesLimitPerFilePercent($bytesLimitPerFilePercent)
+  {
+    $this->bytesLimitPerFilePercent = $bytesLimitPerFilePercent;
+  }
+  public function getBytesLimitPerFilePercent()
+  {
+    return $this->bytesLimitPerFilePercent;
   }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2FileSet

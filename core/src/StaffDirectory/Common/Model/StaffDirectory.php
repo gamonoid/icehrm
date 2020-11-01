@@ -15,7 +15,7 @@ use Model\BaseModel;
 class StaffDirectory extends Employee
 {
     // @codingStandardsIgnoreStart
-    public function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
+    public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
         // @codingStandardsIgnoreEnd
         $res = parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);

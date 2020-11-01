@@ -20,8 +20,19 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   protected $collection_key = 'desiredLocations';
   protected $desiredAddonsConfigType = 'Google_Service_Container_AddonsConfig';
   protected $desiredAddonsConfigDataType = '';
+  protected $desiredBinaryAuthorizationType = 'Google_Service_Container_BinaryAuthorization';
+  protected $desiredBinaryAuthorizationDataType = '';
+  protected $desiredClusterAutoscalingType = 'Google_Service_Container_ClusterAutoscaling';
+  protected $desiredClusterAutoscalingDataType = '';
+  protected $desiredDatabaseEncryptionType = 'Google_Service_Container_DatabaseEncryption';
+  protected $desiredDatabaseEncryptionDataType = '';
+  protected $desiredDefaultSnatStatusType = 'Google_Service_Container_DefaultSnatStatus';
+  protected $desiredDefaultSnatStatusDataType = '';
   public $desiredImageType;
+  protected $desiredIntraNodeVisibilityConfigType = 'Google_Service_Container_IntraNodeVisibilityConfig';
+  protected $desiredIntraNodeVisibilityConfigDataType = '';
   public $desiredLocations;
+  public $desiredLoggingService;
   protected $desiredMasterAuthorizedNetworksConfigType = 'Google_Service_Container_MasterAuthorizedNetworksConfig';
   protected $desiredMasterAuthorizedNetworksConfigDataType = '';
   public $desiredMasterVersion;
@@ -30,6 +41,18 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   protected $desiredNodePoolAutoscalingDataType = '';
   public $desiredNodePoolId;
   public $desiredNodeVersion;
+  protected $desiredPrivateClusterConfigType = 'Google_Service_Container_PrivateClusterConfig';
+  protected $desiredPrivateClusterConfigDataType = '';
+  protected $desiredReleaseChannelType = 'Google_Service_Container_ReleaseChannel';
+  protected $desiredReleaseChannelDataType = '';
+  protected $desiredResourceUsageExportConfigType = 'Google_Service_Container_ResourceUsageExportConfig';
+  protected $desiredResourceUsageExportConfigDataType = '';
+  protected $desiredShieldedNodesType = 'Google_Service_Container_ShieldedNodes';
+  protected $desiredShieldedNodesDataType = '';
+  protected $desiredVerticalPodAutoscalingType = 'Google_Service_Container_VerticalPodAutoscaling';
+  protected $desiredVerticalPodAutoscalingDataType = '';
+  protected $desiredWorkloadIdentityConfigType = 'Google_Service_Container_WorkloadIdentityConfig';
+  protected $desiredWorkloadIdentityConfigDataType = '';
 
   /**
    * @param Google_Service_Container_AddonsConfig
@@ -45,6 +68,62 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   {
     return $this->desiredAddonsConfig;
   }
+  /**
+   * @param Google_Service_Container_BinaryAuthorization
+   */
+  public function setDesiredBinaryAuthorization(Google_Service_Container_BinaryAuthorization $desiredBinaryAuthorization)
+  {
+    $this->desiredBinaryAuthorization = $desiredBinaryAuthorization;
+  }
+  /**
+   * @return Google_Service_Container_BinaryAuthorization
+   */
+  public function getDesiredBinaryAuthorization()
+  {
+    return $this->desiredBinaryAuthorization;
+  }
+  /**
+   * @param Google_Service_Container_ClusterAutoscaling
+   */
+  public function setDesiredClusterAutoscaling(Google_Service_Container_ClusterAutoscaling $desiredClusterAutoscaling)
+  {
+    $this->desiredClusterAutoscaling = $desiredClusterAutoscaling;
+  }
+  /**
+   * @return Google_Service_Container_ClusterAutoscaling
+   */
+  public function getDesiredClusterAutoscaling()
+  {
+    return $this->desiredClusterAutoscaling;
+  }
+  /**
+   * @param Google_Service_Container_DatabaseEncryption
+   */
+  public function setDesiredDatabaseEncryption(Google_Service_Container_DatabaseEncryption $desiredDatabaseEncryption)
+  {
+    $this->desiredDatabaseEncryption = $desiredDatabaseEncryption;
+  }
+  /**
+   * @return Google_Service_Container_DatabaseEncryption
+   */
+  public function getDesiredDatabaseEncryption()
+  {
+    return $this->desiredDatabaseEncryption;
+  }
+  /**
+   * @param Google_Service_Container_DefaultSnatStatus
+   */
+  public function setDesiredDefaultSnatStatus(Google_Service_Container_DefaultSnatStatus $desiredDefaultSnatStatus)
+  {
+    $this->desiredDefaultSnatStatus = $desiredDefaultSnatStatus;
+  }
+  /**
+   * @return Google_Service_Container_DefaultSnatStatus
+   */
+  public function getDesiredDefaultSnatStatus()
+  {
+    return $this->desiredDefaultSnatStatus;
+  }
   public function setDesiredImageType($desiredImageType)
   {
     $this->desiredImageType = $desiredImageType;
@@ -53,6 +132,20 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   {
     return $this->desiredImageType;
   }
+  /**
+   * @param Google_Service_Container_IntraNodeVisibilityConfig
+   */
+  public function setDesiredIntraNodeVisibilityConfig(Google_Service_Container_IntraNodeVisibilityConfig $desiredIntraNodeVisibilityConfig)
+  {
+    $this->desiredIntraNodeVisibilityConfig = $desiredIntraNodeVisibilityConfig;
+  }
+  /**
+   * @return Google_Service_Container_IntraNodeVisibilityConfig
+   */
+  public function getDesiredIntraNodeVisibilityConfig()
+  {
+    return $this->desiredIntraNodeVisibilityConfig;
+  }
   public function setDesiredLocations($desiredLocations)
   {
     $this->desiredLocations = $desiredLocations;
@@ -60,6 +153,14 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   public function getDesiredLocations()
   {
     return $this->desiredLocations;
+  }
+  public function setDesiredLoggingService($desiredLoggingService)
+  {
+    $this->desiredLoggingService = $desiredLoggingService;
+  }
+  public function getDesiredLoggingService()
+  {
+    return $this->desiredLoggingService;
   }
   /**
    * @param Google_Service_Container_MasterAuthorizedNetworksConfig
@@ -120,5 +221,89 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   public function getDesiredNodeVersion()
   {
     return $this->desiredNodeVersion;
+  }
+  /**
+   * @param Google_Service_Container_PrivateClusterConfig
+   */
+  public function setDesiredPrivateClusterConfig(Google_Service_Container_PrivateClusterConfig $desiredPrivateClusterConfig)
+  {
+    $this->desiredPrivateClusterConfig = $desiredPrivateClusterConfig;
+  }
+  /**
+   * @return Google_Service_Container_PrivateClusterConfig
+   */
+  public function getDesiredPrivateClusterConfig()
+  {
+    return $this->desiredPrivateClusterConfig;
+  }
+  /**
+   * @param Google_Service_Container_ReleaseChannel
+   */
+  public function setDesiredReleaseChannel(Google_Service_Container_ReleaseChannel $desiredReleaseChannel)
+  {
+    $this->desiredReleaseChannel = $desiredReleaseChannel;
+  }
+  /**
+   * @return Google_Service_Container_ReleaseChannel
+   */
+  public function getDesiredReleaseChannel()
+  {
+    return $this->desiredReleaseChannel;
+  }
+  /**
+   * @param Google_Service_Container_ResourceUsageExportConfig
+   */
+  public function setDesiredResourceUsageExportConfig(Google_Service_Container_ResourceUsageExportConfig $desiredResourceUsageExportConfig)
+  {
+    $this->desiredResourceUsageExportConfig = $desiredResourceUsageExportConfig;
+  }
+  /**
+   * @return Google_Service_Container_ResourceUsageExportConfig
+   */
+  public function getDesiredResourceUsageExportConfig()
+  {
+    return $this->desiredResourceUsageExportConfig;
+  }
+  /**
+   * @param Google_Service_Container_ShieldedNodes
+   */
+  public function setDesiredShieldedNodes(Google_Service_Container_ShieldedNodes $desiredShieldedNodes)
+  {
+    $this->desiredShieldedNodes = $desiredShieldedNodes;
+  }
+  /**
+   * @return Google_Service_Container_ShieldedNodes
+   */
+  public function getDesiredShieldedNodes()
+  {
+    return $this->desiredShieldedNodes;
+  }
+  /**
+   * @param Google_Service_Container_VerticalPodAutoscaling
+   */
+  public function setDesiredVerticalPodAutoscaling(Google_Service_Container_VerticalPodAutoscaling $desiredVerticalPodAutoscaling)
+  {
+    $this->desiredVerticalPodAutoscaling = $desiredVerticalPodAutoscaling;
+  }
+  /**
+   * @return Google_Service_Container_VerticalPodAutoscaling
+   */
+  public function getDesiredVerticalPodAutoscaling()
+  {
+    return $this->desiredVerticalPodAutoscaling;
+  }
+  /**
+   * @param Google_Service_Container_WorkloadIdentityConfig
+   */
+  public function setDesiredWorkloadIdentityConfig(Google_Service_Container_WorkloadIdentityConfig $desiredWorkloadIdentityConfig)
+  {
+    $this->desiredWorkloadIdentityConfig = $desiredWorkloadIdentityConfig;
+  }
+  /**
+   * @return Google_Service_Container_WorkloadIdentityConfig
+   */
+  public function getDesiredWorkloadIdentityConfig()
+  {
+    return $this->desiredWorkloadIdentityConfig;
   }
 }

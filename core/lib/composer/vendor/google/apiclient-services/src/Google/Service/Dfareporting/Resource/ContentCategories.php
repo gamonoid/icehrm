@@ -73,10 +73,8 @@ class Google_Service_Dfareporting_Resource_ContentCategories extends Google_Serv
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string ids Select only content categories with these IDs.
    * @opt_param int maxResults Maximum number of results to return.
-   * @opt_param string pageToken Value of the nextPageToken from the previous
-   * result page.
+   * @opt_param string sortField Field by which to sort the list.
    * @opt_param string searchString Allows searching for objects by name or ID.
    * Wildcards (*) are allowed. For example, "contentcategory*2015" will return
    * objects with names like "contentcategory June 2015", "contentcategory April
@@ -84,8 +82,10 @@ class Google_Service_Dfareporting_Resource_ContentCategories extends Google_Serv
    * wildcards implicitly at the start and the end of the search string. For
    * example, a search string of "contentcategory" will match objects with name
    * "my contentcategory", "contentcategory 2015", or simply "contentcategory".
-   * @opt_param string sortField Field by which to sort the list.
+   * @opt_param string pageToken Value of the nextPageToken from the previous
+   * result page.
    * @opt_param string sortOrder Order of sorted results.
+   * @opt_param string ids Select only content categories with these IDs.
    * @return Google_Service_Dfareporting_ContentCategoriesListResponse
    */
   public function listContentCategories($profileId, $optParams = array())
@@ -99,7 +99,7 @@ class Google_Service_Dfareporting_Resource_ContentCategories extends Google_Serv
    * (contentCategories.patch)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $id Content category ID.
+   * @param string $id ContentCategory ID.
    * @param Google_Service_Dfareporting_ContentCategory $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_ContentCategory

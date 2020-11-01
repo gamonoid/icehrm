@@ -17,10 +17,19 @@
 
 class Google_Service_Container_NodePoolAutoscaling extends Google_Model
 {
+  public $autoprovisioned;
   public $enabled;
   public $maxNodeCount;
   public $minNodeCount;
 
+  public function setAutoprovisioned($autoprovisioned)
+  {
+    $this->autoprovisioned = $autoprovisioned;
+  }
+  public function getAutoprovisioned()
+  {
+    return $this->autoprovisioned;
+  }
   public function setEnabled($enabled)
   {
     $this->enabled = $enabled;

@@ -131,6 +131,7 @@ $application->setDispatcher($eventDispatcher);
 
 
 ### Get Configuration Values
+
 If you have a configuration file that looks like this:
 ```
 a:
@@ -142,6 +143,19 @@ Then you can fetch the value of the configuration option `c` via:
 $value = $config->get('a.b.c');
 ```
 [dflydev/dot-access-data](https://github.com/dflydev/dot-access-data) is leveraged to provide this capability.
+
+### Interpolation
+
+Interpolation allows configuration values to be injected into a string with tokens. The tokens are used as keys that are looked up in the config object; the resulting configuration values will be used to replace the tokens in the provided string.
+
+For example, using the same configuration file shown above:
+```
+$result = $config->interpolate('The value is: {{a.b.c}}')
+```
+In this example, the `$result` string would be:
+```
+The value is: foo
+```
 
 ### Configuration Overlays
 

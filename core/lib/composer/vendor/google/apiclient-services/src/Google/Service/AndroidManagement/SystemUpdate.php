@@ -15,9 +15,12 @@
  * the License.
  */
 
-class Google_Service_AndroidManagement_SystemUpdate extends Google_Model
+class Google_Service_AndroidManagement_SystemUpdate extends Google_Collection
 {
+  protected $collection_key = 'freezePeriods';
   public $endMinutes;
+  protected $freezePeriodsType = 'Google_Service_AndroidManagement_FreezePeriod';
+  protected $freezePeriodsDataType = 'array';
   public $startMinutes;
   public $type;
 
@@ -28,6 +31,20 @@ class Google_Service_AndroidManagement_SystemUpdate extends Google_Model
   public function getEndMinutes()
   {
     return $this->endMinutes;
+  }
+  /**
+   * @param Google_Service_AndroidManagement_FreezePeriod
+   */
+  public function setFreezePeriods($freezePeriods)
+  {
+    $this->freezePeriods = $freezePeriods;
+  }
+  /**
+   * @return Google_Service_AndroidManagement_FreezePeriod
+   */
+  public function getFreezePeriods()
+  {
+    return $this->freezePeriods;
   }
   public function setStartMinutes($startMinutes)
   {

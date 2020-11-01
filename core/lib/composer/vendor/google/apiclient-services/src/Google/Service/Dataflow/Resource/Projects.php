@@ -26,6 +26,23 @@
 class Google_Service_Dataflow_Resource_Projects extends Google_Service_Resource
 {
   /**
+   * Deletes a snapshot. (projects.deleteSnapshots)
+   *
+   * @param string $projectId The ID of the Cloud Platform project that the
+   * snapshot belongs to.
+   * @param array $optParams Optional parameters.
+   *
+   * @opt_param string location The location that contains this snapshot.
+   * @opt_param string snapshotId The ID of the snapshot.
+   * @return Google_Service_Dataflow_DeleteSnapshotResponse
+   */
+  public function deleteSnapshots($projectId, $optParams = array())
+  {
+    $params = array('projectId' => $projectId);
+    $params = array_merge($params, $optParams);
+    return $this->call('deleteSnapshots', array($params), "Google_Service_Dataflow_DeleteSnapshotResponse");
+  }
+  /**
    * Send a worker_message to the service. (projects.workerMessages)
    *
    * @param string $projectId The project to send the WorkerMessages to.

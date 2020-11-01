@@ -27,10 +27,11 @@ class Google_Service_Monitoring_Resource_ProjectsMetricDescriptors extends Googl
 {
   /**
    * Creates a new metric descriptor. User-created metric descriptors define
-   * custom metrics. (metricDescriptors.create)
+   * custom metrics (https://cloud.google.com/monitoring/custom-metrics).
+   * (metricDescriptors.create)
    *
-   * @param string $name The project on which to execute the request. The format
-   * is "projects/{project_id_or_number}".
+   * @param string $name Required. The project on which to execute the request.
+   * The format is: projects/[PROJECT_ID_OR_NUMBER]
    * @param Google_Service_Monitoring_MetricDescriptor $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Monitoring_MetricDescriptor
@@ -42,13 +43,14 @@ class Google_Service_Monitoring_Resource_ProjectsMetricDescriptors extends Googl
     return $this->call('create', array($params), "Google_Service_Monitoring_MetricDescriptor");
   }
   /**
-   * Deletes a metric descriptor. Only user-created custom metrics can be deleted.
+   * Deletes a metric descriptor. Only user-created custom metrics
+   * (https://cloud.google.com/monitoring/custom-metrics) can be deleted.
    * (metricDescriptors.delete)
    *
-   * @param string $name The metric descriptor on which to execute the request.
-   * The format is
-   * "projects/{project_id_or_number}/metricDescriptors/{metric_id}". An example
-   * of {metric_id} is: "custom.googleapis.com/my_test_metric".
+   * @param string $name Required. The metric descriptor on which to execute the
+   * request. The format is:
+   * projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID] An example of
+   * [METRIC_ID] is: "custom.googleapis.com/my_test_metric".
    * @param array $optParams Optional parameters.
    * @return Google_Service_Monitoring_MonitoringEmpty
    */
@@ -59,13 +61,13 @@ class Google_Service_Monitoring_Resource_ProjectsMetricDescriptors extends Googl
     return $this->call('delete', array($params), "Google_Service_Monitoring_MonitoringEmpty");
   }
   /**
-   * Gets a single metric descriptor. This method does not require a Stackdriver
-   * account. (metricDescriptors.get)
+   * Gets a single metric descriptor. This method does not require a Workspace.
+   * (metricDescriptors.get)
    *
-   * @param string $name The metric descriptor on which to execute the request.
-   * The format is
-   * "projects/{project_id_or_number}/metricDescriptors/{metric_id}". An example
-   * value of {metric_id} is
+   * @param string $name Required. The metric descriptor on which to execute the
+   * request. The format is:
+   * projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID] An example
+   * value of [METRIC_ID] is
    * "compute.googleapis.com/instance/disk/read_bytes_count".
    * @param array $optParams Optional parameters.
    * @return Google_Service_Monitoring_MetricDescriptor
@@ -78,17 +80,18 @@ class Google_Service_Monitoring_Resource_ProjectsMetricDescriptors extends Googl
   }
   /**
    * Lists metric descriptors that match a filter. This method does not require a
-   * Stackdriver account. (metricDescriptors.listProjectsMetricDescriptors)
+   * Workspace. (metricDescriptors.listProjectsMetricDescriptors)
    *
-   * @param string $name The project on which to execute the request. The format
-   * is "projects/{project_id_or_number}".
+   * @param string $name Required. The project on which to execute the request.
+   * The format is: projects/[PROJECT_ID_OR_NUMBER]
    * @param array $optParams Optional parameters.
    *
    * @opt_param string filter If this field is empty, all custom and system-
-   * defined metric descriptors are returned. Otherwise, the filter specifies
-   * which metric descriptors are to be returned. For example, the following
-   * filter matches all custom metrics: metric.type =
-   * starts_with("custom.googleapis.com/")
+   * defined metric descriptors are returned. Otherwise, the filter
+   * (https://cloud.google.com/monitoring/api/v3/filters) specifies which metric
+   * descriptors are to be returned. For example, the following filter matches all
+   * custom metrics (https://cloud.google.com/monitoring/custom-metrics):
+   * metric.type = starts_with("custom.googleapis.com/")
    * @opt_param string pageToken If this field is not empty then it must contain
    * the nextPageToken value returned by a previous call to this method. Using
    * this field causes the method to return additional results from the previous

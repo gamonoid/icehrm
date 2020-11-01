@@ -20,6 +20,7 @@ class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta
   protected $collection_key = 'alternatives';
   protected $alternativesType = 'Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta1SpeechRecognitionAlternative';
   protected $alternativesDataType = 'array';
+  public $languageCode;
 
   /**
    * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta1SpeechRecognitionAlternative
@@ -34,5 +35,13 @@ class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p1beta
   public function getAlternatives()
   {
     return $this->alternatives;
+  }
+  public function setLanguageCode($languageCode)
+  {
+    $this->languageCode = $languageCode;
+  }
+  public function getLanguageCode()
+  {
+    return $this->languageCode;
   }
 }

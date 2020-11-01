@@ -1,4 +1,5 @@
 <?php
+
 namespace Gettext\Languages;
 
 use Exception;
@@ -10,14 +11,17 @@ class FormulaConverter
 {
     /**
      * Converts a formula from the CLDR representation to the gettext representation.
-     * @param string $cldrFormula The CLDR formula to convert.
-     * @throws Exception
-     * @return bool|string Returns true if the gettext will always evaluate to true, false if gettext will always evaluate to false, return the gettext formula otherwise.
+     *
+     * @param string $cldrFormula the CLDR formula to convert
+     *
+     * @throws \Exception
+     *
+     * @return bool|string returns true if the gettext will always evaluate to true, false if gettext will always evaluate to false, return the gettext formula otherwise
      */
     public static function convertFormula($cldrFormula)
     {
         if (strpbrk($cldrFormula, '()') !== false) {
-            throw new Exception("Unable to convert the formula '$cldrFormula': parenthesis handling not implemented");
+            throw new Exception("Unable to convert the formula '${cldrFormula}': parenthesis handling not implemented");
         }
         $orSeparatedChunks = array();
         foreach (explode(' or ', $cldrFormula) as $cldrFormulaChunk) {
@@ -29,7 +33,8 @@ class FormulaConverter
                     // One atom joined by 'and' always evaluates to false => the whole 'and' group is always false
                     $gettextFormulaChunk = false;
                     break;
-                } elseif ($gettextAtom !== true) {
+                }
+                if ($gettextAtom !== true) {
                     $andSeparatedChunks[] = $gettextAtom;
                 }
             }
@@ -50,22 +55,27 @@ class FormulaConverter
             if ($gettextFormulaChunk === true) {
                 // One part of the formula joined with the others by 'or' always evaluates to true => the whole formula always evaluates to true
                 return true;
-            } elseif ($gettextFormulaChunk !== false) {
+            }
+            if ($gettextFormulaChunk !== false) {
                 $orSeparatedChunks[] = $gettextFormulaChunk;
             }
         }
         if (empty($orSeparatedChunks)) {
             // All the parts joined by 'or' always evaluate to false => the whole formula always evaluates to false
             return false;
-        } else {
-            return implode(' || ', $orSeparatedChunks);
         }
+
+        return implode(' || ', $orSeparatedChunks);
     }
+
     /**
      * Converts an atomic part of the CLDR formula to its gettext representation.
-     * @param string $cldrAtom The CLDR formula atom to convert.
-     * @throws Exception
-     * @return bool|string Returns true if the gettext will always evaluate to true, false if gettext will always evaluate to false, return the gettext formula otherwise.
+     *
+     * @param string $cldrAtom the CLDR formula atom to convert
+     *
+     * @throws \Exception
+     *
+     * @return bool|string returns true if the gettext will always evaluate to true, false if gettext will always evaluate to false, return the gettext formula otherwise
      */
     private static function convertAtom($cldrAtom)
     {
@@ -80,23 +90,27 @@ class FormulaConverter
             return self::expandAtom($gettextAtom);
         }
         if (preg_match('/^(?:v|w)(?: % 10+)? == (\d+)(?:\.\.\d+)?$/', $gettextAtom, $m)) { // For gettext: v == 0, w == 0
-            return (intval($m[1]) === 0) ? true : false;
+            return (int) $m[1] === 0 ? true : false;
         }
         if (preg_match('/^(?:v|w)(?: % 10+)? != (\d+)(?:\.\.\d+)?$/', $gettextAtom, $m)) { // For gettext: v == 0, w == 0
-            return (intval($m[1]) === 0) ? false : true;
+            return (int) $m[1] === 0 ? false : true;
         }
         if (preg_match('/^(?:f|t)(?: % 10+)? == (\d+)(?:\.\.\d+)?$/', $gettextAtom, $m)) { // f == empty, t == empty
-            return (intval($m[1]) === 0) ? true : false;
+            return (int) $m[1] === 0 ? true : false;
         }
         if (preg_match('/^(?:f|t)(?: % 10+)? != (\d+)(?:\.\.\d+)?$/', $gettextAtom, $m)) { // f == empty, t == empty
-            return (intval($m[1]) === 0) ? false : true;
+            return (int) $m[1] === 0 ? false : true;
         }
-        throw new Exception("Unable to convert the formula chunk '$cldrAtom' from CLDR to gettext");
+        throw new Exception("Unable to convert the formula chunk '${cldrAtom}' from CLDR to gettext");
     }
+
     /**
      * Expands an atom containing a range (for instance: 'n == 1,3..5').
+     *
      * @param string $atom
-     * @throws Exception
+     *
+     * @throws \Exception
+     *
      * @return string
      */
     private static function expandAtom($atom)
@@ -109,37 +123,37 @@ class FormulaConverter
             foreach (explode(',', $m[3]) as $range) {
                 $chunk = null;
                 if ((!isset($chunk)) && preg_match('/^\d+$/', $range)) {
-                    $chunk = "$what $op $range";
+                    $chunk = "${what} ${op} ${range}";
                 }
                 if ((!isset($chunk)) && preg_match('/^(\d+)\.\.(\d+)$/', $range, $m)) {
-                    $from = intval($m[1]);
-                    $to = intval($m[2]);
+                    $from = (int) $m[1];
+                    $to = (int) $m[2];
                     if (($to - $from) === 1) {
                         switch ($op) {
                             case '==':
-                                $chunk = "($what == $from || $what == $to)";
+                                $chunk = "(${what} == ${from} || ${what} == ${to})";
                                 break;
                             case '!=':
-                                $chunk = "$what != $from && $what == $to";
+                                $chunk = "${what} != ${from} && ${what} == ${to}";
                                 break;
                         }
                     } else {
                         switch ($op) {
                             case '==':
-                                $chunk = "$what >= $from && $what <= $to";
+                                $chunk = "${what} >= ${from} && ${what} <= ${to}";
                                 break;
                             case '!=':
                                 if ($what === 'n' && $from <= 0) {
-                                    $chunk = "$what > $to";
+                                    $chunk = "${what} > ${to}";
                                 } else {
-                                    $chunk = "($what < $from || $what > $to)";
+                                    $chunk = "(${what} < ${from} || ${what} > ${to})";
                                 }
                                 break;
                         }
                     }
                 }
                 if (!isset($chunk)) {
-                    throw new Exception("Unhandled range '$range' in '$atom'");
+                    throw new Exception("Unhandled range '${range}' in '${atom}'");
                 }
                 $chunks[] = $chunk;
             }
@@ -148,11 +162,11 @@ class FormulaConverter
             }
             switch ($op) {
                 case '==':
-                    return '('.implode(' || ', $chunks).')';break;
+                    return '(' . implode(' || ', $chunks) . ')'; break;
                 case '!=':
                     return implode(' && ', $chunks);
             }
         }
-        throw new Exception("Unable to expand '$atom'");
+        throw new Exception("Unable to expand '${atom}'");
     }
 }

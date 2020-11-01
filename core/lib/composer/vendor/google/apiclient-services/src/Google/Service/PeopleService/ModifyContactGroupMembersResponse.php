@@ -18,8 +18,17 @@
 class Google_Service_PeopleService_ModifyContactGroupMembersResponse extends Google_Collection
 {
   protected $collection_key = 'notFoundResourceNames';
+  public $canNotRemoveLastContactGroupResourceNames;
   public $notFoundResourceNames;
 
+  public function setCanNotRemoveLastContactGroupResourceNames($canNotRemoveLastContactGroupResourceNames)
+  {
+    $this->canNotRemoveLastContactGroupResourceNames = $canNotRemoveLastContactGroupResourceNames;
+  }
+  public function getCanNotRemoveLastContactGroupResourceNames()
+  {
+    return $this->canNotRemoveLastContactGroupResourceNames;
+  }
   public function setNotFoundResourceNames($notFoundResourceNames)
   {
     $this->notFoundResourceNames = $notFoundResourceNames;

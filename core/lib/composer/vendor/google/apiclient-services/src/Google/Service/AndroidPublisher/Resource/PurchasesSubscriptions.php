@@ -26,8 +26,7 @@
 class Google_Service_AndroidPublisher_Resource_PurchasesSubscriptions extends Google_Service_Resource
 {
   /**
-   * Cancels a user's subscription purchase. The subscription remains valid until
-   * its expiration time. (subscriptions.cancel)
+   * Acknowledges a subscription purchase. (subscriptions.acknowledge)
    *
    * @param string $packageName The package name of the application for which this
    * subscription was purchased (for example, 'com.some.thing').
@@ -35,11 +34,28 @@ class Google_Service_AndroidPublisher_Resource_PurchasesSubscriptions extends Go
    * 'monthly001').
    * @param string $token The token provided to the user's device when the
    * subscription was purchased.
+   * @param Google_Service_AndroidPublisher_SubscriptionPurchasesAcknowledgeRequest $postBody
    * @param array $optParams Optional parameters.
    */
-  public function cancel($packageName, $subscriptionId, $token, $optParams = array())
+  public function acknowledge($packageName, $subscriptionId, $token, Google_Service_AndroidPublisher_SubscriptionPurchasesAcknowledgeRequest $postBody, $optParams = array())
   {
-    $params = array('packageName' => $packageName, 'subscriptionId' => $subscriptionId, 'token' => $token);
+    $params = array('packageName' => $packageName, 'subscriptionId' => $subscriptionId, 'token' => $token, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('acknowledge', array($params));
+  }
+  /**
+   * Cancels a user's subscription purchase. The subscription remains valid until
+   * its expiration time. (subscriptions.cancel)
+   *
+   * @param string $packageName The package name of the application for which this
+   * subscription was purchased (for example, 'com.some.thing').
+   * @param string $token The token provided to the user's device when the
+   * subscription was purchased.
+   * @param array $optParams Optional parameters.
+   */
+  public function cancel($packageName, $token, $optParams = array())
+  {
+    $params = array('packageName' => $packageName, 'token' => $token);
     $params = array_merge($params, $optParams);
     return $this->call('cancel', array($params));
   }
@@ -89,7 +105,7 @@ class Google_Service_AndroidPublisher_Resource_PurchasesSubscriptions extends Go
    *
    * @param string $packageName The package name of the application for which this
    * subscription was purchased (for example, 'com.some.thing').
-   * @param string $subscriptionId The purchased subscription ID (for example,
+   * @param string $subscriptionId "The purchased subscription ID (for example,
    * 'monthly001').
    * @param string $token The token provided to the user's device when the
    * subscription was purchased.

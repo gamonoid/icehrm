@@ -17,10 +17,11 @@
 
 class Google_Service_TPU_ListTensorFlowVersionsResponse extends Google_Collection
 {
-  protected $collection_key = 'tensorflowVersions';
+  protected $collection_key = 'unreachable';
   public $nextPageToken;
   protected $tensorflowVersionsType = 'Google_Service_TPU_TensorFlowVersion';
   protected $tensorflowVersionsDataType = 'array';
+  public $unreachable;
 
   public function setNextPageToken($nextPageToken)
   {
@@ -43,5 +44,13 @@ class Google_Service_TPU_ListTensorFlowVersionsResponse extends Google_Collectio
   public function getTensorflowVersions()
   {
     return $this->tensorflowVersions;
+  }
+  public function setUnreachable($unreachable)
+  {
+    $this->unreachable = $unreachable;
+  }
+  public function getUnreachable()
+  {
+    return $this->unreachable;
   }
 }

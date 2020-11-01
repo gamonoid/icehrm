@@ -18,6 +18,7 @@
 class Google_Service_Pubsub_ReceivedMessage extends Google_Model
 {
   public $ackId;
+  public $deliveryAttempt;
   protected $messageType = 'Google_Service_Pubsub_PubsubMessage';
   protected $messageDataType = '';
 
@@ -28,6 +29,14 @@ class Google_Service_Pubsub_ReceivedMessage extends Google_Model
   public function getAckId()
   {
     return $this->ackId;
+  }
+  public function setDeliveryAttempt($deliveryAttempt)
+  {
+    $this->deliveryAttempt = $deliveryAttempt;
+  }
+  public function getDeliveryAttempt()
+  {
+    return $this->deliveryAttempt;
   }
   /**
    * @param Google_Service_Pubsub_PubsubMessage

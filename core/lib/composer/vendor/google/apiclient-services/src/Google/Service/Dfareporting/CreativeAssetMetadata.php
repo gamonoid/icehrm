@@ -22,11 +22,18 @@ class Google_Service_Dfareporting_CreativeAssetMetadata extends Google_Collectio
   protected $assetIdentifierDataType = '';
   protected $clickTagsType = 'Google_Service_Dfareporting_ClickTag';
   protected $clickTagsDataType = 'array';
+  protected $counterCustomEventsType = 'Google_Service_Dfareporting_CreativeCustomEvent';
+  protected $counterCustomEventsDataType = 'array';
   public $detectedFeatures;
+  protected $exitCustomEventsType = 'Google_Service_Dfareporting_CreativeCustomEvent';
+  protected $exitCustomEventsDataType = 'array';
   public $id;
   protected $idDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $idDimensionValueDataType = '';
   public $kind;
+  public $richMedia;
+  protected $timerCustomEventsType = 'Google_Service_Dfareporting_CreativeCustomEvent';
+  protected $timerCustomEventsDataType = 'array';
   public $warnedValidationRules;
 
   /**
@@ -57,6 +64,20 @@ class Google_Service_Dfareporting_CreativeAssetMetadata extends Google_Collectio
   {
     return $this->clickTags;
   }
+  /**
+   * @param Google_Service_Dfareporting_CreativeCustomEvent
+   */
+  public function setCounterCustomEvents($counterCustomEvents)
+  {
+    $this->counterCustomEvents = $counterCustomEvents;
+  }
+  /**
+   * @return Google_Service_Dfareporting_CreativeCustomEvent
+   */
+  public function getCounterCustomEvents()
+  {
+    return $this->counterCustomEvents;
+  }
   public function setDetectedFeatures($detectedFeatures)
   {
     $this->detectedFeatures = $detectedFeatures;
@@ -64,6 +85,20 @@ class Google_Service_Dfareporting_CreativeAssetMetadata extends Google_Collectio
   public function getDetectedFeatures()
   {
     return $this->detectedFeatures;
+  }
+  /**
+   * @param Google_Service_Dfareporting_CreativeCustomEvent
+   */
+  public function setExitCustomEvents($exitCustomEvents)
+  {
+    $this->exitCustomEvents = $exitCustomEvents;
+  }
+  /**
+   * @return Google_Service_Dfareporting_CreativeCustomEvent
+   */
+  public function getExitCustomEvents()
+  {
+    return $this->exitCustomEvents;
   }
   public function setId($id)
   {
@@ -94,6 +129,28 @@ class Google_Service_Dfareporting_CreativeAssetMetadata extends Google_Collectio
   public function getKind()
   {
     return $this->kind;
+  }
+  public function setRichMedia($richMedia)
+  {
+    $this->richMedia = $richMedia;
+  }
+  public function getRichMedia()
+  {
+    return $this->richMedia;
+  }
+  /**
+   * @param Google_Service_Dfareporting_CreativeCustomEvent
+   */
+  public function setTimerCustomEvents($timerCustomEvents)
+  {
+    $this->timerCustomEvents = $timerCustomEvents;
+  }
+  /**
+   * @return Google_Service_Dfareporting_CreativeCustomEvent
+   */
+  public function getTimerCustomEvents()
+  {
+    return $this->timerCustomEvents;
   }
   public function setWarnedValidationRules($warnedValidationRules)
   {

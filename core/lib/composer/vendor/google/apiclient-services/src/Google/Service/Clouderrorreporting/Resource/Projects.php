@@ -28,10 +28,11 @@ class Google_Service_Clouderrorreporting_Resource_Projects extends Google_Servic
   /**
    * Deletes all error events of a given project. (projects.deleteEvents)
    *
-   * @param string $projectName [Required] The resource name of the Google Cloud
-   * Platform project. Written as `projects/` plus the [Google Cloud Platform
-   * project ID](https://support.google.com/cloud/answer/6158840). Example:
-   * `projects/my-project-123`.
+   * @param string $projectName Required. The resource name of the Google Cloud
+   * Platform project. Written as `projects/{projectID}`, where `{projectID}` is
+   * the [Google Cloud Platform project
+   * ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-
+   * project-123`.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Clouderrorreporting_DeleteEventsResponse
    */

@@ -19,6 +19,8 @@ class Google_Service_Testing_Environment extends Google_Model
 {
   protected $androidDeviceType = 'Google_Service_Testing_AndroidDevice';
   protected $androidDeviceDataType = '';
+  protected $iosDeviceType = 'Google_Service_Testing_IosDevice';
+  protected $iosDeviceDataType = '';
 
   /**
    * @param Google_Service_Testing_AndroidDevice
@@ -33,5 +35,19 @@ class Google_Service_Testing_Environment extends Google_Model
   public function getAndroidDevice()
   {
     return $this->androidDevice;
+  }
+  /**
+   * @param Google_Service_Testing_IosDevice
+   */
+  public function setIosDevice(Google_Service_Testing_IosDevice $iosDevice)
+  {
+    $this->iosDevice = $iosDevice;
+  }
+  /**
+   * @return Google_Service_Testing_IosDevice
+   */
+  public function getIosDevice()
+  {
+    return $this->iosDevice;
   }
 }

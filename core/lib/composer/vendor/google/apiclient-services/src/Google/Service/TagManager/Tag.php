@@ -26,6 +26,9 @@ class Google_Service_TagManager_Tag extends Google_Collection
   public $firingRuleId;
   public $firingTriggerId;
   public $liveOnly;
+  protected $monitoringMetadataType = 'Google_Service_TagManager_Parameter';
+  protected $monitoringMetadataDataType = '';
+  public $monitoringMetadataTagNameKey;
   public $name;
   public $notes;
   protected $parameterType = 'Google_Service_TagManager_Parameter';
@@ -110,6 +113,28 @@ class Google_Service_TagManager_Tag extends Google_Collection
   public function getLiveOnly()
   {
     return $this->liveOnly;
+  }
+  /**
+   * @param Google_Service_TagManager_Parameter
+   */
+  public function setMonitoringMetadata(Google_Service_TagManager_Parameter $monitoringMetadata)
+  {
+    $this->monitoringMetadata = $monitoringMetadata;
+  }
+  /**
+   * @return Google_Service_TagManager_Parameter
+   */
+  public function getMonitoringMetadata()
+  {
+    return $this->monitoringMetadata;
+  }
+  public function setMonitoringMetadataTagNameKey($monitoringMetadataTagNameKey)
+  {
+    $this->monitoringMetadataTagNameKey = $monitoringMetadataTagNameKey;
+  }
+  public function getMonitoringMetadataTagNameKey()
+  {
+    return $this->monitoringMetadataTagNameKey;
   }
   public function setName($name)
   {

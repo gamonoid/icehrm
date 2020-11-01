@@ -19,7 +19,7 @@
  * Service definition for JobService (v2).
  *
  * <p>
- * Cloud Job Discovery provides the capability to create, read, update, and
+ * Cloud Talent Solution provides the capability to create, read, update, and
  * delete job postings, as well as search jobs based on keywords and filters.</p>
  *
  * <p>
@@ -211,6 +211,10 @@ class Google_Service_JobService extends Google_Service
               'path' => 'v2/jobs',
               'httpMethod' => 'GET',
               'parameters' => array(
+                'filter' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -222,10 +226,6 @@ class Google_Service_JobService extends Google_Service
                 'idsOnly' => array(
                   'location' => 'query',
                   'type' => 'boolean',
-                ),
-                'filter' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),'patch' => array(
@@ -260,6 +260,10 @@ class Google_Service_JobService extends Google_Service
               'path' => 'v2:complete',
               'httpMethod' => 'GET',
               'parameters' => array(
+                'type' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'companyName' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -277,10 +281,6 @@ class Google_Service_JobService extends Google_Service
                   'type' => 'string',
                 ),
                 'languageCode' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'type' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),

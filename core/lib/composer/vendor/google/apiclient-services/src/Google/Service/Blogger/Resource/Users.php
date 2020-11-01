@@ -26,9 +26,9 @@
 class Google_Service_Blogger_Resource_Users extends Google_Service_Resource
 {
   /**
-   * Gets one user by ID. (users.get)
+   * Gets one user by user_id. (users.get)
    *
-   * @param string $userId The ID of the user to get.
+   * @param string $userId
    * @param array $optParams Optional parameters.
    * @return Google_Service_Blogger_User
    */

@@ -75,13 +75,23 @@ class DataActionManager extends SubActionManager
             $sample[] = $column->sampleValue;
         }
 
-        $output = fopen('php://output', 'w');
-        header('Content-Type:application/csv');
-        header('Content-Disposition:attachment;filename='.$dataImport->name.'.csv');
+
+        $file = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
+        $output = fopen('/tmp/'.$file, 'w');
         fputcsv($output, $headers);
         fputcsv($output, $sample);
         fclose($output);
+
+        header('Content-Type:application/csv');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition:attachment;filename='.$dataImport->name.'.csv');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize('/tmp/'.$file));
+        readfile('/tmp/'.$file);
         ob_flush();
         flush();
+        unlink('/tmp/'.$file);
+        die();
     }
 }

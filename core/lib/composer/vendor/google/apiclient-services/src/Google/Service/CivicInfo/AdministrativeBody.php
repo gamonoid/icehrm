@@ -22,11 +22,12 @@ class Google_Service_CivicInfo_AdministrativeBody extends Google_Collection
         "voterServices" => "voter_services",
   );
   public $absenteeVotingInfoUrl;
-  public $addressLines;
   public $ballotInfoUrl;
   protected $correspondenceAddressType = 'Google_Service_CivicInfo_SimpleAddressType';
   protected $correspondenceAddressDataType = '';
   public $electionInfoUrl;
+  public $electionNoticeText;
+  public $electionNoticeUrl;
   protected $electionOfficialsType = 'Google_Service_CivicInfo_ElectionOfficial';
   protected $electionOfficialsDataType = 'array';
   public $electionRegistrationConfirmationUrl;
@@ -46,14 +47,6 @@ class Google_Service_CivicInfo_AdministrativeBody extends Google_Collection
   public function getAbsenteeVotingInfoUrl()
   {
     return $this->absenteeVotingInfoUrl;
-  }
-  public function setAddressLines($addressLines)
-  {
-    $this->addressLines = $addressLines;
-  }
-  public function getAddressLines()
-  {
-    return $this->addressLines;
   }
   public function setBallotInfoUrl($ballotInfoUrl)
   {
@@ -84,6 +77,22 @@ class Google_Service_CivicInfo_AdministrativeBody extends Google_Collection
   public function getElectionInfoUrl()
   {
     return $this->electionInfoUrl;
+  }
+  public function setElectionNoticeText($electionNoticeText)
+  {
+    $this->electionNoticeText = $electionNoticeText;
+  }
+  public function getElectionNoticeText()
+  {
+    return $this->electionNoticeText;
+  }
+  public function setElectionNoticeUrl($electionNoticeUrl)
+  {
+    $this->electionNoticeUrl = $electionNoticeUrl;
+  }
+  public function getElectionNoticeUrl()
+  {
+    return $this->electionNoticeUrl;
   }
   /**
    * @param Google_Service_CivicInfo_ElectionOfficial

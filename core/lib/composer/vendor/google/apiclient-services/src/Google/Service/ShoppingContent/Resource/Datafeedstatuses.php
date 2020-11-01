@@ -26,6 +26,7 @@
 class Google_Service_ShoppingContent_Resource_Datafeedstatuses extends Google_Service_Resource
 {
   /**
+   * Gets multiple Merchant Center datafeed statuses in a single request.
    * (datafeedstatuses.custombatch)
    *
    * @param Google_Service_ShoppingContent_DatafeedstatusesCustomBatchRequest $postBody

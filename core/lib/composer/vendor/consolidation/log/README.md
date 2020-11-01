@@ -2,7 +2,7 @@
 
 Improved [PSR-3](http://www.php-fig.org/psr/psr-3/) [Psr\Log](https://github.com/php-fig/log) logger based on Symfony Console components.
 
-[![Travis CI](https://travis-ci.org/consolidation-org/log.svg?branch=master)](https://travis-ci.org/consolidation-org/log) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/consolidation-org/log/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/consolidation-org/log/?branch=master) [![Coverage Status](https://coveralls.io/repos/github/consolidation-org/log/badge.svg?branch=master)](https://coveralls.io/github/consolidation-org/log?branch=master) [![License](https://poser.pugx.org/consolidation/log/license)](https://packagist.org/packages/consolidation/log)
+[![Travis CI](https://travis-ci.org/consolidation/log.svg?branch=master)](https://travis-ci.org/consolidation/log) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/consolidation/log/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/consolidation/log/?branch=master) [![Coverage Status](https://coveralls.io/repos/github/consolidation/log/badge.svg?branch=master)](https://coveralls.io/github/consolidation/log?branch=master) [![License](https://poser.pugx.org/consolidation/log/license)](https://packagist.org/packages/consolidation/log)
 
 ## Component Status
 
@@ -10,7 +10,7 @@ In use in [Robo](https://github.com/Codegyre/Robo).
 
 ## Motivation
 
-Consolidation\Log provides a Psr-3 compatible logger that provides styled log output to the standard error (stderr) stream. By default, styling is provided by the SymfonyStyle class from the Symfony Console component; however, alternative stylers may be provided if desired.
+Consolidation\Log provides a PSR-3 compatible logger that provides styled log output to the standard error (stderr) stream. By default, styling is provided by the SymfonyStyle class from the Symfony Console component; however, alternative stylers may be provided if desired.
 
 ## Usage
 ```
@@ -18,9 +18,16 @@ $logger = new \Consolidation\Log\Logger($output);
 $logger->setLogOutputStyler(new LogOutputStyler()); // optional
 $logger->warning('The file {name} does not exist.', ['name' => $filename]);
 ```
-String interpolation -- that is, the substitution of replacements, such as `{name}` in the example above, is not required by Psr-3, and is not implemented by default in the Psr\Log project. However, it is recommended by PRS-3, and is often done, e.g. in the Symfony Console logger.
+String interpolation -- that is, the substitution of replacements, such as `{name}` in the example above, is not required by PSR-3, and is not implemented by default in the Psr\Log project. However, it is recommended by PRS-3, and is often done, e.g. in the Symfony Console logger.
 
 Consolidation\Log supports string interpolation.
+
+A logger manager can be used to delegate all log messages to one or more loggers.
+```
+$logger = new \Consolidation\Log\LoggerManager();
+$logger->add('default', new \Consolidation\Log\Logger($output));
+```
+This is useful if, for example, you need to inject a logger into application objects early (e.g. into a dependency injection container), but the output object to log to will not be available until later.
 
 ## Comparison to Existing Solutions
 

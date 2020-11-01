@@ -7,14 +7,14 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
-    'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
-    'PEAR' => array($vendorDir . '/pear/pear_exception'),
+    'Pimple' => array($vendorDir . '/pimple/pimple/src'),
+    'PHPMD\\' => array($vendorDir . '/phpmd/phpmd/src/main/php'),
+    'PHPCodeBrowser\\' => array($vendorDir . '/mayflower/php-codebrowser/src'),
     'Net' => array($vendorDir . '/pear/net_smtp', $vendorDir . '/pear/net_socket'),
     'Mail' => array($vendorDir . '/pear/mail'),
     'Google_Service_' => array($vendorDir . '/google/apiclient-services/src'),
     'Google_' => array($vendorDir . '/google/apiclient/src'),
     'ForceUTF8\\' => array($vendorDir . '/neitanod/forceutf8/src'),
-    'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
     'Dflydev\\DotAccessData' => array($vendorDir . '/dflydev/dot-access-data/src'),
     'Console' => array($vendorDir . '/pear/console_getopt'),
     '' => array($vendorDir . '/pear/pear-core-minimal/src'),

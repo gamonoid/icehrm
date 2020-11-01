@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Common;
 
 use Robo\Contract\ProgressIndicatorAwareInterface;
@@ -24,7 +25,7 @@ trait ProgressIndicatorAwareTrait
     /**
      * @param null|\Robo\Common\ProgressIndicator $progressIndicator
      *
-     * @return ProgressIndicatorAwareInterface
+     * @return $this
      */
     public function setProgressIndicator($progressIndicator)
     {
@@ -78,7 +79,8 @@ trait ProgressIndicatorAwareTrait
     {
         $this->startTimer();
         if ($this instanceof VerbosityThresholdInterface
-            && !$this->verbosityMeetsThreshold()) {
+            && !$this->verbosityMeetsThreshold()
+        ) {
             return;
         }
         if (!$this->progressIndicator) {

@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task;
 
 use Robo\Result;
@@ -85,7 +86,7 @@ abstract class StackBasedTask extends BaseTask
      * this class.  Calling one of the delegate's methods will defer
      * execution until the run() method is called.
      *
-     * @return null
+     * @return null|object
      */
     protected function getDelegate()
     {
@@ -219,7 +220,7 @@ abstract class StackBasedTask extends BaseTask
      * Execute one task method
      *
      * @param string $command
-     * @param string $action
+     * @param array $action
      *
      * @return \Robo\Result
      */

@@ -15,12 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_AppVersion extends Google_Model
+class Google_Service_AndroidEnterprise_AppVersion extends Google_Collection
 {
+  protected $collection_key = 'trackId';
+  public $isProduction;
   public $track;
+  public $trackId;
   public $versionCode;
   public $versionString;
 
+  public function setIsProduction($isProduction)
+  {
+    $this->isProduction = $isProduction;
+  }
+  public function getIsProduction()
+  {
+    return $this->isProduction;
+  }
   public function setTrack($track)
   {
     $this->track = $track;
@@ -28,6 +39,14 @@ class Google_Service_AndroidEnterprise_AppVersion extends Google_Model
   public function getTrack()
   {
     return $this->track;
+  }
+  public function setTrackId($trackId)
+  {
+    $this->trackId = $trackId;
+  }
+  public function getTrackId()
+  {
+    return $this->trackId;
   }
   public function setVersionCode($versionCode)
   {

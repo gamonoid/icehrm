@@ -26,6 +26,22 @@
 class Google_Service_CloudMachineLearningEngine_Resource_Projects extends Google_Service_Resource
 {
   /**
+   * Performs explanation on the data in the request. {% dynamic include "/ai-
+   * platform/includes/___explain-request" %}  (projects.explain)
+   *
+   * @param string $name Required. The resource name of a model or a version.
+   * Authorization: requires the `predict` permission on the specified resource.
+   * @param Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1ExplainRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_CloudMachineLearningEngine_GoogleApiHttpBody
+   */
+  public function explain($name, Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1ExplainRequest $postBody, $optParams = array())
+  {
+    $params = array('name' => $name, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('explain', array($params), "Google_Service_CloudMachineLearningEngine_GoogleApiHttpBody");
+  }
+  /**
    * Get the service account information associated with your project. You need
    * this information in order to grant the service account permissions for the
    * Google Cloud Storage location where you put your model training code for
@@ -42,13 +58,10 @@ class Google_Service_CloudMachineLearningEngine_Resource_Projects extends Google
     return $this->call('getConfig', array($params), "Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1GetConfigResponse");
   }
   /**
-   * Performs prediction on the data in the request. Cloud ML Engine implements a
-   * custom `predict` verb on top of an HTTP POST method. For details of the
-   * request and response format, see the **guide to the [predict request format
-   * ](/ml-engine/docs/v1/predict-request)**. (projects.predict)
+   * Performs online prediction on the data in the request. {% dynamic include
+   * "/ai-platform/includes/___predict-request" %}  (projects.predict)
    *
    * @param string $name Required. The resource name of a model or a version.
-   *
    * Authorization: requires the `predict` permission on the specified resource.
    * @param Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1PredictRequest $postBody
    * @param array $optParams Optional parameters.

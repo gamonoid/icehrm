@@ -38,19 +38,24 @@ class Google_Service_Vault extends Google_Service
       "https://www.googleapis.com/auth/ediscovery.readonly";
 
   public $matters;
+  public $matters_exports;
   public $matters_holds;
   public $matters_holds_accounts;
+  public $matters_savedQueries;
+  public $operations;
   
   /**
    * Constructs the internal representation of the Vault service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://vault.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://vault.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'vault';
 
@@ -112,6 +117,10 @@ class Google_Service_Vault extends Google_Service
               'path' => 'v1/matters',
               'httpMethod' => 'GET',
               'parameters' => array(
+                'view' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'state' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -123,10 +132,6 @@ class Google_Service_Vault extends Google_Service
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
-                ),
-                'view' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),'removePermissions' => array(
@@ -173,13 +178,96 @@ class Google_Service_Vault extends Google_Service
           )
         )
     );
+    $this->matters_exports = new Google_Service_Vault_Resource_MattersExports(
+        $this,
+        $this->serviceName,
+        'exports',
+        array(
+          'methods' => array(
+            'create' => array(
+              'path' => 'v1/matters/{matterId}/exports',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'matterId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'delete' => array(
+              'path' => 'v1/matters/{matterId}/exports/{exportId}',
+              'httpMethod' => 'DELETE',
+              'parameters' => array(
+                'matterId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'exportId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'get' => array(
+              'path' => 'v1/matters/{matterId}/exports/{exportId}',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'matterId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'exportId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'list' => array(
+              'path' => 'v1/matters/{matterId}/exports',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'matterId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
+            ),
+          )
+        )
+    );
     $this->matters_holds = new Google_Service_Vault_Resource_MattersHolds(
         $this,
         $this->serviceName,
         'holds',
         array(
           'methods' => array(
-            'create' => array(
+            'addHeldAccounts' => array(
+              'path' => 'v1/matters/{matterId}/holds/{holdId}:addHeldAccounts',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'matterId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'holdId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'create' => array(
               'path' => 'v1/matters/{matterId}/holds',
               'httpMethod' => 'POST',
               'parameters' => array(
@@ -243,6 +331,21 @@ class Google_Service_Vault extends Google_Service
                 'view' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+              ),
+            ),'removeHeldAccounts' => array(
+              'path' => 'v1/matters/{matterId}/holds/{holdId}:removeHeldAccounts',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'matterId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'holdId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
                 ),
               ),
             ),'update' => array(
@@ -315,6 +418,94 @@ class Google_Service_Vault extends Google_Service
                   'required' => true,
                 ),
                 'holdId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->matters_savedQueries = new Google_Service_Vault_Resource_MattersSavedQueries(
+        $this,
+        $this->serviceName,
+        'savedQueries',
+        array(
+          'methods' => array(
+            'create' => array(
+              'path' => 'v1/matters/{matterId}/savedQueries',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'matterId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'delete' => array(
+              'path' => 'v1/matters/{matterId}/savedQueries/{savedQueryId}',
+              'httpMethod' => 'DELETE',
+              'parameters' => array(
+                'matterId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'savedQueryId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'get' => array(
+              'path' => 'v1/matters/{matterId}/savedQueries/{savedQueryId}',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'matterId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'savedQueryId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'list' => array(
+              'path' => 'v1/matters/{matterId}/savedQueries',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'matterId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->operations = new Google_Service_Vault_Resource_Operations(
+        $this,
+        $this->serviceName,
+        'operations',
+        array(
+          'methods' => array(
+            'delete' => array(
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'DELETE',
+              'parameters' => array(
+                'name' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,

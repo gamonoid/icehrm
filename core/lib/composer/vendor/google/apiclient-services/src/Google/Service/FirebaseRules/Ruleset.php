@@ -18,6 +18,8 @@
 class Google_Service_FirebaseRules_Ruleset extends Google_Model
 {
   public $createTime;
+  protected $metadataType = 'Google_Service_FirebaseRules_Metadata';
+  protected $metadataDataType = '';
   public $name;
   protected $sourceType = 'Google_Service_FirebaseRules_Source';
   protected $sourceDataType = '';
@@ -29,6 +31,20 @@ class Google_Service_FirebaseRules_Ruleset extends Google_Model
   public function getCreateTime()
   {
     return $this->createTime;
+  }
+  /**
+   * @param Google_Service_FirebaseRules_Metadata
+   */
+  public function setMetadata(Google_Service_FirebaseRules_Metadata $metadata)
+  {
+    $this->metadata = $metadata;
+  }
+  /**
+   * @return Google_Service_FirebaseRules_Metadata
+   */
+  public function getMetadata()
+  {
+    return $this->metadata;
   }
   public function setName($name)
   {

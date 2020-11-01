@@ -21,6 +21,8 @@ class Google_Service_DLP_GooglePrivacyDlpV2DeidentifyConfig extends Google_Model
   protected $infoTypeTransformationsDataType = '';
   protected $recordTransformationsType = 'Google_Service_DLP_GooglePrivacyDlpV2RecordTransformations';
   protected $recordTransformationsDataType = '';
+  protected $transformationErrorHandlingType = 'Google_Service_DLP_GooglePrivacyDlpV2TransformationErrorHandling';
+  protected $transformationErrorHandlingDataType = '';
 
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2InfoTypeTransformations
@@ -49,5 +51,19 @@ class Google_Service_DLP_GooglePrivacyDlpV2DeidentifyConfig extends Google_Model
   public function getRecordTransformations()
   {
     return $this->recordTransformations;
+  }
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2TransformationErrorHandling
+   */
+  public function setTransformationErrorHandling(Google_Service_DLP_GooglePrivacyDlpV2TransformationErrorHandling $transformationErrorHandling)
+  {
+    $this->transformationErrorHandling = $transformationErrorHandling;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2TransformationErrorHandling
+   */
+  public function getTransformationErrorHandling()
+  {
+    return $this->transformationErrorHandling;
   }
 }

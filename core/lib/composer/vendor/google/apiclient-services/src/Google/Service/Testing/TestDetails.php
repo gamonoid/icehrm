@@ -20,7 +20,6 @@ class Google_Service_Testing_TestDetails extends Google_Collection
   protected $collection_key = 'progressMessages';
   public $errorMessage;
   public $progressMessages;
-  public $videoRecordingDisabled;
 
   public function setErrorMessage($errorMessage)
   {
@@ -37,13 +36,5 @@ class Google_Service_Testing_TestDetails extends Google_Collection
   public function getProgressMessages()
   {
     return $this->progressMessages;
-  }
-  public function setVideoRecordingDisabled($videoRecordingDisabled)
-  {
-    $this->videoRecordingDisabled = $videoRecordingDisabled;
-  }
-  public function getVideoRecordingDisabled()
-  {
-    return $this->videoRecordingDisabled;
   }
 }

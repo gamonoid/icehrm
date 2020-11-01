@@ -7,7 +7,39 @@
  * RequestCache
  */
 
+class MemoryStorage {
+  constructor() {
+    this.data = {};
+  }
+
+  getItem(key) {
+    return this.data[key];
+  }
+
+  setItem(key, data) {
+    this.data[key] = data;
+  }
+
+  removeAllByPrefix(prefix) {
+    const keys = Object.keys(this.data);
+    for (let i = 0; i < keys.length; i++) {
+      if (keys[i].indexOf(prefix) > 0) {
+        delete this.data[keys[i]];
+      }
+    }
+  }
+}
+
+
 class RequestCache {
+  constructor(storage) {
+    if (!storage) {
+      this.storage = new MemoryStorage();
+    } else {
+      this.storage = storage;
+    }
+  }
+
   getKey(url, params) {
     let key = `${url}|`;
     for (const index in params) {
@@ -16,53 +48,39 @@ class RequestCache {
     return key;
   }
 
+  /*
   invalidateTable(table) {
     let key;
-    for (let i = 0; i < localStorage.length; i++) {
-      key = localStorage.key(i);
+    for (let i = 0; i < this.storage.length; i++) {
+      key = this.storage.key(i);
       if (key.indexOf(`t=${table}`) > 0) {
-        localStorage.removeItem(key);
+        this.storage.removeItem(key);
       }
     }
+  }
+  */
+
+  invalidateTable(table) {
+    this.storage.removeAllByPrefix(`t=${table}`);
   }
 
 
   getData(key) {
-    let data;
-
-    if (typeof (Storage) === 'undefined') {
+    const data = this.storage.getItem(key);
+    if (!data) {
       return null;
     }
 
-    const strData = localStorage.getItem(key);
-    if (strData !== undefined && strData != null && strData !== '') {
-      data = JSON.parse(strData);
-      if (data === undefined || data == null) {
-        return null;
-      }
-
-      if (data.status !== undefined && data.status != null && data.status !== 'SUCCESS') {
-        return null;
-      }
-
-      return data;
-    }
-
-    return null;
+    return data;
   }
 
   setData(key, data) {
-    if (typeof (Storage) === 'undefined') {
-      return null;
-    }
 
     if (data.status !== undefined && data.status != null && data.status !== 'SUCCESS') {
       return null;
     }
-
-    const strData = JSON.stringify(data);
-    localStorage.setItem(key, strData);
-    return strData;
+    this.storage.setItem(key, data);
+    return data;
   }
 }
 

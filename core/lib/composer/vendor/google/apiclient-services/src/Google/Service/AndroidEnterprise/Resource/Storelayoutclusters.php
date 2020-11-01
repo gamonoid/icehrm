@@ -85,23 +85,6 @@ class Google_Service_AndroidEnterprise_Resource_Storelayoutclusters extends Goog
     return $this->call('list', array($params), "Google_Service_AndroidEnterprise_StoreLayoutClustersListResponse");
   }
   /**
-   * Updates a cluster. This method supports patch semantics.
-   * (storelayoutclusters.patch)
-   *
-   * @param string $enterpriseId The ID of the enterprise.
-   * @param string $pageId The ID of the page.
-   * @param string $clusterId The ID of the cluster.
-   * @param Google_Service_AndroidEnterprise_StoreCluster $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_AndroidEnterprise_StoreCluster
-   */
-  public function patch($enterpriseId, $pageId, $clusterId, Google_Service_AndroidEnterprise_StoreCluster $postBody, $optParams = array())
-  {
-    $params = array('enterpriseId' => $enterpriseId, 'pageId' => $pageId, 'clusterId' => $clusterId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_AndroidEnterprise_StoreCluster");
-  }
-  /**
    * Updates a cluster. (storelayoutclusters.update)
    *
    * @param string $enterpriseId The ID of the enterprise.

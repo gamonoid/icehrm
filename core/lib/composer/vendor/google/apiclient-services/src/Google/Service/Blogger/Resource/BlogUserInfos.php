@@ -26,15 +26,13 @@
 class Google_Service_Blogger_Resource_BlogUserInfos extends Google_Service_Resource
 {
   /**
-   * Gets one blog and user info pair by blogId and userId. (blogUserInfos.get)
+   * Gets one blog and user info pair by blog id and user id. (blogUserInfos.get)
    *
-   * @param string $userId ID of the user whose blogs are to be fetched. Either
-   * the word 'self' (sans quote marks) or the user's profile identifier.
-   * @param string $blogId The ID of the blog to get.
+   * @param string $userId
+   * @param string $blogId
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string maxPosts Maximum number of posts to pull back with the
-   * blog.
+   * @opt_param string maxPosts
    * @return Google_Service_Blogger_BlogUserInfo
    */
   public function get($userId, $blogId, $optParams = array())

@@ -19,8 +19,7 @@
  * Service definition for ServiceConsumerManagement (v1).
  *
  * <p>
- * Provides management methods for configuring service producer resources on
- * Google Cloud.</p>
+ * Manages the service consumers of a Service Infrastructure service.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -34,9 +33,6 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
   /** View and manage your data across Google Cloud Platform services. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
-  /** Manage your Google API service configuration. */
-  const SERVICE_MANAGEMENT =
-      "https://www.googleapis.com/auth/service.management";
 
   public $operations;
   public $services;
@@ -46,13 +42,15 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
    * Constructs the internal representation of the ServiceConsumerManagement
    * service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://serviceconsumermanagement.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://serviceconsumermanagement.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'serviceconsumermanagement';
 
@@ -101,6 +99,10 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'filter' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -108,10 +110,6 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
-                ),
-                'filter' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),
@@ -137,13 +135,13 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),
@@ -161,6 +159,26 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
               'httpMethod' => 'POST',
               'parameters' => array(
                 'parent' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'applyProjectConfig' => array(
+              'path' => 'v1/{+name}:applyProjectConfig',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'attachProject' => array(
+              'path' => 'v1/{+name}:attachProject',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -186,6 +204,16 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
                   'required' => true,
                 ),
               ),
+            ),'deleteProject' => array(
+              'path' => 'v1/{+name}:deleteProject',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
             ),'list' => array(
               'path' => 'v1/{+parent}/tenancyUnits',
               'httpMethod' => 'GET',
@@ -199,17 +227,27 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
               ),
             ),'removeProject' => array(
               'path' => 'v1/{+name}:removeProject',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'undeleteProject' => array(
+              'path' => 'v1/{+name}:undeleteProject',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'name' => array(

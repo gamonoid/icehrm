@@ -18,9 +18,18 @@
 class Google_Service_Dataflow_ReportWorkItemStatusResponse extends Google_Collection
 {
   protected $collection_key = 'workItemServiceStates';
+  public $unifiedWorkerResponse;
   protected $workItemServiceStatesType = 'Google_Service_Dataflow_WorkItemServiceState';
   protected $workItemServiceStatesDataType = 'array';
 
+  public function setUnifiedWorkerResponse($unifiedWorkerResponse)
+  {
+    $this->unifiedWorkerResponse = $unifiedWorkerResponse;
+  }
+  public function getUnifiedWorkerResponse()
+  {
+    return $this->unifiedWorkerResponse;
+  }
   /**
    * @param Google_Service_Dataflow_WorkItemServiceState
    */

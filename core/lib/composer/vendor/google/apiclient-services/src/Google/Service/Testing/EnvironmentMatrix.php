@@ -21,6 +21,8 @@ class Google_Service_Testing_EnvironmentMatrix extends Google_Model
   protected $androidDeviceListDataType = '';
   protected $androidMatrixType = 'Google_Service_Testing_AndroidMatrix';
   protected $androidMatrixDataType = '';
+  protected $iosDeviceListType = 'Google_Service_Testing_IosDeviceList';
+  protected $iosDeviceListDataType = '';
 
   /**
    * @param Google_Service_Testing_AndroidDeviceList
@@ -49,5 +51,19 @@ class Google_Service_Testing_EnvironmentMatrix extends Google_Model
   public function getAndroidMatrix()
   {
     return $this->androidMatrix;
+  }
+  /**
+   * @param Google_Service_Testing_IosDeviceList
+   */
+  public function setIosDeviceList(Google_Service_Testing_IosDeviceList $iosDeviceList)
+  {
+    $this->iosDeviceList = $iosDeviceList;
+  }
+  /**
+   * @return Google_Service_Testing_IosDeviceList
+   */
+  public function getIosDeviceList()
+  {
+    return $this->iosDeviceList;
   }
 }

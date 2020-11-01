@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Bower;
 
 use Robo\Task\BaseTask;
@@ -8,7 +9,14 @@ abstract class Base extends BaseTask
 {
     use \Robo\Common\ExecOneCommand;
 
+    /**
+     * @var array
+     */
     protected $opts = [];
+
+    /**
+     * @var string
+     */
     protected $action = '';
 
     /**

@@ -23,6 +23,7 @@ class Google_Service_ShoppingContent_RateGroup extends Google_Collection
   protected $carrierRatesDataType = 'array';
   protected $mainTableType = 'Google_Service_ShoppingContent_Table';
   protected $mainTableDataType = '';
+  public $name;
   protected $singleValueType = 'Google_Service_ShoppingContent_Value';
   protected $singleValueDataType = '';
   protected $subtablesType = 'Google_Service_ShoppingContent_Table';
@@ -63,6 +64,14 @@ class Google_Service_ShoppingContent_RateGroup extends Google_Collection
   public function getMainTable()
   {
     return $this->mainTable;
+  }
+  public function setName($name)
+  {
+    $this->name = $name;
+  }
+  public function getName()
+  {
+    return $this->name;
   }
   /**
    * @param Google_Service_ShoppingContent_Value

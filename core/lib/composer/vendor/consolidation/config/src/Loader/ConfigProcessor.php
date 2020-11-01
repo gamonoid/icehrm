@@ -13,11 +13,28 @@ class ConfigProcessor
 {
     protected $processedConfig = [];
     protected $unprocessedConfig = [];
+    protected $nameOfItemsToMerge = [];
     protected $expander;
 
     public function __construct($expander = null)
     {
         $this->expander = $expander ?: new Expander();
+    }
+
+    /**
+     * By default, string config items always REPLACE, not MERGE when added
+     * from different sources. This method will allow applications to alter
+     * this behavior for specific items so that strings from multiple sources
+     * will be merged together into an array instead.
+     */
+    public function useMergeStrategyForKeys($itemName)
+    {
+        if (is_array($itemName)) {
+            $this->nameOfItemsToMerge = array_merge($this->nameOfItemsToMerge, $itemName);
+            return $this;
+        }
+        $this->nameOfItemsToMerge[] = $itemName;
+        return $this;
     }
 
     /**
@@ -147,7 +164,7 @@ class ConfigProcessor
      */
     protected function reduceOne(array $processed, array $config)
     {
-        return ArrayUtil::mergeRecursiveDistinct($processed, $config);
+        return ArrayUtil::mergeRecursiveSelect($processed, $config, $this->nameOfItemsToMerge);
     }
 
     /**

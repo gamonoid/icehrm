@@ -19,6 +19,8 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessage extends Goo
 {
   protected $basicCardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageBasicCard';
   protected $basicCardDataType = '';
+  protected $browseCarouselCardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard';
+  protected $browseCarouselCardDataType = '';
   protected $cardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageCard';
   protected $cardDataType = '';
   protected $carouselSelectType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageCarouselSelect';
@@ -29,6 +31,8 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessage extends Goo
   protected $linkOutSuggestionDataType = '';
   protected $listSelectType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageListSelect';
   protected $listSelectDataType = '';
+  protected $mediaContentType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageMediaContent';
+  protected $mediaContentDataType = '';
   public $payload;
   public $platform;
   protected $quickRepliesType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageQuickReplies';
@@ -37,6 +41,8 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessage extends Goo
   protected $simpleResponsesDataType = '';
   protected $suggestionsType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageSuggestions';
   protected $suggestionsDataType = '';
+  protected $tableCardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageTableCard';
+  protected $tableCardDataType = '';
   protected $textType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageText';
   protected $textDataType = '';
 
@@ -53,6 +59,20 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessage extends Goo
   public function getBasicCard()
   {
     return $this->basicCard;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard
+   */
+  public function setBrowseCarouselCard(Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard $browseCarouselCard)
+  {
+    $this->browseCarouselCard = $browseCarouselCard;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard
+   */
+  public function getBrowseCarouselCard()
+  {
+    return $this->browseCarouselCard;
   }
   /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageCard
@@ -124,6 +144,20 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessage extends Goo
   {
     return $this->listSelect;
   }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageMediaContent
+   */
+  public function setMediaContent(Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageMediaContent $mediaContent)
+  {
+    $this->mediaContent = $mediaContent;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageMediaContent
+   */
+  public function getMediaContent()
+  {
+    return $this->mediaContent;
+  }
   public function setPayload($payload)
   {
     $this->payload = $payload;
@@ -181,6 +215,20 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessage extends Goo
   public function getSuggestions()
   {
     return $this->suggestions;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageTableCard
+   */
+  public function setTableCard(Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageTableCard $tableCard)
+  {
+    $this->tableCard = $tableCard;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageTableCard
+   */
+  public function getTableCard()
+  {
+    return $this->tableCard;
   }
   /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2IntentMessageText

@@ -4,6 +4,12 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Classes\PermissionManager;
+use Qualifications\Common\Model\Certification;
+use Qualifications\Common\Model\Education;
+use Qualifications\Common\Model\Language;
+use Qualifications\Common\Model\Skill;
+
 $moduleName = 'qualifications';
 $moduleGroup = 'admin';
 define('MODULE_PATH',dirname(__FILE__));
@@ -20,92 +26,40 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
 	<div class="tab-content">
 		<div class="tab-pane active" id="tabPageSkill">
-			<div id="Skill" class="reviewBlock" data-content="List" style="padding-left:5px;">
-
-			</div>
-			<div id="SkillForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-
-			</div>
+			<div id="SkillTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+			<div id="SkillForm"></div>
+			<div id="SkillFilterForm"></div>
 		</div>
 		<div class="tab-pane" id="tabPageEducation">
-			<div id="Education" class="reviewBlock" data-content="List" style="padding-left:5px;">
-
-			</div>
-			<div id="EducationForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-
-			</div>
+			<div id="EducationTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+            <div id="EducationForm"></div>
+            <div id="EducationFilterForm"></div>
 		</div>
 		<div class="tab-pane" id="tabPageCertification">
-			<div id="Certification" class="reviewBlock" data-content="List" style="padding-left:5px;">
-
-			</div>
-			<div id="CertificationForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-
-			</div>
+			<div id="CertificationTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+            <div id="CertificationForm"></div>
+            <div id="CertificationFilterForm"></div>
 		</div>
 		<div class="tab-pane" id="tabPageLanguage">
-			<div id="Language" class="reviewBlock" data-content="List" style="padding-left:5px;">
-
-			</div>
-			<div id="LanguageForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-
-			</div>
+			<div id="LanguageTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+            <div id="LanguageForm"></div>
+            <div id="LanguageFilterForm"></div>
 		</div>
 	</div>
-
 </div>
+<div id="dataGroup"></div>
+<?php
+$moduleData = [
+    'user_level' => $user->user_level,
+    'permissions' => [
+        'Skill' => PermissionManager::checkGeneralAccess(new Skill()),
+        'Education' => PermissionManager::checkGeneralAccess(new Education()),
+        'Certification' => PermissionManager::checkGeneralAccess(new Certification()),
+        'Language' => PermissionManager::checkGeneralAccess(new Language()),
+    ]
+];
+?>
 <script>
-var modJsList = new Array();
-
-modJsList['tabSkill'] = new SkillAdapter('Skill');
-<?php if(isset($modulePermissions['perm']['Add Skills']) && $modulePermissions['perm']['Add Skills'] == "No"){?>
-modJsList['tabSkill'].setShowAddNew(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Delete Skills']) && $modulePermissions['perm']['Delete Skills'] == "No"){?>
-modJsList['tabSkill'].setShowDelete(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Edit Skills']) && $modulePermissions['perm']['Edit Skills'] == "No"){?>
-modJsList['tabSkill'].setShowEdit(false);
-<?php }?>
-
-
-modJsList['tabEducation'] = new EducationAdapter('Education');
-<?php if(isset($modulePermissions['perm']['Add Education']) && $modulePermissions['perm']['Add Education'] == "No"){?>
-modJsList['tabEducation'].setShowAddNew(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Delete Education']) && $modulePermissions['perm']['Delete Education'] == "No"){?>
-modJsList['tabEducation'].setShowDelete(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Edit Education']) && $modulePermissions['perm']['Edit Education'] == "No"){?>
-modJsList['tabEducation'].setShowEdit(false);
-<?php }?>
-
-
-
-modJsList['tabCertification'] = new CertificationAdapter('Certification');
-<?php if(isset($modulePermissions['perm']['Add Certifications']) && $modulePermissions['perm']['Add Certifications'] == "No"){?>
-modJsList['tabCertification'].setShowAddNew(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Delete Certifications']) && $modulePermissions['perm']['Delete Certifications'] == "No"){?>
-modJsList['tabCertification'].setShowDelete(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Edit Certifications']) && $modulePermissions['perm']['Edit Certifications'] == "No"){?>
-modJsList['tabCertification'].setShowEdit(false);
-<?php }?>
-
-
-modJsList['tabLanguage'] = new LanguageAdapter('Language');
-<?php if(isset($modulePermissions['perm']['Add Languages']) && $modulePermissions['perm']['Add Languages'] == "No"){?>
-modJsList['tabLanguage'].setShowAddNew(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Delete Languages']) && $modulePermissions['perm']['Delete Languages'] == "No"){?>
-modJsList['tabLanguage'].setShowDelete(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Edit Languages']) && $modulePermissions['perm']['Edit Languages'] == "No"){?>
-modJsList['tabLanguage'].setShowEdit(false);
-<?php }?>
-
-var modJs = modJsList['tabSkill'];
-
+  initAdminQualifications(<?=json_encode($moduleData)?>);
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>

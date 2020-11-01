@@ -20,6 +20,7 @@ class Google_Service_DLP_GooglePrivacyDlpV2CreateDlpJobRequest extends Google_Mo
   protected $inspectJobType = 'Google_Service_DLP_GooglePrivacyDlpV2InspectJobConfig';
   protected $inspectJobDataType = '';
   public $jobId;
+  public $locationId;
   protected $riskJobType = 'Google_Service_DLP_GooglePrivacyDlpV2RiskAnalysisJobConfig';
   protected $riskJobDataType = '';
 
@@ -44,6 +45,14 @@ class Google_Service_DLP_GooglePrivacyDlpV2CreateDlpJobRequest extends Google_Mo
   public function getJobId()
   {
     return $this->jobId;
+  }
+  public function setLocationId($locationId)
+  {
+    $this->locationId = $locationId;
+  }
+  public function getLocationId()
+  {
+    return $this->locationId;
   }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2RiskAnalysisJobConfig

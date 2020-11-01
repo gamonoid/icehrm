@@ -17,9 +17,18 @@
 
 class Google_Service_Container_MaintenancePolicy extends Google_Model
 {
+  public $resourceVersion;
   protected $windowType = 'Google_Service_Container_MaintenanceWindow';
   protected $windowDataType = '';
 
+  public function setResourceVersion($resourceVersion)
+  {
+    $this->resourceVersion = $resourceVersion;
+  }
+  public function getResourceVersion()
+  {
+    return $this->resourceVersion;
+  }
   /**
    * @param Google_Service_Container_MaintenanceWindow
    */

@@ -12,7 +12,7 @@ class EmployeeOvertimeApproval extends EmployeeOvertime
 {
 
     // @codingStandardsIgnoreStart
-    public function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
+    public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
         // @codingStandardsIgnoreEnd
         return $this->findApprovals(new EmployeeOvertime(), $whereOrderBy, $bindarr, $pkeysArr, $extra);

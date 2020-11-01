@@ -40,6 +40,10 @@ class SymfonyStyle extends OutputStyle
     private $lineLength;
     private $bufferedOutput;
 
+    /**
+     * @param InputInterface  $input
+     * @param OutputInterface $output
+     */
     public function __construct(InputInterface $input, OutputInterface $output)
     {
         $this->input = $input;
@@ -279,6 +283,8 @@ class SymfonyStyle extends OutputStyle
     }
 
     /**
+     * @param Question $question
+     *
      * @return string
      */
     public function askQuestion(Question $question)

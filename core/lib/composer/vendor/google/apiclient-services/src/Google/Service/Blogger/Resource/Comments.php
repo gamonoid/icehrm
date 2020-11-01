@@ -26,11 +26,12 @@
 class Google_Service_Blogger_Resource_Comments extends Google_Service_Resource
 {
   /**
-   * Marks a comment as not spam. (comments.approve)
+   * Marks a comment as not spam by blog id, post id and comment id.
+   * (comments.approve)
    *
-   * @param string $blogId The ID of the Blog.
-   * @param string $postId The ID of the Post.
-   * @param string $commentId The ID of the comment to mark as not spam.
+   * @param string $blogId
+   * @param string $postId
+   * @param string $commentId
    * @param array $optParams Optional parameters.
    * @return Google_Service_Blogger_Comment
    */
@@ -41,11 +42,11 @@ class Google_Service_Blogger_Resource_Comments extends Google_Service_Resource
     return $this->call('approve', array($params), "Google_Service_Blogger_Comment");
   }
   /**
-   * Delete a comment by ID. (comments.delete)
+   * Deletes a comment by blog id, post id and comment id. (comments.delete)
    *
-   * @param string $blogId The ID of the Blog.
-   * @param string $postId The ID of the Post.
-   * @param string $commentId The ID of the comment to delete.
+   * @param string $blogId
+   * @param string $postId
+   * @param string $commentId
    * @param array $optParams Optional parameters.
    */
   public function delete($blogId, $postId, $commentId, $optParams = array())
@@ -55,17 +56,14 @@ class Google_Service_Blogger_Resource_Comments extends Google_Service_Resource
     return $this->call('delete', array($params));
   }
   /**
-   * Gets one comment by ID. (comments.get)
+   * Gets a comment by id. (comments.get)
    *
-   * @param string $blogId ID of the blog to containing the comment.
-   * @param string $postId ID of the post to fetch posts from.
-   * @param string $commentId The ID of the comment to get.
+   * @param string $blogId
+   * @param string $postId
+   * @param string $commentId
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string view Access level for the requested comment (default:
-   * READER). Note that some comments will require elevated permissions, for
-   * example comments where the parent posts which is in a draft state, or
-   * comments that are pending moderation.
+   * @opt_param string view
    * @return Google_Service_Blogger_Comment
    */
   public function get($blogId, $postId, $commentId, $optParams = array())
@@ -75,24 +73,19 @@ class Google_Service_Blogger_Resource_Comments extends Google_Service_Resource
     return $this->call('get', array($params), "Google_Service_Blogger_Comment");
   }
   /**
-   * Retrieves the comments for a post, possibly filtered. (comments.listComments)
+   * Lists comments. (comments.listComments)
    *
-   * @param string $blogId ID of the blog to fetch comments from.
-   * @param string $postId ID of the post to fetch posts from.
+   * @param string $blogId
+   * @param string $postId
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string endDate Latest date of comment to fetch, a date-time with
-   * RFC 3339 formatting.
-   * @opt_param bool fetchBodies Whether the body content of the comments is
-   * included.
-   * @opt_param string maxResults Maximum number of comments to include in the
-   * result.
-   * @opt_param string pageToken Continuation token if request is paged.
-   * @opt_param string startDate Earliest date of comment to fetch, a date-time
-   * with RFC 3339 formatting.
+   * @opt_param string pageToken
+   * @opt_param string maxResults
+   * @opt_param string startDate
+   * @opt_param string endDate
+   * @opt_param bool fetchBodies
    * @opt_param string status
-   * @opt_param string view Access level with which to view the returned result.
-   * Note that some fields require elevated access.
+   * @opt_param string view
    * @return Google_Service_Blogger_CommentList
    */
   public function listComments($blogId, $postId, $optParams = array())
@@ -102,22 +95,17 @@ class Google_Service_Blogger_Resource_Comments extends Google_Service_Resource
     return $this->call('list', array($params), "Google_Service_Blogger_CommentList");
   }
   /**
-   * Retrieves the comments for a blog, across all posts, possibly filtered.
-   * (comments.listByBlog)
+   * Lists comments by blog. (comments.listByBlog)
    *
-   * @param string $blogId ID of the blog to fetch comments from.
+   * @param string $blogId
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string endDate Latest date of comment to fetch, a date-time with
-   * RFC 3339 formatting.
-   * @opt_param bool fetchBodies Whether the body content of the comments is
-   * included.
-   * @opt_param string maxResults Maximum number of comments to include in the
-   * result.
-   * @opt_param string pageToken Continuation token if request is paged.
-   * @opt_param string startDate Earliest date of comment to fetch, a date-time
-   * with RFC 3339 formatting.
    * @opt_param string status
+   * @opt_param string endDate
+   * @opt_param string pageToken
+   * @opt_param string maxResults
+   * @opt_param bool fetchBodies
+   * @opt_param string startDate
    * @return Google_Service_Blogger_CommentList
    */
   public function listByBlog($blogId, $optParams = array())
@@ -127,11 +115,12 @@ class Google_Service_Blogger_Resource_Comments extends Google_Service_Resource
     return $this->call('listByBlog', array($params), "Google_Service_Blogger_CommentList");
   }
   /**
-   * Marks a comment as spam. (comments.markAsSpam)
+   * Marks a comment as spam by blog id, post id and comment id.
+   * (comments.markAsSpam)
    *
-   * @param string $blogId The ID of the Blog.
-   * @param string $postId The ID of the Post.
-   * @param string $commentId The ID of the comment to mark as spam.
+   * @param string $blogId
+   * @param string $postId
+   * @param string $commentId
    * @param array $optParams Optional parameters.
    * @return Google_Service_Blogger_Comment
    */
@@ -142,11 +131,12 @@ class Google_Service_Blogger_Resource_Comments extends Google_Service_Resource
     return $this->call('markAsSpam', array($params), "Google_Service_Blogger_Comment");
   }
   /**
-   * Removes the content of a comment. (comments.removeContent)
+   * Removes the content of a comment by blog id, post id and comment id.
+   * (comments.removeContent)
    *
-   * @param string $blogId The ID of the Blog.
-   * @param string $postId The ID of the Post.
-   * @param string $commentId The ID of the comment to delete content from.
+   * @param string $blogId
+   * @param string $postId
+   * @param string $commentId
    * @param array $optParams Optional parameters.
    * @return Google_Service_Blogger_Comment
    */

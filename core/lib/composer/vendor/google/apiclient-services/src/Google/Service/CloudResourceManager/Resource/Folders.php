@@ -28,33 +28,28 @@ class Google_Service_CloudResourceManager_Resource_Folders extends Google_Servic
   /**
    * Creates a Folder in the resource hierarchy. Returns an Operation which can be
    * used to track the progress of the folder creation workflow. Upon success the
-   * Operation.response field will be populated with the created Folder.
-   *
-   * In order to succeed, the addition of this new Folder must not violate the
-   * Folder naming, height or fanout constraints.
-   *
-   * + The Folder's display_name must be distinct from all other Folder's that
-   * share its parent. + The addition of the Folder must not cause the active
-   * Folder hierarchy to exceed a height of 4. Note, the full active + deleted
-   * Folder hierarchy is allowed to reach a height of 8; this provides additional
-   * headroom when moving folders that contain deleted folders. + The addition of
-   * the Folder must not cause the total number of Folders under its parent to
-   * exceed 100.
-   *
-   * If the operation fails due to a folder constraint violation, a
-   * PreconditionFailure explaining the violation will be returned. If the failure
-   * occurs synchronously then the PreconditionFailure will be returned via the
-   * Status.details field and if it occurs asynchronously then the
-   * PreconditionFailure will be returned via the the Operation.error field.
-   *
-   * The caller must have `resourcemanager.folders.create` permission on the
-   * identified parent. (folders.create)
+   * Operation.response field will be populated with the created Folder. In order
+   * to succeed, the addition of this new Folder must not violate the Folder
+   * naming, height or fanout constraints. + The Folder's display_name must be
+   * distinct from all other Folder's that share its parent. + The addition of the
+   * Folder must not cause the active Folder hierarchy to exceed a height of 4.
+   * Note, the full active + deleted Folder hierarchy is allowed to reach a height
+   * of 8; this provides additional headroom when moving folders that contain
+   * deleted folders. + The addition of the Folder must not cause the total number
+   * of Folders under its parent to exceed 100. If the operation fails due to a
+   * folder constraint violation, some errors may be returned by the CreateFolder
+   * request, with status code FAILED_PRECONDITION and an error description. Other
+   * folder constraint violations will be communicated in the Operation, with the
+   * specific PreconditionFailure returned via the details list in the
+   * Operation.error field. The caller must have `resourcemanager.folders.create`
+   * permission on the identified parent. (folders.create)
    *
    * @param Google_Service_CloudResourceManager_Folder $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string parent The resource name of the new Folder's parent. Must
-   * be of the form `folders/{folder_id}` or `organizations/{org_id}`.
+   * @opt_param string parent Required. The resource name of the new Folder's
+   * parent. Must be of the form `folders/{folder_id}` or
+   * `organizations/{org_id}`.
    * @return Google_Service_CloudResourceManager_Operation
    */
   public function create(Google_Service_CloudResourceManager_Folder $postBody, $optParams = array())
@@ -71,8 +66,8 @@ class Google_Service_CloudResourceManager_Resource_Folders extends Google_Servic
    * caller must have `resourcemanager.folders.delete` permission on the
    * identified folder. (folders.delete)
    *
-   * @param string $name the resource name of the Folder to be deleted. Must be of
-   * the form `folders/{folder_id}`.
+   * @param string $name Required. the resource name of the Folder to be deleted.
+   * Must be of the form `folders/{folder_id}`.
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudResourceManager_Folder
    */
@@ -88,8 +83,8 @@ class Google_Service_CloudResourceManager_Resource_Folders extends Google_Servic
    * `folders/1234`). The caller must have `resourcemanager.folders.get`
    * permission on the identified folder. (folders.get)
    *
-   * @param string $name The resource name of the Folder to retrieve. Must be of
-   * the form `folders/{folder_id}`.
+   * @param string $name Required. The resource name of the Folder to retrieve.
+   * Must be of the form `folders/{folder_id}`.
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudResourceManager_Folder
    */
@@ -129,17 +124,18 @@ class Google_Service_CloudResourceManager_Resource_Folders extends Google_Servic
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param int pageSize The maximum number of Folders to return in the
-   * response. This field is optional.
-   * @opt_param string parent The resource name of the Organization or Folder
-   * whose Folders are being listed. Must be of the form `folders/{folder_id}` or
-   * `organizations/{org_id}`. Access to this method is controlled by checking the
-   * `resourcemanager.folders.list` permission on the `parent`.
-   * @opt_param bool showDeleted Controls whether Folders in the DELETE_REQUESTED
-   * state should be returned. Defaults to false. This field is optional.
-   * @opt_param string pageToken A pagination token returned from a previous call
-   * to `ListFolders` that indicates where this listing should continue from. This
-   * field is optional.
+   * @opt_param string parent Required. The resource name of the Organization or
+   * Folder whose Folders are being listed. Must be of the form
+   * `folders/{folder_id}` or `organizations/{org_id}`. Access to this method is
+   * controlled by checking the `resourcemanager.folders.list` permission on the
+   * `parent`.
+   * @opt_param bool showDeleted Optional. Controls whether Folders in the
+   * DELETE_REQUESTED state should be returned. Defaults to false.
+   * @opt_param int pageSize Optional. The maximum number of Folders to return in
+   * the response.
+   * @opt_param string pageToken Optional. A pagination token returned from a
+   * previous call to `ListFolders` that indicates where this listing should
+   * continue from.
    * @return Google_Service_CloudResourceManager_ListFoldersResponse
    */
   public function listFolders($optParams = array())
@@ -155,16 +151,16 @@ class Google_Service_CloudResourceManager_Resource_Folders extends Google_Servic
    * failure, a FolderOperationError categorizing the failure cause will be
    * returned - if the failure occurs synchronously then the FolderOperationError
    * will be returned via the Status.details field and if it occurs asynchronously
-   * then the FolderOperation will be returned via the the Operation.error field.
-   * In addition, the Operation.metadata field will be populated with a
+   * then the FolderOperation will be returned via the Operation.error field. In
+   * addition, the Operation.metadata field will be populated with a
    * FolderOperation message as an aid to stateless clients. Folder moves will be
    * rejected if they violate either the naming, height or fanout constraints
    * described in the CreateFolder documentation. The caller must have
    * `resourcemanager.folders.move` permission on the folder's current and
    * proposed new parent. (folders.move)
    *
-   * @param string $name The resource name of the Folder to move. Must be of the
-   * form folders/{folder_id}
+   * @param string $name Required. The resource name of the Folder to move. Must
+   * be of the form folders/{folder_id}
    * @param Google_Service_CloudResourceManager_MoveFolderRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudResourceManager_Operation
@@ -179,25 +175,22 @@ class Google_Service_CloudResourceManager_Resource_Folders extends Google_Servic
    * Updates a Folder, changing its display_name. Changes to the folder
    * display_name will be rejected if they violate either the display_name
    * formatting rules or naming constraints described in the CreateFolder
-   * documentation.
-   *
-   * The Folder's display name must start and end with a letter or digit, may
-   * contain letters, digits, spaces, hyphens and underscores and can be no longer
-   * than 30 characters. This is captured by the regular expression:
-   * [\p{L}\p{N}]({\p{L}\p{N}_- ]{0,28}[\p{L}\p{N}])?. The caller must have
-   * `resourcemanager.folders.update` permission on the identified folder.
-   *
-   * If the update fails due to the unique name constraint then a
-   * PreconditionFailure explaining this violation will be returned in the
-   * Status.details field. (folders.patch)
+   * documentation. The Folder's display name must start and end with a letter or
+   * digit, may contain letters, digits, spaces, hyphens and underscores and can
+   * be no longer than 30 characters. This is captured by the regular expression:
+   * [\p{L}\p{N}]([\p{L}\p{N}_- ]{0,28}[\p{L}\p{N}])?. The caller must have
+   * `resourcemanager.folders.update` permission on the identified folder. If the
+   * update fails due to the unique name constraint then a PreconditionFailure
+   * explaining this violation will be returned in the Status.details field.
+   * (folders.patch)
    *
    * @param string $name Output only. The resource name of the Folder. Its format
    * is `folders/{folder_id}`, for example: "folders/1234".
    * @param Google_Service_CloudResourceManager_Folder $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask Fields to be updated. Only the `display_name`
-   * can be updated.
+   * @opt_param string updateMask Required. Fields to be updated. Only the
+   * `display_name` can be updated.
    * @return Google_Service_CloudResourceManager_Folder
    */
   public function patch($name, Google_Service_CloudResourceManager_Folder $postBody, $optParams = array())
@@ -209,10 +202,8 @@ class Google_Service_CloudResourceManager_Resource_Folders extends Google_Servic
   /**
    * Search for folders that match specific filter criteria. Search provides an
    * eventually consistent view of the folders a user has access to which meet the
-   * specified filter criteria.
-   *
-   * This will only return folders on which the caller has the permission
-   * `resourcemanager.folders.get`. (folders.search)
+   * specified filter criteria. This will only return folders on which the caller
+   * has the permission `resourcemanager.folders.get`. (folders.search)
    *
    * @param Google_Service_CloudResourceManager_SearchFoldersRequest $postBody
    * @param array $optParams Optional parameters.
@@ -245,10 +236,8 @@ class Google_Service_CloudResourceManager_Resource_Folders extends Google_Servic
   }
   /**
    * Returns permissions that a caller has on the specified Folder. The `resource`
-   * field should be the Folder's resource name, e.g. "folders/1234".
-   *
-   * There are no permissions required for making this API call.
-   * (folders.testIamPermissions)
+   * field should be the Folder's resource name, e.g. "folders/1234". There are no
+   * permissions required for making this API call. (folders.testIamPermissions)
    *
    * @param string $resource REQUIRED: The resource for which the policy detail is
    * being requested. See the operation documentation for the appropriate value
@@ -272,8 +261,8 @@ class Google_Service_CloudResourceManager_Resource_Folders extends Google_Servic
    * `resourcemanager.folders.undelete` permission on the identified folder.
    * (folders.undelete)
    *
-   * @param string $name The resource name of the Folder to undelete. Must be of
-   * the form `folders/{folder_id}`.
+   * @param string $name Required. The resource name of the Folder to undelete.
+   * Must be of the form `folders/{folder_id}`.
    * @param Google_Service_CloudResourceManager_UndeleteFolderRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudResourceManager_Folder

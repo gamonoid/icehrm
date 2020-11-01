@@ -19,6 +19,8 @@ class Google_Service_Dataflow_StreamingSetupTask extends Google_Model
 {
   public $drain;
   public $receiveWorkPort;
+  protected $snapshotConfigType = 'Google_Service_Dataflow_StreamingApplianceSnapshotConfig';
+  protected $snapshotConfigDataType = '';
   protected $streamingComputationTopologyType = 'Google_Service_Dataflow_TopologyConfig';
   protected $streamingComputationTopologyDataType = '';
   public $workerHarnessPort;
@@ -38,6 +40,20 @@ class Google_Service_Dataflow_StreamingSetupTask extends Google_Model
   public function getReceiveWorkPort()
   {
     return $this->receiveWorkPort;
+  }
+  /**
+   * @param Google_Service_Dataflow_StreamingApplianceSnapshotConfig
+   */
+  public function setSnapshotConfig(Google_Service_Dataflow_StreamingApplianceSnapshotConfig $snapshotConfig)
+  {
+    $this->snapshotConfig = $snapshotConfig;
+  }
+  /**
+   * @return Google_Service_Dataflow_StreamingApplianceSnapshotConfig
+   */
+  public function getSnapshotConfig()
+  {
+    return $this->snapshotConfig;
   }
   /**
    * @param Google_Service_Dataflow_TopologyConfig

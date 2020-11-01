@@ -225,10 +225,15 @@
 	  <fileset dir="${origin}">
 	    <include name="**/*"/>
         <exclude name="node_modules/**"/>
-        <exclude name="web/admin/src/**"/>
-        <exclude name="web/modules/src/**"/>
+        <exclude name="web/node_modules/**"/>
+        <exclude name="web/admin/**"/>
+        <exclude name="web/modules/**"/>
         <exclude name="web/api/**"/>
         <exclude name="web/api-common/**"/>
+        <exclude name="web/components/**"/>
+        <exclude name="web/themecss/**"/>
+        <exclude name="web/themejs/**"/>
+        <exclude name="docs/**"/>
 	  </fileset>
 	</copy>
 

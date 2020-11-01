@@ -1972,3 +1972,18 @@ msgstr "保存的计算"
 
 msgid "Total Leave Days"
 msgstr "休假总天数"
+
+msgid "Actions"
+msgstr "动作"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "View"
+msgstr "视图"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Copy"
+msgstr "复制"

@@ -30,6 +30,9 @@ class Google_Service_DoubleClickBidManager_Resource_Queries extends Google_Servi
    *
    * @param Google_Service_DoubleClickBidManager_Query $postBody
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param bool asynchronous If true, tries to run the query asynchronously.
+   * Only applicable when the frequency is ONE_TIME.
    * @return Google_Service_DoubleClickBidManager_Query
    */
   public function createquery(Google_Service_DoubleClickBidManager_Query $postBody, $optParams = array())
@@ -68,6 +71,10 @@ class Google_Service_DoubleClickBidManager_Resource_Queries extends Google_Servi
    * Retrieves stored queries. (queries.listqueries)
    *
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param string pageToken Optional pagination token.
+   * @opt_param int pageSize Maximum number of results per page. Must be between 1
+   * and 100. Defaults to 100 if unspecified.
    * @return Google_Service_DoubleClickBidManager_ListQueriesResponse
    */
   public function listqueries($optParams = array())
@@ -82,6 +89,8 @@ class Google_Service_DoubleClickBidManager_Resource_Queries extends Google_Servi
    * @param string $queryId Query ID to run.
    * @param Google_Service_DoubleClickBidManager_RunQueryRequest $postBody
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param bool asynchronous If true, tries to run the query asynchronously.
    */
   public function runquery($queryId, Google_Service_DoubleClickBidManager_RunQueryRequest $postBody, $optParams = array())
   {

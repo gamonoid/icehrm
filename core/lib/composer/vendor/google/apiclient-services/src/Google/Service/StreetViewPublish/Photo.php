@@ -22,6 +22,7 @@ class Google_Service_StreetViewPublish_Photo extends Google_Collection
   protected $connectionsType = 'Google_Service_StreetViewPublish_Connection';
   protected $connectionsDataType = 'array';
   public $downloadUrl;
+  public $mapsPublishStatus;
   protected $photoIdType = 'Google_Service_StreetViewPublish_PhotoId';
   protected $photoIdDataType = '';
   protected $placesType = 'Google_Service_StreetViewPublish_Place';
@@ -30,6 +31,7 @@ class Google_Service_StreetViewPublish_Photo extends Google_Collection
   protected $poseDataType = '';
   public $shareLink;
   public $thumbnailUrl;
+  public $transferStatus;
   protected $uploadReferenceType = 'Google_Service_StreetViewPublish_UploadRef';
   protected $uploadReferenceDataType = '';
   public $viewCount;
@@ -63,6 +65,14 @@ class Google_Service_StreetViewPublish_Photo extends Google_Collection
   public function getDownloadUrl()
   {
     return $this->downloadUrl;
+  }
+  public function setMapsPublishStatus($mapsPublishStatus)
+  {
+    $this->mapsPublishStatus = $mapsPublishStatus;
+  }
+  public function getMapsPublishStatus()
+  {
+    return $this->mapsPublishStatus;
   }
   /**
    * @param Google_Service_StreetViewPublish_PhotoId
@@ -121,6 +131,14 @@ class Google_Service_StreetViewPublish_Photo extends Google_Collection
   public function getThumbnailUrl()
   {
     return $this->thumbnailUrl;
+  }
+  public function setTransferStatus($transferStatus)
+  {
+    $this->transferStatus = $transferStatus;
+  }
+  public function getTransferStatus()
+  {
+    return $this->transferStatus;
   }
   /**
    * @param Google_Service_StreetViewPublish_UploadRef

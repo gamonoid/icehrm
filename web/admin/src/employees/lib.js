@@ -10,518 +10,36 @@
  * Author: Thilina Hasantha
  */
 
+import React from 'react';
+import {Avatar, Space, Tag} from 'antd';
+import {
+  CloudDownloadOutlined, DeleteOutlined, UndoOutlined, MonitorOutlined, LoginOutlined, EditOutlined, CopyOutlined,
+} from '@ant-design/icons';
 import AdapterBase from '../../../api/AdapterBase';
 import SubAdapterBase from '../../../api/SubAdapterBase';
-
-/**
- * @class EmployeeSubSkillsAdapter
- * @param endPoint
- * @param tab
- * @param filter
- * @param orderBy
- * @returns
- */
+import ReactLegacyModalAdapterBase from '../../../api/ReactLegacyModalAdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
+import EmployeeProfile from './components/EmployeeProfile';
 
 
-class EmployeeSubSkillsAdapter extends SubAdapterBase {
-  getDataMapping() {
-    return [
-      'id',
-      'employee',
-      'skill_id',
-      'details',
-    ];
-  }
-
-  getHeaders() {
-    return [
-      { sTitle: 'ID', bVisible: false },
-      { sTitle: 'Employee' },
-      { sTitle: 'Skill' },
-      { sTitle: 'Details' },
-    ];
-  }
-
-  getFormFields() {
-    return [
-      ['id', { label: 'ID', type: 'hidden' }],
-      ['employee', { label: 'Employee', type: 'hidden' }],
-      ['skill_id', {
-        label: 'Skill', type: 'select2', 'allow-null': true, 'remote-source': ['Skill', 'id', 'name'],
-      }],
-      ['details', { label: 'Details', type: 'textarea', validation: '' }],
-    ];
-  }
-
-
-  forceInjectValuesBeforeSave(params) {
-    params.employee = this.parent.currentId;
-    return params;
-  }
-
-  getSubHeaderTitle() {
-    const addBtn = `<button class="btn btn-small btn-success" onclick="modJs.subModJsList['tab${this.tab}'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>`;
-    return addBtn + this.gt('Skills');
-  }
-
-  getSubItemHtml(item, itemDelete, itemEdit) {
-    const itemHtml = $(`<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">${item[2]}${itemDelete}${itemEdit}</h5><p class="list-group-item-text">${nl2br(item[3])}</p></div>`);
-    return itemHtml;
-  }
-}
-
-
-/**
- * @class EmployeeSubEducationAdapter
- * @param endPoint
- * @param tab
- * @param filter
- * @param orderBy
- * @returns
- */
-
-
-class EmployeeSubEducationAdapter extends SubAdapterBase {
-  getDataMapping() {
-    return [
-      'id',
-      'employee',
-      'education_id',
-      'institute',
-      'date_start',
-      'date_end',
-    ];
-  }
-
-  getHeaders() {
-    return [
-      { sTitle: 'ID', bVisible: false },
-      { sTitle: 'Employee' },
-      { sTitle: 'Qualification' },
-      { sTitle: 'Institute' },
-      { sTitle: 'Start Date' },
-      { sTitle: 'Completed On' },
-    ];
-  }
-
-  getFormFields() {
-    return [
-      ['id', { label: 'ID', type: 'hidden' }],
-      ['employee', { label: 'Employee', type: 'hidden' }],
-      ['education_id', {
-        label: 'Qualification', type: 'select2', 'allow-null': false, 'remote-source': ['Education', 'id', 'name'],
-      }],
-      ['institute', { label: 'Institute', type: 'text', validation: '' }],
-      ['date_start', { label: 'Start Date', type: 'date', validation: 'none' }],
-      ['date_end', { label: 'Completed On', type: 'date', validation: 'none' }],
-    ];
-  }
-
-
-  forceInjectValuesBeforeSave(params) {
-    params.employee = this.parent.currentId;
-    return params;
-  }
-
-  getSubHeaderTitle() {
-    const addBtn = `<button class="btn btn-small btn-success" onclick="modJs.subModJsList['tab${this.tab}'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>`;
-    return addBtn + this.gt('Education');
-  }
-
-  getSubItemHtml(item, itemDelete, itemEdit) {
-    let start = '';
-    try {
-      start = Date.parse(item[4]).toString('MMM d, yyyy');
-    } catch (e) {
-      console.log(`Error:${e.message}`);
-    }
-
-    let end = '';
-    try {
-      end = Date.parse(item[5]).toString('MMM d, yyyy');
-    } catch (e) {
-      console.log(`Error:${e.message}`);
-    }
-    // eslint-disable-next-line max-len
-    return $(`<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">${item[2]}${itemDelete}${itemEdit}</h5><p class="list-group-item-text"><i class="fa fa-calendar"></i> Start: <b>${start}</b></p><p class="list-group-item-text"><i class="fa fa-calendar"></i> Completed: <b>${end}</b></p><p class="list-group-item-text">`
-      + `<i class="fa fa-building-o"></i> Institute: <b>${item[3]}</b></p></div>`);
-  }
-}
-
-
-/**
- * @class EmployeeSubCertificationAdapter
- * @param endPoint
- * @param tab
- * @param filter
- * @param orderBy
- * @returns
- */
-
-class EmployeeSubCertificationAdapter extends SubAdapterBase {
-  getDataMapping() {
-    return [
-      'id',
-      'employee',
-      'certification_id',
-      'institute',
-      'date_start',
-      'date_end',
-    ];
-  }
-
-
-  getHeaders() {
-    return [
-      { sTitle: 'ID', bVisible: false },
-      { sTitle: 'Employee' },
-      { sTitle: 'Certification' },
-      { sTitle: 'Institute' },
-      { sTitle: 'Granted On' },
-      { sTitle: 'Valid Thru' },
-    ];
-  }
-
-  getFormFields() {
-    return [
-      ['id', { label: 'ID', type: 'hidden' }],
-      ['employee', { label: 'Employee', type: 'hidden' }],
-      ['certification_id', {
-        label: 'Certification', type: 'select2', 'allow-null': false, 'remote-source': ['Certification', 'id', 'name'],
-      }],
-      ['institute', { label: 'Institute', type: 'text', validation: '' }],
-      ['date_start', { label: 'Granted On', type: 'date', validation: 'none' }],
-      ['date_end', { label: 'Valid Thru', type: 'date', validation: 'none' }],
-    ];
-  }
-
-
-  forceInjectValuesBeforeSave(params) {
-    params.employee = this.parent.currentId;
-    return params;
-  }
-
-  getSubHeaderTitle() {
-    const addBtn = `<button class="btn btn-small btn-success" onclick="modJs.subModJsList['tab${this.tab}'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>`;
-    return addBtn + this.gt('Certifications');
-  }
-
-  getSubItemHtml(item, itemDelete, itemEdit) {
-    let start = '';
-    try {
-      start = Date.parse(item[4]).toString('MMM d, yyyy');
-    } catch (e) {
-      console.log(`Error:${e.message}`);
-    }
-
-    let end = '';
-    try {
-      end = Date.parse(item[5]).toString('MMM d, yyyy');
-    } catch (e) {
-      console.log(`Error:${e.message}`);
-    }
-    // eslint-disable-next-line max-len
-    return $(`<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">${item[2]}${itemDelete}${itemEdit}</h5><p class="list-group-item-text"><i class="fa fa-calendar"></i> Granted On: <b>${start}</b></p><p class="list-group-item-text"><i class="fa fa-calendar"></i> Valid Thru: <b>${end}</b></p><p class="list-group-item-text"><i class="fa fa-building-o"></i> Institute: <b>${item[3]}</b></p></div>`);
-  }
-}
-
-/**
- * @class EmployeeSubLanguageAdapter
- * @param endPoint
- * @param tab
- * @param filter
- * @param orderBy
- * @returns
- */
-
-class EmployeeSubLanguageAdapter extends SubAdapterBase {
-  getDataMapping() {
-    return [
-      'id',
-      'employee',
-      'language_id',
-      'reading',
-      'speaking',
-      'writing',
-      'understanding',
-    ];
-  }
-
-  getHeaders() {
-    return [
-      { sTitle: 'ID', bVisible: false },
-      { sTitle: 'Employee' },
-      { sTitle: 'Language' },
-      { sTitle: 'Reading' },
-      { sTitle: 'Speaking' },
-      { sTitle: 'Writing' },
-      { sTitle: 'Understanding' },
-    ];
-  }
-
-  getFormFields() {
-    const compArray = [['Elementary Proficiency', 'Elementary Proficiency'],
-      ['Limited Working Proficiency', 'Limited Working Proficiency'],
-      ['Professional Working Proficiency', 'Professional Working Proficiency'],
-      ['Full Professional Proficiency', 'Full Professional Proficiency'],
-      ['Native or Bilingual Proficiency', 'Native or Bilingual Proficiency']];
-
-    return [
-      ['id', { label: 'ID', type: 'hidden' }],
-      ['employee', { label: 'Employee', type: 'hidden' }],
-      ['language_id', {
-        label: 'Language', type: 'select2', 'allow-null': false, 'remote-source': ['Language', 'id', 'name'],
-      }],
-      ['reading', { label: 'Reading', type: 'select', source: compArray }],
-      ['speaking', { label: 'Speaking', type: 'select', source: compArray }],
-      ['writing', { label: 'Writing', type: 'select', source: compArray }],
-      ['understanding', { label: 'Understanding', type: 'select', source: compArray }],
-    ];
-  }
-
-
-  forceInjectValuesBeforeSave(params) {
-    params.employee = this.parent.currentId;
-    return params;
-  }
-
-  getSubHeaderTitle() {
-    const addBtn = `<button class="btn btn-small btn-success" onclick="modJs.subModJsList['tab${this.tab}'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>`;
-    return addBtn + this.gt('Languages');
-  }
-
-  getSubItemHtml(item, itemDelete, itemEdit) {
-    // eslint-disable-next-line max-len
-    return $(`<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">${item[2]}${itemDelete}${itemEdit}</h5><p class="list-group-item-text"><i class="fa fa-asterisk"></i> Reading: <b>${item[3]}</b></p><p class="list-group-item-text"><i class="fa fa-asterisk"></i> Speaking: <b>${item[4]}</b></p><p class="list-group-item-text"><i class="fa fa-asterisk"></i> Writing: <b>${item[5]}</b></p><p class="list-group-item-text"><i class="fa fa-asterisk"></i> Understanding: <b>${item[6]}</b></p></div>`);
-  }
-
+class SubProfileEnabledAdapterBase extends ReactModalAdapterBase {
   isSubProfileTable() {
     return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 }
 
 
-/**
- * @class EmployeeSubDependentAdapter
- * @param endPoint
- * @param tab
- * @param filter
- * @param orderBy
- * @returns
- */
-
-class EmployeeSubDependentAdapter extends SubAdapterBase {
-  getDataMapping() {
-    return [
-      'id',
-      'employee',
-      'name',
-      'relationship',
-      'dob',
-      'id_number',
-    ];
-  }
-
-
-  getHeaders() {
-    return [
-      { sTitle: 'ID', bVisible: false },
-      { sTitle: 'Employee' },
-      { sTitle: 'Name' },
-      { sTitle: 'Relationship' },
-      { sTitle: 'Date of Birth' },
-      { sTitle: 'Id Number' },
-    ];
-  }
-
-  getFormFields() {
-    return [
-      ['id', { label: 'ID', type: 'hidden' }],
-      ['employee', { label: 'Employee', type: 'hidden' }],
-      ['name', { label: 'Name', type: 'text', validation: '' }],
-      ['relationship', { label: 'Relationship', type: 'select', source: [['Child', 'Child'], ['Spouse', 'Spouse'], ['Parent', 'Parent'], ['Other', 'Other']] }],
-      ['dob', { label: 'Date of Birth', type: 'date', validation: '' }],
-      ['id_number', { label: 'Id Number', type: 'text', validation: 'none' }],
-    ];
-  }
-
-
-  forceInjectValuesBeforeSave(params) {
-    params.employee = this.parent.currentId;
-    return params;
-  }
-
-  getSubHeaderTitle() {
-    const addBtn = `<button class="btn btn-small btn-success" onclick="modJs.subModJsList['tab${this.tab}'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>`;
-    return addBtn + this.gt('Dependents');
-  }
-
-  getSubItemHtml(item, itemDelete, itemEdit) {
-    // eslint-disable-next-line max-len
-    const itemHtml = $(`<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">${item[2]}${itemDelete}${itemEdit}</h5><p class="list-group-item-text"><i class="fa fa-users"></i> Relationship: <b>${item[3]}</b></p><p class="list-group-item-text"><i class="fa fa-user"></i> Name: <b>${item[2]}</b></p></div>`);
-    return itemHtml;
-  }
-}
-
-
-/**
- * @class EmployeeSubEmergencyContactAdapter
- * @param endPoint
- * @param tab
- * @param filter
- * @param orderBy
- * @returns
- */
-
-class EmployeeSubEmergencyContactAdapter extends SubAdapterBase {
-  getDataMapping() {
-    return [
-      'id',
-      'employee',
-      'name',
-      'relationship',
-      'home_phone',
-      'work_phone',
-      'mobile_phone',
-    ];
-  }
-
-
-  getHeaders() {
-    return [
-      { sTitle: 'ID', bVisible: false },
-      { sTitle: 'Employee' },
-      { sTitle: 'Name' },
-      { sTitle: 'Relationship' },
-      { sTitle: 'Home Phone' },
-      { sTitle: 'Work Phone' },
-      { sTitle: 'Mobile Phone' },
-    ];
-  }
-
-  getFormFields() {
-    return [
-      ['id', { label: 'ID', type: 'hidden' }],
-      ['employee', { label: 'Employee', type: 'hidden' }],
-      ['name', { label: 'Name', type: 'text', validation: '' }],
-      ['relationship', { label: 'Relationship', type: 'text', validation: 'none' }],
-      ['home_phone', { label: 'Home Phone', type: 'text', validation: 'none' }],
-      ['work_phone', { label: 'Work Phone', type: 'text', validation: 'none' }],
-      ['mobile_phone', { label: 'Mobile Phone', type: 'text', validation: 'none' }],
-    ];
-  }
-
-
-  forceInjectValuesBeforeSave(params) {
-    params.employee = this.parent.currentId;
-    return params;
-  }
-
-  getSubHeaderTitle() {
-    const addBtn = `<button class="btn btn-small btn-success" onclick="modJs.subModJsList['tab${this.tab}'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>`;
-    return addBtn + this.gt('Emergency Contacts');
-  }
-
-  getSubItemHtml(item, itemDelete, itemEdit) {
-    // eslint-disable-next-line max-len
-    const itemHtml = $(`<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">${item[2]}${itemDelete}${itemEdit}</h5><p class="list-group-item-text"><i class="fa fa-users"></i> Relationship: <b>${item[3]}</b></p><p class="list-group-item-text"><i class="fa fa-user"></i> Name: <b>${item[2]}</b></p><p class="list-group-item-text"><i class="fa fa-phone"></i> Home Phone: <b>${item[4]}</b></p><p class="list-group-item-text"><i class="fa fa-phone"></i> Mobile Phone: <b>${item[6]}</b></p></div>`);
-    return itemHtml;
-  }
-}
-
-/**
- * @class EmployeeSubDocumentAdapter
- * @param endPoint
- * @param tab
- * @param filter
- * @param orderBy
- * @returns
- */
-
-class EmployeeSubDocumentAdapter extends SubAdapterBase {
-  getDataMapping() {
-    return [
-      'id',
-      'employee',
-      'document',
-      'details',
-      'date_added',
-      'valid_until',
-      'status',
-      'attachment',
-    ];
-  }
-
-  getHeaders() {
-    return [
-      { sTitle: 'ID', bVisible: false },
-      { sTitle: 'Employee' },
-      { sTitle: 'Document' },
-      { sTitle: 'Details' },
-      { sTitle: 'Date Added' },
-      { sTitle: 'Status' },
-      { sTitle: 'Attachment', bVisible: false },
-    ];
-  }
-
-  getFormFields() {
-    return [
-      ['id', { label: 'ID', type: 'hidden' }],
-      ['employee', { label: 'Employee', type: 'hidden' }],
-      ['document', { label: 'Document', type: 'select2', 'remote-source': ['Document', 'id', 'name'] }],
-      ['date_added', { label: 'Date Added', type: 'date', validation: '' }],
-      ['valid_until', { label: 'Valid Until', type: 'date', validation: 'none' }],
-      ['status', { label: 'Status', type: 'select', source: [['Active', 'Active'], ['Inactive', 'Inactive'], ['Draft', 'Draft']] }],
-      ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
-      ['attachment', { label: 'Attachment', type: 'fileupload', validation: 'none' }],
-    ];
-  }
-
-
-  forceInjectValuesBeforeSave(params) {
-    params.employee = this.parent.currentId;
-    return params;
-  }
-
-  getSubHeaderTitle() {
-    const addBtn = `<button class="btn btn-small btn-success" onclick="modJs.subModJsList['tab${this.tab}'].renderForm();" style="margin-right:10px;"><i class="fa fa-plus"></i></button>`;
-    return addBtn + this.gt('Documents');
-  }
-
-  getSubItemHtml(item, itemDelete, itemEdit) {
-    let expire = '';
-    try {
-      expire = Date.parse(item[5]).toString('MMM d, yyyy');
-    } catch (e) {
-      console.log(e.message);
-    }
-
-    const downloadButton = `<button id="#_id_#_download" onclick="download('${item[7]}');return false;" type="button" style="position: absolute;bottom: 5px;right: 70px;font-size: 13px;" tooltip="Download"><li class="fa fa-cloud-download"></li></button>`;
-
-    const itemHtml = $(`<div class="list-group-item sub-tab-item"><h5 class="list-group-item-heading" style="font-weight:bold;">${item[2]}${downloadButton}${itemDelete}${itemEdit}</h5><p class="list-group-item-text">${nl2br(item[3])}</p><p class="list-group-item-text"><i class="fa fa-calendar"></i> Expire On: <b>${expire}</b></p></div>`);
-    return itemHtml;
-  }
-
-
-  isSubProfileTable() {
-    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
-  }
-}
-
-class SubProfileEnabledAdapterBase extends AdapterBase {
-  isSubProfileTable() {
-    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin'
-  }
-}
-
-
-class EmployeeAdapter extends SubProfileEnabledAdapterBase {
+class EmployeeAdapter extends ReactModalAdapterBase {
   constructor(endPoint, tab, filter, orderBy) {
     super(endPoint, tab, filter, orderBy);
     this.fieldNameMap = {};
     this.hiddenFields = {};
     this.tableFields = {};
     this.formOnlyFields = {};
+  }
+
+  isSubProfileTable() {
+    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
   }
 
   setFieldNameMap(fields) {
@@ -576,9 +94,9 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
       'employee_id',
       'first_name',
       'last_name',
-      'mobile_phone',
+      //'mobile_phone',
       'department',
-      'gender',
+      //'gender',
       'supervisor',
     ];
   }
@@ -624,6 +142,34 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
     return headers;
   }
 
+  getTableColumns() {
+    const columns = this.getDataMapping();
+    const headers = this.getHeaders();
+
+    const tableColumns = [];
+    for (let i = 1; i < columns.length; i++) {
+      tableColumns.push({
+        title: headers[i].sTitle,
+        dataIndex: columns[i],
+        sorter: true,
+      });
+
+      if (columns[i] === 'image') {
+        tableColumns[i - 1].render = (text, record) => <Avatar src={text} />;
+      }
+    }
+
+    return tableColumns;
+  }
+
+  showElement(element) {
+    this.tableContainer.current.setCurrentElement(element);
+  }
+
+  getTableChildComponents() {
+    return (<EmployeeProfile />);
+  }
+
   getFormFields() {
     const newFields = [];
     let tempField; let
@@ -636,7 +182,7 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
       ['nationality', { label: 'Nationality', type: 'select2', 'remote-source': ['Nationality', 'id', 'name'] }],
       ['birthday', { label: 'Date of Birth', type: 'date', validation: '' }],
-      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Divers', 'Divers']] }],
+      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Other', 'Other']] }],
       ['marital_status', { label: 'Marital Status', type: 'select', source: [['Married', 'Married'], ['Single', 'Single'], ['Divorced', 'Divorced'], ['Widowed', 'Widowed'], ['Other', 'Other']] }],
       ['ethnicity', {
         label: 'Ethnicity', type: 'select2', 'allow-null': true, 'remote-source': ['Ethnicity', 'id', 'name'],
@@ -648,12 +194,18 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
       ['nic_num', { label: 'NIC', type: 'text', validation: 'none' }],
       ['other_id', { label: 'Other ID', type: 'text', validation: 'none' }],
       ['driving_license', { label: 'Driving License No', type: 'text', validation: 'none' }],
+
       ['employment_status', { label: 'Employment Status', type: 'select2', 'remote-source': ['EmploymentStatus', 'id', 'name'] }],
+      ['department', { label: 'Department', type: 'select2', 'remote-source': ['CompanyStructure', 'id', 'title'] }],
       ['job_title', { label: 'Job Title', type: 'select2', 'remote-source': ['JobTitle', 'id', 'name'] }],
       ['pay_grade', {
         label: 'Pay Grade', type: 'select2', 'allow-null': true, 'remote-source': ['PayGrade', 'id', 'name'],
       }],
+      ['joined_date', { label: 'Joined Date', type: 'date', validation: '' }],
+      ['confirmation_date', { label: 'Confirmation Date', type: 'date', validation: 'none' }],
+      ['termination_date', { label: 'Termination Date', type: 'date', validation: 'none' }],
       ['work_station_id', { label: 'Work Station Id', type: 'text', validation: 'none' }],
+
       ['address1', { label: 'Address Line 1', type: 'text', validation: 'none' }],
       ['address2', { label: 'Address Line 2', type: 'text', validation: 'none' }],
       ['city', { label: 'City', type: 'text', validation: 'none' }],
@@ -667,10 +219,7 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
       ['work_phone', { label: 'Work Phone', type: 'text', validation: 'none' }],
       ['work_email', { label: 'Work Email', type: 'text', validation: 'emailOrEmpty' }],
       ['private_email', { label: 'Private Email', type: 'text', validation: 'emailOrEmpty' }],
-      ['joined_date', { label: 'Joined Date', type: 'date', validation: '' }],
-      ['confirmation_date', { label: 'Confirmation Date', type: 'date', validation: 'none' }],
-      ['termination_date', { label: 'Termination Date', type: 'date', validation: 'none' }],
-      ['department', { label: 'Department', type: 'select2', 'remote-source': ['CompanyStructure', 'id', 'title'] }],
+
       ['supervisor', {
         label: 'Direct Supervisor', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
       }],
@@ -694,6 +243,13 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
         ],
         html: '<div id="#_id_#" class="panel panel-default"><div class="panel-body">#_delete_##_edit_#<span style="color:#999;font-size:13px;font-weight:bold">Date: #_date_#</span><hr/>#_note_#</div></div>',
         validation: 'none',
+        columns: [
+          {
+            title: 'Note',
+            dataIndex: 'note',
+            key: 'note',
+          },
+        ],
         'sort-function': function (a, b) {
           const t1 = Date.parse(a.date).getTime();
           const t2 = Date.parse(b.date).getTime();
@@ -729,6 +285,108 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
     return newFields;
   }
 
+  getMappedFields() {
+    const fields = this.getFormFields();
+    const steps = [
+      {
+        title: this.gt('Personal'),
+        description: this.gt('Personal Information'),
+        fields: [
+          'id',
+          'employee_id',
+          'first_name',
+          'middle_name',
+          'last_name',
+          'nationality',
+          'birthday',
+          'gender',
+          'marital_status',
+          'ethnicity',
+        ],
+      },
+      {
+        title: this.gt('Identification'),
+        description: this.gt('Personal Information'),
+        fields: [
+          'immigration_status',
+          'ssn_num',
+          'nic_num',
+          'other_id',
+          'driving_license',
+        ],
+      },
+      {
+        title: this.gt('Work'),
+        description: this.gt('Work related details'),
+        fields: [
+          'employment_status',
+          'department',
+          'job_title',
+          'pay_grade',
+          'joined_date',
+          'confirmation_date',
+          'termination_date',
+          'work_station_id',
+        ],
+      },
+      {
+        title: this.gt('Contact'),
+        description: this.gt('Contact details'),
+        fields: [
+          'address1', 'address2',
+          'city', 'country',
+          'province', 'postal_code',
+          'home_phone', 'mobile_phone',
+          'work_phone', 'work_email',
+          'private_email',
+        ],
+      },
+      {
+        title: this.gt('Report'),
+        description: this.gt('Supervisors and reports'),
+        fields: [
+          'supervisor',
+          'indirect_supervisors',
+          'approver1',
+          'approver2',
+          'approver3',
+          'notes',
+        ],
+      },
+    ];
+
+    if (this.customFields.length > 0) {
+      steps.push({
+        title: this.gt('Other'),
+        description: this.gt('Additional details'),
+        fields: this.customFields.map((item) => item[0]),
+      });
+    }
+
+    return this.addActualFields(steps, fields);
+  }
+
+  addActualFields(steps, fields) {
+    return steps.map((item) => {
+      item.fields = item.fields.reduce((acc, fieldName) => {
+        const field = fields.find(([name]) => name === fieldName);
+        if (field) {
+          acc.push(field);
+        }
+        return acc;
+      }, []);
+
+      return item;
+    });
+  }
+
+  getFormOptions() {
+    return {
+      width: 1024,
+      twoColumnLayout: false,
+    };
+  }
+
   getFilters() {
     return [
       ['job_title', {
@@ -743,13 +401,52 @@ class EmployeeAdapter extends SubProfileEnabledAdapterBase {
     ];
   }
 
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => (
+      <Space size="middle">
+        <Tag color="orange" onClick={() => modJs.setAdminProfile(record.id)} style={{ cursor: 'pointer' }}>
+          <LoginOutlined />
+          {` ${adapter.gt('Login As')}`}
+        </Tag>
+        {adapter.hasAccess('save') && adapter.showEdit
+        && (
+          <Tag color="green" onClick={() => modJs.edit(record.id)} style={{ cursor: 'pointer' }}>
+            <EditOutlined />
+            {` ${adapter.gt('Edit')}`}
+          </Tag>
+        )}
+        {adapter.hasAccess('element')
+        && (
+          <Tag color="blue" onClick={() => modJs.viewElement(record.id)} style={{ cursor: 'pointer' }}>
+            <MonitorOutlined />
+            {` ${adapter.gt('View')}`}
+          </Tag>
+        )}
+        {adapter.hasAccess('delete') && adapter.showDelete
+        && (
+          <Tag color="volcano" onClick={() => modJs.terminateEmployee(record.id)} style={{ cursor: 'pointer' }}>
+            <DeleteOutlined />
+            {` ${adapter.gt('Delete')}`}
+          </Tag>
+        )}
+        {adapter.hasAccess('save')
+        && (
+          <Tag color="cyan" onClick={() => modJs.copyRow(record.id)} style={{ cursor: 'pointer' }}>
+            <CopyOutlined />
+            {` ${adapter.gt('Copy')}`}
+          </Tag>
+        )}
+      </Space>
+    );
+  }
+
   getActionButtonsHtml(id) {
     let deleteBtn = '<img class="tableActionButton" src="_BASE_images/connect-no.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Terminate Employee" onclick="modJs.terminateEmployee(_id_);return false;"></img>';
     if (this.showDelete === false) {
       deleteBtn = '';
     }
     // eslint-disable-next-line max-len
-    let html = `<div style="width:130px;">
+    let html = `<div style="width:132px;">
 <img class="tableActionButton" src="_BASE_images/user.png" style="cursor:pointer;" rel="tooltip" title="Login as this Employee" onclick="modJs.setAdminProfile(_id_);return false;"></img>
 <img class="tableActionButton" src="_BASE_images/view.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="View" onclick="modJs.view(_id_);return false;"></img>
 <img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>
@@ -895,194 +592,8 @@ ${deleteBtn}
 
 
   viewFailCallBack(callBackData) {
-    this.showMessage('Error', 'Error Occured while retriving candidate');
+    this.showMessage('Error', 'Error Occurred while retrieving candidate');
   }
-
-  renderEmployee(data) {
-    let title;
-    const fields = this.getFormFields();
-    const currentEmpId = data[1];
-    const currentId = data[1];
-    const userEmpId = data[2];
-    data = data[0];
-    this.currentEmployee = data;
-    let html = this.getCustomTemplate('myDetails.html');
-
-
-    for (let i = 0; i < fields.length; i++) {
-      if (this.fieldNameMap[fields[i][0]] !== undefined && this.fieldNameMap[fields[i][0]] !== null) {
-        title = this.gt(this.fieldNameMap[fields[i][0]].textMapped);
-        html = html.replace(`#_label_${fields[i][0]}_#`, title);
-      }
-    }
-
-    html = html.replace(/#_.+_#/gi, '');
-    html = html.replace(/_id_/g, data.id);
-
-    $(`#${this.getTableName()}`).html(html);
-
-    for (let i = 0; i < fields.length; i++) {
-      $(`#${this.getTableName()} #${fields[i][0]}`).html(data[fields[i][0]]);
-      $(`#${this.getTableName()} #${fields[i][0]}_Name`).html(data[`${fields[i][0]}_Name`]);
-    }
-
-    let subordinates = '';
-    for (let i = 0; i < data.subordinates.length; i++) {
-      if (data.subordinates[i].first_name !== undefined && data.subordinates[i].first_name !== null) {
-        subordinates += `${data.subordinates[i].first_name} `;
-      }
-
-      if (data.subordinates[i].middle_name !== undefined && data.subordinates[i].middle_name !== null && data.subordinates[i].middle_name !== '') {
-        subordinates += `${data.subordinates[i].middle_name} `;
-      }
-
-      if (data.subordinates[i].last_name !== undefined && data.subordinates[i].last_name !== null && data.subordinates[i].last_name !== '') {
-        subordinates += data.subordinates[i].last_name;
-      }
-      subordinates += '<br/>';
-    }
-
-    $(`#${this.getTableName()} #subordinates`).html(subordinates);
-
-
-    $(`#${this.getTableName()} #name`).html(`${data.first_name} ${data.last_name}`);
-    this.currentUserId = data.id;
-
-    $(`#${this.getTableName()} #profile_image_${data.id}`).attr('src', data.image);
-
-
-    // Add custom fields
-    if (data.customFields !== undefined && data.customFields !== null && Object.keys(data.customFields).length > 0) {
-      const ct = '<div class="col-xs-6 col-md-3" style="font-size:16px;"><label class="control-label col-xs-12" style="font-size:13px;">#_label_#</label><label class="control-label col-xs-12 iceLabel" style="font-size:13px;font-weight: bold;">#_value_#</label></div>';
-
-      const sectionTemplate = '<div class="panel panel-default" style="width:97.5%;"><div class="panel-heading"><h4>#_section.name_#</h4></div> <div class="panel-body"  id="cont_#_section_#"> </div></div>';
-      let customFieldHtml;
-      for (const index in data.customFields) {
-        if (!data.customFields[index][1]) {
-          data.customFields[index][1] = this.gt('Other Details');
-        }
-
-        let sectionId = data.customFields[index][1].toLocaleLowerCase();
-        sectionId = sectionId.replace(' ', '_');
-
-        if ($(`#cont_${sectionId}`).length <= 0) {
-          // Add section
-          let sectionHtml = sectionTemplate;
-          sectionHtml = sectionHtml.replace('#_section_#', sectionId);
-          sectionHtml = sectionHtml.replace('#_section.name_#', data.customFields[index][1]);
-          $('#customFieldsCont').append($(sectionHtml));
-        }
-
-        customFieldHtml = ct;
-        customFieldHtml = customFieldHtml.replace('#_label_#', index);
-        if (data.customFields[index][2] === 'fileupload') {
-          customFieldHtml = customFieldHtml.replace(
-            '#_value_#',
-            `<button onclick="download('${data.customFields[index][0]}');return false;" class="btn btn-mini btn-inverse" type="button">View: ${index}</button>`,
-          );
-        } else {
-          customFieldHtml = customFieldHtml.replace('#_value_#', data.customFields[index][0]);
-        }
-        $(`#cont_${sectionId}`).append($(customFieldHtml));
-      }
-    } else {
-      $('#customFieldsCont').remove();
-    }
-
-
-    this.cancel();
-
-    if (!this.isModuleInstalled('admin', 'documents')) {
-      $('#tabDocuments').remove();
-    }
-
-
-    window.modJs = this;
-    modJs.subModJsList = [];
-
-    modJs.subModJsList.tabEmployeeSkillSubTab = new EmployeeSubSkillsAdapter('EmployeeSkill', 'EmployeeSkillSubTab', { employee: data.id });
-    modJs.subModJsList.tabEmployeeSkillSubTab.parent = this;
-
-    modJs.subModJsList.tabEmployeeEducationSubTab = new EmployeeSubEducationAdapter('EmployeeEducation', 'EmployeeEducationSubTab', { employee: data.id });
-    modJs.subModJsList.tabEmployeeEducationSubTab.parent = this;
-
-    modJs.subModJsList.tabEmployeeCertificationSubTab = new EmployeeSubCertificationAdapter('EmployeeCertification', 'EmployeeCertificationSubTab', { employee: data.id });
-    modJs.subModJsList.tabEmployeeCertificationSubTab.parent = this;
-
-    modJs.subModJsList.tabEmployeeLanguageSubTab = new EmployeeSubLanguageAdapter('EmployeeLanguage', 'EmployeeLanguageSubTab', { employee: data.id });
-    modJs.subModJsList.tabEmployeeLanguageSubTab.parent = this;
-
-    modJs.subModJsList.tabEmployeeDependentSubTab = new EmployeeSubDependentAdapter('EmployeeDependent', 'EmployeeDependentSubTab', { employee: data.id });
-    modJs.subModJsList.tabEmployeeDependentSubTab.parent = this;
-
-    modJs.subModJsList.tabEmployeeEmergencyContactSubTab = new EmployeeSubEmergencyContactAdapter('EmergencyContact', 'EmployeeEmergencyContactSubTab', { employee: data.id });
-    modJs.subModJsList.tabEmployeeEmergencyContactSubTab.parent = this;
-
-    if (this.isModuleInstalled('admin', 'documents')) {
-      modJs.subModJsList.tabEmployeeDocumentSubTab = new EmployeeSubDocumentAdapter('EmployeeDocument', 'EmployeeDocumentSubTab', { employee: data.id });
-      modJs.subModJsList.tabEmployeeDocumentSubTab.parent = this;
-    }
-    for (const prop in modJs.subModJsList) {
-      if (modJs.subModJsList.hasOwnProperty(prop)) {
-        modJs.subModJsList[prop].setTranslationsSubModules(this.translations);
-        modJs.subModJsList[prop].setPermissions(this.permissions);
-        modJs.subModJsList[prop].setFieldTemplates(this.fieldTemplates);
-        modJs.subModJsList[prop].setTemplates(this.templates);
-        modJs.subModJsList[prop].setCustomTemplates(this.customTemplates);
-        modJs.subModJsList[prop].setEmailTemplates(this.emailTemplates);
-        modJs.subModJsList[prop].setUser(this.user);
-        modJs.subModJsList[prop].initFieldMasterData();
-        modJs.subModJsList[prop].setBaseUrl(this.baseUrl);
-        modJs.subModJsList[prop].setCurrentProfile(this.currentProfile);
-        modJs.subModJsList[prop].setInstanceId(this.instanceId);
-        modJs.subModJsList[prop].setGoogleAnalytics(ga);
-        modJs.subModJsList[prop].setNoJSONRequests(this.noJSONRequests);
-      }
-    }
-
-    modJs.subModJsList.tabEmployeeSkillSubTab.setShowFormOnPopup(true);
-    modJs.subModJsList.tabEmployeeSkillSubTab.setShowAddNew(false);
-    modJs.subModJsList.tabEmployeeSkillSubTab.setShowCancel(false);
-    modJs.subModJsList.tabEmployeeSkillSubTab.get([]);
-
-    modJs.subModJsList.tabEmployeeEducationSubTab.setShowFormOnPopup(true);
-    modJs.subModJsList.tabEmployeeEducationSubTab.setShowAddNew(false);
-    modJs.subModJsList.tabEmployeeEducationSubTab.setShowCancel(false);
-    modJs.subModJsList.tabEmployeeEducationSubTab.get([]);
-
-    modJs.subModJsList.tabEmployeeCertificationSubTab.setShowFormOnPopup(true);
-    modJs.subModJsList.tabEmployeeCertificationSubTab.setShowAddNew(false);
-    modJs.subModJsList.tabEmployeeCertificationSubTab.setShowCancel(false);
-    modJs.subModJsList.tabEmployeeCertificationSubTab.get([]);
-
-    modJs.subModJsList.tabEmployeeLanguageSubTab.setShowFormOnPopup(true);
-    modJs.subModJsList.tabEmployeeLanguageSubTab.setShowAddNew(false);
-    modJs.subModJsList.tabEmployeeLanguageSubTab.setShowCancel(false);
-    modJs.subModJsList.tabEmployeeLanguageSubTab.get([]);
-
-    modJs.subModJsList.tabEmployeeDependentSubTab.setShowFormOnPopup(true);
-    modJs.subModJsList.tabEmployeeDependentSubTab.setShowAddNew(false);
-    modJs.subModJsList.tabEmployeeDependentSubTab.setShowCancel(false);
-    modJs.subModJsList.tabEmployeeDependentSubTab.get([]);
-
-    modJs.subModJsList.tabEmployeeEmergencyContactSubTab.setShowFormOnPopup(true);
-    modJs.subModJsList.tabEmployeeEmergencyContactSubTab.setShowAddNew(false);
-    modJs.subModJsList.tabEmployeeEmergencyContactSubTab.setShowCancel(false);
-    modJs.subModJsList.tabEmployeeEmergencyContactSubTab.get([]);
-
-    if (this.isModuleInstalled('admin', 'documents')) {
-      modJs.subModJsList.tabEmployeeDocumentSubTab.setShowFormOnPopup(true);
-      modJs.subModJsList.tabEmployeeDocumentSubTab.setShowAddNew(false);
-      modJs.subModJsList.tabEmployeeDocumentSubTab.setShowCancel(false);
-      modJs.subModJsList.tabEmployeeDocumentSubTab.get([]);
-    }
-
-    $('#subModTab a').off().on('click', function (e) {
-      e.preventDefault();
-      $(this).tab('show');
-    });
-  }
-
 
   deleteProfileImage(empId) {
     const req = { id: empId };
@@ -1109,7 +620,6 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
   getDataMapping() {
     return [
       'id',
-      'image',
       'employee_id',
       'first_name',
       'last_name',
@@ -1134,71 +644,29 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
     ];
   }
 
-  getFormFields() {
+  getTableColumns() {
     return [
-      ['id', { label: 'ID', type: 'hidden', validation: '' }],
-      ['employee_id', { label: 'Employee Number', type: 'text', validation: '' }],
-      ['first_name', { label: 'First Name', type: 'text', validation: '' }],
-      ['middle_name', { label: 'Middle Name', type: 'text', validation: 'none' }],
-      ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
-      ['nationality', { label: 'Nationality', type: 'select2', 'remote-source': ['Nationality', 'id', 'name'] }],
-      ['birthday', { label: 'Date of Birth', type: 'date', validation: '' }],
-      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Divers', 'Divers']] }],
-      ['marital_status', { label: 'Marital Status', type: 'select', source: [['Married', 'Married'], ['Single', 'Single'], ['Divorced', 'Divorced'], ['Widowed', 'Widowed'], ['Other', 'Other']] }],
-      ['ssn_num', { label: 'SSN/NRIC', type: 'text', validation: 'none' }],
-      ['nic_num', { label: 'NIC', type: 'text', validation: 'none' }],
-      ['other_id', { label: 'Other ID', type: 'text', validation: 'none' }],
-      ['driving_license', { label: 'Driving License No', type: 'text', validation: 'none' }],
-      /* [ "driving_license_exp_date", {"label":"License Exp Date","type":"date","validation":"none"}], */
-      ['employment_status', { label: 'Employment Status', type: 'select2', 'remote-source': ['EmploymentStatus', 'id', 'name'] }],
-      ['job_title', { label: 'Job Title', type: 'select2', 'remote-source': ['JobTitle', 'id', 'name'] }],
-      ['pay_grade', {
-        label: 'Pay Grade', type: 'select2', 'allow-null': true, 'remote-source': ['PayGrade', 'id', 'name'],
-      }],
-      ['work_station_id', { label: 'Work Station Id', type: 'text', validation: 'none' }],
-      ['address1', { label: 'Address Line 1', type: 'text', validation: 'none' }],
-      ['address2', { label: 'Address Line 2', type: 'text', validation: 'none' }],
-      ['city', { label: 'City', type: 'text', validation: 'none' }],
-      ['country', { label: 'Country', type: 'select2', 'remote-source': ['Country', 'code', 'name'] }],
-      ['province', {
-        label: 'Province', type: 'select2', 'allow-null': true, 'remote-source': ['Province', 'id', 'name'],
-      }],
-      ['postal_code', { label: 'Postal/Zip Code', type: 'text', validation: 'none' }],
-      ['home_phone', { label: 'Home Phone', type: 'text', validation: 'none' }],
-      ['mobile_phone', { label: 'Mobile Phone', type: 'text', validation: 'none' }],
-      ['work_phone', { label: 'Work Phone', type: 'text', validation: 'none' }],
-      ['work_email', { label: 'Work Email', type: 'text', validation: 'emailOrEmpty' }],
-      ['private_email', { label: 'Private Email', type: 'text', validation: 'emailOrEmpty' }],
-      ['joined_date', { label: 'Joined Date', type: 'date', validation: '' }],
-      ['confirmation_date', { label: 'Confirmation Date', type: 'date', validation: 'none' }],
-      ['termination_date', { label: 'Termination Date', type: 'date', validation: 'none' }],
-      ['department', { label: 'Department', type: 'select2', 'remote-source': ['CompanyStructure', 'id', 'title'] }],
-      ['supervisor', {
-        label: 'Supervisor', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
-      }],
-      ['notes', {
-        label: 'Notes',
-        type: 'datagroup',
-        form: [
-          ['note', { label: 'Note', type: 'textarea', validation: '' }],
-        ],
-        html: '<div id="#_id_#" class="panel panel-default"><div class="panel-body">#_delete_##_edit_#<span style="color:#999;font-size:13px;font-weight:bold">Date: #_date_#</span><hr/>#_note_#</div></div>',
-        validation: 'none',
-        'sort-function': function (a, b) {
-          const t1 = Date.parse(a.date).getTime();
-          const t2 = Date.parse(b.date).getTime();
-
-          return (t1 < t2);
-        },
-        'custom-validate-function': function (data) {
-          const res = {};
-          res.valid = true;
-          data.date = new Date().toString('d-MMM-yyyy hh:mm tt');
-          res.params = data;
-          return res;
-        },
-
-      }],
+      {
+        title: 'Employee Number',
+        dataIndex: 'employee_id',
+        sorter: true,
+      },
+      {
+        title: 'First Name',
+        dataIndex: 'first_name',
+      },
+      {
+        title: 'Last Name',
+        dataIndex: 'last_name',
+      },
+      {
+        title: 'Department',
+        dataIndex: 'department',
+      },
+      {
+        title: 'Supervisor',
+        dataIndex: 'supervisor',
+      },
     ];
   }
 
@@ -1218,7 +686,7 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
 
   getActionButtonsHtml(id) {
     // eslint-disable-next-line max-len
-    let html = `<div style="width:130px;">
+    let html = `<div style="width:132px;">
 <img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;margin-left:15px;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>
 <img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Archive Employee" onclick="modJs.deleteEmployee(_id_);return false;"></img>
 <img class="tableActionButton" src="_BASE_images/redo.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Restore Employee" onclick="modJs.activateEmployee(_id_);return false;"></img>
@@ -1233,6 +701,24 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
     params.req = JSON.stringify({ id });
     const downloadUrl = modJs.getCustomActionUrl('ca', params);
     window.open(downloadUrl, '_blank');
+  }
+
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => (
+      <Space size="middle">
+        <Tag color="cyan" onClick={() => modJs.activateEmployee(record.id)} style={{ cursor: 'pointer' }}>
+          <UndoOutlined />
+          {` ${adapter.gt('Activate')}`}
+        </Tag>
+        {adapter.hasAccess('delete') && adapter.showDelete
+        && (
+          <Tag color="volcano" onClick={() => modJs.deleteEmployee(record.id)} style={{ cursor: 'pointer' }}>
+            <DeleteOutlined />
+            {` ${adapter.gt('Delete')}`}
+          </Tag>
+        )}
+      </Space>
+    );
   }
 }
 
@@ -1268,6 +754,32 @@ class ArchivedEmployeeAdapter extends SubProfileEnabledAdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee Number',
+        dataIndex: 'employee_id',
+        sorter: true,
+      },
+      {
+        title: 'First Name',
+        dataIndex: 'first_name',
+      },
+      {
+        title: 'Last Name',
+        dataIndex: 'last_name',
+      },
+      {
+        title: 'Department',
+        dataIndex: 'department',
+      },
+      {
+        title: 'Supervisor',
+        dataIndex: 'supervisor',
+      },
+    ];
+  }
+
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden', validation: '' }],
@@ -1275,7 +787,7 @@ class ArchivedEmployeeAdapter extends SubProfileEnabledAdapterBase {
       ['first_name', { label: 'First Name', type: 'text', validation: '' }],
       ['middle_name', { label: 'Middle Name', type: 'text', validation: 'none' }],
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
-      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Divers', 'Divers']] }],
+      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Other', 'Other']] }],
       ['ssn_num', { label: 'SSN/NRIC', type: 'text', validation: 'none' }],
       ['nic_num', { label: 'NIC', type: 'text', validation: 'none' }],
       ['other_id', { label: 'Other ID', type: 'text', validation: 'none' }],
@@ -1303,7 +815,7 @@ class ArchivedEmployeeAdapter extends SubProfileEnabledAdapterBase {
 
   getActionButtonsHtml(id) {
     // eslint-disable-next-line max-len
-    let html = '<div style="width:130px;"><img class="tableActionButton" src="_BASE_images/download.png" style="cursor:pointer;" rel="tooltip" title="Download Archived Data" onclick="modJs.download(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Remove Archived Data" onclick="modJs.deleteRow(_id_);return false;"></img></div>';
+    let html = '<div style="width:132px;"><img class="tableActionButton" src="_BASE_images/download.png" style="cursor:pointer;" rel="tooltip" title="Download Archived Data" onclick="modJs.download(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Remove Archived Data" onclick="modJs.deleteRow(_id_);return false;"></img></div>';
     html = html.replace(/_id_/g, id);
     html = html.replace(/_BASE_/g, this.baseUrl);
     return html;
@@ -1315,6 +827,31 @@ class ArchivedEmployeeAdapter extends SubProfileEnabledAdapterBase {
     const downloadUrl = modJs.getCustomActionUrl('ca', params);
     window.open(downloadUrl, '_blank');
   }
+
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => (
+      <Space size="middle">
+        {adapter.hasAccess('element')
+        && (
+          <Tag color="blue" onClick={() => modJs.viewElement(record.id)} style={{ cursor: 'pointer' }}>
+            <MonitorOutlined />
+            {` ${adapter.gt('View')}`}
+          </Tag>
+        )}
+        <Tag color="cyan" onClick={() => modJs.download(record.id)} style={{ cursor: 'pointer' }}>
+          <CloudDownloadOutlined />
+          {` ${adapter.gt('Download')}`}
+        </Tag>
+        {adapter.hasAccess('delete') && adapter.showDelete
+        && (
+          <Tag color="volcano" onClick={() => modJs.deleteRow(record.id)} style={{ cursor: 'pointer' }}>
+            <DeleteOutlined />
+            {` ${adapter.gt('Delete')}`}
+          </Tag>
+        )}
+      </Space>
+    );
+  }
 }
 
 
@@ -1323,7 +860,7 @@ class ArchivedEmployeeAdapter extends SubProfileEnabledAdapterBase {
  */
 
 
-class EmployeeSkillAdapter extends SubProfileEnabledAdapterBase {
+class EmployeeSkillAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -1339,6 +876,25 @@ class EmployeeSkillAdapter extends SubProfileEnabledAdapterBase {
       { sTitle: 'Employee' },
       { sTitle: 'Skill' },
       { sTitle: 'Details' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Skill',
+        dataIndex: 'skill_id',
+        sorter: true,
+      },
+      {
+        title: 'Details',
+        dataIndex: 'details',
+      },
     ];
   }
 
@@ -1395,6 +951,36 @@ class EmployeeEducationAdapter extends SubProfileEnabledAdapterBase {
       'institute',
       'date_start',
       'date_end',
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Qualification',
+        dataIndex: 'education_id',
+        sorter: true,
+      },
+      {
+        title: 'Institute',
+        dataIndex: 'institute',
+        sorter: true,
+      },
+      {
+        title: 'Start Date',
+        dataIndex: 'date_start',
+        sorter: true,
+      },
+      {
+        title: 'Completed On',
+        dataIndex: 'date_end',
+        sorter: true,
+      },
     ];
   }
 
@@ -1478,6 +1064,36 @@ class EmployeeCertificationAdapter extends SubProfileEnabledAdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Certification',
+        dataIndex: 'certification_id',
+        sorter: true,
+      },
+      {
+        title: 'Institute',
+        dataIndex: 'institute',
+        sorter: true,
+      },
+      {
+        title: 'Granted On',
+        dataIndex: 'date_start',
+        sorter: true,
+      },
+      {
+        title: 'Valid Until',
+        dataIndex: 'date_end',
+        sorter: true,
+      },
+    ];
+  }
+
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
@@ -1546,7 +1162,42 @@ class EmployeeLanguageAdapter extends SubProfileEnabledAdapterBase {
       { sTitle: 'Reading' },
       { sTitle: 'Speaking' },
       { sTitle: 'Writing' },
-      { sTitle: 'Understanding' },
+      { sTitle: 'Listening' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Language',
+        dataIndex: 'language_id',
+        sorter: true,
+      },
+      {
+        title: 'Reading',
+        dataIndex: 'reading',
+        sorter: true,
+      },
+      {
+        title: 'Speaking',
+        dataIndex: 'speaking',
+        sorter: true,
+      },
+      {
+        title: 'Writing',
+        dataIndex: 'writing',
+        sorter: true,
+      },
+      {
+        title: 'Listening',
+        dataIndex: 'understanding',
+        sorter: true,
+      },
     ];
   }
 
@@ -1572,7 +1223,7 @@ class EmployeeLanguageAdapter extends SubProfileEnabledAdapterBase {
       ['reading', { label: 'Reading', type: 'select', source: compArray }],
       ['speaking', { label: 'Speaking', type: 'select', source: compArray }],
       ['writing', { label: 'Writing', type: 'select', source: compArray }],
-      ['understanding', { label: 'Understanding', type: 'select', source: compArray }],
+      ['understanding', { label: 'Listening', type: 'select', source: compArray }],
     ];
   }
 
@@ -1624,6 +1275,35 @@ class EmployeeDependentAdapter extends SubProfileEnabledAdapterBase {
       { sTitle: 'Relationship' },
       { sTitle: 'Date of Birth' },
       { sTitle: 'Id Number' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Relationship',
+        dataIndex: 'relationship',
+        sorter: true,
+      },
+      {
+        title: 'Date of Birth',
+        dataIndex: 'dob',
+        sorter: true,
+      },
+      {
+        title: 'Id Number',
+        dataIndex: 'id_number',
+      },
     ];
   }
 
@@ -1689,6 +1369,38 @@ class EmergencyContactAdapter extends SubProfileEnabledAdapterBase {
       { sTitle: 'Home Phone' },
       { sTitle: 'Work Phone' },
       { sTitle: 'Mobile Phone' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Relationship',
+        dataIndex: 'relationship',
+        sorter: true,
+      },
+      {
+        title: 'Home Phone',
+        dataIndex: 'home_phone',
+      },
+      {
+        title: 'Work Phone',
+        dataIndex: 'work_phone',
+      },
+      {
+        title: 'Mobile Phone',
+        dataIndex: 'mobile_phone',
+      },
     ];
   }
 
@@ -1790,76 +1502,6 @@ class EmployeeImmigrationAdapter extends SubProfileEnabledAdapterBase {
   }
 }
 
-/**
- * EmployeeDocumentAdapter
- */
-
-class EmployeeDocumentAdapter extends AdapterBase {
-  getDataMapping() {
-    return [
-      'id',
-      'employee',
-      'document',
-      'details',
-      'date_added',
-      'status',
-      'attachment',
-    ];
-  }
-
-  getHeaders() {
-    return [
-      { sTitle: 'ID', bVisible: false },
-      { sTitle: 'Employee' },
-      { sTitle: 'Document' },
-      { sTitle: 'Details' },
-      { sTitle: 'Date Added' },
-      { sTitle: 'Status' },
-      { sTitle: 'Attachment', bVisible: false },
-    ];
-  }
-
-  getFormFields() {
-    return [
-      ['id', { label: 'ID', type: 'hidden' }],
-      ['employee', {
-        label: 'Employee',
-        type: 'select2',
-        sort: 'none',
-        'allow-null': false,
-        'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
-      }],
-      ['document', { label: 'Document', type: 'select2', 'remote-source': ['Document', 'id', 'name'] }],
-      ['date_added', { label: 'Date Added', type: 'date', validation: '' }],
-      ['valid_until', { label: 'Valid Until', type: 'date', validation: 'none' }],
-      ['status', { label: 'Status', type: 'select', source: [['Active', 'Active'], ['Inactive', 'Inactive'], ['Draft', 'Draft']] }],
-      ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
-      ['attachment', { label: 'Attachment', type: 'fileupload', validation: 'none' }],
-    ];
-  }
-
-
-  getFilters() {
-    return [
-      ['employee', { label: 'Employee', type: 'select2', 'remote-source': ['Employee', 'id', 'first_name+last_name'] }],
-
-    ];
-  }
-
-
-  getActionButtonsHtml(id, data) {
-    let html = '<div style="width:80px;"><img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img><img class="tableActionButton" src="_BASE_images/download.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Download Document" onclick="download(\'_attachment_\');return false;"></img><img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img></div>';
-    html = html.replace(/_id_/g, id);
-    html = html.replace(/_attachment_/g, data[6]);
-    html = html.replace(/_BASE_/g, this.baseUrl);
-    return html;
-  }
-
-  isSubProfileTable() {
-    return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
-  }
-}
-
 
 module.exports = {
   EmployeeAdapter,
@@ -1872,12 +1514,4 @@ module.exports = {
   EmployeeDependentAdapter,
   EmergencyContactAdapter,
   EmployeeImmigrationAdapter,
-  EmployeeSubSkillsAdapter,
-  EmployeeSubEducationAdapter,
-  EmployeeSubCertificationAdapter,
-  EmployeeSubLanguageAdapter,
-  EmployeeSubDependentAdapter,
-  EmployeeSubEmergencyContactAdapter,
-  EmployeeSubDocumentAdapter,
-  EmployeeDocumentAdapter,
 };

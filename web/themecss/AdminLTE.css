@@ -577,6 +577,9 @@ body > .header .logo .icon {
 }
 .user-panel {
   padding: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+  border: none;
+  background: #fff;
 }
 .user-panel:before,
 .user-panel:after {
@@ -664,7 +667,7 @@ body > .header .logo .icon {
   margin-right: 10px;
 }
 .dropdown-menu > li > a:hover {
-  background-color: #3c8dbc;
+  /*background-color: #141414;*/
   color: #f9f9f9;
 }
 /*Drodown in navbars*/
@@ -894,7 +897,7 @@ border-radius: 4px !important;
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
   height: 175px;
   padding: 10px;
-  background: #3c8dbc;
+  background-color: #262626 !important;
   text-align: center;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > img {
@@ -1891,13 +1894,17 @@ Component: timeline
   border-bottom-color: #d9dadc;
 }
 .btn.btn-primary {
-  background-color: #3c8dbc;
-  border-color: #367fa9;
+  color: #fff;
+  background: #1890ff;
+  border-color: #1890ff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 0 rgba(0,0,0,.045);
 }
 .btn.btn-primary:hover,
 .btn.btn-primary:active,
 .btn.btn-primary.hover {
-  background-color: #367fa9;
+  background:#096dd9;
+  border-color:#096dd9
 }
 .btn.btn-success {
   background-color: #00a65a;
@@ -2566,14 +2573,14 @@ Component: timeline
 }
 /* skin-blue logo */
 .skin-blue .logo {
-  background-color: #367fa9;
+  background-color: #141414;
   color: #f9f9f9;
 }
 .skin-blue .logo > a {
   color: #f9f9f9;
 }
 .skin-blue .logo:hover {
-  background: #357ca5;
+  background: #262626;
 }
 /* skin-blue content header */
 .skin-blue .right-side > .content-header {
@@ -2618,9 +2625,9 @@ Component: timeline
 }
 .skin-blue .left-side {
   /*background: #f4f4f4;*/
-  -webkit-box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.1);
-  box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.07);
+  /*-webkit-box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.1);*/
+  /*-moz-box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.1);*/
+  /*box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.07);*/
 }
 .skin-blue .sidebar a {
   color: #555555;

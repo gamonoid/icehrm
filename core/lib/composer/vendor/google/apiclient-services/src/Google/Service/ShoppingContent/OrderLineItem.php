@@ -18,6 +18,8 @@
 class Google_Service_ShoppingContent_OrderLineItem extends Google_Collection
 {
   protected $collection_key = 'returns';
+  protected $adjustmentsType = 'Google_Service_ShoppingContent_OrderLineItemAdjustment';
+  protected $adjustmentsDataType = 'array';
   protected $annotationsType = 'Google_Service_ShoppingContent_OrderMerchantProvidedAnnotation';
   protected $annotationsDataType = 'array';
   protected $cancellationsType = 'Google_Service_ShoppingContent_OrderCancellation';
@@ -31,8 +33,10 @@ class Google_Service_ShoppingContent_OrderLineItem extends Google_Collection
   public $quantityDelivered;
   public $quantityOrdered;
   public $quantityPending;
+  public $quantityReadyForPickup;
   public $quantityReturned;
   public $quantityShipped;
+  public $quantityUndeliverable;
   protected $returnInfoType = 'Google_Service_ShoppingContent_OrderLineItemReturnInfo';
   protected $returnInfoDataType = '';
   protected $returnsType = 'Google_Service_ShoppingContent_OrderReturn';
@@ -42,6 +46,20 @@ class Google_Service_ShoppingContent_OrderLineItem extends Google_Collection
   protected $taxType = 'Google_Service_ShoppingContent_Price';
   protected $taxDataType = '';
 
+  /**
+   * @param Google_Service_ShoppingContent_OrderLineItemAdjustment
+   */
+  public function setAdjustments($adjustments)
+  {
+    $this->adjustments = $adjustments;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_OrderLineItemAdjustment
+   */
+  public function getAdjustments()
+  {
+    return $this->adjustments;
+  }
   /**
    * @param Google_Service_ShoppingContent_OrderMerchantProvidedAnnotation
    */
@@ -138,6 +156,14 @@ class Google_Service_ShoppingContent_OrderLineItem extends Google_Collection
   {
     return $this->quantityPending;
   }
+  public function setQuantityReadyForPickup($quantityReadyForPickup)
+  {
+    $this->quantityReadyForPickup = $quantityReadyForPickup;
+  }
+  public function getQuantityReadyForPickup()
+  {
+    return $this->quantityReadyForPickup;
+  }
   public function setQuantityReturned($quantityReturned)
   {
     $this->quantityReturned = $quantityReturned;
@@ -153,6 +179,14 @@ class Google_Service_ShoppingContent_OrderLineItem extends Google_Collection
   public function getQuantityShipped()
   {
     return $this->quantityShipped;
+  }
+  public function setQuantityUndeliverable($quantityUndeliverable)
+  {
+    $this->quantityUndeliverable = $quantityUndeliverable;
+  }
+  public function getQuantityUndeliverable()
+  {
+    return $this->quantityUndeliverable;
   }
   /**
    * @param Google_Service_ShoppingContent_OrderLineItemReturnInfo

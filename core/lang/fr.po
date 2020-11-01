@@ -1972,3 +1972,18 @@ msgstr "Calculs sauvegardés"
 
 msgid "Total Leave Days"
 msgstr "Nombre total de jours de congé"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "View"
+msgstr "Voir"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Copy"
+msgstr "Copie"

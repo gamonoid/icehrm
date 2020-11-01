@@ -24,6 +24,8 @@ class Google_Service_DLP_GooglePrivacyDlpV2ContentLocation extends Google_Model
   protected $documentLocationDataType = '';
   protected $imageLocationType = 'Google_Service_DLP_GooglePrivacyDlpV2ImageLocation';
   protected $imageLocationDataType = '';
+  protected $metadataLocationType = 'Google_Service_DLP_GooglePrivacyDlpV2MetadataLocation';
+  protected $metadataLocationDataType = '';
   protected $recordLocationType = 'Google_Service_DLP_GooglePrivacyDlpV2RecordLocation';
   protected $recordLocationDataType = '';
 
@@ -78,6 +80,20 @@ class Google_Service_DLP_GooglePrivacyDlpV2ContentLocation extends Google_Model
   public function getImageLocation()
   {
     return $this->imageLocation;
+  }
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2MetadataLocation
+   */
+  public function setMetadataLocation(Google_Service_DLP_GooglePrivacyDlpV2MetadataLocation $metadataLocation)
+  {
+    $this->metadataLocation = $metadataLocation;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2MetadataLocation
+   */
+  public function getMetadataLocation()
+  {
+    return $this->metadataLocation;
   }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2RecordLocation

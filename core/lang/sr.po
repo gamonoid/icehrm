@@ -1972,3 +1972,18 @@ msgstr "Сачуване калкулације"
 
 msgid "Total Leave Days"
 msgstr "Укупни дани одмора"
+
+msgid "Actions"
+msgstr "Акције"
+
+msgid "Edit"
+msgstr "Уредити"
+
+msgid "View"
+msgstr "Поглед"
+
+msgid "Delete"
+msgstr "Избриши"
+
+msgid "Copy"
+msgstr "Копирај"

@@ -20,6 +20,8 @@ class Google_Service_AndroidProvisioningPartner_ClaimDeviceRequest extends Googl
   public $customerId;
   protected $deviceIdentifierType = 'Google_Service_AndroidProvisioningPartner_DeviceIdentifier';
   protected $deviceIdentifierDataType = '';
+  protected $deviceMetadataType = 'Google_Service_AndroidProvisioningPartner_DeviceMetadata';
+  protected $deviceMetadataDataType = '';
   public $sectionType;
 
   public function setCustomerId($customerId)
@@ -43,6 +45,20 @@ class Google_Service_AndroidProvisioningPartner_ClaimDeviceRequest extends Googl
   public function getDeviceIdentifier()
   {
     return $this->deviceIdentifier;
+  }
+  /**
+   * @param Google_Service_AndroidProvisioningPartner_DeviceMetadata
+   */
+  public function setDeviceMetadata(Google_Service_AndroidProvisioningPartner_DeviceMetadata $deviceMetadata)
+  {
+    $this->deviceMetadata = $deviceMetadata;
+  }
+  /**
+   * @return Google_Service_AndroidProvisioningPartner_DeviceMetadata
+   */
+  public function getDeviceMetadata()
+  {
+    return $this->deviceMetadata;
   }
   public function setSectionType($sectionType)
   {

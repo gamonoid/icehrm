@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo;
 
 use Robo\Contract\TaskInterface;
@@ -19,7 +20,7 @@ class Result extends ResultData
 
     /**
      * @param \Robo\Contract\TaskInterface $task
-     * @param string $exitCode
+     * @param int $exitCode
      * @param string $message
      * @param array $data
      */
@@ -37,6 +38,11 @@ class Result extends ResultData
     /**
      * Tasks should always return a Result. However, they are also
      * allowed to return NULL or an array to indicate success.
+     *
+     * @param \Robo\Contract\TaskInterface $task
+     * @param \Robo\Result|\Robo\State\Data|\Robo\ResultData|array|null
+     *
+     * @return static
      */
     public static function ensureResult($task, $result)
     {
@@ -79,7 +85,7 @@ class Result extends ResultData
      * @param string $extension
      * @param string $service
      *
-     * @return \Robo\Result
+     * @return static
      */
     public static function errorMissingExtension(TaskInterface $task, $extension, $service)
     {
@@ -94,7 +100,7 @@ class Result extends ResultData
      * @param string $class
      * @param string $package
      *
-     * @return \Robo\Result
+     * @return static
      */
     public static function errorMissingPackage(TaskInterface $task, $class, $package)
     {
@@ -109,7 +115,7 @@ class Result extends ResultData
      * @param string $message
      * @param array $data
      *
-     * @return \Robo\Result
+     * @return static
      */
     public static function error(TaskInterface $task, $message, $data = [])
     {
@@ -121,7 +127,7 @@ class Result extends ResultData
      * @param \Exception $e
      * @param array $data
      *
-     * @return \Robo\Result
+     * @return static
      */
     public static function fromException(TaskInterface $task, \Exception $e, $data = [])
     {
@@ -137,7 +143,7 @@ class Result extends ResultData
      * @param string $message
      * @param array $data
      *
-     * @return \Robo\Result
+     * @return static
      */
     public static function success(TaskInterface $task, $message = '', $data = [])
     {

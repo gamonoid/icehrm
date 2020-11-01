@@ -178,23 +178,34 @@ class RestEndPoint
 
     protected function getCombinedValue($nameField, $targetObject)
     {
-        $values = explode("+", $nameField);
-        if (count($values) == 1) {
-            return $targetObject->{$nameField};
-        }
-        $objVal = '';
-        foreach ($values as $value) {
-            if ($objVal != "") {
-                $objVal .= " ";
+        if (is_string($nameField)) {
+            $values = explode("+", $nameField);
+            if (count($values) == 1) {
+                return $targetObject->{$nameField};
             }
-            if (substr($value, 0, 1) !== ':') {
-                $objVal .= $targetObject->{$value};
-            } else {
-                $objVal .= substr($value, 1);
+            $objVal = '';
+            foreach ($values as $value) {
+                if ($objVal != "") {
+                    $objVal .= " ";
+                }
+                if (substr($value, 0, 1) !== ':') {
+                    $objVal .= $targetObject->{$value};
+                } else {
+                    $objVal .= substr($value, 1);
+                }
             }
+
+            return $objVal;
+        } elseif (is_array($nameField)) {
+            $objVal = [];
+            foreach ($nameField as $value) {
+                $objVal[$value] = $targetObject->{$value};
+            }
+
+            return $objVal;
         }
 
-        return $objVal;
+        return null;
     }
 
     protected function cleanObject($obj)
@@ -221,7 +232,7 @@ class RestEndPoint
         return $obj;
     }
 
-    public function listAll(User $user)
+    public function listAll(User $user, $parameter = null)
     {
         return new IceResponse(IceResponse::ERROR, "Method not Implemented", 404);
     }
@@ -403,13 +414,20 @@ class RestEndPoint
     private function getBearerToken()
     {
         $headers = $this->getAuthorizationHeader();
+        $token = '';
         // HEADER: Get the access token from the header
         if (!empty($headers)) {
             if (preg_match('/Bearer\s(\S+)/', $headers, $matches)) {
-                return $matches[1];
+                $token = $matches[1];
             }
         }
-        return null;
+
+        if (strlen($token) > 32) {
+            $tokenService = new JwtTokenService();
+            $token = $tokenService->getBaseToken($token);
+        }
+
+        return $token;
     }
 
     protected function getRequestBody()

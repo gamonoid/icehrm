@@ -30,8 +30,6 @@ class Google_Service_ShoppingContent_Resource_Pos extends Google_Service_Resourc
    *
    * @param Google_Service_ShoppingContent_PosCustomBatchRequest $postBody
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param bool dryRun Flag to run the request in dry-run mode.
    * @return Google_Service_ShoppingContent_PosCustomBatchResponse
    */
   public function custombatch(Google_Service_ShoppingContent_PosCustomBatchRequest $postBody, $optParams = array())
@@ -47,8 +45,6 @@ class Google_Service_ShoppingContent_Resource_Pos extends Google_Service_Resourc
    * @param string $targetMerchantId The ID of the target merchant.
    * @param string $storeCode A store code that is unique per merchant.
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param bool dryRun Flag to run the request in dry-run mode.
    */
   public function delete($merchantId, $targetMerchantId, $storeCode, $optParams = array())
   {
@@ -78,8 +74,6 @@ class Google_Service_ShoppingContent_Resource_Pos extends Google_Service_Resourc
    * @param string $targetMerchantId The ID of the target merchant.
    * @param Google_Service_ShoppingContent_PosStore $postBody
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param bool dryRun Flag to run the request in dry-run mode.
    * @return Google_Service_ShoppingContent_PosStore
    */
   public function insert($merchantId, $targetMerchantId, Google_Service_ShoppingContent_PosStore $postBody, $optParams = array())
@@ -95,8 +89,6 @@ class Google_Service_ShoppingContent_Resource_Pos extends Google_Service_Resourc
    * @param string $targetMerchantId The ID of the target merchant.
    * @param Google_Service_ShoppingContent_PosInventoryRequest $postBody
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param bool dryRun Flag to run the request in dry-run mode.
    * @return Google_Service_ShoppingContent_PosInventoryResponse
    */
   public function inventory($merchantId, $targetMerchantId, Google_Service_ShoppingContent_PosInventoryRequest $postBody, $optParams = array())
@@ -126,8 +118,6 @@ class Google_Service_ShoppingContent_Resource_Pos extends Google_Service_Resourc
    * @param string $targetMerchantId The ID of the target merchant.
    * @param Google_Service_ShoppingContent_PosSaleRequest $postBody
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param bool dryRun Flag to run the request in dry-run mode.
    * @return Google_Service_ShoppingContent_PosSaleResponse
    */
   public function sale($merchantId, $targetMerchantId, Google_Service_ShoppingContent_PosSaleRequest $postBody, $optParams = array())

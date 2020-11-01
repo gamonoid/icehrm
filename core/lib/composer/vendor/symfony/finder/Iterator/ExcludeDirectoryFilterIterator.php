@@ -24,6 +24,8 @@ class ExcludeDirectoryFilterIterator extends FilterIterator implements \Recursiv
     private $excludedPattern;
 
     /**
+     * Constructor.
+     *
      * @param \Iterator $iterator    The Iterator to filter
      * @param array     $directories An array of directories to exclude
      */

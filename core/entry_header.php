@@ -39,7 +39,7 @@ $logoFileUrl = \Classes\UIManager::getInstance()->getCompanyLogoUrl();
         <script src="<?=BASE_URL?>js/bootstrap-datetimepicker.js"></script>
         <link href="<?=BASE_URL?>bower_components/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
         <!-- Can not bundle - End-->
-        <script type="text/javascript" src="<?=BASE_URL.'admin/dist/candidates.js'?>?v=<?=$jsVersion?>"></script>
+        <?php include 'modulejslibs.inc.php'; ?>
         <script>
           var baseUrl = '<?=CLIENT_BASE_URL?>service.php';
           var CLIENT_BASE_URL = '<?=CLIENT_BASE_URL?>';

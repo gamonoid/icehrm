@@ -19,11 +19,11 @@
  * Service definition for Playcustomapp (v1).
  *
  * <p>
- * An API to publish custom Android apps.</p>
+ * API to create and publish custom Android apps</p>
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://developers.google.com/android/work/play/custom-app-api" target="_blank">Documentation</a>
+ * <a href="https://developers.google.com/android/work/play/custom-app-api/" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
@@ -39,13 +39,15 @@ class Google_Service_Playcustomapp extends Google_Service
   /**
    * Constructs the internal representation of the Playcustomapp service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'playcustomapp/v1/accounts/';
+    $this->rootUrl = $rootUrl ?: 'https://playcustomapp.googleapis.com/';
+    $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'playcustomapp';
 
@@ -56,7 +58,7 @@ class Google_Service_Playcustomapp extends Google_Service
         array(
           'methods' => array(
             'create' => array(
-              'path' => '{account}/customApps',
+              'path' => 'playcustomapp/v1/accounts/{account}/customApps',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'account' => array(

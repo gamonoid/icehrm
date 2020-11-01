@@ -17,6 +17,10 @@
 
 class Google_Service_Directory_Member extends Google_Model
 {
+  protected $internal_gapi_mappings = array(
+        "deliverySettings" => "delivery_settings",
+  );
+  public $deliverySettings;
   public $email;
   public $etag;
   public $id;
@@ -25,6 +29,14 @@ class Google_Service_Directory_Member extends Google_Model
   public $status;
   public $type;
 
+  public function setDeliverySettings($deliverySettings)
+  {
+    $this->deliverySettings = $deliverySettings;
+  }
+  public function getDeliverySettings()
+  {
+    return $this->deliverySettings;
+  }
   public function setEmail($email)
   {
     $this->email = $email;

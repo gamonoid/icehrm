@@ -19,11 +19,12 @@
  * Service definition for Games (v1).
  *
  * <p>
- * The API for Google Play Game Services.</p>
+ * The Google Play games service allows developers to enhance games with social
+ * leaderboards, achievements, game state, sign-in with Google, and more.</p>
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://developers.google.com/games/services/" target="_blank">Documentation</a>
+ * <a href="https://developers.google.com/games/" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
@@ -33,12 +34,9 @@ class Google_Service_Games extends Google_Service
   /** View and manage its own configuration data in your Google Drive. */
   const DRIVE_APPDATA =
       "https://www.googleapis.com/auth/drive.appdata";
-  /** Share your Google+ profile information and view and manage your game activity. */
+  /** Create, edit, and delete your Google Play Games activity. */
   const GAMES =
       "https://www.googleapis.com/auth/games";
-  /** Know the list of people in your circles, your age range, and language. */
-  const PLUS_LOGIN =
-      "https://www.googleapis.com/auth/plus.login";
 
   public $achievementDefinitions;
   public $achievements;
@@ -47,25 +45,23 @@ class Google_Service_Games extends Google_Service
   public $leaderboards;
   public $metagame;
   public $players;
-  public $pushtokens;
-  public $questMilestones;
-  public $quests;
   public $revisions;
-  public $rooms;
   public $scores;
   public $snapshots;
-  public $turnBasedMatches;
+  public $stats;
   
   /**
    * Constructs the internal representation of the Games service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'games/v1/';
+    $this->rootUrl = $rootUrl ?: 'https://games.googleapis.com/';
+    $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'games';
 
@@ -76,20 +72,20 @@ class Google_Service_Games extends Google_Service
         array(
           'methods' => array(
             'list' => array(
-              'path' => 'achievements',
+              'path' => 'games/v1/achievements',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'language' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),
@@ -103,7 +99,7 @@ class Google_Service_Games extends Google_Service
         array(
           'methods' => array(
             'increment' => array(
-              'path' => 'achievements/{achievementId}/increment',
+              'path' => 'games/v1/achievements/{achievementId}/increment',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'achievementId' => array(
@@ -122,7 +118,7 @@ class Google_Service_Games extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'players/{playerId}/achievements',
+              'path' => 'games/v1/players/{playerId}/achievements',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'playerId' => array(
@@ -130,25 +126,25 @@ class Google_Service_Games extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
                 'state' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
+                'language' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
               ),
             ),'reveal' => array(
-              'path' => 'achievements/{achievementId}/reveal',
+              'path' => 'games/v1/achievements/{achievementId}/reveal',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'achievementId' => array(
@@ -158,7 +154,7 @@ class Google_Service_Games extends Google_Service
                 ),
               ),
             ),'setStepsAtLeast' => array(
-              'path' => 'achievements/{achievementId}/setStepsAtLeast',
+              'path' => 'games/v1/achievements/{achievementId}/setStepsAtLeast',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'achievementId' => array(
@@ -173,7 +169,7 @@ class Google_Service_Games extends Google_Service
                 ),
               ),
             ),'unlock' => array(
-              'path' => 'achievements/{achievementId}/unlock',
+              'path' => 'games/v1/achievements/{achievementId}/unlock',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'achievementId' => array(
@@ -183,7 +179,7 @@ class Google_Service_Games extends Google_Service
                 ),
               ),
             ),'updateMultiple' => array(
-              'path' => 'achievements/updateMultiple',
+              'path' => 'games/v1/achievements/updateMultiple',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),
@@ -197,7 +193,7 @@ class Google_Service_Games extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => 'applications/{applicationId}',
+              'path' => 'games/v1/applications/{applicationId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'applicationId' => array(
@@ -205,21 +201,21 @@ class Google_Service_Games extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'language' => array(
+                'platformType' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'platformType' => array(
+                'language' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
               ),
             ),'played' => array(
-              'path' => 'applications/played',
+              'path' => 'games/v1/applications/played',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),'verify' => array(
-              'path' => 'applications/{applicationId}/verify',
+              'path' => 'games/v1/applications/{applicationId}/verify',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'applicationId' => array(
@@ -239,9 +235,13 @@ class Google_Service_Games extends Google_Service
         array(
           'methods' => array(
             'listByPlayer' => array(
-              'path' => 'events',
+              'path' => 'games/v1/events',
               'httpMethod' => 'GET',
               'parameters' => array(
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'language' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -249,31 +249,27 @@ class Google_Service_Games extends Google_Service
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),'listDefinitions' => array(
-              'path' => 'eventDefinitions',
+              'path' => 'games/v1/eventDefinitions',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
                 'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'language' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
               ),
             ),'record' => array(
-              'path' => 'events',
+              'path' => 'games/v1/events',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'language' => array(
@@ -292,7 +288,7 @@ class Google_Service_Games extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => 'leaderboards/{leaderboardId}',
+              'path' => 'games/v1/leaderboards/{leaderboardId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'leaderboardId' => array(
@@ -306,10 +302,10 @@ class Google_Service_Games extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'leaderboards',
+              'path' => 'games/v1/leaderboards',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'language' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -317,7 +313,7 @@ class Google_Service_Games extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'pageToken' => array(
+                'language' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -333,11 +329,11 @@ class Google_Service_Games extends Google_Service
         array(
           'methods' => array(
             'getMetagameConfig' => array(
-              'path' => 'metagameConfig',
+              'path' => 'games/v1/metagameConfig',
               'httpMethod' => 'GET',
               'parameters' => array(),
             ),'listCategoriesByPlayer' => array(
-              'path' => 'players/{playerId}/categories/{collection}',
+              'path' => 'games/v1/players/{playerId}/categories/{collection}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'playerId' => array(
@@ -350,15 +346,15 @@ class Google_Service_Games extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
                 'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'language' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -374,7 +370,7 @@ class Google_Service_Games extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => 'players/{playerId}',
+              'path' => 'games/v1/players/{playerId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'playerId' => array(
@@ -388,104 +384,10 @@ class Google_Service_Games extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'players/me/players/{collection}',
+              'path' => 'games/v1/players/me/players/{collection}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'collection' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->pushtokens = new Google_Service_Games_Resource_Pushtokens(
-        $this,
-        $this->serviceName,
-        'pushtokens',
-        array(
-          'methods' => array(
-            'remove' => array(
-              'path' => 'pushtokens/remove',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'update' => array(
-              'path' => 'pushtokens',
-              'httpMethod' => 'PUT',
-              'parameters' => array(),
-            ),
-          )
-        )
-    );
-    $this->questMilestones = new Google_Service_Games_Resource_QuestMilestones(
-        $this,
-        $this->serviceName,
-        'questMilestones',
-        array(
-          'methods' => array(
-            'claim' => array(
-              'path' => 'quests/{questId}/milestones/{milestoneId}/claim',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'questId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'milestoneId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'requestId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->quests = new Google_Service_Games_Resource_Quests(
-        $this,
-        $this->serviceName,
-        'quests',
-        array(
-          'methods' => array(
-            'accept' => array(
-              'path' => 'quests/{questId}/accept',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'questId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'list' => array(
-              'path' => 'players/{playerId}/quests',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'playerId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -514,129 +416,13 @@ class Google_Service_Games extends Google_Service
         array(
           'methods' => array(
             'check' => array(
-              'path' => 'revisions/check',
+              'path' => 'games/v1/revisions/check',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'clientRevision' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->rooms = new Google_Service_Games_Resource_Rooms(
-        $this,
-        $this->serviceName,
-        'rooms',
-        array(
-          'methods' => array(
-            'create' => array(
-              'path' => 'rooms/create',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'decline' => array(
-              'path' => 'rooms/{roomId}/decline',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'roomId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'dismiss' => array(
-              'path' => 'rooms/{roomId}/dismiss',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'roomId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'get' => array(
-              'path' => 'rooms/{roomId}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'roomId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'join' => array(
-              'path' => 'rooms/{roomId}/join',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'roomId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'leave' => array(
-              'path' => 'rooms/{roomId}/leave',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'roomId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'list' => array(
-              'path' => 'rooms',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'reportStatus' => array(
-              'path' => 'rooms/{roomId}/reportstatus',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'roomId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),
@@ -650,7 +436,7 @@ class Google_Service_Games extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => 'players/{playerId}/leaderboards/{leaderboardId}/scores/{timeSpan}',
+              'path' => 'games/v1/players/{playerId}/leaderboards/{leaderboardId}/scores/{timeSpan}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'playerId' => array(
@@ -668,7 +454,11 @@ class Google_Service_Games extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'includeRankType' => array(
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -676,17 +466,13 @@ class Google_Service_Games extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
+                'includeRankType' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
               ),
             ),'list' => array(
-              'path' => 'leaderboards/{leaderboardId}/scores/{collection}',
+              'path' => 'games/v1/leaderboards/{leaderboardId}/scores/{collection}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'leaderboardId' => array(
@@ -703,10 +489,6 @@ class Google_Service_Games extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                   'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
                 'maxResults' => array(
                   'location' => 'query',
@@ -716,9 +498,13 @@ class Google_Service_Games extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
+                'language' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
               ),
             ),'listWindow' => array(
-              'path' => 'leaderboards/{leaderboardId}/window/{collection}',
+              'path' => 'games/v1/leaderboards/{leaderboardId}/window/{collection}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'leaderboardId' => array(
@@ -735,14 +521,6 @@ class Google_Service_Games extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                   'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
@@ -752,13 +530,21 @@ class Google_Service_Games extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'language' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'returnTopIfAbsent' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
               ),
             ),'submit' => array(
-              'path' => 'leaderboards/{leaderboardId}/scores',
+              'path' => 'games/v1/leaderboards/{leaderboardId}/scores',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'leaderboardId' => array(
@@ -781,7 +567,7 @@ class Google_Service_Games extends Google_Service
                 ),
               ),
             ),'submitMultiple' => array(
-              'path' => 'leaderboards/scores',
+              'path' => 'games/v1/leaderboards/scores',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'language' => array(
@@ -800,7 +586,7 @@ class Google_Service_Games extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => 'snapshots/{snapshotId}',
+              'path' => 'games/v1/snapshots/{snapshotId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'snapshotId' => array(
@@ -814,7 +600,7 @@ class Google_Service_Games extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'players/{playerId}/snapshots',
+              'path' => 'games/v1/players/{playerId}/snapshots',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'playerId' => array(
@@ -839,220 +625,16 @@ class Google_Service_Games extends Google_Service
           )
         )
     );
-    $this->turnBasedMatches = new Google_Service_Games_Resource_TurnBasedMatches(
+    $this->stats = new Google_Service_Games_Resource_Stats(
         $this,
         $this->serviceName,
-        'turnBasedMatches',
+        'stats',
         array(
           'methods' => array(
-            'cancel' => array(
-              'path' => 'turnbasedmatches/{matchId}/cancel',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'matchId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'create' => array(
-              'path' => 'turnbasedmatches/create',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'decline' => array(
-              'path' => 'turnbasedmatches/{matchId}/decline',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'matchId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'dismiss' => array(
-              'path' => 'turnbasedmatches/{matchId}/dismiss',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'matchId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'finish' => array(
-              'path' => 'turnbasedmatches/{matchId}/finish',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'matchId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'get' => array(
-              'path' => 'turnbasedmatches/{matchId}',
+            'get' => array(
+              'path' => 'games/v1/stats',
               'httpMethod' => 'GET',
-              'parameters' => array(
-                'matchId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'includeMatchData' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'join' => array(
-              'path' => 'turnbasedmatches/{matchId}/join',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'matchId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'leave' => array(
-              'path' => 'turnbasedmatches/{matchId}/leave',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'matchId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'leaveTurn' => array(
-              'path' => 'turnbasedmatches/{matchId}/leaveTurn',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'matchId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'matchVersion' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pendingParticipantId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'list' => array(
-              'path' => 'turnbasedmatches',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'includeMatchData' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxCompletedMatches' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'rematch' => array(
-              'path' => 'turnbasedmatches/{matchId}/rematch',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'matchId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'requestId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'sync' => array(
-              'path' => 'turnbasedmatches/sync',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'includeMatchData' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxCompletedMatches' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'takeTurn' => array(
-              'path' => 'turnbasedmatches/{matchId}/turn',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'matchId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
+              'parameters' => array(),
             ),
           )
         )

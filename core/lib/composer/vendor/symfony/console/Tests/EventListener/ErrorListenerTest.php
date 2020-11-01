@@ -61,7 +61,7 @@ class ErrorListenerTest extends TestCase
         $logger = $this->getLogger();
         $logger
             ->expects($this->once())
-            ->method('debug')
+            ->method('error')
             ->with('Command "{command}" exited with code "{code}"', array('command' => 'test:run', 'code' => 255))
         ;
 
@@ -74,7 +74,7 @@ class ErrorListenerTest extends TestCase
         $logger = $this->getLogger();
         $logger
             ->expects($this->never())
-            ->method('debug')
+            ->method('error')
         ;
 
         $listener = new ErrorListener($logger);
@@ -97,7 +97,7 @@ class ErrorListenerTest extends TestCase
         $logger = $this->getLogger();
         $logger
             ->expects($this->exactly(3))
-            ->method('debug')
+            ->method('error')
             ->with('Command "{command}" exited with code "{code}"', array('command' => 'test:run --foo=bar', 'code' => 255))
         ;
 
@@ -112,7 +112,7 @@ class ErrorListenerTest extends TestCase
         $logger = $this->getLogger();
         $logger
             ->expects($this->once())
-            ->method('debug')
+            ->method('error')
             ->with('Command "{command}" exited with code "{code}"', array('command' => 'test:run', 'code' => 255))
         ;
 

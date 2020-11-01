@@ -29,7 +29,7 @@ class Google_Service_CloudIot_Resource_ProjectsLocationsRegistriesDevicesStates 
    * Lists the last few versions of the device state in descending order (i.e.:
    * newest first). (states.listProjectsLocationsRegistriesDevicesStates)
    *
-   * @param string $name The name of the device. For example,
+   * @param string $name Required. The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @param array $optParams Optional parameters.

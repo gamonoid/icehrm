@@ -19,9 +19,11 @@ class Google_Service_Compute_TargetHttpProxy extends Google_Model
 {
   public $creationTimestamp;
   public $description;
+  public $fingerprint;
   public $id;
   public $kind;
   public $name;
+  public $region;
   public $selfLink;
   public $urlMap;
 
@@ -40,6 +42,14 @@ class Google_Service_Compute_TargetHttpProxy extends Google_Model
   public function getDescription()
   {
     return $this->description;
+  }
+  public function setFingerprint($fingerprint)
+  {
+    $this->fingerprint = $fingerprint;
+  }
+  public function getFingerprint()
+  {
+    return $this->fingerprint;
   }
   public function setId($id)
   {
@@ -64,6 +74,14 @@ class Google_Service_Compute_TargetHttpProxy extends Google_Model
   public function getName()
   {
     return $this->name;
+  }
+  public function setRegion($region)
+  {
+    $this->region = $region;
+  }
+  public function getRegion()
+  {
+    return $this->region;
   }
   public function setSelfLink($selfLink)
   {

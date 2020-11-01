@@ -18,7 +18,6 @@
 class Google_Service_AdExchangeBuyer_PublisherProfileApiProto extends Google_Collection
 {
   protected $collection_key = 'topHeadlines';
-  public $accountId;
   public $audience;
   public $buyerPitchStatement;
   public $directContact;
@@ -33,6 +32,9 @@ class Google_Service_AdExchangeBuyer_PublisherProfileApiProto extends Google_Col
   public $overview;
   public $profileId;
   public $programmaticContact;
+  public $publisherAppIds;
+  protected $publisherAppsType = 'Google_Service_AdExchangeBuyer_MobileApplication';
+  protected $publisherAppsDataType = 'array';
   public $publisherDomains;
   public $publisherProfileId;
   protected $publisherProvidedForecastType = 'Google_Service_AdExchangeBuyer_PublisherProvidedForecast';
@@ -44,14 +46,6 @@ class Google_Service_AdExchangeBuyer_PublisherProfileApiProto extends Google_Col
   public $state;
   public $topHeadlines;
 
-  public function setAccountId($accountId)
-  {
-    $this->accountId = $accountId;
-  }
-  public function getAccountId()
-  {
-    return $this->accountId;
-  }
   public function setAudience($audience)
   {
     $this->audience = $audience;
@@ -163,6 +157,28 @@ class Google_Service_AdExchangeBuyer_PublisherProfileApiProto extends Google_Col
   public function getProgrammaticContact()
   {
     return $this->programmaticContact;
+  }
+  public function setPublisherAppIds($publisherAppIds)
+  {
+    $this->publisherAppIds = $publisherAppIds;
+  }
+  public function getPublisherAppIds()
+  {
+    return $this->publisherAppIds;
+  }
+  /**
+   * @param Google_Service_AdExchangeBuyer_MobileApplication
+   */
+  public function setPublisherApps($publisherApps)
+  {
+    $this->publisherApps = $publisherApps;
+  }
+  /**
+   * @return Google_Service_AdExchangeBuyer_MobileApplication
+   */
+  public function getPublisherApps()
+  {
+    return $this->publisherApps;
   }
   public function setPublisherDomains($publisherDomains)
   {

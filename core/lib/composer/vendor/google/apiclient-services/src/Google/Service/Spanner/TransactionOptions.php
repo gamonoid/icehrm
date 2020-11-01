@@ -17,11 +17,27 @@
 
 class Google_Service_Spanner_TransactionOptions extends Google_Model
 {
+  protected $partitionedDmlType = 'Google_Service_Spanner_PartitionedDml';
+  protected $partitionedDmlDataType = '';
   protected $readOnlyType = 'Google_Service_Spanner_ReadOnly';
   protected $readOnlyDataType = '';
   protected $readWriteType = 'Google_Service_Spanner_ReadWrite';
   protected $readWriteDataType = '';
 
+  /**
+   * @param Google_Service_Spanner_PartitionedDml
+   */
+  public function setPartitionedDml(Google_Service_Spanner_PartitionedDml $partitionedDml)
+  {
+    $this->partitionedDml = $partitionedDml;
+  }
+  /**
+   * @return Google_Service_Spanner_PartitionedDml
+   */
+  public function getPartitionedDml()
+  {
+    return $this->partitionedDml;
+  }
   /**
    * @param Google_Service_Spanner_ReadOnly
    */

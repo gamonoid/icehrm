@@ -21,6 +21,7 @@ class Google_Service_Compute_Project extends Google_Collection
   protected $commonInstanceMetadataType = 'Google_Service_Compute_Metadata';
   protected $commonInstanceMetadataDataType = '';
   public $creationTimestamp;
+  public $defaultNetworkTier;
   public $defaultServiceAccount;
   public $description;
   public $enabledFeatures;
@@ -55,6 +56,14 @@ class Google_Service_Compute_Project extends Google_Collection
   public function getCreationTimestamp()
   {
     return $this->creationTimestamp;
+  }
+  public function setDefaultNetworkTier($defaultNetworkTier)
+  {
+    $this->defaultNetworkTier = $defaultNetworkTier;
+  }
+  public function getDefaultNetworkTier()
+  {
+    return $this->defaultNetworkTier;
   }
   public function setDefaultServiceAccount($defaultServiceAccount)
   {

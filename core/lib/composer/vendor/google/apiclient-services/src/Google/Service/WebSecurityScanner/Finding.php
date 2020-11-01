@@ -31,6 +31,8 @@ class Google_Service_WebSecurityScanner_Finding extends Google_Model
   public $trackingId;
   protected $violatingResourceType = 'Google_Service_WebSecurityScanner_ViolatingResource';
   protected $violatingResourceDataType = '';
+  protected $vulnerableHeadersType = 'Google_Service_WebSecurityScanner_VulnerableHeaders';
+  protected $vulnerableHeadersDataType = '';
   protected $vulnerableParametersType = 'Google_Service_WebSecurityScanner_VulnerableParameters';
   protected $vulnerableParametersDataType = '';
   protected $xssType = 'Google_Service_WebSecurityScanner_Xss';
@@ -143,6 +145,20 @@ class Google_Service_WebSecurityScanner_Finding extends Google_Model
   public function getViolatingResource()
   {
     return $this->violatingResource;
+  }
+  /**
+   * @param Google_Service_WebSecurityScanner_VulnerableHeaders
+   */
+  public function setVulnerableHeaders(Google_Service_WebSecurityScanner_VulnerableHeaders $vulnerableHeaders)
+  {
+    $this->vulnerableHeaders = $vulnerableHeaders;
+  }
+  /**
+   * @return Google_Service_WebSecurityScanner_VulnerableHeaders
+   */
+  public function getVulnerableHeaders()
+  {
+    return $this->vulnerableHeaders;
   }
   /**
    * @param Google_Service_WebSecurityScanner_VulnerableParameters

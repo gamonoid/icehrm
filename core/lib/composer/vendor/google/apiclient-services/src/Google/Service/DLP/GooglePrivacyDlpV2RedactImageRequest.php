@@ -22,8 +22,10 @@ class Google_Service_DLP_GooglePrivacyDlpV2RedactImageRequest extends Google_Col
   protected $byteItemDataType = '';
   protected $imageRedactionConfigsType = 'Google_Service_DLP_GooglePrivacyDlpV2ImageRedactionConfig';
   protected $imageRedactionConfigsDataType = 'array';
+  public $includeFindings;
   protected $inspectConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2InspectConfig';
   protected $inspectConfigDataType = '';
+  public $locationId;
 
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2ByteContentItem
@@ -53,6 +55,14 @@ class Google_Service_DLP_GooglePrivacyDlpV2RedactImageRequest extends Google_Col
   {
     return $this->imageRedactionConfigs;
   }
+  public function setIncludeFindings($includeFindings)
+  {
+    $this->includeFindings = $includeFindings;
+  }
+  public function getIncludeFindings()
+  {
+    return $this->includeFindings;
+  }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2InspectConfig
    */
@@ -66,5 +76,13 @@ class Google_Service_DLP_GooglePrivacyDlpV2RedactImageRequest extends Google_Col
   public function getInspectConfig()
   {
     return $this->inspectConfig;
+  }
+  public function setLocationId($locationId)
+  {
+    $this->locationId = $locationId;
+  }
+  public function getLocationId()
+  {
+    return $this->locationId;
   }
 }

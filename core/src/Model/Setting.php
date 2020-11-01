@@ -74,23 +74,6 @@ class Setting extends BaseModel
         return new IceResponse(IceResponse::SUCCESS, "");
     }
 
-    public function executePreSaveActions($obj)
-    {
-        if ($obj->name == 'Leave: Select Leave Period from Employee Department Country') {
-            $oldSetting = new Setting();
-            $oldSetting->Load('name = ?', ['Leave: Select Leave Period from Employee Department Country']);
-            if (class_exists('\Leaves\Common\Model\EmployeeLeave')) {
-                $employeeLeave = new \Leaves\Common\Model\EmployeeLeave();
-                $employeeLeaves = $employeeLeave->Find("1 = 1 limit 1", []);
-                if (count($employeeLeaves) === 1) {
-                    $obj->value = $oldSetting->value;
-                }
-            }
-        }
-
-        return new IceResponse(IceResponse::SUCCESS, $obj);
-    }
-
     public function executePreUpdateActions($obj)
     {
         return $this->executePreSaveActions($obj);

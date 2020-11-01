@@ -18,14 +18,19 @@
 class Google_Service_Compute_Commitment extends Google_Collection
 {
   protected $collection_key = 'resources';
+  public $category;
   public $creationTimestamp;
   public $description;
   public $endTimestamp;
   public $id;
   public $kind;
+  protected $licenseResourceType = 'Google_Service_Compute_LicenseResourceCommitment';
+  protected $licenseResourceDataType = '';
   public $name;
   public $plan;
   public $region;
+  protected $reservationsType = 'Google_Service_Compute_Reservation';
+  protected $reservationsDataType = 'array';
   protected $resourcesType = 'Google_Service_Compute_ResourceCommitment';
   protected $resourcesDataType = 'array';
   public $selfLink;
@@ -33,6 +38,14 @@ class Google_Service_Compute_Commitment extends Google_Collection
   public $status;
   public $statusMessage;
 
+  public function setCategory($category)
+  {
+    $this->category = $category;
+  }
+  public function getCategory()
+  {
+    return $this->category;
+  }
   public function setCreationTimestamp($creationTimestamp)
   {
     $this->creationTimestamp = $creationTimestamp;
@@ -73,6 +86,20 @@ class Google_Service_Compute_Commitment extends Google_Collection
   {
     return $this->kind;
   }
+  /**
+   * @param Google_Service_Compute_LicenseResourceCommitment
+   */
+  public function setLicenseResource(Google_Service_Compute_LicenseResourceCommitment $licenseResource)
+  {
+    $this->licenseResource = $licenseResource;
+  }
+  /**
+   * @return Google_Service_Compute_LicenseResourceCommitment
+   */
+  public function getLicenseResource()
+  {
+    return $this->licenseResource;
+  }
   public function setName($name)
   {
     $this->name = $name;
@@ -96,6 +123,20 @@ class Google_Service_Compute_Commitment extends Google_Collection
   public function getRegion()
   {
     return $this->region;
+  }
+  /**
+   * @param Google_Service_Compute_Reservation
+   */
+  public function setReservations($reservations)
+  {
+    $this->reservations = $reservations;
+  }
+  /**
+   * @return Google_Service_Compute_Reservation
+   */
+  public function getReservations()
+  {
+    return $this->reservations;
   }
   /**
    * @param Google_Service_Compute_ResourceCommitment

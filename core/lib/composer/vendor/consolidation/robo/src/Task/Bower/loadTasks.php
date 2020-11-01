@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Bower;
 
 trait loadTasks
@@ -6,7 +7,7 @@ trait loadTasks
     /**
      * @param null|string $pathToBower
      *
-     * @return Install
+     * @return \Robo\Task\Bower\Install|\Robo\Collection\CollectionBuilder
      */
     protected function taskBowerInstall($pathToBower = null)
     {
@@ -16,7 +17,7 @@ trait loadTasks
     /**
      * @param null|string $pathToBower
      *
-     * @return Update
+     * @return \Robo\Task\Bower\Update|\Robo\Collection\CollectionBuilder
      */
     protected function taskBowerUpdate($pathToBower = null)
     {

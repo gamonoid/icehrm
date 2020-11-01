@@ -33,13 +33,10 @@ class Google_Service_PlusDomains extends Google_Service
   /** View your circles and the people and pages in them. */
   const PLUS_CIRCLES_READ =
       "https://www.googleapis.com/auth/plus.circles.read";
-  /** Manage your circles and add people and pages. People and pages you add to your circles will be notified. Others may see this information publicly. People you add to circles can use Hangouts with you.. */
-  const PLUS_CIRCLES_WRITE =
-      "https://www.googleapis.com/auth/plus.circles.write";
-  /** Know the list of people in your circles, your age range, and language. */
+  /** View your basic profile info, including your age range and language. */
   const PLUS_LOGIN =
       "https://www.googleapis.com/auth/plus.login";
-  /** Know who you are on Google. */
+  /** Associate you with your personal info on Google. */
   const PLUS_ME =
       "https://www.googleapis.com/auth/plus.me";
   /** Send your photos and videos to Google+. */
@@ -51,13 +48,10 @@ class Google_Service_PlusDomains extends Google_Service
   /** View your Google+ posts, comments, and stream. */
   const PLUS_STREAM_READ =
       "https://www.googleapis.com/auth/plus.stream.read";
-  /** Manage your Google+ posts, comments, and stream. */
-  const PLUS_STREAM_WRITE =
-      "https://www.googleapis.com/auth/plus.stream.write";
   /** View your email address. */
   const USERINFO_EMAIL =
       "https://www.googleapis.com/auth/userinfo.email";
-  /** View your basic profile info. */
+  /** See your personal info, including any personal info you've made publicly available. */
   const USERINFO_PROFILE =
       "https://www.googleapis.com/auth/userinfo.profile";
 
@@ -71,13 +65,15 @@ class Google_Service_PlusDomains extends Google_Service
   /**
    * Constructs the internal representation of the PlusDomains service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://www.googleapis.com/';
     $this->servicePath = 'plusDomains/v1/';
+    $this->batchPath = 'batch/plusDomains/v1';
     $this->version = 'v1';
     $this->serviceName = 'plusDomains';
 
@@ -95,20 +91,6 @@ class Google_Service_PlusDomains extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
-              ),
-            ),'insert' => array(
-              'path' => 'people/{userId}/activities',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'userId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'preview' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ),
               ),
             ),'list' => array(
@@ -172,47 +154,7 @@ class Google_Service_PlusDomains extends Google_Service
         'circles',
         array(
           'methods' => array(
-            'addPeople' => array(
-              'path' => 'circles/{circleId}/people',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'circleId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'email' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'userId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-              ),
-            ),'get' => array(
-              'path' => 'circles/{circleId}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'circleId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'insert' => array(
-              'path' => 'people/{userId}/circles',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'userId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'list' => array(
+            'list' => array(
               'path' => 'people/{userId}/circles',
               'httpMethod' => 'GET',
               'parameters' => array(
@@ -230,56 +172,6 @@ class Google_Service_PlusDomains extends Google_Service
                   'type' => 'string',
                 ),
               ),
-            ),'patch' => array(
-              'path' => 'circles/{circleId}',
-              'httpMethod' => 'PATCH',
-              'parameters' => array(
-                'circleId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'remove' => array(
-              'path' => 'circles/{circleId}',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'circleId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'removePeople' => array(
-              'path' => 'circles/{circleId}/people',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'circleId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'email' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'userId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-              ),
-            ),'update' => array(
-              'path' => 'circles/{circleId}',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'circleId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
             ),
           )
         )
@@ -295,16 +187,6 @@ class Google_Service_PlusDomains extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(
                 'commentId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'insert' => array(
-              'path' => 'activities/{activityId}/comments',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'activityId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -414,24 +296,6 @@ class Google_Service_PlusDomains extends Google_Service
                   'required' => true,
                 ),
                 'collection' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'listByCircle' => array(
-              'path' => 'circles/{circleId}/people',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'circleId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,

@@ -26,10 +26,16 @@
 class Google_Service_Dialogflow_Resource_ProjectsAgentSessionsEntityTypes extends Google_Service_Resource
 {
   /**
-   * Creates a session entity type. (entityTypes.create)
+   * Creates a session entity type. If the specified session entity type already
+   * exists, overrides the session entity type. This method doesn't work with
+   * Google Assistant integration. Contact Dialogflow support if you need to use
+   * session entities with Google Assistant integration. (entityTypes.create)
    *
    * @param string $parent Required. The session to create a session entity type
-   * for. Format: `projects//agent/sessions/`.
+   * for. Format: `projects//agent/sessions/` or
+   * `projects//agent/environments//users// sessions/`. If `Environment ID` is not
+   * specified, we assume default 'draft' environment. If `User ID` is not
+   * specified, we assume default '-' user.
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2SessionEntityType $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2SessionEntityType
@@ -41,10 +47,15 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentSessionsEntityTypes extend
     return $this->call('create', array($params), "Google_Service_Dialogflow_GoogleCloudDialogflowV2SessionEntityType");
   }
   /**
-   * Deletes the specified session entity type. (entityTypes.delete)
+   * Deletes the specified session entity type. This method doesn't work with
+   * Google Assistant integration. Contact Dialogflow support if you need to use
+   * session entities with Google Assistant integration. (entityTypes.delete)
    *
    * @param string $name Required. The name of the entity type to delete. Format:
-   * `projects//agent/sessions//entityTypes/`.
+   * `projects//agent/sessions//entityTypes/` or
+   * `projects//agent/environments//users//sessions//entityTypes/`. If
+   * `Environment ID` is not specified, we assume default 'draft' environment. If
+   * `User ID` is not specified, we assume default '-' user.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dialogflow_GoogleProtobufEmpty
    */
@@ -55,10 +66,15 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentSessionsEntityTypes extend
     return $this->call('delete', array($params), "Google_Service_Dialogflow_GoogleProtobufEmpty");
   }
   /**
-   * Retrieves the specified session entity type. (entityTypes.get)
+   * Retrieves the specified session entity type. This method doesn't work with
+   * Google Assistant integration. Contact Dialogflow support if you need to use
+   * session entities with Google Assistant integration. (entityTypes.get)
    *
    * @param string $name Required. The name of the session entity type. Format:
-   * `projects//agent/sessions//entityTypes/`.
+   * `projects//agent/sessions//entityTypes/` or
+   * `projects//agent/environments//users//sessions//entityTypes/`. If
+   * `Environment ID` is not specified, we assume default 'draft' environment. If
+   * `User ID` is not specified, we assume default '-' user.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2SessionEntityType
    */
@@ -69,17 +85,22 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentSessionsEntityTypes extend
     return $this->call('get', array($params), "Google_Service_Dialogflow_GoogleCloudDialogflowV2SessionEntityType");
   }
   /**
-   * Returns the list of all session entity types in the specified session.
-   * (entityTypes.listProjectsAgentSessionsEntityTypes)
+   * Returns the list of all session entity types in the specified session. This
+   * method doesn't work with Google Assistant integration. Contact Dialogflow
+   * support if you need to use session entities with Google Assistant
+   * integration. (entityTypes.listProjectsAgentSessionsEntityTypes)
    *
    * @param string $parent Required. The session to list all session entity types
-   * from. Format: `projects//agent/sessions/`.
+   * from. Format: `projects//agent/sessions/` or
+   * `projects//agent/environments//users// sessions/`. If `Environment ID` is not
+   * specified, we assume default 'draft' environment. If `User ID` is not
+   * specified, we assume default '-' user.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string pageToken Optional. The next_page_token value returned from
-   * a previous list request.
    * @opt_param int pageSize Optional. The maximum number of items to return in a
    * single page. By default 100 and at most 1000.
+   * @opt_param string pageToken Optional. The next_page_token value returned from
+   * a previous list request.
    * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2ListSessionEntityTypesResponse
    */
   public function listProjectsAgentSessionsEntityTypes($parent, $optParams = array())
@@ -89,10 +110,17 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentSessionsEntityTypes extend
     return $this->call('list', array($params), "Google_Service_Dialogflow_GoogleCloudDialogflowV2ListSessionEntityTypesResponse");
   }
   /**
-   * Updates the specified session entity type. (entityTypes.patch)
+   * Updates the specified session entity type. This method doesn't work with
+   * Google Assistant integration. Contact Dialogflow support if you need to use
+   * session entities with Google Assistant integration. (entityTypes.patch)
    *
    * @param string $name Required. The unique identifier of this session entity
-   * type. Format: `projects//agent/sessions//entityTypes/`.
+   * type. Format: `projects//agent/sessions//entityTypes/`, or
+   * `projects//agent/environments//users//sessions//entityTypes/`. If
+   * `Environment ID` is not specified, we assume default 'draft' environment. If
+   * `User ID` is not specified, we assume default '-' user. `` must be the
+   * display name of an existing entity type in the same agent that will be
+   * overridden or supplemented.
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2SessionEntityType $postBody
    * @param array $optParams Optional parameters.
    *

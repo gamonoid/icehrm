@@ -40,20 +40,20 @@ class Google_Service_Games_Resource_Metagame extends Google_Service_Resource
   }
   /**
    * List play data aggregated per category for the player corresponding to
-   * playerId. (metagame.listCategoriesByPlayer)
+   * `playerId`. (metagame.listCategoriesByPlayer)
    *
-   * @param string $playerId A player ID. A value of me may be used in place of
+   * @param string $playerId A player ID. A value of `me` may be used in place of
    * the authenticated player's ID.
    * @param string $collection The collection of categories for which data will be
    * returned.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string language The preferred language to use for strings returned
-   * by this method.
    * @opt_param int maxResults The maximum number of category resources to return
    * in the response, used for paging. For any response, the actual number of
-   * category resources returned may be less than the specified maxResults.
+   * category resources returned may be less than the specified `maxResults`.
    * @opt_param string pageToken The token returned by the previous request.
+   * @opt_param string language The preferred language to use for strings returned
+   * by this method.
    * @return Google_Service_Games_CategoryListResponse
    */
   public function listCategoriesByPlayer($playerId, $collection, $optParams = array())

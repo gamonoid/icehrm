@@ -98,6 +98,8 @@ class ErrorHandlerTest extends TestCase
     // dummy function to test trace in error handler.
     private static function triggerNotice($that)
     {
+        // dummy variable to check for in error handler.
+        $foobar = 123;
         $that->assertSame('', $foo.$foo.$bar);
     }
 
@@ -340,9 +342,6 @@ class ErrorHandlerTest extends TestCase
         }
     }
 
-    /**
-     * @group legacy
-     */
     public function testErrorStacking()
     {
         try {

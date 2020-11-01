@@ -21,11 +21,15 @@ class Google_Service_Sheets_OrgChartSpec extends Google_Model
   protected $labelsDataType = '';
   protected $nodeColorType = 'Google_Service_Sheets_Color';
   protected $nodeColorDataType = '';
+  protected $nodeColorStyleType = 'Google_Service_Sheets_ColorStyle';
+  protected $nodeColorStyleDataType = '';
   public $nodeSize;
   protected $parentLabelsType = 'Google_Service_Sheets_ChartData';
   protected $parentLabelsDataType = '';
   protected $selectedNodeColorType = 'Google_Service_Sheets_Color';
   protected $selectedNodeColorDataType = '';
+  protected $selectedNodeColorStyleType = 'Google_Service_Sheets_ColorStyle';
+  protected $selectedNodeColorStyleDataType = '';
   protected $tooltipsType = 'Google_Service_Sheets_ChartData';
   protected $tooltipsDataType = '';
 
@@ -56,6 +60,20 @@ class Google_Service_Sheets_OrgChartSpec extends Google_Model
   public function getNodeColor()
   {
     return $this->nodeColor;
+  }
+  /**
+   * @param Google_Service_Sheets_ColorStyle
+   */
+  public function setNodeColorStyle(Google_Service_Sheets_ColorStyle $nodeColorStyle)
+  {
+    $this->nodeColorStyle = $nodeColorStyle;
+  }
+  /**
+   * @return Google_Service_Sheets_ColorStyle
+   */
+  public function getNodeColorStyle()
+  {
+    return $this->nodeColorStyle;
   }
   public function setNodeSize($nodeSize)
   {
@@ -92,6 +110,20 @@ class Google_Service_Sheets_OrgChartSpec extends Google_Model
   public function getSelectedNodeColor()
   {
     return $this->selectedNodeColor;
+  }
+  /**
+   * @param Google_Service_Sheets_ColorStyle
+   */
+  public function setSelectedNodeColorStyle(Google_Service_Sheets_ColorStyle $selectedNodeColorStyle)
+  {
+    $this->selectedNodeColorStyle = $selectedNodeColorStyle;
+  }
+  /**
+   * @return Google_Service_Sheets_ColorStyle
+   */
+  public function getSelectedNodeColorStyle()
+  {
+    return $this->selectedNodeColorStyle;
   }
   /**
    * @param Google_Service_Sheets_ChartData

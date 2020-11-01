@@ -20,6 +20,7 @@ class Google_Service_Compute_AccessConfig extends Google_Model
   public $kind;
   public $name;
   public $natIP;
+  public $networkTier;
   public $publicPtrDomainName;
   public $setPublicPtr;
   public $type;
@@ -47,6 +48,14 @@ class Google_Service_Compute_AccessConfig extends Google_Model
   public function getNatIP()
   {
     return $this->natIP;
+  }
+  public function setNetworkTier($networkTier)
+  {
+    $this->networkTier = $networkTier;
+  }
+  public function getNetworkTier()
+  {
+    return $this->networkTier;
   }
   public function setPublicPtrDomainName($publicPtrDomainName)
   {

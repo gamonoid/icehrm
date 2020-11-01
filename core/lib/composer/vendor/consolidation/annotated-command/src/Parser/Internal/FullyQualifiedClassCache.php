@@ -88,7 +88,7 @@ class FullyQualifiedClassCache
             // If this is an aliased class, 'use \Foo\Bar as Baz', then adjust
             if (strpos($usedClass, ' as ')) {
                 $unqualifiedClass = preg_replace('#.*\sas\s+#', '', $usedClass);
-                $usedClass = preg_replace('#\s+as\s+#', '', $usedClass);
+                $usedClass = preg_replace('#[a-zA-Z0-9]+\s+as\s+#', '', $usedClass);
             }
             $result[$unqualifiedClass] = $usedClass;
         }

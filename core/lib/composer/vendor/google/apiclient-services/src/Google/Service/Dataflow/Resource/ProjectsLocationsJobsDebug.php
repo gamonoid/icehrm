@@ -30,8 +30,9 @@ class Google_Service_Dataflow_Resource_ProjectsLocationsJobsDebug extends Google
    * (debug.getConfig)
    *
    * @param string $projectId The project id.
-   * @param string $location The location which contains the job specified by
-   * job_id.
+   * @param string $location The [regional endpoint]
+   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
+   * contains the job specified by job_id.
    * @param string $jobId The job id.
    * @param Google_Service_Dataflow_GetDebugConfigRequest $postBody
    * @param array $optParams Optional parameters.
@@ -47,8 +48,9 @@ class Google_Service_Dataflow_Resource_ProjectsLocationsJobsDebug extends Google
    * Send encoded debug capture data for component. (debug.sendCapture)
    *
    * @param string $projectId The project id.
-   * @param string $location The location which contains the job specified by
-   * job_id.
+   * @param string $location The [regional endpoint]
+   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
+   * contains the job specified by job_id.
    * @param string $jobId The job id.
    * @param Google_Service_Dataflow_SendDebugCaptureRequest $postBody
    * @param array $optParams Optional parameters.

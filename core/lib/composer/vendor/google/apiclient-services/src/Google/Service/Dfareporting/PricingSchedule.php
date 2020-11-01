@@ -19,7 +19,6 @@ class Google_Service_Dfareporting_PricingSchedule extends Google_Collection
 {
   protected $collection_key = 'pricingPeriods';
   public $capCostOption;
-  public $disregardOverdelivery;
   public $endDate;
   public $flighted;
   public $floodlightActivityId;
@@ -36,14 +35,6 @@ class Google_Service_Dfareporting_PricingSchedule extends Google_Collection
   public function getCapCostOption()
   {
     return $this->capCostOption;
-  }
-  public function setDisregardOverdelivery($disregardOverdelivery)
-  {
-    $this->disregardOverdelivery = $disregardOverdelivery;
-  }
-  public function getDisregardOverdelivery()
-  {
-    return $this->disregardOverdelivery;
   }
   public function setEndDate($endDate)
   {

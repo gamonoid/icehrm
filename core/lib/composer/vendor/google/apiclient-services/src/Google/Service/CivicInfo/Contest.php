@@ -19,6 +19,7 @@ class Google_Service_CivicInfo_Contest extends Google_Collection
 {
   protected $collection_key = 'sources';
   public $ballotPlacement;
+  public $ballotTitle;
   protected $candidatesType = 'Google_Service_CivicInfo_Candidate';
   protected $candidatesDataType = 'array';
   protected $districtType = 'Google_Service_CivicInfo_ElectoralDistrict';
@@ -29,6 +30,7 @@ class Google_Service_CivicInfo_Contest extends Google_Collection
   public $numberElected;
   public $numberVotingFor;
   public $office;
+  public $primaryParties;
   public $primaryParty;
   public $referendumBallotResponses;
   public $referendumBrief;
@@ -53,6 +55,14 @@ class Google_Service_CivicInfo_Contest extends Google_Collection
   public function getBallotPlacement()
   {
     return $this->ballotPlacement;
+  }
+  public function setBallotTitle($ballotTitle)
+  {
+    $this->ballotTitle = $ballotTitle;
+  }
+  public function getBallotTitle()
+  {
+    return $this->ballotTitle;
   }
   /**
    * @param Google_Service_CivicInfo_Candidate
@@ -129,6 +139,14 @@ class Google_Service_CivicInfo_Contest extends Google_Collection
   public function getOffice()
   {
     return $this->office;
+  }
+  public function setPrimaryParties($primaryParties)
+  {
+    $this->primaryParties = $primaryParties;
+  }
+  public function getPrimaryParties()
+  {
+    return $this->primaryParties;
   }
   public function setPrimaryParty($primaryParty)
   {

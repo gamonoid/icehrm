@@ -76,6 +76,7 @@ class Google_Service_YouTube_ContentRating extends Google_Collection
   public $nfrcRating;
   public $nfvcbRating;
   public $nkclvRating;
+  public $nmcRating;
   public $oflcRating;
   public $pefilmRating;
   public $rcnofRating;
@@ -552,6 +553,14 @@ class Google_Service_YouTube_ContentRating extends Google_Collection
   public function getNkclvRating()
   {
     return $this->nkclvRating;
+  }
+  public function setNmcRating($nmcRating)
+  {
+    $this->nmcRating = $nmcRating;
+  }
+  public function getNmcRating()
+  {
+    return $this->nmcRating;
   }
   public function setOflcRating($oflcRating)
   {

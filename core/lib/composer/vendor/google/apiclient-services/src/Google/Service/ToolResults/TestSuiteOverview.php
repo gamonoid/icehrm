@@ -17,14 +17,31 @@
 
 class Google_Service_ToolResults_TestSuiteOverview extends Google_Model
 {
+  protected $elapsedTimeType = 'Google_Service_ToolResults_Duration';
+  protected $elapsedTimeDataType = '';
   public $errorCount;
   public $failureCount;
+  public $flakyCount;
   public $name;
   public $skippedCount;
   public $totalCount;
   protected $xmlSourceType = 'Google_Service_ToolResults_FileReference';
   protected $xmlSourceDataType = '';
 
+  /**
+   * @param Google_Service_ToolResults_Duration
+   */
+  public function setElapsedTime(Google_Service_ToolResults_Duration $elapsedTime)
+  {
+    $this->elapsedTime = $elapsedTime;
+  }
+  /**
+   * @return Google_Service_ToolResults_Duration
+   */
+  public function getElapsedTime()
+  {
+    return $this->elapsedTime;
+  }
   public function setErrorCount($errorCount)
   {
     $this->errorCount = $errorCount;
@@ -40,6 +57,14 @@ class Google_Service_ToolResults_TestSuiteOverview extends Google_Model
   public function getFailureCount()
   {
     return $this->failureCount;
+  }
+  public function setFlakyCount($flakyCount)
+  {
+    $this->flakyCount = $flakyCount;
+  }
+  public function getFlakyCount()
+  {
+    return $this->flakyCount;
   }
   public function setName($name)
   {

@@ -1,0 +1,53 @@
+.jstree ol,
+.jstree ul,
+.jstree li {
+    border: none;
+}
+
+.jstree li.php a .jstree-icon {
+    background-repeat: repeat;
+    background-image: url(../img/page.gif);
+}
+
+.jstree a {
+    cursor: pointer;
+}
+
+#treeContainer {
+    float: left;
+}
+
+#tree {
+    float: left;
+    padding-right: 5px;
+    display: none;
+}
+
+#treeToggle {
+    display: inline-block;
+    min-height: 200px;
+    -moz-opacity:0.87;
+    opacity:0.87;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-box-shadow: 1px 1px 3px #000000;
+    -webkit-box-shadow: 1px 1px 3px #000000;
+    box-shadow:0px 0px 5px #000;
+    background-color: #F9F9F9;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 16px;
+    /* IE8 and below. */
+    border: 1px solid black \9;
+}
+
+#treeHeader {
+    font-weight: bold;
+    color: #555753;
+    white-space: nowrap;
+}
+
+#treeHeader .jstree-icon {
+    background-image: url("../img/base.gif");
+    background-position: 0 0;
+}

@@ -27,6 +27,15 @@ use Symfony\Component\Finder\Finder;
  * To discover global commands:
  *
  * $commandFiles = $discovery->discover($drupalRoot, '\Drupal');
+ *
+ * WARNING:
+ *
+ * This class is deprecated. Commandfile discovery is complicated, and does
+ * not work from within phar files. It is recommended to instead use a static
+ * list of command classes as shown in https://github.com/g1a/starter/blob/master/example
+ *
+ * For a better alternative when implementing a plugin mechanism, see
+ * https://robo.li/extending/#register-command-files-via-psr-4-autoloading
  */
 class CommandFileDiscovery
 {
@@ -42,6 +51,8 @@ class CommandFileDiscovery
     protected $searchDepth = 2;
     /** @var bool */
     protected $followLinks = false;
+    /** @var string[] */
+    protected $strippedNamespaces;
 
     public function __construct()
     {
@@ -126,6 +137,32 @@ class CommandFileDiscovery
     }
 
     /**
+     * Set a particular namespace part to ignore. This is useful in plugin
+     * mechanisms where the plugin is placed by Composer.
+     *
+     * For example, Drush extensions are placed in `./drush/Commands`.
+     * If the Composer installer path is `"drush/Commands/contrib/{$name}": ["type:drupal-drush"]`,
+     * then Composer will place the command files in `drush/Commands/contrib`.
+     * The namespace should not be any different in this instance than if
+     * the extension were placed in `drush/Commands`, though, so Drush therefore
+     * calls `ignoreNamespacePart('contrib', 'Commands')`. This causes the
+     * `contrib` component to be removed from the namespace if it follows
+     * the namespace `Commands`. If the '$base' parameter is not specified, then
+     * the ignored portion of the namespace may appear anywhere in the path.
+     */
+    public function ignoreNamespacePart($ignore, $base = '')
+    {
+        $replacementPart = '\\';
+        if (!empty($base)) {
+            $replacementPart .= $base . '\\';
+        }
+        $ignoredPart = $replacementPart . $ignore . '\\';
+        $this->strippedNamespaces[$ignoredPart] = $replacementPart;
+
+        return $this;
+    }
+
+    /**
      * Add one more location to the search location list.
      *
      * @param string $location One more relative path to search
@@ -205,7 +242,32 @@ class CommandFileDiscovery
                 $this->discoverCommandFiles("$directory/src", $itemsNamespace)
             );
         }
-        return $commandFiles;
+        return $this->fixNamespaces($commandFiles);
+    }
+
+    /**
+     * fixNamespaces will alter the namespaces in the commandFiles
+     * result to remove the Composer placement directory, if any.
+     */
+    protected function fixNamespaces($commandFiles)
+    {
+        // Do nothing unless the client told us to remove some namespace components.
+        if (empty($this->strippedNamespaces)) {
+            return $commandFiles;
+        }
+
+        // Strip out any part of the namespace the client did not want.
+        // @see CommandFileDiscovery::ignoreNamespacePart
+        return array_map(
+            function ($fqcn) {
+                return str_replace(
+                    array_keys($this->strippedNamespaces),
+                    array_values($this->strippedNamespaces),
+                    $fqcn
+                );
+            },
+            $commandFiles
+        );
     }
 
     /**
@@ -304,8 +366,8 @@ class CommandFileDiscovery
         foreach ($finder as $file) {
             $relativePathName = $file->getRelativePathname();
             $relativeNamespaceAndClassname = str_replace(
-                ['/', '.php'],
-                ['\\', ''],
+                ['/', '-', '.php'],
+                ['\\', '_', ''],
                 $relativePathName
             );
             $classname = $this->joinNamespace([$baseNamespace, $relativeNamespaceAndClassname]);

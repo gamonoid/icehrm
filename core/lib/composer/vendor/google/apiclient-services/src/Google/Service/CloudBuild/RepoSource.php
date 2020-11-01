@@ -20,8 +20,10 @@ class Google_Service_CloudBuild_RepoSource extends Google_Model
   public $branchName;
   public $commitSha;
   public $dir;
+  public $invertRegex;
   public $projectId;
   public $repoName;
+  public $substitutions;
   public $tagName;
 
   public function setBranchName($branchName)
@@ -48,6 +50,14 @@ class Google_Service_CloudBuild_RepoSource extends Google_Model
   {
     return $this->dir;
   }
+  public function setInvertRegex($invertRegex)
+  {
+    $this->invertRegex = $invertRegex;
+  }
+  public function getInvertRegex()
+  {
+    return $this->invertRegex;
+  }
   public function setProjectId($projectId)
   {
     $this->projectId = $projectId;
@@ -63,6 +73,14 @@ class Google_Service_CloudBuild_RepoSource extends Google_Model
   public function getRepoName()
   {
     return $this->repoName;
+  }
+  public function setSubstitutions($substitutions)
+  {
+    $this->substitutions = $substitutions;
+  }
+  public function getSubstitutions()
+  {
+    return $this->substitutions;
   }
   public function setTagName($tagName)
   {

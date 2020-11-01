@@ -17,10 +17,19 @@
 
 class Google_Service_ShoppingContent_OrdersCreateTestOrderRequest extends Google_Model
 {
+  public $country;
   public $templateName;
   protected $testOrderType = 'Google_Service_ShoppingContent_TestOrder';
   protected $testOrderDataType = '';
 
+  public function setCountry($country)
+  {
+    $this->country = $country;
+  }
+  public function getCountry()
+  {
+    return $this->country;
+  }
   public function setTemplateName($templateName)
   {
     $this->templateName = $templateName;

@@ -3,15 +3,33 @@
 // +----------------------------------------------------------------------+
 // | PHP Version 5 and 7                                                  |
 // +----------------------------------------------------------------------+
-// | Copyright (c) 1997-2015 Jon Parise and Chuck Hagenbuch               |
-// +----------------------------------------------------------------------+
-// | This source file is subject to version 3.01 of the PHP license,      |
-// | that is bundled with this package in the file LICENSE, and is        |
-// | available at through the world-wide-web at                           |
-// | http://www.php.net/license/3_01.txt.                                 |
-// | If you did not receive a copy of the PHP license and are unable to   |
-// | obtain it through the world-wide-web, please send a note to          |
-// | license@php.net so we can mail you a copy immediately.               |
+// | Copyright (c) 1997-2019 Jon Parise and Chuck Hagenbuch               |
+// | All rights reserved.                                                 |
+// |                                                                      |
+// | Redistribution and use in source and binary forms, with or without   |
+// | modification, are permitted provided that the following conditions   |
+// | are met:                                                             |
+// |                                                                      |
+// | 1. Redistributions of source code must retain the above copyright    |
+// |    notice, this list of conditions and the following disclaimer.     |
+// |                                                                      |
+// | 2. Redistributions in binary form must reproduce the above copyright |
+// |    notice, this list of conditions and the following disclaimer in   |
+// |    the documentation and/or other materials provided with the        |
+// |    distribution.                                                     |
+// |                                                                      |
+// | THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS  |
+// | "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT    |
+// | LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS    |
+// | FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE       |
+// | COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, |
+// | INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, |
+// | BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;     |
+// | LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER     |
+// | CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT   |
+// | LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN    |
+// | ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE      |
+// | POSSIBILITY OF SUCH DAMAGE.                                          |
 // +----------------------------------------------------------------------+
 // | Authors: Chuck Hagenbuch <chuck@horde.org>                           |
 // |          Jon Parise <jon@php.net>                                    |
@@ -29,6 +47,7 @@ require_once 'Net/Socket.php';
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@php.net>
  * @author  Damian Alejandro Fernandez Sosa <damlists@cnba.uba.ar>
+ * @license http://opensource.org/licenses/bsd-license.php BSD-2-Clause
  *
  * @example basic.php A basic implementation of the Net_SMTP package.
  */
@@ -142,17 +161,20 @@ class Net_SMTP
      *   $smtp = new Net_SMTP('ssl://mail.host.com', 465);
      *   $smtp->connect();
      *
-     * @param string  $host           The server to connect to.
-     * @param integer $port           The port to connect to.
-     * @param string  $localhost      The value to give when sending EHLO or HELO.
-     * @param boolean $pipelining     Use SMTP command pipelining
-     * @param integer $timeout        Socket I/O timeout in seconds.
-     * @param array   $socket_options Socket stream_context_create() options.
+     * @param string  $host             The server to connect to.
+     * @param integer $port             The port to connect to.
+     * @param string  $localhost        The value to give when sending EHLO or HELO.
+     * @param boolean $pipelining       Use SMTP command pipelining
+     * @param integer $timeout          Socket I/O timeout in seconds.
+     * @param array   $socket_options   Socket stream_context_create() options.
+     * @param string  $gssapi_principal GSSAPI service principal name
+     * @param string  $gssapi_cname     GSSAPI credentials cache
      *
      * @since 1.0
      */
     public function __construct($host = null, $port = null, $localhost = null,
-        $pipelining = false, $timeout = 0, $socket_options = null
+        $pipelining = false, $timeout = 0, $socket_options = null,
+        $gssapi_principal=null, $gssapi_cname=null
     ) {
         if (isset($host)) {
             $this->host = $host;
@@ -164,10 +186,17 @@ class Net_SMTP
             $this->localhost = $localhost;
         }
 
-        $this->pipelining      = $pipelining;
-        $this->socket         = new Net_Socket();
-        $this->socket_options = $socket_options;
-        $this->timeout        = $timeout;
+        $this->pipelining       = $pipelining;
+        $this->socket           = new Net_Socket();
+        $this->socket_options   = $socket_options;
+        $this->timeout          = $timeout;
+        $this->gssapi_principal = $gssapi_principal;
+        $this->gssapi_cname     = $gssapi_cname;
+
+        /* If PHP krb5 extension is loaded, we enable GSSAPI method. */
+        if (extension_loaded('krb5')) {
+            $this->setAuthMethod('GSSAPI', array($this, 'authGSSAPI'));
+        }
 
         /* Include the Auth_SASL package.  If the package is available, we
          * enable the authentication methods that depend upon it. */
@@ -179,6 +208,7 @@ class Net_SMTP
         /* These standard authentication methods are always available. */
         $this->setAuthMethod('LOGIN', array($this, 'authLogin'), false);
         $this->setAuthMethod('PLAIN', array($this, 'authPlain'), false);
+        $this->setAuthMethod('XOAUTH2', array($this, 'authXOAuth2'), false);
     }
 
     /**
@@ -852,6 +882,129 @@ class Net_SMTP
         return true;
     }
 
+     /**
+     * Authenticates the user using the GSSAPI method.
+     *
+     * PHP krb5 extension is required,
+     * service principal and credentials cache must be set.
+     *
+     * @param string $uid   The userid to authenticate as.
+     * @param string $pwd   The password to authenticate with.
+     * @param string $authz The optional authorization proxy identifier.
+     *
+     * @return mixed Returns a PEAR_Error with an error message on any
+     *               kind of failure, or true on success.
+     */
+    protected function authGSSAPI($uid, $pwd, $authz = '')
+    {
+        if (PEAR::isError($error = $this->put('AUTH', 'GSSAPI'))) {
+            return $error;
+        }
+        /* 334: Continue authentication request */
+        if (PEAR::isError($error = $this->parseResponse(334))) {
+            /* 503: Error: already authenticated */
+            if ($this->code === 503) {
+                return true;
+            }
+            return $error;
+        }
+
+        if (!$this->gssapi_principal) {
+            return PEAR::raiseError('No Kerberos service principal set', 2);
+        }
+
+        if (!empty($this->gssapi_cname)) {
+            putenv('KRB5CCNAME=' . $this->gssapi_cname);
+        }
+
+        try {
+            $ccache = new KRB5CCache();
+            if (!empty($this->gssapi_cname)) {
+                $ccache->open($this->gssapi_cname);
+            }
+            
+            $gssapicontext = new GSSAPIContext();
+            $gssapicontext->acquireCredentials($ccache);
+
+            $token   = '';
+            $success = $gssapicontext->initSecContext($this->gssapi_principal, null, null, null, $token);
+            $token   = base64_encode($token);
+        }
+        catch (Exception $e) {
+            return PEAR::raiseError('GSSAPI authentication failed: ' . $e->getMessage());
+        }
+
+        if (PEAR::isError($error = $this->put($token))) {
+            return $error;
+        }
+
+        /* 334: Continue authentication request */
+        if (PEAR::isError($error = $this->parseResponse(334))) {
+            return $error;
+        }
+
+        $response = $this->arguments[0];
+
+        try {
+            $challenge = base64_decode($response);
+            $gssapicontext->unwrap($challenge, $challenge);
+            $gssapicontext->wrap($challenge, $challenge, true);
+        }
+        catch (Exception $e) {
+            return PEAR::raiseError('GSSAPI authentication failed: ' . $e->getMessage());
+        }
+
+        if (PEAR::isError($error = $this->put(base64_encode($challenge)))) {
+            return $error;
+        }
+
+        /* 235: Authentication successful */
+        if (PEAR::isError($error = $this->parseResponse(235))) {
+            return $error;
+        }
+
+        return true;
+    }
+
+    /**
+     * Authenticates the user using the XOAUTH2 method.
+     *
+     * @param string $uid   The userid to authenticate as.
+     * @param string $token The access token to authenticate with.
+     * @param string $authz The optional authorization proxy identifier.
+     *
+     * @return mixed Returns a PEAR_Error with an error message on any
+     *               kind of failure, or true on success.
+     * @since 1.9.0
+     */
+    public function authXOAuth2($uid, $token, $authz, $conn)
+    {
+        $auth = base64_encode("user=$uid\1auth=$token\1\1");
+        if (PEAR::isError($error = $this->put('AUTH', 'XOAUTH2 ' . $auth))) {
+            return $error;
+        }
+
+        /* 235: Authentication successful or 334: Continue authentication */
+        if (PEAR::isError($error = $this->parseResponse([235, 334]))) {
+            return $error;
+        }
+
+        /* 334: Continue authentication request */
+        if ($this->code === 334) {
+            /* Send an empty line as response to 334 */
+            if (PEAR::isError($error = $this->put(''))) {
+                return $error;
+            }
+
+            /* Expect 235: Authentication successful */
+            if (PEAR::isError($error = $this->parseResponse(235))) {
+                return $error;
+            }
+        }
+
+        return true;
+    }
+
     /**
      * Send the HELO command.
      *
@@ -1018,7 +1171,6 @@ class Net_SMTP
          * about the server's fixed maximum message size". */
         $limit = (isset($this->esmtp['SIZE'])) ? $this->esmtp['SIZE'] : 0;
         if ($limit > 0 && $size >= $limit) {
-            $this->disconnect();
             return PEAR::raiseError('Message size exceeds server limit');
         }
 

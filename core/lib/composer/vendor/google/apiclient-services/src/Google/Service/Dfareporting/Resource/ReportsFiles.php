@@ -26,9 +26,10 @@
 class Google_Service_Dfareporting_Resource_ReportsFiles extends Google_Service_Resource
 {
   /**
-   * Retrieves a report file. This method supports media download. (files.get)
+   * Retrieves a report file by its report ID and file ID. This method supports
+   * media download. (files.get)
    *
-   * @param string $profileId The DFA profile ID.
+   * @param string $profileId The DFA user profile ID.
    * @param string $reportId The ID of the report.
    * @param string $fileId The ID of the report file.
    * @param array $optParams Optional parameters.
@@ -48,10 +49,10 @@ class Google_Service_Dfareporting_Resource_ReportsFiles extends Google_Service_R
    * @param array $optParams Optional parameters.
    *
    * @opt_param int maxResults Maximum number of results to return.
+   * @opt_param string sortOrder Order of sorted results.
    * @opt_param string pageToken The value of the nextToken from the previous
    * result page.
    * @opt_param string sortField The field by which to sort the list.
-   * @opt_param string sortOrder Order of sorted results.
    * @return Google_Service_Dfareporting_FileList
    */
   public function listReportsFiles($profileId, $reportId, $optParams = array())

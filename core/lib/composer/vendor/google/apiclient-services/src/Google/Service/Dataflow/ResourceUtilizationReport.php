@@ -17,10 +17,28 @@
 
 class Google_Service_Dataflow_ResourceUtilizationReport extends Google_Collection
 {
-  protected $collection_key = 'cpuTime';
+  protected $collection_key = 'memoryInfo';
+  protected $containersType = 'Google_Service_Dataflow_ResourceUtilizationReport';
+  protected $containersDataType = 'map';
   protected $cpuTimeType = 'Google_Service_Dataflow_CPUTime';
   protected $cpuTimeDataType = 'array';
+  protected $memoryInfoType = 'Google_Service_Dataflow_MemInfo';
+  protected $memoryInfoDataType = 'array';
 
+  /**
+   * @param Google_Service_Dataflow_ResourceUtilizationReport
+   */
+  public function setContainers($containers)
+  {
+    $this->containers = $containers;
+  }
+  /**
+   * @return Google_Service_Dataflow_ResourceUtilizationReport
+   */
+  public function getContainers()
+  {
+    return $this->containers;
+  }
   /**
    * @param Google_Service_Dataflow_CPUTime
    */
@@ -34,5 +52,19 @@ class Google_Service_Dataflow_ResourceUtilizationReport extends Google_Collectio
   public function getCpuTime()
   {
     return $this->cpuTime;
+  }
+  /**
+   * @param Google_Service_Dataflow_MemInfo
+   */
+  public function setMemoryInfo($memoryInfo)
+  {
+    $this->memoryInfo = $memoryInfo;
+  }
+  /**
+   * @return Google_Service_Dataflow_MemInfo
+   */
+  public function getMemoryInfo()
+  {
+    return $this->memoryInfo;
   }
 }

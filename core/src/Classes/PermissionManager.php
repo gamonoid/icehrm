@@ -16,7 +16,14 @@ class PermissionManager
 {
     const RESTRICTED_USER_LEVELS = ['Restricted Admin', 'Restricted Manager', 'Restricted Employee'];
 
-    public function isRestrictedUserLevel($userLevel)
+    const ACCESS_LIST_DESCRIPTION = [
+        'get' => 'List',
+        'element' => 'View Details',
+        'save' => 'Add/Edit',
+        'delete' => 'Delete',
+    ];
+
+    public static function isRestrictedUserLevel($userLevel)
     {
         return in_array($userLevel, self::RESTRICTED_USER_LEVELS);
     }
@@ -49,5 +56,11 @@ class PermissionManager
         }
 
         return $subIds;
+    }
+
+    public static function checkGeneralAccess($object)
+    {
+        $currentUser = BaseService::getInstance()->getCurrentUser();
+        return $object->getRoleBasedAccess($currentUser->user_level, $currentUser->user_roles);
     }
 }

@@ -29,6 +29,7 @@ class Google_Service_CloudTrace_Span extends Google_Model
   public $parentSpanId;
   public $sameProcessAsParentSpan;
   public $spanId;
+  public $spanKind;
   protected $stackTraceType = 'Google_Service_CloudTrace_StackTrace';
   protected $stackTraceDataType = '';
   public $startTime;
@@ -126,6 +127,14 @@ class Google_Service_CloudTrace_Span extends Google_Model
   public function getSpanId()
   {
     return $this->spanId;
+  }
+  public function setSpanKind($spanKind)
+  {
+    $this->spanKind = $spanKind;
+  }
+  public function getSpanKind()
+  {
+    return $this->spanKind;
   }
   /**
    * @param Google_Service_CloudTrace_StackTrace

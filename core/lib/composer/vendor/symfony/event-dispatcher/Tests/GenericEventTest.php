@@ -114,8 +114,8 @@ class GenericEventTest extends TestCase
 
     public function testOffsetIsset()
     {
-        $this->assertArrayHasKey('name', $this->event);
-        $this->assertArrayNotHasKey('nameNotExist', $this->event);
+        $this->assertTrue(isset($this->event['name']));
+        $this->assertFalse(isset($this->event['nameNotExist']));
     }
 
     public function testHasArgument()

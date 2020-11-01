@@ -34,6 +34,8 @@ class Google_Service_Dfareporting_Site extends Google_Collection
   protected $siteSettingsType = 'Google_Service_Dfareporting_SiteSettings';
   protected $siteSettingsDataType = '';
   public $subaccountId;
+  protected $videoSettingsType = 'Google_Service_Dfareporting_SiteVideoSettings';
+  protected $videoSettingsDataType = '';
 
   public function setAccountId($accountId)
   {
@@ -154,5 +156,19 @@ class Google_Service_Dfareporting_Site extends Google_Collection
   public function getSubaccountId()
   {
     return $this->subaccountId;
+  }
+  /**
+   * @param Google_Service_Dfareporting_SiteVideoSettings
+   */
+  public function setVideoSettings(Google_Service_Dfareporting_SiteVideoSettings $videoSettings)
+  {
+    $this->videoSettings = $videoSettings;
+  }
+  /**
+   * @return Google_Service_Dfareporting_SiteVideoSettings
+   */
+  public function getVideoSettings()
+  {
+    return $this->videoSettings;
   }
 }

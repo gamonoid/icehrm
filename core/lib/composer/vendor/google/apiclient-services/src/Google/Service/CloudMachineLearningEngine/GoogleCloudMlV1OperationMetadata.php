@@ -20,6 +20,7 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1OperationMetadata
   public $createTime;
   public $endTime;
   public $isCancellationRequested;
+  public $labels;
   public $modelName;
   public $operationType;
   public $projectNumber;
@@ -50,6 +51,14 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1OperationMetadata
   public function getIsCancellationRequested()
   {
     return $this->isCancellationRequested;
+  }
+  public function setLabels($labels)
+  {
+    $this->labels = $labels;
+  }
+  public function getLabels()
+  {
+    return $this->labels;
   }
   public function setModelName($modelName)
   {

@@ -26,6 +26,9 @@ class Google_Service_Compute_VpnTunnel extends Google_Collection
   public $kind;
   public $localTrafficSelector;
   public $name;
+  public $peerExternalGateway;
+  public $peerExternalGatewayInterface;
+  public $peerGcpGateway;
   public $peerIp;
   public $region;
   public $remoteTrafficSelector;
@@ -35,6 +38,8 @@ class Google_Service_Compute_VpnTunnel extends Google_Collection
   public $sharedSecretHash;
   public $status;
   public $targetVpnGateway;
+  public $vpnGateway;
+  public $vpnGatewayInterface;
 
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -99,6 +104,30 @@ class Google_Service_Compute_VpnTunnel extends Google_Collection
   public function getName()
   {
     return $this->name;
+  }
+  public function setPeerExternalGateway($peerExternalGateway)
+  {
+    $this->peerExternalGateway = $peerExternalGateway;
+  }
+  public function getPeerExternalGateway()
+  {
+    return $this->peerExternalGateway;
+  }
+  public function setPeerExternalGatewayInterface($peerExternalGatewayInterface)
+  {
+    $this->peerExternalGatewayInterface = $peerExternalGatewayInterface;
+  }
+  public function getPeerExternalGatewayInterface()
+  {
+    return $this->peerExternalGatewayInterface;
+  }
+  public function setPeerGcpGateway($peerGcpGateway)
+  {
+    $this->peerGcpGateway = $peerGcpGateway;
+  }
+  public function getPeerGcpGateway()
+  {
+    return $this->peerGcpGateway;
   }
   public function setPeerIp($peerIp)
   {
@@ -171,5 +200,21 @@ class Google_Service_Compute_VpnTunnel extends Google_Collection
   public function getTargetVpnGateway()
   {
     return $this->targetVpnGateway;
+  }
+  public function setVpnGateway($vpnGateway)
+  {
+    $this->vpnGateway = $vpnGateway;
+  }
+  public function getVpnGateway()
+  {
+    return $this->vpnGateway;
+  }
+  public function setVpnGatewayInterface($vpnGatewayInterface)
+  {
+    $this->vpnGatewayInterface = $vpnGatewayInterface;
+  }
+  public function getVpnGatewayInterface()
+  {
+    return $this->vpnGatewayInterface;
   }
 }

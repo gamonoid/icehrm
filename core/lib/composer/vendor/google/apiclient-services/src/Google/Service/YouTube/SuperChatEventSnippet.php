@@ -23,10 +23,10 @@ class Google_Service_YouTube_SuperChatEventSnippet extends Google_Model
   public $createdAt;
   public $currency;
   public $displayString;
-  public $isSuperChatForGood;
+  public $isSuperStickerEvent;
   public $messageType;
-  protected $nonprofitType = 'Google_Service_YouTube_Nonprofit';
-  protected $nonprofitDataType = '';
+  protected $superStickerMetadataType = 'Google_Service_YouTube_SuperStickerMetadata';
+  protected $superStickerMetadataDataType = '';
   protected $supporterDetailsType = 'Google_Service_YouTube_ChannelProfileDetails';
   protected $supporterDetailsDataType = '';
 
@@ -78,13 +78,13 @@ class Google_Service_YouTube_SuperChatEventSnippet extends Google_Model
   {
     return $this->displayString;
   }
-  public function setIsSuperChatForGood($isSuperChatForGood)
+  public function setIsSuperStickerEvent($isSuperStickerEvent)
   {
-    $this->isSuperChatForGood = $isSuperChatForGood;
+    $this->isSuperStickerEvent = $isSuperStickerEvent;
   }
-  public function getIsSuperChatForGood()
+  public function getIsSuperStickerEvent()
   {
-    return $this->isSuperChatForGood;
+    return $this->isSuperStickerEvent;
   }
   public function setMessageType($messageType)
   {
@@ -95,18 +95,18 @@ class Google_Service_YouTube_SuperChatEventSnippet extends Google_Model
     return $this->messageType;
   }
   /**
-   * @param Google_Service_YouTube_Nonprofit
+   * @param Google_Service_YouTube_SuperStickerMetadata
    */
-  public function setNonprofit(Google_Service_YouTube_Nonprofit $nonprofit)
+  public function setSuperStickerMetadata(Google_Service_YouTube_SuperStickerMetadata $superStickerMetadata)
   {
-    $this->nonprofit = $nonprofit;
+    $this->superStickerMetadata = $superStickerMetadata;
   }
   /**
-   * @return Google_Service_YouTube_Nonprofit
+   * @return Google_Service_YouTube_SuperStickerMetadata
    */
-  public function getNonprofit()
+  public function getSuperStickerMetadata()
   {
-    return $this->nonprofit;
+    return $this->superStickerMetadata;
   }
   /**
    * @param Google_Service_YouTube_ChannelProfileDetails

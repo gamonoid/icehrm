@@ -4,12 +4,20 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Classes\PermissionManager;
+use Users\Common\Model\UserRole;
+
 $moduleName = 'users';
 $moduleGroup = 'admin';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
 $csrf = \Classes\BaseService::getInstance()->generateCsrf('User');
+$modelClasses = array_keys(\Classes\BaseService::getInstance()->getModelClassMap());
+$modelClasses = array_map(function($item) {
+    return [ $item, $item ];
+}, $modelClasses);
+
 ?><div class="span9">
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
 		<li class="active"><a id="tabUser" href="#tabPageUser"><?=t('Users')?></a></li>
@@ -26,16 +34,21 @@ $csrf = \Classes\BaseService::getInstance()->generateCsrf('User');
 			</div>
 		</div>
         <div class="tab-pane" id="tabPageUserRole">
-            <div id="UserRole" class="reviewBlock" data-content="List" style="padding-left:5px;">
-
-            </div>
-            <div id="UserRoleForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-
-            </div>
+            <div id="UserRoleTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+            <div id="UserRoleForm"></div>
+            <div id="UserRoleFilterForm"></div>
         </div>
 	</div>
 
 </div>
+<div id="dataGroup"></div>
+<?php
+$moduleData = [
+    'user_level' => $user->user_level,
+    'permissions' => [
+        'UserRole' => PermissionManager::checkGeneralAccess(new UserRole()),
+    ]];
+?>
 <script>
 var modJsList = [];
 modJsList['tabUser'] = new UserAdapter('User');
@@ -45,7 +58,13 @@ modJsList['tabUser'].setRemoteTable(true);;
 modJsList['tabUser'].newInitObject = JSON.parse(Base64.decode('<?=$_GET['object']?>'));
 <?php }?>
 modJsList['tabUserRole'] = new UserRoleAdapter('UserRole');
+modJsList['tabUserRole'].setTables(<?=json_encode($modelClasses)?>);
+modJsList['tabUserRole'].setObjectTypeName('User Role');
+modJsList['tabUserRole'].setDataPipe(new IceDataPipe(modJsList['tabUserRole']));
+modJsList['tabUserRole'].setAccess(<?=json_encode($moduleData['permissions']['UserRole'])?>);
 var modJs = modJsList['tabUser'];
 
 </script>
+<div id="UserRoleFormReact"></div>
+<div id="dataGroup"></div>
 <?php include APP_BASE_PATH.'footer.php';?>

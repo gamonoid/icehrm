@@ -34,8 +34,12 @@ class Google_Service_Vision_AnnotateImageResponse extends Google_Collection
   protected $labelAnnotationsDataType = 'array';
   protected $landmarkAnnotationsType = 'Google_Service_Vision_EntityAnnotation';
   protected $landmarkAnnotationsDataType = 'array';
+  protected $localizedObjectAnnotationsType = 'Google_Service_Vision_LocalizedObjectAnnotation';
+  protected $localizedObjectAnnotationsDataType = 'array';
   protected $logoAnnotationsType = 'Google_Service_Vision_EntityAnnotation';
   protected $logoAnnotationsDataType = 'array';
+  protected $productSearchResultsType = 'Google_Service_Vision_ProductSearchResults';
+  protected $productSearchResultsDataType = '';
   protected $safeSearchAnnotationType = 'Google_Service_Vision_SafeSearchAnnotation';
   protected $safeSearchAnnotationDataType = '';
   protected $textAnnotationsType = 'Google_Service_Vision_EntityAnnotation';
@@ -156,6 +160,20 @@ class Google_Service_Vision_AnnotateImageResponse extends Google_Collection
     return $this->landmarkAnnotations;
   }
   /**
+   * @param Google_Service_Vision_LocalizedObjectAnnotation
+   */
+  public function setLocalizedObjectAnnotations($localizedObjectAnnotations)
+  {
+    $this->localizedObjectAnnotations = $localizedObjectAnnotations;
+  }
+  /**
+   * @return Google_Service_Vision_LocalizedObjectAnnotation
+   */
+  public function getLocalizedObjectAnnotations()
+  {
+    return $this->localizedObjectAnnotations;
+  }
+  /**
    * @param Google_Service_Vision_EntityAnnotation
    */
   public function setLogoAnnotations($logoAnnotations)
@@ -168,6 +186,20 @@ class Google_Service_Vision_AnnotateImageResponse extends Google_Collection
   public function getLogoAnnotations()
   {
     return $this->logoAnnotations;
+  }
+  /**
+   * @param Google_Service_Vision_ProductSearchResults
+   */
+  public function setProductSearchResults(Google_Service_Vision_ProductSearchResults $productSearchResults)
+  {
+    $this->productSearchResults = $productSearchResults;
+  }
+  /**
+   * @return Google_Service_Vision_ProductSearchResults
+   */
+  public function getProductSearchResults()
+  {
+    return $this->productSearchResults;
   }
   /**
    * @param Google_Service_Vision_SafeSearchAnnotation

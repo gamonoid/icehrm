@@ -21,7 +21,10 @@
  * <p>
  * Manages identity and access control for Google Cloud Platform resources,
  * including the creation of service accounts, which you can use to authenticate
- * to Google and make API calls.</p>
+ * to Google and make API calls. *Note:* This API is tied to the IAM service
+ * account credentials API ( iamcredentials.googleapis.com). Enabling or
+ * disabling this API will also enable or disable the IAM service account
+ * credentials API.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -47,13 +50,15 @@ class Google_Service_Iam extends Google_Service
   /**
    * Constructs the internal representation of the Iam service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://iam.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://iam.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'iam';
 
@@ -63,7 +68,11 @@ class Google_Service_Iam extends Google_Service
         'iamPolicies',
         array(
           'methods' => array(
-            'queryAuditableServices' => array(
+            'lintPolicy' => array(
+              'path' => 'v1/iamPolicies:lintPolicy',
+              'httpMethod' => 'POST',
+              'parameters' => array(),
+            ),'queryAuditableServices' => array(
               'path' => 'v1/iamPolicies:queryAuditableServices',
               'httpMethod' => 'POST',
               'parameters' => array(),
@@ -120,17 +129,17 @@ class Google_Service_Iam extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'showDeleted' => array(
+                'pageSize' => array(
                   'location' => 'query',
-                  'type' => 'boolean',
+                  'type' => 'integer',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageSize' => array(
+                'showDeleted' => array(
                   'location' => 'query',
-                  'type' => 'integer',
+                  'type' => 'boolean',
                 ),
                 'view' => array(
                   'location' => 'query',
@@ -228,19 +237,19 @@ class Google_Service_Iam extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'showDeleted' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
                 'view' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'showDeleted' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -299,6 +308,26 @@ class Google_Service_Iam extends Google_Service
                   'required' => true,
                 ),
               ),
+            ),'disable' => array(
+              'path' => 'v1/{+name}:disable',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'enable' => array(
+              'path' => 'v1/{+name}:enable',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
             ),'get' => array(
               'path' => 'v1/{+name}',
               'httpMethod' => 'GET',
@@ -318,6 +347,10 @@ class Google_Service_Iam extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'options.requestedPolicyVersion' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
               ),
             ),'list' => array(
               'path' => 'v1/{+name}/serviceAccounts',
@@ -328,13 +361,23 @@ class Google_Service_Iam extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
+              ),
+            ),'patch' => array(
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'PATCH',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
                 ),
               ),
             ),'setIamPolicy' => array(
@@ -372,6 +415,16 @@ class Google_Service_Iam extends Google_Service
               'httpMethod' => 'POST',
               'parameters' => array(
                 'resource' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'undelete' => array(
+              'path' => 'v1/{+name}:undelete',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -446,6 +499,16 @@ class Google_Service_Iam extends Google_Service
                   'repeated' => true,
                 ),
               ),
+            ),'upload' => array(
+              'path' => 'v1/{+name}/keys:upload',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
             ),
           )
         )
@@ -474,7 +537,7 @@ class Google_Service_Iam extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'view' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -486,7 +549,7 @@ class Google_Service_Iam extends Google_Service
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'pageToken' => array(
+                'view' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),

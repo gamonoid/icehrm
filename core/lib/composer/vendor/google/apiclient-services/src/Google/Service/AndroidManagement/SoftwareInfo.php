@@ -25,7 +25,10 @@ class Google_Service_AndroidManagement_SoftwareInfo extends Google_Model
   public $bootloaderVersion;
   public $deviceBuildSignature;
   public $deviceKernelVersion;
+  public $primaryLanguageCode;
   public $securityPatchLevel;
+  protected $systemUpdateInfoType = 'Google_Service_AndroidManagement_SystemUpdateInfo';
+  protected $systemUpdateInfoDataType = '';
 
   public function setAndroidBuildNumber($androidBuildNumber)
   {
@@ -91,6 +94,14 @@ class Google_Service_AndroidManagement_SoftwareInfo extends Google_Model
   {
     return $this->deviceKernelVersion;
   }
+  public function setPrimaryLanguageCode($primaryLanguageCode)
+  {
+    $this->primaryLanguageCode = $primaryLanguageCode;
+  }
+  public function getPrimaryLanguageCode()
+  {
+    return $this->primaryLanguageCode;
+  }
   public function setSecurityPatchLevel($securityPatchLevel)
   {
     $this->securityPatchLevel = $securityPatchLevel;
@@ -98,5 +109,19 @@ class Google_Service_AndroidManagement_SoftwareInfo extends Google_Model
   public function getSecurityPatchLevel()
   {
     return $this->securityPatchLevel;
+  }
+  /**
+   * @param Google_Service_AndroidManagement_SystemUpdateInfo
+   */
+  public function setSystemUpdateInfo(Google_Service_AndroidManagement_SystemUpdateInfo $systemUpdateInfo)
+  {
+    $this->systemUpdateInfo = $systemUpdateInfo;
+  }
+  /**
+   * @return Google_Service_AndroidManagement_SystemUpdateInfo
+   */
+  public function getSystemUpdateInfo()
+  {
+    return $this->systemUpdateInfo;
   }
 }

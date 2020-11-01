@@ -31,10 +31,11 @@ class Google_Service_PeopleService_Resource_ContactGroups extends Google_Service
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param int maxMembers Specifies the maximum number of members to return
-   * for each group.
-   * @opt_param string resourceNames The resource names of the contact groups to
-   * get.
+   * @opt_param string resourceNames Required. The resource names of the contact
+   * groups to get.
+   * @opt_param int maxMembers Optional. Specifies the maximum number of members
+   * to return for each group. Defaults to 0 if not set, which will return zero
+   * members.
    * @return Google_Service_PeopleService_BatchGetContactGroupsResponse
    */
   public function batchGet($optParams = array())
@@ -61,11 +62,12 @@ class Google_Service_PeopleService_Resource_ContactGroups extends Google_Service
    * Delete an existing contact group owned by the authenticated user by
    * specifying a contact group resource name. (contactGroups.delete)
    *
-   * @param string $resourceName The resource name of the contact group to delete.
+   * @param string $resourceName Required. The resource name of the contact group
+   * to delete.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool deleteContacts Set to true to also delete the contacts in the
-   * specified group.
+   * @opt_param bool deleteContacts Optional. Set to true to also delete the
+   * contacts in the specified group.
    * @return Google_Service_PeopleService_PeopleEmpty
    */
   public function delete($resourceName, $optParams = array())
@@ -78,10 +80,12 @@ class Google_Service_PeopleService_Resource_ContactGroups extends Google_Service
    * Get a specific contact group owned by the authenticated user by specifying a
    * contact group resource name. (contactGroups.get)
    *
-   * @param string $resourceName The resource name of the contact group to get.
+   * @param string $resourceName Required. The resource name of the contact group
+   * to get.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param int maxMembers Specifies the maximum number of members to return.
+   * @opt_param int maxMembers Optional. Specifies the maximum number of members
+   * to return. Defaults to 0 if not set, which will return zero members.
    * @return Google_Service_PeopleService_ContactGroup
    */
   public function get($resourceName, $optParams = array())
@@ -96,13 +100,16 @@ class Google_Service_PeopleService_Resource_ContactGroups extends Google_Service
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string pageToken The next_page_token value returned from a
-   * previous call to [ListContactGroups](/people/api/rest/v1/contactgroups/list).
-   * Requests the next page of resources.
-   * @opt_param int pageSize The maximum number of resources to return.
-   * @opt_param string syncToken A sync token, returned by a previous call to
-   * `contactgroups.list`. Only resources changed since the sync token was created
-   * will be returned.
+   * @opt_param int pageSize Optional. The maximum number of resources to return.
+   * Valid values are between 1 and 1000, inclusive. Defaults to 30 if not set or
+   * set to 0.
+   * @opt_param string pageToken Optional. The next_page_token value returned from
+   * a previous call to
+   * [ListContactGroups](/people/api/rest/v1/contactgroups/list). Requests the
+   * next page of resources.
+   * @opt_param string syncToken Optional. A sync token, returned by a previous
+   * call to `contactgroups.list`. Only resources changed since the sync token was
+   * created will be returned.
    * @return Google_Service_PeopleService_ListContactGroupsResponse
    */
   public function listContactGroups($optParams = array())
@@ -117,7 +124,7 @@ class Google_Service_PeopleService_Resource_ContactGroups extends Google_Service
    *
    * @param string $resourceName The resource name for the contact group, assigned
    * by the server. An ASCII string, in the form of
-   * `contactGroups/`contact_group_id.
+   * `contactGroups/{contact_group_id}`.
    * @param Google_Service_PeopleService_UpdateContactGroupRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_PeopleService_ContactGroup

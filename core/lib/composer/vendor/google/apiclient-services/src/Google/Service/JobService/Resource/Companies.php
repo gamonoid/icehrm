@@ -71,7 +71,7 @@ class Google_Service_JobService_Resource_Companies extends Google_Service_Resour
     return $this->call('get', array($params), "Google_Service_JobService_Company");
   }
   /**
-   * Lists all companies associated with a Cloud Job Discovery account.
+   * Lists all companies associated with a Cloud Talent Solution account.
    * (companies.listCompanies)
    *
    * @param array $optParams Optional parameters.

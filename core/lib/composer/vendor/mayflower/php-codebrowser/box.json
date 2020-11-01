@@ -1,0 +1,31 @@
+{
+    "alias": "phpcb.phar",
+    "chmod": "0755",
+    "compactors": [
+        "Herrera\\Box\\Compactor\\Json",
+        "Herrera\\Box\\Compactor\\Php"
+    ],
+    "directories": ["src/", "vendor", "templates"],
+    "extract": true,
+    "files": [
+        "LICENSE"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": [
+                "phpunit",
+                "phpunit-test-case",
+                "Tester",
+                "Tests",
+                "tests"
+            ],
+            "in": "vendor"
+        }
+    ],
+    "git-commit": "git-commit",
+    "git-version": "git-version",
+    "main": "bin/phpcb",
+    "output": "phpcb-@git-version@.phar",
+    "stub": true
+}

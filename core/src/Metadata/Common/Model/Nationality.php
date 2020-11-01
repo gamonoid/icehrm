@@ -26,7 +26,7 @@ class Nationality extends BaseModel
         return array("get","element");
     }
     // @codingStandardsIgnoreStart
-    function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
+    public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
         $allowedCountriesStr = SettingsManager::getInstance()->getSetting('System: Allowed Nationality');
         $allowedCountries = array();

@@ -18,6 +18,9 @@
 class Google_Service_Dialogflow_GoogleCloudDialogflowV2DetectIntentRequest extends Google_Model
 {
   public $inputAudio;
+  protected $outputAudioConfigType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2OutputAudioConfig';
+  protected $outputAudioConfigDataType = '';
+  public $outputAudioConfigMask;
   protected $queryInputType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2QueryInput';
   protected $queryInputDataType = '';
   protected $queryParamsType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2QueryParameters';
@@ -30,6 +33,28 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2DetectIntentRequest exten
   public function getInputAudio()
   {
     return $this->inputAudio;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2OutputAudioConfig
+   */
+  public function setOutputAudioConfig(Google_Service_Dialogflow_GoogleCloudDialogflowV2OutputAudioConfig $outputAudioConfig)
+  {
+    $this->outputAudioConfig = $outputAudioConfig;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2OutputAudioConfig
+   */
+  public function getOutputAudioConfig()
+  {
+    return $this->outputAudioConfig;
+  }
+  public function setOutputAudioConfigMask($outputAudioConfigMask)
+  {
+    $this->outputAudioConfigMask = $outputAudioConfigMask;
+  }
+  public function getOutputAudioConfigMask()
+  {
+    return $this->outputAudioConfigMask;
   }
   /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2QueryInput

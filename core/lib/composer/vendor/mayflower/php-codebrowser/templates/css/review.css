@@ -1,0 +1,208 @@
+#review ol {
+    width: 99%;
+    margin: 15px;
+    padding: 0;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 20px;
+    color: #939399;
+    text-align: left;
+    height: 99%;
+    list-style: none;
+}
+
+#review ol li {
+    white-space: nowrap;
+    margin: 0;
+    padding: 0 0 0 1%;
+    color: #4E4E4E;
+}
+
+#review ol li.moreErrors {
+    background-color: #FFB380;
+}
+
+/* Error type colors */
+
+#cluetip .Coverage,
+#sidebar .Coverage,
+#review  .Coverage {
+    background-color: #BFE4FF;
+}
+
+#cluetip .Duplication,
+#sidebar .Duplication,
+#review  .Duplication {
+    background-color: #FFBFDC;
+}
+
+#cluetip .Checkstyle,
+#sidebar .Checkstyle,
+#review  .Checkstyle {
+    background-color: #FFF2BF;
+}
+
+#cluetip .Padawan,
+#sidebar .Padawan,
+#review  .Padawan {
+    background-color: #E6FF80;
+}
+
+#cluetip .CRAP,
+#sidebar .CRAP,
+#review  .CRAP {
+    background-color: #FFBFEF;
+}
+
+#cluetip .PMD,
+#sidebar .PMD,
+#review  .PMD {
+    background-color: #FFCC80;
+}
+
+#cluetip .ZendCodeAnalyzer,
+#sidebar .ZendCodeAnalyzer,
+#review  .ZendCodeAnalyzer {
+    background-color: #D5BFFF;
+}
+
+#cluetip .EfferentCoupling,
+#sidebar .EfferentCoupling,
+#review  .EfferentCoupling {
+    background-color: #CCFF99;
+}
+
+/**
+ * tooltips
+ */
+/* global */
+#cluetip{
+    background-color:#F9F9F9;
+    filter: alpha(opacity=87);
+    -moz-opacity:0.87;
+    opacity:0.87;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-box-shadow:0px 0px 5px #000;
+    -webkit-box-shadow:0px 0px 5px #000;
+    box-shadow:0px 0px 5px #000;
+    padding: 10px;
+    /* IE8 and below */
+    border: 1px solid black \9;
+}
+#cluetip-close img {
+  border: 0;
+}
+#cluetip-title {
+  overflow: hidden;
+  display: none;
+  height: 0px;
+}
+#cluetip-title #cluetip-close {
+  float: right;
+  position: relative;
+}
+#cluetip-waitimage {
+  width: 43px;
+  height: 11px;
+  position: absolute;
+  background-image: url(../js/jquery.cluetip/images/wait.gif);
+}
+.cluetip-arrows {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -11px;
+  height: 22px;
+  width: 11px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+#cluetip-extra {
+  display: none;
+}
+
+#cluetip-inner{
+    background-color: #F9F9F9;
+}
+/***************************************
+   =cluetipClass: 'default'
+-------------------------------------- */
+
+.cluetip-default {
+  background-color: #d9d9c2;
+}
+.cluetip-default #cluetip-outer {
+  position: relative;
+  margin: 0;
+  background-color: #d9d9c2;
+}
+.cluetip-default h3#cluetip-title {
+  display: none;
+}
+.cluetip-default #cluetip-title a {
+  color: #d9d9c2;
+  font-size: 0.95em;
+}
+.cluetip-default #cluetip-inner {
+  padding: 0px;
+}
+.cluetip-default div#cluetip-close {
+  text-align: right;
+  margin: 0 5px 5px;
+  color: #900;
+}
+
+.tooltip {
+	padding-bottom: 3px;
+}
+
+.tooltip .title{
+    font-size: medium;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    width: 100%;
+	padding: 3px;
+}
+.tooltip .text{
+    padding: 3px;
+    border-bottom: 1px solid #E7E7E7;
+	font-size: 12px;
+}
+
+/**
+ * Sidebar
+ */
+
+#sidebar {
+    width: 560px;
+    height: 360px;
+    overflow:auto;
+}
+#sidebar table {
+    background-color:#E7E7E7;
+    border-spacing:1px;
+    color:#666666;
+}
+
+#sidebar table td {
+    vertical-align: top;
+}
+
+#sidebar table tr.head td {
+    background-color: #fff;
+    height: 25px;
+    border-bottom: solid 1px #BABDB6;
+    color:black;
+}
+
+#sidebar table tr {
+    text-align:left;
+}
+
+#sidebar table tr.odd {
+    border-top:1px solid #FFFFFF;
+}

@@ -24,14 +24,24 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class RegisterListenersPass implements CompilerPassInterface
 {
+    /**
+     * @var string
+     */
     protected $dispatcherService;
-    protected $listenerTag;
-    protected $subscriberTag;
-
-    private $hotPathEvents = array();
-    private $hotPathTagName;
 
     /**
+     * @var string
+     */
+    protected $listenerTag;
+
+    /**
+     * @var string
+     */
+    protected $subscriberTag;
+
+    /**
+     * Constructor.
+     *
      * @param string $dispatcherService Service name of the event dispatcher in processed container
      * @param string $listenerTag       Tag name used for listener
      * @param string $subscriberTag     Tag name used for subscribers
@@ -43,14 +53,6 @@ class RegisterListenersPass implements CompilerPassInterface
         $this->subscriberTag = $subscriberTag;
     }
 
-    public function setHotPathEvents(array $hotPathEvents, $tagName = 'container.hot_path')
-    {
-        $this->hotPathEvents = array_flip($hotPathEvents);
-        $this->hotPathTagName = $tagName;
-
-        return $this;
-    }
-
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition($this->dispatcherService) && !$container->hasAlias($this->dispatcherService)) {
@@ -60,6 +62,8 @@ class RegisterListenersPass implements CompilerPassInterface
         $definition = $container->findDefinition($this->dispatcherService);
 
         foreach ($container->findTaggedServiceIds($this->listenerTag, true) as $id => $events) {
+            $def = $container->getDefinition($id);
+
             foreach ($events as $event) {
                 $priority = isset($event['priority']) ? $event['priority'] : 0;
 
@@ -76,10 +80,6 @@ class RegisterListenersPass implements CompilerPassInterface
                 }
 
                 $definition->addMethodCall('addListener', array($event['event'], array(new ServiceClosureArgument(new Reference($id)), $event['method']), $priority));
-
-                if (isset($this->hotPathEvents[$event['event']])) {
-                    $container->getDefinition($id)->addTag($this->hotPathTagName);
-                }
             }
         }
 
@@ -106,10 +106,6 @@ class RegisterListenersPass implements CompilerPassInterface
             foreach ($extractingDispatcher->listeners as $args) {
                 $args[1] = array(new ServiceClosureArgument(new Reference($id)), $args[1]);
                 $definition->addMethodCall('addListener', $args);
-
-                if (isset($this->hotPathEvents[$args[0]])) {
-                    $container->getDefinition($id)->addTag('container.hot_path');
-                }
             }
             $extractingDispatcher->listeners = array();
         }

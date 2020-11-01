@@ -21,6 +21,8 @@ class Google_Service_Dataflow_LaunchTemplateParameters extends Google_Model
   protected $environmentDataType = '';
   public $jobName;
   public $parameters;
+  public $transformNameMapping;
+  public $update;
 
   /**
    * @param Google_Service_Dataflow_RuntimeEnvironment
@@ -51,5 +53,21 @@ class Google_Service_Dataflow_LaunchTemplateParameters extends Google_Model
   public function getParameters()
   {
     return $this->parameters;
+  }
+  public function setTransformNameMapping($transformNameMapping)
+  {
+    $this->transformNameMapping = $transformNameMapping;
+  }
+  public function getTransformNameMapping()
+  {
+    return $this->transformNameMapping;
+  }
+  public function setUpdate($update)
+  {
+    $this->update = $update;
+  }
+  public function getUpdate()
+  {
+    return $this->update;
   }
 }

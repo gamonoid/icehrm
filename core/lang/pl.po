@@ -1972,3 +1972,18 @@ msgstr "Zaoszczędzone obliczenia"
 
 msgid "Total Leave Days"
 msgstr "Łącznie Dni Urlopu"
+
+msgid "Actions"
+msgstr "Działania"
+
+msgid "Edit"
+msgstr "Edycja"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Delete"
+msgstr "Skreślić"
+
+msgid "Copy"
+msgstr "Kopia"

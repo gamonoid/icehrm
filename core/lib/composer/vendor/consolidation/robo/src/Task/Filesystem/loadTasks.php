@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Filesystem;
 
 trait loadTasks
@@ -6,7 +7,7 @@ trait loadTasks
     /**
      * @param string|string[] $dirs
      *
-     * @return \Robo\Task\Filesystem\CleanDir
+     * @return \Robo\Task\Filesystem\CleanDir|\Robo\Collection\CollectionBuilder
      */
     protected function taskCleanDir($dirs)
     {
@@ -16,7 +17,7 @@ trait loadTasks
     /**
      * @param string|string[] $dirs
      *
-     * @return \Robo\Task\Filesystem\DeleteDir
+     * @return \Robo\Task\Filesystem\DeleteDir|\Robo\Collection\CollectionBuilder
      */
     protected function taskDeleteDir($dirs)
     {
@@ -28,7 +29,7 @@ trait loadTasks
      * @param string $base
      * @param bool $includeRandomPart
      *
-     * @return \Robo\Task\Filesystem\WorkDir
+     * @return \Robo\Task\Filesystem\WorkDir|\Robo\Collection\CollectionBuilder
      */
     protected function taskTmpDir($prefix = 'tmp', $base = '', $includeRandomPart = true)
     {
@@ -38,7 +39,7 @@ trait loadTasks
     /**
      * @param string $finalDestination
      *
-     * @return \Robo\Task\Filesystem\TmpDir
+     * @return \Robo\Task\Filesystem\TmpDir|\Robo\Collection\CollectionBuilder
      */
     protected function taskWorkDir($finalDestination)
     {
@@ -48,7 +49,7 @@ trait loadTasks
     /**
      * @param string|string[] $dirs
      *
-     * @return \Robo\Task\Filesystem\CopyDir
+     * @return \Robo\Task\Filesystem\CopyDir|\Robo\Collection\CollectionBuilder
      */
     protected function taskCopyDir($dirs)
     {
@@ -58,7 +59,7 @@ trait loadTasks
     /**
      * @param string|string[] $dirs
      *
-     * @return \Robo\Task\Filesystem\MirrorDir
+     * @return \Robo\Task\Filesystem\MirrorDir|\Robo\Collection\CollectionBuilder
      */
     protected function taskMirrorDir($dirs)
     {
@@ -68,7 +69,7 @@ trait loadTasks
     /**
      * @param string|string[] $dirs
      *
-     * @return \Robo\Task\Filesystem\FlattenDir
+     * @return \Robo\Task\Filesystem\FlattenDir|\Robo\Collection\CollectionBuilder
      */
     protected function taskFlattenDir($dirs)
     {
@@ -76,7 +77,7 @@ trait loadTasks
     }
 
     /**
-     * @return \Robo\Task\Filesystem\FilesystemStack
+     * @return \Robo\Task\Filesystem\FilesystemStack|\Robo\Collection\CollectionBuilder
      */
     protected function taskFilesystemStack()
     {

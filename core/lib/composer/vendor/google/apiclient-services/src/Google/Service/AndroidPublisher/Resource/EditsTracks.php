@@ -26,13 +26,11 @@
 class Google_Service_AndroidPublisher_Resource_EditsTracks extends Google_Service_Resource
 {
   /**
-   * Fetches the track configuration for the specified track type. Includes the
-   * APK version codes that are in this track. (tracks.get)
+   * Gets a track. (tracks.get)
    *
-   * @param string $packageName Unique identifier for the Android app that is
-   * being updated; for example, "com.spiffygame".
-   * @param string $editId Unique identifier for this edit.
-   * @param string $track The track to read or modify.
+   * @param string $packageName Package name of the app.
+   * @param string $editId Identifier of the edit.
+   * @param string $track Identifier of the track.
    * @param array $optParams Optional parameters.
    * @return Google_Service_AndroidPublisher_Track
    */
@@ -43,11 +41,10 @@ class Google_Service_AndroidPublisher_Resource_EditsTracks extends Google_Servic
     return $this->call('get', array($params), "Google_Service_AndroidPublisher_Track");
   }
   /**
-   * Lists all the track configurations for this edit. (tracks.listEditsTracks)
+   * Lists all tracks. (tracks.listEditsTracks)
    *
-   * @param string $packageName Unique identifier for the Android app that is
-   * being updated; for example, "com.spiffygame".
-   * @param string $editId Unique identifier for this edit.
+   * @param string $packageName Package name of the app.
+   * @param string $editId Identifier of the edit.
    * @param array $optParams Optional parameters.
    * @return Google_Service_AndroidPublisher_TracksListResponse
    */
@@ -58,15 +55,11 @@ class Google_Service_AndroidPublisher_Resource_EditsTracks extends Google_Servic
     return $this->call('list', array($params), "Google_Service_AndroidPublisher_TracksListResponse");
   }
   /**
-   * Updates the track configuration for the specified track type. When halted,
-   * the rollout track cannot be updated without adding new APKs, and adding new
-   * APKs will cause it to resume. This method supports patch semantics.
-   * (tracks.patch)
+   * Patches a track. (tracks.patch)
    *
-   * @param string $packageName Unique identifier for the Android app that is
-   * being updated; for example, "com.spiffygame".
-   * @param string $editId Unique identifier for this edit.
-   * @param string $track The track to read or modify.
+   * @param string $packageName Package name of the app.
+   * @param string $editId Identifier of the edit.
+   * @param string $track Identifier of the track.
    * @param Google_Service_AndroidPublisher_Track $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_AndroidPublisher_Track
@@ -78,14 +71,11 @@ class Google_Service_AndroidPublisher_Resource_EditsTracks extends Google_Servic
     return $this->call('patch', array($params), "Google_Service_AndroidPublisher_Track");
   }
   /**
-   * Updates the track configuration for the specified track type. When halted,
-   * the rollout track cannot be updated without adding new APKs, and adding new
-   * APKs will cause it to resume. (tracks.update)
+   * Updates a track. (tracks.update)
    *
-   * @param string $packageName Unique identifier for the Android app that is
-   * being updated; for example, "com.spiffygame".
-   * @param string $editId Unique identifier for this edit.
-   * @param string $track The track to read or modify.
+   * @param string $packageName Package name of the app.
+   * @param string $editId Identifier of the edit.
+   * @param string $track Identifier of the track.
    * @param Google_Service_AndroidPublisher_Track $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_AndroidPublisher_Track

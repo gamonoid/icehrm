@@ -21,6 +21,7 @@ class Google_Service_SQLAdmin_IpConfiguration extends Google_Collection
   protected $authorizedNetworksType = 'Google_Service_SQLAdmin_AclEntry';
   protected $authorizedNetworksDataType = 'array';
   public $ipv4Enabled;
+  public $privateNetwork;
   public $requireSsl;
 
   /**
@@ -44,6 +45,14 @@ class Google_Service_SQLAdmin_IpConfiguration extends Google_Collection
   public function getIpv4Enabled()
   {
     return $this->ipv4Enabled;
+  }
+  public function setPrivateNetwork($privateNetwork)
+  {
+    $this->privateNetwork = $privateNetwork;
+  }
+  public function getPrivateNetwork()
+  {
+    return $this->privateNetwork;
   }
   public function setRequireSsl($requireSsl)
   {

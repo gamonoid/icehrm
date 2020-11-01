@@ -19,6 +19,7 @@ class Google_Service_DLP_GooglePrivacyDlpV2CreateDeidentifyTemplateRequest exten
 {
   protected $deidentifyTemplateType = 'Google_Service_DLP_GooglePrivacyDlpV2DeidentifyTemplate';
   protected $deidentifyTemplateDataType = '';
+  public $locationId;
   public $templateId;
 
   /**
@@ -34,6 +35,14 @@ class Google_Service_DLP_GooglePrivacyDlpV2CreateDeidentifyTemplateRequest exten
   public function getDeidentifyTemplate()
   {
     return $this->deidentifyTemplate;
+  }
+  public function setLocationId($locationId)
+  {
+    $this->locationId = $locationId;
+  }
+  public function getLocationId()
+  {
+    return $this->locationId;
   }
   public function setTemplateId($templateId)
   {

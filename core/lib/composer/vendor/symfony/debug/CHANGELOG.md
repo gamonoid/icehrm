@@ -1,11 +1,6 @@
 CHANGELOG
 =========
 
-3.4.0
------
-
-* deprecated `ErrorHandler::stackErrors()` and `ErrorHandler::unstackErrors()`
-
 3.3.0
 -----
 

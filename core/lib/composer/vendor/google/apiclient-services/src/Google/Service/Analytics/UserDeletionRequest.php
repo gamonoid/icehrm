@@ -22,6 +22,7 @@ class Google_Service_Analytics_UserDeletionRequest extends Google_Model
   protected $idType = 'Google_Service_Analytics_UserDeletionRequestId';
   protected $idDataType = '';
   public $kind;
+  public $propertyId;
   public $webPropertyId;
 
   public function setDeletionRequestTime($deletionRequestTime)
@@ -61,6 +62,14 @@ class Google_Service_Analytics_UserDeletionRequest extends Google_Model
   public function getKind()
   {
     return $this->kind;
+  }
+  public function setPropertyId($propertyId)
+  {
+    $this->propertyId = $propertyId;
+  }
+  public function getPropertyId()
+  {
+    return $this->propertyId;
   }
   public function setWebPropertyId($webPropertyId)
   {

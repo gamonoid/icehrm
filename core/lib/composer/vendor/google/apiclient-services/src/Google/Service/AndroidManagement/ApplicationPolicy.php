@@ -18,17 +18,37 @@
 class Google_Service_AndroidManagement_ApplicationPolicy extends Google_Collection
 {
   protected $collection_key = 'permissionGrants';
+  public $accessibleTrackIds;
+  public $connectedWorkAndPersonalApp;
   public $defaultPermissionPolicy;
   public $delegatedScopes;
   public $disabled;
   public $installType;
   public $lockTaskAllowed;
   public $managedConfiguration;
+  protected $managedConfigurationTemplateType = 'Google_Service_AndroidManagement_ManagedConfigurationTemplate';
+  protected $managedConfigurationTemplateDataType = '';
   public $minimumVersionCode;
   public $packageName;
   protected $permissionGrantsType = 'Google_Service_AndroidManagement_PermissionGrant';
   protected $permissionGrantsDataType = 'array';
 
+  public function setAccessibleTrackIds($accessibleTrackIds)
+  {
+    $this->accessibleTrackIds = $accessibleTrackIds;
+  }
+  public function getAccessibleTrackIds()
+  {
+    return $this->accessibleTrackIds;
+  }
+  public function setConnectedWorkAndPersonalApp($connectedWorkAndPersonalApp)
+  {
+    $this->connectedWorkAndPersonalApp = $connectedWorkAndPersonalApp;
+  }
+  public function getConnectedWorkAndPersonalApp()
+  {
+    return $this->connectedWorkAndPersonalApp;
+  }
   public function setDefaultPermissionPolicy($defaultPermissionPolicy)
   {
     $this->defaultPermissionPolicy = $defaultPermissionPolicy;
@@ -76,6 +96,20 @@ class Google_Service_AndroidManagement_ApplicationPolicy extends Google_Collecti
   public function getManagedConfiguration()
   {
     return $this->managedConfiguration;
+  }
+  /**
+   * @param Google_Service_AndroidManagement_ManagedConfigurationTemplate
+   */
+  public function setManagedConfigurationTemplate(Google_Service_AndroidManagement_ManagedConfigurationTemplate $managedConfigurationTemplate)
+  {
+    $this->managedConfigurationTemplate = $managedConfigurationTemplate;
+  }
+  /**
+   * @return Google_Service_AndroidManagement_ManagedConfigurationTemplate
+   */
+  public function getManagedConfigurationTemplate()
+  {
+    return $this->managedConfigurationTemplate;
   }
   public function setMinimumVersionCode($minimumVersionCode)
   {

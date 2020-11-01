@@ -17,25 +17,19 @@
 
 class Google_Service_ServiceConsumerManagement_HttpRule extends Google_Collection
 {
-  protected $collection_key = 'authorizations';
+  protected $collection_key = 'additionalBindings';
   protected $additionalBindingsType = 'Google_Service_ServiceConsumerManagement_HttpRule';
   protected $additionalBindingsDataType = 'array';
-  protected $authorizationsType = 'Google_Service_ServiceConsumerManagement_AuthorizationRule';
-  protected $authorizationsDataType = 'array';
+  public $allowHalfDuplex;
   public $body;
   protected $customType = 'Google_Service_ServiceConsumerManagement_CustomHttpPattern';
   protected $customDataType = '';
   public $delete;
   public $get;
-  protected $mediaDownloadType = 'Google_Service_ServiceConsumerManagement_MediaDownload';
-  protected $mediaDownloadDataType = '';
-  protected $mediaUploadType = 'Google_Service_ServiceConsumerManagement_MediaUpload';
-  protected $mediaUploadDataType = '';
   public $patch;
   public $post;
   public $put;
-  public $restCollection;
-  public $restMethodName;
+  public $responseBody;
   public $selector;
 
   /**
@@ -52,19 +46,13 @@ class Google_Service_ServiceConsumerManagement_HttpRule extends Google_Collectio
   {
     return $this->additionalBindings;
   }
-  /**
-   * @param Google_Service_ServiceConsumerManagement_AuthorizationRule
-   */
-  public function setAuthorizations($authorizations)
+  public function setAllowHalfDuplex($allowHalfDuplex)
   {
-    $this->authorizations = $authorizations;
+    $this->allowHalfDuplex = $allowHalfDuplex;
   }
-  /**
-   * @return Google_Service_ServiceConsumerManagement_AuthorizationRule
-   */
-  public function getAuthorizations()
+  public function getAllowHalfDuplex()
   {
-    return $this->authorizations;
+    return $this->allowHalfDuplex;
   }
   public function setBody($body)
   {
@@ -104,34 +92,6 @@ class Google_Service_ServiceConsumerManagement_HttpRule extends Google_Collectio
   {
     return $this->get;
   }
-  /**
-   * @param Google_Service_ServiceConsumerManagement_MediaDownload
-   */
-  public function setMediaDownload(Google_Service_ServiceConsumerManagement_MediaDownload $mediaDownload)
-  {
-    $this->mediaDownload = $mediaDownload;
-  }
-  /**
-   * @return Google_Service_ServiceConsumerManagement_MediaDownload
-   */
-  public function getMediaDownload()
-  {
-    return $this->mediaDownload;
-  }
-  /**
-   * @param Google_Service_ServiceConsumerManagement_MediaUpload
-   */
-  public function setMediaUpload(Google_Service_ServiceConsumerManagement_MediaUpload $mediaUpload)
-  {
-    $this->mediaUpload = $mediaUpload;
-  }
-  /**
-   * @return Google_Service_ServiceConsumerManagement_MediaUpload
-   */
-  public function getMediaUpload()
-  {
-    return $this->mediaUpload;
-  }
   public function setPatch($patch)
   {
     $this->patch = $patch;
@@ -156,21 +116,13 @@ class Google_Service_ServiceConsumerManagement_HttpRule extends Google_Collectio
   {
     return $this->put;
   }
-  public function setRestCollection($restCollection)
+  public function setResponseBody($responseBody)
   {
-    $this->restCollection = $restCollection;
+    $this->responseBody = $responseBody;
   }
-  public function getRestCollection()
+  public function getResponseBody()
   {
-    return $this->restCollection;
-  }
-  public function setRestMethodName($restMethodName)
-  {
-    $this->restMethodName = $restMethodName;
-  }
-  public function getRestMethodName()
-  {
-    return $this->restMethodName;
+    return $this->responseBody;
   }
   public function setSelector($selector)
   {

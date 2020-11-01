@@ -29,9 +29,7 @@ class Google_Service_HangoutsChat_Resource_Spaces extends Google_Service_Resourc
    * Returns a space. (spaces.get)
    *
    * @param string $name Required. Resource name of the space, in the form
-   * "spaces".
-   *
-   * Example: spaces/AAAAMpdlehY
+   * "spaces". Example: spaces/AAAAMpdlehY
    * @param array $optParams Optional parameters.
    * @return Google_Service_HangoutsChat_Space
    */

@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Contract;
 
 /**
@@ -6,6 +7,15 @@ namespace Robo\Contract;
  */
 interface OutputAdapterInterface
 {
+    /**
+     * @param int $verbosityThreshold
+     *
+     * @return bool
+     */
     public function verbosityMeetsThreshold($verbosityThreshold);
+
+    /**
+     * @param string $message
+     */
     public function writeMessage($message);
 }

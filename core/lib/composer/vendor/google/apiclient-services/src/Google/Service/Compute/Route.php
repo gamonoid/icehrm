@@ -26,6 +26,7 @@ class Google_Service_Compute_Route extends Google_Collection
   public $name;
   public $network;
   public $nextHopGateway;
+  public $nextHopIlb;
   public $nextHopInstance;
   public $nextHopIp;
   public $nextHopNetwork;
@@ -100,6 +101,14 @@ class Google_Service_Compute_Route extends Google_Collection
   public function getNextHopGateway()
   {
     return $this->nextHopGateway;
+  }
+  public function setNextHopIlb($nextHopIlb)
+  {
+    $this->nextHopIlb = $nextHopIlb;
+  }
+  public function getNextHopIlb()
+  {
+    return $this->nextHopIlb;
   }
   public function setNextHopInstance($nextHopInstance)
   {

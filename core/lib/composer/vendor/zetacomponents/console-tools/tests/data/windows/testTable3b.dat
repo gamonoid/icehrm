@@ -1,0 +1,15 @@
+cvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvcvvvvvvvvvvvcvvvvvvvvvvvvc
+h Parameter                                          h Shortcut  h Descrition h
+cvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvcvvvvvvvvvvvcvvvvvvvvvvvvc
+h Append text to a file. This parameter takes a      h --append  h -a         h
+h string value and may be used multiple times.       h           h            h
+cvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvcvvvvvvvvvvvcvvvvvvvvvvvvc
+h Prepend text to a file. This parameter takes a     h --prepend h -p         h
+h string value and may be used multiple times.       h           h            h
+cvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvcvvvvvvvvvvvcvvvvvvvvvvvvc
+h Forces the action desired without paying attention h --force   h -f         h
+h to any errors.                                     h           h            h
+cvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvcvvvvvvvvvvvcvvvvvvvvvvvvc
+h Silence all kinds of warnings issued by this       h --silent  h -s         h
+h program.                                           h           h            h
+cvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvcvvvvvvvvvvvcvvvvvvvvvvvvc

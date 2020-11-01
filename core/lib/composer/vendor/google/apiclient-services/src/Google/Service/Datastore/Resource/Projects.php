@@ -29,8 +29,8 @@ class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
    * Allocates IDs for the given keys, which is useful for referencing an entity
    * before it is inserted. (projects.allocateIds)
    *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
+   * @param string $projectId Required. The ID of the project against which to
+   * make the request.
    * @param Google_Service_Datastore_AllocateIdsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Datastore_AllocateIdsResponse
@@ -44,8 +44,8 @@ class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
   /**
    * Begins a new transaction. (projects.beginTransaction)
    *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
+   * @param string $projectId Required. The ID of the project against which to
+   * make the request.
    * @param Google_Service_Datastore_BeginTransactionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Datastore_BeginTransactionResponse
@@ -60,8 +60,8 @@ class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
    * Commits a transaction, optionally creating, deleting or modifying some
    * entities. (projects.commit)
    *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
+   * @param string $projectId Required. The ID of the project against which to
+   * make the request.
    * @param Google_Service_Datastore_CommitRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Datastore_CommitResponse
@@ -82,7 +82,8 @@ class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
    * completion it may leave partial data behind in Google Cloud Storage.
    * (projects.export)
    *
-   * @param string $projectId Project ID against which to make the request.
+   * @param string $projectId Required. Project ID against which to make the
+   * request.
    * @param Google_Service_Datastore_GoogleDatastoreAdminV1ExportEntitiesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Datastore_GoogleLongrunningOperation
@@ -100,7 +101,8 @@ class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
    * ImportEntities operation is cancelled, it is possible that a subset of the
    * data has already been imported to Cloud Datastore. (projects.import)
    *
-   * @param string $projectId Project ID against which to make the request.
+   * @param string $projectId Required. Project ID against which to make the
+   * request.
    * @param Google_Service_Datastore_GoogleDatastoreAdminV1ImportEntitiesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Datastore_GoogleLongrunningOperation
@@ -114,8 +116,8 @@ class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
   /**
    * Looks up entities by key. (projects.lookup)
    *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
+   * @param string $projectId Required. The ID of the project against which to
+   * make the request.
    * @param Google_Service_Datastore_LookupRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Datastore_LookupResponse
@@ -130,8 +132,8 @@ class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
    * Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore.
    * (projects.reserveIds)
    *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
+   * @param string $projectId Required. The ID of the project against which to
+   * make the request.
    * @param Google_Service_Datastore_ReserveIdsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Datastore_ReserveIdsResponse
@@ -145,8 +147,8 @@ class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
   /**
    * Rolls back a transaction. (projects.rollback)
    *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
+   * @param string $projectId Required. The ID of the project against which to
+   * make the request.
    * @param Google_Service_Datastore_RollbackRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Datastore_RollbackResponse
@@ -160,8 +162,8 @@ class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
   /**
    * Queries for entities. (projects.runQuery)
    *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
+   * @param string $projectId Required. The ID of the project against which to
+   * make the request.
    * @param Google_Service_Datastore_RunQueryRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Datastore_RunQueryResponse

@@ -20,8 +20,12 @@ class Google_Service_Testing_AndroidInstrumentationTest extends Google_Collectio
   protected $collection_key = 'testTargets';
   protected $appApkType = 'Google_Service_Testing_FileReference';
   protected $appApkDataType = '';
+  protected $appBundleType = 'Google_Service_Testing_AppBundle';
+  protected $appBundleDataType = '';
   public $appPackageId;
   public $orchestratorOption;
+  protected $shardingOptionType = 'Google_Service_Testing_ShardingOption';
+  protected $shardingOptionDataType = '';
   protected $testApkType = 'Google_Service_Testing_FileReference';
   protected $testApkDataType = '';
   public $testPackageId;
@@ -42,6 +46,20 @@ class Google_Service_Testing_AndroidInstrumentationTest extends Google_Collectio
   {
     return $this->appApk;
   }
+  /**
+   * @param Google_Service_Testing_AppBundle
+   */
+  public function setAppBundle(Google_Service_Testing_AppBundle $appBundle)
+  {
+    $this->appBundle = $appBundle;
+  }
+  /**
+   * @return Google_Service_Testing_AppBundle
+   */
+  public function getAppBundle()
+  {
+    return $this->appBundle;
+  }
   public function setAppPackageId($appPackageId)
   {
     $this->appPackageId = $appPackageId;
@@ -57,6 +75,20 @@ class Google_Service_Testing_AndroidInstrumentationTest extends Google_Collectio
   public function getOrchestratorOption()
   {
     return $this->orchestratorOption;
+  }
+  /**
+   * @param Google_Service_Testing_ShardingOption
+   */
+  public function setShardingOption(Google_Service_Testing_ShardingOption $shardingOption)
+  {
+    $this->shardingOption = $shardingOption;
+  }
+  /**
+   * @return Google_Service_Testing_ShardingOption
+   */
+  public function getShardingOption()
+  {
+    return $this->shardingOption;
   }
   /**
    * @param Google_Service_Testing_FileReference

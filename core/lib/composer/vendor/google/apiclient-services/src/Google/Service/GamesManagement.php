@@ -19,43 +19,40 @@
  * Service definition for GamesManagement (v1management).
  *
  * <p>
- * The Management API for Google Play Game Services.</p>
+ * The Google Play Game Management API allows developers to manage resources
+ * from the Google Play Game service.</p>
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://developers.google.com/games/services" target="_blank">Documentation</a>
+ * <a href="https://developers.google.com/games/" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
  */
 class Google_Service_GamesManagement extends Google_Service
 {
-  /** Share your Google+ profile information and view and manage your game activity. */
+  /** Create, edit, and delete your Google Play Games activity. */
   const GAMES =
       "https://www.googleapis.com/auth/games";
-  /** Know the list of people in your circles, your age range, and language. */
-  const PLUS_LOGIN =
-      "https://www.googleapis.com/auth/plus.login";
 
   public $achievements;
   public $applications;
   public $events;
   public $players;
-  public $quests;
-  public $rooms;
   public $scores;
-  public $turnBasedMatches;
   
   /**
    * Constructs the internal representation of the GamesManagement service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'games/v1management/';
+    $this->rootUrl = $rootUrl ?: 'https://gamesmanagement.googleapis.com/';
+    $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1management';
     $this->serviceName = 'gamesManagement';
 
@@ -66,7 +63,7 @@ class Google_Service_GamesManagement extends Google_Service
         array(
           'methods' => array(
             'reset' => array(
-              'path' => 'achievements/{achievementId}/reset',
+              'path' => 'games/v1management/achievements/{achievementId}/reset',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'achievementId' => array(
@@ -76,15 +73,15 @@ class Google_Service_GamesManagement extends Google_Service
                 ),
               ),
             ),'resetAll' => array(
-              'path' => 'achievements/reset',
+              'path' => 'games/v1management/achievements/reset',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),'resetAllForAllPlayers' => array(
-              'path' => 'achievements/resetAllForAllPlayers',
+              'path' => 'games/v1management/achievements/resetAllForAllPlayers',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),'resetForAllPlayers' => array(
-              'path' => 'achievements/{achievementId}/resetForAllPlayers',
+              'path' => 'games/v1management/achievements/{achievementId}/resetForAllPlayers',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'achievementId' => array(
@@ -94,7 +91,7 @@ class Google_Service_GamesManagement extends Google_Service
                 ),
               ),
             ),'resetMultipleForAllPlayers' => array(
-              'path' => 'achievements/resetMultipleForAllPlayers',
+              'path' => 'games/v1management/achievements/resetMultipleForAllPlayers',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),
@@ -108,7 +105,7 @@ class Google_Service_GamesManagement extends Google_Service
         array(
           'methods' => array(
             'listHidden' => array(
-              'path' => 'applications/{applicationId}/players/hidden',
+              'path' => 'games/v1management/applications/{applicationId}/players/hidden',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'applicationId' => array(
@@ -136,7 +133,7 @@ class Google_Service_GamesManagement extends Google_Service
         array(
           'methods' => array(
             'reset' => array(
-              'path' => 'events/{eventId}/reset',
+              'path' => 'games/v1management/events/{eventId}/reset',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'eventId' => array(
@@ -146,15 +143,15 @@ class Google_Service_GamesManagement extends Google_Service
                 ),
               ),
             ),'resetAll' => array(
-              'path' => 'events/reset',
+              'path' => 'games/v1management/events/reset',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),'resetAllForAllPlayers' => array(
-              'path' => 'events/resetAllForAllPlayers',
+              'path' => 'games/v1management/events/resetAllForAllPlayers',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),'resetForAllPlayers' => array(
-              'path' => 'events/{eventId}/resetForAllPlayers',
+              'path' => 'games/v1management/events/{eventId}/resetForAllPlayers',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'eventId' => array(
@@ -164,7 +161,7 @@ class Google_Service_GamesManagement extends Google_Service
                 ),
               ),
             ),'resetMultipleForAllPlayers' => array(
-              'path' => 'events/resetMultipleForAllPlayers',
+              'path' => 'games/v1management/events/resetMultipleForAllPlayers',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),
@@ -178,7 +175,7 @@ class Google_Service_GamesManagement extends Google_Service
         array(
           'methods' => array(
             'hide' => array(
-              'path' => 'applications/{applicationId}/players/hidden/{playerId}',
+              'path' => 'games/v1management/applications/{applicationId}/players/hidden/{playerId}',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'applicationId' => array(
@@ -193,7 +190,7 @@ class Google_Service_GamesManagement extends Google_Service
                 ),
               ),
             ),'unhide' => array(
-              'path' => 'applications/{applicationId}/players/hidden/{playerId}',
+              'path' => 'games/v1management/applications/{applicationId}/players/hidden/{playerId}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'applicationId' => array(
@@ -211,66 +208,6 @@ class Google_Service_GamesManagement extends Google_Service
           )
         )
     );
-    $this->quests = new Google_Service_GamesManagement_Resource_Quests(
-        $this,
-        $this->serviceName,
-        'quests',
-        array(
-          'methods' => array(
-            'reset' => array(
-              'path' => 'quests/{questId}/reset',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'questId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'resetAll' => array(
-              'path' => 'quests/reset',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'resetAllForAllPlayers' => array(
-              'path' => 'quests/resetAllForAllPlayers',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'resetForAllPlayers' => array(
-              'path' => 'quests/{questId}/resetForAllPlayers',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'questId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'resetMultipleForAllPlayers' => array(
-              'path' => 'quests/resetMultipleForAllPlayers',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),
-          )
-        )
-    );
-    $this->rooms = new Google_Service_GamesManagement_Resource_Rooms(
-        $this,
-        $this->serviceName,
-        'rooms',
-        array(
-          'methods' => array(
-            'reset' => array(
-              'path' => 'rooms/reset',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'resetForAllPlayers' => array(
-              'path' => 'rooms/resetForAllPlayers',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),
-          )
-        )
-    );
     $this->scores = new Google_Service_GamesManagement_Resource_Scores(
         $this,
         $this->serviceName,
@@ -278,7 +215,7 @@ class Google_Service_GamesManagement extends Google_Service
         array(
           'methods' => array(
             'reset' => array(
-              'path' => 'leaderboards/{leaderboardId}/scores/reset',
+              'path' => 'games/v1management/leaderboards/{leaderboardId}/scores/reset',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'leaderboardId' => array(
@@ -288,15 +225,15 @@ class Google_Service_GamesManagement extends Google_Service
                 ),
               ),
             ),'resetAll' => array(
-              'path' => 'scores/reset',
+              'path' => 'games/v1management/scores/reset',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),'resetAllForAllPlayers' => array(
-              'path' => 'scores/resetAllForAllPlayers',
+              'path' => 'games/v1management/scores/resetAllForAllPlayers',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),'resetForAllPlayers' => array(
-              'path' => 'leaderboards/{leaderboardId}/scores/resetForAllPlayers',
+              'path' => 'games/v1management/leaderboards/{leaderboardId}/scores/resetForAllPlayers',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'leaderboardId' => array(
@@ -306,25 +243,7 @@ class Google_Service_GamesManagement extends Google_Service
                 ),
               ),
             ),'resetMultipleForAllPlayers' => array(
-              'path' => 'scores/resetMultipleForAllPlayers',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),
-          )
-        )
-    );
-    $this->turnBasedMatches = new Google_Service_GamesManagement_Resource_TurnBasedMatches(
-        $this,
-        $this->serviceName,
-        'turnBasedMatches',
-        array(
-          'methods' => array(
-            'reset' => array(
-              'path' => 'turnbasedmatches/reset',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'resetForAllPlayers' => array(
-              'path' => 'turnbasedmatches/resetForAllPlayers',
+              'path' => 'games/v1management/scores/resetMultipleForAllPlayers',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),

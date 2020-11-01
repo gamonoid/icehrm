@@ -39,8 +39,6 @@ class Google_Service_ServiceUsage_GoogleApiService extends Google_Collection
   protected $endpointsDataType = 'array';
   protected $enumsType = 'Google_Service_ServiceUsage_Enum';
   protected $enumsDataType = 'array';
-  protected $experimentalType = 'Google_Service_ServiceUsage_Experimental';
-  protected $experimentalDataType = '';
   protected $httpType = 'Google_Service_ServiceUsage_Http';
   protected $httpDataType = '';
   public $id;
@@ -217,20 +215,6 @@ class Google_Service_ServiceUsage_GoogleApiService extends Google_Collection
   public function getEnums()
   {
     return $this->enums;
-  }
-  /**
-   * @param Google_Service_ServiceUsage_Experimental
-   */
-  public function setExperimental(Google_Service_ServiceUsage_Experimental $experimental)
-  {
-    $this->experimental = $experimental;
-  }
-  /**
-   * @return Google_Service_ServiceUsage_Experimental
-   */
-  public function getExperimental()
-  {
-    return $this->experimental;
   }
   /**
    * @param Google_Service_ServiceUsage_Http

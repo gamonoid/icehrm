@@ -18,11 +18,21 @@
 class Google_Service_Dataflow_WorkerHealthReport extends Google_Collection
 {
   protected $collection_key = 'pods';
+  public $msg;
   public $pods;
   public $reportInterval;
+  public $vmIsBroken;
   public $vmIsHealthy;
   public $vmStartupTime;
 
+  public function setMsg($msg)
+  {
+    $this->msg = $msg;
+  }
+  public function getMsg()
+  {
+    return $this->msg;
+  }
   public function setPods($pods)
   {
     $this->pods = $pods;
@@ -38,6 +48,14 @@ class Google_Service_Dataflow_WorkerHealthReport extends Google_Collection
   public function getReportInterval()
   {
     return $this->reportInterval;
+  }
+  public function setVmIsBroken($vmIsBroken)
+  {
+    $this->vmIsBroken = $vmIsBroken;
+  }
+  public function getVmIsBroken()
+  {
+    return $this->vmIsBroken;
   }
   public function setVmIsHealthy($vmIsHealthy)
   {

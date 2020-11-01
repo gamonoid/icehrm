@@ -61,7 +61,7 @@ class AttendanceStatus extends BaseModel
         return array_values($employees);
     }
     // @codingStandardsIgnoreStart
-    public function Find($whereOrderBy, $bindarr = false, $pkeysArr = false, $extra = array())
+    public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
         // @codingStandardsIgnoreEnd
         $shift = intval(SettingsManager::getInstance()->getSetting("Attendance: Shift (Minutes)"));

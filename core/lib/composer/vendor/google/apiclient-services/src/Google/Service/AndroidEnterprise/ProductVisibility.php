@@ -19,6 +19,7 @@ class Google_Service_AndroidEnterprise_ProductVisibility extends Google_Collecti
 {
   protected $collection_key = 'tracks';
   public $productId;
+  public $trackIds;
   public $tracks;
 
   public function setProductId($productId)
@@ -28,6 +29,14 @@ class Google_Service_AndroidEnterprise_ProductVisibility extends Google_Collecti
   public function getProductId()
   {
     return $this->productId;
+  }
+  public function setTrackIds($trackIds)
+  {
+    $this->trackIds = $trackIds;
+  }
+  public function getTrackIds()
+  {
+    return $this->trackIds;
   }
   public function setTracks($tracks)
   {

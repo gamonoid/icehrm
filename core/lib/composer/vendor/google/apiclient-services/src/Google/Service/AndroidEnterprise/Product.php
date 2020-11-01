@@ -18,6 +18,8 @@
 class Google_Service_AndroidEnterprise_Product extends Google_Collection
 {
   protected $collection_key = 'screenshotUrls';
+  protected $appTracksType = 'Google_Service_AndroidEnterprise_TrackInfo';
+  protected $appTracksDataType = 'array';
   protected $appVersionType = 'Google_Service_AndroidEnterprise_AppVersion';
   protected $appVersionDataType = 'array';
   public $authorName;
@@ -28,8 +30,8 @@ class Google_Service_AndroidEnterprise_Product extends Google_Collection
   public $description;
   public $detailsUrl;
   public $distributionChannel;
+  public $features;
   public $iconUrl;
-  public $kind;
   public $lastUpdatedTimestampMillis;
   public $minAndroidSdkVersion;
   protected $permissionsType = 'Google_Service_AndroidEnterprise_ProductPermission';
@@ -45,6 +47,20 @@ class Google_Service_AndroidEnterprise_Product extends Google_Collection
   public $title;
   public $workDetailsUrl;
 
+  /**
+   * @param Google_Service_AndroidEnterprise_TrackInfo
+   */
+  public function setAppTracks($appTracks)
+  {
+    $this->appTracks = $appTracks;
+  }
+  /**
+   * @return Google_Service_AndroidEnterprise_TrackInfo
+   */
+  public function getAppTracks()
+  {
+    return $this->appTracks;
+  }
   /**
    * @param Google_Service_AndroidEnterprise_AppVersion
    */
@@ -123,6 +139,14 @@ class Google_Service_AndroidEnterprise_Product extends Google_Collection
   {
     return $this->distributionChannel;
   }
+  public function setFeatures($features)
+  {
+    $this->features = $features;
+  }
+  public function getFeatures()
+  {
+    return $this->features;
+  }
   public function setIconUrl($iconUrl)
   {
     $this->iconUrl = $iconUrl;
@@ -130,14 +154,6 @@ class Google_Service_AndroidEnterprise_Product extends Google_Collection
   public function getIconUrl()
   {
     return $this->iconUrl;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
   }
   public function setLastUpdatedTimestampMillis($lastUpdatedTimestampMillis)
   {

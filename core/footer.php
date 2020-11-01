@@ -16,26 +16,12 @@
 				modJsList[prop].setEmailTemplates(<?=json_encode($emailTemplates)?>);
 				<?php } ?>
 				modJsList[prop].setUser(<?=json_encode(\Classes\BaseService::getInstance()->cleanUpUser($user))?>);
-                <?php if(isset($_REQUEST['action']) && $_REQUEST['action'] == "new"){?>
-                if(modJsList[prop].newInitObject == undefined || modJsList[prop].newInitObject == null){
-                    modJsList[prop].initFieldMasterData(null,modJsList[prop].renderForm);
-                }else{
-                    modJsList[prop].initFieldMasterData(null,modJsList[prop].renderForm, modJsList[prop].newInitObject);
-                }
-                <?php }else{ ?>
-				if(modJsList[prop].initialFilter != null && modJsList[prop].initialFilter != undefined){
-					modJsList[prop].initFieldMasterData(null,modJsList[prop].setFilterExternal);
-				}else{
-					modJsList[prop].initFieldMasterData();
-				}
-
-                <?php } ?>
+                modJsList[prop].initSourceMappings();
 				modJsList[prop].setBaseUrl('<?=BASE_URL?>');
 				modJsList[prop].setCurrentProfile(<?=json_encode($activeProfile)?>);
 				modJsList[prop].setInstanceId('<?=\Classes\BaseService::getInstance()->getInstanceId()?>');
 				modJsList[prop].setGoogleAnalytics(ga);
 				modJsList[prop].setNoJSONRequests('<?=\Classes\SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request")?>');
-
 			}
 
 	    }
@@ -63,8 +49,17 @@
 				e.preventDefault();
 				$(this).tab('show');
 				modJs = modJsList[$(this).attr('id')];
-				modJs.get([]);
-                modJs.initFieldMasterData();
+                modJs.get([]);
+
+                // Do not load master data for new types of tables
+				if (!modJs.isV2) {
+                  if(modJs.initialFilter != null){
+                    modJs.initFieldMasterData(null,modJs.setFilterExternal);
+                  } else {
+                    modJs.initFieldMasterData();
+                  }
+                }
+
 				var helpLink = modJs.getHelpLink();
 				if(helpLink != null && helpLink != undefined){
 					$('.helpLink').attr('href',helpLink);
@@ -72,8 +67,12 @@
 				}else{
 					$('.helpLink').hide();
 				}
-
 			});
+
+			for (var modName in modJsList) {
+              modJsList[modName].setApiUrl('<?=$restApiBase?>');
+              modJsList[modName].setupApiClient($('#jt').attr('t'));
+            }
 
 			var tabName = window.location.hash.substr(1);
 
@@ -84,7 +83,6 @@
 				modJs.get([]);
                 <?php } ?>
 			}
-
 
 			notificationManager.getNotifications();
 
@@ -104,7 +102,18 @@
 				$('.helpLink').hide();
 			}
 
+          $(this).scrollTop(0);
+
 		});
+
+        if (!modJs.isV2) {
+          if(modJs.initialFilter != null){
+            modJs.initFieldMasterData(null,modJs.setFilterExternal);
+          } else {
+            modJs.initFieldMasterData();
+          }
+        }
+
 		var clientUrl = '<?=CLIENT_BASE_URL?>';
 
         var modulesInstalled = <?=json_encode(\Classes\BaseService::getInstance()->getModuleManagerNames())?>;
@@ -139,6 +148,6 @@
 	</script>
 	<?php include 'popups.php';?>
     <script src="<?=BASE_URL?>js/bootstrap-datatable.js"></script>
-
+    <div id="jt" t="<?=$jwtService->create(3600)?>"></div>
     </body>
 </html>

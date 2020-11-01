@@ -29,7 +29,13 @@ class ConsoleLogger extends AbstractLogger
     const INFO = 'info';
     const ERROR = 'error';
 
+    /**
+     * @var OutputInterface
+     */
     private $output;
+    /**
+     * @var array
+     */
     private $verbosityLevelMap = array(
         LogLevel::EMERGENCY => OutputInterface::VERBOSITY_NORMAL,
         LogLevel::ALERT => OutputInterface::VERBOSITY_NORMAL,
@@ -40,6 +46,9 @@ class ConsoleLogger extends AbstractLogger
         LogLevel::INFO => OutputInterface::VERBOSITY_VERY_VERBOSE,
         LogLevel::DEBUG => OutputInterface::VERBOSITY_DEBUG,
     );
+    /**
+     * @var array
+     */
     private $formatLevelMap = array(
         LogLevel::EMERGENCY => self::ERROR,
         LogLevel::ALERT => self::ERROR,
@@ -52,6 +61,11 @@ class ConsoleLogger extends AbstractLogger
     );
     private $errored = false;
 
+    /**
+     * @param OutputInterface $output
+     * @param array           $verbosityLevelMap
+     * @param array           $formatLevelMap
+     */
     public function __construct(OutputInterface $output, array $verbosityLevelMap = array(), array $formatLevelMap = array())
     {
         $this->output = $output;
@@ -71,7 +85,7 @@ class ConsoleLogger extends AbstractLogger
         $output = $this->output;
 
         // Write to the error output if necessary and available
-        if (self::ERROR === $this->formatLevelMap[$level]) {
+        if ($this->formatLevelMap[$level] === self::ERROR) {
             if ($this->output instanceof ConsoleOutputInterface) {
                 $output = $output->getErrorOutput();
             }
@@ -87,8 +101,6 @@ class ConsoleLogger extends AbstractLogger
 
     /**
      * Returns true when any messages have been logged at error levels.
-     *
-     * @return bool
      */
     public function hasErrored()
     {
@@ -107,23 +119,15 @@ class ConsoleLogger extends AbstractLogger
      */
     private function interpolate($message, array $context)
     {
-        if (false === strpos($message, '{')) {
-            return $message;
-        }
-
-        $replacements = array();
+        // build a replacement array with braces around the context keys
+        $replace = array();
         foreach ($context as $key => $val) {
-            if (null === $val || is_scalar($val) || (\is_object($val) && method_exists($val, '__toString'))) {
-                $replacements["{{$key}}"] = $val;
-            } elseif ($val instanceof \DateTimeInterface) {
-                $replacements["{{$key}}"] = $val->format(\DateTime::RFC3339);
-            } elseif (\is_object($val)) {
-                $replacements["{{$key}}"] = '[object '.\get_class($val).']';
-            } else {
-                $replacements["{{$key}}"] = '['.\gettype($val).']';
+            if (!is_array($val) && (!is_object($val) || method_exists($val, '__toString'))) {
+                $replace[sprintf('{%s}', $key)] = $val;
             }
         }
 
-        return strtr($message, $replacements);
+        // interpolate replacement values into the message and return
+        return strtr($message, $replace);
     }
 }

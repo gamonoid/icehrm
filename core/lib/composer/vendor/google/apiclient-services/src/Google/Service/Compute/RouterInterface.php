@@ -20,6 +20,7 @@ class Google_Service_Compute_RouterInterface extends Google_Model
   public $ipRange;
   public $linkedInterconnectAttachment;
   public $linkedVpnTunnel;
+  public $managementType;
   public $name;
 
   public function setIpRange($ipRange)
@@ -45,6 +46,14 @@ class Google_Service_Compute_RouterInterface extends Google_Model
   public function getLinkedVpnTunnel()
   {
     return $this->linkedVpnTunnel;
+  }
+  public function setManagementType($managementType)
+  {
+    $this->managementType = $managementType;
+  }
+  public function getManagementType()
+  {
+    return $this->managementType;
   }
   public function setName($name)
   {

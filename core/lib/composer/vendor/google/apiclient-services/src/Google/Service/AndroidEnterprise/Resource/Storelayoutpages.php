@@ -81,22 +81,6 @@ class Google_Service_AndroidEnterprise_Resource_Storelayoutpages extends Google_
     return $this->call('list', array($params), "Google_Service_AndroidEnterprise_StoreLayoutPagesListResponse");
   }
   /**
-   * Updates the content of a store page. This method supports patch semantics.
-   * (storelayoutpages.patch)
-   *
-   * @param string $enterpriseId The ID of the enterprise.
-   * @param string $pageId The ID of the page.
-   * @param Google_Service_AndroidEnterprise_StorePage $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_AndroidEnterprise_StorePage
-   */
-  public function patch($enterpriseId, $pageId, Google_Service_AndroidEnterprise_StorePage $postBody, $optParams = array())
-  {
-    $params = array('enterpriseId' => $enterpriseId, 'pageId' => $pageId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_AndroidEnterprise_StorePage");
-  }
-  /**
    * Updates the content of a store page. (storelayoutpages.update)
    *
    * @param string $enterpriseId The ID of the enterprise.

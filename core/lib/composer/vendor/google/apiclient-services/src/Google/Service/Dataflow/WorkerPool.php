@@ -17,7 +17,7 @@
 
 class Google_Service_Dataflow_WorkerPool extends Google_Collection
 {
-  protected $collection_key = 'packages';
+  protected $collection_key = 'sdkHarnessContainerImages';
   protected $autoscalingSettingsType = 'Google_Service_Dataflow_AutoscalingSettings';
   protected $autoscalingSettingsDataType = '';
   protected $dataDisksType = 'Google_Service_Dataflow_Disk';
@@ -37,6 +37,8 @@ class Google_Service_Dataflow_WorkerPool extends Google_Collection
   protected $packagesType = 'Google_Service_Dataflow_Package';
   protected $packagesDataType = 'array';
   public $poolArgs;
+  protected $sdkHarnessContainerImagesType = 'Google_Service_Dataflow_SdkHarnessContainerImage';
+  protected $sdkHarnessContainerImagesDataType = 'array';
   public $subnetwork;
   protected $taskrunnerSettingsType = 'Google_Service_Dataflow_TaskRunnerSettings';
   protected $taskrunnerSettingsDataType = '';
@@ -189,6 +191,20 @@ class Google_Service_Dataflow_WorkerPool extends Google_Collection
   public function getPoolArgs()
   {
     return $this->poolArgs;
+  }
+  /**
+   * @param Google_Service_Dataflow_SdkHarnessContainerImage
+   */
+  public function setSdkHarnessContainerImages($sdkHarnessContainerImages)
+  {
+    $this->sdkHarnessContainerImages = $sdkHarnessContainerImages;
+  }
+  /**
+   * @return Google_Service_Dataflow_SdkHarnessContainerImage
+   */
+  public function getSdkHarnessContainerImages()
+  {
+    return $this->sdkHarnessContainerImages;
   }
   public function setSubnetwork($subnetwork)
   {

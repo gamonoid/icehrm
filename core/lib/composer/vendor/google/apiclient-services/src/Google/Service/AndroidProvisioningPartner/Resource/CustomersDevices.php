@@ -92,7 +92,6 @@ class Google_Service_AndroidProvisioningPartner_Resource_CustomersDevices extend
   }
   /**
    * Unclaims a device from a customer and removes it from zero-touch enrollment.
-   *
    * After removing a device, a customer must contact their reseller to register
    * the device into zero-touch enrollment again. (devices.unclaim)
    *

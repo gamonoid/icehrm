@@ -1,0 +1,13 @@
+{
+    "label": "Time and Attendance",
+    "menu": "Insights",
+    "order": "1",
+    "icon": "fa-user-clock",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "permissions": [],
+    "model_namespace": "\\Charts\\Common\\Model",
+    "manager": "\\Charts\\Admin\\Api\\ChartsAdminManager"
+}

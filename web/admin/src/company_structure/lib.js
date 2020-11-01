@@ -5,9 +5,10 @@
  */
 /* global d3, nv */
 
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 import AdapterBase from '../../../api/AdapterBase';
 
-class CompanyStructureAdapter extends AdapterBase {
+class CompanyStructureAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -29,6 +30,36 @@ class CompanyStructureAdapter extends AdapterBase {
       { sTitle: 'Country', sClass: 'center' },
       { sTitle: 'Time Zone' },
       { sTitle: 'Parent Structure' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'title',
+        sorter: true,
+      },
+      {
+        title: 'Address',
+        dataIndex: 'address',
+      },
+      {
+        title: 'Type',
+        dataIndex: 'type',
+      },
+      {
+        title: 'Country',
+        dataIndex: 'country',
+      },
+      {
+        title: 'Time Zone',
+        dataIndex: 'timezone',
+      },
+      {
+        title: 'Parent Structure',
+        dataIndex: 'parent',
+      },
     ];
   }
 
@@ -73,10 +104,54 @@ class CompanyStructureAdapter extends AdapterBase {
  */
 
 
-class CompanyGraphAdapter extends CompanyStructureAdapter {
+class CompanyGraphAdapter extends AdapterBase {
   constructor(endPoint, tab, filter, orderBy) {
     super(endPoint, tab, filter, orderBy);
     this.nodeIdCounter = 0;
+  }
+
+  getDataMapping() {
+    return [
+      'id',
+      'title',
+      'address',
+      'type',
+      'country',
+      'timezone',
+      'parent',
+    ];
+  }
+
+  getHeaders() {
+    return [
+      { sTitle: 'ID', bVisible: false },
+      { sTitle: 'Name' },
+      { sTitle: 'Address', bSortable: false },
+      { sTitle: 'Type' },
+      { sTitle: 'Country', sClass: 'center' },
+      { sTitle: 'Time Zone' },
+      { sTitle: 'Parent Structure' },
+    ];
+  }
+
+  getFormFields() {
+    return [
+      ['id', { label: 'ID', type: 'hidden', validation: '' }],
+      ['title', { label: 'Name', type: 'text', validation: '' }],
+      ['description', { label: 'Details', type: 'textarea', validation: '' }],
+      ['address', { label: 'Address', type: 'textarea', validation: 'none' }],
+      ['type', { label: 'Type', type: 'select', source: [['Company', 'Company'], ['Head Office', 'Head Office'], ['Regional Office', 'Regional Office'], ['Department', 'Department'], ['Unit', 'Unit'], ['Sub Unit', 'Sub Unit'], ['Other', 'Other']] }],
+      ['country', { label: 'Country', type: 'select2', 'remote-source': ['Country', 'code', 'name'] }],
+      ['timezone', {
+        label: 'Time Zone', type: 'select2', 'allow-null': false, 'remote-source': ['Timezone', 'name', 'details', 'getTimezonesWithOffset'],
+      }],
+      ['parent', {
+        label: 'Parent Structure', type: 'select', 'allow-null': true, 'remote-source': ['CompanyStructure', 'id', 'title'],
+      }],
+      ['heads', {
+        label: 'Heads', type: 'select2multi', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
+      }],
+    ];
   }
 
   convertToTree(data) {

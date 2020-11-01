@@ -20,7 +20,7 @@ class BespokeDocBlockParser
         'command' => 'processCommandTag',
         'name' => 'processCommandTag',
         'arg' => 'processArgumentTag',
-        'param' => 'processArgumentTag',
+        'param' => 'processParamTag',
         'return' => 'processReturnTag',
         'option' => 'processOptionTag',
         'default' => 'processDefaultTag',
@@ -84,6 +84,31 @@ class BespokeDocBlockParser
     }
 
     /**
+     * Store the data from a @param annotation in our argument descriptions.
+     */
+    protected function processParamTag($tag)
+    {
+        if ($tag->hasTypeVariableAndDescription($matches)) {
+            if ($this->ignoredParamType($matches['type'])) {
+                return;
+            }
+        }
+        return $this->processArgumentTag($tag);
+    }
+
+    protected function ignoredParamType($paramType)
+    {
+        // TODO: We should really only allow a couple of types here,
+        // e.g. 'string', 'array', 'bool'. Blacklist things we do not
+        // want for now to avoid breaking commands with weird types.
+        // Fix in the next major version.
+        //
+        // This works:
+        //   return !in_array($paramType, ['string', 'array', 'integer', 'bool']);
+        return preg_match('#(InputInterface|OutputInterface)$#', $paramType);
+    }
+
+    /**
      * Store the data from a @arg annotation in our argument descriptions.
      */
     protected function processArgumentTag($tag)
@@ -112,7 +137,20 @@ class BespokeDocBlockParser
     {
         $variableName = $this->commandInfo->findMatchingOption($name);
         $description = static::removeLineBreaks($description);
+        list($description, $defaultValue) = $this->splitOutDefault($description);
         $set->add($variableName, $description);
+        if ($defaultValue !== null) {
+            $set->setDefaultValue($variableName, $defaultValue);
+        }
+    }
+
+    protected function splitOutDefault($description)
+    {
+        if (!preg_match('#(.*)(Default: *)(.*)#', trim($description), $matches)) {
+            return [$description, null];
+        }
+
+        return [trim($matches[1]), $this->interpretDefaultValue(trim($matches[3]))];
     }
 
     /**

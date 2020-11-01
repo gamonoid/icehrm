@@ -18,12 +18,39 @@
 class Google_Service_Dataflow_StreamingConfigTask extends Google_Collection
 {
   protected $collection_key = 'streamingComputationConfigs';
+  public $commitStreamChunkSizeBytes;
+  public $getDataStreamChunkSizeBytes;
+  public $maxWorkItemCommitBytes;
   protected $streamingComputationConfigsType = 'Google_Service_Dataflow_StreamingComputationConfig';
   protected $streamingComputationConfigsDataType = 'array';
   public $userStepToStateFamilyNameMap;
   public $windmillServiceEndpoint;
   public $windmillServicePort;
 
+  public function setCommitStreamChunkSizeBytes($commitStreamChunkSizeBytes)
+  {
+    $this->commitStreamChunkSizeBytes = $commitStreamChunkSizeBytes;
+  }
+  public function getCommitStreamChunkSizeBytes()
+  {
+    return $this->commitStreamChunkSizeBytes;
+  }
+  public function setGetDataStreamChunkSizeBytes($getDataStreamChunkSizeBytes)
+  {
+    $this->getDataStreamChunkSizeBytes = $getDataStreamChunkSizeBytes;
+  }
+  public function getGetDataStreamChunkSizeBytes()
+  {
+    return $this->getDataStreamChunkSizeBytes;
+  }
+  public function setMaxWorkItemCommitBytes($maxWorkItemCommitBytes)
+  {
+    $this->maxWorkItemCommitBytes = $maxWorkItemCommitBytes;
+  }
+  public function getMaxWorkItemCommitBytes()
+  {
+    return $this->maxWorkItemCommitBytes;
+  }
   /**
    * @param Google_Service_Dataflow_StreamingComputationConfig
    */

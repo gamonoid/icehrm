@@ -30,12 +30,11 @@ class Google_Service_Gmail_Resource_UsersSettingsSendAs extends Google_Service_R
    * will attempt to connect to the SMTP service to validate the configuration
    * before creating the alias. If ownership verification is required for the
    * alias, a message will be sent to the email address and the resource's
-   * verification status will be set to pending; otherwise, the resource will be
-   * created with verification status set to accepted. If a signature is provided,
-   * Gmail will sanitize the HTML before saving it with the alias.
-   *
-   * This method is only available to service account clients that have been
-   * delegated domain-wide authority. (sendAs.create)
+   * verification status will be set to `pending`; otherwise, the resource will be
+   * created with verification status set to `accepted`. If a signature is
+   * provided, Gmail will sanitize the HTML before saving it with the alias. This
+   * method is only available to service account clients that have been delegated
+   * domain-wide authority. (sendAs.create)
    *
    * @param string $userId User's email address. The special value "me" can be
    * used to indicate the authenticated user.
@@ -51,10 +50,8 @@ class Google_Service_Gmail_Resource_UsersSettingsSendAs extends Google_Service_R
   }
   /**
    * Deletes the specified send-as alias. Revokes any verification that may have
-   * been required for using it.
-   *
-   * This method is only available to service account clients that have been
-   * delegated domain-wide authority. (sendAs.delete)
+   * been required for using it. This method is only available to service account
+   * clients that have been delegated domain-wide authority. (sendAs.delete)
    *
    * @param string $userId User's email address. The special value "me" can be
    * used to indicate the authenticated user.
@@ -100,12 +97,7 @@ class Google_Service_Gmail_Resource_UsersSettingsSendAs extends Google_Service_R
     return $this->call('list', array($params), "Google_Service_Gmail_ListSendAsResponse");
   }
   /**
-   * Updates a send-as alias. If a signature is provided, Gmail will sanitize the
-   * HTML before saving it with the alias.
-   *
-   * Addresses other than the primary address for the account can only be updated
-   * by service account clients that have been delegated domain-wide authority.
-   * This method supports patch semantics. (sendAs.patch)
+   * Patch the specified send-as alias. (sendAs.patch)
    *
    * @param string $userId User's email address. The special value "me" can be
    * used to indicate the authenticated user.
@@ -122,11 +114,9 @@ class Google_Service_Gmail_Resource_UsersSettingsSendAs extends Google_Service_R
   }
   /**
    * Updates a send-as alias. If a signature is provided, Gmail will sanitize the
-   * HTML before saving it with the alias.
-   *
-   * Addresses other than the primary address for the account can only be updated
-   * by service account clients that have been delegated domain-wide authority.
-   * (sendAs.update)
+   * HTML before saving it with the alias. Addresses other than the primary
+   * address for the account can only be updated by service account clients that
+   * have been delegated domain-wide authority. (sendAs.update)
    *
    * @param string $userId User's email address. The special value "me" can be
    * used to indicate the authenticated user.
@@ -143,10 +133,9 @@ class Google_Service_Gmail_Resource_UsersSettingsSendAs extends Google_Service_R
   }
   /**
    * Sends a verification email to the specified send-as alias address. The
-   * verification status must be pending.
-   *
-   * This method is only available to service account clients that have been
-   * delegated domain-wide authority. (sendAs.verify)
+   * verification status must be `pending`. This method is only available to
+   * service account clients that have been delegated domain-wide authority.
+   * (sendAs.verify)
    *
    * @param string $userId User's email address. The special value "me" can be
    * used to indicate the authenticated user.

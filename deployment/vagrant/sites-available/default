@@ -10,7 +10,7 @@ server {
     # Add index.php to the list if you are using PHP
     index index.html index.php;
 
-    server_name icehrm.test;
+    server_name icehrm.os;
 
     ssl_certificate     /etc/nginx/ssl/icehrm.crt;
     ssl_certificate_key /etc/nginx/ssl/icehrm.key;

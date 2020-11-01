@@ -19,6 +19,8 @@ class Google_Service_Storagetransfer_TransferSpec extends Google_Model
 {
   protected $awsS3DataSourceType = 'Google_Service_Storagetransfer_AwsS3Data';
   protected $awsS3DataSourceDataType = '';
+  protected $azureBlobStorageDataSourceType = 'Google_Service_Storagetransfer_AzureBlobStorageData';
+  protected $azureBlobStorageDataSourceDataType = '';
   protected $gcsDataSinkType = 'Google_Service_Storagetransfer_GcsData';
   protected $gcsDataSinkDataType = '';
   protected $gcsDataSourceType = 'Google_Service_Storagetransfer_GcsData';
@@ -43,6 +45,20 @@ class Google_Service_Storagetransfer_TransferSpec extends Google_Model
   public function getAwsS3DataSource()
   {
     return $this->awsS3DataSource;
+  }
+  /**
+   * @param Google_Service_Storagetransfer_AzureBlobStorageData
+   */
+  public function setAzureBlobStorageDataSource(Google_Service_Storagetransfer_AzureBlobStorageData $azureBlobStorageDataSource)
+  {
+    $this->azureBlobStorageDataSource = $azureBlobStorageDataSource;
+  }
+  /**
+   * @return Google_Service_Storagetransfer_AzureBlobStorageData
+   */
+  public function getAzureBlobStorageDataSource()
+  {
+    return $this->azureBlobStorageDataSource;
   }
   /**
    * @param Google_Service_Storagetransfer_GcsData

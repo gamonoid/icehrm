@@ -22,6 +22,7 @@ class Google_Service_SQLAdmin_CloneContext extends Google_Model
   public $destinationInstanceName;
   public $kind;
   public $pitrTimestampMs;
+  public $pointInTime;
 
   /**
    * @param Google_Service_SQLAdmin_BinLogCoordinates
@@ -60,5 +61,13 @@ class Google_Service_SQLAdmin_CloneContext extends Google_Model
   public function getPitrTimestampMs()
   {
     return $this->pitrTimestampMs;
+  }
+  public function setPointInTime($pointInTime)
+  {
+    $this->pointInTime = $pointInTime;
+  }
+  public function getPointInTime()
+  {
+    return $this->pointInTime;
   }
 }

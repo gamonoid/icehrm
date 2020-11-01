@@ -21,6 +21,7 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1Intent extends Googl
   public $action;
   public $defaultResponsePlatforms;
   public $displayName;
+  public $endInteraction;
   public $events;
   protected $followupIntentInfoType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentFollowupIntentInfo';
   protected $followupIntentInfoDataType = 'array';
@@ -66,6 +67,14 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1Intent extends Googl
   public function getDisplayName()
   {
     return $this->displayName;
+  }
+  public function setEndInteraction($endInteraction)
+  {
+    $this->endInteraction = $endInteraction;
+  }
+  public function getEndInteraction()
+  {
+    return $this->endInteraction;
   }
   public function setEvents($events)
   {

@@ -20,7 +20,7 @@ class CommandInfo
     /**
      * Serialization schema version. Incremented every time the serialization schema changes.
      */
-    const SERIALIZATION_SCHEMA_VERSION = 3;
+    const SERIALIZATION_SCHEMA_VERSION = 4;
 
     /**
      * @var \ReflectionMethod
@@ -87,6 +87,11 @@ class CommandInfo
      * @var string
      */
     protected $returnType;
+
+    /**
+     * @var string[]
+     */
+    protected $injectedClasses = [];
 
     /**
      * Create a new CommandInfo class for a particular method of a class.
@@ -201,6 +206,18 @@ class CommandInfo
     {
         $this->parseDocBlock();
         return $this->returnType;
+    }
+
+    public function getInjectedClasses()
+    {
+        $this->parseDocBlock();
+        return $this->injectedClasses;
+    }
+
+    public function setInjectedClasses($injectedClasses)
+    {
+        $this->injectedClasses = $injectedClasses;
+        return $this;
     }
 
     public function setReturnType($returnType)
@@ -633,6 +650,11 @@ class CommandInfo
         $optionsFromParameters = $this->determineOptionsFromParameters();
         if ($this->lastParameterIsOptionsArray()) {
             array_pop($params);
+        }
+        while (!empty($params) && ($params[0]->getClass() != null)) {
+            $param = array_shift($params);
+            $injectedClass = $param->getClass()->getName();
+            array_unshift($this->injectedClasses, $injectedClass);
         }
         foreach ($params as $param) {
             $this->addParameterToResult($result, $param);

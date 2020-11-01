@@ -27,7 +27,9 @@ class Google_Service_Container_IPAllocationPolicy extends Google_Model
   public $servicesIpv4CidrBlock;
   public $servicesSecondaryRangeName;
   public $subnetworkName;
+  public $tpuIpv4CidrBlock;
   public $useIpAliases;
+  public $useRoutes;
 
   public function setClusterIpv4Cidr($clusterIpv4Cidr)
   {
@@ -109,6 +111,14 @@ class Google_Service_Container_IPAllocationPolicy extends Google_Model
   {
     return $this->subnetworkName;
   }
+  public function setTpuIpv4CidrBlock($tpuIpv4CidrBlock)
+  {
+    $this->tpuIpv4CidrBlock = $tpuIpv4CidrBlock;
+  }
+  public function getTpuIpv4CidrBlock()
+  {
+    return $this->tpuIpv4CidrBlock;
+  }
   public function setUseIpAliases($useIpAliases)
   {
     $this->useIpAliases = $useIpAliases;
@@ -116,5 +126,13 @@ class Google_Service_Container_IPAllocationPolicy extends Google_Model
   public function getUseIpAliases()
   {
     return $this->useIpAliases;
+  }
+  public function setUseRoutes($useRoutes)
+  {
+    $this->useRoutes = $useRoutes;
+  }
+  public function getUseRoutes()
+  {
+    return $this->useRoutes;
   }
 }

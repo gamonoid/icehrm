@@ -21,6 +21,7 @@ class Google_Service_FirebaseRules_GetReleaseExecutableResponse extends Google_M
   public $executableVersion;
   public $language;
   public $rulesetName;
+  public $syncTime;
   public $updateTime;
 
   public function setExecutable($executable)
@@ -54,6 +55,14 @@ class Google_Service_FirebaseRules_GetReleaseExecutableResponse extends Google_M
   public function getRulesetName()
   {
     return $this->rulesetName;
+  }
+  public function setSyncTime($syncTime)
+  {
+    $this->syncTime = $syncTime;
+  }
+  public function getSyncTime()
+  {
+    return $this->syncTime;
   }
   public function setUpdateTime($updateTime)
   {

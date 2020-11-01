@@ -56,10 +56,10 @@ class FileService
         }
     }
 
-    public function checkAddSmallProfileImage($profileImage)
+    public function checkAddSmallProfileImageS3($profileImage)
     {
         $file = new File();
-        $file->Load('name = ?', array($profileImage->name."_small"));
+        $file->Load('file_group = ? and employee = ?', array('profile_image_small', $profileImage->employee));
 
         if (empty($file->id)) {
             LogManager::getInstance()->info("Small profile image ".$profileImage->name."_small not found");
@@ -70,7 +70,6 @@ class FileService
             $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
             $file->$signInMappingField = $profileImage->$signInMappingField;
             $file->filename = $file->name.str_replace($profileImage->name, "", $profileImage->filename);
-            $file->file_group = $profileImage->file_group;
 
             file_put_contents("/tmp/".$file->filename."_orig", file_get_contents($largeFileUrl));
 
@@ -78,7 +77,7 @@ class FileService
                 //Resize image to 100
 
                 $img = new \Classes\SimpleImage("/tmp/".$file->filename."_orig");
-                $img->fitToWidth(100);
+                $img->fitToWidth(140);
                 $img->save("/tmp/".$file->filename);
 
                 $uploadFilesToS3Key = SettingsManager::getInstance()->getSetting(
@@ -100,9 +99,60 @@ class FileService
 
                 LogManager::getInstance()->info("Upload Result:".print_r($result, true));
 
+                $file->employee = $profileImage->employee;
+                $file->file_group = 'profile_image_small';
+                $file->size = filesize(CLIENT_BASE_PATH.'data/'.$file->filename);
+                $file->size_text = $this->getReadableSize($file->size);
+
                 if (!empty($result)) {
+                    $fileDelete = new File();
+                    $fileDelete->Load('filename = ?', [$file->filename]);
+                    if ($fileDelete->filename === $file->filename) {
+                        $fileDelete->Delete();
+                    }
+
                     $file->Save();
                 }
+
+                return $file;
+            }
+
+            return null;
+        }
+
+        return $file;
+    }
+
+    public function checkAddSmallProfileImage($profileImage)
+    {
+        $file = new File();
+        $file->Load('file_group = ? and employee = ?', array('profile_image_small', $profileImage->employee));
+
+        if (empty($file->id)) {
+            LogManager::getInstance()->info("Small profile image ".$profileImage->name."_small not found");
+
+            $largeFileUrl = $this->getFileUrl($profileImage->name);
+
+            file_put_contents("/tmp/".$profileImage->filename."_orig", file_get_contents($largeFileUrl));
+
+            if (file_exists("/tmp/".$profileImage->filename."_orig")) {
+                //Resize image to 100
+
+                $file->name = $profileImage->name."_small";
+                $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
+                $file->$signInMappingField = $profileImage->$signInMappingField;
+                $file->filename = $file->name.str_replace($profileImage->name, "", $profileImage->filename);
+
+                $img = new \Classes\SimpleImage("/tmp/".$profileImage->filename."_orig");
+                $img->fitToWidth(140);
+
+                $img->save(CLIENT_BASE_PATH.'data/'.$file->filename);
+                $file->employee = $profileImage->employee;
+                $file->file_group = 'profile_image_small';
+                $file->size = filesize(CLIENT_BASE_PATH.'data/'.$file->filename);
+                $file->size_text = $this->getReadableSize($file->size);
+                $file->Save();
+                unlink("/tmp/".$file->filename."_orig");
 
                 return $file;
             }
@@ -116,13 +166,13 @@ class FileService
     public function updateSmallProfileImage($profile)
     {
         $file = new File();
-        $file->Load('name = ?', array('profile_image_'.$profile->id));
+        $file->Load('file_group = ? and employee = ?', array('profile_image', $profile->id));
 
-        if ($file->name == 'profile_image_'.$profile->id) {
+        if ($file->employee == $profile->id) {
             $uploadFilesToS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
             if ($uploadFilesToS3 == "1") {
                 try {
-                    $fileNew = $this->checkAddSmallProfileImage($file);
+                    $fileNew = $this->checkAddSmallProfileImageS3($file);
                     if (!empty($fileNew)) {
                         $file = $fileNew;
                     }
@@ -147,23 +197,16 @@ class FileService
                 } catch (\Exception $e) {
                     LogManager::getInstance()->error("Error generating profile image: ".$e->getMessage());
                     LogManager::getInstance()->notifyException($e);
-                    if ($profile->gender == 'Female') {
-                        $profile->image = BASE_URL."images/user_female.png";
-                    } else {
-                        $profile->image = BASE_URL."images/user_male.png";
-                    }
+                    $profile->image = $this->generateProfileImage($profile->first_name, $profile->last_name);
                 }
             } elseif (substr($file->filename, 0, 8) === 'https://') {
                 $profile->image = $file->filename;
             } else {
-                $profile->image = CLIENT_BASE_URL.'data/'.$file->filename;
+                $fileNew = $this->checkAddSmallProfileImage($file);
+                $profile->image = CLIENT_BASE_URL.'data/'.$fileNew->filename;
             }
         } else {
-            if ($profile->gender == 'Female') {
-                $profile->image = BASE_URL."images/user_female.png";
-            } else {
-                $profile->image = BASE_URL."images/user_male.png";
-            }
+            $profile->image = $this->generateProfileImage($profile->first_name, $profile->last_name);
         }
 
         return $profile;
@@ -172,9 +215,9 @@ class FileService
     public function updateProfileImage($profile)
     {
         $file = new File();
-        $file->Load('name = ?', array('profile_image_'.$profile->id));
+        $file->Load('file_group = ? and employee = ?', array('profile_image', $profile->id));
 
-        if ($file->name == 'profile_image_'.$profile->id) {
+        if ($file->employee == $profile->id) {
             $uploadFilesToS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
             if ($uploadFilesToS3 == "1") {
                 $uploadFilesToS3Key = SettingsManager::getInstance()->getSetting(
@@ -200,11 +243,7 @@ class FileService
                 $profile->image = CLIENT_BASE_URL.'data/'.$file->filename;
             }
         } else {
-            if ($profile->gender == 'Female') {
-                $profile->image = BASE_URL."images/user_female.png";
-            } else {
-                $profile->image = BASE_URL."images/user_male.png";
-            }
+            $profile->image = $this->generateProfileImage($profile->first_name, $profile->last_name);
         }
 
         return $profile;
@@ -249,26 +288,29 @@ class FileService
     public function deleteProfileImage($profileId)
     {
         $file = new File();
-        $file->Load('name = ?', array('profile_image_'.$profileId));
-        if ($file->name == 'profile_image_'.$profileId) {
-            $ok = $file->Delete();
-            if ($ok) {
-                LogManager::getInstance()->info("Delete File:".CLIENT_BASE_PATH.$file->filename);
-                unlink(CLIENT_BASE_PATH.'data/'.$file->filename);
-            } else {
-                return false;
+        $profilesImages = $file->Find('file_group = ? and employee = ?', array('profile_image', $profileId));
+        foreach ($profilesImages as $file) {
+            if ($file->employee == $profileId) {
+                $ok = $file->Delete();
+                if ($ok) {
+                    LogManager::getInstance()->info("Delete File:".CLIENT_BASE_PATH.$file->filename);
+                    unlink(CLIENT_BASE_PATH.'data/'.$file->filename);
+                } else {
+                    return false;
+                }
             }
         }
 
-        $file = new File();
-        $file->Load('name = ?', array('profile_image_'.$profileId."_small"));
-        if ($file->name == 'profile_image_'.$profileId."_small") {
-            $ok = $file->Delete();
-            if ($ok) {
-                LogManager::getInstance()->info("Delete File:".CLIENT_BASE_PATH.$file->filename);
-                unlink(CLIENT_BASE_PATH.'data/'.$file->filename);
-            } else {
-                return false;
+        $profilesImages = $file->Find('file_group = ? and employee = ?', array('profile_image_small', $profileId));
+        foreach ($profilesImages as $file) {
+            if ($file->employee == $profileId) {
+                $ok = $file->Delete();
+                if ($ok) {
+                    LogManager::getInstance()->info("Delete File:".CLIENT_BASE_PATH.$file->filename);
+                    unlink(CLIENT_BASE_PATH.'data/'.$file->filename);
+                } else {
+                    return false;
+                }
             }
         }
 
@@ -329,5 +371,21 @@ class FileService
         $suffixes = array('', 'K', 'M', 'G', 'T');
 
         return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
+    }
+
+    public function generateProfileImage($first, $last)
+    {
+        $seed = substr($first, 0, 1);
+        if (empty($last)) {
+            $seed .= substr($first, -1);
+        } else {
+            $seed .= substr($last, 0, 1);
+        }
+        md5($seed . $last);
+
+        return sprintf(
+            'https://avatars.dicebear.com/api/initials/:%s.svg',
+            $seed . substr(md5($first . $last), -5)
+        );
     }
 }

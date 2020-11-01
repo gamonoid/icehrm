@@ -36,6 +36,7 @@ class Google_Service_Bigquery_ExplainQueryStage extends Google_Collection
   public $recordsWritten;
   public $shuffleOutputBytes;
   public $shuffleOutputBytesSpilled;
+  public $slotMs;
   public $startMs;
   public $status;
   protected $stepsType = 'Google_Service_Bigquery_ExplainQueryStep';
@@ -192,6 +193,14 @@ class Google_Service_Bigquery_ExplainQueryStage extends Google_Collection
   public function getShuffleOutputBytesSpilled()
   {
     return $this->shuffleOutputBytesSpilled;
+  }
+  public function setSlotMs($slotMs)
+  {
+    $this->slotMs = $slotMs;
+  }
+  public function getSlotMs()
+  {
+    return $this->slotMs;
   }
   public function setStartMs($startMs)
   {

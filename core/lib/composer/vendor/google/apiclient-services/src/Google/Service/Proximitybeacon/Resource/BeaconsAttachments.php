@@ -47,14 +47,14 @@ class Google_Service_Proximitybeacon_Resource_BeaconsAttachments extends Google_
    * the current EID or the beacon's "stable" UID. Required.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string namespacedType Specifies the namespace and type of
-   * attachments to delete in `namespace/type` format. Accepts `*` to specify "all
-   * types in all namespaces". Optional.
    * @opt_param string projectId The project id to delete beacon attachments
    * under. This field can be used when "*" is specified to mean all attachment
    * namespaces. Projects may have multiple attachments with multiple namespaces.
    * If "*" is specified and the projectId string is empty, then the project
    * making the request is used. Optional.
+   * @opt_param string namespacedType Specifies the namespace and type of
+   * attachments to delete in `namespace/type` format. Accepts `*` to specify "all
+   * types in all namespaces". Optional.
    * @return Google_Service_Proximitybeacon_DeleteAttachmentsResponse
    */
   public function batchDelete($beaconName, $optParams = array())
@@ -151,14 +151,14 @@ class Google_Service_Proximitybeacon_Resource_BeaconsAttachments extends Google_
    * the current EID or the beacon's "stable" UID. Required.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string namespacedType Specifies the namespace and type of
-   * attachment to include in response in namespace/type format. Accepts `*` to
-   * specify "all types in all namespaces".
    * @opt_param string projectId The project id to list beacon attachments under.
    * This field can be used when "*" is specified to mean all attachment
    * namespaces. Projects may have multiple attachments with multiple namespaces.
    * If "*" is specified and the projectId string is empty, then the project
    * making the request is used. Optional.
+   * @opt_param string namespacedType Specifies the namespace and type of
+   * attachment to include in response in namespace/type format. Accepts `*` to
+   * specify "all types in all namespaces".
    * @return Google_Service_Proximitybeacon_ListBeaconAttachmentsResponse
    */
   public function listBeaconsAttachments($beaconName, $optParams = array())

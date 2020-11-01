@@ -26,11 +26,17 @@
 class Google_Service_Licensing_Resource_LicenseAssignments extends Google_Service_Resource
 {
   /**
-   * Revoke License. (licenseAssignments.delete)
+   * Revoke a license. (licenseAssignments.delete)
    *
-   * @param string $productId Name for product
-   * @param string $skuId Name for sku
-   * @param string $userId email id or unique Id of the user
+   * @param string $productId A product's unique identifier. For more information
+   * about products in this version of the API, see Products and SKUs.
+   * @param string $skuId A product SKU's unique identifier. For more information
+   * about available SKUs in this version of the API, see Products and SKUs.
+   * @param string $userId The user's current primary email address. If the user's
+   * email address changes, use the new email address in your API requests. Since
+   * a userId is subject to change, do not use a userId value as a key for
+   * persistent data. This key could break if the current user's email address
+   * changes. If the userId is suspended, the license status changes.
    * @param array $optParams Optional parameters.
    */
   public function delete($productId, $skuId, $userId, $optParams = array())
@@ -40,12 +46,17 @@ class Google_Service_Licensing_Resource_LicenseAssignments extends Google_Servic
     return $this->call('delete', array($params));
   }
   /**
-   * Get license assignment of a particular product and sku for a user
-   * (licenseAssignments.get)
+   * Get a specific user's license by product SKU. (licenseAssignments.get)
    *
-   * @param string $productId Name for product
-   * @param string $skuId Name for sku
-   * @param string $userId email id or unique Id of the user
+   * @param string $productId A product's unique identifier. For more information
+   * about products in this version of the API, see Products and SKUs.
+   * @param string $skuId A product SKU's unique identifier. For more information
+   * about available SKUs in this version of the API, see Products and SKUs.
+   * @param string $userId The user's current primary email address. If the user's
+   * email address changes, use the new email address in your API requests. Since
+   * a userId is subject to change, do not use a userId value as a key for
+   * persistent data. This key could break if the current user's email address
+   * changes. If the userId is suspended, the license status changes.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Licensing_LicenseAssignment
    */
@@ -56,10 +67,12 @@ class Google_Service_Licensing_Resource_LicenseAssignments extends Google_Servic
     return $this->call('get', array($params), "Google_Service_Licensing_LicenseAssignment");
   }
   /**
-   * Assign License. (licenseAssignments.insert)
+   * Assign a license. (licenseAssignments.insert)
    *
-   * @param string $productId Name for product
-   * @param string $skuId Name for sku
+   * @param string $productId A product's unique identifier. For more information
+   * about products in this version of the API, see Products and SKUs.
+   * @param string $skuId A product SKU's unique identifier. For more information
+   * about available SKUs in this version of the API, see Products and SKUs.
    * @param Google_Service_Licensing_LicenseAssignmentInsert $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Licensing_LicenseAssignment
@@ -71,18 +84,23 @@ class Google_Service_Licensing_Resource_LicenseAssignments extends Google_Servic
     return $this->call('insert', array($params), "Google_Service_Licensing_LicenseAssignment");
   }
   /**
-   * List license assignments for given product of the customer.
+   * List all users assigned licenses for a specific product SKU.
    * (licenseAssignments.listForProduct)
    *
-   * @param string $productId Name for product
-   * @param string $customerId CustomerId represents the customer for whom
-   * licenseassignments are queried
+   * @param string $productId A product's unique identifier. For more information
+   * about products in this version of the API, see Products and SKUs.
+   * @param string $customerId Customer's customerId. A previous version of this
+   * API accepted the primary domain name as a value for this field. If the
+   * customer is suspended, the server returns an error.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string maxResults Maximum number of campaigns to return at one
-   * time. Must be positive. Optional. Default value is 100.
-   * @opt_param string pageToken Token to fetch the next page.Optional. By default
-   * server will return first page
+   * @opt_param string maxResults The maxResults query string determines how many
+   * entries are returned on each page of a large response. This is an optional
+   * parameter. The value must be a positive number.
+   * @opt_param string pageToken Token to fetch the next page of data. The
+   * maxResults query string is related to the pageToken since maxResults
+   * determines how many entries are returned on each page. This is an optional
+   * query string. If not specified, the server returns the first page.
    * @return Google_Service_Licensing_LicenseAssignmentList
    */
   public function listForProduct($productId, $customerId, $optParams = array())
@@ -92,19 +110,25 @@ class Google_Service_Licensing_Resource_LicenseAssignments extends Google_Servic
     return $this->call('listForProduct', array($params), "Google_Service_Licensing_LicenseAssignmentList");
   }
   /**
-   * List license assignments for given product and sku of the customer.
+   * List all users assigned licenses for a specific product SKU.
    * (licenseAssignments.listForProductAndSku)
    *
-   * @param string $productId Name for product
-   * @param string $skuId Name for sku
-   * @param string $customerId CustomerId represents the customer for whom
-   * licenseassignments are queried
+   * @param string $productId A product's unique identifier. For more information
+   * about products in this version of the API, see Products and SKUs.
+   * @param string $skuId A product SKU's unique identifier. For more information
+   * about available SKUs in this version of the API, see Products and SKUs.
+   * @param string $customerId Customer's customerId. A previous version of this
+   * API accepted the primary domain name as a value for this field. If the
+   * customer is suspended, the server returns an error.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string maxResults Maximum number of campaigns to return at one
-   * time. Must be positive. Optional. Default value is 100.
-   * @opt_param string pageToken Token to fetch the next page.Optional. By default
-   * server will return first page
+   * @opt_param string maxResults The maxResults query string determines how many
+   * entries are returned on each page of a large response. This is an optional
+   * parameter. The value must be a positive number.
+   * @opt_param string pageToken Token to fetch the next page of data. The
+   * maxResults query string is related to the pageToken since maxResults
+   * determines how many entries are returned on each page. This is an optional
+   * query string. If not specified, the server returns the first page.
    * @return Google_Service_Licensing_LicenseAssignmentList
    */
   public function listForProductAndSku($productId, $skuId, $customerId, $optParams = array())
@@ -114,12 +138,18 @@ class Google_Service_Licensing_Resource_LicenseAssignments extends Google_Servic
     return $this->call('listForProductAndSku', array($params), "Google_Service_Licensing_LicenseAssignmentList");
   }
   /**
-   * Assign License. This method supports patch semantics.
+   * Patch a Licensing info via Apiary Patch Orchestration
    * (licenseAssignments.patch)
    *
-   * @param string $productId Name for product
-   * @param string $skuId Name for sku for which license would be revoked
-   * @param string $userId email id or unique Id of the user
+   * @param string $productId A product's unique identifier. For more information
+   * about products in this version of the API, see Products and SKUs.
+   * @param string $skuId A product SKU's unique identifier. For more information
+   * about available SKUs in this version of the API, see Products and SKUs.
+   * @param string $userId The user's current primary email address. If the user's
+   * email address changes, use the new email address in your API requests. Since
+   * a userId is subject to change, do not use a userId value as a key for
+   * persistent data. This key could break if the current user's email address
+   * changes. If the userId is suspended, the license status changes.
    * @param Google_Service_Licensing_LicenseAssignment $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Licensing_LicenseAssignment
@@ -131,11 +161,18 @@ class Google_Service_Licensing_Resource_LicenseAssignments extends Google_Servic
     return $this->call('patch', array($params), "Google_Service_Licensing_LicenseAssignment");
   }
   /**
-   * Assign License. (licenseAssignments.update)
+   * Reassign a user's product SKU with a different SKU in the same product.
+   * (licenseAssignments.update)
    *
-   * @param string $productId Name for product
-   * @param string $skuId Name for sku for which license would be revoked
-   * @param string $userId email id or unique Id of the user
+   * @param string $productId A product's unique identifier. For more information
+   * about products in this version of the API, see Products and SKUs.
+   * @param string $skuId A product SKU's unique identifier. For more information
+   * about available SKUs in this version of the API, see Products and SKUs.
+   * @param string $userId The user's current primary email address. If the user's
+   * email address changes, use the new email address in your API requests. Since
+   * a userId is subject to change, do not use a userId value as a key for
+   * persistent data. This key could break if the current user's email address
+   * changes. If the userId is suspended, the license status changes.
    * @param Google_Service_Licensing_LicenseAssignment $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Licensing_LicenseAssignment

@@ -22,6 +22,8 @@ class Google_Service_DLP_GooglePrivacyDlpV2Location extends Google_Collection
   protected $byteRangeDataType = '';
   protected $codepointRangeType = 'Google_Service_DLP_GooglePrivacyDlpV2Range';
   protected $codepointRangeDataType = '';
+  protected $containerType = 'Google_Service_DLP_GooglePrivacyDlpV2Container';
+  protected $containerDataType = '';
   protected $contentLocationsType = 'Google_Service_DLP_GooglePrivacyDlpV2ContentLocation';
   protected $contentLocationsDataType = 'array';
 
@@ -52,6 +54,20 @@ class Google_Service_DLP_GooglePrivacyDlpV2Location extends Google_Collection
   public function getCodepointRange()
   {
     return $this->codepointRange;
+  }
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2Container
+   */
+  public function setContainer(Google_Service_DLP_GooglePrivacyDlpV2Container $container)
+  {
+    $this->container = $container;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2Container
+   */
+  public function getContainer()
+  {
+    return $this->container;
   }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2ContentLocation

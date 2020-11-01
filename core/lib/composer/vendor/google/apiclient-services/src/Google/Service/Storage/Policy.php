@@ -23,6 +23,7 @@ class Google_Service_Storage_Policy extends Google_Collection
   public $etag;
   public $kind;
   public $resourceId;
+  public $version;
 
   /**
    * @param Google_Service_Storage_PolicyBindings
@@ -61,5 +62,13 @@ class Google_Service_Storage_Policy extends Google_Collection
   public function getResourceId()
   {
     return $this->resourceId;
+  }
+  public function setVersion($version)
+  {
+    $this->version = $version;
+  }
+  public function getVersion()
+  {
+    return $this->version;
   }
 }

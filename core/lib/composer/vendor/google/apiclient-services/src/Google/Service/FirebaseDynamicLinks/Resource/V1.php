@@ -35,6 +35,8 @@ class Google_Service_FirebaseDynamicLinks_Resource_V1 extends Google_Service_Res
    * @param array $optParams Optional parameters.
    *
    * @opt_param string durationDays The span of time requested in days.
+   * @opt_param string sdkVersion Google SDK version. Version takes the form
+   * "$major.$minor.$patch"
    * @return Google_Service_FirebaseDynamicLinks_DynamicLinkStats
    */
   public function getLinkStats($dynamicLink, $optParams = array())
@@ -56,5 +58,19 @@ class Google_Service_FirebaseDynamicLinks_Resource_V1 extends Google_Service_Res
     $params = array('postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('installAttribution', array($params), "Google_Service_FirebaseDynamicLinks_GetIosPostInstallAttributionResponse");
+  }
+  /**
+   * Get iOS reopen attribution for app universal link open deeplinking.
+   * (v1.reopenAttribution)
+   *
+   * @param Google_Service_FirebaseDynamicLinks_GetIosReopenAttributionRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_FirebaseDynamicLinks_GetIosReopenAttributionResponse
+   */
+  public function reopenAttribution(Google_Service_FirebaseDynamicLinks_GetIosReopenAttributionRequest $postBody, $optParams = array())
+  {
+    $params = array('postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('reopenAttribution', array($params), "Google_Service_FirebaseDynamicLinks_GetIosReopenAttributionResponse");
   }
 }

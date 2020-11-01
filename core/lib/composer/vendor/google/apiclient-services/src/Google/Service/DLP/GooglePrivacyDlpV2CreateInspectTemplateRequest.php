@@ -19,6 +19,7 @@ class Google_Service_DLP_GooglePrivacyDlpV2CreateInspectTemplateRequest extends 
 {
   protected $inspectTemplateType = 'Google_Service_DLP_GooglePrivacyDlpV2InspectTemplate';
   protected $inspectTemplateDataType = '';
+  public $locationId;
   public $templateId;
 
   /**
@@ -34,6 +35,14 @@ class Google_Service_DLP_GooglePrivacyDlpV2CreateInspectTemplateRequest extends 
   public function getInspectTemplate()
   {
     return $this->inspectTemplate;
+  }
+  public function setLocationId($locationId)
+  {
+    $this->locationId = $locationId;
+  }
+  public function getLocationId()
+  {
+    return $this->locationId;
   }
   public function setTemplateId($templateId)
   {

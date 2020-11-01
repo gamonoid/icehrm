@@ -15,10 +15,12 @@
  * the License.
  */
 
-class Google_Service_Spanner_Instance extends Google_Model
+class Google_Service_Spanner_Instance extends Google_Collection
 {
+  protected $collection_key = 'endpointUris';
   public $config;
   public $displayName;
+  public $endpointUris;
   public $labels;
   public $name;
   public $nodeCount;
@@ -39,6 +41,14 @@ class Google_Service_Spanner_Instance extends Google_Model
   public function getDisplayName()
   {
     return $this->displayName;
+  }
+  public function setEndpointUris($endpointUris)
+  {
+    $this->endpointUris = $endpointUris;
+  }
+  public function getEndpointUris()
+  {
+    return $this->endpointUris;
   }
   public function setLabels($labels)
   {

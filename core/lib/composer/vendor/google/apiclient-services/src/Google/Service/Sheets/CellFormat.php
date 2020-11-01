@@ -19,6 +19,8 @@ class Google_Service_Sheets_CellFormat extends Google_Model
 {
   protected $backgroundColorType = 'Google_Service_Sheets_Color';
   protected $backgroundColorDataType = '';
+  protected $backgroundColorStyleType = 'Google_Service_Sheets_ColorStyle';
+  protected $backgroundColorStyleDataType = '';
   protected $bordersType = 'Google_Service_Sheets_Borders';
   protected $bordersDataType = '';
   public $horizontalAlignment;
@@ -48,6 +50,20 @@ class Google_Service_Sheets_CellFormat extends Google_Model
   public function getBackgroundColor()
   {
     return $this->backgroundColor;
+  }
+  /**
+   * @param Google_Service_Sheets_ColorStyle
+   */
+  public function setBackgroundColorStyle(Google_Service_Sheets_ColorStyle $backgroundColorStyle)
+  {
+    $this->backgroundColorStyle = $backgroundColorStyle;
+  }
+  /**
+   * @return Google_Service_Sheets_ColorStyle
+   */
+  public function getBackgroundColorStyle()
+  {
+    return $this->backgroundColorStyle;
   }
   /**
    * @param Google_Service_Sheets_Borders

@@ -40,7 +40,8 @@ class ModuleAdapter extends AdapterBase {
       ['label', { label: 'Label', type: 'text', validation: '' }],
       ['status', { label: 'Status', type: 'select', source: [['Enabled', 'Enabled'], ['Disabled', 'Disabled']] }],
       ['user_levels', { label: 'User Levels', type: 'select2multi', source: [['Admin', 'Admin'], ['Manager', 'Manager'], ['Employee', 'Employee']] }],
-      ['user_roles', { label: 'User Roles', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
+      ['user_roles', { label: 'Allowed User Roles', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
+      ['user_roles_blacklist', { label: 'Disallowed User Roles', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
     ];
   }
 

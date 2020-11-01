@@ -15,8 +15,6 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
- *
- * @method reset() Resets the trace.
  */
 interface TraceableEventDispatcherInterface extends EventDispatcherInterface
 {

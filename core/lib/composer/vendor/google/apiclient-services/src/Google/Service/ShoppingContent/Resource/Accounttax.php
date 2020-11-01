@@ -31,8 +31,6 @@ class Google_Service_ShoppingContent_Resource_Accounttax extends Google_Service_
    *
    * @param Google_Service_ShoppingContent_AccounttaxCustomBatchRequest $postBody
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param bool dryRun Flag to run the request in dry-run mode.
    * @return Google_Service_ShoppingContent_AccounttaxCustomBatchResponse
    */
   public function custombatch(Google_Service_ShoppingContent_AccounttaxCustomBatchRequest $postBody, $optParams = array())
@@ -46,7 +44,7 @@ class Google_Service_ShoppingContent_Resource_Accounttax extends Google_Service_
    *
    * @param string $merchantId The ID of the managing account. If this parameter
    * is not the same as accountId, then this account must be a multi-client
-   * account and accountId must be the ID of a sub-account of this account.
+   * account and `accountId` must be the ID of a sub-account of this account.
    * @param string $accountId The ID of the account for which to get/update
    * account tax settings.
    * @param array $optParams Optional parameters.
@@ -78,38 +76,16 @@ class Google_Service_ShoppingContent_Resource_Accounttax extends Google_Service_
     return $this->call('list', array($params), "Google_Service_ShoppingContent_AccounttaxListResponse");
   }
   /**
-   * Updates the tax settings of the account. This method supports patch
-   * semantics. (accounttax.patch)
+   * Updates the tax settings of the account. Any fields that are not provided are
+   * deleted from the resource. (accounttax.update)
    *
    * @param string $merchantId The ID of the managing account. If this parameter
    * is not the same as accountId, then this account must be a multi-client
-   * account and accountId must be the ID of a sub-account of this account.
+   * account and `accountId` must be the ID of a sub-account of this account.
    * @param string $accountId The ID of the account for which to get/update
    * account tax settings.
    * @param Google_Service_ShoppingContent_AccountTax $postBody
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param bool dryRun Flag to run the request in dry-run mode.
-   * @return Google_Service_ShoppingContent_AccountTax
-   */
-  public function patch($merchantId, $accountId, Google_Service_ShoppingContent_AccountTax $postBody, $optParams = array())
-  {
-    $params = array('merchantId' => $merchantId, 'accountId' => $accountId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_ShoppingContent_AccountTax");
-  }
-  /**
-   * Updates the tax settings of the account. (accounttax.update)
-   *
-   * @param string $merchantId The ID of the managing account. If this parameter
-   * is not the same as accountId, then this account must be a multi-client
-   * account and accountId must be the ID of a sub-account of this account.
-   * @param string $accountId The ID of the account for which to get/update
-   * account tax settings.
-   * @param Google_Service_ShoppingContent_AccountTax $postBody
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param bool dryRun Flag to run the request in dry-run mode.
    * @return Google_Service_ShoppingContent_AccountTax
    */
   public function update($merchantId, $accountId, Google_Service_ShoppingContent_AccountTax $postBody, $optParams = array())

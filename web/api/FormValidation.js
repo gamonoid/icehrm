@@ -56,8 +56,6 @@ const ValidationRules = {
     }
     return false;
   },
-
-
 };
 
 class FormValidation {

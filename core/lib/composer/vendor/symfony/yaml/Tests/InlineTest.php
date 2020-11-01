@@ -18,11 +18,6 @@ use Symfony\Component\Yaml\Yaml;
 
 class InlineTest extends TestCase
 {
-    protected function setUp()
-    {
-        Inline::initialize(0, 0);
-    }
-
     /**
      * @dataProvider getTestsForParse
      */
@@ -54,11 +49,10 @@ class InlineTest extends TestCase
     public function getTestsForParsePhpConstants()
     {
         return array(
-            array('!php/const Symfony\Component\Yaml\Yaml::PARSE_CONSTANT', Yaml::PARSE_CONSTANT),
-            array('!php/const PHP_INT_MAX', PHP_INT_MAX),
-            array('[!php/const PHP_INT_MAX]', array(PHP_INT_MAX)),
-            array('{ foo: !php/const PHP_INT_MAX }', array('foo' => PHP_INT_MAX)),
-            array('!php/const NULL', null),
+            array('!php/const:Symfony\Component\Yaml\Yaml::PARSE_CONSTANT', Yaml::PARSE_CONSTANT),
+            array('!php/const:PHP_INT_MAX', PHP_INT_MAX),
+            array('[!php/const:PHP_INT_MAX]', array(PHP_INT_MAX)),
+            array('{ foo: !php/const:PHP_INT_MAX }', array('foo' => PHP_INT_MAX)),
         );
     }
 
@@ -68,37 +62,16 @@ class InlineTest extends TestCase
      */
     public function testParsePhpConstantThrowsExceptionWhenUndefined()
     {
-        Inline::parse('!php/const WRONG_CONSTANT', Yaml::PARSE_CONSTANT);
+        Inline::parse('!php/const:WRONG_CONSTANT', Yaml::PARSE_CONSTANT);
     }
 
     /**
      * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessageRegExp #The string "!php/const PHP_INT_MAX" could not be parsed as a constant.*#
+     * @expectedExceptionMessageRegExp #The string "!php/const:PHP_INT_MAX" could not be parsed as a constant.*#
      */
     public function testParsePhpConstantThrowsExceptionOnInvalidType()
     {
-        Inline::parse('!php/const PHP_INT_MAX', Yaml::PARSE_EXCEPTION_ON_INVALID_TYPE);
-    }
-
-    /**
-     * @group legacy
-     * @expectedDeprecation The !php/const: tag to indicate dumped PHP constants is deprecated since Symfony 3.4 and will be removed in 4.0. Use the !php/const (without the colon) tag instead on line 1.
-     * @dataProvider getTestsForParseLegacyPhpConstants
-     */
-    public function testDeprecatedConstantTag($yaml, $expectedValue)
-    {
-        $this->assertSame($expectedValue, Inline::parse($yaml, Yaml::PARSE_CONSTANT));
-    }
-
-    public function getTestsForParseLegacyPhpConstants()
-    {
-        return array(
-            array('!php/const:Symfony\Component\Yaml\Yaml::PARSE_CONSTANT', Yaml::PARSE_CONSTANT),
-            array('!php/const:PHP_INT_MAX', PHP_INT_MAX),
-            array('[!php/const:PHP_INT_MAX]', array(PHP_INT_MAX)),
-            array('{ foo: !php/const:PHP_INT_MAX }', array('foo' => PHP_INT_MAX)),
-            array('!php/const:NULL', null),
-        );
+        Inline::parse('!php/const:PHP_INT_MAX', Yaml::PARSE_EXCEPTION_ON_INVALID_TYPE);
     }
 
     /**
@@ -195,7 +168,7 @@ class InlineTest extends TestCase
 
     /**
      * @group legacy
-     * @expectedDeprecation Using a colon after an unquoted mapping key that is not followed by an indication character (i.e. " ", ",", "[", "]", "{", "}") is deprecated since Symfony 3.2 and will throw a ParseException in 4.0 on line 1.
+     * @expectedDeprecation Using a colon after an unquoted mapping key that is not followed by an indication character (i.e. " ", ",", "[", "]", "{", "}") is deprecated since version 3.2 and will throw a ParseException in 4.0.
      * throws \Symfony\Component\Yaml\Exception\ParseException in 4.0
      */
     public function testParseMappingKeyWithColonNotFollowedBySpace()
@@ -283,7 +256,7 @@ class InlineTest extends TestCase
 
     /**
      * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage A reference must contain at least one character at line 1.
+     * @expectedExceptionMessage A reference must contain at least one character.
      */
     public function testParseUnquotedAsterisk()
     {
@@ -292,7 +265,7 @@ class InlineTest extends TestCase
 
     /**
      * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage A reference must contain at least one character at line 1.
+     * @expectedExceptionMessage A reference must contain at least one character.
      */
     public function testParseUnquotedAsteriskFollowedByAComment()
     {
@@ -301,16 +274,11 @@ class InlineTest extends TestCase
 
     /**
      * @dataProvider getReservedIndicators
+     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedExceptionMessage cannot start a plain scalar; you need to quote the scalar.
      */
     public function testParseUnquotedScalarStartingWithReservedIndicator($indicator)
     {
-        if (method_exists($this, 'expectExceptionMessage')) {
-            $this->expectException(ParseException::class);
-            $this->expectExceptionMessage(sprintf('cannot start a plain scalar; you need to quote the scalar at line 1 (near "%sfoo ").', $indicator));
-        } else {
-            $this->setExpectedException(ParseException::class, sprintf('cannot start a plain scalar; you need to quote the scalar at line 1 (near "%sfoo ").', $indicator));
-        }
-
         Inline::parse(sprintf('{ foo: %sfoo }', $indicator));
     }
 
@@ -321,16 +289,11 @@ class InlineTest extends TestCase
 
     /**
      * @dataProvider getScalarIndicators
+     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedExceptionMessage cannot start a plain scalar; you need to quote the scalar.
      */
     public function testParseUnquotedScalarStartingWithScalarIndicator($indicator)
     {
-        if (method_exists($this, 'expectExceptionMessage')) {
-            $this->expectException(ParseException::class);
-            $this->expectExceptionMessage(sprintf('cannot start a plain scalar; you need to quote the scalar at line 1 (near "%sfoo ").', $indicator));
-        } else {
-            $this->setExpectedException(ParseException::class, sprintf('cannot start a plain scalar; you need to quote the scalar at line 1 (near "%sfoo ").', $indicator));
-        }
-
         Inline::parse(sprintf('{ foo: %sfoo }', $indicator));
     }
 
@@ -341,7 +304,7 @@ class InlineTest extends TestCase
 
     /**
      * @group legacy
-     * @expectedDeprecation Not quoting the scalar "%bar " starting with the "%" indicator character is deprecated since Symfony 3.1 and will throw a ParseException in 4.0 on line 1.
+     * @expectedDeprecation Not quoting the scalar "%bar " starting with the "%" indicator character is deprecated since Symfony 3.1 and will throw a ParseException in 4.0.
      * throws \Symfony\Component\Yaml\Exception\ParseException in 4.0
      */
     public function testParseUnquotedScalarStartingWithPercentCharacter()
@@ -422,8 +385,8 @@ class InlineTest extends TestCase
             array('[\'foo,bar\', \'foo bar\']', array('foo,bar', 'foo bar')),
 
             // mappings
-            array('{foo: bar,bar: foo,"false": false, "null": null,integer: 12}', array('foo' => 'bar', 'bar' => 'foo', 'false' => false, 'null' => null, 'integer' => 12)),
-            array('{ foo  : bar, bar : foo, "false"  :   false,  "null"  :   null,  integer :  12  }', array('foo' => 'bar', 'bar' => 'foo', 'false' => false, 'null' => null, 'integer' => 12)),
+            array('{foo: bar,bar: foo,false: false,null: null,integer: 12}', array('foo' => 'bar', 'bar' => 'foo', 'false' => false, 'null' => null, 'integer' => 12), Yaml::PARSE_KEYS_AS_STRINGS),
+            array('{ foo  : bar, bar : foo,  false  :   false,  null  :   null,  integer :  12  }', array('foo' => 'bar', 'bar' => 'foo', 'false' => false, 'null' => null, 'integer' => 12), Yaml::PARSE_KEYS_AS_STRINGS),
             array('{foo: \'bar\', bar: \'foo: bar\'}', array('foo' => 'bar', 'bar' => 'foo: bar')),
             array('{\'foo\': \'bar\', "bar": \'foo: bar\'}', array('foo' => 'bar', 'bar' => 'foo: bar')),
             array('{\'foo\'\'\': \'bar\', "bar\"": \'foo: bar\'}', array('foo\'' => 'bar', 'bar"' => 'foo: bar')),
@@ -493,8 +456,8 @@ class InlineTest extends TestCase
             array('[\'foo,bar\', \'foo bar\']', array('foo,bar', 'foo bar')),
 
             // mappings
-            array('{foo: bar,bar: foo,"false": false,"null": null,integer: 12}', (object) array('foo' => 'bar', 'bar' => 'foo', 'false' => false, 'null' => null, 'integer' => 12), Yaml::PARSE_OBJECT_FOR_MAP),
-            array('{ foo  : bar, bar : foo,  "false"  :   false,  "null"  :   null,  integer :  12  }', (object) array('foo' => 'bar', 'bar' => 'foo', 'false' => false, 'null' => null, 'integer' => 12), Yaml::PARSE_OBJECT_FOR_MAP),
+            array('{foo: bar,bar: foo,false: false,null: null,integer: 12}', (object) array('foo' => 'bar', 'bar' => 'foo', 'false' => false, 'null' => null, 'integer' => 12), Yaml::PARSE_OBJECT_FOR_MAP | Yaml::PARSE_KEYS_AS_STRINGS),
+            array('{ foo  : bar, bar : foo,  false  :   false,  null  :   null,  integer :  12  }', (object) array('foo' => 'bar', 'bar' => 'foo', 'false' => false, 'null' => null, 'integer' => 12), Yaml::PARSE_OBJECT_FOR_MAP | Yaml::PARSE_KEYS_AS_STRINGS),
             array('{foo: \'bar\', bar: \'foo: bar\'}', (object) array('foo' => 'bar', 'bar' => 'foo: bar')),
             array('{\'foo\': \'bar\', "bar": \'foo: bar\'}', (object) array('foo' => 'bar', 'bar' => 'foo: bar')),
             array('{\'foo\'\'\': \'bar\', "bar\"": \'foo: bar\'}', (object) array('foo\'' => 'bar', 'bar"' => 'foo: bar')),
@@ -575,7 +538,7 @@ class InlineTest extends TestCase
             array('[\'foo,bar\', \'foo bar\']', array('foo,bar', 'foo bar')),
 
             // mappings
-            array('{ foo: bar, bar: foo, \'false\': false, \'null\': null, integer: 12 }', array('foo' => 'bar', 'bar' => 'foo', 'false' => false, 'null' => null, 'integer' => 12)),
+            array('{ foo: bar, bar: foo, \'false\': false, \'null\': null, integer: 12 }', array('foo' => 'bar', 'bar' => 'foo', 'false' => false, 'null' => null, 'integer' => 12), Yaml::PARSE_KEYS_AS_STRINGS),
             array('{ foo: bar, bar: \'foo: bar\' }', array('foo' => 'bar', 'bar' => 'foo: bar')),
 
             // nested sequences and mappings
@@ -591,7 +554,7 @@ class InlineTest extends TestCase
 
             array('[foo, \'@foo.baz\', { \'%foo%\': \'foo is %foo%\', bar: \'%foo%\' }, true, \'@service_container\']', array('foo', '@foo.baz', array('%foo%' => 'foo is %foo%', 'bar' => '%foo%'), true, '@service_container')),
 
-            array('{ foo: { bar: { 1: 2, baz: 3 } } }', array('foo' => array('bar' => array(1 => 2, 'baz' => 3)))),
+            array('{ foo: { bar: { 1: 2, baz: 3 } } }', array('foo' => array('bar' => array(1 => 2, 'baz' => 3))), Yaml::PARSE_KEYS_AS_STRINGS),
         );
     }
 
@@ -718,7 +681,7 @@ class InlineTest extends TestCase
 
     /**
      * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage Malformed inline YAML string: {this, is not, supported} at line 1.
+     * @expectedExceptionMessage Malformed inline YAML string: {this, is not, supported}.
      */
     public function testNotSupportedMissingValue()
     {
@@ -737,7 +700,7 @@ class InlineTest extends TestCase
 
     /**
      * @group legacy
-     * @expectedDeprecation Omitting the key of a mapping is deprecated and will throw a ParseException in 4.0 on line 1.
+     * @expectedDeprecation Omitting the key of a mapping is deprecated and will throw a ParseException in 4.0.
      */
     public function testOmittedMappingKeyIsParsedAsColon()
     {
@@ -767,7 +730,7 @@ class InlineTest extends TestCase
 
     /**
      * @group legacy
-     * @expectedDeprecation Implicit casting of incompatible mapping keys to strings is deprecated since Symfony 3.3 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0. Quote your evaluable mapping keys instead on line 1.
+     * @expectedDeprecation Implicit casting of incompatible mapping keys to strings is deprecated since version 3.3 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0. Quote your evaluable mapping keys instead.
      * @dataProvider getNotPhpCompatibleMappingKeyData
      */
     public function testImplicitStringCastingOfMappingKeysIsDeprecated($yaml, $expected)
@@ -776,14 +739,11 @@ class InlineTest extends TestCase
     }
 
     /**
-     * @group legacy
-     * @expectedDeprecation Using the Yaml::PARSE_KEYS_AS_STRINGS flag is deprecated since Symfony 3.4 as it will be removed in 4.0. Quote your keys when they are evaluable instead.
-     * @expectedDeprecation Implicit casting of incompatible mapping keys to strings is deprecated since Symfony 3.3 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0. Quote your evaluable mapping keys instead on line 1.
      * @dataProvider getNotPhpCompatibleMappingKeyData
      */
     public function testExplicitStringCastingOfMappingKeys($yaml, $expected)
     {
-        $this->assertSame($expected, Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS));
+        $this->assertSame($expected, Inline::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS));
     }
 
     public function getNotPhpCompatibleMappingKeyData()
@@ -794,14 +754,5 @@ class InlineTest extends TestCase
             'null' => array('{null: "foo"}', array('null' => 'foo')),
             'float' => array('{0.25: "foo"}', array('0.25' => 'foo')),
         );
-    }
-
-    /**
-     * @group legacy
-     * @expectedDeprecation Support for the !str tag is deprecated since Symfony 3.4. Use the !!str tag instead on line 1.
-     */
-    public function testDeprecatedStrTag()
-    {
-        $this->assertSame(array('foo' => 'bar'), Inline::parse('{ foo: !str bar }'));
     }
 }

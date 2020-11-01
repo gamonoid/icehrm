@@ -4,7 +4,6 @@ namespace Consolidation\OutputFormatters\StructuredData;
 use Consolidation\OutputFormatters\StructuredData\RestructureInterface;
 use Consolidation\OutputFormatters\Options\FormatterOptions;
 use Consolidation\OutputFormatters\StructuredData\ListDataInterface;
-use Consolidation\OutputFormatters\Transformations\ReorderFields;
 use Consolidation\OutputFormatters\Transformations\TableTransformation;
 
 /**
@@ -14,7 +13,7 @@ use Consolidation\OutputFormatters\Transformations\TableTransformation;
  *
  * It is presumed that every row contains the same keys.
  */
-abstract class AbstractStructuredList extends ListDataFromKeys implements RestructureInterface, RenderCellCollectionInterface
+abstract class AbstractStructuredList extends AbstractListData implements RestructureInterface, RenderCellCollectionInterface
 {
     use RenderCellCollectionTrait;
 
@@ -43,45 +42,11 @@ abstract class AbstractStructuredList extends ListDataFromKeys implements Restru
         return new TableTransformation($data, $fieldLabels, $rowLabels);
     }
 
-    protected function getReorderedFieldLabels($data, $options, $defaults)
-    {
-        $reorderer = new ReorderFields();
-        $fieldLabels = $reorderer->reorder(
-            $this->getFields($options, $defaults),
-            $options->get(FormatterOptions::FIELD_LABELS, $defaults),
-            $data
-        );
-        return $fieldLabels;
-    }
-
-    protected function getFields($options, $defaults)
-    {
-        $fieldShortcut = $options->get(FormatterOptions::FIELD);
-        if (!empty($fieldShortcut)) {
-            return [$fieldShortcut];
-        }
-        $result = $options->get(FormatterOptions::FIELDS, $defaults);
-        if (!empty($result)) {
-            return $result;
-        }
-        return $options->get(FormatterOptions::DEFAULT_FIELDS, $defaults);
-    }
-
-    /**
-     * A structured list may provide its own set of default options. These
-     * will be used in place of the command's default options (from the
-     * annotations) in instances where the user does not provide the options
-     * explicitly (on the commandline) or implicitly (via a configuration file).
-     *
-     * @return array
-     */
     protected function defaultOptions()
     {
         return [
-            FormatterOptions::FIELDS => [],
-            FormatterOptions::FIELD_LABELS => [],
             FormatterOptions::ROW_LABELS => [],
             FormatterOptions::DEFAULT_FIELDS => [],
-        ];
+        ] + parent::defaultOptions();
     }
 }

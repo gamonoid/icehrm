@@ -40,7 +40,7 @@ class Google_Service_Analytics_Resource_ManagementFilters extends Google_Service
     return $this->call('delete', array($params), "Google_Service_Analytics_Filter");
   }
   /**
-   * Returns a filters to which the user has access. (filters.get)
+   * Returns filters to which the user has access. (filters.get)
    *
    * @param string $accountId Account ID to retrieve filters for.
    * @param string $filterId Filter ID to retrieve filters for.

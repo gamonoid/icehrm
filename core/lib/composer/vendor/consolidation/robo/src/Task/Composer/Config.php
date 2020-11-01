@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Composer;
 
 /**
@@ -19,7 +20,11 @@ class Config extends Base
     protected $action = 'config';
 
     /**
-     * Set a configuration value
+     * Set a configuration value.
+     *
+     * @param string $key
+     * @param string $value
+     *
      * @return $this
      */
     public function set($key, $value)
@@ -31,6 +36,9 @@ class Config extends Base
 
     /**
      * Operate on the global repository
+     *
+     * @param bool $useGlobal
+     *
      * @return $this
      */
     public function useGlobal($useGlobal = true)
@@ -42,6 +50,10 @@ class Config extends Base
     }
 
     /**
+     * @param string $id
+     * @param string $uri
+     * @param string $repoType
+     *
      * @return $this
      */
     public function repository($id, $uri, $repoType = 'vcs')
@@ -53,6 +65,8 @@ class Config extends Base
     }
 
     /**
+     * @param string $id
+     *
      * @return $this
      */
     public function removeRepository($id)
@@ -62,6 +76,8 @@ class Config extends Base
     }
 
     /**
+     * @param string $id
+     *
      * @return $this
      */
     public function disableRepository($id)
@@ -72,6 +88,8 @@ class Config extends Base
     }
 
     /**
+     * @param string $id
+     *
      * @return $this
      */
     public function enableRepository($id)

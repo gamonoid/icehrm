@@ -79,26 +79,6 @@ class Google_Service_AndroidEnterprise_Resource_Installs extends Google_Service_
   /**
    * Requests to install the latest version of an app to a device. If the app is
    * already installed, then it is updated to the latest version if necessary.
-   * This method supports patch semantics. (installs.patch)
-   *
-   * @param string $enterpriseId The ID of the enterprise.
-   * @param string $userId The ID of the user.
-   * @param string $deviceId The Android ID of the device.
-   * @param string $installId The ID of the product represented by the install,
-   * e.g. "app:com.google.android.gm".
-   * @param Google_Service_AndroidEnterprise_Install $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_AndroidEnterprise_Install
-   */
-  public function patch($enterpriseId, $userId, $deviceId, $installId, Google_Service_AndroidEnterprise_Install $postBody, $optParams = array())
-  {
-    $params = array('enterpriseId' => $enterpriseId, 'userId' => $userId, 'deviceId' => $deviceId, 'installId' => $installId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_AndroidEnterprise_Install");
-  }
-  /**
-   * Requests to install the latest version of an app to a device. If the app is
-   * already installed, then it is updated to the latest version if necessary.
    * (installs.update)
    *
    * @param string $enterpriseId The ID of the enterprise.

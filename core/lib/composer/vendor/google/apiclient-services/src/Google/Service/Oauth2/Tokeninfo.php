@@ -18,31 +18,19 @@
 class Google_Service_Oauth2_Tokeninfo extends Google_Model
 {
   protected $internal_gapi_mappings = array(
-        "accessType" => "access_type",
         "expiresIn" => "expires_in",
         "issuedTo" => "issued_to",
-        "tokenHandle" => "token_handle",
         "userId" => "user_id",
         "verifiedEmail" => "verified_email",
   );
-  public $accessType;
   public $audience;
   public $email;
   public $expiresIn;
   public $issuedTo;
   public $scope;
-  public $tokenHandle;
   public $userId;
   public $verifiedEmail;
 
-  public function setAccessType($accessType)
-  {
-    $this->accessType = $accessType;
-  }
-  public function getAccessType()
-  {
-    return $this->accessType;
-  }
   public function setAudience($audience)
   {
     $this->audience = $audience;
@@ -82,14 +70,6 @@ class Google_Service_Oauth2_Tokeninfo extends Google_Model
   public function getScope()
   {
     return $this->scope;
-  }
-  public function setTokenHandle($tokenHandle)
-  {
-    $this->tokenHandle = $tokenHandle;
-  }
-  public function getTokenHandle()
-  {
-    return $this->tokenHandle;
   }
   public function setUserId($userId)
   {

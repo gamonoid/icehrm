@@ -18,6 +18,7 @@
 class Google_Service_Dialogflow_GoogleCloudDialogflowV2Agent extends Google_Collection
 {
   protected $collection_key = 'supportedLanguageCodes';
+  public $apiVersion;
   public $avatarUri;
   public $classificationThreshold;
   public $defaultLanguageCode;
@@ -27,8 +28,17 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2Agent extends Google_Coll
   public $matchMode;
   public $parent;
   public $supportedLanguageCodes;
+  public $tier;
   public $timeZone;
 
+  public function setApiVersion($apiVersion)
+  {
+    $this->apiVersion = $apiVersion;
+  }
+  public function getApiVersion()
+  {
+    return $this->apiVersion;
+  }
   public function setAvatarUri($avatarUri)
   {
     $this->avatarUri = $avatarUri;
@@ -100,6 +110,14 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2Agent extends Google_Coll
   public function getSupportedLanguageCodes()
   {
     return $this->supportedLanguageCodes;
+  }
+  public function setTier($tier)
+  {
+    $this->tier = $tier;
+  }
+  public function getTier()
+  {
+    return $this->tier;
   }
   public function setTimeZone($timeZone)
   {

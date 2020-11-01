@@ -3,8 +3,8 @@
     "en-US": {
       "identity": {
         "version": {
-          "_number": "$Revision: 13133 $",
-          "_cldrVersion": "31"
+          "_number": "$Revision$",
+          "_cldrVersion": "36"
         },
         "language": "en",
         "territory": "US"
@@ -40,6 +40,7 @@
           "151": "Eastern Europe",
           "154": "Northern Europe",
           "155": "Western Europe",
+          "202": "Sub-Saharan Africa",
           "419": "Latin America",
           "AC": "Ascension Island",
           "AD": "Andorra",
@@ -199,14 +200,14 @@
           "MF": "St. Martin",
           "MG": "Madagascar",
           "MH": "Marshall Islands",
-          "MK": "Macedonia",
-          "MK-alt-variant": "Macedonia (FYROM)",
+          "MK": "North Macedonia",
+          "MK-alt-variant": "MK",
           "ML": "Mali",
           "MM": "Myanmar (Burma)",
           "MM-alt-short": "Myanmar",
           "MN": "Mongolia",
-          "MO": "Macau SAR China",
-          "MO-alt-short": "Macau",
+          "MO": "Macao SAR China",
+          "MO-alt-short": "Macao",
           "MP": "Northern Mariana Islands",
           "MQ": "Martinique",
           "MR": "Mauritania",
@@ -273,7 +274,8 @@
           "SV": "El Salvador",
           "SX": "Sint Maarten",
           "SY": "Syria",
-          "SZ": "Swaziland",
+          "SZ": "Eswatini",
+          "SZ-alt-variant": "Swaziland",
           "TA": "Tristan da Cunha",
           "TC": "Turks & Caicos Islands",
           "TD": "Chad",
@@ -310,6 +312,8 @@
           "VU": "Vanuatu",
           "WF": "Wallis & Futuna",
           "WS": "Samoa",
+          "XA": "Pseudo-Accents",
+          "XB": "Pseudo-Bidi",
           "XK": "Kosovo",
           "YE": "Yemen",
           "YT": "Mayotte",

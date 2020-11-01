@@ -8,7 +8,11 @@ IceHrm
 IceHrm is a [HRM software](https://icehrm.com) which enable companies of all sizes to [manage HR activities](https://icehrm.com)
 properly.
 - [IceHrm Demo](https://icehrm.com/icehrm-demo) 
-- Feature rich version of IceHrm (IceHrmPro) is available at [https://icehrm.com/purchase-icehrmpro](https://icehrm.com/purchase-icehrmpro)
+- Feature-rich version of IceHrm (IceHrmPro) is available at [https://icehrm.com/purchase-icehrmpro](https://icehrm.com/purchase-icehrmpro)
+
+![](docs/images/icehrm-employee-list.png)
+&nbsp;&nbsp;&nbsp;&nbsp;
+![](docs/images/icehrm-dashboard.png)
 
 Getting started
 ---------------
@@ -94,13 +98,16 @@ Upgrade from Previous Versions to Latest Version
 
 Refer: [http://blog.icehrm.com/docs/upgrade/](http://blog.icehrm.com/docs/upgrade/)
 
-Setup IceHrm Development Environment
-------------------------------------
+
+Setup IceHrm Development Environment (Docker)
+-----------------------------------------
 
 IceHrm uses docker to setup development environment
 
 
 - Clone icehrm from https://github.com/gamonoid/icehrm.git or download the source
+
+- Build frontend assets (refer to section *Building frontend assets*)
 
 ```
 $ git clone https://github.com/gamonoid/icehrm.git
@@ -122,7 +129,43 @@ docker-compose -f docker-compose-testing.yaml up --exit-code-from cypress
 $ docker-compose -f docker-compose-prod.yaml up -d --build
 ```
 
-### Building frontend assets
+Setup IceHrm Development Environment (Vagrant)
+---------------------------------------------
+
+IceHrm development environment is packaged as a Vagrant box. I includes php7.3, nginx, phpunit and other
+software required for running icehrm
+
+### Preparing development VM with Vagrant
+
+- Clone icehrm from https://github.com/gamonoid/icehrm.git
+
+- Build frontend assets (refer to section *Building frontend assets*)
+
+- Install Vagrant [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
+
+- Run vagrant up in icehrm root directory (this will download icehrm vagrant image which is  ~1 GB)
+
+```
+~ $ vagrant up
+```
+
+- Run vagrant ssh to login to the Virtual machine
+
+```
+~ $ vagrant ssh
+~ $ sudo service nginx restart
+```
+
+- Add following entry to the end of the host file to map icehrm domains to VagrantBox (on MacOS and Linux this is /etc/hosts | on windows this is Windows\System32\Drivers\etc\hosts)
+
+```
+192.168.10.12   icehrm.os
+```
+
+- Navigate to [http://icehrm.os](http://icehrm.os) to load icehrm from Vagrant. (user:admin/pass:admin)
+
+Building frontend assets
+------------------------
 
 - When ever you have done a change to JavaScript or CSS files in icehrm/web you need to rebuild the frontend
 
@@ -139,7 +182,7 @@ $ npm install
 $ gulp
 ```
 
-- If you have only changed an admin module and you know which module it is
+- For production build use
 ```
-$ gulp admin-js --memployees
+$ gulp --eprod
 ```

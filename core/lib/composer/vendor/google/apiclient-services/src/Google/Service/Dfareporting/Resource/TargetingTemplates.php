@@ -63,9 +63,6 @@ class Google_Service_Dfareporting_Resource_TargetingTemplates extends Google_Ser
    * @opt_param string advertiserId Select only targeting templates with this
    * advertiser ID.
    * @opt_param string ids Select only targeting templates with these IDs.
-   * @opt_param int maxResults Maximum number of results to return.
-   * @opt_param string pageToken Value of the nextPageToken from the previous
-   * result page.
    * @opt_param string searchString Allows searching for objects by name or ID.
    * Wildcards (*) are allowed. For example, "template*2015" will return objects
    * with names like "template June 2015", "template April 2015", or simply
@@ -73,8 +70,11 @@ class Google_Service_Dfareporting_Resource_TargetingTemplates extends Google_Ser
    * start and the end of the search string. For example, a search string of
    * "template" will match objects with name "my template", "template 2015", or
    * simply "template".
-   * @opt_param string sortField Field by which to sort the list.
+   * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string sortOrder Order of sorted results.
+   * @opt_param string pageToken Value of the nextPageToken from the previous
+   * result page.
+   * @opt_param string sortField Field by which to sort the list.
    * @return Google_Service_Dfareporting_TargetingTemplatesListResponse
    */
   public function listTargetingTemplates($profileId, $optParams = array())
@@ -88,7 +88,7 @@ class Google_Service_Dfareporting_Resource_TargetingTemplates extends Google_Ser
    * (targetingTemplates.patch)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $id Targeting template ID.
+   * @param string $id TargetingTemplate ID.
    * @param Google_Service_Dfareporting_TargetingTemplate $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_TargetingTemplate

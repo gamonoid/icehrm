@@ -18,6 +18,8 @@
 class Google_Service_AndroidManagement_Application extends Google_Collection
 {
   protected $collection_key = 'permissions';
+  protected $appTracksType = 'Google_Service_AndroidManagement_AppTrackInfo';
+  protected $appTracksDataType = 'array';
   protected $managedPropertiesType = 'Google_Service_AndroidManagement_ManagedProperty';
   protected $managedPropertiesDataType = 'array';
   public $name;
@@ -25,6 +27,20 @@ class Google_Service_AndroidManagement_Application extends Google_Collection
   protected $permissionsDataType = 'array';
   public $title;
 
+  /**
+   * @param Google_Service_AndroidManagement_AppTrackInfo
+   */
+  public function setAppTracks($appTracks)
+  {
+    $this->appTracks = $appTracks;
+  }
+  /**
+   * @return Google_Service_AndroidManagement_AppTrackInfo
+   */
+  public function getAppTracks()
+  {
+    return $this->appTracks;
+  }
   /**
    * @param Google_Service_AndroidManagement_ManagedProperty
    */

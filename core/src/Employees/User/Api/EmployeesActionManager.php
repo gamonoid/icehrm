@@ -88,7 +88,7 @@ class EmployeesActionManager extends SubActionManager
         $employee->subordinates = $subordinates;
 
         $fs = FileService::getInstance();
-        $employee = $fs->updateProfileImage($employee);
+        $employee = $fs->updateSmallProfileImage($employee);
 
         if (!empty($employee->birthday)) {
             $employee->birthday = date("F jS, Y", strtotime($employee->birthday));

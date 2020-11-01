@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\File;
 
 use Iterator;
@@ -26,7 +27,7 @@ class Concat extends BaseTask
     use ResourceExistenceChecker;
 
     /**
-     * @var array|Iterator
+     * @var array|\Iterator
      */
     protected $files;
 
@@ -38,7 +39,7 @@ class Concat extends BaseTask
     /**
      * Constructor.
      *
-     * @param array|Iterator $files
+     * @param array|\Iterator $files
      */
     public function __construct($files)
     {

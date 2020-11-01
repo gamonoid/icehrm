@@ -108,7 +108,7 @@ class Google_Service_AndroidProvisioningPartner_Resource_PartnersDevices extends
    *
    * @param string $metadataOwnerId Required. The owner of the newly set metadata.
    * Set this to the partner ID.
-   * @param string $deviceId Required. The ID of the reseller partner.
+   * @param string $deviceId Required. The ID of the device.
    * @param Google_Service_AndroidProvisioningPartner_UpdateDeviceMetadataRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_AndroidProvisioningPartner_DeviceMetadata

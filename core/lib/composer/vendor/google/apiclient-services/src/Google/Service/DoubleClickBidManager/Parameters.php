@@ -23,6 +23,8 @@ class Google_Service_DoubleClickBidManager_Parameters extends Google_Collection
   public $groupBys;
   public $includeInviteData;
   public $metrics;
+  protected $optionsType = 'Google_Service_DoubleClickBidManager_Options';
+  protected $optionsDataType = '';
   public $type;
 
   /**
@@ -62,6 +64,20 @@ class Google_Service_DoubleClickBidManager_Parameters extends Google_Collection
   public function getMetrics()
   {
     return $this->metrics;
+  }
+  /**
+   * @param Google_Service_DoubleClickBidManager_Options
+   */
+  public function setOptions(Google_Service_DoubleClickBidManager_Options $options)
+  {
+    $this->options = $options;
+  }
+  /**
+   * @return Google_Service_DoubleClickBidManager_Options
+   */
+  public function getOptions()
+  {
+    return $this->options;
   }
   public function setType($type)
   {

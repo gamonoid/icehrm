@@ -21,6 +21,7 @@ class Google_Service_Directory_User extends Google_Collection
   public $addresses;
   public $agreedToTerms;
   public $aliases;
+  public $archived;
   public $changePasswordAtNextLogin;
   public $creationTime;
   public $customSchemas;
@@ -55,6 +56,8 @@ class Google_Service_Directory_User extends Google_Collection
   public $phones;
   public $posixAccounts;
   public $primaryEmail;
+  public $recoveryEmail;
+  public $recoveryPhone;
   public $relations;
   public $sshPublicKeys;
   public $suspended;
@@ -86,6 +89,14 @@ class Google_Service_Directory_User extends Google_Collection
   public function getAliases()
   {
     return $this->aliases;
+  }
+  public function setArchived($archived)
+  {
+    $this->archived = $archived;
+  }
+  public function getArchived()
+  {
+    return $this->archived;
   }
   public function setChangePasswordAtNextLogin($changePasswordAtNextLogin)
   {
@@ -356,6 +367,22 @@ class Google_Service_Directory_User extends Google_Collection
   public function getPrimaryEmail()
   {
     return $this->primaryEmail;
+  }
+  public function setRecoveryEmail($recoveryEmail)
+  {
+    $this->recoveryEmail = $recoveryEmail;
+  }
+  public function getRecoveryEmail()
+  {
+    return $this->recoveryEmail;
+  }
+  public function setRecoveryPhone($recoveryPhone)
+  {
+    $this->recoveryPhone = $recoveryPhone;
+  }
+  public function getRecoveryPhone()
+  {
+    return $this->recoveryPhone;
   }
   public function setRelations($relations)
   {

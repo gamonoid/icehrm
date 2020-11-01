@@ -19,7 +19,7 @@ class Google_Service_ServiceUsage_ListServicesResponse extends Google_Collection
 {
   protected $collection_key = 'services';
   public $nextPageToken;
-  protected $servicesType = 'Google_Service_ServiceUsage_Service';
+  protected $servicesType = 'Google_Service_ServiceUsage_GoogleApiServiceusageV1Service';
   protected $servicesDataType = 'array';
 
   public function setNextPageToken($nextPageToken)
@@ -31,14 +31,14 @@ class Google_Service_ServiceUsage_ListServicesResponse extends Google_Collection
     return $this->nextPageToken;
   }
   /**
-   * @param Google_Service_ServiceUsage_Service
+   * @param Google_Service_ServiceUsage_GoogleApiServiceusageV1Service
    */
   public function setServices($services)
   {
     $this->services = $services;
   }
   /**
-   * @return Google_Service_ServiceUsage_Service
+   * @return Google_Service_ServiceUsage_GoogleApiServiceusageV1Service
    */
   public function getServices()
   {

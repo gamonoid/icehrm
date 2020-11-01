@@ -25,13 +25,10 @@ class Google_Service_ServiceUser_HttpRule extends Google_Collection
   protected $customDataType = '';
   public $delete;
   public $get;
-  protected $mediaDownloadType = 'Google_Service_ServiceUser_MediaDownload';
-  protected $mediaDownloadDataType = '';
-  protected $mediaUploadType = 'Google_Service_ServiceUser_MediaUpload';
-  protected $mediaUploadDataType = '';
   public $patch;
   public $post;
   public $put;
+  public $responseBody;
   public $selector;
 
   /**
@@ -86,34 +83,6 @@ class Google_Service_ServiceUser_HttpRule extends Google_Collection
   {
     return $this->get;
   }
-  /**
-   * @param Google_Service_ServiceUser_MediaDownload
-   */
-  public function setMediaDownload(Google_Service_ServiceUser_MediaDownload $mediaDownload)
-  {
-    $this->mediaDownload = $mediaDownload;
-  }
-  /**
-   * @return Google_Service_ServiceUser_MediaDownload
-   */
-  public function getMediaDownload()
-  {
-    return $this->mediaDownload;
-  }
-  /**
-   * @param Google_Service_ServiceUser_MediaUpload
-   */
-  public function setMediaUpload(Google_Service_ServiceUser_MediaUpload $mediaUpload)
-  {
-    $this->mediaUpload = $mediaUpload;
-  }
-  /**
-   * @return Google_Service_ServiceUser_MediaUpload
-   */
-  public function getMediaUpload()
-  {
-    return $this->mediaUpload;
-  }
   public function setPatch($patch)
   {
     $this->patch = $patch;
@@ -137,6 +106,14 @@ class Google_Service_ServiceUser_HttpRule extends Google_Collection
   public function getPut()
   {
     return $this->put;
+  }
+  public function setResponseBody($responseBody)
+  {
+    $this->responseBody = $responseBody;
+  }
+  public function getResponseBody()
+  {
+    return $this->responseBody;
   }
   public function setSelector($selector)
   {

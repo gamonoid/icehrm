@@ -1,4 +1,5 @@
 <?php
+
 namespace Robo\Task\Remote;
 
 use Robo\Contract\CommandInterface;
@@ -415,7 +416,7 @@ class Rsync extends BaseTask implements CommandInterface
      */
     public function remoteShell($command)
     {
-        $this->option('rsh', "'$command'");
+        $this->option('rsh', "$command");
 
         return $this;
     }
@@ -447,6 +448,8 @@ class Rsync extends BaseTask implements CommandInterface
     }
 
     /**
+     * @param string $from
+     *
      * @return string
      */
     protected function getFromPathSpec($from)

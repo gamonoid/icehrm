@@ -21,6 +21,8 @@ class Google_Service_AndroidProvisioningPartner_UnclaimDeviceRequest extends Goo
   protected $deviceIdentifierType = 'Google_Service_AndroidProvisioningPartner_DeviceIdentifier';
   protected $deviceIdentifierDataType = '';
   public $sectionType;
+  public $vacationModeDays;
+  public $vacationModeExpireTime;
 
   public function setDeviceId($deviceId)
   {
@@ -51,5 +53,21 @@ class Google_Service_AndroidProvisioningPartner_UnclaimDeviceRequest extends Goo
   public function getSectionType()
   {
     return $this->sectionType;
+  }
+  public function setVacationModeDays($vacationModeDays)
+  {
+    $this->vacationModeDays = $vacationModeDays;
+  }
+  public function getVacationModeDays()
+  {
+    return $this->vacationModeDays;
+  }
+  public function setVacationModeExpireTime($vacationModeExpireTime)
+  {
+    $this->vacationModeExpireTime = $vacationModeExpireTime;
+  }
+  public function getVacationModeExpireTime()
+  {
+    return $this->vacationModeExpireTime;
   }
 }

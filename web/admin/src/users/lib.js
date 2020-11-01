@@ -5,7 +5,7 @@
 
 import FormValidation from '../../../api/FormValidation';
 import AdapterBase from '../../../api/AdapterBase';
-
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
 class UserAdapter extends AdapterBase {
   getDataMapping() {
@@ -181,7 +181,12 @@ class UserAdapter extends AdapterBase {
  * UserRoleAdapter
  */
 
-class UserRoleAdapter extends AdapterBase {
+class UserRoleAdapter extends ReactModalAdapterBase {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
+    this.tables = [];
+  }
+
   getDataMapping() {
     return [
       'id',
@@ -196,15 +201,68 @@ class UserRoleAdapter extends AdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      {
+        title: 'ID',
+        dataIndex: 'id',
+        sorter: true,
+      },
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+    ];
+  }
 
-  postRenderForm(object, $tempDomObj) {
-    $tempDomObj.find('#changePasswordBtn').remove();
+  setTables(tables) {
+    this.tables = tables;
   }
 
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'text', validation: '' }],
+      ['additional_permissions', {
+        label: 'Additional Permissions',
+        type: 'datagroup',
+        form: [
+          ['table',
+            {
+              label: 'Table',
+              type: 'select2',
+              source: this.tables,
+            },
+          ],
+          ['permissions',
+            {
+              label: 'Permissions',
+              type: 'select2multi',
+              'allow-null': true,
+              source: [
+                ['get', 'List'],
+                ['element', 'Get Details'],
+                ['save', 'Add/Edit'],
+                ['delete', 'Delete'],
+              ],
+            },
+          ],
+        ],
+        columns: [
+          {
+            title: 'Table',
+            dataIndex: 'table',
+            key: 'table',
+          },
+          {
+            title: 'Permissions',
+            dataIndex: 'permissions',
+            key: 'permissions',
+          },
+        ],
+        validation: 'none',
+      }],
     ];
   }
 }

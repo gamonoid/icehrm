@@ -26,18 +26,18 @@
 class Google_Service_Pubsub_Resource_ProjectsTopicsSubscriptions extends Google_Service_Resource
 {
   /**
-   * Lists the names of the subscriptions on this topic.
+   * Lists the names of the attached subscriptions on this topic.
    * (subscriptions.listProjectsTopicsSubscriptions)
    *
-   * @param string $topic The name of the topic that subscriptions are attached
-   * to. Format is `projects/{project}/topics/{topic}`.
+   * @param string $topic Required. The name of the topic that subscriptions are
+   * attached to. Format is `projects/{project}/topics/{topic}`.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param int pageSize Maximum number of subscription names to return.
    * @opt_param string pageToken The value returned by the last
    * `ListTopicSubscriptionsResponse`; indicates that this is a continuation of a
    * prior `ListTopicSubscriptions` call, and that the system should return the
    * next page of data.
-   * @opt_param int pageSize Maximum number of subscription names to return.
    * @return Google_Service_Pubsub_ListTopicSubscriptionsResponse
    */
   public function listProjectsTopicsSubscriptions($topic, $optParams = array())

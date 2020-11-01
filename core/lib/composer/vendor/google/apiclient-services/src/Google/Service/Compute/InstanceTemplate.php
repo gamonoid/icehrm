@@ -25,6 +25,9 @@ class Google_Service_Compute_InstanceTemplate extends Google_Model
   protected $propertiesType = 'Google_Service_Compute_InstanceProperties';
   protected $propertiesDataType = '';
   public $selfLink;
+  public $sourceInstance;
+  protected $sourceInstanceParamsType = 'Google_Service_Compute_SourceInstanceParams';
+  protected $sourceInstanceParamsDataType = '';
 
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -87,5 +90,27 @@ class Google_Service_Compute_InstanceTemplate extends Google_Model
   public function getSelfLink()
   {
     return $this->selfLink;
+  }
+  public function setSourceInstance($sourceInstance)
+  {
+    $this->sourceInstance = $sourceInstance;
+  }
+  public function getSourceInstance()
+  {
+    return $this->sourceInstance;
+  }
+  /**
+   * @param Google_Service_Compute_SourceInstanceParams
+   */
+  public function setSourceInstanceParams(Google_Service_Compute_SourceInstanceParams $sourceInstanceParams)
+  {
+    $this->sourceInstanceParams = $sourceInstanceParams;
+  }
+  /**
+   * @return Google_Service_Compute_SourceInstanceParams
+   */
+  public function getSourceInstanceParams()
+  {
+    return $this->sourceInstanceParams;
   }
 }

@@ -17,6 +17,10 @@
 
 class Google_Service_Drive_Change extends Google_Model
 {
+  public $changeType;
+  protected $driveType = 'Google_Service_Drive_Drive';
+  protected $driveDataType = '';
+  public $driveId;
   protected $fileType = 'Google_Service_Drive_DriveFile';
   protected $fileDataType = '';
   public $fileId;
@@ -28,6 +32,36 @@ class Google_Service_Drive_Change extends Google_Model
   public $time;
   public $type;
 
+  public function setChangeType($changeType)
+  {
+    $this->changeType = $changeType;
+  }
+  public function getChangeType()
+  {
+    return $this->changeType;
+  }
+  /**
+   * @param Google_Service_Drive_Drive
+   */
+  public function setDrive(Google_Service_Drive_Drive $drive)
+  {
+    $this->drive = $drive;
+  }
+  /**
+   * @return Google_Service_Drive_Drive
+   */
+  public function getDrive()
+  {
+    return $this->drive;
+  }
+  public function setDriveId($driveId)
+  {
+    $this->driveId = $driveId;
+  }
+  public function getDriveId()
+  {
+    return $this->driveId;
+  }
   /**
    * @param Google_Service_Drive_DriveFile
    */

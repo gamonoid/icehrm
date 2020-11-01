@@ -20,7 +20,11 @@ class Google_Service_Compute_HealthCheck extends Google_Model
   public $checkIntervalSec;
   public $creationTimestamp;
   public $description;
+  protected $grpcHealthCheckType = 'Google_Service_Compute_GRPCHealthCheck';
+  protected $grpcHealthCheckDataType = '';
   public $healthyThreshold;
+  protected $http2HealthCheckType = 'Google_Service_Compute_HTTP2HealthCheck';
+  protected $http2HealthCheckDataType = '';
   protected $httpHealthCheckType = 'Google_Service_Compute_HTTPHealthCheck';
   protected $httpHealthCheckDataType = '';
   protected $httpsHealthCheckType = 'Google_Service_Compute_HTTPSHealthCheck';
@@ -28,6 +32,7 @@ class Google_Service_Compute_HealthCheck extends Google_Model
   public $id;
   public $kind;
   public $name;
+  public $region;
   public $selfLink;
   protected $sslHealthCheckType = 'Google_Service_Compute_SSLHealthCheck';
   protected $sslHealthCheckDataType = '';
@@ -61,6 +66,20 @@ class Google_Service_Compute_HealthCheck extends Google_Model
   {
     return $this->description;
   }
+  /**
+   * @param Google_Service_Compute_GRPCHealthCheck
+   */
+  public function setGrpcHealthCheck(Google_Service_Compute_GRPCHealthCheck $grpcHealthCheck)
+  {
+    $this->grpcHealthCheck = $grpcHealthCheck;
+  }
+  /**
+   * @return Google_Service_Compute_GRPCHealthCheck
+   */
+  public function getGrpcHealthCheck()
+  {
+    return $this->grpcHealthCheck;
+  }
   public function setHealthyThreshold($healthyThreshold)
   {
     $this->healthyThreshold = $healthyThreshold;
@@ -68,6 +87,20 @@ class Google_Service_Compute_HealthCheck extends Google_Model
   public function getHealthyThreshold()
   {
     return $this->healthyThreshold;
+  }
+  /**
+   * @param Google_Service_Compute_HTTP2HealthCheck
+   */
+  public function setHttp2HealthCheck(Google_Service_Compute_HTTP2HealthCheck $http2HealthCheck)
+  {
+    $this->http2HealthCheck = $http2HealthCheck;
+  }
+  /**
+   * @return Google_Service_Compute_HTTP2HealthCheck
+   */
+  public function getHttp2HealthCheck()
+  {
+    return $this->http2HealthCheck;
   }
   /**
    * @param Google_Service_Compute_HTTPHealthCheck
@@ -120,6 +153,14 @@ class Google_Service_Compute_HealthCheck extends Google_Model
   public function getName()
   {
     return $this->name;
+  }
+  public function setRegion($region)
+  {
+    $this->region = $region;
+  }
+  public function getRegion()
+  {
+    return $this->region;
   }
   public function setSelfLink($selfLink)
   {

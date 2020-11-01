@@ -17,9 +17,18 @@
 
 class Google_Service_Games_ProfileSettings extends Google_Model
 {
+  public $friendsListVisibility;
   public $kind;
   public $profileVisible;
 
+  public function setFriendsListVisibility($friendsListVisibility)
+  {
+    $this->friendsListVisibility = $friendsListVisibility;
+  }
+  public function getFriendsListVisibility()
+  {
+    return $this->friendsListVisibility;
+  }
   public function setKind($kind)
   {
     $this->kind = $kind;

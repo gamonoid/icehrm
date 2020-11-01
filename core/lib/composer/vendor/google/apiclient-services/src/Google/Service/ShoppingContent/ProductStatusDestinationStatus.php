@@ -15,28 +15,22 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductStatusDestinationStatus extends Google_Model
+class Google_Service_ShoppingContent_ProductStatusDestinationStatus extends Google_Collection
 {
-  public $approvalPending;
-  public $approvalStatus;
+  protected $collection_key = 'pendingCountries';
+  public $approvedCountries;
   public $destination;
-  public $intention;
+  public $disapprovedCountries;
+  public $pendingCountries;
+  public $status;
 
-  public function setApprovalPending($approvalPending)
+  public function setApprovedCountries($approvedCountries)
   {
-    $this->approvalPending = $approvalPending;
+    $this->approvedCountries = $approvedCountries;
   }
-  public function getApprovalPending()
+  public function getApprovedCountries()
   {
-    return $this->approvalPending;
-  }
-  public function setApprovalStatus($approvalStatus)
-  {
-    $this->approvalStatus = $approvalStatus;
-  }
-  public function getApprovalStatus()
-  {
-    return $this->approvalStatus;
+    return $this->approvedCountries;
   }
   public function setDestination($destination)
   {
@@ -46,12 +40,28 @@ class Google_Service_ShoppingContent_ProductStatusDestinationStatus extends Goog
   {
     return $this->destination;
   }
-  public function setIntention($intention)
+  public function setDisapprovedCountries($disapprovedCountries)
   {
-    $this->intention = $intention;
+    $this->disapprovedCountries = $disapprovedCountries;
   }
-  public function getIntention()
+  public function getDisapprovedCountries()
   {
-    return $this->intention;
+    return $this->disapprovedCountries;
+  }
+  public function setPendingCountries($pendingCountries)
+  {
+    $this->pendingCountries = $pendingCountries;
+  }
+  public function getPendingCountries()
+  {
+    return $this->pendingCountries;
+  }
+  public function setStatus($status)
+  {
+    $this->status = $status;
+  }
+  public function getStatus()
+  {
+    return $this->status;
   }
 }

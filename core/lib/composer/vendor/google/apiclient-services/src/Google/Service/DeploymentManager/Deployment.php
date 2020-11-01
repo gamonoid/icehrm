@@ -33,6 +33,7 @@ class Google_Service_DeploymentManager_Deployment extends Google_Collection
   protected $targetDataType = '';
   protected $updateType = 'Google_Service_DeploymentManager_DeploymentUpdate';
   protected $updateDataType = '';
+  public $updateTime;
 
   public function setDescription($description)
   {
@@ -145,5 +146,13 @@ class Google_Service_DeploymentManager_Deployment extends Google_Collection
   public function getUpdate()
   {
     return $this->update;
+  }
+  public function setUpdateTime($updateTime)
+  {
+    $this->updateTime = $updateTime;
+  }
+  public function getUpdateTime()
+  {
+    return $this->updateTime;
   }
 }

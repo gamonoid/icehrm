@@ -1,4 +1,14 @@
 <?php
+
+use Classes\BaseService;
+use Classes\CustomFieldManager;
+use Classes\JwtTokenService;
+use Classes\Migration\MigrationManager;
+use Classes\NotificationManager;
+use Classes\ReportHandler;
+use Classes\SettingsManager;
+use Utils\LogManager;
+
 if (!defined("AWS_REGION")) {
     define('AWS_REGION', 'us-east-1');
 }
@@ -36,22 +46,22 @@ $res = $dbLocal->Connect(APP_HOST, APP_USERNAME, APP_PASSWORD, APP_DB);
 \Model\RestAccessToken::SetDatabaseAdapter($dbLocal);
 
 
-$baseService = \Classes\BaseService::getInstance();
-\Classes\BaseService::getInstance()->setNonDeletables("User", "id", 1);
-\Classes\BaseService::getInstance()->setCurrentUser($user);
-\Classes\BaseService::getInstance()->setCustomFieldManager(new \Classes\CustomFieldManager());
-\Classes\BaseService::getInstance()->setDB($dbLocal);
+$baseService = BaseService::getInstance();
+BaseService::getInstance()->setNonDeletables("User", "id", 1);
+BaseService::getInstance()->setCurrentUser($user);
+BaseService::getInstance()->setCustomFieldManager(new CustomFieldManager());
+BaseService::getInstance()->setDB($dbLocal);
 
-$reportHandler = new \Classes\ReportHandler();
-$settingsManager = \Classes\SettingsManager::getInstance();
-$notificationManager = new \Classes\NotificationManager();
+$reportHandler = new ReportHandler();
+$settingsManager = SettingsManager::getInstance();
+$notificationManager = new NotificationManager();
 
-\Classes\BaseService::getInstance()->setNotificationManager($notificationManager);
-\Classes\BaseService::getInstance()->setSettingsManager($settingsManager);
-\Classes\BaseService::getInstance()->setCustomFieldManager(new \Classes\CustomFieldManager());
-$migrationManager = new \Classes\Migration\MigrationManager();
+BaseService::getInstance()->setNotificationManager($notificationManager);
+BaseService::getInstance()->setSettingsManager($settingsManager);
+BaseService::getInstance()->setCustomFieldManager(new CustomFieldManager());
+$migrationManager = new MigrationManager();
 $migrationManager->setMigrationPath(APP_BASE_PATH .'/migrations/');
-\Classes\BaseService::getInstance()->setMigrationManager($migrationManager);
+BaseService::getInstance()->setMigrationManager($migrationManager);
 
 $notificationManager->setBaseService($baseService);
 
@@ -60,18 +70,18 @@ if (defined('REDIS_SERVER_URI')
     && defined('QUERY_CACHE_TYPE')
     && QUERY_CACHE_TYPE === 'redis'
 ) {
-    \Classes\BaseService::getInstance()->setCacheService(
+    BaseService::getInstance()->setCacheService(
         new \Classes\RedisCacheService(REDIS_SERVER_URI, CLIENT_NAME)
     );
 } else {
-    \Classes\BaseService::getInstance()->setCacheService(
+    BaseService::getInstance()->setCacheService(
         new \Classes\MemoryCacheService(CLIENT_NAME)
     );
 }
 
-$noJSONRequests = \Classes\SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request");
+$noJSONRequests = SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request");
 
-$debugMode = \Classes\SettingsManager::getInstance()->getSetting("System: Debug Mode");
+$debugMode = SettingsManager::getInstance()->getSetting("System: Debug Mode");
 if ($debugMode == "1") {
     if (!defined('LOG_LEVEL')) {
         define('LOG_LEVEL', Monolog\Logger::DEBUG);
@@ -84,7 +94,9 @@ if ($debugMode == "1") {
     error_reporting(E_ERROR);
 }
 
-\Utils\LogManager::getInstance();
+LogManager::getInstance();
+
+include("includes.com.php");
 
 $userTables = array();
 $fileFields = array();
@@ -93,7 +105,7 @@ $mysqlErrors = array();
 if (defined('CLIENT_PATH')) {
     include APP_BASE_PATH.'modules.php';
 
-    $moduleManagers = \Classes\BaseService::getInstance()->getModuleManagers();
+    $moduleManagers = BaseService::getInstance()->getModuleManagers();
 
     /* @var \Classes\AbstractModuleManager $moduleManagerObj */
     foreach ($moduleManagers as $moduleManagerObj) {
@@ -107,6 +119,7 @@ if (defined('CLIENT_PATH')) {
         $moduleManagerObj->setupErrorMappings($mysqlErrors);
         //$moduleManagerObj->setupRestEndPoints();
         $moduleManagerObj->initCalculationHooks();
+        $moduleManagerObj->initialize();
 
         $modelClassList = $moduleManagerObj->getModelClasses();
         $metaData = $moduleManagerObj->getModuleObject();
@@ -119,24 +132,23 @@ if (defined('CLIENT_PATH')) {
 }
 //============= End - Initializing Modules ============
 
-\Classes\BaseService::getInstance()->setFileFields($fileFields);
+BaseService::getInstance()->setFileFields($fileFields);
 
-\Classes\BaseService::getInstance()->setUserTables($userTables);
+BaseService::getInstance()->setUserTables($userTables);
 
-\Classes\BaseService::getInstance()->setSqlErrors($mysqlErrors);
+BaseService::getInstance()->setSqlErrors($mysqlErrors);
 
-include("includes.com.php");
 
 if (class_exists('\\Audit\\Admin\\Api\\AuditActionManager')) {
     $auditManager = new \Audit\Admin\Api\AuditActionManager();
     $auditManager->setBaseService($baseService);
     $auditManager->setUser($user);
-    \Classes\BaseService::getInstance()->setAuditManager($auditManager);
+    BaseService::getInstance()->setAuditManager($auditManager);
 }
 
-$emailEnabled = \Classes\SettingsManager::getInstance()->getSetting("Email: Enable");
-$emailMode = \Classes\SettingsManager::getInstance()->getSetting("Email: Mode");
-$uploadS3 = \Classes\SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
+$emailEnabled = SettingsManager::getInstance()->getSetting("Email: Enable");
+$emailMode = SettingsManager::getInstance()->getSetting("Email: Mode");
+$uploadS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
 
 if ($emailMode == "SES" || $uploadS3 == '1') {
     include(APP_BASE_PATH.'lib/aws.phar');
@@ -155,14 +167,17 @@ if ($emailEnabled == "1") {
     }
 }
 
-\Classes\BaseService::getInstance()->setEmailSender($emailSender);
+BaseService::getInstance()->setEmailSender($emailSender);
+
+$jwtService = new JwtTokenService();
 
 function shutdown()
 {
     session_write_close();
     $error = error_get_last();
+
     if (!empty($error) && isset($error['type']) && in_array($error['type'], [E_ERROR, E_PARSE])) {
-        \Utils\LogManager::getInstance()->notifyException(new ErrorException(
+        LogManager::getInstance()->notifyException(new ErrorException(
             $error['message'],
             0,
             1,

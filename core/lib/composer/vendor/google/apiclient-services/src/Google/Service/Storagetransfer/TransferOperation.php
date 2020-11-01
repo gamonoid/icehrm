@@ -24,6 +24,8 @@ class Google_Service_Storagetransfer_TransferOperation extends Google_Collection
   protected $errorBreakdownsType = 'Google_Service_Storagetransfer_ErrorSummary';
   protected $errorBreakdownsDataType = 'array';
   public $name;
+  protected $notificationConfigType = 'Google_Service_Storagetransfer_NotificationConfig';
+  protected $notificationConfigDataType = '';
   public $projectId;
   public $startTime;
   public $status;
@@ -74,6 +76,20 @@ class Google_Service_Storagetransfer_TransferOperation extends Google_Collection
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param Google_Service_Storagetransfer_NotificationConfig
+   */
+  public function setNotificationConfig(Google_Service_Storagetransfer_NotificationConfig $notificationConfig)
+  {
+    $this->notificationConfig = $notificationConfig;
+  }
+  /**
+   * @return Google_Service_Storagetransfer_NotificationConfig
+   */
+  public function getNotificationConfig()
+  {
+    return $this->notificationConfig;
   }
   public function setProjectId($projectId)
   {

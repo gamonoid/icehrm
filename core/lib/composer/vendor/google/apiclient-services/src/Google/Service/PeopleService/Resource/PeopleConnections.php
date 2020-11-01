@@ -26,42 +26,46 @@
 class Google_Service_PeopleService_Resource_PeopleConnections extends Google_Service_Resource
 {
   /**
-   * Provides a list of the authenticated user's contacts merged with any
-   * connected profiles.
-   *
-   * The request throws a 400 error if 'personFields' is not specified.
+   * Provides a list of the authenticated user's contacts. The request throws a
+   * 400 error if 'personFields' is not specified.
    * (connections.listPeopleConnections)
    *
-   * @param string $resourceName The resource name to return connections for. Only
-   * `people/me` is valid.
+   * @param string $resourceName Required. The resource name to return connections
+   * for. Only `people/me` is valid.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string syncToken A sync token returned by a previous call to
-   * `people.connections.list`. Only resources changed since the sync token was
-   * created will be returned. Sync requests that specify `sync_token` have an
-   * additional rate limit.
-   * @opt_param string personFields **Required.** A field mask to restrict which
-   * fields on each person are returned. Multiple fields can be specified by
-   * separating them with commas. Valid values are:
-   *
-   * * addresses * ageRanges * biographies * birthdays * braggingRights *
-   * coverPhotos * emailAddresses * events * genders * imClients * interests *
-   * locales * memberships * metadata * names * nicknames * occupations *
-   * organizations * phoneNumbers * photos * relations * relationshipInterests *
-   * relationshipStatuses * residences * sipAddresses * skills * taglines * urls *
-   * userDefined
-   * @opt_param string sortOrder The order in which the connections should be
-   * sorted. Defaults to `LAST_MODIFIED_ASCENDING`.
-   * @opt_param bool requestSyncToken Whether the response should include a sync
-   * token, which can be used to get all changes since the last request. For
-   * subsequent sync requests use the `sync_token` param instead. Initial sync
-   * requests that specify `request_sync_token` have an additional rate limit.
-   * @opt_param string pageToken The token of the page to be returned.
-   * @opt_param string requestMask.includeField **Required.** Comma-separated list
-   * of person fields to be included in the response. Each path should start with
+   * @opt_param string pageToken Optional. A page token, received from a previous
+   * `ListConnections` call. Provide this to retrieve the subsequent page. When
+   * paginating, all other parameters provided to `ListConnections` must match the
+   * call that provided the page token.
+   * @opt_param string sources Optional. A mask of what source types to return.
+   * Defaults to ReadSourceType.CONTACT and ReadSourceType.PROFILE if not set.
+   * @opt_param bool requestSyncToken Optional. Whether the response should
+   * include `next_sync_token` on the last page, which can be used to get all
+   * changes since the last request. For subsequent sync requests use the
+   * `sync_token` param instead. Initial sync requests that specify
+   * `request_sync_token` have an additional rate limit.
+   * @opt_param string syncToken Optional. A sync token, received from a previous
+   * `ListConnections` call. Provide this to retrieve only the resources changed
+   * since the last request. Sync requests that specify `sync_token` have an
+   * additional rate limit. When syncing, all other parameters provided to
+   * `ListConnections` must match the call that provided the sync token.
+   * @opt_param int pageSize Optional. The number of connections to include in the
+   * response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if
+   * not set or set to 0.
+   * @opt_param string requestMask.includeField Required. Comma-separated list of
+   * person fields to be included in the response. Each path should start with
    * `person.`: for example, `person.names` or `person.photos`.
-   * @opt_param int pageSize The number of connections to include in the response.
-   * Valid values are between 1 and 2000, inclusive. Defaults to 100.
+   * @opt_param string sortOrder Optional. The order in which the connections
+   * should be sorted. Defaults to `LAST_MODIFIED_ASCENDING`.
+   * @opt_param string personFields Required. A field mask to restrict which
+   * fields on each person are returned. Multiple fields can be specified by
+   * separating them with commas. Valid values are: * addresses * ageRanges *
+   * biographies * birthdays * calendarUrls * clientData * coverPhotos *
+   * emailAddresses * events * externalIds * genders * imClients * interests *
+   * locales * locations * memberships * metadata * miscKeywords * names *
+   * nicknames * occupations * organizations * phoneNumbers * photos * relations *
+   * sipAddresses * skills * urls * userDefined
    * @return Google_Service_PeopleService_ListConnectionsResponse
    */
   public function listPeopleConnections($resourceName, $optParams = array())

@@ -20,10 +20,15 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOut
   protected $collection_key = 'allMetrics';
   protected $allMetricsType = 'Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOutputHyperparameterMetric';
   protected $allMetricsDataType = 'array';
+  protected $builtInAlgorithmOutputType = 'Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1BuiltInAlgorithmOutput';
+  protected $builtInAlgorithmOutputDataType = '';
+  public $endTime;
   protected $finalMetricType = 'Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOutputHyperparameterMetric';
   protected $finalMetricDataType = '';
   public $hyperparameters;
   public $isTrialStoppedEarly;
+  public $startTime;
+  public $state;
   public $trialId;
 
   /**
@@ -39,6 +44,28 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOut
   public function getAllMetrics()
   {
     return $this->allMetrics;
+  }
+  /**
+   * @param Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1BuiltInAlgorithmOutput
+   */
+  public function setBuiltInAlgorithmOutput(Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1BuiltInAlgorithmOutput $builtInAlgorithmOutput)
+  {
+    $this->builtInAlgorithmOutput = $builtInAlgorithmOutput;
+  }
+  /**
+   * @return Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1BuiltInAlgorithmOutput
+   */
+  public function getBuiltInAlgorithmOutput()
+  {
+    return $this->builtInAlgorithmOutput;
+  }
+  public function setEndTime($endTime)
+  {
+    $this->endTime = $endTime;
+  }
+  public function getEndTime()
+  {
+    return $this->endTime;
   }
   /**
    * @param Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOutputHyperparameterMetric
@@ -69,6 +96,22 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOut
   public function getIsTrialStoppedEarly()
   {
     return $this->isTrialStoppedEarly;
+  }
+  public function setStartTime($startTime)
+  {
+    $this->startTime = $startTime;
+  }
+  public function getStartTime()
+  {
+    return $this->startTime;
+  }
+  public function setState($state)
+  {
+    $this->state = $state;
+  }
+  public function getState()
+  {
+    return $this->state;
   }
   public function setTrialId($trialId)
   {

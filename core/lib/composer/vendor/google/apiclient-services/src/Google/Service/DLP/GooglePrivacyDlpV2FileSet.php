@@ -17,8 +17,24 @@
 
 class Google_Service_DLP_GooglePrivacyDlpV2FileSet extends Google_Model
 {
+  protected $regexFileSetType = 'Google_Service_DLP_GooglePrivacyDlpV2CloudStorageRegexFileSet';
+  protected $regexFileSetDataType = '';
   public $url;
 
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2CloudStorageRegexFileSet
+   */
+  public function setRegexFileSet(Google_Service_DLP_GooglePrivacyDlpV2CloudStorageRegexFileSet $regexFileSet)
+  {
+    $this->regexFileSet = $regexFileSet;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2CloudStorageRegexFileSet
+   */
+  public function getRegexFileSet()
+  {
+    return $this->regexFileSet;
+  }
   public function setUrl($url)
   {
     $this->url = $url;

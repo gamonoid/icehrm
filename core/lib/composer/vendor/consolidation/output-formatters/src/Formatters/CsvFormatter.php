@@ -66,6 +66,8 @@ class CsvFormatter implements FormatterInterface, ValidDataTypesInterface, Rende
         return [
             FormatterOptions::INCLUDE_FIELD_LABELS => true,
             FormatterOptions::DELIMITER => ',',
+            FormatterOptions::CSV_ENCLOSURE => '"',
+            FormatterOptions::CSV_ESCAPE_CHAR => "\\",
         ];
     }
 
@@ -87,18 +89,40 @@ class CsvFormatter implements FormatterInterface, ValidDataTypesInterface, Rende
         }
     }
 
+  /**
+   * Writes a single a single line of formatted CSV data to the output stream.
+   *
+   * @param OutputInterface $output the output stream to write to.
+   * @param array $data an array of field data to convert to a CSV string.
+   * @param FormatterOptions $options the specified options for this formatter.
+   */
     protected function writeOneLine(OutputInterface $output, $data, $options)
     {
         $defaults = $this->getDefaultFormatterOptions();
         $delimiter = $options->get(FormatterOptions::DELIMITER, $defaults);
-
-        $output->write($this->csvEscape($data, $delimiter));
+        $enclosure = $options->get(FormatterOptions::CSV_ENCLOSURE, $defaults);
+        $escapeChar = $options->get(FormatterOptions::CSV_ESCAPE_CHAR, $defaults);
+        $output->write($this->csvEscape($data, $delimiter, $enclosure, $escapeChar));
     }
 
-    protected function csvEscape($data, $delimiter = ',')
+  /**
+   * Generates a CSV-escaped string from an array of field data.
+   *
+   * @param array $data an array of field data to format as a CSV.
+   * @param string $delimiter the delimiter to use between fields.
+   * @param string $enclosure character to use when enclosing complex fields.
+   * @param string $escapeChar character to use when escaping special characters.
+   *
+   * @return string|bool the formatted CSV string, or FALSE if the formatting failed.
+   */
+    protected function csvEscape($data, $delimiter = ',', $enclosure = '"', $escapeChar = "\\")
     {
         $buffer = fopen('php://temp', 'r+');
-        fputcsv($buffer, $data, $delimiter);
+        if (version_compare(PHP_VERSION, '5.5.4', '>=')) {
+            fputcsv($buffer, $data, $delimiter, $enclosure, $escapeChar);
+        } else {
+            fputcsv($buffer, $data, $delimiter, $enclosure);
+        }
         rewind($buffer);
         $csv = fgets($buffer);
         fclose($buffer);

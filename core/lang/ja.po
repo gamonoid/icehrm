@@ -1972,3 +1972,18 @@ msgstr "保存された計算"
 
 msgid "Total Leave Days"
 msgstr "総休暇日数"
+
+msgid "Actions"
+msgstr "行動"
+
+msgid "Edit"
+msgstr "編集"
+
+msgid "View"
+msgstr "見る"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Copy"
+msgstr "コピー"

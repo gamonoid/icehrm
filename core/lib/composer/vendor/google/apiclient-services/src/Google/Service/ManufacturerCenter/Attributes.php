@@ -50,6 +50,7 @@ class Google_Service_ManufacturerCenter_Attributes extends Google_Collection
   public $productPageUrl;
   public $productType;
   public $releaseDate;
+  public $richProductContent;
   public $scent;
   public $size;
   public $sizeSystem;
@@ -304,6 +305,14 @@ class Google_Service_ManufacturerCenter_Attributes extends Google_Collection
   public function getReleaseDate()
   {
     return $this->releaseDate;
+  }
+  public function setRichProductContent($richProductContent)
+  {
+    $this->richProductContent = $richProductContent;
+  }
+  public function getRichProductContent()
+  {
+    return $this->richProductContent;
   }
   public function setScent($scent)
   {

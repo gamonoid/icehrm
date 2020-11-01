@@ -15,13 +15,16 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_AuthProvider extends Google_Model
+class Google_Service_ServiceManagement_AuthProvider extends Google_Collection
 {
+  protected $collection_key = 'jwtLocations';
   public $audiences;
   public $authorizationUrl;
   public $id;
   public $issuer;
   public $jwksUri;
+  protected $jwtLocationsType = 'Google_Service_ServiceManagement_JwtLocation';
+  protected $jwtLocationsDataType = 'array';
 
   public function setAudiences($audiences)
   {
@@ -62,5 +65,19 @@ class Google_Service_ServiceManagement_AuthProvider extends Google_Model
   public function getJwksUri()
   {
     return $this->jwksUri;
+  }
+  /**
+   * @param Google_Service_ServiceManagement_JwtLocation
+   */
+  public function setJwtLocations($jwtLocations)
+  {
+    $this->jwtLocations = $jwtLocations;
+  }
+  /**
+   * @return Google_Service_ServiceManagement_JwtLocation
+   */
+  public function getJwtLocations()
+  {
+    return $this->jwtLocations;
   }
 }

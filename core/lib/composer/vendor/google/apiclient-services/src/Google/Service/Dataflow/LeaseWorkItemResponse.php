@@ -18,9 +18,18 @@
 class Google_Service_Dataflow_LeaseWorkItemResponse extends Google_Collection
 {
   protected $collection_key = 'workItems';
+  public $unifiedWorkerResponse;
   protected $workItemsType = 'Google_Service_Dataflow_WorkItem';
   protected $workItemsDataType = 'array';
 
+  public function setUnifiedWorkerResponse($unifiedWorkerResponse)
+  {
+    $this->unifiedWorkerResponse = $unifiedWorkerResponse;
+  }
+  public function getUnifiedWorkerResponse()
+  {
+    return $this->unifiedWorkerResponse;
+  }
   /**
    * @param Google_Service_Dataflow_WorkItem
    */

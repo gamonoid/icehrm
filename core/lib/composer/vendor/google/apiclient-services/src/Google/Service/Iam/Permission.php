@@ -22,6 +22,7 @@ class Google_Service_Iam_Permission extends Google_Model
   public $description;
   public $name;
   public $onlyInPredefinedRoles;
+  public $primaryPermission;
   public $stage;
   public $title;
 
@@ -64,6 +65,14 @@ class Google_Service_Iam_Permission extends Google_Model
   public function getOnlyInPredefinedRoles()
   {
     return $this->onlyInPredefinedRoles;
+  }
+  public function setPrimaryPermission($primaryPermission)
+  {
+    $this->primaryPermission = $primaryPermission;
+  }
+  public function getPrimaryPermission()
+  {
+    return $this->primaryPermission;
   }
   public function setStage($stage)
   {

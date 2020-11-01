@@ -22,11 +22,14 @@ class Google_Service_DLP_GooglePrivacyDlpV2CustomInfoType extends Google_Collect
   protected $detectionRulesDataType = 'array';
   protected $dictionaryType = 'Google_Service_DLP_GooglePrivacyDlpV2Dictionary';
   protected $dictionaryDataType = '';
+  public $exclusionType;
   protected $infoTypeType = 'Google_Service_DLP_GooglePrivacyDlpV2InfoType';
   protected $infoTypeDataType = '';
   public $likelihood;
   protected $regexType = 'Google_Service_DLP_GooglePrivacyDlpV2Regex';
   protected $regexDataType = '';
+  protected $storedTypeType = 'Google_Service_DLP_GooglePrivacyDlpV2StoredType';
+  protected $storedTypeDataType = '';
   protected $surrogateTypeType = 'Google_Service_DLP_GooglePrivacyDlpV2SurrogateType';
   protected $surrogateTypeDataType = '';
 
@@ -57,6 +60,14 @@ class Google_Service_DLP_GooglePrivacyDlpV2CustomInfoType extends Google_Collect
   public function getDictionary()
   {
     return $this->dictionary;
+  }
+  public function setExclusionType($exclusionType)
+  {
+    $this->exclusionType = $exclusionType;
+  }
+  public function getExclusionType()
+  {
+    return $this->exclusionType;
   }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2InfoType
@@ -93,6 +104,20 @@ class Google_Service_DLP_GooglePrivacyDlpV2CustomInfoType extends Google_Collect
   public function getRegex()
   {
     return $this->regex;
+  }
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2StoredType
+   */
+  public function setStoredType(Google_Service_DLP_GooglePrivacyDlpV2StoredType $storedType)
+  {
+    $this->storedType = $storedType;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2StoredType
+   */
+  public function getStoredType()
+  {
+    return $this->storedType;
   }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2SurrogateType

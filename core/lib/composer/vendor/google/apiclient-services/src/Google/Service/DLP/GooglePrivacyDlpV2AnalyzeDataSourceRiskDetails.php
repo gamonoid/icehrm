@@ -19,6 +19,8 @@ class Google_Service_DLP_GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails extends 
 {
   protected $categoricalStatsResultType = 'Google_Service_DLP_GooglePrivacyDlpV2CategoricalStatsResult';
   protected $categoricalStatsResultDataType = '';
+  protected $deltaPresenceEstimationResultType = 'Google_Service_DLP_GooglePrivacyDlpV2DeltaPresenceEstimationResult';
+  protected $deltaPresenceEstimationResultDataType = '';
   protected $kAnonymityResultType = 'Google_Service_DLP_GooglePrivacyDlpV2KAnonymityResult';
   protected $kAnonymityResultDataType = '';
   protected $kMapEstimationResultType = 'Google_Service_DLP_GooglePrivacyDlpV2KMapEstimationResult';
@@ -27,6 +29,8 @@ class Google_Service_DLP_GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails extends 
   protected $lDiversityResultDataType = '';
   protected $numericalStatsResultType = 'Google_Service_DLP_GooglePrivacyDlpV2NumericalStatsResult';
   protected $numericalStatsResultDataType = '';
+  protected $requestedOptionsType = 'Google_Service_DLP_GooglePrivacyDlpV2RequestedRiskAnalysisOptions';
+  protected $requestedOptionsDataType = '';
   protected $requestedPrivacyMetricType = 'Google_Service_DLP_GooglePrivacyDlpV2PrivacyMetric';
   protected $requestedPrivacyMetricDataType = '';
   protected $requestedSourceTableType = 'Google_Service_DLP_GooglePrivacyDlpV2BigQueryTable';
@@ -45,6 +49,20 @@ class Google_Service_DLP_GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails extends 
   public function getCategoricalStatsResult()
   {
     return $this->categoricalStatsResult;
+  }
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2DeltaPresenceEstimationResult
+   */
+  public function setDeltaPresenceEstimationResult(Google_Service_DLP_GooglePrivacyDlpV2DeltaPresenceEstimationResult $deltaPresenceEstimationResult)
+  {
+    $this->deltaPresenceEstimationResult = $deltaPresenceEstimationResult;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2DeltaPresenceEstimationResult
+   */
+  public function getDeltaPresenceEstimationResult()
+  {
+    return $this->deltaPresenceEstimationResult;
   }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2KAnonymityResult
@@ -101,6 +119,20 @@ class Google_Service_DLP_GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails extends 
   public function getNumericalStatsResult()
   {
     return $this->numericalStatsResult;
+  }
+  /**
+   * @param Google_Service_DLP_GooglePrivacyDlpV2RequestedRiskAnalysisOptions
+   */
+  public function setRequestedOptions(Google_Service_DLP_GooglePrivacyDlpV2RequestedRiskAnalysisOptions $requestedOptions)
+  {
+    $this->requestedOptions = $requestedOptions;
+  }
+  /**
+   * @return Google_Service_DLP_GooglePrivacyDlpV2RequestedRiskAnalysisOptions
+   */
+  public function getRequestedOptions()
+  {
+    return $this->requestedOptions;
   }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2PrivacyMetric

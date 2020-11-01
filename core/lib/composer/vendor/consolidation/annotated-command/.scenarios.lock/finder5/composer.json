@@ -1,0 +1,62 @@
+{
+    "name": "consolidation/annotated-command",
+    "description": "Initialize Symfony Console commands from annotated command class methods.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Greg Anderson",
+            "email": "greg.1.anderson@greenknowe.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Consolidation\\AnnotatedCommand\\": "../../src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Consolidation\\TestUtils\\": "../../tests/src"
+        }
+    },
+    "require": {
+        "symfony/finder": "^5",
+        "php": ">=5.4.5",
+        "consolidation/output-formatters": "^3.5.1",
+        "psr/log": "^1",
+        "symfony/console": "^2.8|^3|^4",
+        "symfony/event-dispatcher": "^2.5|^3|^4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6",
+        "php-coveralls/php-coveralls": "^1",
+        "g1a/composer-test-scenarios": "^3",
+        "squizlabs/php_codesniffer": "^2.7"
+    },
+    "config": {
+        "platform": {
+            "php": "7.2.5"
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "vendor-dir": "../../vendor"
+    },
+    "scripts": {
+        "cs": "phpcs --standard=PSR2 -n src",
+        "cbf": "phpcbf --standard=PSR2 -n src",
+        "unit": "SHELL_INTERACTIVE=true phpunit --colors=always",
+        "lint": [
+            "find src -name '*.php' -print0 | xargs -0 -n1 php -l",
+            "find tests/src -name '*.php' -print0 | xargs -0 -n1 php -l"
+        ],
+        "test": [
+            "@lint",
+            "@unit",
+            "@cs"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        }
+    }
+}

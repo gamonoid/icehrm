@@ -17,6 +17,7 @@
 
 class Google_Service_StreetViewPublish_Pose extends Google_Model
 {
+  public $accuracyMeters;
   public $altitude;
   public $heading;
   protected $latLngPairType = 'Google_Service_StreetViewPublish_LatLng';
@@ -26,6 +27,14 @@ class Google_Service_StreetViewPublish_Pose extends Google_Model
   public $pitch;
   public $roll;
 
+  public function setAccuracyMeters($accuracyMeters)
+  {
+    $this->accuracyMeters = $accuracyMeters;
+  }
+  public function getAccuracyMeters()
+  {
+    return $this->accuracyMeters;
+  }
   public function setAltitude($altitude)
   {
     $this->altitude = $altitude;

@@ -19,13 +19,20 @@ class Google_Service_Dataflow_RuntimeEnvironment extends Google_Collection
 {
   protected $collection_key = 'additionalExperiments';
   public $additionalExperiments;
+  public $additionalUserLabels;
   public $bypassTempDirValidation;
+  public $enableStreamingEngine;
+  public $ipConfiguration;
+  public $kmsKeyName;
   public $machineType;
   public $maxWorkers;
   public $network;
+  public $numWorkers;
   public $serviceAccountEmail;
   public $subnetwork;
   public $tempLocation;
+  public $workerRegion;
+  public $workerZone;
   public $zone;
 
   public function setAdditionalExperiments($additionalExperiments)
@@ -36,6 +43,14 @@ class Google_Service_Dataflow_RuntimeEnvironment extends Google_Collection
   {
     return $this->additionalExperiments;
   }
+  public function setAdditionalUserLabels($additionalUserLabels)
+  {
+    $this->additionalUserLabels = $additionalUserLabels;
+  }
+  public function getAdditionalUserLabels()
+  {
+    return $this->additionalUserLabels;
+  }
   public function setBypassTempDirValidation($bypassTempDirValidation)
   {
     $this->bypassTempDirValidation = $bypassTempDirValidation;
@@ -43,6 +58,30 @@ class Google_Service_Dataflow_RuntimeEnvironment extends Google_Collection
   public function getBypassTempDirValidation()
   {
     return $this->bypassTempDirValidation;
+  }
+  public function setEnableStreamingEngine($enableStreamingEngine)
+  {
+    $this->enableStreamingEngine = $enableStreamingEngine;
+  }
+  public function getEnableStreamingEngine()
+  {
+    return $this->enableStreamingEngine;
+  }
+  public function setIpConfiguration($ipConfiguration)
+  {
+    $this->ipConfiguration = $ipConfiguration;
+  }
+  public function getIpConfiguration()
+  {
+    return $this->ipConfiguration;
+  }
+  public function setKmsKeyName($kmsKeyName)
+  {
+    $this->kmsKeyName = $kmsKeyName;
+  }
+  public function getKmsKeyName()
+  {
+    return $this->kmsKeyName;
   }
   public function setMachineType($machineType)
   {
@@ -68,6 +107,14 @@ class Google_Service_Dataflow_RuntimeEnvironment extends Google_Collection
   {
     return $this->network;
   }
+  public function setNumWorkers($numWorkers)
+  {
+    $this->numWorkers = $numWorkers;
+  }
+  public function getNumWorkers()
+  {
+    return $this->numWorkers;
+  }
   public function setServiceAccountEmail($serviceAccountEmail)
   {
     $this->serviceAccountEmail = $serviceAccountEmail;
@@ -91,6 +138,22 @@ class Google_Service_Dataflow_RuntimeEnvironment extends Google_Collection
   public function getTempLocation()
   {
     return $this->tempLocation;
+  }
+  public function setWorkerRegion($workerRegion)
+  {
+    $this->workerRegion = $workerRegion;
+  }
+  public function getWorkerRegion()
+  {
+    return $this->workerRegion;
+  }
+  public function setWorkerZone($workerZone)
+  {
+    $this->workerZone = $workerZone;
+  }
+  public function getWorkerZone()
+  {
+    return $this->workerZone;
   }
   public function setZone($zone)
   {

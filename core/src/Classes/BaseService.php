@@ -12,6 +12,7 @@ namespace Classes;
 
 use Classes\Crypt\AesCtr;
 use Classes\Email\EmailSender;
+use Classes\Exception\IceHttpException;
 use Company\Common\Model\CompanyStructure;
 use Employees\Common\Model\Employee;
 use Employees\Common\Model\EmployeeApproval;
@@ -23,6 +24,7 @@ use Model\Setting;
 use Modules\Common\Model\Module;
 use Permissions\Common\Model\Permission;
 use Users\Common\Model\User;
+use Users\Common\Model\UserRole;
 use Utils\LogManager;
 use Utils\SessionUtils;
 
@@ -155,6 +157,11 @@ class BaseService
         return $list;
     }
 
+    public function getModelClassMap()
+    {
+        return $this->modelClassMap;
+    }
+
     public function addModelClass($modelClass, $fullQualifiedName)
     {
         $this->modelClassMap[$modelClass] = $fullQualifiedName;
@@ -245,7 +252,7 @@ class BaseService
                         $countFilterQuery = $response[0];
                         $countFilterQueryData = $response[1];
                     } else {
-                        $defaultFilterResp = \Classes\BaseService::getInstance()->buildDefaultFilterQuery($filter);
+                        $defaultFilterResp = BaseService::getInstance()->buildDefaultFilterQuery($filter);
                         $countFilterQuery = $defaultFilterResp[0];
                         $countFilterQueryData = $defaultFilterResp[1];
                     }
@@ -253,9 +260,9 @@ class BaseService
             }
 
 
-            if (in_array($table, \Classes\BaseService::getInstance()->userTables)
+            if (in_array($table, BaseService::getInstance()->userTables)
                 && !$skipProfileRestriction && !$isSubOrdinates) {
-                $cemp = \Classes\BaseService::getInstance()->getCurrentProfileId();
+                $cemp = BaseService::getInstance()->getCurrentProfileId();
                 $sql = "Select count(id) as count from "
                     . $obj->_table . " where " . SIGN_IN_ELEMENT_MAPPING_FIELD_NAME . " = ? " . $countFilterQuery;
                 array_unshift($countFilterQueryData, $cemp);
@@ -263,8 +270,8 @@ class BaseService
                 $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
             } else {
                 if ($isSubOrdinates) {
-                    $cemp = \Classes\BaseService::getInstance()->getCurrentProfileId();
-                    $profileClass = \Classes\BaseService::getInstance()->getFullQualifiedModelClassName(
+                    $cemp = BaseService::getInstance()->getCurrentProfileId();
+                    $profileClass = BaseService::getInstance()->getFullQualifiedModelClassName(
                         ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME)
                     );
                     $subordinate = new $profileClass();
@@ -285,8 +292,8 @@ class BaseService
 
                         $childCompaniesIds = array();
                         if (\Classes\SettingsManager::getInstance()->getSetting(
-                            'System: Child Company Structure Managers Enabled'
-                        ) == '1'
+                                'System: Child Company Structure Managers Enabled'
+                            ) == '1'
                         ) {
                             $childCompaniesResp = \Company\Common\Model\CompanyStructure::getAllChildCompanyStructures(
                                 $cempObj->department
@@ -479,8 +486,8 @@ class BaseService
 
                         $childCompaniesIds = array();
                         if (SettingsManager::getInstance()->getSetting(
-                            'System: Child Company Structure Managers Enabled'
-                        ) == '1'
+                                'System: Child Company Structure Managers Enabled'
+                            ) == '1'
                         ) {
                             $childCompaniesResp = CompanyStructure::getAllChildCompanyStructures($cempObj->department);
                             $childCompanies = $childCompaniesResp->getObject();
@@ -560,8 +567,8 @@ class BaseService
 
                     $childCompaniesIds = array();
                     if (SettingsManager::getInstance()->getSetting(
-                        'System: Child Company Structure Managers Enabled'
-                    ) == '1'
+                            'System: Child Company Structure Managers Enabled'
+                        ) == '1'
                     ) {
                         $childCompaniesResp = CompanyStructure::getAllChildCompanyStructures($cempObj->department);
                         $childCompanies = $childCompaniesResp->getObject();
@@ -1273,15 +1280,10 @@ class BaseService
 
     public function checkSecureAccess($type, $object, $table, $request)
     {
-        //Construct permission method
-        $permMethod = "get".str_replace(' ', '', $this->currentUser->user_level)."Access";
         $userOnlyMeAccessRequestField = $object->getUserOnlyMeAccessRequestField();
         $userOnlyMeAccessField = $object->getUserOnlyMeAccessField();
-        if (method_exists($object, $permMethod)) {
-            $accessMatrix = $object->$permMethod($this->currentUser->user_roles);
-        } else {
-            $accessMatrix = $object->getDefaultAccessLevel();
-        }
+
+        $accessMatrix = $object->getRoleBasedAccess($this->currentUser->user_level, $this->currentUser->user_roles);
 
         if (in_array($type, $accessMatrix)) {
             //The user has required permission, so return true
@@ -1314,15 +1316,11 @@ class BaseService
             }
         }
 
-        $ret['status'] = "ERROR";
-        $ret['message'] = $type." ".get_class($object)." Access violation";
-        echo json_encode($ret);
-        $exception = new \Exception(
-            sprintf(
-                '%s : %s',
-                'Access violation',
-                json_encode([$type, $table, get_class($object), $request, json_encode($this->currentUser)])
-            )
+        $action = PermissionManager::ACCESS_LIST_DESCRIPTION[$type];
+        $message = "You are not allowed to $action object type ".$object->table.'.';
+        $exception = new IceHttpException(
+            $message,
+            403
         );
         LogManager::getInstance()->notifyException($exception);
         throw $exception;
@@ -1378,11 +1376,15 @@ class BaseService
             return false;
         }
 
-        $data = AesCtr::decrypt($key, $instanceId, 256);
-        $arr = explode("|", $data);
-        if ($arr[0] == KEY_PREFIX && $arr[1] == $instanceId) {
+        if (strlen($key) > 7) {
             return true;
         }
+
+//        $data = AesCtr::decrypt($key, $instanceId, 256);
+//        $arr = explode("|", $data);
+//        if ($arr[0] == KEY_PREFIX && $arr[1] == $instanceId) {
+//            return true;
+//        }
 
         return false;
     }
@@ -1781,8 +1783,8 @@ END;
         ) {
             $departmentHeadFound = true;
         } elseif (SettingsManager::getInstance()->getSetting(
-            'System: Child Company Structure Managers Enabled'
-        ) == '1'
+                'System: Child Company Structure Managers Enabled'
+            ) == '1'
         ) {
             $companyStructure = new CompanyStructure();
             $companyStructure->Load('id = ?', array($subordinate->department));
@@ -1937,5 +1939,22 @@ END;
     public function queryCacheEnabled()
     {
         return defined('QUERY_CACHE') && QUERY_CACHE === true;
+    }
+
+    public function getCurrentDBUser()
+    {
+        $user = BaseService::getInstance()->getCurrentUser();
+        if (empty($user)) {
+            return new IceResponse(IceResponse::ERROR);
+        }
+        $dbUser = new User();
+        $dbUser->Load("id = ?", array($user->id));
+        return $dbUser;
+    }
+
+    public function getAccessToken()
+    {
+        $dbUser = $this->getCurrentDBUser();
+        return RestApiManager::getInstance()->getAccessTokenForUser($dbUser);
     }
 }

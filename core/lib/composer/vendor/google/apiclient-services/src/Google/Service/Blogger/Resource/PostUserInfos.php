@@ -26,19 +26,14 @@
 class Google_Service_Blogger_Resource_PostUserInfos extends Google_Service_Resource
 {
   /**
-   * Gets one post and user info pair, by post ID and user ID. The post user info
-   * contains per-user information about the post, such as access rights, specific
-   * to the user. (postUserInfos.get)
+   * Gets one post and user info pair, by post_id and user_id. (postUserInfos.get)
    *
-   * @param string $userId ID of the user for the per-user information to be
-   * fetched. Either the word 'self' (sans quote marks) or the user's profile
-   * identifier.
-   * @param string $blogId The ID of the blog.
-   * @param string $postId The ID of the post to get.
+   * @param string $userId
+   * @param string $blogId
+   * @param string $postId
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string maxComments Maximum number of comments to pull back on a
-   * post.
+   * @opt_param string maxComments
    * @return Google_Service_Blogger_PostUserInfo
    */
   public function get($userId, $blogId, $postId, $optParams = array())
@@ -48,30 +43,21 @@ class Google_Service_Blogger_Resource_PostUserInfos extends Google_Service_Resou
     return $this->call('get', array($params), "Google_Service_Blogger_PostUserInfo");
   }
   /**
-   * Retrieves a list of post and post user info pairs, possibly filtered. The
-   * post user info contains per-user information about the post, such as access
-   * rights, specific to the user. (postUserInfos.listPostUserInfos)
+   * Lists post and user info pairs. (postUserInfos.listPostUserInfos)
    *
-   * @param string $userId ID of the user for the per-user information to be
-   * fetched. Either the word 'self' (sans quote marks) or the user's profile
-   * identifier.
-   * @param string $blogId ID of the blog to fetch posts from.
+   * @param string $userId
+   * @param string $blogId
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string endDate Latest post date to fetch, a date-time with RFC
-   * 3339 formatting.
-   * @opt_param bool fetchBodies Whether the body content of posts is included.
-   * Default is false.
-   * @opt_param string labels Comma-separated list of labels to search for.
-   * @opt_param string maxResults Maximum number of posts to fetch.
-   * @opt_param string orderBy Sort order applied to search results. Default is
-   * published.
-   * @opt_param string pageToken Continuation token if the request is paged.
-   * @opt_param string startDate Earliest post date to fetch, a date-time with RFC
-   * 3339 formatting.
+   * @opt_param string startDate
+   * @opt_param string maxResults
+   * @opt_param string labels
    * @opt_param string status
-   * @opt_param string view Access level with which to view the returned result.
-   * Note that some fields require elevated access.
+   * @opt_param string pageToken
+   * @opt_param string view
+   * @opt_param string orderBy
+   * @opt_param string endDate
+   * @opt_param bool fetchBodies
    * @return Google_Service_Blogger_PostUserInfosList
    */
   public function listPostUserInfos($userId, $blogId, $optParams = array())

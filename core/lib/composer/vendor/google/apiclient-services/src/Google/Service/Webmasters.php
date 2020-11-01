@@ -40,19 +40,19 @@ class Google_Service_Webmasters extends Google_Service
   public $searchanalytics;
   public $sitemaps;
   public $sites;
-  public $urlcrawlerrorscounts;
-  public $urlcrawlerrorssamples;
   
   /**
    * Constructs the internal representation of the Webmasters service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://www.googleapis.com/';
     $this->servicePath = 'webmasters/v3/';
+    $this->batchPath = 'batch/webmasters/v3';
     $this->version = 'v3';
     $this->serviceName = 'webmasters';
 
@@ -185,118 +185,6 @@ class Google_Service_Webmasters extends Google_Service
               'path' => 'sites',
               'httpMethod' => 'GET',
               'parameters' => array(),
-            ),
-          )
-        )
-    );
-    $this->urlcrawlerrorscounts = new Google_Service_Webmasters_Resource_Urlcrawlerrorscounts(
-        $this,
-        $this->serviceName,
-        'urlcrawlerrorscounts',
-        array(
-          'methods' => array(
-            'query' => array(
-              'path' => 'sites/{siteUrl}/urlCrawlErrorsCounts/query',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'siteUrl' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'category' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'latestCountsOnly' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'platform' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->urlcrawlerrorssamples = new Google_Service_Webmasters_Resource_Urlcrawlerrorssamples(
-        $this,
-        $this->serviceName,
-        'urlcrawlerrorssamples',
-        array(
-          'methods' => array(
-            'get' => array(
-              'path' => 'sites/{siteUrl}/urlCrawlErrorsSamples/{url}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'siteUrl' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'url' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'category' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'platform' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'list' => array(
-              'path' => 'sites/{siteUrl}/urlCrawlErrorsSamples',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'siteUrl' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'category' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'platform' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'markAsFixed' => array(
-              'path' => 'sites/{siteUrl}/urlCrawlErrorsSamples/{url}',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'siteUrl' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'url' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'category' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'platform' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
             ),
           )
         )

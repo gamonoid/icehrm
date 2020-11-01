@@ -18,6 +18,7 @@
 class Google_Service_Monitoring_ContentMatcher extends Google_Model
 {
   public $content;
+  public $matcher;
 
   public function setContent($content)
   {
@@ -26,5 +27,13 @@ class Google_Service_Monitoring_ContentMatcher extends Google_Model
   public function getContent()
   {
     return $this->content;
+  }
+  public function setMatcher($matcher)
+  {
+    $this->matcher = $matcher;
+  }
+  public function getMatcher()
+  {
+    return $this->matcher;
   }
 }

@@ -31,6 +31,9 @@ class DescriptorHelper extends Helper
      */
     private $descriptors = array();
 
+    /**
+     * Constructor.
+     */
     public function __construct()
     {
         $this

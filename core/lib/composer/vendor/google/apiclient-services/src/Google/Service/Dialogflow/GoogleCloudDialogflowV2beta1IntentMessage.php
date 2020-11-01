@@ -19,6 +19,8 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
 {
   protected $basicCardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageBasicCard';
   protected $basicCardDataType = '';
+  protected $browseCarouselCardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard';
+  protected $browseCarouselCardDataType = '';
   protected $cardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageCard';
   protected $cardDataType = '';
   protected $carouselSelectType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageCarouselSelect';
@@ -29,14 +31,30 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
   protected $linkOutSuggestionDataType = '';
   protected $listSelectType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageListSelect';
   protected $listSelectDataType = '';
+  protected $mediaContentType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageMediaContent';
+  protected $mediaContentDataType = '';
   public $payload;
   public $platform;
   protected $quickRepliesType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageQuickReplies';
   protected $quickRepliesDataType = '';
+  protected $rbmCarouselRichCardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard';
+  protected $rbmCarouselRichCardDataType = '';
+  protected $rbmStandaloneRichCardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard';
+  protected $rbmStandaloneRichCardDataType = '';
+  protected $rbmTextType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmText';
+  protected $rbmTextDataType = '';
   protected $simpleResponsesType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses';
   protected $simpleResponsesDataType = '';
   protected $suggestionsType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageSuggestions';
   protected $suggestionsDataType = '';
+  protected $tableCardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTableCard';
+  protected $tableCardDataType = '';
+  protected $telephonyPlayAudioType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio';
+  protected $telephonyPlayAudioDataType = '';
+  protected $telephonySynthesizeSpeechType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech';
+  protected $telephonySynthesizeSpeechDataType = '';
+  protected $telephonyTransferCallType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall';
+  protected $telephonyTransferCallDataType = '';
   protected $textType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageText';
   protected $textDataType = '';
 
@@ -53,6 +71,20 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
   public function getBasicCard()
   {
     return $this->basicCard;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard
+   */
+  public function setBrowseCarouselCard(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard $browseCarouselCard)
+  {
+    $this->browseCarouselCard = $browseCarouselCard;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard
+   */
+  public function getBrowseCarouselCard()
+  {
+    return $this->browseCarouselCard;
   }
   /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageCard
@@ -124,6 +156,20 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
   {
     return $this->listSelect;
   }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageMediaContent
+   */
+  public function setMediaContent(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageMediaContent $mediaContent)
+  {
+    $this->mediaContent = $mediaContent;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageMediaContent
+   */
+  public function getMediaContent()
+  {
+    return $this->mediaContent;
+  }
   public function setPayload($payload)
   {
     $this->payload = $payload;
@@ -155,6 +201,48 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
     return $this->quickReplies;
   }
   /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard
+   */
+  public function setRbmCarouselRichCard(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard $rbmCarouselRichCard)
+  {
+    $this->rbmCarouselRichCard = $rbmCarouselRichCard;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard
+   */
+  public function getRbmCarouselRichCard()
+  {
+    return $this->rbmCarouselRichCard;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard
+   */
+  public function setRbmStandaloneRichCard(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard $rbmStandaloneRichCard)
+  {
+    $this->rbmStandaloneRichCard = $rbmStandaloneRichCard;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard
+   */
+  public function getRbmStandaloneRichCard()
+  {
+    return $this->rbmStandaloneRichCard;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmText
+   */
+  public function setRbmText(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmText $rbmText)
+  {
+    $this->rbmText = $rbmText;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageRbmText
+   */
+  public function getRbmText()
+  {
+    return $this->rbmText;
+  }
+  /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses
    */
   public function setSimpleResponses(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses $simpleResponses)
@@ -181,6 +269,62 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
   public function getSuggestions()
   {
     return $this->suggestions;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTableCard
+   */
+  public function setTableCard(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTableCard $tableCard)
+  {
+    $this->tableCard = $tableCard;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTableCard
+   */
+  public function getTableCard()
+  {
+    return $this->tableCard;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio
+   */
+  public function setTelephonyPlayAudio(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio $telephonyPlayAudio)
+  {
+    $this->telephonyPlayAudio = $telephonyPlayAudio;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio
+   */
+  public function getTelephonyPlayAudio()
+  {
+    return $this->telephonyPlayAudio;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech
+   */
+  public function setTelephonySynthesizeSpeech(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech $telephonySynthesizeSpeech)
+  {
+    $this->telephonySynthesizeSpeech = $telephonySynthesizeSpeech;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech
+   */
+  public function getTelephonySynthesizeSpeech()
+  {
+    return $this->telephonySynthesizeSpeech;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall
+   */
+  public function setTelephonyTransferCall(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall $telephonyTransferCall)
+  {
+    $this->telephonyTransferCall = $telephonyTransferCall;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall
+   */
+  public function getTelephonyTransferCall()
+  {
+    return $this->telephonyTransferCall;
   }
   /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageText

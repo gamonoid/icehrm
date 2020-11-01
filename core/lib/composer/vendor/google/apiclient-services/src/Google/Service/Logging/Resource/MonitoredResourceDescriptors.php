@@ -26,8 +26,8 @@
 class Google_Service_Logging_Resource_MonitoredResourceDescriptors extends Google_Service_Resource
 {
   /**
-   * Lists the descriptors for monitored resource types used by Stackdriver
-   * Logging. (monitoredResourceDescriptors.listMonitoredResourceDescriptors)
+   * Lists the descriptors for monitored resource types used by Logging.
+   * (monitoredResourceDescriptors.listMonitoredResourceDescriptors)
    *
    * @param array $optParams Optional parameters.
    *

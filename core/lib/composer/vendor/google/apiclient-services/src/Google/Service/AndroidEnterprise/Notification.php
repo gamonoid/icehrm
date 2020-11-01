@@ -21,6 +21,8 @@ class Google_Service_AndroidEnterprise_Notification extends Google_Model
   protected $appRestrictionsSchemaChangeEventDataType = '';
   protected $appUpdateEventType = 'Google_Service_AndroidEnterprise_AppUpdateEvent';
   protected $appUpdateEventDataType = '';
+  protected $deviceReportUpdateEventType = 'Google_Service_AndroidEnterprise_DeviceReportUpdateEvent';
+  protected $deviceReportUpdateEventDataType = '';
   public $enterpriseId;
   protected $installFailureEventType = 'Google_Service_AndroidEnterprise_InstallFailureEvent';
   protected $installFailureEventDataType = '';
@@ -62,6 +64,20 @@ class Google_Service_AndroidEnterprise_Notification extends Google_Model
   public function getAppUpdateEvent()
   {
     return $this->appUpdateEvent;
+  }
+  /**
+   * @param Google_Service_AndroidEnterprise_DeviceReportUpdateEvent
+   */
+  public function setDeviceReportUpdateEvent(Google_Service_AndroidEnterprise_DeviceReportUpdateEvent $deviceReportUpdateEvent)
+  {
+    $this->deviceReportUpdateEvent = $deviceReportUpdateEvent;
+  }
+  /**
+   * @return Google_Service_AndroidEnterprise_DeviceReportUpdateEvent
+   */
+  public function getDeviceReportUpdateEvent()
+  {
+    return $this->deviceReportUpdateEvent;
   }
   public function setEnterpriseId($enterpriseId)
   {

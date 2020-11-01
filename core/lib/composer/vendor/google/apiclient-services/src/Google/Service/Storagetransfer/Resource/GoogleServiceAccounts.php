@@ -34,8 +34,8 @@ class Google_Service_Storagetransfer_Resource_GoogleServiceAccounts extends Goog
    * account is created and owned by Storage Transfer Service and can only be used
    * by Storage Transfer Service. (googleServiceAccounts.get)
    *
-   * @param string $projectId The ID of the Google Cloud Platform Console project
-   * that the Google service account is associated with. Required.
+   * @param string $projectId Required. The ID of the Google Cloud Platform
+   * Console project that the Google service account is associated with.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Storagetransfer_GoogleServiceAccount
    */

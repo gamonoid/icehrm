@@ -23,6 +23,8 @@ class DateRangeFilterIterator extends FilterIterator
     private $comparators = array();
 
     /**
+     * Constructor.
+     *
      * @param \Iterator        $iterator    The Iterator to filter
      * @param DateComparator[] $comparators An array of DateComparator instances
      */

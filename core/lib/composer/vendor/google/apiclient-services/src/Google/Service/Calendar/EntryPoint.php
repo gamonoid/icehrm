@@ -15,15 +15,18 @@
  * the License.
  */
 
-class Google_Service_Calendar_EntryPoint extends Google_Model
+class Google_Service_Calendar_EntryPoint extends Google_Collection
 {
+  protected $collection_key = 'entryPointFeatures';
   public $accessCode;
+  public $entryPointFeatures;
   public $entryPointType;
   public $label;
   public $meetingCode;
   public $passcode;
   public $password;
   public $pin;
+  public $regionCode;
   public $uri;
 
   public function setAccessCode($accessCode)
@@ -33,6 +36,14 @@ class Google_Service_Calendar_EntryPoint extends Google_Model
   public function getAccessCode()
   {
     return $this->accessCode;
+  }
+  public function setEntryPointFeatures($entryPointFeatures)
+  {
+    $this->entryPointFeatures = $entryPointFeatures;
+  }
+  public function getEntryPointFeatures()
+  {
+    return $this->entryPointFeatures;
   }
   public function setEntryPointType($entryPointType)
   {
@@ -81,6 +92,14 @@ class Google_Service_Calendar_EntryPoint extends Google_Model
   public function getPin()
   {
     return $this->pin;
+  }
+  public function setRegionCode($regionCode)
+  {
+    $this->regionCode = $regionCode;
+  }
+  public function getRegionCode()
+  {
+    return $this->regionCode;
   }
   public function setUri($uri)
   {
