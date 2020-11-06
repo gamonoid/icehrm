@@ -94,6 +94,8 @@ class FileService
                 $s3FileSys = new S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);
                 $result = $s3FileSys->putObject($s3Bucket, $uploadname, $localFile, 'authenticated-read');
 
+                $file->size = filesize($localFile);
+
                 unlink("/tmp/".$file->filename);
                 unlink("/tmp/".$file->filename."_orig");
 
@@ -101,7 +103,6 @@ class FileService
 
                 $file->employee = $profileImage->employee;
                 $file->file_group = 'profile_image_small';
-                $file->size = filesize(CLIENT_BASE_PATH.'data/'.$file->filename);
                 $file->size_text = $this->getReadableSize($file->size);
 
                 if (!empty($result)) {
@@ -293,8 +294,7 @@ class FileService
             if ($file->employee == $profileId) {
                 $ok = $file->Delete();
                 if ($ok) {
-                    LogManager::getInstance()->info("Delete File:".CLIENT_BASE_PATH.$file->filename);
-                    unlink(CLIENT_BASE_PATH.'data/'.$file->filename);
+                    $this->deleteFileFromDisk($file);
                 } else {
                     return false;
                 }
@@ -306,8 +306,7 @@ class FileService
             if ($file->employee == $profileId) {
                 $ok = $file->Delete();
                 if ($ok) {
-                    LogManager::getInstance()->info("Delete File:".CLIENT_BASE_PATH.$file->filename);
-                    unlink(CLIENT_BASE_PATH.'data/'.$file->filename);
+                    $this->deleteFileFromDisk($file);
                 } else {
                     return false;
                 }
@@ -315,6 +314,30 @@ class FileService
         }
 
         return true;
+    }
+
+    public function deleteFileFromDisk($file)
+    {
+        $uploadFilesToS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
+
+        if ($uploadFilesToS3 == "1") {
+            $uploadFilesToS3Key = SettingsManager::getInstance()->getSetting(
+                "Files: Amazon S3 Key for File Upload"
+            );
+            $uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
+                "Files: Amazone S3 Secret for File Upload"
+            );
+            $s3Bucket = SettingsManager::getInstance()->getSetting("Files: S3 Bucket");
+
+            $uploadname = CLIENT_NAME."/".$file->filename;
+            LogManager::getInstance()->info("Delete from S3:".$uploadname);
+
+            $s3FileSys = new S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);
+            $s3FileSys->deleteObject($s3Bucket, $uploadname);
+        } else {
+            LogManager::getInstance()->info("Delete:".CLIENT_BASE_PATH.'data/'.$file->filename);
+            unlink(CLIENT_BASE_PATH.'data/'.$file->filename);
+        }
     }
 
     public function deleteFileByField($value, $field)
