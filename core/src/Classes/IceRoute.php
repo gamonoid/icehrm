@@ -3,14 +3,14 @@
 namespace Classes;
 
 /**
- * @method static Macaw get(string $route, Callable $callback)
- * @method static Macaw post(string $route, Callable $callback)
- * @method static Macaw put(string $route, Callable $callback)
- * @method static Macaw delete(string $route, Callable $callback)
- * @method static Macaw options(string $route, Callable $callback)
- * @method static Macaw head(string $route, Callable $callback)
+ * @method static IceRoute get(string $route, Callable $callback)
+ * @method static IceRoute post(string $route, Callable $callback)
+ * @method static IceRoute put(string $route, Callable $callback)
+ * @method static IceRoute delete(string $route, Callable $callback)
+ * @method static IceRoute options(string $route, Callable $callback)
+ * @method static IceRoute head(string $route, Callable $callback)
  */
-class Macaw
+class IceRoute
 {
 
     public static $halts = false;
@@ -35,14 +35,12 @@ class Macaw
     public static function __callstatic($method, $params)
     {
 
-        $uri = dirname($_SERVER['PHP_SELF']).$params[0];
-        $callback = $params[1];
+        $uri = $params[0][0];
+        $callback = $params[0][1];
 
         array_push(self::$routes, $uri);
         array_push(self::$methods, strtoupper($method));
         array_push(self::$callbacks, $callback);
-
-        call_user_func('\Classes\IceRoute::'.$method, $params);
 
         return $uri;
     }
@@ -63,10 +61,8 @@ class Macaw
     /**
      * Runs the callback for the given request
      */
-    public static function dispatch()
+    public static function dispatch($uri, $method)
     {
-        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        $method = $_SERVER['REQUEST_METHOD'];
 
         $searches = array_keys(static::$patterns);
         $replaces = array_values(static::$patterns);
