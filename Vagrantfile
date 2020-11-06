@@ -18,6 +18,8 @@ Vagrant.configure("2") do |config|
         sudo rm /etc/nginx/sites-enabled/default
         sudo ln -s /vagrant/deployment/vagrant/sites-available/default /etc/nginx/sites-enabled/default
 
+        sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+
         sudo service nginx restart
         sudo chmod 755 -R /var/log
     SHELL
