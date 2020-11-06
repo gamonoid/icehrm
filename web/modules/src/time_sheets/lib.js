@@ -613,8 +613,15 @@ class EmployeeTimeEntryAdapter extends AdapterBase {
     return dateArray;
   }
 
-
   renderForm(object) {
+    this.initMasterDataReader();
+    this.masterDataReader.updateAllMasterData()
+      .then(() => {
+        this._renderForm(object);
+      });
+  }
+
+  _renderForm(object) {
     let formHtml = this.getCustomTemplate('time_entry_form.html');
     formHtml = formHtml.replace(/modJs/g, "modJsList['tabEmployeeTimeEntry']");
     let html = '';
