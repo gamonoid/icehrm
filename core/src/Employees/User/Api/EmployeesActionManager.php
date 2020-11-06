@@ -56,9 +56,9 @@ class EmployeesActionManager extends SubActionManager
             if (!empty($childCompaniesIds)) {
                 $childStructureSubordinates
                     = $obj->Find(
-                    "department in (" . implode(',', $childCompaniesIds) . ") and id != ?",
-                    array($cemp)
-                );
+                        "department in (" . implode(',', $childCompaniesIds) . ") and id != ?",
+                        array($cemp)
+                    );
                 $subordinates = array_merge($subordinates, $childStructureSubordinates);
             }
 
