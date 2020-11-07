@@ -1,37 +1,32 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
   Col,
   Card,
-  Badge,
   Avatar,
-  Input,
   Row,
   Descriptions,
   Typography,
-  Table,
   Space,
-  Button,
   Tag,
-  message,
   Tabs,
-  Spin,
   Skeleton
 } from 'antd';
 import {
-  FilterOutlined,
   EditOutlined,
   PhoneTwoTone,
   MailTwoTone,
   SyncOutlined,
+  LockOutlined,
 } from '@ant-design/icons';
 import TagList from "../../../../components/TagList";
-const { Search } = Input;
+import UpdatePasswordModal from "../../../../components/UpdatePasswordModal";
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
 
 class EmployeeProfile extends React.Component {
   state = {
     loading: true,
+    showPasswordResetModal: false,
   };
 
   constructor(props) {
@@ -40,6 +35,10 @@ class EmployeeProfile extends React.Component {
 
   setLoading(value) {
     this.setState({ loading: value });
+  }
+
+  setShowPasswordUpdate(value) {
+    this.setState({ showPasswordResetModal: value });
   }
 
   updateProfileImage() {
@@ -71,6 +70,33 @@ class EmployeeProfile extends React.Component {
     </>);
   }
 
+  getEditButtonJsxWithPassword() {
+    return (<>
+      {this.state.loading &&
+      <Tag icon={<SyncOutlined spin/>} color="processing">
+        {this.props.adapter.gt('Edit')}
+      </Tag>
+      }
+      {!this.state.loading &&
+      <Tag icon={<EditOutlined/>} color="processing"
+           onClick={() => modJs.edit(this.props.element.id)}>
+        {this.props.adapter.gt('Edit')}
+      </Tag>
+      }
+      <Tag icon={<LockOutlined/>} color="volcano" onClick={() => this.setShowPasswordUpdate(true)}>
+      {this.props.adapter.gt('Update Password')}
+      </Tag>
+    </>);
+  }
+
+  getUpdatePasswordButtonJsx() {
+    return (<>
+      <Tag icon={<SyncOutlined spin/>} color="processing">
+        {this.props.adapter.gt('Update Password')}
+      </Tag>
+    </>);
+  }
+
   getTabViewEmployeeFilterButtonJsx(tab) {
     return (
       <Tag icon={<EditOutlined/>} color="processing"
@@ -86,10 +112,15 @@ class EmployeeProfile extends React.Component {
     }
     return (
       <>
+      <UpdatePasswordModal
+          visible={this.state.showPasswordResetModal}
+          closeModal={() => {this.setState({ showPasswordResetModal: false })}}
+          adapter={this.props.adapter}
+      />
       <Row direction="vertical" style={{width: '100%', padding: '10px'}} gutter={24}>
         <Col span={24}>
           <Card title={this.props.adapter.gt('Employee Profile')}
-                extra={this.getEditButtonJsx()}
+                extra={this.getEditButtonJsxWithPassword()}
                 style={{ width: '100%' }}
           >
             <Space size={'large'}>

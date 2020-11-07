@@ -147,6 +147,10 @@ class EmployeesActionManager extends SubActionManager
             return new IceResponse(IceResponse::ERROR, "Error occurred while changing password");
         }
 
+        if (!PasswordManager::verifyPassword($req->current, $user->password)) {
+            return new IceResponse(IceResponse::ERROR, "Current password is incorrect");
+        }
+
         $passwordStrengthResponse = PasswordManager::isQualifiedPassword($req->pwd);
         if ($passwordStrengthResponse->getStatus() === IceResponse::ERROR) {
             return $passwordStrengthResponse;
@@ -158,6 +162,6 @@ class EmployeesActionManager extends SubActionManager
             return new IceResponse(IceResponse::ERROR, $user->ErrorMsg());
         }
 
-        return new IceResponse(IceResponse::SUCCESS, $user);
+        return new IceResponse(IceResponse::SUCCESS, []);
     }
 }

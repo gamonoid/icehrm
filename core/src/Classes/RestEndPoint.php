@@ -420,6 +420,8 @@ class RestEndPoint
             if (preg_match('/Bearer\s(\S+)/', $headers, $matches)) {
                 $token = $matches[1];
             }
+        } else {
+            $token = $_GET['token'];
         }
 
         if (strlen($token) > 32) {

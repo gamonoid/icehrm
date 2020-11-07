@@ -61,10 +61,10 @@ class ModuleBase {
   }
 
   /**
-     * Some browsers do not support sending JSON in get parameters. Set this to true to avoid sending JSON
-     * @method setNoJSONRequests
-     * @param val {Boolean}
-     */
+   * Some browsers do not support sending JSON in get parameters. Set this to true to avoid sending JSON
+   * @method setNoJSONRequests
+   * @param val {Boolean}
+   */
   setNoJSONRequests(val) {
     this.noJSONRequests = val;
   }
@@ -79,12 +79,12 @@ class ModuleBase {
   }
 
   /**
-     * Check if the current user has a permission
-     * @method checkPermission
-     * @param permission {String}
-     * @example
-     * this.checkPermission("Upload/Delete Profile Image")
-     */
+   * Check if the current user has a permission
+   * @method checkPermission
+   * @param permission {String}
+   * @example
+   * this.checkPermission("Upload/Delete Profile Image")
+   */
   checkPermission(permission) {
     if (this.permissions[permission] === undefined || this.permissions[permission] == null || this.permissions[permission] === 'Yes') {
       return 'Yes';
@@ -168,15 +168,15 @@ class ModuleBase {
   }
 
   /**
-     * If this method returned false the action buttons in data table for modules will not be displayed.
-     * Override this method in module lib.js to hide action buttons
-     * @method showActionButtons
-     * @param permission {String}
-     * @example
-     * EmployeeLeaveEntitlementAdapter.method('showActionButtons() {
-     *  return false;
-     * }
-     */
+   * If this method returned false the action buttons in data table for modules will not be displayed.
+   * Override this method in module lib.js to hide action buttons
+   * @method showActionButtons
+   * @param permission {String}
+   * @example
+   * EmployeeLeaveEntitlementAdapter.method('showActionButtons() {
+   *  return false;
+   * }
+   */
   showActionButtons() {
     return true;
   }
@@ -201,30 +201,30 @@ class ModuleBase {
   }
 
   /**
-     * Get the current profile
-     * @method getCurrentProfile
-     * @returns Profile of the current user if the profile is not switched if not switched profile
-     */
+   * Get the current profile
+   * @method getCurrentProfile
+   * @returns Profile of the current user if the profile is not switched if not switched profile
+   */
 
   getCurrentProfile() {
     return this.currentProfile;
   }
 
   /**
-     * Retrive data required to create select boxes for add new /edit forms for a given module. This is called when loading the module
-     * @method initFieldMasterData
-     * @param callback {Function} call this once loading completed
-     * @param callback {Function} call this once all field loading completed. This indicate that the form can be displayed saftly
-     * @example
-     *   ReportAdapter.method('renderForm(object) {
-     *    var that = this;
-     *    this.processFormFieldsWithObject(object);
-     *    var cb = function(){
-     *      that.super.renderForm(object);
-     *    };
-     *    this.initFieldMasterData(cb);
-     *  }
-     */
+   * Retrive data required to create select boxes for add new /edit forms for a given module. This is called when loading the module
+   * @method initFieldMasterData
+   * @param callback {Function} call this once loading completed
+   * @param callback {Function} call this once all field loading completed. This indicate that the form can be displayed saftly
+   * @example
+   *   ReportAdapter.method('renderForm(object) {
+   *    var that = this;
+   *    this.processFormFieldsWithObject(object);
+   *    var cb = function(){
+   *      that.super.renderForm(object);
+   *    };
+   *    this.initFieldMasterData(cb);
+   *  }
+   */
   initFieldMasterData(callback, loadAllCallback, loadAllCallbackData) {
     this.fieldMasterData = {};
     this.fieldMasterDataKeys = {};
@@ -236,10 +236,11 @@ class ModuleBase {
     for (let i = 0; i < remoteSourceFields.length; i++) {
       const fieldRemote = remoteSourceFields[i];
       if (fieldRemote[1]['remote-source'] !== undefined && fieldRemote[1]['remote-source'] != null) {
-        let key = `${fieldRemote[1]['remote-source'][0]}_${fieldRemote[1]['remote-source'][1]}_${fieldRemote[1]['remote-source'][2]}`;
-        if (fieldRemote[1]['remote-source'].length === 4) {
-          key = `${key}_${fieldRemote[1]['remote-source'][3]}`;
-        }
+        // let key = `${fieldRemote[1]['remote-source'][0]}_${fieldRemote[1]['remote-source'][1]}_${fieldRemote[1]['remote-source'][2]}`;
+        // if (fieldRemote[1]['remote-source'].length === 4) {
+        //   key = `${key}_${fieldRemote[1]['remote-source'][3]}`;
+        // }
+        const key = this.getRemoteSourceKey(fieldRemote);
         this.fieldMasterDataKeys[key] = false;
 
         const callBackData = {};
@@ -320,26 +321,26 @@ class ModuleBase {
   }
 
   /**
-     * Pass true to this method after creating module JS object to open new/edit entry form for the module on a popup.
-     * @method setShowFormOnPopup
-     * @param val {Boolean}
-     * @example
-     *   modJs.subModJsList['tabCandidateApplication'] = new CandidateApplicationAdapter('Application','CandidateApplication',{"candidate":data.id}
-     *  modJs.subModJsList['tabCandidateApplication'].setShowFormOnPopup(true);
-     */
+   * Pass true to this method after creating module JS object to open new/edit entry form for the module on a popup.
+   * @method setShowFormOnPopup
+   * @param val {Boolean}
+   * @example
+   *   modJs.subModJsList['tabCandidateApplication'] = new CandidateApplicationAdapter('Application','CandidateApplication',{"candidate":data.id}
+   *  modJs.subModJsList['tabCandidateApplication'].setShowFormOnPopup(true);
+   */
 
   setShowFormOnPopup(val) {
     this.showFormOnPopup = val;
   }
 
   /**
-     * Set this to true to if you need the datatable to load data page by page instead of loading all data at once.
-     * @method setRemoteTable
-     * @param val {Boolean}
-     * @example
-     *   modJs.subModJsList['tabCandidateApplication'] = new CandidateApplicationAdapter('Application','CandidateApplication',{"candidate":data.id}
-     *  modJs.subModJsList['tabCandidateApplication'].setRemoteTable(true);
-     */
+   * Set this to true to if you need the datatable to load data page by page instead of loading all data at once.
+   * @method setRemoteTable
+   * @param val {Boolean}
+   * @example
+   *   modJs.subModJsList['tabCandidateApplication'] = new CandidateApplicationAdapter('Application','CandidateApplication',{"candidate":data.id}
+   *  modJs.subModJsList['tabCandidateApplication'].setRemoteTable(true);
+   */
 
   setRemoteTable(val) {
     this.createRemoteTable = val;
@@ -372,14 +373,14 @@ class ModuleBase {
     }
 
     if (this.fieldMasterDataCallback !== null
-            && this.fieldMasterDataCallback !== undefined
-            && this.isAllLoaded(this.fieldMasterDataKeys)
-            && (this.fieldMasterDataCallbackData !== null && this.fieldMasterDataCallbackData !== undefined)
+      && this.fieldMasterDataCallback !== undefined
+      && this.isAllLoaded(this.fieldMasterDataKeys)
+      && (this.fieldMasterDataCallbackData !== null && this.fieldMasterDataCallbackData !== undefined)
     ) {
       this.fieldMasterDataCallback(this.fieldMasterDataCallbackData);
     } else if (this.fieldMasterDataCallback !== null
-            && this.fieldMasterDataCallback !== undefined
-            && this.isAllLoaded(this.fieldMasterDataKeys)
+      && this.fieldMasterDataCallback !== undefined
+      && this.isAllLoaded(this.fieldMasterDataKeys)
     ) {
       this.fieldMasterDataCallback();
     }
@@ -597,10 +598,10 @@ class ModuleBase {
   }
 
   /**
-     * Create the data table on provided element id
-     * @method createTable
-     * @param val {Boolean}
-     */
+   * Create the data table on provided element id
+   * @method createTable
+   * @param val {Boolean}
+   */
 
   createTable(elementId) {
     const that = this;
@@ -678,10 +679,10 @@ class ModuleBase {
   }
 
   /**
-     * Create a data table on provided element id which loads data page by page
-     * @method createTableServer
-     * @param val {Boolean}
-     */
+   * Create a data table on provided element id which loads data page by page
+   * @method createTableServer
+   * @param val {Boolean}
+   */
 
   createTableServer(elementId) {
     const that = this;
@@ -748,10 +749,10 @@ class ModuleBase {
   }
 
   /**
-     * This should be overridden in module lib.js classes to return module headers which are used to create the data table.
-     * @method getHeaders
-     * @example
-     SettingAdapter.method('getHeaders() {
+   * This should be overridden in module lib.js classes to return module headers which are used to create the data table.
+   * @method getHeaders
+   * @example
+   SettingAdapter.method('getHeaders() {
       return [
       { "sTitle": "ID" ,"bVisible":false},
       { "sTitle": "Name" },
@@ -759,17 +760,17 @@ class ModuleBase {
       { "sTitle": "Details"}
     ];
     }
-     */
+   */
   getHeaders() {
 
   }
 
 
   /**
-     * This should be overridden in module lib.js classes to return module field values which are used to create the data table.
-     * @method getDataMapping
-     * @example
-     SettingAdapter.method('getDataMapping() {
+   * This should be overridden in module lib.js classes to return module field values which are used to create the data table.
+   * @method getDataMapping
+   * @example
+   SettingAdapter.method('getDataMapping() {
   return [
           "id",
           "name",
@@ -777,23 +778,23 @@ class ModuleBase {
           "description"
   ];
   }
-     */
+   */
 
   getDataMapping() {
 
   }
 
   /**
-     * This should be overridden in module lib.js classes to return module from fields which are used to create the add/edit form and also used for initializing select box values in form.
-     * @method getFormFields
-     * @example
-     SettingAdapter.method('getFormFields() {
+   * This should be overridden in module lib.js classes to return module from fields which are used to create the add/edit form and also used for initializing select box values in form.
+   * @method getFormFields
+   * @example
+   SettingAdapter.method('getFormFields() {
   return [
           [ "id", {"label":"ID","type":"hidden"}],
           [ "value", {"label":"Value","type":"text","validation":"none"}]
   ];
   }
-     */
+   */
   getFormFields() {
 
   }
@@ -807,26 +808,26 @@ class ModuleBase {
   }
 
   /**
-     * This can be overridden in module lib.js classes inorder to show a filter form
-     * @method getFilters
-     * @example
-     EmployeeAdapter.method('getFilters() {
+   * This can be overridden in module lib.js classes inorder to show a filter form
+   * @method getFilters
+   * @example
+   EmployeeAdapter.method('getFilters() {
     return [
             [ "job_title", {"label":"Job Title","type":"select2","allow-null":true,"null-label":"All Job Titles","remote-source":["JobTitle","id","name"]}],
             [ "department", {"label":"Department","type":"select2","allow-null":true,"null-label":"All Departments","remote-source":["CompanyStructure","id","title"]}],
             [ "supervisor", {"label":"Supervisor","type":"select2","allow-null":true,"null-label":"Anyone","remote-source":["Employee","id","first_name+last_name"]}]
     ];
   }
-     */
+   */
   getFilters() {
     return null;
   }
 
   /**
-     * Show the edit form for an item
-     * @method edit
-     * @param id {int} id of the item to edit
-     */
+   * Show the edit form for an item
+   * @method edit
+   * @param id {int} id of the item to edit
+   */
   edit(id) {
     this.currentId = id;
     this.getElement(id, []);
@@ -890,10 +891,10 @@ class ModuleBase {
   }
 
   /**
-     * Delete an item
-     * @method deleteRow
-     * @param id {int} id of the item to edit
-     */
+   * Delete an item
+   * @method deleteRow
+   * @param id {int} id of the item to edit
+   */
 
   deleteRow(id) {
     this.deleteParams.id = id;
@@ -902,17 +903,17 @@ class ModuleBase {
   }
 
   /**
-     * Show a popup with message
-     * @method showMessage
-     * @param title {String} title of the message box
-     * @param message {String} message
-     * @param closeCallback {Function} this will be called once the dialog is closed (optional)
-     * @param closeCallback {Function} data to pass to close callback (optional)
-     * @param closeCallbackData
-     * @param isPlain {Boolean} if true buttons are not shown (optional / default = true)
-     * @example
-     *   this.showMessage("Error Occured while Applying Leave", callBackData);
-     */
+   * Show a popup with message
+   * @method showMessage
+   * @param title {String} title of the message box
+   * @param message {String} message
+   * @param closeCallback {Function} this will be called once the dialog is closed (optional)
+   * @param closeCallback {Function} data to pass to close callback (optional)
+   * @param closeCallbackData
+   * @param isPlain {Boolean} if true buttons are not shown (optional / default = true)
+   * @example
+   *   this.showMessage("Error Occured while Applying Leave", callBackData);
+   */
   showMessage(title, message, closeCallback = null, closeCallbackData = null, isPlain = false) {
     const that = this;
     let modelId = '';
@@ -1005,11 +1006,11 @@ class ModuleBase {
 
 
   /**
-     * Create or edit an element
-     * @method save
-     * @param getFunctionCallBackData {Array} once a success is returned call get() function for this module with these parameters
-     * @param successCallback {Function} this will get called after success response
-     */
+   * Create or edit an element
+   * @method save
+   * @param getFunctionCallBackData {Array} once a success is returned call get() function for this module with these parameters
+   * @param successCallback {Function} this will get called after success response
+   */
 
   save(callGetFunction, successCallback) {
     const validator = new FormValidation(`${this.getTableName()}_submit`, true, { ShowPopup: false, LabelErrorClass: 'error' });
@@ -1040,7 +1041,7 @@ class ModuleBase {
     const fields = this.getFormFields();
     fields.forEach((field) => {
       if ((field[1].type === 'date' || field[1].type === 'datetime')
-                && (params[field[0]] === '' || params[field[0]] === '0000-00-00' || params[field[0]] === '0000-00-00 00:00:00')) {
+        && (params[field[0]] === '' || params[field[0]] === '0000-00-00' || params[field[0]] === '0000-00-00 00:00:00')) {
         if (field[1].validation === 'none') {
           params[field[0]] = 'NULL';
         } else {
@@ -1084,23 +1085,23 @@ class ModuleBase {
   }
 
   /**
-     * Override this method to inject attitional parameters or modify existing parameters retrived from
-     * add/edit form before sending to the server
-     * @method forceInjectValuesBeforeSave
-     * @param params {Array} keys and values in form
-     * @returns {Array} modified parameters
-     */
+   * Override this method to inject attitional parameters or modify existing parameters retrived from
+   * add/edit form before sending to the server
+   * @method forceInjectValuesBeforeSave
+   * @param params {Array} keys and values in form
+   * @returns {Array} modified parameters
+   */
   forceInjectValuesBeforeSave(params) {
     return params;
   }
 
   /**
-     * Override this method to do custom validations at client side
-     * @method doCustomValidation
-     * @param params {Array} keys and values in form
-     * @returns {Null or String} return null if validation success, returns error message if unsuccessful
-     * @example
-     EmployeeLeaveAdapter.method('doCustomValidation(params) {
+   * Override this method to do custom validations at client side
+   * @method doCustomValidation
+   * @param params {Array} keys and values in form
+   * @returns {Null or String} return null if validation success, returns error message if unsuccessful
+   * @example
+   EmployeeLeaveAdapter.method('doCustomValidation(params) {
     try{
       if(params['date_start'] != params['date_end']){
         var ds = new Date(params['date_start']);
@@ -1114,7 +1115,7 @@ class ModuleBase {
     }
   return null;
 }
-     */
+   */
   // eslint-disable-next-line no-unused-vars
   doCustomValidation(params) {
     return null;
@@ -1177,7 +1178,12 @@ class ModuleBase {
                 value = 'Not Selected';
               }
             } else {
-              value = this.fieldMasterData[`${rmf[0]}_${rmf[1]}_${rmf[2]}`][filters[prop]];
+              let key = `${rmf[0]}_${rmf[1]}_${rmf[2]}`;
+              if (rmf.length > 3) {
+                key = `${key}_${rmf[3]}`;
+              }
+              //value = this.fieldMasterData[`${rmf[0]}_${rmf[1]}_${rmf[2]}`][filters[prop]];
+              value = this.fieldMasterData[key][filters[prop]];
               valueOrig = value;
             }
           } else {
@@ -1231,20 +1237,20 @@ class ModuleBase {
   }
 
   /**
-     * Override this method to do custom validations at client side for values selected in filters
-     * @method doCustomFilterValidation
-     * @param params {Array} keys and values in form
-     * @returns {Null or String} return null if validation success, returns error message if unsuccessful
-     */
+   * Override this method to do custom validations at client side for values selected in filters
+   * @method doCustomFilterValidation
+   * @param params {Array} keys and values in form
+   * @returns {Null or String} return null if validation success, returns error message if unsuccessful
+   */
   doCustomFilterValidation(params) {
     return true;
   }
 
 
   /**
-     * Reset selected filters
-     * @method resetFilters
-     */
+   * Reset selected filters
+   * @method resetFilters
+   */
 
   resetFilters() {
     this.filter = this.origFilter;
@@ -1332,7 +1338,8 @@ class ModuleBase {
       try {
         modJs.filterQuery();
       } catch (err) {
-        // Do Nothing
+        console.log(err);
+        console.log(err.message);
       }
       return false;
     });
@@ -1344,20 +1351,20 @@ class ModuleBase {
 
 
   /**
-     * Override this method in your module class to make changes to data fo the form before showing the form
-     * @method preRenderForm
-     * @param object {Array} keys value list for populating form
-     */
+   * Override this method in your module class to make changes to data fo the form before showing the form
+   * @method preRenderForm
+   * @param object {Array} keys value list for populating form
+   */
 
   preRenderForm(object) {
 
   }
 
   /**
-     * Create the form
-     * @method renderForm
-     * @param object {Array} keys value list for populating form
-     */
+   * Create the form
+   * @method renderForm
+   * @param object {Array} keys value list for populating form
+   */
 
   renderForm(object) {
     const signatureIds = [];
@@ -1581,28 +1588,28 @@ class ModuleBase {
   }
 
   /**
-     * Override this method in your module class to make changes to data fo the form after showing it
-     * @method postRenderForm
-     * @param object {Array} keys value list for populating form
-     * @param $tempDomObj {DOM} a DOM element for the form
-     * @example
-     *   UserAdapter.method('postRenderForm(object, $tempDomObj) {
+   * Override this method in your module class to make changes to data fo the form after showing it
+   * @method postRenderForm
+   * @param object {Array} keys value list for populating form
+   * @param $tempDomObj {DOM} a DOM element for the form
+   * @example
+   *   UserAdapter.method('postRenderForm(object, $tempDomObj) {
     if(object == null || object == undefined){
       $tempDomObj.find("#changePasswordBtn").remove();
     }
   }
-     */
+   */
 
   postRenderForm(object, $tempDomObj) {
 
   }
 
   /**
-     * Convert data group field to HTML
-     * @method dataGroupToHtml
-     * @param val {String} value in the field
-     * @param field {Array} field meta data
-     */
+   * Convert data group field to HTML
+   * @method dataGroupToHtml
+   * @param val {String} value in the field
+   * @param field {Array} field meta data
+   */
 
   dataGroupToHtml(val, field) {
     const data = JSON.parse(val);
@@ -1657,10 +1664,10 @@ class ModuleBase {
   }
 
   /**
-     * Reset the DataGroup for a given field
-     * @method resetDataGroup
-     * @param field {Array} field meta data
-     */
+   * Reset the DataGroup for a given field
+   * @method resetDataGroup
+   * @param field {Array} field meta data
+   */
   resetDataGroup(field) {
     $(`#${field[0]}`).val('');
     $(`#${field[0]}_div`).html('');
@@ -2054,12 +2061,12 @@ class ModuleBase {
 
 
   /**
-     * Fill a form with required values after showing it
-     * @method fillForm
-     * @param object {Array} form data
-     * @param formId {String} id of the form
-     * @param formId {Array} field meta data
-     */
+   * Fill a form with required values after showing it
+   * @method fillForm
+   * @param object {Array} form data
+   * @param formId {String} id of the form
+   * @param formId {Array} field meta data
+   */
 
   fillForm(object, formId, fields) {
     let placeHolderVal;
@@ -2094,7 +2101,8 @@ class ModuleBase {
         $(`${formId} #${fields[i][0]}`).html(object[fields[i][0]]);
       } else if (fields[i][1].type === 'placeholder') {
         if (fields[i][1]['remote-source'] !== undefined && fields[i][1]['remote-source'] != null) {
-          const key = `${fields[i][1]['remote-source'][0]}_${fields[i][1]['remote-source'][1]}_${fields[i][1]['remote-source'][2]}`;
+          //const key = `${fields[i][1]['remote-source'][0]}_${fields[i][1]['remote-source'][1]}_${fields[i][1]['remote-source'][2]}`;
+          const key = this.getRemoteSourceKey(fields[i]);
           placeHolderVal = this.fieldMasterData[key][object[fields[i][0]]];
         } else {
           placeHolderVal = object[fields[i][0]];
@@ -2172,7 +2180,7 @@ class ModuleBase {
         }
       } else if (fields[i][1].type === 'signature') {
         if (object[fields[i][0]] !== '' || object[fields[i][0]] !== undefined
-                    || object[fields[i][0]] != null) {
+          || object[fields[i][0]] != null) {
           $(`${formId} #${fields[i][0]}`).data('signaturePad').fromDataURL(object[fields[i][0]]);
         }
       } else if (fields[i][1].type === 'simplemde') {
@@ -2189,9 +2197,9 @@ class ModuleBase {
   }
 
   /**
-     * Cancel edit or add new on modules
-     * @method cancel
-     */
+   * Cancel edit or add new on modules
+   * @method cancel
+   */
 
   cancel() {
     $(`#${this.getTableName()}Form`).hide();
@@ -2218,10 +2226,11 @@ class ModuleBase {
       if (field[1].source !== undefined && field[1].source != null) {
         t = t.replace('_options_', this.renderFormSelectOptions(field[1].source, field));
       } else if (field[1]['remote-source'] !== undefined && field[1]['remote-source'] != null) {
-        let key = `${field[1]['remote-source'][0]}_${field[1]['remote-source'][1]}_${field[1]['remote-source'][2]}`;
-        if (field[1]['remote-source'].length === 4) {
-          key = `${key}_${field[1]['remote-source'][3]}`;
-        }
+        // let key = `${field[1]['remote-source'][0]}_${field[1]['remote-source'][1]}_${field[1]['remote-source'][2]}`;
+        // if (field[1]['remote-source'].length === 4) {
+        //   key = `${key}_${field[1]['remote-source'][3]}`;
+        // }
+        const key = this.getRemoteSourceKey(field);
         t = t.replace('_options_', this.renderFormSelectOptionsRemote(this.fieldMasterData[key], field));
       }
     } else if (field[1].type === 'colorpick') {
@@ -2413,49 +2422,49 @@ class ModuleBase {
   }
 
   /**
-     * Override this method to change add new button label
-     * @method getAddNewLabel
-     */
+   * Override this method to change add new button label
+   * @method getAddNewLabel
+   */
 
   getAddNewLabel() {
     return 'Add New';
   }
 
   /**
-     * Used to set whether to show the add new button for a module
-     * @method setShowAddNew
-     * @param showAddNew {Boolean} value
-     */
+   * Used to set whether to show the add new button for a module
+   * @method setShowAddNew
+   * @param showAddNew {Boolean} value
+   */
 
   setShowAddNew(showAddNew) {
     this.showAddNew = showAddNew;
   }
 
   /**
-     * Used to set whether to show delete button for each entry in module
-     * @method setShowDelete
-     * @param val {Boolean} value
-     */
+   * Used to set whether to show delete button for each entry in module
+   * @method setShowDelete
+   * @param val {Boolean} value
+   */
   setShowDelete(val) {
     this.showDelete = val;
   }
 
 
   /**
-     * Used to set whether to show edit button for each entry in module
-     * @method setShowEdit
-     * @param val {Boolean} value
-     */
+   * Used to set whether to show edit button for each entry in module
+   * @method setShowEdit
+   * @param val {Boolean} value
+   */
 
   setShowEdit(val) {
     this.showEdit = val;
   }
 
   /**
-     * Used to set whether to show save button in form
-     * @method setShowSave
-     * @param val {Boolean} value
-     */
+   * Used to set whether to show save button in form
+   * @method setShowSave
+   * @param val {Boolean} value
+   */
 
 
   setShowSave(val) {
@@ -2464,20 +2473,20 @@ class ModuleBase {
 
 
   /**
-     * Used to set whether to show cancel button in form
-     * @method setShowCancel
-     * @param val {Boolean} value
-     */
+   * Used to set whether to show cancel button in form
+   * @method setShowCancel
+   * @param val {Boolean} value
+   */
 
   setShowCancel(val) {
     this.showCancel = val;
   }
 
   /**
-     * Datatable option array will be extended with associative array provided here
-     * @method getCustomTableParams
-     * @param val {Boolean} value
-     */
+   * Datatable option array will be extended with associative array provided here
+   * @method getCustomTableParams
+   * @param val {Boolean} value
+   */
 
 
   getCustomTableParams() {
@@ -2490,12 +2499,12 @@ class ModuleBase {
 
 
   /**
-     * This return html for action buttons in each row. Override this method if you need to make changes to action buttons.
-     * @method getActionButtonsHtml
-     * @param id {int} id of the row
-     * @param data {Array} data for the row
-     * @returns {String} html for action buttons
-     */
+   * This return html for action buttons in each row. Override this method if you need to make changes to action buttons.
+   * @method getActionButtonsHtml
+   * @param id {int} id of the row
+   * @param data {Array} data for the row
+   * @returns {String} html for action buttons
+   */
 
   getActionButtonsHtml(id, data) {
     const editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
@@ -2528,11 +2537,11 @@ class ModuleBase {
 
 
   /**
-     * Generates a random string
-     * @method generateRandom
-     * @param length {int} required length of the string
-     * @returns {String} random string
-     */
+   * Generates a random string
+   * @method generateRandom
+   * @param length {int} required length of the string
+   * @returns {String} random string
+   */
 
   generateRandom(length) {
     const d = new Date();
@@ -2593,10 +2602,10 @@ class ModuleBase {
   }
 
   /**
-     * Override this method in a module to provide the help link for the module. Help link of the module on frontend will get updated with this.
-     * @method getHelpLink
-     * @returns {String} help link
-     */
+   * Override this method in a module to provide the help link for the module. Help link of the module on frontend will get updated with this.
+   * @method getHelpLink
+   * @returns {String} help link
+   */
 
   getHelpLink() {
     return null;

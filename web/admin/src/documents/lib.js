@@ -154,7 +154,7 @@ class EmployeeDocumentAdapter extends AdapterBase {
 
   getFilters() {
     return [
-      ['employee', { label: 'Employee', type: 'select2', 'remote-source': ['Employee', 'id', 'first_name+last_name'] }],
+      ['employee', { label: 'Employee', type: 'select2', 'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'] }],
 
     ];
   }

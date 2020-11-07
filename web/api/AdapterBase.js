@@ -55,7 +55,7 @@ class AdapterBase extends ModuleBase {
   }
 
   setupApiClient(token) {
-    this.apiClient = new IceApiClient(this.apiUrl, token);
+    this.apiClient = new IceApiClient(this.apiUrl, token, window.CLIENT_BASE_URL, true);
   }
 
   setApiUrl(apiUrl) {
