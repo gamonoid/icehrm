@@ -14,7 +14,7 @@ if(!defined('HOME_LINK_OTHERS')){
 
 //Version
 define('VERSION', '28.1.1.OS');
-define('CACHE_VALUE', '28.1.1.OS.2020-11071142');
+define('CACHE_VALUE', '28.1.1.OS.2020-11071143');
 define('VERSION_NUMBER', '280101');
 define('VERSION_DATE', '07/11/2020');
 
