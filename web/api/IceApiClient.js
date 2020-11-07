@@ -10,7 +10,7 @@ class IceApiClient {
 
   get(endpoint) {
     if (this.legacyApiWrapper) {
-      const url = `${this.clientBaseUrl}rest.php?token=${this.token}&method=get&url=/${endpoint}`;
+      const url = `${this.clientBaseUrl}api/index.php?token=${this.token}&method=get&url=/${endpoint}`;
       return axios.get(url);
     }
 
