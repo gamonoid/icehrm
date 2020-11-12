@@ -1,0 +1,13 @@
+{
+    "label": "My Tasks",
+    "menu": ["Tasks", "fa-list"],
+    "icon": "fa-tasks",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "User"
+    ],
+    "model_namespace": "\\Tasks\\Model",
+    "manager": "\\Tasks\\Extension",
+    "headless": false
+}
