@@ -36,3 +36,7 @@ define('ALL_CLIENT_BASE_PATH', '/var/www/icehrm.app/icehrmapp/');
 define('LDAP_ENABLED', true);
 define('RECRUITMENT_ENABLED', false);
 define('APP_WEB_URL', 'https://icehrm.com');
+
+if (!defined('EXTENSIONS_URL')) {
+    define('EXTENSIONS_URL', str_replace('/web/', '/extensions/', BASE_URL));
+}

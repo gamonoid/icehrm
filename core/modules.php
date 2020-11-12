@@ -291,12 +291,22 @@ foreach ($ams as $am) {
     }
 }
 
+$extensionManager = new \Classes\ExtensionManager();
+$extensionData = $extensionManager->setupExtensions();
+$extensionIcons = $extensionData[0];
+$extensionTemp = $extensionData[1];
+$extensionMenus = array_keys($extensionIcons);
+
 foreach ($adminModulesTemp as $k => $v) {
     ksort($adminModulesTemp[$k]);
 }
 
 foreach ($userModulesTemp as $k => $v) {
     ksort($userModulesTemp[$k]);
+}
+
+foreach ($extensionTemp as $k => $v) {
+    ksort($extensionTemp[$k]);
 }
 
 $adminIcons = json_decode(file_get_contents(CLIENT_PATH.'/admin/meta.json'), true);
@@ -332,14 +342,31 @@ foreach ($userMenus as $menu) {
     }
 }
 
-$mainIcons = array_merge($adminIcons, $userIcons);
-
 foreach ($userModulesTemp as $k => $v) {
     if (!in_array($k, $added)) {
         $arr = array("name"=>$k,"menu"=>$userModulesTemp[$k]);
         $userModules[] = $arr;
     }
 }
+
+$extensions = array();
+foreach ($extensionMenus as $menu) {
+    if (isset($extensionTemp[$menu])) {
+        $arr = array("name"=>$menu,"menu"=>$extensionTemp[$menu]);
+        $extensions[] = $arr;
+        $added[] = $menu;
+    }
+}
+
+foreach ($extensionTemp as $k => $v) {
+    if (!in_array($k, $added)) {
+        $arr = array("name"=>$k,"menu"=>$extensionTemp[$k]);
+        $extensions[] = $arr;
+    }
+}
+
+// Merge icons
+$mainIcons = array_merge($adminIcons, $userIcons, $extensionIcons);
 
 //Remove modules having no permissions
 if (!empty($user)) {
@@ -389,6 +416,26 @@ if (!empty($user)) {
                     }
                 } else {
                     unset($userModules[$fk]['menu'][$key]);
+                }
+            }
+        }
+    }
+
+    foreach ($extensions as $fk => $menu) {
+        foreach ($menu['menu'] as $key => $item) {
+            // If the user's once of the user roles are blacklisted for the module
+            $commonRoles = array_intersect($item['user_roles_blacklist'], $userRoles);
+            if (!empty($commonRoles)) {
+                unset($extensions[$fk]['menu'][$key]);
+            }
+            if (!in_array($user->user_level, $item['user_levels'])) {
+                if (!empty($userRoles)) {
+                    $commonRoles = array_intersect($item['user_roles'], $userRoles);
+                    if (empty($commonRoles)) {
+                        unset($extensions[$fk]['menu'][$key]);
+                    }
+                } else {
+                    unset($extensions[$fk]['menu'][$key]);
                 }
             }
         }

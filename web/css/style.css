@@ -943,3 +943,7 @@ table.dataTable{
 .table-row-dark {
     background-color: #fbfbfb;
 }
+
+.mod-tab {
+    margin-bottom:0px;margin-left:5px;border-bottom: none;
+}

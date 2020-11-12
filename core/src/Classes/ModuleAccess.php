@@ -12,7 +12,7 @@ class ModuleAccess
      * @param $name
      * @param $group
      */
-    public function __construct($name, $group)
+    public function __construct($name, $group = 'extension')
     {
         $this->name = $name;
         $this->group = $group;

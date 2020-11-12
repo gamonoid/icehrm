@@ -278,4 +278,12 @@ abstract class AbstractModuleManager
     {
         BaseService::getInstance()->addCalculationHook($code, $name, $class, $method);
     }
+
+    public function install() {
+
+    }
+
+    public function uninstall() {
+
+    }
 }
