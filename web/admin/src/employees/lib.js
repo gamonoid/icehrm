@@ -426,7 +426,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
         && (
           <Tag color="volcano" onClick={() => modJs.terminateEmployee(record.id)} style={{ cursor: 'pointer' }}>
             <DeleteOutlined />
-            {` ${adapter.gt('Delete')}`}
+            {` ${adapter.gt('Deactivate')}`}
           </Tag>
         )}
         {adapter.hasAccess('save')
