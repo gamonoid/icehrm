@@ -24,10 +24,9 @@ class StaffDirectory extends Employee
         foreach ($res as $entry) {
             $emp = new BaseModel();
             $emp->id = $entry->id;
-            $emp = FileService::getInstance()->updateProfileImage($emp);
-            //$emp->image = str_replace("_img_",$emp->image,$img);
             $emp->first_name = $entry->first_name;
             $emp->last_name = $entry->last_name;
+            $emp = FileService::getInstance()->updateSmallProfileImage($emp);
             $emp->job_title = $entry->job_title;
             $emp->department = $entry->department;
             $emp->work_phone = $entry->work_phone;
