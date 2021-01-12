@@ -2,7 +2,6 @@ IceHrm
 ===========
 [![Build Status](https://travis-ci.org/gamonoid/icehrm.svg?branch=master)](https://travis-ci.org/gamonoid/icehrm)
 
-IceHrm is Backed By [Applity Recruitment Platform](https://applity.com)
 
 IceHrm is a [HRM software](https://icehrm.com) which enable companies of all sizes to [manage HR activities](https://icehrm.com)
 properly.
