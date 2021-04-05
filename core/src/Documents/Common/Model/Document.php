@@ -1,6 +1,7 @@
 <?php
 namespace Documents\Common\Model;
 
+use Classes\BaseService;
 use Classes\ModuleAccess;
 use Model\BaseModel;
 
@@ -25,5 +26,24 @@ class Document extends BaseModel
             new ModuleAccess('documents', 'admin'),
             new ModuleAccess('documents', 'user'),
         ];
+    }
+
+    public function fieldValueMethods()
+    {
+        return ['getDocumentTypesForUser'];
+    }
+
+    public function getDocumentTypesForUser()
+    {
+        $documents = new Document();
+        if (BaseService::getInstance()->currentUser->user_level === 'Employee'
+            || BaseService::getInstance()->currentUser->user_level === 'Restricted Employee'
+        ) {
+            $documents = $documents->Find('share_with_employee = ?', ['Yes']);
+        } else {
+            $documents = $documents->Find('1 = 1');
+        }
+
+        return $documents;
     }
 }

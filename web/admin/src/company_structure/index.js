@@ -1,6 +1,5 @@
 import { CompanyStructureAdapter, CompanyGraphAdapter } from './lib';
 import IceDataPipe from "../../../api/IceDataPipe";
-import CustomFieldAdapter from "../../../api/ReactCustomFieldAdapter";
 
 
 function init(data) {
@@ -9,6 +8,7 @@ function init(data) {
   modJsList.tabCompanyStructure.setObjectTypeName('Company Structure');
   modJsList.tabCompanyStructure.setDataPipe(new IceDataPipe(modJsList.tabCompanyStructure));
   modJsList.tabCompanyStructure.setAccess(data.permissions.CompanyStructure);
+  modJsList.tabCompanyStructure.setCustomFields(data.customFields);
 
   modJsList.tabCompanyGraph = new CompanyGraphAdapter('CompanyStructure');
 

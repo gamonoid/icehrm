@@ -45,10 +45,11 @@ class DocumentTaskCreator implements TaskCreator
             return 0;
         }
 
-        $query = "select count(id) as c from EmployeeDocuments where employee = ? and valid_until < ?";
+        $query = "select count(id) as c from EmployeeDocuments where employee = ? and valid_until < ? and visible_to = ?";
 
         $user->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
-        $rs = $user->DB()->Execute($query, [$employee->id, date('Y-m-d')]);
+        // TODO - sending notifications only for Owner documents, this need to be extended later
+        $rs = $user->DB()->Execute($query, [$employee->id, date('Y-m-d'), 'Owner']);
         $count = $rs->fields['c'];
 
         return $count;

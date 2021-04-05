@@ -12,6 +12,7 @@ use Classes\BaseService;
 use Classes\IceResponse;
 use Classes\ModuleAccess;
 use Model\BaseModel;
+use Utils\LogManager;
 
 class CustomField extends BaseModel
 {
@@ -56,6 +57,22 @@ class CustomField extends BaseModel
         }
 
         return new IceResponse(IceResponse::SUCCESS, "");
+    }
+
+    /**
+     * @param CustomField $obj
+     */
+    public function executePostDeleteActions($obj)
+    {
+        $ret = $this->DB()->Execute(
+            'DELETE FROM CustomFieldValues where type = ? and name = ?',
+            [$obj->type, $obj->name]
+        );
+
+        if (!$ret) {
+            $this->lastError =  $this->db()->ErrorMsg();
+            LogManager::getInstance()->error('Error deleting custom field values: '.$this->DB()->ErrorMsg());
+        }
     }
 
     public function getModuleAccess()

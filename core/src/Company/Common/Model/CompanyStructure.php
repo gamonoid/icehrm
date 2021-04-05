@@ -5,9 +5,14 @@ use Classes\IceResponse;
 use Classes\ModuleAccess;
 use Employees\Common\Model\Employee;
 use Model\BaseModel;
+use Model\CustomFieldTrait;
 
 class CompanyStructure extends BaseModel
 {
+    use CustomFieldTrait;
+    public $objectName = 'Company Structures';
+    protected $allowCustomFields = true;
+
     public $table = 'CompanyStructures';
 
     public function getAdminAccess()

@@ -61,6 +61,7 @@ class DomainAwareInputCleaner
 
         $filterData = json_decode($filters, true);
         foreach ($filterData as $name => $value) {
+
             if (!$this->isValidColumnName($name) || !$this->isValidFilterValue($value)) {
                 return '';
             }
@@ -90,6 +91,14 @@ class DomainAwareInputCleaner
 
     private function isValidFilterValue($input)
     {
+        if (is_array($input)) {
+            $isValid = true;
+            foreach ($input as $val) {
+                $isValid = $isValid && !!preg_match('/^[-_: \d\p{L}]+$/u', $val);
+            }
+
+            return $isValid;
+        }
         return !!preg_match('/^[-_: \d\p{L}]+$/u', $input);
     }
 }

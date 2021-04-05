@@ -103,7 +103,7 @@ class PasswordManager
             return new IceResponse(IceResponse::ERROR, $error);
         }
 
-        if (strlen($password) > 20) {
+        if (strlen($password) > 30) {
             $error = "Password too long";
 
             return new IceResponse(IceResponse::ERROR, $error);

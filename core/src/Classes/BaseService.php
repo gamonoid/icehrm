@@ -19,6 +19,7 @@ use Employees\Common\Model\EmployeeApproval;
 use FieldNames\Common\Model\CustomField;
 use FieldNames\Common\Model\FieldNameMapping;
 use Metadata\Common\Model\CalculationHook;
+use Model\BaseModel;
 use Model\DataEntryBackup;
 use Model\Setting;
 use Modules\Common\Model\Module;
@@ -51,7 +52,8 @@ class BaseService
     public $calculationHooks = array();
     public $customFieldManager = null;
     public $migrationManager = null;
-    public $modelClassMap = array();
+    public $modelClassMap = [];
+    public $customFieldsClassMap = [];
     public $currentProfileId = false;
 
     protected $cacheService = null;
@@ -165,6 +167,20 @@ class BaseService
     public function addModelClass($modelClass, $fullQualifiedName)
     {
         $this->modelClassMap[$modelClass] = $fullQualifiedName;
+    }
+
+    public function getCustomFieldClassMap()
+    {
+        $map = [];
+        foreach($this->customFieldsClassMap as $key => $val) {
+            $map[] = [$key, $val];
+        }
+        return $map;
+    }
+
+    public function addCustomFieldClass($customFieldsClass, $objectName)
+    {
+        $this->customFieldsClassMap[$customFieldsClass] = $objectName;
     }
 
     public function getModelClassName($name)
@@ -637,7 +653,10 @@ class BaseService
 
         $processedList = array();
         foreach ($list as $obj) {
-            $processedList[] = $this->cleanUpAdoDB($obj->postProcessGetData($obj));
+            $processedObj = $this->cleanUpAdoDB($obj->postProcessGetData($obj));
+            if (null !== $processedObj) {
+                $processedList[] = $processedObj;
+            }
         }
 
         $list = $processedList;
@@ -749,7 +768,7 @@ class BaseService
             $obj = $this->enrichObjectCustomFields($table, $obj);
 
             $obj = $obj->postProcessGetElement($obj);
-            return  $this->cleanUpAdoDB($obj->postProcessGetData($obj));
+            return  $this->cleanUpAdoDB($obj);
         }
         return null;
     }
@@ -928,6 +947,7 @@ class BaseService
     {
         $fileFields = $this->fileFields;
         $nsTable = $this->getFullQualifiedModelClassName($table);
+        /** @var BaseModel $ele */
         $ele = new $nsTable();
 
         $ele->Load('id = ?', array($id));
@@ -985,7 +1005,7 @@ class BaseService
                 $dataEntryBackup->data = json_encode($newObj);
                 $dataEntryBackup->Save();
             }
-
+            $ele->executePostDeleteActions($ele);
             $this->audit(IceConstants::AUDIT_DELETE, "Deleted an object in ".$table." [id:".$ele->id."]");
         }
 
@@ -998,6 +1018,7 @@ class BaseService
         }
 
         $cfs = $this->customFieldManager->getCustomFields($table, $id);
+        /** @var CustomField $cf */
         foreach ($cfs as $cf) {
             $cf->Delete();
         }
@@ -1804,7 +1825,7 @@ END;
                     $companyStructure->Load('id = ?', array($parentCompanyStructure));
                 }
             } while (!empty($companyStructure->id)
-            && !empty($parentCompanyStructure)
+                && !empty($parentCompanyStructure)
             );
         }
 

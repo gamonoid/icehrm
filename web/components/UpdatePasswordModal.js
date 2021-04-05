@@ -150,7 +150,7 @@ class UpdatePasswordModal extends React.Component {
             return this.props.adapter.gt('Password too short');
         }
 
-        if (password.length > 20) {
+        if (password.length > 30) {
             return this.props.adapter.gt('Password too long');
         }
 

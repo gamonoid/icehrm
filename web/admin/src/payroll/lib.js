@@ -344,7 +344,7 @@ class PayrollColumnAdapter extends AdapterBase {
       ['enabled', { label: 'Enabled', type: 'select', source: [['Yes', 'Yes'], ['No', 'No']] }],
       ['default_value', { label: 'Default Value', type: 'text', validation: '' }],
       fucntionColumnList,
-      ['function_type', { label: 'Function Type', type: 'select', source: [['Advanced', 'Advanced'], ['Simple', 'Simple']] }],
+      ['function_type', { label: 'Function Type', type: 'select', source: [['Simple', 'Simple']] }],
       ['calculation_function', { label: 'Function', type: 'code', validation: 'none' }],
     ];
   }

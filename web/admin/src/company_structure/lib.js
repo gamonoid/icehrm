@@ -64,7 +64,7 @@ class CompanyStructureAdapter extends ReactModalAdapterBase {
   }
 
   getFormFields() {
-    return [
+    return this.addCustomFields([
       ['id', { label: 'ID', type: 'hidden', validation: '' }],
       ['title', { label: 'Name', type: 'text', validation: '' }],
       ['description', { label: 'Details', type: 'textarea', validation: '' }],
@@ -80,7 +80,7 @@ class CompanyStructureAdapter extends ReactModalAdapterBase {
       ['heads', {
         label: 'Heads', type: 'select2multi', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
       }],
-    ];
+    ]);
   }
 
   postRenderForm(object, $tempDomObj) {

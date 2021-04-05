@@ -98,6 +98,7 @@ class DashboardAdapter extends AdapterBase {
   }
 
   drawEmployeeDistributionChart() {
+    const that = this;
     document.getElementById('EmployeeDistributionChart').style.display = 'none';
     ReactDOM.render(
       this.getSpinner(),
@@ -115,7 +116,7 @@ class DashboardAdapter extends AdapterBase {
           forceFit: true,
           title: {
             visible: true,
-            text: 'Employee Distribution',
+            text: that.gt('Employee Distribution'),
           },
           description: {
             visible: false,
@@ -125,7 +126,7 @@ class DashboardAdapter extends AdapterBase {
             visible: true,
             content: {
               value: chartData.reduce((acc, item) => acc + item.value, 0),
-              name: 'Total',
+              name: that.gt('Total'),
             },
           },
           legend: {
@@ -151,6 +152,7 @@ class DashboardAdapter extends AdapterBase {
   }
 
   drawOnlineOfflineEmployeeChart() {
+    const that = this;
     document.getElementById('EmployeeOnlineOfflineChart').style.display = 'none';
     ReactDOM.render(
       this.getSpinner(),
@@ -168,7 +170,7 @@ class DashboardAdapter extends AdapterBase {
           forceFit: true,
           title: {
             visible: true,
-            text: 'Employee Check-Ins',
+            text: that.gt('Employee Check-Ins'),
           },
           description: {
             visible: false,
@@ -178,7 +180,7 @@ class DashboardAdapter extends AdapterBase {
             visible: true,
             content: {
               value: chartData.reduce((acc, item) => acc + item.value, 0),
-              name: 'Total',
+              name: that.gt('Total'),
             },
           },
           legend: {
@@ -199,6 +201,7 @@ class DashboardAdapter extends AdapterBase {
   }
 
   drawCompanyLeaveEntitlementChart() {
+    const that = this;
     document.getElementById('CompanyLeaveEntitlementChart').style.display = 'none';
     ReactDOM.render(
       this.getSpinner(),
@@ -216,7 +219,7 @@ class DashboardAdapter extends AdapterBase {
           forceFit: true,
           title: {
             visible: true,
-            text: 'Company Vacation Usage',
+            text: that.gt('Company Vacation Usage'),
           },
           description: {
             visible: false,
@@ -226,7 +229,7 @@ class DashboardAdapter extends AdapterBase {
             visible: true,
             content: {
               value: chartData.reduce((acc, item) => acc + item.value, 0),
-              name: 'Total',
+              name: that.gt('Total'),
             },
           },
           legend: {

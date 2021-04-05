@@ -3,13 +3,21 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
 /**
  * ClientAdapter
  */
 
-class ClientAdapter extends AdapterBase {
+class ClientAdapter extends ReactModalAdapterBase {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
+    this.fieldNameMap = {};
+    this.hiddenFields = {};
+    this.tableFields = {};
+    this.formOnlyFields = {};
+  }
+
   getDataMapping() {
     return [
       'id',
@@ -27,6 +35,32 @@ class ClientAdapter extends AdapterBase {
       { sTitle: 'Details' },
       { sTitle: 'Address' },
       { sTitle: 'Contact Number' },
+    ];
+  }
+
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Details',
+        dataIndex: 'details',
+        sorter: true,
+      },
+      {
+        title: 'Address',
+        dataIndex: 'address',
+        sorter: true,
+      },
+      {
+        title: 'Contact Number',
+        dataIndex: 'contact_number',
+        sorter: true,
+      }
     ];
   }
 

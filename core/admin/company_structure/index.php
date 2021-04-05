@@ -4,6 +4,7 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Classes\BaseService;
 use Classes\PermissionManager;
 use Company\Common\Model\CompanyStructure;
 
@@ -60,6 +61,7 @@ path.link {
 <?php
 $moduleData = [
     'user_level' => $user->user_level,
+    'customFields' => BaseService::getInstance()->getCustomFields("CompanyStructure"),
     'permissions' => [
         'CompanyStructure' => PermissionManager::checkGeneralAccess(new CompanyStructure()),
     ]

@@ -7,6 +7,8 @@ import IceUpload from './IceUpload';
 import IceDataGroup from './IceDataGroup';
 import IceSelect from './IceSelect';
 import IceLabel from './IceLabel';
+import IceColorPick from './IceColorPick';
+import IceSignature from './IceSignature';
 
 
 const ValidationRules = {
@@ -86,24 +88,36 @@ class IceForm extends React.Component {
   }
 
   render() {
-    const { fields, twoColumnLayout } = this.props;
+    const { fields, twoColumnLayout, adapter } = this.props;
+    let formInputs = [];
     const formInputs1 = [];
     const formInputs2 = [];
     const columns = !twoColumnLayout ? 1 : 2;
     for (let i = 0; i < fields.length; i++) {
-      const formInput = this.createFromField(fields[i], this.props.viewOnly);
-      if (formInput != null) {
+      formInputs.push(
+        adapter.beforeRenderFieldHook(
+          fields[i][0],
+          this.createFromField(fields[i], this.props.viewOnly),
+          fields[i][1]
+        )
+      );
+    }
+    formInputs = formInputs.filter(input => !!input);
+
+    for (let i = 0; i < formInputs.length; i++) {
+      
+      if (formInputs[i] != null) {
         if (columns === 1) {
-          formInputs1.push(formInput);
+          formInputs1.push(formInputs[i]);
         } else if (i % 2 === 0) {
-          formInputs1.push(formInput);
+          formInputs1.push(formInputs[i]);
         } else {
-          formInputs2.push(formInput);
+          formInputs2.push(formInputs[i]);
         }
       }
     }
 
-    const onFormLayoutChange = () => {};
+    const onFormLayoutChange = () => { };
 
     return (
       <Form
@@ -116,12 +130,12 @@ class IceForm extends React.Component {
         size="middle"
       >
         {this.state.errorMsg
-        && (
-          <>
-            <Alert message={this.state.errorMsg} type="error" showIcon />
-            <br />
-          </>
-        )}
+          && (
+            <>
+              <Alert message={this.state.errorMsg} type="error" showIcon />
+              <br />
+            </>
+          )}
         {columns === 1 && formInputs1}
         {columns === 2 && (
           <Row gutter={16}>
@@ -239,6 +253,9 @@ class IceForm extends React.Component {
         </Form.Item>
       );
     } if (data.type === 'textarea') {
+      if (!data.rows) {
+        data.rows = 4;
+      }
       return (
         <Form.Item
           labelCol={labelSpan}
@@ -249,7 +266,7 @@ class IceForm extends React.Component {
         >
           {viewOnly
             ? <IceLabel />
-            : <Input.TextArea />}
+            : <Input.TextArea rows={data.rows} />}
         </Form.Item>
       );
     } if (data.type === 'date') {
@@ -355,6 +372,34 @@ class IceForm extends React.Component {
           />
         </Form.Item>
       );
+    } if (data.type === 'colorpick') {
+      return (
+        <Form.Item
+          labelCol={labelSpan}
+          name={name}
+          key={name}
+          label={data.label}
+        >
+          <IceColorPick
+            adapter={adapter}
+            field={field}
+            title={data.label}
+            readOnly={viewOnly}
+          />
+        </Form.Item>
+        );
+      } if (data.type === 'signature') {
+        return (
+          <Form.Item
+            labelCol={labelSpan}
+            label={data.label}
+            key={name}
+            name={name}
+            rules={rules}
+          >
+            <IceSignature readOnly={viewOnly} />
+          </Form.Item>
+        );
     }
     return null;
   }

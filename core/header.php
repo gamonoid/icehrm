@@ -215,6 +215,26 @@ if (defined('SYM_CLIENT')) {
 
                 <?php }?>
 
+                <?php foreach($extensions as $menu){?>
+                    <?php if(count($menu['menu']) == 0){continue;}?>
+                    <li  class="treeview" ref="<?="extension_".str_replace(" ", "_", $menu['name'])?>">
+                        <a href="#">
+                            <i class="fa <?=!isset($mainIcons[$menu['name']])?"fa-th":$mainIcons[$menu['name']];?>"></i></i> <span><?=\Classes\LanguageManager::tran($menu['name'])?></span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+
+                        <ul class="treeview-menu" id="<?="extension_".str_replace(" ", "_", $menu['name'])?>">
+                            <?php foreach ($menu['menu'] as $item){?>
+                                <li>
+                                    <a data-turbolinks="true" href="<?=CLIENT_BASE_URL?>?g=extension&n=<?=$item['name']?>&m=<?="extension_".str_replace(" ", "_", $menu['name'])?>">
+                                        <i class="fa <?=!isset($item['icon'])?"fa-angle-double-right":$item['icon']?>"></i> <?=\Classes\LanguageManager::tran($item['label'])?>
+                                    </a>
+                                </li>
+                            <?php }?>
+                        </ul>
+                    </li>
+                <?php }?>
+
                 <?php
                 if(file_exists(CLIENT_PATH.'/third_party_meta.json')){
                     $tpModules = json_decode(file_get_contents(CLIENT_PATH.'/third_party_meta.json'),true);

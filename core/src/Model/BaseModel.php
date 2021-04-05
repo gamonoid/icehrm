@@ -11,6 +11,8 @@ use Utils\LogManager;
 
 class BaseModel extends \ADOdb_Active_Record
 {
+    public $objectName = null;
+    protected $allowCustomFields = false;
 
     public $keysToIgnore = array(
         "_table",
@@ -195,6 +197,16 @@ class BaseModel extends \ADOdb_Active_Record
     {
     }
 
+    public function executePostDeleteActions($obj)
+    {
+    }
+
+    /**
+     * If null is returned the object wont be included in the response
+     *
+     * @param $obj
+     * @return mixed
+     */
     public function postProcessGetData($obj)
     {
         return $obj;
@@ -340,4 +352,14 @@ class BaseModel extends \ADOdb_Active_Record
         return $ok;
     }
     // @codingStandardsIgnoreEnd
+
+    public function getObjectName()
+    {
+        return null;
+    }
+
+    public function isCustomFieldsEnabled()
+    {
+        return false;
+    }
 }

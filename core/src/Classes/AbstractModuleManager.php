@@ -7,6 +7,7 @@
  */
 namespace Classes;
 
+use Model\BaseModel;
 use Utils\LogManager;
 
 abstract class AbstractModuleManager
@@ -254,7 +255,17 @@ abstract class AbstractModuleManager
     protected function addModelClass($className)
     {
         $this->modelClasses[] = $className;
-        BaseService::getInstance()->addModelClass($className, $this->moduleObject['model_namespace']."\\".$className);
+        $classWithNamespace = $this->moduleObject['model_namespace']."\\".$className;
+        BaseService::getInstance()->addModelClass($className, $classWithNamespace);
+        /** @var BaseModel $modelClass */
+        $modelClass = new $classWithNamespace();
+        if ($modelClass->isCustomFieldsEnabled()) {
+            $objectName = $modelClass->getObjectName();
+            BaseService::getInstance()->addCustomFieldClass(
+                $className,
+                (null === $objectName)? $className : $objectName
+            );
+        }
     }
 
     protected function addHistoryGeneric($type, $table, $refName, $refId, $field, $oldValue, $newValue)
@@ -277,5 +288,13 @@ abstract class AbstractModuleManager
     public function addCalculationHook($code, $name, $class, $method)
     {
         BaseService::getInstance()->addCalculationHook($code, $name, $class, $method);
+    }
+
+    public function install()
+    {
+    }
+
+    public function uninstall()
+    {
     }
 }

@@ -31,7 +31,7 @@ class EmployeeDocumentAdapter extends AdapterBase {
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
-      ['document', { label: 'Document', type: 'select2', 'remote-source': ['Document', 'id', 'name'] }],
+      ['document', { label: 'Document', type: 'select2', 'remote-source': ['Document', 'id', 'name', 'getDocumentTypesForUser'] }],
       // [ "date_added", {"label":"Date Added","type":"date","validation":""}],
       ['valid_until', { label: 'Valid Until', type: 'date', validation: 'none' }],
       ['status', { label: 'Status', type: 'select', source: [['Active', 'Active'], ['Inactive', 'Inactive'], ['Draft', 'Draft']] }],

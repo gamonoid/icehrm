@@ -1,11 +1,14 @@
 <?php
-define('CLIENT_PATH', dirname(__FILE__));
+use Classes\SAMLManager;use Classes\SettingsManager;use Utils\LogManager;define('CLIENT_PATH', dirname(__FILE__));
 include("config.base.php");
 include("include.common.php");
 include("server.includes.inc.php");
 
-$companyName = \Classes\SettingsManager::getInstance()->getSetting('Company: Name');
-$gsuiteEnabled = \Classes\SettingsManager::getInstance()->getSetting('System: G Suite Enabled');
+$gsuiteEnabled = SettingsManager::getInstance()->getSetting('System: G Suite Enabled');
+$companyName = SettingsManager::getInstance()->getSetting('Company: Name');
+$SAMLAutoLogin = SettingsManager::getInstance()->getSetting('SAML: Auto Login') === "1";
+$SAMLEnabled = SettingsManager::getInstance()->getSetting("SAML: Enabled") == "1";
+$SAMLUserLoaded = false;
 
 if (isset($_REQUEST['logout'])) {
     \Utils\SessionUtils::unsetClientSession();
@@ -14,12 +17,19 @@ if (isset($_REQUEST['logout'])) {
 
 if (empty($user) || empty($user->email)) {
 
-    if (!empty($_REQUEST['username']) && !empty($_REQUEST['password'])) {
+    if (!isset($_REQUEST['logout']) && !isset($_POST['SAMLResponse']) && $SAMLAutoLogin && $SAMLEnabled && !empty(SettingsManager::getInstance()->getSetting("SAML: IDP SSO Url"))) {
+        header("Location:" . SettingsManager::getInstance()->getSetting("SAML: IDP SSO Url"));
+        exit();
+    }
+
+    if ((!empty($_REQUEST['username']) && !empty($_REQUEST['password']))
+        || isset($_POST['SAMLResponse'])
+    ) {
         $suser = null;
         $ssoUserLoaded = false;
 
         if($_REQUEST['username'] != "admin") {
-            if (\Classes\SettingsManager::getInstance()->getSetting("LDAP: Enabled") == "1") {
+            if (SettingsManager::getInstance()->getSetting("LDAP: Enabled") === "1") {
                 $ldapResp = \Classes\LDAPManager::getInstance()->checkLDAPLogin($_REQUEST['username'], $_REQUEST['password']);
                 if ($ldapResp->getStatus() == \Classes\IceResponse::ERROR) {
                     header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
@@ -33,6 +43,39 @@ if (empty($user) || empty($user->email)) {
                     }
                     $ssoUserLoaded = true;
                 }
+            }
+        }
+
+        if ($SAMLEnabled && isset($_POST['SAMLResponse'])) {
+            $samlData = $_POST['SAMLResponse'];
+
+            if(array_key_exists('RelayState', $_POST) && !empty( $_POST['RelayState'] ) && $_POST['RelayState'] !== '/') {
+                $relayState = htmlspecialchars($_POST['RelayState']);
+            } else {
+                $relayState = '';
+            }
+
+            $ssoUserEmail = (new SAMLManager())->getSSOEmail($samlData, $relayState);
+            LogManager::getInstance()->info('SSO SAML User Email:'.$ssoUserEmail);
+            if (false === $ssoUserEmail) {
+                header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
+                exit();
+            } else {
+                $mapping = SettingsManager::getInstance()->getSetting('SAML: Name ID Mapping');
+                $suser = new \Users\Common\Model\User();
+                if ($mapping === 'username') {
+                    $suser->Load("username = ?", array($ssoUserEmail));
+                } else {
+                    $suser->Load("email = ?", array($ssoUserEmail));
+                }
+
+                LogManager::getInstance()->info('SSO SAML User:'.print_r($suser, true));
+                if (empty($suser)) {
+                    header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
+                    exit();
+                }
+                $ssoUserLoaded = true;
+                $SAMLUserLoaded = true;
             }
         }
 
@@ -59,7 +102,7 @@ if (empty($user) || empty($user->email)) {
 
         $loginCsrf = \Utils\SessionUtils::getSessionObject('csrf-login');
 
-        if ($_REQUEST['csrf'] != $loginCsrf || empty($_REQUEST['csrf'])) {
+        if (!$SAMLUserLoaded && ($_REQUEST['csrf'] != $loginCsrf || empty($_REQUEST['csrf']))) {
             $next = !empty($_REQUEST['next'])?'&next='.$_REQUEST['next']:'';
             header("Location:".CLIENT_BASE_URL."login.php?f=1".$next);
             exit();
@@ -277,7 +320,7 @@ $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
                 <div class="col-lg-6 col-md-8 col-xs-10">
                     <div class="bg-white-2 h-100 px-11 pt-11 pb-7">
                         <div class="row d-flex justify-content-center">
-                            <img src="<?=$logoFileUrl?>" style="max-width:100%;max-height:280px;"/>
+                            <img style="max-width: 100%;" src="<?=$logoFileUrl?>"/>
                         </div>
                         <hr/>
                         <?php if ($gsuiteEnabled) {?>

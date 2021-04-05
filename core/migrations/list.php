@@ -1,5 +1,9 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20210402_280006_modify_attendance_rep';
+$migrationList[] = 'v20210327_280005_saml_settings';
+$migrationList[] = 'v20210228_280003_add_share_with_employee';
+$migrationList[] = 'v20210228_280004_add_visible_to_document';
 $migrationList[] = 'v20201028_280002_update_gender';
 $migrationList[] = 'v20201028_280001_update_module_names';
 $migrationList[] = 'v20201017_271101_switch_off_photo_att';

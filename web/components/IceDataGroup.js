@@ -21,6 +21,7 @@ class IceDataGroup extends React.Component {
     value = this.parseValue(value);
     value = value.map(item => ({ ...item, key:item.id } ));
     const columns = JSON.parse(JSON.stringify(field[1].columns));
+
     if (!this.props.readOnly) {
       columns.push({
         title: 'Action',
@@ -30,6 +31,7 @@ class IceDataGroup extends React.Component {
         ),
       });
     }
+
     return (
       <>
         {!this.props.readOnly &&
