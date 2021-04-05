@@ -48,6 +48,10 @@ class ReactModalAdapterBase extends AdapterBase {
     return this.access.indexOf(type) > 0;
   }
 
+  hasCustomButtons() {
+    return false;
+  }
+
   initTable() {
     if (this.tableInitialized) {
       return false;
@@ -56,7 +60,11 @@ class ReactModalAdapterBase extends AdapterBase {
     if (tableDom) {
       this.tableContainer = React.createRef();
       let columns = this.getTableColumns();
-      if (this.hasAccess('save') || this.hasAccess('delete') || this.hasAccess('element')) {
+      if (this.hasAccess('save')
+        || this.hasAccess('delete')
+        || this.hasAccess('element')
+        || this.hasCustomButtons()
+      ) {
         columns.push({
           title: 'Actions',
           key: 'actions',
@@ -256,6 +264,27 @@ class ReactModalAdapterBase extends AdapterBase {
 
   showLoader() {
     // $('#iceloader').show();
+  }
+
+  addActualFieldsForStepModal(steps, fields) {
+    return steps.map((item) => {
+      item.fields = item.fields.reduce((acc, fieldName) => {
+        const field = fields.find(([name]) => name === fieldName);
+        if (field) {
+          acc.push(field);
+        }
+        return acc;
+      }, []);
+
+      return item;
+    });
+  }
+
+  getFormOptions() {
+    return {
+      width: 1024,
+      twoColumnLayout: false,
+    };
   }
 }
 

@@ -3,13 +3,21 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
 /**
  * ProjectAdapter
  */
 
-class ProjectAdapter extends AdapterBase {
+class ProjectAdapter extends ReactModalAdapterBase {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
+    this.fieldNameMap = {};
+    this.hiddenFields = {};
+    this.tableFields = {};
+    this.formOnlyFields = {};
+  }
+
   getDataMapping() {
     return [
       'id',
@@ -23,6 +31,21 @@ class ProjectAdapter extends AdapterBase {
       { sTitle: 'ID', bVisible: false },
       { sTitle: 'Name' },
       { sTitle: 'Client' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Client',
+        dataIndex: 'client',
+        sorter: true,
+      }
     ];
   }
 
@@ -60,7 +83,15 @@ class ProjectAdapter extends AdapterBase {
  */
 
 
-class EmployeeProjectAdapter extends AdapterBase {
+class EmployeeProjectAdapter extends ReactModalAdapterBase {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
+    this.fieldNameMap = {};
+    this.hiddenFields = {};
+    this.tableFields = {};
+    this.formOnlyFields = {};
+  }
+
   getDataMapping() {
     return [
       'id',
@@ -76,6 +107,22 @@ class EmployeeProjectAdapter extends AdapterBase {
       { sTitle: 'Project' },
     ];
   }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Project',
+        dataIndex: 'project',
+        sorter: true,
+      }
+    ];
+  }
+
 
   getFormFields() {
     return [

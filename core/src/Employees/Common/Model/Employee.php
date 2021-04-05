@@ -8,6 +8,7 @@ use Classes\ModuleAccess;
 use Company\Common\Model\CompanyStructure;
 use Metadata\Common\Model\Country;
 use Model\BaseModel;
+use Model\CustomFieldTrait;
 
 class Employee extends BaseModel
 {
@@ -88,6 +89,11 @@ class Employee extends BaseModel
             .'"supervisor":["Employee","id","first_name+last_name"]}';
 
         $this->oldObj = BaseService::getInstance()->getElement('Employee', $obj->id, $mapping, true);
+    }
+
+    public function isCustomFieldsEnabled()
+    {
+        return true;
     }
 
     private function saveHistory($obj)

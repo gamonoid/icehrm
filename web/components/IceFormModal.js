@@ -21,6 +21,7 @@ class IceFormModal extends React.Component {
   }
 
   show(data) {
+    this.props.adapter.beforeRenderFieldHook = this.props.adapter.beforeRenderField ? this.props.adapter.beforeRenderField(data) : (fieldName, field) => field;
     if (!data) {
       this.setState({ visible: true });
       if (this.iceFormReference.current) {

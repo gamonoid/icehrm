@@ -67,6 +67,8 @@ modJsList['tabEmployeeDocument'].setShowDelete(false);
 modJsList['tabEmployeeDocument'].setShowEdit(false);
 <?php }?>
 
+modJsList['tabEmployeeDocument'].setRemoteTable(true);
+
 
 modJsList['tabEmployeeCompanyDocument'] = new EmployeeCompanyDocumentAdapter('CompanyDocument','EmployeeCompanyDocument');
 modJsList['tabEmployeeCompanyDocument'].setLoadMoreButton($("#loadMoreEmployeeCompanyDocument"));

@@ -8,6 +8,8 @@
 
 namespace Classes\Migration;
 
+use Utils\LogManager;
+
 abstract class AbstractMigration
 {
     protected $file;
@@ -16,7 +18,7 @@ abstract class AbstractMigration
 
     protected $lastError;
 
-    public function __construct($file)
+    public function __construct($file = null)
     {
         $this->file = $file;
     }
@@ -50,6 +52,7 @@ abstract class AbstractMigration
         $ret = $this->db()->Execute($sql);
         if (!$ret) {
             $this->lastError =  $this->db()->ErrorMsg();
+            LogManager::getInstance()->error('Error in migration: '.$this->lastError);
         }
         return $ret;
     }

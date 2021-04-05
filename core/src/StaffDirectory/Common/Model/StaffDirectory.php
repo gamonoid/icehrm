@@ -40,6 +40,11 @@ class StaffDirectory extends Employee
         return $data;
     }
 
+    public function isCustomFieldsEnabled()
+    {
+        return false;
+    }
+
     // @codingStandardsIgnoreStart
     public function Insert()
     {

@@ -2,6 +2,7 @@
 namespace Reports\Admin\Reports;
 
 use Attendance\Common\Model\Attendance;
+use Company\Common\Model\CompanyStructure;
 use Employees\Common\Model\Employee;
 use Reports\Admin\Api\ClassBasedReportBuilder;
 use Reports\Admin\Api\ReportBuilderInterface;
@@ -15,6 +16,18 @@ class EmployeeTimeTrackReport extends ClassBasedReportBuilder implements ReportB
 
         LogManager::getInstance()->info(json_encode($report));
         LogManager::getInstance()->info(json_encode($req));
+
+        if (
+            empty($req['period'])
+            && (
+                empty($req['date_start'])
+                || 'NULL' === $req['date_start']
+                || empty($req['date_end'])
+                || 'NULL' === $req['date_end']
+            )
+        ) {
+            $req['period'] = 'Current Month';
+        }
 
         $employeeTimeEntry = new EmployeeTimeEntry();
 
@@ -37,6 +50,8 @@ class EmployeeTimeTrackReport extends ClassBasedReportBuilder implements ReportB
 
         //$minutes = (int)($seconds/60);
         //Find Attendance Entries
+
+        $req = $this->setRequestDatesBasedOnThePeriod($req);
 
         $attendance = new Attendance();
         $atteandanceList =  $attendance->Find(
@@ -66,21 +81,34 @@ class EmployeeTimeTrackReport extends ClassBasedReportBuilder implements ReportB
         $employeeObject = new Employee();
         $employeeObject->Load("id = ?", array($req['employee']));
 
+        $company = new CompanyStructure();
+        $company->Load('id = ?', [$employeeObject->department]);
 
-        $reportData = array();
-        //$reportData[] = array($employeeObject->first_name." ".$employeeObject->last_name,"","","","");
-        $reportData[] = array("Date","First Punch-In Time","Last Punch-Out Time","Time in Office","Time in Timesheets");
+        $reportData = [];
+        $reportData[] = ["Date","First Punch-In Time","Last Punch-Out Time","Time in Attendance (Hours)","Time in Time-sheets (Hours)"];
+        $reportData[] = ["Employee:",$employeeObject->first_name." ".$employeeObject->last_name,"","",""];
+        $reportData[] = ["Department:",$company->title,"","",""];
+        $reportData[] = ["Total Days:","","","",""];
 
 
         //Iterate date range
 
         $interval = \DateInterval::createFromDateString('1 day');
-        $period = new \DatePeriod(new \DateTime($req['date_start']), $interval, new \DateTime($req['date_end']));
+        $period = new \DatePeriod(new \DateTime($req['date_start']), $interval, (new \DateTime($req['date_end']))->modify('+1 day'));
+
+        $totalHoursOffice = 0;
+        $totalHoursTimeSheets = 0;
+        $totalDaysForThePeriod = 0;
 
         foreach ($period as $dt) {
             $dataRow = array();
             $key = $dt->format("Y-m-d");
 
+            if (!isset($firstTimeInArray[$key])) {
+                continue;
+            }
+
+            $totalDaysForThePeriod++;
             $dataRow[] = $key;
 
             if (isset($firstTimeInArray[$key])) {
@@ -107,8 +135,44 @@ class EmployeeTimeTrackReport extends ClassBasedReportBuilder implements ReportB
                 $dataRow[] = 0;
             }
 
+            $totalHoursOffice += $dataRow[3];
+            $totalHoursTimeSheets += $dataRow[4];
+
+            $dataRow[3] = number_format($dataRow[3], 2, '.', '');
+            $dataRow[4] = number_format($dataRow[4], 2, '.', '');
+
             $reportData[] = $dataRow;
         }
+
+        $reportData[3][1] = $totalDaysForThePeriod;
+
+        $totalHoursOffice = number_format($totalHoursOffice, 2, '.', '');
+        $totalHoursTimeSheets = number_format($totalHoursTimeSheets, 2, '.', '');
+
+        $reportData[] = ["Total","","",$totalHoursOffice,$totalHoursTimeSheets];
+
         return $reportData;
+    }
+
+    private function setRequestDatesBasedOnThePeriod($req) {
+        if (empty($req['period'])) {
+            return $req;
+        }
+
+        if ($req['period'] === 'Current Month') {
+            $req['date_start'] = date('Y-m-01', strtotime('now'));
+            $req['date_end'] = date('Y-m-d', strtotime('now'));
+        } else if ($req['period'] === 'Last Month') {
+            $req['date_start'] = date('Y-m-d', strtotime('first day of last month'));
+            $req['date_end'] = date('Y-m-d', strtotime('last day of last month'));
+        } else if ($req['period'] === 'Last Week') {
+            $req['date_start'] = date("Y-m-d", strtotime("-7 days"));
+            $req['date_end'] = date('Y-m-d', strtotime('now'));
+        } else if ($req['period'] === 'Last 2 Weeks') {
+            $req['date_start'] = date("Y-m-d", strtotime("-14 days"));
+            $req['date_end'] = date('Y-m-d', strtotime('now'));
+        }
+
+        return $req;
     }
 }

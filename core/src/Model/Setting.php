@@ -12,6 +12,7 @@ use Classes\BaseService;
 use Classes\IceResponse;
 use Classes\ModuleAccess;
 use Classes\RestApiManager;
+use Classes\SettingsManager;
 use Users\Common\Model\User;
 
 class Setting extends BaseModel
@@ -74,6 +75,12 @@ class Setting extends BaseModel
         return new IceResponse(IceResponse::SUCCESS, "");
     }
 
+    public function executePreSaveActions($obj)
+    {
+        $obj->value = SettingsManager::getInstance()->encryptSetting($obj->name, $obj->value);
+        return new IceResponse(IceResponse::SUCCESS, $obj);
+    }
+
     public function executePreUpdateActions($obj)
     {
         return $this->executePreSaveActions($obj);
@@ -85,6 +92,18 @@ class Setting extends BaseModel
 
     public function executePostUpdateActions($obj)
     {
+    }
+
+    public function postProcessGetData($obj)
+    {
+        if (in_array($obj->name, SettingsManager::getInstance()->getDeprecatedSettings())) {
+            return null;
+        }
+
+        if (strlen($obj->value) > 30) {
+            $obj->value = substr($obj->value,0, 30).'...';
+        }
+        return $obj;
     }
 
     public $table = 'Settings';

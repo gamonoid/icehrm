@@ -1,0 +1,12 @@
+{
+    "label": "Custom Fields",
+    "menu": "Admin",
+    "order": "892",
+    "icon": "fa-code",
+    "user_levels": [
+        "Admin"
+    ],
+    "permissions": [],
+    "model_namespace": "\\FieldNames\\Common\\Model",
+    "manager": "\\CustomField\\Admin\\Api\\CustomFieldAdminManager"
+}

@@ -19,28 +19,42 @@ $options1 = array();
 $options1['setShowAddNew'] = 'false';
 $options1['setRemoteTable'] = 'true';
 
+$notCloud = !defined('IS_CLOUD') || IS_CLOUD == false;
+
 $moduleBuilder->addModuleOrGroup(new ModuleTab(
     'CompanySetting','Setting','Company','SettingAdapter','{"category":"Company"}','name',true,$options1
 ));
 $moduleBuilder->addModuleOrGroup(new ModuleTab(
     'SystemSetting','Setting','System','SettingAdapter','{"category":"System"}','name',false,$options1
 ));
-if (!defined('CLOUD_INSTALLATION')) {
+if ( $notCloud ) {
     $moduleBuilder->addModuleOrGroup(new ModuleTab(
         'EmailSetting', 'Setting', 'Email', 'SettingAdapter', '{"category":"Email"}', 'name', false, $options1
     ));
 }
+if(!defined('LEAVE_ENABLED') || LDAP_ENABLED == true) {
+    $moduleBuilder->addModuleOrGroup(new ModuleTab(
+        'LeaveSetting', 'Setting', 'Leave', 'SettingAdapter', '{"category":"Leave"}', 'name', false, $options1
+    ));
+}
+
 $moduleBuilder->addModuleOrGroup(new ModuleTab(
-    'LeaveSetting','Setting','Leave / PTO','SettingAdapter','{"category":"Leave"}','name',false,$options1
+    'AttendanceSetting','Setting','Attendance','SettingAdapter','{"category":"Attendance"}','name',false,$options1
 ));
+
 if(!defined('LDAP_ENABLED') || LDAP_ENABLED == true){
     $moduleBuilder->addModuleOrGroup(new ModuleTab(
         'LDAPSetting','Setting','LDAP','SettingAdapter','{"category":"LDAP"}','name',false,$options1
     ));
 }
-$moduleBuilder->addModuleOrGroup(new ModuleTab(
-    'AttendanceSetting','Setting','Attendance','SettingAdapter','{"category":"Attendance"}','name',false,$options1
-));
+
+if(!defined('SAML_ENABLED') || SAML_ENABLED == true){
+    $moduleBuilder->addModuleOrGroup(new ModuleTab(
+        'SAMLSetting','Setting','SAML','SettingAdapter','{"category":"SAML"}','name',false,$options1
+    ));
+}
+
+
 $moduleBuilder->addModuleOrGroup(new ModuleTab(
     'OtherSetting','Setting','Other','SettingAdapter','{"category":["Projects","Recruitment","Notifications","Expense","Travel","Api","Overtime"]}','name',false,$options1
 ));

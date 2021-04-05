@@ -34,6 +34,8 @@ class DocumentAdapter extends AdapterBase {
       ['expire_notification_month', { label: 'Notify Expiry Before One Month', type: 'select', source: [['Yes', 'Yes'], ['No', 'No']] }],
       ['expire_notification_week', { label: 'Notify Expiry Before One Week', type: 'select', source: [['Yes', 'Yes'], ['No', 'No']] }],
       ['expire_notification_day', { label: 'Notify Expiry Before One Day', type: 'select', source: [['Yes', 'Yes'], ['No', 'No']] }],
+      ['share_with_employee', { label: 'Share with Employee', type: 'select', source: [['Yes', 'Yes'], ['No', 'No']] }],
+      // [ "sign", {"label":"Require Signature","type":"select","source":[["Yes","Yes"],["No","No"]]}],
       // [ "sign", {"label":"Require Signature","type":"select","source":[["Yes","Yes"],["No","No"]]}],
       // [ "sign_label", {"label":"Signature Description","type":"textarea","validation":"none"}],
       ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
@@ -146,6 +148,7 @@ class EmployeeDocumentAdapter extends AdapterBase {
       ['date_added', { label: 'Date Added', type: 'date', validation: '' }],
       ['valid_until', { label: 'Valid Until', type: 'date', validation: 'none' }],
       ['status', { label: 'Status', type: 'select', source: [['Active', 'Active'], ['Inactive', 'Inactive'], ['Draft', 'Draft']] }],
+      ['visible_to', { label: 'Visible To', type: 'select', source: [['Owner', 'Owner'], ['Manager', 'Manager'], ['Admin', 'Admin']] }],
       ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
       ['attachment', { label: 'Attachment', type: 'fileupload', validation: '' }],
     ];

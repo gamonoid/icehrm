@@ -9,8 +9,6 @@ import TimeUtils from './TimeUtils';
 import RequestCache from './RequestCache';
 import SocialShare from './SocialShare';
 
-const Aes = require('./Aes');
-
 window.RequestCache = RequestCache;
 window.SocialShare = SocialShare;
 

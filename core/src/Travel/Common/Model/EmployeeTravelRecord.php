@@ -11,10 +11,15 @@ namespace Travel\Common\Model;
 use Classes\ModuleAccess;
 use Classes\SettingsManager;
 use Model\ApproveModel;
+use Model\CustomFieldTrait;
 
 class EmployeeTravelRecord extends ApproveModel
 {
+    use CustomFieldTrait;
+
     public $table = 'EmployeeTravelRecords';
+    public $objectName = 'Travel Request';
+    protected $allowCustomFields = true;
 
     public $notificationModuleName = "Travel Management";
     public $notificationUnitName = "TravelRequest";

@@ -104,16 +104,16 @@ class ApproveAdminAdapter extends LogViewAdapter {
 
   getStatusOptionsData(currentStatus) {
     const data = {};
-    if (currentStatus == 'Approved') {
+    if (currentStatus === 'Approved') {
 
-    } else if (currentStatus == 'Pending') {
+    } else if (currentStatus === 'Pending') {
       data.Approved = 'Approved';
       data.Rejected = 'Rejected';
-    } else if (currentStatus == 'Rejected') {
+    } else if (currentStatus === 'Rejected') {
 
-    } else if (currentStatus == 'Cancelled') {
+    } else if (currentStatus === 'Cancelled') {
 
-    } else if (currentStatus == 'Processing') {
+    } else if (currentStatus === 'Processing') {
 
     } else {
       data['Cancellation Requested'] = 'Cancellation Requested';

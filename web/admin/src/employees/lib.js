@@ -363,28 +363,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       });
     }
 
-    return this.addActualFields(steps, fields);
-  }
-
-  addActualFields(steps, fields) {
-    return steps.map((item) => {
-      item.fields = item.fields.reduce((acc, fieldName) => {
-        const field = fields.find(([name]) => name === fieldName);
-        if (field) {
-          acc.push(field);
-        }
-        return acc;
-      }, []);
-
-      return item;
-    });
-  }
-
-  getFormOptions() {
-    return {
-      width: 1024,
-      twoColumnLayout: false,
-    };
+    return this.addActualFieldsForStepModal(steps, fields);
   }
 
   getFilters() {

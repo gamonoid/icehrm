@@ -424,10 +424,8 @@ class RestEndPoint
             $token = $_GET['token'];
         }
 
-        if (strlen($token) > 32) {
-            $tokenService = new JwtTokenService();
-            $token = $tokenService->getBaseToken($token);
-        }
+        $tokenService = new JwtTokenService();
+        $token = $tokenService->getBaseToken($token);
 
         return $token;
     }

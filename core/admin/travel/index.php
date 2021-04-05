@@ -31,22 +31,6 @@ $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
     $travelRequestOptions
 ));
 
-if ($user->user_level === 'Admin') {
-    $travelCustomFieldOptions = [];
-    $travelCustomFieldOptions['setRemoteTable'] = 'true';
-    $travelCustomFieldOptions['setTableType'] = '\'EmployeeTravelRecord\'';
-
-    $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
-        'TravelCustomField',
-        'CustomField',
-        'Custom Fields',
-        'CustomFieldAdapter',
-        '{"type":"EmployeeTravelRecord"}',
-        '',
-        false,
-        $travelCustomFieldOptions
-    ));
-}
 
 echo \Classes\UIManager::getInstance()->renderModule($moduleBuilder);
 

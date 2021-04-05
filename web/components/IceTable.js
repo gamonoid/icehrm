@@ -69,7 +69,6 @@ class IceTable extends React.Component {
   };
 
   search = (value) => {
-    console.log('search table:' + value);
     this.setState({ search: value });
     const fetchConfig = this.state.fetchConfig;
     console.log(fetchConfig);
@@ -105,12 +104,10 @@ class IceTable extends React.Component {
   }
 
   fetch = (params = {}) => {
-    console.log('params:', params);
     //this.setState({ loading: this.state.showLoading });
     this.setState({ loading: true });
     //const hideMessage = message.loading({ content: 'Loading Latest Data ...', key: 'loadingTable', duration: 1});
     const pagination = { ...this.state.pagination };
-    console.log('pagination:', pagination);
 
     if (this.props.adapter.localStorageEnabled) {
       try {

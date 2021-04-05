@@ -15,6 +15,8 @@ class MemcacheService
     public static $openConnections  = array();
     private static $me  = null;
 
+    protected $inMemoryStore = [];
+
     private function __construct()
     {
     }
@@ -57,6 +59,15 @@ class MemcacheService
 
     public function set($key, $value, $expiry = 3600)
     {
+        if (!$this->setInServer($key, $value, $expiry)) {
+            $this->inMemoryStore[$this->compressKey($key)] = $value;
+        }
+
+        return true;
+    }
+
+    public function setInServer($key, $value, $expiry = 3600)
+    {
         if (!class_exists('\\Memcached')) {
             return false;
         }
@@ -74,6 +85,19 @@ class MemcacheService
     }
 
     public function get($key)
+    {
+        $data = $this->getFromServer($key);
+        if ($data) {
+            return $data;
+        }
+        if (isset($this->inMemoryStore[$this->compressKey($key)])) {
+            return $this->inMemoryStore[$this->compressKey($key)];
+        }
+
+        return false;
+    }
+
+    public function getFromServer($key)
     {
         if (!class_exists('\\Memcached')) {
             return false;

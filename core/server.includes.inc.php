@@ -7,6 +7,7 @@ use Classes\Migration\MigrationManager;
 use Classes\NotificationManager;
 use Classes\ReportHandler;
 use Classes\SettingsManager;
+use Model\BaseModel;
 use Utils\LogManager;
 
 if (!defined("AWS_REGION")) {
@@ -79,6 +80,18 @@ if (defined('REDIS_SERVER_URI')
     );
 }
 
+$samlEnabled = SettingsManager::getInstance()->getSetting("SAML: Enabled");
+if ($samlEnabled === '1') {
+    include APP_BASE_PATH . 'lib/saml2/Utilities.php';
+    include APP_BASE_PATH . 'lib/saml2/Response.php';
+    include APP_BASE_PATH . 'lib/saml2/encryption.php';
+    include APP_BASE_PATH . 'lib/saml2/mo-saml-options-enum.php';
+}
+
+$instanceId = SettingsManager::getInstance()->getSetting("Instance : ID");
+$instanceKey = SettingsManager::getInstance()->getSetting("Instance: Key");
+if(!defined('APP_SEC')){define('APP_SEC',sha1($instanceId.$instanceKey));}
+
 $noJSONRequests = SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request");
 
 $debugMode = SettingsManager::getInstance()->getSetting("System: Debug Mode");
@@ -123,10 +136,12 @@ if (defined('CLIENT_PATH')) {
 
         $modelClassList = $moduleManagerObj->getModelClasses();
         $metaData = $moduleManagerObj->getModuleObject();
+        /** @var BaseModel $modelClass */
         foreach ($modelClassList as $modelClass) {
             $modelClassWithNameSpace = $metaData['model_namespace']."\\".$modelClass;
             $modelClassWithNameSpace::SetDatabaseAdapter($dbLocal);
             $baseService->addModelClass($modelClass, $modelClassWithNameSpace);
+            $modelClassObject = new $modelClassWithNameSpace();
         }
     }
 }

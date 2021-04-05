@@ -3,6 +3,7 @@
 namespace Classes;
 
 use Firebase\JWT\JWT;
+use Firebase\JWT\SignatureInvalidException;
 
 class JwtTokenService
 {
@@ -22,7 +23,11 @@ class JwtTokenService
     public function getBaseToken($jwtToken)
     {
         $secret = APP_SEC.APP_PASSWORD;
-        $jwt = JWT::decode($jwtToken, $secret, array('HS256'));
+        try {
+            $jwt = JWT::decode($jwtToken, $secret, array('HS256'));
+        } catch (SignatureInvalidException $e) {
+            return null;
+        }
 
         if (time() > intval($jwt->expire)) {
             return null;
