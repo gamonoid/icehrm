@@ -172,7 +172,7 @@ class BaseService
     public function getCustomFieldClassMap()
     {
         $map = [];
-        foreach($this->customFieldsClassMap as $key => $val) {
+        foreach ($this->customFieldsClassMap as $key => $val) {
             $map[] = [$key, $val];
         }
         return $map;

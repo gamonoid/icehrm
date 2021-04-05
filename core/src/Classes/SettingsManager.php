@@ -28,17 +28,20 @@ class SettingsManager
         return self::$me;
     }
 
-    public function addEncryptedSetting($name) {
+    public function addEncryptedSetting($name)
+    {
         if (!$this->isEncryptedSetting($name)) {
             $this->encryptedSettings[] = $name;
         }
     }
 
-    public function isEncryptedSetting($name) {
+    public function isEncryptedSetting($name)
+    {
         return in_array($name, $this->encryptedSettings);
     }
 
-    public function getInstanceKey() {
+    public function getInstanceKey()
+    {
         $settings = new Setting();
         $settings->Load("name = ?", array("Instance: Key"));
         if ($settings->name != "Instance: Key") {
@@ -47,16 +50,17 @@ class SettingsManager
         return $settings->value;
     }
 
-    private function encrypt($value) {
+    private function encrypt($value)
+    {
         $id = BaseService::getInstance()->getInstanceId();
         $key = $this->getInstanceKey();
         return AesCtr::encrypt($value, $id.$key, 256);
     }
 
-    public function encryptSetting($name, $value) {
+    public function encryptSetting($name, $value)
+    {
         // check the existence of prefix and encrypt only if need to avoid double encryption
-        if (
-            $this->isEncryptedSetting($name)
+        if ($this->isEncryptedSetting($name)
             && substr($value, 0, strlen(self::ENCRYPTED_PREFIX)) !== self::ENCRYPTED_PREFIX
         ) {
             $value = self::ENCRYPTED_PREFIX.$this->encrypt($value);
@@ -65,15 +69,16 @@ class SettingsManager
         return $value;
     }
 
-    private function decrypt($value) {
+    private function decrypt($value)
+    {
         $id = BaseService::getInstance()->getInstanceId();
         $key = $this->getInstanceKey();
         return AesCtr::decrypt($value, $id.$key, 256);
     }
 
-    public function decryptSetting($name, $value) {
-        if (
-            $this->isEncryptedSetting($name)
+    public function decryptSetting($name, $value)
+    {
+        if ($this->isEncryptedSetting($name)
             && substr($value, 0, strlen(self::ENCRYPTED_PREFIX)) === self::ENCRYPTED_PREFIX
         ) {
             $value = $this->decrypt(substr($value, strlen(self::ENCRYPTED_PREFIX)));
@@ -134,7 +139,8 @@ class SettingsManager
         }
     }
 
-    public function getDeprecatedSettings() {
+    public function getDeprecatedSettings()
+    {
         return [
             'Attendance: Work Week Start Day',
             'Attendance: Overtime Calculation Class'

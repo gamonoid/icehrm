@@ -17,8 +17,7 @@ class EmployeeTimeTrackReport extends ClassBasedReportBuilder implements ReportB
         LogManager::getInstance()->info(json_encode($report));
         LogManager::getInstance()->info(json_encode($req));
 
-        if (
-            empty($req['period'])
+        if (empty($req['period'])
             && (
                 empty($req['date_start'])
                 || 'NULL' === $req['date_start']
@@ -85,7 +84,13 @@ class EmployeeTimeTrackReport extends ClassBasedReportBuilder implements ReportB
         $company->Load('id = ?', [$employeeObject->department]);
 
         $reportData = [];
-        $reportData[] = ["Date","First Punch-In Time","Last Punch-Out Time","Time in Attendance (Hours)","Time in Time-sheets (Hours)"];
+        $reportData[] = [
+            "Date",
+            "First Punch-In Time",
+            "Last Punch-Out Time",
+            "Time in Attendance (Hours)",
+            "Time in Time-sheets (Hours)",
+            ];
         $reportData[] = ["Employee:",$employeeObject->first_name." ".$employeeObject->last_name,"","",""];
         $reportData[] = ["Department:",$company->title,"","",""];
         $reportData[] = ["Total Days:","","","",""];
@@ -94,7 +99,11 @@ class EmployeeTimeTrackReport extends ClassBasedReportBuilder implements ReportB
         //Iterate date range
 
         $interval = \DateInterval::createFromDateString('1 day');
-        $period = new \DatePeriod(new \DateTime($req['date_start']), $interval, (new \DateTime($req['date_end']))->modify('+1 day'));
+        $period = new \DatePeriod(
+            new \DateTime($req['date_start']),
+            $interval,
+            (new \DateTime($req['date_end']))->modify('+1 day')
+        );
 
         $totalHoursOffice = 0;
         $totalHoursTimeSheets = 0;
@@ -154,7 +163,8 @@ class EmployeeTimeTrackReport extends ClassBasedReportBuilder implements ReportB
         return $reportData;
     }
 
-    private function setRequestDatesBasedOnThePeriod($req) {
+    private function setRequestDatesBasedOnThePeriod($req)
+    {
         if (empty($req['period'])) {
             return $req;
         }
@@ -162,13 +172,13 @@ class EmployeeTimeTrackReport extends ClassBasedReportBuilder implements ReportB
         if ($req['period'] === 'Current Month') {
             $req['date_start'] = date('Y-m-01', strtotime('now'));
             $req['date_end'] = date('Y-m-d', strtotime('now'));
-        } else if ($req['period'] === 'Last Month') {
+        } elseif ($req['period'] === 'Last Month') {
             $req['date_start'] = date('Y-m-d', strtotime('first day of last month'));
             $req['date_end'] = date('Y-m-d', strtotime('last day of last month'));
-        } else if ($req['period'] === 'Last Week') {
+        } elseif ($req['period'] === 'Last Week') {
             $req['date_start'] = date("Y-m-d", strtotime("-7 days"));
             $req['date_end'] = date('Y-m-d', strtotime('now'));
-        } else if ($req['period'] === 'Last 2 Weeks') {
+        } elseif ($req['period'] === 'Last 2 Weeks') {
             $req['date_start'] = date("Y-m-d", strtotime("-14 days"));
             $req['date_end'] = date('Y-m-d', strtotime('now'));
         }
