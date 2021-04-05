@@ -7,7 +7,8 @@ use Utils\LogManager;
 
 class SAMLManager
 {
-    public function getSSOEmail($samlData, $relayState) {
+    public function getSSOEmail($samlData, $relayState)
+    {
         // Service Providers Assertion Consumer Service (ACS) URL
         $acsUrl = CLIENT_BASE_URL.'login.php';
         $samlResponse = htmlspecialchars($samlData);
@@ -27,15 +28,15 @@ class SAMLManager
         $statusString = $status->item(0)->getAttribute('Value');
 
 
-        $statusArray = explode(':',$statusString);
-        if(array_key_exists(7, $statusArray)){
+        $statusArray = explode(':', $statusString);
+        if (array_key_exists(7, $statusArray)) {
             $status = $statusArray[7];
         }
 
         if ('Success' !== $status) {
             $StatusMessage = $xpath->query('/samlp:Response/samlp:Status/samlp:StatusMessage', $doc)->item(0);
             LogManager::getInstance()->error('SAML login failed: status = '. $status);
-            if(!empty($StatusMessage)) {
+            if (!empty($StatusMessage)) {
                 $StatusMessage = $StatusMessage->nodeValue;
                 LogManager::getInstance()->error('SAML login failed: status message = '. $StatusMessage);
             }
@@ -51,17 +52,31 @@ class SAMLManager
         $certFingerPrint = MoXMLSecurityKey::getRawThumbprint($x509cert);
         $certFingerPrint = preg_replace('/\s+/', '', $certFingerPrint);
         $validSignature = false;
-        if(!empty($responseSignatureData)) {
-            $validSignature = \Utilities::processResponse($acsUrl, $certFingerPrint, $responseSignatureData, $samlResponse, 0, $relayState);
+        if (!empty($responseSignatureData)) {
+            $validSignature = \Utilities::processResponse(
+                $acsUrl,
+                $certFingerPrint,
+                $responseSignatureData,
+                $samlResponse,
+                0,
+                $relayState
+            );
             LogManager::getInstance()->error('SAML: response signature validity :'.$validSignature);
         }
 
-        if(!empty($assertionSignatureData)) {
-            $validSignature = \Utilities::processResponse($acsUrl, $certFingerPrint, $assertionSignatureData, $samlResponse, 0, $relayState);
+        if (!empty($assertionSignatureData)) {
+            $validSignature = \Utilities::processResponse(
+                $acsUrl,
+                $certFingerPrint,
+                $assertionSignatureData,
+                $samlResponse,
+                0,
+                $relayState
+            );
             LogManager::getInstance()->error('SAML: response signature validity :'.$validSignature);
         }
 
-        if(!$validSignature) {
+        if (!$validSignature) {
             LogManager::getInstance()->error('Invalid response or assertion signature');
             return false;
         }

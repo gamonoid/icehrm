@@ -101,7 +101,7 @@ class Setting extends BaseModel
         }
 
         if (strlen($obj->value) > 30) {
-            $obj->value = substr($obj->value,0, 30).'...';
+            $obj->value = substr($obj->value, 0, 30).'...';
         }
         return $obj;
     }

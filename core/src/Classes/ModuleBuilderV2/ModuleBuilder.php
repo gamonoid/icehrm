@@ -15,7 +15,7 @@ class ModuleBuilder
     public $modules = array();
     public $user = null;
 
-    function __construct()
+    public function __construct()
     {
         $this->user = \Classes\BaseService::getInstance()->getCurrentUser();
     }

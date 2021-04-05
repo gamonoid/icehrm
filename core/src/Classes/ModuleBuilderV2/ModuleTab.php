@@ -31,8 +31,8 @@ class ModuleTab
         $orderBy,
         $isActive = false,
         $options = array()
-    )
-    {
+    ) {
+    
         $this->modelPath = $modelPath;
         $this->name = $name;
         $this->class = $class;
@@ -43,12 +43,14 @@ class ModuleTab
         $this->isActive = $isActive;
 
         $this->options = array_merge(
-            $options, [
+            $options,
+            [
             "setObjectTypeName" => "'{$this->name}'",
             "setAccess" => "data.permissions.{$this->name} ? data.permissions.{$this->name} : {}",
             "setDataPipe" => 'new IceDataPipe(modJsList.tab' . $this->name . ')',
             "setRemoteTable" => true,
-        ]);
+            ]
+        );
     }
 
     public function getHTML()
@@ -67,8 +69,8 @@ class ModuleTab
     {
         $active = ($this->isActive)?" active":"";
         $html = '<div class="tab-pane'.$active.'" id="tabPage'.$this->name.'">'.
-        	'<div id="'.$this->name.'Table" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>'.
-			'<div id="'.$this->name.'Form"></div>'.
+            '<div id="'.$this->name.'Table" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>'.
+            '<div id="'.$this->name.'Form"></div>'.
             '<div id="'.$this->name.'FilterForm"></div>'.
             '</div>';
 
