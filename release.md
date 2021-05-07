@@ -1,6 +1,6 @@
 # Release Notes IceHrm Open Source
 
-##Release note v29.0.0.PRO
+## Release note v29.0.0.OS
 
 ### 🧲 New features
 
