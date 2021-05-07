@@ -4,7 +4,6 @@
  */
 
 import AdapterBase from '../../../api/AdapterBase';
-import CustomFieldAdapter from '../../../api/CustomFieldAdapter';
 
 /**
  * FieldNameAdapter
@@ -44,4 +43,4 @@ class FieldNameAdapter extends AdapterBase {
 }
 
 
-module.exports = { FieldNameAdapter, CustomFieldAdapter };
+module.exports = { FieldNameAdapter };
