@@ -3,6 +3,7 @@
  Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
+
 use Classes\PermissionManager;
 use CompanyLoans\Common\Model\CompanyLoan;
 use CompanyLoans\Common\Model\EmployeeCompanyLoan;
@@ -68,7 +69,5 @@ var modJsList = [];
   modJsList.tabEmployeeCompanyLoan.setRemoteTable(true);
 
   var modJs = modJsList['tabCompanyLoan'];
-
-
-</script>
+  
 <?php include APP_BASE_PATH.'footer.php';?>
