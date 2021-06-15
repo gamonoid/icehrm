@@ -3,6 +3,9 @@
  Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
+use Classes\PermissionManager;
+use CompanyLoans\Common\Model\CompanyLoan;
+use CompanyLoans\Common\Model\EmployeeCompanyLoan;
 
 $moduleName = 'loans';
 $moduleGroup = 'admin';
@@ -36,13 +39,36 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 	</div>
 
 </div>
+
+<?php
+$moduleData = [
+    'user_level' => $user->user_level,
+    'permissions' => [
+        'CompanyLoan' => PermissionManager::checkGeneralAccess(new CompanyLoan()),
+        'EmployeeCompanyLoan' => PermissionManager::checkGeneralAccess(new EmployeeCompanyLoan()),
+    ]
+];
+?>
+
 <script>
-var modJsList = new Array();
+var modJsList = [];
+  var data = <?= json_encode($moduleData) ?>;
+  modJsList['tabCompanyLoan'] = new ProjectAdapter('Company Loan', 'Company Loan');
+  modJsList.tabCompanyLoan.setObjectTypeName('CompanyLoan');
+  modJsList.tabCompanyLoan.setAccess(data.permissions.CompanyLoan);
+  modJsList.tabCompanyLoan.setDataPipe(new IceDataPipe(modJsList.tabCompanyLoan));
+  modJsList.tabCompanyLoan.setRemoteTable(true);
 
-modJsList['tabCompanyLoan'] = new CompanyLoanAdapter('CompanyLoan','CompanyLoan');
-modJsList['tabEmployeeCompanyLoan'] = new EmployeeCompanyLoanAdapter('EmployeeCompanyLoan','EmployeeCompanyLoan');
+  modJsList['tabEmployeeCompanyLoan'] = new EmployeeCompanyLoanAdapter('EmployeeCompanyLoan', 'EmployeeCompanyLoan');
 
-var modJs = modJsList['tabCompanyLoan'];
+
+  modJsList.tabEmployeeCompanyLoan.setObjectTypeName('Employee Company Loan');
+  modJsList.tabEmployeeCompanyLoan.setAccess(data.permissions.EmployeeCompanyLoan);
+  modJsList.tabEmployeeCompanyLoan.setDataPipe(new IceDataPipe(modJsList.tabEmployeeCompanyLoan));
+  modJsList.tabEmployeeCompanyLoan.setRemoteTable(true);
+
+  var modJs = modJsList['tabCompanyLoan'];
+
 
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>
