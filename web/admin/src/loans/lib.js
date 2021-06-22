@@ -176,5 +176,5 @@ class EmployeeCompanyLoanAdapter extends ReactModalAdapterBase {
 
 module.exports = {
   CompanyLoanAdapter,
-  EmployeeCompanyLoanAdapter,
+  EmployeeCompanyLoanAdapter
 };

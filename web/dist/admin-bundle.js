@@ -5158,14 +5158,11 @@ module.exports = {
 var _lib = require("./lib");
 
 window.FieldNameAdapter = _lib.FieldNameAdapter;
-window.CustomFieldAdapter = _lib.CustomFieldAdapter;
 
 },{"./lib":22}],22:[function(require,module,exports){
 "use strict";
 
 var _AdapterBase2 = _interopRequireDefault(require("../../../api/AdapterBase"));
-
-var _CustomFieldAdapter = _interopRequireDefault(require("../../../api/CustomFieldAdapter"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -5260,11 +5257,10 @@ var FieldNameAdapter = /*#__PURE__*/function (_AdapterBase) {
 }(_AdapterBase2["default"]);
 
 module.exports = {
-  FieldNameAdapter: FieldNameAdapter,
-  CustomFieldAdapter: _CustomFieldAdapter["default"]
+  FieldNameAdapter: FieldNameAdapter
 };
 
-},{"../../../api/AdapterBase":52,"../../../api/CustomFieldAdapter":55}],23:[function(require,module,exports){
+},{"../../../api/AdapterBase":52}],23:[function(require,module,exports){
 "use strict";
 
 var _lib = require("./lib");
@@ -5559,10 +5555,27 @@ module.exports = {
 
 var _lib = require("./lib");
 
-window.CompanyLoanAdapter = _lib.CompanyLoanAdapter;
-window.EmployeeCompanyLoanAdapter = _lib.EmployeeCompanyLoanAdapter;
+var _IceDataPipe = _interopRequireDefault(require("../../../api/IceDataPipe"));
 
-},{"./lib":26}],26:[function(require,module,exports){
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function init(data) {
+  var modJsList = {};
+  modJsList.tabCompanyLoan = new _lib.CompanyLoanAdapter('CompanyLoan', 'CompanyLoan');
+  modJsList.tabCompanyLoan.setObjectTypeName('Company Loan');
+  modJsList.tabCompanyLoan.setDataPipe(new _IceDataPipe["default"](modJsList.tabCompanyLoan));
+  modJsList.tabCompanyLoan.setAccess(data.permissions.CompanyLoan);
+  modJsList.tabEmployeeCompanyLoan = new _lib.EmployeeCompanyLoanAdapter('EmployeeCompanyLoan', 'EmployeeCompanyLoan');
+  modJsList.tabEmployeeCompanyLoan.setObjectTypeName('Employee Company Loan');
+  modJsList.tabEmployeeCompanyLoan.setDataPipe(new _IceDataPipe["default"](modJsList.tabEmployeeCompanyLoan));
+  modJsList.tabEmployeeCompanyLoan.setAccess(data.permissions.EmployeeCompanyLoan);
+  window.modJs = modJsList.tabCompanyLoan;
+  window.modJsList = modJsList;
+}
+
+window.initAdminLoan = init;
+
+},{"../../../api/IceDataPipe":58,"./lib":26}],26:[function(require,module,exports){
 "use strict";
 
 var _ReactModalAdapterBase = _interopRequireDefault(require("../../../api/ReactModalAdapterBase"));
@@ -8696,14 +8709,38 @@ module.exports = {
 
 var _lib = require("./lib");
 
-window.SalaryComponentTypeAdapter = _lib.SalaryComponentTypeAdapter;
-window.SalaryComponentAdapter = _lib.SalaryComponentAdapter;
-window.EmployeeSalaryAdapter = _lib.EmployeeSalaryAdapter;
+var _IceDataPipe = _interopRequireDefault(require("../../../api/IceDataPipe"));
 
-},{"./lib":44}],44:[function(require,module,exports){
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+/*window.SalaryComponentTypeAdapter = SalaryComponentTypeAdapter;
+window.SalaryComponentAdapter = SalaryComponentAdapter;
+window.EmployeeSalaryAdapter = EmployeeSalaryAdapter;*/
+function init(data) {
+  var modJsList = [];
+  modJsList.tabSalaryComponentType = new _lib.SalaryComponentTypeAdapter('SalaryComponentType', 'SalaryComponentType');
+  modJsList.tabSalaryComponentType.setObjectTypeName('Salary Component Types');
+  modJsList.tabSalaryComponentType.setDataPipe(new _IceDataPipe["default"](modJsList.tabSalaryComponentType));
+  modJsList.tabSalaryComponentType.setAccess(data.permissions.tabSalaryComponentType);
+  modJsList.tabSalaryComponent = new _lib.SalaryComponentAdapter('SalaryComponent', 'SalaryComponent');
+  modJsList.tabSalaryComponent.setObjectTypeName('Salary components');
+  modJsList.tabSalaryComponent.setDataPipe(new _IceDataPipe["default"](modJsList.tabSalaryComponent));
+  modJsList.tabSalaryComponent.setAccess(data.permissions.SalaryComponent);
+  modJsList.tabEmployeeSalary = new _lib.EmployeeSalaryAdapter('EmployeeSalary', 'EmployeeSalary');
+  modJsList.tabEmployeeSalary.setObjectTypeName('Employee Salary');
+  modJsList.tabEmployeeSalary.setDataPipe(new _IceDataPipe["default"](modJsList.tabEmployeeSalary));
+  modJsList.tabEmployeeSalary.setAccess(data.permissions.EmployeeSalary); //window.modJs = modJsList.tabEmployeeSalary;
+
+  window.modJs = modJsList.tabSalaryComponentType;
+  window.modJsList = modJsList;
+}
+
+window.initAdminSalary = init;
+
+},{"../../../api/IceDataPipe":58,"./lib":44}],44:[function(require,module,exports){
 "use strict";
 
-var _AdapterBase4 = _interopRequireDefault(require("../../../api/AdapterBase"));
+var _ReactModalAdapterBase = _interopRequireDefault(require("../../../api/ReactModalAdapterBase"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -8732,15 +8769,22 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 /**
  * SalaryComponentTypeAdapter
  */
-var SalaryComponentTypeAdapter = /*#__PURE__*/function (_AdapterBase) {
-  _inherits(SalaryComponentTypeAdapter, _AdapterBase);
+var SalaryComponentTypeAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
+  _inherits(SalaryComponentTypeAdapter, _ReactModalAdapterBas);
 
   var _super = _createSuper(SalaryComponentTypeAdapter);
 
-  function SalaryComponentTypeAdapter() {
+  function SalaryComponentTypeAdapter(endPoint, tab, filter, orderBy) {
+    var _this;
+
     _classCallCheck(this, SalaryComponentTypeAdapter);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, endPoint, tab, filter, orderBy);
+    _this.fieldNameMap = {};
+    _this.hiddenFields = {};
+    _this.tableFields = {};
+    _this.formOnlyFields = {};
+    return _this;
   }
 
   _createClass(SalaryComponentTypeAdapter, [{
@@ -8761,8 +8805,36 @@ var SalaryComponentTypeAdapter = /*#__PURE__*/function (_AdapterBase) {
       }];
     }
   }, {
+    key: "getTableColumns",
+    value: function getTableColumns() {
+      return [{
+        title: 'Code',
+        dataIndex: 'code',
+        sorter: true
+      }, {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true
+      }];
+    }
+  }, {
     key: "getFormFields",
     value: function getFormFields() {
+      if (this.showSave) {
+        return [['id', {
+          label: 'ID',
+          type: 'hidden'
+        }], ['code', {
+          label: 'Code',
+          type: 'text',
+          validation: ''
+        }], ['name', {
+          label: 'Name',
+          type: 'text',
+          validation: ''
+        }]];
+      }
+
       return [['id', {
         label: 'ID',
         type: 'hidden'
@@ -8779,21 +8851,28 @@ var SalaryComponentTypeAdapter = /*#__PURE__*/function (_AdapterBase) {
   }]);
 
   return SalaryComponentTypeAdapter;
-}(_AdapterBase4["default"]);
+}(_ReactModalAdapterBase["default"]);
 /**
  * SalaryComponentAdapter
  */
 
 
-var SalaryComponentAdapter = /*#__PURE__*/function (_AdapterBase2) {
-  _inherits(SalaryComponentAdapter, _AdapterBase2);
+var SalaryComponentAdapter = /*#__PURE__*/function (_ReactModalAdapterBas2) {
+  _inherits(SalaryComponentAdapter, _ReactModalAdapterBas2);
 
   var _super2 = _createSuper(SalaryComponentAdapter);
 
-  function SalaryComponentAdapter() {
+  function SalaryComponentAdapter(endPoint, tab, filter, orderBy) {
+    var _this2;
+
     _classCallCheck(this, SalaryComponentAdapter);
 
-    return _super2.apply(this, arguments);
+    _this2 = _super2.call(this, endPoint, tab, filter, orderBy);
+    _this2.fieldNameMap = {};
+    _this2.hiddenFields = {};
+    _this2.tableFields = {};
+    _this2.formOnlyFields = {};
+    return _this2;
   }
 
   _createClass(SalaryComponentAdapter, [{
@@ -8813,6 +8892,23 @@ var SalaryComponentAdapter = /*#__PURE__*/function (_AdapterBase2) {
         sTitle: 'Salary Component Type'
       }, {
         sTitle: 'Details'
+      }];
+    }
+  }, {
+    key: "getTableColumns",
+    value: function getTableColumns() {
+      return [{
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true
+      }, {
+        title: 'Salary Component Type',
+        dataIndex: 'componentType',
+        sorter: true
+      }, {
+        title: 'Details',
+        dataIndex: 'details',
+        sorter: true
       }];
     }
   }, {
@@ -8838,21 +8934,28 @@ var SalaryComponentAdapter = /*#__PURE__*/function (_AdapterBase2) {
   }]);
 
   return SalaryComponentAdapter;
-}(_AdapterBase4["default"]);
+}(_ReactModalAdapterBase["default"]);
 /*
  * EmployeeSalaryAdapter
  */
 
 
-var EmployeeSalaryAdapter = /*#__PURE__*/function (_AdapterBase3) {
-  _inherits(EmployeeSalaryAdapter, _AdapterBase3);
+var EmployeeSalaryAdapter = /*#__PURE__*/function (_ReactModalAdapterBas3) {
+  _inherits(EmployeeSalaryAdapter, _ReactModalAdapterBas3);
 
   var _super3 = _createSuper(EmployeeSalaryAdapter);
 
-  function EmployeeSalaryAdapter() {
+  function EmployeeSalaryAdapter(endPoint, tab, filter, orderBy) {
+    var _this3;
+
     _classCallCheck(this, EmployeeSalaryAdapter);
 
-    return _super3.apply(this, arguments);
+    _this3 = _super3.call(this, endPoint, tab, filter, orderBy);
+    _this3.fieldNameMap = {};
+    _this3.hiddenFields = {};
+    _this3.tableFields = {};
+    _this3.formOnlyFields = {};
+    return _this3;
   }
 
   _createClass(EmployeeSalaryAdapter, [{
@@ -8874,6 +8977,27 @@ var EmployeeSalaryAdapter = /*#__PURE__*/function (_AdapterBase3) {
         sTitle: 'Amount'
       }, {
         sTitle: 'Details'
+      }];
+    }
+  }, {
+    key: "getTableColumns",
+    value: function getTableColumns() {
+      return [{
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true
+      }, {
+        title: 'Salary Component',
+        dataIndex: 'component',
+        sorter: true
+      }, {
+        title: 'Amount',
+        dataIndex: 'amount',
+        sorter: true
+      }, {
+        title: 'Details',
+        dataIndex: 'details',
+        sorter: true
       }];
     }
   }, {
@@ -8912,7 +9036,7 @@ var EmployeeSalaryAdapter = /*#__PURE__*/function (_AdapterBase3) {
   }]);
 
   return EmployeeSalaryAdapter;
-}(_AdapterBase4["default"]);
+}(_ReactModalAdapterBase["default"]);
 
 module.exports = {
   SalaryComponentTypeAdapter: SalaryComponentTypeAdapter,
@@ -8920,7 +9044,7 @@ module.exports = {
   EmployeeSalaryAdapter: EmployeeSalaryAdapter
 };
 
-},{"../../../api/AdapterBase":52}],45:[function(require,module,exports){
+},{"../../../api/ReactModalAdapterBase":65}],45:[function(require,module,exports){
 "use strict";
 
 var _lib = require("./lib");

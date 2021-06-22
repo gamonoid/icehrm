@@ -28,20 +28,23 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
             <div id="JobTitleForm"></div>
             <div id="JobTitleFilterForm"></div>
 		</div>
+
 		<div class="tab-pane" id="tabPagePayGrades">
 			<div id="PayGradeTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="PayGradeForm"></div>
             <div id="PayGradeFilterForm"></div>
 		</div>
+
 		<div class="tab-pane" id="tabPageEmploymentStatus">
 			<div id="EmploymentStatusTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="EmploymentStatusForm"></div>
             <div id="EmploymentStatusFilterForm"></div>
 		</div>
+		
 	</div>
 
 </div>
-<div id="dataGroup"></div>
+
 <?php
 $moduleData = [
     'user_level' => $user->user_level,

@@ -4,6 +4,9 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Classes\PermissionManager;
+use Loans\Common\Model\EmployeeCompanyLoan;
+
 $moduleName = 'loans';
 $moduleGroup = 'modules';
 define('MODULE_PATH',dirname(__FILE__));
@@ -17,26 +20,27 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
 	<div class="tab-content">
 		<div class="tab-pane active" id="tabPageEmployeeCompanyLoan">
-			<div id="EmployeeCompanyLoan" class="reviewBlock" data-content="List" style="padding-left:5px;">
 
-			</div>
-			<div id="EmployeeCompanyLoanForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-
-			</div>
+			<div id="EmployeeCompanyLoanTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+            <div id="EmployeeCompanyLoanForm"></div>
+            <div id="EmployeeCompanyLoanFilterForm"></div>
 		</div>
 	</div>
-
 </div>
+	
+
+
+<?php
+$moduleData = [
+    'user_level' => $user->user_level,
+    'permissions' => [
+        'EmployeeCompanyLoan' => PermissionManager::checkGeneralAccess(new EmployeeCompanyLoan()),
+    ]
+];
+?>
+
 <script>
-var modJsList = new Array();
-
-modJsList['tabEmployeeCompanyLoan'] = new EmployeeCompanyLoanAdapter('EmployeeCompanyLoan','EmployeeCompanyLoan');
-modJsList['tabEmployeeCompanyLoan'].setShowAddNew(false);
-modJsList['tabEmployeeCompanyLoan'].setShowSave(false);
-modJsList['tabEmployeeCompanyLoan'].setShowDelete(false);
-modJsList['tabEmployeeCompanyLoan'].setShowEdit(true);
-
-var modJs = modJsList['tabEmployeeCompanyLoan'];
-
+  initAdminLoan(<?=json_encode($moduleData)?>);
 </script>
+
 <?php include APP_BASE_PATH.'footer.php';?>

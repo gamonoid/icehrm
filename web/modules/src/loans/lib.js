@@ -2,9 +2,18 @@
  Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
-import AdapterBase from '../../../api/AdapterBase';
+//import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
-class EmployeeCompanyLoanAdapter extends AdapterBase {
+class EmployeeCompanyLoanAdapter extends ReactModalAdapterBase {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
+    this.fieldNameMap = {};
+    this.hiddenFields = {};
+    this.tableFields = {};
+    this.formOnlyFields = {};
+  }
+
   getDataMapping() {
     return [
       'id',
@@ -29,6 +38,46 @@ class EmployeeCompanyLoanAdapter extends AdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Loan Type',
+        dataIndex: 'loan',
+        sorter: true,
+      },
+      {
+        title: 'Loan Start Date',
+        dataIndex: 'start_date',
+        sorter: true,
+      },
+      {
+        title: 'Loan Period (Months)',
+        dataIndex: 'period_months',
+        sorter: true,
+      },
+      {
+        title: 'Currency',
+        dataIndex: 'currency',
+        sorter: true,
+      },
+      {
+        title: 'Amount',
+        dataIndex: 'amount',
+        sorter: true,
+      },
+      {
+        title: 'Status',
+        dataIndex: 'status',
+        sorter: true,
+      }
+    ];
+  }
+  
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
