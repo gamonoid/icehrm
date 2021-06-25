@@ -3,13 +3,22 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import AdapterBase from '../../../api/AdapterBase';
+//import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
 /**
  * SalaryComponentTypeAdapter
  */
 
-class SalaryComponentTypeAdapter extends AdapterBase {
+class SalaryComponentTypeAdapter extends ReactModalAdapterBase {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
+    this.fieldNameMap = {};
+    this.hiddenFields = {};
+    this.tableFields = {};
+    this.formOnlyFields = {};
+  }
+
   getDataMapping() {
     return [
       'id',
@@ -23,6 +32,21 @@ class SalaryComponentTypeAdapter extends AdapterBase {
       { sTitle: 'ID', bVisible: false },
       { sTitle: 'Code' },
       { sTitle: 'Name' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Code',
+        dataIndex: 'code',
+        sorter: true,
+      },
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      }
     ];
   }
 
@@ -40,7 +64,15 @@ class SalaryComponentTypeAdapter extends AdapterBase {
  * SalaryComponentAdapter
  */
 
-class SalaryComponentAdapter extends AdapterBase {
+class SalaryComponentAdapter extends ReactModalAdapterBase {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
+    this.fieldNameMap = {};
+    this.hiddenFields = {};
+    this.tableFields = {};
+    this.formOnlyFields = {};
+  }
+
   getDataMapping() {
     return [
       'id',
@@ -59,6 +91,27 @@ class SalaryComponentAdapter extends AdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Salary Component Type',
+        dataIndex: 'componentType',
+        sorter: true,
+      },
+      {
+        title: 'Details',
+        dataIndex: 'details',
+        sorter: true,
+      }
+    ];
+  }
+
+
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
@@ -74,7 +127,15 @@ class SalaryComponentAdapter extends AdapterBase {
  * EmployeeSalaryAdapter
  */
 
-class EmployeeSalaryAdapter extends AdapterBase {
+class EmployeeSalaryAdapter extends ReactModalAdapterBase {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
+    this.fieldNameMap = {};
+    this.hiddenFields = {};
+    this.tableFields = {};
+    this.formOnlyFields = {};
+  }
+
   getDataMapping() {
     return [
       'id',
@@ -92,6 +153,31 @@ class EmployeeSalaryAdapter extends AdapterBase {
       { sTitle: 'Salary Component' },
       { sTitle: 'Amount' },
       { sTitle: 'Details' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Salary Component',
+        dataIndex: 'component',
+        sorter: true,
+      },
+      {
+        title: 'Amount',
+        dataIndex: 'amount',
+        sorter: true,
+      },
+      {
+        title: 'Details',
+        dataIndex: 'details',
+        sorter: true,
+      }
     ];
   }
 
