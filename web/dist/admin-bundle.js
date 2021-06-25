@@ -8721,7 +8721,7 @@ function init(data) {
   modJsList.tabSalaryComponentType = new _lib.SalaryComponentTypeAdapter('SalaryComponentType', 'SalaryComponentType');
   modJsList.tabSalaryComponentType.setObjectTypeName('Salary Component Types');
   modJsList.tabSalaryComponentType.setDataPipe(new _IceDataPipe["default"](modJsList.tabSalaryComponentType));
-  modJsList.tabSalaryComponentType.setAccess(data.permissions.tabSalaryComponentType);
+  modJsList.tabSalaryComponentType.setAccess(data.permissions.SalaryComponentType);
   modJsList.tabSalaryComponent = new _lib.SalaryComponentAdapter('SalaryComponent', 'SalaryComponent');
   modJsList.tabSalaryComponent.setObjectTypeName('Salary components');
   modJsList.tabSalaryComponent.setDataPipe(new _IceDataPipe["default"](modJsList.tabSalaryComponent));
@@ -8820,21 +8820,6 @@ var SalaryComponentTypeAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
   }, {
     key: "getFormFields",
     value: function getFormFields() {
-      if (this.showSave) {
-        return [['id', {
-          label: 'ID',
-          type: 'hidden'
-        }], ['code', {
-          label: 'Code',
-          type: 'text',
-          validation: ''
-        }], ['name', {
-          label: 'Name',
-          type: 'text',
-          validation: ''
-        }]];
-      }
-
       return [['id', {
         label: 'ID',
         type: 'hidden'

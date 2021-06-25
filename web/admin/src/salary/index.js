@@ -16,7 +16,7 @@ function init(data) {
   modJsList.tabSalaryComponentType = new SalaryComponentTypeAdapter('SalaryComponentType', 'SalaryComponentType');
   modJsList.tabSalaryComponentType.setObjectTypeName('Salary Component Types');
   modJsList.tabSalaryComponentType.setDataPipe(new IceDataPipe(modJsList.tabSalaryComponentType));
-  modJsList.tabSalaryComponentType.setAccess(data.permissions.tabSalaryComponentType);
+  modJsList.tabSalaryComponentType.setAccess(data.permissions.SalaryComponentType);
 
   modJsList.tabSalaryComponent = new SalaryComponentAdapter('SalaryComponent', 'SalaryComponent');
   modJsList.tabSalaryComponent.setObjectTypeName('Salary components');

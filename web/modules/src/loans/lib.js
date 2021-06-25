@@ -41,11 +41,6 @@ class EmployeeCompanyLoanAdapter extends ReactModalAdapterBase {
   getTableColumns() {
     return [
       {
-        title: 'Employee',
-        dataIndex: 'employee',
-        sorter: true,
-      },
-      {
         title: 'Loan Type',
         dataIndex: 'loan',
         sorter: true,

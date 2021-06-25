@@ -51,13 +51,6 @@ class SalaryComponentTypeAdapter extends ReactModalAdapterBase {
   }
 
   getFormFields() {
-    if(this.showSave){
-      return [
-        ['id', { label: 'ID', type: 'hidden' }],
-        ['code', { label: 'Code', type: 'text', validation: '' }],
-        ['name', { label: 'Name', type: 'text', validation: '' }],
-      ];
-    }
     return [
       ['id', { label: 'ID', type: 'hidden' }],
       ['code', { label: 'Code', type: 'text', validation: '' }],

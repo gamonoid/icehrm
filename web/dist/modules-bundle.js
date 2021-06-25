@@ -18391,10 +18391,12 @@ var _IceDataPipe = _interopRequireDefault(require("../../../api/IceDataPipe"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function init(data) {
-  var modJsList = {}; //modJsList.tabEmployeeCompanyLoan = new EmployeeCompanyLoanAdapter('EmployeeCompanyLoan','');
-
-  modJsList.tabEmployeeCompanyLoan = new _lib.EmployeeCompanyLoanAdapter('EmployeeCompanyLoan', 'EmployeeCompanyLoan'); //modJsList.tabEmployeeCompanyLoan.setObjectTypeName('Employee Company Loan');
-
+  var modJsList = {};
+  modJsList.tabEmployeeCompanyLoan = new _lib.EmployeeCompanyLoanAdapter('EmployeeCompanyLoan', 'EmployeeCompanyLoan');
+  modJsList.tabEmployeeCompanyLoan.setObjectTypeName('Employee Company Loan');
+  modJsList.tabEmployeeCompanyLoan.setShowAddNew(false);
+  modJsList.tabEmployeeCompanyLoan.setShowEdit(false);
+  modJsList.tabEmployeeCompanyLoan.setShowDelete(false);
   modJsList.tabEmployeeCompanyLoan.setDataPipe(new _IceDataPipe["default"](modJsList.tabEmployeeCompanyLoan));
   modJsList.tabEmployeeCompanyLoan.setAccess(data.permissions.EmployeeCompanyLoan);
   window.modJs = modJsList.tabEmployeeCompanyLoan;
@@ -18479,10 +18481,6 @@ var EmployeeCompanyLoanAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
     key: "getTableColumns",
     value: function getTableColumns() {
       return [{
-        title: 'Employee',
-        dataIndex: 'employee',
-        sorter: true
-      }, {
         title: 'Loan Type',
         dataIndex: 'loan',
         sorter: true
