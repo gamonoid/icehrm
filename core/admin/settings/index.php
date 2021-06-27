@@ -6,6 +6,7 @@
 
 use Classes\ModuleBuilder\ModuleBuilder;
 use Classes\ModuleBuilder\ModuleTab;
+use Classes\UIManager;
 
 $moduleName = 'settings';
 $moduleGroup = 'admin';
@@ -32,7 +33,7 @@ if ( $notCloud ) {
         'EmailSetting', 'Setting', 'Email', 'SettingAdapter', '{"category":"Email"}', 'name', false, $options1
     ));
 }
-if(!defined('LEAVE_ENABLED') || LDAP_ENABLED == true) {
+if(defined('LEAVE_ENABLED') && LEAVE_ENABLED == true) {
     $moduleBuilder->addModuleOrGroup(new ModuleTab(
         'LeaveSetting', 'Setting', 'Leave', 'SettingAdapter', '{"category":"Leave"}', 'name', false, $options1
     ));
@@ -58,7 +59,7 @@ if(!defined('SAML_ENABLED') || SAML_ENABLED == true){
 $moduleBuilder->addModuleOrGroup(new ModuleTab(
     'OtherSetting','Setting','Other','SettingAdapter','{"category":["Projects","Recruitment","Notifications","Expense","Travel","Api","Overtime"]}','name',false,$options1
 ));
-echo \Classes\UIManager::getInstance()->renderModule($moduleBuilder);
+echo UIManager::getInstance()->renderModule($moduleBuilder);
 ?>
 </div>
 <script>
