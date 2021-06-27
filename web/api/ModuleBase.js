@@ -44,6 +44,7 @@ class ModuleBase {
     this.currentProfile = null;
     this.permissions = {};
     this.baseUrl = null;
+    this.clientUrl = null;
     this.that = this;
   }
 
@@ -96,6 +97,10 @@ class ModuleBase {
     this.baseUrl = url;
   }
 
+  setClientUrl(url) {
+    this.clientUrl = url;
+  }
+
   setUser(user) {
     this.user = user;
   }
@@ -143,7 +148,7 @@ class ModuleBase {
 
   gt(key) {
     if (this.translations[key] === undefined || this.translations[key] === null) {
-      console.log("Tr:" + key);
+      console.log(`Tr:${key}`);
       return key;
     }
     return this.translations[key][0];
@@ -1183,7 +1188,7 @@ class ModuleBase {
               if (rmf.length > 3) {
                 key = `${key}_${rmf[3]}`;
               }
-              //value = this.fieldMasterData[`${rmf[0]}_${rmf[1]}_${rmf[2]}`][filters[prop]];
+              // value = this.fieldMasterData[`${rmf[0]}_${rmf[1]}_${rmf[2]}`][filters[prop]];
               value = this.fieldMasterData[key][filters[prop]];
               valueOrig = value;
             }
@@ -2102,7 +2107,7 @@ class ModuleBase {
         $(`${formId} #${fields[i][0]}`).html(object[fields[i][0]]);
       } else if (fields[i][1].type === 'placeholder') {
         if (fields[i][1]['remote-source'] !== undefined && fields[i][1]['remote-source'] != null) {
-          //const key = `${fields[i][1]['remote-source'][0]}_${fields[i][1]['remote-source'][1]}_${fields[i][1]['remote-source'][2]}`;
+          // const key = `${fields[i][1]['remote-source'][0]}_${fields[i][1]['remote-source'][1]}_${fields[i][1]['remote-source'][2]}`;
           const key = this.getRemoteSourceKey(fields[i]);
           placeHolderVal = this.fieldMasterData[key][object[fields[i][0]]];
         } else {
@@ -2682,6 +2687,11 @@ class ModuleBase {
     seed += arr.reduce((acc, item) => parseInt(item.charCodeAt(0), 10) + acc, 0);
 
     return `https://avatars.dicebear.com/api/initials/:${seed}.svg`;
+  }
+
+  downloadPdf(type, data) {
+    const url = `${this.clientUrl}service.php?a=pdf&h=${type}&data=${data}`;
+    window.open(url,'_blank');
   }
 }
 
