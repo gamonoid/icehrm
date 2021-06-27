@@ -86,7 +86,7 @@ class BaseModel extends \ADOdb_Active_Record
         }
 
         $permissions = $allowedAccessMatrix === null ? $this->getDefaultAccessLevel() : $allowedAccessMatrix;
-        ;
+
         foreach ($userRoles as $role) {
             $userRole = new UserRole();
             $userRole->Load('id = ?', [$role]);
