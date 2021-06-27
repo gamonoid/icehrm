@@ -37,7 +37,7 @@ class CustomFieldAdapter extends AdapterBase {
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'text', validation: '' }],
       ['display', { label: 'Display Status', type: 'select', source: [['Form', 'Show'], ['Hidden', 'Hidden']] }],
-      ['field_type', { label: 'Field Type', type: 'select', source: [['text', 'Text Field'], ['textarea', 'Text Area'], ['select', 'Select'], ['select2', 'Select2'], ['select2multi', 'Multi Select'], ['fileupload', 'File Upload'], ['date', 'Date'], ['datetime', 'Date Time'], ['time', 'Time'], ['signature', 'Signature']] }],
+      ['field_type', { label: 'Field Type', type: 'select', source: [['text', 'Text Field'], ['textarea', 'Multiline Text'], ['select', 'Dropdown'], ['select2', 'Searchable DropDown'], ['select2multi', 'Multi Select'], ['fileupload', 'File Upload'], ['date', 'Date'], ['datetime', 'Date Time'], ['time', 'Time'], ['signature', 'Signature']] }],
       ['field_label', { label: 'Field Label', type: 'text', validation: '' }],
       ['field_validation', {
         label: 'Validation', type: 'select2', validation: 'none', sort: 'none', 'null-label': 'Required', 'allow-null': true, source: [['none', 'None'], ['number', 'Number'], ['numberOrEmpty', 'Number or Empty'], ['float', 'Decimal'], ['email', 'Email'], ['emailOrEmpty', 'Email or Empty']],
