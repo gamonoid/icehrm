@@ -3,19 +3,27 @@
 use Classes\BaseService;
 use Classes\CustomFieldManager;
 use Classes\JwtTokenService;
+use Classes\MemoryCacheService;
 use Classes\Migration\MigrationManager;
 use Classes\NotificationManager;
+use Classes\RedisCacheService;
 use Classes\ReportHandler;
 use Classes\SettingsManager;
+use Model\Audit;
 use Model\BaseModel;
+use Model\DataEntryBackup;
+use Model\File;
+use Model\Notification;
+use Model\Report;
+use Model\RestAccessToken;
+use Model\Setting;
 use Utils\LogManager;
 
-if (!defined("AWS_REGION")) {
-    define('AWS_REGION', 'us-east-1');
-}
 include(APP_BASE_PATH.'lib/adodb512/adodb.inc.php');
 include(APP_BASE_PATH.'lib/adodb512/adodb-active-record.inc.php');
 $ADODB_ASSOC_CASE = 2;
+
+include(APP_BASE_PATH.'lib/fpdf/fpdf.php');
 
 //detect admin and user modules
 if (defined("MODULE_PATH")) {
@@ -38,13 +46,13 @@ $dbLocal = NewADOConnection('mysqli');
 $res = $dbLocal->Connect(APP_HOST, APP_USERNAME, APP_PASSWORD, APP_DB);
 
 
-\Model\File::SetDatabaseAdapter($dbLocal);
-\Model\Setting::SetDatabaseAdapter($dbLocal);
-\Model\Report::SetDatabaseAdapter($dbLocal);
-\Model\DataEntryBackup::SetDatabaseAdapter($dbLocal);
-\Model\Audit::SetDatabaseAdapter($dbLocal);
-\Model\Notification::SetDatabaseAdapter($dbLocal);
-\Model\RestAccessToken::SetDatabaseAdapter($dbLocal);
+File::SetDatabaseAdapter($dbLocal);
+Setting::SetDatabaseAdapter($dbLocal);
+Report::SetDatabaseAdapter($dbLocal);
+DataEntryBackup::SetDatabaseAdapter($dbLocal);
+Audit::SetDatabaseAdapter($dbLocal);
+Notification::SetDatabaseAdapter($dbLocal);
+RestAccessToken::SetDatabaseAdapter($dbLocal);
 
 
 $baseService = BaseService::getInstance();
@@ -72,12 +80,17 @@ if (defined('REDIS_SERVER_URI')
     && QUERY_CACHE_TYPE === 'redis'
 ) {
     BaseService::getInstance()->setCacheService(
-        new \Classes\RedisCacheService(REDIS_SERVER_URI, CLIENT_NAME)
+        new RedisCacheService(REDIS_SERVER_URI, CLIENT_NAME)
     );
 } else {
     BaseService::getInstance()->setCacheService(
-        new \Classes\MemoryCacheService(CLIENT_NAME)
+        new MemoryCacheService(CLIENT_NAME)
     );
+}
+
+$awsRegion = SettingsManager::getInstance()->getSetting("System: AWS Region");
+if (!defined("AWS_REGION")) {
+    define('AWS_REGION', empty($awsRegion) ? 'us-east-1' : $awsRegion);
 }
 
 $samlEnabled = SettingsManager::getInstance()->getSetting("SAML: Enabled");
