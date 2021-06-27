@@ -121,7 +121,7 @@ class Uploader
         $uploadFilesToS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
         $uploadFilesToS3Key = SettingsManager::getInstance()->getSetting("Files: Amazon S3 Key for File Upload");
         $uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
-            "Files: Amazone S3 Secret for File Upload"
+            "Files: Amazon S3 Secret for File Upload"
         );
         $s3Bucket = SettingsManager::getInstance()->getSetting("Files: S3 Bucket");
         $s3WebUrl = SettingsManager::getInstance()->getSetting("Files: S3 Web Url");
