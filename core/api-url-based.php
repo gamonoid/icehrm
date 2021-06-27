@@ -6,8 +6,6 @@ include("server.includes.inc.php");
 
 if(\Classes\SettingsManager::getInstance()->getSetting('Api: REST Api Enabled') == '1') {
 
-    \Utils\LogManager::getInstance()->info("Request: " . $_REQUEST);
-
     if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
         http_response_code(200);
         exit();
