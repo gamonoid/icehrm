@@ -243,6 +243,7 @@ gulp.task('admin-js', (done) => {
   const files = [
     'attendance',
     'company_structure',
+    'connection',
     'custom_fields',
     'clients',
     'charts',
