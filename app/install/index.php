@@ -19,7 +19,10 @@ $isConfigFileWriteable = is_writable(CLIENT_APP_PATH."config.php");
 error_log("Config writable ".$isConfigFileWriteable);
 error_log("Config exists ".file_exists(CLIENT_APP_PATH."config.php"));
 if(!$isConfigFileWriteable){
-	$errorMap[] = array("important","Configuration file [".CLIENT_APP_PATH."config.php] is not writable","Make this file writable",array("sudo touch ".CLIENT_APP_PATH."config.php","sudo chmod 777 ".CLIENT_APP_PATH."config.php"));				
+	$errorMap[] = array("important","Configuration file [".CLIENT_APP_PATH."config.php] is not writable","Make this file writable",array(
+	        "sudo touch ".CLIENT_APP_PATH."config.php","sudo chmod 755 ".CLIENT_APP_PATH."config.php",
+	        "sudo chown -R ".shell_exec('whoami')." ".CLIENT_APP_PATH,
+    ));
 }
 
 $isConfigSampleFileExists = file_exists(CLIENT_APP_PATH."config.sample.php");
@@ -48,7 +51,7 @@ if(!$isDataFolderExists){
 		unlink(CLIENT_APP_PATH."data/test.txt");
 	}
 	if(!$isDataFolderWritable){
-		$errorMap[] = array("important","Data folder is not writable","Provide wirte permission to the web server user to ".CLIENT_APP_PATH."data",array("sudo chmod 777 ".CLIENT_APP_PATH."data"));		
+		$errorMap[] = array("important","Data folder is not writable","Provide wirte permission to the web server user to ".CLIENT_APP_PATH."data",array("sudo chmod 755 ".CLIENT_APP_PATH."data"));
 	}
 }
 
