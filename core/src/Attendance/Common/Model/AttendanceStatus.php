@@ -109,11 +109,10 @@ class AttendanceStatus extends BaseModel
             $data[] = $entry;
         }
 
-        function cmp($a, $b)
-        {
+
+        usort($data, function ($a, $b) {
             return $a->statusId - $b->statusId;
-        }
-        usort($data, "cmp");
+        });
 
         return $data;
     }
