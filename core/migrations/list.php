@@ -1,5 +1,6 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20210626_290004_add_s3_settings';
 $migrationList[] = 'v20210606_290003_system_meta_data';
 $migrationList[] = 'v20210606_290002_add_aws_region';
 $migrationList[] = 'v20210606_290001_update_s3_config';
