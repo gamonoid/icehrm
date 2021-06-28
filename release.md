@@ -1,5 +1,24 @@
 # Release Notes IceHrm Open Source
 
+## Release note v30.0.0.OS
+
+### 🛡️ Security improvements
+
+* This release is fixing some critical security issues related to file storage. All IceHrm installations should be upgraded to this version immediately.
+  Please review instructions provided under [this link](https://icehrm.gitbook.io/icehrm/getting-started/securing-icehrm-installation) to make sure your IceHrm installation is secure.
+
+### 🧲 New features
+
+* Ability to use Amazon S3 as a secure file storage for IceHrm [find instructions here](https://icehrm.gitbook.io/icehrm/getting-started/using-aws-s3-for-icehrm-file-storage)
+* Secure local file storage
+* Connection module for showing critical errors in installation and sending extracting system information
+* Ability to change AWS region via settings
+
+### 🐛 Bug fixes
+* Displaying employees list with non-UTF employee names
+* Fix extension loading issue. This fixes the issue with loading new extension created following the [documentation](https://icehrm.gitbook.io/icehrm/developer-guide/creating-first-extension).
+* Fix the issue with editing employee fields
+
 ## Release note v29.0.0.OS
 
 ### 🧲 New features
