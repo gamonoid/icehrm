@@ -1,4 +1,3 @@
-import { FieldNameAdapter, CustomFieldAdapter } from './lib';
+import { FieldNameAdapter } from './lib';
 
 window.FieldNameAdapter = FieldNameAdapter;
-window.CustomFieldAdapter = CustomFieldAdapter;

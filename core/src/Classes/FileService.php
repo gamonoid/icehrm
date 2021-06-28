@@ -76,15 +76,20 @@ class FileService
             if (file_exists("/tmp/".$file->filename."_orig")) {
                 //Resize image to 100
 
-                $img = new \Classes\SimpleImage("/tmp/".$file->filename."_orig");
-                $img->fitToWidth(140);
-                $img->save("/tmp/".$file->filename);
+                try {
+                    $img = new \Classes\SimpleImage("/tmp/" . $file->filename . "_orig");
+                    $img->fitToWidth(140);
+                    $img->save("/tmp/" . $file->filename);
+                } catch (\Exception $e) {
+                    LogManager::getInstance()->error($e->getTraceAsString());
+                    return null;
+                }
 
                 $uploadFilesToS3Key = SettingsManager::getInstance()->getSetting(
                     "Files: Amazon S3 Key for File Upload"
                 );
                 $uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
-                    "Files: Amazone S3 Secret for File Upload"
+                    "Files: Amazon S3 Secret for File Upload"
                 );
                 $s3Bucket = SettingsManager::getInstance()->getSetting("Files: S3 Bucket");
 
@@ -132,11 +137,7 @@ class FileService
         if (empty($file->id)) {
             LogManager::getInstance()->info("Small profile image ".$profileImage->name."_small not found");
 
-            $largeFileUrl = $this->getFileUrl($profileImage->name);
-
-            file_put_contents("/tmp/".$profileImage->filename."_orig", file_get_contents($largeFileUrl));
-
-            if (file_exists("/tmp/".$profileImage->filename."_orig")) {
+            if (file_exists(CLIENT_BASE_PATH.'data/'.$profileImage->filename)) {
                 //Resize image to 100
 
                 $file->name = $profileImage->name."_small";
@@ -144,16 +145,19 @@ class FileService
                 $file->$signInMappingField = $profileImage->$signInMappingField;
                 $file->filename = $file->name.str_replace($profileImage->name, "", $profileImage->filename);
 
-                $img = new \Classes\SimpleImage("/tmp/".$profileImage->filename."_orig");
-                $img->fitToWidth(140);
-
-                $img->save(CLIENT_BASE_PATH.'data/'.$file->filename);
-                $file->employee = $profileImage->employee;
-                $file->file_group = 'profile_image_small';
-                $file->size = filesize(CLIENT_BASE_PATH.'data/'.$file->filename);
-                $file->size_text = $this->getReadableSize($file->size);
-                $file->Save();
-                unlink("/tmp/".$file->filename."_orig");
+                try {
+                    $img = new \Classes\SimpleImage(CLIENT_BASE_PATH . 'data/' . $profileImage->filename);
+                    $img->fitToWidth(140);
+                    $img->save(CLIENT_BASE_PATH . 'data/' . $file->filename);
+                    $file->employee = $profileImage->employee;
+                    $file->file_group = 'profile_image_small';
+                    $file->size = filesize(CLIENT_BASE_PATH . 'data/' . $file->filename);
+                    $file->size_text = $this->getReadableSize($file->size);
+                    $file->Save();
+                } catch (\Exception $e) {
+                    LogManager::getInstance()->error($e->getTraceAsString());
+                    return null;
+                }
 
                 return $file;
             }
@@ -182,7 +186,7 @@ class FileService
                         "Files: Amazon S3 Key for File Upload"
                     );
                     $uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
-                        "Files: Amazone S3 Secret for File Upload"
+                        "Files: Amazon S3 Secret for File Upload"
                     );
                     $s3FileSys = new S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);
                     $s3WebUrl = SettingsManager::getInstance()->getSetting("Files: S3 Web Url");
@@ -204,7 +208,7 @@ class FileService
                 $profile->image = $file->filename;
             } else {
                 $fileNew = $this->checkAddSmallProfileImage($file);
-                $profile->image = CLIENT_BASE_URL.'data/'.$fileNew->filename;
+                $profile->image = $this->getFileUrl($fileNew->filename);
             }
         } else {
             $profile->image = $this->generateProfileImage($profile->first_name, $profile->last_name);
@@ -225,7 +229,7 @@ class FileService
                     "Files: Amazon S3 Key for File Upload"
                 );
                 $uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
-                    "Files: Amazone S3 Secret for File Upload"
+                    "Files: Amazon S3 Secret for File Upload"
                 );
                 $s3FileSys = new S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);
                 $s3WebUrl = SettingsManager::getInstance()->getSetting("Files: S3 Web Url");
@@ -241,7 +245,7 @@ class FileService
             } elseif (substr($file->filename, 0, 8) === 'https://') {
                 $profile->image = $file->filename;
             } else {
-                $profile->image = CLIENT_BASE_URL.'data/'.$file->filename;
+                $profile->image = $this->getLocalSecureUrl($file->filename);
             }
         } else {
             $profile->image = $this->generateProfileImage($profile->first_name, $profile->last_name);
@@ -255,6 +259,10 @@ class FileService
         $file = new File();
         $file->Load('name = ?', array($fileName));
 
+        if ($fileName !== $file->name) {
+            $file->Load('filename = ?', array($fileName));
+        }
+
         $uploadFilesToS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
 
         if ($uploadFilesToS3 == "1") {
@@ -262,7 +270,7 @@ class FileService
                 "Files: Amazon S3 Key for File Upload"
             );
             $uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
-                "Files: Amazone S3 Secret for File Upload"
+                "Files: Amazon S3 Secret for File Upload"
             );
             $s3FileSys = new S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);
             $s3WebUrl = SettingsManager::getInstance()->getSetting("Files: S3 Web Url");
@@ -282,8 +290,20 @@ class FileService
 
             return $expireUrl;
         } else {
-            return  CLIENT_BASE_URL.'data/'.$file->filename;
+            return  CLIENT_BASE_URL.'service.php?a=download&file='.$file->filename;
         }
+    }
+
+    public function getLocalSecureUrl($fileName)
+    {
+        $file = new File();
+        $file->Load('name = ?', array($fileName));
+
+        if ($fileName !== $file->name) {
+            $file->Load('filename = ?', array($fileName));
+        }
+
+        return CLIENT_BASE_URL.'service.php?a=download&file='.$file->filename;
     }
 
     public function deleteProfileImage($profileId)
@@ -325,7 +345,7 @@ class FileService
                 "Files: Amazon S3 Key for File Upload"
             );
             $uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
-                "Files: Amazone S3 Secret for File Upload"
+                "Files: Amazon S3 Secret for File Upload"
             );
             $s3Bucket = SettingsManager::getInstance()->getSetting("Files: S3 Bucket");
 
@@ -355,7 +375,7 @@ class FileService
                         "Files: Amazon S3 Key for File Upload"
                     );
                     $uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
-                        "Files: Amazone S3 Secret for File Upload"
+                        "Files: Amazon S3 Secret for File Upload"
                     );
                     $s3Bucket = SettingsManager::getInstance()->getSetting("Files: S3 Bucket");
 
@@ -400,15 +420,34 @@ class FileService
     {
         $seed = substr($first, 0, 1);
         if (empty($last)) {
-            $seed .= substr($first, -1);
+            $seed .= utf8_encode(substr($first, -1));
         } else {
-            $seed .= substr($last, 0, 1);
+            $seed .= utf8_encode(substr($last, 0, 1));
         }
-        md5($seed . $last);
+// TODO - remove code after chinese character issue is resolved
+//        if(strlen($seed) != mb_strlen($seed, 'utf-8')) {
+//            $char1 = substr($first, 0, 1);
+//            $char1 = chr($this->uniord($char1) % 26 + 65);
+//            if (empty($last)) {
+//                $char2 = substr($first, -1);
+//            } else {
+//                $char2 = substr($last, 0, 1);
+//            }
+//            $char2 = chr($this->uniord($char2) % 26 + 65);
+//            $seed = $char1.$char2;
+//        }
 
         return sprintf(
             'https://avatars.dicebear.com/api/initials/:%s.svg',
             $seed . substr(md5($first . $last), -5)
         );
+    }
+
+    private function uniord($u)
+    {
+        $k = mb_convert_encoding($u, 'UCS-2LE', 'UTF-8');
+        $k1 = ord(substr($k, 0, 1));
+        $k2 = ord(substr($k, 1, 1));
+        return $k2 * 256 + $k1;
     }
 }

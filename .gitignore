@@ -13,6 +13,8 @@ keys.dev.pub
 /app/icehrm.key
 /app/data/*.*
 /app/data/keys/*
+!/app/data/index.php
+!/app/data/.htaccess
 icehrm.key
 cache.properties
 node_modules/*

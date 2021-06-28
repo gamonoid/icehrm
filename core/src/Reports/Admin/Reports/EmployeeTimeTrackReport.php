@@ -90,11 +90,10 @@ class EmployeeTimeTrackReport extends ClassBasedReportBuilder implements ReportB
             "Last Punch-Out Time",
             "Time in Attendance (Hours)",
             "Time in Time-sheets (Hours)",
-            ];
+        ];
         $reportData[] = ["Employee:",$employeeObject->first_name." ".$employeeObject->last_name,"","",""];
         $reportData[] = ["Department:",$company->title,"","",""];
         $reportData[] = ["Total Days:","","","",""];
-
 
         //Iterate date range
 

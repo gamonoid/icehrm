@@ -69,9 +69,9 @@ if (empty($user) || empty($user->email)) {
                     $suser->Load("email = ?", array($ssoUserEmail));
                 }
 
-                LogManager::getInstance()->info('SSO SAML User:'.print_r($suser, true));
-                if (empty($suser)) {
-                    header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
+                LogManager::getInstance()->info('SSO SAML User:'.print_r($suser->email, true));
+                if (empty($suser) || empty($suser->id)) {
+                    header("Location:" . CLIENT_BASE_URL . "logout.php");
                     exit();
                 }
                 $ssoUserLoaded = true;

@@ -22,6 +22,7 @@ use Metadata\Common\Model\CalculationHook;
 use Model\BaseModel;
 use Model\DataEntryBackup;
 use Model\Setting;
+use Model\SystemData;
 use Modules\Common\Model\Module;
 use Permissions\Common\Model\Permission;
 use Users\Common\Model\User;
@@ -1977,5 +1978,39 @@ END;
     {
         $dbUser = $this->getCurrentDBUser();
         return RestApiManager::getInstance()->getAccessTokenForUser($dbUser);
+    }
+
+    public function isSubordinateEmployee($supervisorId, $subordinateId)
+    {
+        $employee = new Employee();
+        $employee->Load('id = ? and supervisor = ?', [$subordinateId, $supervisorId]);
+
+        return ($supervisorId == $employee->supervisor && $subordinateId == $employee->id);
+    }
+
+    public function setSystemData($name, $value)
+    {
+        $sysData = new SystemData();
+        $sysData->Load('name = ?', [$name]);
+
+        if (!empty($sysData->id)) {
+            $sysData->value = $value;
+        } else {
+            $sysData->name = $name;
+            $sysData->value = $value;
+        }
+
+        return $sysData->Save();
+    }
+
+    public function getSystemData($name)
+    {
+        $sysData = new SystemData();
+        $sysData->Load('name = ?', [$name]);
+        if (!empty($sysData->id) && $sysData->name === $name) {
+            return $sysData->value;
+        }
+
+        return null;
     }
 }

@@ -34737,12 +34737,13 @@ function download(name, closeCallback, closeCallbackData) {
       fileParts = data.filename.split('?');
       fileParts = fileParts[0].split('.');
 
-      if (jQuery.inArray(fileParts[fileParts.length - 1], viewableFiles) >= 0) {
+
+      if (jQuery.inArray(data.ext, viewableFiles) >= 0) {
         const win = window.open(data.filename, '_blank');
         win.focus();
       } else {
         link = `<a href="${data.filename}" target="_blank">Download File <i class="icon-download-alt"></i> </a>`;
-        if (jQuery.inArray(fileParts[fileParts.length - 1], viewableImages) >= 0) {
+        if (jQuery.inArray(data.ext, viewableImages) >= 0) {
           link += `<br/><br/><img style="max-width:545px;max-height:350px;" src="${data.filename}"/>`;
         }
         modJs.showMessage('Download File Attachment', link, closeCallback, closeCallbackData);

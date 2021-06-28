@@ -139,7 +139,7 @@ $result = $uploader->handleUpload(CLIENT_BASE_PATH.'data/',$saveFileName);
 $uploadFilesToS3 = \Classes\SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
 $uploadFilesToS3Key = \Classes\SettingsManager::getInstance()->getSetting("Files: Amazon S3 Key for File Upload");
 $uploadFilesToS3Secret = \Classes\SettingsManager::getInstance()->getSetting(
-    "Files: Amazone S3 Secret for File Upload"
+    "Files: Amazon S3 Secret for File Upload"
 );
 $s3Bucket = \Classes\SettingsManager::getInstance()->getSetting("Files: S3 Bucket");
 $s3WebUrl = \Classes\SettingsManager::getInstance()->getSetting("Files: S3 Web Url");
@@ -188,7 +188,7 @@ if($result['success'] == 1){
     if($uploadedToS3){
         $result['data'] = $file_url;
     }else{
-        $result['data'] = CLIENT_BASE_URL.'data/'.$result['filename'];
+        $result['data'] = \Classes\FileService::getInstance()->getLocalSecureUrl($result['filename']);
     }
     $result['data'] .= "|".$saveFileName;
     $result['data'] .= "|".$file->id;

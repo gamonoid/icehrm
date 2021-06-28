@@ -1,5 +1,9 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20210626_290004_add_s3_settings';
+$migrationList[] = 'v20210606_290003_system_meta_data';
+$migrationList[] = 'v20210606_290002_add_aws_region';
+$migrationList[] = 'v20210606_290001_update_s3_config';
 $migrationList[] = 'v20210402_280006_modify_attendance_rep';
 $migrationList[] = 'v20210327_280005_saml_settings';
 $migrationList[] = 'v20210228_280003_add_share_with_employee';

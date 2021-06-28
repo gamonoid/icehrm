@@ -18,6 +18,7 @@
 				modJsList[prop].setUser(<?=json_encode(\Classes\BaseService::getInstance()->cleanUpUser($user))?>);
                 modJsList[prop].initSourceMappings();
 				modJsList[prop].setBaseUrl('<?=BASE_URL?>');
+				modJsList[prop].setClientUrl('<?=CLIENT_BASE_URL?>');
 				modJsList[prop].setCurrentProfile(<?=json_encode($activeProfile)?>);
 				modJsList[prop].setInstanceId('<?=\Classes\BaseService::getInstance()->getInstanceId()?>');
 				modJsList[prop].setGoogleAnalytics(ga);
@@ -146,7 +147,9 @@
 
 
 	</script>
-	<?php include 'popups.php';?>
+	<?php
+        include 'popups.php';
+    ?>
     <script src="<?=BASE_URL?>js/bootstrap-datatable.js"></script>
     <div id="jt" t="<?=$jwtService->create(3600)?>"></div>
     </body>

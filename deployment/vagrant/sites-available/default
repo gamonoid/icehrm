@@ -22,6 +22,11 @@ server {
         try_files $uri $uri/ =404;
     }
 
+    location /app/data/ {
+        deny all;
+        return 404;
+    }
+
     location /core/ {
         deny all;
     }

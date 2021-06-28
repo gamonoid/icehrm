@@ -8,6 +8,7 @@
 
 namespace Classes\ModuleBuilderV2;
 
+use Classes\BaseService;
 use Classes\PermissionManager;
 
 class ModuleBuilder
@@ -17,7 +18,7 @@ class ModuleBuilder
 
     public function __construct()
     {
-        $this->user = \Classes\BaseService::getInstance()->getCurrentUser();
+        $this->user = BaseService::getInstance()->getCurrentUser();
     }
 
     /**

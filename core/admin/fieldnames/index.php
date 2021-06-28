@@ -20,6 +20,9 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
             <div id="EmployeeFieldName" class="reviewBlock" data-content="List" style="padding-left:5px;">
 
             </div>
+            <div id="EmployeeFieldNameForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
+
+            </div>
         </div>
 	</div>
 
