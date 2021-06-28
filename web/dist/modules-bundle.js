@@ -18391,7 +18391,7 @@ var _IceDataPipe = _interopRequireDefault(require("../../../api/IceDataPipe"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function init(data) {
-  var modJsList = {};
+  var modJsList = [];
   modJsList.tabEmployeeCompanyLoan = new _lib.EmployeeCompanyLoanAdapter('EmployeeCompanyLoan', 'EmployeeCompanyLoan');
   modJsList.tabEmployeeCompanyLoan.setObjectTypeName('Employee Company Loan');
   modJsList.tabEmployeeCompanyLoan.setShowAddNew(false);
