@@ -1,0 +1,13 @@
+{
+    "label": "Invoices",
+    "menu": ["Invoices", "fa-file"],
+    "icon": "fa-files",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "User"
+    ],
+    "model_namespace": "\\Invoices\\Model",
+    "manager": "\\Invoices\\Extension",
+    "headless": false
+}
