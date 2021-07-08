@@ -31,6 +31,7 @@ class InvoiceAdapter extends ReactModalAdapterBase {
       'vat',
       'vatRate',
       'issuedDate',
+      'dueDate',
       'paidDate',
       'status',
       'acceptPayments',
@@ -70,6 +71,13 @@ class InvoiceAdapter extends ReactModalAdapterBase {
     ];
   }
 
+  getCountryList() {
+    return [
+      ['DE', 'Germany'],
+      ['LK', 'Sri Lanka'],
+    ];
+  }
+
   getFormFields() {
     return [
         [ 'id', {"label":"ID","type":"hidden"}],
@@ -79,17 +87,18 @@ class InvoiceAdapter extends ReactModalAdapterBase {
         [ 'buyerName', {"label":"Buyer Name","type":"text"}],
         [ 'buyerAddress', {"label":"Buyer Address","type":"textarea"}],
         [ 'buyerPostalCode', {"label":"Buyer Postal Code","type":"text"}],
-        [ 'buyerCountry', {"label":"Buyer Country","type":"select2", "source": this.getCountryList()}],
+        [ 'buyerCountry', {"label":"Buyer Country","type":"select2", "remote-source": ["Country", "code", "name"]}],
         [ 'buyerVatId', {"label":"Buyer Vat Id","type":"text","validation":"none"}],
-        [ 'buyerEmail', {"label":"Buyer Email","type":"text"}],
+        [ 'buyerEmail', {"label":"Buyer Email","type":"text","validation":"email"}],
         [ 'sellerName', {"label":"Seller Name","type":"text"}],
         [ 'sellerAddress', {"label":"Seller Address","type":"text"}],
-        [ 'sellerCountry', {"label":"Seller Country","type":"select2", "source": this.getCountryList()}],
+        [ 'sellerCountry', {"label":"Seller Country","type":"select2", "remote-source": ["Country", "code", "name"]}],
         [ 'sellerVatId', {"label":"Seller Vat Id","type":"text"}],
         [ 'amount', {"label":"Amount with VAT","type":"text", "validation":"float"}],
         [ 'vat', {"label":"Vat","type":"text", "validation":"float"}],
         [ 'vatRate', {"label":"Vat Rate","type":"text", "validation":"float"}],
         [ 'issuedDate', {"label":"Issued Date","type":"datetime", "validation":""}],
+        [ 'dueDate', {"label":"Due Date","type":"datetime", "validation":""}],
         [ 'paidDate', {"label":"Paid Date","type":"datetime", "validation":""}],
         [ 'status', {"label":"Status","type":"select","source":[["Pending","Pending"],["Paid","Paid"],["Processing","Processing"],["Draft","Draft"],["Sent","Sent"],["Canceled","Canceled"]]}],
         [ 'acceptPayments', {"label":"Accept Payments","type":"select","source":[["0","No"],["1","Yes"]]}],
@@ -97,19 +106,67 @@ class InvoiceAdapter extends ReactModalAdapterBase {
         [ 'updated', {"label":"Updated","type":"datetime", "validation":""}],
         [ 'link', {"label":"Link","type":"placeholder"}],
         [ 'paymentLink', {"label":"Payment Link","type":"placeholder"}],
+        ['items', {
+          label: 'Items',
+          type: 'datagroup',
+          form: [
+            ['description', { label: 'Description', type: 'textarea', validation: '' }],
+            ['rate', { label: 'Rate', type: 'text', validation: '' }],
+            ['qty', { label: 'Quantity', type: 'text', validation: '' }],
+            ['lineTotal', { label: 'Line Total', type: 'text', validation: '' }],
+          ],
+          html: '<div id="#_id_#" class="panel panel-default"><div class="panel-body">#_delete_##_edit_#<span style="color:#999;font-size:13px;font-weight:bold">Date: #_date_#</span><hr/>#_note_#</div></div>',
+          validation: 'none',
+          columns: [
+            {
+              title: 'Description',
+              dataIndex: 'description',
+              key: 'description',
+            },
+            {
+              title: 'Rate',
+              dataIndex: 'rate',
+              key: 'rate',
+            },
+            {
+              title: 'Quantity',
+              dataIndex: 'qty',
+              key: 'qty',
+            },
+            {
+              title: 'Line Total',
+              dataIndex: 'lineTotal',
+              key: 'lineTotal',
+            },
+          ],
+          'sort-function': function (a, b) {
+            const t1 = Date.parse(a.date).getTime();
+            const t2 = Date.parse(b.date).getTime();
+  
+            return (t1 < t2);
+          },
+          'custom-validate-function': function (data) {
+            const res = {};
+            res.valid = true;
+            data.date = new Date().toString('d-MMM-yyyy hh:mm tt');
+            res.params = data;
+            return res;
+          },
+  
+        }],
       ];
   }
 
   getTableColumns() {
     return [
       {
-        title: 'Payment Id',
-        dataIndex: 'paymentId',
+        title: 'Invoice Id',
+        dataIndex: 'invoiceId',
         sorter: true,
       },
       {
-        title: 'Invoice Id',
-        dataIndex: 'invoiceId',
+        title: 'Description',
+        dataIndex: 'description',
         sorter: true,
       },
     ];

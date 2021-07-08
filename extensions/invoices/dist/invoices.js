@@ -1,7 +1,7 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
 
-var _lib = _interopRequireDefault(require("./lib"));
+var _lib = require("./lib");
 
 var _IceDataPipe = _interopRequireDefault(require("../../../../web/api/IceDataPipe"));
 
@@ -9,10 +9,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function init(data) {
   var modJsList = [];
-  modJsList.tabInvoices = new _lib["default"]('Invoices', 'Invoices', '', '');
-  modJsList.tabInvoices.setObjectTypeName('Invoices');
-  modJsList.tabInvoices.setDataPipe(new _IceDataPipe["default"](modJsList.tabVInvoices));
-  modJsList.tabInvoices.setAccess(data.permissions.Invoices);
+  modJsList.tabInvoices = new _lib.InvoiceAdapter('Invoice', 'Invoices', '', '');
+  modJsList.tabInvoices.setObjectTypeName('Invoice');
+  modJsList.tabInvoices.setDataPipe(new _IceDataPipe["default"](modJsList.tabInvoices));
+  modJsList.tabInvoices.setAccess(data.permissions.Invoice);
   window.modJs = modJsList.tabInvoices;
   window.modJsList = modJsList;
 }
@@ -73,7 +73,7 @@ var InvoiceAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
       this.formOnlyFields = {};
     }*/
     value: function getDataMapping() {
-      return ['id', 'paymentId', 'invoiceId', 'description', 'buyerName', 'buyerAddress', 'buyerPostalAddress', 'buyerVatId', 'buyerEmail', 'sellerName', 'sellerAddress', 'sellerVatId', 'amount', 'vat', 'vatRate', 'issuedDate', 'paidDate', 'status', 'acceptPayments', 'created', 'updated', 'link', 'paymentLink'];
+      return ['id', 'paymentId', 'invoiceId', 'description', 'buyerName', 'buyerAddress', 'buyerPostalAddress', 'buyerVatId', 'buyerEmail', 'sellerName', 'sellerAddress', 'sellerVatId', 'amount', 'vat', 'vatRate', 'issuedDate', 'dueDate', 'paidDate', 'status', 'acceptPayments', 'created', 'updated', 'link', 'paymentLink'];
     }
   }, {
     key: "getHeaders",
@@ -130,6 +130,11 @@ var InvoiceAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
       }];
     }
   }, {
+    key: "getCountryList",
+    value: function getCountryList() {
+      return [['DE', 'Germany'], ['LK', 'Sri Lanka']];
+    }
+  }, {
     key: "getFormFields",
     value: function getFormFields() {
       return [['id', {
@@ -159,14 +164,15 @@ var InvoiceAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
       }], ['buyerCountry', {
         "label": "Buyer Country",
         "type": "select2",
-        "source": this.getCountryList()
+        "remote-source": ["Country", "code", "name"]
       }], ['buyerVatId', {
         "label": "Buyer Vat Id",
         "type": "text",
         "validation": "none"
       }], ['buyerEmail', {
         "label": "Buyer Email",
-        "type": "text"
+        "type": "text",
+        "validation": "email"
       }], ['sellerName', {
         "label": "Seller Name",
         "type": "text"
@@ -176,7 +182,7 @@ var InvoiceAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
       }], ['sellerCountry', {
         "label": "Seller Country",
         "type": "select2",
-        "source": this.getCountryList()
+        "remote-source": ["Country", "code", "name"]
       }], ['sellerVatId', {
         "label": "Seller Vat Id",
         "type": "text"
@@ -194,6 +200,10 @@ var InvoiceAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
         "validation": "float"
       }], ['issuedDate', {
         "label": "Issued Date",
+        "type": "datetime",
+        "validation": ""
+      }], ['dueDate', {
+        "label": "Due Date",
         "type": "datetime",
         "validation": ""
       }], ['paidDate', {
@@ -222,18 +232,69 @@ var InvoiceAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
       }], ['paymentLink', {
         "label": "Payment Link",
         "type": "placeholder"
+      }], ['items', {
+        label: 'Items',
+        type: 'datagroup',
+        form: [['description', {
+          label: 'Description',
+          type: 'textarea',
+          validation: ''
+        }], ['rate', {
+          label: 'Rate',
+          type: 'text',
+          validation: ''
+        }], ['qty', {
+          label: 'Quantity',
+          type: 'text',
+          validation: ''
+        }], ['lineTotal', {
+          label: 'Line Total',
+          type: 'text',
+          validation: ''
+        }]],
+        html: '<div id="#_id_#" class="panel panel-default"><div class="panel-body">#_delete_##_edit_#<span style="color:#999;font-size:13px;font-weight:bold">Date: #_date_#</span><hr/>#_note_#</div></div>',
+        validation: 'none',
+        columns: [{
+          title: 'Description',
+          dataIndex: 'description',
+          key: 'description'
+        }, {
+          title: 'Rate',
+          dataIndex: 'rate',
+          key: 'rate'
+        }, {
+          title: 'Quantity',
+          dataIndex: 'qty',
+          key: 'qty'
+        }, {
+          title: 'Line Total',
+          dataIndex: 'lineTotal',
+          key: 'lineTotal'
+        }],
+        'sort-function': function sortFunction(a, b) {
+          var t1 = Date.parse(a.date).getTime();
+          var t2 = Date.parse(b.date).getTime();
+          return t1 < t2;
+        },
+        'custom-validate-function': function customValidateFunction(data) {
+          var res = {};
+          res.valid = true;
+          data.date = new Date().toString('d-MMM-yyyy hh:mm tt');
+          res.params = data;
+          return res;
+        }
       }]];
     }
   }, {
     key: "getTableColumns",
     value: function getTableColumns() {
       return [{
-        title: 'Payment Id',
-        dataIndex: 'paymentId',
-        sorter: true
-      }, {
         title: 'Invoice Id',
         dataIndex: 'invoiceId',
+        sorter: true
+      }, {
+        title: 'Description',
+        dataIndex: 'description',
         sorter: true
       }];
     }

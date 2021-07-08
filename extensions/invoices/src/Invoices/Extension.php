@@ -20,7 +20,7 @@ class Extension extends IceExtension
 
     public function setupModuleClassDefinitions()
     {
-
+        $this->addModelClass('Invoice');
     }
 
     public function setupRestEndPoints()

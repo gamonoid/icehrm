@@ -27,12 +27,14 @@ create table Invoices
 	vat decimal(10,2) default 0.00 null,
 	vatRate decimal(10,2) default 0.00 null,
 	issuedDate datetime null,
+	dueDate datetime null,
 	paidDate datetime null,
 	created datetime null,
 	updated datetime null,
 	status enum('Pending', 'Paid', 'Processing', 'Draft', 'Sent', 'Canceled') collate utf8_unicode_ci default 'Pending' null,
 	acceptPayments tinyint default 0 null,
 	buyerEmail varchar(125) charset utf8 null,
+	items text charset utf8 null,
 	constraint invoiceId
 		unique (invoiceId)
 )
