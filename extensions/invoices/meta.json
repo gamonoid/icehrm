@@ -1,7 +1,7 @@
 {
     "label": "Invoices",
     "menu": ["Invoices", "fa-file"],
-    "icon": "fa-file",
+    "icon": "fa-file-invoice",
     "user_levels": [
         "Admin",
         "Manager",
