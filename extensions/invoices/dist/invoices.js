@@ -298,6 +298,13 @@ var InvoiceAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
         sorter: true
       }];
     }
+    /* getActionButtonsHtml(id, data) {
+       let html = '<div style="width:80px;"><img class="tableActionButton" src="_BASE_images/download.png" style="cursor:pointer;" rel="tooltip" title="Download" onclick="modJs.edit(_id_);return false;"></img></div>';
+       html = html.replace(/_id_/g, id);
+       html = html.replace(/_BASE_/g, this.baseUrl);
+       return html;
+     }*/
+
   }]);
 
   return InvoiceAdapter;
@@ -3099,7 +3106,7 @@ var ModuleBase = /*#__PURE__*/function () {
           }
         }
       }catch(e){
-       }
+        }
     return null;
     }
        */

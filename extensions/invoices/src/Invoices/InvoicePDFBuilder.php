@@ -6,7 +6,8 @@ use Classes\BaseService;
 use Classes\FileService;
 use Classes\IceResponse;
 use Classes\Pdf\PdfBuilder;
-use Employees\Common\Model\Employee;
+//use Employees\Common\Model\Employee;
+use Invoices\Model\Invoice;
 use Invoices\Pdf\InvoicePdf;
 
 
@@ -41,11 +42,11 @@ class InvoicePDFBuilder implements Authorizable, PdfBuilder
         }
 
         $form = $response->getData()['form'];
-        $employeeForm = $response->getData()['data'];
+        $invoiceForm = $response->getData()['data'];
 
-        $employee = new Employee();
-        $employee->Load('id = ?', [$employeeForm->employee]);
-        $employee = FileService::getInstance()->updateSmallProfileImage($employee);
+        $invoice = new Invoice();
+        $invoice->Load('id = ?', [$invoiceForm->invoice]);
+        //$employee = FileService::getInstance()->updateSmallProfileImage($employee);
 
         $pdf = new InvoicePdf($invoice);
         $pdf->initialize($form->name);

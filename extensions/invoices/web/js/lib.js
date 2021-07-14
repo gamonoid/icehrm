@@ -171,6 +171,7 @@ class InvoiceAdapter extends ReactModalAdapterBase {
       },
     ];
   }
+  
 }
 
 module.exports ={InvoiceAdapter};
