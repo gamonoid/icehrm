@@ -1,17 +1,15 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Space, Tag } from 'antd';
 import ReactModalAdapterBase from '../../../../web/api/ReactModalAdapterBase';
-
+import {
+  EditOutlined, DeleteOutlined, CopyOutlined, MonitorOutlined, PrinterOutlined,
+} from '@ant-design/icons';
 /**
  * VatInvoiceAdapter
  */
 
 class InvoiceAdapter extends ReactModalAdapterBase {
-  /*constructor(endPoint, tab, filter, orderBy) {
-    super(endPoint, tab, filter, orderBy);
-    this.fieldNameMap = {};
-    this.hiddenFields = {};
-    this.tableFields = {};
-    this.formOnlyFields = {};
-  }*/
 
   getDataMapping() {
     return [
@@ -171,7 +169,68 @@ class InvoiceAdapter extends ReactModalAdapterBase {
       },
     ];
   }
-  
+
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => (
+      <Space size="middle">
+        {adapter.hasAccess('save') && adapter.showEdit
+        && (
+          <Tag color="green" onClick={() => modJs.edit(record.id)} style={{ cursor: 'pointer' }}>
+            <EditOutlined />
+            {` ${adapter.gt('Edit')}`}
+          </Tag>
+        )}
+        {adapter.hasAccess('element')
+        && (
+          <Tag color="blue" onClick={() => modJs.viewElement(record.id)} style={{ cursor: 'pointer' }}>
+            <MonitorOutlined />
+            {` ${adapter.gt('View')}`}
+          </Tag>
+        )}
+        {adapter.hasAccess('delete') && adapter.showDelete
+        && (
+          <Tag color="volcano" onClick={() => modJs.deleteRow(record.id)} style={{ cursor: 'pointer' }}>
+            <DeleteOutlined />
+            {` ${adapter.gt('Delete')}`}
+          </Tag>
+        )}
+        {adapter.hasAccess('save')
+        && (
+          <Tag color="cyan" onClick={() => modJs.copyRow(record.id)} style={{ cursor: 'pointer' }}>
+            <CopyOutlined />
+            {` ${adapter.gt('Copy')}`}
+          </Tag>
+        )}
+        <Tag color="green" onClick={() => modJs.printInvoice(record.id)} style={{ cursor: 'pointer' }}>
+          <PrinterOutlined />
+          {` ${adapter.gt('Print')}`}
+        </Tag>
+      </Space>
+    );
+  }
+
+  printInvoice(id) {
+    const params = {};
+    params.id = id;
+    const reqJson = JSON.stringify(params);
+    const callBackData = [];
+    callBackData.callBackData = [];
+    callBackData.callBackSuccess = 'printInvoiceSuccessCallback';
+    callBackData.callBackFail = 'printInvoiceFailCallback';
+
+    this.customAction('printInvoice', 'extension=invoices', reqJson, callBackData);
+  }
+
+
+  printInvoiceSuccessCallback(callBackData) {
+    this.showMessage('Success', 'Printing Done');
+    this.get([]);
+  }
+
+
+  printInvoiceFailCallback(callBackData) {
+    this.showMessage('Error', callBackData);
+  }
 }
 
 module.exports ={InvoiceAdapter};

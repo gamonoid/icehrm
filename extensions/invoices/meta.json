@@ -9,5 +9,6 @@
     ],
     "model_namespace": "\\Invoices\\Model",
     "manager": "\\Invoices\\Extension",
+    "action": "\\Invoices\\Manager",
     "headless": false
 }

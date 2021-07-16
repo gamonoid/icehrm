@@ -22,7 +22,15 @@ window.initAdminInvoices = init;
 },{"../../../../web/api/IceDataPipe":8,"./lib":2}],2:[function(require,module,exports){
 "use strict";
 
+var _react = _interopRequireDefault(require("react"));
+
+var _reactDom = _interopRequireDefault(require("react-dom"));
+
+var _antd = require("antd");
+
 var _ReactModalAdapterBase = _interopRequireDefault(require("../../../../web/api/ReactModalAdapterBase"));
+
+var _icons = require("@ant-design/icons");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -64,14 +72,6 @@ var InvoiceAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
 
   _createClass(InvoiceAdapter, [{
     key: "getDataMapping",
-
-    /*constructor(endPoint, tab, filter, orderBy) {
-      super(endPoint, tab, filter, orderBy);
-      this.fieldNameMap = {};
-      this.hiddenFields = {};
-      this.tableFields = {};
-      this.formOnlyFields = {};
-    }*/
     value: function getDataMapping() {
       return ['id', 'paymentId', 'invoiceId', 'description', 'buyerName', 'buyerAddress', 'buyerPostalAddress', 'buyerVatId', 'buyerEmail', 'sellerName', 'sellerAddress', 'sellerVatId', 'amount', 'vat', 'vatRate', 'issuedDate', 'dueDate', 'paidDate', 'status', 'acceptPayments', 'created', 'updated', 'link', 'paymentLink'];
     }
@@ -298,13 +298,78 @@ var InvoiceAdapter = /*#__PURE__*/function (_ReactModalAdapterBas) {
         sorter: true
       }];
     }
-    /* getActionButtonsHtml(id, data) {
-       let html = '<div style="width:80px;"><img class="tableActionButton" src="_BASE_images/download.png" style="cursor:pointer;" rel="tooltip" title="Download" onclick="modJs.edit(_id_);return false;"></img></div>';
-       html = html.replace(/_id_/g, id);
-       html = html.replace(/_BASE_/g, this.baseUrl);
-       return html;
-     }*/
-
+  }, {
+    key: "getTableActionButtonJsx",
+    value: function getTableActionButtonJsx(adapter) {
+      return function (text, record) {
+        return /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+          size: "middle"
+        }, adapter.hasAccess('save') && adapter.showEdit && /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+          color: "green",
+          onClick: function onClick() {
+            return modJs.edit(record.id);
+          },
+          style: {
+            cursor: 'pointer'
+          }
+        }, /*#__PURE__*/_react["default"].createElement(_icons.EditOutlined, null), " ".concat(adapter.gt('Edit'))), adapter.hasAccess('element') && /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+          color: "blue",
+          onClick: function onClick() {
+            return modJs.viewElement(record.id);
+          },
+          style: {
+            cursor: 'pointer'
+          }
+        }, /*#__PURE__*/_react["default"].createElement(_icons.MonitorOutlined, null), " ".concat(adapter.gt('View'))), adapter.hasAccess('delete') && adapter.showDelete && /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+          color: "volcano",
+          onClick: function onClick() {
+            return modJs.deleteRow(record.id);
+          },
+          style: {
+            cursor: 'pointer'
+          }
+        }, /*#__PURE__*/_react["default"].createElement(_icons.DeleteOutlined, null), " ".concat(adapter.gt('Delete'))), adapter.hasAccess('save') && /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+          color: "cyan",
+          onClick: function onClick() {
+            return modJs.copyRow(record.id);
+          },
+          style: {
+            cursor: 'pointer'
+          }
+        }, /*#__PURE__*/_react["default"].createElement(_icons.CopyOutlined, null), " ".concat(adapter.gt('Copy'))), /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+          color: "green",
+          onClick: function onClick() {
+            return modJs.printInvoice(record.id);
+          },
+          style: {
+            cursor: 'pointer'
+          }
+        }, /*#__PURE__*/_react["default"].createElement(_icons.PrinterOutlined, null), " ".concat(adapter.gt('Print'))));
+      };
+    }
+  }, {
+    key: "printInvoice",
+    value: function printInvoice(id) {
+      var params = {};
+      params.id = id;
+      var reqJson = JSON.stringify(params);
+      var callBackData = [];
+      callBackData.callBackData = [];
+      callBackData.callBackSuccess = 'printInvoiceSuccessCallback';
+      callBackData.callBackFail = 'printInvoiceFailCallback';
+      this.customAction('printInvoice', 'extension=invoices', reqJson, callBackData);
+    }
+  }, {
+    key: "printInvoiceSuccessCallback",
+    value: function printInvoiceSuccessCallback(callBackData) {
+      this.showMessage('Success', 'Printing Done');
+      this.get([]);
+    }
+  }, {
+    key: "printInvoiceFailCallback",
+    value: function printInvoiceFailCallback(callBackData) {
+      this.showMessage('Error', callBackData);
+    }
   }]);
 
   return InvoiceAdapter;
@@ -314,7 +379,7 @@ module.exports = {
   InvoiceAdapter: InvoiceAdapter
 };
 
-},{"../../../../web/api/ReactModalAdapterBase":11}],3:[function(require,module,exports){
+},{"../../../../web/api/ReactModalAdapterBase":11,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react","react-dom":"react-dom"}],3:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -3106,7 +3171,7 @@ var ModuleBase = /*#__PURE__*/function () {
           }
         }
       }catch(e){
-        }
+       }
     return null;
     }
        */
