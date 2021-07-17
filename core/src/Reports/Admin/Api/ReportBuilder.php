@@ -63,7 +63,7 @@ abstract class ReportBuilder
     {
         $fileFirstPart = "Report_".str_replace(" ", "_", $report->name)."-".date("Y-m-d_H-i-s");
         $fileName = $fileFirstPart.".csv";
-
+        fprintf($fp, chr(0xEF).chr(0xBB).chr(0xBF));
         $fileFullName = CLIENT_BASE_PATH.'data/'.$fileName;
         $fp = fopen($fileFullName, 'w');
 
