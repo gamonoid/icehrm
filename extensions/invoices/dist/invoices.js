@@ -1263,9 +1263,11 @@ var AdapterBase = /*#__PURE__*/function (_ModuleBase) {
           req: request
         }, function (data) {
           if (data.status === 'SUCCESS') {
+            console.log("successsss");
             callBackData.callBackData.push(data.data);
             that.callFunction(callBackData.callBackSuccess, callBackData.callBackData);
           } else {
+            console.log("nooo");
             callBackData.callBackData.push(data.data);
             that.callFunction(callBackData.callBackFail, callBackData.callBackData);
           }
@@ -3171,7 +3173,7 @@ var ModuleBase = /*#__PURE__*/function () {
           }
         }
       }catch(e){
-       }
+        }
     return null;
     }
        */

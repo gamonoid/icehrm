@@ -453,7 +453,7 @@ class AdapterBase extends ModuleBase {
       $.getJSON(this.moduleRelativeURL, {
         t: this.table, a: 'ca', sa: subAction, mod: module, req: request,
       }, (data) => {
-        if (data.status === 'SUCCESS') {
+        if (data.status === 'SUCCESS') { 
           callBackData.callBackData.push(data.data);
           that.callFunction(callBackData.callBackSuccess, callBackData.callBackData);
         } else {
