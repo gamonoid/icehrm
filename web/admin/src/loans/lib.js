@@ -72,7 +72,7 @@ class EmployeeCompanyLoanAdapter extends AdapterBase {
       ['employee', { label: 'Employee', type: 'select2', 'remote-source': ['Employee', 'id', 'first_name+last_name'] }],
       ['loan', { label: 'Loan Type', type: 'select', 'remote-source': ['CompanyLoan', 'id', 'name'] }],
       ['start_date', { label: 'Loan Start Date', type: 'date', validation: '' }],
-      ['last_installment_date', { label: 'Last Installment Date', type: 'date', validation: 'none' }],
+      ['last_installment_date', { label: 'Last Installment Date', type: 'placeholder', validation: 'none'}],
       ['period_months', { label: 'Loan Period (Months)', type: 'text', validation: 'number' }],
       ['currency', { label: 'Currency', type: 'select2', 'remote-source': ['CurrencyType', 'id', 'name'] }],
       ['amount', { label: 'Loan Amount', type: 'text', validation: 'float' }],

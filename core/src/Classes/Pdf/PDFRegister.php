@@ -2,7 +2,7 @@
 
 namespace Classes\Pdf;
 
-use Forms\Common\EmployeeFormPDFBuilder;
+use Invoices\InvoicePDFBuilder;
 
 class PDFRegister
 {
@@ -10,8 +10,8 @@ class PDFRegister
 
     public static function init()
     {
-        self::put('empf', function ($data) {
-            return new EmployeeFormPDFBuilder($data);
+        self::put('invoice', function ($data) {
+            return new InvoicePDFBuilder($data);
         });
     }
 

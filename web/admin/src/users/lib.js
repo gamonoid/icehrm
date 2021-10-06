@@ -105,6 +105,7 @@ class UserAdapter extends AdapterBase {
       if (msg == null) {
         const id = $(`#${this.getTableName()}_submit #id`).val();
         params.csrf = $(`#${this.getTableName()}Form`).data('csrf');
+        
         if (id != null && id !== undefined && id !== '') {
           params.id = id;
           this.add(params, []);
