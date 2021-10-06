@@ -9,7 +9,10 @@
 namespace Loans\Common\Model;
 
 use Classes\ModuleAccess;
+use Classes\IceResponse;
+use Loans\Common\Model\EmployeeCompanyLoan;
 use Model\BaseModel;
+use Classes\BaseService;
 
 class EmployeeCompanyLoan extends BaseModel
 {
@@ -41,5 +44,18 @@ class EmployeeCompanyLoan extends BaseModel
             new ModuleAccess('loans', 'admin'),
             new ModuleAccess('loans', 'user'),
         ];
+    }
+
+    public function executePreSaveActions($obj){
+            $start = $obj->start_date;
+            $month = $obj->period_months;
+            $calculation = date("Y-m-d", strtotime("+$month month", strtotime($start)));
+            $obj->last_installment_date = $calculation;
+            return new IceResponse(IceResponse::SUCCESS, $obj);
+    }
+
+    public function executePreUpdateActions($obj)
+    {
+        return $this->executePreSaveActions();
     }
 }

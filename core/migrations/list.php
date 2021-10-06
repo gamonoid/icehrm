@@ -1,5 +1,7 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20211006_310001_loan_monthly_installment';
+$migrationList[] = 'v20211006_310002_employee_company_loans_change';
 $migrationList[] = 'v20210626_290004_add_s3_settings';
 $migrationList[] = 'v20210606_290003_system_meta_data';
 $migrationList[] = 'v20210606_290002_add_aws_region';
