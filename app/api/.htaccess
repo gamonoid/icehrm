@@ -10,3 +10,5 @@
     # Change below before deploying to production
     RewriteRule ^(.*)$ index.php [QSA,L]
 </IfModule>
+# apache does not return auth header under normal operation, the below will set that header into a new "HTTP_AUTHORIZATION" header for consumption in PHP
+SetEnvIf Authorization .* HTTP_AUTHORIZATION=$0
