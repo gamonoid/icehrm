@@ -385,11 +385,12 @@ class RestEndPoint
     private function getAuthorizationHeader()
     {
         $headers = null;
-        if (isset($_SERVER['Authorization'])) {
-            $headers = trim($_SERVER["Authorization"]);
+    
+    	if (isset($_SERVER['Authorization'])) {
+        	$headers = trim($_SERVER["Authorization"]);
         } elseif (isset($_SERVER['HTTP_AUTHORIZATION'])) { //Nginx or fast CGI
-            $headers = trim($_SERVER["HTTP_AUTHORIZATION"]);
-        } elseif (function_exists('apache_request_headers')) {
+        	$headers = trim($_SERVER["HTTP_AUTHORIZATION"]);
+        } elseif (function_exists('apache_request_headers()')) {
             $requestHeaders = apache_request_headers();
             // Server-side fix for bug in old Android versions
             // (a nice side-effect of this fix means we don't care about capitalization
@@ -401,9 +402,10 @@ class RestEndPoint
                 ),
                 array_values($requestHeaders)
             );
-            //print_r($requestHeaders);
             if (isset($requestHeaders['Authorization'])) {
                 $headers = trim($requestHeaders['Authorization']);
+            } elseif (isset($requestHeaders['HTTP_AUTHORIZATION'])) {  // apache_request_headers doesn't pass Authorization normally, check for another header incase of rewrite rule
+            	$headers = trim($requestHeaders['HTTP_AUTHORIZATION']);
             }
         }
         return $headers;
@@ -423,11 +425,14 @@ class RestEndPoint
         } else {
             $token = $_GET['token'];
         }
-
-        $tokenService = new JwtTokenService();
-        $token = $tokenService->getBaseToken($token);
-
-        return $token;
+		
+    	try {
+        	$tokenService = new JwtTokenService();
+        	$token = $tokenService->getBaseToken($token);
+        	return $token;
+        } catch (UnexpectedValueException $e) {
+        	return $token; // Return token without JWT validation here because global API key is not in JWT format still.
+        } 
     }
 
     protected function getRequestBody()
