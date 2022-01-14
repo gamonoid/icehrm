@@ -137,7 +137,7 @@ class FileService
         if (empty($file->id)) {
             LogManager::getInstance()->info("Small profile image ".$profileImage->name."_small not found");
 
-            if (file_exists(CLIENT_BASE_PATH.'data/'.$profileImage->filename)) {
+            if (file_exists(BaseService::getInstance()->getDataDirectory().$profileImage->filename)) {
                 //Resize image to 100
 
                 $file->name = $profileImage->name."_small";
@@ -146,12 +146,14 @@ class FileService
                 $file->filename = $file->name.str_replace($profileImage->name, "", $profileImage->filename);
 
                 try {
-                    $img = new \Classes\SimpleImage(CLIENT_BASE_PATH . 'data/' . $profileImage->filename);
+                    $img = new \Classes\SimpleImage(
+                        BaseService::getInstance()->getDataDirectory() . $profileImage->filename
+                    );
                     $img->fitToWidth(140);
-                    $img->save(CLIENT_BASE_PATH . 'data/' . $file->filename);
+                    $img->save(BaseService::getInstance()->getDataDirectory() . $file->filename);
                     $file->employee = $profileImage->employee;
                     $file->file_group = 'profile_image_small';
-                    $file->size = filesize(CLIENT_BASE_PATH . 'data/' . $file->filename);
+                    $file->size = filesize(BaseService::getInstance()->getDataDirectory() . $file->filename);
                     $file->size_text = $this->getReadableSize($file->size);
                     $file->Save();
                 } catch (\Exception $e) {
@@ -355,8 +357,8 @@ class FileService
             $s3FileSys = new S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);
             $s3FileSys->deleteObject($s3Bucket, $uploadname);
         } else {
-            LogManager::getInstance()->info("Delete:".CLIENT_BASE_PATH.'data/'.$file->filename);
-            unlink(CLIENT_BASE_PATH.'data/'.$file->filename);
+            LogManager::getInstance()->info("Delete:".BaseService::getInstance()->getDataDirectory().$file->filename);
+            unlink(BaseService::getInstance()->getDataDirectory().$file->filename);
         }
     }
 
@@ -385,8 +387,10 @@ class FileService
                     $s3FileSys = new S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);
                     $s3FileSys->deleteObject($s3Bucket, $uploadname);
                 } else {
-                    LogManager::getInstance()->info("Delete:".CLIENT_BASE_PATH.'data/'.$file->filename);
-                    unlink(CLIENT_BASE_PATH.'data/'.$file->filename);
+                    LogManager::getInstance()->info(
+                        "Delete:".BaseService::getInstance()->getDataDirectory().$file->filename
+                    );
+                    unlink(BaseService::getInstance()->getDataDirectory().$file->filename);
                 }
             } else {
                 return false;

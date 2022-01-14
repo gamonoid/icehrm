@@ -69,15 +69,18 @@ class IceTable extends React.Component {
   };
 
   search = (value) => {
-    this.setState({ search: value });
+    const pager = { ...this.state.pagination };
+    this.setState({ search: value, refreshSearch: true });
     const fetchConfig = this.state.fetchConfig;
     console.log(fetchConfig);
     if (fetchConfig) {
+      fetchConfig.page = 1;
+      pager.current = 1;
       fetchConfig.search = value;
       this.setState({
-        fetchConfig
-      });
-      this.fetch(fetchConfig)
+        fetchConfig,
+        pagination: pager,
+      }, () => this.fetch(fetchConfig));
     }
   }
 
@@ -167,7 +170,7 @@ class IceTable extends React.Component {
   render() {
     return (
       <Row direction="vertical" style={{ width: '100%' }}>
-        {!this.state.currentElement &&
+        {(!this.state.currentElement || this.props.adapter.keepTableVisibleWhileShowingCustomView()) &&
         <Col span={24}>
           <Row gutter={24}>
             <Col span={18}>

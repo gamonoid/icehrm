@@ -112,7 +112,7 @@ class Uploader
         // max file size in bytes
         $sizeLimit =MAX_FILE_SIZE_KB * 1024;
         $uploader = new Uploader(new TempFile($fileData), $allowedExtensions, $sizeLimit);
-        $result = $uploader->handleUpload(CLIENT_BASE_PATH.'data/', $saveFileName);
+        $result = $uploader->handleUpload(BaseService::getInstance()->getDataDirectory(), $saveFileName);
 
         if ($result->getStatus() !== IceResponse::SUCCESS) {
             return $result;
@@ -126,7 +126,7 @@ class Uploader
         $s3Bucket = SettingsManager::getInstance()->getSetting("Files: S3 Bucket");
         $s3WebUrl = SettingsManager::getInstance()->getSetting("Files: S3 Web Url");
 
-        $localFile = CLIENT_BASE_PATH.'data/'.$result->getData();
+        $localFile = BaseService::getInstance()->getDataDirectory().$result->getData();
         $uploadedFileSize = filesize($localFile);
         if ($uploadFilesToS3.'' == '1' && !empty($uploadFilesToS3Key) && !empty($uploadFilesToS3Secret) &&
             !empty($s3Bucket) && !empty($s3WebUrl)) {

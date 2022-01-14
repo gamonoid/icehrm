@@ -13,6 +13,14 @@ use Classes\SettingsManager;
 use Employees\Common\Model\Employee;
 use Model\BaseModel;
 
+/**
+ * Class AttendanceStatus
+ *
+ * This is a read-only class. Should never be used to query data for a different purpose other
+ * than checking attendance status
+ *
+ * @package Attendance\Common\Model
+ */
 class AttendanceStatus extends BaseModel
 {
     public $table = 'Attendance';

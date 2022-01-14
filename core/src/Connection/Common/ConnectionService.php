@@ -28,6 +28,7 @@ class ConnectionService
             'version' => VERSION,
             'company' => SettingsManager::getInstance()->getSetting('Company: Name'),
             'pro_key' => $proKey,
+            'url' => CLIENT_BASE_URL,
         ];
     }
 
@@ -64,7 +65,7 @@ class ConnectionService
     public function getSystemErrors()
     {
         $errors = [];
-        $res = fopen(CLIENT_BASE_PATH.'data/connection_test.txt', "w");
+        $res = fopen(BaseService::getInstance()->getDataDirectory().'connection_test.txt', "w");
 
         if (false === $res) {
             $errors[] = [
@@ -76,7 +77,8 @@ class ConnectionService
             fwrite($res, date('Y-m-d'));
             $file = CLIENT_BASE_URL.'data/connection_test.txt';
             $file_headers = @get_headers($file);
-            if ($file_headers && $file_headers[0] !== 'HTTP/1.1 404 Not Found') {
+            $status = explode(' ', $file_headers[0]);
+            if ($file_headers && count($status) > 1 && $status[1] != '404' && $status[1] != '403') {
                 $errors[] = [
                     'type' => 'error',
                     'link' => 'https://icehrm.gitbook.io/icehrm/getting-started/securing-icehrm-installation',

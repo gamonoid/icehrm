@@ -3,34 +3,14 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import AdapterBase from '../../../api/AdapterBase';
-import ApproveAdminAdapter from '../../../api/ApproveAdminAdapter';
+import ReactApproveAdminAdapter from '../../../api/ReactApproveAdminAdapter';
+import ReactIdNameAdapter from '../../../api/ReactIdNameAdapter';
 
 /**
  * OvertimeCategoryAdapter
  */
 
-class OvertimeCategoryAdapter extends AdapterBase {
-  getDataMapping() {
-    return [
-      'id',
-      'name',
-    ];
-  }
-
-  getHeaders() {
-    return [
-      { sTitle: 'ID', bVisible: false },
-      { sTitle: 'Name' },
-    ];
-  }
-
-  getFormFields() {
-    return [
-      ['id', { label: 'ID', type: 'hidden' }],
-      ['name', { label: 'Name', type: 'text', validation: '' }],
-    ];
-  }
+class OvertimeCategoryAdapter extends ReactIdNameAdapter {
 }
 
 
@@ -39,7 +19,7 @@ class OvertimeCategoryAdapter extends AdapterBase {
  */
 
 
-class EmployeeOvertimeAdminAdapter extends ApproveAdminAdapter {
+class EmployeeOvertimeAdminAdapter extends ReactApproveAdminAdapter {
   constructor(endPoint, tab, filter, orderBy) {
     super(endPoint, tab, filter, orderBy);
     this.itemName = 'OvertimeRequest';
@@ -68,6 +48,37 @@ class EmployeeOvertimeAdminAdapter extends ApproveAdminAdapter {
       { sTitle: 'End Time' },
       { sTitle: 'Project' },
       { sTitle: 'Status' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Category',
+        dataIndex: 'category',
+        sorter: true,
+      },
+      {
+        title: 'Start Time',
+        dataIndex: 'start_time',
+      },
+      {
+        title: 'End Time',
+        dataIndex: 'end_time',
+      },
+      {
+        title: 'Project',
+        dataIndex: 'project',
+      },
+      {
+        title: 'Status',
+        dataIndex: 'status',
+      },
     ];
   }
 

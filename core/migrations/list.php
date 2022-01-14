@@ -1,5 +1,12 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20220114_310005_performance_templates';
+$migrationList[] = 'v20211223_310004_document_visibility';
+$migrationList[] = 'v20211203_310002_performance_goals';
+$migrationList[] = 'v20211203_310001_performance_update';
+$migrationList[] = 'v20211001_310000_employee_status';
+$migrationList[] = 'v20210925_301001_deprecate_logo';
+$migrationList[] = 'v20210718_300001_add_data_dir_setting';
 $migrationList[] = 'v20210626_290004_add_s3_settings';
 $migrationList[] = 'v20210606_290003_system_meta_data';
 $migrationList[] = 'v20210606_290002_add_aws_region';

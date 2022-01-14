@@ -2,15 +2,19 @@
  Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
-import AdapterBase from '../../../api/AdapterBase';
-import ObjectAdapter from '../../../api/ObjectAdapter';
+import React from 'react';
+import ReactifiedAdapterBase from '../../../api/ReactifiedAdapterBase';
+import { Space, Tag, Form } from 'antd';
+import {
+  EditOutlined, DeleteOutlined, InfoCircleOutlined, MonitorOutlined, DownloadOutlined, 
+} from '@ant-design/icons';
+import ReactModalAdapterBase from "../../../api/ReactModalAdapterBase";
 
-class EmployeeDocumentAdapter extends AdapterBase {
+class EmployeeDocumentAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
       'document',
-      'details',
       'date_added',
       'status',
       'attachment',
@@ -21,10 +25,26 @@ class EmployeeDocumentAdapter extends AdapterBase {
     return [
       { sTitle: 'ID', bVisible: false },
       { sTitle: 'Document' },
-      { sTitle: 'Details' },
       { sTitle: 'Date Added' },
       { sTitle: 'Status' },
-      { sTitle: 'Attachment', bVisible: false },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Document',
+        dataIndex: 'document',
+        sorter: true,
+      },
+      {
+        title: 'Date Added',
+        dataIndex: 'date_added',
+      },
+      {
+        title: 'Status',
+        dataIndex: 'status',
+      },
     ];
   }
 
@@ -40,31 +60,31 @@ class EmployeeDocumentAdapter extends AdapterBase {
     ];
   }
 
-
-  getActionButtonsHtml(id, data) {
-    const downloadButton = '<img class="tableActionButton" src="_BASE_images/download.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Download Document" onclick="download(\'_attachment_\');return false;"></img>';
-    const editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
-    const deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
-    let html = '<div style="width:80px;">_edit__download__delete_</div>';
-
-    html = html.replace('_download_', downloadButton);
-
-    if (this.showDelete) {
-      html = html.replace('_delete_', deleteButton);
-    } else {
-      html = html.replace('_delete_', '');
-    }
-
-    if (this.showEdit) {
-      html = html.replace('_edit_', editButton);
-    } else {
-      html = html.replace('_edit_', '');
-    }
-
-    html = html.replace(/_id_/g, id);
-    html = html.replace(/_attachment_/g, data[5]);
-    html = html.replace(/_BASE_/g, this.baseUrl);
-    return html;
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => {
+      return (
+        <Space size="middle">
+          {adapter.hasAccess('save') && adapter.showEdit
+            && (
+              <Tag color="blue" onClick={() => modJs.edit(record.id)} style={{ cursor: 'pointer' }}>
+                <EditOutlined />
+                {` ${adapter.gt('Edit')}`}
+              </Tag>
+            )}
+          <Tag color="green" onClick={() => download(record.attachment)} style={{ cursor: 'pointer' }}>
+            <DownloadOutlined />
+            {` ${adapter.gt('Download Document')}`}
+          </Tag>
+          {adapter.hasAccess('delete')
+            && (
+              <Tag color="volcano" onClick={() => modJs.deleteRow(record.id)} style={{ cursor: 'pointer' }}>
+                <DeleteOutlined />
+                {` ${adapter.gt('Delete')}`}
+              </Tag>
+            )}
+        </Space>
+      )
+    };
   }
 }
 
@@ -73,12 +93,17 @@ class EmployeeDocumentAdapter extends AdapterBase {
  * EmployeeCompanyDocumentAdapter
  */
 
-class EmployeeCompanyDocumentAdapter extends ObjectAdapter {
+class EmployeeCompanyDocumentAdapter extends ReactModalAdapterBase {
+
   getDataMapping() {
     return [
       'id',
       'name',
-      'details',
+      'created',
+      'type',
+      'size',
+      'attachment',
+      'details'
     ];
   }
 
@@ -86,7 +111,40 @@ class EmployeeCompanyDocumentAdapter extends ObjectAdapter {
     return [
       { sTitle: 'ID', bVisible: false },
       { sTitle: 'Name' },
-      { sTitle: 'Details' },
+      { sTitle: 'Date' },
+      {
+        sTitle: 'Type',
+        fieldRenderer: (text, row) => {
+          return <span className={`icon-con bg-${this.getColorByFileType(row.type)}`}>
+            <i className={this.getIconByFileType(row.type)} /> - { row.type }
+          </span>;
+        }
+      },
+      { sTitle: 'Size' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Date',
+        dataIndex: 'created',
+        sorter: true,
+      },
+      {
+        title: 'Type',
+        dataIndex: 'type',
+        // render: (text, row) => {
+        //   return <span className={`icon-con bg-${this.getColorByFileType(row.type)}`}>
+        //     <i className={this.getIconByFileType(row.type)} /> - { row.type }
+        //   </span>;
+        // }
+      },
     ];
   }
 
@@ -94,17 +152,8 @@ class EmployeeCompanyDocumentAdapter extends ObjectAdapter {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'placeholder', validation: '' }],
-      ['details', { label: 'Details', type: 'placeholder', validation: 'none' }],
-      ['attachment', { label: 'Attachment', type: 'placeholder', validation: 'none' }],
+      ['details', { label: 'Details', validation: 'none', type: 'editor' }],
     ];
-  }
-
-  addDomEvents(object) {
-
-  }
-
-  getTemplateName() {
-    return 'file.html';
   }
 
   preProcessTableData(row) {
@@ -120,6 +169,39 @@ class EmployeeCompanyDocumentAdapter extends ObjectAdapter {
       row.size = '';
     }
     return row;
+  }
+
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => {
+      return (
+        <Space size="middle">
+          {adapter.hasAccess('element')
+            && (
+              <Tag color="blue" onClick={() => modJs.viewElement(record.id)} style={{ cursor: 'pointer' }}>
+                <MonitorOutlined />
+                {` ${adapter.gt('View')}`}
+              </Tag>
+            )}
+          { record.attachment &&
+            <Tag color="green" onClick={() => download(record.attachment)} style={{cursor: 'pointer'}}>
+              <DownloadOutlined/>
+              {` ${adapter.gt('Download Document')}`}
+            </Tag>
+          }
+          {adapter.hasAccess('delete')
+            && (
+              <Tag color="volcano" onClick={() => modJs.deleteRow(record.id)} style={{ cursor: 'pointer' }}>
+                <DeleteOutlined />
+                {` ${adapter.gt('Delete')}`}
+              </Tag>
+            )}
+        </Space>
+      )
+    };
+  }
+
+  getWidth() {
+    return 1100;
   }
 }
 

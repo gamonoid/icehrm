@@ -2,14 +2,18 @@
  Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
-
-import AdapterBase from '../../../api/AdapterBase';
+import React from 'react';
+import { Space, Tag, Form } from 'antd';
+import {
+  EditOutlined, DeleteOutlined, InfoCircleOutlined, SettingOutlined,
+} from '@ant-design/icons';
+import ReactifiedAdapterBase from '../../../api/ReactifiedAdapterBase';
 
 /**
  * DocumentAdapter
  */
 
-class DocumentAdapter extends AdapterBase {
+class DocumentAdapter extends ReactifiedAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -35,9 +39,6 @@ class DocumentAdapter extends AdapterBase {
       ['expire_notification_week', { label: 'Notify Expiry Before One Week', type: 'select', source: [['Yes', 'Yes'], ['No', 'No']] }],
       ['expire_notification_day', { label: 'Notify Expiry Before One Day', type: 'select', source: [['Yes', 'Yes'], ['No', 'No']] }],
       ['share_with_employee', { label: 'Share with Employee', type: 'select', source: [['Yes', 'Yes'], ['No', 'No']] }],
-      // [ "sign", {"label":"Require Signature","type":"select","source":[["Yes","Yes"],["No","No"]]}],
-      // [ "sign", {"label":"Require Signature","type":"select","source":[["Yes","Yes"],["No","No"]]}],
-      // [ "sign_label", {"label":"Signature Description","type":"textarea","validation":"none"}],
       ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
     ];
   }
@@ -52,12 +53,11 @@ class DocumentAdapter extends AdapterBase {
  * CompanyDocumentAdapter
  */
 
-class CompanyDocumentAdapter extends AdapterBase {
+class CompanyDocumentAdapter extends ReactifiedAdapterBase {
   getDataMapping() {
     return [
       'id',
       'name',
-      'details',
       'status',
     ];
   }
@@ -66,7 +66,6 @@ class CompanyDocumentAdapter extends AdapterBase {
     return [
       { sTitle: 'ID', bVisible: false },
       { sTitle: 'Name' },
-      { sTitle: 'Details' },
       { sTitle: 'Status' },
     ];
   }
@@ -75,7 +74,7 @@ class CompanyDocumentAdapter extends AdapterBase {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'text', validation: '' }],
-      ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
+      ['details', { label: 'Details', type: 'editor', validation: 'none' }],
       ['status', { label: 'Status', type: 'select', source: [['Active', 'Active'], ['Inactive', 'Inactive'], ['Draft', 'Draft']] }],
       ['attachment', { label: 'Attachment', type: 'fileupload' }],
       [
@@ -103,13 +102,17 @@ class CompanyDocumentAdapter extends AdapterBase {
       ],
     ];
   }
+
+  getWidth() {
+    return 1100;
+  }
 }
 
 /**
  * EmployeeDocumentAdapter
  */
 
-class EmployeeDocumentAdapter extends AdapterBase {
+class EmployeeDocumentAdapter extends ReactifiedAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -130,7 +133,6 @@ class EmployeeDocumentAdapter extends AdapterBase {
       { sTitle: 'Details' },
       { sTitle: 'Date Added' },
       { sTitle: 'Status' },
-      { sTitle: 'Attachment', bVisible: false },
     ];
   }
 
@@ -148,7 +150,7 @@ class EmployeeDocumentAdapter extends AdapterBase {
       ['date_added', { label: 'Date Added', type: 'date', validation: '' }],
       ['valid_until', { label: 'Valid Until', type: 'date', validation: 'none' }],
       ['status', { label: 'Status', type: 'select', source: [['Active', 'Active'], ['Inactive', 'Inactive'], ['Draft', 'Draft']] }],
-      ['visible_to', { label: 'Visible To', type: 'select', source: [['Owner', 'Owner'], ['Manager', 'Manager'], ['Admin', 'Admin']] }],
+      ['visible_to', { label: 'Visible To', type: 'select', source: [['Owner', 'Owner'], ['Owner Only', 'Owner Only'], ['Manager', 'Manager'], ['Admin', 'Admin']] }],
       ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
       ['attachment', { label: 'Attachment', type: 'fileupload', validation: '' }],
     ];
@@ -157,8 +159,8 @@ class EmployeeDocumentAdapter extends AdapterBase {
 
   getFilters() {
     return [
-      ['employee', { label: 'Employee', type: 'select2', 'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'] }],
-
+      ['employee', { label: 'Employee', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'] }],
+      ['document', { label: 'Document', type: 'select2', 'allow-null': true, 'remote-source': ['Document', 'id', 'name'] }],
     ];
   }
 
@@ -173,6 +175,28 @@ class EmployeeDocumentAdapter extends AdapterBase {
     html = html.replace(/_attachment_/g, data[6]);
     html = html.replace(/_BASE_/g, this.baseUrl);
     return html;
+  }
+
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => (
+      <Space size="middle">
+        <Tag color="blue" onClick={() => modJs.edit(record.id)} style={{ cursor: 'pointer' }}>
+          <EditOutlined />
+          {` ${adapter.gt('Edit')}`}
+        </Tag>
+        <Tag color="green" onClick={() => download(record.attachment)} style={{ cursor: 'pointer' }}>
+          <EditOutlined />
+          {` ${adapter.gt('Download Document')}`}
+        </Tag>
+        {adapter.hasAccess('delete')
+            && (
+              <Tag color="volcano" onClick={() => modJs.deleteRow(record.id)} style={{ cursor: 'pointer' }}>
+                <DeleteOutlined />
+                {` ${adapter.gt('Delete')}`}
+              </Tag>
+            )}
+      </Space>
+    );
   }
 
   isSubProfileTable() {

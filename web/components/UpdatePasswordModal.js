@@ -103,7 +103,6 @@ class UpdatePasswordModal extends React.Component {
                     this.updatePassword(values.current, values.new)
                       .then((response) => {
                         const data = response.data;
-                        console.log(data);
                         if (data.status === 'SUCCESS') {
                             this.handleCancel();
                             message.success(this.props.adapter.gt('Password updated'));

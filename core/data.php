@@ -88,6 +88,26 @@ if (!isset($_REQUEST['objects'])) {
         }
     }
 
+    $searchTerm = $_REQUEST['sSearch'];
+    $searchColumns = $_REQUEST['cl'];
+    $searchQuery = '';
+    $searchQueryData = [];
+    if (!empty($searchTerm) && !empty($searchColumns)) {
+        $searchColumnList = json_decode($searchColumns);
+        $searchColumnList = array_diff($searchColumnList, $obj->getVirtualFields());
+        if (!empty($searchColumnList)) {
+            $searchQuery = " and (";
+            foreach ($searchColumnList as $col) {
+                if ($searchQuery != " and (") {
+                    $searchQuery.=" or ";
+                }
+                $searchQuery.=$col." like ?";
+                $searchQueryData[] = "%".$searchTerm."%";
+            }
+            $searchQuery.=")";
+        }
+    }
+
 
     if (in_array($table, \Classes\BaseService::getInstance()->userTables)
         && !$skipProfileRestriction && !$isSubOrdinates) {
@@ -169,14 +189,12 @@ if (!isset($_REQUEST['objects'])) {
             }
             $sql = "Select count(id) as count from " . $obj->_table .
 	            " where " . $obj->getUserOnlyMeAccessField() . " in (" . $subordinatesIds . ") "
-	            . $countFilterQuery;
-            $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
+	            . $countFilterQuery.$searchQuery;
+            $rowCount = $obj->DB()->Execute($sql, array_merge($countFilterQueryData, $searchQueryData));
         } else {
             $sql = "Select count(id) as count from " . $obj->_table;
-            if (!empty($countFilterQuery)) {
-                $sql .= " where 1=1 " . $countFilterQuery;
-            }
-            $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
+            $sql .= " where 1=1 " . $countFilterQuery.$searchQuery;
+            $rowCount = $obj->DB()->Execute($sql, array_merge($countFilterQueryData, $searchQueryData));
         }
     }
 }

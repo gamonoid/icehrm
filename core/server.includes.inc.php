@@ -40,8 +40,6 @@ if (defined("MODULE_PATH")) {
     }
 }
 
-$user = \Utils\SessionUtils::getSessionObject('user');
-
 $dbLocal = NewADOConnection('mysqli');
 $res = $dbLocal->Connect(APP_HOST, APP_USERNAME, APP_PASSWORD, APP_DB);
 
@@ -53,6 +51,8 @@ DataEntryBackup::SetDatabaseAdapter($dbLocal);
 Audit::SetDatabaseAdapter($dbLocal);
 Notification::SetDatabaseAdapter($dbLocal);
 RestAccessToken::SetDatabaseAdapter($dbLocal);
+
+$user = \Utils\SessionUtils::getSessionObject('user');
 
 
 $baseService = BaseService::getInstance();
@@ -205,6 +205,7 @@ function shutdown()
     $error = error_get_last();
 
     if (!empty($error) && isset($error['type']) && in_array($error['type'], [E_ERROR, E_PARSE])) {
+        LogManager::getInstance()->error(json_encode($error));
         LogManager::getInstance()->notifyException(new ErrorException(
             $error['message'],
             0,

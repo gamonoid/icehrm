@@ -15,7 +15,7 @@ if (class_exists('\\Classes\\ProVersion')) {
     $data = json_decode($data, true);
 }
 
-$employeeCount = StatsHelper::getEmployeeCount();
+$employeeCount = StatsHelper::getActiveEmployeeCount();
 $userCount = StatsHelper::getUserCount();
 $connectionService = new ConnectionService();
 ?><div class="span9">

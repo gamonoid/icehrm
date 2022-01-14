@@ -39,5 +39,7 @@ class SettingsInitialize extends AbstractInitialize
         }
 
         BaseService::getInstance()->getMigrationManager()->ensureMigrations();
+        $migrations = BaseService::getInstance()->getExtensionMigrations();
+        BaseService::getInstance()->getMigrationManager()->ensureExtensionMigrations($migrations);
     }
 }

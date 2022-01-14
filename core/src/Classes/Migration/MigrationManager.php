@@ -8,6 +8,7 @@
 
 namespace Classes\Migration;
 
+use Classes\BaseService;
 use Model\Migration;
 use Utils\LogManager;
 
@@ -99,6 +100,50 @@ class MigrationManager
             return true;
         }
         return false;
+    }
+
+    public function ensureExtensionMigrations($migrations)
+    {
+        /** @var MigrationInterface $migration */
+        foreach ($migrations as $migration) {
+            $this->runExtensionMigration($migration);
+        }
+    }
+
+    public function runExtensionMigration(MigrationInterface $migrationObject)
+    {
+        $migration = new Migration();
+        $migration->Load('file = ?', [ $migrationObject->getName() ]);
+
+        if ($migration->file === $migrationObject->getName()) {
+            return false;
+        }
+
+        $migration = new Migration();
+        $migration->file = $migrationObject->getName();
+        $migration->version = 1;
+        $migration->created = date("Y-m-d H:i:s");
+        $migration->updated = date("Y-m-d H:i:s");
+        $migration->status = 'Pending';
+        $ok = $migration->Save();
+
+        if (!$ok) {
+            return false;
+        }
+
+        $res = $migrationObject->up();
+        if (!$res) {
+            $migration->last_error = $migrationObject->getLastError();
+            $migration->status = "UpError";
+            $migration->updated = date("Y-m-d H:i:s");
+            $migration->Save();
+        }
+
+        $migration->status = "Up";
+        $migration->updated = date("Y-m-d H:i:s");
+        $migration->Save();
+
+        return true;
     }
 
     public function runPendingMigrations()

@@ -18,6 +18,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
   constructor(endPoint, tab, filter, orderBy) {
     super(endPoint, tab, filter, orderBy);
     this.fieldNameMap = {};
+    this.fieldNameMapOrig = {};
     this.hiddenFields = {};
     this.tableFields = {};
     this.formOnlyFields = {};
@@ -29,6 +30,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
     for (let i = 0; i < fields.length; i++) {
       field = fields[i];
       this.fieldNameMap[field.name] = field;
+      this.fieldNameMapOrig[field.textOrig] = field.textMapped;
       if (field.display === 'Hidden') {
         this.hiddenFields[field.name] = field;
       } else if (field.display === 'Table and Form') {
@@ -291,6 +293,10 @@ class EmployeeAdapter extends ReactModalAdapterBase {
     }
 
     return this.addActualFields(steps, fields);
+  }
+
+  getMappedText(text) {
+    return this.fieldNameMapOrig[text] ? this.fieldNameMapOrig[text] : text;
   }
 
   addActualFields(steps, fields) {

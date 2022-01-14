@@ -29,11 +29,6 @@ class ReactIdNameAdapter extends ReactModalAdapterBase {
   getTableColumns() {
     return [
       {
-        title: 'Id',
-        dataIndex: 'id',
-        sorter: true,
-      },
-      {
         title: 'Name',
         dataIndex: 'name',
         sorter: true,

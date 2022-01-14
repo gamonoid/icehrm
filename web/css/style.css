@@ -1013,3 +1013,16 @@ table.dataTable{
     word-break: break-word;
     white-space: break-spaces;
 }
+
+.icon-con {
+    padding: 0 5px 5px 5px;
+}
+
+.codex-editor__redactor {
+    padding: 0 0 0 10px !important;
+}
+
+.codex-editor {
+    border: solid 1px #ddd;
+    padding: 8px;
+}

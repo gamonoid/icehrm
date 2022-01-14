@@ -1,5 +1,5 @@
 <?php
-
+$initializers = [];
 //Reset modules if required
 if (\Classes\SettingsManager::getInstance()->getSetting("System: Reset Modules and Permissions") == "1") {
     $permissionTemp = new \Permissions\Common\Model\Permission();
@@ -188,7 +188,7 @@ foreach ($ams as $am) {
         $initializer = $manager->getInitializer();
         if ($initializer !== null) {
             $initializer->setBaseService($baseService);
-            $initializer->init();
+            $initializers[] = $initializer;
         }
     }
 }
@@ -283,7 +283,7 @@ foreach ($ams as $am) {
             $initializer = $manager->getInitializer();
             if ($initializer !== null) {
                 $initializer->setBaseService($baseService);
-                $initializer->init();
+                $initializers[] = $initializer;
             }
         }
     } catch (\Exception $e) {
@@ -441,3 +441,9 @@ if (!empty($user)) {
         }
     }
 }
+
+// Run initializers
+foreach ($initializers as $initializer) {
+    $initializer->init();
+}
+

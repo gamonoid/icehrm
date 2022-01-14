@@ -19,6 +19,9 @@ import {
   LockOutlined,
 } from '@ant-design/icons';
 import TagList from "../../../../components/TagList";
+import EmployeeStatus from "../../../../components/EmployeeStatus";
+import EmployeeStatusModal from "../../../../components/EmployeeStatusModal";
+import EmployeeStatusDashboard from "../../../../components/EmployeeStatusDashboard";
 import UpdatePasswordModal from "../../../../components/UpdatePasswordModal";
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
@@ -107,6 +110,8 @@ class EmployeeProfile extends React.Component {
   }
 
   render() {
+    const { adapter } = this.props;
+    const gm = (text) => adapter.getMappedText(text);
     if (this.state.loading || !this.props.element) {
       return <div style={{padding: '20px'}}><Skeleton active /></div>
     }
@@ -136,19 +141,26 @@ class EmployeeProfile extends React.Component {
                   <Text copyable>{` ${this.props.element.work_email || ''}`}</Text>
                 </Space>
               </Space>
-              <Descriptions title="" bordered style={{width: '100%', padding: '10px'}}>
-                <Descriptions.Item label={this.props.adapter.gt('Employee Number')} span={3}>
-                  {this.props.element.employee_id}
-                </Descriptions.Item>
-                <Descriptions.Item label={this.props.adapter.gt('ID Number')} span={3}>
-                  {this.props.element.nic_num}
-                </Descriptions.Item>
-                {this.props.element.ssn_num && this.props.element.ssn_num !== '' &&
-                <Descriptions.Item label={this.props.adapter.gt('Social Security Number')} span={3}>
-                  {this.props.element.ssn_num}
-                </Descriptions.Item>
-                }
-              </Descriptions>
+              <Space>
+                <Descriptions title="" bordered style={{width: '100%', padding: '10px'}}>
+                  <Descriptions.Item label={adapter.gt(gm('Employee Number'))} span={3}>
+                    {this.props.element.employee_id}
+                  </Descriptions.Item>
+                  <Descriptions.Item label={adapter.gt(gm('NIC'))} span={3}>
+                    {this.props.element.nic_num}
+                  </Descriptions.Item>
+                  {this.props.element.ssn_num && this.props.element.ssn_num !== '' &&
+                  <Descriptions.Item label={adapter.gt(gm('SSN/NRIC'))} span={3}>
+                    {this.props.element.ssn_num}
+                  </Descriptions.Item>
+                  }
+                </Descriptions>
+              </Space>
+              <EmployeeStatusDashboard
+                adapter={this.props.adapter}
+                apiClient={this.props.adapter.apiClient}
+                employee={this.props.element.id}
+              />
             </Space>
           </Card>
         </Col>
@@ -163,25 +175,25 @@ class EmployeeProfile extends React.Component {
                     style={{ width: '100%' }}
               >
                 <Descriptions title="" bordered>
-                  <Descriptions.Item label={this.props.adapter.gt('Date of Birth')}>
+                  <Descriptions.Item label={adapter.gt(gm('Date of Birth'))}>
                     {this.props.element.birthday || ''}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Gender')}>
+                  <Descriptions.Item label={adapter.gt(gm('Gender'))}>
                     {this.props.element.gender}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Nationality')}>
+                  <Descriptions.Item label={adapter.gt(gm('Nationality'))}>
                     {this.props.element.nationality_Name}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Marital Status')}>
+                  <Descriptions.Item label={adapter.gt(gm('Marital Status'))}>
                     {this.props.element.marital_status}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Joined Date')}>
+                  <Descriptions.Item label={adapter.gt(gm('Joined Date'))}>
                     {this.props.element.joined_date}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Driving License No')}>
+                  <Descriptions.Item label={adapter.gt(gm('Driving License No'))}>
                     {this.props.element.driving_license || ''}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Other ID')}>
+                  <Descriptions.Item label={adapter.gt(gm('Other ID'))}>
                     {this.props.element.other_id || ''}
                   </Descriptions.Item>
                 </Descriptions>
@@ -193,31 +205,31 @@ class EmployeeProfile extends React.Component {
                     style={{ width: '100%' }}
               >
                 <Descriptions title="" bordered>
-                  <Descriptions.Item label={this.props.adapter.gt('Address')} span={3}>
+                  <Descriptions.Item label={adapter.gt('Address')} span={3}>
                     {`${this.props.element.address1}, ${this.props.element.address2 || ''}`}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('City')}>
+                  <Descriptions.Item label={adapter.gt(gm('City'))}>
                     {this.props.element.city}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Country')}>
+                  <Descriptions.Item label={adapter.gt(gm('Country'))}>
                     {this.props.element.country_Name}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Postal/Zip Code')}>
+                  <Descriptions.Item label={adapter.gt(gm('Postal/Zip Code'))}>
                     {this.props.element.postal_code}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Home Phone')} span={2}>
+                  <Descriptions.Item label={adapter.gt(gm('Home Phone'))} span={2}>
                     <Space>
                       <PhoneTwoTone />
                       <Text copyable>{` ${this.props.element.home_phone || ''}`}</Text>
                     </Space>
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Work Phone')} span={2}>
+                  <Descriptions.Item label={adapter.gt(gm('Work Phone'))} span={2}>
                     <Space>
                       <PhoneTwoTone />
                       <Text copyable>{` ${this.props.element.work_phone || ''}`}</Text>
                     </Space>
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Private Email')} span={2}>
+                  <Descriptions.Item label={adapter.gt(gm('Private Email'))} span={2}>
                     <Space>
                       <MailTwoTone />
                       <Text copyable>{` ${this.props.element.private_email || ''}`}</Text>
@@ -232,16 +244,16 @@ class EmployeeProfile extends React.Component {
                     style={{ width: '100%' }}
               >
                 <Descriptions title="" bordered>
-                  <Descriptions.Item label={this.props.adapter.gt('Job Title')} span={2}>
+                  <Descriptions.Item label={adapter.gt(gm('Job Title'))} span={2}>
                     {this.props.element.job_title_Name}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Employment Status')}>
+                  <Descriptions.Item label={adapter.gt(gm('Employment Status'))}>
                     {this.props.element.employment_status_Name}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Department')}>
+                  <Descriptions.Item label={adapter.gt(gm('Department'))}>
                     {this.props.element.department_Name}
                   </Descriptions.Item>
-                  <Descriptions.Item label={this.props.adapter.gt('Supervisor')}>
+                  <Descriptions.Item label={adapter.gt(gm('Supervisor'))}>
                     {this.props.element.supervisor_Name}
                   </Descriptions.Item>
                 </Descriptions>

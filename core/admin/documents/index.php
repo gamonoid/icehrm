@@ -14,9 +14,10 @@ if($user->user_level == "Manager"){
     $activeStr = 'active';
 }
 
-$moduleBuilder = new \Classes\ModuleBuilder\ModuleBuilder();
+$moduleBuilder = new \Classes\ModuleBuilderV2\ModuleBuilder();
 if($user->user_level == "Admin") {
-    $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
+    $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilderV2\ModuleTab(
+        '\Documents\Common\Model\CompanyDocument',
         'CompanyDocument',
         'CompanyDocument',
         'Company Documents',
@@ -25,7 +26,8 @@ if($user->user_level == "Admin") {
         '',
         true
     ));
-    $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
+    $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilderV2\ModuleTab(
+        '\Documents\Common\Model\Document',
         'Document',
         'Document',
         'Document Types',
@@ -36,7 +38,8 @@ if($user->user_level == "Admin") {
     ));
     $options1 = array();
     $options1['setRemoteTable'] = 'true';
-    $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
+    $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilderV2\ModuleTab(
+        '\Documents\Common\Model\EmployeeDocument',
         'EmployeeDocument',
         'EmployeeDocument',
         'Employee Documents',
@@ -49,7 +52,8 @@ if($user->user_level == "Admin") {
 }else{
     $options1 = array();
     $options1['setRemoteTable'] = 'true';
-    $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
+    $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilderV2\ModuleTab(
+        '\Documents\Common\Model\EmployeeDocument',
         'EmployeeDocument',
         'EmployeeDocument',
         'Employee Documents',

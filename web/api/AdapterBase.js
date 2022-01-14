@@ -19,6 +19,7 @@ class AdapterBase extends ModuleBase {
     this.origFilter = null;
     this.orderBy = null;
     this.currentElement = null;
+    this.title = null;
     this.initAdapter(endPoint, tab, filter, orderBy);
   }
 
@@ -84,6 +85,10 @@ class AdapterBase extends ModuleBase {
     this.filtersAlreadySet = true;
     $(`#${this.getTableName()}_resetFilters`).show();
     this.currentFilterString = this.getFilterString(filter);
+  }
+
+  setTitle(title) {
+    this.title = title;
   }
 
   getFilter() {
@@ -282,6 +287,10 @@ class AdapterBase extends ModuleBase {
 
   isSubProfileTable() {
     return false;
+  }
+
+  isAdminUser() {
+    return this.user.user_level === 'Admin';
   }
 
   remoteTableSkipProfileRestriction() {

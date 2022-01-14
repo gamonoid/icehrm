@@ -9,6 +9,7 @@ use Company\Common\Model\CompanyStructure;
 use Metadata\Common\Model\Country;
 use Model\BaseModel;
 use Model\CustomFieldTrait;
+use Model\File;
 
 class Employee extends BaseModel
 {
@@ -248,6 +249,11 @@ class Employee extends BaseModel
             new ModuleAccess('employees', 'admin'),
             new ModuleAccess('employees', 'user'),
         ];
+    }
+
+    public function postProcessGetElement($obj)
+    {
+        return FileService::getInstance()->updateProfileImage($obj);
     }
 
     public $table = 'Employees';

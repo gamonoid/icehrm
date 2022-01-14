@@ -20,6 +20,20 @@ class IceApiClient {
       },
     });
   }
+
+  post(endpoint, data) {
+    if (this.legacyApiWrapper) {
+      const url = `${this.clientBaseUrl}api/index.php?token=${this.token}&method=post&url=/${endpoint}`;
+      return axios.post(url, data);
+    }
+
+    return axios.post(this.baseUrl + endpoint, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+      data,
+    });
+  }
 }
 
 export default IceApiClient;

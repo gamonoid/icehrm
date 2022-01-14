@@ -78,6 +78,12 @@ class Setting extends BaseModel
     public function executePreSaveActions($obj)
     {
         $obj->value = SettingsManager::getInstance()->encryptSetting($obj->name, $obj->value);
+
+        // Check if the data directory exists
+        if ($obj->name === 'System: Data Directory' && $obj->value != '' && !is_dir($obj->value)) {
+            return new IceResponse(IceResponse::ERROR, 'Non existing data directory');
+        }
+
         return new IceResponse(IceResponse::SUCCESS, $obj);
     }
 

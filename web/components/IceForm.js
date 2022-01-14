@@ -1,7 +1,10 @@
 import React from 'react';
 import {
-  Alert, Col, DatePicker, TimePicker, Form, Input, Row,
+  Alert, Col, DatePicker, TimePicker, Form, Input, Row, Tooltip, Slider,
 } from 'antd';
+import {
+  InfoCircleOutlined,
+} from '@ant-design/icons';
 import moment from 'moment';
 import IceUpload from './IceUpload';
 import IceDataGroup from './IceDataGroup';
@@ -9,6 +12,7 @@ import IceSelect from './IceSelect';
 import IceLabel from './IceLabel';
 import IceColorPick from './IceColorPick';
 import IceSignature from './IceSignature';
+import IceEditor from './IceEditor';
 
 
 const ValidationRules = {
@@ -98,14 +102,13 @@ class IceForm extends React.Component {
         adapter.beforeRenderFieldHook(
           fields[i][0],
           this.createFromField(fields[i], this.props.viewOnly),
-          fields[i][1]
-        )
+          fields[i][1],
+        ),
       );
     }
-    formInputs = formInputs.filter(input => !!input);
+    formInputs = formInputs.filter((input) => !!input);
 
     for (let i = 0; i < formInputs.length; i++) {
-      
       if (formInputs[i] != null) {
         if (columns === 1) {
           formInputs1.push(formInputs[i]);
@@ -119,12 +122,17 @@ class IceForm extends React.Component {
 
     const onFormLayoutChange = () => { };
 
+    let layout = this.props.layout || 'horizontal';
+    if ( !this.props.layout ) {
+      layout = adapter.getFormLayout(this.props.viewOnly);
+    }
+
     return (
       <Form
         ref={this.formReference}
         labelCol={{ span: 6 }}
         wrapperCol={{ span: 16 }}
-        layout={this.props.layout || 'horizontal'}
+        layout={ layout }
         initialValues={{ size: 'middle' }}
         onValuesChange={onFormLayoutChange}
         size="middle"
@@ -176,9 +184,16 @@ class IceForm extends React.Component {
     const rules = [];
     const requiredRule = { required: true };
     const [name, data] = field;
-    const { adapter, layout } = this.props;
+    const { adapter } = this.props;
+    let { layout } = this.props;
     let validationRule = null;
     data.label = adapter.gt(data.label);
+
+    viewOnly = viewOnly || (data.readonly === true);
+
+    if ( !layout ) {
+      layout = adapter.getFormLayout(this.props.viewOnly);
+    }
 
     const labelSpan = layout === 'vertical' ? { span: 24 } : { span: 6 };
 
@@ -197,13 +212,23 @@ class IceForm extends React.Component {
 
     rules.push(requiredRule);
 
+    const label = (
+      <div>
+        {' '}
+        {data.label}
+        {' '}
+        { data.help
+        && (<Tooltip title={data.help}><InfoCircleOutlined style={{ fontSize: '16px', color: '#1890ff' }} /></Tooltip>)}
+      </div>
+    );
+
     if (data.type === 'hidden') {
       requiredRule.required = false;
       return (
         <Form.Item
           labelCol={labelSpan}
           style={{ display: 'none' }}
-          label={data.label}
+          label={label}
           key={name}
           name={name}
           rules={rules}
@@ -226,7 +251,7 @@ class IceForm extends React.Component {
         return (
           <Form.Item
             labelCol={labelSpan}
-            label={data.label}
+            label={label}
             key={name}
             name={name}
             rules={rules}
@@ -242,7 +267,7 @@ class IceForm extends React.Component {
       return (
         <Form.Item
           labelCol={labelSpan}
-          label={data.label}
+          label={label}
           key={name}
           name={name}
           rules={rules}
@@ -259,7 +284,7 @@ class IceForm extends React.Component {
       return (
         <Form.Item
           labelCol={labelSpan}
-          label={data.label}
+          label={label}
           key={name}
           name={name}
           rules={rules}
@@ -273,7 +298,7 @@ class IceForm extends React.Component {
       return (
         <Form.Item
           labelCol={labelSpan}
-          label={data.label}
+          label={label}
           key={name}
           name={name}
           rules={rules}
@@ -285,19 +310,19 @@ class IceForm extends React.Component {
       return (
         <Form.Item
           labelCol={labelSpan}
-          label={data.label}
+          label={label}
           key={name}
           name={name}
           rules={rules}
         >
-          <DatePicker format="YYYY-MM-DD HH:mm:ss" disabled={viewOnly} />
+          <DatePicker format="YYYY-MM-DD HH:mm:ss" showTime disabled={viewOnly} />
         </Form.Item>
       );
     } if (data.type === 'time') {
       return (
         <Form.Item
           labelCol={labelSpan}
-          label={data.label}
+          label={label}
           key={name}
           name={name}
           rules={rules}
@@ -317,7 +342,7 @@ class IceForm extends React.Component {
       }
 
       if (data.filetypes == null) {
-        data.filetypes = '.doc,.docx,.xml,'
+        data.filetypes = '.doc,.docx'
           + 'application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,'
           + 'image/*,'
           + '.pdf';
@@ -328,7 +353,7 @@ class IceForm extends React.Component {
           labelCol={labelSpan}
           name={name}
           key={name}
-          label={data.label}
+          label={label}
         >
           <IceUpload
             user={userId}
@@ -346,12 +371,12 @@ class IceForm extends React.Component {
           labelCol={labelSpan}
           name={name}
           key={name}
-          label={data.label}
+          label={label}
         >
           <IceDataGroup
             adapter={adapter}
             field={field}
-            title={data.label}
+            title={label}
             readOnly={viewOnly}
           />
         </Form.Item>
@@ -360,7 +385,7 @@ class IceForm extends React.Component {
       return (
         <Form.Item
           labelCol={labelSpan}
-          label={data.label}
+          label={label}
           key={name}
           name={name}
           rules={rules}
@@ -378,28 +403,77 @@ class IceForm extends React.Component {
           labelCol={labelSpan}
           name={name}
           key={name}
-          label={data.label}
+          label={label}
         >
           <IceColorPick
             adapter={adapter}
             field={field}
-            title={data.label}
+            title={label}
             readOnly={viewOnly}
           />
         </Form.Item>
-        );
-      } if (data.type === 'signature') {
-        return (
-          <Form.Item
-            labelCol={labelSpan}
-            label={data.label}
-            key={name}
-            name={name}
-            rules={rules}
-          >
-            <IceSignature readOnly={viewOnly} />
-          </Form.Item>
-        );
+      );
+    } if (data.type === 'signature') {
+      return (
+        <Form.Item
+          labelCol={labelSpan}
+          label={label}
+          key={name}
+          name={name}
+          rules={rules}
+        >
+          <IceSignature readOnly={viewOnly} />
+        </Form.Item>
+      );
+    } if (data.type === 'placeholder') {
+      return (
+        <Form.Item
+          labelCol={labelSpan}
+          label={label}
+          key={name}
+          name={name}
+          rules={rules}
+          shouldUpdate
+        >
+          <Input
+            bordered={false}
+          />
+        </Form.Item>
+      );
+    } if (data.type === 'editor') {
+      return (
+        <Form.Item
+          labelCol={labelSpan}
+          label={label}
+          key={name}
+          name={name}
+          rules={rules}
+          shouldUpdate
+        >
+          <IceEditor
+            adapter={adapter}
+            field={field}
+            title={label}
+            readOnly={viewOnly}
+          />
+        </Form.Item>
+      );
+    } if (data.type === 'slider') {
+      return (
+        <Form.Item
+          labelCol={labelSpan}
+          label={label}
+          key={name}
+          name={name}
+          rules={rules}
+        >
+          <Slider
+            min={data.min}
+            max={data.max}
+            defaultValue={data.defaultValue ? data.defaultValue : 0}
+          />
+        </Form.Item>
+      );
     }
     return null;
   }

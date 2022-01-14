@@ -8,7 +8,10 @@ use Classes\IceResponse;
 use Classes\PermissionManager;
 use Classes\RestEndPoint;
 use Employees\Common\Model\Employee;
+use Employees\Common\Model\EmployeeStatus;
 use Users\Common\Model\User;
+use Utils\CalendarTools;
+use Utils\NetworkUtils;
 
 class EmployeeRestEndPoint extends RestEndPoint
 {
@@ -179,5 +182,53 @@ JSON;
             return new IceResponse(IceResponse::SUCCESS, ['id' => $parameter], 200);
         }
         return new IceResponse(IceResponse::ERROR, $response->getData(), 400);
+    }
+
+    public function getEmployeeStatusMessage(User $user, $parameter)
+    {
+        $date = CalendarTools::getServerDate();
+
+        $employeeId = $parameter['num'];
+
+        $employeeState = new EmployeeStatus();
+        $employeeState->Load('employee = ? and status_date = ?', [ $employeeId, $date]);
+
+        $data = $this->cleanObject($employeeState);
+        unset($data->objectName);
+        unset($data->id);
+        unset($data->status_date);
+
+        return new IceResponse(IceResponse::SUCCESS, $data, 200);
+    }
+
+    public function setEmployeeStatusMessage(User $user, $parameter)
+    {
+        $body = $this->getRequestBody();
+
+        $employeeId = $parameter['num'];
+
+        $permissionResponse = $this->checkBasicPermissions($user, $employeeId);
+        if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
+            return $permissionResponse;
+        }
+
+        $date = CalendarTools::getServerDate();
+
+        $employeeState = new EmployeeStatus();
+        $employeeState->Load('employee = ? and status_date = ?', [ $employeeId, $date]);
+
+        $employeeState->employee = $employeeId;
+        $employeeState->status = $body['status'];
+        $employeeState->feeling = $body['feeling'];
+        $employeeState->message = $body['message'];
+        $employeeState->status_date = $date;
+
+        $employeeState->Save();
+
+        $data = $this->cleanObject($employeeState);
+        unset($data->objectName);
+        unset($data->id);
+
+        return new IceResponse(IceResponse::SUCCESS, $data, 200);
     }
 }

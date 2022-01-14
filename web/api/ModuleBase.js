@@ -287,12 +287,22 @@ class ModuleBase {
     let values;
     const fields = this.getFormFields();
     const filterFields = this.getFilters();
+    const additionalFields = this.getAdditionalRemoteFields();
 
     if (filterFields != null) {
       for (let j = 0; j < filterFields.length; j++) {
-        values = this.getMetaFieldValues(filterFields[j][0], fields);
-        if (values == null || (values.type !== 'select' && values.type !== 'select2' && values.type !== 'select2multi')) {
+        values = filterFields[j][1];
+        if (values.type === 'select' || values.type === 'select2' || values.type === 'select2multi') {
           fields.push(filterFields[j]);
+        }
+      }
+    }
+
+    if (additionalFields != null) {
+      for (let j = 0; j < additionalFields.length; j++) {
+        values = additionalFields[j][1];
+        if (values.type === 'select' || values.type === 'select2' || values.type === 'select2multi') {
+          fields.push(additionalFields[j]);
         }
       }
     }
@@ -445,27 +455,27 @@ class ModuleBase {
     type = type.toLowerCase();
 
     const iconMap = {};
-    iconMap.pdf = 'fa fa-file-pdf-o';
-    iconMap.csv = 'fa fa fa-file-code-o';
-    iconMap.xls = 'fa fa-file-excel-o';
-    iconMap.xlsx = 'fa fa-file-excel-o';
-    iconMap.doc = 'fa fa-file-word-o';
-    iconMap.docx = 'fa fa-file-word-o';
-    iconMap.ppt = 'fa fa-file-powerpoint-o';
-    iconMap.pptx = 'fa fa-file-powerpoint-o';
-    iconMap.jpg = 'fa fa-file-image-o';
-    iconMap.jpeg = 'fa fa-file-image-o';
-    iconMap.gif = 'fa fa-file-image-o';
-    iconMap.png = 'fa fa-file-image-o';
-    iconMap.bmp = 'fa fa-file-image-o';
-    iconMap.txt = 'fa fa-file-text-o';
-    iconMap.rtf = 'fa fa-file-text-o';
+    iconMap.pdf = 'far fa-file-pdf';
+    iconMap.csv = 'fa far fa-file-code';
+    iconMap.xls = 'far fa-file-excel';
+    iconMap.xlsx = 'far fa-file-excel';
+    iconMap.doc = 'far fa-file-word';
+    iconMap.docx = 'far fa-file-word';
+    iconMap.ppt = 'far fa-file-powerpoint';
+    iconMap.pptx = 'far fa-file-powerpoint';
+    iconMap.jpg = 'far fa-file-image';
+    iconMap.jpeg = 'far fa-file-image';
+    iconMap.gif = 'far fa-file-image';
+    iconMap.png = 'far fa-file-image';
+    iconMap.bmp = 'far fa-file-image';
+    iconMap.txt = 'far fa-file-text';
+    iconMap.rtf = 'far fa-file-text';
 
 
     if (iconMap[type] !== undefined || iconMap[type] != null) {
       return iconMap[type];
     }
-    return 'fa fa-file-o';
+    return 'far fa-file';
   }
 
   getSourceMapping() {
@@ -826,6 +836,10 @@ class ModuleBase {
   }
      */
   getFilters() {
+    return null;
+  }
+
+  getAdditionalRemoteFields() {
     return null;
   }
 

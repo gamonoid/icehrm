@@ -25,27 +25,33 @@ class Nationality extends BaseModel
     {
         return array("get","element");
     }
-    // @codingStandardsIgnoreStart
-    public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
+
+    public function getFieldMappingFinder()
     {
-        $allowedCountriesStr = SettingsManager::getInstance()->getSetting('System: Allowed Nationality');
-        $allowedCountries = array();
-        if (!empty($allowedCountriesStr)) {
-            $allowedCountries = json_decode($allowedCountriesStr, true);
-        }
+        return new class extends Nationality {
+            // @codingStandardsIgnoreStart
+            public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
+            {
+                $allowedCountriesStr = SettingsManager::getInstance()->getSetting('System: Allowed Nationality');
+                $allowedCountries = array();
+                if (!empty($allowedCountriesStr)) {
+                    $allowedCountries = json_decode($allowedCountriesStr, true);
+                }
 
-        if (!empty($allowedCountries)) {
-            $res = parent::Find("id in (".implode(",", $allowedCountries).")", array());
-            if (empty($res)) {
-                SettingsManager::getInstance()->setSetting('System: Allowed Countries', '');
-            } else {
-                return $res;
+                if (!empty($allowedCountries)) {
+                    $res = parent::Find("id in (".implode(",", $allowedCountries).")", array());
+                    if (empty($res)) {
+                        SettingsManager::getInstance()->setSetting('System: Allowed Nationality', '');
+                    } else {
+                        return $res;
+                    }
+                }
+
+                return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
             }
-        }
-
-        return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
+            // @codingStandardsIgnoreEnd
+        };
     }
-    // @codingStandardsIgnoreEnd
 
     public function getModuleAccess()
     {

@@ -5,6 +5,7 @@ use Classes\BaseService;
 use Classes\IceResponse;
 use Classes\ModuleAccess;
 use Classes\ModuleAccessService;
+use Documents\Common\Model\CompanyDocumentFinderProxy;
 use Modules\Common\Model\Module;
 use Users\Common\Model\UserRole;
 use Utils\LogManager;
@@ -174,11 +175,19 @@ class BaseModel extends \ADOdb_Active_Record
         return new IceResponse(IceResponse::SUCCESS, "");
     }
 
+    /**
+     * @param $obj
+     * @return IceResponse
+     */
     public function executePreSaveActions($obj)
     {
         return new IceResponse(IceResponse::SUCCESS, $obj);
     }
 
+    /**
+     * @param $obj
+     * @return IceResponse
+     */
     public function executePreUpdateActions($obj)
     {
         return new IceResponse(IceResponse::SUCCESS, $obj);
@@ -361,5 +370,15 @@ class BaseModel extends \ADOdb_Active_Record
     public function isCustomFieldsEnabled()
     {
         return false;
+    }
+
+    public function getFinder()
+    {
+        return null;
+    }
+
+    public function getFieldMappingFinder()
+    {
+        return null;
     }
 }

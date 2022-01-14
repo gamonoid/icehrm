@@ -95,6 +95,14 @@ class ReactModalAdapterBase extends AdapterBase {
     return true;
   }
 
+  keepTableVisibleWhileShowingCustomView() {
+    return false;
+  }
+
+  getFormLayout(viewOnly) {
+    return 'horizontal';
+  }
+
   initForm() {
     if (this.formInitialized) {
       return false;
@@ -103,6 +111,7 @@ class ReactModalAdapterBase extends AdapterBase {
     if (this.modalType === this.MODAL_TYPE_NORMAL) {
       ReactDOM.render(
         <IceFormModal
+          title={this.title || undefined}
           ref={this.formContainer}
           fields={this.getFormFields()}
           adapter={this}
@@ -127,6 +136,7 @@ class ReactModalAdapterBase extends AdapterBase {
       this.filtersContainer = React.createRef();
       ReactDOM.render(
         <IceFormModal
+          title={this.title || undefined}
           ref={this.filtersContainer}
           fields={this.getFilters()}
           adapter={this}
@@ -214,6 +224,10 @@ class ReactModalAdapterBase extends AdapterBase {
     this.renderForm(element, true);
   }
 
+  hideElement() {
+    this.tableContainer.current.setCurrentElement(false);
+  }
+
   /**
    * Show the edit form for an item
    * @method edit
@@ -225,10 +239,15 @@ class ReactModalAdapterBase extends AdapterBase {
     this.getElement(id, []);
   }
 
+  getDefaultValues() {
+    return null;
+  }
+
   renderForm(object = null, viewOnly = false) {
     if (object == null) {
       this.currentId = null;
       this.currentElement = null;
+      object = this.getDefaultValues();
     }
     this.setTableLoading(false);
     this.initForm();
@@ -285,6 +304,10 @@ class ReactModalAdapterBase extends AdapterBase {
       width: 1024,
       twoColumnLayout: false,
     };
+  }
+
+  getWidth() {
+    return 800;
   }
 }
 

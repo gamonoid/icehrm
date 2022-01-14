@@ -251,19 +251,6 @@ $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
                         </div>
                     <?php } else {?>
                         <img src="<?=BASE_URL?>images/icehrm-login.png" style="width:80%;margin-top: 20%;"/>
-<!--                        <div class="col-md-12">-->
-<!--                            <a href="#" class="media bg-white rounded-4 pl-8 pt-9 pb-9 pr-7 hover-shadow-1 mb-9 shadow-8">-->
-<!--                                <div class="text-light-blue bg-light-blue-opacity-1 circle-56 font-size-6 mr-7">-->
-<!--                                    <i class="fas fa-user"></i>-->
-<!--                                </div>-->
-<!--
-                                <div class="">-->
-<!--                                    <p class="font-size-3 font-weight-normal text-gray mb-0">-->
-<!--                                        Organize company HR processes and make your employees happy and productive-->
-<!--                                    </p>-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                        </div>-->
                     <?php }?>
                 </div>
                 <div class="border-top border-default-color-2 mt-auto">
