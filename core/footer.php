@@ -1,3 +1,8 @@
+<?php
+
+use Utils\InputCleaner;
+
+?>
 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
@@ -133,7 +138,7 @@
 					$("[ref = '"+refId+"'] a").first().click();
 				<?php }?>
 			<?php } else{?>
-				refId = '<?=$_REQUEST['m']?>';
+				refId = '<?=InputCleaner::escape($_REQUEST['m'])?>';
 				$("[ref = '"+refId+"'] a").first().click();
 			<?php }?>
 
