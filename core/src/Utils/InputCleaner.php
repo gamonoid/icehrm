@@ -9,6 +9,7 @@ class InputCleaner
             $cleaned = self::cleanParameter($value);
             $input[$key] = $cleaned;
         }
+
         return $input;
     }
 
@@ -29,5 +30,9 @@ class InputCleaner
         */
         $val =  preg_replace("/<([a-z][a-z0-9]*)[^>]*?(\/?)>/i", '<$1$2>', $val);
         return $val;
+    }
+
+    public static function escape($data) {
+        return htmlentities($data, ENT_QUOTES, 'UTF-8');
     }
 }
