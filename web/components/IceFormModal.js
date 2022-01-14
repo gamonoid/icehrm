@@ -13,11 +13,14 @@ class IceFormModal extends React.Component {
       loading: false,
     };
     this.iceFormReference = React.createRef();
-    this.width = 800;
   }
 
   setViewOnly(value) {
     this.setState({ viewOnly: value });
+  }
+
+  getWidth() {
+    return this.props.adapter.getWidth();
   }
 
   show(data) {
@@ -56,7 +59,13 @@ class IceFormModal extends React.Component {
   }
 
   save(params) {
-    this.iceFormReference.current.save(params, () => { this.closeModal(); });
+    const { saveCompleteCallback } = this.props;
+    this.iceFormReference.current.save(params, () => {
+      this.closeModal();
+      if (saveCompleteCallback) {
+        saveCompleteCallback();
+      }
+    });
   }
 
   closeModal() {
@@ -126,7 +135,7 @@ class IceFormModal extends React.Component {
         visible={this.state.visible}
         title={this.props.adapter.gt(this.props.title || adapter.objectTypeName)}
         maskClosable={false}
-        width={this.width}
+        width={this.getWidth()}
         onCancel={() => {
           if (cancelCallback) {
             cancelCallback();

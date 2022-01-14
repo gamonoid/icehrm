@@ -8,6 +8,7 @@
 
 namespace Reports\Admin\Api;
 
+use Classes\BaseService;
 use Classes\SettingsManager;
 use Classes\UIManager;
 use Utils\LogManager;
@@ -53,7 +54,7 @@ class PDFReportBuilder extends ReportBuilder
         $fileFirstPart = "Report_".str_replace(" ", "_", $report->name)."-".date("Y-m-d_H-i-s");
         $fileName = $fileFirstPart.".html";
 
-        $fileFullName = CLIENT_BASE_PATH.'data/'.$fileName;
+        $fileFullName = BaseService::getInstance()->getDataDirectory().$fileName;
 
         $this->initTemplateEngine($report);
 
@@ -65,7 +66,7 @@ class PDFReportBuilder extends ReportBuilder
         fclose($fp);
 
         try {
-            $fileFullNamePdf = CLIENT_BASE_PATH.'data/'.$fileFirstPart.".pdf";
+            $fileFullNamePdf = BaseService::getInstance()->getDataDirectory().$fileFirstPart.".pdf";
             //Try generating the pdf
             LogManager::getInstance()->debug(
                 "wkhtmltopdf 1:".print_r(WK_HTML_PATH." ".$fileFullName." ".$fileFullNamePdf, true)

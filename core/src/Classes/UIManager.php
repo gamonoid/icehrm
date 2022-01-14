@@ -299,19 +299,18 @@ class UIManager
 
     public function getCompanyLogoUrl()
     {
-        $logoFileSet = false;
-        $logoFileName = CLIENT_BASE_PATH."data/logo.png";
         $logoSettings = SettingsManager::getInstance()->getSetting("Company: Logo");
         if (!empty($logoSettings)) {
-            $logoFileName = FileService::getInstance()->getFileUrl($logoSettings, false);
-            $logoFileSet = true;
+            return FileService::getInstance()->getFileUrl($logoSettings, false);
         }
 
-        if (!$logoFileSet && !file_exists($logoFileName)) {
-            return  BASE_URL."images/logo.png";
+        $logoFileName = CLIENT_BASE_PATH.'logo.png';
+
+        if (file_exists($logoFileName)) {
+            return CLIENT_BASE_URL.'logo.png';
         }
 
-        return $logoFileName;
+        return  BASE_URL."images/logo.png";
     }
 
     /**

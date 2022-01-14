@@ -56,6 +56,10 @@ class UsersActionManager extends SubActionManager
                 "Error saving user"
             );
         }
+
+        $req->email = trim($req->email);
+        $req->username = trim($req->username);
+
         if ($this->user->user_level == 'Admin') {
             $user = new User();
             $user->Load("email = ?", array($req->email));

@@ -1,6 +1,8 @@
 <?php
 namespace Utils;
 
+use Classes\BaseService;
+
 class CalendarTools
 {
 
@@ -115,5 +117,20 @@ class CalendarTools
     {
         $date = \DateTime::createFromFormat("Y-m-d", $date);
         return sprintf('%s-%s', $year, $date->format("m-d"));
+    }
+
+    public static function getServerDate()
+    {
+        $currentEmployeeTimeZone = BaseService::getInstance()->getCurrentEmployeeTimeZone();
+
+        if (empty($currentEmployeeTimeZone)) {
+            $currentEmployeeTimeZone = 'Asia/Colombo';
+        }
+        date_default_timezone_set('Asia/Colombo');
+
+        $date = new \DateTime("now", new \DateTimeZone('Asia/Colombo'));
+
+        $date->setTimezone(new \DateTimeZone($currentEmployeeTimeZone));
+        return $date->format('Y-m-d');
     }
 }

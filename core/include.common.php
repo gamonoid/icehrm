@@ -20,15 +20,13 @@ function t($text)
 	return LanguageManager::translateTnrText($text);
 }
 
-if(!defined('TAGS_TO_PRESERVE')){define('TAGS_TO_PRESERVE','');}
+if(!defined('TAGS_TO_PRESERVE')){define('TAGS_TO_PRESERVE', '<b><i><span>');}
 $jsVersion = defined('CACHE_VALUE')?CACHE_VALUE:"v".VERSION;
 $cssVersion = defined('CACHE_VALUE')?CACHE_VALUE:"v".VERSION;
 
-if(!isset($_REQUEST['content']) || $_REQUEST['content'] != 'HTML'){
-    $_REQUEST = InputCleaner::cleanParameters($_REQUEST);
-    $_GET = InputCleaner::cleanParameters($_GET);
-    $_POST = InputCleaner::cleanParameters($_POST);
-}
+$_REQUEST = InputCleaner::cleanParameters($_REQUEST);
+$_GET = InputCleaner::cleanParameters($_GET);
+$_POST = InputCleaner::cleanParameters($_POST);
 
 date_default_timezone_set('Asia/Colombo');
 //Find timezone diff with GMT

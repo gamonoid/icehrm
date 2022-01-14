@@ -1,3 +1,3 @@
-import { DashboardAdapter } from './lib';
+import { ModuleDashboardAdapter } from './lib';
 
-window.DashboardAdapter = DashboardAdapter;
+window.DashboardAdapter = ModuleDashboardAdapter;

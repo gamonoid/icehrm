@@ -13,6 +13,7 @@ namespace Classes;
 use Classes\Crypt\AesCtr;
 use Classes\Email\EmailSender;
 use Classes\Exception\IceHttpException;
+use Classes\Migration\MigrationInterface;
 use Company\Common\Model\CompanyStructure;
 use Employees\Common\Model\Employee;
 use Employees\Common\Model\EmployeeApproval;
@@ -58,6 +59,7 @@ class BaseService
     public $currentProfileId = false;
 
     protected $cacheService = null;
+    protected $extensionMigrations = [];
 
     protected $pro = null;
 
@@ -134,18 +136,26 @@ class BaseService
             $orderBy = " ORDER BY ".$orderBy;
         }
 
+        if ($obj->getFinder() !== null) {
+            $finder = $obj->getFinder();
+        } else {
+            $finder = $obj;
+        }
         if (in_array($table, $this->userTables)) {
             $cemp = $this->getCurrentProfileId();
             if (!empty($cemp)) {
                 $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
-                $list = $obj->Find($signInMappingField." = ?".$query.$orderBy, array_merge(array($cemp), $queryData));
+                $list = $finder->Find(
+                    $signInMappingField." = ?".$query.$orderBy,
+                    array_merge(array($cemp), $queryData)
+                );
             } else {
                 $list = array();
             }
         } else {
             LogManager::getInstance()->debug("Query: "."1=1".$query.$orderBy);
             LogManager::getInstance()->debug("Query Data: ".print_r($queryData, true));
-            $list = $obj->Find("1=1".$query.$orderBy, $queryData);
+            $list = $finder->Find("1=1".$query.$orderBy, $queryData);
         }
 
         $newList = array();
@@ -475,6 +485,12 @@ class BaseService
             $limit = "";
         }
 
+        if ($obj->getFinder() !== null) {
+            $finder = $obj->getFinder();
+        } else {
+            $finder = $obj;
+        }
+
         if (in_array($table, $this->userTables) && !$skipProfileRestriction) {
             $cemp = $this->getCurrentProfileId();
             if (!empty($cemp)) {
@@ -486,7 +502,7 @@ class BaseService
                         "Data Load Query (x1):"."1=1".$signInMappingField." = ?".$query.$orderBy.$limit
                     );
                     LogManager::getInstance()->debug("Data Load Query Data (x1):".json_encode($queryData));
-                    $list = $obj->Find($signInMappingField." = ?".$query.$orderBy.$limit, $queryData);
+                    $list = $finder->Find($signInMappingField." = ?".$query.$orderBy.$limit, $queryData);
                 } else {
                     $profileClass = $this->getFullQualifiedModelClassName(ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME));
                     $subordinate = new $profileClass();
@@ -556,7 +572,7 @@ class BaseService
                     );
                     LogManager::getInstance()->debug("Data Load Query Data (x2):".json_encode($queryData));
                     if (!empty($subordinatesIds)) {
-                        $list = $obj->Find(
+                        $list = $finder->Find(
                             $signInMappingField . " in (" . $subordinatesIds . ") " . $query . $orderBy . $limit,
                             $queryData
                         );
@@ -634,15 +650,15 @@ class BaseService
                 LogManager::getInstance()->debug(
                     "Data Load Query (a1):".$signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit
                 );
-                $list = $obj->Find(
+                $list = $finder->Find(
                     $signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit,
                     $queryData
                 );
             } else {
-                $list = $obj->Find("1=1".$query.$orderBy.$limit, $queryData);
+                $list = $finder->Find("1=1".$query.$orderBy.$limit, $queryData);
             }
         } else {
-            $list = $obj->Find("1=1".$query.$orderBy.$limit, $queryData);
+            $list = $finder->Find("1=1".$query.$orderBy.$limit, $queryData);
         }
 
         if (!$list) {
@@ -892,10 +908,16 @@ class BaseService
             $ele->updated = date("Y-m-d H:i:s");
         }
         if ($isAdd) {
-            $ele = $ele->executePreSaveActions($ele)->getData();
+            $preResponse = $ele->executePreSaveActions($ele);
         } else {
-            $ele = $ele->executePreUpdateActions($ele)->getData();
+            $preResponse = $ele->executePreUpdateActions($ele);
         }
+
+        if ($preResponse->getStatus() === IceResponse::ERROR) {
+            return $preResponse;
+        }
+
+        $ele = $preResponse->getData();
 
         $ok = $ele->Save();
 
@@ -1052,6 +1074,12 @@ class BaseService
         $ret = array();
         $nsTable = $this->getFullQualifiedModelClassName($table);
         $ele = new $nsTable();
+
+        $finder = $ele->getFieldMappingFinder();
+        if ($finder !== null) {
+            $ele = $finder;
+        }
+
         $this->checkSecureAccess("get", $ele, $table, $_POST);
         if (!empty($method)) {
             if (method_exists($ele, $method) && in_array($method, $ele->fieldValueMethods())) {
@@ -2012,5 +2040,25 @@ END;
         }
 
         return null;
+    }
+
+    public function getDataDirectory()
+    {
+        $dataDir = SettingsManager::getInstance()->getSetting('System: Data Directory');
+        if (!empty($dataDir) && is_dir($dataDir)) {
+            return $dataDir;
+        }
+
+        return CLIENT_BASE_PATH.'data/';
+    }
+
+    public function getExtensionMigrations()
+    {
+        return $this->extensionMigrations;
+    }
+
+    public function registerExtensionMigration(MigrationInterface $migration)
+    {
+        $this->extensionMigrations[$migration->getName()] = $migration;
     }
 }

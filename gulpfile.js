@@ -361,6 +361,47 @@ gulp.task('modules-js', (done) => {
     .pipe(gulp.dest('./web/dist'));
 });
 
+gulp.task('extension-js', (done) => {
+  let extension = process.argv.filter((item) => item.substr(0, 3) === '--x');
+  if (extension.length === 1) {
+    extension = extension[0].substr(3);
+  }
+
+  // map them to our stream function
+  return browserify({
+    entries: [`extensions/${extension}/web/js/index.js`],
+    basedir: '.',
+    debug: true,
+    cache: {},
+    packageCache: {},
+  })
+    .external(vendorsFlat)
+    .transform('babelify', {
+      plugins: [
+        ['@babel/plugin-proposal-class-properties', { loose: true }],
+      ],
+      presets: ['@babel/preset-env', '@babel/preset-react'],
+      extensions: ['.js', '.jsx'],
+    })
+    .transform(require('browserify-css'))
+    .bundle()
+    .pipe(source(`${extension}.js`))
+    .pipe(buffer())
+    .pipe(ifElse(!isProduction, () => sourcemaps.init({ loadMaps: true })))
+    .pipe(ifElse(isProduction, () => uglifyes(
+      {
+        compress: true,
+        mangle: {
+          reserved: [],
+        },
+      },
+    )))
+    .pipe(ifElse(isProduction, () => javascriptObfuscator({
+      compact: true,
+    })))
+    .pipe(ifElse(!isProduction, () => sourcemaps.write('./')))
+    .pipe(gulp.dest(`./extensions/${extension}/dist`));
+});
 
 gulp.task('watch', () => {
   gulp.watch('web/admin/src/*/*.js', gulp.series('admin-js'));

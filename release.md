@@ -1,5 +1,35 @@
 # Release Notes IceHrm Open Source
 
+## Release note v31.0.0.OS
+
+### 🧲 New features
+
+* Allow filtering employee skills using either skill or the employee.
+* Employee training sessions ability to filter by employee.
+* Improvements to employee filters in education, certifications and languages.
+* Ability set employee status and daily goals.
+
+### 🐛 Bug fixes
+* Filtering fixed on monitor attendance page.
+* Filters on employee travel request are fixed.
+* Fix issue: searching from any other page than first page is not showing search results.
+* Fix filters for employee projects.
+* Changes to employee field names are now correctly reflected on employee profile.
+* Fix company document visibility issues.
+* Show active employee count under connection module.
+
+### 🗑️ For developers
+* Add slider component.
+* Add editor js.
+
+### 🗑️ Features removed
+* Module grouping feature is removed.
+
+### 🛡️ Security improvements
+* Fixing [https://github.com/gamonoid/icehrm/issues/284](https://github.com/gamonoid/icehrm/issues/284)
+* Fixing [https://github.com/gamonoid/icehrm/issues/285](https://github.com/gamonoid/icehrm/issues/285)
+
+
 ## Release note v30.0.0.OS
 
 ### 🛡️ Security improvements

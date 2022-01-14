@@ -2,9 +2,15 @@
  Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
+import React from 'react';
 import AdapterBase from '../../../api/AdapterBase';
+import { DashboardAdapter} from '../../../admin/src/dashboard/lib';
+import ReactDOM from "react-dom";
+import TaskList from "../../../components/TaskList";
+import EmployeeStatusDashboard from "../../../components/EmployeeStatusDashboard";
+import {Donut, Pie} from "@antv/g2plot";
 
-class DashboardAdapter extends AdapterBase {
+class ModuleDashboardAdapter extends DashboardAdapter {
   getDataMapping() {
     return [];
   }
@@ -19,6 +25,93 @@ class DashboardAdapter extends AdapterBase {
 
 
   get(callBackData) {
+    this.initializeReactDashboard();
+  }
+
+  initializeReactDashboard() {
+    this.drawOnlineOfflineEmployeeChart();
+    this.buildTaskList();
+    this.buildEmployeeStatus();
+  }
+
+  buildTaskList() {
+    document.getElementById('TaskListWrap').style.display = 'none';
+    ReactDOM.render(
+      this.getSpinner(),
+      document.getElementById('TaskListLoader'),
+    );
+    this.apiClient
+      .get('tasks')
+      .then((data) => {
+        document.getElementById('TaskListWrap').style.display = 'block';
+        ReactDOM.render(
+          <TaskList tasks={data.data} />,
+          document.getElementById('TaskList'),
+        );
+
+        ReactDOM.unmountComponentAtNode(document.getElementById('TaskListLoader'));
+      });
+  }
+
+  buildEmployeeStatus() {
+    document.getElementById('EmployeeStatusWrap').style.display = 'block';
+    ReactDOM.render(
+      <EmployeeStatusDashboard
+        adapter={this}
+        apiClient={this.apiClient}
+        employee={this.user.employee}
+      />,
+      document.getElementById('EmployeeStatus'),
+    );
+  }
+
+  drawOnlineOfflineEmployeeChart() {
+    const that = this;
+    document.getElementById('EmployeeOnlineOfflineChart').style.display = 'none';
+    ReactDOM.render(
+      this.getSpinner(),
+      document.getElementById('EmployeeOnlineOfflineChartLoader'),
+    );
+
+    this.apiClient
+      .get('charts/employee-check-ins')
+      .then((data) => {
+        const chartData = Object.keys(data.data).map((key) => ({
+          type: key,
+          value: data.data[key],
+        }));
+        const props = {
+          forceFit: true,
+          title: {
+            visible: true,
+            text: that.gt('Employee Check-Ins'),
+          },
+          description: {
+            visible: false,
+            text: '',
+          },
+          statistic: {
+            visible: true,
+            content: {
+              value: chartData.reduce((acc, item) => acc + item.value, 0),
+              name: that.gt('Total'),
+            },
+          },
+          legend: {
+            visible: true,
+            position: 'bottom-center',
+          },
+          radius: 0.8,
+          padding: 'auto',
+          data: chartData,
+          angleField: 'value',
+          colorField: 'type',
+        };
+        ReactDOM.unmountComponentAtNode(document.getElementById('EmployeeOnlineOfflineChartLoader'));
+        document.getElementById('EmployeeOnlineOfflineChart').style.display = 'block';
+        const donutPlot = new Donut(document.getElementById('EmployeeOnlineOfflineChart'), props);
+        donutPlot.render();
+      });
   }
 
 
@@ -96,4 +189,4 @@ class DashboardAdapter extends AdapterBase {
   }
 }
 
-module.exports = { DashboardAdapter };
+module.exports = { ModuleDashboardAdapter };

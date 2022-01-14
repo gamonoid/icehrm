@@ -64,7 +64,7 @@ abstract class ReportBuilder
         $fileFirstPart = "Report_".str_replace(" ", "_", $report->name)."-".date("Y-m-d_H-i-s");
         $fileName = $fileFirstPart.".csv";
 
-        $fileFullName = CLIENT_BASE_PATH.'data/'.$fileName;
+        $fileFullName = BaseService::getInstance()->getDataDirectory().$fileName;
         $fp = fopen($fileFullName, 'w');
 
         foreach ($data as $fields) {

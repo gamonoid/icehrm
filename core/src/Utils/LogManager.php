@@ -1,6 +1,7 @@
 <?php
 namespace Utils;
 
+use Classes\BaseService;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
@@ -27,8 +28,13 @@ class LogManager
                 self::$me->log->pushHandler(new StreamHandler('php://stderr', LOG_LEVEL));
             } elseif (is_writable(ini_get('error_log'))) {
                 self::$me->log->pushHandler(new StreamHandler(ini_get('error_log'), LOG_LEVEL));
-            } elseif (is_writable(CLIENT_BASE_PATH.'data/app.log')) {
-                self::$me->log->pushHandler(new StreamHandler(CLIENT_BASE_PATH.'data/app.log', LOG_LEVEL));
+            } elseif (is_writable(BaseService::getInstance()->getDataDirectory().'app.log')) {
+                self::$me->log->pushHandler(
+                    new StreamHandler(
+                        BaseService::getInstance()->getDataDirectory().'app.log',
+                        LOG_LEVEL
+                    )
+                );
             } else {
                 self::$me->log->pushHandler(new StreamHandler('php://stderr', LOG_LEVEL));
             }

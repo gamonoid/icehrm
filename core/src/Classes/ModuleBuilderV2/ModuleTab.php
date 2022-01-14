@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Thilina
@@ -32,7 +33,6 @@ class ModuleTab
         $isActive = false,
         $options = array()
     ) {
-    
         $this->modelPath = $modelPath;
         $this->name = $name;
         $this->class = $class;
@@ -45,33 +45,33 @@ class ModuleTab
         $this->options = array_merge(
             $options,
             [
-            "setObjectTypeName" => "'{$this->name}'",
-            "setAccess" => "data.permissions.{$this->name} ? data.permissions.{$this->name} : {}",
-            "setDataPipe" => 'new IceDataPipe(modJsList.tab' . $this->name . ')',
-            "setRemoteTable" => true,
+                "setObjectTypeName" => "'{$this->name}'",
+                "setAccess" => "data.permissions.{$this->name} ? data.permissions.{$this->name} : {}",
+                "setDataPipe" => 'new IceDataPipe(modJsList.tab' . $this->name . ')',
+                "setRemoteTable" => true,
             ]
         );
     }
 
     public function getHTML()
     {
-        $active = ($this->isActive)?"active":"";
+        $active = ($this->isActive) ? "active" : "";
         if (!$this->isInsideGroup) {
             return '<li class="' . $active . '"><a id="tab' . $this->name
-            . '" href="#tabPage' . $this->name . '">' . t($this->label) . '</a></li>';
+                . '" href="#tabPage' . $this->name . '">' . t($this->label) . '</a></li>';
         } else {
             return '<li class="' . $active . '"><a id="tab' . $this->name
-            . '" href="#tabPage' . $this->name . '">' . t($this->label) . '</a></li>';
+                . '" href="#tabPage' . $this->name . '">' . t($this->label) . '</a></li>';
         }
     }
 
     public function getPageHTML()
     {
-        $active = ($this->isActive)?" active":"";
-        $html = '<div class="tab-pane'.$active.'" id="tabPage'.$this->name.'">'.
-            '<div id="'.$this->name.'Table" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>'.
-            '<div id="'.$this->name.'Form"></div>'.
-            '<div id="'.$this->name.'FilterForm"></div>'.
+        $active = ($this->isActive) ? " active" : "";
+        $html = '<div class="tab-pane' . $active . '" id="tabPage' . $this->name . '">' .
+            '<div id="' . $this->name . 'Table" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>' .
+            '<div id="' . $this->name . 'Form"></div>' .
+            '<div id="' . $this->name . 'FilterForm"></div>' .
             '</div>';
 
         return $html;
@@ -79,18 +79,22 @@ class ModuleTab
 
     public function getJSObjectCode()
     {
+        if (!$this->options["setTitle"]) {
+            $this->options["setTitle"] = "'" . $this->label . "'";
+        }
+
         $js = "";
         if (empty($this->filter)) {
-            $js.= "modJsList['tab" . $this->name . "'] = new " .
-                $this->adapterName . "('" . $this->class . "','" . $this->name . "','','".$this->orderBy. "');\r\n";
+            $js .= "modJsList['tab" . $this->name . "'] = new " .
+                $this->adapterName . "('" . $this->class . "','" . $this->name . "','','" . $this->orderBy . "');\r\n";
         } else {
-            $js.= "modJsList['tab" . $this->name . "'] = new " .
+            $js .= "modJsList['tab" . $this->name . "'] = new " .
                 $this->adapterName . "('" . $this->class . "','" . $this->name . "'," .
-                $this->filter . ",'".$this->orderBy. "');\r\n";
+                $this->filter . ",'" . $this->orderBy . "');\r\n";
         }
 
         foreach ($this->options as $key => $val) {
-            $js.= "modJsList['tab" . $this->name . "'].".$key."(".$val. ");\r\n";
+            $js .= "modJsList['tab" . $this->name . "']." . $key . "(" . $val . ");\r\n";
         }
 
         return $js;

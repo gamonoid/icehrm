@@ -3,6 +3,10 @@
 /**
  * Handle file uploads via XMLHttpRequest
  */
+
+use Classes\BaseService;
+use Classes\SettingsManager;
+
 include ("config.base.php");
 include ("include.common.php");
 include_once ('server.includes.inc.php');
@@ -133,20 +137,20 @@ $allowedExtensions = explode(',', "csv,doc,xls,docx,xlsx,txt,ppt,pptx,rtf,pdf,xm
 // max file size in bytes
 $sizeLimit =MAX_FILE_SIZE_KB * 1024;
 $uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
-$result = $uploader->handleUpload(CLIENT_BASE_PATH.'data/',$saveFileName);
+$result = $uploader->handleUpload(BaseService::getInstance()->getDataDirectory(),$saveFileName);
 // to pass data through iframe you will need to encode all html tags
 
-$uploadFilesToS3 = \Classes\SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
-$uploadFilesToS3Key = \Classes\SettingsManager::getInstance()->getSetting("Files: Amazon S3 Key for File Upload");
-$uploadFilesToS3Secret = \Classes\SettingsManager::getInstance()->getSetting(
+$uploadFilesToS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
+$uploadFilesToS3Key = SettingsManager::getInstance()->getSetting("Files: Amazon S3 Key for File Upload");
+$uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
     "Files: Amazon S3 Secret for File Upload"
 );
-$s3Bucket = \Classes\SettingsManager::getInstance()->getSetting("Files: S3 Bucket");
-$s3WebUrl = \Classes\SettingsManager::getInstance()->getSetting("Files: S3 Web Url");
+$s3Bucket = SettingsManager::getInstance()->getSetting("Files: S3 Bucket");
+$s3WebUrl = SettingsManager::getInstance()->getSetting("Files: S3 Web Url");
 
 $uploadedToS3 = false;
 
-$localFile = CLIENT_BASE_PATH.'data/'.$result['filename'];
+$localFile = BaseService::getInstance()->getDataDirectory().$result['filename'];
 $f_size = filesize($localFile);
 if($uploadFilesToS3.'' == '1' && !empty($uploadFilesToS3Key) && !empty($uploadFilesToS3Secret) &&
     !empty($s3Bucket) && !empty($s3WebUrl)){

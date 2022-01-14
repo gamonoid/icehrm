@@ -4,16 +4,14 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Classes\LanguageManager;
+
 $moduleName = 'dashboard';
 $moduleGroup = 'modules';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
-?><div class="span9">
 
-    <div class="row">
-
-        <?php
         $moduleManagers = \Classes\BaseService::getInstance()->getModuleManagers();
         $dashBoardList = array();
         foreach($moduleManagers as $moduleManagerObj){
@@ -33,47 +31,60 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
         ksort($dashBoardList);
 
+        $dashboardList1  =[];
+        $dashboardList2  =[];
         foreach($dashBoardList as $k=>$v){
-            echo \Classes\LanguageManager::translateTnrText($v);
+            if (count($dashboardList1) === 4 ) {
+                $dashboardList2[] = $v;
+            } else {
+                $dashboardList1[] = $v;
+            }
+        }
+?><div class="span9">
+    <div class="row">
+        <?php
+        foreach($dashboardList1 as $v){
+            echo LanguageManager::translateTnrText($v);
         }
         ?>
-
-
-
-
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-xs-12">
+            <div id="EmployeeOnlineOfflineChartLoader" style="width:100%;"></div>
+            <div id="EmployeeOnlineOfflineChart" style="display:none;box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);border: none;margin-bottom: 20px;"></div>
+        </div>
+        <div class="col-lg-4 col-xs-12">
+            <div id="EmployeeStatusLoader" style="width:100%;"></div>
+            <div id="EmployeeStatusWrap" style="display: none;box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);border: none;margin-bottom: 20px; padding:25px;">
+                <h4>Your Day</h4>
+                <div id="EmployeeStatus" style="margin-left: 10px; margin-top: 30px;"></div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-12">
+            <div id="TaskListLoader" style="width:100%;"></div>
+            <div id="TaskListWrap" style="display: none;box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);border: none;margin-bottom: 20px; padding:25px;">
+                <h4>Things to Do</h4>
+                <div id="TaskList" style="margin-left: 10px; margin-top: 30px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <?php
+        foreach($dashboardList2 as $v){
+            echo LanguageManager::translateTnrText($v);
+        }
+        ?>
     </div>
 
 </div>
+
 <script>
-var modJsList = new Array();
+var modJsList = [];
 
 modJsList['tabDashboard'] = new DashboardAdapter('Dashboard','Dashboard');
 
 var modJs = modJsList['tabDashboard'];
-/*
-$("#employeeLink").attr("href",modJs.getCustomUrl('?g=admin&n=employees&m=admin_Admin'));
-$("#jobsLink").attr("href",modJs.getCustomUrl('?g=admin&n=jobpositions&m=admin_Recruitment'));
-$("#candidatesLink").attr("href",modJs.getCustomUrl('?g=admin&n=candidates&m=admin_Recruitment'));
-$("#projectAdminLink").attr("href",modJs.getCustomUrl('?g=admin&n=projects&m=admin_Admin'));
-$("#trainingLink").attr("href",modJs.getCustomUrl('?g=admin&n=training&m=admin_Admin'));
-$("#travelLink").attr("href",modJs.getCustomUrl('?g=admin&n=travel&m=admin_Employees'));
-$("#documentLink").attr("href",modJs.getCustomUrl('?g=admin&n=documents&m=admin_Employees'));
-$("#expenseLink").attr("href",modJs.getCustomUrl('?g=admin&n=expenses&m=admin_Employees'));
 
-
-
-$("#myProfileLink").attr("href",modJs.getCustomUrl('?g=modules&n=employees&m=module_Personal_Information'));
-$("#atteandanceLink").attr("href",modJs.getCustomUrl('?g=modules&n=attendance&m=module_Time_Management'));
-$("#leavesLink").attr("href",modJs.getCustomUrl('?g=modules&n=leaves&m=module_Leaves'));
-$("#timesheetLink").attr("href",modJs.getCustomUrl('?g=modules&n=time_sheets&m=module_Time_Management'));
-$("#projectsLink").attr("href",modJs.getCustomUrl('?g=modules&n=projects&m=module_Personal_Information'));
-$("#myDocumentsLink").attr("href",modJs.getCustomUrl('?g=modules&n=documents&m=module_Documents'));
-$("#mytravelLink").attr("href",modJs.getCustomUrl('?g=modules&n=travel&m=module_Travel_Management'));
-$("#myExpensesLink").attr("href",modJs.getCustomUrl('?g=modules&n=expenses&m=module_Finance'));
-
-modJs.getPunch();
-modJs.getInitData();
-*/
 
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>

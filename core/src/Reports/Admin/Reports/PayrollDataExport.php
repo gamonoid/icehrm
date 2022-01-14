@@ -1,6 +1,7 @@
 <?php
 namespace Reports\Admin\Reports;
 
+use Classes\BaseService;
 use Payroll\Common\Model\Deduction;
 use Payroll\Common\Model\DeductionGroup;
 use Payroll\Common\Model\Payroll;
@@ -144,7 +145,7 @@ class PayrollDataExport extends ReportBuilder implements ReportBuilderInterface
         $fileFirstPart = "Report_".str_replace(" ", "_", $report->name)."-".date("Y-m-d_H-i-s");
         $fileName = $fileFirstPart.".txt";
 
-        $fileFullName = CLIENT_BASE_PATH.'data/'.$fileName;
+        $fileFullName = BaseService::getInstance()->getDataDirectory().$fileName;
         $fp = fopen($fileFullName, 'w');
 
         fwrite($fp, json_encode($data, JSON_PRETTY_PRINT));

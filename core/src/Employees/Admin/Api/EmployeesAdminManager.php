@@ -84,6 +84,17 @@ class EmployeesAdminManager extends AbstractModuleManager
             $empRestEndPoint = new EmployeeLanguageRestEndpoint();
             $empRestEndPoint->process('listAll', $pathParams);
         });
+
+        // Employee status
+        Macaw::get(REST_API_PATH.'employees/(:num)/status', function ($pathParams) {
+            $empRestEndPoint = new EmployeeRestEndPoint();
+            $empRestEndPoint->process('getEmployeeStatusMessage', $pathParams);
+        });
+
+        Macaw::post(REST_API_PATH.'employees/(:num)/status', function ($pathParams) {
+            $empRestEndPoint = new EmployeeRestEndPoint();
+            $empRestEndPoint->process('setEmployeeStatusMessage', $pathParams);
+        });
     }
 
     public function initializeDatabaseErrorMappings()
@@ -99,6 +110,7 @@ class EmployeesAdminManager extends AbstractModuleManager
     {
         $this->addModelClass('Employee');
         $this->addModelClass('EmploymentStatus');
+        $this->addModelClass('EmployeeStatus');
         $this->addModelClass('EmployeeApproval');
         $this->addModelClass('ArchivedEmployee');
     }

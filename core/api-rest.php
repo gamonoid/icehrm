@@ -13,7 +13,8 @@ if(\Classes\SettingsManager::getInstance()->getSetting('Api: REST Api Enabled') 
     }
 
 
-    \Utils\LogManager::getInstance()->info("Request: " . $_REQUEST);
+    \Utils\LogManager::getInstance()->info("Request: " . print_r($_REQUEST, true));
+    \Utils\LogManager::getInstance()->info("REST_API_PATH: " . REST_API_PATH);
 
     if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
         http_response_code(200);
@@ -24,7 +25,7 @@ if(\Classes\SettingsManager::getInstance()->getSetting('Api: REST Api Enabled') 
         echo "Echo " . rand();
     });
 
-    \Utils\LogManager::getInstance()->debug('Api registered URI: '.$echoRoute);
+    \Utils\LogManager::getInstance()->info('Api registered URI: '.$echoRoute);
 
     $moduleManagers = \Classes\BaseService::getInstance()->getModuleManagers();
 

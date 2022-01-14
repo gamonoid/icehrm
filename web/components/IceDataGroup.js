@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Form, Select, Space, Card, Modal, Table} from "antd";
+import { Button, Select, Space, Card, Table } from "antd";
 // import IceDataGroupModal from "./IceDataGroupModal";
 import IceFormModal from "./IceFormModal";
 import ReactDOM from "react-dom";
@@ -19,7 +19,7 @@ class IceDataGroup extends React.Component {
     let { value } = this.props;
 
     value = this.parseValue(value);
-    value = value.map(item => ({ ...item, key:item.id } ));
+    value = value.map(item => ({ ...item, key: item.id }));
     const columns = JSON.parse(JSON.stringify(field[1].columns));
 
     if (!this.props.readOnly) {
@@ -34,19 +34,20 @@ class IceDataGroup extends React.Component {
 
     return (
       <>
+        <div id="dataGroupContainer"></div>
         {!this.props.readOnly &&
-        <Space direction="horizontal">
-          <Button type="link" htmlType="button" onClick={() => {
-            this.createForm(field, adapter, {})
-          }}>
-            Add
+          <Space direction="horizontal">
+            <Button type="link" htmlType="button" onClick={() => {
+              this.createForm(field, adapter, {})
+            }}>
+              Add
           </Button>
-          <Button type="link" htmlType="button" danger onClick={() => {
-            this.resetDataGroup()
-          }}>
-            Reset
+            <Button type="link" htmlType="button" danger onClick={() => {
+              this.resetDataGroup()
+            }}>
+              Reset
           </Button>
-        </Space>
+          </Space>
         }
         <Table columns={columns} dataSource={value} />
       </>
@@ -67,13 +68,13 @@ class IceDataGroup extends React.Component {
         saveCallback={this.save.bind(this)}
         cancelCallback={this.unmountForm.bind(this)}
       />,
-      document.getElementById('dataGroup'),
+      document.getElementById('dataGroupContainer'),
     );
     this.formContainer.current.show(object);
   }
 
   unmountForm() {
-    ReactDOM.unmountComponentAtNode(document.getElementById('dataGroup'));
+    ReactDOM.unmountComponentAtNode(document.getElementById('dataGroupContainer'));
   }
 
   show(data) {
@@ -107,7 +108,7 @@ class IceDataGroup extends React.Component {
   }
 
   save(params, errorCallback, closeCallback) {
-    const {field, value } = this.props;
+    const { field, value } = this.props;
 
     if (field[1]['custom-validate-function'] != null) {
       let tempParams = field[1]['custom-validate-function'].apply(this, [params]);
@@ -181,14 +182,14 @@ class IceDataGroup extends React.Component {
   getDefaultButtons(id) {
     return (
       <Space>
-        <a href="#" onClick={() => {this.editDataGroupItem(id)}}><li className="fa fa-edit"/></a>
-        <a href="#" onClick={() => {this.deleteDataGroupItem(id)}}><li className="fa fa-times"/></a>
+        <a href="#" onClick={() => { this.editDataGroupItem(id) }}><li className="fa fa-edit" /></a>
+        <a href="#" onClick={() => { this.deleteDataGroupItem(id) }}><li className="fa fa-times" /></a>
       </Space>
     );
   }
 
   deleteDataGroupItem(id) {
-    const {value} = this.props;
+    const { value } = this.props;
     const data = this.parseValue(value);
 
     const newVal = [];

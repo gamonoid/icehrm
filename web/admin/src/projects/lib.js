@@ -127,7 +127,7 @@ class EmployeeProjectAdapter extends ReactModalAdapterBase {
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
-      ['employee', { label: 'Employee', type: 'select2', 'remote-source': ['Employee', 'id', 'first_name+last_name'] }],
+      ['employee', { label: 'Employee', type: 'select2', 'remote-source': ['Employee', 'id', 'first_name+last_name','getActiveSubordinateEmployees'] }],
       ['project', { label: 'Project', type: 'select2', 'remote-source': ['Project', 'id', 'name'] }],
       ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
     ];
@@ -135,8 +135,8 @@ class EmployeeProjectAdapter extends ReactModalAdapterBase {
 
   getFilters() {
     return [
-      ['employee', { label: 'Employee', type: 'select2', 'remote-source': ['Employee', 'id', 'first_name+last_name'] }],
-
+      ['employee', { label: 'Employee', type: 'select2','allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name','getActiveSubordinateEmployees'] }],
+      ['project', { label: 'Project', type: 'select2','allow-null': true, 'remote-source': ['Project', 'id', 'name'] }],
     ];
   }
 

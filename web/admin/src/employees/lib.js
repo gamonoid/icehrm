@@ -33,6 +33,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
   constructor(endPoint, tab, filter, orderBy) {
     super(endPoint, tab, filter, orderBy);
     this.fieldNameMap = {};
+    this.fieldNameMapOrig = {};
     this.hiddenFields = {};
     this.tableFields = {};
     this.formOnlyFields = {};
@@ -47,6 +48,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
     for (let i = 0; i < fields.length; i++) {
       field = fields[i];
       this.fieldNameMap[field.name] = field;
+      this.fieldNameMapOrig[field.textOrig] = field.textMapped;
       if (field.display === 'Hidden') {
         this.hiddenFields[field.name] = field;
       } else if (field.display === 'Table and Form' || field.display === 'Form') {
@@ -160,6 +162,10 @@ class EmployeeAdapter extends ReactModalAdapterBase {
     }
 
     return tableColumns;
+  }
+
+  getMappedText(text) {
+    return this.fieldNameMapOrig[text] ? this.fieldNameMapOrig[text] : text;
   }
 
   showElement(element) {
@@ -901,7 +907,7 @@ class EmployeeSkillAdapter extends ReactModalAdapterBase {
         label: 'Employee',
         type: 'select2',
         sort: 'none',
-        'allow-null': false,
+        'allow-null': true,
         'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
       }],
       ['skill_id', {
@@ -1000,7 +1006,7 @@ class EmployeeEducationAdapter extends SubProfileEnabledAdapterBase {
         label: 'Employee',
         type: 'select2',
         sort: 'none',
-        'allow-null': false,
+        'allow-null': true,
         'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
       }],
       ['education_id', {
@@ -1099,7 +1105,7 @@ class EmployeeCertificationAdapter extends SubProfileEnabledAdapterBase {
         label: 'Employee',
         type: 'select2',
         sort: 'none',
-        'allow-null': false,
+        'allow-null': true,
         'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
       }],
       ['certification_id', {
@@ -1213,7 +1219,7 @@ class EmployeeLanguageAdapter extends SubProfileEnabledAdapterBase {
         label: 'Employee',
         type: 'select2',
         sort: 'none',
-        'allow-null': false,
+        'allow-null': true,
         'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
       }],
       ['language_id', {

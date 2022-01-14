@@ -91,6 +91,7 @@ try {// Domain aware input cleanup
             $ret['status'] = IceResponse::SUCCESS;
         } else {
             $ret['status'] = IceResponse::ERROR;
+            $ret['data'] = $response->getData();
         }
 
     } else if ($action == 'getFieldValues') {
@@ -209,18 +210,28 @@ try {// Domain aware input cleanup
             exit;
         }
 
-        if (!file_exists(CLIENT_BASE_PATH . 'data/' . $file->filename)) {
+        if (!file_exists(BaseService::getInstance()->getDataDirectory() . $file->filename)) {
             exit;
         }
 
         $extension = explode('.', $file->filename)[1];
-
+        $seconds_to_cache = 3600;
+        $ts = gmdate("D, d M Y H:i:s", time() + $seconds_to_cache) . " GMT";
         header('Content-Description: File Transfer');
         if ('png' === $extension) {
+            header("Expires: $ts");
+            header("Pragma: cache");
+            header("Cache-Control: max-age=$seconds_to_cache");
             header('Content-Type: image/png');
         } elseif ('gif' === $extension) {
+            header("Expires: $ts");
+            header("Pragma: cache");
+            header("Cache-Control: max-age=$seconds_to_cache");
             header('Content-Type: image/png');
         } elseif ('jpg' === $extension || 'jpeg' === $extension) {
+            header("Expires: $ts");
+            header("Pragma: cache");
+            header("Cache-Control: max-age=$seconds_to_cache");
             header('Content-Type: image/jpeg');
         } elseif ('pdf' === $extension) {
             header('Content-Type: application/pdf');
@@ -236,10 +247,10 @@ try {// Domain aware input cleanup
 
         header('Content-Disposition: attachment; filename=' . basename($file->filename));
 
-        header('Content-Length: ' . filesize(CLIENT_BASE_PATH . 'data/' . $file->filename));
+        header('Content-Length: ' . filesize(BaseService::getInstance()->getDataDirectory() . $file->filename));
         ob_clean();
         flush();
-        readfile(CLIENT_BASE_PATH . 'data/' . $file->filename);
+        readfile(BaseService::getInstance()->getDataDirectory() . $file->filename);
         exit;
 
     } else if ($action == 'rsp') { // linked clicked from password change email

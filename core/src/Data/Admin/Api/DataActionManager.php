@@ -13,6 +13,7 @@ use Classes\IceResponse;
 use Classes\SubActionManager;
 use Data\Common\Model\DataImport;
 use Data\Common\Model\DataImportFile;
+use Model\File;
 use Utils\LogManager;
 
 class DataActionManager extends SubActionManager
@@ -29,7 +30,9 @@ class DataActionManager extends SubActionManager
         $url = FileService::getInstance()->getFileUrl($dataFile->file);
 
         if (strstr($url, CLIENT_BASE_URL) !== false) {
-            $url = str_replace(CLIENT_BASE_URL, CLIENT_BASE_PATH, $url);
+            $file = new File();
+            $file->Load('name = ?', [$dataFile->file]);
+            $url = CLIENT_BASE_PATH.'data/'.$file->filename;
         }
 
         LogManager::getInstance()->info("File Path:".$url);

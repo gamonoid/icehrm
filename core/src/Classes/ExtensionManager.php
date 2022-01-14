@@ -57,6 +57,7 @@ class ExtensionManager
                 $arr['user_roles'] = isset($meta->user_roles)?$meta->user_roles:"";
                 $arr['model_namespace'] = $meta->model_namespace;
                 $arr['manager'] = $meta->manager;
+                $arr['controller'] = $meta->controller;
 
                 // Add menu
                 $menu[$meta->menu[0]] = $meta->menu[1];
@@ -120,6 +121,7 @@ class ExtensionManager
                     }
                 }
 
+                $manager->initialize();
                 $initializer = $manager->getInitializer();
                 if ($initializer !== null) {
                     $initializer->setBaseService(BaseService::getInstance());
@@ -140,6 +142,12 @@ class ExtensionManager
         $moduleManagerObj->setModuleObject($data);
         $moduleManagerObj->setModuleType(self::GROUP);
         $moduleManagerObj->setModulePath(CLIENT_PATH.'/'.self::GROUP.'/'.$name);
+
+        $controllerClass = $data['controller'];
+        if (class_exists($controllerClass)) {
+            $moduleManagerObj->setActionManager(new $controllerClass());
+        }
+
         \Classes\BaseService::getInstance()->addModuleManager($moduleManagerObj);
         return $moduleManagerObj;
     }

@@ -185,6 +185,12 @@ class EmployeeTravelRecordAdminAdapter extends ApproveAdminAdapter {
       ['attachment3', { label: 'Attachment', type: 'fileupload', validation: 'none' }],
     ]);
   }
+
+  getFilters() {
+    return [
+      ['employee', { label: 'Employee', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'] }],
+    ];
+  }
 }
 
 module.exports = {
