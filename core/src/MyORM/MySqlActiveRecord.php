@@ -161,11 +161,17 @@ class MySqlActiveRecord
         $this->checkPreConditions();
         $sql = sprintf('SELECT * FROM %s WHERE %s', $this->getTable(), $where);
         $stmt = $this->connection()->prepare($sql);
+
+        if (!$stmt) {
+            $this->lastError = $this->connection()->error;
+            return $this;
+        }
+
         $this->bind($stmt, $bindarr);
 
         if (!$stmt->execute()) {
             $this->lastError = $stmt->error;
-            return false;
+            return $this;
         }
         $result = $stmt->get_result();
         $data = $result->fetch_assoc();
@@ -184,6 +190,10 @@ class MySqlActiveRecord
         $this->checkPreConditions();
         $sql = sprintf('SELECT * FROM %s WHERE %s', $this->getTable(), $whereOrderBy);
         $stmt = $this->connection()->prepare($sql);
+        if (!$stmt) {
+            $this->lastError = $this->connection()->error;
+            return [];
+        }
         $this->bind($stmt, $bindarr);
 
         if (!$stmt->execute()) {
@@ -211,6 +221,10 @@ class MySqlActiveRecord
         $this->checkPreConditions();
         $sql = sprintf('SELECT COUNT(*) as cnt FROM %s WHERE %s', $this->getTable(), $where);
         $stmt = $this->connection()->prepare($sql);
+        if (!$stmt) {
+            $this->lastError = $this->connection()->error;
+            return 0;
+        }
         $this->bind($stmt, $bindarr);
 
         if (!$stmt->execute()) {
@@ -256,6 +270,10 @@ class MySqlActiveRecord
         );
 
         $stmt = $this->connection()->prepare($sql);
+        if (!$stmt) {
+            $this->lastError = $this->connection()->error;
+            return false;
+        }
 
         $this->bind($stmt, $params);
 
@@ -331,6 +349,10 @@ class MySqlActiveRecord
         );
 
         $stmt = $this->connection()->prepare($sql);
+        if (empty($stmt)) {
+            $this->lastError = $this->connection()->error;
+            return false;
+        }
 
         if (!$stmt) {
             $this->lastError = $this->connection()->error;
