@@ -4,12 +4,13 @@
  */
 
 import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from "../../../api/ReactModalAdapterBase";
 
 /**
  * FieldNameAdapter
  */
 
-class FieldNameAdapter extends AdapterBase {
+class FieldNameAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -27,6 +28,31 @@ class FieldNameAdapter extends AdapterBase {
       { sTitle: 'Original Text' },
       { sTitle: 'Mapped Text' },
       { sTitle: 'Display Status' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Original Text',
+        dataIndex: 'textOrig',
+        sorter: true,
+      },
+      {
+        title: 'Mapped Text',
+        dataIndex: 'textMapped',
+        sorter: true,
+      },
+      {
+        title: 'Display Status',
+        dataIndex: 'display',
+        sorter: true,
+      },
     ];
   }
 

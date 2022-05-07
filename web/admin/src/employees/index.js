@@ -16,6 +16,7 @@ import {
   EmployeeSubDependentAdapter,
   EmployeeSubEmergencyContactAdapter,
   EmployeeSubDocumentAdapter,
+  EmployeeCareerAdapter,
 } from './lib';
 import IceDataPipe from '../../../api/IceDataPipe';
 
@@ -36,5 +37,6 @@ window.EmployeeSubLanguageAdapter = EmployeeSubLanguageAdapter;
 window.EmployeeSubDependentAdapter = EmployeeSubDependentAdapter;
 window.EmployeeSubEmergencyContactAdapter = EmployeeSubEmergencyContactAdapter;
 window.EmployeeSubDocumentAdapter = EmployeeSubDocumentAdapter;
+window.EmployeeCareerAdapter = EmployeeCareerAdapter;
 
 window.IceDataPipe = IceDataPipe;
