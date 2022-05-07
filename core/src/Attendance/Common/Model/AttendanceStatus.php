@@ -75,7 +75,12 @@ class AttendanceStatus extends BaseModel
         $shift = intval(SettingsManager::getInstance()->getSetting("Attendance: Shift (Minutes)"));
         $employee = new Employee();
         $data = array();
-        $employees = $employee->Find("1=1");
+        if (strstr($whereOrderBy, 'department=?')) {
+            $employees = $employee->Find("department=?", $bindarr);
+        } else {
+            $employees = $employee->Find("1=1");
+        }
+
 
         $attendance = new Attendance();
         $attendanceToday = $attendance->Find("date(in_time) = ?", array(date("Y-m-d")));
@@ -90,7 +95,7 @@ class AttendanceStatus extends BaseModel
         }
 
         foreach ($employees as $employee) {
-            $entry = new \stdClass();
+            $entry = new BaseModel();
             $entry->id = $employee->id;
             $entry->employee = $employee->id;
 
@@ -123,6 +128,16 @@ class AttendanceStatus extends BaseModel
         });
 
         return $data;
+    }
+
+    public function countRows($query, $data)
+    {
+        $employee = new Employee();
+        if (strstr($query, 'department=?')) {
+            return $employee->Count("department=?", $data);
+        }
+
+        return $employee->Count("1=1");
     }
 
     public function getAdminAccess()

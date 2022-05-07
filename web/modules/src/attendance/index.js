@@ -1,7 +1,7 @@
 import {
   AttendanceAdapter,
-  EmployeeAttendanceSheetAdapter,
 } from './lib';
+import IceDataPipe from '../../../api/IceDataPipe';
 
 window.AttendanceAdapter = AttendanceAdapter;
-window.EmployeeAttendanceSheetAdapter = EmployeeAttendanceSheetAdapter;
+window.IceDataPipe = IceDataPipe;

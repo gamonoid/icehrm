@@ -9,6 +9,8 @@
 namespace Attendance\Admin\Api;
 
 use Attendance\Common\Model\Attendance;
+use Classes\BaseService;
+use Classes\IceResponse;
 use Classes\SettingsManager;
 
 class AttendanceUtil
@@ -128,5 +130,55 @@ class AttendanceUtil
         }
 
         return $weeks;
+    }
+
+    public function isEmployeeHasOpenPunch($date, $employeeId)
+    {
+        $attendance = new Attendance();
+        $attendance->Load(
+            "employee = ? and DATE_FORMAT( in_time,  '%Y-%m-%d' ) = ? and out_time is NULL",
+            array($employeeId,$date)
+        );
+
+        if ($attendance->employee == $employeeId) {
+            //found an open punch
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function isEmployeePunchedIn($date, $employeeId)
+    {
+        $attendance = new Attendance();
+        $attendance->Load(
+            "employee = ? and DATE_FORMAT( in_time,  '%Y-%m-%d' ) = ?",
+            array($employeeId,$date)
+        );
+
+        if ($attendance->employee == $employeeId) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function isEmployeePunchedOut($date, $employeeId)
+    {
+        //Find any open punch
+        $attendance = new Attendance();
+        $attendance->Load(
+            "employee = ? and DATE_FORMAT( in_time,  '%Y-%m-%d' ) = ? and out_time is NOT NULL",
+            array($employeeId,$date)
+        );
+
+        if ($attendance->employee == $employeeId) {
+            //found a closed punch
+            return true;
+        } else {
+            return false;
+        }
     }
 }

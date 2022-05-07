@@ -43,4 +43,18 @@ class Attendance extends BaseModel
             new ModuleAccess('attendance_sheets', 'user'),
         ];
     }
+
+    public function postProcessGetData($obj)
+    {
+        if (empty($obj->out_time)) {
+            $obj->hours = 0;
+            return $obj;
+        }
+
+        $seconds = strtotime($obj->out_time) - strtotime($obj->in_time);
+        $hours = round(($seconds / (60 * 60)), 2);
+        $obj->hours = $hours;
+
+        return $obj;
+    }
 }
