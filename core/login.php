@@ -213,7 +213,7 @@ $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
 <script type="text/javascript">
   var key = "";
   <?php if (isset($_REQUEST['key'])) {?>
-  key = '<?=$_REQUEST['key']?>';
+  key = '<?=htmlentities($_REQUEST['key'], ENT_QUOTES, 'UTF-8')?>';
   key = key.replace(/ /g,"+");
   <?php }?>
 </script>
