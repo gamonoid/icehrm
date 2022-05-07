@@ -36,6 +36,8 @@ class IceSelect extends React.Component {
       } catch (e) {
         value = [];
       }
+    } else {
+      value = value ? value.toString() : value;
     }
 
     return (

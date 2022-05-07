@@ -32,7 +32,8 @@ class InputCleaner
         return $val;
     }
 
-    public static function escape($data) {
+    public static function escape($data)
+    {
         return htmlentities($data, ENT_QUOTES, 'UTF-8');
     }
 }

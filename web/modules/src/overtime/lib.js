@@ -144,6 +144,10 @@ class SubordinateEmployeeOvertimeAdapter extends EmployeeOvertimeAdminAdapter {
     this.itemNameLower = 'employeeovertime';
     this.modulePathName = 'overtime';
   }
+
+  isSubProfileTable() {
+    return true;
+  }
 }
 
 module.exports = {
