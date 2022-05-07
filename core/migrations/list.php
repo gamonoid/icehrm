@@ -45,7 +45,6 @@ $migrationList[] = 'v20190707_260004_attendance_out_map';
 $migrationList[] = 'v20190630_260603_add_dept_leave_to_rule';
 $migrationList[] = 'v20190630_260602_add_leave_period_to_rule';
 $migrationList[] = 'v20190630_260601_update_module_names';
-$migrationList[] = 'v20190510_260004_add_hiring_manager_job';
 $migrationList[] = 'v20190509_260004_add_location_filed_to_job';
 $migrationList[] = 'v20190508_260004_update_time_zones';
 $migrationList[] = 'v20190125_260003_attendance_with_map';
