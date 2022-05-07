@@ -12,6 +12,18 @@
 <div class="container" style="margin-top:10px;">
     <div class="col-xs-2"></div>
     <div class="col-xs-8">
+    {% for field in fields %}
+        {% if field.type == 'Company Logo' %}
+            {% include 'payslip/logo.html' with {'field': field} %}
+        {% elseif field.type == 'Company Name' %}
+            {% include 'payslip/companyname.html' with {'field': field} %}
+        {% endif %}
+    {% endfor %}
+        <div class="row">
+            <div class="col-xs-12">
+                <hr/>
+            </div>
+        </div>
         <div class="row">
             <div class="col-xs-6">
                 <b>Employee</b>
@@ -29,11 +41,7 @@
             </div>
         </div>
     {% for field in fields %}
-        {% if field.type == 'Company Logo' %}
-            {% include 'payslip/logo.html' with {'field': field} %}
-        {% elseif field.type == 'Company Name' %}
-            {% include 'payslip/companyname.html' with {'field': field} %}
-        {% elseif field.type == 'Payroll Column' %}
+        {% if field.type == 'Payroll Column' %}
             {% include 'payslip/column.html' with {'field': field} %}
         {% elseif field.type == 'Text' %}
             {% include 'payslip/text.html' with {'field': field} %}
