@@ -53,7 +53,8 @@ class ConnectionService
             ],
             [
                 'name' => 'MySQL Server',
-                'value' => mysqli_get_server_info((new User())->DB()->_connectionID),
+                //'value' => mysqli_get_server_info((new User())->DB()->_connectionID),
+                'value' => BaseService::getInstance()->getDB()->getServerInfo(),
             ],
             [
                 'name' => 'Modules Loaded',

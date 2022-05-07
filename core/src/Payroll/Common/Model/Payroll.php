@@ -36,7 +36,7 @@ class Payroll extends BaseModel
         $payrollIds = array();
         $payrollDataTemp = new PayrollData();
 
-        $payrollDataTemp->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
+        // $payrollDataTemp->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
         $rs = $payrollDataTemp->DB()->Execute(
             'select payroll from PayrollData where employee = ? group by payroll',
             array($currentEmp)

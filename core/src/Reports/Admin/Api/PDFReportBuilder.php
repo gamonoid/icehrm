@@ -31,7 +31,7 @@ class PDFReportBuilder extends ReportBuilder
 
     protected function initTemplateEngine($report)
     {
-        if ($report->_table = "UserReports") {
+        if ($report->table = "UserReports") {
             $path = APP_BASE_PATH."modules/reports/customTemplates/";
         } else {
             $path = APP_BASE_PATH."admin/reports/customTemplates/";

@@ -20,7 +20,7 @@ abstract class ReportBuilder
 
     protected function execute($report, $query, $parameters)
     {
-        $report->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
+        // $report->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
         LogManager::getInstance()->debug("Query: ".$query);
         LogManager::getInstance()->debug("Parameters: ".json_encode($parameters));
         $rs = $report->DB()->Execute($query, $parameters);

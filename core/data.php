@@ -92,6 +92,7 @@ if (!isset($_REQUEST['objects'])) {
     $searchColumns = $_REQUEST['cl'];
     $searchQuery = '';
     $searchQueryData = [];
+    $totalRows = 0;
     if (!empty($searchTerm) && !empty($searchColumns)) {
         $searchColumnList = json_decode($searchColumns);
         $searchColumnList = array_diff($searchColumnList, $obj->getVirtualFields());
@@ -111,14 +112,18 @@ if (!isset($_REQUEST['objects'])) {
 
     if (in_array($table, \Classes\BaseService::getInstance()->userTables)
         && !$skipProfileRestriction && !$isSubOrdinates) {
+        //Get data for user table.
+        // E.g: an employee loading attendnace data
         $cemp = \Classes\BaseService::getInstance()->getCurrentProfileId();
         $sql = "Select count(id) as count from "
-            . $obj->_table . " where " . SIGN_IN_ELEMENT_MAPPING_FIELD_NAME . " = ? " . $countFilterQuery;
+            . $obj->table . " where " . SIGN_IN_ELEMENT_MAPPING_FIELD_NAME . " = ? " . $countFilterQuery;
         array_unshift($countFilterQueryData, $cemp);
 
-        $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
+        $totalRows = $obj->countRows($sql, $countFilterQueryData);
     } else {
+        // Not a user table, means an admin or a manager loading employee data
         if ($isSubOrdinates) {
+            // Loading subordinates
             $cemp = \Classes\BaseService::getInstance()->getCurrentProfileId();
             $profileClass = \Classes\BaseService::getInstance()->getFullQualifiedModelClassName(
                 ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME)
@@ -187,25 +192,19 @@ if (!isset($_REQUEST['objects'])) {
                     }
                 }
             }
-            $sql = "Select count(id) as count from " . $obj->_table .
+            $sql = "Select count(id) as count from " . $obj->table .
 	            " where " . $obj->getUserOnlyMeAccessField() . " in (" . $subordinatesIds . ") "
 	            . $countFilterQuery.$searchQuery;
-            $rowCount = $obj->DB()->Execute($sql, array_merge($countFilterQueryData, $searchQueryData));
+            $totalRows = $obj->countRows($sql, array_merge($countFilterQueryData, $searchQueryData));
         } else {
-            $sql = "Select count(id) as count from " . $obj->_table;
+            // An admin loading all user data
+            $sql = "Select count(id) as count from " . $obj->table;
             $sql .= " where 1=1 " . $countFilterQuery.$searchQuery;
-            $rowCount = $obj->DB()->Execute($sql, array_merge($countFilterQueryData, $searchQueryData));
+            $totalRows = $obj->countRows($sql, array_merge($countFilterQueryData, $searchQueryData));
         }
     }
 }
 
-if (isset($rowCount) && !empty($rowCount)) {
-    foreach ($rowCount as $cnt) {
-        $totalRows = $cnt['count'];
-    }
-} else {
-    $totalRows = 0;
-}
 
 /*
  * Output

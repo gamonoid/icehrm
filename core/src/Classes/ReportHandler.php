@@ -45,7 +45,7 @@ class ReportHandler
     private function executeReport($reportBuilder, $report, $query, $parameters)
     {
 
-        $report->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
+        // $report->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
         $rs = $report->DB()->Execute($query, $parameters);
         if (!$rs) {
             LogManager::getInstance()->info($report->DB()->ErrorMsg());

@@ -70,7 +70,7 @@ class CustomField extends BaseModel
         );
 
         if (!$ret) {
-            $this->lastError =  $this->db()->ErrorMsg();
+            $this->lastError =  $this->DB()->ErrorMsg();
             LogManager::getInstance()->error('Error deleting custom field values: '.$this->DB()->ErrorMsg());
         }
     }

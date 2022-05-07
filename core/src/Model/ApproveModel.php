@@ -204,6 +204,11 @@ abstract class ApproveModel extends BaseModel
         foreach ($approveals as $appr) {
             $ids[] = $appr->element;
         }
+
+        if (empty($ids)) {
+            return [];
+        }
+
         $data = $obj->Find("id in (".implode(",", $ids).")", array());
 
         return $data;

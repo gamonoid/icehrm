@@ -49,7 +49,7 @@ class DocumentTaskCreator implements TaskCreator
                     from EmployeeDocuments 
                     where employee = ? and valid_until < ? and visible_to = ?";
 
-        $user->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
+        // $user->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
         // TODO - sending notifications only for Owner documents, this need to be extended later
         $rs = $user->DB()->Execute($query, [$employee->id, date('Y-m-d'), 'Owner']);
         $count = $rs->fields['c'];
