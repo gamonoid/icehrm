@@ -8,6 +8,7 @@
 
 namespace Classes\Migration;
 
+use Classes\BaseService;
 use Utils\LogManager;
 
 abstract class AbstractMigration
@@ -36,8 +37,7 @@ abstract class AbstractMigration
     protected function db()
     {
         if ($this->db == null) {
-            $this->db = NewADOConnection('mysqli');
-            $res = $this->db->Connect(APP_HOST, APP_USERNAME, APP_PASSWORD, APP_DB);
+            $this->db = BaseService::getInstance()->getDB();
         }
         return $this->db;
     }

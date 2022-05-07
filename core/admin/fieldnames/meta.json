@@ -1,7 +1,7 @@
 {
-    "label": "Employee Fields",
-    "menu": "Admin",
-    "order": "83",
+    "label": "Field Names",
+    "menu": "System",
+    "order": "81",
     "icon": "fa-ruler-horizontal",
     "user_levels": [
         "Admin"

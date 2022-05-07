@@ -5,11 +5,16 @@
 
 import AdapterBase from '../../../api/AdapterBase';
 import FormValidation from '../../../api/FormValidation';
+import ReactModalAdapterBase from "../../../api/ReactModalAdapterBase";
+import {Avatar, Progress, Space, Tag, Typography } from "antd";
+import {CopyOutlined, DeleteOutlined, EditOutlined, MonitorOutlined, EnvironmentTwoTone} from "@ant-design/icons";
 
-class AttendanceAdapter extends AdapterBase {
+const { Text } = Typography;
+import React from "react";
+
+class AttendanceAdapter extends ReactModalAdapterBase {
   constructor(endPoint, tab, filter, orderBy) {
     super(endPoint, tab, filter, orderBy);
-    this.photoAttendance = false;
   }
 
   getDataMapping() {
@@ -18,7 +23,7 @@ class AttendanceAdapter extends AdapterBase {
       'employee',
       'in_time',
       'out_time',
-      'note',
+      'hours',
     ];
   }
 
@@ -29,6 +34,52 @@ class AttendanceAdapter extends AdapterBase {
       { sTitle: 'Time-In' },
       { sTitle: 'Time-Out' },
       { sTitle: 'Note' },
+    ];
+  }
+
+  getTableColumns() {
+
+    const dateRenderer = (text, record) => {
+      if (text === '0000-00-00 00:00:00' || text === '' || text === undefined || text == null) {
+        return '';
+      }
+      return (
+        <>
+        <Text code>{Date.parse(text).toString('yyyy MMM d')}</Text>
+        <Text strong>{Date.parse(text).toString('HH:mm')}</Text>
+        </>
+      );
+    };
+
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Time-in',
+        dataIndex: 'in_time',
+        render: dateRenderer,
+        sorter: true,
+      },
+      {
+        title: 'Time-out',
+        dataIndex: 'out_time',
+        render: dateRenderer,
+        sorter: true,
+      },
+      {
+        title: 'Hours',
+        render: (text, record) => (<Progress
+          size="small"
+          steps={25}
+          percent={record.hours ? (record.hours / 8) * 100 : 0}
+          format={(percent, successPercent)=> record.hours + 'h / 8h'}
+        />),
+        width: '25%',
+        dataIndex: 'hours',
+      },
     ];
   }
 
@@ -53,99 +104,32 @@ class AttendanceAdapter extends AdapterBase {
     ];
   }
 
-  setPhotoAttendance(val) {
-    this.photoAttendance = parseInt(val, 10);
-  }
-
-
-  getCustomTableParams() {
-    const that = this;
-    const dataTableParams = {
-      aoColumnDefs: [
-        {
-          fnRender(data, cell) {
-            return that.preProcessRemoteTableData(data, cell, 2);
-          },
-          aTargets: [2],
-        },
-        {
-          fnRender(data, cell) {
-            return that.preProcessRemoteTableData(data, cell, 3);
-          },
-          aTargets: [3],
-        },
-        {
-          fnRender(data, cell) {
-            return that.preProcessRemoteTableData(data, cell, 4);
-          },
-          aTargets: [4],
-        },
-        {
-          fnRender: that.getActionButtons,
-          aTargets: [that.getDataMapping().length],
-        },
-      ],
-    };
-    return dataTableParams;
-  }
-
-  preProcessRemoteTableData(data, cell, id) {
-    if (id === 2) {
-      if (cell === '0000-00-00 00:00:00' || cell === '' || cell === undefined || cell == null) {
-        return '';
-      }
-      return Date.parse(cell).toString('yyyy MMM d  <b>HH:mm</b>');
-    } if (id === 3) {
-      if (cell === '0000-00-00 00:00:00' || cell === '' || cell === undefined || cell == null) {
-        return '';
-      }
-      return Date.parse(cell).toString('MMM d  <b>HH:mm</b>');
-    } if (id === 4) {
-      if (cell !== undefined && cell !== null) {
-        if (cell.length > 10) {
-          return `${cell.substring(0, 10)}..`;
-        }
-      }
-      return cell;
-    }
-  }
-
-
-  save() {
-    const validator = new FormValidation(`${this.getTableName()}_submit`, true, { ShowPopup: false, LabelErrorClass: 'error' });
-    if (validator.checkValues()) {
-      const params = validator.getFormParameters();
-
-      const msg = this.doCustomValidation(params);
-      if (msg == null) {
-        const id = $(`#${this.getTableName()}_submit #id`).val();
-        if (id != null && id !== undefined && id !== '') {
-          params.id = id;
-        }
-
-        const reqJson = JSON.stringify(params);
-        const callBackData = [];
-        callBackData.callBackData = [];
-        callBackData.callBackSuccess = 'saveSuccessCallback';
-        callBackData.callBackFail = 'saveFailCallback';
-
-        this.customAction('savePunch', 'admin=attendance', reqJson, callBackData);
-      } else {
-        const label = $(`#${this.getTableName()}Form .label`);
-        label.html(msg);
-        label.show();
-      }
-    }
-  }
-
-
-  saveSuccessCallback(callBackData) {
-    this.get(callBackData);
-  }
-
-
-  saveFailCallback(callBackData) {
-    this.showMessage('Error saving attendance entry', callBackData);
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => (
+      <Space size="middle">
+        {adapter.hasAccess('save') && adapter.showEdit
+        && (
+          <Tag color="green" onClick={() => modJs.edit(record.id)} style={{ cursor: 'pointer' }}>
+            <EditOutlined />
+            {` ${adapter.gt('Edit')}`}
+          </Tag>
+        )}
+        {adapter.hasAccess('element')
+        && (
+          <Tag color="blue" onClick={() => modJs.showPunchImages(record.id)} style={{ cursor: 'pointer' }}>
+            <MonitorOutlined />
+            {` ${adapter.gt('View')}`}
+          </Tag>
+        )}
+        {adapter.hasAccess('delete') && adapter.showDelete
+        && (
+          <Tag color="volcano" onClick={() => modJs.deleteRow(record.id)} style={{ cursor: 'pointer' }}>
+            <DeleteOutlined />
+            {` ${adapter.gt('Delete')}`}
+          </Tag>
+        )}
+      </Space>
+    );
   }
 
   isSubProfileTable() {
@@ -162,11 +146,6 @@ class AttendanceAdapter extends AdapterBase {
   }
 
   getImagesSuccessCallback(callBackData) {
-    $('#attendnaceMapCanvasIn').remove();
-    $('#attendnaceCanvasInWrapper').html('<canvas id="attendnaceCanvasIn" height="156" width="208" style="border: 1px #222 dotted;"></canvas>');
-
-    $('#attendnaceCanvasOut').remove();
-    $('#attendnaceCanvasOutWrapper').html('<canvas id="attendnaceCanvasOut" height="156" width="208" style="border: 1px #222 dotted;"></canvas>');
 
     $('#attendnaceCanvasPunchInTime').html('');
     $('#attendnaceCanvasPunchOutTime').html('');
@@ -187,38 +166,8 @@ class AttendanceAdapter extends AdapterBase {
       $('#attendnaceCanvasPunchInTime').html(Date.parse(callBackData.in_time).toString('yyyy MMM d  <b>HH:mm</b>'));
     }
 
-    if (callBackData.image_in) {
-      $('#attendancePhoto').show();
-      const myCanvas = document.getElementById('attendnaceCanvasIn');
-      try {
-        const ctx = myCanvas.getContext('2d');
-        const img = new Image();
-        img.onload = function () {
-          ctx.drawImage(img, 0, 0); // Or at whatever offset you like
-        };
-        img.src = callBackData.image_in;
-      } catch (e) {
-        console.log(e);
-      }
-    }
-
     if (callBackData.out_time) {
       $('#attendnaceCanvasPunchOutTime').html(Date.parse(callBackData.out_time).toString('yyyy MMM d  <b>HH:mm</b>'));
-    }
-
-    if (callBackData.image_out) {
-      $('#attendancePhoto').show();
-      const myCanvas = document.getElementById('attendnaceCanvasOut');
-      try {
-        const ctx = myCanvas.getContext('2d');
-        const img = new Image();
-        img.onload = function () {
-          ctx.drawImage(img, 0, 0); // Or at whatever offset you like
-        };
-        img.src = callBackData.image_out;
-      } catch (e) {
-        console.log(e);
-      }
     }
 
     if (callBackData.map_lat) {
@@ -267,42 +216,19 @@ class AttendanceAdapter extends AdapterBase {
         console.log(e);
       }
     }
+
+    if (callBackData.note) {
+      $('#attendanceNoteWrapper').show();
+      $('#attendanceNote').html(callBackData.note);
+    } else {
+      $('#attendanceNoteWrapper').hide();
+    }
+
   }
 
 
   getImagesFailCallback(callBackData) {
     this.showMessage('Error', callBackData);
-  }
-
-  getActionButtonsHtml(id, data) {
-    const editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
-    const deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
-    const photoButton = '<img class="tableActionButton" src="_BASE_images/map.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Show Location Details" onclick="modJs.showPunchImages(_id_);return false;"></img>';
-
-    let html;
-    if (this.photoAttendance === 1) {
-      html = '<div style="width:80px;">_edit__delete__photo_</div>';
-    } else {
-      html = '<div style="width:80px;">_edit__delete_</div>';
-    }
-
-    html = html.replace('_photo_', photoButton);
-
-    if (this.showDelete) {
-      html = html.replace('_delete_', deleteButton);
-    } else {
-      html = html.replace('_delete_', '');
-    }
-
-    if (this.showEdit) {
-      html = html.replace('_edit_', editButton);
-    } else {
-      html = html.replace('_edit_', '');
-    }
-
-    html = html.replace(/_id_/g, id);
-    html = html.replace(/_BASE_/g, this.baseUrl);
-    return html;
   }
 
   getHelpLink() {
@@ -315,7 +241,7 @@ class AttendanceAdapter extends AdapterBase {
  Attendance Status
  */
 
-class AttendanceStatusAdapter extends AdapterBase {
+class AttendanceStatusAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -332,18 +258,40 @@ class AttendanceStatusAdapter extends AdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Clocked In Status',
+        dataIndex: 'status',
+        render: (text, record) => (
+          <Space>
+            <EnvironmentTwoTone twoToneColor={text === 'Not Clocked In'?'orange':'#52c41a'}/>
+            <Text>{text}</Text>
+          </Space>
+        ),
+        sorter: true,
+      },
+    ];
+  }
+
   getFormFields() {
     return [
-
+      ['employee', {
+        label: 'Employee', type: 'select2', 'allow-null': false, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
+      }],
     ];
   }
 
   getFilters() {
     return [
-      ['employee', {
-        label: 'Employee', type: 'select2', 'allow-null': false, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
+      ['department', {
+        label: 'Department', type: 'select2', 'allow-null': true, 'null-label': 'All Departments', 'remote-source': ['CompanyStructure', 'id', 'title'],
       }],
-
     ];
   }
 
@@ -359,7 +307,6 @@ class AttendanceStatusAdapter extends AdapterBase {
     }
     return html;
   }
-
 
   isSubProfileTable() {
     return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';

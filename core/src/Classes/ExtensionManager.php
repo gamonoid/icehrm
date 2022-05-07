@@ -99,7 +99,8 @@ class ExtensionManager
 
                 /* @var \Classes\AbstractModuleManager */
                 $manager = $this->includeModuleManager($extensionDir, $arr);
-                if ($dbModule->status == 'Disabled') {
+
+                if (!$manager || $dbModule->status == 'Disabled') {
                     continue;
                 }
 
@@ -135,6 +136,9 @@ class ExtensionManager
 
     public function includeModuleManager($name, $data)
     {
+        if (!file_exists($this->getExtensionsPath().$name.'/'.$name.'.php')) {
+            return false;
+        }
         include($this->getExtensionsPath().$name.'/'.$name.'.php');
         $moduleManagerClass = $data['manager'];
         /* @var \Classes\AbstractModuleManager $moduleManagerObj*/

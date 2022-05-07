@@ -178,6 +178,9 @@ class IceTable extends React.Component {
                 {this.props.adapter.hasAccess('save') && this.props.adapter.getShowAddNew() &&
                 <Button type="primary" onClick={this.addNew}><PlusCircleOutlined/> Add New</Button>
                 }
+                {this.props.adapter.hasCustomTopButtons() &&
+                this.props.adapter.getCustomTopButtons()
+                }
                 {this.props.adapter.getFilters() &&
                 <Button onClick={this.showFilters}><FilterOutlined/> Filters</Button>
                 }

@@ -12,7 +12,6 @@ class v20210228_280004_add_visible_to_document extends AbstractMigration
 ALTER TABLE `EmployeeDocuments`
 ADD COLUMN `visible_to`  enum('Owner','Manager','Admin') NULL DEFAULT 'Owner' AFTER `expire_notification_last`;
 SQL;
-    $this->executeQuery($sql);
 
     return $this->executeQuery($sql);
   }

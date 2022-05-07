@@ -163,8 +163,7 @@ class PayrollActionManager extends SubActionManager
                 }
             }
 
-            if (!empty($col->calculation_columns) &&
-                !empty(json_decode($col->calculation_columns, true)) && !empty($col->calculation_function)) {
+            if (!empty(trim($col->calculation_function))) {
                 $cc = json_decode($col->calculation_columns);
                 $func = $col->calculation_function;
                 $variableList = [];
@@ -183,6 +182,7 @@ class PayrollActionManager extends SubActionManager
                     if ($col->function_type === 'Simple') {
                         $sum += $evalMath->evaluate($func);
                     } else {
+                        $variableList = $this->updateDefaultVars($variableList, $payroll, $employeeId);
                         $sum = ScriptRunner::executeJs($variableList, $func);
                     }
                 } catch (\Exception $e) {
@@ -192,10 +192,31 @@ class PayrollActionManager extends SubActionManager
             }
         }
 
-        //return $sum;
-        $val = number_format(round($sum, 2), 2, '.', '');
-        $this->addToCalculationCache($col->id."-".$payroll->id."-".$employeeId, $val);
-        return $val;
+        if (is_numeric($sum)) {
+            $sum = number_format(round($sum, 2), 2, '.', '');
+        } else {
+            $sum = htmlentities($sum, ENT_QUOTES, 'UTF-8');
+        }
+
+        $this->addToCalculationCache($col->id."-".$payroll->id."-".$employeeId, $sum);
+        return $sum;
+    }
+
+    private function updateDefaultVars($variableList, $payroll, $employeeId)
+    {
+        $mapping = '{"nationality":["Nationality","id","name"],'
+            .'"employment_status":["EmploymentStatus","id","name"],"job_title":["JobTitle","id","name"],'
+            .'"pay_grade":["PayGrade","id","name"],"country":["Country","code","name"],'
+            .'"province":["Province","id","name"],"department":["CompanyStructure","id","title"],'
+            .'"supervisor":["Employee","id","first_name+last_name"]}';
+
+        $employee = BaseService::getInstance()->getElement('Employee', $employeeId, $mapping, true);
+        $employee = BaseService::getInstance()->cleanUpAll($employee);
+
+        $variableList['employee'] = $employee;
+        $variableList['payroll'] = $payroll;
+
+        return $variableList;
     }
 
     private function calculateDeductionValue($employeeId, $deduction, $payroll)

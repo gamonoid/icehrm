@@ -61,7 +61,7 @@ class RestEndPoint
 
         $employee = new Employee();
         $employee->Load("id = ?", array($employeeId));
-        if (empty($employee->id) || $employee->id !== $employeeId . '') {
+        if (empty($employee->id) || $employee->id != $employeeId) {
             return new IceResponse(IceResponse::ERROR, self::RESPONSE_ERR_EMPLOYEE_NOT_FOUND, 422);
         }
 

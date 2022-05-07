@@ -163,7 +163,7 @@ class BaseService
             $newList[] = $this->cleanUpAdoDB($listObj);
         }
 
-        if (!empty($mappingStr) && count($map)>0) {
+        if (!empty($mappingStr) && is_object($map)) {
             $list = $this->populateMapping($newList, $map);
         }
 
@@ -291,7 +291,7 @@ class BaseService
                 && !$skipProfileRestriction && !$isSubOrdinates) {
                 $cemp = BaseService::getInstance()->getCurrentProfileId();
                 $sql = "Select count(id) as count from "
-                    . $obj->_table . " where " . SIGN_IN_ELEMENT_MAPPING_FIELD_NAME . " = ? " . $countFilterQuery;
+                    . $obj->table . " where " . SIGN_IN_ELEMENT_MAPPING_FIELD_NAME . " = ? " . $countFilterQuery;
                 array_unshift($countFilterQueryData, $cemp);
 
                 $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
@@ -365,12 +365,12 @@ class BaseService
                             }
                         }
                     }
-                    $sql = "Select count(id) as count from " . $obj->_table .
+                    $sql = "Select count(id) as count from " . $obj->table .
                         " where " . $obj->getUserOnlyMeAccessField() . " in (" . $subordinatesIds . ") "
                         . $countFilterQuery;
                     $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
                 } else {
-                    $sql = "Select count(id) as count from " . $obj->_table;
+                    $sql = "Select count(id) as count from " . $obj->table;
                     if (!empty($countFilterQuery)) {
                         $sql .= " where 1=1 " . $countFilterQuery;
                     }
@@ -426,6 +426,7 @@ class BaseService
         $skipProfileRestriction = false,
         $sortData = array()
     ) {
+        $map = [];
         if (!empty($mappingStr)) {
             $map = json_decode($mappingStr);
         }
@@ -678,7 +679,7 @@ class BaseService
 
         $list = $processedList;
 
-        if (!empty($mappingStr) && count($map)>0) {
+        if (!empty($mappingStr) && is_object($map)) {
             $list = $this->populateMapping($list, $map);
         }
 
@@ -975,7 +976,7 @@ class BaseService
 
         $ele->Load('id = ?', array($id));
 
-        if (empty($ele->id) || $ele->id !== $id) {
+        if (empty($ele->id) || $ele->id !== intval($id)) {
             return new IceResponse(
                 IceResponse::ERROR,
                 "Item not found"
@@ -1099,7 +1100,7 @@ class BaseService
         foreach ($list as $obj) {
             $obj = $this->cleanUpAdoDB($obj);
             if (count($values) == 1) {
-                $ret[$obj->$key] = $obj->$value;
+                $ret[(string)$obj->$key] = $obj->$value;
             } else {
                 $objVal = "";
                 foreach ($values as $v) {
@@ -1108,7 +1109,7 @@ class BaseService
                     }
                     $objVal .= $obj->$v;
                 }
-                $ret[$obj->$key] = $objVal;
+                $ret[(string)$obj->$key] = $objVal;
             }
         }
         return $ret;
@@ -1257,14 +1258,6 @@ class BaseService
     public function cleanUpAdoDB($obj)
     {
         unset($obj->table);
-        unset($obj->_table);
-        unset($obj->_dbat);
-        unset($obj->_tableat);
-        unset($obj->_where);
-        unset($obj->_saved);
-        unset($obj->_lasterr);
-        unset($obj->_original);
-        unset($obj->foreignName);
 
         return $obj;
     }

@@ -349,6 +349,13 @@ class PayrollColumnAdapter extends AdapterBase {
     ];
   }
 
+  forceInjectValuesBeforeSave(params) {
+    if (params.calculation_function && params.calculation_function.trim() !== '') {
+      params.calculation_function = btoa(params.calculation_function);
+    }
+    return params;
+  }
+
   getFilters() {
     return [
       ['deduction_group', {

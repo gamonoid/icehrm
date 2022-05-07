@@ -6,6 +6,7 @@ use Classes\IceResponse;
 use Data\Common\Model\DataImport;
 use FieldNames\Common\Model\CustomField;
 use Utils\LogManager;
+use Utils\ScriptRunner;
 
 abstract class AbstractDataImporter implements DataImporter
 {
@@ -151,7 +152,7 @@ abstract class AbstractDataImporter implements DataImporter
         }
 
         if ($headerColumn->type == "Normal") {
-            $this->rowObjects[$row]->{$headerColumn->name} = $data;
+            $this->rowObjects[$row]->{$headerColumn->name} = $data === 'NULL' ? null : $data;
         } elseif ($headerColumn->type == "Reference") {
             $hcClass = BaseService::getInstance()->getFullQualifiedModelClassName($headerColumn->dependOn);
             $hcField = $headerColumn->dependOnField;
@@ -234,6 +235,9 @@ abstract class AbstractDataImporter implements DataImporter
         LogManager::getInstance()->info("Line Count:".count($lines));
 
         $res = array();
+        $dataImport = new DataImport();
+        $dataImport->Load("id =?", array($dataImportId));
+        $func = $dataImport->details;
 
         foreach ($lines as $line) {
             $cells = str_getcsv($line, ",");
@@ -247,6 +251,19 @@ abstract class AbstractDataImporter implements DataImporter
                 }
                 $headerProcessed = true;
             } else {
+                $i = 1;
+                $variableList = [];
+                foreach ($cells as $value) {
+                    $variableList["col$i"] = $value;
+                    $i++;
+                }
+                if ($func) {
+                    $scriptResult = ScriptRunner::executeJs($variableList, $func);
+                    if (empty($scriptResult)) {
+                        continue;
+                    }
+                    $cells = explode(',', $scriptResult);
+                }
                 $result = $this->processDataRow($counter, $cells);
                 $res[] = array($cells,$result);
             }

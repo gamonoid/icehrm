@@ -19,9 +19,9 @@ use Model\RestAccessToken;
 use Model\Setting;
 use Utils\LogManager;
 
-include(APP_BASE_PATH.'lib/adodb512/adodb.inc.php');
-include(APP_BASE_PATH.'lib/adodb512/adodb-active-record.inc.php');
-$ADODB_ASSOC_CASE = 2;
+//include(APP_BASE_PATH.'lib/adodb512/adodb.inc.php');
+//include(APP_BASE_PATH.'lib/adodb512/adodb-active-record.inc.php');
+//$ADODB_ASSOC_CASE = 2;
 
 include(APP_BASE_PATH.'lib/fpdf/fpdf.php');
 
@@ -40,17 +40,19 @@ if (defined("MODULE_PATH")) {
     }
 }
 
-$dbLocal = NewADOConnection('mysqli');
+//$dbLocal = NewADOConnection('mysqli');
+//$res = $dbLocal->Connect(APP_HOST, APP_USERNAME, APP_PASSWORD, APP_DB);
+
+$dbLocal = new \MyORM\MySqlActiveRecord();
 $res = $dbLocal->Connect(APP_HOST, APP_USERNAME, APP_PASSWORD, APP_DB);
 
-
-File::SetDatabaseAdapter($dbLocal);
-Setting::SetDatabaseAdapter($dbLocal);
-Report::SetDatabaseAdapter($dbLocal);
-DataEntryBackup::SetDatabaseAdapter($dbLocal);
-Audit::SetDatabaseAdapter($dbLocal);
-Notification::SetDatabaseAdapter($dbLocal);
-RestAccessToken::SetDatabaseAdapter($dbLocal);
+//File::SetDatabaseAdapter($dbLocal);
+//Setting::SetDatabaseAdapter($dbLocal);
+//Report::SetDatabaseAdapter($dbLocal);
+//DataEntryBackup::SetDatabaseAdapter($dbLocal);
+//Audit::SetDatabaseAdapter($dbLocal);
+//Notification::SetDatabaseAdapter($dbLocal);
+//RestAccessToken::SetDatabaseAdapter($dbLocal);
 
 $user = \Utils\SessionUtils::getSessionObject('user');
 
@@ -152,7 +154,7 @@ if (defined('CLIENT_PATH')) {
         /** @var BaseModel $modelClass */
         foreach ($modelClassList as $modelClass) {
             $modelClassWithNameSpace = $metaData['model_namespace']."\\".$modelClass;
-            $modelClassWithNameSpace::SetDatabaseAdapter($dbLocal);
+            //$modelClassWithNameSpace::SetDatabaseAdapter($dbLocal);
             $baseService->addModelClass($modelClass, $modelClassWithNameSpace);
             $modelClassObject = new $modelClassWithNameSpace();
         }

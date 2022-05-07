@@ -47,7 +47,7 @@ class ChartsRestEndpoint extends RestEndPoint
     on e.department = c.id
     group by department
 SQL;
-        $user->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
+        // $user->DB()->SetFetchMode(ADODB_FETCH_ASSOC);
         $rs = $user->DB()->Execute($query);
 
         foreach ($rs as $rowId => $row) {

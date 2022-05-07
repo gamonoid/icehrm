@@ -45,7 +45,7 @@ class ReactModalAdapterBase extends AdapterBase {
   }
 
   hasAccess(type) {
-    return this.access.indexOf(type) > 0;
+    return this.access.indexOf(type) >= 0;
   }
 
   hasCustomButtons() {
@@ -188,7 +188,7 @@ class ReactModalAdapterBase extends AdapterBase {
           {` ${adapter.gt('Delete')}`}
         </Tag>
         )}
-        {adapter.hasAccess('save')
+        {adapter.hasAccess('save') && adapter.showAddNew
         && (
         <Tag color="cyan" onClick={() => modJs.copyRow(record.id)} style={{ cursor: 'pointer' }}>
           <CopyOutlined />
@@ -297,6 +297,14 @@ class ReactModalAdapterBase extends AdapterBase {
 
       return item;
     });
+  }
+
+  hasCustomTopButtons() {
+    return false;
+  }
+
+  getCustomTopButtons() {
+    return (<></>);
   }
 
   getFormOptions() {

@@ -4,6 +4,9 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Classes\PermissionManager;
+use FieldNames\Common\Model\FieldNameMapping;
+
 $moduleName = 'fieldnames';
 $moduleGroup = 'admin';
 define('MODULE_PATH',dirname(__FILE__));
@@ -17,26 +20,24 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
 	<div class="tab-content">
         <div class="tab-pane active" id="tabPageEmployeeFieldName">
-            <div id="EmployeeFieldName" class="reviewBlock" data-content="List" style="padding-left:5px;">
-
-            </div>
-            <div id="EmployeeFieldNameForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-
+            <div id="EmployeeFieldNameTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+            <div id="EmployeeFieldNameForm"></div>
+            <div id="EmployeeFieldNameFilterForm"></div>
             </div>
         </div>
 	</div>
 
 </div>
+<div id="dataGroup"></div>
+<?php
+$moduleData = [
+    'user_level' => $user->user_level,
+    'permissions' => [
+        'FieldNameMapping' => PermissionManager::checkGeneralAccess(new FieldNameMapping()),
+    ]
+];
+?>
 <script>
-var modJsList = [];
-
-modJsList['tabEmployeeFieldName'] = new FieldNameAdapter('FieldNameMapping','EmployeeFieldName',{"type":"Employee"});
-modJsList['tabEmployeeFieldName'].setRemoteTable(true);
-modJsList['tabEmployeeFieldName'].setShowDelete(false);
-modJsList['tabEmployeeFieldName'].setShowAddNew(false);
-
-
-var modJs = modJsList['tabEmployeeFieldName'];
-
+  initAdminEmployeeFieldName(<?=json_encode($moduleData)?>);
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>

@@ -1,5 +1,8 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20220123_310008_remove_photo_att';
+$migrationList[] = 'v20220122_310007_career_progression';
+$migrationList[] = 'v20220122_310006_update_menu';
 $migrationList[] = 'v20220114_310005_performance_templates';
 $migrationList[] = 'v20211223_310004_document_visibility';
 $migrationList[] = 'v20211203_310002_performance_goals';

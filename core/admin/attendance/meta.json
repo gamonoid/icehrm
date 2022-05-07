@@ -1,7 +1,7 @@
 {
-    "label": "Monitor Attendance",
-    "menu": "Employees",
-    "order": "8",
+    "label": "Attendance",
+    "menu": "Manage",
+    "order": "2",
     "icon": "fa-clock",
     "user_levels": [
         "Admin",
