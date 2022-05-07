@@ -4,12 +4,14 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Attendance\Common\Model\Attendance;
+use Classes\PermissionManager;
+
 $moduleName = 'attendance';
 $moduleGroup = 'admin';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
-$photoAttendance = \Classes\SettingsManager::getInstance()->getSetting('Attendance: Photo Attendance');
 $mapAttendance = \Classes\SettingsManager::getInstance()->getSetting('Attendance: Request Attendance Location on Mobile');
 ?><div class="span9">
 
@@ -20,20 +22,14 @@ $mapAttendance = \Classes\SettingsManager::getInstance()->getSetting('Attendance
 
 	<div class="tab-content">
 		<div class="tab-pane active" id="tabPageAttendance">
-			<div id="Attendance" class="reviewBlock" data-content="List" style="padding-left:5px;">
-
-			</div>
-			<div id="AttendanceForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-
-			</div>
+			<div id="AttendanceTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+            <div id="AttendanceForm"></div>
+            <div id="AttendanceFilterForm"></div>
 		</div>
         <div class="tab-pane" id="tabPageAttendanceStatus">
-            <div id="AttendanceStatus" class="reviewBlock" data-content="List" style="padding-left:5px;">
-
-            </div>
-            <div id="AttendanceStatusForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-
-            </div>
+            <div id="AttendanceStatusTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+            <div id="AttendanceStatusForm"></div>
+            <div id="AttendanceStatusFilterForm"></div>
         </div>
 
 	</div>
@@ -62,14 +58,6 @@ $mapAttendance = \Classes\SettingsManager::getInstance()->getSetting('Attendance
                         IP Address: <span id="punchOutIp"></span>
                     </div>
                 </div>
-				<div id="attendancePhoto" class="row" style="background: #f3f4f5; padding: 10px;display:none;">
-					<div id="attendnaceCanvasInWrapper" class="col-sm-6" style="text-align: center;">
-
-					</div>
-					<div id="attendnaceCanvasOutWrapper" class="col-sm-6" style="text-align: center;">
-
-					</div>
-				</div>
                 <div id="attendanceMap" class="row" style="background: #f3f4f5; padding: 10px;display:none;">
                     <div id="attendnaceMapCanvasInWrapper" class="col-sm-6" style="text-align: center;">
 
@@ -85,6 +73,10 @@ $mapAttendance = \Classes\SettingsManager::getInstance()->getSetting('Attendance
                         <span>Location: <span id="punchOutLocation"></span></span>
                     </div>
                 </div>
+                <div id="attendanceNoteWrapper" class="row" style="margin-top:10px;background: #f3f4f5; padding: 10px;display:none;">
+                    <p style="font-weight: bold;">Note:</p>
+                    <p id="attendanceNote"></p>
+                </div>
 			</div>
 			<div class="modal-footer">
 
@@ -92,14 +84,18 @@ $mapAttendance = \Classes\SettingsManager::getInstance()->getSetting('Attendance
 		</div>
 	</div>
 </div>
+<div id="dataGroup"></div>
+<?php
+$moduleData = [
+    'user_level' => $user->user_level,
+    'photoAttendance' => $mapAttendance == '1',
+    'permissions' => [
+        'Attendance' => PermissionManager::checkGeneralAccess(new Attendance()),
+        'AttendanceStatus' => [],
+    ]
+];
+?>
 <script>
-var modJsList = new Array();
-modJsList['tabAttendance'] = new AttendanceAdapter('Attendance','Attendance','','in_time desc');
-modJsList['tabAttendance'].setRemoteTable(true);
-modJsList['tabAttendance'].setPhotoAttendance(<?=$photoAttendance == '1' || $mapAttendance == '1'?>);
-modJsList['tabAttendanceStatus'] = new AttendanceStatusAdapter('AttendanceStatus','AttendanceStatus','','');
-modJsList['tabAttendanceStatus'].setShowAddNew(false);
-var modJs = modJsList['tabAttendance'];
-
+  initAdminAttendance(<?=json_encode($moduleData)?>);
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>

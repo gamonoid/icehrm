@@ -1,7 +1,7 @@
 {
-    "label": "Document Management",
-    "menu": "Employees",
-    "order": "2",
+    "label": "Documents",
+    "menu": "Manage",
+    "order": "1",
     "icon": "fa-file-alt",
     "user_levels": [
         "Admin",

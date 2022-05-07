@@ -1,7 +1,7 @@
 {
-    "label": "Travel Requests",
-    "menu": "Employees",
-    "order": "6",
+    "label": "Travel",
+    "menu": "Manage",
+    "order": "9",
     "icon": "fa-plane",
     "user_levels": [
         "Admin",
