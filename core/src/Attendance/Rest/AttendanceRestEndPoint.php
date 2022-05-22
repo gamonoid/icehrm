@@ -34,6 +34,7 @@ class AttendanceRestEndPoint extends RestEndPoint
         $query->addColumn('in_time');
         $query->addColumn('out_time');
         $query->addColumn('note');
+        $query->setOrderBy('in_time desc');
 
         $limit = self::DEFAULT_LIMIT;
         if (isset($_GET['limit']) && intval($_GET['limit']) > 0) {
