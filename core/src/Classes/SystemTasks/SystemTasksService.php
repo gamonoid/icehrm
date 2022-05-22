@@ -27,35 +27,53 @@ class SystemTasksService
         $this->taskCreators[] = $taskCreator;
     }
 
+//    protected function prepareTaskCreatorCallbacks()
+//    {
+//        $taskGenerators = [];
+//        foreach ($this->taskCreators as $taskCreator) {
+//            $taskList = $taskCreator->getTasksCreators();
+//            foreach ($taskList as $order => $callback) {
+//                $nextOrder = $order * 1000;
+//                while (isset($taskGenerators[$nextOrder])) {
+//                    $nextOrder = 1 + $nextOrder;
+//                }
+//
+//                $taskGenerators[$nextOrder] = $callback;
+//            }
+//        }
+//
+//        return $taskGenerators;
+//    }
+
+
     protected function prepareTaskCreatorCallbacks()
     {
         $taskGenerators = [];
         foreach ($this->taskCreators as $taskCreator) {
             $taskList = $taskCreator->getTasksCreators();
-            foreach ($taskList as $order => $callback) {
-                $nextOrder = $order * 1000;
-                while (isset($taskGenerators[$nextOrder])) {
-                    $nextOrder = 1 + $nextOrder;
-                }
-
-                $taskGenerators[$nextOrder] = $callback;
+            foreach ($taskList as $callback) {
+                $taskGenerators[] = $callback;
             }
         }
 
         return $taskGenerators;
     }
+
+
     public function getAdminTasks()
     {
         $tasks = [];
         $taskGenerators = $this->prepareTaskCreatorCallbacks();
-        ksort($taskGenerators);
         foreach ($taskGenerators as $key => $callback) {
+            /** @var Task $task */
             $task = $callback();
             if (!empty($task)) {
                 $tasks[] = $task;
             }
         }
-
+        usort($tasks, function ($a, $b) {
+            return $b->getPriority() - $a->getPriority();
+        });
         return $tasks;
     }
 }
