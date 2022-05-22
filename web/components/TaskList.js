@@ -3,11 +3,12 @@ import {
   Timeline, Drawer, Empty, Button, Space, Typography, Popover,
 } from 'antd';
 import {
-  ClockCircleOutlined,
-  PlusCircleOutlined,
+  FireOutlined,
+  AlertTwoTone,
   InfoCircleOutlined,
   PauseCircleOutlined,
   MedicineBoxOutlined,
+  WarningTwoTone,
 } from '@ant-design/icons';
 
 const { Paragraph } = Typography;
@@ -86,10 +87,25 @@ class TaskList extends React.Component {
   }
 
   createTask(task, index) {
-    if (task.priority === 100) {
+    if (task.priority === 1000) {
       return (
-        <Timeline.Item onMouseEnter={() => this.handleTaskHover(index)}
-          dot={<ClockCircleOutlined style={{ fontSize: '16px' }} />} color="red" >
+        <Timeline.Item key={index} onMouseEnter={() => this.handleTaskHover(index)}
+                       dot={<AlertTwoTone style={{ fontSize: '16px' }} twoToneColor="red" />} >
+          {this.getText(task)}
+          {task.link && this.state.tasks[index]
+          && (
+            <Button type="link" onClick={() => this.visitLink(task.link)}>
+              <MedicineBoxOutlined style={{ fontSize: '16px' }} />
+              {' '}
+              {task.action}
+            </Button>
+          )}
+        </Timeline.Item>
+      );
+    } else if (task.priority === 100) {
+      return (
+        <Timeline.Item key={index} onMouseEnter={() => this.handleTaskHover(index)}
+          dot={<FireOutlined style={{ fontSize: '16px' }} />} color="red" >
           {this.getText(task)}
           {task.link && this.state.tasks[index]
           && (
@@ -101,9 +117,24 @@ class TaskList extends React.Component {
           )}
         </Timeline.Item>
       );
-    } if (task.priority === 50) {
+    } else if (task.priority === 50) {
       return (
-        <Timeline.Item onMouseEnter={() => this.handleTaskHover(index)}
+        <Timeline.Item key={index} onMouseEnter={() => this.handleTaskHover(index)}
+          dot={<WarningTwoTone style={{ fontSize: '16px' }} twoToneColor="#f57b42" />}>
+          {this.getText(task)}
+          {task.link && this.state.tasks[index]
+          && (
+          <Button type="link" onClick={() => this.visitLink(task.link)}>
+            <MedicineBoxOutlined style={{ fontSize: '16px' }} />
+            {' '}
+            {task.action}
+          </Button>
+          )}
+        </Timeline.Item>
+      );
+    } else if (task.priority === 20) {
+      return (
+        <Timeline.Item key={index} onMouseEnter={() => this.handleTaskHover(index)}
           dot={<InfoCircleOutlined style={{ fontSize: '16px' }} />} color="blue">
           {this.getText(task)}
           {task.link && this.state.tasks[index]
@@ -116,24 +147,9 @@ class TaskList extends React.Component {
           )}
         </Timeline.Item>
       );
-    } if (task.priority === 20) {
+    } else if (task.priority === 10) {
       return (
-        <Timeline.Item onMouseEnter={() => this.handleTaskHover(index)}
-          dot={<PlusCircleOutlined style={{ fontSize: '16px' }} />} color="blue">
-          {this.getText(task)}
-          {task.link && this.state.tasks[index]
-          && (
-          <Button type="link" onClick={() => this.visitLink(task.link)}>
-            <MedicineBoxOutlined style={{ fontSize: '16px' }} />
-            {' '}
-            {task.action}
-          </Button>
-          )}
-        </Timeline.Item>
-      );
-    } if (task.priority === 10) {
-      return (
-        <Timeline.Item onMouseEnter={() => this.handleTaskHover(index)}
+        <Timeline.Item key={index} onMouseEnter={() => this.handleTaskHover(index)}
           dot={<PauseCircleOutlined style={{ fontSize: '16px' }} />} color="green">
           {this.getText(task)}
           {task.link && this.state.tasks[index]

@@ -248,7 +248,6 @@ gulp.task('admin-js', (done) => {
     'clients',
     'charts',
     'dashboard',
-    'data',
     'documents',
     'employees',
     'fieldnames',
