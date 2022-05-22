@@ -10,6 +10,7 @@ namespace Employees\Admin\Api;
 
 use Classes\AbstractModuleManager;
 use Classes\Macaw;
+use Classes\SystemTasks\SystemTasksService;
 use Classes\UIManager;
 use Employees\Common\Model\Employee;
 use Employees\Rest\EmployeeCertificationsRestEndPoint;
@@ -20,6 +21,11 @@ use Employees\Rest\EmployeeSkillsRestEndPoint;
 
 class EmployeesAdminManager extends AbstractModuleManager
 {
+
+    public function initialize()
+    {
+        SystemTasksService::getInstance()->registerTaskCreator((new EmployeeTaskCreator()));
+    }
 
     public function initializeUserClasses()
     {
