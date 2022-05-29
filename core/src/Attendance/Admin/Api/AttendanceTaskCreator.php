@@ -13,7 +13,7 @@ class AttendanceTaskCreator implements TaskCreator
     {
         $taskCreators = [];
 
-        $taskCreators[1] = function () {
+        $taskCreators[] = function () {
             if (!$this->isUserCheckedIn()) {
                 return (new Task(Task::PRIORITY_ERROR, 'You are currently not checked-in'))
                     ->setLink(
@@ -25,7 +25,7 @@ class AttendanceTaskCreator implements TaskCreator
             return null;
         };
 
-        $taskCreators[2] = function () {
+        $taskCreators[] = function () {
             if ($this->userNeedToCheckOut()) {
                 return (new Task(Task::PRIORITY_INFO, 'Remember to checkout after finishing work'))
                     ->setLink(

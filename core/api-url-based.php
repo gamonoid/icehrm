@@ -25,13 +25,9 @@ if(\Classes\SettingsManager::getInstance()->getSetting('Api: REST Api Enabled') 
 
         $moduleManagerObj->setupRestEndPoints();
     }
-    $method = $_SERVER['REQUEST_METHOD'];
-    if (strtoupper($method) === 'GET') {
-        \Classes\IceRoute::dispatch($_GET['url'], $method);
-    } else {
-        $method = strtoupper($_REQUEST['method']);
-        \Classes\IceRoute::dispatch($_REQUEST['url'], $method);
-    }
+
+    $method = strtoupper($_REQUEST['method']);
+    \Classes\IceRoute::dispatch($_GET['url'], $method);
 
 
 }else{

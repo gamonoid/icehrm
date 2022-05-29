@@ -3,6 +3,7 @@ namespace Classes\SystemTasks\DTO;
 
 class Task implements \JsonSerializable
 {
+    const PRIORITY_TOP = 1000;
     const PRIORITY_ERROR = 100;
     const PRIORITY_WARNING = 50;
     const PRIORITY_INFO = 20;

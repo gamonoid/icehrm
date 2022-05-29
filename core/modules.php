@@ -383,6 +383,9 @@ if (!empty($user)) {
     foreach ($adminModules as $fk => $menu) {
         foreach ($menu['menu'] as $key => $item) {
             // If the user's once of the user roles are blacklisted for the module
+            if (empty($item['user_roles_blacklist'])) {
+                $item['user_roles_blacklist'] = [];
+            }
             $commonRoles = array_intersect($item['user_roles_blacklist'], $userRoles);
             if (!empty($commonRoles)) {
                 unset($adminModules[$fk]['menu'][$key]);
@@ -390,6 +393,9 @@ if (!empty($user)) {
 
             if (!in_array($user->user_level, $item['user_levels'])) {
                 if (!empty($userRoles)) {
+                    if (empty($item['user_roles'])) {
+                        $item['user_roles'] = [];
+                    }
                     $commonRoles = array_intersect($item['user_roles'], $userRoles);
                     if (empty($commonRoles)) {
                         unset($adminModules[$fk]['menu'][$key]);
@@ -404,12 +410,18 @@ if (!empty($user)) {
     foreach ($userModules as $fk => $menu) {
         foreach ($menu['menu'] as $key => $item) {
             // If the user's once of the user roles are blacklisted for the module
+            if (empty($item['user_roles_blacklist'])) {
+                $item['user_roles_blacklist'] = [];
+            }
             $commonRoles = array_intersect($item['user_roles_blacklist'], $userRoles);
             if (!empty($commonRoles)) {
                 unset($userModules[$fk]['menu'][$key]);
             }
             if (!in_array($user->user_level, $item['user_levels'])) {
                 if (!empty($userRoles)) {
+                    if (empty($item['user_roles'])) {
+                        $item['user_roles'] = [];
+                    }
                     $commonRoles = array_intersect($item['user_roles'], $userRoles);
                     if (empty($commonRoles)) {
                         unset($userModules[$fk]['menu'][$key]);
@@ -424,12 +436,18 @@ if (!empty($user)) {
     foreach ($extensions as $fk => $menu) {
         foreach ($menu['menu'] as $key => $item) {
             // If the user's once of the user roles are blacklisted for the module
+            if (empty($item['user_roles_blacklist'])) {
+                $item['user_roles_blacklist'] = [];
+            }
             $commonRoles = array_intersect($item['user_roles_blacklist'], $userRoles);
             if (!empty($commonRoles)) {
                 unset($extensions[$fk]['menu'][$key]);
             }
             if (!in_array($user->user_level, $item['user_levels'])) {
                 if (!empty($userRoles)) {
+                    if (empty($item['user_roles'])) {
+                        $item['user_roles'] = [];
+                    }
                     $commonRoles = array_intersect($item['user_roles'], $userRoles);
                     if (empty($commonRoles)) {
                         unset($extensions[$fk]['menu'][$key]);

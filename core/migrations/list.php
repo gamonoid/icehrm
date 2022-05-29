@@ -1,5 +1,6 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20220529_330001_google_map_api_key';
 $migrationList[] = 'v20220123_310008_remove_photo_att';
 $migrationList[] = 'v20220122_310007_career_progression';
 $migrationList[] = 'v20220122_310006_update_menu';

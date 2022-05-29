@@ -12,7 +12,7 @@ class StatsHelper
         $employee = new Employee();
         $employeeCount = $employee->DB()->Execute("select count(id) from Employees");
         if ($employeeCount) {
-            $employeeCount = intval($employeeCount->fields[0]);
+            $employeeCount = intval($employeeCount[0]['count(id)']);
             return $employeeCount;
         }
 
@@ -24,7 +24,7 @@ class StatsHelper
         $employee = new Employee();
         $employeeCount = $employee->DB()->Execute("select count(id) from Employees where  status = ?", ['Active']);
         if ($employeeCount) {
-            $employeeCount = intval($employeeCount->fields[0]);
+            $employeeCount = intval($employeeCount[0]['count(id)']);
             return $employeeCount;
         }
 
@@ -36,7 +36,7 @@ class StatsHelper
         $user = new User();
         $userCount = $user->DB()->Execute("select count(id) from Users");
         if ($userCount) {
-            $userCount = intval($userCount->fields[0]);
+            $userCount = intval($userCount[0]['count(id)']);
             return $userCount;
         }
 

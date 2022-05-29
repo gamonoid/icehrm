@@ -1,5 +1,32 @@
 # Release Notes IceHrm Open Source
 
+## Release note v32.1.0.OS
+
+### 🧲 New features
+
+* PHP 8 support
+* Add department to attendance status filter
+* Add employee management reminders
+* Add leave and expense management reminders
+* UI improvements to attendance module.
+* UI Improvements to employee filed names module.
+* Restructuring main menu.
+* Adding non-binary gender.
+* Payroll template design improvements.
+* Automatically set payroll column order.
+* Improvements to payroll calculations.
+
+### 🐛 Bug fixes
+* Change attendance punch In/Out labels based on users' current attendance status
+* Fix table pagination when filters are applied
+* Fix the issue with showing employee name on attendance status
+* Fixed the issue with loading some approval requests
+
+### 🧑🏻‍💻 For developers
+* AdoDB is replaced with a mysqli based fast and simple ORM
+* URL based API
+* Sort attendance API response based on time
+
 ## Release note v31.0.0.OS
 
 ### 🧲 New features
