@@ -14,9 +14,9 @@ if(!defined('HOME_LINK_OTHERS')){
 
 //Version
 define('VERSION', '32.1.0.OS');
-define('CACHE_VALUE', '32.1.0.OS.2022-05071325');
+define('CACHE_VALUE', '32.1.0.OS.2022-05291325');
 define('VERSION_NUMBER', '320100');
-define('VERSION_DATE', '07/05/2022');
+define('VERSION_DATE', '29/05/2022');
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','icehrm@gamonoid.com');}
 if(!defined('KEY_PREFIX')){define('KEY_PREFIX','IceHrm');}
