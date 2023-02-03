@@ -9,7 +9,7 @@
 /.vagrant
 keys.tags.pub
 keys.dev.pub
-/app/config.php
+/app/config-dev.php
 /app/icehrm.key
 /app/data/*.*
 /app/data/keys/*

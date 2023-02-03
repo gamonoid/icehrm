@@ -37,9 +37,9 @@ Refer: [https://icehrm.com/explore/docs/upgrade-icehrmpro/](https://icehrm.com/e
 
 ## Setup Development Environment
 ```
-$ git clone https://github.com/gamonoid/icehrm.git
-$ cd icehrm
-$ docker-compose up -d
+git clone https://github.com/gamonoid/icehrm.git
+cd icehrm
+docker-compose up -d
 ```
 - Visit [http://localhost:9080/](http://localhost:9080/) and login using `admin` as username and password.
 - Watch this for more detailed instructions: [https://www.youtube.com/watch?v=sz8OV_ON6S8](https://www.youtube.com/watch?v=sz8OV_ON6S8)
@@ -58,21 +58,21 @@ php ice create:extension simple admin
 - When ever you have done a change to JavaScript or CSS files in icehrm/web you need to rebuild the frontend
 - First make sure you have all the dependencies (just doing this once is enough)
 ```
-$ cd icehrm/web
-$ npm install
-$ cd ..
-$ npm install
+cd icehrm/web
+npm install
+cd ..
+npm install
 ```
 
 - Build assets during development
 ```
-$ gulp clean
-$ gulp
+gulp clean
+gulp
 ```
 
 - Build assets for production
 ```
-$ gulp clean
+gulp clean
 $ gulp --eprod
 ```
 
