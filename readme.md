@@ -2,171 +2,60 @@ IceHrm
 ===========
 [![Build Status](https://travis-ci.org/gamonoid/icehrm.svg?branch=master)](https://travis-ci.org/gamonoid/icehrm)
 
+IceHrm is an [HRM software](https://icehrm.com) which enable companies to manage employee details and HR workflows.
 
-IceHrm is a [HRM software](https://icehrm.com) which enable companies of all sizes to [manage HR activities](https://icehrm.com)
-properly.
-- [IceHrm Demo](https://icehrm.com/icehrm-demo) 
-- Feature-rich version of IceHrm (IceHrmPro) is available at [https://icehrm.com/purchase-icehrmpro](https://icehrm.com/purchase-icehrmpro)
+- Checkout IceHrm without installing: [IceHrm Demo](https://icehrm.com/icehrm-demo)
+- Get a Mananged IceHrm Installation: [IceHrm Cloud](https://icehrm.com/icehrm-cloud)
+- Self Host a Feature Rich Version of IceHrm: [IceHrmPro](https://icehrm.com/purchase-icehrmpro)
 
 ![](docs/images/icehrm-employee-list.png)
 &nbsp;&nbsp;&nbsp;&nbsp;
 ![](docs/images/icehrm-dashboard.png)
 
-Getting started
----------------
+## Installation
 
-The easiest way to run IceHrm is using docker
+### Using Docker
+
 - Install docker on Mac, Windows or Linux [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
+- Download the [latest version of IceHrm](https://github.com/gamonoid/icehrm/releases/latest) and extract it.
+- Alternatively you can cone the repo `git clone https://github.com/gamonoid/icehrm.git`
+```
+$ cd icehrm
+$ docker compose -f docker-compose-prod.yaml up --build
+```
+- Visit [http://localhost:3128/](http://localhost:3128/) and login using `admin` as username and password.
+- Visit [http://localhost:3130/](http://localhost:3130/) to access phpmyadmin.
+- All user uploaded files are stored under `icehrm/docker/production/app_data`
 
-For Linux you need to install docker compose separately here [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
+### Installation (without docker)
+- Please check [Installation guide](https://icehrm.com/explore/docs/installation/).
+
+### Upgrade from Previous Versions
+
+Refer: [https://icehrm.com/explore/docs/upgrade-icehrmpro/](https://icehrm.com/explore/docs/upgrade-icehrmpro/)
 
 
+## Setup Development Environment
 ```
 $ git clone https://github.com/gamonoid/icehrm.git
 $ cd icehrm
-$ touch app/data/icehrm.log (or create the file manually)
-$ docker-compose -f docker-compose-prod.yaml up -d
+$ docker-compose up -d
 ```
+- Visit [http://localhost:9080/](http://localhost:9080/) and login using `admin` as username and password.
+- Watch this for more detailed instructions: [https://www.youtube.com/watch?v=sz8OV_ON6S8](https://www.youtube.com/watch?v=sz8OV_ON6S8)
 
-- Visit [http://localhost:8070/](http://localhost:8070/) to load icehrm
-
-You can find database and app data under `icehrm/docker/production` 
-
-When you want to kill the docker containers
-
+### Extend IceHrm with custom Extensions
+- Inorder to create an admin extension run
 ```
-docker-compose -f docker-compose-prod.yaml down
+php ice create:extension simple admin
 ```
+- Refresh IceHrm to see a new menu item called `SimpleAdmin`
+- The extension code can br found under `icehrm/extensions/simple/admin`
+- Refer: [https://icehrm.com/explore/docs/extensions/](https://icehrm.com/explore/docs/extensions/) for more details.
 
-For setting up your development environment watch [https://www.youtube.com/watch?v=sz8OV_ON6S8](https://www.youtube.com/watch?v=sz8OV_ON6S8)
-
-
-Refer [docker documentation](https://docs.docker.com/develop/dev-best-practices/) for best practices 
-
-
-IceHrm Mobile App (Beta)
-------------------------
-
-[Setup to IceHrm App with Your Account](https://icehrm.gitbook.io/icehrm/part-1/icehrm-mobile)
-
-<a href="https://itunes.apple.com/gb/app/icehrm/id1450757357?mt=8" target="_blank">
-<img width="200" src="https://s3.amazonaws.com/icehrm-public/images/appstore-icon.png">
-</a>
-
-<a href="https://play.google.com/store/apps/details?id=com.icehrm.mobile" target="_blank">
-<img width="200" src="https://s3.amazonaws.com/icehrm-public/images/playstore-icon.png">
-</a>
-
-
-Useful Links
--------------
- * User Guide: [https://icehrm.gitbook.io/icehrm/](https://icehrm.gitbook.io/icehrm/)
- * IceHrm Cloud Hosting: [https://icehrm.com](https://icehrm.com)
- * IceHrm Documentation (Opensource and Commercial): [http://blog.icehrm.com](http://blog.icehrm.com)
- * IceHrm Blog: [https://icehrm.com/blog](http://icehrm.com/blog)
- * Purchase IceHrm Pro: [https://icehrm.com/modules.php](https://icehrm.com/modules.php)
- * Report Issues: [https://github.com/gamonoid/icehrm/issues](https://github.com/gamonoid/icehrm/issues)
- * Feature Requests: [https://bitbucket.org/thilina/icehrm-opensource/issues](https://bitbucket.org/thilina/icehrm-opensource/issues)
- * Community Support: [http://stackoverflow.com/search?q=icehrm](http://stackoverflow.com/search?q=icehrm)
- * IceHrm Opensource Blog: [http://icehrm.org](http://icehrm.org)
-
-Installation without Docker
----------------------------
- * Download the latest release https://github.com/gamonoid/icehrm/releases/latest
-
- * Copy the downloaded file to the path you want to install iCE Hrm in your server and extract.
-
- * Create a mysql DB for and user. Grant all on iCE Hrm DB to new DB user.
-
- * Visit iCE Hrm installation path in your browser.
-
- * During the installation form, fill in details appropriately.
-
- * Once the application is installed use the username = admin and password = admin to login to your system.
-
- Note: Please rename or delete the install folder (<ice hrm root>/app/install) since it could pose a security threat to your iCE Hrm instance.
-
-Manual Installation
--------------------
-
-[](https://thilinah.gitbooks.io/icehrm-guide/content/manual-installation.html)
-
-Upgrade from Previous Versions to Latest Version
-------------------------------------------------
-
-Refer: [http://blog.icehrm.com/docs/upgrade/](http://blog.icehrm.com/docs/upgrade/)
-
-
-Setup IceHrm Development Environment (Docker)
------------------------------------------
-
-IceHrm uses docker to setup development environment
-
-
-- Clone icehrm from https://github.com/gamonoid/icehrm.git or download the source
-
-- Build frontend assets (refer to section *Building frontend assets*)
-
-```
-$ git clone https://github.com/gamonoid/icehrm.git
-$ cd icehrm
-$ docker-compose up
-```
-- Navigate to [http://localhost:8080](http://localhost:8080) to load icehrm. (user:admin/pass:admin)
-
-- Make some changes and the changes will be reflected on the above url 
-
-- Run e2e (cypress) tests
-
-```
-docker-compose -f docker-compose-testing.yaml up --exit-code-from cypress
-```
-
-- When you are ready to push your changes to production, make sure to build the production images
-```
-$ docker-compose -f docker-compose-prod.yaml up -d --build
-```
-
-Setup IceHrm Development Environment (Vagrant)
----------------------------------------------
-
-IceHrm development environment is packaged as a Vagrant box. I includes php7.3, nginx, phpunit and other
-software required for running icehrm
-
-### Preparing development VM with Vagrant
-
-- Clone icehrm from https://github.com/gamonoid/icehrm.git
-
-- Build frontend assets (refer to section *Building frontend assets*)
-
-- Install Vagrant [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
-
-- Run vagrant up in icehrm root directory (this will download icehrm vagrant image which is  ~1 GB)
-
-```
-~ $ vagrant up
-```
-
-- Run vagrant ssh to login to the Virtual machine
-
-```
-~ $ vagrant ssh
-~ $ sudo service nginx restart
-```
-
-- Add following entry to the end of the host file to map icehrm domains to VagrantBox (on MacOS and Linux this is /etc/hosts | on windows this is Windows\System32\Drivers\etc\hosts)
-
-```
-192.168.10.12   icehrm.os
-```
-
-- Navigate to [http://icehrm.os](http://icehrm.os) to load icehrm from Vagrant. (user:admin/pass:admin)
-
-Building frontend assets
-------------------------
+### Building frontend assets
 
 - When ever you have done a change to JavaScript or CSS files in icehrm/web you need to rebuild the frontend
-
 - First make sure you have all the dependencies (just doing this once is enough)
 ```
 $ cd icehrm/web
@@ -175,12 +64,44 @@ $ cd ..
 $ npm install
 ```
 
-- Then run gulp
+- Build assets during development
 ```
+$ gulp clean
 $ gulp
 ```
 
-- For production build use
+- Build assets for production
 ```
+$ gulp clean
 $ gulp --eprod
 ```
+
+- Build extensions
+```
+$ gulp ejs --xextension_name/admin
+```
+
+### Running tests (Docker)
+
+- Run e2e (cypress) tests
+
+```
+docker-compose -f docker-compose-testing.yaml up --exit-code-from cypress
+```
+or
+```
+docker-compose -f docker-compose-testing.yaml up --exit-code-from cypress --build --force-recreate
+```
+
+- When you are ready to push your changes to production, make sure to build the production images
+```
+$ docker-compose -f docker-compose-prod.yaml up -d --build
+```
+
+### Useful Links
+* IceHrm Opensource Blog: [http://icehrm.org](http://icehrm.org)
+* IceHrm Cloud Hosting: [https://icehrm.com](https://icehrm.com)
+* IceHrm Documentation (Opensource and Commercial): [https://icehrm.com/explore/docs/](https://icehrm.com/explore/docs/)
+* IceHrm Blog: [https://icehrm.com/blog](http://icehrm.com/blog)
+* Purchase IceHrm Pro: [https://icehrm.com/modules.php](https://icehrm.com/modules.php)
+* Report Issues: [https://github.com/gamonoid/icehrm/issues](https://github.com/gamonoid/icehrm/issues)
