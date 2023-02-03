@@ -1,6 +1,6 @@
 FROM alpine:3.17.1
 LABEL Maintainer="Thilina, Pituwala <thilina@icehrm.com>" \
-      Description="IceHrm Docker Container with Nginx 1.16 & PHP-FPM 7.3 based on Alpine Linux."
+      Description="IceHrm Docker Container with Nginx & PHP-FPM based on Alpine Linux."
 
 ENV PHPIZE_DEPS \
 		autoconf \

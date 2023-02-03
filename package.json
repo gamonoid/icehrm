@@ -6,9 +6,6 @@
   "directories": {
     "test": "test"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -55,5 +52,14 @@
     "gulp-javascript-obfuscator": "^1.1.6",
     "qrcode": "^1.3.3",
     "reqwest": "^2.0.5"
+  },
+  "scripts": {
+    "setup": "npm install && cd web && npm install && cd ..",
+    "docker:build": "docker compose -f docker-compose-prod.yaml build",
+    "docker:start": "docker compose -f docker-compose-prod.yaml up",
+    "docker:start:bg": "docker compose -f docker-compose-prod.yaml up -d",
+    "docker:stop": "docker compose -f docker-compose-prod.yaml down",
+    "asset:build": "gulp",
+    "asset:build:prod": "gulp --eprod"
   }
 }
