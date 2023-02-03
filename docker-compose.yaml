@@ -4,7 +4,7 @@ services:
     image: mysql:8.0.32
     #command: --lower_case_table_names=1
     ports:
-      - 3306:3306
+      - 9306:3306
     environment:
       MYSQL_ROOT_PASSWORD: IceHrmR00t
       MYSQL_USER: dev
@@ -38,7 +38,7 @@ services:
       - "9081:80"
     environment:
       PMA_HOSTS: mysql
-      PMA_PORT: 3306
+      PMA_PORT: 9306
       PMA_USER: dev
       PMA_PASSWORD: dev
 
