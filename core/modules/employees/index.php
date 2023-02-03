@@ -68,9 +68,15 @@ path.link {
 					<div class="panel-body wrap" id="apiToken"><?=$threeMonthAccessToken?></div>
 			    </div>
                 <div class="panel panel-default" style="width:97.5%;">
-                    <div class="panel-heading"><h4>Mobile Authentication Code</h4></div>
+                    <div class="panel-heading"><h4>Mobile Authentication Code (Legacy Mobile Apps)</h4></div>
                     <div class="panel-body" id="apiToken">
                         <canvas id="apiQRcode"></canvas>
+                    </div>
+                </div>
+                <div class="panel panel-default" style="width:97.5%;">
+                    <div class="panel-heading"><h4>Mobile Authentication Code</h4></div>
+                    <div class="panel-body" id="loginCode" style="font-size: 17px;">
+                        <button class="btn btn-small btn-primary">Request One-time Login Code  <i class="fa fa-lock-open"></i></button>
                     </div>
                 </div>
 		    </div>

@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5441f5d1ed8c3caf7eb9f26a4c8d9594",
+    "content-hash": "75ffba235e59dada6d0b2517ca3ec462",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -1494,6 +1494,47 @@
                 "url"
             ],
             "time": "2020-09-30T07:37:11+00:00"
+        },
+        {
+            "name": "icehrm/php-active-record",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/icehrm/php-active-record.git",
+                "reference": "24c52d33c50cdc6e612133e8f6ab887d71f74cac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/icehrm/php-active-record/zipball/24c52d33c50cdc6e612133e8f6ab887d71f74cac",
+                "reference": "24c52d33c50cdc6e612133e8f6ab887d71f74cac",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MyORM\\": "src/MyORM/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Simple PHP library to access databases using active record pattern",
+            "keywords": [
+                "Active Record",
+                "database",
+                "mysql",
+                "persistence",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/icehrm/php-active-record/issues",
+                "source": "https://github.com/icehrm/php-active-record/tree/1.0.0"
+            },
+            "time": "2023-01-27T13:08:35+00:00"
         },
         {
             "name": "league/container",
@@ -5633,5 +5674,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.0"
-    }
+    },
+    "plugin-api-version": "2.0.0"
 }

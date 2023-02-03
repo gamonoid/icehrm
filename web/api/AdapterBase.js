@@ -191,6 +191,16 @@ class AdapterBase extends ModuleBase {
     this.trackEvent('delete', this.tab, this.table);
   }
 
+  cleanDelete(id, callBack) {
+    $.post(this.moduleRelativeURL, { t: this.table, a: 'delete', id }, (data) => {
+      callBack(200, data.status);
+    }, 'json')
+      .fail((e) => {
+        callBack(e.status);
+      });
+    this.trackEvent('delete', this.tab, this.table);
+  }
+
   // eslint-disable-next-line no-unused-vars
   deleteSuccessCallBack(callBackData, serverData) {
     this.get(callBackData);
@@ -234,6 +244,7 @@ class AdapterBase extends ModuleBase {
       if (data.status === 'SUCCESS') {
         that.getSuccessCallBack(callBackData, data.object);
       } else {
+        that.checkSessionClose(data);
         that.getFailCallBack(callBackData, data.object);
       }
     }, 'json')
@@ -335,6 +346,9 @@ class AdapterBase extends ModuleBase {
 
   }
 
+  modifyClone(object) {
+    return object;
+  }
 
   getElement(id, callBackData, clone) {
     const that = this;
@@ -347,6 +361,7 @@ class AdapterBase extends ModuleBase {
       if (data.status === 'SUCCESS') {
         if (clone) {
           delete data.object.id;
+          data.object = that.modifyClone(data.object);
         }
         this.currentElement = data.object;
         that.getElementSuccessCallBack.apply(that, [callBackData, data.object]);
@@ -519,6 +534,12 @@ class AdapterBase extends ModuleBase {
 
   getCustomUrl(str) {
     return this.moduleRelativeURL.replace('service.php', str);
+  }
+
+  checkSessionClose(error) {
+    if (error.code === 'NO_USER_FOUND') {
+      location.reload();
+    }
   }
 }
 

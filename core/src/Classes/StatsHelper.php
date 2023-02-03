@@ -7,6 +7,19 @@ use Users\Common\Model\User;
 
 class StatsHelper
 {
+
+    private static $systemErrors = [];
+
+    public static function addSystemError($error, $details) 
+    {
+        self::$systemErrors[] = [$error, $details];
+    }
+
+    public static function getSystemErrors() 
+    {
+        return self::$systemErrors;
+    }
+
     public static function getEmployeeCount()
     {
         $employee = new Employee();

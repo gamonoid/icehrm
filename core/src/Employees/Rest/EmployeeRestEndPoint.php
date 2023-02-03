@@ -149,8 +149,8 @@ JSON;
     public function put(User $user, $parameter)
     {
 
-        if ($user->user_level !== 'Admin' &&
-            !PermissionManager::manipulationAllowed(
+        if ($user->user_level !== 'Admin' 
+            && !PermissionManager::manipulationAllowed(
                 BaseService::getInstance()->getCurrentProfileId(),
                 $this->getModelObject($parameter)
             )

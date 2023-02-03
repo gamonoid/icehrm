@@ -141,7 +141,6 @@ class AttendanceActionManager extends SubActionManager
             $this->baseService->audit(IceConstants::AUDIT_ACTION, "Punch Out \ time:".$openPunch->out_time);
         } else {
             $openPunch->in_time = $dateTime;
-            //$openPunch->out_time = '0000-00-00 00:00:00';
             $openPunch->note = $req->note;
             $openPunch->image_in = $req->image;
             $openPunch->employee = $employee->id;

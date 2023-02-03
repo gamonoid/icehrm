@@ -5,7 +5,6 @@
  * @author      Cory LaViska for A Beautiful Site, LLC (http://www.abeautifulsite.net/)
  * @license     This software is licensed under the MIT license: http://opensource.org/licenses/MIT
  * @copyright   A Beautiful Site, LLC
- *
  */
 
 namespace Classes;
@@ -15,15 +14,14 @@ use Exception;
 /**
  * Class SimpleImage
  * This class makes image manipulation in PHP as simple as possible.
- * @package SimpleImage
  *
+ * @package SimpleImage
  */
 class SimpleImage
 {
 
     /**
      * @var int Default output image quality
-     *
      */
     public $quality = 80;
 
@@ -37,16 +35,15 @@ class SimpleImage
     /**
      * Create instance and load an image, or create an image from scratch
      *
-     * @param null|string   $filename   Path to image file (may be omitted to create image from scratch)
-     * @param int           $width      Image width (is used for creating image from scratch)
-     * @param int|null      $height     If omitted - assumed equal to $width (is used for creating image from scratch)
-     * @param null|string   $color      Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
-     *                                  Where red, green, blue - integers 0-255, alpha - integer 0-127<br>
-     *                                  (is used for creating image from scratch)
+     * @param null|string $filename Path to image file (may be omitted to create image from scratch)
+     * @param int         $width    Image width (is used for creating image from scratch)
+     * @param int|null    $height   If omitted - assumed equal to $width (is used for creating image from scratch)
+     * @param null|string $color    Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
+     *                              Where red, green, blue - integers 0-255, alpha - integer 0-127<br> (is used
+     *                              for creating image from scratch)
      *
      * @return SimpleImage
      * @throws Exception
-     *
      */
     public function __construct($filename = null, $width = null, $height = null, $color = null)
     {
@@ -60,7 +57,6 @@ class SimpleImage
 
     /**
      * Destroy image resource
-     *
      */
     public function __destruct()
     {
@@ -76,11 +72,10 @@ class SimpleImage
      * update your code to use the `thumbnail()` method instead. The arguments for both
      * methods are exactly the same.
      *
-     * @param int           $width
-     * @param int|null      $height If omitted - assumed equal to $width
+     * @param int      $width
+     * @param int|null $height If omitted - assumed equal to $width
      *
      * @return SimpleImage
-     *
      */
     public function adaptiveResize($width, $height = null)
     {
@@ -92,45 +87,44 @@ class SimpleImage
      * Rotates and/or flips an image automatically so the orientation will be correct (based on exif 'Orientation')
      *
      * @return SimpleImage
-     *
      */
     public function autoOrient()
     {
 
         switch ($this->original_info['exif']['Orientation']) {
-            case 1:
-                // Do nothing
-                break;
-            case 2:
-                // Flip horizontal
-                $this->flip('x');
-                break;
-            case 3:
-                // Rotate 180 counterclockwise
-                $this->rotate(-180);
-                break;
-            case 4:
-                // vertical flip
-                $this->flip('y');
-                break;
-            case 5:
-                // Rotate 90 clockwise and flip vertically
-                $this->flip('y');
-                $this->rotate(90);
-                break;
-            case 6:
-                // Rotate 90 clockwise
-                $this->rotate(90);
-                break;
-            case 7:
-                // Rotate 90 clockwise and flip horizontally
-                $this->flip('x');
-                $this->rotate(90);
-                break;
-            case 8:
-                // Rotate 90 counterclockwise
-                $this->rotate(-90);
-                break;
+        case 1:
+            // Do nothing
+            break;
+        case 2:
+            // Flip horizontal
+            $this->flip('x');
+            break;
+        case 3:
+            // Rotate 180 counterclockwise
+            $this->rotate(-180);
+            break;
+        case 4:
+            // vertical flip
+            $this->flip('y');
+            break;
+        case 5:
+            // Rotate 90 clockwise and flip vertically
+            $this->flip('y');
+            $this->rotate(90);
+            break;
+        case 6:
+            // Rotate 90 clockwise
+            $this->rotate(90);
+            break;
+        case 7:
+            // Rotate 90 clockwise and flip horizontally
+            $this->flip('x');
+            $this->rotate(90);
+            break;
+        case 8:
+            // Rotate 90 counterclockwise
+            $this->rotate(-90);
+            break;
         }
 
         return $this;
@@ -141,11 +135,10 @@ class SimpleImage
      *
      * Shrink the image proportionally to fit inside a $width x $height box
      *
-     * @param int           $max_width
-     * @param int           $max_height
+     * @param int $max_width
+     * @param int $max_height
      *
-     * @return  SimpleImage
-     *
+     * @return SimpleImage
      */
     public function bestFit($max_width, $max_height)
     {
@@ -179,21 +172,20 @@ class SimpleImage
     /**
      * Blur
      *
-     * @param string        $type   selective|gaussian
-     * @param int           $passes Number of times to apply the filter
+     * @param string $type   selective|gaussian
+     * @param int    $passes Number of times to apply the filter
      *
      * @return SimpleImage
-     *
      */
     public function blur($type = 'selective', $passes = 1)
     {
         switch (strtolower($type)) {
-            case 'gaussian':
-                $type = IMG_FILTER_GAUSSIAN_BLUR;
-                break;
-            default:
-                $type = IMG_FILTER_SELECTIVE_BLUR;
-                break;
+        case 'gaussian':
+            $type = IMG_FILTER_GAUSSIAN_BLUR;
+            break;
+        default:
+            $type = IMG_FILTER_SELECTIVE_BLUR;
+            break;
         }
         for ($i = 0; $i < $passes; $i++) {
             imagefilter($this->image, $type);
@@ -204,10 +196,9 @@ class SimpleImage
     /**
      * Brightness
      *
-     * @param int           $level  Darkest = -255, lightest = 255
+     * @param int $level Darkest = -255, lightest = 255
      *
      * @return SimpleImage
-     *
      */
     public function brightness($level)
     {
@@ -218,11 +209,9 @@ class SimpleImage
     /**
      * Contrast
      *
-     * @param int           $level  Min = -100, max = 100
+     * @param int $level Min = -100, max = 100
      *
      * @return SimpleImage
-     *
-     *
      */
     public function contrast($level)
     {
@@ -233,12 +222,11 @@ class SimpleImage
     /**
      * Colorize
      *
-     * @param string        $color      Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
-     *                                  Where red, green, blue - integers 0-255, alpha - integer 0-127
-     * @param float|int     $opacity    0-1
+     * @param string    $color   Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
+     *                           Where red, green, blue - integers 0-255, alpha - integer 0-127
+     * @param float|int $opacity 0-1
      *
      * @return SimpleImage
-     *
      */
     public function colorize($color, $opacity)
     {
@@ -258,13 +246,12 @@ class SimpleImage
     /**
      * Create an image from scratch
      *
-     * @param int           $width  Image width
-     * @param int|null      $height If omitted - assumed equal to $width
-     * @param null|string   $color  Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
-     *                              Where red, green, blue - integers 0-255, alpha - integer 0-127
+     * @param int         $width  Image width
+     * @param int|null    $height If omitted - assumed equal to $width
+     * @param null|string $color  Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
+     *                            Where red, green, blue - integers 0-255, alpha - integer 0-127
      *
      * @return SimpleImage
-     *
      */
     public function create($width, $height = null, $color = null)
     {
@@ -292,13 +279,12 @@ class SimpleImage
     /**
      * Crop an image
      *
-     * @param int           $x1 Left
-     * @param int           $y1 Top
-     * @param int           $x2 Right
-     * @param int           $y2 Bottom
+     * @param int $x1 Left
+     * @param int $y1 Top
+     * @param int $x2 Right
+     * @param int $y2 Bottom
      *
      * @return SimpleImage
-     *
      */
     public function crop($x1, $y1, $x2, $y2)
     {
@@ -330,10 +316,9 @@ class SimpleImage
     /**
      * Desaturate
      *
-     * @param int           $percentage Level of desaturization.
+     * @param int $percentage Level of desaturization.
      *
      * @return SimpleImage
-     *
      */
     public function desaturate($percentage = 100)
     {
@@ -363,7 +348,6 @@ class SimpleImage
      * Edge Detect
      *
      * @return SimpleImage
-     *
      */
     public function edges()
     {
@@ -375,7 +359,6 @@ class SimpleImage
      * Emboss
      *
      * @return SimpleImage
-     *
      */
     public function emboss()
     {
@@ -386,11 +369,10 @@ class SimpleImage
     /**
      * Fill image with color
      *
-     * @param string        $color  Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
-     *                              Where red, green, blue - integers 0-255, alpha - integer 0-127
+     * @param string $color Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
+     *                      Where red, green, blue - integers 0-255, alpha - integer 0-127
      *
      * @return SimpleImage
-     *
      */
     public function fill($color = '#000000')
     {
@@ -407,10 +389,9 @@ class SimpleImage
     /**
      * Fit to height (proportionally resize to specified height)
      *
-     * @param int           $height
+     * @param int $height
      *
      * @return SimpleImage
-     *
      */
     public function fitToHeight($height)
     {
@@ -424,10 +405,9 @@ class SimpleImage
     /**
      * Fit to width (proportionally resize to specified width)
      *
-     * @param int           $width
+     * @param int $width
      *
      * @return SimpleImage
-     *
      */
     public function fitToWidth($width)
     {
@@ -441,10 +421,9 @@ class SimpleImage
     /**
      * Flip an image horizontally or vertically
      *
-     * @param string        $direction  x|y
+     * @param string $direction x|y
      *
      * @return SimpleImage
-     *
      */
     public function flip($direction)
     {
@@ -454,16 +433,16 @@ class SimpleImage
         imagesavealpha($new, true);
 
         switch (strtolower($direction)) {
-            case 'y':
-                for ($y = 0; $y < $this->height; $y++) {
-                    imagecopy($new, $this->image, 0, $y, 0, $this->height - $y - 1, $this->width, 1);
-                }
-                break;
-            default:
-                for ($x = 0; $x < $this->width; $x++) {
-                    imagecopy($new, $this->image, $x, 0, $this->width - $x - 1, 0, 1, $this->height);
-                }
-                break;
+        case 'y':
+            for ($y = 0; $y < $this->height; $y++) {
+                imagecopy($new, $this->image, 0, $y, 0, $this->height - $y - 1, $this->width, 1);
+            }
+            break;
+        default:
+            for ($x = 0; $x < $this->width; $x++) {
+                imagecopy($new, $this->image, $x, 0, $this->width - $x - 1, 0, 1, $this->height);
+            }
+            break;
         }
 
         $this->image = $new;
@@ -475,7 +454,6 @@ class SimpleImage
      * Get the current height
      *
      * @return int
-     *
      */
     public function getHeight()
     {
@@ -486,7 +464,6 @@ class SimpleImage
      * Get the current orientation
      *
      * @return string   portrait|landscape|square
-     *
      */
     public function getOrientation()
     {
@@ -513,7 +490,6 @@ class SimpleImage
      *  mime         => ['image/jpeg', 'image/gif', 'image/png'],
      *  format       => ['jpeg', 'gif', 'png']
      * )</pre>
-     *
      */
     public function getOriginalInfo()
     {
@@ -524,7 +500,6 @@ class SimpleImage
      * Get the current width
      *
      * @return int
-     *
      */
     public function getWidth()
     {
@@ -535,7 +510,6 @@ class SimpleImage
      * Invert
      *
      * @return SimpleImage
-     *
      */
     public function invert()
     {
@@ -546,11 +520,10 @@ class SimpleImage
     /**
      * Load an image
      *
-     * @param string        $filename   Path to image file
+     * @param string $filename Path to image file
      *
      * @return SimpleImage
      * @throws Exception
-     *
      */
     public function load($filename)
     {
@@ -566,10 +539,9 @@ class SimpleImage
     /**
      * Load a base64 string as image
      *
-     * @param string        $filename   base64 string
+     * @param string $filename base64 string
      *
      * @return SimpleImage
-     *
      */
     public function loadBase64($base64string)
     {
@@ -588,7 +560,6 @@ class SimpleImage
      * Mean Remove
      *
      * @return SimpleImage
-     *
      */
     public function meanRemove()
     {
@@ -599,10 +570,9 @@ class SimpleImage
     /**
      * Changes the opacity level of the image
      *
-     * @param float|int     $opacity    0-1
+     * @param float|int $opacity 0-1
      *
      * @throws Exception
-     *
      */
     public function opacity($opacity)
     {
@@ -629,11 +599,10 @@ class SimpleImage
     /**
      * Outputs image without saving
      *
-     * @param null|string   $format     If omitted or null - format of original file will be used, may be gif|jpg|png
-     * @param int|null      $quality    Output image quality in percents 0-100
+     * @param null|string $format  If omitted or null - format of original file will be used, may be gif|jpg|png
+     * @param int|null    $quality Output image quality in percents 0-100
      *
      * @throws Exception
-     *
      */
     public function output($format = null, $quality = null)
     {
@@ -643,39 +612,39 @@ class SimpleImage
 
         // Determine mimetype
         switch (strtolower($format)) {
-            case 'gif':
-                $mimetype = 'image/gif';
-                break;
-            case 'jpeg':
-            case 'jpg':
-                imageinterlace($this->image, true);
-                $mimetype = 'image/jpeg';
-                break;
-            case 'png':
-                $mimetype = 'image/png';
-                break;
-            default:
-                $info = (empty($this->imagestring))
-                    ? getimagesize($this->filename) : getimagesizefromstring($this->imagestring);
-                $mimetype = $info['mime'];
-                unset($info);
-                break;
+        case 'gif':
+            $mimetype = 'image/gif';
+            break;
+        case 'jpeg':
+        case 'jpg':
+            imageinterlace($this->image, true);
+            $mimetype = 'image/jpeg';
+            break;
+        case 'png':
+            $mimetype = 'image/png';
+            break;
+        default:
+            $info = (empty($this->imagestring))
+            ? getimagesize($this->filename) : getimagesizefromstring($this->imagestring);
+            $mimetype = $info['mime'];
+            unset($info);
+            break;
         }
 
         // Output the image
         header('Content-Type: '.$mimetype);
         switch ($mimetype) {
-            case 'image/gif':
-                imagegif($this->image);
-                break;
-            case 'image/jpeg':
-                imagejpeg($this->image, null, round($quality));
-                break;
-            case 'image/png':
-                imagepng($this->image, null, round(9 * $quality / 100));
-                break;
-            default:
-                throw new Exception('Unsupported image format: '.$this->filename);
+        case 'image/gif':
+            imagegif($this->image);
+            break;
+        case 'image/jpeg':
+            imagejpeg($this->image, null, round($quality));
+            break;
+        case 'image/png':
+            imagepng($this->image, null, round(9 * $quality / 100));
+            break;
+        default:
+            throw new Exception('Unsupported image format: '.$this->filename);
                 break;
         }
     }
@@ -683,12 +652,11 @@ class SimpleImage
     /**
      * Outputs image as data base64 to use as img src
      *
-     * @param null|string   $format     If omitted or null - format of original file will be used, may be gif|jpg|png
-     * @param int|null      $quality    Output image quality in percents 0-100
+     * @param null|string $format  If omitted or null - format of original file will be used, may be gif|jpg|png
+     * @param int|null    $quality Output image quality in percents 0-100
      *
      * @return string
      * @throws Exception
-     *
      */
     public function outputBase64($format = null, $quality = null)
     {
@@ -698,38 +666,38 @@ class SimpleImage
 
         // Determine mimetype
         switch (strtolower($format)) {
-            case 'gif':
-                $mimetype = 'image/gif';
-                break;
-            case 'jpeg':
-            case 'jpg':
-                imageinterlace($this->image, true);
-                $mimetype = 'image/jpeg';
-                break;
-            case 'png':
-                $mimetype = 'image/png';
-                break;
-            default:
-                $info = getimagesize($this->filename);
-                $mimetype = $info['mime'];
-                unset($info);
-                break;
+        case 'gif':
+            $mimetype = 'image/gif';
+            break;
+        case 'jpeg':
+        case 'jpg':
+            imageinterlace($this->image, true);
+            $mimetype = 'image/jpeg';
+            break;
+        case 'png':
+            $mimetype = 'image/png';
+            break;
+        default:
+            $info = getimagesize($this->filename);
+            $mimetype = $info['mime'];
+            unset($info);
+            break;
         }
 
         // Output the image
         ob_start();
         switch ($mimetype) {
-            case 'image/gif':
-                imagegif($this->image);
-                break;
-            case 'image/jpeg':
-                imagejpeg($this->image, null, round($quality));
-                break;
-            case 'image/png':
-                imagepng($this->image, null, round(9 * $quality / 100));
-                break;
-            default:
-                throw new Exception('Unsupported image format: '.$this->filename);
+        case 'image/gif':
+            imagegif($this->image);
+            break;
+        case 'image/jpeg':
+            imagejpeg($this->image, null, round($quality));
+            break;
+        case 'image/png':
+            imagepng($this->image, null, round(9 * $quality / 100));
+            break;
+        default:
+            throw new Exception('Unsupported image format: '.$this->filename);
                 break;
         }
         $image_data = ob_get_contents();
@@ -744,14 +712,13 @@ class SimpleImage
      *
      * Overlay an image on top of another, works with 24-bit PNG alpha-transparency
      *
-     * @param string        $overlay        An image filename or a SimpleImage object
-     * @param string        $position       center|top|left|bottom|right|top left|top right|bottom left|bottom right
-     * @param float|int     $opacity        Overlay opacity 0-1
-     * @param int           $x_offset       Horizontal offset in pixels
-     * @param int           $y_offset       Vertical offset in pixels
+     * @param string    $overlay  An image filename or a SimpleImage object
+     * @param string    $position center|top|left|bottom|right|top left|top right|bottom left|bottom right
+     * @param float|int $opacity  Overlay opacity 0-1
+     * @param int       $x_offset Horizontal offset in pixels
+     * @param int       $y_offset Vertical offset in pixels
      *
      * @return SimpleImage
-     *
      */
     public function overlay($overlay, $position = 'center', $opacity = 1, $x_offset = 0, $y_offset = 0)
     {
@@ -766,43 +733,43 @@ class SimpleImage
 
         // Determine position
         switch (strtolower($position)) {
-            case 'top left':
-                $x = 0 + $x_offset;
-                $y = 0 + $y_offset;
-                break;
-            case 'top right':
-                $x = $this->width - $overlay->width + $x_offset;
-                $y = 0 + $y_offset;
-                break;
-            case 'top':
-                $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
-                $y = 0 + $y_offset;
-                break;
-            case 'bottom left':
-                $x = 0 + $x_offset;
-                $y = $this->height - $overlay->height + $y_offset;
-                break;
-            case 'bottom right':
-                $x = $this->width - $overlay->width + $x_offset;
-                $y = $this->height - $overlay->height + $y_offset;
-                break;
-            case 'bottom':
-                $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
-                $y = $this->height - $overlay->height + $y_offset;
-                break;
-            case 'left':
-                $x = 0 + $x_offset;
-                $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
-                break;
-            case 'right':
-                $x = $this->width - $overlay->width + $x_offset;
-                $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
-                break;
-            case 'center':
-            default:
-                $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
-                $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
-                break;
+        case 'top left':
+            $x = 0 + $x_offset;
+            $y = 0 + $y_offset;
+            break;
+        case 'top right':
+            $x = $this->width - $overlay->width + $x_offset;
+            $y = 0 + $y_offset;
+            break;
+        case 'top':
+            $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
+            $y = 0 + $y_offset;
+            break;
+        case 'bottom left':
+            $x = 0 + $x_offset;
+            $y = $this->height - $overlay->height + $y_offset;
+            break;
+        case 'bottom right':
+            $x = $this->width - $overlay->width + $x_offset;
+            $y = $this->height - $overlay->height + $y_offset;
+            break;
+        case 'bottom':
+            $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
+            $y = $this->height - $overlay->height + $y_offset;
+            break;
+        case 'left':
+            $x = 0 + $x_offset;
+            $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
+            break;
+        case 'right':
+            $x = $this->width - $overlay->width + $x_offset;
+            $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
+            break;
+        case 'center':
+        default:
+            $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
+            $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
+            break;
         }
 
         // Perform the overlay
@@ -824,10 +791,9 @@ class SimpleImage
     /**
      * Pixelate
      *
-     * @param int           $block_size Size in pixels of each resulting block
+     * @param int $block_size Size in pixels of each resulting block
      *
      * @return SimpleImage
-     *
      */
     public function pixelate($block_size = 10)
     {
@@ -838,11 +804,10 @@ class SimpleImage
     /**
      * Resize an image to the specified dimensions
      *
-     * @param int   $width
-     * @param int   $height
+     * @param int $width
+     * @param int $height
      *
      * @return SimpleImage
-     *
      */
     public function resize($width, $height)
     {
@@ -885,12 +850,11 @@ class SimpleImage
     /**
      * Rotate an image
      *
-     * @param int           $angle      0-360
-     * @param string        $bg_color   Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
-     *                                  Where red, green, blue - integers 0-255, alpha - integer 0-127
+     * @param int    $angle    0-360
+     * @param string $bg_color Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
+     *                         Where red, green, blue - integers 0-255, alpha - integer 0-127
      *
      * @return SimpleImage
-     *
      */
     public function rotate($angle, $bg_color = '#000000')
     {
@@ -915,13 +879,12 @@ class SimpleImage
      *
      * The resulting format will be determined by the file extension.
      *
-     * @param null|string   $filename   If omitted - original file will be overwritten
-     * @param null|int      $quality    Output image quality in percents 0-100
-     * @param null|string   $format     The format to use; determined by file extension if null
+     * @param null|string $filename If omitted - original file will be overwritten
+     * @param null|int    $quality  Output image quality in percents 0-100
+     * @param null|string $format   The format to use; determined by file extension if null
      *
      * @return SimpleImage
      * @throws Exception
-     *
      */
     public function save($filename = null, $quality = null, $format = null)
     {
@@ -935,19 +898,19 @@ class SimpleImage
 
         // Create the image
         switch (strtolower($format)) {
-            case 'gif':
-                $result = imagegif($this->image, $filename);
-                break;
-            case 'jpg':
-            case 'jpeg':
-                imageinterlace($this->image, true);
-                $result = imagejpeg($this->image, $filename, round($quality));
-                break;
-            case 'png':
-                $result = imagepng($this->image, $filename, round(9 * $quality / 100));
-                break;
-            default:
-                throw new Exception('Unsupported format');
+        case 'gif':
+            $result = imagegif($this->image, $filename);
+            break;
+        case 'jpg':
+        case 'jpeg':
+            imageinterlace($this->image, true);
+            $result = imagejpeg($this->image, $filename, round($quality));
+            break;
+        case 'png':
+            $result = imagepng($this->image, $filename, round(9 * $quality / 100));
+            break;
+        default:
+            throw new Exception('Unsupported format');
         }
 
         if (!$result) {
@@ -961,7 +924,6 @@ class SimpleImage
      * Sepia
      *
      * @return SimpleImage
-     *
      */
     public function sepia()
     {
@@ -974,7 +936,6 @@ class SimpleImage
      * Sketch
      *
      * @return SimpleImage
-     *
      */
     public function sketch()
     {
@@ -985,10 +946,9 @@ class SimpleImage
     /**
      * Smooth
      *
-     * @param int           $level  Min = -10, max = 10
+     * @param int $level Min = -10, max = 10
      *
      * @return SimpleImage
-     *
      */
     public function smooth($level)
     {
@@ -999,17 +959,16 @@ class SimpleImage
     /**
      * Add text to an image
      *
-     * @param string        $text
-     * @param string        $font_file
-     * @param float|int     $font_size
-     * @param string        $color
-     * @param string        $position
-     * @param int           $x_offset
-     * @param int           $y_offset
+     * @param string    $text
+     * @param string    $font_file
+     * @param float|int $font_size
+     * @param string    $color
+     * @param string    $position
+     * @param int       $x_offset
+     * @param int       $y_offset
      *
      * @return SimpleImage
      * @throws Exception
-     *
      */
     public function text(
         $text,
@@ -1038,43 +997,43 @@ class SimpleImage
 
         // Determine position
         switch (strtolower($position)) {
-            case 'top left':
-                $x = 0 + $x_offset;
-                $y = 0 + $y_offset + $box_height;
-                break;
-            case 'top right':
-                $x = $this->width - $box_width + $x_offset;
-                $y = 0 + $y_offset + $box_height;
-                break;
-            case 'top':
-                $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
-                $y = 0 + $y_offset + $box_height;
-                break;
-            case 'bottom left':
-                $x = 0 + $x_offset;
-                $y = $this->height - $box_height + $y_offset + $box_height;
-                break;
-            case 'bottom right':
-                $x = $this->width - $box_width + $x_offset;
-                $y = $this->height - $box_height + $y_offset + $box_height;
-                break;
-            case 'bottom':
-                $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
-                $y = $this->height - $box_height + $y_offset + $box_height;
-                break;
-            case 'left':
-                $x = 0 + $x_offset;
-                $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
-                break;
-            case 'right':
-                $x = $this->width - $box_width + $x_offset;
-                $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
-                break;
-            case 'center':
-            default:
-                $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
-                $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
-                break;
+        case 'top left':
+            $x = 0 + $x_offset;
+            $y = 0 + $y_offset + $box_height;
+            break;
+        case 'top right':
+            $x = $this->width - $box_width + $x_offset;
+            $y = 0 + $y_offset + $box_height;
+            break;
+        case 'top':
+            $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
+            $y = 0 + $y_offset + $box_height;
+            break;
+        case 'bottom left':
+            $x = 0 + $x_offset;
+            $y = $this->height - $box_height + $y_offset + $box_height;
+            break;
+        case 'bottom right':
+            $x = $this->width - $box_width + $x_offset;
+            $y = $this->height - $box_height + $y_offset + $box_height;
+            break;
+        case 'bottom':
+            $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
+            $y = $this->height - $box_height + $y_offset + $box_height;
+            break;
+        case 'left':
+            $x = 0 + $x_offset;
+            $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
+            break;
+        case 'right':
+            $x = $this->width - $box_width + $x_offset;
+            $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
+            break;
+        case 'center':
+        default:
+            $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
+            $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
+            break;
         }
 
         // Add the text
@@ -1091,11 +1050,10 @@ class SimpleImage
      * This function attempts to get the image to as close to the provided dimensions as possible, and then crops the
      * remaining overflow (from the center) to get the image to be the size specified. Useful for generating thumbnails.
      *
-     * @param int           $width
-     * @param int|null      $height If omitted - assumed equal to $width
+     * @param int      $width
+     * @param int|null $height If omitted - assumed equal to $width
      *
      * @return SimpleImage
-     *
      */
     public function thumbnail($width, $height = null)
     {
@@ -1123,10 +1081,9 @@ class SimpleImage
     /**
      * Returns the file extension of the specified file
      *
-     * @param string    $filename
+     * @param string $filename
      *
      * @return string
-     *
      */
     protected function fileExt($filename)
     {
@@ -1141,11 +1098,10 @@ class SimpleImage
     /**
      * Get meta data of image or base64 string
      *
-     * @param string|null       $imagestring    If omitted treat as a normal image
+     * @param string|null $imagestring If omitted treat as a normal image
      *
      * @return SimpleImage
      * @throws Exception
-     *
      */
     protected function getMetaData()
     {
@@ -1154,17 +1110,17 @@ class SimpleImage
             $info = getimagesize($this->filename);
 
             switch ($info['mime']) {
-                case 'image/gif':
-                    $this->image = imagecreatefromgif($this->filename);
-                    break;
-                case 'image/jpeg':
-                    $this->image = imagecreatefromjpeg($this->filename);
-                    break;
-                case 'image/png':
-                    $this->image = imagecreatefrompng($this->filename);
-                    break;
-                default:
-                    throw new Exception('Invalid image: '.$this->filename);
+            case 'image/gif':
+                $this->image = imagecreatefromgif($this->filename);
+                break;
+            case 'image/jpeg':
+                $this->image = imagecreatefromjpeg($this->filename);
+                break;
+            case 'image/png':
+                $this->image = imagecreatefrompng($this->filename);
+                break;
+            default:
+                throw new Exception('Invalid image: '.$this->filename);
                     break;
             }
         } elseif (function_exists('getimagesizefromstring')) {
@@ -1206,7 +1162,6 @@ class SimpleImage
      * @param $pct
      *
      * @link http://www.php.net/manual/en/function.imagecopymerge.php#88456
-     *
      */
     protected function imagecopymergeAlpha($dst_im, $src_im, $dst_x, $dst_y, $src_x, $src_y, $src_w, $src_h, $pct)
     {
@@ -1270,12 +1225,11 @@ class SimpleImage
      *
      * If lower, $min is returned. If higher, $max is returned.
      *
-     * @param int|float     $value
-     * @param int|float     $min
-     * @param int|float     $max
+     * @param int|float $value
+     * @param int|float $min
+     * @param int|float $max
      *
      * @return int|float
-     *
      */
     protected function keepWithin($value, $min, $max)
     {
@@ -1294,11 +1248,10 @@ class SimpleImage
     /**
      * Converts a hex color value to its RGB equivalent
      *
-     * @param string        $color  Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
-     *                              Where red, green, blue - integers 0-255, alpha - integer 0-127
+     * @param string $color Hex color string, array(red, green, blue) or array(red, green, blue, alpha).
+     *                      Where red, green, blue - integers 0-255, alpha - integer 0-127
      *
      * @return array|bool
-     *
      */
     protected function normalizeColor($color)
     {

@@ -10,6 +10,7 @@ namespace Model;
 
 /**
  * Class Cron
+ *
  * @package Model
  *
  * @property int $id

@@ -22,6 +22,7 @@ class SessionUtils
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
+
         $_SESSION[$name.CLIENT_NAME] = json_encode($obj);
     }
 

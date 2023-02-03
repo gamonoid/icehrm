@@ -10,6 +10,7 @@ class DocumentsModulesManager extends AbstractModuleManager
     {
         if (defined('MODULE_TYPE') && MODULE_TYPE != 'admin') {
             $this->addUserClass("EmployeeDocument");
+            $this->addUserClass("PayslipDocument");
         }
     }
 

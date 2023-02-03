@@ -71,6 +71,7 @@ class BaseService
 
     /**
      * Get the only instance created for BaseService
+     *
      * @method getInstance
      * @return {BaseService} BaseService object
      */
@@ -86,19 +87,35 @@ class BaseService
 
     /**
      * Get an array of objects from database
+     *
      * @method get
-     * @param $table {String} model class name of the table to retive data
+     * @param  $table {String} model class name of the table to retive data
      * (e.g for Users table model class name is User)
-     * @param $mappingStr {String} a JSON string to specify fields of the $table should be mapped
-     * to other tables (e.g {"profile":["Profile","id","first_name+last_name"]} : this is how the
-     * profile field in Users table is mapped to Profile table. In this case users profile field
-     * will get filled by Profile first name and last name. The original value in User->profile
-     * field will get moved to User->profile_id)
-     * @param $filterStr {String} a JSON string to specify the ordering of the items
+     * @param  mappingStr {String} a JSON string to specify fields of the            $table should be mapped
+     *                                                                                     to other tables
+     *                                                                                     (e.g
+     *                                                                                     {"profile":["Profile","id","first_name+last_name"]}
+     *                                                                                     : this is how the
+     *                                                                                     profile field in
+     *                                                                                     Users table is
+     *                                                                                     mapped to Profile
+     *                                                                                     table. In this
+     *                                                                                     case users
+     *                                                                                     profile field
+     *                                                                                     will get filled
+     *                                                                                     by Profile first
+     *                                                                                     name and last
+     *                                                                                     name. The
+     *                                                                                     original value in
+     *                                                                                     User->profile
+     *                                                                                     field will get
+     *                                                                                     moved to
+     *                                                                                     User->profile_id)
+     * @param  $filterStr {String} a JSON string to specify the ordering of the items
      * (e.g {"job_title":"2","department":"2"}  - this will select only items having
      * job_title = 2 and department = 2)
-     * @param $orderBy {String} a string to specify the ordering (e.g in_time desc)
-     * @param string $limit {String} a string to specify the limit (e.g limit 2)
+     * @param  $orderBy {String} a string to specify the ordering (e.g in_time desc)
+     * @param  string                                                                $limit {String} a string to specify the limit (e.g limit 2)
      * @return {Array} an array of objects of type $table
      */
     public function get($table, $mappingStr = null, $filterStr = null, $orderBy = null, $limit = null)
@@ -251,13 +268,17 @@ class BaseService
     public function getSortingData($req)
     {
         $data = array();
-        $data['sorting'] = $req['sorting'];
+        $data['sorting'] = isset($req['sorting']) ? $req['sorting'] : '' ;
 
         $columns = json_decode($req['cl'], true);
 
-        $data['column'] = $columns[$req['iSortCol_0']];
+        if (isset($req['iSortCol_0']) && isset($columns[$req['iSortCol_0']]) ) {
+            $data['column'] = $columns[$req['iSortCol_0']];
+        }
 
-        $data['order'] = $req['sSortDir_0'];
+        if (isset($req['sSortDir_0'])) {
+            $data['order'] = $req['sSortDir_0'];
+        }
 
         return $data;
     }
@@ -288,7 +309,8 @@ class BaseService
 
 
             if (in_array($table, BaseService::getInstance()->userTables)
-                && !$skipProfileRestriction && !$isSubOrdinates) {
+                && !$skipProfileRestriction && !$isSubOrdinates
+            ) {
                 $cemp = BaseService::getInstance()->getCurrentProfileId();
                 $sql = "Select count(id) as count from "
                     . $obj->table . " where " . SIGN_IN_ELEMENT_MAPPING_FIELD_NAME . " = ? " . $countFilterQuery;
@@ -390,28 +412,76 @@ class BaseService
 
     /**
      * An extention of get method for the use of data tables with ability to search
+     *
      * @method getData
-     * @param $table {String} model class name of the table to retive data
+     * @param  $table {String} model class name of the table to retive data
      * (e.g for Users table model class name is User)
-     * @param $mappingStr {String} a JSON string to specify fields of the $table should
-     * be mapped to other tables (e.g {"profile":["Profile","id","first_name+last_name"]}
-     * : this is how the profile field in Users table is mapped to Profile table.
-     * In this case users profile field will get filled by Profile first name and last name.
-     * The original value in User->profile field will get moved to User->profile_id)
-     * @param $filterStr {String} a JSON string to specify the ordering of the items
+     * @param  mappingStr {String} a JSON string to specify fields of the            $table                  should
+     *                                                                                                       be
+     *                                                                                                       mapped
+     *                                                                                                       to
+     *                                                                                                       other
+     *                                                                                                       tables
+     *                                                                                                       (e.g
+     *                                                                                                       {"profile":["Profile","id","first_name+last_name"]}
+     *                                                                                                       : this
+     *                                                                                                       is how
+     *                                                                                                       the
+     *                                                                                                       profile
+     *                                                                                                       field
+     *                                                                                                       in
+     *                                                                                                       Users
+     *                                                                                                       table
+     *                                                                                                       is
+     *                                                                                                       mapped
+     *                                                                                                       to
+     *                                                                                                       Profile
+     *                                                                                                       table.
+     *                                                                                                       In
+     *                                                                                                       this
+     *                                                                                                       case
+     *                                                                                                       users
+     *                                                                                                       profile
+     *                                                                                                       field
+     *                                                                                                       will
+     *                                                                                                       get
+     *                                                                                                       filled
+     *                                                                                                       by
+     *                                                                                                       Profile
+     *                                                                                                       first
+     *                                                                                                       name
+     *                                                                                                       and
+     *                                                                                                       last
+     *                                                                                                       name.
+     *                                                                                                       The
+     *                                                                                                       original
+     *                                                                                                       value
+     *                                                                                                       in
+     *                                                                                                       User->profile
+     *                                                                                                       field
+     *                                                                                                       will
+     *                                                                                                       get
+     *                                                                                                       moved
+     *                                                                                                       to
+     *                                                                                                       User->profile_id)
+     * @param  $filterStr {String} a JSON string to specify the ordering of the items
      * (e.g {"job_title":"2","department":"2"}  - this will select only items having
      * job_title = 2 and department = 2)
-     * @param $orderBy {String} a string to specify the ordering (e.g in_time desc)
-     * @param string $limit {String} a string to specify the limit (e.g limit 2)
-     * @param string $searchColumns {String} a JSON string to specify names of searchable
-     * fields (e.g ["id","employee_id","first_name","last_name","mobile_phone","department","gender","supervisor"])
-     * @param string $searchTerm {String} a string to specify term to search
-     * @param string $isSubOrdinates {Boolean} a Boolean to specify if we only need to retive
-     * subordinates. Any item is a subordinate item if the item has "profile" field defined
-     * and the value of "profile" field is equal to id of one of the subordinates of currenly
-     * logged in profile id. (Any Profile is a subordinate of curently logged in Profile if the
-     * supervisor field of a Profile is set to the id of currently logged in Profile)
-     * @param string $skipProfileRestriction {Boolean} default if false - TODO - I'll explain this later
+     * @param  $orderBy {String} a string to specify the ordering (e.g in_time desc)
+     * @param  string                                                                $limit                  {String} a string to specify the limit (e.g limit 2)
+     * @param  string                                                                $searchColumns          {String} a JSON string to specify names of searchable
+     *                                                                                                       fields (e.g
+     *                                                                                                       ["id","employee_id","first_name","last_name","mobile_phone","department","gender","supervisor"])
+     * @param  string                                                                $searchTerm             {String} a string to specify term to search
+     * @param  string                                                                $isSubOrdinates         {Boolean} a Boolean to specify if we only need to retive
+     *                                                                                                       subordinates. Any item is a subordinate item if the item
+     *                                                                                                       has "profile" field defined and the value of "profile"
+     *                                                                                                       field is equal to id of one of the subordinates of
+     *                                                                                                       currenly logged in profile id. (Any Profile is a
+     *                                                                                                       subordinate of curently logged in Profile if the
+     *                                                                                                       supervisor field of a Profile is set to the id of
+     *                                                                                                       currently logged in Profile)
+     * @param  string                                                                $skipProfileRestriction {Boolean} default if false - TODO - I'll explain this later
      * @return {Array} an array of objects of type $table
      */
     public function getData(
@@ -487,10 +557,18 @@ class BaseService
         }
 
         if ($obj->getFinder() !== null) {
+            /**
+ * @var FinderProxy $finder 
+*/
             $finder = $obj->getFinder();
         } else {
+            /**
+ * @var FinderProxy $finder 
+*/
             $finder = $obj;
         }
+
+        $finder->setIsSubOrdinateQuery($isSubOrdinates);
 
         if (in_array($table, $this->userTables) && !$skipProfileRestriction) {
             $cemp = $this->getCurrentProfileId();
@@ -511,9 +589,10 @@ class BaseService
                     $cempObj = new Employee();
                     $cempObj->Load("id = ?", array($cemp));
 
-                    if ($obj->getUserOnlyMeAccessField() == 'id' &&
-                        SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 &&
-                        CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)) {
+                    if ($obj->getUserOnlyMeAccessField() == 'id' 
+                        && SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 
+                        && CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)
+                    ) {
                         if (empty($subordinates)) {
                             $subordinates = array();
                         }
@@ -592,9 +671,10 @@ class BaseService
                 $subordinates = $subordinate->Find("supervisor = ?", array($cemp));
                 $cempObj = new Employee();
                 $cempObj->Load("id = ?", array($cemp));
-                if ($obj->getUserOnlyMeAccessField() == 'id' &&
-                    SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 &&
-                    CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)) {
+                if ($obj->getUserOnlyMeAccessField() == 'id' 
+                    && SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 
+                    && CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)
+                ) {
                     if (empty($subordinates)) {
                         $subordinates = array();
                     }
@@ -688,9 +768,10 @@ class BaseService
 
     /**
      * Propulate field mappings for a given set of objects
+     *
      * @method populateMapping
-     * @param $list {Array} array of model objects
-     * @param $map {Array} an associative array of Mappings (e.g {"profile":["Profile","id","first_name+last_name"]})
+     * @param  $list {Array} array of model objects
+     * @param  $map {Array} an associative array of Mappings (e.g {"profile":["Profile","id","first_name+last_name"]})
      * @return {Array} array of populated objects
      */
 
@@ -710,11 +791,15 @@ class BaseService
     public function populateMappingItem($item, $map)
     {
         foreach ($map as $k => $v) {
+            if (!isset($item->$k)) {
+                continue;
+            }
+
             $fTable = $this->getFullQualifiedModelClassName($v[0]);
             $tObj = new $fTable();
             $tObj = $tObj->Find($v[1]."= ?", array($item->$k));
 
-            if (is_array($tObj)) {
+            if (is_array($tObj) && !empty($tObj)) {
                 $tObj = $tObj[0];
             } else {
                 continue;
@@ -746,14 +831,24 @@ class BaseService
 
     /**
      * Retive one element from db
+     *
      * @method getElement
-     * @param $table {String} model class name of the table to get data (e.g for Users table model class name is User)
-     * @param $table {Integer} id of the item to get from $table
-     * @param $mappingStr {String} a JSON string to specify fields of the $table should be mapped to other
-     * tables (e.g {"profile":["Profile","id","first_name+last_name"]} : this is how the profile field in
-     * Users table is mapped to Profile table. In this case users profile field will get filled by Profile
-     * first name and last name. The original value in User->profile field will get moved to User->profile_id)
-     * @param $skipSecurityCheck {Boolean} if true won't check whether the user has access to that object
+     * @param  $table {String} model class name of the table to get data (e.g for Users table model class name is User)
+     * @param  table {Integer} id of the item to get from                                                 $table
+     * @param  mappingStr {String} a JSON string to specify fields of the                                 $table should be mapped to other
+     *                                                                                                          tables (e.g
+     *                                                                                                          {"profile":["Profile","id","first_name+last_name"]}
+     *                                                                                                          : this is how the profile
+     *                                                                                                          field in Users table is
+     *                                                                                                          mapped to Profile table.
+     *                                                                                                          In this case users profile
+     *                                                                                                          field will get filled by
+     *                                                                                                          Profile first name and
+     *                                                                                                          last name. The original
+     *                                                                                                          value in User->profile
+     *                                                                                                          field will get moved to
+     *                                                                                                          User->profile_id)
+     * @param  $skipSecurityCheck {Boolean} if true won't check whether the user has access to that object
      * @return {Object} an object of type $table
      */
 
@@ -819,11 +914,12 @@ class BaseService
 
     /**
      * Add an element to a given table
+     *
      * @method addElement
-     * @param $table {String} model class name of the table to add data (e.g for Users table model class name is User)
-     * @param $obj {Array} an associative array with field names and values for the new object.
+     * @param  $table {String} model class name of the table to add data (e.g for Users table model class name is User)
+     * @param  $obj {Array} an associative array with field names and values for the new object.
      * If the object id is not empty an existing object will be updated
-     * @param null $postObject
+     * @param  null                                                                            $postObject
      * @return IceResponse {Object} newly added or updated element of type $table newly added or updated
      * element of type $table
      */
@@ -838,7 +934,8 @@ class BaseService
 
 
         if ($ele->validateCSRF()
-            && (empty($obj->csrf) || $obj->csrf !== SessionUtils::getSessionObject('csrf-'.$table))) {
+            && (empty($obj->csrf) || $obj->csrf !== SessionUtils::getSessionObject('csrf-'.$table))
+        ) {
             return new IceResponse(
                 IceResponse::ERROR,
                 "CSRF Error"
@@ -961,17 +1058,20 @@ class BaseService
 
     /**
      * Delete an element if not the $table and $id is defined as a non deletable
+     *
      * @method deleteElement
-     * @param $table {String} model class name of the table to delete data
+     * @param  $table {String} model class name of the table to delete data
      * (e.g for Users table model class name is User)
-     * @param $id {Integer} id of the item to delete
+     * @param  $id {Integer} id of the item to delete
      * @return NULL
      */
     public function deleteElement($table, $id)
     {
         $fileFields = $this->fileFields;
         $nsTable = $this->getFullQualifiedModelClassName($table);
-        /** @var BaseModel $ele */
+        /**
+ * @var BaseModel $ele 
+*/
         $ele = new $nsTable();
 
         $ele->Load('id = ?', array($id));
@@ -1042,7 +1142,9 @@ class BaseService
         }
 
         $cfs = $this->customFieldManager->getCustomFields($table, $id);
-        /** @var CustomField $cf */
+        /**
+ * @var CustomField $cf 
+*/
         foreach ($cfs as $cf) {
             $cf->Delete();
         }
@@ -1057,11 +1159,12 @@ class BaseService
      * Get associative array of by retriving data from $table using $key field ans key and
      * $value field as value. Mainly used for getting data for populating option lists of select
      * boxes when adding and editing items
+     *
      * @method getFieldValues
-     * @param $table {String} model class name of the table to get data (e.g for Users table model class name is User)
-     * @param $key {String} key field name
-     * @param $value {String} value field name (multiple fileds cam be concatinated using +) - e.g first_name+last_name
-     * @param $method {String} if not empty, use this menthod to get only a selected set of objects
+     * @param  $table {String} model class name of the table to get data (e.g for Users table model class name is User)
+     * @param  $key {String} key field name
+     * @param  $value {String} value field name (multiple fileds cam be concatinated using +) - e.g first_name+last_name
+     * @param  $method {String} if not empty, use this menthod to get only a selected set of objects
      * from db instead of retriving all objects. This method should be defined in class $table
      * and should return an array of objects of type $table
      * @return {Array} associative array
@@ -1135,8 +1238,9 @@ class BaseService
 
     /**
      * Set the current logged in user
+     *
      * @method setCurrentUser
-     * @param $currentUser {User} the current logged in user
+     * @param  $currentUser {User} the current logged in user
      */
 
     public function setCurrentUser($currentUser)
@@ -1163,6 +1267,7 @@ class BaseService
 
     /**
      * Get the currently logged in user from session
+     *
      * @method getCurrentUser
      * @return {User} currently logged in user from session
      */
@@ -1179,6 +1284,7 @@ class BaseService
     /**
      * Get the Profile id attached to currently logged in user. if the user is switched,
      * this will return the id of switched Profile instead of currently logged in users Prifile id
+     *
      * @method getCurrentProfileId
      * @return {Integer}
      */
@@ -1196,8 +1302,25 @@ class BaseService
         return $adminEmpId;
     }
 
+    public function getCurrentSwitchedEmployeeUserId()
+    {
+        $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
+        $adminEmpId = SessionUtils::getSessionObject('admin_current_profile');
+        if (!empty($adminEmpId)) {
+            $user = new User();
+            $user->Load($signInMappingField.' = ?', [$adminEmpId]);
+            if (empty($user->id)) {
+                return null;
+            }
+        }
+        $user = SessionUtils::getSessionObject('user');
+
+        return $user->$signInMappingField;
+    }
+
     /**
      * Get the Profile id attached to currently logged in user
+     *
      * @method getCurrentProfileId
      * @return {Integer}
      */
@@ -1210,6 +1333,7 @@ class BaseService
 
     /**
      * Check if the current user has switched into another user
+     *
      * @method isEmployeeSwitched
      * @return {Boolean}
      */
@@ -1221,8 +1345,9 @@ class BaseService
 
     /**
      * Get User by profile id
+     *
      * @method getUserFromProfileId
-     * @param $profileId {Integer} profile id
+     * @param  $profileId {Integer} profile id
      * @return {User} user object
      */
 
@@ -1313,11 +1438,12 @@ class BaseService
     /**
      * Use user level security functions defined in model classes to check whether a given action
      * type is allowed to be executed by the current user on a given object
+     *
      * @method checkSecureAccess
-     * @param $type {String} Action type
-     * @param $object {Object} object to test access
-     * @param $table
-     * @param $request
+     * @param  $type {String} Action type
+     * @param  $object {Object} object to test access
+     * @param  $table
+     * @param  $request
      * @return bool {Boolen} true or exit true or exit
      */
 
@@ -1342,9 +1468,10 @@ class BaseService
 
             //This will check whether user can access his own records using a value in request
             if (isset($request[$userOnlyMeAccessField])
-                && isset($this->currentUser->$userOnlyMeAccessField)) {
-                if (in_array($type, $accessMatrix) && $request[$userOnlyMeAccessField]
-                    === $this->currentUser->$userOnlyMeAccessRequestField) {
+                && isset($this->currentUser->$userOnlyMeAccessField)
+            ) {
+                if (in_array($type, $accessMatrix) && (string)$request[$userOnlyMeAccessField]=== (string)$this->currentUser->$userOnlyMeAccessRequestField
+                ) {
                     return true;
                 }
             }
@@ -1353,7 +1480,8 @@ class BaseService
             // Employees should be able to update their own records
             if (!empty($table) && in_array($type, $accessMatrix)) {
                 if (!empty($this->currentUser->$userOnlyMeAccessRequestField)
-                    && in_array($table, $this->userTables)) {
+                    && in_array($table, $this->userTables)
+                ) {
                     return true;
                 }
             }
@@ -1423,19 +1551,19 @@ class BaseService
             return true;
         }
 
-//        $data = AesCtr::decrypt($key, $instanceId, 256);
-//        $arr = explode("|", $data);
-//        if ($arr[0] == KEY_PREFIX && $arr[1] == $instanceId) {
-//            return true;
-//        }
+        //        $data = AesCtr::decrypt($key, $instanceId, 256);
+        //        $arr = explode("|", $data);
+        //        if ($arr[0] == KEY_PREFIX && $arr[1] == $instanceId) {
+        //            return true;
+        //        }
 
         return false;
     }
 
-    public function loadModulePermissions($group, $name, $userLevel)
+    public function loadModulePermissions($updatePath, $userLevel)
     {
         $module = new Module();
-        $module->Load("update_path = ?", array($group.">".$name));
+        $module->Load("update_path = ?", array($updatePath));
 
         $arr = array();
         $arr['user'] = json_decode($module->user_levels, true);
@@ -1466,8 +1594,7 @@ class BaseService
         //Check if user has permissions to this module
         //Check Module Permissions
         $modulePermissions = BaseService::getInstance()->loadModulePermissions(
-            $moduleManagerObj->getModuleType(),
-            $moduleObject['name'],
+            $moduleManagerObj->getUpdatePath(),
             BaseService::getInstance()->getCurrentUser()->user_level
         );
 
@@ -1498,8 +1625,7 @@ class BaseService
         //Check if user has permissions to this module
         //Check Module Permissions
         $modulePermissions = BaseService::getInstance()->loadModulePermissions(
-            $moduleManagerObj->getModuleType(),
-            $moduleObject['name'],
+            $moduleManagerObj->getUpdatePath(),
             $user->user_level
         );
 
@@ -1535,8 +1661,9 @@ class BaseService
 
     /**
      * Set the audit manager
+     *
      * @method setAuditManager
-     * @param $auditManager {AuditManager}
+     * @param  $auditManager {AuditManager}
      */
 
     public function setAuditManager($auditManager)
@@ -1546,8 +1673,9 @@ class BaseService
 
     /**
      * Set the NotificationManager
+     *
      * @method setNotificationManager
-     * @param $notificationManager {NotificationManager}
+     * @param  $notificationManager {NotificationManager}
      */
 
     public function setNotificationManager($notificationManager)
@@ -1557,8 +1685,9 @@ class BaseService
 
     /**
      * Set the SettingsManager
+     *
      * @method setSettingsManager
-     * @param $settingsManager {SettingsManager}
+     * @param  $settingsManager {SettingsManager}
      */
 
     public function setSettingsManager($settingsManager)
@@ -1648,14 +1777,35 @@ class BaseService
         return $admins;
     }
 
+    public function getUserTimeZone($user)
+    {
+        if (empty($user->employee)) {
+            return null;
+        }
+
+        $emp = new Employee();
+        $emp->Load("id = ?", [$user->employee]);
+        if (empty($emp->id) || empty($emp->department)) {
+            return null;
+        }
+
+        return $this->getEmployeeTimeZone($emp->id);
+    }
+
     public function getCurrentEmployeeTimeZone()
     {
         $cemp = $this->getCurrentProfileId();
         if (empty($cemp)) {
             return null;
         }
+
+        return $this->getEmployeeTimeZone($cemp);
+    }
+
+    public function getEmployeeTimeZone($employeeId)
+    {
         $emp = new Employee();
-        $emp->Load("id = ?", array($cemp));
+        $emp->Load("id = ?", array($employeeId));
         if (empty($emp->id) || empty($emp->department)) {
             return null;
         }
@@ -1857,8 +2007,8 @@ END;
 
     /**
      * @param $value
-     * @param int $options
-     * @param int $depth
+     * @param int   $options
+     * @param int   $depth
      * @return string
      * @throws \Exception
      */
@@ -1866,21 +2016,21 @@ END;
     {
         $encoded = json_encode($value, $options, $depth);
         switch (json_last_error()) {
-            case JSON_ERROR_NONE:
-                return $encoded;
-            case JSON_ERROR_DEPTH:
-                throw new \Exception('Maximum stack depth exceeded');
-            case JSON_ERROR_STATE_MISMATCH:
-                throw new \Exception('Underflow or the modes mismatch');
-            case JSON_ERROR_CTRL_CHAR:
-                throw new \Exception('Unexpected control character found');
-            case JSON_ERROR_SYNTAX:
-                throw new \Exception('Syntax error, malformed JSON');
-            case JSON_ERROR_UTF8:
-                $clean = $this->utf8ize($value);
-                return $this->safeJsonEncode($clean, $options, $depth);
-            default:
-                throw new \Exception('Unknown Json parsing error');
+        case JSON_ERROR_NONE:
+            return $encoded;
+        case JSON_ERROR_DEPTH:
+            throw new \Exception('Maximum stack depth exceeded');
+        case JSON_ERROR_STATE_MISMATCH:
+            throw new \Exception('Underflow or the modes mismatch');
+        case JSON_ERROR_CTRL_CHAR:
+            throw new \Exception('Unexpected control character found');
+        case JSON_ERROR_SYNTAX:
+            throw new \Exception('Syntax error, malformed JSON');
+        case JSON_ERROR_UTF8:
+            $clean = $this->utf8ize($value);
+            return $this->safeJsonEncode($clean, $options, $depth);
+        default:
+            throw new \Exception('Unknown Json parsing error');
         }
     }
 
@@ -1955,7 +2105,9 @@ END;
      */
     public function enrichObjectCustomFields($table, $obj)
     {
-        /** @var CustomFieldManager $customFields */
+        /**
+ * @var CustomFieldManager $customFields 
+*/
         $customFields = $this->customFieldManager->getCustomFields($table, $obj->id);
         foreach ($customFields as $cf) {
             $obj->{$cf->name} = $cf->value;

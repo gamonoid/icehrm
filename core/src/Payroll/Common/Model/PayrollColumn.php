@@ -83,9 +83,9 @@ class PayrollColumn extends BaseModel
      */
     public function executePreSaveActions($obj)
     {
-//        if ($this->shouldReorderColumns()) {
-//            $this->reorderColumns();
-//        }
+        //        if ($this->shouldReorderColumns()) {
+        //            $this->reorderColumns();
+        //        }
 
         $this->handleColumnOrderChange($obj);
 
@@ -102,9 +102,9 @@ class PayrollColumn extends BaseModel
         $oldColumn = new PayrollColumn();
         $oldColumn->Load('id = ?', [$obj->id]);
 
-//        if ($this->shouldReorderColumns()) {
-//            $this->reorderColumns();
-//        }
+        //        if ($this->shouldReorderColumns()) {
+        //            $this->reorderColumns();
+        //        }
 
         if (!empty($oldColumn->id) && (int)$oldColumn->coloder !== (int)$obj->colorder) {
             $this->handleColumnOrderChange($obj);

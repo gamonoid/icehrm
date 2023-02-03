@@ -13,6 +13,8 @@ namespace Classes;
 class IceRoute
 {
 
+    public static $foundRoute = false;
+
     public static $halts = false;
 
     public static $routes = array();
@@ -163,6 +165,7 @@ class IceRoute
             }
         }
 
+        self::$foundRoute = $found_route;
         // run the error callback if the route was not found
         if ($found_route == false) {
             if (!self::$error_callback) {

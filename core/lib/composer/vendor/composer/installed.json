@@ -1591,6 +1591,49 @@
         ]
     },
     {
+        "name": "icehrm/php-active-record",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/icehrm/php-active-record.git",
+            "reference": "24c52d33c50cdc6e612133e8f6ab887d71f74cac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/icehrm/php-active-record/zipball/24c52d33c50cdc6e612133e8f6ab887d71f74cac",
+            "reference": "24c52d33c50cdc6e612133e8f6ab887d71f74cac",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0"
+        },
+        "time": "2023-01-27T13:08:35+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MyORM\\": "src/MyORM/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Simple PHP library to access databases using active record pattern",
+        "keywords": [
+            "Active Record",
+            "database",
+            "mysql",
+            "persistence",
+            "php"
+        ],
+        "support": {
+            "issues": "https://github.com/icehrm/php-active-record/issues",
+            "source": "https://github.com/icehrm/php-active-record/tree/1.0.0"
+        }
+    },
+    {
         "name": "league/container",
         "version": "2.4.1",
         "version_normalized": "2.4.1.0",

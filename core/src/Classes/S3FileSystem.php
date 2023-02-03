@@ -28,13 +28,15 @@ class S3FileSystem
     {
         $res = null;
         try {
-            $res = $this->s3->putObject(array(
+            $res = $this->s3->putObject(
+                array(
                     'Bucket' => $bucket,
                     'Key'    => $key,
                     'SourceFile'   => $sourceFile,
                     'ACL'    => $acl
                     /*'ContentType' => 'image/jpeg'*/
-            ));
+                )
+            );
         } catch (\Exception $e) {
             LogManager::getInstance()->error($e->getMessage());
             LogManager::getInstance()->error($e);
@@ -56,10 +58,12 @@ class S3FileSystem
         $res = null;
 
         try {
-            $res = $this->s3->deleteObject(array(
+            $res = $this->s3->deleteObject(
+                array(
                     'Bucket' => $bucket,
                     'Key'    => $key
-            ));
+                )
+            );
         } catch (\Exception $e) {
             LogManager::getInstance()->error($e->getMessage());
             LogManager::getInstance()->notifyException($e);
@@ -93,11 +97,13 @@ class S3FileSystem
         // Calculate the hash
         $signature = $this->elCryptoHmacSHA1($this->secret, $signsz);
         // ... to the query string ...
-        $qs = http_build_query($pieces = array(
+        $qs = http_build_query(
+            $pieces = array(
                 'AWSAccessKeyId' => $this->key,
                 'Expires' => $expiresTimestamp,
                 'Signature' => $signature,
-        ));
+            )
+        );
         // ... and return the URL!
         return $url.'?'.$qs;
     }
@@ -110,11 +116,15 @@ class S3FileSystem
         $key = str_pad($key, $blocksize, chr(0x00));
         $ipad = str_repeat(chr(0x36), $blocksize);
         $opad = str_repeat(chr(0x5c), $blocksize);
-        $hmac = pack('H*', sha1(
-            ($key ^ $opad) . pack('H*', sha1(
-                ($key ^ $ipad) . $data
-            ))
-        ));
+        $hmac = pack(
+            'H*', sha1(
+                ($key ^ $opad) . pack(
+                    'H*', sha1(
+                        ($key ^ $ipad) . $data
+                    )
+                )
+            )
+        );
         return base64_encode($hmac);
     }
 }

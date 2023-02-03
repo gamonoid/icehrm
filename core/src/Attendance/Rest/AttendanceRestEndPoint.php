@@ -249,8 +249,7 @@ class AttendanceRestEndPoint extends RestEndPoint
         }
         $attendance = new Attendance();
         $attendance->Load(
-            "employee = ? and DATE_FORMAT( in_time,  '%Y-%m-%d' ) = ? and (out_time is NULL 
-            or out_time = '0000-00-00 00:00:00')",
+            "employee = ? and DATE_FORMAT( in_time,  '%Y-%m-%d' ) = ? and out_time is NULL",
             array($employeeId,$date)
         );
 
@@ -337,21 +336,25 @@ class AttendanceRestEndPoint extends RestEndPoint
                 );
             } elseif (!empty($outDateTime)) {
                 if (strtotime($attendance->out_time) >= strtotime($outDateTime)
-                    && strtotime($attendance->in_time) <= strtotime($outDateTime)) {
+                    && strtotime($attendance->in_time) <= strtotime($outDateTime)
+                ) {
                     //-1---0---1---0 || ---0--1---1---0
                     return new IceResponse(IceResponse::ERROR, "Time entry is overlapping with an existing one");
                 } elseif (strtotime($attendance->out_time) >= strtotime($inDateTime)
-                    && strtotime($attendance->in_time) <= strtotime($inDateTime)) {
+                    && strtotime($attendance->in_time) <= strtotime($inDateTime)
+                ) {
                     //---0---1---0---1 || ---0--1---1---0
                     return new IceResponse(IceResponse::ERROR, "Time entry is overlapping with an existing one");
                 } elseif (strtotime($attendance->out_time) <= strtotime($outDateTime)
-                    && strtotime($attendance->in_time) >= strtotime($inDateTime)) {
+                    && strtotime($attendance->in_time) >= strtotime($inDateTime)
+                ) {
                     //--1--0---0--1--
                     return new IceResponse(IceResponse::ERROR, "Time entry is overlapping with an existing one");
                 }
             } else {
                 if (strtotime($attendance->out_time) >= strtotime($inDateTime)
-                    && strtotime($attendance->in_time) <= strtotime($inDateTime)) {
+                    && strtotime($attendance->in_time) <= strtotime($inDateTime)
+                ) {
                     //---0---1---0
                     return new IceResponse(IceResponse::ERROR, "Time entry is overlapping with an existing one");
                 }
@@ -403,6 +406,7 @@ class AttendanceRestEndPoint extends RestEndPoint
 &markers=color:red%7Clabel:C%7C$location
 &key=".SettingsManager::getInstance()->getSetting('System: Google Maps Api Key');
 
+        LogManager::getInstance()->info($url);
 
         $data = file_get_contents($url);
         if (!empty($data)) {

@@ -4,6 +4,7 @@ use Classes\PermissionManager;
 use Dependents\Common\Model\EmployeeDependent;
 use EmergencyContacts\Common\Model\EmergencyContact;
 use Employees\Common\Model\Employee;
+use Employees\Common\Model\EmployeeCareer;
 use Qualifications\Common\Model\EmployeeCertification;
 use Qualifications\Common\Model\EmployeeEducation;
 use Qualifications\Common\Model\EmployeeLanguage;
@@ -20,6 +21,7 @@ $customFields = \Classes\BaseService::getInstance()->getCustomFields("Employee")
 
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
         <li class="active"><a id="tabEmployee" href="#tabPageEmployee"><?=t('Employees')?></a></li>
+		<li><a id="tabEmployeeCareer" href="#tabPageEmployeeCareer"><?=t('Work History')?></a></li>
 		<li><a id="tabEmployeeSkill" href="#tabPageEmployeeSkill"><?=t('Skills')?></a></li>
 		<li><a id="tabEmployeeEducation" href="#tabPageEmployeeEducation"><?=t('Education')?></a></li>
 		<li><a id="tabEmployeeCertification" href="#tabPageEmployeeCertification"><?=t('Certifications')?></a></li>
@@ -36,6 +38,11 @@ $customFields = \Classes\BaseService::getInstance()->getCustomFields("Employee")
             <div id="EmployeeForm"></div>
             <div id="EmployeeFilterForm"></div>
 		</div>
+        <div class="tab-pane" id="tabPageEmployeeCareer">
+            <div id="EmployeeCareerTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+            <div id="EmployeeCareerForm"></div>
+            <div id="EmployeeCareerFilterForm"></div>
+        </div>
 		<div class="tab-pane" id="tabPageEmployeeSkill">
 			<div id="EmployeeSkillTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
 			<div id="EmployeeSkillForm"></div>
@@ -93,6 +100,7 @@ $moduleData = [
         'EmployeeLanguage' => PermissionManager::checkGeneralAccess(new EmployeeLanguage()),
         'EmployeeDependent' => PermissionManager::checkGeneralAccess(new EmployeeDependent()),
         'EmergencyContact' => PermissionManager::checkGeneralAccess(new EmergencyContact()),
+        'EmployeeCareer' => PermissionManager::checkGeneralAccess(new EmployeeCareer()),
     ]];
 ?>
 <script>
@@ -150,6 +158,14 @@ modJsList['tabEmergencyContact'].setRemoteTable(true);
 modJsList['tabEmergencyContact'].setObjectTypeName('Emergency Contact');
 modJsList['tabEmergencyContact'].setDataPipe(new IceDataPipe(modJsList['tabEmergencyContact']));
 modJsList['tabEmergencyContact'].setAccess(<?=json_encode($moduleData['permissions']['EmergencyContact'])?>);
+
+//EmployeeCareerAdapter
+modJsList['tabEmployeeCareer'] = new EmployeeCareerAdapter('EmployeeCareer', 'EmployeeCareer', '', 'date_start desc');
+modJsList['tabEmployeeCareer'].setRemoteTable(true);
+modJsList['tabEmployeeCareer'].setObjectTypeName('Work History');
+modJsList['tabEmployeeCareer'].setDataPipe(new IceDataPipe(modJsList['tabEmployeeCareer']));
+modJsList['tabEmployeeCareer'].setAccess(<?=json_encode($moduleData['permissions']['EmployeeCareer'])?>);
+
 
 //modJsList['tabEmployeeImmigration'] = new EmployeeImmigrationAdapter('EmployeeImmigration');
 //modJsList['tabEmployeeImmigration'].setRemoteTable(true);

@@ -41,7 +41,11 @@ class ReactModalAdapterBase extends AdapterBase {
   }
 
   setAccess(access) {
-    this.access = access;
+    const tmp = [];
+    for ( const index in access ){
+      tmp.push( access[ index ] );
+    }
+    this.access = tmp;
   }
 
   hasAccess(type) {
@@ -275,7 +279,9 @@ class ReactModalAdapterBase extends AdapterBase {
     this.initTable();
     this.masterDataReader.updateAllMasterData()
       .then(() => {
-        this.tableContainer.current.reload();
+        if (this.tableContainer) {
+          this.tableContainer.current.reload();
+        }
       });
 
     this.trackEvent('get', this.tab, this.table);

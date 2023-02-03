@@ -35,6 +35,7 @@ USER nobody
 WORKDIR /var/www/html
 COPY --chown=nobody ./app /var/www/html/app/
 COPY --chown=nobody ./core /var/www/html/core/
+COPY --chown=nobody ./extensions /var/www/html/extensions/
 COPY --chown=nobody ./web /var/www/html/web/
 COPY --chown=nobody ./index.php /var/www/html/index.php
 COPY --chown=nobody ./docker/prod/config/config.php /var/www/html/app/config.php
@@ -46,4 +47,4 @@ EXPOSE 8070
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
 # Configure a healthcheck to validate that everything is up&running
-HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8071/fpm-ping
+HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8070/fpm-ping

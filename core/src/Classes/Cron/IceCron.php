@@ -21,12 +21,20 @@ class IceCron
     const MONTHLY = "Monthly";
     const YEARLY = "Yearly";
 
-    /* @var Cron $cron */
+    /**
+ * @var Cron $cron 
+*/
     private $cron;
 
-    public function __construct($cron)
+    /**
+ * @var IceTask  
+*/
+    private $executor;
+
+    public function __construct(Cron $cron, IceTask $executor)
     {
         $this->cron = $cron;
+        $this->executor = $executor;
     }
 
     public function isRunNow()
@@ -106,10 +114,7 @@ class IceCron
 
     public function execute()
     {
-        $class = '\\Classes\\Cron\\Task\\'.$this->cron->class;
-        /* @var IceTask $obj */
-        $obj = new $class();
-        $obj->execute($this->cron);
+        $this->executor->execute($this->cron);
         $this->cronCompleted();
     }
 

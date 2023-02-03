@@ -10,6 +10,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
     <ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
         <li class="active"><a id="tabEmployeeDocument" href="#tabPageEmployeeDocument"><?=t('My Documents')?></a></li>
         <li><a id="tabCompanyDocument" href="#tabPageCompanyDocument"><?=t('Company Documents')?></a></li>
+        <li><a id="tabEmployeePayslipDocument" href="#tabPageEmployeePayslipDocument"><?=t('Payslips')?></a></li>
     </ul>
 
     <div class="tab-content">
@@ -23,6 +24,11 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
             <div id="CompanyDocumentForm"></div>
             <div id="CompanyDocumentFilterForm"></div>
         </div>
+        <div class="tab-pane" id="tabPageEmployeePayslipDocument">
+            <div id="EmployeePayslipDocumentTable" class="reviewBlock" data-content="List"></div>
+            <div id="EmployeePayslipDocumentForm"></div>
+            <div id="EmployeePayslipDocumentFilterForm"></div>
+        </div>
     </div>
 
 </div>
@@ -32,6 +38,7 @@ $moduleData = [
     'user_level' => $user->user_level,
     'permissions' => [
         'EmployeeDocument' => [ "get","element","save","delete" ],
+        'EmployeePayslipDocument' => [ "get","element" ],
         'CompanyDocument' => [ "get","element" ],
     ]
 ];

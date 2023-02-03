@@ -75,7 +75,7 @@ class IceTable extends React.Component {
     console.log(fetchConfig);
     if (fetchConfig) {
       fetchConfig.page = 1;
-      pager.current = 1;
+      //pager.current = 1;
       fetchConfig.search = value;
       this.setState({
         fetchConfig,

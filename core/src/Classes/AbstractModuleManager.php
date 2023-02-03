@@ -3,6 +3,7 @@
  *The base class for module manager classes. ModuleManager classes which extend this
  * class provide core backend functionality
  *to each module such as defining models, error handliing and other configuration details
+ *
  *@class AbstractModuleManager
  */
 namespace Classes;
@@ -18,10 +19,10 @@ abstract class AbstractModuleManager
     private $errorMappings = array();
     private $modelClasses = array();
 
-    private $modulePath = null;
-    private $moduleObject = null;
-    private $moduleType = null;
-    private $actionManager = null;
+    protected $modulePath = null;
+    protected $moduleObject = null;
+    protected $moduleType = null;
+    protected $actionManager = null;
 
     public function initialize()
     {
@@ -35,12 +36,12 @@ abstract class AbstractModuleManager
      * Profile of currently logged in or switched user.
      * When a user is retriving this type of records, only the records having profile field set to c
      * urrently logged in users profile id will be released.
-     * @method initializeUserClasses
+     *
+     * @method  initializeUserClasses
      * @example
         public function initializeUserClasses(){
             $this->addUserClass("EmployeeDocument");
         }
-     *
      */
     abstract public function initializeUserClasses();
 
@@ -48,7 +49,8 @@ abstract class AbstractModuleManager
      * Override this method in module manager class to define file field mappings.
      * If you have a table field that stores a name of a file which need to be
      * deleted from the disk when the record is deleted a file field mapping should be added.
-     * @method initializeFieldMappings
+     *
+     * @method  initializeFieldMappings
      * @example
          public function initializeFieldMappings(){
             $this->addFileFieldMapping('EmployeeDocument', 'attachment', 'name');
@@ -60,7 +62,8 @@ abstract class AbstractModuleManager
      * Override this method in module manager class to define DB error mappings. Some actions to your
      * model classes trigger database errors.
      * These errors need to be translated to user friendly texts using DB error mappings
-     * @method initializeDatabaseErrorMappings
+     *
+     * @method  initializeDatabaseErrorMappings
      * @example
         public function initializeDatabaseErrorMappings(){
             $this->addDatabaseErrorMapping('CONSTRAINT `Fk_User_Employee` FOREIGN KEY',"Can not delete Employee,
@@ -73,7 +76,8 @@ abstract class AbstractModuleManager
     /**
      * Override this method in module manager class to add model classes to this module.
      * All the model classes defind for the module should be added here
-     * @method setupModuleClassDefinitions
+     *
+     * @method  setupModuleClassDefinitions
      * @example
         public function setupModuleClassDefinitions(){
             $this->addModelClass('Employee');
@@ -134,6 +138,13 @@ abstract class AbstractModuleManager
         return $this->moduleType;
     }
 
+    public function getUpdatePath()
+    {
+        $moduleObject = $this->getModuleObject();
+
+        return $this->getModuleType().'>'.$moduleObject['name'];
+    }
+
     public function getModulePath()
     {
         /*
@@ -188,7 +199,7 @@ abstract class AbstractModuleManager
         }
     }
 
-    private function getModuleLink()
+    protected function getModuleLink()
     {
 
         $metaData = json_decode(file_get_contents($this->modulePath."/meta.json"), true);
@@ -257,7 +268,9 @@ abstract class AbstractModuleManager
         $this->modelClasses[] = $className;
         $classWithNamespace = $this->moduleObject['model_namespace']."\\".$className;
         BaseService::getInstance()->addModelClass($className, $classWithNamespace);
-        /** @var BaseModel $modelClass */
+        /**
+ * @var BaseModel $modelClass 
+*/
         $modelClass = new $classWithNamespace();
         if ($modelClass->isCustomFieldsEnabled()) {
             $objectName = $modelClass->getObjectName();

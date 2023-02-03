@@ -17,6 +17,7 @@ class Task implements \JsonSerializable
 
     /**
      * Task constructor.
+     *
      * @param $priority
      * @param $text
      */
@@ -71,7 +72,7 @@ class Task implements \JsonSerializable
     }
 
     /**
-     * @param mixed $link
+     * @param mixed  $link
      * @param string $action
      * @return Task
      */

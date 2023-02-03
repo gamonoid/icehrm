@@ -1,3 +1,11 @@
+create table `SystemData` (
+	`id` bigint(20) NOT NULL AUTO_INCREMENT,
+	`name` varchar(50) not null,
+	`value` text default null,
+	primary key  (`id`),
+	unique key `name` (`name`)
+) engine=innodb default charset=utf8;
+
 create table `CompanyStructures` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `title` tinytext not null,
@@ -996,183 +1004,10 @@ CREATE TABLE `PayrollColumns` (
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB default charset=utf8;
 
-
-
-
-create table `EmployementType` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`name` varchar(250) not null default '',
-	primary key  (`id`)
-) engine=innodb default charset=utf8;
-
-create table `Industry` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`name` varchar(250) not null default '',
-	primary key  (`id`)
-) engine=innodb default charset=utf8;
-
-create table `ExperienceLevel` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`name` varchar(250) not null default '',
-	primary key  (`id`)
-) engine=innodb default charset=utf8;
-
-create table `JobFunction` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`name` varchar(250) not null default '',
-	primary key  (`id`)
-) engine=innodb default charset=utf8;
-
-create table `EducationLevel` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`name` varchar(250) not null default '',
-	primary key  (`id`)
-) engine=innodb default charset=utf8;
-
-create table `Benifits` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`name` varchar(250) not null default '',
-	primary key  (`id`)
-) engine=innodb default charset=utf8;
-
 create table `Tags` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`name` varchar(250) not null default '',
 	primary key  (`id`)
-) engine=innodb default charset=utf8;
-
-create table `Job` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`title` varchar(200) NOT NULL,
-	`shortDescription` text DEFAULT NULL,
-	`description` text DEFAULT NULL,
-	`requirements` text DEFAULT NULL,
-	`benefits` text DEFAULT NULL,
-	`country` bigint(20) DEFAULT NULL,
-	`company` bigint(20) DEFAULT NULL,
-	`department` VARCHAR(100) NULL,
-	`code` VARCHAR(20) NULL,
-	`employementType` bigint(20) DEFAULT NULL,
-	`industry` bigint(20) DEFAULT NULL,
-	`experienceLevel` bigint(20) DEFAULT NULL,
-	`jobFunction` bigint(20) DEFAULT NULL,
-	`educationLevel` bigint(20) DEFAULT NULL,
-	`currency` bigint(20) DEFAULT NULL,
-	`showSalary` enum('Yes','No') default NULL,
-	`salaryMin` bigint(20) DEFAULT NULL,
-	`salaryMax` bigint(20) DEFAULT NULL,
-	`keywords` text DEFAULT NULL,
-	`status` enum('Active','On hold','Closed') default NULL,
-	`closingDate` DATETIME default NULL,
-	`attachment` varchar(100) NULL,
-	`display` varchar(200) NOT NULL,
-	`postedBy` bigint(20) DEFAULT NULL,
-	INDEX `Job_status` (`status`),
-	primary key  (`id`)
-) engine=innodb default charset=utf8;
-
-
-create table `Candidates` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`first_name` varchar(100) default '' not null,
-	`last_name` varchar(100) default '' not null,
-	`nationality` bigint(20) default null,
-	`birthday` DATETIME default null,
-	`gender` enum('Male','Female') default NULL,
-	`marital_status` enum('Married','Single','Divorced','Widowed','Other') default NULL,
-	`address1` varchar(100) default '',
-	`address2` varchar(100) default '',
-	`city` varchar(150) default '',
-	`country` char(2) default null,
-	`province` bigint(20) default null,
-	`postal_code` varchar(20) default null,
-	`email` varchar(200) default null,
-	`home_phone` varchar(50) default null,
-	`mobile_phone` varchar(50) default null,
-	`cv_title` varchar(200) default '' not null,
-	`cv` varchar(150) NULL,
-	`cvtext` text NULL,
-	`industry` text DEFAULT NULL,
-	`profileImage` varchar(150) NULL,
-	`head_line` text DEFAULT NULL,
-	`objective` text DEFAULT NULL,
-	`work_history` text DEFAULT NULL,
-	`education` text DEFAULT NULL,
-	`skills` text DEFAULT NULL,
-	`referees` text DEFAULT NULL,
-	`linkedInUrl` varchar(500) DEFAULT NULL,
-	`linkedInData` text DEFAULT NULL,
-	`totalYearsOfExperience` int(11) default null,
-	`totalMonthsOfExperience` int(11) default null,
-	`htmlCVData` longtext DEFAULT NULL,
-	`generatedCVFile` varchar(150) DEFAULT NULL,
-	`created` DATETIME default NULL,
-	`updated` DATETIME default NULL,
-	`expectedSalary` int(11) default null,
-	`preferedPositions` text default null,
-	`preferedJobtype` varchar(60) default null,
-	`preferedCountries` text default null,
-	`tags` text default null,
-	`notes` text default null,
-	`calls` text default null,
-	`age` int(11) default null,
-	`hash` varchar(100) DEFAULT NULL,
-	`linkedInProfileLink` varchar(250) DEFAULT NULL,
-	`linkedInProfileId` varchar(50) DEFAULT NULL,
-	`facebookProfileLink` varchar(250) DEFAULT NULL,
-	`facebookProfileId` varchar(50) DEFAULT NULL,
-	`twitterProfileLink` varchar(250) DEFAULT NULL,
-	`twitterProfileId` varchar(50) DEFAULT NULL,
-	`googleProfileLink` varchar(250) DEFAULT NULL,
-	`googleProfileId` varchar(50) DEFAULT NULL,
-	primary key  (`id`)
-
-) engine=innodb default charset=utf8;
-
-
-create table `Applications` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`job` bigint(20) NOT NULL,
-	`candidate` bigint(20) DEFAULT NULL,
-	`created` DATETIME default NULL,
-	`referredByEmail` varchar(200) DEFAULT NULL,
-	`notes` text DEFAULT NULL,
-	primary key  (`id`),
-	unique key  (`job`,`candidate`),
-	CONSTRAINT `Fk_Applications_Job` FOREIGN KEY (`job`) REFERENCES `Job` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `Fk_Applications_Candidates` FOREIGN KEY (`candidate`) REFERENCES `Candidates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) engine=innodb default charset=utf8;
-
-create table `Interviews` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`job` bigint(20) NOT NULL,
-	`candidate` bigint(20) DEFAULT NULL,
-	`level` varchar(100) DEFAULT NULL,
-	`created` DATETIME default NULL,
-	`updated` DATETIME default NULL,
-	`scheduled` DATETIME default NULL,
-	`location` varchar(500) DEFAULT NULL,
-	`mapId` bigint(20) NULL,
-	`status` varchar(100) default null,
-	`notes` text DEFAULT NULL,
-	primary key  (`id`),
-	CONSTRAINT `Fk_Interviews_Job` FOREIGN KEY (`job`) REFERENCES `Job` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `Fk_Interviews_Candidates` FOREIGN KEY (`candidate`) REFERENCES `Candidates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) engine=innodb default charset=utf8;
-
-
-create table `Calls` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`job` bigint(20) NOT NULL,
-	`candidate` bigint(20) DEFAULT NULL,
-	`phone` varchar(20) default null,
-	`created` DATETIME default NULL,
-	`updated` DATETIME default NULL,
-	`status` varchar(100) default null,
-	`notes` text DEFAULT NULL,
-	primary key  (`id`),
-	CONSTRAINT `Fk_Calls_Job` FOREIGN KEY (`job`) REFERENCES `Job` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `Fk_Calls_Candidates` FOREIGN KEY (`candidate`) REFERENCES `Candidates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) engine=innodb default charset=utf8;
 
 

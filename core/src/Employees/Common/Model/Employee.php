@@ -5,6 +5,7 @@ use Classes\BaseService;
 use Classes\FileService;
 use Classes\IceResponse;
 use Classes\ModuleAccess;
+use Classes\PermissionManager;
 use Company\Common\Model\CompanyStructure;
 use Metadata\Common\Model\Country;
 use Model\BaseModel;
@@ -204,7 +205,8 @@ class Employee extends BaseModel
     {
 
         $employee = new Employee();
-        if (BaseService::getInstance()->currentUser->user_level != 'Admin') {
+
+        if (BaseService::getInstance()->currentUser->user_level != 'Admin' && EmployeeAccess::hasAccessToAllEmployeeData()) {
             $cemp = BaseService::getInstance()->getCurrentProfileId();
             $list = $employee->Find("status = ? and supervisor = ?", array('Active', $cemp));
         } else {

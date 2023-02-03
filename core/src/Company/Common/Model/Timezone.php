@@ -44,9 +44,11 @@ class Timezone extends BaseModel
             }
         }
 
-        usort($modifiedTimeZones, function ($a, $b) {
-            return strcmp($a->details, $b->details);
-        });
+        usort(
+            $modifiedTimeZones, function ($a, $b) {
+                return strcmp($a->details, $b->details);
+            }
+        );
         return $modifiedTimeZones;
     }
 

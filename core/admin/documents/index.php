@@ -45,7 +45,21 @@ if($user->user_level == "Admin") {
         'Employee Documents',
         'EmployeeDocumentAdapter',
         '',
+        'date_added desc',
+        false,
+        $options1
+    ));
+
+    $options1 = array();
+    $options1['setRemoteTable'] = 'true';
+    $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilderV2\ModuleTab(
+        '\Documents\Common\Model\EmployeeDocument',
+        'PayslipDocument',
+        'PayslipDocument',
+        'Employee Payslip',
+        'EmployeePayslipDocumentAdapter',
         '',
+        'date_added desc',
         false,
         $options1
     ));

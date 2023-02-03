@@ -4,6 +4,7 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Classes\AbstractModuleManager;
 use Classes\BaseService;
 use Classes\LanguageManager;
 
@@ -15,6 +16,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
 $moduleManagers = BaseService::getInstance()->getModuleManagers();
 $dashBoardList = array();
+/** @var AbstractModuleManager $moduleManagerObj */
 foreach($moduleManagers as $moduleManagerObj){
 
     //Check if this is not an admin module
@@ -78,6 +80,25 @@ foreach($dashBoardList as $k=>$v){
             echo LanguageManager::translateTnrText($v);
         }
         ?>
+        <div class="col-lg-3 col-xs-12">
+
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>
+                        <t>Market Place</t>
+                    </h3>
+                    <p>
+                        <t>Extend Your Installation</t>
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-store"></i>
+                </div>
+                <a target="_blank" href="https://icehrm.com/market" class="small-box-footer">
+                    <t>Purchase</t> <t>Extensions</t> <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
     </div>
 
 </div>

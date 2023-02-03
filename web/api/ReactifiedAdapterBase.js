@@ -7,6 +7,9 @@ class ReactifiedAdapterBase extends ReactModalAdapterBase {
 
     return fields.map((field, index) => {
       if (headers[index]) {
+        if (headers[index].bVisible === false) {
+          return null;
+        }
         return {
           title: headers[index].sTitle,
           dataIndex: field,

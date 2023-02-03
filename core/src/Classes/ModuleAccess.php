@@ -9,6 +9,7 @@ class ModuleAccess
 
     /**
      * ModuleAccess constructor.
+     *
      * @param $name
      * @param $group
      */

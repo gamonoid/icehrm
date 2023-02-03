@@ -115,10 +115,12 @@ class EmployeesActionManager extends SubActionManager
         $data->timesheetEntries = $this->getEmployeeData($employee->id, new EmployeeTimeEntry());
 
         $attendnace = $this->getEmployeeData($employee->id, new Attendance());
-        $data->attendance = array_map(function ($item) {
-            $item->image_in = '';
-            $item->image_out = '';
-        }, $attendnace);
+        $data->attendance = array_map(
+            function ($item) {
+                $item->image_in = '';
+                $item->image_out = '';
+            }, $attendnace
+        );
 
         if (class_exists('\Documents\Common\Model\EmployeeDocument')) {
             $data->documents = $this->getEmployeeData($employee->id, new \Documents\Common\Model\EmployeeDocument());

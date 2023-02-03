@@ -2,20 +2,24 @@
 namespace Model;
 
 use Classes\BaseService;
+use Classes\FinderProxy;
 use Classes\IceResponse;
 use Classes\ModuleAccess;
 use Classes\ModuleAccessService;
 use Documents\Common\Model\CompanyDocumentFinderProxy;
 use Modules\Common\Model\Module;
 use MyORM\MySqlActiveRecord;
+use ReflectionClass;
 use Users\Common\Model\UserRole;
 use Utils\LogManager;
 
 //class BaseModel extends \ADOdb_Active_Record
-class BaseModel extends MySqlActiveRecord
+class BaseModel extends MySqlActiveRecord implements FinderProxy
 {
     public $objectName = null;
     protected $allowCustomFields = false;
+    protected $isSubordinateQuery = false;
+    public $isJoinFind = false;
 
     public $keysToIgnore = array(
         "_table",
@@ -53,7 +57,9 @@ class BaseModel extends MySqlActiveRecord
         }
 
         $modules = [];
-        /** @var ModuleAccess $moduleAccess */
+        /**
+ * @var ModuleAccess $moduleAccess 
+*/
         foreach ($moduleAccessData as $moduleAccess) {
             $modules[] = ModuleAccessService::getInstance()->getModule(
                 $moduleAccess->getName(),
@@ -85,18 +91,22 @@ class BaseModel extends MySqlActiveRecord
 
         $userRoles = $this->getMatchingUserRoles($userRoles);
         if ($userRoles === false) {
-            return $allowedAccessMatrix === null ? $this->getDefaultAccessLevel() : $allowedAccessMatrix;
+            return empty($allowedAccessMatrix) ? $this->getDefaultAccessLevel() : $allowedAccessMatrix;
         }
 
-        $permissions = $allowedAccessMatrix === null ? $this->getDefaultAccessLevel() : $allowedAccessMatrix;
-
+        $permissions = empty($allowedAccessMatrix)  ? $this->getDefaultAccessLevel() : $allowedAccessMatrix;
+        $className = '';
+        try {
+            $className = (new ReflectionClass($this))->getShortName();
+        } catch (\ReflectionException $e) {
+        }
         foreach ($userRoles as $role) {
             $userRole = new UserRole();
             $userRole->Load('id = ?', [$role]);
             try {
                 $userRolePermissions = json_decode($userRole->additional_permissions);
                 foreach ($userRolePermissions as $tablePermissions) {
-                    if ($tablePermissions->table === $this->table) {
+                    if ($tablePermissions->table === $className) {
                         $permissions = array_unique(
                             array_merge(
                                 $permissions,
@@ -215,7 +225,7 @@ class BaseModel extends MySqlActiveRecord
     /**
      * If null is returned the object wont be included in the response
      *
-     * @param $obj
+     * @param  $obj
      * @return mixed
      */
     public function postProcessGetData($obj)
@@ -228,9 +238,19 @@ class BaseModel extends MySqlActiveRecord
         return $obj;
     }
 
+    /**
+     * If a user was given permissions to a module via a user role,
+     * The function `getModuleAccess` on models will define having access to which modules
+     * give the right to access a specific model object.
+     *
+     * When user has this access, the `getDefaultAccessLevel` will define what the user can do on that module,
+     * if user level access function such as `getEmployeeAccess` returns empty
+     *
+     * @return array
+     */
     public function getDefaultAccessLevel()
     {
-        return $this->getAnonymousAccess();
+        return array();
     }
 
     public function getVirtualFields()
@@ -259,24 +279,24 @@ class BaseModel extends MySqlActiveRecord
         return false;
     }
 
-//    public function getObjectKeys()
-//    {
-//        $keys = array();
-//
-//        foreach ($this as $k => $v) {
-//            if (in_array($k, $this->keysToIgnore)) {
-//                continue;
-//            }
-//
-//            if (is_array($v) || is_object($v)) {
-//                continue;
-//            }
-//
-//            $keys[$k] = $k;
-//        }
-//
-//        return $keys;
-//    }
+    //    public function getObjectKeys()
+    //    {
+    //        $keys = array();
+    //
+    //        foreach ($this as $k => $v) {
+    //            if (in_array($k, $this->keysToIgnore)) {
+    //                continue;
+    //            }
+    //
+    //            if (is_array($v) || is_object($v)) {
+    //                continue;
+    //            }
+    //
+    //            $keys[$k] = $k;
+    //        }
+    //
+    //        return $keys;
+    //    }
 
     public function getObjectKeys()
     {
@@ -321,7 +341,7 @@ class BaseModel extends MySqlActiveRecord
 
     public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
-        return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
+        return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra, $this->isJoinFind);
     }
 
     public function Save()
@@ -379,5 +399,18 @@ class BaseModel extends MySqlActiveRecord
     public function getFieldMappingFinder()
     {
         return null;
+    }
+
+    public function getTotalCount($query, $data)
+    {
+        // An admin loading all user data
+        $sql = "Select count(id) as count from " . $this->table;
+        $sql .= " where 1=1 " . $query;
+        return $this->countRows($sql, $data);
+    }
+
+    public function setIsSubOrdinateQuery($val)
+    {
+        $this->isSubordinateQuery = $val;
     }
 }

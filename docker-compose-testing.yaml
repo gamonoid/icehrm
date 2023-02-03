@@ -10,7 +10,7 @@ services:
       MYSQL_PASSWORD: testing
       MYSQL_DATABASE: icehrm
     volumes:
-      - ./docker/testing/init.sql:/docker-entrypoint-initdb.d/setup.sql
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/setup.sql
       - ./docker/testing/db_data:/var/lib/mysql
 
   icehrm-testing:

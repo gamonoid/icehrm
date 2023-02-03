@@ -27,9 +27,11 @@ class DashboardAdminManager extends AbstractModuleManager
 
     public function setupRestEndPoints()
     {
-        Macaw::get(REST_API_PATH.'tasks', function () {
-            $restEndPoint = new DashboardRestEndpoint();
-            $restEndPoint->process('getTaskList');
-        });
+        Macaw::get(
+            REST_API_PATH.'tasks', function () {
+                $restEndPoint = new DashboardRestEndpoint();
+                $restEndPoint->process('getTaskList');
+            }
+        );
     }
 }

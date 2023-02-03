@@ -36,6 +36,7 @@ return array(
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),
     'Predis\\' => array($vendorDir . '/predis/predis/src'),
     'PDepend\\' => array($vendorDir . '/pdepend/pdepend/src/main/php/PDepend'),
+    'MyORM\\' => array($vendorDir . '/icehrm/php-active-record/src/MyORM'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Container\\' => array($vendorDir . '/league/container/src'),
     'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
@@ -57,5 +58,5 @@ return array(
     'Consolidation\\Config\\' => array($vendorDir . '/consolidation/config/src'),
     'Consolidation\\AnnotatedCommand\\' => array($vendorDir . '/consolidation/annotated-command/src'),
     'Base64Url\\' => array($vendorDir . '/spomky-labs/base64url/src'),
-    '' => array($baseDir . '/../../src'),
+    '' => array($baseDir . '/../../src', $baseDir . '/../../src-pro'),
 );

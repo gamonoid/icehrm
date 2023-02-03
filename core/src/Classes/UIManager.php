@@ -178,23 +178,27 @@ class UIManager
         }
 
         if (!empty($this->currentProfile)) {
-            $menuItems[] = new MenuItemTemplate('menuButtonProfile', array(
+            $menuItems[] = new MenuItemTemplate(
+                'menuButtonProfile', array(
                 "profileImage"=>$this->currentProfile->image,
                 "firstName"=>$this->currentProfile->first_name,
                 "lastName"=>$this->currentProfile->last_name,
                 "homeLink"=>$this->homeLink,
                 "CLIENT_BASE_URL"=>CLIENT_BASE_URL
 
-            ));
+                )
+            );
         } else {
-            $menuItems[] = new MenuItemTemplate('menuButtonProfile', array(
+            $menuItems[] = new MenuItemTemplate(
+                'menuButtonProfile', array(
                 "profileImage"=>BASE_URL."images/user_male.png",
                 "firstName"=>$this->user->username,
                 "lastName"=>"",
                 "homeLink"=>$this->homeLink,
                 "CLIENT_BASE_URL"=>CLIENT_BASE_URL
 
-            ));
+                )
+            );
         }
 
         if ($this->user->user_level == 'Admin') {
@@ -206,12 +210,14 @@ class UIManager
                 }
             }
 
-            $menuItems[] = new MenuItemTemplate('menuButtonHelp', array(
+            $menuItems[] = new MenuItemTemplate(
+                'menuButtonHelp', array(
                 "APP_NAME"=>APP_NAME,
                 "VERSION"=>VERSION,
                 "VERSION_DATE"=>VERSION_DATE,
                 "OTHER"=>$other
-            ));
+                )
+            );
         }
 
         return $menuItems;

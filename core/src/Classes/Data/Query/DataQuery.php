@@ -20,10 +20,11 @@ class DataQuery
 
     /**
      * DataQuery constructor.
+     *
      * @param $table
-     * @param bool $sortingEnabled
+     * @param bool       $sortingEnabled
      * @param $sortColumn
-     * @param string $sortOrder
+     * @param string     $sortOrder
      */
     public function __construct($table, $sortingEnabled = false, $sortColumn = false, $sortOrder = '', $orderBy = null)
     {

@@ -104,7 +104,9 @@ class MigrationManager
 
     public function ensureExtensionMigrations($migrations)
     {
-        /** @var MigrationInterface $migration */
+        /**
+ * @var MigrationInterface $migration 
+*/
         foreach ($migrations as $migration) {
             $this->runExtensionMigration($migration);
         }

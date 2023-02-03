@@ -1,19 +1,49 @@
 <?php
+
+use Classes\Cron\CronRegistry;
+use Classes\Cron\IceCron;
+use Classes\Cron\Task\DocumentExpiryNotificationTask;
+use Classes\Cron\Task\EmailSenderTask;
+use Utils\LogManager;
+
 include dirname(__FILE__).'/include.cron.php';
 
-$cron = new \Model\Cron();
-$crons = $cron->Find("status = ?",array('Enabled'));
+// Register default cron tasks
+CronRegistry::addCron(
+    'Email Sender Task',
+    new EmailSenderTask(),
+    1,
+    IceCron::MINUTELY
+);
 
-if(!$crons){
-    \Utils\LogManager::getInstance()->error(CLIENT_NAME." error :".$cron->ErrorMsg());
+CronRegistry::addCron(
+    'Document Expire Alert',
+    new DocumentExpiryNotificationTask(),
+    1,
+    IceCron::HOURLY
+);
+
+CronRegistry::addCron(
+    'Payroll Processor',
+    new \Classes\Cron\Task\PayrollProcessTask(),
+    1,
+    IceCron::MINUTELY
+);
+
+CronRegistry::syncWithDatabase();
+$crons = array_values(CronRegistry::getRegisteredCrons());
+
+LogManager::getInstance()->info('List of enabled crons:');
+foreach($crons as $cron){
+    LogManager::getInstance()->info($cron['cron']->name);
 }
 
-\Utils\LogManager::getInstance()->debug(CLIENT_NAME." cron count :".count($crons));
+LogManager::getInstance()->debug(CLIENT_NAME." cron count :".count($crons));
 foreach($crons as $cron){
-    $iceCron = new \Classes\Cron\IceCron($cron);
-    \Utils\LogManager::getInstance()->debug(CLIENT_NAME." check cron :".$cron->name);
+    $iceCron = new IceCron($cron['cron'], $cron['exe']);
+    LogManager::getInstance()->debug(CLIENT_NAME." check cron :".$cron['cron']->name);
     if($iceCron->isRunNow()){
-        \Utils\LogManager::getInstance()->debug(CLIENT_NAME." execute cron :".$cron->name);
+        LogManager::getInstance()->debug(CLIENT_NAME." execute cron :".$cron['cron']->name);
         $iceCron->execute();
     }
 }

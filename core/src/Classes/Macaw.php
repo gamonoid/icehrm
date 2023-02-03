@@ -168,7 +168,7 @@ class Macaw
         }
 
         // run the error callback if the route was not found
-        if ($found_route == false) {
+        if ($found_route == false && IceRoute::$foundRoute == false) {
             if (!self::$error_callback) {
                 self::$error_callback = function () {
                     header($_SERVER['SERVER_PROTOCOL']." 404 Not Found");

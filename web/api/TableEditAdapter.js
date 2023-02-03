@@ -182,11 +182,13 @@ class TableEditAdapter extends AdapterBase {
     html = `${this.getTableTopButtonHtml()}<div class="box-body table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="grid"></table></div>`;
 
     // Find current page
-    const activePage = $(`#${elementId} .dataTables_paginate .active a`).html();
-    let start = 0;
-    if (activePage !== undefined && activePage != null) {
-      start = parseInt(activePage, 10) * 15 - 15;
-    }
+    // const activePage = $(`#${elementId} .dataTables_paginate .active a`).html();
+    // let start = 0;
+    // if (activePage !== undefined && activePage != null) {
+    //   start = parseInt(activePage, 10) * 15 - 15;
+    // }
+
+    const start = 0;
 
     $(`#${elementId}`).html(html);
 
@@ -197,7 +199,7 @@ class TableEditAdapter extends AdapterBase {
       aaData: data,
       aoColumns: headers,
       bSort: false,
-      iDisplayLength: 15,
+      iDisplayLength: 1500,
       iDisplayStart: start,
     };
 

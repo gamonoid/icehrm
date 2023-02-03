@@ -8,17 +8,17 @@ namespace Classes\Crypt;
 class Aes
 {
 
-  /**
+    /**
    * AES Cipher function: encrypt 'input' with Rijndael algorithm
    *
-   * @param $input string as byte-array (16 bytes)
-   * @param w     array key schedule as 2D byte-array (Nr+1 x Nb bytes) -
+   * @param  $input string as byte-array (16 bytes)
+   * @param  w     array key schedule as 2D byte-array (Nr+1 x Nb bytes) -
    *              generated from the cipher key by keyExpansion()
-   * @return      array ciphertext as byte-array (16 bytes)
+   * @return array ciphertext as byte-array (16 bytes)
    */
     public static function cipher($input, $w)
     {
-    // main cipher function [�5.1]
+        // main cipher function [�5.1]
         $Nb = 4;                 // block size (in words): no of columns in state (fixed at 4 for AES)
         $Nr = count($w)/$Nb - 1; // no of rounds: 10/12/14 for 128/192/256-bit keys
 
@@ -49,7 +49,7 @@ class Aes
 
     private static function addRoundKey($state, $w, $rnd, $Nb)
     {
-  // xor Round Key into state S [�5.1.4]
+        // xor Round Key into state S [�5.1.4]
         for ($r = 0; $r<4; $r++) {
             for ($c = 0; $c<$Nb; $c++) {
                 $state[$r][$c] ^= $w[$rnd*4+$c][$r];
@@ -60,7 +60,7 @@ class Aes
 
     private static function subBytes($s, $Nb)
     {
-    // apply SBox to state S [�5.1.1]
+        // apply SBox to state S [�5.1.1]
         for ($r = 0; $r<4; $r++) {
             for ($c = 0; $c<$Nb; $c++) {
                 $s[$r][$c] = self::$sBox[$s[$r][$c]];
@@ -71,7 +71,7 @@ class Aes
 
     private static function shiftRows($s, $Nb)
     {
-    // shift row r of state S left by r bytes [�5.1.2]
+        // shift row r of state S left by r bytes [�5.1.2]
         $t = array(4);
         for ($r = 1; $r<4; $r++) {
             for ($c = 0; $c<4; $c++) {
@@ -86,7 +86,7 @@ class Aes
 
     private static function mixColumns($s, $Nb)
     {
-   // combine bytes of each col of state S [�5.1.3]
+        // combine bytes of each col of state S [�5.1.3]
         for ($c = 0; $c<4; $c++) {
             $a = array(4);  // 'a' is a copy of the current column from 's'
             $b = array(4);  // 'b' is a�{02} in GF(2^8)
@@ -94,7 +94,7 @@ class Aes
                 $a[$i] = $s[$i][$c];
                 $b[$i] = $s[$i][$c]&0x80 ? $s[$i][$c]<<1 ^ 0x011b : $s[$i][$c]<<1;
             }
-          // a[n] ^ b[n] is a�{03} in GF(2^8)
+            // a[n] ^ b[n] is a�{03} in GF(2^8)
             $s[0][$c] = $b[0] ^ $a[1] ^ $b[1] ^ $a[2] ^ $a[3]; // 2*a0 + 3*a1 + a2 + a3
             $s[1][$c] = $a[0] ^ $b[1] ^ $a[2] ^ $b[2] ^ $a[3]; // a0 * 2*a1 + 3*a2 + a3
             $s[2][$c] = $a[0] ^ $a[1] ^ $b[2] ^ $a[3] ^ $b[3]; // a0 + a1 + 2*a2 + 3*a3
@@ -103,16 +103,16 @@ class Aes
         return $s;
     }
 
-  /**
+    /**
    * Key expansion for Rijndael cipher(): performs key expansion on cipher key
    * to generate a key schedule
    *
-   * @param key array cipher key byte-array (16 bytes)
-   * @return    array key schedule as 2D byte-array (Nr+1 x Nb bytes)
+   * @param  key array cipher key byte-array (16 bytes)
+   * @return array key schedule as 2D byte-array (Nr+1 x Nb bytes)
    */
     public static function keyExpansion($key)
     {
-  // generate Key Schedule from Cipher Key [�5.2]
+        // generate Key Schedule from Cipher Key [�5.2]
         $Nb = 4;              // block size (in words): no of columns in state (fixed at 4 for AES)
         $Nk = count($key)/4;  // key length (in words): 4/6/8 for 128/192/256-bit keys
         $Nr = $Nk + 6;        // no of rounds: 10/12/14 for 128/192/256-bit keys
@@ -147,7 +147,7 @@ class Aes
 
     private static function subWord($w)
     {
-    // apply SBox to 4-byte word w
+        // apply SBox to 4-byte word w
         for ($i = 0; $i<4; $i++) {
             $w[$i] = self::$sBox[$w[$i]];
         }
@@ -156,7 +156,7 @@ class Aes
 
     private static function rotWord($w)
     {
-    // rotate 4-byte word w left by one byte
+        // rotate 4-byte word w left by one byte
         $tmp = $w[0];
         for ($i = 0; $i<3; $i++) {
             $w[$i] = $w[$i+1];
@@ -165,7 +165,7 @@ class Aes
         return $w;
     }
 
-  // sBox is pre-computed multiplicative inverse in GF(2^8) used in subBytes and keyExpansion [�5.1.1]
+    // sBox is pre-computed multiplicative inverse in GF(2^8) used in subBytes and keyExpansion [�5.1.1]
     private static $sBox = array(
     0x63,0x7c,0x77,0x7b,0xf2,0x6b,0x6f,0xc5,0x30,0x01,0x67,0x2b,0xfe,0xd7,0xab,0x76,
     0xca,0x82,0xc9,0x7d,0xfa,0x59,0x47,0xf0,0xad,0xd4,0xa2,0xaf,0x9c,0xa4,0x72,0xc0,
@@ -184,7 +184,7 @@ class Aes
     0xe1,0xf8,0x98,0x11,0x69,0xd9,0x8e,0x94,0x9b,0x1e,0x87,0xe9,0xce,0x55,0x28,0xdf,
     0x8c,0xa1,0x89,0x0d,0xbf,0xe6,0x42,0x68,0x41,0x99,0x2d,0x0f,0xb0,0x54,0xbb,0x16);
 
-  // rCon is Round Constant used for the Key Expansion [1st col is 2^(r-1) in GF(2^8)] [�5.2]
+    // rCon is Round Constant used for the Key Expansion [1st col is 2^(r-1) in GF(2^8)] [�5.2]
     private static $rCon = array(
     array(0x00, 0x00, 0x00, 0x00),
     array(0x01, 0x00, 0x00, 0x00),

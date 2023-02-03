@@ -123,9 +123,11 @@ class AttendanceStatus extends BaseModel
         }
 
 
-        usort($data, function ($a, $b) {
-            return $a->statusId - $b->statusId;
-        });
+        usort(
+            $data, function ($a, $b) {
+                return $a->statusId - $b->statusId;
+            }
+        );
 
         return $data;
     }

@@ -5,5 +5,6 @@
   "Admin Reports": "fa-book-reader",
   "System": "fa-cogs",
   "Insights": "fa-chart-line",
-  "Payroll": "fa-file-archive"
+  "Payroll": "fa-file-archive",
+  "Recruitment": "fa-th"
 }

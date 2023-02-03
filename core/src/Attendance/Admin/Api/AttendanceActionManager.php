@@ -63,21 +63,25 @@ class AttendanceActionManager extends SubActionManager
                 );
             } elseif (!empty($outDateTime)) {
                 if (strtotime($attendance->out_time) >= strtotime($outDateTime)
-                    && strtotime($attendance->in_time) <= strtotime($outDateTime)) {
+                    && strtotime($attendance->in_time) <= strtotime($outDateTime)
+                ) {
                     //-1---0---1---0 || ---0--1---1---0
                     return new IceResponse(IceResponse::ERROR, "Time entry is overlapping with an existing one");
                 } elseif (strtotime($attendance->out_time) >= strtotime($inDateTime)
-                    && strtotime($attendance->in_time) <= strtotime($inDateTime)) {
+                    && strtotime($attendance->in_time) <= strtotime($inDateTime)
+                ) {
                     //---0---1---0---1 || ---0--1---1---0
                     return new IceResponse(IceResponse::ERROR, "Time entry is overlapping with an existing one");
                 } elseif (strtotime($attendance->out_time) <= strtotime($outDateTime)
-                    && strtotime($attendance->in_time) >= strtotime($inDateTime)) {
+                    && strtotime($attendance->in_time) >= strtotime($inDateTime)
+                ) {
                     //--1--0---0--1--
                     return new IceResponse(IceResponse::ERROR, "Time entry is overlapping with an existing one");
                 }
             } else {
                 if (strtotime($attendance->out_time) >= strtotime($inDateTime)
-                    && strtotime($attendance->in_time) <= strtotime($inDateTime)) {
+                    && strtotime($attendance->in_time) <= strtotime($inDateTime)
+                ) {
                     //---0---1---0
                     return new IceResponse(IceResponse::ERROR, "Time entry is overlapping with an existing one");
                 }

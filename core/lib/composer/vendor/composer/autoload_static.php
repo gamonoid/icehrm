@@ -74,6 +74,7 @@ class ComposerStaticInit5bce11e11de2274869867527dbd4b40e
         ),
         'M' => 
         array (
+            'MyORM\\' => 6,
             'Monolog\\' => 8,
         ),
         'L' => 
@@ -245,6 +246,10 @@ class ComposerStaticInit5bce11e11de2274869867527dbd4b40e
         array (
             0 => __DIR__ . '/..' . '/pdepend/pdepend/src/main/php/PDepend',
         ),
+        'MyORM\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/icehrm/php-active-record/src/MyORM',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -333,6 +338,7 @@ class ComposerStaticInit5bce11e11de2274869867527dbd4b40e
 
     public static $fallbackDirsPsr4 = array (
         0 => __DIR__ . '/../..' . '/../../src',
+        1 => __DIR__ . '/../..' . '/../../src-pro',
     );
 
     public static $prefixesPsr0 = array (

@@ -60,9 +60,11 @@ class DomainAwareInputCleaner
         }
 
         $filterData = json_decode($filters, true);
-        foreach ($filterData as $name => $value) {
-            if (!$this->isValidColumnName($name) || !$this->isValidFilterValue($value)) {
-                return '';
+        if (is_array($filterData)) {
+            foreach ($filterData as $name => $value) {
+                if (!$this->isValidColumnName($name) || !$this->isValidFilterValue($value)) {
+                    return '';
+                }
             }
         }
 

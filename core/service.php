@@ -27,6 +27,7 @@ $userLevelArray = ['Admin', 'Manager', 'Employee', 'Restricted Admin', 'Restrict
 if($_REQUEST['a'] != "rsp" && $_REQUEST['a'] != "rpc"){
 	if(empty($user) || empty($user->email) ||  empty($user->id) || !in_array($user->user_level, $userLevelArray)){
 		$ret['status'] = "ERROR";
+        $ret['code'] = "NO_USER_FOUND";
 		echo json_encode($ret);
 		exit();
 	}

@@ -26,9 +26,11 @@ class StaffDirectoryModulesManager extends AbstractModuleManager
 
     public function setupRestEndPoints()
     {
-        \Classes\Macaw::get(REST_API_PATH.'staff', function () {
-            $empRestEndPoint = new StaffDirectoryRestEndPoint();
-            $empRestEndPoint->process('listAll');
-        });
+        \Classes\Macaw::get(
+            REST_API_PATH.'staff', function () {
+                $empRestEndPoint = new StaffDirectoryRestEndPoint();
+                $empRestEndPoint->process('listAll');
+            }
+        );
     }
 }

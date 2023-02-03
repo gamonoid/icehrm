@@ -35,6 +35,7 @@ class DocumentsAdminManager extends AbstractModuleManager
         $this->addModelClass('Document');
         $this->addModelClass('CompanyDocument');
         $this->addModelClass('EmployeeDocument');
+        $this->addModelClass('PayslipDocument');
         $this->addModelClass('EmployeeDocumentNotification');
     }
 }

@@ -32,9 +32,10 @@ class EmployeesActionManager extends SubActionManager
 
         if ($this->user->user_level == 'Admin') {
             $id = $req->id;
-        } elseif ($obj->getUserOnlyMeAccessField() == 'id' &&
-            SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 &&
-            CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)) {
+        } elseif ($obj->getUserOnlyMeAccessField() == 'id' 
+            && SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 
+            && CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)
+        ) {
             $subordinates = $obj->Find("supervisor = ?", array($cemp));
 
             if (empty($subordinates)) {
@@ -163,5 +164,25 @@ class EmployeesActionManager extends SubActionManager
         }
 
         return new IceResponse(IceResponse::SUCCESS, []);
+    }
+
+    public function getLoginCode($req)
+    {
+        $url = sprintf(
+            'https://icehrm.com/sapi/login-code?url=%s&token=%s',
+            $req->url,
+            $req->token
+        );
+
+        $arrContextOptions = [
+            "ssl"=>array(
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ),
+        ];
+
+        $data = file_get_contents($url, false, stream_context_create($arrContextOptions));
+
+        return new IceResponse(IceResponse::SUCCESS, json_decode($data, true));
     }
 }

@@ -75,7 +75,8 @@ class RestEndPoint
                     return new IceResponse(IceResponse::ERROR, self::RESPONSE_ERR_PERMISSION_DENIED, 403);
                 }
             } elseif ($user->user_level === 'Employee'
-                && $employeeId != BaseService::getInstance()->getCurrentProfileId()) {
+                && $employeeId != BaseService::getInstance()->getCurrentProfileId()
+            ) {
                 return new IceResponse(IceResponse::ERROR, self::RESPONSE_ERR_PERMISSION_DENIED, 403);
             } elseif ($user->user_level !== 'Employee' &&  $user->user_level !== 'Manager') {
                 return new IceResponse(IceResponse::ERROR, self::RESPONSE_ERR_PERMISSION_DENIED, 403);
@@ -115,7 +116,7 @@ class RestEndPoint
         return $this->sendResponse($resp);
     }
 
-    protected function sendResponse($resp)
+    public function sendResponse($resp)
     {
         header('Content-Type: application/json');
 
@@ -146,7 +147,7 @@ class RestEndPoint
      * @param $map
      * @return mixed
      */
-    protected function enrichElement($obj, $map)
+    public function enrichElement($obj, $map)
     {
         if (empty($map)) {
             return $obj;
@@ -169,14 +170,16 @@ class RestEndPoint
         return $obj;
     }
 
-    protected function enrichElements($items, $map)
+    public function enrichElements($items, $map)
     {
-        return array_map(function ($item) use ($map) {
-            return $this->enrichElement($item, $map);
-        }, $items);
+        return array_map(
+            function ($item) use ($map) {
+                return $this->enrichElement($item, $map);
+            }, $items
+        );
     }
 
-    protected function getCombinedValue($nameField, $targetObject)
+    public function getCombinedValue($nameField, $targetObject)
     {
         if (is_string($nameField)) {
             $values = explode("+", $nameField);
@@ -237,7 +240,7 @@ class RestEndPoint
         return new IceResponse(IceResponse::ERROR, "Method not Implemented", 404);
     }
 
-    protected function listByQuery(DataQuery $query)
+    public function listByQuery(DataQuery $query)
     {
         $page = 1;
         if (isset($_GET['page']) && intval($_GET['page']) > 0) {
@@ -284,7 +287,7 @@ class RestEndPoint
         );
     }
 
-    protected function listData(
+    public function listData(
         $object,
         $limit,
         $page = 1,
@@ -424,19 +427,23 @@ class RestEndPoint
             $token = $_GET['token'];
         }
 
+        if (empty($token)) {
+            return $token;
+        }
+
         $tokenService = new JwtTokenService();
         $token = $tokenService->getBaseToken($token);
 
         return $token;
     }
 
-    protected function getRequestBody()
+    public function getRequestBody()
     {
         $inputJSON = file_get_contents('php://input');
         return json_decode($inputJSON, true);
     }
 
-    protected function getFile()
+    public function getFile()
     {
         return $_FILES;
     }

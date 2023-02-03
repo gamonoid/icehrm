@@ -29,8 +29,7 @@ if(empty($user->default_module)){
 
 //Check Module Permissions
 $modulePermissions = \Classes\BaseService::getInstance()->loadModulePermissions(
-    $_REQUEST['g'],
-    $_REQUEST['n'],
+    $_REQUEST['g'].'>'.$_REQUEST['n'],
     $user->user_level
 );
 
@@ -179,7 +178,7 @@ if (defined('SYM_CLIENT')) {
                             <ul class="treeview-menu" id="<?="admin_".str_replace(" ", "_", $menu['name'])?>">
                                 <?php foreach ($menu['menu'] as $item){?>
                                     <li>
-                                        <a data-turbolinks="true" href="<?=CLIENT_BASE_URL?>?g=admin&n=<?=$item['name']?>&m=<?="admin_".str_replace(" ", "_", $menu['name'])?>">
+                                        <a data-turbolinks="true" href="<?=CLIENT_BASE_URL?>?g=<?=$item['link_group']??'admin'?>&n=<?=$item['link_name']??$item['name']?>&m=<?="admin_".str_replace(" ", "_", $menu['name'])?>">
                                             <i class="fa <?=!isset($item['icon'])?"fa-angle-double-right":$item['icon']?>"></i> <?=\Classes\LanguageManager::tran($item['label'])?>
                                         </a>
                                     </li>
@@ -204,7 +203,7 @@ if (defined('SYM_CLIENT')) {
                             <ul class="treeview-menu" id="<?="module_".str_replace(" ", "_", $menu['name'])?>">
                                 <?php foreach ($menu['menu'] as $item){?>
                                     <li>
-                                        <a data-turbolinks="true" href="<?=CLIENT_BASE_URL?>?g=modules&n=<?=$item['name']?>&m=<?="module_".str_replace(" ", "_", $menu['name'])?>">
+                                        <a data-turbolinks="true" href="<?=CLIENT_BASE_URL?>?g=<?=$item['link_group']??'modules'?>&n=<?=$item['link_name']??$item['name']?>&m=<?="module_".str_replace(" ", "_", $menu['name'])?>">
                                             <i class="fa <?=!isset($item['icon'])?"fa-angle-double-right":$item['icon']?>"></i> <?=\Classes\LanguageManager::tran($item['label'])?>
                                         </a>
                                     </li>
@@ -215,24 +214,28 @@ if (defined('SYM_CLIENT')) {
 
                 <?php }?>
 
-                <?php foreach($extensions as $menu){?>
-                    <?php if(count($menu['menu']) == 0){continue;}?>
-                    <li  class="treeview" ref="<?="extension_".str_replace(" ", "_", $menu['name'])?>">
-                        <a href="#">
-                            <i class="fa <?=!isset($mainIcons[$menu['name']])?"fa-th":$mainIcons[$menu['name']];?>"></i></i> <span><?=\Classes\LanguageManager::tran($menu['name'])?></span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
+                <?php if($user->user_level == 'Employee'){?>
 
-                        <ul class="treeview-menu" id="<?="extension_".str_replace(" ", "_", $menu['name'])?>">
-                            <?php foreach ($menu['menu'] as $item){?>
-                                <li>
-                                    <a data-turbolinks="true" href="<?=CLIENT_BASE_URL?>?g=extension&n=<?=$item['name']?>&m=<?="extension_".str_replace(" ", "_", $menu['name'])?>">
-                                        <i class="fa <?=!isset($item['icon'])?"fa-angle-double-right":$item['icon']?>"></i> <?=\Classes\LanguageManager::tran($item['label'])?>
-                                    </a>
-                                </li>
-                            <?php }?>
-                        </ul>
-                    </li>
+                    <?php foreach($adminModules as $menu){?>
+                        <?php if(count($menu['menu']) == 0){continue;}?>
+                        <li  class="treeview" ref="<?="admin_".str_replace(" ", "_", $menu['name'])?>">
+                            <a href="#">
+                                <i class="fa <?=!isset($mainIcons[$menu['name']])?"fa-th":$mainIcons[$menu['name']];?>"></i></i> <span><?=\Classes\LanguageManager::tran($menu['name'])?></span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+
+                            <ul class="treeview-menu" id="<?="admin_".str_replace(" ", "_", $menu['name'])?>">
+                                <?php foreach ($menu['menu'] as $item){?>
+                                    <li>
+                                        <a data-turbolinks="true" href="<?=CLIENT_BASE_URL?>?g=<?=$item['link_group']??'admin'?>&n=<?=$item['link_name']??$item['name']?>&m=<?="admin_".str_replace(" ", "_", $menu['name'])?>">
+                                            <i class="fa <?=!isset($item['icon'])?"fa-angle-double-right":$item['icon']?>"></i> <?=\Classes\LanguageManager::tran($item['label'])?>
+                                        </a>
+                                    </li>
+                                <?php }?>
+                            </ul>
+                        </li>
+                    <?php }?>
+
                 <?php }?>
 
                 <?php

@@ -8,6 +8,7 @@ class Filter
 
     /**
      * Filter constructor.
+     *
      * @param $name
      * @param $value
      */

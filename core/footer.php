@@ -1,7 +1,12 @@
 <?php
 
+use Classes\GoogleUserDataManager;
+use Classes\SettingsManager;
 use Utils\InputCleaner;
 
+$googleConfigFound = !empty(trim(SettingsManager::getInstance()->getSetting('System: Google Client Secret Path')));
+$isGoogleConnected = GoogleUserDataManager::isConnected(\Classes\BaseService::getInstance()->getCurrentUser());
+$userDomain = explode('@', $user->email)[1];
 ?>
 </section><!-- /.content -->
             </aside><!-- /.right-side -->
@@ -27,7 +32,7 @@ use Utils\InputCleaner;
 				modJsList[prop].setCurrentProfile(<?=json_encode($activeProfile)?>);
 				modJsList[prop].setInstanceId('<?=\Classes\BaseService::getInstance()->getInstanceId()?>');
 				modJsList[prop].setGoogleAnalytics(ga);
-				modJsList[prop].setNoJSONRequests('<?=\Classes\SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request")?>');
+				modJsList[prop].setNoJSONRequests('<?=SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request")?>');
 			}
 
 	    }
@@ -146,10 +151,12 @@ use Utils\InputCleaner;
 			$("#verifyModel").modal({
 				  backdrop: 'static'
 			});
-			<?php }?>
+			<?php } elseif (($moduleName === 'leaves' || $moduleName === 'candidates')  && !$isGoogleConnected && $googleConfigFound) {?>
+              // Show google connect only when verify modal is not shown
+              modJs.checkIfUserEmailIsGoogleDomain('<?=$userDomain?>');
+            <?php }?>
 
 		});
-
 
 	</script>
 	<?php

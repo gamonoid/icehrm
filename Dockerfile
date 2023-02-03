@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.17.1
 LABEL Maintainer="Thilina, Pituwala <thilina@icehrm.com>" \
       Description="IceHrm Docker Container with Nginx 1.16 & PHP-FPM 7.3 based on Alpine Linux."
 
@@ -13,28 +13,28 @@ ENV PHPIZE_DEPS \
 		pkgconf \
 		musl-dev \
 		re2c \
-		php7-dev \
-		php7-pear
+		php81-dev \
+		php81-pear
 
 RUN apk --no-cache add bind-tools
 
 # Install packages
 RUN apk --no-cache add php php-fpm php-opcache php-mysqli php-json php-openssl php-curl \
     php-zlib php-xml php-phar php-intl php-dom php-xmlreader php-ctype php-session \
-    php-mbstring php-gd php7-ldap nginx supervisor curl
+    php-mbstring php-gd nginx supervisor curl
 
 # Install xdebug
 RUN apk add --no-cache $PHPIZE_DEPS \
-    && pecl install xdebug-2.9.5
+    && pecl install xdebug-3.1.1
 
 # Configure nginx
 COPY docker/development/config/nginx.conf /etc/nginx/nginx.conf
 # Remove default server definition
-RUN rm /etc/nginx/conf.d/default.conf
+#RUN rm /etc/nginx/conf.d/default.conf
 
 # Configure PHP-FPM
-COPY docker/development/config/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
-COPY docker/development/config/php.ini /etc/php7/conf.d/custom.ini
+COPY docker/development/config/fpm-pool.conf /etc/php81/php-fpm.d/www.conf
+COPY docker/development/config/php.ini /etc/php81/conf.d/custom.ini
 
 # Configure supervisord
 COPY docker/development/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf

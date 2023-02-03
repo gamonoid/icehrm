@@ -1,4 +1,7 @@
 <?php
+
+use Classes\ExtensionManager;
+
 $initializers = [];
 //Reset modules if required
 if (\Classes\SettingsManager::getInstance()->getSetting("System: Reset Modules and Permissions") == "1") {
@@ -34,6 +37,11 @@ if (\Classes\SettingsManager::getInstance()->getSetting("System: Reset Module Na
 function includeModuleManager($type, $name, $data)
 {
     $moduleManagerClass = $data['manager'];
+
+    if (!class_exists($moduleManagerClass)) {
+        return null;
+    }
+
     /* @var \Classes\AbstractModuleManager $moduleManagerObj*/
     $moduleManagerObj = new $moduleManagerClass();
     $moduleManagerObj->setModuleObject($data);
@@ -134,6 +142,7 @@ foreach ($ams as $am) {
                 $dbModule->menu = $arr['menu'];
                 $dbModule->icon = $arr['icon'];
                 $dbModule->mod_order = $arr['order'];
+                $dbModule->user_levels = json_encode($arr['user_levels'], true);
                 $dbModule->Save();
             }
 
@@ -169,6 +178,9 @@ foreach ($ams as $am) {
 
         /* @var \Classes\AbstractModuleManager */
         $manager = includeModuleManager('admin', $am, $arr);
+        if (null === $manager) {
+            continue;
+        }
         if ($dbModule->status == 'Disabled') {
             continue;
         }
@@ -228,6 +240,7 @@ foreach ($ams as $am) {
                     $dbModule->menu = $arr['menu'];
                     $dbModule->icon = $arr['icon'];
                     $dbModule->mod_order = $arr['order'];
+                    $dbModule->user_levels = json_encode($arr['user_levels'], true);
                     $dbModule->Save();
                 }
 
@@ -235,7 +248,7 @@ foreach ($ams as $am) {
                 $arr['label'] = $dbModule->label;
                 $arr['icon'] = $dbModule->icon;
                 $arr['menu'] = $dbModule->menu;
-                $arr['order'] = $dbModule->mod_order;
+                //$arr['order'] = $dbModule->mod_order;
                 $arr['status'] = $dbModule->status;
                 $arr['user_levels'] = json_decode($dbModule->user_levels);
                 $arr['user_roles'] = empty($dbModule->user_roles)
@@ -264,6 +277,9 @@ foreach ($ams as $am) {
 
             /* @var \Classes\AbstractModuleManager */
             $manager = includeModuleManager('modules', $am, $arr);
+            if (null === $manager) {
+                continue;
+            }
 
             if ($dbModule->status == 'Disabled') {
                 continue;
@@ -291,11 +307,8 @@ foreach ($ams as $am) {
     }
 }
 
-$extensionManager = new \Classes\ExtensionManager();
-$extensionData = $extensionManager->setupExtensions();
-$extensionIcons = $extensionData[0];
-$extensionTemp = $extensionData[1];
-$extensionMenus = array_keys($extensionIcons);
+$extensionManager = new ExtensionManager();
+list($adminModulesTemp, $userModulesTemp) = $extensionManager->setupExtensions($adminModulesTemp, $userModulesTemp);
 
 foreach ($adminModulesTemp as $k => $v) {
     ksort($adminModulesTemp[$k]);
@@ -303,10 +316,6 @@ foreach ($adminModulesTemp as $k => $v) {
 
 foreach ($userModulesTemp as $k => $v) {
     ksort($userModulesTemp[$k]);
-}
-
-foreach ($extensionTemp as $k => $v) {
-    ksort($extensionTemp[$k]);
 }
 
 $adminIcons = json_decode(file_get_contents(CLIENT_PATH.'/admin/meta.json'), true);
@@ -349,24 +358,9 @@ foreach ($userModulesTemp as $k => $v) {
     }
 }
 
-$extensions = array();
-foreach ($extensionMenus as $menu) {
-    if (isset($extensionTemp[$menu])) {
-        $arr = array("name"=>$menu,"menu"=>$extensionTemp[$menu]);
-        $extensions[] = $arr;
-        $added[] = $menu;
-    }
-}
-
-foreach ($extensionTemp as $k => $v) {
-    if (!in_array($k, $added)) {
-        $arr = array("name"=>$k,"menu"=>$extensionTemp[$k]);
-        $extensions[] = $arr;
-    }
-}
 
 // Merge icons
-$mainIcons = array_merge($adminIcons, $userIcons, $extensionIcons);
+$mainIcons = array_merge($adminIcons, $userIcons);
 
 //Remove modules having no permissions
 if (!empty($user)) {
@@ -428,32 +422,6 @@ if (!empty($user)) {
                     }
                 } else {
                     unset($userModules[$fk]['menu'][$key]);
-                }
-            }
-        }
-    }
-
-    foreach ($extensions as $fk => $menu) {
-        foreach ($menu['menu'] as $key => $item) {
-            // If the user's once of the user roles are blacklisted for the module
-            if (empty($item['user_roles_blacklist'])) {
-                $item['user_roles_blacklist'] = [];
-            }
-            $commonRoles = array_intersect($item['user_roles_blacklist'], $userRoles);
-            if (!empty($commonRoles)) {
-                unset($extensions[$fk]['menu'][$key]);
-            }
-            if (!in_array($user->user_level, $item['user_levels'])) {
-                if (!empty($userRoles)) {
-                    if (empty($item['user_roles'])) {
-                        $item['user_roles'] = [];
-                    }
-                    $commonRoles = array_intersect($item['user_roles'], $userRoles);
-                    if (empty($commonRoles)) {
-                        unset($extensions[$fk]['menu'][$key]);
-                    }
-                } else {
-                    unset($extensions[$fk]['menu'][$key]);
                 }
             }
         }

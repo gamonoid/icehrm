@@ -3,14 +3,14 @@ services:
   mysql-prod:
     image: mysql:5.7
     ports:
-      - 3306:3306
+      - 3129:3306
     environment:
       MYSQL_ROOT_PASSWORD: IceHrmR00t
       MYSQL_USER: prod
       MYSQL_PASSWORD: prod
       MYSQL_DATABASE: icehrm
     volumes:
-      - ./docker/prod/init.sql:/docker-entrypoint-initdb.d/setup.sql
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/setup.sql
       - ./docker/prod/db_data:/var/lib/mysql
 
   icehrm-prod:
@@ -18,7 +18,7 @@ services:
       context: ./
       dockerfile: Dockerfile-prod
     ports:
-      - 8070:8070
+      - 3128:8070
     volumes:
       - ./docker/prod/app_data:/var/www/html/app/data
 
@@ -28,6 +28,19 @@ services:
       dockerfile: Dockerfile-worker
       args:
         - EXE_ENV=prod
+
+  phpmyadmin:
+    depends_on:
+      - mysql-prod
+    image: phpmyadmin
+    ports:
+      - "3130:80"
+    environment:
+      PMA_HOSTS: mysql-prod
+      PMA_PORT: 3129
+      PMA_USER: prod
+      PMA_PASSWORD: prod
+
 volumes:
   db_data:
   app_data:

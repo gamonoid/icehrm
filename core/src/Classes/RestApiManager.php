@@ -79,6 +79,9 @@ class RestApiManager
 
     public function validateAccessToken($hash)
     {
+        if (empty($hash)) {
+            return new IceResponse(IceResponse::ERROR, "Authorization bearer token is empty", 403);
+        }
         $accessTokenObj = new RestAccessToken();
         LogManager::getInstance()->info("AT Hash:".$hash);
         $accessTokenObj->Load("hash = ?", array($hash));
@@ -88,7 +91,7 @@ class RestApiManager
             return $this->validateAccessTokenInner($accessTokenObj->token);
         }
 
-        return new IceResponse(IceResponse::ERROR, "Authorization bearer token not found or invalid", 401);
+        return new IceResponse(IceResponse::ERROR, "Authorization bearer token is invalid", 403);
     }
 
     private function validateAccessTokenInner($accessToken)

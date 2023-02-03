@@ -4,9 +4,10 @@ namespace Documents\Common\Model;
 
 use Classes\BaseService;
 use Classes\FileService;
+use Classes\FinderProxy;
 use Employees\Common\Model\Employee;
 
-class CompanyDocumentFinderProxy extends CompanyDocument
+class CompanyDocumentFinderProxy extends CompanyDocument implements FinderProxy
 {
     // @codingStandardsIgnoreStart
     public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
@@ -73,5 +74,10 @@ class CompanyDocumentFinderProxy extends CompanyDocument
         }
 
         return $data;
+    }
+
+    public function setIsSubOrdinateQuery($val)
+    {
+        // TODO: Implement setIsSubOrdinateQuery() method.
     }
 }

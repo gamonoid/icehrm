@@ -87,6 +87,29 @@
 </div>
 <!-- Yes No Modal -->
 
+<!-- Google Connect -->
+<div class="modal fade" id="googleConnectModel" tabindex="-1" role="dialog" aria-labelledby="googleConnectModelLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:300px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><li class="fa fa-times"/></button>
+                <h3 id="googleConnectModelLabel" style="font-size: 17px;">Connect IceHrm to Google Calendar</h3>
+            </div>
+            <div class="modal-body">
+                <p id="googleConnectModelBody">
+                    <img src="<?=BASE_URL?>images/icehrm-google-connect.png" width="100%"/>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" onclick="modJs.redirectToUrl('<?=CLIENT_BASE_URL?>google-connect.php');">
+                    <img src="<?=BASE_URL?>images/btn_google_signin_dark_normal_web.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Google Connect -->
+
 <!-- Upload Modal -->
 <div class="modal fade" id="uploadModel" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
@@ -106,7 +129,7 @@
 </div>
 <!-- Upload Modal -->
 
-<!-- Message Modal -->
+<!-- Verify Modal -->
 <div class="modal fade" id="verifyModel" tabindex="-1" role="dialog" aria-labelledby="verifyModelLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -147,7 +170,7 @@
 	</div>
 </div>
 </div>
-<!-- Message Modal -->
+<!-- Verify Modal -->
 
 
 <?php if($user->user_level == 'Admin'){?>

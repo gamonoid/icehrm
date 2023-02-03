@@ -93,7 +93,7 @@ class EmployeeDetailsReport extends ClassBasedReportBuilder implements ReportBui
             ];
         }
 
-        $entries = BaseService::getInstance()->get('Employee', null, $filters);
+        $entries = BaseService::getInstance()->get('Employee', null, json_encode($filters));
         $data = [];
         foreach ($entries as $item) {
             $item =  BaseService::getInstance()->enrichObjectMappings($mapping, $item);

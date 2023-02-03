@@ -28,6 +28,7 @@ class IceDataPipe {
     url = `${url}&version=v2`;
     return axios.post(url, {})
       .then((data) => {
+        this.adapter.checkSessionClose(data.data);
         const key = this.getRequestKey(page, search, sortField, sortOrder, filters, limit);
         const response = {
           items: data.data.objects,

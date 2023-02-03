@@ -11,9 +11,28 @@ use Reports\Admin\Api\PDFReportBuilderInterface;
 
 class PayslipReport extends PDFReportBuilder implements PDFReportBuilderInterface
 {
+    protected $employee;
+
+    /**
+     * @param mixed $employee
+     */
+    public function setEmployee($employee)
+    {
+        $this->employee = $employee;
+    }
+
     public function getData($report, $request)
     {
         $data = $this->getDefaultData();
+
+        if ($this->employee === null) {
+            $this->employee = BaseService::getInstance()->getElement(
+                'Employee',
+                BaseService::getInstance()->getCurrentProfileId(),
+                null,
+                true
+            );
+        }
 
         $data['fields'] = array();
 
@@ -36,17 +55,18 @@ class PayslipReport extends PDFReportBuilder implements PDFReportBuilderInterfac
         foreach ($fields as $field) {
             if ($field['type'] == 'Payroll Column') {
                 $col = new PayrollColumn();
-                $col->Load("id = ?", $field['payrollColumn']);
+                $col->Load("id = ?", [$field['payrollColumn']]);
                 if (empty($col->id)) {
                     continue;
                 }
                 $payrollData = new PayrollData();
                 $payrollData->Load(
                     "payroll = ? and payroll_item = ? and employee = ?",
-                    array(
+                    [
                         $request['payroll'],
-                        $col->id, BaseService::getInstance()->getCurrentProfileId()
-                    )
+                        $col->id,
+                        $this->employee->id,
+                    ]
                 );
 
                 if (empty($payrollData->id)) {
@@ -64,13 +84,9 @@ class PayslipReport extends PDFReportBuilder implements PDFReportBuilderInterfac
                 $data['fields'][] = $field;
             }
         }
-        $employee = BaseService::getInstance()->getElement(
-            'Employee',
-            BaseService::getInstance()->getCurrentProfileId(),
-            null,
-            true
-        );
-        $data['employeeName'] = $employee->first_name.' '.$employee->last_name;
+
+
+        $data['employeeName'] = $this->employee->first_name.' '.$this->employee->last_name;
         $data['payroll'] = $payroll;
         return $data;
     }

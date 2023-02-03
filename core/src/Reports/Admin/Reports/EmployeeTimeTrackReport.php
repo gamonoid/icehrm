@@ -18,12 +18,10 @@ class EmployeeTimeTrackReport extends ClassBasedReportBuilder implements ReportB
         LogManager::getInstance()->info(json_encode($req));
 
         if (empty($req['period'])
-            && (
-                empty($req['date_start'])
-                || 'NULL' === $req['date_start']
-                || empty($req['date_end'])
-                || 'NULL' === $req['date_end']
-            )
+            && (            empty($req['date_start'])
+            || 'NULL' === $req['date_start']
+            || empty($req['date_end'])
+            || 'NULL' === $req['date_end'])
         ) {
             $req['period'] = 'Current Month';
         }

@@ -88,6 +88,68 @@ class EmployeeDocumentAdapter extends ReactModalAdapterBase {
   }
 }
 
+/**
+ * EmployeePayslipDocumentAdapter
+ */
+
+class EmployeePayslipDocumentAdapter extends ReactModalAdapterBase {
+  getDataMapping() {
+    return [
+      'id',
+      'document',
+      'date_added',
+      'details',
+      'attachment',
+    ];
+  }
+
+  getHeaders() {
+    return [
+      { sTitle: 'ID', bVisible: false },
+      { sTitle: 'Document' },
+      { sTitle: 'Date Added' },
+      { sTitle: 'Details' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Document',
+        dataIndex: 'document',
+        sorter: true,
+      },
+      {
+        title: 'Date Added',
+        dataIndex: 'date_added',
+      },
+      {
+        title: 'Details',
+        dataIndex: 'details',
+      },
+    ];
+  }
+
+  getFormFields() {
+    return [
+      ['id', { label: 'ID', type: 'hidden' }],
+      ['document', { label: 'Document', type: 'select2', 'remote-source': ['Document', 'id', 'name', 'getDocumentTypesForUser'] }],
+    ];
+  }
+
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => {
+      return (
+        <Space size="middle">
+          <Tag color="green" onClick={() => download(record.attachment)} style={{ cursor: 'pointer' }}>
+            <DownloadOutlined />
+            {` ${adapter.gt('Download Document')}`}
+          </Tag>
+        </Space>
+      )
+    };
+  }
+}
 
 /**
  * EmployeeCompanyDocumentAdapter
@@ -209,4 +271,5 @@ class EmployeeCompanyDocumentAdapter extends ReactModalAdapterBase {
 module.exports = {
   EmployeeDocumentAdapter,
   EmployeeCompanyDocumentAdapter,
+  EmployeePayslipDocumentAdapter,
 };

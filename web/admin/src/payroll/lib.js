@@ -118,9 +118,9 @@ class PayrollAdapter extends AdapterBase {
       ['date_end', { label: 'End Date', type: 'date', validation: '' }],
       // [ "column_template", {"label":"Report Column Template","type":"select","remote-source":["PayrollColumnTemplate","id","name"]}],
       ['columns', { label: 'Payroll Columns', type: 'select2multi', 'remote-source': ['PayrollColumn', 'id', 'name'] }],
-      ['status', {
-        label: 'Status', type: 'select', source: [['Draft', 'Draft'], ['Completed', 'Completed']], sort: 'none',
-      }],
+      // ['status', {
+      //   label: 'Status', type: 'select', source: [['Draft', 'Draft'], ['Completed', 'Completed']], sort: 'none',
+      // }],
     ];
   }
 
@@ -134,7 +134,7 @@ class PayrollAdapter extends AdapterBase {
     }
   }
 
-  process(id, status) {
+  view(id, status) {
     // eslint-disable-next-line no-global-assign
     modJs = modJsList.tabPayrollData;
     modJs.setCurrentPayroll(id);
@@ -153,14 +153,50 @@ class PayrollAdapter extends AdapterBase {
     modJs.get([]);
   }
 
+  process(id) {
+    if (confirm('Are you sure you want to start processing this payroll? This will take a few minutes and once the processing is completed you will be able to view payroll details.')) {
+      // Do nothing
+    } else {
+      return;
+    }
+
+    const params = {};
+    params.id = id;
+    const reqJson = JSON.stringify(params);
+    const callBackData = [];
+    callBackData.callBackData = [];
+    callBackData.callBackSuccess = 'processSuccessCallback';
+    callBackData.callBackFail = 'processFailCallback';
+
+    this.customAction('startProcessing', 'admin=payroll', reqJson, callBackData);
+  }
+
+  processSuccessCallback(callBackData) {
+    this.showMessage('Success', 'Payroll is scheduled to be processed.');
+    this.get([]);
+  }
+
+
+  processFailCallback(callBackData) {
+    this.showMessage('Error', callBackData);
+  }
+
+  modifyClone(object) {
+    object.status = 'Draft';
+    return object;
+  }
 
   getActionButtonsHtml(id, data) {
-    const editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
+    let status = data[6];
+    const editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"></img>';
     const processButton = '<img class="tableActionButton" src="_BASE_images/run.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Process" onclick="modJs.process(_id_,\'_status_\');return false;"></img>';
+    const viewButton = '<img class="tableActionButton" src="_BASE_images/view.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="View" onclick="modJs.view(_id_,\'_status_\');return false;"></img>';
+    const processingButton = '<img class="tableActionButton" src="_BASE_images/loading-view.gif" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Processing payroll" onclick="return false;"></img>';
+    const completingButton = '<img class="tableActionButton" src="_BASE_images/loading-view.gif" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Generating payslips" onclick="return false;"></img>';
     const deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
     const cloneButton = '<img class="tableActionButton" src="_BASE_images/clone.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Copy" onclick="modJs.copyRow(_id_);return false;"></img>';
 
-    let html = '<div style="width:132px;">_edit__process__clone__delete_</div>';
+    let html = '<div style="width:160px;">_edit__process__clone__delete_</div>';
 
 
     if (this.showAddNew) {
@@ -175,14 +211,24 @@ class PayrollAdapter extends AdapterBase {
       html = html.replace('_delete_', '');
     }
 
-    if (this.showEdit) {
+    if (this.showEdit && (status === 'Draft' || status === 'Processed')) {
       html = html.replace('_edit_', editButton);
     } else {
       html = html.replace('_edit_', '');
     }
 
-    html = html.replace('_process_', processButton);
 
+    if (status === 'Completed') {
+      html = html.replace('_process_', viewButton);
+    } else if (status === 'Processed') {
+      html = html.replace('_process_', `${viewButton}${processButton}`);
+    } else if (status === 'Draft') {
+      html = html.replace('_process_', processButton);
+    } else if (status === 'Completing') {
+      html = html.replace('_process_', completingButton);
+    } else if (status === 'Processing') {
+      html = html.replace('_process_', processingButton);
+    }
 
     html = html.replace(/_id_/g, id);
     html = html.replace(/_status_/g, data[6]);

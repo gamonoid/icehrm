@@ -23,9 +23,11 @@ class EmployeeCache
 
         $employee = new Employee();
         $subs = $employee->Find('supervisor = ?', [$employeeId]);
-        $subIds = array_map(function ($item) {
-            return $item->id;
-        }, $subs);
+        $subIds = array_map(
+            function ($item) {
+                return $item->id;
+            }, $subs
+        );
 
         self::$subordinateCache[$employeeId] = $subIds;
 

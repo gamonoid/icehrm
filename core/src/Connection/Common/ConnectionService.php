@@ -126,9 +126,11 @@ class ConnectionService
     {
         try {
             $client = new Client();
-            $response = $client->request('POST', APP_WEB_URL . '/sapi/installtion-data', [
+            $response = $client->request(
+                'POST', APP_WEB_URL . '/sapi/installtion-data', [
                 'json' => $this->getInstallationData(),
-            ]);
+                ]
+            );
         } catch (\Throwable $e) {
             return false;
         }

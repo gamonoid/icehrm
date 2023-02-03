@@ -238,7 +238,8 @@ class IceForm extends React.Component {
       );
     } if (data.type === 'text') {
       if (data.validation) {
-        data.validation = data.validation.replace('OrEmpty', '');
+        // TODO - not sure why following line was there. This stop correct validations for rules like numberOrEmpty
+        //data.validation = data.validation.replace('OrEmpty', '');
         validationRule = this.getValidationRule(data);
         if (validationRule) {
           this.validationRules[name] = {

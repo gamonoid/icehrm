@@ -20,9 +20,9 @@ if($group == 'admin' || $group == 'modules'){
 }else if ($group == 'extension'){
     $name = str_replace("..","",$name);
     $name = str_replace("/","",$name);
-    $moduleName = $name;
+    $moduleName = str_replace('|', '/', $name);
     $moduleGroup = 'extensions';
-    $extensionIndex = APP_BASE_PATH.'/../extensions/'.$name.'/web/index.php';
+    $extensionIndex = APP_BASE_PATH.'../extensions/'.$moduleName.'/web/index.php';
     include APP_BASE_PATH.'extensions/wrapper.php';
 }else{
 	exit();

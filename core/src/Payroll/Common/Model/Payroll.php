@@ -9,6 +9,7 @@
 namespace Payroll\Common\Model;
 
 use Classes\BaseService;
+use Classes\IceResponse;
 use Classes\ModuleAccess;
 use Model\BaseModel;
 
@@ -59,5 +60,17 @@ class Payroll extends BaseModel
         return [
             new ModuleAccess('payroll', 'admin'),
         ];
+    }
+
+    /**
+     * @param $obj
+     * @return IceResponse
+     */
+    public function executePreSaveActions($obj)
+    {
+        if (empty($obj->status)) {
+            $obj->status = 'Draft';
+        }
+        return new IceResponse(IceResponse::SUCCESS, $obj);
     }
 }

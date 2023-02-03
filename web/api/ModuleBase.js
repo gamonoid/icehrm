@@ -1015,6 +1015,10 @@ class ModuleBase {
     $('#yesnoModel').modal('hide');
   }
 
+  closeModal(id) {
+    $(id).modal('hide');
+  }
+
   closePlainMessage() {
     $('#plainMessageModel').modal('hide');
     $('#dataMessageModel').modal('hide');
@@ -1278,6 +1282,10 @@ class ModuleBase {
     $(`#${this.getTableName()}_resetFilters`).hide();
     this.currentFilterString = '';
     this.get([]);
+  }
+
+  redirectToUrl(url) {
+    top.location.href = url;
   }
 
 
@@ -2706,6 +2714,22 @@ class ModuleBase {
   downloadPdf(type, data) {
     const url = `${this.clientUrl}service.php?a=pdf&h=${type}&data=${data}`;
     window.open(url,'_blank');
+  }
+
+  checkIfUserEmailIsGoogleDomain(domain) {
+    let url = `https://dns.google.com/resolve?name=${domain}&type=MX`
+    $.get(url, (data) => {
+      if (data == null || data.Answer == null ) {
+        return;
+      }
+      let hasGoogle = data.Answer.filter((item) => item.data != null && item.data.includes('google.com'));
+      if (hasGoogle.length > 0) {
+        $("#googleConnectModel").modal({
+          backdrop: 'static'
+        });
+      }
+
+    });
   }
 }
 

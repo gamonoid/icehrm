@@ -1,5 +1,10 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20220803_330007_add_google_connect_settings';
+$migrationList[] = 'v20220626_330005_add_hidden_to_docs';
+$migrationList[] = 'v20220626_330004_add_payroll_cron_task';
+$migrationList[] = 'v20220626_330003_gender_col_length';
+$migrationList[] = 'v20220626_330002_custom_field_options';
 $migrationList[] = 'v20220529_330001_google_map_api_key';
 $migrationList[] = 'v20220123_310008_remove_photo_att';
 $migrationList[] = 'v20220122_310007_career_progression';
@@ -12,7 +17,6 @@ $migrationList[] = 'v20211001_310000_employee_status';
 $migrationList[] = 'v20210925_301001_deprecate_logo';
 $migrationList[] = 'v20210718_300001_add_data_dir_setting';
 $migrationList[] = 'v20210626_290004_add_s3_settings';
-$migrationList[] = 'v20210606_290003_system_meta_data';
 $migrationList[] = 'v20210606_290002_add_aws_region';
 $migrationList[] = 'v20210606_290001_update_s3_config';
 $migrationList[] = 'v20210402_280006_modify_attendance_rep';

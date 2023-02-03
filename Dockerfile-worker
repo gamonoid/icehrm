@@ -21,6 +21,7 @@ RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
 COPY ./app /var/www/html/app/
 COPY ./core /var/www/html/core/
+COPY ./extensions /var/www/html/extensions/
 COPY ./web /var/www/html/web/
 COPY ./index.php /var/www/html/index.php
 COPY ./docker/$EXE_ENV/config/config.php /var/www/html/app/config.php

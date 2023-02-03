@@ -86,7 +86,8 @@ abstract class ReportBuilder
         $s3WebUrl = SettingsManager::getInstance()->getSetting("Files: S3 Web Url");
 
         if ($uploadFilesToS3.'' == '1' && !empty($uploadFilesToS3Key)
-            && !empty($uploadFilesToS3Secret) && !empty($s3Bucket) && !empty($s3WebUrl)) {
+            && !empty($uploadFilesToS3Secret) && !empty($s3Bucket) && !empty($s3WebUrl)
+        ) {
             $uploadname = CLIENT_NAME."/".$file;
             $s3FileSys = new S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);
             $res = $s3FileSys->putObject($s3Bucket, $uploadname, $fileFullName, 'authenticated-read');

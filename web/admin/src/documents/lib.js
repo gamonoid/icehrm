@@ -204,4 +204,16 @@ class EmployeeDocumentAdapter extends ReactifiedAdapterBase {
   }
 }
 
-module.exports = { DocumentAdapter, CompanyDocumentAdapter, EmployeeDocumentAdapter };
+/**
+ * EmployeePayslipDocumentAdapter
+ */
+
+class EmployeePayslipDocumentAdapter extends EmployeeDocumentAdapter {
+  getFilters() {
+    return [
+      ['employee', { label: 'Employee', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'] }],
+    ];
+  }
+}
+
+module.exports = { DocumentAdapter, CompanyDocumentAdapter, EmployeeDocumentAdapter, EmployeePayslipDocumentAdapter };

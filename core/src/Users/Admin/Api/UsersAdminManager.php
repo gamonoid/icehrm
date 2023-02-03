@@ -38,9 +38,11 @@ class UsersAdminManager extends AbstractModuleManager
 
     public function setupRestEndPoints()
     {
-        Macaw::post(REST_API_PATH.'oauth/token', function ($pathParams) {
-            $userRestEndpoint = new UserRestEndPoint();
-            $userRestEndpoint->process('post', $pathParams, false);
-        });
+        Macaw::post(
+            REST_API_PATH.'oauth/token', function ($pathParams) {
+                $userRestEndpoint = new UserRestEndPoint();
+                $userRestEndpoint->process('post', $pathParams, false);
+            }
+        );
     }
 }

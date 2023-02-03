@@ -345,24 +345,24 @@ class EvalMath
                     return $this->trigger("internal error");
                 }
                 switch ($token) {
-                    case '+':
-                        $stack->push($op1+$op2);
-                        break;
-                    case '-':
-                        $stack->push($op1-$op2);
-                        break;
-                    case '*':
-                        $stack->push($op1*$op2);
-                        break;
-                    case '/':
-                        if ($op2 == 0) {
-                            return $this->trigger("division by zero");
-                        }
-                        $stack->push($op1/$op2);
-                        break;
-                    case '^':
-                        $stack->push(pow($op1, $op2));
-                        break;
+                case '+':
+                    $stack->push($op1+$op2);
+                    break;
+                case '-':
+                    $stack->push($op1-$op2);
+                    break;
+                case '*':
+                    $stack->push($op1*$op2);
+                    break;
+                case '/':
+                    if ($op2 == 0) {
+                        return $this->trigger("division by zero");
+                    }
+                    $stack->push($op1/$op2);
+                    break;
+                case '^':
+                    $stack->push(pow($op1, $op2));
+                    break;
                 }
                 // if the token is a unary operator, pop one value off the stack, do the operation, and push it back on
             } elseif ($token == "_") {
