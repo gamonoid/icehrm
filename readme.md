@@ -52,14 +52,14 @@ docker-compose up -d
 ### Extend IceHrm with custom Extensions
 - Inorder to create an admin extension run
 ```
-php ice create:extension simple admin
+php ice create:extension sample admin
 ```
 
 ![](docs/images/icehrm-create-ext.gif)
 
 
-- Refresh IceHrm to see a new menu item called `SimpleAdmin`
-- The extension code can br found under `icehrm/extensions/simple/admin`
+- Refresh IceHrm to see a new menu item called `Sample Admin`
+- The extension code can br found under `icehrm/extensions/sample/admin`
 - Refer: [https://icehrm.com/explore/docs/extensions/](https://icehrm.com/explore/docs/extensions/) for more details.
 
 ### Building frontend assets
