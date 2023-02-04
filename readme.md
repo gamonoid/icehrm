@@ -20,9 +20,14 @@ IceHrm is an [HRM software](https://icehrm.com) which enable companies to manage
 - Download the [latest version of IceHrm](https://github.com/gamonoid/icehrm/releases/latest) and extract it.
 - Alternatively you can cone the repo `git clone https://github.com/gamonoid/icehrm.git`
 ```
-$ cd icehrm
-$ docker compose -f docker-compose-prod.yaml up --build
+cd icehrm
+npm run setup
+npm run docker:build
+npm run docker:start
 ```
+
+![](docs/images/IceHrm-installation.gif)
+
 - Visit [http://localhost:3128/](http://localhost:3128/) and login using `admin` as username and password.
 - Visit [http://localhost:3130/](http://localhost:3130/) to access phpmyadmin.
 - All user uploaded files are stored under `icehrm/docker/production/app_data`
@@ -73,12 +78,12 @@ gulp
 - Build assets for production
 ```
 gulp clean
-$ gulp --eprod
+gulp --eprod
 ```
 
 - Build extensions
 ```
-$ gulp ejs --xextension_name/admin
+gulp ejs --xextension_name/admin
 ```
 
 ### Running tests (Docker)
@@ -95,7 +100,7 @@ docker-compose -f docker-compose-testing.yaml up --exit-code-from cypress --buil
 
 - When you are ready to push your changes to production, make sure to build the production images
 ```
-$ docker-compose -f docker-compose-prod.yaml up -d --build
+docker-compose -f docker-compose-prod.yaml up -d --build
 ```
 
 ### Useful Links
