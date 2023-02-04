@@ -54,6 +54,10 @@ docker-compose up -d
 ```
 php ice create:extension simple admin
 ```
+
+![](icehrm-create-ext.gif)
+
+
 - Refresh IceHrm to see a new menu item called `SimpleAdmin`
 - The extension code can br found under `icehrm/extensions/simple/admin`
 - Refer: [https://icehrm.com/explore/docs/extensions/](https://icehrm.com/explore/docs/extensions/) for more details.
