@@ -11,6 +11,7 @@ use Employees\Common\Model\Employee;
 use Employees\Common\Model\EmployeeStatus;
 use Users\Common\Model\User;
 use Utils\CalendarTools;
+use Utils\LogManager;
 use Utils\NetworkUtils;
 
 class EmployeeRestEndPoint extends RestEndPoint
@@ -188,7 +189,7 @@ JSON;
     {
         $date = CalendarTools::getServerDate();
 
-        $employeeId = $parameter['num'];
+        $employeeId = (int)$parameter;
 
         $employeeState = new EmployeeStatus();
         $employeeState->Load('employee = ? and status_date = ?', [ $employeeId, $date]);
@@ -205,7 +206,7 @@ JSON;
     {
         $body = $this->getRequestBody();
 
-        $employeeId = $parameter['num'];
+        $employeeId = (int)$parameter;
 
         $permissionResponse = $this->checkBasicPermissions($user, $employeeId);
         if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
