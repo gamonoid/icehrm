@@ -35,8 +35,6 @@ define('ALL_CLIENT_BASE_PATH', '/var/www/icehrm.app/icehrmapp/');
 define('IS_CLOUD', false);
 define('LDAP_ENABLED', true);
 define('SAML_ENABLED', true);
-define('LEAVE_ENABLED', true);
-define('RECRUITMENT_ENABLED', false);
 if(!defined('APP_WEB_URL')) {define('APP_WEB_URL', 'https://icehrm.com');}
 
 if (!defined('EXTENSIONS_URL')) {
