@@ -28,6 +28,8 @@ services:
       dockerfile: Dockerfile-worker
       args:
         - EXE_ENV=prod
+    volumes:
+      - ./docker/prod/app_data:/var/www/html/app/data
 
   phpmyadmin:
     depends_on:
