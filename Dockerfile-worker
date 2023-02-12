@@ -1,4 +1,4 @@
-FROM alpine:3.17.1
+FROM alpine:3.14
 LABEL Maintainer="Thilina, Pituwala <thilina@icehrm.com>" \
       Description="IceHrm Docker Container with Nginx & PHP-FPM based on Alpine Linux."
 
@@ -12,6 +12,18 @@ RUN apk --no-cache add php php-fpm php-opcache php-mysqli php-json php-openssl p
 
 # Configure supervisord
 COPY docker/worker/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# persistent / runtime deps
+
+RUN apk add --no-cache \
+        wkhtmltopdf \
+        xvfb \
+        xvfb-run \
+        ttf-dejavu ttf-droid ttf-freefont ttf-liberation \
+    ;
+
+RUN ln -s /usr/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf;
+RUN chmod +x /usr/local/bin/wkhtmltopdf;
 
 # Setup document root
 RUN mkdir -p /var/www/html

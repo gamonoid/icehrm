@@ -29,6 +29,9 @@ services:
       dockerfile: Dockerfile-worker
       args:
         - EXE_ENV=development
+    volumes:
+      - .:/var/www/html
+      - ./docker/development/config/config.php:/var/www/html/app/config.php
 
   phpmyadmin-dev:
     depends_on:
