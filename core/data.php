@@ -202,6 +202,9 @@ if (!isset($_REQUEST['objects'])) {
                     }
                 }
             }
+            if (empty($subordinatesIds)) {
+                $subordinatesIds = '0';
+            }
             $countQuery = ' AND '.$obj->getUserOnlyMeAccessField() . " in (" . $subordinatesIds . ") " . $countFilterQuery.$searchQuery;
             $totalRows = $obj->getTotalCount($countQuery, array_merge($countFilterQueryData, $searchQueryData));
         } else {
