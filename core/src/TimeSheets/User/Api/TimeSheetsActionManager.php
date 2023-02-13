@@ -177,10 +177,11 @@ class TimeSheetsActionManager extends SubActionManager
         $mappingStr = $req->sm;
         $map = json_decode($mappingStr);
         $timeSheet = new EmployeeTimeSheet();
-        $list = $timeSheet->Find("employee in (".$subordinatesIds.")", array());
-        if (!$list) {
-            LogManager::getInstance()->info($timeSheet->ErrorMsg());
+        if (empty($subordinatesIds)) {
+            return new IceResponse(IceResponse::SUCCESS, []);
         }
+        $list = $timeSheet->Find("employee in (".$subordinatesIds.")", array());
+
         if (!empty($mappingStr)) {
             $list = $this->baseService->populateMapping($list, $map);
         }

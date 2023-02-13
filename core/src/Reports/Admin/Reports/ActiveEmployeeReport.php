@@ -57,6 +57,7 @@ FROM Employees e";
             (termination_date > NOW() and joined_date < NOW())";
         } else {
             $depts = $this->getChildCompanyStuctures($request['department']);
+            // $depts is always not empty. So no worries in sql query
             $query = "where department in (".implode(",", $depts)
                 .") and ((termination_date is NULL and joined_date < NOW()) 
                 or (termination_date > NOW() and joined_date < NOW()))";
@@ -79,11 +80,11 @@ FROM Employees e";
                 break;
             }
             $idQuery = "parent in (".implode(",", $nodeIdsAtLastLevel).") and id not in(".implode(",", $childIds).")";
-            LogManager::getInstance()->debug($idQuery);
-            $list = $companyStructTemp->Find($idQuery, array());
-            if (!$list) {
-                LogManager::getInstance()->debug($companyStructTemp->ErrorMsg());
+            $list = [];
+            if (!empty($nodeIdsAtLastLevel) and !empty($childIds)) {
+                $list = $companyStructTemp->Find($idQuery, array());
             }
+
             $nodeIdsAtLastLevel = array();
             foreach ($list as $item) {
                 $childIds[] = $item->id;

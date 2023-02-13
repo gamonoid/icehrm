@@ -121,7 +121,11 @@ class PayrollDataImporter implements DataImporter
     protected function refinePayrollColumns($payrollColumnIdMap, $deductionIdMap)
     {
         $payrollColumn = new PayrollColumn();
-        $columns = $payrollColumn->Find('id in ('.implode(',', array_values($payrollColumnIdMap)).')', array());
+        $columns = [];
+        if (!empty(array_values($payrollColumnIdMap))) {
+            $columns = $payrollColumn->Find('id in ('.implode(',', array_values($payrollColumnIdMap)).')', array());
+        }
+
         foreach ($columns as $column) {
             $column->deductions = $this->replaceJsonIds(
                 $column->deductions,

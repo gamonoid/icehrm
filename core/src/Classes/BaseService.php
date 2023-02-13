@@ -387,9 +387,14 @@ class BaseService
                             }
                         }
                     }
-                    $sql = "Select count(id) as count from " . $obj->table .
-                        " where " . $obj->getUserOnlyMeAccessField() . " in (" . $subordinatesIds . ") "
-                        . $countFilterQuery;
+                    if (!empty($subordinatesIds)) {
+                        $sql = "Select count(id) as count from " . $obj->table .
+                            " where " . $obj->getUserOnlyMeAccessField() . " in (" . $subordinatesIds . ") "
+                            . $countFilterQuery;
+                    } else {
+                        $sql = "Select count(id) as count from " . $obj->table . " where 1 = 1 " . $countFilterQuery;
+                    }
+
                     $rowCount = $obj->DB()->Execute($sql, $countFilterQueryData);
                 } else {
                     $sql = "Select count(id) as count from " . $obj->table;
@@ -731,10 +736,17 @@ class BaseService
                 LogManager::getInstance()->debug(
                     "Data Load Query (a1):".$signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit
                 );
-                $list = $finder->Find(
-                    $signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit,
-                    $queryData
-                );
+                if (!empty($subordinatesIds)) {
+                    $list = $finder->Find(
+                        $signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit,
+                        $queryData
+                    );
+                } else {
+                    $list = $finder->Find(
+                        "1=1 ".$query.$orderBy.$limit,
+                        $queryData
+                    );
+                }
             } else {
                 $list = $finder->Find("1=1".$query.$orderBy.$limit, $queryData);
             }

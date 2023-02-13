@@ -83,10 +83,14 @@ class PayrollDataExport extends ReportBuilder implements ReportBuilderInterface
         $data['salaryComponents'] = [];
         $salaryComponentGroupIds = [];
         $salaryComponent = new SalaryComponent();
-        $salaryComponents = $salaryComponent->Find(
-            "id in (" . implode(',', array_keys($salaryComponentIds)) .")",
-            array()
-        );
+        $salaryComponents = [];
+        if (!empty(array_keys($salaryComponentIds))) {
+            $salaryComponents = $salaryComponent->Find(
+                "id in (" . implode(',', array_keys($salaryComponentIds)) .")",
+                array()
+            );
+        }
+
         foreach ($salaryComponents as $salaryComponent) {
             $data['salaryComponents'][] = [
                 'id' => $salaryComponent->id,
@@ -101,10 +105,13 @@ class PayrollDataExport extends ReportBuilder implements ReportBuilderInterface
         // Get Salary Component Types
         $data['salaryComponentTypes'] = [];
         $salaryComponentType = new SalaryComponentType();
-        $salaryComponentTypes = $salaryComponentType->Find(
-            "id in (" . implode(',', array_keys($salaryComponentGroupIds)) .")",
-            array()
-        );
+        $salaryComponentTypes = [];
+        if (!empty(array_keys($salaryComponentGroupIds))) {
+            $salaryComponentTypes = $salaryComponentType->Find(
+                "id in (" . implode(',', array_keys($salaryComponentGroupIds)) .")",
+                array()
+            );
+        }
         foreach ($salaryComponentTypes as $salaryComponentType) {
             $data['salaryComponentTypes'][] = [
                 'id' => $salaryComponentType->id,

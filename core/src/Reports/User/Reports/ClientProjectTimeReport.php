@@ -46,11 +46,14 @@ class ClientProjectTimeReport extends PDFReportBuilder implements PDFReportBuild
         $data['employee'] = $employee->first_name." ".$employee->last_name;
 
         $employeeTimeEntry = new EmployeeTimeEntry();
-        $timeEntryList = $employeeTimeEntry->Find(
-            "employee = ? and date(date_start) >= ? and  date(date_end) <= ? and project in ("
-            .implode(",", $projectIds).") order by date_start",
-            array($employeeId, $request['date_start'], $request['date_end'])
-        );
+        $timeEntryList = [];
+        if (!empty($projectIds)) {
+            $timeEntryList = $employeeTimeEntry->Find(
+                "employee = ? and date(date_start) >= ? and  date(date_end) <= ? and project in ("
+                .implode(",", $projectIds).") order by date_start",
+                array($employeeId, $request['date_start'], $request['date_end'])
+            );
+        }
 
         $totalHours = 0;
         $nonWorkingDayHours = 0;

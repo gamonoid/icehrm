@@ -472,7 +472,6 @@ class PayrollActionManager extends SubActionManager
 
         //Get Child company structures
         $cssResp = CompanyStructure::getAllChildCompanyStructures($payroll->department);
-        error_log(json_encode($cssResp));
         $css = $cssResp->getData();
         $cssIds = array();
         foreach ($css as $c) {
@@ -481,10 +480,14 @@ class PayrollActionManager extends SubActionManager
 
         $employeeNamesById = array();
         $baseEmp = new Employee();
-        $baseEmpList = $baseEmp->Find(
-            "department in (".implode(",", $cssIds).") and status = ?",
-            array('Active')
-        );
+        $baseEmpList = [];
+        if (!empty($cssIds)) {
+            $baseEmpList = $baseEmp->Find(
+                "department in (".implode(",", $cssIds).") and status = ?",
+                array('Active')
+            );
+        }
+
         $empIds = array();
         foreach ($baseEmpList as $baseEmp) {
             $employeeNamesById[$baseEmp->id] = $baseEmp->first_name." ".$baseEmp->last_name;
@@ -492,14 +495,12 @@ class PayrollActionManager extends SubActionManager
         }
 
         $emp = new $rowTable();
-        $emps = $emp->Find(
-            "pay_frequency = ? and deduction_group = ? and employee in (".implode(",", $empIds).")",
-            array($payroll->pay_period, $payroll->deduction_group)
-        );
-        if (!$emps) {
-            error_log("Error:".$emp->ErrorMsg());
-        } else {
-            error_log("Employees:".json_encode($emps));
+        $emps = [];
+        if (!empty($empIds)) {
+            $emps = $emp->Find(
+                "pay_frequency = ? and deduction_group = ? and employee in (".implode(",", $empIds).")",
+                array($payroll->pay_period, $payroll->deduction_group)
+            );
         }
 
         $employees = array();
@@ -512,10 +513,13 @@ class PayrollActionManager extends SubActionManager
         }
 
         $column = new $columnTable();
-        $columns = $column->Find(
-            "enabled = ? and id in (".implode(",", $columnList).") order by colorder, id",
-            array('Yes')
-        );
+        $columns = [];
+        if (!empty($columnList)) {
+            $columns = $column->Find(
+                "enabled = ? and id in (".implode(",", $columnList).") order by colorder, id",
+                array('Yes')
+            );
+        }
 
         $cost = new $valueTable();
         $costs = $cost->Find("payroll = ?", array($req->payrollId));
@@ -670,10 +674,14 @@ class PayrollActionManager extends SubActionManager
         }
 
         $baseEmp = new Employee();
-        $baseEmpList = $baseEmp->Find(
-            "department in (".implode(",", $cssIds).") and status = ?",
-            array('Active')
-        );
+        $baseEmpList = [];
+        if (!empty($cssIds)) {
+            $baseEmpList = $baseEmp->Find(
+                "department in (".implode(",", $cssIds).") and status = ?",
+                array('Active')
+            );
+        }
+
         $empIds = array();
         foreach ($baseEmpList as $baseEmp) {
             $employeeNamesById[$baseEmp->id] = $baseEmp->first_name." ".$baseEmp->last_name;
@@ -681,10 +689,13 @@ class PayrollActionManager extends SubActionManager
         }
 
         $emp = new PayrollEmployee();
-        $emps = $emp->Find(
-            "pay_frequency = ? and deduction_group = ? and employee in (".implode(",", $empIds).")",
-            array($payroll->pay_period, $payroll->deduction_group)
-        );
+        $emps = [];
+        if(!empty($empIds)) {
+            $emps = $emp->Find(
+                "pay_frequency = ? and deduction_group = ? and employee in (".implode(",", $empIds).")",
+                array($payroll->pay_period, $payroll->deduction_group)
+            );
+        }
 
         $report = new UserReport();
         $report->Load('name = ?', ['Download Payslips']);

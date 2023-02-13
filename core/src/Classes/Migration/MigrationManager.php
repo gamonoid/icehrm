@@ -45,12 +45,18 @@ class MigrationManager
 
     public function getFirstAddedMigration($statuses)
     {
+        if (empty($statuses)) {
+            return [];
+        }
         $migration = new Migration();
         return $migration->Find("status in ('".implode("','", $statuses)."') order by created limit 1", array());
     }
 
     public function getLastRunMigration($statuses)
     {
+        if (empty($statuses)) {
+            return [];
+        }
         $migration = new Migration();
         return $migration->Find("status in ('".implode("','", $statuses)."') order by updated desc limit 1", array());
     }

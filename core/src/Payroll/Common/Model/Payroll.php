@@ -46,7 +46,11 @@ class Payroll extends BaseModel
             $payrollIds[] = $row['payroll'];
         }
         $payroll = new Payroll();
+        if (empty($payrollIds)) {
+            return [];
+        }
         $payrolls = $payroll->Find("id in (".implode(",", $payrollIds).") and status = 'Completed'");
+
         return $payrolls;
     }
 
