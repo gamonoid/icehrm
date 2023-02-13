@@ -1033,7 +1033,8 @@ create table `Crons` (
 	`type` enum('Minutely','Hourly','Daily','Weekly','Monthly','Yearly') default 'Hourly',
 	`status` enum('Enabled','Disabled') default 'Enabled',
 	primary key  (`id`),
-	key `KEY_Crons_frequency` (`frequency`)
+	key `KEY_Crons_frequency` (`frequency`),
+	constraint KEY_Crons_name unique (name)
 ) engine=innodb default charset=utf8;
 
 create table `Emails` (
