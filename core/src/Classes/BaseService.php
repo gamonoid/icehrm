@@ -2218,4 +2218,9 @@ END;
     {
         $this->extensionMigrations[$migration->getName()] = $migration;
     }
+
+    public function isOpenSourceVersion(){
+        $version = explode('.', VERSION);
+        return end($version) === 'OS';
+    }
 }

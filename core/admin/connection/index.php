@@ -1,4 +1,6 @@
 <?php
+
+use Classes\BaseService;
 use Classes\StatsHelper;
 use Connection\Common\ConnectionService;
 
@@ -14,6 +16,8 @@ if (class_exists('\\Classes\\ProVersion')) {
     $isIceHrmPro = true;
     $data = json_decode($data, true);
 }
+
+$isOpenSource = BaseService::getInstance()->isOpenSourceVersion();
 
 $employeeCount = StatsHelper::getActiveEmployeeCount();
 $userCount = StatsHelper::getUserCount();
@@ -40,6 +44,7 @@ $moduleData = [
     'components' => [
             'employeeCount' => [
                     'isIceHrmPro' => $isIceHrmPro,
+                    'isOpenSource' => $isOpenSource,
                     'count' => $employeeCount,
                     'allowed' => $isIceHrmPro ? intval($data['employees']) : 'N/A',
                     'validUntil' => $data['licenseActivated'],
