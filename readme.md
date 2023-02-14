@@ -90,6 +90,22 @@ gulp --eprod
 gulp ejs --xextension_name/admin
 ```
 
+### Debugging code with psysh
+You can run psysh inside the icehrm web docker container to manually debug the code.
+- Start Psysh console
+``` 
+docker compose up -d
+docker exec -it icehrm-icehrm-1 /bin/sh
+./psysh -c ./.config/psysh/config.php
+```
+This will open a psysh console. You can instantiate any IceHrm class and debug it.
+Here is an example of creating an employee object and loading an employee from the database.
+```
+$emp = new \Employees\Common\Model\Employee();
+$emp->Load('id = ?',[1]);
+var_dump($emp);
+```
+
 ### Running tests (Docker)
 
 - Run e2e (cypress) tests
