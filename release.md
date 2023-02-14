@@ -1,5 +1,19 @@
 # Release Notes IceHrm Open Source
 
+## Release note v32.4.0.OS
+
+### 🧲 New features
+
+### 🧑🏻‍💻 For developers
+* IceHrm developer shell.
+
+### 🐛 Bug fixes
+* Fix: employees are not able to edit own profile.
+* Fix: Pagination issues when searching.
+* Fix: Not being able to add long text values to custom field options.
+* Fix Payslip download issue.
+* Fix: Payroll editable fields after the first page cannot be edited.
+
 ## Release note v32.1.0.OS
 
 ### 🧲 New features
