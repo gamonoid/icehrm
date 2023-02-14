@@ -257,6 +257,7 @@
             <include name="web/admin/dist/*.map"/>
             <include name="web/modules/dist/*.map"/>
             <include name="web/dist/*.map"/>
+            <include name="app/config.php"/>
         </fileset>
     </delete>
 
