@@ -1,6 +1,6 @@
 <?php
 include dirname(__FILE__).'/config.php';
-include(CLIENT_APP_PATH.'../core/src/MyORM/MySqlActiveRecord.php');
+include(CLIENT_APP_PATH.'../core/lib/composer/vendor/icehrm/php-active-record/src/MyORM/MySqlActiveRecord.php');
 
 
 function clean_input($input, $html = false) {
