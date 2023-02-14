@@ -21,7 +21,7 @@ RUN apk --no-cache add bind-tools
 # Install packages
 RUN apk --no-cache add php php-fpm php-opcache php-mysqli php-json php-openssl php-curl \
     php-zlib php-xml php-phar php-intl php-dom php-xmlreader php-ctype php-session \
-    php-mbstring php-gd nginx supervisor curl
+    php-mbstring php-gd php-tokenizer nginx supervisor curl
 
 # Install xdebug
 RUN apk add --no-cache $PHPIZE_DEPS \
