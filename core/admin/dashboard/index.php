@@ -80,25 +80,27 @@ foreach($dashBoardList as $k=>$v){
             echo LanguageManager::translateTnrText($v);
         }
         ?>
+        <?php if (BaseService::getInstance()->isOpenSourceVersion()) {?>
         <div class="col-lg-3 col-xs-12">
 
             <div class="small-box bg-yellow">
                 <div class="inner">
                     <h3>
-                        <t>Market Place</t>
+                        <t>Buy Extensions</t>
                     </h3>
                     <p>
-                        <t>Extend Your Installation</t>
+                        <t>Purchase New Extensions</t>
                     </p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-store"></i>
                 </div>
-                <a target="_blank" href="https://icehrm.com/market" class="small-box-footer">
+                <a target="_blank" href="https://icehrm.com/explore/extensions/" class="small-box-footer">
                     <t>Purchase</t> <t>Extensions</t> <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
+        <?php } ?>
     </div>
 
 </div>
