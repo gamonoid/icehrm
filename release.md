@@ -3,9 +3,22 @@
 ## Release note v32.4.0.OS
 
 ### 🧲 New features
+* PHP 8.1 and MySQL 8.0.32 support.
+* Introducing [IceHrm extension market-place](https://icehrm.com/explore/extensions/).
+* Ability to provide employees access to admin only modules with custom user roles.
+* Delayed payroll processing.
+  * Now the payroll is processed using a background cron job. This makes it possible to process a huge amount of employee data in a single payroll.
+* Bulk payslip generation.
+  * After the payroll is processed employees will be able to download the payslip via `My Documents` module.
+  * Admins can download the payslips for employees via `Document Management` module.
+  * Employees will be notified when a new payslip is available.
+* Adding a new tab to `Documents` module for downloading payslips.
 
 ### 🧑🏻‍💻 For developers
-* IceHrm developer shell.
+* [Docker based development environment](https://github.com/gamonoid/icehrm#setup-development-environment) with php 8.1 and mysql 8.0.32
+* Support for extending IceHrm with [custom extensions](https://github.com/gamonoid/icehrm#extend-icehrm-with-custom-extensions).
+* Commands to generate boilerplate code for extensions.
+* IceHrm [developer shell](https://github.com/gamonoid/icehrm#debugging-code-with-psysh).
 
 ### 🐛 Bug fixes
 * Fix: employees are not able to edit own profile.
@@ -13,6 +26,7 @@
 * Fix: Not being able to add long text values to custom field options.
 * Fix Payslip download issue.
 * Fix: Payroll editable fields after the first page cannot be edited.
+* Some minor fixes to validations.
 
 ## Release note v32.1.0.OS
 
