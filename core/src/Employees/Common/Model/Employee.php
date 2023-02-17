@@ -206,7 +206,7 @@ class Employee extends BaseModel
 
         $employee = new Employee();
 
-        if (BaseService::getInstance()->currentUser->user_level != 'Admin' && EmployeeAccess::hasAccessToAllEmployeeData()) {
+        if (BaseService::getInstance()->currentUser->user_level != 'Admin' && !EmployeeAccess::hasAccessToAllEmployeeData()) {
             $cemp = BaseService::getInstance()->getCurrentProfileId();
             $list = $employee->Find("status = ? and supervisor = ?", array('Active', $cemp));
         } else {
