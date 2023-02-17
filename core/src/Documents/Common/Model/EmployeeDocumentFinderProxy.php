@@ -10,8 +10,13 @@ class EmployeeDocumentFinderProxy extends EmployeeDocument implements FinderProx
     public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
         $find = $this->createFindQuery();
-        $parts = explode('ORDER BY', $whereOrderBy);
-        $whereOrderBy = sprintf('%s AND %s%s ORDER BY %s', $parts[0], $find, $this->getAdditionalQuery(), $parts[1]);
+        if (strpos($whereOrderBy, 'ORDER BY') !== false) {
+            $parts = explode('ORDER BY', $whereOrderBy);
+            $whereOrderBy = sprintf('%s AND %s%s ORDER BY %s', $parts[0], $find, $this->getAdditionalQuery(), $parts[1]);
+        } else {
+            $parts = explode('LIMIT', $whereOrderBy);
+            $whereOrderBy = sprintf('%s AND %s%s LIMIT %s', $parts[0], $find, $this->getAdditionalQuery(), $parts[1]);
+        }
         return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
     }
     // @codingStandardsIgnoreEnd
