@@ -272,7 +272,7 @@ class BaseService
 
         $columns = json_decode($req['cl'], true);
 
-        if (isset($req['iSortCol_0']) && isset($columns[$req['iSortCol_0']]) ) {
+        if (isset($req['iSortCol_0']) && isset($columns[$req['iSortCol_0']])) {
             $data['column'] = $columns[$req['iSortCol_0']];
         }
 
@@ -506,6 +506,7 @@ class BaseService
             $map = json_decode($mappingStr);
         }
         $nsTable = $this->getFullQualifiedModelClassName($table);
+        /** @var BaseModel $obj */
         $obj = new $nsTable();
         $this->checkSecureAccess("get", $obj, $table, $_REQUEST);
         $query = "";
@@ -531,9 +532,11 @@ class BaseService
             LogManager::getInstance()->debug("Filter Query Data:".json_encode($queryData));
         }
 
+        $searchJoinQuery = "";
+
         if (!empty($searchTerm) && !empty($searchColumns)) {
             $searchColumnList = json_decode($searchColumns);
-            $searchColumnList = array_diff($searchColumnList, $obj->getVirtualFields());
+            $searchColumnList = array_intersect($searchColumnList, $obj->getColumns());
             if (!empty($searchColumnList)) {
                 $tempQuery = " and (";
                 foreach ($searchColumnList as $col) {
@@ -543,6 +546,15 @@ class BaseService
                     $tempQuery.=$col." like ?";
                     $queryData[] = "%".$searchTerm."%";
                 }
+
+                if (!empty($map->employee) && 'Employee' != $table) {
+                    $tempQuery.=" or emp.first_name like ? or emp.last_name like ?";
+                    $queryData[] = "%".$searchTerm."%";
+                    $queryData[] = "%".$searchTerm."%";
+
+                    $searchJoinQuery = ' LEFT JOIN Employees emp ON emp.id = a.employee WHERE ';
+                }
+
                 $query.= $tempQuery.")";
             }
         }
@@ -563,12 +575,12 @@ class BaseService
 
         if ($obj->getFinder() !== null) {
             /**
- * @var FinderProxy $finder 
+ * @var FinderProxy $finder
 */
             $finder = $obj->getFinder();
         } else {
             /**
- * @var FinderProxy $finder 
+ * @var FinderProxy $finder
 */
             $finder = $obj;
         }
@@ -583,10 +595,16 @@ class BaseService
                     //$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
                     $signInMappingField = $obj->getUserOnlyMeAccessField();
                     LogManager::getInstance()->debug(
-                        "Data Load Query (x1):"."1=1".$signInMappingField." = ?".$query.$orderBy.$limit
+                        "Data Load Query (x1):".$signInMappingField." = ?".$query.$orderBy.$limit
                     );
                     LogManager::getInstance()->debug("Data Load Query Data (x1):".json_encode($queryData));
-                    $list = $finder->Find($signInMappingField." = ?".$query.$orderBy.$limit, $queryData);
+                    $list = $finder->Find(
+                        $searchJoinQuery.
+                        $signInMappingField
+                        ." = ?".
+                        $query.$orderBy.$limit,
+                        $queryData
+                    );
                 } else {
                     $profileClass = $this->getFullQualifiedModelClassName(ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME));
                     $subordinate = new $profileClass();
@@ -594,8 +612,8 @@ class BaseService
                     $cempObj = new Employee();
                     $cempObj->Load("id = ?", array($cemp));
 
-                    if ($obj->getUserOnlyMeAccessField() == 'id' 
-                        && SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 
+                    if ($obj->getUserOnlyMeAccessField() == 'id'
+                        && SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1
                         && CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)
                     ) {
                         if (empty($subordinates)) {
@@ -652,12 +670,13 @@ class BaseService
 
                     $signInMappingField = $obj->getUserOnlyMeAccessField();
                     LogManager::getInstance()->debug(
-                        "Data Load Query (x2):"."1=1".$signInMappingField." in (".$subordinatesIds.") "
+                        "Data Load Query (x2):".$signInMappingField." in (".$subordinatesIds.") "
                         .$query.$orderBy.$limit
                     );
                     LogManager::getInstance()->debug("Data Load Query Data (x2):".json_encode($queryData));
                     if (!empty($subordinatesIds)) {
                         $list = $finder->Find(
+                            $searchJoinQuery.
                             $signInMappingField . " in (" . $subordinatesIds . ") " . $query . $orderBy . $limit,
                             $queryData
                         );
@@ -676,8 +695,8 @@ class BaseService
                 $subordinates = $subordinate->Find("supervisor = ?", array($cemp));
                 $cempObj = new Employee();
                 $cempObj->Load("id = ?", array($cemp));
-                if ($obj->getUserOnlyMeAccessField() == 'id' 
-                    && SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1 
+                if ($obj->getUserOnlyMeAccessField() == 'id'
+                    && SettingsManager::getInstance()->getSetting('System: Company Structure Managers Enabled') == 1
                     && CompanyStructure::isHeadOfCompanyStructure($cempObj->department, $cemp)
                 ) {
                     if (empty($subordinates)) {
@@ -738,27 +757,28 @@ class BaseService
                 );
                 if (!empty($subordinatesIds)) {
                     $list = $finder->Find(
+                        $searchJoinQuery.
                         $signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit,
                         $queryData
                     );
                 } else {
                     $list = $finder->Find(
-                        "1=1 ".$query.$orderBy.$limit,
+                        $searchJoinQuery.$query.$orderBy.$limit,
                         $queryData
                     );
                 }
             } else {
-                $list = $finder->Find("1=1".$query.$orderBy.$limit, $queryData);
+                $list = $finder->Find($searchJoinQuery.$query.$orderBy.$limit, $queryData);
             }
         } else {
-            $list = $finder->Find("1=1".$query.$orderBy.$limit, $queryData);
+            $list = $finder->Find($searchJoinQuery.$query.$orderBy.$limit, $queryData);
         }
 
         if (!$list) {
             LogManager::getInstance()->debug("Get Data Error:".$obj->ErrorMsg());
         }
 
-        LogManager::getInstance()->debug("Data Load Query:"."1=1".$query.$orderBy.$limit);
+        LogManager::getInstance()->debug("Data Load Query:".$query.$orderBy.$limit);
         LogManager::getInstance()->debug("Data Load Query Data:".json_encode($queryData));
 
         $processedList = array();
@@ -1082,7 +1102,7 @@ class BaseService
         $fileFields = $this->fileFields;
         $nsTable = $this->getFullQualifiedModelClassName($table);
         /**
- * @var BaseModel $ele 
+ * @var BaseModel $ele
 */
         $ele = new $nsTable();
 
@@ -1155,7 +1175,7 @@ class BaseService
 
         $cfs = $this->customFieldManager->getCustomFields($table, $id);
         /**
- * @var CustomField $cf 
+ * @var CustomField $cf
 */
         foreach ($cfs as $cf) {
             $cf->Delete();
@@ -2028,21 +2048,21 @@ END;
     {
         $encoded = json_encode($value, $options, $depth);
         switch (json_last_error()) {
-        case JSON_ERROR_NONE:
-            return $encoded;
-        case JSON_ERROR_DEPTH:
-            throw new \Exception('Maximum stack depth exceeded');
-        case JSON_ERROR_STATE_MISMATCH:
-            throw new \Exception('Underflow or the modes mismatch');
-        case JSON_ERROR_CTRL_CHAR:
-            throw new \Exception('Unexpected control character found');
-        case JSON_ERROR_SYNTAX:
-            throw new \Exception('Syntax error, malformed JSON');
-        case JSON_ERROR_UTF8:
-            $clean = $this->utf8ize($value);
-            return $this->safeJsonEncode($clean, $options, $depth);
-        default:
-            throw new \Exception('Unknown Json parsing error');
+            case JSON_ERROR_NONE:
+                return $encoded;
+            case JSON_ERROR_DEPTH:
+                throw new \Exception('Maximum stack depth exceeded');
+            case JSON_ERROR_STATE_MISMATCH:
+                throw new \Exception('Underflow or the modes mismatch');
+            case JSON_ERROR_CTRL_CHAR:
+                throw new \Exception('Unexpected control character found');
+            case JSON_ERROR_SYNTAX:
+                throw new \Exception('Syntax error, malformed JSON');
+            case JSON_ERROR_UTF8:
+                $clean = $this->utf8ize($value);
+                return $this->safeJsonEncode($clean, $options, $depth);
+            default:
+                throw new \Exception('Unknown Json parsing error');
         }
     }
 
@@ -2118,7 +2138,7 @@ END;
     public function enrichObjectCustomFields($table, $obj)
     {
         /**
- * @var CustomFieldManager $customFields 
+ * @var CustomFieldManager $customFields
 */
         $customFields = $this->customFieldManager->getCustomFields($table, $obj->id);
         foreach ($customFields as $cf) {
@@ -2219,7 +2239,8 @@ END;
         $this->extensionMigrations[$migration->getName()] = $migration;
     }
 
-    public function isOpenSourceVersion(){
+    public function isOpenSourceVersion()
+    {
         $version = explode('.', VERSION);
         return end($version) === 'OS';
     }

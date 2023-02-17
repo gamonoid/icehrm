@@ -58,7 +58,7 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
 
         $modules = [];
         /**
- * @var ModuleAccess $moduleAccess 
+ * @var ModuleAccess $moduleAccess
 */
         foreach ($moduleAccessData as $moduleAccess) {
             $modules[] = ModuleAccessService::getInstance()->getModule(
@@ -341,7 +341,28 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
 
     public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
-        return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra, $this->isJoinFind);
+        $whereOrderBy = $this->refineWhereClause($whereOrderBy);
+
+        return parent::Find($whereOrderBy, $bindarr, $pkeysArr, $extra);
+    }
+
+    private function refineWhereClause($whereOrderBy) {
+        $whereOrderBy = str_replace('(', ' ( ', $whereOrderBy);
+        $whereOrderBy = str_replace(')', ' ) ', $whereOrderBy);
+        $whereOrderBy = preg_replace('/where * and/', 'where', $whereOrderBy);
+        $whereOrderBy = preg_replace('/where * AND/', 'where', $whereOrderBy);
+        $whereOrderBy = preg_replace('/WHERE * and/', 'where', $whereOrderBy);
+        $whereOrderBy = preg_replace('/WHERE * AND/', 'where', $whereOrderBy);
+        //make sure $whereOrderBy is not starting with AND
+        $whereOrderBy = preg_replace('/^ *and/', '', $whereOrderBy);
+        $whereOrderBy = preg_replace('/^ *AND/', '', $whereOrderBy);
+        // Fix AND before order by
+        $whereOrderBy = preg_replace('/AND * ORDER BY/', 'ORDER BY', $whereOrderBy);
+        $whereOrderBy = preg_replace('/and * ORDER BY/', 'ORDER BY', $whereOrderBy);
+        $whereOrderBy = preg_replace('/and * order by/', 'ORDER BY', $whereOrderBy);
+        $whereOrderBy = preg_replace('/AND * order by/', 'ORDER BY', $whereOrderBy);
+
+        return $whereOrderBy;
     }
 
     public function Save()

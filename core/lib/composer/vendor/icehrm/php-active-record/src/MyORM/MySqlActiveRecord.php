@@ -182,21 +182,45 @@ class MySqlActiveRecord
         return true;
     }
 
-    public function Find($whereOrderBy, $bindarr = false, $pkeysArr = [], $extra = null, $isJoin = false)
+    public function Find($whereOrderBy, $bindarr = false, $pkeysArr = [], $extra = null)
     {
         if (!$bindarr) {
             $bindarr = [];
         }
         $this->checkPreConditions();
-        if ($isJoin) {
+        $parts = explode(' ', $whereOrderBy);
+        $columns = $this->getColumns();
+        $newParts = [];
+        foreach ($parts as $part) {
+            if (in_array($part, $columns)) {
+                $newParts[] = sprintf('a.%s', $part);
+            } else {
+                $newParts[] = $part;
+            }
+        }
+        $whereOrderBy = implode(' ', $newParts);
+        $whereOrderBy = trim($whereOrderBy);
+
+        if (strstr(strtolower($whereOrderBy), 'where') !== false) {
+            // This is a join query
             $sql = sprintf('SELECT a.* FROM %s as a %s', $this->getTable(), $whereOrderBy);
         } else {
-            $sql = sprintf('SELECT * FROM %s WHERE %s', $this->getTable(), $whereOrderBy);
+            // no "WHERE" in where clause
+            if (!empty($whereOrderBy) && (
+                strpos(strtolower($whereOrderBy), 'order by') === 0 ||
+                strpos(strtolower($whereOrderBy), 'limit') === 0
+                )
+            ) {
+                $sql = sprintf('SELECT a.* FROM %s as a %s', $this->getTable(), $whereOrderBy);
+            } else {
+                $sql = sprintf('SELECT a.* FROM %s as a WHERE %s', $this->getTable(), $whereOrderBy);
+            }
         }
 
         $stmt = $this->connection()->prepare($sql);
         if (!$stmt) {
             $this->lastError = $this->connection()->error;
+            error_log("Query failed: $sql");
             return [];
         }
         $this->bind($stmt, $bindarr);
@@ -206,7 +230,6 @@ class MySqlActiveRecord
             return false;
         }
         $result = $stmt->get_result();
-        $columns = $this->getColumns();
 
         $objects = [];
         $all_data = $result->fetch_all(MYSQLI_ASSOC);
