@@ -1,0 +1,16 @@
+version: "3.5"
+services:
+  mysql:
+    image: mysql:8.0.32
+    #command: --lower_case_table_names=1
+    ports:
+      - 10012:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
+      MYSQL_DATABASE: phpactiverecord
+    volumes:
+      - ./test/init.sql:/docker-entrypoint-initdb.d/setup.sql
+      - ./test/db_data:/var/lib/mysql
+

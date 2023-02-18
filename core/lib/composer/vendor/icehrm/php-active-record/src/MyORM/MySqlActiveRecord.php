@@ -182,7 +182,7 @@ class MySqlActiveRecord
         return true;
     }
 
-    public function Find($whereOrderBy, $bindarr = false, $pkeysArr = [], $extra = null)
+    public function Find($whereOrderBy = '1=1', $bindarr = false, $pkeysArr = [], $extra = null)
     {
         if (!$bindarr) {
             $bindarr = [];
@@ -207,8 +207,8 @@ class MySqlActiveRecord
         } else {
             // no "WHERE" in where clause
             if (!empty($whereOrderBy) && (
-                strpos(strtolower($whereOrderBy), 'order by') === 0 ||
-                strpos(strtolower($whereOrderBy), 'limit') === 0
+                    strpos(strtolower($whereOrderBy), 'order by') === 0 ||
+                    strpos(strtolower($whereOrderBy), 'limit') === 0
                 )
             ) {
                 $sql = sprintf('SELECT a.* FROM %s as a %s', $this->getTable(), $whereOrderBy);

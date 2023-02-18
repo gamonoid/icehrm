@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./test/bootstrap.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         verbose="true"
+         convertNoticesToExceptions="false"
+         convertWarningsToExceptions="true"
+>
+
+    <testsuites>
+        <testsuite name="Integration">
+            <directory suffix=".php">./test/integration</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

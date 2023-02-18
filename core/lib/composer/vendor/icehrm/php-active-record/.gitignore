@@ -1,0 +1,5 @@
+.idea
+test/db_data
+.phpunit.result.cache
+phpunit-9.phar
+phpunit
