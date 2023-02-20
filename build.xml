@@ -242,9 +242,6 @@
             <include name=".vagrant/**"/>
             <include name=".idea/**"/>
             <include name="Vagrantfile"/>
-            <include name="test/**"/>
-            <include name="tools/**"/>
-            <include name="robo/**"/>
             <include name="deployment/**"/>
             <include name="build/**"/>
             <include name="build.xml"/>
@@ -258,6 +255,7 @@
             <include name="web/modules/dist/*.map"/>
             <include name="web/dist/*.map"/>
             <include name="app/config.php"/>
+            <include name="doc/tools.md"/>
         </fileset>
     </delete>
 
