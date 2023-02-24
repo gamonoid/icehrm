@@ -182,7 +182,7 @@ class MySqlActiveRecord
         return true;
     }
 
-    public function Find($whereOrderBy = '1=1', $bindarr = false, $pkeysArr = [], $extra = null)
+    public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
         if (!$bindarr) {
             $bindarr = [];
