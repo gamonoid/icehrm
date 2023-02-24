@@ -310,7 +310,7 @@ class TimeSheetsActionManager extends SubActionManager
             $projectList = $project->Find("1 = 1 order by name");
         } else {
             $projectList = $project->Find(
-                "id in (select project from EmployeeProjects where employee = ?) order by name",
+                "WHERE id in (select project from EmployeeProjects where employee = ?) order by name",
                 array(BaseService::getInstance()->getCurrentProfileId())
             );
         }
