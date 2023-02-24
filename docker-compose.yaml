@@ -45,9 +45,9 @@ services:
       PMA_USER: dev
       PMA_PASSWORD: dev
 
-  mailhog:
-    image: ajoergensen/mailhog
-    ports:
-      - "1025:1025"
+#  mailhog:
+#    image: ajoergensen/mailhog
+#    ports:
+#      - "1025:1025"
 volumes:
   db_data:
