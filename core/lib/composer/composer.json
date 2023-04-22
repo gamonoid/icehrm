@@ -8,7 +8,7 @@
     },
 	"require": {
     	"monolog/monolog": "^1.23",
-        "twig/twig": "1.23.*",
+        "twig/twig": "2.12.*",
         "gettext/gettext": "4.0.0",
         "consolidation/robo": "~1",
         "filp/whoops": "~2.1",
