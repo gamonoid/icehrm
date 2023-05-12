@@ -1,0 +1,15 @@
+{
+  "label": "Kudos Admin",
+  "menu": ["Kudos", "fa-th"],
+  "order": "0",
+  "icon": "fa-random",
+  "user_levels": [
+    "Admin"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\KudosAdmin\\Common\\Model",
+  "manager": "\\KudosAdmin\\Extension",
+  "controller": "\\KudosAdmin\\Controller",
+  "headless": false
+}
