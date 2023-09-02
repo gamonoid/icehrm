@@ -3,9 +3,9 @@
 }
 .box_ws{
     background: white;
-    border-left: 1px solid #DDD;
+    border-left: 2px solid #DDD;
     border-right: 1px solid #DDD;
-    border-bottom: 1px solid #DDD;
+    border-bottom: 3px solid #DDD;
     color: #555;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .nav-pills  li  a:hover{
-    background: #1D64AD;
+    background: #701c5b;
     color:white;
 }
 
@@ -83,7 +83,7 @@
 }
 .bs-docs-sidenav > li > a {
     display: block;
-    *width: 190px;
+    width: 190px;
     margin: 0 0 -1px;
     padding: 8px 14px;
     border: 1px solid #e5e5e5;
