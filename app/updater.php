@@ -5,8 +5,8 @@ use Updater\Downloader;
 include ('config.php');
 include(APP_BASE_PATH.'config.base.php');
 include(APP_BASE_PATH.'include.common.php');
-include(APP_BASE_PATH.'../updator/Updater/Downloader.php');
-include(APP_BASE_PATH.'../updator/Updater/UpdateException.php');
+include(APP_BASE_PATH.'../updater/Updater/Downloader.php');
+include(APP_BASE_PATH.'../updater/Updater/UpdateException.php');
 
 try {
 	$downloader = new Downloader(CLIENT_BASE_PATH . 'data/upgrades/',APP_BASE_PATH . '../');
