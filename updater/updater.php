@@ -1,7 +1,6 @@
 <?php
 
 use Updater\Downloader;
-include(APP_BASE_PATH.'config.base.php');
 include(APP_BASE_PATH.'../updater/Updater/Curl.php');
 include(APP_BASE_PATH.'../updater/Updater/Downloader.php');
 include(APP_BASE_PATH.'../updater/Updater/UpdateException.php');
@@ -12,7 +11,7 @@ try {
 	echo 'Download url: ' . $downloadUrl . '<br/>';
 	$version = $downloader->getLatestVersion();
 	echo 'Downloadable version: ' . $version . '<br/>';
-	echo 'Current version:' . VERSION_NUMBER . '<br/>';
+	//echo 'Current version:' . VERSION_NUMBER . '<br/>';
 
 	echo 'Downloading release ....'.'<br/>';
 	$filePath = $downloader->download();
