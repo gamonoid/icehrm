@@ -16,6 +16,7 @@ try {
 
 	if ((int)VERSION_NUMBER >= (int)$version) {
 		echo 'Stopping update process, you already have the latest version: ' . $version . "\r\n";
+		exit();
 	}
 
 	$downloadUrl = $downloader->getLatestDownloadUrl();
