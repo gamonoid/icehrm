@@ -113,7 +113,7 @@ class Downloader
 		foreach ($this->dirToReplace as $dir) {
 			$source = $this->releaseDirPath.'/'.$dir;
 			$destination = $this->copyIntoDir;
-			if (strlen($destination) < 3 || strpos($destination, APP_BASE_PATH) === false) {
+			if (strlen($destination) < 3 || strpos($destination, realpath(APP_BASE_PATH.'../')) === false) {
 				throw new UpdateException('Error replacing files. Invalid destination:' . $destination);
 			}
 
