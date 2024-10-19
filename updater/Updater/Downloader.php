@@ -2,8 +2,6 @@
 
 namespace Updater;
 
-use Utils\Curl;
-
 class Downloader
 {
 	protected $basePath;
