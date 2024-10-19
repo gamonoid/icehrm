@@ -19,7 +19,7 @@ class Downloader
 	 */
 	public function __construct( $workingDirectory, $copyIntoDir )
 	{
-		$this->copyIntoDir = $copyIntoDir;
+		$this->copyIntoDir = realpath($copyIntoDir).'/';
 		if (!file_exists($workingDirectory) && !mkdir($workingDirectory, 0755, true)) {
 			throw new UpdateException('Error creating working directory:' . $this->releaseDirPath);
 		}
