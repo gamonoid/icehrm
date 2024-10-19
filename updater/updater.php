@@ -1,6 +1,9 @@
 <?php
-
+if (php_sapi_name() != 'cli') {
+	exit();
+}
 use Updater\Downloader;
+include(APP_BASE_PATH.'config.base.php');
 include(APP_BASE_PATH.'../updater/Updater/Curl.php');
 include(APP_BASE_PATH.'../updater/Updater/Downloader.php');
 include(APP_BASE_PATH.'../updater/Updater/UpdateException.php');
