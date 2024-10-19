@@ -7,7 +7,7 @@ include(APP_BASE_PATH.'config.base.php');
 include(APP_BASE_PATH.'include.common.php');
 
 try {
-	$downloader = new Downloader(CLIENT_BASE_PATH . 'data/upgrades/',APP_BASE_PATH . '../new/');
+	$downloader = new Downloader(CLIENT_BASE_PATH . 'data/upgrades/',APP_BASE_PATH . '../');
 	$downloadUrl = $downloader->getLatestDownloadUrl();
 	echo 'Download url: ' . $downloadUrl . '<br/>';
 	$version = $downloader->getLatestVersion();
