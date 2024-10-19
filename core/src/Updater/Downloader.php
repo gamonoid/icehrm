@@ -113,8 +113,13 @@ class Downloader
 			throw new UpdateException('Error creating copy into:' . $this->$this->copyIntoDir);
 		}
 		foreach ($this->dirToReplace as $dir) {
-			$source = $this->releaseDirPath.$dir;
+			$source = $this->releaseDirPath.'/'.$dir;
 			$destination = $this->copyIntoDir;
+			if (strlen($destination) < 3 || strpos($destination, APP_BASE_PATH) === false) {
+				throw new UpdateException('Error replacing files. Invalid destination:' . $destination);
+			}
+
+			system("rm -rf ".$destination.$dir);
 			system("cp -r $source $destination");
 		}
 
