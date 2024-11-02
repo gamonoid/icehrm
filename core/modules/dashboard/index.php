@@ -40,6 +40,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
                 $dashboardList1[] = $v;
             }
         }
+$employee_directory_url = CLIENT_BASE_URL.'?g=extension&n=directory|user&m=module_Company';
 ?><div class="span9">
     <div class="row">
         <?php
@@ -47,6 +48,14 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
             echo LanguageManager::translateTnrText($v);
         }
         ?>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-xs-12">
+            <div id="EmployeeListWrapper" style="display:none;box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);border: none;margin-bottom: 20px; padding: 20px;">
+                <h4><?=t('Your Colleagues')?></h4>
+                <div id="EmployeeList"></div>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-lg-4 col-xs-12">
@@ -82,7 +91,6 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 var modJsList = [];
 
 modJsList['tabDashboard'] = new DashboardAdapter('Dashboard','Dashboard');
-
 var modJs = modJsList['tabDashboard'];
 
 

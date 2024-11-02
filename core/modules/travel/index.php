@@ -4,6 +4,8 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Travel\Common\Model\EmployeeTravelRecord;
+
 $moduleName = 'travel';
 $moduleGroup = 'modules';
 $moduleMainName = "EmployeeTravelRecord"; // for creating module js lib
@@ -18,15 +20,17 @@ define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 
 $customFields = \Classes\BaseService::getInstance()->getCustomFields("EmployeeTravelRecord");
-
+$isExpenseApprovalsNeeded = (new EmployeeTravelRecord())->isMultiLevelApprovalsEnabled();
 $additionalJs = array();
 include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
 
     <ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
         <li class="active"><a id="tab<?=$moduleMainName?>" href="#tabPage<?=$moduleMainName?>"><?=t('Travel Requests')?></a></li>
-        <li class=""><a id="tab<?=$subModuleMainName?>" href="#tabPage<?=$subModuleMainName?>"><?=t('Subordinate Travel Requests')?></a></li>
-        <li class=""><a id="tab<?=$appModName?>" href="#tabPage<?=$appModName?>"><?=t('Travel Request Approval')?></a></li>
+        <li class=""><a id="tab<?=$subModuleMainName?>" href="#tabPage<?=$subModuleMainName?>"><?=t('Travel Requests (Direct Reports)')?></a></li>
+        <?php if ($isExpenseApprovalsNeeded) {?>
+        <li class=""><a id="tab<?=$appModName?>" href="#tabPage<?=$appModName?>"><?=t('Travel Requests for Approval')?></a></li>
+        <?php } ?>
     </ul>
 
     <div class="tab-content">
@@ -46,6 +50,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
             </div>
         </div>
+        <?php if ($isExpenseApprovalsNeeded) {?>
         <div class="tab-pane" id="tabPage<?=$appModName?>">
             <div id="<?=$appModName?>" class="reviewBlock" data-content="List" style="padding-left:5px;">
 
@@ -54,6 +59,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
             </div>
         </div>
+        <?php } ?>
     </div>
 
 </div>
