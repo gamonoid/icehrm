@@ -1,6 +1,6 @@
 # Release Notes IceHrm Open Source
 
-## Release note v33.5.0.PRO
+## Release note v33.5.0.OS
 
 #### 🧑🏻‍💼 Improvements in Employee Module
 * New UI for the employee list.
