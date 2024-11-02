@@ -80,18 +80,16 @@ if (defined('SYM_CLIENT')) {
 ?><!DOCTYPE html>
 <html>
 <head>
-    <?php if (!empty(\Classes\BaseService::getInstance()->getGAKey())) { ?>
-        <!-- Google Analytics -->
-        <script>
-            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-            ga('create', '<?=\Classes\BaseService::getInstance()->getGAKey()?>', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <script async src='https://www.google-analytics.com/analytics.js'></script>
-        <!-- End Google Analytics -->
-    <?php } else { ?>
-        <script>window.ga = [];</script>
-    <?php } ?>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0632Q0XBK"></script>
+    <script>
+        window.ga = [];
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M0632Q0XBK');
+    </script>
 
     <meta charset="utf-8">
     <title><?=$companyName?></title>
