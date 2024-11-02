@@ -26,21 +26,25 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
 	<div class="tab-content">
 		<div class="tab-pane active" id="tabPageSkill">
+            <div id="SkillTableTop" class="reviewBlock"></div>
 			<div id="SkillTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
 			<div id="SkillForm"></div>
 			<div id="SkillFilterForm"></div>
 		</div>
 		<div class="tab-pane" id="tabPageEducation">
+            <div id="EducationTableTop" class="reviewBlock"></div>
 			<div id="EducationTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="EducationForm"></div>
             <div id="EducationFilterForm"></div>
 		</div>
 		<div class="tab-pane" id="tabPageCertification">
+            <div id="CertificationTableTop" class="reviewBlock"></div>
 			<div id="CertificationTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="CertificationForm"></div>
             <div id="CertificationFilterForm"></div>
 		</div>
 		<div class="tab-pane" id="tabPageLanguage">
+            <div id="LanguageTableTop" class="reviewBlock"></div>
 			<div id="LanguageTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="LanguageForm"></div>
             <div id="LanguageFilterForm"></div>

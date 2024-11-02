@@ -14,6 +14,8 @@ define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
 
+$employee_directory_url = CLIENT_BASE_URL.'?g=extension&n=directory|user&m=module_Company';
+
 $moduleManagers = BaseService::getInstance()->getModuleManagers();
 $dashBoardList = array();
 /** @var AbstractModuleManager $moduleManagerObj */
@@ -50,12 +52,26 @@ foreach($dashBoardList as $k=>$v){
 }
 
 ?><div class="span9">
+    <div id="NewsHolder" class="row" style="display: none;margin-bottom: 10px;">
+        <div class="col-lg-12 col-xs-12">
+            <div id="NewsMessage">
+            </div>
+        </div>
+    </div>
     <div class="row">
         <?php
         foreach($dashboardList1 as $v){
             echo LanguageManager::translateTnrText($v);
         }
         ?>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-xs-12">
+            <div id="EmployeeListWrapper" style="display:none;box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);border: none;margin-bottom: 20px; padding: 20px;">
+                <h4><?=t('Your Colleagues')?></h4>
+                <div id="EmployeeList"></div>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-lg-4 col-xs-12">
@@ -86,17 +102,17 @@ foreach($dashBoardList as $k=>$v){
             <div class="small-box bg-yellow">
                 <div class="inner">
                     <h3>
-                        <t>Buy Extensions</t>
+                        <t>IceHrmPro</t>
                     </h3>
                     <p>
-                        <t>Purchase New Extensions</t>
+                        <t>Purchase IceHrmPro</t>
                     </p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-store"></i>
                 </div>
-                <a target="_blank" href="https://icehrm.com/explore/extensions/" class="small-box-footer">
-                    <t>Purchase</t> <t>Extensions</t> <i class="fa fa-arrow-circle-right"></i>
+                <a target="_blank" href="https://icehrm.com/purchase-icehrmpro" class="small-box-footer">
+                    <t>Purchase</t> <t>IceHrmPro</t> <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
@@ -108,7 +124,8 @@ foreach($dashBoardList as $k=>$v){
     var modJsList = [];
 
     modJsList['tabDashboard'] = new DashboardAdapter('Dashboard','Dashboard');
-
+    modJsList['tabDashboard'].setVersion('<?=VERSION?>');
+    modJsList['tabDashboard'].setUser
     var modJs = modJsList['tabDashboard'];
 
 </script>

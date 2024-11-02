@@ -24,16 +24,19 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
 	<div class="tab-content">
 		<div class="tab-pane active" id="tabPageJobTitles">
+			<div id="JobTitleTableTop" class="reviewBlock"></div>
 			<div id="JobTitleTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="JobTitleForm"></div>
             <div id="JobTitleFilterForm"></div>
 		</div>
 		<div class="tab-pane" id="tabPagePayGrades">
+            <div id="PayGradeTableTop" class="reviewBlock"></div>
 			<div id="PayGradeTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="PayGradeForm"></div>
             <div id="PayGradeFilterForm"></div>
 		</div>
 		<div class="tab-pane" id="tabPageEmploymentStatus">
+            <div id="EmploymentStatusTableTop" class="reviewBlock"></div>
 			<div id="EmploymentStatusTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="EmploymentStatusForm"></div>
             <div id="EmploymentStatusFilterForm"></div>

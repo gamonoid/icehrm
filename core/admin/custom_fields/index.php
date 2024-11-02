@@ -18,6 +18,7 @@ $modelClasses = BaseService::getInstance()->getCustomFieldClassMap();
 
     <div class="tab-content">
         <div class="tab-pane active" id="tabPageCustomField">
+            <div id="CustomFieldTableTop" class="reviewBlock"></div>
             <div id="CustomFieldTable" class="reviewBlock" data-content="List"></div>
             <div id="CustomFieldForm"></div>
             <div id="CustomFieldFilterForm"></div>

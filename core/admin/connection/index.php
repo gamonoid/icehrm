@@ -47,7 +47,7 @@ $moduleData = [
                     'isOpenSource' => $isOpenSource,
                     'count' => $employeeCount,
                     'allowed' => $isIceHrmPro ? intval($data['employees']) : 'N/A',
-                    'validUntil' => $data['licenseActivated'],
+                    'validUntil' => date('Y-m-d', strtotime('+1 year', strtotime($data['licenseActivated'])) ),
                     'licenseId' => $data['key'],
             ],
             'systemData' => [

@@ -100,7 +100,8 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
     var modJsList = new Array();
 
     modJsList['tabPayday'] = new PaydayAdapter('PayFrequency','Payday');
-    modJsList['tabPayroll'] = new PayrollAdapter('Payroll','Payroll');
+    modJsList['tabPayroll'] = new PayrollAdapter('Payroll','Payroll','','date_start desc');
+    modJsList['tabPayroll'].setRemoteTable(true);
 
     modJsList['tabPayrollData'] = new PayrollDataAdapter('PayrollData','PayrollData');
     modJsList['tabPayrollData'].setRemoteTable(false);

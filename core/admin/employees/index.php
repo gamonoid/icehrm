@@ -17,6 +17,8 @@ include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
 $fieldNameMap = \Classes\BaseService::getInstance()->getFieldNameMappings("Employee");
 $customFields = \Classes\BaseService::getInstance()->getCustomFields("Employee");
+$csrf = \Classes\BaseService::getInstance()->generateCsrf('User');
+$managersCanSwitchToProfile = \Classes\SettingsManager::getInstance()->getSetting('System: Managers Can Switch to Employee Profiles') == '1';
 ?><div class="span9">
 
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
@@ -37,6 +39,8 @@ $customFields = \Classes\BaseService::getInstance()->getCustomFields("Employee")
 			<div id="EmployeeTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="EmployeeForm"></div>
             <div id="EmployeeFilterForm"></div>
+            <div id="UserForm" class="reviewBlock" data-content="Form" data-csrf="<?=$csrf?>" style="padding-left:5px;display:none;"></div>
+            <div id="UserInvitationForm"></div>
 		</div>
         <div class="tab-pane" id="tabPageEmployeeCareer">
             <div id="EmployeeCareerTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
@@ -105,12 +109,14 @@ $moduleData = [
 ?>
 <script>
 var modJsList = [];
-<?php if($user->user_level != "Admin"){ ?>
+<?php if($user->user_level !== "Admin"){ ?>
 modJsList['tabEmployee'] = new EmployeeAdapter('Employee','Employee',{"status":"Active"});
 modJsList['tabEmployee'].setShowAddNew(false);
 modJsList['tabEmployee'].setShowDelete(false);
+modJsList['tabEmployee'].setAllowSwitchToEmployeeProfile(<?=($user->user_level === "Manager" && $managersCanSwitchToProfile)?'true':'false'?>);
 <?php }else{ ?>
 modJsList['tabEmployee'] = new EmployeeAdapter('Employee','Employee',{"status":"Active"});
+modJsList['tabEmployee'].setAllowSwitchToEmployeeProfile(true);
 <?php } ?>
 modJsList['tabEmployee'].setObjectTypeName('Employee');
 modJsList['tabEmployee'].setModalType(EmployeeAdapter.MODAL_TYPE_STEPS);
@@ -166,13 +172,6 @@ modJsList['tabEmployeeCareer'].setObjectTypeName('Work History');
 modJsList['tabEmployeeCareer'].setDataPipe(new IceDataPipe(modJsList['tabEmployeeCareer']));
 modJsList['tabEmployeeCareer'].setAccess(<?=json_encode($moduleData['permissions']['EmployeeCareer'])?>);
 
-
-//modJsList['tabEmployeeImmigration'] = new EmployeeImmigrationAdapter('EmployeeImmigration');
-//modJsList['tabEmployeeImmigration'].setRemoteTable(true);
-//modJsList['tabEmployeeImmigration'].setObjectTypeName('Employee Dependent');
-//modJsList['tabEmployeeImmigration'].setDataPipe(new IceDataPipe(modJsList['tabEmployeeDependent']));
-//modJsList['tabEmployeeImmigration'].setAccess(<?//=json_encode($moduleData['permissions']['EmployeeDependent'])?>//);
-
 modJsList['tabArchivedEmployee'] = new ArchivedEmployeeAdapter('ArchivedEmployee');
 modJsList['tabArchivedEmployee'].setRemoteTable(true);
 modJsList['tabArchivedEmployee'].setShowAddNew(false);
@@ -189,27 +188,22 @@ modJsList['tabTerminatedEmployee'].setObjectTypeName('Deactivated Employees');
 modJsList['tabTerminatedEmployee'].setDataPipe(new IceDataPipe(modJsList['tabTerminatedEmployee']));
 modJsList['tabTerminatedEmployee'].setAccess(<?=json_encode($moduleData['permissions']['Employee'])?>);
 
+modJsList['tabUser'] = new UserAdapter('User');
+modJsList['tabUser'].setCSRFRequired(true);
+modJsList['tabUser'].setRemoteTable(true);
+modJsList['tabUser'].setObjectTypeName('User');
+modJsList['tabUser'].setDataPipe(new IceDataPipe(modJsList['tabUser']));
+modJsList['tabUser'].setAccess(<?=json_encode($moduleData['permissions']['UserRole'])?>);
+
+modJsList['tabUserInvitation'] = new UserInvitationAdapter('UserInvitation');
+modJsList['tabUserInvitation'].setObjectTypeName('User Invitation');
+modJsList['tabUserInvitation'].setRemoteTable(true);
+modJsList['tabUserInvitation'].setDataPipe(new IceDataPipe(modJsList['tabUserInvitation']));
+modJsList['tabUserInvitation'].setAccess(<?=json_encode($moduleData['permissions']['UserInvitation'])?>);
+modJsList['tabUserInvitation'].setModalType(UserInvitationAdapter.MODAL_TYPE_STEPS);
+
 
 var modJs = modJsList['tabEmployee'];
 
 </script>
-<div class="modal" id="createUserModel" tabindex="-1" role="dialog" aria-labelledby="messageModelLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><li class="fa fa-times"/></button>
-                <h3 style="font-size: 17px;"><?=t('Employee Saved Successfully')?></h3>
-            </div>
-            <div class="modal-body">
-				<?=t('Employee needs a User to login to IceHrm. Do you want to create a user for this employee now?')?> <br/><br/><?=t('You can do this later through Users module if required.')?>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" onclick="modJs.createUser();">Yes</button>
-                <button class="btn" onclick="modJs.closeCreateUser();">No</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <?php include APP_BASE_PATH.'footer.php';?>

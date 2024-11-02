@@ -4,6 +4,7 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Classes\BaseService;
 use Classes\PermissionManager;
 use Clients\Common\Model\Client;
 
@@ -20,6 +21,7 @@ include APP_BASE_PATH . 'modulejslibs.inc.php';
 
     <div class="tab-content">
         <div class="tab-pane active" id="tabPageClient">
+            <div id="ClientTableTop" class="reviewBlock"></div>
             <div id="ClientTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="ClientForm"></div>
             <div id="ClientFilterForm"></div>
@@ -30,6 +32,9 @@ include APP_BASE_PATH . 'modulejslibs.inc.php';
 <?php
 $moduleData = [
     'user_level' => $user->user_level,
+    'customFields' => [
+        'Client' => BaseService::getInstance()->getCustomFields("Client"),
+    ],
     'permissions' => [
         'Client' => PermissionManager::checkGeneralAccess(new Client()),
     ]
@@ -45,6 +50,7 @@ $moduleData = [
       modJsList.tabClient.setAccess(data.permissions.Client);
       modJsList.tabClient.setDataPipe(new IceDataPipe(modJsList.tabClient));
       modJsList.tabClient.setRemoteTable(true);
+      modJsList.tabClient.setCustomFields(data.customFields.Client);
 
       var modJs = modJsList['tabClient'];
     </script>

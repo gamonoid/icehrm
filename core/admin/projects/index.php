@@ -4,6 +4,7 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+use Classes\BaseService;
 use Classes\PermissionManager;
 use Projects\Common\Model\Project;
 use Projects\Common\Model\EmployeeProject;
@@ -24,11 +25,13 @@ include APP_BASE_PATH . 'modulejslibs.inc.php';
 
     <div class="tab-content">
         <div class="tab-pane active" id="tabPageProject">
+            <div id="ProjectTableTop" class="reviewBlock"></div>
             <div id="ProjectTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="ProjectForm"></div>
             <div id="ProjectFilterForm"></div>
         </div>
         <div class="tab-pane" id="tabPageEmployeeProject">
+            <div id="EmployeeProjectTableTop" class="reviewBlock"></div>
             <div id="EmployeeProjectTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="EmployeeProjectForm"></div>
             <div id="EmployeeProjectFilterForm"></div>
@@ -39,6 +42,10 @@ include APP_BASE_PATH . 'modulejslibs.inc.php';
 <?php
 $moduleData = [
     'user_level' => $user->user_level,
+    'customFields' => [
+        'Project' => BaseService::getInstance()->getCustomFields("Project"),
+        'EmployeeProject' => BaseService::getInstance()->getCustomFields("EmployeeProject"),
+    ],
     'permissions' => [
         'Project' => PermissionManager::checkGeneralAccess(new Project()),
         'EmployeeProject' => PermissionManager::checkGeneralAccess(new EmployeeProject()),
@@ -53,6 +60,7 @@ $moduleData = [
   modJsList.tabProject.setAccess(data.permissions.Project);
   modJsList.tabProject.setDataPipe(new IceDataPipe(modJsList.tabProject));
   modJsList.tabProject.setRemoteTable(true);
+  modJsList.tabProject.setCustomFields(data.customFields.Project);
 
   modJsList['tabEmployeeProject'] = new EmployeeProjectAdapter('EmployeeProject', 'EmployeeProject');
 
