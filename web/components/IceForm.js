@@ -6,6 +6,7 @@ import {
   InfoCircleOutlined,
 } from '@ant-design/icons';
 import moment from 'moment';
+import ReactQuill, { Quill, Mixin, Toolbar } from 'react-quill';
 import IceUpload from './IceUpload';
 import IceDataGroup from './IceDataGroup';
 import IceSelect from './IceSelect';
@@ -61,6 +62,37 @@ const ValidationRules = {
     const username = /^[a-zA-Z0-9.-]+$/;
     return str != null && username.test(str);
   },
+  password(password) {
+    if (password.length < 8) {
+      return false;
+    }
+
+    if (password.length > 30) {
+      return false;
+    }
+
+    const numberTester = /.*[0-9]+.*$/;
+    if (!password.match(numberTester)) {
+      return false;
+    }
+
+    const lowerTester = /.*[a-z]+.*$/;
+    if (!password.match(lowerTester)) {
+      return false;
+    }
+
+    const upperTester = /.*[A-Z]+.*$/;
+    if (!password.match(upperTester)) {
+      return false;
+    }
+
+    const symbolTester = /.*[\W]+.*$/;
+    if (!password.match(symbolTester)) {
+      return false;
+    }
+
+    return true;
+  },
 };
 
 
@@ -98,6 +130,12 @@ class IceForm extends React.Component {
     const formInputs2 = [];
     const columns = !twoColumnLayout ? 1 : 2;
     for (let i = 0; i < fields.length; i++) {
+      if (this.props.viewOnly && adapter.getViewModeEnabledFields() !== null
+        && adapter.getViewModeEnabledFields().indexOf(fields[i][0]) === -1
+      ) {
+        continue;
+      }
+
       formInputs.push(
         adapter.beforeRenderFieldHook(
           fields[i][0],
@@ -123,7 +161,7 @@ class IceForm extends React.Component {
     const onFormLayoutChange = () => { };
 
     let layout = this.props.layout || 'horizontal';
-    if ( !this.props.layout ) {
+    if (!this.props.layout) {
       layout = adapter.getFormLayout(this.props.viewOnly);
     }
 
@@ -131,8 +169,8 @@ class IceForm extends React.Component {
       <Form
         ref={this.formReference}
         labelCol={{ span: 6 }}
-        wrapperCol={{ span: 16 }}
-        layout={ layout }
+        wrapperCol={{ span: layout === 'vertical' ? 24 : 16 }}
+        layout={layout}
         initialValues={{ size: 'middle' }}
         onValuesChange={onFormLayoutChange}
         size="middle"
@@ -179,7 +217,7 @@ class IceForm extends React.Component {
     this.setState({ validations });
   }
 
-  createFromField(field, viewOnly = false) {
+  createFromField(field, viewOnly = false, showLabel = true) {
     let userId = 0;
     const rules = [];
     const requiredRule = { required: true };
@@ -191,7 +229,7 @@ class IceForm extends React.Component {
 
     viewOnly = viewOnly || (data.readonly === true);
 
-    if ( !layout ) {
+    if (!layout) {
       layout = adapter.getFormLayout(this.props.viewOnly);
     }
 
@@ -208,6 +246,10 @@ class IceForm extends React.Component {
     } else {
       requiredRule.required = true;
       requiredRule.message = this.generateFieldMessage(data.label);
+    }
+
+    if (viewOnly && adapter.getViewModeShowLabel() === false) {
+      data.label = '';
     }
 
     rules.push(requiredRule);
@@ -236,15 +278,15 @@ class IceForm extends React.Component {
           <Input />
         </Form.Item>
       );
-    } if (data.type === 'text') {
+    } if (data.type === 'text' || data.type === 'password') {
       if (data.validation) {
         // TODO - not sure why following line was there. This stop correct validations for rules like numberOrEmpty
-        //data.validation = data.validation.replace('OrEmpty', '');
+        // data.validation = data.validation.replace('OrEmpty', '');
         validationRule = this.getValidationRule(data);
         if (validationRule) {
           this.validationRules[name] = {
             rule: validationRule,
-            message: `Invalid value for ${data.label}`,
+            message: data.message ? data.message : `Invalid value for ${data.label}`,
           };
         }
       }
@@ -261,7 +303,7 @@ class IceForm extends React.Component {
           >
             {viewOnly
               ? <IceLabel />
-              : <Input onChange={this.validateOnChange.bind(this)} />}
+              : data.type === 'password' ? <Input.Password onChange={this.validateOnChange.bind(this)} /> : <Input onChange={this.validateOnChange.bind(this)} />}
           </Form.Item>
         );
       }
@@ -308,6 +350,10 @@ class IceForm extends React.Component {
         </Form.Item>
       );
     } if (data.type === 'datetime') {
+      let dateFormat = 'YYYY-MM-DD HH:mm:ss';
+      if (data.dateFormat) {
+        dateFormat = data.dateFormat;
+      }
       return (
         <Form.Item
           labelCol={labelSpan}
@@ -316,7 +362,7 @@ class IceForm extends React.Component {
           name={name}
           rules={rules}
         >
-          <DatePicker format="YYYY-MM-DD HH:mm:ss" showTime disabled={viewOnly} />
+          <DatePicker format={dateFormat} showTime disabled={viewOnly} />
         </Form.Item>
       );
     } if (data.type === 'time') {
@@ -457,6 +503,45 @@ class IceForm extends React.Component {
             title={label}
             readOnly={viewOnly}
           />
+        </Form.Item>
+      );
+    } if (data.type === 'quill') {
+      const modules = {
+        toolbar: [
+          [{ header: '1' }, { header: '2' }],
+          ['bold', 'italic', 'underline'],
+          [{ list: 'ordered' }, { list: 'bullet' }],
+        ],
+        clipboard: {
+          // toggle to add extra line breaks when pasting HTML:
+          matchVisual: false,
+        },
+      };
+      const formats = [
+        'header',
+        'bold', 'italic', 'underline',
+        'list', 'bullet',
+      ];
+
+      return (
+        <Form.Item
+          labelCol={labelSpan}
+          label={label}
+          key={name}
+          name={name}
+          rules={rules}
+          shouldUpdate
+        >
+          {viewOnly
+            ? <IceLabel />
+            : (
+              <ReactQuill
+                theme="snow"
+                modules={modules}
+                formats={formats}
+              />
+            )}
+
         </Form.Item>
       );
     } if (data.type === 'slider') {

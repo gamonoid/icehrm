@@ -3,14 +3,13 @@
 
 namespace Classes\Cron;
 
-
 use Model\Cron;
 
 class CronRegistry
 {
     private static $registry = [];
 
-    public static function addCron(string $name, IceTask $executor, int $frequency, string $type) 
+    public static function addCron(string $name, IceTask $executor, int $frequency, string $type)
     {
         $cron = new Cron();
         $cron->name = $name;
@@ -26,12 +25,12 @@ class CronRegistry
         ];
     }
 
-    public static function getRegisteredCrons() 
+    public static function getRegisteredCrons()
     {
         return self::$registry;
     }
 
-    public static function syncWithDatabase() 
+    public static function syncWithDatabase()
     {
         $cron = new Cron();
         $dbCrons = $cron->Find("status = ?", array('Enabled'));

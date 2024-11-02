@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75ffba235e59dada6d0b2517ca3ec462",
+    "content-hash": "b13ffa1fd36d4a2bf6d969517d3777d1",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -1497,20 +1497,20 @@
         },
         {
             "name": "icehrm/php-active-record",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/icehrm/php-active-record.git",
-                "reference": "24c52d33c50cdc6e612133e8f6ab887d71f74cac"
+                "url": "https://github.com/thilinah/php-active-record.git",
+                "reference": "d408c370ffda3e515443fef976b74eb9b7cf7110"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/icehrm/php-active-record/zipball/24c52d33c50cdc6e612133e8f6ab887d71f74cac",
-                "reference": "24c52d33c50cdc6e612133e8f6ab887d71f74cac",
+                "url": "https://api.github.com/repos/thilinah/php-active-record/zipball/d408c370ffda3e515443fef976b74eb9b7cf7110",
+                "reference": "d408c370ffda3e515443fef976b74eb9b7cf7110",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0"
+                "php": ">=7.1"
             },
             "type": "library",
             "autoload": {
@@ -1530,11 +1530,7 @@
                 "persistence",
                 "php"
             ],
-            "support": {
-                "issues": "https://github.com/icehrm/php-active-record/issues",
-                "source": "https://github.com/icehrm/php-active-record/tree/1.0.0"
-            },
-            "time": "2023-01-27T13:08:35+00:00"
+            "time": "2023-02-18T11:30:05+00:00"
         },
         {
             "name": "league/container",
@@ -2631,6 +2627,7 @@
                 "mail",
                 "mailer"
             ],
+            "abandoned": "symfony/mailer",
             "time": "2019-11-12T09:31:26+00:00"
         },
         {
@@ -2756,6 +2753,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
+            "abandoned": "symfony/error-handler",
             "time": "2017-07-28T15:27:31+00:00"
         },
         {
@@ -3961,6 +3959,7 @@
             ],
             "description": "A tool for quickly measuring the size of a PHP project.",
             "homepage": "https://github.com/sebastianbergmann/phploc",
+            "abandoned": true,
             "time": "2017-11-18T17:35:43+00:00"
         },
         {
@@ -4992,6 +4991,7 @@
             ],
             "description": "Copy/Paste Detector (CPD) for PHP code.",
             "homepage": "https://github.com/sebastianbergmann/phpcpd",
+            "abandoned": true,
             "time": "2013-07-30T14:37:42+00:00"
         },
         {
@@ -5442,6 +5442,7 @@
             ],
             "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convenience and to simplify the usage of DOM.",
             "homepage": "https://github.com/theseer/fDOMDocument",
+            "abandoned": true,
             "time": "2017-06-30T11:53:12+00:00"
         },
         {
@@ -5489,12 +5490,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },
@@ -5673,7 +5674,7 @@
     "platform": [],
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.0"
+        "php": "7.1"
     },
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }

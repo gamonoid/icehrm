@@ -33,7 +33,15 @@ if (defined("MODULE_PATH")) {
     }
     if (!defined('MODULE_TYPE')) {
         if (count($tArr) >= 2) {
-            define('MODULE_TYPE', $tArr[count($tArr)-2]);
+            if (strpos(MODULE_PATH,'/extensions/'))  {
+                if ('user' == $tArr[count($tArr)-1]) {
+                    define('MODULE_TYPE', 'modules');
+                } else {
+                    define('MODULE_TYPE', 'admin');
+                }
+            } else {
+                define('MODULE_TYPE', $tArr[count($tArr)-2]);
+            }
         } else {
             define('MODULE_TYPE', "");
         }

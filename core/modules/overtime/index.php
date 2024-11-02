@@ -21,7 +21,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
     <ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
         <li class="active"><a id="tab<?=$moduleMainName?>" href="#tabPage<?=$moduleMainName?>"><?=t('Overtime Requests')?></a></li>
-        <li><a id="tab<?=$subModuleMainName?>" href="#tabPage<?=$subModuleMainName?>"><?=t('Subordinate Overtime Requests')?></a></li>
+        <li><a id="tab<?=$subModuleMainName?>" href="#tabPage<?=$subModuleMainName?>"><?=t('Overtime Requests (Direct Reports)')?></a></li>
         <?php if ($approvalsNeeded) {?>
             <li><a id="tab<?=$approveModName?>" href="#tabPage<?=$approveModName?>"><?=t('Overtime Request Approval')?></a></li>
         <?php } ?>

@@ -14,6 +14,9 @@ use Classes\IceResponse;
 use Classes\SettingsManager;
 use Classes\SubActionManager;
 use Employees\Common\Model\Employee;
+use Leaves\Admin\Api\LeaveUtil;
+use Leaves\Common\Model\EmployeeLeave;
+use Leaves\Common\Model\EmployeeLeaveDay;
 use Leaves\Common\Model\HoliDay;
 use Metadata\Common\Model\Country;
 use Payroll\Common\Model\PayrollCalculations;
@@ -123,14 +126,14 @@ class TimeSheetsActionManager extends SubActionManager
     public function createPreviousTimesheet($req)
     {
         $employee = $this->baseService->getElement('Employee', $this->getCurrentProfileId(), null, true);
-
+		$user = BaseService::getInstance()->getCurrentUser();
         $timeSheet = new EmployeeTimeSheet();
         $timeSheet->Load("id = ?", array($req->id));
         if ($timeSheet->id != $req->id) {
             return new IceResponse(IceResponse::ERROR, "Timesheet not found");
         }
 
-        if ($timeSheet->employee != $employee->id) {
+        if ($timeSheet->employee != $employee->id && $user->user_level !== 'Admin') {
             return new IceResponse(IceResponse::ERROR, "You don't have permissions to add this Timesheet");
         }
 
@@ -156,6 +159,44 @@ class TimeSheetsActionManager extends SubActionManager
 
         return new IceResponse(IceResponse::SUCCESS, "");
     }
+
+	public function createNextWeekTimesheet($req)
+	{
+		$employee = $this->baseService->getElement('Employee', $this->getCurrentProfileId(), null, true);
+		$user = BaseService::getInstance()->getCurrentUser();
+		$timeSheet = new EmployeeTimeSheet();
+		$timeSheet->Load("id = ?", array($req->id));
+		if ($timeSheet->id != $req->id) {
+			return new IceResponse(IceResponse::ERROR, "Timesheet not found");
+		}
+
+		if ($timeSheet->employee != $employee->id && $user->user_level !== 'Admin') {
+			return new IceResponse(IceResponse::ERROR, "You don't have permissions to add this Timesheet");
+		}
+
+		$start = date("Y-m-d", strtotime("next Sunday", strtotime($timeSheet->date_end)));
+		$end = date("Y-m-d", strtotime("next Saturday", strtotime($start)));
+
+
+		$tempTimeSheet = new EmployeeTimeSheet();
+		$tempTimeSheet->Load("employee = ? and date_start = ?", array($employee->id, $start));
+		if ($employee->id == $tempTimeSheet->employee) {
+			return new IceResponse(IceResponse::ERROR, "Timesheet already exists");
+		}
+
+		$newTimeSheet = new EmployeeTimeSheet();
+		$newTimeSheet->employee = $employee->id;
+		$newTimeSheet->date_start = $start;
+		$newTimeSheet->date_end = $end;
+		$newTimeSheet->status = "Pending";
+		$ok = $newTimeSheet->Save();
+		if (!$ok) {
+			LogManager::getInstance()->info("Error creating time sheet : ".$newTimeSheet->ErrorMsg());
+			return new IceResponse(IceResponse::ERROR, "Error creating Timesheet");
+		}
+
+		return new IceResponse(IceResponse::SUCCESS, "");
+	}
 
     public function getSubEmployeeTimeSheets($req)
     {
@@ -219,9 +260,27 @@ class TimeSheetsActionManager extends SubActionManager
             $data[] = $this->workScheduleToEvent($leave);
         }
 
+        // Add employee leave days
+
+        if (class_exists('\Leaves\Common\Model\EmployeeLeave')) {
+            $days = LeaveUtil::getEmployeeLeaveDaysBetweenDays($employee->id, $startDate, $endDate);
+            foreach ($days as $day) {
+                if ($day->leave->status !== 'Approved' && $day->leave->status !== 'Pending') {
+                    continue;
+                }
+                $data[] = $this->leaveDayToEvent($day);
+            }
+        }
+
+        // Add holidays to time sheet
         if (class_exists('\Leaves\Common\Model\HoliDay')) {
-            $holiday = new HoliDay();
-            $holidays = $holiday->Find("1=1", array());
+
+            $country = new Country();
+            $country->Load('code = ?', [$employee->country]);
+
+            $leaveUtil = new LeaveUtil();
+            $holidays = $leaveUtil->getHolidays($startDate, $endDate, $country->id, $employee->id);
+            $holidays = array_values($holidays);
 
             foreach ($holidays as $holiday) {
                 $data[] = $this->holidayToEvent($holiday);
@@ -268,21 +327,41 @@ class TimeSheetsActionManager extends SubActionManager
         $event = array();
         $event['id'] = "hd_".$holiday->id;
         if ($holiday->status == "Full Day") {
-            $event['title'] = $holiday->name;
+            $event['title'] = sprintf('Holiday (%s)', $holiday->name);
         } else {
-            $event['title'] = $holiday->name." (".$holiday->status.")";
-        }
-
-        if (!empty($holiday->country)) {
-            $country = new Country();
-            $country->Load("id = ?", array($holiday->country));
-            $event['title'] .=" / ".$country->name." only";
+            $event['title'] = sprintf('Holiday (%s / %s)', $holiday->name, $holiday->status);
         }
 
         $event['start'] = $holiday->dateh;
         $event['end'] = $holiday->dateh;
 
         $eventBackgroundColor = "#3c8dbc";
+
+        $event['color'] = $eventBackgroundColor;
+        $event['backgroundColor'] = $eventBackgroundColor;
+        $event['textColor'] = "#FFF";
+
+        return $event;
+    }
+
+    public function leaveDayToEvent($leaveDay)
+    {
+        $event = array();
+        $event['id'] = "ld_".$leaveDay->id;
+        if ($leaveDay->leave_type == "Full Day") {
+            $event['title'] = sprintf('%s Leave', $leaveDay->leave->status);
+        } else {
+            $event['title'] = sprintf('%s Leave (%s)', $leaveDay->leave->status, $leaveDay->leave_type);
+        }
+
+        $event['start'] = $leaveDay->leave_date;
+        $event['end'] = $leaveDay->leave_date;
+        if ($leaveDay->leave->status === 'Pending') {
+            $eventBackgroundColor = "#cc9900";
+        } else {
+            $eventBackgroundColor = "#739900";
+        }
+
 
         $event['color'] = $eventBackgroundColor;
         $event['backgroundColor'] = $eventBackgroundColor;
@@ -310,7 +389,7 @@ class TimeSheetsActionManager extends SubActionManager
             $projectList = $project->Find("1 = 1 order by name");
         } else {
             $projectList = $project->Find(
-                "id in (select project from EmployeeProjects where employee = ?) order by name",
+                "WHERE id in (select project from EmployeeProjects where employee = ?) order by name",
                 array(BaseService::getInstance()->getCurrentProfileId())
             );
         }
@@ -392,6 +471,57 @@ class TimeSheetsActionManager extends SubActionManager
         return new IceResponse(IceResponse::SUCCESS, array($projects,$columns,$values));
     }
 
+	public function getLeaveMessage($req)
+	{
+		if (!class_exists('Leaves\Common\Model\EmployeeLeave')) {
+			return new IceResponse(IceResponse::SUCCESS, '');
+		}
+
+		$timeSheet = new EmployeeTimeSheet();
+		$timeSheet->Load("id = ?", array($req->id));
+
+		$employeeLeave = new EmployeeLeave();
+
+		$employeeId = $timeSheet->employee;
+		$startDate = $timeSheet->date_start;
+		$endDate = $timeSheet->date_end;
+
+		$leaves = $employeeLeave->Find(
+			"employee = ? and ((date_start >= ? and date_start <= ?) 
+            or (date_end >= ? and date_end <= ?)) and status = ?",
+			array($employeeId, $startDate, $endDate, $startDate, $endDate, "Approved")
+		);
+
+		if (empty($leaves)) {
+			return new IceResponse(IceResponse::SUCCESS, '');
+		}
+
+
+		$dayStrings = [];
+		foreach ($leaves as $leave) {
+			$employeeLeaveDay = new EmployeeLeaveDay();
+			$days = $employeeLeaveDay->Find("employee_leave = ?", array($leave->id));
+			foreach ($days as $day) {
+				if (strtotime($day->leave_date) >= strtotime($startDate)
+					&& strtotime($day->leave_date) <= strtotime($endDate)
+				) {
+					$dayStrings[] = sprintf('%s (%s)', $day->leave_date, $day->leave_type);
+				}
+			}
+		}
+
+		$str = 'You have approved leave request(s) on ';
+
+		for ($i = 0; $i<count($dayStrings); $i++) {
+			if ($i != 0) {
+				$str .= ', ';
+			}
+			$str .= $dayStrings[$i];
+		}
+
+		return new IceResponse(IceResponse::SUCCESS, $str);
+	}
+
     public function updateAllData($req)
     {
 
@@ -417,7 +547,7 @@ class TimeSheetsActionManager extends SubActionManager
             return new IceResponse(IceResponse::ERROR, true);
         }
 
-        if ($timesheet->status == 'Submitted') {
+        if ($timesheet->status !== 'Submitted' && $timesheet->status !== 'Pending' && $timesheet->status !== 'Rejected') {
             return new IceResponse(IceResponse::ERROR, true);
         }
         foreach ($req as $key => $val) {

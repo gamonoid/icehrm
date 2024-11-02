@@ -16,6 +16,7 @@ use Dependents\Common\Model\EmployeeDependent;
 use EmergencyContacts\Common\Model\EmergencyContact;
 use Employees\Common\Model\ArchivedEmployee;
 use Employees\Common\Model\Employee;
+use Expenses\Common\Model\EmployeeExpense;
 use Projects\Common\Model\EmployeeProject;
 use Qualifications\Common\Model\EmployeeCertification;
 use Qualifications\Common\Model\EmployeeEducation;
@@ -119,7 +120,8 @@ class EmployeesActionManager extends SubActionManager
             function ($item) {
                 $item->image_in = '';
                 $item->image_out = '';
-            }, $attendnace
+            },
+            $attendnace
         );
 
         if (class_exists('\Documents\Common\Model\EmployeeDocument')) {
@@ -134,6 +136,7 @@ class EmployeesActionManager extends SubActionManager
         $data->dependants = $this->getEmployeeData($employee->id, new EmployeeDependent());
         $data->emergencyContacts = $this->getEmployeeData($employee->id, new EmergencyContact());
         $data->projects = $this->getEmployeeData($employee->id, new EmployeeProject());
+        $data->expenses = $this->getEmployeeData($employee->id, new EmployeeExpense());
 
         $archived->data = json_encode($data, JSON_PRETTY_PRINT);
 
@@ -155,8 +158,6 @@ class EmployeesActionManager extends SubActionManager
 
     public function downloadArchivedEmployee($req)
     {
-
-
         if ($this->baseService->currentUser->user_level != 'Admin') {
             echo "Error: Permission denied";
             exit();

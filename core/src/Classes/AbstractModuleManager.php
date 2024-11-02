@@ -269,7 +269,7 @@ abstract class AbstractModuleManager
         $classWithNamespace = $this->moduleObject['model_namespace']."\\".$className;
         BaseService::getInstance()->addModelClass($className, $classWithNamespace);
         /**
- * @var BaseModel $modelClass 
+ * @var BaseModel $modelClass
 */
         $modelClass = new $classWithNamespace();
         if ($modelClass->isCustomFieldsEnabled()) {

@@ -67,4 +67,62 @@ class UserRestEndPoint extends RestEndPoint
 
         return new IceResponse(IceResponse::SUCCESS, $responseData, 200);
     }
+
+	public function updatePassword(User $user) {
+		$body = $this->getRequestBody();
+		$resp = $this->changePassword($user, $body['id'], $body['password'], $body['confirm_password']);
+		return $resp;
+	}
+
+	private function changePassword(User $requestingUser, $userId, $password, $confirmPassword )
+	{
+		if (defined('DEMO_MODE')) {
+			return new IceResponse(
+				IceResponse::ERROR,
+				"You are not allowed to change the password in demo mode.",
+				400
+
+			);
+		}
+
+		if ($password !== $confirmPassword) {
+			return new IceResponse(
+				IceResponse::ERROR,
+				"Password and confirm password doesn't match.",
+				400
+
+			);
+		}
+
+		$user = new User();
+		$user->Load("id = ?", array($userId));
+		if ($requestingUser->user_level == 'Admin' || $requestingUser->id == $user->id) {
+			if (empty($user->id)) {
+				return new IceResponse(
+					IceResponse::ERROR,
+					"Error updating password due to an invalid user.",
+					400
+
+				);
+			}
+
+			$passwordStrengthResponse = PasswordManager::isQualifiedPassword($password);
+			if ($passwordStrengthResponse->getStatus() === IceResponse::ERROR) {
+				return $passwordStrengthResponse;
+			}
+
+			$user->password = PasswordManager::createPasswordHash($password);
+			$ok = $user->Save();
+			if (!$ok) {
+				return new IceResponse(IceResponse::ERROR, $user->ErrorMsg(), 400);
+			}
+			return new IceResponse(IceResponse::SUCCESS, $user);
+		}
+		return new IceResponse(
+			IceResponse::ERROR,
+			"Permission denied.",
+			403
+
+		);
+	}
 }

@@ -48,6 +48,7 @@ path.link {
 
 	<div class="tab-content">
 		<div class="tab-pane active" id="tabPageCompanyStructure">
+            <div id="CompanyStructureTableTop" class="reviewBlock"></div>
 			<div id="CompanyStructureTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
             <div id="CompanyStructureForm"></div>
             <div id="CompanyStructureFilterForm"></div>

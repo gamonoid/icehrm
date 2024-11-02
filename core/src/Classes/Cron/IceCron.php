@@ -22,12 +22,12 @@ class IceCron
     const YEARLY = "Yearly";
 
     /**
- * @var Cron $cron 
+ * @var Cron $cron
 */
     private $cron;
 
     /**
- * @var IceTask  
+ * @var IceTask
 */
     private $executor;
 

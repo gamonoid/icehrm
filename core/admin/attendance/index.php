@@ -6,13 +6,15 @@
 
 use Attendance\Common\Model\Attendance;
 use Classes\PermissionManager;
+use Classes\SettingsManager;
 
 $moduleName = 'attendance';
 $moduleGroup = 'admin';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
-$mapAttendance = \Classes\SettingsManager::getInstance()->getSetting('Attendance: Request Attendance Location on Mobile');
+$mapAttendance = SettingsManager::getInstance()->getSetting('Attendance: Request Attendance Location on Mobile');
+$overtimeStartHours = SettingsManager::getInstance()->getSetting('Attendance: Overtime Start Hour');
 ?><div class="span9">
 
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
@@ -92,7 +94,8 @@ $moduleData = [
     'permissions' => [
         'Attendance' => PermissionManager::checkGeneralAccess(new Attendance()),
         'AttendanceStatus' => [],
-    ]
+    ],
+    'overtimeStartHour' => (int)$overtimeStartHours,
 ];
 ?>
 <script>

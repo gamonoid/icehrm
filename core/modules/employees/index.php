@@ -17,6 +17,7 @@ $customFields = BaseService::getInstance()->getCustomFields("Employee");
 
 $jwtService = new JwtTokenService();
 $threeMonthAccessToken = $jwtService->create(3600 * 24 * 180);
+$csrf = \Classes\BaseService::getInstance()->generateCsrf('password');
 ?>
 <script type="text/javascript" src="<?=BASE_URL.'js/d3js/d3.js?v='.$jsVersion?>"></script>
 <script type="text/javascript" src="<?=BASE_URL.'js/d3js/d3.layout.js?v='.$jsVersion?>"></script>
@@ -100,6 +101,7 @@ modJsList['tabApiAccess'] = new ApiAccessAdapter('ApiAccess');
 modJsList['tabApiAccess'].setToken('<?=$threeMonthAccessToken?>');
 
 var modJs = modJsList['tabEmployee'];
+window.passwordCSRF = '<?=$csrf?>';
 
 </script>
 <div id="EmployeeFormReact"></div>

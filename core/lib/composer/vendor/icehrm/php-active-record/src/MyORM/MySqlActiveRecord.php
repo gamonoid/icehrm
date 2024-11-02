@@ -182,7 +182,7 @@ class MySqlActiveRecord
         return true;
     }
 
-    public function Find($whereOrderBy, $bindarr = false, $pkeysArr = [], $extra = null)
+    public function Find($whereOrderBy, $bindarr = false, $cache = false, $pkeysArr = false, $extra = array())
     {
         if (!$bindarr) {
             $bindarr = [];
@@ -207,8 +207,8 @@ class MySqlActiveRecord
         } else {
             // no "WHERE" in where clause
             if (!empty($whereOrderBy) && (
-                strpos(strtolower($whereOrderBy), 'order by') === 0 ||
-                strpos(strtolower($whereOrderBy), 'limit') === 0
+                    strpos(strtolower($whereOrderBy), 'order by') === 0 ||
+                    strpos(strtolower($whereOrderBy), 'limit') === 0
                 )
             ) {
                 $sql = sprintf('SELECT a.* FROM %s as a %s', $this->getTable(), $whereOrderBy);
@@ -329,9 +329,9 @@ class MySqlActiveRecord
 
         foreach ($this->getColumns() as $col) {
             if (self::$primaryKey[$this->getTable()] === $col) {
-                $where = $col.'= ? ';
+                $where = sprintf('`%s` = ? ', $col);
             } else {
-                $valueSet[] = $col.'= ? ';
+                $valueSet[] = sprintf('`%s`= ? ', $col);
                 $parameters[] = $this->{$col};
             }
         }
@@ -347,7 +347,6 @@ class MySqlActiveRecord
         );
 
         $stmt = $this->connection()->prepare($sql);
-
         if (!$stmt) {
             $this->lastError = $this->connection()->error;
             return false;

@@ -33,7 +33,7 @@ class RedisCacheService implements CacheService
     public function setDBQuery($entity, $query, $params, $result, $ttl = 600)
     {
         /**
- * @var Client $client 
+ * @var Client $client
 */
         $client = $this->getClient();
         if ($client == null) {
@@ -47,7 +47,7 @@ class RedisCacheService implements CacheService
     public function getDBQuery($entity, $query, $params)
     {
         /**
- * @var Client $client 
+ * @var Client $client
 */
         $client = $this->getClient();
         if ($client == null) {
@@ -71,7 +71,7 @@ class RedisCacheService implements CacheService
     public function deleteDatabaseEntity($table, $id)
     {
         /**
- * @var Client $client 
+ * @var Client $client
 */
         $client = $this->getClient();
         if ($client == null) {
@@ -84,7 +84,7 @@ class RedisCacheService implements CacheService
     public function deleteQuery($query)
     {
         /**
- * @var Client $client 
+ * @var Client $client
 */
         $client = $this->getClient();
         if ($client == null) {
@@ -97,7 +97,7 @@ class RedisCacheService implements CacheService
     protected function deleteByPrefix($prefix)
     {
         /**
- * @var Client $client 
+ * @var Client $client
 */
         $client = $this->getClient();
         if ($client == null) {

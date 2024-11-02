@@ -117,6 +117,10 @@ class ModuleBase {
     this.csrfRequired = val;
   }
 
+  slowScrollToTop() {
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+  }
+
   scrollToTop() {
     $('html, body').animate({ scrollTop: 0 }, 'fast');
   }
@@ -694,6 +698,10 @@ class ModuleBase {
     $('.tableActionButton').tooltip();
   }
 
+  getTableSize( ) {
+    return 15;
+  }
+
   /**
      * Create a data table on provided element id which loads data page by page
      * @method createTableServer
@@ -718,7 +726,7 @@ class ModuleBase {
     const activePage = $(`#${elementId} .dataTables_paginate .active a`).html();
     let start = 0;
     if (activePage !== undefined && activePage != null) {
-      start = parseInt(activePage, 10) * 15 - 15;
+      start = parseInt(activePage, 10) * this.getTableSize() - this.getTableSize();
     }
 
 
@@ -734,7 +742,7 @@ class ModuleBase {
       aoColumns: headers,
       bSort: that.isSortable(),
       parent: that,
-      iDisplayLength: 15,
+      iDisplayLength: this.getTableSize(),
       iDisplayStart: start,
     };
 
@@ -2713,22 +2721,21 @@ class ModuleBase {
 
   downloadPdf(type, data) {
     const url = `${this.clientUrl}service.php?a=pdf&h=${type}&data=${data}`;
-    window.open(url,'_blank');
+    window.open(url, '_blank');
   }
 
   checkIfUserEmailIsGoogleDomain(domain) {
-    let url = `https://dns.google.com/resolve?name=${domain}&type=MX`
+    const url = `https://dns.google.com/resolve?name=${domain}&type=MX`;
     $.get(url, (data) => {
-      if (data == null || data.Answer == null ) {
+      if (data == null || data.Answer == null) {
         return;
       }
-      let hasGoogle = data.Answer.filter((item) => item.data != null && item.data.includes('google.com'));
+      const hasGoogle = data.Answer.filter((item) => item.data != null && item.data.includes('google.com'));
       if (hasGoogle.length > 0) {
-        $("#googleConnectModel").modal({
-          backdrop: 'static'
+        $('#googleConnectModel').modal({
+          backdrop: 'static',
         });
       }
-
     });
   }
 }

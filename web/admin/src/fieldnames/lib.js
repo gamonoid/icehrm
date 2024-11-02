@@ -17,7 +17,6 @@ class FieldNameAdapter extends ReactModalAdapterBase {
       'name',
       'textOrig',
       'textMapped',
-      'display',
     ];
   }
 
@@ -27,7 +26,6 @@ class FieldNameAdapter extends ReactModalAdapterBase {
       { sTitle: 'Name' },
       { sTitle: 'Original Text' },
       { sTitle: 'Mapped Text' },
-      { sTitle: 'Display Status' },
     ];
   }
 
@@ -48,11 +46,6 @@ class FieldNameAdapter extends ReactModalAdapterBase {
         dataIndex: 'textMapped',
         sorter: true,
       },
-      {
-        title: 'Display Status',
-        dataIndex: 'display',
-        sorter: true,
-      },
     ];
   }
 
@@ -65,6 +58,10 @@ class FieldNameAdapter extends ReactModalAdapterBase {
       ['textMapped', { label: 'Mapped Text', type: 'text', validation: '' }],
       ['display', { label: 'Display Status', type: 'select', source: [['Form', 'Show'], ['Hidden', 'Hidden']] }],
     ];
+  }
+
+  showViewButton() {
+    return false;
   }
 }
 

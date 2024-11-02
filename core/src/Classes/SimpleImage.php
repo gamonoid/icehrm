@@ -92,39 +92,39 @@ class SimpleImage
     {
 
         switch ($this->original_info['exif']['Orientation']) {
-        case 1:
-            // Do nothing
-            break;
-        case 2:
-            // Flip horizontal
-            $this->flip('x');
-            break;
-        case 3:
-            // Rotate 180 counterclockwise
-            $this->rotate(-180);
-            break;
-        case 4:
-            // vertical flip
-            $this->flip('y');
-            break;
-        case 5:
-            // Rotate 90 clockwise and flip vertically
-            $this->flip('y');
-            $this->rotate(90);
-            break;
-        case 6:
-            // Rotate 90 clockwise
-            $this->rotate(90);
-            break;
-        case 7:
-            // Rotate 90 clockwise and flip horizontally
-            $this->flip('x');
-            $this->rotate(90);
-            break;
-        case 8:
-            // Rotate 90 counterclockwise
-            $this->rotate(-90);
-            break;
+            case 1:
+                // Do nothing
+                break;
+            case 2:
+                // Flip horizontal
+                $this->flip('x');
+                break;
+            case 3:
+                // Rotate 180 counterclockwise
+                $this->rotate(-180);
+                break;
+            case 4:
+                // vertical flip
+                $this->flip('y');
+                break;
+            case 5:
+                // Rotate 90 clockwise and flip vertically
+                $this->flip('y');
+                $this->rotate(90);
+                break;
+            case 6:
+                // Rotate 90 clockwise
+                $this->rotate(90);
+                break;
+            case 7:
+                // Rotate 90 clockwise and flip horizontally
+                $this->flip('x');
+                $this->rotate(90);
+                break;
+            case 8:
+                // Rotate 90 counterclockwise
+                $this->rotate(-90);
+                break;
         }
 
         return $this;
@@ -180,12 +180,12 @@ class SimpleImage
     public function blur($type = 'selective', $passes = 1)
     {
         switch (strtolower($type)) {
-        case 'gaussian':
-            $type = IMG_FILTER_GAUSSIAN_BLUR;
-            break;
-        default:
-            $type = IMG_FILTER_SELECTIVE_BLUR;
-            break;
+            case 'gaussian':
+                $type = IMG_FILTER_GAUSSIAN_BLUR;
+                break;
+            default:
+                $type = IMG_FILTER_SELECTIVE_BLUR;
+                break;
         }
         for ($i = 0; $i < $passes; $i++) {
             imagefilter($this->image, $type);
@@ -433,16 +433,16 @@ class SimpleImage
         imagesavealpha($new, true);
 
         switch (strtolower($direction)) {
-        case 'y':
-            for ($y = 0; $y < $this->height; $y++) {
-                imagecopy($new, $this->image, 0, $y, 0, $this->height - $y - 1, $this->width, 1);
-            }
-            break;
-        default:
-            for ($x = 0; $x < $this->width; $x++) {
-                imagecopy($new, $this->image, $x, 0, $this->width - $x - 1, 0, 1, $this->height);
-            }
-            break;
+            case 'y':
+                for ($y = 0; $y < $this->height; $y++) {
+                    imagecopy($new, $this->image, 0, $y, 0, $this->height - $y - 1, $this->width, 1);
+                }
+                break;
+            default:
+                for ($x = 0; $x < $this->width; $x++) {
+                    imagecopy($new, $this->image, $x, 0, $this->width - $x - 1, 0, 1, $this->height);
+                }
+                break;
         }
 
         $this->image = $new;
@@ -612,39 +612,39 @@ class SimpleImage
 
         // Determine mimetype
         switch (strtolower($format)) {
-        case 'gif':
-            $mimetype = 'image/gif';
-            break;
-        case 'jpeg':
-        case 'jpg':
-            imageinterlace($this->image, true);
-            $mimetype = 'image/jpeg';
-            break;
-        case 'png':
-            $mimetype = 'image/png';
-            break;
-        default:
-            $info = (empty($this->imagestring))
-            ? getimagesize($this->filename) : getimagesizefromstring($this->imagestring);
-            $mimetype = $info['mime'];
-            unset($info);
-            break;
+            case 'gif':
+                $mimetype = 'image/gif';
+                break;
+            case 'jpeg':
+            case 'jpg':
+                imageinterlace($this->image, true);
+                $mimetype = 'image/jpeg';
+                break;
+            case 'png':
+                $mimetype = 'image/png';
+                break;
+            default:
+                $info = (empty($this->imagestring))
+                ? getimagesize($this->filename) : getimagesizefromstring($this->imagestring);
+                $mimetype = $info['mime'];
+                unset($info);
+                break;
         }
 
         // Output the image
         header('Content-Type: '.$mimetype);
         switch ($mimetype) {
-        case 'image/gif':
-            imagegif($this->image);
-            break;
-        case 'image/jpeg':
-            imagejpeg($this->image, null, round($quality));
-            break;
-        case 'image/png':
-            imagepng($this->image, null, round(9 * $quality / 100));
-            break;
-        default:
-            throw new Exception('Unsupported image format: '.$this->filename);
+            case 'image/gif':
+                imagegif($this->image);
+                break;
+            case 'image/jpeg':
+                imagejpeg($this->image, null, round($quality));
+                break;
+            case 'image/png':
+                imagepng($this->image, null, round(9 * $quality / 100));
+                break;
+            default:
+                throw new Exception('Unsupported image format: '.$this->filename);
                 break;
         }
     }
@@ -666,38 +666,38 @@ class SimpleImage
 
         // Determine mimetype
         switch (strtolower($format)) {
-        case 'gif':
-            $mimetype = 'image/gif';
-            break;
-        case 'jpeg':
-        case 'jpg':
-            imageinterlace($this->image, true);
-            $mimetype = 'image/jpeg';
-            break;
-        case 'png':
-            $mimetype = 'image/png';
-            break;
-        default:
-            $info = getimagesize($this->filename);
-            $mimetype = $info['mime'];
-            unset($info);
-            break;
+            case 'gif':
+                $mimetype = 'image/gif';
+                break;
+            case 'jpeg':
+            case 'jpg':
+                imageinterlace($this->image, true);
+                $mimetype = 'image/jpeg';
+                break;
+            case 'png':
+                $mimetype = 'image/png';
+                break;
+            default:
+                $info = getimagesize($this->filename);
+                $mimetype = $info['mime'];
+                unset($info);
+                break;
         }
 
         // Output the image
         ob_start();
         switch ($mimetype) {
-        case 'image/gif':
-            imagegif($this->image);
-            break;
-        case 'image/jpeg':
-            imagejpeg($this->image, null, round($quality));
-            break;
-        case 'image/png':
-            imagepng($this->image, null, round(9 * $quality / 100));
-            break;
-        default:
-            throw new Exception('Unsupported image format: '.$this->filename);
+            case 'image/gif':
+                imagegif($this->image);
+                break;
+            case 'image/jpeg':
+                imagejpeg($this->image, null, round($quality));
+                break;
+            case 'image/png':
+                imagepng($this->image, null, round(9 * $quality / 100));
+                break;
+            default:
+                throw new Exception('Unsupported image format: '.$this->filename);
                 break;
         }
         $image_data = ob_get_contents();
@@ -733,43 +733,43 @@ class SimpleImage
 
         // Determine position
         switch (strtolower($position)) {
-        case 'top left':
-            $x = 0 + $x_offset;
-            $y = 0 + $y_offset;
-            break;
-        case 'top right':
-            $x = $this->width - $overlay->width + $x_offset;
-            $y = 0 + $y_offset;
-            break;
-        case 'top':
-            $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
-            $y = 0 + $y_offset;
-            break;
-        case 'bottom left':
-            $x = 0 + $x_offset;
-            $y = $this->height - $overlay->height + $y_offset;
-            break;
-        case 'bottom right':
-            $x = $this->width - $overlay->width + $x_offset;
-            $y = $this->height - $overlay->height + $y_offset;
-            break;
-        case 'bottom':
-            $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
-            $y = $this->height - $overlay->height + $y_offset;
-            break;
-        case 'left':
-            $x = 0 + $x_offset;
-            $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
-            break;
-        case 'right':
-            $x = $this->width - $overlay->width + $x_offset;
-            $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
-            break;
-        case 'center':
-        default:
-            $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
-            $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
-            break;
+            case 'top left':
+                $x = 0 + $x_offset;
+                $y = 0 + $y_offset;
+                break;
+            case 'top right':
+                $x = $this->width - $overlay->width + $x_offset;
+                $y = 0 + $y_offset;
+                break;
+            case 'top':
+                $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
+                $y = 0 + $y_offset;
+                break;
+            case 'bottom left':
+                $x = 0 + $x_offset;
+                $y = $this->height - $overlay->height + $y_offset;
+                break;
+            case 'bottom right':
+                $x = $this->width - $overlay->width + $x_offset;
+                $y = $this->height - $overlay->height + $y_offset;
+                break;
+            case 'bottom':
+                $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
+                $y = $this->height - $overlay->height + $y_offset;
+                break;
+            case 'left':
+                $x = 0 + $x_offset;
+                $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
+                break;
+            case 'right':
+                $x = $this->width - $overlay->width + $x_offset;
+                $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
+                break;
+            case 'center':
+            default:
+                $x = ($this->width / 2) - ($overlay->width / 2) + $x_offset;
+                $y = ($this->height / 2) - ($overlay->height / 2) + $y_offset;
+                break;
         }
 
         // Perform the overlay
@@ -898,19 +898,19 @@ class SimpleImage
 
         // Create the image
         switch (strtolower($format)) {
-        case 'gif':
-            $result = imagegif($this->image, $filename);
-            break;
-        case 'jpg':
-        case 'jpeg':
-            imageinterlace($this->image, true);
-            $result = imagejpeg($this->image, $filename, round($quality));
-            break;
-        case 'png':
-            $result = imagepng($this->image, $filename, round(9 * $quality / 100));
-            break;
-        default:
-            throw new Exception('Unsupported format');
+            case 'gif':
+                $result = imagegif($this->image, $filename);
+                break;
+            case 'jpg':
+            case 'jpeg':
+                imageinterlace($this->image, true);
+                $result = imagejpeg($this->image, $filename, round($quality));
+                break;
+            case 'png':
+                $result = imagepng($this->image, $filename, round(9 * $quality / 100));
+                break;
+            default:
+                throw new Exception('Unsupported format');
         }
 
         if (!$result) {
@@ -997,43 +997,43 @@ class SimpleImage
 
         // Determine position
         switch (strtolower($position)) {
-        case 'top left':
-            $x = 0 + $x_offset;
-            $y = 0 + $y_offset + $box_height;
-            break;
-        case 'top right':
-            $x = $this->width - $box_width + $x_offset;
-            $y = 0 + $y_offset + $box_height;
-            break;
-        case 'top':
-            $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
-            $y = 0 + $y_offset + $box_height;
-            break;
-        case 'bottom left':
-            $x = 0 + $x_offset;
-            $y = $this->height - $box_height + $y_offset + $box_height;
-            break;
-        case 'bottom right':
-            $x = $this->width - $box_width + $x_offset;
-            $y = $this->height - $box_height + $y_offset + $box_height;
-            break;
-        case 'bottom':
-            $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
-            $y = $this->height - $box_height + $y_offset + $box_height;
-            break;
-        case 'left':
-            $x = 0 + $x_offset;
-            $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
-            break;
-        case 'right':
-            $x = $this->width - $box_width + $x_offset;
-            $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
-            break;
-        case 'center':
-        default:
-            $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
-            $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
-            break;
+            case 'top left':
+                $x = 0 + $x_offset;
+                $y = 0 + $y_offset + $box_height;
+                break;
+            case 'top right':
+                $x = $this->width - $box_width + $x_offset;
+                $y = 0 + $y_offset + $box_height;
+                break;
+            case 'top':
+                $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
+                $y = 0 + $y_offset + $box_height;
+                break;
+            case 'bottom left':
+                $x = 0 + $x_offset;
+                $y = $this->height - $box_height + $y_offset + $box_height;
+                break;
+            case 'bottom right':
+                $x = $this->width - $box_width + $x_offset;
+                $y = $this->height - $box_height + $y_offset + $box_height;
+                break;
+            case 'bottom':
+                $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
+                $y = $this->height - $box_height + $y_offset + $box_height;
+                break;
+            case 'left':
+                $x = 0 + $x_offset;
+                $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
+                break;
+            case 'right':
+                $x = $this->width - $box_width + $x_offset;
+                $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
+                break;
+            case 'center':
+            default:
+                $x = ($this->width / 2) - ($box_width / 2) + $x_offset;
+                $y = ($this->height / 2) - (($box_height / 2) - $box_height) + $y_offset;
+                break;
         }
 
         // Add the text
@@ -1110,17 +1110,17 @@ class SimpleImage
             $info = getimagesize($this->filename);
 
             switch ($info['mime']) {
-            case 'image/gif':
-                $this->image = imagecreatefromgif($this->filename);
-                break;
-            case 'image/jpeg':
-                $this->image = imagecreatefromjpeg($this->filename);
-                break;
-            case 'image/png':
-                $this->image = imagecreatefrompng($this->filename);
-                break;
-            default:
-                throw new Exception('Invalid image: '.$this->filename);
+                case 'image/gif':
+                    $this->image = imagecreatefromgif($this->filename);
+                    break;
+                case 'image/jpeg':
+                    $this->image = imagecreatefromjpeg($this->filename);
+                    break;
+                case 'image/png':
+                    $this->image = imagecreatefrompng($this->filename);
+                    break;
+                default:
+                    throw new Exception('Invalid image: '.$this->filename);
                     break;
             }
         } elseif (function_exists('getimagesizefromstring')) {

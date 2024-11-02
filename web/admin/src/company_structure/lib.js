@@ -93,8 +93,16 @@ class CompanyStructureAdapter extends ReactModalAdapterBase {
     }
   }
 
+  getHelpTitle() {
+    return this.gt('Company Structure');
+  }
+
+  getHelpDescription() {
+    return this.gt('Here you can define the structure of the company by adding branches, departments, company units,etc. Each employee needs to be connected to a company structure.');
+  }
+
   getHelpLink() {
-    return 'https://icehrm.gitbook.io/icehrm/employees/employee-information-setup';
+    return 'https://icehrm.com/explore/docs/defining-company-structure/';
   }
 }
 

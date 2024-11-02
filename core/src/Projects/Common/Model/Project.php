@@ -96,4 +96,9 @@ class Project extends BaseModel
             new ModuleAccess('projects', 'admin'),
         ];
     }
+
+    public function isCustomFieldsEnabled()
+    {
+        return true;
+    }
 }

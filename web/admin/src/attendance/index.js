@@ -8,6 +8,7 @@ function init(data) {
   modJsList.tabAttendance.setObjectTypeName('Attendance');
   modJsList.tabAttendance.setDataPipe(new IceDataPipe(modJsList.tabAttendance));
   modJsList.tabAttendance.setAccess(data.permissions.Attendance);
+  modJsList.tabAttendance.setOvertimeStartHour(data.overtimeStartHour);
 
   modJsList.tabAttendanceStatus = new AttendanceStatusAdapter('AttendanceStatus','AttendanceStatus','','');
   modJsList.tabAttendanceStatus.setRemoteTable(true);

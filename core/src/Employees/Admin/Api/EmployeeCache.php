@@ -26,7 +26,8 @@ class EmployeeCache
         $subIds = array_map(
             function ($item) {
                 return $item->id;
-            }, $subs
+            },
+            $subs
         );
 
         self::$subordinateCache[$employeeId] = $subIds;

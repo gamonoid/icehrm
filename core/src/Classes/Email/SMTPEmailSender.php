@@ -13,78 +13,81 @@ use Utils\LogManager;
 class SMTPEmailSender extends EmailSender
 {
 
-    public function __construct($settings)
-    {
-        parent::__construct($settings);
-    }
+	public function __construct($settings)
+	{
+		parent::__construct($settings);
+	}
 
-    protected function sendMail(
-        $subject,
-        $body,
-        $toEmail,
-        $fromEmail,
-        $replyToEmail = null,
-        $ccList = array(),
-        $bccList = array(),
-        $fromName = ''
-    ) {
+	protected function sendMail(
+		$subject,
+		$body,
+		$toEmail,
+		$fromEmail,
+		$replyToEmail = null,
+		$ccList = array(),
+		$bccList = array(),
+		$fromName = ''
+	) {
 
-        try {
-            if (empty($replyToEmail)) {
-                $replyToEmail = $fromEmail;
-            }
+		try {
+			if (empty($replyToEmail)) {
+				$replyToEmail = $fromEmail;
+			}
 
-            LogManager::getInstance()->info("Sending email to: " . $toEmail . "/ from: " . $fromEmail);
+			LogManager::getInstance()->info("Sending email to: " . $toEmail . "/ from: " . $fromEmail);
 
-            $host = $this->settings->getSetting("Email: SMTP Host");
-            $username = $this->settings->getSetting("Email: SMTP User");
-            $password = $this->settings->getSetting("Email: SMTP Password");
-            $port = $this->settings->getSetting("Email: SMTP Port");
+			$host = $this->settings->getSetting("Email: SMTP Host");
+			$username = $this->settings->getSetting("Email: SMTP User");
+			$password = $this->settings->getSetting("Email: SMTP Password");
+			$port = $this->settings->getSetting("Email: SMTP Port");
 
-            if (empty($port)) {
-                $port = '25';
-            }
+			if (empty($port)) {
+				$port = '25';
+			}
 
-            if ($this->settings->getSetting("Email: SMTP Authentication Required") == "0") {
-                $auth = array('host' => $host,
-                    'auth' => false);
-            } else {
-                $auth = array('host' => $host,
-                    'auth' => true,
-                    'username' => $username,
-                    'port' => $port,
-                    'password' => $password);
-            }
+			if ($this->settings->getSetting("Email: SMTP Authentication Required") == "0") {
+				$auth = array(
+					'host' => $host,
+					'auth' => false,
+					'port' => $port,
+				);
+			} else {
+				$auth = array('host' => $host,
+					'auth' => true,
+					'username' => $username,
+					'port' => $port,
+					'password' => $password);
+			}
 
-            $smtp = \Mail::factory('smtp', $auth);
+			$smtp = \Mail::factory('smtp', $auth);
 
-            $headers = array('MIME-Version' => '1.0',
-                'Content-type' => 'text/html',
-                'charset' => 'iso-8859-1',
-                'From' => $fromEmail,
-                'To' => $toEmail,
-                'Reply-To' => $replyToEmail,
-                'Subject' => $subject);
+			$headers = array('MIME-Version' => '1.0',
+				'Content-type' => 'text/html',
+				'charset' => 'iso-8859-1',
+				'From' => $fromEmail,
+				'To' => $toEmail,
+				'Reply-To' => $replyToEmail,
+				'Subject' => $subject);
 
-            if (!empty($ccList)) {
-                $headers['Cc'] = implode(",", $ccList);
-            }
+			if (!empty($ccList)) {
+				$headers['Cc'] = implode(",", $ccList);
+			}
 
-            if (!empty($bccList)) {
-                $headers['Bcc'] = implode(",", $bccList);
-            }
+			if (!empty($bccList)) {
+				$headers['Bcc'] = implode(",", $bccList);
+			}
 
-            $mail = $smtp->send($toEmail, $headers, $body);
-            if (\PEAR::isError($mail)) {
-                LogManager::getInstance()->info("SMTP Error Response:" . $mail->getMessage());
-                return false;
-            }
+			$mail = $smtp->send($toEmail, $headers, $body);
+			if (\PEAR::isError($mail)) {
+				LogManager::getInstance()->info("SMTP Error Response:" . $mail->getMessage());
+				return false;
+			}
 
-            return true;
-        } catch (\Exception $e) {
-            LogManager::getInstance()->error("Error sending email:" . $e->getMessage());
-            LogManager::getInstance()->notifyException($e);
-            return false;
-        }
-    }
+			return true;
+		} catch (\Exception $e) {
+			LogManager::getInstance()->error("Error sending email:" . $e->getMessage());
+			LogManager::getInstance()->notifyException($e);
+			return false;
+		}
+	}
 }

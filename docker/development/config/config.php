@@ -5,8 +5,8 @@ define('CLIENT_NAME', 'icehrm');
 ini_set('error_log', '/var/www/html/app/data/icehrm.log');
 define('APP_BASE_PATH', '/var/www/html/core/');
 define('CLIENT_BASE_PATH', '/var/www/html/app/');
-define('BASE_URL','http://localhost:9080/web/');
-define('CLIENT_BASE_URL','http://localhost:9080/app/');
+define('BASE_URL','http://localhost:9010/web/');
+define('CLIENT_BASE_URL','http://localhost:9010/app/');
 
 define('LOG_STDERR', '1');
 

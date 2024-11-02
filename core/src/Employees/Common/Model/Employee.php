@@ -11,6 +11,7 @@ use Metadata\Common\Model\Country;
 use Model\BaseModel;
 use Model\CustomFieldTrait;
 use Model\File;
+use Utils\CalendarTools;
 
 class Employee extends BaseModel
 {
@@ -172,9 +173,22 @@ class Employee extends BaseModel
 
     public function executePreUpdateActions($obj)
     {
+		$savedObject = new Employee();
+		$savedObject->Load('id = ?', [$obj->id]);
+		$obj = $this->processBasicPermissions($obj, $savedObject);
         $this->initHistory($obj);
         return new IceResponse(IceResponse::SUCCESS, $obj);
     }
+
+	protected function processBasicPermissions( $obj, $savedObject ) {
+		$user = BaseService::getInstance()->getCurrentUser();
+		$permissions = BaseService::getInstance()->loadModulePermissions('modules>employees', $user->user_level)['perm'];
+		if ($permissions['Edit Employee Number'] === 'No' ) {
+			$obj->employee_id = $savedObject->employee_id;
+		}
+
+		return $obj;
+	}
 
     public function executePostUpdateActions($obj)
     {
@@ -183,8 +197,11 @@ class Employee extends BaseModel
 
     public function postProcessGetData($obj)
     {
+        if (empty($obj->timezone)) {
+            $obj->timezone = BaseService::getInstance()->getEmployeeTimeZone($obj->id);
+        }
         $obj = FileService::getInstance()->updateSmallProfileImage($obj);
-        return $obj;
+        return $this->updateEmployeeUserEmail($obj);
     }
 
     public function getVirtualFields()
@@ -255,8 +272,28 @@ class Employee extends BaseModel
 
     public function postProcessGetElement($obj)
     {
-        return FileService::getInstance()->updateProfileImage($obj);
+        if (empty($obj->timezone)) {
+            $obj->timezone = BaseService::getInstance()->getEmployeeTimeZone($obj->id);
+        }
+        $obj->current_time = CalendarTools::getServerDate('Y-m-d H:i:s', $obj->id);
+        $obj = FileService::getInstance()->updateProfileImage($obj);
+        return $this->updateEmployeeUserEmail($obj);
     }
 
     public $table = 'Employees';
+
+    /**
+     * @param $obj
+     * @return mixed
+     */
+    protected function updateEmployeeUserEmail($obj)
+    {
+        $user = BaseService::getInstance()->getEmployeeUser($obj->id);
+        if (null !== $user) {
+            $obj->email = $user->email;
+        } else {
+            $obj->email = $obj->work_email;
+        }
+        return $obj;
+    }
 }

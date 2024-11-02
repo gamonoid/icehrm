@@ -121,27 +121,45 @@ abstract class EmailSender
         }
 
         $fromEmail = $this->settings->getSetting("Email: Email From");
-
-        //Convert to an html email
-        $emailBody = file_get_contents(APP_BASE_PATH.'/templates/email/emailBody.html');
-
-        $emailBody = str_replace("#_emailBody_#", $body, $emailBody);
-        $emailBody = str_replace(
-            "#_logourl_#",
-            UIManager::getInstance()->getCompanyLogoUrl(),
-            $emailBody
-        );
-
-        $user = new User();
-        $user->Load("username = ?", array('admin'));
-
-        if (empty($user->id)) {
-            $users = $user->Find("user_level = ?", array('Admin'));
-            $user = $users[0];
+        $companyName = $this->settings->getSetting("Company: Name");
+        if ($companyName == "" || $companyName == 'Sample Company Pvt Ltd') {
+            $companyName = "IceHrm";
         }
 
-        $emailBody = str_replace("#_adminEmail_#", $user->email, $emailBody);
-        $emailBody = str_replace("#_url_#", CLIENT_BASE_URL, $emailBody);
+        //Convert to a html email
+        $emailBody = file_get_contents(APP_BASE_PATH.'/templates/email/emailBody.html');
+
+        if (empty($params['adminEmail'])) {
+            $user = new User();
+            $user->Load("username = ?", array('admin'));
+
+            if (empty($user->id)) {
+                $users = $user->Find("user_level = ?", array('Admin'));
+                $user = $users[0];
+            }
+            $params['adminEmail'] = $user->email;
+        }
+        $emailBody = str_replace("#_adminEmail_#", $params['adminEmail'], $emailBody);
+
+        if (!isset($params['emailReason'])) {
+            // #_emailReason_# can be an empty string
+            $params['emailReason'] = 'You are receiving this email because your <a href="#_url_#"><strong><font color="405A6A">organization</font></strong></a> has added you as an employee. ';
+        }
+        $emailBody = str_replace("#_emailReason_#", $params['emailReason'], $emailBody);
+
+        // Replace values in base template
+        $emailBody = str_replace("#_emailBody_#", $body, $emailBody);
+
+
+        $params['year'] = date("Y");
+        $params['icehrm_url'] = 'https://icehrm.com';
+        $params['company_name'] = $companyName;
+        $params['logourl'] = UIManager::getInstance()->getCompanyLogoUrl();
+
+        if (!isset($params['url'])) {
+            $params['url'] = CLIENT_BASE_URL;
+        }
+
         foreach ($params as $k => $v) {
             $emailBody = str_replace("#_".$k."_#", $v, $emailBody);
         }
@@ -151,7 +169,7 @@ abstract class EmailSender
             $emailBody,
             $toEmail,
             $fromEmail,
-            $user->email,
+            $params['adminEmail'],
             $ccList,
             $bccList,
             APP_NAME
@@ -177,21 +195,25 @@ abstract class EmailSender
             $emailBody
         );
 
-        $user = new User();
-        $user->Load("username = ?", array('admin'));
+        if (empty($params['adminEmail'])) {
+            $user = new User();
+            $user->Load("username = ?", array('admin'));
 
-        if (empty($user->id)) {
-            $users = $user->Find("user_level = ?", array('Admin'));
-            $user = $users[0];
+            if (empty($user->id)) {
+                $users = $user->Find("user_level = ?", array('Admin'));
+                $user = $users[0];
+            }
+            $params['adminEmail'] = $user->email;
         }
+        $emailBody = str_replace("#_adminEmail_#", $params['adminEmail'], $emailBody);
 
-        $emailBody = str_replace("#_adminEmail_#", $user->email, $emailBody);
+
         $emailBody = str_replace("#_url_#", CLIENT_BASE_URL, $emailBody);
         foreach ($params as $k => $v) {
             $emailBody = str_replace("#_".$k."_#", $v, $emailBody);
         }
 
-        $this->sendEmailWithLogging($subject, $emailBody, $toEmail, $fromEmail, $user->email, $ccList, $bccList);
+        $this->sendEmailWithLogging($subject, $emailBody, $toEmail, $fromEmail, $params['adminEmail'], $ccList, $bccList);
     }
 
     protected function sendEmailWithLogging(

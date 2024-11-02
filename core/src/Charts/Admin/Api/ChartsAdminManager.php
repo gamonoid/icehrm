@@ -28,21 +28,24 @@ class ChartsAdminManager extends AbstractModuleManager
     public function setupRestEndPoints()
     {
         Macaw::get(
-            REST_API_PATH.'charts/company-leave-entitlement', function () {
+            REST_API_PATH.'charts/company-leave-entitlement',
+            function () {
                 $empRestEndPoint = new ChartsRestEndpoint();
                 $empRestEndPoint->process('getCompanyLeaveEntitlement');
             }
         );
 
         Macaw::get(
-            REST_API_PATH.'charts/employee-check-ins', function () {
+            REST_API_PATH.'charts/employee-check-ins',
+            function () {
                 $empRestEndPoint = new ChartsRestEndpoint();
                 $empRestEndPoint->process('getCompanyEmployeeCheckIns');
             }
         );
 
         Macaw::get(
-            REST_API_PATH.'charts/employees-distribution', function () {
+            REST_API_PATH.'charts/employees-distribution',
+            function () {
                 $empRestEndPoint = new ChartsRestEndpoint();
                 $empRestEndPoint->process('getEmployeeDistribution');
             }

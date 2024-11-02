@@ -57,7 +57,7 @@ if(!defined('SAML_ENABLED') || SAML_ENABLED == true){
 
 
 $moduleBuilder->addModuleOrGroup(new ModuleTab(
-    'OtherSetting','Setting','Other','SettingAdapter','{"category":["Projects","Recruitment","Notifications","Expense","Travel","Api","Overtime"]}','name',false,$options1
+    'OtherSetting','Setting','Other','SettingAdapter','{"category":["Projects","Recruitment","Notifications","Expense","Travel","Api","Overtime","Microsoft","Google"]}','name',false,$options1
 ));
 echo UIManager::getInstance()->renderModule($moduleBuilder);
 ?>

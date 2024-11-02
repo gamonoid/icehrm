@@ -75,8 +75,21 @@ class IceFormModal extends React.Component {
 
   render() {
     const {
-      fields, adapter, saveCallback, cancelCallback,
+      fields, adapter,
     } = this.props;
+
+    let {
+      saveCallback, cancelCallback,
+    } = this.props;
+
+    // if properties are passed check if the adapter has these
+    if (!saveCallback && adapter.saveCallback) {
+      saveCallback = adapter.saveCallback;
+    }
+
+    if (!cancelCallback && adapter.cancelCallback) {
+      cancelCallback = adapter.cancelCallback;
+    }
 
     const additionalProps = {};
     additionalProps.footer = (
@@ -108,7 +121,7 @@ class IceFormModal extends React.Component {
                       return;
                     }
                     if (saveCallback) {
-                      saveCallback(values, iceFrom.showError.bind(this), this.closeModal.bind(this));
+                      saveCallback(values, iceFrom.showError.bind(this), this.closeModal.bind(this), adapter);
                     } else {
                       this.save(values);
                     }

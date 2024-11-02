@@ -52,7 +52,8 @@ class BaseService
     public $user = null;
     public $historyManagers = array();
     public $calculationHooks = array();
-    public $customFieldManager = null;
+    /** @var CustomFieldManager $customFieldManager */
+	public $customFieldManager = null;
     public $migrationManager = null;
     public $modelClassMap = [];
     public $customFieldsClassMap = [];
@@ -499,7 +500,8 @@ class BaseService
         $searchTerm = null,
         $isSubOrdinates = false,
         $skipProfileRestriction = false,
-        $sortData = array()
+        $sortData = array(),
+        $countOnly = false
     ) {
         $map = [];
         if (!empty($mappingStr)) {
@@ -598,13 +600,24 @@ class BaseService
                         "Data Load Query (x1):".$signInMappingField." = ?".$query.$orderBy.$limit
                     );
                     LogManager::getInstance()->debug("Data Load Query Data (x1):".json_encode($queryData));
-                    $list = $finder->Find(
-                        $searchJoinQuery.
-                        $signInMappingField
-                        ." = ?".
-                        $query.$orderBy.$limit,
-                        $queryData
-                    );
+
+                    if ($countOnly) {
+                        $list = $finder->getTotalCount(
+                            $searchJoinQuery.
+                            $signInMappingField
+                            ." = ?".
+                            $query.$orderBy.$limit,
+                            $queryData
+                        );
+                    } else {
+                        $list = $finder->Find(
+                            $searchJoinQuery.
+                            $signInMappingField
+                            ." = ?".
+                            $query.$orderBy.$limit,
+                            $queryData
+                        );
+                    }
                 } else {
                     $profileClass = $this->getFullQualifiedModelClassName(ucfirst(SIGN_IN_ELEMENT_MAPPING_FIELD_NAME));
                     $subordinate = new $profileClass();
@@ -675,11 +688,19 @@ class BaseService
                     );
                     LogManager::getInstance()->debug("Data Load Query Data (x2):".json_encode($queryData));
                     if (!empty($subordinatesIds)) {
-                        $list = $finder->Find(
-                            $searchJoinQuery.
-                            $signInMappingField . " in (" . $subordinatesIds . ") " . $query . $orderBy . $limit,
-                            $queryData
-                        );
+                        if ($countOnly) {
+                            $list = $finder->getTotalCount(
+                                $searchJoinQuery .
+                                $signInMappingField . " in (" . $subordinatesIds . ") " . $query . $orderBy . $limit,
+                                $queryData
+                            );
+                        } else {
+                            $list = $finder->Find(
+                                $searchJoinQuery .
+                                $signInMappingField . " in (" . $subordinatesIds . ") " . $query . $orderBy . $limit,
+                                $queryData
+                            );
+                        }
                     } else {
                         $list = array();
                     }
@@ -750,32 +771,66 @@ class BaseService
                         }
                     }
                 }
-
                 $signInMappingField = $obj->getUserOnlyMeAccessField();
                 LogManager::getInstance()->debug(
                     "Data Load Query (a1):".$signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit
                 );
-                if (!empty($subordinatesIds)) {
-                    $list = $finder->Find(
-                        $searchJoinQuery.
-                        $signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit,
-                        $queryData
-                    );
+
+				if ('id' === $signInMappingField && empty($subordinatesIds)) {
+					// Getting employees for a manager
+					// If there are no direct reports, return nothing.
+					$list = $countOnly ? 0 : [];
+				} else if (!empty($subordinatesIds)) {
+                    if ($countOnly) {
+                        $list = $finder->getTotalCount(
+                            $searchJoinQuery.
+                            $signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit,
+                            $queryData
+                        );
+                    } else {
+                        $list = $finder->Find(
+                            $searchJoinQuery.
+                            $signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit,
+                            $queryData
+                        );
+                    }
+
                 } else {
-                    $list = $finder->Find(
-                        $searchJoinQuery.$query.$orderBy.$limit,
-                        $queryData
-                    );
+                    if ($countOnly) {
+                        $list = $finder->getTotalCount(
+                            $searchJoinQuery.$query.$orderBy.$limit,
+                            $queryData
+                        );
+                    } else {
+                        $list = $finder->Find(
+                            $searchJoinQuery.$query.$orderBy.$limit,
+                            $queryData
+                        );
+                    }
+
                 }
+            } else {
+                if ($countOnly) {
+                    $list = $finder->getTotalCount($searchJoinQuery.$query.$orderBy.$limit, $queryData);
+                } else {
+                    $list = $finder->Find($searchJoinQuery.$query.$orderBy.$limit, $queryData);
+                }
+
+            }
+        } else {
+            if ($countOnly) {
+                $list = $finder->getTotalCount($searchJoinQuery.$query.$orderBy.$limit, $queryData);
             } else {
                 $list = $finder->Find($searchJoinQuery.$query.$orderBy.$limit, $queryData);
             }
-        } else {
-            $list = $finder->Find($searchJoinQuery.$query.$orderBy.$limit, $queryData);
         }
 
-        if (!$list) {
+        if ($obj->ErrorMsg()) {
             LogManager::getInstance()->debug("Get Data Error:".$obj->ErrorMsg());
+        }
+
+        if ($countOnly) {
+            return is_array($list)?0:(int)$list;
         }
 
         LogManager::getInstance()->debug("Data Load Query:".$query.$orderBy.$limit);
@@ -1073,7 +1128,7 @@ class BaseService
         $customFields = $ele->getCustomFields($obj);
         foreach ($obj as $k => $v) {
             if (isset($customFields[$k])) {
-                $this->customFieldManager->addCustomField($table, $ele->id, $k, $v);
+                $this->customFieldManager->addCustomField($ele->getCustomFieldTable($table), $ele->id, $k, $v);
             }
         }
 
@@ -1334,6 +1389,24 @@ class BaseService
         return $adminEmpId;
     }
 
+	public function getCurrentUserEmployee()
+	{
+		$user = $this->getCurrentUser();
+		$signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
+
+		if (empty($user->$signInMappingField)) {
+			return null;
+		}
+
+		$emp = new Employee();
+		$emp->Load('id = ?', [$user->$signInMappingField]);
+		if (empty($emp->id)) {
+			return null;
+		}
+
+		return $emp;
+	}
+
     public function getCurrentSwitchedEmployeeUserId()
     {
         $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
@@ -1401,10 +1474,11 @@ class BaseService
             return;
         }
 
-        if ($this->currentUser->user_level == 'Admin') {
+        if ($this->currentUser->user_level === 'Admin') {
             SessionUtils::saveSessionObject('admin_current_profile', $profileId);
-        } elseif ($this->currentUser->user_level == 'Manager'
+        } elseif ($this->currentUser->user_level === 'Manager'
             && $this->canManageEmployee($profileId)
+			&& SettingsManager::getInstance()->getSetting('System: Managers Can Switch to Employee Profiles') == '1'
         ) {
             SessionUtils::saveSessionObject('admin_current_profile', $profileId);
         } else {
@@ -1824,6 +1898,15 @@ class BaseService
         return $this->getEmployeeTimeZone($emp->id);
     }
 
+    public function getEmployeeUser($id) {
+        $user = new User();
+        $user->Load("employee = ?", [$id]);
+        if (empty($user->id)) {
+            return null;
+        }
+        return $user;
+    }
+
     public function getCurrentEmployeeTimeZone()
     {
         $cemp = $this->getCurrentProfileId();
@@ -1838,7 +1921,12 @@ class BaseService
     {
         $emp = new Employee();
         $emp->Load("id = ?", array($employeeId));
-        if (empty($emp->id) || empty($emp->department)) {
+
+        if (!empty($emp->id) && !empty($emp->timezone)) {
+            return $emp->timezone;
+        }
+
+        if (empty($emp->department)) {
             return null;
         }
 
@@ -2140,7 +2228,7 @@ END;
         /**
  * @var CustomFieldManager $customFields
 */
-        $customFields = $this->customFieldManager->getCustomFields($table, $obj->id);
+        $customFields = $this->customFieldManager->getCustomFields($obj->getCustomFieldTable( $table ), $obj->id);
         foreach ($customFields as $cf) {
             $obj->{$cf->name} = $cf->value;
         }
@@ -2208,6 +2296,15 @@ END;
         return $sysData->Save();
     }
 
+    public function createHash($data) {
+        $instanceKey = SettingsManager::getInstance()->getSetting('Instance: Key');
+        return hash_hmac("sha256", $data, $instanceKey);
+    }
+
+    public function verifyHash($data, $hash) {
+        return $this->createHash($data) === $hash;
+    }
+
     public function getSystemData($name)
     {
         $sysData = new SystemData();
@@ -2243,5 +2340,17 @@ END;
     {
         $version = explode('.', VERSION);
         return end($version) === 'OS';
+    }
+
+    public function getExtensionSourceDirectory($path) {
+        if (defined('EXT_SRC_PATH')) {
+            return $path.EXT_SRC_PATH;
+        }
+
+        if (is_dir($path.'/src/')) {
+            return $path.'/src/';
+        }
+
+        return $path.'/src-ob/yakpro-po/obfuscated/';
     }
 }

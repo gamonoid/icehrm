@@ -1,5 +1,14 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20241026_340013_user_invitations';
+$migrationList[] = 'v20240908_340012_user_custom_fields';
+$migrationList[] = 'v20240707_340008_rename_term_supervisor';
+$migrationList[] = 'v20240615_340007_increase_custom_filed_type';
+$migrationList[] = 'v20240107_340004_add_ms_google_auth';
+$migrationList[] = 'v20231119_340003_update_attendnace_lat_lng';
+$migrationList[] = 'v20231119_340002_update_employee_fields';
+$migrationList[] = 'v20230718_1_rename_add_emp_columns';
+$migrationList[] = 'v20230916_340001_google_map_api_key';
 $migrationList[] = 'v20220803_330007_add_google_connect_settings';
 $migrationList[] = 'v20220626_330005_add_hidden_to_docs';
 $migrationList[] = 'v20220626_330004_add_payroll_cron_task';

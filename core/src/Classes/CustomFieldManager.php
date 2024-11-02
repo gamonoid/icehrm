@@ -76,8 +76,10 @@ class CustomFieldManager
 
             $customFieldsListOrdered[] = $order;
 
+            $addToList = false;
             if ($type == "text" || $type == "textarea" || $type == "fileupload") {
                 $object->customFields[$label] = $cf->value;
+                $addToList = true;
             } elseif ($type == 'select' || $type == 'select2') {
                 $options = $customFields[$cf->name]->field_options;
                 if (empty($options)) {
@@ -88,6 +90,7 @@ class CustomFieldManager
                 foreach ($jsonOptions as $option) {
                     if ($option->value == $cf->value) {
                         $object->customFields[$label] = $option->label;
+                        $addToList = true;
                     }
                 }
             } elseif ($type == 'select2multi') {
@@ -112,27 +115,33 @@ class CustomFieldManager
                 }
 
                 $object->customFields[$label]  = implode('<br/>', $resArr);
+                $addToList = true;
             } elseif ($type == "date") {
-                if (!empty($cf->value)) {
-                    $object->customFields[$label] = $cf->value;
+                if (empty($cf->value) || $cf->value === 'NULL') {
+                    $object->customFields[$label] = '';
                 } else {
                     $object->customFields[$label] = date("F j, Y", strtotime($cf->value));
                 }
+                $addToList = true;
             } elseif ($type == "datetime") {
-                if (!empty($cf->value)) {
-                    $object->customFields[$label] = $cf->value;
+                if (empty($cf->value) || $cf->value === 'NULL' ) {
+                    $object->customFields[$label] = '';
                 } else {
                     $object->customFields[$label] = date("F j, Y, g:i a", strtotime($cf->value));
                 }
+                $addToList = true;
             } elseif ($type == "time") {
-                if (!empty($cf->value)) {
-                    $object->customFields[$label] = $cf->value;
+                if (empty($cf->value) || $cf->value === 'NULL' ) {
+                    $object->customFields[$label] = '';
                 } else {
                     $object->customFields[$label] = date("g:i a", strtotime($cf->value));
                 }
+                $addToList = true;
             }
 
-            $object->customFields[$label] = array($object->customFields[$label], $section, $type);
+            if ($addToList) {
+                $object->customFields[$label] = array($object->customFields[$label], $section, $type);
+            }
         }
         array_multisort($customFieldsListOrdered, SORT_DESC, SORT_NUMERIC, $object->customFields);
 

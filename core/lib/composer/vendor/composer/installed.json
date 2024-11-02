@@ -1592,23 +1592,23 @@
     },
     {
         "name": "icehrm/php-active-record",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/icehrm/php-active-record.git",
-            "reference": "24c52d33c50cdc6e612133e8f6ab887d71f74cac"
+            "url": "https://github.com/thilinah/php-active-record.git",
+            "reference": "d408c370ffda3e515443fef976b74eb9b7cf7110"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/icehrm/php-active-record/zipball/24c52d33c50cdc6e612133e8f6ab887d71f74cac",
-            "reference": "24c52d33c50cdc6e612133e8f6ab887d71f74cac",
+            "url": "https://api.github.com/repos/thilinah/php-active-record/zipball/d408c370ffda3e515443fef976b74eb9b7cf7110",
+            "reference": "d408c370ffda3e515443fef976b74eb9b7cf7110",
             "shasum": ""
         },
         "require": {
-            "php": ">=7.0"
+            "php": ">=7.1"
         },
-        "time": "2023-01-27T13:08:35+00:00",
+        "time": "2023-02-18T11:30:05+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1627,11 +1627,7 @@
             "mysql",
             "persistence",
             "php"
-        ],
-        "support": {
-            "issues": "https://github.com/icehrm/php-active-record/issues",
-            "source": "https://github.com/icehrm/php-active-record/tree/1.0.0"
-        }
+        ]
     },
     {
         "name": "league/container",
@@ -2647,7 +2643,8 @@
             }
         ],
         "description": "A tool for quickly measuring the size of a PHP project.",
-        "homepage": "https://github.com/sebastianbergmann/phploc"
+        "homepage": "https://github.com/sebastianbergmann/phploc",
+        "abandoned": true
     },
     {
         "name": "phpmd/phpmd",
@@ -4174,7 +4171,8 @@
             }
         ],
         "description": "Copy/Paste Detector (CPD) for PHP code.",
-        "homepage": "https://github.com/sebastianbergmann/phpcpd"
+        "homepage": "https://github.com/sebastianbergmann/phpcpd",
+        "abandoned": true
     },
     {
         "name": "sebastian/recursion-context",
@@ -4516,7 +4514,8 @@
             "email",
             "mail",
             "mailer"
-        ]
+        ],
+        "abandoned": "symfony/mailer"
     },
     {
         "name": "symfony/config",
@@ -4709,7 +4708,8 @@
             }
         ],
         "description": "Symfony Debug Component",
-        "homepage": "https://symfony.com"
+        "homepage": "https://symfony.com",
+        "abandoned": "symfony/error-handler"
     },
     {
         "name": "symfony/dependency-injection",
@@ -5560,7 +5560,8 @@
             }
         ],
         "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convenience and to simplify the usage of DOM.",
-        "homepage": "https://github.com/theseer/fDOMDocument"
+        "homepage": "https://github.com/theseer/fDOMDocument",
+        "abandoned": true
     },
     {
         "name": "theseer/tokenizer",
@@ -5673,12 +5674,12 @@
         "version_normalized": "1.9.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/webmozart/assert.git",
+            "url": "https://github.com/webmozarts/assert.git",
             "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+            "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
             "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
             "shasum": ""
         },

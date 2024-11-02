@@ -12,4 +12,12 @@ class EmployeesService
 
         return $subordinates;
     }
+
+    public function getRandomEmployees($count)
+    {
+        $employee = new Employee();
+        $employees = $employee->Find("active = ? ORDER BY RAND() LIMIT ?", array(1, $count));
+
+        return $employees;
+    }
 }

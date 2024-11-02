@@ -16,6 +16,7 @@ import CheckList from '@editorjs/checklist';
 // import Delimiter from '@editorjs/delimiter';
 import InlineCode from '@editorjs/inline-code';
 
+
 export const EDITOR_JS_TOOLS = {
   embed: Embed,
   table: {

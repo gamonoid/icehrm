@@ -127,7 +127,8 @@ class GoogleCalendarApiManager
             array_map(
                 function ($item) {
                     return $item->getId();
-                }, $eventList
+                },
+                $eventList
             )
         );
 

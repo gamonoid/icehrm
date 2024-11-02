@@ -50,6 +50,18 @@ class JobTitleAdapter extends ReactModalAdapterBase {
       },
     ];
   }
+
+  getHelpTitle() {
+    return this.gt('Job Titles');
+  }
+
+  getHelpDescription() {
+    return this.gt('Here you can manage the job titles in your organization. Each employee needs to be assigned a job title.');
+  }
+
+  getHelpLink() {
+    return 'https://icehrm.com/explore/docs/job-details-and-qualifications-set-up/';
+  }
 }
 
 
@@ -120,6 +132,14 @@ class PayGradeAdapter extends ReactModalAdapterBase {
     }
     return null;
   }
+
+  getHelpTitle() {
+    return this.gt('Pay Grades');
+  }
+
+  getHelpDescription() {
+    return this.gt('Here you can define the different pay grades in your organization.');
+  }
 }
 
 
@@ -164,6 +184,14 @@ class EmploymentStatusAdapter extends ReactModalAdapterBase {
         dataIndex: 'description',
       },
     ];
+  }
+
+  getHelpTitle() {
+    return this.gt('Employment Status');
+  }
+
+  getHelpDescription() {
+    return this.gt('Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state.');
   }
 }
 

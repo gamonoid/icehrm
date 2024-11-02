@@ -66,7 +66,7 @@ class SystemTasksService
         $taskGenerators = $this->prepareTaskCreatorCallbacks();
         foreach ($taskGenerators as $key => $callback) {
             /**
- * @var Task $task 
+ * @var Task $task
 */
             $task = $callback();
             if (!empty($task)) {
@@ -74,7 +74,8 @@ class SystemTasksService
             }
         }
         usort(
-            $tasks, function ($a, $b) {
+            $tasks,
+            function ($a, $b) {
                 return $b->getPriority() - $a->getPriority();
             }
         );

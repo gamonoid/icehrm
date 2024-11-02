@@ -79,3 +79,7 @@ window.submitLogin = () => {
 window.authGoogle = () => {
   window.location.href = `${window.location.href.split('login.php')[0]}login.php?google=1`;
 };
+
+window.authMicrosoft = () => {
+  window.location.href = `${window.location.href.split('login.php')[0]}login.php?microsoft=1`;
+};

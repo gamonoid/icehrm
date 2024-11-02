@@ -327,7 +327,7 @@ class FileService
 
             return $expireUrl;
         } else {
-            return  CLIENT_BASE_URL.'service.php?a=download&file='.$file->filename;
+            return  $this->getLocalSecureUrl($file->filename);
         }
     }
 
@@ -340,7 +340,7 @@ class FileService
             $file->Load('filename = ?', array($fileName));
         }
 
-        return CLIENT_BASE_URL.'service.php?a=download&file='.$file->filename;
+        return CLIENT_BASE_URL.'service.php?a=download&file='.$file->filename.'&signature='.BaseService::getInstance()->createHash($file->filename);
     }
 
     public function deleteProfileImage($profileId)
@@ -476,9 +476,15 @@ class FileService
         //            $seed = $char1.$char2;
         //        }
 
+        $seed = substr($first, 0, 1);
+        $seed .= substr($last, 0, 1);
+        $seed .= md5($first.$last);
+
+        $seed = utf8_encode($seed);
+
         return sprintf(
-            'https://avatars.dicebear.com/api/initials/:%s.svg',
-            $seed . substr(md5($first . $last), -5)
+            'https://api.dicebear.com/7.x/initials/svg?seed=%s',
+            $seed
         );
     }
 
@@ -502,7 +508,7 @@ class FileService
         $s3WebUrl = SettingsManager::getInstance()->getSetting("Files: S3 Web Url");
 
         $f_size = filesize($localFile);
-        if ($uploadFilesToS3 . '' == '1' && !empty($uploadFilesToS3Key) && !empty($uploadFilesToS3Secret) 
+        if ($uploadFilesToS3 . '' == '1' && !empty($uploadFilesToS3Key) && !empty($uploadFilesToS3Secret)
             && !empty($s3Bucket) && !empty($s3WebUrl)
         ) {
             $uploadname = CLIENT_NAME . "/" . $fileName . '.' . $extension;

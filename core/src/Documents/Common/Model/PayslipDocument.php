@@ -10,7 +10,7 @@ class PayslipDocument extends EmployeeDocument
         return new class extends EmployeeDocumentFinderProxy {
             protected function getAdditionalQuery()
             {
-                return 'hidden = 1 AND ';
+                return 'hidden = 1 ';
             }
         };
     }

@@ -22,7 +22,7 @@ class ImmigrationStatus extends BaseModel
 
     public function getUserAccess()
     {
-        return array();
+        return array("get","element");
     }
 
     public function getAnonymousAccess()

@@ -1,7 +1,7 @@
 <?php
 namespace Classes;
 
-abstract class SubActionManager
+class SubActionManager
 {
     public $user = null;
     /* @var \Classes\BaseService $baseService*/

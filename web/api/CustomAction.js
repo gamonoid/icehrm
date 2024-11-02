@@ -17,7 +17,7 @@ class CustomAction {
       );
     }
 
-    return axios.post(this.moduleRelativeURL, {
+    return axios.post(this.adapter.moduleRelativeURL, {
       t: this.adapter.table, a: 'ca', sa: subAction, mod: module, req: request,
     });
   }

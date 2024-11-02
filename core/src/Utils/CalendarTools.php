@@ -119,18 +119,25 @@ class CalendarTools
         return sprintf('%s-%s', $year, $date->format("m-d"));
     }
 
-    public static function getServerDate()
+    public static function getServerDate($format = null, $employeeId = null)
     {
-        $currentEmployeeTimeZone = BaseService::getInstance()->getCurrentEmployeeTimeZone();
+        if ($employeeId === null) {
+            $timeZone = BaseService::getInstance()->getCurrentEmployeeTimeZone();
+        } else {
+            $timeZone = BaseService::getInstance()->getEmployeeTimeZone($employeeId);
+        }
 
-        if (empty($currentEmployeeTimeZone)) {
-            $currentEmployeeTimeZone = 'Asia/Colombo';
+        if (empty($timeZone)) {
+            $timeZone = 'Asia/Colombo';
         }
         date_default_timezone_set('Asia/Colombo');
 
         $date = new \DateTime("now", new \DateTimeZone('Asia/Colombo'));
 
-        $date->setTimezone(new \DateTimeZone($currentEmployeeTimeZone));
-        return $date->format('Y-m-d');
+        $date->setTimezone(new \DateTimeZone($timeZone));
+        if (empty($format)) {
+            return $date->format('Y-m-d');
+        }
+        return $date->format($format);
     }
 }

@@ -20,6 +20,7 @@ $attendanceUtils = new AttendanceUtil();
 $employeeId = BaseService::getInstance()->getCurrentProfileId();
 $hasOpenPunch = $attendanceUtils->isEmployeeHasOpenPunch(date('Y-m-d'), $employeeId)?1:0;
 $punchedOutToday = $attendanceUtils->isEmployeePunchedOut(date('Y-m-d'), $employeeId)?1:0;
+$overtimeStartHours = SettingsManager::getInstance()->getSetting('Attendance: Overtime Start Hour');
 
 if(empty($currentEmployeeTimeZone)){
     $useServerTime = 0;
@@ -50,8 +51,9 @@ modJsList['tabAttendance'].setUseServerTime(<?=$useServerTime?>);
 modJsList['tabAttendance'].setHasOpenPunch(<?=$hasOpenPunch?>);
 modJsList['tabAttendance'].setPunchedOutToday(<?=$punchedOutToday?>);
 modJsList['tabAttendance'].setObjectTypeName('Attendance');
-modJsList['tabAttendance'].setAccess([]);
+modJsList['tabAttendance'].setAccess(['get','element']);
 modJsList['tabAttendance'].setDataPipe(new IceDataPipe(modJsList['tabAttendance']));
+modJsList['tabAttendance'].setOvertimeStartHour(<?=(int)$overtimeStartHours?>);
 
 
 var modJs = modJsList['tabAttendance'];

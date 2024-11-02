@@ -9,6 +9,7 @@ import ReactModalAdapterBase from "../../../api/ReactModalAdapterBase";
 import {Button, Progress, Typography} from "antd";
 import React from "react";
 import {PlusCircleOutlined} from "@ant-design/icons";
+import AttendanceModal from '../../../admin/src/attendance/components/AttendanceModal';
 
 const { Text } = Typography;
 
@@ -19,6 +20,7 @@ class AttendanceAdapter extends ReactModalAdapterBase {
     this.useServerTime = 0;
     this.hasOpenPunch = 0;
     this.punchedOutToday = 0;
+    this.overtimeStart = 8;
   }
 
   setUseServerTime(val) {
@@ -84,8 +86,8 @@ class AttendanceAdapter extends ReactModalAdapterBase {
         render: (text, record) => (<Progress
           size="small"
           steps={25}
-          percent={record.hours ? (record.hours / 8) * 100 : 0}
-          format={(percent, successPercent)=> record.hours + 'h / 8h'}
+          percent={record.hours ? (record.hours / this.overtimeStart) * 100 : 0}
+          format={(percent, successPercent)=> record.hours + `h / ${this.overtimeStart}h`}
         />),
         width: '25%',
         dataIndex: 'hours',
@@ -96,6 +98,22 @@ class AttendanceAdapter extends ReactModalAdapterBase {
         sorter: true,
       },
     ];
+  }
+
+  getTableChildComponents() {
+    return (<AttendanceModal/>);
+  }
+
+  showElement(element) {
+    this.tableContainer.current.setCurrentElement(element);
+  }
+
+  keepTableVisibleWhileShowingCustomView() {
+    return true;
+  }
+
+  setOvertimeStartHour(overtimeStart) {
+    this.overtimeStart = overtimeStart;
   }
 
   getFormFields() {

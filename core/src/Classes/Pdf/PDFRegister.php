@@ -11,7 +11,8 @@ class PDFRegister
     public static function init()
     {
         self::put(
-            'empf', function ($data) {
+            'empf',
+            function ($data) {
                 return new EmployeeFormPDFBuilder($data);
             }
         );

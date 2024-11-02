@@ -11,7 +11,7 @@ class IceLabel extends React.Component {
 
     return (
       <Space>
-        <div contentEditable='true' dangerouslySetInnerHTML={{ __html: this.nl2br(value || '') }}></div>
+        <div contentEditable='false' dangerouslySetInnerHTML={{ __html: this.nl2br(value || '') }}></div>
       </Space>
     );
   }

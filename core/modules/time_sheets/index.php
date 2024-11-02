@@ -19,7 +19,7 @@ $startEndTimeNeeded = \Classes\SettingsManager::getInstance()->getSetting(
 		<li class="modTabPage active"><a id="tabEmployeeTimeSheetAll" href="#tabPageEmployeeTimeSheetAll"><?=t('All My TimeSheets')?></a></li>
 		<li class="modTabPage"><a id="tabEmployeeTimeSheetApproved" href="#tabPageEmployeeTimeSheetApproved"><?=t('Approved TimeSheets')?></a></li>
 		<li class="modTabPage"><a id="tabEmployeeTimeSheetPending" href="#tabPageEmployeeTimeSheetPending"><?=t('Pending TimeSheets')?></a></li>
-		<li class="modTabPage"><a id="tabSubEmployeeTimeSheetAll" href="#tabPageSubEmployeeTimeSheetAll"><?=t('Subordinate TimeSheets')?></a></li>
+		<li class="modTabPage"><a id="tabSubEmployeeTimeSheetAll" href="#tabPageSubEmployeeTimeSheetAll"><?=t('TimeSheets (Direct Reports)')?></a></li>
 	</ul>
 
 	<div class="tab-content" id="timesheetTabs">
@@ -63,12 +63,17 @@ $startEndTimeNeeded = \Classes\SettingsManager::getInstance()->getSetting(
 		<div id="Qtsheet" class="reviewBlock" data-content="List" style="padding-left:5px;display:none;overflow-x: auto;">
 
 		</div>
+
 		<div id="QtsheetDataButtons" style="text-align: right;margin-top: 10px;display:none;">
+            <div id="LeaveDaysForTimeSheet" class="reviewBlock" data-content="List" style="text-align: left;padding:20px;display:none;overflow-x: auto;margin-top:10px;">
+            </div>
+            <br/>
 			<button class="cancelBtnTable btn" style="margin-right:5px;"><i class="fa fa-times-circle-o"></i> Cancel</button>
 			<button class="saveBtnTable btn btn-primary" style="margin-right:5px;"><i class="fa fa-save"></i> Save</button>
 			<button class="downloadBtnTable btn btn-primary" style="margin-right:5px;"><i class="fa fa-check"></i> Download</button>
 			<button class="completeBtnTable btn btn-primary" style="margin-right:5px;"><i class="fa fa-check-square-o"></i> Submit</button>
 		</div>
+
 	</div>
 
 </div>

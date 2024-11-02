@@ -128,7 +128,7 @@ class Uploader
 
         $localFile = BaseService::getInstance()->getDataDirectory().$result->getData();
         $uploadedFileSize = filesize($localFile);
-        if ($uploadFilesToS3.'' == '1' && !empty($uploadFilesToS3Key) && !empty($uploadFilesToS3Secret) 
+        if ($uploadFilesToS3.'' == '1' && !empty($uploadFilesToS3Key) && !empty($uploadFilesToS3Secret)
             && !empty($s3Bucket) && !empty($s3WebUrl)
         ) {
             $uploadName = CLIENT_NAME."/".$result->getData();
