@@ -223,7 +223,7 @@ class EmployeeStatus extends React.Component {
         }
         {!this.props.showInput &&
         <Space style={{width: '100%'}}>
-          <Space direction={'vertical'} style={{width: '100%', 'margin-top':'5px'}}>
+          <Space direction={'vertical'} style={{width: '100%', marginTop:'5px'}}>
             <Title level={5}>{this.props.adapter.gt('Today\'s Goal')}</Title>
             <Text>{this.state.message || this.props.adapter.gt("Click edit set your goal for the day!")}</Text>
             <Tag icon={<EditOutlined/>} color="processing" onClick={this.onTextClick.bind(this)}>

@@ -680,7 +680,7 @@ table.dataTable{
 .logoResponsive{
     background: #141414 !important;
     text-align: left !important;
-    width:50% !important;
+    width:40% !important;
 }
 
 @media screen and (min-width: 0px) and (max-width: 600px) {

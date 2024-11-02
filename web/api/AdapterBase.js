@@ -296,6 +296,21 @@ class AdapterBase extends ModuleBase {
     return url;
   }
 
+  initTableTopComponent() {
+
+  }
+  getTableTopComponent() {
+    return null;
+  }
+
+  getHelpTitle() {
+    return null;
+  }
+
+  getHelpDescription() {
+    return null;
+  }
+
   isSubProfileTable() {
     return false;
   }

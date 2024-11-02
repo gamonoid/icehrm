@@ -132,7 +132,7 @@ class UpdatePasswordModal extends React.Component {
     }
 
     updatePassword = (oldPassword, newPassword) => {
-        const req = { current: oldPassword ? oldPassword : '', pwd: newPassword };
+        const req = { current: oldPassword ? oldPassword : '', pwd: newPassword, csrf: window.passwordCSRF };
         const reqJson = JSON.stringify(req);
 
         const callBackData = [];

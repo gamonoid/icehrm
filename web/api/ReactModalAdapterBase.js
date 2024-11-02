@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Space, Tag } from 'antd';
+import {
+  Alert, Card, Space, Tag,
+} from 'antd';
 import {
   EditOutlined, DeleteOutlined, CopyOutlined, MonitorOutlined,
 } from '@ant-design/icons';
@@ -9,6 +11,8 @@ import IceFormModal from '../components/IceFormModal';
 import IceStepFormModal from '../components/IceStepFromModal';
 import IceTable from '../components/IceTable';
 import MasterDataReader from './MasterDataReader';
+
+const { Meta } = Card;
 
 
 class ReactModalAdapterBase extends AdapterBase {
@@ -26,6 +30,7 @@ class ReactModalAdapterBase extends AdapterBase {
     this.localStorageEnabled = false;
     this.isV2 = true;
     this.masterDataReader = new MasterDataReader(this);
+    this.tableTopInitilized = false;
   }
 
   enableLocalStorage() {
@@ -42,8 +47,8 @@ class ReactModalAdapterBase extends AdapterBase {
 
   setAccess(access) {
     const tmp = [];
-    for ( const index in access ){
-      tmp.push( access[ index ] );
+    for (const index in access) {
+      tmp.push(access[index]);
     }
     this.access = tmp;
   }
@@ -52,11 +57,49 @@ class ReactModalAdapterBase extends AdapterBase {
     return this.access.indexOf(type) >= 0;
   }
 
+  showViewButton() {
+    return true;
+  }
+
   hasCustomButtons() {
     return false;
   }
 
+  getTableTopComponent() {
+    if (this.getHelpTitle() === null && this.getHelpDescription() === null) {
+      return null;
+    }
+    return (
+      <Card size="small" title={this.getHelpTitle()} extra={<a href={this.getHelpLink()} target="_blank">{this.gt('More Info')}</a>} style={{ width: '100%' }}>
+        <Meta description={this.getHelpDescription()} />
+      </Card>
+    );
+  }
+
+  getHelpTitle() {
+    return null;
+  }
+
+  getHelpDescription() {
+    return null;
+  }
+
+  initTableTopComponent() {
+    if (this.tableTopInitilized === false && this.getTableTopComponent()) {
+      const tableTop = document.getElementById(`${this.tab}TableTop`);
+      if (tableTop) {
+        ReactDOM.render(
+          this.getTableTopComponent(),
+          tableTop,
+        );
+
+        this.tableTopInitilized = true;
+      }
+    }
+  }
+
   initTable() {
+    this.initTableTopComponent();
     if (this.tableInitialized) {
       return false;
     }
@@ -148,7 +191,7 @@ class ReactModalAdapterBase extends AdapterBase {
             this.setFilter(values);
             this.filtersAlreadySet = true;
             this.get([]);
-            this.tableContainer.current.setFilterData(values);
+            this.setTableContainerFilterData(values);
             closeModal();
           }}
         />,
@@ -158,6 +201,10 @@ class ReactModalAdapterBase extends AdapterBase {
 
     this.formInitialized = true;
     return true;
+  }
+
+  setTableContainerFilterData(values) {
+    this.tableContainer.current.setFilterData(values);
   }
 
   getTableChildComponents() {
@@ -178,7 +225,7 @@ class ReactModalAdapterBase extends AdapterBase {
             {` ${adapter.gt('Edit')}`}
           </Tag>
           )}
-        {adapter.hasAccess('element')
+        {adapter.hasAccess('element') && adapter.showViewButton()
         && (
           <Tag color="blue" onClick={() => modJs.viewElement(record.id)} style={{ cursor: 'pointer' }}>
             <MonitorOutlined />
@@ -204,7 +251,9 @@ class ReactModalAdapterBase extends AdapterBase {
   }
 
   setTableLoading(value) {
-    this.tableContainer.current.setLoading(value);
+    if (this.tableContainer && this.tableContainer.current) {
+      this.tableContainer.current.setLoading(value);
+    }
   }
 
   /**
@@ -269,7 +318,7 @@ class ReactModalAdapterBase extends AdapterBase {
     this.filtersAlreadySet = false;
     this.currentFilterString = '';
     this.get([]);
-    this.tableContainer.current.setFilterData(this.filter);
+    this.setTableContainerFilterData(this.filter);
   }
 
   get() {
@@ -279,7 +328,7 @@ class ReactModalAdapterBase extends AdapterBase {
     this.initTable();
     this.masterDataReader.updateAllMasterData()
       .then(() => {
-        if (this.tableContainer) {
+        if (this.tableContainer && this.tableContainer.current) {
           this.tableContainer.current.reload();
         }
       });
@@ -322,6 +371,14 @@ class ReactModalAdapterBase extends AdapterBase {
 
   getWidth() {
     return 800;
+  }
+
+  getViewModeEnabledFields() {
+    return null;
+  }
+
+  getViewModeShowLabel() {
+    return true;
   }
 }
 

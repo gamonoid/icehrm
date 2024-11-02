@@ -15,6 +15,12 @@ class TagList extends React.Component {
     this.fetch();
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.url !== this.props.url) {
+      this.fetch();
+    }
+  }
+
   fetch() {
     this.setState({
       loading: true,
