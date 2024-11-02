@@ -8,9 +8,9 @@ IceHrm is an [HRM software](https://icehrm.com) which enable companies to manage
 - Get a Managed IceHrm hosting: [IceHrm Cloud](https://icehrm.com/icehrm-cloud)
 - Self-hosted IceHrm with all the features in IceHrm Cloud: [IceHrmPro](https://icehrm.com/purchase-icehrmpro)
 
-![](docs/images/icehrm-employee-list.png)
+![](docs/images/icehrm-open-demo-1.png)
 &nbsp;&nbsp;&nbsp;&nbsp;
-![](docs/images/icehrm-dashboard.png)
+![](docs/images/icehrm-open-demo-2.png)
 
 ## Installation
 
