@@ -330,11 +330,9 @@ gulp.task('modules-js', (done) => {
     'employees',
     'loans',
     'overtime',
-    'projects',
     'qualifications',
     'reports',
     'salary',
-    'staffdirectory',
     'time_sheets',
     'travel',
   ];
