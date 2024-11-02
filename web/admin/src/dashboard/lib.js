@@ -82,7 +82,7 @@ class DashboardAdapter extends AdapterBase {
     // this.drawCompanyLeaveEntitlementChart();
     this.drawOnlineOfflineEmployeeChart();
     this.drawEmployeeDistributionChart();
-    this.showEmployeeList();
+    //this.showEmployeeList();
     this.buildTaskList();
     this.showNews();
   }

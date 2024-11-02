@@ -33,7 +33,7 @@ class ModuleDashboardAdapter extends DashboardAdapter {
     this.drawOnlineOfflineEmployeeChart();
     this.buildTaskList();
     this.buildEmployeeStatus();
-    this.showEmployeeList();
+    //this.showEmployeeList();
   }
 
   showEmployeeList() {
