@@ -55,7 +55,7 @@ class EmployeeDocumentAdapter extends ReactModalAdapterBase {
       // [ "date_added", {"label":"Date Added","type":"date","validation":""}],
       ['valid_until', { label: 'Valid Until', type: 'date', validation: 'none' }],
       ['status', { label: 'Status', type: 'select', source: [['Active', 'Active'], ['Inactive', 'Inactive'], ['Draft', 'Draft']] }],
-      ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
+      ['details', { label: 'Details', type: 'quill', validation: 'none' }],
       ['attachment', { label: 'Attachment', type: 'fileupload', validation: '' }],
     ];
   }
@@ -193,20 +193,20 @@ class EmployeeCompanyDocumentAdapter extends ReactModalAdapterBase {
         dataIndex: 'name',
         sorter: true,
       },
-      {
-        title: 'Date',
-        dataIndex: 'created',
-        sorter: true,
-      },
-      {
-        title: 'Type',
-        dataIndex: 'type',
-        // render: (text, row) => {
-        //   return <span className={`icon-con bg-${this.getColorByFileType(row.type)}`}>
-        //     <i className={this.getIconByFileType(row.type)} /> - { row.type }
-        //   </span>;
-        // }
-      },
+      // {
+      //   title: 'Date',
+      //   dataIndex: 'created',
+      //   sorter: true,
+      // },
+      // {
+      //   title: 'Type',
+      //   dataIndex: 'type',
+      //   // render: (text, row) => {
+      //   //   return <span className={`icon-con bg-${this.getColorByFileType(row.type)}`}>
+      //   //     <i className={this.getIconByFileType(row.type)} /> - { row.type }
+      //   //   </span>;
+      //   // }
+      // },
     ];
   }
 
@@ -214,8 +214,20 @@ class EmployeeCompanyDocumentAdapter extends ReactModalAdapterBase {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'placeholder', validation: '' }],
-      ['details', { label: 'Details', validation: 'none', type: 'editor' }],
+      ['details', { label: 'Details', validation: 'none', type: 'quill' }],
     ];
+  }
+
+  getViewModeEnabledFields() {
+    return ['details'];
+  }
+
+  getViewModeShowLabel() {
+    return false;
+  }
+
+  getFormLayout(viewOnly) {
+    return viewOnly ? 'vertical' : 'horizontal';
   }
 
   preProcessTableData(row) {

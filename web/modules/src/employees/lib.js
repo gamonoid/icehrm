@@ -63,7 +63,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       { sTitle: 'Mobile' },
       { sTitle: 'Department' },
       { sTitle: 'Gender' },
-      { sTitle: 'Supervisor' },
+      { sTitle: 'Manager' },
     ];
   }
 
@@ -129,13 +129,13 @@ class EmployeeAdapter extends ReactModalAdapterBase {
     if (this.checkPermission('Edit Employment Status') === 'Yes') {
       employment_status = ['employment_status', { label: 'Employment Status', type: 'select2', 'remote-source': ['EmploymentStatus', 'id', 'name'] }];
     } else {
-      employment_status = ['employment_status', { label: 'Employment Status', type: 'placeholder', 'remote-source': ['EmploymentStatus', 'id', 'name'] }];
+      employment_status = ['employment_status', { label: 'Employment Status', type: 'select2', readonly: true, 'remote-source': ['EmploymentStatus', 'id', 'name'] }];
     }
 
     if (this.checkPermission('Edit Job Title') === 'Yes') {
       job_title = ['job_title', { label: 'Job Title', type: 'select2', 'remote-source': ['JobTitle', 'id', 'name'] }];
     } else {
-      job_title = ['job_title', { label: 'Job Title', type: 'placeholder', 'remote-source': ['JobTitle', 'id', 'name'] }];
+      job_title = ['job_title', { label: 'Job Title', type: 'select2', readonly: true, 'remote-source': ['JobTitle', 'id', 'name'] }];
     }
 
     if (this.checkPermission('Edit Pay Grade') === 'Yes') {
@@ -144,7 +144,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       }];
     } else {
       pay_grade = ['pay_grade', {
-        label: 'Pay Grade', type: 'placeholder', 'allow-null': true, 'remote-source': ['PayGrade', 'id', 'name'],
+        label: 'Pay Grade', type: 'select2', readonly: true, 'allow-null': true, 'remote-source': ['PayGrade', 'id', 'name'],
       }];
     }
 
@@ -157,19 +157,19 @@ class EmployeeAdapter extends ReactModalAdapterBase {
     if (this.checkPermission('Edit Department') === 'Yes') {
       department = ['department', { label: 'Department', type: 'select2', 'remote-source': ['CompanyStructure', 'id', 'title'] }];
     } else {
-      department = ['department', { label: 'Department', type: 'placeholder', 'remote-source': ['CompanyStructure', 'id', 'title'] }];
+      department = ['department', { label: 'Department', type: 'select2', readonly: true, 'remote-source': ['CompanyStructure', 'id', 'title'] }];
     }
 
     if (this.checkPermission('Edit Work Email') === 'Yes') {
       work_email = ['work_email', { label: 'Work Email', type: 'text', validation: 'email' }];
     } else {
-      work_email = ['work_email', { label: 'Work Email', type: 'placeholder', validation: 'emailOrEmpty' }];
+      work_email = ['work_email', { label: 'Work Email', type: 'select2', readonly: true, validation: 'emailOrEmpty' }];
     }
 
     if (this.checkPermission('Edit Country') === 'Yes') {
       country = ['country', { label: 'Country', type: 'select2', 'remote-source': ['Country', 'code', 'name'] }];
     } else {
-      country = ['country', { label: 'Country', type: 'placeholder', 'remote-source': ['Country', 'code', 'name'] }];
+      country = ['country', { label: 'Country', type: 'select2', readonly: true, 'remote-source': ['Country', 'code', 'name'] }];
     }
 
     const fields = [
@@ -182,13 +182,21 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       ['birthday', { label: 'Date of Birth', type: 'date', validation: '' }],
       ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Non-binary', 'Non-binary'], ['Other', 'Other'], ['Prefer not to say', 'Prefer not to say']] }],
       ['marital_status', { label: 'Marital Status', type: 'select', source: [['Married', 'Married'], ['Single', 'Single'], ['Divorced', 'Divorced'], ['Widowed', 'Widowed'], ['Other', 'Other']] }],
+      ['immigration_status', {
+        label: 'Immigration Status', type: 'select2', 'allow-null': true, 'remote-source': ['ImmigrationStatus', 'id', 'name'],
+      }],
+      ['tax_id', { label: 'Personal Tax ID', type: 'text', validation: 'none' }],
       ssn_num,
       ['nic_num', { label: 'NIC', type: 'text', validation: 'none' }],
       ['other_id', { label: 'Other ID', type: 'text', validation: 'none' }],
       ['driving_license', { label: 'Driving License No', type: 'text', validation: 'none' }],
+      ['health_insurance', { label: 'Health Insurance', type: 'text', validation: 'none' }],
       employment_status,
       job_title,
       pay_grade,
+      ['timezone', {
+        label: 'Time Zone', type: 'select2', 'allow-null': false, 'remote-source': ['Timezone', 'name', 'details', 'getTimezonesWithOffset'],
+      }],
       ['work_station_id', { label: 'Work Station Id', type: 'text', validation: 'none' }],
       ['address1', { label: 'Address Line 1', type: 'text', validation: 'none' }],
       ['address2', { label: 'Address Line 2', type: 'text', validation: 'none' }],
@@ -250,10 +258,12 @@ class EmployeeAdapter extends ReactModalAdapterBase {
         description: this.gt('Personal Information'),
         fields: [
           'immigration_status',
+          'tax_id',
           'ssn_num',
           'nic_num',
           'other_id',
           'driving_license',
+          'health_insurance',
         ],
       },
       {
@@ -268,6 +278,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
           'confirmation_date',
           'termination_date',
           'work_station_id',
+          'timezone',
         ],
       },
       {

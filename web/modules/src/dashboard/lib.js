@@ -3,12 +3,13 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 import React from 'react';
+import ReactDOM from 'react-dom';
+import { Donut, Pie } from '@antv/g2plot';
 import AdapterBase from '../../../api/AdapterBase';
-import { DashboardAdapter} from '../../../admin/src/dashboard/lib';
-import ReactDOM from "react-dom";
-import TaskList from "../../../components/TaskList";
-import EmployeeStatusDashboard from "../../../components/EmployeeStatusDashboard";
-import {Donut, Pie} from "@antv/g2plot";
+import { DashboardAdapter } from '../../../admin/src/dashboard/lib';
+import TaskList from '../../../components/TaskList';
+import EmployeeStatusDashboard from '../../../components/EmployeeStatusDashboard';
+import EmployeeListWidget from '../../../admin/src/employees/components/EmployeeListWidget';
 
 class ModuleDashboardAdapter extends DashboardAdapter {
   getDataMapping() {
@@ -32,6 +33,23 @@ class ModuleDashboardAdapter extends DashboardAdapter {
     this.drawOnlineOfflineEmployeeChart();
     this.buildTaskList();
     this.buildEmployeeStatus();
+    this.showEmployeeList();
+  }
+
+  showEmployeeList() {
+    const that = this;
+    document.getElementById('EmployeeListWrapper').style.display = 'none';
+
+
+    this.apiClient
+      .post('staff-random', { limit: 15 })
+      .then((response) => {
+        ReactDOM.render(
+          <EmployeeListWidget url={CLIENT_BASE_URL+'?g=extension&n=directory|user&m=module_Company'} adapter={this} employees={response.data} />,
+          document.getElementById('EmployeeList'),
+        );
+        document.getElementById('EmployeeListWrapper').style.display = 'block';
+      });
   }
 
   buildTaskList() {
@@ -163,7 +181,7 @@ class ModuleDashboardAdapter extends DashboardAdapter {
     $('#numberOfProjects').html(data.activeProjects);
     $('#pendingLeaveCount').html(data.pendingLeaves);
 
-    $('#numberOfEmployees').html(`${data.numberOfEmployees} Subordinates`);
+    $('#numberOfEmployees').html(`${data.numberOfEmployees} Direct Reports`);
     $('#numberOfCandidates').html(`${data.numberOfCandidates} Candidates`);
     $('#numberOfJobs').html(`${data.numberOfJobs} Active`);
     $('#numberOfCourses').html(`${data.numberOfCourses} Active`);
