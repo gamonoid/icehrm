@@ -60,13 +60,13 @@ class ClientAdapter extends ReactModalAdapterBase {
         title: 'Contact Number',
         dataIndex: 'contact_number',
         sorter: true,
-      }
+      },
     ];
   }
 
   getFormFields() {
     if (this.showSave) {
-      return [
+      return this.addCustomFields([
         ['id', { label: 'ID', type: 'hidden' }],
         ['name', { label: 'Name', type: 'text' }],
         ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
@@ -76,9 +76,9 @@ class ClientAdapter extends ReactModalAdapterBase {
         ['company_url', { label: 'Company Url', type: 'text', validation: 'none' }],
         ['status', { label: 'Status', type: 'select', source: [['Active', 'Active'], ['Inactive', 'Inactive']] }],
         ['first_contact_date', { label: 'First Contact Date', type: 'date', validation: 'none' }],
-      ];
+      ]);
     }
-    return [
+    return this.addCustomFields([
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'placeholder' }],
       ['details', { label: 'Details', type: 'placeholder', validation: 'none' }],
@@ -88,11 +88,19 @@ class ClientAdapter extends ReactModalAdapterBase {
       ['company_url', { label: 'Company Url', type: 'placeholder', validation: 'none' }],
       ['status', { label: 'Status', type: 'placeholder', source: [['Active', 'Active'], ['Inactive', 'Inactive']] }],
       ['first_contact_date', { label: 'First Contact Date', type: 'placeholder', validation: 'none' }],
-    ];
+    ]);
+  }
+
+  getHelpTitle() {
+    return this.gt('Clients of Your Organization');
+  }
+
+  getHelpDescription() {
+    return this.gt('Here you can add and manage clients your organization is working with. These clients can be attached to Projects.');
   }
 
   getHelpLink() {
-    return 'http://blog.icehrm.com/docs/projects/';
+    return 'https://icehrm.com/explore/docs/projects-and-clients-for-timesheets/';
   }
 }
 

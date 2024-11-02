@@ -45,13 +45,13 @@ class ProjectAdapter extends ReactModalAdapterBase {
         title: 'Client',
         dataIndex: 'client',
         sorter: true,
-      }
+      },
     ];
   }
 
   getFormFields() {
     if (this.showSave) {
-      return [
+      return this.addCustomFields([
         ['id', { label: 'ID', type: 'hidden' }],
         ['name', { label: 'Name', type: 'text' }],
         ['client', {
@@ -59,9 +59,9 @@ class ProjectAdapter extends ReactModalAdapterBase {
         }],
         ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
         ['status', { label: 'Status', type: 'select', source: [['Active', 'Active'], ['On Hold', 'On Hold'], ['Completed', 'Completed'], ['Dropped', 'Dropped']] }],
-      ];
+      ]);
     }
-    return [
+    return this.addCustomFields([
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'placeholder' }],
       ['client', {
@@ -69,11 +69,19 @@ class ProjectAdapter extends ReactModalAdapterBase {
       }],
       ['details', { label: 'Details', type: 'placeholder', validation: 'none' }],
       ['status', { label: 'Status', type: 'select', source: [['Active', 'Active'], ['On Hold', 'On Hold'], ['Completed', 'Completed'], ['Dropped', 'Dropped']] }],
-    ];
+    ]);
+  }
+
+  getHelpTitle() {
+    return this.gt('Projects');
+  }
+
+  getHelpDescription() {
+    return this.gt('Here you can add details about current projects. Projects are used to capture time spent by employees in timesheets.');
   }
 
   getHelpLink() {
-    return 'http://blog.icehrm.com/docs/projects/';
+    return 'https://icehrm.com/explore/docs/projects-and-clients-for-timesheets/';
   }
 }
 
@@ -119,7 +127,7 @@ class EmployeeProjectAdapter extends ReactModalAdapterBase {
         title: 'Project',
         dataIndex: 'project',
         sorter: true,
-      }
+      },
     ];
   }
 
@@ -127,7 +135,7 @@ class EmployeeProjectAdapter extends ReactModalAdapterBase {
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
-      ['employee', { label: 'Employee', type: 'select2', 'remote-source': ['Employee', 'id', 'first_name+last_name','getActiveSubordinateEmployees'] }],
+      ['employee', { label: 'Employee', type: 'select2', 'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'] }],
       ['project', { label: 'Project', type: 'select2', 'remote-source': ['Project', 'id', 'name'] }],
       ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
     ];
@@ -135,13 +143,21 @@ class EmployeeProjectAdapter extends ReactModalAdapterBase {
 
   getFilters() {
     return [
-      ['employee', { label: 'Employee', type: 'select2','allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name','getActiveSubordinateEmployees'] }],
-      ['project', { label: 'Project', type: 'select2','allow-null': true, 'remote-source': ['Project', 'id', 'name'] }],
+      ['employee', {
+        label: 'Employee', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
+      }],
+      ['project', {
+        label: 'Project', type: 'select2', 'allow-null': true, 'remote-source': ['Project', 'id', 'name'],
+      }],
     ];
   }
 
-  getHelpLink() {
-    return 'http://blog.icehrm.com/docs/projects/';
+  getHelpTitle() {
+    return this.gt('Projects Assigned to Employees');
+  }
+
+  getHelpDescription() {
+    return this.gt('Here you can assign projects to employees. Employees can use these projects when adding entries to timesheets.');
   }
 }
 
