@@ -1,7 +1,7 @@
 <?php
 if(!defined('SIGN_IN_ELEMENT_MAPPING_FIELD_NAME')){define('SIGN_IN_ELEMENT_MAPPING_FIELD_NAME','employee');}
 
-if(!defined('APP_NAME')){define('APP_NAME','ICE Hrm');}
+if(!defined('APP_NAME')){define('APP_NAME','IceHrm');}
 if(!defined('FB_URL')){define('FB_URL', 'https://www.facebook.com/icehrm');};
 if(!defined('TWITTER_URL')){define('TWITTER_URL', 'https://twitter.com/icehrmapp');};
 
@@ -13,10 +13,10 @@ if(!defined('HOME_LINK_OTHERS')){
 }
 
 //Version
-define('VERSION', '32.4.0.OS');
-define('CACHE_VALUE', '32.4.0.OS.2023-01310520');
-define('VERSION_NUMBER', '320400');
-define('VERSION_DATE', '31/01/2023');
+define('VERSION', '33.5.0.OS');
+define('CACHE_VALUE', '33.5.0.OS.2023-01310520');
+define('VERSION_NUMBER', '330500');
+define('VERSION_DATE', '02/11/2024');
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','icehrm@gamonoid.com');}
 if(!defined('KEY_PREFIX')){define('KEY_PREFIX','IceHrm');}
