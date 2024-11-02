@@ -40,7 +40,7 @@ joined_date as 'Joined Date',
 confirmation_date as 'Confirmation Date',
 (SELECT title from CompanyStructures where id = department) as 'Department',
 (SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`,' [Employee ID:',`employee_id`,']') 
-from Employees e1 where e1.id = e.supervisor) as 'Supervisor', notes as 'Notes'
+from Employees e1 where e1.id = e.supervisor) as 'Manager', notes as 'Notes'
 FROM Employees e";
 
         return $query;

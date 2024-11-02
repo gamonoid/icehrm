@@ -48,7 +48,7 @@ class CompanyDocumentFinderProxy extends CompanyDocument implements FinderProxy
                 }
                 // When the document is assigned to an employee, share department value is ignored
 
-                if (is_array($shareEmployees) && count($shareEmployees) === 0) {
+                if (is_array($shareEmployees) && count($shareEmployees) > 0) {
                     continue;
                 }
             }

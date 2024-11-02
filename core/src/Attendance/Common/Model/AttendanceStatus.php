@@ -8,6 +8,7 @@
 
 namespace Attendance\Common\Model;
 
+use Classes\FileService;
 use Classes\ModuleAccess;
 use Classes\SettingsManager;
 use Employees\Common\Model\Employee;
@@ -119,12 +120,16 @@ class AttendanceStatus extends BaseModel
                 $entry->statusId = 2;
             }
 
+            $employee = FileService::getInstance()->updateSmallProfileImage($employee);
+            $entry->image = $employee->image;
+
             $data[] = $entry;
         }
 
 
         usort(
-            $data, function ($a, $b) {
+            $data,
+            function ($a, $b) {
                 return $a->statusId - $b->statusId;
             }
         );

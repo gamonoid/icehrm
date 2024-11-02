@@ -35,7 +35,9 @@ class EmployeeRestEndPoint extends RestEndPoint
   "country": [ "Country", "code", "name" ],
   "province": [ "Province", "id", "name" ],
   "department": [ "CompanyStructure", "id", "title" ],
-  "supervisor": [ "Employee", "id", "first_name+last_name" ]
+  "supervisor": [ "Employee", "id", "first_name+last_name" ],
+  "employment_status": [ "EmploymentStatus", "id", "name" ],
+  "pay_grade": [ "PayGrade", "id", "name" ]
 }
 JSON;
         $query->setFieldMapping($mapping);
@@ -47,7 +49,12 @@ JSON;
         $query->setLength($limit);
 
         if (!empty($_GET['filters'])) {
-            $query->setFilters($_GET['filters']);
+            $query->setFilters(json_decode($_GET['filters'], true));
+        }
+
+        if (!empty($_GET['search'])) {
+            $query->setSearchTerm($_GET['search']);
+            $query->setSearchColumns(['first_name', 'last_name', 'employee_id','ssn_number','nic_number','other_id','driving_license','country']);
         }
 
         if (isset($_GET['sortField']) && !empty($_GET['sortField'])) {
@@ -58,12 +65,45 @@ JSON;
             );
         }
 
+        $me = null;
         if ($user->user_level !== 'Admin') {
             $query->setIsSubOrdinates(true);
+            $me = new Employee();
+            $me->Load("id = ?", array(BaseService::getInstance()->getCurrentProfileId()));
         }
 
-        return $this->listByQuery($query);
+        $response = $this->listByQuery($query);
+
+        $responseData = $response->getData();
+
+
+        $employeesList = $responseData['data'];
+        // SHOW own employee - disabled for now due to data security
+//        if ( null !== $me && !empty($me->id)){
+//            $me = $this->enrichAndCleanObject($query, $me, []);
+//            $me = $me->postProcessGetData($me);
+//            array_unshift($employeesList, $me);
+//            $responseData['total'] = (int)$response->getData()['total'] + 1;
+//        }
+
+        if($user->user_level === 'Admin') {
+            // move the current admin employee to the top of the list if exists
+            foreach ($employeesList as $key => $employee) {
+                if ($employee->id === BaseService::getInstance()->getCurrentProfileId()) {
+                    unset($employeesList[$key]);
+                    array_unshift($employeesList, $employee);
+                    break;
+                }
+            }
+        }
+
+        $responseData['data'] = $employeesList;
+
+        $response->setData($responseData);
+
+        return $response;
     }
+
 
     public function get(User $user, $parameter)
     {
@@ -117,7 +157,9 @@ JSON;
         $user = new User();
         $user->Load('employee = ?', [$emp->id]);
 
+        $emp->can_login = 0;
         if (!empty($user->id)) {
+            $emp->can_login = 1;
             $emp->user_name = $user->username;
             $emp->user_email = $user->email;
             $emp->user_level = $user->user_level;
@@ -150,7 +192,7 @@ JSON;
     public function put(User $user, $parameter)
     {
 
-        if ($user->user_level !== 'Admin' 
+        if ($user->user_level !== 'Admin'
             && !PermissionManager::manipulationAllowed(
                 BaseService::getInstance()->getCurrentProfileId(),
                 $this->getModelObject($parameter)
@@ -232,4 +274,11 @@ JSON;
 
         return new IceResponse(IceResponse::SUCCESS, $data, 200);
     }
+
+	public function createUserForEmployee(User $user, $parameter) {
+		if ($user->user_level !== 'Admin') {
+			return new IceResponse(IceResponse::ERROR, "Permission denied", 403);
+		}
+		$body = $this->getRequestBody();
+	}
 }

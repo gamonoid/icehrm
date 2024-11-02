@@ -1,6 +1,9 @@
 <?php
 namespace Utils;
 
+use Egulias\EmailValidator\EmailValidator;
+use Egulias\EmailValidator\Validation\RFCValidation;
+
 class StringUtils
 {
     public static function randomString($length = 6)
@@ -14,4 +17,9 @@ class StringUtils
         }
         return $str;
     }
+
+	public static function validateEmail($email){
+		$emailValidator = new EmailValidator();
+		return $emailValidator->isValid($email, new RFCValidation());
+	}
 }

@@ -426,12 +426,29 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
     {
         // An admin loading all user data
         $sql = "Select count(id) as count from " . $this->table;
-        $sql .= " where 1=1 " . $query;
+
+        if ($this->startsWith(trim(strtolower($query)), 'order by') ||
+            $this->startsWith(trim(strtolower($query)), 'limit') ||
+            $this->startsWith(trim(strtolower($query)), 'and')) {
+            $sql .= " where 1=1 " . $query;
+        } else if (empty($query))  {
+            $sql .= " where 1=1";
+        } else {
+            $sql .= " where 1=1 and " . $query;
+        }
         return $this->countRows($sql, $data);
     }
 
     public function setIsSubOrdinateQuery($val)
     {
         $this->isSubordinateQuery = $val;
+    }
+
+	public function getCustomFieldTable( $table ) {
+		return $table;
+	}
+
+    private function startsWith($string, $query){
+        return substr($string, 0, strlen($query)) === $query;
     }
 }

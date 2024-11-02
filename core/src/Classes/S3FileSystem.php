@@ -117,9 +117,11 @@ class S3FileSystem
         $ipad = str_repeat(chr(0x36), $blocksize);
         $opad = str_repeat(chr(0x5c), $blocksize);
         $hmac = pack(
-            'H*', sha1(
+            'H*',
+            sha1(
                 ($key ^ $opad) . pack(
-                    'H*', sha1(
+                    'H*',
+                    sha1(
                         ($key ^ $ipad) . $data
                     )
                 )

@@ -142,12 +142,12 @@ class UIManager
     {
         $menuItems = array();
 
-        if (!empty($this->quickAccessMenuItems)) {
-            $itemsHtml = $this->getQuickAccessMenuItemsHTML();
-            if (!empty($itemsHtml)) {
-                $menuItems[] = new MenuItemTemplate('menuButtonQuick', array("ITEMS"=>$itemsHtml));
-            }
-        }
+//        if (!empty($this->quickAccessMenuItems)) {
+//            $itemsHtml = $this->getQuickAccessMenuItemsHTML();
+//            if (!empty($itemsHtml)) {
+//                $menuItems[] = new MenuItemTemplate('menuButtonQuick', array("ITEMS"=>$itemsHtml));
+//            }
+//        }
 
         $menuItems[] = new MenuItemTemplate('menuButtonNotification', array());
         if ($this->user->user_level == 'Admin') {
@@ -177,26 +177,29 @@ class UIManager
             }
         }
 
+        $displayName = $this->currentProfile->first_name;
         if (!empty($this->currentProfile)) {
             $menuItems[] = new MenuItemTemplate(
-                'menuButtonProfile', array(
-                "profileImage"=>$this->currentProfile->image,
-                "firstName"=>$this->currentProfile->first_name,
-                "lastName"=>$this->currentProfile->last_name,
-                "homeLink"=>$this->homeLink,
-                "CLIENT_BASE_URL"=>CLIENT_BASE_URL
-
+                'menuButtonProfile',
+                array(
+                    "profileImage"=>$this->currentProfile->image,
+                    "displayName"=>$displayName,
+                    "firstName"=>$this->currentProfile->first_name,
+                    "lastName"=>$this->currentProfile->last_name,
+                    "homeLink"=>$this->homeLink,
+                    "CLIENT_BASE_URL"=>CLIENT_BASE_URL
                 )
             );
         } else {
             $menuItems[] = new MenuItemTemplate(
-                'menuButtonProfile', array(
-                "profileImage"=>BASE_URL."images/user_male.png",
-                "firstName"=>$this->user->username,
-                "lastName"=>"",
-                "homeLink"=>$this->homeLink,
-                "CLIENT_BASE_URL"=>CLIENT_BASE_URL
-
+                'menuButtonProfile',
+                array(
+                    "profileImage"=>BASE_URL."images/user_male.png",
+                    "displayName"=>$displayName,
+                    "firstName"=>$this->user->username,
+                    "lastName"=>"",
+                    "homeLink"=>$this->homeLink,
+                    "CLIENT_BASE_URL"=>CLIENT_BASE_URL
                 )
             );
         }
@@ -211,7 +214,8 @@ class UIManager
             }
 
             $menuItems[] = new MenuItemTemplate(
-                'menuButtonHelp', array(
+                'menuButtonHelp',
+                array(
                 "APP_NAME"=>APP_NAME,
                 "VERSION"=>VERSION,
                 "VERSION_DATE"=>VERSION_DATE,
@@ -317,6 +321,10 @@ class UIManager
         }
 
         return  BASE_URL."images/logo.png";
+    }
+
+    public function get_random_login_image() {
+        return  'https://icehrm-public.s3.amazonaws.com/images/login_page.png';
     }
 
     /**

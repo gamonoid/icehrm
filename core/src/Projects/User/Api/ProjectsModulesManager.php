@@ -15,9 +15,6 @@ class ProjectsModulesManager extends AbstractModuleManager
 
     public function initializeUserClasses()
     {
-        if (defined('MODULE_TYPE') && MODULE_TYPE != 'admin') {
-            $this->addUserClass("EmployeeProject");
-        }
     }
 
     public function initializeFieldMappings()
@@ -30,7 +27,5 @@ class ProjectsModulesManager extends AbstractModuleManager
 
     public function setupModuleClassDefinitions()
     {
-
-        $this->addModelClass('EmployeeProject');
     }
 }

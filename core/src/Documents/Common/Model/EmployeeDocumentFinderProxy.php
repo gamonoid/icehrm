@@ -30,7 +30,7 @@ class EmployeeDocumentFinderProxy extends EmployeeDocument implements FinderProx
     {
         $find = $this->createFindQuery();
         $sql = "Select count(id) as count from " . $this->table;
-        $sql .= " WHERE 1=1 AND " . $find.$this->getAdditionalQuery()."1 = 1".$query;
+        $sql .= " WHERE 1=1 AND " . $find.$this->getAdditionalQuery().$query;
         return $this->countRows($sql, $data);
     }
 
@@ -43,7 +43,12 @@ class EmployeeDocumentFinderProxy extends EmployeeDocument implements FinderProx
         $user = BaseService::getInstance()->getCurrentUser();
 
         if ($user->user_level == 'Employee' || ($user->user_level == 'Manager' && !$this->isSubordinateQuery)) {
-            $find = ' visible_to IN (\'Owner\', \'Owner Only\') AND ';
+            if (BaseService::getInstance()->isEmployeeSwitched()) {
+                $find = ' visible_to =\'Owner\' AND ';
+            } else {
+                $find = ' visible_to IN (\'Owner\', \'Owner Only\') AND ';
+            }
+
             $document = new Document();
             $hiddenDocumentTypes = $document->Find(
                 "share_with_employee = ?",

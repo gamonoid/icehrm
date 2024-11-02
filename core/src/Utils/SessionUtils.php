@@ -26,6 +26,29 @@ class SessionUtils
         $_SESSION[$name.CLIENT_NAME] = json_encode($obj);
     }
 
+    public static function getSessionString($name)
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (isset($_SESSION[$name.CLIENT_NAME])) {
+            $string = $_SESSION[$name.CLIENT_NAME];
+        }
+        if (empty($string)) {
+            return null;
+        }
+        return $string;
+    }
+
+    public static function saveSessionString($name, $str)
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $_SESSION[$name.CLIENT_NAME] = $str;
+    }
+
     public static function unsetClientSession()
     {
         $names = [

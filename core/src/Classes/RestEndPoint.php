@@ -167,7 +167,7 @@ class RestEndPoint
             ];
         }
 
-        return $obj;
+        return BaseService::getInstance()->customFieldManager->enrichObjectCustomFields(static::ELEMENT_NAME, $obj);
     }
 
     public function enrichElements($items, $map)
@@ -175,7 +175,8 @@ class RestEndPoint
         return array_map(
             function ($item) use ($map) {
                 return $this->enrichElement($item, $map);
-            }, $items
+            },
+            $items
         );
     }
 
@@ -263,18 +264,7 @@ class RestEndPoint
         $output = array();
         $columns = $query->getColumns();
         foreach ($data as $item) {
-            if (!empty($query->getFieldMapping())) {
-                $map = json_decode($query->getFieldMapping(), true);
-                $item = $this->enrichElement($item, $map);
-            }
-            if (!empty($columns)) {
-                $obj = new \stdClass();
-                foreach ($columns as $column) {
-                    $obj->$column = $item->$column;
-                }
-            } else {
-                $obj = $this->cleanObject($item);
-            }
+            $obj = $this->enrichAndCleanObject($query, $item, $columns);
             $output[] = $obj;
         }
 
@@ -282,6 +272,7 @@ class RestEndPoint
             IceResponse::SUCCESS,
             [
                 'data' => $output,
+                'total' => DataReader::getDataCount($query),
                 'nextPage' => $page + 1,
             ]
         );
@@ -379,7 +370,33 @@ class RestEndPoint
 
     public function printResponse($response)
     {
-        echo json_encode($response, JSON_PRETTY_PRINT);
+        echo BaseService::getInstance()->safeJsonEncode($response, JSON_PRETTY_PRINT);
+        //echo json_encode($this->convert_to_utf8_recursively($response), JSON_PRETTY_PRINT);
+    }
+
+    protected function convert_to_utf8_recursively($dat)
+    {
+        if (is_string($dat)) {
+            return $this->convert_string($dat);
+        } elseif (is_array($dat)) {
+            $ret = [];
+            foreach ($dat as $i => $d) $ret[ $i ] = $this->convert_to_utf8_recursively($d);
+            return $ret;
+        } elseif (is_object($dat)) {
+            foreach ($dat as $i => $d) $dat->$i = $this->convert_to_utf8_recursively($d);
+            return $dat;
+        } else {
+            return $dat;
+        }
+    }
+
+    protected function convert_string( $input_string ) {
+        $encoding = mb_detect_encoding( $input_string, mb_detect_order(), true );
+        if ( $encoding ) {
+            return mb_convert_encoding( $input_string, 'UTF-8', $encoding );
+        } else {
+            return mb_convert_encoding( $input_string, 'UTF-8', 'UTF-8' );
+        }
     }
 
     /**
@@ -423,7 +440,9 @@ class RestEndPoint
             if (preg_match('/Bearer\s(\S+)/', $headers, $matches)) {
                 $token = $matches[1];
             }
-        } else {
+        }
+
+		if (empty($token)) {
             $token = $_GET['token'];
         }
 
@@ -463,5 +482,28 @@ class RestEndPoint
         }
 
         return $fileResponse;
+    }
+
+    /**
+     * @param DataQuery $query
+     * @param $item
+     * @param array $columns
+     * @return mixed|\stdClass
+     */
+    protected function enrichAndCleanObject(DataQuery $query, $item, array $columns)
+    {
+        if (!empty($query->getFieldMapping())) {
+            $map = json_decode($query->getFieldMapping(), true);
+            $item = $this->enrichElement($item, $map);
+        }
+        if (!empty($columns)) {
+            $obj = new \stdClass();
+            foreach ($columns as $column) {
+                $obj->$column = $item->$column;
+            }
+        } else {
+            $obj = $this->cleanObject($item);
+        }
+        return $obj;
     }
 }

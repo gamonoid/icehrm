@@ -8,7 +8,7 @@ use DateTimeZone;
 
 class TimeZonesUtils
 {
-    public static function getTimezoneById($id) 
+    public static function getTimezoneById($id)
     {
         $timezone = new Timezone();
         $timezone->Load('id = ?', [$id]);

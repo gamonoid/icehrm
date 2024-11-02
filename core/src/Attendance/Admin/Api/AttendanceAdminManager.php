@@ -36,56 +36,64 @@ class AttendanceAdminManager extends AbstractModuleManager
     public function setupRestEndPoints()
     {
         \Classes\Macaw::get(
-            REST_API_PATH.'attendance/(:num)', function ($pathParams = null) {
+            REST_API_PATH.'attendance/(:num)',
+            function ($pathParams = null) {
                 $restEndPoint = new AttendanceRestEndPoint();
                 $restEndPoint->process('get', $pathParams);
             }
         );
 
         \Classes\Macaw::get(
-            REST_API_PATH.'attendance', function ($pathParams = null) {
+            REST_API_PATH.'attendance',
+            function ($pathParams = null) {
                 $restEndPoint = new AttendanceRestEndPoint();
                 $restEndPoint->process('listAll', $pathParams);
             }
         );
 
         \Classes\Macaw::get(
-            REST_API_PATH.'employee/(:num)/attendance', function ($pathParams = null) {
+            REST_API_PATH.'employee/(:num)/attendance',
+            function ($pathParams = null) {
                 $restEndPoint = new AttendanceRestEndPoint();
                 $restEndPoint->process('listEmployeeAttendance', $pathParams);
             }
         );
 
         \Classes\Macaw::post(
-            REST_API_PATH.'attendance', function ($pathParams = null) {
+            REST_API_PATH.'attendance',
+            function ($pathParams = null) {
                 $restEndPoint = new AttendanceRestEndPoint();
                 $restEndPoint->process('post', $pathParams);
             }
         );
 
         \Classes\Macaw::delete(
-            REST_API_PATH.'attendance/(:num)', function ($pathParams = null) {
+            REST_API_PATH.'attendance/(:num)',
+            function ($pathParams = null) {
                 $restEndPoint = new AttendanceRestEndPoint();
                 $restEndPoint->process('delete', $pathParams);
             }
         );
 
         \Classes\Macaw::post(
-            REST_API_PATH.'attendance/punch-in', function ($pathParams = null) {
+            REST_API_PATH.'attendance/punch-in',
+            function ($pathParams = null) {
                 $restEndPoint = new AttendanceRestEndPoint();
                 $restEndPoint->process('punchIn', $pathParams);
             }
         );
 
         \Classes\Macaw::get(
-            REST_API_PATH.'employee/(:num)/open-punch-in/(:any)', function ($employeeId, $date) {
+            REST_API_PATH.'employee/(:num)/open-punch-in/(:any)',
+            function ($employeeId, $date) {
                 $restEndPoint = new AttendanceRestEndPoint();
                 $restEndPoint->process('getOpenPunch', [$employeeId, $date]);
             }
         );
 
         \Classes\Macaw::post(
-            REST_API_PATH.'attendance/punch-out', function ($pathParams = null) {
+            REST_API_PATH.'attendance/punch-out',
+            function ($pathParams = null) {
                 $restEndPoint = new AttendanceRestEndPoint();
                 $restEndPoint->process('punchOut', $pathParams);
             }

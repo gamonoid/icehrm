@@ -370,13 +370,13 @@ class AttendanceRestEndPoint extends RestEndPoint
             $attendance->out_time = null;
             $attendance->map_lat = $latitude;
             $attendance->map_lng = $longitude;
-            $attendance->map_snapshot = $this->generateMapLocationImage($latitude, $longitude);
+            //$attendance->map_snapshot = $this->generateMapLocationImage($latitude, $longitude);
             $attendance->in_ip = $ip;
         } else {
             $attendance->out_time = $outDateTime;
             $attendance->map_out_lat = $latitude;
             $attendance->map_out_lng = $longitude;
-            $attendance->map_out_snapshot = $this->generateMapLocationImage($latitude, $longitude);
+            //$attendance->map_out_snapshot = $this->generateMapLocationImage($latitude, $longitude);
             $attendance->out_ip = $ip;
         }
 

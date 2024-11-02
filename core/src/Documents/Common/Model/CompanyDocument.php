@@ -54,12 +54,87 @@ class CompanyDocument extends BaseModel
         if (empty($obj->visible_to)) {
             $obj->visible_to = 'Owner';
         }
+
+        $shareDepartments = $obj->share_departments ? json_decode($obj->share_departments, true) : [];
+        $shareEmployees = $obj->share_employees ? json_decode($obj->share_employees, true) : [];
+
+        if (count($shareEmployees) > 0 && count($shareDepartments) > 0) {
+            return new IceResponse(IceResponse::ERROR, "You can't share a document with both employees and departments");
+        }
+
         return new IceResponse(IceResponse::SUCCESS, $obj);
     }
 
     public function executePreUpdateActions($obj)
     {
         $obj->expire_notification_last = -1;
+
+        $shareDepartments = $obj->share_departments ? json_decode($obj->share_departments, true) : [];
+        $shareEmployees = $obj->share_employees ? json_decode($obj->share_employees, true) : [];
+
+        if (count($shareEmployees) > 0 && count($shareDepartments) > 0) {
+            return new IceResponse(IceResponse::ERROR, "You can't share a document with both employees and departments");
+        }
+
         return new IceResponse(IceResponse::SUCCESS, $obj);
     }
+
+    public function postProcessGetElement($obj)
+    {
+        if ($this->isJson($obj->details)) {
+            $obj->details = $this->jsonToHtml($obj->details);
+        }
+
+        return $obj;
+    }
+
+    protected function isJson($string) {
+        json_decode($string);
+        return json_last_error() === JSON_ERROR_NONE;
+    }
+
+    protected function jsonToHtml($jsonStr)
+    {
+        $obj = json_decode($jsonStr);
+
+        if (empty($obj)) {
+            return $jsonStr;
+        }
+
+        if (empty($obj->blocks)) {
+            return $jsonStr;
+        }
+
+        $html = '';
+        foreach ($obj->blocks as $block) {
+            switch ($block->type) {
+                case 'paragraph':
+                    $html .= '<p>' . $block->data->text . '</p>';
+                    break;
+
+                case 'header':
+                    $html .= '<h' . $block->data->level . '>' . $block->data->text . '</h' . $block->data->level . '>';
+                    break;
+
+                case 'raw':
+                    $html .= $block->data->html;
+                    break;
+
+                case 'list':
+                    $lsType = ($block->data->style == 'ordered') ? 'ol' : 'ul';
+                    $html .= '<' . $lsType . '>';
+                    foreach ($block->data->items as $item) {
+                        $html .= '<li>' . $item . '</li>';
+                    }
+                    $html .= '</' . $lsType . '>';
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        return $html;
+    }
+
 }

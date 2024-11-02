@@ -120,7 +120,7 @@ class PayrollActionManager extends SubActionManager
 
         //Salary
         LogManager::getInstance()->info("salary components row:".$col->salary_components);
-        if (!empty($col->salary_components) 
+        if (!empty($col->salary_components)
             && !empty(json_decode($col->salary_components, true))
         ) {
             $salaryComponent = new SalaryComponent();
@@ -141,7 +141,7 @@ class PayrollActionManager extends SubActionManager
         );
 
         //Deductions
-        if (!empty($col->deductions) 
+        if (!empty($col->deductions)
             && !empty(json_decode($col->deductions, true))
         ) {
             $deduction = new Deduction();
@@ -182,7 +182,7 @@ class PayrollActionManager extends SubActionManager
                 $evalMath->evaluate('min(x,y) = y - (y - x) * ceil(tanh(exp(tanh(y - x)) - exp(0)))');
             }
 
-            if (!empty($col->add_columns) 
+            if (!empty($col->add_columns)
                 && !empty(json_decode($col->add_columns, true))
             ) {
                 $colIds = json_decode($col->add_columns, true);
@@ -199,7 +199,7 @@ class PayrollActionManager extends SubActionManager
                 }
             }
 
-            if (!empty($col->sub_columns) 
+            if (!empty($col->sub_columns)
                 && !empty(json_decode($col->sub_columns, true))
             ) {
                 $colIds = json_decode($col->sub_columns, true);
@@ -690,7 +690,7 @@ class PayrollActionManager extends SubActionManager
 
         $emp = new PayrollEmployee();
         $emps = [];
-        if(!empty($empIds)) {
+        if (!empty($empIds)) {
             $emps = $emp->Find(
                 "pay_frequency = ? and deduction_group = ? and employee in (".implode(",", $empIds).")",
                 array($payroll->pay_period, $payroll->deduction_group)

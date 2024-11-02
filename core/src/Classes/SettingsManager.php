@@ -17,6 +17,8 @@ class SettingsManager
     {
         $this->addEncryptedSetting('SAML: X.509 Certificate');
         $this->addEncryptedSetting('LDAP: Manager Password');
+        $this->addEncryptedSetting('Microsoft: Client Secret');
+        $this->addEncryptedSetting('Google: Client Secret');
     }
 
     public static function getInstance()

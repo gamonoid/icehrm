@@ -38,42 +38,48 @@ class EmployeesAdminManager extends AbstractModuleManager
     public function setupRestEndPoints()
     {
         Macaw::get(
-            REST_API_PATH.'employees/me', function () {
+            REST_API_PATH.'employees/me',
+            function () {
                 $empRestEndPoint = new EmployeeRestEndPoint();
                 $empRestEndPoint->process('get', 'me');
             }
         );
 
         Macaw::get(
-            REST_API_PATH.'employees/(:num)', function ($pathParams) {
+            REST_API_PATH.'employees/(:num)',
+            function ($pathParams) {
                 $empRestEndPoint = new EmployeeRestEndPoint();
                 $empRestEndPoint->process('get', $pathParams);
             }
         );
 
         Macaw::get(
-            REST_API_PATH.'employees', function () {
+            REST_API_PATH.'employees',
+            function () {
                 $empRestEndPoint = new EmployeeRestEndPoint();
                 $empRestEndPoint->process('listAll');
             }
         );
 
         Macaw::post(
-            REST_API_PATH.'employees', function () {
+            REST_API_PATH.'employees',
+            function () {
                 $empRestEndPoint = new EmployeeRestEndPoint();
                 $empRestEndPoint->process('post');
             }
         );
 
         Macaw::put(
-            REST_API_PATH.'employees/(:num)', function ($pathParams) {
+            REST_API_PATH.'employees/(:num)',
+            function ($pathParams) {
                 $empRestEndPoint = new EmployeeRestEndPoint();
                 $empRestEndPoint->process('put', $pathParams);
             }
         );
 
         Macaw::delete(
-            REST_API_PATH.'employees/(:num)', function ($pathParams) {
+            REST_API_PATH.'employees/(:num)',
+            function ($pathParams) {
                 $empRestEndPoint = new EmployeeRestEndPoint();
                 $empRestEndPoint->process('delete', $pathParams);
             }
@@ -81,7 +87,8 @@ class EmployeesAdminManager extends AbstractModuleManager
 
         // Employee skills
         Macaw::get(
-            REST_API_PATH.'employees/(:num)/skills', function ($pathParams) {
+            REST_API_PATH.'employees/(:num)/skills',
+            function ($pathParams) {
                 $empRestEndPoint = new EmployeeSkillsRestEndPoint();
                 $empRestEndPoint->process('listAll', $pathParams);
             }
@@ -89,7 +96,8 @@ class EmployeesAdminManager extends AbstractModuleManager
 
         // Employee education
         Macaw::get(
-            REST_API_PATH.'employees/(:num)/educations', function ($pathParams) {
+            REST_API_PATH.'employees/(:num)/educations',
+            function ($pathParams) {
                 $empRestEndPoint = new EmployeeEducationRestEndpoint();
                 $empRestEndPoint->process('listAll', $pathParams);
             }
@@ -97,7 +105,8 @@ class EmployeesAdminManager extends AbstractModuleManager
 
         // Employee certifications
         Macaw::get(
-            REST_API_PATH.'employees/(:num)/certifications', function ($pathParams) {
+            REST_API_PATH.'employees/(:num)/certifications',
+            function ($pathParams) {
                 $empRestEndPoint = new EmployeeCertificationsRestEndpoint();
                 $empRestEndPoint->process('listAll', $pathParams);
             }
@@ -105,7 +114,8 @@ class EmployeesAdminManager extends AbstractModuleManager
 
         // Employee languages
         Macaw::get(
-            REST_API_PATH.'employees/(:num)/languages', function ($pathParams) {
+            REST_API_PATH.'employees/(:num)/languages',
+            function ($pathParams) {
                 $empRestEndPoint = new EmployeeLanguageRestEndpoint();
                 $empRestEndPoint->process('listAll', $pathParams);
             }
@@ -113,18 +123,28 @@ class EmployeesAdminManager extends AbstractModuleManager
 
         // Employee status
         Macaw::get(
-            REST_API_PATH.'employees/(:num)/status', function ($pathParams) {
+            REST_API_PATH.'employees/(:num)/status',
+            function ($pathParams) {
                 $empRestEndPoint = new EmployeeRestEndPoint();
                 $empRestEndPoint->process('getEmployeeStatusMessage', $pathParams);
             }
         );
 
         Macaw::post(
-            REST_API_PATH.'employees/(:num)/status', function ($pathParams) {
+            REST_API_PATH.'employees/(:num)/status',
+            function ($pathParams) {
                 $empRestEndPoint = new EmployeeRestEndPoint();
                 $empRestEndPoint->process('setEmployeeStatusMessage', $pathParams);
             }
         );
+
+		Macaw::post(
+			REST_API_PATH.'employees/(:num)/create-user',
+			function ($pathParams) {
+				$empRestEndPoint = new EmployeeRestEndPoint();
+				$empRestEndPoint->process('createUserForEmployee', $pathParams);
+			}
+		);
     }
 
     public function initializeDatabaseErrorMappings()

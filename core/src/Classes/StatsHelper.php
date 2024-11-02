@@ -10,12 +10,12 @@ class StatsHelper
 
     private static $systemErrors = [];
 
-    public static function addSystemError($error, $details) 
+    public static function addSystemError($error, $details)
     {
         self::$systemErrors[] = [$error, $details];
     }
 
-    public static function getSystemErrors() 
+    public static function getSystemErrors()
     {
         return self::$systemErrors;
     }

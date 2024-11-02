@@ -5,6 +5,7 @@ class DataQuery
 {
     protected $table;
     protected $columns = [];
+    protected $searchColumns = [];
     protected $fieldMapping;
     protected $filters = null;
     protected $startPage = 0;
@@ -259,5 +260,25 @@ class DataQuery
     public function setOrderBy($orderBy)
     {
         $this->orderBy = $orderBy;
+    }
+
+    /**
+     * @return array
+     */
+    public function getSearchColumns(): array
+    {
+        if (!empty($this->searchColumns)) {
+            return $this->searchColumns;
+        }
+
+        return $this->columns;
+    }
+
+    /**
+     * @param array $searchColumns
+     */
+    public function setSearchColumns(array $searchColumns): void
+    {
+        $this->searchColumns = $searchColumns;
     }
 }

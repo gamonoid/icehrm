@@ -16,7 +16,7 @@ class Document extends BaseModel
 
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element", "save");
     }
 
     public function getModuleAccess()

@@ -59,4 +59,9 @@ class EmployeeProject extends BaseModel
             new ModuleAccess('projects', 'user'),
         ];
     }
+
+    public function isCustomFieldsEnabled()
+    {
+        return true;
+    }
 }

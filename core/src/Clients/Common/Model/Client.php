@@ -30,4 +30,9 @@ class Client extends BaseModel
             new ModuleAccess('clients', 'admin'),
         ];
     }
+
+    public function isCustomFieldsEnabled()
+    {
+        return true;
+    }
 }

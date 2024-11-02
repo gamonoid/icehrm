@@ -46,7 +46,8 @@ class SettingsAdminManager extends AbstractModuleManager
     public function setupRestEndPoints()
     {
         \Classes\Macaw::get(
-            REST_API_PATH.'settings', function () {
+            REST_API_PATH.'settings',
+            function () {
                 $restEndPoint = new SettingsRestEndPoint();
                 $restEndPoint->process('getMobileSettings', []);
             }

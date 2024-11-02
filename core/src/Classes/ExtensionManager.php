@@ -46,7 +46,6 @@ class ExtensionManager
 
         foreach ($extensionDirs as $extensionDir) {
             if (is_dir($this->getExtensionsPath().$extensionDir) && $extensionDir != '.' && $extensionDir != '..') {
-
                 $extensionAdminDir = $extensionDir.'/admin';
                 if (is_dir($this->getExtensionsPath().$extensionAdminDir)) {
                     $meta = $this->getExtensionMetaData($extensionAdminDir);
@@ -98,7 +97,6 @@ class ExtensionManager
                         $userModulesTemp[$arr['menu']]["A" . $arr['order']] = $arr;
                     }
                 }
-
             }
         }
 
