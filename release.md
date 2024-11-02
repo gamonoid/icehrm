@@ -1,5 +1,54 @@
 # Release Notes IceHrm Open Source
 
+## Release note v33.5.0.PRO
+
+#### 🧑🏻‍💼 Improvements in Employee Module
+* New UI for the employee list.
+* New and compact UI for the employee profile page.
+* [Ability to invite users easily](https://icehrm.com/explore/docs/adding-your-first-employee/#0-toc-title) (no need to create employees and users separately anymore)
+* Revamp login page.
+* Ability to login [using Microsoft 360 accounts](https://icehrm.com/explore/docs/sign-in-with-microsoft-entra-id-azure-ad/).
+* Ability to create the user for an employee directly from the employee profile.
+* Show an alert on the employee profile if the employee is not able to log in due to missing user account.
+* Renamed all references of supervisor to manager, and references to subordinate to direct report.
+* A setting is added to prevent managers from switching to employee profiles.
+* Ability to set timezone for individual employees.
+* Show employees current time on profile.
+* Added new fields for employees to store social security number, tax ID, and health insurance details.
+
+#### ⏰ Improvements in Attendance Module
+* UI upgrade to attendance listing.
+* Show user location for attendance record on Google Maps.
+* Ability to change the required attendance length for a day using the setting `Attendance: Start Overtime Hours`.
+* Improve the UI for attendance status.
+
+### ☘️ Other New Features
+* Ability to add custom fields for clients and projects modules.
+* Users can now edit submitted time-sheets, until it get approved.
+* A single time-sheet can now hold upto 500 projects.
+* Support creating time-sheets for up-coming weeks.
+* Improvements to search in general.
+* Improvements to base email template.
+* Introduce a new rich text editor and update the editor in company documents to the new editor.
+* Improved UI for viewing company documents.
+
+### 🐛 Bug Fixes
+* Add signature to local file downloads.
+* Fix placeholder editing in employee profile.
+* When an approval notification is clicked, the manager is redirected to the correct tab.
+* Increase table size for settings.
+* Better CSRF checks.
+* Fixed UTF-8 encoding issues in API responses.
+* Fix the issue with long company names in the top navigation bar.
+* Remove delete access to the managers from document types.
+
+### 🧑🏻‍💻 For Developers
+* Rest API endpoints for leave calender.
+* Rest API endpoints for document management.
+* Increased the allowed size of custom fields.
+* Updated the [fontawesome](https://fontawesome.com/start) version to v6.4.0
+* Add the ability to set the date time format for date time fields.
+
 ## Release note v32.4.0.OS
 
 ### 🧲 New features
