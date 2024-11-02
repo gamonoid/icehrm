@@ -329,9 +329,9 @@ class MySqlActiveRecord
 
         foreach ($this->getColumns() as $col) {
             if (self::$primaryKey[$this->getTable()] === $col) {
-                $where = $col.'= ? ';
+                $where = sprintf('`%s` = ? ', $col);
             } else {
-                $valueSet[] = $col.'= ? ';
+                $valueSet[] = sprintf('`%s`= ? ', $col);
                 $parameters[] = $this->{$col};
             }
         }
@@ -347,7 +347,6 @@ class MySqlActiveRecord
         );
 
         $stmt = $this->connection()->prepare($sql);
-
         if (!$stmt) {
             $this->lastError = $this->connection()->error;
             return false;
