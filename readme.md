@@ -1,6 +1,5 @@
 IceHrm
 ===========
-[![Build Status](https://travis-ci.org/gamonoid/icehrm.svg?branch=master)](https://travis-ci.org/gamonoid/icehrm)
 
 IceHrm is an [HRM software](https://icehrm.com) which enable companies to manage employee details and HR workflows.
 
@@ -138,3 +137,7 @@ docker compose -f docker-compose-prod.yaml up -d --build
 * IceHrm Blog: [https://icehrm.com/blog](http://icehrm.com/blog)
 * Purchase IceHrm Pro: [https://icehrm.com/modules.php](https://icehrm.com/modules.php)
 * Report Issues: [https://github.com/gamonoid/icehrm/issues](https://github.com/gamonoid/icehrm/issues)
+
+### Check Out our Sponsors
+* Monitor your IceHrm with [uptimely.cloud](https://uptimely.cloud/?utm_source=icehrm_readme&utm_medium=referral)
+
