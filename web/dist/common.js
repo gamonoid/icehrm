@@ -1,1 +1,531 @@
-var _0x5c6e=['concat','September','<br/>','\x20minutes\x20ago','getUTCFullYear','clearPendingNotifications','find','getData','.navbar\x20.menu','length',',height=','height','invalidateTable','&url=','toString','setServerGMToffset','February',',left=','#_image_#','split','status','call','getTime','RequestCache','#_header_#','about\x20an\x20hour\x20ago','.label-danger','getFullYear','serverGMToffset','setItem','abs','Cannot\x20find\x20module\x20\x27','key','replace','April','#_time_#',',top=','getJSON','width=','./RequestCache','Share\x20on\x20Facebook','http://twitter.com/share?text=','setBaseUrl','each','setTemplates','popup','getMonth','image','Wednesday','remove','setupTimeUtils','notification','enumerable','#notifications','storage','#_fromName_#','substring','getItem','getTimezoneOffset','message','default','320px','writable','SUCCESS','#_count_#','You\x20have\x20no\x20new\x20notifications','data','./Notifications','indexOf','html','about\x20a\x20minute\x20ago','convertToRelativeTime','configurable','getUTCDate','time','setupNotifications','Share\x20on\x20Google','Share\x20on\x20Linked\x20in','./SocialShare','removeAllByPrefix','#_url_#','November','prototype','August','notifications','__esModule','May','open','getHours','getLineBreakString','templates','baseUrl','December','./TimeUtils','3px','March','100%','defineProperty','getDay','Cannot\x20call\x20a\x20class\x20as\x20a\x20function','https://plus.google.com/share?url=','keys','timeUtils','setTimeUtils','\x20hours\x20ago','replaceWith','\x20new\x20notification','slimscroll','getMinutes','width','renderNotifications','#_notifications_#','clearNotifications','getUTCMonth','You\x20have\x20','Tuesday','.notificationTime','Sunday','title','service.php','exports','value'];(function(_0x378ed6,_0x5c6ea1){var _0x154d36=function(_0x3b4390){while(--_0x3b4390){_0x378ed6['push'](_0x378ed6['shift']());}};_0x154d36(++_0x5c6ea1);}(_0x5c6e,0xf9));var _0x154d=function(_0x378ed6,_0x5c6ea1){_0x378ed6=_0x378ed6-0x0;var _0x154d36=_0x5c6e[_0x378ed6];return _0x154d36;};!function e(_0x3b4390,_0x4f8b6a,_0x5a320b){function _0x29fc78(_0x25e2a2,_0x7241a9){var _0x3de328=_0x154d;if(!_0x4f8b6a[_0x25e2a2]){if(!_0x3b4390[_0x25e2a2]){var _0x551a09='function'==typeof require&&require;if(!_0x7241a9&&_0x551a09)return _0x551a09(_0x25e2a2,!0x0);if(_0x21e78d)return _0x21e78d(_0x25e2a2,!0x0);var _0x11195c=new Error(_0x3de328('0x1a')+_0x25e2a2+'\x27');throw _0x11195c['code']='MODULE_NOT_FOUND',_0x11195c;}var _0x5e73f8=_0x4f8b6a[_0x25e2a2]={'exports':{}};_0x3b4390[_0x25e2a2][0x0][_0x3de328('0x10')](_0x5e73f8['exports'],function(_0x47a686){return _0x29fc78(_0x3b4390[_0x25e2a2][0x1][_0x47a686]||_0x47a686);},_0x5e73f8,_0x5e73f8[_0x3de328('0x73')],e,_0x3b4390,_0x4f8b6a,_0x5a320b);}return _0x4f8b6a[_0x25e2a2][_0x3de328('0x73')];}for(var _0x21e78d='function'==typeof require&&require,_0x2a504e=0x0;_0x2a504e<_0x5a320b['length'];_0x2a504e++)_0x29fc78(_0x5a320b[_0x2a504e]);return _0x29fc78;}({0x1:[function(_0x5a9250,_0x100175,_0x61684){var _0x519051=_0x154d;'use strict';function _0xb5974b(_0x28a0f1,_0x5002a5){var _0x5a02f3=_0x154d;for(var _0x6c7382=0x0;_0x6c7382<_0x5002a5['length'];_0x6c7382++){var _0x41524c=_0x5002a5[_0x6c7382];_0x41524c['enumerable']=_0x41524c[_0x5a02f3('0x2f')]||!0x1,_0x41524c[_0x5a02f3('0x43')]=!0x0,_0x5a02f3('0x74')in _0x41524c&&(_0x41524c[_0x5a02f3('0x39')]=!0x0),Object[_0x5a02f3('0x5c')](_0x28a0f1,_0x41524c[_0x5a02f3('0x1b')],_0x41524c);}}Object[_0x519051('0x5c')](_0x61684,_0x519051('0x50'),{'value':!0x0}),_0x61684[_0x519051('0x37')]=void 0x0;var _0x288c73=function(){var _0x7a2f25=_0x519051;function _0x544c02(){var _0x3800da=_0x154d;!function(_0x372ebc,_0x4920b8){if(!(_0x372ebc instanceof _0x4920b8))throw new TypeError('Cannot\x20call\x20a\x20class\x20as\x20a\x20function');}(this,_0x544c02),this['baseUrl']='',this[_0x3800da('0x55')]={};}var _0x4ab2ae,_0x211af2,_0x381f59;return _0x4ab2ae=_0x544c02,(_0x211af2=[{'key':_0x7a2f25('0x25'),'value':function(_0x2f97e3){var _0x3ce4da=_0x7a2f25;this[_0x3ce4da('0x56')]=_0x2f97e3;}},{'key':_0x7a2f25('0x27'),'value':function(_0x5b07b1){var _0x2dc136=_0x7a2f25;this[_0x2dc136('0x55')]=_0x5b07b1;}},{'key':'setTimeUtils','value':function(_0x1c91ee){var _0x1743aa=_0x7a2f25;this[_0x1743aa('0x61')]=_0x1c91ee;}},{'key':'getNotifications','value':function(_0x2be127,_0x1643cc){var _0x225a4b=_0x7a2f25,_0x39d5b3=this;$[_0x225a4b('0x20')](this[_0x225a4b('0x56')],{'a':'getNotifications'},function(_0x544c56){var _0x2bc9f7=_0x225a4b;'SUCCESS'===_0x544c56['status']&&_0x39d5b3['renderNotifications'](_0x544c56[_0x2bc9f7('0x3d')][0x1],_0x544c56[_0x2bc9f7('0x3d')][0x0]);});}},{'key':_0x7a2f25('0x0'),'value':function(_0x449f47,_0x2c3431){var _0x247f9f=_0x7a2f25;$['getJSON'](this[_0x247f9f('0x56')],{'a':_0x247f9f('0x6b')},function(_0x2ea05b){});}},{'key':_0x7a2f25('0x69'),'value':function(_0xdd0fd,_0x52fb2d){var _0x4d6d63=_0x7a2f25;if(0x0!==_0xdd0fd[_0x4d6d63('0x4')]){var _0xf47c42=this[_0x4d6d63('0x55')][_0x4d6d63('0x4f')];_0x52fb2d>0x0?(_0xf47c42=_0xf47c42[_0x4d6d63('0x1c')](_0x4d6d63('0x3b'),_0x52fb2d),_0xf47c42=_0x52fb2d>0x1?_0xf47c42['replace'](_0x4d6d63('0x13'),_0x4d6d63('0x6d')['concat'](_0x52fb2d,'\x20new\x20notifications')):_0xf47c42[_0x4d6d63('0x1c')](_0x4d6d63('0x13'),_0x4d6d63('0x6d')[_0x4d6d63('0x75')](_0x52fb2d,_0x4d6d63('0x65')))):_0xf47c42=(_0xf47c42=_0xf47c42[_0x4d6d63('0x1c')]('#_count_#',''))['replace'](_0x4d6d63('0x13'),_0x4d6d63('0x3c'));var _0x30420b='';for(var _0x4a2b54 in _0xdd0fd)_0x30420b+=this['renderNotification'](_0xdd0fd[_0x4a2b54]);_0xf47c42=_0xf47c42[_0x4d6d63('0x1c')](_0x4d6d63('0x6a'),_0x30420b);var _0x532ce0=$(_0xf47c42);0x0===_0x52fb2d&&_0x532ce0[_0x4d6d63('0x1')](_0x4d6d63('0x15'))[_0x4d6d63('0x2c')](),_0x532ce0['attr']('id',_0x4d6d63('0x4f')),$(_0x4d6d63('0x30'))[_0x4d6d63('0x64')](_0x532ce0),$(_0x4d6d63('0x3'))[_0x4d6d63('0x66')]({'height':_0x4d6d63('0x38'),'alwaysVisible':!0x1,'size':_0x4d6d63('0x59')})['css'](_0x4d6d63('0x68'),_0x4d6d63('0x5b')),this[_0x4d6d63('0x61')][_0x4d6d63('0x42')]($(_0x4d6d63('0x6f')));}}},{'key':'renderNotification','value':function(_0x52ba61){var _0x2fa774=_0x7a2f25,_0x2bfd9f=this['templates'][_0x2fa774('0x2e')];_0x2bfd9f=_0x2bfd9f[_0x2fa774('0x1c')](_0x2fa774('0xd'),_0x52ba61[_0x2fa774('0x2a')]);try{var _0x345ee2=JSON['parse'](_0x52ba61['action']);_0x2bfd9f=_0x2bfd9f[_0x2fa774('0x1c')]('#_url_#',this[_0x2fa774('0x56')][_0x2fa774('0x1c')](_0x2fa774('0x72'),'?')+_0x345ee2['url']);}catch(_0x2799c2){_0x2bfd9f=_0x2bfd9f[_0x2fa774('0x1c')](_0x2fa774('0x4b'),'');}return _0x2bfd9f=(_0x2bfd9f=(_0x2bfd9f=_0x2bfd9f[_0x2fa774('0x1c')](_0x2fa774('0x1e'),_0x52ba61[_0x2fa774('0x45')]))[_0x2fa774('0x1c')](_0x2fa774('0x32'),_0x52ba61['type']))[_0x2fa774('0x1c')]('#_message_#',this[_0x2fa774('0x54')](_0x52ba61[_0x2fa774('0x36')],0x1b));}},{'key':_0x7a2f25('0x54'),'value':function(_0x41c24b,_0x3fdce9){var _0x586545=_0x7a2f25,_0x3029b9='';try{for(var _0xb5696a=_0x41c24b[_0x586545('0xe')]('\x20'),_0x4ba3f8=0x0,_0x4216f9=0x0;_0x4216f9<_0xb5696a[_0x586545('0x4')];_0x4216f9++)(_0x4ba3f8+=_0xb5696a[_0x4216f9]['length']+0x1)>_0x3fdce9?(_0x3029b9+=''[_0x586545('0x75')](_0xb5696a[_0x4216f9],_0x586545('0x77')),_0x4ba3f8=0x0):_0x3029b9+=''['concat'](_0xb5696a[_0x4216f9],'\x20');}catch(_0x129ec0){}return _0x3029b9;}}])&&_0xb5974b(_0x4ab2ae[_0x7a2f25('0x4d')],_0x211af2),_0x381f59&&_0xb5974b(_0x4ab2ae,_0x381f59),_0x544c02;}();_0x61684[_0x519051('0x37')]=_0x288c73;},{}],0x2:[function(_0x5b11e7,_0x468ca6,_0x4da637){var _0x168c06=_0x154d;'use strict';function _0x926959(_0x3ec8ee,_0x41c1e9){var _0x237e1d=_0x154d;if(!(_0x3ec8ee instanceof _0x41c1e9))throw new TypeError(_0x237e1d('0x5e'));}function _0x575047(_0x1f9ce3,_0x3bd51c){var _0x2d57d4=_0x154d;for(var _0x4d442d=0x0;_0x4d442d<_0x3bd51c['length'];_0x4d442d++){var _0x38ef5d=_0x3bd51c[_0x4d442d];_0x38ef5d[_0x2d57d4('0x2f')]=_0x38ef5d[_0x2d57d4('0x2f')]||!0x1,_0x38ef5d[_0x2d57d4('0x43')]=!0x0,_0x2d57d4('0x74')in _0x38ef5d&&(_0x38ef5d[_0x2d57d4('0x39')]=!0x0),Object['defineProperty'](_0x1f9ce3,_0x38ef5d[_0x2d57d4('0x1b')],_0x38ef5d);}}function _0x2391d0(_0x1b3a67,_0x41dc4b,_0x44f6b0){return _0x41dc4b&&_0x575047(_0x1b3a67['prototype'],_0x41dc4b),_0x44f6b0&&_0x575047(_0x1b3a67,_0x44f6b0),_0x1b3a67;}Object['defineProperty'](_0x4da637,'__esModule',{'value':!0x0}),_0x4da637[_0x168c06('0x37')]=void 0x0;var _0x331b80=function(){var _0x5a2f66=_0x168c06;function _0x4b69d0(){var _0x40fedc=_0x154d;_0x926959(this,_0x4b69d0),this[_0x40fedc('0x3d')]={};}return _0x2391d0(_0x4b69d0,[{'key':_0x5a2f66('0x34'),'value':function(_0xfcc29d){var _0x2ec2f9=_0x5a2f66;return this[_0x2ec2f9('0x3d')][_0xfcc29d];}},{'key':'setItem','value':function(_0x15e908,_0x5cdd49){this['data'][_0x15e908]=_0x5cdd49;}},{'key':'removeAllByPrefix','value':function(_0x1ceb4a){var _0x3a56d6=_0x5a2f66;for(var _0x3b3218=Object[_0x3a56d6('0x60')](this[_0x3a56d6('0x3d')]),_0x2c004d=0x0;_0x2c004d<_0x3b3218[_0x3a56d6('0x4')];_0x2c004d++)_0x3b3218[_0x2c004d][_0x3a56d6('0x3f')](_0x1ceb4a)>0x0&&delete this['data'][_0x3b3218[_0x2c004d]];}}]),_0x4b69d0;}(),_0x48438e=function(){var _0x5658fd=_0x168c06;function _0x5679a1(_0x5e885c){var _0x4eae7d=_0x154d;_0x926959(this,_0x5679a1),this[_0x4eae7d('0x31')]=_0x5e885c||new _0x331b80();}return _0x2391d0(_0x5679a1,[{'key':'getKey','value':function(_0x560926,_0x13b90e){var _0x24e230=_0x154d,_0x727a3=''[_0x24e230('0x75')](_0x560926,'|');for(var _0x3e2bd3 in _0x13b90e)_0x727a3+=''['concat'](_0x3e2bd3,'=')[_0x24e230('0x75')](_0x13b90e[_0x3e2bd3],'|');return _0x727a3;}},{'key':_0x5658fd('0x7'),'value':function(_0x467e09){var _0x29455c=_0x5658fd;this[_0x29455c('0x31')][_0x29455c('0x4a')]('t='[_0x29455c('0x75')](_0x467e09));}},{'key':_0x5658fd('0x2'),'value':function(_0x26010d){var _0x4ced4d=_0x5658fd,_0x5923da=this[_0x4ced4d('0x31')][_0x4ced4d('0x34')](_0x26010d);return _0x5923da||null;}},{'key':'setData','value':function(_0x10498a,_0x2941d2){var _0x86ffd=_0x5658fd;return void 0x0!==_0x2941d2['status']&&null!=_0x2941d2[_0x86ffd('0xf')]&&_0x86ffd('0x3a')!==_0x2941d2[_0x86ffd('0xf')]?null:(this['storage'][_0x86ffd('0x18')](_0x10498a,_0x2941d2),_0x2941d2);}}]),_0x5679a1;}();_0x4da637[_0x168c06('0x37')]=_0x48438e;},{}],0x3:[function(_0xf1cc29,_0x1e9719,_0x2b4e6d){var _0x2d4f44=_0x154d;'use strict';Object[_0x2d4f44('0x5c')](_0x2b4e6d,_0x2d4f44('0x50'),{'value':!0x0}),_0x2b4e6d[_0x2d4f44('0x37')]=void 0x0;var _0xb93a86={'facebook':function(_0x3b314d){var _0x26280e=_0x2d4f44,_0x120db7=screen[_0x26280e('0x68')]/0x2-0x15e,_0x27b243=screen['height']/0x2-0xfa;return _0x3b314d='https://www.facebook.com/sharer/sharer.php?u='[_0x26280e('0x75')](encodeURIComponent(_0x3b314d)),window[_0x26280e('0x52')](_0x3b314d,_0x26280e('0x23'),_0x26280e('0x21')[_0x26280e('0x75')](0x2bc,_0x26280e('0x5'))['concat'](0x1f4,_0x26280e('0xc'))['concat'](_0x120db7,_0x26280e('0x1f'))[_0x26280e('0x75')](_0x27b243)),!0x1;},'google':function(_0x2af812){var _0x5efd91=_0x2d4f44,_0x2146b7=screen[_0x5efd91('0x68')]/0x2-0xfa,_0x38f83a=screen['height']/0x2-0xfa;return _0x2af812=_0x5efd91('0x5f')[_0x5efd91('0x75')](encodeURIComponent(_0x2af812)),window[_0x5efd91('0x52')](_0x2af812,_0x5efd91('0x47'),_0x5efd91('0x21')[_0x5efd91('0x75')](0x1f4,',height=')[_0x5efd91('0x75')](0x1f4,_0x5efd91('0xc'))[_0x5efd91('0x75')](_0x2146b7,_0x5efd91('0x1f'))['concat'](_0x38f83a)),!0x1;},'linkedin':function(_0x43bb27){var _0x304cd1=_0x2d4f44,_0x2bded0=screen[_0x304cd1('0x68')]/0x2-0xfa,_0x670877=screen[_0x304cd1('0x6')]/0x2-0xfa;return _0x43bb27='https://www.linkedin.com/cws/share?url='[_0x304cd1('0x75')](encodeURIComponent(_0x43bb27)),window[_0x304cd1('0x52')](_0x43bb27,_0x304cd1('0x48'),_0x304cd1('0x21')[_0x304cd1('0x75')](0x1f4,',height=')['concat'](0x1f4,_0x304cd1('0xc'))[_0x304cd1('0x75')](_0x2bded0,_0x304cd1('0x1f'))[_0x304cd1('0x75')](_0x670877)),!0x1;},'twitter':function(_0x12936d,_0x5bd3bd){var _0x21c0b7=_0x2d4f44;return window[_0x21c0b7('0x52')](_0x21c0b7('0x24')[_0x21c0b7('0x75')](escape(_0x5bd3bd),_0x21c0b7('0x8'))[_0x21c0b7('0x75')](escape(_0x12936d)),_0x21c0b7('0x28'),'width=550,height=260,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=no,left=200,top=200'),!0x1;}};_0x2b4e6d[_0x2d4f44('0x37')]=_0xb93a86;},{}],0x4:[function(_0x37cc0d,_0xfdeacd,_0x9d63d4){var _0x377502=_0x154d;'use strict';function _0x858cec(_0x40478e,_0x4df655){var _0x1223d9=_0x154d;for(var _0x279040=0x0;_0x279040<_0x4df655[_0x1223d9('0x4')];_0x279040++){var _0x1166ca=_0x4df655[_0x279040];_0x1166ca[_0x1223d9('0x2f')]=_0x1166ca[_0x1223d9('0x2f')]||!0x1,_0x1166ca[_0x1223d9('0x43')]=!0x0,_0x1223d9('0x74')in _0x1166ca&&(_0x1166ca[_0x1223d9('0x39')]=!0x0),Object[_0x1223d9('0x5c')](_0x40478e,_0x1166ca[_0x1223d9('0x1b')],_0x1166ca);}}Object[_0x377502('0x5c')](_0x9d63d4,_0x377502('0x50'),{'value':!0x0}),_0x9d63d4['default']=void 0x0;var _0x188305=function(){var _0x373cd2=_0x377502;function _0x4e5565(){!function(_0x2221f7,_0x1651e8){var _0x68a1f1=_0x154d;if(!(_0x2221f7 instanceof _0x1651e8))throw new TypeError(_0x68a1f1('0x5e'));}(this,_0x4e5565);}var _0x1c4488,_0x375636,_0xe64e00;return _0x1c4488=_0x4e5565,(_0x375636=[{'key':'setServerGMToffset','value':function(_0x14a43a){var _0x233840=_0x154d;this[_0x233840('0x17')]=_0x14a43a;}},{'key':'getMySQLFormatDate','value':function(_0x571c91){var _0x42e9d9=_0x154d,_0x15dc06=function(_0x1b8927){var _0x14c7bd=_0x154d;return _0x1b8927<0xa?'0'[_0x14c7bd('0x75')](_0x1b8927):_0x1b8927;};return''[_0x42e9d9('0x75')](_0x571c91[_0x42e9d9('0x79')](),'-')[_0x42e9d9('0x75')](_0x15dc06(_0x571c91[_0x42e9d9('0x6c')]()+0x1),'-')[_0x42e9d9('0x75')](_0x15dc06(_0x571c91[_0x42e9d9('0x44')]()));}},{'key':_0x373cd2('0x42'),'value':function(_0x424946){var _0x1c6afd=_0x373cd2,_0x23c956=function(_0x4af4fe,_0x373eba){var _0x4b3d60=_0x154d,_0x429fec='am',_0x3228ab=_0x4af4fe;_0x3228ab>=0xc&&(_0x429fec='pm',_0x3228ab>0xc&&(_0x3228ab-=0xc));var _0x1f013c='';_0x373eba<0xa&&(_0x1f013c='0');var _0x1036cc='';return 0x0===_0x4af4fe&&(_0x1036cc='0'),'\x20at\x20'['concat'](_0x1036cc)['concat'](_0x3228ab,':')[_0x4b3d60('0x75')](_0x1f013c)[_0x4b3d60('0x75')](_0x373eba)['concat'](_0x429fec);},_0x50124a=new Date(),_0x2c81d5=['January',_0x1c6afd('0xb'),_0x1c6afd('0x5a'),_0x1c6afd('0x1d'),_0x1c6afd('0x51'),'June','July',_0x1c6afd('0x4e'),_0x1c6afd('0x76'),'October',_0x1c6afd('0x4c'),_0x1c6afd('0x57')],_0x29dc27=[_0x1c6afd('0x70'),'Monday',_0x1c6afd('0x6e'),_0x1c6afd('0x2b'),'Thursday','Friday','Saturday'],_0xf7958d=0x3c*(this[_0x1c6afd('0x17')]- -new Date()[_0x1c6afd('0x35')]()/0x3c)*0x3c*0x3e8;_0x424946[_0x1c6afd('0x26')](function(){var _0x25bb20=_0x1c6afd;try{var _0xb8a459=$(this)[_0x25bb20('0x40')]()[_0x25bb20('0xe')]('\x20'),_0x53746c=_0xb8a459[0x0],_0x463190=_0xb8a459[0x1],_0x307e16=_0x53746c[_0x25bb20('0xe')]('-'),_0x4ee542=_0x307e16[0x0],_0x4a041c=_0x307e16[0x1]-0x1,_0xc9b6a=_0x307e16[0x2],_0x285aec=_0x463190[_0x25bb20('0xe')](':'),_0x18fd9c=_0x285aec[0x0],_0x820111=_0x285aec[0x1],_0x24a834=_0x285aec[0x2],_0x1e3234=new Date(_0x4ee542,_0x4a041c,_0xc9b6a,_0x18fd9c,_0x820111,_0x24a834)[_0x25bb20('0x11')](),_0x5b5a0a=new Date(_0x1e3234-_0xf7958d),_0x1261b1=_0x5b5a0a[_0x25bb20('0x9')]('d'),_0x339be9=_0x5b5a0a[_0x25bb20('0x16')](),_0x5ac42f=_0x5b5a0a[_0x25bb20('0x53')](),_0x398cb4=_0x5b5a0a[_0x25bb20('0x67')](),_0x33a31c=''[_0x25bb20('0x75')](_0x29dc27[_0x5b5a0a[_0x25bb20('0x5d')]()],',\x20')['concat'](_0x2c81d5[_0x5b5a0a[_0x25bb20('0x29')]()],'\x20')['concat'](_0x1261b1,',\x20')['concat'](_0x339be9)[_0x25bb20('0x75')](_0x23c956(_0x5ac42f,_0x398cb4)),_0x20be09=(_0x50124a['getTime']()-_0x5b5a0a[_0x25bb20('0x11')]())/0x3e8,_0x635ad8=Math[_0x25bb20('0x19')](_0x20be09/0x3c),_0xb98397=Math[_0x25bb20('0x19')](_0x20be09/0xe10),_0x47bf52=Math[_0x25bb20('0x19')](_0x20be09/0x15180),_0x5449a5=Math[_0x25bb20('0x19')](_0x20be09/0x1e13380),_0xd99ca4='';if(_0x47bf52>0x1)_0xd99ca4=''[_0x25bb20('0x75')](_0x1261b1,'\x20')[_0x25bb20('0x75')](_0x2c81d5[_0x5b5a0a[_0x25bb20('0x29')]()][_0x25bb20('0x33')](0x0,0x3)),_0x5449a5>0x1&&(_0xd99ca4=''['concat'](_0xd99ca4,'\x20')[_0x25bb20('0x75')](_0x4ee542)),_0xd99ca4+=_0x23c956(_0x5ac42f,_0x398cb4);else{if(_0xb98397>=0x1){var _0xcd02e3=Math['round'](_0xb98397);_0xd99ca4=0x1===_0xcd02e3?_0x25bb20('0x14'):''[_0x25bb20('0x75')](_0xcd02e3,_0x25bb20('0x63'));}else{if(_0x635ad8>=0x1){var _0x49de0a=Math['round'](_0x635ad8);_0xd99ca4=0x1===_0x49de0a?_0x25bb20('0x41'):''[_0x25bb20('0x75')](_0x49de0a,_0x25bb20('0x78'));}else _0x635ad8<0x1&&(_0xd99ca4='less\x20than\x20a\x20minute\x20ago');}}$(this)[_0x25bb20('0x40')](_0xd99ca4),$(this)['attr'](_0x25bb20('0x71'),_0x33a31c);}catch(_0x8aa165){}});}}])&&_0x858cec(_0x1c4488[_0x373cd2('0x4d')],_0x375636),_0xe64e00&&_0x858cec(_0x1c4488,_0xe64e00),_0x4e5565;}();_0x9d63d4[_0x377502('0x37')]=_0x188305;},{}],0x5:[function(_0x4df9cc,_0x195ce3,_0x6fac6f){var _0xa9072b=_0x154d;'use strict';var _0x5f3e5d=_0x474746(_0x4df9cc(_0xa9072b('0x3e'))),_0x450f63=_0x474746(_0x4df9cc(_0xa9072b('0x58'))),_0x5a1bbf=_0x474746(_0x4df9cc(_0xa9072b('0x22'))),_0x240dc2=_0x474746(_0x4df9cc(_0xa9072b('0x49')));function _0x474746(_0xb86c15){return _0xb86c15&&_0xb86c15['__esModule']?_0xb86c15:{'default':_0xb86c15};}window[_0xa9072b('0x12')]=_0x5a1bbf['default'],window['SocialShare']=_0x240dc2[_0xa9072b('0x37')],window[_0xa9072b('0x2d')]=function(_0x52decb){var _0x57cec0=_0xa9072b,_0x186484=new _0x450f63[(_0x57cec0('0x37'))]();return _0x186484[_0x57cec0('0xa')](_0x52decb),_0x186484;},window[_0xa9072b('0x46')]=function(_0x2d4f34){var _0xef28ac=_0xa9072b,_0x3ccc28=new _0x5f3e5d[(_0xef28ac('0x37'))]();return _0x3ccc28[_0xef28ac('0x25')](_0x2d4f34),_0x3ccc28[_0xef28ac('0x62')](timeUtils),_0x3ccc28;};},{'./Notifications':0x1,'./RequestCache':0x2,'./SocialShare':0x3,'./TimeUtils':0x4}]},{},[0x5]);
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/*
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ */
+var NotificationManager = /*#__PURE__*/function () {
+  function NotificationManager() {
+    _classCallCheck(this, NotificationManager);
+
+    this.baseUrl = '';
+    this.templates = {};
+  }
+
+  _createClass(NotificationManager, [{
+    key: "setBaseUrl",
+    value: function setBaseUrl(url) {
+      this.baseUrl = url;
+    }
+  }, {
+    key: "setTemplates",
+    value: function setTemplates(data) {
+      this.templates = data;
+    }
+  }, {
+    key: "setTimeUtils",
+    value: function setTimeUtils(timeUtils) {
+      this.timeUtils = timeUtils;
+    }
+  }, {
+    key: "getNotifications",
+    value: function getNotifications(name, data) {
+      var that = this;
+      $.getJSON(this.baseUrl, {
+        a: 'getNotifications'
+      }, function (_data) {
+        if (_data.status === 'SUCCESS') {
+          that.renderNotifications(_data.data[1], _data.data[0]);
+        }
+      });
+    }
+  }, {
+    key: "clearPendingNotifications",
+    value: function clearPendingNotifications(name, data) {
+      var that = this;
+      $.getJSON(this.baseUrl, {
+        a: 'clearNotifications'
+      }, function (_data) {});
+    }
+  }, {
+    key: "renderNotifications",
+    value: function renderNotifications(notifications, unreadCount) {
+      if (notifications.length === 0) {
+        return;
+      }
+
+      var t = this.templates.notifications;
+
+      if (unreadCount > 0) {
+        t = t.replace('#_count_#', unreadCount);
+
+        if (unreadCount > 1) {
+          t = t.replace('#_header_#', "You have ".concat(unreadCount, " new notifications"));
+        } else {
+          t = t.replace('#_header_#', "You have ".concat(unreadCount, " new notification"));
+        }
+      } else {
+        t = t.replace('#_count_#', '');
+        t = t.replace('#_header_#', 'You have no new notifications');
+      }
+
+      var notificationStr = '';
+
+      for (var index in notifications) {
+        notificationStr += this.renderNotification(notifications[index]);
+      }
+
+      t = t.replace('#_notifications_#', notificationStr);
+      var $obj = $(t);
+
+      if (unreadCount === 0) {
+        $obj.find('.label-danger').remove();
+      }
+
+      $obj.attr('id', 'notifications');
+      var k = $('#notifications');
+      k.replaceWith($obj);
+      $('.navbar .menu').slimscroll({
+        height: '320px',
+        alwaysVisible: false,
+        size: '3px'
+      }).css('width', '100%');
+      this.timeUtils.convertToRelativeTime($('.notificationTime'));
+    }
+  }, {
+    key: "renderNotification",
+    value: function renderNotification(notification) {
+      var t = this.templates.notification;
+      t = t.replace('#_image_#', notification.image);
+
+      try {
+        var json = JSON.parse(notification.action);
+        t = t.replace('#_url_#', this.baseUrl.replace('service.php', '?') + json.url);
+      } catch (e) {
+        t = t.replace('#_url_#', '');
+      }
+
+      t = t.replace('#_time_#', notification.time);
+      t = t.replace('#_fromName_#', notification.type);
+      t = t.replace('#_message_#', this.getLineBreakString(notification.message, 27));
+      return t;
+    }
+  }, {
+    key: "getLineBreakString",
+    value: function getLineBreakString(str, len) {
+      var t = '';
+
+      try {
+        var arr = str.split(' ');
+        var count = 0;
+
+        for (var i = 0; i < arr.length; i++) {
+          count += arr[i].length + 1;
+
+          if (count > len) {
+            t += "".concat(arr[i], "<br/>");
+            count = 0;
+          } else {
+            t += "".concat(arr[i], " ");
+          }
+        }
+      } catch (e) {// Do nothing
+      }
+
+      return t;
+    }
+  }]);
+
+  return NotificationManager;
+}();
+
+var _default = NotificationManager;
+exports["default"] = _default;
+
+},{}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/*
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ */
+
+/**
+ * RequestCache
+ */
+var MemoryStorage = /*#__PURE__*/function () {
+  function MemoryStorage() {
+    _classCallCheck(this, MemoryStorage);
+
+    this.data = {};
+  }
+
+  _createClass(MemoryStorage, [{
+    key: "getItem",
+    value: function getItem(key) {
+      return this.data[key];
+    }
+  }, {
+    key: "setItem",
+    value: function setItem(key, data) {
+      this.data[key] = data;
+    }
+  }, {
+    key: "removeAllByPrefix",
+    value: function removeAllByPrefix(prefix) {
+      var keys = Object.keys(this.data);
+
+      for (var i = 0; i < keys.length; i++) {
+        if (keys[i].indexOf(prefix) > 0) {
+          delete this.data[keys[i]];
+        }
+      }
+    }
+  }]);
+
+  return MemoryStorage;
+}();
+
+var RequestCache = /*#__PURE__*/function () {
+  function RequestCache(storage) {
+    _classCallCheck(this, RequestCache);
+
+    if (!storage) {
+      this.storage = new MemoryStorage();
+    } else {
+      this.storage = storage;
+    }
+  }
+
+  _createClass(RequestCache, [{
+    key: "getKey",
+    value: function getKey(url, params) {
+      var key = "".concat(url, "|");
+
+      for (var index in params) {
+        key += "".concat(index, "=").concat(params[index], "|");
+      }
+
+      return key;
+    }
+    /*
+    invalidateTable(table) {
+      let key;
+      for (let i = 0; i < this.storage.length; i++) {
+        key = this.storage.key(i);
+        if (key.indexOf(`t=${table}`) > 0) {
+          this.storage.removeItem(key);
+        }
+      }
+    }
+    */
+
+  }, {
+    key: "invalidateTable",
+    value: function invalidateTable(table) {
+      this.storage.removeAllByPrefix("t=".concat(table));
+    }
+  }, {
+    key: "getData",
+    value: function getData(key) {
+      var data = this.storage.getItem(key);
+
+      if (!data) {
+        return null;
+      }
+
+      return data;
+    }
+  }, {
+    key: "setData",
+    value: function setData(key, data) {
+      if (data.status !== undefined && data.status != null && data.status !== 'SUCCESS') {
+        return null;
+      }
+
+      this.storage.setItem(key, data);
+      return data;
+    }
+  }]);
+
+  return RequestCache;
+}();
+
+var _default = RequestCache;
+exports["default"] = _default;
+
+},{}],3:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+/* eslint-disable no-restricted-globals */
+
+/*
+   Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ */
+var SocialShare = {
+  facebook: function facebook(url) {
+    var w = 700;
+    var h = 500;
+    var left = screen.width / 2 - w / 2;
+    var top = screen.height / 2 - h / 2;
+    url = "https://www.facebook.com/sharer/sharer.php?u=".concat(encodeURIComponent(url));
+    window.open(url, 'Share on Facebook', "width=".concat(w, ",height=").concat(h, ",left=").concat(left, ",top=").concat(top));
+    return false;
+  },
+  google: function google(url) {
+    var w = 500;
+    var h = 500;
+    var left = screen.width / 2 - w / 2;
+    var top = screen.height / 2 - h / 2;
+    url = "https://plus.google.com/share?url=".concat(encodeURIComponent(url));
+    window.open(url, 'Share on Google', "width=".concat(w, ",height=").concat(h, ",left=").concat(left, ",top=").concat(top));
+    return false;
+  },
+  linkedin: function linkedin(url) {
+    var w = 500;
+    var h = 500;
+    var left = screen.width / 2 - w / 2;
+    var top = screen.height / 2 - h / 2;
+    url = "https://www.linkedin.com/cws/share?url=".concat(encodeURIComponent(url));
+    window.open(url, 'Share on Linked in', "width=".concat(w, ",height=").concat(h, ",left=").concat(left, ",top=").concat(top));
+    return false;
+  },
+  twitter: function twitter(url, msg) {
+    window.open("http://twitter.com/share?text=".concat(escape(msg), "&url=").concat(escape(url)), 'popup', 'width=550,height=260,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=no,left=200,top=200');
+    return false;
+  }
+};
+var _default = SocialShare;
+exports["default"] = _default;
+
+},{}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/* eslint-disable camelcase,brace-style */
+
+/*
+ Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ */
+var TimeUtils = /*#__PURE__*/function () {
+  function TimeUtils() {
+    _classCallCheck(this, TimeUtils);
+  }
+
+  _createClass(TimeUtils, [{
+    key: "setServerGMToffset",
+    value: function setServerGMToffset(serverGMToffset) {
+      this.serverGMToffset = serverGMToffset;
+    }
+  }, {
+    key: "getMySQLFormatDate",
+    value: function getMySQLFormatDate(date) {
+      var format = function format(val) {
+        if (val < 10) {
+          return "0".concat(val);
+        }
+
+        return val;
+      };
+
+      return "".concat(date.getUTCFullYear(), "-").concat(format(date.getUTCMonth() + 1), "-").concat(format(date.getUTCDate()));
+    }
+  }, {
+    key: "convertToRelativeTime",
+    value: function convertToRelativeTime(selector) {
+      var that = this;
+
+      var getAmPmTime = function getAmPmTime(curHour, curMin) {
+        var amPm = 'am';
+        var amPmHour = curHour;
+
+        if (amPmHour >= 12) {
+          amPm = 'pm';
+
+          if (amPmHour > 12) {
+            amPmHour -= 12;
+          }
+        }
+
+        var prefixCurMin = '';
+
+        if (curMin < 10) {
+          prefixCurMin = '0';
+        }
+
+        var prefixCurHour = '';
+
+        if (curHour === 0) {
+          prefixCurHour = '0';
+        }
+
+        return " at ".concat(prefixCurHour).concat(amPmHour, ":").concat(prefixCurMin).concat(curMin).concat(amPm);
+      };
+
+      var getBrowserTimeZone = function getBrowserTimeZone() {
+        var current_date = new Date();
+        var gmt_offset = current_date.getTimezoneOffset() / 60;
+        return -gmt_offset;
+      };
+
+      var curDate = new Date();
+      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      var timezoneDiff = this.serverGMToffset - getBrowserTimeZone();
+      var timezoneTimeDiff = timezoneDiff * 60 * 60 * 1000;
+      selector.each(function () {
+        try {
+          var thisValue = $(this).html(); // Split value into date and time
+
+          var thisValueArray = thisValue.split(' ');
+          var thisValueDate = thisValueArray[0];
+          var thisValueTime = thisValueArray[1]; // Split date into components
+
+          var thisValueDateArray = thisValueDate.split('-');
+          var curYear = thisValueDateArray[0];
+          var curMonth = thisValueDateArray[1] - 1;
+          var curDay = thisValueDateArray[2]; // Split time into components
+
+          var thisValueTimeArray = thisValueTime.split(':');
+          var curHour = thisValueTimeArray[0];
+          var curMin = thisValueTimeArray[1];
+          var curSec = thisValueTimeArray[2]; // Create this date
+
+          var thisDate = new Date(curYear, curMonth, curDay, curHour, curMin, curSec);
+          var thisTime = thisDate.getTime();
+          var tzDate = new Date(thisTime - timezoneTimeDiff); // var tzDay = tzDate.getDay();//getDay will return the day of the week not the month
+          // var tzDay = tzDate.getUTCDate(); //getUTCDate will return the day of the month
+
+          var tzDay = tzDate.toString('d'); //
+
+          var tzYear = tzDate.getFullYear();
+          var tzHour = tzDate.getHours();
+          var tzMin = tzDate.getMinutes(); // Create the full date
+          // var fullDate = days[tzDate.getDay()] + ", " + months[tzDate.getMonth()] + " " + tzDay + ", " + tzYear + getAmPmTime(tzHour, tzMin);
+
+          var fullDate = "".concat(days[tzDate.getDay()], ", ").concat(months[tzDate.getMonth()], " ").concat(tzDay, ", ").concat(tzYear).concat(getAmPmTime(tzHour, tzMin)); // Get the time different
+
+          var timeDiff = (curDate.getTime() - tzDate.getTime()) / 1000;
+          var minDiff = Math.abs(timeDiff / 60);
+          var hourDiff = Math.abs(timeDiff / (60 * 60));
+          var dayDiff = Math.abs(timeDiff / (60 * 60 * 24));
+          var yearDiff = Math.abs(timeDiff / (60 * 60 * 24 * 365)); // If more than a day old, display the month, day and time (and year, if applicable)
+
+          var fbDate = '';
+
+          if (dayDiff > 1) {
+            // fbDate = curDay + " " + months[tzDate.getMonth()].substring(0,3);
+            fbDate = "".concat(tzDay, " ").concat(months[tzDate.getMonth()].substring(0, 3)); // Add the year, if applicable
+
+            if (yearDiff > 1) {
+              fbDate = "".concat(fbDate, " ").concat(curYear);
+            } // Add the time
+
+
+            fbDate += getAmPmTime(tzHour, tzMin);
+          } // Less than a day old, and more than an hour old
+          else if (hourDiff >= 1) {
+              var roundedHour = Math.round(hourDiff);
+              if (roundedHour === 1) fbDate = 'about an hour ago';else fbDate = "".concat(roundedHour, " hours ago");
+            } // Less than an hour, and more than a minute
+            else if (minDiff >= 1) {
+                var roundedMin = Math.round(minDiff);
+                if (roundedMin === 1) fbDate = 'about a minute ago';else fbDate = "".concat(roundedMin, " minutes ago");
+              } // Less than a minute
+              else if (minDiff < 1) {
+                  fbDate = 'less than a minute ago';
+                } // Update this element
+
+
+          $(this).html(fbDate);
+          $(this).attr('title', fullDate);
+        } catch (e) {// Do nothing
+        }
+      });
+    }
+  }]);
+
+  return TimeUtils;
+}();
+
+var _default = TimeUtils;
+exports["default"] = _default;
+
+},{}],5:[function(require,module,exports){
+"use strict";
+
+var _Notifications = _interopRequireDefault(require("./Notifications"));
+
+var _TimeUtils = _interopRequireDefault(require("./TimeUtils"));
+
+var _RequestCache = _interopRequireDefault(require("./RequestCache"));
+
+var _SocialShare = _interopRequireDefault(require("./SocialShare"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+/* global timeUtils */
+
+/*
+   Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
+ Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
+ */
+window.RequestCache = _RequestCache["default"];
+window.SocialShare = _SocialShare["default"];
+
+window.setupTimeUtils = function (diffHoursBetweenServerTimezoneWithGMT) {
+  var timeUtils = new _TimeUtils["default"]();
+  timeUtils.setServerGMToffset(diffHoursBetweenServerTimezoneWithGMT);
+  return timeUtils;
+};
+
+window.setupNotifications = function (baseUrl) {
+  var notificationManager = new _Notifications["default"]();
+  notificationManager.setBaseUrl(baseUrl);
+  notificationManager.setTimeUtils(timeUtils);
+  return notificationManager;
+};
+
+},{"./Notifications":1,"./RequestCache":2,"./SocialShare":3,"./TimeUtils":4}]},{},[5])
+
+//# sourceMappingURL=common.js.map
