@@ -14,20 +14,6 @@ services:
       - ./docker/init.sql:/docker-entrypoint-initdb.d/setup.sql
       - ./docker/development/db_data:/var/lib/mysql
 
-#  mysql:
-#    image: mysql:8.0.40
-#    #command: --lower_case_table_names=1
-#    ports:
-#      - 9306:3306
-#    environment:
-#      MYSQL_ROOT_PASSWORD: IceHrmR00t
-#      MYSQL_USER: dev
-#      MYSQL_PASSWORD: dev
-#      MYSQL_DATABASE: icehrm
-#    volumes:
-#      - ./docker/init.sql:/docker-entrypoint-initdb.d/setup.sql
-#      - ./docker/development/db_data:/var/lib/mysql
-
   icehrm:
     build: .
     ports:
@@ -36,9 +22,6 @@ services:
       ICE_CONFIG_FILE: ../docker/development/config/config.php
     volumes:
       - .:/var/www/html
-    extra_hosts:
-      - "dascore.org:192.168.65.254"
-      - "admin.dascore.org:192.168.65.254"
 
   icehrm-worker-dev:
     build:
