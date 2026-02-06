@@ -26,6 +26,10 @@ if(empty($user->default_module)){
         "&m=".$defaultModule->mod_group."_".str_replace(" ","_",$defaultModule->menu);
 }
 
+if (!\Classes\BaseService::getInstance()->isModuleMenuEnabled($_REQUEST['g'].'>'.$_REQUEST['n'])) {
+	header("Location:".CLIENT_BASE_URL."login.php");
+	exit();
+}
 
 //Check Module Permissions
 $modulePermissions = \Classes\BaseService::getInstance()->loadModulePermissions(
@@ -57,9 +61,9 @@ if(!in_array($user->user_level, $modulePermissions['user'])){
 $logoFileUrl = \Classes\UIManager::getInstance()->getCompanyLogoUrl();
 
 $companyName = \Classes\SettingsManager::getInstance()->getSetting('Company: Name');
-
+$companyName = substr($companyName,0,40);
 if(empty($companyName) || $companyName == "Sample Company Pvt Ltd"){
-    $companyName = APP_NAME;
+    $companyName = 'IceHrm';
 }
 
 //Load meta info
@@ -77,18 +81,25 @@ if (defined('SYM_CLIENT')) {
     $restApiBase = CLIENT_BASE_URL.'api/';
 }
 
+// Check IceHrm.com connection status for Admin users
+$isConnectedToIceHrm = false;
+if ($user->user_level == 'Admin') {
+    $connectionService = \Classes\ConnectionService::getInstance();
+    $isConnectedToIceHrm = $connectionService->isConnected();
+}
+
 ?><!DOCTYPE html>
 <html>
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0632Q0XBK"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0B30PDPY"></script>
     <script>
         window.ga = [];
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-M0632Q0XBK');
+        gtag('config', 'G-WQ0B30PDPY');
     </script>
 
     <meta charset="utf-8">
@@ -111,8 +122,8 @@ if (defined('SYM_CLIENT')) {
     <script>
         var baseUrl = '<?=CLIENT_BASE_URL?>service.php';
         var CLIENT_BASE_URL = '<?=CLIENT_BASE_URL?>';
+        var BASE_URL = '<?=BASE_URL?>';
     </script>
-
 </head>
 <body class="skin-blue" data-turbolinks="false">
 <header id="delegationDiv" class="header">
@@ -141,6 +152,11 @@ if (defined('SYM_CLIENT')) {
 <?php if(\Classes\UIManager::getInstance()->getCurrentLanguageCode() === 'ar') {?>
     <link href="<?=BASE_URL?>css/rtl.css" rel="stylesheet">
 <?php } ?>
+<script>
+    var isConnectedToIceHrm = <?=json_encode($isConnectedToIceHrm)?>;
+    var currentUserLevel = '<?=$user->user_level?>';
+    var isCloudInstance = <?=json_encode(defined('IS_CLOUD') && IS_CLOUD)?>;
+</script>
 <div class="wrapper row-offcanvas row-offcanvas-left">
     <div id="iceloader" style="
     width: 100%;
@@ -155,19 +171,40 @@ if (defined('SYM_CLIENT')) {
     background-position: center;display:none;"></div>
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="left-side sidebar-offcanvas">
+        <div class="skeletonSideMenu">
+            <div class="skeleton-menu">
+                <div class="skeleton-profile">
+                    <div class="skeleton-avatar"></div>
+                    <div class="skeleton-name"></div>
+                </div>
+                <div class="skeleton-item" style="margin-top:50px"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+            </div>
+        </div>
         <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
+        <section class="sidebar" style="display: none;">
             <!-- Sidebar user panel -->
             <?=\Classes\UIManager::getInstance()->getProfileBlocks();?>
-
             <ul class="sidebar-menu">
-
+                <div id="UserViewSwitch"></div>
 
                 <?php if($user->user_level == 'Admin' || $user->user_level == 'Manager' || $user->user_level == 'Restricted Admin' || $user->user_level == 'Restricted Manager'){?>
 
                     <?php foreach($adminModules as $menu){?>
                         <?php if(count($menu['menu']) == 0){continue;}?>
-                        <li  class="treeview" ref="<?="admin_".str_replace(" ", "_", $menu['name'])?>">
+                        <li  class="treeview" ref="<?="admin_".str_replace(" ", "_", $menu['name'])?>" id="<?="menu_admin_".str_replace(" ", "_", $menu['name'])?>">
                             <a href="#">
                                 <i class="fa <?=!isset($mainIcons[$menu['name']])?"fa-th":$mainIcons[$menu['name']];?>"></i></i> <span><?=\Classes\LanguageManager::tran($menu['name'])?></span>
                                 <i class="fa fa-angle-left pull-right"></i>
@@ -192,7 +229,7 @@ if (defined('SYM_CLIENT')) {
                     <?php foreach($userModules as $menu){?>
 
                         <?php if(count($menu['menu']) == 0){continue;}?>
-                        <li  class="treeview" ref="<?="module_".str_replace(" ", "_", $menu['name'])?>">
+                        <li  class="treeview" ref="<?="module_".str_replace(" ", "_", $menu['name'])?>" id="<?="menu_module_".str_replace(" ", "_", $menu['name'])?>">
                             <a href="#">
                                 <i class="fa <?=!isset($mainIcons[$menu['name']])?"fa-th":$mainIcons[$menu['name']];?>"></i></i> <span><?=\Classes\LanguageManager::tran($menu['name'])?></span>
                                 <i class="fa fa-angle-left pull-right"></i>
@@ -216,7 +253,7 @@ if (defined('SYM_CLIENT')) {
 
                     <?php foreach($adminModules as $menu){?>
                         <?php if(count($menu['menu']) == 0){continue;}?>
-                        <li  class="treeview" ref="<?="admin_".str_replace(" ", "_", $menu['name'])?>">
+                        <li  class="treeview" ref="<?="admin_".str_replace(" ", "_", $menu['name'])?>" id="<?="menu_admin_".str_replace(" ", "_", $menu['name'])?>">
                             <a href="#">
                                 <i class="fa <?=!isset($mainIcons[$menu['name']])?"fa-th":$mainIcons[$menu['name']];?>"></i></i> <span><?=\Classes\LanguageManager::tran($menu['name'])?></span>
                                 <i class="fa fa-angle-left pull-right"></i>
@@ -242,7 +279,7 @@ if (defined('SYM_CLIENT')) {
                     foreach($tpModules as $menu){?>
 
                     <?php if(count($menu['menu']) == 0){continue;}?>
-                    <li  class="treeview" ref="<?="module_".str_replace(" ", "_", $menu['name'])?>">
+                    <li  class="treeview" ref="<?="module_".str_replace(" ", "_", $menu['name'])?>" id="<?="menu_module_".str_replace(" ", "_", $menu['name'])?>">
                         <a href="#">
                             <i class="fa <?=$menu['icon']?>"></i></i> <span><?=\Classes\LanguageManager::tran($menu['name'])?></span>
                             <i class="fa fa-angle-left pull-right"></i>
@@ -275,10 +312,92 @@ if (defined('SYM_CLIENT')) {
         </section>
         <!-- /.sidebar -->
     </aside>
-
     <!-- Right side column. Contains the navbar and content of the page -->
     <aside class="right-side">
         <!-- Main content -->
         <section class="content">
-
+            <?php if($user->user_level == 'Admin' && !$isConnectedToIceHrm && !(defined('IS_CLOUD') && IS_CLOUD)) { ?>
+            <div id="IceHrmConnectionNotice" style="
+                background: linear-gradient(135deg, #346CB0 0%, #2a5a9a 100%);
+                border-radius: 12px;
+                padding: 20px 24px;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 4px 15px rgba(52, 108, 176, 0.3);
+            ">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div style="
+                        background: rgba(255,255,255,0.2);
+                        border-radius: 50%;
+                        width: 48px;
+                        height: 48px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    ">
+                        <i class="fa fa-link" style="color: #fff; font-size: 20px;"></i>
+                    </div>
+                    <div>
+                        <div style="color: #fff; font-weight: 600; font-size: 16px; margin-bottom: 4px;">
+                            Connect to IceHrm.com
+                        </div>
+                        <div style="color: rgba(255,255,255,0.85); font-size: 14px;">
+                            Access marketplace extensions, updates, and your purchased modules
+                        </div>
+                    </div>
+                </div>
+                <a href="<?=CLIENT_BASE_URL?>?g=extension&n=marketplace|admin&m=admin_System#my-extensions" style="
+                    background: #fff;
+                    color: #346CB0;
+                    padding: 10px 24px;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-weight: 600;
+                    transition: all 0.2s ease;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                ">
+                    Connect Now
+                </a>
+            </div>
+            <?php } ?>
+            <div class="skeletonTabs skeleton-tabs">
+                <div class="skeleton-tab selected"></div>
+                <div class="skeleton-tab"></div>
+                <div class="skeleton-tab"></div>
+            </div>
+            <div class="skeletonContent skeleton-table" style="margin-top: 50px;">
+                <div class="skeleton-row">
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                </div>
+                <div class="skeleton-row">
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                </div>
+                <div class="skeleton-row">
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                </div>
+                <div class="skeleton-row">
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                </div>
+                <div class="skeleton-row">
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                </div>
+                <div class="skeleton-row">
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                    <div class="skeleton-cell"></div>
+                </div>
+            </div>
 

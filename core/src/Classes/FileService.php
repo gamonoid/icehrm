@@ -11,8 +11,6 @@ class FileService
 
     private static $me = null;
 
-    private $memcache;
-
     private function __construct()
     {
     }
@@ -44,15 +42,9 @@ class FileService
 
     public function saveInCache($key, $data, $expire)
     {
-        if (!class_exists('\\Memcached')) {
-            return;
-        }
         try {
-            if (empty($this->memcache)) {
-                $this->memcache = new \Memcached();
-                $this->memcache->addServer(GLOB_MEMCACHE_SERVER, 11211);
-            }
-            $this->memcache->set($key, $data, $expire);
+            // Use centralized MemcacheService which has file-based fallback
+            MemcacheService::getInstance()->set($key, $data, $expire);
         } catch (\Exception $e) {
             LogManager::getInstance()->notifyException($e);
         }
@@ -373,24 +365,30 @@ class FileService
         return true;
     }
 
+	public function deleteFilesForObject($type, $id) {
+		$file = new File();
+		$files = $file->Find('object_type = ? and object_id = ?', [$type, $id]);
+		foreach ($files as $file) {
+			$this->deleteFileFromDisk($file);
+			$file->Delete();
+		}
+	}
+
     public function deleteFileFromDisk($file)
     {
-        $uploadFilesToS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
+		if( $file->object_type === 'Content' ) {
+			$s3Config = SettingsManager::getInstance()->getS3Settings(false);
+		} else {
+			$s3Config = SettingsManager::getInstance()->getS3Settings(true);
+		}
 
-        if ($uploadFilesToS3 == "1") {
-            $uploadFilesToS3Key = SettingsManager::getInstance()->getSetting(
-                "Files: Amazon S3 Key for File Upload"
-            );
-            $uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
-                "Files: Amazon S3 Secret for File Upload"
-            );
-            $s3Bucket = SettingsManager::getInstance()->getSetting("Files: S3 Bucket");
+        if ($s3Config->uploadFilesToS3 == "1") {
 
             $uploadname = CLIENT_NAME."/".$file->filename;
             LogManager::getInstance()->info("Delete from S3:".$uploadname);
 
-            $s3FileSys = new S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);
-            $s3FileSys->deleteObject($s3Bucket, $uploadname);
+            $s3FileSys = new S3FileSystem($s3Config->uploadFilesToS3Key, $s3Config->uploadFilesToS3Secret);
+            $s3FileSys->deleteObject($s3Config->s3Bucket, $uploadname);
         } else {
             LogManager::getInstance()->info("Delete:".BaseService::getInstance()->getDataDirectory().$file->filename);
             unlink(BaseService::getInstance()->getDataDirectory().$file->filename);

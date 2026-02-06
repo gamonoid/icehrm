@@ -77,13 +77,13 @@ class EmployeeStatus extends React.Component {
 
   onMessageChange() {
     this.setState({
-      message: this.inputRef.state.value,
+      message: this.inputRef.resizableTextArea.textArea.value ?? '',
     });
   }
 
   onMessageBlur() {
     this.setState({
-      message: this.inputRef.state.value,
+      message: this.inputRef.resizableTextArea.textArea.value ?? '',
     }, () => {this.syncState()});
   }
 
@@ -224,10 +224,15 @@ class EmployeeStatus extends React.Component {
         {!this.props.showInput &&
         <Space style={{width: '100%'}}>
           <Space direction={'vertical'} style={{width: '100%', marginTop:'5px'}}>
-            <Title level={5}>{this.props.adapter.gt('Today\'s Goal')}</Title>
-            <Text>{this.state.message || this.props.adapter.gt("Click edit set your goal for the day!")}</Text>
-            <Tag icon={<EditOutlined/>} color="processing" onClick={this.onTextClick.bind(this)}>
-              {this.props.adapter.gt('Edit')}
+            <Title level={5}>{this.props.adapter.gt('Daily Plan')}</Title>
+              { this.state.message &&
+                    <Text onClick={this.onTextClick.bind(this)}>{this.props.adapter.gt("Adjust your daily goal")}</Text>
+              }
+              { !this.state.message &&
+                  <Text onClick={this.onTextClick.bind(this)}>{this.props.adapter.gt("What’s your top priority for today?")}</Text>
+              }
+            <Tag  bordered={false} color="processing" onClick={this.onTextClick.bind(this)}>
+              {this.props.adapter.gt('Update')}
             </Tag>
           </Space>
         </Space>

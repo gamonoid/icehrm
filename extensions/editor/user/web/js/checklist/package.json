@@ -1,0 +1,38 @@
+{
+  "name": "@editorjs/checklist",
+  "version": "1.6.0",
+  "keywords": [
+    "codex editor",
+    "checklist",
+    "editor.js",
+    "editorjs"
+  ],
+  "description": "Checklist Tool for Editor.js",
+  "license": "MIT",
+  "repository": "https://github.com/editor-js/checklist",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/checklist.umd.js",
+  "module": "./dist/checklist.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/checklist.mjs",
+      "require": "./dist/checklist.umd.js"
+    }
+  },
+  "author": {
+    "name": "CodeX",
+    "email": "team@codex.so"
+  },
+  "devDependencies": {
+    "postcss-css-variables": "^0.19.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-nested-ancestors": "^3.0.0",
+    "vite": "^4.5.0",
+    "vite-plugin-css-injected-by-js": "^3.3.0"
+  },
+  "dependencies": {
+    "@codexteam/icons": "^0.3.0"
+  }
+}

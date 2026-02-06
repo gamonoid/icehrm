@@ -31,6 +31,26 @@ if (isProduction) {
   process.env.NODE_ENV = 'production';
 }
 
+/**
+ * Get module path for web directory
+ * @param {string} group - admin or modules
+ * @param {string} moduleName - module name (e.g., 'teams')
+ * @returns {string} - path to index.js
+ */
+const getWebModulePath = (group, moduleName) => {
+  return `web/${group}/src/${moduleName}/index.js`;
+};
+
+/**
+ * Get module path for pro directory
+ * @param {string} group - admin or modules
+ * @param {string} moduleName - module name (e.g., 'teams')
+ * @returns {string} - path to index.js
+ */
+const getProModulePath = (group, moduleName) => {
+  return `extensions/leave_and_performance/web/${group}/src/${moduleName}/index.js`;
+};
+
 const deleteFiles = (directory) => {
   return fs.readdir(directory, (err, files) => {
     if (err) {
@@ -84,7 +104,7 @@ gulp.task('compile-ant-less', () => gulp.src([
 
 gulp.task('pack-css', (done) => gulp.src([
   'web/themecss/bootstrap.css',
-  'web/themecss/fa-all-5.8.2.min.css',
+  //'web/themecss/fa-all-5.8.2.min.css',
   // 'web/themecss/font-awesome.css',
   'web/themecss/ionicons.min.css',
   'web/bower_components/material-design-icons/iconfont/material-icons.css',
@@ -100,7 +120,10 @@ gulp.task('pack-css', (done) => gulp.src([
   'web/css/style.css',
   'web/bower_components/simplemde/dist/simplemde.min.css',
   'web/node_modules/codemirror/lib/codemirror.css',
-  'web/dist/antd.css',
+  //'web/dist/antd.css',
+  'web/css/fa-6.4.0/css/all.css',
+  'web/css/quill.snow.css',
+  'web/css/skeleton.css',
 ])
   .pipe(cleanCSS())
   .pipe(concat('third-party.css'))
@@ -109,7 +132,8 @@ gulp.task('pack-css', (done) => gulp.src([
 gulp.task('login-css', (done) => gulp.src([
   'web/css/login/bootstrap.css',
   'web/css/login/main.css',
-  'web/themecss/fa-all-5.8.2.min.css',
+  //'web/themecss/fa-all-5.8.2.min.css',
+  'web/css/fa-6.4.0/css/all.css',
   'web/themecss/ionicons.min.css',
   'web/bower_components/material-design-icons/iconfont/material-icons.css',
 ])
@@ -255,13 +279,13 @@ gulp.task('vendor', (done) => {
 gulp.task('admin-js', (done) => {
   // we define our input files, which we want to have
   // bundled:
+  // Note: employeehistory, leaves, performance are in pro extension only
   const files = [
     'attendance',
+    'audit',
     'company_structure',
     'connection',
     'custom_fields',
-    'clients',
-    'charts',
     'dashboard',
     'documents',
     'employees',
@@ -271,20 +295,20 @@ gulp.task('admin-js', (done) => {
     'metadata',
     'modules',
     'overtime',
-    'payroll',
     'permissions',
     'projects',
     'qualifications',
     'reports',
     'salary',
     'settings',
+    'training',
     'travel',
     'users',
   ];
 
   // map them to our stream function
   return browserify({
-    entries: files.map((file) => `web/admin/src/${file}/index.js`),
+    entries: files.map((file) => getWebModulePath('admin', file)),
     basedir: '.',
     debug: true,
     cache: {},
@@ -321,6 +345,7 @@ gulp.task('admin-js', (done) => {
 gulp.task('modules-js', (done) => {
   // we define our input files, which we want to have
   // bundled:
+  // Note: leavecal, leaves, performance are in pro extension only
   const files = [
     'attendance',
     'dashboard',
@@ -332,14 +357,14 @@ gulp.task('modules-js', (done) => {
     'overtime',
     'qualifications',
     'reports',
-    'salary',
     'time_sheets',
+    'training',
     'travel',
   ];
 
   // map them to our stream function
   return browserify({
-    entries: files.map((file) => `web/modules/src/${file}/index.js`),
+    entries: files.map((file) => getWebModulePath('modules', file)),
     basedir: '.',
     debug: true,
     cache: {},
@@ -373,13 +398,157 @@ gulp.task('modules-js', (done) => {
     .pipe(gulp.dest('./web/dist'));
 });
 
+gulp.task('pro-admin-js', (done) => {
+  const proAdminPath = 'extensions/leave_and_performance/web/admin/src';
+  if (!fs.existsSync(proAdminPath)) {
+    console.log('Pro admin modules not found, skipping...');
+    done();
+    return;
+  }
+
+  const files = [
+    'employeehistory',
+    'leaves',
+    'performance',
+  ];
+
+  return browserify({
+    entries: files.map((file) => getProModulePath('admin', file)),
+    basedir: '.',
+    debug: true,
+    cache: {},
+    packageCache: {},
+  })
+    .external(vendorsFlat)
+    .transform('babelify', {
+      plugins: [
+        ['@babel/plugin-proposal-class-properties', { loose: true }],
+      ],
+      presets: ['@babel/preset-env', '@babel/preset-react'],
+      extensions: ['.js', '.jsx'],
+    })
+    .transform(require('browserify-css'))
+    .bundle()
+    .pipe(source('admin-bundle.js'))
+    .pipe(buffer())
+    .pipe(ifElse(!isProduction, () => sourcemaps.init({ loadMaps: true })))
+    .pipe(ifElse(isProduction, () => uglifyes(
+      {
+        compress: true,
+        mangle: {
+          reserved: [],
+        },
+      },
+    )))
+    .pipe(ifElse(isProduction, () => javascriptObfuscator({
+      compact: true,
+    })))
+    .pipe(ifElse(!isProduction, () => sourcemaps.write('./')))
+    .pipe(gulp.dest('./extensions/leave_and_performance/web/dist'));
+});
+
+gulp.task('pro-modules-js', (done) => {
+  const proModulesPath = 'extensions/leave_and_performance/web/modules/src';
+  if (!fs.existsSync(proModulesPath)) {
+    console.log('Pro user modules not found, skipping...');
+    done();
+    return;
+  }
+
+  const files = [
+    'leavecal',
+    'leaves',
+    'performance',
+  ];
+
+  return browserify({
+    entries: files.map((file) => getProModulePath('modules', file)),
+    basedir: '.',
+    debug: true,
+    cache: {},
+    packageCache: {},
+  })
+    .external(vendorsFlat)
+    .transform('babelify', {
+      plugins: [
+        ['@babel/plugin-proposal-class-properties', { loose: true }],
+      ],
+      presets: ['@babel/preset-env', '@babel/preset-react'],
+      extensions: ['.js', '.jsx'],
+    })
+    .transform(require('browserify-css'))
+    .bundle()
+    .pipe(source('modules-bundle.js'))
+    .pipe(buffer())
+    .pipe(ifElse(!isProduction, () => sourcemaps.init({ loadMaps: true })))
+    .pipe(ifElse(isProduction, () => uglifyes(
+      {
+        compress: true,
+        mangle: {
+          reserved: [],
+        },
+      },
+    )))
+    .pipe(ifElse(isProduction, () => javascriptObfuscator({
+      compact: true,
+    })))
+    .pipe(ifElse(!isProduction, () => sourcemaps.write('./')))
+    .pipe(gulp.dest('./extensions/leave_and_performance/web/dist'));
+});
+
+gulp.task('common-js', (done) => {
+  // we define our input files, which we want to have
+  // bundled:
+  const files = [
+    'user-view-switch',
+  ];
+
+  // map them to our stream function
+  return browserify({
+    entries: files.map((file) => `web/common/${file}.js`),
+    basedir: '.',
+    debug: true,
+    cache: {},
+    packageCache: {},
+  })
+      .external(vendorsFlat)
+      .transform('babelify', {
+        plugins: [
+          ['@babel/plugin-proposal-class-properties', { loose: true }],
+        ],
+        presets: ['@babel/preset-env', '@babel/preset-react'],
+        extensions: ['.js', '.jsx'],
+      })
+      .transform(require('browserify-css'))
+      .bundle()
+      .pipe(source('common-bundle.js'))
+      .pipe(buffer())
+      .pipe(ifElse(!isProduction, () => sourcemaps.init({ loadMaps: true })))
+      .pipe(ifElse(isProduction, () => uglifyes(
+          {
+            compress: true,
+            mangle: {
+              reserved: [],
+            },
+          },
+      )))
+      .pipe(ifElse(isProduction, () => javascriptObfuscator({
+        compact: true,
+      })))
+      .pipe(ifElse(!isProduction, () => sourcemaps.write('./')))
+      .pipe(gulp.dest('./web/dist'));
+});
+
 gulp.task('ejs', (done) => {
   let extension = process.argv.filter((item) => item.substr(0, 3) === '--x');
   if (extension.length === 1) {
     extension = extension[0].substr(3);
   }
 
-  [extensionName, extensionGroup] = extension.split('/');
+  // Support both regular (ext/admin) and grouped (group/ext/admin) extensions
+  const parts = extension.split('/');
+  extensionName = parts[parts.length - 2]; // second to last (extension name)
+  extensionGroup = parts[parts.length - 1]; // last (admin/user)
 
   try {
     deleteFiles(`./extensions/${extension}/dist/`);
@@ -433,13 +602,14 @@ gulp.task('clean-dist', (done) => {
 gulp.task('watch', () => {
   gulp.watch('web/admin/src/*/*.js', gulp.series('admin-js'));
   gulp.watch('web/modules/src/*/*.js', gulp.series('modules-js'));
+  gulp.watch('extensions/leave_and_performance/web/admin/src/*/*.js', gulp.series('pro-admin-js'));
+  gulp.watch('extensions/leave_and_performance/web/modules/src/*/*.js', gulp.series('pro-modules-js'));
   gulp.watch('web/components/*.js', gulp.series('admin-js', 'modules-js'));
   gulp.watch('web/api/*.js', gulp.series('admin-js', 'modules-js'));
 });
 
 gulp.task('default', gulp.series(
   'clean-dist',
-  'compile-ant-less',
   'pack-js',
   'pack-css',
   'login-css',
@@ -449,11 +619,22 @@ gulp.task('default', gulp.series(
   'vendor',
   'admin-js',
   'modules-js',
+  'common-js',
 ));
 
 gulp.task('assets', gulp.series(
-  'compile-ant-less',
   'pack-js',
   'pack-css',
   'login-css',
 ));
+
+/*
+Examples:
+gulp ejs --xrecruitment/candidates/admin --eprod  (grouped extension)
+gulp ejs --xrecruitment/jobpositions/admin --eprod  (grouped extension)
+gulp ejs --xrecruitment/jobsetup/admin --eprod  (grouped extension)
+gulp ejs --xexpenses/admin --eprod
+gulp ejs --xexpenses/user --eprod
+gulp ejs --xtasks/admin --eprod
+gulp ejs --xtasks/user --eprod
+ */

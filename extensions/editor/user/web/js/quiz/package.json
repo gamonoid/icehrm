@@ -1,0 +1,36 @@
+{
+  "name": "@juratbek/editorjs-quiz",
+  "version": "1.0.14",
+  "description": "quiz plugin for editorjs",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.style.js --mode production && webpack --config webpack.config.js --mode production",
+    "start": "webpack --mode development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juratbek/editorjs-quiz.git"
+  },
+  "keywords": [
+    "editorjs",
+    "quiz"
+  ],
+  "author": "Juratbek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juratbek/editorjs-quiz/issues"
+  },
+  "homepage": "https://github.com/Juratbek/editorjs-quiz#readme",
+  "devDependencies": {
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.8.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

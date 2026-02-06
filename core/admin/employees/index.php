@@ -30,7 +30,7 @@ $managersCanSwitchToProfile = \Classes\SettingsManager::getInstance()->getSettin
 		<li><a id="tabEmployeeLanguage" href="#tabPageEmployeeLanguage"><?=t('Languages')?></a></li>
 		<li><a id="tabEmployeeDependent" href="#tabPageEmployeeDependent"><?=t('Dependents')?></a></li>
 		<li><a id="tabEmergencyContact" href="#tabPageEmergencyContact"><?=t('Contacts')?></a></li>
-        <li><a id="tabTerminatedEmployee" href="#tabPageTerminatedEmployee"><?=t('Deactivated')?></a></li>
+        <li><a id="tabTerminatedEmployee" href="#tabPageTerminatedEmployee"><?=t('Resigned Employees')?></a></li>
         <li><a id="tabArchivedEmployee" href="#tabPageArchivedEmployee"><?=t('Archived')?></a></li>
 	</ul>
 

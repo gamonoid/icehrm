@@ -58,9 +58,9 @@ class PermissionManager
         return $subIds;
     }
 
-    public static function checkGeneralAccess($object)
+    public static function checkGeneralAccess($object, $user = null )
     {
-        $currentUser = BaseService::getInstance()->getCurrentUser();
+        $currentUser = $user ?? BaseService::getInstance()->getCurrentUser();
         return $object->getRoleBasedAccess($currentUser->user_level, $currentUser->user_roles);
     }
 }

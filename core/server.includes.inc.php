@@ -34,7 +34,11 @@ if (defined("MODULE_PATH")) {
     if (!defined('MODULE_TYPE')) {
         if (count($tArr) >= 2) {
             if (strpos(MODULE_PATH,'/extensions/'))  {
-                if ('user' == $tArr[count($tArr)-1]) {
+				$modTypeIDPosition = count($tArr)-1;
+				if (strpos(MODULE_PATH,'/leave_and_performance/'))  {
+					$modTypeIDPosition = count($tArr)-2;
+				}
+                if ('user' == $tArr[$modTypeIDPosition] || 'modules' == $tArr[$modTypeIDPosition]) {
                     define('MODULE_TYPE', 'modules');
                 } else {
                     define('MODULE_TYPE', 'admin');
@@ -79,7 +83,7 @@ BaseService::getInstance()->setNotificationManager($notificationManager);
 BaseService::getInstance()->setSettingsManager($settingsManager);
 BaseService::getInstance()->setCustomFieldManager(new CustomFieldManager());
 $migrationManager = new MigrationManager();
-$migrationManager->setMigrationPath(APP_BASE_PATH .'/migrations/');
+$migrationManager->setMigrationPath(APP_BASE_PATH .'migrations/');
 BaseService::getInstance()->setMigrationManager($migrationManager);
 
 $notificationManager->setBaseService($baseService);
@@ -132,8 +136,6 @@ if ($debugMode == "1") {
 
 LogManager::getInstance();
 
-include("includes.com.php");
-
 $userTables = array();
 $fileFields = array();
 $mysqlErrors = array();
@@ -167,6 +169,11 @@ if (defined('CLIENT_PATH')) {
             $modelClassObject = new $modelClassWithNameSpace();
         }
     }
+
+	// Run initializers
+	foreach ($initializers as $initializer) {
+		$initializer->init();
+	}
 }
 //============= End - Initializing Modules ============
 
@@ -187,8 +194,9 @@ if (class_exists('\\Audit\\Admin\\Api\\AuditActionManager')) {
 $emailEnabled = SettingsManager::getInstance()->getSetting("Email: Enable");
 $emailMode = SettingsManager::getInstance()->getSetting("Email: Mode");
 $uploadS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
+$uploadS3Editor = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3 for Editor");
 
-if ($emailMode == "SES" || $uploadS3 == '1') {
+if ($emailMode == "SES" || $uploadS3 == '1' || $uploadS3Editor == '1') {
     include(APP_BASE_PATH.'lib/aws.phar');
 }
 

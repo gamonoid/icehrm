@@ -1,0 +1,107 @@
+/* Container for the vertical menu skeleton */
+.skeleton-menu {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    border-radius: 0px;
+    margin-left: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
+}
+
+/* Profile skeleton container */
+.skeleton-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Circular skeleton for profile picture */
+.skeleton-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite linear;
+}
+
+/* Skeleton for the username */
+.skeleton-name {
+    width: 60%;
+    height: 16px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite linear;
+}
+
+/* Skeleton item */
+.skeleton-item {
+    width: 100%;
+    height: 23px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    border-radius: 0px;
+    margin-bottom: 12px;
+    animation: loading 1.5s infinite linear;
+}
+
+/* Skeleton table container */
+.skeleton-table {
+    width: 100%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Skeleton table row */
+.skeleton-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+/* Skeleton cell */
+.skeleton-cell {
+    width: 30%;
+    height: 20px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: loading 2.5s infinite linear;
+}
+
+/* Container for tabs */
+.skeleton-tabs {
+    display: flex;
+    gap: 12px;
+    padding: 1.5spx;
+    background: #fff;
+    border-radius: 0px;
+    border-bottom: 1px solid #ddd;
+    margin-left: 10px;
+}
+
+/* Skeleton tab item */
+.skeleton-tab {
+    width: 120px;
+    height: 30px;
+    border-radius: 0px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite linear;
+}
+
+/* Selected tab indicator */
+.skeleton-tab.selected {
+    background: #d9d9d9; /* Lighter color for selected effect */
+}
+
+/* Animation for the skeleton effect */
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}

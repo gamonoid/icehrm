@@ -1987,3 +1987,822 @@ msgstr "Radera"
 
 msgid "Copy"
 msgstr "Kopiera"
+
+msgid "Employee Check-Ins"
+msgstr "Kontroller av anställda"
+
+msgid "Employee Distribution"
+msgstr "Fördelning av anställda"
+
+msgid "Total"
+msgstr "Totalt"
+
+msgid "is required"
+msgstr "krävs."
+
+msgid "Use Employee Leave Period"
+msgstr "Använd arbetstagarens ledighetsperiod"
+
+msgid "Required Experience (Days)"
+msgstr "Erfarenhet som krävs (dagar)"
+
+msgid "LeaveGroup"
+msgstr "Lämna grupper"
+
+msgid "Expenses Category"
+msgstr "Kostnadskategori"
+
+msgid "Employee Expense"
+msgstr "Kostnader för anställda"
+
+msgid "Overtime"
+msgstr "Övertid"
+
+msgid "Employee Fields"
+msgstr "Fält för anställda"
+
+msgid "Asset Type"
+msgstr "Typ av tillgång"
+
+msgid "Asset"
+msgstr "Tillgångar"
+
+msgid "Custom Field"
+msgstr "Anpassat fält"
+
+msgid "Object Type"
+msgstr "Typ av objekt"
+
+msgid "Personal"
+msgstr "Personligt"
+
+msgid "Identification"
+msgstr "Identifiering"
+
+msgid "Work"
+msgstr "Arbete"
+
+msgid "Contact"
+msgstr "Kontakta"
+
+msgid "Report"
+msgstr "Rapportera"
+
+msgid "Login As"
+msgstr "Logga in som"
+
+msgid "Deactivate"
+msgstr "Inaktivera"
+
+msgid "Employee Education"
+msgstr "Utbildning för anställda"
+
+msgid "Employee Certification"
+msgstr "Certifiering av anställda"
+
+msgid "Listening"
+msgstr "Lyssna"
+
+msgid "Employee Dependent"
+msgstr "Anställd beroende"
+
+msgid "Contacts"
+msgstr "Kontakter"
+
+msgid "Next"
+msgstr "Nästa"
+
+msgid "Emergency Contact"
+msgstr "Kontaktperson för nödsituationer"
+
+msgid "Deactivated"
+msgstr "Inaktiverad"
+
+msgid "Archived"
+msgstr "Arkiverad"
+
+msgid "Updated By"
+msgstr "Uppdaterad av"
+
+msgid "Created Time (GMT)"
+msgstr "Skapad tid (GMT)"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Ingen"
+
+msgid "Share with Employee"
+msgstr "Dela med den anställde"
+
+msgid "Visible To"
+msgstr "Synlig för"
+
+msgid "ID Copy"
+msgstr "ID-kopia"
+
+msgid "Degree Certificate"
+msgstr "Examen Certifikat"
+
+msgid "Driving License"
+msgstr "Körkort"
+
+msgid "Owner"
+msgstr "Ägare"
+
+msgid "Manager"
+msgstr "Förvaltare"
+
+msgid "HR Forms"
+msgstr "HR-formulär"
+
+msgid "Employee Forms"
+msgstr "Formulär för anställda"
+
+msgid "Form"
+msgstr "Formulär"
+
+msgid "Submitted"
+msgstr "Inlämnat"
+
+msgid "Review Period Start Date"
+msgstr "Översynsperiodens startdatum"
+
+msgid "Review Period End Date"
+msgstr "Slutdatum för granskningsperioden"
+
+msgid "Self Assessment Due Date"
+msgstr "Förfallodag för självutvärdering"
+
+msgid "Due On"
+msgstr "Förfallodag den"
+
+msgid "Company Teams"
+msgstr "Företagets team"
+
+msgid "Lead"
+msgstr "Ledning"
+
+msgid "Teams"
+msgstr "Grupper"
+
+msgid "Team Name"
+msgstr "Lagets namn"
+
+msgid "Team Members"
+msgstr "Medlemmar i teamet"
+
+msgid "Member "
+msgstr "Medlem"
+
+msgid "Role"
+msgstr "Roll"
+
+msgid "Users Roles"
+msgstr "Användare Roller"
+
+msgid "User Role"
+msgstr "Användarroll"
+
+msgid "Additional Permissions"
+msgstr "Ytterligare behörigheter"
+
+msgid "Usage"
+msgstr "Användning"
+
+msgid "Last Export Result"
+msgstr "Senaste exportresultat"
+
+msgid "Employee Data Import"
+msgstr "Import av uppgifter om anställda"
+
+msgid "Attendance Data Import"
+msgstr "Import av närvarodata"
+
+msgid "Payroll Data Import"
+msgstr "Import av löneuppgifter"
+
+msgid "Supervisor and Approver Import"
+msgstr "Import av handledare och godkännare"
+
+msgid "You can drag the chart both sides to view other dates on timeline"
+msgstr "Du kan dra diagrammet på båda sidor för att visa andra datum på tidslinjen."
+
+msgid "Payroll Group"
+msgstr "Gruppen för löneadministration"
+
+msgid "Common"
+msgstr "Gemensam"
+
+msgid "Function Type"
+msgstr "Funktionstyp"
+
+msgid "Advanced"
+msgstr "Avancerad"
+
+msgid "Simple"
+msgstr "Enkel"
+
+msgid "Company Name"
+msgstr "Företagets namn"
+
+msgid "Hiring Manager"
+msgstr "Chef för rekrytering"
+
+msgid "Job Description"
+msgstr "Arbetsbeskrivning"
+
+msgid "Employement Type"
+msgstr "Typ av anställning"
+
+msgid "Postal Code"
+msgstr "Postnummer"
+
+msgid "Show Hiring Manager Name"
+msgstr "Visa den anställande chefens namn"
+
+msgid "Previous"
+msgstr "Tidigare"
+
+msgid "Position Applied"
+msgstr "Position Tillämpad"
+
+msgid "Hiring Stage"
+msgstr "Anställningsfas"
+
+msgid "Total Years of Experience"
+msgstr "Totalt antal år av erfarenhet"
+
+msgid "Expected Salary"
+msgstr "Förväntad lön"
+
+msgid "Attach File "
+msgstr "Bifoga fil "
+
+msgid "Update Password"
+msgstr "Uppdatera lösenordet"
+
+msgid "Employee Profile"
+msgstr "Anställdas profil"
+
+msgid "Contact details"
+msgstr "Kontaktuppgifter"
+
+msgid "Work related details"
+msgstr "Arbetsrelaterade uppgifter"
+
+msgid "ID Number"
+msgstr "ID-nummer"
+
+msgid "Leave Days from Current Leave Period"
+msgstr "Ledighetsdagar från pågående ledighetsperiod"
+
+msgid "Paid Time Off Adjustments"
+msgstr "Justeringar av betald ledighet"
+
+msgid "Leave Days Carried Forward Previous Period"
+msgstr "Ledighetsdagar som överförts till föregående period"
+
+msgid "Leave Days Available to Use"
+msgstr "Ledighetsdagar som kan användas"
+
+msgid "Approved Leave Days"
+msgstr "Godkända semesterdagar"
+
+msgid "Pending Leave Days"
+msgstr "Väntade ledighetsdagar"
+
+msgid "Rejected Leave Days"
+msgstr "Avvisade ledighetsdagar"
+
+msgid "Calculated by Leave Type"
+msgstr "Beräknat per typ av ledighet"
+
+msgid "Show Calculation"
+msgstr "Visa beräkning"
+
+msgid "Total Time"
+msgstr "Total tid"
+
+msgid "Personal Documents"
+msgstr "Personliga dokument"
+
+msgid "My Forms"
+msgstr "Mina formulär"
+
+msgid "Training Sessions of Coordinated by Me"
+msgstr "Utbildningssessioner av Coordinated by Me"
+
+msgid "Self Assessments"
+msgstr "Självbedömningar"
+
+msgid "Connection"
+msgstr "Anslutning"
+
+msgid "Data directory is accessible from outside."
+msgstr "Datakatalogen är tillgänglig från utsidan."
+
+msgid "Learn how to fix"
+msgstr "Lär dig hur du åtgärdar"
+
+msgid "Copy System Report"
+msgstr "Kopiera systemrapport"
+
+msgid "System Issues"
+msgstr "Systemfrågor"
+
+msgid "System Report"
+msgstr "Systemrapport"
+
+msgid "Here you can define the structure of the company by adding branches, departments, company units,etc. Each employee needs to be connected to a company structure."
+msgstr "Här kan du definiera företagets struktur genom att lägga till filialer, avdelningar, företagsenheter, etc. Varje anställd behöver vara kopplad till en företagsstruktur."
+
+msgid "Company graph provides a graphical overview of the company structure."
+msgstr "Företagsdiagram ger en grafisk översikt över företagsstrukturen."
+
+msgid "Here you can manage the job titles in your organization. Each employee needs to be assigned a job title."
+msgstr "Här kan du hantera jobbtitlarna i din organisation. Varje anställd måste tilldelas en befattning."
+
+msgid "Here you can define the different pay grades in your organization. "
+msgstr "Här kan du definiera de olika lönegraderna i din organisation."
+
+msgid "Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state."
+msgstr "Här kan du definiera olika typer av anställningstillstånd i din organisation. Varje anställd bör tilldelas en anställningsstat."
+
+msgid "Here you can define the different types of skills an employee might have."
+msgstr "Här kan du definiera de olika typer av kompetens en anställd kan ha."
+
+msgid "Here you can define the different levels of education an employee might have."
+msgstr "Här kan du definiera de olika utbildningsnivåerna som en anställd kan ha."
+
+msgid "Here you can define the different types of certifications an employee might have completed."
+msgstr "Här kan du definiera de olika typerna av certifieringar som en anställd kan ha slutfört."
+
+msgid "Languages consists of most of the languages used globally."
+msgstr "Språk består av de flesta av de språk som används globalt."
+
+msgid "Here you can add details about a project such as project name, client, details and the status."
+msgstr "Här kan du lägga till detaljer om ett projekt som projektnamn, klient, detaljer och status."
+
+msgid "Here you can assign projects to employees."
+msgstr "Här kan du tilldela projekt till anställda."
+
+msgid "Here you can add and manage clients your organization is working with. You can choose the correct client when adding a project in IceHrm."
+msgstr "Här kan du lägga till och hantera kunder som din organisation arbetar med. Du kan välja rätt klient när du lägger till ett projekt i ICEHRM."
+
+msgid "Here you can define custom fields for assets, company struture, employee, travel request or expense forms."
+msgstr "Här kan du definiera anpassade fält för tillgångar, företagsstruktur, anställd, reseförfrågan eller kostnadsformulär."
+
+msgid "Here you can view records of all the activities performed by different users in the system."
+msgstr "Här kan du se register över alla aktiviteter som utförs av olika användare i systemet."
+
+msgid "Here you can to add new employees, view employee details and filter employees."
+msgstr "Här kan du för att lägga till nya anställda, visa anställdas detaljer och filtrera anställda."
+
+msgid "Here you can record the work history of your employees."
+msgstr "Här kan du spela in dina anställdas arbetshistoria."
+
+msgid "Here you can add the skills each employee in your organization has."
+msgstr "Här kan du lägga till de färdigheter som varje anställd i din organisation har."
+
+msgid "Here you can record the level of education each employee in your organization has."
+msgstr "Här kan du registrera den utbildningsnivå som varje anställd i din organisation har."
+
+msgid "Here you can define the certifications each of your employee has completed so far."
+msgstr "Här kan du definiera certifieringarna som var och en av din anställd har slutfört hittills."
+
+msgid "Here you can keep track of all the languages each employee knows."
+msgstr "Här kan du hålla reda på alla språk som varje anställd vet."
+
+msgid "Here you can add all the dependents of each employee."
+msgstr "Här kan du lägga till alla anhöriga från varje anställd."
+
+msgid "Here you can record emergency contacts of employees."
+msgstr "Här kan du spela in nödkontakter hos anställda."
+
+msgid "Here you can view all the deativated employees. You can still recover data of a deactivated employee by clicking on Activate."
+msgstr "Här kan du se alla de inställda anställda. Du kan fortfarande återställa data om en inaktiverad anställd genom att klicka på Aktivera."
+
+msgid "Here you can view the deleted employees. Click on Download to download employee data as a JSON."
+msgstr "Här kan du se de borttagna anställda. Klicka på Ladda ner för att ladda ner anställdas data som JSON."
+
+msgid "Here you can views how employee data changed overtime."
+msgstr "Här kan du se hur anställdas data ändrades övertid."
+
+msgid "Here you can define any teams in your organization."
+msgstr "Här kan du definiera alla team i din organisation."
+
+msgid "Here you can add employees to the correct team."
+msgstr "Här kan du lägga till anställda i rätt team."
+
+msgid "Here you can add company documents to share announcements, policies, procedures, etc. with employees. These documents can be shared with specific employees or departments."
+msgstr "Här kan du lägga till företagsdokument för att dela tillkännagivanden, policyer, rutiner etc. med anställda. Dessa dokument kan delas med specifika anställda eller avdelningar."
+
+msgid "Here you can define the document types employees can add to the system."
+msgstr "Här kan du definiera de dokumenttyper som anställda kan lägga till i systemet."
+
+msgid "Here you can add personal employee documents. The visibility of the employee document can be defined when adding the document."
+msgstr "Här kan du lägga till personliga anställdas dokument. Synligheten för medarbetarnas dokument kan definieras när du lägger till dokumentet."
+
+msgid "Here all the payslips generated through the payroll module. Click on Add New to manually add a payslip."
+msgstr "Här är alla lönesätt som genereras via lönemodulen. Klicka på Lägg till nytt för att manuellt lägga till ett lönesätt."
+
+msgid "Here you can attendance records of employees and to view, edit, filter employee attendance records."
+msgstr "Här kan du delta i anställda och för att se, redigera, filtrera anställdas närvaroregister."
+
+msgid "Here you can view whether employees are Clocked In, Clocked Out or Not Clocked In."
+msgstr "Här kan du se om anställda är klockade in, klockas ut eller inte klockas in."
+
+msgid "Here you can assign performance reviews to employees and manage, view, and edit performance reviews."
+msgstr "Här kan du tilldela prestationsrecensioner till anställda och hantera, visa och redigera prestationsgranskningar."
+
+msgid "Here you can request review feedback from a supervisor/peer."
+msgstr "Här kan du begära granskningsåterkoppling från en handledare/peer."
+
+msgid "Here you can create custom review templates for the performance review process."
+msgstr "Här kan du skapa anpassade granskningsmallar för Performance Review -processen."
+
+msgid "Here you can monitor the progress of all employee goals."
+msgstr "Här kan du övervaka framstegen för alla anställdas mål."
+
+msgid "Here you can define leave types available in your organization."
+msgstr "Här kan du definiera ledighetstyper tillgängliga i din organisation."
+
+msgid "Here you can define leave periods by providing a name for the period and by selecting the correct start and end dates."
+msgstr "Här kan du definiera ledighetsperioder genom att tillhandahålla ett namn för perioden och genom att välja rätt start- och slutdatum."
+
+msgid "Here you can define the working and non-working days according to your organization or by country."
+msgstr "Här kan du definiera de arbetande och icke-arbetande dagarna enligt din organisation eller per land."
+
+msgid "Here you need to add all the holidays relevant to a leave period."
+msgstr "Här måste du lägga till alla helgdagar som är relevanta för en ledighetsperiod."
+
+msgid "Here you can override the behavior of a leave type for job titles, employment statuses, or even individual employees by adding a leave rule."
+msgstr "Här kan du åsidosätta beteendet hos en ledighetstyp för jobbtitlar, anställningsstatus eller till och med enskilda anställda genom att lägga till en ledighet."
+
+msgid "Here you can keep track of employee PTO. This can be used to compensate an employee and adjust leave balance from previous years."
+msgstr "Här kan du hålla reda på anställdas PTO. Detta kan användas för att kompensera en anställd och anpassa lämnade balans från tidigare år."
+
+msgid "Here you can create a leave group so you can group employees and create leave types or leave rules affecting the employees in the group."
+msgstr "Här kan du skapa en ledighetsgrupp så att du kan gruppera anställda och skapa ledighetstyper eller lämna regler som påverkar de anställda i gruppen."
+
+msgid "Here you can add employees to the correct leave group."
+msgstr "Här kan du lägga till anställda i rätt ledighetsgrupp."
+
+msgid "Here you can view all employee leaves and approve leave requests."
+msgstr "Här kan du se alla anställdas blad och godkänna förfrågningar om ledighet."
+
+msgid "Here you can define the types of assets in your organization so you can easily categorize the assets."
+msgstr "Här kan du definiera de typer av tillgångar i din organisation så att du enkelt kan kategorisera tillgångarna."
+
+msgid "Here you can add and manage company assets each employee or department has."
+msgstr "Här kan du lägga till och hantera företagstillgångar som varje anställd eller avdelning har."
+
+msgid "Here you can define the different types of expenses in an organization."
+msgstr "Här kan du definiera de olika typerna av utgifter i en organisation."
+
+msgid "Here you can add the different types of payment methods used for expenses in an organization."
+msgstr "Här kan du lägga till de olika typerna av betalningsmetoder som används för utgifter i en organisation."
+
+msgid "Here you can add employee expenses, edit and approve expense requests."
+msgstr "Här kan du lägga till anställdas utgifter, redigera och godkänna kostnadsförfrågningar."
+
+msgid "Here you can create custom forms to collect data from employees."
+msgstr "Här kan du skapa anpassade formulär för att samla in data från anställda."
+
+msgid "Here you can assign forms to employees, fill and download forms."
+msgstr "Här kan du tilldela formulär till anställda, fylla och ladda ner formulär."
+
+msgid "Here you can add courses."
+msgstr "Här kan du lägga till kurser."
+
+msgid "Here you can add different training sessions to a particular course. You can let employees sign up for training sessions or assign training sessions by changing the attendance type."
+msgstr "Här kan du lägga till olika träningspass till en viss kurs. Du kan låta anställda registrera sig för träningssessioner eller tilldela träningssessioner genom att ändra närvarotypen."
+
+msgid "Here you can assign training sessions to employees."
+msgstr "Här kan du tilldela utbildningssessioner till anställda."
+
+msgid "Here you can add employee travel requests and view and edit travel requests."
+msgstr "Här kan du lägga till anställdas reseförfrågningar och visa och redigera reseförfrågningar."
+
+msgid "Here you can define the different types of overtime available in your organization."
+msgstr "Här kan du definiera de olika typerna av övertid som finns i din organisation."
+
+msgid "Here you can add and manage employee overtime requests."
+msgstr "Här kan du lägga till och hantera anställdas övertidsförfrågningar."
+
+msgid "Here you can define different types of loans employees are eligible for."
+msgstr "Här kan du definiera olika typer av lån som anställda är berättigade till."
+
+msgid "Here you can add employee loans."
+msgstr "Här kan du lägga till anställdslån."
+
+msgid "Here you can generate different admin reports."
+msgstr "Här kan du generera olika administratörsrapporter."
+
+msgid "Here you can export payroll meta data."
+msgstr "Här kan du exportera metadata för lön."
+
+msgid "Here you can view all the admin reports generated."
+msgstr "Här kan du se alla administratörsrapporter som genereras."
+
+msgid "Here you can create user accounts for employees for them to login to their IceHrm accounts."
+msgstr "Här kan du skapa användarkonton för anställda för att de ska logga in på sina ICEHRM -konton."
+
+msgid "Here you can create user roles to give or deny access to certain modules."
+msgstr "Här kan du skapa användarroller för att ge eller förneka åtkomst till vissa moduler."
+
+msgid "Here you can Enable or Disable modules."
+msgstr "Här kan du aktivera eller inaktivera moduler."
+
+msgid "Here you can manage what permissions each user level has."
+msgstr "Här kan du hantera vilka behörigheter varje användarnivå har."
+
+msgid "Here you can view details about your current IceHrm plan."
+msgstr "Här kan du se detaljer om din nuvarande ICEHRM -plan."
+
+msgid "Here you can view all your pending transactions."
+msgstr "Här kan du se alla dina väntande transaktioner."
+
+msgid "Here you can view details about prepaid credit and other IceHrm transactions."
+msgstr "Här kan du se detaljer om förbetald kredit och andra ICEHRM -transaktioner."
+
+msgid "Here you can manage the countries you will be able to select within the system."
+msgstr "Här kan du hantera de länder du kan välja inom systemet."
+
+msgid "Here you can manage all the provinces you will be able to select within the system."
+msgstr "Här kan du hantera alla provinser du kan välja inom systemet."
+
+msgid "Here you can manage all the currencies you will be able to select within the system."
+msgstr "Här kan du hantera alla valutor du kan välja inom systemet."
+
+msgid "Here you can manage all the nationalities you will be able to select within the system."
+msgstr "Här kan du hantera alla nationaliteter du kommer att kunna välja inom systemet."
+
+msgid "Here you can manage all the ethnicities you will be able to select within the system."
+msgstr "Här kan du hantera alla etniciteter du kommer att kunna välja inom systemet."
+
+msgid "Here you can manage all the immigration status options you will be able to select within the system."
+msgstr "Här kan du hantera alla alternativ för invandringsstatus som du kan välja inom systemet."
+
+msgid "Here you can add data importers that can be used to import data to the system."
+msgstr "Här kan du lägga till datamotor som kan användas för att importera data till systemet."
+
+msgid "Here you can import data using the data importers defined in the system."
+msgstr "Här kan du importera data med hjälp av de dataimportörer som definieras i systemet."
+
+msgid "Here you can make changes to the fields available in the employee form."
+msgstr "Här kan du göra ändringar i fälten tillgängliga i anställdas formulär."
+
+msgid "Here you can check attendance time recorded every day for all the employees or a specific employee."
+msgstr "Här kan du kontrollera närvaron som registreras varje dag för alla anställda eller en specifik anställd."
+
+msgid "Here you can check how much of a percentage of attendance time goes into timesheets for each employee."
+msgstr "Här kan du kontrollera hur mycket av en procentandel av närvarotiden som går in i tidtabeller för varje anställd."
+
+msgid "Here you can view approved employee leaves of employees with the leave dates."
+msgstr "Här kan du se godkända anställda blad av anställda med ledighetsdatum."
+
+msgid "Here you can define different type of salary components in your organization."
+msgstr "Här kan du definiera olika typer av lönekomponenter i din organisation."
+
+msgid "Here you can define all the salary components related to the defined salary component types."
+msgstr "Här kan du definiera alla lönekomponenter relaterade till de definierade lönekomponenttyperna."
+
+msgid "Here you can add all salary components related to each of your employees."
+msgstr "Här kan du lägga till alla lönekomponenter relaterade till var och en av dina anställda."
+
+msgid "Here you can add all the employees to the correct payroll group. Each employee should belong to a payroll group."
+msgstr "Här kan du lägga till alla anställda i rätt lönegrupp. Varje anställd bör tillhöra en lönegrupp."
+
+msgid "Here you can create payroll reports for a specific time period."
+msgstr "Här kan du skapa lönerapporter under en viss tidsperiod."
+
+msgid "Here you can define the payroll columns that will be used to generate payroll reports."
+msgstr "Här kan du definiera lönekolumnerna som kommer att användas för att generera lönerapporter."
+
+msgid "Here you can define different payroll groups if you have different payroll calculations for different employees."
+msgstr "Här kan du definiera olika lönegrupper om du har olika lönberäkningar för olika anställda."
+
+msgid "Here you can define different calculation such as tax that can be used in payroll columns."
+msgstr "Här kan du definiera olika beräkningar såsom skatt som kan användas i lönekolumner."
+
+msgid "Here you can create custom payslip templates."
+msgstr "Här kan du skapa anpassade betalningsmallar."
+
+msgid "Here you can add employment types that will be used when creating job posts."
+msgstr "Här kan du lägga till sysselsättningstyper som kommer att användas när du skapar jobbposter."
+
+msgid "Here you can add different experience levels that will be used when creating job posts."
+msgstr "Här kan du lägga till olika erfarenhetsnivåer som kommer att användas när du skapar jobbposter."
+
+msgid "Here you can add job functions that will be used when creating job posts."
+msgstr "Här kan du lägga till jobbfunktioner som kommer att användas när du skapar jobbposter."
+
+msgid "Here you can add education levels that will be used when creating job posts."
+msgstr "Här kan du lägga till utbildningsnivåer som kommer att användas när du skapar jobbposter."
+
+msgid "Here you can define the benefits that will be given by your organization to candidates."
+msgstr "Här kan du definiera de fördelar som din organisation kommer att ges till kandidater."
+
+msgid "Here you can create job posts and generate job links."
+msgstr "Här kan du skapa jobbposter och generera jobblänkar."
+
+msgid "Here you can view all the candidates that have applied for job positions through the job links. You can manually candidates by clicking on Add New."
+msgstr "Här kan du se alla kandidater som har ansökt om jobbpositioner genom jobblänkarna. Du kan manuellt kandidater genom att klicka på Lägg till nya."
+
+msgid "Here you can manage of all the candidates with the hiring stage New."
+msgstr "Här kan du hantera alla kandidater med den nya anställningsstadiet."
+
+msgid "Here you can manage all the candidates in the Phone Screen hiring stage."
+msgstr "Här kan du hantera alla kandidater i telefonskärmens anställningsstadium."
+
+msgid "Here you can manage all the candidates in the Assessment hiring stage."
+msgstr "Här kan du hantera alla kandidater i bedömningsanställningsstadiet."
+
+msgid "Here you can manage all the candidates of the candidates in the Interview hiring stage. The candidate will be moved to this stage when an interview is scheduled."
+msgstr "Här kan du hantera alla kandidater till kandidaterna i intervjuutarbetningsstadiet. Kandidaten kommer att flyttas till detta skede när en intervju är planerad."
+
+msgid "Here you can manage all the candidates in the Offer Sent hiring stage."
+msgstr "Här kan du hantera alla kandidater i erbjudandet som skickas anställningsfas."
+
+msgid "Here you can manage all the candidate in the Hired hiring stage."
+msgstr "Här kan du hantera all kandidat i den anställda anställningsstadiet."
+
+msgid "Here you can manage all the rejected candidates."
+msgstr "Här kan du hantera alla avvisade kandidater."
+
+msgid "Here you can add all the skills you have."
+msgstr "Här kan du lägga till alla färdigheter du har."
+
+msgid "Here you can add details about your education levels."
+msgstr "Här kan du lägga till information om dina utbildningsnivåer."
+
+msgid "Here you can add all the certifications you have completed."
+msgstr "Här kan du lägga till alla certifieringar du har slutfört."
+
+msgid "Here you can add all the languages you are fluent in."
+msgstr "Här kan du lägga till alla språk du är flytande i."
+
+msgid "Here you can add details about your dependents."
+msgstr "Här kan du lägga till information om dina beroende."
+
+msgid "Here you can add details about your emergency contacts."
+msgstr "Här kan du lägga till information om dina nödkontakter."
+
+msgid "Here you can add and manage your leave requests."
+msgstr "Här kan du lägga till och hantera dina förfrågningar om ledighet."
+
+msgid "Here you can view a summary of all leave balances."
+msgstr "Här kan du se en sammanfattning av alla lämnande balanser."
+
+msgid "Here you can view all your approved leave requests."
+msgstr "Här kan du se alla dina godkända förfrågningar om ledighet."
+
+msgid "Here you can view all your pending leave requests."
+msgstr "Här kan du se alla dina väntande förfrågningar om väntan."
+
+msgid "Here you can view and approve leave requests from your subordinates."
+msgstr "Här kan du visa och godkänna ledighetsförfrågningar från dina underordnade."
+
+msgid "Here you can view all cancellation requests from your subordinates."
+msgstr "Här kan du se alla avbokningsförfrågningar från dina underordnade."
+
+msgid "Here you can view and approve leave requests if you are an approver to an employee."
+msgstr "Här kan du visa och godkänna ledighetsförfrågningar om du är en godkännande till en anställd."
+
+msgid "Here you can view all your leave requests on a calendar."
+msgstr "Här kan du se alla dina ledighetsförfrågningar i en kalender."
+
+msgid "Here you can add and manage projects you are working on or assigned to."
+msgstr "Här kan du lägga till och hantera projekt du arbetar med eller tilldelas."
+
+msgid "Here you can mark your attendance by punching in and punching out."
+msgstr "Här kan du markera ditt närvaro genom att slå in och slå ut."
+
+msgid "Here you can view and manage all pending, approved, rejected and submitted timesheets."
+msgstr "Här kan du se och hantera alla väntande, godkända, avvisade och inlämnade tidtabeller."
+
+msgid "Here you can manage of all your approved timesheets."
+msgstr "Här kan du hantera alla dina godkända tidtabeller."
+
+msgid "Here you can manage of all your pending timesheets."
+msgstr "Här kan du hantera alla dina väntande tidtabeller."
+
+msgid "Here you can view and approve timesheetes of your subordinates."
+msgstr "Här kan du se och godkänna tidsblad från dina underordnade."
+
+msgid "Here you can view and manage all your pending, approved, rejected and submitted attendance sheets."
+msgstr "Här kan du se och hantera alla dina väntande, godkända, avvisade och inlämnade närvaroblad."
+
+msgid "Here you can view all your approved attendance sheets."
+msgstr "Här kan du se alla dina godkända närvaroblad."
+
+msgid "Here you can view all your pending attendance sheets."
+msgstr "Här kan du se alla dina väntande närvaroblad."
+
+msgid "Here you can manage and approve attendance sheets of your subordinates."
+msgstr "Här kan du hantera och godkänna närvaroblad i dina underordnade."
+
+msgid "Here you add an overtime request and view previous overtime requests."
+msgstr "Här lägger du till en övertidsförfrågan och visar tidigare övertidsförfrågningar."
+
+msgid "Here you can manage and approve overtime requests of your subordinates."
+msgstr "Här kan du hantera och godkänna övertidsförfrågningar från dina underordnade."
+
+msgid "Here you can upload your personal documents to the system."
+msgstr "Här kan du ladda upp dina personliga dokument till systemet."
+
+msgid "Here you can view all the company documents that are shared with you."
+msgstr "Här kan du se alla företagsdokument som delas med dig."
+
+msgid "Here you can view all your payslips. You can download your payslips as PDFs."
+msgstr "Här kan du se alla dina lönesätt. Du kan ladda ner dina lönesätt som PDF -filer."
+
+msgid "Here you will find all the forms you need to fill out and all previous completed forms."
+msgstr "Här hittar du alla formulär du behöver fylla i och alla tidigare ifyllda formulär."
+
+msgid "Here you can view all contact information of employees in the organization."
+msgstr "Här kan du se all kontaktinformation om anställda i organisationen."
+
+msgid "Here you can view all the training sessions available."
+msgstr "Här kan du se alla tillgängliga träningssessioner."
+
+msgid "Here you can view all training sessions you have signed up for or assigned to."
+msgstr "Här kan du se alla träningspass som du har registrerat dig för eller tilldelats."
+
+msgid "Here you can manage all the training sessions of your subordinates."
+msgstr "Här kan du hantera alla träningspass i dina underordnade."
+
+msgid "Here you can view all the training sessions coordinated by you."
+msgstr "Här kan du se alla träningspass som är samordnade av dig."
+
+msgid "Here you can manage all the self assessments you need to work on for your performance reviews."
+msgstr "Här kan du hantera alla självbedömningar du behöver arbeta med för dina prestationsrecensioner."
+
+msgid "Here you can provide feedback to your peers or subordinates."
+msgstr "Här kan du ge feedback till dina kamrater eller underordnade."
+
+msgid "Here you can submit and manage your travel requests."
+msgstr "Här kan du skicka och hantera dina reseförfrågningar."
+
+msgid "Here you can view and approve travel requests of your subordinates."
+msgstr "Här kan du visa och godkänna reseförfrågningar från dina underordnade."
+
+msgid "Here you can approve travel requests if you are an approver to certain employees."
+msgstr "Här kan du godkänna reseförfrågningar om du är en godkännare för vissa anställda."
+
+msgid "Here you can submit and manage your expense requests."
+msgstr "Här kan du skicka och hantera dina kostnadsförfrågningar."
+
+msgid "Here you can manage and approve expenses requests of your subordinates."
+msgstr "Här kan du hantera och godkänna utgifter för dina underordnade."
+
+msgid "Here you can approve expense requests if you are an approver to certain employees."
+msgstr "Här kan du godkänna kostnadsförfrågningar om du är en godkännare för vissa anställda."
+
+msgid "Here you can view details of all your salary components."
+msgstr "Här kan du se detaljer om alla dina lönekomponenter."
+
+msgid "Here you can view details of all the loans you have taken from the company."
+msgstr "Här kan du se detaljer om alla lån du har tagit från företaget."
+
+msgid "Position"
+msgstr "Placera"
+
+msgid "Application Date"
+msgstr "Ansökningsdatum"
+
+msgid "Basic"
+msgstr "Grundläggande"
+
+msgid "All Candidates"
+msgstr "Alla kandidater"
+
+msgid "New"
+msgstr "Ny"
+
+msgid "Screening"
+msgstr "Undersökning"
+
+msgid "Assessment"
+msgstr "bedömning"
+
+msgid "Interview Scheduled"
+msgstr "Intervju schemalagd"
+
+msgid "Offer"
+msgstr "Erbjudande"
+
+msgid "Hired"
+msgstr "Anlitade"
+
+msgid "Member"
+msgstr "Medlem"
+
+msgid "Attach File"
+msgstr "Bifoga fil "
+
+msgid "Here you can define the different pay grades in your organization."
+msgstr "Här kan du definiera de olika lönegraderna i din organisation."

@@ -60,8 +60,13 @@ class SimpleImage
      */
     public function __destruct()
     {
-        if (get_resource_type($this->image) === 'gd') {
-            imagedestroy($this->image);
+        if ($this->image !== null) {
+            // PHP 8.0+ uses GdImage objects, PHP 7.x uses resources
+            if (is_resource($this->image) && get_resource_type($this->image) === 'gd') {
+                imagedestroy($this->image);
+            } elseif (is_object($this->image) && $this->image instanceof \GdImage) {
+                imagedestroy($this->image);
+            }
         }
     }
 

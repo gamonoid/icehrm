@@ -1987,3 +1987,822 @@ msgstr "Delete"
 
 msgid "Copy"
 msgstr "Copy"
+
+msgid "Employee Check-Ins"
+msgstr "Employee Check-Ins"
+
+msgid "Employee Distribution"
+msgstr "Employee Distribution"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "is required"
+msgstr "is required"
+
+msgid "Use Employee Leave Period"
+msgstr "Use Employee Leave Period"
+
+msgid "Required Experience (Days)"
+msgstr "Required Experience (Days)"
+
+msgid "LeaveGroup"
+msgstr "Leave Groups"
+
+msgid "Expenses Category"
+msgstr "Expenses Category"
+
+msgid "Employee Expense"
+msgstr "Employee Expense"
+
+msgid "Overtime"
+msgstr "Overtime"
+
+msgid "Employee Fields"
+msgstr "Employee Fields"
+
+msgid "Asset Type"
+msgstr "Asset Type"
+
+msgid "Asset"
+msgstr "Asset"
+
+msgid "Custom Field"
+msgstr "Custom Field"
+
+msgid "Object Type"
+msgstr "Object Type"
+
+msgid "Personal"
+msgstr "Personal"
+
+msgid "Identification"
+msgstr "Identification"
+
+msgid "Work"
+msgstr "Work"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Report"
+msgstr "Report"
+
+msgid "Login As"
+msgstr "Login As"
+
+msgid "Deactivate"
+msgstr "Deactivate"
+
+msgid "Employee Education"
+msgstr "Employee Education"
+
+msgid "Employee Certification"
+msgstr "Employee Certification"
+
+msgid "Listening"
+msgstr "Listening"
+
+msgid "Employee Dependent"
+msgstr "Employee Dependent"
+
+msgid "Contacts"
+msgstr "Contacts"
+
+msgid "Next"
+msgstr "Next"
+
+msgid "Emergency Contact"
+msgstr "Emergency Contact"
+
+msgid "Deactivated"
+msgstr "Deactivated"
+
+msgid "Archived"
+msgstr "Archived"
+
+msgid "Updated By"
+msgstr "Updated By"
+
+msgid "Created Time (GMT)"
+msgstr "Created Time (GMT)"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "Share with Employee"
+msgstr "Share with Employee"
+
+msgid "Visible To"
+msgstr "Visible To"
+
+msgid "ID Copy"
+msgstr "ID Copy"
+
+msgid "Degree Certificate"
+msgstr "Degree Certificate"
+
+msgid "Driving License"
+msgstr "Driving License"
+
+msgid "Owner"
+msgstr "Owner"
+
+msgid "Manager"
+msgstr "Manager"
+
+msgid "HR Forms"
+msgstr "HR Forms"
+
+msgid "Employee Forms"
+msgstr "Employee Forms"
+
+msgid "Form"
+msgstr "Form"
+
+msgid "Submitted"
+msgstr "Submitted"
+
+msgid "Review Period Start Date"
+msgstr "Review Period Start Date"
+
+msgid "Review Period End Date"
+msgstr "Review Period End Date"
+
+msgid "Self Assessment Due Date"
+msgstr "Self Assessment Due Date"
+
+msgid "Due On"
+msgstr "Due On"
+
+msgid "Company Teams"
+msgstr "Company Teams"
+
+msgid "Lead"
+msgstr "Lead"
+
+msgid "Teams"
+msgstr "Teams"
+
+msgid "Team Name"
+msgstr "Team Name"
+
+msgid "Team Members"
+msgstr "Team Members"
+
+msgid "Member "
+msgstr "Member "
+
+msgid "Role"
+msgstr "Role"
+
+msgid "Users Roles"
+msgstr "Users Roles"
+
+msgid "User Role"
+msgstr "User Role"
+
+msgid "Additional Permissions"
+msgstr "Additional Permissions"
+
+msgid "Usage"
+msgstr "Usage"
+
+msgid "Last Export Result"
+msgstr "Last Export Result"
+
+msgid "Employee Data Import"
+msgstr "Employee Data Import"
+
+msgid "Attendance Data Import"
+msgstr "Attendance Data Import"
+
+msgid "Payroll Data Import"
+msgstr "Payroll Data Import"
+
+msgid "Supervisor and Approver Import"
+msgstr "Supervisor and Approver Import"
+
+msgid "You can drag the chart both sides to view other dates on timeline"
+msgstr "You can drag the chart both sides to view other dates on timeline"
+
+msgid "Payroll Group"
+msgstr "Payroll Group"
+
+msgid "Common"
+msgstr "Common"
+
+msgid "Function Type"
+msgstr "Function Type"
+
+msgid "Advanced"
+msgstr "Advanced"
+
+msgid "Simple"
+msgstr "Simple"
+
+msgid "Company Name"
+msgstr "Company Name"
+
+msgid "Hiring Manager"
+msgstr "Hiring Manager"
+
+msgid "Job Description"
+msgstr "Job Description"
+
+msgid "Employement Type"
+msgstr "Employement Type"
+
+msgid "Postal Code"
+msgstr "Postal Code"
+
+msgid "Show Hiring Manager Name"
+msgstr "Show Hiring Manager Name"
+
+msgid "Previous"
+msgstr "Previous"
+
+msgid "Position Applied"
+msgstr "Position Applied"
+
+msgid "Hiring Stage"
+msgstr "Hiring Stage"
+
+msgid "Total Years of Experience"
+msgstr "Total Years of Experience"
+
+msgid "Expected Salary"
+msgstr "Expected Salary"
+
+msgid "Attach File "
+msgstr "Attach File "
+
+msgid "Update Password"
+msgstr "Update Password"
+
+msgid "Employee Profile"
+msgstr "Employee Profile"
+
+msgid "Contact details"
+msgstr "Contact details"
+
+msgid "Work related details"
+msgstr "Work related details"
+
+msgid "ID Number"
+msgstr "ID Number"
+
+msgid "Leave Days from Current Leave Period"
+msgstr "Leave Days from Current Leave Period"
+
+msgid "Paid Time Off Adjustments"
+msgstr "Paid Time Off Adjustments"
+
+msgid "Leave Days Carried Forward Previous Period"
+msgstr "Leave Days Carried Forward Previous Period"
+
+msgid "Leave Days Available to Use"
+msgstr "Leave Days Available to Use"
+
+msgid "Approved Leave Days"
+msgstr "Approved Leave Days"
+
+msgid "Pending Leave Days"
+msgstr "Pending Leave Days"
+
+msgid "Rejected Leave Days"
+msgstr "Rejected Leave Days"
+
+msgid "Calculated by Leave Type"
+msgstr "Calculated by Leave Type"
+
+msgid "Show Calculation"
+msgstr "Show Calculation"
+
+msgid "Total Time"
+msgstr "Total Time"
+
+msgid "Personal Documents"
+msgstr "Personal Documents"
+
+msgid "My Forms"
+msgstr "My Forms"
+
+msgid "Training Sessions of Coordinated by Me"
+msgstr "Training Sessions of Coordinated by Me"
+
+msgid "Self Assessments"
+msgstr "Self Assessments"
+
+msgid "Connection"
+msgstr "Connection"
+
+msgid "Data directory is accessible from outside."
+msgstr "Data directory is accessible from outside."
+
+msgid "Learn how to fix"
+msgstr "Learn how to fix"
+
+msgid "Copy System Report"
+msgstr "Copy System Report"
+
+msgid "System Issues"
+msgstr "System Issues"
+
+msgid "System Report"
+msgstr "System Report"
+
+msgid "Here you can define the structure of the company by adding branches, departments, company units,etc. Each employee needs to be connected to a company structure."
+msgstr "Here you can define the structure of the company by adding branches, departments, company units,etc. Each employee needs to be connected to a company structure."
+
+msgid "Company graph provides a graphical overview of the company structure."
+msgstr "Company graph provides a graphical overview of the company structure."
+
+msgid "Here you can manage the job titles in your organization. Each employee needs to be assigned a job title."
+msgstr "Here you can manage the job titles in your organization. Each employee needs to be assigned a job title."
+
+msgid "Here you can define the different pay grades in your organization. "
+msgstr "Here you can define the different pay grades in your organization. "
+
+msgid "Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state."
+msgstr "Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state."
+
+msgid "Here you can define the different types of skills an employee might have."
+msgstr "Here you can define the different types of skills an employee might have."
+
+msgid "Here you can define the different levels of education an employee might have."
+msgstr "Here you can define the different levels of education an employee might have."
+
+msgid "Here you can define the different types of certifications an employee might have completed."
+msgstr "Here you can define the different types of certifications an employee might have completed."
+
+msgid "Languages consists of most of the languages used globally."
+msgstr "Languages consists of most of the languages used globally."
+
+msgid "Here you can add details about a project such as project name, client, details and the status."
+msgstr "Here you can add details about a project such as project name, client, details and the status."
+
+msgid "Here you can assign projects to employees."
+msgstr "Here you can assign projects to employees."
+
+msgid "Here you can add and manage clients your organization is working with. You can choose the correct client when adding a project in IceHrm."
+msgstr "Here you can add and manage clients your organization is working with. You can choose the correct client when adding a project in IceHrm."
+
+msgid "Here you can define custom fields for assets, company struture, employee, travel request or expense forms."
+msgstr "Here you can define custom fields for assets, company struture, employee, travel request or expense forms."
+
+msgid "Here you can view records of all the activities performed by different users in the system."
+msgstr "Here you can view records of all the activities performed by different users in the system."
+
+msgid "Here you can to add new employees, view employee details and filter employees."
+msgstr "Here you can to add new employees, view employee details and filter employees."
+
+msgid "Here you can record the work history of your employees."
+msgstr "Here you can record the work history of your employees."
+
+msgid "Here you can add the skills each employee in your organization has."
+msgstr "Here you can add the skills each employee in your organization has."
+
+msgid "Here you can record the level of education each employee in your organization has."
+msgstr "Here you can record the level of education each employee in your organization has."
+
+msgid "Here you can define the certifications each of your employee has completed so far."
+msgstr "Here you can define the certifications each of your employee has completed so far."
+
+msgid "Here you can keep track of all the languages each employee knows."
+msgstr "Here you can keep track of all the languages each employee knows."
+
+msgid "Here you can add all the dependents of each employee."
+msgstr "Here you can add all the dependents of each employee."
+
+msgid "Here you can record emergency contacts of employees."
+msgstr "Here you can record emergency contacts of employees."
+
+msgid "Here you can view all the deativated employees. You can still recover data of a deactivated employee by clicking on Activate."
+msgstr "Here you can view all the deativated employees. You can still recover data of a deactivated employee by clicking on Activate."
+
+msgid "Here you can view the deleted employees. Click on Download to download employee data as a JSON."
+msgstr "Here you can view the deleted employees. Click on Download to download employee data as a JSON."
+
+msgid "Here you can views how employee data changed overtime."
+msgstr "Here you can views how employee data changed overtime."
+
+msgid "Here you can define any teams in your organization."
+msgstr "Here you can define any teams in your organization."
+
+msgid "Here you can add employees to the correct team."
+msgstr "Here you can add employees to the correct team."
+
+msgid "Here you can add company documents to share announcements, policies, procedures, etc. with employees. These documents can be shared with specific employees or departments."
+msgstr "Here you can add company documents to share announcements, policies, procedures, etc. with employees. These documents can be shared with specific employees or departments."
+
+msgid "Here you can define the document types employees can add to the system."
+msgstr "Here you can define the document types employees can add to the system."
+
+msgid "Here you can add personal employee documents. The visibility of the employee document can be defined when adding the document."
+msgstr "Here you can add personal employee documents. The visibility of the employee document can be defined when adding the document."
+
+msgid "Here all the payslips generated through the payroll module. Click on Add New to manually add a payslip."
+msgstr "Here all the payslips generated through the payroll module. Click on Add New to manually add a payslip."
+
+msgid "Here you can attendance records of employees and to view, edit, filter employee attendance records."
+msgstr "Here you can attendance records of employees and to view, edit, filter employee attendance records."
+
+msgid "Here you can view whether employees are Clocked In, Clocked Out or Not Clocked In."
+msgstr "Here you can view whether employees are Clocked In, Clocked Out or Not Clocked In."
+
+msgid "Here you can assign performance reviews to employees and manage, view, and edit performance reviews."
+msgstr "Here you can assign performance reviews to employees and manage, view, and edit performance reviews."
+
+msgid "Here you can request review feedback from a supervisor/peer."
+msgstr "Here you can request review feedback from a supervisor/peer."
+
+msgid "Here you can create custom review templates for the performance review process."
+msgstr "Here you can create custom review templates for the performance review process."
+
+msgid "Here you can monitor the progress of all employee goals."
+msgstr "Here you can monitor the progress of all employee goals."
+
+msgid "Here you can define leave types available in your organization."
+msgstr "Here you can define leave types available in your organization."
+
+msgid "Here you can define leave periods by providing a name for the period and by selecting the correct start and end dates."
+msgstr "Here you can define leave periods by providing a name for the period and by selecting the correct start and end dates."
+
+msgid "Here you can define the working and non-working days according to your organization or by country."
+msgstr "Here you can define the working and non-working days according to your organization or by country."
+
+msgid "Here you need to add all the holidays relevant to a leave period."
+msgstr "Here you need to add all the holidays relevant to a leave period."
+
+msgid "Here you can override the behavior of a leave type for job titles, employment statuses, or even individual employees by adding a leave rule."
+msgstr "Here you can override the behavior of a leave type for job titles, employment statuses, or even individual employees by adding a leave rule."
+
+msgid "Here you can keep track of employee PTO. This can be used to compensate an employee and adjust leave balance from previous years."
+msgstr "Here you can keep track of employee PTO. This can be used to compensate an employee and adjust leave balance from previous years."
+
+msgid "Here you can create a leave group so you can group employees and create leave types or leave rules affecting the employees in the group."
+msgstr "Here you can create a leave group so you can group employees and create leave types or leave rules affecting the employees in the group."
+
+msgid "Here you can add employees to the correct leave group."
+msgstr "Here you can add employees to the correct leave group."
+
+msgid "Here you can view all employee leaves and approve leave requests."
+msgstr "Here you can view all employee leaves and approve leave requests."
+
+msgid "Here you can define the types of assets in your organization so you can easily categorize the assets."
+msgstr "Here you can define the types of assets in your organization so you can easily categorize the assets."
+
+msgid "Here you can add and manage company assets each employee or department has."
+msgstr "Here you can add and manage company assets each employee or department has."
+
+msgid "Here you can define the different types of expenses in an organization."
+msgstr "Here you can define the different types of expenses in an organization."
+
+msgid "Here you can add the different types of payment methods used for expenses in an organization."
+msgstr "Here you can add the different types of payment methods used for expenses in an organization."
+
+msgid "Here you can add employee expenses, edit and approve expense requests."
+msgstr "Here you can add employee expenses, edit and approve expense requests."
+
+msgid "Here you can create custom forms to collect data from employees."
+msgstr "Here you can create custom forms to collect data from employees."
+
+msgid "Here you can assign forms to employees, fill and download forms."
+msgstr "Here you can assign forms to employees, fill and download forms."
+
+msgid "Here you can add courses."
+msgstr "Here you can add courses."
+
+msgid "Here you can add different training sessions to a particular course. You can let employees sign up for training sessions or assign training sessions by changing the attendance type."
+msgstr "Here you can add different training sessions to a particular course. You can let employees sign up for training sessions or assign training sessions by changing the attendance type."
+
+msgid "Here you can assign training sessions to employees."
+msgstr "Here you can assign training sessions to employees."
+
+msgid "Here you can add employee travel requests and view and edit travel requests."
+msgstr "Here you can add employee travel requests and view and edit travel requests."
+
+msgid "Here you can define the different types of overtime available in your organization."
+msgstr "Here you can define the different types of overtime available in your organization."
+
+msgid "Here you can add and manage employee overtime requests."
+msgstr "Here you can add and manage employee overtime requests."
+
+msgid "Here you can define different types of loans employees are eligible for."
+msgstr "Here you can define different types of loans employees are eligible for."
+
+msgid "Here you can add employee loans."
+msgstr "Here you can add employee loans."
+
+msgid "Here you can generate different admin reports."
+msgstr "Here you can generate different admin reports."
+
+msgid "Here you can export payroll meta data."
+msgstr "Here you can export payroll meta data."
+
+msgid "Here you can view all the admin reports generated."
+msgstr "Here you can view all the admin reports generated."
+
+msgid "Here you can create user accounts for employees for them to login to their IceHrm accounts."
+msgstr "Here you can create user accounts for employees for them to login to their IceHrm accounts."
+
+msgid "Here you can create user roles to give or deny access to certain modules."
+msgstr "Here you can create user roles to give or deny access to certain modules."
+
+msgid "Here you can Enable or Disable modules."
+msgstr "Here you can Enable or Disable modules."
+
+msgid "Here you can manage what permissions each user level has."
+msgstr "Here you can manage what permissions each user level has."
+
+msgid "Here you can view details about your current IceHrm plan."
+msgstr "Here you can view details about your current IceHrm plan."
+
+msgid "Here you can view all your pending transactions."
+msgstr "Here you can view all your pending transactions."
+
+msgid "Here you can view details about prepaid credit and other IceHrm transactions."
+msgstr "Here you can view details about prepaid credit and other IceHrm transactions."
+
+msgid "Here you can manage the countries you will be able to select within the system."
+msgstr "Here you can manage the countries you will be able to select within the system."
+
+msgid "Here you can manage all the provinces you will be able to select within the system."
+msgstr "Here you can manage all the provinces you will be able to select within the system."
+
+msgid "Here you can manage all the currencies you will be able to select within the system."
+msgstr "Here you can manage all the currencies you will be able to select within the system."
+
+msgid "Here you can manage all the nationalities you will be able to select within the system."
+msgstr "Here you can manage all the nationalities you will be able to select within the system."
+
+msgid "Here you can manage all the ethnicities you will be able to select within the system."
+msgstr "Here you can manage all the ethnicities you will be able to select within the system."
+
+msgid "Here you can manage all the immigration status options you will be able to select within the system."
+msgstr "Here you can manage all the immigration status options you will be able to select within the system."
+
+msgid "Here you can add data importers that can be used to import data to the system."
+msgstr "Here you can add data importers that can be used to import data to the system."
+
+msgid "Here you can import data using the data importers defined in the system."
+msgstr "Here you can import data using the data importers defined in the system."
+
+msgid "Here you can make changes to the fields available in the employee form."
+msgstr "Here you can make changes to the fields available in the employee form."
+
+msgid "Here you can check attendance time recorded every day for all the employees or a specific employee."
+msgstr "Here you can check attendance time recorded every day for all the employees or a specific employee."
+
+msgid "Here you can check how much of a percentage of attendance time goes into timesheets for each employee."
+msgstr "Here you can check how much of a percentage of attendance time goes into timesheets for each employee."
+
+msgid "Here you can view approved employee leaves of employees with the leave dates."
+msgstr "Here you can view approved employee leaves of employees with the leave dates."
+
+msgid "Here you can define different type of salary components in your organization."
+msgstr "Here you can define different type of salary components in your organization."
+
+msgid "Here you can define all the salary components related to the defined salary component types."
+msgstr "Here you can define all the salary components related to the defined salary component types."
+
+msgid "Here you can add all salary components related to each of your employees."
+msgstr "Here you can add all salary components related to each of your employees."
+
+msgid "Here you can add all the employees to the correct payroll group. Each employee should belong to a payroll group."
+msgstr "Here you can add all the employees to the correct payroll group. Each employee should belong to a payroll group."
+
+msgid "Here you can create payroll reports for a specific time period."
+msgstr "Here you can create payroll reports for a specific time period."
+
+msgid "Here you can define the payroll columns that will be used to generate payroll reports."
+msgstr "Here you can define the payroll columns that will be used to generate payroll reports."
+
+msgid "Here you can define different payroll groups if you have different payroll calculations for different employees."
+msgstr "Here you can define different payroll groups if you have different payroll calculations for different employees."
+
+msgid "Here you can define different calculation such as tax that can be used in payroll columns."
+msgstr "Here you can define different calculation such as tax that can be used in payroll columns."
+
+msgid "Here you can create custom payslip templates."
+msgstr "Here you can create custom payslip templates."
+
+msgid "Here you can add employment types that will be used when creating job posts."
+msgstr "Here you can add employment types that will be used when creating job posts."
+
+msgid "Here you can add different experience levels that will be used when creating job posts."
+msgstr "Here you can add different experience levels that will be used when creating job posts."
+
+msgid "Here you can add job functions that will be used when creating job posts."
+msgstr "Here you can add job functions that will be used when creating job posts."
+
+msgid "Here you can add education levels that will be used when creating job posts."
+msgstr "Here you can add education levels that will be used when creating job posts."
+
+msgid "Here you can define the benefits that will be given by your organization to candidates."
+msgstr "Here you can define the benefits that will be given by your organization to candidates."
+
+msgid "Here you can create job posts and generate job links."
+msgstr "Here you can create job posts and generate job links."
+
+msgid "Here you can view all the candidates that have applied for job positions through the job links. You can manually candidates by clicking on Add New."
+msgstr "Here you can view all the candidates that have applied for job positions through the job links. You can manually candidates by clicking on Add New."
+
+msgid "Here you can manage of all the candidates with the hiring stage New."
+msgstr "Here you can manage of all the candidates with the hiring stage New."
+
+msgid "Here you can manage all the candidates in the Phone Screen hiring stage."
+msgstr "Here you can manage all the candidates in the Phone Screen hiring stage."
+
+msgid "Here you can manage all the candidates in the Assessment hiring stage."
+msgstr "Here you can manage all the candidates in the Assessment hiring stage."
+
+msgid "Here you can manage all the candidates of the candidates in the Interview hiring stage. The candidate will be moved to this stage when an interview is scheduled."
+msgstr "Here you can manage all the candidates of the candidates in the Interview hiring stage. The candidate will be moved to this stage when an interview is scheduled."
+
+msgid "Here you can manage all the candidates in the Offer Sent hiring stage."
+msgstr "Here you can manage all the candidates in the Offer Sent hiring stage."
+
+msgid "Here you can manage all the candidate in the Hired hiring stage."
+msgstr "Here you can manage all the candidate in the Hired hiring stage."
+
+msgid "Here you can manage all the rejected candidates."
+msgstr "Here you can manage all the rejected candidates."
+
+msgid "Here you can add all the skills you have."
+msgstr "Here you can add all the skills you have."
+
+msgid "Here you can add details about your education levels."
+msgstr "Here you can add details about your education levels."
+
+msgid "Here you can add all the certifications you have completed."
+msgstr "Here you can add all the certifications you have completed."
+
+msgid "Here you can add all the languages you are fluent in."
+msgstr "Here you can add all the languages you are fluent in."
+
+msgid "Here you can add details about your dependents."
+msgstr "Here you can add details about your dependents."
+
+msgid "Here you can add details about your emergency contacts."
+msgstr "Here you can add details about your emergency contacts."
+
+msgid "Here you can add and manage your leave requests."
+msgstr "Here you can add and manage your leave requests."
+
+msgid "Here you can view a summary of all leave balances."
+msgstr "Here you can view a summary of all leave balances."
+
+msgid "Here you can view all your approved leave requests."
+msgstr "Here you can view all your approved leave requests."
+
+msgid "Here you can view all your pending leave requests."
+msgstr "Here you can view all your pending leave requests."
+
+msgid "Here you can view and approve leave requests from your subordinates."
+msgstr "Here you can view and approve leave requests from your subordinates."
+
+msgid "Here you can view all cancellation requests from your subordinates."
+msgstr "Here you can view all cancellation requests from your subordinates."
+
+msgid "Here you can view and approve leave requests if you are an approver to an employee."
+msgstr "Here you can view and approve leave requests if you are an approver to an employee."
+
+msgid "Here you can view all your leave requests on a calendar."
+msgstr "Here you can view all your leave requests on a calendar."
+
+msgid "Here you can add and manage projects you are working on or assigned to."
+msgstr "Here you can add and manage projects you are working on or assigned to."
+
+msgid "Here you can mark your attendance by punching in and punching out."
+msgstr "Here you can mark your attendance by punching in and punching out."
+
+msgid "Here you can view and manage all pending, approved, rejected and submitted timesheets."
+msgstr "Here you can view and manage all pending, approved, rejected and submitted timesheets."
+
+msgid "Here you can manage of all your approved timesheets."
+msgstr "Here you can manage of all your approved timesheets."
+
+msgid "Here you can manage of all your pending timesheets."
+msgstr "Here you can manage of all your pending timesheets."
+
+msgid "Here you can view and approve timesheetes of your subordinates."
+msgstr "Here you can view and approve timesheetes of your subordinates."
+
+msgid "Here you can view and manage all your pending, approved, rejected and submitted attendance sheets."
+msgstr "Here you can view and manage all your pending, approved, rejected and submitted attendance sheets."
+
+msgid "Here you can view all your approved attendance sheets."
+msgstr "Here you can view all your approved attendance sheets."
+
+msgid "Here you can view all your pending attendance sheets."
+msgstr "Here you can view all your pending attendance sheets."
+
+msgid "Here you can manage and approve attendance sheets of your subordinates."
+msgstr "Here you can manage and approve attendance sheets of your subordinates."
+
+msgid "Here you add an overtime request and view previous overtime requests."
+msgstr "Here you add an overtime request and view previous overtime requests."
+
+msgid "Here you can manage and approve overtime requests of your subordinates."
+msgstr "Here you can manage and approve overtime requests of your subordinates."
+
+msgid "Here you can upload your personal documents to the system."
+msgstr "Here you can upload your personal documents to the system."
+
+msgid "Here you can view all the company documents that are shared with you."
+msgstr "Here you can view all the company documents that are shared with you."
+
+msgid "Here you can view all your payslips. You can download your payslips as PDFs."
+msgstr "Here you can view all your payslips. You can download your payslips as PDFs."
+
+msgid "Here you will find all the forms you need to fill out and all previous completed forms."
+msgstr "Here you will find all the forms you need to fill out and all previous completed forms."
+
+msgid "Here you can view all contact information of employees in the organization."
+msgstr "Here you can view all contact information of employees in the organization."
+
+msgid "Here you can view all the training sessions available."
+msgstr "Here you can view all the training sessions available."
+
+msgid "Here you can view all training sessions you have signed up for or assigned to."
+msgstr "Here you can view all training sessions you have signed up for or assigned to."
+
+msgid "Here you can manage all the training sessions of your subordinates."
+msgstr "Here you can manage all the training sessions of your subordinates."
+
+msgid "Here you can view all the training sessions coordinated by you."
+msgstr "Here you can view all the training sessions coordinated by you."
+
+msgid "Here you can manage all the self assessments you need to work on for your performance reviews."
+msgstr "Here you can manage all the self assessments you need to work on for your performance reviews."
+
+msgid "Here you can provide feedback to your peers or subordinates."
+msgstr "Here you can provide feedback to your peers or subordinates."
+
+msgid "Here you can submit and manage your travel requests."
+msgstr "Here you can submit and manage your travel requests."
+
+msgid "Here you can view and approve travel requests of your subordinates."
+msgstr "Here you can view and approve travel requests of your subordinates."
+
+msgid "Here you can approve travel requests if you are an approver to certain employees."
+msgstr "Here you can approve travel requests if you are an approver to certain employees."
+
+msgid "Here you can submit and manage your expense requests."
+msgstr "Here you can submit and manage your expense requests."
+
+msgid "Here you can manage and approve expenses requests of your subordinates."
+msgstr "Here you can manage and approve expenses requests of your subordinates."
+
+msgid "Here you can approve expense requests if you are an approver to certain employees."
+msgstr "Here you can approve expense requests if you are an approver to certain employees."
+
+msgid "Here you can view details of all your salary components."
+msgstr "Here you can view details of all your salary components."
+
+msgid "Here you can view details of all the loans you have taken from the company."
+msgstr "Here you can view details of all the loans you have taken from the company."
+
+msgid "Position"
+msgstr "Position"
+
+msgid "Application Date"
+msgstr "Application Date"
+
+msgid "Basic"
+msgstr "Basic"
+
+msgid "All Candidates"
+msgstr "All Candidates"
+
+msgid "New"
+msgstr "New"
+
+msgid "Screening"
+msgstr "Screening"
+
+msgid "Assessment"
+msgstr "Assessment"
+
+msgid "Interview Scheduled"
+msgstr "Interview Scheduled"
+
+msgid "Offer"
+msgstr "Offer"
+
+msgid "Hired"
+msgstr "Hired"
+
+msgid "Member"
+msgstr "Member "
+
+msgid "Attach File"
+msgstr "Attach File "
+
+msgid "Here you can define the different pay grades in your organization."
+msgstr "Here you can define the different pay grades in your organization. "

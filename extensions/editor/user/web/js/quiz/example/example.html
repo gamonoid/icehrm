@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Editor.js example</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Mono"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../dist/styles.css" />
+    <link href="assets/demo.css" rel="stylesheet" />
+    <script src="assets/json-preview.js"></script>
+    <script src="example_data.js"></script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+  </head>
+  <body>
+    <div class="ce-example">
+      <div class="ce-example__header">Quiz plugin test</div>
+      <div class="ce-example__content _ce-example__content--small">
+        <div id="editorjs"></div>
+
+        <div class="ce-example__button" id="saveButton">editor.save()</div>
+        <div class="ce-example__statusbar">
+          Readonly:
+          <b id="readonly-state"> Off </b>
+          <div class="ce-example__statusbar-button" id="toggleReadOnlyButton">
+            toggle
+          </div>
+        </div>
+      </div>
+      <div class="ce-example__output">
+        <pre class="ce-example__output-content" id="output"></pre>
+      </div>
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
+
+  <script src="../dist/bundle.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+
+  <script>
+    editor = new EditorJS({
+      readOnly: false,
+      holder: "editorjs",
+      tools: {
+        header: Header,
+        delimiter: Delimiter,
+        quiz: {
+          class: Quiz,
+          config: {
+            onSubmit: (data) => {
+                console.log(data);
+                return new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                    if (data.selectedVariants[0] === 0) {
+                      resolve({correct:true});
+                    } else {
+                      resolve({correct:false});
+                    }
+                  }, 300);
+                });
+              },
+          },
+        },
+      },
+      data: example_data, // Imported from example_data.js
+
+      onReady: function () {
+        saveButton.click();
+      },
+      onChange: function () {
+        // console.log('something changed');
+      },
+    });
+
+    // Buttons
+    const saveButton = document.getElementById("saveButton");
+    const toggleReadOnlyButton = document.getElementById(
+      "toggleReadOnlyButton"
+    );
+    const readOnlyIndicator = document.getElementById("readonly-state");
+
+    // Save Example
+    saveButton.addEventListener("click", function () {
+      editor
+        .save()
+        .then((savedData) => {
+          cPreview.show(savedData, document.getElementById("output"));
+        })
+        .catch((error) => {
+          console.error("Saving error", error);
+        });
+    });
+
+    // Toggle Readonly mode
+    toggleReadOnlyButton.addEventListener("click", async () => {
+      const readOnlyState = await editor.readOnly.toggle();
+
+      readOnlyIndicator.textContent = readOnlyState ? "On" : "Off";
+    });
+  </script>
+</html>

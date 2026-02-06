@@ -1,6 +1,6 @@
 {
     "label": "Travel",
-    "menu": "Travel Management",
+    "menu": "Travel",
     "order": "1",
     "icon": "fa-plane",
     "user_levels": [

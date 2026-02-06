@@ -5,10 +5,94 @@
  */
 /* global d3, nv */
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Space, Tag } from 'antd';
+import {
+  EditOutlined, DeleteOutlined, CopyOutlined, EyeOutlined,
+} from '@ant-design/icons';
 import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 import AdapterBase from '../../../api/AdapterBase';
+import CompanyStructureDetailView from './components/CompanyStructureDetailView';
 
 class CompanyStructureAdapter extends ReactModalAdapterBase {
+  constructor(endPoint, tab, filter, orderBy) {
+    super(endPoint, tab, filter, orderBy);
+    this.detailViewContainer = null;
+    this.selectedStructureId = null;
+  }
+
+  // Hide the default view button
+  showViewButton() {
+    return false;
+  }
+
+  // Indicate we have custom buttons
+  hasCustomButtons() {
+    return true;
+  }
+
+  // Custom action buttons with View Details
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => (
+      <Space size="middle">
+        <Tag color="cyan" onClick={() => adapter.showDetailsModal(record.id)} style={{ cursor: 'pointer' }}>
+          <EyeOutlined />
+          {` ${adapter.gt('View Details')}`}
+        </Tag>
+        {adapter.hasAccess('save') && adapter.showEdit
+          && (
+          <Tag color="green" onClick={() => modJs.edit(record.id)} style={{ cursor: 'pointer' }}>
+            <EditOutlined />
+            {` ${adapter.gt('Edit')}`}
+          </Tag>
+          )}
+        {adapter.hasAccess('delete') && adapter.showDelete
+        && (
+        <Tag color="volcano" onClick={() => modJs.deleteRow(record.id)} style={{ cursor: 'pointer' }}>
+          <DeleteOutlined />
+          {` ${adapter.gt('Delete')}`}
+        </Tag>
+        )}
+        {adapter.hasAccess('save') && adapter.showAddNew
+        && (
+        <Tag color="default" onClick={() => modJs.copyRow(record.id)} style={{ cursor: 'pointer' }}>
+          <CopyOutlined />
+          {` ${adapter.gt('Copy')}`}
+        </Tag>
+        )}
+      </Space>
+    );
+  }
+
+  // Show the details modal
+  showDetailsModal(structureId) {
+    this.selectedStructureId = structureId;
+    this.renderDetailView(true);
+  }
+
+  // Close the details modal
+  closeDetailsModal() {
+    this.renderDetailView(false);
+  }
+
+  // Render or update the detail view modal
+  renderDetailView(visible) {
+    if (!this.detailViewContainer) {
+      this.detailViewContainer = document.createElement('div');
+      this.detailViewContainer.id = 'companyStructureDetailView';
+      document.body.appendChild(this.detailViewContainer);
+    }
+
+    ReactDOM.render(
+      <CompanyStructureDetailView
+        visible={visible}
+        onClose={() => this.closeDetailsModal()}
+        structureId={this.selectedStructureId}
+      />,
+      this.detailViewContainer,
+    );
+  }
   getDataMapping() {
     return [
       'id',
@@ -78,7 +162,7 @@ class CompanyStructureAdapter extends ReactModalAdapterBase {
         label: 'Parent Structure', type: 'select', 'allow-null': true, 'remote-source': ['CompanyStructure', 'id', 'title'],
       }],
       ['heads', {
-        label: 'Heads', type: 'select2multi', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
+        label: 'Leads', type: 'select2multi', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
       }],
     ]);
   }

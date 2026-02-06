@@ -172,7 +172,7 @@ class UserInvitationService
 		if (!empty($userInvitation->department)) {
 			$employee->department = $userInvitation->department;
 		}
-
+		$employee->status = 'Active';
 		$ok = $employee->Save();
 
 		if (!$ok) {

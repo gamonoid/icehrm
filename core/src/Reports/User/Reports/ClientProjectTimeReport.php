@@ -9,7 +9,7 @@ use Metadata\Common\Model\Country;
 use Reports\Admin\Api\PDFReportBuilder;
 use Reports\Admin\Api\PDFReportBuilderInterface;
 use Employees\Common\Model\Employee;
-use Clients\Common\Model\Client;
+use Projects\Common\Model\Client;
 use Projects\Common\Model\Project;
 use TimeSheets\Common\Model\EmployeeTimeEntry;
 use Utils\CalendarTools;
@@ -63,7 +63,7 @@ class ClientProjectTimeReport extends PDFReportBuilder implements PDFReportBuild
         $timeEntryListNew = array();
 
         $country = new Country();
-        $country->Load("code = ?", $employee->country);
+        $country->Load("code = ?", [$employee->country]);
 
         $countryCode = null;
         if (!empty($country->id)) {

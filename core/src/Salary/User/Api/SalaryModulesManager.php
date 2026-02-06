@@ -30,7 +30,5 @@ class SalaryModulesManager extends AbstractModuleManager
 
     public function setupModuleClassDefinitions()
     {
-
-        $this->addModelClass('EmployeeSalary');
     }
 }

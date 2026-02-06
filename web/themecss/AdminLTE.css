@@ -1178,9 +1178,9 @@ border-radius: 4px !important;
 .small-box {
   position: relative;
   display: block;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
   margin-bottom: 15px;
 }
 .small-box > .inner {
@@ -1196,6 +1196,9 @@ border-radius: 4px !important;
   z-index: 10;
   background: rgba(0, 0, 0, 0.1);
   text-decoration: none;
+  -webkit-border-radius: 0 0 8px 8px;
+  -moz-border-radius: 0 0 8px 8px;
+  border-radius: 0 0 8px 8px;
 }
 .small-box > .small-box-footer:hover {
   color: #fff;

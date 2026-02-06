@@ -4,6 +4,7 @@ import IceDataPipe from "../../../api/IceDataPipe";
 
 function init(data) {
   const modJsList = {};
+
   modJsList.tabCompanyStructure = new CompanyStructureAdapter('CompanyStructure');
   modJsList.tabCompanyStructure.setObjectTypeName('Company Structure');
   modJsList.tabCompanyStructure.setDataPipe(new IceDataPipe(modJsList.tabCompanyStructure));

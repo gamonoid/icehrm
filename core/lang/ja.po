@@ -1987,3 +1987,822 @@ msgstr "削除"
 
 msgid "Copy"
 msgstr "コピー"
+
+msgid "Employee Check-Ins"
+msgstr "従業員のチェックイン"
+
+msgid "Employee Distribution"
+msgstr "従業員の分布"
+
+msgid "Total"
+msgstr "合計"
+
+msgid "is required"
+msgstr "が必要です。"
+
+msgid "Use Employee Leave Period"
+msgstr "従業員の休暇期間の利用"
+
+msgid "Required Experience (Days)"
+msgstr "必要な経験(日数)"
+
+msgid "LeaveGroup"
+msgstr "グループを残します"
+
+msgid "Expenses Category"
+msgstr "費用区分"
+
+msgid "Employee Expense"
+msgstr "従業員経費"
+
+msgid "Overtime"
+msgstr "残業時間"
+
+msgid "Employee Fields"
+msgstr "従業員のフィールド"
+
+msgid "Asset Type"
+msgstr "資産の種類"
+
+msgid "Asset"
+msgstr "アセット"
+
+msgid "Custom Field"
+msgstr "カスタムフィールド"
+
+msgid "Object Type"
+msgstr "オブジェクトタイプ"
+
+msgid "Personal"
+msgstr "パーソナル"
+
+msgid "Identification"
+msgstr "識別"
+
+msgid "Work"
+msgstr "作品"
+
+msgid "Contact"
+msgstr "連絡先"
+
+msgid "Report"
+msgstr "報告"
+
+msgid "Login As"
+msgstr "としてログイン"
+
+msgid "Deactivate"
+msgstr "ディアクティベート"
+
+msgid "Employee Education"
+msgstr "社員教育"
+
+msgid "Employee Certification"
+msgstr "従業員の認証"
+
+msgid "Listening"
+msgstr "リスニング"
+
+msgid "Employee Dependent"
+msgstr "従業員の扶養家族"
+
+msgid "Contacts"
+msgstr "連絡先"
+
+msgid "Next"
+msgstr "次のページ"
+
+msgid "Emergency Contact"
+msgstr "緊急連絡先"
+
+msgid "Deactivated"
+msgstr "機能停止中"
+
+msgid "Archived"
+msgstr "アーカイヴ"
+
+msgid "Updated By"
+msgstr "更新日"
+
+msgid "Created Time (GMT)"
+msgstr "作成された時間 (GMT)"
+
+msgid "Yes"
+msgstr "はい。"
+
+msgid "No"
+msgstr "いいえ"
+
+msgid "Share with Employee"
+msgstr "社員との共有"
+
+msgid "Visible To"
+msgstr "見えること"
+
+msgid "ID Copy"
+msgstr "IDコピー"
+
+msgid "Degree Certificate"
+msgstr "学位 証明書"
+
+msgid "Driving License"
+msgstr "運転免許証"
+
+msgid "Owner"
+msgstr "オーナー"
+
+msgid "Manager"
+msgstr "マネージャー"
+
+msgid "HR Forms"
+msgstr "HRフォーム"
+
+msgid "Employee Forms"
+msgstr "社員用フォーム"
+
+msgid "Form"
+msgstr "フォーム"
+
+msgid "Submitted"
+msgstr "投稿済み"
+
+msgid "Review Period Start Date"
+msgstr "レビュー期間開始日"
+
+msgid "Review Period End Date"
+msgstr "レビュー期間終了日"
+
+msgid "Self Assessment Due Date"
+msgstr "自己評価期限"
+
+msgid "Due On"
+msgstr "発売日"
+
+msgid "Company Teams"
+msgstr "会社のチーム"
+
+msgid "Lead"
+msgstr "リード"
+
+msgid "Teams"
+msgstr "チーム名"
+
+msgid "Team Name"
+msgstr "チーム名"
+
+msgid "Team Members"
+msgstr "チームメンバー"
+
+msgid "Member "
+msgstr "メンバー"
+
+msgid "Role"
+msgstr "役割"
+
+msgid "Users Roles"
+msgstr "ユーザーの役割"
+
+msgid "User Role"
+msgstr "ユーザーロール"
+
+msgid "Additional Permissions"
+msgstr "追加権限"
+
+msgid "Usage"
+msgstr "使用方法"
+
+msgid "Last Export Result"
+msgstr "前回のエクスポート結果"
+
+msgid "Employee Data Import"
+msgstr "従業員データのインポート"
+
+msgid "Attendance Data Import"
+msgstr "出勤簿データのインポート"
+
+msgid "Payroll Data Import"
+msgstr "給料データのインポート"
+
+msgid "Supervisor and Approver Import"
+msgstr "上司と承認者のインポート"
+
+msgid "You can drag the chart both sides to view other dates on timeline"
+msgstr "チャートを左右にドラッグすると、他の日付をタイムライン上に表示することができます。"
+
+msgid "Payroll Group"
+msgstr "ペイロールグループ"
+
+msgid "Common"
+msgstr "共通"
+
+msgid "Function Type"
+msgstr "機能タイプ"
+
+msgid "Advanced"
+msgstr "アドバンスド"
+
+msgid "Simple"
+msgstr "シンプル"
+
+msgid "Company Name"
+msgstr "会社名"
+
+msgid "Hiring Manager"
+msgstr "採用担当者"
+
+msgid "Job Description"
+msgstr "仕事内容"
+
+msgid "Employement Type"
+msgstr "雇用形態"
+
+msgid "Postal Code"
+msgstr "郵便番号"
+
+msgid "Show Hiring Manager Name"
+msgstr "採用担当者名を表示"
+
+msgid "Previous"
+msgstr "前のページ"
+
+msgid "Position Applied"
+msgstr "応募ポジション"
+
+msgid "Hiring Stage"
+msgstr "採用段階"
+
+msgid "Total Years of Experience"
+msgstr "合計経験年数"
+
+msgid "Expected Salary"
+msgstr "予想給与額"
+
+msgid "Attach File "
+msgstr "添付ファイル"
+
+msgid "Update Password"
+msgstr "パスワードの変更"
+
+msgid "Employee Profile"
+msgstr "社員プロフィール"
+
+msgid "Contact details"
+msgstr "連絡先情報"
+
+msgid "Work related details"
+msgstr "仕事に関する情報"
+
+msgid "ID Number"
+msgstr "ID番号"
+
+msgid "Leave Days from Current Leave Period"
+msgstr "現在の休暇期間からの休暇日数"
+
+msgid "Paid Time Off Adjustments"
+msgstr "有給休暇の調整"
+
+msgid "Leave Days Carried Forward Previous Period"
+msgstr "前 期 繰 越 し 休 業 日"
+
+msgid "Leave Days Available to Use"
+msgstr "使用可能な休暇日数"
+
+msgid "Approved Leave Days"
+msgstr "承認された休暇日数"
+
+msgid "Pending Leave Days"
+msgstr "申請中の休暇日数"
+
+msgid "Rejected Leave Days"
+msgstr "拒否された休暇日数"
+
+msgid "Calculated by Leave Type"
+msgstr "休暇種類別計算"
+
+msgid "Show Calculation"
+msgstr "計算結果の表示"
+
+msgid "Total Time"
+msgstr "合計時間"
+
+msgid "Personal Documents"
+msgstr "パーソナルドキュメント"
+
+msgid "My Forms"
+msgstr "マイフォーム"
+
+msgid "Training Sessions of Coordinated by Me"
+msgstr "コーディネート・バイ・ミーの研修会"
+
+msgid "Self Assessments"
+msgstr "セルフアセス"
+
+msgid "Connection"
+msgstr "接続方法"
+
+msgid "Data directory is accessible from outside."
+msgstr "データディレクトリに外部からアクセスできる。"
+
+msgid "Learn how to fix"
+msgstr "修正方法はこちら"
+
+msgid "Copy System Report"
+msgstr "コピーシステムレポート"
+
+msgid "System Issues"
+msgstr "システム課題"
+
+msgid "System Report"
+msgstr "システムレポート"
+
+msgid "Here you can define the structure of the company by adding branches, departments, company units,etc. Each employee needs to be connected to a company structure."
+msgstr "ここでは、支店、部門、会社単位などを追加して会社の構造を定義できます。各従業員は会社構造に接続されている必要があります。"
+
+msgid "Company graph provides a graphical overview of the company structure."
+msgstr "会社グラフは、会社構造の概要をグラフィカルに示します。"
+
+msgid "Here you can manage the job titles in your organization. Each employee needs to be assigned a job title."
+msgstr "ここでは、組織内の役職を管理できます。各従業員に役職を割り当てる必要があります。"
+
+msgid "Here you can define the different pay grades in your organization. "
+msgstr "ここで、組織内のさまざまな給与等級を定義できます。"
+
+msgid "Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state."
+msgstr "ここで、組織内のさまざまな種類の雇用状態を定義できます。各従業員には雇用状態を割り当てる必要があります。"
+
+msgid "Here you can define the different types of skills an employee might have."
+msgstr "ここでは、従業員が持つ可能性のあるさまざまな種類のスキルを定義できます。"
+
+msgid "Here you can define the different levels of education an employee might have."
+msgstr "ここでは、従業員が持つ可能性のあるさまざまなレベルの教育レベルを定義できます。"
+
+msgid "Here you can define the different types of certifications an employee might have completed."
+msgstr "ここでは、従業員が完了した可能性のあるさまざまな種類の認定を定義できます。"
+
+msgid "Languages consists of most of the languages used globally."
+msgstr "言語は、グローバルに使用されるほとんどの言語で構成されています。"
+
+msgid "Here you can add details about a project such as project name, client, details and the status."
+msgstr "ここでは、プロジェクト名、クライアント、詳細、ステータスなどのプロジェクトの詳細を追加できます。"
+
+msgid "Here you can assign projects to employees."
+msgstr "ここでは、プロジェクトを従業員に割り当てることができます。"
+
+msgid "Here you can add and manage clients your organization is working with. You can choose the correct client when adding a project in IceHrm."
+msgstr "ここでは、組織が協力しているクライアントを追加および管理できます。 ICEHRMにプロジェクトを追加するときに、正しいクライアントを選択できます。"
+
+msgid "Here you can define custom fields for assets, company struture, employee, travel request or expense forms."
+msgstr "ここでは、資産、会社の支店、従業員、旅行リクエスト、または費用フォームのカスタムフィールドを定義できます。"
+
+msgid "Here you can view records of all the activities performed by different users in the system."
+msgstr "ここでは、システム内のさまざまなユーザーが実行するすべてのアクティビティの記録を表示できます。"
+
+msgid "Here you can to add new employees, view employee details and filter employees."
+msgstr "ここでは、新しい従業員を追加し、従業員の詳細を表示し、従業員をフィルターすることができます。"
+
+msgid "Here you can record the work history of your employees."
+msgstr "ここでは、従業員の仕事履歴を記録できます。"
+
+msgid "Here you can add the skills each employee in your organization has."
+msgstr "ここでは、組織内の各従業員が持っているスキルを追加できます。"
+
+msgid "Here you can record the level of education each employee in your organization has."
+msgstr "ここでは、組織内の各従業員が持っている教育のレベルを記録できます。"
+
+msgid "Here you can define the certifications each of your employee has completed so far."
+msgstr "ここでは、それぞれの従業員がこれまでに完了した認定を定義できます。"
+
+msgid "Here you can keep track of all the languages each employee knows."
+msgstr "ここでは、各従業員が知っているすべての言語を追跡できます。"
+
+msgid "Here you can add all the dependents of each employee."
+msgstr "ここでは、各従業員のすべての扶養家族を追加できます。"
+
+msgid "Here you can record emergency contacts of employees."
+msgstr "ここでは、従業員の緊急連絡先を記録できます。"
+
+msgid "Here you can view all the deativated employees. You can still recover data of a deactivated employee by clicking on Activate."
+msgstr "ここでは、他のすべての人間の従業員を表示できます。 Activateをクリックして、非アクティブ化した従業員のデータを回復できます。"
+
+msgid "Here you can view the deleted employees. Click on Download to download employee data as a JSON."
+msgstr "ここでは、削除された従業員を表示できます。 [ダウンロード]をクリックして、従業員データをJSONとしてダウンロードします。"
+
+msgid "Here you can views how employee data changed overtime."
+msgstr "ここでは、従業員のデータが時間外に変更された方法を表示できます。"
+
+msgid "Here you can define any teams in your organization."
+msgstr "ここでは、組織内のチームを定義できます。"
+
+msgid "Here you can add employees to the correct team."
+msgstr "ここでは、従業員を正しいチームに追加できます。"
+
+msgid "Here you can add company documents to share announcements, policies, procedures, etc. with employees. These documents can be shared with specific employees or departments."
+msgstr "ここでは、会社のドキュメントを追加して、発表、ポリシー、手順などを従業員と共有できます。これらの文書は、特定の従業員または部門と共有できます。"
+
+msgid "Here you can define the document types employees can add to the system."
+msgstr "ここでは、従業員がシステムに追加できるドキュメントタイプを定義できます。"
+
+msgid "Here you can add personal employee documents. The visibility of the employee document can be defined when adding the document."
+msgstr "ここでは、個人の従業員文書を追加できます。従業員のドキュメントの可視性は、ドキュメントを追加するときに定義できます。"
+
+msgid "Here all the payslips generated through the payroll module. Click on Add New to manually add a payslip."
+msgstr "ここでは、給与モジュールを介して生成されたすべてのペイスリップ。 [新しい追加]をクリックして、手動でペイスリップを追加します。"
+
+msgid "Here you can attendance records of employees and to view, edit, filter employee attendance records."
+msgstr "ここでは、従業員の出席記録と、従業員の出席記録を表示、編集、フィルタリングすることができます。"
+
+msgid "Here you can view whether employees are Clocked In, Clocked Out or Not Clocked In."
+msgstr "ここでは、従業員がクロックインしているか、クロックアウトされているのか、それともクロックインしていないかを確認できます。"
+
+msgid "Here you can assign performance reviews to employees and manage, view, and edit performance reviews."
+msgstr "ここでは、パフォーマンスレビューを従業員に割り当て、パフォーマンスレビューを管理、表示、編集できます。"
+
+msgid "Here you can request review feedback from a supervisor/peer."
+msgstr "ここでは、スーパーバイザー/ピアからレビューフィードバックをリクエストできます。"
+
+msgid "Here you can create custom review templates for the performance review process."
+msgstr "ここでは、パフォーマンスレビュープロセスのカスタムレビューテンプレートを作成できます。"
+
+msgid "Here you can monitor the progress of all employee goals."
+msgstr "ここでは、すべての従業員の目標の進捗を監視できます。"
+
+msgid "Here you can define leave types available in your organization."
+msgstr "ここでは、組織内で利用可能な休暇タイプを定義できます。"
+
+msgid "Here you can define leave periods by providing a name for the period and by selecting the correct start and end dates."
+msgstr "ここでは、期間の名前を提供し、正しい開始日と終了日を選択することにより、休暇期間を定義できます。"
+
+msgid "Here you can define the working and non-working days according to your organization or by country."
+msgstr "ここでは、組織または国ごとに作業日と非作業の日を定義できます。"
+
+msgid "Here you need to add all the holidays relevant to a leave period."
+msgstr "ここでは、休暇期間に関連するすべての休日を追加する必要があります。"
+
+msgid "Here you can override the behavior of a leave type for job titles, employment statuses, or even individual employees by adding a leave rule."
+msgstr "ここでは、休暇規則を追加することにより、求人タイトル、雇用状況、または個々の従業員の休暇タイプの行動をオーバーライドできます。"
+
+msgid "Here you can keep track of employee PTO. This can be used to compensate an employee and adjust leave balance from previous years."
+msgstr "ここでは、従業員のPTOを追跡できます。これを使用して、従業員を補償し、過去の年から休暇の残高を調整できます。"
+
+msgid "Here you can create a leave group so you can group employees and create leave types or leave rules affecting the employees in the group."
+msgstr "ここでは、従業員をグループ化して休暇タイプを作成したり、グループ内の従業員に影響を与えるルールを残すことができるように、休暇グループを作成できます。"
+
+msgid "Here you can add employees to the correct leave group."
+msgstr "ここでは、従業員を正しい休暇グループに追加できます。"
+
+msgid "Here you can view all employee leaves and approve leave requests."
+msgstr "ここでは、すべての従業員の葉を表示し、休暇リクエストを承認できます。"
+
+msgid "Here you can define the types of assets in your organization so you can easily categorize the assets."
+msgstr "ここでは、組織内の資産の種類を定義できるため、資産を簡単に分類できます。"
+
+msgid "Here you can add and manage company assets each employee or department has."
+msgstr "ここでは、各従業員または部門が持っている会社資産を追加および管理できます。"
+
+msgid "Here you can define the different types of expenses in an organization."
+msgstr "ここでは、組織内のさまざまな種類の費用を定義できます。"
+
+msgid "Here you can add the different types of payment methods used for expenses in an organization."
+msgstr "ここでは、組織内の費用に使用されるさまざまな種類の支払い方法を追加できます。"
+
+msgid "Here you can add employee expenses, edit and approve expense requests."
+msgstr "ここでは、従業員費用を追加し、費用リクエストを編集および承認できます。"
+
+msgid "Here you can create custom forms to collect data from employees."
+msgstr "ここでは、従業員からデータを収集するカスタムフォームを作成できます。"
+
+msgid "Here you can assign forms to employees, fill and download forms."
+msgstr "ここでは、フォームを従業員に割り当て、フォームに記入してダウンロードできます。"
+
+msgid "Here you can add courses."
+msgstr "ここでコースを追加できます。"
+
+msgid "Here you can add different training sessions to a particular course. You can let employees sign up for training sessions or assign training sessions by changing the attendance type."
+msgstr "ここでは、特定のコースにさまざまなトレーニングセッションを追加できます。従業員にトレーニングセッションにサインアップしたり、出席タイプを変更してトレーニングセッションを割り当てることができます。"
+
+msgid "Here you can assign training sessions to employees."
+msgstr "ここでは、トレーニングセッションを従業員に割り当てることができます。"
+
+msgid "Here you can add employee travel requests and view and edit travel requests."
+msgstr "ここでは、従業員の旅行リクエストを追加して、旅行リクエストを表示および編集できます。"
+
+msgid "Here you can define the different types of overtime available in your organization."
+msgstr "ここでは、組織で利用可能なさまざまな種類の残業を定義できます。"
+
+msgid "Here you can add and manage employee overtime requests."
+msgstr "ここでは、従業員の残業リクエストを追加および管理できます。"
+
+msgid "Here you can define different types of loans employees are eligible for."
+msgstr "ここでは、従業員が対象となるさまざまな種類のローンを定義できます。"
+
+msgid "Here you can add employee loans."
+msgstr "ここでは、従業員ローンを追加できます。"
+
+msgid "Here you can generate different admin reports."
+msgstr "ここでは、さまざまな管理レポートを生成できます。"
+
+msgid "Here you can export payroll meta data."
+msgstr "ここでは、給与計算データをエクスポートできます。"
+
+msgid "Here you can view all the admin reports generated."
+msgstr "ここでは、生成されたすべての管理者レポートを表示できます。"
+
+msgid "Here you can create user accounts for employees for them to login to their IceHrm accounts."
+msgstr "ここでは、従業員のユーザーアカウントを作成して、ICEHRMアカウントにログインすることができます。"
+
+msgid "Here you can create user roles to give or deny access to certain modules."
+msgstr "ここでは、特定のモジュールへのアクセスを提供または拒否するユーザーロールを作成できます。"
+
+msgid "Here you can Enable or Disable modules."
+msgstr "ここでは、モジュールを有効または無効にすることができます。"
+
+msgid "Here you can manage what permissions each user level has."
+msgstr "ここでは、各ユーザーレベルの権限を管理できます。"
+
+msgid "Here you can view details about your current IceHrm plan."
+msgstr "ここでは、現在のICEHRMプランの詳細を表示できます。"
+
+msgid "Here you can view all your pending transactions."
+msgstr "ここでは、保留中のすべての取引を表示できます。"
+
+msgid "Here you can view details about prepaid credit and other IceHrm transactions."
+msgstr "ここでは、プリペイドクレジットおよびその他のICEHRMトランザクションの詳細を表示できます。"
+
+msgid "Here you can manage the countries you will be able to select within the system."
+msgstr "ここでは、システム内で選択できる国を管理できます。"
+
+msgid "Here you can manage all the provinces you will be able to select within the system."
+msgstr "ここでは、システム内で選択できるすべての州を管理できます。"
+
+msgid "Here you can manage all the currencies you will be able to select within the system."
+msgstr "ここでは、システム内で選択できるすべての通貨を管理できます。"
+
+msgid "Here you can manage all the nationalities you will be able to select within the system."
+msgstr "ここでは、システム内で選択できるすべての国籍を管理できます。"
+
+msgid "Here you can manage all the ethnicities you will be able to select within the system."
+msgstr "ここでは、システム内で選択できるすべての民族を管理できます。"
+
+msgid "Here you can manage all the immigration status options you will be able to select within the system."
+msgstr "ここでは、システム内で選択できるすべての移民ステータスオプションを管理できます。"
+
+msgid "Here you can add data importers that can be used to import data to the system."
+msgstr "ここでは、システムにデータをインポートするために使用できるデータインポーターを追加できます。"
+
+msgid "Here you can import data using the data importers defined in the system."
+msgstr "ここでは、システムで定義されているデータ輸入業者を使用してデータをインポートできます。"
+
+msgid "Here you can make changes to the fields available in the employee form."
+msgstr "ここでは、従業員のフォームで利用可能なフィールドを変更することができます。"
+
+msgid "Here you can check attendance time recorded every day for all the employees or a specific employee."
+msgstr "ここでは、すべての従業員または特定の従業員に毎日記録されている出席時間を確認できます。"
+
+msgid "Here you can check how much of a percentage of attendance time goes into timesheets for each employee."
+msgstr "ここでは、各従業員の出席時間の割合がタイムシートにどの程度入っているかを確認できます。"
+
+msgid "Here you can view approved employee leaves of employees with the leave dates."
+msgstr "ここでは、承認された従業員の従業員の葉を休暇日に表示できます。"
+
+msgid "Here you can define different type of salary components in your organization."
+msgstr "ここでは、組織内のさまざまな種類の給与コンポーネントを定義できます。"
+
+msgid "Here you can define all the salary components related to the defined salary component types."
+msgstr "ここでは、定義された給与コンポーネントタイプに関連するすべての給与コンポーネントを定義できます。"
+
+msgid "Here you can add all salary components related to each of your employees."
+msgstr "ここでは、各従業員に関連するすべての給与コンポーネントを追加できます。"
+
+msgid "Here you can add all the employees to the correct payroll group. Each employee should belong to a payroll group."
+msgstr "ここでは、すべての従業員を正しい給与グループに追加できます。各従業員は給与グループに属している必要があります。"
+
+msgid "Here you can create payroll reports for a specific time period."
+msgstr "ここでは、特定の期間の給与報告書を作成できます。"
+
+msgid "Here you can define the payroll columns that will be used to generate payroll reports."
+msgstr "ここでは、給与計算レポートを生成するために使用される給与計算列を定義できます。"
+
+msgid "Here you can define different payroll groups if you have different payroll calculations for different employees."
+msgstr "ここでは、異なる従業員に対して異なる給与計算がある場合は、さまざまな給与グループを定義できます。"
+
+msgid "Here you can define different calculation such as tax that can be used in payroll columns."
+msgstr "ここでは、給与計算列で使用できる税など、さまざまな計算を定義できます。"
+
+msgid "Here you can create custom payslip templates."
+msgstr "ここでは、カスタムペイスリップテンプレートを作成できます。"
+
+msgid "Here you can add employment types that will be used when creating job posts."
+msgstr "ここでは、ジョブ投稿を作成するときに使用される雇用タイプを追加できます。"
+
+msgid "Here you can add different experience levels that will be used when creating job posts."
+msgstr "ここでは、ジョブ投稿を作成するときに使用されるさまざまなエクスペリエンスレベルを追加できます。"
+
+msgid "Here you can add job functions that will be used when creating job posts."
+msgstr "ここでは、ジョブ投稿を作成するときに使用されるジョブ機能を追加できます。"
+
+msgid "Here you can add education levels that will be used when creating job posts."
+msgstr "ここでは、ジョブ投稿を作成するときに使用される教育レベルを追加できます。"
+
+msgid "Here you can define the benefits that will be given by your organization to candidates."
+msgstr "ここでは、組織が候補者に与えられる利点を定義できます。"
+
+msgid "Here you can create job posts and generate job links."
+msgstr "ここでは、ジョブ投稿を作成してジョブリンクを生成できます。"
+
+msgid "Here you can view all the candidates that have applied for job positions through the job links. You can manually candidates by clicking on Add New."
+msgstr "ここでは、ジョブリンクを通じて職位に応募したすべての候補者を表示できます。 [新しい追加]をクリックすると、手動で候補者ができます。"
+
+msgid "Here you can manage of all the candidates with the hiring stage New."
+msgstr "ここでは、採用段階ですべての候補者を管理できます。"
+
+msgid "Here you can manage all the candidates in the Phone Screen hiring stage."
+msgstr "ここでは、電話画面の採用段階のすべての候補者を管理できます。"
+
+msgid "Here you can manage all the candidates in the Assessment hiring stage."
+msgstr "ここでは、評価採用段階のすべての候補者を管理できます。"
+
+msgid "Here you can manage all the candidates of the candidates in the Interview hiring stage. The candidate will be moved to this stage when an interview is scheduled."
+msgstr "ここでは、インタビューの採用段階で候補者のすべての候補者を管理できます。候補者は、インタビューが予定されているときにこの段階に移動されます。"
+
+msgid "Here you can manage all the candidates in the Offer Sent hiring stage."
+msgstr "ここでは、送信されたオファーのすべての候補者を雇用段階に管理できます。"
+
+msgid "Here you can manage all the candidate in the Hired hiring stage."
+msgstr "ここでは、雇用された雇用段階ですべての候補者を管理できます。"
+
+msgid "Here you can manage all the rejected candidates."
+msgstr "ここでは、拒否されたすべての候補者を管理できます。"
+
+msgid "Here you can add all the skills you have."
+msgstr "ここでは、持っているすべてのスキルを追加できます。"
+
+msgid "Here you can add details about your education levels."
+msgstr "ここでは、教育レベルの詳細を追加できます。"
+
+msgid "Here you can add all the certifications you have completed."
+msgstr "ここでは、完了したすべての認定を追加できます。"
+
+msgid "Here you can add all the languages you are fluent in."
+msgstr "ここでは、堪能なすべての言語を追加できます。"
+
+msgid "Here you can add details about your dependents."
+msgstr "ここでは、扶養家族の詳細を追加できます。"
+
+msgid "Here you can add details about your emergency contacts."
+msgstr "ここでは、緊急連絡先の詳細を追加できます。"
+
+msgid "Here you can add and manage your leave requests."
+msgstr "ここでは、休暇リクエストを追加および管理できます。"
+
+msgid "Here you can view a summary of all leave balances."
+msgstr "ここでは、すべての休暇残高の概要を表示できます。"
+
+msgid "Here you can view all your approved leave requests."
+msgstr "ここでは、承認されたすべての休暇リクエストを表示できます。"
+
+msgid "Here you can view all your pending leave requests."
+msgstr "ここでは、すべての保留中の休暇リクエストを表示できます。"
+
+msgid "Here you can view and approve leave requests from your subordinates."
+msgstr "ここでは、部下からの休暇リクエストを表示および承認できます。"
+
+msgid "Here you can view all cancellation requests from your subordinates."
+msgstr "ここでは、部下からのすべてのキャンセルリクエストを表示できます。"
+
+msgid "Here you can view and approve leave requests if you are an approver to an employee."
+msgstr "ここでは、従業員の承認者である場合、休暇リクエストを表示および承認できます。"
+
+msgid "Here you can view all your leave requests on a calendar."
+msgstr "ここでは、カレンダーですべての休暇リクエストを表示できます。"
+
+msgid "Here you can add and manage projects you are working on or assigned to."
+msgstr "ここでは、作業中または割り当てられているプロジェクトを追加および管理できます。"
+
+msgid "Here you can mark your attendance by punching in and punching out."
+msgstr "ここでは、出席してパンチアウトすることで出席をマークすることができます。"
+
+msgid "Here you can view and manage all pending, approved, rejected and submitted timesheets."
+msgstr "ここでは、保留中、承認、拒否、提出されたすべてのタイムシートを表示および管理できます。"
+
+msgid "Here you can manage of all your approved timesheets."
+msgstr "ここでは、承認されたすべてのタイムシートを管理できます。"
+
+msgid "Here you can manage of all your pending timesheets."
+msgstr "ここでは、すべての保留中のタイムシートを管理できます。"
+
+msgid "Here you can view and approve timesheetes of your subordinates."
+msgstr "ここでは、部下のタイムシートを表示および承認できます。"
+
+msgid "Here you can view and manage all your pending, approved, rejected and submitted attendance sheets."
+msgstr "ここでは、出席者シートを保留、承認、拒否、提出するすべてのものを表示および管理できます。"
+
+msgid "Here you can view all your approved attendance sheets."
+msgstr "ここでは、承認されたすべての出席シートを表示できます。"
+
+msgid "Here you can view all your pending attendance sheets."
+msgstr "ここでは、すべての保留中の出席シートを表示できます。"
+
+msgid "Here you can manage and approve attendance sheets of your subordinates."
+msgstr "ここでは、部下の出席シートを管理および承認できます。"
+
+msgid "Here you add an overtime request and view previous overtime requests."
+msgstr "ここでは、残業リクエストを追加し、以前の残業リクエストを表示します。"
+
+msgid "Here you can manage and approve overtime requests of your subordinates."
+msgstr "ここでは、部下の残業要求を管理および承認できます。"
+
+msgid "Here you can upload your personal documents to the system."
+msgstr "ここでは、個人のドキュメントをシステムにアップロードできます。"
+
+msgid "Here you can view all the company documents that are shared with you."
+msgstr "ここでは、あなたと共有されているすべての会社の文書を表示できます。"
+
+msgid "Here you can view all your payslips. You can download your payslips as PDFs."
+msgstr "ここでは、すべてのペイスリップを表示できます。ペイスリップをPDFとしてダウンロードできます。"
+
+msgid "Here you will find all the forms you need to fill out and all previous completed forms."
+msgstr "ここでは、記入するために必要なすべてのフォームと以前に完了したフォームをすべて見つけることができます。"
+
+msgid "Here you can view all contact information of employees in the organization."
+msgstr "ここでは、組織内の従業員のすべての連絡先情報を表示できます。"
+
+msgid "Here you can view all the training sessions available."
+msgstr "ここでは、利用可能なすべてのトレーニングセッションを表示できます。"
+
+msgid "Here you can view all training sessions you have signed up for or assigned to."
+msgstr "ここでは、サインアップまたは割り当てられたすべてのトレーニングセッションを表示できます。"
+
+msgid "Here you can manage all the training sessions of your subordinates."
+msgstr "ここでは、部下のすべてのトレーニングセッションを管理できます。"
+
+msgid "Here you can view all the training sessions coordinated by you."
+msgstr "ここでは、あなたが調整したすべてのトレーニングセッションを表示できます。"
+
+msgid "Here you can manage all the self assessments you need to work on for your performance reviews."
+msgstr "ここでは、パフォーマンスレビューのために取り組む必要があるすべての自己評価を管理できます。"
+
+msgid "Here you can provide feedback to your peers or subordinates."
+msgstr "ここでは、仲間や部下にフィードバックを提供できます。"
+
+msgid "Here you can submit and manage your travel requests."
+msgstr "ここでは、旅行リクエストを送信および管理できます。"
+
+msgid "Here you can view and approve travel requests of your subordinates."
+msgstr "ここでは、部下の旅行リクエストを表示および承認できます。"
+
+msgid "Here you can approve travel requests if you are an approver to certain employees."
+msgstr "ここでは、特定の従業員の承認者である場合、旅行リクエストを承認できます。"
+
+msgid "Here you can submit and manage your expense requests."
+msgstr "ここでは、費用リクエストを送信および管理できます。"
+
+msgid "Here you can manage and approve expenses requests of your subordinates."
+msgstr "ここでは、部下の費用リクエストを管理および承認できます。"
+
+msgid "Here you can approve expense requests if you are an approver to certain employees."
+msgstr "ここでは、特定の従業員の承認者である場合、費用リクエストを承認できます。"
+
+msgid "Here you can view details of all your salary components."
+msgstr "ここでは、すべての給与コンポーネントの詳細を表示できます。"
+
+msgid "Here you can view details of all the loans you have taken from the company."
+msgstr "ここでは、会社から取ったすべてのローンの詳細を表示できます。"
+
+msgid "Position"
+msgstr "位置"
+
+msgid "Application Date"
+msgstr "出願日"
+
+msgid "Basic"
+msgstr "基本"
+
+msgid "All Candidates"
+msgstr "すべての候補者"
+
+msgid "New"
+msgstr "新しい"
+
+msgid "Screening"
+msgstr "ふるい分け"
+
+msgid "Assessment"
+msgstr "評価"
+
+msgid "Interview Scheduled"
+msgstr "インタビューが予定されています"
+
+msgid "Offer"
+msgstr "オファー"
+
+msgid "Hired"
+msgstr "雇われた"
+
+msgid "Member"
+msgstr "メンバー"
+
+msgid "Attach File"
+msgstr "添付ファイル"
+
+msgid "Here you can define the different pay grades in your organization."
+msgstr "ここで、組織内のさまざまな給与等級を定義できます。"

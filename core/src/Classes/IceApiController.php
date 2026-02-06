@@ -32,7 +32,7 @@ class IceApiController extends RestEndPoint
         } elseif ($httpMethod === self::PUT) {
             Macaw::put(REST_API_PATH.$path, $callback);
         } elseif ($httpMethod === self::DELETE) {
-            Macaw::options(REST_API_PATH.$path, $callback);
+            Macaw::delete(REST_API_PATH.$path, $callback);
         } elseif ($httpMethod === self::OPTIONS) {
             Macaw::options(REST_API_PATH.$path, $callback);
         } elseif ($httpMethod === self::HEAD) {

@@ -74,7 +74,6 @@ class CustomFieldManager
             $order = $customFields[$cf->name]->display_order;
             $section = $customFields[$cf->name]->display_section;
 
-            $customFieldsListOrdered[] = $order;
 
             $addToList = false;
             if ($type == "text" || $type == "textarea" || $type == "fileupload") {
@@ -141,11 +140,16 @@ class CustomFieldManager
 
             if ($addToList) {
                 $object->customFields[$label] = array($object->customFields[$label], $section, $type);
+				$customFieldsListOrdered[] = $order;
             }
         }
-        array_multisort($customFieldsListOrdered, SORT_DESC, SORT_NUMERIC, $object->customFields);
 
-        return $object;
+		try {
+			array_multisort($customFieldsListOrdered, SORT_DESC, SORT_NUMERIC, $object->customFields);
+		} catch (\Exception $e) {
+		}
+
+		return $object;
     }
 
     public function syncMigrations()

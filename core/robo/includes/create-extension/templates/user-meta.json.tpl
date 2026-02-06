@@ -13,5 +13,6 @@
   "model_namespace": "\\__namespace__\\Common\\Model",
   "manager": "\\__namespace__\\Extension",
   "controller": "\\__namespace__\\Controller",
-  "headless": false
+  "headless": false,
+  "show_in_menu": true
 }

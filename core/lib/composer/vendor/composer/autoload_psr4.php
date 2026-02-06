@@ -49,5 +49,5 @@ return array(
     'Consolidation\\Config\\' => array($vendorDir . '/consolidation/config/src'),
     'Consolidation\\AnnotatedCommand\\' => array($vendorDir . '/consolidation/annotated-command/src'),
     'Base64Url\\' => array($vendorDir . '/spomky-labs/base64url/src'),
-    '' => array($baseDir . '/../../src'),
+    '' => array($baseDir . '/../../src', $baseDir . '/../../../extensions/leave_and_performance/core/src'),
 );

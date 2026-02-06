@@ -3,7 +3,7 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import { Space, Tag, message } from 'antd';
+import { Avatar, Space, Tag, message } from 'antd';
 import {
   CopyOutlined, DeleteOutlined, EditOutlined, MonitorOutlined,
 } from '@ant-design/icons';
@@ -16,6 +16,7 @@ class UserAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
+      'image',
       'username',
       'email',
       'employee',
@@ -26,6 +27,7 @@ class UserAdapter extends ReactModalAdapterBase {
   getHeaders() {
     return [
       { sTitle: 'ID' },
+      { sTitle: '' },
       { sTitle: 'User Name' },
       { sTitle: 'Authentication Email' },
       { sTitle: 'Employee' },
@@ -35,6 +37,11 @@ class UserAdapter extends ReactModalAdapterBase {
 
   getTableColumns() {
     return [
+      {
+        title: '',
+        dataIndex: 'image',
+        render: (text, record) => <Avatar src={text} />,
+      },
       {
         title: 'Username',
         dataIndex: 'username',
@@ -355,6 +362,38 @@ class UserInvitationAdapter extends ReactModalAdapterBase {
         dataIndex: 'invitation_status_text',
       },
     ];
+  }
+
+  showViewButton() {
+    return false;
+  }
+
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => (
+      <Space size="middle">
+        {/*{adapter.hasAccess('save') && adapter.showEdit && record.invitation_status_text === 'Invited'*/}
+        {/*      && (*/}
+        {/*      <Tag color="green" onClick={() => modJs.edit(record.id)} style={{ cursor: 'pointer' }}>*/}
+        {/*        <EditOutlined />*/}
+        {/*        {` ${adapter.gt('Edit')}`}*/}
+        {/*      </Tag>*/}
+        {/*      )}*/}
+        {adapter.hasAccess('delete') && adapter.showDelete
+              && (
+              <Tag color="volcano" onClick={() => modJs.deleteRow(record.id)} style={{ cursor: 'pointer' }}>
+                <DeleteOutlined />
+                {` ${adapter.gt('Delete')}`}
+              </Tag>
+              )}
+        {adapter.hasAccess('save') && adapter.showAddNew
+              && (
+              <Tag color="cyan" onClick={() => modJs.copyRow(record.id)} style={{ cursor: 'pointer' }}>
+                <CopyOutlined />
+                {` ${adapter.gt('Copy')}`}
+              </Tag>
+              )}
+      </Space>
+    );
   }
 
   getFormFields() {

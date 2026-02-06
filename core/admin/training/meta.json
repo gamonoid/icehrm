@@ -1,0 +1,14 @@
+{
+    "label": "Training Sessions",
+    "menu": "Manage",
+    "order": "9",
+    "icon": "fa-briefcase",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "dashboardPosition": 11,
+    "permissions": [],
+    "model_namespace": "\\Training\\Common\\Model",
+    "manager": "\\Training\\Admin\\Api\\TrainingAdminManager"
+}

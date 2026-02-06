@@ -1,13 +1,14 @@
 {
-"Discussions":"fa-comments",
-"Personal Information":"fa-grip-horizontal",
-"Leave":"fa-calendar-alt",
-"Time Management":"fa-hourglass-half",
-"Documents":"fa-file-alt",
+"About You":"fa-grip-horizontal",
+"Collaboration": "fa-th",
 "Company":"fa-building",
+"Leave":"fa-calendar-alt",
+"Time":"fa-hourglass-half",
+"My Tasks": "fa-list-check",
+"Documents":"fa-file-alt",
 "Training":"fa-briefcase",
 "Performance":"fa-bezier-curve",
-"Travel Management":"fa-globe",
+"Travel":"fa-globe",
 "Finance":"fa-calculator",
-"User Reports":"fa-book-reader"
+"My Reports":"fa-window-maximize"
 }

@@ -1,6 +1,6 @@
 {
 	"label":"Emergency Contacts",
-	"menu":"Personal Information",
+	"menu":"About You",
 	"order":"6",
 	"icon":"fa-phone-square",
 	"user_levels":["Admin","Manager","Employee"],

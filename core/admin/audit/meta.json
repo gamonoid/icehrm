@@ -1,0 +1,12 @@
+{
+    "label": "Audit Log",
+    "menu": "Admin",
+    "order": "92",
+    "icon": "fa-compass",
+    "user_levels": [
+        "Admin"
+    ],
+    "permissions": [],
+    "model_namespace": "\\Audit\\Common\\Model",
+    "manager": "\\Audit\\Admin\\Api\\AuditAdminManager"
+}

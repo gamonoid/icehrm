@@ -1987,3 +1987,822 @@ msgstr "حذف"
 
 msgid "Copy"
 msgstr "نسخ"
+
+msgid "Employee Check-Ins"
+msgstr "تسجيلات الموظفين"
+
+msgid "Employee Distribution"
+msgstr "توزيع الموظفين"
+
+msgid "Total"
+msgstr "مجموع"
+
+msgid "is required"
+msgstr "مطلوب"
+
+msgid "Use Employee Leave Period"
+msgstr "استخدام فترة إجازة الموظف"
+
+msgid "Required Experience (Days)"
+msgstr "الخبرة المطلوبة (أيام)"
+
+msgid "LeaveGroup"
+msgstr "ترك مجموعات"
+
+msgid "Expenses Category"
+msgstr "فئة المصروفات"
+
+msgid "Employee Expense"
+msgstr "نفقات الموظف"
+
+msgid "Overtime"
+msgstr "متأخر، بعد فوات الوقت"
+
+msgid "Employee Fields"
+msgstr "مجالات الموظفين"
+
+msgid "Asset Type"
+msgstr "نوع الأصول"
+
+msgid "Asset"
+msgstr "أصل"
+
+msgid "Custom Field"
+msgstr "حقل مخصص"
+
+msgid "Object Type"
+msgstr "الحقول المخصصة"
+
+msgid "Personal"
+msgstr "شخصي"
+
+msgid "Identification"
+msgstr "تعريف"
+
+msgid "Work"
+msgstr "عمل"
+
+msgid "Contact"
+msgstr "اتصال"
+
+msgid "Report"
+msgstr "تقرير"
+
+msgid "Login As"
+msgstr "سجل دخول"
+
+msgid "Deactivate"
+msgstr "تعطيل"
+
+msgid "Employee Education"
+msgstr "تعليم الموظف"
+
+msgid "Employee Certification"
+msgstr "شهادة الموظف"
+
+msgid "Listening"
+msgstr "الاستماع"
+
+msgid "Employee Dependent"
+msgstr "الموظف المعال"
+
+msgid "Contacts"
+msgstr "جهات الاتصال"
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "Emergency Contact"
+msgstr "الاتصال بالطوارىء"
+
+msgid "Deactivated"
+msgstr "معطل"
+
+msgid "Archived"
+msgstr "مؤرشف"
+
+msgid "Updated By"
+msgstr "تم التحديث بواسطة"
+
+msgid "Created Time (GMT)"
+msgstr "وقت الإنشاء (GMT)"
+
+msgid "Yes"
+msgstr "نعم"
+
+msgid "No"
+msgstr "لا"
+
+msgid "Share with Employee"
+msgstr "شارك مع الموظف"
+
+msgid "Visible To"
+msgstr "مرئي ل"
+
+msgid "ID Copy"
+msgstr "نسخة الهوية"
+
+msgid "Degree Certificate"
+msgstr "درجة الشهادة"
+
+msgid "Driving License"
+msgstr "رخصة قيادة"
+
+msgid "Owner"
+msgstr "مالك"
+
+msgid "Manager"
+msgstr "مدير"
+
+msgid "HR Forms"
+msgstr "نماذج الموارد البشرية"
+
+msgid "Employee Forms"
+msgstr "نماذج الموظفين"
+
+msgid "Form"
+msgstr "استمارة"
+
+msgid "Submitted"
+msgstr "قدمت"
+
+msgid "Review Period Start Date"
+msgstr "تاريخ بدء فترة المراجعة"
+
+msgid "Review Period End Date"
+msgstr "تاريخ انتهاء فترة المراجعة"
+
+msgid "Self Assessment Due Date"
+msgstr "تاريخ استحقاق التقييم الذاتي"
+
+msgid "Due On"
+msgstr "تاريخ الاستحقاق"
+
+msgid "Company Teams"
+msgstr "فرق الشركة"
+
+msgid "Lead"
+msgstr "قيادة"
+
+msgid "Teams"
+msgstr "فرق"
+
+msgid "Team Name"
+msgstr "اسم الفريق"
+
+msgid "Team Members"
+msgstr "أعضاء الفريق"
+
+msgid "Member "
+msgstr "عضو"
+
+msgid "Role"
+msgstr "دور"
+
+msgid "Users Roles"
+msgstr "أدوار المستخدمين"
+
+msgid "User Role"
+msgstr "دور المستخدم"
+
+msgid "Additional Permissions"
+msgstr "أذونات إضافية"
+
+msgid "Usage"
+msgstr "إستعمال"
+
+msgid "Last Export Result"
+msgstr "آخر نتيجة تصدير"
+
+msgid "Employee Data Import"
+msgstr "استيراد بيانات الموظف"
+
+msgid "Attendance Data Import"
+msgstr "استيراد بيانات الحضور"
+
+msgid "Payroll Data Import"
+msgstr "استيراد بيانات كشوف المرتبات"
+
+msgid "Supervisor and Approver Import"
+msgstr "استيراد المشرف والموافق"
+
+msgid "You can drag the chart both sides to view other dates on timeline"
+msgstr "يمكنك سحب الرسم البياني من كلا الجانبين لعرض التواريخ الأخرى في المخطط الزمني"
+
+msgid "Payroll Group"
+msgstr "مجموعة الرواتب"
+
+msgid "Common"
+msgstr "مشترك"
+
+msgid "Function Type"
+msgstr "نوع الوظيفة"
+
+msgid "Advanced"
+msgstr "متقدم"
+
+msgid "Simple"
+msgstr "بسيط"
+
+msgid "Company Name"
+msgstr "اسم الشركة"
+
+msgid "Hiring Manager"
+msgstr "مدير التوظيف"
+
+msgid "Job Description"
+msgstr "المسمى الوظيفي"
+
+msgid "Employement Type"
+msgstr "نوع الوظيفة"
+
+msgid "Postal Code"
+msgstr "رمز بريدي"
+
+msgid "Show Hiring Manager Name"
+msgstr "إظهار اسم مدير التوظيف"
+
+msgid "Previous"
+msgstr "سابق"
+
+msgid "Position Applied"
+msgstr "تم تطبيق الموقع"
+
+msgid "Hiring Stage"
+msgstr "مرحلة التوظيف"
+
+msgid "Total Years of Experience"
+msgstr "مجموع سنوات الخبره"
+
+msgid "Expected Salary"
+msgstr "الراتب المتوقع"
+
+msgid "Attach File "
+msgstr "أرفق ملف"
+
+msgid "Update Password"
+msgstr "تطوير كلمة السر"
+
+msgid "Employee Profile"
+msgstr "ملف تعريف الموظف"
+
+msgid "Contact details"
+msgstr "بيانات المتصل"
+
+msgid "Work related details"
+msgstr "التفاصيل المتعلقة بالعمل"
+
+msgid "ID Number"
+msgstr "رقم الهوية"
+
+msgid "Leave Days from Current Leave Period"
+msgstr "أيام الإجازة من فترة الإجازة الحالية"
+
+msgid "Paid Time Off Adjustments"
+msgstr "تسويات إجازة مدفوعة الأجر"
+
+msgid "Leave Days Carried Forward Previous Period"
+msgstr "أيام الإجازة المنقولة الفترة السابقة"
+
+msgid "Leave Days Available to Use"
+msgstr "أيام الإجازة متاحة للاستخدام"
+
+msgid "Approved Leave Days"
+msgstr "أيام الإجازة المعتمدة"
+
+msgid "Pending Leave Days"
+msgstr "أيام الإجازة المعلقة"
+
+msgid "Rejected Leave Days"
+msgstr "أيام الإجازة المرفوضة"
+
+msgid "Calculated by Leave Type"
+msgstr "محسوبة حسب نوع الإجازة"
+
+msgid "Show Calculation"
+msgstr "إظهار الحساب"
+
+msgid "Total Time"
+msgstr "الوقت الكلي"
+
+msgid "Personal Documents"
+msgstr "مستندات شخصية"
+
+msgid "My Forms"
+msgstr "نماذجي"
+
+msgid "Training Sessions of Coordinated by Me"
+msgstr "دورات تدريبية منسقة بواسطتي"
+
+msgid "Self Assessments"
+msgstr "التقييمات الذاتية"
+
+msgid "Connection"
+msgstr "اتصال"
+
+msgid "Data directory is accessible from outside."
+msgstr "دليل البيانات يمكن الوصول إليه من الخارج."
+
+msgid "Learn how to fix"
+msgstr "تعلم كيفية الإصلاح"
+
+msgid "Copy System Report"
+msgstr "نسخ تقرير النظام"
+
+msgid "System Issues"
+msgstr "مشاكل النظام"
+
+msgid "System Report"
+msgstr "تقرير النظام"
+
+msgid "Here you can define the structure of the company by adding branches, departments, company units,etc. Each employee needs to be connected to a company structure."
+msgstr "هنا يمكنك تحديد هيكل الشركة من خلال إضافة الفروع والإدارات ووحدات الشركة وما إلى ذلك. يحتاج كل موظف إلى أن يكون متصلاً بهيكل الشركة."
+
+msgid "Company graph provides a graphical overview of the company structure."
+msgstr "يوفر الرسم البياني للشركة نظرة عامة رسومية على هيكل الشركة."
+
+msgid "Here you can manage the job titles in your organization. Each employee needs to be assigned a job title."
+msgstr "هنا يمكنك إدارة المسميات الوظيفية في مؤسستك. يحتاج كل موظف إلى تعيين مسمى وظيفي."
+
+msgid "Here you can define the different pay grades in your organization. "
+msgstr "هنا يمكنك تحديد درجات الأجور المختلفة في مؤسستك."
+
+msgid "Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state."
+msgstr "هنا يمكنك تحديد أنواع مختلفة من حالات التوظيف في مؤسستك. يجب تعيين حالة توظيف لكل موظف."
+
+msgid "Here you can define the different types of skills an employee might have."
+msgstr "هنا يمكنك تحديد الأنواع المختلفة من المهارات التي قد يمتلكها الموظف."
+
+msgid "Here you can define the different levels of education an employee might have."
+msgstr "هنا يمكنك تحديد مستويات التعليم المختلفة التي قد يكون لدى الموظف."
+
+msgid "Here you can define the different types of certifications an employee might have completed."
+msgstr "هنا يمكنك تحديد الأنواع المختلفة من الشهادات التي قد يكملها الموظف."
+
+msgid "Languages consists of most of the languages used globally."
+msgstr "تتكون اللغات من معظم اللغات المستخدمة عالميًا."
+
+msgid "Here you can add details about a project such as project name, client, details and the status."
+msgstr "هنا يمكنك إضافة تفاصيل حول مشروع مثل اسم المشروع والعميل والتفاصيل والحالة."
+
+msgid "Here you can assign projects to employees."
+msgstr "هنا يمكنك تعيين مشاريع للموظفين."
+
+msgid "Here you can add and manage clients your organization is working with. You can choose the correct client when adding a project in IceHrm."
+msgstr "هنا يمكنك إضافة وإدارة العملاء التي تعمل مؤسستك معها. يمكنك اختيار العميل الصحيح عند إضافة مشروع في IceHRM."
+
+msgid "Here you can define custom fields for assets, company struture, employee, travel request or expense forms."
+msgstr "هنا يمكنك تحديد الحقول المخصصة للأصول أو دعامة الشركة أو الموظف أو طلب السفر أو نماذج المصاريف."
+
+msgid "Here you can view records of all the activities performed by different users in the system."
+msgstr "هنا يمكنك عرض السجلات لجميع الأنشطة التي يقوم بها مستخدمون مختلفين في النظام."
+
+msgid "Here you can to add new employees, view employee details and filter employees."
+msgstr "هنا يمكنك إضافة موظفين جدد ، وعرض تفاصيل الموظف وتصفية الموظفين."
+
+msgid "Here you can record the work history of your employees."
+msgstr "هنا يمكنك تسجيل تاريخ عمل موظفيك."
+
+msgid "Here you can add the skills each employee in your organization has."
+msgstr "هنا يمكنك إضافة المهارات التي يتمتع بها كل موظف في مؤسستك."
+
+msgid "Here you can record the level of education each employee in your organization has."
+msgstr "هنا يمكنك تسجيل مستوى التعليم لكل موظف في مؤسستك."
+
+msgid "Here you can define the certifications each of your employee has completed so far."
+msgstr "هنا يمكنك تحديد الشهادات التي أكملها كل من موظفك حتى الآن."
+
+msgid "Here you can keep track of all the languages each employee knows."
+msgstr "هنا يمكنك تتبع جميع اللغات التي يعرفها كل موظف."
+
+msgid "Here you can add all the dependents of each employee."
+msgstr "هنا يمكنك إضافة جميع المعالين لكل موظف."
+
+msgid "Here you can record emergency contacts of employees."
+msgstr "هنا يمكنك تسجيل جهات اتصال الطوارئ للموظفين."
+
+msgid "Here you can view all the deativated employees. You can still recover data of a deactivated employee by clicking on Activate."
+msgstr "هنا يمكنك عرض جميع الموظفين المميزين. لا يزال بإمكانك استرداد بيانات الموظف الذي تم إلغاء تنشيطه من خلال النقر على التنشيط."
+
+msgid "Here you can view the deleted employees. Click on Download to download employee data as a JSON."
+msgstr "هنا يمكنك عرض الموظفين المحذوفين. انقر فوق تنزيل لتنزيل بيانات الموظف كـ JSON."
+
+msgid "Here you can views how employee data changed overtime."
+msgstr "هنا يمكنك مشاهدة كيفية تغيير بيانات الموظف العمل الإضافي."
+
+msgid "Here you can define any teams in your organization."
+msgstr "هنا يمكنك تحديد أي فرق في مؤسستك."
+
+msgid "Here you can add employees to the correct team."
+msgstr "هنا يمكنك إضافة الموظفين إلى الفريق الصحيح."
+
+msgid "Here you can add company documents to share announcements, policies, procedures, etc. with employees. These documents can be shared with specific employees or departments."
+msgstr "هنا يمكنك إضافة مستندات الشركة لتبادل الإعلانات والسياسات والإجراءات ، إلخ مع الموظفين. يمكن مشاركة هذه المستندات مع موظفين أو أقسام محددة."
+
+msgid "Here you can define the document types employees can add to the system."
+msgstr "هنا يمكنك تحديد أنواع المستندات التي يمكن للموظفين إضافتها إلى النظام."
+
+msgid "Here you can add personal employee documents. The visibility of the employee document can be defined when adding the document."
+msgstr "هنا يمكنك إضافة مستندات الموظف الشخصية. يمكن تحديد رؤية وثيقة الموظف عند إضافة المستند."
+
+msgid "Here all the payslips generated through the payroll module. Click on Add New to manually add a payslip."
+msgstr "هنا جميع payslips التي تم إنشاؤها من خلال وحدة كشوف المرتبات. انقر فوق إضافة جديد لإضافة Payslip يدويًا."
+
+msgid "Here you can attendance records of employees and to view, edit, filter employee attendance records."
+msgstr "هنا يمكنك حضور سجلات الموظفين وعرض سجلات حضور الموظفين وتحريرها."
+
+msgid "Here you can view whether employees are Clocked In, Clocked Out or Not Clocked In."
+msgstr "هنا يمكنك عرض ما إذا كان الموظفون قد تم تسجيلهم أو التسجيل أو عدم تسجيل الدخول."
+
+msgid "Here you can assign performance reviews to employees and manage, view, and edit performance reviews."
+msgstr "هنا يمكنك تعيين مراجعات الأداء للموظفين وإدارة مراجعات الأداء وعرضها وتحريرها."
+
+msgid "Here you can request review feedback from a supervisor/peer."
+msgstr "هنا يمكنك طلب مراجعة ملاحظات من مشرف/نظير."
+
+msgid "Here you can create custom review templates for the performance review process."
+msgstr "هنا يمكنك إنشاء قوالب مراجعة مخصصة لعملية مراجعة الأداء."
+
+msgid "Here you can monitor the progress of all employee goals."
+msgstr "هنا يمكنك مراقبة تقدم جميع أهداف الموظف."
+
+msgid "Here you can define leave types available in your organization."
+msgstr "هنا يمكنك تحديد أنواع الإجازة المتاحة في مؤسستك."
+
+msgid "Here you can define leave periods by providing a name for the period and by selecting the correct start and end dates."
+msgstr "هنا يمكنك تحديد فترات الإجازة من خلال توفير اسم للفترة واختيار تواريخ البدء والنهاية الصحيحة."
+
+msgid "Here you can define the working and non-working days according to your organization or by country."
+msgstr "هنا يمكنك تحديد أيام العمل وغير العمل وفقًا لمؤسستك أو عن طريق البلد."
+
+msgid "Here you need to add all the holidays relevant to a leave period."
+msgstr "هنا تحتاج إلى إضافة جميع العطلات ذات الصلة بفترة الإجازة."
+
+msgid "Here you can override the behavior of a leave type for job titles, employment statuses, or even individual employees by adding a leave rule."
+msgstr "هنا يمكنك تجاوز سلوك نوع الإجازة لعناوين الوظائف أو أوضاع التوظيف أو حتى الموظفين الأفراد عن طريق إضافة قاعدة إجازة."
+
+msgid "Here you can keep track of employee PTO. This can be used to compensate an employee and adjust leave balance from previous years."
+msgstr "هنا يمكنك تتبع الموظف PTO. يمكن استخدام هذا لتعويض الموظف وضبط رصيد الإجازة من السنوات السابقة."
+
+msgid "Here you can create a leave group so you can group employees and create leave types or leave rules affecting the employees in the group."
+msgstr "يمكنك هنا إنشاء مجموعة إجازة حتى تتمكن من تجميع الموظفين وإنشاء أنواع إجازة أو قواعد إجازة تؤثر على الموظفين في المجموعة."
+
+msgid "Here you can add employees to the correct leave group."
+msgstr "هنا يمكنك إضافة موظفين إلى مجموعة الإجازة الصحيحة."
+
+msgid "Here you can view all employee leaves and approve leave requests."
+msgstr "هنا يمكنك عرض جميع أوراق الموظف والموافقة على طلبات الإجازة."
+
+msgid "Here you can define the types of assets in your organization so you can easily categorize the assets."
+msgstr "هنا يمكنك تحديد أنواع الأصول في مؤسستك حتى تتمكن من تصنيف الأصول بسهولة."
+
+msgid "Here you can add and manage company assets each employee or department has."
+msgstr "هنا يمكنك إضافة وإدارة أصول الشركة لكل موظف أو قسم."
+
+msgid "Here you can define the different types of expenses in an organization."
+msgstr "هنا يمكنك تحديد الأنواع المختلفة من النفقات في المنظمة."
+
+msgid "Here you can add the different types of payment methods used for expenses in an organization."
+msgstr "هنا يمكنك إضافة أنواع مختلفة من طرق الدفع المستخدمة للنفقات في المؤسسة."
+
+msgid "Here you can add employee expenses, edit and approve expense requests."
+msgstr "هنا يمكنك إضافة نفقات الموظف وتحرير وموافقة طلبات النفقات."
+
+msgid "Here you can create custom forms to collect data from employees."
+msgstr "هنا يمكنك إنشاء نماذج مخصصة لجمع البيانات من الموظفين."
+
+msgid "Here you can assign forms to employees, fill and download forms."
+msgstr "هنا يمكنك تعيين نماذج للموظفين ، وملء وتنزيل النماذج."
+
+msgid "Here you can add courses."
+msgstr "هنا يمكنك إضافة دورات."
+
+msgid "Here you can add different training sessions to a particular course. You can let employees sign up for training sessions or assign training sessions by changing the attendance type."
+msgstr "هنا يمكنك إضافة جلسات تدريبية مختلفة إلى دورة معينة. يمكنك السماح للموظفين بالتسجيل في جلسات التدريب أو تعيين جلسات تدريبية عن طريق تغيير نوع الحضور."
+
+msgid "Here you can assign training sessions to employees."
+msgstr "هنا يمكنك تعيين جلسات تدريبية للموظفين."
+
+msgid "Here you can add employee travel requests and view and edit travel requests."
+msgstr "هنا يمكنك إضافة طلبات سفر الموظفين وعرض طلبات السفر وتحريرها."
+
+msgid "Here you can define the different types of overtime available in your organization."
+msgstr "هنا يمكنك تحديد الأنواع المختلفة من الوقت الإضافي المتاح في مؤسستك."
+
+msgid "Here you can add and manage employee overtime requests."
+msgstr "هنا يمكنك إضافة وإدارة طلبات العمل الإضافي للموظف."
+
+msgid "Here you can define different types of loans employees are eligible for."
+msgstr "هنا يمكنك تحديد أنواع مختلفة من القروض التي يكون الموظفون مؤهلين لها."
+
+msgid "Here you can add employee loans."
+msgstr "هنا يمكنك إضافة قروض الموظفين."
+
+msgid "Here you can generate different admin reports."
+msgstr "هنا يمكنك إنشاء تقارير مسؤول مختلفة."
+
+msgid "Here you can export payroll meta data."
+msgstr "هنا يمكنك تصدير بيانات التعريف."
+
+msgid "Here you can view all the admin reports generated."
+msgstr "هنا يمكنك عرض جميع تقارير المسؤول التي تم إنشاؤها."
+
+msgid "Here you can create user accounts for employees for them to login to their IceHrm accounts."
+msgstr "هنا يمكنك إنشاء حسابات المستخدمين للموظفين لتسجيل الدخول إلى حسابات ICEHRM الخاصة بهم."
+
+msgid "Here you can create user roles to give or deny access to certain modules."
+msgstr "هنا يمكنك إنشاء أدوار المستخدم لإعطاء أو رفض الوصول إلى وحدات معينة."
+
+msgid "Here you can Enable or Disable modules."
+msgstr "هنا يمكنك تمكين أو تعطيل الوحدات النمطية."
+
+msgid "Here you can manage what permissions each user level has."
+msgstr "هنا يمكنك إدارة أذونات كل مستوى مستخدم."
+
+msgid "Here you can view details about your current IceHrm plan."
+msgstr "هنا يمكنك عرض تفاصيل حول خطة ICEHRM الحالية."
+
+msgid "Here you can view all your pending transactions."
+msgstr "هنا يمكنك عرض جميع معاملاتك المعلقة."
+
+msgid "Here you can view details about prepaid credit and other IceHrm transactions."
+msgstr "هنا يمكنك عرض تفاصيل حول الائتمان المدفوعة مسبقًا وغيرها من معاملات ICEHRM."
+
+msgid "Here you can manage the countries you will be able to select within the system."
+msgstr "هنا يمكنك إدارة البلدان التي ستتمكن من الاختيار داخل النظام."
+
+msgid "Here you can manage all the provinces you will be able to select within the system."
+msgstr "هنا يمكنك إدارة جميع المقاطعات التي ستتمكن من الاختيار داخل النظام."
+
+msgid "Here you can manage all the currencies you will be able to select within the system."
+msgstr "هنا يمكنك إدارة جميع العملات التي ستتمكن من الاختيار داخل النظام."
+
+msgid "Here you can manage all the nationalities you will be able to select within the system."
+msgstr "هنا يمكنك إدارة جميع الجنسيات التي ستتمكن من الاختيار داخل النظام."
+
+msgid "Here you can manage all the ethnicities you will be able to select within the system."
+msgstr "هنا يمكنك إدارة جميع الأعراق التي ستتمكن من الاختيار داخل النظام."
+
+msgid "Here you can manage all the immigration status options you will be able to select within the system."
+msgstr "هنا يمكنك إدارة جميع خيارات حالة الهجرة التي ستتمكن من تحديدها داخل النظام."
+
+msgid "Here you can add data importers that can be used to import data to the system."
+msgstr "هنا يمكنك إضافة مستوردين للبيانات يمكن استخدامها لاستيراد البيانات إلى النظام."
+
+msgid "Here you can import data using the data importers defined in the system."
+msgstr "هنا يمكنك استيراد البيانات باستخدام مستوردي البيانات المحددة في النظام."
+
+msgid "Here you can make changes to the fields available in the employee form."
+msgstr "هنا يمكنك إجراء تغييرات على الحقول المتاحة في نموذج الموظف."
+
+msgid "Here you can check attendance time recorded every day for all the employees or a specific employee."
+msgstr "هنا يمكنك التحقق من وقت الحضور المسجل كل يوم لجميع الموظفين أو موظف معين."
+
+msgid "Here you can check how much of a percentage of attendance time goes into timesheets for each employee."
+msgstr "هنا يمكنك التحقق من مقدار نسبة وقت الحضور إلى الجداول الزمنية لكل موظف."
+
+msgid "Here you can view approved employee leaves of employees with the leave dates."
+msgstr "هنا يمكنك عرض أوراق الموظفين المعتمدة للموظفين مع تواريخ الإجازة."
+
+msgid "Here you can define different type of salary components in your organization."
+msgstr "هنا يمكنك تحديد نوع مختلف من مكونات الراتب في مؤسستك."
+
+msgid "Here you can define all the salary components related to the defined salary component types."
+msgstr "هنا يمكنك تحديد جميع مكونات الراتب المتعلقة بأنواع مكونات الرواتب المحددة."
+
+msgid "Here you can add all salary components related to each of your employees."
+msgstr "هنا يمكنك إضافة جميع مكونات الرواتب المتعلقة بكل من موظفيك."
+
+msgid "Here you can add all the employees to the correct payroll group. Each employee should belong to a payroll group."
+msgstr "هنا يمكنك إضافة جميع الموظفين إلى مجموعة كشوف المرتبات الصحيحة. يجب أن ينتمي كل موظف إلى مجموعة كشوف المرتبات."
+
+msgid "Here you can create payroll reports for a specific time period."
+msgstr "هنا يمكنك إنشاء تقارير كشوف المرتبات لفترة زمنية محددة."
+
+msgid "Here you can define the payroll columns that will be used to generate payroll reports."
+msgstr "هنا يمكنك تحديد أعمدة كشوف المرتبات التي سيتم استخدامها لإنشاء تقارير كشوف المرتبات."
+
+msgid "Here you can define different payroll groups if you have different payroll calculations for different employees."
+msgstr "هنا يمكنك تحديد مجموعات كشوف المرتبات المختلفة إذا كان لديك حسابات مختلفة لشركات الرواتب لمختلف الموظفين."
+
+msgid "Here you can define different calculation such as tax that can be used in payroll columns."
+msgstr "هنا يمكنك تحديد حساب مختلف مثل الضريبة التي يمكن استخدامها في أعمدة كشوف المرتبات."
+
+msgid "Here you can create custom payslip templates."
+msgstr "هنا يمكنك إنشاء قوالب payslip مخصصة."
+
+msgid "Here you can add employment types that will be used when creating job posts."
+msgstr "هنا يمكنك إضافة أنواع التوظيف التي سيتم استخدامها عند إنشاء منشورات عمل."
+
+msgid "Here you can add different experience levels that will be used when creating job posts."
+msgstr "هنا يمكنك إضافة مستويات خبرة مختلفة سيتم استخدامها عند إنشاء منشورات عمل."
+
+msgid "Here you can add job functions that will be used when creating job posts."
+msgstr "هنا يمكنك إضافة وظائف الوظيفة التي سيتم استخدامها عند إنشاء منشورات الوظائف."
+
+msgid "Here you can add education levels that will be used when creating job posts."
+msgstr "هنا يمكنك إضافة مستويات التعليم التي سيتم استخدامها عند إنشاء منشورات عمل."
+
+msgid "Here you can define the benefits that will be given by your organization to candidates."
+msgstr "هنا يمكنك تحديد الفوائد التي ستقدمها مؤسستك للمرشحين."
+
+msgid "Here you can create job posts and generate job links."
+msgstr "هنا يمكنك إنشاء منشورات عمل وإنشاء روابط الوظائف."
+
+msgid "Here you can view all the candidates that have applied for job positions through the job links. You can manually candidates by clicking on Add New."
+msgstr "هنا يمكنك عرض جميع المرشحين الذين تقدموا بطلب للحصول على وظائف من خلال روابط الوظائف. يمكنك المرشحين يدويًا بالنقر فوق إضافة جديد."
+
+msgid "Here you can manage of all the candidates with the hiring stage New."
+msgstr "هنا يمكنك إدارة جميع المرشحين مع مرحلة التوظيف الجديدة."
+
+msgid "Here you can manage all the candidates in the Phone Screen hiring stage."
+msgstr "هنا يمكنك إدارة جميع المرشحين في مرحلة توظيف شاشة الهاتف."
+
+msgid "Here you can manage all the candidates in the Assessment hiring stage."
+msgstr "هنا يمكنك إدارة جميع المرشحين في مرحلة توظيف التقييم."
+
+msgid "Here you can manage all the candidates of the candidates in the Interview hiring stage. The candidate will be moved to this stage when an interview is scheduled."
+msgstr "هنا يمكنك إدارة جميع المرشحين للمرشحين في مرحلة توظيف المقابلة. سيتم نقل المرشح إلى هذه المرحلة عندما يتم جدولة مقابلة."
+
+msgid "Here you can manage all the candidates in the Offer Sent hiring stage."
+msgstr "هنا يمكنك إدارة جميع المرشحين في عرض المرحلة التي تم إرسال التوظيف."
+
+msgid "Here you can manage all the candidate in the Hired hiring stage."
+msgstr "هنا يمكنك إدارة جميع المرشحين في مرحلة التوظيف المستأجرة."
+
+msgid "Here you can manage all the rejected candidates."
+msgstr "هنا يمكنك إدارة جميع المرشحين المرفوضين."
+
+msgid "Here you can add all the skills you have."
+msgstr "هنا يمكنك إضافة جميع المهارات التي لديك."
+
+msgid "Here you can add details about your education levels."
+msgstr "هنا يمكنك إضافة تفاصيل حول مستويات التعليم الخاصة بك."
+
+msgid "Here you can add all the certifications you have completed."
+msgstr "هنا يمكنك إضافة جميع الشهادات التي أكملتها."
+
+msgid "Here you can add all the languages you are fluent in."
+msgstr "هنا يمكنك إضافة جميع اللغات التي تتقنها."
+
+msgid "Here you can add details about your dependents."
+msgstr "هنا يمكنك إضافة تفاصيل حول المعالين."
+
+msgid "Here you can add details about your emergency contacts."
+msgstr "هنا يمكنك إضافة تفاصيل حول جهات الاتصال الطارئة الخاصة بك."
+
+msgid "Here you can add and manage your leave requests."
+msgstr "هنا يمكنك إضافة وإدارة طلبات الإجازة الخاصة بك."
+
+msgid "Here you can view a summary of all leave balances."
+msgstr "هنا يمكنك عرض ملخص لجميع أرصدة الإجازة."
+
+msgid "Here you can view all your approved leave requests."
+msgstr "هنا يمكنك عرض جميع طلبات الإجازة المعتمدة الخاصة بك."
+
+msgid "Here you can view all your pending leave requests."
+msgstr "هنا يمكنك عرض جميع طلبات إجازة معلقة."
+
+msgid "Here you can view and approve leave requests from your subordinates."
+msgstr "هنا يمكنك عرض وموافقة طلبات الإجازة من المرؤوسين."
+
+msgid "Here you can view all cancellation requests from your subordinates."
+msgstr "هنا يمكنك عرض جميع طلبات الإلغاء من مرؤوسيك."
+
+msgid "Here you can view and approve leave requests if you are an approver to an employee."
+msgstr "هنا يمكنك عرض طلبات الإجازة والموافقة عليها إذا كنت موافقًا على موظف."
+
+msgid "Here you can view all your leave requests on a calendar."
+msgstr "هنا يمكنك عرض جميع طلبات الإجازة الخاصة بك على التقويم."
+
+msgid "Here you can add and manage projects you are working on or assigned to."
+msgstr "هنا يمكنك إضافة وإدارة المشاريع التي تعمل عليها أو تعيينها."
+
+msgid "Here you can mark your attendance by punching in and punching out."
+msgstr "هنا يمكنك وضع علامة على حضورك عن طريق اللكم واللكم."
+
+msgid "Here you can view and manage all pending, approved, rejected and submitted timesheets."
+msgstr "يمكنك هنا عرض وإدارة جميع الجداول الزمنية المعلقة والموافقة عليها والرفض وتقديمها."
+
+msgid "Here you can manage of all your approved timesheets."
+msgstr "هنا يمكنك إدارة جميع الجداول الزمنية المعتمدة."
+
+msgid "Here you can manage of all your pending timesheets."
+msgstr "هنا يمكنك إدارة جميع الجداول الزمنية المعلقة."
+
+msgid "Here you can view and approve timesheetes of your subordinates."
+msgstr "هنا يمكنك عرض الجداول الزمنية للمرؤوسين والموافقة عليها."
+
+msgid "Here you can view and manage all your pending, approved, rejected and submitted attendance sheets."
+msgstr "يمكنك هنا عرض وإدارة جميع أوراق الحضور المعلقة والموافقة عليها والرفض وتقديمها."
+
+msgid "Here you can view all your approved attendance sheets."
+msgstr "هنا يمكنك عرض جميع أوراق الحضور المعتمدة."
+
+msgid "Here you can view all your pending attendance sheets."
+msgstr "هنا يمكنك عرض جميع أوراق الحضور المعلقة."
+
+msgid "Here you can manage and approve attendance sheets of your subordinates."
+msgstr "هنا يمكنك إدارة أوراق الحضور والموافقة عليها."
+
+msgid "Here you add an overtime request and view previous overtime requests."
+msgstr "هنا تضيف طلب العمل الإضافي وعرض طلبات العمل الإضافي السابقة."
+
+msgid "Here you can manage and approve overtime requests of your subordinates."
+msgstr "هنا يمكنك إدارة وموافقة طلبات العمل الإضافي للمرؤوسين الخاص بك."
+
+msgid "Here you can upload your personal documents to the system."
+msgstr "هنا يمكنك تحميل مستنداتك الشخصية إلى النظام."
+
+msgid "Here you can view all the company documents that are shared with you."
+msgstr "هنا يمكنك عرض جميع مستندات الشركة المشتركة معك."
+
+msgid "Here you can view all your payslips. You can download your payslips as PDFs."
+msgstr "هنا يمكنك عرض جميع Payslips. يمكنك تنزيل Payslips الخاص بك كـ PDFs."
+
+msgid "Here you will find all the forms you need to fill out and all previous completed forms."
+msgstr "ستجد هنا جميع النماذج التي تحتاج إلى ملءها وجميع النماذج السابقة المكتملة."
+
+msgid "Here you can view all contact information of employees in the organization."
+msgstr "هنا يمكنك عرض جميع معلومات الاتصال للموظفين في المنظمة."
+
+msgid "Here you can view all the training sessions available."
+msgstr "هنا يمكنك عرض جميع الدورات التدريبية المتاحة."
+
+msgid "Here you can view all training sessions you have signed up for or assigned to."
+msgstr "هنا يمكنك عرض جميع الدورات التدريبية التي قمت بالتسجيل فيها أو تعيينها."
+
+msgid "Here you can manage all the training sessions of your subordinates."
+msgstr "هنا يمكنك إدارة جميع الدورات التدريبية لمرؤوسيك."
+
+msgid "Here you can view all the training sessions coordinated by you."
+msgstr "هنا يمكنك عرض جميع الدورات التدريبية التي تنسيقها."
+
+msgid "Here you can manage all the self assessments you need to work on for your performance reviews."
+msgstr "هنا يمكنك إدارة جميع التقييمات الذاتية التي تحتاجها للعمل على مراجعات أدائك."
+
+msgid "Here you can provide feedback to your peers or subordinates."
+msgstr "هنا يمكنك تقديم ملاحظات لأقرانك أو المرؤوسين."
+
+msgid "Here you can submit and manage your travel requests."
+msgstr "هنا يمكنك إرسال وإدارة طلبات السفر الخاصة بك."
+
+msgid "Here you can view and approve travel requests of your subordinates."
+msgstr "هنا يمكنك عرض طلبات السفر والموافقة عليها."
+
+msgid "Here you can approve travel requests if you are an approver to certain employees."
+msgstr "هنا يمكنك الموافقة على طلبات السفر إذا كنت موافقة على بعض الموظفين."
+
+msgid "Here you can submit and manage your expense requests."
+msgstr "هنا يمكنك إرسال وإدارة طلبات النفقات الخاصة بك."
+
+msgid "Here you can manage and approve expenses requests of your subordinates."
+msgstr "هنا يمكنك إدارة وموافقة طلبات نفقات المرؤوسين الخاص بك."
+
+msgid "Here you can approve expense requests if you are an approver to certain employees."
+msgstr "هنا يمكنك الموافقة على طلبات المصاريف إذا كنت موافقًا على بعض الموظفين."
+
+msgid "Here you can view details of all your salary components."
+msgstr "هنا يمكنك عرض تفاصيل جميع مكونات الرواتب الخاصة بك."
+
+msgid "Here you can view details of all the loans you have taken from the company."
+msgstr "هنا يمكنك عرض تفاصيل جميع القروض التي اتخذتها من الشركة."
+
+msgid "Position"
+msgstr "موضع"
+
+msgid "Application Date"
+msgstr "تاريخ التقديم"
+
+msgid "Basic"
+msgstr "أساسي"
+
+msgid "All Candidates"
+msgstr "جميع المرشحين"
+
+msgid "New"
+msgstr "جديد"
+
+msgid "Screening"
+msgstr "تحري"
+
+msgid "Assessment"
+msgstr "تقدير"
+
+msgid "Interview Scheduled"
+msgstr "مقابلة مجدولة"
+
+msgid "Offer"
+msgstr "يعرض"
+
+msgid "Hired"
+msgstr "استأجرت"
+
+msgid "Member"
+msgstr "عضو"
+
+msgid "Attach File"
+msgstr "أرفق ملف"
+
+msgid "Here you can define the different pay grades in your organization."
+msgstr "هنا يمكنك تحديد درجات الأجور المختلفة في مؤسستك."

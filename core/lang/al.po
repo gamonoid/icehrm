@@ -1990,3 +1990,822 @@ msgstr "Fshije"
 
 msgid "Copy"
 msgstr "Kopjoni"
+
+msgid "Employee Check-Ins"
+msgstr "Regjistrimet e punonjësve"
+
+msgid "Employee Distribution"
+msgstr "Shpërndarja e punonjësve"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "is required"
+msgstr "nevojitet"
+
+msgid "Use Employee Leave Period"
+msgstr "Përdorni Periudhën e Pushimit të Punonjësve"
+
+msgid "Required Experience (Days)"
+msgstr "Përvoja e kërkuar (Ditët)"
+
+msgid "LeaveGroup"
+msgstr "Grupet e pushimit"
+
+msgid "Expenses Category"
+msgstr "Kategoria e Shpenzimeve"
+
+msgid "Employee Expense"
+msgstr "Shpenzimi i punonjësve"
+
+msgid "Overtime"
+msgstr "Punë shtesë"
+
+msgid "Employee Fields"
+msgstr "Fushat e punonjësve"
+
+msgid "Asset Type"
+msgstr "Lloji i pasurisë"
+
+msgid "Asset"
+msgstr "Pasuri"
+
+msgid "Custom Field"
+msgstr "Fusha e personalizuar"
+
+msgid "Object Type"
+msgstr "Lloji i objektit"
+
+msgid "Personal"
+msgstr "Personale"
+
+msgid "Identification"
+msgstr "Identifikimi"
+
+msgid "Work"
+msgstr "Punojnë"
+
+msgid "Contact"
+msgstr "Kontaktoni"
+
+msgid "Report"
+msgstr "Raporti"
+
+msgid "Login As"
+msgstr "Hyni si"
+
+msgid "Deactivate"
+msgstr "Çaktivizo"
+
+msgid "Employee Education"
+msgstr "Edukimi i punonjësve"
+
+msgid "Employee Certification"
+msgstr "Certifikimi i punonjësve"
+
+msgid "Listening"
+msgstr "Të dëgjuarit"
+
+msgid "Employee Dependent"
+msgstr "Punonjës i Varur"
+
+msgid "Contacts"
+msgstr "Kontaktet"
+
+msgid "Next"
+msgstr "Tjetra"
+
+msgid "Emergency Contact"
+msgstr "Kontakt urgjent"
+
+msgid "Deactivated"
+msgstr "Çaktivizohet"
+
+msgid "Archived"
+msgstr "Arkivohet"
+
+msgid "Updated By"
+msgstr "Përditësuar nga"
+
+msgid "Created Time (GMT)"
+msgstr "Koha e krijuar (GMT)"
+
+msgid "Yes"
+msgstr "po"
+
+msgid "No"
+msgstr "jo"
+
+msgid "Share with Employee"
+msgstr "Ndani me Punonjësin"
+
+msgid "Visible To"
+msgstr "E dukshme për"
+
+msgid "ID Copy"
+msgstr "Kopjimi i ID-së"
+
+msgid "Degree Certificate"
+msgstr "Certifikata e gradës"
+
+msgid "Driving License"
+msgstr "patentë"
+
+msgid "Owner"
+msgstr "Pronar"
+
+msgid "Manager"
+msgstr "Menaxher"
+
+msgid "HR Forms"
+msgstr "Format e BNJ"
+
+msgid "Employee Forms"
+msgstr "Formularët e punonjësve"
+
+msgid "Form"
+msgstr "Formularin"
+
+msgid "Submitted"
+msgstr "Dorëzuar"
+
+msgid "Review Period Start Date"
+msgstr "Data e Fillimit të Periudhës së Rishikimit"
+
+msgid "Review Period End Date"
+msgstr "Data e përfundimit të periudhës së rishikimit"
+
+msgid "Self Assessment Due Date"
+msgstr "Data e Vlerësimit të Vetëvlerësimit"
+
+msgid "Due On"
+msgstr "Për shkak të"
+
+msgid "Company Teams"
+msgstr "Ekipet e ndërmarrjes"
+
+msgid "Lead"
+msgstr "Plumbi"
+
+msgid "Teams"
+msgstr "Skuadrat"
+
+msgid "Team Name"
+msgstr "Emri i Skuadres"
+
+msgid "Team Members"
+msgstr "Anëtarët e Ekipit"
+
+msgid "Member "
+msgstr "Anëtar"
+
+msgid "Role"
+msgstr "Roli"
+
+msgid "Users Roles"
+msgstr "Rolet e përdoruesve"
+
+msgid "User Role"
+msgstr "Roli i përdoruesit"
+
+msgid "Additional Permissions"
+msgstr "Lejet shtesë"
+
+msgid "Usage"
+msgstr "Përdorimi"
+
+msgid "Last Export Result"
+msgstr "Rezultati i fundit i eksportit"
+
+msgid "Employee Data Import"
+msgstr "Importi i të Dhënave të Punonjësve"
+
+msgid "Attendance Data Import"
+msgstr "Importi i të Dhënave të Pjesëmarrjes"
+
+msgid "Payroll Data Import"
+msgstr "Importi i të Dhënave të Pagave"
+
+msgid "Supervisor and Approver Import"
+msgstr "Importi i Mbikëqyrësit dhe Miratuesit"
+
+msgid "You can drag the chart both sides to view other dates on timeline"
+msgstr "Mund ta tërheqni tabelën nga të dy anët për të parë datat e tjera në kronologjinë"
+
+msgid "Payroll Group"
+msgstr "Grupi i pagave"
+
+msgid "Common"
+msgstr "I zakonshëm"
+
+msgid "Function Type"
+msgstr "Lloji i funksionit"
+
+msgid "Advanced"
+msgstr "Avancuar"
+
+msgid "Simple"
+msgstr "E thjeshtë"
+
+msgid "Company Name"
+msgstr "Emri i Kompanise"
+
+msgid "Hiring Manager"
+msgstr "Menaxher punësimi"
+
+msgid "Job Description"
+msgstr "Përshkrimi i punës"
+
+msgid "Employement Type"
+msgstr "Lloji i punësimit"
+
+msgid "Postal Code"
+msgstr "Kodi Postar"
+
+msgid "Show Hiring Manager Name"
+msgstr "Trego emrin e menaxherit të punësimit"
+
+msgid "Previous"
+msgstr "E mëparshme"
+
+msgid "Position Applied"
+msgstr "Pozicioni i Aplikuar"
+
+msgid "Hiring Stage"
+msgstr "Punësimi i skenës"
+
+msgid "Total Years of Experience"
+msgstr "Përvoja totale vjetore"
+
+msgid "Expected Salary"
+msgstr "Paga e pritshme"
+
+msgid "Attach File "
+msgstr "Bashkangjit skedarin"
+
+msgid "Update Password"
+msgstr "Përditëso fjalëkalimin"
+
+msgid "Employee Profile"
+msgstr "Profili i punonjësve"
+
+msgid "Contact details"
+msgstr "Detajet e kontaktit"
+
+msgid "Work related details"
+msgstr "Detaje lidhur me punën"
+
+msgid "ID Number"
+msgstr "Numri i ID-së"
+
+msgid "Leave Days from Current Leave Period"
+msgstr "Lini Ditët nga Periudha e Pushimit Aktual"
+
+msgid "Paid Time Off Adjustments"
+msgstr "Rregullimet e Pohuara të Paguara"
+
+msgid "Leave Days Carried Forward Previous Period"
+msgstr "Lini Ditët e Bartura Përpara Periudhës së mëparshme"
+
+msgid "Leave Days Available to Use"
+msgstr "Lini Ditët në dispozicion për t'u përdorur"
+
+msgid "Approved Leave Days"
+msgstr "Ditët e Miratuara të Pushimit"
+
+msgid "Pending Leave Days"
+msgstr "Ditët e Pushimit në Pritje"
+
+msgid "Rejected Leave Days"
+msgstr "Ditët e Pushimeve të Refuzuara"
+
+msgid "Calculated by Leave Type"
+msgstr "Llogaritur nga Type Type"
+
+msgid "Show Calculation"
+msgstr "Trego Llogaritjen"
+
+msgid "Total Time"
+msgstr "Koha totale"
+
+msgid "Personal Documents"
+msgstr "Dokumente personale"
+
+msgid "My Forms"
+msgstr "Formularët e mi"
+
+msgid "Training Sessions of Coordinated by Me"
+msgstr "Sesione Trajnimi të Koordinuara nga Unë"
+
+msgid "Self Assessments"
+msgstr "Vetëvlerësimet"
+
+msgid "Connection"
+msgstr "Lidhje"
+
+msgid "Data directory is accessible from outside."
+msgstr "Drejtoria e të dhënave është e arritshme nga jashtë."
+
+msgid "Learn how to fix"
+msgstr "Mësoni si të rregulloni"
+
+msgid "Copy System Report"
+msgstr "Kopjoni Raportin e Sistemit"
+
+msgid "System Issues"
+msgstr "Çështjet e sistemit"
+
+msgid "System Report"
+msgstr "Raporti i Sistemit"
+
+msgid "Here you can define the structure of the company by adding branches, departments, company units,etc. Each employee needs to be connected to a company structure."
+msgstr "Këtu mund të përcaktoni strukturën e kompanisë duke shtuar degë, departamente, njësi të kompanisë, etj. Çdo punonjës duhet të jetë i lidhur me një strukturë kompanie."
+
+msgid "Company graph provides a graphical overview of the company structure."
+msgstr "Grafiku i kompanisë ofron një pasqyrë grafike të strukturës së kompanisë."
+
+msgid "Here you can manage the job titles in your organization. Each employee needs to be assigned a job title."
+msgstr "Këtu mund të menaxhoni titujt e punës në organizatën tuaj. Çdo punonjësi duhet t'i caktohet një titull pune."
+
+msgid "Here you can define the different pay grades in your organization. "
+msgstr "Këtu mund të përcaktoni shkallët e ndryshme të pagave në organizatën tuaj."
+
+msgid "Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state."
+msgstr "Këtu mund të përcaktoni llojet e ndryshme të shteteve të punësimit në organizatën tuaj. Secilit punonjës duhet t'i caktohet një shtet punësimi."
+
+msgid "Here you can define the different types of skills an employee might have."
+msgstr "Këtu mund të përcaktoni llojet e ndryshme të aftësive që një punonjës mund të ketë."
+
+msgid "Here you can define the different levels of education an employee might have."
+msgstr "Këtu mund të përcaktoni nivele të ndryshme të arsimit që një punonjës mund të ketë."
+
+msgid "Here you can define the different types of certifications an employee might have completed."
+msgstr "Këtu mund të përcaktoni llojet e ndryshme të çertifikatave që një punonjës mund të ketë përfunduar."
+
+msgid "Languages consists of most of the languages used globally."
+msgstr "Gjuhët përbëhen nga shumica e gjuhëve të përdorura globalisht."
+
+msgid "Here you can add details about a project such as project name, client, details and the status."
+msgstr "Këtu mund të shtoni detaje në lidhje me një projekt të tillë si emri i projektit, klienti, detajet dhe statusi."
+
+msgid "Here you can assign projects to employees."
+msgstr "Këtu mund të caktoni projekte për punonjësit."
+
+msgid "Here you can add and manage clients your organization is working with. You can choose the correct client when adding a project in IceHrm."
+msgstr "Këtu mund të shtoni dhe menaxhoni klientët që organizata juaj po punon. Ju mund të zgjidhni klientin e saktë kur shtoni një projekt në ICEHRM."
+
+msgid "Here you can define custom fields for assets, company struture, employee, travel request or expense forms."
+msgstr "Këtu mund të përcaktoni fushat me porosi për pasuritë, strutin e kompanisë, punonjësit, kërkesën e udhëtimit ose format e shpenzimeve."
+
+msgid "Here you can view records of all the activities performed by different users in the system."
+msgstr "Këtu mund të shikoni të dhënat e të gjitha aktiviteteve të kryera nga përdorues të ndryshëm në sistem."
+
+msgid "Here you can to add new employees, view employee details and filter employees."
+msgstr "Këtu mundeni të shtoni punonjës të rinj, të shikoni detajet e punonjësve dhe të filtroni punonjësit."
+
+msgid "Here you can record the work history of your employees."
+msgstr "Këtu mund të regjistroni historinë e punës së punonjësve tuaj."
+
+msgid "Here you can add the skills each employee in your organization has."
+msgstr "Këtu mund të shtoni aftësitë që ka çdo punonjës në organizatën tuaj."
+
+msgid "Here you can record the level of education each employee in your organization has."
+msgstr "Këtu mund të regjistroni nivelin e arsimit që çdo punonjës në organizatën tuaj ka."
+
+msgid "Here you can define the certifications each of your employee has completed so far."
+msgstr "Këtu mund të përcaktoni çertifikatat që secili prej punonjësve tuaj ka përfunduar deri më tani."
+
+msgid "Here you can keep track of all the languages each employee knows."
+msgstr "Këtu mund të mbani gjurmët e të gjitha gjuhëve që çdo punonjës i di."
+
+msgid "Here you can add all the dependents of each employee."
+msgstr "Këtu mund të shtoni të gjithë vartësit e secilit punonjës."
+
+msgid "Here you can record emergency contacts of employees."
+msgstr "Këtu mund të regjistroni kontakte urgjente të punonjësve."
+
+msgid "Here you can view all the deativated employees. You can still recover data of a deactivated employee by clicking on Activate."
+msgstr "Këtu mund të shikoni të gjithë punonjësit e deativuar. Ju ende mund të rikuperoni të dhënat e një punonjësi të çaktivizuar duke klikuar në aktivizimin."
+
+msgid "Here you can view the deleted employees. Click on Download to download employee data as a JSON."
+msgstr "Këtu mund të shikoni punonjësit e fshirë. Klikoni në Shkarkim për të shkarkuar të dhënat e punonjësve si JSON."
+
+msgid "Here you can views how employee data changed overtime."
+msgstr "Këtu mund të shikoni se si të dhënat e punonjësve ndryshuan jashtë orarit."
+
+msgid "Here you can define any teams in your organization."
+msgstr "Këtu mund të përcaktoni çdo ekip në organizatën tuaj."
+
+msgid "Here you can add employees to the correct team."
+msgstr "Këtu mund të shtoni punonjësit në ekipin e duhur."
+
+msgid "Here you can add company documents to share announcements, policies, procedures, etc. with employees. These documents can be shared with specific employees or departments."
+msgstr "Këtu mund të shtoni dokumente të kompanisë për të shkëmbyer njoftime, politika, procedura, etj. Me punonjësit. Këto dokumente mund të ndahen me punonjës ose departamente specifike."
+
+msgid "Here you can define the document types employees can add to the system."
+msgstr "Këtu mund të përcaktoni llojet e dokumenteve që punonjësit mund të shtojnë në sistem."
+
+msgid "Here you can add personal employee documents. The visibility of the employee document can be defined when adding the document."
+msgstr "Këtu mund të shtoni dokumente personale të punonjësve. Dukshmëria e dokumentit të punonjësve mund të përcaktohet kur shtoni dokumentin."
+
+msgid "Here all the payslips generated through the payroll module. Click on Add New to manually add a payslip."
+msgstr "Këtu të gjitha pagat e pagave të krijuara përmes modulit të pagave. Klikoni në Shto të re për të shtuar manualisht një Payslip."
+
+msgid "Here you can attendance records of employees and to view, edit, filter employee attendance records."
+msgstr "Këtu mund të merrni pjesë në të dhënat e të punësuarve dhe të shikoni, modifikoni, filtroni të dhënat e pjesëmarrjes së punonjësve."
+
+msgid "Here you can view whether employees are Clocked In, Clocked Out or Not Clocked In."
+msgstr "Këtu mund të shikoni nëse punonjësit janë të akorduar, të akorduar ose jo të akorduar brenda."
+
+msgid "Here you can assign performance reviews to employees and manage, view, and edit performance reviews."
+msgstr "Këtu mund të caktoni vlerësime të performancës për punonjësit dhe të menaxhoni, shikoni dhe modifikoni vlerësimet e performancës."
+
+msgid "Here you can request review feedback from a supervisor/peer."
+msgstr "Këtu mund të kërkoni përshtypje rishikimi nga një mbikëqyrës/koleg."
+
+msgid "Here you can create custom review templates for the performance review process."
+msgstr "Këtu mund të krijoni modele të rishikimit me porosi për procesin e rishikimit të performancës."
+
+msgid "Here you can monitor the progress of all employee goals."
+msgstr "Këtu mund të monitoroni përparimin e të gjitha qëllimeve të punonjësve."
+
+msgid "Here you can define leave types available in your organization."
+msgstr "Këtu mund të përcaktoni llojet e pushimeve të disponueshme në organizatën tuaj."
+
+msgid "Here you can define leave periods by providing a name for the period and by selecting the correct start and end dates."
+msgstr "Këtu mund të përcaktoni periudhat e pushimit duke siguruar një emër për periudhën dhe duke zgjedhur datat e sakta të fillimit dhe mbarimit."
+
+msgid "Here you can define the working and non-working days according to your organization or by country."
+msgstr "Këtu mund të përcaktoni ditët e punës dhe jo-punëtore sipas organizatës suaj ose sipas vendit."
+
+msgid "Here you need to add all the holidays relevant to a leave period."
+msgstr "Këtu ju duhet të shtoni të gjitha pushimet e rëndësishme për një periudhë pushimi."
+
+msgid "Here you can override the behavior of a leave type for job titles, employment statuses, or even individual employees by adding a leave rule."
+msgstr "Këtu mund të tejkaloni sjelljen e një lloji pushimi për titujt e vendeve të punës, statuset e punësimit, apo edhe punonjësit individualë duke shtuar një rregull pushimi."
+
+msgid "Here you can keep track of employee PTO. This can be used to compensate an employee and adjust leave balance from previous years."
+msgstr "Këtu mund të mbani gjurmët e PTO të punonjësve. Kjo mund të përdoret për të kompensuar një punonjës dhe për të rregulluar bilancin e pushimit nga vitet e kaluara."
+
+msgid "Here you can create a leave group so you can group employees and create leave types or leave rules affecting the employees in the group."
+msgstr "Këtu mund të krijoni një grup pushimi, në mënyrë që të mund të gruponi punonjësit dhe të krijoni lloje pushimi ose të lini rregulla që prekin punonjësit në grup."
+
+msgid "Here you can add employees to the correct leave group."
+msgstr "Këtu mund të shtoni punonjësit në grupin e duhur të pushimeve."
+
+msgid "Here you can view all employee leaves and approve leave requests."
+msgstr "Këtu mund të shikoni të gjitha gjethet e punonjësve dhe të aprovojnë kërkesat për leje."
+
+msgid "Here you can define the types of assets in your organization so you can easily categorize the assets."
+msgstr "Këtu mund të përcaktoni llojet e pasurive në organizatën tuaj, në mënyrë që të mund të kategorizoni lehtësisht pasuritë."
+
+msgid "Here you can add and manage company assets each employee or department has."
+msgstr "Këtu mund të shtoni dhe menaxhoni asetet e kompanisë që çdo punonjës ose departament ka."
+
+msgid "Here you can define the different types of expenses in an organization."
+msgstr "Këtu mund të përcaktoni llojet e ndryshme të shpenzimeve në një organizatë."
+
+msgid "Here you can add the different types of payment methods used for expenses in an organization."
+msgstr "Këtu mund të shtoni llojet e ndryshme të metodave të pagesës të përdorura për shpenzimet në një organizatë."
+
+msgid "Here you can add employee expenses, edit and approve expense requests."
+msgstr "Këtu mund të shtoni shpenzimet e punonjësve, të modifikoni dhe aprovoni kërkesat e shpenzimeve."
+
+msgid "Here you can create custom forms to collect data from employees."
+msgstr "Këtu mund të krijoni forma me porosi për të mbledhur të dhëna nga punonjësit."
+
+msgid "Here you can assign forms to employees, fill and download forms."
+msgstr "Këtu mund të caktoni formularë për punonjësit, të plotësoni dhe shkarkoni formularët."
+
+msgid "Here you can add courses."
+msgstr "Këtu mund të shtoni kurse."
+
+msgid "Here you can add different training sessions to a particular course. You can let employees sign up for training sessions or assign training sessions by changing the attendance type."
+msgstr "Këtu mund të shtoni seanca të ndryshme trajnimi në një kurs të veçantë. Ju mund t'i lejoni punonjësit të regjistrohen në seanca trajnimi ose të caktojnë seanca trajnimi duke ndryshuar llojin e pjesëmarrjes."
+
+msgid "Here you can assign training sessions to employees."
+msgstr "Këtu mund të caktoni seanca trajnimi për punonjësit."
+
+msgid "Here you can add employee travel requests and view and edit travel requests."
+msgstr "Këtu mund të shtoni kërkesa për udhëtime të punonjësve dhe të shikoni dhe modifikoni kërkesat e udhëtimit."
+
+msgid "Here you can define the different types of overtime available in your organization."
+msgstr "Këtu mund të përcaktoni llojet e ndryshme të orarit të tepërt të disponueshëm në organizatën tuaj."
+
+msgid "Here you can add and manage employee overtime requests."
+msgstr "Këtu mund të shtoni dhe menaxhoni kërkesat jashtë orarit të punonjësve."
+
+msgid "Here you can define different types of loans employees are eligible for."
+msgstr "Këtu mund të përcaktoni lloje të ndryshme të kredive që punonjësit kanë të drejtë."
+
+msgid "Here you can add employee loans."
+msgstr "Këtu mund të shtoni kredi të punonjësve."
+
+msgid "Here you can generate different admin reports."
+msgstr "Këtu mund të gjeneroni raporte të ndryshme të administratorit."
+
+msgid "Here you can export payroll meta data."
+msgstr "Këtu mund të eksportoni të dhëna meta të pagave."
+
+msgid "Here you can view all the admin reports generated."
+msgstr "Këtu mund të shikoni të gjitha raportet e administratorit të krijuara."
+
+msgid "Here you can create user accounts for employees for them to login to their IceHrm accounts."
+msgstr "Këtu mund të krijoni llogari të përdoruesve për punonjësit që ata të identifikohen në llogaritë e tyre të ICEHRM."
+
+msgid "Here you can create user roles to give or deny access to certain modules."
+msgstr "Këtu mund të krijoni role të përdoruesit për të dhënë ose mohuar qasje në module të caktuara."
+
+msgid "Here you can Enable or Disable modules."
+msgstr "Këtu mund të aktivizoni ose çaktivizoni modulet."
+
+msgid "Here you can manage what permissions each user level has."
+msgstr "Këtu mund të menaxhoni se çfarë leje ka çdo nivel i përdoruesit."
+
+msgid "Here you can view details about your current IceHrm plan."
+msgstr "Këtu mund të shikoni detaje në lidhje me planin tuaj aktual të ICEHRM."
+
+msgid "Here you can view all your pending transactions."
+msgstr "Këtu mund të shikoni të gjitha transaksionet tuaja në pritje."
+
+msgid "Here you can view details about prepaid credit and other IceHrm transactions."
+msgstr "Këtu mund të shikoni detaje rreth kredisë së parapaguar dhe transaksioneve të tjera të ICEHRM."
+
+msgid "Here you can manage the countries you will be able to select within the system."
+msgstr "Këtu mund të menaxhoni vendet që do të jeni në gjendje të zgjidhni brenda sistemit."
+
+msgid "Here you can manage all the provinces you will be able to select within the system."
+msgstr "Këtu mund të menaxhoni të gjitha provincat që do të keni mundësi të zgjidhni brenda sistemit."
+
+msgid "Here you can manage all the currencies you will be able to select within the system."
+msgstr "Këtu mund të menaxhoni të gjitha monedhat që do të keni mundësi të zgjidhni brenda sistemit."
+
+msgid "Here you can manage all the nationalities you will be able to select within the system."
+msgstr "Këtu mund të menaxhoni të gjitha kombësitë që do të keni mundësi të zgjidhni brenda sistemit."
+
+msgid "Here you can manage all the ethnicities you will be able to select within the system."
+msgstr "Këtu mund të menaxhoni të gjitha etnitë që do të jeni në gjendje të zgjidhni brenda sistemit."
+
+msgid "Here you can manage all the immigration status options you will be able to select within the system."
+msgstr "Këtu mund të menaxhoni të gjitha opsionet e statusit të imigracionit që do të jeni në gjendje të zgjidhni brenda sistemit."
+
+msgid "Here you can add data importers that can be used to import data to the system."
+msgstr "Këtu mund të shtoni importues të të dhënave që mund të përdoren për të importuar të dhëna në sistem."
+
+msgid "Here you can import data using the data importers defined in the system."
+msgstr "Këtu mund të importoni të dhëna duke përdorur importuesit e të dhënave të përcaktuara në sistem."
+
+msgid "Here you can make changes to the fields available in the employee form."
+msgstr "Këtu mund të bëni ndryshime në fushat në dispozicion në formën e punonjësve."
+
+msgid "Here you can check attendance time recorded every day for all the employees or a specific employee."
+msgstr "Këtu mund të kontrolloni kohën e pjesëmarrjes të regjistruar çdo ditë për të gjithë punonjësit ose një punonjës specifik."
+
+msgid "Here you can check how much of a percentage of attendance time goes into timesheets for each employee."
+msgstr "Këtu mund të kontrolloni se sa një përqindje e kohës së pjesëmarrjes shkon në fletët e orarit për secilin punonjës."
+
+msgid "Here you can view approved employee leaves of employees with the leave dates."
+msgstr "Këtu mund të shihni gjethet e aprovuara të punonjësve të punonjësve me datat e pushimit."
+
+msgid "Here you can define different type of salary components in your organization."
+msgstr "Këtu mund të përcaktoni lloje të ndryshme të përbërësve të pagave në organizatën tuaj."
+
+msgid "Here you can define all the salary components related to the defined salary component types."
+msgstr "Këtu mund të përcaktoni të gjithë përbërësit e pagës që lidhen me llojet e përcaktuara të komponentëve të pagave."
+
+msgid "Here you can add all salary components related to each of your employees."
+msgstr "Këtu mund të shtoni të gjithë përbërësit e pagave që lidhen me secilin prej punonjësve tuaj."
+
+msgid "Here you can add all the employees to the correct payroll group. Each employee should belong to a payroll group."
+msgstr "Këtu mund të shtoni të gjithë punonjësit në grupin e saktë të pagave. Secili punonjës duhet t'i përkasë një grupi të pagave."
+
+msgid "Here you can create payroll reports for a specific time period."
+msgstr "Këtu mund të krijoni raporte të pagave për një periudhë kohore specifike."
+
+msgid "Here you can define the payroll columns that will be used to generate payroll reports."
+msgstr "Këtu mund të përcaktoni kolonat e pagave që do të përdoren për të gjeneruar raporte të pagave."
+
+msgid "Here you can define different payroll groups if you have different payroll calculations for different employees."
+msgstr "Këtu mund të përcaktoni grupe të ndryshme të pagave nëse keni llogaritje të ndryshme të pagave për punonjës të ndryshëm."
+
+msgid "Here you can define different calculation such as tax that can be used in payroll columns."
+msgstr "Këtu mund të përcaktoni llogaritje të ndryshme siç është taksa që mund të përdoret në kolonat e pagave."
+
+msgid "Here you can create custom payslip templates."
+msgstr "Këtu mund të krijoni shabllone me porosi të pagave."
+
+msgid "Here you can add employment types that will be used when creating job posts."
+msgstr "Këtu mund të shtoni llojet e punësimit që do të përdoren kur krijoni postime në punë."
+
+msgid "Here you can add different experience levels that will be used when creating job posts."
+msgstr "Këtu mund të shtoni nivele të ndryshme përvoje që do të përdoren kur krijoni postime në punë."
+
+msgid "Here you can add job functions that will be used when creating job posts."
+msgstr "Këtu mund të shtoni funksione pune që do të përdoren kur krijoni postime në punë."
+
+msgid "Here you can add education levels that will be used when creating job posts."
+msgstr "Këtu mund të shtoni nivele arsimore që do të përdoren kur krijoni postime në punë."
+
+msgid "Here you can define the benefits that will be given by your organization to candidates."
+msgstr "Këtu mund të përcaktoni përfitimet që do të jepen nga organizata juaj për kandidatët."
+
+msgid "Here you can create job posts and generate job links."
+msgstr "Këtu mund të krijoni postime në punë dhe të gjeneroni lidhje pune."
+
+msgid "Here you can view all the candidates that have applied for job positions through the job links. You can manually candidates by clicking on Add New."
+msgstr "Këtu mund të shikoni të gjithë kandidatët që kanë aplikuar për pozicione pune përmes lidhjeve të punës. Ju mund të kandidatët manualisht duke klikuar në Shto të re."
+
+msgid "Here you can manage of all the candidates with the hiring stage New."
+msgstr "Këtu mund të menaxhoni të gjithë kandidatët me fazën e marrjes në punë të re."
+
+msgid "Here you can manage all the candidates in the Phone Screen hiring stage."
+msgstr "Këtu mund të menaxhoni të gjithë kandidatët në fazën e punësimit të ekranit të telefonit."
+
+msgid "Here you can manage all the candidates in the Assessment hiring stage."
+msgstr "Këtu mund të menaxhoni të gjithë kandidatët në fazën e marrjes në punë të vlerësimit."
+
+msgid "Here you can manage all the candidates of the candidates in the Interview hiring stage. The candidate will be moved to this stage when an interview is scheduled."
+msgstr "Këtu mund të menaxhoni të gjithë kandidatët e kandidatëve në fazën e marrjes në punë të intervistës. Kandidati do të zhvendoset në këtë fazë kur të planifikohet një intervistë."
+
+msgid "Here you can manage all the candidates in the Offer Sent hiring stage."
+msgstr "Këtu mund të menaxhoni të gjithë kandidatët në fazën e punësimit të dërguar."
+
+msgid "Here you can manage all the candidate in the Hired hiring stage."
+msgstr "Këtu mund të menaxhoni të gjithë kandidatin në fazën e punësimit të punësuar."
+
+msgid "Here you can manage all the rejected candidates."
+msgstr "Këtu mund të menaxhoni të gjithë kandidatët e refuzuar."
+
+msgid "Here you can add all the skills you have."
+msgstr "Këtu mund të shtoni të gjitha aftësitë që keni."
+
+msgid "Here you can add details about your education levels."
+msgstr "Këtu mund të shtoni detaje në lidhje me nivelet e arsimit tuaj."
+
+msgid "Here you can add all the certifications you have completed."
+msgstr "Këtu mund të shtoni të gjitha çertifikatat që keni përfunduar."
+
+msgid "Here you can add all the languages you are fluent in."
+msgstr "Këtu mund të shtoni të gjitha gjuhët në të cilat jeni rrjedhshëm."
+
+msgid "Here you can add details about your dependents."
+msgstr "Këtu mund të shtoni detaje në lidhje me vartësit tuaj."
+
+msgid "Here you can add details about your emergency contacts."
+msgstr "Këtu mund të shtoni detaje në lidhje me kontaktet tuaja të urgjencës."
+
+msgid "Here you can add and manage your leave requests."
+msgstr "Këtu mund të shtoni dhe menaxhoni kërkesat tuaja për leje."
+
+msgid "Here you can view a summary of all leave balances."
+msgstr "Këtu mund të shikoni një përmbledhje të të gjitha bilanceve të largimit."
+
+msgid "Here you can view all your approved leave requests."
+msgstr "Këtu mund të shikoni të gjitha kërkesat tuaja të aprovuara për leje."
+
+msgid "Here you can view all your pending leave requests."
+msgstr "Këtu mund të shikoni të gjitha kërkesat tuaja në pritje të pushimit."
+
+msgid "Here you can view and approve leave requests from your subordinates."
+msgstr "Këtu mund të shikoni dhe aprovoni kërkesa për leje nga vartësit tuaj."
+
+msgid "Here you can view all cancellation requests from your subordinates."
+msgstr "Këtu mund të shikoni të gjitha kërkesat e anulimit nga vartësit tuaj."
+
+msgid "Here you can view and approve leave requests if you are an approver to an employee."
+msgstr "Këtu mund të shikoni dhe aprovoni kërkesat për leje nëse jeni një aftësues i një punonjësi."
+
+msgid "Here you can view all your leave requests on a calendar."
+msgstr "Këtu mund të shikoni të gjitha kërkesat tuaja për leje në një kalendar."
+
+msgid "Here you can add and manage projects you are working on or assigned to."
+msgstr "Këtu mund të shtoni dhe menaxhoni projekte për të cilat po punoni ose caktoni."
+
+msgid "Here you can mark your attendance by punching in and punching out."
+msgstr "Këtu mund të shënoni pjesëmarrjen tuaj duke shënuar dhe duke u larguar."
+
+msgid "Here you can view and manage all pending, approved, rejected and submitted timesheets."
+msgstr "Këtu mund të shikoni dhe menaxhoni të gjitha në pritje, aprovuar, refuzuar dhe dorëzuar fletët e orarit."
+
+msgid "Here you can manage of all your approved timesheets."
+msgstr "Këtu mund të menaxhoni të gjitha fletët tuaja të miratuara."
+
+msgid "Here you can manage of all your pending timesheets."
+msgstr "Këtu mund të menaxhoni të gjitha fletët e kohës tuaj në pritje."
+
+msgid "Here you can view and approve timesheetes of your subordinates."
+msgstr "Këtu mund të shikoni dhe aprovoni fletët e kohës së vartësve tuaj."
+
+msgid "Here you can view and manage all your pending, approved, rejected and submitted attendance sheets."
+msgstr "Këtu mund të shikoni dhe menaxhoni të gjitha fletët tuaja në pritje, të aprovuara, të refuzuara dhe të paraqitura."
+
+msgid "Here you can view all your approved attendance sheets."
+msgstr "Këtu mund të shikoni të gjitha fletët tuaja të aprovuara të pjesëmarrjes."
+
+msgid "Here you can view all your pending attendance sheets."
+msgstr "Këtu mund të shikoni të gjitha fletët tuaja në pritje të pjesëmarrjes."
+
+msgid "Here you can manage and approve attendance sheets of your subordinates."
+msgstr "Këtu mund të menaxhoni dhe aprovoni fletët e frekuentimit të vartësve tuaj."
+
+msgid "Here you add an overtime request and view previous overtime requests."
+msgstr "Këtu shtoni një kërkesë jashtë orarit dhe shikoni kërkesat e mëparshme jashtë orarit."
+
+msgid "Here you can manage and approve overtime requests of your subordinates."
+msgstr "Këtu mund të menaxhoni dhe aprovoni kërkesa jashtë orarit të vartësve tuaj."
+
+msgid "Here you can upload your personal documents to the system."
+msgstr "Këtu mund të ngarkoni dokumentet tuaja personale në sistem."
+
+msgid "Here you can view all the company documents that are shared with you."
+msgstr "Këtu mund të shikoni të gjitha dokumentet e kompanisë që ndahen me ju."
+
+msgid "Here you can view all your payslips. You can download your payslips as PDFs."
+msgstr "Këtu mund të shikoni të gjitha pagat tuaja. Ju mund të shkarkoni pagat tuaja si PDF."
+
+msgid "Here you will find all the forms you need to fill out and all previous completed forms."
+msgstr "Këtu do të gjeni të gjitha format që ju nevojiten për të plotësuar dhe të gjitha format e mëparshme të përfunduara."
+
+msgid "Here you can view all contact information of employees in the organization."
+msgstr "Këtu mund të shikoni të gjitha informacionet e kontaktit të punonjësve në organizatë."
+
+msgid "Here you can view all the training sessions available."
+msgstr "Këtu mund të shikoni të gjitha seancat e trajnimit në dispozicion."
+
+msgid "Here you can view all training sessions you have signed up for or assigned to."
+msgstr "Këtu mund të shikoni të gjitha seancat e trajnimit për të cilat keni regjistruar ose caktuar për të."
+
+msgid "Here you can manage all the training sessions of your subordinates."
+msgstr "Këtu mund të menaxhoni të gjitha seancat e trajnimit të vartësve tuaj."
+
+msgid "Here you can view all the training sessions coordinated by you."
+msgstr "Këtu mund të shikoni të gjitha seancat e trajnimit të koordinuara nga ju."
+
+msgid "Here you can manage all the self assessments you need to work on for your performance reviews."
+msgstr "Këtu mund të menaxhoni të gjitha vlerësimet e vetvetes për të cilat duhet të punoni për vlerësimet tuaja të performancës."
+
+msgid "Here you can provide feedback to your peers or subordinates."
+msgstr "Këtu mund të siguroni reagime për bashkëmoshatarët ose vartësit tuaj."
+
+msgid "Here you can submit and manage your travel requests."
+msgstr "Këtu mund të paraqisni dhe menaxhoni kërkesat tuaja të udhëtimit."
+
+msgid "Here you can view and approve travel requests of your subordinates."
+msgstr "Këtu mund të shikoni dhe aprovoni kërkesat e udhëtimit të vartësve tuaj."
+
+msgid "Here you can approve travel requests if you are an approver to certain employees."
+msgstr "Këtu mund të aprovoni kërkesat e udhëtimit nëse jeni një aftësues i punonjësve të caktuar."
+
+msgid "Here you can submit and manage your expense requests."
+msgstr "Këtu mund të paraqisni dhe menaxhoni kërkesat tuaja për shpenzime."
+
+msgid "Here you can manage and approve expenses requests of your subordinates."
+msgstr "Këtu mund të menaxhoni dhe aprovoni kërkesat e shpenzimeve të vartësve tuaj."
+
+msgid "Here you can approve expense requests if you are an approver to certain employees."
+msgstr "Këtu mund të aprovoni kërkesa për shpenzime nëse jeni një aftësues i punonjësve të caktuar."
+
+msgid "Here you can view details of all your salary components."
+msgstr "Këtu mund të shikoni detaje për të gjithë përbërësit tuaj të pagave."
+
+msgid "Here you can view details of all the loans you have taken from the company."
+msgstr "Këtu mund të shikoni detaje për të gjitha kreditë që keni marrë nga kompania."
+
+msgid "Position"
+msgstr "Pozicion"
+
+msgid "Application Date"
+msgstr "Datën e aplikimit"
+
+msgid "Basic"
+msgstr "Themelor"
+
+msgid "All Candidates"
+msgstr "Të gjithë kandidatët"
+
+msgid "New"
+msgstr "I ri"
+
+msgid "Screening"
+msgstr "Shfaqje"
+
+msgid "Assessment"
+msgstr "Vlerësim"
+
+msgid "Interview Scheduled"
+msgstr "Intervista e planifikuar"
+
+msgid "Offer"
+msgstr "Ofroj"
+
+msgid "Hired"
+msgstr "I punësuar"
+
+msgid "Member"
+msgstr "Anëtar"
+
+msgid "Attach File"
+msgstr "Bashkangjit skedarin"
+
+msgid "Here you can define the different pay grades in your organization."
+msgstr "Këtu mund të përcaktoni shkallët e ndryshme të pagave në organizatën tuaj."

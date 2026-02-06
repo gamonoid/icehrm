@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Alert, Col, DatePicker, TimePicker, Form, Input, Row, Tooltip, Slider,
+  Alert, Col, DatePicker, TimePicker, Form, Input, Row, Tooltip, Slider, Switch, Select,
 } from 'antd';
 import {
   InfoCircleOutlined,
@@ -13,7 +13,8 @@ import IceSelect from './IceSelect';
 import IceLabel from './IceLabel';
 import IceColorPick from './IceColorPick';
 import IceSignature from './IceSignature';
-import IceEditor from './IceEditor';
+import IceDocumentField from './IceDocumentField';
+import IceCountryCityInput from './IceCountryCityInput';
 
 
 const ValidationRules = {
@@ -227,6 +228,11 @@ class IceForm extends React.Component {
     let validationRule = null;
     data.label = adapter.gt(data.label);
 
+    // Skip rendering if display is set to 'none'
+    if (data.display === 'none') {
+      return null;
+    }
+
     viewOnly = viewOnly || (data.readonly === true);
 
     if (!layout) {
@@ -253,6 +259,20 @@ class IceForm extends React.Component {
     }
 
     rules.push(requiredRule);
+
+    // Add custom validation if provided
+    if (data.customValidation && typeof data.customValidation === 'function') {
+      rules.push({
+        validator: (_, value) => {
+          const formData = this.formReference.current?.getFieldsValue();
+          const errorMessage = data.customValidation(value, formData);
+          if (errorMessage) {
+            return Promise.reject(new Error(errorMessage));
+          }
+          return Promise.resolve();
+        },
+      });
+    }
 
     const label = (
       <div>
@@ -337,6 +357,20 @@ class IceForm extends React.Component {
             : <Input.TextArea rows={data.rows} />}
         </Form.Item>
       );
+    } if (data.type === 'document') {
+      return (
+        <Form.Item
+          labelCol={labelSpan}
+          label={label}
+          key={name}
+          name={name}
+          rules={rules}
+        >
+          {viewOnly
+            ? <IceDocumentField />
+            : <IceDocumentField />}
+        </Form.Item>
+      );
     } if (data.type === 'date') {
       return (
         <Form.Item
@@ -350,7 +384,7 @@ class IceForm extends React.Component {
         </Form.Item>
       );
     } if (data.type === 'datetime') {
-      let dateFormat = 'YYYY-MM-DD HH:mm:ss';
+      let dateFormat = 'YYYY-MM-DD HH:mm';
       if (data.dateFormat) {
         dateFormat = data.dateFormat;
       }
@@ -362,7 +396,7 @@ class IceForm extends React.Component {
           name={name}
           rules={rules}
         >
-          <DatePicker format={dateFormat} showTime disabled={viewOnly} />
+          <DatePicker format={dateFormat} showTime={{ format: 'HH:mm' }} disabled={viewOnly} />
         </Form.Item>
       );
     } if (data.type === 'time') {
@@ -444,6 +478,22 @@ class IceForm extends React.Component {
           />
         </Form.Item>
       );
+    } if (data.type === 'location') {
+      return (
+        <Form.Item
+          labelCol={labelSpan}
+          label={label}
+          key={name}
+          name={name}
+          rules={rules}
+        >
+          <IceCountryCityInput
+            adapter={adapter}
+            field={field}
+            readOnly={viewOnly}
+          />
+        </Form.Item>
+      );
     } if (data.type === 'colorpick') {
       return (
         <Form.Item
@@ -484,24 +534,8 @@ class IceForm extends React.Component {
         >
           <Input
             bordered={false}
-          />
-        </Form.Item>
-      );
-    } if (data.type === 'editor') {
-      return (
-        <Form.Item
-          labelCol={labelSpan}
-          label={label}
-          key={name}
-          name={name}
-          rules={rules}
-          shouldUpdate
-        >
-          <IceEditor
-            adapter={adapter}
-            field={field}
-            title={label}
-            readOnly={viewOnly}
+            disabled
+            style={{ color: 'rgba(4, 4, 4, 0.85)' }}
           />
         </Form.Item>
       );
@@ -558,6 +592,46 @@ class IceForm extends React.Component {
             max={data.max}
             defaultValue={data.defaultValue ? data.defaultValue : 0}
           />
+        </Form.Item>
+      );
+    } if (data.type === 'switch') {
+      requiredRule.required = false;
+      return (
+        <Form.Item
+          labelCol={labelSpan}
+          label={label}
+          key={name}
+          name={name}
+          rules={rules}
+          valuePropName="checked"
+          getValueProps={(value) => {
+            // Convert '0'/'1' strings or 0/1 numbers to boolean for display
+            if (value === '1' || value === 1 || value === true) {
+              return { checked: true };
+            }
+            return { checked: false };
+          }}
+          normalize={(val) => {
+            // Normalize: always store as '0' or '1' string in form state
+            // This ensures the payload always contains '0'/'1' strings, not booleans
+            if (val === true || val === '1' || val === 1) {
+              return '1';
+            }
+            return '0';
+          }}
+          getValueFromEvent={(checked) => {
+            // Convert boolean from Switch component to '0' or '1' string for storage
+            return checked ? '1' : '0';
+          }}
+        >
+          {viewOnly
+            ? <IceLabel />
+            : (
+              <Switch
+                checkedChildren="Yes"
+                unCheckedChildren="No"
+              />
+            )}
         </Form.Item>
       );
     }
@@ -630,7 +704,7 @@ class IceForm extends React.Component {
     this.formReference.current.setFieldsValue(data);
   }
 
-  save(params, success) {
+  save(params, success, fail) {
     const { adapter, fields } = this.props;
     let values = params;
     values = adapter.forceInjectValuesBeforeSave(values);
@@ -648,11 +722,19 @@ class IceForm extends React.Component {
       values.id = id;
     }
     values = this.formFieldsToData(values, fields);
-    adapter.add(values, [], () => adapter.get([]), () => {
-      this.formReference.current.resetFields();
-      this.showError(false);
-      success();
-    });
+    adapter.add(
+        values,
+        [],
+        () => adapter.get([]),
+        () => {
+          this.formReference.current.resetFields();
+          this.showError(false);
+          success();
+          },
+        () => {
+          if (fail) { fail() };
+        },
+    );
   }
 }
 

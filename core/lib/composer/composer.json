@@ -35,7 +35,7 @@
 	},
     "autoload": {
       "psr-4": {
-        "": ["../../src"]
+        "": ["../../src", "../../../extensions/leave_and_performance/core/src"]
       }
     }
 }

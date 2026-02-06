@@ -368,6 +368,28 @@ class RestEndPoint
         return $accessTokenValidation;
     }
 
+	public function setSessionUser() {
+		$accessTokenValidation = $this->validateAccessToken();
+		if (!empty($accessTokenValidation) && $accessTokenValidation->getStatus() == IceResponse::ERROR) {
+			return null;
+		}
+		$user = $accessTokenValidation->getData();
+		BaseService::getInstance()->setCurrentUser($user);
+		SessionUtils::saveSessionObject('user', $user);
+
+		return $user;
+	}
+
+	public function getCurrentUser() {
+		$accessTokenValidation = $this->validateAccessToken();
+		if (!empty($accessTokenValidation) && $accessTokenValidation->getStatus() == IceResponse::ERROR) {
+			return null;
+		}
+		$user = $accessTokenValidation->getData();
+		BaseService::getInstance()->setCurrentUser($user);
+		return $user;
+	}
+
     public function printResponse($response)
     {
         echo BaseService::getInstance()->safeJsonEncode($response, JSON_PRETTY_PRINT);

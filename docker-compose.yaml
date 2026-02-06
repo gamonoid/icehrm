@@ -4,7 +4,7 @@ services:
     image: mysql:8.0.32
     #command: --lower_case_table_names=1
     ports:
-      - 9307:3306
+      - 9306:3306
     environment:
       MYSQL_ROOT_PASSWORD: IceHrmR00t
       MYSQL_USER: dev
@@ -14,14 +14,31 @@ services:
       - ./docker/init.sql:/docker-entrypoint-initdb.d/setup.sql
       - ./docker/development/db_data:/var/lib/mysql
 
+#  mysql:
+#    image: mysql:8.0.40
+#    #command: --lower_case_table_names=1
+#    ports:
+#      - 9306:3306
+#    environment:
+#      MYSQL_ROOT_PASSWORD: IceHrmR00t
+#      MYSQL_USER: dev
+#      MYSQL_PASSWORD: dev
+#      MYSQL_DATABASE: icehrm
+#    volumes:
+#      - ./docker/init.sql:/docker-entrypoint-initdb.d/setup.sql
+#      - ./docker/development/db_data:/var/lib/mysql
+
   icehrm:
     build: .
     ports:
-      - 9010:8080
+      - 9080:8080
     environment:
       ICE_CONFIG_FILE: ../docker/development/config/config.php
     volumes:
       - .:/var/www/html
+    extra_hosts:
+      - "dascore.org:192.168.65.254"
+      - "admin.dascore.org:192.168.65.254"
 
   icehrm-worker-dev:
     build:
@@ -38,17 +55,17 @@ services:
       - mysql
     image: phpmyadmin
     ports:
-      - "9011:80"
+      - "9081:80"
     environment:
       PMA_HOSTS: mysql
-      PMA_PORT: 9307
+      PMA_PORT: 9306
       PMA_USER: dev
       PMA_PASSWORD: dev
 
   mailhog:
     image: ajoergensen/mailhog
     ports:
-      - "1125:1025"
-      - "9012:8025"
+      - "1126:1025"
+      - "9082:8025"
 volumes:
   db_data:

@@ -11,16 +11,6 @@ function ConnectionTab(props) {
   const { employeeCount, systemData } = props;
   return (
     <Space direction="vertical" style={{ width: '100%' }}>
-      {employeeCount.isIceHrmPro
-      &&
-      <Row>
-        <Col span={8}>
-          <IceHrmProData {...employeeCount}/>
-        </Col>
-        <Col span={8}/>
-        <Col span={8}/>
-      </Row>
-      }
       <SystemData {...systemData}/>
     </Space>
   );

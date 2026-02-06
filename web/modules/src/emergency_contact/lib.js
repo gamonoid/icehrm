@@ -3,10 +3,10 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
 
-class EmergencyContactAdapter extends AdapterBase {
+class EmergencyContactAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -26,6 +26,36 @@ class EmergencyContactAdapter extends AdapterBase {
       { sTitle: 'Home Phone' },
       { sTitle: 'Work Phone' },
       { sTitle: 'Mobile Phone' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Relationship',
+        dataIndex: 'relationship',
+        sorter: true,
+      },
+      {
+        title: 'Home Phone',
+        dataIndex: 'home_phone',
+        sorter: true,
+      },
+      {
+        title: 'Work Phone',
+        dataIndex: 'work_phone',
+        sorter: true,
+      },
+      {
+        title: 'Mobile Phone',
+        dataIndex: 'mobile_phone',
+        sorter: true,
+      },
     ];
   }
 

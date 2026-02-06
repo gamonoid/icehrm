@@ -10,6 +10,8 @@ namespace Travel\Common\Model;
 
 use Classes\ModuleAccess;
 use Classes\SettingsManager;
+use Classes\FileService\FileService;
+use Employees\Common\Model\Employee;
 use Model\ApproveModel;
 use Model\CustomFieldTrait;
 
@@ -84,5 +86,16 @@ class EmployeeTravelRecord extends ApproveModel
             new ModuleAccess('travel', 'admin'),
             new ModuleAccess('travel', 'user'),
         ];
+    }
+
+    public function postProcessGetData($entry)
+    {
+        // Add employee profile image
+        $employee = new Employee();
+        $employee->Load('id = ?', [$entry->employee]);
+        $employee = \Classes\FileService::getInstance()->updateSmallProfileImage($employee);
+        $entry->image = $employee->image;
+
+        return $entry;
     }
 }

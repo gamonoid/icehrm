@@ -30,5 +30,6 @@ class SalaryAdminManager extends AbstractModuleManager
         $this->addModelClass('SalaryComponentType');
         $this->addModelClass('SalaryComponent');
         $this->addModelClass('PayrollEmployee');
+		$this->addModelClass('EmployeeSalary');
     }
 }

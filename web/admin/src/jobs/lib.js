@@ -51,12 +51,16 @@ class JobTitleAdapter extends ReactModalAdapterBase {
     ];
   }
 
+  showViewButton() {
+    return false;
+  }
+
   getHelpTitle() {
     return this.gt('Job Titles');
   }
 
   getHelpDescription() {
-    return this.gt('Here you can manage the job titles in your organization. Each employee needs to be assigned a job title.');
+    return this.gt('Manage job titles within your organization. Job titles define the roles and positions employees hold, and are used for organizational reporting, job descriptions, and employee categorization. Each employee must be assigned a job title.');
   }
 
   getHelpLink() {
@@ -122,6 +126,10 @@ class PayGradeAdapter extends ReactModalAdapterBase {
     ];
   }
 
+  showViewButton() {
+    return false;
+  }
+
   doCustomValidation(params) {
     try {
       if (parseFloat(params.min_salary) > parseFloat(params.max_salary)) {
@@ -138,7 +146,7 @@ class PayGradeAdapter extends ReactModalAdapterBase {
   }
 
   getHelpDescription() {
-    return this.gt('Here you can define the different pay grades in your organization.');
+    return this.gt('Define pay grades to categorize compensation levels across your organization. Each pay grade specifies a salary range with minimum and maximum values in a given currency, helping standardize compensation and ensure pay equity across similar roles.');
   }
 }
 
@@ -186,12 +194,16 @@ class EmploymentStatusAdapter extends ReactModalAdapterBase {
     ];
   }
 
+  showViewButton() {
+    return false;
+  }
+
   getHelpTitle() {
     return this.gt('Employment Status');
   }
 
   getHelpDescription() {
-    return this.gt('Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state.');
+    return this.gt('Define employment statuses to classify the type of employment for each employee, such as Full-Time, Part-Time, Contract, or Intern. This classification affects benefits eligibility, leave policies, and workforce reporting. Each employee must be assigned an employment status.');
   }
 }
 

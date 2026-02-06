@@ -1987,3 +1987,822 @@ msgstr "Poistaa"
 
 msgid "Copy"
 msgstr "Kopio"
+
+msgid "Employee Check-Ins"
+msgstr "Työntekijöiden ilmoittautumiset"
+
+msgid "Employee Distribution"
+msgstr "Työntekijöiden jakautuminen"
+
+msgid "Total"
+msgstr "Yhteensä"
+
+msgid "is required"
+msgstr "tarvitaan"
+
+msgid "Use Employee Leave Period"
+msgstr "Käytä työntekijän loma-aikaa"
+
+msgid "Required Experience (Days)"
+msgstr "Vaadittava kokemus (päivinä)"
+
+msgid "LeaveGroup"
+msgstr "leave Ryhmät"
+
+msgid "Expenses Category"
+msgstr "Kulut Luokka"
+
+msgid "Employee Expense"
+msgstr "Henkilöstömenot"
+
+msgid "Overtime"
+msgstr "Ylityö"
+
+msgid "Employee Fields"
+msgstr "Työntekijän kentät"
+
+msgid "Asset Type"
+msgstr "Omaisuuserätyyppi"
+
+msgid "Asset"
+msgstr "Omaisuuserät"
+
+msgid "Custom Field"
+msgstr "Mukautettu kenttä"
+
+msgid "Object Type"
+msgstr "Kohteen tyyppi"
+
+msgid "Personal"
+msgstr "Henkilökohtainen"
+
+msgid "Identification"
+msgstr "Tunnistaminen"
+
+msgid "Work"
+msgstr "Työ"
+
+msgid "Contact"
+msgstr "Ota yhteyttä"
+
+msgid "Report"
+msgstr "Raportti"
+
+msgid "Login As"
+msgstr "Kirjaudu sisään"
+
+msgid "Deactivate"
+msgstr "Deaktivoi"
+
+msgid "Employee Education"
+msgstr "Työntekijöiden koulutus"
+
+msgid "Employee Certification"
+msgstr "Työntekijän sertifiointi"
+
+msgid "Listening"
+msgstr "Kuunteleminen"
+
+msgid "Employee Dependent"
+msgstr "Työntekijän huollettava"
+
+msgid "Contacts"
+msgstr "Yhteystiedot"
+
+msgid "Next"
+msgstr "Seuraava"
+
+msgid "Emergency Contact"
+msgstr "Hätäyhteyshenkilö"
+
+msgid "Deactivated"
+msgstr "Deaktivoitu"
+
+msgid "Archived"
+msgstr "Arkistoitu"
+
+msgid "Updated By"
+msgstr "Päivitetty"
+
+msgid "Created Time (GMT)"
+msgstr "Luotu aika (GMT)"
+
+msgid "Yes"
+msgstr "Kyllä"
+
+msgid "No"
+msgstr "Ei"
+
+msgid "Share with Employee"
+msgstr "Jaa työntekijän kanssa"
+
+msgid "Visible To"
+msgstr "Näkyvissä"
+
+msgid "ID Copy"
+msgstr "ID-kopio"
+
+msgid "Degree Certificate"
+msgstr "Tutkintotodistus"
+
+msgid "Driving License"
+msgstr "Ajokortti"
+
+msgid "Owner"
+msgstr "Omistaja"
+
+msgid "Manager"
+msgstr "Johtaja"
+
+msgid "HR Forms"
+msgstr "HR-lomakkeet"
+
+msgid "Employee Forms"
+msgstr "Työntekijöiden lomakkeet"
+
+msgid "Form"
+msgstr "Lomake"
+
+msgid "Submitted"
+msgstr "Lähetetty"
+
+msgid "Review Period Start Date"
+msgstr "Tarkastelujakson alkamispäivä"
+
+msgid "Review Period End Date"
+msgstr "Tarkastelujakson päättymispäivä"
+
+msgid "Self Assessment Due Date"
+msgstr "Itsearvioinnin eräpäivä"
+
+msgid "Due On"
+msgstr "Eräpäivä"
+
+msgid "Company Teams"
+msgstr "Yrityksen tiimit"
+
+msgid "Lead"
+msgstr "Lead"
+
+msgid "Teams"
+msgstr "Joukkueet"
+
+msgid "Team Name"
+msgstr "Joukkueen nimi"
+
+msgid "Team Members"
+msgstr "Tiimin jäsenet"
+
+msgid "Member "
+msgstr "Jäsen"
+
+msgid "Role"
+msgstr "Tehtävä"
+
+msgid "Users Roles"
+msgstr "Käyttäjien roolit"
+
+msgid "User Role"
+msgstr "Käyttäjän rooli"
+
+msgid "Additional Permissions"
+msgstr "Lisäoikeudet"
+
+msgid "Usage"
+msgstr "Käyttö"
+
+msgid "Last Export Result"
+msgstr "Viimeisin vientitulos"
+
+msgid "Employee Data Import"
+msgstr "Työntekijän tietojen tuonti"
+
+msgid "Attendance Data Import"
+msgstr "Läsnäolotietojen tuonti"
+
+msgid "Payroll Data Import"
+msgstr "Palkkatietojen tuonti"
+
+msgid "Supervisor and Approver Import"
+msgstr "Esimiehen ja hyväksyjän tuonti"
+
+msgid "You can drag the chart both sides to view other dates on timeline"
+msgstr "Voit vetää kaaviota molemmin puolin nähdäksesi muita päivämääriä aikajanalla."
+
+msgid "Payroll Group"
+msgstr "Payroll Group"
+
+msgid "Common"
+msgstr "Yhteinen"
+
+msgid "Function Type"
+msgstr "Toiminto Tyyppi"
+
+msgid "Advanced"
+msgstr "Edistynyt"
+
+msgid "Simple"
+msgstr "Yksinkertainen"
+
+msgid "Company Name"
+msgstr "Yrityksen nimi"
+
+msgid "Hiring Manager"
+msgstr "Palkkaava johtaja"
+
+msgid "Job Description"
+msgstr "Työn kuvaus"
+
+msgid "Employement Type"
+msgstr "Työsuhteen tyyppi"
+
+msgid "Postal Code"
+msgstr "Postinumero"
+
+msgid "Show Hiring Manager Name"
+msgstr "Näytä palkkaavan johtajan nimi"
+
+msgid "Previous"
+msgstr "Edellinen"
+
+msgid "Position Applied"
+msgstr "Haettu asema"
+
+msgid "Hiring Stage"
+msgstr "Palkkausvaihe"
+
+msgid "Total Years of Experience"
+msgstr "Kokemusvuodet yhteensä"
+
+msgid "Expected Salary"
+msgstr "Odotettu palkka"
+
+msgid "Attach File "
+msgstr "Liitä tiedosto "
+
+msgid "Update Password"
+msgstr "Päivitä salasana"
+
+msgid "Employee Profile"
+msgstr "Työntekijän profiili"
+
+msgid "Contact details"
+msgstr "Yhteystiedot"
+
+msgid "Work related details"
+msgstr "Työhön liittyvät tiedot"
+
+msgid "ID Number"
+msgstr "Henkilötunnus"
+
+msgid "Leave Days from Current Leave Period"
+msgstr "Lomapäivät kuluvalta lomakaudelta"
+
+msgid "Paid Time Off Adjustments"
+msgstr "Palkallisen vapaa-ajan mukautukset"
+
+msgid "Leave Days Carried Forward Previous Period"
+msgstr "Edelliseltä kaudelta siirretyt lomapäivät"
+
+msgid "Leave Days Available to Use"
+msgstr "Käytettävissä olevat lomapäivät"
+
+msgid "Approved Leave Days"
+msgstr "Hyväksytyt lomapäivät"
+
+msgid "Pending Leave Days"
+msgstr "Vireillä olevat lomapäivät"
+
+msgid "Rejected Leave Days"
+msgstr "Hylätyt lomapäivät"
+
+msgid "Calculated by Leave Type"
+msgstr "Lomalajeittain laskettuna"
+
+msgid "Show Calculation"
+msgstr "Näytä laskelma"
+
+msgid "Total Time"
+msgstr "Kokonaisaika"
+
+msgid "Personal Documents"
+msgstr "Henkilökohtaiset asiakirjat"
+
+msgid "My Forms"
+msgstr "Lomakkeeni"
+
+msgid "Training Sessions of Coordinated by Me"
+msgstr "Coordinated by Me:n koulutustilaisuudet"
+
+msgid "Self Assessments"
+msgstr "Itsearvioinnit"
+
+msgid "Connection"
+msgstr "Yhteys"
+
+msgid "Data directory is accessible from outside."
+msgstr "Tietohakemistoon pääsee käsiksi ulkopuolelta."
+
+msgid "Learn how to fix"
+msgstr "Opi korjaamaan"
+
+msgid "Copy System Report"
+msgstr "Kopioi järjestelmäraportti"
+
+msgid "System Issues"
+msgstr "Järjestelmäongelmat"
+
+msgid "System Report"
+msgstr "Järjestelmäraportti"
+
+msgid "Here you can define the structure of the company by adding branches, departments, company units,etc. Each employee needs to be connected to a company structure."
+msgstr "Täällä voit määritellä yrityksen rakenteen lisäämällä sivuliikkeitä, osastoja, yrityksen yksiköitä jne. Jokaisen työntekijän tulee olla yhteydessä yrityksen rakenteeseen."
+
+msgid "Company graph provides a graphical overview of the company structure."
+msgstr "Yrityskaavio tarjoaa graafisen yleiskatsauksen yrityksen rakenteesta."
+
+msgid "Here you can manage the job titles in your organization. Each employee needs to be assigned a job title."
+msgstr "Täällä voit hallita organisaatiosi työnimikkeitä. Jokaiselle työntekijälle on määritettävä tehtävänimike."
+
+msgid "Here you can define the different pay grades in your organization. "
+msgstr "Täällä voit määrittää organisaatiosi eri palkkaluokat."
+
+msgid "Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state."
+msgstr "Täällä voit määrittää organisaatiosi erilaiset työllisyystilat. Jokaiselle työntekijälle on määrättävä työpaikka."
+
+msgid "Here you can define the different types of skills an employee might have."
+msgstr "Täällä voit määrittää työntekijän eri taidot."
+
+msgid "Here you can define the different levels of education an employee might have."
+msgstr "Täällä voit määritellä työntekijän eri koulutustasot."
+
+msgid "Here you can define the different types of certifications an employee might have completed."
+msgstr "Täällä voit määrittää erityyppiset sertifikaatit, jotka työntekijä on saattanut päätökseen."
+
+msgid "Languages consists of most of the languages used globally."
+msgstr "Kielet koostuvat useimmista globaalisti käytetyistä kielistä."
+
+msgid "Here you can add details about a project such as project name, client, details and the status."
+msgstr "Täällä voit lisätä tietoja projektista, kuten projektin nimi, asiakas, yksityiskohdat ja tilaa."
+
+msgid "Here you can assign projects to employees."
+msgstr "Täällä voit määrittää projektit työntekijöille."
+
+msgid "Here you can add and manage clients your organization is working with. You can choose the correct client when adding a project in IceHrm."
+msgstr "Täällä voit lisätä ja hallita asiakkaita, joiden kanssa organisaatio työskentelee. Voit valita oikean asiakkaan lisättäessä projektia ICEHRM: ään."
+
+msgid "Here you can define custom fields for assets, company struture, employee, travel request or expense forms."
+msgstr "Täällä voit määritellä omaisuuserien, yrityksen struture-, työntekijöiden, matkapyyntö- tai kulukentälomakkeiden mukautetut kentät."
+
+msgid "Here you can view records of all the activities performed by different users in the system."
+msgstr "Täällä voit tarkastella tietueita kaikista järjestelmän eri käyttäjien suorittamista toiminnoista."
+
+msgid "Here you can to add new employees, view employee details and filter employees."
+msgstr "Täällä voit lisätä uusia työntekijöitä, tarkastella työntekijöiden yksityiskohtia ja suodattaa työntekijöitä."
+
+msgid "Here you can record the work history of your employees."
+msgstr "Täällä voit tallentaa työntekijöidesi työhistorian."
+
+msgid "Here you can add the skills each employee in your organization has."
+msgstr "Täällä voit lisätä taitoja, jotka jokaisella organisaatiosi työntekijällä on."
+
+msgid "Here you can record the level of education each employee in your organization has."
+msgstr "Täällä voit tallentaa koulutustason, joka jokaisella organisaatiosi työntekijällä on."
+
+msgid "Here you can define the certifications each of your employee has completed so far."
+msgstr "Täällä voit määritellä sertifikaatit, jotka jokainen työntekijäsi on tähän mennessä saatu päätökseen."
+
+msgid "Here you can keep track of all the languages each employee knows."
+msgstr "Täällä voit seurata kaikkia kieliä, joita kukin työntekijä tietää."
+
+msgid "Here you can add all the dependents of each employee."
+msgstr "Täällä voit lisätä kaikki työntekijän huollettajat."
+
+msgid "Here you can record emergency contacts of employees."
+msgstr "Täällä voit tallentaa työntekijöiden hätäyhteydet."
+
+msgid "Here you can view all the deativated employees. You can still recover data of a deactivated employee by clicking on Activate."
+msgstr "Täällä voit tarkastella kaikkia upotettuja työntekijöitä. Voit silti palauttaa deaktivoidun työntekijän tiedot napsauttamalla aktivointia."
+
+msgid "Here you can view the deleted employees. Click on Download to download employee data as a JSON."
+msgstr "Täällä voit tarkastella poistettuja työntekijöitä. Napsauta Lataa ladataksesi työntekijöiden tiedot JSON: ksi."
+
+msgid "Here you can views how employee data changed overtime."
+msgstr "Täällä voit nähdä, kuinka työntekijätiedot muuttivat ylitöitä."
+
+msgid "Here you can define any teams in your organization."
+msgstr "Täällä voit määritellä organisaation kaikki joukkueet."
+
+msgid "Here you can add employees to the correct team."
+msgstr "Täällä voit lisätä työntekijöitä oikeaan joukkueeseen."
+
+msgid "Here you can add company documents to share announcements, policies, procedures, etc. with employees. These documents can be shared with specific employees or departments."
+msgstr "Täältä voit lisätä yrityksen asiakirjoja jakamaan ilmoituksia, käytäntöjä, menettelytapoja jne. Työntekijöiden kanssa. Nämä asiakirjat voidaan jakaa tiettyjen työntekijöiden tai osastojen kanssa."
+
+msgid "Here you can define the document types employees can add to the system."
+msgstr "Täällä voit määritellä asiakirjatyypit, jotka työntekijät voivat lisätä järjestelmään."
+
+msgid "Here you can add personal employee documents. The visibility of the employee document can be defined when adding the document."
+msgstr "Täällä voit lisätä henkilökohtaisia ​​työntekijöiden asiakirjoja. Työntekijäasiakirjan näkyvyys voidaan määritellä asiakirjan lisäämisessä."
+
+msgid "Here all the payslips generated through the payroll module. Click on Add New to manually add a payslip."
+msgstr "Tässä kaikki palkkamoduulin kautta luodut palkkalaitteet. Napsauta Lisää uusi lisätäksesi manuaalisesti maksamisen."
+
+msgid "Here you can attendance records of employees and to view, edit, filter employee attendance records."
+msgstr "Täällä voit työntekijöiden osallistumistiedot ja katsella, muokata, suodattaa työntekijöiden osallistumisrekistereitä."
+
+msgid "Here you can view whether employees are Clocked In, Clocked Out or Not Clocked In."
+msgstr "Täällä voit tarkastella, onko työntekijöitä kellotettu, kellotetaan vai niitä ei ole kello."
+
+msgid "Here you can assign performance reviews to employees and manage, view, and edit performance reviews."
+msgstr "Täällä voit antaa suoritusarviot työntekijöille ja hallita, tarkastella ja muokata suorituskykyarvosteluja."
+
+msgid "Here you can request review feedback from a supervisor/peer."
+msgstr "Täällä voit pyytää tarkistamaan palautetta esimieheltä/vertaiselta."
+
+msgid "Here you can create custom review templates for the performance review process."
+msgstr "Täällä voit luoda mukautettuja arvostelumalleja suorituskyvyn tarkistusprosessia varten."
+
+msgid "Here you can monitor the progress of all employee goals."
+msgstr "Täällä voit seurata kaikkien työntekijöiden tavoitteiden etenemistä."
+
+msgid "Here you can define leave types available in your organization."
+msgstr "Täällä voit määritellä organisaatiossasi saatavilla olevat lomat."
+
+msgid "Here you can define leave periods by providing a name for the period and by selecting the correct start and end dates."
+msgstr "Täällä voit määritellä lomajaksot antamalla nimen ajanjaksolle ja valitsemalla oikeat lähtö- ja loppupäivät."
+
+msgid "Here you can define the working and non-working days according to your organization or by country."
+msgstr "Täällä voit määritellä työskentelevät ja ei-työpäivät organisaation tai maittain."
+
+msgid "Here you need to add all the holidays relevant to a leave period."
+msgstr "Täälle sinun on lisättävä kaikki lomat, jotka liittyvät lomakauteen."
+
+msgid "Here you can override the behavior of a leave type for job titles, employment statuses, or even individual employees by adding a leave rule."
+msgstr "Täällä voit ohittaa lomatyypin käyttäytymisen työpaikkojen otsikoihin, työllisyystiloihin tai jopa yksittäisiin työntekijöihin lisäämällä loma -sääntöä."
+
+msgid "Here you can keep track of employee PTO. This can be used to compensate an employee and adjust leave balance from previous years."
+msgstr "Täällä voit seurata työntekijöiden voimanottoa. Tätä voidaan käyttää työntekijän kompensoimiseen ja edeltävistä vuosista lomakohdan mukauttamiseen."
+
+msgid "Here you can create a leave group so you can group employees and create leave types or leave rules affecting the employees in the group."
+msgstr "Täällä voit luoda lomaryhmän, jotta voit ryhmitellä työntekijöitä ja luoda lomatyyppejä tai lomaa koskevia sääntöjä, jotka vaikuttavat ryhmän työntekijöihin."
+
+msgid "Here you can add employees to the correct leave group."
+msgstr "Täältä voit lisätä työntekijöitä oikeaan loma -ryhmään."
+
+msgid "Here you can view all employee leaves and approve leave requests."
+msgstr "Täällä voit tarkastella kaikkia työntekijöiden lehtiä ja hyväksyä loman pyynnöt."
+
+msgid "Here you can define the types of assets in your organization so you can easily categorize the assets."
+msgstr "Täällä voit määrittää organisaatiosi omaisuustyypit, jotta voit luokitella varat helposti."
+
+msgid "Here you can add and manage company assets each employee or department has."
+msgstr "Täällä voit lisätä ja hallita yrityksen omaisuutta, että jokaisella työntekijällä tai osastolla on."
+
+msgid "Here you can define the different types of expenses in an organization."
+msgstr "Täällä voit määritellä organisaation erityyppiset kulut."
+
+msgid "Here you can add the different types of payment methods used for expenses in an organization."
+msgstr "Täällä voit lisätä organisaation kuluihin käytettyjä erityyppisiä maksutapoja."
+
+msgid "Here you can add employee expenses, edit and approve expense requests."
+msgstr "Täällä voit lisätä työntekijöiden kuluja, muokata ja hyväksyä kustannuspyynnöt."
+
+msgid "Here you can create custom forms to collect data from employees."
+msgstr "Täällä voit luoda räätälöityjä lomakkeita tiedon keräämiseksi työntekijöiltä."
+
+msgid "Here you can assign forms to employees, fill and download forms."
+msgstr "Täällä voit määrittää lomakkeet työntekijöille, täyttää ja ladata lomakkeet."
+
+msgid "Here you can add courses."
+msgstr "Täällä voit lisätä kursseja."
+
+msgid "Here you can add different training sessions to a particular course. You can let employees sign up for training sessions or assign training sessions by changing the attendance type."
+msgstr "Täällä voit lisätä erilaisia ​​koulutusistuntoja tiettyyn kurssiin. Voit antaa työntekijöiden ilmoittautua koulutukseen tai antaa koulutustilaisuuksia muuttamalla läsnäolotyyppiä."
+
+msgid "Here you can assign training sessions to employees."
+msgstr "Täällä voit määrittää koulutusistunnot työntekijöille."
+
+msgid "Here you can add employee travel requests and view and edit travel requests."
+msgstr "Täällä voit lisätä työntekijöiden matkapyyntöjä ja katsella ja muokata matkapyyntöjä."
+
+msgid "Here you can define the different types of overtime available in your organization."
+msgstr "Täällä voit määritellä organisaatiossasi käytettävissä olevat erityyppiset ylityöt."
+
+msgid "Here you can add and manage employee overtime requests."
+msgstr "Täällä voit lisätä ja hallita työntekijöiden ylityöpyyntöjä."
+
+msgid "Here you can define different types of loans employees are eligible for."
+msgstr "Täällä voit määritellä erityyppiset lainojen työntekijät."
+
+msgid "Here you can add employee loans."
+msgstr "Täällä voit lisätä työntekijöiden lainoja."
+
+msgid "Here you can generate different admin reports."
+msgstr "Täällä voit luoda erilaisia ​​järjestelmänvalvojan raportteja."
+
+msgid "Here you can export payroll meta data."
+msgstr "Täällä voit viedä palkka -metatiedot."
+
+msgid "Here you can view all the admin reports generated."
+msgstr "Täällä voit tarkastella kaikkia luotuja järjestelmänvalvojan raportteja."
+
+msgid "Here you can create user accounts for employees for them to login to their IceHrm accounts."
+msgstr "Täällä voit luoda työntekijöille käyttäjätilejä, jotka voivat kirjautua sisään Icehrm -tileihinsä."
+
+msgid "Here you can create user roles to give or deny access to certain modules."
+msgstr "Täällä voit luoda käyttäjärooleja antaaksesi tai kieltää pääsyn tiettyihin moduuleihin."
+
+msgid "Here you can Enable or Disable modules."
+msgstr "Täällä voit ottaa käyttöön tai poistaa käytöstä moduulit."
+
+msgid "Here you can manage what permissions each user level has."
+msgstr "Täällä voit hallita mitä käyttöoikeuksia jokaisella käyttäjätasolla on."
+
+msgid "Here you can view details about your current IceHrm plan."
+msgstr "Täällä voit tarkastella yksityiskohtia nykyisestä ICEHRM -suunnitelmastasi."
+
+msgid "Here you can view all your pending transactions."
+msgstr "Täällä voit tarkastella kaikkia vireillä olevia tapahtumia."
+
+msgid "Here you can view details about prepaid credit and other IceHrm transactions."
+msgstr "Täällä voit tarkastella yksityiskohtia ennakkomaksuista ja muista ICEHRM -tapahtumista."
+
+msgid "Here you can manage the countries you will be able to select within the system."
+msgstr "Täällä voit hallita maita, jotka voit valita järjestelmässä."
+
+msgid "Here you can manage all the provinces you will be able to select within the system."
+msgstr "Täällä voit hallita kaikkia provinsseja, jotka voit valita järjestelmässä."
+
+msgid "Here you can manage all the currencies you will be able to select within the system."
+msgstr "Täällä voit hallita kaikkia valuutat, jotka voit valita järjestelmässä."
+
+msgid "Here you can manage all the nationalities you will be able to select within the system."
+msgstr "Täällä voit hallita kaikkia kansallisuuksia, jotka voit valita järjestelmässä."
+
+msgid "Here you can manage all the ethnicities you will be able to select within the system."
+msgstr "Täällä voit hallita kaikkia etnisiä ryhmiä, jotka voit valita järjestelmässä."
+
+msgid "Here you can manage all the immigration status options you will be able to select within the system."
+msgstr "Täällä voit hallita kaikkia maahanmuuton tilavaihtoehtoja, jotka voit valita järjestelmässä."
+
+msgid "Here you can add data importers that can be used to import data to the system."
+msgstr "Täällä voit lisätä tiedontuojia, joita voidaan käyttää tietojen tuottamiseen järjestelmään."
+
+msgid "Here you can import data using the data importers defined in the system."
+msgstr "Täällä voit tuoda tietoja järjestelmässä määriteltyjen tietojen maahantuojien avulla."
+
+msgid "Here you can make changes to the fields available in the employee form."
+msgstr "Täällä voit tehdä muutoksia kenttien saataville työntekijän muodossa."
+
+msgid "Here you can check attendance time recorded every day for all the employees or a specific employee."
+msgstr "Täällä voit tarkistaa osallistumisaika, joka on tallennettu joka päivä kaikille työntekijöille tai tietylle työntekijälle."
+
+msgid "Here you can check how much of a percentage of attendance time goes into timesheets for each employee."
+msgstr "Täällä voit tarkistaa, kuinka suuri osa osallistumisajasta menee jokaiselle työntekijälle aikatauluihin."
+
+msgid "Here you can view approved employee leaves of employees with the leave dates."
+msgstr "Täällä voit tarkastella työntekijöiden hyväksyttyjä työntekijöiden lehtiä lomapäivinä."
+
+msgid "Here you can define different type of salary components in your organization."
+msgstr "Täällä voit määritellä organisaatiosi erityyppiset palkkakomponentit."
+
+msgid "Here you can define all the salary components related to the defined salary component types."
+msgstr "Täällä voit määritellä kaikki määriteltyihin palkkakomponenttityyppeihin liittyvät palkkakomponentit."
+
+msgid "Here you can add all salary components related to each of your employees."
+msgstr "Täällä voit lisätä kaikki palkkakomponentit, jotka liittyvät jokaiseen työntekijäsi."
+
+msgid "Here you can add all the employees to the correct payroll group. Each employee should belong to a payroll group."
+msgstr "Täällä voit lisätä kaikki työntekijät oikeaan palkanlaskentaryhmään. Jokaisen työntekijän tulee kuulua palkanlaskentaryhmään."
+
+msgid "Here you can create payroll reports for a specific time period."
+msgstr "Täällä voit luoda palkanlaskentaraportteja tietylle ajanjaksolle."
+
+msgid "Here you can define the payroll columns that will be used to generate payroll reports."
+msgstr "Täällä voit määrittää palkanlaskentasarakkeet, joita käytetään palkanlaskentaraporttien luomiseen."
+
+msgid "Here you can define different payroll groups if you have different payroll calculations for different employees."
+msgstr "Täällä voit määritellä erilaiset palkanlaskentaryhmät, jos sinulla on erilaisia ​​palkkalaskelmia eri työntekijöille."
+
+msgid "Here you can define different calculation such as tax that can be used in payroll columns."
+msgstr "Täällä voit määritellä erilaiset laskelmat, kuten verot, joita voidaan käyttää palkanlaskenta -sarakkeissa."
+
+msgid "Here you can create custom payslip templates."
+msgstr "Täällä voit luoda mukautettuja palkkalaitteita."
+
+msgid "Here you can add employment types that will be used when creating job posts."
+msgstr "Täällä voit lisätä työllisyystyyppejä, joita käytetään luotaessa työviestejä."
+
+msgid "Here you can add different experience levels that will be used when creating job posts."
+msgstr "Täällä voit lisätä erilaisia ​​kokemustasoja, joita käytetään luotaessa työviestejä."
+
+msgid "Here you can add job functions that will be used when creating job posts."
+msgstr "Täällä voit lisätä työtoimintoja, joita käytetään luotaessa työviestejä."
+
+msgid "Here you can add education levels that will be used when creating job posts."
+msgstr "Täällä voit lisätä koulutustasoja, joita käytetään luotaessa työviestejä."
+
+msgid "Here you can define the benefits that will be given by your organization to candidates."
+msgstr "Täällä voit määritellä edut, jotka organisaatiosi antaa ehdokkaille."
+
+msgid "Here you can create job posts and generate job links."
+msgstr "Täällä voit luoda työviestejä ja luoda työlinkkejä."
+
+msgid "Here you can view all the candidates that have applied for job positions through the job links. You can manually candidates by clicking on Add New."
+msgstr "Täällä voit tarkastella kaikkia ehdokkaita, jotka ovat hakeneet työtehtäviä työlinkkien kautta. Voit manuaalisesti ehdokkaita napsauttamalla lisää uusia."
+
+msgid "Here you can manage of all the candidates with the hiring stage New."
+msgstr "Täällä voit hallita kaikkia ehdokkaita vuokrausvaiheella."
+
+msgid "Here you can manage all the candidates in the Phone Screen hiring stage."
+msgstr "Täällä voit hallita kaikkia ehdokkaita puhelimen näytön vuokrausvaiheessa."
+
+msgid "Here you can manage all the candidates in the Assessment hiring stage."
+msgstr "Täällä voit hallita kaikkia ehdokkaita arvioinnin vuokrausvaiheessa."
+
+msgid "Here you can manage all the candidates of the candidates in the Interview hiring stage. The candidate will be moved to this stage when an interview is scheduled."
+msgstr "Täällä voit hallita kaikkia ehdokkaiden ehdokkaita haastattelun vuokrausvaiheessa. Ehdokas siirretään tähän vaiheeseen, kun haastattelu on suunniteltu."
+
+msgid "Here you can manage all the candidates in the Offer Sent hiring stage."
+msgstr "Täällä voit hallita kaikkia ehdokkaita vuokrausvaiheessa lähetetyssä tarjouksessa."
+
+msgid "Here you can manage all the candidate in the Hired hiring stage."
+msgstr "Täällä voit hallita kaikkia ehdokkaita palkatun vuokrausvaiheessa."
+
+msgid "Here you can manage all the rejected candidates."
+msgstr "Täällä voit hallita kaikkia hylättyjä ehdokkaita."
+
+msgid "Here you can add all the skills you have."
+msgstr "Täällä voit lisätä kaikki taitot."
+
+msgid "Here you can add details about your education levels."
+msgstr "Täällä voit lisätä yksityiskohtia koulutustasostasi."
+
+msgid "Here you can add all the certifications you have completed."
+msgstr "Täältä voit lisätä kaikki valmistuneet sertifikaatit."
+
+msgid "Here you can add all the languages you are fluent in."
+msgstr "Täällä voit lisätä kaikki kielet, joissa olet sujuvasti."
+
+msgid "Here you can add details about your dependents."
+msgstr "Täällä voit lisätä yksityiskohtia huollettavistasi."
+
+msgid "Here you can add details about your emergency contacts."
+msgstr "Täällä voit lisätä yksityiskohtia hätäyhteydet."
+
+msgid "Here you can add and manage your leave requests."
+msgstr "Täällä voit lisätä ja hallita lomapyyntöjäsi."
+
+msgid "Here you can view a summary of all leave balances."
+msgstr "Täällä voit tarkastella yhteenvetoa kaikista loma -saldoista."
+
+msgid "Here you can view all your approved leave requests."
+msgstr "Täällä voit tarkastella kaikkia hyväksyttyjä lomapyyntöjäsi."
+
+msgid "Here you can view all your pending leave requests."
+msgstr "Täällä voit tarkastella kaikkia odotettavissa olevia lomapyyntöjäsi."
+
+msgid "Here you can view and approve leave requests from your subordinates."
+msgstr "Täällä voit tarkastella ja hyväksyä alaisiltasi jätepyyntöjä."
+
+msgid "Here you can view all cancellation requests from your subordinates."
+msgstr "Täällä voit tarkastella kaikkia alaisilta peruutuspyyntöjä."
+
+msgid "Here you can view and approve leave requests if you are an approver to an employee."
+msgstr "Täällä voit tarkastella ja hyväksyä loman pyynnöt, jos olet hyväksynnän työntekijälle."
+
+msgid "Here you can view all your leave requests on a calendar."
+msgstr "Täällä voit tarkastella kaikki lomapyyntösi kalenteriin."
+
+msgid "Here you can add and manage projects you are working on or assigned to."
+msgstr "Täällä voit lisätä ja hallita projekteja, joissa työskentelet tai määritellyt."
+
+msgid "Here you can mark your attendance by punching in and punching out."
+msgstr "Täällä voit merkitä läsnäolosi lyömällä sisään ja lävistämällä."
+
+msgid "Here you can view and manage all pending, approved, rejected and submitted timesheets."
+msgstr "Täällä voit tarkastella ja hallita kaikkia vireillä olevia, hyväksyttyjä, hylättyjä ja toimitettuja aikatauluja."
+
+msgid "Here you can manage of all your approved timesheets."
+msgstr "Täällä voit hallita kaikkia hyväksyttyjä aikataulukkojasi."
+
+msgid "Here you can manage of all your pending timesheets."
+msgstr "Täällä voit hallita kaikkia odottavia aikataulukkojasi."
+
+msgid "Here you can view and approve timesheetes of your subordinates."
+msgstr "Täällä voit tarkastella ja hyväksyä alaisten aikataulukot."
+
+msgid "Here you can view and manage all your pending, approved, rejected and submitted attendance sheets."
+msgstr "Täällä voit tarkastella ja hallita kaikkia vireillä olevia, hyväksyttyjä, hylättyjä ja lähetettyjä osallistumislomakkeitasi."
+
+msgid "Here you can view all your approved attendance sheets."
+msgstr "Täällä voit tarkastella kaikkia hyväksyttyjä osallistumislevyjäsi."
+
+msgid "Here you can view all your pending attendance sheets."
+msgstr "Täällä voit tarkastella kaikkia odottavia osallistumislevyjäsi."
+
+msgid "Here you can manage and approve attendance sheets of your subordinates."
+msgstr "Täällä voit hallita ja hyväksyä alaisten osallistumislomakkeet."
+
+msgid "Here you add an overtime request and view previous overtime requests."
+msgstr "Täältä lisäät ylityöpyyntö ja tarkastelet aiempia ylityöpyyntöjä."
+
+msgid "Here you can manage and approve overtime requests of your subordinates."
+msgstr "Täällä voit hallita ja hyväksyä alaisten ylityöpyyntöjä."
+
+msgid "Here you can upload your personal documents to the system."
+msgstr "Täällä voit ladata henkilökohtaiset asiakirjat järjestelmään."
+
+msgid "Here you can view all the company documents that are shared with you."
+msgstr "Täällä voit tarkastella kaikkia yrityksen asiakirjoja, jotka jaetaan kanssasi."
+
+msgid "Here you can view all your payslips. You can download your payslips as PDFs."
+msgstr "Täällä voit tarkastella kaikkia palkkalaittejasi. Voit ladata PaySlips PDFS: ksi."
+
+msgid "Here you will find all the forms you need to fill out and all previous completed forms."
+msgstr "Täältä löydät kaikki lomakkeet, jotka sinun on täytettävä ja kaikki aiemmat täytetyt lomakkeet."
+
+msgid "Here you can view all contact information of employees in the organization."
+msgstr "Täällä voit tarkastella kaikki organisaation työntekijöiden yhteystiedot."
+
+msgid "Here you can view all the training sessions available."
+msgstr "Täällä voit tarkastella kaikkia käytettävissä olevia koulutustilaisuuksia."
+
+msgid "Here you can view all training sessions you have signed up for or assigned to."
+msgstr "Täällä voit tarkastella kaikkia kirjautumasi koulutusistuntoja tai määritettyjä."
+
+msgid "Here you can manage all the training sessions of your subordinates."
+msgstr "Täällä voit hallita kaikkia alaisten koulutustilaisuuksia."
+
+msgid "Here you can view all the training sessions coordinated by you."
+msgstr "Täällä voit tarkastella kaikkia koordinointiasi koulutustilaisuuksia."
+
+msgid "Here you can manage all the self assessments you need to work on for your performance reviews."
+msgstr "Täällä voit hallita kaikkia itsearviointeja, joita tarvitset työskennelläksesi suorituskyvyn arvosteluihisi."
+
+msgid "Here you can provide feedback to your peers or subordinates."
+msgstr "Täällä voit antaa palautetta ikäisillesi tai alaisille."
+
+msgid "Here you can submit and manage your travel requests."
+msgstr "Täällä voit lähettää ja hallita matkapyyntöjäsi."
+
+msgid "Here you can view and approve travel requests of your subordinates."
+msgstr "Täällä voit tarkastella ja hyväksyä alaisten matkapyynnöt."
+
+msgid "Here you can approve travel requests if you are an approver to certain employees."
+msgstr "Täällä voit hyväksyä matkapyynnöt, jos olet hyväksyjä tietyille työntekijöille."
+
+msgid "Here you can submit and manage your expense requests."
+msgstr "Täällä voit lähettää ja hallita kustannuspyyntöjäsi."
+
+msgid "Here you can manage and approve expenses requests of your subordinates."
+msgstr "Täällä voit hallita ja hyväksyä alaisten kulupyynnöt."
+
+msgid "Here you can approve expense requests if you are an approver to certain employees."
+msgstr "Täällä voit hyväksyä kustannuspyynnöt, jos olet hyväksyjä tietyille työntekijöille."
+
+msgid "Here you can view details of all your salary components."
+msgstr "Täällä voit tarkastella yksityiskohtia kaikista palkkakomponenteistasi."
+
+msgid "Here you can view details of all the loans you have taken from the company."
+msgstr "Täällä voit tarkastella yksityiskohtia kaikista yrityksistä ottamista lainoista."
+
+msgid "Position"
+msgstr "Sijainti"
+
+msgid "Application Date"
+msgstr "Hakupäivämäärä"
+
+msgid "Basic"
+msgstr "Perus-"
+
+msgid "All Candidates"
+msgstr "Kaikki ehdokkaat"
+
+msgid "New"
+msgstr "Uusi"
+
+msgid "Screening"
+msgstr "Seulonta"
+
+msgid "Assessment"
+msgstr "Arviointi"
+
+msgid "Interview Scheduled"
+msgstr "Haastattelu suunniteltu"
+
+msgid "Offer"
+msgstr "Tarjous"
+
+msgid "Hired"
+msgstr "Palkattu"
+
+msgid "Member"
+msgstr "Jäsen"
+
+msgid "Attach File"
+msgstr "Liitä tiedosto "
+
+msgid "Here you can define the different pay grades in your organization."
+msgstr "Täällä voit määrittää organisaatiosi eri palkkaluokat."

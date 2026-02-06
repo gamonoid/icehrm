@@ -5,8 +5,9 @@
  */
 import React from 'react';
 import {
-  Space, Card, Spin, Row, Col, Alert, Button, Dropdown,
+  Space, Card, Spin, Row, Col, Alert, Button, Dropdown, Modal,
 } from 'antd';
+import { LinkOutlined } from '@ant-design/icons';
 import { Donut, Pie } from '@antv/g2plot';
 import ReactDOM from 'react-dom';
 import AdapterBase from '../../../api/AdapterBase';
@@ -82,9 +83,54 @@ class DashboardAdapter extends AdapterBase {
     // this.drawCompanyLeaveEntitlementChart();
     this.drawOnlineOfflineEmployeeChart();
     this.drawEmployeeDistributionChart();
-    //this.showEmployeeList();
+    this.showEmployeeList();
     this.buildTaskList();
     this.showNews();
+    this.showConnectionModal();
+  }
+
+  showConnectionModal() {
+    // Only show for Admin users who are not connected (and not cloud instance)
+    // eslint-disable-next-line no-undef
+    if (typeof isConnectedToIceHrm !== 'undefined' && typeof currentUserLevel !== 'undefined') {
+      // eslint-disable-next-line no-undef
+      const isCloud = typeof isCloudInstance !== 'undefined' && isCloudInstance;
+      // eslint-disable-next-line no-undef
+      if (currentUserLevel === 'Admin' && !isConnectedToIceHrm && !isCloud) {
+        Modal.confirm({
+          title: null,
+          icon: null,
+          width: 480,
+          content: (
+            <div style={{ textAlign: 'center', padding: '20px 0' }}>
+              <img
+                // eslint-disable-next-line no-undef
+                src={`${BASE_URL}images/logo.png`}
+                alt="IceHrm"
+                style={{ maxWidth: 180, height: 'auto', marginBottom: 20 }}
+              />
+              <h3 style={{ marginBottom: 12, color: '#333' }}>Connect to IceHrm.com</h3>
+              <p style={{ color: '#666', marginBottom: 16 }}>
+                Your IceHrm installation is not connected to IceHrm.com.
+              </p>
+              <p style={{ color: '#666', marginBottom: 8 }}>Connect to access:</p>
+              <ul style={{ textAlign: 'left', display: 'inline-block', color: '#666' }}>
+                <li>Marketplace extensions</li>
+                <li>Your purchased modules</li>
+                <li>Product updates and news</li>
+              </ul>
+            </div>
+          ),
+          okText: 'Connect Now',
+          cancelText: 'Later',
+          okButtonProps: { style: { backgroundColor: '#346CB0', borderColor: '#346CB0' } },
+          onOk() {
+            // eslint-disable-next-line no-undef
+            window.location.href = `${CLIENT_BASE_URL}?g=extension&n=marketplace|admin&m=admin_System#my-extensions`;
+          },
+        });
+      }
+    }
   }
 
   buildTaskList() {

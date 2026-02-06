@@ -8,8 +8,10 @@
 
 namespace Documents\Common\Model;
 
+use Classes\FileService;
 use Classes\IceResponse;
 use Classes\ModuleAccess;
+use Employees\Common\Model\Employee;
 use Model\BaseModel;
 
 class EmployeeDocument extends BaseModel
@@ -83,5 +85,15 @@ class EmployeeDocument extends BaseModel
     public function getTotalCount($query, $data)
     {
         return $this->getFinder()->getTotalCount($query, $data);
+    }
+
+    public function postProcessGetData($obj)
+    {
+        $employee = new Employee();
+        $employee->Load('id = ?', [$obj->employee]);
+        $employee = FileService::getInstance()->updateSmallProfileImage($employee);
+        $obj->image = $employee->image;
+
+        return $obj;
     }
 }

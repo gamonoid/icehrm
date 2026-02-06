@@ -9,6 +9,7 @@
 namespace Payroll\Admin\Api;
 
 use Classes\BaseService;
+use Classes\Cron\Task\PayrollProcessTask;
 use Classes\FileService;
 use Classes\IceConstants;
 use Classes\IceResponse;
@@ -25,6 +26,8 @@ use Payroll\Common\Model\Payroll;
 use Payroll\Common\Model\PayrollCalculations;
 use Payroll\Common\Model\PayrollColumn;
 use Payroll\Common\Model\PayrollData;
+use Payroll\Common\Model\PayslipTemplate;
+use Payroll\Common\PayslipHtmlBuilder;
 use Reports\User\Reports\PayslipReport;
 use Salary\Common\Model\EmployeeSalary;
 use Salary\Common\Model\PayrollEmployee;
@@ -447,6 +450,9 @@ class PayrollActionManager extends SubActionManager
             return new IceResponse(IceResponse::ERROR, 'Error saving payroll');
         }
 
+		$task = new PayrollProcessTask();
+		$task->process($payroll);
+
         return new IceResponse(IceResponse::SUCCESS);
     }
 
@@ -497,10 +503,18 @@ class PayrollActionManager extends SubActionManager
         $emp = new $rowTable();
         $emps = [];
         if (!empty($empIds)) {
-            $emps = $emp->Find(
-                "pay_frequency = ? and deduction_group = ? and employee in (".implode(",", $empIds).")",
-                array($payroll->pay_period, $payroll->deduction_group)
-            );
+			if ( empty ($payroll->deduction_group)) {
+				$emps = $emp->Find(
+					"pay_frequency = ? and deduction_group is NULL and employee in (".implode(",", $empIds).")",
+					array($payroll->pay_period)
+				);
+			} else {
+				$emps = $emp->Find(
+					"pay_frequency = ? and deduction_group = ? and employee in (".implode(",", $empIds).")",
+					array($payroll->pay_period, $payroll->deduction_group)
+				);
+			}
+
         }
 
         $employees = array();
@@ -635,6 +649,8 @@ class PayrollActionManager extends SubActionManager
         $payroll->status = PayrollActionManager::PAYROLL_STATUS_COMPLETING;
         $ok = $payroll->Save();
 
+		$task = new PayrollProcessTask();
+
         if (!$ok) {
             LogManager::getInstance()->error('Error saving payroll: '. $payroll->ErrorMsg());
 
@@ -643,6 +659,38 @@ class PayrollActionManager extends SubActionManager
 
         return new IceResponse(IceResponse::SUCCESS);
     }
+
+	public function createPayslipFile($result, $employee)
+	{
+		$fileFirstPart = "payslip_".str_replace(" ", "_", $employee->id)."-".date("Y-m-d_H-i-s");
+		$fileName = $fileFirstPart.".html";
+
+		$fileFullName = BaseService::getInstance()->getDataDirectory().$fileName;
+
+		$fp = fopen($fileFullName, 'w');
+		fwrite($fp, $result);
+		fclose($fp);
+
+		try {
+			$fileFullNamePdf = BaseService::getInstance()->getDataDirectory().$fileFirstPart.".pdf";
+			//Try generating the pdf
+			LogManager::getInstance()->debug(
+				"wkhtmltopdf 1:".print_r(WK_HTML_PATH." ".$fileFullName." ".$fileFullNamePdf, true)
+			);
+			exec(WK_HTML_PATH." ".$fileFullName." ".$fileFullNamePdf, $output, $ret);
+
+			LogManager::getInstance()->debug("wkhtmltopdf 2:".print_r($output, true));
+			LogManager::getInstance()->debug("wkhtmltopdf 3:".print_r($ret, true));
+
+			if (file_exists($fileFullNamePdf)) {
+				$fileName = $fileFirstPart.".pdf";
+				$fileFullName = $fileFullNamePdf;
+			}
+		} catch (\Exception $exp) {
+			LogManager::getInstance()->notifyException($exp);
+		}
+		return array($fileFirstPart, $fileName, $fileFullName);
+	}
 
     /**
      * Completion step of the payroll
@@ -691,10 +739,18 @@ class PayrollActionManager extends SubActionManager
         $emp = new PayrollEmployee();
         $emps = [];
         if (!empty($empIds)) {
-            $emps = $emp->Find(
-                "pay_frequency = ? and deduction_group = ? and employee in (".implode(",", $empIds).")",
-                array($payroll->pay_period, $payroll->deduction_group)
-            );
+			if (empty($payroll->deduction_group)) {
+				$emps = $emp->Find(
+					"pay_frequency = ? and deduction_group is NULL and employee in (".implode(",", $empIds).")",
+					array($payroll->pay_period)
+				);
+			} else {
+				$emps = $emp->Find(
+					"pay_frequency = ? and deduction_group = ? and employee in (".implode(",", $empIds).")",
+					array($payroll->pay_period, $payroll->deduction_group)
+				);
+			}
+
         }
 
         $report = new UserReport();
@@ -729,7 +785,18 @@ class PayrollActionManager extends SubActionManager
             if (empty($data)) {
                 continue;
             }
-            $reportCreationData = $cls->createReportFile($report, $data);
+
+			$payslipTemplate = new PayslipTemplate();
+			$payslipTemplate->Load('id = ?', [$payroll->payslipTemplate]);
+			if (!empty($payslipTemplate->data)) {
+				// Create Old Payslip
+				$reportCreationData = $cls->createReportFile($report, $data);
+			} else {
+				$builder = new PayslipHtmlBuilder();
+				$html = $builder->buildPreview($payslipTemplate->design, $payroll->id, $e->id);
+				$reportCreationData = $this->createPayslipFile($html, $e);
+			}
+
             $ext = str_replace($reportCreationData[0].'.', '', $reportCreationData[1]);
 
             $fileName = $this->movePayslipFile($reportCreationData[2], $payroll, $e->id, $ext);
@@ -761,6 +828,7 @@ class PayrollActionManager extends SubActionManager
             );
 
             $doc->visible_to = 'Owner Only';
+            $doc->payroll_id = $payroll->id;
             $doc->Save();
 
             BaseService::getInstance()->notificationManager->addNotification(

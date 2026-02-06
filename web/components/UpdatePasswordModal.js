@@ -184,7 +184,7 @@ class UpdatePasswordModal extends React.Component {
 
         return (
             <Modal
-                visible={this.props.visible}
+                open={this.props.visible}
                 title="Update Password"
                 onOk={this.handleOk}
                 onCancel={this.handleCancel}

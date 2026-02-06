@@ -15,13 +15,16 @@ class SNSEmailSender extends EmailSender
     private $ses = null;
     public function __construct($settings)
     {
-        parent::__construct($settings);
-        $arr = array(
-            'key'    => $this->settings->getSetting('Email: Amazon Access Key ID'),
-            'secret' => $this->settings->getSetting('Email: Amazon Secret Access Key'),
-            'region' => AWS_REGION
-        );
-        $this->ses = SesClient::factory($arr);
+		parent::__construct($settings);
+
+		$this->ses = SesClient::factory(array(
+			'credentials' => array(
+				'key'    => $this->settings->getSetting('Email: Amazon Access Key ID'),
+				'secret' => $this->settings->getSetting('Email: Amazon Secret Access Key'),
+			),
+			"region" => AWS_REGION,
+			"version" => "latest"
+		));
     }
 
     protected function sendMail(

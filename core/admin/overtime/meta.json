@@ -1,7 +1,7 @@
 {
     "label": "Overtime",
     "menu": "Manage",
-    "order": "91",
+    "order": "92",
     "icon": "fa-align-center",
     "user_levels": [
         "Admin",

@@ -65,6 +65,10 @@ class CommonCustomFieldAdapter extends ReactCustomFieldAdapter {
     ];
   }
 
+  showViewButton() {
+    return false;
+  }
+
   setTypes(tables) {
     this.types = tables;
   }

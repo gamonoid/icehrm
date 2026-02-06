@@ -12,7 +12,7 @@
 
 import React from 'react';
 import {
-  Avatar, Space, Tag, message,
+  Avatar, Space, Tag, message, Modal,
 } from 'antd';
 import {
   CloudDownloadOutlined,
@@ -24,6 +24,7 @@ import {
   CopyOutlined,
   SyncOutlined,
   CloudUploadOutlined,
+  ExclamationCircleOutlined,
 } from '@ant-design/icons';
 import ReactDOM from 'react-dom';
 import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
@@ -611,7 +612,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
         && (
         <Tag color="volcano" onClick={() => modJs.terminateEmployee(id)} style={{ cursor: 'pointer' }}>
           <DeleteOutlined />
-          {` ${adapter.gt('Deactivate')}`}
+          {` ${adapter.gt('Initiate Resignation')}`}
         </Tag>
         )}
 
@@ -718,51 +719,60 @@ ${deleteBtn}
 
 
   terminateEmployee(id) {
-    if (confirm('Are you sure you want to terminate this employee contract? You will still be able to access all details of this employee.')) {
-      // Terminate
-    } else {
-      return;
-    }
+    const that = this;
+    Modal.confirm({
+      title: this.gt('Initiate Resignation'),
+      icon: <ExclamationCircleOutlined />,
+      content: this.gt('Are you sure you want to terminate this employee contract? You will still be able to access all details of this employee.'),
+      okText: this.gt('Yes, Terminate'),
+      okType: 'danger',
+      cancelText: this.gt('Cancel'),
+      onOk() {
+        const params = {};
+        params.id = id;
+        const reqJson = JSON.stringify(params);
+        const callBackData = [];
+        callBackData.callBackData = [];
+        callBackData.callBackSuccess = 'terminateEmployeeSuccessCallback';
+        callBackData.callBackFail = 'terminateEmployeeFailCallback';
 
-    const params = {};
-    params.id = id;
-    const reqJson = JSON.stringify(params);
-    const callBackData = [];
-    callBackData.callBackData = [];
-    callBackData.callBackSuccess = 'terminateEmployeeSuccessCallback';
-    callBackData.callBackFail = 'terminateEmployeeFailCallback';
-
-    this.customAction('terminateEmployee', 'admin=employees', reqJson, callBackData);
+        that.customAction('terminateEmployee', 'admin=employees', reqJson, callBackData);
+      },
+    });
   }
 
 
   terminateEmployeeSuccessCallback(callBackData) {
-    this.showMessage('Success', 'Employee contract terminated. You can find terminated employee information under Terminated Employees menu.');
+    this.showMessage('Success', 'Employee contract terminated. The employee moved to Resigned Employees section.');
     this.reloadEmployeeList();
   }
 
 
   terminateEmployeeFailCallback(callBackData) {
-    this.showMessage('Error occured while terminating Employee', callBackData);
+    this.showMessage('Error occured while terminating contract', callBackData);
   }
 
 
   activateEmployee(id) {
-    if (confirm('Are you sure you want to re-activate this employee contract?')) {
-      // Terminate
-    } else {
-      return;
-    }
+    const that = this;
+    Modal.confirm({
+      title: this.gt('Re-activate Employee'),
+      icon: <ExclamationCircleOutlined />,
+      content: this.gt('Are you sure you want to re-activate this employee contract?'),
+      okText: this.gt('Yes, Activate'),
+      cancelText: this.gt('Cancel'),
+      onOk() {
+        const params = {};
+        params.id = id;
+        const reqJson = JSON.stringify(params);
+        const callBackData = [];
+        callBackData.callBackData = [];
+        callBackData.callBackSuccess = 'activateEmployeeSuccessCallback';
+        callBackData.callBackFail = 'activateEmployeeFailCallback';
 
-    const params = {};
-    params.id = id;
-    const reqJson = JSON.stringify(params);
-    const callBackData = [];
-    callBackData.callBackData = [];
-    callBackData.callBackSuccess = 'activateEmployeeSuccessCallback';
-    callBackData.callBackFail = 'activateEmployeeFailCallback';
-
-    this.customAction('activateEmployee', 'admin=employees', reqJson, callBackData);
+        that.customAction('activateEmployee', 'admin=employees', reqJson, callBackData);
+      },
+    });
   }
 
 
@@ -819,6 +829,14 @@ ${deleteBtn}
  */
 
 class TerminatedEmployeeAdapter extends EmployeeAdapter {
+  getTableChildComponents() {
+    return (<EmployeeProfile />);
+  }
+
+  showElement(element) {
+    this.tableContainer.current.setCurrentElement(element);
+  }
+
   getDataMapping() {
     return [
       'id',
@@ -989,6 +1007,13 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
   getTableActionButtonJsx(adapter) {
     return (text, record) => (
       <Space size="middle">
+        {adapter.hasAccess('element')
+        && (
+          <Tag color="blue" onClick={() => modJs.viewElement(record.id)} style={{ cursor: 'pointer' }}>
+            <MonitorOutlined />
+            {` ${adapter.gt('View')}`}
+          </Tag>
+        )}
         <Tag color="cyan" onClick={() => modJs.activateEmployee(record.id)} style={{ cursor: 'pointer' }}>
           <UndoOutlined />
           {` ${adapter.gt('Activate')}`}

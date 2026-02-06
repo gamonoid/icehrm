@@ -45,7 +45,7 @@ from EmployeeLeaves lv";
 
         if ($request['department'] != "NULL" && empty($employeeList)) {
             $empTmp = new Employee();
-            $empTemps = $empTmp->Find("department = ? and status = Active", array($request['department']));
+            $empTemps = $empTmp->Find("department = ? and status = 'Active'", array($request['department']));
             foreach ($empTemps as $empTmp) {
                 $employeeList[] = $empTmp->id;
             }

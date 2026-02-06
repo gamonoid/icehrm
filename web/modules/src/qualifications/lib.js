@@ -1,6 +1,6 @@
-import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
-class EmployeeSkillAdapter extends AdapterBase {
+class EmployeeSkillAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -14,6 +14,21 @@ class EmployeeSkillAdapter extends AdapterBase {
       { sTitle: 'ID', bVisible: false },
       { sTitle: 'Skill' },
       { sTitle: 'Details' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Skill',
+        dataIndex: 'skill_id',
+        sorter: true,
+      },
+      {
+        title: 'Details',
+        dataIndex: 'details',
+        sorter: true,
+      },
     ];
   }
 
@@ -32,7 +47,7 @@ class EmployeeSkillAdapter extends AdapterBase {
  * EmployeeEducationAdapter
  */
 
-class EmployeeEducationAdapter extends AdapterBase {
+class EmployeeEducationAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -53,6 +68,31 @@ class EmployeeEducationAdapter extends AdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      {
+        title: 'Qualification',
+        dataIndex: 'education_id',
+        sorter: true,
+      },
+      {
+        title: 'Institute',
+        dataIndex: 'institute',
+        sorter: true,
+      },
+      {
+        title: 'Start Date',
+        dataIndex: 'date_start',
+        render: (text) => text ? Date.parse(text).toString('MMM dd, yyyy') : '',
+      },
+      {
+        title: 'Completed On',
+        dataIndex: 'date_end',
+        render: (text) => text ? Date.parse(text).toString('MMM dd, yyyy') : '',
+      },
+    ];
+  }
+
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
@@ -70,14 +110,14 @@ class EmployeeEducationAdapter extends AdapterBase {
  * EmployeeCertificationAdapter
  */
 
-class EmployeeCertificationAdapter extends AdapterBase {
+class EmployeeCertificationAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
       'certification_id',
       'institute',
       'date_start',
-      'date_start',
+      'date_end',
     ];
   }
 
@@ -88,6 +128,31 @@ class EmployeeCertificationAdapter extends AdapterBase {
       { sTitle: 'Institute' },
       { sTitle: 'Granted On' },
       { sTitle: 'Valid Thru' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Certification',
+        dataIndex: 'certification_id',
+        sorter: true,
+      },
+      {
+        title: 'Institute',
+        dataIndex: 'institute',
+        sorter: true,
+      },
+      {
+        title: 'Granted On',
+        dataIndex: 'date_start',
+        render: (text) => text ? Date.parse(text).toString('MMM dd, yyyy') : '',
+      },
+      {
+        title: 'Valid Thru',
+        dataIndex: 'date_end',
+        render: (text) => text ? Date.parse(text).toString('MMM dd, yyyy') : '',
+      },
     ];
   }
 
@@ -109,7 +174,7 @@ class EmployeeCertificationAdapter extends AdapterBase {
  * EmployeeLanguageAdapter
  */
 
-class EmployeeLanguageAdapter extends AdapterBase {
+class EmployeeLanguageAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -129,6 +194,36 @@ class EmployeeLanguageAdapter extends AdapterBase {
       { sTitle: 'Speaking' },
       { sTitle: 'Writing' },
       { sTitle: 'Understanding' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Language',
+        dataIndex: 'language_id',
+        sorter: true,
+      },
+      {
+        title: 'Reading',
+        dataIndex: 'reading',
+        sorter: true,
+      },
+      {
+        title: 'Speaking',
+        dataIndex: 'speaking',
+        sorter: true,
+      },
+      {
+        title: 'Writing',
+        dataIndex: 'writing',
+        sorter: true,
+      },
+      {
+        title: 'Understanding',
+        dataIndex: 'understanding',
+        sorter: true,
+      },
     ];
   }
 

@@ -25,7 +25,7 @@ class CompanyAdminManager extends AbstractModuleManager
     public function initializeDatabaseErrorMappings()
     {
         $this->addDatabaseErrorMapping(
-            "CONSTRAINT `Fk_Employee_CompanyStructures` FOREIGN KEY (`department`) 
+            "CONSTRAINT `Fk_Employee_CompanyStructures` FOREIGN KEY (`department`)
             REFERENCES `CompanyStructures` (`id`)",
             "Can not delete a company structure while employees are assigned to it"
         );
@@ -40,6 +40,12 @@ class CompanyAdminManager extends AbstractModuleManager
         $this->addModelClass('CompanyStructure');
         $this->addModelClass('Timezone');
     }
+
+    public function setupRestEndPoints()
+    {
+        (new CompanyApiController())->registerEndPoints();
+    }
+
     public function getDashboardItemData()
     {
         $data = array();

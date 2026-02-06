@@ -1,0 +1,21 @@
+{
+    "label": "Training Sessions",
+    "menu": "Training",
+    "order": "2",
+    "icon": "fa-code",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "permissions": {
+        "Employee": {
+            "Delete Assigned Training Sessions": "No"
+        },
+        "Manager": {
+            "Delete Training Sessions of Direct Reports": "Yes"
+        }
+    },
+    "model_namespace": "\\Training\\Common\\Model",
+    "manager": "\\Training\\User\\Api\\TrainingModulesManager"
+}

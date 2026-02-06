@@ -12,28 +12,23 @@ class PayrollProcessTask implements IceTask
     {
         $payroll = new Payroll();
         $payrolls = $payroll->Find(
-            'status = ? or status = ?',
+            'status = ?',
             [
-                PayrollActionManager::PAYROLL_STATUS_PROCESSING,
                 PayrollActionManager::PAYROLL_STATUS_COMPLETING,
             ]
         );
+
         if (empty($payrolls)) {
             return;
         }
         $payroll = $payrolls[0];
-
-        if ($payroll->status === PayrollActionManager::PAYROLL_STATUS_PROCESSING) {
-            $this->process($payroll);
-        } elseif ($payroll->status === PayrollActionManager::PAYROLL_STATUS_COMPLETING) {
-            $this->complete($payroll);
-        }
+		$this->complete($payroll);
     }
 
     /**
      * @param $payroll
      */
-    private function process($payroll)
+    public function process($payroll)
     {
         $req = new \stdClass();
         $req->rowTable = 'PayrollEmployee';
@@ -49,7 +44,7 @@ class PayrollProcessTask implements IceTask
         $payroll->Save();
     }
 
-    private function complete($payroll)
+    public function complete($payroll)
     {
         $payrollActionManager = new PayrollActionManager();
         $payrollActionManager->generatePayslips($payroll->id);

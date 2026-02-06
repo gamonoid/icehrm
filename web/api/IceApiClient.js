@@ -34,6 +34,19 @@ class IceApiClient {
       data,
     });
   }
+
+  delete(endpoint) {
+    if (this.legacyApiWrapper) {
+      const url = `${this.clientBaseUrl}api/index.php?token=${this.token}&method=delete&url=/${endpoint}`;
+      return axios.get(url);
+    }
+
+    return axios.delete(this.baseUrl + endpoint, {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
+  }
 }
 
 export default IceApiClient;

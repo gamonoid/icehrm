@@ -302,15 +302,24 @@ class ReactModalAdapterBase extends AdapterBase {
       this.currentElement = null;
       object = this.getDefaultValues();
     }
+    object = this.modifyObjectBeforeView(object, viewOnly);
     this.setTableLoading(false);
     this.initForm();
     this.formContainer.current.setViewOnly(viewOnly);
     this.formContainer.current.show(object);
   }
 
+  modifyObjectBeforeView( object, viewOnly ) {
+    return object;
+  }
+
   showFilters() {
     this.initForm();
-    this.filtersContainer.current.show(this.filter);
+    if (this.filtersContainer && this.filtersContainer.current) {
+      this.filtersContainer.current.show(this.filter);
+    } else {
+      console.warn('Filter form container not available. Make sure FilterForm div exists in HTML and getFilters() returns filters.');
+    }
   }
 
   resetFilters() {

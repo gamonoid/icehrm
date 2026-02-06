@@ -8,6 +8,16 @@ ini_set('display_errors', false);
 error_reporting(E_ERROR);
 require dirname(__FILE__).'/lib/composer/vendor/autoload.php';
 
+// Load pro main.php if it exists (for pro-only modules and classes)
+$proMainPath = dirname(__FILE__) . '/../extensions/leave_and_performance/main.php';
+if (file_exists($proMainPath)) {
+    require_once $proMainPath;
+    // Initialize pro model classes after BaseService is available
+    if (class_exists('ProModuleInitializer')) {
+        ProModuleInitializer::initialize();
+    }
+}
+
 //$whoops = new \Whoops\Run;
 //$whoops->pushHandler(new \Whoops\Handler\PlainTextHandler);
 //$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
@@ -20,7 +30,7 @@ function t($text)
 	return LanguageManager::translateTnrText($text);
 }
 
-if(!defined('TAGS_TO_PRESERVE')){define('TAGS_TO_PRESERVE', '<b><i><span>');}
+if(!defined('TAGS_TO_PRESERVE')){define('TAGS_TO_PRESERVE', '<b><i><span><p><br><strong><h1><h2><h3><h4><h5><em><u><a><li><ul><ol>');}
 $jsVersion = defined('CACHE_VALUE')?CACHE_VALUE:"v".VERSION;
 $cssVersion = defined('CACHE_VALUE')?CACHE_VALUE:"v".VERSION;
 

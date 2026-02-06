@@ -50,7 +50,7 @@ class IceSignature extends React.Component {
     return (
       <>
         <Modal
-          visible={this.state.visible}
+          open={this.state.visible}
           title="Signature"
           maskClosable={false}
           centered

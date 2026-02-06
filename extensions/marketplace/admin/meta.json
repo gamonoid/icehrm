@@ -1,0 +1,16 @@
+{
+  "label": "Marketplace",
+  "menu": ["System"],
+  "order": "0",
+  "icon": "fa-store",
+  "user_levels": [
+    "Admin"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\MarketplaceAdmin\\Common\\Model",
+  "manager": "\\MarketplaceAdmin\\Extension",
+  "controller": "\\MarketplaceAdmin\\Controller",
+  "headless": false,
+  "show_in_menu": true
+}

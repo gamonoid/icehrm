@@ -1987,3 +1987,822 @@ msgstr "Skreślić"
 
 msgid "Copy"
 msgstr "Kopia"
+
+msgid "Employee Check-Ins"
+msgstr "Odprawy pracownicze"
+
+msgid "Employee Distribution"
+msgstr "Dystrybucja pracowników"
+
+msgid "Total"
+msgstr "Ogółem"
+
+msgid "is required"
+msgstr "jest wymagany"
+
+msgid "Use Employee Leave Period"
+msgstr "Wykorzystanie okresu urlopu pracowniczego"
+
+msgid "Required Experience (Days)"
+msgstr "Wymagane doświadczenie (dni)"
+
+msgid "LeaveGroup"
+msgstr "Opuść grupy"
+
+msgid "Expenses Category"
+msgstr "Kategoria wydatków"
+
+msgid "Employee Expense"
+msgstr "Wydatki pracownicze"
+
+msgid "Overtime"
+msgstr "Nadgodziny"
+
+msgid "Employee Fields"
+msgstr "Pola pracownicze"
+
+msgid "Asset Type"
+msgstr "Rodzaj aktywów"
+
+msgid "Asset"
+msgstr "Aktywa"
+
+msgid "Custom Field"
+msgstr "Pole niestandardowe"
+
+msgid "Object Type"
+msgstr "Typ obiektu"
+
+msgid "Personal"
+msgstr "Osobisty"
+
+msgid "Identification"
+msgstr "Identyfikacja"
+
+msgid "Work"
+msgstr "Praca"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Report"
+msgstr "Raport"
+
+msgid "Login As"
+msgstr "Zaloguj się jako"
+
+msgid "Deactivate"
+msgstr "Dezaktywuj"
+
+msgid "Employee Education"
+msgstr "Edukacja pracowników"
+
+msgid "Employee Certification"
+msgstr "Certyfikacja pracowników"
+
+msgid "Listening"
+msgstr "Słuchanie"
+
+msgid "Employee Dependent"
+msgstr "Pracownik Zależny"
+
+msgid "Contacts"
+msgstr "Kontakty"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Emergency Contact"
+msgstr "Kontakt awaryjny"
+
+msgid "Deactivated"
+msgstr "Dezaktywowana"
+
+msgid "Archived"
+msgstr "Zarchiwizowane"
+
+msgid "Updated By"
+msgstr "Zaktualizowane przez"
+
+msgid "Created Time (GMT)"
+msgstr "Czas utworzenia (GMT)"
+
+msgid "Yes"
+msgstr "Tak"
+
+msgid "No"
+msgstr "Nie"
+
+msgid "Share with Employee"
+msgstr "Podziel się z pracownikiem"
+
+msgid "Visible To"
+msgstr "Widoczne dla"
+
+msgid "ID Copy"
+msgstr "Identyfikator Kopia"
+
+msgid "Degree Certificate"
+msgstr "Stopień naukowy Świadectwo"
+
+msgid "Driving License"
+msgstr "Prawo jazdy"
+
+msgid "Owner"
+msgstr "Właściciel"
+
+msgid "Manager"
+msgstr "Kierownik"
+
+msgid "HR Forms"
+msgstr "Formularze HR"
+
+msgid "Employee Forms"
+msgstr "Formularze pracownicze"
+
+msgid "Form"
+msgstr "Formularz"
+
+msgid "Submitted"
+msgstr "Zgłoszony"
+
+msgid "Review Period Start Date"
+msgstr "Data rozpoczęcia okresu przeglądu"
+
+msgid "Review Period End Date"
+msgstr "Data zakończenia okresu przeglądu"
+
+msgid "Self Assessment Due Date"
+msgstr "Termin sporządzenia samooceny"
+
+msgid "Due On"
+msgstr "W dniu"
+
+msgid "Company Teams"
+msgstr "Zespoły firmowe"
+
+msgid "Lead"
+msgstr "Prowadzący"
+
+msgid "Teams"
+msgstr "Zespoły"
+
+msgid "Team Name"
+msgstr "Nazwa zespołu"
+
+msgid "Team Members"
+msgstr "Członkowie zespołu"
+
+msgid "Member "
+msgstr "Członek"
+
+msgid "Role"
+msgstr "Rola"
+
+msgid "Users Roles"
+msgstr "Role użytkowników"
+
+msgid "User Role"
+msgstr "Rola użytkownika"
+
+msgid "Additional Permissions"
+msgstr "Dodatkowe uprawnienia"
+
+msgid "Usage"
+msgstr "Zastosowanie"
+
+msgid "Last Export Result"
+msgstr "Ostatni wynik eksportu"
+
+msgid "Employee Data Import"
+msgstr "Import danych pracowników"
+
+msgid "Attendance Data Import"
+msgstr "Import danych obecności"
+
+msgid "Payroll Data Import"
+msgstr "Import danych listy płac"
+
+msgid "Supervisor and Approver Import"
+msgstr "Import przełożonego i zatwierdzającego"
+
+msgid "You can drag the chart both sides to view other dates on timeline"
+msgstr "Możesz przeciągnąć wykres w obie strony, aby wyświetlić inne daty na osi czasu"
+
+msgid "Payroll Group"
+msgstr "Grupa płacowa"
+
+msgid "Common"
+msgstr "Wspólna strona"
+
+msgid "Function Type"
+msgstr "Typ funkcji"
+
+msgid "Advanced"
+msgstr "Zaawansowane"
+
+msgid "Simple"
+msgstr "Prosty"
+
+msgid "Company Name"
+msgstr "Nazwa firmy"
+
+msgid "Hiring Manager"
+msgstr "Hiring Manager"
+
+msgid "Job Description"
+msgstr "Opis stanowiska pracy"
+
+msgid "Employement Type"
+msgstr "Rodzaj zatrudnienia"
+
+msgid "Postal Code"
+msgstr "Kod pocztowy"
+
+msgid "Show Hiring Manager Name"
+msgstr "Pokaż nazwisko menedżera zatrudniającego"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Position Applied"
+msgstr "Wnioskowane stanowisko"
+
+msgid "Hiring Stage"
+msgstr "Etap zatrudniania"
+
+msgid "Total Years of Experience"
+msgstr "Łączna liczba lat doświadczenia"
+
+msgid "Expected Salary"
+msgstr "Przewidywane wynagrodzenie"
+
+msgid "Attach File "
+msgstr "Dołączanie plików "
+
+msgid "Update Password"
+msgstr "Uaktualnij hasło"
+
+msgid "Employee Profile"
+msgstr "Profil pracownika"
+
+msgid "Contact details"
+msgstr "Dane kontaktowe"
+
+msgid "Work related details"
+msgstr "Szczegóły dotyczące pracy"
+
+msgid "ID Number"
+msgstr "Numer identyfikacyjny"
+
+msgid "Leave Days from Current Leave Period"
+msgstr "Dni urlopu z bieżącego okresu urlopu"
+
+msgid "Paid Time Off Adjustments"
+msgstr "Korekty płatnego czasu wolnego"
+
+msgid "Leave Days Carried Forward Previous Period"
+msgstr "Dni urlopu przeniesione z poprzedniego okresu"
+
+msgid "Leave Days Available to Use"
+msgstr "Dni urlopu dostępne do wykorzystania"
+
+msgid "Approved Leave Days"
+msgstr "Zatwierdzone dni urlopu"
+
+msgid "Pending Leave Days"
+msgstr "Dni urlopu oczekujące na zatwierdzenie"
+
+msgid "Rejected Leave Days"
+msgstr "Odrzucone dni urlopu"
+
+msgid "Calculated by Leave Type"
+msgstr "Obliczane według typu urlopu"
+
+msgid "Show Calculation"
+msgstr "Pokaż kalkulację"
+
+msgid "Total Time"
+msgstr "Czas całkowity"
+
+msgid "Personal Documents"
+msgstr "Dokumenty osobiste"
+
+msgid "My Forms"
+msgstr "Moje formy"
+
+msgid "Training Sessions of Coordinated by Me"
+msgstr "Sesje szkoleniowe Coordinated by Me"
+
+msgid "Self Assessments"
+msgstr "Samoocena"
+
+msgid "Connection"
+msgstr "Połączenie"
+
+msgid "Data directory is accessible from outside."
+msgstr "Katalog danych jest dostępny z zewnątrz."
+
+msgid "Learn how to fix"
+msgstr "Dowiedz się, jak naprawić"
+
+msgid "Copy System Report"
+msgstr "Rapport sur le système de copie"
+
+msgid "System Issues"
+msgstr "Problemy z systemem"
+
+msgid "System Report"
+msgstr "Raport systemowy"
+
+msgid "Here you can define the structure of the company by adding branches, departments, company units,etc. Each employee needs to be connected to a company structure."
+msgstr "Aqui você pode definir a estrutura da empresa adicionando filiais, departamentos, unidades da empresa, etc. Cada funcionário precisa estar conectado a uma estrutura da empresa."
+
+msgid "Company graph provides a graphical overview of the company structure."
+msgstr "Wykres firmy zapewnia graficzny przegląd struktury firmy."
+
+msgid "Here you can manage the job titles in your organization. Each employee needs to be assigned a job title."
+msgstr "Tutaj możesz zarządzać stanowiskami w swojej organizacji. Każdemu pracownikowi należy przypisać stanowisko."
+
+msgid "Here you can define the different pay grades in your organization. "
+msgstr "Tutaj możesz zdefiniować różne stopnie płac w swojej organizacji."
+
+msgid "Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state."
+msgstr "Tutaj możesz zdefiniować różne typy stanów zatrudnienia w Twojej organizacji. Każdemu pracownikowi należy przypisać stan zatrudnienia."
+
+msgid "Here you can define the different types of skills an employee might have."
+msgstr "Tutaj możesz zdefiniować różne rodzaje umiejętności, jakie może posiadać pracownik."
+
+msgid "Here you can define the different levels of education an employee might have."
+msgstr "Tutaj możesz zdefiniować różne poziomy edukacji, jakie może mieć pracownik."
+
+msgid "Here you can define the different types of certifications an employee might have completed."
+msgstr "Tutaj możesz zdefiniować różne rodzaje certyfikatów, które pracownik mógł ukończyć."
+
+msgid "Languages consists of most of the languages used globally."
+msgstr "Języki składają się z większości języków używanych na całym świecie."
+
+msgid "Here you can add details about a project such as project name, client, details and the status."
+msgstr "Tutaj możesz dodać szczegóły dotyczące projektu, takiego jak nazwa projektu, klient, szczegóły i status."
+
+msgid "Here you can assign projects to employees."
+msgstr "Tutaj możesz przypisać projekty pracownikom."
+
+msgid "Here you can add and manage clients your organization is working with. You can choose the correct client when adding a project in IceHrm."
+msgstr "Tutaj możesz dodawać i zarządzać klientami, z którymi współpracuje Twoja organizacja. Możesz wybrać odpowiedniego klienta podczas dodawania projektu w ICEHRM."
+
+msgid "Here you can define custom fields for assets, company struture, employee, travel request or expense forms."
+msgstr "Tutaj możesz zdefiniować niestandardowe pola dla aktywów, stadium firmy, pracownika, żądania podróży lub formularzy wydatków."
+
+msgid "Here you can view records of all the activities performed by different users in the system."
+msgstr "Tutaj możesz wyświetlić rekordy wszystkich działań wykonywanych przez różnych użytkowników w systemie."
+
+msgid "Here you can to add new employees, view employee details and filter employees."
+msgstr "Tutaj możesz dodać nowych pracowników, wyświetlić dane pracowników i filtrować pracowników."
+
+msgid "Here you can record the work history of your employees."
+msgstr "Tutaj możesz zapisać historię pracy swoich pracowników."
+
+msgid "Here you can add the skills each employee in your organization has."
+msgstr "Tutaj możesz dodać umiejętności każdego pracownika w Twojej organizacji."
+
+msgid "Here you can record the level of education each employee in your organization has."
+msgstr "Tutaj możesz zarejestrować poziom wykształcenia, jaki ma każdy pracownik w Twojej organizacji."
+
+msgid "Here you can define the certifications each of your employee has completed so far."
+msgstr "Tutaj możesz zdefiniować certyfikaty, które każdy pracownik ukończył do tej pory."
+
+msgid "Here you can keep track of all the languages each employee knows."
+msgstr "Tutaj możesz śledzić wszystkie języki, które zna każdy pracownik."
+
+msgid "Here you can add all the dependents of each employee."
+msgstr "Tutaj możesz dodać wszystkie osoby pozostające na utrzymaniu każdego pracownika."
+
+msgid "Here you can record emergency contacts of employees."
+msgstr "Tutaj możesz rejestrować kontakty awaryjne pracowników."
+
+msgid "Here you can view all the deativated employees. You can still recover data of a deactivated employee by clicking on Activate."
+msgstr "Tutaj możesz obejrzeć wszystkich zerwanych pracowników. Nadal możesz odzyskać dane dezaktywowanego pracownika, klikając aktywuj."
+
+msgid "Here you can view the deleted employees. Click on Download to download employee data as a JSON."
+msgstr "Tutaj możesz zobaczyć usuniętych pracowników. Kliknij Pobierz, aby pobrać dane pracowników jako JSON."
+
+msgid "Here you can views how employee data changed overtime."
+msgstr "Tutaj możesz zobaczyć, jak dane pracowników zmieniły nadgodziny."
+
+msgid "Here you can define any teams in your organization."
+msgstr "Tutaj możesz zdefiniować dowolne zespoły w swojej organizacji."
+
+msgid "Here you can add employees to the correct team."
+msgstr "Tutaj możesz dodać pracowników do odpowiedniego zespołu."
+
+msgid "Here you can add company documents to share announcements, policies, procedures, etc. with employees. These documents can be shared with specific employees or departments."
+msgstr "Tutaj możesz dodać dokumenty firmy, aby udostępnić ogłoszenia, zasady, procedury itp. Z pracownikami. Dokumenty te można udostępniać określonym pracownikom lub działom."
+
+msgid "Here you can define the document types employees can add to the system."
+msgstr "Tutaj możesz zdefiniować typy dokumentów, które pracownicy mogą dodać do systemu."
+
+msgid "Here you can add personal employee documents. The visibility of the employee document can be defined when adding the document."
+msgstr "Tutaj możesz dodać osobiste dokumenty pracowników. Widoczność dokumentu pracownika można zdefiniować przy dodawaniu dokumentu."
+
+msgid "Here all the payslips generated through the payroll module. Click on Add New to manually add a payslip."
+msgstr "Tutaj wszystkie paylips generowane za pośrednictwem modułu płac. Kliknij Dodaj nowy, aby ręcznie dodać Pays Slip."
+
+msgid "Here you can attendance records of employees and to view, edit, filter employee attendance records."
+msgstr "Tutaj możesz uczęszczać na rejestry pracowników i przeglądać, edytować, filtrować rekordy frekwencji pracowników."
+
+msgid "Here you can view whether employees are Clocked In, Clocked Out or Not Clocked In."
+msgstr "Tutaj możesz sprawdzić, czy pracownicy są taktowane, taktowane, czy nie."
+
+msgid "Here you can assign performance reviews to employees and manage, view, and edit performance reviews."
+msgstr "Tutaj możesz przypisać recenzje wydajności pracownikom oraz zarządzać, przeglądać i edytować recenzje wydajności."
+
+msgid "Here you can request review feedback from a supervisor/peer."
+msgstr "Tutaj możesz poprosić o przegląd opinii od przełożonego/rówieśnika."
+
+msgid "Here you can create custom review templates for the performance review process."
+msgstr "Tutaj możesz utworzyć niestandardowe szablony recenzji dla procesu przeglądu wydajności."
+
+msgid "Here you can monitor the progress of all employee goals."
+msgstr "Tutaj możesz monitorować postęp wszystkich celów pracowników."
+
+msgid "Here you can define leave types available in your organization."
+msgstr "Tutaj możesz zdefiniować typy pozostawienia dostępne w swojej organizacji."
+
+msgid "Here you can define leave periods by providing a name for the period and by selecting the correct start and end dates."
+msgstr "Tutaj możesz zdefiniować okresy urlopowe, podając nazwę dla okresu i wybierając prawidłowe daty rozpoczęcia i końca."
+
+msgid "Here you can define the working and non-working days according to your organization or by country."
+msgstr "Tutaj możesz zdefiniować dni pracy i nie pracujące według Twojej organizacji lub według kraju."
+
+msgid "Here you need to add all the holidays relevant to a leave period."
+msgstr "Tutaj musisz dodać wszystkie święta związane z okresem urlopu."
+
+msgid "Here you can override the behavior of a leave type for job titles, employment statuses, or even individual employees by adding a leave rule."
+msgstr "Tutaj możesz zastąpić zachowanie typu urlopu dla tytułów pracy, statusów zatrudnienia, a nawet poszczególnych pracowników, dodając zasadę urlopu."
+
+msgid "Here you can keep track of employee PTO. This can be used to compensate an employee and adjust leave balance from previous years."
+msgstr "Tutaj możesz śledzić PTO dla pracowników. Można to wykorzystać do zrekompensowania pracownika i dostosowania salda urlopu z poprzednich lat."
+
+msgid "Here you can create a leave group so you can group employees and create leave types or leave rules affecting the employees in the group."
+msgstr "Tutaj możesz utworzyć grupę urlopów, aby móc grupować pracowników i tworzyć typy urlopowe lub reguły pozostawienia wpływające na pracowników w grupie."
+
+msgid "Here you can add employees to the correct leave group."
+msgstr "Tutaj możesz dodać pracowników do grupy prawidłowej urlopu."
+
+msgid "Here you can view all employee leaves and approve leave requests."
+msgstr "Tutaj możesz zobaczyć wszystkie pozostawie pracowników i zatwierdzić prośby o urlop."
+
+msgid "Here you can define the types of assets in your organization so you can easily categorize the assets."
+msgstr "Tutaj możesz zdefiniować rodzaje zasobów w swojej organizacji, abyś mógł łatwo skategoryzować zasoby."
+
+msgid "Here you can add and manage company assets each employee or department has."
+msgstr "Tutaj możesz dodawać i zarządzać aktywami firmy każdy pracownik lub dział."
+
+msgid "Here you can define the different types of expenses in an organization."
+msgstr "Tutaj możesz zdefiniować różne rodzaje wydatków w organizacji."
+
+msgid "Here you can add the different types of payment methods used for expenses in an organization."
+msgstr "Tutaj możesz dodać różne rodzaje metod płatności stosowane w przypadku wydatków w organizacji."
+
+msgid "Here you can add employee expenses, edit and approve expense requests."
+msgstr "Tutaj możesz dodać wydatki pracowników, edytować i zatwierdzić żądania wydatków."
+
+msgid "Here you can create custom forms to collect data from employees."
+msgstr "Tutaj możesz tworzyć niestandardowe formularze do gromadzenia danych od pracowników."
+
+msgid "Here you can assign forms to employees, fill and download forms."
+msgstr "Tutaj możesz przypisać formularze pracownikom, wypełniać i pobierać formularze."
+
+msgid "Here you can add courses."
+msgstr "Tutaj możesz dodać kursy."
+
+msgid "Here you can add different training sessions to a particular course. You can let employees sign up for training sessions or assign training sessions by changing the attendance type."
+msgstr "Tutaj możesz dodać różne sesje szkoleniowe do określonego kursu. Możesz pozwolić pracownikom zapisać się na sesje szkoleniowe lub przypisać sesje szkoleniowe, zmieniając typ frekwencji."
+
+msgid "Here you can assign training sessions to employees."
+msgstr "Tutaj możesz przypisać sesje szkoleniowe pracownikom."
+
+msgid "Here you can add employee travel requests and view and edit travel requests."
+msgstr "Tutaj możesz dodać żądania podróży pracowników oraz wyświetlić i edytować żądania podróży."
+
+msgid "Here you can define the different types of overtime available in your organization."
+msgstr "Tutaj możesz zdefiniować różne rodzaje nadgodzin dostępnych w Twojej organizacji."
+
+msgid "Here you can add and manage employee overtime requests."
+msgstr "Tutaj możesz dodać i zarządzać prośbami o nadgodziny pracowników."
+
+msgid "Here you can define different types of loans employees are eligible for."
+msgstr "Tutaj możesz zdefiniować różne rodzaje pożyczek, do których kwalifikują się pracownicy."
+
+msgid "Here you can add employee loans."
+msgstr "Tutaj możesz dodać pożyczki dla pracowników."
+
+msgid "Here you can generate different admin reports."
+msgstr "Tutaj możesz wygenerować różne raporty administracyjne."
+
+msgid "Here you can export payroll meta data."
+msgstr "Tutaj możesz wyeksportować meta meta."
+
+msgid "Here you can view all the admin reports generated."
+msgstr "Tutaj możesz wyświetlić wszystkie wygenerowane raporty administracyjne."
+
+msgid "Here you can create user accounts for employees for them to login to their IceHrm accounts."
+msgstr "Tutaj możesz tworzyć konta użytkowników dla pracowników, aby zalogować się na ich konta ICEHRM."
+
+msgid "Here you can create user roles to give or deny access to certain modules."
+msgstr "Tutaj możesz tworzyć role użytkowników, aby zapewnić lub odmówić dostępu do niektórych modułów."
+
+msgid "Here you can Enable or Disable modules."
+msgstr "Tutaj możesz włączyć lub wyłączyć moduły."
+
+msgid "Here you can manage what permissions each user level has."
+msgstr "Tutaj możesz zarządzać tym, jakie uprawnienia ma każdy poziom użytkownika."
+
+msgid "Here you can view details about your current IceHrm plan."
+msgstr "Tutaj możesz wyświetlić szczegóły dotyczące swojego obecnego planu ICEHRM."
+
+msgid "Here you can view all your pending transactions."
+msgstr "Tutaj możesz wyświetlić wszystkie swoje oczekujące transakcje."
+
+msgid "Here you can view details about prepaid credit and other IceHrm transactions."
+msgstr "Tutaj możesz wyświetlić szczegóły dotyczące kredytu przedpłaconego i innych transakcji ICEHRM."
+
+msgid "Here you can manage the countries you will be able to select within the system."
+msgstr "Tutaj możesz zarządzać krajami, które będziesz mógł wybrać w systemie."
+
+msgid "Here you can manage all the provinces you will be able to select within the system."
+msgstr "Tutaj możesz zarządzać wszystkimi prowincjami, które będziesz mógł wybrać w systemie."
+
+msgid "Here you can manage all the currencies you will be able to select within the system."
+msgstr "Tutaj możesz zarządzać wszystkimi walutami, które będziesz mógł wybrać w systemie."
+
+msgid "Here you can manage all the nationalities you will be able to select within the system."
+msgstr "Tutaj możesz zarządzać wszystkimi narodowościami, które będziesz mógł wybrać w systemie."
+
+msgid "Here you can manage all the ethnicities you will be able to select within the system."
+msgstr "Tutaj możesz zarządzać wszystkimi grupami pochodzenia, które będziesz mógł wybrać w systemie."
+
+msgid "Here you can manage all the immigration status options you will be able to select within the system."
+msgstr "Tutaj możesz zarządzać wszystkimi opcjami statusu imigracji, które będziesz mógł wybrać w systemie."
+
+msgid "Here you can add data importers that can be used to import data to the system."
+msgstr "Tutaj możesz dodać importerów danych, których można użyć do importowania danych do systemu."
+
+msgid "Here you can import data using the data importers defined in the system."
+msgstr "Tutaj możesz importować dane za pomocą importerów danych zdefiniowanych w systemie."
+
+msgid "Here you can make changes to the fields available in the employee form."
+msgstr "Tutaj możesz wprowadzić zmiany w polach dostępnych w formie pracownika."
+
+msgid "Here you can check attendance time recorded every day for all the employees or a specific employee."
+msgstr "Tutaj możesz sprawdzać czas frekwencji zapisywany każdego dnia dla wszystkich pracowników lub konkretnego pracownika."
+
+msgid "Here you can check how much of a percentage of attendance time goes into timesheets for each employee."
+msgstr "Tutaj możesz sprawdzić, ile procent czasu frekwencji przechodzi w arkuszę pracy dla każdego pracownika."
+
+msgid "Here you can view approved employee leaves of employees with the leave dates."
+msgstr "Tutaj możesz wyświetlić zatwierdzone liście pracowników pracowników z datami urlopu."
+
+msgid "Here you can define different type of salary components in your organization."
+msgstr "Tutaj możesz zdefiniować różne rodzaje składników wynagrodzeń w swojej organizacji."
+
+msgid "Here you can define all the salary components related to the defined salary component types."
+msgstr "Tutaj możesz zdefiniować wszystkie składniki wynagrodzenia związane z określonymi typami składników wynagrodzenia."
+
+msgid "Here you can add all salary components related to each of your employees."
+msgstr "Tutaj możesz dodać wszystkie komponenty wynagrodzeń związane z każdym z Twoich pracowników."
+
+msgid "Here you can add all the employees to the correct payroll group. Each employee should belong to a payroll group."
+msgstr "Tutaj możesz dodać wszystkich pracowników do prawidłowej grupy płac. Każdy pracownik powinien należeć do grupy płac."
+
+msgid "Here you can create payroll reports for a specific time period."
+msgstr "Tutaj możesz tworzyć raporty płacowe dla określonego okresu."
+
+msgid "Here you can define the payroll columns that will be used to generate payroll reports."
+msgstr "Tutaj możesz zdefiniować kolumny płac, które zostaną wykorzystane do generowania raportów płac."
+
+msgid "Here you can define different payroll groups if you have different payroll calculations for different employees."
+msgstr "Tutaj możesz zdefiniować różne grupy płac, jeśli masz różne obliczenia płac dla różnych pracowników."
+
+msgid "Here you can define different calculation such as tax that can be used in payroll columns."
+msgstr "Tutaj możesz zdefiniować różne obliczenia, takie jak podatek, które mogą być używane w kolumnach płac."
+
+msgid "Here you can create custom payslip templates."
+msgstr "Tutaj możesz tworzyć niestandardowe szablony Payslip."
+
+msgid "Here you can add employment types that will be used when creating job posts."
+msgstr "Tutaj możesz dodać typy zatrudnienia, które będą używane podczas tworzenia postów pracy."
+
+msgid "Here you can add different experience levels that will be used when creating job posts."
+msgstr "Tutaj możesz dodać różne poziomy doświadczeń, które zostaną użyte podczas tworzenia postów pracy."
+
+msgid "Here you can add job functions that will be used when creating job posts."
+msgstr "Tutaj możesz dodać funkcje zadań, które będą używane podczas tworzenia postów pracy."
+
+msgid "Here you can add education levels that will be used when creating job posts."
+msgstr "Tutaj możesz dodać poziomy wykształcenia, które będą używane podczas tworzenia stanowisk pracy."
+
+msgid "Here you can define the benefits that will be given by your organization to candidates."
+msgstr "Tutaj możesz zdefiniować korzyści, które będą przyznawane przez organizację kandydatom."
+
+msgid "Here you can create job posts and generate job links."
+msgstr "Tutaj możesz tworzyć posty zadań i generować linki zadań."
+
+msgid "Here you can view all the candidates that have applied for job positions through the job links. You can manually candidates by clicking on Add New."
+msgstr "Tutaj możesz zobaczyć wszystkich kandydatów, którzy ubiegali się o stanowiska pracy za pośrednictwem linków pracy. Możesz ręcznie kandydatów, klikając dodaj nowy."
+
+msgid "Here you can manage of all the candidates with the hiring stage New."
+msgstr "Tutaj możesz zarządzać wszystkimi kandydatami z nowym etapem zatrudnienia."
+
+msgid "Here you can manage all the candidates in the Phone Screen hiring stage."
+msgstr "Tutaj możesz zarządzać wszystkimi kandydatami na etapie zatrudnienia ekranu telefonu."
+
+msgid "Here you can manage all the candidates in the Assessment hiring stage."
+msgstr "Tutaj możesz zarządzać wszystkimi kandydatami na etapie zatrudnienia oceny."
+
+msgid "Here you can manage all the candidates of the candidates in the Interview hiring stage. The candidate will be moved to this stage when an interview is scheduled."
+msgstr "Tutaj możesz zarządzać wszystkimi kandydatami kandydatów na etapie zatrudnienia wywiadu. Kandydat zostanie przeniesiony na ten etap podczas zaplanowania rozmowy kwalifikacyjnej."
+
+msgid "Here you can manage all the candidates in the Offer Sent hiring stage."
+msgstr "Tutaj możesz zarządzać wszystkimi kandydatami na etapie zatrudnienia oferty."
+
+msgid "Here you can manage all the candidate in the Hired hiring stage."
+msgstr "Tutaj możesz zarządzać wszystkimi kandydatami na zatrudnionym etapie zatrudnienia."
+
+msgid "Here you can manage all the rejected candidates."
+msgstr "Tutaj możesz zarządzać wszystkimi odrzuconymi kandydatami."
+
+msgid "Here you can add all the skills you have."
+msgstr "Tutaj możesz dodać wszystkie posiadane umiejętności."
+
+msgid "Here you can add details about your education levels."
+msgstr "Tutaj możesz dodać szczegóły dotyczące swoich poziomów edukacji."
+
+msgid "Here you can add all the certifications you have completed."
+msgstr "Tutaj możesz dodać wszystkie ukończone certyfikaty."
+
+msgid "Here you can add all the languages you are fluent in."
+msgstr "Tutaj możesz dodać wszystkie języki, w którym biegle się biegnie."
+
+msgid "Here you can add details about your dependents."
+msgstr "Tutaj możesz dodać szczegóły dotyczące swoich osób na utrzymaniu."
+
+msgid "Here you can add details about your emergency contacts."
+msgstr "Tutaj możesz dodać szczegóły dotyczące swoich kontaktów awaryjnych."
+
+msgid "Here you can add and manage your leave requests."
+msgstr "Tutaj możesz dodać i zarządzać żądaniami urlopu."
+
+msgid "Here you can view a summary of all leave balances."
+msgstr "Tutaj możesz wyświetlić podsumowanie wszystkich bilansów."
+
+msgid "Here you can view all your approved leave requests."
+msgstr "Tutaj możesz wyświetlić wszystkie zatwierdzone prośby o urlop."
+
+msgid "Here you can view all your pending leave requests."
+msgstr "Tutaj możesz wyświetlić wszystkie oczekujące prośby o urlop."
+
+msgid "Here you can view and approve leave requests from your subordinates."
+msgstr "Tutaj możesz przeglądać i zatwierdzić żądania od podwładnych."
+
+msgid "Here you can view all cancellation requests from your subordinates."
+msgstr "Tutaj możesz wyświetlić wszystkie żądania anulowania od swoich podwładnych."
+
+msgid "Here you can view and approve leave requests if you are an approver to an employee."
+msgstr "Tutaj możesz wyświetlić i zatwierdzić prośby o urlop, jeśli jesteś zatwierdzającym dla pracownika."
+
+msgid "Here you can view all your leave requests on a calendar."
+msgstr "Tutaj możesz wyświetlić wszystkie prośby o urlop w kalendarzu."
+
+msgid "Here you can add and manage projects you are working on or assigned to."
+msgstr "Tutaj możesz dodawać i zarządzać projektami, nad którymi pracujesz lub przydzielono."
+
+msgid "Here you can mark your attendance by punching in and punching out."
+msgstr "Tutaj możesz zaznaczyć swoją frekwencję, uderzając i wybijając."
+
+msgid "Here you can view and manage all pending, approved, rejected and submitted timesheets."
+msgstr "Tutaj możesz przeglądać i zarządzać wszystkimi oczekującymi, zatwierdzonymi, odrzuconymi i przesłanymi arkuszami czasu pracy."
+
+msgid "Here you can manage of all your approved timesheets."
+msgstr "Tutaj możesz zarządzać wszystkimi zatwierdzonymi arkuszami pracy."
+
+msgid "Here you can manage of all your pending timesheets."
+msgstr "Tutaj możesz zarządzać wszystkimi twoimi trwałymi arkuszami."
+
+msgid "Here you can view and approve timesheetes of your subordinates."
+msgstr "Tutaj możesz wyświetlić i zatwierdzić timechety swoich podwładnych."
+
+msgid "Here you can view and manage all your pending, approved, rejected and submitted attendance sheets."
+msgstr "Tutaj możesz przeglądać i zarządzać wszystkimi swoimi oczekującymi, zatwierdzonymi, odrzuconymi i przesłanymi arkuszami frekwencji."
+
+msgid "Here you can view all your approved attendance sheets."
+msgstr "Tutaj możesz zobaczyć wszystkie swoje zatwierdzone arkusze frekwencji."
+
+msgid "Here you can view all your pending attendance sheets."
+msgstr "Tutaj możesz zobaczyć wszystkie swoje oczekujące arkusze frekwencji."
+
+msgid "Here you can manage and approve attendance sheets of your subordinates."
+msgstr "Tutaj możesz zarządzać i zatwierdzić arkusze obecności swoich podwładnych."
+
+msgid "Here you add an overtime request and view previous overtime requests."
+msgstr "Tutaj dodajesz żądanie nadgodzin i wyświetl poprzednie żądania nadliczbowe."
+
+msgid "Here you can manage and approve overtime requests of your subordinates."
+msgstr "Tutaj możesz zarządzać i zatwierdzić prośby o nadgodziny swoich podwładnych."
+
+msgid "Here you can upload your personal documents to the system."
+msgstr "Tutaj możesz przesłać swoje osobiste dokumenty do systemu."
+
+msgid "Here you can view all the company documents that are shared with you."
+msgstr "Tutaj możesz wyświetlić wszystkie dokumenty firmy, które są ci udostępnione."
+
+msgid "Here you can view all your payslips. You can download your payslips as PDFs."
+msgstr "Tutaj możesz wyświetlić wszystkie swoje szlify. Możesz pobrać swoje PAYSLIPS jako pliki PDF."
+
+msgid "Here you will find all the forms you need to fill out and all previous completed forms."
+msgstr "Tutaj znajdziesz wszystkie formularze, które musisz wypełnić i wszystkie poprzednie wypełnione formularze."
+
+msgid "Here you can view all contact information of employees in the organization."
+msgstr "Tutaj możesz wyświetlić wszystkie dane kontaktowe pracowników w organizacji."
+
+msgid "Here you can view all the training sessions available."
+msgstr "Tutaj możesz obejrzeć wszystkie dostępne sesje szkoleniowe."
+
+msgid "Here you can view all training sessions you have signed up for or assigned to."
+msgstr "Tutaj możesz wyświetlić wszystkie sesje szkoleniowe, na które się zapisałeś lub przydzielono."
+
+msgid "Here you can manage all the training sessions of your subordinates."
+msgstr "Tutaj możesz zarządzać wszystkimi sesjami szkoleniowymi swoich podwładnych."
+
+msgid "Here you can view all the training sessions coordinated by you."
+msgstr "Tutaj możesz zobaczyć wszystkie sesje szkoleniowe koordynowane przez Ciebie."
+
+msgid "Here you can manage all the self assessments you need to work on for your performance reviews."
+msgstr "Tutaj możesz zarządzać wszystkimi samoocenerami, nad którymi musisz popracować w celu recenzji wydajności."
+
+msgid "Here you can provide feedback to your peers or subordinates."
+msgstr "Tutaj możesz przekazać informacje zwrotne swoim rówieśnikom lub podwładnym."
+
+msgid "Here you can submit and manage your travel requests."
+msgstr "Tutaj możesz przesłać i zarządzać żądaniami podróży."
+
+msgid "Here you can view and approve travel requests of your subordinates."
+msgstr "Tutaj możesz wyświetlić i zatwierdzić prośby o podróże swoich podwładnych."
+
+msgid "Here you can approve travel requests if you are an approver to certain employees."
+msgstr "Tutaj możesz zatwierdzić prośby o podróż, jeśli jesteś zatwierdzającym dla niektórych pracowników."
+
+msgid "Here you can submit and manage your expense requests."
+msgstr "Tutaj możesz przesłać i zarządzać żądaniami wydatków."
+
+msgid "Here you can manage and approve expenses requests of your subordinates."
+msgstr "Tutaj możesz zarządzać i zatwierdzić żądania wydatków swoich podwładnych."
+
+msgid "Here you can approve expense requests if you are an approver to certain employees."
+msgstr "Tutaj możesz zatwierdzić wnioski o wydatki, jeśli jesteś zatwierdzającym dla niektórych pracowników."
+
+msgid "Here you can view details of all your salary components."
+msgstr "Tutaj możesz wyświetlić szczegóły wszystkich swoich komponentów wynagrodzeń."
+
+msgid "Here you can view details of all the loans you have taken from the company."
+msgstr "Tutaj możesz wyświetlić szczegóły wszystkich pożyczek, które udzielone od firmy."
+
+msgid "Position"
+msgstr "Pozycja"
+
+msgid "Application Date"
+msgstr "Data złożenia wniosku"
+
+msgid "Basic"
+msgstr "Podstawowy"
+
+msgid "All Candidates"
+msgstr "Wszyscy kandydaci"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Screening"
+msgstr "Ekranizacja"
+
+msgid "Assessment"
+msgstr "Ocena"
+
+msgid "Interview Scheduled"
+msgstr "Zaplanowany wywiad"
+
+msgid "Offer"
+msgstr "Oferta"
+
+msgid "Hired"
+msgstr "Zatrudniony"
+
+msgid "Member"
+msgstr "Członek"
+
+msgid "Attach File"
+msgstr "Dołączanie plików "
+
+msgid "Here you can define the different pay grades in your organization."
+msgstr "Tutaj możesz zdefiniować różne stopnie płac w swojej organizacji."

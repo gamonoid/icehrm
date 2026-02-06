@@ -1,6 +1,6 @@
 {
 "label":"Dependents",
-"menu":"Personal Information",
+"menu":"About You",
 "order":"5",
 "icon":"fa-expand",
 "user_levels":["Admin","Manager","Employee"],

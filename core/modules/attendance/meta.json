@@ -1,6 +1,6 @@
 {
     "label": "Attendance",
-    "menu": "Time Management",
+    "menu": "Time",
     "order": "2",
     "icon": "fa-clock",
     "user_levels": [

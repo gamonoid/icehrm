@@ -1,0 +1,18 @@
+{
+  "label": "Editor User",
+  "menu": ["Editor", "fa-th"],
+  "order": "0",
+  "icon": "fa-random",
+  "user_levels": [
+    "Admin",
+    "Manager",
+    "Employee"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\EditorUser\\Common\\Model",
+  "manager": "\\EditorUser\\Extension",
+  "controller": "\\EditorUser\\Controller",
+  "headless": false,
+  "show_in_menu": false
+}
