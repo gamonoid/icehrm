@@ -3,15 +3,16 @@ IceHrm
 
 IceHrm is an [HRM software](https://icehrm.com) which enable companies to manage employee details and HR workflows.
 
-- Checkout IceHrm without installing: [IceHrm Demo](https://icehrm.com/icehrm-demo)
-- Get a Mananged IceHrm Installation: [IceHrm Cloud](https://icehrm.com/icehrm-cloud)
-- Self Host a Feature Rich Version of IceHrm: [IceHrmPro](https://icehrm.com/purchase-icehrmpro)
-
-![](docs/images/icehrm-employee-list.png)
-&nbsp;&nbsp;&nbsp;&nbsp;
-![](docs/images/icehrm-dashboard.png)
-
 ## Installation
+
+### Update your existing IceHrm installation to the latest version
+
+- CD into the IceHrm installation directory (e,g `cd /var/www/icehrm`)
+- Run `npm install -g icehrm-update`
+- If you get an error due to not having Node.js installed use instructions in [Node.js download page](https://nodejs.org/en/download) to install it first.
+- Then run `icehrm-update`
+
+This will update your IceHrm installation to the latest version
 
 ### Using Docker
 
@@ -25,18 +26,12 @@ npm run docker:build
 npm run docker:start
 ```
 
-![](docs/images/IceHrm-installation.gif)
-
 - Visit [http://localhost:3128/](http://localhost:3128/) and login using `admin` as username and password.
 - Visit [http://localhost:3130/](http://localhost:3130/) to access phpmyadmin.
 - All user uploaded files are stored under `icehrm/docker/production/app_data`
 
 ### Installation (without docker)
 - Please check [Installation guide](https://icehrm.com/explore/docs/installation/).
-
-### Upgrade from Previous Versions
-
-Refer: [https://icehrm.com/explore/docs/upgrade-icehrmpro/](https://icehrm.com/explore/docs/upgrade-icehrmpro/)
 
 
 ## Setup Development Environment
@@ -105,15 +100,10 @@ $emp->Load('id = ?',[1]);
 var_dump($emp);
 ```
 
-- When you are ready to push your changes to production, make sure to build the production images
-```
-docker-compose -f docker-compose-prod.yaml up -d --build
-```
-
 ### Useful Links
 * IceHrm Opensource Blog: [http://icehrm.org](http://icehrm.org)
 * IceHrm Cloud Hosting: [https://icehrm.com](https://icehrm.com)
 * IceHrm Documentation (Opensource and Commercial): [https://icehrm.com/explore/docs/](https://icehrm.com/explore/docs/)
 * IceHrm Blog: [https://icehrm.com/blog](http://icehrm.com/blog)
-* Purchase IceHrm Pro: [https://icehrm.com/modules.php](https://icehrm.com/modules.php)
+* Purchase Extensions: [https://icehrm.com//buy-icehrm-modules](https://icehrm.com//buy-icehrm-modules)
 * Report Issues: [https://github.com/gamonoid/icehrm/issues](https://github.com/gamonoid/icehrm/issues)
