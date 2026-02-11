@@ -1,8 +1,8 @@
 {
-  "label": "Marketplace",
-  "menu": ["System"],
+  "label": "Extensions",
+  "menu": ["Marketplace"],
   "order": "0",
-  "icon": "fa-store",
+  "icon": "fa-square-plus",
   "user_levels": [
     "Admin"
   ],
