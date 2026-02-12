@@ -298,9 +298,9 @@ abstract class AbstractModuleManager
         $eh->Save();
     }
 
-    public function addCalculationHook($code, $name, $class, $method)
+    public function addCalculationHook($code, $name, $class, $method, $acceptAdditionalData = false, $additionalData = [])
     {
-        BaseService::getInstance()->addCalculationHook($code, $name, $class, $method);
+        BaseService::getInstance()->addCalculationHook($code, $name, $class, $method, $acceptAdditionalData, $additionalData);
     }
 
     public function install()

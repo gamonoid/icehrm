@@ -118,17 +118,22 @@ class IceStepForm extends IceForm {
     const data = await this.validateFields(true);
     if (data) {
       this.save(data, () => this.props.closeModal());
+    } else {
+      this.setState({ loading: false });
     }
-    this.setState({ loading: false });
   }
 
-  save(params, success) {
+  save(params, success, fail) {
     const { adapter } = this.props;
     adapter.add(params, [], () => adapter.get([]), () => {
       this.resetFields();
       this.showError(false);
       success();
-    });
+      this.setState({ loading: false });
+    }, () => {
+      this.setState({ loading: false });
+      if (fail) { fail() };
+    },);
   }
 
   updateFields(data) {

@@ -771,6 +771,7 @@ class BaseService
                         }
                     }
                 }
+
                 $signInMappingField = $obj->getUserOnlyMeAccessField();
                 LogManager::getInstance()->debug(
                     "Data Load Query (a1):".$signInMappingField." in (".$subordinatesIds.") ".$query.$orderBy.$limit
@@ -797,15 +798,9 @@ class BaseService
 
                 } else {
                     if ($countOnly) {
-                        $list = $finder->getTotalCount(
-                            $searchJoinQuery.$query.$orderBy.$limit,
-                            $queryData
-                        );
+                        $list = 0;
                     } else {
-                        $list = $finder->Find(
-                            $searchJoinQuery.$query.$orderBy.$limit,
-                            $queryData
-                        );
+                        $list = [];
                     }
 
                 }
@@ -1027,17 +1022,6 @@ class BaseService
                 IceResponse::ERROR,
                 "CSRF Error"
             );
-        }
-
-        if (class_exists("\\Classes\\ProVersion")) {
-            $pro = new ProVersion();
-            $subscriptionTables = $pro->getSubscriptionTables();
-            if (in_array($table, $subscriptionTables)) {
-                $resp = $pro->subscriptionCheck($obj);
-                if ($resp->getStatus() != IceResponse::SUCCESS) {
-                    return $resp;
-                }
-            }
         }
 
         if (!empty($obj['id'])) {
@@ -1368,6 +1352,26 @@ class BaseService
         return $user;
     }
 
+	public function getEmployeeByUserId($userId, $activeOnly = true) {
+		$user = new User();
+		$user->Load('id = ?', [$userId]);
+		$employeeId = $user->employee;
+
+		$employee = new Employee();
+		if ($activeOnly) {
+			$employee->Load('id = ? and status = ?', [$employeeId, 'Active']);
+		} else {
+			$employee->Load('id = ?', [$employeeId]);
+		}
+
+
+		if (empty($employee->id)) {
+			return null;
+		}
+
+		return $employee;
+	}
+
     /**
      * Get the Profile id attached to currently logged in user. if the user is switched,
      * this will return the id of switched Profile instead of currently logged in users Prifile id
@@ -1519,6 +1523,21 @@ class BaseService
         return $obj;
     }
 
+	public function cleanRestApiObject($obj)
+	{
+		$obj = BaseService::getInstance()->cleanUpAdoDB($obj);
+		unset($obj->keysToIgnore);
+		unset($obj->historyFieldsToTrack);
+		unset($obj->historyUpdateList);
+		unset($obj->oldObjOrig);
+		unset($obj->oldObj);
+		unset($obj->_org);
+		unset($obj->isJoinFind);
+		unset($obj->objectName);
+
+		return $obj;
+	}
+
     public function cleanUpUser($obj)
     {
         $obj = $this->cleanUpAll($obj);
@@ -1665,6 +1684,17 @@ class BaseService
 
         return false;
     }
+
+	public function isModuleMenuEnabled($updatePath)
+	{
+		if ($updatePath === 'admin>modules') {
+			return true;
+		}
+		$module = new Module();
+		$module->Load("update_path = ?", array($updatePath));
+
+		return $module->status === 'Enabled';
+	}
 
     public function loadModulePermissions($updatePath, $userLevel)
     {
@@ -1968,13 +1998,15 @@ class BaseService
         return $obj;
     }
 
-    public function addCalculationHook($code, $name, $class, $method)
+    public function addCalculationHook($code, $name, $class, $method, $acceptAdditionalData = false, $additionalData = [])
     {
         $calcualtionHook = new CalculationHook();
         $calcualtionHook->code = $code;
         $calcualtionHook->name = $name;
         $calcualtionHook->class = $class;
         $calcualtionHook->method = $method;
+        $calcualtionHook->acceptAdditionalData = $acceptAdditionalData;
+        $calcualtionHook->additionalData = $additionalData;
         $this->calculationHooks[$code] = $calcualtionHook;
     }
 
@@ -1997,11 +2029,31 @@ class BaseService
         }
 
         if (!empty($additionalData)) {
+            // Decode base64 if the additional data is base64 encoded
+            $additionalData = $this->safeBase64Decode($additionalData);
             $parameters[] = $additionalData;
         }
 
         $class = $ch->class;
         return call_user_func_array(array(new $class(), $ch->method), $parameters);
+    }
+
+    /**
+     * Safely decode base64 or return plain text if not valid base64
+     */
+    private function safeBase64Decode($value)
+    {
+        if (empty($value)) {
+            return null;
+        }
+        // Try to decode as base64
+        $decoded = base64_decode($value, true);
+        // Check if decoding was successful and re-encoding produces the same result
+        if ($decoded !== false && base64_encode($decoded) === $value) {
+            return $decoded;
+        }
+        // Return as-is if not valid base64 (already plain text)
+        return $value;
     }
 
     public function initializePro()
@@ -2286,11 +2338,14 @@ END;
         $sysData = new SystemData();
         $sysData->Load('name = ?', [$name]);
 
+        // Serialize non-string values (arrays, objects)
+        $storedValue = is_string($value) ? $value : serialize($value);
+
         if (!empty($sysData->id)) {
-            $sysData->value = $value;
+            $sysData->value = $storedValue;
         } else {
             $sysData->name = $name;
-            $sysData->value = $value;
+            $sysData->value = $storedValue;
         }
 
         return $sysData->Save();
@@ -2310,7 +2365,18 @@ END;
         $sysData = new SystemData();
         $sysData->Load('name = ?', [$name]);
         if (!empty($sysData->id) && $sysData->name === $name) {
-            return $sysData->value;
+            $value = $sysData->value;
+            if ($value === null) {
+                return null;
+            }
+
+            // Try to unserialize, return raw value if it fails
+            $unserialized = @unserialize($value);
+            if ($unserialized === false && $value !== serialize(false)) {
+                return $value;
+            }
+
+            return $unserialized;
         }
 
         return null;
@@ -2338,19 +2404,21 @@ END;
 
     public function isOpenSourceVersion()
     {
-        $version = explode('.', VERSION);
-        return end($version) === 'OS';
+		return true;
     }
 
     public function getExtensionSourceDirectory($path) {
-        if (defined('EXT_SRC_PATH')) {
+        // Priority 1: EXT_SRC_PATH if defined and directory exists
+        if (defined('EXT_SRC_PATH') && is_dir($path.EXT_SRC_PATH)) {
             return $path.EXT_SRC_PATH;
         }
 
+        // Priority 2: /src/ directory
         if (is_dir($path.'/src/')) {
             return $path.'/src/';
         }
 
+        // Priority 3: Obfuscated source
         return $path.'/src-ob/yakpro-po/obfuscated/';
     }
 }

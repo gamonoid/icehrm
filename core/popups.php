@@ -89,13 +89,18 @@
 
 <!-- Google Connect -->
 <div class="modal fade" id="googleConnectModel" tabindex="-1" role="dialog" aria-labelledby="googleConnectModelLabel" aria-hidden="true">
-    <div class="modal-dialog" style="width:300px;">
+    <div class="modal-dialog" style="width:500px;">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><li class="fa fa-times"/></button>
                 <h3 id="googleConnectModelLabel" style="font-size: 17px;">Connect IceHrm to Google Calendar</h3>
             </div>
             <div class="modal-body">
+                <p>
+                    We have detected that your email address can be used with Google APIs, which will allow us to create google calendar events, based on your actions such as applying for a leave or scheduling an interview.
+                    <br/>
+                    Please connect your IceHrm account with Google to enable this feature.
+                </p>
                 <p id="googleConnectModelBody">
                     <img src="<?=BASE_URL?>images/icehrm-google-connect.png" width="100%"/>
                 </p>

@@ -2,12 +2,18 @@
  Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
+import { Space, Tag } from 'antd';
+import {
+  CopyOutlined, DeleteOutlined, EditOutlined, MonitorOutlined,
+} from '@ant-design/icons';
+import React from 'react';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 import AdapterBase from '../../../api/AdapterBase';
 /**
  * ModuleAdapter
  */
 
-class ModuleAdapter extends AdapterBase {
+class ModuleAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -34,44 +40,71 @@ class ModuleAdapter extends AdapterBase {
     ];
   }
 
-  getFormFields() {
+  getTableColumns() {
     return [
-      ['id', { label: 'ID', type: 'hidden' }],
-      ['label', { label: 'Label', type: 'text', validation: '' }],
-      ['status', { label: 'Status', type: 'select', source: [['Enabled', 'Enabled'], ['Disabled', 'Disabled']] }],
-      ['user_levels', { label: 'User Levels', type: 'select2multi', source: [['Admin', 'Admin'], ['Manager', 'Manager'], ['Employee', 'Employee']] }],
-      ['user_roles', { label: 'Allowed User Roles', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
-      ['user_roles_blacklist', { label: 'Disallowed User Roles', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
+      {
+        title: 'Name',
+        dataIndex: 'label',
+        sorter: true,
+      },
+      {
+        title: 'Menu',
+        dataIndex: 'menu',
+        sorter: true,
+      },
+      {
+        title: 'Group',
+        dataIndex: 'mod_group',
+      },
+      {
+        title: 'Order',
+        dataIndex: 'mod_order',
+      },
+      {
+        title: 'Status',
+        dataIndex: 'status',
+      },
+      {
+        title: 'Version',
+        dataIndex: 'version',
+      },
+      {
+        title: 'Path',
+        dataIndex: 'update_path',
+      },
     ];
   }
 
+  getFormFields() {
+    return [
+      ['id', { label: 'ID', type: 'hidden' }],
+      ['label', { label: 'Label', type: 'placeholder', validation: '' }],
+      ['status', { label: 'Status', type: 'select', source: [['Enabled', 'Enabled'], ['Disabled', 'Disabled']] }],
+      ['user_levels', { label: 'User Levels', type: 'select2multi', source: [['Admin', 'Admin'], ['Manager', 'Manager'], ['Employee', 'Employee']] }],
+      ['user_roles', { label: 'Allowed User Roles', validation: 'none', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
+      ['user_roles_blacklist', { label: 'Disallowed User Roles', validation: 'none', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
+    ];
+  }
 
-  getActionButtonsHtml(id, data) {
-    /*
-    const nonEditableFields = {};
-    nonEditableFields['admin_Company Structure'] = 1;
-    nonEditableFields.admin_Employees = 1;
-    nonEditableFields['admin_Job Details Setup'] = 1;
-    nonEditableFields.admin_Leaves = 1;
-    nonEditableFields['admin_Manage Modules'] = 1;
-    nonEditableFields.admin_Projects = 1;
-    nonEditableFields.admin_Qualifications = 1;
-    nonEditableFields.admin_Settings = 1;
-    nonEditableFields.admin_Users = 1;
-    nonEditableFields.admin_Upgrade = 1;
-    nonEditableFields.admin_Dashboard = 1;
-
-    nonEditableFields['user_Basic Information'] = 1;
-    nonEditableFields.user_Dashboard = 1;
-
-    if (nonEditableFields[`${data[3]}_${data[1]}`] === 1) {
-      return '';
-    }
-     */
-    let html = '<div style="width:80px;"><img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Edit" onclick="modJs.edit(_id_);return false;"/></div>';
-    html = html.replace(/_id_/g, id);
-    html = html.replace(/_BASE_/g, this.baseUrl);
-    return html;
+  getTableActionButtonJsx(adapter) {
+    const blockedPaths = () => {
+      return {
+        'admin>modules': 1,
+        'admin>connection': 1,
+        'admin>settings': 1,
+      };
+    };
+    return (text, record) => (
+      <Space size="middle">
+        {adapter.hasAccess('save') && adapter.showEdit && !blockedPaths()[record.update_path]
+              && (
+              <Tag color="green" onClick={() => modJs.edit(record.id)} style={{ cursor: 'pointer' }}>
+                <EditOutlined />
+                {` ${adapter.gt('Edit')}`}
+              </Tag>
+              )}
+      </Space>
+    );
   }
 }
 
@@ -133,4 +166,4 @@ class UsageAdapter extends AdapterBase {
   }
 }
 
-module.exports = { ModuleAdapter, UsageAdapter };
+module.exports = { ModuleAdapter };

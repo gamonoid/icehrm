@@ -7,6 +7,7 @@ use Utils\LogManager;
 class ExtensionManager
 {
     const GROUP = 'extension';
+
     protected function processExtensionInDB()
     {
         $dbModule = new \Modules\Common\Model\Module();
@@ -29,25 +30,54 @@ class ExtensionManager
         return APP_BASE_PATH.'../extensions/';
     }
 
+    /**
+     * Get the actual path to an extension, considering grouped extensions
+     */
+    public function getExtensionActualPath(string $extensionName): string
+    {
+        return ExtensionGroupManager::getInstance()->getExtensionPath($extensionName);
+    }
+
     public function getExtensionMetaData($extensionName)
     {
-        return json_decode(file_get_contents($this->getExtensionsPath().$extensionName.'/meta.json'));
+        // Handle both "extension/type" format and just "extension" format
+        $parts = explode('/', $extensionName);
+        $extName = $parts[0];
+
+        // Get the actual path considering groups
+        $actualPath = $this->getExtensionActualPath($extName);
+
+        // If there's a type (admin/user), append it
+        if (count($parts) > 1) {
+            $metaPath = $actualPath . $parts[1] . '/meta.json';
+        } else {
+            $metaPath = $actualPath . 'meta.json';
+        }
+
+        if (!file_exists($metaPath)) {
+            return null;
+        }
+
+        return json_decode(file_get_contents($metaPath));
     }
 
     public function setupExtensions($adminModulesTemp, $userModulesTemp)
     {
         $menu = [];
         $extensions = [];
-        $extensionDirs = scandir($this->getExtensionsPath());
         $currentLocation = 0;
 
         $needToInstall = false;
         $extensionsInDB = $this->processExtensionInDB();
 
-        foreach ($extensionDirs as $extensionDir) {
-            if (is_dir($this->getExtensionsPath().$extensionDir) && $extensionDir != '.' && $extensionDir != '..') {
+        // Use ExtensionGroupManager to get all extension names (both grouped and ungrouped)
+        $extensionNames = ExtensionGroupManager::getInstance()->getAllExtensionNames();
+
+        foreach ($extensionNames as $extensionDir) {
+            $extensionPath = $this->getExtensionActualPath($extensionDir);
+            if (is_dir($extensionPath)) {
                 $extensionAdminDir = $extensionDir.'/admin';
-                if (is_dir($this->getExtensionsPath().$extensionAdminDir)) {
+                if (is_dir($extensionPath . 'admin')) {
                     $meta = $this->getExtensionMetaData($extensionAdminDir);
                     list($arr, $menu, $dbModule, $needToInstall) = $this->getExtensionData($extensionAdminDir, $meta, $menu, $extensionsInDB, 'admin', $extensionDir);
                     /* @var \Classes\AbstractModuleManager */
@@ -59,6 +89,10 @@ class ExtensionManager
                         $manager->install();
                     }
                     $extensions = $this->initManager($arr, $extensions, $meta, $currentLocation, $manager);
+
+					if (!$meta->show_in_menu) {
+						continue;
+					}
 
                     if (!isset($adminModulesTemp[$arr['menu']])) {
                         $adminModulesTemp[$arr['menu']] = array();
@@ -73,7 +107,7 @@ class ExtensionManager
                 }
 
                 $extensionUserDir = $extensionDir.'/user';
-                if (is_dir($this->getExtensionsPath().$extensionUserDir)) {
+                if (is_dir($extensionPath . 'user')) {
                     $meta = $this->getExtensionMetaData($extensionUserDir);
                     list($arr, $menu, $dbModule, $needToInstall) = $this->getExtensionData($extensionUserDir, $meta, $menu, $extensionsInDB, 'user', $extensionDir);
                     /* @var \Classes\AbstractModuleManager */
@@ -85,6 +119,10 @@ class ExtensionManager
                         $manager->install();
                     }
                     $extensions = $this->initManager($arr, $extensions, $meta, $currentLocation, $manager);
+
+					if (!$meta->show_in_menu || $meta->headless) {
+						continue;
+					}
 
                     if (!isset($userModulesTemp[$arr['menu']])) {
                         $userModulesTemp[$arr['menu']] = array();
@@ -105,16 +143,20 @@ class ExtensionManager
 
     public function includeModuleManager($name, $data, $type)
     {
-        if (!file_exists($this->getExtensionsPath().$name.'/'.$type.'/'.$name.'.php')) {
+        // Get actual path considering grouped extensions
+        $actualPath = $this->getExtensionActualPath($name);
+        $managerFile = $actualPath . $type . '/' . $name . '.php';
+
+        if (!file_exists($managerFile)) {
             return false;
         }
-        include $this->getExtensionsPath().$name.'/'.$type.'/'.$name.'.php';
+        include $managerFile;
         $moduleManagerClass = $data['manager'];
         /* @var \Classes\AbstractModuleManager $moduleManagerObj*/
         $moduleManagerObj = new $moduleManagerClass();
         $moduleManagerObj->setModuleObject($data);
         $moduleManagerObj->setModuleType($type);
-        $moduleManagerObj->setModulePath(APP_BASE_PATH.'/../extensions/'.$name.'/'.$type);
+        $moduleManagerObj->setModulePath($actualPath . $type);
 
         $controllerClass = $data['controller'];
         if (class_exists($controllerClass)) {
@@ -155,9 +197,9 @@ class ExtensionManager
             $dbModule = $extensionsInDB[$arr['name']][$modGroup];
 
             $arr['name'] = $dbModule->name;
-            $arr['label'] = $dbModule->label;
-            $arr['icon'] = $dbModule->icon;
-            $arr['menu'] = $dbModule->menu;
+//            $arr['label'] = $dbModule->label;
+//            $arr['icon'] = $dbModule->icon;
+//            $arr['menu'] = $dbModule->menu;
             $arr['status'] = $dbModule->status;
             $arr['user_levels'] = json_decode($dbModule->user_levels);
             $arr['user_roles'] = empty($dbModule->user_roles)

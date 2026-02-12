@@ -58,7 +58,7 @@ class TaskList extends React.Component {
           && <Empty description="You're all caught up!" />}
         </Space>
         <Drawer
-          title="Task List"
+          title="My To-Do List"
           width={470}
           onClose={() => this.hideAllTasks()}
           visible={this.state.showAll}
@@ -79,7 +79,8 @@ class TaskList extends React.Component {
   }
 
   visitLink(link) {
-    setTimeout(() => {window.open(link);}, 100);
+    //setTimeout(() => {window.open(link);}, 100);
+    setTimeout(() => {location.href = link;}, 100);
   }
 
   handleTaskHover(index) {

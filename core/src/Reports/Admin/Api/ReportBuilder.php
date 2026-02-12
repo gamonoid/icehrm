@@ -9,6 +9,7 @@
 namespace Reports\Admin\Api;
 
 use Classes\BaseService;
+use Classes\FileService;
 use Classes\S3FileSystem;
 use Classes\SettingsManager;
 use Model\File;
@@ -24,7 +25,7 @@ abstract class ReportBuilder
         LogManager::getInstance()->debug("Query: ".$query);
         LogManager::getInstance()->debug("Parameters: ".json_encode($parameters));
         $rs = $report->DB()->Execute($query, $parameters);
-        if (!$rs) {
+        if (!empty($report->DB()->ErrorMsg())) {
             LogManager::getInstance()->info($report->DB()->ErrorMsg());
             return array("ERROR","Error generating report");
         }
@@ -128,7 +129,7 @@ abstract class ReportBuilder
         if ($uploadedToS3) {
             return array("SUCCESS",$file_url);
         } else {
-            return array("SUCCESS",$file);
+            return array("SUCCESS", FileService::getInstance()->getLocalSecureUrl($file));
         }
     }
 }

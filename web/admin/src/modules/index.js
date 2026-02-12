@@ -1,4 +1,3 @@
-import { ModuleAdapter, UsageAdapter } from './lib';
+import { ModuleAdapter } from './lib';
 
 window.ModuleAdapter = ModuleAdapter;
-window.UsageAdapter = UsageAdapter;

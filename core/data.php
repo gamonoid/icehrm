@@ -49,7 +49,7 @@ if (!isset($_REQUEST['objects'])) {
 }
 
 $isSubOrdinates = false;
-if (isset($_REQUEST['type']) && $_REQUEST['type'] = "sub") {
+if (isset($_REQUEST['type']) && $_REQUEST['type'] === "sub") {
     $isSubOrdinates = true;
 }
 

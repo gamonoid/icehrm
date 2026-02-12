@@ -137,7 +137,7 @@ foreach ($ams as $am) {
                 createPermissions($meta, $dbModule->id);
             }
 
-            if ($resetModuleNames) {
+            if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
                 $dbModule->label = $arr['label'];
                 $dbModule->menu = $arr['menu'];
                 $dbModule->icon = $arr['icon'];
@@ -147,9 +147,9 @@ foreach ($ams as $am) {
             }
 
             $arr['name'] = $dbModule->name;
-            $arr['label'] = $dbModule->label;
-            $arr['icon'] = $dbModule->icon;
-            $arr['menu'] = $dbModule->menu;
+//            $arr['label'] = $dbModule->label;
+//            $arr['icon'] = $dbModule->icon;
+//            $arr['menu'] = $dbModule->menu;
             $arr['status'] = $dbModule->status;
             $arr['user_levels'] = json_decode($dbModule->user_levels);
             $arr['user_roles'] = empty($dbModule->user_roles)
@@ -205,6 +205,107 @@ foreach ($ams as $am) {
     }
 }
 
+// Scan pro admin modules if pro directory exists
+$proAdminPath = CLIENT_PATH.'/../extensions/leave_and_performance/core/admin/';
+if (is_dir($proAdminPath)) {
+    $proAms = scandir($proAdminPath);
+    foreach ($proAms as $am) {
+        if (is_dir($proAdminPath.$am) && $am != '.' && $am != '..') {
+            if (!\Classes\BaseService::getInstance()->isModuleEnabled('admin', $am)) {
+                continue;
+            }
+            $meta = json_decode(file_get_contents($proAdminPath.$am.'/meta.json'));
+
+            $arr = array();
+            $arr['name'] = $am;
+            $arr['label'] = $meta->label;
+            $arr['icon'] = $meta->icon;
+            $arr['menu'] = $meta->menu;
+            $arr['order'] = $meta->order;
+            $arr['status'] = 'Enabled';
+            $arr['user_levels'] = $meta->user_levels;
+            $arr['user_roles'] = isset($meta->user_roles)?$meta->user_roles:"";
+            $arr['model_namespace'] = $meta->model_namespace;
+            $arr['manager'] = $meta->manager;
+            $arr['is_pro'] = true;
+
+            //Check in admin dbmodules
+            if (isset($adminDBModuleList[$arr['name']])) {
+                $dbModule = $adminDBModuleList[$arr['name']];
+
+                if ($addNewPermissions && isset($meta->permissions)) {
+                    createPermissions($meta, $dbModule->id);
+                }
+
+                if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
+                    $dbModule->label = $arr['label'];
+                    $dbModule->menu = $arr['menu'];
+                    $dbModule->icon = $arr['icon'];
+                    $dbModule->mod_order = $arr['order'];
+                    $dbModule->user_levels = json_encode($arr['user_levels'], true);
+                    $dbModule->Save();
+                }
+
+                $arr['name'] = $dbModule->name;
+                $arr['status'] = $dbModule->status;
+                $arr['user_levels'] = json_decode($dbModule->user_levels);
+                $arr['user_roles'] = empty($dbModule->user_roles)
+                    ? [] : json_decode($dbModule->user_roles);
+                $arr['user_roles_blacklist'] = empty($dbModule->user_roles_blacklist)
+                    ? [] : json_decode($dbModule->user_roles_blacklist);
+            } else {
+                $dbModule = new \Modules\Common\Model\Module();
+                $dbModule->menu = $arr['menu'];
+                $dbModule->name = $arr['name'];
+                $dbModule->label = $arr['label'];
+                $dbModule->icon = $arr['icon'];
+                $dbModule->mod_group = "admin";
+                $dbModule->mod_order = $arr['order'];
+                $dbModule->status = "Enabled";
+                $dbModule->version = isset($meta->version)?$meta->version:"";
+                $dbModule->update_path = "admin>".$am;
+                $dbModule->user_levels = isset($meta->user_levels)?json_encode($meta->user_levels):"";
+                $dbModule->user_roles = isset($meta->user_roles)?json_encode($meta->user_roles):"";
+                $dbModule->Save();
+
+                if (isset($meta->permissions)) {
+                    createPermissions($meta, $dbModule->id);
+                }
+            }
+
+            /* @var \Classes\AbstractModuleManager */
+            $manager = includeModuleManager('admin', $am, $arr);
+            if (null === $manager) {
+                continue;
+            }
+            // Set module path to pro location
+            $manager->setModulePath($proAdminPath.$am);
+
+            if ($dbModule->status == 'Disabled') {
+                continue;
+            }
+
+            if (!isset($adminModulesTemp[$arr['menu']])) {
+                $adminModulesTemp[$arr['menu']] = array();
+            }
+
+            if ($arr['order'] == '0' || $arr['order'] == '') {
+                $adminModulesTemp[$arr['menu']]["Z".$currentLocation] = $arr;
+                $currentLocation++;
+            } else {
+                $adminModulesTemp[$arr['menu']]["A".$arr['order']] = $arr;
+            }
+
+            /* @var \Classes\AbstractInitialize $initializer */
+            $initializer = $manager->getInitializer();
+            if ($initializer !== null) {
+                $initializer->setBaseService($baseService);
+                $initializers[] = $initializer;
+            }
+        }
+    }
+}
+
 $userModulesTemp = array();
 $ams = scandir(CLIENT_PATH.'/modules/');
 foreach ($ams as $am) {
@@ -235,7 +336,7 @@ foreach ($ams as $am) {
                     createPermissions($meta, $dbModule->id);
                 }
 
-                if ($resetModuleNames) {
+                if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
                     $dbModule->label = $arr['label'];
                     $dbModule->menu = $arr['menu'];
                     $dbModule->icon = $arr['icon'];
@@ -245,10 +346,9 @@ foreach ($ams as $am) {
                 }
 
                 $arr['name'] = $dbModule->name;
-                $arr['label'] = $dbModule->label;
-                $arr['icon'] = $dbModule->icon;
-                $arr['menu'] = $dbModule->menu;
-                //$arr['order'] = $dbModule->mod_order;
+//                $arr['label'] = $dbModule->label;
+//                $arr['icon'] = $dbModule->icon;
+//                $arr['menu'] = $dbModule->menu;
                 $arr['status'] = $dbModule->status;
                 $arr['user_levels'] = json_decode($dbModule->user_levels);
                 $arr['user_roles'] = empty($dbModule->user_roles)
@@ -304,6 +404,110 @@ foreach ($ams as $am) {
         }
     } catch (\Exception $e) {
         $k = $e;
+    }
+}
+
+// Scan pro user modules if pro directory exists
+$proModulesPath = CLIENT_PATH.'/../extensions/leave_and_performance/core/modules/';
+if (is_dir($proModulesPath)) {
+    $proUms = scandir($proModulesPath);
+    foreach ($proUms as $am) {
+        try {
+            if (is_dir($proModulesPath.$am) && $am != '.' && $am != '..') {
+                if (!\Classes\BaseService::getInstance()->isModuleEnabled('modules', $am)) {
+                    continue;
+                }
+                $meta = json_decode(file_get_contents($proModulesPath.$am.'/meta.json'));
+
+                $arr = array();
+                $arr['name'] = $am;
+                $arr['label'] = $meta->label;
+                $arr['icon'] = $meta->icon;
+                $arr['menu'] = $meta->menu;
+                $arr['order'] = $meta->order;
+                $arr['status'] = 'Enabled';
+                $arr['user_levels'] = $meta->user_levels;
+                $arr['user_roles'] = isset($meta->user_roles) ? $meta->user_roles : "";
+                $arr['model_namespace'] = $meta->model_namespace;
+                $arr['manager'] = $meta->manager;
+                $arr['is_pro'] = true;
+
+                //Check in user dbmodules
+                if (isset($userDBModuleList[$arr['name']])) {
+                    $dbModule = $userDBModuleList[$arr['name']];
+
+                    if ($addNewPermissions && isset($meta->permissions)) {
+                        createPermissions($meta, $dbModule->id);
+                    }
+
+                    if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
+                        $dbModule->label = $arr['label'];
+                        $dbModule->menu = $arr['menu'];
+                        $dbModule->icon = $arr['icon'];
+                        $dbModule->mod_order = $arr['order'];
+                        $dbModule->user_levels = json_encode($arr['user_levels'], true);
+                        $dbModule->Save();
+                    }
+
+                    $arr['name'] = $dbModule->name;
+                    $arr['status'] = $dbModule->status;
+                    $arr['user_levels'] = json_decode($dbModule->user_levels);
+                    $arr['user_roles'] = empty($dbModule->user_roles)
+                        ? [] : json_decode($dbModule->user_roles);
+                    $arr['user_roles_blacklist'] = empty($dbModule->user_roles_blacklist)
+                        ? [] : json_decode($dbModule->user_roles_blacklist);
+                } else {
+                    $dbModule = new \Modules\Common\Model\Module();
+                    $dbModule->menu = $arr['menu'];
+                    $dbModule->name = $arr['name'];
+                    $dbModule->label = $arr['label'];
+                    $dbModule->icon = $arr['icon'];
+                    $dbModule->mod_group = "user";
+                    $dbModule->mod_order = $arr['order'];
+                    $dbModule->status = "Enabled";
+                    $dbModule->version = isset($meta->version) ? $meta->version : "";
+                    $dbModule->update_path = "modules>" . $am;
+                    $dbModule->user_levels = isset($meta->user_levels) ? json_encode($meta->user_levels) : "";
+                    $dbModule->user_roles = isset($meta->user_roles) ? json_encode($meta->user_roles) : "";
+                    $dbModule->Save();
+
+                    if (isset($meta->permissions)) {
+                        createPermissions($meta, $dbModule->id);
+                    }
+                }
+
+                /* @var \Classes\AbstractModuleManager */
+                $manager = includeModuleManager('modules', $am, $arr);
+                if (null === $manager) {
+                    continue;
+                }
+                // Set module path to pro location
+                $manager->setModulePath($proModulesPath.$am);
+
+                if ($dbModule->status == 'Disabled') {
+                    continue;
+                }
+
+                if (!isset($userModulesTemp[$arr['menu']])) {
+                    $userModulesTemp[$arr['menu']] = array();
+                }
+
+                if ($arr['order'] == '0' || $arr['order'] == '') {
+                    $userModulesTemp[$arr['menu']]["Z" . $currentLocation] = $arr;
+                    $currentLocation++;
+                } else {
+                    $userModulesTemp[$arr['menu']]["A" . $arr['order']] = $arr;
+                }
+
+                $initializer = $manager->getInitializer();
+                if ($initializer !== null) {
+                    $initializer->setBaseService($baseService);
+                    $initializers[] = $initializer;
+                }
+            }
+        } catch (\Exception $e) {
+            $k = $e;
+        }
     }
 }
 
@@ -428,8 +632,4 @@ if (!empty($user)) {
     }
 }
 
-// Run initializers
-foreach ($initializers as $initializer) {
-    $initializer->init();
-}
 

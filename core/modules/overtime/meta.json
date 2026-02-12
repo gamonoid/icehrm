@@ -1,6 +1,6 @@
 {
     "label": "Overtime Requests",
-    "menu": "Time Management",
+    "menu": "Time",
     "order": "5",
     "icon": "fa-calendar-plus",
     "user_levels": [

@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import {
-  Space, Tag, Button, Alert, Typography, Card,
+  Space, Tag, Button, Alert, Typography, Card, Avatar,
 } from 'antd';
 const { Meta } = Card;
 import {
@@ -149,6 +149,7 @@ class EmployeeDocumentAdapter extends ReactifiedAdapterBase {
   getDataMapping() {
     return [
       'id',
+      'image',
       'employee',
       'document',
       'date_added',
@@ -160,10 +161,41 @@ class EmployeeDocumentAdapter extends ReactifiedAdapterBase {
   getHeaders() {
     return [
       { sTitle: 'ID', bVisible: false },
+      { sTitle: '' },
       { sTitle: 'Employee' },
       { sTitle: 'Document' },
       { sTitle: 'Date Added' },
       { sTitle: 'Status' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: '',
+        dataIndex: 'image',
+        render: (text, record) => <Avatar src={text} />,
+      },
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Document',
+        dataIndex: 'document',
+        sorter: true,
+      },
+      {
+        title: 'Date Added',
+        dataIndex: 'date_added',
+        sorter: true,
+      },
+      {
+        title: 'Status',
+        dataIndex: 'status',
+        sorter: true,
+      },
     ];
   }
 

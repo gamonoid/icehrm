@@ -3,8 +3,10 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+import React from 'react';
 import ReactApproveAdminAdapter from '../../../api/ReactApproveAdminAdapter';
 import ReactIdNameAdapter from '../../../api/ReactIdNameAdapter';
+import { Avatar } from 'antd';
 
 /**
  * OvertimeCategoryAdapter
@@ -30,6 +32,7 @@ class EmployeeOvertimeAdminAdapter extends ReactApproveAdminAdapter {
   getDataMapping() {
     return [
       'id',
+      'image',
       'employee',
       'category',
       'start_time',
@@ -42,6 +45,7 @@ class EmployeeOvertimeAdminAdapter extends ReactApproveAdminAdapter {
   getHeaders() {
     return [
       { sTitle: 'ID', bVisible: false },
+      { sTitle: '' },
       { sTitle: 'Employee' },
       { sTitle: 'Category' },
       { sTitle: 'Start Time' },
@@ -53,6 +57,11 @@ class EmployeeOvertimeAdminAdapter extends ReactApproveAdminAdapter {
 
   getTableColumns() {
     return [
+      {
+        title: '',
+        dataIndex: 'image',
+        render: (text, record) => <Avatar src={text} />,
+      },
       {
         title: 'Employee',
         dataIndex: 'employee',

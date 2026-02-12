@@ -1,7 +1,7 @@
 {
     "label": "Travel",
     "menu": "Manage",
-    "order": "9",
+    "order": "91",
     "icon": "fa-plane",
     "user_levels": [
         "Admin",

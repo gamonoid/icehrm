@@ -9,13 +9,16 @@
 namespace Projects\Common\Model;
 
 use Classes\BaseService;
+use Classes\Editor\DeleteEditorContent;
 use Classes\ModuleAccess;
 use Classes\SettingsManager;
-use Clients\Common\Model\Client;
+use Projects\Common\Model\Client;
+use EditorUser\EditorService;
 use Model\BaseModel;
 
 class Project extends BaseModel
 {
+	use DeleteEditorContent;
     public $table = 'Projects';
     public function getAdminAccess()
     {
@@ -101,4 +104,33 @@ class Project extends BaseModel
     {
         return true;
     }
+
+	public function postProcessGetData($entry)
+	{
+		if (!class_exists('\EditorUser\EditorService')) {
+			return '';
+		}
+		$entry->document_link = EditorService::getDocumentLink($entry->id, 'Project', 'project_document', $entry, 'admin_Admin');
+		return $entry;
+	}
+
+	public function getEditorDraftContent() {
+		return sprintf('{
+		   "blocks":[
+			  {
+				 "type":"header",
+				 "data":{
+					"text":"%s",
+					"level":1
+				 }
+			  },
+			  {
+				 "type":"paragraph",
+				 "data":{
+					"text":"Start adding project details"
+				 }
+			  }
+		   ]
+		}', $this->name);
+	}
 }

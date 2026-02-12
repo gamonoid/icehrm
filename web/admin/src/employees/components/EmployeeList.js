@@ -102,6 +102,7 @@ class EmployeeList extends React.Component {
   setFirstInTheList = (data) => {
     if (data.length > 0) {
       this.props.setEmployee(data[0]);
+      this.props.ice.reloadEmployee(data[0].id);
     }
   };
 

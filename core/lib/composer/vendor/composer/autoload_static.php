@@ -289,6 +289,7 @@ class ComposerStaticInit5bce11e11de2274869867527dbd4b40e
 
     public static $fallbackDirsPsr4 = array (
         0 => __DIR__ . '/../..' . '/../../src',
+        1 => __DIR__ . '/../..' . '/../../../extensions/leave_and_performance/core/src',
     );
 
     public static $prefixesPsr0 = array (

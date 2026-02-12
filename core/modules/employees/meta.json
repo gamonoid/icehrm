@@ -1,6 +1,6 @@
 {
-    "label": "Basic Information",
-    "menu": "Personal Information",
+    "label": "Profile",
+    "menu": "About You",
     "order": "2",
     "icon": "fa-user",
     "user_levels": [

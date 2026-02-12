@@ -4,6 +4,7 @@ namespace Employees\Rest;
 use Classes\BaseService;
 use Classes\Data\Query\DataQuery;
 use Classes\Data\Query\Filter;
+use Classes\FileService;
 use Classes\IceResponse;
 use Classes\PermissionManager;
 use Classes\RestEndPoint;
@@ -153,6 +154,17 @@ JSON;
         );
 
         $emp = $this->enrichElement($emp, json_decode($mapping, true));
+
+        // Add supervisor image if supervisor exists
+        if (!empty($emp->supervisor) && isset($emp->supervisor['id'])) {
+            $supervisor = new Employee();
+            $supervisor->Load("id = ?", [$emp->supervisor['id']]);
+			$supervisor = FileService::getInstance()->updateSmallProfileImage($supervisor);
+            if (!empty($supervisor->id)) {
+                $emp->supervisor['image'] = $supervisor->image;
+            }
+        }
+
         //Get User for the employee
         $user = new User();
         $user->Load('employee = ?', [$emp->id]);

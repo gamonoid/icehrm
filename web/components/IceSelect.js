@@ -37,7 +37,13 @@ class IceSelect extends React.Component {
         value = [];
       }
     } else {
-      value = value ? value.toString() : value;
+      // For allow-null fields, preserve null/undefined as undefined for Select component
+      // Select component uses undefined to represent "no selection" when allowClear is true
+      if (data['allow-null'] === true && (value === null || value === '' || value === undefined)) {
+        value = undefined;
+      } else {
+        value = value ? value.toString() : value;
+      }
     }
 
     return (
@@ -50,9 +56,9 @@ class IceSelect extends React.Component {
           (input, option) => input != null
             && option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
         }
-        value={value}
+        value={value === null || value === undefined ? undefined : value}
         options={optionData}
-        allowClear
+        allowClear={data['allow-null'] !== false}
         onChange={this.handleChange.bind(this)}
         disabled={this.props.readOnly}
       />
@@ -65,7 +71,14 @@ class IceSelect extends React.Component {
     if (data.type === 'select2multi') {
       this.onChange(JSON.stringify(value));
     } else {
-      this.onChange(value);
+      // Convert undefined to null for allow-null fields
+      // When allowClear is used and field is cleared, value becomes undefined
+      // Backend expects null or empty string for nullable fields
+      if (value === undefined && data['allow-null'] === true) {
+        this.onChange(null);
+      } else {
+        this.onChange(value);
+      }
     }
   }
 

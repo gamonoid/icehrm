@@ -8,9 +8,11 @@
 
 namespace Overtime\Common\Model;
 
+use Classes\FileService;
 use Classes\IceResponse;
 use Classes\ModuleAccess;
 use Classes\SettingsManager;
+use Employees\Common\Model\Employee;
 use Model\ApproveModel;
 
 class EmployeeOvertime extends ApproveModel
@@ -83,5 +85,15 @@ class EmployeeOvertime extends ApproveModel
             new ModuleAccess('overtime', 'admin'),
             new ModuleAccess('overtime', 'user'),
         ];
+    }
+
+    public function postProcessGetData($obj)
+    {
+        $employee = new Employee();
+        $employee->Load('id = ?', [$obj->employee]);
+        $employee = FileService::getInstance()->updateSmallProfileImage($employee);
+        $obj->image = $employee->image;
+
+        return $obj;
     }
 }

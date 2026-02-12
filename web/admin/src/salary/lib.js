@@ -3,13 +3,16 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
+import React from 'react';
 import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from "../../../api/ReactModalAdapterBase";
+import { Avatar } from 'antd';
 
 /**
  * SalaryComponentTypeAdapter
  */
 
-class SalaryComponentTypeAdapter extends AdapterBase {
+class SalaryComponentTypeAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -23,6 +26,21 @@ class SalaryComponentTypeAdapter extends AdapterBase {
       { sTitle: 'ID', bVisible: false },
       { sTitle: 'Code' },
       { sTitle: 'Name' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Code',
+        dataIndex: 'code',
+        sorter: true,
+      },
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
     ];
   }
 
@@ -40,7 +58,7 @@ class SalaryComponentTypeAdapter extends AdapterBase {
  * SalaryComponentAdapter
  */
 
-class SalaryComponentAdapter extends AdapterBase {
+class SalaryComponentAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -59,6 +77,26 @@ class SalaryComponentAdapter extends AdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Salary Component Type',
+        dataIndex: 'componentType',
+        sorter: true,
+      },
+      {
+        title: 'Details',
+        dataIndex: 'details',
+        sorter: true,
+      },
+    ];
+  }
+
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
@@ -74,10 +112,11 @@ class SalaryComponentAdapter extends AdapterBase {
  * EmployeeSalaryAdapter
  */
 
-class EmployeeSalaryAdapter extends AdapterBase {
+class EmployeeSalaryAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
+      'image',
       'employee',
       'component',
       'amount',
@@ -88,10 +127,41 @@ class EmployeeSalaryAdapter extends AdapterBase {
   getHeaders() {
     return [
       { sTitle: 'ID', bVisible: false },
+      { sTitle: '' },
       { sTitle: 'Employee' },
       { sTitle: 'Salary Component' },
       { sTitle: 'Amount' },
       { sTitle: 'Details' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: '',
+        dataIndex: 'image',
+        render: (text, record) => <Avatar src={text} />,
+      },
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Salary Component',
+        dataIndex: 'component',
+        sorter: true,
+      },
+      {
+        title: 'Amount',
+        dataIndex: 'amount',
+        sorter: true,
+      },
+      {
+        title: 'Details',
+        dataIndex: 'details',
+        sorter: true,
+      },
     ];
   }
 

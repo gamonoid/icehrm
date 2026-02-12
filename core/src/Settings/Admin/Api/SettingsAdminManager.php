@@ -52,5 +52,15 @@ class SettingsAdminManager extends AbstractModuleManager
                 $restEndPoint->process('getMobileSettings', []);
             }
         );
+
+        \Classes\Macaw::post(
+            REST_API_PATH.'settings/save',
+            function () {
+                $restEndPoint = new SettingsRestEndPoint();
+                // Allow session-based auth for admin UI calls
+                // The save method will check for session user if token auth fails
+                $restEndPoint->process('save', [], false);
+            }
+        );
     }
 }

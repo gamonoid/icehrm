@@ -13,9 +13,11 @@ use Classes\Macaw;
 use Classes\SystemTasks\SystemTasksService;
 use Classes\UIManager;
 use Employees\Common\Model\Employee;
+use Employees\Rest\EmployeeAttendanceRestEndPoint;
 use Employees\Rest\EmployeeCertificationsRestEndPoint;
 use Employees\Rest\EmployeeEducationRestEndPoint;
 use Employees\Rest\EmployeeLanguageRestEndPoint;
+use Employees\Rest\EmployeeLeavesRestEndPoint;
 use Employees\Rest\EmployeeRestEndPoint;
 use Employees\Rest\EmployeeSkillsRestEndPoint;
 
@@ -121,6 +123,42 @@ class EmployeesAdminManager extends AbstractModuleManager
             }
         );
 
+        // Employee attendance summary (must be before /attendance to match first)
+        Macaw::get(
+            REST_API_PATH.'employees/(:num)/attendance/summary',
+            function ($pathParams) {
+                $empRestEndPoint = new EmployeeAttendanceRestEndPoint();
+                $empRestEndPoint->process('getSummary', $pathParams);
+            }
+        );
+
+        // Employee attendance
+        Macaw::get(
+            REST_API_PATH.'employees/(:num)/attendance',
+            function ($pathParams) {
+                $empRestEndPoint = new EmployeeAttendanceRestEndPoint();
+                $empRestEndPoint->process('listAll', $pathParams);
+            }
+        );
+
+        // Employee leaves summary (must be before /leaves to match first)
+        Macaw::get(
+            REST_API_PATH.'employees/(:num)/leaves/summary',
+            function ($pathParams) {
+                $empRestEndPoint = new EmployeeLeavesRestEndPoint();
+                $empRestEndPoint->process('getSummary', $pathParams);
+            }
+        );
+
+        // Employee leaves
+        Macaw::get(
+            REST_API_PATH.'employees/(:num)/leaves',
+            function ($pathParams) {
+                $empRestEndPoint = new EmployeeLeavesRestEndPoint();
+                $empRestEndPoint->process('listAll', $pathParams);
+            }
+        );
+
         // Employee status
         Macaw::get(
             REST_API_PATH.'employees/(:num)/status',
@@ -194,11 +232,18 @@ class EmployeesAdminManager extends AbstractModuleManager
 
     public function initCalculationHooks()
     {
+		$additionalData = [
+			'employee_id' => 'Employee ID',
+			'first_name' => 'First name'
+		];
+
         $this->addCalculationHook(
             'EmployeeData_getFieldValue',
             'Get Employee Data',
             EmployeeUtil::class,
-            'getEmployeeDataField'
+            'getEmployeeDataField',
+			true,
+			$additionalData
         );
     }
 }

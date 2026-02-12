@@ -118,41 +118,52 @@ class MigrationManager
         }
     }
 
-    public function runExtensionMigration(MigrationInterface $migrationObject)
-    {
-        $migration = new Migration();
-        $migration->Load('file = ?', [ $migrationObject->getName() ]);
+	public function runExtensionMigration(MigrationInterface $migrationObject)
+	{
+		$migration = new Migration();
+		$migration->Load('file = ?', [ $migrationObject->getName() ]);
 
-        if ($migration->file === $migrationObject->getName()) {
-            return false;
-        }
+		if ($migration->file === $migrationObject->getName() && $migration->status !== 'Pending') {
+			return false;
+		}
 
-        $migration = new Migration();
-        $migration->file = $migrationObject->getName();
-        $migration->version = 1;
-        $migration->created = date("Y-m-d H:i:s");
-        $migration->updated = date("Y-m-d H:i:s");
-        $migration->status = 'Pending';
-        $ok = $migration->Save();
+		if (!$migration->id) {
+			$migration = new Migration();
+			$migration->file = $migrationObject->getName();
+			$migration->version = 1;
+			$migration->created = date("Y-m-d H:i:s");
+			$migration->updated = date("Y-m-d H:i:s");
+			$migration->status = 'Pending';
+			$ok = $migration->Save();
 
-        if (!$ok) {
-            return false;
-        }
+			if (!$ok) {
+				return false;
+			}
+		}
 
-        $res = $migrationObject->up();
-        if (!$res) {
-            $migration->last_error = $migrationObject->getLastError();
-            $migration->status = "UpError";
-            $migration->updated = date("Y-m-d H:i:s");
-            $migration->Save();
-        }
 
-        $migration->status = "Up";
-        $migration->updated = date("Y-m-d H:i:s");
-        $migration->Save();
+		try {
+			$res = $migrationObject->up();
+		} catch (\Throwable $e) {
+			$migration->last_error = $e->getMessage();
+			$migration->status = "UpError";
+			$migration->updated = date("Y-m-d H:i:s");
+			$migration->Save();
+			return true;
+		}
+		if (!$res) {
+			$migration->last_error = $migrationObject->getLastError();
+			$migration->status = "UpError";
+			$migration->updated = date("Y-m-d H:i:s");
+			$migration->Save();
+		}
 
-        return true;
-    }
+		$migration->status = "Up";
+		$migration->updated = date("Y-m-d H:i:s");
+		$migration->Save();
+
+		return true;
+	}
 
     public function runPendingMigrations()
     {

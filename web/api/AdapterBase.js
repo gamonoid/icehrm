@@ -3,7 +3,7 @@
    Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
-
+import 'regenerator-runtime/runtime';
 import IceApiClient from './IceApiClient';
 import ModuleBase from './ModuleBase';
 import RequestCache from '../api-common/RequestCache';
@@ -124,7 +124,7 @@ class AdapterBase extends ModuleBase {
      * @param successCallback {Function} this will get called after success response
      */
 
-  add(object, getFunctionCallBackData, callGetFunction, successCallback) {
+  add(object, getFunctionCallBackData, callGetFunction, successCallback, failCallback) {
     const that = this;
     if (callGetFunction === undefined || callGetFunction === null) {
       // eslint-disable-next-line no-param-reassign
@@ -138,7 +138,7 @@ class AdapterBase extends ModuleBase {
       if (data.status === 'SUCCESS') {
         that.addSuccessCallBack(getFunctionCallBackData, data.object, callGetFunction, successCallback, that);
       } else {
-        that.addFailCallBack(getFunctionCallBackData, data.object);
+        that.addFailCallBack(getFunctionCallBackData, data.object, failCallback, that);
       }
     }, 'json')
       .fail((e) => {
@@ -161,11 +161,14 @@ class AdapterBase extends ModuleBase {
     this.trackEvent('addSuccess', this.tab, this.table);
   }
 
-  addFailCallBack(callBackData, serverData) {
+  addFailCallBack(callBackData, serverData, failCallback, thisObject) {
     try {
       this.closePlainMessage();
     } catch (e) {
       // No need to report
+    }
+    if (failCallback !== undefined && failCallback !== null) {
+      failCallback.apply(thisObject, [serverData]);
     }
     this.showMessage('Error saving', serverData);
     this.trackEvent('addFailed', this.tab, this.table);

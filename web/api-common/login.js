@@ -83,3 +83,64 @@ window.authGoogle = () => {
 window.authMicrosoft = () => {
   window.location.href = `${window.location.href.split('login.php')[0]}login.php?microsoft=1`;
 };
+
+window.showLoginWithCode = () => {
+  $('#loginForm').hide();
+  $('#requestPasswordChangeForm').hide();
+  $('#loginWithCodeForm').show();
+  $('#loginCodeFormAlert').hide();
+  $('#enterCodeSection').hide();
+  $('#requestCodeBtn').show();
+};
+
+window.requestLoginCode = () => {
+  $('#loginCodeFormAlert').hide();
+  const email = $('#codeEmail').val().trim();
+
+  // Validate email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (email === '' || !emailRegex.test(email)) {
+    $('#loginCodeFormAlert').show();
+    $('#loginCodeFormAlert').html('Please enter a valid email address');
+    return false;
+  }
+
+  // Disable button and show loading state
+  const $btn = $('#requestCodeBtn button');
+  const originalText = $btn.text();
+  $btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin" style="margin-right:8px"></i>Sending...');
+
+  $.post('service.php', { a: 'rlc', email }, (data) => {
+    $('#loginCodeFormAlert').show();
+    $('#loginCodeFormAlert').html(data.message);
+    if (data.status === 'SUCCESS') {
+      $('#requestCodeBtn').hide();
+      $('#enterCodeSection').show();
+    } else {
+      // Re-enable button on error
+      $btn.prop('disabled', false).html(originalText);
+    }
+  }, 'json').fail(() => {
+    // Re-enable button on failure
+    $('#loginCodeFormAlert').show();
+    $('#loginCodeFormAlert').html('An error occurred. Please try again.');
+    $btn.prop('disabled', false).html(originalText);
+  });
+};
+
+window.submitLoginWithCode = () => {
+  const email = $('#codeEmail').val().trim();
+  const code = $('#loginCode').val().trim();
+  if (email === '' || code === '') {
+    $('#loginCodeFormAlert').show();
+    $('#loginCodeFormAlert').html('Please enter both email and code');
+    return false;
+  }
+  // Use the main login form to submit with code as password
+  $('#username').val(email);
+  $('#password').val(code);
+  try {
+    localStorage.clear();
+  } catch (e) {}
+  $('#loginForm').submit();
+};

@@ -31,7 +31,7 @@ class EmployeeStatusModal extends React.Component {
 
   render() {
     return (<>
-      <Modal title={this.props.title} visible={this.state.isModalVisible}
+      <Modal title={this.props.title} open={this.state.isModalVisible}
              onOk={this.handleOk.bind(this)}
              onCancel={this.handleCancel.bind(this)}
       >

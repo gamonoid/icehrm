@@ -3,13 +3,13 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
 /**
  * EmployeeDependentAdapter
  */
 
-class EmployeeDependentAdapter extends AdapterBase {
+class EmployeeDependentAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -27,6 +27,31 @@ class EmployeeDependentAdapter extends AdapterBase {
       { sTitle: 'Relationship' },
       { sTitle: 'Date of Birth' },
       { sTitle: 'Id Number' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: true,
+      },
+      {
+        title: 'Relationship',
+        dataIndex: 'relationship',
+        sorter: true,
+      },
+      {
+        title: 'Date of Birth',
+        dataIndex: 'dob',
+        render: (text) => text ? Date.parse(text).toString('MMM dd, yyyy') : '',
+      },
+      {
+        title: 'Id Number',
+        dataIndex: 'id_number',
+        sorter: true,
+      },
     ];
   }
 

@@ -34,7 +34,13 @@ class ProjectsAdminManager extends AbstractModuleManager
     public function setupModuleClassDefinitions()
     {
         $this->addModelClass('Project');
+        $this->addModelClass('Client');
         $this->addModelClass('EmployeeProject');
+    }
+
+    public function setupRestEndPoints()
+    {
+        (new ProjectsApiController())->registerEndPoints();
     }
 
     public function getDashboardItemData()

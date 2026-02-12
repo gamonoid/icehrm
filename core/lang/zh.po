@@ -1987,3 +1987,822 @@ msgstr "删除"
 
 msgid "Copy"
 msgstr "复制"
+
+msgid "Employee Check-Ins"
+msgstr "员工报到"
+
+msgid "Employee Distribution"
+msgstr "雇员分布"
+
+msgid "Total"
+msgstr "共计"
+
+msgid "is required"
+msgstr "是必需的"
+
+msgid "Use Employee Leave Period"
+msgstr "使用员工休假期"
+
+msgid "Required Experience (Days)"
+msgstr "所需经验（天数"
+
+msgid "LeaveGroup"
+msgstr "休假组"
+
+msgid "Expenses Category"
+msgstr "支出类别"
+
+msgid "Employee Expense"
+msgstr "雇员费用"
+
+msgid "Overtime"
+msgstr "加班"
+
+msgid "Employee Fields"
+msgstr "雇员领域"
+
+msgid "Asset Type"
+msgstr "资产类型"
+
+msgid "Asset"
+msgstr "资产"
+
+msgid "Custom Field"
+msgstr "自定义字段"
+
+msgid "Object Type"
+msgstr "对象类型"
+
+msgid "Personal"
+msgstr "个人"
+
+msgid "Identification"
+msgstr "鉴定"
+
+msgid "Work"
+msgstr "工作"
+
+msgid "Contact"
+msgstr "联系我们"
+
+msgid "Report"
+msgstr "报告"
+
+msgid "Login As"
+msgstr "登录为"
+
+msgid "Deactivate"
+msgstr "停用"
+
+msgid "Employee Education"
+msgstr "雇员教育"
+
+msgid "Employee Certification"
+msgstr "雇员认证"
+
+msgid "Listening"
+msgstr "倾听"
+
+msgid "Employee Dependent"
+msgstr "雇员家属"
+
+msgid "Contacts"
+msgstr "联系我们"
+
+msgid "Next"
+msgstr "下一页"
+
+msgid "Emergency Contact"
+msgstr "紧急联系人"
+
+msgid "Deactivated"
+msgstr "已停用"
+
+msgid "Archived"
+msgstr "归档"
+
+msgid "Updated By"
+msgstr "更新时间"
+
+msgid "Created Time (GMT)"
+msgstr "创建时间(GMT)"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "没有"
+
+msgid "Share with Employee"
+msgstr "与员工分享"
+
+msgid "Visible To"
+msgstr "可见于"
+
+msgid "ID Copy"
+msgstr "身份证复印件"
+
+msgid "Degree Certificate"
+msgstr "学位证书"
+
+msgid "Driving License"
+msgstr "驾驶执照"
+
+msgid "Owner"
+msgstr "业主"
+
+msgid "Manager"
+msgstr "经理"
+
+msgid "HR Forms"
+msgstr "人力资源表格"
+
+msgid "Employee Forms"
+msgstr "雇员表格"
+
+msgid "Form"
+msgstr "表格"
+
+msgid "Submitted"
+msgstr "提交的"
+
+msgid "Review Period Start Date"
+msgstr "审查期开始日期"
+
+msgid "Review Period End Date"
+msgstr "审查期结束日期"
+
+msgid "Self Assessment Due Date"
+msgstr "自我评估到期日"
+
+msgid "Due On"
+msgstr "应付"
+
+msgid "Company Teams"
+msgstr "公司团队"
+
+msgid "Lead"
+msgstr "领导团队"
+
+msgid "Teams"
+msgstr "团队"
+
+msgid "Team Name"
+msgstr "团队名称"
+
+msgid "Team Members"
+msgstr "团队成员"
+
+msgid "Member "
+msgstr "成员"
+
+msgid "Role"
+msgstr "角色"
+
+msgid "Users Roles"
+msgstr "用户角色"
+
+msgid "User Role"
+msgstr "用户角色"
+
+msgid "Additional Permissions"
+msgstr "其他权限"
+
+msgid "Usage"
+msgstr "使用方法"
+
+msgid "Last Export Result"
+msgstr "最后一次导出结果"
+
+msgid "Employee Data Import"
+msgstr "雇员数据导入"
+
+msgid "Attendance Data Import"
+msgstr "考勤数据导入"
+
+msgid "Payroll Data Import"
+msgstr "薪资数据导入"
+
+msgid "Supervisor and Approver Import"
+msgstr "主管和审批人导入"
+
+msgid "You can drag the chart both sides to view other dates on timeline"
+msgstr "你可以拖动图表的两边来查看时间线上的其他日期"
+
+msgid "Payroll Group"
+msgstr "薪资组"
+
+msgid "Common"
+msgstr "普通"
+
+msgid "Function Type"
+msgstr "功能类型"
+
+msgid "Advanced"
+msgstr "高级"
+
+msgid "Simple"
+msgstr "简单"
+
+msgid "Company Name"
+msgstr "公司名称"
+
+msgid "Hiring Manager"
+msgstr "招聘经理"
+
+msgid "Job Description"
+msgstr "工作内容"
+
+msgid "Employement Type"
+msgstr "雇佣类型"
+
+msgid "Postal Code"
+msgstr "邮政编码"
+
+msgid "Show Hiring Manager Name"
+msgstr "显示招聘经理姓名"
+
+msgid "Previous"
+msgstr "上一个"
+
+msgid "Position Applied"
+msgstr "申请职位"
+
+msgid "Hiring Stage"
+msgstr "招聘阶段"
+
+msgid "Total Years of Experience"
+msgstr "总工作年限"
+
+msgid "Expected Salary"
+msgstr "期望薪资"
+
+msgid "Attach File "
+msgstr "附加文件 "
+
+msgid "Update Password"
+msgstr "更新密码"
+
+msgid "Employee Profile"
+msgstr "员工资料"
+
+msgid "Contact details"
+msgstr "联系细节"
+
+msgid "Work related details"
+msgstr "工作相关的细节"
+
+msgid "ID Number"
+msgstr "身份证号码"
+
+msgid "Leave Days from Current Leave Period"
+msgstr "当前休假期的休假天数"
+
+msgid "Paid Time Off Adjustments"
+msgstr "带薪休假调整"
+
+msgid "Leave Days Carried Forward Previous Period"
+msgstr "前期结转的休假天数"
+
+msgid "Leave Days Available to Use"
+msgstr "可使用的休假天数"
+
+msgid "Approved Leave Days"
+msgstr "已批准的休假天数"
+
+msgid "Pending Leave Days"
+msgstr "待定休假天数"
+
+msgid "Rejected Leave Days"
+msgstr "被拒绝的休假天数"
+
+msgid "Calculated by Leave Type"
+msgstr "按假期类型计算"
+
+msgid "Show Calculation"
+msgstr "显示计算结果"
+
+msgid "Total Time"
+msgstr "总时间"
+
+msgid "Personal Documents"
+msgstr "个人文件"
+
+msgid "My Forms"
+msgstr "我的表格"
+
+msgid "Training Sessions of Coordinated by Me"
+msgstr "由我协调的培训课程"
+
+msgid "Self Assessments"
+msgstr "自我评估"
+
+msgid "Connection"
+msgstr "连接"
+
+msgid "Data directory is accessible from outside."
+msgstr "数据目录可以从外部访问。"
+
+msgid "Learn how to fix"
+msgstr "了解如何修复"
+
+msgid "Copy System Report"
+msgstr "复制系统报告"
+
+msgid "System Issues"
+msgstr "系统问题"
+
+msgid "System Report"
+msgstr "系统报告"
+
+msgid "Here you can define the structure of the company by adding branches, departments, company units,etc. Each employee needs to be connected to a company structure."
+msgstr "在这里您可以通过添加分支机构、部门、公司单位等来定义公司的结构。每个员工都需要连接到公司结构。"
+
+msgid "Company graph provides a graphical overview of the company structure."
+msgstr "公司图表提供公司结构的图形概览。"
+
+msgid "Here you can manage the job titles in your organization. Each employee needs to be assigned a job title."
+msgstr "您可以在此处管理组织中的职位。每个员工都需要分配一个职位。"
+
+msgid "Here you can define the different pay grades in your organization. "
+msgstr "您可以在此处定义组织中的不同薪酬等级。"
+
+msgid "Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state."
+msgstr "您可以在此处定义组织中不同类型的雇佣状态。应为每个员工分配一个就业状态。"
+
+msgid "Here you can define the different types of skills an employee might have."
+msgstr "您可以在此处定义员工可能拥有的不同类型的技能。"
+
+msgid "Here you can define the different levels of education an employee might have."
+msgstr "在这里，您可以定义员工可能拥有的不同教育水平。"
+
+msgid "Here you can define the different types of certifications an employee might have completed."
+msgstr "在这里，您可以定义员工可能已经完成的不同类型的认证。"
+
+msgid "Languages consists of most of the languages used globally."
+msgstr "语言由全球使用的大多数语言组成。"
+
+msgid "Here you can add details about a project such as project name, client, details and the status."
+msgstr "在这里，您可以添加有关项目名称，客户端，详细信息和状态等项目的详细信息。"
+
+msgid "Here you can assign projects to employees."
+msgstr "在这里，您可以将项目分配给员工。"
+
+msgid "Here you can add and manage clients your organization is working with. You can choose the correct client when adding a project in IceHrm."
+msgstr "在这里，您可以添加和管理您的组织正在与之合作的客户。在ICEHRM中添加项目时，您可以选择正确的客户端。"
+
+msgid "Here you can define custom fields for assets, company struture, employee, travel request or expense forms."
+msgstr "在这里，您可以定义用于资产，公司裁量，员工，旅行请求或费用表格的自定义字段。"
+
+msgid "Here you can view records of all the activities performed by different users in the system."
+msgstr "在这里，您可以查看系统中不同用户执行的所有活动的记录。"
+
+msgid "Here you can to add new employees, view employee details and filter employees."
+msgstr "在这里，您可以添加新员工，查看员工详细信息和过滤员工。"
+
+msgid "Here you can record the work history of your employees."
+msgstr "在这里，您可以记录员工的工作历史。"
+
+msgid "Here you can add the skills each employee in your organization has."
+msgstr "在这里，您可以添加组织中每个员工的技能。"
+
+msgid "Here you can record the level of education each employee in your organization has."
+msgstr "在这里，您可以记录组织中每个员工的教育水平。"
+
+msgid "Here you can define the certifications each of your employee has completed so far."
+msgstr "在这里，您可以定义迄今为止每位员工完成的认证。"
+
+msgid "Here you can keep track of all the languages each employee knows."
+msgstr "在这里，您可以跟踪每个员工知道的所有语言。"
+
+msgid "Here you can add all the dependents of each employee."
+msgstr "在这里，您可以添加每个员工的所有抚养人。"
+
+msgid "Here you can record emergency contacts of employees."
+msgstr "在这里，您可以记录员工的紧急联系。"
+
+msgid "Here you can view all the deativated employees. You can still recover data of a deactivated employee by clicking on Activate."
+msgstr "在这里，您可以查看所有有才华的员工。您仍然可以通过单击激活来恢复停用员工的数据。"
+
+msgid "Here you can view the deleted employees. Click on Download to download employee data as a JSON."
+msgstr "在这里，您可以查看已删除的员工。单击下载以将员工数据作为JSON下载。"
+
+msgid "Here you can views how employee data changed overtime."
+msgstr "在这里，您可以查看员工数据如何加班。"
+
+msgid "Here you can define any teams in your organization."
+msgstr "在这里，您可以定义组织中的任何团队。"
+
+msgid "Here you can add employees to the correct team."
+msgstr "在这里，您可以将员工添加到正确的团队中。"
+
+msgid "Here you can add company documents to share announcements, policies, procedures, etc. with employees. These documents can be shared with specific employees or departments."
+msgstr "在这里，您可以添加公司文件，以与员工共享公告，政策，程序等。这些文件可以与特定的员工或部门共享。"
+
+msgid "Here you can define the document types employees can add to the system."
+msgstr "在这里，您可以定义员工可以添加到系统的文档类型。"
+
+msgid "Here you can add personal employee documents. The visibility of the employee document can be defined when adding the document."
+msgstr "在这里，您可以添加个人员工文件。添加文档时，可以定义员工文档的可见性。"
+
+msgid "Here all the payslips generated through the payroll module. Click on Add New to manually add a payslip."
+msgstr "在这里，所有通过工资单模块生成的paylips。单击“添加新的”以手动添加payslip。"
+
+msgid "Here you can attendance records of employees and to view, edit, filter employee attendance records."
+msgstr "在这里，您可以出席员工记录并查看，编辑，过滤员工出勤记录。"
+
+msgid "Here you can view whether employees are Clocked In, Clocked Out or Not Clocked In."
+msgstr "在这里，您可以查看员工是否被计入，计时了。"
+
+msgid "Here you can assign performance reviews to employees and manage, view, and edit performance reviews."
+msgstr "在这里，您可以为员工分配绩效评估，并管理，查看和编辑绩效评估。"
+
+msgid "Here you can request review feedback from a supervisor/peer."
+msgstr "在这里，您可以请求从主管/同伴那里进行查看反馈。"
+
+msgid "Here you can create custom review templates for the performance review process."
+msgstr "在这里，您可以为性能审核过程创建自定义审核模板。"
+
+msgid "Here you can monitor the progress of all employee goals."
+msgstr "在这里，您可以监视所有员工目标的进度。"
+
+msgid "Here you can define leave types available in your organization."
+msgstr "在这里，您可以定义组织中可用的休假类型。"
+
+msgid "Here you can define leave periods by providing a name for the period and by selecting the correct start and end dates."
+msgstr "在这里，您可以通过提供该期间的名称并选择正确的开始和结束日期来定义休假期。"
+
+msgid "Here you can define the working and non-working days according to your organization or by country."
+msgstr "在这里，您可以根据您的组织或国家 /地区定义工作和非工作日。"
+
+msgid "Here you need to add all the holidays relevant to a leave period."
+msgstr "在这里，您需要添加与休假期有关的所有假期。"
+
+msgid "Here you can override the behavior of a leave type for job titles, employment statuses, or even individual employees by adding a leave rule."
+msgstr "在这里，您可以通过添加休假规则来覆盖工作头衔，就业状况甚至个人员工的假期行为。"
+
+msgid "Here you can keep track of employee PTO. This can be used to compensate an employee and adjust leave balance from previous years."
+msgstr "在这里，您可以跟踪员工PTO。这可以用来补偿员工并调整前几年的休假余额。"
+
+msgid "Here you can create a leave group so you can group employees and create leave types or leave rules affecting the employees in the group."
+msgstr "在这里，您可以创建一个休假组，以便您可以分组员工并创建休假类型，或者请假规则影响组中的员工。"
+
+msgid "Here you can add employees to the correct leave group."
+msgstr "在这里，您可以将员工添加到正确的休假组中。"
+
+msgid "Here you can view all employee leaves and approve leave requests."
+msgstr "在这里，您可以查看所有员工离开并批准休假请求。"
+
+msgid "Here you can define the types of assets in your organization so you can easily categorize the assets."
+msgstr "在这里，您可以定义组织中的资产类型，因此您可以轻松地对资产进行分类。"
+
+msgid "Here you can add and manage company assets each employee or department has."
+msgstr "在这里，您可以添加和管理每个员工或部门拥有的公司资产。"
+
+msgid "Here you can define the different types of expenses in an organization."
+msgstr "在这里，您可以定义组织中不同类型的费用。"
+
+msgid "Here you can add the different types of payment methods used for expenses in an organization."
+msgstr "在这里，您可以添加用于组织中费用的不同类型的付款方式。"
+
+msgid "Here you can add employee expenses, edit and approve expense requests."
+msgstr "在这里，您可以添加员工费用，编辑和批准费用请求。"
+
+msgid "Here you can create custom forms to collect data from employees."
+msgstr "在这里，您可以创建自定义表格以从员工那里收集数据。"
+
+msgid "Here you can assign forms to employees, fill and download forms."
+msgstr "在这里，您可以将表格分配给员工，填写和下载表格。"
+
+msgid "Here you can add courses."
+msgstr "在这里，您可以添加课程。"
+
+msgid "Here you can add different training sessions to a particular course. You can let employees sign up for training sessions or assign training sessions by changing the attendance type."
+msgstr "在这里，您可以在特定课程中添加不同的培训课程。您可以让员工通过更改出勤类型来注册培训课程或分配培训课程。"
+
+msgid "Here you can assign training sessions to employees."
+msgstr "在这里，您可以将培训课程分配给员工。"
+
+msgid "Here you can add employee travel requests and view and edit travel requests."
+msgstr "在这里，您可以添加员工旅行请求并查看和编辑旅行请求。"
+
+msgid "Here you can define the different types of overtime available in your organization."
+msgstr "在这里，您可以定义组织中可用的不同类型的加班。"
+
+msgid "Here you can add and manage employee overtime requests."
+msgstr "在这里，您可以添加和管理员工的加班请求。"
+
+msgid "Here you can define different types of loans employees are eligible for."
+msgstr "在这里，您可以定义不同类型的贷款员工有资格获得资格。"
+
+msgid "Here you can add employee loans."
+msgstr "在这里，您可以增加员工贷款。"
+
+msgid "Here you can generate different admin reports."
+msgstr "在这里，您可以生成不同的管理报告。"
+
+msgid "Here you can export payroll meta data."
+msgstr "在这里，您可以导出薪资元数据。"
+
+msgid "Here you can view all the admin reports generated."
+msgstr "在这里，您可以查看生成的所有管理报告。"
+
+msgid "Here you can create user accounts for employees for them to login to their IceHrm accounts."
+msgstr "在这里，您可以为员工创建用户帐户，以供他们登录其ICEHRM帐户。"
+
+msgid "Here you can create user roles to give or deny access to certain modules."
+msgstr "在这里，您可以创建用户角色以赋予或拒绝访问某些模块。"
+
+msgid "Here you can Enable or Disable modules."
+msgstr "在这里，您可以启用或禁用模块。"
+
+msgid "Here you can manage what permissions each user level has."
+msgstr "在这里，您可以管理每个用户级别具有的权限。"
+
+msgid "Here you can view details about your current IceHrm plan."
+msgstr "在这里，您可以查看有关当前ICEHRM计划的详细信息。"
+
+msgid "Here you can view all your pending transactions."
+msgstr "在这里，您可以查看所有未决的交易。"
+
+msgid "Here you can view details about prepaid credit and other IceHrm transactions."
+msgstr "在这里，您可以查看有关预付费信贷和其他ICEHRM交易的详细信息。"
+
+msgid "Here you can manage the countries you will be able to select within the system."
+msgstr "在这里，您可以管理系统内选择的国家。"
+
+msgid "Here you can manage all the provinces you will be able to select within the system."
+msgstr "在这里，您可以管理系统中可以选择的所有省份。"
+
+msgid "Here you can manage all the currencies you will be able to select within the system."
+msgstr "在这里，您可以管理系统中可以选择的所有货币。"
+
+msgid "Here you can manage all the nationalities you will be able to select within the system."
+msgstr "在这里，您可以管理系统中可以选择的所有国籍。"
+
+msgid "Here you can manage all the ethnicities you will be able to select within the system."
+msgstr "在这里，您可以管理系统中可以选择的所有种族。"
+
+msgid "Here you can manage all the immigration status options you will be able to select within the system."
+msgstr "在这里，您可以管理系统中可以选择的所有移民状态选项。"
+
+msgid "Here you can add data importers that can be used to import data to the system."
+msgstr "在这里，您可以添加可用于将数据导入系统的数据进口商。"
+
+msgid "Here you can import data using the data importers defined in the system."
+msgstr "在这里，您可以使用系统中定义的数据进口数据导入数据。"
+
+msgid "Here you can make changes to the fields available in the employee form."
+msgstr "在这里，您可以更改员工表格中可用的字段。"
+
+msgid "Here you can check attendance time recorded every day for all the employees or a specific employee."
+msgstr "在这里，您可以查看所有员工或特定员工每天记录的出勤时间。"
+
+msgid "Here you can check how much of a percentage of attendance time goes into timesheets for each employee."
+msgstr "在这里，您可以检查每位员工的出勤时间一定百分比进入时间表。"
+
+msgid "Here you can view approved employee leaves of employees with the leave dates."
+msgstr "在这里，您可以在休假日期查看批准的员工叶子。"
+
+msgid "Here you can define different type of salary components in your organization."
+msgstr "在这里，您可以在组织中定义不同类型的薪资组件。"
+
+msgid "Here you can define all the salary components related to the defined salary component types."
+msgstr "在这里，您可以定义与定义的薪金组件类型相关的所有工资组件。"
+
+msgid "Here you can add all salary components related to each of your employees."
+msgstr "在这里，您可以添加与每个员工相关的所有薪资组件。"
+
+msgid "Here you can add all the employees to the correct payroll group. Each employee should belong to a payroll group."
+msgstr "在这里，您可以将所有员工添加到正确的工资组中。每个员工应属于工资组。"
+
+msgid "Here you can create payroll reports for a specific time period."
+msgstr "在这里，您可以在特定时间段内创建薪资报告。"
+
+msgid "Here you can define the payroll columns that will be used to generate payroll reports."
+msgstr "在这里，您可以定义将用于生成工资单报告的工资列。"
+
+msgid "Here you can define different payroll groups if you have different payroll calculations for different employees."
+msgstr "如果您对不同的员工有不同的薪资计算，则可以在这里定义不同的工资组。"
+
+msgid "Here you can define different calculation such as tax that can be used in payroll columns."
+msgstr "在这里，您可以定义不同的计算，例如可以在工资单列中使用的税收。"
+
+msgid "Here you can create custom payslip templates."
+msgstr "在这里，您可以创建自定义Payslip模板。"
+
+msgid "Here you can add employment types that will be used when creating job posts."
+msgstr "在这里，您可以添加创建工作职位时将使用的就业类型。"
+
+msgid "Here you can add different experience levels that will be used when creating job posts."
+msgstr "在这里，您可以添加不同的经验级别，这些级别将在创建工作职位时使用。"
+
+msgid "Here you can add job functions that will be used when creating job posts."
+msgstr "在这里，您可以添加创建作业职位时将使用的作业功能。"
+
+msgid "Here you can add education levels that will be used when creating job posts."
+msgstr "在这里，您可以添加创建工作职位时将使用的教育水平。"
+
+msgid "Here you can define the benefits that will be given by your organization to candidates."
+msgstr "在这里，您可以定义您的组织将给候选人带来的好处。"
+
+msgid "Here you can create job posts and generate job links."
+msgstr "在这里，您可以创建工作帖子并生成作业链接。"
+
+msgid "Here you can view all the candidates that have applied for job positions through the job links. You can manually candidates by clicking on Add New."
+msgstr "在这里，您可以查看通过工作链接申请职位的所有候选人。您可以通过单击“添加新”来手动候选。"
+
+msgid "Here you can manage of all the candidates with the hiring stage New."
+msgstr "在这里，您可以通过新的招聘阶段来管理所有候选人。"
+
+msgid "Here you can manage all the candidates in the Phone Screen hiring stage."
+msgstr "在这里，您可以在电话屏幕招聘阶段管理所有候选人。"
+
+msgid "Here you can manage all the candidates in the Assessment hiring stage."
+msgstr "在这里，您可以在评估招聘阶段管理所有候选人。"
+
+msgid "Here you can manage all the candidates of the candidates in the Interview hiring stage. The candidate will be moved to this stage when an interview is scheduled."
+msgstr "在这里，您可以在面试招聘阶段管理候选人的所有候选人。安排面试时，候选人将移至这个阶段。"
+
+msgid "Here you can manage all the candidates in the Offer Sent hiring stage."
+msgstr "在这里，您可以在发送招聘阶段的报价中管理所有候选人。"
+
+msgid "Here you can manage all the candidate in the Hired hiring stage."
+msgstr "在这里，您可以在雇用的招聘阶段管理所有候选人。"
+
+msgid "Here you can manage all the rejected candidates."
+msgstr "在这里，您可以管理所有被拒绝的候选人。"
+
+msgid "Here you can add all the skills you have."
+msgstr "在这里，您可以添加所有技能。"
+
+msgid "Here you can add details about your education levels."
+msgstr "在这里，您可以添加有关您的教育水平的详细信息。"
+
+msgid "Here you can add all the certifications you have completed."
+msgstr "在这里，您可以添加已完成的所有认证。"
+
+msgid "Here you can add all the languages you are fluent in."
+msgstr "在这里，您可以添加流利的所有语言。"
+
+msgid "Here you can add details about your dependents."
+msgstr "在这里，您可以添加有关家属的详细信息。"
+
+msgid "Here you can add details about your emergency contacts."
+msgstr "在这里，您可以添加有关紧急联系人的详细信息。"
+
+msgid "Here you can add and manage your leave requests."
+msgstr "在这里，您可以添加和管理请假请求。"
+
+msgid "Here you can view a summary of all leave balances."
+msgstr "在这里，您可以查看所有休假余额的摘要。"
+
+msgid "Here you can view all your approved leave requests."
+msgstr "在这里，您可以查看所有批准的休假请求。"
+
+msgid "Here you can view all your pending leave requests."
+msgstr "在这里，您可以查看所有未决的休假请求。"
+
+msgid "Here you can view and approve leave requests from your subordinates."
+msgstr "在这里，您可以查看和批准下属的休假请求。"
+
+msgid "Here you can view all cancellation requests from your subordinates."
+msgstr "在这里，您可以从下属查看所有取消请求。"
+
+msgid "Here you can view and approve leave requests if you are an approver to an employee."
+msgstr "如果您是员工的批准者，则可以在这里查看并批准请求请求。"
+
+msgid "Here you can view all your leave requests on a calendar."
+msgstr "在这里，您可以在日历上查看所有休假请求。"
+
+msgid "Here you can add and manage projects you are working on or assigned to."
+msgstr "在这里，您可以添加和管理正在从事或分配的项目。"
+
+msgid "Here you can mark your attendance by punching in and punching out."
+msgstr "在这里，您可以通过拳打和拳打来标记出席。"
+
+msgid "Here you can view and manage all pending, approved, rejected and submitted timesheets."
+msgstr "在这里，您可以查看和管理所有待处理，批准，拒绝和提交时间表。"
+
+msgid "Here you can manage of all your approved timesheets."
+msgstr "在这里，您可以管理所有批准的时间表。"
+
+msgid "Here you can manage of all your pending timesheets."
+msgstr "在这里，您可以管理所有待处理的时间表。"
+
+msgid "Here you can view and approve timesheetes of your subordinates."
+msgstr "在这里，您可以查看和批准下属的时间表。"
+
+msgid "Here you can view and manage all your pending, approved, rejected and submitted attendance sheets."
+msgstr "在这里，您可以查看和管理所有待处理，批准，拒绝和提交的出勤表。"
+
+msgid "Here you can view all your approved attendance sheets."
+msgstr "在这里，您可以查看所有批准的出勤表。"
+
+msgid "Here you can view all your pending attendance sheets."
+msgstr "在这里，您可以查看所有未决的出席表。"
+
+msgid "Here you can manage and approve attendance sheets of your subordinates."
+msgstr "在这里，您可以管理和批准下属的出勤表。"
+
+msgid "Here you add an overtime request and view previous overtime requests."
+msgstr "在这里，您添加加班请求并查看以前的加班请求。"
+
+msgid "Here you can manage and approve overtime requests of your subordinates."
+msgstr "在这里，您可以管理和批准下属的加班请求。"
+
+msgid "Here you can upload your personal documents to the system."
+msgstr "在这里，您可以将您的个人文档上传到系统。"
+
+msgid "Here you can view all the company documents that are shared with you."
+msgstr "在这里，您可以查看与您共享的所有公司文档。"
+
+msgid "Here you can view all your payslips. You can download your payslips as PDFs."
+msgstr "在这里，您可以查看所有payslips。您可以将paylips下载为PDF。"
+
+msgid "Here you will find all the forms you need to fill out and all previous completed forms."
+msgstr "在这里，您可以找到您需要填写的所有表格以及所有以前的完整表格。"
+
+msgid "Here you can view all contact information of employees in the organization."
+msgstr "在这里，您可以查看组织中员工的所有联系信息。"
+
+msgid "Here you can view all the training sessions available."
+msgstr "在这里，您可以查看所有可用的培训课程。"
+
+msgid "Here you can view all training sessions you have signed up for or assigned to."
+msgstr "在这里，您可以查看您已注册或分配的所有培训课程。"
+
+msgid "Here you can manage all the training sessions of your subordinates."
+msgstr "在这里，您可以管理下属的所有培训课程。"
+
+msgid "Here you can view all the training sessions coordinated by you."
+msgstr "在这里，您可以查看您协调的所有培训课程。"
+
+msgid "Here you can manage all the self assessments you need to work on for your performance reviews."
+msgstr "在这里，您可以管理所有需要进行绩效评估所需的自我评估。"
+
+msgid "Here you can provide feedback to your peers or subordinates."
+msgstr "在这里，您可以向同龄人或下属提供反馈。"
+
+msgid "Here you can submit and manage your travel requests."
+msgstr "在这里，您可以提交和管理旅行请求。"
+
+msgid "Here you can view and approve travel requests of your subordinates."
+msgstr "在这里，您可以查看并批准下属的旅行请求。"
+
+msgid "Here you can approve travel requests if you are an approver to certain employees."
+msgstr "如果您是某些员工的批准者，则可以在这里批准旅行请求。"
+
+msgid "Here you can submit and manage your expense requests."
+msgstr "在这里，您可以提交和管理您的费用请求。"
+
+msgid "Here you can manage and approve expenses requests of your subordinates."
+msgstr "在这里，您可以管理和批准下属的费用请求。"
+
+msgid "Here you can approve expense requests if you are an approver to certain employees."
+msgstr "如果您是某些员工的批准者，则可以在这里批准费用请求。"
+
+msgid "Here you can view details of all your salary components."
+msgstr "在这里，您可以查看所有薪水组件的详细信息。"
+
+msgid "Here you can view details of all the loans you have taken from the company."
+msgstr "在这里，您可以查看公司从公司获得的所有贷款的详细信息。"
+
+msgid "Position"
+msgstr "位置"
+
+msgid "Application Date"
+msgstr "申请日期"
+
+msgid "Basic"
+msgstr "基本的"
+
+msgid "All Candidates"
+msgstr "所有候选人"
+
+msgid "New"
+msgstr "新的"
+
+msgid "Screening"
+msgstr "筛选"
+
+msgid "Assessment"
+msgstr "评估"
+
+msgid "Interview Scheduled"
+msgstr "面试计划"
+
+msgid "Offer"
+msgstr "提供"
+
+msgid "Hired"
+msgstr "雇用"
+
+msgid "Member"
+msgstr "成员"
+
+msgid "Attach File"
+msgstr "附加文件 "
+
+msgid "Here you can define the different pay grades in your organization."
+msgstr "您可以在此处定义组织中的不同薪酬等级。"

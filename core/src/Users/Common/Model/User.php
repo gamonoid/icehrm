@@ -6,9 +6,11 @@
 namespace Users\Common\Model;
 
 use Classes\BaseService;
+use Classes\FileService;
 use Classes\ModuleAccess;
 use Classes\ModuleAccessService;
 use Classes\PermissionManager;
+use Employees\Common\Model\Employee;
 use Model\BaseModel;
 use Classes\IceResponse;
 
@@ -88,7 +90,19 @@ class User extends BaseModel
 
     public function postProcessGetData($obj)
     {
-        return BaseService::getInstance()->cleanUpUser($obj);
+        $obj = BaseService::getInstance()->cleanUpUser($obj);
+        
+        // Add employee profile image if user has an employee associated
+        if (!empty($obj->employee)) {
+            $employee = new Employee();
+            $employee->Load('id = ?', [$obj->employee]);
+            if ($employee->id) {
+                $employee = FileService::getInstance()->updateSmallProfileImage($employee);
+                $obj->image = $employee->image;
+            }
+        }
+        
+        return $obj;
     }
 
     public function postProcessGetElement($obj)

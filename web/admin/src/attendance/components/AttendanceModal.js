@@ -4,7 +4,7 @@ import {
 import React, { useState } from 'react';
 import {
   EnvironmentOutlined, MailTwoTone, PhoneTwoTone, SecurityScanTwoTone, ClockCircleTwoTone,
-  TagsTwoTone,
+  TagsTwoTone, HomeTwoTone,
 } from '@ant-design/icons';
 
 const { Meta } = Card;
@@ -67,6 +67,14 @@ class AttendanceModal extends React.Component {
                       <ClockCircleTwoTone />
                       <Text underline>{' Clock-out:'}</Text>
                       {this.dateRenderer(element.out_time)}
+                    </Space>
+                  )}
+                {(element.work_from_home === '1' || element.work_from_home === 1)
+                  && (
+                    <Space>
+                      <HomeTwoTone twoToneColor="#1890ff" />
+                      <Text underline>{' Working from Home:'}</Text>
+                      <Text>Yes</Text>
                     </Space>
                   )}
                 {element.in_ip

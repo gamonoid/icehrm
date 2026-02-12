@@ -476,6 +476,135 @@ table.dataTable{
     line-height: 17px;
 }
 
+/* User panel - switched profile styling */
+.user-panel.switched-profile {
+    padding: 10px;
+}
+
+/* Switched badge - contains avatar, name, label and close button */
+.switched-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    color: #d48806;
+    padding: 8px 12px;
+    background-color: #fffbe6;
+    border: 1px solid #ffe58f;
+    border-radius: 6px;
+    gap: 10px;
+}
+
+/* Avatar inside the badge */
+.switched-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ffe58f;
+    flex-shrink: 0;
+}
+
+.switched-avatar:hover {
+    border-color: #d48806;
+}
+
+/* Info container with label and name */
+.switched-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.switched-label {
+    font-size: 11px;
+    color: #ad6800;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.switched-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #874d00;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
+
+.switched-name:hover {
+    color: #d48806;
+    text-decoration: none;
+}
+
+/* Close button inside the badge */
+.switched-close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    margin-left: 4px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(212, 136, 6, 0.2);
+    color: #d48806;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.switched-close-btn:hover {
+    background-color: #ff4d4f;
+    color: #fff;
+}
+
+.switched-close-btn .fa,
+.switched-close-btn .fa-times {
+    font-size: 11px;
+    line-height: 1;
+}
+
+/* Dark mode - switched profile */
+body.dark-mode .switched-badge {
+    background-color: #2b2111;
+    border-color: #594214;
+    color: #d89614;
+}
+
+body.dark-mode .switched-avatar {
+    border-color: #594214;
+}
+
+body.dark-mode .switched-avatar:hover {
+    border-color: #d89614;
+}
+
+body.dark-mode .switched-label {
+    color: #d89614;
+}
+
+body.dark-mode .switched-name {
+    color: #e8b339;
+}
+
+body.dark-mode .switched-name:hover {
+    color: #ffc53d;
+}
+
+body.dark-mode .switched-close-btn {
+    background-color: rgba(216, 150, 20, 0.2);
+    color: #d89614;
+}
+
+body.dark-mode .switched-close-btn:hover {
+    background-color: #a61d24;
+    color: #fff;
+}
+
 .list-group-item-text{
     margin-bottom:5px;
 }
@@ -1025,4 +1154,492 @@ table.dataTable{
 .codex-editor {
     border: solid 1px #ddd;
     padding: 8px;
+}
+
+/* Dashboard elements - rounded corners to match Ant Design */
+#EmployeeListWrapper,
+#EmployeeOnlineOfflineChart,
+#EmployeeDistributionChart,
+#TaskListWrap,
+#EmployeeStatusWrap {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+/* ============================================
+   Ant Design Compatible CSS Overrides
+   ============================================ */
+
+/* -----------------------------------------
+   Left Sidebar Menu - Ant Design Style
+   ----------------------------------------- */
+
+/* Sidebar container */
+.sidebar {
+    background: #fff;
+    padding-bottom: 20px;
+}
+
+.sidebar .sidebar-menu {
+    box-shadow: none;
+    border: none;
+    background: #fff;
+    border-radius: 0;
+    padding: 4px 0;
+}
+
+/* User panel - cleaner look */
+.user-panel {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 16px;
+    margin-bottom: 8px;
+}
+
+.user-panel > .info > p {
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.user-panel > .info > a {
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 12px;
+}
+
+/* Menu items */
+.sidebar-menu > li {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-menu > li > a {
+    padding: 10px 16px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    line-height: 22px;
+    transition: all 0.2s ease;
+    border-radius: 0;
+    margin: 0;
+}
+
+.sidebar-menu > li > a > i,
+.sidebar-menu > li > a > .fa,
+.sidebar-menu > li > a > .glyphicon {
+    color: rgba(0, 0, 0, 0.65);
+    margin-right: 10px;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+/* Menu item hover - top level */
+.sidebar-menu > li > a:hover {
+    background-color: #f5f5f5;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+/* Active menu item - top level with highlighting */
+.sidebar-menu > li.active > a {
+    background-color: #e6f4ff;
+    color: #1677ff;
+    font-weight: 500;
+    border-left: 3px solid #1677ff;
+    margin-left: -3px;
+}
+
+.sidebar-menu > li.active > a > i,
+.sidebar-menu > li.active > a > .fa,
+.sidebar-menu > li.active > a > .glyphicon {
+    color: #1677ff;
+}
+
+/* Treeview (expandable menu) */
+.treeview.active {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+/* Expand/collapse arrow icons - position on left side for top-level menus */
+.sidebar-menu > li.treeview > a {
+    position: relative;
+    padding-left: 12px;
+}
+
+/* Move the pull-right-container to the left */
+.sidebar-menu > li.treeview > a > .pull-right-container,
+.sidebar-menu > li.treeview > a > span.pull-right-container,
+.sidebar-menu > li.treeview > a .pull-right-container {
+    position: absolute !important;
+    left: 10px !important;
+    right: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+    width: auto !important;
+    float: none !important;
+    display: inline-block !important;
+}
+
+/* Style the arrow icon */
+.sidebar-menu > li.treeview > a .pull-right-container .fa,
+.sidebar-menu > li.treeview > a .pull-right-container .fa-angle-left,
+.sidebar-menu > li.treeview > a .pull-right-container > i {
+    font-size: 12px !important;
+    color: rgba(0, 0, 0, 0.45) !important;
+    transition: transform 0.2s ease !important;
+    transform: rotate(0deg) !important;
+    float: none !important;
+    display: inline-block !important;
+}
+
+/* Rotate icon when menu is expanded */
+.sidebar-menu > li.treeview.active > a .pull-right-container .fa,
+.sidebar-menu > li.treeview.active > a .pull-right-container .fa-angle-left,
+.sidebar-menu > li.treeview.active > a .pull-right-container > i {
+    transform: rotate(-90deg) !important;
+}
+
+/* Hide arrows in submenu items */
+.sidebar-menu .treeview-menu > li > a > .fa-angle-left,
+.sidebar-menu .treeview-menu > li > a > .fa-angle-down {
+    display: none !important;
+}
+
+/* Treeview submenu */
+.sidebar-menu .treeview-menu {
+    background: #fff;
+    padding: 4px 0;
+    margin: 0;
+}
+
+.sidebar .sidebar-menu .treeview-menu > li {
+    background: transparent;
+}
+
+.sidebar-menu .treeview-menu > li > a {
+    padding: 8px 16px 8px 48px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    line-height: 22px;
+    transition: all 0.2s ease;
+    margin: 0;
+    border-radius: 0;
+}
+
+.sidebar-menu .treeview-menu > li > a:hover {
+    background-color: #fafafa;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+/* Active submenu item - subtler highlighting */
+.sidebar-menu .treeview-menu > li.active > a,
+.sidebar-menu .treeview-menu > li > a.active {
+    background-color: transparent;
+    color: #1677ff;
+    font-weight: 500;
+    border-right: 2px solid #1677ff;
+}
+
+/* Remove bold on hover for submenu items */
+.treeview-menu li:hover {
+    font-weight: normal;
+}
+
+/* Menu header/section title */
+.sidebar-menu li.header {
+    padding: 16px 16px 8px 24px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 8px;
+}
+
+.sidebar-menu li.header:first-child {
+    border-top: none;
+    margin-top: 0;
+}
+
+/* Skin-blue overrides for sidebar */
+.skin-blue .sidebar > .sidebar-menu > li > a:hover,
+.skin-blue .sidebar > .sidebar-menu > li.active > a {
+    color: rgba(0, 0, 0, 0.85);
+    background: transparent !important;
+}
+
+/* Left side container */
+.left-side.sidebar-offcanvas {
+    background: #fff;
+    border-right: 1px solid #f0f0f0;
+}
+
+/* -----------------------------------------
+   Tabs - Ant Design Style
+   ----------------------------------------- */
+
+/* Tab navigation container */
+.nav-tabs {
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 16px;
+    padding: 0;
+}
+
+/* Tab items */
+.nav-tabs > li {
+    margin-bottom: -1px;
+}
+
+.nav-tabs > li > a {
+    padding: 12px 16px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    margin-right: 24px;
+    transition: all 0.2s ease;
+    border-radius: 0;
+}
+
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: #1677ff;
+}
+
+/* Active tab */
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    border: none;
+    border-bottom: 2px solid #1677ff;
+    background: transparent;
+    color: #1677ff;
+    font-weight: 500;
+}
+
+/* Tab content */
+.tab-content {
+    padding: 16px 0;
+}
+
+/* Sub-tabs */
+.sub-tab {
+    border-top: 1px solid #f0f0f0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 16px;
+}
+
+/* Module tabs */
+.mod-tab {
+    margin-bottom: 0;
+    margin-left: 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mod-tab > li > a {
+    margin-right: 16px;
+}
+
+/* Nav pills - Ant Design style */
+.nav-pills > li > a {
+    border-radius: 6px;
+    padding: 8px 16px;
+    color: rgba(0, 0, 0, 0.65);
+    transition: all 0.2s ease;
+}
+
+.nav-pills > li > a:hover {
+    background: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    background: #1677ff;
+    color: #fff;
+}
+
+/* -----------------------------------------
+   Additional Ant Design Compatibility
+   ----------------------------------------- */
+
+/* Buttons - softer look */
+.btn {
+    border-radius: 6px;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+.btn-primary {
+    background-color: #1677ff;
+    border-color: #1677ff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #4096ff;
+    border-color: #4096ff;
+}
+
+/* Form inputs */
+.form-control {
+    border-radius: 6px;
+    border-color: #d9d9d9;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: #1677ff;
+    box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.1);
+}
+
+/* Panels/Cards */
+.panel {
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+}
+
+.panel-heading {
+    border-radius: 8px 8px 0 0;
+    background: #fafafa;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 8px;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 16px 24px;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.modal-footer {
+    border-top: 1px solid #f0f0f0;
+    padding: 16px 24px;
+}
+
+/* Tables */
+.table {
+    box-shadow: none;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+}
+
+.table > thead > tr > th {
+    background: #fafafa;
+    border-bottom: 1px solid #f0f0f0;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    padding: 12px 16px;
+}
+
+.table > tbody > tr > td {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 12px 16px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.table > tbody > tr:hover > td {
+    background: #fafafa;
+}
+
+/* Dropdown menus */
+.dropdown-menu {
+    border-radius: 8px;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+    padding: 4px;
+}
+
+.dropdown-menu > li > a {
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.85);
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu > li > a:hover {
+    background: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.85);
+}
+
+/* Labels/Badges */
+.label {
+    border-radius: 4px;
+    font-weight: 400;
+    padding: 2px 8px;
+}
+
+.badge {
+    border-radius: 10px;
+    font-weight: 400;
+}
+
+/* Progress bars */
+.progress {
+    border-radius: 100px;
+    background-color: #f5f5f5;
+    height: 8px;
+}
+
+.progress-bar {
+    border-radius: 100px;
+    background-color: #1677ff;
+}
+
+/* Alerts/Callouts */
+.callout {
+    border-radius: 8px;
+    border-left-width: 4px;
+}
+
+.alert {
+    border-radius: 8px;
+    border: 1px solid;
+}
+
+/* List groups */
+.list-group-item {
+    border-color: #f0f0f0;
+    padding: 12px 16px;
+}
+
+.list-group-item:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+.list-group-item:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+/* Disable icon animation on menu hover */
+.sidebar-menu .animated-hover:hover,
+.sidebar-menu a:hover .animated-hover,
+.sidebar-menu .faa-parent.animated-hover:hover > [class*="faa-"],
+.sidebar-menu a:hover [class*="faa-"] {
+    -webkit-animation: none !important;
+    animation: none !important;
 }

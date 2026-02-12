@@ -2,7 +2,7 @@
  Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
-import { Space, Tag } from 'antd';
+import { Avatar, Space, Tag } from 'antd';
 import { CopyOutlined, MonitorOutlined } from '@ant-design/icons';
 import React from 'react';
 import {
@@ -143,6 +143,68 @@ class SubordinateEmployeeOvertimeAdapter extends EmployeeOvertimeAdminAdapter {
     this.itemName = 'Overtime';
     this.itemNameLower = 'employeeovertime';
     this.modulePathName = 'overtime';
+  }
+
+  getDataMapping() {
+    return [
+      'id',
+      'image',
+      'employee',
+      'category',
+      'start_time',
+      'end_time',
+      'project',
+      'status',
+    ];
+  }
+
+  getHeaders() {
+    return [
+      { sTitle: 'ID', bVisible: false },
+      { sTitle: '' },
+      { sTitle: 'Employee' },
+      { sTitle: 'Category' },
+      { sTitle: 'Start Time' },
+      { sTitle: 'End Time' },
+      { sTitle: 'Project' },
+      { sTitle: 'Status' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      {
+        title: '',
+        dataIndex: 'image',
+        render: (text, record) => <Avatar src={text} />,
+      },
+      {
+        title: 'Employee',
+        dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Category',
+        dataIndex: 'category',
+        sorter: true,
+      },
+      {
+        title: 'Start Time',
+        dataIndex: 'start_time',
+      },
+      {
+        title: 'End Time',
+        dataIndex: 'end_time',
+      },
+      {
+        title: 'Project',
+        dataIndex: 'project',
+      },
+      {
+        title: 'Status',
+        dataIndex: 'status',
+      },
+    ];
   }
 
   isSubProfileTable() {

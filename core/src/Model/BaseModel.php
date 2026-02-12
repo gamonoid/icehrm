@@ -34,6 +34,9 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
         "t"
     );
 
+	public function getEmployee() {
+		return $this->employee;
+	}
     public function getAdminAccess()
     {
         return array("get","element","save","delete");
@@ -88,6 +91,16 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
     {
         $permissionMethod = "get".str_replace(' ', '', $userLevel)."Access";
         $allowedAccessMatrix = $this->$permissionMethod();
+
+		if (!empty($this->getEmployee())) {
+			$userId = BaseService::getInstance()->getCurrentUser()->id;
+			$employee = BaseService::getInstance()->getEmployeeByUserId($userId);
+			if (!empty($employee) && $this->getEmployee() === $employee->id) {
+				$permissionMethod = "getUserOnlyMeAccess";
+				$allowedAccessMatrixMeOnly = $this->$permissionMethod();
+				$allowedAccessMatrix = array_unique(array_merge($allowedAccessMatrixMeOnly,$allowedAccessMatrix), SORT_REGULAR);
+			}
+		}
 
         $userRoles = $this->getMatchingUserRoles($userRoles);
         if ($userRoles === false) {
@@ -176,6 +189,10 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
     {
         return "employee";
     }
+
+	public function preDeleteChecks()
+	{
+	}
 
     public function getModuleAccess()
     {
@@ -379,6 +396,7 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
 
     public function Delete()
     {
+		$this->preDeleteChecks();
         $ok = parent::Delete();
         if (!$ok) {
             $message = sprintf('%s: (%s) %s', 'Error deleting', $this->ErrorMsg(), json_encode($this));
@@ -439,6 +457,10 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
         return $this->countRows($sql, $data);
     }
 
+	public function getEditorDraftContent() {
+		return null;
+	}
+
     public function setIsSubOrdinateQuery($val)
     {
         $this->isSubordinateQuery = $val;
@@ -446,6 +468,18 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
 
 	public function getCustomFieldTable( $table ) {
 		return $table;
+	}
+
+	public function getEditorSideBarObject($mode) {
+		return $this;
+	}
+
+	public function editorObjectUpdated() {
+
+	}
+
+	public function getEditorPermissions() {
+		return ['default'];
 	}
 
     private function startsWith($string, $query){

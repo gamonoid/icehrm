@@ -91,9 +91,9 @@ class RoboFile extends \Robo\Tasks
 		foreach ($languages as $language) {
 			$str = $this->getUpdatedTranslationString($language->name, $file);
 			file_put_contents(
-				__DIR__.'/../lang/'.$language->name.'.po',
+				__DIR__.'/core/lang/'.$language->name.'.po',
 				$str);
-			$this->say('Updated :'.realpath(__DIR__.'/../lang/'.$language->name.'.po'));
+			$this->say('Updated :'.__DIR__.'/core/lang/'.$language->name.'.po');
 		}
 	}
 
@@ -235,7 +235,7 @@ class RoboFile extends \Robo\Tasks
 				}
 
 				if ($langColumn === null) {
-					$this->say('Invalid Language');
+					$this->say('Invalid Language:'.$lang);
 					exit();
 				}
 			} else {

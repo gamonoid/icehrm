@@ -9,6 +9,7 @@
 namespace TimeSheets\User\Api;
 
 use Classes\BaseService;
+use Classes\FileService;
 use Classes\IceConstants;
 use Classes\IceResponse;
 use Classes\SettingsManager;
@@ -30,8 +31,12 @@ class TimeSheetsActionManager extends SubActionManager
 {
     public function getTimeEntries($req)
     {
-        $employee = $this->baseService->getElement('Employee', $this->getCurrentProfileId(), null, true);
-        $timeSheetEntry = new EmployeeTimeEntry();
+		$timeSheet = new EmployeeTimeSheet();
+		$timeSheet->Load('id = ?', [$req->id]);
+		$timeSheet->total_time = $timeSheet->getTotalTime();
+		$employee = $this->baseService->getElement('Employee', $timeSheet->employee, null, true);
+		$employee = FileService::getInstance()->updateSmallProfileImage($employee);
+		$timeSheetEntry = new EmployeeTimeEntry();
         $list = $timeSheetEntry->Find("timesheet = ? order by date_start", array($req->id));
         $mappingStr = $req->sm;
         $map = json_decode($mappingStr);
@@ -42,7 +47,12 @@ class TimeSheetsActionManager extends SubActionManager
         if (!empty($mappingStr)) {
             $list = $this->baseService->populateMapping($list, $map);
         }
-        return new IceResponse(IceResponse::SUCCESS, $list);
+
+		$emp = new \stdClass();
+		$emp->name = $employee->first_name.' '.$employee->last_name;
+		$emp->image = $employee->image;
+
+        return new IceResponse(IceResponse::SUCCESS, [$list, $emp, $timeSheet]);
     }
 
     public function changeTimeSheetStatus($req)
@@ -256,9 +266,15 @@ class TimeSheetsActionManager extends SubActionManager
         $list = $this->baseService->populateMapping($list, $map);
 
         $data = array();
-        foreach ($list as $leave) {
-            $data[] = $this->workScheduleToEvent($leave);
+		$dateTotals = [];
+        foreach ($list as $entry) {
+            $data[] = $this->workScheduleToEvent($entry);
+			$date = date('Y-m-d', strtotime($entry->date_start));
+			$dateTotals[$date] = (float)$dateTotals[$date] + floatval(CalendarTools::getTimeDiffInHours($entry->date_start, $entry->date_end));
         }
+
+		$totalHoursEvents = $this->createDateTotalEvents($dateTotals);
+		$data = array_merge($data, $totalHoursEvents);
 
         // Add employee leave days
 
@@ -290,6 +306,24 @@ class TimeSheetsActionManager extends SubActionManager
         echo json_encode($data);
         exit();
     }
+
+	public function createDateTotalEvents($dateTotals) {
+		$events = [];
+		foreach($dateTotals as $day => $total) {
+			$event = array();
+			$event['id'] = $day;
+			$event['start'] = $day." 23:59:59+00:00";
+			$event['end'] = $day." 23:59:59+00:00";
+			$event['title'] = 'Total Hours: '.$total;
+
+			$event['color'] = '#3f78b9';
+			$event['backgroundColor'] = '#3f78b9';
+			$event['textColor'] = "#FFF";
+
+			$events[] = $event;
+		}
+		return $events;
+	}
 
     public function workScheduleToEvent($schedule)
     {
@@ -566,7 +600,10 @@ class TimeSheetsActionManager extends SubActionManager
                 $data->created = date('Y-m-d H:i:s');
                 $data->status = 'Active';
                 $data->timesheet = $req->currentId;
-            }
+            } elseif ((int)$val[2] === 0) {
+				$data->Delete();
+				continue;
+			}
             $time = floatval($val[2]) * 60 * 60;
             $data->date_start = $val[0].' 00:00:00';
             $data->time_start = '00:00:00';

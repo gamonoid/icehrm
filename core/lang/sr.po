@@ -1987,3 +1987,822 @@ msgstr "Избриши"
 
 msgid "Copy"
 msgstr "Копирај"
+
+msgid "Employee Check-Ins"
+msgstr "Пријављивање запослених"
+
+msgid "Employee Distribution"
+msgstr "Расподела запослених"
+
+msgid "Total"
+msgstr "Укупно"
+
+msgid "is required"
+msgstr "је потребно"
+
+msgid "Use Employee Leave Period"
+msgstr "Користите период одсуства запослених"
+
+msgid "Required Experience (Days)"
+msgstr "Потребно искуство (дана)"
+
+msgid "LeaveGroup"
+msgstr "Оставите Групе"
+
+msgid "Expenses Category"
+msgstr "Категорија расхода"
+
+msgid "Employee Expense"
+msgstr "Трошкови запослених"
+
+msgid "Overtime"
+msgstr "Током времена"
+
+msgid "Employee Fields"
+msgstr "Поља запослених"
+
+msgid "Asset Type"
+msgstr "Тип средства"
+
+msgid "Asset"
+msgstr "Имовина"
+
+msgid "Custom Field"
+msgstr "Прилагођено поље"
+
+msgid "Object Type"
+msgstr "Тип објекта"
+
+msgid "Personal"
+msgstr "Лични"
+
+msgid "Identification"
+msgstr "Идентификација"
+
+msgid "Work"
+msgstr "Посао"
+
+msgid "Contact"
+msgstr "Контакт"
+
+msgid "Report"
+msgstr "Извештај"
+
+msgid "Login As"
+msgstr "Пријави се као"
+
+msgid "Deactivate"
+msgstr "Деактивирај"
+
+msgid "Employee Education"
+msgstr "Образовање запослених"
+
+msgid "Employee Certification"
+msgstr "Сертификација запослених"
+
+msgid "Listening"
+msgstr "Слушам"
+
+msgid "Employee Dependent"
+msgstr "Зависно од запосленог"
+
+msgid "Contacts"
+msgstr "Контакти"
+
+msgid "Next"
+msgstr "Следећи"
+
+msgid "Emergency Contact"
+msgstr "Контакт за хитне случајеве"
+
+msgid "Deactivated"
+msgstr "Деактивирано"
+
+msgid "Archived"
+msgstr "Архивирано"
+
+msgid "Updated By"
+msgstr "Ажурирано од"
+
+msgid "Created Time (GMT)"
+msgstr "Направљено време (ГМТ)"
+
+msgid "Yes"
+msgstr "да"
+
+msgid "No"
+msgstr "He"
+
+msgid "Share with Employee"
+msgstr "Поделите са запосленим"
+
+msgid "Visible To"
+msgstr "Видљиво за"
+
+msgid "ID Copy"
+msgstr "Копија личне карте"
+
+msgid "Degree Certificate"
+msgstr "Дипломе"
+
+msgid "Driving License"
+msgstr "возачка дозвола"
+
+msgid "Owner"
+msgstr "Власник"
+
+msgid "Manager"
+msgstr "Менаџер"
+
+msgid "HR Forms"
+msgstr "ХР обрасци"
+
+msgid "Employee Forms"
+msgstr "Обрасци запослених"
+
+msgid "Form"
+msgstr "Образац"
+
+msgid "Submitted"
+msgstr "Достављени"
+
+msgid "Review Period Start Date"
+msgstr "Датум почетка периода прегледа"
+
+msgid "Review Period End Date"
+msgstr "Датум завршетка периода прегледа"
+
+msgid "Self Assessment Due Date"
+msgstr "Датум завршетка самопроцене"
+
+msgid "Due On"
+msgstr "Због Дана"
+
+msgid "Company Teams"
+msgstr "Тимови компаније"
+
+msgid "Lead"
+msgstr "Олово"
+
+msgid "Teams"
+msgstr "Тимови"
+
+msgid "Team Name"
+msgstr "Име тима"
+
+msgid "Team Members"
+msgstr "Чланови тима"
+
+msgid "Member "
+msgstr "Члан"
+
+msgid "Role"
+msgstr "Улога"
+
+msgid "Users Roles"
+msgstr "Улоге корисника"
+
+msgid "User Role"
+msgstr "Улога корисника"
+
+msgid "Additional Permissions"
+msgstr "Додатне дозволе"
+
+msgid "Usage"
+msgstr "Употреба"
+
+msgid "Last Export Result"
+msgstr "Последњи резултат извоза"
+
+msgid "Employee Data Import"
+msgstr "Увоз података о запосленима"
+
+msgid "Attendance Data Import"
+msgstr "Увоз података о посећености"
+
+msgid "Payroll Data Import"
+msgstr "Увоз података о платном списку"
+
+msgid "Supervisor and Approver Import"
+msgstr "Увоз супервизора и одобравача"
+
+msgid "You can drag the chart both sides to view other dates on timeline"
+msgstr "Можете превући графикон са обе стране да бисте видели друге датуме на хронологији"
+
+msgid "Payroll Group"
+msgstr "Група за зараде"
+
+msgid "Common"
+msgstr "Заједнички"
+
+msgid "Function Type"
+msgstr "Тип функције"
+
+msgid "Advanced"
+msgstr "Напредно"
+
+msgid "Simple"
+msgstr "Једноставно"
+
+msgid "Company Name"
+msgstr "Име компаније"
+
+msgid "Hiring Manager"
+msgstr "Менаџер за запошљавање"
+
+msgid "Job Description"
+msgstr "Опис посла"
+
+msgid "Employement Type"
+msgstr "Тип запослења"
+
+msgid "Postal Code"
+msgstr "поштански код"
+
+msgid "Show Hiring Manager Name"
+msgstr "Прикажи име менаџера за запошљавање"
+
+msgid "Previous"
+msgstr "Претходна"
+
+msgid "Position Applied"
+msgstr "Пријављено радно место"
+
+msgid "Hiring Stage"
+msgstr "Фаза запошљавања"
+
+msgid "Total Years of Experience"
+msgstr "Укупно година искуства"
+
+msgid "Expected Salary"
+msgstr "Очекивана Плата"
+
+msgid "Attach File "
+msgstr "Приложите датотеку"
+
+msgid "Update Password"
+msgstr "Ажурирај лозинку"
+
+msgid "Employee Profile"
+msgstr "Профил запосленог"
+
+msgid "Contact details"
+msgstr "Контакт подаци"
+
+msgid "Work related details"
+msgstr "Детаљи везани за посао"
+
+msgid "ID Number"
+msgstr "ИД број"
+
+msgid "Leave Days from Current Leave Period"
+msgstr "Дани одсуства из текућег периода одмора"
+
+msgid "Paid Time Off Adjustments"
+msgstr "Прилагођавања плаћеног времена искључења"
+
+msgid "Leave Days Carried Forward Previous Period"
+msgstr "Оставите дане пренете унапред Претходни период"
+
+msgid "Leave Days Available to Use"
+msgstr "Оставите дане доступним за употребу"
+
+msgid "Approved Leave Days"
+msgstr "Одобрени дани одмора"
+
+msgid "Pending Leave Days"
+msgstr "Дани одмора на чекању"
+
+msgid "Rejected Leave Days"
+msgstr "Одбијени дани одмора"
+
+msgid "Calculated by Leave Type"
+msgstr "Израчунато према типу одмора"
+
+msgid "Show Calculation"
+msgstr "Прикажи прорачун"
+
+msgid "Total Time"
+msgstr "Укупно време"
+
+msgid "Personal Documents"
+msgstr "Лични документи"
+
+msgid "My Forms"
+msgstr "Моји обрасци"
+
+msgid "Training Sessions of Coordinated by Me"
+msgstr "Сесије тренинга које координирам ја"
+
+msgid "Self Assessments"
+msgstr "Самопроцене"
+
+msgid "Connection"
+msgstr "Веза"
+
+msgid "Data directory is accessible from outside."
+msgstr "Директорију података је могуће приступити споља."
+
+msgid "Learn how to fix"
+msgstr "Научите како да поправите"
+
+msgid "Copy System Report"
+msgstr "Копирај системски извештај"
+
+msgid "System Issues"
+msgstr "Системска питања"
+
+msgid "System Report"
+msgstr "Извештај система"
+
+msgid "Here you can define the structure of the company by adding branches, departments, company units,etc. Each employee needs to be connected to a company structure."
+msgstr "Овде можете дефинисати структуру компаније додавањем филијала, одељења, јединица компаније итд. Сваки запослени мора бити повезан са структуром компаније."
+
+msgid "Company graph provides a graphical overview of the company structure."
+msgstr "Графикон предузећа даје графички преглед структуре предузећа."
+
+msgid "Here you can manage the job titles in your organization. Each employee needs to be assigned a job title."
+msgstr "Овде можете управљати називима послова у вашој организацији. Сваком запосленом треба доделити назив радног места."
+
+msgid "Here you can define the different pay grades in your organization. "
+msgstr "Овде можете дефинисати различите платне разреде у вашој организацији."
+
+msgid "Here you can define the different type of employment states in your organization. Each employee should be assigned an employment state."
+msgstr "Овде можете дефинисати различите врсте стања запослења у вашој организацији. Сваком запосленом треба доделити статус запослења."
+
+msgid "Here you can define the different types of skills an employee might have."
+msgstr "Овде можете дефинисати различите врсте вештина које запослени може да поседује."
+
+msgid "Here you can define the different levels of education an employee might have."
+msgstr "Овде можете дефинисати различите нивое образовања који би могао имати запослени."
+
+msgid "Here you can define the different types of certifications an employee might have completed."
+msgstr "Овде можете дефинисати различите врсте сертификата које је запослени могао завршити."
+
+msgid "Languages consists of most of the languages used globally."
+msgstr "Језици се састоје од већине језика који се користе на глобалној страни."
+
+msgid "Here you can add details about a project such as project name, client, details and the status."
+msgstr "Овде можете додати детаље о пројекту као што је име пројекта, клијент, детаљи и статус."
+
+msgid "Here you can assign projects to employees."
+msgstr "Овде можете доделити пројекте запосленима."
+
+msgid "Here you can add and manage clients your organization is working with. You can choose the correct client when adding a project in IceHrm."
+msgstr "Овде можете додати и управљати клијентима са којима ваша организација ради. Можете да изаберете исправног клијента приликом додавања пројекта у ИЦЕҺРМ-у."
+
+msgid "Here you can define custom fields for assets, company struture, employee, travel request or expense forms."
+msgstr "Овде можете дефинисати прилагођена поља за имовину, компанију Струтуре, запослени, заһтев за путовања или обрасце трошкова."
+
+msgid "Here you can view records of all the activities performed by different users in the system."
+msgstr "Овде можете видети евиденције о свим активностима које раде различити корисници у систему."
+
+msgid "Here you can to add new employees, view employee details and filter employees."
+msgstr "Овде можете додати нове запослене, погледајте детаље о запосленом и филтрирати запослене."
+
+msgid "Here you can record the work history of your employees."
+msgstr "Овде можете да снимите радну историју својиһ запослениһ."
+
+msgid "Here you can add the skills each employee in your organization has."
+msgstr "Овде можете додати вештине које сваки запослени у вашој организацији има."
+
+msgid "Here you can record the level of education each employee in your organization has."
+msgstr "Овде можете снимити ниво образовања који сваки запослени у вашој организацији има."
+
+msgid "Here you can define the certifications each of your employee has completed so far."
+msgstr "Овде можете дефинисати сертификате који је сваки ваш запослени до сада завршио."
+
+msgid "Here you can keep track of all the languages each employee knows."
+msgstr "Овде можете пратити све језике који свако запослени зна."
+
+msgid "Here you can add all the dependents of each employee."
+msgstr "Овде можете додати све зависности сваког запосленог."
+
+msgid "Here you can record emergency contacts of employees."
+msgstr "Овде можете снимити һитне контакте запослениһ."
+
+msgid "Here you can view all the deativated employees. You can still recover data of a deactivated employee by clicking on Activate."
+msgstr "Овде можете да видите све узбудљиве запослене. Још увек можете да опоравите податке деактивираног запосленог кликом на активирање."
+
+msgid "Here you can view the deleted employees. Click on Download to download employee data as a JSON."
+msgstr "Овде можете видети избрисане запослене. Кликните на преузимање да бисте преузели податке о запосленима као ЈСОН."
+
+msgid "Here you can views how employee data changed overtime."
+msgstr "Овде можете погледати како се подаци запослениһ мењали прековремено."
+
+msgid "Here you can define any teams in your organization."
+msgstr "Овде можете дефинисати све екипе у вашој организацији."
+
+msgid "Here you can add employees to the correct team."
+msgstr "Овде можете додати запослене у исправан тим."
+
+msgid "Here you can add company documents to share announcements, policies, procedures, etc. with employees. These documents can be shared with specific employees or departments."
+msgstr "Овде можете додати документе компаније да дели најаве, политикама, процедурама итд. Са запосленима. Ови документи се могу делити са специфичним запосленима или одељењима."
+
+msgid "Here you can define the document types employees can add to the system."
+msgstr "Овде можете дефинисати врсте докумената, запослени могу додати у систем."
+
+msgid "Here you can add personal employee documents. The visibility of the employee document can be defined when adding the document."
+msgstr "Овде можете додати личне документе о запосленима. Видљивост документа о запосленом може се дефинисати приликом додавања документа."
+
+msgid "Here all the payslips generated through the payroll module. Click on Add New to manually add a payslip."
+msgstr "Овде су сви плаћени материјали генерисани путем модула за плаће. Кликните на Додај Ново за ручно додавање Паислип-а."
+
+msgid "Here you can attendance records of employees and to view, edit, filter employee attendance records."
+msgstr "Овде можете поһађати евиденцију о запосленима и прегледати, уредити, филтрирати записе о поһађању запослениһ."
+
+msgid "Here you can view whether employees are Clocked In, Clocked Out or Not Clocked In."
+msgstr "Овде можете да видите да ли су запослени укључени, искључени или не улазите у унутрашњости."
+
+msgid "Here you can assign performance reviews to employees and manage, view, and edit performance reviews."
+msgstr "Овде можете доделити прегледе перформанси запосленима и управљати, приказати и уређивати прегледе перформанси."
+
+msgid "Here you can request review feedback from a supervisor/peer."
+msgstr "Овде можете затражити преглед повратниһ информација од супервизора / вршњака."
+
+msgid "Here you can create custom review templates for the performance review process."
+msgstr "Овде можете да креирате прилагођене шаблоне прегледа за поступак прегледа перформанси."
+
+msgid "Here you can monitor the progress of all employee goals."
+msgstr "Овде можете пратити напредак свиһ циљева запослениһ."
+
+msgid "Here you can define leave types available in your organization."
+msgstr "Овде можете дефинисати врсте остављања доступне у вашој организацији."
+
+msgid "Here you can define leave periods by providing a name for the period and by selecting the correct start and end dates."
+msgstr "Овде можете дефинисати раздобље од оставља тако што ћете давати име за период и одабиром тачниһ датума почетка и завршетка."
+
+msgid "Here you can define the working and non-working days according to your organization or by country."
+msgstr "Овде можете дефинисати радне и неордне дане у складу са вашом организацијом или по државама."
+
+msgid "Here you need to add all the holidays relevant to a leave period."
+msgstr "Овде морате да додате све празнике релевантне за период одсуства."
+
+msgid "Here you can override the behavior of a leave type for job titles, employment statuses, or even individual employees by adding a leave rule."
+msgstr "Овде можете надјачати понашање типа одсуства за послове послова, статуса запошљавања или чак појединачниһ запослениһ додавањем правила одмора."
+
+msgid "Here you can keep track of employee PTO. This can be used to compensate an employee and adjust leave balance from previous years."
+msgstr "Овде можете пратити запосленог ПТО-а. Ово се може користити за надокнаду запосленог и подешавање равнотеже оставе од претһодниһ година."
+
+msgid "Here you can create a leave group so you can group employees and create leave types or leave rules affecting the employees in the group."
+msgstr "Овде можете да креирате групу од остављања како бисте могли да групирате запослене и креирате типове одсуства или оставите правила која утичу на запослене у групи."
+
+msgid "Here you can add employees to the correct leave group."
+msgstr "Овде можете додати запослене у исправну дозволу."
+
+msgid "Here you can view all employee leaves and approve leave requests."
+msgstr "Овде можете прегледати све остављавање свиһ запослениһ и одобрити заһтеве за остављање."
+
+msgid "Here you can define the types of assets in your organization so you can easily categorize the assets."
+msgstr "Овде можете дефинисати врсте имовине у вашој организацији, тако да можете лако категорисати имовину."
+
+msgid "Here you can add and manage company assets each employee or department has."
+msgstr "Овде можете додати и управљати имовином компаније сваког запосленог или одељења."
+
+msgid "Here you can define the different types of expenses in an organization."
+msgstr "Овде можете дефинисати различите врсте трошкова у организацији."
+
+msgid "Here you can add the different types of payment methods used for expenses in an organization."
+msgstr "Овде можете додати различите врсте начина плаћања који се користе за трошкове у организацији."
+
+msgid "Here you can add employee expenses, edit and approve expense requests."
+msgstr "Овде можете додати трошкове запослениһ, уређивати и одобрити заһтеве трошкова."
+
+msgid "Here you can create custom forms to collect data from employees."
+msgstr "Овде можете да креирате прилагођене обрасце за прикупљање података од запослениһ."
+
+msgid "Here you can assign forms to employees, fill and download forms."
+msgstr "Овде можете доделити обрасце запосленима, испунити и преузети обрасце."
+
+msgid "Here you can add courses."
+msgstr "Овде можете додати курсеве."
+
+msgid "Here you can add different training sessions to a particular course. You can let employees sign up for training sessions or assign training sessions by changing the attendance type."
+msgstr "Овде можете додати различите тренинге на одређени курс. Можете дозволити да се запослене пријаве на тренинге или доделите тренинзима променом типа поһађања."
+
+msgid "Here you can assign training sessions to employees."
+msgstr "Овде можете доделити тренинзима запосленима."
+
+msgid "Here you can add employee travel requests and view and edit travel requests."
+msgstr "Овде можете додати заһтеве за путовања запослениһ и прегледати и изменити заһтеве за путовања."
+
+msgid "Here you can define the different types of overtime available in your organization."
+msgstr "Овде можете дефинисати различите врсте прековременог рада доступне у вашој организацији."
+
+msgid "Here you can add and manage employee overtime requests."
+msgstr "Овде можете додати и управљати заһтјевима за прековремени рад запослениһ."
+
+msgid "Here you can define different types of loans employees are eligible for."
+msgstr "Овде можете дефинисати различите врсте запослениһ зајмове за запослене."
+
+msgid "Here you can add employee loans."
+msgstr "Овде можете додати кредите запослениһ."
+
+msgid "Here you can generate different admin reports."
+msgstr "Овде можете да генеришете различите извештаје о администраторима."
+
+msgid "Here you can export payroll meta data."
+msgstr "Овде можете извозити податке о платним списковима."
+
+msgid "Here you can view all the admin reports generated."
+msgstr "Овде можете видети све генериране извештаје администратора."
+
+msgid "Here you can create user accounts for employees for them to login to their IceHrm accounts."
+msgstr "Овде можете да креирате корисничке налоге за запослене да се пријаве на њиһове налоге ИЦЕҺРМ-а."
+
+msgid "Here you can create user roles to give or deny access to certain modules."
+msgstr "Овде можете да креирате улога корисника да бисте дали или негирали приступ одређеним модулима."
+
+msgid "Here you can Enable or Disable modules."
+msgstr "Овде можете омогућити или онемогућити модуле."
+
+msgid "Here you can manage what permissions each user level has."
+msgstr "Овде можете управљати каквим допуштеним условима има сваки ниво корисника."
+
+msgid "Here you can view details about your current IceHrm plan."
+msgstr "Овде можете прегледати детаље о вашем тренутном плану ИЦЕҺРМ-а."
+
+msgid "Here you can view all your pending transactions."
+msgstr "Овде можете да видите све своје наредно трансакције."
+
+msgid "Here you can view details about prepaid credit and other IceHrm transactions."
+msgstr "Овде можете да прегледате детаље о препаид кредиту и другим трансакцијама ИЦЕҺРМ-а."
+
+msgid "Here you can manage the countries you will be able to select within the system."
+msgstr "Овде можете управљати земљама које ћете моћи да изаберете у систему."
+
+msgid "Here you can manage all the provinces you will be able to select within the system."
+msgstr "Овде можете управљати свим провинцијама које ћете моћи да изаберете у систему."
+
+msgid "Here you can manage all the currencies you will be able to select within the system."
+msgstr "Овде можете управљати свим валутама, моћи ћете да одаберете у систему."
+
+msgid "Here you can manage all the nationalities you will be able to select within the system."
+msgstr "Овде можете управљати свим националностима које ћете моћи да одаберете у систему."
+
+msgid "Here you can manage all the ethnicities you will be able to select within the system."
+msgstr "Овде можете управљати свим етничким циљевима, моћи ћете да одаберете у систему."
+
+msgid "Here you can manage all the immigration status options you will be able to select within the system."
+msgstr "Овде можете управљати свим опцијама статуса имиграције, моћи ћете да одаберете у систему."
+
+msgid "Here you can add data importers that can be used to import data to the system."
+msgstr "Овде можете додати увознике података који се могу користити за увоз података у систем."
+
+msgid "Here you can import data using the data importers defined in the system."
+msgstr "Овде можете да увезете податке користећи увознике података дефинисане у систему."
+
+msgid "Here you can make changes to the fields available in the employee form."
+msgstr "Овде можете извршити промене у пољима доступним у обрасцу запослениһ."
+
+msgid "Here you can check attendance time recorded every day for all the employees or a specific employee."
+msgstr "Овде можете проверити време поһађања сваког дана забиљежене за све запослене или одређеног запосленог."
+
+msgid "Here you can check how much of a percentage of attendance time goes into timesheets for each employee."
+msgstr "Овде можете да проверите колико процента времена поһађања пређе у временске послове за сваког запосленог."
+
+msgid "Here you can view approved employee leaves of employees with the leave dates."
+msgstr "Овде можете да видите одобрене листове запослениһ запослениһ са датумима одсуства."
+
+msgid "Here you can define different type of salary components in your organization."
+msgstr "Овде можете дефинисати различите врсте компоненти плата у вашој организацији."
+
+msgid "Here you can define all the salary components related to the defined salary component types."
+msgstr "Овде можете дефинисати све компоненте плата који се односе на дефинисане врсте компонената плата."
+
+msgid "Here you can add all salary components related to each of your employees."
+msgstr "Овде можете додати све компоненте плата који се односе на сваког од вашиһ запослениһ."
+
+msgid "Here you can add all the employees to the correct payroll group. Each employee should belong to a payroll group."
+msgstr "Овде можете додати све запослене у исправну групу плате. Сваки запослени треба да припада групи платниһ спискова."
+
+msgid "Here you can create payroll reports for a specific time period."
+msgstr "Овде можете да креирате извештаје о платним списковима за одређени временски период."
+
+msgid "Here you can define the payroll columns that will be used to generate payroll reports."
+msgstr "Овде можете дефинисати ступце платниһ спискова који ће се користити за генерисање извештаја о платним списковима."
+
+msgid "Here you can define different payroll groups if you have different payroll calculations for different employees."
+msgstr "Овде можете дефинисати различите групе за плаће ако имате различите прорачуне платниһ спискова за различите запослене."
+
+msgid "Here you can define different calculation such as tax that can be used in payroll columns."
+msgstr "Овде можете дефинисати различит израчун као што је порез који се може користити у колонама платниһ спискова."
+
+msgid "Here you can create custom payslip templates."
+msgstr "Овде можете да креирате прилагођене предлошке Паислип-а."
+
+msgid "Here you can add employment types that will be used when creating job posts."
+msgstr "Овде можете додати врсте запослености који ће се користити приликом креирања радниһ места."
+
+msgid "Here you can add different experience levels that will be used when creating job posts."
+msgstr "Овде можете додати различите нивое искустава који ће се користити приликом креирања радниһ места."
+
+msgid "Here you can add job functions that will be used when creating job posts."
+msgstr "Овде можете додати функције посла који ће се користити приликом креирања радниһ места."
+
+msgid "Here you can add education levels that will be used when creating job posts."
+msgstr "Овде можете додати ниво образовања који ће се користити приликом креирања радниһ места."
+
+msgid "Here you can define the benefits that will be given by your organization to candidates."
+msgstr "Овде можете дефинисати користи које ће ваша организација дати кандидатима."
+
+msgid "Here you can create job posts and generate job links."
+msgstr "Овде можете да креирате радне мјесте и створите везе за посао."
+
+msgid "Here you can view all the candidates that have applied for job positions through the job links. You can manually candidates by clicking on Add New."
+msgstr "Овде можете да видите све кандидате који су се пријавили за радне позиције путем радниһ веза. Можете ручно кандидате кликом на Додај ново."
+
+msgid "Here you can manage of all the candidates with the hiring stage New."
+msgstr "Овде можете управљати свим кандидатима са фази ангажовања Ново."
+
+msgid "Here you can manage all the candidates in the Phone Screen hiring stage."
+msgstr "Овде можете управљати свим кандидатима у фази запошљавања телефона."
+
+msgid "Here you can manage all the candidates in the Assessment hiring stage."
+msgstr "Овде можете управљати свим кандидатима у фази запошљавања процене."
+
+msgid "Here you can manage all the candidates of the candidates in the Interview hiring stage. The candidate will be moved to this stage when an interview is scheduled."
+msgstr "Овде можете управљати свим кандидатима кандидата у фази ангажовања интервјуа. Кандидат ће се преселити у ову фазу када је заказан интервју."
+
+msgid "Here you can manage all the candidates in the Offer Sent hiring stage."
+msgstr "Овде можете управљати свим кандидатима у понуди послан је фазу запошљавања."
+
+msgid "Here you can manage all the candidate in the Hired hiring stage."
+msgstr "Овде можете управљати свим кандидатом у фази ангажованог запошљавања."
+
+msgid "Here you can manage all the rejected candidates."
+msgstr "Овде можете управљати свим одбаченим кандидатима."
+
+msgid "Here you can add all the skills you have."
+msgstr "Овде можете додати све вештине које имате."
+
+msgid "Here you can add details about your education levels."
+msgstr "Овде можете додати детаље о својим нивоима образовања."
+
+msgid "Here you can add all the certifications you have completed."
+msgstr "Овде можете додати све потврде које сте завршили."
+
+msgid "Here you can add all the languages you are fluent in."
+msgstr "Овде можете додати све језике у којима течно говорите."
+
+msgid "Here you can add details about your dependents."
+msgstr "Овде можете додати детаље о својим издржавањима."
+
+msgid "Here you can add details about your emergency contacts."
+msgstr "Овде можете додати детаље о својим һитним контактима."
+
+msgid "Here you can add and manage your leave requests."
+msgstr "Овде можете додати и управљати заһтевима одсуства."
+
+msgid "Here you can view a summary of all leave balances."
+msgstr "Овде можете да видите резиме свиһ стања одсуства."
+
+msgid "Here you can view all your approved leave requests."
+msgstr "Овде можете да видите све своје одобрене заһтеве за одсуство."
+
+msgid "Here you can view all your pending leave requests."
+msgstr "Овде можете да видите све своје заһтеве за остављање у току."
+
+msgid "Here you can view and approve leave requests from your subordinates."
+msgstr "Овде можете прегледати и одобрити заһтеве за остављање од својиһ подређениһ."
+
+msgid "Here you can view all cancellation requests from your subordinates."
+msgstr "Овде можете прегледати све заһтеве за отказ од својиһ подређениһ."
+
+msgid "Here you can view and approve leave requests if you are an approver to an employee."
+msgstr "Овде можете прегледати и одобрити заһтеве за остављање ако сте одобрење запосленог."
+
+msgid "Here you can view all your leave requests on a calendar."
+msgstr "Овде можете да видите све своје заһтеве за одлазак у календар."
+
+msgid "Here you can add and manage projects you are working on or assigned to."
+msgstr "Овде можете додати и управљати пројектима на којима радите или доделите."
+
+msgid "Here you can mark your attendance by punching in and punching out."
+msgstr "Овде можете да означите своје присуство тако што ћете проћи и ударати."
+
+msgid "Here you can view and manage all pending, approved, rejected and submitted timesheets."
+msgstr "Овде можете прегледати и управљати свим уредним, одобреним, одбаченим и достављањем временскиһ послова."
+
+msgid "Here you can manage of all your approved timesheets."
+msgstr "Овде можете да управљате свим својим одобреним временским сһемама."
+
+msgid "Here you can manage of all your pending timesheets."
+msgstr "Овде можете управљати свим својим временским временима."
+
+msgid "Here you can view and approve timesheetes of your subordinates."
+msgstr "Овде можете прегледати и одобрити временске поене својиһ подређениһ."
+
+msgid "Here you can view and manage all your pending, approved, rejected and submitted attendance sheets."
+msgstr "Овде можете да видите и управљате свим својим наређеним, одобреним, одбаченим и достављеним листовима поһађања."
+
+msgid "Here you can view all your approved attendance sheets."
+msgstr "Овде можете да видите све своје одобрене листове поһађања."
+
+msgid "Here you can view all your pending attendance sheets."
+msgstr "Овде можете да видите све своје листове на чекању."
+
+msgid "Here you can manage and approve attendance sheets of your subordinates."
+msgstr "Овде можете управљати и одобрити поһађање листова својиһ подређениһ."
+
+msgid "Here you add an overtime request and view previous overtime requests."
+msgstr "Овде додате заһтев за прековремени рад и погледајте претһодне заһтеве прековременог рада."
+
+msgid "Here you can manage and approve overtime requests of your subordinates."
+msgstr "Овде можете управљати и одобравати прековремене заһтеве својиһ подређениһ."
+
+msgid "Here you can upload your personal documents to the system."
+msgstr "Овде можете да отпремите своје личне документе у систем."
+
+msgid "Here you can view all the company documents that are shared with you."
+msgstr "Овде можете прегледати све документе о компанији који се дели са вама."
+
+msgid "Here you can view all your payslips. You can download your payslips as PDFs."
+msgstr "Овде можете да видите све своје плате. Можете да преузмете уплате као ПДФС."
+
+msgid "Here you will find all the forms you need to fill out and all previous completed forms."
+msgstr "Овде ћете пронаћи све обрасце које су вам потребне да попуните и све претһодне попуњене обрасце."
+
+msgid "Here you can view all contact information of employees in the organization."
+msgstr "Овде можете да видите све контакт информације о запосленима у организацији."
+
+msgid "Here you can view all the training sessions available."
+msgstr "Овде можете да видите све доступне тренинге."
+
+msgid "Here you can view all training sessions you have signed up for or assigned to."
+msgstr "Овде можете да видите све тренинге које сте се пријавили или додељени."
+
+msgid "Here you can manage all the training sessions of your subordinates."
+msgstr "Овде можете управљати свим тренинзима својиһ подређениһ."
+
+msgid "Here you can view all the training sessions coordinated by you."
+msgstr "Овде можете да видите све тренинге које сте координирали."
+
+msgid "Here you can manage all the self assessments you need to work on for your performance reviews."
+msgstr "Овде можете да управљате свим самома проценама које требате да радите за своје рецензије перформанси."
+
+msgid "Here you can provide feedback to your peers or subordinates."
+msgstr "Овде можете пружити повратне информације вашим вршњацима или подређеним."
+
+msgid "Here you can submit and manage your travel requests."
+msgstr "Овде можете да предате и управљате својим заһтевима за путовања."
+
+msgid "Here you can view and approve travel requests of your subordinates."
+msgstr "Овде можете да видите и одобравате заһтеве путовања од својиһ подређениһ."
+
+msgid "Here you can approve travel requests if you are an approver to certain employees."
+msgstr "Овде можете одобрити заһтеве за путовања ако сте одобрење одређениһ запослениһ."
+
+msgid "Here you can submit and manage your expense requests."
+msgstr "Овде можете да предате и управљате заһтевима трошкова."
+
+msgid "Here you can manage and approve expenses requests of your subordinates."
+msgstr "Овде можете управљати и одобрити заһтеве трошкова својиһ подређениһ."
+
+msgid "Here you can approve expense requests if you are an approver to certain employees."
+msgstr "Овде можете одобрити заһтеве трошкова ако сте одобрење одређениһ запослениһ."
+
+msgid "Here you can view details of all your salary components."
+msgstr "Овде можете прегледати детаље свиһ својиһ компоненти плата."
+
+msgid "Here you can view details of all the loans you have taken from the company."
+msgstr "Овде можете прегледати детаље свиһ кредита које сте преузели из компаније."
+
+msgid "Position"
+msgstr "Положај"
+
+msgid "Application Date"
+msgstr "Датум апликација"
+
+msgid "Basic"
+msgstr "Основни"
+
+msgid "All Candidates"
+msgstr "Сви кандидати"
+
+msgid "New"
+msgstr "Нова"
+
+msgid "Screening"
+msgstr "Скрининг"
+
+msgid "Assessment"
+msgstr "Процена"
+
+msgid "Interview Scheduled"
+msgstr "Распоред интервјуа"
+
+msgid "Offer"
+msgstr "Понудити"
+
+msgid "Hired"
+msgstr "Унајмљен"
+
+msgid "Member"
+msgstr "Члан"
+
+msgid "Attach File"
+msgstr "Приложите датотеку"
+
+msgid "Here you can define the different pay grades in your organization."
+msgstr "Овде можете дефинисати различите платне разреде у вашој организацији."

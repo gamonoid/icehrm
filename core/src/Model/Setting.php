@@ -106,9 +106,10 @@ class Setting extends BaseModel
             return null;
         }
 
-        if (strlen($obj->value) > 30) {
-            $obj->value = substr($obj->value, 0, 30).'...';
+        if (in_array($obj->name, SettingsManager::getInstance()->getHiddenSettings())) {
+            return null;
         }
+
         return $obj;
     }
 

@@ -3,6 +3,7 @@ namespace Classes;
 
 use Classes\Crypt\AesCtr;
 use Model\Setting;
+use Utils\LogManager;
 
 class SettingsManager
 {
@@ -51,6 +52,17 @@ class SettingsManager
         }
         return $settings->value;
     }
+
+	public function getHiddenSettings() {
+		if (class_exists("\\Classes\\ProVersion")) {
+			$pro = new \Classes\ProVersion();
+			if (method_exists($pro, 'hiddenSettings')) {
+				return $pro->hiddenSettings();
+			}
+		}
+
+		return [];
+	}
 
     private function encrypt($value)
     {
@@ -148,4 +160,33 @@ class SettingsManager
             'Attendance: Overtime Calculation Class'
         ];
     }
+
+	public function getS3Settings($private = true) {
+		$obj = new \stdClass();
+		if ($private) {
+			$obj->uploadFilesToS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
+			$obj->uploadFilesToS3Key = SettingsManager::getInstance()->getSetting(
+				"Files: Amazon S3 Key for File Upload"
+			);
+			$obj->uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
+				"Files: Amazon S3 Secret for File Upload"
+			);
+			$obj->s3Bucket = SettingsManager::getInstance()->getSetting("Files: S3 Bucket");
+			$obj->webUrl = SettingsManager::getInstance()->getSetting("Files: S3 Web Url");
+			$obj->awsRegion = SettingsManager::getInstance()->getSetting("System: AWS Region");
+		} else {
+			$obj->uploadFilesToS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3 for Editor");
+			$obj->uploadFilesToS3Key = SettingsManager::getInstance()->getSetting(
+				"Files: Amazon S3 Key for Editor File Upload"
+			);
+			$obj->uploadFilesToS3Secret = SettingsManager::getInstance()->getSetting(
+				"Files: Amazon S3 Secret for Editor File Upload"
+			);
+			$obj->s3Bucket = SettingsManager::getInstance()->getSetting("Files: S3 Bucket for Editor");
+			$obj->webUrl = SettingsManager::getInstance()->getSetting("Files: S3 Web Url for Editor");
+			$obj->awsRegion = SettingsManager::getInstance()->getSetting("System: AWS Region for Editor");
+		}
+
+		return $obj;
+	}
 }

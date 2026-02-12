@@ -1,7 +1,7 @@
 <?php
 if(!defined('SIGN_IN_ELEMENT_MAPPING_FIELD_NAME')){define('SIGN_IN_ELEMENT_MAPPING_FIELD_NAME','employee');}
 
-if(!defined('APP_NAME')){define('APP_NAME','IceHrm');}
+if(!defined('APP_NAME')){define('APP_NAME','ICE Hrm');}
 if(!defined('FB_URL')){define('FB_URL', 'https://www.facebook.com/icehrm');};
 if(!defined('TWITTER_URL')){define('TWITTER_URL', 'https://twitter.com/icehrmapp');};
 
@@ -13,10 +13,10 @@ if(!defined('HOME_LINK_OTHERS')){
 }
 
 //Version
-define('VERSION', '33.5.0.OS');
-define('CACHE_VALUE', '33.5.0.OS.2023-01310520');
-define('VERSION_NUMBER', '330500');
-define('VERSION_DATE', '02/11/2024');
+define('VERSION', '35.0.0');
+define('CACHE_VALUE', '35.0.0.2026-02-07-0547');
+define('VERSION_NUMBER', '350000');
+define('VERSION_DATE', '07/02/2026');
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','icehrm@gamonoid.com');}
 if(!defined('KEY_PREFIX')){define('KEY_PREFIX','IceHrm');}
@@ -30,11 +30,13 @@ define('MEMCACHE_PORT', '11211');
 if(!defined('WK_HTML_PATH')){
     define('WK_HTML_PATH', '/usr/bin/xvfb-run -- /usr/local/bin/wkhtmltopdf');
 }
-define('ALL_CLIENT_BASE_PATH', '/var/www/icehrm.app/icehrmapp/');
+define('ALL_CLIENT_BASE_PATH', '/vagrant/deployment/clients/');
 
 define('IS_CLOUD', false);
 define('LDAP_ENABLED', true);
 define('SAML_ENABLED', true);
+define('LEAVE_ENABLED', true);
+define('RECRUITMENT_ENABLED', true);
 if(!defined('APP_WEB_URL')) {define('APP_WEB_URL', 'https://icehrm.com');}
 
 if (!defined('EXTENSIONS_URL')) {

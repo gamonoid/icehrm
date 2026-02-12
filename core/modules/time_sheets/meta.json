@@ -1,6 +1,6 @@
 {
 	"label":"Time Sheets",
-	"menu":"Time Management",
+	"menu":"Time",
 	"order":"3",
 	"icon":"fa-stopwatch",
 	"user_levels":["Admin","Manager","Employee"],

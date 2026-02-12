@@ -41,6 +41,7 @@ class TravelAdminManager extends AbstractModuleManager
 
         $this->addModelClass('ImmigrationDocument');
         $this->addModelClass('EmployeeImmigration');
+        $this->addModelClass('TravelProject');
         $this->addModelClass('EmployeeTravelRecord');
         $this->addModelClass('EmployeeTravelRecordApproval');
     }

@@ -105,6 +105,9 @@ class ModuleBase {
     this.user = user;
   }
 
+  setUserLevel(userLevel) {
+    this.userLevel = userLevel;
+  }
   getUser() {
     return this.user;
   }
@@ -1044,7 +1047,7 @@ class ModuleBase {
      * @param successCallback {Function} this will get called after success response
      */
 
-  save(callGetFunction, successCallback) {
+  save(callGetFunction, successCallback, failCallback) {
     const validator = new FormValidation(`${this.getTableName()}_submit`, true, { ShowPopup: false, LabelErrorClass: 'error' });
     if (validator.checkValues()) {
       let params = validator.getFormParameters();
@@ -1059,7 +1062,7 @@ class ModuleBase {
           params.id = id;
         }
         params = this.makeEmptyDateFieldsNull(params);
-        this.add(params, [], callGetFunction, successCallback);
+        this.add(params, [], callGetFunction, successCallback, failCallback);
       } else {
         $(`#${this.getTableName()}Form .label`).html(msg);
         $(`#${this.getTableName()}Form .label`).show();

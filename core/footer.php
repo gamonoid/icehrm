@@ -13,7 +13,8 @@ $userDomain = explode('@', $user->email)[1];
         </div><!-- ./wrapper -->
 		<script type="text/javascript">
 
-
+        window.showUserViewSwitch('<?=$user->user_level?>');
+        window.handleViewChange(null, '<?=$user->user_level?>');
 
 		for (var prop in modJsList) {
 			if(modJsList.hasOwnProperty(prop)){
@@ -50,8 +51,6 @@ $userDomain = explode('@', $user->email)[1];
 		notificationManager.setTemplates(<?=json_encode($notificationTemplates)?>);
 
 		//-----------------------
-
-
 		$(document).ready(function() {
 			$('#modTab a').click(function (e) {
                 if($(this).hasClass('dropdown-toggle')){
@@ -148,15 +147,16 @@ $userDomain = explode('@', $user->email)[1];
 			<?php }?>
 
 			<?php if(!isset($proVersion) && isset($moduleName) && $moduleName == 'dashboard' && $user->user_level == 'Admin' && !\Classes\BaseService::getInstance()->validateInstance()){?>
-			$("#verifyModel").modal({
-				  backdrop: 'static'
-			});
-			<?php } elseif (($moduleName === 'leaves' || $moduleName === 'candidates')  && !$isGoogleConnected && $googleConfigFound) {?>
+			// $("#verifyModel").modal({
+			// 	  backdrop: 'static'
+			// });
+			<?php } elseif (($moduleName === 'leaves' || $moduleName === 'candidates/admin')  && !$isGoogleConnected && $googleConfigFound) {?>
               // Show google connect only when verify modal is not shown
               modJs.checkIfUserEmailIsGoogleDomain('<?=$userDomain?>');
             <?php }?>
-
 		});
+
+
 
 	</script>
 	<?php

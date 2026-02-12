@@ -8,7 +8,9 @@
 
 namespace Salary\Common\Model;
 
+use Classes\FileService;
 use Classes\ModuleAccess;
+use Employees\Common\Model\Employee;
 use Model\BaseModel;
 
 class EmployeeSalary extends BaseModel
@@ -45,5 +47,17 @@ class EmployeeSalary extends BaseModel
         return [
             new ModuleAccess('salary', 'admin'),
         ];
+    }
+
+    public function postProcessGetData($obj)
+    {
+        $employee = new Employee();
+        $employee->Load('id = ?', [$obj->employee]);
+        if ($employee->id) {
+            $employee = FileService::getInstance()->updateSmallProfileImage($employee);
+            $obj->image = $employee->image;
+        }
+
+        return $obj;
     }
 }

@@ -1,0 +1,13 @@
+#UserViewSwitch  button {
+    background-color: #4E545C !important; /* Custom handle color */
+}
+
+#UserViewSwitch  .ant-switch-inner-checked {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+#UserViewSwitch  .ant-switch-inner-unchecked {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}

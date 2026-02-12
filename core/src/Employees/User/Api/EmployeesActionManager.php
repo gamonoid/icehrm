@@ -89,9 +89,6 @@ class EmployeesActionManager extends SubActionManager
         $subordinates = $subordinate->Find("supervisor = ?", array($employee->id));
         $employee->subordinates = $subordinates;
 
-        $fs = FileService::getInstance();
-        $employee = $fs->updateSmallProfileImage($employee);
-
         if (!empty($employee->birthday)) {
             $employee->birthday = date("F jS, Y", strtotime($employee->birthday));
         }
@@ -110,6 +107,19 @@ class EmployeesActionManager extends SubActionManager
         } catch (\Exception $e) {
             LogManager::getInstance()->notifyException($e);
         }
+
+		$fs = FileService::getInstance();
+		$employee = $fs->updateSmallProfileImage($employee);
+
+		// Add supervisor image if supervisor exists
+		if ( isset($employee->supervisor)) {
+			$supervisor = new Employee();
+			$supervisor->Load("id = ?", [$employee->supervisor]);
+			$supervisor = $fs->updateSmallProfileImage($supervisor);
+			if (!empty($supervisor->id) && !empty($supervisor->image)) {
+				$employee->supervisor_image = $supervisor->image;
+			}
+		}
 
         if (empty($employee->id)) {
             return new IceResponse(IceResponse::ERROR, $employee);

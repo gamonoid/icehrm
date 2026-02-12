@@ -61,6 +61,7 @@ class UsersActionManager extends SubActionManager
 			$user->password = md5($password);
 			$user->employee = (empty($req->employee) || $req->employee == "NULL" )?null:$req->employee;
 			$user->user_level = $req->user_level;
+			$user->user_roles = $req->user_roles;
 			$user->lang = $req->lang;
 			$user->default_module = $req->default_module;
 			$user->last_login = date("Y-m-d H:i:s");
@@ -79,10 +80,24 @@ class UsersActionManager extends SubActionManager
 				);
 			}
 
+			//Check if you are trying to change user level
+			if ($user->user_level != $req->user_level && $user->user_level == 'Admin') {
+				$userTemp = new User();
+				$adminUsers = $userTemp->Find("user_level = ?", array('Admin'));
+				if (count($adminUsers) == 1 && $adminUsers[0]->id == $user->id) {
+					return new IceResponse(
+						IceResponse::ERROR,
+						'Since you are the only Admin user, you are not allowed to revoke your admin rights.'
+					);
+				}
+			}
+
+
 			$user->email = $req->email;
 			$user->username = $req->username;
 			$user->employee = empty($req->employee)?null:$req->employee;
 			$user->user_level = $req->user_level;
+			$user->user_roles = $req->user_roles;
 			$user->lang = $req->lang;
 			$user->default_module = $req->default_module;
 			$user->last_update = date("Y-m-d H:i:s");

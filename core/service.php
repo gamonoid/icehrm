@@ -23,8 +23,8 @@ if(!defined('MODULE_PATH')){
 include("server.includes.inc.php");
 
 $userLevelArray = ['Admin', 'Manager', 'Employee', 'Restricted Admin', 'Restricted Manager', 'Restricted Employee', 'Anonymous'];
-
-if($_REQUEST['a'] != "rsp" && $_REQUEST['a'] != "rpc"){
+$isFileDownloadWithSignature = $_REQUEST['a'] === "download" && isset($_REQUEST['signature']);
+if($_REQUEST['a'] != "rsp" && $_REQUEST['a'] != "rpc" && $_REQUEST['a'] != "rlc" && !$isFileDownloadWithSignature){
 	if(empty($user) || empty($user->email) ||  empty($user->id) || !in_array($user->user_level, $userLevelArray)){
 		$ret['status'] = "ERROR";
         $ret['code'] = "NO_USER_FOUND";
@@ -197,11 +197,19 @@ try {// Domain aware input cleanup
         }
     } else if ($action == 'download') {
         $fileName = $_REQUEST['file'];
+
+		if (!isset($_REQUEST['signature'])) {
+			exit;
+		}
+		if (!BaseService::getInstance()->verifyHash($fileName, $_REQUEST['signature'])) {
+			exit;
+		}
+
+		$file = new File();
+		$file->Load('name = ?', array($fileName));
+
         $fileName = str_replace("..", "", $fileName);
         $fileName = str_replace("/", "", $fileName);
-
-        $file = new File();
-        $file->Load('name = ?', array($fileName));
 
         if ($fileName !== $file->name) {
             $file->Load('filename = ?', array($fileName));
@@ -239,14 +247,13 @@ try {// Domain aware input cleanup
         } elseif ('xml' === $extension) {
             header('Content-Type: application/xml');
         } else {
+            header('Content-Disposition: attachment; filename=' . basename($file->filename));
             header('Content-Type: application/octet-stream');
             header('Content-Transfer-Encoding: binary');
             header('Expires: 0');
             header('Cache-Control: must-revalidate');
             header('Pragma: public');
         }
-
-        header('Content-Disposition: attachment; filename=' . basename($file->filename));
 
         header('Content-Length: ' . filesize(BaseService::getInstance()->getDataDirectory() . $file->filename));
         ob_clean();
@@ -307,6 +314,56 @@ try {// Domain aware input cleanup
         } catch (Exception $e) {
             LogManager::getInstance()->error('Error occurred while changing password:' . $e->getMessage());
             LogManager::getInstance()->notifyException($e);
+        }
+
+    } else if ($action == 'rlc') {
+        // Request Login Code (email only)
+        try {
+            $email = trim($_REQUEST['email'] ?? '');
+            if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $ret['status'] = "ERROR";
+                $ret['message'] = "Please enter a valid email address";
+            } else {
+                $user = new User();
+                $user->Load("email = ?", [$email]);
+
+                if (empty($user->id)) {
+                    $ret['status'] = "SUCCESS";
+                    $ret['message'] = "If the email is registered, a login code will be sent";
+                } else if (($passwordChangeWaitingMinutes = PasswordManager::passwordChangeWaitingTimeMinutes($user)) > 0) {
+                    $ret['status'] = "ERROR";
+                    $ret['message'] = "Wait another $passwordChangeWaitingMinutes minutes to request a login code again";
+                } else {
+                    // Generate 6-digit code
+                    $code = str_pad(random_int(0, 999999), 6, '0', STR_PAD_LEFT);
+                    $hashedCode = password_hash($code, PASSWORD_BCRYPT);
+
+                    // Store hash in login_hash (60 chars fits in varchar(64))
+                    // Expiration is tracked via last_password_requested_at (already updated by rate limiter)
+                    $user->login_hash = $hashedCode;
+                    $user->Save();
+
+                    // Send email
+                    $companyName = SettingsManager::getInstance()->getSetting('Company: Name');
+                    $subject = "Your IceHrm Login Code $code";
+                    $body = "Your login code is: <strong>$code</strong><br><br>";
+                    $body .= "This code will expire in 15 minutes.<br><br>";
+                    $body .= "If you did not request this code, please ignore this email.";
+
+                    if ($emailSender->sendEmail($subject, $user->email, $body, [])) {
+                        $ret['status'] = "SUCCESS";
+                        $ret['message'] = "A login code has been sent to your email. Enter the code below to login.";
+                    } else {
+                        $ret['status'] = "ERROR";
+                        $ret['message'] = "Failed to send email. Please try again.";
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            LogManager::getInstance()->error('Error occurred while sending login code:' . $e->getMessage());
+            LogManager::getInstance()->notifyException($e);
+            $ret['status'] = "ERROR";
+            $ret['message'] = "An error occurred. Please try again.";
         }
 
     } else if ($action == 'getNotifications') {

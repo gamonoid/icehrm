@@ -5,7 +5,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Donut, Pie } from '@antv/g2plot';
-import AdapterBase from '../../../api/AdapterBase';
 import { DashboardAdapter } from '../../../admin/src/dashboard/lib';
 import TaskList from '../../../components/TaskList';
 import EmployeeStatusDashboard from '../../../components/EmployeeStatusDashboard';
@@ -33,7 +32,7 @@ class ModuleDashboardAdapter extends DashboardAdapter {
     this.drawOnlineOfflineEmployeeChart();
     this.buildTaskList();
     this.buildEmployeeStatus();
-    //this.showEmployeeList();
+    this.showEmployeeList();
   }
 
   showEmployeeList() {
@@ -45,7 +44,7 @@ class ModuleDashboardAdapter extends DashboardAdapter {
       .post('staff-random', { limit: 15 })
       .then((response) => {
         ReactDOM.render(
-          <EmployeeListWidget url={CLIENT_BASE_URL+'?g=extension&n=directory|user&m=module_Company'} adapter={this} employees={response.data} />,
+          <EmployeeListWidget url={`${CLIENT_BASE_URL}?g=extension&n=directory|user&m=module_Company`} adapter={this} employees={response.data} />,
           document.getElementById('EmployeeList'),
         );
         document.getElementById('EmployeeListWrapper').style.display = 'block';

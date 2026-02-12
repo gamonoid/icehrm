@@ -1301,3 +1301,4 @@ create table `Migrations` (
 	index `KEY_Migrations_status` (`status`),
 	index `KEY_Migrations_version` (`version`)
 ) engine=innodb default charset=utf8;
+

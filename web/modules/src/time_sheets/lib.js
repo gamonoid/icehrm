@@ -101,11 +101,17 @@ class EmployeeTimeSheetAdapter extends AdapterBase {
 
       // eslint-disable-next-line no-unused-vars
       dayClick(date, jsEvent, view, resourceObj) {
+        if (modJs.getTableName() === 'SubEmployeeTimeSheetAll' || object.status === 'Approved') {
+          return;
+        }
         modJs.renderFormByDate(date.format());
       },
 
       // eslint-disable-next-line no-unused-vars
       eventClick(calEvent, jsEvent, view) {
+        if (modJs.getTableName() === 'SubEmployeeTimeSheetAll' || object.status === 'Approved') {
+          return;
+        }
         modJs.renderFormTimeEntryCalender(calEvent.id);
       },
       eventRender(event, element) {
@@ -251,9 +257,19 @@ class EmployeeTimeSheetAdapter extends AdapterBase {
   }
 
   getTimeEntriesSuccessCallBack(callBackData) {
-    const entries = callBackData;
+    const entries = callBackData[0];
+    const employee = callBackData[1];
+    const timesheet = callBackData[2];
     let html = '';
-    const temp = '<tr><td><img class="tableActionButton" src="_BASE_images/delete.png" style="cursor:pointer;" rel="tooltip" title="Delete" onclick="modJsList[\'tabEmployeeTimeEntry\'].deleteRow(_id_);return false;"></img></td><td>_start_</td><td>_end_</td><td>_duration_</td><td>_project_</td><td>_details_</td>';
+    let temp = '';
+
+    if (modJs.getTableName() === 'SubEmployeeTimeSheetAll' || timesheet.status !== 'Approved') {
+      temp = '<tr><td><img class="tableActionButton" src="_BASE_images/delete.png" style="cursor:pointer;" rel="tooltip" title="Delete" onclick="modJsList[\'tabEmployeeTimeEntry\'].deleteRow(_id_);return false;"></img></td><td>_start_</td><td>_end_</td><td>_duration_</td><td>_project_</td><td>_details_</td>';
+    } else {
+      temp = '<tr><td></td><td>_start_</td><td>_end_</td><td>_duration_</td><td>_project_</td><td>_details_</td>';
+    }
+
+    $('.timesheet_user').hide();
 
     for (let i = 0; i < entries.length; i++) {
       try {
@@ -282,6 +298,15 @@ class EmployeeTimeSheetAdapter extends AdapterBase {
       }
     }
 
+    $('.employee_name').html(employee.name);
+    $('.employee_image').attr('src', employee.image);
+    $('.timesheet_status_text').html(`Status: <b>${timesheet.status}</b>`);
+    $('.timesheet_total').html(`${timesheet.total_time}`);
+
+    setTimeout(() => {
+      $('.timesheet_user').show();
+    }, 500);
+
     $('.timesheet_entries_table_body').html(html);
     if (modJs.getTableName() === 'SubEmployeeTimeSheetAll' || `${this.needStartEndTime}` === '0') {
       $('.submit_sheet').hide();
@@ -292,6 +317,12 @@ class EmployeeTimeSheetAdapter extends AdapterBase {
     } else {
       $('.submit_sheet').show();
       $('.add_time_sheet_entry').show();
+    }
+
+    if (modJs.getTableName() === 'SubEmployeeTimeSheetAll') {
+      $('.change_status').show();
+    } else {
+      $('.change_status').hide();
     }
 
     $('#EmployeeTimesheetBlock').fullCalendar('refetchEvents');
@@ -566,8 +597,8 @@ class SubEmployeeTimeSheetAdapter extends EmployeeTimeSheetAdapter {
 
     html = html.replace(/_id_/g, id);
     html = html.replace(/_BASE_/g, this.baseUrl);
-    html = html.replace(/_sdate_/g, data[1]);
-    html = html.replace(/_edate_/g, data[2]);
+    html = html.replace(/_sdate_/g, `${data[1]} from ${data[2]}`.replaceAll('\'', ' '));
+    html = html.replace(/_edate_/g, data[3]);
     html = html.replace(/_status_/g, data[4]);
     return html;
   }

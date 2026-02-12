@@ -6,7 +6,7 @@
     "user_levels": [
         "Admin"
     ],
-    "dashboardPosition": 15,
+    "dashboardPosition": 0,
     "permissions": [],
     "model_namespace": "\\Permissions\\Common\\Model",
     "manager": "\\Permissions\\Admin\\Api\\PermissionsAdminManager"

@@ -92,6 +92,91 @@ class ConnectionService
         return $errors;
     }
 
+    public function getLastLogFileRows($limit = 1000)
+    {
+        $logFile = CLIENT_BASE_PATH . 'data/icehrm.log';
+        $result = [];
+        
+        if (!file_exists($logFile) || !is_readable($logFile)) {
+            return $result;
+        }
+        
+        // Read the last N lines from the log file
+        // For efficiency, read file in chunks from the end
+        $handle = fopen($logFile, 'r');
+        if (!$handle) {
+            return $result;
+        }
+        
+        // Get file size
+        fseek($handle, 0, SEEK_END);
+        $fileSize = ftell($handle);
+        
+        if ($fileSize == 0) {
+            fclose($handle);
+            return $result;
+        }
+        
+        $lines = [];
+        $currentLine = '';
+        $chunkSize = 8192; // 8KB chunks
+        $position = $fileSize;
+        
+        // Read backwards in chunks
+        while ($position > 0 && count($lines) < $limit) {
+            $readSize = min($chunkSize, $position);
+            $position -= $readSize;
+            
+            fseek($handle, $position);
+            $chunk = fread($handle, $readSize);
+            
+            // Process chunk backwards
+            $chunkLines = explode("\n", $chunk);
+            $chunkLines = array_reverse($chunkLines);
+            
+            // First chunk line might be incomplete, combine with currentLine
+            if (!empty($currentLine)) {
+                $chunkLines[0] = $chunkLines[0] . $currentLine;
+            }
+            
+            // Last chunk line might be incomplete, save for next iteration
+            $currentLine = array_pop($chunkLines);
+            
+            // Add complete lines
+            foreach ($chunkLines as $line) {
+                if (trim($line) !== '') {
+                    array_unshift($lines, $line);
+                    if (count($lines) >= $limit) {
+                        break;
+                    }
+                }
+            }
+        }
+        
+        // Add the last line if exists
+        if (!empty($currentLine) && count($lines) < $limit) {
+            array_unshift($lines, $currentLine);
+        }
+        
+        fclose($handle);
+        
+        // Take only the last $limit lines (these are the newest since we read backwards)
+        $lines = array_slice($lines, -$limit);
+        
+        // Reverse array so newest lines appear first
+        $lines = array_reverse($lines);
+        
+        // Format lines for display (newest first)
+        foreach ($lines as $index => $line) {
+            $result[] = [
+                'id' => $index + 1,
+                'line' => $line,
+            ];
+        }
+        
+        return $result;
+    }
+
     public function dispatchInstallationRequest()
     {
         $timeNow = time();

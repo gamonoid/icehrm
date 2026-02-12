@@ -10,7 +10,8 @@ define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
 $startEndTimeNeeded = \Classes\SettingsManager::getInstance()->getSetting(
-	'System: Time-sheet Entry Start and End time Required'
+	'System: Advanced Timesheets'
+	//'System: Time-sheet Entry Start and End time Required'
 );
 ?><script type="text/javascript" src="<?=BASE_URL?>js/mindmup-editabletable.js?v=<?=$jsVersion?>"></script>
 <div class="span9">
@@ -19,6 +20,7 @@ $startEndTimeNeeded = \Classes\SettingsManager::getInstance()->getSetting(
 		<li class="modTabPage active"><a id="tabEmployeeTimeSheetAll" href="#tabPageEmployeeTimeSheetAll"><?=t('All My TimeSheets')?></a></li>
 		<li class="modTabPage"><a id="tabEmployeeTimeSheetApproved" href="#tabPageEmployeeTimeSheetApproved"><?=t('Approved TimeSheets')?></a></li>
 		<li class="modTabPage"><a id="tabEmployeeTimeSheetPending" href="#tabPageEmployeeTimeSheetPending"><?=t('Pending TimeSheets')?></a></li>
+		<li class="modTabPage"><a id="tabEmployeeTimeSheetRejected" href="#tabPageEmployeeTimeSheetRejected"><?=t('Rejected TimeSheets')?></a></li>
 		<li class="modTabPage"><a id="tabSubEmployeeTimeSheetAll" href="#tabPageSubEmployeeTimeSheetAll"><?=t('TimeSheets (Direct Reports)')?></a></li>
 	</ul>
 
@@ -47,6 +49,14 @@ $startEndTimeNeeded = \Classes\SettingsManager::getInstance()->getSetting(
 
 			</div>
 		</div>
+        <div class="tab-pane" id="tabPageEmployeeTimeSheetRejected">
+            <div id="EmployeeTimeSheetRejected" class="reviewBlock reviewBlockTable" data-content="List" style="padding-left:5px;">
+
+            </div>
+            <div id="EmployeeTimeSheetRejectedForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
+
+            </div>
+        </div>
 		<div class="tab-pane" id="tabPageSubEmployeeTimeSheetAll">
 			<div id="SubEmployeeTimeSheetAll" class="reviewBlock reviewBlockTable" data-content="List" style="padding-left:5px;">
 
@@ -94,6 +104,11 @@ modJsList['tabEmployeeTimeSheetPending'] = new EmployeeTimeSheetAdapter('Employe
 modJsList['tabEmployeeTimeSheetPending'].setShowAddNew(false);
 modJsList['tabEmployeeTimeSheetPending'].setRemoteTable(true);
 modJsList['tabEmployeeTimeSheetPending'].setNeedStartEndTime(<?=$startEndTimeNeeded?>);
+
+modJsList['tabEmployeeTimeSheetRejected'] = new EmployeeTimeSheetAdapter('EmployeeTimeSheet','EmployeeTimeSheetRejected',{"status":"Rejected"});
+modJsList['tabEmployeeTimeSheetRejected'].setShowAddNew(false);
+modJsList['tabEmployeeTimeSheetRejected'].setRemoteTable(true);
+modJsList['tabEmployeeTimeSheetRejected'].setNeedStartEndTime(<?=$startEndTimeNeeded?>);
 
 modJsList['tabSubEmployeeTimeSheetAll'] = new SubEmployeeTimeSheetAdapter('EmployeeTimeSheet','SubEmployeeTimeSheetAll','','date_start desc');
 modJsList['tabSubEmployeeTimeSheetAll'].setShowAddNew(false);
@@ -155,7 +170,7 @@ var modJs = modJsList['tabEmployeeTimeSheetAll'];
 		<div class="control-group">
 			<label class="control-label" for="timesheet_status">Timesheet Status</label>
 			<div class="controls">
-			  	<select class="" type="text" id="timesheet_status" name="timesheet_status">
+			  	<select class="" type="text" id="timesheet_status" name="timesheet_status" style="width:100%; padding:5px;">
 				  	<option value="Approved">Approved</option>
 				  	<option value="Pending">Pending</option>
 				  	<option value="Rejected">Rejected</option>

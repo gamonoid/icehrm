@@ -8,7 +8,7 @@ import {
 } from 'antd';
 import {
   CopyOutlined, DeleteOutlined, EditOutlined, MonitorOutlined, EnvironmentTwoTone,
-  PushpinTwoTone,HighlightTwoTone,
+  PushpinTwoTone, HighlightTwoTone,
 } from '@ant-design/icons';
 import React from 'react';
 import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
@@ -31,6 +31,7 @@ class AttendanceAdapter extends ReactModalAdapterBase {
       'out_time',
       'hours',
       'has_map_snapshot',
+      'work_from_home',
     ];
   }
 
@@ -93,6 +94,14 @@ class AttendanceAdapter extends ReactModalAdapterBase {
         width: '25%',
         dataIndex: 'hours',
       },
+      {
+        title: 'Work Location',
+        dataIndex: 'work_from_home',
+        render: (text, record) => (
+          record.work_from_home === '1' || record.work_from_home === 1 ? '🏠 Home' : '🏢 Office'
+        ),
+        width: '120px',
+      },
     ];
   }
 
@@ -120,6 +129,7 @@ class AttendanceAdapter extends ReactModalAdapterBase {
       ['id', { label: 'ID', type: 'hidden' }],
       ['in_time', { label: 'Time-In', type: 'datetime' }],
       ['out_time', { label: 'Time-Out', type: 'datetime', validation: 'none' }],
+      ['work_from_home', { label: 'Work from Home', type: 'switch', validation: 'none' }],
       ['note', { label: 'Note', type: 'textarea', validation: 'none' }],
     ];
   }

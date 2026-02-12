@@ -10,14 +10,6 @@ define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
 
-$isIceHrmPro = false;
-if (class_exists('\\Classes\\ProVersion')) {
-    $data = \Classes\ProVersion::$data;
-    $isIceHrmPro = true;
-    $data = json_decode($data, true);
-}
-
-$isOpenSource = BaseService::getInstance()->isOpenSourceVersion();
 
 $employeeCount = StatsHelper::getActiveEmployeeCount();
 $userCount = StatsHelper::getUserCount();
@@ -25,7 +17,7 @@ $connectionService = new ConnectionService();
 ?><div class="span9">
 
     <ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-        <li class="active"><a id="tabConnection" href="#tabConnection"><?=t('Connection')?></a></li>
+        <li class="active"><a id="tabConnection" href="#tabConnection"><?=t('System Status')?></a></li>
     </ul>
 
     <div class="tab-content">
@@ -43,16 +35,12 @@ $moduleData = [
     'user_level' => $user->user_level,
     'components' => [
             'employeeCount' => [
-                    'isIceHrmPro' => $isIceHrmPro,
-                    'isOpenSource' => $isOpenSource,
                     'count' => $employeeCount,
-                    'allowed' => $isIceHrmPro ? intval($data['employees']) : 'N/A',
-                    'validUntil' => date('Y-m-d', strtotime('+1 year', strtotime($data['licenseActivated'])) ),
-                    'licenseId' => $data['key'],
             ],
             'systemData' => [
                     'data' => $connectionService->getSystemReport(),
                     'issues' => $connectionService->getSystemErrors(),
+                    'logFileRows' => $connectionService->getLastLogFileRows(1000),
             ],
     ]
 ];

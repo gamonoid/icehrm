@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime';
 import ReactModalAdapterBase from './ReactModalAdapterBase';
 
 class ExtensionModuleBase extends ReactModalAdapterBase {

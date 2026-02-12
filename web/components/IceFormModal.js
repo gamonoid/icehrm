@@ -56,15 +56,19 @@ class IceFormModal extends React.Component {
 
   hide() {
     this.setState({ visible: false });
+    this.setState({ loading: false });
   }
 
   save(params) {
     const { saveCompleteCallback } = this.props;
     this.iceFormReference.current.save(params, () => {
       this.closeModal();
+      this.setState({ loading: false });
       if (saveCompleteCallback) {
         saveCompleteCallback();
       }
+    }, () => {
+      this.setState({ loading: false });
     });
   }
 
@@ -121,18 +125,22 @@ class IceFormModal extends React.Component {
                       return;
                     }
                     if (saveCallback) {
+                      // Don't set loading to false here - let saveCallback manage it
                       saveCallback(values, iceFrom.showError.bind(this), this.closeModal.bind(this), adapter);
                     } else {
                       this.save(values);
                     }
-                    this.setState({ loading: false });
                   })
                   .catch((info) => {
                     this.setState({ loading: false });
                   });
               }}
             >
-              {this.state.viewOnly ? this.props.adapter.gt('Done') : this.props.adapter.gt('Save')}
+              {this.state.viewOnly 
+                ? (this.props.adapter ? this.props.adapter.gt('Done') : 'Done')
+                : (this.props.adapter && typeof this.props.adapter.getSaveButtonLabel === 'function'
+                  ? this.props.adapter.gt(this.props.adapter.getSaveButtonLabel()) 
+                  : (this.props.adapter ? this.props.adapter.gt('Save') : 'Save'))}
             </Button>
           </Space>
         </Col>
@@ -145,7 +153,7 @@ class IceFormModal extends React.Component {
 
     return (
       <Modal
-        visible={this.state.visible}
+        open={this.state.visible}
         title={this.props.adapter.gt(this.props.title || adapter.objectTypeName)}
         maskClosable={false}
         width={this.getWidth()}

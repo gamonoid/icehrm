@@ -1,7 +1,7 @@
 {
     "label": "Loans",
     "menu": "Manage",
-    "order": "92",
+    "order": "93",
     "icon": "fa-money-check",
     "user_levels": [
         "Admin"

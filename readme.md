@@ -3,15 +3,16 @@ IceHrm
 
 IceHrm is an [HRM software](https://icehrm.com) which enable companies to manage employee details and HR workflows.
 
-- Checkout IceHrm without installing: [IceHrm Demo](https://icehrm.com/icehrm-demo)
-- Get a Managed IceHrm hosting: [IceHrm Cloud](https://icehrm.com/icehrm-cloud)
-- Self-hosted IceHrm with all the features in IceHrm Cloud: [IceHrmPro](https://icehrm.com/purchase-icehrmpro)
-
-![](docs/images/icehrm-open-demo-1.png)
-&nbsp;&nbsp;&nbsp;&nbsp;
-![](docs/images/icehrm-open-demo-2.png)
-
 ## Installation
+
+### Update your existing IceHrm installation to the latest version
+
+- CD into the IceHrm installation directory (e,g `cd /var/www/icehrm`)
+- Run `npm install -g icehrm-update`
+- If you get an error due to not having Node.js installed use instructions in [Node.js download page](https://nodejs.org/en/download) to install it first.
+- Then run `icehrm-update`
+
+This will update your IceHrm installation to the latest version
 
 ### Using Docker
 
@@ -25,8 +26,6 @@ npm run docker:build
 npm run docker:start
 ```
 
-![](docs/images/IceHrm-installation.gif)
-
 - Visit [http://localhost:3128/](http://localhost:3128/) and login using `admin` as username and password.
 - Visit [http://localhost:3130/](http://localhost:3130/) to access phpmyadmin.
 - All user uploaded files are stored under `icehrm/docker/production/app_data`
@@ -34,26 +33,14 @@ npm run docker:start
 ### Installation (without docker)
 - Please check [Installation guide](https://icehrm.com/explore/docs/installation/).
 
-### Upgrade from Previous Versions
-
-- Download the [latest release](https://github.com/gamonoid/icehrm/releases/latest).
-- Extract the release file.
-- Replace the `icehrm/core` directory in your current installation.
-- Replace the `icehrm/web` directory in your current installation.
-- Copy or replace `icehrm/updater` in your current installation.
-- From `icehrm/app` directory in release, copy and replace following files in your installtion `icehrm/app` directory:
-  - fileupload-new.php
-  - fileupload_page.php
-  - google-connect.php
-  - updater.php
 
 ## Setup Development Environment
 ```
 git clone https://github.com/gamonoid/icehrm.git
 cd icehrm
-docker compose up -d
+docker-compose up -d
 ```
-- Visit [http://localhost:9010/](http://localhost:9010/) and login using `admin` as username and password.
+- Visit [http://localhost:9080/](http://localhost:9080/) and login using `admin` as username and password.
 - Watch this for more detailed instructions: [https://www.youtube.com/watch?v=sz8OV_ON6S8](https://www.youtube.com/watch?v=sz8OV_ON6S8)
 
 ### Extend IceHrm with custom Extensions
@@ -113,29 +100,12 @@ $emp->Load('id = ?',[1]);
 var_dump($emp);
 ```
 
-### Running tests (Docker)
-
-- Run e2e (cypress) tests
-
-```
-docker compose -f docker-compose-testing.yaml up --exit-code-from cypress
-```
-or
-```
-docker compose -f docker-compose-testing.yaml up --exit-code-from cypress --build --force-recreate
-```
-
-- When you are ready to push your changes to production, make sure to build the production images
-```
-docker compose -f docker-compose-prod.yaml up -d --build
-```
-
 ### Useful Links
 * IceHrm Opensource Blog: [http://icehrm.org](http://icehrm.org)
 * IceHrm Cloud Hosting: [https://icehrm.com](https://icehrm.com)
 * IceHrm Documentation (Opensource and Commercial): [https://icehrm.com/explore/docs/](https://icehrm.com/explore/docs/)
 * IceHrm Blog: [https://icehrm.com/blog](http://icehrm.com/blog)
-* Purchase IceHrm Pro: [https://icehrm.com/modules.php](https://icehrm.com/modules.php)
+* Purchase Extensions: [https://icehrm.com//buy-icehrm-modules](https://icehrm.com//buy-icehrm-modules)
 * Report Issues: [https://github.com/gamonoid/icehrm/issues](https://github.com/gamonoid/icehrm/issues)
 
 ### Check Out our Sponsors

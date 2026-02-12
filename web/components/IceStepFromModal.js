@@ -44,7 +44,7 @@ class IceStepFormModal extends IceFormModal {
     const { width, twoColumnLayout, layout } = this.props.adapter.getFormOptions();
     return (
       <Modal
-        visible={this.state.visible}
+        open={this.state.visible}
         title={this.props.adapter.gt(this.props.title || adapter.objectTypeName)}
         maskClosable={false}
         width={width || this.width}

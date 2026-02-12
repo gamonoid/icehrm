@@ -17,21 +17,32 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 
 	<div class="tab-content">
 		<div class="tab-pane active" id="tabPageEmergencyContact">
-			<div id="EmergencyContact" class="reviewBlock" data-content="List" style="padding-left:5px;">
-
-			</div>
-			<div id="EmergencyContactForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-
-			</div>
+			<div id="EmergencyContactTable" class="reviewBlock" data-content="List" style="padding-left:5px;"></div>
+			<div id="EmergencyContactForm" data-content="Form"></div>
 		</div>
 	</div>
 
 </div>
+<?php
+$permissions = ['get', 'element', 'save', 'delete'];
+if(isset($modulePermissions['perm']['Add Emergency Contacts']) && $modulePermissions['perm']['Add Emergency Contacts'] == "No"){
+	$permissions = array_diff($permissions, ['save']);
+}
+if(isset($modulePermissions['perm']['Delete Emergency Contacts']) && $modulePermissions['perm']['Delete Emergency Contacts'] == "No"){
+	$permissions = array_diff($permissions, ['delete']);
+}
+if(isset($modulePermissions['perm']['Edit Emergency Contacts']) && $modulePermissions['perm']['Edit Emergency Contacts'] == "No"){
+	$permissions = array_diff($permissions, ['save']);
+}
+$permissions = array_values($permissions); // Re-index array
+?>
 <script>
-var modJsList = new Array();
+var modJsList = [];
 
-modJsList['tabEmergencyContact'] = new EmergencyContactAdapter('EmergencyContact');
-
+modJsList['tabEmergencyContact'] = new EmergencyContactAdapter('EmergencyContact', 'EmergencyContact', '', '');
+modJsList['tabEmergencyContact'].setObjectTypeName('Emergency Contact');
+modJsList['tabEmergencyContact'].setDataPipe(new IceDataPipe(modJsList['tabEmergencyContact']));
+modJsList['tabEmergencyContact'].setAccess(<?=json_encode($permissions)?>);
 <?php if(isset($modulePermissions['perm']['Add Emergency Contacts']) && $modulePermissions['perm']['Add Emergency Contacts'] == "No"){?>
 modJsList['tabEmergencyContact'].setShowAddNew(false);
 <?php }?>

@@ -49,6 +49,10 @@ class SkillAdapter extends ReactModalAdapterBase {
     ];
   }
 
+  showViewButton() {
+    return false;
+  }
+
   getHelpTitle() {
     return this.gt('Skills');
   }
@@ -104,6 +108,10 @@ class EducationAdapter extends ReactModalAdapterBase {
         dataIndex: 'description',
       },
     ];
+  }
+
+  showViewButton() {
+    return false;
   }
 
   getHelpTitle() {
@@ -163,6 +171,10 @@ class CertificationAdapter extends ReactModalAdapterBase {
     ];
   }
 
+  showViewButton() {
+    return false;
+  }
+
   getHelpTitle() {
     return this.gt('Certifications');
   }
@@ -218,6 +230,10 @@ class LanguageAdapter extends ReactModalAdapterBase {
         dataIndex: 'description',
       },
     ];
+  }
+
+  showViewButton() {
+    return false;
   }
 
 }

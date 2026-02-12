@@ -7,7 +7,7 @@ ARG EXE_ENV
 
 # Install packages
 RUN apk --no-cache add php php-fpm php-opcache php-mysqli php-json php-openssl php-curl \
-    php-zlib php-xml php-phar php-intl php-dom php-xmlreader php-ctype php-session \
+    php-zlib php-xml php-phar php-intl php-dom php-simplexml php-xmlreader php-ctype php-session \
     php-mbstring php-gd nginx supervisor curl
 
 # Configure supervisord
