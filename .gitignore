@@ -41,5 +41,6 @@ docker/testing/db_data
 ./.claude/settings.local.json
 app/cache
 extensions/**/src-ob/
+!extensions/marketplace/admin/src-ob/
 releases
 app/data
