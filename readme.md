@@ -107,3 +107,7 @@ var_dump($emp);
 * IceHrm Blog: [https://icehrm.com/blog](http://icehrm.com/blog)
 * Purchase Extensions: [https://icehrm.com//buy-icehrm-modules](https://icehrm.com//buy-icehrm-modules)
 * Report Issues: [https://github.com/gamonoid/icehrm/issues](https://github.com/gamonoid/icehrm/issues)
+
+### Check Out our Sponsors
+* Monitor your IceHrm with [uptimely.cloud](https://uptimely.cloud/?utm_source=icehrm_readme&utm_medium=referral)
+
