@@ -54,7 +54,7 @@ php ice create:extension sample admin
 
 - Refresh IceHrm to see a new menu item called `Sample Admin`
 - The extension code can br found under `icehrm/extensions/sample/admin`
-- Refer: [https://icehrm.com/explore/docs/extensions/](https://icehrm.com/explore/docs/extensions/) for more details.
+- Refer: [creating-first-extension](https://icehrm.com/explore/docs/creating-first-extension/) for more details.
 
 ### Building frontend assets
 
