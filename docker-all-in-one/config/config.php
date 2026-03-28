@@ -13,7 +13,8 @@ define('APP_BASE_PATH', '/var/www/html/core/');
 define('CLIENT_BASE_PATH', '/var/www/html/app/');
 
 // Base URL - set via APP_BASE_URL environment variable
-$baseUrl = getenv('APP_BASE_URL') ?: 'http://localhost:5566';
+// Falls back to RENDER_EXTERNAL_URL (auto-set by Render) or localhost
+$baseUrl = getenv('APP_BASE_URL') ?: getenv('RENDER_EXTERNAL_URL') ?: 'http://localhost:5566';
 define('BASE_URL', $baseUrl . '/web/');
 define('CLIENT_BASE_URL', $baseUrl . '/app/');
 

@@ -11,8 +11,7 @@
 #   1. Fork this repository to your GitHub account
 #   2. Go to https://dashboard.render.com/blueprints
 #   3. Click "New Blueprint Instance" and connect your repository
-#   4. Set the APP_BASE_URL environment variable to your Render app URL
-#   5. Deploy
+#   4. Deploy (APP_BASE_URL is auto-detected from RENDER_EXTERNAL_URL)
 #
 # Note: The all-in-one Dockerfile includes a build stage that runs:
 #   - npm install (for root and web directories)
@@ -32,8 +31,6 @@ services:
       mountPath: /var/lib/mysql
       sizeGB: 10
     envVars:
-      - key: APP_BASE_URL
-        sync: false
       - key: MYSQL_ROOT_PASSWORD
         generateValue: true
       - key: MYSQL_DATABASE
