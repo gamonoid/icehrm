@@ -1,0 +1,4 @@
+# IceHrm Cron Jobs
+# Runs every minute to process background tasks
+
+* * * * * php /var/www/html/app/cron.php >> /var/log/icehrm/cron.log 2>&1

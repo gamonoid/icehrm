@@ -1,0 +1,30 @@
+services:
+  icehrm:
+    build:
+      context: ..
+      dockerfile: docker-all-in-one/Dockerfile
+    container_name: icehrm-all-in-one
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-5566}:8080"
+    environment:
+      - APP_BASE_URL=${APP_BASE_URL:-http://localhost:5566}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-icehrm_root}
+      - MYSQL_DATABASE=${MYSQL_DATABASE:-icehrm}
+      - MYSQL_USER=${MYSQL_USER:-icehrm}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-icehrm}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - app_data:/var/www/html/app/data
+    healthcheck:
+      test: ["CMD", "curl", "--silent", "--fail", "http://127.0.0.1:8080/app/health.php"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  mysql_data:
+    name: icehrm-aio-mysql-data
+  app_data:
+    name: icehrm-aio-app-data
