@@ -31,8 +31,14 @@ RUN npm run asset:build:prod
 
 # Production stage - All-in-One
 FROM alpine:3.17.1
-LABEL Maintainer="Thilina Pituwala <thilina@icehrm.com>" \
-      Description="IceHrm All-in-One Container with Nginx, PHP-FPM, MySQL, and Cron Worker"
+LABEL maintainer="Thilina Pituwala <thilina@icehrm.com>" \
+      description="IceHrm All-in-One Container with Nginx, PHP-FPM, MySQL, and Cron Worker" \
+      org.opencontainers.image.title="IceHrm Open Source" \
+      org.opencontainers.image.description="Open source Human Resource Management System" \
+      org.opencontainers.image.url="https://icehrm.com" \
+      org.opencontainers.image.source="https://github.com/gamonoid/icehrm" \
+      org.opencontainers.image.vendor="IceHrm" \
+      org.opencontainers.image.documentation="https://github.com/gamonoid/icehrm/blob/master/docker-all-in-one/README.md"
 
 # Install all required packages
 RUN apk --no-cache add \
@@ -84,8 +90,7 @@ COPY --from=builder /build/core /var/www/html/core/
 COPY --from=builder /build/extensions /var/www/html/extensions/
 COPY --from=builder /build/web /var/www/html/web/
 
-# Copy production config
-COPY docker-all-in-one/config/config.php /var/www/html/app/config.php
+# Note: config.php is generated at runtime by init.sh from environment variables
 
 # Copy database initialization script
 COPY docker/init.sql /docker-entrypoint-initdb.d/init.sql
@@ -105,8 +110,8 @@ RUN chown -R nobody:nobody /var/www/html && \
 
 WORKDIR /var/www/html
 
-# Expose ports
-EXPOSE 8080 3306
+# Expose web port
+EXPOSE 8080
 
 # Volumes for data persistence
 VOLUME ["/var/lib/mysql", "/var/www/html/app/data"]

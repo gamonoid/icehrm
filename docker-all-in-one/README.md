@@ -17,7 +17,25 @@ This setup is ideal for:
 
 For production with high availability, use the separate services in `docker-compose-prod.yaml` instead.
 
-## Quick Start
+## Quick Start (Docker Hub)
+
+Pull and run the pre-built image from Docker Hub:
+
+```bash
+docker run -d \
+  --name icehrm \
+  -p 8080:8080 \
+  -e APP_BASE_URL=http://localhost:8080 \
+  -v icehrm-mysql:/var/lib/mysql \
+  -v icehrm-data:/var/www/html/app/data \
+  thilinah/icehrm-os:latest
+```
+
+Access IceHrm at [http://localhost:8080](http://localhost:8080)
+- Username: `admin`
+- Password: `admin`
+
+## Quick Start (Build from Source)
 
 ```bash
 cd docker-all-in-one
@@ -28,7 +46,31 @@ Access IceHrm at [http://localhost:5566](http://localhost:5566)
 - Username: `admin`
 - Password: `admin`
 
-## Configuration
+## Environment Variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `APP_BASE_URL` | `http://localhost:8080` | Public URL where IceHrm is accessible |
+| `MYSQL_ROOT_PASSWORD` | `icehrm_root` | MySQL root password |
+| `MYSQL_DATABASE` | `icehrm` | Database name |
+| `MYSQL_USER` | `icehrm` | Database user |
+| `MYSQL_PASSWORD` | `icehrm` | Database password |
+
+### Example with Custom Domain
+
+```bash
+docker run -d \
+  --name icehrm \
+  -p 80:8080 \
+  -e APP_BASE_URL=https://hr.yourcompany.com \
+  -e MYSQL_ROOT_PASSWORD=secure_root_pass \
+  -e MYSQL_PASSWORD=secure_db_pass \
+  -v icehrm-mysql:/var/lib/mysql \
+  -v icehrm-data:/var/www/html/app/data \
+  thilinah/icehrm-os:latest
+```
+
+## Configuration (Docker Compose)
 
 Create a `.env` file in this directory to customize:
 

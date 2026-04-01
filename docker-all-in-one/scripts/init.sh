@@ -24,6 +24,49 @@ MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-icehrm_root}
 MYSQL_DATABASE=${MYSQL_DATABASE:-icehrm}
 MYSQL_USER=${MYSQL_USER:-icehrm}
 MYSQL_PASSWORD=${MYSQL_PASSWORD:-icehrm}
+APP_BASE_URL=${APP_BASE_URL:-${RENDER_EXTERNAL_URL:-http://localhost:8080}}
+
+# Generate config.php from environment variables
+log_info "Generating configuration from environment variables..."
+cat > /var/www/html/app/config.php <<EOF
+<?php
+/**
+ * IceHrm Configuration (Auto-generated at container startup)
+ */
+
+ini_set('error_log', '/var/www/html/app/data/icehrm.log');
+
+define('CLIENT_NAME', 'icehrm');
+define('APP_BASE_PATH', '/var/www/html/core/');
+define('CLIENT_BASE_PATH', '/var/www/html/app/');
+
+// Base URL
+define('BASE_URL', '${APP_BASE_URL}/web/');
+define('CLIENT_BASE_URL', '${APP_BASE_URL}/app/');
+
+// Database configuration
+define('APP_DB', '${MYSQL_DATABASE}');
+define('APP_USERNAME', '${MYSQL_USER}');
+define('APP_PASSWORD', '${MYSQL_PASSWORD}');
+define('APP_HOST', '127.0.0.1');
+define('APP_CON_STR', 'mysqli://' . APP_USERNAME . ':' . APP_PASSWORD . '@' . APP_HOST . '/' . APP_DB);
+
+// File upload settings
+define('FILE_TYPES', 'jpg,png,jpeg,pdf,doc,docx,xls,xlsx,txt');
+define('MAX_FILE_SIZE_KB', 10 * 1024);
+
+define('LOG_STDERR', '1');
+
+if (!defined('APP_WEB_URL')) {
+    define('APP_WEB_URL', 'https://icehrm.com');
+}
+if (!defined('EXT_SRC_PATH')) {
+    define('EXT_SRC_PATH', '/src/');
+}
+EOF
+
+chown nobody:nobody /var/www/html/app/config.php
+log_info "Configuration generated with APP_BASE_URL: ${APP_BASE_URL}"
 
 # Create log directory
 mkdir -p /var/log/icehrm
@@ -107,7 +150,7 @@ log_info "Starting all services via Supervisord..."
 log_info "============================================"
 log_info "IceHrm All-in-One Container"
 log_info "============================================"
-log_info "Web URL: http://localhost:5566"
+log_info "Web URL: ${APP_BASE_URL}"
 log_info "Default login: admin / admin"
 log_info "============================================"
 
