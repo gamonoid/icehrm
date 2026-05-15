@@ -86,7 +86,6 @@ class DashboardAdapter extends AdapterBase {
     this.showEmployeeList();
     this.buildTaskList();
     this.showNews();
-    this.showConnectionModal();
   }
 
   showConnectionModal() {

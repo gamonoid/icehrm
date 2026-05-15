@@ -1,9 +1,9 @@
 import {
   EmployeeAdapter,
   CompanyGraphAdapter,
-  ApiAccessAdapter,
+  MobileAppAdapter,
 } from './lib';
 
 window.EmployeeAdapter = EmployeeAdapter;
 window.CompanyGraphAdapter = CompanyGraphAdapter;
-window.ApiAccessAdapter = ApiAccessAdapter;
+window.MobileAppAdapter = MobileAppAdapter;

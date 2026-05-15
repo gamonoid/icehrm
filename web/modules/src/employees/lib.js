@@ -825,10 +825,10 @@ class CompanyGraphAdapter extends CompanyStructureAdapter {
 
 
 /*
- * Api Access
+ * Mobile App and API
  */
 
-class ApiAccessAdapter extends AdapterBase {
+class MobileAppAdapter extends AdapterBase {
   getDataMapping() {
     return [
     ];
@@ -850,14 +850,13 @@ class ApiAccessAdapter extends AdapterBase {
   }
 
   getOneTimeLoginCode() {
-    const reqJson = JSON.stringify({url: this.apiUrl, token: this.token});
+    const reqJson = JSON.stringify({ url: this.apiUrl, token: this.token });
     const callBackData = [];
     callBackData.callBackData = [];
     callBackData.callBackSuccess = 'loginCodeSuccessCallback';
     callBackData.callBackFail = 'loginCodeFailCallBack';
 
     this.customAction('getLoginCode', 'modules=employees', reqJson, callBackData, false);
-
   }
 
   loginCodeSuccessCallback(callBackData) {
@@ -865,23 +864,12 @@ class ApiAccessAdapter extends AdapterBase {
   }
 
   loginCodeFailCallBack(callBackData) {
-    this.showMessage('Error', 'Error occurred while requesting login code. Please contact team@icehrm.com.')
+    this.showMessage('Error', 'Error occurred while requesting login code. Please contact team@icehrm.com.');
   }
 
   get() {
     const that = this;
-    $('#loginCode button').on("click", function(){ that.getOneTimeLoginCode() });
-
-    const canvas = document.getElementById('apiQRcode');
-    QRCode.toCanvas(canvas, JSON.stringify({
-      key: 'IceHrm',
-      url: this.apiUrl,
-      token: this.token,
-    }), (error) => {
-      if (error) {
-        console.log(error);
-      }
-    });
+    $('#loginCode button').on('click', () => { that.getOneTimeLoginCode(); });
   }
 }
 
@@ -889,5 +877,5 @@ class ApiAccessAdapter extends AdapterBase {
 module.exports = {
   EmployeeAdapter,
   CompanyGraphAdapter,
-  ApiAccessAdapter,
+  MobileAppAdapter,
 };
