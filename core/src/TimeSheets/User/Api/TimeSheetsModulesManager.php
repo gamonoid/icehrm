@@ -13,6 +13,7 @@ use Classes\BaseService;
 use Classes\IceResponse;
 use TimeSheets\Common\Model\EmployeeTimeEntry;
 use TimeSheets\Common\Model\EmployeeTimeSheet;
+use TimeSheets\Rest\TimesheetRestEndPoint;
 
 class TimeSheetsModulesManager extends AbstractModuleManager
 {
@@ -37,6 +38,135 @@ class TimeSheetsModulesManager extends AbstractModuleManager
         $this->addModelClass('EmployeeTimeSheet');
         $this->addModelClass('EmployeeTimeEntry');
         $this->addModelClass('QTDays');
+    }
+
+    public function setupRestEndPoints()
+    {
+        // Get user's timesheets
+        \Classes\Macaw::get(
+            REST_API_PATH . 'timesheets',
+            function () {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('getMyTimesheets', []);
+            }
+        );
+
+        // Create timesheet for current week
+        \Classes\Macaw::post(
+            REST_API_PATH . 'timesheets/create-current',
+            function () {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('createCurrentWeekTimesheet', []);
+            }
+        );
+
+        // Create timesheet for previous week (based on existing timesheet)
+        \Classes\Macaw::post(
+            REST_API_PATH . 'timesheets/(:num)/create-previous',
+            function ($timesheetId) {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('createPreviousWeekTimesheet', [$timesheetId]);
+            }
+        );
+
+        // Create timesheet for next week (based on existing timesheet)
+        \Classes\Macaw::post(
+            REST_API_PATH . 'timesheets/(:num)/create-next',
+            function ($timesheetId) {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('createNextWeekTimesheet', [$timesheetId]);
+            }
+        );
+
+        // Get timesheet details
+        \Classes\Macaw::get(
+            REST_API_PATH . 'timesheets/(:num)',
+            function ($timesheetId) {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('getTimesheetDetails', [$timesheetId]);
+            }
+        );
+
+        // Submit timesheet
+        \Classes\Macaw::post(
+            REST_API_PATH . 'timesheets/(:num)/submit',
+            function ($timesheetId) {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('submitTimesheet', [$timesheetId]);
+            }
+        );
+
+        // Add time entry to timesheet
+        \Classes\Macaw::post(
+            REST_API_PATH . 'timesheets/(:num)/entries',
+            function ($timesheetId) {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('addTimeEntry', [$timesheetId]);
+            }
+        );
+
+        // Update time entry
+        \Classes\Macaw::post(
+            REST_API_PATH . 'timesheets/entries/(:num)/update',
+            function ($entryId) {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('updateTimeEntry', [$entryId]);
+            }
+        );
+
+        // Delete time entry
+        \Classes\Macaw::post(
+            REST_API_PATH . 'timesheets/entries/(:num)/delete',
+            function ($entryId) {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('deleteTimeEntry', [$entryId]);
+            }
+        );
+
+        // Get direct reports' timesheets (for managers)
+        \Classes\Macaw::get(
+            REST_API_PATH . 'timesheets/direct-reports',
+            function () {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('getDirectReportsTimesheets', []);
+            }
+        );
+
+        // Get pending timesheets for approval
+        \Classes\Macaw::get(
+            REST_API_PATH . 'timesheets/direct-reports/pending',
+            function () {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('getPendingTimesheets', []);
+            }
+        );
+
+        // Approve timesheet
+        \Classes\Macaw::post(
+            REST_API_PATH . 'timesheets/(:num)/approve',
+            function ($timesheetId) {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('approveTimesheet', [$timesheetId]);
+            }
+        );
+
+        // Reject timesheet
+        \Classes\Macaw::post(
+            REST_API_PATH . 'timesheets/(:num)/reject',
+            function ($timesheetId) {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('rejectTimesheet', [$timesheetId]);
+            }
+        );
+
+        // Get available projects for time entries
+        \Classes\Macaw::get(
+            REST_API_PATH . 'timesheets/projects',
+            function () {
+                $restEndPoint = new TimesheetRestEndPoint();
+                $restEndPoint->process('getProjects', []);
+            }
+        );
     }
 
     public function getInitializer()

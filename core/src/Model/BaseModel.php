@@ -384,11 +384,19 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
 
     public function Save()
     {
+        // Check if this is an insert (no id before save)
+        $isInsert = empty($this->id);
+
         $ok = parent::Save();
         if (!$ok) {
             $message = sprintf('%s: (%s) %s', 'Error saving :', $this->ErrorMsg(), json_encode($this));
             LogManager::getInstance()->error($message);
             LogManager::getInstance()->notifyException(new \Exception($message));
+        }
+
+        // Track insert for demo mode if enabled
+        if ($ok && $isInsert && !empty($this->id) && class_exists('DemoModeAdmin\DemoModeTracker')) {
+            \DemoModeAdmin\DemoModeTracker::trackInsert($this->getTable(), $this->id);
         }
 
         return $ok;

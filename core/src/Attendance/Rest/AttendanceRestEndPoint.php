@@ -34,6 +34,7 @@ class AttendanceRestEndPoint extends RestEndPoint
         $query->addColumn('in_time');
         $query->addColumn('out_time');
         $query->addColumn('note');
+        $query->addColumn('work_from_home');
         $query->setOrderBy('in_time desc');
 
         $limit = self::DEFAULT_LIMIT;
@@ -70,6 +71,7 @@ class AttendanceRestEndPoint extends RestEndPoint
         $query->addColumn('in_time');
         $query->addColumn('out_time');
         $query->addColumn('note');
+        $query->addColumn('work_from_home');
 
         $query->setOrderBy('in_time desc');
 
@@ -173,6 +175,12 @@ class AttendanceRestEndPoint extends RestEndPoint
             return $permissionResponse;
         }
 
+        // Handle work_from_home flag (accepts boolean or "true"/"false" string)
+        $workFromHome = false;
+        if (isset($body['work_from_home'])) {
+            $workFromHome = filter_var($body['work_from_home'], FILTER_VALIDATE_BOOLEAN);
+        }
+
         $response = $this->savePunch(
             $body['employee'],
             $body['in_time'],
@@ -181,7 +189,8 @@ class AttendanceRestEndPoint extends RestEndPoint
             null,
             $body['latitude'],
             $body['longitude'],
-            NetworkUtils::getClientIp()
+            NetworkUtils::getClientIp(),
+            $workFromHome
         );
 
         if ($response->getStatus() === IceResponse::SUCCESS) {
@@ -287,7 +296,8 @@ class AttendanceRestEndPoint extends RestEndPoint
         $id = null,
         $latitude = null,
         $longitude = null,
-        $ip = null
+        $ip = null,
+        $workFromHome = false
     ) {
         $employee = BaseService::getInstance()->getElement(
             'Employee',
@@ -372,6 +382,8 @@ class AttendanceRestEndPoint extends RestEndPoint
             $attendance->map_lng = $longitude;
             //$attendance->map_snapshot = $this->generateMapLocationImage($latitude, $longitude);
             $attendance->in_ip = $ip;
+            // Set work_from_home flag on punch-in (1 = Home, 0 = Office)
+            $attendance->work_from_home = $workFromHome ? 1 : 0;
         } else {
             $attendance->out_time = $outDateTime;
             $attendance->map_out_lat = $latitude;

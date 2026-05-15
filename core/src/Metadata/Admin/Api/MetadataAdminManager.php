@@ -64,5 +64,13 @@ class MetadataAdminManager extends AbstractModuleManager
                 $restEndPoint->process('getMobileModules', []);
             }
         );
+
+        \Classes\Macaw::get(
+            REST_API_PATH.'meta/extensions',
+            function () {
+                $restEndPoint = new MetadataRestEndPoint();
+                $restEndPoint->process('getExtensions', []);
+            }
+        );
     }
 }
