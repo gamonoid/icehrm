@@ -8,6 +8,7 @@ require_once $dir.'MarketplaceService.php';
 require_once $dir.'InstalledExtensionsService.php';
 require_once $dir.'ExtensionUpdateService.php';
 require_once $dir.'ExtensionData.php';
+require_once $dir.'DebugStatsService.php';
 
 // Migrations
 require_once $dir.'Migrations/CreateTables.php';

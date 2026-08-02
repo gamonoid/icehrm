@@ -37,13 +37,6 @@ $moduleData = [
 
 </div>
 <script>
-var modJsList = [];
-
-modJsList['tabModule'] = new ModuleAdapter('Module','Module');
-modJsList['tabModule'].setShowAddNew(false);
-modJsList['tabModule'].setObjectTypeName('Module');
-modJsList['tabModule'].setDataPipe(new IceDataPipe(modJsList['tabModule']));
-modJsList['tabModule'].setAccess(<?=json_encode($moduleData['permissions']['Module'])?>);
-var modJs = modJsList['tabModule'];
+initAdminModules(<?=json_encode($moduleData)?>);
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>

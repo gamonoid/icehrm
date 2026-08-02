@@ -46,6 +46,55 @@ class Attendance extends BaseModel
         ];
     }
 
+    /**
+     * Build the list filter query. Handles the employee filter (exact match,
+     * preserving the previous default behaviour) and a "date" filter that
+     * matches the whole calendar day against the `in_time` datetime column.
+     *
+     * @param  \stdClass|string $filter decoded filter object (see
+     *                                  BaseService::getData / core/data.php)
+     * @return array [whereClause, bindValues]
+     */
+    public function getCustomFilterQuery($filter)
+    {
+        // The framework hands us a decoded stdClass; normalise to an array
+        // (and tolerate a raw JSON string just in case).
+        if (is_string($filter)) {
+            $filter = json_decode($filter, true);
+        } else {
+            $filter = json_decode(json_encode($filter), true);
+        }
+        if (empty($filter) || !is_array($filter)) {
+            return array('', array());
+        }
+
+        $query = '';
+        $queryData = array();
+
+        if (isset($filter['employee']) && $filter['employee'] !== '' && $filter['employee'] !== 'NULL') {
+            if (is_array($filter['employee'])) {
+                $placeholders = implode(',', array_fill(0, count($filter['employee']), '?'));
+                $query .= ' and employee in (' . $placeholders . ')';
+                foreach ($filter['employee'] as $emp) {
+                    $queryData[] = $emp;
+                }
+            } else {
+                $query .= ' and employee = ?';
+                $queryData[] = $filter['employee'];
+            }
+        }
+
+        // in_time is a datetime, so filter across the whole day (00:00:00–23:59:59)
+        // rather than an exact-equality match that could never hit.
+        if (isset($filter['date']) && $filter['date'] !== '' && $filter['date'] !== 'NULL') {
+            $query .= ' and in_time >= ? and in_time <= ?';
+            $queryData[] = $filter['date'] . ' 00:00:00';
+            $queryData[] = $filter['date'] . ' 23:59:59';
+        }
+
+        return array($query, $queryData);
+    }
+
     public function postProcessGetData($obj)
     {
         if (empty($obj->out_time)) {

@@ -10,7 +10,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import QRCode from 'qrcode';
 import AdapterBase from '../../../api/AdapterBase';
-import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
+import ReactModalAdapterBase, { shellThemeWrap } from '../../../api/ReactModalAdapterBase';
 import EmployeeProfile from './components/EmployeeProfile';
 
 
@@ -68,22 +68,35 @@ class EmployeeAdapter extends ReactModalAdapterBase {
   }
 
   initTable() {
-    this.initProfile();
+    // initTable() is re-invoked by the shell on a dark/light theme toggle to
+    // re-render with the new theme; pass the already-loaded employee so it does
+    // not drop back to the loading skeleton.
+    this.initProfile(this.loadedEmployee);
   }
 
   initProfile(employee) {
+    if (employee) {
+      this.loadedEmployee = employee;
+    }
     const tableDom = document.getElementById(`${this.tab}`);
     this.tableContainer = React.createRef();
+    // Wrap in the shell theme so the profile follows dark/light mode in the SPA
+    // (no-op in the legacy app). Without this the antd cards rendered light on
+    // the dark shell and the inner sub-tab labels were unreadable.
     ReactDOM.render(
-      <EmployeeProfile
-        ref={this.tableContainer}
-        adapter={this}
-        element={employee}
-      />,
+      shellThemeWrap(
+        <EmployeeProfile
+          ref={this.tableContainer}
+          adapter={this}
+          element={employee}
+        />,
+      ),
       tableDom,
     );
 
-    this.tableContainer.current.setLoading(!employee);
+    if (this.tableContainer.current) {
+      this.tableContainer.current.setLoading(!employee);
+    }
   }
 
   get() {
@@ -357,8 +370,9 @@ class EmployeeAdapter extends ReactModalAdapterBase {
   }
 
   modEmployeeDeleteProfileImageCallBack(data) {
-    // eslint-disable-next-line no-restricted-globals
-    top.location.href = top.location.href;
+    // Re-fetch the profile so the avatar clears in-place (mirrors the upload
+    // flow) instead of a jarring full-app reload.
+    this.viewElement();
   }
 
   modEmployeeGetSuccessCallBack(data) {
@@ -866,6 +880,22 @@ class MobileAppAdapter extends AdapterBase {
   loginCodeFailCallBack(callBackData) {
     this.showMessage('Error', 'Error occurred while requesting login code. Please contact team@icehrm.com.');
   }
+
+  resetApiToken() {
+    const reqJson = JSON.stringify({});
+    const callBackData = [];
+    callBackData.callBackData = [];
+    callBackData.callBackSuccess = 'resetApiTokenSuccessCallback';
+    callBackData.callBackFail = 'resetApiTokenFailCallback';
+
+    // POST — this is a mutation (regenerates the token server-side).
+    this.customAction('resetApiToken', 'modules=employees', reqJson, callBackData, true);
+  }
+
+  // Overridden by the ApiAccess tab to update its React state; no-ops otherwise.
+  resetApiTokenSuccessCallback() {}
+
+  resetApiTokenFailCallback() {}
 
   get() {
     const that = this;

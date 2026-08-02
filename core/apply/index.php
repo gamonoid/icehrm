@@ -68,9 +68,15 @@ if(empty($job->id)){
         $benifits = json_decode($job->benefits, true);
     }
 
+    // Markdown rendering is NOT sanitisation: cebe/markdown uses block\HtmlTrait, so raw
+    // HTML in the stored value passes straight through to the output. These two fields are
+    // recruiter-authored and this page is public and unauthenticated, so anyone who could
+    // edit a posting could script every visitor. Sanitise the rendered HTML with an
+    // allow-list, which keeps the formatting and drops scripts, event handlers and
+    // javascript:/data: URLs.
     $parser = new \cebe\markdown\Markdown();
-    $job->description = $parser->parse($job->description);
-    $job->requirements = $parser->parse($job->requirements);
+    $job->description = \Classes\HtmlSanitizer::richText($parser->parse($job->description));
+    $job->requirements = \Classes\HtmlSanitizer::richText($parser->parse($job->requirements));
 
     $meta = new stdClass();
     $meta->title = $job->title;

@@ -134,48 +134,8 @@
 </div>
 <!-- Upload Modal -->
 
-<!-- Verify Modal -->
-<div class="modal fade" id="verifyModel" tabindex="-1" role="dialog" aria-labelledby="verifyModelLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><li class="fa fa-times"/></button>
-				<h3 id="verifyModelLabel" style="font-size: 17px;"></h3>
-			</div>
-			<div class="modal-body">
-				<p id="verifyModelBody">
-					<b>Step 1:</b><br/>
-					Please get your Instance Key from here:<br/>
-					<a target="_blank" href="<?=APP_WEB_URL?>/generateInstanceKey.php?id=<?=$baseService->getInstanceId()?>">
-						<?=APP_WEB_URL?>/generateInstanceKey.php?id=<?=$baseService->getInstanceId()?>
-					</a>
-
-					<br/><b>Step 2:</b><br/>
-					Enter the key you generated in step 1 here and click "Verify"<br/>
-				<form role="form">
-					<div class="row">
-						<label class="col-sm-12 control-label" for="verificationKey">Verification Key</label>
-						<div class="controls col-sm-12">
-							<input class="form-control" type="text" id="verificationKey" name="verificationKey" value=""/>
-						</div>
-					</div>
-					<br/><br/>
-					<div class="control-group row">
-						<div class="controls col-sm-12">
-							<button onclick="try{verifyInstance($('#verificationKey').val());}catch(e){};return false;" class="saveBtn btn btn-primary pull-right"><i class="fa fa-save"></i> Verify</button>
-							<button onclick="$('#verifyModel').modal('hide');return false;" class="cancelBtn btn pull-right" style="margin-right:5px;"><i class="fa fa-times-circle-o"></i> Cancel</button>
-						</div>
-						<div class="controls col-sm-3">
-						</div>
-					</div>
-			</div>
-			</form>
-			</p>
-		</div>
-	</div>
-</div>
-</div>
-<!-- Verify Modal -->
+<!-- The instance Verify modal was removed: instance verification is no longer part
+     of the product and its backing service action (verifyInstance) is gone. -->
 
 
 <?php if($user->user_level == 'Admin'){?>

@@ -17,6 +17,12 @@ $SAMLEnabled = SettingsManager::getInstance()->getSetting("SAML: Enabled") == "1
 $SAMLUserLoaded = false;
 
 if (isset($_REQUEST['logout'])) {
+    // Revoke the web SPA session token so a captured Bearer JWT stops working
+    // after logout. The long-lived 'FullAPI' token (mobile/API) is left intact.
+    $logoutUser = \Utils\SessionUtils::getSessionObject('user');
+    if (!empty($logoutUser) && !empty($logoutUser->id)) {
+        \Classes\RestApiManager::getInstance()->deleteAccessTokenForUser($logoutUser, 'Web');
+    }
     \Utils\SessionUtils::unsetClientSession();
     $user = null;
 }
@@ -44,6 +50,23 @@ if (empty($user) || empty($user->email)) {
     ) {
         $suser = null;
         $ssoUserLoaded = false;
+        $accountLocked = false;
+
+        // A SAML assertion is POSTed by the IdP, is cross-site by design and carries no CSRF
+        // token; every other credential path must present one. This runs before any credential
+        // is examined so a forged cross-site POST cannot consume an email login code, clear
+        // login_hash, or drive the failed-attempt counter into a lockout.
+        $isSamlResponsePost = $SAMLEnabled && isset($_POST['SAMLResponse']);
+        $loginCsrf = \Utils\SessionUtils::getSessionObject('csrf-login');
+        if (!$isSamlResponsePost
+            && (empty($_REQUEST['csrf'])
+                || !is_string($_REQUEST['csrf'])
+                || !hash_equals((string) $loginCsrf, $_REQUEST['csrf']))
+        ) {
+            $next = !empty($_REQUEST['next']) ? '&next='.$_REQUEST['next'] : '';
+            header("Location:".CLIENT_BASE_URL."login.php?f=1".$next);
+            exit();
+        }
 
         if($_REQUEST['username'] != "admin") {
             if (SettingsManager::getInstance()->getSetting("LDAP: Enabled") === "1") {
@@ -54,7 +77,9 @@ if (empty($user) || empty($user->email)) {
                 } else {
                     $suser = new \Users\Common\Model\User();
                     $suser->Load("username = ?", array($_REQUEST['username']));
-                    if (empty($suser)) {
+                    // Load() returns a populated object even when no row matched, so
+                    // empty($suser) is never true — check the id, as the SAML branch does.
+                    if (empty($suser) || empty($suser->id)) {
                         header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
                         exit();
                     }
@@ -73,7 +98,8 @@ if (empty($user) || empty($user->email)) {
             }
 
             $ssoUserEmail = (new SAMLManager())->getSSOEmail($samlData, $relayState);
-            LogManager::getInstance()->info('SSO SAML User Email:'.$ssoUserEmail);
+            // DEBUG, not INFO: an email address is PII and this ran on every SSO login.
+            LogManager::getInstance()->debug('SSO SAML User Email:'.$ssoUserEmail);
             if (false === $ssoUserEmail) {
                 header("Location:" . CLIENT_BASE_URL . "login.php?f=1");
                 exit();
@@ -86,7 +112,7 @@ if (empty($user) || empty($user->email)) {
                     $suser->Load("email = ?", array($ssoUserEmail));
                 }
 
-                LogManager::getInstance()->info('SSO SAML User:'.print_r($suser->email, true));
+                LogManager::getInstance()->debug('SSO SAML User:'.print_r($suser->email, true));
                 if (empty($suser) || empty($suser->id)) {
                     header("Location:" . CLIENT_BASE_URL . "logout.php");
                     exit();
@@ -106,43 +132,55 @@ if (empty($user) || empty($user->email)) {
                 ]
             );
 
-            if (!\Classes\PasswordManager::verifyPassword($_REQUEST['password'], $suser->password)) {
-                // Check if this is a login code
-                if (!empty($suser->login_hash) && !empty($suser->last_password_requested_at)) {
-                    // Check if code is still valid (within 15 minutes)
-                    $codeRequestedAt = strtotime($suser->last_password_requested_at);
-                    $codeExpiry = $codeRequestedAt + (15 * 60);
-
-                    if (time() < $codeExpiry && password_verify($_REQUEST['password'], $suser->login_hash)) {
-                        // Valid login code - clear it after use
-                        $suser->login_hash = null;
-                        $suser->Save();
-                    } else {
-                        $suser = null;
-                    }
-                } else {
-                    $suser = null;
+            // Is a valid, unexpired email login code being presented? This is the
+            // recovery path and is allowed even when the account is locked.
+            $validLoginCode = false;
+            if (!empty($suser->id)
+                && !empty($suser->login_hash)
+                && !empty($suser->last_password_requested_at)
+            ) {
+                $codeExpiry = strtotime($suser->last_password_requested_at) + (15 * 60);
+                if (time() < $codeExpiry && password_verify($_REQUEST['password'], $suser->login_hash)) {
+                    $validLoginCode = true;
                 }
+            }
+
+            if ($validLoginCode) {
+                // Valid login code — consume it. The failed-attempt counter is reset
+                // on the success path below, which unlocks the account.
+                $suser->login_hash = null;
+                $suser->Save();
+            } elseif (\Classes\PasswordManager::isAccountLocked($suser)) {
+                // Too many failed attempts: refuse password login and force the user
+                // to log in with an email code (which then resets the counter).
+                $suser = null;
+                $accountLocked = true;
+            } elseif (\Classes\PasswordManager::verifyPassword($_REQUEST['password'], $suser->password)) {
+                // Correct password on an unlocked account — success.
+            } else {
+                // Wrong password on an unlocked account — count it (locks at threshold).
+                \Classes\PasswordManager::recordFailedLogin($suser);
+                $suser = null;
             }
         }
 
         if (empty($suser)) {
             $next = !empty($_REQUEST['next'])?'&next='.$_REQUEST['next']:'';
-            header("Location:".CLIENT_BASE_URL."login.php?f=1".$next);
+            $lockedFlag = $accountLocked ? '&locked=1' : '';
+            header("Location:".CLIENT_BASE_URL."login.php?f=1".$lockedFlag.$next);
             exit();
         }
 
-        $loginCsrf = \Utils\SessionUtils::getSessionObject('csrf-login');
-
-        if (!$SAMLUserLoaded && ($_REQUEST['csrf'] != $loginCsrf || empty($_REQUEST['csrf']))) {
-            $next = !empty($_REQUEST['next'])?'&next='.$_REQUEST['next']:'';
-            header("Location:".CLIENT_BASE_URL."login.php?f=1".$next);
-            exit();
-        }
     }
 
     if (!empty($suser)) {
         $user = $suser;
+        // Successful login (password or email code) — clear any failed-attempt lock.
+        $suser->wrong_password_count = 0;
+        $suser->last_wrong_attempt_at = null;
+        // Prevent session fixation: issue a fresh session ID now that the user is
+        // authenticated, discarding any pre-login (or attacker-supplied) session ID.
+        \Utils\SessionUtils::regenerateSession();
         \Utils\SessionUtils::saveSessionObject('user', $user);
         $suser->last_login = date("Y-m-d H:i:s");
         $suser->Save();
@@ -156,79 +194,223 @@ if (empty($user) || empty($user->email)) {
             header("Location:" . CLIENT_BASE_URL.$loginRedirect);
             exit();
         } else {
-            if ($user->user_level == "Admin") {
-                if (\Utils\SessionUtils::getSessionObject('account_locked') == "1") {
-                    header("Location:".CLIENT_BASE_URL."?g=admin&n=billing&m=admin_System");
-                    exit();
-                } else {
-                    header("Location:".HOME_LINK_ADMIN);
-                    exit();
-                }
-            } else {
-                if (empty($user->default_module)) {
-                    header("Location:".HOME_LINK_OTHERS);
-                    exit();
-                } else {
-                    $defaultModule = new \Modules\Common\Model\Module();
-                    $defaultModule->Load("id = ?", array($user->default_module));
-                    if ($defaultModule->mod_group == "user") {
-                        $defaultModule->mod_group = "modules";
-                    }
-                    $homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&&n=".$defaultModule->name.
-                        "&m=".$defaultModule->mod_group."_".str_replace(" ", "_", $defaultModule->menu);
-                    header("Location:".$homeLink);
-                    exit();
-                }
+            // The legacy UI has been retired: everyone lands on the new React SPA.
+            // Persist ui_mode='new' so the choice is durable across sessions.
+            \Utils\SessionUtils::saveSessionString('uiMode', 'new');
+            if ($user->ui_mode !== 'new') {
+                $user->ui_mode = 'new';
+                $user->Save();
+                \Utils\SessionUtils::saveSessionObject('user', $user);
             }
+            header("Location:".CLIENT_BASE_URL."ui/");
+            exit();
         }
     }
 } else {
-    if ($user->user_level == "Admin") {
-        header("Location:".HOME_LINK_ADMIN);
-        exit();
-    } else {
-        if (empty($user->default_module)) {
-            header("Location:".HOME_LINK_OTHERS);
-            exit();
-        } else {
-            $defaultModule = new \Modules\Common\Model\Module();
-            $defaultModule->Load("id = ?", array($user->default_module));
-            if ($defaultModule->mod_group == "user") {
-                $defaultModule->mod_group = "modules";
-            }
-            $homeLink = CLIENT_BASE_URL."?g=".$defaultModule->mod_group."&n=".$defaultModule->name.
-                "&m=".$defaultModule->mod_group."_".str_replace(" ", "_", $defaultModule->menu);
-            header("Location:".$homeLink);
-            exit();
-        }
-    }
+    // Already authenticated and hitting login.php: the legacy UI has been retired,
+    // so always continue to the new React SPA.
+    \Utils\SessionUtils::saveSessionString('uiMode', 'new');
+    header("Location:".CLIENT_BASE_URL."ui/");
+    exit();
 }
 
 $tuser = \Utils\SessionUtils::getSessionObject('user');
 $logoFileUrl = UIManager::getInstance()->getCompanyLogoUrl();
 
-$csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
+// CSPRNG: this token gates the unauthenticated login POST, so it must not be derivable
+// from rand()+time().
+$csrfToken = bin2hex(random_bytes(32));
 \Utils\SessionUtils::saveSessionObject('csrf-login', $csrfToken);
 ?><!DOCTYPE html>
-<html lang="en" style="
-    width: 97.5%;
-    /*height: 100%;*/
-    /*display: table;*/
-    background-color: #0c5460;
-"><head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>IceHrm Login</title>
     <link rel="shortcut icon" href="https://icehrm.s3.amazonaws.com/images/icon16.png">
-
-    <link href="<?=BASE_URL?>dist/login.css?v=<?=$cssVersion?>" rel="stylesheet">
     <script src="<?=BASE_URL?>dist/login.js"></script>
+    <style>
+        /* Modern login — matches the SPA shell theme (web/shell/src/theme.js):
+           navy chrome #1a2233, primary #1976d2, Roboto, 8px radii, MUI shadows. */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        body {
+            font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.87);
+            background: #1a2233;
+            background-image: radial-gradient(1200px 600px at 80% -10%, rgba(25, 118, 210, 0.28), transparent 60%),
+                              radial-gradient(900px 500px at -10% 110%, rgba(25, 118, 210, 0.18), transparent 55%);
+        }
+        .login-wrap {
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+        }
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px 36px 28px;
+            box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
+        }
+        .login-logo {
+            display: block;
+            margin: 0 auto 12px;
+            max-width: 70%;
+            max-height: 96px;
+        }
+        .login-subtitle {
+            text-align: center;
+            color: rgba(0, 0, 0, 0.6);
+            margin-bottom: 24px;
+        }
+        .field { margin-bottom: 16px; }
+        .field label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.6);
+            margin-bottom: 6px;
+        }
+        .field input {
+            width: 100%;
+            height: 40px;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-family: inherit;
+            color: rgba(0, 0, 0, 0.87);
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.23);
+            border-radius: 8px;
+            outline: none;
+            transition: border-color .15s, box-shadow .15s;
+        }
+        .field input:hover { border-color: rgba(0, 0, 0, 0.5); }
+        .field input:focus {
+            border-color: #1976d2;
+            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.18);
+        }
+        .pw-wrap { position: relative; }
+        .pw-wrap input { padding-right: 42px; }
+        .pw-toggle {
+            position: absolute;
+            top: 50%;
+            right: 6px;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: transparent;
+            border-radius: 50%;
+            color: rgba(0, 0, 0, 0.45);
+            cursor: pointer;
+        }
+        .pw-toggle:hover { background: rgba(0, 0, 0, 0.05); color: rgba(0, 0, 0, 0.7); }
+        .btn, .btn-outline {
+            width: 100%;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background .15s, box-shadow .15s, border-color .15s;
+        }
+        .btn {
+            border: 1px solid #1976d2;
+            background: #1976d2;
+            color: #fff;
+            box-shadow: 0 2px 1px -1px rgba(0,0,0,0.08), 0 1px 3px 0 rgba(0,0,0,0.12);
+        }
+        .btn:hover { background: #1565c0; border-color: #1565c0; }
+        .btn:disabled { background: rgba(0,0,0,0.12); border-color: transparent; color: rgba(0,0,0,0.38); cursor: default; }
+        .btn-outline {
+            border: 1px solid rgba(25, 118, 210, 0.6);
+            background: #fff;
+            color: #1976d2;
+        }
+        .btn-outline:hover { background: rgba(25, 118, 210, 0.06); border-color: #1976d2; }
+        .social-btn {
+            width: 100%;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit;
+            color: rgba(0, 0, 0, 0.75);
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.23);
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: background .15s, border-color .15s;
+        }
+        .social-btn:hover { background: rgba(0, 0, 0, 0.03); border-color: rgba(0, 0, 0, 0.4); }
+        .social-btn svg { flex: 0 0 auto; }
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 18px 0;
+            color: rgba(0, 0, 0, 0.45);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.12);
+        }
+        .alert {
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .alert-danger { background: #fdeded; color: #5f2120; border: 1px solid #f5c6c6; }
+        .alert-info { background: #e5f6fd; color: #014361; border: 1px solid #b8e7fb; }
+        .alert-warning { background: #fff4e5; color: #663c00; border: 1px solid #ffe0b2; }
+        .login-links {
+            text-align: center;
+            color: rgba(0, 0, 0, 0.6);
+            margin-top: 4px;
+        }
+        .login-links a { color: #1976d2; text-decoration: none; font-weight: 500; }
+        .login-links a:hover { text-decoration: underline; }
+        .demo-box {
+            margin-top: 20px;
+            padding: 14px 16px;
+            border: 1px dashed rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            background: #fafafa;
+            font-size: 13px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+        .demo-box h5 { font-size: 14px; color: rgba(0, 0, 0, 0.87); margin-bottom: 6px; }
+        .demo-box p { margin: 2px 0; }
+        .mb-8 { margin-bottom: 16px; }
+    </style>
 </head>
-
-<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" class="" style="
-    height: 100%;
-">
+<body>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -237,7 +419,6 @@ $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
 
   ga('create', '<?=\Classes\BaseService::getInstance()->getGAKey()?>', 'gamonoid.com');
   ga('send', 'pageview');
-
 </script>
 <script type="text/javascript">
   var key = "";
@@ -246,185 +427,150 @@ $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
   key = key.replace(/ /g,"+");
   <?php }?>
 </script>
+<script type="text/javascript">
+  // Show/hide the adjacent password input.
+  window.icehrmTogglePassword = function (btn) {
+    var input = btn.parentNode.querySelector('input');
+    if (!input) { return; }
+    input.type = input.type === 'password' ? 'text' : 'password';
+    btn.setAttribute('aria-label', input.type === 'password' ? 'Show password' : 'Hide password');
+  };
+</script>
 
-<div style="
-    height: 100%;
-">
-    <div class="row no-gutters" style="height: 80%">
-        <div class="col-lg-12 col-md-12 col-xs-12" style="padding-left: 25%; padding-right: 25%;padding-top: 50px; background-color: #0c5460;">
-            <div class="row">
-                <div class="col-lg-2 col-md-2 col-xs-0">
+<div class="login-wrap">
+    <div class="login-card">
+        <img class="login-logo" src="<?=$logoFileUrl?>" alt="IceHrm for Managing Employees Data, Vacation, Attendance and Recruitment. A complete HR solution for your company"/>
+        <p class="login-subtitle">Sign in to your account</p>
+
+        <?php if ($googleAuthEnabled) { ?>
+            <a class="social-btn" onclick="authGoogle(); return false;" href="#">
+                <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+                Log in with Google
+            </a>
+        <?php }?>
+        <?php if ($microsoftAuthEnabled) {?>
+            <a class="social-btn" onclick="authMicrosoft(); return false;" href="#">
+                <svg width="18" height="18" viewBox="0 0 23 23" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#f25022"/><rect x="12" y="1" width="10" height="10" fill="#7fba00"/><rect x="1" y="12" width="10" height="10" fill="#00a4ef"/><rect x="12" y="12" width="10" height="10" fill="#ffb900"/></svg>
+                Continue with Microsoft
+            </a>
+        <?php }?>
+
+        <?php if (!isset($_REQUEST['cp'])) {?>
+            <?php if ($googleAuthEnabled || $microsoftAuthEnabled) {?>
+                <div class="divider">Or</div>
+            <?php }?>
+
+            <form id="loginForm" action="login.php" method="POST">
+                <input type="hidden" id="next" name="next" value="<?=htmlentities(isset($_REQUEST['next']) ? $_REQUEST['next'] : '', ENT_QUOTES, 'UTF-8')?>"/>
+                <input type="hidden" id="csrf" name="csrf" value="<?=$csrfToken?>"/>
+                <div class="field">
+                    <label for="username">Email or Username</label>
+                    <input placeholder="Enter username or email" id="username" name="username" autocomplete="username">
                 </div>
-                <div class="col-lg-8 col-md-8 col-xs-12" style="background-color: #FFF;">
-                    <div class="row" style="padding-top:3%;">
-                        <div class="col-lg-12 col-md-12 col-xs-12">
-                            <div class="bg-white-2 h-100 px-11 pt-11 pb-7">
-                                <div class="row d-flex justify-content-center">
-                                    <a href="https://icehrm.com" target="_blank">
-                                        <img style="max-width: 100%;padding-bottom: 30px;max-height:120px;" src="<?=$logoFileUrl?>" alt="IceHrm for Managing Employees Data, Vacation, Attendance and Recruitment. A complete HR solution for your company"/>
-                                    </a>
-                                </div>
-                                <?php if ($googleAuthEnabled) {?>
-                                    <div class="row">
-                                        <div class="col-4 col-xs-12">
-
-                                        </div>
-                                        <div class="col-4 col-xs-12" style="cursor: pointer;">
-                                            <a onclick="authGoogle(); return false;" class="font-size-4 font-weight-semibold position-relative text-white bg-poppy h-px-48 flex-all-center w-100 px-6 mb-4"><i class="fab fa-google pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span class="d-none d-xs-block">Continue with Google</span></a>
-                                        </div>
-                                        <div class="col-4 col-xs-12">
-
-                                        </div>
-                                    </div>
-                                <?php }?>
-                                <?php if ($microsoftAuthEnabled) {?>
-                                    <div class="row">
-                                        <div class="col-4 col-xs-12">
-
-                                        </div>
-                                        <div class="col-4 col-xs-12" style="cursor: pointer;">
-                                            <a onclick="authMicrosoft(); return false;" class="font-size-4 font-weight-semibold position-relative text-white bg-allports h-px-48 flex-all-center w-100 px-6 mb-4"><i class="fab fa-microsoft pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span class="d-none d-xs-block">Continue with Microsoft</span></a>
-                                        </div>
-                                        <div class="col-4 col-xs-12">
-
-                                        </div>
-                                    </div>
-                                <?php }?>
-                                <?php if (!isset($_REQUEST['cp'])) {?>
-                                    <?php if ($googleAuthEnabled || $microsoftAuthEnabled) {?>
-                                        <div class="or-devider">
-                                            <span class="font-size-3 line-height-reset ">Or</span>
-                                        </div>
-                                    <?php }?>
-                                    <form id="loginForm" action="login.php" method="POST" style1="display: block; box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; border: none; margin-bottom: 20px; padding: 20px;">
-                                        <input type="hidden" id="next" name="next" value="<?=$_REQUEST['next']?>"/>
-                                        <input type="hidden" id="csrf" name="csrf" value="<?=$csrfToken?>"/>
-                                        <div class="form-group">
-                                            <label for="username" class="font-size-4 text-black-2 font-weight-semibold line-height-reset">Email or Username</label>
-                                            <input class="form-control" placeholder="Enter username or email" id="username" name="username" style="border-radius: 0;">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password" class="font-size-4 text-black-2 font-weight-semibold line-height-reset">Password</label>
-                                            <div class="position-relative">
-                                                <input type="password" id="password" name="password" class="form-control" id="password" placeholder="Enter password" style="border-radius: 0;">
-                                                <a href="#" class="show-password pos-abs-cr fas mr-6 text-black-2" data-show-pass="password"></a>
-                                            </div>
-                                        </div>
-                                        <?php if (isset($_REQUEST['f'])) {?>
-                                            <div class="alert alert-danger" role="alert">
-                                                <i class="fa fa-theater-masks" style="padding-right: 10px;"></i> Login failed
-                                                <?php if (isset($_REQUEST['fm'])) {
-                                                    echo $_REQUEST['fm'];
-                                                }?>
-                                            </div>
-                                        <?php } ?>
-                                        <?php if (isset($_REQUEST['c'])) {?>
-                                            <div class="alert alert-info" role="alert">
-                                                Password changed successfully
-                                            </div>
-                                        <?php } ?>
-                                        <div class="form-group d-flex flex-wrap justify-content-between">
-                                            <!--                                <label for="terms-check" class="gr-check-input d-flex  mr-3">-->
-                                            <!--                                    <input class="d-none" type="checkbox" id="terms-check">-->
-                                            <!--                                    <span class="checkbox mr-5"></span>-->
-                                            <!--                                    <span class="font-size-3 mb-0 line-height-reset mb-1 d-block">Remember password</span>-->
-                                            <!--                                </label>-->
-                                        </div>
-                                        <div class="form-group mb-8">
-                                            <button class="btn btn-info btn-medium w-100 text-uppercase" type="button" onclick="submitLogin();return false;">Log in </button>
-                                        </div>
-                                        <div class="or-devider">
-                                            <span class="font-size-3 line-height-reset">Or</span>
-                                        </div>
-                                        <div class="form-group mb-8">
-                                            <button class="btn btn-outline-info btn-medium w-100 text-uppercase" type="button" onclick="showLoginWithCode();return false;"><i class="fas fa-envelope" style="margin-right: 8px;"></i>Login with Email Code</button>
-                                        </div>
-                                        <p class="font-size-4 text-center heading-default-color">Can't remember your password? <a href="" class="text-info" onclick="showForgotPassword();return false;">Reset Password</a></p>
-                                    </form>
-                                    <form id="loginWithCodeForm" style="display:none;" action="">
-                                        <div class="form-group">
-                                            <label for="codeEmail" class="font-size-4 text-black-2 font-weight-semibold line-height-reset">Email</label>
-                                            <input type="email" class="form-control" placeholder="Enter your email address" id="codeEmail" name="codeEmail" style="border-radius: 0;">
-                                        </div>
-                                        <div id="loginCodeFormAlert" class="alert alert-info" role="alert" style="display: none;"></div>
-                                        <div class="form-group mb-8" id="requestCodeBtn">
-                                            <button class="btn btn-info btn-medium w-100 text-uppercase" type="button" onclick="requestLoginCode();return false;">Send Login Code to Email</button>
-                                        </div>
-                                        <div id="enterCodeSection" style="display:none;">
-                                            <div class="form-group">
-                                                <label for="loginCode" class="font-size-4 text-black-2 font-weight-semibold line-height-reset">Login Code</label>
-                                                <input class="form-control" placeholder="Enter the code from email" id="loginCode" name="loginCode" style="border-radius: 0;">
-                                            </div>
-                                            <div class="form-group mb-8">
-                                                <button class="btn btn-info btn-medium w-100 text-uppercase" type="button" onclick="submitLoginWithCode();return false;">Log in with Code</button>
-                                            </div>
-                                        </div>
-                                        <div class="form-group mb-8">
-                                            <button class="btn btn-outline-info btn-small w-100 text-uppercase" type="button" onclick="window.location = '<?=CLIENT_BASE_URL?>login.php'">Back</button>
-                                        </div>
-                                    </form>
-									<?php if (defined('DEMO_MODE')) {?>
-                                        <br />
-                                        <br />
-                                        <div class="col-md-12">
-                                            <a href="#" class="media bg-white rounded-4 pl-8 pt-9 pb-9 pr-7 hover-shadow-1 mb-9 shadow-8" style="border: dashed;">
-                                                <div class="text-pink bg-pink-opacity-1 circle-56 font-size-6 mr-7">
-                                                    <i class="fas fa-user"></i>
-                                                </div>
-                                                <!-- Category Content -->
-                                                <div class="">
-                                                    <h5 class="font-size-5 font-weight-semibold text-black-2 line-height-reset font-weight-bold mb-1">Demo Logins</h5>
-                                                    <p class="font-size-3 font-weight-normal text-gray mb-0"> Admin: admin / admin </p>
-                                                    <p class="font-size-3 font-weight-normal text-gray mb-0">Manager: manager / demouserpwd</p>
-                                                    <p class="font-size-3 font-weight-normal text-gray mb-0">User: user1 / demouserpwd</p>
-                                                    <p class="font-size-3 font-weight-normal text-gray mb-0">User: user2 / demouserpwd</p>
-                                                </div>
-                                            </a>
-                                        </div>
-									<?php }?>
-                                    <form id="requestPasswordChangeForm" style="display:none;" action="">
-                                        <div class="form-group">
-                                            <label for="username" class="font-size-4 text-black-2 font-weight-semibold line-height-reset">Email or Username</label>
-                                            <input class="form-control" placeholder="Enter username or email" id="usernameChange" name="usernameChange">
-                                        </div>
-                                        <div id="requestPasswordChangeFormAlert" class="alert alert-warning" role="alert" style="display: none;">
-
-                                        </div>
-                                        <div class="form-group mb-8">
-                                            <button class="btn btn-info btn-medium w-100 text-uppercase" type="button" onclick="requestPasswordChange();return false;">Request Password Change&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
-                                        </div>
-                                        <div class="form-group mb-8">
-                                            <button class="btn btn-outline-info btn-small w-100 text-uppercase" type="button" onclick="window.location = '<?=CLIENT_BASE_URL?>login.php'">Back&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
-                                        </div>
-                                    </form>
-                                <?php } else {?>
-                                    <form id="newPasswordForm" action="">
-                                        <div class="form-group">
-                                            <label for="password" class="font-size-4 text-black-2 font-weight-semibold line-height-reset">Password</label>
-                                            <div class="position-relative">
-                                                <input type="password" id="password" name="password" class="form-control" id="password" placeholder="Enter new password">
-                                                <a href="#" class="show-password pos-abs-cr fas mr-6 text-black-2" data-show-pass="password"></a>
-                                            </div>
-                                        </div>
-                                        <div id="newPasswordFormAlert" class="alert alert-warning" role="alert" style="display: none;">
-
-                                        </div>
-                                        <div class="form-group mb-8">
-                                            <button class="btn btn-info btn-medium w-100 text-uppercase" type="button" onclick="changePassword(key);return false;">Change Password <span class="icon-arrow-right"></span></button>
-                                        </div>
-                                    </form>
-                                <?php }?>
-                            </div>
-                        </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <div class="pw-wrap">
+                        <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="current-password">
+                        <button type="button" class="pw-toggle" onclick="icehrmTogglePassword(this)" aria-label="Show password">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </button>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-2 col-xs-0">
+                <?php if (isset($_REQUEST['f'])) {?>
+                    <div class="alert alert-danger" role="alert">
+                        Login failed<?php if (isset($_REQUEST['fm'])) {
+                            echo htmlspecialchars($_REQUEST['fm'], ENT_QUOTES, 'UTF-8');
+                        }?>
+                    </div>
+                <?php } ?>
+                <?php if (isset($_REQUEST['locked'])) {?>
+                    <div class="alert alert-warning" role="alert">
+                        Your account is locked after too many failed login attempts.
+                        Please <a href="#" onclick="showLoginWithCode();return false;">log in with an email code</a> to continue.
+                    </div>
+                <?php } ?>
+                <?php if (isset($_REQUEST['c'])) {?>
+                    <div class="alert alert-info" role="alert">
+                        Password changed successfully
+                    </div>
+                <?php } ?>
+                <div class="field mb-8">
+                    <button class="btn" type="button" onclick="submitLogin();return false;">Log in</button>
                 </div>
-            </div>
-        </div>
+                <div class="divider">Or</div>
+                <div class="field mb-8">
+                    <button class="btn-outline" type="button" onclick="showLoginWithCode();return false;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Login with Email Code
+                    </button>
+                </div>
+                <p class="login-links">Can't remember your password? <a href="" onclick="showForgotPassword();return false;">Reset Password</a></p>
+            </form>
 
+            <form id="loginWithCodeForm" style="display:none;" action="">
+                <div class="field">
+                    <label for="codeEmail">Email</label>
+                    <input type="email" placeholder="Enter your email address" id="codeEmail" name="codeEmail" autocomplete="email">
+                </div>
+                <div id="loginCodeFormAlert" class="alert alert-info" role="alert" style="display: none;"></div>
+                <div class="field mb-8" id="requestCodeBtn">
+                    <button class="btn" type="button" onclick="requestLoginCode();return false;">Send Login Code to Email</button>
+                </div>
+                <div id="enterCodeSection" style="display:none;">
+                    <div class="field">
+                        <label for="loginCode">Login Code</label>
+                        <input placeholder="Enter the code from email" id="loginCode" name="loginCode" autocomplete="one-time-code">
+                    </div>
+                    <div class="field mb-8">
+                        <button class="btn" type="button" onclick="submitLoginWithCode();return false;">Log in with Code</button>
+                    </div>
+                </div>
+                <div class="field mb-8">
+                    <button class="btn-outline" type="button" onclick="window.location = '<?=CLIENT_BASE_URL?>login.php'">Back</button>
+                </div>
+            </form>
+
+            <?php if (defined('DEMO_MODE')) {?>
+                <div class="demo-box">
+                    <h5>Demo Logins</h5>
+                    <p>Admin: admin / admin</p>
+                    <p>Manager: manager / demouserpwd</p>
+                    <p>User: user1 / demouserpwd</p>
+                    <p>User: user2 / demouserpwd</p>
+                </div>
+            <?php }?>
+
+            <form id="requestPasswordChangeForm" style="display:none;" action="">
+                <div class="field">
+                    <label for="usernameChange">Email or Username</label>
+                    <input placeholder="Enter username or email" id="usernameChange" name="usernameChange">
+                </div>
+                <div id="requestPasswordChangeFormAlert" class="alert alert-warning" role="alert" style="display: none;"></div>
+                <div class="field mb-8">
+                    <button class="btn" type="button" onclick="requestPasswordChange();return false;">Request Password Change</button>
+                </div>
+                <div class="field mb-8">
+                    <button class="btn-outline" type="button" onclick="window.location = '<?=CLIENT_BASE_URL?>login.php'">Back</button>
+                </div>
+            </form>
+        <?php } else {?>
+            <form id="newPasswordForm" action="">
+                <div class="field">
+                    <label for="password">Password</label>
+                    <div class="pw-wrap">
+                        <input type="password" id="password" name="password" placeholder="Enter new password" autocomplete="new-password">
+                        <button type="button" class="pw-toggle" onclick="icehrmTogglePassword(this)" aria-label="Show password">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="newPasswordFormAlert" class="alert alert-warning" role="alert" style="display: none;"></div>
+                <div class="field mb-8">
+                    <button class="btn" type="button" onclick="changePassword(key);return false;">Change Password</button>
+                </div>
+            </form>
+        <?php }?>
     </div>
 </div>
-
-
-</body></html>
+</body>
+</html>

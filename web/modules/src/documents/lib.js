@@ -60,6 +60,13 @@ class EmployeeDocumentAdapter extends ReactModalAdapterBase {
     ];
   }
 
+  // Native card-list action: download the record's attachment.
+  downloadAttachment(id, record) {
+    if (record && record.attachment && typeof window.download === 'function') {
+      window.download(record.attachment);
+    }
+  }
+
   getTableActionButtonJsx(adapter) {
     return (text, record) => {
       return (
@@ -137,6 +144,13 @@ class EmployeePayslipDocumentAdapter extends ReactModalAdapterBase {
     ];
   }
 
+  // Native card-list action: download the record's attachment.
+  downloadAttachment(id, record) {
+    if (record && record.attachment && typeof window.download === 'function') {
+      window.download(record.attachment);
+    }
+  }
+
   getTableActionButtonJsx(adapter) {
     return (text, record) => {
       return (
@@ -165,7 +179,8 @@ class EmployeeCompanyDocumentAdapter extends ReactModalAdapterBase {
       'type',
       'size',
       'attachment',
-      'details'
+      'details',
+      'document_link',
     ];
   }
 
@@ -243,6 +258,13 @@ class EmployeeCompanyDocumentAdapter extends ReactModalAdapterBase {
       row.size = '';
     }
     return row;
+  }
+
+  // Native card-list action: download the record's attachment.
+  downloadAttachment(id, record) {
+    if (record && record.attachment && typeof window.download === 'function') {
+      window.download(record.attachment);
+    }
   }
 
   getTableActionButtonJsx(adapter) {

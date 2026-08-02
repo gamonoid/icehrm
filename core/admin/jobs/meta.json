@@ -1,6 +1,7 @@
 {
     "label": "Job Details Setup",
     "menu": "Admin",
+    "area": "configuration",
     "order": "3",
     "icon": "fa-columns",
     "user_levels": [

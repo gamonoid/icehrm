@@ -1,11 +1,11 @@
 {
     "label": "Qualifications Setup",
     "menu": "Admin",
+    "area": "configuration",
     "order": "4",
     "icon": "fa-check-square",
     "user_levels": [
-        "Admin",
-        "Manager"
+        "Admin"
     ],
     "permissions": {
         "Manager": {

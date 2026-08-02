@@ -5,7 +5,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
+import ReactModalAdapterBase, { shellThemeWrap } from '../../../api/ReactModalAdapterBase';
 import { SettingsForm, SettingsPage } from './components';
 import IceDataPipe from '../../../api/IceDataPipe';
 
@@ -178,9 +178,13 @@ class SettingAdapter extends ReactModalAdapterBase {
       return false;
     }
     
-    // Old ModuleBuilder uses just tab name, not tab + "Table"
-    // Try both formats for compatibility
-    let containerDom = document.getElementById(`${this.tab}Table`);
+    // SPA shell containers first (setContainers), then the legacy divs — the
+    // old ModuleBuilder printed just the tab name, newer pages tab + "Table".
+    let containerDom = (this.containerOverrides && this.containerOverrides.Table)
+      ? this.containerOverrides.Table : null;
+    if (!containerDom) {
+      containerDom = document.getElementById(`${this.tab}Table`);
+    }
     if (!containerDom) {
       containerDom = document.getElementById(this.tab);
     }
@@ -202,10 +206,12 @@ class SettingAdapter extends ReactModalAdapterBase {
     }
 
     ReactDOM.render(
-      <SettingsPage
-        adapter={this}
-        filter={filterObj}
-      />,
+      shellThemeWrap(
+        <SettingsPage
+          adapter={this}
+          filter={filterObj}
+        />,
+      ),
       containerDom,
     );
 
@@ -220,18 +226,20 @@ class SettingAdapter extends ReactModalAdapterBase {
     }
     
     this.formContainer = React.createRef();
-    const formDom = document.getElementById(`${this.tab}Form`);
-    
+    const formDom = this.getContainerEl('Form');
+
     if (formDom) {
       // Load remote data before initializing form
       this.loadRemoteDataForSettings();
       
       ReactDOM.render(
-        <SettingsForm
-          ref={this.formContainer}
-          adapter={this}
-          onSave={this.handleSettingsSave.bind(this)}
-        />,
+        shellThemeWrap(
+          <SettingsForm
+            ref={this.formContainer}
+            adapter={this}
+            onSave={this.handleSettingsSave.bind(this)}
+          />,
+        ),
         formDom,
       );
     }

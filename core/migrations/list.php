@@ -1,5 +1,11 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20260725_100000_seed_signing_secret';
+$migrationList[] = 'v20260721_100000_add_rest_access_token_type';
+$migrationList[] = 'v20260718_100000_add_employee_number_settings';
+$migrationList[] = 'v20260717_160000_create_backups';
+$migrationList[] = 'v20260707_350004_add_overtime_categories';
+$migrationList[] = 'v20260608_350003_add_ui_mode_to_users';
 $migrationList[] = 'v20260111_350001_create_cache_table';
 $migrationList[] = 'v20260108_340014_add_work_home_to_attendance';
 $migrationList[] = 'v20251229_340014_remove_unused_modules';

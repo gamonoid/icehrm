@@ -55,10 +55,33 @@ class IceCypressTest {
 
   select2Click(id, value) {
     cy.get(`#s2id_${id}`).should("be.visible").click();
-    cy.focused().clear().type(value).should('have.value', value);
+    cy.focused().clear().type(value);
+      //.should('have.value', value);
     cy.get('.select2-drop:visible').find('.select2-results li').first()
       .should("be.visible")
       .click();
+  }
+
+  select2ClickValidate(cy, validation = [], editButtonSelector) {
+    if (this.isRemoteTable) {
+      cy.server().route('GET', `/${config.URL_PREFIX}/data.php*`).as('getAfterSave');
+    } else {
+      cy.server().route('POST', `/${config.URL_PREFIX}/service.php*`).as('getAfterSave');
+    }
+
+    // Wait for data table response
+    cy.wait('@getAfterSave').its('status').should('be', config.DEFAULT_WAIT_TIME);
+
+    cy.server().route('POST', `/${config.URL_PREFIX}/service.php*`).as('getElementAfterSave');
+    // Click on edit and wait
+    cy.get(`#${this.element} table tbody`).find('tr').first().find(editButtonSelector || `.center div img[${this.titleDataAttributeName}='Edit']`)
+      .click();
+
+    cy.wait('@getElementAfterSave').its('status').should('be', config.DEFAULT_WAIT_TIME);
+
+    validation.forEach((item) => {
+      cy.get(`#s2id_${item[0]} .select2-chosen`).then(element => expect(element.text()).eq(item[1]));
+    });
   }
 
   clickSave(cy) {

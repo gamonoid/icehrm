@@ -15,54 +15,18 @@ window.handleViewChange = (view, userLevel) => {
     view = localStorage.getItem('user-view') === 'user' ? 'user' : 'admin';
   }
 
+  // Data-driven, drift-proof: hide ALL admin menu groups in Employee view and ALL
+  // user menu groups in Admin view, by id prefix. The previous version hid a
+  // hardcoded list of group ids, which drifted — e.g. #menu_admin_Marketplace was
+  // never added, so the admin-only Marketplace leaked into Employee view. Using a
+  // prefix selector means any current/future group is handled automatically.
+  // (Admin menu groups render as #menu_admin_*, user groups as #menu_module_*.)
   if (view === 'admin') {
-    $('#menu_module_Personal_Information').hide();
-    $('#menu_module_My_Tasks').hide();
-    $('#menu_module_Documents').hide();
-    $('#menu_module_Training').hide();
-    $('#menu_module_Performance').hide();
-    $('#menu_module_Travel_Management').hide();
-    $('#menu_module_Finance').hide();
-    $('#menu_module_User_Reports').hide();
-    $('#menu_module_My_Reports').hide();
-    $('#menu_module_Collaboration').hide();
-    $('#menu_module_About_You').hide();
-    $('#menu_module_Travel').hide();
+    $('[id^="menu_module_"]').hide();
+    $('[id^="menu_admin_"]').show();
   } else {
-    $('#menu_module_Personal_Information').show();
-    $('#menu_module_My_Tasks').show();
-    $('#menu_module_Documents').show();
-    $('#menu_module_Training').show();
-    $('#menu_module_Performance').show();
-    $('#menu_module_Travel_Management').show();
-    $('#menu_module_Finance').show();
-    $('#menu_module_User_Reports').show();
-    $('#menu_module_My_Reports').show();
-    $('#menu_module_Collaboration').show();
-    $('#menu_module_About_You').show();
-    $('#menu_module_Travel').show();
-  }
-
-  if (view === 'user') {
-    $('#menu_admin_Admin').hide();
-    $('#menu_admin_Employees').hide();
-    $('#menu_admin_Manage').hide();
-    $('#menu_admin_Admin_Reports').hide();
-    $('#menu_admin_Reports').hide();
-    $('#menu_admin_System').hide();
-    $('#menu_admin_Insights').hide();
-    $('#menu_admin_Payroll').hide();
-    $('#menu_admin_Recruitment').hide();
-  } else {
-    $('#menu_admin_Admin').show();
-    $('#menu_admin_Employees').show();
-    $('#menu_admin_Manage').show();
-    $('#menu_admin_Admin_Reports').show();
-    $('#menu_admin_Reports').show();
-    $('#menu_admin_System').show();
-    $('#menu_admin_Insights').show();
-    $('#menu_admin_Payroll').show();
-    $('#menu_admin_Recruitment').show();
+    $('[id^="menu_module_"]').show();
+    $('[id^="menu_admin_"]').hide();
   }
 
   $('.skeletonSideMenu').hide();

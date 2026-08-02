@@ -27,12 +27,18 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 	</div>
 
 </div>
+<?php
+use Classes\PermissionManager;
+use Permissions\Common\Model\Permission;
+
+$moduleData = [
+    'user_level' => $user->user_level,
+    'permissions' => [
+        'Permission' => PermissionManager::checkGeneralAccess(new Permission()),
+    ]
+];
+?>
 <script>
-var modJsList = new Array();
-
-modJsList['tabPermission'] = new PermissionAdapter('Permission','Permission');
-modJsList['tabPermission'].setShowAddNew(false);
-var modJs = modJsList['tabPermission'];
-
+initAdminPermissions(<?=json_encode($moduleData)?>);
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>

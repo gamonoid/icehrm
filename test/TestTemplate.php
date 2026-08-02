@@ -67,13 +67,13 @@ class TestTemplate extends PHPUnit_Framework_TestCase
 
         $dbLocal = NewADOConnection(APP_CON_STR);
 
-        \Model\File::SetDatabaseAdapter($dbLocal);
-        \Model\Setting::SetDatabaseAdapter($dbLocal);
-        \Model\Report::SetDatabaseAdapter($dbLocal);
-        \Model\DataEntryBackup::SetDatabaseAdapter($dbLocal);
-        \Model\Audit::SetDatabaseAdapter($dbLocal);
-        \Model\Notification::SetDatabaseAdapter($dbLocal);
-        \Model\RestAccessToken::SetDatabaseAdapter($dbLocal);
+//        \Model\File::SetDatabaseAdapter($dbLocal);
+//        \Model\Setting::SetDatabaseAdapter($dbLocal);
+//        \Model\Report::SetDatabaseAdapter($dbLocal);
+//        \Model\DataEntryBackup::SetDatabaseAdapter($dbLocal);
+//        \Model\Audit::SetDatabaseAdapter($dbLocal);
+//        \Model\Notification::SetDatabaseAdapter($dbLocal);
+//        \Model\RestAccessToken::SetDatabaseAdapter($dbLocal);
 
         $moduleManagers = \Classes\BaseService::getInstance()->getModuleManagers();
 
@@ -87,12 +87,13 @@ class TestTemplate extends PHPUnit_Framework_TestCase
             $moduleManagerObj->setupFileFieldMappings($fileFields);
             $moduleManagerObj->setupErrorMappings($mysqlErrors);
             $moduleManagerObj->initCalculationHooks();
+            $moduleManagerObj->initialize();
 
             $modelClassList = $moduleManagerObj->getModelClasses();
 
-            foreach ($modelClassList as $modelClass) {
-                $modelClass::SetDatabaseAdapter($dbLocal);
-            }
+//            foreach ($modelClassList as $modelClass) {
+//                $modelClass::SetDatabaseAdapter($dbLocal);
+//            }
         }
     }
 

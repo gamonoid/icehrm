@@ -72,5 +72,43 @@ class MetadataAdminManager extends AbstractModuleManager
                 $restEndPoint->process('getExtensions', []);
             }
         );
+
+        // ---- Admin config / master-data CRUD (whitelisted models) ----
+        // List the manageable config models
+        \Classes\Macaw::get(
+            REST_API_PATH.'meta/config',
+            function () {
+                (new \Metadata\Rest\AdminConfigRestEndPoint())->process('listModels', []);
+            }
+        );
+        // Describe a config model's fields (register before the list route so
+        // '{model}/describe' is matched by its own handler)
+        \Classes\Macaw::get(
+            REST_API_PATH.'meta/config/(:any)/describe',
+            function ($model) {
+                (new \Metadata\Rest\AdminConfigRestEndPoint())->process('describeConfig', $model);
+            }
+        );
+        // List rows of a config model
+        \Classes\Macaw::get(
+            REST_API_PATH.'meta/config/(:any)',
+            function ($model) {
+                (new \Metadata\Rest\AdminConfigRestEndPoint())->process('listConfig', $model);
+            }
+        );
+        // Create / update a config row
+        \Classes\Macaw::post(
+            REST_API_PATH.'meta/config/(:any)',
+            function ($model) {
+                (new \Metadata\Rest\AdminConfigRestEndPoint())->process('saveConfig', $model);
+            }
+        );
+        // Delete a config row
+        \Classes\Macaw::delete(
+            REST_API_PATH.'meta/config/(:any)/(:num)',
+            function ($model, $id) {
+                (new \Metadata\Rest\AdminConfigRestEndPoint())->process('deleteConfig', [$model, $id]);
+            }
+        );
     }
 }

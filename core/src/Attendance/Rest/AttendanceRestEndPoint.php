@@ -151,6 +151,26 @@ class AttendanceRestEndPoint extends RestEndPoint
         return $date->format('Y-m-d H:i:s');
     }
 
+    /**
+     * Run $fn while holding a per-employee MySQL advisory lock. The punch-in/out flows
+     * check for an open punch and then insert/update as separate statements; without this
+     * two concurrent requests (double-click, mobile retry, two tabs) both pass the check
+     * and both insert an open row (the overlap re-check compares strtotime(NULL)=0 and
+     * misses it). The lock makes the whole check-then-write atomic across requests and
+     * auto-releases if the connection dies; we also release it in finally.
+     */
+    private function withEmployeePunchLock($employeeId, callable $fn)
+    {
+        $lockKey = 'ice_att_punch_'.$employeeId;
+        $db = BaseService::getInstance()->getDB();
+        $db->Execute("SELECT GET_LOCK(?, ?)", array($lockKey, 10));
+        try {
+            return $fn();
+        } finally {
+            $db->Execute("SELECT RELEASE_LOCK(?)", array($lockKey));
+        }
+    }
+
     public function punchIn(User $user)
     {
         $body = $this->getRequestBody();
@@ -163,44 +183,45 @@ class AttendanceRestEndPoint extends RestEndPoint
             return new IceResponse(IceResponse::ERROR, 'User department timezone is not set', 400);
         }
 
+        return $this->withEmployeePunchLock($body['employee'], function () use ($user, $body) {
+            $openPunch = $this->getOpenPunch($user, $body['employee'], $body['in_time']);
 
-        $openPunch = $this->getOpenPunch($user, $body['employee'], $body['in_time']);
+            if ($openPunch->getStatus() === IceResponse::SUCCESS && !empty($openPunch->getData()['attendance'])) {
+                return new IceResponse(IceResponse::ERROR, 'User has already punched in for the day ', 400);
+            }
 
-        if ($openPunch->getStatus() === IceResponse::SUCCESS && !empty($openPunch->getData()['attendance'])) {
-            return new IceResponse(IceResponse::ERROR, 'User has already punched in for the day ', 400);
-        }
+            $permissionResponse = $this->checkBasicPermissions($user, $body['employee']);
+            if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
+                return $permissionResponse;
+            }
 
-        $permissionResponse = $this->checkBasicPermissions($user, $body['employee']);
-        if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
-            return $permissionResponse;
-        }
+            // Handle work_from_home flag (accepts boolean or "true"/"false" string)
+            $workFromHome = false;
+            if (isset($body['work_from_home'])) {
+                $workFromHome = filter_var($body['work_from_home'], FILTER_VALIDATE_BOOLEAN);
+            }
 
-        // Handle work_from_home flag (accepts boolean or "true"/"false" string)
-        $workFromHome = false;
-        if (isset($body['work_from_home'])) {
-            $workFromHome = filter_var($body['work_from_home'], FILTER_VALIDATE_BOOLEAN);
-        }
+            $response = $this->savePunch(
+                $body['employee'],
+                $body['in_time'],
+                $body['note'],
+                null,
+                null,
+                $body['latitude'],
+                $body['longitude'],
+                NetworkUtils::getClientIp(),
+                $workFromHome
+            );
 
-        $response = $this->savePunch(
-            $body['employee'],
-            $body['in_time'],
-            $body['note'],
-            null,
-            null,
-            $body['latitude'],
-            $body['longitude'],
-            NetworkUtils::getClientIp(),
-            $workFromHome
-        );
+            if ($response->getStatus() === IceResponse::SUCCESS) {
+                $attendance = $this->cleanObject($response->getData());
+                $response->setData($attendance);
+                $response->setCode(201);
+                return $response;
+            }
 
-        if ($response->getStatus() === IceResponse::SUCCESS) {
-            $attendance = $this->cleanObject($response->getData());
-            $response->setData($attendance);
-            $response->setCode(201);
-            return $response;
-        }
-
-        return new IceResponse(IceResponse::ERROR, $response->getData(), 400);
+            return new IceResponse(IceResponse::ERROR, $response->getData(), 400);
+        });
     }
 
     public function punchOut(User $user)
@@ -211,40 +232,42 @@ class AttendanceRestEndPoint extends RestEndPoint
             $body['out_time'] = $this->getServerTime();
         }
 
-        $attendance = $this->findAttendance($body['employee'], $body['out_time']);
-
         if (empty($body['out_time'])) {
             return new IceResponse(IceResponse::ERROR, 'User department timezone is not set', 400);
         }
 
-        if ($attendance->employee.'' !== $body['employee'].'') {
-            return new IceResponse(IceResponse::ERROR, 'User has not punched in for the day ', 400);
-        }
+        return $this->withEmployeePunchLock($body['employee'], function () use ($user, $body) {
+            $attendance = $this->findAttendance($body['employee'], $body['out_time']);
 
-        $permissionResponse = $this->checkBasicPermissions($user, $body['employee']);
-        if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
-            return $permissionResponse;
-        }
+            if ($attendance->employee.'' !== $body['employee'].'') {
+                return new IceResponse(IceResponse::ERROR, 'User has not punched in for the day ', 400);
+            }
 
-        $response = $this->savePunch(
-            $body['employee'],
-            $attendance->in_time,
-            $body['note'],
-            $body['out_time'],
-            $attendance->id,
-            $body['latitude'],
-            $body['longitude'],
-            NetworkUtils::getClientIp()
-        );
+            $permissionResponse = $this->checkBasicPermissions($user, $body['employee']);
+            if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
+                return $permissionResponse;
+            }
 
-        if ($response->getStatus() === IceResponse::SUCCESS) {
-            $attendance = $this->cleanObject($response->getData());
-            $response->setData($attendance);
-            $response->setCode(200);
-            return $response;
-        }
+            $response = $this->savePunch(
+                $body['employee'],
+                $attendance->in_time,
+                $body['note'],
+                $body['out_time'],
+                $attendance->id,
+                $body['latitude'],
+                $body['longitude'],
+                NetworkUtils::getClientIp()
+            );
 
-        return new IceResponse(IceResponse::ERROR, $response->getData(), 400);
+            if ($response->getStatus() === IceResponse::SUCCESS) {
+                $attendance = $this->cleanObject($response->getData());
+                $response->setData($attendance);
+                $response->setCode(200);
+                return $response;
+            }
+
+            return new IceResponse(IceResponse::ERROR, $response->getData(), 400);
+        });
     }
 
     public function findAttendance($employeeId, $date)

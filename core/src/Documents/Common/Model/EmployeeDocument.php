@@ -30,7 +30,9 @@ class EmployeeDocument extends BaseModel
 
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        // View-only for managers — they can see their direct reports' documents
+        // but cannot add, edit or delete them.
+        return array("get","element");
     }
 
     public function getUserAccess()

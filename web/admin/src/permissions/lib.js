@@ -3,13 +3,13 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
 /**
  * PermissionAdapter
  */
 
-class PermissionAdapter extends AdapterBase {
+class PermissionAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -28,6 +28,19 @@ class PermissionAdapter extends AdapterBase {
       { sTitle: 'Permission' },
       { sTitle: 'Value' },
     ];
+  }
+
+  getTableColumns() {
+    return [
+      { title: 'User Level', dataIndex: 'user_level', sorter: true },
+      { title: 'Module', dataIndex: 'module_id' },
+      { title: 'Permission', dataIndex: 'permission' },
+      { title: 'Value', dataIndex: 'value' },
+    ];
+  }
+
+  showViewButton() {
+    return false;
   }
 
   getFormFields() {

@@ -1,4 +1,27 @@
 <?php
+// Idempotent: safe to include more than once. app/index.php loads this early (to
+// gate pro extensions before the pro loader runs) and the later bootstrap
+// includes it again — the guard makes the second include a no-op.
+if (defined('ICEHRM_CONFIG_BASE_LOADED')) {
+    return;
+}
+define('ICEHRM_CONFIG_BASE_LOADED', true);
+
+// Session cookie hardening (security finding 1.7). Set here, before any session_start().
+// HttpOnly and SameSite are safe on both HTTP and HTTPS. Secure is enabled ONLY on
+// HTTPS installs — detected from the configured CLIENT_BASE_URL scheme (correct even
+// behind a TLS-terminating proxy, unlike $_SERVER['HTTPS']) — so HTTP-only environments
+// (e.g. local dev on http://localhost) keep working: a Secure cookie is never sent over
+// plain HTTP, which would otherwise break the session there.
+if (function_exists('ini_set')) {
+    $iceCookieSecure = defined('CLIENT_BASE_URL') && stripos(CLIENT_BASE_URL, 'https://') === 0;
+    ini_set('session.cookie_httponly', '1');
+    ini_set('session.cookie_samesite', 'Lax'); // PHP 7.3+ ini directive
+    ini_set('session.cookie_secure', $iceCookieSecure ? '1' : '0');
+    ini_set('session.use_strict_mode', '1');    // reject attacker-supplied session IDs
+    unset($iceCookieSecure);
+}
+
 if(!defined('SIGN_IN_ELEMENT_MAPPING_FIELD_NAME')){define('SIGN_IN_ELEMENT_MAPPING_FIELD_NAME','employee');}
 
 if(!defined('APP_NAME')){define('APP_NAME','ICE Hrm');}
@@ -13,13 +36,16 @@ if(!defined('HOME_LINK_OTHERS')){
 }
 
 //Version
-define('VERSION', '35.0.0');
-define('CACHE_VALUE', '35.0.0.2026-02-07-0547');
-define('VERSION_NUMBER', '350000');
-define('VERSION_DATE', '07/02/2026');
+define('VERSION', '36.0.0');
+define('CACHE_VALUE', '36.0.0.2026-08021822');
+define('VERSION_NUMBER', '360000');
+define('VERSION_DATE', '02/08/2026');
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','icehrm@gamonoid.com');}
 if(!defined('KEY_PREFIX')){define('KEY_PREFIX','IceHrm');}
+
+// Google Analytics GA4 measurement ID.
+if(!defined('GA4_MEASUREMENT_ID')){define('GA4_MEASUREMENT_ID','G-WQ0B30PDPY');}
 
 define('UI_SHOW_SWITCH_PROFILE', true);
 define('CRON_LOG', ini_get('error_log'));
@@ -27,18 +53,25 @@ define('CRON_LOG', ini_get('error_log'));
 define('MEMCACHE_HOST', '127.0.0.1');
 define('MEMCACHE_PORT', '11211');
 
-if(!defined('WK_HTML_PATH')){
-    define('WK_HTML_PATH', '/usr/bin/xvfb-run -- /usr/local/bin/wkhtmltopdf');
+if (!defined('ICEHRM_ENV')) {
+    define('ICEHRM_ENV', 'production');
 }
-define('ALL_CLIENT_BASE_PATH', '/vagrant/deployment/clients/');
 
-define('IS_CLOUD', false);
+if (!defined('ICEHRM_CORS_ALLOWED_ORIGINS')) {
+    define('ICEHRM_CORS_ALLOWED_ORIGINS', '');
+}
+
+if (!function_exists('iceProExtensionsEnabled')) {
+    function iceProExtensionsEnabled()
+    {
+        return false;
+    }
+}
 define('LDAP_ENABLED', true);
 define('SAML_ENABLED', true);
-define('LEAVE_ENABLED', true);
-define('RECRUITMENT_ENABLED', true);
 if(!defined('APP_WEB_URL')) {define('APP_WEB_URL', 'https://icehrm.com');}
 
 if (!defined('EXTENSIONS_URL')) {
     define('EXTENSIONS_URL', str_replace('/web/', '/extensions/', BASE_URL));
 }
+

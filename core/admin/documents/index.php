@@ -64,38 +64,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
     ];
     ?>
     <script type="text/javascript">
-      //var data = {"user_level":"Admin","permissions":{"CompanyDocument":["get","element","save","delete"],"Document":["get","element","save","delete"],"EmployeeDocument":["get","element","save","delete"],"PayslipDocument":["get","element","save","delete"]}};
-      var data = <?php echo json_encode($moduleData);?>;
-      var modJsList = [];
-      modJsList['tabCompanyDocument'] = new CompanyDocumentAdapter('CompanyDocument','CompanyDocument','','');
-      modJsList['tabCompanyDocument'].setObjectTypeName('CompanyDocument');
-      modJsList['tabCompanyDocument'].setAccess(data.permissions.CompanyDocument ? data.permissions.CompanyDocument : {});
-      modJsList['tabCompanyDocument'].setDataPipe(new IceDataPipe(modJsList.tabCompanyDocument));
-      modJsList['tabCompanyDocument'].setRemoteTable(1);
-      modJsList['tabCompanyDocument'].setTitle('Company Documents');
-
-      modJsList['tabDocument'] = new DocumentAdapter('Document','Document','','');
-      modJsList['tabDocument'].setObjectTypeName('Document');
-      modJsList['tabDocument'].setAccess(data.permissions.Document ? data.permissions.Document : {});
-      modJsList['tabDocument'].setDataPipe(new IceDataPipe(modJsList.tabDocument));
-      modJsList['tabDocument'].setRemoteTable(1);
-      modJsList['tabDocument'].setTitle('Document Types');
-
-      modJsList['tabEmployeeDocument'] = new EmployeeDocumentAdapter('EmployeeDocument','EmployeeDocument','','date_added desc');
-      modJsList['tabEmployeeDocument'].setRemoteTable(1);
-      modJsList['tabEmployeeDocument'].setObjectTypeName('EmployeeDocument');
-      modJsList['tabEmployeeDocument'].setAccess(data.permissions.EmployeeDocument ? data.permissions.EmployeeDocument : {});
-      modJsList['tabEmployeeDocument'].setDataPipe(new IceDataPipe(modJsList.tabEmployeeDocument));
-      modJsList['tabEmployeeDocument'].setTitle('Employee Documents');
-
-      modJsList['tabPayslipDocument'] = new EmployeePayslipDocumentAdapter('PayslipDocument','PayslipDocument','','date_added desc');
-      modJsList['tabPayslipDocument'].setRemoteTable(1);
-      modJsList['tabPayslipDocument'].setObjectTypeName('PayslipDocument');
-      modJsList['tabPayslipDocument'].setAccess(data.permissions.PayslipDocument ? data.permissions.PayslipDocument : {});
-      modJsList['tabPayslipDocument'].setDataPipe(new IceDataPipe(modJsList.tabPayslipDocument));
-      modJsList['tabPayslipDocument'].setTitle('Employee Payslip');
-
-      var modJs = modJsList['tabCompanyDocument'];
+      initAdminDocuments(<?php echo json_encode($moduleData);?>);
     </script>
 <?php
 

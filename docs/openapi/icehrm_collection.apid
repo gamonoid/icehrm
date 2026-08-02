@@ -1,0 +1,856 @@
+openapi: 3.0.0
+info:
+  title: IceHrmProApi
+  version: 1.0.0
+servers:
+  - url: http://{{baseurl}}
+tags:
+  - name: Attendance
+  - name: Employees
+  - name: Directory
+  - name: Leave
+  - name: Meta
+  - name: Expense
+  - name: Charts
+  - name: Tasks
+  - name: Recruitment
+paths:
+  /attendance/1:
+    get:
+      tags:
+        - Attendance
+      summary: GET Attendance Entry
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /attendance:
+    post:
+      tags:
+        - Attendance
+      summary: Create Attendance Entry
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"employee\": 3,\n  \"note\": \"Test1\"\n}"'
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Attendance
+      summary: GET All Attendance
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /attendance/punch-in:
+    post:
+      tags:
+        - Attendance
+      summary: Employee Punch In
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"employee\": 1,\n  \"note\": \"Test\"\n}"'
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /attendance/69:
+    delete:
+      tags:
+        - Attendance
+      summary: Delete Attendance Entry
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employee/3/attendance:
+    get:
+      tags:
+        - Attendance
+      summary: GET All Attendance for Employee
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employee/1/open-punch-in/today:
+    get:
+      tags:
+        - Attendance
+      summary: Retrieve Open Punch In
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /attendance/punch-out:
+    post:
+      tags:
+        - Attendance
+      summary: Employee Punch Out
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"employee\": 1,\n  \"note\": \"Test out\"\n}"'
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employees/1/educations:
+    get:
+      tags:
+        - Employees
+      summary: GET Employee Educations
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employees/1/languages:
+    get:
+      tags:
+        - Employees
+      summary: GET Employee Languages
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employees/me:
+    get:
+      tags:
+        - Employees
+      summary: Get Me
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employees/1/skills:
+    get:
+      tags:
+        - Employees
+      summary: GET Employee Skills
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employees/1/status:
+    get:
+      tags:
+        - Employees
+      summary: GET Employee Status
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Employees
+      summary: Employee Status
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"status\": 3\n}"'
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employees/1/certifications:
+    get:
+      tags:
+        - Employees
+      summary: GET Employee Certifications
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employees:
+    get:
+      tags:
+        - Employees
+      summary: GET All Employees
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Employees
+      summary: Create Employee
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: >-
+                "{\n  \"employee_id\": \"D100\",\n  \"first_name\": \"IceHrm
+                123\",\n  \"middle_name\": \"Sample Ex1\",\n  \"last_name\":
+                \"Employee\",\n  \"nationality\": \"35\",\n  \"birthday\":
+                \"1984-03-17\",\n  \"gender\": \"Male\",\n  \"marital_status\":
+                \"Married\",\n  \"ssn_num\": \"\",\n  \"nic_num\":
+                \"294-38-3535\",\n  \"other_id\": \"294-38-3535\",\n 
+                \"driving_license\": \"\",\n  \"employment_status\": \"3\",\n 
+                \"job_title\": \"11\",\n  \"pay_grade\": \"2\",\n 
+                \"work_station_id\": \"\",\n  \"address1\": \"2772 Flynn
+                Street\",\n  \"address2\": \"Willoughby\",\n  \"city\":
+                \"Willoughby\",\n  \"country\": \"US\",\n  \"province\":
+                \"41\",\n  \"postal_code\": \"44094\",\n  \"home_phone\":
+                \"440-953-4578\",\n  \"mobile_phone\": \"440-953-4578\",\n 
+                \"work_phone\": \"440-953-4578\",\n  \"work_email\":
+                \"icehrm+admin@web-stalk.com\",\n  \"private_email\":
+                \"icehrm+admin@web-stalk.com\",\n  \"joined_date\":
+                \"2005-08-03\",\n  \"confirmation_date\": \"0000-00-00\",\n 
+                \"supervisor\": \"2\",\n  \"indirect_supervisors\":
+                \"[\\\"3\\\",\\\"4\\\"]\",\n  \"department\": \"1\",\n 
+                \"termination_date\": \"0000-00-00\",\n  \"status\":
+                \"Active\",\n  \"approver1\": \"5\",\n  \"approver2\": \"6\",\n 
+                \"approver3\": \"7\"\n}"
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employees/1:
+    get:
+      tags:
+        - Employees
+      summary: GET Employee
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employees/44:
+    delete:
+      tags:
+        - Employees
+      summary: Delete Employee
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /employees/46:
+    put:
+      tags:
+        - Employees
+      summary: Edit Employee
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: >-
+                "{\n  \"id\" : 54,\n  \"employee_id\": \"D1012\",\n 
+                \"first_name\": \"IceHrm 123\",\n  \"middle_name\": \"Sample
+                Ex1\",\n  \"last_name\": \"Employee\",\n  \"nationality\":
+                \"35\",\n  \"birthday\": \"1984-03-17\",\n  \"gender\":
+                \"Male\",\n  \"marital_status\": \"Married\",\n  \"ssn_num\":
+                \"\",\n  \"nic_num\": \"294-38-3535\",\n  \"other_id\":
+                \"294-38-3535\",\n  \"driving_license\": \"\",\n 
+                \"employment_status\": \"3\",\n  \"job_title\": \"11\",\n 
+                \"pay_grade\": \"2\",\n  \"work_station_id\": \"\",\n 
+                \"address1\": \"2772 Flynn Street\",\n  \"address2\":
+                \"Willoughby\",\n  \"city\": \"Willoughby\",\n  \"country\":
+                \"US\",\n  \"province\": \"41\",\n  \"postal_code\":
+                \"44094\",\n  \"home_phone\": \"440-953-4578\",\n 
+                \"mobile_phone\": \"440-953-4578\",\n  \"work_phone\":
+                \"440-953-4578\",\n  \"work_email\":
+                \"icehrm+admin@web-stalk.com\",\n  \"private_email\":
+                \"icehrm+admin@web-stalk.com\",\n  \"joined_date\":
+                \"2005-08-03\",\n  \"confirmation_date\": \"0000-00-00\",\n 
+                \"supervisor\": \"2\",\n  \"indirect_supervisors\":
+                \"[\\\"3\\\",\\\"4\\\"]\",\n  \"department\": \"1\",\n 
+                \"termination_date\": \"0000-00-00\",\n  \"status\":
+                \"Active\",\n  \"approver1\": \"5\",\n  \"approver2\": \"6\",\n 
+                \"approver3\": \"7\"\n}"
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /staff:
+    get:
+      tags:
+        - Directory
+      summary: Staff
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /leave:
+    get:
+      tags:
+        - Leave
+      summary: Get All Leave
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /leave/entitlement:
+    get:
+      tags:
+        - Leave
+      summary: Leave Entitlement
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /leave/check/1/2019-02-15/2019-02-15:
+    get:
+      tags:
+        - Leave
+      summary: Check Leave
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /leave/2:
+    get:
+      tags:
+        - Leave
+      summary: Get Leave Details
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /leave/file-upload:
+    post:
+      tags:
+        - Leave
+      summary: Upload Leave Attachment
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /leave/apply:
+    post:
+      tags:
+        - Leave
+      summary: Apply
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: >-
+                "{\n\t\"leave_type\":\"2\",\n\t\"start\":\"2022-05-23\",\n\t\"end\":\"2022-05-24\",\n\t\"details\":\"\",\n\t\"attachment\":\"\",\n\t\"days\":{\n\t\t\"20220523\":\"Full
+                Day\",\n        \"20220524\":\"Full Day\"\n\t}\n}"
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /meta/countries:
+    get:
+      tags:
+        - Meta
+      summary: Countries
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /meta/currency:
+    get:
+      tags:
+        - Meta
+      summary: CurrencyTypes
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /meta/mobile-modules:
+    get:
+      tags:
+        - Meta
+      summary: Get Mobile Modules
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /expense/categories:
+    get:
+      tags:
+        - Expense
+      summary: Expense Categories
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /expenses:
+    get:
+      tags:
+        - Expense
+      summary: My Expenses
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /expense/payment-methods:
+    get:
+      tags:
+        - Expense
+      summary: Expense Payment Methods
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /expenses/file-upload:
+    post:
+      tags:
+        - Expense
+      summary: Upload Expense Attachment
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/x-www-form-urlencoded
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /expense:
+    post:
+      tags:
+        - Expense
+      summary: Add Expense
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: >-
+                "{\n\t\"expense_date\": \"2019-02-04\",\n\t\"payment_method\":
+                1,\n\t\"transaction_no\": \"1111\",\n\t\"payee\": \"Thilina
+                Hasantha\",\n\t\"category\": 1,\n\t\"notes\":
+                \"retre\",\n\t\"currency\": 42,\n\t\"amount\":
+                10.000,\n\t\"attachment1\": \"0865880001550471336\"\n}"
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /charts/employee-check-ins:
+    get:
+      tags:
+        - Charts
+      summary: Employees online
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /charts/employees-distribution:
+    get:
+      tags:
+        - Charts
+      summary: Employee Distribution
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /charts/company-leave-entitlement:
+    get:
+      tags:
+        - Charts
+      summary: Company leave entitlement
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /tasks:
+    get:
+      tags:
+        - Tasks
+      summary: Tasks
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /jobs:
+    get:
+      tags:
+        - Recruitment
+      summary: GET All Active Jobs
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /job/9:
+    get:
+      tags:
+        - Recruitment
+      summary: GETJob
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /candidate/18:
+    get:
+      tags:
+        - Recruitment
+      summary: GET Candidate
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /candidate/18/notes:
+    get:
+      tags:
+        - Recruitment
+      summary: GET Candidate Notes
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /candidate/18/interviews:
+    get:
+      tags:
+        - Recruitment
+      summary: GET Candidate Interviews
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: Bearer {{accessToken}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

@@ -49,43 +49,43 @@ include APP_BASE_PATH . 'modulejslibs.inc.php';
 </div>
 <?php
 $moduleData = [
-	'user_level' => $user->user_level,
-	'customFields' => [
-		'Project' => BaseService::getInstance()->getCustomFields("Project"),
-		'EmployeeProject' => BaseService::getInstance()->getCustomFields("EmployeeProject"),
+    'user_level' => $user->user_level,
+    'customFields' => [
+        'Project' => BaseService::getInstance()->getCustomFields("Project"),
+        'EmployeeProject' => BaseService::getInstance()->getCustomFields("EmployeeProject"),
 		'Client' => BaseService::getInstance()->getCustomFields("Client"),
-	],
-	'permissions' => [
-		'Project' => PermissionManager::checkGeneralAccess(new Project()),
-		'EmployeeProject' => PermissionManager::checkGeneralAccess(new EmployeeProject()),
+    ],
+    'permissions' => [
+        'Project' => PermissionManager::checkGeneralAccess(new Project()),
+        'EmployeeProject' => PermissionManager::checkGeneralAccess(new EmployeeProject()),
 		'Client' => PermissionManager::checkGeneralAccess(new Client()),
-	]
+    ]
 ];
 ?>
 <script>
-    var modJsList = [];
-    var data = <?= json_encode($moduleData) ?>;
-    modJsList['tabProject'] = new ProjectAdapter('Project', 'Project');
-    modJsList.tabProject.setObjectTypeName('Project');
-    modJsList.tabProject.setAccess(data.permissions.Project);
-    modJsList.tabProject.setDataPipe(new IceDataPipe(modJsList.tabProject));
-    modJsList.tabProject.setRemoteTable(true);
-    modJsList.tabProject.setCustomFields(data.customFields.Project);
+  var modJsList = [];
+  var data = <?= json_encode($moduleData) ?>;
+  modJsList['tabProject'] = new ProjectAdapter('Project', 'Project');
+  modJsList.tabProject.setObjectTypeName('Project');
+  modJsList.tabProject.setAccess(data.permissions.Project);
+  modJsList.tabProject.setDataPipe(new IceDataPipe(modJsList.tabProject));
+  modJsList.tabProject.setRemoteTable(true);
+  modJsList.tabProject.setCustomFields(data.customFields.Project);
 
-    modJsList['tabEmployeeProject'] = new EmployeeProjectAdapter('EmployeeProject', 'EmployeeProject');
-    modJsList.tabEmployeeProject.setObjectTypeName('Employee Project');
-    modJsList.tabEmployeeProject.setAccess(data.permissions.EmployeeProject);
-    modJsList.tabEmployeeProject.setDataPipe(new IceDataPipe(modJsList.tabEmployeeProject));
-    modJsList.tabEmployeeProject.setRemoteTable(true);
+  modJsList['tabEmployeeProject'] = new EmployeeProjectAdapter('EmployeeProject', 'EmployeeProject');
+  modJsList.tabEmployeeProject.setObjectTypeName('Employee Project');
+  modJsList.tabEmployeeProject.setAccess(data.permissions.EmployeeProject);
+  modJsList.tabEmployeeProject.setDataPipe(new IceDataPipe(modJsList.tabEmployeeProject));
+  modJsList.tabEmployeeProject.setRemoteTable(true);
 
-    modJsList['tabClient'] = new ClientAdapter('Client');
-    modJsList.tabClient.setObjectTypeName('Client');
-    modJsList.tabClient.setAccess(data.permissions.Client);
-    modJsList.tabClient.setDataPipe(new IceDataPipe(modJsList.tabClient));
-    modJsList.tabClient.setRemoteTable(true);
-    modJsList.tabClient.setCustomFields(data.customFields.Client);
+  modJsList['tabClient'] = new ClientAdapter('Client');
+  modJsList.tabClient.setObjectTypeName('Client');
+  modJsList.tabClient.setAccess(data.permissions.Client);
+  modJsList.tabClient.setDataPipe(new IceDataPipe(modJsList.tabClient));
+  modJsList.tabClient.setRemoteTable(true);
+  modJsList.tabClient.setCustomFields(data.customFields.Client);
 
-    var modJs = modJsList['tabProject'];
+  var modJs = modJsList['tabProject'];
 
 </script>
 <?php include APP_BASE_PATH . 'footer.php'; ?>

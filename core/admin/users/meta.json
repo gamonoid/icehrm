@@ -1,6 +1,7 @@
 {
     "label": "Users",
     "menu": "System",
+    "area": "people",
     "order": "2",
     "icon": "fa-user",
     "user_levels": [

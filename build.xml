@@ -1,42 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="icehrm" default="build">
+<project name="icehrm-pro" default="build">
  <!-- By default, we assume all tools to be on the $PATH -->
- <property name="toolsdir" value="${basedir}/bin/"/>
+ <property name="toolsdir" value="${basedir}/tools/"/>
  <property name="destination" value="${basedir}/build/app"/>
  <property name="testdir" value="${basedir}/build/test"/>
  <property name="origin" value="${basedir}"/>
  <property environment="env"/>
  <property name="env.appname" value="icehrm"/>
- <property name="env.Version" value="dev"/>
- <property name="installpath" value="/var/www/apps.gamonoid.com/icehrm-open-core"/>
+ <property name="env.version" value="v36.0.0.PRO"/>
+ <property name="env.path_suffix" value=""/>
+ <property name="installpath" value="/var/www/apps.gamonoid.com/icehrm-pro-core${env.path_suffix}"/>
 
-<target name="build-ci"
-        depends="prepare,lint,phpcs-ci"
-        description=""/>
+<!--<target name="build-ci"-->
+<!--        depends="prepare,lint,phpcs,copyapp,phpunit"-->
+<!--        description=""/>-->
 
-<target name="build"
-     depends="prepare,lint,phpcs,copyapp,release,install"
+<target name="build-jenkins"
+     depends="prepare,lint,copyapp,release,install"
      description=""/>
 
-<target name="buildlocal"
-        depends="prepare,lint,phpcs,copyapp"
+<target name="build"
+        depends="prepare,lint,copyapp,release"
         description=""/>
 
+<target name="npm" description="">
+    <exec dir="${basedir}/web" executable="npm">
+        <arg line="install"/>
+    </exec>
+    <exec dir="${basedir}" executable="npm">
+        <arg line="install"/>
+    </exec>
+</target>
+
+<target name="gulp" description="">
+    <exec dir="${basedir}" executable="gulp">
+        <arg line="assets --eprod"/>
+    </exec>
+    <exec dir="${basedir}" executable="gulp">
+        <arg line="login-js --eprod"/>
+    </exec>
+    <exec dir="${basedir}" executable="gulp">
+        <arg line="copy-assets --eprod"/>
+    </exec>
+    <exec dir="${basedir}" executable="gulp">
+        <arg line="api-common --eprod"/>
+    </exec>
+    <exec dir="${basedir}" executable="gulp">
+        <arg line="vendor --eprod --max-old-space-size=2048"/>
+    </exec>
+    <exec dir="${basedir}" executable="gulp">
+        <arg line="admin-js --eprod --max-old-space-size=2048"/>
+    </exec>
+    <exec dir="${basedir}" executable="gulp">
+        <arg line="modules-js --eprod --max-old-space-size=2048"/>
+    </exec>
+</target>
+
+
 <target name="releaseapp"
-        depends="prepare,lint,copyapp,release"
+        depends="prepare,lint,copyapp,phpunit,release"
         description=""/>
 
  <target name="clean"
          unless="clean.done"
          description="Cleanup build artifacts">
-  <delete dir="${basedir}/build/api"/>
-  <delete dir="${basedir}/build/coverage"/>
-  <delete dir="${basedir}/build/logs"/>
-  <delete dir="${basedir}/build/pdepend"/>
-  <delete dir="${basedir}/build/phpdox"/>
-  <delete dir="${basedir}/build/test"/>
-  <delete dir="${basedir}/build/app"/>
-  <delete dir="${basedir}/build/release"/>
+  <!-- Remove the entire build dir so every release starts from a clean slate
+       (no stale app/, release/, zip, or gitignored.txt from a previous run).
+       prepare recreates the subdirs it needs. -->
+  <delete dir="${basedir}/build"/>
   <property name="clean.done" value="true"/>
  </target>
 
@@ -52,7 +83,7 @@
   <mkdir dir="${basedir}/build/test"/>
   <mkdir dir="${basedir}/build/app"/>
   <mkdir dir="${basedir}/build/release/data"/>
-  <mkdir dir="${basedir}/build/release/data/${env.appname}_${env.Version}"/>
+  <mkdir dir="${basedir}/build/release/data/icehrmpro"/>
 
 
   <property name="prepare.done" value="true"/>
@@ -80,6 +111,7 @@
   <exec executable="${toolsdir}phploc">
    <arg value="--count-tests" />
    <arg path="${basedir}/core/src" />
+   <arg path="${basedir}/test" />
   </exec>
  </target>
 
@@ -93,6 +125,7 @@
    <arg value="--log-xml" />
    <arg path="${basedir}/build/logs/phploc.xml" />
    <arg path="${basedir}/core/src" />
+   <arg path="${basedir}/test" />
   </exec>
  </target>
 
@@ -134,14 +167,24 @@
    <arg value="--standard=PSR2" />
    <arg value="--extensions=php" />
    <arg value="--ignore=autoload.php" />
-   <arg path="${basedir}/core/src" />
+   <arg path="${basedir}/core/src"/>
   </exec>
+ </target>
+
+ <target name="phpcbf"
+        description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
+     <exec executable="${toolsdir}phpcbf">
+        <arg value="--standard=PSR2" />
+        <arg value="--extensions=php" />
+        <arg value="--ignore=autoload.php" />
+        <arg path="${basedir}/core/src"/>
+    </exec>
  </target>
 
  <target name="phpcs-ci"
          depends="prepare"
          description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
-  <exec executable="${toolsdir}phpcs" failonerror="true">
+  <exec executable="${toolsdir}phpcs" output="/dev/null">
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
    <arg value="--standard=PSR2" />
@@ -177,14 +220,6 @@
   </exec>
  </target>
 
-<target name="phpunit-sa"
-        description="Run unit tests with PHPUnit">
-    <exec executable="${toolsdir}phpunit" failonerror="true">
-        <arg value="--configuration"/>
-        <arg path="${basedir}/phpunit.xml"/>
-    </exec>
-</target>
-
 <target name="phpdox"
          depends=""
          description="Generate project documentation using phpDox">
@@ -213,7 +248,7 @@
 </target>
 
 <target name="copyapp"
-        description="Copy generated files to QA app">
+        description="Copy generated files to production app">
 
     <delete includeemptydirs="true">
         <fileset dir="${destination}">
@@ -221,41 +256,117 @@
         </fileset>
     </delete>
 
+    <!-- Ask git for everything it ignores (repo .gitignore + global excludes +
+         .git/info/exclude) and feed it to the copy below as an excludesfile, so
+         the release never ships an ignored file. This covers cases the explicit
+         list can miss, e.g. nested node_modules, *.map, .env, key files and
+         .DS_Store. Directory entries end in "/", which Ant expands to "/**".
+         Touch/mkdir first so the <excludesfile> still resolves when building
+         from a non-git export (git fails harmlessly, leaving an empty list and
+         falling back to the explicit excludes). -->
+    <mkdir dir="${basedir}/build"/>
+    <touch file="${basedir}/build/gitignored.txt"/>
+    <exec executable="git" dir="${origin}" output="${basedir}/build/gitignored.txt"
+          failifexecutionfails="false" failonerror="false">
+        <arg line="ls-files --others --ignored --exclude-standard --directory"/>
+    </exec>
+
 	<copy todir="${destination}" overwrite="true">
 	  <fileset dir="${origin}">
 	    <include name="**/*"/>
+	    <excludesfile name="${basedir}/build/gitignored.txt"/>
         <exclude name="node_modules/**"/>
         <exclude name="web/node_modules/**"/>
         <exclude name="web/admin/**"/>
         <exclude name="web/modules/**"/>
-        <exclude name="web/api/**"/>
-        <exclude name="web/api-common/**"/>
-        <exclude name="web/components/**"/>
         <exclude name="web/themecss/**"/>
         <exclude name="web/themejs/**"/>
-        <exclude name="docs/**"/>
+        <!-- Extension JS is build-time source only; the runtime loads the compiled
+             (obfuscated eprod) dist/ bundle. Ship dist/, not the readable web/js/
+             source. -->
+        <exclude name="extensions-pro/**/web/js/**"/>
+        <exclude name="extensions/**/web/js/**"/>
+        <exclude name="docker/**"/>
+        <exclude name="app/cache/**"/>
+        <exclude name="app/data/**"/>
+        <exclude name="app/config.php"/>
+        <exclude name="app/config-dev.php"/>
+        <exclude name="core/shell.php"/>
+        <exclude name=".claude/**"/>
+        <exclude name=".config/**"/>
+        <exclude name=".cursor/**"/>
+        <exclude name=".cursorrules"/>
+        <exclude name="data/cache/**"/>
+        <exclude name="build.xml"/>
+        <exclude name="cache.properties"/>
+        <exclude name="CLAUDE.md"/>
+        <exclude name="PATTERNS.md"/>
+        <exclude name="release.sh"/>
+        <exclude name="release-ext.sh"/>
+        <exclude name="release-os-upgrade.sh"/>
+        <exclude name="remove-obfuscated-files.sh"/>
+        <!-- Explicitly kept out of the release (dev tooling, sources, internal
+             notes, keys and build scaffolding). Patterns without a slash are
+             root-anchored, so nested tracked copies (e.g. a package's own
+             .eslintrc) are unaffected. -->
+        <exclude name="private/**"/>
+        <exclude name="tools/**"/>
+        <exclude name="tests/**"/>
+        <exclude name="test/**"/>
+        <exclude name="e2e/**"/>
+        <exclude name="icehrm-update/**"/>
+        <exclude name="releases/**"/>
+        <exclude name="deployment/**"/>
+        <exclude name="test-results/**"/>
+        <exclude name="bower.json"/>
+        <exclude name="ice"/>
+        <exclude name="psysh"/>
+        <exclude name="obfuscate-php.sh"/>
+        <exclude name="obfuscate-js.sh"/>
+        <exclude name=".eslintrc"/>
+        <exclude name="package.json"/>
+        <exclude name="package-lock.json"/>
+        <exclude name="icehrm.sql"/>
+        <exclude name="gulpfile.js"/>
+        <exclude name=".env"/>
+        <exclude name="keys.dev.pub"/>
+        <exclude name="keys.tags.pub"/>
+        <exclude name="index.php"/>
+        <exclude name="RoboFile.php"/>
+        <exclude name="phpdox.xml"/>
+        <exclude name="phpunit.xml"/>
+        <exclude name="release.md"/>
+        <exclude name=".travis.yml"/>
+        <exclude name="readme.md"/>
+        <exclude name=".gitignore"/>
 	  </fileset>
 	</copy>
 
+    <!-- Create empty app/data directory -->
+    <mkdir dir="${destination}/app/data"/>
+
+    <!-- Free extensions ship straight from source (with their PHP src/, minus
+         web/js/) via the main copy above — same as extensions-pro. The old
+         mechanism of pulling obfuscated copies from releases/extensions/ (built
+         by release-ext.sh) is retired: that pipeline (obfuscate-php.sh) was
+         removed and its output went stale, which left extensions with no loadable
+         PHP. Nothing to copy separately here anymore. -->
+
     <delete includeemptydirs="true">
         <fileset dir="${destination}">
-            <include name=".vagrant/**"/>
             <include name=".idea/**"/>
-            <include name="Vagrantfile"/>
             <include name="deployment/**"/>
             <include name="build/**"/>
-            <include name="build.xml"/>
             <include name="lib/composer/composer.phar"/>
             <include name="keys.tags.pub"/>
             <include name="keys.dev.pub"/>
-            <include name="cache.properties"/>
             <include name="phpdox.xml"/>
             <include name="phpunit.xml"/>
-            <include name="web/admin/dist/*.map"/>
-            <include name="web/modules/dist/*.map"/>
             <include name="web/dist/*.map"/>
-            <include name="app/config.php"/>
             <include name="doc/tools.md"/>
+            <include name="yakpro-po.cnf"/>
+            <include name="obfuscate-js.sh"/>
+            <include name="obfuscate-php.sh"/>
         </fileset>
     </delete>
 
@@ -296,23 +407,18 @@
      depends="copyapp"
      description="Create a release">
 
-	<copy todir="${basedir}/build/release/data/${env.appname}_${env.Version}">
+	<copy todir="${basedir}/build/release/data/icehrmpro">
 		  <fileset dir="${destination}">
 		    <include name="**/*"/>
 		  	<exclude name="test/**"/>
 		  </fileset>
 		</copy>
 
-	<zip destfile="${basedir}/build/release/${env.appname}_${env.Version}.zip"
+	<zip destfile="${basedir}/build/release/icehrmpro.zip"
 	       basedir="${basedir}/build/release/data"
 	  />
 
-	<tar destfile="${basedir}/build/release/${env.appname}_${env.Version}.tar"
-		       basedir="${basedir}/build/release/data"
-		  />
-
-	<gzip destfile="${basedir}/build/release/${env.appname}_${env.Version}.tar.gz" src="${basedir}/build/release/${env.appname}_${env.Version}.tar"/>
-
 </target>
+
 </project>
 

@@ -1,6 +1,7 @@
 {
     "label": "Audit Log",
     "menu": "Admin",
+    "areaOrder": 90,
     "order": "92",
     "icon": "fa-compass",
     "user_levels": [

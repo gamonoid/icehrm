@@ -7,6 +7,7 @@ import { CopyOutlined, MonitorOutlined } from '@ant-design/icons';
 import React from 'react';
 import {
   EmployeeOvertimeAdminAdapter,
+  overtimeHours,
 } from '../../../admin/src/overtime/lib';
 import ReactApproveModuleAdapter from '../../../api/ReactApproveModuleAdapter';
 
@@ -55,6 +56,10 @@ class EmployeeOvertimeAdapter extends ReactApproveModuleAdapter {
       {
         title: 'End Time',
         dataIndex: 'end_time',
+      },
+      {
+        title: 'Hours',
+        render: (text, record) => overtimeHours(record),
       },
       {
         title: 'Project',
@@ -195,6 +200,10 @@ class SubordinateEmployeeOvertimeAdapter extends EmployeeOvertimeAdminAdapter {
       {
         title: 'End Time',
         dataIndex: 'end_time',
+      },
+      {
+        title: 'Hours',
+        render: (text, record) => overtimeHours(record),
       },
       {
         title: 'Project',

@@ -1,0 +1,33 @@
+{
+  "label": "Reports",
+  "menu": [
+    "My Reports",
+    "fa-window-maximize"
+  ],
+  "order": "0",
+  "icon": "fa-file-text",
+  "user_levels": [
+    "Admin",
+    "Manager",
+    "Employee"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\Advance_reportsUser\\Common\\Model",
+  "manager": "\\Advance_reportsUser\\Extension",
+  "controller": "\\Advance_reportsUser\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "native": {
+    "initFn": "initAdvance_reportsUser",
+    "bundle": "advance_reports/user/dist/advance_reports.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "Reports",
+        "component": "NativeExtensionView",
+        "viewGlobal": "AdvanceReportsUserView"
+      }
+    ]
+  }
+}

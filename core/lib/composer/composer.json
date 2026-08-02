@@ -3,8 +3,8 @@
       "bin-dir": "../../../bin",
       "process-timeout": 500,
       "platform": {
-        "php": "7.1"
-      }
+            "php": "7.3.0"
+        }
     },
 	"require": {
     	"monolog/monolog": "^1.23",
@@ -22,7 +22,8 @@
 		"predis/predis": "^1.1",
         "firebase/php-jwt": "^5.2",
         "pimple/pimple": "^3.2",
-        "icehrm/php-active-record": "~1.1"
+        "icehrm/php-active-record": "~1.1",
+        "mpdf/mpdf": "8.1.*"
     },
     "require-dev": {
       "phpunit/phpunit": "~6",
@@ -35,7 +36,7 @@
 	},
     "autoload": {
       "psr-4": {
-        "": ["../../src", "../../../extensions/leave_and_performance/core/src"]
+        "": ["../../src", "../../../extensions/leave_and_performance/core/src", "../../../extensions-pro/leave_and_performance/core/src"]
       }
     }
 }

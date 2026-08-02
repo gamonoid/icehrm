@@ -180,27 +180,54 @@ class EmployeesActionManager extends SubActionManager
         if (!$ok) {
             return new IceResponse(IceResponse::ERROR, $user->ErrorMsg());
         }
+        // A password change clears any failed-attempt lock.
+        PasswordManager::resetFailedLogins($user);
 
         return new IceResponse(IceResponse::SUCCESS, []);
     }
 
     public function getLoginCode($req)
     {
+        // rawurlencode both values: they come from the request and were previously
+        // interpolated raw, so either could inject extra query parameters.
         $url = sprintf(
             'https://icehrm.com/sapi/login-code?url=%s&token=%s',
-            $req->url,
-            $req->token
+            rawurlencode($req->url),
+            rawurlencode($req->token)
         );
 
+        // This request carries the instance token, so the certificate must be verified —
+        // except in development, which targets the staging server (see
+        // BaseService::shouldVerifyOutboundTls()).
+        $verifyTls = BaseService::shouldVerifyOutboundTls();
         $arrContextOptions = [
             "ssl"=>array(
-                "verify_peer"=>false,
-                "verify_peer_name"=>false,
+                "verify_peer"=>$verifyTls,
+                "verify_peer_name"=>$verifyTls,
             ),
         ];
 
         $data = file_get_contents($url, false, stream_context_create($arrContextOptions));
 
         return new IceResponse(IceResponse::SUCCESS, json_decode($data, true));
+    }
+
+    /**
+     * Reset (regenerate) the current user's REST API access token. The old token
+     * stops working immediately; returns a fresh JWT that wraps the new token so
+     * the API Access tab can show it right away.
+     */
+    public function resetApiToken($req)
+    {
+        $user = BaseService::getInstance()->getCurrentDBUser();
+        if (empty($user) || empty($user->id)) {
+            return new IceResponse(IceResponse::ERROR, "Not authenticated");
+        }
+
+        \Classes\RestApiManager::getInstance()->resetAccessTokenForUser($user);
+
+        $jwt = (new \Classes\JwtTokenService())->create(15552000);
+
+        return new IceResponse(IceResponse::SUCCESS, array('jwtToken' => $jwt));
     }
 }

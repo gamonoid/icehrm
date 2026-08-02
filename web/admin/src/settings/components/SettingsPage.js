@@ -665,7 +665,7 @@ class SettingsPage extends React.Component {
       >
         {fieldComponent}
         {setting.description && (
-          <Typography.Text style={{ fontSize: '13px', display: 'block', marginTop: '4px', color: 'rgba(0, 0, 0, 0.65)' }}>
+          <Typography.Text type="secondary" style={{ fontSize: '13px', display: 'block', marginTop: '4px' }}>
             {setting.description}
           </Typography.Text>
         )}

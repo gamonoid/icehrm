@@ -58,7 +58,7 @@ class UsersActionManager extends SubActionManager
 			$user->email = $req->email;
 			$user->username = $req->username;
 			$password = $this->generateRandomString(6);
-			$user->password = md5($password);
+			$user->password = PasswordManager::createPasswordHash($password);
 			$user->employee = (empty($req->employee) || $req->employee == "NULL" )?null:$req->employee;
 			$user->user_level = $req->user_level;
 			$user->user_roles = $req->user_roles;
@@ -77,6 +77,27 @@ class UsersActionManager extends SubActionManager
 				return new IceResponse(
 					IceResponse::ERROR,
 					"User does not exists"
+				);
+			}
+
+			// The new email/username must not collide with a DIFFERENT user
+			// (Users.email and Users.username are unique). Check before Save so a
+			// duplicate returns a clear message instead of a generic DB failure.
+			$dupUser = new User();
+			$dupUser->Load("email = ? and id <> ?", array($req->email, $req->id));
+			if (!empty($dupUser->id)) {
+				return new IceResponse(
+					IceResponse::ERROR,
+					"User with same email already exists"
+				);
+			}
+
+			$dupUser = new User();
+			$dupUser->Load("username = ? and id <> ?", array($req->username, $req->id));
+			if (!empty($dupUser->id)) {
+				return new IceResponse(
+					IceResponse::ERROR,
+					"User with same username already exists"
 				);
 			}
 
@@ -132,11 +153,12 @@ class UsersActionManager extends SubActionManager
 
     private function generateRandomString($length = 10)
     {
+        // CSPRNG: this generates user passwords.
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
+            $randomString .= $characters[random_int(0, $charactersLength - 1)];
         }
         return $randomString;
     }

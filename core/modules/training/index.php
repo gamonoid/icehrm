@@ -55,32 +55,22 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 	</div>
 
 </div>
+<?php
+use Classes\PermissionManager;
+use Training\Common\Model\CoordinatedTrainingSession;
+use Training\Common\Model\EmployeeTrainingSession;
+use Training\Common\Model\TrainingSessionWithCourse;
+
+$moduleData = [
+    'user_level' => $user->user_level,
+    'permissions' => [
+        'TrainingSessionWithCourse' => PermissionManager::checkGeneralAccess(new TrainingSessionWithCourse()),
+        'EmployeeTrainingSession' => PermissionManager::checkGeneralAccess(new EmployeeTrainingSession()),
+        'CoordinatedTrainingSession' => PermissionManager::checkGeneralAccess(new CoordinatedTrainingSession()),
+    ]
+];
+?>
 <script>
-var modJsList = new Array();
-
-modJsList['tabEmployeeTrainingSession'] = new EmployeeTrainingSessionAdapter('EmployeeTrainingSession','EmployeeTrainingSession');
-modJsList['tabEmployeeTrainingSession'].setShowAddNew(false);
-modJsList['tabEmployeeTrainingSession'].setRemoteTable(true);
-
-
-modJsList['tabTrainingSession'] = new TrainingSessionAdapter('TrainingSessionWithCourse','TrainingSession',{"attendanceType":"Sign Up","status":"Approved"});
-modJsList['tabTrainingSession'].setShowAddNew(false);
-modJsList['tabTrainingSession'].setShowFormOnPopup(true);
-modJsList['tabTrainingSession'].setRemoteTable(true);
-modJsList['tabTrainingSession'].setShowSave(false);
-
-
-modJsList['tabSubEmployeeTraining'] = new SubEmployeeTrainingSessionAdapter('EmployeeTrainingSession','SubEmployeeTraining');
-modJsList['tabSubEmployeeTraining'].setShowAddNew(false);
-modJsList['tabSubEmployeeTraining'].setRemoteTable(true);
-
-modJsList['tabCoordinatedTrainingSession'] = new CoordinatedTrainingSessionAdapter('CoordinatedTrainingSession','CoordinatedTrainingSession');
-modJsList['tabCoordinatedTrainingSession'].setRemoteTable(false);
-modJsList['tabCoordinatedTrainingSession'].setShowSave(true);
-modJsList['tabCoordinatedTrainingSession'].setShowDelete(false);
-modJsList['tabCoordinatedTrainingSession'].setShowAddNew(false);
-
-var modJs = modJsList['tabTrainingSession'];
-
+initUserTraining(<?=json_encode($moduleData)?>);
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>

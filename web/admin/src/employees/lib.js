@@ -12,7 +12,7 @@
 
 import React from 'react';
 import {
-  Avatar, Space, Tag, message, Modal,
+  Avatar, Space, Tag, message, Modal, Button,
 } from 'antd';
 import {
   CloudDownloadOutlined,
@@ -27,9 +27,10 @@ import {
   ExclamationCircleOutlined,
 } from '@ant-design/icons';
 import ReactDOM from 'react-dom';
-import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
+import ReactModalAdapterBase, { shellThemeWrap } from '../../../api/ReactModalAdapterBase';
 import IceDataPipe from '../../../api/IceDataPipe';
 import EmployeeProfile from './components/EmployeeProfile';
+import EmployeeWizardModal from './components/EmployeeWizard';
 import IceTable from '../../../components/IceTable';
 import EmployeeAdminView from './view';
 import {
@@ -56,6 +57,47 @@ class EmployeeAdapter extends ReactModalAdapterBase {
     this.employeeListRef = null;
     this.employeeTopBar = null;
     this.allowSwitchToEmployeeProfile = false;
+    // When on, the Employee Number is auto-generated: the field is read-only and
+    // prefilled with the next number when adding a new employee.
+    this.generateEmployeeNumbers = false;
+    this.employeeNumberPrefix = '';
+  }
+
+  setEmployeeNumberGeneration(enabled, prefix) {
+    this.generateEmployeeNumbers = !!enabled;
+    this.employeeNumberPrefix = prefix || '';
+  }
+
+  // When any module has multi-level approvals enabled, the employee profile shows
+  // an "Approvals" tab to manage approver1/2/3 (the supervisor is the read-only
+  // initial approver). The approver fields are removed from the edit form.
+  setMultiLevelApprovals(enabled) {
+    this.multiLevelApprovals = !!enabled;
+  }
+
+  // When auto-numbering is on, adding a new employee prefills the (read-only)
+  // Employee Number with the next number fetched from the server. Edit/view are
+  // unaffected. The backend regenerates authoritatively on save (handles any
+  // collision), so this is only the preview.
+  renderForm(object = null, viewOnly = false) {
+    const adding = object == null && !viewOnly;
+    if (adding && this.generateEmployeeNumbers && this.apiClient) {
+      this.apiClient.get('employees/next-employee-number')
+        .then((res) => {
+          const number = (res && res.data && res.data.number) || '';
+          super.renderForm(number ? { employee_id: number } : null, viewOnly);
+        })
+        .catch(() => super.renderForm(null, viewOnly));
+      return;
+    }
+    super.renderForm(object, viewOnly);
+  }
+
+  // Add/edit uses the guided employee wizard (a re-skinned step modal, same
+  // pattern as the Leave Type and Candidate wizards); the field set, dynamic
+  // field-name mappings, validation and save path are unchanged.
+  getStepFormModalComponent() {
+    return EmployeeWizardModal;
   }
 
   showViewButton() {
@@ -123,11 +165,13 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       this.tableContainer = React.createRef();
 
       ReactDOM.render(
-        <EmployeeAdminView
-          ref={this.tableContainer}
-          apiClient={this.apiClient}
-          ice={this}
-        />,
+        shellThemeWrap(
+          <EmployeeAdminView
+            ref={this.tableContainer}
+            apiClient={this.apiClient}
+            ice={this}
+          />,
+        ),
         tableDom,
       );
     }
@@ -313,7 +357,9 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       title;
     const fields = [
       ['id', { label: 'ID', type: 'hidden', validation: '' }],
-      ['employee_id', { label: 'Employee Number', type: 'text', validation: '' }],
+      ['employee_id', {
+        label: 'Employee Number', type: 'text', validation: '', readonly: this.generateEmployeeNumbers,
+      }],
       ['first_name', { label: 'First Name', type: 'text', validation: '' }],
       ['middle_name', { label: 'Middle Name', type: 'text', validation: 'none' }],
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
@@ -368,15 +414,8 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       ['indirect_supervisors', {
         label: 'Indirect Managers', type: 'select2multi', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
       }],
-      ['approver1', {
-        label: 'First Level Approver', type: 'select2', 'allow-null': true, 'null-label': 'None', 'remote-source': ['Employee', 'id', 'first_name+last_name'],
-      }],
-      ['approver2', {
-        label: 'Second Level Approver', type: 'select2', 'allow-null': true, 'null-label': 'None', 'remote-source': ['Employee', 'id', 'first_name+last_name'],
-      }],
-      ['approver3', {
-        label: 'Third Level Approver', type: 'select2', 'allow-null': true, 'null-label': 'None', 'remote-source': ['Employee', 'id', 'first_name+last_name'],
-      }],
+      // Approver1/2/3 are managed under the employee profile's "Approvals" tab
+      // (shown when multi-level approvals are enabled), not this form.
       ['notes', {
         label: 'Notes',
         type: 'datagroup',
@@ -492,9 +531,6 @@ class EmployeeAdapter extends ReactModalAdapterBase {
         fields: [
           'supervisor',
           'indirect_supervisors',
-          'approver1',
-          'approver2',
-          'approver3',
           'notes',
         ],
       },
@@ -549,95 +585,47 @@ class EmployeeAdapter extends ReactModalAdapterBase {
   }
 
   getTableActionButtonJsx(adapter, id, loading) {
+    // Theme-aware action buttons (antd Buttons adapt to dark/light, unlike the
+    // old colour-filled Tags). Semantic emphasis: destructive = danger (red),
+    // the primary action (Edit) = ghost-primary, the rest = neutral.
+    const canSave = adapter.hasAccess('save');
     return (
-      <Space size="middle">
-        {!loading && this.user.employee !== id && modJs.allowSwitchToEmployeeProfile
+      <Space size="small" wrap>
+        {this.user.employee !== id && modJs.allowSwitchToEmployeeProfile
           && (
-          <Tag color="orange" onClick={() => modJs.setAdminProfile(id)} style={{ cursor: 'pointer' }}>
-            <LoginOutlined />
-            {` ${adapter.gt('Switch to Employee')}`}
-          </Tag>
+          <Button size="small" icon={<LoginOutlined />} loading={loading} onClick={() => modJs.setAdminProfile(id)}>
+            {adapter.gt('Switch to Employee')}
+          </Button>
           )}
-        {loading && this.user.employee !== id && modJs.allowSwitchToEmployeeProfile
+        {canSave
           && (
-          <Tag color="orange" style={{ cursor: 'pointer' }}>
-            <SyncOutlined spin />
-            {` ${adapter.gt('Switch to Employee')}`}
-          </Tag>
+          <Button size="small" icon={<CloudUploadOutlined />} loading={loading} onClick={() => modJs.employeeProfileRef.current.updateProfileImage()}>
+            {adapter.gt('Upload Photo')}
+          </Button>
           )}
-        {!loading && adapter.hasAccess('save')
+        {canSave
           && (
-            <Tag color="geekblue" onClick={() => modJs.employeeProfileRef.current.updateProfileImage()} style={{ cursor: 'pointer' }}>
-              <CloudUploadOutlined />
-              {` ${adapter.gt('Upload Photo')}`}
-            </Tag>
+          <Button size="small" color="gold" variant="outlined" icon={<DeleteOutlined />} loading={loading} onClick={() => modJs.deleteProfileImage(id)}>
+            {adapter.gt('Remove Photo')}
+          </Button>
           )}
-        {loading && adapter.hasAccess('save')
+        {canSave && adapter.showEdit
           && (
-            <Tag color="geekblue" style={{ cursor: 'pointer' }}>
-              <SyncOutlined spin />
-              {` ${adapter.gt('Upload Photo')}`}
-            </Tag>
+          <Button size="small" type="primary" ghost icon={<EditOutlined />} loading={loading} onClick={() => modJs.edit(id)}>
+            {adapter.gt('Edit')}
+          </Button>
           )}
-        {!loading && adapter.hasAccess('save')
+        {adapter.hasAccess('delete') && adapter.showDelete
           && (
-            <Tag color="magenta" onClick={() => modJs.deleteProfileImage(id)} style={{ cursor: 'pointer' }}>
-              <DeleteOutlined />
-              {` ${adapter.gt('Remove Photo')}`}
-            </Tag>
+          <Button size="small" danger icon={<DeleteOutlined />} loading={loading} onClick={() => modJs.terminateEmployee(id)}>
+            {adapter.gt('Initiate Resignation')}
+          </Button>
           )}
-        {loading && adapter.hasAccess('save')
+        {canSave
           && (
-            <Tag color="magenta" style={{ cursor: 'pointer' }}>
-              <SyncOutlined spin />
-              {` ${adapter.gt('Remove Photo')}`}
-            </Tag>
-          )}
-        {adapter.hasAccess('save') && adapter.showEdit && !loading
-          && (
-            <Tag color="green" onClick={() => modJs.edit(id)} style={{ cursor: 'pointer' }}>
-              <EditOutlined />
-              {` ${adapter.gt('Edit')}`}
-            </Tag>
-          )}
-        {adapter.hasAccess('save') && adapter.showEdit && loading
-          && (
-            <Tag color="green" style={{ cursor: 'pointer' }}>
-              <SyncOutlined spin />
-              {` ${adapter.gt('Edit')}`}
-            </Tag>
-          )}
-
-        {adapter.hasAccess('delete') && adapter.showDelete && !loading
-        && (
-        <Tag color="volcano" onClick={() => modJs.terminateEmployee(id)} style={{ cursor: 'pointer' }}>
-          <DeleteOutlined />
-          {` ${adapter.gt('Initiate Resignation')}`}
-        </Tag>
-        )}
-
-        {adapter.hasAccess('delete') && adapter.showDelete && loading
-          && (
-            <Tag color="volcano" style={{ cursor: 'pointer' }}>
-              <SyncOutlined spin />
-              {` ${adapter.gt('Deactivate')}`}
-            </Tag>
-          )}
-
-        {adapter.hasAccess('save') && !loading
-        && (
-        <Tag color="geekblue" onClick={() => modJs.copyRow(id)} style={{ cursor: 'pointer' }}>
-          <CopyOutlined />
-          {` ${adapter.gt('Copy')}`}
-        </Tag>
-        )}
-
-        {adapter.hasAccess('save') && loading
-          && (
-            <Tag color="geekblue" style={{ cursor: 'pointer' }}>
-              <CopyOutlined />
-              {` ${adapter.gt('Copy')}`}
-            </Tag>
+          <Button size="small" icon={<CopyOutlined />} loading={loading} onClick={() => modJs.copyRow(id)}>
+            {adapter.gt('Copy')}
+          </Button>
           )}
       </Space>
     );
@@ -676,6 +664,10 @@ ${deleteBtn}
   }
 
   createUser(employee) {
+    // Route the save through the token-authenticated REST endpoint
+    // (employees/{id}/create-user) rather than the CSRF-guarded saveUser action,
+    // since the SPA shell does not prime a per-form CSRF token here.
+    modJsList.tabUser.createUserEmployeeId = employee.id;
     modJsList.tabUser.setSaveCompleteCallback(() => { modJs.reloadEmployee(employee.id); });
     modJsList.tabUser.initFieldMasterData(() => {
       modJsList.tabUser.renderForm(
@@ -1095,7 +1087,9 @@ class ArchivedEmployeeAdapter extends SubProfileEnabledAdapterBase {
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden', validation: '' }],
-      ['employee_id', { label: 'Employee Number', type: 'text', validation: '' }],
+      ['employee_id', {
+        label: 'Employee Number', type: 'text', validation: '', readonly: this.generateEmployeeNumbers,
+      }],
       ['first_name', { label: 'First Name', type: 'text', validation: '' }],
       ['middle_name', { label: 'Middle Name', type: 'text', validation: 'none' }],
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],

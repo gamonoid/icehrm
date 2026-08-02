@@ -6,6 +6,7 @@ import Quiz from "./quiz/dist/bundle";
 import ReactDOM from "react-dom";
 import EditorUserExtensionView from "./view";
 import EmployeeSelect from "./components/EmployeeSelect";
+import EditorDocument from "./spa/EditorDocument.js";
 
 function init(data) {
   // Exposing modJsList and modJs is required to make sure IceHrm core features
@@ -51,3 +52,13 @@ window.IceEditorJsImage = IceEditorJsImage;
 window.EmployeeChecklist = Checklist;
 window.Quiz = Quiz;
 window.selectEmployee = selectEmployee;
+
+// Native SPA entry points (called by the shell's NativeCardList documentAction
+// when openIn === 'native'). Renders the EditorDocument React tree into a
+// shell-provided container; nothing here runs in the legacy page.
+window.mountEditorDocument = (container, opts) => {
+  ReactDOM.render(<EditorDocument {...(opts || {})} />, container);
+};
+window.unmountEditorDocument = (container) => {
+  if (container) ReactDOM.unmountComponentAtNode(container);
+};

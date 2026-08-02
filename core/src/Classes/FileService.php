@@ -453,36 +453,119 @@ class FileService
         return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
     }
 
+    /**
+     * Placeholder avatar for a profile without an uploaded photo.
+     *
+     * Generated locally as an inline SVG data URI — no third-party service
+     * (the old DiceBear URL sent employee names off-site, derived the shown
+     * letters from an md5-polluted seed, and mangled multibyte names because
+     * substr() split UTF-8 characters mid-byte). Generation is a few string
+     * ops (cheaper than any cache lookup), so the result is not cached.
+     */
     public function generateProfileImage($first, $last)
     {
-        $seed = substr($first, 0, 1);
-        if (empty($last)) {
-            $seed .= utf8_encode(substr($first, -1));
-        } else {
-            $seed .= utf8_encode(substr($last, 0, 1));
+        return $this->generateInitialsAvatar($first, $last);
+    }
+
+    /**
+     * Build an initials avatar (SVG data URI): the person's real initials,
+     * uppercased with full multibyte support, on a colour picked
+     * deterministically from the name so each person keeps their colour.
+     */
+    public function generateInitialsAvatar($first, $last, $size = 128)
+    {
+        $first = trim((string) $first);
+        $last = trim((string) $last);
+
+        $initials = mb_strtoupper(mb_substr($first, 0, 1, 'UTF-8'), 'UTF-8');
+        if ($last !== '') {
+            $initials .= mb_strtoupper(mb_substr($last, 0, 1, 'UTF-8'), 'UTF-8');
+        } elseif (mb_strlen($first, 'UTF-8') > 1) {
+            $initials .= mb_strtoupper(mb_substr($first, 1, 1, 'UTF-8'), 'UTF-8');
         }
-        // TODO - remove code after chinese character issue is resolved
-        //        if(strlen($seed) != mb_strlen($seed, 'utf-8')) {
-        //            $char1 = substr($first, 0, 1);
-        //            $char1 = chr($this->uniord($char1) % 26 + 65);
-        //            if (empty($last)) {
-        //                $char2 = substr($first, -1);
-        //            } else {
-        //                $char2 = substr($last, 0, 1);
-        //            }
-        //            $char2 = chr($this->uniord($char2) % 26 + 65);
-        //            $seed = $char1.$char2;
-        //        }
+        if ($initials === '') {
+            $initials = '?';
+        }
 
-        $seed = substr($first, 0, 1);
-        $seed .= substr($last, 0, 1);
-        $seed .= md5($first.$last);
+        $bg = $this->avatarColorForInitials($initials);
 
-        $seed = utf8_encode($seed);
+        $svg = sprintf(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="%1$d" height="%1$d" viewBox="0 0 %1$d %1$d">'
+            . '<rect width="%1$d" height="%1$d" fill="%2$s"/>'
+            . '<text x="50%%" y="50%%" dy=".08em" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"'
+            . ' font-family="Roboto, \'Helvetica Neue\', Helvetica, Arial, sans-serif" font-size="%3$d" font-weight="500">%4$s</text>'
+            . '</svg>',
+            $size,
+            $bg,
+            (int) round($size * 0.42),
+            htmlspecialchars($initials, ENT_QUOTES | ENT_XML1, 'UTF-8')
+        );
+
+        return 'data:image/svg+xml;base64,' . base64_encode($svg);
+    }
+
+    /**
+     * Background colour for an initials avatar — 26x26 distinct colours so
+     * every pair of English initials gets its own colour: the first letter
+     * picks one of 26 evenly spaced hue families, the second letter picks one
+     * of 26 saturation/lightness tones within that family. Non-Latin initials
+     * hash into the same colour space. Lightness stays low enough that the
+     * white initials remain readable (yellowish hues are darkened extra).
+     */
+    private function avatarColorForInitials($initials)
+    {
+        $a = $this->letterIndex(mb_substr($initials, 0, 1, 'UTF-8'));
+        $b = $this->letterIndex(mb_substr($initials, 1, 1, 'UTF-8'));
+
+        if ($a === null) {
+            $n = hexdec(substr(md5($initials), 0, 8));
+            $a = $n % 26;
+            $b = intdiv($n, 26) % 26;
+        } elseif ($b === null) {
+            $b = $a;
+        }
+
+        $hue = $a * (360 / 26);
+        // 13 saturation steps x 2 lightness bands = 26 tones per hue family.
+        $sat = 0.45 + ($b % 13) * (0.25 / 12);
+        $light = (intdiv($b, 13) === 0) ? 0.42 : 0.32;
+        if ($hue >= 40 && $hue <= 75) {
+            $light -= 0.06; // yellows need to be darker for white text
+        }
+
+        return $this->hslToHex($hue, $sat, $light);
+    }
+
+    /** 0–25 for A–Z (any case), null for anything else. */
+    private function letterIndex($char)
+    {
+        $char = mb_strtoupper((string) $char, 'UTF-8');
+        $code = ord($char);
+        if (strlen($char) === 1 && $code >= 65 && $code <= 90) {
+            return $code - 65;
+        }
+        return null;
+    }
+
+    private function hslToHex($h, $s, $l)
+    {
+        $h = fmod($h, 360) / 360;
+        $q = $l < 0.5 ? $l * (1 + $s) : $l + $s - $l * $s;
+        $p = 2 * $l - $q;
+        $toRgb = function ($t) use ($p, $q) {
+            if ($t < 0) $t += 1;
+            if ($t > 1) $t -= 1;
+            if ($t < 1 / 6) return $p + ($q - $p) * 6 * $t;
+            if ($t < 1 / 2) return $q;
+            if ($t < 2 / 3) return $p + ($q - $p) * (2 / 3 - $t) * 6;
+            return $p;
+        };
 
         return sprintf(
-            'https://api.dicebear.com/7.x/initials/svg?seed=%s',
-            $seed
+            '#%02x%02x%02x',
+            (int) round($toRgb($h + 1 / 3) * 255),
+            (int) round($toRgb($h) * 255),
+            (int) round($toRgb($h - 1 / 3) * 255)
         );
     }
 
@@ -515,7 +598,7 @@ class FileService
             $s3FileSys = new \Classes\S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);
             $res = $s3FileSys->putObject($s3Bucket, $uploadname, $localFile, 'authenticated-read');
             ;
-            LogManager::getInstance()->info("Response from s3 file sys:" . print_r($res, true));
+            LogManager::getInstance()->debug("Response from s3 file sys:" . print_r($res, true));
             unlink($localFile);
         }
 

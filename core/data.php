@@ -6,6 +6,19 @@ define('CLIENT_PATH', dirname(__FILE__));
 include("config.base.php");
 include("include.common.php");
 $modulePath = \Utils\SessionUtils::getSessionObject("modulePath");
+// New SPA UI: a data request can declare the module it belongs to explicitly
+// (mg/mn), so data scope (admin all-rows vs user own-rows) is derived per-request
+// instead of from the shared session modulePath. See docs/DATA_SCOPE_ISSUE.md.
+// Authorization is validated AFTER server.includes (below) before any data is
+// returned. Legacy requests omit mg/mn and keep using the session value.
+$reqModGroup = isset($_REQUEST['mg']) ? $_REQUEST['mg'] : null;
+$reqModName = isset($_REQUEST['mn']) ? $_REQUEST['mn'] : null;
+if (!empty($reqModGroup) && !empty($reqModName)) {
+    $resolvedModulePath = \Classes\ModuleScopeResolver::pathFor($reqModGroup, $reqModName);
+    if ($resolvedModulePath !== null) {
+        $modulePath = $resolvedModulePath;
+    }
+}
 if (!defined('MODULE_PATH')) {
     define('MODULE_PATH', $modulePath);
 }
@@ -13,6 +26,18 @@ include("server.includes.inc.php");
 if (empty($user)) {
     $ret['status'] = "ERROR";
     $ret['code'] = "NO_USER_FOUND";
+    echo json_encode($ret);
+    exit();
+}
+
+// Reject a forged/unauthorized explicit module before returning any data — a
+// client must not gain admin scope by naming a module it can't access.
+if (!empty($reqModGroup) && !empty($reqModName)
+    && !\Classes\ModuleScopeResolver::isAuthorized($reqModGroup, $reqModName, $user)
+) {
+    http_response_code(403);
+    $ret['status'] = "ERROR";
+    $ret['code'] = "MODULE_ACCESS_DENIED";
     echo json_encode($ret);
     exit();
 }
@@ -106,17 +131,32 @@ if (!isset($_REQUEST['objects'])) {
     $totalRows = 0;
     if (!empty($searchTerm) && !empty($searchColumns)) {
         $searchColumnList = json_decode($searchColumns);
+        // Search only real table columns (same rule as BaseService::getData):
+        // the client's column list may contain computed fields (image,
+        // document_link, total_time, …) that would break the SQL.
+        $searchColumnList = array_intersect($searchColumnList, $obj->getColumns());
         $searchColumnList = array_diff($searchColumnList, $obj->getVirtualFields());
-        if (!empty($searchColumnList)) {
-            $searchQuery = " and (";
-            foreach ($searchColumnList as $col) {
-                if ($searchQuery != " and (") {
-                    $searchQuery.=" or ";
-                }
-                $searchQuery.=$col." like ?";
-                $searchQueryData[] = "%".$searchTerm."%";
-            }
-            $searchQuery.=")";
+
+        $searchConditions = array();
+        foreach ($searchColumnList as $col) {
+            $searchConditions[] = $col . " like ?";
+            $searchQueryData[] = "%".$searchTerm."%";
+        }
+
+        // Mirror BaseService::getData: when the list resolves an `employee`
+        // column to a name (source mapping), searching by employee name must
+        // also be counted — otherwise the total undercounts a name search and
+        // pagination collapses to one page. A subquery keeps getTotalCount
+        // (which has no JOIN) valid.
+        $sourceMap = !empty($_REQUEST['sm']) ? json_decode($_REQUEST['sm']) : null;
+        if (!empty($sourceMap) && !empty($sourceMap->employee) && $table !== 'Employee') {
+            $searchConditions[] = "employee in (select id from Employees where first_name like ? or last_name like ?)";
+            $searchQueryData[] = "%".$searchTerm."%";
+            $searchQueryData[] = "%".$searchTerm."%";
+        }
+
+        if (!empty($searchConditions)) {
+            $searchQuery = " and (" . implode(" or ", $searchConditions) . ")";
         }
     }
 

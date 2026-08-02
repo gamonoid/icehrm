@@ -8,6 +8,8 @@
 
 namespace Qualifications\Common\Model;
 
+use Classes\BaseService;
+use Classes\IceResponse;
 use Classes\ModuleAccess;
 use Model\BaseModel;
 
@@ -32,5 +34,26 @@ class Certification extends BaseModel
             new ModuleAccess('employees', 'admin'),
             new ModuleAccess('employees', 'user'),
         ];
+    }
+
+    /**
+     * Block deletion of a certification still attached to employees
+     * (EmployeeCertifications.certification_id).
+     */
+    public function executePreDeleteActions($obj)
+    {
+        $rows = BaseService::getInstance()->getDB()->Execute(
+            'SELECT COUNT(*) c FROM EmployeeCertifications WHERE certification_id = ?',
+            array($obj->id)
+        );
+        $count = (is_array($rows) && isset($rows[0]['c'])) ? (int) $rows[0]['c'] : 0;
+        if ($count > 0) {
+            return new IceResponse(
+                IceResponse::ERROR,
+                'This certification cannot be deleted because it is assigned to '
+                . $count . ' employee' . ($count === 1 ? '' : 's') . '.'
+            );
+        }
+        return new IceResponse(IceResponse::SUCCESS, null);
     }
 }

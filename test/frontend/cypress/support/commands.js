@@ -28,6 +28,7 @@ const config = require('./config');
 
 Cypress.Commands.add('login', (user, password) => {
   cy.visit(`${config.BASE_URL}logout.php`);
+  //cy.visit(`${config.BASE_URL}login.php`);
   cy.get('#username').type(user).should('have.value', user);
   cy.get('#password').type(password).should('have.value', password);
   cy.get('.btn').first().click();

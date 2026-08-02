@@ -188,6 +188,15 @@ class ExtensionManager
         $arr['model_namespace'] = $meta->model_namespace;
         $arr['manager'] = $meta->manager;
         $arr['controller'] = $meta->controller;
+        // Carry an optional SPA native-mount declaration through to the module
+        // manager so NativeModuleRegistry can discover it (extension-aware).
+        // Convert the stdClass (incl. nested tabs/card) to nested arrays.
+        $arr['native'] = isset($meta->native)
+            ? json_decode(json_encode($meta->native), true) : null;
+        // Optional high-level SPA area (Home/People/Time and Work/…). Inert in the
+        // legacy app; the shell groups the menu by it. See MenuAreaService.
+        $arr['area'] = isset($meta->area) ? $meta->area : null;
+        $arr['areaOrder'] = isset($meta->areaOrder) ? $meta->areaOrder : null;
 
         // Add menu
         $menu[$meta->menu[0]] = $meta->menu[1];

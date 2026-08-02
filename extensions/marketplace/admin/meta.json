@@ -1,6 +1,8 @@
 {
-  "label": "Extensions",
-  "menu": ["Marketplace"],
+  "label": "Marketplace",
+  "menu": [
+    "Marketplace"
+  ],
   "order": "0",
   "icon": "fa-square-plus",
   "user_levels": [
@@ -12,5 +14,20 @@
   "manager": "\\MarketplaceAdmin\\Extension",
   "controller": "\\MarketplaceAdmin\\Controller",
   "headless": false,
-  "show_in_menu": true
+  "show_in_menu": true,
+  "native": {
+    "initFn": "initMarketplaceAdmin",
+    "bundle": "marketplace/admin/dist/marketplace.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "Extensions",
+        "component": "NativeExtensionView",
+        "viewGlobal": "MarketplaceAdminView",
+        "props": {
+          "controller": "marketplaceExtensionController"
+        }
+      }
+    ]
+  }
 }

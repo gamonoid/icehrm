@@ -260,6 +260,134 @@ Configures extension appearance and access control:
 - `controller`: Fully qualified class name for Controller
 - `headless`: If `true`, extension has no UI (API only)
 - `show_in_menu`: If `false`, extension is hidden from menu
+- `area` *(optional)*: the high-level SPA **area** this module belongs to (see below)
+
+#### Optional: `area` (SPA menu grouping)
+
+The React SPA shell groups the whole menu into a handful of functional **areas**
+(Home, People, Time and Work, Leave, Pay & Expenses, Recruitment, Learning &
+Performance, Documents, Reports & Insights, System) and shows one area at a time
+via a top-left area selector — so users see a short menu instead of ~50 items.
+
+A module/extension declares its area with a single `meta.json` field:
+
+```json
+{
+  "label": "Task Lists",
+  "menu": ["Employees", ""],
+  "area": "time_and_work"
+}
+```
+
+- The field is **inert in the legacy app** (nothing reads it there), so adding it
+  is always safe.
+- Resolution order for an item's area: its `meta.json` `area` **wins**, else a
+  built-in default map (`MenuAreaService`) keyed by route, else the `more`
+  fallback. So you don't have to set it — unset modules still land sensibly — but
+  setting it is how a module/extension chooses its area authoritatively.
+- **Join an existing area** by using one of the built-in ids: `home`, `people`,
+  `time_and_work`, `leave`, `pay`, `recruitment`, `learning`, `documents`,
+  `reports`, `system`.
+- **Define your own area** by using a new id (e.g. `"area": "field_ops"`). It is
+  appended to the selector automatically, labelled from the id (or override with
+  `areaLabel` / `areaIcon` — TODO: wire custom label/icon through). An area with
+  no visible items for a user simply doesn't appear.
+
+The area ids + default map live in `core/src/Classes/MenuAreaService.php`; the
+shell renders the selector and filters the menu (`web/shell/src/AppShell.jsx`).
+
+#### Optional: `native` block (SPA card-list mounting)
+
+The new React SPA shell (served at `/app/ui/`) can mount an extension's admin (or
+user) module **natively** — as a themed Ant Design card list, with no iframe —
+instead of hosting the legacy page. An extension opts in **purely declaratively**
+by adding a `native` block to its `meta.json`. Nothing in core is hardcoded per
+extension: the shell discovers the block at runtime, so if the extension is
+removed, the native mount (and its menu entry) disappears automatically. The
+extension stays fully pluggable.
+
+```json
+{
+  "label": "Task Lists",
+  "menu": ["Employees", ""],
+  "model_namespace": "\\TasksAdmin\\Common\\Model",
+  "manager": "\\TasksAdmin\\Extension",
+  "controller": "\\TasksAdmin\\Controller",
+  "show_in_menu": true,
+
+  "native": {
+    "initFn": "initAdminTaskList",
+    "bundle": "tasks/admin/dist/tasks.js",
+    "entities": {
+      "TaskList": "\\TasksAdmin\\Common\\Model\\TaskList"
+    },
+    "tabs": [
+      {
+        "key": "tabTaskList",
+        "label": "Task Lists",
+        "entity": "TaskList",
+        "card": {
+          "titleField": "name",
+          "avatarField": "image",
+          "hideMeta": ["name", "image", "id"],
+          "documentAction": {
+            "label": "Open Task List",
+            "icon": "form",
+            "openIn": "iframe-modal"
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+**`native` properties:**
+- `initFn`: The global JS init function the bundle exposes (creates the legacy
+  adapters the card list drives, e.g. `initAdminTaskList`).
+- `bundle`: Path to the extension's compiled JS, **relative to the extensions
+  URL** (`EXTENSIONS_URL`, i.e. `extensions/`). It is loaded as an absolute URL
+  *after* the core admin bundle — the shell cache-busts it automatically. Build it
+  with `gulp ejs --x<name>/admin` (see "Building the Frontend" in `CLAUDE.md`).
+- `entities`: Map of `EntityKey → fully-qualified PHP model class`. The shell uses
+  these to supply each model's general access + custom fields to the adapter
+  (the bit a legacy `index.php` would compute). **The model class must already be
+  loaded** in the REST context — for tasks it is, because `tasks.php` `require_once`s
+  `Common/Model/TaskList.php` (see "Extension File Loading" in `CLAUDE.md`).
+- `tabs`: One entry per card-list tab. Each has `key` (must match the adapter id the
+  `initFn` registers in `window.modJsList`), `label`, `entity` (a key from
+  `entities`), and an optional `card` config (below). A tab with no `component`
+  defaults to the generic `NativeCardList`.
+
+**`card` properties** (the per-tab declarative card config — the extension-supplied
+equivalent of the core `ENTITY_CONFIG` in `NativeCardList.jsx`):
+- `titleField` / `title` — which column is the card title. **If omitted, the shell
+  uses the conventional `name` or `title` column** (never the first column, which
+  may be an avatar/image), so most lists need no config here.
+- `avatarField` — render this field's image URL as the card's round avatar.
+- `hideMeta` — fields to drop from the `label: value` meta line (e.g. the title,
+  image, and id, which are shown elsewhere or not at all).
+- `tagFields` (+ `tagIcon`), `iconField`, `hideViewButton` — same semantics as the
+  core per-entity config.
+- `documentAction` — when a row exposes a `document_link` (e.g. a Task List opens an
+  editor.js editor), show a Document button. `label` = button/modal title, `icon` =
+  one of `file` / `form` / `export` / `monitor`, and `openIn`:
+  - `native` — mount the document as a real in-shell React component (no iframe,
+    theme/dark-mode aware). Requires `bundle` (the extension bundle that exposes the
+    mount fn, relative to `EXTENSIONS_URL`, e.g. `editor/user/dist/editor.js`) and
+    `mountFn` (the global it exposes, e.g. `mountEditorDocument`). The shell loads
+    the bundle on demand and calls `window[mountFn](container, { documentUrl,
+    restApiBase, token, colorMode, onClose })`; the matching `unmount<Name>` global
+    is called on close. This is how Tasks opens the editor — see
+    `docs/EDITOR_SPA_PLAN.md`.
+  - `iframe-modal` — open the link in a chrome-stripped embedded iframe modal.
+  - omitted — open in a new browser tab.
+
+> The `native` block is carried through to the module manager by
+> `ExtensionManager::getExtensionData()` and discovered by
+> `NativeModuleRegistry::discoverExtensionModules()`. Both keep core
+> extension-agnostic — all task/editor-specific configuration lives in the
+> extension's own `meta.json` and bundle.
 
 ### Backend Controller (`src/Controller.php`)
 

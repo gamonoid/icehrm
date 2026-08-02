@@ -57,6 +57,82 @@ class LogManager
         $this->log->addError(sprintf('(client=%s) %s', CLIENT_NAME, $message));
     }
 
+    /**
+     * Keys whose values must never reach the log. Matched case-insensitively against
+     * the key name, so 'password', 'APP_PASSWORD' and 'new_password' are all covered.
+     *
+     * Kept here rather than at each call site so there is one list to extend when a new
+     * credential-bearing parameter appears.
+     */
+    private static $sensitiveKeys = array(
+        'csrf',
+        'key',
+        'signature',
+        'authorization',
+        'samlresponse',
+        'hash',
+        'code',
+    );
+
+    /**
+     * Substrings that make a key sensitive wherever they appear, so APP_PASSWORD,
+     * client_secret and refresh_token are caught without listing every variant.
+     *
+     * Kept separate from the exact list on purpose: 'key' is matched exactly because as
+     * a substring it would redact ordinary words like 'monkey' and 'keywords'.
+     */
+    private static $sensitiveKeyFragments = array(
+        'password',
+        'passwd',
+        'secret',
+        'token',
+        'apikey',
+        'accesskey',
+        'privatekey',
+    );
+
+    /**
+     * Replace the values of credential-bearing keys with a placeholder, recursively.
+     *
+     * Use this on anything derived from a request before logging it. A raw
+     * print_r($_REQUEST) writes the bearer token (which is also passed as a ?token=
+     * query parameter), and on POST oauth/token it writes the user's password.
+     *
+     * @param mixed $data
+     * @param int $depth guards against a pathological nesting depth
+     * @return mixed
+     */
+    public static function redact($data, $depth = 0)
+    {
+        if (!is_array($data) || $depth > 8) {
+            return $data;
+        }
+
+        $clean = array();
+        foreach ($data as $key => $value) {
+            $normalised = strtolower(str_replace(array('_', '-', ' '), '', (string) $key));
+
+            $sensitive = in_array($normalised, self::$sensitiveKeys, true);
+            if (!$sensitive) {
+                foreach (self::$sensitiveKeyFragments as $fragment) {
+                    if (strpos($normalised, $fragment) !== false) {
+                        $sensitive = true;
+                        break;
+                    }
+                }
+            }
+
+            if ($sensitive) {
+                $clean[$key] = '***redacted***';
+                continue;
+            }
+
+            $clean[$key] = is_array($value) ? self::redact($value, $depth + 1) : $value;
+        }
+
+        return $clean;
+    }
+
     public function collectLogs($logMessage)
     {
         $this->logCollector[] = sprintf('(client=%s) %s', CLIENT_NAME, $logMessage);

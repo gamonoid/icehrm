@@ -1,0 +1,71 @@
+# Release-test stack. The app runs the DISTRIBUTABLE release
+# (build/release/icehrmpro.zip) baked into the image (Dockerfile-release-test) —
+# the code lives inside the container, not on a bind mount — against a FRESH,
+# EMPTY MySQL (no init script) so a new release can be smoke-tested like a clean
+# install. All services use dedicated ports to avoid clashing with the
+# dev/prod/testing stacks.
+#
+# Build the release first (ant build / release.sh) so build/release/icehrmpro.zip
+# exists, then:
+#   npm run release:test:fresh   # wipe db volume + images, rebuild from the zip, start clean
+#   npm run release:test:up      # (re)build from the current zip and start
+#   npm run release:test:down    # stop + remove containers (keeps db volume)
+#
+# App / installer: http://localhost:9190/app/install/   (empty DB -> run the installer)
+# phpMyAdmin:      http://localhost:9191/
+# MailHog:         http://localhost:9192/
+version: "3.5"
+
+services:
+  mysql:
+    image: mysql:8.0.32
+    container_name: icehrm-release-test-mysql
+    ports:
+      - 9406:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: IceHrmR00t
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
+      MYSQL_DATABASE: icehrm
+    volumes:
+      # Named volume only — NO init script. `down -v` wipes it for a fresh DB.
+      - release_test_db_data:/var/lib/mysql
+
+  icehrm:
+    # Bakes build/release/icehrmpro.zip into /var/www/html. Requires the base
+    # runtime image icehrm-release-runtime (npm release:test:* build it first).
+    build:
+      context: .
+      dockerfile: Dockerfile-release-test
+    image: icehrm-release-test-app
+    container_name: icehrm-release-test-app
+    depends_on:
+      - mysql
+    ports:
+      - 9290:8080
+    extra_hosts:
+      - "dascore.org:192.168.65.254"
+      - "admin.dascore.org:192.168.65.254"
+
+  phpmyadmin:
+    container_name: icehrm-release-test-pma
+    depends_on:
+      - mysql
+    image: phpmyadmin
+    ports:
+      - "9291:80"
+    environment:
+      PMA_HOSTS: mysql
+      PMA_PORT: 3306
+      PMA_USER: dev
+      PMA_PASSWORD: dev
+
+  mailhog:
+    container_name: icehrm-release-test-mailhog
+    image: ajoergensen/mailhog
+    ports:
+      - "1326:1025"
+      - "9292:8025"
+
+volumes:
+  release_test_db_data:

@@ -13,6 +13,7 @@ use Classes\Macaw;
 use Classes\SystemTasks\SystemTasksService;
 use Classes\UIManager;
 use Employees\Common\Model\Employee;
+use Employees\Rest\CustomFieldRestEndPoint;
 use Employees\Rest\EmployeeAttendanceRestEndPoint;
 use Employees\Rest\EmployeeCertificationsRestEndPoint;
 use Employees\Rest\EmployeeEducationRestEndPoint;
@@ -39,6 +40,42 @@ class EmployeesAdminManager extends AbstractModuleManager
 
     public function setupRestEndPoints()
     {
+        // Preview the next auto-generated employee number for the add form.
+        Macaw::get(
+            REST_API_PATH.'employees/next-employee-number',
+            function () {
+                $enabled = Employee::isEmployeeNumberGenerationEnabled();
+                (new \Classes\RestEndPoint())->sendResponse(new \Classes\IceResponse(
+                    \Classes\IceResponse::SUCCESS,
+                    array(
+                        'enabled' => $enabled,
+                        'number' => $enabled ? Employee::generateEmployeeNumber() : '',
+                    )
+                ));
+            }
+        );
+
+        // Read an employee's multi-level approval chain (manager + approver1/2/3,
+        // each resolved to {id, name, image}). Admin / all-employee-access only.
+        Macaw::get(
+            REST_API_PATH.'employees/(:num)/approvers',
+            function ($pathParams) {
+                $empRestEndPoint = new EmployeeRestEndPoint();
+                $empRestEndPoint->process('getApprovers', $pathParams);
+            }
+        );
+
+        // Set an employee's multi-level approvers (approver1/2/3). The manager
+        // (supervisor) is the initial approver and is NOT set here — it is edited
+        // via the employee form. Admin / all-employee-access only.
+        Macaw::post(
+            REST_API_PATH.'employees/(:num)/approvers',
+            function ($pathParams) {
+                $empRestEndPoint = new EmployeeRestEndPoint();
+                $empRestEndPoint->process('saveApprovers', $pathParams);
+            }
+        );
+
         Macaw::get(
             REST_API_PATH.'employees/me',
             function () {
@@ -183,6 +220,51 @@ class EmployeesAdminManager extends AbstractModuleManager
 				$empRestEndPoint->process('createUserForEmployee', $pathParams);
 			}
 		);
+
+        // Employee custom field DEFINITIONS (admin-only). ':num' never matches
+        // 'custom-fields', so these do not collide with employees/(:num).
+        Macaw::get(
+            REST_API_PATH.'employees/custom-fields',
+            function () {
+                (new CustomFieldRestEndPoint())->process('listFields');
+            }
+        );
+
+        Macaw::post(
+            REST_API_PATH.'employees/custom-fields',
+            function () {
+                (new CustomFieldRestEndPoint())->process('createField');
+            }
+        );
+
+        Macaw::delete(
+            REST_API_PATH.'employees/custom-fields/(:num)',
+            function ($id) {
+                (new CustomFieldRestEndPoint())->process('deleteField', $id);
+            }
+        );
+
+        // Employee custom field VALUES for a specific employee (admin-only).
+        Macaw::get(
+            REST_API_PATH.'employees/(:num)/custom-fields',
+            function ($employeeId) {
+                (new CustomFieldRestEndPoint())->process('getValues', $employeeId);
+            }
+        );
+
+        Macaw::put(
+            REST_API_PATH.'employees/(:num)/custom-fields/(:any)',
+            function ($employeeId, $name) {
+                (new CustomFieldRestEndPoint())->process('setValue', [$employeeId, $name]);
+            }
+        );
+
+        Macaw::delete(
+            REST_API_PATH.'employees/(:num)/custom-fields/(:any)',
+            function ($employeeId, $name) {
+                (new CustomFieldRestEndPoint())->process('deleteValue', [$employeeId, $name]);
+            }
+        );
     }
 
     public function initializeDatabaseErrorMappings()
@@ -236,6 +318,21 @@ class EmployeesAdminManager extends AbstractModuleManager
 			'employee_id' => 'Employee ID',
 			'first_name' => 'First name'
 		];
+
+		// Expose employee custom fields as selectable sources for this hook, so a
+		// payroll column can pull any employee custom field value (the hook resolves
+		// them in EmployeeUtil::getEmployeeDataField).
+		try {
+			$customField = new \FieldNames\Common\Model\CustomField();
+			$fields = $customField->Find('type = ? order by display_order, id', ['Employee']);
+			foreach ($fields as $field) {
+				if (!empty($field->name)) {
+					$additionalData[$field->name] = !empty($field->field_label) ? $field->field_label : $field->name;
+				}
+			}
+		} catch (\Exception $e) {
+			// Custom fields are optional — ignore if unavailable.
+		}
 
         $this->addCalculationHook(
             'EmployeeData_getFieldValue',

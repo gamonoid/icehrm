@@ -1,6 +1,7 @@
 {
     "label": "Custom Fields",
     "menu": "Admin",
+    "area": "configuration",
     "order": "892",
     "icon": "fa-code",
     "user_levels": [

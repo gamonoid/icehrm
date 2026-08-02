@@ -33,4 +33,9 @@ class QualificationsAdminManager extends AbstractModuleManager
         $this->addModelClass('Certification');
         $this->addModelClass('Language');
     }
+
+    public function setupRestEndPoints()
+    {
+        (new QualificationsApiController())->registerEndPoints();
+    }
 }

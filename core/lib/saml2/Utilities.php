@@ -612,7 +612,16 @@ class Utilities {
             $decrypted .
             '</root>';
         $newDoc = new DOMDocument();
-        if (!@$newDoc->loadXML($xml)) {
+        // XXE hardening: PHP 7.3 loads external entities by default. LIBXML_NOENT is
+        // deliberately not passed — it enables the entity substitution XXE relies on.
+        if (PHP_VERSION_ID < 80000) {
+            $previousEntityLoader = libxml_disable_entity_loader(true);
+        }
+        $decryptedLoaded = @$newDoc->loadXML($xml, LIBXML_NONET);
+        if (PHP_VERSION_ID < 80000) {
+            libxml_disable_entity_loader($previousEntityLoader);
+        }
+        if (!$decryptedLoaded) {
             echo sprintf('Failed to parse decrypted XML. Maybe the wrong sharedkey was used?');
             throw new Exception('Failed to parse decrypted XML. Maybe the wrong sharedkey was used?');
         }

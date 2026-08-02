@@ -116,17 +116,27 @@ class MetadataRestEndPoint extends RestEndPoint
     public function getExtensions(User $user)
     {
         $extensions = [];
-        $extensionsPath = APP_BASE_PATH . '../extensions/';
-
-        if (!is_dir($extensionsPath)) {
-            return new IceResponse(IceResponse::SUCCESS, ['data' => $extensions]);
+        if (!function_exists('iceExtensionRoots') && defined('APP_BASE_PATH')) {
+            $resolver = APP_BASE_PATH . 'extensions/path-resolver.php';
+            if (file_exists($resolver)) {
+                require_once $resolver;
+            }
         }
+        // Scan both the free extensions/ and the paid extensions-pro/ roots.
+        $roots = function_exists('iceExtensionRoots')
+            ? iceExtensionRoots(APP_BASE_PATH . '../extensions/')
+            : array(APP_BASE_PATH . '../extensions/');
 
-        $dirs = scandir($extensionsPath);
-        foreach ($dirs as $dir) {
-            if ($dir === '.' || $dir === '..') {
+        foreach ($roots as $extensionsPath) {
+            if (!is_dir($extensionsPath)) {
                 continue;
             }
+
+            $dirs = scandir($extensionsPath);
+            foreach ($dirs as $dir) {
+                if ($dir === '.' || $dir === '..') {
+                    continue;
+                }
 
             $fullPath = $extensionsPath . $dir;
             if (!is_dir($fullPath)) {
@@ -186,6 +196,7 @@ class MetadataRestEndPoint extends RestEndPoint
             }
 
             $extensions[] = $extData;
+            }
         }
 
         return new IceResponse(IceResponse::SUCCESS, ['data' => $extensions]);

@@ -160,6 +160,107 @@ class EditorService
 		return $link;
 	}
 
+	/**
+	 * Single source of truth for resolving a document for rendering — the access
+	 * checks + data assembly that used to live inline in web/index.php. Both the
+	 * legacy page and the native SPA (GET editor/document) call this, so they can
+	 * never diverge.
+	 *
+	 * @param array $params keys: object, id, field, hash, view, checks, title
+	 * @return array {
+	 *   allowed: bool, error?: string,
+	 *   hash, contentId, objectType, objectId, objectField,
+	 *   data (decoded editor JSON), readOnly: bool, canSelectChecks: bool,
+	 *   employees: array, sideBarObject: mixed
+	 * }
+	 */
+	public static function resolveDocument(array $params) {
+		$readOnlyTypes = [
+			'LmsEmployeeCourse',
+			'LmsEmployeeLesson',
+		];
+
+		$content = null;
+
+		// New-content path: object + id + field given (no hash yet).
+		if (!empty($params['object']) && isset($params['id']) && !empty($params['field'])) {
+			$object = self::getRelatedObject($params['object'], $params['id']);
+			$access = self::getObjectAccess($object);
+			if (!in_array('element', $access)) {
+				$content = self::getContent($params['object'], $params['id'], $params['field']);
+			}
+			if ($content === null && !in_array('save', $access)) {
+				return ['allowed' => false, 'error' => 'You are not allowed to create this document'];
+			}
+			if ($content === null && in_array('save', $access)) {
+				$content = self::createContent(
+					$params['object'],
+					$params['id'],
+					$params['field'],
+					isset($params['title']) ? $params['title'] : null
+				);
+			}
+		}
+
+		// Hash path (the canonical case once a document exists).
+		if ($content === null) {
+			if (empty($params['hash'])) {
+				return ['allowed' => false, 'error' => 'Not found'];
+			}
+			$content = self::getContentByHash($params['hash']);
+		}
+
+		if (empty($content) || empty($content->hash)) {
+			return ['allowed' => false, 'error' => 'Not found'];
+		}
+
+		/** @var \Model\BaseModel $object */
+		$object = self::getRelatedObject($content->object_type, $content->object_id);
+		if (!$object || empty($object->id)) {
+			return ['allowed' => false, 'error' => 'No object for the document'];
+		}
+
+		$access = self::getObjectAccess($object);
+		if (!in_array('element', $access)) {
+			return ['allowed' => false, 'error' => 'Not allowed to view the document'];
+		}
+
+		$readOnly = (!empty($params['view']) || !in_array('save', $access));
+		if (in_array($content->object_type, $readOnlyTypes)) {
+			$readOnly = true;
+		}
+		$canSelectChecks = (!empty($params['checks']) && in_array('element', $access));
+
+		$editorPermissions = $object->getEditorPermissions();
+		if (!in_array('default', $editorPermissions)) {
+			if (!$readOnly && !in_array('edit', $editorPermissions)) {
+				$readOnly = true;
+			}
+			if (in_array('view', $editorPermissions)) {
+				$readOnly = true;
+			}
+			if (in_array('check', $editorPermissions)) {
+				$canSelectChecks = true;
+			}
+		}
+
+		$sideBarObject = $object->getEditorSideBarObject($readOnly ? 'view' : 'edit');
+
+		return [
+			'allowed' => true,
+			'hash' => $content->hash,
+			'contentId' => $content->id,
+			'objectType' => $content->object_type,
+			'objectId' => $content->object_id,
+			'objectField' => $content->object_field,
+			'data' => json_decode($content->content),
+			'readOnly' => (bool) $readOnly,
+			'canSelectChecks' => (bool) $canSelectChecks,
+			'employees' => self::getEmployeeNamesAndImages(),
+			'sideBarObject' => $sideBarObject,
+		];
+	}
+
 	public static function copyDocumentContent($sourceType, $sourceField, $sourceId, $targetType, $targetField, $targetId) {
 		$target = self::getContent($targetType, $targetId, $targetField);
 		if (!empty($target)) {

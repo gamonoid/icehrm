@@ -63,6 +63,31 @@ class AttendanceActionManager extends SubActionManager
 
         $req->date = $req->time;
 
+        // Serialize concurrent punch operations for this employee. The check-then-insert
+        // below is otherwise racy: two near-simultaneous punch-ins (double-click, mobile
+        // retry, two tabs) both see no open punch and both insert an open row, and the
+        // overlap re-check compares strtotime(NULL)=0 so it never catches them. A MySQL
+        // advisory lock scoped to the employee makes the whole read-modify-write atomic
+        // across requests. The lock auto-releases if the connection dies; we release it in
+        // the finally below on every return path.
+        $punchLockKey = 'ice_att_punch_'.$this->getCurrentProfileId();
+        $punchLockDb = $this->baseService->getDB();
+        $punchLockDb->Execute("SELECT GET_LOCK(?, ?)", array($punchLockKey, 10));
+
+        try {
+            return $this->savePunchGuarded($req, $limitPunchInOutTimes);
+        } finally {
+            $punchLockDb->Execute("SELECT RELEASE_LOCK(?)", array($punchLockKey));
+        }
+    }
+
+    /**
+     * The critical section of savePunch(), run while a per-employee advisory lock is held
+     * (see savePunch). Kept as a separate method purely so the lock can wrap every return
+     * path via try/finally without re-indenting the whole body.
+     */
+    private function savePunchGuarded($req, $limitPunchInOutTimes)
+    {
         //check if there is an open punch
         /* @var \Attendance\Common\Model\Attendance */
         $openPunch = $this->getPunch($req)->getData();

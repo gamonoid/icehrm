@@ -1,0 +1,33 @@
+# Release-test image.
+#
+# Uses the real IceHRM runtime (icehrm-release-runtime, built from the main
+# Dockerfile) and bakes the DISTRIBUTABLE release archive
+# (build/release/icehrmpro.zip) into /var/www/html, so the container runs the
+# packaged code from its OWN filesystem — no bind mount. This mirrors a real
+# deployment and sidesteps host bind-mount permission/virtiofs issues.
+#
+# Build the runtime base first (the npm release:test:* scripts do this):
+#   docker build -t icehrm-release-runtime -f Dockerfile .
+FROM icehrm-release-runtime
+
+USER root
+
+# Copy the release archive into the image and unpack it. The zip contains a
+# top-level icehrmpro/ directory, so its CONTENTS become the document root.
+COPY build/release/icehrmpro.zip /tmp/icehrmpro.zip
+RUN unzip -q /tmp/icehrmpro.zip -d /tmp/release \
+    && rm -rf /var/www/html/* \
+    && cp -R /tmp/release/icehrmpro/. /var/www/html/ \
+    && rm -rf /tmp/icehrmpro.zip /tmp/release \
+    # No app/config.php is created — the release ships without one, exactly like a
+    # downloaded zip, so the app redirects to /app/install/ until it exists. Just
+    # ensure a writable data dir and that the web user owns the tree, so the
+    # installer can create config.php itself.
+    && mkdir -p /var/www/html/app/data \
+    && chown -R nobody:nobody /var/www/html \
+    && chmod -R 775 /var/www/html/app/data
+
+USER nobody
+WORKDIR /var/www/html
+
+# CMD, EXPOSE 8080 and the healthcheck are inherited from icehrm-release-runtime.

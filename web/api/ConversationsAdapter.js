@@ -4,6 +4,7 @@
  */
 /* global showUploadDialog */
 import AdapterBase from './AdapterBase';
+import { escapeHtml, escapeHtmlWithBreaks } from '../api-common/htmlEscape';
 
 class ConversationsAdapter extends AdapterBase {
   constructor(endPoint, tab, filter, orderBy) {
@@ -173,23 +174,32 @@ class ConversationsAdapter extends AdapterBase {
 
 
   getObjectHTML(object) {
+    // Conversations are user-to-user: the message body, the poster's name and the
+    // attachment filename are all written by one employee and rendered in another's
+    // browser. Every substituted value is escaped; only the templates and the
+    // icon/colour class names (derived from a fixed lookup) are trusted markup.
+    // Replacements are passed as functions so `$&` in the data stays literal.
+    const sub = (tpl, placeholder, value) => tpl.replace(
+      new RegExp(`#_${placeholder}_#`, 'g'), () => value,
+    );
+
     let t = this.getCustomTemplate(this.getTemplateName());
-    t = t.replace(new RegExp('#_id_#', 'g'), object.id);
-    t = t.replace(new RegExp('#_message_#', 'g'), object.message);
-    t = t.replace(new RegExp('#_employeeName_#', 'g'), object.employeeName);
-    t = t.replace(new RegExp('#_employeeImage_#', 'g'), object.employeeImage);
-    t = t.replace(new RegExp('#_date_#', 'g'), object.date);
+    t = sub(t, 'id', escapeHtml(object.id));
+    t = sub(t, 'message', escapeHtmlWithBreaks(object.message));
+    t = sub(t, 'employeeName', escapeHtml(object.employeeName));
+    t = sub(t, 'employeeImage', escapeHtml(object.employeeImage));
+    t = sub(t, 'date', escapeHtml(object.date));
 
     if (object.attachment !== '' && object.attachment !== null && object.attachment !== undefined) {
       let at = this.getCustomTemplate('attachment.html');
-      at = at.replace(new RegExp('#_attachment_#', 'g'), object.attachment);
-      at = at.replace(new RegExp('#_icon_#', 'g'), this.getIconByFileType(object.file.type));
-      at = at.replace(new RegExp('#_color_#', 'g'), this.getColorByFileType(object.file.type));
-      at = at.replace(new RegExp('#_name_#', 'g'), object.file.name);
-      at = at.replace(new RegExp('#_size_#', 'g'), object.file.size_text);
-      t = t.replace(new RegExp('#_attachment_#', 'g'), at);
+      at = sub(at, 'attachment', escapeHtml(object.attachment));
+      at = sub(at, 'icon', this.getIconByFileType(object.file.type));
+      at = sub(at, 'color', this.getColorByFileType(object.file.type));
+      at = sub(at, 'name', escapeHtml(object.file.name));
+      at = sub(at, 'size', escapeHtml(object.file.size_text));
+      t = sub(t, 'attachment', at);
     } else {
-      t = t.replace(new RegExp('#_attachment_#', 'g'), '');
+      t = sub(t, 'attachment', '');
     }
 
     return t;

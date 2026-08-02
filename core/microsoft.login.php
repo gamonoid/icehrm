@@ -40,6 +40,8 @@ if (!isset($_GET['code'])) {
         header("Location:" . CLIENT_BASE_URL . "login.php?f=1&fm=$message");
         exit();
     }
+    // Prevent session fixation: issue a fresh session ID on this SSO login.
+    \Utils\SessionUtils::regenerateSession();
     \Utils\SessionUtils::saveSessionObject('user', $suser);
     $suser->last_login = date("Y-m-d H:i:s");
     $suser->Save();

@@ -10,6 +10,18 @@ if(empty($user) || empty($user->email)){
     exit();
 }
 
+// The standalone legacy UI has been retired. Legacy module pages now render ONLY
+// as iframe embeds inside the new React SPA (Sec-Fetch-Dest=iframe). Any TOP-LEVEL
+// visit to a legacy page link (bookmark, notification e-mail, etc.) bounces to the
+// new UI. We gate on Sec-Fetch-Dest=document so the SPA's own iframe-embedded
+// modules are NOT redirected.
+$iceTopLevelVisit = isset($_SERVER['HTTP_SEC_FETCH_DEST'])
+    && $_SERVER['HTTP_SEC_FETCH_DEST'] === 'document';
+if ($iceTopLevelVisit) {
+    header("Location:".CLIENT_BASE_URL."ui/");
+    exit();
+}
+
 if(empty($user->default_module)){
     if($user->user_level == "Admin"){
         $homeLink = HOME_LINK_ADMIN;
@@ -91,15 +103,29 @@ if ($user->user_level == 'Admin') {
 ?><!DOCTYPE html>
 <html>
 <head>
+    <script>
+        // The standalone legacy UI has been retired; legacy pages render only as
+        // iframe embeds inside the new SPA. Fallback for browsers that do not send
+        // the Sec-Fetch-Dest header (the PHP guard above covers modern browsers):
+        // any TOP-LEVEL visit (i.e. NOT inside the SPA's iframe, where
+        // window.top !== window.self) is bounced to the new UI.
+        (function () {
+            try {
+                if (window.top === window.self) {
+                    window.location.replace('<?=CLIENT_BASE_URL?>ui/');
+                }
+            } catch (e) { /* framed cross-origin: leave it */ }
+        })();
+    </script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0B30PDPY"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA4_MEASUREMENT_ID; ?>"></script>
     <script>
         window.ga = [];
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-WQ0B30PDPY');
+        gtag('config', '<?php echo GA4_MEASUREMENT_ID; ?>');
     </script>
 
     <meta charset="utf-8">
@@ -316,6 +342,145 @@ if ($user->user_level == 'Admin') {
     <aside class="right-side">
         <!-- Main content -->
         <section class="content">
+            <?php
+            // Check if demo mode prompt should be shown (only for fresh installs with default employee)
+            $showDemoPrompt = false;
+            $demoDebug = [];
+            $isDemoModePage = (isset($_REQUEST['n']) && strpos($_REQUEST['n'], 'demo-mode') !== false);
+            $demoDebug['isDemoModePage'] = $isDemoModePage;
+            $demoDebug['userLevel'] = $user->user_level;
+            $demoExtPath = APP_BASE_PATH . '../extensions/demo-mode/admin/demo-mode.php';
+            $demoDebug['extPath'] = $demoExtPath;
+            $demoDebug['extExists'] = file_exists($demoExtPath);
+
+            if ($user->user_level == 'Admin' && !$isDemoModePage && file_exists($demoExtPath)) {
+                try {
+                    $db = \Classes\BaseService::getInstance()->getDB();
+                    $empResult = $db->Execute("SELECT COUNT(*) as cnt, MIN(first_name) as fname, MIN(last_name) as lname FROM Employees WHERE status = 'Active'");
+                    $row = null;
+                    if ($empResult) {
+                        if (is_array($empResult)) {
+                            $row = isset($empResult[0]) ? $empResult[0] : null;
+                        } elseif (is_object($empResult) && method_exists($empResult, 'FetchRow')) {
+                            $row = $empResult->FetchRow();
+                        }
+                    }
+                    if ($row) {
+                        $demoDebug['empCount'] = (int)$row['cnt'];
+                        $demoDebug['empFname'] = $row['fname'];
+                        $demoDebug['empLname'] = $row['lname'];
+                        if ((int)$row['cnt'] === 1 && $row['fname'] === 'IceHrm' && $row['lname'] === 'Employee') {
+                            $tableCheck = $db->Execute("SHOW TABLES LIKE 'DemoDataEntries'");
+                            $tableExists = false;
+                            if (is_array($tableCheck)) {
+                                $tableExists = !empty($tableCheck);
+                            } elseif (is_object($tableCheck) && method_exists($tableCheck, 'RecordCount')) {
+                                $tableExists = ($tableCheck->RecordCount() > 0);
+                            }
+                            $demoDebug['tableExists'] = $tableExists;
+                            $hasDemoData = false;
+                            if ($tableExists) {
+                                $demoDataResult = $db->Execute("SELECT COUNT(*) as cnt FROM DemoDataEntries");
+                                $demoRow = null;
+                                if (is_array($demoDataResult)) {
+                                    $demoRow = isset($demoDataResult[0]) ? $demoDataResult[0] : null;
+                                } elseif (is_object($demoDataResult) && method_exists($demoDataResult, 'FetchRow')) {
+                                    $demoRow = $demoDataResult->FetchRow();
+                                }
+                                if ($demoRow) {
+                                    $hasDemoData = ((int)$demoRow['cnt'] > 0);
+                                    $demoDebug['demoDataCount'] = (int)$demoRow['cnt'];
+                                }
+                            }
+                            $showDemoPrompt = !$hasDemoData;
+                            $demoDebug['hasDemoData'] = $hasDemoData;
+                        }
+                    }
+                } catch (\Exception $e) {
+                    $showDemoPrompt = false;
+                    $demoDebug['error'] = $e->getMessage();
+                }
+            }
+            $demoDebug['showDemoPrompt'] = $showDemoPrompt;
+            ?>
+            <!-- Demo Debug: <?php echo json_encode($demoDebug); ?> -->
+            <?php if($showDemoPrompt) { ?>
+            <style>
+                @keyframes demoPulse {
+                    0%, 100% { box-shadow: 0 4px 15px rgba(82, 196, 26, 0.3); }
+                    50% { box-shadow: 0 4px 25px rgba(82, 196, 26, 0.6), 0 0 40px rgba(82, 196, 26, 0.4); }
+                }
+                @keyframes iconPulse {
+                    0%, 100% { transform: scale(1); }
+                    50% { transform: scale(1.1); }
+                }
+                #DemoModeNotice { animation: demoPulse 2s ease-in-out infinite; }
+                #DemoModeNotice .demo-icon { animation: iconPulse 2s ease-in-out infinite; }
+            </style>
+            <div id="DemoModeNotice" style="
+                background: linear-gradient(135deg, #52c41a 0%, #389e0d 100%);
+                border-radius: 12px;
+                padding: 20px 24px;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 4px 15px rgba(82, 196, 26, 0.3);
+                border: 2px solid rgba(255,255,255,0.3);
+            ">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div class="demo-icon" style="
+                        background: rgba(255,255,255,0.25);
+                        border-radius: 50%;
+                        width: 48px;
+                        height: 48px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    ">
+                        <i class="fa fa-rocket" style="color: #fff; font-size: 22px;"></i>
+                    </div>
+                    <div>
+                        <div style="color: #fff; font-weight: 600; font-size: 16px; margin-bottom: 4px;">
+                            Welcome to IceHrm! Want to see how it works?
+                        </div>
+                        <div style="color: rgba(255,255,255,0.9); font-size: 14px;">
+                            Add sample employees, projects, attendance, and more to explore all features.
+                            <br><strong>You can clear all sample data with one click</strong> when you're ready to go live.
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <a href="<?=CLIENT_BASE_URL?>?g=extension&n=demo-mode|admin&m=admin_System" class="demo-btn" style="
+                        background: #fff;
+                        color: #389e0d;
+                        padding: 12px 28px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 15px;
+                        font-weight: 700;
+                        transition: all 0.2s ease;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    ">
+                        <i class="fa fa-plus-circle"></i> Manage Sample Data
+                    </a>
+                    <a href="javascript:void(0)" onclick="document.getElementById('DemoModeNotice').style.display='none'" style="
+                        background: rgba(255,255,255,0.2);
+                        color: #fff;
+                        padding: 10px 16px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 14px;
+                        font-weight: 500;
+                    ">
+                        Dismiss
+                    </a>
+                </div>
+            </div>
+            <?php } ?>
             <?php if($user->user_level == 'Admin' && !$isConnectedToIceHrm && !(defined('IS_CLOUD') && IS_CLOUD)) { ?>
             <div id="IceHrmConnectionNotice" style="
                 background: linear-gradient(135deg, #346CB0 0%, #2a5a9a 100%);

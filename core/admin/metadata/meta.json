@@ -1,6 +1,7 @@
 {
     "label": "Manage Metadata",
     "menu": "System",
+    "area": "configuration",
     "order": "6",
     "icon": "fa-microchip",
     "user_levels": [

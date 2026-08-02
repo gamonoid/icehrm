@@ -18,6 +18,16 @@ class User extends BaseModel
 {
     public $table = 'Users';
 
+    // `image` is computed (profile picture, resolved from the linked employee) —
+    // not a Users column. Declaring it virtual keeps it out of search WHERE
+    // clauses (searching the users list 500'd with "Unknown column 'image'").
+    public function getVirtualFields()
+    {
+        return array(
+            "image"
+        );
+    }
+
     public function getAdminAccess()
     {
         return array("get","element","save","delete");
@@ -36,6 +46,18 @@ class User extends BaseModel
     public function validateSave($obj)
     {
         $userTemp = new User();
+
+        // Username is UNIQUE in the DB (unique index on Users.username). Catch a
+        // duplicate here with a clear message instead of letting the INSERT/UPDATE
+        // fail with a generic "Duplicate entry" error. Covers both create and edit.
+        if (empty($obj->id)) {
+            $sameUsername = $userTemp->Find("username = ?", array($obj->username));
+        } else {
+            $sameUsername = $userTemp->Find("username = ? and id <> ?", array($obj->username, $obj->id));
+        }
+        if (count($sameUsername) > 0) {
+            return new IceResponse(IceResponse::ERROR, "A user with the same username already exists");
+        }
 
         if (empty($obj->id)) {
             $users = $userTemp->Find("email = ?", array($obj->email));

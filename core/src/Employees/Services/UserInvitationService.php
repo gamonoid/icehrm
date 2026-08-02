@@ -24,7 +24,11 @@ class UserInvitationService
 
 	public function getInvitationByHash($hash) {
 		$userInvitation = new UserInvitation();
-		$userInvitation->Load('password = ? and invitation_status <= ?', [$hash, self::INVITATION_EMAIL_SENT]);
+		// Accept up to EMAIL_ERROR: a failed *invitation* email (common when SMTP
+		// isn't set up) must not permanently brick the link — the hash is still
+		// valid, so if the invitee reaches it (e.g. an admin shared it manually)
+		// let them proceed. Anything beyond that (PROCESSING/created) is done.
+		$userInvitation->Load('password = ? and invitation_status <= ?', [$hash, self::INVITATION_EMAIL_ERROR]);
 		if (empty($userInvitation->password) || $userInvitation->password !== $hash) {
 			return null;
 		}
@@ -40,7 +44,10 @@ class UserInvitationService
 	}
 
 	public function processUserInvitation(UserInvitation $userInvitation) {
-		if ($userInvitation->invitation_status > 1) {
+		// Allow PENDING(0), INVITED(1) and EMAIL_ERROR(2) — a failed invitation
+		// email shouldn't block acceptance. PROCESSING(3)+ means it's already
+		// been (partially) processed.
+		if ($userInvitation->invitation_status > self::INVITATION_EMAIL_ERROR) {
 			return new IceResponse(IceResponse::ERROR, 'Invitation is not in a valid state. Please contact your HR department to request a new invitation.');
 		}
 
@@ -98,7 +105,7 @@ class UserInvitationService
 		$user = new User();
 		$user->username = $username;
 		$user->email = $userInvitation->email;
-		$user->password = md5($password);
+		$user->password = \Classes\PasswordManager::createPasswordHash($password);
 		$user->employee = $employee->id;
 		$user->user_level = $userInvitation->user_level;
 
@@ -127,10 +134,10 @@ class UserInvitationService
 
 	public function createEmployee(UserInvitation $userInvitation) {
 		$employee = new Employee();
-		$employee->employee_id = $userInvitation->employee_id;
-		if ($this->hasDuplicateEmployeeId($userInvitation->employee_id)) {
-			return new IceResponse(IceResponse::ERROR, 'An employee with the same employee Id exists. Please contact your HR department to request a new invitation.');
-		}
+		// Always generate a proper, unique employee number on acceptance — regardless of
+		// the "Company: Generate Employee Numbers" setting. The invitation only carries a
+		// throwaway random placeholder id (the number is not asked for at invite time).
+		$employee->employee_id = Employee::generateEmployeeNumber();
 
 		$employee->first_name = $userInvitation->first_name;
 		$employee->last_name = $userInvitation->last_name;

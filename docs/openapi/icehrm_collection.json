@@ -1,0 +1,2033 @@
+{
+	"info": {
+		"_postman_id": "1539d409-d09f-4722-8a6c-fd49d178ed82",
+		"name": "IceHrmProApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Attendance",
+			"item": [
+				{
+					"name": "GET Attendance Entry",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/attendance/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Attendance Entry",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"employee\": 3,\n  \"note\": \"Test1\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/attendance",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee Punch In",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"employee\": 1,\n  \"note\": \"Test\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/attendance/punch-in",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"punch-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Attendance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "xWnkliVQJURqB2x1",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://www.getpostman.com/oauth2/callback",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "ssh-secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/attendance",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Attendance Entry",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "xWnkliVQJURqB2x1",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://www.getpostman.com/oauth2/callback",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "ssh-secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/attendance/69",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"69"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Attendance for Employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "xWnkliVQJURqB2x1",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://www.getpostman.com/oauth2/callback",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "ssh-secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/employee/3/attendance",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employee",
+								"3",
+								"attendance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Open Punch In",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "xWnkliVQJURqB2x1",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://www.getpostman.com/oauth2/callback",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "ssh-secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/employee/1/open-punch-in/today",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employee",
+								"1",
+								"open-punch-in",
+								"today"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee Punch Out",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"employee\": 1,\n  \"note\": \"Test out\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/attendance/punch-out",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"punch-out"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "GET Employee Educations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/employees/1/educations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees",
+								"1",
+								"educations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Employee Languages",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/employees/1/languages",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees",
+								"1",
+								"languages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Me",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/employees/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Employee Skills",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/employees/1/skills",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees",
+								"1",
+								"skills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Employee Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/employees/1/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees",
+								"1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": 3\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/employees/1/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees",
+								"1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Employee Certifications",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/employees/1/certifications",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees",
+								"1",
+								"certifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Employees",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/employees",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/employees/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/employees/44",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees",
+								"44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"employee_id\": \"D100\",\n  \"first_name\": \"IceHrm 123\",\n  \"middle_name\": \"Sample Ex1\",\n  \"last_name\": \"Employee\",\n  \"nationality\": \"35\",\n  \"birthday\": \"1984-03-17\",\n  \"gender\": \"Male\",\n  \"marital_status\": \"Married\",\n  \"ssn_num\": \"\",\n  \"nic_num\": \"294-38-3535\",\n  \"other_id\": \"294-38-3535\",\n  \"driving_license\": \"\",\n  \"employment_status\": \"3\",\n  \"job_title\": \"11\",\n  \"pay_grade\": \"2\",\n  \"work_station_id\": \"\",\n  \"address1\": \"2772 Flynn Street\",\n  \"address2\": \"Willoughby\",\n  \"city\": \"Willoughby\",\n  \"country\": \"US\",\n  \"province\": \"41\",\n  \"postal_code\": \"44094\",\n  \"home_phone\": \"440-953-4578\",\n  \"mobile_phone\": \"440-953-4578\",\n  \"work_phone\": \"440-953-4578\",\n  \"work_email\": \"icehrm+admin@web-stalk.com\",\n  \"private_email\": \"icehrm+admin@web-stalk.com\",\n  \"joined_date\": \"2005-08-03\",\n  \"confirmation_date\": \"0000-00-00\",\n  \"supervisor\": \"2\",\n  \"indirect_supervisors\": \"[\\\"3\\\",\\\"4\\\"]\",\n  \"department\": \"1\",\n  \"termination_date\": \"0000-00-00\",\n  \"status\": \"Active\",\n  \"approver1\": \"5\",\n  \"approver2\": \"6\",\n  \"approver3\": \"7\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/employees",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\" : 54,\n  \"employee_id\": \"D1012\",\n  \"first_name\": \"IceHrm 123\",\n  \"middle_name\": \"Sample Ex1\",\n  \"last_name\": \"Employee\",\n  \"nationality\": \"35\",\n  \"birthday\": \"1984-03-17\",\n  \"gender\": \"Male\",\n  \"marital_status\": \"Married\",\n  \"ssn_num\": \"\",\n  \"nic_num\": \"294-38-3535\",\n  \"other_id\": \"294-38-3535\",\n  \"driving_license\": \"\",\n  \"employment_status\": \"3\",\n  \"job_title\": \"11\",\n  \"pay_grade\": \"2\",\n  \"work_station_id\": \"\",\n  \"address1\": \"2772 Flynn Street\",\n  \"address2\": \"Willoughby\",\n  \"city\": \"Willoughby\",\n  \"country\": \"US\",\n  \"province\": \"41\",\n  \"postal_code\": \"44094\",\n  \"home_phone\": \"440-953-4578\",\n  \"mobile_phone\": \"440-953-4578\",\n  \"work_phone\": \"440-953-4578\",\n  \"work_email\": \"icehrm+admin@web-stalk.com\",\n  \"private_email\": \"icehrm+admin@web-stalk.com\",\n  \"joined_date\": \"2005-08-03\",\n  \"confirmation_date\": \"0000-00-00\",\n  \"supervisor\": \"2\",\n  \"indirect_supervisors\": \"[\\\"3\\\",\\\"4\\\"]\",\n  \"department\": \"1\",\n  \"termination_date\": \"0000-00-00\",\n  \"status\": \"Active\",\n  \"approver1\": \"5\",\n  \"approver2\": \"6\",\n  \"approver3\": \"7\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/employees/46",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employees",
+								"46"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Directory",
+			"item": [
+				{
+					"name": "Staff",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/staff",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"staff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Leave",
+			"item": [
+				{
+					"name": "Get All Leave",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/leave",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"leave"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leave Entitlement",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/leave/entitlement",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"leave",
+								"entitlement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Leave",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/leave/check/1/2019-02-15/2019-02-15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"leave",
+								"check",
+								"1",
+								"2019-02-15",
+								"2019-02-15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Leave Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/leave/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"leave",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Leave Attachment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/leave/file-upload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"leave",
+								"file-upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apply",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"leave_type\":\"2\",\n\t\"start\":\"2022-05-23\",\n\t\"end\":\"2022-05-24\",\n\t\"details\":\"\",\n\t\"attachment\":\"\",\n\t\"days\":{\n\t\t\"20220523\":\"Full Day\",\n        \"20220524\":\"Full Day\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/leave/apply",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"leave",
+								"apply"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meta",
+			"item": [
+				{
+					"name": "Countries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/meta/countries",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meta",
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CurrencyTypes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/meta/currency",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meta",
+								"currency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mobile Modules",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/meta/mobile-modules",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meta",
+								"mobile-modules"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expense",
+			"item": [
+				{
+					"name": "Expense Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/expense/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expense",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Expenses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/expenses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Expense Payment Methods",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/expense/payment-methods",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expense",
+								"payment-methods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Expense Attachment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/expenses/file-upload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expenses",
+								"file-upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Expense",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"expense_date\": \"2019-02-04\",\n\t\"payment_method\": 1,\n\t\"transaction_no\": \"1111\",\n\t\"payee\": \"Thilina Hasantha\",\n\t\"category\": 1,\n\t\"notes\": \"retre\",\n\t\"currency\": 42,\n\t\"amount\": 10.000,\n\t\"attachment1\": \"0865880001550471336\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/expense",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expense"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Charts",
+			"item": [
+				{
+					"name": "Employees online",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/charts/employee-check-ins",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"charts",
+								"employee-check-ins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee Distribution",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/charts/employees-distribution",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"charts",
+								"employees-distribution"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Company leave entitlement",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/charts/company-leave-entitlement",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"charts",
+								"company-leave-entitlement"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/tasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recruitment",
+			"item": [
+				{
+					"name": "GET All Active Jobs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "xWnkliVQJURqB2x1",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://www.getpostman.com/oauth2/callback",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "ssh-secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/jobs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GETJob",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "xWnkliVQJURqB2x1",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://www.getpostman.com/oauth2/callback",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "ssh-secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/job/9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"job",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Candidate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "xWnkliVQJURqB2x1",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://www.getpostman.com/oauth2/callback",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "ssh-secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/candidate/18",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"candidate",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Candidate Notes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "xWnkliVQJURqB2x1",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://www.getpostman.com/oauth2/callback",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "ssh-secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/candidate/18/notes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"candidate",
+								"18",
+								"notes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Candidate Interviews",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"response code is 401\"] = responseCode.code === 401;",
+									"tests[\"response has WWW-Authenticate header\"] = (postman.getResponseHeader('WWW-Authenticate'));",
+									"",
+									"var authenticateHeader = postman.getResponseHeader('WWW-Authenticate'),",
+									"    realmStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"realm\")) + 1 ,",
+									"    realmEnd = authenticateHeader.indexOf('\"',realmStart),",
+									"    realm = authenticateHeader.slice(realmStart,realmEnd),",
+									"    nonceStart = authenticateHeader.indexOf('\"',authenticateHeader.indexOf(\"nonce\")) + 1,",
+									"    nonceEnd = authenticateHeader.indexOf('\"',nonceStart),",
+									"    nonce = authenticateHeader.slice(nonceStart,nonceEnd);",
+									"    ",
+									"postman.setGlobalVariable('echo_digest_realm', realm);",
+									"postman.setGlobalVariable('echo_digest_nonce', nonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "xWnkliVQJURqB2x1",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://www.getpostman.com/oauth2/callback",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "ssh-secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/candidate/18/interviews",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"candidate",
+								"18",
+								"interviews"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

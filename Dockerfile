@@ -3,10 +3,14 @@ FROM node:18-alpine AS builder
 
 WORKDIR /build
 
+# obfuscate-js.sh is a bash script (process substitution), not POSIX sh
+RUN apk add --no-cache bash
+
 # Copy package files
 COPY package.json package-lock.json* ./
 COPY web/package.json web/package-lock.json* ./web/
 COPY gulpfile.js ./
+COPY obfuscate-js.sh ./
 
 # Copy all source files needed for build
 COPY index.php ./
@@ -24,26 +28,26 @@ RUN npm run asset:build:prod
 RUN ls -la /build/ && ls -la /build/app/
 
 # Production stage
-FROM alpine:3.17.1
+FROM alpine:3.20
 LABEL Maintainer="Thilina Pituwala <thilina@icehrm.com>" \
       Description="IceHrm Production Container with Nginx & PHP-FPM based on Alpine Linux."
 
 # Install packages (no dev dependencies, no xdebug)
 RUN apk --no-cache add \
-    php81 php81-fpm php81-opcache php81-mysqli php81-json php81-openssl php81-curl \
-    php81-zlib php81-xml php81-phar php81-intl php81-dom php81-simplexml php81-xmlreader \
-    php81-ctype php81-session php81-mbstring php81-gd php81-tokenizer php81-zip php81-iconv \
+    php83 php83-fpm php83-opcache php83-mysqli php83-json php83-openssl php83-curl \
+    php83-zlib php83-xml php83-phar php83-intl php83-dom php83-simplexml php83-xmlreader \
+    php83-ctype php83-session php83-mbstring php83-gd php83-tokenizer php83-zip php83-iconv \
     nginx supervisor curl
 
 # Create symlink for php command (if not exists)
-RUN ln -sf /usr/bin/php81 /usr/bin/php
+RUN ln -sf /usr/bin/php83 /usr/bin/php
 
 # Configure nginx
 COPY --from=builder /build/docker/prod/config/nginx.conf /etc/nginx/nginx.conf
 
 # Configure PHP-FPM
-COPY --from=builder /build/docker/prod/config/fpm-pool.conf /etc/php81/php-fpm.d/www.conf
-COPY --from=builder /build/docker/prod/config/php.ini /etc/php81/conf.d/custom.ini
+COPY --from=builder /build/docker/prod/config/fpm-pool.conf /etc/php83/php-fpm.d/www.conf
+COPY --from=builder /build/docker/prod/config/php.ini /etc/php83/conf.d/custom.ini
 
 # Configure supervisord
 COPY --from=builder /build/docker/prod/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf

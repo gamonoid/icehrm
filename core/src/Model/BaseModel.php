@@ -31,7 +31,12 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
         "_original",
         "foreignName",
         "a",
-        "t"
+        "t",
+        // SPA data-scope params (added to every request by withSpaScope /
+        // IceDataPipe). Like 'a' and 't' they are framework request params,
+        // not model data — never persist them as custom fields.
+        "mg",
+        "mn"
     );
 
 	public function getEmployee() {

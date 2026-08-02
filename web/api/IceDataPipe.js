@@ -108,6 +108,15 @@ class IceDataPipe {
       url = `${url}&skip=1`;
     }
 
+    // SPA: declare which module this request belongs to so the server derives
+    // data scope per-request instead of from the shared session modulePath
+    // (see docs/DATA_SCOPE_ISSUE.md). Legacy adapters don't set these, so the
+    // params are omitted and legacy behaviour is unchanged.
+    if (this.adapter.spaModuleGroup && this.adapter.spaModuleName) {
+      url = `${url}&mg=${encodeURIComponent(this.adapter.spaModuleGroup)}`;
+      url = `${url}&mn=${encodeURIComponent(this.adapter.spaModuleName)}`;
+    }
+
     return url;
   }
 }

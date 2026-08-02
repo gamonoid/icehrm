@@ -16,6 +16,17 @@ include ("config.base.php");
 include ("include.common.php");
 
 $modulePath = \Utils\SessionUtils::getSessionObject("modulePath");
+// New SPA UI: explicit per-request module (mg/mn) overrides the ambient session
+// modulePath for correct data scope (see docs/DATA_SCOPE_ISSUE.md). Authorization
+// validated after server.includes. Legacy requests omit mg/mn (unchanged).
+$reqModGroup = isset($_REQUEST['mg']) ? $_REQUEST['mg'] : null;
+$reqModName = isset($_REQUEST['mn']) ? $_REQUEST['mn'] : null;
+if (!empty($reqModGroup) && !empty($reqModName)) {
+	$resolvedModulePath = \Classes\ModuleScopeResolver::pathFor($reqModGroup, $reqModName);
+	if ($resolvedModulePath !== null) {
+		$modulePath = $resolvedModulePath;
+	}
+}
 if(!defined('MODULE_PATH')){
 	define('MODULE_PATH',$modulePath);
 }
@@ -28,6 +39,16 @@ if($_REQUEST['a'] != "rsp" && $_REQUEST['a'] != "rpc" && $_REQUEST['a'] != "rlc"
 	if(empty($user) || empty($user->email) ||  empty($user->id) || !in_array($user->user_level, $userLevelArray)){
 		$ret['status'] = "ERROR";
         $ret['code'] = "NO_USER_FOUND";
+		echo json_encode($ret);
+		exit();
+	}
+	// Reject a forged/unauthorized explicit module before any action runs.
+	if (!empty($reqModGroup) && !empty($reqModName)
+		&& !\Classes\ModuleScopeResolver::isAuthorized($reqModGroup, $reqModName, $user)
+	) {
+		http_response_code(403);
+		$ret['status'] = "ERROR";
+		$ret['code'] = "MODULE_ACCESS_DENIED";
 		echo json_encode($ret);
 		exit();
 	}
@@ -74,17 +95,9 @@ try {// Domain aware input cleanup
             $ret['status'] = "ERROR";
         }
     } else if ($action == 'add') {
-        if ($_POST['t'] == "Report" || $_POST['t'] == "UserReport") {
-            $data = $reportHandler->handleReport($_POST);
-            $ret['status'] = $data[0];
-            $ret['object'] = $data[1];
-        } else {
-            $resp = BaseService::getInstance()->addElement($_POST['t'], $_POST);
-            $ret['object'] = $resp->getData();
-            $ret['status'] = $resp->getStatus();
-        }
-
-
+        $resp = BaseService::getInstance()->addElement($_POST['t'], $_POST);
+        $ret['object'] = $resp->getData();
+        $ret['status'] = $resp->getStatus();
     } else if ($action == 'delete') {
         /* @var IceResponse $response */
         $response = BaseService::getInstance()->deleteElement($_POST['t'], $_POST['id']);
@@ -275,6 +288,8 @@ try {// Domain aware input cleanup
                         if ($passwordCheck->getStatus() === IceResponse::SUCCESS) {
                             $user->password = PasswordManager::createPasswordHash($_REQUEST['pwd']);
                             $user->Save();
+                            // A password reset clears any failed-attempt lock.
+                            PasswordManager::resetFailedLogins($user);
                             LogManager::getInstance()->info("User password changed [$user->id]");
                             $ret['status'] = "SUCCESS";
                         } else {
@@ -374,20 +389,13 @@ try {// Domain aware input cleanup
         $notificationManager->clearNotifications($user->id);
         $ret['status'] = "SUCCESS";
 
-    } else if ($action == 'verifyInstance') {
-        $key = $_POST['key'];
-        if (empty($key)) {
-            $ret['status'] = "ERROR";
-            $ret['message'] = "Instance key not found";
-        } else {
-            $baseService->setInstanceKey($key);
-            if ($baseService->validateInstance()) {
-                $ret['status'] = "SUCCESS";
-            } else {
-                $ret['status'] = "ERROR";
-                $ret['message'] = "Error Verifying IceHrm Instance due to invalid key. If you are keep getting this, please contact us through " . CONTACT_EMAIL;
-            }
-        }
+    // The 'verifyInstance' action was removed. Instance verification is no longer part
+    // of the product, and the action let *any* authenticated user (down to Employee —
+    // the block at the top of this file only checks that someone is logged in) overwrite
+    // the 'Instance: Key' setting with a value of their choosing. It persisted the key
+    // before validating it, so even a rejected key stuck. The key is now generated
+    // server-side on first use (BaseService::getInstanceKey) and has no setter, so
+    // there is no request path that can influence it.
 
     } else if ($action === 'updateLanguage') {
         $language = $_POST['language'];

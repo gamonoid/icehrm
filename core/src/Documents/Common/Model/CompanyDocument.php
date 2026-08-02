@@ -9,14 +9,18 @@
 namespace Documents\Common\Model;
 
 use Classes\BaseService;
+use Classes\Editor\DeleteEditorContent;
 use Classes\FileService;
 use Classes\IceResponse;
 use Classes\ModuleAccess;
+use EditorUser\EditorService;
 use Employees\Common\Model\Employee;
 use Model\BaseModel;
 
 class CompanyDocument extends BaseModel
 {
+    use DeleteEditorContent;
+
     public $table = 'CompanyDocuments';
 
     public function getAdminAccess()
@@ -84,8 +88,68 @@ class CompanyDocument extends BaseModel
         if ($this->isJson($obj->details)) {
             $obj->details = $this->jsonToHtml($obj->details);
         }
+        $obj = $this->attachDocumentLink($obj);
 
         return $obj;
+    }
+
+    public function postProcessGetData($obj)
+    {
+        return $this->attachDocumentLink($obj);
+    }
+
+    /**
+     * Attach the editor-extension "content" document link so the SPA card can
+     * open the rich content. The link is view-only for anyone without 'save'
+     * access (see getEditorPermissions) — i.e. only admins can edit.
+     */
+    protected function attachDocumentLink($obj)
+    {
+        if (!class_exists('\EditorUser\EditorService')) {
+            return $obj;
+        }
+        $obj->document_link = EditorService::getDocumentLink(
+            $obj->id,
+            'CompanyDocument',
+            'document_link',
+            $obj,
+            'admin_Manage'
+        );
+        return $obj;
+    }
+
+    /**
+     * Editor content permissions: only admins may edit; everyone else who can
+     * reach the document (eligible managers/employees) views it read-only.
+     */
+    public function getEditorPermissions()
+    {
+        $user = BaseService::getInstance()->getCurrentUser();
+        if (!empty($user) && $user->user_level === 'Admin') {
+            return ['edit'];
+        }
+        return ['view'];
+    }
+
+    /**
+     * Sidebar data for the editor "content" document — the company document's
+     * name and description (shown instead of the generic Entity/Identifier/Field).
+     */
+    public function getEditorSideBarObject($mode)
+    {
+        $obj = new \stdClass();
+        $obj->name = $this->name;
+        $obj->details = $this->details;
+        return $obj;
+    }
+
+    public function getEditorDraftContent()
+    {
+        return sprintf(
+            '{"blocks":[{"type":"header","data":{"text":%s,"level":1}},'
+            . '{"type":"paragraph","data":{"text":"Add the document content here."}}]}',
+            json_encode((string) $this->name)
+        );
     }
 
     protected function isJson($string) {

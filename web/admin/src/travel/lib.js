@@ -7,7 +7,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Avatar, Space, Tag, Modal } from 'antd';
 import { MonitorOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
+import ReactModalAdapterBase, { shellThemeWrap } from '../../../api/ReactModalAdapterBase';
 import CustomFieldAdapter from '../../../api/CustomFieldAdapter';
 import ApproveAdminAdapter from '../../../api/ApproveAdminAdapter';
 import CustomAction from '../../../api/CustomAction';
@@ -184,6 +184,13 @@ class EmployeeTravelRecordAdminAdapter extends ReactModalAdapterBase {
     this.itemName = 'TravelRequest';
     this.itemNameLower = 'travelrequest';
     this.modulePathName = 'travel';
+  }
+
+  // Travel status changes route through admin=travel (even from the user
+  // module's subordinate/approval tabs). The native card list reads this for
+  // its status action.
+  getActionModuleRef() {
+    return 'admin=travel';
   }
 
   getDataMapping() {
@@ -559,29 +566,31 @@ class EmployeeTravelRecordAdminAdapter extends ReactModalAdapterBase {
     };
 
     ReactDOM.render(
-      <Modal
-        title={this.gt('Travel Request Details')}
-        open={true}
-        width={1200}
-        centered={false}
-        maskClosable={true}
-        footer={null}
-        onCancel={closeModal}
-        destroyOnClose={true}
-        style={{ top: 65 }}
-        bodyStyle={{
-          maxHeight: 'calc(100vh - 200px)',
-          overflowY: 'auto',
-          paddingTop: '20px',
-          paddingBottom: '20px'
-        }}
-      >
-        <TravelRequestView
-          element={element}
-          adapter={this}
-          onStatusChange={onStatusChange}
-        />
-      </Modal>,
+      shellThemeWrap(
+        <Modal
+          title={this.gt('Travel Request Details')}
+          open={true}
+          width={1200}
+          centered={false}
+          maskClosable={true}
+          footer={null}
+          onCancel={closeModal}
+          destroyOnClose={true}
+          style={{ top: 65 }}
+          bodyStyle={{
+            maxHeight: 'calc(100vh - 200px)',
+            overflowY: 'auto',
+            paddingTop: '20px',
+            paddingBottom: '20px'
+          }}
+        >
+          <TravelRequestView
+            element={element}
+            adapter={this}
+            onStatusChange={onStatusChange}
+          />
+        </Modal>,
+      ),
       modalContainer
     );
   }

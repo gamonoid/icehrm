@@ -673,14 +673,10 @@ class PayrollActionManager extends SubActionManager
 
 		try {
 			$fileFullNamePdf = BaseService::getInstance()->getDataDirectory().$fileFirstPart.".pdf";
-			//Try generating the pdf
-			LogManager::getInstance()->debug(
-				"wkhtmltopdf 1:".print_r(WK_HTML_PATH." ".$fileFullName." ".$fileFullNamePdf, true)
-			);
-			exec(WK_HTML_PATH." ".$fileFullName." ".$fileFullNamePdf, $output, $ret);
-
-			LogManager::getInstance()->debug("wkhtmltopdf 2:".print_r($output, true));
-			LogManager::getInstance()->debug("wkhtmltopdf 3:".print_r($ret, true));
+			// Render the payslip HTML (the template design) to PDF natively via
+			// mPDF — no external wkhtmltopdf/WK_HTML_PATH process. The .html file
+			// above is kept as a fallback if rendering fails.
+			\Classes\Pdf\HtmlPdfRenderer::toFile($result, $fileFullNamePdf);
 
 			if (file_exists($fileFullNamePdf)) {
 				$fileName = $fileFirstPart.".pdf";
@@ -789,11 +785,15 @@ class PayrollActionManager extends SubActionManager
 			$payslipTemplate = new PayslipTemplate();
 			$payslipTemplate->Load('id = ?', [$payroll->payslipTemplate]);
 			if (!empty($payslipTemplate->data)) {
-				// Create Old Payslip
+				// Legacy template — rendered via the payslip Twig template (mPDF).
 				$reportCreationData = $cls->createReportFile($report, $data);
 			} else {
 				$builder = new PayslipHtmlBuilder();
-				$html = $builder->buildPreview($payslipTemplate->design, $payroll->id, $e->id);
+				// buildPreview expects the PayrollEmployee id (it resolves the Employee and
+				// keys PayrollData off it), not the raw Employee id — otherwise employee
+				// fields and {{column_*}} tokens never resolve.
+				$html = $builder->buildPreview($payslipTemplate->design, $payroll->id, $emp->id);
+				// The design HTML is rendered to PDF natively via mPDF inside createPayslipFile.
 				$reportCreationData = $this->createPayslipFile($html, $e);
 			}
 

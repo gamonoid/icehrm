@@ -90,8 +90,8 @@ class ConnectionService
             CURLOPT_TIMEOUT => 30,
             CURLOPT_CONNECTTIMEOUT => 10,
             CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_SSL_VERIFYPEER => BaseService::shouldVerifyOutboundTls(),
+            CURLOPT_SSL_VERIFYHOST => BaseService::shouldVerifyOutboundTls() ? 2 : 0,
             CURLOPT_HTTPHEADER => [
                 'Accept: application/json',
                 'Content-Type: application/json',
@@ -132,6 +132,15 @@ class ConnectionService
         $connectionData = $data['data'];
         $this->saveConnectionData($connectionData);
 
+        // Immediately populate this account's subscription/extension data so it
+        // reflects the new connection without waiting for the user to open My
+        // Purchases. Best-effort — failure just defers the fetch.
+        try {
+            $this->fetchMyExtensions(true);
+        } catch (\Throwable $e) {
+            LogManager::getInstance()->error('ConnectionService: post-connect my-extensions fetch failed - ' . $e->getMessage());
+        }
+
         LogManager::getInstance()->info('ConnectionService: Token exchange successful');
 
         return $connectionData;
@@ -145,7 +154,35 @@ class ConnectionService
      */
     public function saveConnectionData($data)
     {
-        return BaseService::getInstance()->setSystemData(self::SYSTEM_DATA_KEY, $data);
+        $result = BaseService::getInstance()->setSystemData(self::SYSTEM_DATA_KEY, $data);
+        // A new/changed connection must not serve module/extension data cached
+        // for a previous (or disconnected) account.
+        $this->clearMarketplaceCaches();
+        return $result;
+    }
+
+    /**
+     * Drop the marketplace caches (module list + this account's extensions) plus
+     * the persisted "my extensions" SystemData, so a connect or disconnect takes
+     * effect immediately instead of serving stale data belonging to a previous
+     * (or now-disconnected) account. It is repopulated on the next
+     * fetchMyExtensions(). Best-effort.
+     */
+    private function clearMarketplaceCaches()
+    {
+        try {
+            $cache = DatabaseCache::getInstance();
+            $cache->delete(self::CACHE_KEY_MY_EXTENSIONS); // 'marketplace:my_extensions'
+            $cache->delete('marketplace:modules');         // MarketplaceService::CACHE_KEY_MODULES
+        } catch (\Throwable $e) {
+            // ignore — caches will expire on their own TTL
+        }
+        try {
+            // Clear the persisted subscription/extension data for the account.
+            BaseService::getInstance()->setSystemData(self::SYSTEM_DATA_KEY_MY_EXTENSIONS, null);
+        } catch (\Throwable $e) {
+            // ignore — nothing else depends on this succeeding synchronously
+        }
     }
 
     /**
@@ -167,6 +204,38 @@ class ConnectionService
     {
         $data = $this->getConnectionData();
         return !empty($data) && !empty($data['access_token']);
+    }
+
+    /**
+     * Verify an INBOUND request from the connected icehrm.com server, using the
+     * credentials stored at connect time. The caller (icehrm.com) must present:
+     *
+     *   Authorization: Bearer <access_token>
+     *   X-Signature:   hash_hmac('sha256', <access_token>, <secret>)
+     *
+     * i.e. the access token proves identity and the signature proves the caller
+     * also holds the shared secret. A fixed message (the access token) is signed
+     * rather than the request URL so verification doesn't depend on
+     * reconstructing scheme/host/path behind proxies. Both are compared with
+     * hash_equals (constant time). Returns false unless the installation is
+     * connected and both values match.
+     *
+     * @param string $accessToken bearer token from the request
+     * @param string $signature   X-Signature header from the request
+     * @return bool
+     */
+    public function verifyInboundRequest($accessToken, $signature)
+    {
+        if (!$this->isConnected() || empty($accessToken) || empty($signature)) {
+            return false;
+        }
+        $data = $this->getConnectionData();
+        if (empty($data['access_token']) || empty($data['secret'])) {
+            return false;
+        }
+        $expectedSignature = hash_hmac('sha256', $data['access_token'], $data['secret']);
+        return hash_equals((string) $data['access_token'], (string) $accessToken)
+            && hash_equals($expectedSignature, (string) $signature);
     }
 
     /**
@@ -207,8 +276,8 @@ class ConnectionService
             CURLOPT_TIMEOUT => 30,
             CURLOPT_CONNECTTIMEOUT => 10,
             CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_SSL_VERIFYPEER => BaseService::shouldVerifyOutboundTls(),
+            CURLOPT_SSL_VERIFYHOST => BaseService::shouldVerifyOutboundTls() ? 2 : 0,
             CURLOPT_HTTPHEADER => [
                 'Accept: application/json',
                 'Content-Type: application/json',
@@ -284,6 +353,10 @@ class ConnectionService
         // Always clear local connection data regardless of server response
         BaseService::getInstance()->setSystemData(self::SYSTEM_DATA_KEY, null);
 
+        // Drop marketplace caches so the disconnected state (or a later reconnect)
+        // isn't served stale module/extension data.
+        $this->clearMarketplaceCaches();
+
         return $result;
     }
 
@@ -312,8 +385,8 @@ class ConnectionService
             CURLOPT_TIMEOUT => 30,
             CURLOPT_CONNECTTIMEOUT => 10,
             CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_SSL_VERIFYPEER => BaseService::shouldVerifyOutboundTls(),
+            CURLOPT_SSL_VERIFYHOST => BaseService::shouldVerifyOutboundTls() ? 2 : 0,
             CURLOPT_HTTPHEADER => [
                 'Accept: application/json',
                 'Content-Type: application/json',

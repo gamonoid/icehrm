@@ -5,11 +5,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Space, Tag } from 'antd';
+import { Space, Tag, Modal } from 'antd';
 import {
   CopyOutlined, DeleteOutlined, EditOutlined, MonitorOutlined, BarChartOutlined,
 } from '@ant-design/icons';
-import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
+import ReactModalAdapterBase, { shellThemeWrap } from '../../../api/ReactModalAdapterBase';
 import ProjectDetailView from './components/ProjectDetailView';
 
 /**
@@ -72,6 +72,13 @@ class ProjectAdapter extends ReactModalAdapterBase {
 
   // Close the project details view (shows table again)
   closeProjectDetails() {
+    // In the shell the detail view is a modal — re-render it closed so it
+    // animates out, then there is no legacy table to restore.
+    const inShell = typeof window !== 'undefined' && window.__shellColorMode !== undefined;
+    if (inShell) {
+      if (this.detailViewContainer) this.renderDetailView(false);
+      return;
+    }
     // Hide detail view
     if (this.detailViewContainer) {
       this.detailViewContainer.style.display = 'none';
@@ -111,8 +118,32 @@ class ProjectAdapter extends ReactModalAdapterBase {
     super.get(args);
   }
 
-  // Render the project detail view
-  renderDetailView() {
+  // Render the project detail view. Inside the SPA shell (no legacy table to
+  // replace) render it in a themed modal overlay; in the legacy app keep the
+  // original inline behaviour.
+  renderDetailView(visible = true) {
+    const inShell = typeof window !== 'undefined' && window.__shellColorMode !== undefined;
+    if (inShell) {
+      ReactDOM.render(
+        shellThemeWrap(
+          <Modal
+            open={visible}
+            width="90%"
+            style={{ maxWidth: 1280, top: 24 }}
+            footer={null}
+            onCancel={() => this.closeProjectDetails()}
+            styles={{ body: { maxHeight: '82vh', overflowY: 'auto' } }}
+          >
+            <ProjectDetailView
+              projectId={this.selectedProjectId}
+              onBack={() => this.closeProjectDetails()}
+            />
+          </Modal>,
+        ),
+        this.detailViewContainer,
+      );
+      return;
+    }
     ReactDOM.render(
       <ProjectDetailView
         projectId={this.selectedProjectId}

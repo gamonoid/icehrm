@@ -118,7 +118,7 @@ abstract class ApproveAdminActionManager extends ApproveCommonActionManager
             BaseService::getInstance()->getCurrentUser()->id,
             $oldStatus,
             $req->status,
-            ""
+            isset($req->reason) ? (string) $req->reason : ""
         );
 
         $this->baseService->audit(

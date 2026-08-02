@@ -2,9 +2,9 @@
  Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
-import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
-class EmployeeCompanyLoanAdapter extends AdapterBase {
+class EmployeeCompanyLoanAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -29,6 +29,18 @@ class EmployeeCompanyLoanAdapter extends AdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      { title: 'Loan Type', dataIndex: 'loan' },
+      { title: 'Loan Start Date', dataIndex: 'start_date', sorter: true },
+      { title: 'Loan Period (Months)', dataIndex: 'period_months' },
+      { title: 'Currency', dataIndex: 'currency' },
+      { title: 'Amount', dataIndex: 'amount' },
+      { title: 'Status', dataIndex: 'status' },
+    ];
+  }
+
+  // Employees only view their loans (added by admins) — the form is read-only.
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
@@ -50,39 +62,22 @@ class EmployeeCompanyLoanAdapter extends AdapterBase {
     ];
   }
 
-
-  // eslint-disable-next-line no-unused-vars
-  getActionButtonsHtml(id, data) {
-    const editButton = '<img class="tableActionButton" '
-      + 'src="_BASE_images/view.png" '
-      + 'style="cursor:pointer;" '
-      + 'rel="tooltip" title="View" '
-      + 'onclick="modJs.edit(_id_);return false;">'
-      + '</img>';
-
-    const deleteButton = '<img class="tableActionButton" '
-      + 'src="_BASE_images/delete.png" '
-      + 'style="margin-left:15px;cursor:pointer;" '
-      + 'rel="tooltip" title="Delete" '
-      + 'onclick="modJs.deleteRow(_id_);return false;">'
-      + '</img>';
-    let html = '<div style="width:80px;">_edit__delete_</div>';
-
-    if (this.showDelete) {
-      html = html.replace('_delete_', deleteButton);
-    } else {
-      html = html.replace('_delete_', '');
-    }
-
-    if (this.showEdit) {
-      html = html.replace('_edit_', editButton);
-    } else {
-      html = html.replace('_edit_', '');
-    }
-
-    html = html.replace(/_id_/g, id);
-    html = html.replace(/_BASE_/g, this.baseUrl);
-    return html;
+  // Resolve remote-source ids (loan type, currency) to their display names for
+  // the read-only view — mirrors the legacy placeholder handling in ModuleBase.
+  modifyObjectBeforeView(object, viewOnly) {
+    if (!object) return object;
+    const resolved = { ...object };
+    this.getFormFields().forEach((field) => {
+      const src = field[1] && field[1]['remote-source'];
+      if (!src) return;
+      const key = this.getRemoteSourceKey(field);
+      const map = this.fieldMasterData && this.fieldMasterData[key];
+      const val = resolved[field[0]];
+      if (map && val !== undefined && val !== null && map[val] !== undefined) {
+        resolved[field[0]] = map[val];
+      }
+    });
+    return resolved;
   }
 }
 

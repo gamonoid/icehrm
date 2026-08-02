@@ -7,6 +7,7 @@ import {
   CheckCircleTwoTone, BulbTwoTone, FileTextTwoTone,
 } from '@ant-design/icons';
 import SaveButton from '../SaveButton';
+import { editorEnv, EditorLink } from '../../editorEnv';
 
 const {
   Title, Paragraph, Text, Link,
@@ -41,7 +42,7 @@ class EmployeeCourseSideBar extends React.Component {
             },
           });
         } else {
-          window.location = this.getLessonById(lessonId).document_link_next;
+          editorEnv.navigate(this.getLessonById(lessonId).document_link_next);
         }
       }).catch((error) => {
         message.error({
@@ -70,7 +71,7 @@ class EmployeeCourseSideBar extends React.Component {
     return (
       <>
         <Card
-          title={<a href={sideBarObject.document_link}>{sideBarObject.name }</a>}
+          title={<EditorLink href={sideBarObject.document_link}>{sideBarObject.name }</EditorLink>}
 
           style={{
             width: '100%',
@@ -130,7 +131,7 @@ class EmployeeCourseSideBar extends React.Component {
                     && (
                     <List.Item.Meta
                       avatar={item.status === 'Pending' ? <FileTextTwoTone twoToneColor="#ffa233" /> : <CheckCircleTwoTone twoToneColor="#52c41a" />}
-                      title={<a href={item.document_link}>{item.name}</a>}
+                      title={<EditorLink href={item.document_link}>{item.name}</EditorLink>}
                       description={item.short_description}
                     />
                     )}
@@ -138,7 +139,7 @@ class EmployeeCourseSideBar extends React.Component {
                       && (
                       <List.Item.Meta
                         avatar={item.status === 'Pending' ? <FileTextTwoTone twoToneColor="#ffa233" /> : <CheckCircleTwoTone twoToneColor="#52c41a" />}
-                        title={<a href={item.document_link}>{item.name}</a>}
+                        title={<EditorLink href={item.document_link}>{item.name}</EditorLink>}
                       />
                       )}
               </List.Item>

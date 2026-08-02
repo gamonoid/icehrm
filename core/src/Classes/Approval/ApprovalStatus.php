@@ -168,6 +168,12 @@ class ApprovalStatus
                     $nextAL->active = 1;
                     $nextAL->Save();
                 } else {
+                    // $eas were loaded before the current level's status was set
+                    // above; re-apply it here so deactivating the row does not
+                    // clobber the just-recorded approve/reject with the stale value.
+                    if (!empty($currentAL) && $ea->id == $currentAL->id) {
+                        $ea->status = $status;
+                    }
                     $ea->active = 0;
                     $ea->Save();
                 }

@@ -118,10 +118,10 @@ INSERT INTO `LeaveRules` (`id`, `leave_type`, `job_title`, `employment_status`, 
 
 
 INSERT INTO `Users` (`id`, `username`, `email`, `password`, `employee`,`default_module`, `user_level`,`user_roles`, `last_login`, `last_update`, `created`) VALUES
-(2, 'manager', 'icehrm+manager@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 2,NULL, 'Manager','', '2013-01-03 02:47:37', '2013-01-03 02:47:37', '2013-01-03 02:47:37'),
-(3, 'user1', 'icehrm+user1@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 3,NULL, 'Employee','', '2013-01-03 02:48:32', '2013-01-03 02:48:32', '2013-01-03 02:48:32'),
-(4, 'user2', 'icehrm+user2@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 4,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
-(5, 'user3', 'icehrm+user3@web-stalk.com', '4048bb914a704a0728549a26b92d8550', NULL,NULL, 'Other','["1"]', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55');
+(2, 'manager', 'icehrm+manager@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 2,NULL, 'Manager','', '2013-01-03 02:47:37', '2013-01-03 02:47:37', '2013-01-03 02:47:37'),
+(3, 'user1', 'icehrm+user1@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 3,NULL, 'Employee','', '2013-01-03 02:48:32', '2013-01-03 02:48:32', '2013-01-03 02:48:32'),
+(4, 'user2', 'icehrm+user2@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 4,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(5, 'user3', 'icehrm+user3@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', NULL,NULL, 'Other','["1"]', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55');
 
 INSERT INTO `Files` VALUES
   (6,'attachment_BI5XQCYFxZO12W1447383181684','attachment_BI5XQCYFxZO12W1447383181684.png',1,'Job',2000,'2MB');
@@ -190,9 +190,9 @@ INSERT INTO `PayrollEmployees` VALUES
   (9,9,4,151,'[]','[]',1),
   (10,10,4,151,'[]','[]',1);
 
-INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
-  ('Instance : ID', '0847429146712c108e23c435e8f93b4d', '',''),
-  ('Instance: Key', 'UQHEYBx9H1eNR66nhNCNCz1WCDDhkjtx1OuJbO3ZQMt+8tfSGvuOH/YEHntRajY=', '','');
+-- 'Instance : ID' and 'Instance: Key' are deliberately NOT seeded here — see the same
+-- note in icehrm_fixtures.sql. They were committed with real values, so every install
+-- seeded from this file shared identical key material.
 
 
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

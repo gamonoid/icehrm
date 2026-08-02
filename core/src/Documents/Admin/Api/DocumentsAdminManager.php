@@ -64,6 +64,33 @@ class DocumentsAdminManager extends AbstractModuleManager
                 $empRestEndPoint->process('getDocumentFile', $pathParams);
             }
         );
+
+        // Upload a document file (multipart, form field `file`) -> returns the stored File name
+        Macaw::post(
+            REST_API_PATH.'employees/documents/file-upload',
+            function () {
+                $empRestEndPoint = new EmployeeDocumentsRestApi();
+                $empRestEndPoint->process('uploadFile', []);
+            }
+        );
+
+        // Create an employee document (admin). Path = target employee id.
+        Macaw::post(
+            REST_API_PATH.'employees/(:num)/documents',
+            function ($pathParams) {
+                $empRestEndPoint = new EmployeeDocumentsRestApi();
+                $empRestEndPoint->process('create', $pathParams);
+            }
+        );
+
+        // Delete an employee document (admin) — also removes the backing file
+        Macaw::delete(
+            REST_API_PATH.'employees/documents/(:num)',
+            function ($pathParams) {
+                $empRestEndPoint = new EmployeeDocumentsRestApi();
+                $empRestEndPoint->process('deleteDocument', $pathParams);
+            }
+        );
     }
 
     public function setupModuleClassDefinitions()

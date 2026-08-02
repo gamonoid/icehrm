@@ -1,0 +1,32 @@
+{
+  "label": "Company Assets",
+  "menu": [
+    "Manage"
+  ],
+  "area": "configuration",
+  "order": "0",
+  "icon": "fa-laptop",
+  "user_levels": [
+    "Admin",
+    "Manager"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\Company_assetsAdmin\\Common\\Model",
+  "manager": "\\Company_assetsAdmin\\Extension",
+  "controller": "\\Company_assetsAdmin\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "native": {
+    "initFn": "initCompany_assetsAdmin",
+    "bundle": "company_assets/admin/dist/company_assets.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "Company Assets",
+        "component": "NativeExtensionView",
+        "viewGlobal": "CompanyAssetsView"
+      }
+    ]
+  }
+}

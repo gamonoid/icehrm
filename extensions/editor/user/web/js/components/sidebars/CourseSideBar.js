@@ -7,6 +7,7 @@ import {
   CheckCircleTwoTone, BulbTwoTone, FileTextTwoTone,
 } from '@ant-design/icons';
 import SaveButton from '../SaveButton';
+import { editorEnv, EditorLink } from '../../editorEnv';
 
 const {
   Title, Paragraph, Text, Link,
@@ -27,7 +28,7 @@ class CourseSideBar extends React.Component {
     return (
       <>
         <Card
-          title={<a href={sideBarObject.document_link}>{sideBarObject.name }</a>}
+          title={<EditorLink href={sideBarObject.document_link}>{sideBarObject.name }</EditorLink>}
 
           style={{
             width: '100%',
@@ -41,7 +42,7 @@ class CourseSideBar extends React.Component {
           </Space>
         </Card>
         <Space direction="horizontal" style={{ width: '100%', marginTop: '12px', marginBottom: '3px' }} align="right">
-          { (!window.editor_readonly)
+          { (!editorEnv.isReadOnly())
           && (
             <SaveButton />
           )}
@@ -60,7 +61,7 @@ class CourseSideBar extends React.Component {
               <List.Item>
                 <List.Item.Meta
                   avatar={item.status === 'Draft' ? <FileTextTwoTone twoToneColor="#ffa233" />: <CheckCircleTwoTone twoToneColor="#52c41a" />}
-                  title={<a href={item.document_link}>{item.name}</a>}
+                  title={<EditorLink href={item.document_link}>{item.name}</EditorLink>}
                 />
               </List.Item>
             )}

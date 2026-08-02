@@ -10,6 +10,7 @@ use Classes\RestEndPoint;
 use Documents\Common\Model\EmployeeDocument;
 use Qualifications\Common\Model\EmployeeSkill;
 use Users\Common\Model\User;
+use Utils\LogManager;
 
 class EmployeeDocumentsRestApi extends RestEndPoint
 {
@@ -134,5 +135,90 @@ JSON;
 
 
         return new IceResponse(IceResponse::SUCCESS, ['document_id' => $document->id, 'url' => $url]);
+    }
+
+    /**
+     * Admin: create an employee document.
+     * Path: the target employee id. Body:
+     *   { document?: <Document type id>, attachment?: <File name from uploadFile>,
+     *     valid_until?: "YYYY-MM-DD", details?: "...", visible_to?: "Owner|Owner Only|Manager|Admin",
+     *     status?: "Active|Inactive|Draft" }
+     * Upload the file first via POST employees/documents/file-upload (multipart field `file`);
+     * that returns the File name — pass it as `attachment`.
+     */
+    public function create(User $user, $employeeId)
+    {
+        if ($user->user_level !== 'Admin') {
+            return new IceResponse(IceResponse::ERROR, 'Permission denied - admin only', 403);
+        }
+        if (is_array($employeeId)) {
+            $employeeId = $employeeId[0] ?? null;
+        }
+
+        $employee = new \Employees\Common\Model\Employee();
+        $employee->Load('id = ?', [$employeeId]);
+        if (empty($employee->id) || $employee->id != $employeeId) {
+            return new IceResponse(IceResponse::ERROR, 'Employee not found', 404);
+        }
+
+        $body = $this->getRequestBody();
+        if (!is_array($body)) {
+            $body = [];
+        }
+
+        $doc = new EmployeeDocument();
+        $doc->employee = $employeeId;
+        if (!empty($body['document'])) {
+            $doc->document = $body['document'];
+        }
+        if (array_key_exists('attachment', $body)) {
+            $doc->attachment = $body['attachment'] ?: null;
+        }
+        if (array_key_exists('details', $body)) {
+            $doc->details = $body['details'];
+        }
+        if (!empty($body['valid_until'])) {
+            $doc->valid_until = $body['valid_until'];
+        }
+        $doc->visible_to = $body['visible_to'] ?? 'Owner';
+        $doc->status = $body['status'] ?? 'Active';
+
+        if (!$doc->Save()) {
+            LogManager::getInstance()->error('Error creating employee document: '.$doc->ErrorMsg());
+            return new IceResponse(IceResponse::ERROR, 'Could not create document', 500);
+        }
+
+        return new IceResponse(IceResponse::SUCCESS, [
+            'id' => $doc->id,
+            'employee' => $doc->employee,
+            'document' => $doc->document,
+            'attachment' => $doc->attachment,
+        ], 201);
+    }
+
+    /**
+     * Admin: delete an employee document. Routed through BaseService::deleteElement so the
+     * backing file (Files row + disk/S3 object) is cleaned up via the file-field mapping.
+     */
+    public function deleteDocument(User $user, $id)
+    {
+        if ($user->user_level !== 'Admin') {
+            return new IceResponse(IceResponse::ERROR, 'Permission denied - admin only', 403);
+        }
+        if (is_array($id)) {
+            $id = $id[0] ?? null;
+        }
+
+        $doc = new EmployeeDocument();
+        $doc->Load('id = ?', [$id]);
+        if (empty($doc->id) || $doc->id != $id) {
+            return new IceResponse(IceResponse::ERROR, 'Document not found', 404);
+        }
+
+        $response = BaseService::getInstance()->deleteElement('EmployeeDocument', $id);
+        if ($response->getStatus() !== IceResponse::SUCCESS) {
+            return new IceResponse(IceResponse::ERROR, $response->getData(), 500);
+        }
+        return new IceResponse(IceResponse::SUCCESS, 'Document deleted');
     }
 }

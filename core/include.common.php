@@ -8,8 +8,13 @@ ini_set('display_errors', false);
 error_reporting(E_ERROR);
 require dirname(__FILE__).'/lib/composer/vendor/autoload.php';
 
-// Load pro main.php if it exists (for pro-only modules and classes)
+// Load pro main.php if it exists (for pro-only modules and classes). The
+// leave_and_performance pro extension may live under extensions/ or the paid
+// extensions-pro/ split.
 $proMainPath = dirname(__FILE__) . '/../extensions/leave_and_performance/main.php';
+if (!file_exists($proMainPath) && function_exists('iceProExtensionsEnabled') && iceProExtensionsEnabled()) {
+    $proMainPath = dirname(__FILE__) . '/../extensions-pro/leave_and_performance/main.php';
+}
 if (file_exists($proMainPath)) {
     require_once $proMainPath;
     // Initialize pro model classes after BaseService is available

@@ -175,24 +175,23 @@ class EmployeesActionManager extends SubActionManager
 
         $str = json_encode($employee, JSON_PRETTY_PRINT);
 
-        $filename = uniqid();
-        $file = fopen("/tmp/".$filename, "w");
-        fwrite($file, $str);
-        fclose($file);
-
+        // Served straight from memory. The previous version wrote to a predictable
+        // world-readable /tmp file and never unlinked it, leaving employee PII on disk.
         $downloadFileName = "employee_".$employee->id."_"
             .str_replace(" ", "_", $employee->first_name)."_"
             .str_replace(" ", "_", $employee->last_name).".txt";
+        // Names are user-controlled and land in a header; keep the filename to safe chars.
+        $downloadFileName = preg_replace('/[^A-Za-z0-9._-]/', '_', $downloadFileName);
 
         header("Pragma: public"); // required
         header("Expires: 0");
         header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
         header("Content-Description: File Transfer");
-        header("Content-Type: image/jpg");
+        header("Content-Type: application/json");
         header('Content-Disposition: attachment; filename="'.$downloadFileName.'"');
         header("Content-Transfer-Encoding: binary");
-        header("Content-Length: ".filesize("/tmp/".$filename));
-        readfile("/tmp/".$filename);
+        header("Content-Length: ".strlen($str));
+        echo $str;
         exit();
     }
 

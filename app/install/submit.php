@@ -2,6 +2,15 @@
 include dirname(__FILE__).'/config.php';
 include(CLIENT_APP_PATH.'../core/lib/composer/vendor/icehrm/php-active-record/src/MyORM/MySqlActiveRecord.php');
 
+// PHP 8.x makes mysqli throw exceptions on failure by default; this installer is
+// written for the return-false behaviour of PHP 7.3 (the supported runtime).
+// Disable reporting so a bad host / wrong credentials produce a clean JSON error
+// instead of an uncaught exception (HTTP 500 with an empty body, which the
+// browser reports as "Unexpected end of JSON input").
+if (function_exists('mysqli_report')) {
+    mysqli_report(MYSQLI_REPORT_OFF);
+}
+
 
 function clean_input($input, $html = false) {
     $input = str_replace([';', '#', "'", '"'], '', $input);
@@ -31,17 +40,21 @@ foreach ($inputList as $key) {
 }
 
 
-$isConfigFileExists = file_exists(CLIENT_APP_PATH."config.php");
-$configData = file_get_contents(CLIENT_APP_PATH."config.php");
-
-error_log("isConfigFileExists $isConfigFileExists");
-error_log("configData $configData");
-
 $ret = array();
 
-if(!$isConfigFileExists || $configData != ""){
+// The config file acts as the install marker: it must be present but empty for a
+// fresh install. Create it if missing (so a direct POST works without loading
+// index.php first); refuse if it already holds a configuration. Its contents are
+// never logged — they would contain DB credentials on a reinstall.
+$configPath = CLIENT_APP_PATH."config.php";
+if (!file_exists($configPath)) {
+    @touch($configPath);
+}
+$configData = @file_get_contents($configPath);
+
+if ($configData === false || $configData !== "") {
     $ret["status"] = "ERROR";
-    $ret["msg"] = "You are trying to install IceHrm on an existing installation.";
+    $ret["msg"] = "IceHrm appears to be already installed. To reinstall, delete app/config.php, clear the data folder, and use a fresh database.";
     echo json_encode($ret);
     exit();
 }
@@ -54,17 +67,23 @@ if($action == "TEST_DB"){
 //	$res = $db->Connect($_REQUEST["APP_HOST"], $_REQUEST["APP_USERNAME"], $_REQUEST["APP_PASSWORD"], $_REQUEST["APP_DB"]);
 
     $db = new \MyORM\MySqlActiveRecord();
-    $res = $db->Connect(
-        $_REQUEST["APP_HOST"],
-        $_REQUEST["APP_USERNAME"],
-        $_REQUEST["APP_PASSWORD"],
-        $_REQUEST["APP_DB"]
-    );
+    $connectError = '';
+    try {
+        $res = $db->Connect(
+            $_REQUEST["APP_HOST"],
+            $_REQUEST["APP_USERNAME"],
+            $_REQUEST["APP_PASSWORD"],
+            $_REQUEST["APP_DB"]
+        );
+    } catch (\Throwable $e) {
+        $res = false;
+        $connectError = $e->getMessage();
+    }
 
     if (!$res){
-        error_log('Could not connect: ' . $db->ErrorMsg());
         $ret["status"] = "ERROR";
-        $ret["msg"] = "Incorrect credentials or incorrect DB host :".$db->ErrorMsg();
+        $ret["msg"] = "Could not connect to the database. Check the host, database name and credentials."
+            . ($connectError !== '' ? " (" . $connectError . ")" : "");
         echo json_encode($ret);
         exit();
     }
@@ -112,13 +131,18 @@ if($action == "TEST_DB"){
 //	$res = $db->Connect($_REQUEST["APP_HOST"], $_REQUEST["APP_USERNAME"], $_REQUEST["APP_PASSWORD"], $_REQUEST["APP_DB"]);
 
     $db = new \MyORM\MySqlActiveRecord();
-    $res = $db->Connect($_REQUEST["APP_HOST"], $_REQUEST["APP_USERNAME"], $_REQUEST["APP_PASSWORD"], $_REQUEST["APP_DB"]);
-
+    $connectError = '';
+    try {
+        $res = $db->Connect($_REQUEST["APP_HOST"], $_REQUEST["APP_USERNAME"], $_REQUEST["APP_PASSWORD"], $_REQUEST["APP_DB"]);
+    } catch (\Throwable $e) {
+        $res = false;
+        $connectError = $e->getMessage();
+    }
 
     if (!$res){
-        error_log('Could not connect: ' . $db->ErrorMsg());
         $ret["status"] = "ERROR";
-        $ret["msg"] = "Incorrect credentials or incorrect DB host. ".'Could not connect: ' . $db->ErrorMsg();
+        $ret["msg"] = "Could not connect to the database. Check the host, database name and credentials."
+            . ($connectError !== '' ? " (" . $connectError . ")" : "");
         echo json_encode($ret);
         exit();
     }
@@ -129,6 +153,25 @@ if($action == "TEST_DB"){
     if($num_rows != 0){
         $ret["status"] = "ERROR";
         $ret["msg"] = "Database is not empty";
+        echo json_encode($ret);
+        exit();
+    }
+
+    // Administrator account chosen on the install form. Validated here (before the
+    // schema loads) so bad input fails cleanly. NOT run through clean_input — a
+    // password may legitimately contain special characters, and it is only ever
+    // bcrypt-hashed + bound as a parameter, so it is injection-safe.
+    $adminEmail = isset($_REQUEST['ADMIN_EMAIL']) ? trim($_REQUEST['ADMIN_EMAIL']) : '';
+    $adminPassword = isset($_REQUEST['ADMIN_PASSWORD']) ? (string) $_REQUEST['ADMIN_PASSWORD'] : '';
+    if ($adminEmail === '' || !filter_var($adminEmail, FILTER_VALIDATE_EMAIL)) {
+        $ret["status"] = "ERROR";
+        $ret["msg"] = "Please enter a valid administrator email address.";
+        echo json_encode($ret);
+        exit();
+    }
+    if (strlen($adminPassword) < 6) {
+        $ret["status"] = "ERROR";
+        $ret["msg"] = "The administrator password must be at least 6 characters.";
         echo json_encode($ret);
         exit();
     }
@@ -153,6 +196,15 @@ if($action == "TEST_DB"){
         }
         $db->Execute($sql);
     }
+
+    // Apply the chosen administrator credentials to the default admin account that
+    // the master data just created (username 'admin'). Parameterised query; the
+    // password is bcrypt-hashed with the same cost the app uses (PasswordManager).
+    $adminHash = password_hash($adminPassword, PASSWORD_BCRYPT, array('cost' => 13));
+    $db->Execute(
+        "UPDATE Users SET email = ?, password = ? WHERE username = 'admin'",
+        array($adminEmail, $adminHash)
+    );
 
 
     //Write config file

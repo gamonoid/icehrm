@@ -1,6 +1,7 @@
 {
   "label":"Company Structure",
   "menu":"Admin",
+    "area": "people",
   "order":"2",
   "icon":"fa-building",
   "user_levels":["Admin","Manager"],

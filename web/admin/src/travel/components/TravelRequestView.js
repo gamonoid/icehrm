@@ -398,7 +398,7 @@ class TravelRequestView extends React.Component {
 
           {/* Audit Information */}
           <Col span={24}>
-            <Card size="small" style={{ width: '100%', backgroundColor: '#fafafa' }}>
+            <Card size="small" style={{ width: '100%' }}>
               <Descriptions size="small" column={2}>
                 <Descriptions.Item label={this.props.adapter.gt('Created')}>
                   <Text type="secondary">
@@ -423,22 +423,26 @@ class TravelRequestView extends React.Component {
             <Col span={24}>
               <Card size="small" style={{ width: '100%' }}>
                 <Space style={{ width: '100%', justifyContent: 'flex-end' }}>
-                  <Button
-                    type="primary"
-                    icon={<CheckOutlined />}
-                    loading={this.state.loading}
-                    onClick={() => this.handleStatusChange('Approved')}
-                  >
-                    {this.props.adapter.gt('Approve')}
-                  </Button>
-                  <Button
-                    danger
-                    icon={<CloseOutlined />}
-                    loading={this.state.loading}
-                    onClick={() => this.handleStatusChange('Rejected')}
-                  >
-                    {this.props.adapter.gt('Reject')}
-                  </Button>
+                  {travelRequest.status !== 'Approved' && (
+                    <Button
+                      type="primary"
+                      icon={<CheckOutlined />}
+                      loading={this.state.loading}
+                      onClick={() => this.handleStatusChange('Approved')}
+                    >
+                      {this.props.adapter.gt('Approve')}
+                    </Button>
+                  )}
+                  {travelRequest.status !== 'Rejected' && (
+                    <Button
+                      danger
+                      icon={<CloseOutlined />}
+                      loading={this.state.loading}
+                      onClick={() => this.handleStatusChange('Rejected')}
+                    >
+                      {this.props.adapter.gt('Reject')}
+                    </Button>
+                  )}
                 </Space>
               </Card>
             </Col>

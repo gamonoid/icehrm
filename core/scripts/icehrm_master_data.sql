@@ -980,27 +980,27 @@ REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
     ('System: Time-sheet Entry Start and End time Required', '0', 'Select 0 if you only need to store the time spend in time sheets','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
 
 INSERT INTO `Certifications` (`id`, `name`, `description`) VALUES
-  (1, 'Red Hat Certified Architect (RHCA)', 'Red Hat Certified Architect (RHCA)'),
-  (2, 'GIAC Secure Software Programmer -Java', 'GIAC Secure Software Programmer -Java'),
-  (3, 'Risk Management Professional (PMI)', 'Risk Management Professional (PMI)'),
-  (4, 'IT Infrastructure Library (ITIL) Expert Certification', 'IT Infrastructure Library (ITIL) Expert Certification'),
-  (5, 'Microsoft Certified Architect', 'Microsoft Certified Architect'),
-  (6, 'Oracle Exadata 11g Certified Implementation Specialist', 'Oracle Exadata 11g Certified Implementation Specialist'),
-  (7, 'Cisco Certified Design Professional (CCDP)', 'Cisco Certified Design Professional (CCDP)'),
-  (8, 'Cisco Certified Internetwork Expert (CCIE)', 'Cisco Certified Internetwork Expert (CCIE)'),
-  (9, 'Cisco Certified Network Associate', 'Cisco Certified Network Associate'),
-  (10, 'HP/Master Accredited Solutions Expert (MASE)', 'HP/Master Accredited Solutions Expert (MASE)'),
-  (11, 'HP/Master Accredited Systems Engineer (Master ASE)', 'HP/Master Accredited Systems Engineer (Master ASE)'),
-  (12, 'Certified Information Security Manager (CISM)', 'Certified Information Security Manager (CISM)'),
-  (13, 'Certified Information Systems Auditor (CISA)', 'Certified Information Systems Auditor (CISA)'),
-  (14, 'CyberSecurity Forensic Analyst (CSFA)', 'CyberSecurity Forensic Analyst (CSFA)'),
-  (15, 'Open Group Certified Architect (OpenCA)', 'Open Group Certified Architect (OpenCA)'),
-  (16, 'Oracle DBA Administrator Certified Master OCM', 'Oracle DBA Administrator Certified Master OCM'),
-  (17, 'Project Management Professional', 'Project Management Professional'),
-  (18, 'Apple Certified Support Professional', 'Apple Certified Support Professional'),
-  (19, 'Certified Public Accountant (CPA)', 'Certified Public Accountant (CPA)'),
-  (20, 'Chartered Financial Analyst', 'Chartered Financial Analyst'),
-  (21, 'Professional in Human Resources (PHR)', 'Professional in Human Resources (PHR)');
+  (1, 'Project Management Professional (PMP)', 'Project Management Professional (PMP)'),
+  (2, 'Certified Associate in Project Management (CAPM)', 'Certified Associate in Project Management (CAPM)'),
+  (3, 'Certified ScrumMaster (CSM)', 'Certified ScrumMaster (CSM)'),
+  (4, 'PRINCE2 Practitioner', 'PRINCE2 Practitioner'),
+  (5, 'Six Sigma Green Belt', 'Six Sigma Green Belt'),
+  (6, 'Six Sigma Black Belt', 'Six Sigma Black Belt'),
+  (7, 'Lean Six Sigma Certification', 'Lean Six Sigma Certification'),
+  (8, 'Certified Public Accountant (CPA)', 'Certified Public Accountant (CPA)'),
+  (9, 'Chartered Financial Analyst (CFA)', 'Chartered Financial Analyst (CFA)'),
+  (10, 'Certified Management Accountant (CMA)', 'Certified Management Accountant (CMA)'),
+  (11, 'Professional in Human Resources (PHR)', 'Professional in Human Resources (PHR)'),
+  (12, 'Senior Professional in Human Resources (SPHR)', 'Senior Professional in Human Resources (SPHR)'),
+  (13, 'SHRM Certified Professional (SHRM-CP)', 'SHRM Certified Professional (SHRM-CP)'),
+  (14, 'ISO 9001 Lead Auditor', 'ISO 9001 Lead Auditor'),
+  (15, 'Occupational Health and Safety (OSHA) Certification', 'Occupational Health and Safety (OSHA) Certification'),
+  (16, 'First Aid and CPR Certification', 'First Aid and CPR Certification'),
+  (17, 'Certified Supply Chain Professional (CSCP)', 'Certified Supply Chain Professional (CSCP)'),
+  (18, 'Certified Business Analysis Professional (CBAP)', 'Certified Business Analysis Professional (CBAP)'),
+  (19, 'Digital Marketing Professional Certification', 'Digital Marketing Professional Certification'),
+  (20, 'Change Management Practitioner', 'Change Management Practitioner'),
+  (21, 'Certified Quality Manager', 'Certified Quality Manager');
 
 
 
@@ -1040,19 +1040,19 @@ INSERT INTO `HoliDays` (`id`, `name`, `dateh`, `status`) VALUES
 
 
 INSERT INTO `JobTitles` (`id`, `code`, `name`, `description`, `specification`) VALUES
-  (1, 'SE', 'Software Engineer', 'The work of a software engineer typically includes designing and programming system-level software: operating systems, database systems, embedded systems and so on. They understand how both software a', 'Software Engineer'),
-  (2, 'ASE', 'Assistant Software Engineer', 'Assistant Software Engineer', 'Assistant Software Engineer'),
-  (3, 'PM', 'Project Manager', 'Project Manager', 'Project Manager'),
-  (4, 'QAE', 'QA Engineer', 'Quality Assurance Engineer ', 'Quality Assurance Engineer '),
-  (5, 'PRM', 'Product Manager', 'Product Manager', 'Product Manager'),
-  (6, 'AQAE', 'Assistant QA Engineer ', 'Assistant QA Engineer ', 'Assistant QA Engineer '),
-  (7, 'TPM', 'Technical Project Manager', 'Technical Project Manager', 'Technical Project Manager'),
-  (8, 'PRS', 'Pre-Sales Executive', 'Pre-Sales Executive', 'Pre-Sales Executive'),
-  (9, 'ME', 'Marketing Executive', 'Marketing Executive', 'Marketing Executive'),
+  (1, 'EXE', 'Executive', 'Executive', 'Executive'),
+  (2, 'ASC', 'Associate', 'Associate', 'Associate'),
+  (3, 'OFF', 'Officer', 'Officer', 'Officer'),
+  (4, 'TL', 'Team Lead', 'Team Lead', 'Team Lead'),
+  (5, 'SUP', 'Supervisor', 'Supervisor', 'Supervisor'),
+  (6, 'MGR', 'Manager', 'Manager', 'Manager'),
+  (7, 'HRA', 'HR Assistant', 'Human Resources Assistant', 'Human Resources Assistant'),
+  (8, 'HRBP', 'HR Business Partner', 'Human Resources Business Partner', 'Human Resources Business Partner'),
+  (9, 'HRM', 'HR Manager', 'Human Resources Manager', 'Human Resources Manager'),
   (10, 'DH', 'Department Head', 'Department Head', 'Department Head'),
   (11, 'CEO', 'Chief Executive Officer', 'Chief Executive Officer', 'Chief Executive Officer'),
-  (12, 'DBE', 'Database Engineer', 'Database Engineer', 'Database Engineer'),
-  (13, 'SA', 'Server Admin', 'Server Admin', 'Server Admin');
+  (12, 'COO', 'Chief Operating Officer', 'Chief Operating Officer', 'Chief Operating Officer'),
+  (13, 'CMO', 'Chief Marketing Officer', 'Chief Marketing Officer', 'Chief Marketing Officer');
 
 
 INSERT INTO `Languages` (`id`, `name`, `description`) VALUES
@@ -1277,16 +1277,16 @@ INSERT INTO `Projects` (`id`, `name`, `client`, `details`, `created`, `status`) 
   (4, 'Project 4', 2, NULL, '2013-01-03 05:56:16', 'Active');
 
 INSERT INTO `Skills` (`id`, `name`, `description`) VALUES
-  (1, 'Programming and Application Development', 'Programming and Application Development'),
-  (2, 'Project Management', 'Project Management'),
-  (3, 'Help Desk/Technical Support', 'Help Desk/Technical Support'),
-  (4, 'Networking', 'Networking'),
-  (5, 'Databases', 'Databases'),
-  (6, 'Business Intelligence', 'Business Intelligence'),
-  (7, 'Cloud Computing', 'Cloud Computing'),
-  (8, 'Information Security', 'Information Security'),
-  (9, 'HTML Skills', 'HTML Skills'),
-  (10, 'Graphic Designing', 'Graphic Designing');
+  (1, 'Communication', 'Clearly conveying information and ideas in verbal and written form, and listening actively to others.'),
+  (2, 'Leadership', 'Guiding, motivating, and supporting individuals and teams to achieve shared goals.'),
+  (3, 'Teamwork and Collaboration', 'Working effectively with colleagues across roles and departments toward common objectives.'),
+  (4, 'Problem Solving', 'Identifying issues, analyzing options, and implementing effective and practical solutions.'),
+  (5, 'Time Management', 'Prioritizing tasks and organizing time to meet deadlines and work efficiently.'),
+  (6, 'Project Management', 'Planning, organizing, and overseeing work to deliver results on time and within budget.'),
+  (7, 'Customer Service', 'Understanding and responding to customer needs to deliver a positive experience.'),
+  (8, 'Critical Thinking', 'Objectively evaluating information and weighing options to make sound decisions.'),
+  (9, 'Adaptability', 'Adjusting readily to changing priorities, environments, and new challenges.'),
+  (10, 'Negotiation', 'Reaching mutually beneficial agreements while maintaining positive working relationships.');
 
 INSERT INTO `EmploymentStatus` (`id`, `name`, `description`) VALUES
   (1, 'Full Time Contract', 'Full Time Contract'),
@@ -1366,8 +1366,13 @@ INSERT INTO `UserRoles` VALUES
   (2,'Attendance Manager');
 
 
-INSERT INTO `Users` VALUES
-(1,'admin','icehrm+admin@web-stalk.com','21232f297a57a5a743894a0e4a801fc3',1,NULL,'Admin','',NULL,NULL,NULL,NULL,NULL);
+-- No administrator row is seeded here on purpose.
+--
+-- The account is created during installation from the email and password entered on
+-- the install form, so an installed system's only credential is one the operator chose
+-- and that was never published in this repository.
+--
+-- The Employees row above is still required: Users.employee is a foreign key to it.
 
 
 INSERT INTO `SalaryComponentType` (`id`,`code`, `name`) VALUES

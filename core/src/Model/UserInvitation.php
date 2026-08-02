@@ -18,6 +18,16 @@ class UserInvitation extends BaseModel
 
 	public function executePreSaveActions($obj)
 	{
+		// The employee number is NOT collected at invite time. Store a throwaway random
+		// 4-digit placeholder so the (NOT NULL) column is satisfied; the real, unique
+		// employee number is generated when the invitation is accepted and the employee
+		// profile is created (UserInvitationService::createEmployee) — even if
+		// "Company: Generate Employee Numbers" is turned off. Because the number is no
+		// longer user-supplied, the previous employee-id duplicate checks are dropped.
+		if (empty($obj->employee_id)) {
+			$obj->employee_id = (string) random_int(1000, 9999);
+		}
+
 		// Make sure email is not duplicated.
 		$ui = new UserInvitation();
 		$ui->Load('email = ? and invitation_status < 2', [$obj->email]);
@@ -30,20 +40,6 @@ class UserInvitation extends BaseModel
 		$user->Load('email = ?', [$obj->email]);
 		if ($user->email === $obj->email) {
 			return new IceResponse(IceResponse::ERROR, 'There is an employee with this email address. You are not allowed to send invitations to registered employees.');
-		}
-
-		// Make sure employee id is not duplicated.
-		$ui = new UserInvitation();
-		$ui->Load('employee_id = ? and invitation_status < 2', [$obj->email]);
-		if ($ui->employee_id === $obj->employee_id) {
-			return new IceResponse(IceResponse::ERROR, 'There is an active invitation with same employee ID.');
-		}
-
-		// Make sure there is no user with same employee id.
-		$emp = new Employee();
-		$emp->Load('employee_id = ?', [$obj->employee_id]);
-		if ($emp->employee_id === $obj->employee_id) {
-			return new IceResponse(IceResponse::ERROR, 'There is an employee with same employee ID. You are not allowed to send invitations to registered employees.');
 		}
 
 		$service = new UserInvitationService();

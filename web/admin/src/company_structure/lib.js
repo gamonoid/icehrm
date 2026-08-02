@@ -11,7 +11,7 @@ import { Space, Tag } from 'antd';
 import {
   EditOutlined, DeleteOutlined, CopyOutlined, EyeOutlined,
 } from '@ant-design/icons';
-import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
+import ReactModalAdapterBase, { shellThemeWrap } from '../../../api/ReactModalAdapterBase';
 import AdapterBase from '../../../api/AdapterBase';
 import CompanyStructureDetailView from './components/CompanyStructureDetailView';
 
@@ -85,11 +85,13 @@ class CompanyStructureAdapter extends ReactModalAdapterBase {
     }
 
     ReactDOM.render(
-      <CompanyStructureDetailView
-        visible={visible}
-        onClose={() => this.closeDetailsModal()}
-        structureId={this.selectedStructureId}
-      />,
+      shellThemeWrap(
+        <CompanyStructureDetailView
+          visible={visible}
+          onClose={() => this.closeDetailsModal()}
+          structureId={this.selectedStructureId}
+        />,
+      ),
       this.detailViewContainer,
     );
   }

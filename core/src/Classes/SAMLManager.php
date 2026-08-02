@@ -15,8 +15,22 @@ class SAMLManager
 
         $samlResponse = base64_decode($samlResponse);
 
+        // XXE hardening: PHP 7.3 (the production target) loads external entities by default.
+        // LIBXML_NOENT is deliberately NOT passed — it *enables* entity substitution, which is
+        // the primitive an XXE payload needs.
+        if (PHP_VERSION_ID < 80000) {
+            $previousEntityLoader = libxml_disable_entity_loader(true);
+        }
         $document = new \DOMDocument();
-        $document->loadXML($samlResponse);
+        $loaded = $document->loadXML($samlResponse, LIBXML_NONET);
+        if (PHP_VERSION_ID < 80000) {
+            libxml_disable_entity_loader($previousEntityLoader);
+        }
+        if (!$loaded) {
+            LogManager::getInstance()->error('SAML login failed: response is not well-formed XML');
+
+            return false;
+        }
         $samlResponseXml = $document->firstChild;
 
         $doc = $document->documentElement;

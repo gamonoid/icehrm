@@ -35,7 +35,7 @@ if ($meta->headless) {
 <script type="text/javascript" src="<?=BASE_URL.'dist/vendorAntdIcons.js'?>?v=<?=$jsVersion?>"></script>
 <script type="text/javascript" src="<?=BASE_URL.'dist/vendorAntv.js'?>?v=<?=$jsVersion?>"></script>
 <script type="text/javascript" src="<?=BASE_URL.'dist/vendorOther.js'?>?v=<?=$jsVersion?>"></script>
-<script type="text/javascript" src="<?=EXTENSIONS_URL.$extensionRelativePath.'/'.$extensionType.'/dist/'.$extensionName.'.js'?>?v=<?=$jsVersion?>"></script>
+<script type="text/javascript" src="<?=extensionAssetUrlBase($extensionName, APP_BASE_PATH . '../extensions/').$extensionRelativePath.'/'.$extensionType.'/dist/'.$extensionName.'.js'?>?v=<?=$jsVersion?>"></script>
 <script type="text/javascript" src="<?=BASE_URL.'dist/common-bundle.js'?>?v=<?=$jsVersion?>"></script>
 <?php
 include $extensionIndex;

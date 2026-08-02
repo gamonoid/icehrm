@@ -1,8 +1,10 @@
 import React from "react";
 import { Button, Select, Space, Card, Table } from "antd";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 // import IceDataGroupModal from "./IceDataGroupModal";
 import IceFormModal from "./IceFormModal";
 import ReactDOM from "react-dom";
+import { escapeHtmlWithBreaks, fillTemplate } from "../api-common/htmlEscape";
 const { Option } = Select;
 
 class IceDataGroup extends React.Component {
@@ -160,12 +162,13 @@ class IceDataGroup extends React.Component {
     t = t.replace('#_edit_#', '');
     t = t.replace(/#_id_#/g, item.id);
 
+    // The template is developer-authored and trusted; the values substituted into it
+    // are database rows and are not. Escape each value before it lands in the
+    // dangerouslySetInnerHTML below, and substitute via fillTemplate so a value
+    // containing `$&` is not reinterpreted as a replacement pattern.
     for (const key in item) {
-      let itemVal = item[key];
-      if (itemVal !== undefined && itemVal != null && typeof itemVal === 'string') {
-        itemVal = itemVal.replace(/(?:\r\n|\r|\n)/g, '<br />');
-      }
-      t = t.replace(`#_${key}_#`, itemVal);
+      const itemVal = escapeHtmlWithBreaks(item[key]);
+      t = fillTemplate(t, key, itemVal);
     }
 
     if (field[1].render !== undefined && field[1].render != null) {
@@ -180,10 +183,12 @@ class IceDataGroup extends React.Component {
   }
 
   getDefaultButtons(id) {
+    // antd icons (self-contained SVG) — the legacy `fa fa-*` glyphs rendered as
+    // empty squares in the SPA shell, which doesn't load Font Awesome.
     return (
       <Space>
-        <a href="#" onClick={() => { this.editDataGroupItem(id) }}><li className="fa fa-edit" /></a>
-        <a href="#" onClick={() => { this.deleteDataGroupItem(id) }}><li className="fa fa-times" /></a>
+        <a href="#" onClick={(e) => { e.preventDefault(); this.editDataGroupItem(id); }}><EditOutlined /></a>
+        <a href="#" onClick={(e) => { e.preventDefault(); this.deleteDataGroupItem(id); }}><DeleteOutlined /></a>
       </Space>
     );
   }

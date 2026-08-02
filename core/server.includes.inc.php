@@ -7,7 +7,6 @@ use Classes\MemoryCacheService;
 use Classes\Migration\MigrationManager;
 use Classes\NotificationManager;
 use Classes\RedisCacheService;
-use Classes\ReportHandler;
 use Classes\SettingsManager;
 use Model\Audit;
 use Model\BaseModel;
@@ -33,7 +32,7 @@ if (defined("MODULE_PATH")) {
     }
     if (!defined('MODULE_TYPE')) {
         if (count($tArr) >= 2) {
-            if (strpos(MODULE_PATH,'/extensions/'))  {
+            if (strpos(MODULE_PATH,'/extensions/') || strpos(MODULE_PATH,'/extensions-pro/'))  {
 				$modTypeIDPosition = count($tArr)-1;
 				if (strpos(MODULE_PATH,'/leave_and_performance/'))  {
 					$modTypeIDPosition = count($tArr)-2;
@@ -75,7 +74,6 @@ BaseService::getInstance()->setCurrentUser($user);
 BaseService::getInstance()->setCustomFieldManager(new CustomFieldManager());
 BaseService::getInstance()->setDB($dbLocal);
 
-$reportHandler = new ReportHandler();
 $settingsManager = SettingsManager::getInstance();
 $notificationManager = new NotificationManager();
 
@@ -116,8 +114,19 @@ if ($samlEnabled === '1') {
 }
 
 $instanceId = SettingsManager::getInstance()->getSetting("Instance : ID");
-$instanceKey = SettingsManager::getInstance()->getSetting("Instance: Key");
-if(!defined('APP_SEC')){define('APP_SEC',sha1($instanceId.$instanceKey));}
+// The 'Instance: Key' lookup that used to sit here fed the old APP_SEC derivation and
+// is no longer read by anything — see below. The key itself is now generated on demand
+// by BaseService::getInstanceKey() and has no setter.
+// Derive APP_SEC from a strong 256-bit random secret stored server-side in the
+// SystemData table, HMAC-combined with the config-file APP_PASSWORD as a pepper so a
+// DB-only leak (SQLi / stolen backup) cannot on its own reconstruct it. This replaces
+// the old weak derivation sha1($instanceId.$instanceKey) (instanceId was md5(time())).
+// Installations that define APP_SEC in a global config file keep that value (guard).
+if (!defined('APP_SEC')) {
+    $signingSecret = BaseService::getInstance()->getSigningSecret();
+    $appSecPepper = defined('APP_PASSWORD') ? APP_PASSWORD : '';
+    define('APP_SEC', hash_hmac('sha256', $signingSecret, $appSecPepper));
+}
 
 $noJSONRequests = SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request");
 

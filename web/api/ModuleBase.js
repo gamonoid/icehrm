@@ -5,6 +5,7 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 import FormValidation from './FormValidation';
+import { escapeHtml, escapeHtmlWithBreaks } from '../api-common/htmlEscape';
 /**
  * The base class for providing core functions to all module classes.
  * @class Base.js
@@ -20,6 +21,7 @@ class ModuleBase {
     this.showEdit = true;
     this.showDelete = true;
     this.showSave = true;
+    this.showPageSizeChanger = false;
     this.showCancel = true;
     this.showFormOnPopup = false;
     this.filtersAlreadySet = false;
@@ -884,6 +886,32 @@ class ModuleBase {
     const that = this;
     const modelId = '#yesnoModel';
 
+    // SPA shell: the legacy bootstrap #yesnoModel does not exist — use antd.
+    if (typeof window !== 'undefined' && window.__shellColorMode !== undefined) {
+      try {
+        // eslint-disable-next-line global-require
+        const { Modal } = require('antd');
+        // eslint-disable-next-line global-require
+        const React = require('react');
+        Modal.confirm({
+          title: header,
+          content: React.createElement('div', {
+            // Callers pass HTML, matching the legacy .html() rendering.
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML: { __html: body || '' },
+          }),
+          okText: yesBtnName || 'Yes',
+          cancelText: noBtnName || 'No',
+          onOk: () => {
+            if (callback !== undefined && callback != null) {
+              callback.apply(that, callbackParams);
+            }
+          },
+        });
+        return;
+      } catch (e) { /* fall through to the legacy modal */ }
+    }
+
     if (body === undefined || body == null) {
       body = '';
     }
@@ -947,6 +975,54 @@ class ModuleBase {
      */
   showMessage(title, message, closeCallback = null, closeCallbackData = null, isPlain = false) {
     const that = this;
+
+    // In the SPA shell the legacy bootstrap #messageModel does not exist, so the
+    // message would silently not render (e.g. the "Time entry is overlapping"
+    // punch error). Use antd there instead. Legacy keeps the bootstrap modal.
+    if (typeof window !== 'undefined' && window.__shellColorMode !== undefined) {
+      try {
+        // eslint-disable-next-line global-require
+        const { Modal } = require('antd');
+        // eslint-disable-next-line global-require
+        const React = require('react');
+        const html = (typeof message === 'string') ? message
+          : (message == null ? '' : JSON.stringify(message));
+        // Legacy renderModel injects the message via jQuery .html(), so callers
+        // legitimately pass HTML (e.g. download() builds a "Download File" link +
+        // <img> preview). Render it as HTML here too, otherwise antd/React escapes
+        // it and the raw markup shows as text.
+        const content = React.createElement('div', {
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML: { __html: html },
+        });
+        // Pick the icon from the title's sentiment. Default to the neutral info icon —
+        // only use the red error icon for titles that actually signal a problem. Many
+        // callers pass informational titles ("Download File Attachment", "Logs", …) that
+        // should not look like errors; previously every non-success dialog got a red ✗.
+        const titleStr = typeof title === 'string' ? title : '';
+        const isSuccess = /success/i.test(titleStr);
+        const isError = /error|fail|forbidden|denied|invalid|not allowed|unable|cannot|unauthor|required/i.test(titleStr);
+        let fn = Modal.info;
+        if (!isPlain) {
+          if (isSuccess) {
+            fn = Modal.success;
+          } else if (isError) {
+            fn = Modal.error;
+          }
+        }
+        fn({
+          title,
+          content,
+          onOk: () => {
+            if (closeCallback) {
+              try { closeCallback.apply(that, closeCallbackData); } catch (e) { /* ignore */ }
+            }
+          },
+        });
+        return;
+      } catch (e) { /* fall through to the legacy modal */ }
+    }
+
     let modelId = '';
     if (isPlain) {
       modelId = '#plainMessageModel';
@@ -1217,8 +1293,11 @@ class ModuleBase {
               if (rmf.length > 3) {
                 key = `${key}_${rmf[3]}`;
               }
-              // value = this.fieldMasterData[`${rmf[0]}_${rmf[1]}_${rmf[2]}`][filters[prop]];
-              value = this.fieldMasterData[key][filters[prop]];
+              // Master data for this remote source may not be loaded yet (e.g.
+              // a filter applied before the tab was ever visited) — fall back
+              // to the raw value instead of crashing on the missing map.
+              const masterMap = this.fieldMasterData[key];
+              value = masterMap ? masterMap[filters[prop]] : filters[prop];
               valueOrig = value;
             }
           } else {
@@ -1253,7 +1332,7 @@ class ModuleBase {
           }
         } else {
           value = filters[prop];
-          if (value !== '') {
+          if (value !== '' && value !== 'NULL') {
             valueOrig = value;
           }
         }
@@ -2137,7 +2216,8 @@ class ModuleBase {
           $(`${formId} #${fields[i][0]}_datetime`).data('datetimepicker').setLocalDate(new Date(dateArr[0], parseInt(dateArr[1], 10) - 1, dateArr[2], timeArr[0], timeArr[1], timeArr[2]));
         }
       } else if (fields[i][1].type === 'label') {
-        $(`${formId} #${fields[i][0]}`).html(object[fields[i][0]]);
+        // Stored value rendered as HTML — escape it (see api-common/htmlEscape).
+        $(`${formId} #${fields[i][0]}`).html(escapeHtml(object[fields[i][0]]));
       } else if (fields[i][1].type === 'placeholder') {
         if (fields[i][1]['remote-source'] !== undefined && fields[i][1]['remote-source'] != null) {
           // const key = `${fields[i][1]['remote-source'][0]}_${fields[i][1]['remote-source'][1]}_${fields[i][1]['remote-source'][2]}`;
@@ -2151,7 +2231,9 @@ class ModuleBase {
           placeHolderVal = '';
         } else {
           try {
-            placeHolderVal = placeHolderVal.replace(/(?:\r\n|\r|\n)/g, '<br />');
+            // Stored data heading for .html(), so escape before converting newlines.
+            // Any formatter below still runs and may add its own trusted markup.
+            placeHolderVal = escapeHtmlWithBreaks(placeHolderVal);
           } catch (e) {
             // Do nothing
           }
@@ -2168,7 +2250,8 @@ class ModuleBase {
         $(`${formId} #${fields[i][0]}`).html(placeHolderVal);
       } else if (fields[i][1].type === 'fileupload') {
         if (object[fields[i][0]] != null && object[fields[i][0]] !== undefined && object[fields[i][0]] !== '') {
-          $(`${formId} #${fields[i][0]}`).html(object[fields[i][0]]);
+          // Attacker-chosen upload filename rendered as HTML — escape it.
+          $(`${formId} #${fields[i][0]}`).html(escapeHtml(object[fields[i][0]]));
           $(`${formId} #${fields[i][0]}`).attr('val', object[fields[i][0]]);
           $(`${formId} #${fields[i][0]}`).show();
           $(`${formId} #${fields[i][0]}_download`).show();
@@ -2497,6 +2580,16 @@ class ModuleBase {
 
   setShowEdit(val) {
     this.showEdit = val;
+  }
+
+  /**
+     * Used to show the page-size selector on the module's list table so the
+     * user can change how many rows are shown per page.
+     * @method setShowPageSizeChanger
+     * @param val {Boolean} value
+     */
+  setShowPageSizeChanger(val) {
+    this.showPageSizeChanger = val;
   }
 
   /**

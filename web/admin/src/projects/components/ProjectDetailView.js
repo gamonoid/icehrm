@@ -361,33 +361,32 @@ const ProjectDetailView = ({ projectId, onBack }) => {
               style={{ height: '100%' }}
             >
               {/* Add Employee Section */}
-              <div style={{ marginBottom: 16 }}>
-                <Space.Compact style={{ width: '100%' }}>
-                  <Select
-                    showSearch
-                    placeholder="Select employee to add"
-                    style={{ width: '100%' }}
-                    value={selectedEmployee}
-                    onChange={setSelectedEmployee}
-                    optionFilterProp="children"
-                    filterOption={(input, option) =>
-                      (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-                    }
-                    options={availableEmployees.map((emp) => ({
-                      value: emp.id,
-                      label: `${emp.first_name} ${emp.last_name}`,
-                    }))}
-                  />
-                  <Button
-                    type="primary"
-                    icon={<UserAddOutlined />}
-                    onClick={handleAddEmployee}
-                    loading={addingEmployee}
-                    disabled={!selectedEmployee}
-                  >
-                    Add
-                  </Button>
-                </Space.Compact>
+              <div style={{ marginBottom: 16, display: 'flex', gap: 8 }}>
+                <Select
+                  showSearch
+                  placeholder="Select employee to add"
+                  style={{ flex: 1, minWidth: 0 }}
+                  value={selectedEmployee}
+                  onChange={setSelectedEmployee}
+                  optionFilterProp="children"
+                  filterOption={(input, option) =>
+                    (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+                  }
+                  options={availableEmployees.map((emp) => ({
+                    value: emp.id,
+                    label: `${emp.first_name} ${emp.last_name}`,
+                  }))}
+                />
+                <Button
+                  type="primary"
+                  icon={<UserAddOutlined />}
+                  onClick={handleAddEmployee}
+                  loading={addingEmployee}
+                  disabled={!selectedEmployee}
+                  style={{ flex: '0 0 auto' }}
+                >
+                  Add
+                </Button>
               </div>
 
               {/* Employee List */}

@@ -2,7 +2,7 @@
 
 namespace Classes;
 
-use Classes\Crypt\AesCtr;
+use Classes\Crypt\IceCrypt;
 use Users\Common\Model\User;
 use Utils\CalendarTools;
 
@@ -25,6 +25,53 @@ class PasswordManager
     public static function createPasswordHash($password)
     {
         return password_hash($password, PASSWORD_BCRYPT, ['cost' => 13]);
+    }
+
+    // --- Account lockout after repeated failed logins (brute-force protection) ---
+
+    const MAX_FAILED_LOGIN_ATTEMPTS = 5;
+
+    /**
+     * True once the account has reached the failed-attempt threshold. A locked
+     * account cannot log in with its password; it must be unlocked via an email
+     * login code (see the 'rlc' flow) or an admin password change.
+     */
+    public static function isAccountLocked($user)
+    {
+        return !empty($user) && !empty($user->id)
+            && intval($user->wrong_password_count) >= self::MAX_FAILED_LOGIN_ATTEMPTS;
+    }
+
+    /**
+     * Count one failed password attempt. At MAX_FAILED_LOGIN_ATTEMPTS the account
+     * becomes locked (see isAccountLocked). No-op for an unknown user.
+     */
+    public static function recordFailedLogin($user)
+    {
+        if (empty($user) || empty($user->id)) {
+            return;
+        }
+        $user->wrong_password_count = intval($user->wrong_password_count) + 1;
+        $user->last_wrong_attempt_at = date('Y-m-d H:i:s');
+        $user->Save();
+    }
+
+    /**
+     * Clear the failed-attempt counter (unlock). Called on any successful login
+     * (password or email code) and whenever a password is changed, including by an
+     * admin. No-op (no write) when the counter is already clear.
+     */
+    public static function resetFailedLogins($user)
+    {
+        if (empty($user) || empty($user->id)) {
+            return;
+        }
+        if (intval($user->wrong_password_count) === 0 && empty($user->last_wrong_attempt_at)) {
+            return;
+        }
+        $user->wrong_password_count = 0;
+        $user->last_wrong_attempt_at = null;
+        $user->Save();
     }
 
     public static function passwordChangeWaitingTimeMinutes($user)
@@ -55,15 +102,20 @@ class PasswordManager
         $newPassHash["time"] = date('Y-m-d H:i:s');
         $json = json_encode($newPassHash);
 
-        $encJson = AesCtr::encrypt($json, $user->password, 256);
+        // AES-256-GCM via IceCrypt. The old AesCtr had no MAC, so the user-id segment
+        // below was malleable: recovering keystream for a nonce let the segment be
+        // rewritten to point at another user.
+        $encJson = IceCrypt::encrypt($json, $user->password);
 
-        return urlencode(AesCtr::encrypt($user->id, APP_PASSWORD, 256).'-'.$encJson);
+        return urlencode(IceCrypt::encrypt($user->id, APP_PASSWORD).'-'.$encJson);
     }
 
     public static function verifyPasswordRestKey($key)
     {
         $arr = explode("-", $key);
-        $userId = AesCtr::decrypt($arr[0], APP_PASSWORD, 256);
+        // Accepts both the v2 format and legacy AesCtr, so reset links already in
+        // people's inboxes keep working.
+        $userId = IceCrypt::decrypt($arr[0], APP_PASSWORD);
         $user = new User();
         $user->Load("id = ?", array($userId));
 
@@ -72,7 +124,7 @@ class PasswordManager
         }
 
         array_shift($arr);
-        $data = AesCtr::decrypt(implode('', $arr), $user->password, 256);
+        $data = IceCrypt::decrypt(implode('', $arr), $user->password);
 
         if (empty($data)) {
             return false;
@@ -103,7 +155,9 @@ class PasswordManager
             return new IceResponse(IceResponse::ERROR, $error);
         }
 
-        if (strlen($password) > 30) {
+        // bcrypt hashes the first 72 bytes, so 72 is the real ceiling; the old cap of 30
+        // needlessly blocked passphrases.
+        if (strlen($password) > 72) {
             $error = "Password too long";
 
             return new IceResponse(IceResponse::ERROR, $error);

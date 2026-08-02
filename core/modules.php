@@ -128,6 +128,9 @@ foreach ($ams as $am) {
         $arr['user_roles'] = isset($meta->user_roles)?$meta->user_roles:"";
         $arr['model_namespace'] = $meta->model_namespace;
         $arr['manager'] = $meta->manager;
+        // Optional high-level SPA area (inert in legacy; see MenuAreaService).
+        $arr['area'] = isset($meta->area) ? $meta->area : null;
+        $arr['areaOrder'] = isset($meta->areaOrder) ? $meta->areaOrder : null;
 
         //Check in admin dbmodules
         if (isset($adminDBModuleList[$arr['name']])) {
@@ -205,8 +208,12 @@ foreach ($ams as $am) {
     }
 }
 
-// Scan pro admin modules if pro directory exists
+// Scan pro admin modules if pro directory exists (extensions/, or extensions-pro/
+// only on a Pro/Cloud build).
 $proAdminPath = CLIENT_PATH.'/../extensions/leave_and_performance/core/admin/';
+if (!is_dir($proAdminPath) && function_exists('iceProExtensionsEnabled') && iceProExtensionsEnabled()) {
+    $proAdminPath = CLIENT_PATH.'/../extensions-pro/leave_and_performance/core/admin/';
+}
 if (is_dir($proAdminPath)) {
     $proAms = scandir($proAdminPath);
     foreach ($proAms as $am) {
@@ -227,6 +234,9 @@ if (is_dir($proAdminPath)) {
             $arr['user_roles'] = isset($meta->user_roles)?$meta->user_roles:"";
             $arr['model_namespace'] = $meta->model_namespace;
             $arr['manager'] = $meta->manager;
+            // Optional high-level SPA area (inert in legacy; see MenuAreaService).
+            $arr['area'] = isset($meta->area) ? $meta->area : null;
+            $arr['areaOrder'] = isset($meta->areaOrder) ? $meta->areaOrder : null;
             $arr['is_pro'] = true;
 
             //Check in admin dbmodules
@@ -407,8 +417,12 @@ foreach ($ams as $am) {
     }
 }
 
-// Scan pro user modules if pro directory exists
+// Scan pro user modules if pro directory exists (extensions/, or extensions-pro/
+// only on a Pro/Cloud build).
 $proModulesPath = CLIENT_PATH.'/../extensions/leave_and_performance/core/modules/';
+if (!is_dir($proModulesPath) && function_exists('iceProExtensionsEnabled') && iceProExtensionsEnabled()) {
+    $proModulesPath = CLIENT_PATH.'/../extensions-pro/leave_and_performance/core/modules/';
+}
 if (is_dir($proModulesPath)) {
     $proUms = scandir($proModulesPath);
     foreach ($proUms as $am) {
@@ -565,6 +579,11 @@ foreach ($userModulesTemp as $k => $v) {
 
 // Merge icons
 $mainIcons = array_merge($adminIcons, $userIcons);
+
+// SPA migration (Phase 0): capture the UNFILTERED menu tree so MenuService can
+// produce the same filtered menu for any user via the REST API. Must run BEFORE
+// the legacy session-user filter below. See docs/SPA_MIGRATION_PLAN.md.
+\Classes\MenuService::getInstance()->setRawMenus($adminModules, $userModules, $mainIcons);
 
 //Remove modules having no permissions
 if (!empty($user)) {

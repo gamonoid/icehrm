@@ -230,7 +230,15 @@ class IceTable extends React.Component {
                 columns={this.props.columns}
                 rowKey={record => record.id}
                 dataSource={this.state.data}
-                pagination={this.state.pagination}
+                pagination={{
+                  ...this.state.pagination,
+                  // Opt-in page-size selector — enable via
+                  // adapter.setShowPageSizeChanger(true). Applied at render so it
+                  // survives every pagination state update (fetch/sort/search).
+                  ...(this.props.adapter && this.props.adapter.showPageSizeChanger
+                    ? { showSizeChanger: true, pageSizeOptions: ['10', '20', '50', '100'] }
+                    : {}),
+                }}
                 loading={this.state.loading}
                 onChange={this.handleTableChange}
                 reader={this.props.dataPipe}

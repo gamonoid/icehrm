@@ -168,7 +168,58 @@ class Employee extends BaseModel
         if (empty($obj->status)) {
             $obj->status = 'Active';
         }
+        // Auto-generate the employee number on create when enabled. This is
+        // authoritative — the form field is read-only, and any submitted value
+        // is ignored — so numbers stay unique even across concurrent adds.
+        if (self::isEmployeeNumberGenerationEnabled()) {
+            $obj->employee_id = self::generateEmployeeNumber();
+        }
         return new IceResponse(IceResponse::SUCCESS, $obj);
+    }
+
+    /** Whether "Company: Generate Employee Numbers" is turned on. */
+    public static function isEmployeeNumberGenerationEnabled()
+    {
+        return \Classes\SettingsManager::getInstance()
+            ->getSetting('Company: Generate Employee Numbers') == '1';
+    }
+
+    /**
+     * Next available employee number: the "Company: Employee Number Prefix"
+     * followed by the next Employees-table id, zero-padded to at least 4 digits
+     * (e.g. next id 31 + prefix "IC-" => "IC-0031"). If that number is already
+     * taken it advances to the next free one.
+     */
+    public static function generateEmployeeNumber()
+    {
+        $prefix = \Classes\SettingsManager::getInstance()->getSetting('Company: Employee Number Prefix');
+        if ($prefix === null) {
+            $prefix = '';
+        }
+
+        $db = BaseService::getInstance()->getDB();
+        $next = 1;
+        $ai = $db->Execute(
+            "SELECT AUTO_INCREMENT AS n FROM information_schema.TABLES "
+            . "WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'Employees'"
+        );
+        if (is_array($ai) && !empty($ai[0]['n'])) {
+            $next = (int) $ai[0]['n'];
+        }
+        $mx = $db->Execute("SELECT COALESCE(MAX(id), 0) + 1 AS n FROM Employees");
+        if (is_array($mx) && isset($mx[0]['n']) && (int) $mx[0]['n'] > $next) {
+            $next = (int) $mx[0]['n'];
+        }
+
+        while (true) {
+            $candidate = $prefix . str_pad((string) $next, 4, '0', STR_PAD_LEFT);
+            $existing = new Employee();
+            $existing->Load('employee_id = ?', array($candidate));
+            if (empty($existing->id)) {
+                return $candidate;
+            }
+            $next++;
+        }
     }
 
     public function executePreUpdateActions($obj)
@@ -183,7 +234,9 @@ class Employee extends BaseModel
 	protected function processBasicPermissions( $obj, $savedObject ) {
 		$user = BaseService::getInstance()->getCurrentUser();
 		$permissions = BaseService::getInstance()->loadModulePermissions('modules>employees', $user->user_level)['perm'];
-		if ($permissions['Edit Employee Number'] === 'No' ) {
+		// The employee number can never change once set when auto-generation is on
+		// (or when manual editing of the number is disabled by permission).
+		if (self::isEmployeeNumberGenerationEnabled() || $permissions['Edit Employee Number'] === 'No' ) {
 			$obj->employee_id = $savedObject->employee_id;
 		}
 

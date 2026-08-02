@@ -53,7 +53,7 @@ SQL;
 INSERT INTO `TravelProjects`
 (`code`, `name`, `description`, `status`, `created`, `updated`)
 VALUES
-('GENERAL', 'General', 'General travel project for miscellaneous travel requests', 'Active', NOW(), NOW());
+('GENERAL', 'General', 'General travel project for miscellaneous travel requests', 'Active', NULL, NULL);
 SQL;
 
         // Execute all queries

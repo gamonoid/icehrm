@@ -31,7 +31,6 @@ $userDomain = explode('@', $user->email)[1];
 				modJsList[prop].setBaseUrl('<?=BASE_URL?>');
 				modJsList[prop].setClientUrl('<?=CLIENT_BASE_URL?>');
 				modJsList[prop].setCurrentProfile(<?=json_encode($activeProfile)?>);
-				modJsList[prop].setInstanceId('<?=\Classes\BaseService::getInstance()->getInstanceId()?>');
 				modJsList[prop].setGoogleAnalytics(ga);
 				modJsList[prop].setNoJSONRequests('<?=SettingsManager::getInstance()->getSetting("System: Do not pass JSON in request")?>');
 			}
@@ -146,11 +145,10 @@ $userDomain = explode('@', $user->email)[1];
 				$("[ref = '"+refId+"'] a").first().click();
 			<?php }?>
 
-			<?php if(!isset($proVersion) && isset($moduleName) && $moduleName == 'dashboard' && $user->user_level == 'Admin' && !\Classes\BaseService::getInstance()->validateInstance()){?>
-			// $("#verifyModel").modal({
-			// 	  backdrop: 'static'
-			// });
-			<?php } elseif (($moduleName === 'leaves' || $moduleName === 'candidates/admin')  && !$isGoogleConnected && $googleConfigFound) {?>
+			<?php /* The instance-verification prompt was removed with the verify modal. Its
+			         body was already commented out, and its condition (dashboard) never
+			         overlapped the Google branch below, so this is behaviour-preserving. */?>
+			<?php if (($moduleName === 'leaves' || $moduleName === 'candidates/admin')  && !$isGoogleConnected && $googleConfigFound) {?>
               // Show google connect only when verify modal is not shown
               modJs.checkIfUserEmailIsGoogleDomain('<?=$userDomain?>');
             <?php }?>
@@ -163,6 +161,6 @@ $userDomain = explode('@', $user->email)[1];
         include 'popups.php';
     ?>
     <script src="<?=BASE_URL?>js/bootstrap-datatable.js"></script>
-    <div id="jt" t="<?=$jwtService->create(3600)?>"></div>
+    <div id="jt" t="<?=$jwtService->create()?>"></div>
     </body>
 </html>

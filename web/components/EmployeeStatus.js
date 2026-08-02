@@ -221,7 +221,7 @@ class EmployeeStatus extends React.Component {
             </Dropdown>
           </Space>
         }
-        {!this.props.showInput &&
+        {!this.props.showInput && !this.props.hideDailyPlan &&
         <Space style={{width: '100%'}}>
           <Space direction={'vertical'} style={{width: '100%', marginTop:'5px'}}>
             <Title level={5}>{this.props.adapter.gt('Daily Plan')}</Title>

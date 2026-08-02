@@ -6,6 +6,7 @@ import {
   CaretLeftOutlined,
 } from '@ant-design/icons';
 import SaveButton from '../SaveButton';
+import { editorEnv } from '../../editorEnv';
 
 class CommonSideBar extends React.Component {
   constructor(props) {
@@ -36,14 +37,14 @@ class CommonSideBar extends React.Component {
             <Descriptions.Item label="Field"><Tag color="green">{objectField}</Tag></Descriptions.Item>
           </Descriptions>
         </Card>
-        { (!window.editor_readonly || window.editor_can_select_checks)
+        { (!editorEnv.isReadOnly() || editorEnv.canSelectChecks())
         && (
           <Space direction="horizontal" style={{ width: '100%', marginTop: '12px' }} align="right">
             <SaveButton />
             <Button
                 type="default"
                 icon={<CaretLeftOutlined />}
-                onClick={() => history.back()}
+                onClick={() => editorEnv.close()}
             >
               {modJs.gt('Back')}
             </Button>

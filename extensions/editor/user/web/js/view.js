@@ -1,15 +1,21 @@
 import React from 'react';
-import {
-  Card, Tag, Typography,
-} from 'antd';
 
 import CommonSideBar from './components/sidebars/CommonSideBar';
 import CourseSideBar from './components/sidebars/CourseSideBar';
 import EmployeeCourseSideBar from './components/sidebars/EmployeeCourseSideBar';
-import TaskListSideBar from "./components/sidebars/TaskListSideBar";
+import TaskListSideBar from './components/sidebars/TaskListSideBar';
+import CompanyDocumentSideBar from './components/sidebars/CompanyDocumentSideBar';
 
-const { Text } = Typography;
-
+// object_type -> sidebar component. Add a row to register a new document type's
+// sidebar; anything unmapped falls back to CommonSideBar.
+const SIDEBAR_REGISTRY = {
+  LmsLesson: CourseSideBar,
+  LmsCourse: CourseSideBar,
+  LmsEmployeeCourse: EmployeeCourseSideBar,
+  LmsEmployeeLesson: EmployeeCourseSideBar,
+  TaskList: TaskListSideBar,
+  CompanyDocument: CompanyDocumentSideBar,
+};
 
 class EditorUserExtensionView extends React.Component {
   constructor(props) {
@@ -18,45 +24,9 @@ class EditorUserExtensionView extends React.Component {
   }
 
   getSideBarComponent(objectType, objectId, objectField, sideBarObject) {
-    if (objectType === 'LmsLesson' || objectType === 'LmsCourse') {
-      return (
-        <CourseSideBar
-          ref={this.sidebarReference}
-          objectType={objectType}
-          objectId={objectId}
-          objectField={objectField}
-          sideBarObject={sideBarObject}
-        />
-      );
-    }
-
-    if (objectType === 'LmsEmployeeCourse' || objectType === 'LmsEmployeeLesson') {
-      return (
-        <EmployeeCourseSideBar
-          ref={this.sidebarReference}
-          objectType={objectType}
-          objectId={objectId}
-          objectField={objectField}
-          sideBarObject={sideBarObject}
-        />
-      );
-    }
-
-    if (objectType === 'TaskList') {
-      return (
-          <TaskListSideBar
-              ref={this.sidebarReference}
-              objectType={objectType}
-              objectId={objectId}
-              objectField={objectField}
-              sideBarObject={sideBarObject}
-          />
-      );
-    }
-
-
+    const SideBar = SIDEBAR_REGISTRY[objectType] || CommonSideBar;
     return (
-      <CommonSideBar
+      <SideBar
         ref={this.sidebarReference}
         objectType={objectType}
         objectId={objectId}
