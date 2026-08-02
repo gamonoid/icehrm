@@ -24,6 +24,13 @@ COPY docker/ ./docker/
 RUN npm install && cd web && npm install && cd ..
 RUN npm run asset:build:prod
 
+# Drop the toolchain now that the bundles are built. The production stage copies
+# /build/web wholesale, so anything left here ships in the final image.
+# web/dist (the built output) and web/bower_components (served at runtime, and
+# the source of the tinymce/simplemde/flag-icon assets) are deliberately kept.
+RUN rm -rf node_modules web/node_modules \
+    && find extensions -type d -name node_modules -prune -exec rm -rf {} +
+
 # Verify files exist
 RUN ls -la /build/ && ls -la /build/app/
 
@@ -68,9 +75,11 @@ COPY --from=builder --chown=nobody:nobody /build/docker/prod/config/config.php /
 # Verify files were copied
 RUN ls -la /var/www/html/ && ls -la /var/www/html/app/
 
-# Create data directory for uploads and logs
+# Create data directory for uploads and logs. .dockerignore keeps app/data out of
+# the build context, so this is an empty directory and a non-recursive chown is
+# enough. A `chown -R` here would rewrite every file underneath into a new layer.
 RUN mkdir -p /var/www/html/app/data && \
-    chown -R nobody:nobody /var/www/html/app/data
+    chown nobody:nobody /var/www/html/app/data
 
 # Make sure files/folders needed by the processes are accessible when they run under the nobody user
 RUN chown -R nobody:nobody /run && \

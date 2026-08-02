@@ -1297,7 +1297,7 @@ create table `EmployeeForms` (
 
 create table `Migrations` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`file` varchar(50) NOT NULL,
+	`file` varchar(255) NOT NULL,
 	`version` int(11) NOT NULL,
 	`created` DATETIME default NULL,
 	`updated` DATETIME default NULL,

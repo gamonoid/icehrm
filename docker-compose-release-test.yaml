@@ -2,8 +2,9 @@
 # (build/release/icehrm.zip) baked into the image (Dockerfile-release-test) —
 # the code lives inside the container, not on a bind mount — against a FRESH,
 # EMPTY MySQL (no init script) so a new release can be smoke-tested like a clean
-# install. All services use dedicated ports to avoid clashing with the
-# dev/prod/testing stacks.
+# install. All services use dedicated ports/names so this stack can run
+# side-by-side with the dev/prod/testing stacks AND with the icehrm-pro
+# release-test stack (which owns the 91xx ports).
 #
 # Build the release first (ant build / release.sh) so build/release/icehrm.zip
 # exists, then:
@@ -11,17 +12,16 @@
 #   npm run release:test:up      # (re)build from the current zip and start
 #   npm run release:test:down    # stop + remove containers (keeps db volume)
 #
-# App / installer: http://localhost:9190/app/install/   (empty DB -> run the installer)
-# phpMyAdmin:      http://localhost:9191/
-# MailHog:         http://localhost:9192/
-version: "3.5"
+# App / installer: http://localhost:9290/app/install/   (empty DB -> run the installer)
+# phpMyAdmin:      http://localhost:9291/
+# MailHog:         http://localhost:9292/
 
 services:
   mysql:
     image: mysql:8.0.32
-    container_name: icehrm-release-test-mysql
+    container_name: icehrm-ce-release-test-mysql
     ports:
-      - 9406:3306
+      - 9407:3306
     environment:
       MYSQL_ROOT_PASSWORD: IceHrmR00t
       MYSQL_USER: dev
@@ -29,16 +29,16 @@ services:
       MYSQL_DATABASE: icehrm
     volumes:
       # Named volume only — NO init script. `down -v` wipes it for a fresh DB.
-      - release_test_db_data:/var/lib/mysql
+      - ce_release_test_db_data:/var/lib/mysql
 
   icehrm:
     # Bakes build/release/icehrm.zip into /var/www/html. Requires the base
-    # runtime image icehrm-release-runtime (npm release:test:* build it first).
+    # runtime image icehrm-ce-release-runtime (npm release:test:* build it first).
     build:
       context: .
       dockerfile: Dockerfile-release-test
-    image: icehrm-release-test-app
-    container_name: icehrm-release-test-app
+    image: icehrm-ce-release-test-app
+    container_name: icehrm-ce-release-test-app
     depends_on:
       - mysql
     ports:
@@ -48,7 +48,7 @@ services:
       - "admin.dascore.org:192.168.65.254"
 
   phpmyadmin:
-    container_name: icehrm-release-test-pma
+    container_name: icehrm-ce-release-test-pma
     depends_on:
       - mysql
     image: phpmyadmin
@@ -61,11 +61,11 @@ services:
       PMA_PASSWORD: dev
 
   mailhog:
-    container_name: icehrm-release-test-mailhog
+    container_name: icehrm-ce-release-test-mailhog
     image: ajoergensen/mailhog
     ports:
       - "1326:1025"
       - "9292:8025"
 
 volumes:
-  release_test_db_data:
+  ce_release_test_db_data:

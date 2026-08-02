@@ -11,8 +11,22 @@ use Users\Common\Model\User;
 
 class EmployeeLeavesRestEndPoint extends RestEndPoint
 {
+    /**
+     * EmployeeLeave lives in the leave_and_performance PRO extension, so it is
+     * absent from the free build. Without this guard every endpoint below fatals
+     * with "Class not found" and the caller gets a 500 instead of empty leave data.
+     */
+    private static function leavesAvailable()
+    {
+        return class_exists('\\Leaves\\Common\\Model\\EmployeeLeave');
+    }
+
     public function getModelObject($id)
     {
+        if (!self::leavesAvailable()) {
+            return false;
+        }
+
         $obj = new EmployeeLeave();
         $obj->Load("id = ?", array($id));
         return $obj;
@@ -20,6 +34,10 @@ class EmployeeLeavesRestEndPoint extends RestEndPoint
 
     public function listAll(User $user, $parameter = null)
     {
+        if (!self::leavesAvailable()) {
+            return new IceResponse(IceResponse::SUCCESS, ['data' => [], 'total' => 0, 'nextPage' => 1]);
+        }
+
         $query = new DataQuery('EmployeeLeave');
         $query->addFilter(new Filter('employee', $parameter));
         $mapping = <<<JSON
@@ -57,6 +75,16 @@ JSON;
 
     public function getSummary(User $user, $parameter = null)
     {
+        if (!self::leavesAvailable()) {
+            return new IceResponse(IceResponse::SUCCESS, [
+                'approved' => 0,
+                'pending' => 0,
+                'rejected' => 0,
+                'cancelled' => 0,
+                'total' => 0,
+            ]);
+        }
+
         $employeeLeave = new EmployeeLeave();
 
         $approved = $employeeLeave->Count("employee = ? AND status = 'Approved'", [$parameter]);

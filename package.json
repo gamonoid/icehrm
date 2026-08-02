@@ -61,10 +61,10 @@
     "docker:stop": "docker compose -f docker-compose-prod.yaml down",
     "asset:build": "gulp",
     "asset:build:prod": "gulp --eprod",
-    "release:test:base": "docker build -t icehrm-release-runtime -f Dockerfile .",
-    "release:test:up": "npm run release:test:base && docker compose -p icehrm-release-test -f docker-compose-release-test.yaml up -d --build",
-    "release:test:down": "docker compose -p icehrm-release-test -f docker-compose-release-test.yaml down",
-    "release:test:fresh": "docker compose -p icehrm-release-test -f docker-compose-release-test.yaml down -v --rmi local --remove-orphans && npm run release:test:base && docker compose -p icehrm-release-test -f docker-compose-release-test.yaml up -d --build",
-    "release:test:logs": "docker compose -p icehrm-release-test -f docker-compose-release-test.yaml logs -f"
+    "release:test:base": "docker build -t icehrm-ce-release-runtime -f Dockerfile .",
+    "release:test:up": "npm run release:test:base && docker compose -p icehrm-ce-release-test -f docker-compose-release-test.yaml up -d --build",
+    "release:test:down": "docker compose -p icehrm-ce-release-test -f docker-compose-release-test.yaml down",
+    "release:test:fresh": "docker compose -p icehrm-ce-release-test -f docker-compose-release-test.yaml down -v --rmi local --remove-orphans && npm run release:test:base && docker compose -p icehrm-ce-release-test -f docker-compose-release-test.yaml up -d --build",
+    "release:test:logs": "docker compose -p icehrm-ce-release-test -f docker-compose-release-test.yaml logs -f"
   }
 }

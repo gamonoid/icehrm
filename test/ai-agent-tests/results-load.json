@@ -1,0 +1,668 @@
+[
+  {
+    "role": "ADMIN",
+    "route": "admin::dashboard",
+    "title": "Organization Overview",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2871,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::company_structure",
+    "title": "Company Structure",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1947,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::employees",
+    "title": "Employees",
+    "status": "PASS",
+    "detail": "",
+    "chars": 3385,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::users",
+    "title": "Users",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2435,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::attendance",
+    "title": "Attendance (Manage)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2446,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::overtime",
+    "title": "Overtime (Manage)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1736,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::travel",
+    "title": "Travel (Manage)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1610,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::loans",
+    "title": "Loans (Manage)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1639,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::documents",
+    "title": "Documents (Manage)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1604,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::training",
+    "title": "Training Sessions (Manage)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1739,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::projects",
+    "title": "Projects",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1929,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::salary",
+    "title": "Salary",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1657,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::jobs",
+    "title": "Job Details Setup",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1951,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::qualifications",
+    "title": "Qualifications Setup",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2071,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::custom_fields",
+    "title": "Custom Fields",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1622,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::metadata",
+    "title": "Manage Metadata",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1804,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::fieldnames",
+    "title": "Field Names",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2089,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::modules",
+    "title": "Manage Modules",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1927,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::permissions",
+    "title": "Manage Permissions",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2096,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::settings",
+    "title": "Settings",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1910,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::connection",
+    "title": "System Status",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2934,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "admin::audit",
+    "title": "Audit Log",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2600,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "extension::company_assets|admin",
+    "title": "Company Assets",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1774,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "extension::advance_reports|admin",
+    "title": "Reports (Manage)",
+    "status": "WARN",
+    "detail": "Warning: [rc-collapse] `children` will be removed in next major version. Please use `items` instead.",
+    "chars": 3252,
+    "evidence": "screenshots/fail-admin-extension_advance_reports_admin.png"
+  },
+  {
+    "role": "ADMIN",
+    "route": "extension::marketplace|admin",
+    "title": "Extensions / Marketplace",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1933,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "extension::demo-mode|admin",
+    "title": "Demo Data Manager",
+    "status": "PASS",
+    "detail": "",
+    "chars": 3097,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::dashboard",
+    "title": "Dashboard",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2365,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::employees",
+    "title": "Personal Details",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2487,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::qualifications",
+    "title": "Qualifications",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1702,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::dependents",
+    "title": "Dependents",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1670,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::emergency_contact",
+    "title": "Emergency Contacts",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1686,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::attendance",
+    "title": "Attendance (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1598,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::time_sheets",
+    "title": "Time Sheets",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1890,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::overtime",
+    "title": "Overtime Requests",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1625,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::travel",
+    "title": "Travel (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1595,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::loans",
+    "title": "Loans (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1551,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::documents",
+    "title": "My Documents",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1579,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "modules::training",
+    "title": "Training (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1663,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "extension::company_overview|user",
+    "title": "Company",
+    "status": "FAIL",
+    "detail": "HTTP 500 http://localhost:5555/app/api/index.php?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6ImZhZDhiYmRjZTY3YzQ3MDIxZmRjNTA2NjE2Y2Q0NmQ0IiwiZXhwaXJlIjoxNzg1NzU4MDk3fQ.Mw0tmRuEUCRtle-boj0DNM-V_JLqas-Iow2ZDO8bFe0&method=get&url=/company_overview/leaves/upcoming",
+    "chars": 2174,
+    "evidence": "screenshots/fail-admin-extension_company_overview_user.png"
+  },
+  {
+    "role": "ADMIN",
+    "route": "extension::directory|user",
+    "title": "Employee Directory",
+    "status": "PASS",
+    "detail": "",
+    "chars": 3011,
+    "evidence": ""
+  },
+  {
+    "role": "ADMIN",
+    "route": "extension::advance_reports|user",
+    "title": "Reports (Personal)",
+    "status": "WARN",
+    "detail": "Warning: [rc-collapse] `children` will be removed in next major version. Please use `items` instead.",
+    "chars": 2353,
+    "evidence": "screenshots/fail-admin-extension_advance_reports_user.png"
+  },
+  {
+    "role": "ADMIN",
+    "route": "extension::editor|user",
+    "title": "Editor",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1751,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::dashboard",
+    "title": "Dashboard",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2212,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::employees",
+    "title": "Personal Details",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2419,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::qualifications",
+    "title": "Qualifications",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1679,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::dependents",
+    "title": "Dependents",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1647,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::emergency_contact",
+    "title": "Emergency Contacts",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1762,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::attendance",
+    "title": "Attendance (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2460,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::time_sheets",
+    "title": "Time Sheets",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2397,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::overtime",
+    "title": "Overtime Requests",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1628,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::travel",
+    "title": "Travel (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1587,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::loans",
+    "title": "Loans (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1543,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::documents",
+    "title": "My Documents",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1582,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "modules::training",
+    "title": "Training (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1666,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "extension::company_overview|user",
+    "title": "Company",
+    "status": "FAIL",
+    "detail": "HTTP 500 http://localhost:5555/app/api/index.php?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IjRkYzEyNjM2N2QyMDk3NDNkYmMwZjllZWJmYzk5NDIzIiwiZXhwaXJlIjoxNzg1NzU4MjAxfQ.ZgfVXkLzy_gJ970llz81YDgVCT1CoS6NdS5seOe1WaA&method=get&url=/company_overview/leaves/upcoming",
+    "chars": 2151,
+    "evidence": "screenshots/fail-manager-extension_company_overview_user.png"
+  },
+  {
+    "role": "MANAGER",
+    "route": "extension::directory|user",
+    "title": "Employee Directory",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2988,
+    "evidence": ""
+  },
+  {
+    "role": "MANAGER",
+    "route": "extension::advance_reports|user",
+    "title": "Reports (Personal)",
+    "status": "WARN",
+    "detail": "Warning: [rc-collapse] `children` will be removed in next major version. Please use `items` instead.",
+    "chars": 2335,
+    "evidence": "screenshots/fail-manager-extension_advance_reports_user.png"
+  },
+  {
+    "role": "MANAGER",
+    "route": "extension::editor|user",
+    "title": "Editor",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1739,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::dashboard",
+    "title": "Dashboard",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1975,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::employees",
+    "title": "Personal Details",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2363,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::qualifications",
+    "title": "Qualifications",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1639,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::dependents",
+    "title": "Dependents",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1680,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::emergency_contact",
+    "title": "Emergency Contacts",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1796,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::attendance",
+    "title": "Attendance (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2421,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::time_sheets",
+    "title": "Time Sheets",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2329,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::overtime",
+    "title": "Overtime Requests",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1588,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::travel",
+    "title": "Travel (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1567,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::loans",
+    "title": "Loans (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1523,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::documents",
+    "title": "My Documents",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1559,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "modules::training",
+    "title": "Training (Personal)",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1635,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "extension::company_overview|user",
+    "title": "Company",
+    "status": "FAIL",
+    "detail": "HTTP 500 http://localhost:5555/app/api/index.php?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6ImI3NmFlODYyOTQ4MmVjNWJjZGUwNDEyNjJiYTU2ZjNhIiwiZXhwaXJlIjoxNzg1NzU4MzA2fQ.678v6qQprr1fzPC61UhJ7q10pReP1FhPbjQPWkI0x5M&method=get&url=/company_overview/leaves/upcoming",
+    "chars": 2111,
+    "evidence": "screenshots/fail-employee-extension_company_overview_user.png"
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "extension::directory|user",
+    "title": "Employee Directory",
+    "status": "PASS",
+    "detail": "",
+    "chars": 2948,
+    "evidence": ""
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "extension::advance_reports|user",
+    "title": "Reports (Personal)",
+    "status": "WARN",
+    "detail": "Warning: [rc-collapse] `children` will be removed in next major version. Please use `items` instead.",
+    "chars": 2335,
+    "evidence": "screenshots/fail-employee-extension_advance_reports_user.png"
+  },
+  {
+    "role": "EMPLOYEE",
+    "route": "extension::editor|user",
+    "title": "Editor",
+    "status": "PASS",
+    "detail": "",
+    "chars": 1739,
+    "evidence": ""
+  }
+]

@@ -169,17 +169,37 @@ class NativeModuleRegistry
         return defined('EXTENSIONS_URL') ? EXTENSIONS_URL : '';
     }
 
+    /**
+     * The served-asset URL for a file inside an extension, or null when the
+     * extension isn't installed. Callers filter the nulls out so a PRO bundle
+     * that's absent from the free build is simply never requested — a 404 there
+     * aborts the module's whole script chain ("Could not load this module").
+     * Same file_exists guard as core/modulejslibs.inc.php.
+     */
+    private static function extScript($extName, $relPath)
+    {
+        // Also loads the autoloader-free path resolver as a side effect.
+        $urlBase = self::extAssetUrl($extName);
+        if (!defined('APP_BASE_PATH') || !function_exists('resolveExtensionPath')) {
+            return null;
+        }
+        $path = resolveExtensionPath($extName, APP_BASE_PATH . '../extensions/');
+        if (!file_exists($path . $relPath)) {
+            return null;
+        }
+        return $urlBase . $extName . '/' . $relPath;
+    }
+
     private static function moduleScripts()
     {
-        $ext = self::extAssetUrl('leave_and_performance');
-        return array(
+        return array_values(array_filter(array(
             'dist/vendorOther.js',
             'dist/third-party.js',
             'dist/common.js',
             'dist/modules-bundle.js',
-            $ext . 'leave_and_performance/web/dist/modules-bundle.js',
+            self::extScript('leave_and_performance', 'web/dist/modules-bundle.js'),
             'dist/common-bundle.js',
-        );
+        )));
     }
 
     /**
@@ -593,15 +613,14 @@ class NativeModuleRegistry
             'admin/performance' => array(
                 'initFn' => 'initAdminPerformance',
                 // Adapters + init live in the leave_and_performance PRO bundle.
-                'scripts' => array(
+                'scripts' => array_values(array_filter(array(
                     'dist/vendorOther.js',
                     'dist/third-party.js',
                     'dist/common.js',
                     'dist/admin-bundle.js',
-                    self::extAssetUrl('leave_and_performance')
-                        . 'leave_and_performance/web/dist/admin-bundle.js',
+                    self::extScript('leave_and_performance', 'web/dist/admin-bundle.js'),
                     'dist/common-bundle.js',
-                ),
+                ))),
                 'entities' => array(
                     'PerformanceReview' => '\\Performance\\Common\\Model\\PerformanceReview',
                     'ReviewFeedback' => '\\Performance\\Common\\Model\\ReviewFeedback',
@@ -621,15 +640,14 @@ class NativeModuleRegistry
                 // The adapter + init live in the leave_and_performance PRO bundle
                 // (absolute URL via EXTENSIONS_URL), loaded after the core admin
                 // bundle — same order as core/modulejslibs.inc.php.
-                'scripts' => array(
+                'scripts' => array_values(array_filter(array(
                     'dist/vendorOther.js',
                     'dist/third-party.js',
                     'dist/common.js',
                     'dist/admin-bundle.js',
-                    self::extAssetUrl('leave_and_performance')
-                        . 'leave_and_performance/web/dist/admin-bundle.js',
+                    self::extScript('leave_and_performance', 'web/dist/admin-bundle.js'),
                     'dist/common-bundle.js',
-                ),
+                ))),
                 'entities' => array(),
                 'tabs' => array(
                     array('key' => 'tabEmployeeDataHistory', 'label' => 'Employee Basic Details', 'component' => 'NativeCardList', 'entity' => 'EmployeeDataHistory'),
@@ -641,15 +659,14 @@ class NativeModuleRegistry
             // native approve workflow with a leave-specific status action.
             'admin/leaves' => array(
                 'initFn' => 'initAdminLeaves',
-                'scripts' => array(
+                'scripts' => array_values(array_filter(array(
                     'dist/vendorOther.js',
                     'dist/third-party.js',
                     'dist/common.js',
                     'dist/admin-bundle.js',
-                    self::extAssetUrl('leave_and_performance')
-                        . 'leave_and_performance/web/dist/admin-bundle.js',
+                    self::extScript('leave_and_performance', 'web/dist/admin-bundle.js'),
                     'dist/common-bundle.js',
-                ),
+                ))),
                 'entities' => array(
                     'LeaveType' => '\\Leaves\\Common\\Model\\LeaveType',
                     'LeavePeriod' => '\\Leaves\\Common\\Model\\LeavePeriod',

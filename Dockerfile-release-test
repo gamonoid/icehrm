@@ -1,14 +1,14 @@
 # Release-test image.
 #
-# Uses the real IceHRM runtime (icehrm-release-runtime, built from the main
+# Uses the real IceHRM runtime (icehrm-ce-release-runtime, built from the main
 # Dockerfile) and bakes the DISTRIBUTABLE release archive
 # (build/release/icehrm.zip) into /var/www/html, so the container runs the
 # packaged code from its OWN filesystem — no bind mount. This mirrors a real
 # deployment and sidesteps host bind-mount permission/virtiofs issues.
 #
 # Build the runtime base first (the npm release:test:* scripts do this):
-#   docker build -t icehrm-release-runtime -f Dockerfile .
-FROM icehrm-release-runtime
+#   docker build -t icehrm-ce-release-runtime -f Dockerfile .
+FROM icehrm-ce-release-runtime
 
 USER root
 
@@ -30,4 +30,4 @@ RUN unzip -q /tmp/icehrm.zip -d /tmp/release \
 USER nobody
 WORKDIR /var/www/html
 
-# CMD, EXPOSE 8080 and the healthcheck are inherited from icehrm-release-runtime.
+# CMD, EXPOSE 8080 and the healthcheck are inherited from icehrm-ce-release-runtime.

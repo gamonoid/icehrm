@@ -1,10 +1,15 @@
-version: "3.5"
+# Development stack for the open-source repo.
+#
+# Ports use the 918x block so this stack can run alongside icehrm-pro (908x),
+# the release-test stacks (919x / 929x) and the production stack (5555).
+# Database and phpMyAdmin bind to loopback only — phpMyAdmin is an
+# unauthenticated console and MySQL here uses well-known dev credentials.
 services:
   mysql:
     image: mysql:8.0.32
     #command: --lower_case_table_names=1
     ports:
-      - 9306:3306
+      - 127.0.0.1:9386:3306
     environment:
       MYSQL_ROOT_PASSWORD: IceHrmR00t
       MYSQL_USER: dev
@@ -19,7 +24,7 @@ services:
       context: .
       dockerfile: Dockerfile-dev
     ports:
-      - 9080:8080
+      - 9180:8080
     environment:
       ICE_CONFIG_FILE: ../docker/development/config/config.php
     volumes:
@@ -40,17 +45,20 @@ services:
       - mysql
     image: phpmyadmin
     ports:
-      - "9081:80"
+      # Loopback only — this is an unauthenticated database console.
+      - "127.0.0.1:9181:80"
     environment:
       PMA_HOSTS: mysql
-      PMA_PORT: 9306
+      # Container-internal port. MySQL listens on 3306 inside the compose
+      # network; 9386 is only the host-side publish mapping.
+      PMA_PORT: 3306
       PMA_USER: dev
       PMA_PASSWORD: dev
 
   mailhog:
     image: ajoergensen/mailhog
     ports:
-      - "1126:1025"
-      - "9082:8025"
+      - "1186:1025"
+      - "9182:8025"
 volumes:
   db_data:

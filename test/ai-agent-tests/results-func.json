@@ -1,0 +1,66 @@
+[
+  {
+    "id": "S1.10",
+    "title": "Company page (company_overview) loads",
+    "role": "EMPLOYEE",
+    "status": "FAIL",
+    "detail": "HTTP 500 from /app/api/ - page renders empty shell",
+    "evidence": "screenshots/BUG-001-company-overview-500.png"
+  },
+  {
+    "id": "S1.10b",
+    "title": "company_overview upcoming-leaves endpoint",
+    "role": "EMPLOYEE",
+    "status": "PASS",
+    "detail": "direct fetch status=404",
+    "evidence": ""
+  },
+  {
+    "id": "S9.2",
+    "title": "Employee cannot reach admin::users by direct hash",
+    "role": "EMPLOYEE",
+    "status": "PASS",
+    "detail": "no admin content rendered (1812 chars)",
+    "evidence": "screenshots/S9-employee-blocked-admin-users.png"
+  },
+  {
+    "id": "S9.2b",
+    "title": "Employee cannot reach admin::settings",
+    "role": "EMPLOYEE",
+    "status": "PASS",
+    "detail": "no settings content (1812 chars)",
+    "evidence": ""
+  },
+  {
+    "id": "S1.5",
+    "title": "Employees list scope: Manager < Admin",
+    "role": "A vs M",
+    "status": "WARN",
+    "detail": "admin rows=8  manager rows=8 (mgr has 4 direct reports)",
+    "evidence": "screenshots/S1.5-manager-employee-list-scope.png"
+  },
+  {
+    "id": "S12.1",
+    "title": "QA string accepted verbatim in a text field",
+    "role": "EMPLOYEE",
+    "status": "FAIL",
+    "detail": "value mangled: ",
+    "evidence": "screenshots/S12-qa-string-input.png"
+  },
+  {
+    "id": "S12.2",
+    "title": "Directory shows no raw HTML entities",
+    "role": "EMPLOYEE",
+    "status": "PASS",
+    "detail": "clean render, 2948 chars",
+    "evidence": "screenshots/S12-directory-render.png"
+  },
+  {
+    "id": "S11.5",
+    "title": "Signed-out SPA route redirects to login",
+    "role": "-",
+    "status": "PASS",
+    "detail": "landed on http://localhost:5555/app/login.php#admin::settings",
+    "evidence": ""
+  }
+]
