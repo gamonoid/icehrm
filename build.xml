@@ -83,7 +83,7 @@
   <mkdir dir="${basedir}/build/test"/>
   <mkdir dir="${basedir}/build/app"/>
   <mkdir dir="${basedir}/build/release/data"/>
-  <mkdir dir="${basedir}/build/release/data/icehrmpro"/>
+  <mkdir dir="${basedir}/build/release/data/icehrm"/>
 
 
   <property name="prepare.done" value="true"/>
@@ -407,14 +407,14 @@
      depends="copyapp"
      description="Create a release">
 
-	<copy todir="${basedir}/build/release/data/icehrmpro">
+	<copy todir="${basedir}/build/release/data/icehrm">
 		  <fileset dir="${destination}">
 		    <include name="**/*"/>
 		  	<exclude name="test/**"/>
 		  </fileset>
 		</copy>
 
-	<zip destfile="${basedir}/build/release/icehrmpro.zip"
+	<zip destfile="${basedir}/build/release/icehrm.zip"
 	       basedir="${basedir}/build/release/data"
 	  />
 

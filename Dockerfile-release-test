@@ -2,7 +2,7 @@
 #
 # Uses the real IceHRM runtime (icehrm-release-runtime, built from the main
 # Dockerfile) and bakes the DISTRIBUTABLE release archive
-# (build/release/icehrmpro.zip) into /var/www/html, so the container runs the
+# (build/release/icehrm.zip) into /var/www/html, so the container runs the
 # packaged code from its OWN filesystem — no bind mount. This mirrors a real
 # deployment and sidesteps host bind-mount permission/virtiofs issues.
 #
@@ -13,12 +13,12 @@ FROM icehrm-release-runtime
 USER root
 
 # Copy the release archive into the image and unpack it. The zip contains a
-# top-level icehrmpro/ directory, so its CONTENTS become the document root.
-COPY build/release/icehrmpro.zip /tmp/icehrmpro.zip
-RUN unzip -q /tmp/icehrmpro.zip -d /tmp/release \
+# top-level icehrm/ directory, so its CONTENTS become the document root.
+COPY build/release/icehrm.zip /tmp/icehrm.zip
+RUN unzip -q /tmp/icehrm.zip -d /tmp/release \
     && rm -rf /var/www/html/* \
-    && cp -R /tmp/release/icehrmpro/. /var/www/html/ \
-    && rm -rf /tmp/icehrmpro.zip /tmp/release \
+    && cp -R /tmp/release/icehrm/. /var/www/html/ \
+    && rm -rf /tmp/icehrm.zip /tmp/release \
     # No app/config.php is created — the release ships without one, exactly like a
     # downloaded zip, so the app redirects to /app/install/ until it exists. Just
     # ensure a writable data dir and that the web user owns the tree, so the

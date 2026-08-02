@@ -1,11 +1,11 @@
 # Release-test stack. The app runs the DISTRIBUTABLE release
-# (build/release/icehrmpro.zip) baked into the image (Dockerfile-release-test) —
+# (build/release/icehrm.zip) baked into the image (Dockerfile-release-test) —
 # the code lives inside the container, not on a bind mount — against a FRESH,
 # EMPTY MySQL (no init script) so a new release can be smoke-tested like a clean
 # install. All services use dedicated ports to avoid clashing with the
 # dev/prod/testing stacks.
 #
-# Build the release first (ant build / release.sh) so build/release/icehrmpro.zip
+# Build the release first (ant build / release.sh) so build/release/icehrm.zip
 # exists, then:
 #   npm run release:test:fresh   # wipe db volume + images, rebuild from the zip, start clean
 #   npm run release:test:up      # (re)build from the current zip and start
@@ -32,7 +32,7 @@ services:
       - release_test_db_data:/var/lib/mysql
 
   icehrm:
-    # Bakes build/release/icehrmpro.zip into /var/www/html. Requires the base
+    # Bakes build/release/icehrm.zip into /var/www/html. Requires the base
     # runtime image icehrm-release-runtime (npm release:test:* build it first).
     build:
       context: .

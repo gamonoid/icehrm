@@ -1005,9 +1005,9 @@ INSERT INTO `Certifications` (`id`, `name`, `description`) VALUES
 
 
 INSERT INTO `Clients` (`id`, `name`, `details`, `first_contact_date`, `created`, `address`, `contact_number`, `contact_email`, `company_url`, `status`) VALUES
-  (1, 'IceHrm Sample Client 1', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@web-stalk.com', 'http://icehrm.com', 'Active'),
-  (2, 'IceHrm Sample Client 2', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@web-stalk.com', 'http://icehrm.com', 'Active'),
-  (3, 'IceHrm Sample Client 3', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@web-stalk.com', 'http://icehrm.com', 'Active');
+  (1, 'IceHrm Sample Client 1', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@example.com', 'http://icehrm.com', 'Active'),
+  (2, 'IceHrm Sample Client 2', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@example.com', 'http://icehrm.com', 'Active'),
+  (3, 'IceHrm Sample Client 3', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@example.com', 'http://icehrm.com', 'Active');
 
 
 INSERT INTO `CompanyLoans` (`id`, `name`, `details`) VALUES
@@ -1359,20 +1359,25 @@ INSERT INTO `PayFrequency` VALUES
 
 
 INSERT INTO `Employees` (`id`, `employee_id`, `first_name`, `middle_name`, `last_name`, `nationality`, `birthday`, `gender`, `marital_status`, `ssn_num`, `nic_num`, `other_id`, `driving_license`, `driving_license_exp_date`, `employment_status`, `job_title`, `pay_grade`, `work_station_id`, `address1`, `address2`, `city`, `country`, `province`, `postal_code`, `home_phone`, `mobile_phone`, `work_phone`, `work_email`, `private_email`, `joined_date`, `confirmation_date`, `supervisor`, `department`, `custom1`, `custom2`, `custom3`, `custom4`, `custom5`, `custom6`, `custom7`, `custom8`, `custom9`, `custom10`) VALUES
-  (1, 'EMP001', 'IceHrm', 'Sample', 'Employee', 35, '1984-03-17 18:30:00', 'Male', 'Married', '', '294-38-3535', '294-38-3535', '', NULL, 3, 11, 2, '', '2772 Flynn Street', 'Willoughby', 'Willoughby', 'US', 41, '44094', '440-953-4578', '440-953-4578', '440-953-4578', 'icehrm+admin@web-stalk.com', 'icehrm+admin@web-stalk.com', '2005-08-03 18:00:00', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+  (1, 'EMP001', 'Liam', 'James', 'Bennett', 10, '2000-04-12 00:00:00', 'Male', 'Single', '', '', '', '', NULL, 3, 11, 2, '', '42 Blaxland Road', 'Ryde', 'Sydney', 'AU', NULL, '2112', '02 9807 4416', '0412 345 678', '02 9807 4400', 'liam.bennett@example.com', 'liam.bennett@example.com', '2022-02-14 00:00:00', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 INSERT INTO `UserRoles` VALUES
   (1,'Report Manager'),
   (2,'Attendance Manager');
 
 
--- No administrator row is seeded here on purpose.
+-- The administrator row must exist here: the installer (app/install/submit.php) applies
+-- the email and password chosen on the install form with an UPDATE, not an INSERT, so
+-- without this row an install completes reporting success while creating no account at
+-- all. The Employees row above is its foreign-key target.
 --
--- The account is created during installation from the email and password entered on
--- the install form, so an installed system's only credential is one the operator chose
--- and that was never published in this repository.
---
--- The Employees row above is still required: Users.employee is a foreign key to it.
+-- The password below is bcrypt (cost 13) of 'admin', replacing the unsalted md5('admin')
+-- this file used to carry. bcrypt removes the offline-cracking weakness, but note it does
+-- NOT make 'admin' a safe password: the plaintext is published in this repository, so the
+-- row is only acceptable because the installer overwrites it moments later in the same
+-- request. Anything that leaves this value in place is a live admin/admin account.
+INSERT INTO `Users` VALUES
+(1,'admin','icehrm+admin@example.com','$2y$13$ArYLUQ3MEqiOCwv8XWC7COI4r8jqbA1TC3KcNtbBLd4RVg0.oCu9O',1,NULL,'Admin','',NULL,NULL,NULL,NULL,NULL);
 
 
 INSERT INTO `SalaryComponentType` (`id`,`code`, `name`) VALUES
