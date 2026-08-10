@@ -33,10 +33,17 @@ abstract class ApproveAdminActionManager extends ApproveCommonActionManager
             return new IceResponse(IceResponse::ERROR, "$itemName not found");
         }
 
-        /*
-        if($this->user->user_level != 'Admin' && $this->user->user_level != 'Manager'){
-            return new IceResponse(IceResponse::ERROR,"Only an admin or manager can do this");
-        }*/
+        // Ownership gate. $req->id is any approvable record (overtime, travel, ...) and
+        // this method approves/rejects it. The previous check was commented out, so a
+        // Manager reaching admin=overtime / admin=travel could approve or reject ANY
+        // employee's request, not only their subordinates'. Scope to the record owner:
+        // Admin (or all-employee-data role) any; a Manager only those they manage — plus
+        // anyone named in this record's own approval chain, who is authorised by the
+        // chain rather than by the reporting line. Nobody but an admin may decide their
+        // OWN request — see currentUserCanDecideRecord.
+        if (!$this->currentUserCanDecideRecord($obj)) {
+            return new IceResponse(IceResponse::ERROR, "Permission denied", 403);
+        }
 
         //Check if this needs to be multi-approved
         $apStatus = 0;

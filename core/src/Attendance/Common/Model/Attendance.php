@@ -19,12 +19,12 @@ class Attendance extends BaseModel
 
     public function getAdminAccess()
     {
-        return array('get','element','save','delete');
+        return array('get','element','add','save','delete');
     }
 
     public function getManagerAccess()
     {
-        return array('get','element','save','delete');
+        return array('get','element','add','save','delete');
     }
 
     public function getUserAccess()
@@ -34,7 +34,7 @@ class Attendance extends BaseModel
 
     public function getUserOnlyMeAccess()
     {
-        return array('element','save','delete');
+        return array('element','add','save','delete');
     }
 
     public function getModuleAccess()
@@ -44,6 +44,106 @@ class Attendance extends BaseModel
             new ModuleAccess('attendance', 'user'),
             new ModuleAccess('attendance_sheets', 'user'),
         ];
+    }
+
+    /**
+     * Evidence fields an employee must not set by hand. getUserOnlyMeAccess() grants
+     * add/save on their own rows, and the generic save path copies every column — so
+     * without this an employee could POST a=add&t=Attendance with a chosen in_ip and
+     * map_lat/map_lng, forging the IP and GPS evidence the admin "View Map" screen shows.
+     * These are captured server-side by the punch flow (savePunch), never client-authored.
+     * Admin (and an all-employee-data role) keep manual correction.
+     */
+    public function getProtectedFields($user)
+    {
+        if (!empty($user)
+            && (in_array($user->user_level, array('Admin', 'Restricted Admin'), true)
+                || \Employees\Common\Model\EmployeeAccess::hasAccessToAllEmployeeData())
+        ) {
+            return array();
+        }
+
+        return array(
+            'in_ip', 'out_ip',
+            'map_lat', 'map_lng', 'map_snapshot',
+            'map_out_lat', 'map_out_lng', 'map_out_snapshot',
+        );
+    }
+
+    /**
+     * Punch invariants, enforced for every write path. The business rules
+     * (single calendar day, in < out) previously lived only in
+     * AttendanceActionManager::savePunch, so the generic a=add / a=save route bypassed
+     * them entirely and could store a backdated 24-hour entry. validateSave() runs
+     * inside BaseService::addElement for both add and update, so the rules now hold
+     * wherever the row is written.
+     */
+    public function validateSave($obj)
+    {
+        $inTime = !empty($obj->in_time) ? strtotime($obj->in_time) : false;
+        $outTime = !empty($obj->out_time) ? strtotime($obj->out_time) : false;
+
+        if (!empty($obj->in_time) && $inTime === false) {
+            return new \Classes\IceResponse(\Classes\IceResponse::ERROR, 'Invalid punch-in time');
+        }
+        if (!empty($obj->out_time) && $outTime === false) {
+            return new \Classes\IceResponse(\Classes\IceResponse::ERROR, 'Invalid punch-out time');
+        }
+
+        if ($inTime !== false && $outTime !== false) {
+            if ($outTime <= $inTime) {
+                return new \Classes\IceResponse(
+                    \Classes\IceResponse::ERROR,
+                    'Punch-in time should be less than punch-out time'
+                );
+            }
+            if (date('Y-m-d', $inTime) !== date('Y-m-d', $outTime)) {
+                return new \Classes\IceResponse(
+                    \Classes\IceResponse::ERROR,
+                    'Attendance entry should be within a single day'
+                );
+            }
+        }
+
+        // Overlap check, mirroring savePunch. Without it an employee could stack
+        // overlapping rows on the same day through the generic save path and inflate
+        // their recorded hours. Admin levels are exempt so HR corrections and data
+        // imports are not blocked.
+        $user = \Classes\BaseService::getInstance()->getCurrentUser();
+        $isAdmin = !empty($user)
+            && (in_array($user->user_level, array('Admin', 'Restricted Admin'), true)
+                || \Employees\Common\Model\EmployeeAccess::hasAccessToAllEmployeeData());
+
+        if (!$isAdmin && $inTime !== false && !empty($obj->employee)) {
+            $existing = new Attendance();
+            $sameDay = $existing->Find(
+                "employee = ? and DATE_FORMAT(in_time, '%Y-%m-%d') = ?",
+                array($obj->employee, date('Y-m-d', $inTime))
+            );
+            foreach ($sameDay as $row) {
+                if (!empty($obj->id) && (string) $row->id === (string) $obj->id) {
+                    continue; // editing this very row
+                }
+                $rowIn = strtotime($row->in_time);
+                $rowOut = !empty($row->out_time) ? strtotime($row->out_time) : null;
+                if ($rowOut === null) {
+                    return new \Classes\IceResponse(
+                        \Classes\IceResponse::ERROR,
+                        'There is a non closed attendance entry for this day.'
+                        . ' Please close it before adding a new one'
+                    );
+                }
+                $newOut = ($outTime !== false) ? $outTime : $inTime;
+                if ($inTime < $rowOut && $newOut > $rowIn) {
+                    return new \Classes\IceResponse(
+                        \Classes\IceResponse::ERROR,
+                        'Time entry is overlapping with an existing one'
+                    );
+                }
+            }
+        }
+
+        return parent::validateSave($obj);
     }
 
     /**
@@ -144,4 +244,15 @@ class Attendance extends BaseModel
     public function getGoogleMapImage($latitude, $longitude) {
         return sprintf('https://maps.google.com?q=%s,%s', $latitude, $longitude);
     }
+
+    /**
+     * A team list exists for this model: the adapter opts into `type=sub`
+     * (isSubProfileTable), so BaseService::getData() may scope its rows to the
+     * caller's direct reports. See BaseModel::allowsSubordinateList().
+     */
+    public function allowsSubordinateList()
+    {
+        return true;
+    }
+
 }

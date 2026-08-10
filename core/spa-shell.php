@@ -11,10 +11,30 @@
  * can be validated without disturbing the existing app. See docs/SPA_MIGRATION_PLAN.md.
  */
 
+// The New Relic PHP agent auto-injects its browser (RUM) agent into served HTML.
+// Its fetch wrapper copies page-derived strings into request headers, which throws
+// "String contains non ISO-8859-1 code point" for tenants whose company/user data
+// is non-Latin (CJK etc.), killing every SPA request before it is sent. Browser
+// monitoring was never intentionally part of the SPA — keep injection off here.
+if (function_exists('newrelic_disable_autorum')) {
+    newrelic_disable_autorum();
+}
+
 include 'includes.inc.php';
 
 if (empty($user) || empty($user->email)) {
     header('Location:' . CLIENT_BASE_URL . 'login.php');
+    exit();
+}
+
+// Forced password reset. The account still stores an unsalted MD5 hash, so the
+// credential just used is one a database leak would hand straight to an attacker.
+// Serve the reset form INSTEAD of the shell — no token is minted and no module data
+// is loaded, so there is nothing to work around by closing the dialog. service.php
+// and data.php refuse everything except the reset action while this holds, and a
+// successful reset ends the session and returns the user to the login page.
+if (\Classes\PasswordManager::userNeedsPasswordReset($user)) {
+    include CLIENT_PATH . '/password-reset-required.php';
     exit();
 }
 

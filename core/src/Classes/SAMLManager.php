@@ -104,6 +104,36 @@ class SAMLManager
             return false;
         }
 
+        // Replay protection. The signature/issuer checks above pass for any authentic
+        // assertion, but a captured SAMLResponse is authentic too — without a one-time
+        // check it can be POSTed again and re-logs the victim in. Require a temporal
+        // bound (an assertion with none is replayable indefinitely) and consume the
+        // assertion id once, so a second POST of the same assertion is rejected.
+        $assertionId = $assertion->getId();
+        $notOnOrAfter = $assertion->getNotOnOrAfter();
+        if (empty($notOnOrAfter)) {
+            $notOnOrAfter = $assertion->getSessionNotOnOrAfter();
+        }
+        if (empty($notOnOrAfter) || $notOnOrAfter <= time()) {
+            LogManager::getInstance()->error('SAML assertion has no valid NotOnOrAfter; refusing (replay risk)');
+            return false;
+        }
+        if (empty($assertionId)) {
+            LogManager::getInstance()->error('SAML assertion missing ID; refusing (replay risk)');
+            return false;
+        }
+        $replayKey = 'saml_assertion_'.hash('sha256', $assertionId);
+        if (DatabaseCache::getInstance()->has($replayKey)) {
+            LogManager::getInstance()->error('SAML assertion replay detected');
+            return false;
+        }
+        // Keep the consumed marker until just past the assertion's own expiry.
+        $replayTtl = ($notOnOrAfter - time()) + 60;
+        if ($replayTtl < 60) {
+            $replayTtl = 60;
+        }
+        DatabaseCache::getInstance()->set($replayKey, 1, $replayTtl);
+
         $ssoEmail = current(current($samlResponse->getAssertions())->getNameId());
         if (!$ssoEmail) {
             return false;

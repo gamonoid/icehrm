@@ -17,7 +17,19 @@ class CompanyLoan extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
+    }
+
+    public function getUserAccess()
+    {
+        // "get" only: the employee Loans view resolves loan-type names via a
+        // remote-source list; element reads by id stay admin-side.
+        return array("get");
+    }
+
+    public function getUserOnlyMeAccess()
+    {
+        return array();
     }
 
     public function getModuleAccess()
@@ -26,4 +38,15 @@ class CompanyLoan extends BaseModel
             new ModuleAccess('loans', 'admin'),
         ];
     }
+
+    /**
+     * Columns this model's select boxes may request (see
+     * BaseModel::fieldValueFields). Derived from the pickers that actually exist,
+     * so this allows today's usage and nothing more.
+     */
+    public function fieldValueFields()
+    {
+        return array('id', 'name');
+    }
+
 }

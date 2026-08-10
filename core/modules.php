@@ -5,12 +5,6 @@ use Classes\ExtensionManager;
 $initializers = [];
 //Reset modules if required
 if (\Classes\SettingsManager::getInstance()->getSetting("System: Reset Modules and Permissions") == "1") {
-    $permissionTemp = new \Permissions\Common\Model\Permission();
-    $permissions = $permissionTemp->Find("1=1");
-    foreach ($permissions as $permTemp) {
-        $permTemp->Delete();
-    }
-
     $moduleTemp = new \Modules\Common\Model\Module();
     $modulesTemp = $moduleTemp->Find("1=1");
     foreach ($modulesTemp as $moduleTemp) {
@@ -18,12 +12,6 @@ if (\Classes\SettingsManager::getInstance()->getSetting("System: Reset Modules a
     }
 
     \Classes\SettingsManager::getInstance()->setSetting("System: Reset Modules and Permissions", "0");
-}
-
-$addNewPermissions = false;
-if (\Classes\SettingsManager::getInstance()->getSetting("System: Add New Permissions") == "1") {
-    $addNewPermissions = true;
-    \Classes\SettingsManager::getInstance()->setSetting("System: Add New Permissions", "0");
 }
 
 $resetModuleNames = false;
@@ -63,33 +51,6 @@ function includeModuleManager($type, $name, $data)
     return $moduleManagerObj;
 }
 
-function createPermissions($meta, $moduleId)
-{
-    $permData = $meta->permissions;
-    if (empty($permData)) {
-        return;
-    }
-
-    foreach ($permData as $key => $val) {
-        if (!empty($val)) {
-            foreach ($val as $permissionString => $defaultValue) {
-                $permissionObj = new \Permissions\Common\Model\Permission();
-                $permissionObj->Load("user_level = ? and module_id = ? and permission = ?", array($key, $moduleId, $permissionString));
-
-                if (empty($permissionObj->id) && $permissionObj->module_id == $moduleId) {
-                } else {
-                    $permissionObj = new \Permissions\Common\Model\Permission();
-                    $permissionObj->user_level = $key;
-                    $permissionObj->module_id = $moduleId;
-                    $permissionObj->permission = $permissionString;
-                    $permissionObj->value = $defaultValue;
-                    $permissionObj->meta = '["value", {"label":"Value","type":"select","source":[["Yes","Yes"],["No","No"]]}]';
-                    $permissionObj->Save();
-                }
-            }
-        }
-    }
-}
 
 $dbModule = new \Modules\Common\Model\Module();
 $adminDbModules = $dbModule->Find("mod_group = ?", array("admin"));
@@ -136,9 +97,6 @@ foreach ($ams as $am) {
         if (isset($adminDBModuleList[$arr['name']])) {
             $dbModule = $adminDBModuleList[$arr['name']];
 
-            if ($addNewPermissions && isset($meta->permissions)) {
-                createPermissions($meta, $dbModule->id);
-            }
 
             if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
                 $dbModule->label = $arr['label'];
@@ -174,9 +132,6 @@ foreach ($ams as $am) {
             $dbModule->user_roles = isset($meta->user_roles)?json_encode($meta->user_roles):"";
             $dbModule->Save();
 
-            if (isset($meta->permissions)) {
-                createPermissions($meta, $dbModule->id);
-            }
         }
 
         /* @var \Classes\AbstractModuleManager */
@@ -243,9 +198,6 @@ if (is_dir($proAdminPath)) {
             if (isset($adminDBModuleList[$arr['name']])) {
                 $dbModule = $adminDBModuleList[$arr['name']];
 
-                if ($addNewPermissions && isset($meta->permissions)) {
-                    createPermissions($meta, $dbModule->id);
-                }
 
                 if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
                     $dbModule->label = $arr['label'];
@@ -278,9 +230,6 @@ if (is_dir($proAdminPath)) {
                 $dbModule->user_roles = isset($meta->user_roles)?json_encode($meta->user_roles):"";
                 $dbModule->Save();
 
-                if (isset($meta->permissions)) {
-                    createPermissions($meta, $dbModule->id);
-                }
             }
 
             /* @var \Classes\AbstractModuleManager */
@@ -342,9 +291,6 @@ foreach ($ams as $am) {
             if (isset($userDBModuleList[$arr['name']])) {
                 $dbModule = $userDBModuleList[$arr['name']];
 
-                if ($addNewPermissions && isset($meta->permissions)) {
-                    createPermissions($meta, $dbModule->id);
-                }
 
                 if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
                     $dbModule->label = $arr['label'];
@@ -380,9 +326,6 @@ foreach ($ams as $am) {
                 $dbModule->user_roles = isset($meta->user_roles) ? json_encode($meta->user_roles) : "";
                 $dbModule->Save();
 
-                if (isset($meta->permissions)) {
-                    createPermissions($meta, $dbModule->id);
-                }
             }
 
             /* @var \Classes\AbstractModuleManager */
@@ -450,9 +393,6 @@ if (is_dir($proModulesPath)) {
                 if (isset($userDBModuleList[$arr['name']])) {
                     $dbModule = $userDBModuleList[$arr['name']];
 
-                    if ($addNewPermissions && isset($meta->permissions)) {
-                        createPermissions($meta, $dbModule->id);
-                    }
 
                     if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
                         $dbModule->label = $arr['label'];
@@ -485,9 +425,6 @@ if (is_dir($proModulesPath)) {
                     $dbModule->user_roles = isset($meta->user_roles) ? json_encode($meta->user_roles) : "";
                     $dbModule->Save();
 
-                    if (isset($meta->permissions)) {
-                        createPermissions($meta, $dbModule->id);
-                    }
                 }
 
                 /* @var \Classes\AbstractModuleManager */

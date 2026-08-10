@@ -25,6 +25,21 @@ try {
 }
 
 if (isset($_GET['code'])) {
+    // CSRF (OAuth "state"): the redirect leg stored a random nonce in the session and
+    // sent it to Google; the callback must echo it back. Without this an attacker could
+    // feed the victim a code for the attacker's own Google account (login CSRF). Reject
+    // a missing/mismatched state and consume the nonce so it cannot be replayed.
+    $expectedGoogleState = \Utils\SessionUtils::getSessionString('google_auth_state');
+    \Utils\SessionUtils::saveSessionString('google_auth_state', '');
+    if (empty($expectedGoogleState)
+        || empty($_GET['state'])
+        || !is_string($_GET['state'])
+        || !hash_equals($expectedGoogleState, $_GET['state'])
+    ) {
+        header('Location: ' . CLIENT_BASE_URL."login.php?f=1&fm=Invalid authentication state");
+        exit();
+    }
+
     $accessToken = $client->fetchAccessTokenWithAuthCode($_GET['code']);
     $user = $oauth2->userinfo->get();
     if (empty($user)) {
@@ -44,7 +59,12 @@ if (isset($_GET['code'])) {
 } else {
     session_start();
     $_SESSION['auth_type'] = 'google';
+    // Mint a per-request CSRF nonce, bind it to the session and hand it to Google as the
+    // OAuth "state"; the callback above verifies the echo.
+    $googleState = bin2hex(random_bytes(32));
+    \Utils\SessionUtils::saveSessionString('google_auth_state', $googleState);
     session_write_close();
+    $client->setState($googleState);
     $authUrl = $client->createAuthUrl();
     header('Location: ' . $authUrl);
     exit();

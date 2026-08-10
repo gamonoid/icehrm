@@ -129,7 +129,7 @@ if ($user->user_level == 'Admin') {
     </script>
 
     <meta charset="utf-8">
-    <title><?=$companyName?></title>
+    <title><?=htmlspecialchars($companyName, ENT_QUOTES)?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://icehrm.s3.amazonaws.com/images/icon16.png">
     <meta name="description" content="">
@@ -166,7 +166,7 @@ if ($user->user_level == 'Admin') {
             <span class="icon-bar"></span>
         </a>
         <div class="logo logoResponsive">
-            <?=$companyName?>
+            <?=htmlspecialchars($companyName, ENT_QUOTES)?>
         </div>
         <div class="navbar-right">
             <ul class="nav navbar-nav">

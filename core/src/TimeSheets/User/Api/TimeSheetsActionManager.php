@@ -34,6 +34,11 @@ class TimeSheetsActionManager extends SubActionManager
     {
 		$timeSheet = new EmployeeTimeSheet();
 		$timeSheet->Load('id = ?', [$req->id]);
+		// Ownership gate — $req->id is a request-supplied timesheet id.
+		if (!empty($timeSheet->id)
+			&& !$this->baseService->currentUserCanAccessEmployeeData($timeSheet->employee)) {
+			return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
+		}
 		$timeSheet->total_time = $timeSheet->getTotalTime();
 		$employee = $this->baseService->getElement('Employee', $timeSheet->employee, null, true);
 		$employee = FileService::getInstance()->updateSmallProfileImage($employee);
@@ -288,6 +293,11 @@ class TimeSheetsActionManager extends SubActionManager
         $req->start = strtotime($req->start);
         $req->end = strtotime($req->end);
 
+        // Ownership gate — $req->e is a request-supplied employee id.
+        if (!$this->baseService->currentUserCanAccessEmployeeData($req->e)) {
+            return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
+        }
+
         $employee = $this->baseService->getElement('Employee', $req->e, null, true);
 
         $currEmployee = $employee->id;
@@ -452,6 +462,13 @@ class TimeSheetsActionManager extends SubActionManager
         $timeSheet = new EmployeeTimeSheet();
         $timeSheet->Load("id = ?", array($req->currentId));
 
+        // Ownership gate — currentId is a request-supplied timesheet id; getAllData
+        // also writes when $req->save == '1'.
+        if (!empty($timeSheet->id)
+            && !$this->baseService->currentUserCanAccessEmployeeData($timeSheet->employee)) {
+            return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
+        }
+
         $cal = new PayrollCalculations();
 
         $rowTable = BaseService::getInstance()->getFullQualifiedModelClassName($req->rowTable);
@@ -556,6 +573,13 @@ class TimeSheetsActionManager extends SubActionManager
 		$timeSheet = new EmployeeTimeSheet();
 		$timeSheet->Load("id = ?", array($req->id));
 
+		// Ownership gate — $req->id is a request-supplied timesheet id; this returns
+		// that employee's approved-leave dates.
+		if (!empty($timeSheet->id)
+			&& !$this->baseService->currentUserCanAccessEmployeeData($timeSheet->employee)) {
+			return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
+		}
+
 		$employeeLeave = new EmployeeLeave();
 
 		$employeeId = $timeSheet->employee;
@@ -609,6 +633,15 @@ class TimeSheetsActionManager extends SubActionManager
 	 */
 	public function getTimeSheetLogs($req)
 	{
+		// Ownership gate — $req->id is a request-supplied timesheet id whose approval
+		// log this returns. Load the sheet and scope to its owner.
+		$timeSheet = new EmployeeTimeSheet();
+		$timeSheet->Load("id = ?", array($req->id));
+		if (!empty($timeSheet->id)
+			&& !$this->baseService->currentUserCanAccessEmployeeData($timeSheet->employee)) {
+			return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
+		}
+
 		$resp = StatusChangeLogManager::getInstance()->getLogs('EmployeeTimeSheet', $req->id);
 		$logs = $resp->getData();
 		if (!is_array($logs)) {
@@ -628,6 +661,11 @@ class TimeSheetsActionManager extends SubActionManager
 		$timeSheet->Load("id = ?", array($req->id));
 		if (empty($timeSheet->id)) {
 			return new IceResponse(IceResponse::SUCCESS, array());
+		}
+
+		// Ownership gate — $req->id is a request-supplied timesheet id.
+		if (!$this->baseService->currentUserCanAccessEmployeeData($timeSheet->employee)) {
+			return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
 		}
 
 		$map = $this->getLeaveDayMap($timeSheet);
@@ -658,7 +696,10 @@ class TimeSheetsActionManager extends SubActionManager
 				$timeSheet = new EmployeeTimeSheet();
 				$timeSheet->Load("id = ?", array($id));
 				$days = 0;
-				if (!empty($timeSheet->id)) {
+				// Skip sheets the caller may not see rather than fail the whole batch;
+				// this column is populated for the caller's own direct reports.
+				if (!empty($timeSheet->id)
+					&& $this->baseService->currentUserCanAccessEmployeeData($timeSheet->employee)) {
 					$map = $this->getLeaveDayMap($timeSheet);
 					foreach ($map as $info) {
 						$days += $info['half'] ? 0.5 : 1;
@@ -789,6 +830,13 @@ class TimeSheetsActionManager extends SubActionManager
 
         if (empty($timesheet->id)) {
             return new IceResponse(IceResponse::ERROR, true);
+        }
+
+        // Ownership gate. currentId is a request-supplied timesheet id, so without this
+        // any employee could rewrite or delete another employee's time entries (only
+        // the status was checked). Own timesheet, or a manager over its owner.
+        if (!$this->baseService->currentUserCanAccessEmployeeData($timesheet->employee)) {
+            return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
         }
 
         if ($timesheet->status !== 'Submitted' && $timesheet->status !== 'Pending' && $timesheet->status !== 'Rejected') {

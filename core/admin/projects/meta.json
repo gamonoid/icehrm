@@ -9,13 +9,6 @@
         "Manager"
     ],
     "dashboardPosition": 4,
-    "permissions": {
-        "Manager": {
-            "Add Projects": "Yes",
-            "Edit Projects": "Yes",
-            "Delete Projects": "No"
-        }
-    },
     "model_namespace": "\\Projects\\Common\\Model",
     "manager": "\\Projects\\Admin\\Api\\ProjectsAdminManager"
 }

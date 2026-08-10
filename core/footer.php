@@ -19,7 +19,6 @@ $userDomain = explode('@', $user->email)[1];
 		for (var prop in modJsList) {
 			if(modJsList.hasOwnProperty(prop)){
 				modJsList[prop].setTranslations(<?=\Classes\LanguageManager::getTranslations()?>);
-				modJsList[prop].setPermissions(<?=json_encode($modulePermissions['perm'])?>);
 				modJsList[prop].setFieldTemplates(<?=json_encode($fieldTemplates)?>);
 				modJsList[prop].setTemplates(<?=json_encode($templates)?>);
 				modJsList[prop].setCustomTemplates(<?=json_encode($customTemplates)?>);

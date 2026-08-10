@@ -55,11 +55,17 @@ class Employee extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getManagerAccess()
     {
+        // A Manager may view and EDIT employee records (their subordinates, scoped by
+        // managerRecordScopeAllows) but may not CREATE or DELETE employees — those are
+        // Admin-only lifecycle operations. "add" is removed here so the generic
+        // add path (a=add&t=Employee) denies managers; "delete" was never granted.
+        // The action-manager methods deleteEmployee/activateEmployee/terminateEmployee
+        // enforce the same via checkSecureAccess('delete').
         return array("get","element","save");
     }
 
@@ -70,12 +76,80 @@ class Employee extends BaseModel
 
     public function getUserOnlyMeAccess()
     {
-        return array("element","save");
+        return array("element","add","save");
+    }
+
+    /**
+     * Columns a colleague may see (finding 2.7).
+     *
+     * getUserAccess() deliberately grants "get" to every authenticated user, because the
+     * staff directory, the org chart and every employee picker in the SPA need the
+     * company-wide name list. That is a ROW grant; it was never meant to hand over the
+     * whole record. Without this projection an employee could read every colleague's
+     * ssn_num, nic_num, birthday, home address, personal phone/e-mail, tax id and
+     * health insurance straight off service.php.
+     *
+     * The allowlist is exactly what the staff directory already publishes company-wide
+     * (see Directory\Common\Model\StaffDirectory::Find), so nothing that works today
+     * stops working. Anything not listed here is withheld from colleagues; the employee
+     * themselves, an Admin, and a Manager over that employee still get the full record.
+     */
+    public function getFieldsVisibleTo($user, $isSelf, $isPrivilegedViewer)
+    {
+        if ($isSelf || $isPrivilegedViewer) {
+            return null; // full record
+        }
+
+        return array(
+            'id',
+            'first_name',
+            'middle_name',
+            'last_name',
+            'job_title',
+            'department',
+            'work_phone',
+            'work_email',
+            'joined_date',
+            'gender',
+            'country',
+            'address1',
+            'address2',
+            'city',
+            'postal_code',
+            'status',
+        );
     }
 
     public function getUserOnlyMeAccessField()
     {
         return "id";
+    }
+
+    /**
+     * Mass-assignment guard for self-service. getUserOnlyMeAccess() grants an employee
+     * "save"/"add" on their OWN record (owner field = id), and BaseService::addElement
+     * copies every request column — so without this a non-admin could POST
+     * a=save&t=Employee&id=<own> and set their own supervisor / approvers (reroute the
+     * approval chain), job_title / department / pay_grade (self-promotion) or status /
+     * termination_date (self-DoS). These are HR/admin-controlled fields; keep the stored
+     * value when the actor is editing their OWN record and is not an Admin. Admins, and a
+     * manager editing a subordinate, are unaffected.
+     */
+    public function getProtectedFields($user)
+    {
+        if (!empty($user) && $user->user_level === 'Admin') {
+            return array();
+        }
+        $selfId = BaseService::getInstance()->getCurrentProfileId();
+        if (!empty($this->id) && !empty($selfId) && (string) $this->id === (string) $selfId) {
+            return array(
+                'supervisor', 'indirect_supervisors',
+                'approver1', 'approver2', 'approver3',
+                'job_title', 'department', 'pay_grade',
+                'employment_status', 'status', 'termination_date',
+            );
+        }
+        return array();
     }
 
     private function initHistory($obj)
@@ -232,11 +306,10 @@ class Employee extends BaseModel
     }
 
 	protected function processBasicPermissions( $obj, $savedObject ) {
-		$user = BaseService::getInstance()->getCurrentUser();
-		$permissions = BaseService::getInstance()->loadModulePermissions('modules>employees', $user->user_level)['perm'];
-		// The employee number can never change once set when auto-generation is on
-		// (or when manual editing of the number is disabled by permission).
-		if (self::isEmployeeNumberGenerationEnabled() || $permissions['Edit Employee Number'] === 'No' ) {
+		// The employee number can never change once set when auto-generation is on.
+		// (The former per-level "Edit Employee Number" permission has been removed;
+		// editing is now always allowed unless auto-generation locks it.)
+		if (self::isEmployeeNumberGenerationEnabled()) {
 			$obj->employee_id = $savedObject->employee_id;
 		}
 
@@ -349,4 +422,26 @@ class Employee extends BaseModel
         }
         return $obj;
     }
+
+    /**
+     * A team list exists for this model: the adapter opts into `type=sub`
+     * (isSubProfileTable), so BaseService::getData() may scope its rows to the
+     * caller's direct reports. See BaseModel::allowsSubordinateList().
+     */
+    public function allowsSubordinateList()
+    {
+        return true;
+    }
+
+
+    /**
+     * Columns this model's select boxes may request (see
+     * BaseModel::fieldValueFields). Derived from the pickers that actually exist,
+     * so this allows today's usage and nothing more.
+     */
+    public function fieldValueFields()
+    {
+        return array('first_name', 'id', 'last_name');
+    }
+
 }

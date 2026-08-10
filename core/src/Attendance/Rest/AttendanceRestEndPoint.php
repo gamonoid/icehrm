@@ -184,15 +184,18 @@ class AttendanceRestEndPoint extends RestEndPoint
         }
 
         return $this->withEmployeePunchLock($body['employee'], function () use ($user, $body) {
+            // Authorize BEFORE probing punch state: the distinct 400 ("already punched
+            // in") vs 403 told an unauthorized caller whether an arbitrary employee was
+            // currently clocked in — a presence oracle.
+            $permissionResponse = $this->checkBasicPermissions($user, $body['employee']);
+            if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
+                return $permissionResponse;
+            }
+
             $openPunch = $this->getOpenPunch($user, $body['employee'], $body['in_time']);
 
             if ($openPunch->getStatus() === IceResponse::SUCCESS && !empty($openPunch->getData()['attendance'])) {
                 return new IceResponse(IceResponse::ERROR, 'User has already punched in for the day ', 400);
-            }
-
-            $permissionResponse = $this->checkBasicPermissions($user, $body['employee']);
-            if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
-                return $permissionResponse;
             }
 
             // Handle work_from_home flag (accepts boolean or "true"/"false" string)
@@ -237,15 +240,17 @@ class AttendanceRestEndPoint extends RestEndPoint
         }
 
         return $this->withEmployeePunchLock($body['employee'], function () use ($user, $body) {
+            // Authorize before probing punch state (see punchIn) — the "has not punched
+            // in" 400 was otherwise a presence oracle for any employee id.
+            $permissionResponse = $this->checkBasicPermissions($user, $body['employee']);
+            if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
+                return $permissionResponse;
+            }
+
             $attendance = $this->findAttendance($body['employee'], $body['out_time']);
 
             if ($attendance->employee.'' !== $body['employee'].'') {
                 return new IceResponse(IceResponse::ERROR, 'User has not punched in for the day ', 400);
-            }
-
-            $permissionResponse = $this->checkBasicPermissions($user, $body['employee']);
-            if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
-                return $permissionResponse;
             }
 
             $response = $this->savePunch(
@@ -290,6 +295,15 @@ class AttendanceRestEndPoint extends RestEndPoint
 
     public function getOpenPunch($user, $employeeId, $date)
     {
+        // Authorization. Every sibling endpoint gates on the requested employee; this one
+        // did not, so any valid token could read ANY employee's open punch — in_time,
+        // note, in_ip and map_lat/map_lng (home/field GPS), plus an "is this person at
+        // work right now" oracle, enumerable across the company.
+        $permissionResponse = $this->checkBasicPermissions($user, $employeeId);
+        if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
+            return $permissionResponse;
+        }
+
         if ($date === 'today') {
             $date = explode(' ', $this->getServerTime())[0];
         }

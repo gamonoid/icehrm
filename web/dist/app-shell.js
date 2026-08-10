@@ -1,1 +1,12400 @@
-var _0x4369=['area','No\x20calculation\x20details\x20available','paper','setFilterData','cover','async','Valid\x20till','perm','src','ctor','first_name','renewUrl','jwtToken','mine','Restricted\x20Admin','react','tabMyLeaveAll','\x20pending,\x20','wrap','throw','How\x20this\x20period\x20was\x20calculated','useState','requireStatusReason','pointer','service.php','appshell/bootstrap','join','\x20–\x20','update_path','Fragment','4px\x2020px\x2020px','Performance\x20Review','Connect\x20to\x20icehrm.com\x20to\x20unlock\x20the\x20marketplace','number','Pending','iframe-modal','Could\x20not\x20get\x20a\x20login\x20code.\x20Please\x20try\x20again\x20later.','Status\x20History','birthday','Bearer\x20','time','download','Period','Cannot\x20call\x20a\x20class\x20as\x20a\x20function','FireOutlined','native','password','getUser','No\x20matching\x20company\x20structures','green','82vh','last_name','node','Re-submit\x20expense','This\x20immediately\x20invalidates\x20your\x20current\x20token.\x20Any\x20integration\x20using\x20it\x20will\x20stop\x20working\x20until\x20updated.','BulbOutlined','modJsList','warning','CheckCircleOutlined','50%','tabCompanyStructure','lastName','#f3f6f9','history','exec','attachment','getElementById','iceShellOpenDocument','large','Unit','error','concat','Could\x20not\x20approve\x20the\x20selected\x20timesheets','CoffeeOutlined','__nativeResubmitFail','Taken','\x20item','pendingRequests','showFilters','Approve','nativeModules','documentElement','Manage\x20members','On\x20your\x20to-do\x20list',';\x20width:\x2050%;\x20height:\x2022px;\x0a}\x0a.org-tree\x20li::after\x20{\x20right:\x20auto;\x20left:\x2050%;\x20border-left:\x202px\x20solid\x20','deleteConfirm','itemsByArea','Total\x20hours\x20for\x20','Button','\x20USD.\x20Manager\x20access\x20has\x20been\x20temporarily\x20restricted.','code','short','renderMeta','Leave\x20type','expenseDialog','deleteIcon','documentAction','function','New\x20status','End','DeleteOutlined','updateData','exportLabel','UsergroupAddOutlined','Use\x20this\x20token\x20to\x20authenticate\x20REST\x20API\x20requests\x20(as\x20a\x20Bearer\x20token).\x20Keep\x20it\x20secret\x20—\x20anyone\x20with\x20this\x20token\x20can\x20act\x20as\x20you.','indexOf','details','Notes','CLIENT_BASE_URL','#FF99C3','subject','tagFields','undefined','spaModuleGroup','0\x207px','T00:00:00','progressFields','scrollTo','./News','available','0\x2016px','Export\x20Salary\x20Data','some','0\x204px\x2015px\x20rgba(245,\x2034,\x2045,\x200.3)','paidTimeOff','\x20IceHrm.com','Start','matchMedia','\x20records','teamStats','leave-calendar/month/','Today','exportEndpoint','elevated','hideViewButton','importEndpoint','Alert','0\x202px\x201px\x20-1px\x20rgba(0,0,0,0.08),\x200\x201px\x203px\x200\x20rgba(0,0,0,0.12),\x200\x201px\x201px\x200\x20rgba(0,0,0,0.06)','Upgrade\x20to\x20IceHrm\x20Cloud\x20for\x20unlimited\x20employees,\x20priority\x20support,\x20and\x20premium\x20features.','viewReviewPdf','Status','Import','activateEmployee','tabs','group','meta','firstName','EditOutlined','monospace','FundOutlined','1\x201\x20130px','<hr/>','managerBlockedTargetStatuses','You\x20cannot\x20','getOwnPropertyDescriptors','div','files','#161d2b','copyRow','./NativeModuleHost','manageGroupEmployees','color','colorBgContainer','created','createReviewPdf','createPreviousTimesheet','label','donut','Generation\x20failed','initialFilter','date_start','colorBorder','Approval\x20Log','manager_rating','\x20carried-forward\x20expire\x20','setTranslations','tabEmployeeExpense','form','Re-submit','more','This\x20feature\x20is\x20part\x20of\x20IceHrmPro\x20and\x20needs\x20an\x20active\x20subscription\x20to\x20use.','AlertOutlined','All','Details','View\x20Logs','Leave\x20Time','ice-role-switch','viewGlobal','MODULE_NOT_FOUND','Input','./CompanyStructureCards','signup','rgba(255,255,255,0.45)','formInitialized','Document','Sign\x20Up','./LeaveCalendar','Sun','Leaves','__ts_ok_','disableView','hidden','current','PartitionOutlined','rgba(25,118,210,0.10)','./Notifications','Expense\x20Date','/extensions/','sent','timesheet','(prefers-color-scheme:\x20dark)','Switch\x20to\x20dark\x20mode','punchedOutToday','getOwnPropertySymbols','UploadOutlined','rgb(','PlusCircleOutlined','Access\x20IceHrm\x20on\x20the\x20go.\x20Download\x20our\x20mobile\x20app\x20for\x20iOS\x20or\x20Android.','resolve','return','employee_name','Delete\x20','setFilter','Mon','RightOutlined','This\x20installation\x20isn\x27t\x20connected\x20yet.\x20Connect\x20it\x20to\x20install\x20marketplace','\x20taken,\x20','itemMap','Title','categories','Hours\x20today','manage','count','Go\x20to\x20Marketplace','__ts_fail_','Edit\x20hours\x20grid','Progress','extension','FilePdfOutlined','Generate','./EmployeeDashboard','license','CopyOutlined','getHours','dist/common.js','localeCompare','Payee\x20/\x20Merchant','Tue','assign','edit','search','initTable','filter','FieldTimeOutlined','Project','setTemplates','Notifications','InfoCircleOutlined','Export','getTimeEntries','target','dist/vendorOther.js','completed','give','data','ReadOutlined','How\x20is\x20this\x20calculated?','middle','grp-manage','Payee','trim','#f0fbe6','__nativeStatusOk','\x20·\x20','licenseRenewal','#389e0d','#d64545','rgba(255,255,255,0.9)','input','attachments','bootstrap\x20failed:\x20','logout','iceProModules','No\x20approval\x20history','Add\x20New','List','#2e9e50','MUI_SHADOW_HOVER','currencies','Leave\x20Rule','generateFromIndustry','right','Duration','appendChild','ArrowUpOutlined','\x20-\x2040px','Entry\x20deleted','Column','#ffffff','tabSubEmployeeTimeSheetAll','minutes','background','Clocked\x20out','Leave','Modal','\x20exceed\x2024.','rgba(255,255,255,0.72)','colorBgLayout','Dismiss','sub','cardClickView','#108ee9','origFilter','-year\x20anniversary','No\x20leave\x20entitlement\x20for\x20the\x20current\x20period','\x20in\x20use','cardClickAction','#d81b60','approve','17px','modules=time_sheets','action','extensions\x20and\x20receive\x20product\x20updates.','theme','getSourceMapping','update','BankOutlined','travel_to','url','save','0\x204px\x2010px','.csv','extra','containerOverrides','Could\x20not\x20delete\x20this\x20structure.\x20It\x20may\x20be\x20in\x20use.','\x20days','toLocaleString','tableContainer','Spin','Popover','statusOptionsFor','find','Employment\x20type','render','get','charAt','user_level','useRef','hoursToday','#d46b08','Form','punchedIn','Download\x20Mobile\x20App','WarningOutlined','\x20cumulative','showProjectDetails','ellipsis','./NativeExtensionView','enumerable','StepBackwardOutlined','20px\x2024px','tip','itemsLabel','createPdf','Switch\x20back','in\x201\x20day','0\x202px\x208px\x20rgba(0,0,0,0.1)','FormOutlined','counts','availableLeaves','https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg','getShowAddNew','CompanyStructureFilterForm','carriedForwardAvailable','expiry_date','kind','backup','#531dab','getLeaveDaysReadonly','top','\x20—\x20these\x20days\x20have\x20approved\x20leave:','My\x20pending\x20leave','Timesheet\x20Status','-0.02em','timezone','Top\x20level','Timesheet\x20submitted','generateEndpoint','POST','10px\x2012px','period','min','icon','app-shell-root','Sat','LockOutlined','editor|user','0\x204px\x2015px\x20rgba(114,\x2046,\x20209,\x200.3)','#7b1fa2','CloseCircleOutlined','restApiBase','getLeaveDaysCountForTimeSheets','Cannot\x20find\x20module\x20\x27','headcount','country','0\x203px\x205px\x20-1px\x20rgba(0,0,0,0.12),\x200\x205px\x208px\x200\x20rgba(0,0,0,0.08),\x200\x201px\x2014px\x200\x20rgba(0,0,0,0.06)','baseline','Delete\x20structure','document_link','Segmented','resetApiTokenFailCallback','Search\x20modules','getDay','Could\x20not\x20load\x20this\x20module','#1677ff','currency','payee','dateh','ExportOutlined','Back','context','linear-gradient(135deg,\x20#f5222d\x200%,\x20#cf1322\x20100%)','It\x20expires\x20on\x20','setting_order','Typography','My\x20Timesheet','SUCCESS','Could\x20not\x20delete\x20entry','#0958d9','file','Summary','colorPrimary','replaceState','tobeAccrued','defineProperties','SearchOutlined','Pie','reviewBlock','Cancel','showAddNew','colorBorderSecondary','0\x208px','actions','taken','priority','hash','constructor','now','AuditOutlined','apply','tabEmployeeLeave','inline-block','Divider','toLocaleDateString','match','data-shell-embed','Search\x20structures…','\x0a\x20\x20header.header\x20{\x20display:\x20none\x20!important;\x20}\x0a\x20\x20aside.left-side,\x20.sidebar-offcanvas,\x20.skeletonSideMenu\x20{\x20display:\x20none\x20!important;\x20}\x0a\x20\x20.right-side\x20{\x20margin-left:\x200\x20!important;\x20left:\x200\x20!important;\x20}\x0a\x20\x20.wrapper,\x20body,\x20html\x20{\x20padding-top:\x200\x20!important;\x20margin-top:\x200\x20!important;\x20background:\x20#fff\x20!important;\x20}\x0a\x20\x20body\x20{\x20min-width:\x200\x20!important;\x20}\x0a\x20\x20#DemoModeNotice,\x20#IceHrmConnectionNotice\x20{\x20display:\x20none\x20!important;\x20}\x0a','info','areaOrder','1px\x20solid\x20rgba(255,255,255,0.10)','#f7f9fb','isArray','Col','warn','\x20Pending\x20leave\x20approvals','includes','loading','Direct\x20Reports\x20-\x20Time\x20Sheets','\x20already\x20existed','Popconfirm','openIn','Viewing\x20as\x20','paymentMethods','ReloadOutlined','greetingName','view','All\x20employees','daysLeft','Your\x20IceHrmPro\x20license\x20expires\x20','fetchEntitlement','expenses','emptyText','./theme','You\x27re\x20all\x20caught\x20up\x20🎉','1px\x20solid\x20','Direct\x20Reports','Renew\x20now\x20to\x20keep\x20access\x20to\x20your\x20premium\x20features\x20without\x20interruption.','Edit','bootstrap','filtersAlreadySet','After\x20accrual','FileImageOutlined','showViewButton','isFinite','project','pendingLeaves','Header','Re-submit\x20this\x20rejected\x20expense\x20for\x20approval?\x20Its\x20status\x20will\x20be\x20set\x20back\x20to\x20Pending.','getCustomTopButtons','\x20—\x20','add',';\x20text-align:\x20left;\x20transition:\x20box-shadow\x20.15s,\x20transform\x20.15s;\x0a}\x0a.org-node:hover\x20{\x20transform:\x20translateY(-2px);\x20box-shadow:\x200\x206px\x2016px\x20rgba(0,0,0,0.12);\x20}\x0a.org-node\x20.ic\x20{\x0a\x20\x20width:\x2038px;\x20height:\x2038px;\x20border-radius:\x2010px;\x20flex:\x200\x200\x20auto;\x0a\x20\x20display:\x20flex;\x20align-items:\x20center;\x20justify-content:\x20center;\x20font-size:\x2018px;\x0a}\x0a.org-node\x20.ttl\x20{\x20font-weight:\x20600;\x20font-size:\x2014px;\x20line-height:\x201.2;\x20color:\x20','ProfileOutlined','mountFn','show','employee','head','carryForward','colorText','employee_id','no\x20adapter','push','createNextWeekTimesheet','nowrap','Approve\x20Completed\x20Status','tabSubLeaveAll','MenuOutlined','showPageSizeChanger','1px\x20solid\x20rgba(255,255,255,0.08)','object','Available','deps','unpaidInvoices','exportFilePrefix','Text','Timesheet\x20saved','Category','ControlOutlined','same-origin','bundle','Allocated','Add\x20a\x20note\x20explaining\x20why\x20this\x20timesheet\x20is\x20rejected…','Switch\x20to\x20light\x20mode','Paragraph','attendance','hideCopyButton','home','View\x20PDF','Item','colorMode','iceShellSwitchModuleTab','MailOutlined','hideElement','deleteExistingLabel','showDetailsModal','0\x201px\x204px\x20rgba(0,0,0,0.25)','contentWindow','admin::dashboard','#1a212b','Receipts','Could\x20not\x20load\x20the\x20org\x20chart','linear-gradient(135deg,\x20#52c41a\x200%,\x20#389e0d\x20100%)','Failed\x20to\x20load\x20','span','\x20→\x20','Are\x20you\x20sure\x20you\x20want\x20to\x20cancel\x20this\x20leave?\x20This\x20cannot\x20be\x20undone.','filled','4px\x200','useBreakpoint','Total','dialogStatusChange','All\x20My\x20Timesheets','Delete','value','modules','MobileOutlined','./AppShell','Select\x20an\x20industry\x20to\x20add\x20a\x20set\x20of\x20common\x20','EyeOutlined','iframe','Expense','2px\x20solid\x20rgba(255,255,255,0.3)','document','stringify','Descriptions','/web/','cancelRequest','colorFillQuaternary','hiringStage','0\x20auto','element','SendOutlined','downloadAttachment','Running\x20low','years','map','small','space-between','body','Checkbox','Could\x20not\x20load\x20company\x20structure','Menu','destroy','\x20—\x20how\x20this\x20is\x20calculated','Search','data-color-mode','Employee','\x20available','/detail','token','none','Submitted','Available\x20this\x20period','rec','8px\x200','extraActions','readOnly','.\x20Existing\x20entries\x20are\x20skipped.','apiClient','Drawer','Select','href','length','leave','6px','Your\x20IceHrmPro\x20license\x20has\x20expired','Carried\x20to\x20next','4px\x2010px','Donut','Could\x20not\x20reset\x20the\x20API\x20token.\x20Please\x20try\x20again.','open','Reports','customAction','Download','FilterOutlined','hasOwnProperty','Base\x20URL\x20for\x20all\x20REST\x20API\x20requests.','deleted\x20','PlusOutlined','script','colorFillSecondary','billing','light','Avg\x20/\x20working\x20day','rgba(255,255,255,0.12)','ScheduleOutlined','call','labelColor','currency_name','hashchange','Welcome\x20to\x20the\x20new\x20IceHrm','appshell/org-structure','scripts','Service\x20Restricted\x20-\x20Payment\x20Required','Note\x20(optional)','images/logo-sq.png','None\x20left\x20this\x20period','\x20tasks','In\x20your\x20team','org-wrap','gradient','FileOutlined','&n=','year','My\x20Teams','BellOutlined','Download\x20Document','Your\x20account\x20has\x20an\x20overdue\x20balance\x20of\x20','KeyOutlined','resetApiTokenSuccessCallback','\x20member','Grid','TrophyOutlined','16px\x200\x2012px','Next\x20timesheet\x20created','leavedays','IdcardOutlined','textContent','afterAccrue','calendar','carriedToNext','members','image','Scheduled','MUI_SHADOW','rgba(255,255,255,0.2)','colorPrimaryBorder','\x20has\x20expired','Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20','No\x20recent\x20hires','SIDEBAR_BG','Reset\x20API\x20token','rgba(0,\x200,\x200,\x200.12)','getTime','changeLeaveStatus','leave_type','#7c879a','Arguments','#F6BD16','approved','startsWith','DownloadOutlined','contentDocument','Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20“','kept_assigned','username','allowDeleteExisting','No\x20company\x20structure\x20defined\x20yet','rgba(0,\x200,\x200,\x200.87)','status_to','\x20/\x207','json','Timesheet\x20','deleted','clientBaseUrl','TagsOutlined','Dropdown','totalEmployees','appshell/employee-dashboard','cleanDelete','Update','Import\x20failed','Reason','LoginOutlined','100','100%','status','notes','Actions','symbol','EnvironmentOutlined','react-dom','Could\x20not\x20change\x20status','salary-backup','#5B8FF9','Empty','pendingList','rgba(255,255,255,0.08)','reduce','AppstoreOutlined','Set','createObjectURL','Download\x20on\x20the\x20App\x20Store','UserOutlined','TeamOutlined','then','rgba(255,255,255,0.25)','#e6f0ff','Half\x20Day','#346CB0','subColor','ClockCircleOutlined','end','Space','\x20day','max-content','00:00','rows','submit','No\x20direct\x20reports','Set\x20status\x20to','rgba(25,118,210,0.06)','onSelect','dismiss-news','useMemo','Allocated\x20for\x20period','onload','InputNumber','HistoryOutlined','defineProperty','Cancellation\x20requested','extension::marketplace|admin','entity','Pending\x20Approvals','groupLabel','Avatar','instanceId','renderForm','review_pdf','Invalid\x20attempt\x20to\x20spread\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.','cloneElement','Tabs','This\x20is\x20the\x20new\x20React\x20+\x20Ant\x20Design\x20interface.\x20Pick\x20a\x20module\x20from\x20the\x20menu\x20to\x20get\x20started.\x20The\x20sidebar\x20reflects\x20your\x20permissions\x20and\x20collapses\x20into\x20a\x20drawer\x20on\x20mobile.','dist/third-party.js','resubmitAction','\x20expired\x20on\x20','antd','Transaction\x20No','IceHrm','field','__nativeLogsFail','useCallback','ProjectOutlined','divider','Nothing\x20coming\x20up','buildTheme','Renew\x20IceHrm\x20Pro','setAdminProfile','hideActions','charCodeAt','company','demo-mode|admin','message','location','method','DollarOutlined','demoPrompt','modJs','user','Afternoon','toISOString','Could\x20not\x20save','payroll_config/export/salary','Expense\x20saved','BuildOutlined','onToggleColorMode','Request\x20Cancellation','tabMobileApp','orange','setBaseUrl','service.php?a=clearNotifications','Close','viewPdf','img','logs','SolutionOutlined','tabular-nums','Team\x20on\x20leave','cancelSuccessCallBack','modules::dashboard','linear-gradient(135deg,\x20#722ed1\x200%,\x20#531dab\x20100%)','toLocaleTimeString','Reset\x20Token','Payment\x20Method','Delete\x20this\x20entry?','pastPeriodCount','disableCardClick','You\x20have\x20approved\x20leave\x20this\x20week','visible','auto','Currency',';\x20width:\x200;\x20height:\x2022px;\x0a}\x0a.org-node\x20{\x0a\x20\x20display:\x20inline-flex;\x20align-items:\x20center;\x20gap:\x2012px;\x0a\x20\x20padding:\x2012px\x2016px;\x20min-width:\x20180px;\x20max-width:\x20240px;\x0a\x20\x20background:\x20','test',';\x20border-radius:\x200\x206px\x200\x200;\x20}\x0a.org-tree\x20li:first-child::after\x20{\x20border-radius:\x206px\x200\x200\x200;\x20}\x0a.org-tree\x20ul\x20ul::before\x20{\x0a\x20\x20content:\x20\x27\x27;\x20position:\x20absolute;\x20top:\x200;\x20left:\x2050%;\x0a\x20\x20border-left:\x202px\x20solid\x20','Search…','Departments','ApiOutlined','showEdit','getOwnPropertyDescriptor','ids','stopPropagation','documentUrl','tabQtsheet','dark','1px\x208px','transparent','#d32f2f','parse','./ModuleSearch','parentTitle','carriedIn','tabEmployeeTimeSheetAll','max','has','dayNum','No\x20projects\x20assigned','onerror','\x20Recent\x20hires','Open\x20Job\x20Page','in\x20','bulkDelete','_blank','Data\x20restored\x20—\x20refreshing…','email','calc(100vh\x20-\x2064px','action\x20failed','tagIcon','Object','matches','configurable','Result','After\x20join\x20date','Rejected','statusAction','pre-wrap','initFn','BulbFilled','BASE_URL','set','from','__nativeStatusFail','Export\x20failed','Collapse','loginCode','managerLockedStatuses','Delete\x20selected','half','dashboard','titleField','pto','button','\x20entitled','Timeline','Cancel\x20Leave','Of\x20','\x20selected','setClientUrl','Could\x20not\x20load\x20industries','Cell','accrualApplied','payment_method','Copy\x20Job\x20Link','#fbc02d','Here’s\x20what’s\x20happening\x20across\x20your\x20organisation\x20today.','BarChartOutlined','Apply','Headcount\x20by\x20department','tab','2-digit','month','key','top-center','link','cb=','EmployeeTimeEntry','review','Reports\x20to\x20','headcountTrend','Activate','invitation_status_text','children','REST\x20API\x20access\x20is\x20not\x20enabled\x20for\x20your\x20account.','totalForPeriod','upgradeAd','Next\x20Week','#1565c0','Save','noopener\x20noreferrer','Upcoming\x20celebrations','cardConfig','close','Direct\x20reports','Reason\x20for\x20this\x20status\x20change…','textSecondary','getAddNewLabel','Could\x20not\x20load\x20timesheet\x20entries','mon','\x20Birthday','createElement','Adjustment\x20','View','hasCustomTopButtons','3px\x2012px','@antv/g2plot','templates','rgba(255,255,255,0.92)','raw','Card','Restricted\x20Manager','leaveType','statusFilter','expense/','12px\x2016px','keys','MUI_DARK','unmount','initSourceMappings','Signed\x20in\x20as\x20','del','\x20Celebrations','finish','component','Failed\x20to\x20load\x20the\x20app\x20shell','.\x20Renew\x20it\x20to\x20keep\x20using\x20this\x20feature.','Thu','allocated','setCustomTemplates','status_from','Could\x20not\x20load\x20the\x20timesheet\x20grid','__shellColorMode','forEach','every','getLogs','colorTextQuaternary','terminateEmployee','pending','./NativeDocumentModal','4px\x2016px','setFilterExternal','prev','Leave\x20Details','Toggle\x20colour\x20mode','employees','Invalid\x20attempt\x20to\x20destructure\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.','QTDays','You\x20have\x20an\x20unpaid\x20invoice\x20of\x20','isNaN','iceShell','config','Here’s\x20your\x20day\x20at\x20a\x20glance.','View\x20all','no\x20time\x20allowed,\x20you\x20logged\x20','GiftOutlined','joinedDateAdjusted','split','admin=','employmentTypeDist','dayName','linear-gradient(135deg,\x20#fa8c16\x200%,\x20#d46b08\x20100%)','hideCancelButton','directReports','Headcount\x20growth','No\x20project','rgba(255,\x20255,\x20255,\x200.92)','mountEditorDocument','ShopOutlined','SaveOutlined','tabKey','Half\x20Day\x20·\x20','Wed','Could\x20not\x20','activate','Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20this\x20item?','colorError','setFieldTemplates','blue','title','https://apps.apple.com/gb/app/icehrm/id1624346692','dates','8px\x204px','getTableColumns','isWeekend','Mark\x20all\x20read','Employees','#222b36','isToday','org-node','60vh','red','onClick','No\x20status\x20changes\x20yet.','cancelMyLeave','NativeAdapterView','revokeObjectURL','left','clientUrl','setupApiClient','12px\x2016px\x208px','mark','round','doc','secondary','inline','Please\x20select\x20an\x20industry.','shell-area','Unlock\x20the\x20Full\x20Potential\x20of\x20IceHrm','@ant-design/icons','#9270CA','#ed6c02','parentNode','signUp','isReport','__nativeResubmitOk','querySelector','92%','.json','0.04em','initFieldMasterData','rgba(255,255,255,0.06)','Manage','defaultAlgorithm','afterJoinedDate','Manage\x20Sample\x20Data','strong','CheckSquareOutlined','Personal','leave_time','rgba(255,255,255,0.5)','28px','MUI','How\x20leaves\x20carried\x20across\x20','Current\x20period','16px\x2024px\x200','center','Change\x20Status','dismiss_period','See\x20Plans','numeric','resetFilters','expense_date','0\x204px\x2015px\x20rgba(250,\x20140,\x2022,\x200.3)','skipped','TextArea','total','RocketOutlined','of\x20','checked','Admin','getFullYear','./LeaveCalcChart','preventDefault','Notification','masterDataReader','catch','Could\x20not\x20load\x20dashboard','rgba(255,255,255,0.42)','mount','inline-flex','resubmitWhen','You\x20have','colorTextTertiary','finally',';\x20border:\x201px\x20solid\x20','sticky','total_time','nodes','calculation','Awaiting\x20approval','Carry-forward\x20propagation','role','dataPipe','Good\x20evening','getTimeSheetLogs','DownOutlined','first','86vh','https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg','Please\x20complete\x20payment\x20and\x20re-login\x20to\x20restore\x20full\x20access.','addEventListener','txn','left\x20in\x20your\x20free\x20trial.','Initiate\x20resignation','flex','isValidElement','View\x20not\x20available','ConfigProvider','date','success','__iceShellStartTab','#1976d2','getFilterString','abs','modulePathName','Import\x20failed:\x20invalid\x20file\x20or\x20server\x20error','#fff','marketplace|admin','isInteger','category','hideEditButton','kept\x20','isImage','profile','Search\x20for\x20a\x20module…','Full\x20Day','props','resign','isManager','approvedLeaves','carriedForwardLeaveExpireDate','./LicenseBlocked','iterator','\x20·\x20joined\x20','#2e7d32','#E8684A','repeat(auto-fill,\x20minmax(340px,\x201fr))','avatarField','useToken','Fri','&name=','holidays','start','accent','dataIndex','GlobalOutlined','spaModuleName','Structure\x20deleted','Pagination','toUpperCase','getTableChildComponents','rgba(0,\x200,\x200,\x200.6)','#607d8b','application/x-www-form-urlencoded','importLabel','submitFeedback','useEffect','changeStatus','sort','Get\x20it\x20on\x20Google\x20Play','1px\x20dashed\x20','days','string','logoUrl','[app-shell]\x20boot\x20failed','0\x201px\x204px\x20rgba(0,0,0,0.06)','parent','removeChild','appshell/module-context?group=','resubmit','setContainers','baseUrl','height','mod_order','loginCodeSuccessCallback','Meta','Manager','Create\x20the\x20previous\x20week\x27s\x20timesheet','getActionModuleRef','click','uppercase','Could\x20not\x20delete\x20this\x20structure','type','Good\x20morning','./NativeCardList','block','done','totalLeaves','is_admin','100vh','Only\x20entries\x20not\x20currently\x20in\x20use\x20are\x20removed;\x20those\x20in\x20use\x20are\x20kept.','expenses|admin','onOpenDocument','getDate','Bar','Paid','application/json','Area','editWhen','colorFillTertiary','category_name','RedoOutlined','tabEmployeeTimeEntry','API\x20Access\x20Token','colorPrimaryBg','hideMeta','resetApiToken','updateAllMasterData','entries','./LicenseRenewalBanner','FileTextOutlined','MUI_THEME','Select\x20an\x20industry','PRESENTED_IMAGE_SIMPLE','ApartmentOutlined','changeTimeSheetStatus','Switch\x20area','replace','null','deleteWhen','TagOutlined','20px\x2022px\x2018px','colorTextSecondary','courseId','confirm','nav','Row','lines','Copy','removeEventListener','deleteTip','toFixed','toString','Tag','order','permission','Welcome\x20to\x20IceHrm!\x20Want\x20to\x20see\x20how\x20it\x20works?','column','./TimeSheets','#cf1322','exports','#546e7a','viewElement','Content','getFilters','updateAllData','amount','headcountByDept','slice','\x20-\x2084px','grid','showDelete','copyJobLink','20px\x200\x208px','🎉\x20','Mark\x20Completed','switchedProfile','note','text','celebrations','app-shell-config','10px\x2016px','recentHires','is_expired','getStatusOptionsData','danger','dateStr','Approved','ClusterOutlined','stop','SettingOutlined','shadow','No\x20timesheets','shell-color-mode','Expense\x20re-submitted','Time\x20logged\x20on\x20leave\x20days','Gender\x20diversity','flex-end','8px\x2010px','Layout','absolute','#4c9aff26','Give\x20Feedback','delete','10px\x2024px','iconField','hasAccess','UserDeleteOutlined','gold','Your\x20IceHrmPro\x20license','setItem','Days\x20worked','date_end','getLeaveDaysForTimeSheet','payroll_config/import/salary','tabSubLeaveCancel','unpaidTotal','rgba(255,255,255,0.85)','version','__nativeLogsOk','day','MonitorOutlined','__esModule','cancel','.switched-name','LogoutOutlined','Could\x20not\x20update\x20status','default','Show\x20status:','Submit\x20Feedback','primary','transaction_no','tableInitialized','teams','#0288d1','ContactsOutlined','Reject','No\x20records','validTill','switch','ttl','Entries','Could\x20not\x20re-submit','CalendarOutlined','Add\x20a\x20note\x20for\x20this\x20status\x20change…','Deleted\x20','Tooltip','step','break-all','#5AD8A6','name','Add\x20Structure','0\x200\x20auto','Image','section','reload','?g=','scroll','HomeOutlined','appshell/news','trainingSession','ArrowLeftOutlined','colorSplit','Table','Reset','Create\x20the\x20next\x20week\x27s\x20timesheet','#6DC8EC','admin','./LeaveCalcParser','AREA','button_text','editor/user/dist/editor.js','items','leaves','today','setAttribute','profile-switched','onNavigate','reports','carriedForward','./ApiAccess','noreferrer','shellConfig','Pay\x20Now','style','#f4f6f8','addLabel','isAdmin','genderDist','Badge','\x201:#346CB0','prototype','areaOfKey','next','toLowerCase','View\x20employees','Map'];(function(_0x20694a,_0x4369db){var _0x4ba454=function(_0x4681a0){while(--_0x4681a0){_0x20694a['push'](_0x20694a['shift']());}};_0x4ba454(++_0x4369db);}(_0x4369,0x6d));var _0x4ba4=function(_0x20694a,_0x4369db){_0x20694a=_0x20694a-0x0;var _0x4ba454=_0x4369[_0x20694a];return _0x4ba454;};var _0x557405=_0x4ba4;!function e(_0x4681a0,_0x46ffc1,_0x4a5e5d){var _0x1a3969=_0x4ba4;function _0xd6f8e5(_0x2d76f8,_0x27a47e){var _0xc0e98=_0x4ba4;if(!_0x46ffc1[_0x2d76f8]){if(!_0x4681a0[_0x2d76f8]){var _0xe5402b='function'==typeof require&&require;if(!_0x27a47e&&_0xe5402b)return _0xe5402b(_0x2d76f8,!0x0);if(_0x4e0e87)return _0x4e0e87(_0x2d76f8,!0x0);var _0x58602a=new Error(_0xc0e98('0x125')+_0x2d76f8+'\x27');throw _0x58602a[_0xc0e98('0x561')]=_0xc0e98('0x4f'),_0x58602a;}var _0x408ec5=_0x46ffc1[_0x2d76f8]={'exports':{}};_0x4681a0[_0x2d76f8][0x0][_0xc0e98('0x210')](_0x408ec5[_0xc0e98('0x47e')],function(_0xbd6733){return _0xd6f8e5(_0x4681a0[_0x2d76f8][0x1][_0xbd6733]||_0xbd6733);},_0x408ec5,_0x408ec5['exports'],e,_0x4681a0,_0x46ffc1,_0x4a5e5d);}return _0x46ffc1[_0x2d76f8]['exports'];}for(var _0x4e0e87=_0x1a3969('0x568')==typeof require&&require,_0x80d902=0x0;_0x80d902<_0x4a5e5d['length'];_0x80d902++)_0xd6f8e5(_0x4a5e5d[_0x80d902]);return _0xd6f8e5;}({0x1:[function(_0x6aca1e,_0x454470,_0x4a8100){var _0xf953d7=_0x4ba4;'use strict';Object[_0xf953d7('0x28b')](_0x4a8100,'__esModule',{'value':!0x0}),_0x4a8100['default']=function(){var _0x44d0fd=_0xf953d7,_0x39d91b=_0x5e8ad9[_0x44d0fd('0xd6')][_0x44d0fd('0x418')]()[_0x44d0fd('0x1eb')],_0x46a266=(window[_0x44d0fd('0x53f')]||{})[_0x44d0fd('0x2bb')]||null,_0x5a6af2=!!_0x46a266&&('1'===_0x46a266['apiEnabled']||0x1===_0x46a266['apiEnabled']),_0x547f3c=_0x46a266?_0x46a266['apiBaseUrl']:null,_0x2cfa12=_0x145065((0x0,_0x2b444c['useState'])(_0x46a266?_0x46a266[_0x44d0fd('0x1eb')]:null),0x2),_0x2841dc=_0x2cfa12[0x0],_0x1054a6=_0x2cfa12[0x1],_0x90ac53=_0x145065((0x0,_0x2b444c[_0x44d0fd('0x51c')])(!0x1),0x2),_0x2c891b=_0x90ac53[0x0],_0x3c6587=_0x90ac53[0x1],_0x17a02f={'borderRadius':0xc,'boxShadow':_0xb900c5[_0x44d0fd('0x236')],'marginBottom':0x10};if(!_0x5a6af2||!_0x2841dc)return _0x2b444c['default'][_0x44d0fd('0x33e')](_0x44d0fd('0x2e'),{'style':{'width':_0x44d0fd('0x25f')}},_0x2b444c[_0x44d0fd('0x4c1')]['createElement'](_0x5e8ad9[_0x44d0fd('0x347')],{'style':_0x17a02f,'title':_0x2b444c[_0x44d0fd('0x4c1')]['createElement'](_0x5e8ad9[_0x44d0fd('0x27b')],null,_0x2b444c['default'][_0x44d0fd('0x33e')](_0x4f59b1[_0x44d0fd('0x2d8')],null),'API\x20Access')},_0x2b444c[_0x44d0fd('0x4c1')][_0x44d0fd('0x33e')](_0x5e8ad9[_0x44d0fd('0x269')],{'image':_0x5e8ad9['Empty'][_0x44d0fd('0x463')],'description':_0x44d0fd('0x32d')})));return _0x2b444c[_0x44d0fd('0x4c1')][_0x44d0fd('0x33e')]('div',{'style':{'width':_0x44d0fd('0x25f')}},_0x547f3c?_0x2b444c['default'][_0x44d0fd('0x33e')](_0x5e8ad9['Card'],{'style':_0x17a02f,'title':_0x2b444c[_0x44d0fd('0x4c1')][_0x44d0fd('0x33e')](_0x5e8ad9[_0x44d0fd('0x27b')],null,_0x2b444c['default']['createElement'](_0x4f59b1[_0x44d0fd('0x2d8')],null),'API\x20Base\x20URL')},_0x2b444c['default'][_0x44d0fd('0x33e')](_0x1b9ab5,{'type':_0x44d0fd('0x3a5')},_0x44d0fd('0x206')),_0x2b444c[_0x44d0fd('0x4c1')]['createElement'](_0x1b9ab5,{'copyable':{'text':_0x547f3c},'style':{'wordBreak':_0x44d0fd('0x4d6'),'fontFamily':_0x44d0fd('0x27'),'fontSize':12.5,'background':_0x39d91b[_0x44d0fd('0x455')],'padding':0xc,'borderRadius':0x8,'marginBottom':0x0}},_0x547f3c)):null,_0x2b444c[_0x44d0fd('0x4c1')][_0x44d0fd('0x33e')](_0x5e8ad9[_0x44d0fd('0x347')],{'style':_0x17a02f,'title':_0x2b444c['default']['createElement'](_0x5e8ad9[_0x44d0fd('0x27b')],null,_0x2b444c['default']['createElement'](_0x4f59b1['ApiOutlined'],null),_0x44d0fd('0x459')),'extra':_0x2b444c[_0x44d0fd('0x4c1')][_0x44d0fd('0x33e')](_0x5e8ad9[_0x44d0fd('0x169')],{'title':_0x44d0fd('0x23d'),'description':_0x44d0fd('0x53d'),'okText':_0x44d0fd('0x4e6'),'cancelText':_0x44d0fd('0x149'),'okButtonProps':{'danger':!0x0},'onConfirm':function(){var _0x11707a=_0x44d0fd;if(_0x46a266){_0x3c6587(!0x0),_0x46a266[_0x11707a('0x227')]=function(_0x2a38e7){var _0x1661ad=_0x11707a;_0x3c6587(!0x1);var _0x2714ba=Array[_0x1661ad('0x161')](_0x2a38e7)?_0x2a38e7[0x0]:_0x2a38e7,_0xbe3cd7=_0x2714ba&&_0x1661ad('0x19b')===_0x5352f1(_0x2714ba)?_0x2714ba[_0x1661ad('0x513')]:null;_0xbe3cd7?(_0x46a266[_0x1661ad('0x1eb')]=_0xbe3cd7,_0x1054a6(_0xbe3cd7),_0x5e8ad9[_0x1661ad('0x2ac')]['success']('API\x20token\x20reset.\x20The\x20previous\x20token\x20no\x20longer\x20works.',0x5)):_0x5e8ad9[_0x1661ad('0x2ac')][_0x1661ad('0x54d')](_0x1661ad('0x1ff'),0x5);},_0x46a266[_0x11707a('0x12d')]=function(){var _0x1c77e6=_0x11707a;_0x3c6587(!0x1),_0x5e8ad9[_0x1c77e6('0x2ac')][_0x1c77e6('0x54d')]('Could\x20not\x20reset\x20the\x20API\x20token.\x20Please\x20try\x20again.',0x5);};try{_0x46a266[_0x11707a('0x45c')]();}catch(_0x23ad32){_0x3c6587(!0x1);}}}},_0x2b444c[_0x44d0fd('0x4c1')][_0x44d0fd('0x33e')](_0x5e8ad9[_0x44d0fd('0x55f')],{'danger':!0x0,'icon':_0x2b444c[_0x44d0fd('0x4c1')][_0x44d0fd('0x33e')](_0x4f59b1[_0x44d0fd('0x16d')],null),'loading':_0x2c891b},_0x44d0fd('0x2ca')))},_0x2b444c[_0x44d0fd('0x4c1')]['createElement'](_0x1b9ab5,{'type':_0x44d0fd('0x3a5')},_0x44d0fd('0x56f')),_0x2b444c[_0x44d0fd('0x4c1')][_0x44d0fd('0x33e')](_0x1b9ab5,{'copyable':{'text':_0x2841dc},'style':{'wordBreak':'break-all','fontFamily':_0x44d0fd('0x27'),'fontSize':12.5,'background':_0x39d91b[_0x44d0fd('0x455')],'padding':0xc,'borderRadius':0x8,'marginBottom':0x0}},_0x2841dc)));};var _0x2b444c=function(_0x1ee530){var _0x18855d=_0xf953d7;if(_0x1ee530&&_0x1ee530[_0x18855d('0x4bc')])return _0x1ee530;if(null===_0x1ee530||'object'!==_0x5352f1(_0x1ee530)&&'function'!=typeof _0x1ee530)return{'default':_0x1ee530};var _0x2752ba=_0x24149b();if(_0x2752ba&&_0x2752ba[_0x18855d('0x2e9')](_0x1ee530))return _0x2752ba['get'](_0x1ee530);var _0x1954bb={},_0x1704eb=Object['defineProperty']&&Object[_0x18855d('0x2da')];for(var _0x18af11 in _0x1ee530)if(Object[_0x18855d('0x501')][_0x18855d('0x205')][_0x18855d('0x210')](_0x1ee530,_0x18af11)){var _0x2bf8db=_0x1704eb?Object[_0x18855d('0x2da')](_0x1ee530,_0x18af11):null;_0x2bf8db&&(_0x2bf8db[_0x18855d('0xeb')]||_0x2bf8db['set'])?Object[_0x18855d('0x28b')](_0x1954bb,_0x18af11,_0x2bf8db):_0x1954bb[_0x18af11]=_0x1ee530[_0x18af11];}return _0x1954bb[_0x18855d('0x4c1')]=_0x1ee530,_0x2752ba&&_0x2752ba[_0x18855d('0x302')](_0x1ee530,_0x1954bb),_0x1954bb;}(_0x6aca1e('react')),_0x5e8ad9=_0x6aca1e(_0xf953d7('0x29c')),_0x4f59b1=_0x6aca1e(_0xf953d7('0x3aa')),_0xb900c5=_0x6aca1e('./theme');function _0x24149b(){var _0x139313=_0xf953d7;if(_0x139313('0x568')!=typeof WeakMap)return null;var _0x5a287d=new WeakMap();return _0x24149b=function(){return _0x5a287d;},_0x5a287d;}function _0x5352f1(_0x5cb1fd){var _0x2b4bc6=_0xf953d7;return(_0x5352f1=_0x2b4bc6('0x568')==typeof Symbol&&'symbol'==typeof Symbol[_0x2b4bc6('0x412')]?function(_0x175f6e){return typeof _0x175f6e;}:function(_0x59a8fb){var _0x84cb0f=_0x2b4bc6;return _0x59a8fb&&_0x84cb0f('0x568')==typeof Symbol&&_0x59a8fb[_0x84cb0f('0x151')]===Symbol&&_0x59a8fb!==Symbol['prototype']?_0x84cb0f('0x263'):typeof _0x59a8fb;})(_0x5cb1fd);}function _0x145065(_0x5c6478,_0x3882b0){return function(_0x530cd3){var _0x1a4620=_0x4ba4;if(Array[_0x1a4620('0x161')](_0x530cd3))return _0x530cd3;}(_0x5c6478)||function(_0x45697c,_0x3d110e){var _0xf812a9=_0x4ba4;if('undefined'==typeof Symbol||!(Symbol[_0xf812a9('0x412')]in Object(_0x45697c)))return;var _0x335cd1=[],_0x36ed1c=!0x0,_0x11158f=!0x1,_0x1e94b1=void 0x0;try{for(var _0x277eef,_0x2bf589=_0x45697c[Symbol[_0xf812a9('0x412')]]();!(_0x36ed1c=(_0x277eef=_0x2bf589[_0xf812a9('0x503')]())['done'])&&(_0x335cd1[_0xf812a9('0x193')](_0x277eef['value']),!_0x3d110e||_0x335cd1[_0xf812a9('0x1f8')]!==_0x3d110e);_0x36ed1c=!0x0);}catch(_0x23d5e1){_0x11158f=!0x0,_0x1e94b1=_0x23d5e1;}finally{try{_0x36ed1c||null==_0x2bf589[_0xf812a9('0x6e')]||_0x2bf589[_0xf812a9('0x6e')]();}finally{if(_0x11158f)throw _0x1e94b1;}}return _0x335cd1;}(_0x5c6478,_0x3882b0)||function(_0x30e501,_0x92f446){var _0x1cfc89=_0x4ba4;if(!_0x30e501)return;if('string'==typeof _0x30e501)return _0x2caa06(_0x30e501,_0x92f446);var _0x3a7489=Object[_0x1cfc89('0x501')]['toString'][_0x1cfc89('0x210')](_0x30e501)[_0x1cfc89('0x486')](0x8,-0x1);'Object'===_0x3a7489&&_0x30e501['constructor']&&(_0x3a7489=_0x30e501[_0x1cfc89('0x151')][_0x1cfc89('0x4d8')]);if(_0x1cfc89('0x506')===_0x3a7489||_0x1cfc89('0x26e')===_0x3a7489)return Array[_0x1cfc89('0x303')](_0x3a7489);if(_0x1cfc89('0x243')===_0x3a7489||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x1cfc89('0x2d4')](_0x3a7489))return _0x2caa06(_0x30e501,_0x92f446);}(_0x5c6478,_0x3882b0)||function(){var _0x101a51=_0x4ba4;throw new TypeError(_0x101a51('0x36b'));}();}function _0x2caa06(_0x394587,_0x21cb0b){var _0x59251e=_0xf953d7;(null==_0x21cb0b||_0x21cb0b>_0x394587[_0x59251e('0x1f8')])&&(_0x21cb0b=_0x394587['length']);for(var _0x4cd47c=0x0,_0x72b013=new Array(_0x21cb0b);_0x4cd47c<_0x21cb0b;_0x4cd47c++)_0x72b013[_0x4cd47c]=_0x394587[_0x4cd47c];return _0x72b013;}var _0x1b9ab5=_0x5e8ad9[_0xf953d7('0x13b')][_0xf953d7('0x1a9')];},{'./theme':0x19,'@ant-design/icons':_0x557405('0x3aa'),'antd':'antd','react':_0x557405('0x516')}],0x2:[function(_0xfdd6e5,_0x419318,_0x2e4595){var _0x5da8ab=_0x557405;'use strict';function _0x26da2c(_0x3fbcd1){var _0xc80c88=_0x4ba4;return(_0x26da2c=_0xc80c88('0x568')==typeof Symbol&&_0xc80c88('0x263')==typeof Symbol[_0xc80c88('0x412')]?function(_0x1ba943){return typeof _0x1ba943;}:function(_0x317f7d){var _0x2f1450=_0xc80c88;return _0x317f7d&&_0x2f1450('0x568')==typeof Symbol&&_0x317f7d[_0x2f1450('0x151')]===Symbol&&_0x317f7d!==Symbol[_0x2f1450('0x501')]?_0x2f1450('0x263'):typeof _0x317f7d;})(_0x3fbcd1);}Object['defineProperty'](_0x2e4595,'__esModule',{'value':!0x0}),_0x2e4595[_0x5da8ab('0x4c1')]=function(_0xd2b07e){var _0x357652=_0x5da8ab,_0xf08e6c=_0xd2b07e['bootstrap'],_0x321cf5=_0xd2b07e['config'],_0x2f155b=_0xd2b07e[_0x357652('0x1af')],_0x4b945b=void 0x0===_0x2f155b?_0x357652('0x20c'):_0x2f155b,_0x2ebf67=_0xd2b07e[_0x357652('0x2b9')],_0x10eccb=_0x357652('0x2df')===_0x4b945b,_0x55833f=!_0xfe8743()['md'],_0x293c72=_0x492b4e((0x0,_0x595e1d['useState'])(!0x1),0x2),_0x32d4bd=_0x293c72[0x0],_0x383f92=_0x293c72[0x1],_0x54ba38=_0x492b4e((0x0,_0x595e1d[_0x357652('0x51c')])(null),0x2),_0x59747a=_0x54ba38[0x0],_0x130569=_0x54ba38[0x1],_0x3e3178=_0x492b4e((0x0,_0x595e1d[_0x357652('0x51c')])(null),0x2),_0x3ab4d8=_0x3e3178[0x0],_0x2ad5ea=_0x3e3178[0x1],_0x3bfa7c=_0x492b4e((0x0,_0x595e1d['useState'])(!0x1),0x2),_0xfd6fc=_0x3bfa7c[0x0],_0x3615d8=_0x3bfa7c[0x1],_0x52a875=(0x0,_0x595e1d[_0x357652('0xee')])(null),_0x6e7475=_0x3c138c[_0x357652('0xd6')][_0x357652('0x418')]()[_0x357652('0x1eb')],_0x627236=_0xf08e6c[_0x357652('0x2aa')]||{},_0x3da92d=_0xf08e6c[_0x357652('0x2b2')]||{},_0x17d0a7=_0xf08e6c[_0x357652('0x409')]||{},_0x2f4fb9=_0x17d0a7[_0x357652('0x25')]||_0x3da92d[_0x357652('0x511')]||_0x3da92d[_0x357652('0x2f3')],_0xf64d19=_0xf08e6c['views']||{'admin':[],'employee':[]},_0x16566e=_0x492b4e((0x0,_0x595e1d[_0x357652('0x51c')])(_0xf08e6c[_0x357652('0x48e')]||null),0x2),_0x1b4a3d=_0x16566e[0x0],_0xe098f=_0x16566e[0x1],_0x3e1033=_0x492b4e((0x0,_0x595e1d['useState'])(0x0),0x2),_0x3c5766=_0x3e1033[0x0],_0x219f02=_0x3e1033[0x1],_0x5d5fe8=_0x492b4e((0x0,_0x595e1d[_0x357652('0x51c')])(null),0x2),_0x32bfef=_0x5d5fe8[0x0],_0x5f0086=_0x5d5fe8[0x1],_0x3d5428=function(_0x5b2f3f){return _0x5f0086(_0x5b2f3f?{'url':_0x5b2f3f,'title':'Task\x20List'}:null);};(0x0,_0x595e1d[_0x357652('0x42a')])(function(){return window['iceShellOpenDocument']=function(_0x2f4178,_0x5d2be5){var _0x3f45b3=_0x4ba4;return _0x5f0086(_0x2f4178?{'url':_0x2f4178,'title':_0x5d2be5||_0x3f45b3('0x55')}:null);},function(){var _0x509bec=_0x4ba4;delete window[_0x509bec('0x54a')];};},[]),(0x0,_0x595e1d[_0x357652('0x42a')])(function(){var _0x1c56d0=_0x357652,_0x5e28d8=function(_0x6ed15e){var _0x197d6d=_0x4ba4;_0x6ed15e[_0x197d6d('0x9b')]&&_0x197d6d('0x4f2')===_0x6ed15e['data'][_0x197d6d('0x36f')]&&(_0x3615d8(!0x0),_0x219f02(function(_0x1d4b9b){return _0x1d4b9b+0x1;}));};return window[_0x1c56d0('0x3f2')](_0x1c56d0('0x2ac'),_0x5e28d8),function(){var _0x2f0335=_0x1c56d0;return window[_0x2f0335('0x473')](_0x2f0335('0x2ac'),_0x5e28d8);};},[]);var _0xec8c75=_0xf08e6c['areas']||[],_0x229b99=(0x0,_0x595e1d['useMemo'])(function(){var _0x324800=_0x357652,_0x3cb3ab={},_0x41f23={},_0x4136b9={},_0x57a4ab=function(_0x4960c1,_0x1fe9cf){var _0x38ee1f=_0x4ba4;return(Array[_0x38ee1f('0x161')](_0x4960c1)?_0x4960c1:[])['forEach'](function(_0x21f84f){var _0x18f92c=_0x38ee1f;return(_0x21f84f[_0x18f92c('0x4ee')]||[])[_0x18f92c('0x35e')](function(_0x4c8a90){var _0x493191=_0x18f92c,_0x2cc5d3=_0x4c8a90[_0x493191('0x507')]||_0x493191('0x46'),_0x493259=_0x4437e2(_0x4c8a90['g'],_0x4c8a90['n']),_0x59c51b=_0x4c8a90[_0x493191('0x39')]||_0x4c8a90[_0x493191('0x4d8')];_0x4136b9[_0x2cc5d3]||(_0x4136b9[_0x2cc5d3]={'manage':[],'mine':[],'keys':new Set()});var _0x1e7b00=_0x4136b9[_0x2cc5d3];if(!_0x1e7b00['keys'][_0x493191('0x2e9')](_0x493259)){_0x1e7b00[_0x493191('0x34d')][_0x493191('0x188')](_0x493259);var _0x5b6b73=0x0===_0x4c8a90['areaOrder']||_0x4c8a90[_0x493191('0x15e')]?_0x4c8a90[_0x493191('0x15e')]:0x32;_0x1e7b00[_0x1fe9cf][_0x493191('0x193')]({'key':_0x493259,'label':_0x59c51b,'order':_0x5b6b73}),_0x3cb3ab[_0x493259]||(_0x3cb3ab[_0x493259]={'g':_0x4c8a90['g'],'n':_0x4c8a90['n'],'label':_0x59c51b,'area':_0x2cc5d3,'section':_0x1fe9cf},_0x41f23[_0x493259]=_0x2cc5d3);}});});};return _0x57a4ab(_0xf64d19[_0x324800('0x4e9')],_0x324800('0x7a')),_0x57a4ab(_0xf64d19[_0x324800('0x18d')],'mine'),Object['keys'](_0x4136b9)[_0x324800('0x35e')](function(_0x18fba5){var _0x112133=_0x324800,_0x10a39f=function(_0x42460f,_0x2c5728){var _0x43ae95=_0x4ba4;return _0x42460f[_0x43ae95('0x478')]-_0x2c5728[_0x43ae95('0x478')];};_0x4136b9[_0x18fba5][_0x112133('0x7a')][_0x112133('0x42c')](_0x10a39f),_0x4136b9[_0x18fba5]['mine'][_0x112133('0x42c')](_0x10a39f);}),{'itemMap':_0x3cb3ab,'areaOfKey':_0x41f23,'itemsByArea':_0x4136b9};},[_0xf64d19]),_0x360857=_0x229b99[_0x357652('0x76')],_0x5f1ac4=_0x229b99[_0x357652('0x502')],_0x49ea94=_0x229b99[_0x357652('0x55d')],_0xe4222c=function(_0x174f18){var _0x47a12d=_0x357652,_0x47d201=_0x49ea94[_0x174f18];return _0x47d201?_0x47d201[_0x47a12d('0x7a')][_0x47a12d('0x1f8')]+_0x47d201[_0x47a12d('0x514')][_0x47a12d('0x1f8')]:0x0;},_0xd8ce69=function(){var _0x16caea=_0x357652,_0x2804e9=_0xf08e6c['homeLink'],_0x37f121=[];return _0x2804e9&&_0x2804e9[_0x16caea('0x23')]&&_0x2804e9[_0x16caea('0x4d8')]&&_0x37f121[_0x16caea('0x193')](_0x4437e2(_0x2804e9[_0x16caea('0x23')],_0x2804e9[_0x16caea('0x4d8')])),_0x37f121[_0x16caea('0x193')](_0x16caea('0x1b7'),_0x16caea('0x2c7')),_0x37f121['find'](function(_0x1b3055){return _0x360857[_0x1b3055];})||null;},_0x5512a9=(0x0,_0x595e1d[_0x357652('0x286')])(function(){var _0x467eae=_0x357652;return _0xec8c75[_0x467eae('0x8f')](function(_0x4ed8bd){return _0xe4222c(_0x4ed8bd['id'])>0x0;});},[_0xec8c75,_0x49ea94]),_0xc742d4=_0x492b4e((0x0,_0x595e1d[_0x357652('0x51c')])(function(){var _0x4432bb=localStorage['getItem']('shell-area');if(_0x4432bb&&_0xe4222c(_0x4432bb)>0x0)return _0x4432bb;var _0x3f4d81=_0xd8ce69(),_0x62718b=_0x3f4d81&&_0x5f1ac4[_0x3f4d81];if(_0x62718b&&_0xe4222c(_0x62718b)>0x0)return _0x62718b;var _0x4d030e=_0xec8c75['find'](function(_0x2c255c){return _0xe4222c(_0x2c255c['id'])>0x0;});return _0x4d030e?_0x4d030e['id']:null;}),0x2),_0x10aeb3=_0xc742d4[0x0],_0x316161=_0xc742d4[0x1];(0x0,_0x595e1d[_0x357652('0x42a')])(function(){var _0x2d02d0=_0x357652;_0x10aeb3&&localStorage[_0x2d02d0('0x4b0')](_0x2d02d0('0x3a8'),_0x10aeb3);},[_0x10aeb3]);var _0xc5ee5f=(0x0,_0x595e1d[_0x357652('0x286')])(function(){var _0x4e3cdc=_0x357652,_0x41eed6=_0x49ea94[_0x10aeb3];if(!_0x41eed6)return[];var _0x2d6563=function(_0x17842f){var _0x45e3de=_0x4ba4;return{'key':_0x17842f[_0x45e3de('0x322')],'label':_0x17842f[_0x45e3de('0x39')]};};return _0x41eed6[_0x4e3cdc('0x7a')][_0x4e3cdc('0x1f8')]&&_0x41eed6[_0x4e3cdc('0x514')][_0x4e3cdc('0x1f8')]?[{'type':_0x4e3cdc('0x23'),'key':_0x4e3cdc('0x9f'),'label':_0x2d9ad0(_0x595e1d[_0x4e3cdc('0x4c1')][_0x4e3cdc('0x33e')](_0x385f92['ControlOutlined'],null),_0x4e3cdc('0x3b7')),'children':_0x41eed6[_0x4e3cdc('0x7a')][_0x4e3cdc('0x1dd')](_0x2d6563)},{'type':_0x4e3cdc('0x23'),'key':'grp-mine','label':_0x2d9ad0(_0x595e1d[_0x4e3cdc('0x4c1')]['createElement'](_0x385f92[_0x4e3cdc('0x271')],null),'Personal'),'children':_0x41eed6[_0x4e3cdc('0x514')][_0x4e3cdc('0x1dd')](_0x2d6563)}]:[][_0x4e3cdc('0x54e')](_0x2d7763(_0x41eed6[_0x4e3cdc('0x7a')]),_0x2d7763(_0x41eed6[_0x4e3cdc('0x514')]))[_0x4e3cdc('0x1dd')](_0x2d6563);},[_0x49ea94,_0x10aeb3]),_0x4f6965=function(_0x499080){_0x316161(_0x499080);var _0x5eaedc=function(_0x43e346){var _0x38fefa=_0x4ba4,_0x300cb5=_0x49ea94[_0x43e346];if(!_0x300cb5)return null;var _0x28ab15=_0x300cb5[_0x38fefa('0x7a')][0x0]||_0x300cb5['mine'][0x0];return _0x28ab15?_0x28ab15['key']:null;}(_0x499080);_0x5eaedc&&_0x495ecb(_0x5eaedc);},_0x43529b=function(){var _0x5676c5=_0x357652,_0x598676=(window[_0x5676c5('0x2ad')][_0x5676c5('0x150')]||'')[_0x5676c5('0x467')](/^#\/?/,''),_0x5334c6=_0x598676?decodeURIComponent(_0x598676):_0xd8ce69(),_0x5f1610=_0x5334c6&&_0x360857[_0x5334c6];_0x2ad5ea(null),_0x5f1610?(_0x130569(_0x5f1610),_0x3615d8(!0x0)):_0x130569(null);};(0x0,_0x595e1d[_0x357652('0x42a')])(function(){var _0x5e3c75=_0x357652;_0x43529b();var _0x152f41=function(){return _0x43529b();};return window[_0x5e3c75('0x3f2')]('hashchange',_0x152f41),function(){var _0x1f7793=_0x5e3c75;return window[_0x1f7793('0x473')](_0x1f7793('0x213'),_0x152f41);};},[_0x360857]);var _0x495ecb=function(_0x1b9fd){var _0xf3ffd4=_0x357652,_0x4cf686=_0x360857[_0x1b9fd];if(_0x4cf686){_0x55833f&&_0x383f92(!0x1);var _0x21107d='#'[_0xf3ffd4('0x54e')](encodeURIComponent(_0x1b9fd));window['location']['hash']===_0x21107d?(_0x3615d8(!0x0),_0x130569(_0x839ce6({},_0x4cf686))):window[_0xf3ffd4('0x2ad')][_0xf3ffd4('0x150')]=_0x21107d;}},_0x41b1eb=_0x3ab4d8||_0x59747a,_0x4bcb18=function(_0x261574,_0x6ee500){var _0xab488a=_0x357652;if(_0x261574&&_0x6ee500){var _0x251056=_0x4437e2(_0x261574,_0x6ee500);if(_0x55833f&&_0x383f92(!0x1),_0x360857[_0x251056])_0x495ecb(_0x251056);else{_0x2ad5ea(null),_0x130569({'g':_0x261574,'n':_0x6ee500,'label':_0x6ee500}),_0x3615d8(!0x0);try{window[_0xab488a('0x546')][_0xab488a('0x143')](null,'','#'[_0xab488a('0x54e')](encodeURIComponent(_0x251056)));}catch(_0x570a7d){}}}},_0x55c993=_0x41b1eb?_0x4437e2(_0x41b1eb['g'],_0x41b1eb['n']):null;(0x0,_0x595e1d['useEffect'])(function(){var _0x4e733a=_0x55c993&&_0x5f1ac4[_0x55c993];_0x4e733a&&_0x4e733a!==_0x10aeb3&&_0x316161(_0x4e733a);},[_0x55c993,_0x5f1ac4]);var _0x238df2=_0x59747a&&_0x357652('0x4e9')===_0x59747a['g']&&_0x357652('0x30b')===_0x59747a['n'],_0x29f097=_0x59747a&&_0x357652('0x1c8')===_0x59747a['g']&&_0x357652('0x30b')===_0x59747a['n'],_0x5e4efd=_0x59747a?''['concat'](_0x59747a['g'],'/')[_0x357652('0x54e')](_0x59747a['n']):null,_0x543a83=!!_0x5e4efd&&!_0x238df2&&!_0x29f097&&-0x1!==(_0xf08e6c[_0x357652('0x557')]||[])[_0x357652('0x570')](_0x5e4efd),_0x4b599c=!_0x59747a||_0x238df2||_0x29f097||_0x543a83?null:''[_0x357652('0x54e')](_0x321cf5[_0x357652('0x254')],_0x357652('0x4de'))[_0x357652('0x54e')](encodeURIComponent(_0x59747a['g']),_0x357652('0x220'))['concat'](encodeURIComponent(_0x59747a['n']),'&_embed=1'),_0x5f1a0d=_0x595e1d['default'][_0x357652('0x33e')](_0x3c138c[_0x357652('0x1e3')],{'mode':_0x357652('0x3a6'),'theme':_0x357652('0x2df'),'selectedKeys':_0x55c993?[_0x55c993]:[],'style':{'borderInlineEnd':0x0},'items':_0xc5ee5f,'onClick':function(_0x4e54ee){var _0x2a6811=_0x357652,_0x2161da=_0x4e54ee[_0x2a6811('0x322')];return _0x495ecb(_0x2161da);}}),_0x3de20b={'items':[{'key':'name','label':''[_0x357652('0x54e')](_0x17d0a7['firstName']||_0x3da92d['first_name']||'','\x20')['concat'](_0x17d0a7[_0x357652('0x544')]||_0x3da92d[_0x357652('0x53a')]||'')[_0x357652('0xa1')]()||_0x3da92d[_0x357652('0x2f3')],'disabled':!0x0},{'type':_0x357652('0x2a3')},{'key':_0x357652('0x1ac'),'icon':_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x385f92[_0x357652('0x4e0')],null),'label':'Home'},{'key':'logout','icon':_0x595e1d['default'][_0x357652('0x33e')](_0x385f92[_0x357652('0x4bf')],null),'label':'Logout'}],'onClick':function(_0x38576d){var _0x1ab637=_0x357652,_0x1b950d=_0x38576d[_0x1ab637('0x322')];_0x1ab637('0xac')===_0x1b950d&&(window[_0x1ab637('0x2ad')]['href']=''[_0x1ab637('0x54e')](_0x321cf5[_0x1ab637('0x254')],'logout.php')),'home'===_0x1b950d&&(window[_0x1ab637('0x2ad')]['hash']='',_0x130569(null));}},_0x482ec8=_0x492b4e((0x0,_0x595e1d[_0x357652('0x51c')])(!0x1),0x2),_0x5c0683=_0x482ec8[0x0],_0x25f94e=_0x482ec8[0x1],_0x48f85e=''[_0x357652('0x54e')](_0x321cf5[_0x357652('0x439')]||'',_0x357652('0x219')),_0x5321cb=_0x627236[_0x357652('0x431')]||_0x48f85e,_0x51273c=_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'flex':_0x357652('0x4da'),'display':_0x357652('0x3f6'),'alignItems':_0x357652('0x3c5'),'justifyContent':_0x357652('0x1df'),'gap':0x8,'padding':'10px\x2016px','overflow':_0x357652('0x5c'),'borderTop':_0x357652('0x19a'),'lineHeight':1.35}},_0x595e1d[_0x357652('0x4c1')]['createElement']('span',{'style':{'color':'rgba(255,255,255,0.4)','fontSize':10.5,'whiteSpace':'nowrap'}},'©\x20'[_0x357652('0x54e')](new Date()[_0x357652('0x3d4')](),_0x357652('0x10'))),_0xf08e6c[_0x357652('0x4b8')]&&_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')]('span',{'style':{'color':_0x357652('0xc5'),'fontSize':0xb,'fontWeight':0x258,'whiteSpace':_0x357652('0x195')}},'v'[_0x357652('0x54e')](_0xf08e6c[_0x357652('0x4b8')]))),_0x446966=(0x0,_0x595e1d[_0x357652('0x286')])(function(){var _0x51da4a=_0x357652;return Object[_0x51da4a('0x34d')](_0x360857)[_0x51da4a('0x1dd')](function(_0x3a1e54){return _0x839ce6({'key':_0x3a1e54},_0x360857[_0x3a1e54]);});},[_0x360857]),_0x1479a7=_0x5512a9[_0x357652('0xe8')](function(_0x172308){return _0x172308['id']===_0x10aeb3;})||_0x5512a9[0x0]||null,_0x5887c7=_0x5512a9[_0x357652('0x1f8')]>0x1&&_0x1479a7?_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'padding':_0x357652('0x3a1')}},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')]('div',{'style':{'fontSize':10.5,'letterSpacing':1.2,'fontWeight':0x2bc,'color':'rgba(255,255,255,0.38)','marginBottom':0x8,'paddingLeft':0x2}},_0x357652('0x4eb')),_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x3c138c[_0x357652('0x3f9')],{'theme':(0x0,_0x2cd6d8[_0x357652('0x2a5')])(_0x357652('0x2df'))},_0x595e1d['default'][_0x357652('0x33e')](_0x3c138c[_0x357652('0x256')],{'trigger':[_0x357652('0x441')],'menu':{'selectedKeys':[_0x10aeb3],'items':_0x5512a9[_0x357652('0x1dd')](function(_0x594bdc){var _0x9c64ef=_0x357652;return{'key':_0x594bdc['id'],'icon':_0x6becd5(_0x594bdc[_0x9c64ef('0x11b')]),'label':_0x594bdc['label']};}),'onClick':function(_0xc8b02d){var _0xb005e1=_0x357652,_0x2f7cbf=_0xc8b02d[_0xb005e1('0x322')];return _0x4f6965(_0x2f7cbf);}}},_0x595e1d[_0x357652('0x4c1')]['createElement'](_0x357652('0x30e'),{'type':_0x357652('0x30e'),'className':_0x357652('0x4d'),'title':_0x357652('0x466'),'style':{'width':_0x357652('0x25f'),'display':_0x357652('0x3f6'),'alignItems':_0x357652('0x3c5'),'gap':0xa,'padding':_0x357652('0x4a4'),'borderRadius':0xc,'cursor':'pointer','color':_0x357652('0x402'),'background':_0x357652('0x3b6'),'border':_0x357652('0x15f'),'textAlign':_0x357652('0x39e')}},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')]('span',{'style':{'width':0x1e,'height':0x1e,'borderRadius':0x9,'flex':'0\x200\x20auto','fontSize':0xf,'background':_0x357652('0x4a7'),'color':'#4c9aff','display':_0x357652('0x3f6'),'alignItems':'center','justifyContent':_0x357652('0x3c5')}},_0x6becd5(_0x1479a7['icon'])),_0x595e1d[_0x357652('0x4c1')]['createElement']('span',{'style':{'flex':0x1,'minWidth':0x0}},_0x595e1d['default'][_0x357652('0x33e')]('span',{'style':{'display':'block','fontSize':13.5,'fontWeight':0x258,'lineHeight':1.2,'overflow':'hidden','textOverflow':'ellipsis','whiteSpace':_0x357652('0x195')}},_0x1479a7['label']),_0x595e1d[_0x357652('0x4c1')]['createElement'](_0x357652('0x1bd'),{'style':{'display':_0x357652('0x447'),'fontSize':0xb,'color':_0x357652('0x53'),'lineHeight':1.2}},_0x357652('0x466'))),_0x595e1d['default'][_0x357652('0x33e')](_0x385f92[_0x357652('0x3ed')],{'style':{'fontSize':0xc,'color':_0x357652('0x3bf'),'flex':_0x357652('0x4da')}}))))):null,_0xbd36fb=_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'role':_0x357652('0x30e'),'tabIndex':0x0,'onClick':function(){var _0x4a6d8c=_0x357652;window[_0x4a6d8c('0x2ad')][_0x4a6d8c('0x150')]='',_0x130569(null);},'title':'Home','style':{'display':'flex','alignItems':_0x357652('0x3c5'),'gap':0xa,'cursor':_0x357652('0x51e'),'paddingRight':0x12,'marginRight':0x4,'borderRight':'1px\x20solid\x20rgba(255,255,255,0.14)','height':0x30}},_0x5c0683?_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')]('span',{'style':{'fontWeight':0x2bc,'fontSize':0x16,'color':_0x357652('0x402'),'whiteSpace':_0x357652('0x195')}},_0x627236[_0x357652('0x4d8')]||_0x357652('0x29e')):_0x595e1d['default'][_0x357652('0x33e')]('img',{'src':_0x5321cb,'alt':_0x627236[_0x357652('0x4d8')]||_0x357652('0x29e'),'style':{'height':0x2e,'maxWidth':0xc8,'objectFit':'contain'},'onError':function(){return _0x25f94e(!0x0);}}));return _0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x3c138c['Layout'],{'style':{'minHeight':_0x357652('0x44b')}},_0x595e1d[_0x357652('0x4c1')]['createElement'](_0x3c138c[_0x357652('0x3f9')],{'theme':(0x0,_0x2cd6d8[_0x357652('0x2a5')])('dark')},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x376b2c,{'style':{'display':_0x357652('0x3f6'),'alignItems':_0x357652('0x3c5'),'justifyContent':'space-between','paddingInline':0x10,'background':_0x2cd6d8[_0x357652('0x23c')],'position':_0x357652('0x3e3'),'top':0x0,'zIndex':0x14,'boxShadow':_0x357652('0x1b5')}},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')]('div',{'style':{'display':_0x357652('0x3f6'),'alignItems':_0x357652('0x3c5'),'gap':0xa,'flex':_0x357652('0x4da')}},_0x55833f&&_0x595e1d['default'][_0x357652('0x33e')](_0x3c138c[_0x357652('0x55f')],{'type':_0x357652('0x490'),'icon':_0x595e1d['default'][_0x357652('0x33e')](_0x385f92[_0x357652('0x198')],{'style':{'color':_0x357652('0x402')}}),'onClick':function(){return _0x383f92(!0x0);}}),!_0x55833f&&_0xbd36fb,_0x595e1d['default'][_0x357652('0x33e')](_0x357652('0x1bd'),{'style':{'fontSize':0x10,'fontWeight':0x258,'color':'rgba(255,255,255,0.92)','maxWidth':0x104,'overflow':'hidden','textOverflow':_0x357652('0xf7'),'whiteSpace':_0x357652('0x195')}},_0x41b1eb?_0x41b1eb[_0x357652('0x39')]:'Home')),_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'flex':0x1,'display':_0x357652('0x3f6'),'justifyContent':_0x357652('0x3c5'),'minWidth':0x0,'padding':_0x357652('0xb')}},_0x595e1d[_0x357652('0x4c1')]['createElement']('div',{'style':{'width':'100%','maxWidth':0x230}},_0x595e1d[_0x357652('0x4c1')]['createElement'](_0x3cff7d[_0x357652('0x4c1')],{'items':_0x446966,'areas':_0xec8c75,'onSelect':function(_0x37ac0a){return _0x4bcb18(_0x360857[_0x37ac0a]['g'],_0x360857[_0x37ac0a]['n']);},'dark':!0x0}))),_0x595e1d['default'][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'display':_0x357652('0x3f6'),'alignItems':_0x357652('0x3c5'),'gap':0x4,'flex':_0x357652('0x4da')}},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x3c138c['Tooltip'],{'title':_0x10eccb?_0x357652('0x1a8'):_0x357652('0x66')},_0x595e1d['default'][_0x357652('0x33e')](_0x3c138c[_0x357652('0x55f')],{'type':_0x357652('0x490'),'aria-label':_0x357652('0x369'),'icon':_0x10eccb?_0x595e1d[_0x357652('0x4c1')]['createElement'](_0x385f92[_0x357652('0x300')],{'style':{'color':_0x357652('0x31a')}}):_0x595e1d[_0x357652('0x4c1')]['createElement'](_0x385f92[_0x357652('0x53e')],{'style':{'color':_0x357652('0x402')}}),'onClick':_0x2ebf67})),_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x1cfa38[_0x357652('0x4c1')],{'clientBaseUrl':_0x321cf5['clientBaseUrl'],'onNavigate':_0x4bcb18,'onOpenDocument':_0x3d5428}),_0x595e1d['default'][_0x357652('0x33e')](_0x3c138c[_0x357652('0x256')],{'menu':_0x3de20b,'trigger':['click']},_0x595e1d[_0x357652('0x4c1')]['createElement'](_0x3c138c[_0x357652('0x55f')],{'type':'text','style':{'display':_0x357652('0x3f6'),'alignItems':_0x357652('0x3c5'),'gap':0x8,'color':_0x357652('0x345')}},_0x595e1d[_0x357652('0x4c1')]['createElement'](_0x3c138c[_0x357652('0x291')],{'size':_0x357652('0x1de'),'src':_0x17d0a7[_0x357652('0x234')]||void 0x0,'icon':_0x595e1d['default'][_0x357652('0x33e')](_0x385f92['UserOutlined'],null)}),!_0x55833f&&_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x1bd'),null,_0x2f4fb9)))))),_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x3c138c[_0x357652('0x4a5')],null,!_0x55833f&&_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x41d693,{'width':0xf0,'style':{'height':'calc(100vh\x20-\x2064px)','position':_0x357652('0x3e3'),'top':0x40,'insetInlineStart':0x0,'background':_0x2cd6d8[_0x357652('0x23c')]}},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'height':_0x357652('0x25f'),'display':_0x357652('0x3f6'),'flexDirection':_0x357652('0x47b')}},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'flex':0x1,'minHeight':0x0,'overflow':_0x357652('0x2d1'),'paddingTop':0x8}},_0x5887c7,_0x5f1a0d),_0x51273c)),_0x55833f&&_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x3c138c[_0x357652('0x1f5')],{'placement':'left','open':_0x32d4bd,'onClose':function(){return _0x383f92(!0x1);},'width':0x104,'styles':{'body':{'padding':0x0,'background':_0x2cd6d8[_0x357652('0x23c')]},'header':{'display':'none'}}},_0x595e1d['default']['createElement'](_0x357652('0x2e'),{'style':{'height':_0x357652('0x25f'),'display':'flex','flexDirection':'column'}},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'flex':0x1,'minHeight':0x0,'overflow':'auto','paddingTop':0x8}},_0x5887c7,_0x5f1a0d),_0x51273c)),_0x595e1d[_0x357652('0x4c1')]['createElement'](_0x3c138c[_0x357652('0x4a5')],null,_0x1b4a3d&&_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x3c138c[_0x357652('0x1b')],{'type':_0x357652('0x540'),'banner':!0x0,'showIcon':!0x0,'message':_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x1bd'),null,_0x357652('0x16b'),_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x3bb'),null,_0x1b4a3d[_0x357652('0x4d8')])),'action':_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x3c138c[_0x357652('0x55f')],{'size':_0x357652('0x1de'),'onClick':function(){var _0x5cd49a=_0x357652;try{var _0x502830=_0x52a875[_0x5cd49a('0x5d')]&&_0x52a875[_0x5cd49a('0x5d')]['contentWindow'];if(_0x502830&&_0x502830[_0x5cd49a('0x2b1')]&&_0x5cd49a('0x568')==typeof _0x502830['modJs'][_0x5cd49a('0x2a7')])return void _0x502830['modJs'][_0x5cd49a('0x2a7')]('-1');}catch(_0x26f880){}var _0x214ae7=new URLSearchParams({'a':'setAdminEmp','empid':'-1'});fetch(''['concat'](_0x321cf5['clientBaseUrl'],'service.php'),{'method':'POST','credentials':_0x5cd49a('0x1a4'),'headers':{'Content-Type':_0x5cd49a('0x427')},'body':_0x214ae7['toString']()})[_0x5cd49a('0x273')](function(){var _0x464568=_0x5cd49a;window[_0x464568('0x2ad')][_0x464568('0x4dd')]();})[_0x5cd49a('0x3d9')](function(){var _0x298774=_0x5cd49a;window[_0x298774('0x2ad')]['reload']();});}},_0x357652('0xff'))}),_0xf08e6c['showConnectBanner']&&_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x3c138c[_0x357652('0x1b')],{'type':_0x357652('0x540'),'banner':!0x0,'showIcon':!0x0,'style':{'padding':'18px\x2028px','alignItems':_0x357652('0x3c5')},'message':_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'lineHeight':1.35}},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'fontSize':0x11,'fontWeight':0x2bc,'marginBottom':0x3}},_0x357652('0x527')),_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'fontSize':0xe,'opacity':0.9}},_0x357652('0x74'),'\x20',_0x357652('0xd5'))),'action':_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x3c138c[_0x357652('0x55f')],{'size':'large','type':_0x357652('0x4c4'),'style':{'fontWeight':0x258},'onClick':function(){var _0x308b92=_0x357652;return _0x4bcb18(_0x308b92('0x80'),_0x308b92('0x403'));}},'Connect\x20now')}),_0x595e1d['default'][_0x357652('0x33e')](_0x57b414,{'style':{'background':_0x6e7475['colorBgLayout'],'position':'relative','height':_0x357652('0x2f4')['concat'](_0x1b4a3d?_0x357652('0xba'):'')['concat'](_0xf08e6c['showConnectBanner']?_0x357652('0x487'):'',')')}},_0x238df2?_0x595e1d[_0x357652('0x4c1')]['createElement'](_0x357652('0x2e'),{'style':{'height':'100%','overflow':_0x357652('0x2d1')}},_0x595e1d['default'][_0x357652('0x33e')](_0x294f4b[_0x357652('0x4c1')],{'licenseRenewal':_0xf08e6c[_0x357652('0xa5')]}),_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x17e36b['default'],{'config':_0x321cf5}),_0x595e1d['default']['createElement'](_0x30e663[_0x357652('0x4c1')],{'config':_0x321cf5,'onNavigate':_0x4bcb18})):_0x29f097?_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'height':'100%','overflow':_0x357652('0x2d1')}},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x294f4b['default'],{'licenseRenewal':_0xf08e6c[_0x357652('0xa5')]}),_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x1cdf96[_0x357652('0x4c1')],{'config':_0x321cf5,'onNavigate':_0x4bcb18,'onOpenDocument':_0x3d5428})):_0x543a83?_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'height':_0x357652('0x25f'),'overflow':_0x357652('0x2d1')}},_0x595e1d[_0x357652('0x4c1')]['createElement'](_0x59d9ed[_0x357652('0x4c1')],{'key':_0x5e4efd,'group':_0x59747a['g'],'name':_0x59747a['n'],'shellConfig':_0x321cf5})):_0x4b599c?_0x595e1d['default'][_0x357652('0x33e')](_0x595e1d['default'][_0x357652('0x524')],null,_0xfd6fc&&_0x595e1d['default'][_0x357652('0x33e')]('div',{'style':{'position':_0x357652('0x4a6'),'inset':0x0,'display':_0x357652('0x3f6'),'alignItems':_0x357652('0x3c5'),'justifyContent':_0x357652('0x3c5'),'zIndex':0x2,'background':_0x6e7475['colorBgLayout']}},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x3c138c[_0x357652('0xe5')],{'size':'large'})),_0x595e1d['default'][_0x357652('0x33e')](_0x357652('0x1cd'),{'ref':_0x52a875,'key':''[_0x357652('0x54e')](_0x4b599c,'#')[_0x357652('0x54e')](_0x3c5766),'title':_0x59747a?_0x59747a[_0x357652('0x39')]:'','src':_0x4b599c,'onLoad':function(_0x479843){var _0x4efcac=_0x357652;try{var _0x125134=_0x479843[_0x4efcac('0x97')][_0x4efcac('0x248')];if(_0x125134&&_0x125134['head']){var _0x2425f8=_0x125134[_0x4efcac('0x33e')](_0x4efcac('0x4fa'));_0x2425f8['setAttribute'](_0x4efcac('0x15a'),'1'),_0x2425f8[_0x4efcac('0x22f')]='\x0a\x20\x20header.header\x20{\x20display:\x20none\x20!important;\x20}\x0a\x20\x20aside.left-side,\x20.sidebar-offcanvas,\x20.skeletonSideMenu\x20{\x20display:\x20none\x20!important;\x20}\x0a\x20\x20.right-side\x20{\x20margin-left:\x200\x20!important;\x20left:\x200\x20!important;\x20}\x0a\x20\x20.wrapper,\x20body,\x20html\x20{\x20padding-top:\x200\x20!important;\x20margin-top:\x200\x20!important;\x20background:\x20#f0f2f5\x20!important;\x20}\x0a\x20\x20body\x20{\x20min-width:\x200\x20!important;\x20}\x0a\x20\x20#DemoModeNotice,\x20#IceHrmConnectionNotice\x20{\x20display:\x20none\x20!important;\x20}\x0a',_0x125134[_0x4efcac('0x18e')][_0x4efcac('0xb8')](_0x2425f8);}var _0xdc9793=_0x125134&&_0x125134[_0x4efcac('0x3b1')](_0x4efcac('0x4be'));_0xe098f(_0xdc9793?{'name':(_0xdc9793['textContent']||'')[_0x4efcac('0xa1')]()}:null);var _0x44a224=_0x479843[_0x4efcac('0x97')][_0x4efcac('0x1b6')]&&_0x479843[_0x4efcac('0x97')][_0x4efcac('0x1b6')][_0x4efcac('0x2ad')],_0x4bb87b=_0x44a224&&new URLSearchParams(_0x44a224[_0x4efcac('0x8d')]),_0x21cd1d=_0x4bb87b&&_0x4bb87b[_0x4efcac('0xeb')]('g'),_0x30521=_0x4bb87b&&_0x4bb87b[_0x4efcac('0xeb')]('n');if(_0x21cd1d&&_0x30521){var _0x39797a=_0x4437e2(_0x21cd1d,_0x30521);if(_0x59747a&&_0x39797a===_0x4437e2(_0x59747a['g'],_0x59747a['n']))_0x2ad5ea(null);else{if(_0x360857[_0x39797a]){_0x2ad5ea(_0x360857[_0x39797a]);try{window['history']['replaceState'](null,'','#'[_0x4efcac('0x54e')](encodeURIComponent(_0x39797a)));}catch(_0xecbd35){}}}}}catch(_0x35081e){}_0x3615d8(!0x1);},'style':{'width':_0x357652('0x25f'),'height':_0x357652('0x25f'),'border':0x0,'display':'block','visibility':_0xfd6fc?_0x357652('0x5c'):_0x357652('0x2d0')}})):_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'padding':0x18}},_0x595e1d['default'][_0x357652('0x33e')](_0x357652('0x2e'),{'style':{'background':_0x6e7475['colorBgContainer'],'borderRadius':0x8,'padding':0x20,'maxWidth':0x2d0,'boxShadow':_0x357652('0x433'),'color':_0x6e7475['colorText']}},_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')]('h2',{'style':{'marginTop':0x0}},_0x357652('0x214')),_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')]('p',{'style':{'color':_0x6e7475[_0x357652('0x46c')]}},_0x357652('0x298')),_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')]('p',{'style':{'color':_0x6e7475[_0x357652('0x46c')],'fontSize':0xd}},_0x357652('0x351'),_0x595e1d[_0x357652('0x4c1')][_0x357652('0x33e')](_0x357652('0x3bb'),null,_0x3da92d[_0x357652('0x2f3')]),'\x20(',_0xf08e6c['userLevel'],').')))))),_0x595e1d['default'][_0x357652('0x33e')](_0x385c0c[_0x357652('0x4c1')],{'documentUrl':_0x32bfef&&_0x32bfef[_0x357652('0xdb')],'bundle':_0x357652('0x4ed'),'mountFn':_0x357652('0x380'),'deps':[_0x357652('0x98'),_0x357652('0x299'),_0x357652('0x87')],'title':_0x32bfef&&_0x32bfef['title']||_0x357652('0x55'),'shellConfig':_0x321cf5,'onClose':function(){return _0x5f0086(null);}}));};var _0x595e1d=function(_0x1bac23){var _0x26d617=_0x5da8ab;if(_0x1bac23&&_0x1bac23[_0x26d617('0x4bc')])return _0x1bac23;if(null===_0x1bac23||_0x26d617('0x19b')!==_0x26da2c(_0x1bac23)&&'function'!=typeof _0x1bac23)return{'default':_0x1bac23};var _0x329d7e=_0x1a967c();if(_0x329d7e&&_0x329d7e['has'](_0x1bac23))return _0x329d7e[_0x26d617('0xeb')](_0x1bac23);var _0x2640a5={},_0xe36200=Object[_0x26d617('0x28b')]&&Object[_0x26d617('0x2da')];for(var _0x275905 in _0x1bac23)if(Object['prototype']['hasOwnProperty'][_0x26d617('0x210')](_0x1bac23,_0x275905)){var _0x425738=_0xe36200?Object[_0x26d617('0x2da')](_0x1bac23,_0x275905):null;_0x425738&&(_0x425738[_0x26d617('0xeb')]||_0x425738[_0x26d617('0x302')])?Object[_0x26d617('0x28b')](_0x2640a5,_0x275905,_0x425738):_0x2640a5[_0x275905]=_0x1bac23[_0x275905];}return _0x2640a5['default']=_0x1bac23,_0x329d7e&&_0x329d7e[_0x26d617('0x302')](_0x1bac23,_0x2640a5),_0x2640a5;}(_0xfdd6e5(_0x5da8ab('0x516'))),_0x3c138c=_0xfdd6e5(_0x5da8ab('0x29c')),_0x385f92=_0xfdd6e5(_0x5da8ab('0x3aa')),_0x2cd6d8=_0xfdd6e5(_0x5da8ab('0x176')),_0x1cfa38=_0x3a737f(_0xfdd6e5(_0x5da8ab('0x60'))),_0x17e36b=_0x3a737f(_0xfdd6e5(_0x5da8ab('0x9'))),_0x30e663=_0x3a737f(_0xfdd6e5('./Dashboard')),_0x1cdf96=_0x3a737f(_0xfdd6e5(_0x5da8ab('0x83'))),_0x294f4b=_0x3a737f(_0xfdd6e5(_0x5da8ab('0x45f'))),_0x59d9ed=_0x3a737f(_0xfdd6e5(_0x5da8ab('0x32'))),_0x385c0c=_0x3a737f(_0xfdd6e5(_0x5da8ab('0x364'))),_0x3cff7d=_0x3a737f(_0xfdd6e5(_0x5da8ab('0x2e4')));function _0x3a737f(_0x768441){var _0x2912c4=_0x5da8ab;return _0x768441&&_0x768441[_0x2912c4('0x4bc')]?_0x768441:{'default':_0x768441};}function _0x1a967c(){if('function'!=typeof WeakMap)return null;var _0x400888=new WeakMap();return _0x1a967c=function(){return _0x400888;},_0x400888;}function _0x45ce96(_0x6fed7d,_0x2e6918){var _0x203933=_0x5da8ab,_0x3bb835=Object[_0x203933('0x34d')](_0x6fed7d);if(Object['getOwnPropertySymbols']){var _0x327609=Object[_0x203933('0x68')](_0x6fed7d);_0x2e6918&&(_0x327609=_0x327609['filter'](function(_0x2eafde){var _0x5182ab=_0x203933;return Object[_0x5182ab('0x2da')](_0x6fed7d,_0x2eafde)[_0x5182ab('0xf9')];})),_0x3bb835[_0x203933('0x193')][_0x203933('0x154')](_0x3bb835,_0x327609);}return _0x3bb835;}function _0x839ce6(_0x5d659f){var _0x2fb68b=_0x5da8ab;for(var _0x4281f4=0x1;_0x4281f4<arguments[_0x2fb68b('0x1f8')];_0x4281f4++){var _0x44b868=null!=arguments[_0x4281f4]?arguments[_0x4281f4]:{};_0x4281f4%0x2?_0x45ce96(Object(_0x44b868),!0x0)['forEach'](function(_0x12acd9){_0x47f8fb(_0x5d659f,_0x12acd9,_0x44b868[_0x12acd9]);}):Object[_0x2fb68b('0x2d')]?Object[_0x2fb68b('0x145')](_0x5d659f,Object[_0x2fb68b('0x2d')](_0x44b868)):_0x45ce96(Object(_0x44b868))[_0x2fb68b('0x35e')](function(_0x7b2c0){var _0x45d462=_0x2fb68b;Object[_0x45d462('0x28b')](_0x5d659f,_0x7b2c0,Object[_0x45d462('0x2da')](_0x44b868,_0x7b2c0));});}return _0x5d659f;}function _0x47f8fb(_0x55400f,_0x496817,_0x25e561){var _0x1fe049=_0x5da8ab;return _0x496817 in _0x55400f?Object[_0x1fe049('0x28b')](_0x55400f,_0x496817,{'value':_0x25e561,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x55400f[_0x496817]=_0x25e561,_0x55400f;}function _0x2d7763(_0x4cd299){return function(_0x4d17ae){var _0xcddf95=_0x4ba4;if(Array[_0xcddf95('0x161')](_0x4d17ae))return _0x2ed57f(_0x4d17ae);}(_0x4cd299)||function(_0x1f3e21){var _0x21da2f=_0x4ba4;if(_0x21da2f('0x3')!=typeof Symbol&&Symbol[_0x21da2f('0x412')]in Object(_0x1f3e21))return Array['from'](_0x1f3e21);}(_0x4cd299)||_0x588f2b(_0x4cd299)||function(){var _0x55c0f4=_0x4ba4;throw new TypeError(_0x55c0f4('0x295'));}();}function _0x492b4e(_0x4ed7fe,_0x3aa312){return function(_0x9cca55){if(Array['isArray'](_0x9cca55))return _0x9cca55;}(_0x4ed7fe)||function(_0x4b8a9d,_0x4708ef){var _0x13ec34=_0x4ba4;if(_0x13ec34('0x3')==typeof Symbol||!(Symbol[_0x13ec34('0x412')]in Object(_0x4b8a9d)))return;var _0x479c42=[],_0x3e39d2=!0x0,_0x17b53d=!0x1,_0x4aebe9=void 0x0;try{for(var _0x1bde99,_0x461089=_0x4b8a9d[Symbol['iterator']]();!(_0x3e39d2=(_0x1bde99=_0x461089[_0x13ec34('0x503')]())[_0x13ec34('0x448')])&&(_0x479c42[_0x13ec34('0x193')](_0x1bde99[_0x13ec34('0x1c7')]),!_0x4708ef||_0x479c42['length']!==_0x4708ef);_0x3e39d2=!0x0);}catch(_0xadc260){_0x17b53d=!0x0,_0x4aebe9=_0xadc260;}finally{try{_0x3e39d2||null==_0x461089[_0x13ec34('0x6e')]||_0x461089[_0x13ec34('0x6e')]();}finally{if(_0x17b53d)throw _0x4aebe9;}}return _0x479c42;}(_0x4ed7fe,_0x3aa312)||_0x588f2b(_0x4ed7fe,_0x3aa312)||function(){var _0x108c52=_0x4ba4;throw new TypeError(_0x108c52('0x36b'));}();}function _0x588f2b(_0x4438b8,_0x455711){var _0x25bb58=_0x5da8ab;if(_0x4438b8){if('string'==typeof _0x4438b8)return _0x2ed57f(_0x4438b8,_0x455711);var _0x2248cc=Object[_0x25bb58('0x501')][_0x25bb58('0x476')][_0x25bb58('0x210')](_0x4438b8)[_0x25bb58('0x486')](0x8,-0x1);return _0x25bb58('0x2f7')===_0x2248cc&&_0x4438b8[_0x25bb58('0x151')]&&(_0x2248cc=_0x4438b8[_0x25bb58('0x151')][_0x25bb58('0x4d8')]),_0x25bb58('0x506')===_0x2248cc||'Set'===_0x2248cc?Array[_0x25bb58('0x303')](_0x2248cc):_0x25bb58('0x243')===_0x2248cc||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x25bb58('0x2d4')](_0x2248cc)?_0x2ed57f(_0x4438b8,_0x455711):void 0x0;}}function _0x2ed57f(_0x1798cc,_0x58b9e1){var _0x3732f5=_0x5da8ab;(null==_0x58b9e1||_0x58b9e1>_0x1798cc[_0x3732f5('0x1f8')])&&(_0x58b9e1=_0x1798cc[_0x3732f5('0x1f8')]);for(var _0x438497=0x0,_0x53b61c=new Array(_0x58b9e1);_0x438497<_0x58b9e1;_0x438497++)_0x53b61c[_0x438497]=_0x1798cc[_0x438497];return _0x53b61c;}var _0x376b2c=_0x3c138c[_0x5da8ab('0x4a5')][_0x5da8ab('0x184')],_0x41d693=_0x3c138c[_0x5da8ab('0x4a5')]['Sider'],_0x57b414=_0x3c138c[_0x5da8ab('0x4a5')][_0x5da8ab('0x481')],_0xfe8743=_0x3c138c[_0x5da8ab('0x229')][_0x5da8ab('0x1c2')],_0x145201=(_0x385f92[_0x5da8ab('0x49c')],_0x385f92[_0x5da8ab('0x272')],_0x385f92[_0x5da8ab('0x26d')],_0x385f92['BarChartOutlined'],_0x385f92[_0x5da8ab('0x31c')],_0x385f92['ControlOutlined'],_0x385f92[_0x5da8ab('0x28')],_0x385f92[_0x5da8ab('0x2af')],_0x385f92['DollarOutlined'],_0x385f92[_0x5da8ab('0x2c3')],_0x385f92[_0x5da8ab('0x381')],_0x385f92[_0x5da8ab('0x271')],_0x385f92['TeamOutlined'],_0x385f92['CalendarOutlined'],_0x385f92['ClockCircleOutlined'],_0x385f92[_0x5da8ab('0x3bc')],_0x385f92[_0x5da8ab('0x460')],_0x385f92['ReadOutlined'],_0x385f92[_0x5da8ab('0x22a')],_0x385f92['CarOutlined'],{'home':_0x595e1d['default'][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x4e0')],null),'people':_0x595e1d[_0x5da8ab('0x4c1')][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x272')],null),'time':_0x595e1d[_0x5da8ab('0x4c1')][_0x5da8ab('0x33e')](_0x385f92['ClockCircleOutlined'],null),'leave':_0x595e1d[_0x5da8ab('0x4c1')][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x4d1')],null),'pay':_0x595e1d[_0x5da8ab('0x4c1')][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x2af')],null),'recruitment':_0x595e1d['default'][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x2c3')],null),'learning':_0x595e1d[_0x5da8ab('0x4c1')][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x9c')],null),'performance':_0x595e1d[_0x5da8ab('0x4c1')][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x22a')],null),'documents':_0x595e1d['default'][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x460')],null),'reports':_0x595e1d[_0x5da8ab('0x4c1')][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x31c')],null),'configuration':_0x595e1d['default'][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x2b8')],null),'system':_0x595e1d[_0x5da8ab('0x4c1')][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x1a3')],null),'more':_0x595e1d[_0x5da8ab('0x4c1')][_0x5da8ab('0x33e')](_0x385f92[_0x5da8ab('0x26d')],null)}),_0x6becd5=function(_0x4d611e){var _0x5a01ab=_0x5da8ab;return _0x145201[_0x4d611e]||_0x595e1d[_0x5a01ab('0x4c1')]['createElement'](_0x385f92[_0x5a01ab('0x26d')],null);};function _0x2d9ad0(_0x509eb6,_0x16e74a){var _0x5bd432=_0x5da8ab;return _0x595e1d['default']['createElement'](_0x5bd432('0x1bd'),{'style':{'display':'flex','alignItems':_0x5bd432('0x3c5'),'gap':0x7,'paddingTop':0xc,'marginTop':0x2,'borderTop':_0x5bd432('0x19a'),'fontSize':10.5,'fontWeight':0x2bc,'letterSpacing':1.3,'textTransform':_0x5bd432('0x442'),'color':_0x5bd432('0x3db'),'cursor':_0x5bd432('0x4c1'),'userSelect':_0x5bd432('0x1ec')}},_0x595e1d[_0x5bd432('0x4c1')][_0x5bd432('0x296')](_0x509eb6,{'style':{'fontSize':0xc,'opacity':0.85}}),_0x595e1d[_0x5bd432('0x4c1')]['createElement'](_0x5bd432('0x1bd'),null,_0x16e74a));}function _0x4437e2(_0x2d05e1,_0x598d70){var _0x202e13=_0x5da8ab;return''[_0x202e13('0x54e')](_0x2d05e1)[_0x202e13('0x54e')]('::')['concat'](_0x598d70);}},{'./Dashboard':0x4,'./EmployeeDashboard':0x5,'./LicenseRenewalBanner':0xc,'./ModuleSearch':0xe,'./NativeDocumentModal':0x11,'./NativeModuleHost':0x13,'./News':0x14,'./Notifications':0x15,'./theme':0x19,'@ant-design/icons':_0x557405('0x3aa'),'antd':_0x557405('0x29c'),'react':_0x557405('0x516')}],0x3:[function(_0x4c2cb2,_0x1fe71a,_0x363101){var _0x1a2c60=_0x557405;'use strict';function _0x1445e6(_0x11fcb8){var _0x3dfafb=_0x4ba4;return(_0x1445e6=_0x3dfafb('0x568')==typeof Symbol&&_0x3dfafb('0x263')==typeof Symbol['iterator']?function(_0x2aaae1){return typeof _0x2aaae1;}:function(_0x122bff){var _0x328084=_0x3dfafb;return _0x122bff&&'function'==typeof Symbol&&_0x122bff['constructor']===Symbol&&_0x122bff!==Symbol[_0x328084('0x501')]?'symbol':typeof _0x122bff;})(_0x11fcb8);}Object[_0x1a2c60('0x28b')](_0x363101,_0x1a2c60('0x4bc'),{'value':!0x0}),_0x363101[_0x1a2c60('0x4c1')]=function(_0xa228b8){var _0x539334=_0x1a2c60,_0x49ce77=_0xa228b8[_0x539334('0x4f8')],_0x1cd064=_0xd34214((0x0,_0x2de642['useState'])(null),0x2),_0x19ae3c=_0x1cd064[0x0],_0x31da78=_0x1cd064[0x1],_0x311441=_0xd34214((0x0,_0x2de642[_0x539334('0x51c')])(!0x1),0x2),_0x40f535=_0x311441[0x0],_0x2e1c95=_0x311441[0x1],_0x28038a=_0xd34214((0x0,_0x2de642[_0x539334('0x51c')])(''),0x2),_0x2576ff=_0x28038a[0x0],_0x2a8dc8=_0x28038a[0x1],_0x37e4a3=_0xd34214((0x0,_0x2de642[_0x539334('0x51c')])(0x1),0x2),_0x4d18e3=_0x37e4a3[0x0],_0x5566b7=_0x37e4a3[0x1],_0x547bc7=(0x0,_0x2de642[_0x539334('0xee')])(null),_0x2dcbb9=_0x3cd88c[_0x539334('0xd6')][_0x539334('0x418')]()[_0x539334('0x1eb')],_0x26daa6=(0x0,_0x2de642['useCallback'])(function(){var _0x51eec2=_0x539334;fetch(''['concat'](_0x49ce77[_0x51eec2('0x123')],_0x51eec2('0x215')),{'headers':{'Authorization':_0x51eec2('0x52e')['concat'](_0x49ce77[_0x51eec2('0x1eb')])},'credentials':_0x51eec2('0x1a4')})[_0x51eec2('0x273')](function(_0x472dab){var _0xa2c66=_0x51eec2;return _0x472dab[_0xa2c66('0x251')]();})[_0x51eec2('0x273')](function(_0xcacb87){return _0x31da78(_0xcacb87&&_0xcacb87['nodes']||[]);})[_0x51eec2('0x3d9')](function(){return _0x2e1c95(!0x0);});},[_0x49ce77]);(0x0,_0x2de642[_0x539334('0x42a')])(function(){_0x26daa6();},[_0x26daa6]),(0x0,_0x2de642['useEffect'])(function(){var _0x3d1c42=_0x539334,_0x107538=(window[_0x3d1c42('0x53f')]||{})[_0x3d1c42('0x543')];if(_0x107538){_0x547bc7[_0x3d1c42('0x5d')]=_0x107538,_0x107538[_0x3d1c42('0xe4')]={'current':{'reload':function(){return _0x26daa6();},'setCurrentElement':function(){},'setLoading':function(){},'setFilterData':function(){}}};try{_0x107538[_0x3d1c42('0x3d8')]&&_0x107538['masterDataReader'][_0x3d1c42('0x45d')]&&_0x107538[_0x3d1c42('0x3d8')]['updateAllMasterData']();}catch(_0x4bf4ab){}}},[null===_0x19ae3c,_0x26daa6]);var _0x179095=function(){var _0x59c4c4=_0x539334;return _0x547bc7['current']||(window['modJsList']||{})[_0x59c4c4('0x543')];},_0x52edb9=function(_0x8df710){var _0x321581=_0x539334,_0x189cb4=_0x179095();return _0x189cb4&&_0x189cb4[_0x321581('0x4ac')]&&_0x189cb4['hasAccess'](_0x8df710);},_0x2f4235=(0x0,_0x2de642[_0x539334('0x286')])(function(){var _0x4806fd=_0x539334,_0x2976ab=_0x19ae3c||[],_0x4b9886=_0x2576ff[_0x4806fd('0xa1')]()[_0x4806fd('0x504')]();return _0x4b9886?_0x2976ab[_0x4806fd('0x8f')](function(_0x151f4f){var _0x43899d=_0x4806fd;return''[_0x43899d('0x54e')](_0x151f4f[_0x43899d('0x38c')],'\x20')[_0x43899d('0x54e')](_0x151f4f[_0x43899d('0x444')],'\x20')[_0x43899d('0x54e')](_0x151f4f[_0x43899d('0x127')],'\x20')[_0x43899d('0x54e')](_0x151f4f['parentTitle']||'')[_0x43899d('0x504')]()[_0x43899d('0x165')](_0x4b9886);}):_0x2976ab;},[_0x19ae3c,_0x2576ff]),_0x4b2ea7=(0x0,_0x2de642[_0x539334('0x286')])(function(){var _0x4fa5db=_0x539334;return _0x2f4235[_0x4fa5db('0x486')](0x6*(_0x4d18e3-0x1),0x6*_0x4d18e3);},[_0x2f4235,_0x4d18e3]);if((0x0,_0x2de642[_0x539334('0x42a')])(function(){_0x5566b7(0x1);},[_0x2576ff]),_0x40f535)return _0x2de642[_0x539334('0x4c1')][_0x539334('0x33e')](_0x3cd88c['Empty'],{'description':_0x539334('0x1e2')});if(!_0x19ae3c)return _0x2de642['default'][_0x539334('0x33e')]('div',{'style':{'display':'flex','justifyContent':'center','padding':0x3c}},_0x2de642[_0x539334('0x4c1')][_0x539334('0x33e')](_0x3cd88c['Spin'],{'size':'large'}));var _0x4e4f34=function(_0xbdedba,_0x2134b7){var _0x36eb78=_0x539334;return _0x2134b7?_0x2de642[_0x36eb78('0x4c1')][_0x36eb78('0x33e')](_0x36eb78('0x1bd'),{'style':{'display':_0x36eb78('0x3dd'),'alignItems':'center','gap':0x5,'maxWidth':0x118,'overflow':_0x36eb78('0x5c')}},_0xbdedba,_0x2de642[_0x36eb78('0x4c1')][_0x36eb78('0x33e')]('span',{'style':{'overflow':_0x36eb78('0x5c'),'textOverflow':_0x36eb78('0xf7'),'whiteSpace':_0x36eb78('0x195')}},_0x2134b7)):null;};return _0x2de642['default'][_0x539334('0x33e')](_0x539334('0x2e'),null,_0x2de642[_0x539334('0x4c1')][_0x539334('0x33e')]('div',{'id':'CompanyStructureForm','style':{'display':_0x539334('0x1ec')}}),_0x2de642['default'][_0x539334('0x33e')](_0x539334('0x2e'),{'id':_0x539334('0x107'),'style':{'display':'none'}}),_0x2de642[_0x539334('0x4c1')][_0x539334('0x33e')](_0x539334('0x2e'),{'style':{'display':'flex','justifyContent':_0x539334('0x1df'),'alignItems':_0x539334('0x3c5'),'gap':0xc,'marginBottom':0x10,'flexWrap':'wrap'}},_0x2de642[_0x539334('0x4c1')]['createElement']('div',null,_0x52edb9(_0x539334('0xdc'))&&_0x2de642[_0x539334('0x4c1')][_0x539334('0x33e')](_0x3cd88c[_0x539334('0x55f')],{'type':'primary','icon':_0x2de642['default']['createElement'](_0x291332[_0x539334('0x208')],null),'onClick':function(){var _0x3073ca=_0x179095();_0x3073ca&&_0x3073ca['renderForm']();}},_0x539334('0x4d9'))),_0x2de642[_0x539334('0x4c1')][_0x539334('0x33e')](_0x3cd88c[_0x539334('0x50')][_0x539334('0x1e6')],{'allowClear':!0x0,'placeholder':_0x539334('0x15b'),'style':{'maxWidth':0x118},'onChange':function(_0x51ce31){var _0x354e57=_0x539334;return _0x2a8dc8(_0x51ce31[_0x354e57('0x97')][_0x354e57('0x1c7')]);}})),0x0===_0x2f4235[_0x539334('0x1f8')]?_0x2de642[_0x539334('0x4c1')]['createElement'](_0x3cd88c[_0x539334('0x269')],{'description':_0x539334('0x537')}):_0x2de642[_0x539334('0x4c1')][_0x539334('0x33e')](_0x2de642[_0x539334('0x4c1')][_0x539334('0x524')],null,_0x2de642[_0x539334('0x4c1')][_0x539334('0x33e')](_0x539334('0x2e'),{'style':{'display':_0x539334('0x3f6'),'flexDirection':'column','gap':0xa}},_0x4b2ea7[_0x539334('0x1dd')](function(_0x374043){var _0x374484=_0x539334,_0x49e6da,_0x40d303=(_0x49e6da=_0x374043['type'],_0x280248[_0x49e6da]||{'icon':_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x291332[_0x374484('0x464')],null),'color':_0x374484('0x426')});return _0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x3cd88c[_0x374484('0x347')],{'key':_0x374043['id'],'hoverable':!0x0,'onClick':function(){var _0x128e43=_0x374484;return _0x1baadd=_0x374043['id'],void((_0x566dce=_0x179095())&&_0x566dce[_0x128e43('0x1b4')]&&_0x566dce['showDetailsModal'](_0x1baadd));var _0x1baadd,_0x566dce;},'style':{'borderRadius':0xa,'boxShadow':_0x1c39c0[_0x374484('0x236')],'cursor':_0x374484('0x51e')},'styles':{'body':{'padding':_0x374484('0x34c')}}},_0x2de642['default'][_0x374484('0x33e')](_0x374484('0x2e'),{'style':{'display':_0x374484('0x3f6'),'alignItems':_0x374484('0x3c5'),'gap':0xe}},_0x2de642['default'][_0x374484('0x33e')](_0x374484('0x2e'),{'style':{'width':0x28,'height':0x28,'borderRadius':0xa,'flex':_0x374484('0x4da'),'background':''[_0x374484('0x54e')](_0x40d303[_0x374484('0x34')],'18'),'color':_0x40d303['color'],'display':_0x374484('0x3f6'),'alignItems':_0x374484('0x3c5'),'justifyContent':_0x374484('0x3c5'),'fontSize':0x12}},_0x40d303[_0x374484('0x11b')]),_0x2de642['default'][_0x374484('0x33e')](_0x374484('0x2e'),{'style':{'minWidth':0x0,'flex':0x1}},_0x2de642['default'][_0x374484('0x33e')](_0x374484('0x2e'),{'style':{'display':_0x374484('0x3f6'),'alignItems':_0x374484('0x3c5'),'gap':0x8,'flexWrap':'wrap'}},_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x374484('0x1bd'),{'style':{'fontWeight':0x258,'fontSize':0xe}},_0x374043['title']),_0x2de642[_0x374484('0x4c1')]['createElement'](_0x3cd88c['Tag'],{'style':{'borderRadius':0x6,'margin':0x0}},_0x374043[_0x374484('0x444')]||_0x374484('0x54c')),_0x374043[_0x374484('0x126')]>0x0&&_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x3cd88c[_0x374484('0x477')],{'color':_0x374484('0x38b'),'style':{'borderRadius':0x6,'margin':0x0}},_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x291332[_0x374484('0x271')],null),'\x20',_0x374043[_0x374484('0x126')])),_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')]('div',{'style':{'display':_0x374484('0x3f6'),'alignItems':_0x374484('0x3c5'),'gap':0x10,'marginTop':0x4,'color':_0x2dcbb9[_0x374484('0x46c')],'fontSize':12.5,'flexWrap':'wrap'}},_0x4e4f34(_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x291332[_0x374484('0x5e')],null),_0x374043[_0x374484('0x2e5')]?_0x374484('0x328')[_0x374484('0x54e')](_0x374043[_0x374484('0x2e5')]):_0x374484('0x114')),_0x4e4f34(_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x291332[_0x374484('0x264')],null),_0x374043['address']),_0x4e4f34(_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x291332[_0x374484('0x41f')],null),_0x374043[_0x374484('0x127')]),_0x4e4f34(_0x2de642['default'][_0x374484('0x33e')](_0x291332[_0x374484('0x279')],null),_0x374043[_0x374484('0x113')]))),_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x374484('0x2e'),{'style':{'display':'flex','gap':0xa,'flex':_0x374484('0x4da')},'onClick':function(_0x2aea5d){var _0x425b22=_0x374484;return _0x2aea5d[_0x425b22('0x2dc')]();}},_0x52edb9(_0x374484('0xdc'))&&_0x2de642['default'][_0x374484('0x33e')](_0x3cd88c[_0x374484('0x4d4')],{'title':_0x374484('0x17b')},_0x2de642['default'][_0x374484('0x33e')](_0x3cd88c['Button'],{'icon':_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x291332[_0x374484('0x26')],{'style':{'color':_0x374484('0x414')}}),'onClick':function(){return _0x28d078=_0x374043['id'],void((_0x2a4777=_0x179095())&&_0x2a4777['edit'](_0x28d078));var _0x28d078,_0x2a4777;}})),_0x52edb9('save')&&_0x2de642['default'][_0x374484('0x33e')](_0x3cd88c[_0x374484('0x4d4')],{'title':_0x374484('0x472')},_0x2de642['default'][_0x374484('0x33e')](_0x3cd88c[_0x374484('0x55f')],{'icon':_0x2de642['default'][_0x374484('0x33e')](_0x291332[_0x374484('0x85')],{'style':{'color':_0x374484('0x47f')}}),'onClick':function(){var _0x3ccbd1=_0x374484;return _0x3fd12e=_0x374043['id'],void((_0x343aa9=_0x179095())&&_0x343aa9[_0x3ccbd1('0x31')]&&_0x343aa9[_0x3ccbd1('0x31')](_0x3fd12e));var _0x3fd12e,_0x343aa9;}})),_0x52edb9(_0x374484('0x4a9'))&&_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x3cd88c['Tooltip'],{'title':_0x374484('0x1c6')},_0x2de642[_0x374484('0x4c1')][_0x374484('0x33e')](_0x3cd88c[_0x374484('0x55f')],{'icon':_0x2de642['default'][_0x374484('0x33e')](_0x291332['DeleteOutlined'],{'style':{'color':'#d32f2f'}}),'onClick':function(){return function(_0x259b03){var _0x6ae249=_0x4ba4,_0x3d4b44=_0x179095();if(_0x3d4b44){var _0x543aea=(_0x19ae3c||[])[_0x6ae249('0xe8')](function(_0x449a49){return String(_0x449a49['id'])===String(_0x259b03);});_0x3cd88c[_0x6ae249('0xc3')][_0x6ae249('0x46e')]({'title':_0x6ae249('0x12a'),'content':_0x543aea?_0x6ae249('0x249')[_0x6ae249('0x54e')](_0x543aea[_0x6ae249('0x38c')],'”?'):'Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20this\x20company\x20structure?','okText':'Delete','okType':_0x6ae249('0x497'),'onOk':function(){return new Promise(function(_0x1a770f){var _0xf5bf69=_0x4ba4;try{_0x3d4b44[_0xf5bf69('0x259')](_0x259b03,function(_0x41900a,_0x30e8a1){var _0x3eb80f=_0xf5bf69;0xc8===_0x41900a&&_0x3eb80f('0x13d')===_0x30e8a1?(_0x3cd88c[_0x3eb80f('0x2ac')][_0x3eb80f('0x3fb')](_0x3eb80f('0x421')),_0x26daa6()):_0x3cd88c[_0x3eb80f('0x2ac')]['error'](_0x3eb80f('0xe1'),0x5),_0x1a770f();});}catch(_0x47f90e){_0x3cd88c[_0xf5bf69('0x2ac')][_0xf5bf69('0x54d')](_0xf5bf69('0x443'),0x5),_0x1a770f();}});}});}}(_0x374043['id']);}})))));})),_0x2de642[_0x539334('0x4c1')][_0x539334('0x33e')](_0x539334('0x2e'),{'style':{'display':_0x539334('0x3f6'),'justifyContent':_0x539334('0x4a3'),'marginTop':0x10}},_0x2de642[_0x539334('0x4c1')][_0x539334('0x33e')](_0x3cd88c[_0x539334('0x422')],{'current':_0x4d18e3,'pageSize':0x6,'total':_0x2f4235[_0x539334('0x1f8')],'onChange':_0x5566b7,'showSizeChanger':!0x1,'showTotal':function(_0x21c29f){return''['concat'](_0x21c29f,'\x20structures');}}))));};var _0x2de642=function(_0x4f88a9){var _0x5765b7=_0x1a2c60;if(_0x4f88a9&&_0x4f88a9[_0x5765b7('0x4bc')])return _0x4f88a9;if(null===_0x4f88a9||_0x5765b7('0x19b')!==_0x1445e6(_0x4f88a9)&&_0x5765b7('0x568')!=typeof _0x4f88a9)return{'default':_0x4f88a9};var _0x21ae01=_0x2a2c49();if(_0x21ae01&&_0x21ae01['has'](_0x4f88a9))return _0x21ae01[_0x5765b7('0xeb')](_0x4f88a9);var _0x38bc2e={},_0x4ea80d=Object['defineProperty']&&Object[_0x5765b7('0x2da')];for(var _0x36df20 in _0x4f88a9)if(Object[_0x5765b7('0x501')][_0x5765b7('0x205')][_0x5765b7('0x210')](_0x4f88a9,_0x36df20)){var _0x3b3846=_0x4ea80d?Object[_0x5765b7('0x2da')](_0x4f88a9,_0x36df20):null;_0x3b3846&&(_0x3b3846[_0x5765b7('0xeb')]||_0x3b3846[_0x5765b7('0x302')])?Object[_0x5765b7('0x28b')](_0x38bc2e,_0x36df20,_0x3b3846):_0x38bc2e[_0x36df20]=_0x4f88a9[_0x36df20];}return _0x38bc2e[_0x5765b7('0x4c1')]=_0x4f88a9,_0x21ae01&&_0x21ae01[_0x5765b7('0x302')](_0x4f88a9,_0x38bc2e),_0x38bc2e;}(_0x4c2cb2(_0x1a2c60('0x516'))),_0x3cd88c=_0x4c2cb2('antd'),_0x291332=_0x4c2cb2(_0x1a2c60('0x3aa')),_0x1c39c0=_0x4c2cb2('./theme');function _0x2a2c49(){var _0x4941e7=_0x1a2c60;if(_0x4941e7('0x568')!=typeof WeakMap)return null;var _0x3dc17c=new WeakMap();return _0x2a2c49=function(){return _0x3dc17c;},_0x3dc17c;}function _0xd34214(_0xbad47,_0x2b79c9){return function(_0x14a5eb){var _0x21db70=_0x4ba4;if(Array[_0x21db70('0x161')](_0x14a5eb))return _0x14a5eb;}(_0xbad47)||function(_0x12b54b,_0xc767ce){var _0xf8dd24=_0x4ba4;if(_0xf8dd24('0x3')==typeof Symbol||!(Symbol[_0xf8dd24('0x412')]in Object(_0x12b54b)))return;var _0x2da297=[],_0x55be5f=!0x0,_0xbbbbd0=!0x1,_0x493095=void 0x0;try{for(var _0x1f1e97,_0x4c62c6=_0x12b54b[Symbol[_0xf8dd24('0x412')]]();!(_0x55be5f=(_0x1f1e97=_0x4c62c6['next']())['done'])&&(_0x2da297['push'](_0x1f1e97[_0xf8dd24('0x1c7')]),!_0xc767ce||_0x2da297[_0xf8dd24('0x1f8')]!==_0xc767ce);_0x55be5f=!0x0);}catch(_0x58c99c){_0xbbbbd0=!0x0,_0x493095=_0x58c99c;}finally{try{_0x55be5f||null==_0x4c62c6['return']||_0x4c62c6[_0xf8dd24('0x6e')]();}finally{if(_0xbbbbd0)throw _0x493095;}}return _0x2da297;}(_0xbad47,_0x2b79c9)||function(_0x27a43e,_0x1cca98){var _0x4f0a11=_0x4ba4;if(!_0x27a43e)return;if(_0x4f0a11('0x430')==typeof _0x27a43e)return _0x3ee44e(_0x27a43e,_0x1cca98);var _0x25997d=Object['prototype']['toString'][_0x4f0a11('0x210')](_0x27a43e)['slice'](0x8,-0x1);_0x4f0a11('0x2f7')===_0x25997d&&_0x27a43e[_0x4f0a11('0x151')]&&(_0x25997d=_0x27a43e[_0x4f0a11('0x151')][_0x4f0a11('0x4d8')]);if('Map'===_0x25997d||'Set'===_0x25997d)return Array['from'](_0x25997d);if(_0x4f0a11('0x243')===_0x25997d||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/['test'](_0x25997d))return _0x3ee44e(_0x27a43e,_0x1cca98);}(_0xbad47,_0x2b79c9)||function(){var _0x2237e4=_0x4ba4;throw new TypeError(_0x2237e4('0x36b'));}();}function _0x3ee44e(_0x3d02e5,_0x3d505c){var _0x2a5365=_0x1a2c60;(null==_0x3d505c||_0x3d505c>_0x3d02e5[_0x2a5365('0x1f8')])&&(_0x3d505c=_0x3d02e5[_0x2a5365('0x1f8')]);for(var _0x523d1e=0x0,_0x267359=new Array(_0x3d505c);_0x523d1e<_0x3d505c;_0x523d1e++)_0x267359[_0x523d1e]=_0x3d02e5[_0x523d1e];return _0x267359;}var _0x280248={'Company':{'icon':_0x2de642['default'][_0x1a2c60('0x33e')](_0x291332[_0x1a2c60('0xd9')],null),'color':_0x1c39c0[_0x1a2c60('0x3c1')][_0x1a2c60('0x4c4')]},'Head\x20Office':{'icon':_0x2de642[_0x1a2c60('0x4c1')]['createElement'](_0x291332['HomeOutlined'],null),'color':_0x1a2c60('0x4c8')},'Regional\x20Office':{'icon':_0x2de642[_0x1a2c60('0x4c1')][_0x1a2c60('0x33e')](_0x291332[_0x1a2c60('0x49a')],null),'color':_0x1a2c60('0x121')},'Department':{'icon':_0x2de642['default'][_0x1a2c60('0x33e')](_0x291332[_0x1a2c60('0x464')],null),'color':'#2e7d32'},'Unit':{'icon':_0x2de642[_0x1a2c60('0x4c1')]['createElement'](_0x291332[_0x1a2c60('0x272')],null),'color':_0x1a2c60('0x3ac')},'Sub\x20Unit':{'icon':_0x2de642[_0x1a2c60('0x4c1')][_0x1a2c60('0x33e')](_0x291332['TeamOutlined'],null),'color':_0x1a2c60('0x3ac')}};},{'./theme':0x19,'@ant-design/icons':'@ant-design/icons','antd':_0x557405('0x29c'),'react':'react'}],0x4:[function(_0x25c880,_0x528c25,_0xcb4510){var _0x1570cd=_0x557405;'use strict';function _0x509f26(_0x33f12f){var _0x68e3e8=_0x4ba4;return(_0x509f26='function'==typeof Symbol&&_0x68e3e8('0x263')==typeof Symbol[_0x68e3e8('0x412')]?function(_0x1e5446){return typeof _0x1e5446;}:function(_0x1a8467){var _0x3e17ad=_0x68e3e8;return _0x1a8467&&_0x3e17ad('0x568')==typeof Symbol&&_0x1a8467['constructor']===Symbol&&_0x1a8467!==Symbol[_0x3e17ad('0x501')]?_0x3e17ad('0x263'):typeof _0x1a8467;})(_0x33f12f);}Object[_0x1570cd('0x28b')](_0xcb4510,_0x1570cd('0x4bc'),{'value':!0x0}),_0xcb4510[_0x1570cd('0x4c1')]=function(_0xfff4cc){var _0x2a5527=_0x1570cd,_0x398eff=_0xfff4cc[_0x2a5527('0x370')],_0x458f68=_0xfff4cc[_0x2a5527('0x4f3')],_0x9362ac=_0x2e16df((0x0,_0x1cb618[_0x2a5527('0x51c')])(null),0x2),_0x3d3a0b=_0x9362ac[0x0],_0x15e9a4=_0x9362ac[0x1],_0x58c75d=_0x2e16df((0x0,_0x1cb618[_0x2a5527('0x51c')])(!0x0),0x2),_0x459408=_0x58c75d[0x0],_0x59d986=_0x58c75d[0x1],_0xdf062=_0x2e16df((0x0,_0x1cb618[_0x2a5527('0x51c')])(null),0x2),_0x2c3fc0=_0xdf062[0x0],_0x1915b6=_0xdf062[0x1],_0x32a7ff=_0x399402['theme']['useToken']()[_0x2a5527('0x1eb')],_0x245364=_0x32a7ff[_0x2a5527('0x35')]===_0x3fb318[_0x2a5527('0x34e')][_0x2a5527('0x509')],_0x373bb6=_0x2a5527('0x4b7'),_0x33d620=_0x245364?{'text':{'style':{'fill':_0x373bb6}}}:{},_0x1c1ef0=_0x245364?{'label':{'style':{'fill':_0x2a5527('0x53')}},'line':{'style':{'stroke':_0x2a5527('0x274')}},'grid':{'line':{'style':{'stroke':_0x2a5527('0x20e')}}}}:{},_0x104bee=_0x245364?{'style':{'fill':_0x373bb6}}:{};(0x0,_0x1cb618[_0x2a5527('0x42a')])(function(){var _0x3997e2=_0x2a5527,_0x4039d5=!0x0;return fetch(''[_0x3997e2('0x54e')](_0x398eff[_0x3997e2('0x123')],'appshell/dashboard'),{'headers':{'Authorization':'Bearer\x20'['concat'](_0x398eff[_0x3997e2('0x1eb')])},'credentials':_0x3997e2('0x1a4')})['then'](function(_0x477977){return _0x477977['json']();})[_0x3997e2('0x273')](function(_0x2b945a){_0x4039d5&&(_0x15e9a4(_0x2b945a),_0x59d986(!0x1));})[_0x3997e2('0x3d9')](function(_0x1c5c04){_0x4039d5&&(_0x1915b6(_0x1c5c04['message']),_0x59d986(!0x1));}),function(){_0x4039d5=!0x1;};},[_0x398eff]);var _0x5924db=(0x0,_0x1cb618['useMemo'])(function(){var _0x944cee=_0x2a5527,_0xb9321c=new Date()[_0x944cee('0x86')]();return _0xb9321c<0xc?_0x944cee('0x445'):_0xb9321c<0x12?'Good\x20afternoon':_0x944cee('0x3eb');},[]),_0x44880e=(0x0,_0x1cb618[_0x2a5527('0x286')])(function(){var _0x4227a4=_0x2a5527,_0x53b355=_0x3d3a0b&&_0x3d3a0b[_0x4227a4('0x16e')]||'';return-0x1!==_0x53b355[_0x4227a4('0x570')]('@')?_0x53b355[_0x4227a4('0x376')]('@')[0x0][_0x4227a4('0x467')](/[._]+/g,'\x20')['replace'](/\b\w/g,function(_0x54b9ee){return _0x54b9ee['toUpperCase']();}):_0x53b355;},[_0x3d3a0b]);if(_0x459408)return _0x1cb618['default'][_0x2a5527('0x33e')]('div',{'style':{'display':'flex','justifyContent':_0x2a5527('0x3c5'),'padding':0x50}},_0x1cb618['default']['createElement'](_0x399402[_0x2a5527('0xe5')],{'size':_0x2a5527('0x54b')}));if(_0x2c3fc0||!_0x3d3a0b)return _0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x2a5527('0x2e'),{'style':{'padding':0x20}},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x399402['Empty'],{'description':_0x2a5527('0x3da')[_0x2a5527('0x54e')](_0x2c3fc0?':\x20'[_0x2a5527('0x54e')](_0x2c3fc0):'')}));var _0x2184d9=_0x3d3a0b['kpis']||{},_0x2200e7=[{'label':_0x2a5527('0x393'),'value':_0x2184d9[_0x2a5527('0x257')],'icon':_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x150a7c[_0x2a5527('0x272')],null),'color':_0x2a5527('0x277'),'nav':[_0x2a5527('0x4e9'),_0x2a5527('0x36a')]},{'label':_0x2a5527('0x2d7'),'value':_0x2184d9['departments'],'icon':_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x150a7c['ApartmentOutlined'],null),'color':_0x2a5527('0x4d7'),'nav':[_0x2a5527('0x4e9'),'company_structure']}];_0x3d3a0b[_0x2a5527('0x1f9')]&&_0x2200e7[_0x2a5527('0x193')]({'label':_0x2a5527('0x28f'),'value':_0x3d3a0b[_0x2a5527('0x1f9')][_0x2a5527('0x554')],'icon':_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x150a7c[_0x2a5527('0x279')],null),'color':_0x2a5527('0x415'),'nav':[_0x2a5527('0x4e9'),_0x2a5527('0x4ef'),_0x2a5527('0x155')]}),_0x3d3a0b[_0x2a5527('0x174')]&&_0x2200e7[_0x2a5527('0x193')]({'label':'Open\x20Expenses','value':_0x3d3a0b[_0x2a5527('0x174')]['pendingCount'],'icon':_0x1cb618[_0x2a5527('0x4c1')]['createElement'](_0x150a7c[_0x2a5527('0x2af')],null),'color':_0x2a5527('0x268'),'nav':[_0x2a5527('0x80'),_0x2a5527('0x44d'),_0x2a5527('0x43')]});var _0x1fedc2=function(_0x5a3d5f){var _0xd81551=_0x2a5527;return{'data':_0x5a3d5f||[],'angleField':_0xd81551('0x1c7'),'colorField':_0xd81551('0x444'),'radius':0.9,'padding':_0xd81551('0x2d1'),'color':_0x523d8f,'legend':_0x4dbd49({'visible':!0x0,'position':'bottom-center'},_0x33d620),'label':{'visible':!0x1},'statistic':{'totalLabel':_0xd81551('0x1c3')}};};return _0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x2a5527('0x2e'),{'style':{'padding':0x18,'maxWidth':0x5dc,'margin':_0x2a5527('0x1d7')}},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x4cdbd1,{'show':_0x3d3a0b[_0x2a5527('0x2b0')],'onNavigate':_0x458f68}),_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x38899c,{'billing':_0x3d3a0b[_0x2a5527('0x20b')],'onNavigate':_0x458f68}),_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x5a22af,{'upgradeAd':_0x3d3a0b[_0x2a5527('0x32f')],'onNavigate':_0x458f68}),_0x1cb618['default']['createElement']('div',{'style':{'marginBottom':0x12}},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x2a5527('0x2e'),{'style':{'fontSize':0x16,'fontWeight':0x2bc}},_0x5924db,',','\x20',_0x44880e,'\x20','👋'),_0x1cb618[_0x2a5527('0x4c1')]['createElement'](_0x1d697e,{'type':'secondary'},_0x2a5527('0x31b'))),_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x399402[_0x2a5527('0x470')],{'gutter':[0x10,0x10]},_0x2200e7[_0x2a5527('0x1dd')](function(_0x20db52){var _0x427e02=_0x2a5527;return _0x1cb618['default'][_0x427e02('0x33e')](_0x399402[_0x427e02('0x162')],{'xs':0xc,'sm':0x8,'md':0x6,'xl':_0x2200e7['length']>0x6?0x4:0x6,'key':_0x20db52['label']},_0x1cb618[_0x427e02('0x4c1')][_0x427e02('0x33e')](_0x1a556f,_0x3e1ca3({},_0x20db52,{'labelColor':_0x32a7ff['colorTextSecondary'],'subColor':_0x32a7ff['colorTextTertiary'],'onClick':_0x20db52['nav']&&_0x458f68?function(){var _0x508304=_0x427e02;if(_0x20db52[_0x508304('0x46f')][0x2])try{window['__iceShellStartTab']=_0x20db52[_0x508304('0x46f')][0x2];}catch(_0x12f9cb){}_0x458f68(_0x20db52[_0x508304('0x46f')][0x0],_0x20db52['nav'][0x1]);}:void 0x0})));})),_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x399402[_0x2a5527('0x470')],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x399402[_0x2a5527('0x162')],{'xs':0x18,'lg':0x10},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x30c7de,{'title':_0x2a5527('0x37d'),'extra':_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x399402['Tag'],{'color':'blue'},_0x1cb618['default'][_0x2a5527('0x33e')](_0x150a7c['RiseOutlined'],null),_0x2a5527('0xf5'))},_0x1cb618['default'][_0x2a5527('0x33e')](_0xc26e00,{'type':'area','height':0x104,'config':{'data':_0x3d3a0b[_0x2a5527('0x329')]||[],'xField':_0x2a5527('0x221'),'yField':_0x2a5527('0x1c7'),'smooth':!0x0,'padding':_0x2a5527('0x2d1'),'color':_0x2a5527('0x277'),'areaStyle':{'fill':'l(270)\x200:'['concat'](_0x32a7ff[_0x2a5527('0x35')],_0x2a5527('0x500'))},'xAxis':_0x4dbd49({'visible':!0x0},_0x1c1ef0),'yAxis':_0x4dbd49({'visible':!0x0,'min':0x0},_0x1c1ef0),'point':{'visible':!0x1}}}))),_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x399402[_0x2a5527('0x162')],{'xs':0x18,'lg':0x8},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x30c7de,{'title':_0x2a5527('0x4a2')},_0x1cb618['default'][_0x2a5527('0x33e')](_0xc26e00,{'type':'donut','height':0x104,'config':_0x1fedc2(_0x3d3a0b[_0x2a5527('0x4fe')])})))),_0x1cb618['default'][_0x2a5527('0x33e')](_0x399402[_0x2a5527('0x470')],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x1cb618['default']['createElement'](_0x399402[_0x2a5527('0x162')],{'xs':0x18,'lg':0xe},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x30c7de,{'title':_0x2a5527('0x31e')},_0x1cb618['default'][_0x2a5527('0x33e')](_0xc26e00,{'type':_0x2a5527('0x47b'),'height':0xfa,'config':{'data':_0x3d3a0b[_0x2a5527('0x485')]||[],'xField':_0x2a5527('0x4d8'),'yField':_0x2a5527('0x1c7'),'padding':_0x2a5527('0x2d1'),'color':_0x2a5527('0x268'),'columnSize':0x26,'label':_0x4dbd49({'visible':!0x0,'position':_0x2a5527('0x10e')},_0x104bee),'xAxis':_0x4dbd49({'visible':!0x0},_0x1c1ef0),'yAxis':_0x4dbd49({'visible':!0x0,'min':0x0},_0x1c1ef0)}}))),_0x1cb618['default'][_0x2a5527('0x33e')](_0x399402[_0x2a5527('0x162')],{'xs':0x18,'lg':0xa},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x30c7de,{'title':_0x2a5527('0xe9')},_0x1cb618[_0x2a5527('0x4c1')]['createElement'](_0xc26e00,{'type':_0x2a5527('0x3a'),'height':0xfa,'config':_0x1fedc2(_0x3d3a0b[_0x2a5527('0x378')])})))),_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x399402[_0x2a5527('0x470')],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x399402[_0x2a5527('0x162')],{'xs':0x18,'md':0xc,'xl':0x8},_0x1cb618[_0x2a5527('0x4c1')]['createElement'](_0x30c7de,{'title':_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x2a5527('0x1bd'),null,_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x150a7c['UserAddOutlined'],null),_0x2a5527('0x2ed'))},_0x1cb618['default']['createElement'](_0x567d19,{'data':_0x3d3a0b[_0x2a5527('0x494')],'emptyText':_0x2a5527('0x23b'),'renderMeta':function(_0x26b466){var _0xa9f38c=_0x2a5527;return _0x1cb618['default'][_0xa9f38c('0x33e')](_0x1d697e,{'type':_0xa9f38c('0x3a5'),'style':{'fontSize':0xc}},_0x26b466[_0xa9f38c('0x38c')]||_0xa9f38c('0x1e8'),_0xa9f38c('0x413'),_0x20f14d(_0x26b466[_0xa9f38c('0x3fa')]));}}))),_0x3d3a0b[_0x2a5527('0x1f9')]?_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x399402[_0x2a5527('0x162')],{'xs':0x18,'md':0xc,'xl':0x8},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x30c7de,{'title':_0x1cb618[_0x2a5527('0x4c1')]['createElement'](_0x2a5527('0x1bd'),null,_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x150a7c[_0x2a5527('0x279')],null),_0x2a5527('0x164')),'extra':_0x458f68?_0x1cb618['default'][_0x2a5527('0x33e')]('a',{'onClick':function(){var _0x80d5d9=_0x2a5527;try{window[_0x80d5d9('0x3fc')]=_0x80d5d9('0x155');}catch(_0x50bf30){}_0x458f68(_0x80d5d9('0x4e9'),_0x80d5d9('0x4ef'));}},_0x2a5527('0x372')):null},_0x1cb618[_0x2a5527('0x4c1')]['createElement'](_0x567d19,{'data':_0x3d3a0b[_0x2a5527('0x1f9')][_0x2a5527('0x26a')],'emptyText':'No\x20pending\x20requests','renderMeta':function(_0x5f074e){var _0x2bd481=_0x2a5527;return _0x1cb618[_0x2bd481('0x4c1')][_0x2bd481('0x33e')](_0x1d697e,{'type':_0x2bd481('0x3a5'),'style':{'fontSize':0xc}},_0x5f074e[_0x2bd481('0x444')]||_0x2bd481('0xc2'),_0x2bd481('0xa4'),_0x20f14d(_0x5f074e[_0x2bd481('0x41c')]),_0x5f074e['end']&&_0x5f074e[_0x2bd481('0x27a')]!==_0x5f074e[_0x2bd481('0x41c')]?_0x2bd481('0x522')[_0x2bd481('0x54e')](_0x20f14d(_0x5f074e[_0x2bd481('0x27a')])):'');}}))):null,_0x3d3a0b['celebrations']&&_0x3d3a0b[_0x2a5527('0x491')]['length']>0x0?_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x399402[_0x2a5527('0x162')],{'xs':0x18,'md':0xc,'xl':0x8},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x30c7de,{'title':_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x2a5527('0x1bd'),null,_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x150a7c['GiftOutlined'],null),_0x2a5527('0x353'))},_0x1cb618[_0x2a5527('0x4c1')][_0x2a5527('0x33e')](_0x567d19,{'data':_0x3d3a0b['celebrations'],'renderMeta':function(_0x35b556){var _0x4f6d83=_0x2a5527;return _0x1cb618[_0x4f6d83('0x4c1')]['createElement'](_0x1d697e,{'type':_0x4f6d83('0x3a5'),'style':{'fontSize':0xc}},_0x4f6d83('0x52d')===_0x35b556[_0x4f6d83('0x444')]?_0x1cb618[_0x4f6d83('0x4c1')][_0x4f6d83('0x33e')](_0x4f6d83('0x1bd'),null,_0x1cb618['default'][_0x4f6d83('0x33e')](_0x150a7c[_0x4f6d83('0x4d1')],null),_0x4f6d83('0x33d')):_0x1cb618[_0x4f6d83('0x4c1')][_0x4f6d83('0x33e')](_0x4f6d83('0x1bd'),null,_0x1cb618[_0x4f6d83('0x4c1')][_0x4f6d83('0x33e')](_0x150a7c[_0x4f6d83('0x374')],null),'\x20',_0x35b556[_0x4f6d83('0x1dc')],_0x4f6d83('0xcc')),_0x4f6d83('0xa4'),_0x20f14d(_0x35b556['date']));}}))):null));};var _0x1cb618=function(_0x2b113c){var _0x30dfbc=_0x1570cd;if(_0x2b113c&&_0x2b113c[_0x30dfbc('0x4bc')])return _0x2b113c;if(null===_0x2b113c||_0x30dfbc('0x19b')!==_0x509f26(_0x2b113c)&&'function'!=typeof _0x2b113c)return{'default':_0x2b113c};var _0x5d6efd=_0x3b05e2();if(_0x5d6efd&&_0x5d6efd[_0x30dfbc('0x2e9')](_0x2b113c))return _0x5d6efd[_0x30dfbc('0xeb')](_0x2b113c);var _0x2838dc={},_0x4c4a2f=Object[_0x30dfbc('0x28b')]&&Object[_0x30dfbc('0x2da')];for(var _0x533b03 in _0x2b113c)if(Object['prototype'][_0x30dfbc('0x205')][_0x30dfbc('0x210')](_0x2b113c,_0x533b03)){var _0x566084=_0x4c4a2f?Object[_0x30dfbc('0x2da')](_0x2b113c,_0x533b03):null;_0x566084&&(_0x566084['get']||_0x566084['set'])?Object[_0x30dfbc('0x28b')](_0x2838dc,_0x533b03,_0x566084):_0x2838dc[_0x533b03]=_0x2b113c[_0x533b03];}return _0x2838dc[_0x30dfbc('0x4c1')]=_0x2b113c,_0x5d6efd&&_0x5d6efd[_0x30dfbc('0x302')](_0x2b113c,_0x2838dc),_0x2838dc;}(_0x25c880('react')),_0x399402=_0x25c880(_0x1570cd('0x29c')),_0x150a7c=_0x25c880(_0x1570cd('0x3aa')),_0x4b2b5e=_0x25c880('@antv/g2plot'),_0x3fb318=_0x25c880(_0x1570cd('0x176'));function _0x3b05e2(){if('function'!=typeof WeakMap)return null;var _0x1b3840=new WeakMap();return _0x3b05e2=function(){return _0x1b3840;},_0x1b3840;}function _0x3e1ca3(){var _0x2951cd=_0x1570cd;return(_0x3e1ca3=Object[_0x2951cd('0x8b')]||function(_0x2a75b1){var _0x33b6be=_0x2951cd;for(var _0x3e2416=0x1;_0x3e2416<arguments[_0x33b6be('0x1f8')];_0x3e2416++){var _0x15ac43=arguments[_0x3e2416];for(var _0x118d24 in _0x15ac43)Object[_0x33b6be('0x501')][_0x33b6be('0x205')][_0x33b6be('0x210')](_0x15ac43,_0x118d24)&&(_0x2a75b1[_0x118d24]=_0x15ac43[_0x118d24]);}return _0x2a75b1;})[_0x2951cd('0x154')](this,arguments);}function _0x75614(_0x279b4d,_0x226198){var _0xbf4375=_0x1570cd,_0x3d6597=Object['keys'](_0x279b4d);if(Object['getOwnPropertySymbols']){var _0x2c4665=Object[_0xbf4375('0x68')](_0x279b4d);_0x226198&&(_0x2c4665=_0x2c4665[_0xbf4375('0x8f')](function(_0x479ae7){var _0x271b60=_0xbf4375;return Object[_0x271b60('0x2da')](_0x279b4d,_0x479ae7)[_0x271b60('0xf9')];})),_0x3d6597['push'][_0xbf4375('0x154')](_0x3d6597,_0x2c4665);}return _0x3d6597;}function _0x4dbd49(_0x120884){var _0x3f3b42=_0x1570cd;for(var _0x317e12=0x1;_0x317e12<arguments['length'];_0x317e12++){var _0x2ebe97=null!=arguments[_0x317e12]?arguments[_0x317e12]:{};_0x317e12%0x2?_0x75614(Object(_0x2ebe97),!0x0)[_0x3f3b42('0x35e')](function(_0x343b72){_0x1b12d6(_0x120884,_0x343b72,_0x2ebe97[_0x343b72]);}):Object[_0x3f3b42('0x2d')]?Object[_0x3f3b42('0x145')](_0x120884,Object[_0x3f3b42('0x2d')](_0x2ebe97)):_0x75614(Object(_0x2ebe97))[_0x3f3b42('0x35e')](function(_0x497b4e){var _0x17c4e9=_0x3f3b42;Object[_0x17c4e9('0x28b')](_0x120884,_0x497b4e,Object[_0x17c4e9('0x2da')](_0x2ebe97,_0x497b4e));});}return _0x120884;}function _0x1b12d6(_0x468ad0,_0xf106b4,_0x35f8b6){var _0xf8b15d=_0x1570cd;return _0xf106b4 in _0x468ad0?Object[_0xf8b15d('0x28b')](_0x468ad0,_0xf106b4,{'value':_0x35f8b6,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x468ad0[_0xf106b4]=_0x35f8b6,_0x468ad0;}function _0x2e16df(_0x5671a6,_0x8f847f){return function(_0x19b560){if(Array['isArray'](_0x19b560))return _0x19b560;}(_0x5671a6)||function(_0xba3dc8,_0x42b3ef){var _0x4e9eb2=_0x4ba4;if(_0x4e9eb2('0x3')==typeof Symbol||!(Symbol[_0x4e9eb2('0x412')]in Object(_0xba3dc8)))return;var _0x6cf306=[],_0x31a05b=!0x0,_0x5e7386=!0x1,_0x47373d=void 0x0;try{for(var _0x518f5b,_0x53acff=_0xba3dc8[Symbol[_0x4e9eb2('0x412')]]();!(_0x31a05b=(_0x518f5b=_0x53acff[_0x4e9eb2('0x503')]())['done'])&&(_0x6cf306[_0x4e9eb2('0x193')](_0x518f5b['value']),!_0x42b3ef||_0x6cf306['length']!==_0x42b3ef);_0x31a05b=!0x0);}catch(_0x4eebe6){_0x5e7386=!0x0,_0x47373d=_0x4eebe6;}finally{try{_0x31a05b||null==_0x53acff[_0x4e9eb2('0x6e')]||_0x53acff[_0x4e9eb2('0x6e')]();}finally{if(_0x5e7386)throw _0x47373d;}}return _0x6cf306;}(_0x5671a6,_0x8f847f)||function(_0x2bb28d,_0x502998){var _0x5e39c6=_0x4ba4;if(!_0x2bb28d)return;if(_0x5e39c6('0x430')==typeof _0x2bb28d)return _0x53b1c0(_0x2bb28d,_0x502998);var _0x2e7a75=Object[_0x5e39c6('0x501')][_0x5e39c6('0x476')]['call'](_0x2bb28d)[_0x5e39c6('0x486')](0x8,-0x1);_0x5e39c6('0x2f7')===_0x2e7a75&&_0x2bb28d[_0x5e39c6('0x151')]&&(_0x2e7a75=_0x2bb28d[_0x5e39c6('0x151')][_0x5e39c6('0x4d8')]);if(_0x5e39c6('0x506')===_0x2e7a75||_0x5e39c6('0x26e')===_0x2e7a75)return Array['from'](_0x2e7a75);if('Arguments'===_0x2e7a75||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x5e39c6('0x2d4')](_0x2e7a75))return _0x53b1c0(_0x2bb28d,_0x502998);}(_0x5671a6,_0x8f847f)||function(){var _0x3437ea=_0x4ba4;throw new TypeError(_0x3437ea('0x36b'));}();}function _0x53b1c0(_0x5f159d,_0x1cef02){var _0x54a806=_0x1570cd;(null==_0x1cef02||_0x1cef02>_0x5f159d[_0x54a806('0x1f8')])&&(_0x1cef02=_0x5f159d[_0x54a806('0x1f8')]);for(var _0x4d6b42=0x0,_0x30f97f=new Array(_0x1cef02);_0x4d6b42<_0x1cef02;_0x4d6b42++)_0x30f97f[_0x4d6b42]=_0x5f159d[_0x4d6b42];return _0x30f97f;}var _0x1d697e=_0x399402[_0x1570cd('0x13b')][_0x1570cd('0x1a0')],_0x523d8f=['#346CB0',_0x1570cd('0x4d7'),_0x1570cd('0x268'),_0x1570cd('0x244'),_0x1570cd('0x415'),_0x1570cd('0x3ab'),_0x1570cd('0x4e8'),'#FF99C3'],_0x48fd9f={'pie':_0x4b2b5e[_0x1570cd('0x147')],'donut':_0x4b2b5e[_0x1570cd('0x1fe')],'column':_0x4b2b5e[_0x1570cd('0xbc')],'area':_0x4b2b5e[_0x1570cd('0x453')],'bar':_0x4b2b5e[_0x1570cd('0x450')]};function _0xc26e00(_0xd59a32){var _0x18b685=_0x1570cd,_0x33ca52=_0xd59a32[_0x18b685('0x444')],_0x339bb6=_0xd59a32[_0x18b685('0x370')],_0x596a63=_0xd59a32[_0x18b685('0x43a')],_0x59ba8a=void 0x0===_0x596a63?0xe6:_0x596a63,_0x26fedd=(0x0,_0x1cb618['useRef'])(null);return(0x0,_0x1cb618[_0x18b685('0x42a')])(function(){var _0x527bd3=_0x18b685;if(_0x26fedd[_0x527bd3('0x5d')]){var _0x3462e0=_0x48fd9f[_0x33ca52];if(_0x3462e0){var _0x369fe4;try{(_0x369fe4=new _0x3462e0(_0x26fedd[_0x527bd3('0x5d')],_0x339bb6))[_0x527bd3('0xea')]();}catch(_0x2199db){}return function(){var _0x4bb48f=_0x527bd3;try{_0x369fe4&&_0x369fe4[_0x4bb48f('0x1e4')]();}catch(_0x2714a9){}};}}},[_0x33ca52,JSON[_0x18b685('0x1d1')](_0x339bb6),_0x59ba8a]),_0x1cb618[_0x18b685('0x4c1')][_0x18b685('0x33e')]('div',{'ref':_0x26fedd,'style':{'height':_0x59ba8a}});}function _0x3b5eea(_0x11bf81){var _0x3c19b0=_0x1570cd;for(var _0x2d8c82=0x0,_0x18ddf3=0x0;_0x18ddf3<(_0x11bf81||'')[_0x3c19b0('0x1f8')];_0x18ddf3+=0x1)_0x2d8c82=0x1f*_0x2d8c82+_0x11bf81[_0x3c19b0('0x2a9')](_0x18ddf3)>>>0x0;return _0x523d8f[_0x2d8c82%_0x523d8f[_0x3c19b0('0x1f8')]];}function _0x20f14d(_0x19ad1e){var _0x4d8ba3=_0x1570cd;if(!_0x19ad1e)return'';var _0x87db43=new Date(''[_0x4d8ba3('0x54e')](_0x19ad1e,_0x4d8ba3('0x6')));return Number['isNaN'](_0x87db43['getTime']())?_0x19ad1e:_0x87db43[_0x4d8ba3('0x158')](void 0x0,{'month':_0x4d8ba3('0x562'),'day':'numeric'});}function _0x1a556f(_0x1280a8){var _0x5ed7d2=_0x1570cd,_0x5c1f92=_0x1280a8[_0x5ed7d2('0x11b')],_0x8e94a9=_0x1280a8['label'],_0x83c72f=_0x1280a8['value'],_0x5d7a50=_0x1280a8[_0x5ed7d2('0x34')],_0x11acd4=_0x1280a8[_0x5ed7d2('0xc8')],_0x48e7f9=_0x1280a8[_0x5ed7d2('0x211')],_0x259a6f=_0x1280a8[_0x5ed7d2('0x278')],_0x2b8bc7=_0x1280a8['onClick'];return _0x1cb618[_0x5ed7d2('0x4c1')][_0x5ed7d2('0x33e')](_0x399402['Card'],{'bordered':!0x1,'hoverable':!!_0x2b8bc7,'onClick':_0x2b8bc7,'style':{'borderRadius':0xe,'boxShadow':_0x3fb318[_0x5ed7d2('0x236')],'cursor':_0x2b8bc7?_0x5ed7d2('0x51e'):_0x5ed7d2('0x4c1')},'bodyStyle':{'padding':0x12}},_0x1cb618[_0x5ed7d2('0x4c1')]['createElement'](_0x5ed7d2('0x2e'),{'style':{'display':'flex','alignItems':_0x5ed7d2('0x3c5'),'gap':0xe}},_0x1cb618[_0x5ed7d2('0x4c1')][_0x5ed7d2('0x33e')](_0x5ed7d2('0x2e'),{'style':{'width':0x2e,'height':0x2e,'borderRadius':0xc,'flex':_0x5ed7d2('0x4da'),'background':''[_0x5ed7d2('0x54e')](_0x5d7a50,'1f'),'color':_0x5d7a50,'display':_0x5ed7d2('0x3f6'),'alignItems':_0x5ed7d2('0x3c5'),'justifyContent':_0x5ed7d2('0x3c5'),'fontSize':0x14}},_0x5c1f92),_0x1cb618[_0x5ed7d2('0x4c1')][_0x5ed7d2('0x33e')]('div',{'style':{'minWidth':0x0}},_0x1cb618[_0x5ed7d2('0x4c1')][_0x5ed7d2('0x33e')](_0x5ed7d2('0x2e'),{'style':{'fontSize':0x1a,'fontWeight':0x2bc,'lineHeight':1.1}},_0x83c72f),_0x1cb618[_0x5ed7d2('0x4c1')][_0x5ed7d2('0x33e')](_0x5ed7d2('0x2e'),{'style':{'color':_0x48e7f9,'fontSize':0xd,'whiteSpace':_0x5ed7d2('0x195')}},_0x8e94a9))),_0x11acd4?_0x1cb618[_0x5ed7d2('0x4c1')][_0x5ed7d2('0x33e')](_0x5ed7d2('0x2e'),{'style':{'marginTop':0xa,'fontSize':0xc,'color':_0x259a6f}},_0x11acd4):null);}function _0x30c7de(_0x5076e2){var _0x19e3ab=_0x1570cd,_0x2c22f0=_0x5076e2[_0x19e3ab('0x38c')],_0x2908f6=_0x5076e2[_0x19e3ab('0xdf')],_0x5b079c=_0x5076e2[_0x19e3ab('0x32c')],_0x292db1=_0x5076e2[_0x19e3ab('0x43a')];return _0x1cb618['default'][_0x19e3ab('0x33e')](_0x399402[_0x19e3ab('0x347')],{'title':_0x1cb618[_0x19e3ab('0x4c1')]['createElement']('span',{'style':{'fontWeight':0x258}},_0x2c22f0),'extra':_0x2908f6,'bordered':!0x1,'style':{'borderRadius':0xe,'boxShadow':_0x3fb318[_0x19e3ab('0x236')],'height':_0x292db1||_0x19e3ab('0x25f')},'bodyStyle':{'padding':0x10}},_0x5b079c);}function _0x567d19(_0x7c7dbd){var _0x3dea33=_0x1570cd,_0xd1e3c2=_0x7c7dbd[_0x3dea33('0x9b')],_0x380275=_0x7c7dbd[_0x3dea33('0x563')],_0x558e43=_0x7c7dbd[_0x3dea33('0x175')];return _0xd1e3c2&&0x0!==_0xd1e3c2[_0x3dea33('0x1f8')]?_0x1cb618[_0x3dea33('0x4c1')][_0x3dea33('0x33e')](_0x399402[_0x3dea33('0xb0')],{'dataSource':_0xd1e3c2,'split':!0x1,'renderItem':function(_0x4dad1a){var _0x38bc52=_0x3dea33;return _0x1cb618[_0x38bc52('0x4c1')]['createElement'](_0x399402[_0x38bc52('0xb0')][_0x38bc52('0x1ae')],{'style':{'padding':'8px\x200'}},_0x1cb618[_0x38bc52('0x4c1')][_0x38bc52('0x33e')](_0x399402[_0x38bc52('0xb0')][_0x38bc52('0x1ae')][_0x38bc52('0x43d')],{'avatar':_0x1cb618['default'][_0x38bc52('0x33e')](_0x399402[_0x38bc52('0x291')],{'style':{'backgroundColor':_0x3b5eea(_0x4dad1a['name']),'verticalAlign':_0x38bc52('0x9e')}},(_0x4d5ecb=_0x4dad1a[_0x38bc52('0x4d8')],_0x20b54c=(_0x4d5ecb||'')[_0x38bc52('0xa1')]()[_0x38bc52('0x376')](/\s+/),(_0x20b54c[0x0]&&_0x20b54c[0x0][0x0]||''+(_0x20b54c[0x1]&&_0x20b54c[0x1][0x0]||''))['toUpperCase']()+(_0x20b54c[0x1]&&_0x20b54c[0x1][0x0]||'')[_0x38bc52('0x423')]())),'title':_0x1cb618['default']['createElement'](_0x38bc52('0x1bd'),{'style':{'fontSize':0xe}},_0x4dad1a['name']),'description':_0x380275(_0x4dad1a)}));var _0x4d5ecb,_0x20b54c;}}):_0x1cb618[_0x3dea33('0x4c1')][_0x3dea33('0x33e')](_0x399402[_0x3dea33('0x269')],{'image':_0x399402['Empty'][_0x3dea33('0x463')],'description':_0x558e43||'Nothing\x20here'});}function _0xd98885(_0x3f45f5){var _0x2f7ec7=_0x1570cd,_0x153f4c=_0x3f45f5[_0x2f7ec7('0x21e')],_0x4316cb=_0x3f45f5[_0x2f7ec7('0x49d')],_0x29e6b8=_0x3f45f5['border'],_0x135fbe=_0x3f45f5['icon'],_0x24cb15=_0x3f45f5[_0x2f7ec7('0x38c')],_0x5ee49f=_0x3f45f5[_0x2f7ec7('0x2ac')],_0x53603b=_0x3f45f5[_0x2f7ec7('0x14d')];return _0x1cb618[_0x2f7ec7('0x4c1')][_0x2f7ec7('0x33e')](_0x2f7ec7('0x2e'),{'style':{'background':_0x153f4c,'borderRadius':0xc,'padding':_0x2f7ec7('0xfb'),'marginBottom':0x12,'display':_0x2f7ec7('0x3f6'),'justifyContent':_0x2f7ec7('0x1df'),'alignItems':_0x2f7ec7('0x3c5'),'gap':0x10,'flexWrap':_0x2f7ec7('0x519'),'boxShadow':_0x4316cb,'border':_0x29e6b8||_0x2f7ec7('0x1ec')}},_0x1cb618[_0x2f7ec7('0x4c1')][_0x2f7ec7('0x33e')](_0x2f7ec7('0x2e'),{'style':{'display':_0x2f7ec7('0x3f6'),'alignItems':'center','gap':0x10}},_0x1cb618[_0x2f7ec7('0x4c1')][_0x2f7ec7('0x33e')](_0x2f7ec7('0x2e'),{'style':{'background':_0x2f7ec7('0x237'),'borderRadius':_0x2f7ec7('0x542'),'width':0x30,'height':0x30,'flex':_0x2f7ec7('0x4da'),'display':_0x2f7ec7('0x3f6'),'alignItems':_0x2f7ec7('0x3c5'),'justifyContent':_0x2f7ec7('0x3c5'),'color':_0x2f7ec7('0x402'),'fontSize':0x14}},_0x135fbe),_0x1cb618[_0x2f7ec7('0x4c1')]['createElement'](_0x2f7ec7('0x2e'),null,_0x1cb618['default'][_0x2f7ec7('0x33e')]('div',{'style':{'color':_0x2f7ec7('0x402'),'fontWeight':0x258,'fontSize':0x10,'marginBottom':0x4}},_0x24cb15),_0x1cb618[_0x2f7ec7('0x4c1')][_0x2f7ec7('0x33e')](_0x2f7ec7('0x2e'),{'style':{'color':_0x2f7ec7('0xa8'),'fontSize':0xe}},_0x5ee49f))),_0x1cb618[_0x2f7ec7('0x4c1')][_0x2f7ec7('0x33e')]('div',{'style':{'display':_0x2f7ec7('0x3f6'),'gap':0xa,'alignItems':'center'}},_0x53603b));}function _0x366ac2(_0x11cad2){var _0x3e4a1b=_0x1570cd,_0x38507f=_0x11cad2[_0x3e4a1b('0x39')],_0x31a6ad=_0x11cad2[_0x3e4a1b('0x11b')],_0x5a4a00=_0x11cad2['color'],_0xb3402f=_0x11cad2[_0x3e4a1b('0x399')],_0x2b602a=_0x11cad2['ghost'];return _0x1cb618[_0x3e4a1b('0x4c1')][_0x3e4a1b('0x33e')]('a',{'key':_0x38507f,'onClick':function(_0xc01d73){var _0x101a73=_0x3e4a1b;_0xc01d73[_0x101a73('0x3d6')](),_0xb3402f();},'style':_0x2b602a?{'background':'rgba(255,255,255,0.2)','color':'#fff','padding':_0x3e4a1b('0x493'),'borderRadius':0x8,'textDecoration':_0x3e4a1b('0x1ec'),'fontSize':0xe,'fontWeight':0x1f4,'whiteSpace':_0x3e4a1b('0x195'),'border':'1px\x20solid\x20rgba(255,255,255,0.3)'}:{'background':'#fff','color':_0x5a4a00,'padding':_0x3e4a1b('0x4aa'),'borderRadius':0x8,'textDecoration':_0x3e4a1b('0x1ec'),'fontSize':0xe,'fontWeight':0x258,'boxShadow':_0x3e4a1b('0x101'),'whiteSpace':_0x3e4a1b('0x195')}},_0x31a6ad,_0x31a6ad?'\x20':null,_0x38507f);}function _0x38899c(_0x3964b6){var _0x42434d=_0x1570cd,_0x5a0af8=_0x3964b6[_0x42434d('0x20b')],_0x42f97d=_0x3964b6[_0x42434d('0x4f3')],_0x4c2ad0=_0x5a0af8&&_0x5a0af8[_0x42434d('0x19e')]||0x0;if(_0x4c2ad0<0x1)return null;var _0xb6a5c6=0x1===_0x4c2ad0,_0x4bf44c=Number(_0x5a0af8[_0x42434d('0x4b6')]||0x0)[_0x42434d('0xe3')](void 0x0,{'minimumFractionDigits':0x2,'maximumFractionDigits':0x2});return _0x1cb618[_0x42434d('0x4c1')][_0x42434d('0x33e')](_0xd98885,{'gradient':_0xb6a5c6?_0x42434d('0x37a'):_0x42434d('0x138'),'shadow':_0xb6a5c6?_0x42434d('0x3cc'):_0x42434d('0xe'),'icon':_0xb6a5c6?_0x1cb618[_0x42434d('0x4c1')][_0x42434d('0x33e')](_0x150a7c[_0x42434d('0xf4')],null):_0x1cb618[_0x42434d('0x4c1')][_0x42434d('0x33e')](_0x150a7c['ExclamationCircleOutlined'],null),'title':_0xb6a5c6?'Payment\x20Reminder':_0x42434d('0x217'),'message':_0xb6a5c6?_0x42434d('0x36d')['concat'](_0x4bf44c,'\x20USD.\x20Please\x20complete\x20your\x20payment\x20to\x20continue\x20enjoying\x20uninterrupted\x20service.'):_0x1cb618[_0x42434d('0x4c1')][_0x42434d('0x33e')](_0x42434d('0x1bd'),null,_0x42434d('0x225')['concat'](_0x4bf44c,_0x42434d('0x560')),_0x1cb618[_0x42434d('0x4c1')][_0x42434d('0x33e')]('br',null),_0x42434d('0x3f1')),'actions':_0x366ac2({'label':_0x42434d('0x4f9'),'icon':_0x1cb618['default'][_0x42434d('0x33e')](_0x150a7c['CreditCardOutlined'],null),'color':_0xb6a5c6?_0x42434d('0xf0'):_0x42434d('0x47d'),'onClick':function(){var _0x2a1f1a=_0x42434d;_0x42f97d&&_0x42f97d(_0x2a1f1a('0x4e9'),_0x2a1f1a('0x20b'));}})});}function _0x4cdbd1(_0x38b34b){var _0x1ab075=_0x1570cd,_0x926c91=_0x38b34b[_0x1ab075('0x18c')],_0x57a525=_0x38b34b[_0x1ab075('0x4f3')],_0x223cfe=_0x2e16df((0x0,_0x1cb618[_0x1ab075('0x51c')])(!0x1),0x2),_0x1311ba=_0x223cfe[0x0],_0x2375e3=_0x223cfe[0x1];return!_0x926c91||_0x1311ba?null:_0x1cb618[_0x1ab075('0x4c1')][_0x1ab075('0x33e')](_0xd98885,{'gradient':_0x1ab075('0x1bb'),'shadow':'0\x204px\x2015px\x20rgba(82,\x20196,\x2026,\x200.3)','border':_0x1ab075('0x1cf'),'icon':_0x1cb618[_0x1ab075('0x4c1')]['createElement'](_0x150a7c[_0x1ab075('0x3d0')],null),'title':_0x1ab075('0x47a'),'message':_0x1cb618[_0x1ab075('0x4c1')][_0x1ab075('0x33e')](_0x1ab075('0x1bd'),null,'Add\x20sample\x20employees,\x20projects,\x20attendance,\x20and\x20more\x20to\x20explore\x20all\x20features.',_0x1cb618[_0x1ab075('0x4c1')][_0x1ab075('0x33e')]('br',null),_0x1cb618[_0x1ab075('0x4c1')][_0x1ab075('0x33e')]('strong',null,'You\x20can\x20clear\x20all\x20sample\x20data\x20with\x20one\x20click'),'\x20','when\x20you\x27re\x20ready\x20to\x20go\x20live.'),'actions':[_0x366ac2({'label':_0x1ab075('0x3ba'),'icon':_0x1cb618[_0x1ab075('0x4c1')]['createElement'](_0x150a7c[_0x1ab075('0x6b')],null),'color':_0x1ab075('0xa6'),'onClick':function(){var _0x3adf15=_0x1ab075;_0x57a525&&_0x57a525(_0x3adf15('0x80'),_0x3adf15('0x2ab'));}}),_0x366ac2({'label':_0x1ab075('0xc7'),'ghost':!0x0,'onClick':function(){return _0x2375e3(!0x0);}})]});}function _0x5a22af(_0x457b0b){var _0x234457=_0x1570cd,_0x42cded=_0x457b0b[_0x234457('0x32f')],_0xf31ba0=_0x457b0b[_0x234457('0x4f3')];if(!_0x42cded)return null;var _0x4a968a=_0x42cded[_0x234457('0x42f')];return _0x1cb618[_0x234457('0x4c1')][_0x234457('0x33e')](_0xd98885,{'gradient':_0x234457('0x2c8'),'shadow':_0x234457('0x120'),'icon':_0x1cb618[_0x234457('0x4c1')][_0x234457('0x33e')](_0x150a7c['StarOutlined'],null),'title':_0x234457('0x3a9'),'message':_0x1cb618[_0x234457('0x4c1')][_0x234457('0x33e')](_0x234457('0x1bd'),null,null!=_0x4a968a?_0x1cb618['default'][_0x234457('0x33e')](_0x234457('0x1bd'),null,_0x234457('0x3df'),'\x20',_0x1cb618['default'][_0x234457('0x33e')](_0x234457('0x3bb'),null,_0x4a968a,'\x20',_0x234457('0x42f')),'\x20',_0x234457('0x3f4'),'\x20'):null,_0x234457('0x1d')),'actions':[_0x366ac2({'label':'Upgrade\x20Now','icon':_0x1cb618[_0x234457('0x4c1')][_0x234457('0x33e')](_0x150a7c[_0x234457('0xb9')],null),'color':_0x234457('0x10c'),'onClick':function(){var _0x18504c=_0x234457;_0xf31ba0&&_0xf31ba0('admin',_0x18504c('0x20b'));}}),_0x366ac2({'label':_0x234457('0x3c8'),'icon':_0x1cb618['default'][_0x234457('0x33e')](_0x150a7c[_0x234457('0x46a')],null),'ghost':!0x0,'onClick':function(){var _0x5cf6ee=_0x234457;window[_0x5cf6ee('0x200')]('https://icehrm.com/cloud-hosting-charges',_0x5cf6ee('0x2f1'));}})]});}},{'./theme':0x19,'@ant-design/icons':_0x557405('0x3aa'),'@antv/g2plot':_0x557405('0x343'),'antd':_0x557405('0x29c'),'react':_0x557405('0x516')}],0x5:[function(_0x43be91,_0x58d0e8,_0x1d07ec){var _0x5235ae=_0x557405;'use strict';function _0x2cd5bd(_0x3fa757){var _0x185562=_0x4ba4;return(_0x2cd5bd=_0x185562('0x568')==typeof Symbol&&_0x185562('0x263')==typeof Symbol['iterator']?function(_0x96b00b){return typeof _0x96b00b;}:function(_0x52aea4){var _0x23ed93=_0x185562;return _0x52aea4&&_0x23ed93('0x568')==typeof Symbol&&_0x52aea4['constructor']===Symbol&&_0x52aea4!==Symbol[_0x23ed93('0x501')]?_0x23ed93('0x263'):typeof _0x52aea4;})(_0x3fa757);}Object['defineProperty'](_0x1d07ec,_0x5235ae('0x4bc'),{'value':!0x0}),_0x1d07ec['default']=function(_0x221902){var _0x55f6b0=_0x5235ae,_0x1cd80f=_0x221902[_0x55f6b0('0x370')],_0x526a3e=_0x221902[_0x55f6b0('0x4f3')],_0x436549=(_0x221902[_0x55f6b0('0x44e')],_0x54c386['theme'][_0x55f6b0('0x418')]()[_0x55f6b0('0x1eb')]),_0x45a7ea=_0x192001((0x0,_0x928c57[_0x55f6b0('0x51c')])(null),0x2),_0x422ba3=_0x45a7ea[0x0],_0x12c3da=_0x45a7ea[0x1],_0x31f8e4=_0x192001((0x0,_0x928c57['useState'])(!0x0),0x2),_0x52578d=_0x31f8e4[0x0],_0xfc72cb=_0x31f8e4[0x1],_0x50084a=_0x192001((0x0,_0x928c57['useState'])(null),0x2),_0x43afc1=_0x50084a[0x0],_0x4ba214=_0x50084a[0x1],_0x15f6ee=_0x192001((0x0,_0x928c57[_0x55f6b0('0x51c')])(!0x1),0x2),_0xb41a2a=_0x15f6ee[0x0],_0x5dc0ae=_0x15f6ee[0x1];(0x0,_0x928c57[_0x55f6b0('0x42a')])(function(){var _0x1e479a=_0x55f6b0,_0x1379c7=!0x0;return _0xfc72cb(!0x0),fetch(''[_0x1e479a('0x54e')](_0x1cd80f['restApiBase'],_0x1e479a('0x258')),{'headers':{'Authorization':_0x1e479a('0x52e')['concat'](_0x1cd80f[_0x1e479a('0x1eb')])},'credentials':_0x1e479a('0x1a4')})[_0x1e479a('0x273')](function(_0x959fe){var _0x20750e=_0x1e479a;return _0x959fe[_0x20750e('0x251')]();})[_0x1e479a('0x273')](function(_0x4071cc){_0x1379c7&&(_0x12c3da(_0x4071cc),_0xfc72cb(!0x1));})[_0x1e479a('0x3d9')](function(_0x56b9ea){_0x1379c7&&(_0x4ba214(_0x56b9ea['message']),_0xfc72cb(!0x1));}),function(){_0x1379c7=!0x1;};},[_0x1cd80f]);var _0x4f7a75=(0x0,_0x928c57['useMemo'])(function(){var _0x732f0a=_0x55f6b0,_0x341fd9=new Date()[_0x732f0a('0x86')]();return _0x341fd9<0xc?_0x732f0a('0x445'):_0x341fd9<0x12?'Good\x20afternoon':_0x732f0a('0x3eb');},[]),_0x3cd75c=(0x0,_0x928c57['useMemo'])(function(){var _0x1ee91e=_0x55f6b0,_0x58a560=_0x422ba3&&_0x422ba3[_0x1ee91e('0x16e')]||'';return-0x1!==_0x58a560[_0x1ee91e('0x570')]('@')?_0x58a560[_0x1ee91e('0x376')]('@')[0x0]['replace'](/[._]+/g,'\x20')[_0x1ee91e('0x467')](/\b\w/g,function(_0x58e039){var _0x142216=_0x1ee91e;return _0x58e039[_0x142216('0x423')]();}):_0x58a560;},[_0x422ba3]);if(_0x52578d)return _0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')]('div',{'style':{'display':_0x55f6b0('0x3f6'),'justifyContent':_0x55f6b0('0x3c5'),'padding':0x50}},_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0xe5')],{'size':_0x55f6b0('0x54b')}));if(_0x43afc1||!_0x422ba3)return _0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x55f6b0('0x2e'),{'style':{'padding':0x20}},_0x928c57[_0x55f6b0('0x4c1')]['createElement'](_0x54c386[_0x55f6b0('0x269')],{'description':_0x55f6b0('0x3da')['concat'](_0x43afc1?':\x20'[_0x55f6b0('0x54e')](_0x43afc1):'')}));var _0x4ee377=_0x422ba3[_0x55f6b0('0x1aa')]||{},_0x7b8ff8=_0x422ba3['todo']||[],_0x59b1fd=_0x422ba3[_0x55f6b0('0x491')]||[],_0x2964cb=_0x422ba3[_0x55f6b0('0x37c')]||[],_0x5d4fb9=_0x422ba3[_0x55f6b0('0x4c7')]||[],_0x4c447=[];_0x4ee377&&void 0x0!==_0x4ee377[_0x55f6b0('0xef')]&&_0x4c447[_0x55f6b0('0x193')]({'label':_0x55f6b0('0x79'),'value':''['concat']((_0x4ee377['hoursToday']||0x0)[_0x55f6b0('0x475')](0x1),'h'),'sub':_0x4ee377[_0x55f6b0('0xf2')]?'Clocked\x20in':_0x4ee377[_0x55f6b0('0x67')]?_0x55f6b0('0xc1'):'Not\x20clocked\x20in','icon':_0x928c57[_0x55f6b0('0x4c1')]['createElement'](_0x334ae1[_0x55f6b0('0x279')],null),'color':_0x55f6b0('0x277'),'nav':[_0x55f6b0('0x1c8'),'attendance']}),(_0x4c447[_0x55f6b0('0x193')]({'label':'Action\x20items','value':_0x7b8ff8[_0x55f6b0('0x1f8')],'sub':_0x55f6b0('0x55a'),'icon':_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x334ae1['CheckSquareOutlined'],null),'color':_0x55f6b0('0x4d7')}),_0x422ba3[_0x55f6b0('0x1f9')]&&_0x4c447[_0x55f6b0('0x193')]({'label':_0x55f6b0('0x110'),'value':_0x422ba3[_0x55f6b0('0x1f9')][_0x55f6b0('0x363')]||0x0,'sub':_0x55f6b0('0x3e7'),'icon':_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x334ae1[_0x55f6b0('0x550')],null),'color':'#F6BD16','nav':['modules','leaves']})),_0x422ba3['isManager']&&_0x422ba3['teamStats']&&(_0x4c447['push']({'label':_0x55f6b0('0x337'),'value':_0x422ba3['teamStats'][_0x55f6b0('0x4f4')]||0x0,'sub':_0x55f6b0('0x21c'),'icon':_0x928c57[_0x55f6b0('0x4c1')]['createElement'](_0x334ae1['TeamOutlined'],null),'color':_0x55f6b0('0x3ab'),'nav':[_0x55f6b0('0x4e9'),_0x55f6b0('0x36a')]}),_0x4c447[_0x55f6b0('0x193')]({'label':_0x55f6b0('0x2c5'),'value':_0x422ba3[_0x55f6b0('0x14')]['onLeaveToday']||0x0,'sub':_0x55f6b0('0x16'),'icon':_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x334ae1['CalendarOutlined'],null),'color':_0x55f6b0('0x415'),'nav':[_0x55f6b0('0x1c8'),_0x55f6b0('0x4ef')]}));var _0x5f16ea=function(_0xa935b6,_0x1d4594,_0x3e0625){var _0x5e6855=_0x55f6b0;return{'title':_0x928c57[_0x5e6855('0x4c1')][_0x5e6855('0x33e')](_0x5e6855('0x1bd'),{'style':{'display':_0x5e6855('0x3dd'),'alignItems':_0x5e6855('0x3c5'),'gap':0x8}},_0xa935b6,_0x1d4594),'extra':_0x3e0625};};return _0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x55f6b0('0x2e'),{'style':{'padding':0x18,'maxWidth':0x5dc,'margin':_0x55f6b0('0x1d7')}},_0x928c57['default'][_0x55f6b0('0x33e')]('div',{'style':{'marginBottom':0x12}},_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x55f6b0('0x2e'),{'style':{'fontSize':0x16,'fontWeight':0x2bc}},_0x4f7a75,',','\x20',_0x3cd75c,'\x20','👋'),_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x521d67,{'type':_0x55f6b0('0x3a5')},_0x55f6b0('0x371'))),_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x470')],{'gutter':[0x10,0x10]},_0x4c447[_0x55f6b0('0x1dd')](function(_0x5e405b){var _0x36df7d=_0x55f6b0;return _0x928c57[_0x36df7d('0x4c1')]['createElement'](_0x54c386[_0x36df7d('0x162')],{'xs':0xc,'sm':0x8,'md':_0x422ba3[_0x36df7d('0x40e')]?0x6:0x8,'xl':_0x422ba3['isManager']?0x4:0x6,'key':_0x5e405b[_0x36df7d('0x39')]},_0x928c57[_0x36df7d('0x4c1')][_0x36df7d('0x33e')](_0x54c386[_0x36df7d('0x347')],{'hoverable':!0x0,'onClick':function(){var _0x52ea52=_0x36df7d;return _0x5e405b[_0x52ea52('0x46f')]&&_0x526a3e&&_0x526a3e(_0x5e405b[_0x52ea52('0x46f')][0x0],_0x5e405b['nav'][0x1]);},'style':{'borderRadius':0xc,'boxShadow':_0x1aa31b[_0x36df7d('0x236')]},'styles':{'body':{'padding':0x10}}},_0x928c57['default'][_0x36df7d('0x33e')](_0x36df7d('0x2e'),{'style':{'display':_0x36df7d('0x3f6'),'alignItems':_0x36df7d('0x3c5'),'gap':0xc}},_0x928c57[_0x36df7d('0x4c1')]['createElement'](_0x36df7d('0x1bd'),{'style':{'width':0x2a,'height':0x2a,'borderRadius':0xb,'flex':_0x36df7d('0x4da'),'fontSize':0x13,'background':''['concat'](_0x5e405b[_0x36df7d('0x34')],'22'),'color':_0x5e405b[_0x36df7d('0x34')],'display':_0x36df7d('0x3f6'),'alignItems':_0x36df7d('0x3c5'),'justifyContent':'center'}},_0x5e405b[_0x36df7d('0x11b')]),_0x928c57[_0x36df7d('0x4c1')][_0x36df7d('0x33e')](_0x36df7d('0x2e'),{'style':{'minWidth':0x0}},_0x928c57[_0x36df7d('0x4c1')]['createElement']('div',{'style':{'fontSize':0x16,'fontWeight':0x2bc,'lineHeight':1.1}},_0x5e405b[_0x36df7d('0x1c7')]),_0x928c57[_0x36df7d('0x4c1')]['createElement'](_0x36df7d('0x2e'),{'style':{'fontSize':0xc,'color':_0x436549[_0x36df7d('0x46c')]}},_0x5e405b[_0x36df7d('0x39')]))),_0x5e405b[_0x36df7d('0xc8')]&&_0x928c57[_0x36df7d('0x4c1')][_0x36df7d('0x33e')](_0x36df7d('0x2e'),{'style':{'fontSize':11.5,'color':_0x436549[_0x36df7d('0x3e0')],'marginTop':0x8}},_0x5e405b[_0x36df7d('0xc8')])));})),_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x470')],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386['Col'],{'xs':0x18,'lg':_0x422ba3[_0x55f6b0('0x40e')]?0xc:0xe},_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x347')],_0xead7fa({},_0x5f16ea(_0x928c57[_0x55f6b0('0x4c1')]['createElement'](_0x334ae1['CheckSquareOutlined'],{'style':{'color':_0x55f6b0('0x268')}}),'My\x20To-Do\x20List'),{'style':{'borderRadius':0xc,'boxShadow':_0x1aa31b[_0x55f6b0('0x236')]}}),0x0===_0x7b8ff8[_0x55f6b0('0x1f8')]?_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x269')],{'image':_0x54c386['Empty'][_0x55f6b0('0x463')],'description':_0x55f6b0('0x177')}):_0x928c57['default'][_0x55f6b0('0x33e')](_0x928c57['default'][_0x55f6b0('0x524')],null,_0x928c57['default'][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x310')],{'items':(_0xb41a2a?_0x7b8ff8:_0x7b8ff8['slice'](0x0,0x4))[_0x55f6b0('0x1dd')](function(_0x160343){var _0x51baee=_0x55f6b0,_0x279476=_0x160343[_0x51baee('0x324')]?function(_0x50bd5f){var _0x26a490=_0x51baee;try{var _0x40d02f=_0x50bd5f[_0x26a490('0x570')]('?')>=0x0?_0x50bd5f[_0x26a490('0x376')]('?')[0x1]:_0x50bd5f,_0x35d473=new URLSearchParams(_0x40d02f),_0x13720c=_0x35d473[_0x26a490('0xeb')]('g'),_0x22ec97=_0x35d473['get']('n');return _0x13720c&&_0x22ec97?{'g':_0x13720c,'n':_0x22ec97}:null;}catch(_0x1284c7){return null;}}(_0x160343[_0x51baee('0x324')]):null;return{'dot':_0x3f49e7(_0x160343[_0x51baee('0x14f')]),'children':_0x928c57['default'][_0x51baee('0x33e')](_0x51baee('0x2e'),null,_0x928c57['default'][_0x51baee('0x33e')](_0x51baee('0x2e'),{'style':{'fontWeight':0x1f4}},_0x160343[_0x51baee('0x490')]),_0x160343['details']&&_0x928c57[_0x51baee('0x4c1')]['createElement'](_0x51baee('0x2e'),{'style':{'fontSize':0xc,'color':_0x436549['colorTextTertiary'],'marginTop':0x2}},_0x160343[_0x51baee('0x571')]),_0x160343['link']&&_0x160343[_0x51baee('0xd4')]&&_0x928c57[_0x51baee('0x4c1')][_0x51baee('0x33e')](_0x54c386[_0x51baee('0x55f')],{'type':_0x51baee('0x324'),'size':_0x51baee('0x1de'),'style':{'paddingLeft':0x0},'onClick':function(){var _0x2fd566=_0x51baee;_0x279476&&_0x526a3e?_0x526a3e(_0x279476['g'],_0x279476['n']):window[_0x2fd566('0x2ad')][_0x2fd566('0x1f7')]=_0x160343[_0x2fd566('0x324')];}},_0x160343[_0x51baee('0xd4')]))};})}),_0x7b8ff8['length']>0x4&&_0x928c57['default'][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x55f')],{'type':_0x55f6b0('0x4c4'),'onClick':function(){return _0x5dc0ae(function(_0x512348){return!_0x512348;});}},_0xb41a2a?'Show\x20less':'View\x20all\x20'['concat'](_0x7b8ff8[_0x55f6b0('0x1f8')],_0x55f6b0('0x21b')))))),_0x928c57['default']['createElement'](_0x54c386[_0x55f6b0('0x162')],{'xs':0x18,'lg':_0x422ba3[_0x55f6b0('0x40e')]?0xc:0xa},_0x928c57[_0x55f6b0('0x4c1')]['createElement'](_0x54c386[_0x55f6b0('0x347')],_0xead7fa({},_0x5f16ea(_0x928c57[_0x55f6b0('0x4c1')]['createElement'](_0x334ae1[_0x55f6b0('0x374')],{'style':{'color':_0x55f6b0('0x415')}}),_0x55f6b0('0x334')),{'style':{'borderRadius':0xc,'boxShadow':_0x1aa31b['MUI_SHADOW']}}),0x0===_0x59b1fd[_0x55f6b0('0x1f8')]?_0x928c57[_0x55f6b0('0x4c1')]['createElement'](_0x54c386[_0x55f6b0('0x269')],{'image':_0x54c386[_0x55f6b0('0x269')][_0x55f6b0('0x463')],'description':_0x55f6b0('0x2a4')}):_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0xb0')],{'dataSource':_0x59b1fd,'renderItem':function(_0x2ccdb4){var _0x8326b2=_0x55f6b0;return _0x928c57[_0x8326b2('0x4c1')][_0x8326b2('0x33e')](_0x54c386['List'][_0x8326b2('0x1ae')],null,_0x928c57[_0x8326b2('0x4c1')][_0x8326b2('0x33e')](_0x54c386[_0x8326b2('0xb0')][_0x8326b2('0x1ae')][_0x8326b2('0x43d')],{'avatar':_0x928c57[_0x8326b2('0x4c1')][_0x8326b2('0x33e')](_0x54c386['Avatar'],{'style':{'background':_0x25fb8a(_0x2ccdb4[_0x8326b2('0x4d8')])}},_0x1ebe04(_0x2ccdb4['name'])),'title':_0x928c57[_0x8326b2('0x4c1')][_0x8326b2('0x33e')]('span',{'style':{'fontWeight':0x258}},_0x2ccdb4['name']),'description':_0x8326b2('0x52d')===_0x2ccdb4[_0x8326b2('0x444')]?'🎂\x20Birthday\x20·\x20'[_0x8326b2('0x54e')](_0x263e78(_0x2ccdb4[_0x8326b2('0x3fa')])):_0x8326b2('0x48c')[_0x8326b2('0x54e')](_0x2ccdb4[_0x8326b2('0x1dc')],'yr\x20anniversary\x20·\x20')[_0x8326b2('0x54e')](_0x263e78(_0x2ccdb4[_0x8326b2('0x3fa')]))}),_0x928c57[_0x8326b2('0x4c1')]['createElement'](_0x54c386[_0x8326b2('0x477')],{'color':0x0===_0x2ccdb4[_0x8326b2('0x42f')]?'red':_0x8326b2('0x4c1')},0x0===(_0x389d9f=_0x2ccdb4[_0x8326b2('0x42f')])?_0x8326b2('0x16'):0x1===_0x389d9f?'Tomorrow':_0x8326b2('0x2ef')[_0x8326b2('0x54e')](_0x389d9f,'\x20days')));var _0x389d9f;}})))),_0x422ba3['isManager']&&_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x470')],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x162')],{'xs':0x18},_0x928c57['default'][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x347')],_0xead7fa({},_0x5f16ea(_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x334ae1[_0x55f6b0('0x272')],{'style':{'color':_0x55f6b0('0x3ab')}}),_0x55f6b0('0x179'),_0x928c57[_0x55f6b0('0x4c1')]['createElement'](_0x54c386[_0x55f6b0('0x55f')],{'type':_0x55f6b0('0x324'),'size':_0x55f6b0('0x1de'),'onClick':function(){var _0x3df96d=_0x55f6b0;return _0x526a3e&&_0x526a3e(_0x3df96d('0x4e9'),_0x3df96d('0x36a'));}},_0x55f6b0('0x505'),_0x928c57['default'][_0x55f6b0('0x33e')](_0x334ae1[_0x55f6b0('0x73')],null))),{'style':{'borderRadius':0xc,'boxShadow':_0x1aa31b['MUI_SHADOW']}}),0x0===_0x2964cb[_0x55f6b0('0x1f8')]?_0x928c57['default'][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x269')],{'image':_0x54c386[_0x55f6b0('0x269')]['PRESENTED_IMAGE_SIMPLE'],'description':_0x55f6b0('0x281')}):_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386['Row'],{'gutter':[0xc,0xc]},_0x2964cb[_0x55f6b0('0x1dd')](function(_0x2df534){var _0xc386d3=_0x55f6b0;return _0x928c57['default'][_0xc386d3('0x33e')](_0x54c386['Col'],{'xs':0xc,'sm':0x8,'md':0x6,'xl':0x4,'key':_0x2df534['id']},_0x928c57['default'][_0xc386d3('0x33e')](_0xc386d3('0x2e'),{'style':{'display':_0xc386d3('0x3f6'),'alignItems':_0xc386d3('0x3c5'),'gap':0xa,'padding':'8px\x2010px','border':_0xc386d3('0x178')['concat'](_0x436549[_0xc386d3('0x14b')]),'borderRadius':0xa}},_0x928c57['default'][_0xc386d3('0x33e')](_0x54c386[_0xc386d3('0x291')],{'style':{'background':_0x25fb8a(_0x2df534[_0xc386d3('0x4d8')]),'flex':'0\x200\x20auto'}},_0x1ebe04(_0x2df534['name'])),_0x928c57['default']['createElement'](_0xc386d3('0x2e'),{'style':{'minWidth':0x0}},_0x928c57[_0xc386d3('0x4c1')][_0xc386d3('0x33e')](_0xc386d3('0x2e'),{'style':{'fontWeight':0x258,'fontSize':0xd,'overflow':_0xc386d3('0x5c'),'textOverflow':_0xc386d3('0xf7'),'whiteSpace':_0xc386d3('0x195')}},_0x2df534[_0xc386d3('0x4d8')]),_0x928c57[_0xc386d3('0x4c1')][_0xc386d3('0x33e')](_0xc386d3('0x2e'),{'style':{'fontSize':0xb,'color':_0x436549['colorTextTertiary'],'overflow':_0xc386d3('0x5c'),'textOverflow':_0xc386d3('0xf7'),'whiteSpace':_0xc386d3('0x195')}},_0x2df534['title']||'—'))));}))))),_0x5d4fb9[_0x55f6b0('0x1f8')]>0x0&&_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x470')],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x162')],{'xs':0x18},_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386[_0x55f6b0('0x347')],_0xead7fa({},_0x5f16ea(_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x334ae1[_0x55f6b0('0x56e')],{'style':{'color':_0x55f6b0('0x4c8')}}),_0x55f6b0('0x222'),_0x928c57[_0x55f6b0('0x4c1')][_0x55f6b0('0x33e')](_0x54c386['Button'],{'type':_0x55f6b0('0x324'),'size':_0x55f6b0('0x1de'),'onClick':function(){var _0x52e3b9=_0x55f6b0;return _0x526a3e&&_0x526a3e(_0x52e3b9('0x80'),'team|user');}},'View\x20teams',_0x928c57['default'][_0x55f6b0('0x33e')](_0x334ae1[_0x55f6b0('0x73')],null))),{'style':{'borderRadius':0xc,'boxShadow':_0x1aa31b[_0x55f6b0('0x236')]}}),_0x928c57[_0x55f6b0('0x4c1')]['createElement'](_0x54c386[_0x55f6b0('0x470')],{'gutter':[0xc,0xc]},_0x5d4fb9[_0x55f6b0('0x1dd')](function(_0x5c923f){var _0x23b442=_0x55f6b0;return _0x928c57[_0x23b442('0x4c1')][_0x23b442('0x33e')](_0x54c386[_0x23b442('0x162')],{'xs':0x18,'sm':0xc,'md':0x8,'xl':0x6,'key':_0x5c923f['id']},_0x928c57[_0x23b442('0x4c1')][_0x23b442('0x33e')](_0x23b442('0x2e'),{'style':{'display':'flex','alignItems':'center','gap':0xa,'padding':_0x23b442('0x118'),'border':_0x23b442('0x178')[_0x23b442('0x54e')](_0x436549[_0x23b442('0x14b')]),'borderRadius':0xa}},_0x928c57[_0x23b442('0x4c1')][_0x23b442('0x33e')](_0x23b442('0x1bd'),{'style':{'width':0x24,'height':0x24,'borderRadius':0x9,'flex':'0\x200\x20auto','background':(_0x5c923f[_0x23b442('0x34')]||_0x23b442('0x4c8'))+'22','color':_0x5c923f['color']||_0x23b442('0x4c8'),'display':'flex','alignItems':_0x23b442('0x3c5'),'justifyContent':_0x23b442('0x3c5')}},_0x928c57['default'][_0x23b442('0x33e')](_0x334ae1[_0x23b442('0x272')],null)),_0x928c57['default']['createElement'](_0x23b442('0x2e'),{'style':{'minWidth':0x0,'flex':0x1}},_0x928c57['default']['createElement'](_0x23b442('0x2e'),{'style':{'fontWeight':0x258,'fontSize':0xd,'overflow':_0x23b442('0x5c'),'textOverflow':'ellipsis','whiteSpace':_0x23b442('0x195')}},_0x5c923f[_0x23b442('0x4d8')]),_0x928c57[_0x23b442('0x4c1')][_0x23b442('0x33e')](_0x23b442('0x2e'),{'style':{'fontSize':0xb,'color':_0x436549['colorTextTertiary']}},''[_0x23b442('0x54e')](_0x5c923f['members'],_0x23b442('0x228'))[_0x23b442('0x54e')](0x1===_0x5c923f['members']?'':'s'))),_0x5c923f['role']&&'Member'!==_0x5c923f[_0x23b442('0x3e9')]&&_0x928c57[_0x23b442('0x4c1')][_0x23b442('0x33e')](_0x54c386[_0x23b442('0x477')],{'color':_0x23b442('0x38b')},_0x5c923f[_0x23b442('0x3e9')])));}))))));};var _0x928c57=function(_0xaef1c3){var _0x4fa035=_0x5235ae;if(_0xaef1c3&&_0xaef1c3[_0x4fa035('0x4bc')])return _0xaef1c3;if(null===_0xaef1c3||_0x4fa035('0x19b')!==_0x2cd5bd(_0xaef1c3)&&'function'!=typeof _0xaef1c3)return{'default':_0xaef1c3};var _0x3da0eb=_0x4da792();if(_0x3da0eb&&_0x3da0eb['has'](_0xaef1c3))return _0x3da0eb['get'](_0xaef1c3);var _0x3dcc5c={},_0xde2ce4=Object[_0x4fa035('0x28b')]&&Object[_0x4fa035('0x2da')];for(var _0x42e983 in _0xaef1c3)if(Object['prototype'][_0x4fa035('0x205')][_0x4fa035('0x210')](_0xaef1c3,_0x42e983)){var _0x46873b=_0xde2ce4?Object['getOwnPropertyDescriptor'](_0xaef1c3,_0x42e983):null;_0x46873b&&(_0x46873b[_0x4fa035('0xeb')]||_0x46873b['set'])?Object[_0x4fa035('0x28b')](_0x3dcc5c,_0x42e983,_0x46873b):_0x3dcc5c[_0x42e983]=_0xaef1c3[_0x42e983];}return _0x3dcc5c[_0x4fa035('0x4c1')]=_0xaef1c3,_0x3da0eb&&_0x3da0eb['set'](_0xaef1c3,_0x3dcc5c),_0x3dcc5c;}(_0x43be91(_0x5235ae('0x516'))),_0x54c386=_0x43be91(_0x5235ae('0x29c')),_0x334ae1=_0x43be91(_0x5235ae('0x3aa')),_0x1aa31b=_0x43be91('./theme');function _0x4da792(){var _0x5037f6=_0x5235ae;if(_0x5037f6('0x568')!=typeof WeakMap)return null;var _0x22ae5b=new WeakMap();return _0x4da792=function(){return _0x22ae5b;},_0x22ae5b;}function _0xead7fa(){var _0x25ea83=_0x5235ae;return(_0xead7fa=Object['assign']||function(_0x9b6a44){var _0x1e5fa3=_0x4ba4;for(var _0x400b7f=0x1;_0x400b7f<arguments[_0x1e5fa3('0x1f8')];_0x400b7f++){var _0x689b24=arguments[_0x400b7f];for(var _0x59768f in _0x689b24)Object[_0x1e5fa3('0x501')][_0x1e5fa3('0x205')][_0x1e5fa3('0x210')](_0x689b24,_0x59768f)&&(_0x9b6a44[_0x59768f]=_0x689b24[_0x59768f]);}return _0x9b6a44;})[_0x25ea83('0x154')](this,arguments);}function _0x192001(_0x425ccd,_0x282a6f){return function(_0x1c4cc7){var _0x4e1afb=_0x4ba4;if(Array[_0x4e1afb('0x161')](_0x1c4cc7))return _0x1c4cc7;}(_0x425ccd)||function(_0x45d3a5,_0x38c63b){var _0x302186=_0x4ba4;if(_0x302186('0x3')==typeof Symbol||!(Symbol[_0x302186('0x412')]in Object(_0x45d3a5)))return;var _0x406e08=[],_0x2acfa9=!0x0,_0x564366=!0x1,_0x3bafdb=void 0x0;try{for(var _0x225259,_0x1d5129=_0x45d3a5[Symbol[_0x302186('0x412')]]();!(_0x2acfa9=(_0x225259=_0x1d5129['next']())[_0x302186('0x448')])&&(_0x406e08['push'](_0x225259[_0x302186('0x1c7')]),!_0x38c63b||_0x406e08['length']!==_0x38c63b);_0x2acfa9=!0x0);}catch(_0x1ac353){_0x564366=!0x0,_0x3bafdb=_0x1ac353;}finally{try{_0x2acfa9||null==_0x1d5129[_0x302186('0x6e')]||_0x1d5129['return']();}finally{if(_0x564366)throw _0x3bafdb;}}return _0x406e08;}(_0x425ccd,_0x282a6f)||function(_0x2fbd82,_0x3c6dc3){var _0x40b622=_0x4ba4;if(!_0x2fbd82)return;if(_0x40b622('0x430')==typeof _0x2fbd82)return _0x14fcd8(_0x2fbd82,_0x3c6dc3);var _0x15c89b=Object[_0x40b622('0x501')][_0x40b622('0x476')][_0x40b622('0x210')](_0x2fbd82)['slice'](0x8,-0x1);_0x40b622('0x2f7')===_0x15c89b&&_0x2fbd82[_0x40b622('0x151')]&&(_0x15c89b=_0x2fbd82[_0x40b622('0x151')][_0x40b622('0x4d8')]);if(_0x40b622('0x506')===_0x15c89b||_0x40b622('0x26e')===_0x15c89b)return Array[_0x40b622('0x303')](_0x15c89b);if(_0x40b622('0x243')===_0x15c89b||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x40b622('0x2d4')](_0x15c89b))return _0x14fcd8(_0x2fbd82,_0x3c6dc3);}(_0x425ccd,_0x282a6f)||function(){var _0x5c1356=_0x4ba4;throw new TypeError(_0x5c1356('0x36b'));}();}function _0x14fcd8(_0x2b2657,_0x4ae68d){var _0x11c0c4=_0x5235ae;(null==_0x4ae68d||_0x4ae68d>_0x2b2657[_0x11c0c4('0x1f8')])&&(_0x4ae68d=_0x2b2657['length']);for(var _0x2d1c97=0x0,_0x4eb826=new Array(_0x4ae68d);_0x2d1c97<_0x4ae68d;_0x2d1c97++)_0x4eb826[_0x2d1c97]=_0x2b2657[_0x2d1c97];return _0x4eb826;}var _0x521d67=_0x54c386[_0x5235ae('0x13b')][_0x5235ae('0x1a0')],_0x3de92c=[_0x5235ae('0x277'),'#5AD8A6',_0x5235ae('0x268'),_0x5235ae('0x244'),_0x5235ae('0x415'),_0x5235ae('0x3ab'),_0x5235ae('0x4e8'),_0x5235ae('0x0')];function _0x1ebe04(_0x233ae4){var _0x45aa04=_0x5235ae,_0x2229b7=(_0x233ae4||'')[_0x45aa04('0xa1')]()[_0x45aa04('0x376')](/\s+/);return((_0x2229b7[0x0]&&_0x2229b7[0x0][0x0]||'')+(_0x2229b7[0x1]&&_0x2229b7[0x1][0x0]||''))[_0x45aa04('0x423')]()||'?';}function _0x25fb8a(_0x4981cd){var _0x328bf3=_0x5235ae;for(var _0x1a67b1=0x0,_0x512066=0x0;_0x512066<(_0x4981cd||'')[_0x328bf3('0x1f8')];_0x512066+=0x1)_0x1a67b1=0x1f*_0x1a67b1+_0x4981cd[_0x328bf3('0x2a9')](_0x512066)>>>0x0;return _0x3de92c[_0x1a67b1%_0x3de92c[_0x328bf3('0x1f8')]];}function _0x263e78(_0x54ed92){var _0x2ffeae=_0x5235ae;if(!_0x54ed92)return'';var _0x5de9f7=new Date(''['concat'](_0x54ed92,_0x2ffeae('0x6')));return Number[_0x2ffeae('0x36e')](_0x5de9f7[_0x2ffeae('0x23f')]())?_0x54ed92:_0x5de9f7['toLocaleDateString'](void 0x0,{'month':_0x2ffeae('0x562'),'day':_0x2ffeae('0x3c9')});}function _0x3f49e7(_0x3928b3){var _0x1e28e5=_0x5235ae;return _0x3928b3>=0x3e8?_0x928c57[_0x1e28e5('0x4c1')]['createElement'](_0x334ae1[_0x1e28e5('0x48')],{'style':{'color':_0x1e28e5('0x2e2'),'fontSize':0x10}}):_0x3928b3>=0x64?_0x928c57[_0x1e28e5('0x4c1')]['createElement'](_0x334ae1[_0x1e28e5('0x533')],{'style':{'color':'#e8684a','fontSize':0x10}}):_0x3928b3>=0x32?_0x928c57[_0x1e28e5('0x4c1')][_0x1e28e5('0x33e')](_0x334ae1[_0x1e28e5('0xf4')],{'style':{'color':_0x1e28e5('0x3ac'),'fontSize':0x10}}):_0x3928b3>=0x14?_0x928c57[_0x1e28e5('0x4c1')]['createElement'](_0x334ae1[_0x1e28e5('0x94')],{'style':{'color':_0x1e28e5('0x131'),'fontSize':0x10}}):_0x928c57['default'][_0x1e28e5('0x33e')](_0x334ae1[_0x1e28e5('0x541')],{'style':{'color':_0x1e28e5('0x414'),'fontSize':0x10}});}},{'./theme':0x19,'@ant-design/icons':'@ant-design/icons','antd':'antd','react':_0x557405('0x516')}],0x6:[function(_0x190aef,_0xd7ba5b,_0x310e69){var _0x43ff4c=_0x557405;'use strict';function _0x543f80(_0x2f01b6){var _0x510202=_0x4ba4;return(_0x543f80=_0x510202('0x568')==typeof Symbol&&'symbol'==typeof Symbol['iterator']?function(_0x1b03aa){return typeof _0x1b03aa;}:function(_0x44d482){var _0x156a5d=_0x510202;return _0x44d482&&_0x156a5d('0x568')==typeof Symbol&&_0x44d482[_0x156a5d('0x151')]===Symbol&&_0x44d482!==Symbol[_0x156a5d('0x501')]?_0x156a5d('0x263'):typeof _0x44d482;})(_0x2f01b6);}Object['defineProperty'](_0x310e69,_0x43ff4c('0x4bc'),{'value':!0x0}),_0x310e69[_0x43ff4c('0x4c1')]=function(_0x503116){var _0x54ee57=_0x43ff4c,_0x2b5bf1=_0x503116[_0x54ee57('0x200')],_0x268689=_0x503116['onClose'],_0x14242b=_0x503116['rec'],_0x2856ba=_0x503116[_0x54ee57('0x4f8')],_0x46450f=_0x503116['mode'],_0x1cc0c9=void 0x0===_0x46450f?'view':_0x46450f,_0x46947d=_0x503116['onSaved'],_0x38d513=_0x503116[_0x54ee57('0xe7')],_0x234d19=_0x495115[_0x54ee57('0xd6')][_0x54ee57('0x418')]()['token'],_0x121ea2=_0x234d19[_0x54ee57('0x35')]===_0x533246[_0x54ee57('0x34e')][_0x54ee57('0x509')],_0x31823d=_0x162d1d((0x0,_0x221517[_0x54ee57('0x51c')])(null),0x2),_0xb5e474=_0x31823d[0x0],_0x59d855=_0x31823d[0x1],_0x3c3f01=_0x162d1d((0x0,_0x221517[_0x54ee57('0x51c')])(!0x1),0x2),_0x1a78c7=_0x3c3f01[0x0],_0x40baf4=_0x3c3f01[0x1],_0x2d6fc0=_0x162d1d((0x0,_0x221517[_0x54ee57('0x51c')])(!0x1),0x2),_0x435991=_0x2d6fc0[0x0],_0x1d83ad=_0x2d6fc0[0x1],_0x489063=_0x162d1d((0x0,_0x221517[_0x54ee57('0x51c')])({}),0x2),_0x5a179e=_0x489063[0x0],_0x1202d5=_0x489063[0x1],_0x17fd0c=_0x162d1d((0x0,_0x221517['useState'])(null),0x2),_0x4e8b49=_0x17fd0c[0x0],_0x22ef97=_0x17fd0c[0x1],_0x48d77f=_0x162d1d((0x0,_0x221517[_0x54ee57('0x51c')])(''),0x2),_0x51952b=_0x48d77f[0x0],_0xfb7b60=_0x48d77f[0x1],_0x5509af=_0x162d1d((0x0,_0x221517[_0x54ee57('0x51c')])(!0x1),0x2),_0x424bca=_0x5509af[0x0],_0x349587=_0x5509af[0x1],_0x131510=_0x54ee57('0x8c')===_0x1cc0c9||_0x54ee57('0x437')===_0x1cc0c9,_0x496f53=function(_0x167647){var _0x1be89c=_0x54ee57;return _0x167647&&_0x40baf4(!0x0),fetch(''[_0x1be89c('0x54e')](_0x2856ba[_0x1be89c('0x123')],_0x1be89c('0x34b'))[_0x1be89c('0x54e')](_0x14242b['id'],_0x1be89c('0x1ea')),{'headers':{'Authorization':_0x1be89c('0x52e')[_0x1be89c('0x54e')](_0x2856ba[_0x1be89c('0x1eb')])},'credentials':_0x1be89c('0x1a4')})[_0x1be89c('0x273')](function(_0x50eb4a){return _0x50eb4a['json']();})['then'](function(_0x346c91){var _0x86f874=_0x1be89c;_0x346c91&&!_0x346c91[_0x86f874('0x54d')]?(_0x59d855(_0x346c91),_0x1202d5({'category':_0x346c91[_0x86f874('0x405')],'expense_date':_0x346c91[_0x86f874('0x3cb')],'payment_method':_0x346c91[_0x86f874('0x318')],'payee':_0x346c91[_0x86f874('0x133')],'currency':_0x346c91[_0x86f874('0x132')],'amount':_0x346c91[_0x86f874('0x484')],'transaction_no':_0x346c91[_0x86f874('0x4c5')],'notes':_0x346c91[_0x86f874('0x261')]})):_0x59d855({});})[_0x1be89c('0x3d9')](function(){return _0x59d855({});})[_0x1be89c('0x3e1')](function(){return _0x40baf4(!0x1);});};if((0x0,_0x221517[_0x54ee57('0x42a')])(function(){if(!_0x2b5bf1||!_0x14242b)return _0x59d855(null),void _0x1202d5({});_0x59d855(null),_0x22ef97(null),_0xfb7b60(''),_0x496f53(!0x0);},[_0x2b5bf1,_0x14242b,_0x2856ba]),!_0x14242b)return null;var _0x596f10=_0xb5e474&&_0xb5e474[_0x54ee57('0x260')]||_0x14242b['status']||'—',_0x5d1f16=_0xb5e474&&_0xb5e474[_0x54ee57('0xaa')]||[],_0xe6b832=_0xb5e474&&_0xb5e474[_0x54ee57('0x2c2')]||[],_0x251c4b=_0xb5e474&&_0xb5e474['options']||{},_0x34214c=_0xb5e474&&_0xb5e474[_0x54ee57('0x6f')]||_0x14242b[_0x54ee57('0x18d')]||_0x54ee57('0x1e8'),_0x75b3f8=_0x121ea2?'rgba(25,118,210,0.14)':_0x54ee57('0x283'),_0xdcd828=function(_0x4019fc,_0x51a16a){return _0x1202d5(function(_0x3c5564){return function(_0x4825cc){var _0x2e2116=_0x4ba4;for(var _0x3933fe=0x1;_0x3933fe<arguments[_0x2e2116('0x1f8')];_0x3933fe++){var _0x389144=null!=arguments[_0x3933fe]?arguments[_0x3933fe]:{};_0x3933fe%0x2?_0x3264d4(Object(_0x389144),!0x0)[_0x2e2116('0x35e')](function(_0x19e470){_0xfd9e1c(_0x4825cc,_0x19e470,_0x389144[_0x19e470]);}):Object['getOwnPropertyDescriptors']?Object[_0x2e2116('0x145')](_0x4825cc,Object[_0x2e2116('0x2d')](_0x389144)):_0x3264d4(Object(_0x389144))[_0x2e2116('0x35e')](function(_0x42042d){var _0x24aa31=_0x2e2116;Object[_0x24aa31('0x28b')](_0x4825cc,_0x42042d,Object['getOwnPropertyDescriptor'](_0x389144,_0x42042d));});}return _0x4825cc;}({},_0x3c5564,_0xfd9e1c({},_0x4019fc,_0x51a16a));});},_0x5bc02b=!_0x131510&&_0x54ee57('0x568')==typeof _0x38d513&&_0xb5e474&&_0xb5e474[_0x54ee57('0x260')]?_0x38d513(_0xb5e474[_0x54ee57('0x260')]):[],_0x4526da=_0x131510?[_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x495115[_0x54ee57('0x55f')],{'key':_0x54ee57('0x4bd'),'onClick':_0x268689},_0x54ee57('0x149')),_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x495115[_0x54ee57('0x55f')],{'key':_0x54ee57('0xdc'),'type':'primary','loading':_0x435991,'onClick':function(){var _0x1c4b10=_0x54ee57,_0xe65ed7='resubmit'===_0x1cc0c9?_0x1c4b10('0x437'):_0x1c4b10('0xd8');_0x1d83ad(!0x0),fetch(''['concat'](_0x2856ba[_0x1c4b10('0x123')],_0x1c4b10('0x34b'))[_0x1c4b10('0x54e')](_0x14242b['id'],'/')[_0x1c4b10('0x54e')](_0xe65ed7),{'method':_0x1c4b10('0x117'),'headers':{'Authorization':_0x1c4b10('0x52e')[_0x1c4b10('0x54e')](_0x2856ba['token']),'Content-Type':_0x1c4b10('0x452')},'credentials':_0x1c4b10('0x1a4'),'body':JSON[_0x1c4b10('0x1d1')](_0x5a179e)})[_0x1c4b10('0x273')](function(_0x169630){return _0x169630['json']();})[_0x1c4b10('0x273')](function(_0x401813){var _0x8d440b=_0x1c4b10;if(_0x401813&&_0x401813[_0x8d440b('0x54d')]){var _0x5120ed=_0x401813['error'][0x0]&&_0x401813[_0x8d440b('0x54d')][0x0][0x0]?_0x401813['error'][0x0][0x0]['message']:_0x8d440b('0x2b5');_0x495115[_0x8d440b('0x2ac')]['error'](_0x5120ed,0x5);}else _0x495115[_0x8d440b('0x2ac')][_0x8d440b('0x3fb')]('resubmit'===_0x1cc0c9?_0x8d440b('0x4a0'):_0x8d440b('0x2b7')),_0x46947d&&_0x46947d(),_0x268689();})[_0x1c4b10('0x3d9')](function(){var _0x8c3811=_0x1c4b10;return _0x495115[_0x8c3811('0x2ac')][_0x8c3811('0x54d')](_0x8c3811('0x2b5'),0x5);})[_0x1c4b10('0x3e1')](function(){return _0x1d83ad(!0x1);});}},_0x54ee57('0x437')===_0x1cc0c9?_0x54ee57('0x45'):_0x54ee57('0x332'))]:[_0x221517['default']['createElement'](_0x495115['Button'],{'key':_0x54ee57('0x336'),'onClick':_0x268689},_0x54ee57('0x2bf')),_0x5bc02b[_0x54ee57('0x1f8')]>0x0?_0x221517['default'][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0x256')],{'key':_0x54ee57('0x260'),'trigger':[_0x54ee57('0x441')],'menu':{'items':_0x5bc02b[_0x54ee57('0x1dd')](function(_0x9dd8ce){var _0x7fe13f=_0x54ee57;return{'key':String(_0x9dd8ce[_0x7fe13f('0x1c7')]),'label':_0x9dd8ce[_0x7fe13f('0x39')]};}),'onClick':function(_0x8b93f6){var _0xd5964e=_0x54ee57,_0x2c9d40=_0x8b93f6[_0xd5964e('0x322')];_0xfb7b60(''),_0x22ef97(_0x5bc02b[_0xd5964e('0xe8')](function(_0x1976e5){var _0x14a73f=_0xd5964e;return String(_0x1976e5[_0x14a73f('0x1c7')])===String(_0x2c9d40);})||null);}}},_0x221517['default'][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0x55f')],{'type':_0x54ee57('0x4c4')},_0x54ee57('0x3c6'),_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x25f675['DownOutlined'],null))):null],_0x4192ba=_0xb5e474&&_0xb5e474[_0x54ee57('0x212')]||_0x14242b[_0x54ee57('0x132')]||'';return _0x221517['default'][_0x54ee57('0x33e')](_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x524')],null,_0x221517['default'][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0xc3')],{'open':_0x2b5bf1,'onCancel':_0x268689,'title':null,'width':0x348,'footer':_0x4526da,'styles':{'body':{'paddingTop':0x8}}},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x54ee57('0x2e'),{'style':{'display':'flex','gap':0x14}},_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x54ee57('0x2e'),{'style':{'flex':0x1,'minWidth':0x0}},_0x221517['default'][_0x54ee57('0x33e')](_0x54ee57('0x2e'),{'style':{'display':_0x54ee57('0x3f6'),'alignItems':'center','gap':0xe,'marginBottom':0x10}},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0x291')],{'size':0x34,'src':_0x14242b['image']||void 0x0,'icon':_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x25f675[_0x54ee57('0x271')],null),'style':{'flexShrink':0x0}}),_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x54ee57('0x2e'),{'style':{'flex':0x1,'minWidth':0x0}},_0x221517['default'][_0x54ee57('0x33e')](_0x12bc76,{'level':0x5,'style':{'margin':0x0},'ellipsis':!0x0},_0x34214c),_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x263c1f,{'type':_0x54ee57('0x3a5'),'style':{'fontSize':0xd}},_0xb5e474&&_0xb5e474[_0x54ee57('0x456')]||_0x14242b[_0x54ee57('0x405')]||_0x54ee57('0x1ce'))),_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0x477')],{'color':_0x6527cc[_0x596f10]||_0x54ee57('0x4c1'),'style':{'fontWeight':0x258,'marginInlineEnd':0x0}},_0x596f10)),_0x1a78c7?_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x54ee57('0x2e'),{'style':{'textAlign':_0x54ee57('0x3c5'),'padding':0x28}},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115['Spin'],null)):_0x131510?_0x221517['default']['createElement'](_0x495115[_0x54ee57('0xf1')],{'layout':'vertical','size':_0x54ee57('0x1de')},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')]('div',{'style':{'display':'flex','gap':0xc}},_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x495115[_0x54ee57('0xf1')][_0x54ee57('0x1ae')],{'label':'Amount','style':{'flex':0x1},'required':!0x0},_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x495115[_0x54ee57('0x289')],{'style':{'width':_0x54ee57('0x25f')},'value':_0x5a179e[_0x54ee57('0x484')],'onChange':function(_0x2da412){return _0xdcd828('amount',_0x2da412);},'stringMode':!0x0})),_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0xf1')][_0x54ee57('0x1ae')],{'label':_0x54ee57('0x2d2'),'style':{'width':0x8c}},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0x1f6')],{'showSearch':!0x0,'optionFilterProp':'label','value':_0x5a179e[_0x54ee57('0x132')],'onChange':function(_0x4868fc){return _0xdcd828('currency',_0x4868fc);},'options':(_0x251c4b[_0x54ee57('0xb3')]||[])[_0x54ee57('0x1dd')](function(_0x54ae2f){var _0x111199=_0x54ee57;return{'value':_0x54ae2f['id'],'label':_0x54ae2f[_0x111199('0x4d8')]};})}))),_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x54ee57('0x2e'),{'style':{'display':_0x54ee57('0x3f6'),'gap':0xc}},_0x221517['default'][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0xf1')][_0x54ee57('0x1ae')],{'label':_0x54ee57('0x1a2'),'style':{'flex':0x1}},_0x221517['default']['createElement'](_0x495115[_0x54ee57('0x1f6')],{'showSearch':!0x0,'optionFilterProp':_0x54ee57('0x39'),'value':_0x5a179e['category'],'onChange':function(_0x3b837f){var _0x11a809=_0x54ee57;return _0xdcd828(_0x11a809('0x405'),_0x3b837f);},'options':(_0x251c4b[_0x54ee57('0x78')]||[])[_0x54ee57('0x1dd')](function(_0x2c5fa7){var _0x560ce5=_0x54ee57;return{'value':_0x2c5fa7['id'],'label':_0x2c5fa7[_0x560ce5('0x4d8')]};})})),_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115['Form'][_0x54ee57('0x1ae')],{'label':_0x54ee57('0x2cb'),'style':{'flex':0x1}},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115['Select'],{'showSearch':!0x0,'optionFilterProp':'label','value':_0x5a179e[_0x54ee57('0x318')],'onChange':function(_0x3e2e45){return _0xdcd828('payment_method',_0x3e2e45);},'options':(_0x251c4b[_0x54ee57('0x16c')]||[])['map'](function(_0xb616ef){var _0xfffd36=_0x54ee57;return{'value':_0xb616ef['id'],'label':_0xb616ef[_0xfffd36('0x4d8')]};})}))),_0x221517['default']['createElement'](_0x54ee57('0x2e'),{'style':{'display':_0x54ee57('0x3f6'),'gap':0xc}},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0xf1')][_0x54ee57('0x1ae')],{'label':_0x54ee57('0x61'),'style':{'flex':0x1}},_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x54ee57('0xa9'),{'type':_0x54ee57('0x3fa'),'value':_0x5a179e['expense_date']||'','onChange':function(_0x5b40ca){var _0x5bc97d=_0x54ee57;return _0xdcd828('expense_date',_0x5b40ca[_0x5bc97d('0x97')][_0x5bc97d('0x1c7')]);},'style':{'width':_0x54ee57('0x25f'),'height':0x18,'padding':_0x54ee57('0x14c'),'borderRadius':0x6,'border':_0x54ee57('0x178')['concat'](_0x234d19[_0x54ee57('0x3e')]),'background':_0x234d19[_0x54ee57('0x35')],'color':_0x234d19[_0x54ee57('0x190')],'colorScheme':_0x121ea2?'dark':_0x54ee57('0x20c')}})),_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0xf1')]['Item'],{'label':_0x54ee57('0x89'),'style':{'flex':0x1}},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0x50')],{'value':_0x5a179e['payee']||'','onChange':function(_0x532833){var _0x436d12=_0x54ee57;return _0xdcd828('payee',_0x532833[_0x436d12('0x97')][_0x436d12('0x1c7')]);}}))),_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0xf1')][_0x54ee57('0x1ae')],{'label':'Transaction\x20/\x20Ref\x20No','style':{'marginBottom':0xc}},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0x50')],{'value':_0x5a179e[_0x54ee57('0x4c5')]||'','onChange':function(_0x3256aa){var _0x3d7f93=_0x54ee57;return _0xdcd828(_0x3d7f93('0x4c5'),_0x3256aa[_0x3d7f93('0x97')][_0x3d7f93('0x1c7')]);}})),_0x221517['default'][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0xf1')][_0x54ee57('0x1ae')],{'label':'Notes','style':{'marginBottom':0x4}},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115['Input']['TextArea'],{'rows':0x2,'value':_0x5a179e[_0x54ee57('0x261')]||'','onChange':function(_0x121b12){var _0xcaaf89=_0x54ee57;return _0xdcd828('notes',_0x121b12[_0xcaaf89('0x97')][_0xcaaf89('0x1c7')]);}}))):_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x524')],null,_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x54ee57('0x2e'),{'style':{'background':_0x75b3f8,'borderRadius':0xc,'padding':'16px\x2020px','marginBottom':0x12,'display':_0x54ee57('0x3f6'),'alignItems':_0x54ee57('0x129'),'gap':0x8}},_0x221517['default']['createElement'](_0x54ee57('0x1bd'),{'style':{'fontSize':0x1e,'fontWeight':0x2bc,'color':_0x234d19['colorText'],'lineHeight':0x1}},null!=_0x14242b[_0x54ee57('0x484')]?_0x14242b['amount']:_0xb5e474&&_0xb5e474['amount']||'—'),_0x221517['default']['createElement'](_0x54ee57('0x1bd'),{'style':{'fontSize':0xf,'fontWeight':0x258,'color':_0x234d19[_0x54ee57('0x46c')]}},_0x4192ba)),_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0x1d2')],{'column':0x1,'size':'small','bordered':!0x0,'labelStyle':{'width':0x96,'color':_0x234d19[_0x54ee57('0x46c')]},'items':[{'key':_0x54ee57('0x3fa'),'label':'Expense\x20Date','children':_0xb5e474&&_0xb5e474['expense_date']||_0x14242b[_0x54ee57('0x3cb')]||'—'},{'key':'pm','label':_0x54ee57('0x2cb'),'children':_0xb5e474&&_0xb5e474['payment_method_name']||_0x14242b[_0x54ee57('0x318')]||'—'},{'key':_0x54ee57('0x133'),'label':_0x54ee57('0xa0'),'children':_0xb5e474&&_0xb5e474['payee']||_0x14242b['payee']||'—'},{'key':_0x54ee57('0x3f3'),'label':_0x54ee57('0x29d'),'children':_0xb5e474&&_0xb5e474['transaction_no']||'—'},{'key':'submitted','label':_0x54ee57('0x1ed'),'children':_0xb5e474&&_0xb5e474[_0x54ee57('0x36')]||'—'}]}),_0xb5e474&&_0xb5e474[_0x54ee57('0x261')]?_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x54ee57('0x2e'),{'style':{'marginTop':0x10}},_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x263c1f,{'strong':!0x0,'style':{'display':'block','marginBottom':0x6}},_0x54ee57('0x572')),_0x221517['default'][_0x54ee57('0x33e')]('div',{'style':{'background':_0x234d19[_0x54ee57('0x1d5')],'borderRadius':0x8,'padding':_0x54ee57('0x118'),'whiteSpace':_0x54ee57('0x2fe'),'color':_0x234d19['colorText']}},_0xb5e474['notes'])):null),_0x5d1f16[_0x54ee57('0x1f8')]>0x0&&_0x221517['default'][_0x54ee57('0x33e')](_0x221517['default'][_0x54ee57('0x524')],null,_0x221517[_0x54ee57('0x4c1')]['createElement'](_0x495115[_0x54ee57('0x157')],{'style':{'margin':_0x54ee57('0x22b')},'orientation':'left','plain':!0x0},_0x221517['default'][_0x54ee57('0x33e')](_0x25f675[_0x54ee57('0x17f')],{'style':{'marginRight':0x6}}),_0x54ee57('0x1b9')),_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')]('div',{'style':{'display':_0x54ee57('0x3f6'),'flexWrap':_0x54ee57('0x519'),'gap':0xc}},_0x5d1f16[_0x54ee57('0x1dd')](function(_0x14626a){var _0x4bf238=_0x54ee57;return _0x14626a[_0x4bf238('0x408')]?_0x221517[_0x4bf238('0x4c1')][_0x4bf238('0x33e')](_0x4bf238('0x2e'),{'key':_0x14626a[_0x4bf238('0x29f')],'style':{'textAlign':_0x4bf238('0x3c5')}},_0x221517[_0x4bf238('0x4c1')][_0x4bf238('0x33e')](_0x495115[_0x4bf238('0x4db')],{'src':_0x14626a['url'],'alt':_0x14626a['label'],'width':0x52,'height':0x52,'style':{'objectFit':_0x4bf238('0x50b'),'borderRadius':0x8,'border':_0x4bf238('0x178')[_0x4bf238('0x54e')](_0x234d19[_0x4bf238('0x14b')])}}),_0x221517[_0x4bf238('0x4c1')][_0x4bf238('0x33e')](_0x4bf238('0x2e'),{'style':{'fontSize':0xc,'color':_0x234d19[_0x4bf238('0x46c')],'marginTop':0x4}},_0x14626a[_0x4bf238('0x39')])):_0x221517[_0x4bf238('0x4c1')][_0x4bf238('0x33e')](_0x495115[_0x4bf238('0x55f')],{'key':_0x14626a[_0x4bf238('0x29f')],'icon':_0x221517['default'][_0x4bf238('0x33e')](_0x25f675[_0x4bf238('0x247')],null),'href':_0x14626a[_0x4bf238('0xdb')],'target':_0x4bf238('0x2f1'),'rel':_0x4bf238('0x4f7')},_0x14626a[_0x4bf238('0x39')]);})))),_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x27344e,{'logs':_0xe6b832,'loading':_0x1a78c7,'token':_0x234d19}))),_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115['Modal'],{'open':!!_0x4e8b49,'title':'Change\x20Status','okText':_0x54ee57('0x25a'),'confirmLoading':_0x424bca,'okButtonProps':{'disabled':!_0x51952b[_0x54ee57('0xa1')]()},'onOk':function(){var _0x45df26=_0x54ee57;_0x4e8b49&&_0x51952b['trim']()&&(_0x349587(!0x0),fetch(''[_0x45df26('0x54e')](_0x2856ba['restApiBase'],_0x45df26('0x34b'))[_0x45df26('0x54e')](_0x14242b['id'],'/status'),{'method':_0x45df26('0x117'),'headers':{'Authorization':'Bearer\x20'[_0x45df26('0x54e')](_0x2856ba[_0x45df26('0x1eb')]),'Content-Type':'application/json'},'credentials':_0x45df26('0x1a4'),'body':JSON[_0x45df26('0x1d1')]({'status':_0x4e8b49[_0x45df26('0x1c7')],'reason':_0x51952b})})[_0x45df26('0x273')](function(_0x3573ff){var _0x46f36b=_0x45df26;return _0x3573ff[_0x46f36b('0x251')]();})[_0x45df26('0x273')](function(_0x1742f5){var _0x132cc6=_0x45df26;if(_0x1742f5&&_0x1742f5['error']){var _0x5d6cf2=_0x1742f5[_0x132cc6('0x54d')][0x0]&&_0x1742f5[_0x132cc6('0x54d')][0x0][0x0]?_0x1742f5[_0x132cc6('0x54d')][0x0][0x0][_0x132cc6('0x2ac')]:_0x132cc6('0x266');_0x495115['message'][_0x132cc6('0x54d')](_0x5d6cf2,0x5);}else _0x495115[_0x132cc6('0x2ac')]['success']('Status\x20updated'),_0x22ef97(null),_0xfb7b60(''),_0x46947d&&_0x46947d(),_0x496f53(!0x1);})[_0x45df26('0x3d9')](function(){var _0x3c4700=_0x45df26;return _0x495115[_0x3c4700('0x2ac')][_0x3c4700('0x54d')](_0x3c4700('0x266'),0x5);})[_0x45df26('0x3e1')](function(){return _0x349587(!0x1);}));},'onCancel':function(){return _0x22ef97(null);},'width':0x1b8},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x54ee57('0x2e'),{'style':{'marginBottom':0xa}},_0x54ee57('0x282'),'\x20',_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115['Tag'],{'color':_0x6527cc[_0x4e8b49&&_0x4e8b49['value']]||'default','style':{'fontWeight':0x258}},_0x4e8b49&&_0x4e8b49[_0x54ee57('0x39')])),_0x221517['default'][_0x54ee57('0x33e')](_0x54ee57('0x2e'),{'style':{'marginBottom':0x6,'color':_0x234d19[_0x54ee57('0x46c')]}},_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')]('span',{'style':{'color':_0x234d19['colorError'],'marginRight':0x4}},'*'),_0x54ee57('0x25c')),_0x221517[_0x54ee57('0x4c1')][_0x54ee57('0x33e')](_0x495115[_0x54ee57('0x50')][_0x54ee57('0x3ce')],{'rows':0x3,'value':_0x51952b,'onChange':function(_0xd7e6b3){var _0x57a9ec=_0x54ee57;return _0xfb7b60(_0xd7e6b3[_0x57a9ec('0x97')][_0x57a9ec('0x1c7')]);},'status':_0x51952b['trim']()?void 0x0:_0x54ee57('0x54d'),'placeholder':_0x54ee57('0x338')})));};var _0x221517=function(_0x35d896){var _0xd9bddf=_0x43ff4c;if(_0x35d896&&_0x35d896[_0xd9bddf('0x4bc')])return _0x35d896;if(null===_0x35d896||_0xd9bddf('0x19b')!==_0x543f80(_0x35d896)&&_0xd9bddf('0x568')!=typeof _0x35d896)return{'default':_0x35d896};var _0x1037ab=_0x35705c();if(_0x1037ab&&_0x1037ab['has'](_0x35d896))return _0x1037ab[_0xd9bddf('0xeb')](_0x35d896);var _0xa068ff={},_0x1a9700=Object[_0xd9bddf('0x28b')]&&Object[_0xd9bddf('0x2da')];for(var _0x3a348e in _0x35d896)if(Object[_0xd9bddf('0x501')]['hasOwnProperty']['call'](_0x35d896,_0x3a348e)){var _0x4acba2=_0x1a9700?Object['getOwnPropertyDescriptor'](_0x35d896,_0x3a348e):null;_0x4acba2&&(_0x4acba2[_0xd9bddf('0xeb')]||_0x4acba2[_0xd9bddf('0x302')])?Object['defineProperty'](_0xa068ff,_0x3a348e,_0x4acba2):_0xa068ff[_0x3a348e]=_0x35d896[_0x3a348e];}return _0xa068ff[_0xd9bddf('0x4c1')]=_0x35d896,_0x1037ab&&_0x1037ab[_0xd9bddf('0x302')](_0x35d896,_0xa068ff),_0xa068ff;}(_0x190aef('react')),_0x495115=_0x190aef(_0x43ff4c('0x29c')),_0x25f675=_0x190aef(_0x43ff4c('0x3aa')),_0x533246=_0x190aef(_0x43ff4c('0x176'));function _0x35705c(){var _0x1452c6=_0x43ff4c;if(_0x1452c6('0x568')!=typeof WeakMap)return null;var _0x19c77c=new WeakMap();return _0x35705c=function(){return _0x19c77c;},_0x19c77c;}function _0x3264d4(_0x36d447,_0x3a447a){var _0x1b1945=_0x43ff4c,_0x146b9d=Object['keys'](_0x36d447);if(Object[_0x1b1945('0x68')]){var _0x5f7be7=Object['getOwnPropertySymbols'](_0x36d447);_0x3a447a&&(_0x5f7be7=_0x5f7be7[_0x1b1945('0x8f')](function(_0xcb7d0d){var _0x41faef=_0x1b1945;return Object[_0x41faef('0x2da')](_0x36d447,_0xcb7d0d)[_0x41faef('0xf9')];})),_0x146b9d[_0x1b1945('0x193')][_0x1b1945('0x154')](_0x146b9d,_0x5f7be7);}return _0x146b9d;}function _0xfd9e1c(_0x281b64,_0x4768a3,_0x5c0f50){var _0x4b5c20=_0x43ff4c;return _0x4768a3 in _0x281b64?Object[_0x4b5c20('0x28b')](_0x281b64,_0x4768a3,{'value':_0x5c0f50,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x281b64[_0x4768a3]=_0x5c0f50,_0x281b64;}function _0x162d1d(_0x2a54cb,_0x2eabd3){return function(_0x395748){if(Array['isArray'](_0x395748))return _0x395748;}(_0x2a54cb)||function(_0x5f0af3,_0x1bf0e8){var _0x2ee7e0=_0x4ba4;if(_0x2ee7e0('0x3')==typeof Symbol||!(Symbol[_0x2ee7e0('0x412')]in Object(_0x5f0af3)))return;var _0x5523c0=[],_0x39b325=!0x0,_0xcee70a=!0x1,_0x37ac35=void 0x0;try{for(var _0x128ef5,_0x531060=_0x5f0af3[Symbol['iterator']]();!(_0x39b325=(_0x128ef5=_0x531060[_0x2ee7e0('0x503')]())[_0x2ee7e0('0x448')])&&(_0x5523c0[_0x2ee7e0('0x193')](_0x128ef5['value']),!_0x1bf0e8||_0x5523c0[_0x2ee7e0('0x1f8')]!==_0x1bf0e8);_0x39b325=!0x0);}catch(_0x2e3082){_0xcee70a=!0x0,_0x37ac35=_0x2e3082;}finally{try{_0x39b325||null==_0x531060[_0x2ee7e0('0x6e')]||_0x531060[_0x2ee7e0('0x6e')]();}finally{if(_0xcee70a)throw _0x37ac35;}}return _0x5523c0;}(_0x2a54cb,_0x2eabd3)||function(_0xe0136b,_0x52db3b){var _0x3609f8=_0x4ba4;if(!_0xe0136b)return;if('string'==typeof _0xe0136b)return _0x59b0fa(_0xe0136b,_0x52db3b);var _0x4ba95c=Object[_0x3609f8('0x501')][_0x3609f8('0x476')][_0x3609f8('0x210')](_0xe0136b)[_0x3609f8('0x486')](0x8,-0x1);_0x3609f8('0x2f7')===_0x4ba95c&&_0xe0136b['constructor']&&(_0x4ba95c=_0xe0136b[_0x3609f8('0x151')][_0x3609f8('0x4d8')]);if(_0x3609f8('0x506')===_0x4ba95c||_0x3609f8('0x26e')===_0x4ba95c)return Array[_0x3609f8('0x303')](_0x4ba95c);if(_0x3609f8('0x243')===_0x4ba95c||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x3609f8('0x2d4')](_0x4ba95c))return _0x59b0fa(_0xe0136b,_0x52db3b);}(_0x2a54cb,_0x2eabd3)||function(){var _0x16a669=_0x4ba4;throw new TypeError(_0x16a669('0x36b'));}();}function _0x59b0fa(_0x5c70ff,_0x335182){var _0x3ba5ff=_0x43ff4c;(null==_0x335182||_0x335182>_0x5c70ff[_0x3ba5ff('0x1f8')])&&(_0x335182=_0x5c70ff[_0x3ba5ff('0x1f8')]);for(var _0x233c3c=0x0,_0x488193=new Array(_0x335182);_0x233c3c<_0x335182;_0x233c3c++)_0x488193[_0x233c3c]=_0x5c70ff[_0x233c3c];return _0x488193;}var _0x263c1f=_0x495115[_0x43ff4c('0x13b')][_0x43ff4c('0x1a0')],_0x12bc76=_0x495115[_0x43ff4c('0x13b')]['Title'],_0x6527cc={'Pending':_0x43ff4c('0x4ae'),'Approved':_0x43ff4c('0x538'),'Rejected':'red','Paid':_0x43ff4c('0x38b'),'Cancelled':_0x43ff4c('0x4c1')};function _0x27344e(_0x4d6e3b){var _0x10316a=_0x43ff4c,_0x5e3a2b=_0x4d6e3b[_0x10316a('0x2c2')],_0x17d795=_0x4d6e3b[_0x10316a('0x166')],_0x2764c9=_0x4d6e3b[_0x10316a('0x1eb')];return _0x221517['default'][_0x10316a('0x33e')](_0x10316a('0x2e'),{'style':{'width':0x104,'flexShrink':0x0,'borderLeft':_0x10316a('0x178')[_0x10316a('0x54e')](_0x2764c9['colorBorderSecondary']),'paddingLeft':0x10,'display':_0x10316a('0x3f6'),'flexDirection':_0x10316a('0x47b'),'minHeight':0x0}},_0x221517[_0x10316a('0x4c1')][_0x10316a('0x33e')](_0x263c1f,{'strong':!0x0,'style':{'marginBottom':0xc}},_0x221517[_0x10316a('0x4c1')][_0x10316a('0x33e')](_0x25f675[_0x10316a('0x28a')],{'style':{'marginRight':0x6}}),_0x10316a('0x52c')),_0x221517[_0x10316a('0x4c1')][_0x10316a('0x33e')]('div',{'style':{'overflowY':_0x10316a('0x2d1'),'flex':0x1,'maxHeight':0x1cc,'paddingRight':0x4,'paddingTop':0x6}},_0x17d795?_0x221517[_0x10316a('0x4c1')]['createElement'](_0x10316a('0x2e'),{'style':{'textAlign':'center','padding':0x18}},_0x221517['default']['createElement'](_0x495115['Spin'],{'size':_0x10316a('0x1de')})):_0x5e3a2b&&0x0!==_0x5e3a2b[_0x10316a('0x1f8')]?_0x221517[_0x10316a('0x4c1')]['createElement'](_0x495115[_0x10316a('0x310')],{'items':_0x5e3a2b[_0x10316a('0x1dd')](function(_0x3f3256){var _0x49bf0e=_0x10316a;return{'children':_0x221517[_0x49bf0e('0x4c1')][_0x49bf0e('0x33e')](_0x49bf0e('0x2e'),null,_0x221517[_0x49bf0e('0x4c1')][_0x49bf0e('0x33e')]('div',{'style':{'fontWeight':0x258,'fontSize':0xd}},''[_0x49bf0e('0x54e')](_0x3f3256['status_from']||'','\x20→\x20')['concat'](_0x3f3256['status_to']||'')),_0x221517[_0x49bf0e('0x4c1')][_0x49bf0e('0x33e')](_0x49bf0e('0x2e'),{'style':{'color':_0x2764c9[_0x49bf0e('0x3e0')],'fontSize':0xc}},_0x3f3256['time']),_0x3f3256[_0x49bf0e('0x48f')]&&_0x3f3256[_0x49bf0e('0x48f')][_0x49bf0e('0xa1')]()?_0x221517[_0x49bf0e('0x4c1')][_0x49bf0e('0x33e')](_0x49bf0e('0x2e'),{'style':{'fontSize':0xc,'marginTop':0x2}},_0x3f3256['note'][_0x49bf0e('0xa1')]()):null)};})}):_0x221517['default']['createElement'](_0x263c1f,{'type':_0x10316a('0x3a5'),'style':{'fontSize':0xd}},_0x10316a('0x39a'))));}},{'./theme':0x19,'@ant-design/icons':_0x557405('0x3aa'),'antd':_0x557405('0x29c'),'react':'react'}],0x7:[function(_0x177166,_0x4482a7,_0x2f949f){var _0x221e41=_0x557405;'use strict';function _0x501398(_0x12359a){var _0x367b20=_0x4ba4;return(_0x501398=_0x367b20('0x568')==typeof Symbol&&_0x367b20('0x263')==typeof Symbol[_0x367b20('0x412')]?function(_0x1b4996){return typeof _0x1b4996;}:function(_0x3aa64f){var _0x575b3d=_0x367b20;return _0x3aa64f&&_0x575b3d('0x568')==typeof Symbol&&_0x3aa64f['constructor']===Symbol&&_0x3aa64f!==Symbol['prototype']?'symbol':typeof _0x3aa64f;})(_0x12359a);}Object[_0x221e41('0x28b')](_0x2f949f,'__esModule',{'value':!0x0}),_0x2f949f[_0x221e41('0x4c1')]=function(_0x80a099){var _0x5c0f12=_0x221e41,_0x2b67fd=_0x80a099[_0x5c0f12('0x471')],_0x387bc3=_0x323125[_0x5c0f12('0xd6')][_0x5c0f12('0x418')]()[_0x5c0f12('0x1eb')],_0x5b9926=(0x0,_0x323542[_0x5c0f12('0x286')])(function(){var _0x652bc=_0x5c0f12;return new _0x404c58[(_0x652bc('0x4c1'))](_0x2b67fd||[])['parse']();},[_0x2b67fd]),_0x1eec81=_0x387bc3[_0x5c0f12('0x35')]===_0x1fc82a[_0x5c0f12('0x34e')][_0x5c0f12('0x509')],_0x1678bd=_0x1eec81?{'label':{'style':{'fill':_0x5c0f12('0x53')}},'line':{'style':{'stroke':_0x5c0f12('0x274')}},'grid':{'line':{'style':{'stroke':'rgba(255,255,255,0.12)'}}}}:{},_0x57a491=_0x1eec81?{'text':{'style':{'fill':_0x5c0f12('0x4b7')}}}:{},_0x445e97=_0x1eec81?{'style':{'fill':_0x5c0f12('0x4b7')}}:{},_0x50bf05=_0x5b9926[_0x5c0f12('0x18f')][_0x5c0f12('0x1f8')]>0x0,_0x3e649c=[];_0x5b9926[_0x5c0f12('0x18f')][_0x5c0f12('0x35e')](function(_0x10374e){var _0x433c3c=_0x5c0f12;_0x3e649c[_0x433c3c('0x193')]({'period':_0x10374e[_0x433c3c('0x39')],'type':_0x433c3c('0x1a6'),'value':_0x10374e['allocated']+_0x10374e[_0x433c3c('0x30d')]}),_0x3e649c['push']({'period':_0x10374e[_0x433c3c('0x39')],'type':_0x433c3c('0x1fc'),'value':_0x10374e['carriedToNext']});});var _0x53d9c7=[];null!=_0x5b9926[_0x5c0f12('0x32e')]&&_0x53d9c7[_0x5c0f12('0x193')]({'step':_0x5c0f12('0x1a6'),'value':_0x5b9926[_0x5c0f12('0x32e')]}),_0x5b9926[_0x5c0f12('0x375')]&&_0x53d9c7['push']({'step':_0x5c0f12('0x2fb'),'value':_0x5b9926[_0x5c0f12('0x3b9')]}),_0x5b9926[_0x5c0f12('0x317')]&&_0x53d9c7['push']({'step':_0x5c0f12('0x17e'),'value':_0x5b9926['afterAccrue']});var _0x346815={'data':_0x3e649c,'xField':_0x5c0f12('0x119'),'yField':'value','groupField':_0x5c0f12('0x444'),'color':[_0x5c0f12('0x268'),'#5AD8A6'],'legend':_0x29b8b5({'visible':!0x0,'position':_0x5c0f12('0x323')},_0x57a491),'label':{'visible':!0x1},'xAxis':_0x29b8b5({'visible':!0x0,'title':{'visible':!0x0,'text':_0x5c0f12('0x531')}},_0x1678bd),'yAxis':_0x29b8b5({'visible':!0x0,'min':0x0,'title':{'visible':!0x0,'text':_0x5c0f12('0x59')}},_0x1678bd)},_0x3fd36c={'data':_0x53d9c7,'xField':_0x5c0f12('0x4d5'),'yField':_0x5c0f12('0x1c7'),'color':'#5B8FF9','columnSize':0x30,'label':_0x29b8b5({'visible':!0x0,'position':_0x5c0f12('0x10e')},_0x445e97),'xAxis':_0x29b8b5({'visible':!0x0},_0x1678bd),'yAxis':_0x29b8b5({'visible':!0x0,'min':0x0,'title':{'visible':!0x0,'text':_0x5c0f12('0x59')}},_0x1678bd)},_0x4a98e1=_0x5b9926[_0x5c0f12('0x18f')][_0x5c0f12('0x1dd')](function(_0x36912e,_0x305ef3){return _0x29b8b5({'key':_0x305ef3},_0x36912e);}),_0x8c47ed=[{'title':_0x5c0f12('0x531'),'dataIndex':_0x5c0f12('0x39'),'key':'label'},{'title':'Carried\x20in','dataIndex':_0x5c0f12('0x2e6'),'key':'carriedIn','render':_0x55cd37},{'title':_0x5c0f12('0x1a6'),'key':_0x5c0f12('0x359'),'render':function(_0x62fd1,_0x43e43c){var _0x49f39e=_0x5c0f12;return _0x55cd37(_0x43e43c[_0x49f39e('0x359')]+_0x43e43c[_0x49f39e('0x30d')]);}},{'title':_0x5c0f12('0x552'),'dataIndex':'taken','key':_0x5c0f12('0x14e'),'render':_0x55cd37},{'title':_0x5c0f12('0x50d'),'dataIndex':_0x5c0f12('0x4cc'),'key':_0x5c0f12('0x4cc')},{'title':'Carried\x20to\x20next','dataIndex':_0x5c0f12('0x232'),'key':_0x5c0f12('0x232'),'render':function(_0x27824e){var _0x388b08=_0x5c0f12;return _0x323542[_0x388b08('0x4c1')]['createElement'](_0x1e02a1,{'strong':!0x0},_0x55cd37(_0x27824e));}}],_0x17e8e5=_0x323542['default']['createElement'](_0x323125[_0x5c0f12('0x306')],{'ghost':!0x0,'items':[{'key':_0x5c0f12('0x346'),'label':'Show\x20calculation\x20log','children':_0x323542[_0x5c0f12('0x4c1')][_0x5c0f12('0x33e')]('ul',{'style':{'fontSize':12.5,'paddingLeft':0x12,'margin':0x0,'color':_0x387bc3['colorTextSecondary']}},(_0x2b67fd||[])['map'](function(_0x28449a,_0x5d3450){var _0x1f2c56=_0x5c0f12;return _0x323542[_0x1f2c56('0x4c1')][_0x1f2c56('0x33e')]('li',{'key':_0x5d3450,'style':{'marginBottom':0x3}},String(_0x28449a)[_0x1f2c56('0x467')](/^\(client=[^)]*\)\s*/,''));}))}]});if(!_0x50bf05&&0x0===_0x53d9c7['length'])return _0x323542['default'][_0x5c0f12('0x33e')](_0x5c0f12('0x2e'),null,_0x323542[_0x5c0f12('0x4c1')][_0x5c0f12('0x33e')](_0x323125[_0x5c0f12('0x269')],{'description':_0x5c0f12('0x508')}),_0x17e8e5);return _0x323542[_0x5c0f12('0x4c1')][_0x5c0f12('0x33e')]('div',{'style':{'display':_0x5c0f12('0x3f6'),'flexDirection':'column','gap':0x10}},_0x323542['default'][_0x5c0f12('0x33e')](_0x323125[_0x5c0f12('0x1d2')],{'size':_0x5c0f12('0x1de'),'column':0x2,'bordered':!0x0},_0x323542[_0x5c0f12('0x4c1')][_0x5c0f12('0x33e')](_0x323125['Descriptions'][_0x5c0f12('0x1ae')],{'label':_0x5c0f12('0x564')},_0x5b9926['leaveType']||'—'),_0x323542[_0x5c0f12('0x4c1')][_0x5c0f12('0x33e')](_0x323125[_0x5c0f12('0x1d2')]['Item'],{'label':'Current\x20period'},_0x5b9926[_0x5c0f12('0x119')]?''[_0x5c0f12('0x54e')](_0x5b9926[_0x5c0f12('0x119')][_0x5c0f12('0x303')],_0x5c0f12('0x1be'))[_0x5c0f12('0x54e')](_0x5b9926[_0x5c0f12('0x119')]['to']):'—'),_0x323542[_0x5c0f12('0x4c1')]['createElement'](_0x323125[_0x5c0f12('0x1d2')]['Item'],{'label':_0x5c0f12('0x287')},_0x55cd37(_0x5b9926['totalForPeriod']||0x0)),_0x323542[_0x5c0f12('0x4c1')]['createElement'](_0x323125[_0x5c0f12('0x1d2')][_0x5c0f12('0x1ae')],{'label':_0x5c0f12('0x1ee')},_0x323542[_0x5c0f12('0x4c1')][_0x5c0f12('0x33e')](_0x1e02a1,{'strong':!0x0},_0x55cd37(null!=_0x5b9926[_0x5c0f12('0x230')]?_0x5b9926['afterAccrue']:_0x5b9926[_0x5c0f12('0x32e')]||0x0)),_0x5b9926[_0x5c0f12('0x317')]?_0x323542['default'][_0x5c0f12('0x33e')](_0x323125[_0x5c0f12('0x477')],{'color':_0x5c0f12('0x38b'),'style':{'marginLeft':0x8}},'accrued'):null)),_0x50bf05?_0x323542['default'][_0x5c0f12('0x33e')](_0x5c0f12('0x2e'),null,_0x323542['default'][_0x5c0f12('0x33e')](_0x280531,{'level':0x5,'style':{'marginBottom':0x4}},_0x5c0f12('0x3e8')),_0x323542[_0x5c0f12('0x4c1')][_0x5c0f12('0x33e')](_0x1e02a1,{'type':_0x5c0f12('0x3a5'),'style':{'fontSize':12.5}},_0x5c0f12('0x3c2')['concat'](_0x5b9926[_0x5c0f12('0x18f')][_0x5c0f12('0x1f8')],'\x20past\x20period(s)\x20into\x20the\x20current\x20one.')),_0x323542[_0x5c0f12('0x4c1')][_0x5c0f12('0x33e')](_0x3649c6,{'ctor':_0x2a4f0d['GroupedColumn'],'config':_0x346815}),_0x323542[_0x5c0f12('0x4c1')][_0x5c0f12('0x33e')](_0x323125['Table'],{'size':_0x5c0f12('0x1de'),'columns':_0x8c47ed,'dataSource':_0x4a98e1,'pagination':!0x1,'scroll':{'y':0xdc},'style':{'marginTop':0x8}})):_0x323542['default']['createElement'](_0x5c0f12('0x2e'),null,_0x323542['default'][_0x5c0f12('0x33e')](_0x280531,{'level':0x5,'style':{'marginBottom':0x4}},_0x5c0f12('0x51b')),_0x323542[_0x5c0f12('0x4c1')][_0x5c0f12('0x33e')](_0x1e02a1,{'type':_0x5c0f12('0x3a5'),'style':{'fontSize':12.5}},'Entitlement\x20for\x20the\x20current\x20period,\x20step\x20by\x20step.'),_0x323542[_0x5c0f12('0x4c1')][_0x5c0f12('0x33e')](_0x3649c6,{'ctor':_0x2a4f0d[_0x5c0f12('0xbc')],'config':_0x3fd36c,'height':0xdc})),_0x17e8e5);};var _0x59a6bc,_0x323542=function(_0x28820b){var _0x1b81b1=_0x221e41;if(_0x28820b&&_0x28820b['__esModule'])return _0x28820b;if(null===_0x28820b||_0x1b81b1('0x19b')!==_0x501398(_0x28820b)&&_0x1b81b1('0x568')!=typeof _0x28820b)return{'default':_0x28820b};var _0x5ad838=_0x567b74();if(_0x5ad838&&_0x5ad838[_0x1b81b1('0x2e9')](_0x28820b))return _0x5ad838['get'](_0x28820b);var _0x11054b={},_0x49f6b5=Object[_0x1b81b1('0x28b')]&&Object[_0x1b81b1('0x2da')];for(var _0x514606 in _0x28820b)if(Object[_0x1b81b1('0x501')]['hasOwnProperty']['call'](_0x28820b,_0x514606)){var _0x165d24=_0x49f6b5?Object[_0x1b81b1('0x2da')](_0x28820b,_0x514606):null;_0x165d24&&(_0x165d24[_0x1b81b1('0xeb')]||_0x165d24[_0x1b81b1('0x302')])?Object['defineProperty'](_0x11054b,_0x514606,_0x165d24):_0x11054b[_0x514606]=_0x28820b[_0x514606];}return _0x11054b[_0x1b81b1('0x4c1')]=_0x28820b,_0x5ad838&&_0x5ad838[_0x1b81b1('0x302')](_0x28820b,_0x11054b),_0x11054b;}(_0x177166('react')),_0x323125=_0x177166(_0x221e41('0x29c')),_0x2a4f0d=_0x177166(_0x221e41('0x343')),_0x404c58=(_0x59a6bc=_0x177166(_0x221e41('0x4ea')))&&_0x59a6bc[_0x221e41('0x4bc')]?_0x59a6bc:{'default':_0x59a6bc},_0x1fc82a=_0x177166(_0x221e41('0x176'));function _0x567b74(){if('function'!=typeof WeakMap)return null;var _0x2de80f=new WeakMap();return _0x567b74=function(){return _0x2de80f;},_0x2de80f;}function _0x42ae30(_0x5761e5,_0xbe56a){var _0x50fdc4=_0x221e41,_0x2538a9=Object[_0x50fdc4('0x34d')](_0x5761e5);if(Object[_0x50fdc4('0x68')]){var _0x3ecb17=Object[_0x50fdc4('0x68')](_0x5761e5);_0xbe56a&&(_0x3ecb17=_0x3ecb17[_0x50fdc4('0x8f')](function(_0x44f82e){var _0x57c4bf=_0x50fdc4;return Object[_0x57c4bf('0x2da')](_0x5761e5,_0x44f82e)[_0x57c4bf('0xf9')];})),_0x2538a9['push']['apply'](_0x2538a9,_0x3ecb17);}return _0x2538a9;}function _0x29b8b5(_0x2c7087){var _0x1163cf=_0x221e41;for(var _0x4f5893=0x1;_0x4f5893<arguments[_0x1163cf('0x1f8')];_0x4f5893++){var _0x33c8b7=null!=arguments[_0x4f5893]?arguments[_0x4f5893]:{};_0x4f5893%0x2?_0x42ae30(Object(_0x33c8b7),!0x0)['forEach'](function(_0x5c31ec){_0x505350(_0x2c7087,_0x5c31ec,_0x33c8b7[_0x5c31ec]);}):Object[_0x1163cf('0x2d')]?Object['defineProperties'](_0x2c7087,Object[_0x1163cf('0x2d')](_0x33c8b7)):_0x42ae30(Object(_0x33c8b7))[_0x1163cf('0x35e')](function(_0x10a2cd){var _0xaf66c=_0x1163cf;Object['defineProperty'](_0x2c7087,_0x10a2cd,Object[_0xaf66c('0x2da')](_0x33c8b7,_0x10a2cd));});}return _0x2c7087;}function _0x505350(_0x40b3bf,_0x5b6631,_0x392cf6){var _0x1f52ba=_0x221e41;return _0x5b6631 in _0x40b3bf?Object[_0x1f52ba('0x28b')](_0x40b3bf,_0x5b6631,{'value':_0x392cf6,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x40b3bf[_0x5b6631]=_0x392cf6,_0x40b3bf;}var _0x1e02a1=_0x323125[_0x221e41('0x13b')][_0x221e41('0x1a0')],_0x280531=_0x323125['Typography'][_0x221e41('0x77')],_0x55cd37=function(_0x5725e9){var _0x1952a5=_0x221e41,_0x226ec3=Number(_0x5725e9);return Number['isFinite'](_0x226ec3)?Number[_0x1952a5('0x404')](_0x226ec3)?String(_0x226ec3):String(Math['round'](0x3e8*_0x226ec3)/0x3e8):'0';};function _0x3649c6(_0x23a483){var _0x1cda6b=_0x221e41,_0x507ef7=_0x23a483[_0x1cda6b('0x510')],_0x4adfd7=_0x23a483[_0x1cda6b('0x370')],_0x424c8b=_0x23a483[_0x1cda6b('0x43a')],_0x18bb5c=void 0x0===_0x424c8b?0x104:_0x424c8b,_0x150bc2=(0x0,_0x323542[_0x1cda6b('0xee')])(null);return(0x0,_0x323542['useEffect'])(function(){var _0x2fe334=_0x1cda6b;if(_0x150bc2[_0x2fe334('0x5d')]){var _0x10dc18;try{(_0x10dc18=new _0x507ef7(_0x150bc2[_0x2fe334('0x5d')],_0x4adfd7))[_0x2fe334('0xea')]();}catch(_0x3a3a07){}return function(){var _0x13c7f1=_0x2fe334;try{_0x10dc18&&_0x10dc18[_0x13c7f1('0x1e4')]();}catch(_0x5948a1){}};}},[_0x507ef7,JSON[_0x1cda6b('0x1d1')](_0x4adfd7),_0x18bb5c]),_0x323542['default']['createElement']('div',{'ref':_0x150bc2,'style':{'height':_0x18bb5c}});}},{'./LeaveCalcParser':0x8,'./theme':0x19,'@antv/g2plot':_0x557405('0x343'),'antd':'antd','react':_0x557405('0x516')}],0x8:[function(_0x1d4607,_0x3c00d2,_0x5bba26){var _0x85ae13=_0x557405;'use strict';function _0x3b4468(_0x16a8a3,_0x3a42f7){var _0x42eda1=_0x4ba4;for(var _0x2e74ca=0x0;_0x2e74ca<_0x3a42f7[_0x42eda1('0x1f8')];_0x2e74ca++){var _0x18cbb0=_0x3a42f7[_0x2e74ca];_0x18cbb0[_0x42eda1('0xf9')]=_0x18cbb0[_0x42eda1('0xf9')]||!0x1,_0x18cbb0[_0x42eda1('0x2f9')]=!0x0,_0x42eda1('0x1c7')in _0x18cbb0&&(_0x18cbb0['writable']=!0x0),Object[_0x42eda1('0x28b')](_0x16a8a3,_0x18cbb0['key'],_0x18cbb0);}}Object[_0x85ae13('0x28b')](_0x5bba26,_0x85ae13('0x4bc'),{'value':!0x0}),_0x5bba26[_0x85ae13('0x4c1')]=void 0x0;var _0x343d2e=function(_0x4343bf){var _0xaacabd=_0x85ae13;return String(null==_0x4343bf?'':_0x4343bf)[_0xaacabd('0x467')](/^\(client=[^)]*\)\s*/,'')[_0xaacabd('0xa1')]();},_0x5a56da=function(_0x2c3894){var _0xca8a91=_0x85ae13,_0x19d779=Number(_0x2c3894);return Number[_0xca8a91('0x181')](_0x19d779)?_0x19d779:0x0;},_0x4035e8=function(){var _0x27a471=_0x85ae13;function _0x5ddf63(_0x46a407){var _0x5ceaaa=_0x4ba4;!function(_0x516cdf,_0x8e196c){var _0x2ca4f2=_0x4ba4;if(!(_0x516cdf instanceof _0x8e196c))throw new TypeError(_0x2ca4f2('0x532'));}(this,_0x5ddf63),this[_0x5ceaaa('0x471')]=Array[_0x5ceaaa('0x161')](_0x46a407)?_0x46a407[_0x5ceaaa('0x1dd')](_0x343d2e):[];}var _0x53d9c2,_0x2b82b6,_0xba1cff;return _0x53d9c2=_0x5ddf63,_0xba1cff=[{'key':'parse','value':function(_0x253620){return new _0x5ddf63(_0x253620)['parse']();}}],(_0x2b82b6=[{'key':_0x27a471('0x2e3'),'value':function(){var _0x5a656a=_0x27a471,_0x513faa={'leaveType':'','leaveTypeId':null,'period':null,'totalForPeriod':null,'afterJoinedDate':null,'afterAccrue':null,'accrualApplied':!0x1,'joinedDateAdjusted':!0x1,'pastPeriodCount':0x0,'carryForward':[]},_0x22f1ac=null,_0x27a4a2=function(){var _0x210e70=_0x4ba4;_0x22f1ac&&(_0x513faa[_0x210e70('0x18f')][_0x210e70('0x193')](_0x22f1ac),_0x22f1ac=null);};this[_0x5a656a('0x471')][_0x5a656a('0x35e')](function(_0x4a6228){var _0x427e9d=_0x5a656a,_0xb2b256;if(_0x4a6228&&_0x427e9d('0x2a')!==_0x4a6228){if(_0xb2b256=_0x4a6228['match'](/^Leave Type \((.+)\) \[id \((\d+)\)\]$/))_0x513faa['leaveType']||(_0x513faa[_0x427e9d('0x349')]=_0xb2b256[0x1],_0x513faa['leaveTypeId']=Number(_0xb2b256[0x2]));else{if(_0xb2b256=_0x4a6228[_0x427e9d('0x159')](/^Leave Period After Adjust\s*:\s*(\d{4}-\d{2}-\d{2})\s*-\s*(\d{4}-\d{2}-\d{2})/))_0x513faa[_0x427e9d('0x119')]={'from':_0xb2b256[0x1],'to':_0xb2b256[0x2]};else{if(_0xb2b256=_0x4a6228[_0x427e9d('0x159')](/^Total for leave for current period:\s*([\d.]+)/))_0x513faa['totalForPeriod']=_0x5a56da(_0xb2b256[0x1]);else{if(_0xb2b256=_0x4a6228[_0x427e9d('0x159')](/^Total after adjusted based on joined date:\s*([\d.]+)/))_0x513faa[_0x427e9d('0x3b9')]=_0x5a56da(_0xb2b256[0x1]);else{if(_0xb2b256=_0x4a6228[_0x427e9d('0x159')](/^Total after leave accrue:\s*([\d.]+)/))_0x513faa[_0x427e9d('0x230')]=_0x5a56da(_0xb2b256[0x1]);else{if(_0xb2b256=_0x4a6228[_0x427e9d('0x159')](/^Number of past leave periods:\s*(\d+)/))_0x513faa[_0x427e9d('0x2cd')]=Number(_0xb2b256[0x1]);else{if(_0xb2b256=_0x4a6228[_0x427e9d('0x159')](/^Calculating leave days carried forward from \[Period\s*(\d{4}-\d{2}-\d{2})\s*-\s*(\d{4}-\d{2}-\d{2})\]/))return _0x27a4a2(),void(_0x22f1ac={'from':_0xb2b256[0x1],'to':_0xb2b256[0x2],'label':_0xb2b256[0x1][_0x427e9d('0x486')](0x0,0x4),'carriedIn':0x0,'allocated':0x0,'pto':0x0,'taken':0x0,'deducted':0x0,'validTill':'','carriedToNext':0x0});if(_0x22f1ac){if(!(_0xb2b256=_0x4a6228[_0x427e9d('0x159')](/^Number of leaves carried from previous period:\s*([\d.-]+)/)))return(_0xb2b256=_0x4a6228['match'](/^Number of allocated \[.*\]:\s*leave\(([\d.-]+)\)\s*\+\s*PTO\(([\d.-]+)\)\s*=\s*([\d.-]+)/))?(_0x22f1ac[_0x427e9d('0x359')]=_0x5a56da(_0xb2b256[0x1]),void(_0x22f1ac[_0x427e9d('0x30d')]=_0x5a56da(_0xb2b256[0x2]))):void((_0xb2b256=_0x4a6228['match'](/^Leave days from previous period is valid till:\s*(\d{4}-\d{2}-\d{2})/))?_0x22f1ac['validTill']=_0xb2b256[0x1]:(_0xb2b256=_0x4a6228[_0x427e9d('0x159')](/^Total number of leave days taken between .*:\s*([\d.-]+)/))?_0x22f1ac['taken']=_0x5a56da(_0xb2b256[0x1]):(_0xb2b256=_0x4a6228['match'](/^Number of leave deducted from carried forward leaves from previous period:\s*([\d.-]+)/))?_0x22f1ac['deducted']=_0x5a56da(_0xb2b256[0x1]):(_0xb2b256=_0x4a6228[_0x427e9d('0x159')](/^Number of leaves carried to next period:\s*([\d.-]+)/))&&(_0x22f1ac['carriedToNext']=_0x5a56da(_0xb2b256[0x1])));_0x22f1ac[_0x427e9d('0x2e6')]=_0x5a56da(_0xb2b256[0x1]);}}}}}}}}}),_0x27a4a2();var _0x18a9e4=function(_0xa38f2e,_0x5e0684){var _0x480942=_0x5a656a;return null!=_0xa38f2e&&null!=_0x5e0684&&Math[_0x480942('0x3ff')](_0xa38f2e-_0x5e0684)>1e-9;};return _0x513faa[_0x5a656a('0x317')]=_0x18a9e4(_0x513faa[_0x5a656a('0x230')],_0x513faa[_0x5a656a('0x3b9')]),_0x513faa[_0x5a656a('0x375')]=_0x18a9e4(_0x513faa[_0x5a656a('0x3b9')],_0x513faa[_0x5a656a('0x32e')]),_0x513faa;}}])&&_0x3b4468(_0x53d9c2[_0x27a471('0x501')],_0x2b82b6),_0xba1cff&&_0x3b4468(_0x53d9c2,_0xba1cff),_0x5ddf63;}();_0x5bba26[_0x85ae13('0x4c1')]=_0x4035e8;},{}],0x9:[function(_0x5eb1a3,_0x3af8a1,_0x28fd47){var _0x45de97=_0x557405;'use strict';function _0x37a31e(_0xf0093f){var _0x2f0b5b=_0x4ba4;return(_0x37a31e=_0x2f0b5b('0x568')==typeof Symbol&&_0x2f0b5b('0x263')==typeof Symbol[_0x2f0b5b('0x412')]?function(_0x4e9b40){return typeof _0x4e9b40;}:function(_0x379423){var _0x4658c3=_0x2f0b5b;return _0x379423&&_0x4658c3('0x568')==typeof Symbol&&_0x379423[_0x4658c3('0x151')]===Symbol&&_0x379423!==Symbol[_0x4658c3('0x501')]?_0x4658c3('0x263'):typeof _0x379423;})(_0xf0093f);}Object[_0x45de97('0x28b')](_0x28fd47,_0x45de97('0x4bc'),{'value':!0x0}),_0x28fd47[_0x45de97('0x4c1')]=function(_0x4196c8){var _0x367632=_0x45de97,_0x14a6cf=_0x4196c8[_0x367632('0x4f8')],_0x2d0ae0=_0x2999bb[_0x367632('0xd6')][_0x367632('0x418')]()['token'],_0x16ce92=_0x818b92((0x0,_0x50b7d9[_0x367632('0x51c')])({}),0x2),_0x597046=_0x16ce92[0x0],_0xc2de24=_0x16ce92[0x1],_0x131bc8=_0x818b92((0x0,_0x50b7d9[_0x367632('0x51c')])([]),0x2),_0x34b293=_0x131bc8[0x0],_0x1526a2=_0x131bc8[0x1],_0x32d3be=_0x818b92((0x0,_0x50b7d9[_0x367632('0x51c')])({}),0x2),_0x3fb103=_0x32d3be[0x0],_0x5b19d4=_0x32d3be[0x1],_0x498d9d=(0x0,_0x50b7d9['useCallback'])(function(_0x4c1c32){var _0x5aec11=_0x367632,_0x421e69=_0x14a6cf&&_0x14a6cf['restApiBase']||'';return fetch(''['concat'](_0x421e69)[_0x5aec11('0x54e')](_0x4c1c32),{'headers':{'Authorization':_0x5aec11('0x52e')[_0x5aec11('0x54e')](_0x14a6cf&&_0x14a6cf[_0x5aec11('0x1eb')])},'credentials':_0x5aec11('0x1a4')})[_0x5aec11('0x273')](function(_0x3c7aa8){var _0x245f6d=_0x5aec11;return _0x3c7aa8[_0x245f6d('0x251')]();});},[_0x14a6cf]),_0x498e6c=(0x0,_0x50b7d9[_0x367632('0x2a1')])(function(_0x9d31c5,_0x1cbb45){var _0x1c927e=_0x367632;_0x498d9d(_0x1c927e('0x15')[_0x1c927e('0x54e')](_0x9d31c5,'/')[_0x1c927e('0x54e')](_0x48579c(_0x1cbb45)))['then'](function(_0x1edb2f){var _0x216c8f=_0x1c927e;_0xc2de24(function(_0xf2702a){var _0x271002=_0x4ba4;return _0x2b3a24({},_0xf2702a,{},_0x1edb2f&&_0x1edb2f[_0x271002('0x1f9')]||{});}),_0x1526a2(_0x1edb2f&&_0x1edb2f[_0x216c8f('0x41b')]||[]);})[_0x1c927e('0x3d9')](function(){});},[_0x498d9d]),_0x2a3bf9=(0x0,_0x50b7d9[_0x367632('0x2a1')])(function(_0x558d43){var _0x22a69e=_0x367632;_0x498d9d('leave-calendar/year/'[_0x22a69e('0x54e')](_0x558d43))[_0x22a69e('0x273')](function(_0xfa5efb){return _0x5b19d4(function(_0xe5289b){return _0x2b3a24({},_0xe5289b,{},_0xfa5efb||{});});})[_0x22a69e('0x3d9')](function(){});},[_0x498d9d]);return(0x0,_0x50b7d9[_0x367632('0x42a')])(function(){var _0x22edb9=_0x367632,_0x252906=new Date();_0x498e6c(_0x252906[_0x22edb9('0x3d4')](),_0x252906['getMonth']()+0x1);},[_0x498e6c]),_0x50b7d9[_0x367632('0x4c1')][_0x367632('0x33e')](_0x367632('0x2e'),{'style':{'background':_0x2d0ae0[_0x367632('0x35')],'borderRadius':0xa,'padding':0xc}},_0x50b7d9[_0x367632('0x4c1')][_0x367632('0x33e')](_0x2999bb['Calendar'],{'cellRender':function(_0x2ca37c,_0x228907){var _0x35923a=_0x367632;return _0x35923a('0x3fa')===_0x228907[_0x35923a('0x444')]?(_0x32b885=''[_0x35923a('0x54e')]((_0x1eaeb2=_0x2ca37c)['year'](),'-')[_0x35923a('0x54e')](_0x48579c(_0x1eaeb2[_0x35923a('0x321')]()+0x1),'-')[_0x35923a('0x54e')](_0x48579c(_0x1eaeb2['date']())),_0x4b99c8=_0x597046[_0x32b885]||[],(_0x1e2adb=_0x34b293[_0x35923a('0xe8')](function(_0x2825d7){var _0x30b8d3=_0x35923a;return _0x2825d7&&_0x2825d7[_0x30b8d3('0x134')]===_0x32b885;}))||_0x4b99c8[_0x35923a('0x1f8')]?_0x50b7d9[_0x35923a('0x4c1')][_0x35923a('0x33e')]('div',{'style':{'marginTop':0x4}},_0x1e2adb?_0x50b7d9[_0x35923a('0x4c1')][_0x35923a('0x33e')](_0x2999bb[_0x35923a('0x1b')],{'message':_0x1e2adb[_0x35923a('0x4d8')],'type':'warning','showIcon':!0x0,'style':{'marginBottom':0x6,'padding':_0x35923a('0x2e0')}}):null,_0x50b7d9[_0x35923a('0x4c1')][_0x35923a('0x33e')](_0x35923a('0x2e'),{'style':{'display':_0x35923a('0x3f6'),'flexWrap':'wrap','gap':0x6}},_0x4b99c8['map'](function(_0x5ea6dc,_0x1aaf46){var _0x578016=_0x35923a;return _0x50b7d9[_0x578016('0x4c1')][_0x578016('0x33e')](_0x2999bb[_0x578016('0x4d4')],{'key':''[_0x578016('0x54e')](_0x5ea6dc[_0x578016('0x18d')]['id'],'-')[_0x578016('0x54e')](_0x1aaf46),'title':''[_0x578016('0x54e')](_0x5ea6dc['employee'][_0x578016('0x4d8')],_0x578016('0xa4'))['concat'](_0x5ea6dc[_0x578016('0x260')]),'color':'#108ee9'},_0x50b7d9[_0x578016('0x4c1')][_0x578016('0x33e')](_0x2999bb['Badge'],{'color':_0x578016('0x499')===_0x5ea6dc[_0x578016('0x260')]?_0x578016('0x538'):_0x578016('0x2bc'),'dot':!0x0},_0x50b7d9[_0x578016('0x4c1')][_0x578016('0x33e')](_0x2999bb[_0x578016('0x291')],{'size':'small','src':_0x5ea6dc[_0x578016('0x18d')]['image']},_0x5ea6dc[_0x578016('0x18d')][_0x578016('0x4d8')]?_0x5ea6dc['employee'][_0x578016('0x4d8')]['charAt'](0x0):'?')));}))):null):function(_0xc86001){var _0x18d4cf=_0x35923a,_0x4cb444=_0x3fb103[_0xc86001[_0x18d4cf('0x221')]()],_0x645d6a=''['concat'](_0xc86001['year'](),'-')[_0x18d4cf('0x54e')](_0x48579c(_0xc86001[_0x18d4cf('0x321')]()+0x1)),_0x485b40=_0x4cb444&&_0x4cb444[_0x645d6a]||[];return _0x485b40[_0x18d4cf('0x1f8')]?_0x50b7d9[_0x18d4cf('0x4c1')][_0x18d4cf('0x33e')](_0x18d4cf('0x2e'),{'style':{'marginTop':0x8,'display':_0x18d4cf('0x3f6'),'flexWrap':'wrap','gap':0x8}},_0x485b40[_0x18d4cf('0x1dd')](function(_0x479659,_0x114011){var _0xc52a75=_0x18d4cf;return _0x50b7d9[_0xc52a75('0x4c1')][_0xc52a75('0x33e')](_0x2999bb[_0xc52a75('0x4d4')],{'key':''[_0xc52a75('0x54e')](_0x479659[_0xc52a75('0x18d')]['id'],'-')['concat'](_0x114011),'title':_0x479659['employee'][_0xc52a75('0x4d8')],'color':_0xc52a75('0xca')},_0x50b7d9[_0xc52a75('0x4c1')][_0xc52a75('0x33e')](_0x2999bb[_0xc52a75('0x4ff')],{'color':_0xc52a75('0x538'),'size':'small','count':_0x479659[_0xc52a75('0x7b')]},_0x50b7d9['default'][_0xc52a75('0x33e')](_0x2999bb[_0xc52a75('0x291')],{'size':_0xc52a75('0x1de'),'src':_0x479659['employee'][_0xc52a75('0x234')]},_0x479659['employee']['name']?_0x479659[_0xc52a75('0x18d')][_0xc52a75('0x4d8')][_0xc52a75('0xec')](0x0):'?')));})):null;}(_0x2ca37c);var _0x1eaeb2,_0x32b885,_0x4b99c8,_0x1e2adb;},'onPanelChange':function(_0x4a3169,_0x28052f){var _0x1cbfb=_0x367632;_0x1cbfb('0x321')===_0x28052f?_0x498e6c(_0x4a3169[_0x1cbfb('0x221')](),_0x4a3169[_0x1cbfb('0x321')]()+0x1):_0x2a3bf9(_0x4a3169['year']());}}));};var _0x50b7d9=function(_0x299d50){var _0x1d0cd7=_0x45de97;if(_0x299d50&&_0x299d50['__esModule'])return _0x299d50;if(null===_0x299d50||_0x1d0cd7('0x19b')!==_0x37a31e(_0x299d50)&&_0x1d0cd7('0x568')!=typeof _0x299d50)return{'default':_0x299d50};var _0x384099=_0x3858ff();if(_0x384099&&_0x384099['has'](_0x299d50))return _0x384099[_0x1d0cd7('0xeb')](_0x299d50);var _0x89596={},_0x2305dc=Object[_0x1d0cd7('0x28b')]&&Object[_0x1d0cd7('0x2da')];for(var _0x5cf861 in _0x299d50)if(Object[_0x1d0cd7('0x501')][_0x1d0cd7('0x205')]['call'](_0x299d50,_0x5cf861)){var _0x1984f0=_0x2305dc?Object[_0x1d0cd7('0x2da')](_0x299d50,_0x5cf861):null;_0x1984f0&&(_0x1984f0[_0x1d0cd7('0xeb')]||_0x1984f0['set'])?Object['defineProperty'](_0x89596,_0x5cf861,_0x1984f0):_0x89596[_0x5cf861]=_0x299d50[_0x5cf861];}return _0x89596[_0x1d0cd7('0x4c1')]=_0x299d50,_0x384099&&_0x384099[_0x1d0cd7('0x302')](_0x299d50,_0x89596),_0x89596;}(_0x5eb1a3(_0x45de97('0x516'))),_0x2999bb=_0x5eb1a3(_0x45de97('0x29c'));function _0x3858ff(){var _0x4526e6=_0x45de97;if(_0x4526e6('0x568')!=typeof WeakMap)return null;var _0x1d5302=new WeakMap();return _0x3858ff=function(){return _0x1d5302;},_0x1d5302;}function _0x3b5ad2(_0x4cf003,_0x82cce5){var _0x11e51b=_0x45de97,_0x3e9d9a=Object[_0x11e51b('0x34d')](_0x4cf003);if(Object['getOwnPropertySymbols']){var _0x996dff=Object['getOwnPropertySymbols'](_0x4cf003);_0x82cce5&&(_0x996dff=_0x996dff[_0x11e51b('0x8f')](function(_0x52f736){var _0x2a6658=_0x11e51b;return Object[_0x2a6658('0x2da')](_0x4cf003,_0x52f736)[_0x2a6658('0xf9')];})),_0x3e9d9a['push']['apply'](_0x3e9d9a,_0x996dff);}return _0x3e9d9a;}function _0x2b3a24(_0x2c5c2a){var _0x659646=_0x45de97;for(var _0x2be352=0x1;_0x2be352<arguments[_0x659646('0x1f8')];_0x2be352++){var _0x109606=null!=arguments[_0x2be352]?arguments[_0x2be352]:{};_0x2be352%0x2?_0x3b5ad2(Object(_0x109606),!0x0)[_0x659646('0x35e')](function(_0x20d61c){_0x4996a9(_0x2c5c2a,_0x20d61c,_0x109606[_0x20d61c]);}):Object['getOwnPropertyDescriptors']?Object[_0x659646('0x145')](_0x2c5c2a,Object['getOwnPropertyDescriptors'](_0x109606)):_0x3b5ad2(Object(_0x109606))[_0x659646('0x35e')](function(_0x570dc8){var _0x45b86c=_0x659646;Object[_0x45b86c('0x28b')](_0x2c5c2a,_0x570dc8,Object[_0x45b86c('0x2da')](_0x109606,_0x570dc8));});}return _0x2c5c2a;}function _0x4996a9(_0x32c3cf,_0x38d3b4,_0x2ce0fb){var _0x507e3e=_0x45de97;return _0x38d3b4 in _0x32c3cf?Object[_0x507e3e('0x28b')](_0x32c3cf,_0x38d3b4,{'value':_0x2ce0fb,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x32c3cf[_0x38d3b4]=_0x2ce0fb,_0x32c3cf;}function _0x818b92(_0x441afa,_0x1f52f5){return function(_0x198a40){var _0x4b8acb=_0x4ba4;if(Array[_0x4b8acb('0x161')](_0x198a40))return _0x198a40;}(_0x441afa)||function(_0x40f983,_0x32c973){var _0x3f5165=_0x4ba4;if(_0x3f5165('0x3')==typeof Symbol||!(Symbol['iterator']in Object(_0x40f983)))return;var _0x465f35=[],_0x3fd297=!0x0,_0x184e65=!0x1,_0x4bb3f5=void 0x0;try{for(var _0x14d435,_0x546aec=_0x40f983[Symbol[_0x3f5165('0x412')]]();!(_0x3fd297=(_0x14d435=_0x546aec[_0x3f5165('0x503')]())[_0x3f5165('0x448')])&&(_0x465f35[_0x3f5165('0x193')](_0x14d435[_0x3f5165('0x1c7')]),!_0x32c973||_0x465f35[_0x3f5165('0x1f8')]!==_0x32c973);_0x3fd297=!0x0);}catch(_0x1c9a44){_0x184e65=!0x0,_0x4bb3f5=_0x1c9a44;}finally{try{_0x3fd297||null==_0x546aec[_0x3f5165('0x6e')]||_0x546aec[_0x3f5165('0x6e')]();}finally{if(_0x184e65)throw _0x4bb3f5;}}return _0x465f35;}(_0x441afa,_0x1f52f5)||function(_0x2f59c8,_0x11456b){var _0x87eb05=_0x4ba4;if(!_0x2f59c8)return;if(_0x87eb05('0x430')==typeof _0x2f59c8)return _0xa450ac(_0x2f59c8,_0x11456b);var _0x449d8b=Object['prototype']['toString']['call'](_0x2f59c8)[_0x87eb05('0x486')](0x8,-0x1);_0x87eb05('0x2f7')===_0x449d8b&&_0x2f59c8['constructor']&&(_0x449d8b=_0x2f59c8['constructor']['name']);if(_0x87eb05('0x506')===_0x449d8b||_0x87eb05('0x26e')===_0x449d8b)return Array[_0x87eb05('0x303')](_0x449d8b);if(_0x87eb05('0x243')===_0x449d8b||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x87eb05('0x2d4')](_0x449d8b))return _0xa450ac(_0x2f59c8,_0x11456b);}(_0x441afa,_0x1f52f5)||function(){throw new TypeError('Invalid\x20attempt\x20to\x20destructure\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.');}();}function _0xa450ac(_0x5af547,_0x4608a5){var _0x17736f=_0x45de97;(null==_0x4608a5||_0x4608a5>_0x5af547[_0x17736f('0x1f8')])&&(_0x4608a5=_0x5af547[_0x17736f('0x1f8')]);for(var _0x14f865=0x0,_0x16690b=new Array(_0x4608a5);_0x14f865<_0x4608a5;_0x14f865++)_0x16690b[_0x14f865]=_0x5af547[_0x14f865];return _0x16690b;}var _0x48579c=function(_0x244307){var _0x5478a2=_0x45de97;return Number(_0x244307)<0xa?'0'[_0x5478a2('0x54e')](_0x244307):''['concat'](_0x244307);};},{'antd':'antd','react':_0x557405('0x516')}],0xa:[function(_0x2b9dcb,_0x574412,_0x4572cc){var _0x104beb=_0x557405;'use strict';function _0x331caa(_0x27900c){var _0x116424=_0x4ba4;return(_0x331caa=_0x116424('0x568')==typeof Symbol&&_0x116424('0x263')==typeof Symbol[_0x116424('0x412')]?function(_0x1d512c){return typeof _0x1d512c;}:function(_0x29d511){var _0x2c8750=_0x116424;return _0x29d511&&_0x2c8750('0x568')==typeof Symbol&&_0x29d511[_0x2c8750('0x151')]===Symbol&&_0x29d511!==Symbol[_0x2c8750('0x501')]?'symbol':typeof _0x29d511;})(_0x27900c);}Object[_0x104beb('0x28b')](_0x4572cc,_0x104beb('0x4bc'),{'value':!0x0}),_0x4572cc[_0x104beb('0x4c1')]=function(_0x4db85b){var _0x4c8acc=_0x104beb,_0x4d9749=_0x4db85b['tabKey'],_0x16fa1f=_0x4f8b41[_0x4c8acc('0xd6')][_0x4c8acc('0x418')]()['token'],_0x405692=_0x257186((0x0,_0x2df818['useState'])(null),0x2),_0x2d3fba=_0x405692[0x0],_0x5eb70f=_0x405692[0x1],_0x1b18a0=_0x257186((0x0,_0x2df818[_0x4c8acc('0x51c')])(null),0x2),_0x1472c1=_0x1b18a0[0x0],_0x400fe7=_0x1b18a0[0x1];(0x0,_0x2df818[_0x4c8acc('0x42a')])(function(){var _0x7eb371=!0x1,_0xdf50a7=0x0;return function _0x1e1996(){var _0x270ff7=_0x4ba4;if(!_0x7eb371){var _0x451d68=(window['modJsList']||{})[_0x4d9749];_0x451d68&&_0x270ff7('0x568')==typeof _0x451d68[_0x270ff7('0x173')]?_0x451d68[_0x270ff7('0x173')]()[_0x270ff7('0x273')](function(_0x252f58){var _0x3cfad7=_0x270ff7;_0x7eb371||_0x5eb70f(Array[_0x3cfad7('0x161')](_0x252f58)?_0x252f58:[]);})[_0x270ff7('0x3d9')](function(){_0x7eb371||_0x5eb70f([]);}):(_0xdf50a7+=0x1)>0x64?_0x5eb70f([]):setTimeout(_0x1e1996,0x64);}}(),function(){_0x7eb371=!0x0;};},[_0x4d9749]);if(null===_0x2d3fba)return _0x2df818['default'][_0x4c8acc('0x33e')](_0x4c8acc('0x2e'),{'style':{'display':_0x4c8acc('0x3f6'),'justifyContent':_0x4c8acc('0x3c5'),'padding':0x3c}},_0x2df818[_0x4c8acc('0x4c1')][_0x4c8acc('0x33e')](_0x4f8b41[_0x4c8acc('0xe5')],{'size':_0x4c8acc('0x54b')}));if(!_0x2d3fba[_0x4c8acc('0x1f8')])return _0x2df818['default']['createElement'](_0x4f8b41[_0x4c8acc('0x269')],{'description':_0x4c8acc('0xcd')});var _0x45fbe1=function(_0x22cbb4){var _0x558f93=_0x4c8acc;return{'display':_0x558f93('0x3dd'),'alignItems':'center','gap':0x6,'fontSize':0xc,'fontWeight':0x258,'padding':_0x558f93('0x1fd'),'borderRadius':0x3e7,'background':'warn'===_0x22cbb4?'rgba(224,131,33,0.14)':_0x16fa1f[_0x558f93('0x1d5')],'color':_0x558f93('0x163')===_0x22cbb4?_0x1f31a3:_0x16fa1f[_0x558f93('0x46c')],'border':_0x558f93('0x163')===_0x22cbb4?'1px\x20solid\x20transparent':_0x558f93('0x178')[_0x558f93('0x54e')](_0x16fa1f[_0x558f93('0x14b')])};};return _0x2df818[_0x4c8acc('0x4c1')][_0x4c8acc('0x33e')](_0x4c8acc('0x2e'),{'style':{'display':_0x4c8acc('0x488'),'gridTemplateColumns':_0x4c8acc('0x416'),'gap':0x12}},_0x2d3fba[_0x4c8acc('0x1dd')](function(_0x1a689e){var _0x108b89=_0x4c8acc,_0xd05d1c=Number(_0x1a689e[_0x108b89('0x449')])||0x0,_0x569f96=Number(_0x1a689e[_0x108b89('0x40f')])||0x0,_0x27a722=Number(_0x1a689e[_0x108b89('0x183')])||0x0,_0x972063=Number(_0x1a689e[_0x108b89('0x104')])||0x0,_0x2c7597=Number(_0x1a689e[_0x108b89('0x4f5')])||0x0,_0xaed58e=Number(_0x1a689e[_0x108b89('0xf')])||0x0,_0x432659=Number(_0x1a689e[_0x108b89('0x144')])||0x0,_0x59ea1a=Math[_0x108b89('0x2e8')](_0xd05d1c,_0x569f96+_0x27a722+_0x972063,0.0001),_0xe9fa3a=_0x142da0(_0x569f96,_0x59ea1a),_0x44854a=_0x142da0(_0x27a722,_0x59ea1a),_0x5f3589=_0x142da0(_0x972063,_0x59ea1a),_0x567b0f=_0x972063<=0x0,_0x19edd0=!_0x567b0f&&_0xd05d1c>0x0&&(_0x972063<=0x1||_0x972063/_0xd05d1c<=0.15),_0x45dd60=_0x567b0f?_0x217cbf:_0x19edd0?_0x1f31a3:_0xe497e5;return _0x2df818[_0x108b89('0x4c1')]['createElement'](_0x108b89('0x2e'),{'key':_0x1a689e['id'],'style':{'background':_0x16fa1f[_0x108b89('0x35')],'border':_0x108b89('0x178')[_0x108b89('0x54e')](_0x16fa1f['colorBorderSecondary']),'borderRadius':0xe,'boxShadow':_0x5421cf[_0x108b89('0x236')],'padding':_0x108b89('0x46b'),'display':'flex','flexDirection':_0x108b89('0x47b'),'gap':0x10}},_0x2df818['default']['createElement'](_0x108b89('0x2e'),{'style':{'display':_0x108b89('0x3f6'),'alignItems':'center','gap':0xd}},_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x108b89('0x2e'),{'style':{'width':0x2a,'height':0x2a,'borderRadius':0xb,'flex':_0x108b89('0x4da'),'display':_0x108b89('0x488'),'placeItems':_0x108b89('0x3c5'),'background':_0x108b89('0x5f'),'color':_0x16fa1f[_0x108b89('0x142')],'fontSize':0x14}},_0x2df818['default'][_0x108b89('0x33e')](_0x16e19a[_0x108b89('0x4d1')],null)),_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x108b89('0x2e'),{'style':{'flex':0x1,'minWidth':0x0}},_0x2df818['default'][_0x108b89('0x33e')](_0x108b89('0x2e'),{'style':{'fontSize':16.5,'fontWeight':0x28a,'letterSpacing':'-0.01em'}},_0x1a689e[_0x108b89('0x4d8')]),_0x2df818[_0x108b89('0x4c1')]['createElement'](_0xe62b29,{'type':_0x108b89('0x3a5'),'style':{'fontSize':12.5}},_0x108b89('0x3c3'))),_0x2df818[_0x108b89('0x4c1')]['createElement'](_0x108b89('0x2e'),{'style':{'textAlign':_0x108b89('0xb6'),'flex':'0\x200\x20auto'}},_0x2df818['default'][_0x108b89('0x33e')](_0x108b89('0x2e'),{'style':{'fontSize':0x1e,'fontWeight':0x2ee,'lineHeight':0x1,'color':_0x45dd60,'fontVariantNumeric':_0x108b89('0x2c4'),'letterSpacing':_0x108b89('0x112')}},_0x2fedc7(_0x972063),_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x108b89('0x1bd'),{'style':{'fontSize':0xe,'fontWeight':0x258,'color':_0x16fa1f[_0x108b89('0x46c')],'marginLeft':0x3}},0x1===Math[_0x108b89('0x3ff')](_0x972063)?_0x108b89('0x4ba'):_0x108b89('0x42f'))),_0x2df818['default'][_0x108b89('0x33e')](_0x108b89('0x2e'),{'style':{'fontSize':11.5,'letterSpacing':_0x108b89('0x3b4'),'textTransform':_0x108b89('0x442'),'color':_0x16fa1f['colorTextTertiary'],'marginTop':0x3,'fontWeight':0x258}},_0x108b89('0x19c')))),_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')]('div',{'style':{'display':'flex','flexDirection':_0x108b89('0x47b'),'gap':0x9}},_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x108b89('0x2e'),{'role':'img','aria-label':_0x108b89('0x312')[_0x108b89('0x54e')](_0x2fedc7(_0xd05d1c),'\x20entitled:\x20')[_0x108b89('0x54e')](_0x2fedc7(_0x569f96),_0x108b89('0x75'))[_0x108b89('0x54e')](_0x2fedc7(_0x27a722),_0x108b89('0x518'))[_0x108b89('0x54e')](_0x2fedc7(_0x972063),_0x108b89('0x1e9')),'style':{'height':0xc,'borderRadius':0x3e7,'background':_0x16fa1f[_0x108b89('0x455')],'display':_0x108b89('0x3f6'),'overflow':_0x108b89('0x5c')}},_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x108b89('0x2e'),{'style':{'width':''[_0x108b89('0x54e')](_0xe9fa3a,'%'),'background':_0xbb25d9}}),_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x108b89('0x2e'),{'style':{'width':''[_0x108b89('0x54e')](_0x44854a,'%'),'background':'repeating-linear-gradient(45deg,\x20'[_0x108b89('0x54e')](_0x1f31a3,',\x20')['concat'](_0x1f31a3,'\x205px,\x20rgba(255,255,255,0.45)\x205px,\x20rgba(255,255,255,0.45)\x2010px)')}}),_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x108b89('0x2e'),{'style':{'width':''['concat'](_0x5f3589,'%'),'background':_0xe497e5}})),_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x108b89('0x2e'),{'style':{'display':'flex','flexWrap':'wrap','gap':_0x108b89('0x365'),'fontSize':12.5,'color':_0x16fa1f[_0x108b89('0x46c')],'fontVariantNumeric':_0x108b89('0x2c4')}},_0x569f96>0x0&&_0x2df818['default']['createElement'](_0x301b65,{'color':_0xbb25d9,'label':'Taken','value':_0x569f96,'token':_0x16fa1f}),_0x27a722>0x0&&_0x2df818['default'][_0x108b89('0x33e')](_0x301b65,{'color':_0x1f31a3,'label':_0x108b89('0x529'),'value':_0x27a722,'token':_0x16fa1f}),_0x2df818['default'][_0x108b89('0x33e')](_0x301b65,{'color':_0xe497e5,'label':_0x108b89('0x19c'),'value':_0x972063,'token':_0x16fa1f}),_0x2df818['default'][_0x108b89('0x33e')](_0x108b89('0x1bd'),{'style':{'marginLeft':_0x108b89('0x2d1'),'color':_0x16fa1f[_0x108b89('0x3e0')]}},_0x108b89('0x3d1'),_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')]('b',{'style':{'color':_0x16fa1f['colorText'],'fontWeight':0x28a}},_0x2fedc7(_0xd05d1c)),_0x108b89('0x30f')))),(_0x19edd0||_0x567b0f||_0x2c7597>0x0&&_0x1a689e[_0x108b89('0x410')]||_0x432659>0x0||0x0!==_0xaed58e)&&_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x108b89('0x2e'),{'style':{'display':'flex','flexWrap':'wrap','gap':0x7}},_0x567b0f&&_0x2df818[_0x108b89('0x4c1')]['createElement'](_0x108b89('0x1bd'),{'style':_0x45fbe1('warn')},_0x2df818[_0x108b89('0x4c1')]['createElement'](_0x16e19a[_0x108b89('0xf4')],null),_0x108b89('0x21a')),_0x19edd0&&_0x2df818['default'][_0x108b89('0x33e')](_0x108b89('0x1bd'),{'style':_0x45fbe1(_0x108b89('0x163'))},_0x2df818['default'][_0x108b89('0x33e')](_0x16e19a[_0x108b89('0xf4')],null),_0x108b89('0x1db')),_0x2c7597>0x0&&_0x1a689e[_0x108b89('0x410')]&&_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')]('span',{'style':_0x45fbe1(_0x108b89('0x163'))},_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x16e19a['ClockCircleOutlined'],null),''[_0x108b89('0x54e')](_0x2fedc7(_0x1a689e[_0x108b89('0x108')]),_0x108b89('0x41'))['concat'](_0x1a689e[_0x108b89('0x410')])),_0x432659>0x0&&_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')]('span',{'style':_0x45fbe1()},'+'['concat'](_0x2fedc7(_0x432659),'\x20still\x20to\x20accrue\x20this\x20period')),0x0!==_0xaed58e&&_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x108b89('0x1bd'),{'style':_0x45fbe1()},_0x108b89('0x33f')['concat'](_0xaed58e>0x0?'+':'')[_0x108b89('0x54e')](_0x2fedc7(_0xaed58e)))),_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x108b89('0x2e'),{'style':{'display':_0x108b89('0x3f6'),'alignItems':_0x108b89('0x3c5'),'justifyContent':_0x108b89('0x1df'),'gap':0xc,'marginTop':0x2}},Array['isArray'](_0x1a689e['calculation'])&&_0x1a689e[_0x108b89('0x3e6')][_0x108b89('0x1f8')]?_0x2df818['default']['createElement'](_0x4f8b41[_0x108b89('0x55f')],{'type':_0x108b89('0x324'),'size':_0x108b89('0x1de'),'icon':_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x16e19a[_0x108b89('0x94')],null),'style':{'padding':0x0},'onClick':function(){return _0x400fe7({'name':_0x1a689e['name'],'lines':_0x1a689e['calculation']});}},_0x108b89('0x9d')):_0x2df818['default'][_0x108b89('0x33e')]('span',null),_0x2df818[_0x108b89('0x4c1')]['createElement'](_0x4f8b41[_0x108b89('0x55f')],{'type':_0x108b89('0x4c4'),'icon':_0x2df818[_0x108b89('0x4c1')][_0x108b89('0x33e')](_0x16e19a[_0x108b89('0x208')],null),'onClick':function(){return function(_0x2daf64){var _0x1f1f2f=_0x4ba4,_0x713d94=(window[_0x1f1f2f('0x53f')]||{})[_0x1f1f2f('0x517')]||window[_0x1f1f2f('0x2b1')];if(_0x713d94&&_0x1f1f2f('0x568')==typeof _0x713d94[_0x1f1f2f('0x293')]){var _0x441cbc=function(){var _0x601c19=_0x1f1f2f;return _0x713d94[_0x601c19('0x293')]({'leave_type':_0x2daf64});},_0x3a7f58=_0x713d94[_0x1f1f2f('0x3d8')];_0x3a7f58&&_0x1f1f2f('0x568')==typeof _0x3a7f58[_0x1f1f2f('0x45d')]?_0x3a7f58[_0x1f1f2f('0x45d')]()[_0x1f1f2f('0x273')](_0x441cbc,_0x441cbc):_0x441cbc();}}(_0x1a689e['id']);}},_0x108b89('0x31d'))));}),_0x2df818[_0x4c8acc('0x4c1')][_0x4c8acc('0x33e')](_0x4f8b41[_0x4c8acc('0xc3')],{'open':!!_0x1472c1,'title':_0x1472c1?''[_0x4c8acc('0x54e')](_0x1472c1[_0x4c8acc('0x4d8')],_0x4c8acc('0x1e5')):'','footer':[_0x2df818['default'][_0x4c8acc('0x33e')](_0x4f8b41[_0x4c8acc('0x55f')],{'key':'c','onClick':function(){return _0x400fe7(null);}},_0x4c8acc('0x2bf'))],'onCancel':function(){return _0x400fe7(null);},'width':0x2f8},_0x1472c1?_0x2df818[_0x4c8acc('0x4c1')][_0x4c8acc('0x33e')](_0x5d7df6[_0x4c8acc('0x4c1')],{'lines':_0x1472c1[_0x4c8acc('0x471')]}):null));};var _0x2539e3,_0x2df818=function(_0x1750ac){var _0x3029c0=_0x104beb;if(_0x1750ac&&_0x1750ac[_0x3029c0('0x4bc')])return _0x1750ac;if(null===_0x1750ac||_0x3029c0('0x19b')!==_0x331caa(_0x1750ac)&&_0x3029c0('0x568')!=typeof _0x1750ac)return{'default':_0x1750ac};var _0xfde00d=_0x2ed54a();if(_0xfde00d&&_0xfde00d[_0x3029c0('0x2e9')](_0x1750ac))return _0xfde00d[_0x3029c0('0xeb')](_0x1750ac);var _0x3eabb2={},_0x57649a=Object[_0x3029c0('0x28b')]&&Object[_0x3029c0('0x2da')];for(var _0x44639f in _0x1750ac)if(Object[_0x3029c0('0x501')]['hasOwnProperty']['call'](_0x1750ac,_0x44639f)){var _0x2afb50=_0x57649a?Object[_0x3029c0('0x2da')](_0x1750ac,_0x44639f):null;_0x2afb50&&(_0x2afb50[_0x3029c0('0xeb')]||_0x2afb50['set'])?Object['defineProperty'](_0x3eabb2,_0x44639f,_0x2afb50):_0x3eabb2[_0x44639f]=_0x1750ac[_0x44639f];}return _0x3eabb2[_0x3029c0('0x4c1')]=_0x1750ac,_0xfde00d&&_0xfde00d[_0x3029c0('0x302')](_0x1750ac,_0x3eabb2),_0x3eabb2;}(_0x2b9dcb(_0x104beb('0x516'))),_0x4f8b41=_0x2b9dcb('antd'),_0x16e19a=_0x2b9dcb(_0x104beb('0x3aa')),_0x5421cf=_0x2b9dcb(_0x104beb('0x176')),_0x5d7df6=(_0x2539e3=_0x2b9dcb(_0x104beb('0x3d5')))&&_0x2539e3[_0x104beb('0x4bc')]?_0x2539e3:{'default':_0x2539e3};function _0x2ed54a(){var _0xc7d5c8=_0x104beb;if(_0xc7d5c8('0x568')!=typeof WeakMap)return null;var _0x114a2e=new WeakMap();return _0x2ed54a=function(){return _0x114a2e;},_0x114a2e;}function _0x257186(_0x12bfe1,_0xf366b6){return function(_0x4bfc3a){if(Array['isArray'](_0x4bfc3a))return _0x4bfc3a;}(_0x12bfe1)||function(_0x5792f6,_0x33785a){var _0x5d68ff=_0x4ba4;if('undefined'==typeof Symbol||!(Symbol['iterator']in Object(_0x5792f6)))return;var _0x2c9028=[],_0xd6156c=!0x0,_0xd48233=!0x1,_0x30f27f=void 0x0;try{for(var _0x53c9ad,_0x1811b9=_0x5792f6[Symbol[_0x5d68ff('0x412')]]();!(_0xd6156c=(_0x53c9ad=_0x1811b9[_0x5d68ff('0x503')]())['done'])&&(_0x2c9028[_0x5d68ff('0x193')](_0x53c9ad[_0x5d68ff('0x1c7')]),!_0x33785a||_0x2c9028[_0x5d68ff('0x1f8')]!==_0x33785a);_0xd6156c=!0x0);}catch(_0x1c5ccf){_0xd48233=!0x0,_0x30f27f=_0x1c5ccf;}finally{try{_0xd6156c||null==_0x1811b9[_0x5d68ff('0x6e')]||_0x1811b9['return']();}finally{if(_0xd48233)throw _0x30f27f;}}return _0x2c9028;}(_0x12bfe1,_0xf366b6)||function(_0x529e05,_0x121a51){var _0x515e18=_0x4ba4;if(!_0x529e05)return;if(_0x515e18('0x430')==typeof _0x529e05)return _0x25b753(_0x529e05,_0x121a51);var _0x44f014=Object[_0x515e18('0x501')][_0x515e18('0x476')][_0x515e18('0x210')](_0x529e05)['slice'](0x8,-0x1);_0x515e18('0x2f7')===_0x44f014&&_0x529e05[_0x515e18('0x151')]&&(_0x44f014=_0x529e05[_0x515e18('0x151')]['name']);if(_0x515e18('0x506')===_0x44f014||_0x515e18('0x26e')===_0x44f014)return Array[_0x515e18('0x303')](_0x44f014);if('Arguments'===_0x44f014||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/['test'](_0x44f014))return _0x25b753(_0x529e05,_0x121a51);}(_0x12bfe1,_0xf366b6)||function(){var _0x3ad41f=_0x4ba4;throw new TypeError(_0x3ad41f('0x36b'));}();}function _0x25b753(_0x5c7720,_0xc2ca0b){var _0xb10f72=_0x104beb;(null==_0xc2ca0b||_0xc2ca0b>_0x5c7720[_0xb10f72('0x1f8')])&&(_0xc2ca0b=_0x5c7720[_0xb10f72('0x1f8')]);for(var _0x3a7ab9=0x0,_0x4bf2d9=new Array(_0xc2ca0b);_0x3a7ab9<_0xc2ca0b;_0x3a7ab9++)_0x4bf2d9[_0x3a7ab9]=_0x5c7720[_0x3a7ab9];return _0x4bf2d9;}var _0xe62b29=_0x4f8b41['Typography'][_0x104beb('0x1a0')],_0xe497e5=_0x104beb('0xb1'),_0xbb25d9=_0x104beb('0x242'),_0x1f31a3='#e08321',_0x217cbf=_0x104beb('0xa7'),_0x2fedc7=function(_0x297e49){var _0x230caf=_0x104beb,_0x5f0c8f=Number(_0x297e49);return Number['isNaN'](_0x5f0c8f)?'0':Number[_0x230caf('0x404')](_0x5f0c8f)?String(_0x5f0c8f):String(Math['round'](0x3e8*_0x5f0c8f)/0x3e8);},_0x142da0=function(_0x774c8d,_0x343443){var _0x2d4e3d=_0x104beb;return _0x343443>0x0?Math[_0x2d4e3d('0x2e8')](0x0,Math[_0x2d4e3d('0x11a')](0x64,_0x774c8d/_0x343443*0x64)):0x0;};function _0x301b65(_0x466aca){var _0xc89ac4=_0x104beb,_0x3fb449=_0x466aca[_0xc89ac4('0x34')],_0x24aefa=_0x466aca['label'],_0x3a7676=_0x466aca[_0xc89ac4('0x1c7')],_0x4bba60=_0x466aca[_0xc89ac4('0x1eb')];return _0x2df818[_0xc89ac4('0x4c1')][_0xc89ac4('0x33e')](_0xc89ac4('0x1bd'),{'style':{'display':_0xc89ac4('0x3dd'),'alignItems':_0xc89ac4('0x3c5'),'gap':0x6}},_0x2df818[_0xc89ac4('0x4c1')][_0xc89ac4('0x33e')]('i',{'style':{'width':0x9,'height':0x9,'borderRadius':0x3,'flex':_0xc89ac4('0x4da'),'background':_0x3fb449,'display':_0xc89ac4('0x156')}}),_0x24aefa,'\x20',_0x2df818[_0xc89ac4('0x4c1')][_0xc89ac4('0x33e')]('b',{'style':{'color':_0x4bba60['colorText'],'fontWeight':0x28a}},_0x2fedc7(_0x3a7676)));}},{'./LeaveCalcChart':0x7,'./theme':0x19,'@ant-design/icons':'@ant-design/icons','antd':_0x557405('0x29c'),'react':_0x557405('0x516')}],0xb:[function(_0x593e4c,_0x1ba840,_0x5c588a){var _0x7cdb86=_0x557405;'use strict';Object[_0x7cdb86('0x28b')](_0x5c588a,_0x7cdb86('0x4bc'),{'value':!0x0}),_0x5c588a[_0x7cdb86('0x4c1')]=function(_0xf49c6e){var _0x203116=_0x7cdb86,_0x3ba618=_0xf49c6e[_0x203116('0x84')]||{},_0x29e21e=!_0x3ba618['has_license'],_0x5064a5=_0x3ba618[_0x203116('0x109')]?String(_0x3ba618[_0x203116('0x109')])[_0x203116('0x376')]('\x20')[0x0]:null,_0x43f5be=_0x29e21e?'No\x20active\x20IceHrmPro\x20license':_0x203116('0x1fb'),_0x40d5e4=_0x29e21e?_0x203116('0x47'):_0x203116('0x4af')[_0x203116('0x54e')](_0x5064a5?_0x203116('0x29b')[_0x203116('0x54e')](_0x5064a5):_0x203116('0x239'),_0x203116('0x357'));return _0x3c20e0[_0x203116('0x4c1')][_0x203116('0x33e')]('div',{'style':{'padding':0x18}},_0x3c20e0[_0x203116('0x4c1')][_0x203116('0x33e')](_0x578862[_0x203116('0x2fa')],{'status':_0x203116('0x540'),'title':_0x43f5be,'subTitle':_0x40d5e4,'extra':_0x3ba618[_0x203116('0x44a')]?_0x3c20e0['default']['createElement'](_0x578862[_0x203116('0x55f')],{'type':_0x203116('0x4c4'),'onClick':function(){var _0x16660c=_0x203116;_0x16660c('0x3')!=typeof window&&(window['location'][_0x16660c('0x150')]='#'[_0x16660c('0x54e')](encodeURIComponent(_0x16660c('0x28d'))));}},_0x203116('0x7c')):null}));};var _0x2529d9,_0x3c20e0=(_0x2529d9=_0x593e4c('react'))&&_0x2529d9['__esModule']?_0x2529d9:{'default':_0x2529d9},_0x578862=_0x593e4c(_0x7cdb86('0x29c'));},{'antd':_0x557405('0x29c'),'react':_0x557405('0x516')}],0xc:[function(_0x30527e,_0x1f31e3,_0x1115c5){var _0x5a9917=_0x557405;'use strict';Object[_0x5a9917('0x28b')](_0x1115c5,'__esModule',{'value':!0x0}),_0x1115c5[_0x5a9917('0x4c1')]=function(_0x51273a){var _0x3c02e6=_0x5a9917,_0x1a85cb=_0x51273a[_0x3c02e6('0xa5')];if(!_0x1a85cb)return null;var _0x322f6c=_0x1a85cb[_0x3c02e6('0x171')],_0x314276=_0x1a85cb['expiryDate'],_0x594a3e=_0x1a85cb[_0x3c02e6('0x4fd')],_0x140675=_0x1a85cb[_0x3c02e6('0x512')],_0x10f2ee=_0x314276?String(_0x314276)[_0x3c02e6('0x376')]('\x20')[0x0]:null,_0x4527a8=_0x322f6c<=0x0?_0x3c02e6('0x4f0'):0x1===_0x322f6c?_0x3c02e6('0x100'):_0x3c02e6('0x2ef')[_0x3c02e6('0x54e')](_0x322f6c,_0x3c02e6('0xe2'));return _0x229fba[_0x3c02e6('0x4c1')]['createElement'](_0x25f25c['Alert'],{'type':_0x3c02e6('0x540'),'banner':!0x0,'showIcon':!0x0,'style':{'padding':'18px\x2028px','alignItems':_0x3c02e6('0x3c5'),'marginBottom':0x10},'message':_0x229fba['default']['createElement'](_0x3c02e6('0x2e'),{'style':{'lineHeight':1.35}},_0x229fba[_0x3c02e6('0x4c1')][_0x3c02e6('0x33e')]('div',{'style':{'fontSize':0x11,'fontWeight':0x2bc,'marginBottom':0x3}},_0x3c02e6('0x172'),_0x4527a8),_0x229fba['default'][_0x3c02e6('0x33e')](_0x3c02e6('0x2e'),{'style':{'fontSize':0xe,'opacity':0.9}},_0x10f2ee?_0x3c02e6('0x139')[_0x3c02e6('0x54e')](_0x10f2ee,'.\x20'):'',_0x3c02e6('0x17a'))),'action':_0x594a3e&&_0x140675?_0x229fba['default'][_0x3c02e6('0x33e')](_0x25f25c[_0x3c02e6('0x55f')],{'size':_0x3c02e6('0x54b'),'type':'primary','href':_0x140675,'target':_0x3c02e6('0x2f1'),'rel':_0x3c02e6('0x333'),'style':{'fontWeight':0x258}},_0x3c02e6('0x2a6')):null});};var _0xabb8fd,_0x229fba=(_0xabb8fd=_0x30527e(_0x5a9917('0x516')))&&_0xabb8fd['__esModule']?_0xabb8fd:{'default':_0xabb8fd},_0x25f25c=_0x30527e(_0x5a9917('0x29c'));},{'antd':_0x557405('0x29c'),'react':_0x557405('0x516')}],0xd:[function(_0x283c06,_0x3ef3c3,_0x102381){var _0x9f58b7=_0x557405;'use strict';Object[_0x9f58b7('0x28b')](_0x102381,_0x9f58b7('0x4bc'),{'value':!0x0}),_0x102381['default']=function(){var _0x389500=_0x9f58b7,_0x58fa9e=(window['modJsList']||{})['tabMobileApp']||null,_0xeb99ca=_0x5a8a46((0x0,_0x3c6e4c[_0x389500('0x51c')])(null),0x2),_0x23d20e=_0xeb99ca[0x0],_0x293f22=_0xeb99ca[0x1],_0x54c021=_0x5a8a46((0x0,_0x3c6e4c[_0x389500('0x51c')])(!0x1),0x2),_0x47a2ea=_0x54c021[0x0],_0x5a1523=_0x54c021[0x1],_0x4e303e={'borderRadius':0xc,'boxShadow':_0x5c2c9d[_0x389500('0x236')],'marginBottom':0x10};return _0x3c6e4c[_0x389500('0x4c1')][_0x389500('0x33e')](_0x389500('0x2e'),{'style':{'width':_0x389500('0x25f')}},_0x3c6e4c[_0x389500('0x4c1')][_0x389500('0x33e')](_0x1efaf3[_0x389500('0x347')],{'style':_0x4e303e,'title':_0x3c6e4c['default'][_0x389500('0x33e')](_0x1efaf3['Space'],null,_0x3c6e4c[_0x389500('0x4c1')]['createElement'](_0x3024a6[_0x389500('0x1c9')],null),_0x389500('0xf3'))},_0x3c6e4c['default'][_0x389500('0x33e')](_0x32ba0e,{'type':_0x389500('0x3a5')},_0x389500('0x6c')),_0x3c6e4c[_0x389500('0x4c1')]['createElement'](_0x1efaf3['Space'],{'wrap':!0x0},_0x3c6e4c[_0x389500('0x4c1')][_0x389500('0x33e')]('a',{'href':_0x389500('0x38d'),'target':_0x389500('0x2f1'),'rel':'noopener\x20noreferrer'},_0x3c6e4c[_0x389500('0x4c1')][_0x389500('0x33e')](_0x389500('0x2c1'),{'src':_0x389500('0x3f0'),'alt':_0x389500('0x270'),'style':{'height':0x32}})),_0x3c6e4c[_0x389500('0x4c1')]['createElement']('a',{'href':'https://play.google.com/store/apps/details?id=com.icehrm.m3&hl=en','target':_0x389500('0x2f1'),'rel':'noopener\x20noreferrer'},_0x3c6e4c['default'][_0x389500('0x33e')](_0x389500('0x2c1'),{'src':_0x389500('0x105'),'alt':_0x389500('0x42d'),'style':{'height':0x32}})))),_0x3c6e4c[_0x389500('0x4c1')][_0x389500('0x33e')](_0x1efaf3['Card'],{'style':_0x4e303e,'title':_0x3c6e4c[_0x389500('0x4c1')][_0x389500('0x33e')](_0x1efaf3[_0x389500('0x27b')],null,_0x3c6e4c['default'][_0x389500('0x33e')](_0x3024a6[_0x389500('0x11e')],null),'Mobile\x20Authentication\x20Code')},_0x3c6e4c[_0x389500('0x4c1')][_0x389500('0x33e')](_0x32ba0e,{'type':_0x389500('0x3a5')},'Use\x20this\x20one-time\x20code\x20to\x20securely\x20log\x20in\x20to\x20the\x20mobile\x20app.'),_0x23d20e?_0x3c6e4c['default'][_0x389500('0x33e')](_0x1efaf3[_0x389500('0x1b')],{'type':_0x389500('0x3fb'),'showIcon':!0x0,'style':{'marginBottom':0xc},'message':_0x3c6e4c[_0x389500('0x4c1')]['createElement'](_0x5f5017,{'strong':!0x0,'copyable':!0x0,'style':{'fontSize':0x12,'letterSpacing':0x1}},_0x23d20e)}):null,_0x3c6e4c[_0x389500('0x4c1')][_0x389500('0x33e')](_0x1efaf3['Button'],{'type':'primary','icon':_0x3c6e4c[_0x389500('0x4c1')][_0x389500('0x33e')](_0x3024a6[_0x389500('0x11e')],null),'loading':_0x47a2ea,'onClick':function(){var _0x39717e=_0x389500;if(_0x58fa9e){_0x5a1523(!0x0),_0x58fa9e[_0x39717e('0x43c')]=function(_0xa63ebb){var _0x5790a2=_0x39717e;_0x5a1523(!0x1);var _0x1aada1=Array[_0x5790a2('0x161')](_0xa63ebb)?_0xa63ebb[0x0]:_0xa63ebb,_0x1065be=_0x1aada1&&_0x5790a2('0x19b')===_0x335a39(_0x1aada1)?_0x1aada1[_0x5790a2('0x561')]||_0x1aada1[_0x5790a2('0x9b')]||_0x1aada1[_0x5790a2('0x307')]||JSON[_0x5790a2('0x1d1')](_0x1aada1):_0x1aada1;_0x293f22(null!=_0x1065be?String(_0x1065be):null);},_0x58fa9e['loginCodeFailCallBack']=function(){var _0x2a2a39=_0x39717e;_0x5a1523(!0x1),_0x1efaf3[_0x2a2a39('0x2ac')]['error'](_0x2a2a39('0x52b'),0x5);};try{_0x58fa9e['getOneTimeLoginCode']();}catch(_0x2cb255){_0x5a1523(!0x1);}}}},'Request\x20One-time\x20Login\x20Code')));};var _0x3c6e4c=function(_0x5ca97f){var _0x145c23=_0x9f58b7;if(_0x5ca97f&&_0x5ca97f[_0x145c23('0x4bc')])return _0x5ca97f;if(null===_0x5ca97f||_0x145c23('0x19b')!==_0x335a39(_0x5ca97f)&&'function'!=typeof _0x5ca97f)return{'default':_0x5ca97f};var _0x1d106c=_0x2241f3();if(_0x1d106c&&_0x1d106c[_0x145c23('0x2e9')](_0x5ca97f))return _0x1d106c[_0x145c23('0xeb')](_0x5ca97f);var _0x1f0f1c={},_0x2965c0=Object['defineProperty']&&Object[_0x145c23('0x2da')];for(var _0x595196 in _0x5ca97f)if(Object[_0x145c23('0x501')][_0x145c23('0x205')][_0x145c23('0x210')](_0x5ca97f,_0x595196)){var _0x998e24=_0x2965c0?Object[_0x145c23('0x2da')](_0x5ca97f,_0x595196):null;_0x998e24&&(_0x998e24[_0x145c23('0xeb')]||_0x998e24[_0x145c23('0x302')])?Object[_0x145c23('0x28b')](_0x1f0f1c,_0x595196,_0x998e24):_0x1f0f1c[_0x595196]=_0x5ca97f[_0x595196];}return _0x1f0f1c['default']=_0x5ca97f,_0x1d106c&&_0x1d106c['set'](_0x5ca97f,_0x1f0f1c),_0x1f0f1c;}(_0x283c06('react')),_0x1efaf3=_0x283c06(_0x9f58b7('0x29c')),_0x3024a6=_0x283c06(_0x9f58b7('0x3aa')),_0x5c2c9d=_0x283c06(_0x9f58b7('0x176'));function _0x2241f3(){var _0x512675=_0x9f58b7;if(_0x512675('0x568')!=typeof WeakMap)return null;var _0x4e09d3=new WeakMap();return _0x2241f3=function(){return _0x4e09d3;},_0x4e09d3;}function _0x335a39(_0x4c4ef5){var _0x1d12ee=_0x9f58b7;return(_0x335a39=_0x1d12ee('0x568')==typeof Symbol&&_0x1d12ee('0x263')==typeof Symbol['iterator']?function(_0x287232){return typeof _0x287232;}:function(_0x1db510){var _0x8d0b6b=_0x1d12ee;return _0x1db510&&_0x8d0b6b('0x568')==typeof Symbol&&_0x1db510[_0x8d0b6b('0x151')]===Symbol&&_0x1db510!==Symbol['prototype']?'symbol':typeof _0x1db510;})(_0x4c4ef5);}function _0x5a8a46(_0x32b22b,_0x1697d0){return function(_0x51bc10){if(Array['isArray'](_0x51bc10))return _0x51bc10;}(_0x32b22b)||function(_0x42c0c0,_0xe5f207){var _0x8c0bf7=_0x4ba4;if('undefined'==typeof Symbol||!(Symbol[_0x8c0bf7('0x412')]in Object(_0x42c0c0)))return;var _0x4dd1f0=[],_0x5b8db0=!0x0,_0x29e806=!0x1,_0x18ede5=void 0x0;try{for(var _0xfbc927,_0x5d834b=_0x42c0c0[Symbol[_0x8c0bf7('0x412')]]();!(_0x5b8db0=(_0xfbc927=_0x5d834b[_0x8c0bf7('0x503')]())['done'])&&(_0x4dd1f0[_0x8c0bf7('0x193')](_0xfbc927[_0x8c0bf7('0x1c7')]),!_0xe5f207||_0x4dd1f0['length']!==_0xe5f207);_0x5b8db0=!0x0);}catch(_0x579d80){_0x29e806=!0x0,_0x18ede5=_0x579d80;}finally{try{_0x5b8db0||null==_0x5d834b[_0x8c0bf7('0x6e')]||_0x5d834b[_0x8c0bf7('0x6e')]();}finally{if(_0x29e806)throw _0x18ede5;}}return _0x4dd1f0;}(_0x32b22b,_0x1697d0)||function(_0x4ffabb,_0x2ec671){var _0x29ca02=_0x4ba4;if(!_0x4ffabb)return;if('string'==typeof _0x4ffabb)return _0x235305(_0x4ffabb,_0x2ec671);var _0x1b1ff5=Object[_0x29ca02('0x501')][_0x29ca02('0x476')][_0x29ca02('0x210')](_0x4ffabb)[_0x29ca02('0x486')](0x8,-0x1);_0x29ca02('0x2f7')===_0x1b1ff5&&_0x4ffabb['constructor']&&(_0x1b1ff5=_0x4ffabb[_0x29ca02('0x151')][_0x29ca02('0x4d8')]);if(_0x29ca02('0x506')===_0x1b1ff5||'Set'===_0x1b1ff5)return Array[_0x29ca02('0x303')](_0x1b1ff5);if(_0x29ca02('0x243')===_0x1b1ff5||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x29ca02('0x2d4')](_0x1b1ff5))return _0x235305(_0x4ffabb,_0x2ec671);}(_0x32b22b,_0x1697d0)||function(){var _0x563482=_0x4ba4;throw new TypeError(_0x563482('0x36b'));}();}function _0x235305(_0x1a1b8f,_0x4c0369){(null==_0x4c0369||_0x4c0369>_0x1a1b8f['length'])&&(_0x4c0369=_0x1a1b8f['length']);for(var _0x43a3eb=0x0,_0x263064=new Array(_0x4c0369);_0x43a3eb<_0x4c0369;_0x43a3eb++)_0x263064[_0x43a3eb]=_0x1a1b8f[_0x43a3eb];return _0x263064;}var _0x5f5017=_0x1efaf3[_0x9f58b7('0x13b')][_0x9f58b7('0x1a0')],_0x32ba0e=_0x1efaf3[_0x9f58b7('0x13b')][_0x9f58b7('0x1a9')];},{'./theme':0x19,'@ant-design/icons':_0x557405('0x3aa'),'antd':_0x557405('0x29c'),'react':_0x557405('0x516')}],0xe:[function(_0x55500a,_0x2fe6fa,_0x354276){var _0x465aeb=_0x557405;'use strict';function _0x203cd7(_0x5bbf0e){var _0x4aeff3=_0x4ba4;return(_0x203cd7=_0x4aeff3('0x568')==typeof Symbol&&_0x4aeff3('0x263')==typeof Symbol[_0x4aeff3('0x412')]?function(_0x5d2413){return typeof _0x5d2413;}:function(_0x37a81d){var _0x3b5dbb=_0x4aeff3;return _0x37a81d&&_0x3b5dbb('0x568')==typeof Symbol&&_0x37a81d['constructor']===Symbol&&_0x37a81d!==Symbol[_0x3b5dbb('0x501')]?'symbol':typeof _0x37a81d;})(_0x5bbf0e);}Object[_0x465aeb('0x28b')](_0x354276,'__esModule',{'value':!0x0}),_0x354276['default']=function(_0x134b4c){var _0x392a2d=_0x465aeb,_0x400bf3=_0x134b4c['items'],_0x402d90=_0x134b4c['areas'],_0x344306=_0x134b4c[_0x392a2d('0x284')],_0x3f3073=(_0x134b4c['dark'],_0x4a9e60=(0x0,_0x4801fb[_0x392a2d('0x51c')])(void 0x0),_0x4951bd=0x2,function(_0x372537){var _0x4877a6=_0x392a2d;if(Array[_0x4877a6('0x161')](_0x372537))return _0x372537;}(_0x4a9e60)||function(_0x1fb19e,_0x57921a){var _0x54de2b=_0x392a2d;if(_0x54de2b('0x3')!=typeof Symbol&&Symbol['iterator']in Object(_0x1fb19e)){var _0xfb6d75=[],_0x1834f5=!0x0,_0x54bfc9=!0x1,_0x5ab06f=void 0x0;try{for(var _0x436624,_0x2ca897=_0x1fb19e[Symbol[_0x54de2b('0x412')]]();!(_0x1834f5=(_0x436624=_0x2ca897['next']())[_0x54de2b('0x448')])&&(_0xfb6d75[_0x54de2b('0x193')](_0x436624['value']),!_0x57921a||_0xfb6d75[_0x54de2b('0x1f8')]!==_0x57921a);_0x1834f5=!0x0);}catch(_0x4a9988){_0x54bfc9=!0x0,_0x5ab06f=_0x4a9988;}finally{try{_0x1834f5||null==_0x2ca897[_0x54de2b('0x6e')]||_0x2ca897['return']();}finally{if(_0x54bfc9)throw _0x5ab06f;}}return _0xfb6d75;}}(_0x4a9e60,_0x4951bd)||function(_0x36a075,_0x361155){var _0x34b122=_0x392a2d;if(_0x36a075){if('string'==typeof _0x36a075)return _0x55a87e(_0x36a075,_0x361155);var _0x72a746=Object[_0x34b122('0x501')][_0x34b122('0x476')][_0x34b122('0x210')](_0x36a075)[_0x34b122('0x486')](0x8,-0x1);return _0x34b122('0x2f7')===_0x72a746&&_0x36a075[_0x34b122('0x151')]&&(_0x72a746=_0x36a075[_0x34b122('0x151')][_0x34b122('0x4d8')]),_0x34b122('0x506')===_0x72a746||_0x34b122('0x26e')===_0x72a746?Array[_0x34b122('0x303')](_0x72a746):_0x34b122('0x243')===_0x72a746||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x34b122('0x2d4')](_0x72a746)?_0x55a87e(_0x36a075,_0x361155):void 0x0;}}(_0x4a9e60,_0x4951bd)||function(){var _0xa18db4=_0x392a2d;throw new TypeError(_0xa18db4('0x36b'));}()),_0x3cb0ee=_0x3f3073[0x0],_0x4415d7=_0x3f3073[0x1],_0x2bfaaa=(0x0,_0x4801fb[_0x392a2d('0x286')])(function(){var _0x752e63=_0x392a2d,_0x57f834={};return(_0x402d90||[])[_0x752e63('0x35e')](function(_0x19c8dc){var _0x4b4eeb=_0x752e63;_0x57f834[_0x19c8dc['id']]=_0x19c8dc[_0x4b4eeb('0x39')];}),_0x57f834;},[_0x402d90]),_0x33cebf=(0x0,_0x4801fb[_0x392a2d('0x286')])(function(){var _0x508884=_0x392a2d,_0x1fa42e={};return(_0x400bf3||[])[_0x508884('0x35e')](function(_0x195ca1){var _0x29add=_0x508884,_0x1dbd04=_0x195ca1[_0x29add('0x507')]||_0x29add('0x46');_0x1fa42e[_0x1dbd04]||(_0x1fa42e[_0x1dbd04]=[]);var _0xc6e914=_0x2bfaaa[_0x1dbd04]||_0x1dbd04,_0x4f11dd='mine'===_0x195ca1[_0x29add('0x4dc')]?_0x29add('0x3bd'):_0x29add('0x3b7');_0x1fa42e[_0x1dbd04][_0x29add('0x193')]({'value':_0x195ca1[_0x29add('0x322')],'name':_0x195ca1[_0x29add('0x39')],'section':_0x4f11dd,'label':_0x4801fb[_0x29add('0x4c1')][_0x29add('0x33e')](_0x29add('0x1bd'),{'style':{'display':_0x29add('0x3f6'),'alignItems':_0x29add('0x3c5'),'justifyContent':_0x29add('0x1df'),'gap':0xc}},_0x4801fb[_0x29add('0x4c1')][_0x29add('0x33e')](_0x29add('0x1bd'),{'style':{'overflow':_0x29add('0x5c'),'textOverflow':'ellipsis','whiteSpace':_0x29add('0x195')}},_0x195ca1['label']),_0x4801fb[_0x29add('0x4c1')][_0x29add('0x33e')](_0x29add('0x1bd'),{'style':{'flex':_0x29add('0x4da'),'fontSize':0xb,'fontWeight':0x1f4,'padding':_0x29add('0x5'),'lineHeight':_0x29add('0xd2'),'borderRadius':0x9,'color':'mine'===_0x195ca1[_0x29add('0x4dc')]?_0x29add('0x13f'):_0x29add('0xa6'),'background':_0x29add('0x514')===_0x195ca1[_0x29add('0x4dc')]?_0x29add('0x275'):_0x29add('0xa2')}},_0x4f11dd)),'search':''['concat'](_0x195ca1[_0x29add('0x39')],'\x20')[_0x29add('0x54e')](_0xc6e914,'\x20')[_0x29add('0x54e')](_0x4f11dd)['toLowerCase']()});}),Object['keys'](_0x1fa42e)[_0x508884('0x42c')](function(_0x598aca,_0x274060){var _0x428902=_0x508884;return(_0x2bfaaa[_0x598aca]||_0x598aca)[_0x428902('0x88')](_0x2bfaaa[_0x274060]||_0x274060);})[_0x508884('0x1dd')](function(_0x4a88e0){return{'label':_0x2bfaaa[_0x4a88e0]||_0x4a88e0,'options':_0x1fa42e[_0x4a88e0]['sort'](function(_0x3effaa,_0x4dd0d9){var _0xe2a31f=_0x4ba4;return _0x3effaa['name'][_0xe2a31f('0x88')](_0x4dd0d9['name']);})};});},[_0x400bf3,_0x2bfaaa]),_0x4a9e60,_0x4951bd;return _0x4801fb[_0x392a2d('0x4c1')]['createElement'](_0x234eb4[_0x392a2d('0x1f6')],{'showSearch':!0x0,'value':_0x3cb0ee,'placeholder':_0x392a2d('0x40a'),'suffixIcon':_0x4801fb[_0x392a2d('0x4c1')][_0x392a2d('0x33e')](_0x3aab37[_0x392a2d('0x146')],{'style':{'fontSize':0xf}}),'options':_0x33cebf,'filterOption':function(_0x3fb763,_0x55b707){var _0x2c550c=_0x392a2d;return!(!_0x55b707||_0x55b707['options'])&&(_0x55b707[_0x2c550c('0x8d')]||'')[_0x2c550c('0x165')]((_0x3fb763||'')['toLowerCase']());},'onChange':function(_0x2f03ce){_0x2f03ce&&_0x344306&&_0x344306(_0x2f03ce),_0x4415d7(void 0x0);},'onSelect':function(){return _0x4415d7(void 0x0);},'allowClear':!0x0,'style':{'width':_0x392a2d('0x25f')},'popupMatchSelectWidth':!0x1,'listHeight':0x1a4,'variant':_0x392a2d('0x1c0'),'aria-label':_0x392a2d('0x12e')});};var _0x4801fb=function(_0x5c1fb4){var _0x25fb0f=_0x465aeb;if(_0x5c1fb4&&_0x5c1fb4[_0x25fb0f('0x4bc')])return _0x5c1fb4;if(null===_0x5c1fb4||_0x25fb0f('0x19b')!==_0x203cd7(_0x5c1fb4)&&'function'!=typeof _0x5c1fb4)return{'default':_0x5c1fb4};var _0x29d51e=_0x1fab6d();if(_0x29d51e&&_0x29d51e[_0x25fb0f('0x2e9')](_0x5c1fb4))return _0x29d51e['get'](_0x5c1fb4);var _0x30b723={},_0x9c8166=Object[_0x25fb0f('0x28b')]&&Object['getOwnPropertyDescriptor'];for(var _0x296dba in _0x5c1fb4)if(Object[_0x25fb0f('0x501')][_0x25fb0f('0x205')][_0x25fb0f('0x210')](_0x5c1fb4,_0x296dba)){var _0x579465=_0x9c8166?Object[_0x25fb0f('0x2da')](_0x5c1fb4,_0x296dba):null;_0x579465&&(_0x579465['get']||_0x579465[_0x25fb0f('0x302')])?Object[_0x25fb0f('0x28b')](_0x30b723,_0x296dba,_0x579465):_0x30b723[_0x296dba]=_0x5c1fb4[_0x296dba];}return _0x30b723[_0x25fb0f('0x4c1')]=_0x5c1fb4,_0x29d51e&&_0x29d51e[_0x25fb0f('0x302')](_0x5c1fb4,_0x30b723),_0x30b723;}(_0x55500a(_0x465aeb('0x516'))),_0x234eb4=_0x55500a(_0x465aeb('0x29c')),_0x3aab37=_0x55500a('@ant-design/icons');function _0x1fab6d(){var _0x206c76=_0x465aeb;if(_0x206c76('0x568')!=typeof WeakMap)return null;var _0x3f4367=new WeakMap();return _0x1fab6d=function(){return _0x3f4367;},_0x3f4367;}function _0x55a87e(_0x2b4e16,_0xe4b083){var _0x28246d=_0x465aeb;(null==_0xe4b083||_0xe4b083>_0x2b4e16[_0x28246d('0x1f8')])&&(_0xe4b083=_0x2b4e16[_0x28246d('0x1f8')]);for(var _0x342af2=0x0,_0x35db78=new Array(_0xe4b083);_0x342af2<_0xe4b083;_0x342af2++)_0x35db78[_0x342af2]=_0x2b4e16[_0x342af2];return _0x35db78;}},{'@ant-design/icons':'@ant-design/icons','antd':_0x557405('0x29c'),'react':_0x557405('0x516')}],0xf:[function(_0x58b01a,_0x2ee388,_0x56f285){var _0x1993fc=_0x557405;'use strict';function _0x11fb75(_0x4d6aae){var _0x33203a=_0x4ba4;return(_0x11fb75=_0x33203a('0x568')==typeof Symbol&&_0x33203a('0x263')==typeof Symbol[_0x33203a('0x412')]?function(_0x2c2138){return typeof _0x2c2138;}:function(_0x4f4424){var _0x127695=_0x33203a;return _0x4f4424&&_0x127695('0x568')==typeof Symbol&&_0x4f4424[_0x127695('0x151')]===Symbol&&_0x4f4424!==Symbol['prototype']?'symbol':typeof _0x4f4424;})(_0x4d6aae);}Object[_0x1993fc('0x28b')](_0x56f285,_0x1993fc('0x4bc'),{'value':!0x0}),_0x56f285[_0x1993fc('0x4c1')]=function(_0x5b12db){var _0xad3512=_0x1993fc,_0x829a9a=_0x5b12db['tabKey'],_0x3b24c3=(0x0,_0x585dd6[_0xad3512('0xee')])(null),_0x4647d8=(0x0,_0x585dd6[_0xad3512('0xee')])(null),_0x12636e=(0x0,_0x585dd6['useRef'])(null),_0x5b3aa1=(_0x3a67eb=(0x0,_0x585dd6[_0xad3512('0x51c')])(!0x1),_0x4dfe54=0x2,function(_0x5634a4){var _0x533ffd=_0xad3512;if(Array[_0x533ffd('0x161')](_0x5634a4))return _0x5634a4;}(_0x3a67eb)||function(_0x11dc91,_0x27a56b){var _0x1a3000=_0xad3512;if(_0x1a3000('0x3')!=typeof Symbol&&Symbol[_0x1a3000('0x412')]in Object(_0x11dc91)){var _0x453038=[],_0x4ed956=!0x0,_0x38cc78=!0x1,_0x2b1067=void 0x0;try{for(var _0x425332,_0xf6eb79=_0x11dc91[Symbol['iterator']]();!(_0x4ed956=(_0x425332=_0xf6eb79[_0x1a3000('0x503')]())[_0x1a3000('0x448')])&&(_0x453038[_0x1a3000('0x193')](_0x425332['value']),!_0x27a56b||_0x453038['length']!==_0x27a56b);_0x4ed956=!0x0);}catch(_0x4c137a){_0x38cc78=!0x0,_0x2b1067=_0x4c137a;}finally{try{_0x4ed956||null==_0xf6eb79[_0x1a3000('0x6e')]||_0xf6eb79[_0x1a3000('0x6e')]();}finally{if(_0x38cc78)throw _0x2b1067;}}return _0x453038;}}(_0x3a67eb,_0x4dfe54)||function(_0x4785be,_0x4997fd){var _0x3dc9f3=_0xad3512;if(_0x4785be){if('string'==typeof _0x4785be)return _0x34c866(_0x4785be,_0x4997fd);var _0x5b3614=Object[_0x3dc9f3('0x501')][_0x3dc9f3('0x476')][_0x3dc9f3('0x210')](_0x4785be)['slice'](0x8,-0x1);return _0x3dc9f3('0x2f7')===_0x5b3614&&_0x4785be[_0x3dc9f3('0x151')]&&(_0x5b3614=_0x4785be['constructor'][_0x3dc9f3('0x4d8')]),_0x3dc9f3('0x506')===_0x5b3614||_0x3dc9f3('0x26e')===_0x5b3614?Array[_0x3dc9f3('0x303')](_0x5b3614):_0x3dc9f3('0x243')===_0x5b3614||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x3dc9f3('0x2d4')](_0x5b3614)?_0x34c866(_0x4785be,_0x4997fd):void 0x0;}}(_0x3a67eb,_0x4dfe54)||function(){var _0x3aff85=_0xad3512;throw new TypeError(_0x3aff85('0x36b'));}()),_0x3fd0de=_0x5b3aa1[0x0],_0x13b3fd=_0x5b3aa1[0x1],_0x3a67eb,_0x4dfe54;return(0x0,_0x585dd6[_0xad3512('0x42a')])(function(){var _0x45a25d=!0x1,_0x17c5c5=0x0;return function _0x5eb803(){var _0x36d2f5=_0x4ba4;if(!_0x45a25d){var _0x2ab5c3=(window['modJsList']||{})[_0x829a9a];if(_0x2ab5c3&&_0x3b24c3['current']){_0x36d2f5('0x568')==typeof _0x2ab5c3[_0x36d2f5('0x438')]&&_0x2ab5c3[_0x36d2f5('0x438')]({'Table':_0x3b24c3[_0x36d2f5('0x5d')],'Form':_0x4647d8['current'],'FilterForm':_0x12636e[_0x36d2f5('0x5d')]}),_0x2ab5c3[_0x36d2f5('0x4c6')]=!0x1,_0x2ab5c3[_0x36d2f5('0x54')]=!0x1,window['modJs']=_0x2ab5c3;try{_0x2ab5c3[_0x36d2f5('0x3d8')]&&_0x2ab5c3[_0x36d2f5('0x3d8')]['updateAllMasterData']&&_0x2ab5c3[_0x36d2f5('0x3d8')]['updateAllMasterData']();}catch(_0x416833){}try{_0x2ab5c3[_0x36d2f5('0xeb')]([]);}catch(_0x2094ae){}_0x13b3fd(!0x0);}else(_0x17c5c5+=0x1)<=0x64&&setTimeout(_0x5eb803,0x64);}}(),function(){_0x45a25d=!0x0;};},[_0x829a9a]),_0x585dd6[_0xad3512('0x4c1')][_0xad3512('0x33e')](_0xad3512('0x2e'),null,!_0x3fd0de&&_0x585dd6[_0xad3512('0x4c1')]['createElement'](_0xad3512('0x2e'),{'style':{'display':'flex','justifyContent':_0xad3512('0x3c5'),'padding':0x28}},_0x585dd6[_0xad3512('0x4c1')][_0xad3512('0x33e')](_0x29286a[_0xad3512('0xe5')],{'size':_0xad3512('0x54b')})),_0x585dd6[_0xad3512('0x4c1')][_0xad3512('0x33e')]('div',{'ref':_0x3b24c3}),_0x585dd6[_0xad3512('0x4c1')][_0xad3512('0x33e')](_0xad3512('0x2e'),{'ref':_0x4647d8}),_0x585dd6[_0xad3512('0x4c1')][_0xad3512('0x33e')]('div',{'ref':_0x12636e}));};var _0x585dd6=function(_0x4c4447){var _0x13c3ee=_0x1993fc;if(_0x4c4447&&_0x4c4447['__esModule'])return _0x4c4447;if(null===_0x4c4447||_0x13c3ee('0x19b')!==_0x11fb75(_0x4c4447)&&_0x13c3ee('0x568')!=typeof _0x4c4447)return{'default':_0x4c4447};var _0x45ba0f=_0x2328fd();if(_0x45ba0f&&_0x45ba0f['has'](_0x4c4447))return _0x45ba0f['get'](_0x4c4447);var _0x212be8={},_0x314273=Object[_0x13c3ee('0x28b')]&&Object[_0x13c3ee('0x2da')];for(var _0x2d4359 in _0x4c4447)if(Object[_0x13c3ee('0x501')]['hasOwnProperty']['call'](_0x4c4447,_0x2d4359)){var _0x5bcf08=_0x314273?Object[_0x13c3ee('0x2da')](_0x4c4447,_0x2d4359):null;_0x5bcf08&&(_0x5bcf08[_0x13c3ee('0xeb')]||_0x5bcf08[_0x13c3ee('0x302')])?Object['defineProperty'](_0x212be8,_0x2d4359,_0x5bcf08):_0x212be8[_0x2d4359]=_0x4c4447[_0x2d4359];}return _0x212be8[_0x13c3ee('0x4c1')]=_0x4c4447,_0x45ba0f&&_0x45ba0f[_0x13c3ee('0x302')](_0x4c4447,_0x212be8),_0x212be8;}(_0x58b01a(_0x1993fc('0x516'))),_0x29286a=_0x58b01a('antd');function _0x2328fd(){var _0x5decf9=_0x1993fc;if(_0x5decf9('0x568')!=typeof WeakMap)return null;var _0x45ca7b=new WeakMap();return _0x2328fd=function(){return _0x45ca7b;},_0x45ca7b;}function _0x34c866(_0x3e2264,_0x4989f2){var _0x3635dd=_0x1993fc;(null==_0x4989f2||_0x4989f2>_0x3e2264[_0x3635dd('0x1f8')])&&(_0x4989f2=_0x3e2264[_0x3635dd('0x1f8')]);for(var _0xafb25a=0x0,_0x198726=new Array(_0x4989f2);_0xafb25a<_0x4989f2;_0xafb25a++)_0x198726[_0xafb25a]=_0x3e2264[_0xafb25a];return _0x198726;}},{'antd':_0x557405('0x29c'),'react':'react'}],0x10:[function(_0x1e7645,_0x3acab9,_0x15e868){var _0xd47d77=_0x557405;'use strict';Object[_0xd47d77('0x28b')](_0x15e868,_0xd47d77('0x4bc'),{'value':!0x0}),_0x15e868[_0xd47d77('0x4c1')]=function(_0x447d78){var _0x4586c5=_0xd47d77,_0x1f4f94=_0x447d78[_0x4586c5('0x4f8')],_0x45d1b5=_0x447d78[_0x4586c5('0x383')],_0x4dde04=_0x447d78[_0x4586c5('0x28e')],_0x13a7c5=_0x447d78[_0x4586c5('0x335')],_0x2fec9f=_0x8d1ba9[_0x4586c5('0xd6')][_0x4586c5('0x418')]()['token'],_0x27e148=_0x4586c5('0x3')!=typeof window&&'dark'===window['__shellColorMode'],_0x5f2f07=function(_0x210c70){return _0x27e148?function(_0x49642f,_0x431277){var _0x3c01c3=_0x4ba4,_0x167c42=/^#?([0-9a-fA-F]{6})$/[_0x3c01c3('0x547')](_0x49642f||'');if(!_0x167c42)return _0x49642f;var _0x18caab=parseInt(_0x167c42[0x1],0x10),_0x5da45b=_0x18caab>>0x10&0xff,_0x29a5df=_0x18caab>>0x8&0xff,_0x20af69=0xff&_0x18caab;return _0x5da45b=Math[_0x3c01c3('0x3a3')](_0x5da45b+(0xff-_0x5da45b)*_0x431277),_0x29a5df=Math[_0x3c01c3('0x3a3')](_0x29a5df+(0xff-_0x29a5df)*_0x431277),_0x20af69=Math[_0x3c01c3('0x3a3')](_0x20af69+(0xff-_0x20af69)*_0x431277),_0x3c01c3('0x6a')[_0x3c01c3('0x54e')](_0x5da45b,',\x20')[_0x3c01c3('0x54e')](_0x29a5df,',\x20')[_0x3c01c3('0x54e')](_0x20af69,')');}(_0x210c70,0.4):_0x210c70;},_0x3639d1=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(null),0x2),_0x1cd216=_0x3639d1[0x0],_0x539db6=_0x3639d1[0x1],_0x46e515=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(0x0),0x2),_0x4ea365=_0x46e515[0x0],_0x38b400=_0x46e515[0x1],_0x319ae1=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(0x1),0x2),_0x383b0d=_0x319ae1[0x0],_0x409b12=_0x319ae1[0x1],_0x2effc0=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(0x8),0x2),_0x3dd4b2=_0x2effc0[0x0],_0xa426d8=_0x2effc0[0x1],_0x4d998e=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(''),0x2),_0x56158c=_0x4d998e[0x0],_0x200614=_0x4d998e[0x1],_0x49718b=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(''),0x2),_0x49a527=_0x49718b[0x0],_0x1e2efc=_0x49718b[0x1],_0x3d6fc1=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(!0x1),0x2),_0x55d3e3=_0x3d6fc1[0x0],_0x1afb56=_0x3d6fc1[0x1],_0x3a9a41=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(null),0x2),_0x4f9133=_0x3a9a41[0x0],_0x34a720=_0x3a9a41[0x1],_0x1af7ae=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(null),0x2),_0x50b06c=_0x1af7ae[0x0],_0x456520=_0x1af7ae[0x1],_0x3806f8=_0x12e8d2((0x0,_0x38dddb['useState'])(null),0x2),_0x40bca4=_0x3806f8[0x0],_0x33bee5=_0x3806f8[0x1],_0x22abf2=(0x0,_0x38dddb[_0x4586c5('0xee')])(null),_0x1469e7=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(null),0x2),_0x32b165=_0x1469e7[0x0],_0xae3e43=_0x1469e7[0x1],_0x3d3b6a=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(null),0x2),_0x3b27d4=_0x3d3b6a[0x0],_0x5bee9a=_0x3d3b6a[0x1],_0x3fc994=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(''),0x2),_0x48b822=_0x3fc994[0x0],_0x11e7ce=_0x3fc994[0x1],_0x3a31a4=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(!0x1),0x2),_0xb8fbba=_0x3a31a4[0x0],_0x56a02f=_0x3a31a4[0x1],_0x403065=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(null),0x2),_0x2f25e0=_0x403065[0x0],_0x14f51c=_0x403065[0x1],_0xce4c31=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(null),0x2),_0x539d83=_0xce4c31[0x0],_0xeda9d9=_0xce4c31[0x1],_0x28ccbd=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(0x0),0x2)[0x1],_0xd8f97a=function(){return _0x28ccbd(function(_0x36a9db){return _0x36a9db+0x1;});},_0x15c062=_0x12e8d2((0x0,_0x38dddb['useState'])([]),0x2),_0x1d1d8f=_0x15c062[0x0],_0x228245=_0x15c062[0x1],_0x316f0b=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(!0x1),0x2),_0xb5e670=_0x316f0b[0x0],_0x4ef9dc=_0x316f0b[0x1],_0x568552=function(){return _0x228245([]);},_0x42d065=(0x0,_0x38dddb[_0x4586c5('0xee')])(null),_0x40213c=function(){var _0x406b7a=_0x4586c5;return _0x42d065[_0x406b7a('0x5d')]||(window[_0x406b7a('0x53f')]||{})[_0x45d1b5];},_0x2793e7=(0x0,_0x38dddb['useCallback'])(function(){var _0xc746aa=_0x4586c5,_0x571163=arguments[_0xc746aa('0x1f8')]>0x0&&void 0x0!==arguments[0x0]?arguments[0x0]:null,_0x159521=arguments['length']>0x1&&void 0x0!==arguments[0x1]?arguments[0x1]:null,_0x374e51=arguments[_0xc746aa('0x1f8')]>0x2&&void 0x0!==arguments[0x2]?arguments[0x2]:null,_0x2f3022=_0x40213c();if(_0x2f3022&&_0x2f3022[_0xc746aa('0x3ea')]){var _0x23db28=null!=_0x571163?_0x571163:_0x383b0d,_0x509372=null!=_0x159521?_0x159521:_0x56158c,_0x1669f7=null!=_0x374e51?_0x374e51:_0x3dd4b2;_0x1afb56(!0x1),_0x2f3022[_0xc746aa('0x3ea')][_0xc746aa('0xeb')]({'page':_0x23db28,'limit':_0x1669f7,'search':_0x509372})[_0xc746aa('0x273')](function(_0x44f136){_0x539db6(_0x44f136&&_0x44f136['items']||[]),_0x38b400(_0x44f136&&_0x44f136['total']||0x0),_0xd8f97a();})[_0xc746aa('0x3d9')](function(){return _0x1afb56(!0x0);});}else _0x1afb56(!0x0);},[_0x45d1b5,_0x383b0d,_0x56158c,_0x3dd4b2]);(0x0,_0x38dddb[_0x4586c5('0x42a')])(function(){var _0x234de5=_0x4586c5,_0x7ede89=!0x1,_0x28d200=0x0,_0x2762c9=document[_0x234de5('0x33e')](_0x234de5('0x2e')),_0x51f1a7=document[_0x234de5('0x33e')](_0x234de5('0x2e'));return document[_0x234de5('0x1e0')][_0x234de5('0xb8')](_0x2762c9),document[_0x234de5('0x1e0')][_0x234de5('0xb8')](_0x51f1a7),(function _0x4d9ab5(){var _0x284edb=_0x234de5;if(!_0x7ede89){var _0x3889f5=_0x40213c();_0x3889f5&&_0x3889f5[_0x284edb('0x3ea')]?function(_0x40969a){var _0x52613e=_0x284edb;_0x42d065[_0x52613e('0x5d')]=_0x40969a,window[_0x52613e('0x2b1')]=_0x40969a,_0x52613e('0x568')==typeof _0x40969a['setContainers']&&_0x40969a[_0x52613e('0x438')]({'Form':_0x2762c9,'FilterForm':_0x51f1a7}),_0x40969a[_0x52613e('0x54')]=!0x1,_0x40969a[_0x52613e('0xe4')]={'current':{'reload':function(){return _0x2793e7();},'setCurrentElement':function(_0x190ed8){return _0x34a720(_0x190ed8||null);},'setLoading':function(){},'setFilterData':function(){_0xd8f97a();}}};try{_0x40969a['masterDataReader']&&_0x40969a[_0x52613e('0x3d8')][_0x52613e('0x45d')]&&_0x40969a['masterDataReader'][_0x52613e('0x45d')](),_0x52613e('0x568')==typeof _0x40969a['initFieldMasterData']&&_0x40969a[_0x52613e('0x3b5')]();}catch(_0x63c860){}_0x409b12(0x1),_0x2793e7(0x1,'');}(_0x3889f5):(_0x28d200+=0x1)>0x64?_0x1afb56(!0x0):setTimeout(_0x4d9ab5,0x64);}}(),function(){var _0x3d0e61=_0x234de5;_0x7ede89=!0x0;try{var _0x13f90b=_0x40213c();_0x13f90b&&_0x3d0e61('0x568')==typeof _0x13f90b[_0x3d0e61('0x438')]&&_0x13f90b['setContainers'](null),_0x2762c9[_0x3d0e61('0x3ad')]&&_0x2762c9[_0x3d0e61('0x3ad')][_0x3d0e61('0x435')](_0x2762c9),_0x51f1a7[_0x3d0e61('0x3ad')]&&_0x51f1a7[_0x3d0e61('0x3ad')][_0x3d0e61('0x435')](_0x51f1a7);}catch(_0x2e5c3f){}_0x42d065[_0x3d0e61('0x5d')]=null;});},[_0x45d1b5]);var _0x257dbf=_0x40213c(),_0x1c097c=function(){var _0x4b8e5d=_0x4586c5;if(!_0x257dbf)return _0x4b8e5d('0x377');if(_0x4b8e5d('0x568')==typeof _0x257dbf[_0x4b8e5d('0x440')])return _0x257dbf[_0x4b8e5d('0x440')]();if(_0x4b8e5d('0x80')===_0x257dbf['spaModuleGroup']&&_0x4b8e5d('0x430')==typeof _0x257dbf['spaModuleName']&&_0x257dbf['spaModuleName'][_0x4b8e5d('0x570')]('|')>=0x0){var _0x44d96a=_0x12e8d2(_0x257dbf[_0x4b8e5d('0x420')][_0x4b8e5d('0x376')]('|'),0x2),_0x55de63=_0x44d96a[0x0],_0x55549f=_0x44d96a[0x1];return''['concat'](_0x4b8e5d('0x2b2')===_0x55549f?_0x4b8e5d('0x1c8'):_0x4b8e5d('0x4e9'),'=')[_0x4b8e5d('0x54e')](_0x257dbf[_0x4b8e5d('0x400')]||_0x55de63);}return _0x257dbf[_0x4b8e5d('0x4')]&&_0x257dbf[_0x4b8e5d('0x420')]?''['concat'](_0x257dbf[_0x4b8e5d('0x4')],'=')[_0x4b8e5d('0x54e')](_0x257dbf[_0x4b8e5d('0x420')]):_0x4b8e5d('0x377')[_0x4b8e5d('0x54e')](_0x257dbf['modulePathName']);},_0x51c532=(0x0,_0x38dddb['useMemo'])(function(){var _0x10c97e=_0x4586c5;return _0x257dbf&&'function'==typeof _0x257dbf[_0x10c97e('0x390')]?(_0x257dbf[_0x10c97e('0x390')]()||[])['map'](function(_0x25b605){var _0x4db4d0=_0x10c97e;return _0x5b321f({},_0x25b605,{'label':_0x257dbf['gt']?_0x257dbf['gt'](_0x25b605[_0x4db4d0('0x38c')]):_0x25b605[_0x4db4d0('0x38c')]});}):[];},[_0x257dbf,_0x1cd216]),_0x362791=_0x5b321f({},_0x11e708[_0x4dde04]||{},{},_0x13a7c5||{}),_0x5a0238=_0x362791[_0x4586c5('0x567')]||null,_0x208e62=function(_0xe423c0){var _0x404589=_0x4586c5;return!!(_0x257dbf&&_0x257dbf['hasAccess']&&_0x257dbf[_0x404589('0x4ac')](_0xe423c0));},_0x1dff13=_0x362791[_0x4586c5('0xcf')]&&_0x257dbf&&'function'==typeof _0x257dbf[_0x362791[_0x4586c5('0xcf')]]?function(_0x1da1d3){return _0x257dbf[_0x362791['cardClickAction']](_0x1da1d3['id'],_0x1da1d3);}:null,_0x5e06f7=!(_0x362791[_0x4586c5('0x5b')]||!_0x362791[_0x4586c5('0x565')]&&(!_0x257dbf||!(_0x4586c5('0x568')==typeof _0x257dbf[_0x4586c5('0xf6')]||_0x208e62(_0x4586c5('0x1d8'))&&_0x257dbf[_0x4586c5('0x180')]&&_0x257dbf['showViewButton']()))),_0x9196ab=_0x5e06f7&&!_0x362791[_0x4586c5('0x19')],_0x1371c8=!(!_0x257dbf||!_0x208e62(_0x4586c5('0xdc'))||!0x1===_0x257dbf[_0x4586c5('0x2d9')]||_0x362791[_0x4586c5('0x406')]),_0x405544=!(!_0x257dbf||!_0x208e62(_0x4586c5('0xdc'))||!0x1===_0x257dbf[_0x4586c5('0x14a')]||_0x362791[_0x4586c5('0x1ab')]),_0x49eb1a=!(!_0x257dbf||!_0x208e62(_0x4586c5('0x4a9'))||!0x1===_0x257dbf[_0x4586c5('0x489')]),_0x2c8d61=function(_0x515d7b){var _0x336652=_0x4586c5;return _0x49eb1a&&(_0x336652('0x568')!=typeof _0x362791[_0x336652('0x469')]||!!_0x362791[_0x336652('0x469')](_0x515d7b));},_0xa7a21e=!!_0x362791[_0x4586c5('0x2f0')]&&_0x49eb1a&&_0x4586c5('0x568')==typeof(_0x257dbf&&_0x257dbf[_0x4586c5('0x259')]),_0x482a5a=!!(_0x257dbf&&_0x208e62(_0x4586c5('0xdc'))&&(_0x257dbf[_0x4586c5('0x106')]?_0x257dbf[_0x4586c5('0x106')]():!0x1!==_0x257dbf[_0x4586c5('0x14a')])),_0x2c1219=!!(_0x257dbf&&_0x257dbf[_0x4586c5('0x482')]&&_0x257dbf[_0x4586c5('0x482')]()),_0x449071=function(_0x4f145c){var _0x11475f=_0x4586c5,_0x4fb3d8;_0x362791['expenseDialog']?_0xeda9d9({'rec':_0x4f145c,'mode':_0x11475f('0x16f')}):(_0x4fb3d8=_0x4f145c['id'],_0x257dbf&&(_0x11475f('0x568')==typeof _0x257dbf[_0x11475f('0xf6')]?_0x257dbf['showProjectDetails'](_0x4fb3d8):'function'==typeof _0x257dbf[_0x11475f('0x480')]&&_0x257dbf[_0x11475f('0x480')](_0x4fb3d8)));},_0x499782=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(!0x1),0x2),_0x4a68c1=_0x499782[0x0],_0x277494=_0x499782[0x1],_0xf251ba=function(){var _0x17d5a6=_0x4586c5,_0x30c9f5=_0x56963b(regeneratorRuntime[_0x17d5a6('0x3a2')](function _0x41bb71(){var _0x50296a=_0x17d5a6,_0x26bb5c,_0x46169d,_0x3159d5,_0x43287a,_0x157217,_0x41633d;return regeneratorRuntime[_0x50296a('0x519')](function(_0x867c40){var _0x3683a5=_0x50296a;for(;;)switch(_0x867c40[_0x3683a5('0x367')]=_0x867c40['next']){case 0x0:if(_0x362791['exportEndpoint']){_0x867c40[_0x3683a5('0x503')]=0x2;break;}return _0x867c40['abrupt'](_0x3683a5('0x6e'));case 0x2:return _0x277494(!0x0),_0x867c40[_0x3683a5('0x367')]=0x3,_0x867c40[_0x3683a5('0x503')]=0x6,fetch(''[_0x3683a5('0x54e')](_0x1f4f94[_0x3683a5('0x123')])[_0x3683a5('0x54e')](_0x362791[_0x3683a5('0x17')]),{'headers':{'Authorization':_0x3683a5('0x52e')[_0x3683a5('0x54e')](_0x1f4f94[_0x3683a5('0x1eb')])},'credentials':_0x3683a5('0x1a4')});case 0x6:return _0x26bb5c=_0x867c40[_0x3683a5('0x63')],_0x867c40['next']=0x9,_0x26bb5c[_0x3683a5('0x251')]();case 0x9:_0x46169d=_0x867c40[_0x3683a5('0x63')],_0x3159d5=new Blob([JSON['stringify'](_0x46169d,null,0x2)],{'type':_0x3683a5('0x452')}),_0x43287a=URL[_0x3683a5('0x26f')](_0x3159d5),_0x157217=document[_0x3683a5('0x33e')]('a'),_0x41633d=new Date()[_0x3683a5('0x2b4')]()[_0x3683a5('0x486')](0x0,0x13)[_0x3683a5('0x467')](/[:T]/g,'-'),_0x157217['href']=_0x43287a,_0x157217[_0x3683a5('0x530')]=''[_0x3683a5('0x54e')](_0x362791[_0x3683a5('0x19f')]||_0x3683a5('0x10b'),'-')['concat'](_0x41633d,_0x3683a5('0x3b3')),document['body'][_0x3683a5('0xb8')](_0x157217),_0x157217[_0x3683a5('0x441')](),document[_0x3683a5('0x1e0')][_0x3683a5('0x435')](_0x157217),URL[_0x3683a5('0x39d')](_0x43287a),_0x8d1ba9[_0x3683a5('0x2ac')][_0x3683a5('0x3fb')]('Backup\x20downloaded'),_0x867c40[_0x3683a5('0x503')]=0x1a;break;case 0x17:_0x867c40['prev']=0x17,_0x867c40['t0']=_0x867c40[_0x3683a5('0x3d9')](0x3),_0x8d1ba9[_0x3683a5('0x2ac')]['error'](_0x3683a5('0x305'));case 0x1a:return _0x867c40['prev']=0x1a,_0x277494(!0x1),_0x867c40[_0x3683a5('0x354')](0x1a);case 0x1d:case _0x3683a5('0x27a'):return _0x867c40[_0x3683a5('0x49b')]();}},_0x41bb71,null,[[0x3,0x17,0x1a,0x1d]]);}));return function(){var _0x4d073d=_0x17d5a6;return _0x30c9f5[_0x4d073d('0x154')](this,arguments);};}(),_0x51d0d1=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(!0x1),0x2),_0x3219d8=_0x51d0d1[0x0],_0x4fe759=_0x51d0d1[0x1],_0x36193f=(0x0,_0x38dddb[_0x4586c5('0xee')])(null),_0x1f4b3e=function(){var _0x23430b=_0x56963b(regeneratorRuntime['mark'](function _0x5aea35(_0x18bb72){var _0x5f11f1,_0x321dfb,_0x104b6c,_0x27615c,_0x40d9aa,_0xa50090,_0x1521f7,_0x151efe;return regeneratorRuntime['wrap'](function(_0x177064){var _0x240de8=_0x4ba4;for(;;)switch(_0x177064['prev']=_0x177064['next']){case 0x0:if(_0x5f11f1=_0x18bb72['target'][_0x240de8('0x2f')]&&_0x18bb72[_0x240de8('0x97')]['files'][0x0],_0x18bb72[_0x240de8('0x97')]['value']='',_0x5f11f1&&_0x362791[_0x240de8('0x1a')]){_0x177064[_0x240de8('0x503')]=0x4;break;}return _0x177064['abrupt'](_0x240de8('0x6e'));case 0x4:return _0x4fe759(!0x0),_0x177064[_0x240de8('0x367')]=0x5,_0x177064[_0x240de8('0x503')]=0x8,_0x5f11f1['text']();case 0x8:return _0x321dfb=_0x177064[_0x240de8('0x63')],_0x104b6c=JSON[_0x240de8('0x2e3')](_0x321dfb),_0x177064[_0x240de8('0x503')]=0xc,fetch(''[_0x240de8('0x54e')](_0x1f4f94[_0x240de8('0x123')])[_0x240de8('0x54e')](_0x362791[_0x240de8('0x1a')]),{'method':_0x240de8('0x117'),'headers':{'Authorization':'Bearer\x20'[_0x240de8('0x54e')](_0x1f4f94['token']),'Content-Type':'application/json'},'credentials':_0x240de8('0x1a4'),'body':JSON['stringify'](_0x104b6c)});case 0xc:return _0x27615c=_0x177064[_0x240de8('0x63')],_0x177064[_0x240de8('0x503')]=0xf,_0x27615c[_0x240de8('0x251')]();case 0xf:(_0x40d9aa=_0x177064[_0x240de8('0x63')])&&_0x40d9aa[_0x240de8('0x54d')]?_0x8d1ba9[_0x240de8('0x2ac')][_0x240de8('0x54d')]((null===(_0xa50090=_0x40d9aa[_0x240de8('0x54d')])||void 0x0===_0xa50090||null===(_0x1521f7=_0xa50090[0x0])||void 0x0===_0x1521f7||null===(_0x151efe=_0x1521f7[0x0])||void 0x0===_0x151efe?void 0x0:_0x151efe[_0x240de8('0x2ac')])||_0x240de8('0x25b'),0x5):(_0x8d1ba9[_0x240de8('0x2ac')][_0x240de8('0x3fb')](_0x240de8('0x2f2')),setTimeout(function(){var _0x10804b=_0x240de8;return window[_0x10804b('0x2ad')]['reload']();},0x2bc)),_0x177064[_0x240de8('0x503')]=0x16;break;case 0x13:_0x177064['prev']=0x13,_0x177064['t0']=_0x177064[_0x240de8('0x3d9')](0x5),_0x8d1ba9[_0x240de8('0x2ac')]['error'](_0x240de8('0x401'),0x5);case 0x16:return _0x177064[_0x240de8('0x367')]=0x16,_0x4fe759(!0x1),_0x177064[_0x240de8('0x354')](0x16);case 0x19:case _0x240de8('0x27a'):return _0x177064[_0x240de8('0x49b')]();}},_0x5aea35,null,[[0x5,0x13,0x16,0x19]]);}));return function(_0x2d49b2){var _0x976b7a=_0x4ba4;return _0x23430b[_0x976b7a('0x154')](this,arguments);};}(),_0x4d139a=_0x362791[_0x4586c5('0xb5')]||null,_0x3aed24=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(!0x1),0x2),_0x334fd0=_0x3aed24[0x0],_0x558e61=_0x3aed24[0x1],_0x5a78b5=_0x12e8d2((0x0,_0x38dddb['useState'])([]),0x2),_0x24cbe3=_0x5a78b5[0x0],_0x59372d=_0x5a78b5[0x1],_0x3f30ca=_0x12e8d2((0x0,_0x38dddb['useState'])(null),0x2),_0x47213b=_0x3f30ca[0x0],_0x42a561=_0x3f30ca[0x1],_0x46c8aa=_0x12e8d2((0x0,_0x38dddb['useState'])(!0x1),0x2),_0x4ff2d0=_0x46c8aa[0x0],_0x51930a=_0x46c8aa[0x1],_0x2b40b7=_0x12e8d2((0x0,_0x38dddb[_0x4586c5('0x51c')])(!0x1),0x2),_0x574216=_0x2b40b7[0x0],_0x308724=_0x2b40b7[0x1],_0x1341c1=_0x12e8d2((0x0,_0x38dddb['useState'])(!0x1),0x2),_0x55c04a=_0x1341c1[0x0],_0x5930bd=_0x1341c1[0x1],_0x42c5c6=function(_0x4d4cff){var _0x380e48=_0x4586c5,_0x14eb10=function(_0x399cef){var _0x52fdc0=_0x4ba4,_0x3d5a62=_0x399cef[_0x52fdc0('0x12b')];if(!_0x3d5a62)return null;var _0x2566db=(window[_0x52fdc0('0x439')]||'')[_0x52fdc0('0x467')](_0x52fdc0('0x51f'),'');return/^https?:\/\//[_0x52fdc0('0x2d4')](_0x3d5a62)?_0x3d5a62:''[_0x52fdc0('0x54e')](_0x2566db)[_0x52fdc0('0x54e')](_0x3d5a62);}(_0x4d4cff);_0x14eb10&&(_0x5a0238&&_0x380e48('0x534')===_0x5a0238[_0x380e48('0x16a')]?_0x33bee5(_0x14eb10):_0x5a0238&&_0x380e48('0x52a')===_0x5a0238[_0x380e48('0x16a')]?_0x456520(_0x14eb10):window[_0x380e48('0x200')](_0x14eb10,_0x380e48('0x2f1'),'noopener'));},_0x1ae4a2=function(_0x43937e){var _0x249ca2=_0x4586c5;if(_0x257dbf){var _0xf6b60b=_0x1e02e0(_0x43937e),_0x3acd28=_0x249ca2('0x430')==typeof _0xf6b60b&&_0xf6b60b[_0x249ca2('0xa1')]()?_0xf6b60b:null;_0x8d1ba9[_0x249ca2('0xc3')][_0x249ca2('0x46e')]({'title':_0x362791[_0x249ca2('0x474')]||_0x249ca2('0x1c6'),'content':_0x362791[_0x249ca2('0x55c')]||(_0x3acd28?_0x249ca2('0x249')[_0x249ca2('0x54e')](_0x3acd28,'”?'):_0x249ca2('0x388')),'okText':_0x362791[_0x249ca2('0x474')]||_0x249ca2('0x1c6'),'okType':_0x249ca2('0x497'),'onOk':function(){return new Promise(function(_0x400f96){var _0x352e8f=_0x4ba4;try{_0x257dbf[_0x352e8f('0x259')](_0x43937e['id'],function(_0x500244,_0x5c366c,_0x3625bc){var _0x9abca3=_0x352e8f;if(0xc8===_0x500244&&_0x9abca3('0x13d')===_0x5c366c)_0x8d1ba9[_0x9abca3('0x2ac')]['success']('Deleted'),_0x2793e7();else{var _0x39b889=_0x3625bc&&_0x9abca3('0x430')==typeof _0x3625bc['data']?_0x3625bc[_0x9abca3('0x9b')]:null;_0x8d1ba9[_0x9abca3('0x2ac')]['error'](_0x39b889||'Could\x20not\x20delete.\x20It\x20may\x20be\x20in\x20use.',0x5);}_0x400f96();});}catch(_0x32e514){_0x8d1ba9[_0x352e8f('0x2ac')][_0x352e8f('0x54d')]('Could\x20not\x20delete',0x5),_0x400f96();}});}});}},_0x170a1f=function(_0x42d06d){return new Promise(function(_0x2bb415){try{_0x257dbf['cleanDelete'](_0x42d06d,function(_0x8f8042,_0x237e5d){var _0x35d228=_0x4ba4;return _0x2bb415(0xc8===_0x8f8042&&_0x35d228('0x13d')===_0x237e5d);});}catch(_0x212de8){_0x2bb415(!0x1);}});},_0x1e0e84=!(!_0x257dbf||_0x4586c5('0x568')!=typeof _0x257dbf[_0x4586c5('0x496')]),_0x2d089c=!(!_0x257dbf||'function'!=typeof _0x257dbf[_0x4586c5('0x1d4')]),_0x39c368=!(!_0x257dbf||_0x4586c5('0x568')!=typeof _0x257dbf[_0x4586c5('0x360')]),_0x3c5505=function(_0x482969){var _0x5d0569=_0x4586c5;if(!_0x1e0e84)return[];var _0x126a25=_0x257dbf&&_0x5d0569('0x568')==typeof _0x257dbf[_0x5d0569('0x536')]&&_0x257dbf[_0x5d0569('0x536')]()?_0x257dbf[_0x5d0569('0x536')]()[_0x5d0569('0xed')]:null,_0x1bd4e5=!!_0x126a25&&'Admin'!==_0x126a25;if(_0x1bd4e5&&_0x362791[_0x5d0569('0x308')]&&_0x362791[_0x5d0569('0x308')][_0x5d0569('0x570')](_0x482969)>=0x0)return[];var _0x361e62={};try{_0x361e62=_0x257dbf[_0x5d0569('0x496')](_0x482969)||{};}catch(_0x578b27){_0x361e62={};}var _0xe3a105=Object[_0x5d0569('0x34d')](_0x361e62)[_0x5d0569('0x1dd')](function(_0x2319f2){return{'value':_0x361e62[_0x2319f2],'label':_0x2319f2};});return _0x1bd4e5&&_0x362791[_0x5d0569('0x2b')]&&(_0xe3a105=_0xe3a105[_0x5d0569('0x8f')](function(_0x57da2d){var _0x5ea79d=_0x5d0569;return _0x362791[_0x5ea79d('0x2b')][_0x5ea79d('0x570')](_0x57da2d['value'])<0x0;})),_0xe3a105;},_0x2be37a=function(_0x3a885d){var _0x591736=_0x4586c5;return _0x3c5505(_0x3a885d[_0x591736('0x260')]);},_0x18a49c='';try{_0x18a49c=_0x257dbf&&_0x2c1219&&_0x257dbf['filter']&&_0x257dbf[_0x4586c5('0x3fe')]?_0x257dbf['getFilterString'](_0x257dbf[_0x4586c5('0x8f')]):'';}catch(_0x5e07c6){_0x18a49c='';}var _0x481248=(_0x1cd216||[])[_0x4586c5('0x1dd')](function(_0x38391c){return _0x38391c['id'];}),_0x589332=_0x481248[_0x4586c5('0x1f8')]>0x0&&_0x481248[_0x4586c5('0x35f')](function(_0x2a5c35){var _0x4e0f4d=_0x4586c5;return _0x1d1d8f[_0x4e0f4d('0x165')](_0x2a5c35);}),_0x173fbd=(_0x4b02f7=_0x4dde04,_0x1e1993[_0x4b02f7]||{'icon':_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0xfbb67['AppstoreOutlined'],null),'color':'#607d8b'}),_0xf55dad=[_0x4586c5('0x4d8'),_0x4586c5('0x38c')][_0x4586c5('0xe8')](function(_0x2e0e20){var _0x260a97=_0x4586c5;return _0x51c532[_0x260a97('0xd')](function(_0x3eca0a){return _0x3eca0a['dataIndex']===_0x2e0e20;});}),_0xeb049c=_0x362791[_0x4586c5('0x30c')]||_0xf55dad||_0x51c532[0x0]&&_0x51c532[0x0]['dataIndex'],_0x2d01b7=new Set(_0x362791[_0x4586c5('0x45b')]||[]),_0x4b02f7;!_0x362791['title']&&_0xeb049c&&_0x2d01b7[_0x4586c5('0x188')](_0xeb049c),(_0x362791[_0x4586c5('0x2')]||[])['forEach'](function(_0x421f70){var _0x237710=_0x4586c5;return _0x2d01b7[_0x237710('0x188')](_0x421f70);});var _0x5318af=_0x51c532[_0x4586c5('0x8f')](function(_0x446629){var _0x5de1ab=_0x4586c5;return!_0x2d01b7[_0x5de1ab('0x2e9')](_0x446629[_0x5de1ab('0x41e')]);}),_0x4bf9e4=(_0x362791['tagFields']||[])['map'](function(_0x1fa64d){return _0x51c532['find'](function(_0x55bbed){var _0x320200=_0x4ba4;return _0x55bbed[_0x320200('0x41e')]===_0x1fa64d;});})['filter'](Boolean),_0x1e02e0=function(_0x46d039){var _0x2b9925=_0x4586c5,_0x40e165;if(_0x362791['title'])_0x40e165=_0x362791[_0x2b9925('0x38c')](_0x46d039,function(_0x310fb0){return function(_0x449c2f,_0x4f8571){var _0x15c932=_0x51c532['find'](function(_0x41b19c){var _0x262f3b=_0x4ba4;return _0x41b19c[_0x262f3b('0x41e')]===_0x4f8571;});return _0x15c932?_0x298367(_0x15c932,_0x449c2f):_0x449c2f[_0x4f8571];}(_0x46d039,_0x310fb0);});else{if(!_0xeb049c)return'#'[_0x2b9925('0x54e')](_0x46d039['id']);_0x40e165=_0x298367(_0x51c532[_0x2b9925('0xe8')](function(_0x101c61){var _0x3eef58=_0x2b9925;return _0x101c61[_0x3eef58('0x41e')]===_0xeb049c;})||{'dataIndex':_0xeb049c},_0x46d039);}return _0x40e165&&_0x2b9925('0x19b')===_0x354ccb(_0x40e165)&&!_0x38dddb[_0x2b9925('0x4c1')][_0x2b9925('0x3f7')](_0x40e165)?''['concat'](_0x40e165[_0x2b9925('0x511')]||'','\x20')['concat'](_0x40e165[_0x2b9925('0x53a')]||'')[_0x2b9925('0xa1')]()||_0x40e165[_0x2b9925('0x4d8')]||'#'[_0x2b9925('0x54e')](_0x46d039['id']):_0x40e165;},_0x38314b=function(_0x5714d9){var _0x352645=_0x4586c5;return _0x362791[_0x352645('0x4ab')]?(_0x28a973=_0x5714d9[_0x362791['iconField']],_0x42d257[_0x28a973]||{'icon':_0x38dddb['default'][_0x352645('0x33e')](_0xfbb67[_0x352645('0x26d')],null),'color':_0x352645('0x426')}):_0x173fbd;var _0x28a973;};if((0x0,_0x38dddb[_0x4586c5('0x42a')])(function(){var _0x1531d6=_0x4586c5;if(_0x40bca4&&_0x5a0238&&'native'===_0x5a0238[_0x1531d6('0x16a')]){var _0x24c1e5=_0x22abf2[_0x1531d6('0x5d')];if(_0x24c1e5){var _0x45213d,_0x5edbbe=window[_0x1531d6('0x53f')],_0x76d451=window[_0x1531d6('0x2b1')],_0x186c8e=!0x1,_0x25640c=_0x5a0238[_0x1531d6('0x18b')],_0x21d6b5=_0x25640c?_0x25640c['replace']('mount',_0x1531d6('0x34f')):null,_0x349e4f=(window['BASE_URL']||'')['replace'](_0x1531d6('0x1d3'),_0x1531d6('0x62')),_0x276455=_0x5a0238[_0x1531d6('0x1a5')]?''[_0x1531d6('0x54e')](_0x349e4f)['concat'](_0x5a0238[_0x1531d6('0x1a5')]):null;return(_0x276455?(_0x45213d=_0x276455,_0x553479[_0x45213d]||(_0x553479[_0x45213d]=new Promise(function(_0x80e1a4,_0xd1e7c1){var _0x33130b=_0x1531d6,_0x451ac4=document[_0x33130b('0x33e')]('script');_0x451ac4[_0x33130b('0x50f')]=''[_0x33130b('0x54e')](_0x45213d)['concat'](_0x45213d[_0x33130b('0x570')]('?')>=0x0?'&':'?',_0x33130b('0x325'))[_0x33130b('0x54e')](_0x133688),_0x451ac4[_0x33130b('0x50c')]=!0x1,_0x451ac4[_0x33130b('0x288')]=function(){return _0x80e1a4();},_0x451ac4[_0x33130b('0x2ec')]=function(){var _0x246578=_0x33130b;return _0xd1e7c1(new Error(_0x246578('0x1bc')[_0x246578('0x54e')](_0x45213d)));},document[_0x33130b('0x18e')][_0x33130b('0xb8')](_0x451ac4);})),_0x553479[_0x45213d]):Promise[_0x1531d6('0x6d')]())[_0x1531d6('0x273')](function(){var _0x57c54c=_0x1531d6,_0x17d4db;_0x186c8e||'function'==typeof(_0x17d4db=_0x25640c&&window[_0x25640c])&&_0x17d4db(_0x24c1e5,{'documentUrl':_0x40bca4,'restApiBase':_0x1f4f94[_0x57c54c('0x123')],'token':_0x1f4f94['token'],'colorMode':window[_0x57c54c('0x35d')]||_0x57c54c('0x20c'),'onClose':function(){return _0x33bee5(null);}});})['catch'](function(){}),function(){var _0x1dc79e=_0x1531d6;_0x186c8e=!0x0;var _0x348bec=_0x21d6b5&&window[_0x21d6b5];if(_0x1dc79e('0x568')==typeof _0x348bec)try{_0x348bec(_0x24c1e5);}catch(_0x334ad7){}window[_0x1dc79e('0x53f')]=_0x5edbbe,window[_0x1dc79e('0x2b1')]=_0x76d451,_0x2793e7();};}}},[_0x40bca4]),_0x55d3e3)return _0x38dddb['default'][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x269')],{'description':'Could\x20not\x20load\x20this\x20list'});if(null===_0x1cd216)return _0x38dddb['default'][_0x4586c5('0x33e')](_0x4586c5('0x2e'),{'style':{'display':_0x4586c5('0x3f6'),'justifyContent':_0x4586c5('0x3c5'),'padding':0x3c}},_0x38dddb['default'][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0xe5')],{'size':'large'}));var _0x3f3575=new Set(_0x362791[_0x4586c5('0x7')]||[]);return _0x38dddb['default']['createElement']('div',null,_0x38dddb[_0x4586c5('0x4c1')]['createElement'](_0x4586c5('0x2e'),{'style':{'display':_0x4586c5('0x3f6'),'justifyContent':_0x4586c5('0x1df'),'alignItems':_0x4586c5('0x3c5'),'gap':0xc,'marginBottom':0x10,'flexWrap':_0x4586c5('0x519')}},_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')]('div',{'style':{'display':_0x4586c5('0x3f6'),'alignItems':_0x4586c5('0x3c5'),'gap':0xa,'flexWrap':_0x4586c5('0x519')}},_0x482a5a&&!_0x362791[_0x4586c5('0x2a8')]&&_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9['Button'],{'type':_0x4586c5('0x4c4'),'icon':_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0xfbb67[_0x4586c5('0x208')],null),'onClick':function(){var _0x38f267=_0x4586c5;_0x257dbf&&_0x257dbf[_0x38f267('0x293')]();}},_0x362791[_0x4586c5('0x4fc')]||_0x257dbf&&_0x4586c5('0x568')==typeof _0x257dbf[_0x4586c5('0x33a')]&&_0x257dbf['getAddNewLabel']()||_0x4586c5('0xaf')),_0x257dbf&&_0x4586c5('0x568')==typeof _0x257dbf[_0x4586c5('0x341')]&&_0x257dbf[_0x4586c5('0x341')]()&&'function'==typeof _0x257dbf['getCustomTopButtons']&&_0x38dddb['default'][_0x4586c5('0x33e')](_0x4586c5('0x1bd'),null,_0x257dbf[_0x4586c5('0x186')]()),_0x362791[_0x4586c5('0x17')]&&_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x55f')],{'icon':_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0xfbb67[_0x4586c5('0x247')],null),'loading':_0x4a68c1,'onClick':_0xf251ba},_0x362791[_0x4586c5('0x56d')]||_0x4586c5('0x95')),_0x362791['importEndpoint']&&_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x38dddb['default'][_0x4586c5('0x524')],null,_0x38dddb['default'][_0x4586c5('0x33e')]('input',{'ref':_0x36193f,'type':_0x4586c5('0x140'),'accept':'application/json,.json','style':{'display':'none'},'onChange':_0x1f4b3e}),_0x38dddb['default'][_0x4586c5('0x33e')](_0x8d1ba9['Button'],{'icon':_0x38dddb[_0x4586c5('0x4c1')]['createElement'](_0xfbb67[_0x4586c5('0x69')],null),'loading':_0x3219d8,'onClick':function(){var _0x4e2014=_0x4586c5;return _0x36193f[_0x4e2014('0x5d')]&&_0x36193f[_0x4e2014('0x5d')]['click']();}},_0x362791[_0x4586c5('0x428')]||_0x4586c5('0x20'))),_0x4d139a&&!_0x362791[_0x4586c5('0x2a8')]&&_0x482a5a&&_0x38dddb[_0x4586c5('0x4c1')]['createElement'](_0x8d1ba9[_0x4586c5('0x55f')],{'icon':_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0xfbb67[_0x4586c5('0x26d')],null),'onClick':function(){var _0x34741d=_0x4586c5;_0x4d139a&&(_0x42a561(null),_0x5930bd(!0x1),_0x558e61(!0x0),_0x51930a(!0x0),fetch(''['concat'](_0x1f4f94[_0x34741d('0x123')])[_0x34741d('0x54e')](_0x4d139a['industriesEndpoint']),{'headers':{'Authorization':_0x34741d('0x52e')[_0x34741d('0x54e')](_0x1f4f94[_0x34741d('0x1eb')])},'credentials':'same-origin'})[_0x34741d('0x273')](function(_0x46302d){return _0x46302d['json']();})[_0x34741d('0x273')](function(_0x3a394c){_0x59372d(Array['isArray'](_0x3a394c)?_0x3a394c:[]);})[_0x34741d('0x3d9')](function(){var _0x560fa8=_0x34741d;return _0x8d1ba9[_0x560fa8('0x2ac')][_0x560fa8('0x54d')](_0x560fa8('0x315'),0x5);})[_0x34741d('0x3e1')](function(){return _0x51930a(!0x1);}));}},_0x4d139a[_0x4586c5('0x39')]||_0x4586c5('0x82')),_0x2c1219&&_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x55f')],{'icon':_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0xfbb67[_0x4586c5('0x204')],null),'onClick':function(){var _0x5a2623=_0x4586c5;_0x257dbf&&_0x257dbf[_0x5a2623('0x555')]&&_0x257dbf[_0x5a2623('0x555')]();}},'Filters'),_0x18a49c&&_0x38dddb[_0x4586c5('0x4c1')]['createElement'](_0x8d1ba9[_0x4586c5('0x477')],{'color':_0x4586c5('0x38b'),'closable':!0x0,'onClose':function(){var _0x43a96d=_0x4586c5;_0x257dbf&&_0x257dbf['resetFilters']&&_0x257dbf[_0x43a96d('0x3ca')]();},'style':{'lineHeight':_0x4586c5('0x3c0'),'borderRadius':0x6}},_0x18a49c),_0xa7a21e&&_0x1d1d8f[_0x4586c5('0x1f8')]>0x0&&_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x524')],null,_0x38dddb[_0x4586c5('0x4c1')]['createElement'](_0x8d1ba9[_0x4586c5('0x55f')],{'danger':!0x0,'icon':_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0xfbb67[_0x4586c5('0x56b')],null),'loading':_0xb5e670,'onClick':function(){var _0xe5618e=_0x4586c5;if(_0x257dbf&&_0x1d1d8f['length']){var _0x38ef26,_0x558249=_0x44825b(_0x1d1d8f);_0x8d1ba9['Modal'][_0xe5618e('0x46e')]({'title':_0xe5618e('0x309'),'content':_0xe5618e('0x23a')[_0xe5618e('0x54e')](_0x558249[_0xe5618e('0x1f8')],_0xe5618e('0x553'))['concat'](0x1===_0x558249[_0xe5618e('0x1f8')]?'':'s','?\x20This\x20cannot\x20be\x20undone.'),'okText':_0xe5618e('0x70')[_0xe5618e('0x54e')](_0x558249[_0xe5618e('0x1f8')]),'okType':_0xe5618e('0x497'),'onOk':(_0x38ef26=_0x56963b(regeneratorRuntime[_0xe5618e('0x3a2')](function _0x36be60(){var _0x37e1b7=_0xe5618e,_0x3c0cf7,_0x5dfe06,_0x1c5a07,_0x3c1edb,_0x4c566f;return regeneratorRuntime[_0x37e1b7('0x519')](function(_0x6d7bf5){var _0x22e808=_0x37e1b7;for(;;)switch(_0x6d7bf5[_0x22e808('0x367')]=_0x6d7bf5['next']){case 0x0:_0x4ef9dc(!0x0),_0x3c0cf7=0x0,_0x5dfe06=_0x435685(_0x558249),_0x6d7bf5[_0x22e808('0x367')]=0x3,_0x5dfe06['s']();case 0x5:if((_0x1c5a07=_0x5dfe06['n']())[_0x22e808('0x448')]){_0x6d7bf5[_0x22e808('0x503')]=0xd;break;}return _0x3c1edb=_0x1c5a07[_0x22e808('0x1c7')],_0x6d7bf5[_0x22e808('0x503')]=0x9,_0x170a1f(_0x3c1edb);case 0x9:if(!_0x6d7bf5[_0x22e808('0x63')]){_0x6d7bf5[_0x22e808('0x503')]=0xb;break;}_0x3c0cf7+=0x1;case 0xb:_0x6d7bf5[_0x22e808('0x503')]=0x5;break;case 0xd:_0x6d7bf5[_0x22e808('0x503')]=0x12;break;case 0xf:_0x6d7bf5['prev']=0xf,_0x6d7bf5['t0']=_0x6d7bf5[_0x22e808('0x3d9')](0x3),_0x5dfe06['e'](_0x6d7bf5['t0']);case 0x12:return _0x6d7bf5['prev']=0x12,_0x5dfe06['f'](),_0x6d7bf5['finish'](0x12);case 0x15:_0x4ef9dc(!0x1),_0x4c566f=_0x558249[_0x22e808('0x1f8')]-_0x3c0cf7,_0x3c0cf7&&_0x8d1ba9[_0x22e808('0x2ac')][_0x22e808('0x3fb')](_0x22e808('0x4d3')[_0x22e808('0x54e')](_0x3c0cf7,_0x22e808('0x553'))[_0x22e808('0x54e')](0x1===_0x3c0cf7?'':'s')),_0x4c566f&&_0x8d1ba9[_0x22e808('0x2ac')][_0x22e808('0x54d')](''[_0x22e808('0x54e')](_0x4c566f,'\x20could\x20not\x20be\x20deleted\x20(may\x20be\x20in\x20use)'),0x5),_0x568552(),_0x2793e7();case 0x1b:case _0x22e808('0x27a'):return _0x6d7bf5['stop']();}},_0x36be60,null,[[0x3,0xf,0x12,0x15]]);})),function(){var _0x5b0879=_0xe5618e;return _0x38ef26[_0x5b0879('0x154')](this,arguments);})});}}},_0x4586c5('0x70')[_0x4586c5('0x54e')](_0x1d1d8f[_0x4586c5('0x1f8')],_0x4586c5('0x313'))),_0x38dddb['default'][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x55f')],{'type':_0x4586c5('0x490'),'onClick':_0x568552},'Clear'))),_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x4586c5('0x2e'),{'style':{'display':_0x4586c5('0x3f6'),'gap':0x8}},_0x362791[_0x4586c5('0x34a')]&&_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x1f6')],{'value':_0x49a527||void 0x0,'allowClear':!0x0,'placeholder':'All\x20statuses','style':{'minWidth':0x96},'onChange':function(_0x3527e1){var _0x27fa77=_0x4586c5;return _0x518d21=_0x3527e1,void(_0x257dbf&&(_0x257dbf[_0x27fa77('0x71')](_0x518d21?{'status':_0x518d21}:null!=_0x257dbf[_0x27fa77('0xcb')]?_0x257dbf[_0x27fa77('0xcb')]:''),_0x1e2efc(_0x518d21||''),_0x568552(),_0x409b12(0x1),_0x2793e7(0x1)));var _0x518d21;},'options':_0x362791[_0x4586c5('0x34a')]['map'](function(_0x250990){return{'value':_0x250990,'label':_0x250990};})}),_0x38dddb[_0x4586c5('0x4c1')]['createElement'](_0x8d1ba9[_0x4586c5('0x50')][_0x4586c5('0x1e6')],{'allowClear':!0x0,'placeholder':_0x4586c5('0x2d6'),'style':{'maxWidth':0x118},'onSearch':function(_0xdfd8f9){_0x568552(),_0x200614(_0xdfd8f9),_0x409b12(0x1),_0x2793e7(0x1,_0xdfd8f9);}}))),0x0===_0x1cd216[_0x4586c5('0x1f8')]?_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x269')],{'description':_0x4586c5('0x4cb')}):_0x38dddb['default'][_0x4586c5('0x33e')](_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x524')],null,_0xa7a21e&&_0x38dddb[_0x4586c5('0x4c1')]['createElement']('div',{'style':{'display':_0x4586c5('0x3f6'),'alignItems':_0x4586c5('0x3c5'),'gap':0xa,'margin':_0x4586c5('0xdd')}},_0x38dddb['default'][_0x4586c5('0x33e')](_0x8d1ba9['Checkbox'],{'checked':_0x589332,'indeterminate':!_0x589332&&_0x481248[_0x4586c5('0xd')](function(_0x305c07){var _0x582a66=_0x4586c5;return _0x1d1d8f[_0x582a66('0x165')](_0x305c07);}),'onChange':function(){return _0x228245(function(_0x1455a6){var _0x39b3bc=_0x4ba4;return _0x589332?_0x1455a6[_0x39b3bc('0x8f')](function(_0x17ce1a){return!_0x481248['includes'](_0x17ce1a);}):Array[_0x39b3bc('0x303')](new Set([]['concat'](_0x44825b(_0x1455a6),_0x44825b(_0x481248))));});}},_0x589332?'Deselect\x20all':'Select\x20all'),_0x1d1d8f[_0x4586c5('0x1f8')]>0x0&&_0x38dddb['default']['createElement'](_0x4586c5('0x1bd'),{'style':{'color':_0x2fec9f[_0x4586c5('0x3e0')],'fontSize':12.5}},''[_0x4586c5('0x54e')](_0x1d1d8f[_0x4586c5('0x1f8')],_0x4586c5('0x313')))),_0x38dddb['default'][_0x4586c5('0x33e')](_0x4586c5('0x2e'),{'style':{'display':_0x4586c5('0x3f6'),'flexDirection':_0x4586c5('0x47b'),'gap':0xa}},_0x1cd216[_0x4586c5('0x1dd')](function(_0x483104){var _0x24a234=_0x4586c5,_0x3c5e2b,_0x13339b=_0x1e02e0(_0x483104),_0x49c948=_0x38314b(_0x483104);return _0x38dddb['default']['createElement'](_0x8d1ba9[_0x24a234('0x347')],{'key':_0x483104['id'],'hoverable':!_0x362791[_0x24a234('0x2ce')]&&(!!_0x1dff13||_0x5e06f7||!!_0x5a0238),'onClick':_0x362791[_0x24a234('0x2ce')]?void 0x0:_0x362791[_0x24a234('0xc9')]&&_0x5e06f7?function(){return _0x449071(_0x483104);}:_0x1dff13?function(){return _0x1dff13(_0x483104);}:_0x5a0238?function(){return _0x42c5c6(_0x483104);}:_0x5e06f7?function(){return _0x449071(_0x483104);}:void 0x0,'style':{'borderRadius':0xa,'boxShadow':_0x335d6b[_0x24a234('0x236')],'cursor':!_0x362791['disableCardClick']&&(_0x1dff13||_0x5e06f7||_0x5a0238)?_0x24a234('0x51e'):_0x24a234('0x4c1')},'styles':{'body':{'padding':_0x24a234('0x34c')}}},_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')]('div',{'style':{'display':_0x24a234('0x3f6'),'alignItems':'center','gap':0xe}},_0xa7a21e&&_0x38dddb[_0x24a234('0x4c1')]['createElement'](_0x8d1ba9['Checkbox'],{'checked':(_0x3c5e2b=_0x483104['id'],_0x1d1d8f['includes'](_0x3c5e2b)),'onClick':function(_0x226ff8){var _0x5528ab=_0x24a234;return _0x226ff8[_0x5528ab('0x2dc')]();},'onChange':function(){return function(_0x3c5625){return _0x228245(function(_0x1d85a0){var _0x5015d0=_0x4ba4;return _0x1d85a0['includes'](_0x3c5625)?_0x1d85a0[_0x5015d0('0x8f')](function(_0x202d2d){return _0x202d2d!==_0x3c5625;}):[][_0x5015d0('0x54e')](_0x44825b(_0x1d85a0),[_0x3c5625]);});}(_0x483104['id']);},'style':{'flex':_0x24a234('0x4da')}}),_0x362791['avatarField']&&!_0x4294f7(_0x483104[_0x362791[_0x24a234('0x417')]])?_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x291')],{'size':0x28,'src':_0x483104[_0x362791['avatarField']],'style':{'flex':_0x24a234('0x4da')}}):_0x38dddb[_0x24a234('0x4c1')]['createElement'](_0x24a234('0x2e'),{'style':{'width':0x28,'height':0x28,'borderRadius':0xa,'flex':_0x24a234('0x4da'),'background':''[_0x24a234('0x54e')](_0x49c948['color'],'18'),'color':_0x49c948['color'],'display':'flex','alignItems':_0x24a234('0x3c5'),'justifyContent':'center','fontSize':0x12}},_0x49c948[_0x24a234('0x11b')]),_0x38dddb[_0x24a234('0x4c1')]['createElement']('div',{'style':{'minWidth':0x0,'flex':0x1}},_0x38dddb['default'][_0x24a234('0x33e')](_0x24a234('0x2e'),{'style':{'display':_0x24a234('0x3f6'),'alignItems':_0x24a234('0x3c5'),'gap':0x8,'minWidth':0x0}},_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')]('span',{'style':{'fontWeight':0x258,'fontSize':0xe,'overflow':'hidden','textOverflow':'ellipsis','whiteSpace':_0x24a234('0x195')}},_0x4294f7(_0x13339b)?'#'[_0x24a234('0x54e')](_0x483104['id']):_0x13339b),_0x4bf9e4['map'](function(_0x315706){var _0x50c964=_0x24a234,_0x255e73=_0x298367(_0x315706,_0x483104),_0x60cdec=_0x362791['tagColors']&&_0x362791['tagColors'][_0x255e73]||_0x50c964('0x38b');return _0x4294f7(_0x255e73)?null:_0x38dddb[_0x50c964('0x4c1')]['createElement'](_0x8d1ba9[_0x50c964('0x477')],{'key':_0x315706[_0x50c964('0x41e')],'color':_0x60cdec,'style':{'borderRadius':0x6,'margin':0x0,'flex':_0x50c964('0x4da')}},_0x362791[_0x50c964('0x2f6')],_0x362791['tagIcon']?'\x20':'',_0x255e73);})),_0x38dddb['default'][_0x24a234('0x33e')](_0x24a234('0x2e'),{'style':{'display':_0x24a234('0x3f6'),'alignItems':_0x24a234('0x3c5'),'gap':0x10,'marginTop':0x4,'color':_0x2fec9f[_0x24a234('0x46c')],'fontSize':12.5,'flexWrap':_0x24a234('0x519')}},_0x5318af['map'](function(_0x52ad84){var _0x136345=_0x24a234;return _0x38dddb[_0x136345('0x4c1')][_0x136345('0x33e')](_0x38dddb[_0x136345('0x4c1')][_0x136345('0x524')],{'key':_0x52ad84[_0x136345('0x41e')]},(_0x4d8b61=_0x52ad84[_0x136345('0x39')],_0x4294f7(_0x3c1ec2=function(_0x3b5a5f,_0x1a8267){var _0x4e3ecf=_0x136345;return _0x3f3575[_0x4e3ecf('0x2e9')](_0x3b5a5f[_0x4e3ecf('0x41e')])?_0x38dddb['default'][_0x4e3ecf('0x33e')](_0x8d1ba9[_0x4e3ecf('0x7f')],{'percent':parseInt(_0x1a8267[_0x3b5a5f[_0x4e3ecf('0x41e')]],0xa)||0x0,'size':'small','style':{'width':0x82,'margin':0x0}}):_0x298367(_0x3b5a5f,_0x1a8267);}(_0x52ad84,_0x483104))?null:_0x38dddb['default'][_0x136345('0x33e')](_0x136345('0x1bd'),{'style':{'display':_0x136345('0x3dd'),'alignItems':_0x136345('0x3c5'),'gap':0x5,'maxWidth':0x140,'overflow':_0x136345('0x5c')}},_0x38dddb[_0x136345('0x4c1')]['createElement'](_0x136345('0x1bd'),{'style':{'color':_0x2fec9f[_0x136345('0x3e0')]}},''[_0x136345('0x54e')](_0x4d8b61,':')),_0x38dddb[_0x136345('0x4c1')][_0x136345('0x33e')](_0x136345('0x1bd'),{'style':{'overflow':_0x136345('0x5c'),'textOverflow':_0x136345('0xf7'),'whiteSpace':_0x136345('0x195')}},_0x3c1ec2))));var _0x4d8b61,_0x3c1ec2;}))),!_0x362791[_0x24a234('0x2a8')]&&_0x38dddb['default'][_0x24a234('0x33e')](_0x24a234('0x2e'),{'style':{'display':'flex','gap':0xa,'flex':_0x24a234('0x4da')},'onClick':function(_0x4018ed){return _0x4018ed['stopPropagation']();}},(_0x362791[_0x24a234('0x1f1')]||[])[_0x24a234('0x8f')](function(_0x365321){var _0x405058=_0x24a234;return _0x365321[_0x405058('0x3ee')];})['map'](function(_0x61caff){var _0xadd6ec=_0x24a234;return _0xadd6ec('0x568')==typeof _0x61caff[_0xadd6ec('0x18c')]&&!_0x61caff[_0xadd6ec('0x18c')](_0x257dbf,_0x483104)||_0xadd6ec('0x568')!=typeof _0x257dbf[_0x61caff['method']]?null:_0x38dddb['default'][_0xadd6ec('0x33e')](_0x8d1ba9[_0xadd6ec('0x4d4')],{'key':_0x61caff['key'],'title':_0x61caff[_0xadd6ec('0xfc')]},_0x38dddb['default']['createElement'](_0x8d1ba9[_0xadd6ec('0x55f')],{'icon':_0x38dddb[_0xadd6ec('0x4c1')][_0xadd6ec('0x296')](_0x61caff[_0xadd6ec('0x11b')],{'style':{'color':_0x5f2f07(_0x61caff[_0xadd6ec('0x34')])}}),'onClick':function(){return _0x257dbf[_0x61caff['method']](_0x483104['id'],_0x483104);}}));}),_0x9196ab&&_0x38dddb['default'][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x4d4')],{'title':_0x24a234('0x340')},_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x55f')],{'icon':_0x38dddb['default'][_0x24a234('0x33e')](_0xfbb67[_0x24a234('0x1cc')],{'style':{'color':_0x5f2f07(_0x24a234('0x331'))}}),'onClick':function(){return _0x449071(_0x483104);}})),_0x1371c8&&function(_0x25d63a){var _0x17e23e=_0x24a234;return _0x17e23e('0x568')!=typeof _0x362791[_0x17e23e('0x454')]||!!_0x362791[_0x17e23e('0x454')](_0x25d63a);}(_0x483104)&&_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x4d4')],{'title':_0x24a234('0x17b')},_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9['Button'],{'icon':_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0xfbb67['EditOutlined'],{'style':{'color':_0x5f2f07(_0x24a234('0x414'))}}),'onClick':function(){return function(_0x4db90e){var _0x457932=_0x4ba4;_0x362791['expenseDialog']?_0xeda9d9({'rec':_0x4db90e,'mode':_0x457932('0x8c')}):_0x257dbf&&_0x257dbf[_0x457932('0x8c')](_0x4db90e['id']);}(_0x483104);}})),!_0x4294f7(_0x483104[_0x24a234('0x12b')])&&_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9['Tooltip'],{'title':_0x5a0238&&_0x5a0238[_0x24a234('0x39')]||_0x24a234('0x55')},_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9['Button'],{'icon':_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x296')](_0x5a0238?_0x1e45f4(_0x5a0238['icon']):_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0xfbb67[_0x24a234('0x21f')],null),{'style':{'color':_0x5f2f07(_0x24a234('0x4c8'))}}),'onClick':function(){return _0x42c5c6(_0x483104);}})),_0x405544&&_0x38dddb[_0x24a234('0x4c1')]['createElement'](_0x8d1ba9[_0x24a234('0x4d4')],{'title':_0x24a234('0x472')},_0x38dddb['default'][_0x24a234('0x33e')](_0x8d1ba9['Button'],{'icon':_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0xfbb67[_0x24a234('0x85')],{'style':{'color':_0x5f2f07(_0x24a234('0x47f'))}}),'onClick':function(){return function(_0x3c5af2){var _0xa9557=_0x4ba4;_0x257dbf&&_0x257dbf[_0xa9557('0x31')]&&_0x257dbf['copyRow'](_0x3c5af2);}(_0x483104['id']);}})),_0x2c8d61(_0x483104)&&!_0x362791['deleteLast']&&_0x38dddb['default']['createElement'](_0x8d1ba9[_0x24a234('0x4d4')],{'title':_0x362791[_0x24a234('0x474')]||_0x24a234('0x1c6')},_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x55f')],{'icon':_0x38dddb[_0x24a234('0x4c1')]['cloneElement'](_0x362791['deleteIcon']||_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0xfbb67[_0x24a234('0x56b')],null),{'style':{'color':_0x5f2f07('#d32f2f')}}),'onClick':function(){return _0x1ae4a2(_0x483104);}})),_0x1e0e84&&_0x2be37a(_0x483104)[_0x24a234('0x1f8')]>0x0&&_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x4d4')],{'title':_0x24a234('0x3c6')},_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x55f')],{'icon':_0x38dddb['default'][_0x24a234('0x296')](_0x362791['statusIcon']||_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0xfbb67[_0x24a234('0x4bb')],null),{'style':{'color':_0x5f2f07(_0x24a234('0x331'))}}),'onClick':function(){return function(_0x2e40f8){var _0x40457b=_0x4ba4,_0xa7e972=_0x2be37a(_0x2e40f8);_0xae3e43(_0x2e40f8),_0x5bee9a(_0xa7e972['length']?_0xa7e972[0x0][_0x40457b('0x1c7')]:null),_0x11e7ce('');}(_0x483104);}})),_0x2d089c&&!_0x362791[_0x24a234('0x37b')]&&_0x24a234('0x499')===_0x483104[_0x24a234('0x260')]&&_0x38dddb['default'][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x4d4')],{'title':'Cancel'},_0x38dddb['default']['createElement'](_0x8d1ba9[_0x24a234('0x55f')],{'icon':_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0xfbb67[_0x24a234('0x122')],{'style':{'color':_0x5f2f07(_0x24a234('0x2e2'))}}),'onClick':function(){return function(_0x563bab){var _0x27847d=_0x4ba4;_0x257dbf&&_0x257dbf[_0x27847d('0x1d4')]&&_0x8d1ba9[_0x27847d('0xc3')][_0x27847d('0x46e')]({'title':'Cancel\x20request','content':'Request\x20cancellation\x20of\x20this\x20approved\x20entry?','okText':'Yes,\x20cancel\x20it','onOk':function(){var _0x34a965=_0x27847d;_0x257dbf[_0x34a965('0x2c6')]=function(){var _0x587531=_0x34a965;_0x8d1ba9[_0x587531('0x2ac')][_0x587531('0x3fb')](_0x587531('0x28c')),_0x2793e7();},_0x257dbf['cancelFailCallBack']=function(_0x25887f){var _0x36d367=_0x34a965;return _0x8d1ba9[_0x36d367('0x2ac')][_0x36d367('0x54d')](_0x36d367('0x430')==typeof _0x25887f?_0x25887f:'Could\x20not\x20cancel',0x5);};try{_0x257dbf['cancelRequest'](_0x563bab['id']);}catch(_0x5eb324){_0x8d1ba9['message'][_0x34a965('0x54d')]('Could\x20not\x20cancel',0x5);}}});}(_0x483104);}})),_0x362791[_0x24a234('0x29a')]&&_0x24a234('0x568')==typeof _0x362791[_0x24a234('0x3de')]&&_0x362791[_0x24a234('0x3de')](_0x483104)&&_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x4d4')],{'title':_0x24a234('0x45')},_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x55f')],{'icon':_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0xfbb67[_0x24a234('0x457')],{'style':{'color':_0x5f2f07('#1565c0')}}),'onClick':function(){return function(_0x3549ff){var _0x4dce7b=_0x4ba4;_0x257dbf&&_0x362791[_0x4dce7b('0x29a')]&&(_0x362791[_0x4dce7b('0x565')]?_0xeda9d9({'rec':_0x3549ff,'mode':_0x4dce7b('0x437')}):_0x8d1ba9[_0x4dce7b('0xc3')]['confirm']({'title':_0x4dce7b('0x53c'),'content':_0x4dce7b('0x185'),'okText':'Re-submit','onOk':function(){var _0x4b3199=_0x4dce7b;_0x257dbf['__nativeResubmitOk']=function(){var _0x522a03=_0x4ba4;_0x8d1ba9[_0x522a03('0x2ac')][_0x522a03('0x3fb')]('Expense\x20re-submitted'),_0x2793e7();},_0x257dbf[_0x4b3199('0x551')]=function(_0x4921d4){var _0x41ce4b=_0x4b3199;_0x8d1ba9[_0x41ce4b('0x2ac')]['error'](_0x41ce4b('0x430')==typeof _0x4921d4?_0x4921d4:'Could\x20not\x20re-submit',0x5);};try{_0x257dbf[_0x4b3199('0x202')](_0x362791[_0x4b3199('0x29a')],_0x1c097c(),JSON[_0x4b3199('0x1d1')]({'id':_0x3549ff['id']}),{'callBackData':[],'callBackSuccess':_0x4b3199('0x3b0'),'callBackFail':'__nativeResubmitFail'},!0x0);}catch(_0x572b9b){_0x257dbf['__nativeResubmitFail'](_0x4b3199('0x4d0'));}}}));}(_0x483104);}})),_0x39c368&&_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x4d4')],{'title':_0x24a234('0x4b')},_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x55f')],{'icon':_0x38dddb['default'][_0x24a234('0x33e')](_0xfbb67[_0x24a234('0x28a')],{'style':{'color':_0x5f2f07(_0x24a234('0x47f'))}}),'onClick':function(){return function(_0x4fdb4d){var _0x4c537d=_0x4ba4;if(_0x257dbf&&_0x257dbf[_0x4c537d('0x360')]){_0x14f51c({'loading':!0x0,'rows':[]}),(_0x257dbf[_0x4c537d('0x4b9')]=function(_0x2beb8f){var _0x9b4069=_0x4c537d,_0x1f935b=Array['isArray'](_0x2beb8f)?_0x2beb8f:_0x2beb8f&&Array[_0x9b4069('0x161')](_0x2beb8f[_0x9b4069('0x9b')])?_0x2beb8f['data']:[];_0x14f51c({'loading':!0x1,'rows':_0x1f935b});},_0x257dbf['__nativeLogsFail']=function(){return _0x14f51c({'loading':!0x1,'rows':[]});});try{_0x257dbf[_0x4c537d('0x202')]('getLogs',_0x1c097c(),JSON['stringify']({'id':_0x4fdb4d['id']}),{'callBackData':[],'callBackSuccess':_0x4c537d('0x4b9'),'callBackFail':_0x4c537d('0x2a0')});}catch(_0x1245c1){_0x14f51c({'loading':!0x1,'rows':[]});}}}(_0x483104);}})),(_0x362791[_0x24a234('0x1f1')]||[])[_0x24a234('0x8f')](function(_0x753646){return!_0x753646['first'];})[_0x24a234('0x1dd')](function(_0x19ec11){var _0x1a8c61=_0x24a234;return _0x1a8c61('0x568')==typeof _0x19ec11['show']&&!_0x19ec11[_0x1a8c61('0x18c')](_0x257dbf,_0x483104)||_0x1a8c61('0x568')!=typeof _0x257dbf[_0x19ec11[_0x1a8c61('0x2ae')]]?null:_0x38dddb[_0x1a8c61('0x4c1')][_0x1a8c61('0x33e')](_0x8d1ba9[_0x1a8c61('0x4d4')],{'key':_0x19ec11['key'],'title':_0x19ec11[_0x1a8c61('0xfc')]},_0x38dddb['default'][_0x1a8c61('0x33e')](_0x8d1ba9[_0x1a8c61('0x55f')],{'icon':_0x38dddb[_0x1a8c61('0x4c1')][_0x1a8c61('0x296')](_0x19ec11['icon'],{'style':{'color':_0x5f2f07(_0x19ec11[_0x1a8c61('0x34')])}}),'onClick':function(){var _0x338247=_0x1a8c61;return _0x257dbf[_0x19ec11[_0x338247('0x2ae')]](_0x483104['id'],_0x483104);}}));}),_0x2c8d61(_0x483104)&&_0x362791['deleteLast']&&_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0x8d1ba9[_0x24a234('0x4d4')],{'title':_0x362791[_0x24a234('0x474')]||_0x24a234('0x1c6')},_0x38dddb[_0x24a234('0x4c1')]['createElement'](_0x8d1ba9[_0x24a234('0x55f')],{'icon':_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x296')](_0x362791[_0x24a234('0x566')]||_0x38dddb[_0x24a234('0x4c1')][_0x24a234('0x33e')](_0xfbb67['DeleteOutlined'],null),{'style':{'color':_0x5f2f07(_0x24a234('0x2e2'))}}),'onClick':function(){return _0x1ae4a2(_0x483104);}})))));})),_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')]('div',{'style':{'display':_0x4586c5('0x3f6'),'justifyContent':_0x4586c5('0x4a3'),'marginTop':0x10}},_0x38dddb['default'][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x422')],{'current':_0x383b0d,'pageSize':_0x3dd4b2,'total':_0x4ea365,'onChange':function(_0x189d30,_0x1c724a){_0x568552(),_0x1c724a&&_0x1c724a!==_0x3dd4b2?(_0xa426d8(_0x1c724a),_0x409b12(0x1),_0x2793e7(0x1,null,_0x1c724a)):(_0x409b12(_0x189d30),_0x2793e7(_0x189d30,null));},'showSizeChanger':!(!_0x257dbf||!_0x257dbf[_0x4586c5('0x199')]),'pageSizeOptions':['8','16','24','50',_0x4586c5('0x25e')],'showTotal':function(_0x5a6022){var _0x2567ed=_0x4586c5;return''[_0x2567ed('0x54e')](_0x5a6022,_0x2567ed('0x13'));}}))),_0x4f9133&&_0x257dbf&&'function'==typeof _0x257dbf[_0x4586c5('0x424')]&&_0x257dbf[_0x4586c5('0x424')]()&&(_0x362791['childSelfModal']?_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x296')](_0x257dbf[_0x4586c5('0x424')](),{'element':_0x4f9133,'adapter':_0x257dbf,'loading':!0x1}):_0x38dddb[_0x4586c5('0x4c1')]['createElement'](_0x8d1ba9[_0x4586c5('0xc3')],{'open':!0x0,'width':0x410,'style':{'top':0x18},'footer':null,'title':_0x1e02e0(_0x4f9133),'onCancel':function(){var _0x5f4e3c=_0x4586c5;_0x34a720(null);try{_0x257dbf[_0x5f4e3c('0x1b2')]&&_0x257dbf['hideElement']();}catch(_0x2c58f8){}},'styles':{'body':{'maxHeight':_0x4586c5('0x539'),'overflowY':_0x4586c5('0x2d1')}}},_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x296')](_0x257dbf[_0x4586c5('0x424')](),{'element':_0x4f9133,'adapter':_0x257dbf,'loading':!0x1}))),_0x40bca4&&_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0xc3')],{'open':!0x0,'width':_0x4586c5('0x3b2'),'style':{'top':0x10,'maxWidth':0x500},'footer':null,'title':_0x5a0238&&_0x5a0238[_0x4586c5('0x39')]||'Document','onCancel':function(){return _0x33bee5(null);},'styles':{'body':{'padding':0x10,'minHeight':_0x4586c5('0x397'),'maxHeight':_0x4586c5('0x3ef'),'overflowY':_0x4586c5('0x2d1')}},'destroyOnClose':!0x0},_0x38dddb[_0x4586c5('0x4c1')]['createElement'](_0x4586c5('0x2e'),{'ref':_0x22abf2})),_0x50b06c&&_0x38dddb['default'][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0xc3')],{'open':!0x0,'width':_0x4586c5('0x3b2'),'style':{'top':0x10,'maxWidth':0x500},'footer':null,'title':_0x5a0238&&_0x5a0238[_0x4586c5('0x39')]||_0x4586c5('0x55'),'onCancel':function(){_0x456520(null),_0x2793e7();},'styles':{'body':{'padding':0x0,'height':_0x4586c5('0x539')}},'destroyOnClose':!0x0},_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x4586c5('0x1cd'),{'title':_0x5a0238&&_0x5a0238[_0x4586c5('0x39')]||'Document','src':_0x50b06c,'style':{'width':_0x4586c5('0x25f'),'height':_0x4586c5('0x25f'),'border':0x0,'display':_0x4586c5('0x447')},'onLoad':function(_0x5d1016){var _0x49a8ac=_0x4586c5;try{var _0x43e07e=_0x5d1016[_0x49a8ac('0x97')]['contentDocument'];if(_0x43e07e&&_0x43e07e[_0x49a8ac('0x18e')]){var _0x5f24be=_0x43e07e['createElement'](_0x49a8ac('0x4fa'));_0x5f24be[_0x49a8ac('0x22f')]=_0x49a8ac('0x15c'),_0x43e07e[_0x49a8ac('0x18e')]['appendChild'](_0x5f24be);}}catch(_0x3b8be1){}}})),_0x32b165&&_0x38dddb[_0x4586c5('0x4c1')]['createElement'](_0x8d1ba9[_0x4586c5('0xc3')],{'open':!0x0,'title':_0x4586c5('0x3c6'),'okText':_0x4586c5('0x25a'),'confirmLoading':_0xb8fbba,'onOk':function(){var _0x54ebcf=_0x4586c5;if(_0x257dbf&&_0x32b165&&_0x3b27d4){_0x56a02f(!0x0),(_0x257dbf[_0x54ebcf('0xa3')]=function(){_0x56a02f(!0x1),_0xae3e43(null),_0x8d1ba9['message']['success']('Status\x20updated'),_0x2793e7();},_0x257dbf['__nativeStatusFail']=function(_0x5cb0ee){var _0x4d7e7b=_0x54ebcf;_0x56a02f(!0x1),_0x8d1ba9[_0x4d7e7b('0x2ac')]['error']('string'==typeof _0x5cb0ee?_0x5cb0ee:'Could\x20not\x20update\x20status',0x5);});var _0x50ea1b=JSON[_0x54ebcf('0x1d1')]({'id':_0x32b165['id'],'status':_0x3b27d4,'reason':_0x48b822});try{_0x257dbf[_0x54ebcf('0x202')](_0x362791[_0x54ebcf('0x2fd')]||_0x54ebcf('0x42b'),_0x1c097c(),_0x50ea1b,{'callBackData':[],'callBackSuccess':_0x54ebcf('0xa3'),'callBackFail':_0x54ebcf('0x304')},!0x0);}catch(_0x19e3e4){_0x257dbf[_0x54ebcf('0x304')](_0x54ebcf('0x4c0'));}}},'okButtonProps':{'disabled':!_0x3b27d4||_0x362791['requireStatusReason']&&!_0x48b822[_0x4586c5('0xa1')]()},'onCancel':function(){return _0xae3e43(null);}},_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x4586c5('0x2e'),{'style':{'display':_0x4586c5('0x3f6'),'flexDirection':_0x4586c5('0x47b'),'gap':0xc,'paddingTop':0x8}},_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x4586c5('0x2e'),null,_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x4586c5('0x2e'),{'style':{'marginBottom':0x6,'color':_0x2fec9f[_0x4586c5('0x46c')]}},_0x4586c5('0x569')),_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x1f6')],{'style':{'width':_0x4586c5('0x25f')},'value':_0x3b27d4,'onChange':_0x5bee9a,'options':_0x2be37a(_0x32b165)})),_0x38dddb['default'][_0x4586c5('0x33e')](_0x4586c5('0x2e'),null,_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x4586c5('0x2e'),{'style':{'marginBottom':0x6,'color':_0x2fec9f[_0x4586c5('0x46c')]}},_0x362791[_0x4586c5('0x51d')]&&_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x4586c5('0x1bd'),{'style':{'color':_0x2fec9f['colorError'],'marginRight':0x4}},'*'),_0x362791['requireStatusReason']?_0x4586c5('0x25c'):'Reason\x20(optional)'),_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x50')][_0x4586c5('0x3ce')],{'rows':0x3,'value':_0x48b822,'onChange':function(_0x5623b1){var _0x5011e1=_0x4586c5;return _0x11e7ce(_0x5623b1[_0x5011e1('0x97')][_0x5011e1('0x1c7')]);},'placeholder':_0x4586c5('0x4d2'),'status':_0x362791[_0x4586c5('0x51d')]&&!_0x48b822[_0x4586c5('0xa1')]()?_0x4586c5('0x54d'):void 0x0})))),_0x2f25e0&&_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0xc3')],{'open':!0x0,'title':'Approval\x20Log','footer':null,'onCancel':function(){return _0x14f51c(null);}},_0x2f25e0[_0x4586c5('0x166')]?_0x38dddb['default'][_0x4586c5('0x33e')](_0x4586c5('0x2e'),{'style':{'display':_0x4586c5('0x3f6'),'justifyContent':_0x4586c5('0x3c5'),'padding':0x20}},_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0xe5')],null)):_0x2f25e0[_0x4586c5('0x27f')][_0x4586c5('0x1f8')]?_0x38dddb['default'][_0x4586c5('0x33e')](_0x8d1ba9['Timeline'],{'items':_0x2f25e0[_0x4586c5('0x27f')][_0x4586c5('0x1dd')](function(_0x12a184){var _0x2b907a=_0x4586c5;return{'children':_0x38dddb[_0x2b907a('0x4c1')][_0x2b907a('0x33e')](_0x2b907a('0x2e'),null,_0x38dddb[_0x2b907a('0x4c1')][_0x2b907a('0x33e')](_0x2b907a('0x2e'),{'style':{'fontWeight':0x258}},''[_0x2b907a('0x54e')](_0x12a184[_0x2b907a('0x35b')]||'',_0x2b907a('0x1be'))[_0x2b907a('0x54e')](_0x12a184[_0x2b907a('0x24f')]||'')),_0x38dddb['default']['createElement'](_0x2b907a('0x2e'),{'style':{'color':_0x2fec9f[_0x2b907a('0x46c')],'fontSize':0xc}},_0x12a184[_0x2b907a('0x52f')]),_0x12a184[_0x2b907a('0x48f')]?_0x38dddb[_0x2b907a('0x4c1')][_0x2b907a('0x33e')](_0x2b907a('0x2e'),{'style':{'marginTop':0x2}},_0x12a184['note']):null)};})}):_0x38dddb['default'][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x269')],{'description':_0x4586c5('0xae')})),_0x362791[_0x4586c5('0x565')]&&_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0xeaa8fd['default'],{'open':!!_0x539d83,'rec':_0x539d83?_0x539d83[_0x4586c5('0x1ef')]:null,'mode':_0x539d83?_0x539d83['mode']:'view','onClose':function(){return _0xeda9d9(null);},'onSaved':function(){return _0x2793e7();},'shellConfig':_0x1f4f94,'statusOptionsFor':_0x362791[_0x4586c5('0x1c4')]?_0x3c5505:null}),_0x4d139a&&_0x38dddb[_0x4586c5('0x4c1')]['createElement'](_0x8d1ba9[_0x4586c5('0xc3')],{'title':_0x4d139a['label']||_0x4586c5('0x82'),'open':_0x334fd0,'onCancel':function(){return _0x558e61(!0x1);},'onOk':function(){var _0x21d6de=_0x4586c5;_0x4d139a&&_0x47213b?(_0x308724(!0x0),fetch(''[_0x21d6de('0x54e')](_0x1f4f94[_0x21d6de('0x123')])[_0x21d6de('0x54e')](_0x4d139a[_0x21d6de('0x116')]),{'method':_0x21d6de('0x117'),'headers':{'Authorization':_0x21d6de('0x52e')[_0x21d6de('0x54e')](_0x1f4f94[_0x21d6de('0x1eb')]),'Content-Type':_0x21d6de('0x452')},'credentials':_0x21d6de('0x1a4'),'body':JSON[_0x21d6de('0x1d1')]({'industry':_0x47213b,'deleteExisting':_0x55c04a})})[_0x21d6de('0x273')](function(_0x3267aa){var _0x34a23d=_0x21d6de;return _0x3267aa[_0x34a23d('0x251')]();})['then'](function(_0x63ab94){var _0x1a0b34=_0x21d6de;if(_0x63ab94&&_0x63ab94[_0x1a0b34('0x54d')]){var _0x3fda0f,_0x10966a,_0x1bd6f9;_0x8d1ba9['message'][_0x1a0b34('0x54d')]((null===(_0x3fda0f=_0x63ab94[_0x1a0b34('0x54d')])||void 0x0===_0x3fda0f||null===(_0x10966a=_0x3fda0f[0x0])||void 0x0===_0x10966a||null===(_0x1bd6f9=_0x10966a[0x0])||void 0x0===_0x1bd6f9?void 0x0:_0x1bd6f9[_0x1a0b34('0x2ac')])||_0x1a0b34('0x3b'),0x5);}else{var _0x253b14=_0x4d139a[_0x1a0b34('0xfd')]||_0x1a0b34('0x4ee'),_0x3c8283=['Added\x20'[_0x1a0b34('0x54e')](_0x63ab94[_0x1a0b34('0x36')],'\x20')[_0x1a0b34('0x54e')](_0x253b14)];_0x63ab94[_0x1a0b34('0x253')]&&_0x3c8283[_0x1a0b34('0x193')](_0x1a0b34('0x207')['concat'](_0x63ab94['deleted'])),_0x63ab94[_0x1a0b34('0x24a')]&&_0x3c8283[_0x1a0b34('0x193')](_0x1a0b34('0x407')[_0x1a0b34('0x54e')](_0x63ab94[_0x1a0b34('0x24a')],_0x1a0b34('0xce'))),_0x63ab94[_0x1a0b34('0x3cd')]&&_0x3c8283[_0x1a0b34('0x193')](''[_0x1a0b34('0x54e')](_0x63ab94['skipped'],_0x1a0b34('0x168'))),_0x8d1ba9['message'][_0x1a0b34('0x3fb')](''['concat'](_0x3c8283[_0x1a0b34('0x521')](',\x20'),'.')),_0x558e61(!0x1),_0x2793e7();}})[_0x21d6de('0x3d9')](function(){var _0x4bfa1=_0x21d6de;return _0x8d1ba9['message'][_0x4bfa1('0x54d')]('Generation\x20failed',0x5);})[_0x21d6de('0x3e1')](function(){return _0x308724(!0x1);})):_0x8d1ba9[_0x21d6de('0x2ac')][_0x21d6de('0x54d')](_0x21d6de('0x3a7'),0x4);},'okText':_0x4d139a[_0x4586c5('0x39')]||'Generate','confirmLoading':_0x574216,'okButtonProps':{'disabled':!_0x47213b}},_0x38dddb[_0x4586c5('0x4c1')]['createElement']('p',{'style':{'marginTop':0x0}},_0x4586c5('0x1cb')[_0x4586c5('0x54e')](_0x4d139a[_0x4586c5('0xfd')]||_0x4586c5('0x4ee'),_0x4586c5('0x1f3'))),_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x1f6')],{'style':{'width':_0x4586c5('0x25f')},'placeholder':_0x4586c5('0x462'),'loading':_0x4ff2d0,'value':_0x47213b,'onChange':_0x42a561,'showSearch':!0x0,'optionFilterProp':'label','options':_0x24cbe3[_0x4586c5('0x1dd')](function(_0x3d954b){var _0x2c5e7c=_0x4586c5;return{'value':_0x3d954b[_0x2c5e7c('0x322')],'label':_0x3d954b['label']};})}),_0x4d139a[_0x4586c5('0x24c')]&&_0x38dddb['default']['createElement'](_0x4586c5('0x2e'),{'style':{'marginTop':0x10}},_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x8d1ba9[_0x4586c5('0x1e1')],{'checked':_0x55c04a,'onChange':function(_0x1a5967){var _0x44694a=_0x4586c5;return _0x5930bd(_0x1a5967[_0x44694a('0x97')][_0x44694a('0x3d2')]);}},_0x4d139a[_0x4586c5('0x1b3')]||'Delete\x20existing\x20entries\x20first'),_0x38dddb[_0x4586c5('0x4c1')][_0x4586c5('0x33e')](_0x4586c5('0x2e'),{'style':{'color':_0x2fec9f[_0x4586c5('0x46c')],'fontSize':0xc,'marginTop':0x4,'marginLeft':0x18}},_0x4586c5('0x44c')))));};var _0x222e9e,_0x38dddb=function(_0x43e353){var _0x394d93=_0xd47d77;if(_0x43e353&&_0x43e353[_0x394d93('0x4bc')])return _0x43e353;if(null===_0x43e353||_0x394d93('0x19b')!==_0x354ccb(_0x43e353)&&_0x394d93('0x568')!=typeof _0x43e353)return{'default':_0x43e353};var _0x2355c3=_0x597fb3();if(_0x2355c3&&_0x2355c3['has'](_0x43e353))return _0x2355c3[_0x394d93('0xeb')](_0x43e353);var _0x150382={},_0x441049=Object[_0x394d93('0x28b')]&&Object[_0x394d93('0x2da')];for(var _0x2b3596 in _0x43e353)if(Object['prototype'][_0x394d93('0x205')][_0x394d93('0x210')](_0x43e353,_0x2b3596)){var _0x1bb1cc=_0x441049?Object[_0x394d93('0x2da')](_0x43e353,_0x2b3596):null;_0x1bb1cc&&(_0x1bb1cc[_0x394d93('0xeb')]||_0x1bb1cc[_0x394d93('0x302')])?Object[_0x394d93('0x28b')](_0x150382,_0x2b3596,_0x1bb1cc):_0x150382[_0x2b3596]=_0x43e353[_0x2b3596];}return _0x150382[_0x394d93('0x4c1')]=_0x43e353,_0x2355c3&&_0x2355c3[_0x394d93('0x302')](_0x43e353,_0x150382),_0x150382;}(_0x1e7645(_0xd47d77('0x516'))),_0x8d1ba9=_0x1e7645('antd'),_0xfbb67=_0x1e7645(_0xd47d77('0x3aa')),_0x335d6b=_0x1e7645(_0xd47d77('0x176')),_0xeaa8fd=(_0x222e9e=_0x1e7645('./ExpenseDialog'))&&_0x222e9e[_0xd47d77('0x4bc')]?_0x222e9e:{'default':_0x222e9e};function _0x597fb3(){var _0x37e7f7=_0xd47d77;if(_0x37e7f7('0x568')!=typeof WeakMap)return null;var _0x17900d=new WeakMap();return _0x597fb3=function(){return _0x17900d;},_0x17900d;}function _0x354ccb(_0x463553){var _0x57cfc8=_0xd47d77;return(_0x354ccb='function'==typeof Symbol&&_0x57cfc8('0x263')==typeof Symbol['iterator']?function(_0xbf4f6a){return typeof _0xbf4f6a;}:function(_0xc5558d){var _0x55eab1=_0x57cfc8;return _0xc5558d&&_0x55eab1('0x568')==typeof Symbol&&_0xc5558d[_0x55eab1('0x151')]===Symbol&&_0xc5558d!==Symbol[_0x55eab1('0x501')]?_0x55eab1('0x263'):typeof _0xc5558d;})(_0x463553);}function _0x435685(_0x46f7d4){if('undefined'==typeof Symbol||null==_0x46f7d4[Symbol['iterator']]){if(Array['isArray'](_0x46f7d4)||(_0x46f7d4=_0x5ec096(_0x46f7d4))){var _0x4f19a0=0x0,_0x1a9029=function(){};return{'s':_0x1a9029,'n':function(){var _0x3e446f=_0x4ba4;return _0x4f19a0>=_0x46f7d4[_0x3e446f('0x1f8')]?{'done':!0x0}:{'done':!0x1,'value':_0x46f7d4[_0x4f19a0++]};},'e':function(_0x14724a){throw _0x14724a;},'f':_0x1a9029};}throw new TypeError('Invalid\x20attempt\x20to\x20iterate\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.');}var _0x5cf767,_0x3ba651,_0x2cbdd4=!0x0,_0x2b668f=!0x1;return{'s':function(){var _0x3ab440=_0x4ba4;_0x5cf767=_0x46f7d4[Symbol[_0x3ab440('0x412')]]();},'n':function(){var _0x138451=_0x4ba4,_0x4da2c1=_0x5cf767[_0x138451('0x503')]();return _0x2cbdd4=_0x4da2c1['done'],_0x4da2c1;},'e':function(_0x26c532){_0x2b668f=!0x0,_0x3ba651=_0x26c532;},'f':function(){var _0x129541=_0x4ba4;try{_0x2cbdd4||null==_0x5cf767['return']||_0x5cf767[_0x129541('0x6e')]();}finally{if(_0x2b668f)throw _0x3ba651;}}};}function _0x44825b(_0x37bcf9){return function(_0x323149){var _0x22015a=_0x4ba4;if(Array[_0x22015a('0x161')](_0x323149))return _0x33b153(_0x323149);}(_0x37bcf9)||function(_0x22ac3a){var _0x1750ad=_0x4ba4;if(_0x1750ad('0x3')!=typeof Symbol&&Symbol[_0x1750ad('0x412')]in Object(_0x22ac3a))return Array['from'](_0x22ac3a);}(_0x37bcf9)||_0x5ec096(_0x37bcf9)||function(){var _0x5803b1=_0x4ba4;throw new TypeError(_0x5803b1('0x295'));}();}function _0x371888(_0x259caa,_0x2611f5,_0x48cdca,_0x35d4dc,_0x2be1af,_0x4fe691,_0x76ad1f){var _0x322b8c=_0xd47d77;try{var _0x27b2f2=_0x259caa[_0x4fe691](_0x76ad1f),_0x53ce19=_0x27b2f2['value'];}catch(_0x5d1346){return void _0x48cdca(_0x5d1346);}_0x27b2f2['done']?_0x2611f5(_0x53ce19):Promise[_0x322b8c('0x6d')](_0x53ce19)[_0x322b8c('0x273')](_0x35d4dc,_0x2be1af);}function _0x56963b(_0x13facd){return function(){var _0x525bff=this,_0x4d23e3=arguments;return new Promise(function(_0xb43ad0,_0x11159c){var _0x12c1b9=_0x4ba4,_0x573007=_0x13facd[_0x12c1b9('0x154')](_0x525bff,_0x4d23e3);function _0x326fe2(_0x1fada7){_0x371888(_0x573007,_0xb43ad0,_0x11159c,_0x326fe2,_0x57bc20,'next',_0x1fada7);}function _0x57bc20(_0x355ae3){var _0x250d80=_0x12c1b9;_0x371888(_0x573007,_0xb43ad0,_0x11159c,_0x326fe2,_0x57bc20,_0x250d80('0x51a'),_0x355ae3);}_0x326fe2(void 0x0);});};}function _0x2ab094(_0x3fbc87,_0x359301){var _0x3963d8=_0xd47d77,_0xcc9f9=Object['keys'](_0x3fbc87);if(Object[_0x3963d8('0x68')]){var _0x548d61=Object[_0x3963d8('0x68')](_0x3fbc87);_0x359301&&(_0x548d61=_0x548d61['filter'](function(_0x4fe84f){var _0x3035c7=_0x3963d8;return Object['getOwnPropertyDescriptor'](_0x3fbc87,_0x4fe84f)[_0x3035c7('0xf9')];})),_0xcc9f9['push'][_0x3963d8('0x154')](_0xcc9f9,_0x548d61);}return _0xcc9f9;}function _0x5b321f(_0x12f9e0){var _0x4b0b88=_0xd47d77;for(var _0x41c226=0x1;_0x41c226<arguments[_0x4b0b88('0x1f8')];_0x41c226++){var _0x355bbf=null!=arguments[_0x41c226]?arguments[_0x41c226]:{};_0x41c226%0x2?_0x2ab094(Object(_0x355bbf),!0x0)[_0x4b0b88('0x35e')](function(_0x478224){_0x4c170a(_0x12f9e0,_0x478224,_0x355bbf[_0x478224]);}):Object[_0x4b0b88('0x2d')]?Object[_0x4b0b88('0x145')](_0x12f9e0,Object['getOwnPropertyDescriptors'](_0x355bbf)):_0x2ab094(Object(_0x355bbf))[_0x4b0b88('0x35e')](function(_0x21fc6c){var _0x5bd891=_0x4b0b88;Object[_0x5bd891('0x28b')](_0x12f9e0,_0x21fc6c,Object['getOwnPropertyDescriptor'](_0x355bbf,_0x21fc6c));});}return _0x12f9e0;}function _0x4c170a(_0x3765fd,_0x5b6836,_0x4390a6){var _0x495113=_0xd47d77;return _0x5b6836 in _0x3765fd?Object[_0x495113('0x28b')](_0x3765fd,_0x5b6836,{'value':_0x4390a6,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x3765fd[_0x5b6836]=_0x4390a6,_0x3765fd;}function _0x12e8d2(_0x33d4b6,_0x4e61fb){return function(_0x5a516c){if(Array['isArray'](_0x5a516c))return _0x5a516c;}(_0x33d4b6)||function(_0x4c1684,_0x42a9d3){var _0x3dfbe2=_0x4ba4;if(_0x3dfbe2('0x3')==typeof Symbol||!(Symbol[_0x3dfbe2('0x412')]in Object(_0x4c1684)))return;var _0x3d629e=[],_0x1ee900=!0x0,_0xbfe6dd=!0x1,_0x2654d8=void 0x0;try{for(var _0x38fa47,_0x3c9e52=_0x4c1684[Symbol[_0x3dfbe2('0x412')]]();!(_0x1ee900=(_0x38fa47=_0x3c9e52['next']())[_0x3dfbe2('0x448')])&&(_0x3d629e['push'](_0x38fa47[_0x3dfbe2('0x1c7')]),!_0x42a9d3||_0x3d629e[_0x3dfbe2('0x1f8')]!==_0x42a9d3);_0x1ee900=!0x0);}catch(_0x2b908d){_0xbfe6dd=!0x0,_0x2654d8=_0x2b908d;}finally{try{_0x1ee900||null==_0x3c9e52['return']||_0x3c9e52[_0x3dfbe2('0x6e')]();}finally{if(_0xbfe6dd)throw _0x2654d8;}}return _0x3d629e;}(_0x33d4b6,_0x4e61fb)||_0x5ec096(_0x33d4b6,_0x4e61fb)||function(){var _0x2df5a6=_0x4ba4;throw new TypeError(_0x2df5a6('0x36b'));}();}function _0x5ec096(_0x5e3cd3,_0x5c6d28){var _0x4da8c6=_0xd47d77;if(_0x5e3cd3){if(_0x4da8c6('0x430')==typeof _0x5e3cd3)return _0x33b153(_0x5e3cd3,_0x5c6d28);var _0x3df04b=Object[_0x4da8c6('0x501')][_0x4da8c6('0x476')][_0x4da8c6('0x210')](_0x5e3cd3)['slice'](0x8,-0x1);return'Object'===_0x3df04b&&_0x5e3cd3[_0x4da8c6('0x151')]&&(_0x3df04b=_0x5e3cd3[_0x4da8c6('0x151')][_0x4da8c6('0x4d8')]),_0x4da8c6('0x506')===_0x3df04b||'Set'===_0x3df04b?Array[_0x4da8c6('0x303')](_0x3df04b):_0x4da8c6('0x243')===_0x3df04b||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/['test'](_0x3df04b)?_0x33b153(_0x5e3cd3,_0x5c6d28):void 0x0;}}function _0x33b153(_0x34ffd6,_0x215573){var _0x5bc873=_0xd47d77;(null==_0x215573||_0x215573>_0x34ffd6[_0x5bc873('0x1f8')])&&(_0x215573=_0x34ffd6[_0x5bc873('0x1f8')]);for(var _0x32395a=0x0,_0x5b4533=new Array(_0x215573);_0x32395a<_0x215573;_0x32395a++)_0x5b4533[_0x32395a]=_0x34ffd6[_0x32395a];return _0x5b4533;}var _0x30096a={'file':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['FileOutlined'],null),'form':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x102')],null),'export':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x135')],null),'monitor':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x4bb')],null)},_0x1e45f4=function(_0x48d2c5){var _0x2b49e7=_0xd47d77;return _0x30096a[_0x48d2c5]||_0x38dddb['default'][_0x2b49e7('0x33e')](_0xfbb67[_0x2b49e7('0x21f')],null);},_0x133688=String(Date[_0xd47d77('0x152')]()),_0x553479={},_0x1e1993={'JobTitle':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x22e')],null),'color':'#1976d2'},'PayGrade':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67['DollarOutlined'],null),'color':_0xd47d77('0x414')},'EmploymentStatus':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x18a')],null),'color':_0xd47d77('0x121')},'Skill':{'icon':_0x38dddb['default']['createElement'](_0xfbb67['ReadOutlined'],null),'color':'#1976d2'},'Education':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x9c')],null),'color':'#0288d1'},'Certification':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67['ReadOutlined'],null),'color':_0xd47d77('0x121')},'Language':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x9c')],null),'color':_0xd47d77('0x3ac')},'Project':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2a2')],null),'color':_0xd47d77('0x3fd')},'EmployeeProject':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x272')],null),'color':_0xd47d77('0x414')},'Client':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0xd9')],null),'color':'#7b1fa2'},'CustomField':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['AppstoreOutlined'],null),'color':_0xd47d77('0x3fd')},'Audit':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x153')],null),'color':'#546e7a'},'EmailLogEntry':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['MailOutlined'],null),'color':_0xd47d77('0x4c8')},'Employee':{'icon':_0x38dddb['default']['createElement'](_0xfbb67[_0xd47d77('0x271')],null),'color':_0xd47d77('0x3fd')},'EmployeeCareer':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2c3')],null),'color':_0xd47d77('0x4c8')},'EmployeeSkill':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x9c')],null),'color':'#1976d2'},'EmployeeEducation':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x9c')],null),'color':_0xd47d77('0x4c8')},'EmployeeCertification':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x9c')],null),'color':_0xd47d77('0x121')},'EmployeeLanguage':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x9c')],null),'color':_0xd47d77('0x3ac')},'EmployeeDependent':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x272')],null),'color':_0xd47d77('0x414')},'EmergencyContact':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x4c9')],null),'color':_0xd47d77('0x2e2')},'TerminatedEmployee':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x4ad')],null),'color':_0xd47d77('0x3ac')},'ArchivedEmployee':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67['UserOutlined'],null),'color':_0xd47d77('0x47f')},'EmployeeDataHistory':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x18a')],null),'color':_0xd47d77('0x4c8')},'MyAttendance':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x279')],null),'color':_0xd47d77('0x4c8')},'OvertimeCategory':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x90')],null),'color':'#ed6c02'},'MyOvertime':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x279')],null),'color':_0xd47d77('0x3ac')},'EmployeeOvertime':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['ClockCircleOutlined'],null),'color':'#ed6c02'},'EmployeeOvertimeApproval':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67['ClockCircleOutlined'],null),'color':_0xd47d77('0x121')},'User':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x271')],null),'color':_0xd47d77('0x3fd')},'UserRole':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67['TeamOutlined'],null),'color':_0xd47d77('0x121')},'UserInvitation':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x1b1')],null),'color':'#0288d1'},'LeaveType':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['TagsOutlined'],null),'color':'#ed6c02'},'LeavePeriod':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['ScheduleOutlined'],null),'color':'#2e7d32'},'WorkDay':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67['CarryOutOutlined'],null),'color':_0xd47d77('0x4c8')},'HoliDay':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x374')],null),'color':_0xd47d77('0x121')},'LeaveStartingBalance':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['SlidersOutlined'],null),'color':'#0288d1'},'LeaveGroup':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x272')],null),'color':_0xd47d77('0x3fd')},'EmployeeLeave':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['SolutionOutlined'],null),'color':_0xd47d77('0x3ac')},'MyLeave':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x4d1')],null),'color':_0xd47d77('0x3fd')},'MyLeaveApproved':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['CalendarOutlined'],null),'color':_0xd47d77('0x414')},'SubLeave':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2c3')],null),'color':_0xd47d77('0x3ac')},'LeaveApproval':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2c3')],null),'color':_0xd47d77('0x121')},'ExpensesCategory':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x255')],null),'color':_0xd47d77('0x121')},'ExpensesPaymentMethod':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2af')],null),'color':_0xd47d77('0x414')},'EmployeeExpense':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2af')],null),'color':_0xd47d77('0x3fd')},'MyExpense':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x2af')],null),'color':_0xd47d77('0x3fd')},'SubExpense':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2af')],null),'color':_0xd47d77('0x3ac')},'ExpenseApproval':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2af')],null),'color':_0xd47d77('0x121')},'Job':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['AuditOutlined'],null),'color':_0xd47d77('0x3fd')},'Candidate':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x56e')],null),'color':_0xd47d77('0x121')},'EmployementType':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x22e')],null),'color':_0xd47d77('0x3fd')},'ExperienceLevel':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['SlidersOutlined'],null),'color':_0xd47d77('0x3ac')},'JobFunction':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['SolutionOutlined'],null),'color':_0xd47d77('0x121')},'EducationLevel':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['ReadOutlined'],null),'color':_0xd47d77('0x414')},'Benifit':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x374')],null),'color':_0xd47d77('0xd0')},'Setting':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x49c')],null),'color':_0xd47d77('0x47f')},'Module':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x26d')],null),'color':'#1976d2'},'Permission':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['KeyOutlined'],null),'color':'#7b1fa2'},'Country':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x41f')],null),'color':_0xd47d77('0x3fd')},'Province':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x464')],null),'color':_0xd47d77('0x4c8')},'CurrencyType':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2af')],null),'color':_0xd47d77('0x414')},'Nationality':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x22e')],null),'color':'#7b1fa2'},'Ethnicity':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x272')],null),'color':_0xd47d77('0x3ac')},'ImmigrationStatus':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67['SolutionOutlined'],null),'color':_0xd47d77('0xd0')},'CompanyDocument':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67['FileTextOutlined'],null),'color':_0xd47d77('0x3fd')},'Document':{'icon':_0x38dddb['default']['createElement'](_0xfbb67[_0xd47d77('0x255')],null),'color':_0xd47d77('0x121')},'EmployeeDocument':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x21f')],null),'color':_0xd47d77('0x4c8')},'PayslipDocument':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2af')],null),'color':_0xd47d77('0x414')},'MyDocument':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x21f')],null),'color':_0xd47d77('0x4c8')},'MyCompanyDocument':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x460')],null),'color':_0xd47d77('0x3fd')},'MyPayslip':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x2af')],null),'color':_0xd47d77('0x414')},'TrainingSessionWithCourse':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x9c')],null),'color':_0xd47d77('0x3fd')},'EmployeeTrainingSession':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x9c')],null),'color':_0xd47d77('0x414')},'SubEmployeeTraining':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['ReadOutlined'],null),'color':_0xd47d77('0x3ac')},'CoordinatedTrainingSession':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x20f')],null),'color':_0xd47d77('0x121')},'PerformanceReview':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['SolutionOutlined'],null),'color':'#7b1fa2'},'ReviewFeedback':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x102')],null),'color':_0xd47d77('0x4c8')},'ReviewTemplate':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x18a')],null),'color':_0xd47d77('0x3ac')},'EmployeeGoal':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['CheckCircleOutlined'],null),'color':_0xd47d77('0x414')},'MyPerformanceReview':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2c3')],null),'color':_0xd47d77('0x3fd')},'MyReviewFeedback':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x102')],null),'color':_0xd47d77('0x3ac')},'SalaryComponentType':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x255')],null),'color':_0xd47d77('0x121')},'SalaryComponent':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x26d')],null),'color':_0xd47d77('0x4c8')},'EmployeeSalary':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2af')],null),'color':_0xd47d77('0x414')},'CompanyLoan':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0xd9')],null),'color':'#2e7d32'},'EmployeeCompanyLoan':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2af')],null),'color':_0xd47d77('0x3fd')},'MyLoan':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2af')],null),'color':_0xd47d77('0x3fd')},'TravelProject':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2a2')],null),'color':_0xd47d77('0x4c8')},'EmployeeTravelRecord':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x1d9')],null),'color':_0xd47d77('0x3fd')},'MyTravel':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['SendOutlined'],null),'color':_0xd47d77('0x3fd')},'SubTravel':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x1d9')],null),'color':_0xd47d77('0x3ac')},'TravelApproval':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x1d9')],null),'color':_0xd47d77('0x121')}},_0x42d257={'Employee':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x271')],null),'color':_0xd47d77('0x3fd')},'CompanyStructure':{'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x464')],null),'color':'#0288d1'},'Project':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x2a2')],null),'color':_0xd47d77('0x121')},'Client':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['BankOutlined'],null),'color':_0xd47d77('0x414')},'JobTitle':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x22e')],null),'color':'#ed6c02'},'Qualification':{'icon':_0x38dddb['default']['createElement'](_0xfbb67['ReadOutlined'],null),'color':_0xd47d77('0x3fd')},'Recruitment':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x2c3')],null),'color':_0xd47d77('0x121')},'Document':{'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x460')],null),'color':_0xd47d77('0x47f')},'Leave':{'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x4d1')],null),'color':_0xd47d77('0x3ac')}},_0x2b8e93={'Pending':_0xd47d77('0x4ae'),'Submitted':_0xd47d77('0x538'),'Completed':_0xd47d77('0x38b'),'Rejected':_0xd47d77('0x398')},_0x11e708={'Attendance':{'childSelfModal':!0x0,'avatarField':_0xd47d77('0x234'),'titleField':'employee','hideMeta':['image']},'AttendanceStatus':{'avatarField':_0xd47d77('0x234'),'titleField':_0xd47d77('0x18d'),'hideMeta':[_0xd47d77('0x234')],'hideActions':!0x0},'MyAttendance':{'childSelfModal':!0x0,'titleField':'in_time','hideMeta':[_0xd47d77('0x234')]},'MyOvertime':{'titleField':_0xd47d77('0x405')},'EmployeeOvertime':{'titleField':_0xd47d77('0x18d'),'avatarField':'image','hideMeta':[_0xd47d77('0x234')]},'EmployeeOvertimeApproval':{'titleField':_0xd47d77('0x18d'),'avatarField':'image','hideMeta':[_0xd47d77('0x234')]},'JobTitle':{'titleField':_0xd47d77('0x4d8')},'Language':{'titleField':'description'},'CustomField':{'title':function(_0x32b979){var _0x18ca5e=_0xd47d77;return''['concat'](_0x32b979[_0x18ca5e('0x444')]||'',_0x18ca5e('0x1be'))[_0x18ca5e('0x54e')](_0x32b979[_0x18ca5e('0x4d8')]||'');},'hideMeta':[_0xd47d77('0x4d8'),'type','display'],'iconField':_0xd47d77('0x444')},'Audit':{'title':function(_0x51555d){return _0x51555d['details'];},'tagFields':['time'],'tagIcon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x279')],null),'hideMeta':[_0xd47d77('0x571'),'time'],'hideViewButton':!0x0},'EmailLogEntry':{'titleField':_0xd47d77('0x1'),'hideMeta':[_0xd47d77('0x1')]},'Project':{'hideViewButton':!0x0},'EmployeeProject':{'hideViewButton':!0x0},'Client':{'hideViewButton':!0x0},'Employee':{'title':function(_0x24a3dc){var _0x598381=_0xd47d77;return''[_0x598381('0x54e')](_0x24a3dc[_0x598381('0x511')]||'','\x20')[_0x598381('0x54e')](_0x24a3dc[_0x598381('0x53a')]||'')[_0x598381('0xa1')]()||_0x24a3dc[_0x598381('0x191')];},'avatarField':_0xd47d77('0x234'),'hideMeta':['first_name','last_name',_0xd47d77('0x234'),'id'],'extraActions':[{'key':_0xd47d77('0x4cd'),'tip':'Switch\x20to\x20profile','icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67['LoginOutlined'],null),'color':_0xd47d77('0x3ac'),'method':_0xd47d77('0x2a7'),'show':function(_0x5f194e){return!!_0x5f194e['allowSwitchToEmployeeProfile'];}},{'key':_0xd47d77('0x40d'),'tip':_0xd47d77('0x3f5'),'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x4ad')],null),'color':_0xd47d77('0x2e2'),'method':_0xd47d77('0x362'),'show':function(_0x4e5442){var _0x1a6b41=_0xd47d77;return _0x4e5442[_0x1a6b41('0x4ac')](_0x1a6b41('0x4a9'))&&!0x1!==_0x4e5442['showDelete'];}}]},'TerminatedEmployee':{'title':function(_0xd8878f){var _0x299fd4=_0xd47d77;return''[_0x299fd4('0x54e')](_0xd8878f[_0x299fd4('0x511')]||'','\x20')[_0x299fd4('0x54e')](_0xd8878f['last_name']||'')['trim']()||_0xd8878f[_0x299fd4('0x191')];},'avatarField':_0xd47d77('0x234'),'hideMeta':[_0xd47d77('0x511'),_0xd47d77('0x53a'),_0xd47d77('0x234'),'id'],'extraActions':[{'key':_0xd47d77('0x387'),'tip':_0xd47d77('0x32a'),'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67['CheckCircleOutlined'],null),'color':'#2e7d32','method':_0xd47d77('0x21')}]},'ArchivedEmployee':{'title':function(_0x4d3087){var _0x50a400=_0xd47d77;return''['concat'](_0x4d3087[_0x50a400('0x511')]||'','\x20')['concat'](_0x4d3087[_0x50a400('0x53a')]||'')['trim']()||_0x4d3087['employee_id'];},'hideMeta':[_0xd47d77('0x511'),_0xd47d77('0x53a'),'image','id'],'extraActions':[{'key':'download','tip':_0xd47d77('0x203'),'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x247')],null),'color':_0xd47d77('0x4c8'),'method':_0xd47d77('0x530')}]},'EmployeeDataHistory':{'titleField':_0xd47d77('0x18d'),'tagFields':[_0xd47d77('0x36')],'tagIcon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67['ClockCircleOutlined'],null),'hideMeta':[_0xd47d77('0x36')]},'LeaveGroup':{'titleField':'name','hideMeta':['id'],'disableView':!0x0,'cardClickAction':_0xd47d77('0x33'),'extraActions':[{'key':_0xd47d77('0x233'),'tip':_0xd47d77('0x559'),'icon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67['UsergroupAddOutlined'],null),'color':'#1677ff','method':_0xd47d77('0x33'),'first':!0x0}]},'LeaveRule':{'title':function(_0x407179,_0x282600){var _0x537afa=_0xd47d77,_0x2bdc35=_0x282600('leave_type')||_0x537afa('0xb4');return _0x407179['employee']?''['concat'](_0x2bdc35,_0x537afa('0x187'))[_0x537afa('0x54e')](_0x282600(_0x537afa('0x18d'))):_0x2bdc35;},'hideViewButton':!0x0,'hideMeta':['id',_0xd47d77('0x241'),'employee']},'EmployeeLeave':{'titleField':'employee','avatarField':_0xd47d77('0x234'),'hideMeta':['id',_0xd47d77('0x234')],'hideEditButton':!0x0,'disableView':!0x0,'deleteLast':!0x0,'deleteTip':_0xd47d77('0x311'),'deleteIcon':_0x38dddb['default']['createElement'](_0xfbb67[_0xd47d77('0x122')],null),'deleteConfirm':_0xd47d77('0x1bf'),'statusIcon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x49c')],null),'extraActions':[{'key':_0xd47d77('0x22d'),'tip':_0xd47d77('0x368'),'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['InfoCircleOutlined'],null),'color':_0xd47d77('0x414'),'method':_0xd47d77('0x10d'),'first':!0x0}]},'MyLeave':{'titleField':_0xd47d77('0x241'),'hideMeta':['id'],'hideEditButton':!0x0,'hideCopyButton':!0x0,'disableView':!0x0,'cardClickAction':_0xd47d77('0x10d'),'extraActions':[{'key':_0xd47d77('0x22d'),'tip':_0xd47d77('0x368'),'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['InfoCircleOutlined'],null),'color':'#2e7d32','method':_0xd47d77('0x10d'),'first':!0x0},{'key':_0xd47d77('0x4bd'),'tip':'Cancel\x20Leave','icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x122')],null),'color':_0xd47d77('0x2e2'),'method':_0xd47d77('0x39b'),'show':function(_0x27b53e,_0x337060){var _0x69327b=_0xd47d77;return _0x337060&&_0x69327b('0x529')===_0x337060[_0x69327b('0x260')];}}]},'MyLeaveApproved':{'titleField':'leave_type','hideMeta':['id'],'hideEditButton':!0x0,'disableView':!0x0,'extraActions':[{'key':'leavedays','tip':_0xd47d77('0x368'),'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x94')],null),'color':'#2e7d32','method':_0xd47d77('0x10d'),'first':!0x0},{'key':'cancel','tip':_0xd47d77('0x2ba'),'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x122')],null),'color':_0xd47d77('0x2e2'),'method':'cancelLeave'}]},'SubLeave':{'titleField':'employee','avatarField':_0xd47d77('0x234'),'hideMeta':['id',_0xd47d77('0x234')],'hideEditButton':!0x0,'disableView':!0x0,'statusIcon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x49c')],null),'statusAction':_0xd47d77('0x240'),'extraActions':[{'key':_0xd47d77('0x22d'),'tip':_0xd47d77('0x368'),'icon':_0x38dddb['default']['createElement'](_0xfbb67[_0xd47d77('0x94')],null),'color':_0xd47d77('0x414'),'method':_0xd47d77('0x10d'),'first':!0x0}]},'LeaveApproval':{'titleField':_0xd47d77('0x18d'),'avatarField':'image','hideMeta':['id',_0xd47d77('0x234')],'hideEditButton':!0x0,'disableView':!0x0,'statusIcon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x49c')],null),'statusAction':_0xd47d77('0x240'),'extraActions':[{'key':'leavedays','tip':'Leave\x20Details','icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['InfoCircleOutlined'],null),'color':'#2e7d32','method':_0xd47d77('0x10d'),'first':!0x0}]},'EmployeeExpense':{'titleField':_0xd47d77('0x18d'),'avatarField':_0xd47d77('0x234'),'hideMeta':['id',_0xd47d77('0x234')],'expenseDialog':!0x0,'dialogStatusChange':!0x0,'requireStatusReason':!0x0,'managerLockedStatuses':[_0xd47d77('0x451')],'managerBlockedTargetStatuses':[_0xd47d77('0x451')],'deleteLast':!0x0,'statusIcon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x49c')],null)},'MyExpense':{'titleField':_0xd47d77('0x405'),'hideMeta':['id'],'expenseDialog':!0x0,'statusFilter':[_0xd47d77('0x529'),'Approved',_0xd47d77('0x2fc'),_0xd47d77('0x451')],'deleteWhen':function(_0x531232){var _0x35fa8d=_0xd47d77;return'Pending'===_0x531232['status']||_0x35fa8d('0x2fc')===_0x531232[_0x35fa8d('0x260')];},'editWhen':function(_0x2c77b7){var _0x190561=_0xd47d77;return'Pending'===_0x2c77b7[_0x190561('0x260')];},'resubmitAction':_0xd47d77('0x437'),'resubmitWhen':function(_0x29e23e){var _0x9ac5f3=_0xd47d77;return'Rejected'===_0x29e23e[_0x9ac5f3('0x260')];},'hideCancelButton':!0x0},'SubExpense':{'titleField':_0xd47d77('0x18d'),'avatarField':_0xd47d77('0x234'),'hideMeta':['id','image'],'hideEditButton':!0x0,'hideCopyButton':!0x0,'disableView':!0x0,'deleteLast':!0x0,'statusIcon':_0x38dddb['default']['createElement'](_0xfbb67[_0xd47d77('0x49c')],null)},'ExpenseApproval':{'titleField':_0xd47d77('0x18d'),'avatarField':_0xd47d77('0x234'),'hideMeta':['id',_0xd47d77('0x234')],'hideEditButton':!0x0,'hideCopyButton':!0x0,'disableView':!0x0,'deleteLast':!0x0,'statusIcon':_0x38dddb[_0xd47d77('0x4c1')]['createElement'](_0xfbb67[_0xd47d77('0x49c')],null)},'Candidate':{'title':function(_0x182419){var _0x9ee0ee=_0xd47d77;return''['concat'](_0x182419['first_name']||'','\x20')[_0x9ee0ee('0x54e')](_0x182419[_0x9ee0ee('0x53a')]||'')[_0x9ee0ee('0xa1')]()||_0x182419[_0x9ee0ee('0x2f3')];},'hideMeta':['first_name',_0xd47d77('0x53a'),'id'],'tagFields':[_0xd47d77('0x1d6')]},'Job':{'extraActions':[{'key':'joblink','tip':_0xd47d77('0x319'),'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67['LinkOutlined'],null),'color':_0xd47d77('0x3ac'),'method':_0xd47d77('0x48a'),'first':!0x0},{'key':'openjob','tip':_0xd47d77('0x2ee'),'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['MonitorOutlined'],null),'color':_0xd47d77('0x331'),'method':'openJobPage','first':!0x0}]},'Setting':{'titleField':'name','hideMeta':['id',_0xd47d77('0x24'),_0xd47d77('0x405'),_0xd47d77('0x13a')],'hideCopyButton':!0x0,'disableView':!0x0},'Module':{'titleField':_0xd47d77('0x39'),'tagFields':[_0xd47d77('0x260')],'hideMeta':['id',_0xd47d77('0x523'),_0xd47d77('0x43b')],'hideCopyButton':!0x0,'disableView':!0x0},'Permission':{'title':function(_0xc70dd8){var _0x2bcd43=_0xd47d77;return''[_0x2bcd43('0x54e')](_0xc70dd8[_0x2bcd43('0xed')]||'',_0x2bcd43('0x187'))[_0x2bcd43('0x54e')](_0xc70dd8['permission']||'');},'hideMeta':['id',_0xd47d77('0xed'),_0xd47d77('0x479')],'hideCopyButton':!0x0,'disableView':!0x0},'Country':{'titleField':_0xd47d77('0x4d8'),'hideMeta':['id'],'disableView':!0x0},'Province':{'titleField':_0xd47d77('0x4d8'),'hideMeta':['id'],'disableView':!0x0},'CurrencyType':{'titleField':_0xd47d77('0x4d8'),'hideMeta':['id'],'disableView':!0x0},'Nationality':{'titleField':_0xd47d77('0x4d8'),'hideMeta':['id'],'disableView':!0x0},'Ethnicity':{'titleField':_0xd47d77('0x4d8'),'hideMeta':['id'],'disableView':!0x0},'ImmigrationStatus':{'titleField':_0xd47d77('0x4d8'),'hideMeta':['id'],'disableView':!0x0},'CompanyDocument':{'titleField':_0xd47d77('0x4d8'),'tagFields':['status'],'hideMeta':['id'],'hideCopyButton':!0x0},'Document':{'titleField':'name','hideMeta':['id'],'disableView':!0x0},'EmployeeDocument':{'titleField':_0xd47d77('0x18d'),'avatarField':'image','tagFields':[_0xd47d77('0x260')],'hideMeta':['id','image',_0xd47d77('0x548')],'hideCopyButton':!0x0,'disableView':!0x0,'extraActions':[{'key':_0xd47d77('0x530'),'tip':'Download\x20Document','icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x247')],null),'color':'#2e7d32','method':_0xd47d77('0x1da'),'first':!0x0,'show':function(_0x159a11,_0x4df2ed){return!(!_0x4df2ed||!_0x4df2ed['attachment']);}}]},'PayslipDocument':{'titleField':_0xd47d77('0x18d'),'avatarField':_0xd47d77('0x234'),'tagFields':['status'],'hideMeta':['id',_0xd47d77('0x234'),_0xd47d77('0x548')],'hideCopyButton':!0x0,'disableView':!0x0,'extraActions':[{'key':_0xd47d77('0x530'),'tip':_0xd47d77('0x224'),'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x247')],null),'color':'#2e7d32','method':_0xd47d77('0x1da'),'first':!0x0,'show':function(_0x2b0687,_0x520aa4){var _0x5c25a2=_0xd47d77;return!(!_0x520aa4||!_0x520aa4[_0x5c25a2('0x548')]);}}]},'MyDocument':{'titleField':_0xd47d77('0x1d0'),'tagFields':[_0xd47d77('0x260')],'hideMeta':['id',_0xd47d77('0x548')],'hideCopyButton':!0x0,'disableView':!0x0,'extraActions':[{'key':'download','tip':'Download\x20Document','icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x247')],null),'color':'#2e7d32','method':_0xd47d77('0x1da'),'first':!0x0,'show':function(_0x569959,_0x197a0d){var _0x1d5177=_0xd47d77;return!(!_0x197a0d||!_0x197a0d[_0x1d5177('0x548')]);}}]},'MyCompanyDocument':{'titleField':_0xd47d77('0x4d8'),'hideMeta':['id','attachment'],'hideCopyButton':!0x0,'hideEditButton':!0x0,'disableView':!0x0,'extraActions':[{'key':_0xd47d77('0x530'),'tip':_0xd47d77('0x224'),'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67['DownloadOutlined'],null),'color':_0xd47d77('0x414'),'method':_0xd47d77('0x1da'),'first':!0x0,'show':function(_0x9cc526,_0x354cff){var _0x2c72c2=_0xd47d77;return!(!_0x354cff||!_0x354cff[_0x2c72c2('0x548')]);}}]},'MyPayslip':{'titleField':_0xd47d77('0x1d0'),'tagFields':[_0xd47d77('0x260')],'hideMeta':['id',_0xd47d77('0x548')],'hideCopyButton':!0x0,'hideEditButton':!0x0,'disableView':!0x0,'extraActions':[{'key':_0xd47d77('0x530'),'tip':'Download\x20Payslip','icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x247')],null),'color':_0xd47d77('0x414'),'method':'downloadAttachment','first':!0x0,'show':function(_0x3b544a,_0x52bca5){var _0x253ed4=_0xd47d77;return!(!_0x52bca5||!_0x52bca5[_0x253ed4('0x548')]);}}]},'TrainingSessionWithCourse':{'titleField':_0xd47d77('0x4d8'),'hideMeta':['id'],'hideCopyButton':!0x0,'hideEditButton':!0x0,'extraActions':[{'key':_0xd47d77('0x52'),'tip':_0xd47d77('0x56'),'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x25d')],null),'color':_0xd47d77('0x414'),'method':_0xd47d77('0x3ae'),'first':!0x0}]},'EmployeeTrainingSession':{'titleField':_0xd47d77('0x4e2'),'tagFields':[_0xd47d77('0x260')],'hideMeta':['id',_0xd47d77('0x46d')],'hideCopyButton':!0x0,'disableView':!0x0,'extraActions':[{'key':_0xd47d77('0x99'),'tip':_0xd47d77('0x48d'),'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x541')],null),'color':_0xd47d77('0x414'),'method':_0xd47d77('0x99'),'first':!0x0,'show':function(_0x20af1f,_0x28cd32){var _0x52f77a=_0xd47d77;return _0x28cd32&&_0x52f77a('0x235')===_0x28cd32[_0x52f77a('0x260')];}}]},'SubEmployeeTraining':{'titleField':_0xd47d77('0x18d'),'tagFields':[_0xd47d77('0x260')],'hideMeta':['id','courseId'],'hideCopyButton':!0x0,'disableView':!0x0,'extraActions':[{'key':_0xd47d77('0xd1'),'tip':_0xd47d77('0x196'),'icon':_0x38dddb['default']['createElement'](_0xfbb67[_0xd47d77('0x541')],null),'color':_0xd47d77('0x414'),'method':_0xd47d77('0x99'),'first':!0x0,'show':function(_0x22a183,_0x5e24b9){var _0x4c897b=_0xd47d77;return _0x5e24b9&&'Attended'===_0x5e24b9[_0x4c897b('0x260')];}}]},'CoordinatedTrainingSession':{'titleField':'name','tagFields':['status'],'hideMeta':['id'],'hideCopyButton':!0x0,'disableView':!0x0},'PerformanceReview':{'titleField':'employee','avatarField':_0xd47d77('0x234'),'tagFields':['status'],'tagColors':_0x2b8e93,'hideMeta':['id','image',_0xd47d77('0x294')],'hideCopyButton':!0x0,'extraActions':[{'key':_0xd47d77('0xfe'),'tip':'Create\x20PDF','icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x81')],null),'color':'#c62828','method':_0xd47d77('0x37'),'show':function(_0x4fd4a5,_0x2b974b){var _0x2f7cb8=_0xd47d77;return _0x2b974b&&'Completed'===_0x2b974b[_0x2f7cb8('0x260')]&&(_0x4294f7(_0x2b974b[_0x2f7cb8('0x294')])||_0x4fd4a5['isAdminUser']&&_0x4fd4a5['isAdminUser']());}},{'key':_0xd47d77('0x2c0'),'tip':_0xd47d77('0x1ad'),'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x81')],null),'color':_0xd47d77('0x414'),'method':_0xd47d77('0x1e'),'show':function(_0x3dd39e,_0x31286b){return _0x31286b&&!_0x4294f7(_0x31286b['review_pdf']);}}]},'ReviewFeedback':{'titleField':_0xd47d77('0x18d'),'avatarField':_0xd47d77('0x234'),'tagFields':[_0xd47d77('0x260')],'hideMeta':['id','image'],'hideCopyButton':!0x0},'ReviewTemplate':{'titleField':'name','hideMeta':['id'],'hideCopyButton':!0x0},'EmployeeGoal':{'titleField':_0xd47d77('0x18d'),'avatarField':_0xd47d77('0x234'),'hideMeta':['id',_0xd47d77('0x234')],'hideCopyButton':!0x0,'disableView':!0x0,'progressFields':[_0xd47d77('0x40'),'employee_rating']},'MyPerformanceReview':{'title':function(_0x450cc2){var _0x12b31a=_0xd47d77;return _0x450cc2[_0x12b31a('0x44')]||_0x12b31a('0x526');},'tagFields':[_0xd47d77('0x260')],'tagColors':_0x2b8e93,'hideMeta':['id',_0xd47d77('0x44'),_0xd47d77('0x294')],'hideCopyButton':!0x0,'hideEditButton':!0x0,'extraActions':[{'key':_0xd47d77('0x2c0'),'tip':'View\x20PDF','icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x81')],null),'color':_0xd47d77('0x414'),'method':_0xd47d77('0x1e'),'show':function(_0x269fae,_0x3cb724){var _0x3c17cf=_0xd47d77;return _0x3cb724&&!_0x4294f7(_0x3cb724[_0x3c17cf('0x294')]);}}]},'MyReviewFeedback':{'titleField':_0xd47d77('0x327'),'avatarField':_0xd47d77('0x234'),'tagFields':[_0xd47d77('0x260')],'hideMeta':['id',_0xd47d77('0x234')],'hideCopyButton':!0x0,'hideEditButton':!0x0,'extraActions':[{'key':_0xd47d77('0x9a'),'tip':_0xd47d77('0x4a8'),'icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x102')],null),'color':_0xd47d77('0x414'),'method':'showConfigView','first':!0x0,'show':function(_0xc861f8,_0x3062ef){var _0x6f2f36=_0xd47d77;return _0x3062ef&&'Submitted'!==_0x3062ef[_0x6f2f36('0x260')];}},{'key':_0xd47d77('0x280'),'tip':_0xd47d77('0x4c3'),'icon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x135')],null),'color':'#ed6c02','method':_0xd47d77('0x429'),'first':!0x0,'show':function(_0x17c202,_0x47b36f){var _0x35d04a=_0xd47d77;return _0x47b36f&&_0x35d04a('0x529')===_0x47b36f[_0x35d04a('0x260')];}}]},'SalaryComponentType':{'titleField':'name','hideMeta':['id'],'disableView':!0x0,'exportEndpoint':_0xd47d77('0x2b6'),'exportLabel':_0xd47d77('0xc'),'exportFilePrefix':_0xd47d77('0x267'),'importEndpoint':_0xd47d77('0x4b4')},'SalaryComponent':{'titleField':_0xd47d77('0x4d8'),'hideMeta':['id'],'disableView':!0x0,'exportEndpoint':_0xd47d77('0x2b6'),'exportLabel':_0xd47d77('0xc'),'exportFilePrefix':_0xd47d77('0x267'),'importEndpoint':_0xd47d77('0x4b4')},'EmployeeSalary':{'titleField':_0xd47d77('0x18d'),'avatarField':_0xd47d77('0x234'),'hideMeta':['id',_0xd47d77('0x234')],'hideCopyButton':!0x0,'disableView':!0x0,'exportEndpoint':'payroll_config/export/salary','exportLabel':_0xd47d77('0xc'),'exportFilePrefix':_0xd47d77('0x267'),'importEndpoint':_0xd47d77('0x4b4')},'CompanyLoan':{'titleField':_0xd47d77('0x4d8'),'hideMeta':['id'],'disableView':!0x0},'EmployeeCompanyLoan':{'titleField':'employee','tagFields':[_0xd47d77('0x260')],'hideMeta':['id'],'hideCopyButton':!0x0,'disableView':!0x0},'MyLoan':{'titleField':'loan','tagFields':[_0xd47d77('0x260')],'hideMeta':['id'],'hideEditButton':!0x0,'hideCopyButton':!0x0},'TravelProject':{'titleField':_0xd47d77('0x4d8'),'hideMeta':['id'],'disableView':!0x0},'EmployeeTravelRecord':{'titleField':_0xd47d77('0x18d'),'avatarField':_0xd47d77('0x234'),'hideMeta':['id',_0xd47d77('0x234')],'hideCopyButton':!0x0},'MyTravel':{'titleField':_0xd47d77('0xda'),'hideMeta':['id'],'hideCopyButton':!0x0,'disableView':!0x0},'SubTravel':{'titleField':_0xd47d77('0x18d'),'avatarField':'image','hideMeta':['id',_0xd47d77('0x234')],'hideCopyButton':!0x0},'TravelApproval':{'titleField':_0xd47d77('0x18d'),'avatarField':_0xd47d77('0x234'),'hideMeta':['id',_0xd47d77('0x234')],'hideCopyButton':!0x0,'hideEditButton':!0x0,'statusIcon':_0x38dddb['default'][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x49c')],null)},'User':{'titleField':'username','avatarField':_0xd47d77('0x234'),'hideMeta':[_0xd47d77('0x234'),'id'],'extraActions':[{'key':_0xd47d77('0x535'),'tip':'Change\x20Password','icon':_0x38dddb[_0xd47d77('0x4c1')][_0xd47d77('0x33e')](_0xfbb67[_0xd47d77('0x226')],null),'color':'#1565c0','method':'showPasswordChangeForm','show':function(_0x11ea13){var _0xff7cbb=_0xd47d77;return!(!_0x11ea13[_0xff7cbb('0x4ac')]||!_0x11ea13[_0xff7cbb('0x4ac')](_0xff7cbb('0xdc')));}}]},'UserRole':{'hideMeta':['id']},'UserInvitation':{'titleField':_0xd47d77('0x24b'),'tagFields':[_0xd47d77('0x32b')],'hideMeta':['id']}};function _0x298367(_0x165321,_0x277dde){var _0x23d35c=_0xd47d77,_0x30b663=_0x277dde[_0x165321['dataIndex']];if(_0x23d35c('0x568')==typeof _0x165321['render'])try{var _0x34d631=_0x165321['render'](_0x30b663,_0x277dde);return null==_0x34d631||''===_0x34d631?_0x30b663:_0x34d631;}catch(_0x1b1aef){return _0x30b663;}return _0x30b663;}function _0x4294f7(_0x4ac123){return null==_0x4ac123||''===_0x4ac123||'-'===_0x4ac123;}},{'./ExpenseDialog':0x6,'./theme':0x19,'@ant-design/icons':'@ant-design/icons','antd':_0x557405('0x29c'),'react':_0x557405('0x516')}],0x11:[function(_0x1b747d,_0x44d715,_0x33fa52){var _0x4593ae=_0x557405;'use strict';function _0x16c63c(_0x466530){var _0x5280c9=_0x4ba4;return(_0x16c63c='function'==typeof Symbol&&_0x5280c9('0x263')==typeof Symbol[_0x5280c9('0x412')]?function(_0x2023b2){return typeof _0x2023b2;}:function(_0x392535){var _0x1397ea=_0x5280c9;return _0x392535&&'function'==typeof Symbol&&_0x392535[_0x1397ea('0x151')]===Symbol&&_0x392535!==Symbol[_0x1397ea('0x501')]?'symbol':typeof _0x392535;})(_0x466530);}Object[_0x4593ae('0x28b')](_0x33fa52,_0x4593ae('0x4bc'),{'value':!0x0}),_0x33fa52[_0x4593ae('0x4c1')]=function(_0x14915d){var _0xa57065=_0x4593ae,_0x547d58=_0x14915d[_0xa57065('0x2dd')],_0x2eb691=_0x14915d[_0xa57065('0x1a5')],_0x53e38f=_0x14915d[_0xa57065('0x18b')],_0x27f83f=_0x14915d[_0xa57065('0x38c')],_0x3fb3ba=_0x14915d[_0xa57065('0x19d')],_0x32a8d3=_0x14915d[_0xa57065('0x4f8')],_0x497d7e=_0x14915d['onClose'],_0x52e5d8=(0x0,_0x179649[_0xa57065('0xee')])(null);return(0x0,_0x179649[_0xa57065('0x42a')])(function(){var _0x4a81de=_0xa57065;if(_0x547d58){var _0x515743=_0x52e5d8[_0x4a81de('0x5d')];if(_0x515743){_0x32a8d3['baseUrl']&&(window['BASE_URL']=window['BASE_URL']||_0x32a8d3[_0x4a81de('0x439')]),_0x32a8d3[_0x4a81de('0x254')]&&(window[_0x4a81de('0x573')]=window['CLIENT_BASE_URL']||_0x32a8d3[_0x4a81de('0x254')]),!window[_0x4a81de('0x439')]&&_0x32a8d3['clientBaseUrl']&&(window[_0x4a81de('0x439')]=''[_0x4a81de('0x54e')](_0x32a8d3[_0x4a81de('0x254')],'service.php'));var _0x208c35,_0x4d6461=window[_0x4a81de('0x53f')],_0x7cd1f=window[_0x4a81de('0x2b1')],_0xf9c237=!0x1,_0x5b79f3=_0x53e38f||_0x4a81de('0x380'),_0x428d08=_0x5b79f3['replace'](_0x4a81de('0x3dc'),_0x4a81de('0x34f')),_0x48c3da=window['BASE_URL']||_0x32a8d3['baseUrl']||'',_0x3f7543=_0x48c3da['replace'](_0x4a81de('0x1d3'),_0x4a81de('0x62')),_0x2c8602=_0x2eb691?''[_0x4a81de('0x54e')](_0x3f7543)[_0x4a81de('0x54e')](_0x2eb691):null,_0x5cd968=(_0x3fb3ba||[])['map'](function(_0x5ab769){var _0x3506c3=_0x4a81de;return/^https?:\/\//[_0x3506c3('0x2d4')](_0x5ab769)?_0x5ab769:''['concat'](_0x48c3da)[_0x3506c3('0x54e')](_0x5ab769);});return(_0x208c35=_0x5cd968,_0x208c35[_0x4a81de('0x26c')](function(_0x4a74a1,_0x5c5d73){return _0x4a74a1['then'](function(){return _0x21987f(_0x5c5d73);});},Promise[_0x4a81de('0x6d')]()))[_0x4a81de('0x273')](function(){return _0x2c8602?_0x21987f(_0x2c8602):Promise['resolve']();})[_0x4a81de('0x273')](function(){var _0x544593=_0x4a81de,_0x54cc27;_0xf9c237||_0x544593('0x568')==typeof(_0x54cc27=window[_0x5b79f3])&&_0x54cc27(_0x515743,{'documentUrl':_0x547d58,'restApiBase':_0x32a8d3['restApiBase'],'token':_0x32a8d3[_0x544593('0x1eb')],'colorMode':window[_0x544593('0x35d')]||_0x544593('0x20c'),'onClose':_0x497d7e});})[_0x4a81de('0x3d9')](function(){}),function(){var _0x1f47c6=_0x4a81de;_0xf9c237=!0x0;var _0x1e35dc=window[_0x428d08];if(_0x1f47c6('0x568')==typeof _0x1e35dc)try{_0x1e35dc(_0x515743);}catch(_0x2e7337){}window[_0x1f47c6('0x53f')]=_0x4d6461,window[_0x1f47c6('0x2b1')]=_0x7cd1f;};}}},[_0x547d58]),_0x547d58?_0x179649[_0xa57065('0x4c1')][_0xa57065('0x33e')](_0x44a738['Modal'],{'open':!0x0,'width':'92%','style':{'top':0x10,'maxWidth':0x500},'footer':null,'title':_0x27f83f||'Document','onCancel':_0x497d7e,'styles':{'body':{'padding':0x10,'minHeight':_0xa57065('0x397'),'maxHeight':_0xa57065('0x3ef'),'overflowY':_0xa57065('0x2d1')}},'destroyOnClose':!0x0},_0x179649[_0xa57065('0x4c1')]['createElement'](_0xa57065('0x2e'),{'ref':_0x52e5d8})):null;};var _0x179649=function(_0x339d9d){var _0x1cabce=_0x4593ae;if(_0x339d9d&&_0x339d9d[_0x1cabce('0x4bc')])return _0x339d9d;if(null===_0x339d9d||_0x1cabce('0x19b')!==_0x16c63c(_0x339d9d)&&_0x1cabce('0x568')!=typeof _0x339d9d)return{'default':_0x339d9d};var _0x1c39f4=_0x4dcd02();if(_0x1c39f4&&_0x1c39f4['has'](_0x339d9d))return _0x1c39f4[_0x1cabce('0xeb')](_0x339d9d);var _0x1e013d={},_0x13c4d5=Object['defineProperty']&&Object[_0x1cabce('0x2da')];for(var _0x1990dd in _0x339d9d)if(Object[_0x1cabce('0x501')][_0x1cabce('0x205')][_0x1cabce('0x210')](_0x339d9d,_0x1990dd)){var _0x4f6bd4=_0x13c4d5?Object[_0x1cabce('0x2da')](_0x339d9d,_0x1990dd):null;_0x4f6bd4&&(_0x4f6bd4[_0x1cabce('0xeb')]||_0x4f6bd4['set'])?Object['defineProperty'](_0x1e013d,_0x1990dd,_0x4f6bd4):_0x1e013d[_0x1990dd]=_0x339d9d[_0x1990dd];}return _0x1e013d[_0x1cabce('0x4c1')]=_0x339d9d,_0x1c39f4&&_0x1c39f4[_0x1cabce('0x302')](_0x339d9d,_0x1e013d),_0x1e013d;}(_0x1b747d('react')),_0x44a738=_0x1b747d(_0x4593ae('0x29c'));function _0x4dcd02(){if('function'!=typeof WeakMap)return null;var _0x3556ca=new WeakMap();return _0x4dcd02=function(){return _0x3556ca;},_0x3556ca;}var _0x5322da=String(Date[_0x4593ae('0x152')]()),_0xb1957f={};function _0x21987f(_0x27b820){return _0xb1957f[_0x27b820]||(_0xb1957f[_0x27b820]=new Promise(function(_0x4608e8,_0x1d2f75){var _0x574d8c=_0x4ba4,_0x413254=document[_0x574d8c('0x33e')](_0x574d8c('0x209'));_0x413254[_0x574d8c('0x50f')]=''[_0x574d8c('0x54e')](_0x27b820)['concat'](_0x27b820[_0x574d8c('0x570')]('?')>=0x0?'&':'?','cb=')[_0x574d8c('0x54e')](_0x5322da),_0x413254[_0x574d8c('0x50c')]=!0x1,_0x413254[_0x574d8c('0x288')]=function(){return _0x4608e8();},_0x413254[_0x574d8c('0x2ec')]=function(){var _0x52c33e=_0x574d8c;return _0x1d2f75(new Error(_0x52c33e('0x1bc')['concat'](_0x27b820)));},document[_0x574d8c('0x18e')]['appendChild'](_0x413254);})),_0xb1957f[_0x27b820];}},{'antd':'antd','react':_0x557405('0x516')}],0x12:[function(_0x25b60d,_0x1a4d07,_0x3e9c90){var _0x1f2255=_0x557405;'use strict';Object['defineProperty'](_0x3e9c90,_0x1f2255('0x4bc'),{'value':!0x0}),_0x3e9c90[_0x1f2255('0x4c1')]=function(_0x25f178){var _0x5b7614=_0x1f2255,_0x3799ae=_0x25f178[_0x5b7614('0x4e')],_0x2404d4=_0x25f178['viewProps'],_0x21b393=_0x3799ae&&_0x5b7614('0x3')!=typeof window?window[_0x3799ae]:null;if(!_0x21b393)return _0x95a1fc[_0x5b7614('0x4c1')][_0x5b7614('0x33e')](_0x5b7614('0x2e'),{'style':{'padding':0x20}},_0x95a1fc[_0x5b7614('0x4c1')][_0x5b7614('0x33e')](_0x53b3a0[_0x5b7614('0x269')],{'description':_0x5b7614('0x3f8')}));var _0x5c7a90='undefined'!=typeof window?window['modJs']:null,_0x1dbdf4={'apiClient':_0x5c7a90&&_0x5c7a90[_0x5b7614('0x1f4')],'ice':_0x5c7a90,'modJs':_0x5c7a90};return _0x2404d4&&_0x5b7614('0x19b')===_0x131fea(_0x2404d4)&&Object['keys'](_0x2404d4)['forEach'](function(_0x3b8b65){var _0x35ce5d=_0x2404d4[_0x3b8b65];_0x1dbdf4[_0x3b8b65]='modJs'===_0x35ce5d?_0x5c7a90:'undefined'!=typeof window?window[_0x35ce5d]:void 0x0;}),_0x95a1fc[_0x5b7614('0x4c1')][_0x5b7614('0x33e')](_0x21b393,_0x1dbdf4);};var _0x2dc9e2,_0x95a1fc=(_0x2dc9e2=_0x25b60d('react'))&&_0x2dc9e2[_0x1f2255('0x4bc')]?_0x2dc9e2:{'default':_0x2dc9e2},_0x53b3a0=_0x25b60d(_0x1f2255('0x29c'));function _0x131fea(_0x46f1d8){var _0x44ed86=_0x1f2255;return(_0x131fea=_0x44ed86('0x568')==typeof Symbol&&_0x44ed86('0x263')==typeof Symbol[_0x44ed86('0x412')]?function(_0xb2db16){return typeof _0xb2db16;}:function(_0x1abfd2){var _0x3c26a0=_0x44ed86;return _0x1abfd2&&_0x3c26a0('0x568')==typeof Symbol&&_0x1abfd2[_0x3c26a0('0x151')]===Symbol&&_0x1abfd2!==Symbol[_0x3c26a0('0x501')]?'symbol':typeof _0x1abfd2;})(_0x46f1d8);}},{'antd':'antd','react':_0x557405('0x516')}],0x13:[function(_0x410fba,_0x357d16,_0x32a8fa){var _0x153f20=_0x557405;'use strict';function _0x5d6f9(_0x3ddeb9){var _0x21edd2=_0x4ba4;return(_0x5d6f9='function'==typeof Symbol&&_0x21edd2('0x263')==typeof Symbol[_0x21edd2('0x412')]?function(_0x345ffc){return typeof _0x345ffc;}:function(_0x18f25f){var _0x42af51=_0x21edd2;return _0x18f25f&&_0x42af51('0x568')==typeof Symbol&&_0x18f25f[_0x42af51('0x151')]===Symbol&&_0x18f25f!==Symbol[_0x42af51('0x501')]?_0x42af51('0x263'):typeof _0x18f25f;})(_0x3ddeb9);}Object[_0x153f20('0x28b')](_0x32a8fa,_0x153f20('0x4bc'),{'value':!0x0}),_0x32a8fa[_0x153f20('0x4c1')]=function(_0x3c182f){var _0x30e3a7=_0x153f20,_0x1e3f44=_0x3c182f[_0x30e3a7('0x23')],_0x230b4e=_0x3c182f[_0x30e3a7('0x4d8')],_0x15fab5=_0x3c182f[_0x30e3a7('0x4f8')],_0x27467e=_0x377810((0x0,_0x12a976[_0x30e3a7('0x51c')])(null),0x2),_0x372ed2=_0x27467e[0x0],_0x107770=_0x27467e[0x1],_0x9ab53f=_0x377810((0x0,_0x12a976[_0x30e3a7('0x51c')])(!0x1),0x2),_0x58de30=_0x9ab53f[0x0],_0x54b0e7=_0x9ab53f[0x1],_0x5a4cb5=_0x377810((0x0,_0x12a976[_0x30e3a7('0x51c')])(!0x0),0x2),_0x5eea8b=_0x5a4cb5[0x0],_0x583f83=_0x5a4cb5[0x1],_0x1464f0=_0x377810((0x0,_0x12a976[_0x30e3a7('0x51c')])(null),0x2),_0x37186b=_0x1464f0[0x0],_0x3fcef2=_0x1464f0[0x1],_0x37afa7=_0x377810((0x0,_0x12a976[_0x30e3a7('0x51c')])(!0x1),0x2),_0x1d3d49=_0x37afa7[0x0],_0x412ab0=_0x37afa7[0x1],_0x5dfa48=(0x0,_0x12a976['useRef'])({}),_0xceae48=_0x154c72['theme'][_0x30e3a7('0x418')]()[_0x30e3a7('0x1eb')],_0x2b89ec=_0xceae48['colorBgContainer']===_0x52e8a0['MUI_DARK'][_0x30e3a7('0x509')],_0x21e1a5=(0x0,_0x12a976[_0x30e3a7('0xee')])(!0x0);(0x0,_0x12a976['useEffect'])(function(){var _0x135cf8=_0x30e3a7;if(_0x21e1a5['current'])_0x21e1a5[_0x135cf8('0x5d')]=!0x1;else{if(_0x372ed2&&_0x372ed2[_0x135cf8('0x370')]){window[_0x135cf8('0x35d')]=_0x2b89ec?'dark':'light';var _0x3468a4=window[_0x135cf8('0x53f')]||{};(_0x372ed2[_0x135cf8('0x370')][_0x135cf8('0x22')]||[])[_0x135cf8('0x35e')](function(_0x171492){var _0x39cf6e=_0x135cf8,_0x4cba72=_0x39cf6e('0x39c')===_0x171492[_0x39cf6e('0x355')];if(!_0x171492[_0x39cf6e('0x355')]||_0x4cba72){var _0xcd0b02=_0x3468a4[_0x171492['key']];if(_0xcd0b02&&_0x39cf6e('0x568')==typeof _0xcd0b02[_0x39cf6e('0x8e')]){if(_0x4cba72?!(!_0xcd0b02[_0x39cf6e('0xe0')]||!_0xcd0b02[_0x39cf6e('0xe0')][_0x39cf6e('0x4e5')]):_0x5dfa48['current'][_0x171492['key']])try{_0xcd0b02['tableInitialized']=!0x1,_0xcd0b02['initTable']();}catch(_0xec5651){}}}});}}},[_0x2b89ec]),(0x0,_0x12a976[_0x30e3a7('0x42a')])(function(){var _0x26ebb4=_0x30e3a7,_0xde91fc=!0x0;return _0x107770(null),_0x54b0e7(!0x1),_0x583f83(!0x0),_0x412ab0(!0x1),_0x5dfa48[_0x26ebb4('0x5d')]={},fetch(''[_0x26ebb4('0x54e')](_0x15fab5[_0x26ebb4('0x123')],_0x26ebb4('0x436'))[_0x26ebb4('0x54e')](encodeURIComponent(_0x1e3f44),_0x26ebb4('0x41a'))[_0x26ebb4('0x54e')](encodeURIComponent(_0x230b4e)),{'headers':{'Authorization':_0x26ebb4('0x52e')['concat'](_0x15fab5[_0x26ebb4('0x1eb')])},'credentials':_0x26ebb4('0x1a4')})[_0x26ebb4('0x273')](function(_0x5ac408){return _0x5ac408['json']();})[_0x26ebb4('0x273')](function(_0x2364a1){var _0x21248a=_0x26ebb4;_0xde91fc&&(_0x2364a1&&_0x2364a1[_0x21248a('0x370')]?_0x107770(_0x2364a1):_0x54b0e7(!0x0));})['catch'](function(){_0xde91fc&&_0x54b0e7(!0x0);}),function(){_0xde91fc=!0x1;};},[_0x1e3f44,_0x230b4e,_0x15fab5]);var _0x13697d=function(_0x571cfc){var _0x53e8fd=_0x30e3a7,_0x2cc8dc=(_0x372ed2&&_0x372ed2[_0x53e8fd('0x370')]&&_0x372ed2[_0x53e8fd('0x370')][_0x53e8fd('0x22')]?_0x372ed2[_0x53e8fd('0x370')][_0x53e8fd('0x22')]:[])[_0x53e8fd('0xe8')](function(_0xf99b){var _0x3a2ac5=_0x53e8fd;return _0xf99b[_0x3a2ac5('0x322')]===_0x571cfc;});if(!_0x2cc8dc||!_0x2cc8dc['component']){var _0x3d6df6=(window[_0x53e8fd('0x53f')]||{})[_0x571cfc];if(_0x3d6df6&&(window[_0x53e8fd('0x2b1')]=_0x3d6df6,!_0x5dfa48[_0x53e8fd('0x5d')][_0x571cfc])){_0x5dfa48[_0x53e8fd('0x5d')][_0x571cfc]=!0x0;try{_0x3d6df6[_0x53e8fd('0xeb')]([]),_0x3d6df6['isV2']||(null!=_0x3d6df6[_0x53e8fd('0x3c')]?_0x3d6df6[_0x53e8fd('0x3b5')](null,_0x3d6df6[_0x53e8fd('0x366')]):_0x3d6df6[_0x53e8fd('0x3b5')]());}catch(_0x5d86f2){}}}};if((0x0,_0x12a976[_0x30e3a7('0x42a')])(function(){var _0xa89e4d=_0x30e3a7;if(_0x372ed2&&_0x372ed2[_0xa89e4d('0x370')]){var _0x35f1c1=!0x1,_0x51ec0c=_0x372ed2[_0xa89e4d('0x137')]||{};return window[_0xa89e4d('0x573')]=_0x51ec0c[_0xa89e4d('0x39f')],window[_0xa89e4d('0x301')]=_0x51ec0c['webBaseUrl'],window['baseUrl']=_0x51ec0c[_0xa89e4d('0x439')],function(_0x40ca38){var _0x422059=_0xa89e4d;return _0x40ca38[_0x422059('0x26c')](function(_0x358b34,_0x1c993f){return _0x358b34['then'](function(){return function(_0x474a24){if(_0xb188d0[_0x474a24])return _0xb188d0[_0x474a24];var _0x3a20a6=new Promise(function(_0x434ba5,_0x4d317b){var _0x401ecc=_0x4ba4,_0x108c49=document[_0x401ecc('0x33e')]('script');_0x108c49[_0x401ecc('0x50f')]=_0x474a24,_0x108c49[_0x401ecc('0x50c')]=!0x1,_0x108c49[_0x401ecc('0x288')]=function(){return _0x434ba5();},_0x108c49[_0x401ecc('0x2ec')]=function(){var _0x479cfd=_0x401ecc;return _0x4d317b(new Error(_0x479cfd('0x1bc')[_0x479cfd('0x54e')](_0x474a24)));},document[_0x401ecc('0x18e')][_0x401ecc('0xb8')](_0x108c49);});return _0xb188d0[_0x474a24]=_0x3a20a6,_0x3a20a6;}(_0x1c993f);});},Promise[_0x422059('0x6d')]());}((_0x372ed2[_0xa89e4d('0x370')][_0xa89e4d('0x216')]||[])[_0xa89e4d('0x1dd')](function(_0x46e9ee){var _0x3e1acf=_0xa89e4d;return/^https?:\/\//['test'](_0x46e9ee)||_0x46e9ee[_0x3e1acf('0x246')]('//')?_0x46e9ee:(_0x51ec0c['webBaseUrl']||'')+_0x46e9ee;}))[_0xa89e4d('0x273')](function(){var _0x164238=_0xa89e4d;if(!_0x35f1c1){var _0x3d710f=window[_0x372ed2['config'][_0x164238('0x2ff')]];if(_0x164238('0x568')==typeof _0x3d710f){var _0x2042e8=!(!window[_0x164238('0xad')]||!window['iceProModules'][_0x372ed2[_0x164238('0x370')][_0x164238('0x2ff')]]),_0x5417dd=_0x372ed2['license'];if(_0x2042e8&&_0x5417dd&&(!_0x5417dd['has_license']||_0x5417dd[_0x164238('0x495')]))return _0x412ab0(!0x0),void _0x583f83(!0x1);_0x3d710f(_0x372ed2[_0x164238('0x9b')]||{});var _0x4f41c7=window[_0x164238('0x53f')]||{};Object['keys'](_0x4f41c7)[_0x164238('0x35e')](function(_0x216ab6){var _0x3171ee=_0x164238,_0x1d0a2f=_0x4f41c7[_0x216ab6];try{_0x1d0a2f[_0x3171ee('0x4')]=_0x1e3f44,_0x1d0a2f[_0x3171ee('0x420')]=_0x230b4e,_0x1d0a2f[_0x3171ee('0x42')](_0x51ec0c['translations']||{}),_0x1d0a2f['setPermissions'](_0x51ec0c[_0x3171ee('0x50e')]||{}),_0x1d0a2f[_0x3171ee('0x38a')](_0x51ec0c['fieldTemplates']||{}),_0x1d0a2f[_0x3171ee('0x92')](_0x51ec0c[_0x3171ee('0x344')]||{}),_0x1d0a2f[_0x3171ee('0x35a')](_0x51ec0c['customTemplates']||{}),_0x1d0a2f['setUser'](_0x51ec0c['user']||{}),_0x1d0a2f[_0x3171ee('0x350')](),_0x1d0a2f[_0x3171ee('0x2bd')](_0x51ec0c[_0x3171ee('0x439')]),_0x1d0a2f[_0x3171ee('0x314')](_0x51ec0c[_0x3171ee('0x39f')]),_0x1d0a2f['setCurrentProfile'](null),_0x1d0a2f['setInstanceId'](_0x51ec0c[_0x3171ee('0x292')]||''),_0x1d0a2f['setApiUrl'](_0x51ec0c[_0x3171ee('0x123')]),_0x1d0a2f[_0x3171ee('0x3a0')](_0x15fab5[_0x3171ee('0x1eb')]);}catch(_0x4ba881){}}),_0x583f83(!0x1);var _0x110d7b=_0x372ed2['config'][_0x164238('0x22')][0x0][_0x164238('0x322')];try{var _0x4a3e7e=window['__iceShellStartTab'];_0x4a3e7e&&_0x372ed2[_0x164238('0x370')][_0x164238('0x22')]['some'](function(_0x77f605){var _0x252101=_0x164238;return _0x77f605[_0x252101('0x322')]===_0x4a3e7e;})&&(_0x110d7b=_0x4a3e7e),window['__iceShellStartTab']=null;}catch(_0x289146){}_0x3fcef2(_0x110d7b),_0x13697d(_0x110d7b),window[_0x164238('0x1b0')]=function(_0x2e1175,_0x1515cf){var _0xf4c835=_0x164238,_0x2f5f23=(window['modJsList']||{})[_0x2e1175];_0x2f5f23&&_0x1515cf&&_0xf4c835('0x568')==typeof _0x2f5f23['setFilter']&&(_0x2f5f23[_0xf4c835('0x71')](_0x1515cf),_0x2f5f23[_0xf4c835('0x17d')]=!0x0),_0x3fcef2(_0x2e1175),_0x13697d(_0x2e1175);try{_0x2f5f23&&_0x2f5f23['tableContainer']&&_0x2f5f23[_0xf4c835('0xe4')][_0xf4c835('0x5d')]&&(_0x1515cf&&_0x2f5f23['tableContainer'][_0xf4c835('0x5d')][_0xf4c835('0x50a')](_0x1515cf),_0x2f5f23[_0xf4c835('0xe4')][_0xf4c835('0x5d')][_0xf4c835('0x4dd')]());}catch(_0x50c6){}try{window[_0xf4c835('0x8')]({'top':0x0});}catch(_0x1aaaa5){}};}else _0x54b0e7(!0x0);}})[_0xa89e4d('0x3d9')](function(){_0x35f1c1||_0x54b0e7(!0x0);}),function(){var _0x56a362=_0xa89e4d;_0x35f1c1=!0x0;try{_0x372ed2[_0x56a362('0x370')][_0x56a362('0x22')][_0x56a362('0x35e')](function(_0x471614){var _0x2a40dc=_0x56a362;return(_0x471614[_0x2a40dc('0x2db')]||[])[_0x2a40dc('0x35e')](function(_0x538565){var _0x5d9318=_0x2a40dc,_0x22dc51=document[_0x5d9318('0x549')](_0x538565);if(_0x22dc51)try{_0x142a86[_0x5d9318('0x4c1')]['unmountComponentAtNode'](_0x22dc51);}catch(_0x417d63){}});});}catch(_0xf1cedc){}delete window[_0x56a362('0x1b0')],window[_0x56a362('0x2b1')]=void 0x0,window[_0x56a362('0x53f')]=void 0x0;};}},[_0x372ed2]),_0x58de30)return _0x12a976[_0x30e3a7('0x4c1')][_0x30e3a7('0x33e')](_0x30e3a7('0x2e'),{'style':{'padding':0x20}},_0x12a976[_0x30e3a7('0x4c1')][_0x30e3a7('0x33e')](_0x154c72[_0x30e3a7('0x269')],{'description':_0x30e3a7('0x130')}));if(!_0x372ed2)return _0x12a976[_0x30e3a7('0x4c1')][_0x30e3a7('0x33e')](_0x30e3a7('0x2e'),{'style':{'display':_0x30e3a7('0x3f6'),'justifyContent':_0x30e3a7('0x3c5'),'padding':0x50}},_0x12a976[_0x30e3a7('0x4c1')][_0x30e3a7('0x33e')](_0x154c72['Spin'],{'size':_0x30e3a7('0x54b')}));if(_0x1d3d49)return _0x12a976['default'][_0x30e3a7('0x33e')](_0x44b7a6[_0x30e3a7('0x4c1')],{'license':_0x372ed2[_0x30e3a7('0x84')]});var _0xc3ded6=_0x372ed2[_0x30e3a7('0x370')]['tabs'][_0x30e3a7('0x8f')](function(_0xc16e43){var _0x5aea7f=_0x30e3a7;return'review'===_0xc16e43[_0x5aea7f('0x23')];}),_0x3d05d6=_0xc3ded6[_0x30e3a7('0x1f8')]?_0xc3ded6[0x0][_0x30e3a7('0x322')]:null,_0x4ede97=_0xc3ded6[_0x30e3a7('0x1f8')]&&_0xc3ded6[0x0][_0x30e3a7('0x290')]||'',_0x518a25=function(_0x398489){var _0x118746=_0x30e3a7,_0xb42ba0=_0x118746('0x528')==typeof _0x398489['count']&&_0x398489['count']>0x0?_0x12a976[_0x118746('0x4c1')][_0x118746('0x33e')](_0x154c72[_0x118746('0x4ff')],{'count':_0x398489[_0x118746('0x7b')],'size':_0x118746('0x1de'),'overflowCount':0x63,'style':{'marginLeft':0x6}}):null,_0x363890=_0x12a976[_0x118746('0x4c1')][_0x118746('0x33e')](_0x118746('0x1bd'),null,_0x398489[_0x118746('0x39')],_0xb42ba0);return _0x398489['key']&&_0x398489[_0x118746('0x322')]===_0x3d05d6?_0x12a976['default'][_0x118746('0x33e')](_0x118746('0x1bd'),{'style':{'display':_0x118746('0x3dd'),'alignItems':_0x118746('0x3c5')}},_0x12a976[_0x118746('0x4c1')]['createElement'](_0x118746('0x1bd'),{'style':{'display':'inline-block','width':0x1,'height':0x12,'background':_0xceae48[_0x118746('0x4e4')],'marginRight':0xe}}),_0x4ede97&&_0x12a976[_0x118746('0x4c1')][_0x118746('0x33e')](_0x118746('0x1bd'),{'style':{'fontSize':0xb,'textTransform':_0x118746('0x442'),'letterSpacing':0.6,'color':_0xceae48['colorTextTertiary'],'marginRight':0xa,'fontWeight':0x258}},_0x4ede97),_0x363890):_0x363890;},_0x455bbb=_0x372ed2[_0x30e3a7('0x370')][_0x30e3a7('0x22')][_0x30e3a7('0x1dd')](function(_0x530163){var _0x1d5a8e=_0x30e3a7;if(_0x530163[_0x1d5a8e('0x355')]){var _0x61177b=_0x1513cc[_0x530163[_0x1d5a8e('0x355')]];return{'key':_0x530163[_0x1d5a8e('0x322')],'label':_0x518a25(_0x530163),'children':_0x61177b&&!_0x5eea8b?_0x12a976['default']['createElement'](_0x61177b,{'shellConfig':_0x15fab5,'tabKey':_0x530163[_0x1d5a8e('0x322')],'entity':_0x530163[_0x1d5a8e('0x28e')],'cardConfig':_0x530163['card'],'viewGlobal':_0x530163['viewGlobal'],'viewProps':_0x530163[_0x1d5a8e('0x40c')]}):null};}return{'key':_0x530163[_0x1d5a8e('0x322')],'label':_0x518a25(_0x530163),'forceRender':!0x0,'children':_0x12a976[_0x1d5a8e('0x4c1')][_0x1d5a8e('0x33e')](_0x1d5a8e('0x2e'),{'style':_0xf88000({'background':_0xceae48[_0x1d5a8e('0x35')],'color':_0xceae48[_0x1d5a8e('0x190')],'borderRadius':0xa,'padding':0xc,'minHeight':0x140},_0x530163[_0x1d5a8e('0x4df')]?{'overflowX':_0x1d5a8e('0x2d1')}:{})},(_0x530163['ids']||[])[_0x1d5a8e('0x1dd')](function(_0x4f5d9d){var _0x1ecf6e=_0x1d5a8e;return _0x12a976[_0x1ecf6e('0x4c1')][_0x1ecf6e('0x33e')](_0x1ecf6e('0x2e'),{'id':_0x4f5d9d,'key':_0x4f5d9d,'className':_0x1ecf6e('0x148')});}))};}),_0x1a15bc=_0x455bbb[_0x30e3a7('0x1f8')]<=0x1;return _0x12a976[_0x30e3a7('0x4c1')][_0x30e3a7('0x33e')]('div',{'style':{'padding':0x18,'position':'relative'}},_0x5eea8b&&_0x12a976[_0x30e3a7('0x4c1')][_0x30e3a7('0x33e')](_0x30e3a7('0x2e'),{'style':{'position':'absolute','inset':0x0,'display':_0x30e3a7('0x3f6'),'alignItems':_0x30e3a7('0x3c5'),'justifyContent':_0x30e3a7('0x3c5'),'zIndex':0x2,'background':_0xceae48[_0x30e3a7('0xc6')],'opacity':0.6}},_0x12a976[_0x30e3a7('0x4c1')][_0x30e3a7('0x33e')](_0x154c72[_0x30e3a7('0xe5')],{'size':'large'})),_0x12a976['default'][_0x30e3a7('0x33e')]('div',{'style':{'background':_0xceae48[_0x30e3a7('0x35')],'borderRadius':0xe,'boxShadow':_0x52e8a0['MUI_SHADOW'],'padding':_0x1a15bc?0x14:_0x30e3a7('0x525')}},_0x12a976['default'][_0x30e3a7('0x33e')](_0x154c72[_0x30e3a7('0x297')],{'activeKey':_0x37186b||_0x455bbb[0x0]&&_0x455bbb[0x0][_0x30e3a7('0x322')],'onChange':function(_0x52ba89){_0x3fcef2(_0x52ba89),_0x13697d(_0x52ba89);},'items':_0x455bbb,'tabBarStyle':_0x1a15bc?{'display':_0x30e3a7('0x1ec')}:{'marginBottom':0x10}})));};var _0x12a976=function(_0x3a1f84){var _0x1e15f8=_0x153f20;if(_0x3a1f84&&_0x3a1f84[_0x1e15f8('0x4bc')])return _0x3a1f84;if(null===_0x3a1f84||'object'!==_0x5d6f9(_0x3a1f84)&&'function'!=typeof _0x3a1f84)return{'default':_0x3a1f84};var _0xc31172=_0x5ae9d8();if(_0xc31172&&_0xc31172['has'](_0x3a1f84))return _0xc31172['get'](_0x3a1f84);var _0x3ae107={},_0x24ed3b=Object['defineProperty']&&Object[_0x1e15f8('0x2da')];for(var _0x3da3f7 in _0x3a1f84)if(Object[_0x1e15f8('0x501')][_0x1e15f8('0x205')][_0x1e15f8('0x210')](_0x3a1f84,_0x3da3f7)){var _0x176d80=_0x24ed3b?Object[_0x1e15f8('0x2da')](_0x3a1f84,_0x3da3f7):null;_0x176d80&&(_0x176d80[_0x1e15f8('0xeb')]||_0x176d80[_0x1e15f8('0x302')])?Object['defineProperty'](_0x3ae107,_0x3da3f7,_0x176d80):_0x3ae107[_0x3da3f7]=_0x3a1f84[_0x3da3f7];}return _0x3ae107[_0x1e15f8('0x4c1')]=_0x3a1f84,_0xc31172&&_0xc31172[_0x1e15f8('0x302')](_0x3a1f84,_0x3ae107),_0x3ae107;}(_0x410fba(_0x153f20('0x516'))),_0x142a86=_0x3efc1f(_0x410fba(_0x153f20('0x265'))),_0x154c72=_0x410fba('antd'),_0x52e8a0=_0x410fba('./theme'),_0x8a1742=_0x3efc1f(_0x410fba('./OrgChart')),_0x41eb82=_0x3efc1f(_0x410fba(_0x153f20('0x51'))),_0x445493=_0x3efc1f(_0x410fba(_0x153f20('0x446'))),_0x4fd3e5=_0x3efc1f(_0x410fba(_0x153f20('0xf8'))),_0x42eb95=_0x3efc1f(_0x410fba('./MobileApp')),_0x56b4ad=_0x3efc1f(_0x410fba(_0x153f20('0x4f6'))),_0x97a0ab=_0x3efc1f(_0x410fba(_0x153f20('0x47c'))),_0x3906d8=_0x3efc1f(_0x410fba('./LeaveEntitlement')),_0x5808d1=_0x3efc1f(_0x410fba(_0x153f20('0x57'))),_0x1338dc=_0x3efc1f(_0x410fba('./NativeAdapterView')),_0x44b7a6=_0x3efc1f(_0x410fba(_0x153f20('0x411')));function _0x3efc1f(_0x20d32f){var _0x4a172c=_0x153f20;return _0x20d32f&&_0x20d32f[_0x4a172c('0x4bc')]?_0x20d32f:{'default':_0x20d32f};}function _0x5ae9d8(){var _0x42cd34=_0x153f20;if(_0x42cd34('0x568')!=typeof WeakMap)return null;var _0x749e5a=new WeakMap();return _0x5ae9d8=function(){return _0x749e5a;},_0x749e5a;}function _0x4672cd(_0x4c2d09,_0x419a10){var _0x4c6e53=_0x153f20,_0x2c3e56=Object[_0x4c6e53('0x34d')](_0x4c2d09);if(Object[_0x4c6e53('0x68')]){var _0x4715d8=Object[_0x4c6e53('0x68')](_0x4c2d09);_0x419a10&&(_0x4715d8=_0x4715d8[_0x4c6e53('0x8f')](function(_0x269ed7){return Object['getOwnPropertyDescriptor'](_0x4c2d09,_0x269ed7)['enumerable'];})),_0x2c3e56[_0x4c6e53('0x193')][_0x4c6e53('0x154')](_0x2c3e56,_0x4715d8);}return _0x2c3e56;}function _0xf88000(_0x2f80b3){var _0x26d59e=_0x153f20;for(var _0x3a70e1=0x1;_0x3a70e1<arguments[_0x26d59e('0x1f8')];_0x3a70e1++){var _0x197a76=null!=arguments[_0x3a70e1]?arguments[_0x3a70e1]:{};_0x3a70e1%0x2?_0x4672cd(Object(_0x197a76),!0x0)[_0x26d59e('0x35e')](function(_0x1665cb){_0x725cab(_0x2f80b3,_0x1665cb,_0x197a76[_0x1665cb]);}):Object['getOwnPropertyDescriptors']?Object[_0x26d59e('0x145')](_0x2f80b3,Object['getOwnPropertyDescriptors'](_0x197a76)):_0x4672cd(Object(_0x197a76))[_0x26d59e('0x35e')](function(_0x31b4e5){var _0x4bb137=_0x26d59e;Object['defineProperty'](_0x2f80b3,_0x31b4e5,Object[_0x4bb137('0x2da')](_0x197a76,_0x31b4e5));});}return _0x2f80b3;}function _0x725cab(_0x189db6,_0x7aa354,_0x29fa3f){var _0x51b599=_0x153f20;return _0x7aa354 in _0x189db6?Object[_0x51b599('0x28b')](_0x189db6,_0x7aa354,{'value':_0x29fa3f,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x189db6[_0x7aa354]=_0x29fa3f,_0x189db6;}function _0x377810(_0x506566,_0x304988){return function(_0xda23ca){if(Array['isArray'](_0xda23ca))return _0xda23ca;}(_0x506566)||function(_0xe96823,_0x5f27d5){var _0x2241d5=_0x4ba4;if('undefined'==typeof Symbol||!(Symbol[_0x2241d5('0x412')]in Object(_0xe96823)))return;var _0x52a0c5=[],_0x1333f5=!0x0,_0x4dfa3f=!0x1,_0x324a6a=void 0x0;try{for(var _0x271e1d,_0x4e99ed=_0xe96823[Symbol[_0x2241d5('0x412')]]();!(_0x1333f5=(_0x271e1d=_0x4e99ed[_0x2241d5('0x503')]())[_0x2241d5('0x448')])&&(_0x52a0c5[_0x2241d5('0x193')](_0x271e1d[_0x2241d5('0x1c7')]),!_0x5f27d5||_0x52a0c5[_0x2241d5('0x1f8')]!==_0x5f27d5);_0x1333f5=!0x0);}catch(_0x59818a){_0x4dfa3f=!0x0,_0x324a6a=_0x59818a;}finally{try{_0x1333f5||null==_0x4e99ed[_0x2241d5('0x6e')]||_0x4e99ed[_0x2241d5('0x6e')]();}finally{if(_0x4dfa3f)throw _0x324a6a;}}return _0x52a0c5;}(_0x506566,_0x304988)||function(_0x5afd85,_0x40b485){var _0x4d602a=_0x4ba4;if(!_0x5afd85)return;if('string'==typeof _0x5afd85)return _0x4904a8(_0x5afd85,_0x40b485);var _0x2d6e2c=Object[_0x4d602a('0x501')]['toString'][_0x4d602a('0x210')](_0x5afd85)[_0x4d602a('0x486')](0x8,-0x1);'Object'===_0x2d6e2c&&_0x5afd85[_0x4d602a('0x151')]&&(_0x2d6e2c=_0x5afd85[_0x4d602a('0x151')][_0x4d602a('0x4d8')]);if(_0x4d602a('0x506')===_0x2d6e2c||_0x4d602a('0x26e')===_0x2d6e2c)return Array[_0x4d602a('0x303')](_0x2d6e2c);if(_0x4d602a('0x243')===_0x2d6e2c||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/['test'](_0x2d6e2c))return _0x4904a8(_0x5afd85,_0x40b485);}(_0x506566,_0x304988)||function(){throw new TypeError('Invalid\x20attempt\x20to\x20destructure\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.');}();}function _0x4904a8(_0x375d8f,_0x14f885){(null==_0x14f885||_0x14f885>_0x375d8f['length'])&&(_0x14f885=_0x375d8f['length']);for(var _0xef3cf4=0x0,_0x141986=new Array(_0x14f885);_0xef3cf4<_0x14f885;_0xef3cf4++)_0x141986[_0xef3cf4]=_0x375d8f[_0xef3cf4];return _0x141986;}var _0x1513cc={'OrgChart':_0x8a1742[_0x153f20('0x4c1')],'CompanyStructureCards':_0x41eb82[_0x153f20('0x4c1')],'NativeCardList':_0x445493[_0x153f20('0x4c1')],'NativeExtensionView':_0x4fd3e5[_0x153f20('0x4c1')],'MobileApp':_0x42eb95['default'],'ApiAccess':_0x56b4ad[_0x153f20('0x4c1')],'TimeSheets':_0x97a0ab[_0x153f20('0x4c1')],'LeaveEntitlement':_0x3906d8[_0x153f20('0x4c1')],'LeaveCalendar':_0x5808d1[_0x153f20('0x4c1')],'NativeAdapterView':_0x1338dc['default']},_0xb188d0={};},{'./ApiAccess':0x1,'./CompanyStructureCards':0x3,'./LeaveCalendar':0x9,'./LeaveEntitlement':0xa,'./LicenseBlocked':0xb,'./MobileApp':0xd,'./NativeAdapterView':0xf,'./NativeCardList':0x10,'./NativeExtensionView':0x12,'./OrgChart':0x16,'./TimeSheets':0x17,'./theme':0x19,'antd':_0x557405('0x29c'),'react':_0x557405('0x516'),'react-dom':_0x557405('0x265')}],0x14:[function(_0x32f3be,_0x1012e6,_0x22c19e){var _0x4882ba=_0x557405;'use strict';function _0x1c83ad(_0x5194e9){var _0x132e31=_0x4ba4;return(_0x1c83ad=_0x132e31('0x568')==typeof Symbol&&_0x132e31('0x263')==typeof Symbol[_0x132e31('0x412')]?function(_0x28404f){return typeof _0x28404f;}:function(_0x23ddb3){var _0x166695=_0x132e31;return _0x23ddb3&&_0x166695('0x568')==typeof Symbol&&_0x23ddb3[_0x166695('0x151')]===Symbol&&_0x23ddb3!==Symbol[_0x166695('0x501')]?_0x166695('0x263'):typeof _0x23ddb3;})(_0x5194e9);}Object[_0x4882ba('0x28b')](_0x22c19e,_0x4882ba('0x4bc'),{'value':!0x0}),_0x22c19e[_0x4882ba('0x4c1')]=function(_0x4282e8){var _0x1e2f0e=_0x4882ba,_0x2ccda8=_0x4282e8[_0x1e2f0e('0x370')],_0x320669=(_0x1d9584=(0x0,_0x37b348[_0x1e2f0e('0x51c')])(null),_0x56b49b=0x2,function(_0x46afc1){var _0x40f660=_0x1e2f0e;if(Array[_0x40f660('0x161')](_0x46afc1))return _0x46afc1;}(_0x1d9584)||function(_0x3f0690,_0x247ef3){var _0x4bf5f5=_0x1e2f0e;if(_0x4bf5f5('0x3')!=typeof Symbol&&Symbol[_0x4bf5f5('0x412')]in Object(_0x3f0690)){var _0x59272f=[],_0x20629e=!0x0,_0xade1e9=!0x1,_0x40e712=void 0x0;try{for(var _0x234c54,_0x7c7746=_0x3f0690[Symbol[_0x4bf5f5('0x412')]]();!(_0x20629e=(_0x234c54=_0x7c7746['next']())[_0x4bf5f5('0x448')])&&(_0x59272f[_0x4bf5f5('0x193')](_0x234c54[_0x4bf5f5('0x1c7')]),!_0x247ef3||_0x59272f[_0x4bf5f5('0x1f8')]!==_0x247ef3);_0x20629e=!0x0);}catch(_0x2c3abe){_0xade1e9=!0x0,_0x40e712=_0x2c3abe;}finally{try{_0x20629e||null==_0x7c7746[_0x4bf5f5('0x6e')]||_0x7c7746[_0x4bf5f5('0x6e')]();}finally{if(_0xade1e9)throw _0x40e712;}}return _0x59272f;}}(_0x1d9584,_0x56b49b)||function(_0x14d80b,_0xed1510){var _0x94d46e=_0x1e2f0e;if(_0x14d80b){if(_0x94d46e('0x430')==typeof _0x14d80b)return _0xe11fa0(_0x14d80b,_0xed1510);var _0x3a74d1=Object['prototype'][_0x94d46e('0x476')][_0x94d46e('0x210')](_0x14d80b)[_0x94d46e('0x486')](0x8,-0x1);return'Object'===_0x3a74d1&&_0x14d80b[_0x94d46e('0x151')]&&(_0x3a74d1=_0x14d80b[_0x94d46e('0x151')][_0x94d46e('0x4d8')]),_0x94d46e('0x506')===_0x3a74d1||'Set'===_0x3a74d1?Array['from'](_0x3a74d1):_0x94d46e('0x243')===_0x3a74d1||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x94d46e('0x2d4')](_0x3a74d1)?_0xe11fa0(_0x14d80b,_0xed1510):void 0x0;}}(_0x1d9584,_0x56b49b)||function(){var _0x501016=_0x1e2f0e;throw new TypeError(_0x501016('0x36b'));}()),_0x1d3e79=_0x320669[0x0],_0x7bae70=_0x320669[0x1],_0x1d9584,_0x56b49b;if((0x0,_0x37b348[_0x1e2f0e('0x42a')])(function(){var _0x23227c=_0x1e2f0e,_0x59837a=!0x1;return fetch(''[_0x23227c('0x54e')](_0x2ccda8[_0x23227c('0x123')],_0x23227c('0x4e1')),{'headers':{'Authorization':_0x23227c('0x52e')[_0x23227c('0x54e')](_0x2ccda8[_0x23227c('0x1eb')])},'credentials':_0x23227c('0x1a4')})[_0x23227c('0x273')](function(_0x51591c){var _0x406689=_0x23227c;return _0x51591c['ok']?_0x51591c[_0x406689('0x251')]():null;})[_0x23227c('0x273')](function(_0x481a29){_0x59837a||_0x7bae70(_0x481a29&&_0x481a29['id']?_0x481a29:null);})[_0x23227c('0x3d9')](function(){}),function(){_0x59837a=!0x0;};},[_0x2ccda8['restApiBase'],_0x2ccda8['token']]),!_0x1d3e79||!_0x1d3e79['id'])return null;return _0x37b348[_0x1e2f0e('0x4c1')][_0x1e2f0e('0x33e')](_0x1a8802[_0x1e2f0e('0x1b')],{'type':_0x1e2f0e('0x15d'),'showIcon':!0x0,'style':{'margin':_0x1e2f0e('0x3c4')},'message':_0x1d3e79[_0x1e2f0e('0x38c')],'description':_0x1d3e79['message'],'action':_0x37b348[_0x1e2f0e('0x4c1')][_0x1e2f0e('0x33e')](_0x1a8802[_0x1e2f0e('0x27b')],null,_0x1d3e79[_0x1e2f0e('0xdb')]&&_0x1d3e79[_0x1e2f0e('0x4ec')]?_0x37b348['default']['createElement'](_0x1a8802[_0x1e2f0e('0x55f')],{'size':_0x1e2f0e('0x1de'),'type':_0x1e2f0e('0x4c4'),'onClick':function(){var _0x11f64e=_0x1e2f0e;return window[_0x11f64e('0x200')](_0x1d3e79[_0x11f64e('0xdb')],'_blank','noopener,noreferrer');}},_0x1d3e79['button_text']):null,_0x37b348['default'][_0x1e2f0e('0x33e')](_0x1a8802[_0x1e2f0e('0x55f')],{'size':_0x1e2f0e('0x1de'),'onClick':function(){var _0x565f62=_0x1e2f0e;_0x7bae70(null),fetch(''[_0x565f62('0x54e')](_0x2ccda8[_0x565f62('0x123')],_0x565f62('0x285')),{'method':'POST','headers':{'Authorization':_0x565f62('0x52e')[_0x565f62('0x54e')](_0x2ccda8[_0x565f62('0x1eb')]),'Content-Type':'application/json'},'credentials':_0x565f62('0x1a4'),'body':JSON[_0x565f62('0x1d1')]({'id':_0x1d3e79['id'],'period':_0x1d3e79[_0x565f62('0x3c7')]||0x15180})})[_0x565f62('0x3d9')](function(){});}},_0x1e2f0e('0xc7')))});};var _0x37b348=function(_0x426981){var _0x2e7f98=_0x4882ba;if(_0x426981&&_0x426981[_0x2e7f98('0x4bc')])return _0x426981;if(null===_0x426981||_0x2e7f98('0x19b')!==_0x1c83ad(_0x426981)&&_0x2e7f98('0x568')!=typeof _0x426981)return{'default':_0x426981};var _0x50e248=_0x4a0a53();if(_0x50e248&&_0x50e248['has'](_0x426981))return _0x50e248['get'](_0x426981);var _0x573ac8={},_0x2be8d4=Object[_0x2e7f98('0x28b')]&&Object[_0x2e7f98('0x2da')];for(var _0xc31555 in _0x426981)if(Object['prototype'][_0x2e7f98('0x205')][_0x2e7f98('0x210')](_0x426981,_0xc31555)){var _0x6232b9=_0x2be8d4?Object[_0x2e7f98('0x2da')](_0x426981,_0xc31555):null;_0x6232b9&&(_0x6232b9['get']||_0x6232b9[_0x2e7f98('0x302')])?Object['defineProperty'](_0x573ac8,_0xc31555,_0x6232b9):_0x573ac8[_0xc31555]=_0x426981[_0xc31555];}return _0x573ac8[_0x2e7f98('0x4c1')]=_0x426981,_0x50e248&&_0x50e248['set'](_0x426981,_0x573ac8),_0x573ac8;}(_0x32f3be('react')),_0x1a8802=_0x32f3be(_0x4882ba('0x29c'));function _0x4a0a53(){var _0x5b7baa=_0x4882ba;if(_0x5b7baa('0x568')!=typeof WeakMap)return null;var _0x243559=new WeakMap();return _0x4a0a53=function(){return _0x243559;},_0x243559;}function _0xe11fa0(_0x9f33c1,_0x3b36d5){var _0x530f10=_0x4882ba;(null==_0x3b36d5||_0x3b36d5>_0x9f33c1['length'])&&(_0x3b36d5=_0x9f33c1[_0x530f10('0x1f8')]);for(var _0x21f114=0x0,_0x3bb281=new Array(_0x3b36d5);_0x21f114<_0x3b36d5;_0x21f114++)_0x3bb281[_0x21f114]=_0x9f33c1[_0x21f114];return _0x3bb281;}},{'antd':'antd','react':'react'}],0x15:[function(_0x7322dc,_0x1f18fe,_0x10c2e8){var _0x594a65=_0x557405;'use strict';function _0x5103d4(_0x1a2eea){var _0x5f03df=_0x4ba4;return(_0x5103d4='function'==typeof Symbol&&_0x5f03df('0x263')==typeof Symbol['iterator']?function(_0xf5ecde){return typeof _0xf5ecde;}:function(_0x30567f){var _0x27fc44=_0x5f03df;return _0x30567f&&_0x27fc44('0x568')==typeof Symbol&&_0x30567f[_0x27fc44('0x151')]===Symbol&&_0x30567f!==Symbol[_0x27fc44('0x501')]?_0x27fc44('0x263'):typeof _0x30567f;})(_0x1a2eea);}Object[_0x594a65('0x28b')](_0x10c2e8,_0x594a65('0x4bc'),{'value':!0x0}),_0x10c2e8[_0x594a65('0x4c1')]=function(_0x292b1c){var _0x483607=_0x594a65,_0x307bb9=_0x292b1c[_0x483607('0x254')],_0x146f95=_0x292b1c[_0x483607('0x4f3')],_0x29707b=_0x292b1c[_0x483607('0x44e')],_0x3284d9=_0x30f2a2[_0x483607('0xd6')]['useToken']()[_0x483607('0x1eb')],_0x3047d6=_0x241ef4((0x0,_0x252251[_0x483607('0x51c')])(0x0),0x2),_0x351e1a=_0x3047d6[0x0],_0x551c80=_0x3047d6[0x1],_0x38ab45=_0x241ef4((0x0,_0x252251[_0x483607('0x51c')])([]),0x2),_0x25879b=_0x38ab45[0x0],_0xb4356e=_0x38ab45[0x1],_0x306fa0=_0x241ef4((0x0,_0x252251[_0x483607('0x51c')])(!0x1),0x2),_0x352914=_0x306fa0[0x0],_0x2e0db2=_0x306fa0[0x1],_0x2005b7=(0x0,_0x252251['useCallback'])(function(){var _0x397198=_0x483607;fetch(''['concat'](_0x307bb9,'service.php?a=getNotifications'),{'credentials':_0x397198('0x1a4')})['then'](function(_0x254166){var _0x5321bd=_0x397198;return _0x254166[_0x5321bd('0x251')]();})['then'](function(_0x503505){var _0x1c2bcb=_0x397198;_0x503505&&_0x503505[_0x1c2bcb('0x9b')]&&(_0x551c80(_0x503505[_0x1c2bcb('0x9b')][0x0]||0x0),_0xb4356e(Array[_0x1c2bcb('0x161')](_0x503505[_0x1c2bcb('0x9b')][0x1])?_0x503505[_0x1c2bcb('0x9b')][0x1]:[]));})[_0x397198('0x3d9')](function(){});},[_0x307bb9]);(0x0,_0x252251[_0x483607('0x42a')])(function(){_0x2005b7();var _0x5cfe58=setInterval(_0x2005b7,0xea60);return function(){return clearInterval(_0x5cfe58);};},[_0x2005b7]);var _0x1deeef=_0x252251[_0x483607('0x4c1')][_0x483607('0x33e')](_0x483607('0x2e'),{'style':{'width':0x154,'maxHeight':0x1b8,'overflow':_0x483607('0x2d1')}},_0x252251[_0x483607('0x4c1')]['createElement']('div',{'style':{'display':_0x483607('0x3f6'),'justifyContent':_0x483607('0x1df'),'alignItems':'center','padding':'4px\x204px\x2010px','borderBottom':_0x483607('0x178')['concat'](_0x3284d9['colorBorderSecondary']),'marginBottom':0x4}},_0x252251['default']['createElement'](_0x19d7cc,{'strong':!0x0},_0x483607('0x93')),_0x25879b[_0x483607('0x1f8')]>0x0&&_0x252251[_0x483607('0x4c1')][_0x483607('0x33e')](_0x30f2a2[_0x483607('0x55f')],{'type':_0x483607('0x324'),'size':'small','onClick':function(){var _0x99bd69=_0x483607;fetch(''[_0x99bd69('0x54e')](_0x307bb9,_0x99bd69('0x2be')),{'credentials':'same-origin'})[_0x99bd69('0x273')](function(){_0x551c80(0x0),_0x2005b7();})[_0x99bd69('0x3d9')](function(){});}},_0x483607('0x392'))),0x0===_0x25879b['length']?_0x252251[_0x483607('0x4c1')]['createElement'](_0x30f2a2[_0x483607('0x269')],{'image':_0x30f2a2[_0x483607('0x269')][_0x483607('0x463')],'description':'No\x20notifications','style':{'padding':0x10}}):_0x252251['default'][_0x483607('0x33e')](_0x30f2a2[_0x483607('0xb0')],{'dataSource':_0x25879b,'renderItem':function(_0xce975a){var _0x5a7854=_0x483607;return _0x252251[_0x5a7854('0x4c1')]['createElement'](_0x30f2a2['List'][_0x5a7854('0x1ae')],{'style':{'padding':'10px\x206px','cursor':_0x5df58e(_0xce975a['action'])?'pointer':_0x5a7854('0x4c1')},'onClick':function(){return function(_0x43f1d0){var _0x2c49e=_0x4ba4,_0x41e8fc=_0x5df58e(_0x43f1d0[_0x2c49e('0xd4')]);if(_0x2e0db2(!0x1),_0x41e8fc){if(_0x41e8fc[_0x2c49e('0x3a4')]&&_0x29707b)_0x29707b(_0x41e8fc[_0x2c49e('0x3a4')]);else{if(_0x41e8fc['g']&&_0x146f95){if(_0x41e8fc[_0x2c49e('0x31f')])try{window[_0x2c49e('0x3fc')]=_0x41e8fc['tab'],decodeURIComponent(window[_0x2c49e('0x2ad')]['hash'][_0x2c49e('0x467')](/^#/,''))===''['concat'](_0x41e8fc['g'],'::')[_0x2c49e('0x54e')](_0x41e8fc['n'])&&window[_0x2c49e('0x1b0')]&&window[_0x2c49e('0x1b0')](_0x41e8fc[_0x2c49e('0x31f')]);}catch(_0x371cf3){}_0x146f95(_0x41e8fc['g'],_0x41e8fc['n']);}}}}(_0xce975a);}},_0x252251['default']['createElement'](_0x30f2a2[_0x5a7854('0xb0')][_0x5a7854('0x1ae')]['Meta'],{'avatar':_0x252251[_0x5a7854('0x4c1')][_0x5a7854('0x33e')](_0x30f2a2[_0x5a7854('0x291')],{'src':_0xce975a['image'],'icon':_0x252251[_0x5a7854('0x4c1')][_0x5a7854('0x33e')](_0x37b59b[_0x5a7854('0x271')],null),'size':_0x5a7854('0x1de')}),'title':_0x252251['default']['createElement'](_0x5a7854('0x1bd'),{'style':{'fontSize':0xd,'fontWeight':0x1f4}},_0xce975a['type']||_0x5a7854('0x3d7')),'description':_0x252251['default'][_0x5a7854('0x33e')](_0x252251[_0x5a7854('0x4c1')][_0x5a7854('0x524')],null,_0x252251['default'][_0x5a7854('0x33e')](_0x5a7854('0x2e'),{'style':{'fontSize':0xd,'color':_0x3284d9[_0x5a7854('0x190')]}},_0xce975a[_0x5a7854('0x2ac')]),_0x252251[_0x5a7854('0x4c1')]['createElement'](_0x5a7854('0x2e'),{'style':{'fontSize':0xb,'color':_0x3284d9['colorTextTertiary'],'marginTop':0x2}},_0xce975a[_0x5a7854('0x52f')]))}));}}));return _0x252251[_0x483607('0x4c1')][_0x483607('0x33e')](_0x30f2a2[_0x483607('0xe6')],{'content':_0x1deeef,'trigger':_0x483607('0x441'),'open':_0x352914,'onOpenChange':_0x2e0db2,'placement':'bottomRight'},_0x252251[_0x483607('0x4c1')]['createElement'](_0x30f2a2[_0x483607('0x55f')],{'type':_0x483607('0x490'),'style':{'display':_0x483607('0x3f6'),'alignItems':_0x483607('0x3c5')},'aria-label':_0x483607('0x93')},_0x252251[_0x483607('0x4c1')][_0x483607('0x33e')](_0x30f2a2[_0x483607('0x4ff')],{'count':_0x351e1a,'size':'small','overflowCount':0x63},_0x252251['default'][_0x483607('0x33e')](_0x37b59b[_0x483607('0x223')],{'style':{'fontSize':0x12,'color':'#fff'}}))));};var _0x252251=function(_0x36477b){var _0x2ac020=_0x594a65;if(_0x36477b&&_0x36477b[_0x2ac020('0x4bc')])return _0x36477b;if(null===_0x36477b||_0x2ac020('0x19b')!==_0x5103d4(_0x36477b)&&_0x2ac020('0x568')!=typeof _0x36477b)return{'default':_0x36477b};var _0x36b7f2=_0x599c6c();if(_0x36b7f2&&_0x36b7f2['has'](_0x36477b))return _0x36b7f2[_0x2ac020('0xeb')](_0x36477b);var _0x22c326={},_0x3214e5=Object['defineProperty']&&Object[_0x2ac020('0x2da')];for(var _0x38f482 in _0x36477b)if(Object[_0x2ac020('0x501')]['hasOwnProperty'][_0x2ac020('0x210')](_0x36477b,_0x38f482)){var _0x4b4788=_0x3214e5?Object[_0x2ac020('0x2da')](_0x36477b,_0x38f482):null;_0x4b4788&&(_0x4b4788[_0x2ac020('0xeb')]||_0x4b4788[_0x2ac020('0x302')])?Object[_0x2ac020('0x28b')](_0x22c326,_0x38f482,_0x4b4788):_0x22c326[_0x38f482]=_0x36477b[_0x38f482];}return _0x22c326[_0x2ac020('0x4c1')]=_0x36477b,_0x36b7f2&&_0x36b7f2[_0x2ac020('0x302')](_0x36477b,_0x22c326),_0x22c326;}(_0x7322dc('react')),_0x30f2a2=_0x7322dc(_0x594a65('0x29c')),_0x37b59b=_0x7322dc('@ant-design/icons');function _0x599c6c(){var _0x279e23=_0x594a65;if(_0x279e23('0x568')!=typeof WeakMap)return null;var _0xb159d7=new WeakMap();return _0x599c6c=function(){return _0xb159d7;},_0xb159d7;}function _0x241ef4(_0x164a30,_0x3f0cf2){return function(_0x178290){var _0x36cf64=_0x4ba4;if(Array[_0x36cf64('0x161')](_0x178290))return _0x178290;}(_0x164a30)||function(_0x15939b,_0x2a3be6){var _0x9ef93d=_0x4ba4;if(_0x9ef93d('0x3')==typeof Symbol||!(Symbol[_0x9ef93d('0x412')]in Object(_0x15939b)))return;var _0x463472=[],_0x461a92=!0x0,_0x338514=!0x1,_0x46ae67=void 0x0;try{for(var _0x10659f,_0x2c5a36=_0x15939b[Symbol[_0x9ef93d('0x412')]]();!(_0x461a92=(_0x10659f=_0x2c5a36[_0x9ef93d('0x503')]())[_0x9ef93d('0x448')])&&(_0x463472[_0x9ef93d('0x193')](_0x10659f[_0x9ef93d('0x1c7')]),!_0x2a3be6||_0x463472['length']!==_0x2a3be6);_0x461a92=!0x0);}catch(_0x3e4814){_0x338514=!0x0,_0x46ae67=_0x3e4814;}finally{try{_0x461a92||null==_0x2c5a36['return']||_0x2c5a36[_0x9ef93d('0x6e')]();}finally{if(_0x338514)throw _0x46ae67;}}return _0x463472;}(_0x164a30,_0x3f0cf2)||function(_0x46f61e,_0x22bae7){var _0x3e0be0=_0x4ba4;if(!_0x46f61e)return;if(_0x3e0be0('0x430')==typeof _0x46f61e)return _0x35b69d(_0x46f61e,_0x22bae7);var _0x5143c5=Object[_0x3e0be0('0x501')][_0x3e0be0('0x476')][_0x3e0be0('0x210')](_0x46f61e)['slice'](0x8,-0x1);_0x3e0be0('0x2f7')===_0x5143c5&&_0x46f61e[_0x3e0be0('0x151')]&&(_0x5143c5=_0x46f61e[_0x3e0be0('0x151')][_0x3e0be0('0x4d8')]);if(_0x3e0be0('0x506')===_0x5143c5||'Set'===_0x5143c5)return Array['from'](_0x5143c5);if('Arguments'===_0x5143c5||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x3e0be0('0x2d4')](_0x5143c5))return _0x35b69d(_0x46f61e,_0x22bae7);}(_0x164a30,_0x3f0cf2)||function(){var _0xe794ca=_0x4ba4;throw new TypeError(_0xe794ca('0x36b'));}();}function _0x35b69d(_0x193fa3,_0x11e43c){var _0x1882e3=_0x594a65;(null==_0x11e43c||_0x11e43c>_0x193fa3[_0x1882e3('0x1f8')])&&(_0x11e43c=_0x193fa3[_0x1882e3('0x1f8')]);for(var _0x325a83=0x0,_0x4e63c6=new Array(_0x11e43c);_0x325a83<_0x11e43c;_0x325a83++)_0x4e63c6[_0x325a83]=_0x193fa3[_0x325a83];return _0x4e63c6;}var _0x19d7cc=_0x30f2a2[_0x594a65('0x13b')][_0x594a65('0x1a0')],_0x59363f={'tabSubEmployeeLeaveAll':_0x594a65('0x197'),'tabEmployeeLeaveApproval':'tabLeaveApproval','tabEmployeeLeaveApproved':'tabMyLeaveApproved','tabSubEmployeeLeaveCancel':_0x594a65('0x4b5')};function _0x5df58e(_0x56c6db){var _0x220223=_0x594a65;try{var _0x4e8949='string'==typeof _0x56c6db?JSON[_0x220223('0x2e3')](_0x56c6db):_0x56c6db;if(_0x4e8949&&_0x220223('0xdb')===_0x4e8949[_0x220223('0x444')]&&_0x4e8949['url']){var _0x18fac4=_0x4e8949[_0x220223('0xdb')][_0x220223('0x570')]('#'),_0x48849e=_0x18fac4>=0x0?_0x4e8949[_0x220223('0xdb')][_0x220223('0x486')](_0x18fac4+0x1):null,_0xf8dd31=_0x18fac4>=0x0?_0x4e8949['url'][_0x220223('0x486')](0x0,_0x18fac4):_0x4e8949[_0x220223('0xdb')],_0x174220=_0xf8dd31[_0x220223('0x570')]('?')>=0x0?_0xf8dd31['split']('?')[0x1]:_0xf8dd31,_0x1ca3b0=new URLSearchParams(_0x174220),_0x56ab37=_0x1ca3b0[_0x220223('0xeb')]('g'),_0x443b70=_0x1ca3b0['get']('n');if(_0x220223('0x80')===_0x56ab37&&_0x220223('0x11f')===_0x443b70&&(_0x1ca3b0[_0x220223('0xeb')](_0x220223('0x150'))||_0x1ca3b0[_0x220223('0xeb')](_0x220223('0x19b'))))return{'doc':_0x4e8949[_0x220223('0xdb')]};if(_0x56ab37&&_0x443b70)return{'g':_0x56ab37,'n':_0x443b70,'tab':_0x48849e?_0x59363f[_0x48849e]||_0x48849e:null};}}catch(_0x2a197a){}return null;}},{'@ant-design/icons':_0x557405('0x3aa'),'antd':'antd','react':_0x557405('0x516')}],0x16:[function(_0x56ac3d,_0x4e6e0f,_0x3a7443){var _0xc6a8e0=_0x557405;'use strict';function _0x5b9508(_0x259cb8){var _0xf72353=_0x4ba4;return(_0x5b9508=_0xf72353('0x568')==typeof Symbol&&_0xf72353('0x263')==typeof Symbol[_0xf72353('0x412')]?function(_0xdea3a8){return typeof _0xdea3a8;}:function(_0x509a6c){var _0x556aaf=_0xf72353;return _0x509a6c&&_0x556aaf('0x568')==typeof Symbol&&_0x509a6c[_0x556aaf('0x151')]===Symbol&&_0x509a6c!==Symbol['prototype']?_0x556aaf('0x263'):typeof _0x509a6c;})(_0x259cb8);}Object[_0xc6a8e0('0x28b')](_0x3a7443,_0xc6a8e0('0x4bc'),{'value':!0x0}),_0x3a7443[_0xc6a8e0('0x4c1')]=function(_0x2a70fd){var _0x41cb20=_0xc6a8e0,_0xbaa0b3=_0x2a70fd['shellConfig'],_0xa76272=_0x1ce007((0x0,_0x587ea5[_0x41cb20('0x51c')])(null),0x2),_0x3fb028=_0xa76272[0x0],_0x4a0370=_0xa76272[0x1],_0x18a33c=_0x1ce007((0x0,_0x587ea5[_0x41cb20('0x51c')])(!0x1),0x2),_0x5b6436=_0x18a33c[0x0],_0x469b6b=_0x18a33c[0x1],_0x577900=_0x26b969[_0x41cb20('0xd6')][_0x41cb20('0x418')]()[_0x41cb20('0x1eb')];if((0x0,_0x587ea5[_0x41cb20('0x42a')])(function(){var _0x1f28b1=_0x41cb20,_0x21a2e1=!0x0;return fetch(''['concat'](_0xbaa0b3['restApiBase'],_0x1f28b1('0x215')),{'headers':{'Authorization':_0x1f28b1('0x52e')['concat'](_0xbaa0b3[_0x1f28b1('0x1eb')])},'credentials':_0x1f28b1('0x1a4')})['then'](function(_0x45ae2d){var _0xb83f1c=_0x1f28b1;return _0x45ae2d[_0xb83f1c('0x251')]();})[_0x1f28b1('0x273')](function(_0x4ede1e){var _0x148773=_0x1f28b1;_0x21a2e1&&_0x4a0370(_0x4ede1e&&_0x4ede1e[_0x148773('0x3e5')]||[]);})[_0x1f28b1('0x3d9')](function(){_0x21a2e1&&_0x469b6b(!0x0);}),function(){_0x21a2e1=!0x1;};},[_0xbaa0b3]),_0x5b6436)return _0x587ea5[_0x41cb20('0x4c1')][_0x41cb20('0x33e')](_0x26b969[_0x41cb20('0x269')],{'description':_0x41cb20('0x1ba')});if(!_0x3fb028)return _0x587ea5['default'][_0x41cb20('0x33e')]('div',{'style':{'display':'flex','justifyContent':_0x41cb20('0x3c5'),'padding':0x3c}},_0x587ea5[_0x41cb20('0x4c1')][_0x41cb20('0x33e')](_0x26b969[_0x41cb20('0xe5')],null));if(0x0===_0x3fb028[_0x41cb20('0x1f8')])return _0x587ea5['default'][_0x41cb20('0x33e')](_0x26b969['Empty'],{'description':_0x41cb20('0x24d')});var _0xa5ef25=function(_0xec7af3){var _0x4c132c=_0x41cb20,_0x4955a3={};_0xec7af3[_0x4c132c('0x35e')](function(_0x223cff){_0x4955a3[_0x223cff['id']]=function(_0x2384a5){var _0x1423dd=_0x4ba4;for(var _0x14ca9d=0x1;_0x14ca9d<arguments[_0x1423dd('0x1f8')];_0x14ca9d++){var _0x1a1002=null!=arguments[_0x14ca9d]?arguments[_0x14ca9d]:{};_0x14ca9d%0x2?_0x2be9da(Object(_0x1a1002),!0x0)['forEach'](function(_0x444803){_0x3cf35a(_0x2384a5,_0x444803,_0x1a1002[_0x444803]);}):Object[_0x1423dd('0x2d')]?Object[_0x1423dd('0x145')](_0x2384a5,Object[_0x1423dd('0x2d')](_0x1a1002)):_0x2be9da(Object(_0x1a1002))[_0x1423dd('0x35e')](function(_0x38103a){var _0x5edaab=_0x1423dd;Object[_0x5edaab('0x28b')](_0x2384a5,_0x38103a,Object[_0x5edaab('0x2da')](_0x1a1002,_0x38103a));});}return _0x2384a5;}({},_0x223cff,{'children':[]});});var _0xd59ee2=[];return _0xec7af3[_0x4c132c('0x35e')](function(_0x4a3932){var _0x319554=_0x4c132c;_0x4a3932[_0x319554('0x434')]&&_0x4955a3[_0x4a3932[_0x319554('0x434')]]?_0x4955a3[_0x4a3932[_0x319554('0x434')]][_0x319554('0x32c')][_0x319554('0x193')](_0x4955a3[_0x4a3932['id']]):_0xd59ee2[_0x319554('0x193')](_0x4955a3[_0x4a3932['id']]);}),_0xd59ee2;}(_0x3fb028);return _0x587ea5['default']['createElement'](_0x587ea5[_0x41cb20('0x4c1')][_0x41cb20('0x524')],null,_0x587ea5[_0x41cb20('0x4c1')][_0x41cb20('0x33e')]('style',null,function(_0xab0217){var _0x47479c=_0x41cb20;return'\x0a.org-wrap\x20{\x20overflow-x:\x20auto;\x20padding:\x2012px\x208px\x2024px;\x20}\x0a.org-tree,\x20.org-tree\x20ul\x20{\x20position:\x20relative;\x20padding-top:\x2022px;\x20display:\x20flex;\x20justify-content:\x20center;\x20}\x0a.org-tree\x20ul\x20{\x20padding-left:\x200;\x20}\x0a.org-tree\x20li\x20{\x0a\x20\x20list-style:\x20none;\x20position:\x20relative;\x20padding:\x2022px\x2010px\x200;\x20text-align:\x20center;\x0a}\x0a.org-tree\x20li::before,\x20.org-tree\x20li::after\x20{\x0a\x20\x20content:\x20\x27\x27;\x20position:\x20absolute;\x20top:\x200;\x20right:\x2050%;\x0a\x20\x20border-top:\x202px\x20solid\x20'[_0x47479c('0x54e')](_0xab0217[_0x47479c('0x14b')],_0x47479c('0x55b'))[_0x47479c('0x54e')](_0xab0217['colorBorderSecondary'],';\x20}\x0a.org-tree\x20li:only-child::after,\x20.org-tree\x20li:only-child::before\x20{\x20display:\x20none;\x20}\x0a.org-tree\x20li:only-child\x20{\x20padding-top:\x200;\x20}\x0a.org-tree\x20li:first-child::before,\x20.org-tree\x20li:last-child::after\x20{\x20border:\x200\x20none;\x20}\x0a.org-tree\x20li:last-child::before\x20{\x20border-right:\x202px\x20solid\x20')[_0x47479c('0x54e')](_0xab0217[_0x47479c('0x14b')],_0x47479c('0x2d5'))[_0x47479c('0x54e')](_0xab0217['colorBorderSecondary'],_0x47479c('0x2d3'))[_0x47479c('0x54e')](_0xab0217[_0x47479c('0x35')],_0x47479c('0x3e2'))[_0x47479c('0x54e')](_0xab0217[_0x47479c('0x14b')],';\x20border-radius:\x2012px;\x0a\x20\x20box-shadow:\x20')['concat'](_0x26220c[_0x47479c('0x236')],_0x47479c('0x189'))[_0x47479c('0x54e')](_0xab0217['colorText'],';\x20}\x0a.org-node\x20.sub\x20{\x20font-size:\x2012px;\x20color:\x20')[_0x47479c('0x54e')](_0xab0217[_0x47479c('0x46c')],';\x20margin-top:\x202px;\x20}\x0a');}(_0x577900)),_0x587ea5['default']['createElement'](_0x41cb20('0x2e'),{'className':_0x41cb20('0x21d')},_0x587ea5[_0x41cb20('0x4c1')][_0x41cb20('0x33e')]('div',{'className':'org-tree'},_0x587ea5[_0x41cb20('0x4c1')][_0x41cb20('0x33e')]('ul',null,_0xa5ef25[_0x41cb20('0x1dd')](function(_0x5c633d){var _0x25f12e=_0x41cb20;return _0x587ea5[_0x25f12e('0x4c1')]['createElement'](_0x2ac47f,{'key':_0x5c633d['id'],'node':_0x5c633d});})))));};var _0x587ea5=function(_0x5ab625){var _0x35b2e7=_0xc6a8e0;if(_0x5ab625&&_0x5ab625[_0x35b2e7('0x4bc')])return _0x5ab625;if(null===_0x5ab625||_0x35b2e7('0x19b')!==_0x5b9508(_0x5ab625)&&_0x35b2e7('0x568')!=typeof _0x5ab625)return{'default':_0x5ab625};var _0x25b510=_0x328464();if(_0x25b510&&_0x25b510[_0x35b2e7('0x2e9')](_0x5ab625))return _0x25b510[_0x35b2e7('0xeb')](_0x5ab625);var _0x151b6a={},_0x4c1fd3=Object[_0x35b2e7('0x28b')]&&Object[_0x35b2e7('0x2da')];for(var _0x3d2ece in _0x5ab625)if(Object['prototype']['hasOwnProperty'][_0x35b2e7('0x210')](_0x5ab625,_0x3d2ece)){var _0x2e23a2=_0x4c1fd3?Object['getOwnPropertyDescriptor'](_0x5ab625,_0x3d2ece):null;_0x2e23a2&&(_0x2e23a2[_0x35b2e7('0xeb')]||_0x2e23a2['set'])?Object[_0x35b2e7('0x28b')](_0x151b6a,_0x3d2ece,_0x2e23a2):_0x151b6a[_0x3d2ece]=_0x5ab625[_0x3d2ece];}return _0x151b6a[_0x35b2e7('0x4c1')]=_0x5ab625,_0x25b510&&_0x25b510[_0x35b2e7('0x302')](_0x5ab625,_0x151b6a),_0x151b6a;}(_0x56ac3d(_0xc6a8e0('0x516'))),_0x26b969=_0x56ac3d(_0xc6a8e0('0x29c')),_0x629e8b=_0x56ac3d('@ant-design/icons'),_0x26220c=_0x56ac3d(_0xc6a8e0('0x176'));function _0x328464(){var _0x3ce3ee=_0xc6a8e0;if(_0x3ce3ee('0x568')!=typeof WeakMap)return null;var _0x4a0733=new WeakMap();return _0x328464=function(){return _0x4a0733;},_0x4a0733;}function _0x1ce007(_0x4467c8,_0x4f1aee){return function(_0x22ec38){var _0x2d179a=_0x4ba4;if(Array[_0x2d179a('0x161')](_0x22ec38))return _0x22ec38;}(_0x4467c8)||function(_0x437641,_0x5e4bba){var _0x1d73fa=_0x4ba4;if(_0x1d73fa('0x3')==typeof Symbol||!(Symbol['iterator']in Object(_0x437641)))return;var _0x5e5d65=[],_0x430151=!0x0,_0x3774d0=!0x1,_0x4bbfef=void 0x0;try{for(var _0x1c8f4b,_0x53ba8e=_0x437641[Symbol[_0x1d73fa('0x412')]]();!(_0x430151=(_0x1c8f4b=_0x53ba8e['next']())[_0x1d73fa('0x448')])&&(_0x5e5d65['push'](_0x1c8f4b['value']),!_0x5e4bba||_0x5e5d65[_0x1d73fa('0x1f8')]!==_0x5e4bba);_0x430151=!0x0);}catch(_0x2341fa){_0x3774d0=!0x0,_0x4bbfef=_0x2341fa;}finally{try{_0x430151||null==_0x53ba8e[_0x1d73fa('0x6e')]||_0x53ba8e[_0x1d73fa('0x6e')]();}finally{if(_0x3774d0)throw _0x4bbfef;}}return _0x5e5d65;}(_0x4467c8,_0x4f1aee)||function(_0x50cd27,_0x4ae7fe){var _0x50c1e6=_0x4ba4;if(!_0x50cd27)return;if(_0x50c1e6('0x430')==typeof _0x50cd27)return _0x135cbb(_0x50cd27,_0x4ae7fe);var _0x219723=Object[_0x50c1e6('0x501')][_0x50c1e6('0x476')][_0x50c1e6('0x210')](_0x50cd27)[_0x50c1e6('0x486')](0x8,-0x1);_0x50c1e6('0x2f7')===_0x219723&&_0x50cd27[_0x50c1e6('0x151')]&&(_0x219723=_0x50cd27['constructor'][_0x50c1e6('0x4d8')]);if('Map'===_0x219723||_0x50c1e6('0x26e')===_0x219723)return Array['from'](_0x219723);if('Arguments'===_0x219723||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x50c1e6('0x2d4')](_0x219723))return _0x135cbb(_0x50cd27,_0x4ae7fe);}(_0x4467c8,_0x4f1aee)||function(){throw new TypeError('Invalid\x20attempt\x20to\x20destructure\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.');}();}function _0x135cbb(_0x233a7c,_0xf30c03){var _0x576af7=_0xc6a8e0;(null==_0xf30c03||_0xf30c03>_0x233a7c[_0x576af7('0x1f8')])&&(_0xf30c03=_0x233a7c['length']);for(var _0x3e33e5=0x0,_0x28e444=new Array(_0xf30c03);_0x3e33e5<_0xf30c03;_0x3e33e5++)_0x28e444[_0x3e33e5]=_0x233a7c[_0x3e33e5];return _0x28e444;}function _0x2be9da(_0x4a407a,_0x102568){var _0x5bf549=_0xc6a8e0,_0x4e7b2f=Object[_0x5bf549('0x34d')](_0x4a407a);if(Object[_0x5bf549('0x68')]){var _0x29a1b5=Object[_0x5bf549('0x68')](_0x4a407a);_0x102568&&(_0x29a1b5=_0x29a1b5[_0x5bf549('0x8f')](function(_0x1f70b4){var _0x454af7=_0x5bf549;return Object['getOwnPropertyDescriptor'](_0x4a407a,_0x1f70b4)[_0x454af7('0xf9')];})),_0x4e7b2f['push'][_0x5bf549('0x154')](_0x4e7b2f,_0x29a1b5);}return _0x4e7b2f;}function _0x3cf35a(_0x4d7a1c,_0x3f280b,_0x14ea5c){var _0x497752=_0xc6a8e0;return _0x3f280b in _0x4d7a1c?Object[_0x497752('0x28b')](_0x4d7a1c,_0x3f280b,{'value':_0x14ea5c,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x4d7a1c[_0x3f280b]=_0x14ea5c,_0x4d7a1c;}var _0x1d397d={'Company':{'icon':_0x587ea5['default'][_0xc6a8e0('0x33e')](_0x629e8b[_0xc6a8e0('0xd9')],null),'color':_0x26220c['MUI'][_0xc6a8e0('0x4c4')]},'Head\x20Office':{'icon':_0x587ea5[_0xc6a8e0('0x4c1')]['createElement'](_0x629e8b[_0xc6a8e0('0x4e0')],null),'color':_0xc6a8e0('0x4c8')},'Regional\x20Office':{'icon':_0x587ea5[_0xc6a8e0('0x4c1')][_0xc6a8e0('0x33e')](_0x629e8b['ClusterOutlined'],null),'color':_0xc6a8e0('0x121')},'Department':{'icon':_0x587ea5[_0xc6a8e0('0x4c1')][_0xc6a8e0('0x33e')](_0x629e8b[_0xc6a8e0('0x464')],null),'color':'#2e7d32'},'Unit':{'icon':_0x587ea5[_0xc6a8e0('0x4c1')][_0xc6a8e0('0x33e')](_0x629e8b['TeamOutlined'],null),'color':_0xc6a8e0('0x3ac')},'Sub\x20Unit':{'icon':_0x587ea5[_0xc6a8e0('0x4c1')][_0xc6a8e0('0x33e')](_0x629e8b[_0xc6a8e0('0x272')],null),'color':'#ed6c02'},'Other':{'icon':_0x587ea5[_0xc6a8e0('0x4c1')][_0xc6a8e0('0x33e')](_0x629e8b[_0xc6a8e0('0x464')],null),'color':_0xc6a8e0('0x426')}};function _0x1fc9ad(_0x4cd74b){var _0x3d048a=_0xc6a8e0,_0x157f67,_0x244072=_0x4cd74b['node'],_0x2ef919=(_0x157f67=_0x244072[_0x3d048a('0x444')],_0x1d397d[_0x157f67]||{'icon':_0x587ea5['default'][_0x3d048a('0x33e')](_0x629e8b[_0x3d048a('0x464')],null),'color':_0x3d048a('0x426')});return _0x587ea5[_0x3d048a('0x4c1')]['createElement'](_0x3d048a('0x2e'),{'className':_0x3d048a('0x396')},_0x587ea5[_0x3d048a('0x4c1')][_0x3d048a('0x33e')](_0x3d048a('0x2e'),{'className':'ic','style':{'background':''[_0x3d048a('0x54e')](_0x2ef919['color'],'18'),'color':_0x2ef919[_0x3d048a('0x34')]}},_0x2ef919[_0x3d048a('0x11b')]),_0x587ea5[_0x3d048a('0x4c1')][_0x3d048a('0x33e')](_0x3d048a('0x2e'),{'style':{'minWidth':0x0}},_0x587ea5['default']['createElement'](_0x3d048a('0x2e'),{'className':_0x3d048a('0x4ce')},_0x244072[_0x3d048a('0x38c')]),_0x587ea5['default'][_0x3d048a('0x33e')](_0x3d048a('0x2e'),{'className':_0x3d048a('0xc8')},_0x244072['type']||_0x3d048a('0x54c'),_0x244072[_0x3d048a('0x126')]>0x0&&_0x587ea5[_0x3d048a('0x4c1')][_0x3d048a('0x33e')](_0x587ea5['default']['Fragment'],null,_0x3d048a('0xa4'),_0x587ea5[_0x3d048a('0x4c1')][_0x3d048a('0x33e')](_0x629e8b['UserOutlined'],{'style':{'fontSize':0xb}}),'\x20',_0x244072[_0x3d048a('0x126')]))));}function _0x2ac47f(_0x2592eb){var _0x27b0f4=_0xc6a8e0,_0x4cbc49=_0x2592eb[_0x27b0f4('0x53b')];return _0x587ea5['default'][_0x27b0f4('0x33e')]('li',null,_0x587ea5[_0x27b0f4('0x4c1')][_0x27b0f4('0x33e')](_0x1fc9ad,{'node':_0x4cbc49}),_0x4cbc49[_0x27b0f4('0x32c')]&&_0x4cbc49[_0x27b0f4('0x32c')][_0x27b0f4('0x1f8')]>0x0&&_0x587ea5[_0x27b0f4('0x4c1')][_0x27b0f4('0x33e')]('ul',null,_0x4cbc49[_0x27b0f4('0x32c')]['map'](function(_0x5d1ded){var _0x2fad45=_0x27b0f4;return _0x587ea5[_0x2fad45('0x4c1')]['createElement'](_0x2ac47f,{'key':_0x5d1ded['id'],'node':_0x5d1ded});})));}},{'./theme':0x19,'@ant-design/icons':'@ant-design/icons','antd':_0x557405('0x29c'),'react':_0x557405('0x516')}],0x17:[function(_0x4da738,_0x7fb009,_0x37c17e){var _0x982892=_0x557405;'use strict';function _0x240ff7(_0x5a397e){var _0x5ef6a9=_0x4ba4;return(_0x240ff7=_0x5ef6a9('0x568')==typeof Symbol&&'symbol'==typeof Symbol['iterator']?function(_0xf15371){return typeof _0xf15371;}:function(_0x15975d){var _0x4da795=_0x5ef6a9;return _0x15975d&&_0x4da795('0x568')==typeof Symbol&&_0x15975d[_0x4da795('0x151')]===Symbol&&_0x15975d!==Symbol[_0x4da795('0x501')]?'symbol':typeof _0x15975d;})(_0x5a397e);}Object[_0x982892('0x28b')](_0x37c17e,_0x982892('0x4bc'),{'value':!0x0}),_0x37c17e['default']=function(){var _0x2b0fd7=_0x982892,_0xc24ea9=_0x24d303[_0x2b0fd7('0xd6')][_0x2b0fd7('0x418')]()['token'],_0x5313e9=-0x1!==_0x57b306['indexOf']((_0x2b0fd7('0x3')!=typeof window&&window['__timesheetsCtx']||{})['userLevel']),_0xe501f=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])('list'),0x2),_0x2f3561=_0xe501f[0x0],_0x5ebcd2=_0xe501f[0x1],_0x2a592a=_0x3a8a0d((0x0,_0x37f90d['useState'])(_0x2b0fd7('0x49')),0x2),_0x337613=_0x2a592a[0x0],_0xb6c3c6=_0x2a592a[0x1],_0x57b9fd=_0x3a8a0d((0x0,_0x37f90d['useState'])(null),0x2),_0x28817f=_0x57b9fd[0x0],_0x8c022=_0x57b9fd[0x1],_0x285b6c=_0x3a8a0d((0x0,_0x37f90d['useState'])([_0x2b0fd7('0x1ed')]),0x2),_0x3b6f9a=_0x285b6c[0x0],_0x53d37c=_0x285b6c[0x1],_0x2b7e27=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])([]),0x2),_0x22ad8a=_0x2b7e27[0x0],_0x2821a5=_0x2b7e27[0x1],_0x1c0519=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])(!0x1),0x2),_0x569588=_0x1c0519[0x0],_0x5e41b8=_0x1c0519[0x1],_0x34ece0=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])(null),0x2),_0x398616=_0x34ece0[0x0],_0x3c7e42=_0x34ece0[0x1],_0x443737=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])(null),0x2),_0x5db480=_0x443737[0x0],_0x3038f1=_0x443737[0x1],_0x54672a=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])({}),0x2),_0x1e7046=_0x54672a[0x0],_0x41ffcb=_0x54672a[0x1],_0x2e6997=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])(!0x1),0x2),_0x281e85=_0x2e6997[0x0],_0x14048f=_0x2e6997[0x1],_0x37614a=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])(null),0x2),_0x49a6e4=_0x37614a[0x0],_0x2d59bc=_0x37614a[0x1],_0x4624c0=_0x3a8a0d((0x0,_0x37f90d['useState'])(null),0x2),_0x971945=_0x4624c0[0x0],_0x43f1c8=_0x4624c0[0x1],_0x244afd=_0x3a8a0d((0x0,_0x37f90d['useState'])(null),0x2),_0x44dc71=_0x244afd[0x0],_0x115332=_0x244afd[0x1],_0x3a063d=_0x3a8a0d((0x0,_0x37f90d['useState'])(null),0x2),_0x40f773=_0x3a063d[0x0],_0x538c14=_0x3a063d[0x1],_0x32b944=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])({}),0x2),_0xd56bed=_0x32b944[0x0],_0x6140bb=_0x32b944[0x1],_0x823b5c=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])([]),0x2),_0xaf668d=_0x823b5c[0x0],_0x5e3888=_0x823b5c[0x1],_0x1f157e=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])(!0x1),0x2),_0x12b4db=_0x1f157e[0x0],_0x890812=_0x1f157e[0x1],_0x5aa673=_0x3a8a0d((0x0,_0x37f90d['useState'])(!0x1),0x2),_0x1c8cc1=_0x5aa673[0x0],_0x439a0c=_0x5aa673[0x1],_0x4eb035=_0x3a8a0d((0x0,_0x37f90d['useState'])(null),0x2),_0x193f65=_0x4eb035[0x0],_0x3dd22d=_0x4eb035[0x1],_0x1ee61b=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])(!0x1),0x2),_0x21689f=_0x1ee61b[0x0],_0xc2dfee=_0x1ee61b[0x1],_0x2879c5=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])([]),0x2),_0x54387a=_0x2879c5[0x0],_0x116c1c=_0x2879c5[0x1],_0x408325=_0x3a8a0d((0x0,_0x37f90d[_0x2b0fd7('0x51c')])(null),0x2),_0x360f85=_0x408325[0x0],_0x50bbbb=_0x408325[0x1],_0x55ef9b=(0x0,_0x37f90d['useCallback'])(function(){var _0x2987b8=_0x2b0fd7,_0x11727a=_0x335dfb()[_0x2987b8('0x2e7')];_0x11727a&&_0x11727a['dataPipe']?(_0x3c7e42(null),_0x11727a[_0x2987b8('0x3ea')][_0x2987b8('0xeb')]({'page':0x1,'limit':0x1f4,'search':''})['then'](function(_0x2b3ef3){var _0x12bf56=_0x2987b8;return _0x3c7e42(_0x2b3ef3&&_0x2b3ef3[_0x12bf56('0x4ee')]||[]);})['catch'](function(){return _0x3c7e42([]);})):_0x3c7e42([]);},[]),_0x8eee0a=(0x0,_0x37f90d[_0x2b0fd7('0x2a1')])(function(){var _0x2e486c=_0x2b0fd7,_0x42b0b=_0x335dfb()[_0x2e486c('0xbe')];_0x42b0b&&_0x42b0b[_0x2e486c('0x3ea')]?(_0x3038f1(null),_0x42b0b[_0x2e486c('0x3ea')]['get']({'page':0x1,'limit':0x1f4,'search':''})['then'](function(_0x49bfd6){var _0x51600a=_0x2e486c,_0x100c6c=_0x49bfd6&&_0x49bfd6[_0x51600a('0x4ee')]||[];_0x3038f1(_0x100c6c);var _0x520064=_0x100c6c[_0x51600a('0x1dd')](function(_0x32f6bc){return _0x32f6bc['id'];});_0x520064['length']?_0x875999(_0x42b0b,_0x51600a('0x124'),{'ids':_0x520064})[_0x51600a('0x273')](function(_0x19799c){var _0x3b68b8=_0x51600a;_0x14048f(!(!_0x19799c||!_0x19799c[_0x3b68b8('0xa')])),_0x41ffcb(_0x19799c&&_0x19799c[_0x3b68b8('0x103')]||{});})['catch'](function(){_0x14048f(!0x1),_0x41ffcb({});}):(_0x14048f(!0x1),_0x41ffcb({}));})[_0x2e486c('0x3d9')](function(){return _0x3038f1([]);})):_0x3038f1([]);},[]);(0x0,_0x37f90d[_0x2b0fd7('0x42a')])(function(){_0x55ef9b(),_0x5313e9&&_0x8eee0a();},[_0x55ef9b,_0x8eee0a,_0x5313e9]);var _0x4f07fb=function(){var _0x222e52=_0x2b0fd7;_0x222e52('0x201')===_0x337613?_0x8eee0a():_0x55ef9b();},_0x166ba9=function(){_0x5ebcd2('list'),_0x115332(null),_0x538c14(null),_0x3dd22d(null),_0x6140bb({}),_0x4f07fb();},_0x2dca54=function(_0x4c6a5e){var _0x382129=_0x2b0fd7,_0x4be467=_0x335dfb()[_0x382129('0x2de')];_0x4be467&&(_0x4be467['setCurrentTimeSheetId'](_0x4c6a5e['id']),_0x115332(_0x232faa({},_0x4c6a5e,{'readOnly':!0x1})),_0x6140bb({}),_0x538c14(null),_0x5e3888([]),_0x5ebcd2(_0x382129('0x488')),_0x890812(!0x0),_0x875999(_0x4be467,'getAllData',{'rowTable':_0x382129('0x91'),'columnTable':_0x382129('0x36c'),'valueTable':_0x382129('0x326'),'currentId':_0x4c6a5e['id'],'save':0x0})[_0x382129('0x273')](function(_0x37880a){_0x538c14({'projects':_0x37880a[0x0]||[],'dates':_0x37880a[0x1]||[],'entries':_0x37880a[0x2]||[]}),_0x890812(!0x1);})[_0x382129('0x3d9')](function(){var _0x42cc9f=_0x382129;_0x890812(!0x1),_0x24d303[_0x42cc9f('0x2ac')][_0x42cc9f('0x54d')](_0x42cc9f('0x35c'),0x5);}),_0x875999(_0x4be467,_0x382129('0x4b3'),{'id':_0x4c6a5e['id']})['then'](function(_0x25a40d){return _0x5e3888(Array['isArray'](_0x25a40d)?_0x25a40d:[]);})[_0x382129('0x3d9')](function(){return _0x5e3888([]);}));},_0x37fdb8=function(_0x4bcfe5,_0x3e2c4b){var _0x3279a4=_0x2b0fd7,_0x1a3fa2=_0x3e2c4b?_0x335dfb()[_0x3279a4('0xbe')]:_0x335dfb()[_0x3279a4('0x2e7')],_0x4c530b=_0x335dfb()[_0x3279a4('0x458')],_0x5c68ae=_0x4c530b&&_0x4c530b[_0x3279a4('0xd7')]?JSON[_0x3279a4('0x1d1')](_0x4c530b[_0x3279a4('0xd7')]()):'';_0x115332(_0x232faa({},_0x4bcfe5,{'readOnly':!0x0,'isReport':!!_0x3e2c4b})),_0x3dd22d(null),_0x116c1c([]),_0x5ebcd2('calendar'),_0xc2dfee(!0x0),_0x875999(_0x1a3fa2,_0x3279a4('0x96'),{'id':_0x4bcfe5['id'],'sm':_0x5c68ae})[_0x3279a4('0x273')](function(_0x5cb1f3){_0x3dd22d({'entries':_0x5cb1f3[0x0]||[],'employee':_0x5cb1f3[0x1]||{},'timesheet':_0x5cb1f3[0x2]||{}}),_0xc2dfee(!0x1);})[_0x3279a4('0x3d9')](function(){var _0x2a7725=_0x3279a4;_0xc2dfee(!0x1),_0x24d303[_0x2a7725('0x2ac')][_0x2a7725('0x54d')](_0x2a7725('0x33b'),0x5);}),_0x875999(_0x1a3fa2,_0x3279a4('0x3ec'),{'id':_0x4bcfe5['id']})[_0x3279a4('0x273')](function(_0x26d83d){var _0x5b6931=_0x3279a4;return _0x116c1c(Array[_0x5b6931('0x161')](_0x26d83d)?_0x26d83d:[]);})[_0x3279a4('0x3d9')](function(){return _0x116c1c([]);});},_0x33babe=function(_0x9b84b1,_0x437f52,_0x2a7b1c,_0x4536d7){var _0x5cbcfd=_0x2b0fd7;_0x2d59bc(_0x2a7b1c),_0x875999(_0x9b84b1,_0x437f52,{'id':_0x2a7b1c},!0x0)['then'](function(){var _0x588b05=_0x4ba4;_0x24d303[_0x588b05('0x2ac')]['success'](_0x4536d7),_0x55ef9b();})[_0x5cbcfd('0x3d9')](function(_0x4e5410){var _0x5cddf1=_0x5cbcfd;return _0x24d303[_0x5cddf1('0x2ac')][_0x5cddf1('0x54d')](_0x4e5410&&_0x4e5410[_0x5cddf1('0x2ac')]||_0x5cddf1('0x386')[_0x5cddf1('0x54e')](_0x437f52),0x5);})[_0x5cbcfd('0x3e1')](function(){return _0x2d59bc(null);});},_0x63058e=function(){var _0x4de90c=_0x2b0fd7,_0x380a09=_0x335dfb()['tabSubEmployeeTimeSheetAll']||_0x335dfb()[_0x4de90c('0x2e7')];_0x380a09&&_0x22ad8a['length']&&(_0x5e41b8(!0x0),_0x875999(_0x380a09,'bulkApproveTimeSheets',{'ids':_0x22ad8a},!0x0)['then'](function(_0x3286ee){var _0x349b24=_0x4de90c,_0x75e937=_0x3286ee&&_0x3286ee[_0x349b24('0x245')]||0x0;_0x24d303[_0x349b24('0x2ac')]['success'](''[_0x349b24('0x54e')](_0x75e937,'\x20timesheet')['concat'](0x1===_0x75e937?'':'s','\x20approved')),_0x2821a5([]),_0x8eee0a();})[_0x4de90c('0x3d9')](function(){var _0x3a0bc0=_0x4de90c;return _0x24d303[_0x3a0bc0('0x2ac')][_0x3a0bc0('0x54d')](_0x3a0bc0('0x54f'),0x5);})['finally'](function(){return _0x5e41b8(!0x1);}));},_0x46aa3d=function(_0x20bea6,_0x1128ff,_0x2b418e,_0xf409a2){var _0x27f361=_0x2b0fd7,_0x95487a=_0x335dfb()[_0x27f361('0xbe')]||_0x335dfb()[_0x27f361('0x2e7')];return _0x2d59bc(_0x20bea6),_0x875999(_0x95487a,_0x27f361('0x465'),{'id':_0x20bea6,'status':_0x1128ff,'note':_0xf409a2||''},!0x0)['then'](function(){var _0x2cff12=_0x27f361;_0x24d303['message']['success'](_0x2cff12('0x252')[_0x2cff12('0x54e')](_0x1128ff[_0x2cff12('0x504')]())),_0x2b418e&&_0x2b418e();})[_0x27f361('0x3d9')](function(){var _0x3ad7c1=_0x27f361;return _0x24d303[_0x3ad7c1('0x2ac')][_0x3ad7c1('0x54d')]('Could\x20not\x20change\x20status',0x5);})['finally'](function(){return _0x2d59bc(null);});},_0x1e1efe=function(_0x172fc){var _0x232f3f=_0x2b0fd7,_0x2ddb84=_0x335dfb()['tabEmployeeTimeEntry'];_0x2ddb84&&_0x232f3f('0x568')==typeof _0x2ddb84[_0x232f3f('0x259')]&&_0x2ddb84[_0x232f3f('0x259')](_0x172fc,function(_0x2ba65f,_0x28c817){var _0x5efec8=_0x232f3f;0xc8===_0x2ba65f&&_0x5efec8('0x13d')===_0x28c817?(_0x24d303[_0x5efec8('0x2ac')][_0x5efec8('0x3fb')](_0x5efec8('0xbb')),_0x44dc71&&_0x37fdb8(_0x44dc71,_0x44dc71[_0x5efec8('0x3af')])):_0x24d303[_0x5efec8('0x2ac')][_0x5efec8('0x54d')](_0x5efec8('0x13e'),0x5);});},_0x3b15e6=(0x0,_0x37f90d[_0x2b0fd7('0x286')])(function(){return _0x40f773?_0x40f773['projects']['filter'](function(_0x126f3f){return-0x1!==_0x126f3f['id']&&'-1'!==_0x126f3f['id'];}):[];},[_0x40f773]),_0x174dbb=(0x0,_0x37f90d[_0x2b0fd7('0x2a1')])(function(_0xb76e08,_0x205260){var _0x5365f3=_0x2b0fd7,_0x804965=''[_0x5365f3('0x54e')](_0x205260,'=')['concat'](_0xb76e08);if(_0x804965 in _0xd56bed)return _0xd56bed[_0x804965];if(!_0x40f773)return'';var _0x53e8de=_0x40f773[_0x5365f3('0x45e')][_0x5365f3('0xe8')](function(_0x117d46){var _0x250e25=_0x5365f3;return _0x117d46[_0x250e25('0x182')]===_0xb76e08&&_0x117d46[_0x250e25('0x3fa')]===_0x205260;});return _0x53e8de&&null!=_0x53e8de[_0x5365f3('0x484')]?_0x53e8de[_0x5365f3('0x484')]:'';},[_0xd56bed,_0x40f773]),_0x20f01d=(0x0,_0x37f90d['useCallback'])(function(_0x1f2505){return _0x3b15e6['reduce'](function(_0x51cab2,_0x5880e7){var _0x3b98a2=_0x4ba4,_0x4a262b=parseFloat(_0x174dbb(_0x5880e7['id'],_0x1f2505));return _0x51cab2+(Number[_0x3b98a2('0x36e')](_0x4a262b)?0x0:_0x4a262b);},0x0);},[_0x3b15e6,_0x174dbb]),_0x11fb1e=(0x0,_0x37f90d['useCallback'])(function(_0x1ec3be){var _0x5db582=_0x2b0fd7;return _0x40f773?_0x40f773[_0x5db582('0x38e')][_0x5db582('0x26c')](function(_0x14fd9b,_0x574336){var _0x52d5d3=_0x5db582,_0x1cdd63=parseFloat(_0x174dbb(_0x1ec3be,_0x574336['id']));return _0x14fd9b+(Number[_0x52d5d3('0x36e')](_0x1cdd63)?0x0:_0x1cdd63);},0x0):0x0;},[_0x40f773,_0x174dbb]),_0x44c801=_0x44dc71&&!_0x44dc71[_0x2b0fd7('0x1f2')]&&_0x2b0fd7('0x499')!==_0x44dc71['status'],_0x1bc158=function(_0x59f7b9){var _0x1767cc=_0x2b0fd7,_0x3931bd=new Date(''[_0x1767cc('0x54e')](String(_0x59f7b9[_0x1767cc('0x3fa')])['slice'](0x0,0xa),_0x1767cc('0x6'))),_0x9f093f=Number[_0x1767cc('0x36e')](_0x3931bd['getTime']())?_0x59f7b9[_0x1767cc('0x3fa')]:_0x3931bd['toLocaleDateString'](void 0x0,{'weekday':'short','month':_0x1767cc('0x562'),'day':_0x1767cc('0x3c9')}),_0x25e034=_0x1767cc('0x40b');if(_0x59f7b9[_0x1767cc('0x30a')]){var _0x232f8e=/morning/i[_0x1767cc('0x2d4')](_0x59f7b9[_0x1767cc('0x444')])?'Morning':/after|evening/i['test'](_0x59f7b9['type'])?_0x1767cc('0x2b3'):_0x1767cc('0x276');_0x25e034=_0x1767cc('0x384')[_0x1767cc('0x54e')](_0x232f8e);}return{'dateStr':_0x9f093f,'kind':_0x25e034,'cap':_0x59f7b9[_0x1767cc('0x30a')]?0x4:0x0};},_0x100a8e=function(_0x573d20){var _0x28ce79=_0x2b0fd7,_0x1bd135=_0x335dfb()[_0x28ce79('0x2de')];if(_0x1bd135&&_0x44dc71){var _0x46314f=_0x40f773['dates'][_0x28ce79('0xe8')](function(_0xc67a3c){return _0x20f01d(_0xc67a3c['id'])>0x18;});if(_0x46314f)_0x24d303[_0x28ce79('0x2ac')][_0x28ce79('0x54d')](_0x28ce79('0x55e')[_0x28ce79('0x54e')](_0x46314f[_0x28ce79('0x4d8')],_0x28ce79('0xc4')),0x5);else{if(_0xaf668d['length']){var _0x39f64e=_0xaf668d[_0x28ce79('0x1dd')](function(_0x5b0535){return{'ld':_0x5b0535,'total':_0x20f01d(_0x5b0535['date'])};})[_0x28ce79('0x8f')](function(_0x4b3e5e){var _0x3e71f9=_0x28ce79,_0x5108cb=_0x4b3e5e['ld'];return _0x4b3e5e[_0x3e71f9('0x3cf')]>(_0x5108cb[_0x3e71f9('0x30a')]?0x4:0x0);});if(_0x39f64e['length'])return void _0x24d303[_0x28ce79('0xc3')][_0x28ce79('0x54d')]({'title':_0x28ce79('0x4a1'),'content':_0x37f90d[_0x28ce79('0x4c1')][_0x28ce79('0x33e')]('div',null,_0x37f90d[_0x28ce79('0x4c1')][_0x28ce79('0x33e')]('p',null,_0x28ce79('0x2c')['concat'](_0x28ce79('0x483')===_0x573d20?_0x28ce79('0x280'):_0x28ce79('0xdc'),_0x28ce79('0x10f'))),_0x37f90d['default'][_0x28ce79('0x33e')]('ul',{'style':{'paddingLeft':0x12,'margin':0x0}},_0x39f64e[_0x28ce79('0x1dd')](function(_0x44fdf8){var _0x4f5654=_0x28ce79,_0x414d15=_0x44fdf8['ld'],_0x4cfaa5=_0x44fdf8['total'],_0xd13594=_0x1bc158(_0x414d15);return _0x37f90d[_0x4f5654('0x4c1')][_0x4f5654('0x33e')]('li',{'key':_0x414d15['date'],'style':{'marginBottom':0x4}},_0x37f90d[_0x4f5654('0x4c1')][_0x4f5654('0x33e')]('b',null,_0xd13594['dateStr']),_0x4f5654('0x187'),_0xd13594[_0x4f5654('0x10a')],':\x20',_0x414d15[_0x4f5654('0x30a')]?'max\x204h\x20allowed,\x20you\x20logged\x20'[_0x4f5654('0x54e')](_0x4cfaa5,'h'):_0x4f5654('0x373')['concat'](_0x4cfaa5,'h'));})))});}var _0x1de0f7={'rowTable':_0x28ce79('0x91'),'columnTable':'QTDays','valueTable':_0x28ce79('0x326'),'currentId':_0x44dc71['id']};Object['keys'](_0xd56bed)[_0x28ce79('0x35e')](function(_0x4ac795){var _0x519ddb=_0x28ce79,_0xe4f129=_0x3a8a0d(_0x4ac795[_0x519ddb('0x376')]('='),0x2),_0x3d728a=_0xe4f129[0x0],_0x121606=_0xe4f129[0x1];_0x1de0f7[_0x4ac795]=[_0x3d728a,_0x121606,''[_0x519ddb('0x54e')](''===_0xd56bed[_0x4ac795]||null==_0xd56bed[_0x4ac795]?0x0:_0xd56bed[_0x4ac795])];}),_0x439a0c(!0x0),_0x875999(_0x1bd135,_0x573d20,_0x1de0f7,!0x0)[_0x28ce79('0x273')](function(){var _0x5d5889=_0x28ce79;_0x24d303[_0x5d5889('0x2ac')][_0x5d5889('0x3fb')](_0x5d5889('0x483')===_0x573d20?_0x5d5889('0x115'):_0x5d5889('0x1a1')),_0x6140bb({});var _0x4339a5=_0x5d5889('0x483')===_0x573d20?'Submitted':_0x44dc71['status'];_0x2dca54(_0x232faa({},_0x44dc71,{'status':_0x4339a5}));})[_0x28ce79('0x3d9')](function(){var _0x27a2ae=_0x28ce79;return _0x24d303['message'][_0x27a2ae('0x54d')]('Could\x20not\x20save\x20the\x20timesheet',0x5);})[_0x28ce79('0x3e1')](function(){return _0x439a0c(!0x1);});}}},_0x4b1eca=function(_0x180346){var _0x5f4c6e=_0x2b0fd7;return _0x37f90d[_0x5f4c6e('0x4c1')]['createElement'](_0x24d303['Tag'],{'color':_0x500def[_0x180346]||'default'},_0x180346);},_0x3d87c5=function(_0x1bdd1a){var _0x42ab9b=_0x2b0fd7;return _0x1bdd1a>0x0?''['concat'](Math['floor'](_0x1bdd1a/0x3c),'h')[_0x42ab9b('0x54e')](_0x1bdd1a%0x3c?'\x20'[_0x42ab9b('0x54e')](_0x1bdd1a%0x3c,'m'):''):'0h';},_0x588053=function(_0x52b1c8){var _0x3b36eb=_0x2b0fd7,_0x590572=_0x26171a(_0x52b1c8[_0x3b36eb('0x3d')]),_0x1d447c=_0x26171a(_0x52b1c8[_0x3b36eb('0x4b2')]);return _0x590572&&_0x1d447c?Math[_0x3b36eb('0x2e8')](0x0,Math[_0x3b36eb('0x3a3')]((_0x1d447c-_0x590572)/0xea60)):0x0;};if('grid'===_0x2f3561&&_0x44dc71){var _0x449892=_0x44c801&&_0x2b0fd7('0x1ed')!==_0x44dc71[_0x2b0fd7('0x260')];return _0x37f90d['default']['createElement'](_0x2b0fd7('0x2e'),{'style':{'padding':0x8}},_0x37f90d['default']['createElement'](_0x24d303[_0x2b0fd7('0x347')],{'style':{'borderRadius':0xe},'title':_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x27b')],{'wrap':!0x0},_0x37f90d['default'][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x55f')],{'icon':_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x5b7caf['ArrowLeftOutlined'],null),'onClick':_0x166ba9},_0x2b0fd7('0x136')),_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x467369,{'level':0x5,'style':{'margin':0x0}},''['concat'](_0xad8e15(_0x44dc71[_0x2b0fd7('0x3d')]),_0x2b0fd7('0x522'))['concat'](_0xad8e15(_0x44dc71[_0x2b0fd7('0x4b2')]))),_0x4b1eca(_0x44dc71['status'])),'extra':_0x37f90d['default']['createElement'](_0x24d303[_0x2b0fd7('0x27b')],{'wrap':!0x0},_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x55f')],{'icon':_0x37f90d['default'][_0x2b0fd7('0x33e')](_0x5b7caf['DownloadOutlined'],null),'onClick':function(){var _0x5d4634=_0x2b0fd7;if(_0x40f773){var _0xf9c556=[[_0x5d4634('0x91')]['concat'](_0x38b85a(_0x40f773['dates'][_0x5d4634('0x1dd')](function(_0x34b169){return _0x34b169['name'];})),[_0x5d4634('0x1c3')])[_0x5d4634('0x521')](',')];_0x3b15e6[_0x5d4634('0x35e')](function(_0x47cac5){var _0xda721b=_0x5d4634;return _0xf9c556[_0xda721b('0x193')]([JSON[_0xda721b('0x1d1')](_0x47cac5[_0xda721b('0x4d8')])][_0xda721b('0x54e')](_0x38b85a(_0x40f773['dates'][_0xda721b('0x1dd')](function(_0x2289ab){return _0x174dbb(_0x47cac5['id'],_0x2289ab['id'])||0x0;})),[_0x11fb1e(_0x47cac5['id'])])[_0xda721b('0x521')](','));}),_0xf9c556[_0x5d4634('0x193')]([_0x5d4634('0x1c3')]['concat'](_0x38b85a(_0x40f773[_0x5d4634('0x38e')]['map'](function(_0x50b5a7){return _0x20f01d(_0x50b5a7['id']);})),[''])[_0x5d4634('0x521')](','));var _0x367415=document[_0x5d4634('0x33e')]('a');_0x367415[_0x5d4634('0x1f7')]=URL['createObjectURL'](new Blob([_0xf9c556[_0x5d4634('0x521')]('\x0d\x0a')],{'type':'text/csv;charset=utf-8'})),_0x367415[_0x5d4634('0x530')]='timesheet_'[_0x5d4634('0x54e')](_0x44dc71['id'],_0x5d4634('0xde')),_0x367415[_0x5d4634('0x441')](),URL[_0x5d4634('0x39d')](_0x367415[_0x5d4634('0x1f7')]);}}},_0x2b0fd7('0x203')),_0x44c801&&_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x55f')],{'icon':_0x37f90d['default'][_0x2b0fd7('0x33e')](_0x5b7caf[_0x2b0fd7('0x382')],null),'loading':_0x1c8cc1,'onClick':function(){var _0x235308=_0x2b0fd7;return _0x100a8e(_0x235308('0x56c'));}},'Save'),_0x449892&&_0x37f90d['default'][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x55f')],{'type':_0x2b0fd7('0x4c4'),'icon':_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x5b7caf[_0x2b0fd7('0x541')],null),'loading':_0x1c8cc1,'onClick':function(){var _0x507f9=_0x2b0fd7;return _0x100a8e(_0x507f9('0x483'));}},'Submit'))},function(){var _0x4f0d70=_0x2b0fd7;if(_0x12b4db||!_0x40f773)return _0x37f90d[_0x4f0d70('0x4c1')]['createElement'](_0x4f0d70('0x2e'),{'style':{'textAlign':_0x4f0d70('0x3c5'),'padding':0x3c}},_0x37f90d[_0x4f0d70('0x4c1')][_0x4f0d70('0x33e')](_0x24d303[_0x4f0d70('0xe5')],{'size':'large'}));var _0xf397c9=[{'title':_0x4f0d70('0x91'),'dataIndex':'name','key':'name','fixed':_0x4f0d70('0x39e'),'width':0xc8,'render':function(_0x17c0ec){var _0x2031aa=_0x4f0d70;return _0x37f90d['default'][_0x2031aa('0x33e')](_0x2f411c,{'strong':!0x0},_0x17c0ec);}}][_0x4f0d70('0x54e')](_0x38b85a(_0x40f773[_0x4f0d70('0x38e')][_0x4f0d70('0x1dd')](function(_0x5595b8){var _0x5977c0=_0x4f0d70;return{'title':_0x5595b8[_0x5977c0('0x4d8')],'key':_0x5595b8['id'],'align':'center','width':0x60,'render':function(_0x180aff,_0x17140d){var _0xe65667=_0x5977c0,_0xd402cb=_0x44c801&&'No'!==_0x5595b8['editable'],_0x14fd45=_0x174dbb(_0x17140d['id'],_0x5595b8['id']);return _0xd402cb?_0x37f90d[_0xe65667('0x4c1')][_0xe65667('0x33e')](_0x24d303[_0xe65667('0x289')],{'size':'small','min':0x0,'max':0x18,'step':0.5,'controls':!0x1,'value':''===_0x14fd45?null:Number(_0x14fd45),'onChange':function(_0xb670e8){return _0x519928=_0x17140d['id'],_0x20606b=_0x5595b8['id'],_0x4d8c27=_0xb670e8,_0x6140bb(function(_0x2b61ca){var _0x1975e3=_0x4ba4;return _0x232faa({},_0x2b61ca,_0x129597({},''[_0x1975e3('0x54e')](_0x20606b,'=')['concat'](_0x519928),null==_0x4d8c27?'':_0x4d8c27));});var _0x519928,_0x20606b,_0x4d8c27;},'style':{'width':0x46}}):_0x37f90d[_0xe65667('0x4c1')][_0xe65667('0x33e')](_0xe65667('0x1bd'),null,''===_0x14fd45||null==_0x14fd45?'–':_0x14fd45);}};})),[{'title':_0x4f0d70('0x1c3'),'key':'rowtotal','align':_0x4f0d70('0x3c5'),'fixed':'right','width':0x50,'render':function(_0x3403df,_0xd5e573){var _0x1415ae=_0x4f0d70;return _0x37f90d[_0x1415ae('0x4c1')]['createElement'](_0x2f411c,{'strong':!0x0},_0x11fb1e(_0xd5e573['id'])[_0x1415ae('0x475')](0x2)[_0x1415ae('0x467')](/\.00$/,''));}}]);return _0x37f90d[_0x4f0d70('0x4c1')][_0x4f0d70('0x33e')](_0x37f90d['default'][_0x4f0d70('0x524')],null,_0x37f90d[_0x4f0d70('0x4c1')]['createElement'](_0x24d303[_0x4f0d70('0x4e5')],{'rowKey':'id','size':_0x4f0d70('0x1de'),'bordered':!0x0,'columns':_0xf397c9,'dataSource':_0x3b15e6,'pagination':!0x1,'scroll':{'x':_0x4f0d70('0x27d')},'locale':{'emptyText':_0x37f90d['default']['createElement'](_0x24d303[_0x4f0d70('0x269')],{'image':_0x24d303[_0x4f0d70('0x269')][_0x4f0d70('0x463')],'description':_0x4f0d70('0x2eb')})},'summary':function(){var _0x5d4f65=_0x4f0d70;return _0x37f90d[_0x5d4f65('0x4c1')][_0x5d4f65('0x33e')](_0x24d303['Table'][_0x5d4f65('0x141')],{'fixed':!0x0},_0x37f90d['default']['createElement'](_0x24d303[_0x5d4f65('0x4e5')][_0x5d4f65('0x141')][_0x5d4f65('0x470')],null,_0x37f90d[_0x5d4f65('0x4c1')][_0x5d4f65('0x33e')](_0x24d303['Table']['Summary'][_0x5d4f65('0x316')],{'index':0x0},_0x37f90d[_0x5d4f65('0x4c1')][_0x5d4f65('0x33e')](_0x2f411c,{'strong':!0x0},_0x5d4f65('0x1c3'))),_0x40f773[_0x5d4f65('0x38e')][_0x5d4f65('0x1dd')](function(_0x44d129,_0x919815){var _0x17a8ee=_0x5d4f65,_0x435be7=_0x20f01d(_0x44d129['id']);return _0x37f90d['default']['createElement'](_0x24d303[_0x17a8ee('0x4e5')][_0x17a8ee('0x141')][_0x17a8ee('0x316')],{'key':_0x44d129['id'],'index':_0x919815+0x1,'align':_0x17a8ee('0x3c5')},_0x37f90d[_0x17a8ee('0x4c1')][_0x17a8ee('0x33e')](_0x2f411c,{'strong':!0x0,'style':{'color':_0x435be7>0x18?_0xc24ea9[_0x17a8ee('0x389')]:void 0x0}},_0x435be7[_0x17a8ee('0x475')](0x2)['replace'](/\.00$/,'')));}),_0x37f90d[_0x5d4f65('0x4c1')]['createElement'](_0x24d303[_0x5d4f65('0x4e5')][_0x5d4f65('0x141')][_0x5d4f65('0x316')],{'index':_0x40f773[_0x5d4f65('0x38e')][_0x5d4f65('0x1f8')]+0x1,'align':_0x5d4f65('0x3c5')},_0x37f90d['default']['createElement'](_0x2f411c,{'strong':!0x0},_0x3b15e6[_0x5d4f65('0x26c')](function(_0x2b6395,_0x215995){return _0x2b6395+_0x11fb1e(_0x215995['id']);},0x0)['toFixed'](0x2)['replace'](/\.00$/,'')))));}}),_0xaf668d['length']>0x0&&_0x37f90d[_0x4f0d70('0x4c1')][_0x4f0d70('0x33e')](_0x24d303[_0x4f0d70('0x1b')],{'type':'warning','showIcon':!0x0,'icon':_0x37f90d[_0x4f0d70('0x4c1')][_0x4f0d70('0x33e')](_0x5b7caf['CoffeeOutlined'],null),'style':{'marginTop':0x10,'borderRadius':0xa},'message':_0x37f90d[_0x4f0d70('0x4c1')][_0x4f0d70('0x33e')](_0x2f411c,{'strong':!0x0},_0x4f0d70('0x2cf')),'description':_0x37f90d['default'][_0x4f0d70('0x33e')](_0x4f0d70('0x2e'),null,_0x37f90d[_0x4f0d70('0x4c1')]['createElement'](_0x4f0d70('0x2e'),{'style':{'display':_0x4f0d70('0x3f6'),'flexWrap':_0x4f0d70('0x519'),'gap':0x8,'margin':_0x4f0d70('0x1f0')}},_0xaf668d['map'](function(_0x1d5b8a){var _0x17b9d8=_0x4f0d70,_0x2e5c8d=_0x1bc158(_0x1d5b8a);return _0x37f90d[_0x17b9d8('0x4c1')]['createElement'](_0x24d303[_0x17b9d8('0x477')],{'key':_0x1d5b8a['date'],'color':_0x1d5b8a['half']?'gold':'volcano','icon':_0x37f90d[_0x17b9d8('0x4c1')][_0x17b9d8('0x33e')](_0x5b7caf[_0x17b9d8('0x4d1')],null),'style':{'padding':_0x17b9d8('0x342'),'borderRadius':0xe,'fontSize':0xd,'margin':0x0}},_0x37f90d['default'][_0x17b9d8('0x33e')]('b',null,_0x2e5c8d[_0x17b9d8('0x498')]),_0x17b9d8('0xa4'),_0x2e5c8d[_0x17b9d8('0x10a')]);})),_0x37f90d[_0x4f0d70('0x4c1')]['createElement'](_0x2f411c,{'type':_0x4f0d70('0x3a5'),'style':{'fontSize':12.5}},'No\x20time\x20can\x20be\x20logged\x20on\x20a\x20full-day\x20leave;\x20up\x20to\x204\x20hours\x20on\x20a\x20half-day\x20leave.'))}));}()));}if(_0x2b0fd7('0x231')===_0x2f3561&&_0x44dc71){var _0x2ce487=_0x193f65&&_0x193f65[_0x2b0fd7('0x18d')]||{},_0x1e346d=_0x193f65&&_0x193f65[_0x2b0fd7('0x64')]||{},_0x2ab41a=_0x44dc71[_0x2b0fd7('0x3af')];return _0x37f90d['default'][_0x2b0fd7('0x33e')](_0x2b0fd7('0x2e'),{'style':{'padding':0x8}},_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303['Card'],{'style':{'borderRadius':0xe},'styles':{'header':{'paddingTop':0xc,'paddingBottom':0xc}},'title':_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x27b')],{'wrap':!0x0,'size':_0x2b0fd7('0x9e')},_0x37f90d['default'][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x55f')],{'icon':_0x37f90d[_0x2b0fd7('0x4c1')]['createElement'](_0x5b7caf[_0x2b0fd7('0x4e3')],null),'onClick':_0x166ba9},'Back'),_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x291')],{'size':0x28,'src':_0x2ce487['image'],'icon':_0x37f90d['default']['createElement'](_0x5b7caf['UserOutlined'],null)}),_0x37f90d[_0x2b0fd7('0x4c1')]['createElement']('div',null,_0x37f90d[_0x2b0fd7('0x4c1')]['createElement'](_0x2b0fd7('0x2e'),{'style':{'display':'flex','alignItems':_0x2b0fd7('0x3c5'),'gap':0x8}},_0x37f90d['default'][_0x2b0fd7('0x33e')](_0x467369,{'level':0x5,'style':{'margin':0x0}},_0x2ce487[_0x2b0fd7('0x4d8')]||_0x2b0fd7('0x13c')),_0x4b1eca(_0x1e346d['status']||_0x44dc71[_0x2b0fd7('0x260')])),_0x37f90d['default']['createElement'](_0x2f411c,{'type':'secondary','style':{'fontSize':12.5,'fontWeight':0x190}},''[_0x2b0fd7('0x54e')](_0xad8e15(_0x44dc71[_0x2b0fd7('0x3d')]),_0x2b0fd7('0x522'))[_0x2b0fd7('0x54e')](_0xad8e15(_0x44dc71[_0x2b0fd7('0x4b2')]))))),'extra':_0x2ab41a?_0x37f90d[_0x2b0fd7('0x4c1')]['createElement'](_0x24d303[_0x2b0fd7('0x27b')],{'wrap':!0x0},_0x37f90d[_0x2b0fd7('0x4c1')]['createElement'](_0x24d303[_0x2b0fd7('0x55f')],{'type':'primary','icon':_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x5b7caf['CheckCircleOutlined'],null),'loading':_0x49a6e4===_0x44dc71['id'],'onClick':function(){var _0x4e7f28=_0x2b0fd7;return _0x46aa3d(_0x44dc71['id'],_0x4e7f28('0x499'),_0x166ba9);}},_0x2b0fd7('0x556')),_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x55f')],{'danger':!0x0,'icon':_0x37f90d[_0x2b0fd7('0x4c1')]['createElement'](_0x5b7caf[_0x2b0fd7('0x122')],null),'loading':_0x49a6e4===_0x44dc71['id'],'onClick':function(){return _0x50bbbb({'id':_0x44dc71['id'],'note':''});}},_0x2b0fd7('0x4ca'))):null},function(){var _0x1cbd6c=_0x2b0fd7;if(_0x21689f||!_0x193f65)return _0x37f90d[_0x1cbd6c('0x4c1')][_0x1cbd6c('0x33e')](_0x1cbd6c('0x2e'),{'style':{'textAlign':_0x1cbd6c('0x3c5'),'padding':0x3c}},_0x37f90d[_0x1cbd6c('0x4c1')][_0x1cbd6c('0x33e')](_0x24d303[_0x1cbd6c('0xe5')],{'size':_0x1cbd6c('0x54b')}));var _0x376a72=_0x26171a(_0x44dc71[_0x1cbd6c('0x3d')]),_0x509009=new Date()[_0x1cbd6c('0x2b4')]()['slice'](0x0,0xa),_0x205f3d=Array[_0x1cbd6c('0x303')]({'length':0x7},function(_0x2f68d2,_0x5addec){var _0x572cce=_0x1cbd6c,_0x391b48=new Date(_0x376a72);_0x391b48['setDate'](_0x376a72['getDate']()+_0x5addec);var _0xb5acf7=_0x391b48[_0x572cce('0x2b4')]()[_0x572cce('0x486')](0x0,0xa);return{'key':_0xb5acf7,'dayName':_0x44bca4[_0x391b48[_0x572cce('0x12f')]()],'dayNum':_0x391b48[_0x572cce('0x44f')](),'mon':_0x391b48[_0x572cce('0x158')](void 0x0,{'month':_0x572cce('0x562')}),'isToday':_0xb5acf7===_0x509009,'isWeekend':0x0===_0x391b48[_0x572cce('0x12f')]()||0x6===_0x391b48[_0x572cce('0x12f')](),'entries':[],'minutes':0x0};}),_0x7499bc=0x0;_0x193f65[_0x1cbd6c('0x45e')][_0x1cbd6c('0x35e')](function(_0x4d7395){var _0x583f20=_0x1cbd6c,_0x17de9b=String(_0x4d7395[_0x583f20('0x3d')]||'')['slice'](0x0,0xa),_0x39c4c5=_0x588053(_0x4d7395),_0x164b8b=_0x205f3d[_0x583f20('0xe8')](function(_0x49c440){var _0x4b7697=_0x583f20;return _0x49c440[_0x4b7697('0x322')]===_0x17de9b;});_0x164b8b&&(_0x164b8b[_0x583f20('0x45e')][_0x583f20('0x193')](_0x4d7395),_0x164b8b[_0x583f20('0xbf')]+=_0x39c4c5),_0x7499bc+=_0x39c4c5;});var _0x549436=_0x205f3d[_0x1cbd6c('0x8f')](function(_0x25cc74){var _0xe555a7=_0x1cbd6c;return _0x25cc74[_0xe555a7('0xbf')]>0x0;})['length'],_0x1f386e=_0x193f65[_0x1cbd6c('0x45e')][_0x1cbd6c('0x1f8')],_0x292f91=!_0x44dc71[_0x1cbd6c('0x3af')]&&_0x1cbd6c('0x499')!==_0x44dc71[_0x1cbd6c('0x260')],_0x461a37=function(_0x3d42fc){var _0x1b39ba=_0x1cbd6c,_0x2f70d9=_0x3d42fc[_0x1b39ba('0x11b')],_0x330428=_0x3d42fc['label'],_0x170772=_0x3d42fc[_0x1b39ba('0x1c7')],_0x1b91bb=_0x3d42fc[_0x1b39ba('0x41d')];return _0x37f90d[_0x1b39ba('0x4c1')][_0x1b39ba('0x33e')](_0x1b39ba('0x2e'),{'style':{'flex':_0x1b39ba('0x29'),'minWidth':0x82,'background':_0xc24ea9['colorFillQuaternary'],'borderRadius':0xc,'padding':_0x1b39ba('0x34c')}},_0x37f90d[_0x1b39ba('0x4c1')][_0x1b39ba('0x33e')]('div',{'style':{'fontSize':0xc,'color':_0xc24ea9[_0x1b39ba('0x46c')],'marginBottom':0x3}},_0x330428),_0x37f90d[_0x1b39ba('0x4c1')][_0x1b39ba('0x33e')]('div',{'style':{'fontSize':0x16,'fontWeight':0x2bc,'lineHeight':1.1,'color':_0x1b91bb||_0xc24ea9[_0x1b39ba('0x190')],'display':'flex','alignItems':_0x1b39ba('0x3c5'),'gap':0x7}},_0x2f70d9,_0x170772));};return _0x37f90d[_0x1cbd6c('0x4c1')][_0x1cbd6c('0x33e')](_0x37f90d['default'][_0x1cbd6c('0x524')],null,_0x37f90d[_0x1cbd6c('0x4c1')][_0x1cbd6c('0x33e')](_0x1cbd6c('0x2e'),{'style':{'display':_0x1cbd6c('0x3f6'),'gap':0xc,'flexWrap':_0x1cbd6c('0x519'),'marginBottom':0x12}},_0x37f90d[_0x1cbd6c('0x4c1')]['createElement'](_0x461a37,{'icon':_0x37f90d[_0x1cbd6c('0x4c1')]['createElement'](_0x5b7caf[_0x1cbd6c('0x279')],null),'label':'Total\x20logged','value':_0x3d87c5(_0x7499bc),'accent':_0xc24ea9[_0x1cbd6c('0x142')]}),_0x37f90d['default'][_0x1cbd6c('0x33e')](_0x461a37,{'label':_0x1cbd6c('0x4cf'),'value':_0x1f386e}),_0x37f90d[_0x1cbd6c('0x4c1')][_0x1cbd6c('0x33e')](_0x461a37,{'label':_0x1cbd6c('0x4b1'),'value':''[_0x1cbd6c('0x54e')](_0x549436,_0x1cbd6c('0x250'))}),_0x37f90d[_0x1cbd6c('0x4c1')][_0x1cbd6c('0x33e')](_0x461a37,{'label':_0x1cbd6c('0x20d'),'value':_0x549436?_0x3d87c5(Math[_0x1cbd6c('0x3a3')](_0x7499bc/_0x549436)):'0h'})),_0x37f90d[_0x1cbd6c('0x4c1')][_0x1cbd6c('0x33e')](_0x1cbd6c('0x2e'),{'style':{'overflowX':_0x1cbd6c('0x2d1')}},_0x37f90d[_0x1cbd6c('0x4c1')][_0x1cbd6c('0x33e')]('div',{'style':{'display':_0x1cbd6c('0x3f6'),'minWidth':0x2f8,'borderRadius':0xc,'overflow':_0x1cbd6c('0x5c'),'border':_0x1cbd6c('0x178')['concat'](_0xc24ea9[_0x1cbd6c('0x14b')])}},_0x205f3d['map'](function(_0x327ded,_0x4f3ffb){var _0x21920c=_0x1cbd6c;return _0x37f90d[_0x21920c('0x4c1')][_0x21920c('0x33e')](_0x21920c('0x2e'),{'key':_0x327ded[_0x21920c('0x322')],'style':{'flex':0x1,'minWidth':0x6a,'borderRight':_0x4f3ffb<0x6?'1px\x20solid\x20'[_0x21920c('0x54e')](_0xc24ea9[_0x21920c('0x14b')]):'none','background':_0x327ded[_0x21920c('0x391')]?_0xc24ea9[_0x21920c('0x1d5')]:_0xc24ea9['colorBgContainer']}},_0x37f90d[_0x21920c('0x4c1')]['createElement'](_0x21920c('0x2e'),{'style':{'textAlign':'center','padding':_0x21920c('0x38f'),'background':_0x327ded['isToday']?_0xc24ea9[_0x21920c('0x142')]:_0xc24ea9[_0x21920c('0x20a')],'color':_0x327ded[_0x21920c('0x395')]?'#fff':_0xc24ea9[_0x21920c('0x190')],'borderBottom':_0x21920c('0x178')['concat'](_0xc24ea9['colorBorderSecondary'])}},_0x37f90d['default'][_0x21920c('0x33e')](_0x21920c('0x2e'),{'style':{'fontSize':10.5,'textTransform':'uppercase','letterSpacing':0.6,'opacity':0.85}},_0x327ded[_0x21920c('0x379')]),_0x37f90d['default'][_0x21920c('0x33e')](_0x21920c('0x2e'),{'style':{'fontSize':0x11,'fontWeight':0x2bc,'lineHeight':1.15}},_0x327ded[_0x21920c('0x2ea')]),_0x37f90d[_0x21920c('0x4c1')][_0x21920c('0x33e')](_0x21920c('0x2e'),{'style':{'fontSize':10.5,'opacity':0.8}},_0x327ded[_0x21920c('0x33c')])),_0x37f90d[_0x21920c('0x4c1')][_0x21920c('0x33e')](_0x21920c('0x2e'),{'style':{'textAlign':_0x21920c('0x3c5'),'padding':_0x21920c('0x1c1'),'fontSize':0xc,'fontWeight':0x2bc,'color':_0x327ded[_0x21920c('0xbf')]>0x0?_0xc24ea9[_0x21920c('0x142')]:_0xc24ea9[_0x21920c('0x361')],'borderBottom':_0x21920c('0x42e')[_0x21920c('0x54e')](_0xc24ea9[_0x21920c('0x14b')])}},_0x327ded['minutes']>0x0?_0x3d87c5(_0x327ded[_0x21920c('0xbf')]):'—'),_0x37f90d[_0x21920c('0x4c1')][_0x21920c('0x33e')](_0x21920c('0x2e'),{'style':{'minHeight':0x4e,'padding':_0x21920c('0x1fa'),'display':'flex','flexDirection':_0x21920c('0x47b'),'gap':0x5}},_0x327ded[_0x21920c('0x45e')][_0x21920c('0x1dd')](function(_0x172b9a){var _0x1a8119=_0x21920c;return _0x37f90d[_0x1a8119('0x4c1')][_0x1a8119('0x33e')](_0x1a8119('0x2e'),{'key':_0x172b9a['id'],'style':{'background':_0xc24ea9[_0x1a8119('0x45a')],'border':_0x1a8119('0x178')[_0x1a8119('0x54e')](_0xc24ea9[_0x1a8119('0x238')]),'borderRadius':0x7,'padding':'4px\x207px','fontSize':11.5}},_0x37f90d['default'][_0x1a8119('0x33e')]('div',{'style':{'fontWeight':0x258,'display':_0x1a8119('0x3f6'),'justifyContent':_0x1a8119('0x1df'),'gap':0x4}},_0x37f90d[_0x1a8119('0x4c1')][_0x1a8119('0x33e')](_0x1a8119('0x1bd'),null,_0xf534b2(_0x26171a(_0x172b9a[_0x1a8119('0x3d')]))),_0x37f90d[_0x1a8119('0x4c1')][_0x1a8119('0x33e')](_0x1a8119('0x1bd'),{'style':{'color':_0xc24ea9[_0x1a8119('0x142')]}},_0x3d87c5(_0x588053(_0x172b9a)))),_0x37f90d[_0x1a8119('0x4c1')][_0x1a8119('0x33e')](_0x1a8119('0x2e'),{'style':{'color':_0xc24ea9[_0x1a8119('0x46c')],'whiteSpace':_0x1a8119('0x195'),'overflow':_0x1a8119('0x5c'),'textOverflow':_0x1a8119('0xf7')}},_0x172b9a['project']&&_0x1a8119('0x468')!==_0x172b9a['project']?_0x172b9a[_0x1a8119('0x182')]:_0x1a8119('0x37e')));}),0x0===_0x327ded['entries'][_0x21920c('0x1f8')]&&_0x37f90d[_0x21920c('0x4c1')][_0x21920c('0x33e')](_0x21920c('0x2e'),{'style':{'textAlign':_0x21920c('0x3c5'),'color':_0xc24ea9['colorTextQuaternary'],'fontSize':0xb,'paddingTop':0x6}},'—')));}))),_0x37f90d[_0x1cbd6c('0x4c1')][_0x1cbd6c('0x33e')](_0x2f411c,{'strong':!0x0,'style':{'display':_0x1cbd6c('0x447'),'margin':_0x1cbd6c('0x48b')}},'All\x20entries\x20('[_0x1cbd6c('0x54e')](_0x1f386e,')')),_0x37f90d['default'][_0x1cbd6c('0x33e')](_0x24d303[_0x1cbd6c('0x4e5')],{'rowKey':'id','size':_0x1cbd6c('0x1de'),'dataSource':_0x193f65['entries'],'pagination':!0x1,'locale':{'emptyText':_0x37f90d['default']['createElement'](_0x24d303[_0x1cbd6c('0x269')],{'image':_0x24d303[_0x1cbd6c('0x269')]['PRESENTED_IMAGE_SIMPLE'],'description':'No\x20time\x20entries'})},'columns':[{'title':_0x1cbd6c('0x11'),'key':_0x1cbd6c('0x41c'),'render':function(_0x20d9c4,_0x4f41fc){var _0x46413c=_0x1cbd6c,_0x19813f=_0x26171a(_0x4f41fc['date_start']);return _0x19813f?''[_0x46413c('0x54e')](_0x19813f[_0x46413c('0x158')](),'\x20')['concat'](_0xf534b2(_0x19813f)):'-';}},{'title':_0x1cbd6c('0x56a'),'key':'end','render':function(_0x37d454,_0x12900b){var _0x27342f=_0x1cbd6c,_0x3bc1ea=_0x26171a(_0x12900b['date_end']);return _0x3bc1ea?''[_0x27342f('0x54e')](_0x3bc1ea['toLocaleDateString'](),'\x20')['concat'](_0xf534b2(_0x3bc1ea)):'-';}},{'title':_0x1cbd6c('0xb7'),'key':'dur','render':function(_0x9778bf,_0x26a8c2){var _0x4d3808=_0x1cbd6c;return _0x37f90d['default'][_0x4d3808('0x33e')](_0x24d303[_0x4d3808('0x477')],{'color':_0x4d3808('0x38b'),'style':{'margin':0x0}},_0x3d87c5(_0x588053(_0x26a8c2)));}},{'title':_0x1cbd6c('0x91'),'key':_0x1cbd6c('0x182'),'render':function(_0x37030c,_0x26ab93){var _0x105600=_0x1cbd6c;return _0x26ab93[_0x105600('0x182')]&&_0x105600('0x468')!==_0x26ab93[_0x105600('0x182')]?_0x26ab93[_0x105600('0x182')]:_0x37f90d['default'][_0x105600('0x33e')](_0x2f411c,{'type':_0x105600('0x3a5')},_0x105600('0x37e'));}},{'title':_0x1cbd6c('0x4a'),'dataIndex':_0x1cbd6c('0x571'),'key':_0x1cbd6c('0x571'),'ellipsis':!0x0,'render':function(_0x5263c6){var _0x362372=_0x1cbd6c;return _0x5263c6||_0x37f90d['default']['createElement'](_0x2f411c,{'type':_0x362372('0x3a5')},'—');}}][_0x1cbd6c('0x54e')](_0x38b85a(_0x292f91?[{'title':'','key':_0x1cbd6c('0x352'),'width':0x32,'render':function(_0x49b285,_0x2baf91){var _0xecad10=_0x1cbd6c;return _0x37f90d[_0xecad10('0x4c1')][_0xecad10('0x33e')](_0x24d303['Popconfirm'],{'title':_0xecad10('0x2cc'),'onConfirm':function(){return _0x1e1efe(_0x2baf91['id']);},'okText':_0xecad10('0x1c6'),'okButtonProps':{'danger':!0x0}},_0x37f90d[_0xecad10('0x4c1')]['createElement'](_0x24d303[_0xecad10('0x55f')],{'size':_0xecad10('0x1de'),'type':_0xecad10('0x490'),'danger':!0x0,'icon':_0x37f90d[_0xecad10('0x4c1')][_0xecad10('0x33e')](_0x5b7caf[_0xecad10('0x56b')],null)}));}}]:[]))}),_0x54387a[_0x1cbd6c('0x1f8')]>0x0&&_0x37f90d[_0x1cbd6c('0x4c1')][_0x1cbd6c('0x33e')](_0x1cbd6c('0x2e'),{'style':{'marginTop':0x18}},_0x37f90d['default'][_0x1cbd6c('0x33e')](_0x2f411c,{'strong':!0x0,'style':{'display':_0x1cbd6c('0x447'),'marginBottom':0xc}},_0x37f90d[_0x1cbd6c('0x4c1')]['createElement'](_0x5b7caf[_0x1cbd6c('0x28a')],{'style':{'marginRight':0x6}}),_0x1cbd6c('0x3f')),_0x37f90d['default'][_0x1cbd6c('0x33e')](_0x24d303[_0x1cbd6c('0x310')],{'items':_0x54387a[_0x1cbd6c('0x1dd')](function(_0x5704f9,_0x4bb1d2){var _0x4ae0ed=_0x1cbd6c;return{'color':_0x4ae0ed('0x499')===_0x5704f9['status_to']?_0x4ae0ed('0x538'):_0x4ae0ed('0x2fc')===_0x5704f9['status_to']?_0x4ae0ed('0x398'):'blue','key':_0x4bb1d2,'children':_0x37f90d[_0x4ae0ed('0x4c1')]['createElement'](_0x4ae0ed('0x2e'),null,_0x37f90d[_0x4ae0ed('0x4c1')][_0x4ae0ed('0x33e')](_0x4ae0ed('0x2e'),{'style':{'fontWeight':0x258}},''[_0x4ae0ed('0x54e')](_0x5704f9['status_from']||'',_0x4ae0ed('0x1be'))[_0x4ae0ed('0x54e')](_0x5704f9['status_to']||'')),_0x37f90d['default'][_0x4ae0ed('0x33e')](_0x4ae0ed('0x2e'),{'style':{'color':_0xc24ea9[_0x4ae0ed('0x46c')],'fontSize':0xc}},_0x5704f9[_0x4ae0ed('0x52f')]),_0x5704f9['note']&&_0x5704f9[_0x4ae0ed('0x48f')][_0x4ae0ed('0xa1')]()?_0x37f90d[_0x4ae0ed('0x4c1')][_0x4ae0ed('0x33e')](_0x4ae0ed('0x2e'),{'style':{'marginTop':0x2}},_0x5704f9[_0x4ae0ed('0x48f')][_0x4ae0ed('0xa1')]()):null)};})})));}()),_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0xc3')],{'title':'Reject\x20Timesheet','open':!!_0x360f85,'okText':_0x2b0fd7('0x4ca'),'okButtonProps':{'danger':!0x0},'confirmLoading':_0x49a6e4===(_0x360f85&&_0x360f85['id']),'onOk':function(){var _0x44cc9a=_0x2b0fd7,_0x48d50c=_0x360f85;_0x50bbbb(null),_0x46aa3d(_0x48d50c['id'],_0x44cc9a('0x2fc'),_0x166ba9,_0x48d50c[_0x44cc9a('0x48f')]);},'onCancel':function(){return _0x50bbbb(null);}},_0x37f90d['default'][_0x2b0fd7('0x33e')](_0x2b0fd7('0x2e'),{'style':{'marginBottom':0x6,'color':_0xc24ea9[_0x2b0fd7('0x46c')]}},'Note\x20(optional)'),_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x50')][_0x2b0fd7('0x3ce')],{'rows':0x3,'value':_0x360f85?_0x360f85[_0x2b0fd7('0x48f')]:'','onChange':function(_0x2da995){return _0x50bbbb(function(_0x43fc12){var _0x5de817=_0x4ba4;return _0x232faa({},_0x43fc12,{'note':_0x2da995['target'][_0x5de817('0x1c7')]});});},'placeholder':_0x2b0fd7('0x1a7')})));}var _0xf5ac98=[{'label':_0x2b0fd7('0x1c5'),'value':'All'},{'label':_0x2b0fd7('0x499'),'value':_0x2b0fd7('0x499')},{'label':_0x2b0fd7('0x529'),'value':_0x2b0fd7('0x529')},{'label':_0x2b0fd7('0x2fc'),'value':'Rejected'}]['concat'](_0x38b85a(_0x5313e9?[{'label':_0x2b0fd7('0x167'),'value':_0x2b0fd7('0x201')}]:[])),_0x58339d=Array[_0x2b0fd7('0x303')](new Set((_0x5db480||[])[_0x2b0fd7('0x1dd')](function(_0x1c0d5d){var _0x4408ef=_0x2b0fd7;return _0x1c0d5d[_0x4408ef('0x18d')];})[_0x2b0fd7('0x8f')](Boolean)))[_0x2b0fd7('0x42c')]();return _0x37f90d[_0x2b0fd7('0x4c1')]['createElement']('div',{'style':{'padding':0x8}},_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x347')],{'style':{'borderRadius':0xe},'styles':{'body':{'paddingTop':0x10}}},_0x37f90d['default']['createElement'](_0x24d303[_0x2b0fd7('0x27b')],{'style':{'width':_0x2b0fd7('0x25f'),'justifyContent':_0x2b0fd7('0x1df'),'marginBottom':0x10},'wrap':!0x0},_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x2b0fd7('0x2e'),{'style':{'overflowX':_0x2b0fd7('0x2d1')}},_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x12c')],{'options':_0xf5ac98,'value':_0x337613,'onChange':function(_0x310b76){_0x2821a5([]),_0xb6c3c6(_0x310b76);}})),_0x37f90d['default'][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x27b')],{'wrap':!0x0},_0x2b0fd7('0x201')===_0x337613&&_0x37f90d[_0x2b0fd7('0x4c1')]['createElement'](_0x24d303[_0x2b0fd7('0x1f6')],{'allowClear':!0x0,'showSearch':!0x0,'placeholder':_0x2b0fd7('0x170'),'style':{'minWidth':0xc8},'value':_0x28817f||void 0x0,'onChange':function(_0x3bfd24){return _0x8c022(_0x3bfd24||null);},'options':_0x58339d[_0x2b0fd7('0x1dd')](function(_0x56591c){return{'value':_0x56591c,'label':_0x56591c};})}),_0x37f90d[_0x2b0fd7('0x4c1')]['createElement'](_0x24d303['Button'],{'icon':_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x5b7caf['ReloadOutlined'],null),'onClick':_0x4f07fb},'Refresh'))),function(){var _0x5c7ff9=_0x2b0fd7,_0x1524ca=_0x5c7ff9('0x201')===_0x337613,_0x4b8b78=_0x1524ca?_0x5db480:_0x398616;if(null===_0x4b8b78)return _0x37f90d[_0x5c7ff9('0x4c1')][_0x5c7ff9('0x33e')](_0x5c7ff9('0x2e'),{'style':{'textAlign':'center','padding':0x3c}},_0x37f90d[_0x5c7ff9('0x4c1')][_0x5c7ff9('0x33e')](_0x24d303[_0x5c7ff9('0xe5')],{'size':_0x5c7ff9('0x54b')}));var _0x40bc48=_0x1524ca||_0x5c7ff9('0x49')===_0x337613?_0x4b8b78:_0x4b8b78[_0x5c7ff9('0x8f')](function(_0x3b88ad){var _0x26347c=_0x5c7ff9;return _0x3b88ad[_0x26347c('0x260')]===_0x337613;});_0x1524ca&&_0x28817f&&(_0x40bc48=_0x40bc48['filter'](function(_0x248ab5){var _0x20dc16=_0x5c7ff9;return _0x248ab5[_0x20dc16('0x18d')]===_0x28817f;})),_0x1524ca&&(_0x40bc48=_0x40bc48['filter'](function(_0x218b5a){var _0x208d7c=_0x5c7ff9;return-0x1!==_0x3b6f9a[_0x208d7c('0x570')](_0x218b5a[_0x208d7c('0x260')]);}));var _0x245b8e=[][_0x5c7ff9('0x54e')](_0x38b85a(_0x1524ca?[{'title':_0x5c7ff9('0x1e8'),'dataIndex':'employee','key':_0x5c7ff9('0x18d')}]:[]),[{'title':'Period','key':_0x5c7ff9('0x119'),'render':function(_0x19f2d7,_0x40b374){var _0x32b571=_0x5c7ff9;return _0x37f90d[_0x32b571('0x4c1')][_0x32b571('0x33e')](_0x2f411c,{'strong':!0x0},''[_0x32b571('0x54e')](_0xad8e15(_0x40b374[_0x32b571('0x3d')]),_0x32b571('0x522'))[_0x32b571('0x54e')](_0xad8e15(_0x40b374['date_end'])));}},{'title':'Total\x20Time','dataIndex':_0x5c7ff9('0x3e4'),'key':_0x5c7ff9('0x3e4'),'render':function(_0x2c44fe){var _0x1673c6=_0x5c7ff9;return _0x37f90d[_0x1673c6('0x4c1')][_0x1673c6('0x33e')](_0x24d303[_0x1673c6('0x27b')],{'size':0x4},_0x37f90d['default']['createElement'](_0x5b7caf['ClockCircleOutlined'],null),_0x2c44fe||_0x1673c6('0x27e'));}}],_0x38b85a(_0x1524ca&&_0x281e85?[{'title':_0x5c7ff9('0x4c'),'key':_0x5c7ff9('0x3be'),'render':function(_0x207fdd,_0x2d7550){var _0x2fe2ba=_0x5c7ff9,_0xcfa38b=_0x1e7046[_0x2d7550['id']]||0x0;return _0xcfa38b>0x0?_0x37f90d[_0x2fe2ba('0x4c1')][_0x2fe2ba('0x33e')](_0x24d303[_0x2fe2ba('0x477')],{'color':'gold','style':{'margin':0x0}},''['concat'](_0xcfa38b,_0x2fe2ba('0x27c'))[_0x2fe2ba('0x54e')](0x1===_0xcfa38b?'':'s')):_0x37f90d[_0x2fe2ba('0x4c1')][_0x2fe2ba('0x33e')](_0x2f411c,{'type':_0x2fe2ba('0x3a5')},'—');}}]:[]),[{'title':_0x5c7ff9('0x1f'),'dataIndex':'status','key':_0x5c7ff9('0x260'),'render':_0x4b1eca},{'title':_0x5c7ff9('0x262'),'key':_0x5c7ff9('0x14d'),'render':function(_0x1aad1a,_0x2f2abd){var _0x42b14e=_0x5c7ff9;return _0x37f90d[_0x42b14e('0x4c1')]['createElement'](_0x24d303[_0x42b14e('0x27b')],{'wrap':!0x0,'onClick':function(_0x192e9d){var _0x527bee=_0x42b14e;return _0x192e9d[_0x527bee('0x2dc')]();}},!_0x1524ca&&_0x37f90d[_0x42b14e('0x4c1')][_0x42b14e('0x33e')](_0x24d303['Tooltip'],{'title':_0x42b14e('0x7e')},_0x37f90d[_0x42b14e('0x4c1')][_0x42b14e('0x33e')](_0x24d303['Button'],{'size':_0x42b14e('0x1de'),'icon':_0x37f90d['default'][_0x42b14e('0x33e')](_0x5b7caf[_0x42b14e('0x26')],null),'onClick':function(){return _0x2dca54(_0x2f2abd);}})),_0x1524ca&&_0x37f90d[_0x42b14e('0x4c1')][_0x42b14e('0x33e')](_0x24d303['Button'],{'size':_0x42b14e('0x1de'),'icon':_0x37f90d['default'][_0x42b14e('0x33e')](_0x5b7caf[_0x42b14e('0x153')],null),'onClick':function(){var _0x5954f0=_0x42b14e;return _0x43f1c8({'id':_0x2f2abd['id'],'value':_0x5954f0('0x499')});}},_0x42b14e('0x1f')),!_0x1524ca&&_0x37f90d[_0x42b14e('0x4c1')]['createElement'](_0x37f90d['default']['Fragment'],null,_0x37f90d[_0x42b14e('0x4c1')]['createElement'](_0x24d303[_0x42b14e('0x4d4')],{'title':_0x42b14e('0x43f')},_0x37f90d[_0x42b14e('0x4c1')][_0x42b14e('0x33e')](_0x24d303[_0x42b14e('0x55f')],{'size':_0x42b14e('0x1de'),'icon':_0x37f90d[_0x42b14e('0x4c1')][_0x42b14e('0x33e')](_0x5b7caf[_0x42b14e('0xfa')],null),'loading':_0x49a6e4===_0x2f2abd['id'],'onClick':function(){var _0x1e6a6d=_0x42b14e;return _0x33babe(_0x335dfb()[_0x1e6a6d('0x2e7')],_0x1e6a6d('0x38'),_0x2f2abd['id'],'Previous\x20timesheet\x20created');}},'Previous\x20Week')),_0x37f90d[_0x42b14e('0x4c1')][_0x42b14e('0x33e')](_0x24d303['Tooltip'],{'title':_0x42b14e('0x4e7')},_0x37f90d[_0x42b14e('0x4c1')][_0x42b14e('0x33e')](_0x24d303[_0x42b14e('0x55f')],{'size':'small','icon':_0x37f90d[_0x42b14e('0x4c1')]['createElement'](_0x5b7caf['StepForwardOutlined'],null),'loading':_0x49a6e4===_0x2f2abd['id'],'onClick':function(){var _0x3dc157=_0x42b14e;return _0x33babe(_0x335dfb()['tabEmployeeTimeSheetAll'],_0x3dc157('0x194'),_0x2f2abd['id'],_0x3dc157('0x22c'));}},_0x42b14e('0x330')))));}}]);return _0x37f90d[_0x5c7ff9('0x4c1')][_0x5c7ff9('0x33e')](_0x37f90d[_0x5c7ff9('0x4c1')]['Fragment'],null,_0x1524ca&&_0x37f90d[_0x5c7ff9('0x4c1')][_0x5c7ff9('0x33e')](_0x5c7ff9('0x2e'),{'style':{'display':_0x5c7ff9('0x3f6'),'alignItems':_0x5c7ff9('0x3c5'),'flexWrap':_0x5c7ff9('0x519'),'gap':0x8,'marginBottom':0xe}},_0x37f90d[_0x5c7ff9('0x4c1')][_0x5c7ff9('0x33e')](_0x2f411c,{'type':_0x5c7ff9('0x3a5'),'style':{'marginRight':0x4}},_0x5c7ff9('0x4c2')),_0x37f90d['default']['createElement'](_0x24d303[_0x5c7ff9('0x1e1')]['Group'],{'value':_0x3b6f9a,'onChange':_0x53d37c,'options':[_0x5c7ff9('0x529'),_0x5c7ff9('0x1ed'),_0x5c7ff9('0x499'),_0x5c7ff9('0x2fc')][_0x5c7ff9('0x1dd')](function(_0x595171){return{'label':_0x595171,'value':_0x595171};})}),_0x22ad8a[_0x5c7ff9('0x1f8')]>0x0&&_0x37f90d['default'][_0x5c7ff9('0x33e')](_0x24d303[_0x5c7ff9('0x55f')],{'type':_0x5c7ff9('0x4c4'),'icon':_0x37f90d[_0x5c7ff9('0x4c1')][_0x5c7ff9('0x33e')](_0x5b7caf[_0x5c7ff9('0x541')],null),'loading':_0x569588,'style':{'marginLeft':_0x5c7ff9('0x2d1')},'onClick':_0x63058e},'Approve\x20'[_0x5c7ff9('0x54e')](_0x22ad8a[_0x5c7ff9('0x1f8')],_0x5c7ff9('0x313')))),_0x37f90d[_0x5c7ff9('0x4c1')]['createElement'](_0x24d303[_0x5c7ff9('0x4e5')],_0x2e7308({'rowKey':'id','size':_0x5c7ff9('0x9e'),'columns':_0x245b8e,'dataSource':_0x40bc48,'pagination':{'pageSize':0xa,'hideOnSinglePage':!0x0},'scroll':{'x':_0x5c7ff9('0x27d')},'onRow':function(_0xf4eed){var _0x56a571=_0x5c7ff9;return{'onClick':function(){return _0x37fdb8(_0xf4eed,_0x1524ca);},'style':{'cursor':_0x56a571('0x51e')}};},'locale':{'emptyText':_0x37f90d[_0x5c7ff9('0x4c1')][_0x5c7ff9('0x33e')](_0x24d303[_0x5c7ff9('0x269')],{'image':_0x24d303[_0x5c7ff9('0x269')]['PRESENTED_IMAGE_SIMPLE'],'description':_0x5c7ff9('0x49e')})}},_0x1524ca?{'rowSelection':{'selectedRowKeys':_0x22ad8a,'onChange':_0x2821a5,'getCheckboxProps':function(_0x23b852){var _0x87bbf6=_0x5c7ff9;return{'disabled':_0x87bbf6('0x1ed')!==_0x23b852['status']};}}}:{})));}()),_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0xc3')],{'title':'Change\x20Timesheet\x20Status','open':!!_0x971945,'onCancel':function(){return _0x43f1c8(null);},'onOk':function(){var _0x16c982=_0x2b0fd7;return _0x46aa3d(_0x971945['id'],_0x971945[_0x16c982('0x1c7')],function(){_0x43f1c8(null),_0x8eee0a();},_0x971945&&_0x971945[_0x16c982('0x48f')]);},'confirmLoading':_0x49a6e4===(_0x971945&&_0x971945['id']),'okText':'Change\x20Status'},_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')]('div',{'style':{'marginBottom':0x8}},_0x37f90d[_0x2b0fd7('0x4c1')]['createElement'](_0x2f411c,{'type':_0x2b0fd7('0x3a5')},_0x2b0fd7('0x111'))),_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x1f6')],{'style':{'width':_0x2b0fd7('0x25f')},'value':_0x971945&&_0x971945[_0x2b0fd7('0x1c7')],'onChange':function(_0x4257c0){return _0x43f1c8(function(_0x1a055d){return _0x232faa({},_0x1a055d,{'value':_0x4257c0});});},'options':[_0x2b0fd7('0x499'),'Pending',_0x2b0fd7('0x2fc'),_0x2b0fd7('0x1ed')][_0x2b0fd7('0x1dd')](function(_0x31d686){return{'value':_0x31d686,'label':_0x31d686};})}),_0x971945&&_0x2b0fd7('0x2fc')===_0x971945['value']&&_0x37f90d[_0x2b0fd7('0x4c1')]['createElement']('div',{'style':{'marginTop':0xe}},_0x37f90d[_0x2b0fd7('0x4c1')]['createElement']('div',{'style':{'marginBottom':0x6}},_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x2f411c,{'type':_0x2b0fd7('0x3a5')},_0x2b0fd7('0x218'))),_0x37f90d[_0x2b0fd7('0x4c1')][_0x2b0fd7('0x33e')](_0x24d303[_0x2b0fd7('0x50')][_0x2b0fd7('0x3ce')],{'rows':0x3,'value':_0x971945[_0x2b0fd7('0x48f')]||'','onChange':function(_0x370159){return _0x43f1c8(function(_0x3ec8f7){var _0xd28b54=_0x4ba4;return _0x232faa({},_0x3ec8f7,{'note':_0x370159[_0xd28b54('0x97')][_0xd28b54('0x1c7')]});});},'placeholder':'Add\x20a\x20note\x20explaining\x20why\x20this\x20timesheet\x20is\x20rejected…'}))));};var _0x37f90d=function(_0x238435){var _0x4473aa=_0x982892;if(_0x238435&&_0x238435[_0x4473aa('0x4bc')])return _0x238435;if(null===_0x238435||_0x4473aa('0x19b')!==_0x240ff7(_0x238435)&&_0x4473aa('0x568')!=typeof _0x238435)return{'default':_0x238435};var _0x3e343d=_0x2363da();if(_0x3e343d&&_0x3e343d[_0x4473aa('0x2e9')](_0x238435))return _0x3e343d[_0x4473aa('0xeb')](_0x238435);var _0x244db2={},_0x26d5cf=Object[_0x4473aa('0x28b')]&&Object[_0x4473aa('0x2da')];for(var _0x27130d in _0x238435)if(Object[_0x4473aa('0x501')][_0x4473aa('0x205')][_0x4473aa('0x210')](_0x238435,_0x27130d)){var _0x2b1e82=_0x26d5cf?Object[_0x4473aa('0x2da')](_0x238435,_0x27130d):null;_0x2b1e82&&(_0x2b1e82[_0x4473aa('0xeb')]||_0x2b1e82[_0x4473aa('0x302')])?Object['defineProperty'](_0x244db2,_0x27130d,_0x2b1e82):_0x244db2[_0x27130d]=_0x238435[_0x27130d];}return _0x244db2[_0x4473aa('0x4c1')]=_0x238435,_0x3e343d&&_0x3e343d[_0x4473aa('0x302')](_0x238435,_0x244db2),_0x244db2;}(_0x4da738('react')),_0x24d303=_0x4da738(_0x982892('0x29c')),_0x5b7caf=_0x4da738(_0x982892('0x3aa'));function _0x2363da(){if('function'!=typeof WeakMap)return null;var _0x819ddf=new WeakMap();return _0x2363da=function(){return _0x819ddf;},_0x819ddf;}function _0x2e7308(){var _0x35a2f9=_0x982892;return(_0x2e7308=Object[_0x35a2f9('0x8b')]||function(_0x54bd45){var _0x25188e=_0x35a2f9;for(var _0x55e30b=0x1;_0x55e30b<arguments[_0x25188e('0x1f8')];_0x55e30b++){var _0x562529=arguments[_0x55e30b];for(var _0x425d59 in _0x562529)Object['prototype'][_0x25188e('0x205')][_0x25188e('0x210')](_0x562529,_0x425d59)&&(_0x54bd45[_0x425d59]=_0x562529[_0x425d59]);}return _0x54bd45;})['apply'](this,arguments);}function _0x38b85a(_0x493f3f){return function(_0x5250ad){var _0xad349d=_0x4ba4;if(Array[_0xad349d('0x161')](_0x5250ad))return _0x5747f3(_0x5250ad);}(_0x493f3f)||function(_0x2085fe){var _0x24a585=_0x4ba4;if(_0x24a585('0x3')!=typeof Symbol&&Symbol[_0x24a585('0x412')]in Object(_0x2085fe))return Array[_0x24a585('0x303')](_0x2085fe);}(_0x493f3f)||_0x2e39f0(_0x493f3f)||function(){var _0x89e216=_0x4ba4;throw new TypeError(_0x89e216('0x295'));}();}function _0x2ec5b4(_0x4ceef6,_0x550af5){var _0x121b67=_0x982892,_0x13edee=Object[_0x121b67('0x34d')](_0x4ceef6);if(Object[_0x121b67('0x68')]){var _0x1bad07=Object['getOwnPropertySymbols'](_0x4ceef6);_0x550af5&&(_0x1bad07=_0x1bad07[_0x121b67('0x8f')](function(_0x304f97){var _0x423596=_0x121b67;return Object['getOwnPropertyDescriptor'](_0x4ceef6,_0x304f97)[_0x423596('0xf9')];})),_0x13edee['push'][_0x121b67('0x154')](_0x13edee,_0x1bad07);}return _0x13edee;}function _0x232faa(_0x449958){var _0x5564c1=_0x982892;for(var _0x29a31b=0x1;_0x29a31b<arguments['length'];_0x29a31b++){var _0x52eeab=null!=arguments[_0x29a31b]?arguments[_0x29a31b]:{};_0x29a31b%0x2?_0x2ec5b4(Object(_0x52eeab),!0x0)[_0x5564c1('0x35e')](function(_0x4a7fc2){_0x129597(_0x449958,_0x4a7fc2,_0x52eeab[_0x4a7fc2]);}):Object[_0x5564c1('0x2d')]?Object[_0x5564c1('0x145')](_0x449958,Object[_0x5564c1('0x2d')](_0x52eeab)):_0x2ec5b4(Object(_0x52eeab))['forEach'](function(_0x4e9d44){var _0x428f3b=_0x5564c1;Object[_0x428f3b('0x28b')](_0x449958,_0x4e9d44,Object[_0x428f3b('0x2da')](_0x52eeab,_0x4e9d44));});}return _0x449958;}function _0x129597(_0x7bf31d,_0x12264a,_0x31c6e2){var _0x5df3f2=_0x982892;return _0x12264a in _0x7bf31d?Object[_0x5df3f2('0x28b')](_0x7bf31d,_0x12264a,{'value':_0x31c6e2,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x7bf31d[_0x12264a]=_0x31c6e2,_0x7bf31d;}function _0x3a8a0d(_0x2a9e36,_0x33d334){return function(_0xc41854){var _0x3a5708=_0x4ba4;if(Array[_0x3a5708('0x161')](_0xc41854))return _0xc41854;}(_0x2a9e36)||function(_0x2f9efd,_0x2c5a6d){var _0x4c824f=_0x4ba4;if(_0x4c824f('0x3')==typeof Symbol||!(Symbol[_0x4c824f('0x412')]in Object(_0x2f9efd)))return;var _0x55a0dd=[],_0x372f15=!0x0,_0x4b3ed0=!0x1,_0x32dbba=void 0x0;try{for(var _0x1cb959,_0x3c35b0=_0x2f9efd[Symbol[_0x4c824f('0x412')]]();!(_0x372f15=(_0x1cb959=_0x3c35b0['next']())['done'])&&(_0x55a0dd[_0x4c824f('0x193')](_0x1cb959[_0x4c824f('0x1c7')]),!_0x2c5a6d||_0x55a0dd[_0x4c824f('0x1f8')]!==_0x2c5a6d);_0x372f15=!0x0);}catch(_0x159883){_0x4b3ed0=!0x0,_0x32dbba=_0x159883;}finally{try{_0x372f15||null==_0x3c35b0[_0x4c824f('0x6e')]||_0x3c35b0['return']();}finally{if(_0x4b3ed0)throw _0x32dbba;}}return _0x55a0dd;}(_0x2a9e36,_0x33d334)||_0x2e39f0(_0x2a9e36,_0x33d334)||function(){var _0xd258c6=_0x4ba4;throw new TypeError(_0xd258c6('0x36b'));}();}function _0x2e39f0(_0x133507,_0x156394){var _0x568267=_0x982892;if(_0x133507){if(_0x568267('0x430')==typeof _0x133507)return _0x5747f3(_0x133507,_0x156394);var _0xaa460b=Object[_0x568267('0x501')][_0x568267('0x476')][_0x568267('0x210')](_0x133507)[_0x568267('0x486')](0x8,-0x1);return _0x568267('0x2f7')===_0xaa460b&&_0x133507[_0x568267('0x151')]&&(_0xaa460b=_0x133507[_0x568267('0x151')]['name']),'Map'===_0xaa460b||_0x568267('0x26e')===_0xaa460b?Array['from'](_0xaa460b):'Arguments'===_0xaa460b||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x568267('0x2d4')](_0xaa460b)?_0x5747f3(_0x133507,_0x156394):void 0x0;}}function _0x5747f3(_0x36c1ff,_0x1896af){var _0x3a2350=_0x982892;(null==_0x1896af||_0x1896af>_0x36c1ff[_0x3a2350('0x1f8')])&&(_0x1896af=_0x36c1ff['length']);for(var _0x2e01fe=0x0,_0x149abc=new Array(_0x1896af);_0x2e01fe<_0x1896af;_0x2e01fe++)_0x149abc[_0x2e01fe]=_0x36c1ff[_0x2e01fe];return _0x149abc;}var _0x2f411c=_0x24d303[_0x982892('0x13b')][_0x982892('0x1a0')],_0x467369=_0x24d303[_0x982892('0x13b')]['Title'],_0x500def={'Pending':_0x982892('0x2bc'),'Submitted':'blue','Approved':_0x982892('0x538'),'Rejected':_0x982892('0x398')},_0x57b306=[_0x982892('0x3d3'),_0x982892('0x43e'),_0x982892('0x515'),_0x982892('0x348')],_0x4cd347=_0x982892('0xd3'),_0x44bca4=[_0x982892('0x58'),_0x982892('0x72'),_0x982892('0x8a'),_0x982892('0x385'),_0x982892('0x358'),_0x982892('0x419'),_0x982892('0x11d')],_0x335dfb=function(){var _0x3d3b07=_0x982892;return _0x3d3b07('0x3')!=typeof window&&window[_0x3d3b07('0x53f')]||{};};function _0xad8e15(_0x4335e2){var _0x4e5317=_0x982892;if(!_0x4335e2)return'';var _0x36605a=new Date(''[_0x4e5317('0x54e')](String(_0x4335e2)['slice'](0x0,0xa),_0x4e5317('0x6')));return Number[_0x4e5317('0x36e')](_0x36605a[_0x4e5317('0x23f')]())?_0x4335e2:_0x36605a[_0x4e5317('0x158')](void 0x0,{'weekday':_0x4e5317('0x562'),'month':_0x4e5317('0x562'),'day':'numeric','year':_0x4e5317('0x3c9')});}function _0x26171a(_0x495584){var _0xe3221e=_0x982892;if(!_0x495584)return null;var _0x611433=new Date(String(_0x495584)[_0xe3221e('0x467')]('\x20','T'));return Number[_0xe3221e('0x36e')](_0x611433[_0xe3221e('0x23f')]())?null:_0x611433;}function _0xf534b2(_0x8c8ffe){var _0x452824=_0x982892;return _0x8c8ffe?_0x8c8ffe[_0x452824('0x2c9')](void 0x0,{'hour':_0x452824('0x320'),'minute':_0x452824('0x320')}):'';}var _0x5b4ffd=0x0;function _0x875999(_0x414856,_0x3f834d,_0x315927){var _0x313af0=arguments['length']>0x3&&void 0x0!==arguments[0x3]&&arguments[0x3];return new Promise(function(_0x20452a,_0x49274e){var _0x49de66=_0x4ba4;if(_0x414856&&_0x49de66('0x568')==typeof _0x414856[_0x49de66('0x202')]){var _0x2a92ae=_0x49de66('0x5a')[_0x49de66('0x54e')](_0x5b4ffd+=0x1),_0x2cef64=_0x49de66('0x7d')[_0x49de66('0x54e')](_0x5b4ffd);_0x414856[_0x2a92ae]=function(_0x325240){return _0x20452a(_0x325240);},_0x414856[_0x2cef64]=function(_0x431372){var _0x2e3ebd=_0x49de66;return _0x49274e(_0x431372||new Error(_0x2e3ebd('0x2f5')));};var _0xa810df={'callBackData':[],'callBackSuccess':_0x2a92ae,'callBackFail':_0x2cef64};try{_0x414856[_0x49de66('0x202')](_0x3f834d,_0x4cd347,JSON[_0x49de66('0x1d1')](_0x315927||{}),_0xa810df,_0x313af0);}catch(_0x47972d){_0x49274e(_0x47972d);}}else _0x49274e(new Error(_0x49de66('0x192')));});}},{'@ant-design/icons':_0x557405('0x3aa'),'antd':_0x557405('0x29c'),'react':_0x557405('0x516')}],0x18:[function(_0x14a2f4,_0x4581b8,_0x293980){var _0x1aeeef=_0x557405;'use strict';var _0x285e7a=_0x453a72(_0x14a2f4(_0x1aeeef('0x516'))),_0xb7421b=_0x453a72(_0x14a2f4(_0x1aeeef('0x265'))),_0x3058ec=_0x14a2f4(_0x1aeeef('0x29c')),_0x32551e=_0x453a72(_0x14a2f4(_0x1aeeef('0x1ca'))),_0x3e76b6=_0x14a2f4(_0x1aeeef('0x176'));function _0x453a72(_0x294e18){var _0x368098=_0x1aeeef;return _0x294e18&&_0x294e18[_0x368098('0x4bc')]?_0x294e18:{'default':_0x294e18};}function _0x3d1996(_0x494cc4,_0x5cd314){return function(_0x79768b){var _0x131702=_0x4ba4;if(Array[_0x131702('0x161')](_0x79768b))return _0x79768b;}(_0x494cc4)||function(_0x2bcb6d,_0x885bb){var _0x1f73d2=_0x4ba4;if('undefined'==typeof Symbol||!(Symbol['iterator']in Object(_0x2bcb6d)))return;var _0x5e8985=[],_0x53d0dd=!0x0,_0x28eb51=!0x1,_0x332717=void 0x0;try{for(var _0x5b568d,_0x3ab326=_0x2bcb6d[Symbol[_0x1f73d2('0x412')]]();!(_0x53d0dd=(_0x5b568d=_0x3ab326[_0x1f73d2('0x503')]())[_0x1f73d2('0x448')])&&(_0x5e8985[_0x1f73d2('0x193')](_0x5b568d[_0x1f73d2('0x1c7')]),!_0x885bb||_0x5e8985[_0x1f73d2('0x1f8')]!==_0x885bb);_0x53d0dd=!0x0);}catch(_0x5079f2){_0x28eb51=!0x0,_0x332717=_0x5079f2;}finally{try{_0x53d0dd||null==_0x3ab326['return']||_0x3ab326[_0x1f73d2('0x6e')]();}finally{if(_0x28eb51)throw _0x332717;}}return _0x5e8985;}(_0x494cc4,_0x5cd314)||function(_0x236c77,_0x3caa84){var _0x479174=_0x4ba4;if(!_0x236c77)return;if(_0x479174('0x430')==typeof _0x236c77)return _0x2331f3(_0x236c77,_0x3caa84);var _0x92fb29=Object[_0x479174('0x501')][_0x479174('0x476')]['call'](_0x236c77)[_0x479174('0x486')](0x8,-0x1);_0x479174('0x2f7')===_0x92fb29&&_0x236c77[_0x479174('0x151')]&&(_0x92fb29=_0x236c77[_0x479174('0x151')][_0x479174('0x4d8')]);if('Map'===_0x92fb29||_0x479174('0x26e')===_0x92fb29)return Array[_0x479174('0x303')](_0x92fb29);if(_0x479174('0x243')===_0x92fb29||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x479174('0x2d4')](_0x92fb29))return _0x2331f3(_0x236c77,_0x3caa84);}(_0x494cc4,_0x5cd314)||function(){throw new TypeError('Invalid\x20attempt\x20to\x20destructure\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.');}();}function _0x2331f3(_0x4f68a1,_0x62c87a){(null==_0x62c87a||_0x62c87a>_0x4f68a1['length'])&&(_0x62c87a=_0x4f68a1['length']);for(var _0xabed2b=0x0,_0x3b723c=new Array(_0x62c87a);_0xabed2b<_0x62c87a;_0xabed2b++)_0x3b723c[_0xabed2b]=_0x4f68a1[_0xabed2b];return _0x3b723c;}function _0x5de664(){var _0x51770e=_0x1aeeef;try{var _0x2495fe=localStorage['getItem'](_0x51770e('0x49f'));if(_0x51770e('0x2df')===_0x2495fe||_0x51770e('0x20c')===_0x2495fe)return _0x2495fe;}catch(_0xc0ebd6){}try{if(window[_0x51770e('0x12')]&&window[_0x51770e('0x12')](_0x51770e('0x65'))[_0x51770e('0x2f8')])return _0x51770e('0x2df');}catch(_0x1af0f1){}return _0x51770e('0x20c');}function _0x4cf395(_0x3961ae){var _0x55391f=_0x1aeeef,_0x1a7cbe=_0x55391f('0x2df')===_0x3961ae?_0x3e76b6['MUI_DARK']['bg']:_0x3e76b6[_0x55391f('0x3c1')]['bg'],_0x42c7a4='dark'===_0x3961ae?_0x3e76b6['MUI_DARK'][_0x55391f('0x490')]:_0x3e76b6[_0x55391f('0x3c1')][_0x55391f('0x490')];try{document[_0x55391f('0x558')]['style'][_0x55391f('0xc0')]=_0x1a7cbe,document['body'][_0x55391f('0x4fa')][_0x55391f('0xc0')]=_0x1a7cbe,document[_0x55391f('0x1e0')][_0x55391f('0x4fa')]['color']=_0x42c7a4,document[_0x55391f('0x1e0')][_0x55391f('0x4f1')](_0x55391f('0x1e7'),_0x3961ae),window[_0x55391f('0x35d')]=_0x3961ae;}catch(_0x4df6e4){}}function _0x3c5965(_0x3583e1){var _0x2f378c=_0x1aeeef,_0x1c5cd9=_0x3583e1[_0x2f378c('0x17c')],_0x5e1a51=_0x3583e1['config'],_0x14f4b9=_0x3d1996(_0x285e7a[_0x2f378c('0x4c1')][_0x2f378c('0x51c')](_0x5de664),0x2),_0x47057d=_0x14f4b9[0x0],_0x28ffaf=_0x14f4b9[0x1];_0x285e7a[_0x2f378c('0x4c1')][_0x2f378c('0x42a')](function(){_0x4cf395(_0x47057d);},[_0x47057d]);var _0x572363=_0x285e7a[_0x2f378c('0x4c1')][_0x2f378c('0x2a1')](function(){_0x28ffaf(function(_0x732e08){var _0x3db260=_0x4ba4,_0x2055f4=_0x3db260('0x2df')===_0x732e08?_0x3db260('0x20c'):_0x3db260('0x2df');try{localStorage['setItem'](_0x3db260('0x49f'),_0x2055f4);}catch(_0x5e9812){}return _0x2055f4;});},[]);return _0x285e7a[_0x2f378c('0x4c1')][_0x2f378c('0x33e')](_0x3058ec[_0x2f378c('0x3f9')],{'theme':(0x0,_0x3e76b6['buildTheme'])(_0x47057d)},_0x285e7a[_0x2f378c('0x4c1')][_0x2f378c('0x33e')](_0x32551e[_0x2f378c('0x4c1')],{'bootstrap':_0x1c5cd9,'config':_0x5e1a51,'colorMode':_0x47057d,'onToggleColorMode':_0x572363}));}!function(){var _0x40c67e=_0x1aeeef;_0x4cf395(_0x5de664());var _0x3dd3df=function(){var _0x187bb4=_0x4ba4,_0x5576f5=document[_0x187bb4('0x549')](_0x187bb4('0x492'));if(!_0x5576f5)return{};try{return JSON[_0x187bb4('0x2e3')](_0x5576f5['textContent']||'{}');}catch(_0x4880ea){return{};}}();fetch(''[_0x40c67e('0x54e')](_0x3dd3df[_0x40c67e('0x123')],_0x40c67e('0x520')),{'headers':{'Authorization':'Bearer\x20'[_0x40c67e('0x54e')](_0x3dd3df['token'])},'credentials':'same-origin'})[_0x40c67e('0x273')](function(_0x122164){var _0x657569=_0x40c67e;if(!_0x122164['ok'])throw new Error(_0x657569('0xab')[_0x657569('0x54e')](_0x122164[_0x657569('0x260')]));return _0x122164[_0x657569('0x251')]();})[_0x40c67e('0x273')](function(_0x59a5de){var _0x2e0f95=_0x40c67e;_0xb7421b[_0x2e0f95('0x4c1')]['render'](_0x285e7a[_0x2e0f95('0x4c1')]['createElement'](_0x3c5965,{'bootstrap':_0x59a5de,'config':_0x3dd3df}),document[_0x2e0f95('0x549')](_0x2e0f95('0x11c')));})[_0x40c67e('0x3d9')](function(_0x180d32){var _0x2e413f=_0x40c67e,_0x46fa6a;console[_0x2e413f('0x54d')](_0x2e413f('0x432'),_0x180d32),_0x46fa6a=_0x285e7a[_0x2e413f('0x4c1')][_0x2e413f('0x33e')](_0x2e413f('0x2e'),{'style':{'padding':0x18}},'Failed\x20to\x20load\x20the\x20app\x20shell:\x20'[_0x2e413f('0x54e')](_0x180d32[_0x2e413f('0x2ac')])),_0xb7421b[_0x2e413f('0x4c1')][_0x2e413f('0xea')](_0x285e7a['default']['createElement'](_0x3058ec[_0x2e413f('0x3f9')],{'theme':(0x0,_0x3e76b6[_0x2e413f('0x2a5')])(_0x5de664())},_0x46fa6a),document[_0x2e413f('0x549')]('app-shell-root'));try{_0x3058ec[_0x2e413f('0x2ac')][_0x2e413f('0x54d')](_0x2e413f('0x356'));}catch(_0x2f9c20){}});}();},{'./AppShell':0x2,'./theme':0x19,'antd':'antd','react':_0x557405('0x516'),'react-dom':'react-dom'}],0x19:[function(_0x3971cf,_0x5ef852,_0x4f9398){var _0x4f9162=_0x557405;'use strict';Object[_0x4f9162('0x28b')](_0x4f9398,_0x4f9162('0x4bc'),{'value':!0x0}),_0x4f9398[_0x4f9162('0x2a5')]=_0x16ffff,_0x4f9398[_0x4f9162('0x461')]=_0x4f9398[_0x4f9162('0xb2')]=_0x4f9398['MUI_SHADOW']=_0x4f9398[_0x4f9162('0x23c')]=_0x4f9398[_0x4f9162('0x34e')]=_0x4f9398[_0x4f9162('0x3c1')]=void 0x0;var _0x3d2a7f=_0x3971cf(_0x4f9162('0x29c'));function _0x29f091(_0x5fb9a5,_0x4ada2f){var _0x540eb6=_0x4f9162,_0x1ca7a3=Object[_0x540eb6('0x34d')](_0x5fb9a5);if(Object[_0x540eb6('0x68')]){var _0x17456f=Object[_0x540eb6('0x68')](_0x5fb9a5);_0x4ada2f&&(_0x17456f=_0x17456f[_0x540eb6('0x8f')](function(_0xe571c8){var _0x4e2940=_0x540eb6;return Object[_0x4e2940('0x2da')](_0x5fb9a5,_0xe571c8)['enumerable'];})),_0x1ca7a3[_0x540eb6('0x193')][_0x540eb6('0x154')](_0x1ca7a3,_0x17456f);}return _0x1ca7a3;}function _0x1afa4e(_0x4a8f18){var _0x1a911b=_0x4f9162;for(var _0x2e7e7b=0x1;_0x2e7e7b<arguments[_0x1a911b('0x1f8')];_0x2e7e7b++){var _0x2272aa=null!=arguments[_0x2e7e7b]?arguments[_0x2e7e7b]:{};_0x2e7e7b%0x2?_0x29f091(Object(_0x2272aa),!0x0)['forEach'](function(_0x2e1106){_0x56f64b(_0x4a8f18,_0x2e1106,_0x2272aa[_0x2e1106]);}):Object[_0x1a911b('0x2d')]?Object[_0x1a911b('0x145')](_0x4a8f18,Object[_0x1a911b('0x2d')](_0x2272aa)):_0x29f091(Object(_0x2272aa))['forEach'](function(_0x145407){Object['defineProperty'](_0x4a8f18,_0x145407,Object['getOwnPropertyDescriptor'](_0x2272aa,_0x145407));});}return _0x4a8f18;}function _0x56f64b(_0x144f70,_0x493bf9,_0x29e93f){var _0x29dbf8=_0x4f9162;return _0x493bf9 in _0x144f70?Object[_0x29dbf8('0x28b')](_0x144f70,_0x493bf9,{'value':_0x29e93f,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x144f70[_0x493bf9]=_0x29e93f,_0x144f70;}var _0x5d0a9f={'primary':_0x4f9162('0x3fd'),'primaryDark':_0x4f9162('0x331'),'success':_0x4f9162('0x414'),'warning':_0x4f9162('0x3ac'),'error':_0x4f9162('0x2e2'),'info':_0x4f9162('0x4c8'),'bg':_0x4f9162('0x4fb'),'paper':_0x4f9162('0xbd'),'text':_0x4f9162('0x24e'),'textSecondary':_0x4f9162('0x425'),'divider':_0x4f9162('0x23e')};_0x4f9398[_0x4f9162('0x3c1')]=_0x5d0a9f;var _0x158894={'bg':'#0f141b','paper':_0x4f9162('0x1b8'),'elevated':_0x4f9162('0x394'),'text':_0x4f9162('0x37f'),'textSecondary':'rgba(255,\x20255,\x20255,\x200.78)','border':'#2a3441'};_0x4f9398['MUI_DARK']=_0x158894,_0x4f9398[_0x4f9162('0x23c')]='#1a2233',_0x4f9398[_0x4f9162('0x236')]=_0x4f9162('0x1c'),_0x4f9398[_0x4f9162('0xb2')]=_0x4f9162('0x128');function _0x16ffff(_0x67c097){var _0x555f24=_0x4f9162,_0x2fa349='dark'===_0x67c097;return{'algorithm':_0x2fa349?_0x3d2a7f[_0x555f24('0xd6')]['darkAlgorithm']:_0x3d2a7f[_0x555f24('0xd6')][_0x555f24('0x3b8')],'token':_0x1afa4e({'colorPrimary':_0x5d0a9f[_0x555f24('0x4c4')],'colorInfo':_0x5d0a9f[_0x555f24('0x4c4')],'colorSuccess':_0x5d0a9f['success'],'colorWarning':_0x5d0a9f[_0x555f24('0x540')],'colorError':_0x5d0a9f['error'],'colorLink':_0x5d0a9f['primary'],'fontFamily':'\x22Roboto\x22,\x20\x22Helvetica\x20Neue\x22,\x20Helvetica,\x20Arial,\x20sans-serif','fontSize':0xe,'borderRadius':0x8,'wireframe':!0x1},_0x2fa349?{'colorBgLayout':_0x158894['bg'],'colorBgContainer':_0x158894[_0x555f24('0x509')],'colorBgElevated':_0x158894[_0x555f24('0x18')],'colorText':_0x158894[_0x555f24('0x490')],'colorTextHeading':_0x158894[_0x555f24('0x490')],'colorTextSecondary':_0x158894[_0x555f24('0x339')],'colorBorderSecondary':_0x158894['border']}:{'colorBgLayout':_0x5d0a9f['bg'],'colorText':_0x5d0a9f[_0x555f24('0x490')],'colorTextHeading':_0x5d0a9f[_0x555f24('0x490')],'colorTextSecondary':_0x5d0a9f[_0x555f24('0x339')],'colorBorderSecondary':'#eceff1'}),'components':{'Card':{'borderRadiusLG':0xc,'paddingLG':0x14},'Button':{'fontWeight':0x1f4,'primaryShadow':_0x555f24('0x1ec'),'defaultShadow':_0x555f24('0x1ec'),'controlHeight':0x24},'Table':_0x2fa349?{'headerBg':'#222b36','headerSplitColor':_0x555f24('0x2e1'),'rowHoverBg':'#222b36','cellPaddingBlock':0xe}:{'headerBg':_0x555f24('0x160'),'headerColor':_0x5d0a9f[_0x555f24('0x339')],'headerSplitColor':_0x555f24('0x2e1'),'borderColor':'#eceff1','rowHoverBg':_0x555f24('0x545'),'cellPaddingBlock':0xe},'Tabs':{'itemSelectedColor':_0x5d0a9f[_0x555f24('0x4c4')],'inkBarColor':_0x5d0a9f[_0x555f24('0x4c4')],'titleFontSize':0xe,'horizontalItemGutter':0x1c},'Layout':{'headerBg':_0x2fa349?_0x158894[_0x555f24('0x509')]:_0x555f24('0xbd'),'bodyBg':_0x2fa349?_0x158894['bg']:_0x5d0a9f['bg'],'headerHeight':0x40},'Input':{'controlHeight':0x24},'Select':{'controlHeight':0x24},'Menu':{'darkItemBg':'#1a2233','darkSubMenuItemBg':_0x555f24('0x30'),'darkItemSelectedBg':_0x5d0a9f['primary'],'darkItemHoverBg':_0x555f24('0x26b'),'itemBorderRadius':0x8}}};}var _0x12c1c3=_0x16ffff(_0x4f9162('0x20c'));_0x4f9398[_0x4f9162('0x461')]=_0x12c1c3;},{'antd':_0x557405('0x29c')}]},{},[0x18]);
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = ApiAccess;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Paragraph = _antd.Typography.Paragraph; // Native "API Access" tab for modules::employees — shows the employee's REST API
+// access token and lets them reset it. Reads from / writes to the same legacy
+// MobileAppAdapter (window.modJsList.tabMobileApp) the Mobile App tab uses; the
+// token/enabled flag are injected by initModulesEmployees.
+
+function ApiAccess() {
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var adapter = (window.modJsList || {}).tabMobileApp || null;
+  var apiEnabled = adapter ? adapter.apiEnabled === '1' || adapter.apiEnabled === 1 : false;
+  var apiBaseUrl = adapter ? adapter.apiBaseUrl : null;
+
+  var _useState = (0, _react.useState)(adapter ? adapter.token : null),
+      _useState2 = _slicedToArray(_useState, 2),
+      apiToken = _useState2[0],
+      setApiToken = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      resetting = _useState4[0],
+      setResetting = _useState4[1];
+
+  var cardStyle = {
+    borderRadius: 12,
+    boxShadow: _theme.MUI_SHADOW,
+    marginBottom: 16
+  };
+
+  var resetToken = function resetToken() {
+    if (!adapter) return;
+    setResetting(true);
+
+    adapter.resetApiTokenSuccessCallback = function (cb) {
+      setResetting(false);
+      var v = Array.isArray(cb) ? cb[0] : cb;
+      var newToken = v && _typeof(v) === 'object' ? v.jwtToken : null;
+
+      if (newToken) {
+        adapter.token = newToken; // keep it in sync for the Mobile App tab / re-mounts
+
+        setApiToken(newToken);
+
+        _antd.message.success('API token reset. The previous token no longer works.', 5);
+      } else {
+        _antd.message.error('Could not reset the API token. Please try again.', 5);
+      }
+    };
+
+    adapter.resetApiTokenFailCallback = function () {
+      setResetting(false);
+
+      _antd.message.error('Could not reset the API token. Please try again.', 5);
+    };
+
+    try {
+      adapter.resetApiToken();
+    } catch (e) {
+      setResetting(false);
+    }
+  };
+
+  if (!apiEnabled || !apiToken) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: '100%'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      style: cardStyle,
+      title: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, /*#__PURE__*/_react["default"].createElement(_icons.ApiOutlined, null), "API Access")
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+      description: "REST API access is not enabled for your account."
+    })));
+  }
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: '100%'
+    }
+  }, apiBaseUrl ? /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    style: cardStyle,
+    title: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, /*#__PURE__*/_react["default"].createElement(_icons.ApiOutlined, null), "API Base URL")
+  }, /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    type: "secondary"
+  }, "Base URL for all REST API requests."), /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    copyable: {
+      text: apiBaseUrl
+    },
+    style: {
+      wordBreak: 'break-all',
+      fontFamily: 'monospace',
+      fontSize: 12.5,
+      background: token.colorFillTertiary,
+      padding: 12,
+      borderRadius: 8,
+      marginBottom: 0
+    }
+  }, apiBaseUrl)) : null, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    style: cardStyle,
+    title: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, /*#__PURE__*/_react["default"].createElement(_icons.ApiOutlined, null), "API Access Token"),
+    extra: /*#__PURE__*/_react["default"].createElement(_antd.Popconfirm, {
+      title: "Reset API token",
+      description: "This immediately invalidates your current token. Any integration using it will stop working until updated.",
+      okText: "Reset",
+      cancelText: "Cancel",
+      okButtonProps: {
+        danger: true
+      },
+      onConfirm: resetToken
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      danger: true,
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ReloadOutlined, null),
+      loading: resetting
+    }, "Reset Token"))
+  }, /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    type: "secondary"
+  }, "Use this token to authenticate REST API requests (as a Bearer token). Keep it secret \u2014 anyone with this token can act as you."), /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    copyable: {
+      text: apiToken
+    },
+    style: {
+      wordBreak: 'break-all',
+      fontFamily: 'monospace',
+      fontSize: 12.5,
+      background: token.colorFillTertiary,
+      padding: 12,
+      borderRadius: 8,
+      marginBottom: 0
+    }
+  }, apiToken)));
+}
+
+},{"./theme":26,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],2:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = AppShell;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+var _Notifications = _interopRequireDefault(require("./Notifications"));
+
+var _News = _interopRequireDefault(require("./News"));
+
+var _Dashboard = _interopRequireDefault(require("./Dashboard"));
+
+var _EmployeeDashboard = _interopRequireDefault(require("./EmployeeDashboard"));
+
+var _LicenseRenewalBanner = _interopRequireDefault(require("./LicenseRenewalBanner"));
+
+var _UpdateAvailableBanner = _interopRequireDefault(require("./UpdateAvailableBanner"));
+
+var _NativeModuleHost = _interopRequireDefault(require("./NativeModuleHost"));
+
+var _NativeDocumentModal = _interopRequireDefault(require("./NativeDocumentModal"));
+
+var _ModuleSearch = _interopRequireDefault(require("./ModuleSearch"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Header = _antd.Layout.Header,
+    Sider = _antd.Layout.Sider,
+    Content = _antd.Layout.Content;
+var useBreakpoint = _antd.Grid.useBreakpoint; // Map menu-group names to antd SVG icons (always render, unlike the FA webfont
+// which is not fully deployed). Falls back to a generic icon.
+
+var GROUP_ICONS = {
+  Admin: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null),
+  Employees: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+  Manage: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+  Reports: /*#__PURE__*/_react["default"].createElement(_icons.BarChartOutlined, null),
+  'My Reports': /*#__PURE__*/_react["default"].createElement(_icons.BarChartOutlined, null),
+  System: /*#__PURE__*/_react["default"].createElement(_icons.ControlOutlined, null),
+  Insights: /*#__PURE__*/_react["default"].createElement(_icons.FundOutlined, null),
+  Payroll: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+  Finance: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+  Recruitment: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+  Marketplace: /*#__PURE__*/_react["default"].createElement(_icons.ShopOutlined, null),
+  'About You': /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+  Collaboration: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+  Leave: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+  Time: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+  'My Tasks': /*#__PURE__*/_react["default"].createElement(_icons.CheckSquareOutlined, null),
+  Documents: /*#__PURE__*/_react["default"].createElement(_icons.FileTextOutlined, null),
+  Training: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+  Performance: /*#__PURE__*/_react["default"].createElement(_icons.TrophyOutlined, null),
+  Travel: /*#__PURE__*/_react["default"].createElement(_icons.CarOutlined, null)
+}; // Area `icon` name (from the server area registry) -> antd icon. Falls back to a
+// generic icon for extension-defined areas.
+
+var AREA_ICONS = {
+  home: /*#__PURE__*/_react["default"].createElement(_icons.HomeOutlined, null),
+  people: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+  time: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+  leave: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+  pay: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+  recruitment: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+  learning: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+  performance: /*#__PURE__*/_react["default"].createElement(_icons.TrophyOutlined, null),
+  documents: /*#__PURE__*/_react["default"].createElement(_icons.FileTextOutlined, null),
+  reports: /*#__PURE__*/_react["default"].createElement(_icons.BarChartOutlined, null),
+  configuration: /*#__PURE__*/_react["default"].createElement(_icons.BuildOutlined, null),
+  system: /*#__PURE__*/_react["default"].createElement(_icons.ControlOutlined, null),
+  more: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null)
+};
+
+var areaIcon = function areaIcon(name) {
+  return AREA_ICONS[name] || /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null);
+}; // A section header label inside the area menu (e.g. "MANAGE" / "PERSONAL"). Styled
+// to read clearly as a heading, NOT a clickable menu item: small uppercase,
+// letter-spaced, muted, with a leading icon and a hairline rule above.
+
+
+function sectionHeader(icon, text) {
+  return /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 7,
+      paddingTop: 12,
+      marginTop: 2,
+      borderTop: '1px solid rgba(255,255,255,0.08)',
+      fontSize: 10.5,
+      fontWeight: 700,
+      letterSpacing: 1.3,
+      textTransform: 'uppercase',
+      color: 'rgba(255,255,255,0.42)',
+      cursor: 'default',
+      userSelect: 'none'
+    }
+  }, _react["default"].cloneElement(icon, {
+    style: {
+      fontSize: 12,
+      opacity: 0.85
+    }
+  }), /*#__PURE__*/_react["default"].createElement("span", null, text));
+} // CSS injected into each module iframe (same-origin) to hide the legacy chrome
+// (top bar + sidebar) so only the module content shows inside the new shell.
+// No legacy files are modified — this is applied from the parent shell on load.
+
+
+var EMBED_CSS = "\n  header.header { display: none !important; }\n  aside.left-side, .sidebar-offcanvas, .skeletonSideMenu { display: none !important; }\n  .right-side { margin-left: 0 !important; left: 0 !important; }\n  .wrapper, body, html { padding-top: 0 !important; margin-top: 0 !important; background: #f0f2f5 !important; }\n  body { min-width: 0 !important; }\n  #DemoModeNotice, #IceHrmConnectionNotice { display: none !important; }\n";
+var KEY_SEP = '::'; // Build antd Menu `items` from a view's group list. Each item already carries its
+// resolved { g, n } route from the server (MenuService.getViewMenus).
+
+function buildItems(groups) {
+  if (!Array.isArray(groups)) return [];
+  return groups.map(function (group) {
+    return {
+      key: "grp:".concat(group.name),
+      label: group.name,
+      icon: GROUP_ICONS[group.name] || /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+      children: (group.items || []).map(function (it) {
+        return {
+          key: "".concat(it.g).concat(KEY_SEP).concat(it.n),
+          label: it.label || it.name,
+          data: {
+            g: it.g,
+            n: it.n,
+            label: it.label || it.name
+          }
+        };
+      })
+    };
+  });
+}
+
+function keyFor(g, n) {
+  return "".concat(g).concat(KEY_SEP).concat(n);
+} // Merge several group lists into one, de-duplicating groups by name (their items
+// are concatenated, items de-duped by g::n) — used to give non-switch privileged
+// users (e.g. Managers) a single combined menu of their admin + employee modules.
+
+
+function mergeGroups() {
+  var byName = new Map();
+  var order = [];
+
+  for (var _len = arguments.length, lists = new Array(_len), _key = 0; _key < _len; _key++) {
+    lists[_key] = arguments[_key];
+  }
+
+  lists.forEach(function (list) {
+    return (Array.isArray(list) ? list : []).forEach(function (group) {
+      if (!byName.has(group.name)) {
+        byName.set(group.name, {
+          name: group.name,
+          items: []
+        });
+        order.push(group.name);
+      }
+
+      var tgt = byName.get(group.name);
+      var seen = new Set(tgt.items.map(function (it) {
+        return keyFor(it.g, it.n);
+      }));
+      (group.items || []).forEach(function (it) {
+        var k = keyFor(it.g, it.n);
+
+        if (!seen.has(k)) {
+          seen.add(k);
+          tgt.items.push(it);
+        }
+      });
+    });
+  });
+  return order.map(function (n) {
+    return byName.get(n);
+  });
+}
+
+function AppShell(_ref) {
+  var bootstrap = _ref.bootstrap,
+      config = _ref.config,
+      _ref$colorMode = _ref.colorMode,
+      colorMode = _ref$colorMode === void 0 ? 'light' : _ref$colorMode,
+      onToggleColorMode = _ref.onToggleColorMode;
+  var isDark = colorMode === 'dark';
+  var screens = useBreakpoint();
+  var isMobile = !screens.md; // < 768px
+
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      drawerOpen = _useState2[0],
+      setDrawerOpen = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      current = _useState4[0],
+      setCurrent = _useState4[1]; // { g, n, label } | null — drives the iframe src
+  // When a module navigates the iframe internally to ANOTHER module, this tracks
+  // what the iframe is actually showing (for title/selection/hash) without
+  // changing the iframe src (which would reload it).
+
+
+  var _useState5 = (0, _react.useState)(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      override = _useState6[0],
+      setOverride = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      iframeLoading = _useState8[0],
+      setIframeLoading = _useState8[1];
+
+  var iframeRef = (0, _react.useRef)(null);
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var company = bootstrap.company || {};
+  var user = bootstrap.user || {};
+  var profile = bootstrap.profile || {};
+  var displayName = profile.firstName || user.first_name || user.email;
+  var views = bootstrap.views || {
+    admin: [],
+    employee: []
+  }; // "View as employee" (profile switch) — initiated from inside a module. The
+  // switch state lives in the legacy (cookie) session, which the stateless REST
+  // API can't see, so the shell derives the banner directly from the loaded
+  // module page (the .switched-name marker) on every iframe load.
+  // Seed from bootstrap (set when an admin has switched into an employee profile
+  // and is viewing a natively-mounted module — no iframe marker to derive from).
+
+  var _useState9 = (0, _react.useState)(bootstrap.switchedProfile || null),
+      _useState10 = _slicedToArray(_useState9, 2),
+      switchedProfile = _useState10[0],
+      setSwitchedProfile = _useState10[1];
+
+  var _useState11 = (0, _react.useState)(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      reloadNonce = _useState12[0],
+      setReloadNonce = _useState12[1]; // A document (e.g. an editor task list) opened from a notification — mounted in
+  // a shell-level modal rather than navigated to (the editor isn't a route).
+
+
+  var _useState13 = (0, _react.useState)(null),
+      _useState14 = _slicedToArray(_useState13, 2),
+      doc = _useState14[0],
+      setDoc = _useState14[1];
+
+  var setDocUrl = function setDocUrl(url) {
+    return setDoc(url ? {
+      url: url,
+      title: 'Task List'
+    } : null);
+  }; // Seam for bespoke extension views (NativeExtensionView trees, e.g. the learn
+  // user "Open Course" button): a legacy document_link would navigate the SPA away
+  // (and bounce to the dashboard), so views call this global to open the document
+  // in the shell's native editor modal instead. Cleared on unmount so a stale
+  // handler never outlives the shell.
+
+
+  (0, _react.useEffect)(function () {
+    window.iceShellOpenDocument = function (url, title) {
+      return setDoc(url ? {
+        url: url,
+        title: title || 'Document'
+      } : null);
+    };
+
+    return function () {
+      delete window.iceShellOpenDocument;
+    };
+  }, []);
+
+  var reloadIframe = function reloadIframe() {
+    setIframeLoading(true);
+    setReloadNonce(function (n) {
+      return n + 1;
+    });
+  }; // AdapterBase.setAdminProfile posts this (instead of breaking the top window
+  // out to the legacy app) after a switch/switch-back. Reload the current module;
+  // the banner is then re-derived from the reloaded page in onIframeLoad.
+
+
+  (0, _react.useEffect)(function () {
+    var onMsg = function onMsg(e) {
+      if (!e.data || e.data.iceShell !== 'profile-switched') return;
+      reloadIframe();
+    };
+
+    window.addEventListener('message', onMsg);
+    return function () {
+      return window.removeEventListener('message', onMsg);
+    };
+  }, []); // Switch back. Inside an iframe, delegate to the module's (session-correct)
+  // handler. For a natively-mounted module there is no iframe, so post the
+  // switch-back to the legacy session endpoint ourselves and reload the shell.
+
+  var switchBack = function switchBack() {
+    try {
+      var win = iframeRef.current && iframeRef.current.contentWindow;
+
+      if (win && win.modJs && typeof win.modJs.setAdminProfile === 'function') {
+        win.modJs.setAdminProfile('-1');
+        return;
+      }
+    } catch (e) {
+      /* fall through to native */
+    }
+
+    var body = new URLSearchParams({
+      a: 'setAdminEmp',
+      empid: '-1'
+    });
+    fetch("".concat(config.clientBaseUrl, "service.php"), {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: body.toString()
+    }).then(function () {
+      window.location.reload();
+    })["catch"](function () {
+      window.location.reload();
+    });
+  }; // There is no Admin/Employee switch any more — the menu is sliced by high-level
+  // AREA (Home/People/Time and Work/…). Within an area, items are split into two
+  // sections: "Manage" (admin/management modules, from the admin view) and "Mine"
+  // (the user's own self-service modules, from the employee view).
+
+
+  var areaRegistry = bootstrap.areas || []; // Build, per area, the Manage + Mine item lists (de-duped by route across both
+  // views), plus a flat route -> data map and route -> area map. We must NOT dedupe
+  // by label: an admin module and a self-service module can share a label but be
+  // different destinations (e.g. "Expenses" = manage all vs "My Expenses" = apply
+  // as an employee), disambiguated by the "My …" rename.
+
+  var _useMemo = (0, _react.useMemo)(function () {
+    var map = {};
+    var aok = {};
+    var byArea = {}; // area -> { manage:[], mine:[], keys:Set }
+
+    var add = function add(groups, section) {
+      return (Array.isArray(groups) ? groups : []).forEach(function (grp) {
+        return (grp.items || []).forEach(function (it) {
+          var area = it.area || 'more';
+          var key = keyFor(it.g, it.n);
+          var label = it.label || it.name;
+          if (!byArea[area]) byArea[area] = {
+            manage: [],
+            mine: [],
+            keys: new Set()
+          };
+          var b = byArea[area];
+          if (b.keys.has(key)) return; // same route in both views: keep the first (Manage)
+
+          b.keys.add(key); // areaOrder lets meta.json position an item within its section; unset
+          // items default to 50 and keep their natural order via a stable sort.
+
+          var order = it.areaOrder === 0 || it.areaOrder ? it.areaOrder : 50;
+          b[section].push({
+            key: key,
+            label: label,
+            order: order
+          });
+
+          if (!map[key]) {
+            map[key] = {
+              g: it.g,
+              n: it.n,
+              label: label,
+              area: area,
+              section: section
+            };
+            aok[key] = area;
+          }
+        });
+      });
+    };
+
+    add(views.admin, 'manage');
+    add(views.employee, 'mine'); // Stable sort each section by areaOrder (ties keep insertion/menu order).
+
+    Object.keys(byArea).forEach(function (a) {
+      var cmp = function cmp(x, y) {
+        return x.order - y.order;
+      };
+
+      byArea[a].manage.sort(cmp);
+      byArea[a].mine.sort(cmp);
+    });
+    return {
+      itemMap: map,
+      areaOfKey: aok,
+      itemsByArea: byArea
+    };
+  }, [views]),
+      itemMap = _useMemo.itemMap,
+      areaOfKey = _useMemo.areaOfKey,
+      itemsByArea = _useMemo.itemsByArea;
+
+  var areaCount = function areaCount(id) {
+    var b = itemsByArea[id];
+    return b ? b.manage.length + b.mine.length : 0;
+  };
+
+  var firstKeyOf = function firstKeyOf(id) {
+    var b = itemsByArea[id];
+    if (!b) return null;
+    var it = b.manage[0] || b.mine[0];
+    return it ? it.key : null;
+  }; // The module to land on when there is no hash: the user's home module, else a
+  // dashboard. Must exist in the menu.
+
+
+  var defaultKey = function defaultKey() {
+    var hl = bootstrap.homeLink;
+    var cands = [];
+    if (hl && hl.group && hl.name) cands.push(keyFor(hl.group, hl.name));
+    cands.push('admin::dashboard', 'modules::dashboard');
+    return cands.find(function (k) {
+      return itemMap[k];
+    }) || null;
+  }; // Areas that actually have ≥1 accessible item, in registry order.
+
+
+  var availableAreas = (0, _react.useMemo)(function () {
+    return areaRegistry.filter(function (a) {
+      return areaCount(a.id) > 0;
+    });
+  }, [areaRegistry, itemsByArea] // eslint-disable-line react-hooks/exhaustive-deps
+  );
+
+  var _useState15 = (0, _react.useState)(function () {
+    var saved = localStorage.getItem('shell-area');
+    if (saved && areaCount(saved) > 0) return saved;
+    var dk = defaultKey();
+    var a = dk && areaOfKey[dk];
+    if (a && areaCount(a) > 0) return a;
+    var first = areaRegistry.find(function (ar) {
+      return areaCount(ar.id) > 0;
+    });
+    return first ? first.id : null;
+  }),
+      _useState16 = _slicedToArray(_useState15, 2),
+      selectedArea = _useState16[0],
+      setSelectedArea = _useState16[1];
+
+  (0, _react.useEffect)(function () {
+    if (selectedArea) localStorage.setItem('shell-area', selectedArea);
+  }, [selectedArea]); // The left menu = the selected area's items. When both Manage and Mine sections
+  // have items, render labelled groups separated by a divider; if only one section
+  // exists, render it flat (no redundant header).
+
+  var menuItems = (0, _react.useMemo)(function () {
+    var b = itemsByArea[selectedArea];
+    if (!b) return [];
+
+    var toItem = function toItem(it) {
+      return {
+        key: it.key,
+        label: it.label
+      };
+    };
+
+    if (b.manage.length && b.mine.length) {
+      return [{
+        type: 'group',
+        key: 'grp-manage',
+        label: sectionHeader( /*#__PURE__*/_react["default"].createElement(_icons.ControlOutlined, null), 'Manage'),
+        children: b.manage.map(toItem)
+      }, {
+        type: 'group',
+        key: 'grp-mine',
+        label: sectionHeader( /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null), 'Personal'),
+        children: b.mine.map(toItem)
+      }];
+    }
+
+    return [].concat(_toConsumableArray(b.manage), _toConsumableArray(b.mine)).map(toItem);
+  }, [itemsByArea, selectedArea]);
+
+  var onAreaChange = function onAreaChange(areaId) {
+    setSelectedArea(areaId);
+    var first = firstKeyOf(areaId);
+    if (first) openModule(first);
+  }; // --- routing: hash <-> selected module -----------------------------------
+
+
+  var applyHash = function applyHash() {
+    var raw = (window.location.hash || '').replace(/^#\/?/, '');
+    var key = raw ? decodeURIComponent(raw) : defaultKey();
+    var data = key && itemMap[key];
+    setOverride(null);
+
+    if (data) {
+      setCurrent(data);
+      setIframeLoading(true);
+    } else {
+      setCurrent(null);
+    }
+  };
+
+  (0, _react.useEffect)(function () {
+    applyHash();
+
+    var onHash = function onHash() {
+      return applyHash();
+    };
+
+    window.addEventListener('hashchange', onHash);
+    return function () {
+      return window.removeEventListener('hashchange', onHash);
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [itemMap]);
+
+  var openModule = function openModule(key) {
+    var data = itemMap[key];
+    if (!data) return;
+    if (isMobile) setDrawerOpen(false);
+    var hash = "#".concat(encodeURIComponent(key));
+
+    if (window.location.hash === hash) {
+      // same module: force reload of the iframe
+      setIframeLoading(true);
+      setCurrent(_objectSpread({}, data));
+    } else {
+      window.location.hash = hash; // triggers applyHash via hashchange
+    }
+  }; // What the iframe is actually showing (may differ from `current` after an
+  // in-iframe navigation) — drives the title, sidebar selection and hash.
+
+
+  var displayed = override || current; // Navigate to a module by group/name (used by notifications). Uses the menu
+  // route if known, else loads the page directly.
+
+  var navigateTo = function navigateTo(g, n) {
+    if (!g || !n) return;
+    var key = keyFor(g, n);
+    if (isMobile) setDrawerOpen(false);
+
+    if (itemMap[key]) {
+      openModule(key);
+    } else {
+      setOverride(null);
+      setCurrent({
+        g: g,
+        n: n,
+        label: n
+      });
+      setIframeLoading(true);
+
+      try {
+        window.history.replaceState(null, '', "#".concat(encodeURIComponent(key)));
+      } catch (z) {
+        /* */
+      }
+    }
+  };
+
+  var selectedKey = displayed ? keyFor(displayed.g, displayed.n) : null; // Keep the area selector in sync with whatever module is actually showing
+  // (deep links, in-iframe navigation to another area's module, etc.).
+
+  (0, _react.useEffect)(function () {
+    var a = selectedKey && areaOfKey[selectedKey];
+    if (a && a !== selectedArea) setSelectedArea(a); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedKey, areaOfKey]);
+
+  var onIframeLoad = function onIframeLoad(e) {
+    try {
+      var _doc = e.target.contentDocument;
+
+      if (_doc && _doc.head) {
+        var style = _doc.createElement('style');
+
+        style.setAttribute('data-shell-embed', '1');
+        style.textContent = EMBED_CSS;
+
+        _doc.head.appendChild(style);
+      } // Derive the "viewing as employee" banner from the page's own switched
+      // marker, so it stays correct on load, after a switch, and after switch-back.
+
+
+      var nameEl = _doc && _doc.querySelector('.switched-name');
+
+      setSwitchedProfile(nameEl ? {
+        name: (nameEl.textContent || '').trim()
+      } : null); // If the module navigated the iframe to ANOTHER module (e.g. a dashboard
+      // widget link), sync the title/selection/hash to it WITHOUT reloading.
+
+      var loc = e.target.contentWindow && e.target.contentWindow.location;
+      var sp = loc && new URLSearchParams(loc.search);
+      var g = sp && sp.get('g');
+      var n = sp && sp.get('n');
+
+      if (g && n) {
+        var k = keyFor(g, n);
+
+        if (current && k === keyFor(current.g, current.n)) {
+          setOverride(null);
+        } else if (itemMap[k]) {
+          setOverride(itemMap[k]);
+
+          try {
+            window.history.replaceState(null, '', "#".concat(encodeURIComponent(k)));
+          } catch (z) {
+            /* */
+          }
+        }
+      }
+    } catch (err) {// cross-origin (shouldn't happen — same origin) — ignore
+    }
+
+    setIframeLoading(false);
+  }; // The admin dashboard is rendered natively (React + charts), not via the iframe.
+
+
+  var isNativeDashboard = current && current.g === 'admin' && current.n === 'dashboard'; // The employee/manager personal dashboard is also native.
+
+  var isNativeEmployeeDashboard = current && current.g === 'modules' && current.n === 'dashboard'; // Modules registered for native in-shell mounting (no iframe).
+
+  var nativeKey = current ? "".concat(current.g, "/").concat(current.n) : null;
+  var isNativeModule = !!nativeKey && !isNativeDashboard && !isNativeEmployeeDashboard && (bootstrap.nativeModules || []).indexOf(nativeKey) !== -1;
+  var iframeSrc = current && !isNativeDashboard && !isNativeEmployeeDashboard && !isNativeModule ? "".concat(config.clientBaseUrl, "?g=").concat(encodeURIComponent(current.g), "&n=").concat(encodeURIComponent(current.n), "&_embed=1") : null; // --- chrome --------------------------------------------------------------
+
+  var sideMenu = /*#__PURE__*/_react["default"].createElement(_antd.Menu, {
+    mode: "inline",
+    theme: "dark",
+    selectedKeys: selectedKey ? [selectedKey] : [],
+    style: {
+      borderInlineEnd: 0
+    },
+    items: menuItems,
+    onClick: function onClick(_ref2) {
+      var key = _ref2.key;
+      return openModule(key);
+    }
+  });
+
+  var userMenu = {
+    items: [{
+      key: 'name',
+      label: "".concat(profile.firstName || user.first_name || '', " ").concat(profile.lastName || user.last_name || '').trim() || user.email,
+      disabled: true
+    }, {
+      type: 'divider'
+    }, {
+      key: 'home',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.HomeOutlined, null),
+      label: 'Home'
+    }, {
+      key: 'logout',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.LogoutOutlined, null),
+      label: 'Logout'
+    }],
+    onClick: function onClick(_ref3) {
+      var key = _ref3.key;
+      if (key === 'logout') window.location.href = "".concat(config.clientBaseUrl, "logout.php");
+
+      if (key === 'home') {
+        window.location.hash = '';
+        setCurrent(null);
+      }
+    }
+  };
+
+  var _useState17 = (0, _react.useState)(false),
+      _useState18 = _slicedToArray(_useState17, 2),
+      logoFailed = _useState18[0],
+      setLogoFailed = _useState18[1]; // Prefer a company-uploaded logo (white-label); otherwise the compact IceHrm
+  // mark. Left-aligned to line up with the menu items.
+
+
+  var defaultLogo = "".concat(config.baseUrl || '', "images/logo-sq.png");
+  var logoSrc = company.logoUrl || defaultLogo; // Pinned brand footer at the bottom of the sidebar: just version + copyright
+  // (the logo now lives in the top bar).
+
+  var logo = /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: '0 0 auto',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: 8,
+      padding: '10px 16px',
+      overflow: 'hidden',
+      borderTop: '1px solid rgba(255,255,255,0.08)',
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      color: 'rgba(255,255,255,0.4)',
+      fontSize: 10.5,
+      whiteSpace: 'nowrap'
+    }
+  }, "\xA9 ".concat(new Date().getFullYear(), " IceHrm.com")), bootstrap.version && /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      color: 'rgba(255,255,255,0.72)',
+      fontSize: 11,
+      fontWeight: 600,
+      whiteSpace: 'nowrap'
+    }
+  }, "v".concat(bootstrap.version))); // Every reachable module, for the top-bar global search (route map -> list).
+
+
+  var allModules = (0, _react.useMemo)(function () {
+    return Object.keys(itemMap).map(function (key) {
+      return _objectSpread({
+        key: key
+      }, itemMap[key]);
+    });
+  }, [itemMap]); // Area selector — replaces the old Admin/Employee switch. Picking an area
+  // filters the left menu to that functional domain. Styled as a dropdown (icon
+  // tile + name + chevron) so it clearly reads as switchable.
+
+  var currentArea = availableAreas.find(function (a) {
+    return a.id === selectedArea;
+  }) || availableAreas[0] || null;
+  var areaSwitch = availableAreas.length > 1 && currentArea ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: '12px 16px 8px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 10.5,
+      letterSpacing: 1.2,
+      fontWeight: 700,
+      color: 'rgba(255,255,255,0.38)',
+      marginBottom: 8,
+      paddingLeft: 2
+    }
+  }, "AREA"), /*#__PURE__*/_react["default"].createElement(_antd.ConfigProvider, {
+    theme: (0, _theme.buildTheme)('dark')
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Dropdown, {
+    trigger: ['click'],
+    menu: {
+      selectedKeys: [selectedArea],
+      items: availableAreas.map(function (a) {
+        return {
+          key: a.id,
+          icon: areaIcon(a.icon),
+          label: a.label
+        };
+      }),
+      onClick: function onClick(_ref4) {
+        var key = _ref4.key;
+        return onAreaChange(key);
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement("button", {
+    type: "button",
+    className: "ice-role-switch",
+    title: "Switch area",
+    style: {
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      padding: '8px 10px',
+      borderRadius: 12,
+      cursor: 'pointer',
+      color: '#fff',
+      background: 'rgba(255,255,255,0.06)',
+      border: '1px solid rgba(255,255,255,0.10)',
+      textAlign: 'left'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      width: 30,
+      height: 30,
+      borderRadius: 9,
+      flex: '0 0 auto',
+      fontSize: 15,
+      background: '#4c9aff26',
+      color: '#4c9aff',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  }, areaIcon(currentArea.icon)), /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      display: 'block',
+      fontSize: 13.5,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap'
+    }
+  }, currentArea.label), /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      display: 'block',
+      fontSize: 11,
+      color: 'rgba(255,255,255,0.45)',
+      lineHeight: 1.2
+    }
+  }, "Switch area")), /*#__PURE__*/_react["default"].createElement(_icons.DownOutlined, {
+    style: {
+      fontSize: 12,
+      color: 'rgba(255,255,255,0.5)',
+      flex: '0 0 auto'
+    }
+  }))))) : null; // --- top bar (GA-style): brand · area switch · module search ----------------
+
+  var headerBrand = /*#__PURE__*/_react["default"].createElement("div", {
+    role: "button",
+    tabIndex: 0,
+    onClick: function onClick() {
+      window.location.hash = '';
+      setCurrent(null);
+    },
+    title: "Home",
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      cursor: 'pointer',
+      paddingRight: 18,
+      marginRight: 4,
+      borderRight: '1px solid rgba(255,255,255,0.14)',
+      height: 48
+    }
+  }, !logoFailed ? /*#__PURE__*/_react["default"].createElement("img", {
+    src: logoSrc,
+    alt: company.name || 'IceHrm',
+    style: {
+      height: 46,
+      maxWidth: 200,
+      objectFit: 'contain'
+    },
+    onError: function onError() {
+      return setLogoFailed(true);
+    }
+  }) : /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontWeight: 700,
+      fontSize: 22,
+      color: '#fff',
+      whiteSpace: 'nowrap'
+    }
+  }, company.name || 'IceHrm'));
+
+  return /*#__PURE__*/_react["default"].createElement(_antd.Layout, {
+    style: {
+      minHeight: '100vh'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.ConfigProvider, {
+    theme: (0, _theme.buildTheme)('dark')
+  }, /*#__PURE__*/_react["default"].createElement(Header, {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      paddingInline: 16,
+      background: _theme.SIDEBAR_BG,
+      position: 'sticky',
+      top: 0,
+      zIndex: 20,
+      boxShadow: '0 1px 4px rgba(0,0,0,0.25)'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      flex: '0 0 auto'
+    }
+  }, isMobile && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "text",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.MenuOutlined, {
+      style: {
+        color: '#fff'
+      }
+    }),
+    onClick: function onClick() {
+      return setDrawerOpen(true);
+    }
+  }), !isMobile && headerBrand, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontSize: 16,
+      fontWeight: 600,
+      color: 'rgba(255,255,255,0.92)',
+      maxWidth: 260,
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap'
+    }
+  }, displayed ? displayed.label : 'Home')), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'center',
+      minWidth: 0,
+      padding: '0 16px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: '100%',
+      maxWidth: 560
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_ModuleSearch["default"], {
+    items: allModules,
+    areas: areaRegistry,
+    onSelect: function onSelect(key) {
+      return navigateTo(itemMap[key].g, itemMap[key].n);
+    },
+    dark: true
+  }))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 4,
+      flex: '0 0 auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+    title: isDark ? 'Switch to light mode' : 'Switch to dark mode'
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "text",
+    "aria-label": "Toggle colour mode",
+    icon: isDark ? /*#__PURE__*/_react["default"].createElement(_icons.BulbFilled, {
+      style: {
+        color: '#fbc02d'
+      }
+    }) : /*#__PURE__*/_react["default"].createElement(_icons.BulbOutlined, {
+      style: {
+        color: '#fff'
+      }
+    }),
+    onClick: onToggleColorMode
+  })), /*#__PURE__*/_react["default"].createElement(_Notifications["default"], {
+    clientBaseUrl: config.clientBaseUrl,
+    onNavigate: navigateTo,
+    onOpenDocument: setDocUrl
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Dropdown, {
+    menu: userMenu,
+    trigger: ['click']
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "text",
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8,
+      color: 'rgba(255,255,255,0.92)'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+    size: "small",
+    src: profile.image || undefined,
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null)
+  }), !isMobile && /*#__PURE__*/_react["default"].createElement("span", null, displayName)))))), /*#__PURE__*/_react["default"].createElement(_antd.Layout, null, !isMobile && /*#__PURE__*/_react["default"].createElement(Sider, {
+    width: 240,
+    style: {
+      height: 'calc(100vh - 64px)',
+      position: 'sticky',
+      top: 64,
+      insetInlineStart: 0,
+      background: _theme.SIDEBAR_BG
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: 1,
+      minHeight: 0,
+      overflow: 'auto',
+      paddingTop: 8
+    }
+  }, areaSwitch, sideMenu), logo)), isMobile && /*#__PURE__*/_react["default"].createElement(_antd.Drawer, {
+    placement: "left",
+    open: drawerOpen,
+    onClose: function onClose() {
+      return setDrawerOpen(false);
+    },
+    width: 260,
+    styles: {
+      body: {
+        padding: 0,
+        background: _theme.SIDEBAR_BG
+      },
+      header: {
+        display: 'none'
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: 1,
+      minHeight: 0,
+      overflow: 'auto',
+      paddingTop: 8
+    }
+  }, areaSwitch, sideMenu), logo)), /*#__PURE__*/_react["default"].createElement(_antd.Layout, null, switchedProfile && /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: "warning",
+    banner: true,
+    showIcon: true,
+    message: /*#__PURE__*/_react["default"].createElement("span", null, "Viewing as ", /*#__PURE__*/_react["default"].createElement("strong", null, switchedProfile.name)),
+    action: /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "small",
+      onClick: switchBack
+    }, "Switch back")
+  }), bootstrap.showConnectBanner && /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: "warning",
+    banner: true,
+    showIcon: true,
+    style: {
+      padding: '18px 28px',
+      alignItems: 'center'
+    },
+    message: /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        lineHeight: 1.35
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 17,
+        fontWeight: 700,
+        marginBottom: 3
+      }
+    }, "Connect to icehrm.com to unlock the marketplace"), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 14,
+        opacity: 0.9
+      }
+    }, "This installation isn't connected yet. Connect it to install marketplace", ' ', "extensions and receive product updates.")),
+    action: /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "large",
+      type: "primary",
+      style: {
+        fontWeight: 600
+      },
+      onClick: function onClick() {
+        return navigateTo('extension', 'marketplace|admin');
+      }
+    }, "Connect now")
+  }), /*#__PURE__*/_react["default"].createElement(Content, {
+    style: {
+      background: token.colorBgLayout,
+      position: 'relative',
+      height: "calc(100vh - 64px".concat(switchedProfile ? ' - 40px' : '').concat(bootstrap.showConnectBanner ? ' - 84px' : '', ")")
+    }
+  }, isNativeDashboard ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      height: '100%',
+      overflow: 'auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_UpdateAvailableBanner["default"], {
+    updateAvailable: bootstrap.updateAvailable
+  }), /*#__PURE__*/_react["default"].createElement(_LicenseRenewalBanner["default"], {
+    licenseRenewal: bootstrap.licenseRenewal
+  }), /*#__PURE__*/_react["default"].createElement(_News["default"], {
+    config: config
+  }), /*#__PURE__*/_react["default"].createElement(_Dashboard["default"], {
+    config: config,
+    onNavigate: navigateTo
+  })) : isNativeEmployeeDashboard ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      height: '100%',
+      overflow: 'auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_UpdateAvailableBanner["default"], {
+    updateAvailable: bootstrap.updateAvailable
+  }), /*#__PURE__*/_react["default"].createElement(_LicenseRenewalBanner["default"], {
+    licenseRenewal: bootstrap.licenseRenewal
+  }), /*#__PURE__*/_react["default"].createElement(_EmployeeDashboard["default"], {
+    config: config,
+    onNavigate: navigateTo,
+    onOpenDocument: setDocUrl
+  })) : isNativeModule ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      height: '100%',
+      overflow: 'auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_NativeModuleHost["default"], {
+    key: nativeKey,
+    group: current.g,
+    name: current.n,
+    shellConfig: config
+  })) : iframeSrc ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, iframeLoading && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 2,
+      background: token.colorBgLayout
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+    size: "large"
+  })), /*#__PURE__*/_react["default"].createElement("iframe", {
+    ref: iframeRef,
+    key: "".concat(iframeSrc, "#").concat(reloadNonce),
+    title: current ? current.label : '',
+    src: iframeSrc,
+    onLoad: onIframeLoad,
+    style: {
+      width: '100%',
+      height: '100%',
+      border: 0,
+      display: 'block',
+      visibility: iframeLoading ? 'hidden' : 'visible'
+    }
+  })) : /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 24
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: token.colorBgContainer,
+      borderRadius: 8,
+      padding: 32,
+      maxWidth: 720,
+      boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
+      color: token.colorText
+    }
+  }, /*#__PURE__*/_react["default"].createElement("h2", {
+    style: {
+      marginTop: 0
+    }
+  }, "Welcome to the new IceHrm"), /*#__PURE__*/_react["default"].createElement("p", {
+    style: {
+      color: token.colorTextSecondary
+    }
+  }, "This is the new React + Ant Design interface. Pick a module from the menu to get started. The sidebar reflects your permissions and collapses into a drawer on mobile."), /*#__PURE__*/_react["default"].createElement("p", {
+    style: {
+      color: token.colorTextSecondary,
+      fontSize: 13
+    }
+  }, "Signed in as ", /*#__PURE__*/_react["default"].createElement("strong", null, user.email), " (", bootstrap.userLevel, ").")))))), /*#__PURE__*/_react["default"].createElement(_NativeDocumentModal["default"], {
+    documentUrl: doc && doc.url,
+    bundle: "editor/user/dist/editor.js",
+    mountFn: "mountEditorDocument",
+    deps: ['dist/vendorOther.js', 'dist/third-party.js', 'dist/common.js'],
+    title: doc && doc.title || 'Document',
+    shellConfig: config,
+    onClose: function onClose() {
+      return setDoc(null);
+    }
+  }));
+}
+
+},{"./Dashboard":4,"./EmployeeDashboard":5,"./LicenseRenewalBanner":12,"./ModuleSearch":14,"./NativeDocumentModal":17,"./NativeModuleHost":19,"./News":20,"./Notifications":21,"./UpdateAvailableBanner":24,"./theme":26,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],3:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = CompanyStructureCards;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var PAGE_SIZE = 6;
+var TYPE_STYLE = {
+  Company: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.BankOutlined, null),
+    color: _theme.MUI.primary
+  },
+  'Head Office': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.HomeOutlined, null),
+    color: '#0288d1'
+  },
+  'Regional Office': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClusterOutlined, null),
+    color: '#7b1fa2'
+  },
+  Department: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#2e7d32'
+  },
+  Unit: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#ed6c02'
+  },
+  'Sub Unit': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#ed6c02'
+  }
+};
+
+var typeStyle = function typeStyle(t) {
+  return TYPE_STYLE[t] || {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#607d8b'
+  };
+};
+
+function CompanyStructureCards(_ref) {
+  var shellConfig = _ref.shellConfig;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      nodes = _useState2[0],
+      setNodes = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      err = _useState4[0],
+      setErr = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      search = _useState6[0],
+      setSearch = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(1),
+      _useState8 = _slicedToArray(_useState7, 2),
+      page = _useState8[0],
+      setPage = _useState8[1];
+
+  var adapterRef = (0, _react.useRef)(null);
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var load = (0, _react.useCallback)(function () {
+    fetch("".concat(shellConfig.restApiBase, "appshell/org-structure"), {
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      return setNodes(d && d.nodes || []);
+    })["catch"](function () {
+      return setErr(true);
+    });
+  }, [shellConfig]);
+  (0, _react.useEffect)(function () {
+    load();
+  }, [load]); // Use the legacy adapter (instantiated by the module's init) for Add/Edit/Delete
+  // and hook its post-save reload into our refresh by injecting a fake table ref.
+
+  (0, _react.useEffect)(function () {
+    var list = window.modJsList || {};
+    var m = list.tabCompanyStructure;
+    if (!m) return;
+    adapterRef.current = m;
+    m.tableContainer = {
+      current: {
+        reload: function reload() {
+          return load();
+        },
+        setCurrentElement: function setCurrentElement() {},
+        setLoading: function setLoading() {},
+        setFilterData: function setFilterData() {}
+      }
+    }; // Load the form's remote-source select options (Parent Structure, Country,
+    // Time Zone, Leads). Normally done inside the adapter's get(); the cards tab
+    // never calls get(), so do it here — otherwise selects show ids / "No data".
+
+    try {
+      if (m.masterDataReader && m.masterDataReader.updateAllMasterData) {
+        m.masterDataReader.updateAllMasterData();
+      }
+    } catch (e) {
+      /* ignore */
+    }
+  }, [nodes === null, load]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  var adapter = function adapter() {
+    return adapterRef.current || (window.modJsList || {}).tabCompanyStructure;
+  };
+
+  var can = function can(a) {
+    var m = adapter();
+    return m && m.hasAccess && m.hasAccess(a);
+  };
+
+  var addNew = function addNew() {
+    var m = adapter();
+    if (m) m.renderForm();
+  };
+
+  var edit = function edit(id) {
+    var m = adapter();
+    if (m) m.edit(id);
+  }; // The adapter's deleteRow() relies on the legacy Bootstrap #deleteModel that
+  // does not exist in the native shell mount, so confirm with antd and delete
+  // via cleanDelete() (a plain $.post to service.php, no Bootstrap/loader), then
+  // refresh the cards ourselves.
+
+
+  var del = function del(id) {
+    var m = adapter();
+    if (!m) return;
+    var node = (nodes || []).find(function (n) {
+      return String(n.id) === String(id);
+    });
+
+    _antd.Modal.confirm({
+      title: 'Delete structure',
+      content: node ? "Are you sure you want to delete \u201C".concat(node.title, "\u201D?") : 'Are you sure you want to delete this company structure?',
+      okText: 'Delete',
+      okType: 'danger',
+      onOk: function onOk() {
+        return new Promise(function (resolve) {
+          try {
+            m.cleanDelete(id, function (httpStatus, status) {
+              if (httpStatus === 200 && status === 'SUCCESS') {
+                _antd.message.success('Structure deleted');
+
+                load();
+              } else {
+                _antd.message.error('Could not delete this structure. It may be in use.', 5);
+              }
+
+              resolve();
+            });
+          } catch (e) {
+            _antd.message.error('Could not delete this structure', 5);
+
+            resolve();
+          }
+        });
+      }
+    });
+  };
+
+  var view = function view(id) {
+    var m = adapter();
+    if (m && m.showDetailsModal) m.showDetailsModal(id);
+  };
+
+  var copy = function copy(id) {
+    var m = adapter();
+    if (m && m.copyRow) m.copyRow(id);
+  };
+
+  var filtered = (0, _react.useMemo)(function () {
+    var all = nodes || [];
+    var q = search.trim().toLowerCase();
+    if (!q) return all;
+    return all.filter(function (n) {
+      return "".concat(n.title, " ").concat(n.type, " ").concat(n.country, " ").concat(n.parentTitle || '').toLowerCase().includes(q);
+    });
+  }, [nodes, search]);
+  var paged = (0, _react.useMemo)(function () {
+    return filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  }, [filtered, page]);
+  (0, _react.useEffect)(function () {
+    setPage(1);
+  }, [search]);
+  if (err) return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "Could not load company structure"
+  });
+  if (!nodes) return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      padding: 60
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+    size: "large"
+  }));
+
+  var metaItem = function metaItem(icon, text) {
+    return text ? /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 5,
+        maxWidth: 280,
+        overflow: 'hidden'
+      }
+    }, icon, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, text)) : null;
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+    id: "CompanyStructureForm",
+    style: {
+      display: 'none'
+    }
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    id: "CompanyStructureFilterForm",
+    style: {
+      display: 'none'
+    }
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 12,
+      marginBottom: 16,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", null, can('save') && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "primary",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.PlusOutlined, null),
+    onClick: addNew
+  }, "Add Structure")), /*#__PURE__*/_react["default"].createElement(_antd.Input.Search, {
+    allowClear: true,
+    placeholder: "Search structures\u2026",
+    style: {
+      maxWidth: 280
+    },
+    onChange: function onChange(e) {
+      return setSearch(e.target.value);
+    }
+  })), filtered.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "No matching company structures"
+  }) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10
+    }
+  }, paged.map(function (n) {
+    var st = typeStyle(n.type);
+    return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      key: n.id,
+      hoverable: true,
+      onClick: function onClick() {
+        return view(n.id);
+      },
+      style: {
+        borderRadius: 10,
+        boxShadow: _theme.MUI_SHADOW,
+        cursor: 'pointer'
+      },
+      styles: {
+        body: {
+          padding: '12px 16px'
+        }
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 14
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: 40,
+        height: 40,
+        borderRadius: 10,
+        flex: '0 0 auto',
+        background: "".concat(st.color, "18"),
+        color: st.color,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 18
+      }
+    }, st.icon), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: 0,
+        flex: 1
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        flexWrap: 'wrap'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        fontWeight: 600,
+        fontSize: 14
+      }
+    }, n.title), /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+      style: {
+        borderRadius: 6,
+        margin: 0
+      }
+    }, n.type || 'Unit'), n.headcount > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+      color: "blue",
+      style: {
+        borderRadius: 6,
+        margin: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null), ' ', n.headcount)), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16,
+        marginTop: 4,
+        color: token.colorTextSecondary,
+        fontSize: 12.5,
+        flexWrap: 'wrap'
+      }
+    }, metaItem( /*#__PURE__*/_react["default"].createElement(_icons.PartitionOutlined, null), n.parentTitle ? "Reports to ".concat(n.parentTitle) : 'Top level'), metaItem( /*#__PURE__*/_react["default"].createElement(_icons.EnvironmentOutlined, null), n.address), metaItem( /*#__PURE__*/_react["default"].createElement(_icons.GlobalOutlined, null), n.country), metaItem( /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null), n.timezone))), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        gap: 10,
+        flex: '0 0 auto'
+      },
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      }
+    }, can('save') && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Edit"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.EditOutlined, {
+        style: {
+          color: '#2e7d32'
+        }
+      }),
+      onClick: function onClick() {
+        return edit(n.id);
+      }
+    })), can('save') && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Copy"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CopyOutlined, {
+        style: {
+          color: '#546e7a'
+        }
+      }),
+      onClick: function onClick() {
+        return copy(n.id);
+      }
+    })), can('delete') && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Delete"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DeleteOutlined, {
+        style: {
+          color: '#d32f2f'
+        }
+      }),
+      onClick: function onClick() {
+        return del(n.id);
+      }
+    })))));
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Pagination, {
+    current: page,
+    pageSize: PAGE_SIZE,
+    total: filtered.length,
+    onChange: setPage,
+    showSizeChanger: false,
+    showTotal: function showTotal(t) {
+      return "".concat(t, " structures");
+    }
+  }))));
+}
+
+},{"./theme":26,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],4:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Dashboard;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _g2plot = require("@antv/g2plot");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text;
+var PALETTE = ['#346CB0', '#5AD8A6', '#5B8FF9', '#F6BD16', '#E8684A', '#9270CA', '#6DC8EC', '#FF99C3'];
+var PLOTS = {
+  pie: _g2plot.Pie,
+  donut: _g2plot.Donut,
+  column: _g2plot.Column,
+  area: _g2plot.Area,
+  bar: _g2plot.Bar
+}; // Thin React wrapper around g2plot 1.x (the version already bundled as vendorAntv).
+// Dark mode is handled by injecting light text/axis colours into each chart's
+// config (see darkChart* below) rather than g2plot's built-in 'dark' theme,
+// which paints an opaque grey background that does not match the card. The
+// donut's centre label is HTML (see the .ring-guide-* CSS in spa-shell.php).
+
+function Chart(_ref) {
+  var type = _ref.type,
+      config = _ref.config,
+      _ref$height = _ref.height,
+      height = _ref$height === void 0 ? 230 : _ref$height;
+  var ref = (0, _react.useRef)(null);
+  (0, _react.useEffect)(function () {
+    if (!ref.current) return undefined;
+    var Ctor = PLOTS[type];
+    if (!Ctor) return undefined;
+    var plot;
+
+    try {
+      plot = new Ctor(ref.current, config);
+      plot.render();
+    } catch (e) {
+      /* ignore render errors */
+    }
+
+    return function () {
+      try {
+        if (plot) plot.destroy();
+      } catch (e) {
+        /* */
+      }
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [type, JSON.stringify(config), height]);
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    ref: ref,
+    style: {
+      height: height
+    }
+  });
+}
+
+function initials(name) {
+  var p = (name || '').trim().split(/\s+/);
+  return (p[0] && p[0][0] || '' + (p[1] && p[1][0] || '')).toUpperCase() + (p[1] && p[1][0] || '').toUpperCase();
+}
+
+function colorFor(name) {
+  var h = 0;
+
+  for (var i = 0; i < (name || '').length; i += 1) {
+    h = h * 31 + name.charCodeAt(i) >>> 0;
+  }
+
+  return PALETTE[h % PALETTE.length];
+}
+
+function fmtDate(d) {
+  if (!d) return '';
+  var dt = new Date("".concat(d, "T00:00:00"));
+  if (Number.isNaN(dt.getTime())) return d;
+  return dt.toLocaleDateString(undefined, {
+    month: 'short',
+    day: 'numeric'
+  });
+}
+
+function Kpi(_ref2) {
+  var icon = _ref2.icon,
+      label = _ref2.label,
+      value = _ref2.value,
+      color = _ref2.color,
+      sub = _ref2.sub,
+      labelColor = _ref2.labelColor,
+      subColor = _ref2.subColor,
+      onClick = _ref2.onClick;
+  return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    bordered: false,
+    hoverable: !!onClick,
+    onClick: onClick,
+    style: {
+      borderRadius: 14,
+      boxShadow: _theme.MUI_SHADOW,
+      cursor: onClick ? 'pointer' : 'default'
+    },
+    bodyStyle: {
+      padding: 18
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 14
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: 46,
+      height: 46,
+      borderRadius: 12,
+      flex: '0 0 auto',
+      background: "".concat(color, "1f"),
+      color: color,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: 20
+    }
+  }, icon), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 26,
+      fontWeight: 700,
+      lineHeight: 1.1
+    }
+  }, value), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      color: labelColor,
+      fontSize: 13,
+      whiteSpace: 'nowrap'
+    }
+  }, label))), sub ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginTop: 10,
+      fontSize: 12,
+      color: subColor
+    }
+  }, sub) : null);
+}
+
+function SectionCard(_ref3) {
+  var title = _ref3.title,
+      extra = _ref3.extra,
+      children = _ref3.children,
+      height = _ref3.height;
+  return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    title: /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        fontWeight: 600
+      }
+    }, title),
+    extra: extra,
+    bordered: false,
+    style: {
+      borderRadius: 14,
+      boxShadow: _theme.MUI_SHADOW,
+      height: height || '100%'
+    },
+    bodyStyle: {
+      padding: 16
+    }
+  }, children);
+}
+
+function PeopleList(_ref4) {
+  var data = _ref4.data,
+      renderMeta = _ref4.renderMeta,
+      emptyText = _ref4.emptyText;
+
+  if (!data || data.length === 0) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+      description: emptyText || 'Nothing here'
+    });
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(_antd.List, {
+    dataSource: data,
+    split: false,
+    renderItem: function renderItem(item) {
+      return /*#__PURE__*/_react["default"].createElement(_antd.List.Item, {
+        style: {
+          padding: '8px 0'
+        }
+      }, /*#__PURE__*/_react["default"].createElement(_antd.List.Item.Meta, {
+        avatar: /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+          style: {
+            backgroundColor: colorFor(item.name),
+            verticalAlign: 'middle'
+          }
+        }, initials(item.name)),
+        title: /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            fontSize: 14
+          }
+        }, item.name),
+        description: renderMeta(item)
+      }));
+    }
+  });
+} // Shared scaffold for the legacy-parity dashboard banners (payment reminder,
+// demo-data prompt, trial upgrade ad): gradient card, round icon, title +
+// message on the left, action buttons on the right.
+
+
+function DashBanner(_ref5) {
+  var gradient = _ref5.gradient,
+      shadow = _ref5.shadow,
+      border = _ref5.border,
+      icon = _ref5.icon,
+      title = _ref5.title,
+      message = _ref5.message,
+      actions = _ref5.actions;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: gradient,
+      borderRadius: 12,
+      padding: '20px 24px',
+      marginBottom: 18,
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 16,
+      flexWrap: 'wrap',
+      boxShadow: shadow,
+      border: border || 'none'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: 'rgba(255,255,255,0.2)',
+      borderRadius: '50%',
+      width: 48,
+      height: 48,
+      flex: '0 0 auto',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: '#fff',
+      fontSize: 20
+    }
+  }, icon), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      color: '#fff',
+      fontWeight: 600,
+      fontSize: 16,
+      marginBottom: 4
+    }
+  }, title), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      color: 'rgba(255,255,255,0.9)',
+      fontSize: 14
+    }
+  }, message))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 10,
+      alignItems: 'center'
+    }
+  }, actions));
+}
+
+function bannerButton(_ref6) {
+  var label = _ref6.label,
+      icon = _ref6.icon,
+      color = _ref6.color,
+      _onClick = _ref6.onClick,
+      ghost = _ref6.ghost;
+  return /*#__PURE__*/_react["default"].createElement("a", {
+    key: label,
+    onClick: function onClick(e) {
+      e.preventDefault();
+
+      _onClick();
+    },
+    style: ghost ? {
+      background: 'rgba(255,255,255,0.2)',
+      color: '#fff',
+      padding: '10px 16px',
+      borderRadius: 8,
+      textDecoration: 'none',
+      fontSize: 14,
+      fontWeight: 500,
+      whiteSpace: 'nowrap',
+      border: '1px solid rgba(255,255,255,0.3)'
+    } : {
+      background: '#fff',
+      color: color,
+      padding: '10px 24px',
+      borderRadius: 8,
+      textDecoration: 'none',
+      fontSize: 14,
+      fontWeight: 600,
+      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+      whiteSpace: 'nowrap'
+    }
+  }, icon, icon ? ' ' : null, label);
+} // Unpaid-invoice banner — same conditions and copy as the legacy admin
+// dashboard (core/admin/dashboard/index.php): orange reminder for a single
+// unpaid invoice, red service-restricted notice for two or more.
+
+
+function PaymentBanner(_ref7) {
+  var billing = _ref7.billing,
+      onNavigate = _ref7.onNavigate;
+  var count = billing && billing.unpaidInvoices || 0;
+  if (count < 1) return null;
+  var single = count === 1;
+  var total = Number(billing.unpaidTotal || 0).toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+  return /*#__PURE__*/_react["default"].createElement(DashBanner, {
+    gradient: single ? 'linear-gradient(135deg, #fa8c16 0%, #d46b08 100%)' : 'linear-gradient(135deg, #f5222d 0%, #cf1322 100%)',
+    shadow: single ? '0 4px 15px rgba(250, 140, 22, 0.3)' : '0 4px 15px rgba(245, 34, 45, 0.3)',
+    icon: single ? /*#__PURE__*/_react["default"].createElement(_icons.WarningOutlined, null) : /*#__PURE__*/_react["default"].createElement(_icons.ExclamationCircleOutlined, null),
+    title: single ? 'Payment Reminder' : 'Service Restricted - Payment Required',
+    message: single ? "You have an unpaid invoice of ".concat(total, " USD. Please complete your payment to continue enjoying uninterrupted service.") : /*#__PURE__*/_react["default"].createElement("span", null, "Your account has an overdue balance of ".concat(total, " USD. Manager access has been temporarily restricted."), /*#__PURE__*/_react["default"].createElement("br", null), "Please complete payment and re-login to restore full access."),
+    actions: bannerButton({
+      label: 'Pay Now',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CreditCardOutlined, null),
+      color: single ? '#d46b08' : '#cf1322',
+      onClick: function onClick() {
+        if (onNavigate) onNavigate('admin', 'billing');
+      }
+    })
+  });
+} // Fresh-install sample data prompt — same conditions as the legacy banner in
+// core/header.php (data.demoPrompt is computed server-side). Dismiss hides it
+// for this render only, like the legacy display:none link.
+
+
+function DemoBanner(_ref8) {
+  var show = _ref8.show,
+      onNavigate = _ref8.onNavigate;
+
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      dismissed = _useState2[0],
+      setDismissed = _useState2[1];
+
+  if (!show || dismissed) return null;
+  return /*#__PURE__*/_react["default"].createElement(DashBanner, {
+    gradient: "linear-gradient(135deg, #52c41a 0%, #389e0d 100%)",
+    shadow: "0 4px 15px rgba(82, 196, 26, 0.3)",
+    border: "2px solid rgba(255,255,255,0.3)",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.RocketOutlined, null),
+    title: "Welcome to IceHrm! Want to see how it works?",
+    message: /*#__PURE__*/_react["default"].createElement("span", null, "Add sample employees, projects, attendance, and more to explore all features.", /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("strong", null, "You can clear all sample data with one click"), ' ', "when you're ready to go live."),
+    actions: [bannerButton({
+      label: 'Manage Sample Data',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.PlusCircleOutlined, null),
+      color: '#389e0d',
+      onClick: function onClick() {
+        if (onNavigate) onNavigate('extension', 'demo-mode|admin');
+      }
+    }), bannerButton({
+      label: 'Dismiss',
+      ghost: true,
+      onClick: function onClick() {
+        return setDismissed(true);
+      }
+    })]
+  });
+} // Trial upgrade ad — same gate as the legacy admin dashboard banner
+// (show_upgrade_ad session flag; data.upgradeAd carries remaining trial days).
+
+
+function UpgradeBanner(_ref9) {
+  var upgradeAd = _ref9.upgradeAd,
+      onNavigate = _ref9.onNavigate;
+  if (!upgradeAd) return null;
+  var days = upgradeAd.days;
+  return /*#__PURE__*/_react["default"].createElement(DashBanner, {
+    gradient: "linear-gradient(135deg, #722ed1 0%, #531dab 100%)",
+    shadow: "0 4px 15px rgba(114, 46, 209, 0.3)",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.StarOutlined, null),
+    title: "Unlock the Full Potential of IceHrm",
+    message: /*#__PURE__*/_react["default"].createElement("span", null, days !== null && days !== undefined ? /*#__PURE__*/_react["default"].createElement("span", null, "You have", ' ', /*#__PURE__*/_react["default"].createElement("strong", null, days, ' ', "days"), ' ', "left in your free trial.", ' ') : null, "Upgrade to IceHrm Cloud for unlimited employees, priority support, and premium features."),
+    actions: [bannerButton({
+      label: 'Upgrade Now',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ArrowUpOutlined, null),
+      color: '#531dab',
+      onClick: function onClick() {
+        if (onNavigate) onNavigate('admin', 'billing');
+      }
+    }), bannerButton({
+      label: 'See Plans',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.TagOutlined, null),
+      ghost: true,
+      onClick: function onClick() {
+        window.open('https://icehrm.com/cloud-hosting-charges', '_blank');
+      }
+    })]
+  });
+}
+
+function Dashboard(_ref10) {
+  var config = _ref10.config,
+      onNavigate = _ref10.onNavigate;
+
+  var _useState3 = (0, _react.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      data = _useState4[0],
+      setData = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(true),
+      _useState6 = _slicedToArray(_useState5, 2),
+      loading = _useState6[0],
+      setLoading = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(null),
+      _useState8 = _slicedToArray(_useState7, 2),
+      error = _useState8[0],
+      setError = _useState8[1];
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var isDark = token.colorBgContainer === _theme.MUI_DARK.paper; // Light text/axis colours injected into g2plot configs in dark mode (the
+  // canvas text otherwise defaults to dark grey and is invisible on the card).
+
+  var D_TXT = 'rgba(255,255,255,0.85)';
+  var D_AXIS = 'rgba(255,255,255,0.45)';
+  var D_LINE = 'rgba(255,255,255,0.25)';
+  var D_GRID = 'rgba(255,255,255,0.12)';
+  var darkLegend = isDark ? {
+    text: {
+      style: {
+        fill: D_TXT
+      }
+    }
+  } : {};
+  var darkAxis = isDark ? {
+    label: {
+      style: {
+        fill: D_AXIS
+      }
+    },
+    line: {
+      style: {
+        stroke: D_LINE
+      }
+    },
+    grid: {
+      line: {
+        style: {
+          stroke: D_GRID
+        }
+      }
+    }
+  } : {};
+  var darkLabel = isDark ? {
+    style: {
+      fill: D_TXT
+    }
+  } : {};
+  (0, _react.useEffect)(function () {
+    var alive = true;
+    fetch("".concat(config.restApiBase, "appshell/dashboard"), {
+      headers: {
+        Authorization: "Bearer ".concat(config.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (alive) {
+        setData(d);
+        setLoading(false);
+      }
+    })["catch"](function (e) {
+      if (alive) {
+        setError(e.message);
+        setLoading(false);
+      }
+    });
+    return function () {
+      alive = false;
+    };
+  }, [config]);
+  var greeting = (0, _react.useMemo)(function () {
+    var h = new Date().getHours();
+    return h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening';
+  }, []);
+  var greetName = (0, _react.useMemo)(function () {
+    var n = data && data.greetingName || '';
+
+    if (n.indexOf('@') !== -1) {
+      return n.split('@')[0].replace(/[._]+/g, ' ').replace(/\b\w/g, function (c) {
+        return c.toUpperCase();
+      });
+    }
+
+    return n;
+  }, [data]);
+
+  if (loading) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 80
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+  }
+
+  if (error || !data) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 32
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "Could not load dashboard".concat(error ? ": ".concat(error) : '')
+    }));
+  }
+
+  var k = data.kpis || {};
+  var kpis = [{
+    label: 'Employees',
+    value: k.totalEmployees,
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#346CB0',
+    nav: ['admin', 'employees']
+  }, {
+    label: 'Departments',
+    value: k.departments,
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#5AD8A6',
+    nav: ['admin', 'company_structure']
+  }];
+
+  if (data.leave) {
+    kpis.push({
+      label: 'Pending Approvals',
+      value: data.leave.pendingRequests,
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+      color: '#E8684A',
+      nav: ['admin', 'leaves', 'tabEmployeeLeave']
+    });
+  }
+
+  if (data.expenses) {
+    kpis.push({
+      label: 'Open Expenses',
+      value: data.expenses.pendingCount,
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+      color: '#5B8FF9',
+      nav: ['extension', 'expenses|admin', 'tabEmployeeExpense']
+    });
+  }
+
+  var donutCfg = function donutCfg(rows) {
+    return {
+      data: rows || [],
+      angleField: 'value',
+      colorField: 'type',
+      radius: 0.9,
+      padding: 'auto',
+      color: PALETTE,
+      legend: _objectSpread({
+        visible: true,
+        position: 'bottom-center'
+      }, darkLegend),
+      label: {
+        visible: false
+      },
+      statistic: {
+        totalLabel: 'Total'
+      }
+    };
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 24,
+      maxWidth: 1500,
+      margin: '0 auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(DemoBanner, {
+    show: data.demoPrompt,
+    onNavigate: onNavigate
+  }), /*#__PURE__*/_react["default"].createElement(PaymentBanner, {
+    billing: data.billing,
+    onNavigate: onNavigate
+  }), /*#__PURE__*/_react["default"].createElement(UpgradeBanner, {
+    upgradeAd: data.upgradeAd,
+    onNavigate: onNavigate
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 18
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 22,
+      fontWeight: 700
+    }
+  }, greeting, ",", ' ', greetName, ' ', "\uD83D\uDC4B"), /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary"
+  }, "Here\u2019s what\u2019s happening across your organisation today.")), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16]
+  }, kpis.map(function (kpi) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+      xs: 12,
+      sm: 8,
+      md: 6,
+      xl: kpis.length > 6 ? 4 : 6,
+      key: kpi.label
+    }, /*#__PURE__*/_react["default"].createElement(Kpi, _extends({}, kpi, {
+      labelColor: token.colorTextSecondary,
+      subColor: token.colorTextTertiary,
+      onClick: kpi.nav && onNavigate ? function () {
+        // kpi.nav[2] optionally deep-links to a specific tab of the target module.
+        if (kpi.nav[2]) {
+          try {
+            window.__iceShellStartTab = kpi.nav[2];
+          } catch (e) {
+            /* */
+          }
+        }
+
+        onNavigate(kpi.nav[0], kpi.nav[1]);
+      } : undefined
+    })));
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: 16
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: "Headcount growth",
+    extra: /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+      color: "blue"
+    }, /*#__PURE__*/_react["default"].createElement(_icons.RiseOutlined, null), " cumulative")
+  }, /*#__PURE__*/_react["default"].createElement(Chart, {
+    type: "area",
+    height: 260,
+    config: {
+      data: data.headcountTrend || [],
+      xField: 'year',
+      yField: 'value',
+      smooth: true,
+      padding: 'auto',
+      color: '#346CB0',
+      areaStyle: {
+        fill: "l(270) 0:".concat(token.colorBgContainer, " 1:#346CB0")
+      },
+      xAxis: _objectSpread({
+        visible: true
+      }, darkAxis),
+      yAxis: _objectSpread({
+        visible: true,
+        min: 0
+      }, darkAxis),
+      point: {
+        visible: false
+      }
+    }
+  }))), /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: 8
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: "Gender diversity"
+  }, /*#__PURE__*/_react["default"].createElement(Chart, {
+    type: "donut",
+    height: 260,
+    config: donutCfg(data.genderDist)
+  })))), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: 14
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: "Headcount by department"
+  }, /*#__PURE__*/_react["default"].createElement(Chart, {
+    type: "column",
+    height: 250,
+    config: {
+      data: data.headcountByDept || [],
+      xField: 'name',
+      yField: 'value',
+      padding: 'auto',
+      color: '#5B8FF9',
+      columnSize: 38,
+      label: _objectSpread({
+        visible: true,
+        position: 'top'
+      }, darkLabel),
+      xAxis: _objectSpread({
+        visible: true
+      }, darkAxis),
+      yAxis: _objectSpread({
+        visible: true,
+        min: 0
+      }, darkAxis)
+    }
+  }))), /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: 10
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: "Employment type"
+  }, /*#__PURE__*/_react["default"].createElement(Chart, {
+    type: "donut",
+    height: 250,
+    config: donutCfg(data.employmentTypeDist)
+  })))), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    md: 12,
+    xl: 8
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: /*#__PURE__*/_react["default"].createElement("span", null, /*#__PURE__*/_react["default"].createElement(_icons.UserAddOutlined, null), " Recent hires")
+  }, /*#__PURE__*/_react["default"].createElement(PeopleList, {
+    data: data.recentHires,
+    emptyText: "No recent hires",
+    renderMeta: function renderMeta(it) {
+      return /*#__PURE__*/_react["default"].createElement(Text, {
+        type: "secondary",
+        style: {
+          fontSize: 12
+        }
+      }, it.title || 'Employee', ' · joined ', fmtDate(it.date));
+    }
+  }))), data.leave ? /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    md: 12,
+    xl: 8
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: /*#__PURE__*/_react["default"].createElement("span", null, /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null), " Pending leave approvals"),
+    extra: onNavigate ? /*#__PURE__*/_react["default"].createElement("a", {
+      onClick: function onClick() {
+        try {
+          window.__iceShellStartTab = 'tabEmployeeLeave';
+        } catch (e) {
+          /* */
+        }
+
+        onNavigate('admin', 'leaves');
+      }
+    }, "View all") : null
+  }, /*#__PURE__*/_react["default"].createElement(PeopleList, {
+    data: data.leave.pendingList,
+    emptyText: "No pending requests",
+    renderMeta: function renderMeta(it) {
+      return /*#__PURE__*/_react["default"].createElement(Text, {
+        type: "secondary",
+        style: {
+          fontSize: 12
+        }
+      }, it.type || 'Leave', ' · ', fmtDate(it.start), it.end && it.end !== it.start ? " \u2013 ".concat(fmtDate(it.end)) : '');
+    }
+  }))) : null, data.celebrations && data.celebrations.length > 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    md: 12,
+    xl: 8
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: /*#__PURE__*/_react["default"].createElement("span", null, /*#__PURE__*/_react["default"].createElement(_icons.GiftOutlined, null), " Celebrations")
+  }, /*#__PURE__*/_react["default"].createElement(PeopleList, {
+    data: data.celebrations,
+    renderMeta: function renderMeta(it) {
+      return /*#__PURE__*/_react["default"].createElement(Text, {
+        type: "secondary",
+        style: {
+          fontSize: 12
+        }
+      }, it.type === 'birthday' ? /*#__PURE__*/_react["default"].createElement("span", null, /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null), " Birthday") : /*#__PURE__*/_react["default"].createElement("span", null, /*#__PURE__*/_react["default"].createElement(_icons.GiftOutlined, null), " ", it.years, "-year anniversary"), ' · ', fmtDate(it.date));
+    }
+  }))) : null));
+}
+
+},{"./theme":26,"@ant-design/icons":"@ant-design/icons","@antv/g2plot":"@antv/g2plot","antd":"antd","react":"react"}],5:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = EmployeeDashboard;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text;
+var PALETTE = ['#346CB0', '#5AD8A6', '#5B8FF9', '#F6BD16', '#E8684A', '#9270CA', '#6DC8EC', '#FF99C3'];
+
+function initials(name) {
+  var p = (name || '').trim().split(/\s+/);
+  return ((p[0] && p[0][0] || '') + (p[1] && p[1][0] || '')).toUpperCase() || '?';
+}
+
+function colorFor(name) {
+  var h = 0;
+
+  for (var i = 0; i < (name || '').length; i += 1) {
+    h = h * 31 + name.charCodeAt(i) >>> 0;
+  }
+
+  return PALETTE[h % PALETTE.length];
+}
+
+function fmtDate(d) {
+  if (!d) return '';
+  var dt = new Date("".concat(d, "T00:00:00"));
+  if (Number.isNaN(dt.getTime())) return d;
+  return dt.toLocaleDateString(undefined, {
+    month: 'short',
+    day: 'numeric'
+  });
+}
+
+function daysLabel(n) {
+  if (n === 0) return 'Today';
+  if (n === 1) return 'Tomorrow';
+  return "in ".concat(n, " days");
+} // Map a Task priority to a timeline dot icon (mirrors the legacy My To-Do List).
+
+
+function todoDot(priority) {
+  if (priority >= 1000) return /*#__PURE__*/_react["default"].createElement(_icons.AlertOutlined, {
+    style: {
+      color: '#d32f2f',
+      fontSize: 16
+    }
+  });
+  if (priority >= 100) return /*#__PURE__*/_react["default"].createElement(_icons.FireOutlined, {
+    style: {
+      color: '#e8684a',
+      fontSize: 16
+    }
+  });
+  if (priority >= 50) return /*#__PURE__*/_react["default"].createElement(_icons.WarningOutlined, {
+    style: {
+      color: '#ed6c02',
+      fontSize: 16
+    }
+  });
+  if (priority >= 20) return /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, {
+    style: {
+      color: '#1677ff',
+      fontSize: 16
+    }
+  });
+  return /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, {
+    style: {
+      color: '#2e7d32',
+      fontSize: 16
+    }
+  });
+} // Pull g/n out of a legacy task link so we can navigate within the SPA.
+
+
+function routeFromLink(link) {
+  try {
+    var qs = link.indexOf('?') >= 0 ? link.split('?')[1] : link;
+    var sp = new URLSearchParams(qs);
+    var g = sp.get('g');
+    var n = sp.get('n');
+    return g && n ? {
+      g: g,
+      n: n
+    } : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function EmployeeDashboard(_ref) {
+  var config = _ref.config,
+      onNavigate = _ref.onNavigate,
+      onOpenDocument = _ref.onOpenDocument;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      data = _useState2[0],
+      setData = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(true),
+      _useState4 = _slicedToArray(_useState3, 2),
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      error = _useState6[0],
+      setError = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      showAllTodo = _useState8[0],
+      setShowAllTodo = _useState8[1];
+
+  (0, _react.useEffect)(function () {
+    var alive = true;
+    setLoading(true);
+    fetch("".concat(config.restApiBase, "appshell/employee-dashboard"), {
+      headers: {
+        Authorization: "Bearer ".concat(config.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (alive) {
+        setData(d);
+        setLoading(false);
+      }
+    })["catch"](function (e) {
+      if (alive) {
+        setError(e.message);
+        setLoading(false);
+      }
+    });
+    return function () {
+      alive = false;
+    };
+  }, [config]);
+  var greeting = (0, _react.useMemo)(function () {
+    var h = new Date().getHours();
+    return h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening';
+  }, []);
+  var greetName = (0, _react.useMemo)(function () {
+    var n = data && data.greetingName || '';
+
+    if (n.indexOf('@') !== -1) {
+      return n.split('@')[0].replace(/[._]+/g, ' ').replace(/\b\w/g, function (c) {
+        return c.toUpperCase();
+      });
+    }
+
+    return n;
+  }, [data]);
+
+  if (loading) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 80
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+  }
+
+  if (error || !data) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 32
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "Could not load dashboard".concat(error ? ": ".concat(error) : '')
+    }));
+  }
+
+  var att = data.attendance || {};
+  var todo = data.todo || [];
+  var cels = data.celebrations || [];
+  var directReports = data.directReports || [];
+  var teams = data.teams || []; // --- stat cards ----------------------------------------------------------
+
+  var stats = [];
+
+  if (att && att.hoursToday !== undefined) {
+    stats.push({
+      label: 'Hours today',
+      value: "".concat((att.hoursToday || 0).toFixed(1), "h"),
+      sub: att.punchedIn ? 'Clocked in' : att.punchedOutToday ? 'Clocked out' : 'Not clocked in',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+      color: '#346CB0',
+      nav: ['modules', 'attendance']
+    });
+  }
+
+  stats.push({
+    label: 'Action items',
+    value: todo.length,
+    sub: 'On your to-do list',
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckSquareOutlined, null),
+    color: '#5AD8A6'
+  });
+
+  if (data.leave) {
+    stats.push({
+      label: 'My pending leave',
+      value: data.leave.pending || 0,
+      sub: 'Awaiting approval',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CoffeeOutlined, null),
+      color: '#F6BD16',
+      nav: ['modules', 'leaves']
+    });
+  }
+
+  if (data.isManager && data.teamStats) {
+    stats.push({
+      label: 'Direct reports',
+      value: data.teamStats.reports || 0,
+      sub: 'In your team',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+      color: '#9270CA',
+      nav: ['admin', 'employees']
+    });
+    stats.push({
+      label: 'Team on leave',
+      value: data.teamStats.onLeaveToday || 0,
+      sub: 'Today',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+      color: '#E8684A',
+      nav: ['modules', 'leaves']
+    });
+  }
+
+  var cardHead = function cardHead(icon, title, extra) {
+    return {
+      title: /*#__PURE__*/_react["default"].createElement("span", {
+        style: {
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 8
+        }
+      }, icon, title),
+      extra: extra
+    };
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 24,
+      maxWidth: 1500,
+      margin: '0 auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 18
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 22,
+      fontWeight: 700
+    }
+  }, greeting, ",", ' ', greetName, ' ', "\uD83D\uDC4B"), /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary"
+  }, "Here\u2019s your day at a glance.")), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16]
+  }, stats.map(function (s) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+      xs: 12,
+      sm: 8,
+      md: data.isManager ? 6 : 8,
+      xl: data.isManager ? 4 : 6,
+      key: s.label
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      hoverable: true,
+      onClick: function onClick() {
+        return s.nav && onNavigate && onNavigate(s.nav[0], s.nav[1]);
+      },
+      style: {
+        borderRadius: 12,
+        boxShadow: _theme.MUI_SHADOW
+      },
+      styles: {
+        body: {
+          padding: 16
+        }
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 12
+      }
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        width: 42,
+        height: 42,
+        borderRadius: 11,
+        flex: '0 0 auto',
+        fontSize: 19,
+        background: "".concat(s.color, "22"),
+        color: s.color,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }
+    }, s.icon), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 22,
+        fontWeight: 700,
+        lineHeight: 1.1
+      }
+    }, s.value), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 12,
+        color: token.colorTextSecondary
+      }
+    }, s.label))), s.sub && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 11.5,
+        color: token.colorTextTertiary,
+        marginTop: 8
+      }
+    }, s.sub)));
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: data.isManager ? 12 : 14
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, _extends({}, cardHead( /*#__PURE__*/_react["default"].createElement(_icons.CheckSquareOutlined, {
+    style: {
+      color: '#5B8FF9'
+    }
+  }), 'My To-Do List'), {
+    style: {
+      borderRadius: 12,
+      boxShadow: _theme.MUI_SHADOW
+    }
+  }), todo.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+    description: "You're all caught up \uD83C\uDF89"
+  }) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Timeline, {
+    items: (showAllTodo ? todo : todo.slice(0, 4)).map(function (t) {
+      var route = t.link ? routeFromLink(t.link) : null;
+      return {
+        dot: todoDot(t.priority),
+        children: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontWeight: 500
+          }
+        }, t.text), t.details && /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontSize: 12,
+            color: token.colorTextTertiary,
+            marginTop: 2
+          }
+        }, t.details), t.link && t.action && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+          type: "link",
+          size: "small",
+          style: {
+            paddingLeft: 0
+          },
+          onClick: function onClick() {
+            if (route && onNavigate) onNavigate(route.g, route.n);else window.location.href = t.link;
+          }
+        }, t.action))
+      };
+    })
+  }), todo.length > 4 && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "primary",
+    onClick: function onClick() {
+      return setShowAllTodo(function (v) {
+        return !v;
+      });
+    }
+  }, showAllTodo ? 'Show less' : "View all ".concat(todo.length, " tasks"))))), /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: data.isManager ? 12 : 10
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, _extends({}, cardHead( /*#__PURE__*/_react["default"].createElement(_icons.GiftOutlined, {
+    style: {
+      color: '#E8684A'
+    }
+  }), 'Upcoming celebrations'), {
+    style: {
+      borderRadius: 12,
+      boxShadow: _theme.MUI_SHADOW
+    }
+  }), cels.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+    description: "Nothing coming up"
+  }) : /*#__PURE__*/_react["default"].createElement(_antd.List, {
+    dataSource: cels,
+    renderItem: function renderItem(c) {
+      return /*#__PURE__*/_react["default"].createElement(_antd.List.Item, null, /*#__PURE__*/_react["default"].createElement(_antd.List.Item.Meta, {
+        avatar: /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+          style: {
+            background: colorFor(c.name)
+          }
+        }, initials(c.name)),
+        title: /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            fontWeight: 600
+          }
+        }, c.name),
+        description: c.type === 'birthday' ? "\uD83C\uDF82 Birthday \xB7 ".concat(fmtDate(c.date)) : "\uD83C\uDF89 ".concat(c.years, "yr anniversary \xB7 ").concat(fmtDate(c.date))
+      }), /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+        color: c.days === 0 ? 'red' : 'default'
+      }, daysLabel(c.days)));
+    }
+  })))), data.isManager && /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, _extends({}, cardHead( /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, {
+    style: {
+      color: '#9270CA'
+    }
+  }), 'Direct Reports', /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "link",
+    size: "small",
+    onClick: function onClick() {
+      return onNavigate && onNavigate('admin', 'employees');
+    }
+  }, "View employees", /*#__PURE__*/_react["default"].createElement(_icons.RightOutlined, null))), {
+    style: {
+      borderRadius: 12,
+      boxShadow: _theme.MUI_SHADOW
+    }
+  }), directReports.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+    description: "No direct reports"
+  }) : /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [12, 12]
+  }, directReports.map(function (m) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+      xs: 12,
+      sm: 8,
+      md: 6,
+      xl: 4,
+      key: m.id
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+        padding: '8px 10px',
+        border: "1px solid ".concat(token.colorBorderSecondary),
+        borderRadius: 10
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+      style: {
+        background: colorFor(m.name),
+        flex: '0 0 auto'
+      }
+    }, initials(m.name)), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontWeight: 600,
+        fontSize: 13,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, m.name), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 11,
+        color: token.colorTextTertiary,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, m.title || '—'))));
+  }))))), teams.length > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, _extends({}, cardHead( /*#__PURE__*/_react["default"].createElement(_icons.UsergroupAddOutlined, {
+    style: {
+      color: '#0288d1'
+    }
+  }), 'My Teams', /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "link",
+    size: "small",
+    onClick: function onClick() {
+      return onNavigate && onNavigate('extension', 'team|user');
+    }
+  }, "View teams", /*#__PURE__*/_react["default"].createElement(_icons.RightOutlined, null))), {
+    style: {
+      borderRadius: 12,
+      boxShadow: _theme.MUI_SHADOW
+    }
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [12, 12]
+  }, teams.map(function (t) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+      xs: 24,
+      sm: 12,
+      md: 8,
+      xl: 6,
+      key: t.id
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+        padding: '10px 12px',
+        border: "1px solid ".concat(token.colorBorderSecondary),
+        borderRadius: 10
+      }
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        width: 36,
+        height: 36,
+        borderRadius: 9,
+        flex: '0 0 auto',
+        background: (t.color || '#0288d1') + '22',
+        color: t.color || '#0288d1',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null)), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: 0,
+        flex: 1
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontWeight: 600,
+        fontSize: 13,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, t.name), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 11,
+        color: token.colorTextTertiary
+      }
+    }, "".concat(t.members, " member").concat(t.members === 1 ? '' : 's'))), t.role && t.role !== 'Member' && /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+      color: "blue"
+    }, t.role)));
+  }))))));
+}
+
+},{"./theme":26,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],6:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = ExpenseDialog;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text,
+    Title = _antd.Typography.Title;
+var STATUS_COLOR = {
+  Pending: 'gold',
+  Approved: 'green',
+  Rejected: 'red',
+  Paid: 'blue',
+  Cancelled: 'default'
+}; // Right-hand, vertically scrollable status-change log. Entries arrive newest-first
+// from the backend (expense/{id}/logs), so the latest change is at the top.
+
+function LogSidebar(_ref) {
+  var logs = _ref.logs,
+      loading = _ref.loading,
+      token = _ref.token;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: 260,
+      flexShrink: 0,
+      borderLeft: "1px solid ".concat(token.colorBorderSecondary),
+      paddingLeft: 16,
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    strong: true,
+    style: {
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_icons.HistoryOutlined, {
+    style: {
+      marginRight: 6
+    }
+  }), "Status History"), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      overflowY: 'auto',
+      flex: 1,
+      maxHeight: 460,
+      paddingRight: 4,
+      paddingTop: 6
+    }
+  }, loading ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      textAlign: 'center',
+      padding: 24
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+    size: "small"
+  })) : !logs || logs.length === 0 ? /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary",
+    style: {
+      fontSize: 13
+    }
+  }, "No status changes yet.") : /*#__PURE__*/_react["default"].createElement(_antd.Timeline, {
+    items: logs.map(function (l) {
+      return {
+        children: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontWeight: 600,
+            fontSize: 13
+          }
+        }, "".concat(l.status_from || '', " \u2192 ").concat(l.status_to || '')), /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            color: token.colorTextTertiary,
+            fontSize: 12
+          }
+        }, l.time), l.note && l.note.trim() ? /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontSize: 12,
+            marginTop: 2
+          }
+        }, l.note.trim()) : null)
+      };
+    })
+  })));
+}
+/**
+ * Unified expense dialog with a status-history sidebar. Three modes:
+ *  - 'view'     : read-only detail (admin/manager, and employees on non-editable rows)
+ *  - 'edit'     : editable form + Save (owner / admin)
+ *  - 'resubmit' : editable form + Re-submit -> sets a rejected expense back to Pending
+ * A new, expense-only component — it does not touch the shared form/modal components.
+ */
+
+
+function ExpenseDialog(_ref2) {
+  var open = _ref2.open,
+      onClose = _ref2.onClose,
+      rec = _ref2.rec,
+      shellConfig = _ref2.shellConfig,
+      _ref2$mode = _ref2.mode,
+      mode = _ref2$mode === void 0 ? 'view' : _ref2$mode,
+      onSaved = _ref2.onSaved,
+      statusOptionsFor = _ref2.statusOptionsFor;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var isDark = token.colorBgContainer === _theme.MUI_DARK.paper;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      detail = _useState2[0],
+      setDetail = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      saving = _useState6[0],
+      setSaving = _useState6[1];
+
+  var _useState7 = (0, _react.useState)({}),
+      _useState8 = _slicedToArray(_useState7, 2),
+      values = _useState8[0],
+      setValues = _useState8[1]; // Status-change (view dialog dropdown): the chosen target + its reason prompt.
+
+
+  var _useState9 = (0, _react.useState)(null),
+      _useState10 = _slicedToArray(_useState9, 2),
+      statusTarget = _useState10[0],
+      setStatusTarget = _useState10[1];
+
+  var _useState11 = (0, _react.useState)(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      statusReason = _useState12[0],
+      setStatusReason = _useState12[1];
+
+  var _useState13 = (0, _react.useState)(false),
+      _useState14 = _slicedToArray(_useState13, 2),
+      statusSaving = _useState14[0],
+      setStatusSaving = _useState14[1];
+
+  var editable = mode === 'edit' || mode === 'resubmit';
+
+  var loadDetail = function loadDetail(withSpinner) {
+    if (withSpinner) {
+      setLoading(true);
+    }
+
+    return fetch("".concat(shellConfig.restApiBase, "expense/").concat(rec.id, "/detail"), {
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (d && !d.error) {
+        setDetail(d);
+        setValues({
+          category: d.category,
+          expense_date: d.expense_date,
+          payment_method: d.payment_method,
+          payee: d.payee,
+          currency: d.currency,
+          amount: d.amount,
+          transaction_no: d.transaction_no,
+          notes: d.notes
+        });
+      } else {
+        setDetail({});
+      }
+    })["catch"](function () {
+      return setDetail({});
+    })["finally"](function () {
+      return setLoading(false);
+    });
+  };
+
+  (0, _react.useEffect)(function () {
+    if (!open || !rec) {
+      setDetail(null);
+      setValues({});
+      return;
+    }
+
+    setDetail(null);
+    setStatusTarget(null);
+    setStatusReason('');
+    loadDetail(true); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, rec, shellConfig]);
+  if (!rec) return null;
+  var status = detail && detail.status || rec.status || '—';
+  var attachments = detail && detail.attachments || [];
+  var logs = detail && detail.logs || [];
+  var options = detail && detail.options || {};
+  var employeeName = detail && detail.employee_name || rec.employee || 'Employee';
+  var heroBg = isDark ? 'rgba(25,118,210,0.14)' : 'rgba(25,118,210,0.06)';
+
+  var setV = function setV(k, v) {
+    return setValues(function (prev) {
+      return _objectSpread({}, prev, _defineProperty({}, k, v));
+    });
+  };
+
+  var doSave = function doSave() {
+    var endpoint = mode === 'resubmit' ? 'resubmit' : 'update';
+    setSaving(true);
+    fetch("".concat(shellConfig.restApiBase, "expense/").concat(rec.id, "/").concat(endpoint), {
+      method: 'POST',
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token),
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify(values)
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (d && d.error) {
+        var msg = d.error[0] && d.error[0][0] ? d.error[0][0].message : 'Could not save';
+
+        _antd.message.error(msg, 5);
+
+        return;
+      }
+
+      _antd.message.success(mode === 'resubmit' ? 'Expense re-submitted' : 'Expense saved');
+
+      if (onSaved) onSaved();
+      onClose();
+    })["catch"](function () {
+      return _antd.message.error('Could not save', 5);
+    })["finally"](function () {
+      return setSaving(false);
+    });
+  }; // Status change from the view dialog (admin/manager). A reason is mandatory and
+  // all rules are enforced by the backend; on success we refresh in place so the
+  // new status + log entry show immediately.
+
+
+  var submitStatusChange = function submitStatusChange() {
+    if (!statusTarget || !statusReason.trim()) return;
+    setStatusSaving(true);
+    fetch("".concat(shellConfig.restApiBase, "expense/").concat(rec.id, "/status"), {
+      method: 'POST',
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token),
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({
+        status: statusTarget.value,
+        reason: statusReason
+      })
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (d && d.error) {
+        var msg = d.error[0] && d.error[0][0] ? d.error[0][0].message : 'Could not change status';
+
+        _antd.message.error(msg, 5);
+
+        return;
+      }
+
+      _antd.message.success('Status updated');
+
+      setStatusTarget(null);
+      setStatusReason('');
+      if (onSaved) onSaved();
+      loadDetail(false);
+    })["catch"](function () {
+      return _antd.message.error('Could not change status', 5);
+    })["finally"](function () {
+      return setStatusSaving(false);
+    });
+  };
+
+  var statusOpts = !editable && typeof statusOptionsFor === 'function' && detail && detail.status ? statusOptionsFor(detail.status) : [];
+  var footer = editable ? [/*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    key: "cancel",
+    onClick: onClose
+  }, "Cancel"), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    key: "save",
+    type: "primary",
+    loading: saving,
+    onClick: doSave
+  }, mode === 'resubmit' ? 'Re-submit' : 'Save')] : [/*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    key: "close",
+    onClick: onClose
+  }, "Close"), statusOpts.length > 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Dropdown, {
+    key: "status",
+    trigger: ['click'],
+    menu: {
+      items: statusOpts.map(function (o) {
+        return {
+          key: String(o.value),
+          label: o.label
+        };
+      }),
+      onClick: function onClick(_ref3) {
+        var key = _ref3.key;
+        setStatusReason('');
+        setStatusTarget(statusOpts.find(function (o) {
+          return String(o.value) === String(key);
+        }) || null);
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "primary"
+  }, "Change Status", /*#__PURE__*/_react["default"].createElement(_icons.DownOutlined, null))) : null];
+  var currencyLabel = detail && detail.currency_name || rec.currency || '';
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: open,
+    onCancel: onClose,
+    title: null,
+    width: 840,
+    footer: footer,
+    styles: {
+      body: {
+        paddingTop: 8
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 20
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 14,
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+    size: 52,
+    src: rec.image || undefined,
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+    style: {
+      flexShrink: 0
+    }
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Title, {
+    level: 5,
+    style: {
+      margin: 0
+    },
+    ellipsis: true
+  }, employeeName), /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary",
+    style: {
+      fontSize: 13
+    }
+  }, detail && detail.category_name || rec.category || 'Expense')), /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+    color: STATUS_COLOR[status] || 'default',
+    style: {
+      fontWeight: 600,
+      marginInlineEnd: 0
+    }
+  }, status)), loading ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      textAlign: 'center',
+      padding: 40
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, null)) : editable ? /*#__PURE__*/_react["default"].createElement(_antd.Form, {
+    layout: "vertical",
+    size: "small"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Amount",
+    style: {
+      flex: 1
+    },
+    required: true
+  }, /*#__PURE__*/_react["default"].createElement(_antd.InputNumber, {
+    style: {
+      width: '100%'
+    },
+    value: values.amount,
+    onChange: function onChange(v) {
+      return setV('amount', v);
+    },
+    stringMode: true
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Currency",
+    style: {
+      width: 140
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    showSearch: true,
+    optionFilterProp: "label",
+    value: values.currency,
+    onChange: function onChange(v) {
+      return setV('currency', v);
+    },
+    options: (options.currencies || []).map(function (o) {
+      return {
+        value: o.id,
+        label: o.name
+      };
+    })
+  }))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Category",
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    showSearch: true,
+    optionFilterProp: "label",
+    value: values.category,
+    onChange: function onChange(v) {
+      return setV('category', v);
+    },
+    options: (options.categories || []).map(function (o) {
+      return {
+        value: o.id,
+        label: o.name
+      };
+    })
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Payment Method",
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    showSearch: true,
+    optionFilterProp: "label",
+    value: values.payment_method,
+    onChange: function onChange(v) {
+      return setV('payment_method', v);
+    },
+    options: (options.paymentMethods || []).map(function (o) {
+      return {
+        value: o.id,
+        label: o.name
+      };
+    })
+  }))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Expense Date",
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/_react["default"].createElement("input", {
+    type: "date",
+    value: values.expense_date || '',
+    onChange: function onChange(e) {
+      return setV('expense_date', e.target.value);
+    },
+    style: {
+      width: '100%',
+      height: 24,
+      padding: '0 8px',
+      borderRadius: 6,
+      border: "1px solid ".concat(token.colorBorder),
+      background: token.colorBgContainer,
+      color: token.colorText,
+      colorScheme: isDark ? 'dark' : 'light'
+    }
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Payee / Merchant",
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Input, {
+    value: values.payee || '',
+    onChange: function onChange(e) {
+      return setV('payee', e.target.value);
+    }
+  }))), /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Transaction / Ref No",
+    style: {
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Input, {
+    value: values.transaction_no || '',
+    onChange: function onChange(e) {
+      return setV('transaction_no', e.target.value);
+    }
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Notes",
+    style: {
+      marginBottom: 4
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Input.TextArea, {
+    rows: 2,
+    value: values.notes || '',
+    onChange: function onChange(e) {
+      return setV('notes', e.target.value);
+    }
+  }))) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: heroBg,
+      borderRadius: 12,
+      padding: '16px 20px',
+      marginBottom: 18,
+      display: 'flex',
+      alignItems: 'baseline',
+      gap: 8
+    }
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontSize: 30,
+      fontWeight: 700,
+      color: token.colorText,
+      lineHeight: 1
+    }
+  }, rec.amount != null ? rec.amount : detail && detail.amount || '—'), /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontSize: 15,
+      fontWeight: 600,
+      color: token.colorTextSecondary
+    }
+  }, currencyLabel)), /*#__PURE__*/_react["default"].createElement(_antd.Descriptions, {
+    column: 1,
+    size: "small",
+    bordered: true,
+    labelStyle: {
+      width: 150,
+      color: token.colorTextSecondary
+    },
+    items: [{
+      key: 'date',
+      label: 'Expense Date',
+      children: detail && detail.expense_date || rec.expense_date || '—'
+    }, {
+      key: 'pm',
+      label: 'Payment Method',
+      children: detail && detail.payment_method_name || rec.payment_method || '—'
+    }, {
+      key: 'payee',
+      label: 'Payee',
+      children: detail && detail.payee || rec.payee || '—'
+    }, {
+      key: 'txn',
+      label: 'Transaction No',
+      children: detail && detail.transaction_no || '—'
+    }, {
+      key: 'submitted',
+      label: 'Submitted',
+      children: detail && detail.created || '—'
+    }]
+  }), detail && detail.notes ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    strong: true,
+    style: {
+      display: 'block',
+      marginBottom: 6
+    }
+  }, "Notes"), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: token.colorFillQuaternary,
+      borderRadius: 8,
+      padding: '10px 12px',
+      whiteSpace: 'pre-wrap',
+      color: token.colorText
+    }
+  }, detail.notes)) : null), attachments.length > 0 && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Divider, {
+    style: {
+      margin: '16px 0 12px'
+    },
+    orientation: "left",
+    plain: true
+  }, /*#__PURE__*/_react["default"].createElement(_icons.FileImageOutlined, {
+    style: {
+      marginRight: 6
+    }
+  }), "Receipts"), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 12
+    }
+  }, attachments.map(function (a) {
+    return a.isImage ? /*#__PURE__*/_react["default"].createElement("div", {
+      key: a.field,
+      style: {
+        textAlign: 'center'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Image, {
+      src: a.url,
+      alt: a.label,
+      width: 82,
+      height: 82,
+      style: {
+        objectFit: 'cover',
+        borderRadius: 8,
+        border: "1px solid ".concat(token.colorBorderSecondary)
+      }
+    }), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 12,
+        color: token.colorTextSecondary,
+        marginTop: 4
+      }
+    }, a.label)) : /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      key: a.field,
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      href: a.url,
+      target: "_blank",
+      rel: "noreferrer"
+    }, a.label);
+  })))), /*#__PURE__*/_react["default"].createElement(LogSidebar, {
+    logs: logs,
+    loading: loading,
+    token: token
+  }))), /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: !!statusTarget,
+    title: "Change Status",
+    okText: "Update",
+    confirmLoading: statusSaving,
+    okButtonProps: {
+      disabled: !statusReason.trim()
+    },
+    onOk: submitStatusChange,
+    onCancel: function onCancel() {
+      return setStatusTarget(null);
+    },
+    width: 440
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 10
+    }
+  }, "Set status to", ' ', /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+    color: STATUS_COLOR[statusTarget && statusTarget.value] || 'default',
+    style: {
+      fontWeight: 600
+    }
+  }, statusTarget && statusTarget.label)), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 6,
+      color: token.colorTextSecondary
+    }
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      color: token.colorError,
+      marginRight: 4
+    }
+  }, "*"), "Reason"), /*#__PURE__*/_react["default"].createElement(_antd.Input.TextArea, {
+    rows: 3,
+    value: statusReason,
+    onChange: function onChange(e) {
+      return setStatusReason(e.target.value);
+    },
+    status: !statusReason.trim() ? 'error' : undefined,
+    placeholder: "Reason for this status change\u2026"
+  })));
+}
+
+},{"./theme":26,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],7:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = LeaveCalcChart;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _g2plot = require("@antv/g2plot");
+
+var _LeaveCalcParser = _interopRequireDefault(require("./LeaveCalcParser"));
+
+var _theme = require("./theme");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Text = _antd.Typography.Text,
+    Title = _antd.Typography.Title;
+
+var fmt = function fmt(v) {
+  var n = Number(v);
+  if (!Number.isFinite(n)) return '0';
+  return Number.isInteger(n) ? String(n) : String(Math.round(n * 1000) / 1000);
+}; // Thin g2plot 1.x wrapper (mirrors the shell Dashboard chart wrapper). The
+// bundled g2plot is 1.x, so grouping uses the dedicated GroupedColumn plot and
+// the { visible: true } config style. Dark mode is handled by feeding theme
+// colours into the axis/label config rather than g2plot's opaque 'dark' theme.
+
+
+function Plot(_ref) {
+  var Ctor = _ref.ctor,
+      config = _ref.config,
+      _ref$height = _ref.height,
+      height = _ref$height === void 0 ? 260 : _ref$height;
+  var ref = (0, _react.useRef)(null);
+  (0, _react.useEffect)(function () {
+    if (!ref.current) return undefined;
+    var plot;
+
+    try {
+      plot = new Ctor(ref.current, config);
+      plot.render();
+    } catch (e) {
+      /* ignore render errors */
+    }
+
+    return function () {
+      try {
+        if (plot) plot.destroy();
+      } catch (e) {
+        /* */
+      }
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [Ctor, JSON.stringify(config), height]);
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    ref: ref,
+    style: {
+      height: height
+    }
+  });
+}
+/**
+ * LeaveCalcChart — renders a graphical view of how a leave type's entitlement
+ * was calculated, parsed from the raw "How is this calculated?" log lines.
+ *
+ * For leave types that carry forward, it charts the year-over-year propagation
+ * (carried in vs carried to next) plus a per-period breakdown table. For simple
+ * types it charts the current-period derivation (allocated → joined-date →
+ * accrual). The raw log is preserved in a collapsible panel.
+ */
+
+
+function LeaveCalcChart(_ref2) {
+  var lines = _ref2.lines;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var model = (0, _react.useMemo)(function () {
+    return new _LeaveCalcParser["default"](lines || []).parse();
+  }, [lines]);
+  var isDark = token.colorBgContainer === _theme.MUI_DARK.paper;
+  var darkAxis = isDark ? {
+    label: {
+      style: {
+        fill: 'rgba(255,255,255,0.45)'
+      }
+    },
+    line: {
+      style: {
+        stroke: 'rgba(255,255,255,0.25)'
+      }
+    },
+    grid: {
+      line: {
+        style: {
+          stroke: 'rgba(255,255,255,0.12)'
+        }
+      }
+    }
+  } : {};
+  var darkLegend = isDark ? {
+    text: {
+      style: {
+        fill: 'rgba(255,255,255,0.85)'
+      }
+    }
+  } : {};
+  var darkLabel = isDark ? {
+    style: {
+      fill: 'rgba(255,255,255,0.85)'
+    }
+  } : {};
+  var hasCarry = model.carryForward.length > 0; // --- Chart data ---------------------------------------------------------
+  // Two series tell the propagation story: how much was allocated each period vs
+  // how much actually carried forward to the next one (the rest expires / is used).
+
+  var carryData = [];
+  model.carryForward.forEach(function (p) {
+    carryData.push({
+      period: p.label,
+      type: 'Allocated',
+      value: p.allocated + p.pto
+    });
+    carryData.push({
+      period: p.label,
+      type: 'Carried to next',
+      value: p.carriedToNext
+    });
+  });
+  var derivationData = [];
+  if (model.totalForPeriod != null) derivationData.push({
+    step: 'Allocated',
+    value: model.totalForPeriod
+  });
+  if (model.joinedDateAdjusted) derivationData.push({
+    step: 'After join date',
+    value: model.afterJoinedDate
+  });
+  if (model.accrualApplied) derivationData.push({
+    step: 'After accrual',
+    value: model.afterAccrue
+  });
+  var carryConfig = {
+    data: carryData,
+    xField: 'period',
+    yField: 'value',
+    groupField: 'type',
+    color: ['#5B8FF9', '#5AD8A6'],
+    legend: _objectSpread({
+      visible: true,
+      position: 'top-center'
+    }, darkLegend),
+    label: {
+      visible: false
+    },
+    xAxis: _objectSpread({
+      visible: true,
+      title: {
+        visible: true,
+        text: 'Period'
+      }
+    }, darkAxis),
+    yAxis: _objectSpread({
+      visible: true,
+      min: 0,
+      title: {
+        visible: true,
+        text: 'Leaves'
+      }
+    }, darkAxis)
+  };
+  var derivationConfig = {
+    data: derivationData,
+    xField: 'step',
+    yField: 'value',
+    color: '#5B8FF9',
+    columnSize: 48,
+    label: _objectSpread({
+      visible: true,
+      position: 'top'
+    }, darkLabel),
+    xAxis: _objectSpread({
+      visible: true
+    }, darkAxis),
+    yAxis: _objectSpread({
+      visible: true,
+      min: 0,
+      title: {
+        visible: true,
+        text: 'Leaves'
+      }
+    }, darkAxis)
+  }; // --- Per-period breakdown table ----------------------------------------
+
+  var tableData = model.carryForward.map(function (p, i) {
+    return _objectSpread({
+      key: i
+    }, p);
+  });
+  var columns = [{
+    title: 'Period',
+    dataIndex: 'label',
+    key: 'label'
+  }, {
+    title: 'Carried in',
+    dataIndex: 'carriedIn',
+    key: 'carriedIn',
+    render: fmt
+  }, {
+    title: 'Allocated',
+    key: 'allocated',
+    render: function render(_, r) {
+      return fmt(r.allocated + r.pto);
+    }
+  }, {
+    title: 'Taken',
+    dataIndex: 'taken',
+    key: 'taken',
+    render: fmt
+  }, {
+    title: 'Valid till',
+    dataIndex: 'validTill',
+    key: 'validTill'
+  }, {
+    title: 'Carried to next',
+    dataIndex: 'carriedToNext',
+    key: 'carriedToNext',
+    render: function render(v) {
+      return /*#__PURE__*/_react["default"].createElement(Text, {
+        strong: true
+      }, fmt(v));
+    }
+  }];
+
+  var rawPanel = /*#__PURE__*/_react["default"].createElement(_antd.Collapse, {
+    ghost: true,
+    items: [{
+      key: 'raw',
+      label: 'Show calculation log',
+      children: /*#__PURE__*/_react["default"].createElement("ul", {
+        style: {
+          fontSize: 12.5,
+          paddingLeft: 18,
+          margin: 0,
+          color: token.colorTextSecondary
+        }
+      }, (lines || []).map(function (line, i) {
+        return (
+          /*#__PURE__*/
+          // eslint-disable-next-line react/no-array-index-key
+          _react["default"].createElement("li", {
+            key: i,
+            style: {
+              marginBottom: 3
+            }
+          }, String(line).replace(/^\(client=[^)]*\)\s*/, ''))
+        );
+      }))
+    }]
+  });
+
+  if (!hasCarry && derivationData.length === 0) {
+    return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "No calculation details available"
+    }), rawPanel);
+  }
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Descriptions, {
+    size: "small",
+    column: 2,
+    bordered: true
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Descriptions.Item, {
+    label: "Leave type"
+  }, model.leaveType || '—'), /*#__PURE__*/_react["default"].createElement(_antd.Descriptions.Item, {
+    label: "Current period"
+  }, model.period ? "".concat(model.period.from, " \u2192 ").concat(model.period.to) : '—'), /*#__PURE__*/_react["default"].createElement(_antd.Descriptions.Item, {
+    label: "Allocated for period"
+  }, fmt(model.totalForPeriod || 0)), /*#__PURE__*/_react["default"].createElement(_antd.Descriptions.Item, {
+    label: "Available this period"
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    strong: true
+  }, fmt(model.afterAccrue != null ? model.afterAccrue : model.totalForPeriod || 0)), model.accrualApplied ? /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+    color: "blue",
+    style: {
+      marginLeft: 8
+    }
+  }, "accrued") : null)), hasCarry ? /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(Title, {
+    level: 5,
+    style: {
+      marginBottom: 4
+    }
+  }, "Carry-forward propagation"), /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary",
+    style: {
+      fontSize: 12.5
+    }
+  }, "How leaves carried across ".concat(model.carryForward.length, " past period(s) into the current one.")), /*#__PURE__*/_react["default"].createElement(Plot, {
+    ctor: _g2plot.GroupedColumn,
+    config: carryConfig
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Table, {
+    size: "small",
+    columns: columns,
+    dataSource: tableData,
+    pagination: false,
+    scroll: {
+      y: 220
+    },
+    style: {
+      marginTop: 8
+    }
+  })) : /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(Title, {
+    level: 5,
+    style: {
+      marginBottom: 4
+    }
+  }, "How this period was calculated"), /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary",
+    style: {
+      fontSize: 12.5
+    }
+  }, "Entitlement for the current period, step by step."), /*#__PURE__*/_react["default"].createElement(Plot, {
+    ctor: _g2plot.Column,
+    config: derivationConfig,
+    height: 220
+  })), rawPanel);
+}
+
+},{"./LeaveCalcParser":8,"./theme":26,"@antv/g2plot":"@antv/g2plot","antd":"antd","react":"react"}],8:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * LeaveCalcParser — turns the free-text "How is this calculated?" leave
+ * entitlement log (an array of strings produced by LeavesActionManager's
+ * LogManager::collectLogs) into a structured model that a chart can render.
+ *
+ * The log has two parts:
+ *  1. A header describing the current period entitlement:
+ *       Leave Type (Annual leave) [id (1)]
+ *       Leave Period After Adjust : 2026-01-01 - 2026-12-31
+ *       Total for leave for current period: 14
+ *       Total after adjusted based on joined date: 14
+ *       Total after leave accrue: 7.154
+ *       Number of past leave periods: 0
+ *  2. Zero or more carry-forward blocks, one per past period, each delimited by
+ *     "<hr/>" and starting with "Calculating leave days carried forward from
+ *     [Period FROM - TO]", then carried-in / allocated / taken / carried-to-next.
+ *
+ * Lines may be prefixed with "(client=<name>) " and the first leave type in a
+ * batch is preceded by "Calculating Leave Entitlement" + the employee name;
+ * both are ignored here.
+ */
+var stripPrefix = function stripPrefix(line) {
+  return String(line == null ? '' : line).replace(/^\(client=[^)]*\)\s*/, '').trim();
+};
+
+var toNum = function toNum(s) {
+  var n = Number(s);
+  return Number.isFinite(n) ? n : 0;
+};
+
+var LeaveCalcParser = /*#__PURE__*/function () {
+  function LeaveCalcParser(lines) {
+    _classCallCheck(this, LeaveCalcParser);
+
+    this.lines = Array.isArray(lines) ? lines.map(stripPrefix) : [];
+  }
+  /**
+   * @returns {{
+   *   leaveType: string, leaveTypeId: (number|null),
+   *   period: ({from: string, to: string}|null),
+   *   totalForPeriod: (number|null), afterJoinedDate: (number|null),
+   *   afterAccrue: (number|null), accrualApplied: boolean,
+   *   joinedDateAdjusted: boolean, pastPeriodCount: number,
+   *   carryForward: Array<{
+   *     label: string, from: string, to: string,
+   *     carriedIn: number, allocated: number, pto: number,
+   *     taken: number, deducted: number, validTill: string, carriedToNext: number,
+   *   }>,
+   * }}
+   */
+
+
+  _createClass(LeaveCalcParser, [{
+    key: "parse",
+    value: function parse() {
+      var model = {
+        leaveType: '',
+        leaveTypeId: null,
+        period: null,
+        totalForPeriod: null,
+        afterJoinedDate: null,
+        afterAccrue: null,
+        accrualApplied: false,
+        joinedDateAdjusted: false,
+        pastPeriodCount: 0,
+        carryForward: []
+      };
+      var current = null;
+
+      var flush = function flush() {
+        if (current) {
+          model.carryForward.push(current);
+          current = null;
+        }
+      };
+
+      this.lines.forEach(function (line) {
+        if (!line || line === '<hr/>') return;
+        var m;
+
+        if (m = line.match(/^Leave Type \((.+)\) \[id \((\d+)\)\]$/)) {
+          if (!model.leaveType) {
+            model.leaveType = m[1];
+            model.leaveTypeId = Number(m[2]);
+          }
+
+          return;
+        }
+
+        if (m = line.match(/^Leave Period After Adjust\s*:\s*(\d{4}-\d{2}-\d{2})\s*-\s*(\d{4}-\d{2}-\d{2})/)) {
+          model.period = {
+            from: m[1],
+            to: m[2]
+          };
+          return;
+        }
+
+        if (m = line.match(/^Total for leave for current period:\s*([\d.]+)/)) {
+          model.totalForPeriod = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Total after adjusted based on joined date:\s*([\d.]+)/)) {
+          model.afterJoinedDate = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Total after leave accrue:\s*([\d.]+)/)) {
+          model.afterAccrue = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Number of past leave periods:\s*(\d+)/)) {
+          model.pastPeriodCount = Number(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Calculating leave days carried forward from \[Period\s*(\d{4}-\d{2}-\d{2})\s*-\s*(\d{4}-\d{2}-\d{2})\]/)) {
+          flush();
+          current = {
+            from: m[1],
+            to: m[2],
+            label: m[1].slice(0, 4),
+            carriedIn: 0,
+            allocated: 0,
+            pto: 0,
+            taken: 0,
+            deducted: 0,
+            validTill: '',
+            carriedToNext: 0
+          };
+          return;
+        }
+
+        if (!current) return; // remaining patterns only apply inside a carry block
+
+        if (m = line.match(/^Number of leaves carried from previous period:\s*([\d.-]+)/)) {
+          current.carriedIn = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Number of allocated \[.*\]:\s*leave\(([\d.-]+)\)\s*\+\s*PTO\(([\d.-]+)\)\s*=\s*([\d.-]+)/)) {
+          current.allocated = toNum(m[1]);
+          current.pto = toNum(m[2]);
+          return;
+        }
+
+        if (m = line.match(/^Leave days from previous period is valid till:\s*(\d{4}-\d{2}-\d{2})/)) {
+          current.validTill = m[1];
+          return;
+        }
+
+        if (m = line.match(/^Total number of leave days taken between .*:\s*([\d.-]+)/)) {
+          current.taken = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Number of leave deducted from carried forward leaves from previous period:\s*([\d.-]+)/)) {
+          current.deducted = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Number of leaves carried to next period:\s*([\d.-]+)/)) {
+          current.carriedToNext = toNum(m[1]);
+          return;
+        }
+      });
+      flush();
+
+      var near = function near(a, b) {
+        return a != null && b != null && Math.abs(a - b) > 1e-9;
+      };
+
+      model.accrualApplied = near(model.afterAccrue, model.afterJoinedDate);
+      model.joinedDateAdjusted = near(model.afterJoinedDate, model.totalForPeriod);
+      return model;
+    }
+    /** Convenience: parse and return only the carry-forward periods. */
+
+  }], [{
+    key: "parse",
+    value: function parse(lines) {
+      return new LeaveCalcParser(lines).parse();
+    }
+  }]);
+
+  return LeaveCalcParser;
+}();
+
+exports["default"] = LeaveCalcParser;
+
+},{}],9:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = LeaveCalendar;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var pad = function pad(n) {
+  return Number(n) < 10 ? "0".concat(n) : "".concat(n);
+};
+/**
+ * Leave Calendar (modules::leavecal) — a month/year calendar showing the
+ * employee's and their direct reports' leaves, plus holidays. Data comes from
+ * the leave-calendar REST endpoint, fetched with the shell's auth token.
+ */
+
+
+function LeaveCalendar(_ref) {
+  var shellConfig = _ref.shellConfig;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var _useState = (0, _react.useState)({}),
+      _useState2 = _slicedToArray(_useState, 2),
+      byDate = _useState2[0],
+      setByDate = _useState2[1]; // 'YYYY-MM-DD' -> [{ employee, status }]
+
+
+  var _useState3 = (0, _react.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      holidays = _useState4[0],
+      setHolidays = _useState4[1];
+
+  var _useState5 = (0, _react.useState)({}),
+      _useState6 = _slicedToArray(_useState5, 2),
+      byMonth = _useState6[0],
+      setByMonth = _useState6[1]; // year -> { 'YYYY-MM': [{ employee, count }] }
+
+
+  var apiGet = (0, _react.useCallback)(function (path) {
+    var base = shellConfig && shellConfig.restApiBase || '';
+    return fetch("".concat(base).concat(path), {
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig && shellConfig.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    });
+  }, [shellConfig]);
+  var loadMonth = (0, _react.useCallback)(function (year, month) {
+    apiGet("leave-calendar/month/".concat(year, "/").concat(pad(month))).then(function (d) {
+      setByDate(function (prev) {
+        return _objectSpread({}, prev, {}, d && d.leave || {});
+      });
+      setHolidays(d && d.holidays || []);
+    })["catch"](function () {
+      /* ignore */
+    });
+  }, [apiGet]);
+  var loadYear = (0, _react.useCallback)(function (year) {
+    apiGet("leave-calendar/year/".concat(year)).then(function (d) {
+      return setByMonth(function (prev) {
+        return _objectSpread({}, prev, {}, d || {});
+      });
+    })["catch"](function () {
+      /* ignore */
+    });
+  }, [apiGet]);
+  (0, _react.useEffect)(function () {
+    var now = new Date();
+    loadMonth(now.getFullYear(), now.getMonth() + 1);
+  }, [loadMonth]);
+
+  var onPanelChange = function onPanelChange(value, mode) {
+    if (mode === 'month') loadMonth(value.year(), value.month() + 1);else loadYear(value.year());
+  };
+
+  var dateCell = function dateCell(value) {
+    var key = "".concat(value.year(), "-").concat(pad(value.month() + 1), "-").concat(pad(value.date()));
+    var list = byDate[key] || [];
+    var holiday = holidays.find(function (h) {
+      return h && h.dateh === key;
+    });
+    if (!holiday && !list.length) return null;
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        marginTop: 4
+      }
+    }, holiday ? /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+      message: holiday.name,
+      type: "warning",
+      showIcon: true,
+      style: {
+        marginBottom: 6,
+        padding: '1px 8px'
+      }
+    }) : null, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 6
+      }
+    }, list.map(function (item, i) {
+      return /*#__PURE__*/_react["default"].createElement(_antd.Tooltip // eslint-disable-next-line react/no-array-index-key
+      , {
+        key: "".concat(item.employee.id, "-").concat(i),
+        title: "".concat(item.employee.name, " \xB7 ").concat(item.status),
+        color: "#108ee9"
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Badge, {
+        color: item.status === 'Approved' ? 'green' : 'orange',
+        dot: true
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+        size: "small",
+        src: item.employee.image
+      }, item.employee.name ? item.employee.name.charAt(0) : '?')));
+    })));
+  };
+
+  var monthCell = function monthCell(value) {
+    var yd = byMonth[value.year()];
+    var mk = "".concat(value.year(), "-").concat(pad(value.month() + 1));
+    var list = yd && yd[mk] || [];
+    if (!list.length) return null;
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        marginTop: 8,
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 8
+      }
+    }, list.map(function (item, i) {
+      return /*#__PURE__*/_react["default"].createElement(_antd.Tooltip // eslint-disable-next-line react/no-array-index-key
+      , {
+        key: "".concat(item.employee.id, "-").concat(i),
+        title: item.employee.name,
+        color: "#108ee9"
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Badge, {
+        color: "green",
+        size: "small",
+        count: item.count
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+        size: "small",
+        src: item.employee.image
+      }, item.employee.name ? item.employee.name.charAt(0) : '?')));
+    }));
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: token.colorBgContainer,
+      borderRadius: 10,
+      padding: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Calendar, {
+    cellRender: function cellRender(current, info) {
+      return info.type === 'date' ? dateCell(current) : monthCell(current);
+    },
+    onPanelChange: onPanelChange
+  }));
+}
+
+},{"antd":"antd","react":"react"}],10:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = LeaveEntitlement;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+var _LeaveCalcChart = _interopRequireDefault(require("./LeaveCalcChart"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text; // Semantic colours that read on both light and dark grounds. Kept out of the
+// theme tokens on purpose: these encode leave state (remaining / pending /
+// taken), which is separate from the app's blue accent.
+
+var C = {
+  available: '#2e9e50',
+  availableSoft: 'rgba(46,158,80,0.14)',
+  used: '#7c879a',
+  pending: '#e08321',
+  danger: '#d64545'
+};
+
+var num = function num(v) {
+  var n = Number(v);
+  if (Number.isNaN(n)) return '0';
+  return Number.isInteger(n) ? String(n) : String(Math.round(n * 1000) / 1000);
+};
+
+var pct = function pct(part, denom) {
+  return denom > 0 ? Math.max(0, Math.min(100, part / denom * 100)) : 0;
+};
+/**
+ * Leave Entitlement — one summary card per leave type. The card answers, at a
+ * glance, "how much do I have left and can I book it": a hero Available figure,
+ * a proportion meter (taken / pending / available of the entitlement), quiet
+ * supporting detail, and an Apply action prefilled to that leave type.
+ *
+ * Data comes from the bundled adapter's getEntitlement action; Apply opens the
+ * main leave adapter's "Apply Leave" modal preselected to this type.
+ */
+
+
+function LeaveEntitlement(_ref) {
+  var tabKey = _ref.tabKey;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      rows = _useState2[0],
+      setRows = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      calc = _useState4[0],
+      setCalc = _useState4[1]; // { name, lines: [] }
+
+
+  (0, _react.useEffect)(function () {
+    var cancelled = false;
+    var tries = 0;
+
+    var tick = function tick() {
+      if (cancelled) return;
+      var m = (window.modJsList || {})[tabKey];
+
+      if (m && typeof m.fetchEntitlement === 'function') {
+        m.fetchEntitlement().then(function (data) {
+          if (!cancelled) setRows(Array.isArray(data) ? data : []);
+        })["catch"](function () {
+          if (!cancelled) setRows([]);
+        });
+        return;
+      }
+
+      tries += 1;
+
+      if (tries > 100) {
+        setRows([]);
+        return;
+      }
+
+      setTimeout(tick, 100);
+    };
+
+    tick();
+    return function () {
+      cancelled = true;
+    };
+  }, [tabKey]); // Open the "Apply Leave" modal (owned by the All My Leaves adapter) with the
+  // leave type preselected. renderForm() sets up its own portal-rendered modal,
+  // so this works even though that tab isn't the active one.
+
+  var applyFor = function applyFor(leaveTypeId) {
+    var adapter = (window.modJsList || {}).tabMyLeaveAll || window.modJs;
+    if (!adapter || typeof adapter.renderForm !== 'function') return;
+
+    var open = function open() {
+      return adapter.renderForm({
+        leave_type: leaveTypeId
+      });
+    }; // The Apply form's Leave Type select reads its options from the adapter's
+    // master data, which is only fetched when that tab's list loads. Opening
+    // from here (that tab was never visited) needs it loaded first, otherwise
+    // the select shows the raw id instead of the type name. Cached after first load.
+
+
+    var reader = adapter.masterDataReader;
+
+    if (reader && typeof reader.updateAllMasterData === 'function') {
+      reader.updateAllMasterData().then(open, open);
+    } else {
+      open();
+    }
+  };
+
+  if (rows === null) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 60
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+  }
+
+  if (!rows.length) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "No leave entitlement for the current period"
+    });
+  }
+
+  var chipStyle = function chipStyle(variant) {
+    return {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 6,
+      fontSize: 12,
+      fontWeight: 600,
+      padding: '4px 10px',
+      borderRadius: 999,
+      background: variant === 'warn' ? 'rgba(224,131,33,0.14)' : token.colorFillQuaternary,
+      color: variant === 'warn' ? C.pending : token.colorTextSecondary,
+      border: variant === 'warn' ? '1px solid transparent' : "1px solid ".concat(token.colorBorderSecondary)
+    };
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+      gap: 18
+    }
+  }, rows.map(function (r) {
+    var total = Number(r.totalLeaves) || 0;
+    var approved = Number(r.approvedLeaves) || 0;
+    var pending = Number(r.pendingLeaves) || 0;
+    var available = Number(r.availableLeaves) || 0;
+    var carried = Number(r.carriedForward) || 0;
+    var adj = Number(r.paidTimeOff) || 0;
+    var accrue = Number(r.tobeAccrued) || 0;
+    var denom = Math.max(total, approved + pending + available, 0.0001);
+    var usedW = pct(approved, denom);
+    var pendW = pct(pending, denom);
+    var availW = pct(available, denom);
+    var isZero = available <= 0;
+    var isLow = !isZero && total > 0 && (available <= 1 || available / total <= 0.15);
+    var heroColor = isZero ? C.danger : isLow ? C.pending : C.available;
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      key: r.id,
+      style: {
+        background: token.colorBgContainer,
+        border: "1px solid ".concat(token.colorBorderSecondary),
+        borderRadius: 14,
+        boxShadow: _theme.MUI_SHADOW,
+        padding: '20px 22px 18px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 16
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 13
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: 42,
+        height: 42,
+        borderRadius: 11,
+        flex: '0 0 auto',
+        display: 'grid',
+        placeItems: 'center',
+        background: 'rgba(25,118,210,0.10)',
+        color: token.colorPrimary,
+        fontSize: 20
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null)), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        flex: 1,
+        minWidth: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 16.5,
+        fontWeight: 650,
+        letterSpacing: '-0.01em'
+      }
+    }, r.name), /*#__PURE__*/_react["default"].createElement(Text, {
+      type: "secondary",
+      style: {
+        fontSize: 12.5
+      }
+    }, "Current period")), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        textAlign: 'right',
+        flex: '0 0 auto'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 30,
+        fontWeight: 750,
+        lineHeight: 1,
+        color: heroColor,
+        fontVariantNumeric: 'tabular-nums',
+        letterSpacing: '-0.02em'
+      }
+    }, num(available), /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        fontSize: 14,
+        fontWeight: 600,
+        color: token.colorTextSecondary,
+        marginLeft: 3
+      }
+    }, Math.abs(available) === 1 ? 'day' : 'days')), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 11.5,
+        letterSpacing: '0.04em',
+        textTransform: 'uppercase',
+        color: token.colorTextTertiary,
+        marginTop: 3,
+        fontWeight: 600
+      }
+    }, "Available"))), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 9
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      role: "img",
+      "aria-label": "Of ".concat(num(total), " entitled: ").concat(num(approved), " taken, ").concat(num(pending), " pending, ").concat(num(available), " available"),
+      style: {
+        height: 12,
+        borderRadius: 999,
+        background: token.colorFillTertiary,
+        display: 'flex',
+        overflow: 'hidden'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: "".concat(usedW, "%"),
+        background: C.used
+      }
+    }), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: "".concat(pendW, "%"),
+        background: "repeating-linear-gradient(45deg, ".concat(C.pending, ", ").concat(C.pending, " 5px, rgba(255,255,255,0.45) 5px, rgba(255,255,255,0.45) 10px)")
+      }
+    }), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: "".concat(availW, "%"),
+        background: C.available
+      }
+    })), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '4px 16px',
+        fontSize: 12.5,
+        color: token.colorTextSecondary,
+        fontVariantNumeric: 'tabular-nums'
+      }
+    }, approved > 0 && /*#__PURE__*/_react["default"].createElement(LegendItem, {
+      color: C.used,
+      label: "Taken",
+      value: approved,
+      token: token
+    }), pending > 0 && /*#__PURE__*/_react["default"].createElement(LegendItem, {
+      color: C.pending,
+      label: "Pending",
+      value: pending,
+      token: token
+    }), /*#__PURE__*/_react["default"].createElement(LegendItem, {
+      color: C.available,
+      label: "Available",
+      value: available,
+      token: token
+    }), /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        marginLeft: 'auto',
+        color: token.colorTextTertiary
+      }
+    }, "of ", /*#__PURE__*/_react["default"].createElement("b", {
+      style: {
+        color: token.colorText,
+        fontWeight: 650
+      }
+    }, num(total)), " entitled"))), (isLow || isZero || carried > 0 && r.carriedForwardLeaveExpireDate || accrue > 0 || adj !== 0) && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 7
+      }
+    }, isZero && /*#__PURE__*/_react["default"].createElement("span", {
+      style: chipStyle('warn')
+    }, /*#__PURE__*/_react["default"].createElement(_icons.WarningOutlined, null), "None left this period"), isLow && /*#__PURE__*/_react["default"].createElement("span", {
+      style: chipStyle('warn')
+    }, /*#__PURE__*/_react["default"].createElement(_icons.WarningOutlined, null), "Running low"), carried > 0 && r.carriedForwardLeaveExpireDate && /*#__PURE__*/_react["default"].createElement("span", {
+      style: chipStyle('warn')
+    }, /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null), "".concat(num(r.carriedForwardAvailable), " carried-forward expire ").concat(r.carriedForwardLeaveExpireDate)), accrue > 0 && /*#__PURE__*/_react["default"].createElement("span", {
+      style: chipStyle()
+    }, "+".concat(num(accrue), " still to accrue this period")), adj !== 0 && /*#__PURE__*/_react["default"].createElement("span", {
+      style: chipStyle()
+    }, "Adjustment ".concat(adj > 0 ? '+' : '').concat(num(adj)))), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 12,
+        marginTop: 2
+      }
+    }, Array.isArray(r.calculation) && r.calculation.length ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      type: "link",
+      size: "small",
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      style: {
+        padding: 0
+      },
+      onClick: function onClick() {
+        return setCalc({
+          name: r.name,
+          lines: r.calculation
+        });
+      }
+    }, "How is this calculated?") : /*#__PURE__*/_react["default"].createElement("span", null), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      type: "primary",
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.PlusOutlined, null),
+      onClick: function onClick() {
+        return applyFor(r.id);
+      }
+    }, "Apply")));
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: !!calc,
+    title: calc ? "".concat(calc.name, " \u2014 how this is calculated") : '',
+    footer: [/*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      key: "c",
+      onClick: function onClick() {
+        return setCalc(null);
+      }
+    }, "Close")],
+    onCancel: function onCancel() {
+      return setCalc(null);
+    },
+    width: 760
+  }, calc ? /*#__PURE__*/_react["default"].createElement(_LeaveCalcChart["default"], {
+    lines: calc.lines
+  }) : null));
+}
+
+function LegendItem(_ref2) {
+  var color = _ref2.color,
+      label = _ref2.label,
+      value = _ref2.value,
+      token = _ref2.token;
+  return /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 6
+    }
+  }, /*#__PURE__*/_react["default"].createElement("i", {
+    style: {
+      width: 9,
+      height: 9,
+      borderRadius: 3,
+      flex: '0 0 auto',
+      background: color,
+      display: 'inline-block'
+    }
+  }), label, " ", /*#__PURE__*/_react["default"].createElement("b", {
+    style: {
+      color: token.colorText,
+      fontWeight: 650
+    }
+  }, num(value)));
+}
+
+},{"./LeaveCalcChart":7,"./theme":26,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],11:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = LicenseBlocked;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _antd = require("antd");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function LicenseBlocked(_ref) {
+  var license = _ref.license;
+  var lic = license || {};
+  var missing = !lic.has_license;
+  var expiredOn = lic.expiry_date ? String(lic.expiry_date).split(' ')[0] : null;
+  var title = missing ? 'No active IceHrmPro license' : 'Your IceHrmPro license has expired';
+  var subTitle = missing ? 'This feature is part of IceHrmPro and needs an active subscription to use.' : "Your IceHrmPro license".concat(expiredOn ? " expired on ".concat(expiredOn) : ' has expired', ". Renew it to keep using this feature.");
+
+  var goToMarketplace = function goToMarketplace() {
+    if (typeof window !== 'undefined') {
+      window.location.hash = "#".concat(encodeURIComponent('extension::marketplace|admin'));
+    }
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 24
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Result, {
+    status: "warning",
+    title: title,
+    subTitle: subTitle,
+    extra: lic.is_admin ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      type: "primary",
+      onClick: goToMarketplace
+    }, "Go to Marketplace") : null
+  }));
+}
+
+},{"antd":"antd","react":"react"}],12:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = LicenseRenewalBanner;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _antd = require("antd");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function LicenseRenewalBanner(_ref) {
+  var licenseRenewal = _ref.licenseRenewal;
+  if (!licenseRenewal) return null;
+  var daysLeft = licenseRenewal.daysLeft,
+      expiryDate = licenseRenewal.expiryDate,
+      isAdmin = licenseRenewal.isAdmin,
+      renewUrl = licenseRenewal.renewUrl;
+  var dateStr = expiryDate ? String(expiryDate).split(' ')[0] : null;
+  var whenLabel = daysLeft <= 0 ? 'today' : daysLeft === 1 ? 'in 1 day' : "in ".concat(daysLeft, " days");
+  return /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: "warning",
+    banner: true,
+    showIcon: true,
+    style: {
+      padding: '18px 28px',
+      alignItems: 'center',
+      marginBottom: 16
+    },
+    message: /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        lineHeight: 1.35
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 17,
+        fontWeight: 700,
+        marginBottom: 3
+      }
+    }, "Your IceHrmPro license expires ", whenLabel), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 14,
+        opacity: 0.9
+      }
+    }, dateStr ? "It expires on ".concat(dateStr, ". ") : '', "Renew now to keep access to your premium features without interruption.")),
+    action: isAdmin && renewUrl ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "large",
+      type: "primary",
+      href: renewUrl,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      style: {
+        fontWeight: 600
+      }
+    }, "Renew IceHrm Pro") : null
+  });
+}
+
+},{"antd":"antd","react":"react"}],13:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = MobileApp;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text,
+    Paragraph = _antd.Typography.Paragraph; // Native "Mobile App" tab for modules::employees — mirrors the legacy
+// index.php panels (app-store badges, one-time login code, API access token).
+// The login-code request reuses the legacy MobileAppAdapter (window.modJsList
+// .tabMobileApp) so it hits the same backend custom action; we just swap its
+// DOM-writing callbacks for React state.
+
+function MobileApp() {
+  var adapter = (window.modJsList || {}).tabMobileApp || null;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      code = _useState2[0],
+      setCode = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  var requestCode = function requestCode() {
+    if (!adapter) return;
+    setLoading(true);
+
+    adapter.loginCodeSuccessCallback = function (cb) {
+      setLoading(false);
+      var v = Array.isArray(cb) ? cb[0] : cb;
+      var out = v && _typeof(v) === 'object' ? v.code || v.data || v.loginCode || JSON.stringify(v) : v;
+      setCode(out != null ? String(out) : null);
+    };
+
+    adapter.loginCodeFailCallBack = function () {
+      setLoading(false);
+
+      _antd.message.error('Could not get a login code. Please try again later.', 5);
+    };
+
+    try {
+      adapter.getOneTimeLoginCode();
+    } catch (e) {
+      setLoading(false);
+    }
+  };
+
+  var cardStyle = {
+    borderRadius: 12,
+    boxShadow: _theme.MUI_SHADOW,
+    marginBottom: 16
+  };
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: '100%'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    style: cardStyle,
+    title: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, /*#__PURE__*/_react["default"].createElement(_icons.MobileOutlined, null), "Download Mobile App")
+  }, /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    type: "secondary"
+  }, "Access IceHrm on the go. Download our mobile app for iOS or Android."), /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+    wrap: true
+  }, /*#__PURE__*/_react["default"].createElement("a", {
+    href: "https://apps.apple.com/gb/app/icehrm/id1624346692",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, /*#__PURE__*/_react["default"].createElement("img", {
+    src: "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg",
+    alt: "Download on the App Store",
+    style: {
+      height: 50
+    }
+  })), /*#__PURE__*/_react["default"].createElement("a", {
+    href: "https://play.google.com/store/apps/details?id=com.icehrm.m3&hl=en",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, /*#__PURE__*/_react["default"].createElement("img", {
+    src: "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg",
+    alt: "Get it on Google Play",
+    style: {
+      height: 50
+    }
+  })))), /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    style: cardStyle,
+    title: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, /*#__PURE__*/_react["default"].createElement(_icons.LockOutlined, null), "Mobile Authentication Code")
+  }, /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    type: "secondary"
+  }, "Use this one-time code to securely log in to the mobile app."), code ? /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: "success",
+    showIcon: true,
+    style: {
+      marginBottom: 12
+    },
+    message: /*#__PURE__*/_react["default"].createElement(Text, {
+      strong: true,
+      copyable: true,
+      style: {
+        fontSize: 18,
+        letterSpacing: 1
+      }
+    }, code)
+  }) : null, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "primary",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.LockOutlined, null),
+    loading: loading,
+    onClick: requestCode
+  }, "Request One-time Login Code")));
+}
+
+},{"./theme":26,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],14:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = ModuleSearch;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * GA-style global module search for the top bar. A searchable dropdown of every
+ * module the user can reach (from the shell's route map), grouped by area.
+ * Selecting one navigates there. Filtering matches the module label and its area
+ * name, so "leave" or "time" both surface the right entries.
+ */
+function ModuleSearch(_ref) {
+  var items = _ref.items,
+      areas = _ref.areas,
+      onSelect = _ref.onSelect,
+      dark = _ref.dark;
+
+  var _useState = (0, _react.useState)(undefined),
+      _useState2 = _slicedToArray(_useState, 2),
+      value = _useState2[0],
+      setValue = _useState2[1];
+
+  var areaLabel = (0, _react.useMemo)(function () {
+    var m = {};
+    (areas || []).forEach(function (a) {
+      m[a.id] = a.label;
+    });
+    return m;
+  }, [areas]);
+
+  var sectionLabel = function sectionLabel(s) {
+    return s === 'mine' ? 'Personal' : 'Manage';
+  }; // Group options by area. Two modules can share a label within an area — the
+  // admin (Manage) twin and the self-service (Personal) twin — so tag each option
+  // with its section to disambiguate (e.g. "Task Lists" Manage vs Personal). The
+  // search string includes label + area + section so any of them matches.
+
+
+  var options = (0, _react.useMemo)(function () {
+    var byArea = {};
+    (items || []).forEach(function (it) {
+      var a = it.area || 'more';
+      if (!byArea[a]) byArea[a] = [];
+      var aLabel = areaLabel[a] || a;
+      var sec = sectionLabel(it.section);
+      byArea[a].push({
+        value: it.key,
+        name: it.label,
+        section: sec,
+        // antd renders this for the option + selected value.
+        label: /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 12
+          }
+        }, /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap'
+          }
+        }, it.label), /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            flex: '0 0 auto',
+            fontSize: 11,
+            fontWeight: 500,
+            padding: '0 7px',
+            lineHeight: '17px',
+            borderRadius: 9,
+            color: it.section === 'mine' ? '#0958d9' : '#389e0d',
+            background: it.section === 'mine' ? '#e6f0ff' : '#f0fbe6'
+          }
+        }, sec)),
+        search: "".concat(it.label, " ").concat(aLabel, " ").concat(sec).toLowerCase()
+      });
+    });
+    return Object.keys(byArea).sort(function (x, y) {
+      return (areaLabel[x] || x).localeCompare(areaLabel[y] || y);
+    }).map(function (a) {
+      return {
+        label: areaLabel[a] || a,
+        options: byArea[a].sort(function (p, q) {
+          return p.name.localeCompare(q.name);
+        })
+      };
+    });
+  }, [items, areaLabel]);
+  return /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    showSearch: true,
+    value: value,
+    placeholder: "Search for a module\u2026",
+    suffixIcon: /*#__PURE__*/_react["default"].createElement(_icons.SearchOutlined, {
+      style: {
+        fontSize: 15
+      }
+    }),
+    options: options // Match against our combined label+area search string.
+    ,
+    filterOption: function filterOption(input, option) {
+      if (!option || option.options) return false; // skip group headers
+
+      return (option.search || '').includes((input || '').toLowerCase());
+    },
+    onChange: function onChange(key) {
+      if (key && onSelect) onSelect(key);
+      setValue(undefined);
+    },
+    onSelect: function onSelect() {
+      return setValue(undefined);
+    },
+    allowClear: true,
+    style: {
+      width: '100%'
+    },
+    popupMatchSelectWidth: false,
+    listHeight: 420,
+    variant: "filled",
+    "aria-label": "Search modules"
+  });
+}
+
+},{"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],15:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NativeAdapterView;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * Mounts a module tab whose ADAPTER draws its own view — e.g. the settings
+ * module, whose initTable() renders the bespoke SettingsPage (grouped inline
+ * controls) instead of a table. The shell provides the Table/Form/FilterForm
+ * containers (via setContainers) and triggers the adapter's get(), exactly as
+ * the legacy footer would; everything else is the module's own code.
+ */
+function NativeAdapterView(_ref) {
+  var tabKey = _ref.tabKey;
+  var tableRef = (0, _react.useRef)(null);
+  var formRef = (0, _react.useRef)(null);
+  var filterRef = (0, _react.useRef)(null);
+
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      ready = _useState2[0],
+      setReady = _useState2[1];
+
+  (0, _react.useEffect)(function () {
+    var cancelled = false;
+    var tries = 0;
+
+    var tick = function tick() {
+      if (cancelled) return;
+      var m = (window.modJsList || {})[tabKey];
+
+      if (m && tableRef.current) {
+        if (typeof m.setContainers === 'function') {
+          m.setContainers({
+            Table: tableRef.current,
+            Form: formRef.current,
+            FilterForm: filterRef.current
+          });
+        } // The instance persists across remounts — force a re-render into the
+        // current containers.
+
+
+        m.tableInitialized = false;
+        m.formInitialized = false;
+        window.modJs = m;
+
+        try {
+          if (m.masterDataReader && m.masterDataReader.updateAllMasterData) {
+            m.masterDataReader.updateAllMasterData();
+          }
+        } catch (e) {
+          /* ignore */
+        }
+
+        try {
+          m.get([]);
+        } catch (e) {
+          /* ignore */
+        }
+
+        setReady(true);
+        return;
+      }
+
+      tries += 1;
+      if (tries <= 100) setTimeout(tick, 100);
+    };
+
+    tick();
+    return function () {
+      cancelled = true;
+    };
+  }, [tabKey]);
+  return /*#__PURE__*/_react["default"].createElement("div", null, !ready && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      padding: 40
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+    size: "large"
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    ref: tableRef
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    ref: formRef
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    ref: filterRef
+  }));
+}
+
+},{"antd":"antd","react":"react"}],16:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NativeCardList;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+var _ExpenseDialog = _interopRequireDefault(require("./ExpenseDialog"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+// Icon name (from declarative extension card config) -> component.
+var ICON_BY_NAME = {
+  file: /*#__PURE__*/_react["default"].createElement(_icons.FileOutlined, null),
+  form: /*#__PURE__*/_react["default"].createElement(_icons.FormOutlined, null),
+  "export": /*#__PURE__*/_react["default"].createElement(_icons.ExportOutlined, null),
+  monitor: /*#__PURE__*/_react["default"].createElement(_icons.MonitorOutlined, null)
+};
+
+var iconByName = function iconByName(name) {
+  return ICON_BY_NAME[name] || /*#__PURE__*/_react["default"].createElement(_icons.FileOutlined, null);
+}; // Lighten a hex colour toward white by `amt` (0..1) so the saturated action-icon
+// hues (tuned for light mode) stay legible on the dark sidebar/cards.
+
+
+function lighten(hex, amt) {
+  var m = /^#?([0-9a-fA-F]{6})$/.exec(hex || '');
+  if (!m) return hex;
+  var n = parseInt(m[1], 16);
+  var r = n >> 16 & 255;
+  var g = n >> 8 & 255;
+  var b = n & 255;
+  r = Math.round(r + (255 - r) * amt);
+  g = Math.round(g + (255 - g) * amt);
+  b = Math.round(b + (255 - b) * amt);
+  return "rgb(".concat(r, ", ").concat(g, ", ").concat(b, ")");
+}
+
+var PAGE_SIZE = 8; // Lazy, idempotent loader for an extension bundle that exposes a native
+// document-mount function (e.g. the editor's window.mountEditorDocument). A
+// per-session cache-bust keeps it fresh across hard reloads without re-fetching
+// the (large) bundle on every modal open.
+
+var NATIVE_CB = String(Date.now());
+var nativeBundles = {};
+
+function loadNativeBundle(url) {
+  if (nativeBundles[url]) return nativeBundles[url];
+  var p = new Promise(function (resolve, reject) {
+    var s = document.createElement('script');
+    s.src = "".concat(url).concat(url.indexOf('?') >= 0 ? '&' : '?', "cb=").concat(NATIVE_CB);
+    s.async = false;
+
+    s.onload = function () {
+      return resolve();
+    };
+
+    s.onerror = function () {
+      s.remove();
+      reject(new Error("Failed to load ".concat(url)));
+    };
+
+    document.head.appendChild(s);
+  }); // Evict on failure so the next open retries instead of replaying the rejection.
+
+  nativeBundles[url] = p["catch"](function (e) {
+    delete nativeBundles[url];
+    throw e;
+  });
+  return nativeBundles[url];
+} // Injected into a same-origin document-editor iframe to hide the legacy page
+// chrome (top bar + sidebar) so only the editor content shows.
+
+
+var EMBED_CSS = "\n  header.header { display: none !important; }\n  aside.left-side, .sidebar-offcanvas, .skeletonSideMenu { display: none !important; }\n  .right-side { margin-left: 0 !important; left: 0 !important; }\n  .wrapper, body, html { padding-top: 0 !important; margin-top: 0 !important; background: #fff !important; }\n  body { min-width: 0 !important; }\n  #DemoModeNotice, #IceHrmConnectionNotice { display: none !important; }\n"; // A representative icon + accent colour per entity (falls back to a generic one).
+
+var ENTITY_STYLE = {
+  JobTitle: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.IdcardOutlined, null),
+    color: '#1976d2'
+  },
+  PayGrade: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  EmploymentStatus: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProfileOutlined, null),
+    color: '#7b1fa2'
+  },
+  Skill: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#1976d2'
+  },
+  Education: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#0288d1'
+  },
+  Certification: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#7b1fa2'
+  },
+  Language: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#ed6c02'
+  },
+  Project: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProjectOutlined, null),
+    color: '#1976d2'
+  },
+  EmployeeProject: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#2e7d32'
+  },
+  Client: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.BankOutlined, null),
+    color: '#7b1fa2'
+  },
+  CustomField: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    color: '#1976d2'
+  },
+  Audit: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AuditOutlined, null),
+    color: '#546e7a'
+  },
+  EmailLogEntry: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.MailOutlined, null),
+    color: '#0288d1'
+  },
+  Employee: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+    color: '#1976d2'
+  },
+  EmployeeCareer: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#0288d1'
+  },
+  EmployeeSkill: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#1976d2'
+  },
+  EmployeeEducation: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#0288d1'
+  },
+  EmployeeCertification: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#7b1fa2'
+  },
+  EmployeeLanguage: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#ed6c02'
+  },
+  EmployeeDependent: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#2e7d32'
+  },
+  EmergencyContact: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ContactsOutlined, null),
+    color: '#d32f2f'
+  },
+  TerminatedEmployee: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserDeleteOutlined, null),
+    color: '#ed6c02'
+  },
+  ArchivedEmployee: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+    color: '#546e7a'
+  },
+  EmployeeDataHistory: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProfileOutlined, null),
+    color: '#0288d1'
+  },
+  MyAttendance: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    color: '#0288d1'
+  },
+  OvertimeCategory: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FieldTimeOutlined, null),
+    color: '#ed6c02'
+  },
+  MyOvertime: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    color: '#ed6c02'
+  },
+  EmployeeOvertime: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    color: '#ed6c02'
+  },
+  EmployeeOvertimeApproval: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    color: '#7b1fa2'
+  },
+  User: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+    color: '#1976d2'
+  },
+  UserRole: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#7b1fa2'
+  },
+  UserInvitation: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.MailOutlined, null),
+    color: '#0288d1'
+  },
+  LeaveType: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TagsOutlined, null),
+    color: '#ed6c02'
+  },
+  LeavePeriod: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ScheduleOutlined, null),
+    color: '#2e7d32'
+  },
+  WorkDay: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CarryOutOutlined, null),
+    color: '#0288d1'
+  },
+  HoliDay: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.GiftOutlined, null),
+    color: '#7b1fa2'
+  },
+  LeaveStartingBalance: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SlidersOutlined, null),
+    color: '#0288d1'
+  },
+  LeaveGroup: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#1976d2'
+  },
+  EmployeeLeave: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#ed6c02'
+  },
+  // User leaves (modules::leaves)
+  MyLeave: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+    color: '#1976d2'
+  },
+  MyLeaveApproved: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+    color: '#2e7d32'
+  },
+  SubLeave: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#ed6c02'
+  },
+  LeaveApproval: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#7b1fa2'
+  },
+  // Expenses extension
+  ExpensesCategory: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TagsOutlined, null),
+    color: '#7b1fa2'
+  },
+  ExpensesPaymentMethod: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  EmployeeExpense: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#1976d2'
+  },
+  MyExpense: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#1976d2'
+  },
+  SubExpense: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#ed6c02'
+  },
+  ExpenseApproval: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#7b1fa2'
+  },
+  // Job positions (extension::jobpositions|admin)
+  Job: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AuditOutlined, null),
+    color: '#1976d2'
+  },
+  // Candidates (extension::candidates|admin)
+  Candidate: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UsergroupAddOutlined, null),
+    color: '#7b1fa2'
+  },
+  // Recruitment setup (extension::jobsetup|admin)
+  EmployementType: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.IdcardOutlined, null),
+    color: '#1976d2'
+  },
+  ExperienceLevel: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SlidersOutlined, null),
+    color: '#ed6c02'
+  },
+  JobFunction: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#7b1fa2'
+  },
+  EducationLevel: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#2e7d32'
+  },
+  Benifit: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.GiftOutlined, null),
+    color: '#d81b60'
+  },
+  // System (admin::settings / admin::modules / admin::permissions)
+  Setting: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null),
+    color: '#546e7a'
+  },
+  Module: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    color: '#1976d2'
+  },
+  Permission: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.KeyOutlined, null),
+    color: '#7b1fa2'
+  },
+  // Metadata (admin::metadata) — master data lookups.
+  Country: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.GlobalOutlined, null),
+    color: '#1976d2'
+  },
+  Province: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#0288d1'
+  },
+  CurrencyType: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  Nationality: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.IdcardOutlined, null),
+    color: '#7b1fa2'
+  },
+  Ethnicity: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#ed6c02'
+  },
+  ImmigrationStatus: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#d81b60'
+  },
+  // Documents (admin::documents / modules::documents)
+  CompanyDocument: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FileTextOutlined, null),
+    color: '#1976d2'
+  },
+  Document: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TagsOutlined, null),
+    color: '#7b1fa2'
+  },
+  EmployeeDocument: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FileOutlined, null),
+    color: '#0288d1'
+  },
+  PayslipDocument: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  MyDocument: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FileOutlined, null),
+    color: '#0288d1'
+  },
+  MyCompanyDocument: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FileTextOutlined, null),
+    color: '#1976d2'
+  },
+  MyPayslip: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  // Training (modules::training)
+  TrainingSessionWithCourse: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#1976d2'
+  },
+  EmployeeTrainingSession: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#2e7d32'
+  },
+  SubEmployeeTraining: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#ed6c02'
+  },
+  CoordinatedTrainingSession: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ScheduleOutlined, null),
+    color: '#7b1fa2'
+  },
+  // Performance (admin::performance / modules::performance)
+  PerformanceReview: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#7b1fa2'
+  },
+  ReviewFeedback: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FormOutlined, null),
+    color: '#0288d1'
+  },
+  ReviewTemplate: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProfileOutlined, null),
+    color: '#ed6c02'
+  },
+  EmployeeGoal: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+    color: '#2e7d32'
+  },
+  MyPerformanceReview: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#1976d2'
+  },
+  MyReviewFeedback: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FormOutlined, null),
+    color: '#ed6c02'
+  },
+  // Salary (admin::salary)
+  SalaryComponentType: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TagsOutlined, null),
+    color: '#7b1fa2'
+  },
+  SalaryComponent: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    color: '#0288d1'
+  },
+  EmployeeSalary: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  // Loans (admin::loans / modules::loans)
+  CompanyLoan: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.BankOutlined, null),
+    color: '#2e7d32'
+  },
+  EmployeeCompanyLoan: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#1976d2'
+  },
+  MyLoan: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#1976d2'
+  },
+  // Travel (admin::travel)
+  TravelProject: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProjectOutlined, null),
+    color: '#0288d1'
+  },
+  EmployeeTravelRecord: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SendOutlined, null),
+    color: '#1976d2'
+  },
+  MyTravel: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SendOutlined, null),
+    color: '#1976d2'
+  },
+  SubTravel: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SendOutlined, null),
+    color: '#ed6c02'
+  },
+  TravelApproval: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SendOutlined, null),
+    color: '#7b1fa2'
+  }
+};
+
+var entityStyle = function entityStyle(e) {
+  return ENTITY_STYLE[e] || {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    color: '#607d8b'
+  };
+}; // Icon + colour for a custom-field Object Type value (the type column).
+
+
+var OBJECT_TYPE_STYLE = {
+  Employee: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+    color: '#1976d2'
+  },
+  CompanyStructure: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#0288d1'
+  },
+  Project: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProjectOutlined, null),
+    color: '#7b1fa2'
+  },
+  Client: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.BankOutlined, null),
+    color: '#2e7d32'
+  },
+  JobTitle: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.IdcardOutlined, null),
+    color: '#ed6c02'
+  },
+  Qualification: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#1976d2'
+  },
+  Recruitment: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#7b1fa2'
+  },
+  Document: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FileTextOutlined, null),
+    color: '#546e7a'
+  },
+  Leave: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+    color: '#ed6c02'
+  }
+};
+
+var objectTypeStyle = function objectTypeStyle(t) {
+  return OBJECT_TYPE_STYLE[t] || {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    color: '#607d8b'
+  };
+}; // Per-entity card overrides: which column is the title, what to hide from the
+// meta line, which fields to show as a Tag, dynamic icons, and whether to hide
+// the dedicated View button (row click still views).
+// Shared status -> tag colour map for performance review cards (admin + employee
+// lists), so a review's status reads the same everywhere.
+
+
+var REVIEW_STATUS_COLORS = {
+  Pending: 'gold',
+  Submitted: 'green',
+  Completed: 'blue',
+  Rejected: 'red'
+};
+var ENTITY_CONFIG = {
+  // AttendanceModal renders its own antd Modal (controlled by `element`), so the
+  // card list must NOT also wrap it in a Modal (that showed two modals).
+  // Show the employee's profile photo as the card avatar, name as the title.
+  Attendance: {
+    childSelfModal: true,
+    avatarField: 'image',
+    titleField: 'employee',
+    hideMeta: ['image']
+  },
+  AttendanceStatus: {
+    avatarField: 'image',
+    titleField: 'employee',
+    hideMeta: ['image'],
+    hideActions: true // read-only status view — no row actions / Add New
+
+  },
+  // The employee's own attendance (modules::attendance) — one card per punch day.
+  // Title by clock-in time; the detail view is AttendanceModal (self-modal).
+  MyAttendance: {
+    childSelfModal: true,
+    titleField: 'in_time',
+    hideMeta: ['image']
+  },
+  // Overtime — the employee's own requests (modules::overtime own tab) have no
+  // employee column, so title by category. The admin / subordinate / approval
+  // adapters carry the employee photo + name (like AttendanceStatus).
+  MyOvertime: {
+    titleField: 'category'
+  },
+  EmployeeOvertime: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['image']
+  },
+  EmployeeOvertimeApproval: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['image']
+  },
+  JobTitle: {
+    titleField: 'name'
+  },
+  Language: {
+    titleField: 'description'
+  },
+  CustomField: {
+    title: function title(r) {
+      return "".concat(r.type || '', " \u2192 ").concat(r.name || '');
+    },
+    hideMeta: ['name', 'type', 'display'],
+    iconField: 'type'
+  },
+  Audit: {
+    title: function title(r) {
+      return r.details;
+    },
+    tagFields: ['time'],
+    tagIcon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    hideMeta: ['details', 'time'],
+    hideViewButton: true
+  },
+  EmailLogEntry: {
+    titleField: 'subject',
+    hideMeta: ['subject']
+  },
+  Project: {
+    hideViewButton: true
+  },
+  EmployeeProject: {
+    hideViewButton: true
+  },
+  Client: {
+    hideViewButton: true
+  },
+  Employee: {
+    title: function title(r) {
+      return "".concat(r.first_name || '', " ").concat(r.last_name || '').trim() || r.employee_id;
+    },
+    avatarField: 'image',
+    hideMeta: ['first_name', 'last_name', 'image', 'id'],
+    extraActions: [{
+      key: 'switch',
+      tip: 'Switch to profile',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.LoginOutlined, null),
+      color: '#ed6c02',
+      method: 'setAdminProfile',
+      show: function show(m) {
+        return !!m.allowSwitchToEmployeeProfile;
+      }
+    }, {
+      key: 'resign',
+      tip: 'Initiate resignation',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.UserDeleteOutlined, null),
+      color: '#d32f2f',
+      method: 'terminateEmployee',
+      show: function show(m) {
+        return m.hasAccess('delete') && m.showDelete !== false;
+      }
+    }]
+  },
+  TerminatedEmployee: {
+    title: function title(r) {
+      return "".concat(r.first_name || '', " ").concat(r.last_name || '').trim() || r.employee_id;
+    },
+    avatarField: 'image',
+    hideMeta: ['first_name', 'last_name', 'image', 'id'],
+    extraActions: [{
+      key: 'activate',
+      tip: 'Activate',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'activateEmployee'
+    }]
+  },
+  ArchivedEmployee: {
+    title: function title(r) {
+      return "".concat(r.first_name || '', " ").concat(r.last_name || '').trim() || r.employee_id;
+    },
+    hideMeta: ['first_name', 'last_name', 'image', 'id'],
+    extraActions: [{
+      key: 'download',
+      tip: 'Download',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#0288d1',
+      method: 'download'
+    }]
+  },
+  EmployeeDataHistory: {
+    titleField: 'employee',
+    tagFields: ['created'],
+    tagIcon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    hideMeta: ['created']
+  },
+  // Leave groups (admin::leaves) — no view; the "Add Employees" action opens a
+  // dialog to view the group and manage its members.
+  LeaveGroup: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true,
+    // Clicking the card opens the manage-members dialog; the icon action does too.
+    cardClickAction: 'manageGroupEmployees',
+    extraActions: [{
+      key: 'members',
+      tip: 'Manage members',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.UsergroupAddOutlined, null),
+      color: '#1677ff',
+      method: 'manageGroupEmployees',
+      first: true
+    }]
+  },
+  // Leave rules (admin::leaves → Leave Rule). Title by leave type name, plus the
+  // employee name when the rule targets a specific employee (most rules apply to
+  // everyone and have no employee). No dedicated View button — clicking the card
+  // opens the rule (row-click still views).
+  LeaveRule: {
+    title: function title(r, get) {
+      var type = get('leave_type') || 'Leave Rule';
+      return r.employee ? "".concat(type, " \u2014 ").concat(get('employee')) : type;
+    },
+    hideViewButton: true,
+    hideMeta: ['id', 'leave_type', 'employee']
+  },
+  // Employee Leave List (admin::leaves → Employee Leave List). Mirrors the
+  // legacy three actions: Leave Days (details + logs), Leave Status (approve
+  // workflow) and Cancel Leave (delete, shown last).
+  EmployeeLeave: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideEditButton: true,
+    disableView: true,
+    deleteLast: true,
+    deleteTip: 'Cancel Leave',
+    deleteIcon: /*#__PURE__*/_react["default"].createElement(_icons.CloseCircleOutlined, null),
+    deleteConfirm: 'Are you sure you want to cancel this leave? This cannot be undone.',
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null),
+    extraActions: [{
+      key: 'leavedays',
+      tip: 'Leave Details',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'getLeaveDaysReadonly',
+      first: true
+    }]
+  },
+  // --- User leaves (modules::leaves) ------------------------------------
+  // My own leave requests (All My Leaves + Pending): Leave Details, and Cancel
+  // (delete) shown only while the request is still Pending.
+  MyLeave: {
+    titleField: 'leave_type',
+    hideMeta: ['id'],
+    hideEditButton: true,
+    hideCopyButton: true,
+    disableView: true,
+    // Clicking the card opens the leave details dialog.
+    cardClickAction: 'getLeaveDaysReadonly',
+    extraActions: [{
+      key: 'leavedays',
+      tip: 'Leave Details',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'getLeaveDaysReadonly',
+      first: true
+    }, {
+      key: 'cancel',
+      tip: 'Cancel Leave',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CloseCircleOutlined, null),
+      color: '#d32f2f',
+      method: 'cancelMyLeave',
+      show: function show(m, rec) {
+        return rec && rec.status === 'Pending';
+      }
+    }]
+  },
+  // My approved leaves: Leave Details + request cancellation (cancelLeave).
+  MyLeaveApproved: {
+    titleField: 'leave_type',
+    hideMeta: ['id'],
+    hideEditButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'leavedays',
+      tip: 'Leave Details',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'getLeaveDaysReadonly',
+      first: true
+    }, {
+      key: 'cancel',
+      tip: 'Request Cancellation',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CloseCircleOutlined, null),
+      color: '#d32f2f',
+      method: 'cancelLeave'
+    }]
+  },
+  // Direct reports' leaves (approve/reject): Leave Details + Change Status (cog,
+  // driven by the adapter's getStatusOptionsData approve workflow).
+  SubLeave: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideEditButton: true,
+    disableView: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null),
+    statusAction: 'changeLeaveStatus',
+    extraActions: [{
+      key: 'leavedays',
+      tip: 'Leave Details',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'getLeaveDaysReadonly',
+      first: true
+    }]
+  },
+  // Multi-level approval queue (same shape/actions as direct reports).
+  LeaveApproval: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideEditButton: true,
+    disableView: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null),
+    statusAction: 'changeLeaveStatus',
+    extraActions: [{
+      key: 'leavedays',
+      tip: 'Leave Details',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'getLeaveDaysReadonly',
+      first: true
+    }]
+  },
+  // Employee Expenses (extension::expenses|admin) — approve workflow on the
+  // expense record; show the employee photo + name.
+  EmployeeExpense: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    // Bespoke expense dialog (ExpenseDialog) with a status-history sidebar,
+    // instead of the generic legacy view/edit modals. Admins/managers view here;
+    // admins may also edit (owner/admin only, enforced by the backend).
+    expenseDialog: true,
+    // Admins/managers can change the status from within the view dialog.
+    dialogStatusChange: true,
+    // A reason is mandatory when changing an expense's status.
+    requireStatusReason: true,
+    // Managers cannot change the status of a Paid expense (admins still can);
+    // backend enforces this in Expenses\Admin\Controller::changeStatus.
+    managerLockedStatuses: ['Paid'],
+    // Managers cannot set an expense TO Paid (admins still can); backend enforces
+    // this in Expenses\Admin\Controller::changeStatus.
+    managerBlockedTargetStatuses: ['Paid'],
+    deleteLast: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null)
+  },
+  // --- User expenses (extension::expenses|user) -------------------------
+  // My own expenses: edit/delete, and request cancellation (for approved).
+  MyExpense: {
+    titleField: 'category',
+    hideMeta: ['id'],
+    // Bespoke expense dialog (ExpenseDialog) with a status-history sidebar for
+    // view / edit / re-submit — no legacy view/edit modal.
+    expenseDialog: true,
+    // Quick "filter by status" dropdown in the toolbar.
+    statusFilter: ['Pending', 'Approved', 'Rejected', 'Paid'],
+    // Employees may delete their own expense while it is Pending or Rejected
+    // (the backend enforces this via EmployeeExpense::getUserOnlyMeAccess).
+    deleteWhen: function deleteWhen(rec) {
+      return rec.status === 'Pending' || rec.status === 'Rejected';
+    },
+    // Employees may only edit their own expenses while still Pending.
+    editWhen: function editWhen(rec) {
+      return rec.status === 'Pending';
+    },
+    // A rejected expense can be re-submitted (status -> Pending) by its owner.
+    resubmitAction: 'resubmit',
+    resubmitWhen: function resubmitWhen(rec) {
+      return rec.status === 'Rejected';
+    },
+    // Expenses do not support employee-initiated cancellation of approved rows.
+    hideCancelButton: true
+  },
+  // Direct reports' expenses (and the multi-level approval queue): approve
+  // workflow with the employee photo + name.
+  SubExpense: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideEditButton: true,
+    hideCopyButton: true,
+    disableView: true,
+    deleteLast: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null)
+  },
+  ExpenseApproval: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideEditButton: true,
+    hideCopyButton: true,
+    disableView: true,
+    deleteLast: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null)
+  },
+  // Candidates (extension::candidates|admin) — the eye opens the rich
+  // CandidateProfile via getTableChildComponents (same mechanism as the
+  // employees module). All hiring-stage tabs share this config.
+  Candidate: {
+    title: function title(r) {
+      return "".concat(r.first_name || '', " ").concat(r.last_name || '').trim() || r.email;
+    },
+    hideMeta: ['first_name', 'last_name', 'id'],
+    tagFields: ['hiringStage']
+  },
+  // Job positions (extension::jobpositions|admin) — the rest of the card config
+  // comes inline from the extension's meta.json native block; extraActions hold
+  // React elements so they live here. Copy Job Link mirrors the legacy Job Link
+  // action (public apply?ref=<code> URL).
+  Job: {
+    extraActions: [{
+      key: 'joblink',
+      tip: 'Copy Job Link',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.LinkOutlined, null),
+      color: '#ed6c02',
+      method: 'copyJobLink',
+      first: true
+    }, {
+      key: 'openjob',
+      tip: 'Open Job Page',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.MonitorOutlined, null),
+      color: '#1565c0',
+      method: 'openJobPage',
+      first: true
+    }]
+  },
+  // System (admin::settings) — settings rows are edit-only.
+  Setting: {
+    titleField: 'name',
+    hideMeta: ['id', 'meta', 'category', 'setting_order'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  Module: {
+    titleField: 'label',
+    tagFields: ['status'],
+    hideMeta: ['id', 'update_path', 'mod_order'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  Permission: {
+    title: function title(r) {
+      return "".concat(r.user_level || '', " \u2014 ").concat(r.permission || '');
+    },
+    hideMeta: ['id', 'user_level', 'permission'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  // Metadata (admin::metadata) — simple lookups.
+  Country: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  Province: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  CurrencyType: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  Nationality: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  Ethnicity: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  ImmigrationStatus: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  // Documents (admin::documents)
+  CompanyDocument: {
+    titleField: 'name',
+    tagFields: ['status'],
+    hideMeta: ['id'],
+    hideCopyButton: true
+  },
+  Document: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  EmployeeDocument: {
+    titleField: 'employee',
+    avatarField: 'image',
+    tagFields: ['status'],
+    hideMeta: ['id', 'image', 'attachment'],
+    hideCopyButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'download',
+      tip: 'Download Document',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#2e7d32',
+      method: 'downloadAttachment',
+      first: true,
+      show: function show(m, rec) {
+        return !!(rec && rec.attachment);
+      }
+    }]
+  },
+  PayslipDocument: {
+    titleField: 'employee',
+    avatarField: 'image',
+    tagFields: ['status'],
+    hideMeta: ['id', 'image', 'attachment'],
+    hideCopyButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'download',
+      tip: 'Download Document',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#2e7d32',
+      method: 'downloadAttachment',
+      first: true,
+      show: function show(m, rec) {
+        return !!(rec && rec.attachment);
+      }
+    }]
+  },
+  // Documents (modules::documents) — read-only lists with downloads.
+  MyDocument: {
+    titleField: 'document',
+    tagFields: ['status'],
+    hideMeta: ['id', 'attachment'],
+    hideCopyButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'download',
+      tip: 'Download Document',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#2e7d32',
+      method: 'downloadAttachment',
+      first: true,
+      show: function show(m, rec) {
+        return !!(rec && rec.attachment);
+      }
+    }]
+  },
+  MyCompanyDocument: {
+    titleField: 'name',
+    hideMeta: ['id', 'attachment'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'download',
+      tip: 'Download Document',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#2e7d32',
+      method: 'downloadAttachment',
+      first: true,
+      show: function show(m, rec) {
+        return !!(rec && rec.attachment);
+      }
+    }]
+  },
+  MyPayslip: {
+    titleField: 'document',
+    tagFields: ['status'],
+    hideMeta: ['id', 'attachment'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'download',
+      tip: 'Download Payslip',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#2e7d32',
+      method: 'downloadAttachment',
+      first: true,
+      show: function show(m, rec) {
+        return !!(rec && rec.attachment);
+      }
+    }]
+  },
+  // Training (modules::training)
+  TrainingSessionWithCourse: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    extraActions: [{
+      key: 'signup',
+      tip: 'Sign Up',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.LoginOutlined, null),
+      color: '#2e7d32',
+      method: 'signUp',
+      first: true
+    }]
+  },
+  EmployeeTrainingSession: {
+    titleField: 'trainingSession',
+    tagFields: ['status'],
+    hideMeta: ['id', 'courseId'],
+    hideCopyButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'completed',
+      tip: 'Mark Completed',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'completed',
+      first: true,
+      show: function show(m, rec) {
+        return rec && rec.status === 'Scheduled';
+      }
+    }]
+  },
+  SubEmployeeTraining: {
+    titleField: 'employee',
+    tagFields: ['status'],
+    hideMeta: ['id', 'courseId'],
+    hideCopyButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'approve',
+      tip: 'Approve Completed Status',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'completed',
+      first: true,
+      show: function show(m, rec) {
+        return rec && rec.status === 'Attended';
+      }
+    }]
+  },
+  CoordinatedTrainingSession: {
+    titleField: 'name',
+    tagFields: ['status'],
+    hideMeta: ['id'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  // Performance (admin::performance / modules::performance). The eye opens the
+  // rich review/feedback views via the adapters' viewElement flows.
+  PerformanceReview: {
+    titleField: 'employee',
+    avatarField: 'image',
+    tagFields: ['status'],
+    tagColors: REVIEW_STATUS_COLORS,
+    hideMeta: ['id', 'image', 'review_pdf'],
+    hideCopyButton: true,
+    extraActions: [{
+      key: 'createPdf',
+      tip: 'Create PDF',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.FilePdfOutlined, null),
+      color: '#c62828',
+      method: 'createReviewPdf',
+      // Anyone with access can generate the first PDF; once one exists only an
+      // admin may regenerate it (the backend enforces this too).
+      show: function show(m, rec) {
+        return rec && rec.status === 'Completed' && (isEmpty(rec.review_pdf) || m.isAdminUser && m.isAdminUser());
+      }
+    }, {
+      key: 'viewPdf',
+      tip: 'View PDF',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.FilePdfOutlined, null),
+      color: '#2e7d32',
+      method: 'viewReviewPdf',
+      show: function show(m, rec) {
+        return rec && !isEmpty(rec.review_pdf);
+      }
+    }]
+  },
+  ReviewFeedback: {
+    titleField: 'employee',
+    avatarField: 'image',
+    tagFields: ['status'],
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true
+  },
+  ReviewTemplate: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    hideCopyButton: true
+  },
+  EmployeeGoal: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true,
+    disableView: true,
+    progressFields: ['manager_rating', 'employee_rating']
+  },
+  // User performance (modules::performance)
+  MyPerformanceReview: {
+    // 'form' arrives as the review template name (resolved server-side via the
+    // adapter's source mapping); the period dates render formatted through the
+    // adapter's column render functions in the meta line.
+    title: function title(r) {
+      return r.form || 'Performance Review';
+    },
+    tagFields: ['status'],
+    tagColors: REVIEW_STATUS_COLORS,
+    hideMeta: ['id', 'form', 'review_pdf'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    // Employees can view (not create) the review PDF once a manager generates
+    // it — the PDF only exists on Completed reviews.
+    extraActions: [{
+      key: 'viewPdf',
+      tip: 'View PDF',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.FilePdfOutlined, null),
+      color: '#2e7d32',
+      method: 'viewReviewPdf',
+      show: function show(m, rec) {
+        return rec && !isEmpty(rec.review_pdf);
+      }
+    }]
+  },
+  MyReviewFeedback: {
+    titleField: 'review',
+    avatarField: 'image',
+    tagFields: ['status'],
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    extraActions: [{
+      key: 'give',
+      tip: 'Give Feedback',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.FormOutlined, null),
+      color: '#2e7d32',
+      method: 'showConfigView',
+      first: true,
+      show: function show(m, rec) {
+        return rec && rec.status !== 'Submitted';
+      }
+    }, {
+      key: 'submit',
+      tip: 'Submit Feedback',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ExportOutlined, null),
+      color: '#ed6c02',
+      method: 'submitFeedback',
+      first: true,
+      show: function show(m, rec) {
+        return rec && rec.status === 'Pending';
+      }
+    }]
+  },
+  // Salary (admin::salary)
+  SalaryComponentType: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true,
+    exportEndpoint: 'payroll_config/export/salary',
+    exportLabel: 'Export Salary Data',
+    exportFilePrefix: 'salary-backup',
+    importEndpoint: 'payroll_config/import/salary'
+  },
+  SalaryComponent: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true,
+    exportEndpoint: 'payroll_config/export/salary',
+    exportLabel: 'Export Salary Data',
+    exportFilePrefix: 'salary-backup',
+    importEndpoint: 'payroll_config/import/salary'
+  },
+  EmployeeSalary: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true,
+    disableView: true,
+    exportEndpoint: 'payroll_config/export/salary',
+    exportLabel: 'Export Salary Data',
+    exportFilePrefix: 'salary-backup',
+    importEndpoint: 'payroll_config/import/salary'
+  },
+  // Loans (admin::loans)
+  CompanyLoan: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  EmployeeCompanyLoan: {
+    titleField: 'employee',
+    tagFields: ['status'],
+    hideMeta: ['id'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  // My loans (modules::loans) — read-only; the eye opens the record details.
+  MyLoan: {
+    titleField: 'loan',
+    tagFields: ['status'],
+    hideMeta: ['id'],
+    hideEditButton: true,
+    hideCopyButton: true
+  },
+  // Travel (admin::travel)
+  TravelProject: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  // Travel Requests — the View button opens a rich custom modal
+  // (viewElement -> TravelRequestView) with status change; keep it enabled.
+  EmployeeTravelRecord: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true
+  },
+  // --- User travel (modules::travel) ------------------------------------
+  // My own travel requests: apply/edit/delete + request cancellation.
+  MyTravel: {
+    titleField: 'travel_to',
+    hideMeta: ['id'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  // Direct reports' (and the multi-level approval queue) travel requests:
+  // the View modal handles the status change.
+  SubTravel: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true
+  },
+  TravelApproval: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null)
+  },
+  // Users module (admin::users).
+  User: {
+    titleField: 'username',
+    avatarField: 'image',
+    hideMeta: ['image', 'id'],
+    extraActions: [{
+      key: 'password',
+      tip: 'Change Password',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.KeyOutlined, null),
+      color: '#1565c0',
+      method: 'showPasswordChangeForm',
+      show: function show(m) {
+        return !!(m.hasAccess && m.hasAccess('save'));
+      }
+    }]
+  },
+  UserRole: {
+    hideMeta: ['id']
+  },
+  UserInvitation: {
+    titleField: 'username',
+    tagFields: ['invitation_status_text'],
+    hideMeta: ['id']
+  }
+}; // Render a column cell for a record, tolerating legacy render() functions.
+
+function cellValue(col, record) {
+  var raw = record[col.dataIndex];
+
+  if (typeof col.render === 'function') {
+    try {
+      var out = col.render(raw, record);
+      if (out === null || out === undefined || out === '') return raw;
+      return out;
+    } catch (e) {
+      return raw;
+    }
+  }
+
+  return raw;
+}
+
+function isEmpty(v) {
+  return v === null || v === undefined || v === '' || v === '-';
+}
+/**
+ * Generic horizontal card list for natively-mounted legacy admin modules.
+ * Drives off the module's legacy adapter (window.modJsList[tabKey]): it fetches
+ * pages through the adapter's IceDataPipe, renders each row as a compact card
+ * built from getTableColumns(), and exposes the adapter's actions (edit / view /
+ * delete / copy / document) as buttons — gated by the same flags the legacy
+ * table uses. Add/Edit/View/Filter modals render through the adapter (themed via
+ * ReactModalAdapterBase.shellThemeWrap). Delete uses an antd confirm + the
+ * adapter's cleanDelete (the legacy Bootstrap confirm modal is absent here).
+ * Matches the Company Structure card design and is dark/light-mode aware.
+ */
+
+
+function NativeCardList(_ref) {
+  var shellConfig = _ref.shellConfig,
+      tabKey = _ref.tabKey,
+      entity = _ref.entity,
+      cardConfig = _ref.cardConfig;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token; // Action-icon colours: the hues are tuned for light mode; in dark mode lighten
+  // them so they stay legible on the dark cards.
+
+
+  var isDark = typeof window !== 'undefined' && window.__shellColorMode === 'dark';
+
+  var ac = function ac(hex) {
+    return isDark ? lighten(hex, 0.4) : hex;
+  };
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      items = _useState2[0],
+      setItems = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      total = _useState4[0],
+      setTotal = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(1),
+      _useState6 = _slicedToArray(_useState5, 2),
+      page = _useState6[0],
+      setPage = _useState6[1]; // Page size is fixed at PAGE_SIZE unless the module opts into the size
+  // selector via adapter.setShowPageSizeChanger(true) (e.g. admin Attendance).
+
+
+  var _useState7 = (0, _react.useState)(PAGE_SIZE),
+      _useState8 = _slicedToArray(_useState7, 2),
+      pageSize = _useState8[0],
+      setPageSize = _useState8[1];
+
+  var _useState9 = (0, _react.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      search = _useState10[0],
+      setSearch = _useState10[1];
+
+  var _useState11 = (0, _react.useState)(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      statusFilterVal = _useState12[0],
+      setStatusFilterVal = _useState12[1];
+
+  var _useState13 = (0, _react.useState)(false),
+      _useState14 = _slicedToArray(_useState13, 2),
+      err = _useState14[0],
+      setErr = _useState14[1]; // Some adapters (Employee) "view" by setting a current element that the legacy
+  // table renders as a child component (e.g. the employee profile) instead of a
+  // modal — capture it and render that child in our own modal.
+
+
+  var _useState15 = (0, _react.useState)(null),
+      _useState16 = _slicedToArray(_useState15, 2),
+      currentElement = _useState16[0],
+      _setCurrentElement = _useState16[1]; // A document URL (e.g. a task-list editor page) opened in an embedded modal.
+
+
+  var _useState17 = (0, _react.useState)(null),
+      _useState18 = _slicedToArray(_useState17, 2),
+      editorUrl = _useState18[0],
+      setEditorUrl = _useState18[1]; // A document opened as a NATIVE in-shell component (no iframe) — the URL drives
+  // an extension's mount fn (e.g. the editor) into nativeElRef below.
+
+
+  var _useState19 = (0, _react.useState)(null),
+      _useState20 = _slicedToArray(_useState19, 2),
+      nativeDoc = _useState20[0],
+      setNativeDoc = _useState20[1];
+
+  var nativeElRef = (0, _react.useRef)(null); // Approve-workflow state: the record whose status is being changed, and the
+  // approval-log list being viewed (both null when closed).
+
+  var _useState21 = (0, _react.useState)(null),
+      _useState22 = _slicedToArray(_useState21, 2),
+      statusRec = _useState22[0],
+      setStatusRec = _useState22[1];
+
+  var _useState23 = (0, _react.useState)(null),
+      _useState24 = _slicedToArray(_useState23, 2),
+      statusValue = _useState24[0],
+      setStatusValue = _useState24[1];
+
+  var _useState25 = (0, _react.useState)(''),
+      _useState26 = _slicedToArray(_useState25, 2),
+      statusReason = _useState26[0],
+      setStatusReason = _useState26[1];
+
+  var _useState27 = (0, _react.useState)(false),
+      _useState28 = _slicedToArray(_useState27, 2),
+      statusSaving = _useState28[0],
+      setStatusSaving = _useState28[1];
+
+  var _useState29 = (0, _react.useState)(null),
+      _useState30 = _slicedToArray(_useState29, 2),
+      logsState = _useState30[0],
+      setLogsState = _useState30[1]; // { loading, rows } | null
+
+
+  var _useState31 = (0, _react.useState)(null),
+      _useState32 = _slicedToArray(_useState31, 2),
+      expenseDialog = _useState32[0],
+      setExpenseDialog = _useState32[1]; // { rec, mode } | null
+
+
+  var _useState33 = (0, _react.useState)(0),
+      _useState34 = _slicedToArray(_useState33, 2),
+      force = _useState34[1];
+
+  var bump = function bump() {
+    return force(function (n) {
+      return n + 1;
+    });
+  }; // Bulk-delete selection (enabled per entity via cfg.bulkDelete).
+
+
+  var _useState35 = (0, _react.useState)([]),
+      _useState36 = _slicedToArray(_useState35, 2),
+      selectedIds = _useState36[0],
+      setSelectedIds = _useState36[1];
+
+  var _useState37 = (0, _react.useState)(false),
+      _useState38 = _slicedToArray(_useState37, 2),
+      bulkDeleting = _useState38[0],
+      setBulkDeleting = _useState38[1];
+
+  var clearSelection = function clearSelection() {
+    return setSelectedIds([]);
+  }; // The module's adapter instances are stable for the life of the mounted module,
+  // but window.modJsList is a SHARED global that another overlay can temporarily
+  // borrow — e.g. the native document editor's initEditorUser replaces it while
+  // its modal is open. So capture this tab's adapter instance once it's wired and
+  // prefer the captured instance for render/load; only fall back to the live
+  // global during initial discovery. This keeps the list rendering correctly even
+  // while an editor modal has borrowed the globals.
+
+
+  var boundRef = (0, _react.useRef)(null);
+
+  var adapter = function adapter() {
+    return boundRef.current || (window.modJsList || {})[tabKey];
+  };
+
+  var load = (0, _react.useCallback)(function () {
+    var toPage = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+    var toSearch = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var toLimit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+    var m = adapter();
+
+    if (!m || !m.dataPipe) {
+      setErr(true);
+      return;
+    }
+
+    var p = toPage != null ? toPage : page;
+    var s = toSearch != null ? toSearch : search;
+    var lim = toLimit != null ? toLimit : pageSize;
+    setErr(false);
+    m.dataPipe.get({
+      page: p,
+      limit: lim,
+      search: s
+    }).then(function (d) {
+      setItems(d && d.items || []);
+      setTotal(d && d.total || 0);
+      bump();
+    })["catch"](function () {
+      return setErr(true);
+    });
+  }, [tabKey, page, search, pageSize]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Wire the adapter to the shell: mount containers for its modals, a fake table
+  // container so reload()/loading hooks resolve to us, master data for selects.
+  // The module's init() (which creates the adapters) runs asynchronously after
+  // the bundles load, so the adapter may not exist when this first mounts — poll
+  // briefly until it is ready instead of erroring out.
+
+  (0, _react.useEffect)(function () {
+    var cancelled = false;
+    var tries = 0; // Detached mount points for the adapter's modals (the antd Modal inside
+    // portals to <body> regardless; these just need to be real elements that
+    // exist independently of this component's conditional render).
+
+    var formEl = document.createElement('div');
+    var filterEl = document.createElement('div');
+    document.body.appendChild(formEl);
+    document.body.appendChild(filterEl);
+
+    var wireUp = function wireUp(m) {
+      boundRef.current = m;
+      window.modJs = m;
+
+      if (typeof m.setContainers === 'function') {
+        m.setContainers({
+          Form: formEl,
+          FilterForm: filterEl
+        });
+      } // Force the adapter to (re)render its form/filter modals into the current
+      // containers on the next open (the instance persists across remounts).
+
+
+      m.formInitialized = false;
+      m.tableContainer = {
+        current: {
+          reload: function reload() {
+            return load();
+          },
+          setCurrentElement: function setCurrentElement(el) {
+            return _setCurrentElement(el || null);
+          },
+          setLoading: function setLoading() {},
+          setFilterData: function setFilterData() {
+            bump();
+          }
+        }
+      };
+
+      try {
+        if (m.masterDataReader && m.masterDataReader.updateAllMasterData) {
+          m.masterDataReader.updateAllMasterData();
+        }
+
+        if (typeof m.initFieldMasterData === 'function') m.initFieldMasterData();
+      } catch (e) {
+        /* ignore */
+      }
+
+      setPage(1);
+      load(1, '');
+    };
+
+    var tick = function tick() {
+      if (cancelled) return;
+      var m = adapter();
+
+      if (m && m.dataPipe) {
+        wireUp(m);
+        return;
+      }
+
+      tries += 1;
+
+      if (tries > 100) {
+        setErr(true);
+        return;
+      } // ~10s
+
+
+      setTimeout(tick, 100);
+    };
+
+    tick();
+    return function () {
+      cancelled = true;
+
+      try {
+        var _m = adapter();
+
+        if (_m && typeof _m.setContainers === 'function') _m.setContainers(null);
+        if (formEl.parentNode) formEl.parentNode.removeChild(formEl);
+        if (filterEl.parentNode) filterEl.parentNode.removeChild(filterEl);
+      } catch (e) {
+        /* ignore */
+      }
+
+      boundRef.current = null;
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tabKey]);
+  var m = adapter(); // The "group=name" reference for customAction routing (the legacy `mod`
+  // param). Prefer the adapter's own ref (approve/log adapters know whether
+  // they hit admin= or modules=); otherwise derive from the SPA module scope:
+  // core admin -> admin=<name>, core user -> modules=<name>, extensions
+  // (registry name "<ext>|<subType>") -> admin=<ext> / modules=<ext>.
+
+  var moduleRef = function moduleRef() {
+    if (!m) return 'admin=';
+    if (typeof m.getActionModuleRef === 'function') return m.getActionModuleRef();
+
+    if (m.spaModuleGroup === 'extension' && typeof m.spaModuleName === 'string' && m.spaModuleName.indexOf('|') >= 0) {
+      var _m$spaModuleName$spli = m.spaModuleName.split('|'),
+          _m$spaModuleName$spli2 = _slicedToArray(_m$spaModuleName$spli, 2),
+          ext = _m$spaModuleName$spli2[0],
+          sub = _m$spaModuleName$spli2[1];
+
+      return "".concat(sub === 'user' ? 'modules' : 'admin', "=").concat(m.modulePathName || ext);
+    }
+
+    if (m.spaModuleGroup && m.spaModuleName) return "".concat(m.spaModuleGroup, "=").concat(m.spaModuleName);
+    return "admin=".concat(m.modulePathName);
+  };
+
+  var columns = (0, _react.useMemo)(function () {
+    if (!m || typeof m.getTableColumns !== 'function') return [];
+    return (m.getTableColumns() || []).map(function (c) {
+      return _objectSpread({}, c, {
+        label: m.gt ? m.gt(c.title) : c.title
+      });
+    });
+  }, [m, items]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Hardcoded per-entity config for core modules, optionally overridden by a
+  // declarative config an extension supplies via its meta.json `native` block.
+
+  var cfg = _objectSpread({}, ENTITY_CONFIG[entity] || {}, {}, cardConfig || {});
+
+  var docAction = cfg.documentAction || null; // --- capabilities -------------------------------------------------------
+
+  var can = function can(a) {
+    return !!(m && m.hasAccess && m.hasAccess(a));
+  }; // cfg.disableView turns off viewing entirely (no eye button AND no row-click
+  // view) — e.g. task lists, which are opened via their document action instead.
+  // A card-config method invoked when the card body is clicked (e.g. leave
+  // groups open a manage-members dialog). Falls back to the default view.
+
+
+  var cardClick = cfg.cardClickAction && m && typeof m[cfg.cardClickAction] === 'function' ? function (rec) {
+    return m[cfg.cardClickAction](rec.id, rec);
+  } : null;
+  var hasView = !cfg.disableView && (!!cfg.expenseDialog || !!(m && (typeof m.showProjectDetails === 'function' || can('element') && m.showViewButton && m.showViewButton())));
+  var showViewBtn = hasView && !cfg.hideViewButton;
+  var canEdit = !!(m && can('save') && m.showEdit !== false) && !cfg.hideEditButton;
+  var canCopy = !!(m && can('save') && m.showAddNew !== false) && !cfg.hideCopyButton;
+  var canDelete = !!(m && can('delete') && m.showDelete !== false); // Per-record delete gate: some entities only allow deleting rows in a certain
+  // state (e.g. employees may delete only their own Pending expenses). A card
+  // config `deleteWhen(rec) => bool` refines the list-level canDelete row by row;
+  // the backend still enforces the same rule per record.
+
+  var rowDeletable = function rowDeletable(rec) {
+    return canDelete && (typeof cfg.deleteWhen === 'function' ? !!cfg.deleteWhen(rec) : true);
+  }; // Same per-record refinement for editing (e.g. employees may edit only their
+  // own Pending expenses).
+
+
+  var rowEditable = function rowEditable(rec) {
+    return typeof cfg.editWhen === 'function' ? !!cfg.editWhen(rec) : true;
+  };
+
+  var bulkEnabled = !!cfg.bulkDelete && canDelete && typeof (m && m.cleanDelete) === 'function';
+  var canAdd = !!(m && can('save') && (m.getShowAddNew ? m.getShowAddNew() : m.showAddNew !== false));
+  var hasFilters = !!(m && m.getFilters && m.getFilters());
+
+  var doView = function doView(id) {
+    if (!m) return;
+    if (typeof m.showProjectDetails === 'function') m.showProjectDetails(id);else if (typeof m.viewElement === 'function') m.viewElement(id);
+  }; // Entities with a bespoke dialog (cfg.expenseDialog) open that instead of the
+  // legacy generic view/edit modals, in the appropriate mode.
+
+
+  var openView = function openView(rec) {
+    if (cfg.expenseDialog) {
+      setExpenseDialog({
+        rec: rec,
+        mode: 'view'
+      });
+      return;
+    }
+
+    doView(rec.id);
+  };
+
+  var openEdit = function openEdit(rec) {
+    if (cfg.expenseDialog) {
+      setExpenseDialog({
+        rec: rec,
+        mode: 'edit'
+      });
+      return;
+    }
+
+    if (m) m.edit(rec.id);
+  };
+
+  var doEdit = function doEdit(id) {
+    if (m) m.edit(id);
+  };
+
+  var doCopy = function doCopy(id) {
+    if (m && m.copyRow) m.copyRow(id);
+  };
+
+  var doAdd = function doAdd() {
+    if (m) m.renderForm();
+  }; // Fetch a backup from the REST API (using the shell's bearer token) and download it as
+  // JSON. Driven by cfg.exportEndpoint (see the salary entities in ENTITY_CONFIG).
+
+
+  var _useState39 = (0, _react.useState)(false),
+      _useState40 = _slicedToArray(_useState39, 2),
+      exporting = _useState40[0],
+      setExporting = _useState40[1];
+
+  var doExport = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      var resp, backup, blob, url, a, stamp;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              if (cfg.exportEndpoint) {
+                _context.next = 2;
+                break;
+              }
+
+              return _context.abrupt("return");
+
+            case 2:
+              setExporting(true);
+              _context.prev = 3;
+              _context.next = 6;
+              return fetch("".concat(shellConfig.restApiBase).concat(cfg.exportEndpoint), {
+                headers: {
+                  Authorization: "Bearer ".concat(shellConfig.token)
+                },
+                credentials: 'same-origin'
+              });
+
+            case 6:
+              resp = _context.sent;
+              _context.next = 9;
+              return resp.json();
+
+            case 9:
+              backup = _context.sent;
+              blob = new Blob([JSON.stringify(backup, null, 2)], {
+                type: 'application/json'
+              });
+              url = URL.createObjectURL(blob);
+              a = document.createElement('a');
+              stamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
+              a.href = url;
+              a.download = "".concat(cfg.exportFilePrefix || 'backup', "-").concat(stamp, ".json");
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              URL.revokeObjectURL(url);
+
+              _antd.message.success('Backup downloaded');
+
+              _context.next = 26;
+              break;
+
+            case 23:
+              _context.prev = 23;
+              _context.t0 = _context["catch"](3);
+
+              _antd.message.error('Export failed');
+
+            case 26:
+              _context.prev = 26;
+              setExporting(false);
+              return _context.finish(26);
+
+            case 29:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[3, 23, 26, 29]]);
+    }));
+
+    return function doExport() {
+      return _ref2.apply(this, arguments);
+    };
+  }(); // Restore a backup by POSTing an uploaded JSON file to cfg.importEndpoint.
+
+
+  var _useState41 = (0, _react.useState)(false),
+      _useState42 = _slicedToArray(_useState41, 2),
+      importing = _useState42[0],
+      setImporting = _useState42[1];
+
+  var importInputRef = (0, _react.useRef)(null);
+
+  var doImportFile = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(event) {
+      var file, text, backup, resp, data, _data$error, _data$error$, _data$error$$;
+
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              file = event.target.files && event.target.files[0];
+              event.target.value = '';
+
+              if (!(!file || !cfg.importEndpoint)) {
+                _context2.next = 4;
+                break;
+              }
+
+              return _context2.abrupt("return");
+
+            case 4:
+              setImporting(true);
+              _context2.prev = 5;
+              _context2.next = 8;
+              return file.text();
+
+            case 8:
+              text = _context2.sent;
+              backup = JSON.parse(text);
+              _context2.next = 12;
+              return fetch("".concat(shellConfig.restApiBase).concat(cfg.importEndpoint), {
+                method: 'POST',
+                headers: {
+                  Authorization: "Bearer ".concat(shellConfig.token),
+                  'Content-Type': 'application/json'
+                },
+                credentials: 'same-origin',
+                body: JSON.stringify(backup)
+              });
+
+            case 12:
+              resp = _context2.sent;
+              _context2.next = 15;
+              return resp.json();
+
+            case 15:
+              data = _context2.sent;
+
+              if (data && data.error) {
+                _antd.message.error(((_data$error = data.error) === null || _data$error === void 0 ? void 0 : (_data$error$ = _data$error[0]) === null || _data$error$ === void 0 ? void 0 : (_data$error$$ = _data$error$[0]) === null || _data$error$$ === void 0 ? void 0 : _data$error$$.message) || 'Import failed', 5);
+              } else {
+                _antd.message.success('Data restored — refreshing…'); // A salary import restores multiple tables (types/components/salaries); reload so
+                // every tab reflects it, not just the currently visible card list.
+
+
+                setTimeout(function () {
+                  return window.location.reload();
+                }, 700);
+              }
+
+              _context2.next = 22;
+              break;
+
+            case 19:
+              _context2.prev = 19;
+              _context2.t0 = _context2["catch"](5);
+
+              _antd.message.error('Import failed: invalid file or server error', 5);
+
+            case 22:
+              _context2.prev = 22;
+              setImporting(false);
+              return _context2.finish(22);
+
+            case 25:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[5, 19, 22, 25]]);
+    }));
+
+    return function doImportFile(_x) {
+      return _ref3.apply(this, arguments);
+    };
+  }(); // "Generate from industry" toolbar action (cfg.generateFromIndustry). Reusable:
+  // fetches a list of industries from one endpoint and posts the chosen one to a
+  // generate endpoint (e.g. Job Titles). Any module can opt in via its card config.
+
+
+  var genCfg = cfg.generateFromIndustry || null;
+
+  var _useState43 = (0, _react.useState)(false),
+      _useState44 = _slicedToArray(_useState43, 2),
+      genOpen = _useState44[0],
+      setGenOpen = _useState44[1];
+
+  var _useState45 = (0, _react.useState)([]),
+      _useState46 = _slicedToArray(_useState45, 2),
+      genIndustries = _useState46[0],
+      setGenIndustries = _useState46[1];
+
+  var _useState47 = (0, _react.useState)(null),
+      _useState48 = _slicedToArray(_useState47, 2),
+      genIndustry = _useState48[0],
+      setGenIndustry = _useState48[1];
+
+  var _useState49 = (0, _react.useState)(false),
+      _useState50 = _slicedToArray(_useState49, 2),
+      genLoading = _useState50[0],
+      setGenLoading = _useState50[1];
+
+  var _useState51 = (0, _react.useState)(false),
+      _useState52 = _slicedToArray(_useState51, 2),
+      generating = _useState52[0],
+      setGenerating = _useState52[1];
+
+  var _useState53 = (0, _react.useState)(false),
+      _useState54 = _slicedToArray(_useState53, 2),
+      genDelete = _useState54[0],
+      setGenDelete = _useState54[1];
+
+  var openGenerate = function openGenerate() {
+    if (!genCfg) return;
+    setGenIndustry(null);
+    setGenDelete(false);
+    setGenOpen(true);
+    setGenLoading(true);
+    fetch("".concat(shellConfig.restApiBase).concat(genCfg.industriesEndpoint), {
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      setGenIndustries(Array.isArray(d) ? d : []);
+    })["catch"](function () {
+      return _antd.message.error('Could not load industries', 5);
+    })["finally"](function () {
+      return setGenLoading(false);
+    });
+  };
+
+  var doGenerate = function doGenerate() {
+    if (!genCfg || !genIndustry) {
+      _antd.message.error('Please select an industry.', 4);
+
+      return;
+    }
+
+    setGenerating(true);
+    fetch("".concat(shellConfig.restApiBase).concat(genCfg.generateEndpoint), {
+      method: 'POST',
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token),
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({
+        industry: genIndustry,
+        deleteExisting: genDelete
+      })
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (d && d.error) {
+        var _d$error, _d$error$, _d$error$$;
+
+        _antd.message.error(((_d$error = d.error) === null || _d$error === void 0 ? void 0 : (_d$error$ = _d$error[0]) === null || _d$error$ === void 0 ? void 0 : (_d$error$$ = _d$error$[0]) === null || _d$error$$ === void 0 ? void 0 : _d$error$$.message) || 'Generation failed', 5);
+
+        return;
+      }
+
+      var label = genCfg.itemsLabel || 'items';
+      var parts = ["Added ".concat(d.created, " ").concat(label)];
+      if (d.deleted) parts.push("deleted ".concat(d.deleted));
+      if (d.kept_assigned) parts.push("kept ".concat(d.kept_assigned, " in use"));
+      if (d.skipped) parts.push("".concat(d.skipped, " already existed"));
+
+      _antd.message.success("".concat(parts.join(', '), "."));
+
+      setGenOpen(false);
+      load();
+    })["catch"](function () {
+      return _antd.message.error('Generation failed', 5);
+    })["finally"](function () {
+      return setGenerating(false);
+    });
+  };
+
+  var docUrl = function docUrl(rec) {
+    var link = rec.document_link;
+    if (!link) return null;
+    var base = (window.baseUrl || '').replace('service.php', '');
+    return /^https?:\/\//.test(link) ? link : "".concat(base).concat(link);
+  };
+
+  var doDocument = function doDocument(rec) {
+    var url = docUrl(rec);
+    if (!url) return; // Native in-shell mount (no iframe, theme-aware), an embedded iframe modal,
+    // or a new tab — per the entity's documentAction config.
+
+    if (docAction && docAction.openIn === 'native') {
+      setNativeDoc(url);
+      return;
+    }
+
+    if (docAction && docAction.openIn === 'iframe-modal') {
+      setEditorUrl(url);
+      return;
+    }
+
+    window.open(url, '_blank', 'noopener');
+  };
+
+  var doDelete = function doDelete(rec) {
+    if (!m) return; // Use the same title the card shows (respects the entity's titleField /
+    // title config) — falling back to a generic message if it isn't a plain
+    // string (e.g. a rendered cell), so we never surface a raw URL/field value.
+
+    var t = titleOf(rec);
+    var label = typeof t === 'string' && t.trim() ? t : null;
+
+    _antd.Modal.confirm({
+      title: cfg.deleteTip || 'Delete',
+      content: cfg.deleteConfirm || (label ? "Are you sure you want to delete \u201C".concat(label, "\u201D?") : 'Are you sure you want to delete this item?'),
+      okText: cfg.deleteTip || 'Delete',
+      okType: 'danger',
+      onOk: function onOk() {
+        return new Promise(function (resolve) {
+          try {
+            m.cleanDelete(rec.id, function (httpStatus, status, data) {
+              if (httpStatus === 200 && status === 'SUCCESS') {
+                _antd.message.success('Deleted');
+
+                load();
+              } else {
+                // Prefer the server's reason (e.g. "…assigned to N employees").
+                var serverMsg = data && typeof data.data === 'string' ? data.data : null;
+
+                _antd.message.error(serverMsg || 'Could not delete. It may be in use.', 5);
+              }
+
+              resolve();
+            });
+          } catch (e) {
+            _antd.message.error('Could not delete', 5);
+
+            resolve();
+          }
+        });
+      }
+    });
+  }; // Delete one id via the adapter, resolved to true/false (never rejects).
+
+
+  var deleteOne = function deleteOne(id) {
+    return new Promise(function (resolve) {
+      try {
+        m.cleanDelete(id, function (httpStatus, status) {
+          return resolve(httpStatus === 200 && status === 'SUCCESS');
+        });
+      } catch (e) {
+        resolve(false);
+      }
+    });
+  };
+
+  var doBulkDelete = function doBulkDelete() {
+    if (!m || !selectedIds.length) return;
+
+    var ids = _toConsumableArray(selectedIds);
+
+    _antd.Modal.confirm({
+      title: 'Delete selected',
+      content: "Are you sure you want to delete ".concat(ids.length, " item").concat(ids.length === 1 ? '' : 's', "? This cannot be undone."),
+      okText: "Delete ".concat(ids.length),
+      okType: 'danger',
+      onOk: function () {
+        var _onOk = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+          var ok, _iterator, _step, id, failed;
+
+          return regeneratorRuntime.wrap(function _callee3$(_context3) {
+            while (1) {
+              switch (_context3.prev = _context3.next) {
+                case 0:
+                  setBulkDeleting(true);
+                  ok = 0; // Sequential to avoid hammering the endpoint; tolerant of individual failures.
+                  // eslint-disable-next-line no-restricted-syntax
+
+                  _iterator = _createForOfIteratorHelper(ids);
+                  _context3.prev = 3;
+
+                  _iterator.s();
+
+                case 5:
+                  if ((_step = _iterator.n()).done) {
+                    _context3.next = 13;
+                    break;
+                  }
+
+                  id = _step.value;
+                  _context3.next = 9;
+                  return deleteOne(id);
+
+                case 9:
+                  if (!_context3.sent) {
+                    _context3.next = 11;
+                    break;
+                  }
+
+                  ok += 1;
+
+                case 11:
+                  _context3.next = 5;
+                  break;
+
+                case 13:
+                  _context3.next = 18;
+                  break;
+
+                case 15:
+                  _context3.prev = 15;
+                  _context3.t0 = _context3["catch"](3);
+
+                  _iterator.e(_context3.t0);
+
+                case 18:
+                  _context3.prev = 18;
+
+                  _iterator.f();
+
+                  return _context3.finish(18);
+
+                case 21:
+                  setBulkDeleting(false);
+                  failed = ids.length - ok;
+                  if (ok) _antd.message.success("Deleted ".concat(ok, " item").concat(ok === 1 ? '' : 's'));
+                  if (failed) _antd.message.error("".concat(failed, " could not be deleted (may be in use)"), 5);
+                  clearSelection();
+                  load();
+
+                case 27:
+                case "end":
+                  return _context3.stop();
+              }
+            }
+          }, _callee3, null, [[3, 15, 18, 21]]);
+        }));
+
+        function onOk() {
+          return _onOk.apply(this, arguments);
+        }
+
+        return onOk;
+      }()
+    });
+  }; // --- approve workflow (overtime/expenses/leave/…) -----------------------
+  // Detected from the adapter, driven natively (the legacy bootstrap status modal
+  // + log popup don't exist in the SPA). changeStatus/getLogs/cancelRequest run
+  // through the adapter's customAction with injected native callbacks.
+
+
+  var isApprove = !!(m && typeof m.getStatusOptionsData === 'function');
+  var canCancel = !!(m && typeof m.cancelRequest === 'function');
+  var hasLogs = !!(m && typeof m.getLogs === 'function'); // Target-status options available FROM a given current status, applying the
+  // non-admin restrictions (a manager cannot change a Paid expense, nor set one
+  // to Paid). Used by both the card status button and the dialog dropdown.
+
+  var statusOptionsForStatus = function statusOptionsForStatus(status) {
+    if (!isApprove) return [];
+    var lvl = m && typeof m.getUser === 'function' && m.getUser() ? m.getUser().user_level : null;
+    var isNonAdmin = !!lvl && lvl !== 'Admin';
+
+    if (isNonAdmin && cfg.managerLockedStatuses && cfg.managerLockedStatuses.indexOf(status) >= 0) {
+      return [];
+    }
+
+    var data = {};
+
+    try {
+      data = m.getStatusOptionsData(status) || {};
+    } catch (e) {
+      data = {};
+    }
+
+    var opts = Object.keys(data).map(function (k) {
+      return {
+        value: data[k],
+        label: k
+      };
+    });
+
+    if (isNonAdmin && cfg.managerBlockedTargetStatuses) {
+      opts = opts.filter(function (o) {
+        return cfg.managerBlockedTargetStatuses.indexOf(o.value) < 0;
+      });
+    }
+
+    return opts;
+  };
+
+  var statusOptionsFor = function statusOptionsFor(rec) {
+    return statusOptionsForStatus(rec.status);
+  };
+
+  var openStatus = function openStatus(rec) {
+    var opts = statusOptionsFor(rec);
+    setStatusRec(rec);
+    setStatusValue(opts.length ? opts[0].value : null);
+    setStatusReason('');
+  };
+
+  var submitStatus = function submitStatus() {
+    if (!m || !statusRec || !statusValue) return;
+    setStatusSaving(true);
+    var cb = {
+      callBackData: [],
+      callBackSuccess: '__nativeStatusOk',
+      callBackFail: '__nativeStatusFail'
+    };
+
+    m.__nativeStatusOk = function () {
+      setStatusSaving(false);
+      setStatusRec(null);
+
+      _antd.message.success('Status updated');
+
+      load();
+    };
+
+    m.__nativeStatusFail = function (d) {
+      setStatusSaving(false);
+
+      _antd.message.error(typeof d === 'string' ? d : 'Could not update status', 5);
+    };
+
+    var payload = JSON.stringify({
+      id: statusRec.id,
+      status: statusValue,
+      reason: statusReason
+    });
+
+    try {
+      // Some modules use a differently-named status action (e.g. leaves ->
+      // changeLeaveStatus); the card config can override the default.
+      m.customAction(cfg.statusAction || 'changeStatus', moduleRef(), payload, cb, true);
+    } catch (e) {
+      m.__nativeStatusFail('Could not update status');
+    }
+  }; // Re-submit a rejected record (e.g. an employee resending a rejected expense
+  // back into the approval queue -> status becomes Pending). Driven by a custom
+  // action named in cfg.resubmitAction; the backend re-checks ownership/status.
+
+
+  var doResubmit = function doResubmit(rec) {
+    if (!m || !cfg.resubmitAction) return; // With the expense dialog, re-submit opens the editable dialog (so the owner
+    // can fix the expense before resending); the dialog itself does the resubmit.
+
+    if (cfg.expenseDialog) {
+      setExpenseDialog({
+        rec: rec,
+        mode: 'resubmit'
+      });
+      return;
+    }
+
+    _antd.Modal.confirm({
+      title: 'Re-submit expense',
+      content: 'Re-submit this rejected expense for approval? Its status will be set back to Pending.',
+      okText: 'Re-submit',
+      onOk: function onOk() {
+        var cb = {
+          callBackData: [],
+          callBackSuccess: '__nativeResubmitOk',
+          callBackFail: '__nativeResubmitFail'
+        };
+
+        m.__nativeResubmitOk = function () {
+          _antd.message.success('Expense re-submitted');
+
+          load();
+        };
+
+        m.__nativeResubmitFail = function (d) {
+          _antd.message.error(typeof d === 'string' ? d : 'Could not re-submit', 5);
+        };
+
+        try {
+          m.customAction(cfg.resubmitAction, moduleRef(), JSON.stringify({
+            id: rec.id
+          }), cb, true);
+        } catch (e) {
+          m.__nativeResubmitFail('Could not re-submit');
+        }
+      }
+    });
+  };
+
+  var doCancel = function doCancel(rec) {
+    if (!m || !m.cancelRequest) return;
+
+    _antd.Modal.confirm({
+      title: 'Cancel request',
+      content: 'Request cancellation of this approved entry?',
+      okText: 'Yes, cancel it',
+      onOk: function onOk() {
+        m.cancelSuccessCallBack = function () {
+          _antd.message.success('Cancellation requested');
+
+          load();
+        };
+
+        m.cancelFailCallBack = function (d) {
+          return _antd.message.error(typeof d === 'string' ? d : 'Could not cancel', 5);
+        };
+
+        try {
+          m.cancelRequest(rec.id);
+        } catch (e) {
+          _antd.message.error('Could not cancel', 5);
+        }
+      }
+    });
+  };
+
+  var openLogs = function openLogs(rec) {
+    if (!m || !m.getLogs) return;
+    setLogsState({
+      loading: true,
+      rows: []
+    });
+    var cb = {
+      callBackData: [],
+      callBackSuccess: '__nativeLogsOk',
+      callBackFail: '__nativeLogsFail'
+    };
+
+    m.__nativeLogsOk = function (d) {
+      // Tolerate either an array or { data: [...] }.
+      var rows = Array.isArray(d) ? d : d && Array.isArray(d.data) ? d.data : [];
+      setLogsState({
+        loading: false,
+        rows: rows
+      });
+    };
+
+    m.__nativeLogsFail = function () {
+      return setLogsState({
+        loading: false,
+        rows: []
+      });
+    };
+
+    try {
+      m.customAction('getLogs', moduleRef(), JSON.stringify({
+        id: rec.id
+      }), cb);
+    } catch (e) {
+      setLogsState({
+        loading: false,
+        rows: []
+      });
+    }
+  }; // --- filters ------------------------------------------------------------
+  // getFilterString resolves ids via the adapter's field master data, which may
+  // not be loaded yet (e.g. a filter handed over before this tab first opened) —
+  // never let a display-string lookup crash the whole card list render.
+
+
+  var filterString = '';
+
+  try {
+    filterString = m && hasFilters && m.filter && m.getFilterString ? m.getFilterString(m.filter) : '';
+  } catch (e) {
+    filterString = '';
+  }
+
+  var openFilters = function openFilters() {
+    if (m && m.showFilters) m.showFilters();
+  };
+
+  var clearFilters = function clearFilters() {
+    if (m && m.resetFilters) m.resetFilters();
+  };
+
+  var onSearch = function onSearch(val) {
+    clearSelection();
+    setSearch(val);
+    setPage(1);
+    load(1, val);
+  }; // Quick status filter (e.g. expenses). Applies the value as the adapter's
+  // server-side filter ({status}) and reloads; clearing restores the tab's
+  // original filter so the list shows every status again.
+
+
+  var onStatusFilter = function onStatusFilter(val) {
+    if (!m) return;
+    m.setFilter(val ? {
+      status: val
+    } : m.origFilter != null ? m.origFilter : '');
+    setStatusFilterVal(val || '');
+    clearSelection();
+    setPage(1);
+    load(1);
+  };
+
+  var onPage = function onPage(p, ps) {
+    clearSelection(); // antd fires onChange for both page and page-size changes. When the size
+    // changes, jump back to page 1 and refetch with the new limit.
+
+    if (ps && ps !== pageSize) {
+      setPageSize(ps);
+      setPage(1);
+      load(1, null, ps);
+    } else {
+      setPage(p);
+      load(p, null);
+    }
+  }; // Selection helpers (bulk delete).
+
+
+  var isSelected = function isSelected(id) {
+    return selectedIds.includes(id);
+  };
+
+  var toggleSelect = function toggleSelect(id) {
+    return setSelectedIds(function (prev) {
+      return prev.includes(id) ? prev.filter(function (x) {
+        return x !== id;
+      }) : [].concat(_toConsumableArray(prev), [id]);
+    });
+  };
+
+  var pageIds = (items || []).map(function (r) {
+    return r.id;
+  });
+  var allOnPageSelected = pageIds.length > 0 && pageIds.every(function (id) {
+    return selectedIds.includes(id);
+  });
+
+  var toggleSelectAll = function toggleSelectAll() {
+    return setSelectedIds(function (prev) {
+      return allOnPageSelected ? prev.filter(function (id) {
+        return !pageIds.includes(id);
+      }) : Array.from(new Set([].concat(_toConsumableArray(prev), _toConsumableArray(pageIds))));
+    });
+  };
+
+  var st = entityStyle(entity); // Title / meta / tag / icon resolution from the per-entity config.
+  // When no titleField is configured, prefer the conventional IceHRM display
+  // columns (`name` / `title`) before falling back to the first column — the
+  // first column may be an avatar/image (e.g. Task Lists), which must never be
+  // used as the title or in the delete confirmation.
+
+  var hasCol = function hasCol(k) {
+    return columns.some(function (c) {
+      return c.dataIndex === k;
+    });
+  };
+
+  var conventionalTitle = ['name', 'title'].find(hasCol);
+  var titleFieldName = cfg.titleField || conventionalTitle || columns[0] && columns[0].dataIndex;
+  var hideSet = new Set(cfg.hideMeta || []); // Don't repeat the title field down in the meta line (unless a custom title()
+  // function is used, in which case the underlying columns are still meta).
+
+  if (!cfg.title && titleFieldName) hideSet.add(titleFieldName);
+  (cfg.tagFields || []).forEach(function (f) {
+    return hideSet.add(f);
+  });
+  var metaColumns = columns.filter(function (c) {
+    return !hideSet.has(c.dataIndex);
+  });
+  var tagColumns = (cfg.tagFields || []).map(function (f) {
+    return columns.find(function (c) {
+      return c.dataIndex === f;
+    });
+  }).filter(Boolean); // Resolve a column to its displayed (name-resolved) value for a record, so a
+  // custom title() can show a foreign key's name (e.g. leave_type -> "Annual
+  // leave") instead of its raw id, exactly like the meta line does.
+
+  var resolveField = function resolveField(rec, field) {
+    var col = columns.find(function (c) {
+      return c.dataIndex === field;
+    });
+    return col ? cellValue(col, rec) : rec[field];
+  };
+
+  var titleOf = function titleOf(rec) {
+    var v;
+
+    if (cfg.title) {
+      v = cfg.title(rec, function (field) {
+        return resolveField(rec, field);
+      });
+    } else if (titleFieldName) {
+      var col = columns.find(function (c) {
+        return c.dataIndex === titleFieldName;
+      }) || {
+        dataIndex: titleFieldName
+      };
+      v = cellValue(col, rec);
+    } else {
+      return "#".concat(rec.id);
+    } // Custom view elements may carry a nested record here (e.g. the performance
+    // review view passes an employee OBJECT) — rendering that as a React child
+    // crashes (#31). Reduce it to a display name.
+
+
+    if (v && _typeof(v) === 'object' && !_react["default"].isValidElement(v)) {
+      var name = "".concat(v.first_name || '', " ").concat(v.last_name || '').trim();
+      return name || v.name || "#".concat(rec.id);
+    }
+
+    return v;
+  };
+
+  var iconOf = function iconOf(rec) {
+    return cfg.iconField ? objectTypeStyle(rec[cfg.iconField]) : st;
+  }; // Native document mount: when a row's documentAction is openIn:'native', load
+  // the extension's bundle (declared in the card config) and call its mount fn
+  // into the modal container, passing the shell session + colour mode.
+  //
+  // The mounted bundle (e.g. the editor's initEditorUser) overwrites the shared
+  // window.modJs/modJsList globals that THIS card list also drives off. The host
+  // owns the snapshot + restore here — taken synchronously before the bundle can
+  // clobber it, restored synchronously after unmount — so the list always comes
+  // back. We restore here rather than in the editor because the editor re-mounts
+  // on in-document navigation and can't know the original host value.
+
+
+  (0, _react.useEffect)(function () {
+    if (!nativeDoc || !docAction || docAction.openIn !== 'native') return undefined;
+    var el = nativeElRef.current;
+    if (!el) return undefined; // Snapshot the host's module globals BEFORE the bundle's init clobbers them.
+
+    var savedModJsList = window.modJsList;
+    var savedModJs = window.modJs;
+    var cancelled = false;
+    var mountName = docAction.mountFn;
+    var unmountName = mountName ? mountName.replace('mount', 'unmount') : null;
+    var extBase = (window.BASE_URL || '').replace('/web/', '/extensions/');
+    var bundleUrl = docAction.bundle ? "".concat(extBase).concat(docAction.bundle) : null;
+
+    var run = function run() {
+      var fn = mountName && window[mountName];
+
+      if (typeof fn === 'function') {
+        fn(el, {
+          documentUrl: nativeDoc,
+          restApiBase: shellConfig.restApiBase,
+          token: shellConfig.token,
+          colorMode: window.__shellColorMode || 'light',
+          onClose: function onClose() {
+            return setNativeDoc(null);
+          }
+        });
+      }
+    };
+
+    (bundleUrl ? loadNativeBundle(bundleUrl) : Promise.resolve()).then(function () {
+      if (!cancelled) run();
+    })["catch"](function () {
+      /* ignore */
+    });
+    return function () {
+      cancelled = true;
+      var ufn = unmountName && window[unmountName]; // Unmount the editor's React root synchronously (runs its teardown).
+
+      if (typeof ufn === 'function') {
+        try {
+          ufn(el);
+        } catch (e) {
+          /* ignore */
+        }
+      } // Restore the host module globals, THEN refresh the list — order matters:
+      // load() reads window.modJsList[tabKey], so it must run after the restore.
+
+
+      window.modJsList = savedModJsList;
+      window.modJs = savedModJs;
+      load();
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nativeDoc]);
+  if (err) return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "Could not load this list"
+  });
+
+  if (items === null) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 60
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+  }
+
+  var metaItem = function metaItem(label, value) {
+    return isEmpty(value) ? null : /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 5,
+        maxWidth: 320,
+        overflow: 'hidden'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        color: token.colorTextTertiary
+      }
+    }, "".concat(label, ":")), /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, value));
+  }; // Fields listed in cfg.progressFields render as a real progress bar (a legacy
+  // render()'s full-width <Progress> collapses inside the inline meta span).
+
+
+  var progressSet = new Set(cfg.progressFields || []);
+
+  var metaValue = function metaValue(c, rec) {
+    return progressSet.has(c.dataIndex) ? /*#__PURE__*/_react["default"].createElement(_antd.Progress, {
+      percent: parseInt(rec[c.dataIndex], 10) || 0,
+      size: "small",
+      style: {
+        width: 130,
+        margin: 0
+      }
+    }) : cellValue(c, rec);
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 12,
+      marginBottom: 16,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      flexWrap: 'wrap'
+    }
+  }, canAdd && !cfg.hideActions && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "primary",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.PlusOutlined, null),
+    onClick: doAdd
+  }, cfg.addLabel || m && typeof m.getAddNewLabel === 'function' && m.getAddNewLabel() || 'Add New'), m && typeof m.hasCustomTopButtons === 'function' && m.hasCustomTopButtons() && typeof m.getCustomTopButtons === 'function' && /*#__PURE__*/_react["default"].createElement("span", null, m.getCustomTopButtons()), cfg.exportEndpoint && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+    loading: exporting,
+    onClick: doExport
+  }, cfg.exportLabel || 'Export'), cfg.importEndpoint && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("input", {
+    ref: importInputRef,
+    type: "file",
+    accept: "application/json,.json",
+    style: {
+      display: 'none'
+    },
+    onChange: doImportFile
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UploadOutlined, null),
+    loading: importing,
+    onClick: function onClick() {
+      return importInputRef.current && importInputRef.current.click();
+    }
+  }, cfg.importLabel || 'Import')), genCfg && !cfg.hideActions && canAdd && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    onClick: openGenerate
+  }, genCfg.label || 'Generate'), hasFilters && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FilterOutlined, null),
+    onClick: openFilters
+  }, "Filters"), filterString && /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+    color: "blue",
+    closable: true,
+    onClose: clearFilters,
+    style: {
+      lineHeight: '28px',
+      borderRadius: 6
+    }
+  }, filterString), bulkEnabled && selectedIds.length > 0 && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    danger: true,
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DeleteOutlined, null),
+    loading: bulkDeleting,
+    onClick: doBulkDelete
+  }, "Delete ".concat(selectedIds.length, " selected")), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "text",
+    onClick: clearSelection
+  }, "Clear"))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8
+    }
+  }, cfg.statusFilter && /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    value: statusFilterVal || undefined,
+    allowClear: true,
+    placeholder: "All statuses",
+    style: {
+      minWidth: 150
+    },
+    onChange: function onChange(v) {
+      return onStatusFilter(v);
+    },
+    options: cfg.statusFilter.map(function (s) {
+      return {
+        value: s,
+        label: s
+      };
+    })
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Input.Search, {
+    allowClear: true,
+    placeholder: "Search\u2026",
+    style: {
+      maxWidth: 280
+    },
+    onSearch: onSearch
+  }))), items.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "No records"
+  }) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, bulkEnabled && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      margin: '0 4px 10px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Checkbox, {
+    checked: allOnPageSelected,
+    indeterminate: !allOnPageSelected && pageIds.some(function (id) {
+      return selectedIds.includes(id);
+    }),
+    onChange: toggleSelectAll
+  }, allOnPageSelected ? 'Deselect all' : 'Select all'), selectedIds.length > 0 && /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      color: token.colorTextTertiary,
+      fontSize: 12.5
+    }
+  }, "".concat(selectedIds.length, " selected"))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10
+    }
+  }, items.map(function (rec) {
+    var title = titleOf(rec);
+    var rst = iconOf(rec);
+    return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      key: rec.id,
+      hoverable: !cfg.disableCardClick && (!!cardClick || hasView || !!docAction),
+      onClick: cfg.disableCardClick ? undefined : cfg.cardClickView && hasView ? function () {
+        return openView(rec);
+      } : cardClick ? function () {
+        return cardClick(rec);
+      } : docAction ? function () {
+        return doDocument(rec);
+      } : hasView ? function () {
+        return openView(rec);
+      } : undefined,
+      style: {
+        borderRadius: 10,
+        boxShadow: _theme.MUI_SHADOW,
+        cursor: !cfg.disableCardClick && (cardClick || hasView || docAction) ? 'pointer' : 'default'
+      },
+      styles: {
+        body: {
+          padding: '12px 16px'
+        }
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 14
+      }
+    }, bulkEnabled && /*#__PURE__*/_react["default"].createElement(_antd.Checkbox, {
+      checked: isSelected(rec.id),
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      },
+      onChange: function onChange() {
+        return toggleSelect(rec.id);
+      },
+      style: {
+        flex: '0 0 auto'
+      }
+    }), cfg.avatarField && !isEmpty(rec[cfg.avatarField]) ? /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+      size: 40,
+      src: rec[cfg.avatarField],
+      style: {
+        flex: '0 0 auto'
+      }
+    }) : /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: 40,
+        height: 40,
+        borderRadius: 10,
+        flex: '0 0 auto',
+        background: "".concat(rst.color, "18"),
+        color: rst.color,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 18
+      }
+    }, rst.icon), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: 0,
+        flex: 1
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        minWidth: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        fontWeight: 600,
+        fontSize: 14,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, isEmpty(title) ? "#".concat(rec.id) : title), tagColumns.map(function (c) {
+      var v = cellValue(c, rec); // Per-value colours (e.g. status): cfg.tagColors maps a
+      // value -> antd tag colour; falls back to blue.
+
+      var tagColor = cfg.tagColors && cfg.tagColors[v] || 'blue';
+      return isEmpty(v) ? null : /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+        key: c.dataIndex,
+        color: tagColor,
+        style: {
+          borderRadius: 6,
+          margin: 0,
+          flex: '0 0 auto'
+        }
+      }, cfg.tagIcon, cfg.tagIcon ? ' ' : '', v);
+    })), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16,
+        marginTop: 4,
+        color: token.colorTextSecondary,
+        fontSize: 12.5,
+        flexWrap: 'wrap'
+      }
+    }, metaColumns.map(function (c) {
+      return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
+        key: c.dataIndex
+      }, metaItem(c.label, metaValue(c, rec)));
+    }))), !cfg.hideActions && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        gap: 10,
+        flex: '0 0 auto'
+      },
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      }
+    }, (cfg.extraActions || []).filter(function (a) {
+      return a.first;
+    }).map(function (a) {
+      return (typeof a.show === 'function' ? a.show(m, rec) : true) && typeof m[a.method] === 'function' ? /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+        key: a.key,
+        title: a.tip
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: _react["default"].cloneElement(a.icon, {
+          style: {
+            color: ac(a.color)
+          }
+        }),
+        onClick: function onClick() {
+          return m[a.method](rec.id, rec);
+        }
+      })) : null;
+    }), showViewBtn && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "View"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.EyeOutlined, {
+        style: {
+          color: ac('#1565c0')
+        }
+      }),
+      onClick: function onClick() {
+        return openView(rec);
+      }
+    })), canEdit && rowEditable(rec) && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Edit"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.EditOutlined, {
+        style: {
+          color: ac('#2e7d32')
+        }
+      }),
+      onClick: function onClick() {
+        return openEdit(rec);
+      }
+    })), !isEmpty(rec.document_link) && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: docAction && docAction.label || 'Document'
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: _react["default"].cloneElement(docAction ? iconByName(docAction.icon) : /*#__PURE__*/_react["default"].createElement(_icons.FileOutlined, null), {
+        style: {
+          color: ac('#0288d1')
+        }
+      }),
+      onClick: function onClick() {
+        return doDocument(rec);
+      }
+    })), canCopy && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Copy"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CopyOutlined, {
+        style: {
+          color: ac('#546e7a')
+        }
+      }),
+      onClick: function onClick() {
+        return doCopy(rec.id);
+      }
+    })), rowDeletable(rec) && !cfg.deleteLast && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: cfg.deleteTip || 'Delete'
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: _react["default"].cloneElement(cfg.deleteIcon || /*#__PURE__*/_react["default"].createElement(_icons.DeleteOutlined, null), {
+        style: {
+          color: ac('#d32f2f')
+        }
+      }),
+      onClick: function onClick() {
+        return doDelete(rec);
+      }
+    })), isApprove && statusOptionsFor(rec).length > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Change Status"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: _react["default"].cloneElement(cfg.statusIcon || /*#__PURE__*/_react["default"].createElement(_icons.MonitorOutlined, null), {
+        style: {
+          color: ac('#1565c0')
+        }
+      }),
+      onClick: function onClick() {
+        return openStatus(rec);
+      }
+    })), canCancel && !cfg.hideCancelButton && rec.status === 'Approved' && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Cancel"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CloseCircleOutlined, {
+        style: {
+          color: ac('#d32f2f')
+        }
+      }),
+      onClick: function onClick() {
+        return doCancel(rec);
+      }
+    })), cfg.resubmitAction && typeof cfg.resubmitWhen === 'function' && cfg.resubmitWhen(rec) && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Re-submit"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.RedoOutlined, {
+        style: {
+          color: ac('#1565c0')
+        }
+      }),
+      onClick: function onClick() {
+        return doResubmit(rec);
+      }
+    })), hasLogs && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "View Logs"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.HistoryOutlined, {
+        style: {
+          color: ac('#546e7a')
+        }
+      }),
+      onClick: function onClick() {
+        return openLogs(rec);
+      }
+    })), (cfg.extraActions || []).filter(function (a) {
+      return !a.first;
+    }).map(function (a) {
+      return (typeof a.show === 'function' ? a.show(m, rec) : true) && typeof m[a.method] === 'function' ? /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+        key: a.key,
+        title: a.tip
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: _react["default"].cloneElement(a.icon, {
+          style: {
+            color: ac(a.color)
+          }
+        }),
+        onClick: function onClick() {
+          return m[a.method](rec.id, rec);
+        }
+      })) : null;
+    }), rowDeletable(rec) && cfg.deleteLast && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: cfg.deleteTip || 'Delete'
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: _react["default"].cloneElement(cfg.deleteIcon || /*#__PURE__*/_react["default"].createElement(_icons.DeleteOutlined, null), {
+        style: {
+          color: ac('#d32f2f')
+        }
+      }),
+      onClick: function onClick() {
+        return doDelete(rec);
+      }
+    })))));
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Pagination, {
+    current: page,
+    pageSize: pageSize,
+    total: total,
+    onChange: onPage,
+    showSizeChanger: !!(m && m.showPageSizeChanger),
+    pageSizeOptions: ['8', '16', '24', '50', '100'],
+    showTotal: function showTotal(t) {
+      return "".concat(t, " records");
+    }
+  }))), currentElement && m && typeof m.getTableChildComponents === 'function' && m.getTableChildComponents() && (cfg.childSelfModal // The child component renders its OWN modal (e.g. AttendanceModal,
+  // controlled by the `element` prop, closed via setCurrentElement(null)).
+  // Render it directly — wrapping it in our Modal would show two modals.
+  ? _react["default"].cloneElement(m.getTableChildComponents(), {
+    element: currentElement,
+    adapter: m,
+    loading: false
+  }) : /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    width: 1040,
+    style: {
+      top: 24
+    },
+    footer: null,
+    title: titleOf(currentElement),
+    onCancel: function onCancel() {
+      _setCurrentElement(null);
+
+      try {
+        if (m.hideElement) m.hideElement();
+      } catch (e) {
+        /* ignore */
+      }
+    },
+    styles: {
+      body: {
+        maxHeight: '82vh',
+        overflowY: 'auto'
+      }
+    }
+  }, _react["default"].cloneElement(m.getTableChildComponents(), {
+    element: currentElement,
+    adapter: m,
+    loading: false
+  }))), nativeDoc && /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    width: "92%",
+    style: {
+      top: 16,
+      maxWidth: 1280
+    },
+    footer: null,
+    title: docAction && docAction.label || 'Document',
+    onCancel: function onCancel() {
+      return setNativeDoc(null);
+    },
+    styles: {
+      body: {
+        padding: 16,
+        minHeight: '60vh',
+        maxHeight: '86vh',
+        overflowY: 'auto'
+      }
+    },
+    destroyOnClose: true
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    ref: nativeElRef
+  })), editorUrl && /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    width: "92%",
+    style: {
+      top: 16,
+      maxWidth: 1280
+    },
+    footer: null,
+    title: docAction && docAction.label || 'Document',
+    onCancel: function onCancel() {
+      setEditorUrl(null);
+      load();
+    },
+    styles: {
+      body: {
+        padding: 0,
+        height: '82vh'
+      }
+    },
+    destroyOnClose: true
+  }, /*#__PURE__*/_react["default"].createElement("iframe", {
+    title: docAction && docAction.label || 'Document',
+    src: editorUrl,
+    style: {
+      width: '100%',
+      height: '100%',
+      border: 0,
+      display: 'block'
+    },
+    onLoad: function onLoad(e) {
+      try {
+        var doc = e.target.contentDocument;
+
+        if (doc && doc.head) {
+          var style = doc.createElement('style');
+          style.textContent = EMBED_CSS;
+          doc.head.appendChild(style);
+        }
+      } catch (err) {
+        /* cross-origin — ignore */
+      }
+    }
+  })), statusRec && /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    title: "Change Status",
+    okText: "Update",
+    confirmLoading: statusSaving,
+    onOk: submitStatus,
+    okButtonProps: {
+      disabled: !statusValue || cfg.requireStatusReason && !statusReason.trim()
+    },
+    onCancel: function onCancel() {
+      return setStatusRec(null);
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 12,
+      paddingTop: 8
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 6,
+      color: token.colorTextSecondary
+    }
+  }, "New status"), /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    style: {
+      width: '100%'
+    },
+    value: statusValue,
+    onChange: setStatusValue,
+    options: statusOptionsFor(statusRec)
+  })), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 6,
+      color: token.colorTextSecondary
+    }
+  }, cfg.requireStatusReason && /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      color: token.colorError,
+      marginRight: 4
+    }
+  }, "*"), cfg.requireStatusReason ? 'Reason' : 'Reason (optional)'), /*#__PURE__*/_react["default"].createElement(_antd.Input.TextArea, {
+    rows: 3,
+    value: statusReason,
+    onChange: function onChange(e) {
+      return setStatusReason(e.target.value);
+    },
+    placeholder: "Add a note for this status change\u2026",
+    status: cfg.requireStatusReason && !statusReason.trim() ? 'error' : undefined
+  })))), logsState && /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    title: "Approval Log",
+    footer: null,
+    onCancel: function onCancel() {
+      return setLogsState(null);
+    }
+  }, logsState.loading ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      padding: 32
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, null)) : logsState.rows.length ? /*#__PURE__*/_react["default"].createElement(_antd.Timeline, {
+    items: logsState.rows.map(function (l) {
+      return {
+        children: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontWeight: 600
+          }
+        }, "".concat(l.status_from || '', " \u2192 ").concat(l.status_to || '')), /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            color: token.colorTextSecondary,
+            fontSize: 12
+          }
+        }, l.time), l.note ? /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            marginTop: 2
+          }
+        }, l.note) : null)
+      };
+    })
+  }) : /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "No approval history"
+  })), cfg.expenseDialog && /*#__PURE__*/_react["default"].createElement(_ExpenseDialog["default"], {
+    open: !!expenseDialog,
+    rec: expenseDialog ? expenseDialog.rec : null,
+    mode: expenseDialog ? expenseDialog.mode : 'view',
+    onClose: function onClose() {
+      return setExpenseDialog(null);
+    },
+    onSaved: function onSaved() {
+      return load();
+    },
+    shellConfig: shellConfig,
+    statusOptionsFor: cfg.dialogStatusChange ? statusOptionsForStatus : null
+  }), genCfg && /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    title: genCfg.label || 'Generate',
+    open: genOpen,
+    onCancel: function onCancel() {
+      return setGenOpen(false);
+    },
+    onOk: doGenerate,
+    okText: genCfg.label || 'Generate',
+    confirmLoading: generating,
+    okButtonProps: {
+      disabled: !genIndustry
+    }
+  }, /*#__PURE__*/_react["default"].createElement("p", {
+    style: {
+      marginTop: 0
+    }
+  }, "Select an industry to add a set of common ".concat(genCfg.itemsLabel || 'items', ". Existing entries are skipped.")), /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    style: {
+      width: '100%'
+    },
+    placeholder: "Select an industry",
+    loading: genLoading,
+    value: genIndustry,
+    onChange: setGenIndustry,
+    showSearch: true,
+    optionFilterProp: "label",
+    options: genIndustries.map(function (i) {
+      return {
+        value: i.key,
+        label: i.label
+      };
+    })
+  }), genCfg.allowDeleteExisting && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Checkbox, {
+    checked: genDelete,
+    onChange: function onChange(e) {
+      return setGenDelete(e.target.checked);
+    }
+  }, genCfg.deleteExistingLabel || 'Delete existing entries first'), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      color: token.colorTextSecondary,
+      fontSize: 12,
+      marginTop: 4,
+      marginLeft: 24
+    }
+  }, "Only entries not currently in use are removed; those in use are kept."))));
+}
+
+},{"./ExpenseDialog":6,"./theme":26,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],17:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NativeDocumentModal;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+// Lazy, idempotent loader for an extension bundle that exposes a native
+// document-mount function (e.g. the editor's window.mountEditorDocument). Mirrors
+// loadNativeBundle in NativeCardList — kept local so this modal has no coupling to
+// the card list.
+var DOC_CB = String(Date.now());
+var docBundles = {};
+
+function loadDocBundle(url) {
+  if (docBundles[url]) return docBundles[url];
+  var p = new Promise(function (resolve, reject) {
+    var s = document.createElement('script');
+    s.src = "".concat(url).concat(url.indexOf('?') >= 0 ? '&' : '?', "cb=").concat(DOC_CB);
+    s.async = false;
+
+    s.onload = function () {
+      return resolve();
+    };
+
+    s.onerror = function () {
+      s.remove();
+      reject(new Error("Failed to load ".concat(url)));
+    };
+
+    document.head.appendChild(s);
+  }); // Evict on failure so the next open retries instead of replaying the rejection.
+
+  docBundles[url] = p["catch"](function (e) {
+    delete docBundles[url];
+    throw e;
+  });
+  return docBundles[url];
+}
+/**
+ * Shell-level modal that mounts a native document editor for an arbitrary
+ * document URL (a legacy `g=extension&n=editor|user&...&hash=…` link). Used when
+ * something OUTSIDE a card list needs to open a document — e.g. clicking a task
+ * notification. It loads the editor bundle and calls its mountFn, snapshotting +
+ * restoring the shared window.modJs/modJsList globals the bundle clobbers (same
+ * contract as NativeCardList's native documentAction).
+ */
+// Load a list of bundle URLs strictly in order (each waits for the previous), so
+// dependency bundles register their modules before dependents run.
+
+
+function loadDocBundlesInOrder(urls) {
+  return urls.reduce(function (p, url) {
+    return p.then(function () {
+      return loadDocBundle(url);
+    });
+  }, Promise.resolve());
+}
+
+function NativeDocumentModal(_ref) {
+  var documentUrl = _ref.documentUrl,
+      bundle = _ref.bundle,
+      mountFn = _ref.mountFn,
+      title = _ref.title,
+      deps = _ref.deps,
+      shellConfig = _ref.shellConfig,
+      onClose = _ref.onClose;
+  var elRef = (0, _react.useRef)(null);
+  (0, _react.useEffect)(function () {
+    if (!documentUrl) return undefined;
+    var el = elRef.current;
+    if (!el) return undefined; // The editor bundle (EditorDocument / mountEditor) reads these globals. When
+    // the modal opens from a context that hasn't mounted a native module yet (e.g.
+    // the dashboard), they may be unset — seed them from the shell config so the
+    // bundle URL + REST calls resolve correctly.
+
+    if (shellConfig.baseUrl) window.BASE_URL = window.BASE_URL || shellConfig.baseUrl;
+    if (shellConfig.clientBaseUrl) window.CLIENT_BASE_URL = window.CLIENT_BASE_URL || shellConfig.clientBaseUrl; // Legacy adapter code (AdapterBase) reads a bare global `baseUrl` (the
+    // service.php endpoint) at construction. NativeModuleHost sets it per module;
+    // seed it here for the standalone case.
+
+    if (!window.baseUrl && shellConfig.clientBaseUrl) window.baseUrl = "".concat(shellConfig.clientBaseUrl, "service.php");
+    var savedModJsList = window.modJsList;
+    var savedModJs = window.modJs;
+    var cancelled = false;
+    var mountName = mountFn || 'mountEditorDocument';
+    var unmountName = mountName.replace('mount', 'unmount');
+    var webBase = window.BASE_URL || shellConfig.baseUrl || '';
+    var extBase = webBase.replace('/web/', '/extensions/');
+    var bundleUrl = bundle ? "".concat(extBase).concat(bundle) : null; // Vendor/dep bundles the extension bundle expects to already be registered
+    // (npm externals like moment). NativeModuleHost loads these before any module;
+    // when the modal opens standalone (from a notification) we must load them too.
+
+    var depUrls = (deps || []).map(function (d) {
+      return /^https?:\/\//.test(d) ? d : "".concat(webBase).concat(d);
+    });
+
+    var run = function run() {
+      var fn = window[mountName];
+
+      if (typeof fn === 'function') {
+        fn(el, {
+          documentUrl: documentUrl,
+          restApiBase: shellConfig.restApiBase,
+          token: shellConfig.token,
+          colorMode: window.__shellColorMode || 'light',
+          onClose: onClose
+        });
+      }
+    };
+
+    loadDocBundlesInOrder(depUrls).then(function () {
+      return bundleUrl ? loadDocBundle(bundleUrl) : Promise.resolve();
+    }).then(function () {
+      if (!cancelled) run();
+    })["catch"](function () {
+      /* ignore */
+    });
+    return function () {
+      cancelled = true;
+      var ufn = window[unmountName];
+
+      if (typeof ufn === 'function') {
+        try {
+          ufn(el);
+        } catch (e) {
+          /* ignore */
+        }
+      }
+
+      window.modJsList = savedModJsList;
+      window.modJs = savedModJs;
+    };
+  }, [documentUrl]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (!documentUrl) return null;
+  return /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    width: "92%",
+    style: {
+      top: 16,
+      maxWidth: 1280
+    },
+    footer: null,
+    title: title || 'Document',
+    onCancel: onClose,
+    styles: {
+      body: {
+        padding: 16,
+        minHeight: '60vh',
+        maxHeight: '86vh',
+        overflowY: 'auto'
+      }
+    },
+    destroyOnClose: true
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    ref: elRef
+  }));
+}
+
+},{"antd":"antd","react":"react"}],18:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NativeExtensionView;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _antd = require("antd");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/**
+ * Mounts a bespoke extension's own React view component natively (no iframe).
+ *
+ * Many extensions (team, esign, directory, …) are already full React UIs whose
+ * `module.js` does `ReactDOM.render(<TheView/>, #content)` — a SEPARATE React
+ * root that wouldn't inherit the shell theme. Instead, the extension exposes its
+ * view component on `window` (e.g. `window.TeamsAdminView`) and declares
+ * `viewGlobal` in its meta.json native tab; we render it INSIDE the shell tree so
+ * it inherits the active (light/dark) ConfigProvider for free.
+ *
+ * The extension's init() (run by NativeModuleHost before tabs render) has already
+ * created window.modJs + its controller and wired the API client, so the view's
+ * data fetching works exactly as in the legacy page.
+ */
+function NativeExtensionView(_ref) {
+  var viewGlobal = _ref.viewGlobal,
+      viewProps = _ref.viewProps;
+  var Comp = viewGlobal && typeof window !== 'undefined' ? window[viewGlobal] : null;
+
+  if (!Comp) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 32
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "View not available"
+    }));
+  } // Pass the props an extension's module.js typically passes its view. Defaults
+  // cover the common ones; `viewProps` (from the meta tab) maps any extra prop
+  // name -> window global, e.g. { adapter: 'modJs', controller: 'learnExtensionController' }.
+
+
+  var modJs = typeof window !== 'undefined' ? window.modJs : null;
+  var props = {
+    apiClient: modJs && modJs.apiClient,
+    ice: modJs,
+    modJs: modJs
+  };
+
+  if (viewProps && _typeof(viewProps) === 'object') {
+    Object.keys(viewProps).forEach(function (k) {
+      var g = viewProps[k];
+      props[k] = g === 'modJs' ? modJs : typeof window !== 'undefined' ? window[g] : undefined;
+    });
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(Comp, props);
+}
+
+},{"antd":"antd","react":"react"}],19:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NativeModuleHost;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactDom = _interopRequireDefault(require("react-dom"));
+
+var _antd = require("antd");
+
+var _theme = require("./theme");
+
+var _OrgChart = _interopRequireDefault(require("./OrgChart"));
+
+var _CompanyStructureCards = _interopRequireDefault(require("./CompanyStructureCards"));
+
+var _NativeCardList = _interopRequireDefault(require("./NativeCardList"));
+
+var _NativeExtensionView = _interopRequireDefault(require("./NativeExtensionView"));
+
+var _MobileApp = _interopRequireDefault(require("./MobileApp"));
+
+var _ApiAccess = _interopRequireDefault(require("./ApiAccess"));
+
+var _TimeSheets = _interopRequireDefault(require("./TimeSheets"));
+
+var _LeaveEntitlement = _interopRequireDefault(require("./LeaveEntitlement"));
+
+var _LeaveCalendar = _interopRequireDefault(require("./LeaveCalendar"));
+
+var _NativeAdapterView = _interopRequireDefault(require("./NativeAdapterView"));
+
+var _LicenseBlocked = _interopRequireDefault(require("./LicenseBlocked"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+// Tabs may declare a custom React component instead of mounting a legacy adapter.
+var TAB_COMPONENTS = {
+  OrgChart: _OrgChart["default"],
+  CompanyStructureCards: _CompanyStructureCards["default"],
+  NativeCardList: _NativeCardList["default"],
+  NativeExtensionView: _NativeExtensionView["default"],
+  MobileApp: _MobileApp["default"],
+  ApiAccess: _ApiAccess["default"],
+  TimeSheets: _TimeSheets["default"],
+  LeaveEntitlement: _LeaveEntitlement["default"],
+  LeaveCalendar: _LeaveCalendar["default"],
+  NativeAdapterView: _NativeAdapterView["default"]
+};
+/**
+ * Natively mounts a registered legacy/React module inside the shell — no iframe.
+ * It fetches /appshell/module-context, loads the module's JS bundles once, calls
+ * its global init() into shell-provided containers (the legacy `#<tab><suffix>`
+ * div ids), applies the context the legacy footer.php injects, then drives each
+ * tab's adapter (get / field master data) like the footer does. On unmount it
+ * tears the adapters down. SPA migration Phase 3.
+ */
+
+var loadedScripts = {};
+
+function loadScript(url) {
+  if (loadedScripts[url]) return loadedScripts[url];
+  var p = new Promise(function (resolve, reject) {
+    var s = document.createElement('script');
+    s.src = url;
+    s.async = false;
+
+    s.onload = function () {
+      return resolve();
+    };
+
+    s.onerror = function () {
+      s.remove();
+      reject(new Error("Failed to load ".concat(url)));
+    };
+
+    document.head.appendChild(s);
+  }); // Evict on failure — a cached rejection would otherwise brick the module for
+  // the lifetime of the page (every navigation replays it until a full refresh).
+
+  loadedScripts[url] = p["catch"](function (e) {
+    delete loadedScripts[url];
+    throw e;
+  });
+  return loadedScripts[url];
+}
+
+function loadScriptsSequential(urls) {
+  return urls.reduce(function (prev, u) {
+    return prev.then(function () {
+      return loadScript(u);
+    });
+  }, Promise.resolve());
+}
+
+function NativeModuleHost(_ref) {
+  var group = _ref.group,
+      name = _ref.name,
+      shellConfig = _ref.shellConfig;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      mc = _useState2[0],
+      setMc = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      failed = _useState4[0],
+      setFailed = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(true),
+      _useState6 = _slicedToArray(_useState5, 2),
+      booting = _useState6[0],
+      setBooting = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(null),
+      _useState8 = _slicedToArray(_useState7, 2),
+      activeTab = _useState8[0],
+      setActiveTab = _useState8[1];
+
+  var _useState9 = (0, _react.useState)(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      licenseBlocked = _useState10[0],
+      setLicenseBlocked = _useState10[1];
+
+  var _useState11 = (0, _react.useState)(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      retryTick = _useState12[0],
+      setRetryTick = _useState12[1];
+
+  var started = (0, _react.useRef)({});
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var isDark = token.colorBgContainer === _theme.MUI_DARK.paper; // Legacy adapter tabs render in their own React root (wrapped in shellThemeWrap,
+  // which captures the colour mode at render time), so they don't follow a live
+  // theme toggle. Re-render them when the mode flips.
+
+  var skipFirstThemeRun = (0, _react.useRef)(true);
+  (0, _react.useEffect)(function () {
+    if (skipFirstThemeRun.current) {
+      skipFirstThemeRun.current = false;
+      return;
+    }
+
+    if (!mc || !mc.config) return; // Ensure the global shellThemeWrap reads matches this render's mode — the
+    // index.js updater runs in a parent effect (after this child effect).
+
+    window.__shellColorMode = isDark ? 'dark' : 'light';
+    var list = window.modJsList || {};
+    (mc.config.tabs || []).forEach(function (t) {
+      // Adapter-drawn component tabs (NativeAdapterView, e.g. settings) render
+      // their own root too — re-render those on a flip as well.
+      var adapterDrawn = t.component === 'NativeAdapterView';
+      if (t.component && !adapterDrawn) return;
+      var m = list[t.key];
+      if (!m || typeof m.initTable !== 'function') return;
+      var mounted = adapterDrawn ? !!(m.containerOverrides && m.containerOverrides.Table) : started.current[t.key];
+
+      if (mounted) {
+        try {
+          m.tableInitialized = false;
+          m.initTable();
+        } catch (e) {
+          /* ignore */
+        }
+      }
+    }); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isDark]); // 1) fetch the module context
+
+  (0, _react.useEffect)(function () {
+    var alive = true;
+    setMc(null);
+    setFailed(false);
+    setBooting(true);
+    setLicenseBlocked(false);
+    started.current = {}; // try/catch because instrumented fetch (e.g. an injected monitoring agent's
+    // wrapper) can throw synchronously — without it that exception escapes the
+    // effect and the pane goes blank instead of showing the failure state.
+
+    try {
+      fetch("".concat(shellConfig.restApiBase, "appshell/module-context?group=").concat(encodeURIComponent(group), "&name=").concat(encodeURIComponent(name)), {
+        headers: {
+          Authorization: "Bearer ".concat(shellConfig.token)
+        },
+        credentials: 'same-origin'
+      }).then(function (r) {
+        return r.json();
+      }).then(function (d) {
+        if (alive) {
+          if (d && d.config) setMc(d);else setFailed(true);
+        }
+      })["catch"](function () {
+        if (alive) setFailed(true);
+      });
+    } catch (e) {
+      if (alive) setFailed(true);
+    }
+
+    return function () {
+      alive = false;
+    };
+  }, [group, name, shellConfig, retryTick]);
+
+  var startTab = function startTab(key) {
+    // Component tabs (e.g. the org chart) are pure React — no legacy adapter to drive.
+    var cfg = (mc && mc.config && mc.config.tabs ? mc.config.tabs : []).find(function (t) {
+      return t.key === key;
+    });
+    if (cfg && cfg.component) return;
+    var list = window.modJsList || {};
+    var m = list[key];
+    if (!m) return;
+    window.modJs = m;
+    if (started.current[key]) return;
+    started.current[key] = true;
+
+    try {
+      m.get([]);
+
+      if (!m.isV2) {
+        if (m.initialFilter != null) m.initFieldMasterData(null, m.setFilterExternal);else m.initFieldMasterData();
+      }
+    } catch (e) {
+      /* ignore */
+    }
+  }; // 2) once context is in and the tab divs are rendered: load scripts, init, wire
+
+
+  (0, _react.useEffect)(function () {
+    if (!mc || !mc.config) return undefined;
+    var destroyed = false;
+    var ctx = mc.context || {};
+    window.CLIENT_BASE_URL = ctx.clientUrl;
+    window.BASE_URL = ctx.webBaseUrl;
+    window.baseUrl = ctx.baseUrl;
+    var urls = (mc.config.scripts || []).map(function (s) {
+      return /^https?:\/\//.test(s) || s.startsWith('//') ? s : (ctx.webBaseUrl || '') + s;
+    });
+    loadScriptsSequential(urls).then(function () {
+      if (destroyed) return;
+      var initFn = window[mc.config.initFn];
+
+      if (typeof initFn !== 'function') {
+        setFailed(true);
+        return;
+      }
+
+      var isProModule = !!(window.iceProModules && window.iceProModules[mc.config.initFn]);
+      var lic = mc.license;
+
+      if (isProModule && lic && (!lic.has_license || lic.is_expired)) {
+        setLicenseBlocked(true);
+        setBooting(false);
+        return;
+      }
+
+      initFn(mc.data || {});
+      var list = window.modJsList || {};
+      Object.keys(list).forEach(function (k) {
+        var m = list[k];
+
+        try {
+          // Tag each adapter with the module it belongs to, so its data.php
+          // requests declare scope explicitly (fixes the shared-session
+          // modulePath data-scope bug — see docs/DATA_SCOPE_ISSUE.md).
+          m.spaModuleGroup = group;
+          m.spaModuleName = name;
+          m.setTranslations(ctx.translations || {});
+          m.setFieldTemplates(ctx.fieldTemplates || {});
+          m.setTemplates(ctx.templates || {});
+          m.setCustomTemplates(ctx.customTemplates || {});
+          m.setUser(ctx.user || {});
+          m.initSourceMappings();
+          m.setBaseUrl(ctx.baseUrl);
+          m.setClientUrl(ctx.clientUrl);
+          m.setCurrentProfile(null);
+          m.setInstanceId(ctx.instanceId || '');
+          m.setApiUrl(ctx.restApiBase);
+          m.setupApiClient(shellConfig.token);
+        } catch (e) {
+          /* ignore */
+        }
+      });
+      setBooting(false); // Default to the first tab, unless a caller requested a specific start tab
+      // (e.g. a dashboard tile deep-linking into a module's tab). The hint is
+      // consumed once and only if it matches a tab this module actually has.
+
+      var first = mc.config.tabs[0].key;
+
+      try {
+        var desired = window.__iceShellStartTab;
+
+        if (desired && mc.config.tabs.some(function (t) {
+          return t.key === desired;
+        })) {
+          first = desired;
+        }
+
+        window.__iceShellStartTab = null;
+      } catch (e) {
+        /* ignore */
+      }
+
+      setActiveTab(first);
+      startTab(first); // Seam for views INSIDE a module (e.g. the employee profile's
+      // Qualifications edit buttons) to switch this host's active tab —
+      // the legacy global switchTab() clicks a legacy tab anchor that does
+      // not exist in the SPA. Optionally applies a filter to the target
+      // tab's adapter (e.g. {employee: id}) before it loads/reloads.
+
+      window.iceShellSwitchModuleTab = function (key, filter) {
+        var list = window.modJsList || {};
+        var m = list[key];
+
+        if (m && filter && typeof m.setFilter === 'function') {
+          m.setFilter(filter);
+          m.filtersAlreadySet = true;
+        }
+
+        setActiveTab(key);
+        startTab(key); // Tab already mounted (e.g. a wired card list): refresh so the new
+        // filter takes effect and the filter tag shows.
+
+        try {
+          if (m && m.tableContainer && m.tableContainer.current) {
+            if (filter) m.tableContainer.current.setFilterData(filter);
+            m.tableContainer.current.reload();
+          }
+        } catch (e) {
+          /* ignore */
+        }
+
+        try {
+          window.scrollTo({
+            top: 0
+          });
+        } catch (e) {
+          /* ignore */
+        }
+      };
+    })["catch"](function () {
+      if (!destroyed) setFailed(true);
+    });
+    return function () {
+      destroyed = true;
+
+      try {
+        mc.config.tabs.forEach(function (t) {
+          return (t.ids || []).forEach(function (id) {
+            var el = document.getElementById(id);
+
+            if (el) {
+              try {
+                _reactDom["default"].unmountComponentAtNode(el);
+              } catch (e) {
+                /* */
+              }
+            }
+          });
+        });
+      } catch (e) {
+        /* */
+      }
+
+      delete window.iceShellSwitchModuleTab;
+      window.modJs = undefined;
+      window.modJsList = undefined;
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mc]);
+
+  if (failed) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 32,
+        textAlign: 'center'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "Could not load this module"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      type: "primary",
+      onClick: function onClick() {
+        return setRetryTick(function (t) {
+          return t + 1;
+        });
+      }
+    }, "Retry")));
+  }
+
+  if (!mc) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 80
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+  }
+
+  if (licenseBlocked) {
+    return /*#__PURE__*/_react["default"].createElement(_LicenseBlocked["default"], {
+      license: mc.license
+    });
+  } // A "group" (e.g. leaves' "For Approval" tabs about OTHER employees) is set
+  // off from the preceding tabs by a divider + caption on its first tab, and
+  // each grouped tab can carry a pending-count bubble.
+
+
+  var reviewTabs = mc.config.tabs.filter(function (t) {
+    return t.group === 'review';
+  });
+  var firstReviewKey = reviewTabs.length ? reviewTabs[0].key : null;
+  var groupLabel = reviewTabs.length ? reviewTabs[0].groupLabel || '' : '';
+
+  var renderTabLabel = function renderTabLabel(t) {
+    var badge = typeof t.count === 'number' && t.count > 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Badge, {
+      count: t.count,
+      size: "small",
+      overflowCount: 99,
+      style: {
+        marginLeft: 6
+      }
+    }) : null;
+
+    var inner = /*#__PURE__*/_react["default"].createElement("span", null, t.label, badge);
+
+    if (t.key && t.key === firstReviewKey) {
+      return /*#__PURE__*/_react["default"].createElement("span", {
+        style: {
+          display: 'inline-flex',
+          alignItems: 'center'
+        }
+      }, /*#__PURE__*/_react["default"].createElement("span", {
+        style: {
+          display: 'inline-block',
+          width: 1,
+          height: 18,
+          background: token.colorSplit,
+          marginRight: 14
+        }
+      }), groupLabel && /*#__PURE__*/_react["default"].createElement("span", {
+        style: {
+          fontSize: 11,
+          textTransform: 'uppercase',
+          letterSpacing: 0.6,
+          color: token.colorTextTertiary,
+          marginRight: 10,
+          fontWeight: 600
+        }
+      }, groupLabel), inner);
+    }
+
+    return inner;
+  };
+
+  var items = mc.config.tabs.map(function (t) {
+    if (t.component) {
+      var Comp = TAB_COMPONENTS[t.component]; // Only mount the native component AFTER init has run (booting === false),
+      // so window.modJs + its apiClient are in place. On SPA re-entry the bundle
+      // is already cached, so without this gate a bespoke view would mount and
+      // fetch before initFn re-ran (window.modJs was nulled on the prior unmount),
+      // showing an empty state. The booting overlay covers this brief gap.
+
+      return {
+        key: t.key,
+        label: renderTabLabel(t),
+        children: Comp && !booting ? /*#__PURE__*/_react["default"].createElement(Comp, {
+          shellConfig: shellConfig,
+          tabKey: t.key,
+          entity: t.entity,
+          cardConfig: t.card,
+          viewGlobal: t.viewGlobal,
+          viewProps: t.props
+        }) : null
+      };
+    } // Legacy adapter tabs render via their own React root; the adapter wraps that
+    // render in shellThemeWrap so it follows the shell's colour mode. Use the
+    // themed container surface so the legacy view sits on the right background.
+
+
+    return {
+      key: t.key,
+      label: renderTabLabel(t),
+      forceRender: true,
+      children: /*#__PURE__*/_react["default"].createElement("div", {
+        style: _objectSpread({
+          background: token.colorBgContainer,
+          color: token.colorText,
+          borderRadius: 10,
+          padding: 12,
+          minHeight: 320
+        }, t.scroll ? {
+          overflowX: 'auto'
+        } : {})
+      }, (t.ids || []).map(function (id) {
+        return /*#__PURE__*/_react["default"].createElement("div", {
+          id: id,
+          key: id,
+          className: "reviewBlock"
+        });
+      }))
+    };
+  });
+  var singleTab = items.length <= 1;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 24,
+      position: 'relative'
+    }
+  }, booting && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 2,
+      background: token.colorBgLayout,
+      opacity: 0.6
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+    size: "large"
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: token.colorBgContainer,
+      borderRadius: 14,
+      boxShadow: _theme.MUI_SHADOW,
+      padding: singleTab ? 20 : '4px 20px 20px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Tabs, {
+    activeKey: activeTab || items[0] && items[0].key,
+    onChange: function onChange(k) {
+      setActiveTab(k);
+      startTab(k);
+    },
+    items: items,
+    tabBarStyle: singleTab ? {
+      display: 'none'
+    } : {
+      marginBottom: 16
+    }
+  })));
+}
+
+},{"./ApiAccess":1,"./CompanyStructureCards":3,"./LeaveCalendar":9,"./LeaveEntitlement":10,"./LicenseBlocked":11,"./MobileApp":13,"./NativeAdapterView":15,"./NativeCardList":16,"./NativeExtensionView":18,"./OrgChart":22,"./TimeSheets":23,"./theme":26,"antd":"antd","react":"react","react-dom":"react-dom"}],20:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = News;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * News — shows an announcement from icehrm.com on the dashboard, mirroring the
+ * legacy dashboard "news" feature. The backend (appshell/news) fetches and
+ * caches icehrm.com's /sapi/news for the current version + user level and only
+ * returns an item when it's flagged to show and the user hasn't dismissed it.
+ * Dismissing suppresses it per user for `dismiss_period` seconds via the shared
+ * dismiss-news endpoint (UserMeta), the same store the legacy UI used.
+ */
+function News(_ref) {
+  var config = _ref.config;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      news = _useState2[0],
+      setNews = _useState2[1];
+
+  (0, _react.useEffect)(function () {
+    var cancelled = false;
+    fetch("".concat(config.restApiBase, "appshell/news"), {
+      headers: {
+        Authorization: "Bearer ".concat(config.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).then(function (item) {
+      if (!cancelled) setNews(item && item.id ? item : null);
+    })["catch"](function () {
+      /* no news on failure — same as legacy */
+    });
+    return function () {
+      cancelled = true;
+    };
+  }, [config.restApiBase, config.token]);
+
+  if (!news || !news.id) {
+    return null;
+  }
+
+  var dismiss = function dismiss() {
+    setNews(null);
+    fetch("".concat(config.restApiBase, "dismiss-news"), {
+      method: 'POST',
+      headers: {
+        Authorization: "Bearer ".concat(config.token),
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({
+        id: news.id,
+        period: news.dismiss_period || 86400
+      })
+    })["catch"](function () {
+      /* dismissal is best-effort */
+    });
+  };
+
+  return /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: "info",
+    showIcon: true,
+    style: {
+      margin: '16px 24px 0'
+    },
+    message: news.title,
+    description: news.message,
+    action: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, news.url && news.button_text ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "small",
+      type: "primary",
+      onClick: function onClick() {
+        return window.open(news.url, '_blank', 'noopener,noreferrer');
+      }
+    }, news.button_text) : null, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "small",
+      onClick: dismiss
+    }, "Dismiss"))
+  });
+}
+
+},{"antd":"antd","react":"react"}],21:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Notifications;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text; // Legacy tab anchors (used in notification action URLs) → native SPA tab keys,
+// where they differ. Anchors that already match a SPA tab key pass through.
+
+var LEGACY_TAB_ALIASES = {
+  // Leave module: legacy notification anchors (tab + mapping name) → native SPA
+  // tab keys, which the SPA rebuild shortened.
+  tabSubEmployeeLeaveAll: 'tabSubLeaveAll',
+  // "applied for a leave" → Leave Requests (Direct Reports)
+  tabEmployeeLeaveApproval: 'tabLeaveApproval',
+  // "assigned … for approval" → Approval Requests
+  tabEmployeeLeaveApproved: 'tabMyLeaveApproved',
+  // "leave approved" → Approved Leave
+  tabSubEmployeeLeaveCancel: 'tabSubLeaveCancel' // cancellation request → Leave Cancellation Requests
+
+}; // Notifications come from the legacy service.php (cookie session), the same
+// source the legacy top bar polled. The shell reuses it with credentials.
+
+function parseAction(action) {
+  try {
+    var a = typeof action === 'string' ? JSON.parse(action) : action;
+
+    if (a && a.type === 'url' && a.url) {
+      // The legacy anchor (e.g. #tabSubEmployeeLeaveAll) names the tab the
+      // notification should land on — strip it before query parsing.
+      var hashIdx = a.url.indexOf('#');
+      var frag = hashIdx >= 0 ? a.url.slice(hashIdx + 1) : null;
+      var urlNoFrag = hashIdx >= 0 ? a.url.slice(0, hashIdx) : a.url; // The url may be a full legacy URL or just a query string; parse the part
+      // after '?' so the first key isn't swallowed by the scheme/path.
+
+      var qs = urlNoFrag.indexOf('?') >= 0 ? urlNoFrag.split('?')[1] : urlNoFrag;
+      var sp = new URLSearchParams(qs);
+      var g = sp.get('g');
+      var n = sp.get('n'); // The editor extension is a document viewer, not a standalone module — it
+      // can't be mounted by route (it needs a hash/object). Open it in the native
+      // document modal instead (e.g. a "you were assigned a task list" link).
+
+      if (g === 'extension' && n === 'editor|user' && (sp.get('hash') || sp.get('object'))) {
+        return {
+          doc: a.url
+        };
+      }
+
+      if (g && n) {
+        var tab = frag ? LEGACY_TAB_ALIASES[frag] || frag : null;
+        return {
+          g: g,
+          n: n,
+          tab: tab
+        };
+      }
+    }
+  } catch (e) {
+    /* ignore */
+  }
+
+  return null;
+}
+
+function Notifications(_ref) {
+  var clientBaseUrl = _ref.clientBaseUrl,
+      onNavigate = _ref.onNavigate,
+      onOpenDocument = _ref.onOpenDocument;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var _useState = (0, _react.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      count = _useState2[0],
+      setCount = _useState2[1];
+
+  var _useState3 = (0, _react.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      list = _useState4[0],
+      setList = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      open = _useState6[0],
+      setOpen = _useState6[1];
+
+  var load = (0, _react.useCallback)(function () {
+    fetch("".concat(clientBaseUrl, "service.php?a=getNotifications"), {
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (j) {
+      if (j && j.data) {
+        setCount(j.data[0] || 0);
+        setList(Array.isArray(j.data[1]) ? j.data[1] : []);
+      }
+    })["catch"](function () {});
+  }, [clientBaseUrl]);
+  (0, _react.useEffect)(function () {
+    load();
+    var id = setInterval(load, 60000);
+    return function () {
+      return clearInterval(id);
+    };
+  }, [load]);
+
+  var clearAll = function clearAll() {
+    fetch("".concat(clientBaseUrl, "service.php?a=clearNotifications"), {
+      credentials: 'same-origin'
+    }).then(function () {
+      setCount(0);
+      load();
+    })["catch"](function () {});
+  };
+
+  var handleClick = function handleClick(item) {
+    var dest = parseAction(item.action);
+    setOpen(false);
+    if (!dest) return;
+
+    if (dest.doc && onOpenDocument) {
+      onOpenDocument(dest.doc);
+      return;
+    }
+
+    if (dest.g && onNavigate) {
+      if (dest.tab) {
+        // Land on the tab the notification points at (e.g. a leave application →
+        // "Leave Requests (Direct Reports)"). NativeModuleHost consumes the hint
+        // at module boot — and only if the module actually has that tab.
+        try {
+          window.__iceShellStartTab = dest.tab; // Already viewing that module? Switch its tab directly.
+
+          var cur = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+
+          if (cur === "".concat(dest.g, "::").concat(dest.n) && window.iceShellSwitchModuleTab) {
+            window.iceShellSwitchModuleTab(dest.tab);
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      }
+
+      onNavigate(dest.g, dest.n);
+    }
+  };
+
+  var panel = /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: 340,
+      maxHeight: 440,
+      overflow: 'auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: '4px 4px 10px',
+      borderBottom: "1px solid ".concat(token.colorBorderSecondary),
+      marginBottom: 4
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    strong: true
+  }, "Notifications"), list.length > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "link",
+    size: "small",
+    onClick: clearAll
+  }, "Mark all read")), list.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+    description: "No notifications",
+    style: {
+      padding: 16
+    }
+  }) : /*#__PURE__*/_react["default"].createElement(_antd.List, {
+    dataSource: list,
+    renderItem: function renderItem(item) {
+      return /*#__PURE__*/_react["default"].createElement(_antd.List.Item, {
+        style: {
+          padding: '10px 6px',
+          cursor: parseAction(item.action) ? 'pointer' : 'default'
+        },
+        onClick: function onClick() {
+          return handleClick(item);
+        }
+      }, /*#__PURE__*/_react["default"].createElement(_antd.List.Item.Meta, {
+        avatar: /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+          src: item.image,
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+          size: "small"
+        }),
+        title: /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            fontSize: 13,
+            fontWeight: 500
+          }
+        }, item.type || 'Notification'),
+        description: /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontSize: 13,
+            color: token.colorText
+          }
+        }, item.message), /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontSize: 11,
+            color: token.colorTextTertiary,
+            marginTop: 2
+          }
+        }, item.time))
+      }));
+    }
+  }));
+
+  return /*#__PURE__*/_react["default"].createElement(_antd.Popover, {
+    content: panel,
+    trigger: "click",
+    open: open,
+    onOpenChange: setOpen,
+    placement: "bottomRight"
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "text",
+    style: {
+      display: 'flex',
+      alignItems: 'center'
+    },
+    "aria-label": "Notifications"
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Badge, {
+    count: count,
+    size: "small",
+    overflowCount: 99
+  }, /*#__PURE__*/_react["default"].createElement(_icons.BellOutlined, {
+    style: {
+      fontSize: 18,
+      color: '#fff'
+    }
+  }))));
+}
+
+},{"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],22:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = OrgChart;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+// A clean, dependency-free top-down org chart (pure-CSS connectors) for the
+// company structure. Replaces the legacy d3 graph.
+var orgCss = function orgCss(token) {
+  return "\n.org-wrap { overflow-x: auto; padding: 12px 8px 24px; }\n.org-tree, .org-tree ul { position: relative; padding-top: 22px; display: flex; justify-content: center; }\n.org-tree ul { padding-left: 0; }\n.org-tree li {\n  list-style: none; position: relative; padding: 22px 10px 0; text-align: center;\n}\n.org-tree li::before, .org-tree li::after {\n  content: ''; position: absolute; top: 0; right: 50%;\n  border-top: 2px solid ".concat(token.colorBorderSecondary, "; width: 50%; height: 22px;\n}\n.org-tree li::after { right: auto; left: 50%; border-left: 2px solid ").concat(token.colorBorderSecondary, "; }\n.org-tree li:only-child::after, .org-tree li:only-child::before { display: none; }\n.org-tree li:only-child { padding-top: 0; }\n.org-tree li:first-child::before, .org-tree li:last-child::after { border: 0 none; }\n.org-tree li:last-child::before { border-right: 2px solid ").concat(token.colorBorderSecondary, "; border-radius: 0 6px 0 0; }\n.org-tree li:first-child::after { border-radius: 6px 0 0 0; }\n.org-tree ul ul::before {\n  content: ''; position: absolute; top: 0; left: 50%;\n  border-left: 2px solid ").concat(token.colorBorderSecondary, "; width: 0; height: 22px;\n}\n.org-node {\n  display: inline-flex; align-items: center; gap: 12px;\n  padding: 12px 16px; min-width: 180px; max-width: 240px;\n  background: ").concat(token.colorBgContainer, "; border: 1px solid ").concat(token.colorBorderSecondary, "; border-radius: 12px;\n  box-shadow: ").concat(_theme.MUI_SHADOW, "; text-align: left; transition: box-shadow .15s, transform .15s;\n}\n.org-node:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }\n.org-node .ic {\n  width: 38px; height: 38px; border-radius: 10px; flex: 0 0 auto;\n  display: flex; align-items: center; justify-content: center; font-size: 18px;\n}\n.org-node .ttl { font-weight: 600; font-size: 14px; line-height: 1.2; color: ").concat(token.colorText, "; }\n.org-node .sub { font-size: 12px; color: ").concat(token.colorTextSecondary, "; margin-top: 2px; }\n");
+};
+
+var TYPE_STYLE = {
+  Company: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.BankOutlined, null),
+    color: _theme.MUI.primary
+  },
+  'Head Office': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.HomeOutlined, null),
+    color: '#0288d1'
+  },
+  'Regional Office': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClusterOutlined, null),
+    color: '#7b1fa2'
+  },
+  Department: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#2e7d32'
+  },
+  Unit: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#ed6c02'
+  },
+  'Sub Unit': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#ed6c02'
+  },
+  Other: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#607d8b'
+  }
+};
+
+function nodeStyle(type) {
+  return TYPE_STYLE[type] || {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#607d8b'
+  };
+}
+
+function buildForest(nodes) {
+  var byId = {};
+  nodes.forEach(function (n) {
+    byId[n.id] = _objectSpread({}, n, {
+      children: []
+    });
+  });
+  var roots = [];
+  nodes.forEach(function (n) {
+    if (n.parent && byId[n.parent]) byId[n.parent].children.push(byId[n.id]);else roots.push(byId[n.id]);
+  });
+  return roots;
+}
+
+function NodeCard(_ref) {
+  var node = _ref.node;
+  var st = nodeStyle(node.type);
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "org-node"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "ic",
+    style: {
+      background: "".concat(st.color, "18"),
+      color: st.color
+    }
+  }, st.icon), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "ttl"
+  }, node.title), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "sub"
+  }, node.type || 'Unit', node.headcount > 0 && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, ' · ', /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, {
+    style: {
+      fontSize: 11
+    }
+  }), ' ', node.headcount))));
+}
+
+function TreeNode(_ref2) {
+  var node = _ref2.node;
+  return /*#__PURE__*/_react["default"].createElement("li", null, /*#__PURE__*/_react["default"].createElement(NodeCard, {
+    node: node
+  }), node.children && node.children.length > 0 && /*#__PURE__*/_react["default"].createElement("ul", null, node.children.map(function (c) {
+    return /*#__PURE__*/_react["default"].createElement(TreeNode, {
+      key: c.id,
+      node: c
+    });
+  })));
+}
+
+function OrgChart(_ref3) {
+  var shellConfig = _ref3.shellConfig;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      nodes = _useState2[0],
+      setNodes = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      err = _useState4[0],
+      setErr = _useState4[1];
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  (0, _react.useEffect)(function () {
+    var alive = true;
+    fetch("".concat(shellConfig.restApiBase, "appshell/org-structure"), {
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (alive) setNodes(d && d.nodes || []);
+    })["catch"](function () {
+      if (alive) setErr(true);
+    });
+    return function () {
+      alive = false;
+    };
+  }, [shellConfig]);
+  if (err) return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "Could not load the org chart"
+  });
+  if (!nodes) return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      padding: 60
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, null));
+  if (nodes.length === 0) return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "No company structure defined yet"
+  });
+  var roots = buildForest(nodes);
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("style", null, orgCss(token)), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "org-wrap"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "org-tree"
+  }, /*#__PURE__*/_react["default"].createElement("ul", null, roots.map(function (r) {
+    return /*#__PURE__*/_react["default"].createElement(TreeNode, {
+      key: r.id,
+      node: r
+    });
+  })))));
+}
+
+},{"./theme":26,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],23:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = TimeSheets;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text,
+    Title = _antd.Typography.Title;
+var STATUS_COLORS = {
+  Pending: 'orange',
+  Submitted: 'blue',
+  Approved: 'green',
+  Rejected: 'red'
+};
+var MANAGER_LEVELS = ['Admin', 'Manager', 'Restricted Admin', 'Restricted Manager'];
+var MODULE = 'modules=time_sheets';
+var DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+var ctx = function ctx() {
+  return typeof window !== 'undefined' && window.__timesheetsCtx || {};
+};
+
+var adapters = function adapters() {
+  return typeof window !== 'undefined' && window.modJsList || {};
+};
+
+function fmtDate(d) {
+  if (!d) return '';
+  var dt = new Date("".concat(String(d).slice(0, 10), "T00:00:00"));
+  if (Number.isNaN(dt.getTime())) return d;
+  return dt.toLocaleDateString(undefined, {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
+}
+
+function parseDT(s) {
+  if (!s) return null;
+  var dt = new Date(String(s).replace(' ', 'T'));
+  return Number.isNaN(dt.getTime()) ? null : dt;
+}
+
+function fmtTime(dt) {
+  return dt ? dt.toLocaleTimeString(undefined, {
+    hour: '2-digit',
+    minute: '2-digit'
+  }) : '';
+}
+
+function duration(start, end) {
+  var a = parseDT(start);
+  var b = parseDT(end);
+  if (!a || !b) return '';
+  var min = Math.max(0, Math.round((b - a) / 60000));
+  return "".concat(Math.floor(min / 60), "h ").concat(min % 60, "m");
+} // Run an adapter custom action and resolve with the server payload.
+
+
+var actionSeq = 0;
+
+function callAction(adapter, action, req) {
+  var isPost = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  return new Promise(function (resolve, reject) {
+    if (!adapter || typeof adapter.customAction !== 'function') {
+      reject(new Error('no adapter'));
+      return;
+    }
+
+    actionSeq += 1;
+    var okName = "__ts_ok_".concat(actionSeq);
+    var failName = "__ts_fail_".concat(actionSeq);
+
+    adapter[okName] = function (payload) {
+      return resolve(payload);
+    };
+
+    adapter[failName] = function (payload) {
+      return reject(payload || new Error('action failed'));
+    };
+
+    var cb = {
+      callBackData: [],
+      callBackSuccess: okName,
+      callBackFail: failName
+    };
+
+    try {
+      adapter.customAction(action, MODULE, JSON.stringify(req || {}), cb, isPost);
+    } catch (e) {
+      reject(e);
+    }
+  });
+}
+
+function TimeSheets() {
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var isManager = MANAGER_LEVELS.indexOf(ctx().userLevel) !== -1;
+
+  var _useState = (0, _react.useState)('list'),
+      _useState2 = _slicedToArray(_useState, 2),
+      view = _useState2[0],
+      setView = _useState2[1]; // 'list' | 'grid' | 'calendar'
+
+
+  var _useState3 = (0, _react.useState)('All'),
+      _useState4 = _slicedToArray(_useState3, 2),
+      tab = _useState4[0],
+      setTab = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      reportEmp = _useState6[0],
+      setReportEmp = _useState6[1]; // Direct Reports employee filter
+
+
+  var _useState7 = (0, _react.useState)(['Submitted']),
+      _useState8 = _slicedToArray(_useState7, 2),
+      reportStatuses = _useState8[0],
+      setReportStatuses = _useState8[1]; // visible statuses
+
+
+  var _useState9 = (0, _react.useState)([]),
+      _useState10 = _slicedToArray(_useState9, 2),
+      selectedReportIds = _useState10[0],
+      setSelectedReportIds = _useState10[1]; // bulk-approve selection
+
+
+  var _useState11 = (0, _react.useState)(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      bulkApproving = _useState12[0],
+      setBulkApproving = _useState12[1];
+
+  var _useState13 = (0, _react.useState)(null),
+      _useState14 = _slicedToArray(_useState13, 2),
+      myRows = _useState14[0],
+      setMyRows = _useState14[1];
+
+  var _useState15 = (0, _react.useState)(null),
+      _useState16 = _slicedToArray(_useState15, 2),
+      reportRows = _useState16[0],
+      setReportRows = _useState16[1];
+
+  var _useState17 = (0, _react.useState)({}),
+      _useState18 = _slicedToArray(_useState17, 2),
+      reportLeave = _useState18[0],
+      setReportLeave = _useState18[1]; // { timesheetId: leaveDays }
+
+
+  var _useState19 = (0, _react.useState)(false),
+      _useState20 = _slicedToArray(_useState19, 2),
+      reportLeaveOn = _useState20[0],
+      setReportLeaveOn = _useState20[1]; // leave module installed?
+
+
+  var _useState21 = (0, _react.useState)(null),
+      _useState22 = _slicedToArray(_useState21, 2),
+      busyId = _useState22[0],
+      setBusyId = _useState22[1];
+
+  var _useState23 = (0, _react.useState)(null),
+      _useState24 = _slicedToArray(_useState23, 2),
+      statusModal = _useState24[0],
+      setStatusModal = _useState24[1];
+
+  var _useState25 = (0, _react.useState)(null),
+      _useState26 = _slicedToArray(_useState25, 2),
+      current = _useState26[0],
+      setCurrent = _useState26[1]; // { id, date_start, date_end, status, readOnly }
+  // Grid state
+
+
+  var _useState27 = (0, _react.useState)(null),
+      _useState28 = _slicedToArray(_useState27, 2),
+      grid = _useState28[0],
+      setGrid = _useState28[1];
+
+  var _useState29 = (0, _react.useState)({}),
+      _useState30 = _slicedToArray(_useState29, 2),
+      edits = _useState30[0],
+      setEdits = _useState30[1];
+
+  var _useState31 = (0, _react.useState)([]),
+      _useState32 = _slicedToArray(_useState31, 2),
+      leaveDays = _useState32[0],
+      setLeaveDays = _useState32[1]; // [{ date:'Y-m-d', type, half }]
+
+
+  var _useState33 = (0, _react.useState)(false),
+      _useState34 = _slicedToArray(_useState33, 2),
+      gridLoading = _useState34[0],
+      setGridLoading = _useState34[1];
+
+  var _useState35 = (0, _react.useState)(false),
+      _useState36 = _slicedToArray(_useState35, 2),
+      saving = _useState36[0],
+      setSaving = _useState36[1]; // Calendar / entries state
+
+
+  var _useState37 = (0, _react.useState)(null),
+      _useState38 = _slicedToArray(_useState37, 2),
+      cal = _useState38[0],
+      setCal = _useState38[1]; // { entries, employee, timesheet }
+
+
+  var _useState39 = (0, _react.useState)(false),
+      _useState40 = _slicedToArray(_useState39, 2),
+      calLoading = _useState40[0],
+      setCalLoading = _useState40[1];
+
+  var _useState41 = (0, _react.useState)([]),
+      _useState42 = _slicedToArray(_useState41, 2),
+      tsLogs = _useState42[0],
+      setTsLogs = _useState42[1]; // approval log entries (newest first)
+
+
+  var _useState43 = (0, _react.useState)(null),
+      _useState44 = _slicedToArray(_useState43, 2),
+      rejectModal = _useState44[0],
+      setRejectModal = _useState44[1]; // { id, note } | null
+  // ---- list loading -------------------------------------------------------
+
+
+  var loadMine = (0, _react.useCallback)(function () {
+    var a = adapters().tabEmployeeTimeSheetAll;
+
+    if (!a || !a.dataPipe) {
+      setMyRows([]);
+      return;
+    }
+
+    setMyRows(null);
+    a.dataPipe.get({
+      page: 1,
+      limit: 500,
+      search: ''
+    }).then(function (d) {
+      return setMyRows(d && d.items || []);
+    })["catch"](function () {
+      return setMyRows([]);
+    });
+  }, []);
+  var loadReports = (0, _react.useCallback)(function () {
+    var a = adapters().tabSubEmployeeTimeSheetAll;
+
+    if (!a || !a.dataPipe) {
+      setReportRows([]);
+      return;
+    }
+
+    setReportRows(null);
+    a.dataPipe.get({
+      page: 1,
+      limit: 500,
+      search: ''
+    }).then(function (d) {
+      var items = d && d.items || [];
+      setReportRows(items); // Leave time per timesheet (only when the leave module is installed).
+
+      var ids = items.map(function (r) {
+        return r.id;
+      });
+
+      if (ids.length) {
+        callAction(a, 'getLeaveDaysCountForTimeSheets', {
+          ids: ids
+        }).then(function (res) {
+          setReportLeaveOn(!!(res && res.available));
+          setReportLeave(res && res.counts || {});
+        })["catch"](function () {
+          setReportLeaveOn(false);
+          setReportLeave({});
+        });
+      } else {
+        setReportLeaveOn(false);
+        setReportLeave({});
+      }
+    })["catch"](function () {
+      return setReportRows([]);
+    });
+  }, []);
+  (0, _react.useEffect)(function () {
+    loadMine();
+    if (isManager) loadReports();
+  }, [loadMine, loadReports, isManager]);
+
+  var reloadList = function reloadList() {
+    if (tab === 'Reports') loadReports();else loadMine();
+  };
+
+  var backToList = function backToList() {
+    setView('list');
+    setCurrent(null);
+    setGrid(null);
+    setCal(null);
+    setEdits({});
+    reloadList();
+  }; // ---- grid (Edit) --------------------------------------------------------
+
+
+  var openGrid = function openGrid(ts) {
+    var qt = adapters().tabQtsheet;
+    if (!qt) return;
+    qt.setCurrentTimeSheetId(ts.id);
+    setCurrent(_objectSpread({}, ts, {
+      readOnly: false
+    }));
+    setEdits({});
+    setGrid(null);
+    setLeaveDays([]);
+    setView('grid');
+    setGridLoading(true);
+    callAction(qt, 'getAllData', {
+      rowTable: 'Project',
+      columnTable: 'QTDays',
+      valueTable: 'EmployeeTimeEntry',
+      currentId: ts.id,
+      save: 0
+    }).then(function (d) {
+      setGrid({
+        projects: d[0] || [],
+        dates: d[1] || [],
+        entries: d[2] || []
+      });
+      setGridLoading(false);
+    })["catch"](function () {
+      setGridLoading(false);
+
+      _antd.message.error('Could not load the timesheet grid', 5);
+    });
+    callAction(qt, 'getLeaveDaysForTimeSheet', {
+      id: ts.id
+    }).then(function (d) {
+      return setLeaveDays(Array.isArray(d) ? d : []);
+    })["catch"](function () {
+      return setLeaveDays([]);
+    });
+  }; // ---- calendar / entries (View) -----------------------------------------
+
+
+  var openCalendar = function openCalendar(ts, isReport) {
+    var a = isReport ? adapters().tabSubEmployeeTimeSheetAll : adapters().tabEmployeeTimeSheetAll;
+    var entryAdapter = adapters().tabEmployeeTimeEntry;
+    var sm = entryAdapter && entryAdapter.getSourceMapping ? JSON.stringify(entryAdapter.getSourceMapping()) : '';
+    setCurrent(_objectSpread({}, ts, {
+      readOnly: true,
+      isReport: !!isReport
+    }));
+    setCal(null);
+    setTsLogs([]);
+    setView('calendar');
+    setCalLoading(true);
+    callAction(a, 'getTimeEntries', {
+      id: ts.id,
+      sm: sm
+    }).then(function (d) {
+      setCal({
+        entries: d[0] || [],
+        employee: d[1] || {},
+        timesheet: d[2] || {}
+      });
+      setCalLoading(false);
+    })["catch"](function () {
+      setCalLoading(false);
+
+      _antd.message.error('Could not load timesheet entries', 5);
+    });
+    callAction(a, 'getTimeSheetLogs', {
+      id: ts.id
+    }).then(function (d) {
+      return setTsLogs(Array.isArray(d) ? d : []);
+    })["catch"](function () {
+      return setTsLogs([]);
+    });
+  };
+
+  var reloadCalendar = function reloadCalendar() {
+    if (current) openCalendar(current, current.isReport);
+  }; // ---- row / status actions ----------------------------------------------
+
+
+  var rowAction = function rowAction(adapter, action, id, okMsg) {
+    setBusyId(id);
+    callAction(adapter, action, {
+      id: id
+    }, true).then(function () {
+      _antd.message.success(okMsg);
+
+      loadMine();
+    })["catch"](function (e) {
+      return _antd.message.error(e && e.message || "Could not ".concat(action), 5);
+    })["finally"](function () {
+      return setBusyId(null);
+    });
+  };
+
+  var doBulkApprove = function doBulkApprove() {
+    var a = adapters().tabSubEmployeeTimeSheetAll || adapters().tabEmployeeTimeSheetAll;
+    if (!a || !selectedReportIds.length) return;
+    setBulkApproving(true);
+    callAction(a, 'bulkApproveTimeSheets', {
+      ids: selectedReportIds
+    }, true).then(function (res) {
+      var n = res && res.approved || 0;
+
+      _antd.message.success("".concat(n, " timesheet").concat(n === 1 ? '' : 's', " approved"));
+
+      setSelectedReportIds([]);
+      loadReports();
+    })["catch"](function () {
+      return _antd.message.error('Could not approve the selected timesheets', 5);
+    })["finally"](function () {
+      return setBulkApproving(false);
+    });
+  };
+
+  var changeStatus = function changeStatus(id, status, after, note) {
+    var a = adapters().tabSubEmployeeTimeSheetAll || adapters().tabEmployeeTimeSheetAll;
+    setBusyId(id);
+    return callAction(a, 'changeTimeSheetStatus', {
+      id: id,
+      status: status,
+      note: note || ''
+    }, true).then(function () {
+      _antd.message.success("Timesheet ".concat(status.toLowerCase()));
+
+      if (after) after();
+    })["catch"](function () {
+      return _antd.message.error('Could not change status', 5);
+    })["finally"](function () {
+      return setBusyId(null);
+    });
+  };
+
+  var deleteEntry = function deleteEntry(entryId) {
+    var e = adapters().tabEmployeeTimeEntry;
+    if (!e || typeof e.cleanDelete !== 'function') return;
+    e.cleanDelete(entryId, function (httpStatus, status) {
+      if (httpStatus === 200 && status === 'SUCCESS') {
+        _antd.message.success('Entry deleted');
+
+        reloadCalendar();
+      } else _antd.message.error('Could not delete entry', 5);
+    });
+  }; // ---- grid helpers -------------------------------------------------------
+
+
+  var realProjects = (0, _react.useMemo)(function () {
+    return grid ? grid.projects.filter(function (p) {
+      return p.id !== -1 && p.id !== '-1';
+    }) : [];
+  }, [grid]);
+  var cellValue = (0, _react.useCallback)(function (projectId, dateId) {
+    var key = "".concat(dateId, "=").concat(projectId);
+    if (key in edits) return edits[key];
+    if (!grid) return '';
+    var e = grid.entries.find(function (x) {
+      return x.project === projectId && x.date === dateId;
+    });
+    return e && e.amount != null ? e.amount : '';
+  }, [edits, grid]);
+  var colTotal = (0, _react.useCallback)(function (dateId) {
+    return realProjects.reduce(function (s, p) {
+      var v = parseFloat(cellValue(p.id, dateId));
+      return s + (Number.isNaN(v) ? 0 : v);
+    }, 0);
+  }, [realProjects, cellValue]);
+  var rowTotal = (0, _react.useCallback)(function (projectId) {
+    return grid ? grid.dates.reduce(function (s, d) {
+      var v = parseFloat(cellValue(projectId, d.id));
+      return s + (Number.isNaN(v) ? 0 : v);
+    }, 0) : 0;
+  }, [grid, cellValue]);
+  var editable = current && !current.readOnly && current.status !== 'Approved';
+
+  var setCell = function setCell(projectId, dateId, value) {
+    return setEdits(function (p) {
+      return _objectSpread({}, p, _defineProperty({}, "".concat(dateId, "=").concat(projectId), value == null ? '' : value));
+    });
+  }; // Map a leave day to a readable label + its per-day hour cap.
+
+
+  var leaveDayInfo = function leaveDayInfo(ld) {
+    var dt = new Date("".concat(String(ld.date).slice(0, 10), "T00:00:00"));
+    var dateStr = Number.isNaN(dt.getTime()) ? ld.date : dt.toLocaleDateString(undefined, {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric'
+    });
+    var kind = 'Full Day';
+
+    if (ld.half) {
+      var part = /morning/i.test(ld.type) ? 'Morning' : /after|evening/i.test(ld.type) ? 'Afternoon' : 'Half Day';
+      kind = "Half Day \xB7 ".concat(part);
+    }
+
+    return {
+      dateStr: dateStr,
+      kind: kind,
+      cap: ld.half ? 4 : 0
+    };
+  };
+
+  var persist = function persist(action) {
+    var qt = adapters().tabQtsheet;
+    if (!qt || !current) return;
+    var over = grid.dates.find(function (d) {
+      return colTotal(d.id) > 24;
+    });
+
+    if (over) {
+      _antd.message.error("Total hours for ".concat(over.name, " exceed 24."), 5);
+
+      return;
+    } // On save AND submit, block time logged on approved-leave days (full day:
+    // none; half day: up to 4h). The backend enforces the same rule.
+
+
+    if (leaveDays.length) {
+      var violations = leaveDays.map(function (ld) {
+        return {
+          ld: ld,
+          total: colTotal(ld.date)
+        };
+      }).filter(function (_ref) {
+        var ld = _ref.ld,
+            total = _ref.total;
+        return total > (ld.half ? 4 : 0);
+      });
+
+      if (violations.length) {
+        _antd.Modal.error({
+          title: 'Time logged on leave days',
+          content: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("p", null, "You cannot ".concat(action === 'updateAllData' ? 'submit' : 'save', " \u2014 these days have approved leave:")), /*#__PURE__*/_react["default"].createElement("ul", {
+            style: {
+              paddingLeft: 18,
+              margin: 0
+            }
+          }, violations.map(function (_ref2) {
+            var ld = _ref2.ld,
+                total = _ref2.total;
+            var info = leaveDayInfo(ld);
+            return /*#__PURE__*/_react["default"].createElement("li", {
+              key: ld.date,
+              style: {
+                marginBottom: 4
+              }
+            }, /*#__PURE__*/_react["default"].createElement("b", null, info.dateStr), " \u2014 ", info.kind, ": ", ld.half ? "max 4h allowed, you logged ".concat(total, "h") : "no time allowed, you logged ".concat(total, "h"));
+          })))
+        });
+
+        return;
+      }
+    }
+
+    var req = {
+      rowTable: 'Project',
+      columnTable: 'QTDays',
+      valueTable: 'EmployeeTimeEntry',
+      currentId: current.id
+    };
+    Object.keys(edits).forEach(function (key) {
+      var _key$split = key.split('='),
+          _key$split2 = _slicedToArray(_key$split, 2),
+          dateId = _key$split2[0],
+          projectId = _key$split2[1];
+
+      req[key] = [dateId, projectId, "".concat(edits[key] === '' || edits[key] == null ? 0 : edits[key])];
+    });
+    setSaving(true);
+    callAction(qt, action, req, true).then(function () {
+      _antd.message.success(action === 'updateAllData' ? 'Timesheet submitted' : 'Timesheet saved');
+
+      setEdits({});
+      var newStatus = action === 'updateAllData' ? 'Submitted' : current.status;
+      openGrid(_objectSpread({}, current, {
+        status: newStatus
+      }));
+    })["catch"](function () {
+      return _antd.message.error('Could not save the timesheet', 5);
+    })["finally"](function () {
+      return setSaving(false);
+    });
+  };
+
+  var download = function download() {
+    if (!grid) return;
+    var header = ['Project'].concat(_toConsumableArray(grid.dates.map(function (d) {
+      return d.name;
+    })), ['Total']);
+    var lines = [header.join(',')];
+    realProjects.forEach(function (p) {
+      return lines.push([JSON.stringify(p.name)].concat(_toConsumableArray(grid.dates.map(function (d) {
+        return cellValue(p.id, d.id) || 0;
+      })), [rowTotal(p.id)]).join(','));
+    });
+    lines.push(['Total'].concat(_toConsumableArray(grid.dates.map(function (d) {
+      return colTotal(d.id);
+    })), ['']).join(','));
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([lines.join('\r\n')], {
+      type: 'text/csv;charset=utf-8'
+    }));
+    a.download = "timesheet_".concat(current.id, ".csv");
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+
+  var statusTag = function statusTag(s) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+      color: STATUS_COLORS[s] || 'default'
+    }, s);
+  }; // ---- list view ----------------------------------------------------------
+
+
+  var renderList = function renderList() {
+    var reports = tab === 'Reports';
+    var all = reports ? reportRows : myRows;
+    if (all === null) return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        textAlign: 'center',
+        padding: 60
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+    var rows = reports ? all : tab === 'All' ? all : all.filter(function (r) {
+      return r.status === tab;
+    });
+    if (reports && reportEmp) rows = rows.filter(function (r) {
+      return r.employee === reportEmp;
+    });
+    if (reports) rows = rows.filter(function (r) {
+      return reportStatuses.indexOf(r.status) !== -1;
+    });
+    var columns = [].concat(_toConsumableArray(reports ? [{
+      title: 'Employee',
+      dataIndex: 'employee',
+      key: 'employee'
+    }] : []), [{
+      title: 'Period',
+      key: 'period',
+      render: function render(_, r) {
+        return /*#__PURE__*/_react["default"].createElement(Text, {
+          strong: true
+        }, "".concat(fmtDate(r.date_start), " \u2013 ").concat(fmtDate(r.date_end)));
+      }
+    }, {
+      title: 'Total Time',
+      dataIndex: 'total_time',
+      key: 'total_time',
+      render: function render(t) {
+        return /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+          size: 4
+        }, /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null), t || '00:00');
+      }
+    }], _toConsumableArray(reports && reportLeaveOn ? [{
+      title: 'Leave Time',
+      key: 'leave_time',
+      render: function render(_, r) {
+        var d = reportLeave[r.id] || 0;
+        return d > 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+          color: "gold",
+          style: {
+            margin: 0
+          }
+        }, "".concat(d, " day").concat(d === 1 ? '' : 's')) : /*#__PURE__*/_react["default"].createElement(Text, {
+          type: "secondary"
+        }, "\u2014");
+      }
+    }] : []), [{
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'status',
+      render: statusTag
+    }, {
+      title: 'Actions',
+      key: 'actions',
+      // Clicks on action buttons must not trigger the row's view action.
+      render: function render(_, r) {
+        return /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+          wrap: true,
+          onClick: function onClick(e) {
+            return e.stopPropagation();
+          }
+        }, !reports && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+          title: "Edit hours grid"
+        }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+          size: "small",
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.EditOutlined, null),
+          onClick: function onClick() {
+            return openGrid(r);
+          }
+        })), reports && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+          size: "small",
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.AuditOutlined, null),
+          onClick: function onClick() {
+            return setStatusModal({
+              id: r.id,
+              value: 'Approved'
+            });
+          }
+        }, "Status"), !reports && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+          title: "Create the previous week's timesheet"
+        }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+          size: "small",
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.StepBackwardOutlined, null),
+          loading: busyId === r.id,
+          onClick: function onClick() {
+            return rowAction(adapters().tabEmployeeTimeSheetAll, 'createPreviousTimesheet', r.id, 'Previous timesheet created');
+          }
+        }, "Previous Week")), /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+          title: "Create the next week's timesheet"
+        }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+          size: "small",
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.StepForwardOutlined, null),
+          loading: busyId === r.id,
+          onClick: function onClick() {
+            return rowAction(adapters().tabEmployeeTimeSheetAll, 'createNextWeekTimesheet', r.id, 'Next timesheet created');
+          }
+        }, "Next Week"))));
+      }
+    }]);
+    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, reports && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: 8,
+        marginBottom: 14
+      }
+    }, /*#__PURE__*/_react["default"].createElement(Text, {
+      type: "secondary",
+      style: {
+        marginRight: 4
+      }
+    }, "Show status:"), /*#__PURE__*/_react["default"].createElement(_antd.Checkbox.Group, {
+      value: reportStatuses,
+      onChange: setReportStatuses,
+      options: ['Pending', 'Submitted', 'Approved', 'Rejected'].map(function (s) {
+        return {
+          label: s,
+          value: s
+        };
+      })
+    }), selectedReportIds.length > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      type: "primary",
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+      loading: bulkApproving,
+      style: {
+        marginLeft: 'auto'
+      },
+      onClick: doBulkApprove
+    }, "Approve ".concat(selectedReportIds.length, " selected"))), /*#__PURE__*/_react["default"].createElement(_antd.Table, _extends({
+      rowKey: "id",
+      size: "middle",
+      columns: columns,
+      dataSource: rows,
+      pagination: {
+        pageSize: 10,
+        hideOnSinglePage: true
+      },
+      scroll: {
+        x: 'max-content'
+      },
+      onRow: function onRow(r) {
+        return {
+          onClick: function onClick() {
+            return openCalendar(r, reports);
+          },
+          style: {
+            cursor: 'pointer'
+          }
+        };
+      },
+      locale: {
+        emptyText: /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+          image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+          description: "No timesheets"
+        })
+      }
+    }, reports ? {
+      rowSelection: {
+        selectedRowKeys: selectedReportIds,
+        onChange: setSelectedReportIds,
+        // Only Submitted timesheets are approvable in bulk.
+        getCheckboxProps: function getCheckboxProps(r) {
+          return {
+            disabled: r.status !== 'Submitted'
+          };
+        }
+      }
+    } : {})));
+  }; // ---- grid view ----------------------------------------------------------
+
+
+  var renderGrid = function renderGrid() {
+    if (gridLoading || !grid) return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        textAlign: 'center',
+        padding: 60
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+    var columns = [{
+      title: 'Project',
+      dataIndex: 'name',
+      key: 'name',
+      fixed: 'left',
+      width: 200,
+      render: function render(n) {
+        return /*#__PURE__*/_react["default"].createElement(Text, {
+          strong: true
+        }, n);
+      }
+    }].concat(_toConsumableArray(grid.dates.map(function (d) {
+      return {
+        title: d.name,
+        key: d.id,
+        align: 'center',
+        width: 96,
+        render: function render(_, p) {
+          var ed = editable && d.editable !== 'No';
+          var val = cellValue(p.id, d.id);
+          if (!ed) return /*#__PURE__*/_react["default"].createElement("span", null, val === '' || val == null ? '–' : val);
+          return /*#__PURE__*/_react["default"].createElement(_antd.InputNumber, {
+            size: "small",
+            min: 0,
+            max: 24,
+            step: 0.5,
+            controls: false,
+            value: val === '' ? null : Number(val),
+            onChange: function onChange(v) {
+              return setCell(p.id, d.id, v);
+            },
+            style: {
+              width: 70
+            }
+          });
+        }
+      };
+    })), [{
+      title: 'Total',
+      key: 'rowtotal',
+      align: 'center',
+      fixed: 'right',
+      width: 80,
+      render: function render(_, p) {
+        return /*#__PURE__*/_react["default"].createElement(Text, {
+          strong: true
+        }, rowTotal(p.id).toFixed(2).replace(/\.00$/, ''));
+      }
+    }]);
+    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Table, {
+      rowKey: "id",
+      size: "small",
+      bordered: true,
+      columns: columns,
+      dataSource: realProjects,
+      pagination: false,
+      scroll: {
+        x: 'max-content'
+      },
+      locale: {
+        emptyText: /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+          image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+          description: "No projects assigned"
+        })
+      },
+      summary: function summary() {
+        return /*#__PURE__*/_react["default"].createElement(_antd.Table.Summary, {
+          fixed: true
+        }, /*#__PURE__*/_react["default"].createElement(_antd.Table.Summary.Row, null, /*#__PURE__*/_react["default"].createElement(_antd.Table.Summary.Cell, {
+          index: 0
+        }, /*#__PURE__*/_react["default"].createElement(Text, {
+          strong: true
+        }, "Total")), grid.dates.map(function (d, i) {
+          var t = colTotal(d.id);
+          return /*#__PURE__*/_react["default"].createElement(_antd.Table.Summary.Cell, {
+            key: d.id,
+            index: i + 1,
+            align: "center"
+          }, /*#__PURE__*/_react["default"].createElement(Text, {
+            strong: true,
+            style: {
+              color: t > 24 ? token.colorError : undefined
+            }
+          }, t.toFixed(2).replace(/\.00$/, '')));
+        }), /*#__PURE__*/_react["default"].createElement(_antd.Table.Summary.Cell, {
+          index: grid.dates.length + 1,
+          align: "center"
+        }, /*#__PURE__*/_react["default"].createElement(Text, {
+          strong: true
+        }, realProjects.reduce(function (s, p) {
+          return s + rowTotal(p.id);
+        }, 0).toFixed(2).replace(/\.00$/, '')))));
+      }
+    }), leaveDays.length > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+      type: "warning",
+      showIcon: true,
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CoffeeOutlined, null),
+      style: {
+        marginTop: 16,
+        borderRadius: 10
+      },
+      message: /*#__PURE__*/_react["default"].createElement(Text, {
+        strong: true
+      }, "You have approved leave this week"),
+      description: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: 8,
+          margin: '8px 0'
+        }
+      }, leaveDays.map(function (ld) {
+        var info = leaveDayInfo(ld);
+        return /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+          key: ld.date,
+          color: ld.half ? 'gold' : 'volcano',
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+          style: {
+            padding: '3px 12px',
+            borderRadius: 14,
+            fontSize: 13,
+            margin: 0
+          }
+        }, /*#__PURE__*/_react["default"].createElement("b", null, info.dateStr), ' · ', info.kind);
+      })), /*#__PURE__*/_react["default"].createElement(Text, {
+        type: "secondary",
+        style: {
+          fontSize: 12.5
+        }
+      }, "No time can be logged on a full-day leave; up to 4 hours on a half-day leave."))
+    }));
+  }; // ---- calendar / entries view -------------------------------------------
+
+
+  var fmtHM = function fmtHM(min) {
+    return min > 0 ? "".concat(Math.floor(min / 60), "h").concat(min % 60 ? " ".concat(min % 60, "m") : '') : '0h';
+  };
+
+  var entryMin = function entryMin(e) {
+    var a = parseDT(e.date_start);
+    var b = parseDT(e.date_end);
+    return a && b ? Math.max(0, Math.round((b - a) / 60000)) : 0;
+  };
+
+  var renderCalendar = function renderCalendar() {
+    if (calLoading || !cal) return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        textAlign: 'center',
+        padding: 60
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+    var start = parseDT(current.date_start);
+    var todayKey = new Date().toISOString().slice(0, 10);
+    var days = Array.from({
+      length: 7
+    }, function (_, i) {
+      var d = new Date(start);
+      d.setDate(start.getDate() + i);
+      var key = d.toISOString().slice(0, 10);
+      return {
+        key: key,
+        dayName: DAY_NAMES[d.getDay()],
+        dayNum: d.getDate(),
+        mon: d.toLocaleDateString(undefined, {
+          month: 'short'
+        }),
+        isToday: key === todayKey,
+        isWeekend: d.getDay() === 0 || d.getDay() === 6,
+        entries: [],
+        minutes: 0
+      };
+    });
+    var totalMin = 0;
+    cal.entries.forEach(function (e) {
+      var k = String(e.date_start || '').slice(0, 10);
+      var min = entryMin(e);
+      var day = days.find(function (dd) {
+        return dd.key === k;
+      });
+
+      if (day) {
+        day.entries.push(e);
+        day.minutes += min;
+      }
+
+      totalMin += min;
+    });
+    var daysWorked = days.filter(function (d) {
+      return d.minutes > 0;
+    }).length;
+    var entryCount = cal.entries.length;
+    var canDelete = !current.isReport && current.status !== 'Approved';
+
+    var Stat = function Stat(_ref3) {
+      var icon = _ref3.icon,
+          label = _ref3.label,
+          value = _ref3.value,
+          accent = _ref3.accent;
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          flex: '1 1 130px',
+          minWidth: 130,
+          background: token.colorFillQuaternary,
+          borderRadius: 12,
+          padding: '12px 16px'
+        }
+      }, /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          fontSize: 12,
+          color: token.colorTextSecondary,
+          marginBottom: 3
+        }
+      }, label), /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          fontSize: 22,
+          fontWeight: 700,
+          lineHeight: 1.1,
+          color: accent || token.colorText,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 7
+        }
+      }, icon, value));
+    };
+
+    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        gap: 12,
+        flexWrap: 'wrap',
+        marginBottom: 18
+      }
+    }, /*#__PURE__*/_react["default"].createElement(Stat, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+      label: "Total logged",
+      value: fmtHM(totalMin),
+      accent: token.colorPrimary
+    }), /*#__PURE__*/_react["default"].createElement(Stat, {
+      label: "Entries",
+      value: entryCount
+    }), /*#__PURE__*/_react["default"].createElement(Stat, {
+      label: "Days worked",
+      value: "".concat(daysWorked, " / 7")
+    }), /*#__PURE__*/_react["default"].createElement(Stat, {
+      label: "Avg / working day",
+      value: daysWorked ? fmtHM(Math.round(totalMin / daysWorked)) : '0h'
+    })), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        overflowX: 'auto'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        minWidth: 760,
+        borderRadius: 12,
+        overflow: 'hidden',
+        border: "1px solid ".concat(token.colorBorderSecondary)
+      }
+    }, days.map(function (d, i) {
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        key: d.key,
+        style: {
+          flex: 1,
+          minWidth: 106,
+          borderRight: i < 6 ? "1px solid ".concat(token.colorBorderSecondary) : 'none',
+          background: d.isWeekend ? token.colorFillQuaternary : token.colorBgContainer
+        }
+      }, /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          textAlign: 'center',
+          padding: '8px 4px',
+          background: d.isToday ? token.colorPrimary : token.colorFillSecondary,
+          color: d.isToday ? '#fff' : token.colorText,
+          borderBottom: "1px solid ".concat(token.colorBorderSecondary)
+        }
+      }, /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          fontSize: 10.5,
+          textTransform: 'uppercase',
+          letterSpacing: 0.6,
+          opacity: 0.85
+        }
+      }, d.dayName), /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          fontSize: 17,
+          fontWeight: 700,
+          lineHeight: 1.15
+        }
+      }, d.dayNum), /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          fontSize: 10.5,
+          opacity: 0.8
+        }
+      }, d.mon)), /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          textAlign: 'center',
+          padding: '4px 0',
+          fontSize: 12,
+          fontWeight: 700,
+          color: d.minutes > 0 ? token.colorPrimary : token.colorTextQuaternary,
+          borderBottom: "1px dashed ".concat(token.colorBorderSecondary)
+        }
+      }, d.minutes > 0 ? fmtHM(d.minutes) : '—'), /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          minHeight: 78,
+          padding: '6px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 5
+        }
+      }, d.entries.map(function (e) {
+        return /*#__PURE__*/_react["default"].createElement("div", {
+          key: e.id,
+          style: {
+            background: token.colorPrimaryBg,
+            border: "1px solid ".concat(token.colorPrimaryBorder),
+            borderRadius: 7,
+            padding: '4px 7px',
+            fontSize: 11.5
+          }
+        }, /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontWeight: 600,
+            display: 'flex',
+            justifyContent: 'space-between',
+            gap: 4
+          }
+        }, /*#__PURE__*/_react["default"].createElement("span", null, fmtTime(parseDT(e.date_start))), /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            color: token.colorPrimary
+          }
+        }, fmtHM(entryMin(e)))), /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            color: token.colorTextSecondary,
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+          }
+        }, e.project && e.project !== 'null' ? e.project : 'No project'));
+      }), d.entries.length === 0 && /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          textAlign: 'center',
+          color: token.colorTextQuaternary,
+          fontSize: 11,
+          paddingTop: 6
+        }
+      }, "\u2014")));
+    }))), /*#__PURE__*/_react["default"].createElement(Text, {
+      strong: true,
+      style: {
+        display: 'block',
+        margin: '20px 0 8px'
+      }
+    }, "All entries (".concat(entryCount, ")")), /*#__PURE__*/_react["default"].createElement(_antd.Table, {
+      rowKey: "id",
+      size: "small",
+      dataSource: cal.entries,
+      pagination: false,
+      locale: {
+        emptyText: /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+          image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+          description: "No time entries"
+        })
+      },
+      columns: [{
+        title: 'Start',
+        key: 'start',
+        render: function render(_, e) {
+          var d = parseDT(e.date_start);
+          return d ? "".concat(d.toLocaleDateString(), " ").concat(fmtTime(d)) : '-';
+        }
+      }, {
+        title: 'End',
+        key: 'end',
+        render: function render(_, e) {
+          var d = parseDT(e.date_end);
+          return d ? "".concat(d.toLocaleDateString(), " ").concat(fmtTime(d)) : '-';
+        }
+      }, {
+        title: 'Duration',
+        key: 'dur',
+        render: function render(_, e) {
+          return /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+            color: "blue",
+            style: {
+              margin: 0
+            }
+          }, fmtHM(entryMin(e)));
+        }
+      }, {
+        title: 'Project',
+        key: 'project',
+        render: function render(_, e) {
+          return e.project && e.project !== 'null' ? e.project : /*#__PURE__*/_react["default"].createElement(Text, {
+            type: "secondary"
+          }, "No project");
+        }
+      }, {
+        title: 'Details',
+        dataIndex: 'details',
+        key: 'details',
+        ellipsis: true,
+        render: function render(t) {
+          return t || /*#__PURE__*/_react["default"].createElement(Text, {
+            type: "secondary"
+          }, "\u2014");
+        }
+      }].concat(_toConsumableArray(canDelete ? [{
+        title: '',
+        key: 'del',
+        width: 50,
+        render: function render(_, e) {
+          return /*#__PURE__*/_react["default"].createElement(_antd.Popconfirm, {
+            title: "Delete this entry?",
+            onConfirm: function onConfirm() {
+              return deleteEntry(e.id);
+            },
+            okText: "Delete",
+            okButtonProps: {
+              danger: true
+            }
+          }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+            size: "small",
+            type: "text",
+            danger: true,
+            icon: /*#__PURE__*/_react["default"].createElement(_icons.DeleteOutlined, null)
+          }));
+        }
+      }] : []))
+    }), tsLogs.length > 0 && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        marginTop: 24
+      }
+    }, /*#__PURE__*/_react["default"].createElement(Text, {
+      strong: true,
+      style: {
+        display: 'block',
+        marginBottom: 12
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_icons.HistoryOutlined, {
+      style: {
+        marginRight: 6
+      }
+    }), "Approval Log"), /*#__PURE__*/_react["default"].createElement(_antd.Timeline, {
+      items: tsLogs.map(function (l, i) {
+        return {
+          color: l.status_to === 'Approved' ? 'green' : l.status_to === 'Rejected' ? 'red' : 'blue',
+          key: i,
+          children: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+            style: {
+              fontWeight: 600
+            }
+          }, "".concat(l.status_from || '', " \u2192 ").concat(l.status_to || '')), /*#__PURE__*/_react["default"].createElement("div", {
+            style: {
+              color: token.colorTextSecondary,
+              fontSize: 12
+            }
+          }, l.time), l.note && l.note.trim() ? /*#__PURE__*/_react["default"].createElement("div", {
+            style: {
+              marginTop: 2
+            }
+          }, l.note.trim()) : null)
+        };
+      })
+    })));
+  }; // ---- top-level ----------------------------------------------------------
+
+
+  if (view === 'grid' && current) {
+    var canSubmit = editable && current.status !== 'Submitted';
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 8
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      style: {
+        borderRadius: 14
+      },
+      title: /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+        wrap: true
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.ArrowLeftOutlined, null),
+        onClick: backToList
+      }, "Back"), /*#__PURE__*/_react["default"].createElement(Title, {
+        level: 5,
+        style: {
+          margin: 0
+        }
+      }, "".concat(fmtDate(current.date_start), " \u2013 ").concat(fmtDate(current.date_end))), statusTag(current.status)),
+      extra: /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+        wrap: true
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+        onClick: download
+      }, "Download"), editable && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.SaveOutlined, null),
+        loading: saving,
+        onClick: function onClick() {
+          return persist('updateData');
+        }
+      }, "Save"), canSubmit && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        type: "primary",
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+        loading: saving,
+        onClick: function onClick() {
+          return persist('updateAllData');
+        }
+      }, "Submit"))
+    }, renderGrid()));
+  }
+
+  if (view === 'calendar' && current) {
+    var emp = cal && cal.employee || {};
+    var ts = cal && cal.timesheet || {};
+    var isReport = current.isReport;
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 8
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      style: {
+        borderRadius: 14
+      },
+      styles: {
+        header: {
+          paddingTop: 12,
+          paddingBottom: 12
+        }
+      },
+      title: /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+        wrap: true,
+        size: "middle"
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.ArrowLeftOutlined, null),
+        onClick: backToList
+      }, "Back"), /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+        size: 40,
+        src: emp.image,
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null)
+      }), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8
+        }
+      }, /*#__PURE__*/_react["default"].createElement(Title, {
+        level: 5,
+        style: {
+          margin: 0
+        }
+      }, emp.name || 'My Timesheet'), statusTag(ts.status || current.status)), /*#__PURE__*/_react["default"].createElement(Text, {
+        type: "secondary",
+        style: {
+          fontSize: 12.5,
+          fontWeight: 400
+        }
+      }, "".concat(fmtDate(current.date_start), " \u2013 ").concat(fmtDate(current.date_end))))),
+      extra: isReport ? /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+        wrap: true
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        type: "primary",
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+        loading: busyId === current.id,
+        onClick: function onClick() {
+          return changeStatus(current.id, 'Approved', backToList);
+        }
+      }, "Approve"), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        danger: true,
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.CloseCircleOutlined, null),
+        loading: busyId === current.id,
+        onClick: function onClick() {
+          return setRejectModal({
+            id: current.id,
+            note: ''
+          });
+        }
+      }, "Reject")) : null
+    }, renderCalendar()), /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+      title: "Reject Timesheet",
+      open: !!rejectModal,
+      okText: "Reject",
+      okButtonProps: {
+        danger: true
+      },
+      confirmLoading: busyId === (rejectModal && rejectModal.id),
+      onOk: function onOk() {
+        var rm = rejectModal;
+        setRejectModal(null);
+        changeStatus(rm.id, 'Rejected', backToList, rm.note);
+      },
+      onCancel: function onCancel() {
+        return setRejectModal(null);
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        marginBottom: 6,
+        color: token.colorTextSecondary
+      }
+    }, "Note (optional)"), /*#__PURE__*/_react["default"].createElement(_antd.Input.TextArea, {
+      rows: 3,
+      value: rejectModal ? rejectModal.note : '',
+      onChange: function onChange(e) {
+        return setRejectModal(function (m) {
+          return _objectSpread({}, m, {
+            note: e.target.value
+          });
+        });
+      },
+      placeholder: "Add a note explaining why this timesheet is rejected\u2026"
+    })));
+  }
+
+  var segOptions = [{
+    label: 'All My Timesheets',
+    value: 'All'
+  }, {
+    label: 'Approved',
+    value: 'Approved'
+  }, {
+    label: 'Pending',
+    value: 'Pending'
+  }, {
+    label: 'Rejected',
+    value: 'Rejected'
+  }].concat(_toConsumableArray(isManager ? [{
+    label: 'Direct Reports - Time Sheets',
+    value: 'Reports'
+  }] : []));
+  var reportEmployees = Array.from(new Set((reportRows || []).map(function (r) {
+    return r.employee;
+  }).filter(Boolean))).sort();
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 8
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    style: {
+      borderRadius: 14
+    },
+    styles: {
+      body: {
+        paddingTop: 16
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+    style: {
+      width: '100%',
+      justifyContent: 'space-between',
+      marginBottom: 16
+    },
+    wrap: true
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      overflowX: 'auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Segmented, {
+    options: segOptions,
+    value: tab,
+    onChange: function onChange(t) {
+      setSelectedReportIds([]);
+      setTab(t);
+    }
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+    wrap: true
+  }, tab === 'Reports' && /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    allowClear: true,
+    showSearch: true,
+    placeholder: "All employees",
+    style: {
+      minWidth: 200
+    },
+    value: reportEmp || undefined,
+    onChange: function onChange(v) {
+      return setReportEmp(v || null);
+    },
+    options: reportEmployees.map(function (e) {
+      return {
+        value: e,
+        label: e
+      };
+    })
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReloadOutlined, null),
+    onClick: reloadList
+  }, "Refresh"))), renderList()), /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    title: "Change Timesheet Status",
+    open: !!statusModal,
+    onCancel: function onCancel() {
+      return setStatusModal(null);
+    },
+    onOk: function onOk() {
+      return changeStatus(statusModal.id, statusModal.value, function () {
+        setStatusModal(null);
+        loadReports();
+      }, statusModal && statusModal.note);
+    },
+    confirmLoading: busyId === (statusModal && statusModal.id),
+    okText: "Change Status"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 8
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary"
+  }, "Timesheet Status")), /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    style: {
+      width: '100%'
+    },
+    value: statusModal && statusModal.value,
+    onChange: function onChange(v) {
+      return setStatusModal(function (m) {
+        return _objectSpread({}, m, {
+          value: v
+        });
+      });
+    },
+    options: ['Approved', 'Pending', 'Rejected', 'Submitted'].map(function (s) {
+      return {
+        value: s,
+        label: s
+      };
+    })
+  }), statusModal && statusModal.value === 'Rejected' && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginTop: 14
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 6
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary"
+  }, "Note (optional)")), /*#__PURE__*/_react["default"].createElement(_antd.Input.TextArea, {
+    rows: 3,
+    value: statusModal.note || '',
+    onChange: function onChange(e) {
+      return setStatusModal(function (m) {
+        return _objectSpread({}, m, {
+          note: e.target.value
+        });
+      });
+    },
+    placeholder: "Add a note explaining why this timesheet is rejected\u2026"
+  }))));
+}
+
+},{"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],24:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = UpdateAvailableBanner;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _antd = require("antd");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var DISMISS_KEY = 'icehrm-update-banner-dismissed';
+/**
+ * "A newer IceHRM is available" banner.
+ *
+ * The payload is built server-side by Classes\UpdateAvailability and is null unless the
+ * signed-in user is an administrator AND the marketplace snapshot advertises a version
+ * newer than the installed one — so there is no version comparison, and no notion of
+ * who may see this, in the browser.
+ *
+ * Dismissal is per browser session and keyed on the version, so it comes back when a
+ * newer release appears and after the next sign-in, but does not nag on every dashboard
+ * visit in between.
+ *
+ * The Update link is single-use in spirit: it carries a signature that expires two hours
+ * after the page was rendered. Opening it in a new tab keeps the admin's IceHRM session
+ * intact, which matters because the updater deliberately runs its own separate session.
+ */
+
+function UpdateAvailableBanner(_ref) {
+  var updateAvailable = _ref.updateAvailable;
+  var version = updateAvailable ? updateAvailable.latestVersion : null;
+
+  var _React$useState = _react["default"].useState(function () {
+    if (!version) return false;
+
+    try {
+      return window.sessionStorage.getItem(DISMISS_KEY) === version;
+    } catch (e) {
+      return false;
+    }
+  }),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      dismissed = _React$useState2[0],
+      setDismissed = _React$useState2[1];
+
+  if (!updateAvailable || dismissed) return null;
+  var currentVersion = updateAvailable.currentVersion,
+      latestVersion = updateAvailable.latestVersion,
+      changelogUrl = updateAvailable.changelogUrl,
+      updaterUrl = updateAvailable.updaterUrl;
+
+  var dismiss = function dismiss() {
+    try {
+      window.sessionStorage.setItem(DISMISS_KEY, latestVersion);
+    } catch (e) {// Private browsing or a full quota: dismissing for this render is enough.
+    }
+
+    setDismissed(true);
+  };
+
+  return /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: "info",
+    banner: true,
+    showIcon: true,
+    closable: true,
+    onClose: dismiss,
+    style: {
+      padding: '18px 28px',
+      alignItems: 'center',
+      marginBottom: 16
+    },
+    message: /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        lineHeight: 1.35
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 17,
+        fontWeight: 700,
+        marginBottom: 3
+      }
+    }, "IceHRM ", latestVersion, " is available"), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 14,
+        opacity: 0.9
+      }
+    }, "You are running ", currentVersion, ". Updating replaces the program files; your settings, uploads and data are kept, and the previous version is backed up so the update can be undone.")),
+    action: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, changelogUrl ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "large",
+      href: changelogUrl,
+      target: "_blank",
+      rel: "noopener noreferrer"
+    }, "What's New") : null, updaterUrl ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "large",
+      type: "primary",
+      href: updaterUrl,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      style: {
+        fontWeight: 600
+      }
+    }, "Update") : null)
+  });
+}
+
+},{"antd":"antd","react":"react"}],25:[function(require,module,exports){
+"use strict";
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactDom = _interopRequireDefault(require("react-dom"));
+
+var _antd = require("antd");
+
+var _AppShell = _interopRequireDefault(require("./AppShell"));
+
+var _theme = require("./theme");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * App shell entry (SPA migration Phase 1).
+ * Reads bootstrap config injected by core/spa-shell.php, fetches /appshell/bootstrap
+ * with the JWT, and renders the persistent shell.
+ */
+function readConfig() {
+  var el = document.getElementById('app-shell-config');
+  if (!el) return {};
+
+  try {
+    return JSON.parse(el.textContent || '{}');
+  } catch (e) {
+    return {};
+  }
+}
+
+var COLOR_MODE_KEY = 'shell-color-mode';
+
+function readColorMode() {
+  try {
+    var saved = localStorage.getItem(COLOR_MODE_KEY);
+    if (saved === 'dark' || saved === 'light') return saved;
+  } catch (e) {}
+  /* ignore */
+  // Fall back to the OS preference the first time.
+
+
+  try {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+  } catch (e) {
+    /* ignore */
+  }
+
+  return 'light';
+} // Keep the document background (visible during loads / outside React) in sync
+// with the active mode, so there is no light flash in dark mode.
+
+
+function applyBodyBackground(mode) {
+  var bg = mode === 'dark' ? _theme.MUI_DARK.bg : _theme.MUI.bg;
+  var fg = mode === 'dark' ? _theme.MUI_DARK.text : _theme.MUI.text;
+
+  try {
+    document.documentElement.style.background = bg;
+    document.body.style.background = bg;
+    document.body.style.color = fg;
+    document.body.setAttribute('data-color-mode', mode); // Exposed so legacy adapter modals (rendered in their own React roots,
+    // outside this ConfigProvider) can theme themselves to match — see
+    // ReactModalAdapterBase.shellThemeWrap().
+
+    window.__shellColorMode = mode;
+  } catch (e) {
+    /* ignore */
+  }
+} // A tiny stateful wrapper so the in-app toggle can re-theme the whole shell.
+
+
+function ThemedShell(_ref) {
+  var bootstrap = _ref.bootstrap,
+      config = _ref.config;
+
+  var _React$useState = _react["default"].useState(readColorMode),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      mode = _React$useState2[0],
+      setMode = _React$useState2[1];
+
+  _react["default"].useEffect(function () {
+    applyBodyBackground(mode);
+  }, [mode]);
+
+  var toggleColorMode = _react["default"].useCallback(function () {
+    setMode(function (prev) {
+      var next = prev === 'dark' ? 'light' : 'dark';
+
+      try {
+        localStorage.setItem(COLOR_MODE_KEY, next);
+      } catch (e) {
+        /* ignore */
+      }
+
+      return next;
+    });
+  }, []);
+
+  return _react["default"].createElement(_antd.ConfigProvider, {
+    theme: (0, _theme.buildTheme)(mode)
+  }, _react["default"].createElement(_AppShell["default"], {
+    bootstrap: bootstrap,
+    config: config,
+    colorMode: mode,
+    onToggleColorMode: toggleColorMode
+  }));
+}
+
+function renderRaw(children) {
+  _reactDom["default"].render(_react["default"].createElement(_antd.ConfigProvider, {
+    theme: (0, _theme.buildTheme)(readColorMode())
+  }, children), document.getElementById('app-shell-root'));
+} // NOTE: intentionally using Promise chains (not async/await) so the bundle does
+// not depend on regeneratorRuntime, which is not provided by the vendor bundles.
+
+
+function boot() {
+  applyBodyBackground(readColorMode());
+  var config = readConfig();
+  fetch("".concat(config.restApiBase, "appshell/bootstrap"), {
+    headers: {
+      Authorization: "Bearer ".concat(config.token)
+    },
+    credentials: 'same-origin'
+  }).then(function (res) {
+    if (!res.ok) {
+      throw new Error("bootstrap failed: ".concat(res.status));
+    }
+
+    return res.json();
+  }).then(function (bootstrap) {
+    _reactDom["default"].render(_react["default"].createElement(ThemedShell, {
+      bootstrap: bootstrap,
+      config: config
+    }), document.getElementById('app-shell-root'));
+  })["catch"](function (err) {
+    // eslint-disable-next-line no-console
+    console.error('[app-shell] boot failed', err);
+    renderRaw(_react["default"].createElement('div', {
+      style: {
+        padding: 24
+      }
+    }, "Failed to load the app shell: ".concat(err.message)));
+
+    try {
+      _antd.message.error('Failed to load the app shell');
+    } catch (e) {
+      /* noop */
+    }
+  });
+}
+
+boot();
+
+},{"./AppShell":2,"./theme":26,"antd":"antd","react":"react","react-dom":"react-dom"}],26:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.buildTheme = buildTheme;
+exports.MUI_THEME = exports.MUI_SHADOW_HOVER = exports.MUI_SHADOW = exports.SIDEBAR_BG = exports.MUI_DARK = exports.MUI = void 0;
+
+var _antd = require("antd");
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var MUI = {
+  primary: '#1976d2',
+  primaryDark: '#1565c0',
+  success: '#2e7d32',
+  warning: '#ed6c02',
+  error: '#d32f2f',
+  info: '#0288d1',
+  bg: '#f4f6f8',
+  paper: '#ffffff',
+  text: 'rgba(0, 0, 0, 0.87)',
+  textSecondary: 'rgba(0, 0, 0, 0.6)',
+  divider: 'rgba(0, 0, 0, 0.12)'
+}; // Dark-mode surface palette (Material dark: near-black layout, raised papers).
+
+exports.MUI = MUI;
+var MUI_DARK = {
+  bg: '#0f141b',
+  // app/layout background (behind cards)
+  paper: '#1a212b',
+  // card / container surface
+  elevated: '#222b36',
+  // popovers, dropdowns, modals
+  text: 'rgba(255, 255, 255, 0.92)',
+  textSecondary: 'rgba(255, 255, 255, 0.78)',
+  border: '#2a3441'
+}; // The sidebar uses a fixed dark navy in BOTH modes (it reads as intentional
+// chrome rather than following the body) — exported so the shell can reuse it.
+
+exports.MUI_DARK = MUI_DARK;
+var SIDEBAR_BG = '#1a2233'; // Material elevation-1 style card shadow.
+
+exports.SIDEBAR_BG = SIDEBAR_BG;
+var MUI_SHADOW = '0 2px 1px -1px rgba(0,0,0,0.08), 0 1px 3px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.06)'; // Slightly stronger (hover / elevation-3).
+
+exports.MUI_SHADOW = MUI_SHADOW;
+var MUI_SHADOW_HOVER = '0 3px 5px -1px rgba(0,0,0,0.12), 0 5px 8px 0 rgba(0,0,0,0.08), 0 1px 14px 0 rgba(0,0,0,0.06)';
+exports.MUI_SHADOW_HOVER = MUI_SHADOW_HOVER;
+var FONT = '"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif'; // Build the antd ConfigProvider theme for a colour mode ('light' | 'dark').
+
+function buildTheme(mode) {
+  var dark = mode === 'dark';
+  return {
+    algorithm: dark ? _antd.theme.darkAlgorithm : _antd.theme.defaultAlgorithm,
+    token: _objectSpread({
+      colorPrimary: MUI.primary,
+      colorInfo: MUI.primary,
+      colorSuccess: MUI.success,
+      colorWarning: MUI.warning,
+      colorError: MUI.error,
+      colorLink: MUI.primary,
+      fontFamily: FONT,
+      fontSize: 14,
+      borderRadius: 8,
+      wireframe: false
+    }, dark ? {
+      colorBgLayout: MUI_DARK.bg,
+      colorBgContainer: MUI_DARK.paper,
+      colorBgElevated: MUI_DARK.elevated,
+      colorText: MUI_DARK.text,
+      colorTextHeading: MUI_DARK.text,
+      colorTextSecondary: MUI_DARK.textSecondary,
+      colorBorderSecondary: MUI_DARK.border
+    } : {
+      colorBgLayout: MUI.bg,
+      colorText: MUI.text,
+      colorTextHeading: MUI.text,
+      colorTextSecondary: MUI.textSecondary,
+      colorBorderSecondary: '#eceff1'
+    }),
+    components: {
+      Card: {
+        borderRadiusLG: 12,
+        paddingLG: 20
+      },
+      Button: {
+        fontWeight: 500,
+        primaryShadow: 'none',
+        defaultShadow: 'none',
+        controlHeight: 36
+      },
+      Table: dark ? {
+        headerBg: '#222b36',
+        headerSplitColor: 'transparent',
+        rowHoverBg: '#222b36',
+        cellPaddingBlock: 14
+      } : {
+        headerBg: '#f7f9fb',
+        headerColor: MUI.textSecondary,
+        headerSplitColor: 'transparent',
+        borderColor: '#eceff1',
+        rowHoverBg: '#f3f6f9',
+        cellPaddingBlock: 14
+      },
+      Tabs: {
+        itemSelectedColor: MUI.primary,
+        inkBarColor: MUI.primary,
+        titleFontSize: 14,
+        horizontalItemGutter: 28
+      },
+      Layout: {
+        headerBg: dark ? MUI_DARK.paper : '#ffffff',
+        bodyBg: dark ? MUI_DARK.bg : MUI.bg,
+        headerHeight: 64
+      },
+      Input: {
+        controlHeight: 36
+      },
+      Select: {
+        controlHeight: 36
+      },
+      // The sidebar Menu stays dark-themed in both modes.
+      Menu: {
+        darkItemBg: SIDEBAR_BG,
+        darkSubMenuItemBg: '#161d2b',
+        darkItemSelectedBg: MUI.primary,
+        darkItemHoverBg: 'rgba(255,255,255,0.08)',
+        itemBorderRadius: 8
+      }
+    }
+  };
+} // Backwards-compatible default (light) theme object.
+
+
+var MUI_THEME = buildTheme('light');
+exports.MUI_THEME = MUI_THEME;
+
+},{"antd":"antd"}]},{},[25])
+
+//# sourceMappingURL=app-shell.js.map

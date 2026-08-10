@@ -160,42 +160,59 @@ class ApiController extends IceApiController
         });
 
         // Update extension
-        self::register(
-            REST_API_PATH . 'marketplace/update-extension', self::POST, function ($pathParams = null) {
-                $restEndpoint = new RestEndPoint();
-                $data = $restEndpoint->getRequestBody();
-
-                $extensionName = $data['extensionName'] ?? null;
-                $licenseKey = $data['licenseKey'] ?? null;
-
-                if (!$extensionName || !$licenseKey) {
-                    $restEndpoint->sendResponse(
-                        new IceResponse(IceResponse::ERROR, 'Extension name and license key are required')
-                    );
-                    return;
-                }
-
-                $updateService = ExtensionUpdateService::getInstance();
-                $result = $updateService->updateExtension($extensionName, $licenseKey);
-
-                if (!$result['success']) {
-                    $restEndpoint->sendResponse(
-                        new IceResponse(IceResponse::ERROR, $result['error'])
-                    );
-                    return;
-                }
-
-                $restEndpoint->sendResponse(
-                    new IceResponse(
-                        IceResponse::SUCCESS,
-                        [
-                            'success' => true,
-                            'message' => 'Extension updated successfully',
-                            'backupPath' => $result['backupPath']
-                        ]
-                    )
-                );
-        });
+        // ---------------------------------------------------------------------
+        // DISABLED: extension install / update over the API.
+        //
+        // Extensions are no longer installed or updated through the marketplace, so
+        // this endpoint is switched off rather than left reachable. It was the only
+        // route that fetched a remote archive and wrote executable PHP into the
+        // application directory (ExtensionUpdateService::updateExtension ->
+        // downloadExtension + extractAndInstall), which made it by far the highest-value
+        // target in the API: anything able to influence the download or the archive
+        // contents gets code execution. Removing the route removes that surface
+        // entirely instead of relying on the TLS/zip-slip/checksum defences around it.
+        //
+        // The service class is intentionally left in place (unreferenced) so the
+        // upgrade path can be restored deliberately if marketplace installs ever come
+        // back. The admin UI still renders Install/Update buttons — see
+        // web/js/view.js installOrUpdateExtension(), which posts here.
+        // ---------------------------------------------------------------------
+//         self::register(
+//             REST_API_PATH . 'marketplace/update-extension', self::POST, function ($pathParams = null) {
+//                 $restEndpoint = new RestEndPoint();
+//                 $data = $restEndpoint->getRequestBody();
+//
+//                 $extensionName = $data['extensionName'] ?? null;
+//                 $licenseKey = $data['licenseKey'] ?? null;
+//
+//                 if (!$extensionName || !$licenseKey) {
+//                     $restEndpoint->sendResponse(
+//                         new IceResponse(IceResponse::ERROR, 'Extension name and license key are required')
+//                     );
+//                     return;
+//                 }
+//
+//                 $updateService = ExtensionUpdateService::getInstance();
+//                 $result = $updateService->updateExtension($extensionName, $licenseKey);
+//
+//                 if (!$result['success']) {
+//                     $restEndpoint->sendResponse(
+//                         new IceResponse(IceResponse::ERROR, $result['error'])
+//                     );
+//                     return;
+//                 }
+//
+//                 $restEndpoint->sendResponse(
+//                     new IceResponse(
+//                         IceResponse::SUCCESS,
+//                         [
+//                             'success' => true,
+//                             'message' => 'Extension updated successfully',
+//                             'backupPath' => $result['backupPath']
+//                         ]
+//                     )
+//                 );
+//         });
 
         // REST Api get request
         self::register(

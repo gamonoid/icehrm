@@ -67,13 +67,50 @@ if (!function_exists('iceUploadDeny')) {
 
     /**
      * The handlers reuse an existing Files row whenever one already carries the
-     * requested name, then overwrite the bytes on disk. Refuse when that row belongs
-     * to a *different* employee.
+     * requested name (the name is client-supplied), then overwrite the bytes on disk.
+     * Refuse when that row belongs to a *different* employee.
      *
-     * An owner-less row (settings assets, editor images) stays replaceable by any
-     * authenticated caller: it holds no employee's data, and tightening it further
-     * would break the settings and editor upload flows.
+     * An owner-less row (settings assets, editor images) holds no employee's data, but
+     * overwriting it is still a content-integrity attack: any authenticated caller
+     * could post the name of e.g. the company logo or a shared editor image and replace
+     * its contents. Privileged callers (admin / manager — the ones who run the settings
+     * and editor upload flows) are allowed above; a non-privileged caller reaching an
+     * owner-less existing row has no legitimate reason to overwrite it (their own
+     * uploads are either new rows or owner-scoped to themselves), so deny it.
      */
+    /**
+     * Content check (magic bytes) for a just-saved upload. The handlers validate only the
+     * client-supplied extension; this verifies the actual bytes. Image extensions are the
+     * risk — an HTML/SVG/script file renamed .png/.jpg could render inline or act as a
+     * polyglot — so an image extension must carry real raster-image bytes (SVG is XML and
+     * is rejected). Non-image types (pdf/office/csv/xml/txt) are download-only
+     * (nginx nosniff + forced attachment) and are not content-restricted here. Fails open
+     * only if finfo is unavailable (it ships with PHP 7.3).
+     */
+    function iceUploadContentAllowed($savedPath, $ext)
+    {
+        $ext = strtolower((string) $ext);
+        $imageExts = array('jpg', 'jpeg', 'png', 'gif', 'bmp');
+        if (!in_array($ext, $imageExts, true)) {
+            return true;
+        }
+        if (!is_file($savedPath) || !function_exists('getimagesize')) {
+            return true;
+        }
+        // getimagesize() reads the actual image header (it is core PHP; unlike finfo it
+        // does not need the fileinfo extension, which is not always installed). It returns
+        // false for anything that is not a real raster image — HTML, SVG (XML), scripts —
+        // so those are rejected even when named .png/.jpg.
+        $info = @getimagesize($savedPath);
+        if ($info === false || !isset($info[2])) {
+            return false;
+        }
+        $allowedTypes = array(
+            IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_GIF, IMAGETYPE_BMP, IMAGETYPE_WBMP,
+        );
+        return in_array($info[2], $allowedTypes, true);
+    }
+
     function iceUploadMayReplaceFile($user, $file)
     {
         if (empty($file->id)) {
@@ -85,7 +122,7 @@ if (!function_exists('iceUploadDeny')) {
         $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
         $owner = $file->$signInMappingField;
         if (empty($owner)) {
-            return true;
+            return false; // owner-less existing asset — privileged callers only
         }
         $ownProfileId = BaseService::getInstance()->getCurrentProfileId();
 

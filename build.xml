@@ -302,6 +302,7 @@
         <exclude name="CLAUDE.md"/>
         <exclude name="PATTERNS.md"/>
         <exclude name="release.sh"/>
+        <exclude name="release-test-update.sh"/>
         <exclude name="release-ext.sh"/>
         <exclude name="release-os-upgrade.sh"/>
         <exclude name="remove-obfuscated-files.sh"/>

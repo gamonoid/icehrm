@@ -15,6 +15,18 @@ class AttendanceSheetsActionManager extends SubActionManager
     public function getTimeEntries($req)
     {
         $employee = $this->baseService->getElement('Employee', $this->getCurrentProfileId(), null, true);
+
+        // Ownership gate — $req->id is a request-supplied attendance-sheet id whose
+        // punch entries this returns. Scope to the sheet's owner: Admin any; a manager
+        // only subordinates; the owner.
+        $attendanceSheet = new EmployeeAttendanceSheet();
+        $attendanceSheet->Load("id = ?", array($req->id));
+        if (!empty($attendanceSheet->id)
+            && !$this->baseService->currentUserCanAccessEmployeeData($attendanceSheet->employee)
+        ) {
+            return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
+        }
+
         $list = EmployeeAttendanceSheet::getAttendanceEntries($req->id);
         $mappingStr = $req->sm;
         $map = json_decode($mappingStr);

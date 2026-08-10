@@ -1,0 +1,16 @@
+{
+  "name": "icehrm-spa-e2e",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npm run test:e2e && npm run test:smoke",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "./run-e2e.sh",
+    "test:e2e:ui": "playwright test --ui",
+    "test:smoke": "./smoke/run-all.sh",
+    "install:browsers": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}

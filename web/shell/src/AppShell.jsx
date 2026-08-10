@@ -19,6 +19,7 @@ import News from './News';
 import Dashboard from './Dashboard';
 import EmployeeDashboard from './EmployeeDashboard';
 import LicenseRenewalBanner from './LicenseRenewalBanner';
+import UpdateAvailableBanner from './UpdateAvailableBanner';
 import NativeModuleHost from './NativeModuleHost';
 import NativeDocumentModal from './NativeDocumentModal';
 import ModuleSearch from './ModuleSearch';
@@ -744,12 +745,14 @@ export default function AppShell({
         }}>
           {isNativeDashboard ? (
             <div style={{ height: '100%', overflow: 'auto' }}>
+              <UpdateAvailableBanner updateAvailable={bootstrap.updateAvailable} />
               <LicenseRenewalBanner licenseRenewal={bootstrap.licenseRenewal} />
               <News config={config} />
               <Dashboard config={config} onNavigate={navigateTo} />
             </div>
           ) : isNativeEmployeeDashboard ? (
             <div style={{ height: '100%', overflow: 'auto' }}>
+              <UpdateAvailableBanner updateAvailable={bootstrap.updateAvailable} />
               <LicenseRenewalBanner licenseRenewal={bootstrap.licenseRenewal} />
               <EmployeeDashboard config={config} onNavigate={navigateTo} onOpenDocument={setDocUrl} />
             </div>

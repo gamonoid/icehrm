@@ -332,7 +332,47 @@ class FileService
             $file->Load('filename = ?', array($fileName));
         }
 
-        return CLIENT_BASE_URL.'service.php?a=download&file='.$file->filename.'&signature='.BaseService::getInstance()->createHash($file->filename);
+        // Bind an expiry into the signed payload. Previously the signature covered only
+        // the filename, so a captured URL (referrer, logs, history) was valid forever
+        // and needed no session. Sign "<filename>|<expires>" and expose the timestamp so
+        // the download handler can reject a stale link.
+        $expires = time() + $this->getSecureUrlTtl();
+        $signature = BaseService::getInstance()->createHash($file->filename.'|'.$expires);
+
+        return CLIENT_BASE_URL.'service.php?a=download&file='.$file->filename
+            .'&expires='.$expires.'&signature='.$signature;
+    }
+
+    /**
+     * Lifetime (seconds) of a locally-signed download URL. Defaults to 24h; override
+     * with the SECURE_DOWNLOAD_URL_TTL constant. These URLs are minted at render time,
+     * so a day comfortably covers a working session while bounding a leaked link.
+     */
+    private function getSecureUrlTtl()
+    {
+        if (defined('SECURE_DOWNLOAD_URL_TTL') && intval(SECURE_DOWNLOAD_URL_TTL) > 0) {
+            return intval(SECURE_DOWNLOAD_URL_TTL);
+        }
+        return 86400;
+    }
+
+    /**
+     * Validate a locally-signed download request: the expiry must be a future
+     * timestamp and the signature must cover "<filename>|<expires>". Constant-time
+     * HMAC comparison is handled by verifyHash.
+     */
+    public function verifyDownloadSignature($fileName, $expires, $signature)
+    {
+        if (!is_string($signature)) {
+            return false;
+        }
+        if (empty($expires) || !ctype_digit((string) $expires)) {
+            return false;
+        }
+        if (intval($expires) < time()) {
+            return false; // expired
+        }
+        return BaseService::getInstance()->verifyHash($fileName.'|'.$expires, $signature);
     }
 
     public function deleteProfileImage($profileId)

@@ -64,6 +64,24 @@ class PayrollActionManager extends SubActionManager
         return null;
     }
 
+    /**
+     * Turn a stored JSON array of row ids (payroll column config: salary_components,
+     * deductions, add_columns, sub_columns) into a safe comma-separated integer list
+     * for an "id IN (...)" clause. These values come from admin-editable config and
+     * were previously imploded verbatim into SQL — casting every element to int
+     * removes the injection vector while preserving the id-list semantics. Returns
+     * '0' (matches no row) when the input is empty or non-numeric.
+     */
+    private function safeIdInList($jsonList)
+    {
+        $ids = json_decode($jsonList, true);
+        if (!is_array($ids) || empty($ids)) {
+            return '0';
+        }
+        $ints = array_map('intval', $ids);
+        return implode(',', $ints);
+    }
+
     public function calculatePayrollColumn(
         $col,
         $payroll,
@@ -128,7 +146,7 @@ class PayrollActionManager extends SubActionManager
         ) {
             $salaryComponent = new SalaryComponent();
             $salaryComponents = $salaryComponent->Find(
-                "id in (".implode(",", json_decode($col->salary_components, true)).")",
+                "id in (".$this->safeIdInList($col->salary_components).")",
                 array()
             );
             foreach ($salaryComponents as $salaryComponent) {
@@ -150,12 +168,12 @@ class PayrollActionManager extends SubActionManager
             $deduction = new Deduction();
             if (empty($payRollEmp->deduction_group)) {
                 $deductions = $deduction->Find(
-                    "id in (".implode(",", json_decode($col->deductions, true)).")",
+                    "id in (".$this->safeIdInList($col->deductions).")",
                     array()
                 );
             } else {
                 $deductions = $deduction->Find(
-                    "deduction_group = ? and id in (".implode(",", json_decode($col->deductions, true)).")",
+                    "deduction_group = ? and id in (".$this->safeIdInList($col->deductions).")",
                     array($payRollEmp->deduction_group)
                 );
             }
@@ -188,9 +206,8 @@ class PayrollActionManager extends SubActionManager
             if (!empty($col->add_columns)
                 && !empty(json_decode($col->add_columns, true))
             ) {
-                $colIds = json_decode($col->add_columns, true);
                 $payrollColumn = new PayrollColumn();
-                $payrollColumns = $payrollColumn->Find("id in (".implode(",", $colIds).")", array());
+                $payrollColumns = $payrollColumn->Find("id in (".$this->safeIdInList($col->add_columns).")", array());
                 foreach ($payrollColumns as $payrollColumn) {
                     $sum += $this->calculatePayrollColumn(
                         $payrollColumn,
@@ -205,9 +222,8 @@ class PayrollActionManager extends SubActionManager
             if (!empty($col->sub_columns)
                 && !empty(json_decode($col->sub_columns, true))
             ) {
-                $colIds = json_decode($col->sub_columns, true);
                 $payrollColumn = new PayrollColumn();
-                $payrollColumns = $payrollColumn->Find("id in (".implode(",", $colIds).")", array());
+                $payrollColumns = $payrollColumn->Find("id in (".$this->safeIdInList($col->sub_columns).")", array());
                 foreach ($payrollColumns as $payrollColumn) {
                     $sum -= $this->calculatePayrollColumn(
                         $payrollColumn,
@@ -288,7 +304,7 @@ class PayrollActionManager extends SubActionManager
         if (!empty($deduction->componentType) && !empty(json_decode($deduction->componentType, true))) {
             $salaryComponent = new SalaryComponent();
             $salaryComponents = $salaryComponent->Find(
-                "componentType in (".implode(",", json_decode($deduction->componentType, true)).")",
+                "componentType in (".$this->safeIdInList($deduction->componentType).")",
                 array()
             );
         }
@@ -297,7 +313,7 @@ class PayrollActionManager extends SubActionManager
         if (!empty($deduction->component) && !empty(json_decode($deduction->component, true))) {
             $salaryComponent = new SalaryComponent();
             $salaryComponents2 = $salaryComponent->Find(
-                "id in (".implode(",", json_decode($deduction->component, true)).")",
+                "id in (".$this->safeIdInList($deduction->component).")",
                 array()
             );
         }
@@ -530,7 +546,7 @@ class PayrollActionManager extends SubActionManager
         $columns = [];
         if (!empty($columnList)) {
             $columns = $column->Find(
-                "enabled = ? and id in (".implode(",", $columnList).") order by colorder, id",
+                "enabled = ? and id in (".implode(",", array_map('intval', $columnList)).") order by colorder, id",
                 array('Yes')
             );
         }

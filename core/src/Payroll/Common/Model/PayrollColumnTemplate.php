@@ -16,18 +16,30 @@ class PayrollColumnTemplate extends BaseModel
     public $table = 'PayrollColumnTemplates';
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
+    // Payroll is Admin-only. All three must be empty: getUserOnlyMeAccess() is what
+    // checkSecureAccess()'s request-field path tests, so leaving it non-empty lets a
+    // caller authorise themselves by passing their own employee id. Employees still get
+    // their own payslips - PayslipDocument is a separate model and PayslipReport reads
+    // these tables through the ORM directly, which never calls checkSecureAccess().
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        return array();
     }
 
     public function getUserAccess()
     {
-        return array("get","element");
+        return array();
     }
+
+    public function getUserOnlyMeAccess()
+    {
+        return array();
+    }
+
+
 
     public function getModuleAccess()
     {

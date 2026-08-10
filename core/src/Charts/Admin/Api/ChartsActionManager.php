@@ -20,6 +20,16 @@ class ChartsActionManager extends SubActionManager
             $req->end = date("Y-m-t", strtotime($req->start));
         }
 
+        // Ownership gate. When a specific employee is requested, $req->employee is
+        // attacker-controlled and this returns that employee's time-utilization series.
+        // Scope it: Admin any; a manager only those they manage. (Empty = the all-staff
+        // aggregate, which stays behind the admin dashboard.)
+        if (!empty($req->employee)
+            && !$this->baseService->currentUserCanAccessEmployeeData($req->employee)
+        ) {
+            return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
+        }
+
         //Find Time Entries
 
         $employeeTimeEntry = new EmployeeTimeEntry();
@@ -113,6 +123,14 @@ class ChartsActionManager extends SubActionManager
 
         if (empty($req->end)) {
             $req->end = date("Y-m-t", strtotime($req->start));
+        }
+
+        // Ownership gate — see getTimeUtilization. $req->employee is attacker-controlled
+        // and selects whose attendance series is returned.
+        if (!empty($req->employee)
+            && !$this->baseService->currentUserCanAccessEmployeeData($req->employee)
+        ) {
+            return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
         }
 
         //Find Attendance Entries

@@ -17,17 +17,24 @@ class TrainingSession extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getUserAccess()
     {
-        return array("get", "element");
+        // "get" only: the employee training module lists sessions (sign-up tab and
+        // name lookups); element reads by arbitrary id are denied.
+        return array("get");
+    }
+
+    public function getUserOnlyMeAccess()
+    {
+        return array();
     }
 
     public function getModuleAccess()
@@ -37,4 +44,15 @@ class TrainingSession extends BaseModel
             new ModuleAccess('training', 'user'),
         ];
     }
+
+    /**
+     * Columns this model's select boxes may request (see
+     * BaseModel::fieldValueFields). Derived from the pickers that actually exist,
+     * so this allows today's usage and nothing more.
+     */
+    public function fieldValueFields()
+    {
+        return array('id', 'name');
+    }
+
 }

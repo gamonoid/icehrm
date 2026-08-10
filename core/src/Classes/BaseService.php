@@ -25,7 +25,6 @@ use Model\DataEntryBackup;
 use Model\Setting;
 use Model\SystemData;
 use Modules\Common\Model\Module;
-use Permissions\Common\Model\Permission;
 use Users\Common\Model\User;
 use Users\Common\Model\UserRole;
 use Utils\LogManager;
@@ -178,9 +177,13 @@ class BaseService
                 $list = array();
             }
         } else {
-            LogManager::getInstance()->debug("Query: "."1=1".$query.$orderBy);
+            // Not row-scoped by $userTables (empty under an admin module path). Restrict a
+            // Manager to their own team so the admin module list cannot return every
+            // employee's rows; Admin and all-employee-data roles are unaffected.
+            list($mgrClause, $mgrData) = $this->managerListScopeClause($obj);
+            LogManager::getInstance()->debug("Query: "."1=1".$mgrClause.$query.$orderBy);
             LogManager::getInstance()->debug("Query Data: ".print_r($queryData, true));
-            $list = $finder->Find("1=1".$query.$orderBy, $queryData);
+            $list = $finder->Find("1=1".$mgrClause.$query.$orderBy, array_merge($mgrData, $queryData));
         }
 
         $newList = array();
@@ -192,7 +195,14 @@ class BaseService
             $list = $this->populateMapping($newList, $map);
         }
 
-        return $list;
+        // Withhold columns this viewer may not see (finding 2.7). No-op for every model
+        // that does not override getFieldsVisibleTo().
+        $projectedList = array();
+        foreach ($list as $listObj) {
+            $projectedList[] = $this->projectForViewer($listObj);
+        }
+
+        return $projectedList;
     }
 
     public function getModelClassMap()
@@ -238,6 +248,18 @@ class BaseService
         $queryData = array();
         foreach ($filter as $k => $v) {
             if (empty($v)) {
+                continue;
+            }
+            // The filter KEY is concatenated into the WHERE string below (the values
+            // are bound), so an attacker-controlled key is SQL injection. data.php
+            // runs keys through DomainAwareInputCleaner, but the REST path
+            // (api-rest.php -> DataReader -> getData) does not — a request like
+            // ?filters[1=1 OR (subquery)]=1 reaches here unsanitised. Enforce a plain
+            // SQL identifier at the point of concatenation, so every caller is covered.
+            // Real filter keys are column names (employee, status, address1); anything
+            // with a space, operator, quote or paren is dropped and logged.
+            if (!preg_match('/^[A-Za-z_][A-Za-z0-9_]*$/', (string) $k)) {
+                LogManager::getInstance()->info('FILTER_KEY_REJECTED: ' . substr((string) $k, 0, 60));
                 continue;
             }
             if (is_array($v)) {
@@ -518,6 +540,10 @@ class BaseService
         /** @var BaseModel $obj */
         $obj = new $nsTable();
         $this->checkSecureAccess("get", $obj, $table, $_REQUEST);
+
+        // The requested row scope is a REQUEST, not a decision: narrow it to what
+        // this model actually permits before any branch below reads it.
+        $isSubOrdinates = $this->resolveSubordinateListScope($isSubOrdinates, $obj, $table);
         $query = "";
         $queryData = array();
         if (!empty($filterStr)) {
@@ -829,10 +855,28 @@ class BaseService
 
             }
         } else {
+            // Not row-scoped by $userTables (empty under an admin module path) and not a
+            // subordinate query. Restrict a Manager to their own team; Admin and
+            // all-employee-data roles are unaffected. See managerListScopeClause().
+            list($mgrClause, $mgrData) = $this->managerListScopeClause($obj);
+            $mgrQueryData = array_merge($mgrData, $queryData);
+
+            // No "1=1" anchor: the clause already begins with " and ", and
+            // BaseModel::refineWhereClause() strips a leading "and" (and collapses
+            // "WHERE and" -> "where"), so it is valid on its own.
+            //
+            // This matters because models may override Find() and CONCATENATE this
+            // string onto a clause of their own — TasksUser\Common\Model\MyTaskList does
+            // Find('employee = ?' . $whereOrderBy). An anchor here produced
+            // "employee = ?1=1 ORDER BY …", a SQL syntax error that stopped the tasks
+            // module opening for every role. Appending " and …" composes correctly both
+            // for a bare clause and for one a model has already started.
+            $whereClause = $searchJoinQuery.$mgrClause.$query.$orderBy.$limit;
+
             if ($countOnly) {
-                $list = $finder->getTotalCount($searchJoinQuery.$query.$orderBy.$limit, $queryData);
+                $list = $finder->getTotalCount($whereClause, $mgrQueryData);
             } else {
-                $list = $finder->Find($searchJoinQuery.$query.$orderBy.$limit, $queryData);
+                $list = $finder->Find($whereClause, $mgrQueryData);
             }
         }
 
@@ -886,6 +930,49 @@ class BaseService
         return  $listNew;
     }
 
+    /**
+     * Whether a client-supplied source-mapping triple [Model, lookupCol, displayCols]
+     * may be resolved. The lookup and display columns arrive verbatim in the `sm`
+     * request parameter, which is never sanitised — so without this both are an
+     * attack surface:
+     *
+     *   - lookupCol ($v[1]) is concatenated into the WHERE string, so a value like
+     *     "1=1 OR (subquery)" is SQL injection;
+     *   - displayCol ($v[2]) is read straight off the target row, so "password" on a
+     *     User mapping returns bcrypt hashes, bypassing the target model's own ACL.
+     *
+     * A mapping is server-side picker resolution, so the same allowlist the pickers
+     * use applies: every column must be a published fieldValueFields() entry of the
+     * target model. That is a real column (kills the injection) AND one the model has
+     * declared safe to expose (kills the password/PII read). Deny by default — a
+     * model that publishes nothing cannot be a mapping target at all.
+     */
+    private function mappingFieldsAllowed($targetObj, $v)
+    {
+        if (!is_array($v) || count($v) < 3) {
+            return false;
+        }
+        $allowed = method_exists($targetObj, 'fieldValueFields')
+            ? (array) $targetObj->fieldValueFields()
+            : array();
+        if (empty($allowed)) {
+            return false;
+        }
+        $requested = array_merge(array($v[1]), explode('+', (string) $v[2]));
+        foreach ($requested as $col) {
+            $col = trim($col);
+            if ($col === '' || !in_array($col, $allowed, true)) {
+                LogManager::getInstance()->info(sprintf(
+                    'MAPPING_FIELD_DENIED: %s.%s is not a published picker field',
+                    isset($v[0]) ? $v[0] : '?',
+                    $col
+                ));
+                return false;
+            }
+        }
+        return true;
+    }
+
     public function populateMappingItem($item, $map)
     {
         foreach ($map as $k => $v) {
@@ -895,6 +982,9 @@ class BaseService
 
             $fTable = $this->getFullQualifiedModelClassName($v[0]);
             $tObj = new $fTable();
+            if (!$this->mappingFieldsAllowed($tObj, $v)) {
+                continue;
+            }
             $tObj = $tObj->Find($v[1]."= ?", array($item->$k));
 
             if (is_array($tObj) && !empty($tObj)) {
@@ -979,7 +1069,17 @@ class BaseService
             $obj = $this->enrichObjectCustomFields($table, $obj);
 
             $obj = $obj->postProcessGetElement($obj);
-            return  $this->cleanUpAdoDB($obj);
+            $obj = $this->cleanUpAdoDB($obj);
+
+            // Withhold columns this viewer may not see (finding 2.7). Only for calls that
+            // went through the security check — $skipSecurityCheck marks trusted internal
+            // loads (session profile bootstrap, attendance managers, job enrichment...),
+            // which need the whole record and are not a user-facing disclosure boundary.
+            if (!$skipSecurityCheck) {
+                $obj = $this->projectForViewer($obj);
+            }
+
+            return $obj;
         }
         return null;
     }
@@ -1041,14 +1141,44 @@ class BaseService
         }
 
         if (!empty($obj['id'])) {
-            $isAdd = false;
             $ele->Load('id = ?', array($obj['id']));
+            // A request id that matches NO row is an insert, not an update — decide from
+            // what actually loaded, never from the request. Keying this off $obj['id']
+            // let a caller pass a non-existent id to get the worst of both: authorised as
+            // "save" rather than "add", skipped by the owner-forcing block below (which
+            // tested the request id), and skipped by the re-parenting guard (which needs a
+            // persisted row) — so Save() inserted a NEW row owned by whatever employee the
+            // request named. Live-verified: an employee created an Attendance row owned by
+            // a colleague via a=add&t=Attendance&id=999999999&employee=<victim>.
+            $isAdd = empty($ele->id);
+        }
+
+        // Remember the PERSISTED owner before the request is copied over the object, so an
+        // update cannot re-parent the row onto somebody else. The owner is only forced on
+        // INSERT below (empty id); on UPDATE it used to be taken straight from the request,
+        // while userOwnsUserScopedRecord() re-reads the persisted owner and therefore still
+        // saw the caller as the owner — so an employee could POST
+        // a=add&t=Attendance&id=<own row>&employee=<victim> and move a fabricated record
+        // onto a colleague. Restored after the copy loop for non-Admin callers.
+        $ownerFieldName = $ele->getUserOnlyMeAccessField();
+        $persistedOwner = null;
+        if (!$isAdd && !empty($ownerFieldName) && $ownerFieldName !== 'id' && !empty($ele->id)) {
+            $persistedOwner = $ele->$ownerFieldName;
         }
 
         $objectKeys = $ele->getObjectKeys();
 
+        // Mass-assignment guard: fields the current actor may not set on this record are
+        // dropped from the request copy, so the loaded DB value (update) or model default
+        // (add) is kept. $ele is already loaded here, so getProtectedFields() sees the
+        // record's real id/owner. Default is empty — no behaviour change for other models.
+        $protectedFields = $ele->getProtectedFields($this->getCurrentUser());
+
         foreach ($obj as $k => $v) {
             if ($k == 'id' || $k == 't' || $k == 'a') {
+                continue;
+            }
+            if (!empty($protectedFields) && in_array($k, $protectedFields, true)) {
                 continue;
             }
             if ($v == "NULL") {
@@ -1059,7 +1189,23 @@ class BaseService
             }
         }
 
-        if (empty($obj['id'])) {
+        // Re-parenting guard (see $persistedOwner above): a non-Admin may not change which
+        // employee an existing record belongs to. Admin levels and roles granted all
+        // employee data still can, so HR corrections keep working.
+        if ($persistedOwner !== null
+            && (string) $ele->$ownerFieldName !== (string) $persistedOwner
+        ) {
+            $actor = $this->getCurrentUser();
+            $actorIsAdmin = !empty($actor)
+                && in_array($actor->user_level, array('Admin', 'Restricted Admin'), true);
+            if (!$actorIsAdmin && !\Employees\Common\Model\EmployeeAccess::hasAccessToAllEmployeeData()) {
+                $ele->$ownerFieldName = $persistedOwner;
+            }
+        }
+
+        // $isAdd, not empty($obj['id']): an id that matched no row is an insert and must
+        // still have its owner forced to the caller (see the Load above).
+        if ($isAdd) {
             if (in_array($table, $this->userTables)) {
                 $cemp = $this->getCurrentProfileId();
                 if (!empty($cemp)) {
@@ -1072,9 +1218,9 @@ class BaseService
         }
 
         if ($postObject === null) {
-            $this->checkSecureAccess("save", $ele, $table, $_POST);
+            $this->checkSecureAccess($isAdd?"add":"save", $ele, $table, $_POST);
         } else {
-            $this->checkSecureAccess("save", $ele, $table, $postObject);
+            $this->checkSecureAccess($isAdd?"add":"save", $ele, $table, $postObject);
         }
 
 
@@ -1272,6 +1418,32 @@ class BaseService
         }
 
         $this->checkSecureAccess("get", $ele, $table, $_POST);
+
+        // $key and $value name COLUMNS and arrive straight from the request —
+        // service.php sanitises t/ft/ob/sSearch/cl but not these. Unchecked, any
+        // caller holding "get" on this model could project any column of every row
+        // (Find('1 = 1') below ignores the row scoping in get()/getData()), which is
+        // how a plain employee could read every colleague's address and phone
+        // number. The model publishes what its pickers may ask for; anything else
+        // fails closed so a missed opt-in shows up as an empty dropdown, not a leak.
+        $allowedFields = array();
+        if (method_exists($ele, 'fieldValueFields')) {
+            $allowedFields = (array) $ele->fieldValueFields();
+        }
+        $requestedFields = array_merge(array($key), explode('+', (string) $value));
+        foreach ($requestedFields as $requestedField) {
+            $requestedField = trim($requestedField);
+            if ($requestedField === '' || !in_array($requestedField, $allowedFields, true)) {
+                LogManager::getInstance()->info(sprintf(
+                    'FIELD_VALUES_DENIED: %s is not a published picker field on %s (allowed: %s)',
+                    $requestedField,
+                    $table,
+                    $allowedFields ? implode(',', $allowedFields) : 'none'
+                ));
+                return array();
+            }
+        }
+
         if (!empty($method)) {
             if (method_exists($ele, $method) && in_array($method, $ele->fieldValueMethods())) {
                 if (!empty($methodParams)) {
@@ -1588,6 +1760,52 @@ class BaseService
      * @return bool {Boolen} true or exit true or exit
      */
 
+    /**
+     * May this LIST be scoped to the caller's direct reports? (the data.php path)
+     *
+     * checkSecureAccess() answers a verb+model question — "may you list this model"
+     * — and is called before getData() knows which rows it will return. The row
+     * scope is chosen separately, from $_REQUEST['type'] === "sub" (data.php), so a
+     * client could pick the subordinate branch on ANY employee-owned model and flip
+     * a list from "my rows" to "my reports' rows" with no authorization step in
+     * between. That is the decision this method makes, server-side.
+     *
+     * A model must OPT IN via allowsSubordinateList() — true only where a screen
+     * genuinely shows a team list. Everything else falls back to the caller's own
+     * rows, exactly as if the parameter had not been sent.
+     *
+     * Note this governs WHICH MODELS may be viewed as a team list, not who the team
+     * is: the query itself still constrains rows to real direct reports, so a caller
+     * with no reports gets nothing either way.
+     *
+     * @param  bool      $requested whether the request asked for the subordinate scope
+     * @param  BaseModel $object    the model being listed
+     * @param  string    $table     model name, for logging
+     * @return bool                 the EFFECTIVE subordinate scope
+     */
+    public function resolveSubordinateListScope($requested, $object, $table = '')
+    {
+        if (!$requested) {
+            return false;
+        }
+
+        if (method_exists($object, 'allowsSubordinateList') && $object->allowsSubordinateList()) {
+            return true;
+        }
+
+        // Logged distinctly from a permission failure: the request was not refused,
+        // it was narrowed — which is what you want to see if a legitimate team screen
+        // ever comes back empty because its model has not opted in.
+        LogManager::getInstance()->info(sprintf(
+            'SUBORDINATE_LIST_SCOPE narrowed: profile=%s asked for the subordinate scope on %s,'
+            . ' which does not declare allowsSubordinateList(); falling back to own rows',
+            $this->getCurrentProfileId(),
+            $table !== '' ? $table : get_class($object)
+        ));
+
+        return false;
+    }
+
     public function checkSecureAccess($type, $object, $table, $request)
     {
         $userOnlyMeAccessRequestField = $object->getUserOnlyMeAccessRequestField();
@@ -1595,7 +1813,13 @@ class BaseService
 
         $accessMatrix = $object->getRoleBasedAccess($this->currentUser->user_level, $this->currentUser->user_roles);
 
-        if (in_array($type, $accessMatrix)) {
+        // A role grant says WHICH VERBS a level may use — never WHICH ROWS. For a manager
+        // performing a record-level verb we additionally require that the record belongs to
+        // somebody they actually manage; otherwise "element"/"save"/"delete" apply to every
+        // row of the model (finding 2.11). On failure we fall through to the userOnlyMe
+        // branch below rather than denying outright, so a manager acting on their OWN record
+        // is still granted by the normal ownership path.
+        if (in_array($type, $accessMatrix) && $this->managerRecordScopeAllows($type, $object)) {
             //The user has required permission, so return true
             return true;
         } elseif (!empty($this->currentUser->$userOnlyMeAccessField)) {
@@ -1628,7 +1852,20 @@ class BaseService
                 if (isset($request[$userOnlyMeAccessField])
                     && isset($this->currentUser->$userOnlyMeAccessField)
                 ) {
-                    if (in_array($type, $accessMatrix) && (string)$request[$userOnlyMeAccessField]=== (string)$this->currentUser->$userOnlyMeAccessRequestField
+                    // A LIST ("get") must not be authorised by this check unless the table is
+                    // row-scoped. The request value only proves WHO the caller is — it does not
+                    // constrain which rows come back. Row scoping is applied by get()/getData()
+                    // only for $this->userTables, so for any other table this granted a caller
+                    // the ENTIRE table just for passing their own id (e.g.
+                    // service.php?t=EmployeeSalary&a=get&employee=<own id> returned every
+                    // employee's salary). Record-level types (element/save/delete) stay allowed:
+                    // they are already constrained by the userOwnsUserScopedRecord() gate above,
+                    // which re-reads the owner from the database.
+                    $isUnscopedList = ($type === 'get' && !in_array($table, $this->userTables));
+
+                    if (!$isUnscopedList
+                        && in_array($type, $accessMatrix)
+                        && (string)$request[$userOnlyMeAccessField] === (string)$this->currentUser->$userOnlyMeAccessRequestField
                     ) {
                         return true;
                     }
@@ -1644,6 +1881,15 @@ class BaseService
                     }
                 }
             }
+        }
+
+        // Employee-level supervisors: an Employee can have DIRECT reports without
+        // holding the Manager level. Mirroring the manager record scope — but
+        // read-only ("element") and direct reports only — they may VIEW a record
+        // owned by someone they directly supervise. Employee DETAILS themselves
+        // (the Employees table) stay hidden.
+        if ($this->employeeDirectReportScopeAllows($type, $object)) {
+            return true;
         }
 
         $action = PermissionManager::ACCESS_LIST_DESCRIPTION[$type];
@@ -1664,6 +1910,350 @@ class BaseService
      * the security check) cannot spoof ownership. Used by checkSecureAccess to enforce
      * object-level authorization for userOnlyMe access (finding 2.1 — IDOR).
      */
+    /**
+     * Object properties that are plumbing rather than table columns. Never stripped by
+     * projectForViewer(), or the returned model stops behaving like a model.
+     */
+    private static $projectionInternalKeys = array(
+        'objectName', 'isJoinFind', 'keysToIgnore', 'oldObj', 'oldObjOrig',
+        'historyUpdateList', 'historyFieldsToTrack', 'table', 'foreignName',
+        'a', 't', 'mg', 'mn',
+    );
+
+    /**
+     * Apply a model's column allowlist for the current viewer (finding 2.7).
+     *
+     * No-op unless the model overrides getFieldsVisibleTo() — so this changes nothing for
+     * any model but Employee. Returns a CLONE when it strips, so callers holding the
+     * original object (and anything cached) are unaffected.
+     *
+     * Privilege is decided PER RECORD: in one list a manager gets full records for their
+     * own subordinates and reduced ones for everybody else.
+     */
+    /**
+     * Memoised per request, keyed by CURRENT PROFILE + the indirect-supervisor flag.
+     * The profile must be part of the key: the current identity can change within a
+     * single process (an admin switching into an employee profile, a long-running CLI
+     * task), and a profile-blind cache would then answer "who may this user see?" with
+     * the PREVIOUS user's subordinate set.
+     */
+    private $accessibleEmployeeIdCache = array();
+
+    /**
+     * Memoised per request, keyed by user id — the "access to all employee data" role
+     * check hits the DB. Keyed for the same reason as the cache above.
+     */
+    private $hasAllEmployeeDataAccessCache = array();
+
+    /**
+     * May the current MANAGER perform this record-level verb on this record? (finding 2.11)
+     *
+     * The role matrix grants verbs per user level with no notion of scope, so a Manager
+     * holding "element"/"save"/"delete" holds it on EVERY row of that model — including
+     * employees they do not manage. This narrows that to their own accessible set.
+     *
+     * Returns true (i.e. "do not interfere") for everything it does not govern, so the
+     * blast radius is limited to exactly the case described above.
+     */
+    private function managerRecordScopeAllows($type, $object)
+    {
+        // Record-level verbs only. "get" is a LIST and is row-scoped elsewhere (userTables);
+        // narrowing it here would break every manager list screen. "add" is included so a
+        // manager cannot create a record owned by an employee they do not manage (for a new
+        // record the intended owner is judged, since there is no persisted row yet).
+        if (!in_array($type, array('element', 'add', 'save', 'delete'), true)) {
+            return true;
+        }
+
+        $user = $this->currentUser;
+        if (empty($user) || empty($user->user_level)) {
+            return true;
+        }
+
+        // Admin levels are unaffected; non-managers are already handled by the ownership
+        // gate (userOwnsUserScopedRecord) further down checkSecureAccess().
+        if (!in_array($user->user_level, array('Manager', 'Restricted Manager'), true)) {
+            return true;
+        }
+
+        // A role explicitly granted access to all employee data opts out by design.
+        $allDataKey = isset($user->id) ? (string) $user->id : '';
+        if (!isset($this->hasAllEmployeeDataAccessCache[$allDataKey])) {
+            $this->hasAllEmployeeDataAccessCache[$allDataKey] =
+                \Employees\Common\Model\EmployeeAccess::hasAccessToAllEmployeeData();
+        }
+        if ($this->hasAllEmployeeDataAccessCache[$allDataKey]) {
+            return true;
+        }
+
+        // Only employee-owned records. Lookup/config models (JobTitle, CompanyStructure,
+        // Setting, Skill ...) have no owner, so the role grant stands untouched.
+        // NB: do NOT use in_array($table, $this->userTables) as the signal — that list is
+        // module-scoped, so it is empty under an admin module path and the check would
+        // silently switch itself off exactly where it is needed.
+        $ownerField = $object->getUserOnlyMeAccessField();
+        if (empty($ownerField) || empty($object->$ownerField)) {
+            return true;
+        }
+
+        // For an EXISTING record compare the PERSISTED owner: addElement() copies request
+        // values onto the object before this check runs, so an in-memory owner could
+        // otherwise be spoofed to name a subordinate while editing somebody else's row.
+        // A new record (no id) is judged on the owner it is being created with.
+        $ownerId = (string) $object->$ownerField;
+        if (!empty($object->id)) {
+            $className = get_class($object);
+            $fresh = new $className();
+            $fresh->Load('id = ?', array($object->id));
+            if (!empty($fresh->id)) {
+                $ownerId = (string) $fresh->$ownerField;
+            }
+        }
+
+        if ($ownerId === '') {
+            return true;
+        }
+
+        $accessibleIds = $this->accessibleEmployeeIds($object->allowIndirectMapping());
+        if (in_array($ownerId, $accessibleIds, false)) {
+            return true;
+        }
+
+        // Logged distinctly from a plain permission failure: this denial means "the verb was
+        // granted by role but the row is out of scope", which is what you want to see when
+        // diagnosing a manager reporting that a screen stopped working.
+        LogManager::getInstance()->info(sprintf(
+            'MANAGER_RECORD_SCOPE denied: manager profile=%s attempted "%s" on %s id=%s owned by %s',
+            $this->getCurrentProfileId(),
+            $type,
+            get_class($object),
+            isset($object->id) ? $object->id : 'new',
+            $ownerId
+        ));
+
+        return false;
+    }
+
+    /**
+     * May the current EMPLOYEE-level user view this record as its owner's direct
+     * supervisor? An Employee can have direct reports without being a Manager; like a
+     * manager they may see their reports' ENTRIES (leaves, timesheets, training, ...),
+     * with three deliberate narrowings against the manager scope:
+     *
+     *  - read-only: "element" only — never add/save/delete, and never "get" (a list is
+     *    not row-scoped to a supervisor, so granting it would expose the whole table);
+     *  - DIRECT reports only (supervisor = viewer), no indirect supervision;
+     *  - never the Employees table itself — employee details stay hidden, per policy.
+     *
+     * The model must also grant "element" to Manager, so anything managers cannot view
+     * (payroll data, audit, system tables ...) stays closed here as well. Ownership is
+     * judged on the PERSISTED owner (reloaded by id) so a request-supplied value cannot
+     * spoof the scope — same rule as userOwnsUserScopedRecord()/managerRecordScopeAllows().
+     */
+    private function employeeDirectReportScopeAllows($type, $object)
+    {
+        if ($type !== 'element') {
+            return false;
+        }
+
+        $user = $this->currentUser;
+        if (empty($user) || !isset($user->user_level) || $user->user_level !== 'Employee') {
+            return false;
+        }
+
+        $cemp = (string) $this->getCurrentProfileId();
+        if ($cemp === '') {
+            return false;
+        }
+
+        if (empty($object->table) || $object->table === 'Employees') {
+            return false;
+        }
+
+        if (!in_array('element', (array) $object->getManagerAccess(), true)) {
+            return false;
+        }
+
+        $ownerField = $object->getUserOnlyMeAccessField();
+        if (empty($ownerField) || empty($object->id)) {
+            return false;
+        }
+
+        $className = get_class($object);
+        $fresh = new $className();
+        $fresh->Load('id = ?', array($object->id));
+        if (empty($fresh->id) || !isset($fresh->$ownerField)) {
+            return false;
+        }
+        $ownerId = (string) $fresh->$ownerField;
+        if ($ownerId === '' || $ownerId === $cemp) {
+            return false;
+        }
+
+        // Direct reports only — the cached set is [self + direct subordinates].
+        return in_array($ownerId, $this->accessibleEmployeeIds(false), false);
+    }
+
+    /**
+     * Employee ids the current profile may see in full — themselves plus subordinates.
+     * Cached for the request so a 100-row page costs one lookup, not one per row.
+     */
+    /**
+     * Row restriction for a MANAGER's unscoped list, as an SQL fragment.
+     *
+     * managerRecordScopeAllows() deliberately skips "get" because a list is "already
+     * row-scoped by userTables" — but that list is MODULE-scoped. Module managers
+     * register their user classes only when MODULE_TYPE != 'admin' (e.g.
+     * AttendanceModulesManager), so under an admin module path $userTables is empty and
+     * the list falls through to the unrestricted branch. A Manager reaching an
+     * admin module they are entitled to (attendance, overtime, projects, training,
+     * travel, expenses, tasks ...) therefore listed EVERY employee's rows rather than
+     * their own team's.
+     *
+     * Returns array($clause, $bindValues) — '' when no restriction applies: Admin
+     * levels, a role granted all-employee-data, and models with no employee owner
+     * (lookup/config tables) are untouched.
+     *
+     * @return array [string $clause, array $values]
+     */
+    /**
+     * Public accessor for managerListScopeClause() — core/data.php computes its own
+     * row COUNT and must apply the same restriction as the row query, otherwise the
+     * paging total still reveals how many rows exist company-wide.
+     *
+     * @return array [string $clause, array $values]
+     */
+    public function getManagerListScopeClause($obj)
+    {
+        return $this->managerListScopeClause($obj);
+    }
+
+    private function managerListScopeClause($obj)
+    {
+        $none = array('', array());
+
+        $user = $this->currentUser;
+        if (empty($user) || empty($user->user_level)) {
+            return $none;
+        }
+        if (!in_array($user->user_level, array('Manager', 'Restricted Manager'), true)) {
+            return $none;
+        }
+
+        $allDataKey = isset($user->id) ? (string) $user->id : '';
+        if (!isset($this->hasAllEmployeeDataAccessCache[$allDataKey])) {
+            $this->hasAllEmployeeDataAccessCache[$allDataKey] =
+                \Employees\Common\Model\EmployeeAccess::hasAccessToAllEmployeeData();
+        }
+        if ($this->hasAllEmployeeDataAccessCache[$allDataKey]) {
+            return $none;
+        }
+
+        // Only employee-owned models. An owner field that is not an actual column
+        // (or a lookup/config table) leaves the list untouched.
+        $ownerField = $obj->getUserOnlyMeAccessField();
+        if (empty($ownerField)) {
+            return $none;
+        }
+        $columns = $obj->getColumns();
+        if (is_array($columns) && !in_array($ownerField, $columns, true)) {
+            return $none;
+        }
+
+        $ids = $this->accessibleEmployeeIds($obj->allowIndirectMapping());
+        if (!is_array($ids)) {
+            $ids = array();
+        }
+        // Always include the manager's own rows.
+        $ownId = $this->getCurrentProfileId();
+        if (!empty($ownId)) {
+            $ids[] = $ownId;
+        }
+        $ids = array_values(array_unique(array_map('strval', $ids)));
+
+        if (empty($ids)) {
+            // No team and no profile — match nothing rather than everything.
+            return array(' and 1 = 0', array());
+        }
+
+        $placeholders = implode(',', array_fill(0, count($ids), '?'));
+
+        return array(' and ' . $ownerField . ' in (' . $placeholders . ')', $ids);
+    }
+
+    private function accessibleEmployeeIds($allowIndirect)
+    {
+        $profileId = $this->getCurrentProfileId();
+        $key = $profileId . ':' . ($allowIndirect ? 'indirect' : 'direct');
+        if (!isset($this->accessibleEmployeeIdCache[$key])) {
+            $this->accessibleEmployeeIdCache[$key] = PermissionManager::getAccessibleEmployeeIds(
+                $profileId,
+                $allowIndirect
+            );
+        }
+
+        return $this->accessibleEmployeeIdCache[$key];
+    }
+
+    private function projectForViewer($obj)
+    {
+        if (!is_object($obj) || !method_exists($obj, 'getFieldsVisibleTo')) {
+            return $obj;
+        }
+
+        $user = $this->currentUser;
+        $ownerField = $obj->getUserOnlyMeAccessField();
+        $currentProfileId = $this->getCurrentProfileId();
+        $ownerId = isset($obj->$ownerField) ? (string) $obj->$ownerField : null;
+
+        $isPrivileged = false;
+        if (!empty($user) && isset($user->user_level)) {
+            if ($user->user_level === 'Admin') {
+                $isPrivileged = true;
+            } elseif ($user->user_level === 'Manager' && $ownerId !== null) {
+                // Subordinates only (the set includes the manager, so their own record is
+                // covered). NOT PermissionManager::manipulationAllowed($..., $obj): that
+                // branches on $obj->table, which cleanUpAdoDB() has already stripped from
+                // these list objects, so it would silently fall through to the non-Employee
+                // branch and deny a real subordinate. The id set is also fetched once per
+                // request rather than re-queried for all 100 rows.
+                $accessibleIds = $this->accessibleEmployeeIds(
+                    $obj->allowIndirectMapping()
+                );
+                $isPrivileged = in_array($ownerId, $accessibleIds, false);
+            }
+        }
+
+        $isSelf = false;
+        if (!empty($currentProfileId)
+            && !empty($ownerField)
+            && isset($obj->$ownerField)
+            && (string) $obj->$ownerField === (string) $currentProfileId
+        ) {
+            $isSelf = true;
+        }
+
+        $allowed = $obj->getFieldsVisibleTo($user, $isSelf, $isPrivileged);
+        if ($allowed === null || !is_array($allowed)) {
+            return $obj;
+        }
+
+        $projected = clone $obj;
+        foreach (get_object_vars($projected) as $key => $ignored) {
+            if ($key === '' || $key[0] === '_') {
+                continue; // adodb internals (_table, _where, ...)
+            }
+            if (in_array($key, self::$projectionInternalKeys, true)) {
+                continue;
+            }
+            if (!in_array($key, $allowed, true)) {
+                unset($projected->$key);
+            }
+        }
+
+        return $projected;
+    }
+
     private function userOwnsUserScopedRecord($object, $ownerField, $profileField)
     {
         $currentProfileId = (string)$this->currentUser->$profileField;
@@ -1851,15 +2441,10 @@ class BaseService
         $arr['user'] = json_decode($module->user_levels, true);
         $arr['user_roles'] = !empty($module->user_roles)?json_decode($module->user_roles, true):array();
 
-        $permission = new Permission();
-        $modulePerms = $permission->Find("module_id = ? and user_level = ?", array($module->id,$userLevel));
-
-        $perms = array();
-        foreach ($modulePerms as $p) {
-            $perms[$p->permission] = $p->value;
-        }
-
-        $arr['perm'] = $perms;
+        // The per-module meta.json permission feature has been removed along with the
+        // Permissions table/model. Module ACCESS gating still uses 'user'/'user_roles'
+        // above; 'perm' is retained as an empty map so existing callers stay defensive.
+        $arr['perm'] = array();
 
         return $arr;
     }
@@ -2284,6 +2869,79 @@ END;
      * @param $profileId
      * @return bool
      */
+    /**
+     * May the CURRENT user obtain a download link for this File row?
+     *
+     * service.php?a=file resolves a Files.name to a signed download URL. It used to
+     * trust that possessing the name implied authorization — but names are
+     * discoverable and, for reports, guessable (Report_<name>_<timestamp>), so any
+     * logged-in employee could mint a link for anyone's HR document or the full
+     * employee-export CSV (SSN, salary, address). This restores an ownership gate:
+     *
+     *   - Admin, or a role with access to all employee data: any file.
+     *   - A file OWNED by an employee (the `employee` column): the owner themselves,
+     *     or a manager/department-head over that owner (canManageEmployee).
+     *   - An OWNER-LESS file: denied to non-admins. Reports and other PII exports
+     *     live here with no owner to scope by, so they must not be broadly readable.
+     *     (Genuinely public assets — the company logo — are resolved server-side when
+     *     a page is rendered, not through this per-user request path.)
+     *
+     * @param  \Model\File $file a loaded Files row
+     * @return bool
+     */
+    /**
+     * May the CURRENT user access data belonging to $employeeId?
+     *
+     * The single ownership rule shared by the custom-action handlers (a=ca): Admin
+     * and "all employee data" roles see anyone; an employee sees their own; a manager
+     * / department head sees those they manage. Many action-manager methods load a
+     * record by a request-supplied id or employee and act on it with no such check
+     * (cross-employee IDOR); they call this before touching the record.
+     *
+     * @param  mixed $employeeId the owner of the record being accessed
+     * @return bool
+     */
+    public function currentUserCanAccessEmployeeData($employeeId)
+    {
+        if (empty($this->currentUser) || empty($this->currentUser->id)) {
+            return false;
+        }
+
+        // No employee to scope by -> nothing to grant, for any role. Guarded records
+        // always carry a real employee id, so an empty/0 here means a malformed or
+        // owner-less request; deny it before the Admin short-circuit.
+        $employeeId = (string) $employeeId;
+        if ($employeeId === '' || $employeeId === '0') {
+            return false;
+        }
+
+        if ($this->currentUser->user_level === 'Admin'
+            || \Employees\Common\Model\EmployeeAccess::hasAccessToAllEmployeeData()
+        ) {
+            return true;
+        }
+
+        $profileId = (string) $this->getCurrentProfileId();
+        if ($profileId !== '' && $employeeId === $profileId) {
+            return true; // own data
+        }
+
+        return $this->canManageEmployee($employeeId);
+    }
+
+    public function currentUserCanAccessFile($file)
+    {
+        // Owner-less files (reports / PII exports) have no employee to scope by, so
+        // they are admin-only; everything else follows the shared employee-data rule.
+        $ownerId = isset($file->employee) ? (string) $file->employee : '';
+        if ($ownerId === '' || $ownerId === '0') {
+            return !empty($this->currentUser)
+                && ($this->currentUser->user_level === 'Admin'
+                    || \Employees\Common\Model\EmployeeAccess::hasAccessToAllEmployeeData());
+        }
+        return $this->currentUserCanAccessEmployeeData($ownerId);
+    }
+
     protected function canManageEmployee($profileId)
     {
         $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
@@ -2394,6 +3052,40 @@ END;
     }
 
     /**
+     * True if the current request's Origin/Referer is same-origin with the configured
+     * app URL. Used as a CSRF gate for state-changing service.php actions: the SPA only
+     * ever calls those via same-origin XHR, which carries an Origin (POST) or a
+     * same-origin Referer (Referrer-Policy is strict-origin-when-cross-origin), whereas a
+     * forged cross-site request carries a foreign Origin/Referer or none. The host is
+     * taken from CLIENT_BASE_URL (a trusted config constant), NOT the attacker-influenced
+     * Host header. Fails closed when neither header is present.
+     */
+    public function isSameOriginRequest()
+    {
+        $expectedHost = defined('CLIENT_BASE_URL') ? parse_url(CLIENT_BASE_URL, PHP_URL_HOST) : null;
+        if (empty($expectedHost)) {
+            // No trusted base URL to compare against — do not hard-fail every mutation.
+            return true;
+        }
+
+        $candidate = null;
+        if (!empty($_SERVER['HTTP_ORIGIN'])) {
+            $candidate = $_SERVER['HTTP_ORIGIN'];
+        } elseif (!empty($_SERVER['HTTP_REFERER'])) {
+            $candidate = $_SERVER['HTTP_REFERER'];
+        }
+        if (empty($candidate)) {
+            // A same-origin XHR from the SPA always carries one of these; a bare
+            // cross-site top-level navigation (the CSRF vector Lax does not stop) does
+            // not. Refuse.
+            return false;
+        }
+
+        $candidateHost = parse_url($candidate, PHP_URL_HOST);
+        return !empty($candidateHost) && strcasecmp($candidateHost, $expectedHost) === 0;
+    }
+
+    /**
      * @param $map
      * @param $obj
      * @return mixed
@@ -2407,6 +3099,12 @@ END;
                 }
                 $fTable = $this->getFullQualifiedModelClassName($v[0]);
                 $tObj = new $fTable();
+                // Same allowlist as populateMappingItem: the lookup/display columns
+                // in $v come from the request, so both the WHERE-clause injection via
+                // $v[1] and an arbitrary-column read via $v[2] are closed here.
+                if (!$this->mappingFieldsAllowed($tObj, $v)) {
+                    continue;
+                }
                 $name = $k . "_Name";
                 $obj->$name = '';
                 if (isset($v[3]) && $v[3] === true) {

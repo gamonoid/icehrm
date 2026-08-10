@@ -52,14 +52,16 @@ const NATIVE_CB = String(Date.now());
 const nativeBundles = {};
 function loadNativeBundle(url) {
   if (nativeBundles[url]) return nativeBundles[url];
-  nativeBundles[url] = new Promise((resolve, reject) => {
+  const p = new Promise((resolve, reject) => {
     const s = document.createElement('script');
     s.src = `${url}${url.indexOf('?') >= 0 ? '&' : '?'}cb=${NATIVE_CB}`;
     s.async = false;
     s.onload = () => resolve();
-    s.onerror = () => reject(new Error(`Failed to load ${url}`));
+    s.onerror = () => { s.remove(); reject(new Error(`Failed to load ${url}`)); };
     document.head.appendChild(s);
   });
+  // Evict on failure so the next open retries instead of replaying the rejection.
+  nativeBundles[url] = p.catch((e) => { delete nativeBundles[url]; throw e; });
   return nativeBundles[url];
 }
 

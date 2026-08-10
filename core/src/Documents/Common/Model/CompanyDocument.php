@@ -25,7 +25,7 @@ class CompanyDocument extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getManagerAccess()
@@ -35,7 +35,14 @@ class CompanyDocument extends BaseModel
 
     public function getUserAccess()
     {
-        return array("get","element");
+        // Employees keep the "Company Documents" tab (list + attachment download),
+        // but may no longer element-read arbitrary rows by id.
+        return array("get");
+    }
+
+    public function getUserOnlyMeAccess()
+    {
+        return array();
     }
 
     public function getModuleAccess()

@@ -93,11 +93,12 @@ class MicrosoftGraphApiClient
 
     private function getState()
     {
-        $state = SessionUtils::getSessionObject('microsoft_auth_state');
-        if (empty($state)) {
-            $state = bin2hex(random_bytes(32));
-            SessionUtils::saveSessionString('microsoft_auth_state', $state);
-        }
+        // Read with getSessionString to match how it is stored (saveSessionString);
+        // reading it back as a JSON object always yielded null and regenerated the
+        // nonce every call. Always mint a fresh per-authorization nonce so a stale one
+        // from a previous, abandoned attempt cannot be reused.
+        $state = bin2hex(random_bytes(32));
+        SessionUtils::saveSessionString('microsoft_auth_state', $state);
 
         return $state;
     }

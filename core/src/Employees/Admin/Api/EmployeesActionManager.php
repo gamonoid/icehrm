@@ -57,6 +57,14 @@ class EmployeesActionManager extends SubActionManager
     public function activateEmployee($req)
     {
         $employee = new Employee();
+
+        // Employee lifecycle is Admin-only — a Manager reaches this module but must not
+        // activate/terminate/delete employees. Checked BEFORE loading (matching
+        // terminateEmployee) so it also does not leak whether an id exists pre-auth.
+        // checkSecureAccess('delete') denies any level without "delete" on the Employee
+        // model (only Admin has it). Was missing here entirely.
+        $this->baseService->checkSecureAccess('delete', $employee, 'Employee', $_POST);
+
         $employee->Load("id = ?", array($req->id));
 
         if (empty($employee->id)) {
@@ -77,6 +85,15 @@ class EmployeesActionManager extends SubActionManager
     {
 
         $employee = new Employee();
+
+        // Admin-only. A Manager reaches admin=employees but must not delete employees
+        // (nor receive the full archived record — salary, SSN, NIC — this method
+        // returns). Checked BEFORE loading (matching terminateEmployee) so it also
+        // does not leak whether an id exists pre-auth. checkSecureAccess('delete')
+        // denies any level lacking "delete" on the Employee model; only Admin has it.
+        // This check was entirely absent.
+        $this->baseService->checkSecureAccess('delete', $employee, 'Employee', $_POST);
+
         $employee->Load("id = ?", array($req->id));
 
         if (empty($employee->id)) {

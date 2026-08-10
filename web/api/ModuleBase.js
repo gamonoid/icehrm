@@ -73,26 +73,8 @@ class ModuleBase {
   }
 
 
-  setPermissions(permissions) {
-    this.permissions = permissions;
-  }
-
   sortingStarted(val) {
     this.sorting = val;
-  }
-
-  /**
-     * Check if the current user has a permission
-     * @method checkPermission
-     * @param permission {String}
-     * @example
-     * this.checkPermission("Upload/Delete Profile Image")
-     */
-  checkPermission(permission) {
-    if (this.permissions[permission] === undefined || this.permissions[permission] == null || this.permissions[permission] === 'Yes') {
-      return 'Yes';
-    }
-    return this.permissions[permission];
   }
 
   setBaseUrl(url) {

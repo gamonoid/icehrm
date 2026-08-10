@@ -278,7 +278,7 @@ class DashboardService
                 return false;
             }
             $row = $rows[0];
-            if ((int) $row['cnt'] !== 1 || $row['fname'] !== 'IceHrm' || $row['lname'] !== 'Employee') {
+            if ((int) $row['cnt'] !== 1) {
                 return false;
             }
             $tableCheck = $this->rows($db, "SHOW TABLES LIKE 'DemoDataEntries'");

@@ -72,6 +72,45 @@ try {// Domain aware input cleanup
         $_REQUEST['cl'] = $cleaner->cleanColumns($_REQUEST['cl']);
     }
     $action = $_REQUEST['a'];
+
+    // CSRF gate for state-changing actions. service.php authenticates from the session
+    // cookie and reads the action from $_REQUEST, so a=delete/add/ca/setAdminEmp are
+    // triggerable over GET as well as POST; SameSite=Lax alone does not stop a top-level
+    // GET navigation. The SPA only ever calls these via same-origin XHR (which carries an
+    // Origin/Referer), so require a same-origin request for every mutation. Reads are not
+    // gated (a cross-site read cannot be seen by the attacker and changes no state).
+    // Forced password reset: while the session is flagged, the ONLY action allowed is the
+    // reset itself. Without this the shell gate would be cosmetic — a client could keep
+    // driving the app over XHR with the existing session cookie.
+    // 'fpc' is the reset itself; rsp/rpc/rlc are the email-based recovery paths, which a
+    // flagged user must still be able to reach (e.g. they cannot recall the old password).
+    $passwordResetAllowedActions = array('fpc', 'rsp', 'rpc', 'rlc');
+    if (\Classes\PasswordManager::userNeedsPasswordReset($user)
+        && !in_array($action, $passwordResetAllowedActions, true)
+    ) {
+        http_response_code(403);
+        $ret['status'] = "ERROR";
+        $ret['code'] = "PASSWORD_RESET_REQUIRED";
+        $ret['message'] = "You must update your password before continuing";
+        echo json_encode($ret);
+        exit();
+    }
+
+    // 'clearNotifications' writes (marks the caller's unread notifications Read), so it
+    // belongs here too — a forged cross-site request could otherwise hide a victim's
+    // alerts. It is scoped to the session user, so the impact is suppression, not
+    // disclosure, but the gate should cover every action that writes.
+    $stateChangingActions = array('save', 'add', 'delete', 'setAdminEmp', 'ca', 'fpc', 'clearNotifications');
+    if (in_array($action, $stateChangingActions, true)
+        && !BaseService::getInstance()->isSameOriginRequest()
+    ) {
+        http_response_code(403);
+        $ret['status'] = "ERROR";
+        $ret['code'] = "CSRF_ORIGIN_DENIED";
+        echo json_encode($ret);
+        exit();
+    }
+
     if ($action == 'get') {
         $_REQUEST['sm'] = BaseService::getInstance()->fixJSON($_REQUEST['sm']);
         $_REQUEST['ft'] = BaseService::getInstance()->fixJSON($_REQUEST['ft']);
@@ -142,6 +181,81 @@ try {// Domain aware input cleanup
 
         $subAction = $_REQUEST['sa'];
 
+        // AUTHORIZATION. The custom-action path reaches a module's action manager
+        // from any logged-in session; the module's meta.json user_levels only pruned
+        // the MENU, never this dispatch. Without this check an Employee could invoke
+        // any admin module's actions directly (e.g.
+        // service.php?a=ca&mod=admin=leaves&sa=getSubEmployeeLeaves dumped every
+        // employee's leave; deleteEmployee / saveUsage / payroll writes were reachable
+        // the same way). Enforce the module's own declared user_levels/user_roles here,
+        // the same rule the menu applies — read off the resolved manager, so the check
+        // is independent of any name mapping between the request and the DB module.
+        $caModuleObject = $moduleManager->getModuleObject();
+        $caAllowed = false;
+        if (is_array($caModuleObject)) {
+            $caAllowed = \Classes\ModuleAccessService::getInstance()->userMayAccessModuleLevels(
+                isset($caModuleObject['user_levels']) ? $caModuleObject['user_levels'] : null,
+                isset($caModuleObject['user_roles']) ? $caModuleObject['user_roles'] : null,
+                $user
+            );
+        }
+        // Approval actions are a deliberate exception. The SPA routes changeStatus and
+        // getLogs to admin=<module> even when the user is on the USER module's Approvals
+        // tab, because ReactLogViewAdapter::getActionModuleRef() hardcodes the admin
+        // prefix. That tab is shown to Employees (modules/overtime, expenses/user — both
+        // declare Employee in user_levels and gate the tab on the module's multi-level
+        // setting), so an Employee named as approver1/2/3 would be refused a workflow
+        // their own module legitimately offers them, leaving the request stuck at
+        // Processing with nobody able to advance it.
+        //
+        // Fall back to the sibling USER module's user_levels for those two actions only.
+        // This grants no new data access: both actions load the record and run it past
+        // ApproveCommonActionManager::currentUserCanReviewRecord (owner's manager, or a
+        // named approver on that specific record), and ApprovalStatus::updateApprovalStatus
+        // still refuses anyone who is not the currently-active level. Every other
+        // sub-action — getSubEmployeeLeaves, deleteEmployee, payroll writes — stays behind
+        // the strict admin-module check.
+        if (!$caAllowed
+            && $modPath[0] === 'admin'
+            && in_array($subAction, array('changeStatus', 'getLogs'), true)
+        ) {
+            // Core user modules register under 'modules', extension user modules under
+            // 'user'; try both rather than assuming which kind this module is.
+            foreach (array('modules', 'user') as $siblingType) {
+                $siblingManager = BaseService::getInstance()->getModuleManager($siblingType, $modPath[1]);
+                if ($siblingManager === null) {
+                    continue;
+                }
+                $siblingObject = $siblingManager->getModuleObject();
+                if (!is_array($siblingObject)) {
+                    continue;
+                }
+                if (\Classes\ModuleAccessService::getInstance()->userMayAccessModuleLevels(
+                    isset($siblingObject['user_levels']) ? $siblingObject['user_levels'] : null,
+                    isset($siblingObject['user_roles']) ? $siblingObject['user_roles'] : null,
+                    $user
+                )) {
+                    $caAllowed = true;
+                    break;
+                }
+            }
+        }
+
+        if (!$caAllowed) {
+            \Utils\LogManager::getInstance()->info(sprintf(
+                'CA_ACCESS_DENIED: user=%s level=%s attempted mod=%s sa=%s',
+                isset($user->id) ? $user->id : '?',
+                isset($user->user_level) ? $user->user_level : '?',
+                $mod,
+                isset($_REQUEST['sa']) ? $_REQUEST['sa'] : '?'
+            ));
+            http_response_code(403);
+            $ret['status'] = "ERROR";
+            $ret['code'] = "MODULE_ACCESS_DENIED";
+            echo json_encode($ret);
+            exit();
+        }
+
         $apiClass = $moduleManager->getActionManager();
         $reflectionClass = null;
         try {
@@ -188,6 +302,25 @@ try {// Domain aware input cleanup
         $file = new \Model\File();
         $file->Load("name =?", array($name));
         $ret = array();
+        // Ownership gate. Without this any logged-in employee could mint a signed
+        // download link for ANY file by name — other employees' HR documents, and
+        // the full employee-export reports (SSN, salary, address), whose names are
+        // guessable. Admin/owner/manager-over-owner only; owner-less files (reports)
+        // are admin-only.
+        if (!empty($file->id) && !BaseService::getInstance()->currentUserCanAccessFile($file)) {
+            \Utils\LogManager::getInstance()->info(sprintf(
+                'FILE_ACCESS_DENIED: user=%s level=%s requested file name=%s owner=%s',
+                isset($user->id) ? $user->id : '?',
+                isset($user->user_level) ? $user->user_level : '?',
+                $name,
+                isset($file->employee) ? $file->employee : ''
+            ));
+            http_response_code(403);
+            $ret['status'] = "ERROR";
+            $ret['code'] = "FILE_ACCESS_DENIED";
+            echo json_encode($ret);
+            exit();
+        }
         $type = strtolower(substr($file->filename, strrpos($file->filename, ".") + 1));
         if ($file->name == $name) {
             $ret['status'] = "SUCCESS";
@@ -214,7 +347,12 @@ try {// Domain aware input cleanup
 		if (!isset($_REQUEST['signature'])) {
 			exit;
 		}
-		if (!BaseService::getInstance()->verifyHash($fileName, $_REQUEST['signature'])) {
+		$downloadExpires = isset($_REQUEST['expires']) ? $_REQUEST['expires'] : null;
+		if (!\Classes\FileService::getInstance()->verifyDownloadSignature(
+			$fileName,
+			$downloadExpires,
+			$_REQUEST['signature']
+		)) {
 			exit;
 		}
 
@@ -273,6 +411,66 @@ try {// Domain aware input cleanup
         flush();
         readfile(BaseService::getInstance()->getDataDirectory() . $file->filename);
         exit;
+
+    } else if ($action == 'fpc') {
+        // Forced password change for a legacy MD5 account (see core/password-reset-required.php).
+        // Reachable only by a logged-in session that is actually flagged; it upgrades the
+        // stored hash to bcrypt and then ends the session so the user signs in again.
+        try {
+            if (!\Classes\PasswordManager::userNeedsPasswordReset($user)) {
+                $ret['status'] = "ERROR";
+                $ret['message'] = "No password update is required";
+            } else {
+                $fpcCsrf = \Utils\SessionUtils::getSessionObject('csrf-fpc');
+                if (empty($_REQUEST['csrf']) || !is_string($_REQUEST['csrf'])
+                    || !hash_equals((string) $fpcCsrf, $_REQUEST['csrf'])
+                ) {
+                    $ret['status'] = "ERROR";
+                    $ret['message'] = "Error validating CSRF token";
+                } else {
+                    $fpcUser = new User();
+                    $fpcUser->Load("id = ?", array($user->id));
+
+                    if (empty($fpcUser->id)) {
+                        $ret['status'] = "ERROR";
+                        $ret['message'] = "Error occurred while changing password";
+                    } elseif (!PasswordManager::verifyPassword($_REQUEST['current'], $fpcUser->password)) {
+                        $ret['status'] = "ERROR";
+                        $ret['message'] = "Current password is incorrect";
+                    } else {
+                        $fpcStrength = PasswordManager::isQualifiedPassword($_REQUEST['pwd']);
+                        if ($fpcStrength->getStatus() === IceResponse::ERROR) {
+                            $ret['status'] = "ERROR";
+                            $ret['message'] = $fpcStrength->getData();
+                        } else {
+                            $fpcUser->password = PasswordManager::createPasswordHash($_REQUEST['pwd']);
+                            if (!$fpcUser->Save()) {
+                                $ret['status'] = "ERROR";
+                                $ret['message'] = "Error occurred while changing password";
+                            } else {
+                                PasswordManager::resetFailedLogins($fpcUser);
+                                PasswordManager::clearPasswordResetRequired();
+
+                                // Revoke the SPA session token and drop the session: the
+                                // user must sign in again with the new password, which also
+                                // refreshes the User object cached in the session (it still
+                                // holds the old MD5 hash).
+                                \Classes\RestApiManager::getInstance()
+                                    ->deleteAccessTokenForUser($fpcUser, 'Web');
+                                \Utils\SessionUtils::unsetClientSession();
+
+                                $ret['status'] = "SUCCESS";
+                                $ret['message'] = "Password updated";
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            LogManager::getInstance()->error('Error in forced password change:' . $e->getMessage());
+            $ret['status'] = "ERROR";
+            $ret['message'] = "An error occurred. Please try again.";
+        }
 
     } else if ($action == 'rsp') { // linked clicked from password change email
         $user = new User();
@@ -342,13 +540,15 @@ try {// Domain aware input cleanup
                 $user = new User();
                 $user->Load("email = ?", [$email]);
 
-                if (empty($user->id)) {
-                    $ret['status'] = "SUCCESS";
-                    $ret['message'] = "If the email is registered, a login code will be sent";
-                } else if (($passwordChangeWaitingMinutes = PasswordManager::passwordChangeWaitingTimeMinutes($user)) > 0) {
-                    $ret['status'] = "ERROR";
-                    $ret['message'] = "Wait another $passwordChangeWaitingMinutes minutes to request a login code again";
-                } else {
+                // Uniform response regardless of whether the email is registered, is
+                // rate-limited, or the send succeeds. Previously each case returned a
+                // distinct status/message ("A login code has been sent" vs "Wait N
+                // minutes" vs the neutral unknown-email string), which enumerated
+                // registered addresses. All work happens internally; its outcome is
+                // logged, never reflected to the caller.
+                if (!empty($user->id)
+                    && PasswordManager::passwordChangeWaitingTimeMinutes($user) <= 0
+                ) {
                     // Generate 6-digit code
                     $code = str_pad(random_int(0, 999999), 6, '0', STR_PAD_LEFT);
                     $hashedCode = password_hash($code, PASSWORD_BCRYPT);
@@ -365,14 +565,18 @@ try {// Domain aware input cleanup
                     $body .= "This code will expire in 15 minutes.<br><br>";
                     $body .= "If you did not request this code, please ignore this email.";
 
-                    if ($emailSender->sendEmail($subject, $user->email, $body, [])) {
-                        $ret['status'] = "SUCCESS";
-                        $ret['message'] = "A login code has been sent to your email. Enter the code below to login.";
-                    } else {
-                        $ret['status'] = "ERROR";
-                        $ret['message'] = "Failed to send email. Please try again.";
+                    if (!$emailSender->sendEmail($subject, $user->email, $body, [])) {
+                        LogManager::getInstance()->error('Failed to send login code email to a registered address');
                     }
+                } else {
+                    // Unknown or rate-limited: run one matching bcrypt so the hashing
+                    // portion of the response time does not set these apart from the
+                    // send path.
+                    password_hash('rlc-timing-equalizer', PASSWORD_BCRYPT);
                 }
+
+                $ret['status'] = "SUCCESS";
+                $ret['message'] = "If the email is registered, a login code has been sent. Enter the code below to login.";
             }
         } catch (Exception $e) {
             LogManager::getInstance()->error('Error occurred while sending login code:' . $e->getMessage());

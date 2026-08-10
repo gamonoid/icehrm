@@ -42,10 +42,6 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
 	public function getEmployee() {
 		return $this->employee;
 	}
-    public function getAdminAccess()
-    {
-        return array("get","element","save","delete");
-    }
 
     public function getMatchingUserRoles($userRoles)
     {
@@ -155,6 +151,11 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
         return $this->getEmployeeAccess();
     }
 
+	public function getAdminAccess()
+	{
+		return array("get","element","add","save","delete");
+	}
+
     public function getManagerAccess()
     {
         return array("get","element");
@@ -180,9 +181,59 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
         return array("get","element");
     }
 
+	public function getEmployeeOnlyMeAccess()
+    {
+        return $this->getUserOnlyMeAccess();
+    }
+
     public function getUserOnlyMeSwitchedAccess()
     {
         return $this->getUserOnlyMeAccess();
+    }
+
+    /**
+     * Columns this viewer may see on THIS record, or null for "no projection".
+     *
+     * Opt-in: the default returns null, so every model keeps returning every column
+     * exactly as before. A model overrides this only when some of its columns must be
+     * withheld from users who are allowed to LIST it but not to see all of it
+     * (finding 2.7 — Employee is the only such model today).
+     *
+     * Applied by BaseService::projectForViewer() at the point rows are returned to a
+     * user-facing request, per record, so a manager can get the full record for their
+     * own subordinates and the reduced one for everybody else in the same list.
+     *
+     * @param  mixed $user               the requesting user (may be null)
+     * @param  bool  $isSelf             the record belongs to the requester
+     * @param  bool  $isPrivilegedViewer Admin, or a Manager over this record's owner
+     * @return array|null                allowlist of column names, or null for all
+     */
+    public function getFieldsVisibleTo($user, $isSelf, $isPrivilegedViewer)
+    {
+        return null;
+    }
+
+    /**
+     * May a LIST of this model be scoped to the caller's direct reports?
+     *
+     * data.php turns `type=sub` into $isSubOrdinates, and BaseService::getData()
+     * then filters rows to `<ownerField> IN (<the caller's reports>)`. That branch
+     * is chosen by a CLIENT-SUPPLIED parameter, while authorization is decided
+     * separately by checkSecureAccess("get", ...), which never sees it — so without
+     * this opt-in any caller with direct reports could flip any employee-owned list
+     * from "my rows" to "my reports' rows" on a model that was never meant to have a
+     * team view.
+     *
+     * Default DENY. Override to true only where a screen genuinely shows a team
+     * list (the adapter returns true from isSubProfileTable()). The query still
+     * constrains rows to actual direct reports, so this governs WHICH MODELS may be
+     * viewed that way, not who the reports are.
+     *
+     * @return bool
+     */
+    public function allowsSubordinateList()
+    {
+        return false;
     }
 
     public function getUserOnlyMeAccessField()
@@ -292,6 +343,46 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
     }
 
     public function fieldValueMethods()
+    {
+        return [];
+    }
+
+    /**
+     * Columns a SELECT BOX may ask for through service.php?a=getFieldValues.
+     *
+     * getFieldValues() projects rows as `$obj->$key => $obj->$value`, and both names
+     * come straight from the request — so without this list any caller holding "get"
+     * on a model can read ANY column of EVERY row, bypassing the row scoping in
+     * get()/getData() entirely (it runs Find('1 = 1')). That is how a plain employee
+     * could read every colleague's address, phone number and date of birth.
+     *
+     * Deny by default: a model must publish the columns its pickers legitimately
+     * need — normally just the id and a display label. Anything else fails closed
+     * (an empty dropdown), which surfaces in the module's e2e spec rather than
+     * leaking.
+     *
+     * This is the third axis of picker control, alongside the two that already
+     * existed: getFieldMappingFinder() restricts which ROWS are returned, and
+     * fieldValueMethods() restricts which METHOD may be invoked.
+     */
+    public function fieldValueFields()
+    {
+        return [];
+    }
+
+    /**
+     * Fields the generic save/add path (BaseService::addElement) must NOT copy from the
+     * client for the CURRENT actor — a per-model, privilege-aware mass-assignment guard.
+     * addElement authorises the *verb* and *row*, but blindly assigns every request key
+     * that matches a column; a model that grants an owner `save`/`add` therefore lets
+     * that owner over-post sensitive columns (approval status, supervisor, pay grade, ...).
+     * Override to return those columns for actors who must not set them; the loaded DB
+     * value (update) or model default (add) is kept instead. Default: no restriction.
+     *
+     * @param object|null $user the current user (BaseService::getCurrentUser())
+     * @return string[]
+     */
+    public function getProtectedFields($user)
     {
         return [];
     }

@@ -11,7 +11,7 @@ class AssetType extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get", "element", "save", "delete");
+        return array("get", "element", "add","save", "delete");
     }
 
     public function getManagerAccess()
@@ -21,7 +21,12 @@ class AssetType extends BaseModel
 
     public function getUserAccess()
     {
-        return array("get", "element");
+        return array();
+    }
+
+    public function getUserOnlyMeAccess()
+    {
+        return array();
     }
 
     public function getModuleAccess()

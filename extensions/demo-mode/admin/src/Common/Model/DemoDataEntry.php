@@ -10,7 +10,17 @@ class DemoDataEntry extends BaseModel
 
     public function getAdminAccess()
     {
-        return ['get', 'element', 'save', 'delete'];
+        return ['get', 'element', 'add','save', 'delete'];
+    }
+
+    public function getUserAccess()
+    {
+        return array();
+    }
+
+    public function getUserOnlyMeAccess()
+    {
+        return array();
     }
 
     public function getDataMapping()

@@ -9,14 +9,16 @@ const DOC_CB = String(Date.now());
 const docBundles = {};
 function loadDocBundle(url) {
   if (docBundles[url]) return docBundles[url];
-  docBundles[url] = new Promise((resolve, reject) => {
+  const p = new Promise((resolve, reject) => {
     const s = document.createElement('script');
     s.src = `${url}${url.indexOf('?') >= 0 ? '&' : '?'}cb=${DOC_CB}`;
     s.async = false;
     s.onload = () => resolve();
-    s.onerror = () => reject(new Error(`Failed to load ${url}`));
+    s.onerror = () => { s.remove(); reject(new Error(`Failed to load ${url}`)); };
     document.head.appendChild(s);
   });
+  // Evict on failure so the next open retries instead of replaying the rejection.
+  docBundles[url] = p.catch((e) => { delete docBundles[url]; throw e; });
   return docBundles[url];
 }
 

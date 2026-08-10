@@ -16,8 +16,28 @@ class UserInvitation extends BaseModel
 {
 	public $table = 'UserInvitations';
 
+	public function getAdminAccess()
+	{
+		return array("get","element","add","save","delete");
+	}
+	public function getManagerAccess()
+	{
+		return array();
+	}
+
+	public function getUserAccess()
+	{
+		return array();
+	}
+
+	public function getUserOnlyMeAccess()
+	{
+		return array();
+	}
+
 	public function executePreSaveActions($obj)
 	{
+
 		// The employee number is NOT collected at invite time. Store a throwaway random
 		// 4-digit placeholder so the (NOT NULL) column is satisfied; the real, unique
 		// employee number is generated when the invitation is accepted and the employee

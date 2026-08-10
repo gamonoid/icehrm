@@ -280,7 +280,7 @@ cd icehrm
 docker-compose up -d
 ```
 
-- Visit [http://localhost:9180/](http://localhost:9180/) and login using `admin` as username and password
+- Visit [http://localhost:9080/](http://localhost:9080/) and login using `admin` as username and password
 - Watch detailed instructions: [https://www.youtube.com/watch?v=sz8OV_ON6S8](https://www.youtube.com/watch?v=sz8OV_ON6S8)
 
 #### Manual Setup

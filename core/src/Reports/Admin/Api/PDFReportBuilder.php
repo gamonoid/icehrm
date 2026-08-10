@@ -28,14 +28,21 @@ class PDFReportBuilder extends ReportBuilder
         return $defaultData;
     }
 
+    /**
+     * Templates live beside the code that renders them, in src/Reports/templates/.
+     *
+     * They used to sit in the reports MODULE directories, selected by a branch on
+     * $report->table. That branch could never work: it was written with a single "="
+     * — an assignment, always truthy — so every call took the "UserReports" path AND
+     * silently overwrote $report->table as a side effect. The admin branch was dead,
+     * and its directory did not even contain a customTemplates folder. Both reports
+     * modules are gone now (superseded by the advance_reports extension), so there is
+     * one location and no branch: PayslipReport, the only subclass, renders payslips
+     * for payrolls whose template has no stored data.
+     */
     protected function initTemplateEngine($report)
     {
-        if ($report->table = "UserReports") {
-            $path = APP_BASE_PATH."modules/reports/customTemplates/";
-        } else {
-            $path = APP_BASE_PATH."admin/reports/customTemplates/";
-        }
-        $loader = new \Twig_Loader_Filesystem($path);
+        $loader = new \Twig_Loader_Filesystem(APP_BASE_PATH . "src/Reports/templates/");
 
         if (defined('CACHE_THEME') && CACHE_THEME) {
             $twigOptions = array(

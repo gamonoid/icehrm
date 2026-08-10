@@ -30,6 +30,16 @@ if (empty($user)) {
     exit();
 }
 
+// Forced password reset (legacy MD5 account): serve no data at all until the password
+// has been upgraded. Mirrors the gate in service.php; the reset itself never comes here.
+if (\Classes\PasswordManager::userNeedsPasswordReset($user)) {
+    http_response_code(403);
+    $ret['status'] = "ERROR";
+    $ret['code'] = "PASSWORD_RESET_REQUIRED";
+    echo json_encode($ret);
+    exit();
+}
+
 // Reject a forged/unauthorized explicit module before returning any data — a
 // client must not gain admin scope by naming a module it can't access.
 if (!empty($reqModGroup) && !empty($reqModName)
@@ -73,20 +83,35 @@ if (!isset($_REQUEST['objects'])) {
     }
 }
 
-$isSubOrdinates = false;
-if (isset($_REQUEST['type']) && $_REQUEST['type'] === "sub") {
-    $isSubOrdinates = true;
-}
+// Whether this list is scoped to the caller's direct reports. The request may ASK
+// for that scope, but the model decides: resolveSubordinateListScope() narrows the
+// request to what allowsSubordinateList() permits, so a client cannot flip an
+// arbitrary employee-owned list from "my rows" to "my reports' rows". Resolved here,
+// at the entry point, so the row query and the row COUNT below agree — narrowing
+// only inside getData() would have left this file counting subordinate rows for a
+// list that returned own rows.
+$isSubOrdinates = \Classes\BaseService::getInstance()->resolveSubordinateListScope(
+    isset($_REQUEST['type']) && $_REQUEST['type'] === "sub",
+    $obj,
+    $table
+);
 
+// Whether the own-records restriction on user tables is lifted. This is decided
+// by the server alone and is NEVER taken from the request.
+//
+// A `skip` request parameter used to set this. Its guard was written with an
+// assignment instead of a comparison — `$_REQUEST['type'] = "1"` — which is
+// always truthy, so the condition collapsed to "is skip present". Any
+// authenticated user could append skip=1 and read every employee's rows in any
+// user table (leaves, expenses, timesheets, salaries, documents, payslips...).
+// The parameter was never sent by the application either: nothing overrides
+// AdapterBase::remoteTableSkipProfileRestriction(), which returns false. So the
+// handling is removed outright rather than repaired.
+//
+// If an all-employee view is ever needed, gate it on a privilege check here
+// (e.g. EmployeeAccess::hasAccessToAllEmployeeData()) — never on a client-supplied
+// parameter.
 $skipProfileRestriction = false;
-if (isset($_REQUEST['skip']) && $_REQUEST['type'] = "1") {
-    $skipProfileRestriction = true;
-}
-
-// Override subordinate parameter if user has all employee access
-//if (EmployeeAccess::hasAccessToAllEmployeeData()) {
-//    $skipProfileRestriction = true;
-//}
 
 $sortData = \Classes\BaseService::getInstance()->getSortingData($_REQUEST);
 $data = \Classes\BaseService::getInstance()->getData(
@@ -248,7 +273,15 @@ if (!isset($_REQUEST['objects'])) {
             $countQuery = ' AND '.$obj->getUserOnlyMeAccessField() . " in (" . $subordinatesIds . ") " . $countFilterQuery.$searchQuery;
             $totalRows = $obj->getTotalCount($countQuery, array_merge($countFilterQueryData, $searchQueryData));
         } else {
-            $totalRows = $obj->getTotalCount($countFilterQuery.$searchQuery, array_merge($countFilterQueryData, $searchQueryData));
+            // Mirror the row query (BaseService::getData): a Manager's unscoped list is
+            // restricted to their own team, so the paging total must be too — otherwise
+            // iTotalRecords still discloses the company-wide row count.
+            list($mgrClause, $mgrData) = \Classes\BaseService::getInstance()
+                ->getManagerListScopeClause($obj);
+            $totalRows = $obj->getTotalCount(
+                $mgrClause.$countFilterQuery.$searchQuery,
+                array_merge($mgrData, $countFilterQueryData, $searchQueryData)
+            );
         }
     }
 }

@@ -12,6 +12,7 @@ import QRCode from 'qrcode';
 import AdapterBase from '../../../api/AdapterBase';
 import ReactModalAdapterBase, { shellThemeWrap } from '../../../api/ReactModalAdapterBase';
 import EmployeeProfile from './components/EmployeeProfile';
+import { escapeHtml } from '../../../api-common/htmlEscape';
 
 
 class EmployeeAdapter extends ReactModalAdapterBase {
@@ -127,63 +128,17 @@ class EmployeeAdapter extends ReactModalAdapterBase {
     let employee_id; let ssn_num; let employment_status; let job_title; let pay_grade; let joined_date; let department; let work_email; let
       country;
 
-    if (this.checkPermission('Edit Employee Number') === 'Yes') {
-      employee_id = ['employee_id', { label: 'Employee Number', type: 'text', validation: '' }];
-    } else {
-      employee_id = ['employee_id', { label: 'Employee Number', type: 'placeholder', validation: '' }];
-    }
-
-    if (this.checkPermission('Edit EPF/CPF Number') === 'Yes') {
-      ssn_num = ['ssn_num', { label: 'EPF/CPF/SS No', type: 'text', validation: 'none' }];
-    } else {
-      ssn_num = ['ssn_num', { label: 'EPF/CPF/SS No', type: 'placeholder', validation: 'none' }];
-    }
-
-    if (this.checkPermission('Edit Employment Status') === 'Yes') {
-      employment_status = ['employment_status', { label: 'Employment Status', type: 'select2', 'remote-source': ['EmploymentStatus', 'id', 'name'] }];
-    } else {
-      employment_status = ['employment_status', { label: 'Employment Status', type: 'select2', readonly: true, 'remote-source': ['EmploymentStatus', 'id', 'name'] }];
-    }
-
-    if (this.checkPermission('Edit Job Title') === 'Yes') {
-      job_title = ['job_title', { label: 'Job Title', type: 'select2', 'remote-source': ['JobTitle', 'id', 'name'] }];
-    } else {
-      job_title = ['job_title', { label: 'Job Title', type: 'select2', readonly: true, 'remote-source': ['JobTitle', 'id', 'name'] }];
-    }
-
-    if (this.checkPermission('Edit Pay Grade') === 'Yes') {
-      pay_grade = ['pay_grade', {
-        label: 'Pay Grade', type: 'select2', 'allow-null': true, 'remote-source': ['PayGrade', 'id', 'name'],
-      }];
-    } else {
-      pay_grade = ['pay_grade', {
-        label: 'Pay Grade', type: 'select2', readonly: true, 'allow-null': true, 'remote-source': ['PayGrade', 'id', 'name'],
-      }];
-    }
-
-    if (this.checkPermission('Edit Joined Date') === 'Yes') {
-      joined_date = ['joined_date', { label: 'Joined Date', type: 'date', validation: '' }];
-    } else {
-      joined_date = ['joined_date', { label: 'Joined Date', type: 'placeholder', validation: '' }];
-    }
-
-    if (this.checkPermission('Edit Department') === 'Yes') {
-      department = ['department', { label: 'Department', type: 'select2', 'remote-source': ['CompanyStructure', 'id', 'title'] }];
-    } else {
-      department = ['department', { label: 'Department', type: 'select2', readonly: true, 'remote-source': ['CompanyStructure', 'id', 'title'] }];
-    }
-
-    if (this.checkPermission('Edit Work Email') === 'Yes') {
-      work_email = ['work_email', { label: 'Work Email', type: 'text', validation: 'email' }];
-    } else {
-      work_email = ['work_email', { label: 'Work Email', type: 'select2', readonly: true, validation: 'emailOrEmpty' }];
-    }
-
-    if (this.checkPermission('Edit Country') === 'Yes') {
-      country = ['country', { label: 'Country', type: 'select2', 'remote-source': ['Country', 'code', 'name'] }];
-    } else {
-      country = ['country', { label: 'Country', type: 'select2', readonly: true, 'remote-source': ['Country', 'code', 'name'] }];
-    }
+    employee_id = ['employee_id', { label: 'Employee Number', type: 'text', validation: '' }];
+    ssn_num = ['ssn_num', { label: 'EPF/CPF/SS No', type: 'text', validation: 'none' }];
+    employment_status = ['employment_status', { label: 'Employment Status', type: 'select2', 'remote-source': ['EmploymentStatus', 'id', 'name'] }];
+    job_title = ['job_title', { label: 'Job Title', type: 'select2', 'remote-source': ['JobTitle', 'id', 'name'] }];
+    pay_grade = ['pay_grade', {
+      label: 'Pay Grade', type: 'select2', 'allow-null': true, 'remote-source': ['PayGrade', 'id', 'name'],
+    }];
+    joined_date = ['joined_date', { label: 'Joined Date', type: 'date', validation: '' }];
+    department = ['department', { label: 'Department', type: 'select2', 'remote-source': ['CompanyStructure', 'id', 'title'] }];
+    work_email = ['work_email', { label: 'Work Email', type: 'text', validation: 'email' }];
+    country = ['country', { label: 'Country', type: 'select2', 'remote-source': ['Country', 'code', 'name'] }];
 
     const fields = [
       ['id', { label: 'ID', type: 'hidden', validation: '' }],
@@ -403,24 +358,24 @@ class EmployeeAdapter extends ReactModalAdapterBase {
     $(`#${this.getTableName()}`).html(html);
 
     for (let i = 0; i < fields.length; i++) {
-      $(`#${this.getTableName()} #${fields[i][0]}`).html(data[fields[i][0]]);
-      $(`#${this.getTableName()} #${fields[i][0]}_Name`).html(data[`${fields[i][0]}_Name`]);
+      $(`#${this.getTableName()} #${fields[i][0]}`).html(escapeHtml(data[fields[i][0]]));
+      $(`#${this.getTableName()} #${fields[i][0]}_Name`).html(escapeHtml(data[`${fields[i][0]}_Name`]));
     }
 
-    $(`#${this.getTableName()} #supervisor_Name`).html(data.supervisor_Name);
+    $(`#${this.getTableName()} #supervisor_Name`).html(escapeHtml(data.supervisor_Name));
 
     let subordinates = '';
     for (let i = 0; i < data.subordinates.length; i++) {
       if (data.subordinates[i].first_name !== undefined && data.subordinates[i].first_name !== null) {
-        subordinates += `${data.subordinates[i].first_name} `;
+        subordinates += `${escapeHtml(data.subordinates[i].first_name)} `;
       }
 
       if (data.subordinates[i].middle_name !== undefined && data.subordinates[i].middle_name !== null && data.subordinates[i].middle_name !== '') {
-        subordinates += `${data.subordinates[i].middle_name} `;
+        subordinates += `${escapeHtml(data.subordinates[i].middle_name)} `;
       }
 
       if (data.subordinates[i].last_name !== undefined && data.subordinates[i].last_name !== null && data.subordinates[i].last_name !== '') {
-        subordinates += data.subordinates[i].last_name;
+        subordinates += escapeHtml(data.subordinates[i].last_name);
       }
       subordinates += '<br/>';
     }
@@ -443,19 +398,19 @@ class EmployeeAdapter extends ReactModalAdapterBase {
           // Add section
           let sectionHtml = sectionTemplate;
           sectionHtml = sectionHtml.replace('#_section_#', sectionId);
-          sectionHtml = sectionHtml.replace('#_section.name_#', data.customFields[index][1]);
+          sectionHtml = sectionHtml.replace('#_section.name_#', escapeHtml(data.customFields[index][1]));
           $('#customFieldsCont').append($(sectionHtml));
         }
 
         customFieldHtml = ct;
-        customFieldHtml = customFieldHtml.replace('#_label_#', index);
+        customFieldHtml = customFieldHtml.replace('#_label_#', escapeHtml(index));
         if (data.customFields[index][2] === 'fileupload') {
           customFieldHtml = customFieldHtml.replace(
             '#_value_#',
-            `<button onclick="download('${data.customFields[index][0]}');return false;" class="btn btn-mini btn-inverse" type="button">View: ${index}</button>`,
+            `<button onclick="download('${escapeHtml(data.customFields[index][0])}');return false;" class="btn btn-mini btn-inverse" type="button">View: ${escapeHtml(index)}</button>`,
           );
         } else {
-          customFieldHtml = customFieldHtml.replace('#_value_#', data.customFields[index][0]);
+          customFieldHtml = customFieldHtml.replace('#_value_#', escapeHtml(data.customFields[index][0]));
         }
         $(`#cont_${sectionId}`).append($(customFieldHtml));
       }
@@ -466,19 +421,10 @@ class EmployeeAdapter extends ReactModalAdapterBase {
     $(`#${this.getTableName()} #subordinates`).html(subordinates);
 
 
-    $(`#${this.getTableName()} #name`).html(`${data.first_name} ${data.last_name}`);
+    $(`#${this.getTableName()} #name`).html(`${escapeHtml(data.first_name)} ${escapeHtml(data.last_name)}`);
     this.currentUserId = data.id;
 
     $(`#${this.getTableName()} #profile_image_${data.id}`).attr('src', data.image);
-
-    if (this.checkPermission('Upload/Delete Profile Image') === 'No') {
-      $('#employeeUploadProfileImage').remove();
-      $('#employeeDeleteProfileImage').remove();
-    }
-
-    if (this.checkPermission('Edit Employee Details') === 'No') {
-      $('#employeeProfileEditInfo').remove();
-    }
 
     if (currentEmpId !== userEmpId) {
       $('#employeeUpdatePassword').remove();

@@ -17,7 +17,8 @@ class TopBar extends React.Component {
     return (
       <div style={{padding: '10px'}}>
         <Space direction={'horizontal'} wrap style={{width:'100%'}}>
-          {this.props.ice.hasAccess('save') &&
+          {this.props.ice.hasAccess('save')
+            && this.props.ice.user && this.props.ice.user.user_level === 'Admin' &&
           <Button type="primary" onClick={() => this.props.ice.inviteEmployee() } icon={<SendOutlined />} >
             {this.props.ice.gt('Invite an Employee')}
           </Button>

@@ -156,6 +156,18 @@ $allowedExtensions = explode(',', "jpg,gif,png,jpeg");
 $sizeLimit =MAX_FILE_SIZE_KB * 1024;
 $uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
 $result = $uploader->handleUpload(BaseService::getInstance()->getDataDirectory(), $saveFileName);
+// Content check: reject a non-image file disguised with an image extension (e.g. an
+// HTML/SVG payload named .png that could render inline). Extension-only validation
+// above does not inspect the bytes.
+if (!empty($result['success']) && !empty($result['filename'])) {
+    $iceSavedPath = BaseService::getInstance()->getDataDirectory().$result['filename'];
+    $iceSavedExt = pathinfo($result['filename'], PATHINFO_EXTENSION);
+    if (!iceUploadContentAllowed($iceSavedPath, $iceSavedExt)) {
+        @unlink($iceSavedPath);
+        iceUploadDeny('INVALID_FILE_CONTENT', 'Uploaded file content does not match its type');
+    }
+}
+
 // to pass data through iframe you will need to encode all html tags
 
 $uploadFilesToS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3 for Editor");

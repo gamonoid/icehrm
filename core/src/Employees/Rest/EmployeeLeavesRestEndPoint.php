@@ -11,22 +11,8 @@ use Users\Common\Model\User;
 
 class EmployeeLeavesRestEndPoint extends RestEndPoint
 {
-    /**
-     * EmployeeLeave lives in the leave_and_performance PRO extension, so it is
-     * absent from the free build. Without this guard every endpoint below fatals
-     * with "Class not found" and the caller gets a 500 instead of empty leave data.
-     */
-    private static function leavesAvailable()
-    {
-        return class_exists('\\Leaves\\Common\\Model\\EmployeeLeave');
-    }
-
     public function getModelObject($id)
     {
-        if (!self::leavesAvailable()) {
-            return false;
-        }
-
         $obj = new EmployeeLeave();
         $obj->Load("id = ?", array($id));
         return $obj;
@@ -34,8 +20,15 @@ class EmployeeLeavesRestEndPoint extends RestEndPoint
 
     public function listAll(User $user, $parameter = null)
     {
-        if (!self::leavesAvailable()) {
-            return new IceResponse(IceResponse::SUCCESS, ['data' => [], 'total' => 0, 'nextPage' => 1]);
+        // Ownership gate. $parameter is the employee id straight from the URL; without
+        // this any authenticated employee could read a colleague's records by changing it
+        // (finding 2.9 / gamonoid/icehrm#375). checkBasicPermissions allows Admin, a Manager
+        // over their own subordinates, and an Employee only for themselves - the same guard
+        // already used by EmployeeRestEndPoint::setEmployeeStatusMessage and the attendance
+        // endpoints.
+        $permissionResponse = $this->checkBasicPermissions($user, $parameter);
+        if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
+            return $permissionResponse;
         }
 
         $query = new DataQuery('EmployeeLeave');
@@ -75,14 +68,15 @@ JSON;
 
     public function getSummary(User $user, $parameter = null)
     {
-        if (!self::leavesAvailable()) {
-            return new IceResponse(IceResponse::SUCCESS, [
-                'approved' => 0,
-                'pending' => 0,
-                'rejected' => 0,
-                'cancelled' => 0,
-                'total' => 0,
-            ]);
+        // Ownership gate. $parameter is the employee id straight from the URL; without
+        // this any authenticated employee could read a colleague's records by changing it
+        // (finding 2.9 / gamonoid/icehrm#375). checkBasicPermissions allows Admin, a Manager
+        // over their own subordinates, and an Employee only for themselves - the same guard
+        // already used by EmployeeRestEndPoint::setEmployeeStatusMessage and the attendance
+        // endpoints.
+        $permissionResponse = $this->checkBasicPermissions($user, $parameter);
+        if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
+            return $permissionResponse;
         }
 
         $employeeLeave = new EmployeeLeave();

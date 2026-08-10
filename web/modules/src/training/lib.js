@@ -108,12 +108,7 @@ class EmployeeTrainingSessionAdapter extends ReactModalAdapterBase {
     let html = '<div style="width:100px;">_edit__course__delete__completed_</div>';
 
     if (this.showDelete) {
-      if (this.checkPermission('Delete Assigned Training Sessions') === 'No'
-        && data[3] === 'Assign') {
-        html = html.replace('_delete_', '');
-      } else {
-        html = html.replace('_delete_', deleteButton);
-      }
+      html = html.replace('_delete_', deleteButton);
     } else {
       html = html.replace('_delete_', '');
     }
@@ -437,11 +432,7 @@ class SubEmployeeTrainingSessionAdapter extends EmployeeTrainingSessionAdapter {
     let html = '<div style="width:100px;">_edit__course__delete__completed_</div>';
 
     if (this.showDelete) {
-      if (this.checkPermission('Delete Training Sessions of Direct Reports') === 'No') {
-        html = html.replace('_delete_', '');
-      } else {
-        html = html.replace('_delete_', deleteButton);
-      }
+      html = html.replace('_delete_', deleteButton);
     } else {
       html = html.replace('_delete_', '');
     }

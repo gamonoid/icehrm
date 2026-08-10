@@ -12,17 +12,17 @@ class CompanyAsset extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get", "element", "save", "delete");
+        return array("get", "element", "add","save", "delete");
     }
 
     public function getManagerAccess()
     {
-        return array("get", "element", "save");
+        return array("get", "element", "add","save");
     }
 
     public function getUserAccess()
     {
-        return array("get", "element");
+        return array();
     }
 
     public function getModuleAccess()

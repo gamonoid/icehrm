@@ -30,7 +30,6 @@ class ModulesActionManager extends SubActionManager
             "admin>jobs",
             "admin>metadata",
             "admin>modules",
-            "admin>permissions",
             "admin>projects",
             "admin>qualifications",
             "admin>report_files",

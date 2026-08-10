@@ -25,7 +25,7 @@ class EmployeeDocument extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getManagerAccess()
@@ -42,7 +42,7 @@ class EmployeeDocument extends BaseModel
 
     public function getUserOnlyMeAccess()
     {
-        return array("element","save","delete");
+        return array("element","add","save","delete");
     }
     // @codingStandardsIgnoreStart
     public function Insert()
@@ -98,4 +98,15 @@ class EmployeeDocument extends BaseModel
 
         return $obj;
     }
+
+    /**
+     * A team list exists for this model: the adapter opts into `type=sub`
+     * (isSubProfileTable), so BaseService::getData() may scope its rows to the
+     * caller's direct reports. See BaseModel::allowsSubordinateList().
+     */
+    public function allowsSubordinateList()
+    {
+        return true;
+    }
+
 }

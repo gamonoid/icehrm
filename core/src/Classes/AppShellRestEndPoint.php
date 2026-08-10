@@ -102,6 +102,12 @@ class AppShellRestEndPoint extends RestEndPoint
                     && BaseService::getInstance()->isModuleMenuEnabled('extension>marketplace|admin')
                     && !\Classes\ConnectionService::getInstance()->isConnected();
             }) === true,
+            // A newer IceHRM is published than the one installed. Admin-only: nobody
+            // else can act on it, and the updater refuses every other user level.
+            // safeCall so a malformed marketplace snapshot can never break the shell.
+            'updateAvailable' => $this->safeCall(function () use ($user) {
+                return \Classes\UpdateAvailability::get($user);
+            }),
             'licenseRenewal' => $this->safeCall(function () use ($user) {
                 if (!class_exists('\\UtilAdmin\\LicenseService')) {
                     return null;
@@ -604,10 +610,6 @@ class AppShellRestEndPoint extends RestEndPoint
             });
         }
 
-        $perms = $this->safeCall(function () use ($group, $name, $user) {
-            return BaseService::getInstance()->loadModulePermissions($group . '>' . $name, $user->user_level);
-        });
-
         $moduleData = array(
             'user_level' => $user->user_level,
             'customFields' => $customFields,
@@ -721,7 +723,6 @@ class AppShellRestEndPoint extends RestEndPoint
                 'fieldTemplates' => $this->buildFieldTemplates(),
                 'templates' => $this->buildTemplates(),
                 'customTemplates' => new \stdClass(),
-                'perm' => (is_array($perms) && isset($perms['perm'])) ? $perms['perm'] : new \stdClass(),
                 'user' => BaseService::getInstance()->cleanUpUser(clone $user),
                 'baseUrl' => (defined('CLIENT_BASE_URL') ? CLIENT_BASE_URL : '') . 'service.php',
                 'clientUrl' => defined('CLIENT_BASE_URL') ? CLIENT_BASE_URL : '',

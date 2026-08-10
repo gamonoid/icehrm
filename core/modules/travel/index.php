@@ -56,17 +56,6 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 </div>
 <?php
 $permissions = ['get', 'element', 'save', 'delete'];
-// Apply module-specific permission checks
-if(isset($modulePermissions['perm']['Add '.$moduleItemName]) && $modulePermissions['perm']['Add '.$moduleItemName] == "No"){
-    $permissions = array_diff($permissions, ['save']);
-}
-if(isset($modulePermissions['perm']['Delete '.$moduleItemName]) && $modulePermissions['perm']['Delete '.$moduleItemName] == "No"){
-    $permissions = array_diff($permissions, ['delete']);
-}
-if(isset($modulePermissions['perm']['Edit '.$moduleItemName]) && $modulePermissions['perm']['Edit '.$moduleItemName] == "No"){
-    $permissions = array_diff($permissions, ['save']);
-}
-$permissions = array_values($permissions); // Re-index array
 ?>
 <script>
 var modJsList = [];
@@ -78,15 +67,6 @@ modJsList['tab<?=$moduleMainName?>'].setDataPipe(new IceDataPipe(modJsList['tab<
 modJsList['tab<?=$moduleMainName?>'].setAccess(<?=json_encode($permissions)?>);
 modJsList['tab<?=$moduleMainName?>'].setCustomFields(<?=json_encode($customFields)?>);
 modJsList['tab<?=$moduleMainName?>'].setModalType('Steps');
-<?php if(isset($modulePermissions['perm']['Add '.$moduleItemName]) && $modulePermissions['perm']['Add '.$moduleItemName] == "No"){?>
-modJsList['tab<?=$moduleMainName?>'].setShowAddNew(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Delete '.$moduleItemName]) && $modulePermissions['perm']['Delete '.$moduleItemName] == "No"){?>
-modJsList['tab<?=$moduleMainName?>'].setShowDelete(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Edit '.$moduleItemName]) && $modulePermissions['perm']['Edit '.$moduleItemName] == "No"){?>
-modJsList['tab<?=$moduleMainName?>'].setShowEdit(false);
-<?php }?>
 
 // Tab 2: Subordinate Travel Records
 modJsList['tab<?=$subModuleMainName?>'] = new <?=$subModuleMainName?>Adapter('<?=$moduleMainName?>', '<?=$subModuleMainName?>', '', '');

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import {
-  Tabs, Spin, Empty, theme, Badge,
+  Tabs, Spin, Empty, theme, Badge, Button,
 } from 'antd';
 import { MUI_SHADOW, MUI_DARK } from './theme';
 import OrgChart from './OrgChart';
@@ -39,11 +39,13 @@ function loadScript(url) {
     s.src = url;
     s.async = false;
     s.onload = () => resolve();
-    s.onerror = () => reject(new Error(`Failed to load ${url}`));
+    s.onerror = () => { s.remove(); reject(new Error(`Failed to load ${url}`)); };
     document.head.appendChild(s);
   });
-  loadedScripts[url] = p;
-  return p;
+  // Evict on failure — a cached rejection would otherwise brick the module for
+  // the lifetime of the page (every navigation replays it until a full refresh).
+  loadedScripts[url] = p.catch((e) => { delete loadedScripts[url]; throw e; });
+  return loadedScripts[url];
 }
 function loadScriptsSequential(urls) {
   return urls.reduce((prev, u) => prev.then(() => loadScript(u)), Promise.resolve());
@@ -55,6 +57,7 @@ export default function NativeModuleHost({ group, name, shellConfig }) {
   const [booting, setBooting] = useState(true);
   const [activeTab, setActiveTab] = useState(null);
   const [licenseBlocked, setLicenseBlocked] = useState(false);
+  const [retryTick, setRetryTick] = useState(0);
   const started = useRef({});
   const { token } = theme.useToken();
   const isDark = token.colorBgContainer === MUI_DARK.paper;
@@ -91,15 +94,22 @@ export default function NativeModuleHost({ group, name, shellConfig }) {
   useEffect(() => {
     let alive = true;
     setMc(null); setFailed(false); setBooting(true); setLicenseBlocked(false); started.current = {};
-    fetch(`${shellConfig.restApiBase}appshell/module-context?group=${encodeURIComponent(group)}&name=${encodeURIComponent(name)}`, {
-      headers: { Authorization: `Bearer ${shellConfig.token}` },
-      credentials: 'same-origin',
-    })
-      .then((r) => r.json())
-      .then((d) => { if (alive) { if (d && d.config) setMc(d); else setFailed(true); } })
-      .catch(() => { if (alive) setFailed(true); });
+    // try/catch because instrumented fetch (e.g. an injected monitoring agent's
+    // wrapper) can throw synchronously — without it that exception escapes the
+    // effect and the pane goes blank instead of showing the failure state.
+    try {
+      fetch(`${shellConfig.restApiBase}appshell/module-context?group=${encodeURIComponent(group)}&name=${encodeURIComponent(name)}`, {
+        headers: { Authorization: `Bearer ${shellConfig.token}` },
+        credentials: 'same-origin',
+      })
+        .then((r) => r.json())
+        .then((d) => { if (alive) { if (d && d.config) setMc(d); else setFailed(true); } })
+        .catch(() => { if (alive) setFailed(true); });
+    } catch (e) {
+      if (alive) setFailed(true);
+    }
     return () => { alive = false; };
-  }, [group, name, shellConfig]);
+  }, [group, name, shellConfig, retryTick]);
 
   const startTab = (key) => {
     // Component tabs (e.g. the org chart) are pure React — no legacy adapter to drive.
@@ -156,7 +166,6 @@ export default function NativeModuleHost({ group, name, shellConfig }) {
           m.spaModuleGroup = group;
           m.spaModuleName = name;
           m.setTranslations(ctx.translations || {});
-          m.setPermissions(ctx.perm || {});
           m.setFieldTemplates(ctx.fieldTemplates || {});
           m.setTemplates(ctx.templates || {});
           m.setCustomTemplates(ctx.customTemplates || {});
@@ -228,7 +237,13 @@ export default function NativeModuleHost({ group, name, shellConfig }) {
   }, [mc]);
 
   if (failed) {
-    return <div style={{ padding: 32 }}><Empty description="Could not load this module" /></div>;
+    return (
+      <div style={{ padding: 32, textAlign: 'center' }}>
+        <Empty description="Could not load this module">
+          <Button type="primary" onClick={() => setRetryTick((t) => t + 1)}>Retry</Button>
+        </Empty>
+      </div>
+    );
   }
   if (!mc) {
     return <div style={{ display: 'flex', justifyContent: 'center', padding: 80 }}><Spin size="large" /></div>;

@@ -256,6 +256,17 @@ JSON;
 
     public function getEmployeeStatusMessage(User $user, $parameter)
     {
+        // Ownership gate. $parameter is the employee id straight from the URL; without
+        // this any authenticated employee could read a colleague's records by changing it
+        // (finding 2.9 / gamonoid/icehrm#375). checkBasicPermissions allows Admin, a Manager
+        // over their own subordinates, and an Employee only for themselves - the same guard
+        // already used by EmployeeRestEndPoint::setEmployeeStatusMessage and the attendance
+        // endpoints.
+        $permissionResponse = $this->checkBasicPermissions($user, $parameter);
+        if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
+            return $permissionResponse;
+        }
+
         $date = CalendarTools::getServerDate();
 
         $employeeId = (int)$parameter;

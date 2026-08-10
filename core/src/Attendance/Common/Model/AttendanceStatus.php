@@ -82,6 +82,14 @@ class AttendanceStatus extends BaseModel
             $employees = $employee->Find("1=1");
         }
 
+        // This override DISCARDS the caller's scoping clause (getData() passes
+        // "employee in (<subordinate ids>)") and enumerates the whole Employees table, so
+        // a Manager saw every employee's live clock-in status — the full roster, names,
+        // profile images and presence — regardless of the reporting line. Re-apply the
+        // manager row scope here; Admin and all-employee-data roles get an empty scope
+        // and are unaffected.
+        $employees = self::restrictToManagerScope($employees);
+
 
         $attendance = new Attendance();
         $attendanceToday = $attendance->Find("date(in_time) = ?", array(date("Y-m-d")));
@@ -141,30 +149,77 @@ class AttendanceStatus extends BaseModel
     {
         $employee = new Employee();
         if (strstr($query, 'department=?')) {
-            return $employee->Count("department=?", $data);
+            $rows = $employee->Find("department=?", $data);
+        } else {
+            $rows = $employee->Find("1=1");
         }
 
-        return $employee->Count("1=1");
+        // Mirror Find(): the paging total must reflect the same manager scope, otherwise
+        // it still discloses the company-wide headcount.
+        return count(self::restrictToManagerScope($rows));
+    }
+
+    /**
+     * Filter an Employee list down to the rows the current caller may see, using the
+     * shared manager row scope. Returns the list unchanged for Admin levels, for roles
+     * granted all employee data, and for callers the scope does not apply to.
+     *
+     * @param  array $employees
+     * @return array
+     */
+    private static function restrictToManagerScope($employees)
+    {
+        if (empty($employees) || !is_array($employees)) {
+            return $employees;
+        }
+
+        $scope = \Classes\BaseService::getInstance()->getManagerListScopeClause(new Employee());
+        if (empty($scope[0])) {
+            return $employees;
+        }
+
+        $allowed = array_map('strval', $scope[1]);
+        $filtered = array();
+        foreach ($employees as $emp) {
+            if (in_array((string) $emp->id, $allowed, true)) {
+                $filtered[] = $emp;
+            }
+        }
+
+        return $filtered;
     }
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
+    /**
+
+     * No module grants Employee access to this model (module meta.json user_levels),
+
+     * so no employee-facing screen reads it. The inherited BaseModel default
+
+     * would expose the whole table on the generic service.php path.
+
+     */
+
     public function getUserAccess()
+
     {
-        return array("get");
+
+        return array();
+
     }
 
     public function getUserOnlyMeAccess()
     {
-        return array("element","save","delete");
+        return array("get");
     }
 
     public function getModuleAccess()
@@ -174,4 +229,15 @@ class AttendanceStatus extends BaseModel
             new ModuleAccess('attendance', 'user'),
         ];
     }
+
+    /**
+     * A team list exists for this model: the adapter opts into `type=sub`
+     * (isSubProfileTable), so BaseService::getData() may scope its rows to the
+     * caller's direct reports. See BaseModel::allowsSubordinateList().
+     */
+    public function allowsSubordinateList()
+    {
+        return true;
+    }
+
 }

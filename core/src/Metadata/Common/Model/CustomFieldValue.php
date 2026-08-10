@@ -16,11 +16,16 @@ class CustomFieldValue extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getUserAccess()
     {
-        return array("get","element","save","delete");
+        return array();
+    }
+
+    public function getUserOnlyMeAccess()
+    {
+        return array();
     }
 }

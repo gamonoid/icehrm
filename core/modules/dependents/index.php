@@ -25,16 +25,6 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 </div>
 <?php
 $permissions = ['get', 'element', 'save', 'delete'];
-if(isset($modulePermissions['perm']['Add Dependents']) && $modulePermissions['perm']['Add Dependents'] == "No"){
-	$permissions = array_diff($permissions, ['save']);
-}
-if(isset($modulePermissions['perm']['Delete Dependents']) && $modulePermissions['perm']['Delete Dependents'] == "No"){
-	$permissions = array_diff($permissions, ['delete']);
-}
-if(isset($modulePermissions['perm']['Edit Dependents']) && $modulePermissions['perm']['Edit Dependents'] == "No"){
-	$permissions = array_diff($permissions, ['save']);
-}
-$permissions = array_values($permissions); // Re-index array
 ?>
 <script>
 var modJsList = [];
@@ -43,15 +33,6 @@ modJsList['tabEmployeeDependent'] = new EmployeeDependentAdapter('EmployeeDepend
 modJsList['tabEmployeeDependent'].setObjectTypeName('Employee Dependent');
 modJsList['tabEmployeeDependent'].setDataPipe(new IceDataPipe(modJsList['tabEmployeeDependent']));
 modJsList['tabEmployeeDependent'].setAccess(<?=json_encode($permissions)?>);
-<?php if(isset($modulePermissions['perm']['Add Dependents']) && $modulePermissions['perm']['Add Dependents'] == "No"){?>
-modJsList['tabEmployeeDependent'].setShowAddNew(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Delete Dependents']) && $modulePermissions['perm']['Delete Dependents'] == "No"){?>
-modJsList['tabEmployeeDependent'].setShowDelete(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Edit Dependents']) && $modulePermissions['perm']['Edit Dependents'] == "No"){?>
-modJsList['tabEmployeeDependent'].setShowEdit(false);
-<?php }?>
 
 var modJs = modJsList['tabEmployeeDependent'];
 

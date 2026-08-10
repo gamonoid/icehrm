@@ -16,12 +16,12 @@ class TravelProject extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get", "element", "save", "delete");
+        return array("get", "element", "add","save", "delete");
     }
 
     public function getManagerAccess()
     {
-        return array("get", "element", "save", "delete");
+        return array("get", "element", "add","save", "delete");
     }
 
     public function getUserAccess()
@@ -33,4 +33,15 @@ class TravelProject extends BaseModel
     {
         return array();
     }
+
+    /**
+     * Columns this model's select boxes may request (see
+     * BaseModel::fieldValueFields). Derived from the pickers that actually exist,
+     * so this allows today's usage and nothing more.
+     */
+    public function fieldValueFields()
+    {
+        return array('code', 'name');
+    }
+
 }

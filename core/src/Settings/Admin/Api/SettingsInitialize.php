@@ -10,6 +10,7 @@ namespace Settings\Admin\Api;
 
 use Classes\AbstractInitialize;
 use Classes\BaseService;
+use Classes\Migration\MigrationRunner;
 use Classes\IceResponse;
 use Classes\RestApiManager;
 use Classes\SettingsManager;
@@ -26,19 +27,13 @@ class SettingsInitialize extends AbstractInitialize
         // (e.g. RestAccessTokens.type), and the REST token setup below queries
         // that column — so migrations must be applied first, otherwise the first
         // authenticated request fatals with "Unknown column 'type'".
-
-        // Step 1: Run core migrations first (from core/migrations/)
-        BaseService::getInstance()->getMigrationManager()->ensureMigrations();
-
-        // Step 2: Run extension migrations (registered via registerExtensionMigration)
-        $migrations = BaseService::getInstance()->getExtensionMigrations();
-        BaseService::getInstance()->getMigrationManager()->ensureExtensionMigrations($migrations);
-
-        // Step 3: Run pro migrations AFTER core migrations (from extensions/leave_and_performance/migrations/)
-        // Pro migrations may depend on tables/columns created by core migrations
-        if (class_exists('ProModuleInitializer')) {
-            \ProModuleInitializer::runMigrations();
-        }
+        //
+        // The core/extension/pro sequence now lives in MigrationRunner, which is also
+        // called on every successful login regardless of user level — this used to be
+        // the ONLY trigger, so a Manager or Employee logging in after an upgrade met
+        // the new code against the old schema. Both paths share one implementation and
+        // one advisory lock, and it is a no-op if the other has already run.
+        MigrationRunner::runAll();
 
         // REST API token setup — uses RestAccessTokens.type added by the migration above.
         if (SettingsManager::getInstance()->getSetting("Api: REST Api Enabled") == "1") {

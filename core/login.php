@@ -153,6 +153,20 @@ if (empty($user) || empty($user->email)) {
             } elseif (\Classes\PasswordManager::isAccountLocked($suser)) {
                 // Too many failed attempts: refuse password login and force the user
                 // to log in with an email code (which then resets the counter).
+                //
+                // Still record this failure. Previously the locked branch returned
+                // without counting, so once locked an attacker had UNLIMITED free
+                // guesses — including against the 6-digit email code, which is checked
+                // above and otherwise has no attempt limit. Counting here keeps the
+                // lock window fresh and, past the kill threshold, invalidates any
+                // active login code so it cannot be brute-forced.
+                \Classes\PasswordManager::recordFailedLogin($suser);
+                if (!empty($suser->login_hash)
+                    && \Classes\PasswordManager::shouldInvalidateLoginCode($suser)
+                ) {
+                    $suser->login_hash = null;
+                    $suser->Save();
+                }
                 $suser = null;
                 $accountLocked = true;
             } elseif (\Classes\PasswordManager::verifyPassword($_REQUEST['password'], $suser->password)) {
@@ -184,6 +198,19 @@ if (empty($user) || empty($user->email)) {
         \Utils\SessionUtils::saveSessionObject('user', $user);
         $suser->last_login = date("Y-m-d H:i:s");
         $suser->Save();
+
+        // Apply any pending schema migrations now that someone is authenticated —
+        // core, extension and pro alike, for EVERY user level rather than only for an
+        // Admin whose request happened to initialise the settings module.
+        //
+        // This is the moment that matters: after a file-level update the new code is
+        // live but the schema is not, and whoever logs in first meets the mismatch. If
+        // that is a Manager or an Employee, they used to get "Unknown column ..." with
+        // nothing pointing at a pending upgrade. Runs once per request, takes an
+        // advisory lock so a rush of post-upgrade logins cannot migrate concurrently,
+        // and swallows its own errors — a migration problem must never stop people
+        // logging in.
+        \Classes\Migration\MigrationRunner::runAll(true);
 
         if (!$ssoUserLoaded && !empty(\Classes\BaseService::getInstance()->auditManager)) {
             \Classes\BaseService::getInstance()->auditManager->user = $user;

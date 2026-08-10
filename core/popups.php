@@ -158,7 +158,7 @@
 							$employees = $baseService->get('Employee');
 							foreach($employees as $empTemp){
 								?>
-								<option value="<?=$empTemp->id?>"><?=$empTemp->first_name." ".$empTemp->last_name?></option>
+								<option value="<?=htmlspecialchars($empTemp->id, ENT_QUOTES)?>"><?=htmlspecialchars($empTemp->first_name." ".$empTemp->last_name, ENT_QUOTES)?></option>
 							<?php }?>
 						</select>
 					</div>

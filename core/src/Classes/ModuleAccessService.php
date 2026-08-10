@@ -43,10 +43,39 @@ class ModuleAccessService
     public function isModuleEnabledForUser($moduleId, $user)
     {
         $module = $this->moduleIdMap[$moduleId];
-        $moduleUserLevels = json_decode($module->user_levels, true);
-        $moduleUserRoles = json_decode($module->user_roles, true);
-        $userRoles = json_decode($user->user_roles, true);
+        return $this->userMayAccessModuleLevels(
+            json_decode($module->user_levels, true),
+            json_decode($module->user_roles, true),
+            $user
+        );
+    }
 
+    /**
+     * Whether $user is permitted for a module with these declared user_levels /
+     * user_roles. This is the SAME rule the menu uses to decide visibility, factored
+     * out so the request layer can enforce it directly.
+     *
+     * It must be enforced at the point a module's code is invoked, not just when the
+     * menu is drawn: hiding a menu entry does nothing to stop a direct
+     * service.php?a=ca&mod=<group>=<module> request, which reaches the module's
+     * action manager regardless. See the caller in core/service.php.
+     *
+     * @param  array|null $moduleUserLevels
+     * @param  array|null $moduleUserRoles
+     * @param  mixed      $user
+     * @return bool
+     */
+    public function userMayAccessModuleLevels($moduleUserLevels, $moduleUserRoles, $user)
+    {
+        $moduleUserLevels = is_array($moduleUserLevels) ? $moduleUserLevels : array();
+        $moduleUserRoles = is_array($moduleUserRoles) ? $moduleUserRoles : array();
+        $userRoles = empty($user->user_roles) ? array() : json_decode($user->user_roles, true);
+        if (!is_array($userRoles)) {
+            $userRoles = array();
+        }
+
+        // No declared levels means the module is exposed to nobody via its own
+        // metadata — deny, matching the menu, rather than falling open.
         if (empty($moduleUserLevels)) {
             return false;
         }
