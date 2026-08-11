@@ -6,8 +6,8 @@
  * managerRecordScopeAllows() skips "get" because a list is "already row-scoped by
  * userTables" — but that list is MODULE-scoped. Module managers register their user
  * classes only when MODULE_TYPE != 'admin', so under an admin module path (which a
- * Manager may legitimately request: attendance, overtime, projects, training, travel,
- * expenses, tasks) $userTables is empty and the list fell through unrestricted,
+ * Manager may legitimately request: attendance, overtime, projects, training,
+ * travel, documents) $userTables is empty and the list fell through unrestricted,
  * returning every employee's rows. BaseService::getManagerListScopeClause() supplies
  * the missing row restriction; this pins its decisions.
  *

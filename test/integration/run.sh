@@ -79,15 +79,6 @@ for i in $(seq 1 60); do
   if [ "$i" = "60" ]; then echo "   MySQL did not become ready" >&2; exit 1; fi
 done
 
-# Marketplace / licence SystemData. Some models and module managers are only
-# reachable on a licensed instance, so inject the same rows the e2e bootstrap uses
-# (values live in e2e/.env, git-ignored). Non-fatal: most integration tests do not
-# need it, and a missing e2e/.env should not block them.
-if [ -x e2e/bootstrap/seed-systemdata.sh ]; then
-  echo ">> injecting marketplace SystemData"
-  e2e/bootstrap/seed-systemdata.sh || echo "   (skipped — see e2e/.env)"
-fi
-
 rc=0
 for t in "${TESTS[@]}"; do
   echo ">> running test/integration/$t"

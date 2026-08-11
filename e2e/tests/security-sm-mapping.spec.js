@@ -32,10 +32,10 @@ async function getWithMapping(page, model, mapping) {
 test.describe('sm mapping cannot read sensitive columns or inject SQL', () => {
   test('mapping to Users.password does not leak the hash', async ({ page }) => {
     await login(page, 'user1');
-    const { rows } = await getWithMapping(page, 'EmployeeLeave', {
+    const { rows } = await getWithMapping(page, 'EmployeeOvertime', {
       employee: ['User', 'employee', 'password'],
     });
-    expect(rows.length, 'the employee should still see their own leave rows').toBeGreaterThan(0);
+    expect(rows.length, 'the employee should still see their own overtime rows').toBeGreaterThan(0);
     for (const row of rows) {
       expect(String(row.employee), 'employee field must not become a bcrypt hash')
         .not.toMatch(/^\$2[aby]\$/);
@@ -45,7 +45,7 @@ test.describe('sm mapping cannot read sensitive columns or inject SQL', () => {
   test('an injection fragment in the lookup column does not reach SQL', async ({ page }) => {
     await login(page, 'user1');
     // A malformed WHERE would 500; a skipped mapping returns the list normally.
-    const { http } = await getWithMapping(page, 'EmployeeLeave', {
+    const { http } = await getWithMapping(page, 'EmployeeOvertime', {
       employee: ['User', "1=1 OR ('a'='a", 'password'],
     });
     expect(http, 'the injection payload must be rejected, not executed').toBe(200);
@@ -53,12 +53,14 @@ test.describe('sm mapping cannot read sensitive columns or inject SQL', () => {
 
   test('a legitimate mapping still resolves the display value', async ({ page }) => {
     await login(page, 'user1');
-    const { rows } = await getWithMapping(page, 'EmployeeLeave', {
-      leave_type: ['LeaveType', 'id', 'name'],
+    // OvertimeCategory publishes ('id', 'name') via fieldValueFields(), so this is
+    // the allowlisted case the pickers actually use.
+    const { rows } = await getWithMapping(page, 'EmployeeOvertime', {
+      category: ['OvertimeCategory', 'id', 'name'],
     });
     expect(rows.length).toBeGreaterThan(0);
-    // leave_type should now be a name string, not the raw numeric id.
-    expect(String(rows[0].leave_type), 'the leave type should resolve to its name')
+    // category should now be a name string, not the raw numeric id.
+    expect(String(rows[0].category), 'the overtime category should resolve to its name')
       .toMatch(/[A-Za-z]/);
   });
 });

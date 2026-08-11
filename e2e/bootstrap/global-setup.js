@@ -74,11 +74,7 @@ module.exports = async (config) => {
       runSeed('reset-db.sh', 'resetting the testing database');
     }
 
-    // Licence/marketplace SystemData first — without it every extensions-pro
-    // module renders the licence block instead of its content.
-    runSeed('seed-systemdata.sh', 'injecting marketplace SystemData');
-
-    // Accounts next: the demo-data step authenticates as admin.
+    // Accounts first: the demo-data step authenticates as admin.
     runSeed('seed-users.sh', 'seeding test accounts');
 
     // The app must be answering before we can drive its REST API.
@@ -90,7 +86,7 @@ module.exports = async (config) => {
     runSeed('seed-demo-data.sh', 'seeding demo data', { E2E_APP_BASE: `${baseURL}/app` });
 
     // Finally the specific named records individual specs assert on
-    // ("lists the seeded loan", the sign-up session, leave-type flags …).
+    // ("lists the seeded loan", the sign-up session, the owner-less report file …).
     // After demo data, so it can attach rows to the accounts and lookups above.
     runSeed('seed-fixtures.sh', 'seeding named fixtures');
   }

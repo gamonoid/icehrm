@@ -2,9 +2,8 @@ const { test, expect } = require('@playwright/test');
 const { login, openModule } = require('../helpers/app');
 
 // modules::dashboard — the native employee/manager personal dashboard. Keeps the
-// "My To-Do List" (task lists, opened in the in-shell editor) and adds
-// attendance/leave/task stats, celebrations, and (for managers + admins) a team
-// overview.
+// "My To-Do List" (opened in the in-shell editor) and adds attendance stats,
+// celebrations, and (for managers + admins) a direct-reports overview.
 test.describe('modules::dashboard (native personal dashboard)', () => {
   test('employee: mounts natively with greeting, To-Do list and celebrations', async ({ page }) => {
     await page.setViewportSize({ width: 1400, height: 1000 });

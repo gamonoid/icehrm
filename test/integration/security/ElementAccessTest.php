@@ -121,7 +121,6 @@ $map = $ctx->allModels();
 $ANON_PUBLIC = array(
     'Country', 'Province', 'Nationality', 'SupportedLanguage', 'Timezone',
     'CurrencyType', 'ImmigrationStatus', 'Ethnicity',
-    'HiringPipeline', 'Industry',
 );
 $ANON_PUBLIC = array_flip($ANON_PUBLIC);
 $WRITE_VERBS = array('add', 'save', 'delete');

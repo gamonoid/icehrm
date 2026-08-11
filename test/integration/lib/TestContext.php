@@ -384,7 +384,7 @@ class TestContext
         }
         foreach ($overrides as $k => $v) { $vals[$k] = $v; }
         if (empty($vals)) {
-            // Every column is nullable/defaulted (Backups, Candidates, PayrollColumns,
+            // Every column is nullable/defaulted (Backups, PayrollColumns, Crons,
             // ...): insert an all-defaults row so these tables are testable at all
             // instead of reporting UNTESTED forever.
             $sql = "INSERT INTO `$table` () VALUES ()";

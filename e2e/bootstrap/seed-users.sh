@@ -146,9 +146,6 @@ UPDATE Users SET password = @pw WHERE CHAR_LENGTH(password) = 32;
 UPDATE Users SET wrong_password_count = 0, last_wrong_attempt_at = NULL;
 SQL
 
-# The pro licence lives in SystemData and is injected separately by
-# seed-systemdata.sh, from the real values in e2e/.env.
-
 echo "seed-users: accounts ready (admin, manager, user1..user4 — password Admin123\$)"
 docker exec "$DB_CONTAINER" mysql -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" -N -e \
   "SELECT CONCAT('  ', u.username, '  ', u.user_level, '  employee=', IFNULL(u.employee,'-'),

@@ -284,8 +284,8 @@ class VerbAccessSweep
             }
 
             // Expectations must come from a REAL loaded row, not a blank instance.
-            // Several matrices are record-conditional — EmployeeExpense only grants
-            // its owner "delete" while the claim is Pending or Rejected — and a blank
+            // Several matrices are record-conditional — EmployeeOvertime only grants
+            // its owner "delete" while the request is still Pending — and a blank
             // object has no status, so a blank-derived expectation would report every
             // correctly-permitted delete as an undeclared grant.
             $sample = $this->loadSampleRow($fqcn, $table, $ownerCol);
@@ -386,13 +386,12 @@ class VerbAccessSweep
      */
     public static $PUBLIC_LOOKUP = array(
         'Country', 'Nationality', 'Province', 'Language', 'CurrencyType', 'Timezone',
-        'JobTitle', 'PayGrade', 'EmploymentStatus', 'EmployementType', 'EducationLevel',
+        'JobTitle', 'PayGrade', 'EmploymentStatus',
         'Skill', 'Certification', 'Education',
-        'LeaveType', 'LeavePeriod', 'WorkDay', 'HoliDay',
-        'OvertimeCategory', 'ExpensesCategory', 'ExpensesPaymentMethod',
+        'OvertimeCategory',
         'ImmigrationStatus', 'Deduction', 'DeductionGroup', 'PayFrequency',
-        'Industry', 'Benifit', 'CalculationHook', 'CustomField', 'Document',
-        'CompanyStructure', 'ReviewTemplate', 'Course', 'LmsCourse', 'LmsLesson',
+        'CalculationHook', 'CustomField', 'Document',
+        'CompanyStructure', 'Course',
         'Client', 'Project', 'TravelProject',
     );
 
@@ -406,15 +405,11 @@ class VerbAccessSweep
      *   CompanyDocument / CompanyLoan  the employee Documents tab, and the loan-type
      *                                  name lookup on the Loans screen.
      *   TrainingSession / …WithCourse  the open sign-up session list.
-     *   HiringPipeline                 already reviewed public for ANONYMOUS
-     *                                  visitors, so an employee listing it is
-     *                                  strictly less exposure.
      *
      * Applies to the "get" verb only — element/add/save/delete keep the stricter rule.
      */
     public static $LIST_PUBLIC = array(
         'CompanyDocument', 'CompanyLoan', 'TrainingSession', 'TrainingSessionWithCourse',
-        'HiringPipeline',
     );
 
     private $vPass = 0;

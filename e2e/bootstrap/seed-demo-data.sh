@@ -3,11 +3,17 @@
 # demo-mode generator rather than hand-written fixtures.
 #
 # Why: docker/init.sql ships schema, modules, settings and lookup tables, but no
-# transactional data — no attendance, leave, timesheets, candidates, courses,
-# performance reviews. Around 75 specs assert on "the seeded X", so they fail on an
-# otherwise healthy app. Generating through extensions/demo-mode keeps the fixtures
-# consistent with what the product itself considers valid data (correct FKs, statuses
-# and approval chains) instead of a parallel set of INSERTs that drifts.
+# transactional data — no employees, attendance, overtime, timesheets. Many specs
+# assert on "the seeded X", so they fail on an otherwise healthy app. Generating
+# through extensions/demo-mode keeps the fixtures consistent with what the product
+# itself considers valid data (correct FKs, statuses and approval chains) instead of
+# a parallel set of INSERTs that drifts.
+#
+# Only the generators available in the free build are called. demo-mode ships the
+# pro ones too (expenses, candidates, task lists, performance reviews, payroll,
+# leave), but DemoDataService gates each behind `$isPro && class_exists(...)`, so
+# they are no-ops here — calling them would just print failures. Overtime is
+# deliberately NOT pro-gated: it is a core module.
 #
 # Idempotent in the sense that matters: it checks whether data already exists and
 # does nothing if so, because the generator appends rather than upserts.
@@ -69,31 +75,21 @@ gen() { # gen <endpoint> <json-body> <label>
 
 echo "seed-demo-data: generating demo records via the app's demo-mode extension…"
 
-# Core set: employees + users + details + clients/projects + attendance + leave +
+# Core set: employees + users + details + clients/projects + attendance +
 # timesheets. Everything else builds on the employees this creates.
-gen generate-all        '{"futureLeaveOnly":false}'        "core (generate-all)"
+gen generate-all        '{}'                               "core (generate-all)"
 
 # Area-specific generators, each backing a group of specs that assert on seeded rows.
 gen overtime            '{"count":15}'                     "overtime"
-gen expenses            '{"count":15}'                     "expenses"
-gen task-lists          '{"count":5}'                      "task lists"
-# NOT generating demo jobs: jobpositions-native asserts on a specific job code
-# (JO123) and acts on the FIRST card in the list, so extra jobs make the test act
-# on the wrong record. The one job it needs is created by seed-fixtures.sh.
-gen candidates          '{"count":10}'                     "candidates"
-gen performance-reviews '{"count":10}'                     "performance reviews"
 gen attendance-today    '{"percentage":80}'                "today's attendance"
-# payroll_config's bespoke view asserts "Payroll Employees (N)" with N >= 1, so the
-# payroll generator has to run too — generate-all does not cover it.
-gen payroll             "{\"name\":\"E2E Payroll $(date +%Y-%m)\",\"dateStart\":\"$(date +%Y-%m-01)\",\"dateEnd\":\"$(date -v+1m +%Y-%m-01 2>/dev/null || date -d '+1 month' +%Y-%m-01)\"}" "payroll"
 
 # --- give the login accounts a slice of the generated data --------------------
 #
 # The generator invents its own employees and hangs everything off those, so the
 # accounts the specs log in as (user1, user3, manager) end up owning nothing and
-# every "my leave / my attendance / my overtime" tab renders empty. Reassign a slice
-# of the demo rows to them, keeping the reporting line intact so the manager-scope
-# specs still see subordinate data.
+# every "my attendance / my overtime" tab renders empty. Reassign a slice of the
+# demo rows to them, keeping the reporting line intact so the manager-scope specs
+# still see subordinate data.
 echo "seed-demo-data: linking demo records to the e2e accounts…"
 docker exec -i "$DB_CONTAINER" mysql -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" 2>/dev/null <<'SQL'
 SET @u1  = (SELECT employee FROM Users WHERE username = 'user1');
@@ -102,17 +98,13 @@ SET @mgr = (SELECT employee FROM Users WHERE username = 'manager');
 
 -- Move a handful of rows per table onto each account. LIMIT keeps the rest with the
 -- demo employees, so admin-facing "many employees" assertions still hold.
-UPDATE EmployeeLeaves    SET employee = @u1  WHERE employee <> @u1  ORDER BY id        LIMIT 8;
-UPDATE EmployeeLeaves    SET employee = @mgr WHERE employee NOT IN (@u1, @mgr) ORDER BY id DESC LIMIT 5;
+--
+-- EmployeeOvertime matters beyond the "my overtime" tabs: security-sm-mapping.spec.js
+-- asserts user1 receives their OWN rows back, so it fails if user1 owns none.
 UPDATE Attendance        SET employee = @u1  WHERE employee <> @u1  ORDER BY id        LIMIT 40;
 UPDATE Attendance        SET employee = @u3  WHERE employee NOT IN (@u1, @u3) ORDER BY id DESC LIMIT 25;
 UPDATE EmployeeOvertime  SET employee = @u1  WHERE employee <> @u1  ORDER BY id        LIMIT 10;
 UPDATE EmployeeOvertime  SET employee = @mgr WHERE employee NOT IN (@u1, @mgr) ORDER BY id DESC LIMIT 5;
-
--- Leave days follow their parent leave request, or the leave detail view breaks.
-UPDATE EmployeeLeaveDays d
-  JOIN EmployeeLeaves l ON l.id = d.employee_leave
-   SET d.leave_date = d.leave_date;   -- no-op: rows already reference the moved parent
 
 -- Demo employees report to the e2e manager, so manager-scope lists are non-empty.
 UPDATE Employees SET supervisor = @mgr
@@ -121,12 +113,13 @@ UPDATE Employees SET supervisor = @mgr
 SQL
 
 echo "seed-demo-data: row counts now —"
-for t in Employees Attendance EmployeeLeaves EmployeeOvertime EmployeeTimeSheet TaskList; do
+# EmployeeTimeSheets is plural — the singular name counted nothing and always
+# reported 0. TaskList and the leave tables are dropped: pro-only data.
+for t in Employees Attendance EmployeeOvertime EmployeeTimeSheets; do
   printf '  %-22s %s\n' "$t" "$(row_count "$t")"
 done
 docker exec "$DB_CONTAINER" mysql -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" -N -e "
-SELECT CONCAT('  ', u.username, ': leaves=', (SELECT COUNT(*) FROM EmployeeLeaves WHERE employee=u.employee),
-              ' attendance=', (SELECT COUNT(*) FROM Attendance WHERE employee=u.employee),
+SELECT CONCAT('  ', u.username, ': attendance=', (SELECT COUNT(*) FROM Attendance WHERE employee=u.employee),
               ' overtime=', (SELECT COUNT(*) FROM EmployeeOvertime WHERE employee=u.employee),
               ' reports=', (SELECT COUNT(*) FROM Employees WHERE supervisor=u.employee))
   FROM Users u WHERE u.username IN ('user1','user3','manager') ORDER BY u.username;" 2>/dev/null

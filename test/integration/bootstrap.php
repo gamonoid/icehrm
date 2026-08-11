@@ -11,7 +11,6 @@
  * The app config is chosen in this order:
  *   1. $ICEHRM_TEST_CONFIG / ICEHRM_TEST_CONFIG env — explicit path
  *   2. /var/www/html/docker/testing/config/config.php  (the testing container)
- *   3. /var/www/html/docker/development/config/config.php (the dev container)
  *
  * Run from inside a container that has the app at /var/www/html, e.g.
  *   docker compose -f docker-compose-testing.yaml run --rm icehrm \
@@ -35,7 +34,6 @@ if (!defined('CLIENT_PATH')) {
 $configCandidates = array_filter(array(
     getenv('ICEHRM_TEST_CONFIG'),
     $APP_ROOT . '/docker/testing/config/config.php',
-    $APP_ROOT . '/docker/development/config/config.php',
 ));
 $appConfig = null;
 foreach ($configCandidates as $c) {

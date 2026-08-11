@@ -68,7 +68,7 @@ test.describe('legacy UI is retired', () => {
     const legacyLinks = [
       '/app/?g=modules&n=dashboard&m=module_Personal_Information',
       '/app/?g=admin&n=employees',
-      '/app/?g=extension&n=learn&sub=admin',
+      '/app/?g=extension&n=directory&sub=user',
     ];
     for (const link of legacyLinks) {
       await page.goto(link, { waitUntil: 'domcontentloaded' });

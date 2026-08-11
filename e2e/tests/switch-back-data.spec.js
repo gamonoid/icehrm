@@ -11,24 +11,6 @@ async function spaOpen(page, route) {
 }
 
 test.describe('data reloads when switching modules', () => {
-  test('payroll (bespoke view) keeps data after visiting another module', async ({ page }) => {
-    await login(page, 'admin');
-    // initial load
-    await page.goto('/app/ui/#extension::payroll_config|admin', { waitUntil: 'domcontentloaded' });
-    await page.waitForSelector('.ant-layout', { timeout: 30000 });
-    await page.waitForTimeout(3500);
-    const content = page.locator('.ant-layout-content').first();
-    await expect(content).toContainText(/Payroll Employees \([1-9]/, { timeout: 20000 });
-
-    // go to another module (Salary = iframe), then back — all in-app
-    await spaOpen(page, 'admin::salary');
-    await spaOpen(page, 'extension::payroll_config|admin');
-
-    // data must still be there (was showing "(0)" before the fix)
-    await expect(content).toContainText(/Payroll Employees \([1-9]/, { timeout: 20000 });
-    await expect(content).not.toContainText('Payroll Employees (0)');
-  });
-
   test('directory (bespoke view) keeps data after switching away and back', async ({ page }) => {
     await login(page, 'admin');
     await page.goto('/app/ui/#extension::directory|user', { waitUntil: 'domcontentloaded' });

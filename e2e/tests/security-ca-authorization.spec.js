@@ -9,12 +9,12 @@ const { login } = require('../helpers/app');
  * meta.json `user_levels` gates the MENU, not this dispatch — so before the fix, any
  * logged-in user could invoke any module's actions directly, regardless of level:
  *
- *   POST service.php  a=ca&mod=admin=leaves&sa=getSubEmployeeLeaves
- *   → 62 KB of every employee's leave records, returned to a plain Employee.
+ *   POST service.php  a=ca&mod=admin=salary&sa=<any action of that module>
+ *   → every employee's salary rows, returned to a plain Employee.
  *
- * deleteEmployee, saveUsage (disable every module), payroll writes and e-signature
- * forgery were reachable the same way. The fix enforces the module's declared
- * user_levels at the dispatch point (ModuleAccessService::userMayAccessModuleLevels).
+ * deleteEmployee and saveUsage (disable every module) were reachable the same way.
+ * The fix enforces the module's declared user_levels at the dispatch point
+ * (ModuleAccessService::userMayAccessModuleLevels).
  *
  * These tests assert the property in BOTH directions — a lower level is denied an
  * out-of-scope module, and each level keeps its own — so a future change that
@@ -47,14 +47,10 @@ test.describe('a=ca dispatcher enforces module user_levels', () => {
   test('a plain Employee is denied Admin-only modules', async ({ page }) => {
     await login(page, 'user1');
 
-    // The original PoC — read-only, safe to run against real data.
-    expect(DENIED(await ca(page, 'admin=leaves', 'getSubEmployeeLeaves')),
-      'Employee must not reach admin=leaves actions').toBeTruthy();
-
-    // A representative spread of Admin-only modules. We never invoke the destructive
-    // actions with real effect — the gate rejects them before they run — but naming
-    // them documents exactly what the gate is protecting.
-    for (const mod of ['admin=modules', 'admin=payroll_config', 'admin=esign', 'admin=users']) {
+    // A representative spread of Admin-only modules (meta.json user_levels = Admin).
+    // We never invoke the destructive actions with real effect — the gate rejects them
+    // before they run — but naming them documents exactly what the gate is protecting.
+    for (const mod of ['admin=salary', 'admin=modules', 'admin=audit', 'admin=users']) {
       expect(DENIED(await ca(page, mod, 'nonexistentProbe')),
         `Employee must be denied ${mod}`).toBeTruthy();
     }
@@ -64,10 +60,10 @@ test.describe('a=ca dispatcher enforces module user_levels', () => {
     await login(page, 'manager');
 
     // Admin-only: denied.
-    expect(DENIED(await ca(page, 'admin=leaves', 'getSubEmployeeLeaves')),
-      'Manager must not reach admin=leaves (Admin-only)').toBeTruthy();
-    expect(DENIED(await ca(page, 'admin=payroll_config', 'nonexistentProbe')),
-      'Manager must not reach payroll_config').toBeTruthy();
+    expect(DENIED(await ca(page, 'admin=salary', 'nonexistentProbe')),
+      'Manager must not reach admin=salary (Admin-only)').toBeTruthy();
+    expect(DENIED(await ca(page, 'admin=users', 'nonexistentProbe')),
+      'Manager must not reach admin=users (Admin-only)').toBeTruthy();
 
     // Manager-allowed (user_levels include Manager): reaches the dispatch.
     for (const mod of ['admin=overtime', 'admin=travel', 'admin=employees']) {
@@ -78,7 +74,7 @@ test.describe('a=ca dispatcher enforces module user_levels', () => {
 
   test('an Admin reaches Admin modules', async ({ page }) => {
     await login(page, 'admin');
-    for (const mod of ['admin=leaves', 'admin=modules', 'admin=payroll_config', 'admin=esign']) {
+    for (const mod of ['admin=salary', 'admin=modules', 'admin=audit', 'admin=users']) {
       expect(ALLOWED(await ca(page, mod, 'nonexistentProbe')),
         `Admin should reach ${mod}`).toBeTruthy();
     }
@@ -86,9 +82,9 @@ test.describe('a=ca dispatcher enforces module user_levels', () => {
 
   test('an Employee keeps their own user-side modules', async ({ page }) => {
     await login(page, 'user1');
-    // The employee legitimately drives these through a=ca (submit leave, overtime,
-    // tasks, timesheets). The gate must not block them.
-    for (const mod of ['user=leaves', 'user=overtime', 'user=tasks', 'user=time_sheets', 'user=travel']) {
+    // The employee legitimately drives these through a=ca (submit overtime, log
+    // attendance, timesheets, travel). The gate must not block them.
+    for (const mod of ['user=overtime', 'user=attendance', 'user=time_sheets', 'user=travel']) {
       expect(ALLOWED(await ca(page, mod, 'nonexistentProbe')),
         `Employee should reach their own ${mod}`).toBeTruthy();
     }

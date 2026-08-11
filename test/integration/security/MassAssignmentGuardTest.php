@@ -6,8 +6,8 @@
  * BaseService::addElement copies every request column that matches a DB column, so a
  * model that grants an owner save/add lets that owner over-post sensitive columns.
  * getProtectedFields($user) drops those from the copy. This pins (a) the per-model
- * decision matrix and (b) end-to-end: an employee cannot self-approve their own leave
- * by posting status='Approved' through a=save, while an Admin still can.
+ * decision matrix and (b) end-to-end: an employee cannot self-approve their own
+ * overtime by posting status='Approved' through a=save, while an Admin still can.
  *
  * Run:  php test/integration/security/MassAssignmentGuardTest.php
  */
@@ -39,21 +39,13 @@ fwrite(STDOUT, "Mass-assignment guard — getProtectedFields + end-to-end\n\n");
 
 // ---- (a) decision matrix ----------------------------------------------------
 
-$leave = new \Leaves\Common\Model\EmployeeLeave();
-verdict("EmployeeLeave: Employee actor protects 'status'",
-    in_array('status', $leave->getProtectedFields(mkUser('Employee')), true));
-verdict("EmployeeLeave: Manager actor protects 'status'",
-    in_array('status', $leave->getProtectedFields(mkUser('Manager')), true));
-verdict("EmployeeLeave: Admin actor protects nothing",
-    $leave->getProtectedFields(mkUser('Admin')) === array());
-
-if (class_exists('\\Expenses\\Common\\Model\\EmployeeExpense')) {
-    $exp = new \Expenses\Common\Model\EmployeeExpense();
-    verdict("EmployeeExpense: Employee actor protects 'status'",
-        in_array('status', $exp->getProtectedFields(mkUser('Employee')), true));
-    verdict("EmployeeExpense: Admin actor protects nothing",
-        $exp->getProtectedFields(mkUser('Admin')) === array());
-}
+$overtime = new \Overtime\Common\Model\EmployeeOvertime();
+verdict("EmployeeOvertime: Employee actor protects 'status'",
+    in_array('status', $overtime->getProtectedFields(mkUser('Employee')), true));
+verdict("EmployeeOvertime: Manager actor protects 'status'",
+    in_array('status', $overtime->getProtectedFields(mkUser('Manager')), true));
+verdict("EmployeeOvertime: Admin actor protects nothing",
+    $overtime->getProtectedFields(mkUser('Admin')) === array());
 
 // Employee: protection applies only to a non-admin editing their OWN record.
 list($mgr, $sub, $other) = $ctx->ensureManagerFixture();
@@ -79,39 +71,47 @@ verdict("Employee: Admin actor protects nothing (own record)",
 
 // ---- (b) end-to-end through addElement: self-approval is blocked ------------
 
-if ($ctx->tableExists('EmployeeLeaves')) {
-    $leaveId = $ctx->seedRow('EmployeeLeaves', array(
+// EmployeeOvertime.category is NOT NULL with an FK to OvertimeCategories, and
+// init.sql seeds no categories (the demo generator creates them), so borrow an
+// existing one rather than letting seedRow invent an id that violates the FK.
+$catRow = $ctx->tableExists('OvertimeCategories')
+    ? $ctx->query('SELECT id FROM OvertimeCategories LIMIT 1')
+    : array();
+
+if (!empty($catRow)) {
+    $overtimeId = $ctx->seedRow('EmployeeOvertime', array(
         'employee'   => $sub,
         'status'     => 'Pending',
-        'date_start' => '2020-02-03',
-        'date_end'   => '2020-02-03',
+        'category'   => $catRow[0]['id'],
+        'start_time' => '2020-02-03 09:00:00',
+        'end_time'   => '2020-02-03 11:00:00',
     ));
 
     // Employee (owner) tries to self-approve via a generic save.
     $ctx->actAsRealUser($sub, 'Employee');
     try {
-        $bs->addElement('EmployeeLeave', array(
-            'id' => $leaveId, 't' => 'EmployeeLeave', 'a' => 'save', 'status' => 'Approved',
+        $bs->addElement('EmployeeOvertime', array(
+            'id' => $overtimeId, 't' => 'EmployeeOvertime', 'a' => 'save', 'status' => 'Approved',
         ));
     } catch (\Throwable $e) { /* ACL/validate paths are not what we assert here */ }
-    $check = $ctx->query('SELECT status FROM EmployeeLeaves WHERE id = ?', array($leaveId));
+    $check = $ctx->query('SELECT status FROM EmployeeOvertime WHERE id = ?', array($overtimeId));
     $statusAfterEmployee = !empty($check) ? $check[0]['status'] : null;
-    verdict("Employee CANNOT self-approve own leave via a=save (status stays Pending)",
+    verdict("Employee CANNOT self-approve own overtime via a=save (status stays Pending)",
         $statusAfterEmployee === 'Pending');
 
     // Admin may set it.
     $ctx->actAsRealUser($mgr, 'Admin');
     try {
-        $bs->addElement('EmployeeLeave', array(
-            'id' => $leaveId, 't' => 'EmployeeLeave', 'a' => 'save', 'status' => 'Approved',
+        $bs->addElement('EmployeeOvertime', array(
+            'id' => $overtimeId, 't' => 'EmployeeOvertime', 'a' => 'save', 'status' => 'Approved',
         ));
     } catch (\Throwable $e) { /* ignore */ }
-    $check2 = $ctx->query('SELECT status FROM EmployeeLeaves WHERE id = ?', array($leaveId));
+    $check2 = $ctx->query('SELECT status FROM EmployeeOvertime WHERE id = ?', array($overtimeId));
     $statusAfterAdmin = !empty($check2) ? $check2[0]['status'] : null;
-    verdict("Admin CAN set leave status via a=save (status -> Approved)",
+    verdict("Admin CAN set overtime status via a=save (status -> Approved)",
         $statusAfterAdmin === 'Approved');
 } else {
-    fwrite(STDOUT, "  (skipped end-to-end: EmployeeLeaves table absent)\n");
+    fwrite(STDOUT, "  (skipped end-to-end: no OvertimeCategories row to attach to)\n");
 }
 
 $ctx->cleanup();

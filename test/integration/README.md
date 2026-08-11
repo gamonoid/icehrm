@@ -156,8 +156,8 @@ and approval-status guard would be reported as an access-control regression, and
 leak.
 
 Expectations come from a **loaded sample row**, not a blank model instance: several
-matrices are record-conditional (`EmployeeExpense` grants its owner `delete` only
-while the claim is Pending or Rejected), and a blank object has no status.
+matrices are record-conditional (`EmployeeOvertime` grants its owner `delete` only
+while the request is still Pending), and a blank object has no status.
 
 ### Reading the output
 
@@ -172,7 +172,7 @@ getUserAccess()  —  verb "get"
 ================================================================================
   RESULT      CLASS                              "get" ALLOWED?
   ----------- ---------------------------------- ------------------------
-  LEAK        TaskList                           allowed
+  LEAK        ArchivedEmployee                   allowed
                 employee reached another employee's row
   PASS        Attendance                         allowed
   PASS        Audit                              not allowed
@@ -202,38 +202,33 @@ Current results:
 | `delete` | PASS=49 clean | PASS=92 clean |
 | `get` | PASS=47, **LEAK=4, UNDECLARED=2** | PASS=87, **LEAK=5** |
 
-### GetAccessTest is currently RED, and correctly so
+### GetAccessTest is expected to be RED
 
 Every finding is a full-table list handed to a plain Employee. None of the other
 four verbs has any.
 
-`LmsEmployeeCourse` and `TaskList` both declare `getUserAccess()` → `array("get")`.
-That is a **role-level** grant, which applies to every row with no ownership
-scoping, and neither model is a registered user table, so `BaseService::get()` has
-no row filter to apply. A plain Employee listing either model receives **every
-employee's** rows. This is the same bug class as the original horizontal IDOR
-findings; the earlier sweep missed it only because it probed `element`, not `get`.
+The shape of the bug: a model declares `getUserAccess()` → `array("get")`, which is
+a **role-level** grant applying to every row with no ownership scoping, and the
+model is not a registered user table, so `BaseService::get()` has no row filter to
+apply. A plain Employee listing it receives **every employee's** rows. This is the
+same bug class as the original horizontal IDOR findings; the earlier sweep missed
+it only because it probed `element`, not `get`.
 
-Two ways to close it, and the choice is a product decision:
-1. `addUserClass()` for both models, so `get()` row-scopes the list — employees keep
+Two ways to close each one, and the choice is a product decision:
+1. `addUserClass()` for the model, so `get()` row-scopes the list — employees keep
    their own list and the leak closes. (Matches `EmployeeTimeSheet` /
    `EmployeeTrainingSession`.)
 2. `getUserAccess()` → `array()`, which closes the leak but removes the employee
-   list feature entirely, since the tables are not row-scopable today.
+   list feature entirely, since the table is not row-scopable today.
 
-The vertical phase adds five more, each a model that explicitly declares
-`getUserAccess() => array("get")` yet is not row-scopable, so the grant lists the
-whole table: **`ArchivedEmployee`** (former staff), **`EmployeeLeaveDay`** and
-**`EmployeeLeaveLog`** (who took leave, when), **`ImmigrationDocument`**, and
-**`LmsEmployeeLesson`** (per-employee lesson progress). Same fix choice as above,
-per model.
+In this build the known instances are **`ArchivedEmployee`** (former staff) and
+**`ImmigrationDocument`**. Run the sweep for the current list rather than trusting
+this paragraph — the counts in the sample output above are illustrative.
 
-Five other models list to employees *by design* and are allowlisted in
+Four other models list to employees *by design* and are allowlisted in
 `VerbAccessSweep::$LIST_PUBLIC` rather than reported: `CompanyDocument` and
-`CompanyLoan` (the employee Documents tab and the loan-type lookup),
-`TrainingSession`/`TrainingSessionWithCourse` (open sign-up sessions), and
-`HiringPipeline` (already reviewed public for anonymous visitors, so an employee
-listing it is strictly less exposure).
+`CompanyLoan` (the employee Documents tab and the loan-type lookup), and
+`TrainingSession`/`TrainingSessionWithCourse` (open sign-up sessions).
 
 Two related informational categories the sweep reports rather than failing on:
 

@@ -86,7 +86,7 @@ $attempt = function ($model, $ownerEmp) use ($ctx, $bs, &$seq) {
     $effect = !empty($rows) && (string) $rows[0]['v'] === (string) $after;
 
     // Drop the row now: the next scenario seeds its own, and models with composite
-    // UNIQUE keys (TaskListAssignment's tasklist+employee, …) cannot hold two.
+    // UNIQUE keys (EmployeeTrainingSession's session+employee, …) cannot hold two.
     $ctx->query("DELETE FROM `$table` WHERE id = ?", array($id));
 
     return array('effect' => $effect, 'authDenied' => $authDenied);
