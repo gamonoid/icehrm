@@ -12,7 +12,7 @@ git clone https://github.com/gamonoid/icehrm.git
 cd icehrm
 
 # Build and start IceHrm
-docker compose -f docker-compose-prod.yaml up -d --build
+docker compose -f docker-compose.yaml up -d --build
 ```
 
 Visit [http://localhost:5555](http://localhost:5555) and login with username `admin` and password `admin`.
@@ -47,8 +47,8 @@ DB_ROOT_PASSWORD=your_secure_root_password
 Then restart the containers:
 
 ```bash
-docker compose -f docker-compose-prod.yaml down
-docker compose -f docker-compose-prod.yaml up -d
+docker compose -f docker-compose.yaml down
+docker compose -f docker-compose.yaml up -d
 ```
 
 ## Using an External Database
@@ -77,7 +77,7 @@ mysql -h your-database-host.example.com -u your_db_user -p icehrm < docker/init.
 3. Start only the application containers (without the bundled MySQL):
 
 ```bash
-docker compose -f docker-compose-prod.yaml up -d icehrm icehrm-worker
+docker compose -f docker-compose.yaml up -d icehrm icehrm-worker
 ```
 
 ## Docker Services
@@ -97,11 +97,11 @@ All data is persisted in Docker volumes:
 ## Stopping IceHrm
 
 ```bash
-docker compose -f docker-compose-prod.yaml down
+docker compose -f docker-compose.yaml down
 ```
 
 ## Viewing Logs
 
 ```bash
-docker compose -f docker-compose-prod.yaml logs -f
+docker compose -f docker-compose.yaml logs -f
 ```
