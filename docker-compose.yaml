@@ -3,6 +3,10 @@ services:
     image: mysql:8.0.32
     container_name: icehrm-mysql
     restart: unless-stopped
+    ports:
+      # Loopback only — an unauthenticated MySQL on 0.0.0.0 is reachable by anything
+      # on the same network (coffee-shop wifi, corporate LAN).
+      - "127.0.0.1:${DB_PORT:-9555}:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-icehrm_root_password}
       MYSQL_DATABASE: ${DB_NAME:-icehrm}
