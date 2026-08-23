@@ -1,0 +1,98 @@
+<div class="col-md-3 col-sm-6 col-xs-12 leave-entitlement-block" id="obj_#_id_#">
+    <div class="row reviewBlock">
+        <p class="text-center leave-entitlement-block-title">
+            <strong>#_name_#  </strong><span class="badge bg-green">#_availableLeaves_#</span>
+        </p>
+        <div class="row">
+
+        </div>
+        <span class="progress-text leave-entitlement-block-validtext" style="color:darkgreen;">Period Start #_currentPeriodStart_#</span>
+        <span class="progress-text leave-entitlement-block-validtext" style="color:darkgreen;">Period End #_currentPeriodEnd_#</span>
+        <div class="progress-group">
+            <span class="progress-text">Leave Days from Current Leave Period</span>
+            <span class="progress-number"><b>#_currentPeriodTotal_#</b></span>
+        </div>
+        <div class="progress-group">
+            <span class="progress-text">Paid Time Off Adjustments</span>
+            <span class="progress-number"><b>+ (#_paidTimeOff_#)</b></span>
+        </div>
+        <div class="progress-group">
+            <span class="progress-text">Leave Days Carried Forward Previous Period</span>
+            <span class="progress-number"><b>+ (#_carriedForward_#)</b></span>
+            <span class="progress-text leave-entitlement-block-validtext" style="display: #_carriedForwardLeaveExpireDateVisibility_#;">Valid Until #_carriedForwardLeaveExpireDate_#</span>
+            <hr/>
+        </div>
+<!--        <div class="progress-group">-->
+<!--            <span class="progress-text">Total Leave Days at the Start of the Period</span>-->
+<!--            <span class="progress-number"><b>#_totalLeaves_#</b></span>-->
+<!--            <hr/>-->
+<!--        </div>-->
+        <!-- /.progress-group -->
+        <div class="progress-group">
+            <span class="progress-text">Leave Days Available to Use</span>
+            <span class="progress-number"><b>#_availableLeaves_#</b></span>
+        </div>
+        <!-- /.progress-group -->
+        <div class="progress-group" style="display: #_carriedForwardVisibility_#;">
+            <hr/>
+            <span class="progress-text">Used Leave Days from Carried Forward</span>
+            <span class="progress-number"><b>#_deductedFromLeaveCarriedForward_#</b>/#_carriedForward_#</span>
+            <br/>
+            <br/>
+        </div>
+        <div class="progress-group" style="display: #_carriedForwardVisibility_#;">
+            <span class="progress-text">Available Carried Forward Leave Days</span>
+            <span class="progress-number"><b>#_carriedForwardAvailable_#</b>/#_carriedForward_#</span>
+
+            <div class="progress sm">
+                <div class="progress-bar progress-bar-yellow" style="width: #_carriedForwardAvailableRatio_#%"></div>
+            </div>
+        </div>
+        <div class="progress-group" style="display: #_carriedForwardVisibility_#;">
+            <span class="progress-text">Expired Unused Carried Forward Leave Days</span>
+            <span class="progress-number"><b>#_expiredFromLeaveCarriedForward_#</b>/#_carriedForward_#</span>
+
+            <div class="progress sm">
+                <div class="progress-bar progress-bar-red" style="width: #_carriedForwardExpiredRatio_#%"></div>
+            </div>
+        </div>
+
+        <!-- /.progress-group -->
+        <div class="progress-group">
+            <hr/>
+            <span class="progress-text">Approved Leave Days</span>
+            <span class="progress-number"><b>#_approvedLeaves_#</b></span>
+
+            <div class="progress sm">
+                <div class="progress-bar progress-bar-yellow" style="width: #_approvedRatio_#%"></div>
+            </div>
+        </div>
+        <div class="progress-group">
+            <span class="progress-text">Pending Leave Days</span>
+            <span class="progress-number"><b>#_pendingLeaves_#</b></span>
+
+            <div class="progress sm">
+                <div class="progress-bar progress-bar-info" style="width: #_pendingRatio_#%"></div>
+            </div>
+        </div>
+        <div class="progress-group">
+            <span class="progress-text">Rejected Leave Days</span>
+            <span class="progress-number"><b>#_rejectedLeaves_#</b></span>
+
+            <div class="progress sm">
+                <div class="progress-bar progress-bar-red" style="width: #_rejectedRatio_#%"></div>
+            </div>
+        </div>
+        <div class="progress-group" style="display: #_leaveAccrueVisibility_#;">
+            <hr/>
+            <span class="progress-text">Leave Days Accrued for Current Period</span>
+            <span class="progress-number"><b>#_accrued_#</b>/#_currentPeriodTotal_#</span>
+            <div class="progress sm">
+                <div class="progress-bar progress-bar-yellow" style="width: #_accruedRatio_#%"></div>
+            </div>
+        </div>
+        <div class="progress-group">
+            <span class="progress-text">Calculated by #_rule_# <a href="#" onclick="modJs.showLeaveCalculation('#_id_#');">Show Calculation</a></span>
+        </div>
+    </div>
+</div>

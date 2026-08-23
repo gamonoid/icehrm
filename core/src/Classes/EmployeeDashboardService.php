@@ -31,7 +31,7 @@ class EmployeeDashboardService
             'celebrations' => $this->celebrations($db),
         );
 
-        if ($this->extensionExists('leave_and_performance')) {
+        if ($this->leaveExtensionExists()) {
             $data['leave'] = $this->myLeave($db, $empId);
         }
 
@@ -41,7 +41,7 @@ class EmployeeDashboardService
             $data['directReports'] = $this->directReports($db, $empId);
             $data['teamStats'] = array(
                 'reports' => (int) $this->scalar($db, "SELECT COUNT(*) FROM Employees WHERE supervisor = " . $empId . " AND status='Active'"),
-                'onLeaveToday' => $this->extensionExists('leave_and_performance')
+                'onLeaveToday' => $this->leaveExtensionExists()
                     ? (int) $this->scalar($db, "SELECT COUNT(DISTINCT el.employee) FROM EmployeeLeaves el JOIN Employees e ON e.id = el.employee WHERE e.supervisor = " . $empId . " AND el.status='Approved' AND el.date_start <= CURDATE() AND el.date_end >= CURDATE()")
                     : 0,
             );
@@ -205,6 +205,15 @@ class EmployeeDashboardService
     }
 
     // --- helpers (same contracts as DashboardService) ------------------------
+
+    /**
+     * Leave ships as a package extension: the free extensions/leave, or the
+     * legacy combined leave_and_performance package.
+     */
+    private function leaveExtensionExists()
+    {
+        return $this->extensionExists('leave') || $this->extensionExists('leave_and_performance');
+    }
 
     private function extensionExists($name)
     {

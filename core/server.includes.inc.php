@@ -34,7 +34,10 @@ if (defined("MODULE_PATH")) {
         if (count($tArr) >= 2) {
             if (strpos(MODULE_PATH,'/extensions/') || strpos(MODULE_PATH,'/extensions-pro/'))  {
 				$modTypeIDPosition = count($tArr)-1;
-				if (strpos(MODULE_PATH,'/leave_and_performance/'))  {
+				// Package extensions (e.g. extensions/leave) nest their modules one
+				// level deeper: <ext>/core/{admin,modules}/<module>.
+				if (strpos(MODULE_PATH, '/core/admin/') !== false
+					|| strpos(MODULE_PATH, '/core/modules/') !== false)  {
 					$modTypeIDPosition = count($tArr)-2;
 				}
                 if ('user' == $tArr[$modTypeIDPosition] || 'modules' == $tArr[$modTypeIDPosition]) {

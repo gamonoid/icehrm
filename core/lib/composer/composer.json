@@ -36,7 +36,7 @@
 	},
     "autoload": {
       "psr-4": {
-        "": ["../../src", "../../../extensions/leave_and_performance/core/src", "../../../extensions-pro/leave_and_performance/core/src"]
+        "": ["../../src", "../../../extensions/leave/core/src", "../../../extensions/leave_and_performance/core/src", "../../../extensions-pro/leave_and_performance/core/src"]
       }
     }
 }

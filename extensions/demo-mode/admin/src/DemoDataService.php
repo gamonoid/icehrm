@@ -2392,7 +2392,8 @@ class DemoDataService
             'performance' => $isPro && class_exists('Performance\Common\Model\PerformanceReview'),
             'tasks' => $isPro && class_exists('TasksAdmin\Common\Model\TaskList')
                 && class_exists('EditorUser\Common\Model\Content'),
-            'leave' => $isPro && class_exists('Leaves\Common\Model\EmployeeLeave'),
+            // Leave is a free, bundled extension (extensions/leave).
+            'leave' => class_exists('Leaves\Common\Model\EmployeeLeave'),
             'payroll' => $isPro && class_exists('Payroll\Common\Model\Payroll'),
         ];
 

@@ -163,13 +163,12 @@ foreach ($ams as $am) {
     }
 }
 
-// Scan pro admin modules if pro directory exists (extensions/, or extensions-pro/
-// only on a Pro/Cloud build).
-$proAdminPath = CLIENT_PATH.'/../extensions/leave_and_performance/core/admin/';
-if (!is_dir($proAdminPath) && function_exists('iceProExtensionsEnabled') && iceProExtensionsEnabled()) {
-    $proAdminPath = CLIENT_PATH.'/../extensions-pro/leave_and_performance/core/admin/';
-}
-if (is_dir($proAdminPath)) {
+// Scan the admin modules contributed by the leave package (extensions/leave, or
+// the legacy leave_and_performance package). See core/leave-package.php.
+require_once CLIENT_PATH.'/leave-package.php';
+$leavePackageDir = iceLeavePackageDir();
+$proAdminPath = $leavePackageDir === null ? null : $leavePackageDir.'core/admin/';
+if ($proAdminPath !== null && is_dir($proAdminPath)) {
     $proAms = scandir($proAdminPath);
     foreach ($proAms as $am) {
         if (is_dir($proAdminPath.$am) && $am != '.' && $am != '..') {
@@ -360,13 +359,11 @@ foreach ($ams as $am) {
     }
 }
 
-// Scan pro user modules if pro directory exists (extensions/, or extensions-pro/
-// only on a Pro/Cloud build).
-$proModulesPath = CLIENT_PATH.'/../extensions/leave_and_performance/core/modules/';
-if (!is_dir($proModulesPath) && function_exists('iceProExtensionsEnabled') && iceProExtensionsEnabled()) {
-    $proModulesPath = CLIENT_PATH.'/../extensions-pro/leave_and_performance/core/modules/';
-}
-if (is_dir($proModulesPath)) {
+// Scan the user modules contributed by the leave package (extensions/leave, or
+// the legacy leave_and_performance package). See core/leave-package.php.
+$leavePackageDir = iceLeavePackageDir();
+$proModulesPath = $leavePackageDir === null ? null : $leavePackageDir.'core/modules/';
+if ($proModulesPath !== null && is_dir($proModulesPath)) {
     $proUms = scandir($proModulesPath);
     foreach ($proUms as $am) {
         try {

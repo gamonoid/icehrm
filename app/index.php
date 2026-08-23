@@ -10,23 +10,20 @@ if (!file_exists('config.php') || trim((string) @file_get_contents('config.php')
 include ('config.php');
 
 // Load config.base.php early (it is idempotent) so IS_ICEHRM_PRO / IS_CLOUD and
-// iceProExtensionsEnabled() are available before the pro loader below decides
-// whether to pull leave_and_performance from the paid extensions-pro/ split.
+// iceProExtensionsEnabled() are available before the leave package loader below
+// decides whether the legacy combined package may come from extensions-pro/.
 include APP_BASE_PATH.'config.base.php';
 
 if (isset($_REQUEST['auth_code'])) {
 	include APP_BASE_PATH.'auth-code.php';
 }
 
-// Load pro main.php if it exists (for pro-only modules). leave_and_performance
-// lives under extensions/ (free) or the paid extensions-pro/ split — the latter
-// only on a Pro/Cloud build.
-$proMainPath = APP_BASE_PATH . '../extensions/leave_and_performance/main.php';
-if (!file_exists($proMainPath) && function_exists('iceProExtensionsEnabled') && iceProExtensionsEnabled()) {
-	$proMainPath = APP_BASE_PATH . '../extensions-pro/leave_and_performance/main.php';
-}
-if (file_exists($proMainPath)) {
-	require_once $proMainPath;
+// Load the leave package loader if it is installed — it defines ProModuleConfig,
+// which routes the package's modules (admin/leaves, modules/leaves, ...) below.
+require_once APP_BASE_PATH . 'leave-package.php';
+$leavePackageDir = iceLeavePackageDir();
+if ($leavePackageDir !== null && file_exists($leavePackageDir . 'main.php')) {
+	require_once $leavePackageDir . 'main.php';
 }
 
 if(!isset($_REQUEST['g']) || !isset($_REQUEST['n'])){

@@ -17,6 +17,11 @@ class MetadataRestEndPoint extends RestEndPoint
      * Maps extension folder name to display info
      */
     private static $knownExtensions = [
+        'leave' => [
+            'code' => 'leave',
+            'label' => 'Leave',
+            'features' => ['leaves']
+        ],
         'leave_and_performance' => [
             'code' => 'leave_and_performance',
             'label' => 'Leave & Performance',

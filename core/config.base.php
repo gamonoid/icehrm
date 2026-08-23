@@ -22,6 +22,17 @@ if (function_exists('ini_set')) {
     unset($iceCookieSecure);
 }
 
+// Per-deployment session cookie name. Cookies are scoped by host, NOT port
+// (RFC 6265), so several IceHRM stacks on the same host — e.g. http://localhost:5555
+// and http://localhost:5666 — would otherwise share one PHPSESSID cookie. Each app,
+// on seeing a session id another app issued, rejects it (use_strict_mode above) and
+// rewrites the cookie with a fresh id, so the stacks continually log each other out.
+// Deriving the cookie name from the (port-specific) base URL gives every deployment
+// its own cookie, so their sessions no longer collide.
+if (defined('CLIENT_BASE_URL') && session_status() !== PHP_SESSION_ACTIVE) {
+    session_name('ICESESS_' . substr(md5(CLIENT_BASE_URL), 0, 8));
+}
+
 if(!defined('SIGN_IN_ELEMENT_MAPPING_FIELD_NAME')){define('SIGN_IN_ELEMENT_MAPPING_FIELD_NAME','employee');}
 
 if(!defined('APP_NAME')){define('APP_NAME','ICE Hrm');}
@@ -69,6 +80,11 @@ if (!function_exists('iceProExtensionsEnabled')) {
 }
 define('LDAP_ENABLED', true);
 define('SAML_ENABLED', true);
+// Leave ships as a bundled extension (extensions/leave); its settings tab is
+// additionally gated on that package being installed.
+if (!defined('LEAVE_ENABLED')) {
+    define('LEAVE_ENABLED', true);
+}
 if(!defined('APP_WEB_URL')) {define('APP_WEB_URL', 'https://icehrm.com');}
 
 if (!defined('EXTENSIONS_URL')) {

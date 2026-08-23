@@ -1,0 +1,13 @@
+{
+	"label":"Leave Calendar",
+	"menu":"Leave",
+	"order":"2",
+	"icon":"fa-calendar",
+	"user_levels":["Admin","Manager","Employee"],
+
+	"permissions":
+		{
+		},
+	"model_namespace": "\\LeaveCalendar\\Common\\Model",
+	"manager": "\\LeaveCalendar\\User\\Api\\LeavecalModulesManager"
+}

@@ -28,7 +28,7 @@ class DashboardService
         );
 
         // --- extension-tied sections (only when the extension dir exists) ---
-        if ($this->extensionExists('leave_and_performance')) {
+        if ($this->leaveExtensionExists()) {
             $data['leave'] = $this->leaveData($db);
         }
         if ($this->extensionExists('expenses')) {
@@ -315,6 +315,15 @@ class DashboardService
     }
 
     // --- helpers -------------------------------------------------------------
+
+    /**
+     * Leave ships as a package extension: the free extensions/leave, or the
+     * legacy combined leave_and_performance package.
+     */
+    private function leaveExtensionExists()
+    {
+        return $this->extensionExists('leave') || $this->extensionExists('leave_and_performance');
+    }
 
     private function extensionExists($name)
     {

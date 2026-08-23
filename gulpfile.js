@@ -47,13 +47,23 @@ const getWebModulePath = (group, moduleName) => {
  * @param {string} moduleName - module name (e.g., 'teams')
  * @returns {string} - path to index.js
  */
-// The leave_and_performance pro extension may live under extensions/ or the paid
-// extensions-pro/ split. Resolve its root once for all lnp build targets.
-const lnpRoot = fs.existsSync('extensions-pro/leave_and_performance') ? 'extensions-pro' : 'extensions';
+// Leave ships as a package extension: extensions/leave (free, leave only), or the
+// legacy combined leave_and_performance package under extensions/ or the paid
+// extensions-pro/ split. Resolve it once for all package build targets.
+const lnpPath = [
+  'extensions/leave',
+  'extensions/leave_and_performance',
+  'extensions-pro/leave_and_performance',
+].find((dir) => fs.existsSync(dir)) || 'extensions/leave';
 
 const getProModulePath = (group, moduleName) => {
-  return `${lnpRoot}/leave_and_performance/web/${group}/src/${moduleName}/index.js`;
+  return `${lnpPath}/web/${group}/src/${moduleName}/index.js`;
 };
+
+// Only the modules the installed package actually ships (extensions/leave has no
+// performance/employeehistory sources).
+const proModulesPresent = (group, moduleNames) => moduleNames
+  .filter((moduleName) => fs.existsSync(getProModulePath(group, moduleName)));
 
 const deleteFiles = (directory) => {
   return fs.readdir(directory, (err, files) => {
@@ -400,18 +410,23 @@ gulp.task('modules-js', (done) => {
 });
 
 gulp.task('pro-admin-js', (done) => {
-  const proAdminPath = `${lnpRoot}/leave_and_performance/web/admin/src`;
+  const proAdminPath = `${lnpPath}/web/admin/src`;
   if (!fs.existsSync(proAdminPath)) {
-    console.log('Pro admin modules not found, skipping...');
+    console.log('Package admin modules not found, skipping...');
     done();
     return;
   }
 
-  const files = [
+  const files = proModulesPresent('admin', [
     'employeehistory',
     'leaves',
     'performance',
-  ];
+  ]);
+  if (files.length === 0) {
+    console.log('Package admin modules not found, skipping...');
+    done();
+    return;
+  }
 
   return browserify({
     entries: files.map((file) => getProModulePath('admin', file)),
@@ -445,22 +460,27 @@ gulp.task('pro-admin-js', (done) => {
       compact: true,
     })))
     .pipe(ifElse(!isProduction, () => sourcemaps.write('./')))
-    .pipe(gulp.dest(`./${lnpRoot}/leave_and_performance/web/dist`));
+    .pipe(gulp.dest(`./${lnpPath}/web/dist`));
 });
 
 gulp.task('pro-modules-js', (done) => {
-  const proModulesPath = `${lnpRoot}/leave_and_performance/web/modules/src`;
+  const proModulesPath = `${lnpPath}/web/modules/src`;
   if (!fs.existsSync(proModulesPath)) {
-    console.log('Pro user modules not found, skipping...');
+    console.log('Package user modules not found, skipping...');
     done();
     return;
   }
 
-  const files = [
+  const files = proModulesPresent('modules', [
     'leavecal',
     'leaves',
     'performance',
-  ];
+  ]);
+  if (files.length === 0) {
+    console.log('Package user modules not found, skipping...');
+    done();
+    return;
+  }
 
   return browserify({
     entries: files.map((file) => getProModulePath('modules', file)),
@@ -494,7 +514,7 @@ gulp.task('pro-modules-js', (done) => {
       compact: true,
     })))
     .pipe(ifElse(!isProduction, () => sourcemaps.write('./')))
-    .pipe(gulp.dest(`./${lnpRoot}/leave_and_performance/web/dist`));
+    .pipe(gulp.dest(`./${lnpPath}/web/dist`));
 });
 
 gulp.task('common-js', (done) => {
@@ -644,8 +664,8 @@ gulp.task('clean-dist', (done) => {
 gulp.task('watch', () => {
   gulp.watch('web/admin/src/*/*.js', gulp.series('admin-js'));
   gulp.watch('web/modules/src/*/*.js', gulp.series('modules-js'));
-  gulp.watch(`${lnpRoot}/leave_and_performance/web/admin/src/*/*.js`, gulp.series('pro-admin-js'));
-  gulp.watch(`${lnpRoot}/leave_and_performance/web/modules/src/*/*.js`, gulp.series('pro-modules-js'));
+  gulp.watch(`${lnpPath}/web/admin/src/*/*.js`, gulp.series('pro-admin-js'));
+  gulp.watch(`${lnpPath}/web/modules/src/*/*.js`, gulp.series('pro-modules-js'));
   gulp.watch('web/components/*.js', gulp.series('admin-js', 'modules-js'));
   gulp.watch('web/api/*.js', gulp.series('admin-js', 'modules-js'));
 });

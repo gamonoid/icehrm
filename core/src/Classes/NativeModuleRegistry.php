@@ -87,9 +87,9 @@ class NativeModuleRegistry
             };
             $tabs = array();
             $notCloud = !defined('IS_CLOUD') || IS_CLOUD == false;
-            // Leave is a paid (extensions-pro) module — only surface its settings
-            // tab on a Pro/Cloud build, matching when the module actually loads.
-            $proEnabled = function_exists('iceProExtensionsEnabled') && iceProExtensionsEnabled();
+            // Leave ships as a package extension — only surface its settings tab
+            // when that package is installed, matching when the module loads.
+            $leaveInstalled = self::leaveBundleUrl('admin') !== '';
             if ($visible('Company')) {
                 $tabs[] = $mk('CompanySetting', 'Company');
             }
@@ -99,7 +99,7 @@ class NativeModuleRegistry
             if ($notCloud && $visible('Email')) {
                 $tabs[] = $mk('EmailSetting', 'Email');
             }
-            if (defined('LEAVE_ENABLED') && LEAVE_ENABLED == true && $proEnabled && $visible('Leave')) {
+            if (defined('LEAVE_ENABLED') && LEAVE_ENABLED == true && $leaveInstalled && $visible('Leave')) {
                 $tabs[] = $mk('LeaveSetting', 'Leave');
             }
             if ($visible('Attendance')) {
@@ -169,17 +169,41 @@ class NativeModuleRegistry
         return defined('EXTENSIONS_URL') ? EXTENSIONS_URL : '';
     }
 
+    /**
+     * Served URL of one of the leave package's bundles (its adapters live
+     * outside the core bundles). Leave ships as extensions/leave, or as the
+     * legacy combined leave_and_performance package — core/leave-package.php
+     * resolves whichever is installed. Empty string when leave is absent.
+     */
+    private static function leaveBundleUrl($group)
+    {
+        if (!function_exists('iceLeavePackageUrl') && defined('APP_BASE_PATH')) {
+            $resolver = APP_BASE_PATH . 'leave-package.php';
+            if (file_exists($resolver)) {
+                require_once $resolver;
+            }
+        }
+        if (!function_exists('iceLeavePackageUrl')) {
+            return '';
+        }
+        $base = iceLeavePackageUrl();
+        return $base === null ? '' : $base . 'web/dist/' . $group . '-bundle.js';
+    }
+
     private static function moduleScripts()
     {
-        $ext = self::extAssetUrl('leave_and_performance');
-        return array(
+        $scripts = array(
             'dist/vendorOther.js',
             'dist/third-party.js',
             'dist/common.js',
             'dist/modules-bundle.js',
-            $ext . 'leave_and_performance/web/dist/modules-bundle.js',
-            'dist/common-bundle.js',
         );
+        $leaveBundle = self::leaveBundleUrl('modules');
+        if ($leaveBundle !== '') {
+            $scripts[] = $leaveBundle;
+        }
+        $scripts[] = 'dist/common-bundle.js';
+        return $scripts;
     }
 
     /**
@@ -635,8 +659,7 @@ class NativeModuleRegistry
                     'dist/third-party.js',
                     'dist/common.js',
                     'dist/admin-bundle.js',
-                    self::extAssetUrl('leave_and_performance')
-                        . 'leave_and_performance/web/dist/admin-bundle.js',
+                    self::leaveBundleUrl('admin'),
                     'dist/common-bundle.js',
                 ),
                 'entities' => array(
@@ -655,10 +678,9 @@ class NativeModuleRegistry
                     array('key' => 'tabLeavePeriod', 'label' => 'Leave Period', 'component' => 'NativeCardList', 'entity' => 'LeavePeriod', 'card' => array('disableView' => true, 'hideCopyButton' => true)),
                     array('key' => 'tabWorkDay', 'label' => 'Work Week', 'component' => 'NativeCardList', 'entity' => 'WorkDay', 'card' => array('disableView' => true)),
                     array('key' => 'tabHoliDay', 'label' => 'Holidays', 'component' => 'NativeCardList', 'entity' => 'HoliDay', 'card' => array('disableView' => true, 'bulkDelete' => true)),
-                    // Only shown once at least one leave rule exists.
-                    array('key' => 'tabLeaveRule', 'label' => 'Leave Rules', 'component' => 'NativeCardList', 'entity' => 'LeaveRule', 'requiresRecords' => '\\Leaves\\Common\\Model\\LeaveRule'),
+                    // Leave Rules and Leave Groups tabs intentionally omitted — the
+                    // simplified leave module does not expose rules or groups.
                     array('key' => 'tabLeaveStartingBalance', 'label' => 'Leave Adjustments', 'component' => 'NativeCardList', 'entity' => 'LeaveStartingBalance', 'card' => array('disableView' => true)),
-                    array('key' => 'tabLeaveGroup', 'label' => 'Leave Groups', 'component' => 'NativeCardList', 'entity' => 'LeaveGroup'),
                     array('key' => 'tabEmployeeLeave', 'label' => 'Employee Leave List', 'component' => 'NativeCardList', 'entity' => 'EmployeeLeave', 'card' => array('statusAction' => 'changeLeaveStatus')),
                 ),
             ),
