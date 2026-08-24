@@ -92,9 +92,14 @@ class IceDataPipe {
 
     let url = this.adapter.moduleRelativeURL.replace('service.php', 'data.php');
     url = `${url}?t=${this.adapter.table}`;
-    url = `${url}&sm=${sourceMappingJson}`;
-    url = `${url}&cl=${columns}`;
-    url = `${url}&ft=${filterJson}`;
+    // URL-encode the JSON params. Without this, a '+' inside a mapping's display
+    // field (e.g. Employee -> 'first_name+last_name') is decoded by PHP to a space,
+    // so the server sees 'first_name last_name' as one column, the picker allowlist
+    // (mappingFieldsAllowed) rejects it, and the FK is left as a raw id instead of
+    // the resolved name. Encoding keeps the '+' intact so the name resolves.
+    url = `${url}&sm=${encodeURIComponent(sourceMappingJson)}`;
+    url = `${url}&cl=${encodeURIComponent(columns)}`;
+    url = `${url}&ft=${encodeURIComponent(filterJson)}`;
 
     if (searchTerm && searchTerm.trim() !== '') {
       url += `&sSearch=${searchTerm}`;

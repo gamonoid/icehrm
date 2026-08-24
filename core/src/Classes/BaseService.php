@@ -958,7 +958,11 @@ class BaseService
         if (empty($allowed)) {
             return false;
         }
-        $requested = array_merge(array($v[1]), explode('+', (string) $v[2]));
+        // Split display columns on '+' OR space: populateMappingItem() normalises the
+        // two the same way (str_replace('+',' ') then explode(' ')), and a '+' can
+        // reach us decoded to a space when a caller sends the mapping unencoded. Parse
+        // both here so the allowlist agrees with how the value is actually resolved.
+        $requested = array_merge(array($v[1]), preg_split('/[+ ]+/', (string) $v[2]));
         foreach ($requested as $col) {
             $col = trim($col);
             if ($col === '' || !in_array($col, $allowed, true)) {
