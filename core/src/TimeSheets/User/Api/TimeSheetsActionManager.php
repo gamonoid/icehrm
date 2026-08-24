@@ -20,6 +20,7 @@ use Leaves\Admin\Api\LeaveUtil;
 use Leaves\Common\Model\EmployeeLeave;
 use Leaves\Common\Model\EmployeeLeaveDay;
 use Leaves\Common\Model\HoliDay;
+use Leaves\Common\Model\LeaveType;
 use Metadata\Common\Model\Country;
 use Payroll\Common\Model\PayrollCalculations;
 use Projects\Common\Model\Project;
@@ -710,6 +711,98 @@ class TimeSheetsActionManager extends SubActionManager
 		}
 
 		return new IceResponse(IceResponse::SUCCESS, array('available' => $available, 'counts' => $counts));
+	}
+
+	/**
+	 * Every leave request that overlaps the timesheet period, for the "Leave in
+	 * this period" list on the timesheet view (a manager opening a direct report's
+	 * sheet sees why days are empty). Unlike getLeaveDaysForTimeSheet — which
+	 * drives the grid's submit validation and is therefore approved-only — this
+	 * returns ALL statuses (Pending, Approved, Rejected, Cancellation Requested,
+	 * Cancelled, Processing) so the UI can show where each request stands, plus
+	 * the day-by-day breakdown inside the period ('Full Day', 'Half Day - Morning',
+	 * '3 Hours - Afternoon', …).
+	 *
+	 * Returns ['available' => bool, 'requests' => [...]]; available is false when
+	 * the leave module is not installed, so the UI can hide the section entirely.
+	 */
+	public function getLeaveRequestsForTimeSheet($req)
+	{
+		if (!class_exists('Leaves\\Common\\Model\\EmployeeLeave')) {
+			return new IceResponse(IceResponse::SUCCESS, array('available' => false, 'requests' => array()));
+		}
+
+		$timeSheet = new EmployeeTimeSheet();
+		$timeSheet->Load("id = ?", array($req->id));
+		if (empty($timeSheet->id)) {
+			return new IceResponse(IceResponse::SUCCESS, array('available' => true, 'requests' => array()));
+		}
+
+		// Ownership gate — $req->id is a request-supplied timesheet id; this returns
+		// that employee's leave requests.
+		if (!$this->baseService->currentUserCanAccessEmployeeData($timeSheet->employee)) {
+			return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
+		}
+
+		$startDate = $timeSheet->date_start;
+		$endDate = $timeSheet->date_end;
+
+		// Plain interval overlap, so a leave that spans the whole week (starting
+		// before it and ending after it) is included too.
+		$employeeLeave = new EmployeeLeave();
+		$leaves = $employeeLeave->Find(
+			"employee = ? and date_start <= ? and date_end >= ? order by date_start",
+			array($timeSheet->employee, $endDate, $startDate)
+		);
+
+		$typeNames = array();
+		$requests = array();
+		foreach ($leaves as $leave) {
+			$days = array();
+			$totalDays = 0;
+			$employeeLeaveDay = new EmployeeLeaveDay();
+			$leaveDays = $employeeLeaveDay->Find(
+				"employee_leave = ? and leave_date >= ? and leave_date <= ? order by leave_date",
+				array($leave->id, $startDate, $endDate)
+			);
+			foreach ($leaveDays as $day) {
+				$amount = class_exists('Leaves\\Admin\\Api\\LeaveUtil')
+					? LeaveUtil::getLeaveTime($day->leave_type) : 0;
+				$totalDays += $amount;
+				$days[] = array(
+					'date' => date('Y-m-d', strtotime($day->leave_date)),
+					// The raw stored type ('Full Day', 'Half Day - Morning',
+					// '2 Hours - Afternoon', …) — shown as-is so any partial-day
+					// type configured for this install renders correctly.
+					'type' => $day->leave_type,
+					'amount' => $amount,
+				);
+			}
+
+			$typeId = $leave->leave_type;
+			if (!isset($typeNames[$typeId])) {
+				$name = '';
+				if (class_exists('Leaves\\Common\\Model\\LeaveType')) {
+					$leaveType = new LeaveType();
+					$leaveType->Load("id = ?", array($typeId));
+					$name = empty($leaveType->id) ? '' : $leaveType->name;
+				}
+				$typeNames[$typeId] = $name;
+			}
+
+			$requests[] = array(
+				'id' => $leave->id,
+				'leave_type' => $typeNames[$typeId],
+				'date_start' => $leave->date_start,
+				'date_end' => $leave->date_end,
+				'status' => $leave->status,
+				'details' => $leave->details,
+				'days' => $days,
+				'days_total' => $totalDays,
+			);
+		}
+
+		return new IceResponse(IceResponse::SUCCESS, array('available' => true, 'requests' => $requests));
 	}
 
 	/**

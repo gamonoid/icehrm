@@ -10421,6 +10421,15 @@ var STATUS_COLORS = {
   Submitted: 'blue',
   Approved: 'green',
   Rejected: 'red'
+}; // EmployeeLeaves.status values (see the leave module's approval workflow).
+
+var LEAVE_STATUS_COLORS = {
+  Approved: 'green',
+  Pending: 'orange',
+  Processing: 'blue',
+  Rejected: 'red',
+  'Cancellation Requested': 'gold',
+  Cancelled: 'default'
 };
 var MANAGER_LEVELS = ['Admin', 'Manager', 'Restricted Admin', 'Restricted Manager'];
 var MODULE = 'modules=time_sheets';
@@ -10444,6 +10453,24 @@ function fmtDate(d) {
     day: 'numeric',
     year: 'numeric'
   });
+} // Compact date for the leave list: "Mon, Aug 3".
+
+
+function fmtShortDate(d) {
+  if (!d) return '';
+  var dt = new Date("".concat(String(d).slice(0, 10), "T00:00:00"));
+  if (Number.isNaN(dt.getTime())) return String(d);
+  return dt.toLocaleDateString(undefined, {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric'
+  });
+} // A leave day is stored as 'Full Day', 'Half Day - Morning', '2 Hours - Afternoon', …
+// Anything that is not a full day is a partial day and gets the softer colour.
+
+
+function isFullDayLeave(type) {
+  return /^\s*full day\s*$/i.test(String(type || ''));
 }
 
 function parseDT(s) {
@@ -10625,12 +10652,22 @@ function TimeSheets() {
       _useState42 = _slicedToArray(_useState41, 2),
       tsLogs = _useState42[0],
       setTsLogs = _useState42[1]; // approval log entries (newest first)
+  // Leave requests overlapping the open timesheet, every status:
+  // { available, requests: [{ id, leave_type, date_start, date_end, status, details, days, days_total }] }
 
 
-  var _useState43 = (0, _react.useState)(null),
+  var _useState43 = (0, _react.useState)({
+    available: false,
+    requests: []
+  }),
       _useState44 = _slicedToArray(_useState43, 2),
-      rejectModal = _useState44[0],
-      setRejectModal = _useState44[1]; // { id, note } | null
+      leaveReq = _useState44[0],
+      setLeaveReq = _useState44[1];
+
+  var _useState45 = (0, _react.useState)(null),
+      _useState46 = _slicedToArray(_useState45, 2),
+      rejectModal = _useState46[0],
+      setRejectModal = _useState46[1]; // { id, note } | null
   // ---- list loading -------------------------------------------------------
 
 
@@ -10761,6 +10798,10 @@ function TimeSheets() {
     }));
     setCal(null);
     setTsLogs([]);
+    setLeaveReq({
+      available: false,
+      requests: []
+    });
     setView('calendar');
     setCalLoading(true);
     callAction(a, 'getTimeEntries', {
@@ -10784,6 +10825,21 @@ function TimeSheets() {
       return setTsLogs(Array.isArray(d) ? d : []);
     })["catch"](function () {
       return setTsLogs([]);
+    }); // Leave the employee has in this period — hidden when the leave module is
+    // not installed (available: false).
+
+    callAction(a, 'getLeaveRequestsForTimeSheet', {
+      id: ts.id
+    }).then(function (d) {
+      return setLeaveReq({
+        available: !!(d && d.available),
+        requests: d && Array.isArray(d.requests) ? d.requests : []
+      });
+    })["catch"](function () {
+      return setLeaveReq({
+        available: false,
+        requests: []
+      });
     });
   };
 
@@ -11565,7 +11621,99 @@ function TimeSheets() {
           paddingTop: 6
         }
       }, "\u2014")));
-    }))), /*#__PURE__*/_react["default"].createElement(Text, {
+    }))), leaveReq.available && leaveReq.requests.length > 0 && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        marginTop: 22
+      }
+    }, /*#__PURE__*/_react["default"].createElement(Text, {
+      strong: true,
+      style: {
+        display: 'block',
+        marginBottom: 8
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_icons.CoffeeOutlined, {
+      style: {
+        marginRight: 6
+      }
+    }), "Leave in this period (".concat(leaveReq.requests.length, ")")), /*#__PURE__*/_react["default"].createElement(_antd.Table, {
+      rowKey: "id",
+      size: "small",
+      pagination: false,
+      scroll: {
+        x: 'max-content'
+      },
+      dataSource: leaveReq.requests,
+      columns: [{
+        title: 'Leave Type',
+        key: 'type',
+        render: function render(_, r) {
+          return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+            style: {
+              fontWeight: 600
+            }
+          }, r.leave_type || 'Leave'), r.details && String(r.details).trim() ? /*#__PURE__*/_react["default"].createElement(Text, {
+            type: "secondary",
+            style: {
+              fontSize: 12
+            }
+          }, String(r.details).trim()) : null);
+        }
+      }, {
+        title: 'Requested',
+        key: 'range',
+        render: function render(_, r) {
+          return r.date_start === r.date_end ? fmtShortDate(r.date_start) : "".concat(fmtShortDate(r.date_start), " \u2013 ").concat(fmtShortDate(r.date_end));
+        }
+      }, {
+        title: 'Days in this period',
+        key: 'days',
+        render: function render(_, r) {
+          var days = Array.isArray(r.days) ? r.days : [];
+          if (!days.length) return /*#__PURE__*/_react["default"].createElement(Text, {
+            type: "secondary"
+          }, "\u2014");
+          return /*#__PURE__*/_react["default"].createElement("div", {
+            style: {
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: 6
+            }
+          }, days.map(function (d) {
+            return /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+              key: "".concat(r.id, "-").concat(d.date),
+              color: isFullDayLeave(d.type) ? 'volcano' : 'gold',
+              icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+              style: {
+                margin: 0,
+                borderRadius: 12,
+                padding: '1px 10px'
+              }
+            }, /*#__PURE__*/_react["default"].createElement("b", null, fmtShortDate(d.date)), ' · ', d.type);
+          }));
+        }
+      }, {
+        title: 'Total',
+        key: 'total',
+        align: 'center',
+        render: function render(_, r) {
+          var t = Number(r.days_total) || 0;
+          return t ? "".concat(t, " day").concat(t === 1 ? '' : 's') : /*#__PURE__*/_react["default"].createElement(Text, {
+            type: "secondary"
+          }, "\u2014");
+        }
+      }, {
+        title: 'Status',
+        key: 'status',
+        render: function render(_, r) {
+          return /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+            color: LEAVE_STATUS_COLORS[r.status] || 'default',
+            style: {
+              margin: 0
+            }
+          }, r.status);
+        }
+      }]
+    })), /*#__PURE__*/_react["default"].createElement(Text, {
       strong: true,
       style: {
         display: 'block',

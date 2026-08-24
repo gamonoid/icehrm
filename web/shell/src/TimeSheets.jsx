@@ -17,6 +17,15 @@ const { Text, Title } = Typography;
 const STATUS_COLORS = {
   Pending: 'orange', Submitted: 'blue', Approved: 'green', Rejected: 'red',
 };
+// EmployeeLeaves.status values (see the leave module's approval workflow).
+const LEAVE_STATUS_COLORS = {
+  Approved: 'green',
+  Pending: 'orange',
+  Processing: 'blue',
+  Rejected: 'red',
+  'Cancellation Requested': 'gold',
+  Cancelled: 'default',
+};
 const MANAGER_LEVELS = ['Admin', 'Manager', 'Restricted Admin', 'Restricted Manager'];
 const MODULE = 'modules=time_sheets';
 const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -29,6 +38,18 @@ function fmtDate(d) {
   const dt = new Date(`${String(d).slice(0, 10)}T00:00:00`);
   if (Number.isNaN(dt.getTime())) return d;
   return dt.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+}
+// Compact date for the leave list: "Mon, Aug 3".
+function fmtShortDate(d) {
+  if (!d) return '';
+  const dt = new Date(`${String(d).slice(0, 10)}T00:00:00`);
+  if (Number.isNaN(dt.getTime())) return String(d);
+  return dt.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+}
+// A leave day is stored as 'Full Day', 'Half Day - Morning', '2 Hours - Afternoon', …
+// Anything that is not a full day is a partial day and gets the softer colour.
+function isFullDayLeave(type) {
+  return /^\s*full day\s*$/i.test(String(type || ''));
 }
 function parseDT(s) {
   if (!s) return null;
@@ -92,6 +113,9 @@ export default function TimeSheets() {
   const [cal, setCal] = useState(null); // { entries, employee, timesheet }
   const [calLoading, setCalLoading] = useState(false);
   const [tsLogs, setTsLogs] = useState([]); // approval log entries (newest first)
+  // Leave requests overlapping the open timesheet, every status:
+  // { available, requests: [{ id, leave_type, date_start, date_end, status, details, days, days_total }] }
+  const [leaveReq, setLeaveReq] = useState({ available: false, requests: [] });
   const [rejectModal, setRejectModal] = useState(null); // { id, note } | null
 
   // ---- list loading -------------------------------------------------------
@@ -150,12 +174,21 @@ export default function TimeSheets() {
     const entryAdapter = adapters().tabEmployeeTimeEntry;
     const sm = (entryAdapter && entryAdapter.getSourceMapping) ? JSON.stringify(entryAdapter.getSourceMapping()) : '';
     setCurrent({ ...ts, readOnly: true, isReport: !!isReport });
-    setCal(null); setTsLogs([]); setView('calendar'); setCalLoading(true);
+    setCal(null); setTsLogs([]); setLeaveReq({ available: false, requests: [] });
+    setView('calendar'); setCalLoading(true);
     callAction(a, 'getTimeEntries', { id: ts.id, sm })
       .then((d) => { setCal({ entries: d[0] || [], employee: d[1] || {}, timesheet: d[2] || {} }); setCalLoading(false); })
       .catch(() => { setCalLoading(false); message.error('Could not load timesheet entries', 5); });
     callAction(a, 'getTimeSheetLogs', { id: ts.id })
       .then((d) => setTsLogs(Array.isArray(d) ? d : [])).catch(() => setTsLogs([]));
+    // Leave the employee has in this period — hidden when the leave module is
+    // not installed (available: false).
+    callAction(a, 'getLeaveRequestsForTimeSheet', { id: ts.id })
+      .then((d) => setLeaveReq({
+        available: !!(d && d.available),
+        requests: (d && Array.isArray(d.requests)) ? d.requests : [],
+      }))
+      .catch(() => setLeaveReq({ available: false, requests: [] }));
   };
 
   const reloadCalendar = () => { if (current) openCalendar(current, current.isReport); };
@@ -601,6 +634,83 @@ export default function TimeSheets() {
             ))}
           </div>
         </div>
+
+        {/* Leave taken during this timesheet period */}
+        {leaveReq.available && leaveReq.requests.length > 0 && (
+          <div style={{ marginTop: 22 }}>
+            <Text strong style={{ display: 'block', marginBottom: 8 }}>
+              <CoffeeOutlined style={{ marginRight: 6 }} />
+              {`Leave in this period (${leaveReq.requests.length})`}
+            </Text>
+            <Table
+              rowKey="id" size="small" pagination={false} scroll={{ x: 'max-content' }}
+              dataSource={leaveReq.requests}
+              columns={[
+                {
+                  title: 'Leave Type',
+                  key: 'type',
+                  render: (_, r) => (
+                    <div>
+                      <div style={{ fontWeight: 600 }}>{r.leave_type || 'Leave'}</div>
+                      {r.details && String(r.details).trim() ? (
+                        <Text type="secondary" style={{ fontSize: 12 }}>{String(r.details).trim()}</Text>
+                      ) : null}
+                    </div>
+                  ),
+                },
+                {
+                  title: 'Requested',
+                  key: 'range',
+                  render: (_, r) => (r.date_start === r.date_end
+                    ? fmtShortDate(r.date_start)
+                    : `${fmtShortDate(r.date_start)} – ${fmtShortDate(r.date_end)}`),
+                },
+                {
+                  title: 'Days in this period',
+                  key: 'days',
+                  render: (_, r) => {
+                    const days = Array.isArray(r.days) ? r.days : [];
+                    if (!days.length) return <Text type="secondary">—</Text>;
+                    return (
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                        {days.map((d) => (
+                          <Tag
+                            key={`${r.id}-${d.date}`}
+                            color={isFullDayLeave(d.type) ? 'volcano' : 'gold'}
+                            icon={<CalendarOutlined />}
+                            style={{ margin: 0, borderRadius: 12, padding: '1px 10px' }}
+                          >
+                            <b>{fmtShortDate(d.date)}</b>
+                            {' · '}
+                            {d.type}
+                          </Tag>
+                        ))}
+                      </div>
+                    );
+                  },
+                },
+                {
+                  title: 'Total',
+                  key: 'total',
+                  align: 'center',
+                  render: (_, r) => {
+                    const t = Number(r.days_total) || 0;
+                    return t ? `${t} day${t === 1 ? '' : 's'}` : <Text type="secondary">—</Text>;
+                  },
+                },
+                {
+                  title: 'Status',
+                  key: 'status',
+                  render: (_, r) => (
+                    <Tag color={LEAVE_STATUS_COLORS[r.status] || 'default'} style={{ margin: 0 }}>
+                      {r.status}
+                    </Tag>
+                  ),
+                },
+              ]}
+            />
+          </div>
+        )}
 
         {/* Entries table */}
         <Text strong style={{ display: 'block', margin: '20px 0 8px' }}>
