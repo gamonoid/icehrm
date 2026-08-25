@@ -27,6 +27,12 @@
         "props": {
           "controller": "marketplaceExtensionController"
         }
+      },
+      {
+        "key": "tabIceHrmPro",
+        "label": "IceHrmPro",
+        "component": "NativeExtensionView",
+        "viewGlobal": "IceHrmProCompareView"
       }
     ]
   }

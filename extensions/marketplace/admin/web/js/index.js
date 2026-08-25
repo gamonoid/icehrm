@@ -23,3 +23,6 @@ window.initMarketplaceAdmin = init;
 
 // SPA native mount: expose the view so the shell renders it in-tree (themed).
 window.MarketplaceAdminView = (require('./view').default || require('./view'));
+
+// IceHrmPro comparison tab (declared in meta.json native.tabs as viewGlobal).
+window.IceHrmProCompareView = (require('./IceHrmProCompare').default || require('./IceHrmProCompare'));

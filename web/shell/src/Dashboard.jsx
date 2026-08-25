@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  Row, Col, Card, List, Avatar, Tag, Spin, Empty, Typography, Progress, theme,
+  Row, Col, Card, List, Avatar, Tag, Spin, Empty, Typography, Progress, Button, theme,
 } from 'antd';
 import {
   TeamOutlined, ApartmentOutlined,
@@ -86,6 +86,59 @@ function Kpi({
         </div>
       </div>
       {sub ? <div style={{ marginTop: 10, fontSize: 12, color: subColor }}>{sub}</div> : null}
+    </Card>
+  );
+}
+
+// Small "upgrade to IceHrmPro" call-to-action shown in the KPI row. Clicking the
+// card opens the marketplace's IceHrmPro comparison tab; the Buy Now button links
+// straight to the purchase page.
+const ICEHRM_PRO_PURCHASE_URL = 'https://icehrm.com/purchase-icehrmpro';
+function UpgradeBox({ onCompare }) {
+  return (
+    <Card
+      bordered={false}
+      hoverable={!!onCompare}
+      onClick={onCompare}
+      style={{
+        borderRadius: 14,
+        boxShadow: MUI_SHADOW,
+        cursor: onCompare ? 'pointer' : 'default',
+        background: 'linear-gradient(135deg, #7B61FF 0%, #9270CA 100%)',
+        color: '#fff',
+        height: '100%',
+      }}
+      bodyStyle={{ padding: 18 }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+        <div style={{
+          width: 46, height: 46, borderRadius: 12, flex: '0 0 auto',
+          background: 'rgba(255,255,255,0.2)', color: '#fff', display: 'flex',
+          alignItems: 'center', justifyContent: 'center', fontSize: 20,
+        }}
+        >
+          <RocketOutlined />
+        </div>
+        <div style={{ minWidth: 0 }}>
+          <div style={{ fontSize: 15, fontWeight: 700, lineHeight: 1.2 }}>Upgrade to IceHrmPro</div>
+          <div style={{ fontSize: 12, opacity: 0.9, whiteSpace: 'nowrap' }}>Unlock all premium extensions</div>
+        </div>
+      </div>
+      <div style={{ marginTop: 12, display: 'flex', gap: 8, alignItems: 'center' }}>
+        <Button
+          size="small"
+          href={ICEHRM_PRO_PURCHASE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          style={{ background: '#fff', borderColor: '#fff', color: '#7B61FF', fontWeight: 600 }}
+        >
+          Buy Now
+        </Button>
+        {onCompare ? (
+          <span style={{ fontSize: 12, opacity: 0.9, textDecoration: 'underline' }}>Compare editions</span>
+        ) : null}
+      </div>
     </Card>
   );
 }
@@ -464,6 +517,16 @@ export default function Dashboard({ config, onNavigate }) {
             />
           </Col>
         ))}
+        {/* Upgrade-to-Pro call to action, sitting next to the KPI tiles. */}
+        <Col xs={12} sm={8} md={6} xl={kpis.length > 6 ? 4 : 6}>
+          <UpgradeBox
+            onCompare={onNavigate ? () => {
+              // Deep-link into the marketplace's IceHrmPro comparison tab.
+              try { window.__iceShellStartTab = 'tabIceHrmPro'; } catch (e) { /* */ }
+              onNavigate('extension', 'marketplace|admin');
+            } : undefined}
+          />
+        </Col>
       </Row>
 
       {/* Charts: trend + gender */}

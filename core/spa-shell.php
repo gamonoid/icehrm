@@ -69,6 +69,92 @@ $shellConfig = array(
 ?><!DOCTYPE html>
 <html>
 <head>
+<?php
+// Google Analytics (GA4) — same property as the legacy shell (core/header.php),
+// so users moving to the new UI keep reporting into it instead of silently
+// dropping out of the numbers.
+//
+// The SPA is a SINGLE document load: gtag's automatic page_view would fire once
+// and every module opened afterwards would be invisible. Auto page_view is
+// therefore switched off and one is sent per route change below.
+//
+// Defining GA4_MEASUREMENT_ID as '' disables analytics entirely (useful for an
+// on-premise deployment that should not report to us).
+$ga4Id = defined('GA4_MEASUREMENT_ID') ? trim((string) GA4_MEASUREMENT_ID) : '';
+if ($ga4Id !== '') :
+?>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?= rawurlencode($ga4Id) ?>"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        // send_page_view:false — the shell sends every page_view itself, the first
+        // one included, so a view is counted exactly once and never twice.
+        gtag('config', <?= json_encode($ga4Id) ?>, { send_page_view: false });
+
+        (function () {
+            var lastUrl = null;
+
+            // The route lives in the hash ('#modules::time_sheets'). GA4 drops the
+            // fragment when it derives the page path, so every view would collapse
+            // into one "/ui/" row. Fold the route into the path instead, turning the
+            // shell's separators into path segments:
+            //   #modules::time_sheets  -> /app/ui/modules/time_sheets
+            //   #extension::esign|user -> /app/ui/extension/esign/user
+            function route() {
+                var raw = (window.location.hash || '').replace(/^#\/?/, '');
+                if (!raw) { return ''; }
+                try { raw = decodeURIComponent(raw); } catch (e) { /* keep raw */ }
+                return raw;
+            }
+
+            function pageLocation(r) {
+                // Normalise '/app/ui/' or '/app/ui/index.php' to a clean directory base.
+                var base = window.location.pathname.replace(/index\.php$/, '');
+                if (base.charAt(base.length - 1) !== '/') { base += '/'; }
+                return window.location.origin + base
+                    + r.replace(/::/g, '/').replace(/\|/g, '/')
+                    + window.location.search;
+            }
+
+            function sendPageView() {
+                var r = route();
+                var url = pageLocation(r);
+                // One navigation can reach us twice (hashchange AND the history
+                // patch below); only the first is counted.
+                if (url === lastUrl) { return; }
+                lastUrl = url;
+                gtag('event', 'page_view', {
+                    // The document title is the company name and never changes, so
+                    // the route is the only thing that makes the GA4 Pages report
+                    // readable.
+                    page_title: r || 'home',
+                    page_location: url
+                });
+            }
+
+            // The shell navigates BOTH ways — `location.hash = ...` (fires
+            // hashchange) and `history.replaceState()` (fires nothing at all) — so
+            // cover both, or the modules reached the second way go unrecorded.
+            window.addEventListener('hashchange', sendPageView);
+            window.addEventListener('popstate', sendPageView);
+            ['pushState', 'replaceState'].forEach(function (name) {
+                var original = window.history[name];
+                if (typeof original !== 'function') { return; }
+                window.history[name] = function () {
+                    var result = original.apply(this, arguments);
+                    // The URL is already updated when the call returns.
+                    try { sendPageView(); } catch (e) { /* never break navigation */ }
+                    return result;
+                };
+            });
+
+            sendPageView(); // initial load (may already carry a deep-linked route)
+        })();
+    </script>
+<?php endif; ?>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title><?= htmlspecialchars($companyNameSetting) ?></title>

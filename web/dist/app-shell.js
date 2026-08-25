@@ -1974,13 +1974,100 @@ function Kpi(_ref2) {
       color: subColor
     }
   }, sub) : null);
+} // Small "upgrade to IceHrmPro" call-to-action shown in the KPI row. Clicking the
+// card opens the marketplace's IceHrmPro comparison tab; the Buy Now button links
+// straight to the purchase page.
+
+
+var ICEHRM_PRO_PURCHASE_URL = 'https://icehrm.com/purchase-icehrmpro';
+
+function UpgradeBox(_ref3) {
+  var onCompare = _ref3.onCompare;
+  return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    bordered: false,
+    hoverable: !!onCompare,
+    onClick: onCompare,
+    style: {
+      borderRadius: 14,
+      boxShadow: _theme.MUI_SHADOW,
+      cursor: onCompare ? 'pointer' : 'default',
+      background: 'linear-gradient(135deg, #7B61FF 0%, #9270CA 100%)',
+      color: '#fff',
+      height: '100%'
+    },
+    bodyStyle: {
+      padding: 18
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 14
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: 46,
+      height: 46,
+      borderRadius: 12,
+      flex: '0 0 auto',
+      background: 'rgba(255,255,255,0.2)',
+      color: '#fff',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: 20
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_icons.RocketOutlined, null)), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 15,
+      fontWeight: 700,
+      lineHeight: 1.2
+    }
+  }, "Upgrade to IceHrmPro"), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 12,
+      opacity: 0.9,
+      whiteSpace: 'nowrap'
+    }
+  }, "Unlock all premium extensions"))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginTop: 12,
+      display: 'flex',
+      gap: 8,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    size: "small",
+    href: ICEHRM_PRO_PURCHASE_URL,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    onClick: function onClick(e) {
+      return e.stopPropagation();
+    },
+    style: {
+      background: '#fff',
+      borderColor: '#fff',
+      color: '#7B61FF',
+      fontWeight: 600
+    }
+  }, "Buy Now"), onCompare ? /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontSize: 12,
+      opacity: 0.9,
+      textDecoration: 'underline'
+    }
+  }, "Compare editions") : null));
 }
 
-function SectionCard(_ref3) {
-  var title = _ref3.title,
-      extra = _ref3.extra,
-      children = _ref3.children,
-      height = _ref3.height;
+function SectionCard(_ref4) {
+  var title = _ref4.title,
+      extra = _ref4.extra,
+      children = _ref4.children,
+      height = _ref4.height;
   return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
     title: /*#__PURE__*/_react["default"].createElement("span", {
       style: {
@@ -2000,10 +2087,10 @@ function SectionCard(_ref3) {
   }, children);
 }
 
-function PeopleList(_ref4) {
-  var data = _ref4.data,
-      renderMeta = _ref4.renderMeta,
-      emptyText = _ref4.emptyText;
+function PeopleList(_ref5) {
+  var data = _ref5.data,
+      renderMeta = _ref5.renderMeta,
+      emptyText = _ref5.emptyText;
 
   if (!data || data.length === 0) {
     return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
@@ -2041,14 +2128,14 @@ function PeopleList(_ref4) {
 // message on the left, action buttons on the right.
 
 
-function DashBanner(_ref5) {
-  var gradient = _ref5.gradient,
-      shadow = _ref5.shadow,
-      border = _ref5.border,
-      icon = _ref5.icon,
-      title = _ref5.title,
-      message = _ref5.message,
-      actions = _ref5.actions;
+function DashBanner(_ref6) {
+  var gradient = _ref6.gradient,
+      shadow = _ref6.shadow,
+      border = _ref6.border,
+      icon = _ref6.icon,
+      title = _ref6.title,
+      message = _ref6.message,
+      actions = _ref6.actions;
   return /*#__PURE__*/_react["default"].createElement("div", {
     style: {
       background: gradient,
@@ -2103,12 +2190,12 @@ function DashBanner(_ref5) {
   }, actions));
 }
 
-function bannerButton(_ref6) {
-  var label = _ref6.label,
-      icon = _ref6.icon,
-      color = _ref6.color,
-      _onClick = _ref6.onClick,
-      ghost = _ref6.ghost;
+function bannerButton(_ref7) {
+  var label = _ref7.label,
+      icon = _ref7.icon,
+      color = _ref7.color,
+      _onClick = _ref7.onClick,
+      ghost = _ref7.ghost;
   return /*#__PURE__*/_react["default"].createElement("a", {
     key: label,
     onClick: function onClick(e) {
@@ -2143,9 +2230,9 @@ function bannerButton(_ref6) {
 // unpaid invoice, red service-restricted notice for two or more.
 
 
-function PaymentBanner(_ref7) {
-  var billing = _ref7.billing,
-      onNavigate = _ref7.onNavigate;
+function PaymentBanner(_ref8) {
+  var billing = _ref8.billing,
+      onNavigate = _ref8.onNavigate;
   var count = billing && billing.unpaidInvoices || 0;
   if (count < 1) return null;
   var single = count === 1;
@@ -2173,9 +2260,9 @@ function PaymentBanner(_ref7) {
 // for this render only, like the legacy display:none link.
 
 
-function DemoBanner(_ref8) {
-  var show = _ref8.show,
-      onNavigate = _ref8.onNavigate;
+function DemoBanner(_ref9) {
+  var show = _ref9.show,
+      onNavigate = _ref9.onNavigate;
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -2209,9 +2296,9 @@ function DemoBanner(_ref8) {
 // (show_upgrade_ad session flag; data.upgradeAd carries remaining trial days).
 
 
-function UpgradeBanner(_ref9) {
-  var upgradeAd = _ref9.upgradeAd,
-      onNavigate = _ref9.onNavigate;
+function UpgradeBanner(_ref10) {
+  var upgradeAd = _ref10.upgradeAd,
+      onNavigate = _ref10.onNavigate;
   if (!upgradeAd) return null;
   var days = upgradeAd.days;
   return /*#__PURE__*/_react["default"].createElement(DashBanner, {
@@ -2238,9 +2325,9 @@ function UpgradeBanner(_ref9) {
   });
 }
 
-function Dashboard(_ref10) {
-  var config = _ref10.config,
-      onNavigate = _ref10.onNavigate;
+function Dashboard(_ref11) {
+  var config = _ref11.config,
+      onNavigate = _ref11.onNavigate;
 
   var _useState3 = (0, _react.useState)(null),
       _useState4 = _slicedToArray(_useState3, 2),
@@ -2467,7 +2554,23 @@ function Dashboard(_ref10) {
         onNavigate(kpi.nav[0], kpi.nav[1]);
       } : undefined
     })));
-  })), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 12,
+    sm: 8,
+    md: 6,
+    xl: kpis.length > 6 ? 4 : 6
+  }, /*#__PURE__*/_react["default"].createElement(UpgradeBox, {
+    onCompare: onNavigate ? function () {
+      // Deep-link into the marketplace's IceHrmPro comparison tab.
+      try {
+        window.__iceShellStartTab = 'tabIceHrmPro';
+      } catch (e) {
+        /* */
+      }
+
+      onNavigate('extension', 'marketplace|admin');
+    } : undefined
+  }))), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
     gutter: [16, 16],
     style: {
       marginTop: 16
