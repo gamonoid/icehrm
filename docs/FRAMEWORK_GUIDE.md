@@ -730,23 +730,23 @@ The compiled bundle is output to `extensions/{name}/{type}/dist/{name}.js`.
 
 This will examine settings module.
 
+The legacy per-module pages (`core/admin/*/index.php`, `core/modules/*/index.php`)
+have been REMOVED — every core module now mounts natively inside the React shell.
+`?g=admin&n=settings` is only a legacy deep link: it redirects to the SPA.
+
 ```
-1. User navigates to: ?g=admin&n=settings
+1. User opens the SPA route: /app/ui/#admin::settings
    ↓
-2. app/index.php routes to: core/admin/settings/index.php
+2. AppShell.jsx sees the module in bootstrap.nativeModules and mounts it
+   natively (NativeModuleHost) — no iframe, no legacy page.
    ↓
-3. Module index.php:
-   - Sets MODULE_PATH
-   - Includes header.php (loads core, sets up UI)
-   - Includes modulejslibs.inc.php (loads JavaScript bundles)
-   - Creates ModuleBuilder with tabs
-   - Renders HTML tabs and containers
-   - Generates JavaScript adapter initialization code
+3. NativeModuleRegistry::coreMap() supplies the module's config:
+   - initFn (e.g. initAdminSettings), from dist/admin-bundle.js
+   - the JS bundles to load, in order
+   - its tabs / entities (the tabs the legacy ModuleBuilder used to render)
    ↓
-4. Browser loads page:
-   - HTML tabs rendered
-   - JavaScript adapters initialized in modJsList
-   - Active tab adapter assigned to modJs
+4. /appshell/module-context returns per-user permissions + custom fields;
+   the initFn builds the adapters into modJsList exactly as before.
    ↓
 5. Adapter.get() called:
    - Constructs API URL (service.php or data.php)
