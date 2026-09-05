@@ -68,7 +68,7 @@ class OvertimeRequestReport extends BaseReport
             (SELECT name from Projects where id = o.project) as 'Project',
             o.start_time as 'Start Time',
             o.end_time as 'End Time',
-            o.hours as 'Hours',
+            ROUND(TIMESTAMPDIFF(SECOND, o.start_time, o.end_time) / 3600, 2) as 'Hours',
             o.status as 'Status',
             o.notes as 'Notes'
         FROM EmployeeOvertime o

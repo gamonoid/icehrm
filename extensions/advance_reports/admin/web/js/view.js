@@ -48,6 +48,8 @@ class Advance_reportsAdminExtensionView extends React.Component {
     downloadUrl: null,
   };
 
+  reportPaneRef = React.createRef();
+
   componentDidMount() {
     this.fetchReports();
   }
@@ -93,17 +95,48 @@ class Advance_reportsAdminExtensionView extends React.Component {
       });
   }
 
-  selectReport(report) {
-    // Scroll to top when a report is selected
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // The SPA shell renders modules inside a scrollable <div>, not the document
+  // body, so window.scrollTo() has no effect here. Walk up to the nearest
+  // scrollable ancestor instead.
+  static getScrollParent(node) {
+    let el = node.parentElement;
+    while (el && el !== document.body) {
+      const style = window.getComputedStyle(el);
+      if (/(auto|scroll|overlay)/.test(style.overflowY) && el.scrollHeight > el.clientHeight) {
+        return el;
+      }
+      el = el.parentElement;
+    }
+    return null;
+  }
 
+  scrollReportIntoView() {
+    // Wait a frame so the newly rendered report pane has been laid out.
+    window.requestAnimationFrame(() => {
+      const node = this.reportPaneRef.current;
+      if (!node) {
+        return;
+      }
+
+      const container = this.constructor.getScrollParent(node);
+      if (container) {
+        const top = (node.getBoundingClientRect().top - container.getBoundingClientRect().top)
+          + container.scrollTop;
+        container.scrollTo({ top: Math.max(top - 12, 0), behavior: 'smooth' });
+      } else {
+        node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  selectReport(report) {
     this.setState({
       selectedReport: report,
       formLoading: true,
       reportData: null,
       reportColumns: [],
       downloadUrl: null,
-    });
+    }, () => this.scrollReportIntoView());
 
     // Pre-fetch remote sources for this report
     const remoteSourcePromises = [];
@@ -434,7 +467,9 @@ class Advance_reportsAdminExtensionView extends React.Component {
 
           {selectedReport && (
             <Col xs={24} lg={16}>
-              {this.renderReportForm()}
+              <div ref={this.reportPaneRef}>
+                {this.renderReportForm()}
+              </div>
             </Col>
           )}
         </Row>

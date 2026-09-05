@@ -8,9 +8,9 @@ class v20260707_350004_add_overtime_categories extends AbstractMigration {
         // module is usable out of the box. Idempotent: only inserts names that
         // don't exist yet (fresh installs and existing instances alike).
         $categories = [
-            'Weekday Overtime (1.5x)',
-            'Weekend Overtime (2x)',
-            'Public Holiday Overtime (2.5x)',
+            'Weekday Overtime',
+            'Weekend Overtime',
+            'Public Holiday Overtime',
             'Night Shift Overtime',
             'On-Call / Emergency Overtime',
         ];
