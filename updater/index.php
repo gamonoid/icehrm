@@ -29,6 +29,7 @@ require_once __DIR__ . '/lib/Bootstrap.php';
 $problem = UpdaterBootstrap::init();
 
 require_once __DIR__ . '/lib/Db.php';
+require_once __DIR__ . '/lib/License.php';
 require_once __DIR__ . '/lib/Auth.php';
 require_once __DIR__ . '/lib/Preflight.php';
 require_once __DIR__ . '/lib/Files.php';
@@ -158,9 +159,11 @@ switch ($action) {
             break;
         }
         $url = isset($_POST['url']) ? (string) $_POST['url'] : '';
-        if (!UpdaterBootstrap::isPro()) {
+        if (!UpdaterBootstrap::allowsCustomSource()) {
             // The free edition always comes from the published location; there is
-            // nothing for the user to choose and nothing to typo.
+            // nothing for the user to choose and nothing to typo. An open-source
+            // installation entitled to Pro is the exception — it pastes its own signed
+            // link, exactly as a Pro one does.
             $url = UpdaterPackage::FREE_URL;
         }
 
@@ -180,7 +183,13 @@ switch ($action) {
                 . 'It may not be a complete IceHRM package.';
             break;
         }
-        if ($newVersion <= $currentVersion) {
+        // A change of edition is not a version comparison. Open source 36.0.0 -> Pro
+        // 36.0.0 is a real upgrade — different program files, different modules — so
+        // refusing it as "already up to date" would be wrong, and would leave the
+        // customer no way to install what they have paid for.
+        $editionChange = UpdaterPackage::isEditionChange();
+
+        if (!$editionChange && $newVersion <= $currentVersion) {
             updater_render('uptodate', 'Already up to date', array(
                 'currentVersion' => $currentVersion,
                 'newVersion' => $newVersion,
@@ -190,6 +199,7 @@ switch ($action) {
         updater_render('confirm', 'Ready to update', array(
             'currentVersion' => $currentVersion,
             'newVersion' => $newVersion,
+            'editionChange' => $editionChange,
         ));
         break;
 

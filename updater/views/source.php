@@ -4,6 +4,10 @@
  *
  * Pro installations paste a signed download link (they are licensed per customer);
  * the free edition has a single published location and nothing to choose.
+ *
+ * The exception is a free installation whose owner holds a Pro subscription: it is
+ * offered the same field, because the release it is entitled to is a Pro one and comes
+ * from a per-customer link like any other.
  */
 ?>
 <?php if (!empty($error)): ?>
@@ -38,9 +42,16 @@
   <form method="post">
     <input type="hidden" name="csrf" value="<?= htmlspecialchars(UpdaterAuth::csrfToken()) ?>">
     <input type="hidden" name="action" value="download">
-    <?php if (UpdaterBootstrap::isPro()): ?>
-      <p class="detail">Paste the download link for the new IceHRM Pro release. Links from
-      your IceHRM account are time-limited, so copy it immediately before using it here.</p>
+    <?php if (UpdaterBootstrap::allowsCustomSource()): ?>
+      <?php if (UpdaterBootstrap::canUpgradeToPro()): ?>
+        <p class="detail">Your subscription includes <strong>IceHRM Pro</strong>. Paste the Pro
+        download link from your IceHRM account to move this installation up to Pro — your
+        settings, uploads and data are kept, and the current version is backed up first.
+        You can also paste an open source link here to stay on the free edition.</p>
+      <?php else: ?>
+        <p class="detail">Paste the download link for the new IceHRM Pro release. Links from
+        your IceHRM account are time-limited, so copy it immediately before using it here.</p>
+      <?php endif; ?>
       <label for="url">IceHRM Pro download link</label>
       <input type="url" id="url" name="url" placeholder="https://…/icehrmpro.zip" required autofocus>
       <p class="detail" style="margin-top:8px">

@@ -110,10 +110,17 @@ class UpdaterInstaller
             return self::failure($extResult, $backupDir, $preserved);
         }
 
-        // 4. extensions-pro/ — Pro installations only. On a free installation the
-        //    release has no extensions-pro/ and the existing directory (if any) is left
-        //    untouched rather than deleted.
-        if (UpdaterBootstrap::isPro() && is_dir($new . '/extensions-pro')) {
+        // 4. extensions-pro/ — installed whenever the RELEASE ships it, not when the
+        //    running installation happens to be Pro. A free release has no
+        //    extensions-pro/, so the existing directory (if any) is left untouched
+        //    rather than deleted, exactly as before.
+        //
+        //    Asking the release rather than the config is what makes open source -> Pro
+        //    work at all: during that update this is still a free installation, and the
+        //    Pro core/config.base.php about to be installed refuses to boot without
+        //    extensions-pro/util/admin/util.php. Gating on isPro() here would leave the
+        //    customer with a 503 and no application.
+        if (is_dir($new . '/extensions-pro')) {
             $proResult = self::mergeExtensions(
                 $root . '/extensions-pro',
                 $new . '/extensions-pro',
