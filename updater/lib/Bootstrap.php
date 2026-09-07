@@ -215,10 +215,52 @@ class UpdaterBootstrap
         return defined('IS_ICEHRM_PRO') && IS_ICEHRM_PRO;
     }
 
+    /**
+     * May this open-source installation move up to Pro?
+     *
+     * True only where the two things are both so: Pro is NOT installed, and the
+     * marketplace snapshot shows a live Pro subscription. Such an installation is
+     * allowed to do what a Pro one does — paste its own signed download link, and
+     * unpack an `icehrmpro/` archive over itself.
+     *
+     * Always false on a Pro installation: there is nothing to move up to.
+     */
+    public static function canUpgradeToPro()
+    {
+        return !self::isPro() && class_exists('UpdaterLicense') && UpdaterLicense::hasProSubscription();
+    }
+
+    /** May a download link be typed in here, rather than taken from the published one? */
+    public static function allowsCustomSource()
+    {
+        return self::isPro() || self::canUpgradeToPro();
+    }
+
     /** 'icehrmpro' or 'icehrm' — the archive name and the directory it extracts to. */
     public static function packageName()
     {
         return self::isPro() ? 'icehrmpro' : 'icehrm';
+    }
+
+    /**
+     * The package roots an archive downloaded here is allowed to have.
+     *
+     * A Pro installation takes Pro releases and nothing else. An open-source one
+     * normally takes open-source releases and nothing else — but when it is entitled to
+     * Pro, either is legitimate, and which one arrived is decided by looking inside the
+     * archive rather than by asking the config what edition this is.
+     *
+     * @return string[]
+     */
+    public static function allowedPackageNames()
+    {
+        if (self::isPro()) {
+            return array('icehrmpro');
+        }
+        if (self::canUpgradeToPro()) {
+            return array('icehrm', 'icehrmpro');
+        }
+        return array('icehrm');
     }
 
     /** The currently installed version, from the updater's own copy of config.base.php. */

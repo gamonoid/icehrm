@@ -63,6 +63,17 @@ class UpdaterPackage
     const LOW_SPEED_BYTES = 1024;
     const LOW_SPEED_SECONDS = 120;
 
+    /**
+     * Records which package root the last download actually contained.
+     *
+     * An open-source installation entitled to Pro may legitimately download either
+     * edition, and which one arrived is only known once the archive has been opened —
+     * so it is written down here rather than inferred from the config. A file, not the
+     * session: install runs as a separate request from download, and the extracted tree
+     * outlives the session that produced it.
+     */
+    const PACKAGE_MARKER = 'package.name';
+
     public static function archivePath()
     {
         return UpdaterBootstrap::$dataDir . '/' . UpdaterBootstrap::packageName() . '.zip';
@@ -71,12 +82,47 @@ class UpdaterPackage
     /** Where the archive extracts to: updater/data/icehrmpro or updater/data/icehrm. */
     public static function extractedPath()
     {
-        return UpdaterBootstrap::$dataDir . '/' . UpdaterBootstrap::packageName();
+        return UpdaterBootstrap::$dataDir . '/' . self::extractedPackageName();
+    }
+
+    /**
+     * The edition that was downloaded — 'icehrm' or 'icehrmpro'.
+     *
+     * The marker written at extraction time is authoritative. Falling back to the
+     * installed edition keeps every single-edition installation behaving exactly as it
+     * did before the marker existed, including when the data directory has been wiped.
+     *
+     * @return string
+     */
+    public static function extractedPackageName()
+    {
+        $marker = UpdaterBootstrap::$dataDir . '/' . self::PACKAGE_MARKER;
+        if (is_readable($marker)) {
+            $name = trim((string) @file_get_contents($marker));
+            if (in_array($name, UpdaterBootstrap::allowedPackageNames(), true)) {
+                return $name;
+            }
+        }
+        return UpdaterBootstrap::packageName();
+    }
+
+    /**
+     * Is the downloaded package a different edition from the installed one?
+     *
+     * Only ever true for open source -> Pro, which is the one edition change the
+     * updater performs. It matters twice: the version comparison must not refuse it,
+     * and the administrator is told what they are about to do.
+     *
+     * @return bool
+     */
+    public static function isEditionChange()
+    {
+        return self::extractedPackageName() !== UpdaterBootstrap::packageName();
     }
 
     public static function defaultUrl()
     {
-        return UpdaterBootstrap::isPro() ? '' : self::FREE_URL;
+        return UpdaterBootstrap::allowsCustomSource() ? '' : self::FREE_URL;
     }
 
     /** Extra hosts this installation permits, as written in the marker file. */
@@ -343,8 +389,10 @@ class UpdaterPackage
             return 'The downloaded file is not a valid zip archive. Check the link and download it again.';
         }
 
-        $expectedRoot = UpdaterBootstrap::packageName() . '/';
-        $sawExpectedRoot = false;
+        // Normally one root is acceptable. An open-source installation entitled to Pro
+        // accepts either, and what it actually got is decided here, from the archive.
+        $allowedRoots = UpdaterBootstrap::allowedPackageNames();
+        $foundRoot = null;
 
         if ($zip->numFiles > self::MAX_ENTRIES) {
             $zip->close();
@@ -394,23 +442,38 @@ class UpdaterPackage
                 return 'The archive contains an unsafe file path and was rejected.';
             }
 
-            if (strpos($normalised, $expectedRoot) === 0) {
-                $sawExpectedRoot = true;
+            if ($foundRoot === null) {
+                foreach ($allowedRoots as $candidate) {
+                    if (strpos($normalised, $candidate . '/') === 0) {
+                        $foundRoot = $candidate;
+                        break;
+                    }
+                }
             }
         }
 
-        if (!$sawExpectedRoot) {
+        if ($foundRoot === null) {
             $zip->close();
-            return 'The archive does not contain a "' . htmlspecialchars(rtrim($expectedRoot, '/'))
-                . '" directory, so it is not '
+            $names = array();
+            foreach ($allowedRoots as $candidate) {
+                $names[] = '"' . htmlspecialchars($candidate) . '"';
+            }
+            return 'The archive does not contain a ' . implode(' or ', $names)
+                . ' directory, so it is not '
                 . (UpdaterBootstrap::isPro() ? 'an IceHRM Pro' : 'an IceHRM') . ' release.';
         }
 
-        // A previous attempt may have left a partial tree.
-        $destination = self::extractedPath();
-        if (is_dir($destination)) {
-            UpdaterFiles::deleteTree($destination);
+        // A previous attempt may have left a partial tree — under EITHER root, since a
+        // second download can be of the other edition.
+        foreach ($allowedRoots as $candidate) {
+            $stale = UpdaterBootstrap::$dataDir . '/' . $candidate;
+            if (is_dir($stale)) {
+                UpdaterFiles::deleteTree($stale);
+            }
         }
+
+        self::rememberPackage($foundRoot);
+        $destination = UpdaterBootstrap::$dataDir . '/' . $foundRoot;
 
         UpdaterLog::info('Extracting ' . $archive . ' (' . $zip->numFiles . ' entries, '
             . UpdaterPreflight::formatBytes($totalUncompressed) . ' uncompressed)');
@@ -468,6 +531,19 @@ class UpdaterPackage
             . (int) substr($version, 4, 2);
     }
 
+    /** Note which edition the archive turned out to hold, for the steps that follow. */
+    private static function rememberPackage($name)
+    {
+        $marker = UpdaterBootstrap::$dataDir . '/' . self::PACKAGE_MARKER;
+        if (@file_put_contents($marker, $name) === false) {
+            // Not fatal on a single-edition installation, where the fallback in
+            // extractedPackageName() gives the same answer. It IS fatal to an
+            // open-source -> Pro upgrade, which would then look for the wrong
+            // directory and stop with "the extracted files are missing".
+            UpdaterLog::error('Could not record the downloaded edition at ' . $marker);
+        }
+    }
+
     /** Remove the archive and the extracted tree once an update has succeeded. */
     public static function cleanUp()
     {
@@ -478,6 +554,10 @@ class UpdaterPackage
         $extracted = self::extractedPath();
         if (is_dir($extracted)) {
             UpdaterFiles::deleteTree($extracted);
+        }
+        $marker = UpdaterBootstrap::$dataDir . '/' . self::PACKAGE_MARKER;
+        if (file_exists($marker)) {
+            @unlink($marker);
         }
     }
 }
