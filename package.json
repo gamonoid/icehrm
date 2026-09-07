@@ -72,7 +72,7 @@
     "test:e2e:headed": "cd e2e && npm run test:e2e:headed",
     "test:e2e:ui": "cd e2e && npm run test:e2e:ui",
     "test:smoke": "cd e2e && npm run test:smoke",
-    "release:test:base": "docker build -t icehrm-release-runtime -f Dockerfile .",
+    "release:test:base": "docker build -t icehrm-ce-release-runtime -f Dockerfile .",
     "release:test:up": "npm run release:test:base && docker compose -p icehrm-release-test -f docker-compose-release-test.yaml up -d --build",
     "release:test:update": "sh release-test-update.sh",
     "release:test:down": "docker compose -p icehrm-release-test -f docker-compose-release-test.yaml down",
