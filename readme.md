@@ -5,28 +5,51 @@ IceHrm is a comprehensive [HRM software](https://icehrm.com) that enables compan
 
 ### Core HR Management
 
-| Employee Management | Leave Management |
-|:-------------------:|:----------------:|
-| ![Employee Management](https://icehrm.com/assets/images/employee-management.png) | ![Leave Management](https://icehrm.com/assets/images/leave-management.png) |
-
-Centralized employee data management with automated workflows for personal info, documents, and qualifications.
-
-### Time & Payroll
-
-| Attendance Tracking | Payroll & Reports |
+| Employee Management | Company Structure |
 |:-------------------:|:-----------------:|
-| ![Attendance](https://icehrm.com/assets/images/attendance-tracking.png) | ![Payroll](https://icehrm.com/assets/images/payroll-management.png) |
+| ![Employee Management](docs/images/employees-list.png) | ![Company Structure](docs/images/company-structure-org-chart.png) |
 
-Comprehensive time tracking with timesheet analytics and integrated payroll processing.
+Centralized employee records — personal details, job history, qualifications, documents
+and dependents — with a company structure you can browse as a list or an org chart.
 
-### Organization & Projects
+### Leave Management
 
-| Organization Structure | Project Insights |
-|:----------------------:|:----------------:|
-| ![Org Structure](https://icehrm.com/assets/images/org-structure.png) | ![Projects](https://icehrm.com/assets/images/project-view.png) |
+| Apply and Track Leave | Team Leave Calendar |
+|:---------------------:|:-------------------:|
+| ![Apply Leave](docs/images/employee-leave-apply.png) | ![Leave Calendar](docs/images/leave-calendar.png) |
 
-Visualize company hierarchy and track project progress with detailed analytics.
----
+Employees apply for leave and see their entitlement, pending and approved requests in one
+place; managers approve or reject from the same screen. Administrators define leave types,
+the leave period, the work week and public holidays, and can post manual leave adjustments.
+The calendar lays the whole team's absences across the month so clashes are obvious before
+anything is approved.
+
+### Time & Attendance
+
+| Attendance | Overtime |
+|:----------:|:--------:|
+| ![Attendance](docs/images/attendance-admin.png) | ![Overtime](docs/images/overtime-admin.png) |
+
+Punch in and out with a full attendance history per employee, and an overtime request and
+approval flow on top of it.
+
+### Projects & Timesheets
+
+| Clients and Projects | Timesheets |
+|:--------------------:|:----------:|
+| ![Projects](docs/images/projects-list.png) | ![Timesheets](docs/images/time-sheets-personal.png) |
+
+Track clients and projects, assign employees to them, and capture weekly timesheets with a
+per-project breakdown and an approval step.
+
+### Employee Self-Service
+
+| Employee Dashboard | Staff Directory |
+|:------------------:|:---------------:|
+| ![Employee Dashboard](docs/images/my-dashboard.png) | ![Directory](docs/images/employee-directory.png) |
+
+Every employee gets their own dashboard — leave balances, upcoming holidays, pending
+requests — plus a searchable directory of colleagues.
 
 ## Getting Started
 
@@ -95,7 +118,33 @@ Full control over your environment and custom configurations.
 </tr>
 </table>
 
-![IceHrm Installation](docs/images/IceHrm-installation.gif)
+### Docker in one command
+
+```bash
+git clone https://github.com/gamonoid/icehrm.git
+cd icehrm
+docker compose up -d --build
+```
+
+The build compiles the frontend assets inside the image, so the first run takes a
+few minutes. When it finishes, IceHrm is at
+[http://localhost:5555](http://localhost:5555) — sign in with `admin` / `admin` and
+change that password before exposing the installation.
+
+The stack is three containers: the application, a MySQL 8 database seeded from
+`docker/init.sql`, and a worker for background jobs. Settings and uploads live in
+named volumes (`icehrm-app-data`, `icehrm-mysql-data`) and survive a rebuild. To
+change the port, base URL or database credentials, copy `docker-prod.env.example`
+to `.env` first — see the [Docker Quick Start Guide](docs/docker-quickstart.md).
+
+
+### Keeping an installation current
+
+From v36, IceHrm updates itself. Administrators see a banner on the dashboard when
+a newer release is published; the updater downloads it, backs the current version
+aside before replacing anything, preserves `app/config.php`, `app/data/` and any
+extensions you installed yourself, and can roll back from the same screen if the
+application does not come back.
 
 ---
 
@@ -141,21 +190,6 @@ Expand IceHrm with powerful modules for your business needs.
 </td>
 </tr>
 </table>
-
----
-
-## 🎁 Free Extensions
-
-> **These extensions are FREE after connecting to IceHrm.com:**
-
-| Extension | Description | |
-|-----------|-------------|:---:|
-| **Payroll** | Comprehensive payroll management with salary calculations, deductions, and pay slip generation | [View Details](https://icehrm.com/module/payroll) |
-| **Team** | Team collaboration tools for better communication and project coordination | [View Details](https://icehrm.com/module/team) |
-| **Reports** | Advanced reporting and analytics for HR metrics and insights | [View Details](https://icehrm.com/module/reports) |
-| **Directory** | Employee directory with search, filtering, and organizational views | [View Details](https://icehrm.com/module/directory) |
-| **Company Overview** | Dashboard with company-wide statistics and HR metrics at a glance | [View Details](https://icehrm.com/module/company-overview) |
-
 
 ---
 

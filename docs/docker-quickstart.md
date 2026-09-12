@@ -12,12 +12,14 @@ git clone https://github.com/gamonoid/icehrm.git
 cd icehrm
 
 # Build and start IceHrm
-docker compose -f docker-compose.yaml up -d --build
+docker compose up -d --build
 ```
 
-Visit [http://localhost:5555](http://localhost:5555) and login with username `admin` and password `admin`.
+Visit [http://localhost:5555](http://localhost:5555) and login with username `admin` and password `admin`. Change that password before putting the installation on a network.
 
-**Note:** The Docker build automatically runs `npm install` and `npm run asset:build:prod` to compile frontend assets. The first build may take a few minutes.
+`docker-compose.yaml` is the default file name, so `-f docker-compose.yaml` is optional on every command in this guide.
+
+**Note:** The Docker build runs `npm install` and `npm run asset:build:prod` inside the image to compile frontend assets, so the first build takes a few minutes. There is no installer to walk through — the application config is baked into the image and the database is seeded from `docker/init.sql` on first start, so you land straight on the login page.
 
 ## Configuration (Optional)
 
@@ -42,13 +44,18 @@ DB_NAME=icehrm
 DB_USER=icehrm
 DB_PASSWORD=your_secure_password
 DB_ROOT_PASSWORD=your_secure_root_password
+
+# Host port for the bundled MySQL, bound to 127.0.0.1 only (default: 9555)
+DB_PORT=9555
 ```
+
+`DB_PORT` is not listed in `docker-prod.env.example`, but `docker-compose.yaml` honours it.
 
 Then restart the containers:
 
 ```bash
-docker compose -f docker-compose.yaml down
-docker compose -f docker-compose.yaml up -d
+docker compose down
+docker compose up -d
 ```
 
 ## Using an External Database
@@ -77,16 +84,24 @@ mysql -h your-database-host.example.com -u your_db_user -p icehrm < docker/init.
 3. Start only the application containers (without the bundled MySQL):
 
 ```bash
-docker compose -f docker-compose.yaml up -d icehrm icehrm-worker
+docker compose up -d icehrm icehrm-worker
 ```
+
+Naming the services explicitly is what keeps the bundled MySQL out of it: the
+application declares `depends_on: mysql` with `required: false`, so Compose is happy
+to start without it. This needs Docker Compose v2.20 or newer.
 
 ## Docker Services
 
-| Service | Description | Port |
-|---------|-------------|------|
-| icehrm | Main application | 5555 |
-| mysql | Database server | - |
-| icehrm-worker | Background jobs | - |
+| Service | Container | Description | Port on the host |
+|---------|-----------|-------------|------------------|
+| icehrm | `icehrm-app` | Main application | `5555` (`APP_PORT`) |
+| mysql | `icehrm-mysql` | MySQL 8.0.32, seeded from `docker/init.sql` | `127.0.0.1:9555` (`DB_PORT`) |
+| icehrm-worker | `icehrm-worker` | Background jobs and scheduled tasks | none |
+
+MySQL is published on the loopback interface only. Binding it to `0.0.0.0` would put
+the database in reach of anything on the same network, so it is reachable from the
+host — for a backup or a GUI client — and from nowhere else.
 
 ## Data Persistence
 
@@ -94,14 +109,37 @@ All data is persisted in Docker volumes:
 - `icehrm-mysql-data` - Database files
 - `icehrm-app-data` - Uploaded files and logs
 
+## Updating
+
+From v36, IceHrm updates itself: an administrator sees a banner on the dashboard when
+a newer release is published, and the updater replaces the program files in place. It
+backs the current version aside first, never touches `app/config.php`, `app/data/` or
+`app/cache/`, leaves extensions you installed yourself alone, and can roll back from
+the same screen.
+
+That update lives in the container's writable layer, so rebuilding the image
+(`up -d --build`) puts you back on the version the image was built from. To make an
+update permanent, pull the newer source and rebuild:
+
+```bash
+git pull
+docker compose up -d --build
+```
+
+Your database and uploads are in named volumes and are not affected by a rebuild.
+
 ## Stopping IceHrm
 
 ```bash
-docker compose -f docker-compose.yaml down
+docker compose down
 ```
+
+This keeps both volumes. To discard the database and uploads as well, add `-v` —
+that is not reversible.
 
 ## Viewing Logs
 
 ```bash
-docker compose -f docker-compose.yaml logs -f
+docker compose logs -f            # everything
+docker compose logs -f icehrm     # just the application
 ```
