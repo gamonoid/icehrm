@@ -50,7 +50,7 @@ if(!defined('HOME_LINK_OTHERS')){
 define('VERSION', '36.0.0');
 define('CACHE_VALUE', '36.0.0.2026-08251822');
 define('VERSION_NUMBER', '360000');
-define('VERSION_DATE', '25/08/2026');
+define('VERSION_DATE', '13/09/2026');
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','icehrm@gamonoid.com');}
 if(!defined('KEY_PREFIX')){define('KEY_PREFIX','IceHrm');}
