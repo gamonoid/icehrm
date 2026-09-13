@@ -42,6 +42,22 @@ class AppShellRestEndPoint extends RestEndPoint
      */
     public function getBootstrap(User $user)
     {
+        // Keep this account's purchases current. The snapshot feeds the update /
+        // upgrade banners below, and before this the ONLY thing that refreshed it was
+        // an admin opening Marketplace > My Purchases — so on an installation where
+        // nobody visits that page it stayed frozen at connect time and the banners
+        // could never notice a new release.
+        //
+        // Admin-only (they are the only ones the banners are built for), self-hosted
+        // only, and rate-limited to one outbound call per 3 hours by the marketplace
+        // cache, so a warm cache costs a single local read. Failure is swallowed: the
+        // dashboard renders whether or not icehrm.com can be reached.
+        if ($user->user_level === 'Admin') {
+            $this->safeCall(function () {
+                return ConnectionService::getInstance()->refreshMyExtensionsIfStale();
+            });
+        }
+
         $cleanUser = BaseService::getInstance()->cleanUpUser(clone $user);
         $menu = MenuService::getInstance()->getMenuForUser($user);
         $views = MenuService::getInstance()->getViewMenus($user);
