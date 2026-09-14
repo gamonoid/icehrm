@@ -195,6 +195,5 @@ Expand IceHrm with powerful modules for your business needs.
 
 ## Resources
 
-- [Official Documentation](https://icehrm.com/docs)
-- [Extension Marketplace](https://icehrm.com/explore)
+- [Official Documentation](https://icehrm.com/docs/)
 - [Community Support](https://github.com/gamonoid/icehrm/issues)
