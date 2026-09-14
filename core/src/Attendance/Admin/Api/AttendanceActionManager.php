@@ -18,6 +18,13 @@ class AttendanceActionManager extends SubActionManager
     public function savePunch($req)
     {
 
+        // Ownership gate. $req->employee is request-supplied and this writes an
+        // Attendance row for that employee. A Manager reaching admin=attendance could
+        // otherwise forge attendance for anyone. Admin any; Manager only subordinates.
+        if (!$this->baseService->currentUserCanAccessEmployeeData($req->employee)) {
+            return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
+        }
+
         $employee = $this->baseService->getElement('Employee', $req->employee, null, true);
         $inDateTime = $req->in_time;
         $inDateArr = explode(" ", $inDateTime);
@@ -91,6 +98,17 @@ class AttendanceActionManager extends SubActionManager
         $attendance = new Attendance();
         if (!empty($req->id)) {
             $attendance->Load("id = ?", array($req->id));
+            // Ownership gate on the EXISTING row. The check at the top of this method
+            // validates $req->employee (the row's NEW owner); $req->id was then loaded
+            // unchecked, so a manager could pass any employee's attendance id together
+            // with their own subordinate's employee id and overwrite that row —
+            // re-parenting it and destroying the original. Scope the loaded row too.
+            if (empty($attendance->id)) {
+                return new IceResponse(IceResponse::ERROR, 'Attendance entry not found');
+            }
+            if (!$this->baseService->currentUserCanAccessEmployeeData($attendance->employee)) {
+                return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
+            }
         }
         $attendance->in_time = $inDateTime;
         if (empty($outDateTime)) {
@@ -116,6 +134,15 @@ class AttendanceActionManager extends SubActionManager
             $req->id,
             '{"employee":["Employee","id","first_name+last_name"]}'
         );
+
+        // Ownership gate. $req->id is any attendance row and this returns its punch
+        // images. Scope to the row's employee: Admin any; a manager only subordinates.
+        if (!empty($attendance)
+            && !$this->baseService->currentUserCanAccessEmployeeData($attendance->employee)
+        ) {
+            return new IceResponse(IceResponse::ERROR, 'Permission denied', 403);
+        }
+
         return new IceResponse(IceResponse::SUCCESS, $attendance);
     }
 }

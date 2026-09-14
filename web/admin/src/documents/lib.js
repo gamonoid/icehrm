@@ -68,6 +68,7 @@ class CompanyDocumentAdapter extends ReactifiedAdapterBase {
       'id',
       'name',
       'status',
+      'document_link',
     ];
   }
 
@@ -95,7 +96,7 @@ class CompanyDocumentAdapter extends ReactifiedAdapterBase {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'text', validation: '' }],
-      ['details', { label: 'Details', type: 'quill', validation: 'none' }],
+      ['details', { label: 'Description', type: 'textarea', validation: 'none' }],
       ['status', { label: 'Status', type: 'select', source: [['Active', 'Active'], ['Inactive', 'Inactive'], ['Draft', 'Draft']] }],
       ['attachment', { label: 'Attachment', type: 'fileupload' }],
       [
@@ -253,6 +254,13 @@ class EmployeeDocumentAdapter extends ReactifiedAdapterBase {
     html = html.replace(/_attachment_/g, data[6]);
     html = html.replace(/_BASE_/g, this.baseUrl);
     return html;
+  }
+
+  // Native card-list action: download the record's attachment.
+  downloadAttachment(id, record) {
+    if (record && record.attachment && typeof window.download === 'function') {
+      window.download(record.attachment);
+    }
   }
 
   getTableActionButtonJsx(adapter) {

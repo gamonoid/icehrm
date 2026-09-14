@@ -1,0 +1,24 @@
+<?php
+
+namespace Company_overviewUser;
+
+use Classes\BaseService;
+use Classes\IceExtension;
+use Company_overviewUser\Migrations\CreateTables;
+
+class Extension extends IceExtension
+{
+	
+	public function initialize() {
+		// BaseService::getInstance()->registerExtensionMigration(new CreateTables());
+	}
+	
+	public function setupModuleClassDefinitions() {
+		// $this->addModelClass('ClassName');
+	}
+	
+	public function setupRestEndPoints() {
+		(new ApiController())->registerEndPoints();
+	}
+}
+

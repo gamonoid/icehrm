@@ -1,0 +1,5636 @@
+openapi: 3.0.3
+info:
+  title: IceHRM Pro API
+  description: |
+    IceHRM is an open-source Human Resource Management system. This API provides
+    programmatic access to manage employees, attendance, leave, payroll, projects,
+    and other HR-related functions.
+
+    ## Authentication
+    All endpoints require Bearer token authentication unless otherwise noted.
+    Use the OAuth token endpoint to obtain an access token.
+
+    ## Response Format
+    Successful responses return data wrapped in an IceResponse object.
+    Error responses use the format: `{"error": [[{"code": 400, "message": "..."}]]}`
+  version: 2.0.0
+  contact:
+    name: IceHRM Support
+    url: https://icehrm.com
+    email: support@icehrm.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: '{protocol}://{host}/api/v1'
+    description: IceHRM API Server
+    variables:
+      protocol:
+        enum: [http, https]
+        default: https
+      host:
+        default: localhost
+
+tags:
+  - name: Authentication
+    description: User authentication and token management
+  - name: Employees
+    description: Employee data management
+  - name: Attendance
+    description: Attendance tracking and punch in/out
+  - name: Leave
+    description: Leave requests and entitlements
+  - name: Documents
+    description: Employee and company documents
+  - name: Projects
+    description: Project management and resource allocation
+  - name: Company
+    description: Company structure and organization
+  - name: Charts
+    description: Dashboard analytics and charts
+  - name: Meta
+    description: Metadata and lookup data
+  - name: Settings
+    description: Application settings
+  - name: Tasks
+    description: Task management
+  - name: Teams
+    description: Team management
+  - name: Expenses
+    description: Expense tracking and management
+  - name: Payroll
+    description: Payroll configuration and processing
+  - name: Company Assets
+    description: Company asset tracking
+  - name: Insights
+    description: Analytics and reporting insights
+  - name: Reports
+    description: Advanced report generation
+  - name: Learn
+    description: Learning management system
+  - name: Directory
+    description: Staff directory
+  - name: Demo Mode
+    description: Demo data generation
+  - name: Recruitment
+    description: Job postings and candidate management
+  - name: Timesheets
+    description: Timesheet management and time entry tracking
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Bearer token authentication
+
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            type: array
+            items:
+              type: object
+              properties:
+                code:
+                  type: integer
+                message:
+                  type: string
+
+    Employee:
+      type: object
+      properties:
+        id:
+          type: integer
+        employee_id:
+          type: string
+        first_name:
+          type: string
+        middle_name:
+          type: string
+        last_name:
+          type: string
+        nationality:
+          type: string
+        birthday:
+          type: string
+          format: date
+        gender:
+          type: string
+          enum: [Male, Female, Other]
+        marital_status:
+          type: string
+        ssn_num:
+          type: string
+        nic_num:
+          type: string
+        other_id:
+          type: string
+        driving_license:
+          type: string
+        employment_status:
+          type: integer
+        job_title:
+          type: integer
+        pay_grade:
+          type: integer
+        work_station_id:
+          type: string
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+        province:
+          type: integer
+        postal_code:
+          type: string
+        home_phone:
+          type: string
+        mobile_phone:
+          type: string
+        work_phone:
+          type: string
+        work_email:
+          type: string
+          format: email
+        private_email:
+          type: string
+          format: email
+        joined_date:
+          type: string
+          format: date
+        confirmation_date:
+          type: string
+          format: date
+        supervisor:
+          type: integer
+        indirect_supervisors:
+          type: string
+        department:
+          type: integer
+        termination_date:
+          type: string
+          format: date
+        status:
+          type: string
+          enum: [Active, Terminated]
+        approver1:
+          type: integer
+        approver2:
+          type: integer
+        approver3:
+          type: integer
+
+    Attendance:
+      type: object
+      properties:
+        id:
+          type: integer
+        employee:
+          type: integer
+        in_time:
+          type: string
+          format: date-time
+        out_time:
+          type: string
+          format: date-time
+        note:
+          type: string
+        work_from_home:
+          type: boolean
+          description: True if working from home, false if working from office
+        map_lat:
+          type: number
+          format: double
+          description: Punch-in GPS latitude
+        map_lng:
+          type: number
+          format: double
+          description: Punch-in GPS longitude
+        map_out_lat:
+          type: number
+          format: double
+          description: Punch-out GPS latitude
+        map_out_lng:
+          type: number
+          format: double
+          description: Punch-out GPS longitude
+        in_ip:
+          type: string
+          description: IP address at punch-in
+        out_ip:
+          type: string
+          description: IP address at punch-out
+
+    LeaveRequest:
+      type: object
+      properties:
+        leave_type:
+          type: integer
+        start:
+          type: string
+          format: date
+        end:
+          type: string
+          format: date
+        details:
+          type: string
+        attachment:
+          type: string
+        days:
+          type: object
+          additionalProperties:
+            type: string
+            enum: [Full Day, Half Day - Morning, Half Day - Afternoon]
+
+    EmployeeLeave:
+      type: object
+      properties:
+        id:
+          type: integer
+        employee:
+          type: string
+          description: Employee name (first_name + last_name)
+        leave_type:
+          type: string
+          description: Leave type name
+        leave_period:
+          type: string
+          description: Leave period name
+        date_start:
+          type: string
+          format: date
+        date_end:
+          type: string
+          format: date
+        details:
+          type: string
+        status:
+          type: string
+          enum: [Pending, Approved, Rejected, Cancelled]
+        attachment:
+          type: string
+        created:
+          type: string
+          format: date-time
+        updated:
+          type: string
+          format: date-time
+
+    LeaveType:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+          description: Leave type name (e.g., Annual Leave, Sick Leave)
+        supervisor_leave_assign:
+          type: string
+          enum: ['Yes', 'No']
+          description: Whether supervisor can assign this leave type
+        employee_can_apply:
+          type: string
+          enum: ['Yes', 'No']
+          description: Whether employee can apply for this leave type
+        apply_beyond_current:
+          type: string
+          enum: ['Yes', 'No']
+          description: Allow applying beyond current entitlement
+        leave_accrue:
+          type: string
+          enum: ['Yes', 'No']
+          description: Whether leave accrues over time
+        carried_forward:
+          type: string
+          enum: ['Yes', 'No']
+          description: Whether unused leave can be carried forward
+        default_per_year:
+          type: number
+          description: Default leave days per year
+        leave_color:
+          type: string
+          description: Color code for calendar display
+
+    LeavePeriod:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+          description: Leave period name (e.g., 2024, 2024-2025)
+        date_start:
+          type: string
+          format: date
+          description: Period start date
+        date_end:
+          type: string
+          format: date
+          description: Period end date
+        status:
+          type: string
+          enum: [Active, Inactive]
+          description: Period status
+
+    Project:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        client:
+          type: integer
+        details:
+          type: string
+        status:
+          type: string
+          enum: [Active, Inactive]
+
+    Team:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        department:
+          type: integer
+        status:
+          type: string
+          enum: [Active, Inactive]
+
+    Expense:
+      type: object
+      description: |
+        Expense submission with optional receipt image upload.
+
+        **Receipt Upload (Mobile App Support)**:
+        Use the `receipt` field to upload a receipt image captured via camera.
+        Supports base64-encoded images with or without data URI prefix.
+
+        Examples:
+        - With data URI: `"data:image/jpeg;base64,/9j/4AAQ..."`
+        - Raw base64: `"/9j/4AAQSkZJRg..."`
+
+        Supported formats: jpg, jpeg, png, gif, bmp, webp, heic, heif
+        Maximum file size: 10MB
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        expense_date:
+          type: string
+          format: date
+          description: Date of the expense
+          example: "2026-04-06"
+        payment_method:
+          type: integer
+          description: Payment method ID (from /expense/payment-methods)
+        transaction_no:
+          type: string
+          description: Transaction reference number
+        payee:
+          type: string
+          description: Vendor/payee name
+        category:
+          type: integer
+          description: Expense category ID (from /expense/categories)
+        notes:
+          type: string
+          description: Additional notes about the expense
+        currency:
+          type: integer
+          description: Currency ID
+        amount:
+          type: number
+          format: decimal
+          description: Expense amount
+          example: 125.50
+        receipt:
+          type: string
+          description: |
+            Base64-encoded receipt image (primary attachment).
+            Accepts data URI format (data:image/jpeg;base64,...) or raw base64 string.
+            Ideal for camera-captured images from mobile apps (Flutter, React Native).
+          example: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+        receipt_filename:
+          type: string
+          description: Optional original filename for the receipt
+          example: "receipt_2026_04_06.jpg"
+        receipt2:
+          type: string
+          description: Base64-encoded second receipt image (optional)
+        receipt2_filename:
+          type: string
+          description: Optional filename for second receipt
+        receipt3:
+          type: string
+          description: Base64-encoded third receipt image (optional)
+        receipt3_filename:
+          type: string
+          description: Optional filename for third receipt
+        attachment1:
+          type: string
+          readOnly: true
+          description: Saved filename of first attachment (returned after save)
+        attachment2:
+          type: string
+          readOnly: true
+          description: Saved filename of second attachment
+        attachment3:
+          type: string
+          readOnly: true
+          description: Saved filename of third attachment
+        status:
+          type: string
+          readOnly: true
+          enum: [Pending, Approved, Rejected, Cancelled, Processing, Cancellation Requested]
+          description: Approval status of the expense
+          example: "Pending"
+        category_Name:
+          type: string
+          readOnly: true
+          description: Category name (populated in responses)
+        payment_method_Name:
+          type: string
+          readOnly: true
+          description: Payment method name (populated in responses)
+        currency_Name:
+          type: string
+          readOnly: true
+          description: Currency code (populated in responses)
+      required:
+        - category
+        - payment_method
+        - payee
+
+    ExpenseCategory:
+      type: object
+      description: Expense category for classifying expenses
+      properties:
+        id:
+          type: integer
+          description: Category ID (use this when submitting an expense)
+          example: 1
+        name:
+          type: string
+          description: Category name
+          example: "Travel"
+        pre_approve:
+          type: string
+          enum: [Yes, No]
+          description: Whether expenses in this category are pre-approved
+          example: "Yes"
+
+    PaymentMethod:
+      type: object
+      description: Payment method used for the expense
+      properties:
+        id:
+          type: integer
+          description: Payment method ID (use this when submitting an expense)
+          example: 1
+        name:
+          type: string
+          description: Payment method name
+          example: "Credit Card"
+
+    Timesheet:
+      type: object
+      description: Employee timesheet for tracking work hours over a period (typically a week)
+      properties:
+        id:
+          type: integer
+          readOnly: true
+          example: 42
+        employee:
+          type: integer
+          description: Employee ID
+          example: 5
+        date_start:
+          type: string
+          format: date
+          description: Start date of the timesheet period
+          example: "2026-04-05"
+        date_end:
+          type: string
+          format: date
+          description: End date of the timesheet period
+          example: "2026-04-11"
+        status:
+          type: string
+          enum: [Pending, Submitted, Approved, Rejected]
+          description: Current status of the timesheet
+          example: "Pending"
+        total_time:
+          type: string
+          readOnly: true
+          description: Total time worked (HH:MM format)
+          example: "40:30"
+        total_minutes:
+          type: integer
+          readOnly: true
+          description: Total time worked in minutes
+          example: 2430
+        days:
+          type: array
+          readOnly: true
+          description: List of days in the timesheet period
+          items:
+            type: object
+            properties:
+              date:
+                type: string
+                format: date
+                example: "2026-04-05"
+              display:
+                type: string
+                example: "(Sun) 05 Apr"
+        employee_name:
+          type: string
+          readOnly: true
+          description: Employee full name (included when listing subordinates' timesheets)
+          example: "John Smith"
+
+    TimeEntry:
+      type: object
+      description: Individual time entry within a timesheet
+      properties:
+        id:
+          type: integer
+          readOnly: true
+          example: 156
+        employee:
+          type: integer
+          readOnly: true
+          description: Employee ID
+          example: 5
+        timesheet:
+          type: integer
+          description: Parent timesheet ID
+          example: 42
+        project:
+          oneOf:
+            - type: integer
+            - type: object
+              properties:
+                type:
+                  type: string
+                  example: "Project"
+                id:
+                  type: integer
+                display:
+                  type: string
+          description: Project ID or object with project details
+          example: 3
+        date:
+          type: string
+          format: date
+          description: Date of the time entry (for creating/updating)
+          example: "2026-04-07"
+        start_time:
+          type: string
+          description: Start time (HH:MM:SS format)
+          example: "09:00:00"
+        end_time:
+          type: string
+          description: End time (HH:MM:SS format)
+          example: "17:30:00"
+        date_start:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Full start datetime
+          example: "2026-04-07 09:00:00"
+        date_end:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Full end datetime
+          example: "2026-04-07 17:30:00"
+        details:
+          type: string
+          description: Description of work performed
+          example: "Implemented new API endpoints"
+        duration_minutes:
+          type: integer
+          readOnly: true
+          description: Duration in minutes
+          example: 510
+        duration_hours:
+          type: number
+          format: float
+          readOnly: true
+          description: Duration in hours
+          example: 8.5
+        status:
+          type: string
+          enum: [Active, Inactive]
+          readOnly: true
+          example: "Active"
+
+    TimesheetProject:
+      type: object
+      description: Project available for time entry
+      properties:
+        id:
+          type: integer
+          example: 3
+        name:
+          type: string
+          example: "Mobile App Development"
+
+    CustomField:
+      type: object
+      description: An employee custom field definition (CustomFields row, type = "Employee").
+      properties:
+        id:
+          type: integer
+          readOnly: true
+          example: 12
+        type:
+          type: string
+          readOnly: true
+          description: Owning entity type. Always "Employee" for these endpoints.
+          example: "Employee"
+        name:
+          type: string
+          maxLength: 20
+          description: Machine name of the field (unique per type, max 20 chars). Used as the value key.
+          example: "sg_residency"
+        field_type:
+          type: string
+          enum: [text, textarea, select, select2, select2multi, date, datetime, time, fileupload]
+          example: "select"
+        field_label:
+          type: string
+          description: Human-readable label shown on forms.
+          example: "Residency Status"
+        field_validation:
+          type: string
+          nullable: true
+          description: Optional validation rule.
+          example: null
+        field_options:
+          type: string
+          nullable: true
+          description: JSON-encoded options for select/select2/select2multi fields.
+          example: '[{"value":"SC","label":"Singapore Citizen"},{"value":"PR","label":"PR"}]'
+        display:
+          type: string
+          enum: [Form, "Table and Form", Hidden]
+          default: Form
+        display_section:
+          type: string
+          nullable: true
+          example: "Payroll"
+        display_order:
+          type: integer
+          default: 0
+
+    CustomFieldCreate:
+      type: object
+      required: [name, field_type, field_label]
+      properties:
+        name:
+          type: string
+          maxLength: 20
+          example: "sg_residency"
+        field_type:
+          type: string
+          enum: [text, textarea, select, select2, select2multi, date, datetime, time, fileupload]
+          example: "select"
+        field_label:
+          type: string
+          example: "Residency Status"
+        field_validation:
+          type: string
+          nullable: true
+        field_options:
+          description: >-
+            Options for select-type fields. Accepts a JSON string or an array of
+            {value, label} objects (arrays are JSON-encoded server-side).
+          oneOf:
+            - type: string
+            - type: array
+              items:
+                type: object
+                properties:
+                  value:
+                    type: string
+                  label:
+                    type: string
+          example: [{ value: "SC", label: "Singapore Citizen" }, { value: "PR", label: "PR" }]
+        display:
+          type: string
+          enum: [Form, "Table and Form", Hidden]
+          default: Form
+        display_section:
+          type: string
+          nullable: true
+          example: "Payroll"
+        display_order:
+          type: integer
+          default: 0
+
+    CustomFieldValue:
+      type: object
+      description: A custom field value for one employee.
+      properties:
+        name:
+          type: string
+          description: The custom field name this value belongs to.
+          example: "sg_residency"
+        value:
+          type: string
+          description: The stored value (JSON-encoded for multi-select fields).
+          example: "SC"
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+
+    PayrollGroup:
+      type: object
+      description: A payroll group (deduction group) used to scope payroll runs.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+          example: "Monthly Staff"
+        description:
+          type: string
+          maxLength: 100
+          nullable: true
+
+    SalaryComponentType:
+      type: object
+      description: A category tag for salary components (e.g. Basic, Allowance, Bonus).
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        code:
+          type: string
+          maxLength: 10
+          example: "BAS"
+        name:
+          type: string
+          maxLength: 100
+          example: "Basic"
+
+    SalaryComponent:
+      type: object
+      description: A named pay element, optionally tagged with a component type.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+          example: "Basic Salary"
+        componentType:
+          type: integer
+          nullable: true
+          description: SalaryComponentType id.
+        details:
+          type: string
+          nullable: true
+
+    EmployeeSalary:
+      type: object
+      description: A per-employee salary line item (employee + component + amount).
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        employee:
+          type: integer
+          description: Employee id.
+        component:
+          type: integer
+          description: SalaryComponent id.
+        amount:
+          type: number
+          format: float
+          example: 5500.00
+        currency:
+          type: integer
+          nullable: true
+          description: CurrencyType id.
+        pay_frequency:
+          type: string
+          nullable: true
+          description: One of Hourly, Daily, Bi Weekly, Weekly, Semi Monthly, Monthly.
+          example: "Monthly"
+        details:
+          type: string
+          nullable: true
+
+    Payslip:
+      type: object
+      description: A generated payslip document for one employee in a payroll run.
+      properties:
+        employee_id:
+          type: integer
+        employee_name:
+          type: string
+        document_id:
+          type: integer
+        attachment:
+          type: string
+          description: The backing File name (hash).
+        download_url:
+          type: string
+          nullable: true
+          description: Signed download URL for the payslip file.
+
+    PayrollBackup:
+      type: object
+      description: >-
+        A payroll or salary backup. Ids are preserved so a restore recreates rows exactly.
+        `tables` maps each backed-up table name to its full list of rows.
+      properties:
+        type:
+          type: string
+          example: "icehrm-payroll-backup"
+        section:
+          type: string
+          enum: [salary, payroll]
+        version:
+          type: integer
+          example: 1
+        exported_at:
+          type: string
+          format: date-time
+        counts:
+          type: object
+          additionalProperties:
+            type: integer
+        tables:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: object
+
+    EmployeeRef:
+      type: object
+      nullable: true
+      description: A minimal employee reference.
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+          description: Full name ("First Last").
+
+    TaskListTaskInput:
+      description: >-
+        A task to add to a task list. Either a plain string (unassigned task
+        description) or an object with the task text and an optional assignee.
+      oneOf:
+        - type: string
+          example: Prepare laptop and accounts
+        - type: object
+          required: [text]
+          properties:
+            text:
+              type: string
+            employee:
+              type: integer
+              description: Employee id to assign this task to (optional).
+            checked:
+              type: boolean
+              description: Whether the task is already completed (default false).
+
+    TaskAssignmentInput:
+      type: object
+      description: >-
+        Assigns a task (by 0-based index into `tasks`) to an employee. Applied
+        on top of any inline `employee` set on the task itself.
+      required: [task, employee]
+      properties:
+        task:
+          type: integer
+          description: 0-based index of the task in the `tasks` array.
+        employee:
+          type: integer
+          description: Employee id to assign the task to.
+
+    TaskListTask:
+      type: object
+      properties:
+        index:
+          type: integer
+          description: 0-based position of the task within the list.
+        text:
+          type: string
+        checked:
+          type: boolean
+        employee:
+          allOf:
+            - $ref: '#/components/schemas/EmployeeRef'
+          description: The assigned employee, or null when unassigned.
+
+    TaskListCreate:
+      type: object
+      required: [name, tasks]
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+          description: Optional description shown under the title.
+        type:
+          type: string
+          description: Task list type. Defaults to "General" when empty.
+          default: General
+        owner:
+          type: integer
+          description: >-
+            Owner employee id. Defaults to the employee that owns the access
+            token when omitted.
+        status:
+          type: string
+          enum: [Draft, Open, On-hold, Completed]
+          default: Open
+        tasks:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/TaskListTaskInput'
+        assignments:
+          type: array
+          description: Optional per-task assignments applied by index.
+          items:
+            $ref: '#/components/schemas/TaskAssignmentInput'
+
+    TaskListUpdate:
+      type: object
+      description: >-
+        All fields optional. Providing `tasks` replaces the entire task
+        checklist (and re-syncs assignments).
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        type:
+          type: string
+        owner:
+          type: integer
+        status:
+          type: string
+          enum: [Draft, Open, On-hold, Completed]
+        can_owner_edit:
+          type: boolean
+        can_assignees_edit:
+          type: boolean
+        tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskListTaskInput'
+        assignments:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskAssignmentInput'
+
+    TaskList:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        type:
+          type: string
+        status:
+          type: string
+          enum: [Draft, Open, On-hold, Completed]
+        owner:
+          $ref: '#/components/schemas/EmployeeRef'
+        can_owner_edit:
+          type: integer
+        can_assignees_edit:
+          type: integer
+        document_link:
+          type: string
+          description: Editor-document link for the task list.
+        assignees:
+          type: array
+          description: Distinct employees with at least one assigned task.
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              status:
+                type: string
+                enum: [Pending, Completed]
+        tasks:
+          type: array
+          description: Present on single-item responses (omitted from list responses).
+          items:
+            $ref: '#/components/schemas/TaskListTask'
+        created:
+          type: string
+        updated:
+          type: string
+
+  parameters:
+    AuthHeader:
+      name: Authorization
+      in: header
+      required: true
+      schema:
+        type: string
+      example: Bearer {accessToken}
+
+    EmployeeId:
+      name: employeeId
+      in: path
+      required: true
+      schema:
+        type: integer
+      description: Employee ID
+
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+      description: Resource ID
+
+    ConfigModel:
+      name: model
+      in: path
+      required: true
+      schema:
+        type: string
+      description: >-
+        A whitelisted config/master-data model name (e.g. LeaveType, LeaveRule, HoliDay,
+        PayGrade, JobTitle, EmploymentStatus, ExpensesCategory). List them via GET /meta/config.
+
+    PeriodParam:
+      name: period
+      in: path
+      required: true
+      schema:
+        type: string
+        enum: [1year, 6months, 2years, 3years, all]
+      description: Time period for analytics
+
+security:
+  - bearerAuth: []
+
+paths:
+  # ============================================
+  # AUTHENTICATION
+  # ============================================
+  /oauth/token:
+    post:
+      tags:
+        - Authentication
+      summary: Get OAuth Access Token
+      description: Authenticate user and obtain access token
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - grant_type
+                - client_id
+                - client_secret
+                - username
+                - password
+              properties:
+                grant_type:
+                  type: string
+                  example: password
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Successful authentication
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  token_type:
+                    type: string
+                  expires_in:
+                    type: integer
+        '401':
+          description: Authentication failed
+
+  /user/password:
+    post:
+      tags:
+        - Authentication
+      summary: Update User Password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                new_password:
+                  type: string
+      responses:
+        '200':
+          description: Password updated successfully
+
+  # ============================================
+  # EMPLOYEES
+  # ============================================
+  /employees:
+    get:
+      tags:
+        - Employees
+      summary: Get All Employees
+      description: Retrieve list of all employees
+      responses:
+        '200':
+          description: List of employees
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+    post:
+      tags:
+        - Employees
+      summary: Create Employee
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Employee created successfully
+
+  /employees/me:
+    get:
+      tags:
+        - Employees
+      summary: Get Current Employee
+      description: Get the employee record for the authenticated user
+      responses:
+        '200':
+          description: Current employee data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+
+  /employees/{id}:
+    get:
+      tags:
+        - Employees
+      summary: Get Employee by ID
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Employee data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+    put:
+      tags:
+        - Employees
+      summary: Update Employee
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Employee updated successfully
+    delete:
+      tags:
+        - Employees
+      summary: Delete Employee
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Employee deleted successfully
+
+  /employees/{id}/skills:
+    get:
+      tags:
+        - Employees
+      summary: Get Employee Skills
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of employee skills
+
+  /employees/{id}/educations:
+    get:
+      tags:
+        - Employees
+      summary: Get Employee Education Records
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of employee education records
+
+  /employees/{id}/certifications:
+    get:
+      tags:
+        - Employees
+      summary: Get Employee Certifications
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of employee certifications
+
+  /employees/{id}/languages:
+    get:
+      tags:
+        - Employees
+      summary: Get Employee Languages
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of employee languages
+
+  /employees/{id}/status:
+    get:
+      tags:
+        - Employees
+      summary: Get Employee Status Message
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Employee status message
+    post:
+      tags:
+        - Employees
+      summary: Set Employee Status Message
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+      responses:
+        '200':
+          description: Status updated successfully
+
+  /employees/{id}/attendance:
+    get:
+      tags:
+        - Employees
+      summary: Get Employee Attendance Records
+      description: Returns attendance records for a specific employee including work_from_home status
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of attendance records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Attendance'
+
+  /employees/{id}/attendance/summary:
+    get:
+      tags:
+        - Employees
+      summary: Get Employee Attendance Summary
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Attendance summary statistics
+
+  /employees/{id}/leaves:
+    get:
+      tags:
+        - Employees
+      summary: Get Employee Leave Requests
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of leave requests
+
+  /employees/{id}/leaves/summary:
+    get:
+      tags:
+        - Employees
+      summary: Get Employee Leave Summary
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Leave balance summary
+
+  /employees/{id}/create-user:
+    post:
+      tags:
+        - Employees
+      summary: Create User Account for Employee
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: User account created
+
+  /employees/custom-fields:
+    get:
+      tags:
+        - Employees
+      summary: List Employee Custom Field Definitions
+      description: >-
+        Returns all employee custom field definitions (type = "Employee"),
+        ordered by display order. Admin only.
+      responses:
+        '200':
+          description: List of custom field definitions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomField'
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Employees
+      summary: Create Employee Custom Field Definition
+      description: >-
+        Creates a new employee custom field. The field name must be unique for
+        the Employee type, at most 20 characters, and not a reserved column
+        name. Admin only.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomFieldCreate'
+      responses:
+        '200':
+          description: Custom field created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomField'
+        '400':
+          description: Validation error (missing/invalid fields, name too long, duplicate name)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /employees/custom-fields/{id}:
+    delete:
+      tags:
+        - Employees
+      summary: Delete Employee Custom Field Definition
+      description: >-
+        Deletes an employee custom field definition by id. This cascades to and
+        removes all stored values of that field across employees. Admin only.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Custom field deleted
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Custom field not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /employees/{id}/custom-fields:
+    get:
+      tags:
+        - Employees
+      summary: Get Employee Custom Field Values
+      description: >-
+        Returns all custom field values set for a specific employee. Admin only.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of custom field values for the employee
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomFieldValue'
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Employee not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /employees/{id}/custom-fields/{name}:
+    put:
+      tags:
+        - Employees
+      summary: Set Employee Custom Field Value
+      description: >-
+        Sets or updates the value of a custom field for an employee. The field
+        must already be defined for the Employee type. Admin only.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The custom field name (as defined in the CustomField definition)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [value]
+              properties:
+                value:
+                  description: >-
+                    The value to store. For multi-select fields, pass an array
+                    (it is JSON-encoded server-side).
+                  oneOf:
+                    - type: string
+                    - type: array
+                      items:
+                        type: string
+                  example: "SC"
+      responses:
+        '200':
+          description: Value saved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: "sg_residency"
+                  value:
+                    type: string
+                    example: "SC"
+        '400':
+          description: value is required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Employee or custom field definition not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Employees
+      summary: Delete Employee Custom Field Value
+      description: >-
+        Deletes the stored value of a custom field for an employee. The field
+        definition itself is left untouched. Admin only.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The custom field name
+      responses:
+        '200':
+          description: Value deleted
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Employee not found or value not set
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ============================================
+  # ATTENDANCE
+  # ============================================
+  /attendance:
+    get:
+      tags:
+        - Attendance
+      summary: Get All Attendance Records
+      description: Returns attendance records including work_from_home status
+      responses:
+        '200':
+          description: List of attendance records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Attendance'
+    post:
+      tags:
+        - Attendance
+      summary: Create Attendance Entry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employee:
+                  type: integer
+                note:
+                  type: string
+      responses:
+        '200':
+          description: Attendance entry created
+
+  /attendance/{id}:
+    get:
+      tags:
+        - Attendance
+      summary: Get Attendance Entry
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Attendance entry details
+    delete:
+      tags:
+        - Attendance
+      summary: Delete Attendance Entry
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Attendance entry deleted
+
+  /attendance/punch-in:
+    post:
+      tags:
+        - Attendance
+      summary: Employee Punch In
+      description: Record employee punch-in with optional work from home flag
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - employee
+              properties:
+                employee:
+                  type: integer
+                  description: Employee ID
+                note:
+                  type: string
+                  description: Optional note for the punch-in
+                in_time:
+                  type: string
+                  format: date-time
+                  description: Punch-in time (defaults to current server time if not provided)
+                latitude:
+                  type: number
+                  format: double
+                  description: GPS latitude coordinate
+                longitude:
+                  type: number
+                  format: double
+                  description: GPS longitude coordinate
+                work_from_home:
+                  type: boolean
+                  description: Set to true if working from home, false for office (default false)
+      responses:
+        '201':
+          description: Punch in recorded successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Attendance'
+        '400':
+          description: Bad request (e.g., already punched in)
+
+  /attendance/punch-out:
+    post:
+      tags:
+        - Attendance
+      summary: Employee Punch Out
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employee:
+                  type: integer
+                note:
+                  type: string
+      responses:
+        '200':
+          description: Punch out recorded
+
+  /employee/{employeeId}/attendance:
+    get:
+      tags:
+        - Attendance
+      summary: Get Attendance for Specific Employee
+      description: Returns attendance records for a specific employee including work_from_home status
+      parameters:
+        - $ref: '#/components/parameters/EmployeeId'
+      responses:
+        '200':
+          description: Employee attendance records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Attendance'
+
+  /employee/{employeeId}/open-punch-in/{date}:
+    get:
+      tags:
+        - Attendance
+      summary: Get Open Punch In for Employee
+      parameters:
+        - $ref: '#/components/parameters/EmployeeId'
+        - name: date
+          in: path
+          required: true
+          schema:
+            type: string
+          example: today
+      responses:
+        '200':
+          description: Open punch in record if exists
+
+  # ============================================
+  # LEAVE
+  # ============================================
+  /leave:
+    get:
+      tags:
+        - Leave
+      summary: Get All Leave Requests
+      responses:
+        '200':
+          description: List of leave requests
+
+  /leave/{id}:
+    get:
+      tags:
+        - Leave
+      summary: Get Leave Request Details
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Leave request details
+
+  /leave/entitlement:
+    get:
+      tags:
+        - Leave
+      summary: Get Leave Entitlement
+      description: Get current user's leave entitlement and balances
+      responses:
+        '200':
+          description: Leave entitlement data
+
+  /leave/check/{leaveType}/{startDate}/{endDate}:
+    get:
+      tags:
+        - Leave
+      summary: Check Leave Availability
+      parameters:
+        - name: leaveType
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: startDate
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Leave availability check result
+
+  /leave/apply:
+    post:
+      tags:
+        - Leave
+      summary: Apply for Leave
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LeaveRequest'
+      responses:
+        '200':
+          description: Leave request submitted
+
+  /leave/apply-for:
+    post:
+      tags:
+        - Leave
+      summary: Apply for Leave on Behalf of an Employee (Admin)
+      description: >-
+        Admin-only. Creates a leave request for the specified `employeeId` (not the caller).
+        Same body as `/leave/apply` plus `employeeId`. Runs the normal balance/overlap logic,
+        but the admin level bypasses balance and lock/notice-period checks. The `days` field is
+        an object keyed by date (YYYYMMDD or YYYY-MM-DD) whose value is a leave-time-type string
+        (`Full Day`, `Half Day - Morning`, `Half Day - Afternoon`, `1/2/3 Hours - Morning/Afternoon`).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [employeeId, leave_type, start, end, days]
+              properties:
+                employeeId:
+                  type: integer
+                leave_type:
+                  type: integer
+                  description: LeaveType id (must be allowed for the employee).
+                start:
+                  type: string
+                  format: date
+                end:
+                  type: string
+                  format: date
+                details:
+                  type: string
+                attachment:
+                  type: string
+                  description: Optional uploaded filename (from /leave/file-upload).
+                days:
+                  type: object
+                  additionalProperties:
+                    type: string
+                  example: { "20261215": "Full Day" }
+      responses:
+        '201':
+          description: Leave created for the employee
+        '400':
+          description: employeeId required / validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Employee not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /leave/file-upload:
+    post:
+      tags:
+        - Leave
+      summary: Upload Leave Attachment
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: File uploaded successfully
+
+  /leave/direct-reports:
+    get:
+      tags:
+        - Leave
+      summary: Get Direct Reports Leave Requests
+      description: Get all leave requests from employees who have the current user as their supervisor
+      responses:
+        '200':
+          description: List of leave requests from direct reports
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: SUCCESS
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/EmployeeLeave'
+        '401':
+          description: Unauthorized
+        '404':
+          description: No employee record found for current user
+
+  /leave/direct-reports/pending:
+    get:
+      tags:
+        - Leave
+      summary: Get Pending Direct Reports Leave Requests
+      description: Get only pending leave requests from employees who have the current user as their supervisor
+      responses:
+        '200':
+          description: List of pending leave requests from direct reports
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: SUCCESS
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/EmployeeLeave'
+        '401':
+          description: Unauthorized
+        '404':
+          description: No employee record found for current user
+
+  /leave/details/{id}:
+    get:
+      tags:
+        - Leave
+      summary: Get Leave Details
+      description: Get detailed information about a specific leave request including leave type, leave period, leave days, current balance, and logs
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Leave request ID
+      responses:
+        '200':
+          description: Leave details retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: SUCCESS
+                  id:
+                    type: integer
+                    description: Leave request ID
+                  currentBalance:
+                    type: number
+                    description: Current leave balance for this leave type
+                  leave:
+                    $ref: '#/components/schemas/EmployeeLeave'
+                  leaveType:
+                    $ref: '#/components/schemas/LeaveType'
+                  leavePeriod:
+                    $ref: '#/components/schemas/LeavePeriod'
+                  days:
+                    type: array
+                    description: Individual leave days breakdown
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        leave_date:
+                          type: string
+                          format: date
+                        leave_type:
+                          type: string
+                          enum: [Full Day, Half Day - Morning, Half Day - Afternoon]
+                  logs:
+                    type: array
+                    description: Leave request activity logs
+                    items:
+                      type: object
+        '401':
+          description: Unauthorized
+        '404':
+          description: Leave request not found
+
+  /leave/{id}/approve:
+    post:
+      tags:
+        - Leave
+      summary: Approve Leave Request
+      description: Approve a pending leave request. Only supervisors or authorized approvers can approve leave requests. The note is stored in the leave log (same as web interface).
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Leave request ID
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+                  description: Approval note (stored in leave log)
+                note:
+                  type: string
+                  description: Alias for reason - approval note (stored in leave log)
+      responses:
+        '200':
+          description: Leave request approved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: SUCCESS
+                  message:
+                    type: string
+                    example: Leave request Approved
+                  leave:
+                    $ref: '#/components/schemas/EmployeeLeave'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Not authorized to approve this leave request
+        '404':
+          description: Leave request not found
+
+  /leave/{id}/reject:
+    post:
+      tags:
+        - Leave
+      summary: Reject Leave Request
+      description: Reject a pending leave request. Only supervisors or authorized approvers can reject leave requests. The note is stored in the leave log (same as web interface).
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Leave request ID
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+                  description: Rejection reason (stored in leave log)
+                note:
+                  type: string
+                  description: Alias for reason - rejection reason (stored in leave log)
+      responses:
+        '200':
+          description: Leave request rejected successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: SUCCESS
+                  message:
+                    type: string
+                    example: Leave request Rejected
+                  leave:
+                    $ref: '#/components/schemas/EmployeeLeave'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Not authorized to reject this leave request
+        '404':
+          description: Leave request not found
+
+  # ============================================
+  # DOCUMENTS
+  # ============================================
+  /employees/documents:
+    get:
+      tags:
+        - Documents
+      summary: Get All Employee Documents
+      responses:
+        '200':
+          description: List of all employee documents
+
+  /employees/{id}/documents:
+    get:
+      tags:
+        - Documents
+      summary: Get Documents for Specific Employee
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of employee documents
+    post:
+      tags:
+        - Documents
+      summary: Create an Employee Document (Admin)
+      description: >-
+        Admin-only. Creates a document for employee `{id}`. Upload the file first via
+        `POST /employees/documents/file-upload` (multipart field `file`) and pass the returned
+        name as `attachment`.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                document:
+                  type: integer
+                  description: Document-type id (from the Documents lookup).
+                attachment:
+                  type: string
+                  description: File name returned by the file-upload endpoint.
+                valid_until:
+                  type: string
+                  format: date
+                details:
+                  type: string
+                visible_to:
+                  type: string
+                  enum: [Owner, "Owner Only", Manager, Admin]
+                status:
+                  type: string
+                  enum: [Active, Inactive, Draft]
+      responses:
+        '201':
+          description: Document created
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Employee not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /employees/documents/{id}:
+    get:
+      tags:
+        - Documents
+      summary: Get Single Document
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Document details
+    delete:
+      tags:
+        - Documents
+      summary: Delete an Employee Document (Admin)
+      description: Admin-only. Deletes the document and its backing file.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Document deleted
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Document not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /employees/documents/{id}/file:
+    get:
+      tags:
+        - Documents
+      summary: Download Document File
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Document file download
+
+  /employees/documents/file-upload:
+    post:
+      tags:
+        - Documents
+      summary: Upload a Document File (Admin)
+      description: >-
+        Multipart upload — the form field **must** be named `file`. Returns the stored File
+        name; pass it as `attachment` when creating the document.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: 'Uploaded; body `{ "data": "<file name>" }`'
+
+  # ============================================
+  # PROJECTS
+  # ============================================
+  /projects/{id}/time-stats:
+    get:
+      tags:
+        - Projects
+      summary: Get Project Time Statistics
+      description: Get approved vs pending hours, employee breakdown, monthly breakdown
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Project time statistics
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  project:
+                    $ref: '#/components/schemas/Project'
+                  summary:
+                    type: object
+                    properties:
+                      total_approved_hours:
+                        type: number
+                      total_pending_hours:
+                        type: number
+                      total_hours:
+                        type: number
+                      employee_count:
+                        type: integer
+                  employee_breakdown:
+                    type: array
+                    items:
+                      type: object
+                  monthly_breakdown:
+                    type: array
+                    items:
+                      type: object
+
+  /projects/{id}/employees:
+    post:
+      tags:
+        - Projects
+      summary: Add Employee to Project
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employee_id:
+                  type: integer
+      responses:
+        '200':
+          description: Employee added to project
+
+  /projects/{id}/employees/{employeeId}:
+    delete:
+      tags:
+        - Projects
+      summary: Remove Employee from Project
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+        - $ref: '#/components/parameters/EmployeeId'
+      responses:
+        '200':
+          description: Employee removed from project
+
+  /projects/{id}/available-employees:
+    get:
+      tags:
+        - Projects
+      summary: Get Available Employees for Project
+      description: Get list of employees not yet assigned to the project
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of available employees
+
+  # ============================================
+  # COMPANY STRUCTURE
+  # ============================================
+  /company/structures/{id}/details:
+    get:
+      tags:
+        - Company
+      summary: Get Company Structure Details
+      description: Get company structure with children and employees
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Company structure details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  type:
+                    type: string
+                  country:
+                    type: string
+                  timezone:
+                    type: string
+                  parent:
+                    type: integer
+                  heads:
+                    type: array
+                    items:
+                      type: object
+                  children:
+                    type: array
+                    items:
+                      type: object
+                  employees:
+                    type: array
+                    items:
+                      type: object
+                  employeeCount:
+                    type: integer
+                  childCount:
+                    type: integer
+
+  # ============================================
+  # CHARTS & ANALYTICS
+  # ============================================
+  /charts/employee-check-ins:
+    get:
+      tags:
+        - Charts
+      summary: Get Employee Check-In Statistics
+      responses:
+        '200':
+          description: Check-in statistics for dashboard
+
+  /charts/employees-distribution:
+    get:
+      tags:
+        - Charts
+      summary: Get Employee Distribution
+      responses:
+        '200':
+          description: Employee distribution analytics
+
+  /charts/company-leave-entitlement:
+    get:
+      tags:
+        - Charts
+      summary: Get Company Leave Entitlement
+      responses:
+        '200':
+          description: Company-wide leave entitlement data
+
+  # ============================================
+  # METADATA
+  # ============================================
+  /meta/countries:
+    get:
+      tags:
+        - Meta
+      summary: Get Countries List
+      responses:
+        '200':
+          description: List of countries
+
+  /meta/currency:
+    get:
+      tags:
+        - Meta
+      summary: Get Currency Types
+      responses:
+        '200':
+          description: List of currency types
+
+  /meta/mobile-modules:
+    get:
+      tags:
+        - Meta
+      summary: Get Mobile Modules
+      responses:
+        '200':
+          description: List of available mobile modules
+
+  /meta/extensions:
+    get:
+      tags:
+        - Meta
+      summary: Get Available Extensions
+      description: |
+        Returns a list of installed extensions for the mobile app.
+        Each extension includes its code, label, features, and version information.
+      responses:
+        '200':
+          description: List of installed extensions
+          content:
+            application/json:
+              example:
+                data:
+                  - code: "leave_and_performance"
+                    installed: true
+                    label: "Leave & Performance"
+                    features: ["leaves", "performance_reviews"]
+                    version: "1.0.0"
+                    isGroup: true
+                  - code: "expenses"
+                    installed: true
+                    label: "Expenses"
+                    features: ["expenses"]
+                    version: "1.0.0"
+                    isGroup: false
+                  - code: "travel"
+                    installed: true
+                    label: "Travel Management"
+                    features: ["travel_requests"]
+                    version: "1.0.0"
+                    isGroup: false
+
+  /meta/config:
+    get:
+      tags:
+        - Meta
+      summary: List Manageable Config Models (Admin)
+      description: >-
+        Admin-only. Returns the whitelist of configuration / master-data models you can manage
+        via `/meta/config/*` (leave types, holidays, pay grades, job titles, expense categories,
+        etc.). Each item is `{model, label}`.
+      responses:
+        '200':
+          description: List of manageable config models
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /meta/config/{model}:
+    get:
+      tags:
+        - Meta
+      summary: List Config Rows (Admin)
+      description: List all rows of a whitelisted config model (e.g. `LeaveType`, `HoliDay`, `PayGrade`).
+      parameters:
+        - $ref: '#/components/parameters/ConfigModel'
+      responses:
+        '200':
+          description: Rows of the config model
+        '400':
+          description: Model not manageable / not whitelisted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Meta
+      summary: Create/Update a Config Row (Admin)
+      description: >-
+        Create (no `id`) or update (with `id`) a row of a whitelisted config model. The body is
+        the model's own fields — call `GET /meta/config/{model}/describe` to see the exact field
+        names (column list + form field definitions). Runs the model's own validation, save
+        hooks and audit logging.
+      parameters:
+        - $ref: '#/components/parameters/ConfigModel'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: The config model's fields (see the describe endpoint).
+      responses:
+        '200':
+          description: Saved row
+        '400':
+          description: Not whitelisted or validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /meta/config/{model}/describe:
+    get:
+      tags:
+        - Meta
+      summary: Describe a Config Model's Fields (Admin)
+      description: >-
+        Returns the model's column names and (when defined) its form-field definitions, so you
+        know exactly which fields to send to the create/update endpoint.
+      parameters:
+        - $ref: '#/components/parameters/ConfigModel'
+      responses:
+        '200':
+          description: 'Field description `{ model, label, columns, formFields }`'
+        '400':
+          description: Model not whitelisted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /meta/config/{model}/{id}:
+    delete:
+      tags:
+        - Meta
+      summary: Delete a Config Row (Admin)
+      description: Deletes a row of a whitelisted config model. The model's own delete guards apply.
+      parameters:
+        - $ref: '#/components/parameters/ConfigModel'
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Row deleted
+        '400':
+          description: Not whitelisted / in use
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied (admin only)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ============================================
+  # SETTINGS
+  # ============================================
+  /settings:
+    get:
+      tags:
+        - Settings
+      summary: Get Application Settings
+      responses:
+        '200':
+          description: Application settings
+
+  /settings/save:
+    post:
+      tags:
+        - Settings
+      summary: Save Settings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Settings saved
+
+  # ============================================
+  # TASKS
+  # ============================================
+  /tasks:
+    get:
+      tags:
+        - Tasks
+      summary: Get Task List
+      responses:
+        '200':
+          description: List of tasks
+
+  /task-list/{id}/status:
+    post:
+      tags:
+        - Tasks
+      summary: Update Task List Status
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum: [Open, Completed]
+      responses:
+        '200':
+          description: Task status updated
+
+  /task-lists:
+    post:
+      tags:
+        - Tasks
+      summary: Create a Task List
+      description: >-
+        Create a task list from a list of tasks. `type` defaults to "General"
+        when empty. Tasks may be assigned to employees inline (task object with
+        an `employee` id) and/or via the separate `assignments` array; tasks
+        with no employee stay unassigned. `owner` defaults to the employee that
+        owns the access token when omitted. Each assigned employee is notified.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskListCreate'
+            examples:
+              withAssignments:
+                summary: Some tasks assigned, one via the assignments array
+                value:
+                  name: New Hire Onboarding - Jane Doe
+                  description: First-week onboarding checklist
+                  type: Onboarding
+                  owner: 143
+                  status: Open
+                  tasks:
+                    - Prepare laptop and accounts
+                    - text: Grant repository access
+                      employee: 147
+                    - Schedule intro meetings
+                  assignments:
+                    - task: 0
+                      employee: 143
+              unassigned:
+                summary: All tasks unassigned (owner defaults to token holder)
+                value:
+                  name: Office Safety Audit
+                  tasks:
+                    - Inspect fire extinguishers
+                    - Test emergency lighting
+      responses:
+        '201':
+          description: Task list created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+        '400':
+          description: Missing name/tasks or invalid status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Owner employee not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      tags:
+        - Tasks
+      summary: List Task Lists
+      description: >-
+        Returns task lists visible to the caller. Admins see all; other users
+        see task lists they own or are assigned to. Task details are omitted
+        from the list; fetch a single list to get its tasks.
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 50
+            maximum: 200
+      responses:
+        '200':
+          description: Paginated task lists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                  page:
+                    type: integer
+                  limit:
+                    type: integer
+                  taskLists:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/TaskList'
+
+  /task-lists/{id}:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags:
+        - Tasks
+      summary: Get a Task List
+      description: Returns a task list with its tasks and assignees.
+      responses:
+        '200':
+          description: Task list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+        '403':
+          description: Permission denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Task list not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      tags:
+        - Tasks
+      summary: Modify a Task List
+      description: >-
+        Update a task list. All fields are optional. Providing `tasks` replaces
+        the whole checklist and re-syncs assignments.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskListUpdate'
+      responses:
+        '200':
+          description: Updated task list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+        '400':
+          description: Invalid status / empty name
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Task list not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Tasks
+      summary: Delete a Task List
+      description: Deletes the task list, its editor document and all assignment rows.
+      responses:
+        '200':
+          description: Deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  deleted:
+                    type: boolean
+        '403':
+          description: Permission denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Task list not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /task-lists/{id}/tasks/{taskIndex}/assign:
+    post:
+      tags:
+        - Tasks
+      summary: Assign a Task to an Employee
+      description: >-
+        Assign (or unassign) a single task, identified by its 0-based index, to
+        an employee. Pass an `employee` id to assign, or null/omit it to clear
+        the assignment. Assignment rows are re-synced and the employee notified.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+        - name: taskIndex
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: 0-based index of the task within the list.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employee:
+                  type: integer
+                  nullable: true
+                  description: Employee id to assign; null/omitted clears the assignment.
+      responses:
+        '200':
+          description: Updated task list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+        '403':
+          description: Permission denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Task list, tasks document, employee or task index not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ============================================
+  # DIRECTORY
+  # ============================================
+  /staff:
+    get:
+      tags:
+        - Directory
+      summary: Get Staff List
+      responses:
+        '200':
+          description: List of staff members
+
+  /staff-directory:
+    post:
+      tags:
+        - Directory
+      summary: Search Staff Directory
+      description: Search and filter staff directory with pagination
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                search:
+                  type: string
+                department:
+                  type: integer
+                job_title:
+                  type: integer
+                page:
+                  type: integer
+                limit:
+                  type: integer
+      responses:
+        '200':
+          description: Filtered staff list
+
+  /staff-random:
+    post:
+      tags:
+        - Directory
+      summary: Get Random Staff Members
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                limit:
+                  type: integer
+      responses:
+        '200':
+          description: Random staff members
+
+  # ============================================
+  # TEAMS
+  # ============================================
+  /teams:
+    get:
+      tags:
+        - Teams
+      summary: Get All Teams
+      parameters:
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: status
+          in: query
+          schema:
+            type: string
+        - name: department
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of teams
+    post:
+      tags:
+        - Teams
+      summary: Create/Update Team
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Team'
+      responses:
+        '200':
+          description: Team created/updated
+
+  /teams/{id}:
+    get:
+      tags:
+        - Teams
+      summary: Get Team Details
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Team details
+    delete:
+      tags:
+        - Teams
+      summary: Delete Team
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Team deleted
+
+  /teams/{id}/members:
+    get:
+      tags:
+        - Teams
+      summary: Get Team Members
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of team members
+
+  /teams/{id}/members/bulk:
+    post:
+      tags:
+        - Teams
+      summary: Bulk Add Team Members
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employee_ids:
+                  type: array
+                  items:
+                    type: integer
+      responses:
+        '200':
+          description: Members added
+
+  /team-members:
+    get:
+      tags:
+        - Teams
+      summary: Get All Team Members
+      responses:
+        '200':
+          description: List of all team members
+    post:
+      tags:
+        - Teams
+      summary: Add Team Member
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                team:
+                  type: integer
+                employee:
+                  type: integer
+                role:
+                  type: string
+      responses:
+        '200':
+          description: Member added
+
+  /team-members/{id}:
+    delete:
+      tags:
+        - Teams
+      summary: Remove Team Member
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Member removed
+
+  /teams/employees:
+    get:
+      tags:
+        - Teams
+      summary: Get Employees for Team Assignment
+      responses:
+        '200':
+          description: List of active employees
+
+  /teams/departments:
+    get:
+      tags:
+        - Teams
+      summary: Get Departments
+      responses:
+        '200':
+          description: List of departments
+
+  /teams/stats:
+    get:
+      tags:
+        - Teams
+      summary: Get Team Statistics
+      responses:
+        '200':
+          description: Team statistics
+
+  /my-teams:
+    get:
+      tags:
+        - Teams
+      summary: Get My Teams
+      description: Get teams where current user is a member
+      responses:
+        '200':
+          description: List of user's teams
+
+  /my-teams/{id}:
+    get:
+      tags:
+        - Teams
+      summary: Get My Team Details
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Team details
+
+  /my-teams/{id}/members:
+    get:
+      tags:
+        - Teams
+      summary: Get My Team Members
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Team members
+
+  /my-teams/stats:
+    get:
+      tags:
+        - Teams
+      summary: Get My Team Stats
+      responses:
+        '200':
+          description: User's team role statistics
+
+  /my-teams/leaves:
+    get:
+      tags:
+        - Teams
+      summary: Get Teammates' Upcoming Leaves
+      responses:
+        '200':
+          description: Upcoming leaves for teammates
+
+  /my-teams/attendance:
+    get:
+      tags:
+        - Teams
+      summary: Get Teammates' Today Attendance
+      responses:
+        '200':
+          description: Today's attendance for teammates
+
+  # ============================================
+  # TIMESHEETS
+  # ============================================
+  /timesheets:
+    get:
+      tags:
+        - Timesheets
+      summary: Get My Timesheets
+      description: |
+        Retrieves the current user's timesheets.
+        Use the `status` query parameter to filter by status.
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [Pending, Submitted, Approved, Rejected]
+          description: Filter by timesheet status
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 50
+          description: Maximum number of results
+      responses:
+        '200':
+          description: List of timesheets
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Timesheet'
+                  total:
+                    type: integer
+                  page:
+                    type: integer
+                  nextPage:
+                    type: integer
+                    nullable: true
+              example:
+                data:
+                  - id: 42
+                    employee: 5
+                    date_start: "2026-04-05"
+                    date_end: "2026-04-11"
+                    status: "Pending"
+                    total_time: "32:30"
+                    total_minutes: 1950
+                  - id: 41
+                    employee: 5
+                    date_start: "2026-03-29"
+                    date_end: "2026-04-04"
+                    status: "Approved"
+                    total_time: "40:00"
+                    total_minutes: 2400
+                total: 10
+                page: 1
+                nextPage: null
+
+  /timesheets/create-current:
+    post:
+      tags:
+        - Timesheets
+      summary: Create Current Week Timesheet
+      description: |
+        Create a timesheet for the current week (Sunday to Saturday).
+        If a timesheet already exists for the current week, returns the existing one.
+      responses:
+        '201':
+          description: Timesheet created successfully
+          content:
+            application/json:
+              example:
+                timesheet:
+                  id: 43
+                  employee: 5
+                  date_start: "2026-04-05"
+                  date_end: "2026-04-11"
+                  status: "Pending"
+                  days:
+                    - date: "2026-04-05"
+                      display: "(Sun) 05 Apr"
+                    - date: "2026-04-06"
+                      display: "(Mon) 06 Apr"
+                created: true
+        '200':
+          description: Timesheet already exists
+          content:
+            application/json:
+              example:
+                timesheet:
+                  id: 42
+                  employee: 5
+                  date_start: "2026-04-05"
+                  date_end: "2026-04-11"
+                  status: "Pending"
+                  total_time: "16:30"
+                created: false
+                message: "Timesheet already exists for current week"
+
+  /timesheets/{timesheetId}/create-previous:
+    post:
+      tags:
+        - Timesheets
+      summary: Create Previous Week Timesheet
+      description: |
+        Create a timesheet for the week before the specified timesheet.
+        Calculates dates based on the reference timesheet's start date.
+      parameters:
+        - name: timesheetId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Reference timesheet ID
+      responses:
+        '201':
+          description: Previous week timesheet created
+          content:
+            application/json:
+              example:
+                timesheet:
+                  id: 41
+                  employee: 5
+                  date_start: "2026-03-29"
+                  date_end: "2026-04-04"
+                  status: "Pending"
+                  days:
+                    - date: "2026-03-29"
+                      display: "(Sun) 29 Mar"
+                    - date: "2026-03-30"
+                      display: "(Mon) 30 Mar"
+                created: true
+        '200':
+          description: Timesheet already exists for previous week
+          content:
+            application/json:
+              example:
+                timesheet:
+                  id: 40
+                  date_start: "2026-03-29"
+                  date_end: "2026-04-04"
+                  status: "Approved"
+                  total_time: "40:00"
+                created: false
+                message: "Timesheet already exists for previous week"
+        '404':
+          description: Reference timesheet not found
+
+  /timesheets/{timesheetId}/create-next:
+    post:
+      tags:
+        - Timesheets
+      summary: Create Next Week Timesheet
+      description: |
+        Create a timesheet for the week after the specified timesheet.
+        Calculates dates based on the reference timesheet's end date.
+      parameters:
+        - name: timesheetId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Reference timesheet ID
+      responses:
+        '201':
+          description: Next week timesheet created
+          content:
+            application/json:
+              example:
+                timesheet:
+                  id: 44
+                  employee: 5
+                  date_start: "2026-04-12"
+                  date_end: "2026-04-18"
+                  status: "Pending"
+                  days:
+                    - date: "2026-04-12"
+                      display: "(Sun) 12 Apr"
+                    - date: "2026-04-13"
+                      display: "(Mon) 13 Apr"
+                created: true
+        '200':
+          description: Timesheet already exists for next week
+          content:
+            application/json:
+              example:
+                timesheet:
+                  id: 43
+                  date_start: "2026-04-12"
+                  date_end: "2026-04-18"
+                  status: "Pending"
+                created: false
+                message: "Timesheet already exists for next week"
+        '404':
+          description: Reference timesheet not found
+
+  /timesheets/{timesheetId}:
+    get:
+      tags:
+        - Timesheets
+      summary: Get Timesheet Details
+      description: |
+        Get detailed information about a specific timesheet including all time entries.
+      parameters:
+        - name: timesheetId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Timesheet ID
+      responses:
+        '200':
+          description: Timesheet details with entries
+          content:
+            application/json:
+              example:
+                timesheet:
+                  id: 42
+                  employee: 5
+                  date_start: "2026-04-05"
+                  date_end: "2026-04-11"
+                  status: "Pending"
+                  total_time: "16:30"
+                  total_minutes: 990
+                  days:
+                    - date: "2026-04-05"
+                      display: "(Sun) 05 Apr"
+                    - date: "2026-04-06"
+                      display: "(Mon) 06 Apr"
+                entries:
+                  - id: 156
+                    employee: 5
+                    timesheet: 42
+                    project:
+                      type: "Project"
+                      id: 3
+                      display: "Mobile App Development"
+                    date_start: "2026-04-06 09:00:00"
+                    date_end: "2026-04-06 17:30:00"
+                    details: "Implemented timesheet API"
+                    duration_minutes: 510
+                    duration_hours: 8.5
+                  - id: 157
+                    employee: 5
+                    timesheet: 42
+                    project: null
+                    date_start: "2026-04-07 10:00:00"
+                    date_end: "2026-04-07 18:00:00"
+                    details: "Code review and testing"
+                    duration_minutes: 480
+                    duration_hours: 8.0
+                employee:
+                  id: 5
+                  name: "John Smith"
+                  image: "https://example.com/photos/john.jpg"
+        '404':
+          description: Timesheet not found
+
+  /timesheets/{timesheetId}/submit:
+    post:
+      tags:
+        - Timesheets
+      summary: Submit Timesheet for Approval
+      description: |
+        Submit a timesheet for approval by the supervisor.
+        Only the timesheet owner can submit their own timesheet.
+        If the user is an admin without a supervisor, the timesheet is auto-approved.
+      parameters:
+        - name: timesheetId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Timesheet submitted successfully
+          content:
+            application/json:
+              example:
+                message: "Timesheet Submitted"
+                timesheet:
+                  id: 42
+                  status: "Submitted"
+                  total_time: "40:00"
+        '403':
+          description: Permission denied
+
+  /timesheets/{timesheetId}/entries:
+    post:
+      tags:
+        - Timesheets
+      summary: Add Time Entry to Timesheet
+      description: |
+        Add a new time entry to a timesheet.
+        The date must be within the timesheet period.
+        Cannot add entries to approved timesheets.
+      parameters:
+        - name: timesheetId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - date
+                - start_time
+                - end_time
+              properties:
+                date:
+                  type: string
+                  format: date
+                  description: Date of the time entry
+                start_time:
+                  type: string
+                  description: Start time (HH:MM:SS)
+                end_time:
+                  type: string
+                  description: End time (HH:MM:SS)
+                project:
+                  type: integer
+                  description: Project ID (optional)
+                details:
+                  type: string
+                  description: Work description
+            example:
+              date: "2026-04-07"
+              start_time: "09:00:00"
+              end_time: "17:30:00"
+              project: 3
+              details: "Implemented new API endpoints for mobile app"
+      responses:
+        '201':
+          description: Time entry created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeEntry'
+              example:
+                id: 158
+                employee: 5
+                timesheet: 42
+                project: 3
+                date_start: "2026-04-07 09:00:00"
+                date_end: "2026-04-07 17:30:00"
+                time_start: "09:00:00"
+                time_end: "17:30:00"
+                details: "Implemented new API endpoints for mobile app"
+                duration_minutes: 510
+                duration_hours: 8.5
+                status: "Active"
+        '400':
+          description: Validation error (invalid times, date outside period, etc.)
+
+  /timesheets/entries/{entryId}/update:
+    post:
+      tags:
+        - Timesheets
+      summary: Update Time Entry
+      description: |
+        Update an existing time entry.
+        Cannot modify entries in approved timesheets.
+      parameters:
+        - name: entryId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date
+                start_time:
+                  type: string
+                end_time:
+                  type: string
+                project:
+                  type: integer
+                details:
+                  type: string
+            example:
+              start_time: "08:30:00"
+              end_time: "18:00:00"
+              details: "Updated work description"
+      responses:
+        '200':
+          description: Time entry updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeEntry'
+
+  /timesheets/entries/{entryId}/delete:
+    post:
+      tags:
+        - Timesheets
+      summary: Delete Time Entry
+      description: |
+        Delete a time entry.
+        Cannot delete entries from approved timesheets.
+      parameters:
+        - name: entryId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Time entry deleted
+          content:
+            application/json:
+              example:
+                message: "Time entry deleted"
+
+  /timesheets/direct-reports:
+    get:
+      tags:
+        - Timesheets
+      summary: Get Direct Reports' Timesheets
+      description: |
+        Get timesheets from employees who report to the current user.
+        Use for managers to view their team's timesheets.
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [Pending, Submitted, Approved, Rejected]
+          description: Filter by status
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 50
+      responses:
+        '200':
+          description: List of subordinates' timesheets
+          content:
+            application/json:
+              example:
+                data:
+                  - id: 44
+                    employee: 8
+                    employee_name: "Jane Doe"
+                    date_start: "2026-04-05"
+                    date_end: "2026-04-11"
+                    status: "Submitted"
+                    total_time: "42:15"
+                    total_minutes: 2535
+                  - id: 45
+                    employee: 12
+                    employee_name: "Bob Wilson"
+                    date_start: "2026-04-05"
+                    date_end: "2026-04-11"
+                    status: "Pending"
+                    total_time: "38:00"
+                    total_minutes: 2280
+                total: 5
+                page: 1
+                nextPage: null
+
+  /timesheets/direct-reports/pending:
+    get:
+      tags:
+        - Timesheets
+      summary: Get Pending Timesheets for Approval
+      description: |
+        Get timesheets with "Submitted" status from direct reports.
+        Convenience endpoint for the approval workflow.
+      responses:
+        '200':
+          description: List of timesheets pending approval
+          content:
+            application/json:
+              example:
+                data:
+                  - id: 44
+                    employee: 8
+                    employee_name: "Jane Doe"
+                    date_start: "2026-04-05"
+                    date_end: "2026-04-11"
+                    status: "Submitted"
+                    total_time: "42:15"
+                    total_minutes: 2535
+                total: 1
+                page: 1
+                nextPage: null
+
+  /timesheets/{timesheetId}/approve:
+    post:
+      tags:
+        - Timesheets
+      summary: Approve Timesheet
+      description: |
+        Approve a subordinate's submitted timesheet.
+        Only the supervisor or admin can approve.
+      parameters:
+        - name: timesheetId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Timesheet approved
+          content:
+            application/json:
+              example:
+                message: "Timesheet Approved"
+                timesheet:
+                  id: 44
+                  status: "Approved"
+                  total_time: "42:15"
+        '403':
+          description: Only the supervisor can approve
+
+  /timesheets/{timesheetId}/reject:
+    post:
+      tags:
+        - Timesheets
+      summary: Reject Timesheet
+      description: |
+        Reject a subordinate's submitted timesheet.
+        The employee will be notified and can resubmit after corrections.
+      parameters:
+        - name: timesheetId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Timesheet rejected
+          content:
+            application/json:
+              example:
+                message: "Timesheet Rejected"
+                timesheet:
+                  id: 44
+                  status: "Rejected"
+                  total_time: "42:15"
+
+  /timesheets/projects:
+    get:
+      tags:
+        - Timesheets
+      summary: Get Available Projects
+      description: |
+        Get list of projects available for time entries.
+        Returns only projects assigned to the employee unless
+        "Make All Projects Available to Employees" setting is enabled.
+      responses:
+        '200':
+          description: List of available projects
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/TimesheetProject'
+              example:
+                data:
+                  - id: 1
+                    name: "Website Redesign"
+                  - id: 3
+                    name: "Mobile App Development"
+                  - id: 7
+                    name: "Internal Tools"
+
+  # ============================================
+  # EXPENSES
+  # ============================================
+  /expenses:
+    get:
+      tags:
+        - Expenses
+      summary: Get User Expenses
+      description: |
+        Retrieves the current user's expense requests (up to 100 most recent).
+        Results include category, payment method, and currency details.
+      responses:
+        '200':
+          description: List of user expenses
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Expense'
+
+  /expense:
+    post:
+      tags:
+        - Expenses
+      summary: Add Expense with Optional Receipt Upload
+      description: |
+        Create a new expense request with optional receipt image upload.
+
+        **Receipt Upload for Mobile Apps (Flutter, React Native, etc.)**:
+        You can include receipt images captured via camera directly in the JSON payload
+        using base64 encoding. This eliminates the need for a separate file upload step.
+
+        **Supported formats**: jpg, jpeg, png, gif, bmp, webp, heic, heif
+        **Maximum file size**: 10MB per image
+        **Maximum attachments**: 3 receipts per expense
+
+        **Base64 Format Options**:
+        - With data URI: `"data:image/jpeg;base64,/9j/4AAQ..."`
+        - Raw base64: `"/9j/4AAQSkZJRg..."`
+
+        **Alternative: Separate File Upload**:
+        You can also upload files separately using `/expenses/file-upload`
+        and reference the returned filename in `attachment1`, `attachment2`, or `attachment3`.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Expense'
+            examples:
+              withReceipt:
+                summary: Expense with camera-captured receipt
+                value:
+                  expense_date: "2026-04-06"
+                  category: 1
+                  payment_method: 1
+                  payee: "Office Supplies Inc"
+                  amount: 125.50
+                  currency: 1
+                  notes: "Office supplies for Q2"
+                  receipt: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+              withoutReceipt:
+                summary: Expense without receipt
+                value:
+                  expense_date: "2026-04-06"
+                  category: 1
+                  payment_method: 1
+                  payee: "Taxi Service"
+                  amount: 35.00
+                  notes: "Client meeting transportation"
+      responses:
+        '201':
+          description: Expense created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Expense'
+        '400':
+          description: Invalid request data or image format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /expense/categories:
+    get:
+      tags:
+        - Expenses
+      summary: Get Expense Categories
+      description: |
+        Retrieves all available expense categories.
+        Use the returned `id` when submitting an expense.
+      responses:
+        '200':
+          description: List of expense categories
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ExpenseCategory'
+
+  /expense/payment-methods:
+    get:
+      tags:
+        - Expenses
+      summary: Get Payment Methods
+      description: |
+        Retrieves all available payment methods.
+        Use the returned `id` when submitting an expense.
+      responses:
+        '200':
+          description: List of payment methods
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PaymentMethod'
+
+  /expenses/file-upload:
+    post:
+      tags:
+        - Expenses
+      summary: Upload Expense Attachment (Multipart)
+      description: |
+        Upload an expense attachment using multipart form data.
+        This is an alternative to base64 encoding in the expense submission.
+
+        After uploading, use the returned filename in `attachment1`, `attachment2`,
+        or `attachment3` fields when creating an expense.
+
+        **Note**: For mobile apps, consider using the base64 `receipt` field
+        in POST /expense instead for a simpler single-request workflow.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The file to upload (max 10MB)
+      responses:
+        '201':
+          description: File uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: string
+                    description: The saved filename to use in expense attachment fields
+                    example: "17123456789012345"
+
+  /expenses/all:
+    get:
+      tags:
+        - Expenses
+      summary: List All Expense Claims (Admin)
+      description: Admin/manager — lists all expense claims for review/approval.
+      responses:
+        '200':
+          description: List of expense claims
+        '403':
+          description: Permission denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /expense/{id}/approve:
+    post:
+      tags:
+        - Expenses
+      summary: Approve an Expense Claim (Admin/Manager)
+      description: >-
+        Approves the expense. Reuses the multi-level approval chain if one is configured
+        (may set the claim to `Processing` until all levels approve). Optional `{"reason":"…"}`.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+      responses:
+        '200':
+          description: Expense approved
+        '403':
+          description: Permission denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Expense not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /expense/{id}/reject:
+    post:
+      tags:
+        - Expenses
+      summary: Reject an Expense Claim (Admin/Manager)
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+      responses:
+        '200':
+          description: Expense rejected
+        '403':
+          description: Permission denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Expense not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ============================================
+  # COMPANY ASSETS
+  # ============================================
+  /company_assets/asset-types:
+    get:
+      tags:
+        - Company Assets
+      summary: Get Asset Types
+      responses:
+        '200':
+          description: List of asset types
+    post:
+      tags:
+        - Company Assets
+      summary: Create/Update Asset Type
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+      responses:
+        '200':
+          description: Asset type created/updated
+
+  /company_assets/asset-types/{id}:
+    get:
+      tags:
+        - Company Assets
+      summary: Get Asset Type
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Asset type details
+    delete:
+      tags:
+        - Company Assets
+      summary: Delete Asset Type
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Asset type deleted
+
+  /company_assets/assets:
+    get:
+      tags:
+        - Company Assets
+      summary: Get Company Assets
+      parameters:
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: status
+          in: query
+          schema:
+            type: string
+        - name: type
+          in: query
+          schema:
+            type: integer
+        - name: employee
+          in: query
+          schema:
+            type: integer
+        - name: department
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of company assets
+    post:
+      tags:
+        - Company Assets
+      summary: Create/Update Asset
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Asset created/updated
+
+  /company_assets/assets/{id}:
+    get:
+      tags:
+        - Company Assets
+      summary: Get Asset
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Asset details
+    delete:
+      tags:
+        - Company Assets
+      summary: Delete Asset
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Asset deleted
+
+  /company_assets/employees:
+    get:
+      tags:
+        - Company Assets
+      summary: Get Employees for Asset Assignment
+      responses:
+        '200':
+          description: List of active employees
+
+  /company_assets/departments:
+    get:
+      tags:
+        - Company Assets
+      summary: Get Departments
+      responses:
+        '200':
+          description: List of departments
+
+  /company_assets/stats:
+    get:
+      tags:
+        - Company Assets
+      summary: Get Asset Statistics
+      responses:
+        '200':
+          description: Asset statistics
+
+  # ============================================
+  # INSIGHTS
+  # ============================================
+  /insights/leave-summary/{period}:
+    get:
+      tags:
+        - Insights
+      summary: Get Leave Request Summary
+      parameters:
+        - $ref: '#/components/parameters/PeriodParam'
+      responses:
+        '200':
+          description: Leave statistics by status
+
+  /insights/leave-monthly-pattern/{period}:
+    get:
+      tags:
+        - Insights
+      summary: Get Leave Monthly Pattern
+      parameters:
+        - $ref: '#/components/parameters/PeriodParam'
+      responses:
+        '200':
+          description: Leave counts by day of month
+
+  /insights/leave-weekly-pattern/{period}:
+    get:
+      tags:
+        - Insights
+      summary: Get Leave Weekly Pattern
+      parameters:
+        - $ref: '#/components/parameters/PeriodParam'
+      responses:
+        '200':
+          description: Leave counts by day of week
+
+  /insights/leave-type-distribution/{period}:
+    get:
+      tags:
+        - Insights
+      summary: Get Leave Type Distribution
+      parameters:
+        - $ref: '#/components/parameters/PeriodParam'
+      responses:
+        '200':
+          description: Leave distribution by type
+
+  /insights/leave-by-department/{period}:
+    get:
+      tags:
+        - Insights
+      summary: Get Leave by Department
+      parameters:
+        - $ref: '#/components/parameters/PeriodParam'
+      responses:
+        '200':
+          description: Leave requests by department
+
+  /insights/attendance-summary/{period}:
+    get:
+      tags:
+        - Insights
+      summary: Get Attendance Summary
+      parameters:
+        - $ref: '#/components/parameters/PeriodParam'
+      responses:
+        '200':
+          description: Attendance statistics
+
+  /insights/attendance-monthly-pattern/{period}:
+    get:
+      tags:
+        - Insights
+      summary: Get Attendance Monthly Pattern
+      parameters:
+        - $ref: '#/components/parameters/PeriodParam'
+      responses:
+        '200':
+          description: Attendance hours by day of month
+
+  /insights/attendance-weekly-pattern/{period}:
+    get:
+      tags:
+        - Insights
+      summary: Get Attendance Weekly Pattern
+      parameters:
+        - $ref: '#/components/parameters/PeriodParam'
+      responses:
+        '200':
+          description: Attendance hours by day of week
+
+  /insights/timesheet-summary/{period}:
+    get:
+      tags:
+        - Insights
+      summary: Get Timesheet Summary
+      parameters:
+        - $ref: '#/components/parameters/PeriodParam'
+      responses:
+        '200':
+          description: Timesheet entry statistics
+
+  /insights/timesheet-monthly-pattern/{period}:
+    get:
+      tags:
+        - Insights
+      summary: Get Timesheet Monthly Pattern
+      parameters:
+        - $ref: '#/components/parameters/PeriodParam'
+      responses:
+        '200':
+          description: Timesheet hours by day of month
+
+  /insights/timesheet-weekly-pattern/{period}:
+    get:
+      tags:
+        - Insights
+      summary: Get Timesheet Weekly Pattern
+      parameters:
+        - $ref: '#/components/parameters/PeriodParam'
+      responses:
+        '200':
+          description: Timesheet hours by day of week
+
+  # ============================================
+  # REPORTS
+  # ============================================
+  /advance_reports/reports:
+    get:
+      tags:
+        - Reports
+      summary: Get All Reports
+      description: Get all reports grouped by category
+      responses:
+        '200':
+          description: List of reports
+
+  /advance_reports/reports/{id}:
+    get:
+      tags:
+        - Reports
+      summary: Get Report Definition
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Report definition
+
+  /advance_reports/reports/{id}/generate:
+    post:
+      tags:
+        - Reports
+      summary: Generate Report
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Report parameters
+      responses:
+        '200':
+          description: Generated report data
+
+  /advance_reports/source/{model}:
+    get:
+      tags:
+        - Reports
+      summary: Get Report Source Data
+      parameters:
+        - name: model
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [Employee, CompanyStructure, EmploymentStatus, JobTitle, LeaveType, LeavePeriod, OvertimeCategory, Project, Client, AssetType, ExpenseCategory, PaymentMethod]
+      responses:
+        '200':
+          description: Source data for report fields
+
+  /user/advance_reports/reports:
+    get:
+      tags:
+        - Reports
+      summary: Get User Reports
+      responses:
+        '200':
+          description: List of user-accessible reports
+
+  /user/advance_reports/reports/{id}:
+    get:
+      tags:
+        - Reports
+      summary: Get User Report Definition
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Report definition
+
+  /user/advance_reports/reports/{id}/generate:
+    post:
+      tags:
+        - Reports
+      summary: Generate User Report
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Generated report data
+
+  # ============================================
+  # PAYROLL
+  # ============================================
+  /payroll_config/employees:
+    get:
+      tags:
+        - Payroll
+      summary: Get Employees with Payroll Status
+      responses:
+        '200':
+          description: List of employees with payroll status
+
+  /payroll_config/payroll-employees:
+    get:
+      tags:
+        - Payroll
+      summary: Get Payroll Employees
+      responses:
+        '200':
+          description: List of payroll employees
+    post:
+      tags:
+        - Payroll
+      summary: Create/Update Payroll Employee
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Payroll employee created/updated
+
+  /payroll_config/payroll-employees/{id}:
+    delete:
+      tags:
+        - Payroll
+      summary: Delete Payroll Employee
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payroll employee deleted
+
+  /payroll_config/pay-frequencies:
+    get:
+      tags:
+        - Payroll
+      summary: Get Pay Frequencies
+      responses:
+        '200':
+          description: List of pay frequency options
+
+  /payroll_config/payroll-groups:
+    get:
+      tags:
+        - Payroll
+      summary: Get Payroll Groups (Deduction Groups)
+      responses:
+        '200':
+          description: List of payroll groups
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayrollGroup'
+    post:
+      tags:
+        - Payroll
+      summary: Create/Update Payroll Group
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PayrollGroup'
+      responses:
+        '200':
+          description: Saved payroll group
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayrollGroup'
+        '400':
+          description: Name is required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/payroll-groups/{id}:
+    delete:
+      tags:
+        - Payroll
+      summary: Delete Payroll Group
+      description: Blocked (400) if any payroll employee or payroll run references the group.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payroll group deleted
+        '400':
+          description: In use by payroll employees or runs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Payroll group not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/currencies:
+    get:
+      tags:
+        - Payroll
+      summary: Get Currencies
+      responses:
+        '200':
+          description: List of currency options
+
+  /payroll_config/departments:
+    get:
+      tags:
+        - Payroll
+      summary: Get Departments
+      responses:
+        '200':
+          description: List of departments
+
+  /payroll_config/payslip-templates:
+    get:
+      tags:
+        - Payroll
+      summary: Get Payslip Templates
+      responses:
+        '200':
+          description: List of payslip templates
+    post:
+      tags:
+        - Payroll
+      summary: Create/Update Payslip Template
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Payslip template created/updated
+
+  /payroll_config/payslip-templates/{id}:
+    get:
+      tags:
+        - Payroll
+      summary: Get Payslip Template
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payslip template details
+    delete:
+      tags:
+        - Payroll
+      summary: Delete Payslip Template
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payslip template deleted
+
+  /payroll_config/payslip-templates/{id}/preview:
+    get:
+      tags:
+        - Payroll
+      summary: Preview Payslip Template
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payslip preview HTML
+
+  /payroll_config/payslip-templates/preview:
+    post:
+      tags:
+        - Payroll
+      summary: Preview Payslip from JSON
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Payslip preview HTML
+
+  /payroll_config/payroll-columns:
+    get:
+      tags:
+        - Payroll
+      summary: Get Payroll Columns
+      responses:
+        '200':
+          description: List of payroll columns
+    post:
+      tags:
+        - Payroll
+      summary: Create/Update Payroll Column
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Payroll column created/updated
+
+  /payroll_config/payroll-columns/{id}:
+    delete:
+      tags:
+        - Payroll
+      summary: Delete Payroll Column
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payroll column deleted
+
+  /payroll_config/calculation-hooks:
+    get:
+      tags:
+        - Payroll
+      summary: Get Calculation Hooks
+      responses:
+        '200':
+          description: List of available calculation hooks
+
+  /payroll_config/salary-components:
+    get:
+      tags:
+        - Payroll
+      summary: Get Salary Components
+      responses:
+        '200':
+          description: List of salary components
+
+  /payroll_config/payrolls:
+    get:
+      tags:
+        - Payroll
+      summary: Get All Payrolls
+      responses:
+        '200':
+          description: List of payrolls
+    post:
+      tags:
+        - Payroll
+      summary: Create/Update Payroll
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Payroll created/updated
+
+  /payroll_config/payrolls/{id}:
+    get:
+      tags:
+        - Payroll
+      summary: Get Payroll
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payroll details
+    delete:
+      tags:
+        - Payroll
+      summary: Delete Payroll
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payroll deleted
+
+  /payroll_config/payrolls/{id}/employees:
+    get:
+      tags:
+        - Payroll
+      summary: Get Payroll Employees
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Employees for this payroll
+
+  /payroll_config/payrolls/{id}/process:
+    post:
+      tags:
+        - Payroll
+      summary: Process Payroll
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payroll processing started
+
+  /payroll_config/payrolls/{id}/data:
+    get:
+      tags:
+        - Payroll
+      summary: Get Payroll Data Grid
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payroll data grid
+    post:
+      tags:
+        - Payroll
+      summary: Update Payroll Data
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Payroll data updated
+
+  /payroll_config/payrolls/{id}/generate-payslips:
+    post:
+      tags:
+        - Payroll
+      summary: Generate Payslips
+      description: Finalize payroll and generate payslips
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payslips generated
+
+  /payroll_config/payrolls/{id}/delete-payslips:
+    post:
+      tags:
+        - Payroll
+      summary: Delete Payslips
+      description: Delete payslips and revert to Processed status
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payslips deleted
+
+  /payroll_config/validate-script:
+    post:
+      tags:
+        - Payroll
+      summary: Validate Calculation Script
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                script:
+                  type: string
+      responses:
+        '200':
+          description: Validation result
+
+  /payroll_config/payrolls/{id}/reprocess:
+    post:
+      tags:
+        - Payroll
+      summary: Reprocess a Payroll
+      description: >-
+        Recomputes a payroll's values and persists them (status returns to Processed).
+        Blocked for a Completed payroll — delete its payslips first. Pass
+        `clearData: true` to wipe existing computed/edited values for a clean recompute.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clearData:
+                  type: boolean
+                  description: Delete existing PayrollData rows before recomputing.
+      responses:
+        '200':
+          description: Payroll reprocessed
+        '400':
+          description: Payroll is Completed (delete payslips first)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Payroll not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/payrolls/{id}/columns:
+    post:
+      tags:
+        - Payroll
+      summary: Attach a Column to a Payroll
+      description: Adds a payroll column to the run's column list (idempotent). Returns the updated payroll.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [column_id]
+              properties:
+                column_id:
+                  type: integer
+      responses:
+        '200':
+          description: Column attached; returns the updated payroll
+        '404':
+          description: Payroll or column not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/payrolls/{id}/columns/{columnId}:
+    delete:
+      tags:
+        - Payroll
+      summary: Remove a Column from a Payroll
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+        - name: columnId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Column removed; returns the updated payroll
+        '404':
+          description: Payroll not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/payrolls/{id}/payslips:
+    get:
+      tags:
+        - Payroll
+      summary: List Generated Payslips
+      description: Lists the generated payslip documents for a payroll, each with a signed download URL.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Payroll status and the list of generated payslips
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payslips:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Payslip'
+        '404':
+          description: Payroll not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/payrolls/{id}/payslips/{employeeId}/download:
+    get:
+      tags:
+        - Payroll
+      summary: Get a Payslip Download URL
+      description: Returns a signed download URL for one employee's generated payslip.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+        - $ref: '#/components/parameters/EmployeeId'
+      responses:
+        '200':
+          description: Signed download URL
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  download_url:
+                    type: string
+        '404':
+          description: Payslip not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/payslip-templates/default-design/{id}:
+    get:
+      tags:
+        - Payroll
+      summary: Generate a Default Payslip Design
+      description: >-
+        Builds a ready-to-use payslip design (element JSON) from a payroll's attached
+        columns — an employee-info block plus an items table using `{{column_<id>}}`
+        value tokens. POST the returned `design` to payroll_config/payslip-templates.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Generated design plus the columns it references
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  design:
+                    type: string
+                    description: JSON-encoded element array for the payslip template.
+                  columns:
+                    type: array
+                    items:
+                      type: object
+        '404':
+          description: Payroll not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/salary-component-types:
+    get:
+      tags:
+        - Payroll
+      summary: List Salary Component Types
+      responses:
+        '200':
+          description: List of salary component types
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SalaryComponentType'
+    post:
+      tags:
+        - Payroll
+      summary: Create/Update Salary Component Type
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalaryComponentType'
+      responses:
+        '200':
+          description: Saved component type
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalaryComponentType'
+        '400':
+          description: code and name are required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/salary-component-types/{id}:
+    delete:
+      tags:
+        - Payroll
+      summary: Delete Salary Component Type
+      description: Blocked (400) if any salary component still references the type.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Component type deleted
+        '400':
+          description: In use by components
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Component type not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/salary-components/{id}:
+    delete:
+      tags:
+        - Payroll
+      summary: Delete Salary Component
+      description: Blocked (400) if any employee salary references the component.
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Component deleted
+        '400':
+          description: In use by employee salaries
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Component not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/employee-salaries:
+    get:
+      tags:
+        - Payroll
+      summary: List Employee Salary Line Items
+      parameters:
+        - name: employee
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: Filter to a single employee's salary line items.
+      responses:
+        '200':
+          description: List of employee salary records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeSalary'
+    post:
+      tags:
+        - Payroll
+      summary: Create/Update Employee Salary
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeSalary'
+      responses:
+        '200':
+          description: Saved employee salary
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeSalary'
+        '400':
+          description: employee, component and numeric amount are required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/employee-salaries/{id}:
+    delete:
+      tags:
+        - Payroll
+      summary: Delete Employee Salary
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Employee salary deleted
+        '404':
+          description: Employee salary not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/export/payroll:
+    get:
+      tags:
+        - Payroll
+      summary: Export Payroll Data (Backup)
+      description: >-
+        Returns a JSON backup of all UI-managed payroll tables (payroll columns, payslip
+        templates, payroll-employees, payroll runs, and computed payroll data), preserving
+        primary keys so it can be restored exactly via the import endpoint.
+      responses:
+        '200':
+          description: Payroll backup
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayrollBackup'
+  /payroll_config/import/payroll:
+    post:
+      tags:
+        - Payroll
+      summary: Import/Restore Payroll Data
+      description: >-
+        Restores a payroll backup produced by the export endpoint. Rows are written with
+        REPLACE INTO in dependency order, preserving ids. Intended for a "clear existing
+        data, then restore" workflow.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PayrollBackup'
+      responses:
+        '200':
+          description: Restore summary (rows restored per table)
+        '400':
+          description: Invalid backup, wrong section, or restore errors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/export/salary:
+    get:
+      tags:
+        - Payroll
+      summary: Export Salary Data (Backup)
+      description: >-
+        Returns a JSON backup of all UI-managed salary tables (salary component types,
+        salary components, and employee salary line items), preserving primary keys.
+      responses:
+        '200':
+          description: Salary backup
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayrollBackup'
+  /payroll_config/import/salary:
+    post:
+      tags:
+        - Payroll
+      summary: Import/Restore Salary Data
+      description: Restores a salary backup produced by the export endpoint (REPLACE INTO, ids preserved).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PayrollBackup'
+      responses:
+        '200':
+          description: Restore summary (rows restored per table)
+        '400':
+          description: Invalid backup, wrong section, or restore errors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /payroll_config/clear:
+    post:
+      tags:
+        - Payroll
+      summary: Clear Payroll Data (Destructive)
+      description: >-
+        Permanently deletes the selected categories of payroll data. Each category is opt-in
+        via `targets`. Requires the exact confirmation phrase `DELETE PAYROLL DATA` (also
+        enforced by the UI). Export a backup first if the data may be needed again.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [targets, confirm]
+              properties:
+                targets:
+                  type: array
+                  description: One or more of the categories to delete.
+                  items:
+                    type: string
+                    enum: [columns, payrolls, designs, groups]
+                  example: [columns, payrolls, designs, groups]
+                confirm:
+                  type: string
+                  description: Must equal "DELETE PAYROLL DATA".
+                  example: "DELETE PAYROLL DATA"
+      responses:
+        '200':
+          description: Deletion summary (rows deleted per category)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  deleted:
+                    type: object
+                    additionalProperties:
+                      type: integer
+        '400':
+          description: Missing/incorrect confirmation phrase or no targets selected
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ============================================
+  # LEARN
+  # ============================================
+  /learn/course-list:
+    get:
+      tags:
+        - Learn
+      summary: Get All Published Courses
+      responses:
+        '200':
+          description: List of published courses with enrollment status
+
+  /learn/my-course-list:
+    get:
+      tags:
+        - Learn
+      summary: Get My Enrolled Courses
+      responses:
+        '200':
+          description: Courses enrolled by current user
+
+  /learn/enroll:
+    post:
+      tags:
+        - Learn
+      summary: Enroll in Course
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                course_id:
+                  type: integer
+      responses:
+        '200':
+          description: Enrollment successful
+
+  /learn/lesson/{id}/check-answers:
+    get:
+      tags:
+        - Learn
+      summary: Check Lesson Quiz Answers
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Quiz results and completion status
+
+  # ============================================
+  # COMPANY OVERVIEW
+  # ============================================
+  /company_overview/leaves/upcoming:
+    get:
+      tags:
+        - Company
+      summary: Get Upcoming Approved Leaves
+      responses:
+        '200':
+          description: Next 10 upcoming approved leaves
+
+  /company_overview/company-structure:
+    get:
+      tags:
+        - Company
+      summary: Get Company Structure Tree
+      responses:
+        '200':
+          description: Company structure as tree hierarchy
+
+  /company_overview/manager-hierarchy:
+    get:
+      tags:
+        - Company
+      summary: Get Manager Hierarchy
+      responses:
+        '200':
+          description: Manager hierarchy by supervisor relationships
+
+  /company_overview/top-attendance:
+    get:
+      tags:
+        - Company
+      summary: Get Top Attendance
+      responses:
+        '200':
+          description: Top 10 employees by attendance hours last week
+
+  # ============================================
+  # DEMO MODE
+  # ============================================
+  /demo-mode/should-prompt:
+    get:
+      tags:
+        - Demo Mode
+      summary: Check if Demo Prompt Should Show
+      responses:
+        '200':
+          description: Whether to show demo mode prompt
+
+  /demo-mode/status:
+    get:
+      tags:
+        - Demo Mode
+      summary: Get Demo Mode Status
+      responses:
+        '200':
+          description: Current demo mode enabled status
+
+  /demo-mode/enable:
+    post:
+      tags:
+        - Demo Mode
+      summary: Enable Demo Mode
+      responses:
+        '200':
+          description: Demo mode enabled
+
+  /demo-mode/disable:
+    post:
+      tags:
+        - Demo Mode
+      summary: Disable Demo Mode
+      responses:
+        '200':
+          description: Demo mode disabled
+
+  /demo-mode/generate-all:
+    post:
+      tags:
+        - Demo Mode
+      summary: Generate All Demo Data
+      responses:
+        '200':
+          description: All demo data generated
+
+  /demo-mode/stats:
+    get:
+      tags:
+        - Demo Mode
+      summary: Get Demo Data Statistics
+      responses:
+        '200':
+          description: Demo data statistics by type
+
+  /demo-mode/employees:
+    post:
+      tags:
+        - Demo Mode
+      summary: Generate Demo Employees
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                count:
+                  type: integer
+                  default: 10
+      responses:
+        '200':
+          description: Demo employees generated
+
+  /demo-mode/attendance:
+    post:
+      tags:
+        - Demo Mode
+      summary: Generate Demo Attendance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                daysBack:
+                  type: integer
+                  default: 30
+      responses:
+        '200':
+          description: Demo attendance generated
+
+  /demo-mode/timesheets:
+    post:
+      tags:
+        - Demo Mode
+      summary: Generate Demo Timesheets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                weeksBack:
+                  type: integer
+                  default: 4
+      responses:
+        '200':
+          description: Demo timesheets generated
+
+  /demo-mode/leave:
+    post:
+      tags:
+        - Demo Mode
+      summary: Generate Demo Leave Requests
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                count:
+                  type: integer
+                  default: 5
+      responses:
+        '200':
+          description: Demo leave requests generated
+
+  /demo-mode/payroll:
+    post:
+      tags:
+        - Demo Mode
+      summary: Generate Demo Payroll
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - dateStart
+                - dateEnd
+              properties:
+                name:
+                  type: string
+                dateStart:
+                  type: string
+                  format: date
+                dateEnd:
+                  type: string
+                  format: date
+      responses:
+        '200':
+          description: Demo payroll generated
+
+  /demo-mode/clients:
+    post:
+      tags:
+        - Demo Mode
+      summary: Generate Demo Clients
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                count:
+                  type: integer
+                  default: 5
+      responses:
+        '200':
+          description: Demo clients generated
+
+  /demo-mode/projects:
+    post:
+      tags:
+        - Demo Mode
+      summary: Generate Demo Projects
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                count:
+                  type: integer
+                  default: 5
+      responses:
+        '200':
+          description: Demo projects generated
+
+  /demo-mode/data:
+    delete:
+      tags:
+        - Demo Mode
+      summary: Delete All Demo Data
+      responses:
+        '200':
+          description: All demo data deleted
+
+  /demo-mode/data/{type}:
+    delete:
+      tags:
+        - Demo Mode
+      summary: Delete Demo Data by Type
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [employee, attendance, timesheet, leave, payroll, client, project]
+      responses:
+        '200':
+          description: Demo data of specified type deleted
+
+  # ============================================
+  # RECRUITMENT
+  # ============================================
+  /jobs:
+    get:
+      tags:
+        - Recruitment
+      summary: Get All Active Jobs
+      responses:
+        '200':
+          description: List of active job positions
+
+  /job/{id}:
+    get:
+      tags:
+        - Recruitment
+      summary: Get Job Details
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Job position details
+
+  /candidate/{id}:
+    get:
+      tags:
+        - Recruitment
+      summary: Get Candidate
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Candidate details
+
+  /candidate/{id}/notes:
+    get:
+      tags:
+        - Recruitment
+      summary: Get Candidate Notes
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of candidate notes
+
+  /candidate/{id}/interviews:
+    get:
+      tags:
+        - Recruitment
+      summary: Get Candidate Interviews
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: List of candidate interviews
+
+  # ============================================
+  # NEWS/DASHBOARD
+  # ============================================
+  /can-show-news/{id}:
+    get:
+      tags:
+        - Charts
+      summary: Check if News Should Show
+      parameters:
+        - $ref: '#/components/parameters/ResourceId'
+      responses:
+        '200':
+          description: Whether news item should be shown
+
+  /dismiss-news:
+    post:
+      tags:
+        - Charts
+      summary: Dismiss News
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                period:
+                  type: integer
+      responses:
+        '200':
+          description: News dismissed

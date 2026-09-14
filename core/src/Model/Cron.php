@@ -39,4 +39,23 @@ class Cron extends BaseModel
     {
         return array();
     }
+
+    /**
+
+     * No module grants Employee access to this model (module meta.json user_levels),
+
+     * so no employee-facing screen reads it. The inherited BaseModel default
+
+     * would expose the whole table on the generic service.php path.
+
+     */
+
+    public function getUserOnlyMeAccess()
+
+    {
+
+        return array();
+
+    }
+
 }

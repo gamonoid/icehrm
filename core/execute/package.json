@@ -1,7 +1,0 @@
-{
-  "name": "icehrm-js-eval",
-  "version": "1.0.0",
-  "dependencies": {
-    "vm2": "~3.9.11"
-  }
-}

@@ -20,12 +20,12 @@ class EmployeeTimeEntry extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getUserAccess()
@@ -35,7 +35,7 @@ class EmployeeTimeEntry extends BaseModel
 
     public function getUserOnlyMeAccess()
     {
-        return array("element","save","delete");
+        return array("element","add","save","delete");
     }
 
     public function validateSave($obj)

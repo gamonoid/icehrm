@@ -27,7 +27,7 @@ class SettingPlaceholderField extends React.Component {
         <Input
           bordered={false}
           disabled
-          style={{ color: 'rgba(0, 0, 0, 0.85)' }}
+          style={{ color: 'inherit' }}
           value={value || ''}
         />
       </Form.Item>

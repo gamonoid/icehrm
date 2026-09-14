@@ -873,7 +873,6 @@ INSERT INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
 ('System: Do not pass JSON in request', '0', 'Select Yes if you are having trouble loading data for some tables','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('System: Reset Modules and Permissions', '0', 'Select this to reset module and permission information in Database (If you have done any changes to meta files)','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('System: Reset Module Names', '0', 'Select this to reset module names in Database','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
-('System: Add New Permissions', '0', 'Select this to add new permission changes done to meta.json file of any module','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('System: Debug Mode', '0', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('Projects: Make All Projects Available to Employees', '1', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
 ('Leave: Share Calendar to Whole Company', '1', '','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]'),
@@ -980,34 +979,34 @@ REPLACE INTO `Settings` (`name`, `value`, `description`, `meta`) VALUES
     ('System: Time-sheet Entry Start and End time Required', '0', 'Select 0 if you only need to store the time spend in time sheets','["value", {"label":"Value","type":"select","source":[["1","Yes"],["0","No"]]}]');
 
 INSERT INTO `Certifications` (`id`, `name`, `description`) VALUES
-  (1, 'Red Hat Certified Architect (RHCA)', 'Red Hat Certified Architect (RHCA)'),
-  (2, 'GIAC Secure Software Programmer -Java', 'GIAC Secure Software Programmer -Java'),
-  (3, 'Risk Management Professional (PMI)', 'Risk Management Professional (PMI)'),
-  (4, 'IT Infrastructure Library (ITIL) Expert Certification', 'IT Infrastructure Library (ITIL) Expert Certification'),
-  (5, 'Microsoft Certified Architect', 'Microsoft Certified Architect'),
-  (6, 'Oracle Exadata 11g Certified Implementation Specialist', 'Oracle Exadata 11g Certified Implementation Specialist'),
-  (7, 'Cisco Certified Design Professional (CCDP)', 'Cisco Certified Design Professional (CCDP)'),
-  (8, 'Cisco Certified Internetwork Expert (CCIE)', 'Cisco Certified Internetwork Expert (CCIE)'),
-  (9, 'Cisco Certified Network Associate', 'Cisco Certified Network Associate'),
-  (10, 'HP/Master Accredited Solutions Expert (MASE)', 'HP/Master Accredited Solutions Expert (MASE)'),
-  (11, 'HP/Master Accredited Systems Engineer (Master ASE)', 'HP/Master Accredited Systems Engineer (Master ASE)'),
-  (12, 'Certified Information Security Manager (CISM)', 'Certified Information Security Manager (CISM)'),
-  (13, 'Certified Information Systems Auditor (CISA)', 'Certified Information Systems Auditor (CISA)'),
-  (14, 'CyberSecurity Forensic Analyst (CSFA)', 'CyberSecurity Forensic Analyst (CSFA)'),
-  (15, 'Open Group Certified Architect (OpenCA)', 'Open Group Certified Architect (OpenCA)'),
-  (16, 'Oracle DBA Administrator Certified Master OCM', 'Oracle DBA Administrator Certified Master OCM'),
-  (17, 'Project Management Professional', 'Project Management Professional'),
-  (18, 'Apple Certified Support Professional', 'Apple Certified Support Professional'),
-  (19, 'Certified Public Accountant (CPA)', 'Certified Public Accountant (CPA)'),
-  (20, 'Chartered Financial Analyst', 'Chartered Financial Analyst'),
-  (21, 'Professional in Human Resources (PHR)', 'Professional in Human Resources (PHR)');
+  (1, 'Project Management Professional (PMP)', 'Project Management Professional (PMP)'),
+  (2, 'Certified Associate in Project Management (CAPM)', 'Certified Associate in Project Management (CAPM)'),
+  (3, 'Certified ScrumMaster (CSM)', 'Certified ScrumMaster (CSM)'),
+  (4, 'PRINCE2 Practitioner', 'PRINCE2 Practitioner'),
+  (5, 'Six Sigma Green Belt', 'Six Sigma Green Belt'),
+  (6, 'Six Sigma Black Belt', 'Six Sigma Black Belt'),
+  (7, 'Lean Six Sigma Certification', 'Lean Six Sigma Certification'),
+  (8, 'Certified Public Accountant (CPA)', 'Certified Public Accountant (CPA)'),
+  (9, 'Chartered Financial Analyst (CFA)', 'Chartered Financial Analyst (CFA)'),
+  (10, 'Certified Management Accountant (CMA)', 'Certified Management Accountant (CMA)'),
+  (11, 'Professional in Human Resources (PHR)', 'Professional in Human Resources (PHR)'),
+  (12, 'Senior Professional in Human Resources (SPHR)', 'Senior Professional in Human Resources (SPHR)'),
+  (13, 'SHRM Certified Professional (SHRM-CP)', 'SHRM Certified Professional (SHRM-CP)'),
+  (14, 'ISO 9001 Lead Auditor', 'ISO 9001 Lead Auditor'),
+  (15, 'Occupational Health and Safety (OSHA) Certification', 'Occupational Health and Safety (OSHA) Certification'),
+  (16, 'First Aid and CPR Certification', 'First Aid and CPR Certification'),
+  (17, 'Certified Supply Chain Professional (CSCP)', 'Certified Supply Chain Professional (CSCP)'),
+  (18, 'Certified Business Analysis Professional (CBAP)', 'Certified Business Analysis Professional (CBAP)'),
+  (19, 'Digital Marketing Professional Certification', 'Digital Marketing Professional Certification'),
+  (20, 'Change Management Practitioner', 'Change Management Practitioner'),
+  (21, 'Certified Quality Manager', 'Certified Quality Manager');
 
 
 
 INSERT INTO `Clients` (`id`, `name`, `details`, `first_contact_date`, `created`, `address`, `contact_number`, `contact_email`, `company_url`, `status`) VALUES
-  (1, 'IceHrm Sample Client 1', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@web-stalk.com', 'http://icehrm.com', 'Active'),
-  (2, 'IceHrm Sample Client 2', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@web-stalk.com', 'http://icehrm.com', 'Active'),
-  (3, 'IceHrm Sample Client 3', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@web-stalk.com', 'http://icehrm.com', 'Active');
+  (1, 'IceHrm Sample Client 1', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@example.com', 'http://icehrm.com', 'Active'),
+  (2, 'IceHrm Sample Client 2', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@example.com', 'http://icehrm.com', 'Active'),
+  (3, 'IceHrm Sample Client 3', NULL, '2012-01-04', '2013-01-03 05:47:33', '001, Sample Road,\nSample City, USA', '678-894-1047', 'icehrm+client1@example.com', 'http://icehrm.com', 'Active');
 
 
 INSERT INTO `CompanyLoans` (`id`, `name`, `details`) VALUES
@@ -1040,19 +1039,19 @@ INSERT INTO `HoliDays` (`id`, `name`, `dateh`, `status`) VALUES
 
 
 INSERT INTO `JobTitles` (`id`, `code`, `name`, `description`, `specification`) VALUES
-  (1, 'SE', 'Software Engineer', 'The work of a software engineer typically includes designing and programming system-level software: operating systems, database systems, embedded systems and so on. They understand how both software a', 'Software Engineer'),
-  (2, 'ASE', 'Assistant Software Engineer', 'Assistant Software Engineer', 'Assistant Software Engineer'),
-  (3, 'PM', 'Project Manager', 'Project Manager', 'Project Manager'),
-  (4, 'QAE', 'QA Engineer', 'Quality Assurance Engineer ', 'Quality Assurance Engineer '),
-  (5, 'PRM', 'Product Manager', 'Product Manager', 'Product Manager'),
-  (6, 'AQAE', 'Assistant QA Engineer ', 'Assistant QA Engineer ', 'Assistant QA Engineer '),
-  (7, 'TPM', 'Technical Project Manager', 'Technical Project Manager', 'Technical Project Manager'),
-  (8, 'PRS', 'Pre-Sales Executive', 'Pre-Sales Executive', 'Pre-Sales Executive'),
-  (9, 'ME', 'Marketing Executive', 'Marketing Executive', 'Marketing Executive'),
+  (1, 'EXE', 'Executive', 'Executive', 'Executive'),
+  (2, 'ASC', 'Associate', 'Associate', 'Associate'),
+  (3, 'OFF', 'Officer', 'Officer', 'Officer'),
+  (4, 'TL', 'Team Lead', 'Team Lead', 'Team Lead'),
+  (5, 'SUP', 'Supervisor', 'Supervisor', 'Supervisor'),
+  (6, 'MGR', 'Manager', 'Manager', 'Manager'),
+  (7, 'HRA', 'HR Assistant', 'Human Resources Assistant', 'Human Resources Assistant'),
+  (8, 'HRBP', 'HR Business Partner', 'Human Resources Business Partner', 'Human Resources Business Partner'),
+  (9, 'HRM', 'HR Manager', 'Human Resources Manager', 'Human Resources Manager'),
   (10, 'DH', 'Department Head', 'Department Head', 'Department Head'),
   (11, 'CEO', 'Chief Executive Officer', 'Chief Executive Officer', 'Chief Executive Officer'),
-  (12, 'DBE', 'Database Engineer', 'Database Engineer', 'Database Engineer'),
-  (13, 'SA', 'Server Admin', 'Server Admin', 'Server Admin');
+  (12, 'COO', 'Chief Operating Officer', 'Chief Operating Officer', 'Chief Operating Officer'),
+  (13, 'CMO', 'Chief Marketing Officer', 'Chief Marketing Officer', 'Chief Marketing Officer');
 
 
 INSERT INTO `Languages` (`id`, `name`, `description`) VALUES
@@ -1277,16 +1276,16 @@ INSERT INTO `Projects` (`id`, `name`, `client`, `details`, `created`, `status`) 
   (4, 'Project 4', 2, NULL, '2013-01-03 05:56:16', 'Active');
 
 INSERT INTO `Skills` (`id`, `name`, `description`) VALUES
-  (1, 'Programming and Application Development', 'Programming and Application Development'),
-  (2, 'Project Management', 'Project Management'),
-  (3, 'Help Desk/Technical Support', 'Help Desk/Technical Support'),
-  (4, 'Networking', 'Networking'),
-  (5, 'Databases', 'Databases'),
-  (6, 'Business Intelligence', 'Business Intelligence'),
-  (7, 'Cloud Computing', 'Cloud Computing'),
-  (8, 'Information Security', 'Information Security'),
-  (9, 'HTML Skills', 'HTML Skills'),
-  (10, 'Graphic Designing', 'Graphic Designing');
+  (1, 'Communication', 'Clearly conveying information and ideas in verbal and written form, and listening actively to others.'),
+  (2, 'Leadership', 'Guiding, motivating, and supporting individuals and teams to achieve shared goals.'),
+  (3, 'Teamwork and Collaboration', 'Working effectively with colleagues across roles and departments toward common objectives.'),
+  (4, 'Problem Solving', 'Identifying issues, analyzing options, and implementing effective and practical solutions.'),
+  (5, 'Time Management', 'Prioritizing tasks and organizing time to meet deadlines and work efficiently.'),
+  (6, 'Project Management', 'Planning, organizing, and overseeing work to deliver results on time and within budget.'),
+  (7, 'Customer Service', 'Understanding and responding to customer needs to deliver a positive experience.'),
+  (8, 'Critical Thinking', 'Objectively evaluating information and weighing options to make sound decisions.'),
+  (9, 'Adaptability', 'Adjusting readily to changing priorities, environments, and new challenges.'),
+  (10, 'Negotiation', 'Reaching mutually beneficial agreements while maintaining positive working relationships.');
 
 INSERT INTO `EmploymentStatus` (`id`, `name`, `description`) VALUES
   (1, 'Full Time Contract', 'Full Time Contract'),
@@ -1359,15 +1358,25 @@ INSERT INTO `PayFrequency` VALUES
 
 
 INSERT INTO `Employees` (`id`, `employee_id`, `first_name`, `middle_name`, `last_name`, `nationality`, `birthday`, `gender`, `marital_status`, `ssn_num`, `nic_num`, `other_id`, `driving_license`, `driving_license_exp_date`, `employment_status`, `job_title`, `pay_grade`, `work_station_id`, `address1`, `address2`, `city`, `country`, `province`, `postal_code`, `home_phone`, `mobile_phone`, `work_phone`, `work_email`, `private_email`, `joined_date`, `confirmation_date`, `supervisor`, `department`, `custom1`, `custom2`, `custom3`, `custom4`, `custom5`, `custom6`, `custom7`, `custom8`, `custom9`, `custom10`) VALUES
-  (1, 'EMP001', 'IceHrm', 'Sample', 'Employee', 35, '1984-03-17 18:30:00', 'Male', 'Married', '', '294-38-3535', '294-38-3535', '', NULL, 3, 11, 2, '', '2772 Flynn Street', 'Willoughby', 'Willoughby', 'US', 41, '44094', '440-953-4578', '440-953-4578', '440-953-4578', 'icehrm+admin@web-stalk.com', 'icehrm+admin@web-stalk.com', '2005-08-03 18:00:00', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+  (1, 'EMP001', 'Liam', 'James', 'Bennett', 10, '2000-04-12 00:00:00', 'Male', 'Single', '', '', '', '', NULL, 3, 11, 2, '', '42 Blaxland Road', 'Ryde', 'Sydney', 'AU', NULL, '2112', '02 9807 4416', '0412 345 678', '02 9807 4400', 'liam.bennett@example.com', 'liam.bennett@example.com', '2022-02-14 00:00:00', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 INSERT INTO `UserRoles` VALUES
   (1,'Report Manager'),
   (2,'Attendance Manager');
 
 
+-- The administrator row must exist here: the installer (app/install/submit.php) applies
+-- the email and password chosen on the install form with an UPDATE, not an INSERT, so
+-- without this row an install completes reporting success while creating no account at
+-- all. The Employees row above is its foreign-key target.
+--
+-- The password below is bcrypt (cost 13) of 'admin', replacing the unsalted md5('admin')
+-- this file used to carry. bcrypt removes the offline-cracking weakness, but note it does
+-- NOT make 'admin' a safe password: the plaintext is published in this repository, so the
+-- row is only acceptable because the installer overwrites it moments later in the same
+-- request. Anything that leaves this value in place is a live admin/admin account.
 INSERT INTO `Users` VALUES
-(1,'admin','icehrm+admin@web-stalk.com','21232f297a57a5a743894a0e4a801fc3',1,NULL,'Admin','',NULL,NULL,NULL,NULL,NULL);
+(1,'admin','icehrm+admin@example.com','$2y$13$ArYLUQ3MEqiOCwv8XWC7COI4r8jqbA1TC3KcNtbBLd4RVg0.oCu9O',1,NULL,'Admin','',NULL,NULL,NULL,NULL,NULL);
 
 
 INSERT INTO `SalaryComponentType` (`id`,`code`, `name`) VALUES

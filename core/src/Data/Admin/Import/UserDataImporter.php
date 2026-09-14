@@ -22,7 +22,7 @@ class UserDataImporter extends AbstractDataImporter
     public function fixBeforeSave($object, $data)
     {
         if (empty($object->password)) {
-            $object->password = md5($object->password);
+            $object->password = \Classes\PasswordManager::createPasswordHash($object->password);
         }
 
         return $object;

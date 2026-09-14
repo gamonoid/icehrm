@@ -17,22 +17,24 @@ class TrainingSessionWithCourse extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getUserAccess()
     {
-        return array("get", "element");
+        // "get" only: employees browse open sign-up sessions as a list; element
+        // reads by arbitrary id are denied.
+        return array("get");
     }
 
     public function getUserOnlyMeAccess()
     {
-        return array("element","save","delete");
+        return array();
     }
 
     // @codingStandardsIgnoreStart

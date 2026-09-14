@@ -1,41 +1,30 @@
 <?php
 /**
- * Health check endpoint for load balancers and container orchestration.
- * Returns HTTP 200 if the application is healthy.
+ * Liveness probe for the container healthcheck (Dockerfile) and the Render
+ * health check (render.yaml healthCheckPath).
+ *
+ * It answers one question: is this installation serving PHP? A 200 here means
+ * nginx accepted the request and php-fpm executed a script, which is what the
+ * orchestrator needs to know before it routes traffic to the container.
+ *
+ * Deliberately does NOT touch the database or config.php:
+ *
+ *   - A fresh deployment has no config.php until someone runs the installer, and
+ *     on Render the health check has to pass before anyone can reach the
+ *     installer at all. Requiring config would deadlock the deploy.
+ *   - A brief database outage would otherwise mark the container unhealthy and
+ *     have it restarted or pulled out of the load balancer, turning a recoverable
+ *     blip into an outage. Database reachability belongs in monitoring, not in a
+ *     liveness probe.
+ *
+ * Unauthenticated by necessity, so the response carries no version, path or
+ * configuration detail that is not already public.
  */
 
 header('Content-Type: application/json');
-header('Cache-Control: no-cache, no-store, must-revalidate');
+// Probes must never be answered from a cache, upstream or otherwise.
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Pragma: no-cache');
 
-$health = [
-    'status' => 'ok',
-    'timestamp' => date('c')
-];
-
-// Optional: Check database connectivity
-$dbHealthy = true;
-if (file_exists(__DIR__ . '/config.php')) {
-    try {
-        include_once __DIR__ . '/config.php';
-        if (defined('APP_HOST') && defined('APP_USERNAME') && defined('APP_PASSWORD') && defined('APP_DB')) {
-            $conn = @new mysqli(APP_HOST, APP_USERNAME, APP_PASSWORD, APP_DB);
-            if ($conn->connect_error) {
-                $dbHealthy = false;
-                $health['database'] = 'error';
-            } else {
-                $health['database'] = 'connected';
-                $conn->close();
-            }
-        }
-    } catch (Exception $e) {
-        $dbHealthy = false;
-        $health['database'] = 'error';
-    }
-}
-
-if (!$dbHealthy) {
-    http_response_code(503);
-    $health['status'] = 'unhealthy';
-}
-
-echo json_encode($health);
+http_response_code(200);
+echo json_encode(array('status' => 'ok'));

@@ -128,16 +128,16 @@ INSERT INTO `LeaveRules` (`id`, `leave_type`, `job_title`, `employment_status`, 
 
 
 INSERT INTO `Users` (`id`, `username`, `email`, `password`, `employee`,`default_module`, `user_level`,`user_roles`, `last_login`, `last_update`, `created`) VALUES
-(2, 'manager', 'icehrm+manager@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 2,NULL, 'Manager','', '2013-01-03 02:47:37', '2013-01-03 02:47:37', '2013-01-03 02:47:37'),
-(3, 'user1', 'icehrm+user1@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 3,NULL, 'Employee','', '2013-01-03 02:48:32', '2013-01-03 02:48:32', '2013-01-03 02:48:32'),
-(4, 'user2', 'icehrm+user2@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 4,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
-(5, 'user3', 'icehrm+user3@web-stalk.com', '4048bb914a704a0728549a26b92d8550', NULL,NULL, 'Restricted Admin','["1"]', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
-(6, 'user4', 'icehrm+user4@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 5,NULL, 'Manager','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
-(7, 'user5', 'icehrm+user5@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 6,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
-(8, 'user6', 'icehrm+user6@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 7,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
-(9, 'user7', 'icehrm+user7@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 8,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
-(10, 'user8', 'icehrm+user8@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 9,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
-(11, 'user9', 'icehrm+user9@web-stalk.com', '4048bb914a704a0728549a26b92d8550', 10,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55');
+(2, 'manager', 'icehrm+manager@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 2,NULL, 'Manager','', '2013-01-03 02:47:37', '2013-01-03 02:47:37', '2013-01-03 02:47:37'),
+(3, 'user1', 'icehrm+user1@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 3,NULL, 'Employee','', '2013-01-03 02:48:32', '2013-01-03 02:48:32', '2013-01-03 02:48:32'),
+(4, 'user2', 'icehrm+user2@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 4,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(5, 'user3', 'icehrm+user3@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', NULL,NULL, 'Restricted Admin','["1"]', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(6, 'user4', 'icehrm+user4@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 5,NULL, 'Manager','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(7, 'user5', 'icehrm+user5@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 6,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(8, 'user6', 'icehrm+user6@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 7,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(9, 'user7', 'icehrm+user7@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 8,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(10, 'user8', 'icehrm+user8@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 9,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55'),
+(11, 'user9', 'icehrm+user9@web-stalk.com', '$2y$13$PVmSw8rLxe8iRKNBFpsUAugwXECLw9.kq/ybKH55ZwXnlZPfskXhK', 10,NULL, 'Employee','', '2013-01-03 02:58:55', '2013-01-03 02:58:55', '2013-01-03 02:58:55');
 
 
 INSERT INTO `EmployeeDocuments` (`id`,`employee`, `document`, `date_added`, `valid_until`, `status`, `details`, `attachment`, `expire_notification_last`) VALUES
@@ -188,9 +188,10 @@ INSERT INTO `Attendance` (`employee`,`in_time`,`out_time`,`note`) VALUES
 (3, FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 22 DAY))) + FLOOR(28800 + (RAND() * 3600)),'%Y-%m-%d %T'), FROM_UNIXTIME((UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 22 DAY))) + FLOOR(57600 + (RAND() * 21600)),'%Y-%m-%d %T'), '');
 
 
-INSERT INTO `Settings` (`name`, `value`, `description`, `meta`, `category`) VALUES
-('Instance : ID', '0847429146712c108e23c435e8f93b4d', '','','Instance'),
-('Instance: Key', 'UQHEYBx9H1eNR66nhNCNCz1WCDDhkjtx1OuJbO3ZQMt+8tfSGvuOH/YEHntRajY=', '','', 'Instance');
+-- 'Instance : ID' and 'Instance: Key' are deliberately NOT seeded here. They were
+-- committed with real values, which meant every fixture-seeded install shared the same
+-- key material. The instance id is generated on first use (BaseService::getInstanceId)
+-- and the key is written only when an admin verifies the instance.
 
 INSERT INTO `EmployeeTeams` (`id`,`name`, `description`, `lead`, `department`) VALUES
 (1,'alpha', 'designing team', 5,2),

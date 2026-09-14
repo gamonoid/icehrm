@@ -47,9 +47,23 @@ const getWebModulePath = (group, moduleName) => {
  * @param {string} moduleName - module name (e.g., 'teams')
  * @returns {string} - path to index.js
  */
+// Leave ships as a package extension: extensions/leave (free, leave only), or the
+// legacy combined leave_and_performance package under extensions/ or the paid
+// extensions-pro/ split. Resolve it once for all package build targets.
+const lnpPath = [
+  'extensions/leave',
+  'extensions/leave_and_performance',
+  'extensions-pro/leave_and_performance',
+].find((dir) => fs.existsSync(dir)) || 'extensions/leave';
+
 const getProModulePath = (group, moduleName) => {
-  return `extensions/leave_and_performance/web/${group}/src/${moduleName}/index.js`;
+  return `${lnpPath}/web/${group}/src/${moduleName}/index.js`;
 };
+
+// Only the modules the installed package actually ships (extensions/leave has no
+// performance/employeehistory sources).
+const proModulesPresent = (group, moduleNames) => moduleNames
+  .filter((moduleName) => fs.existsSync(getProModulePath(group, moduleName)));
 
 const deleteFiles = (directory) => {
   return fs.readdir(directory, (err, files) => {
@@ -295,10 +309,8 @@ gulp.task('admin-js', (done) => {
     'metadata',
     'modules',
     'overtime',
-    'permissions',
     'projects',
     'qualifications',
-    'reports',
     'salary',
     'settings',
     'training',
@@ -356,7 +368,6 @@ gulp.task('modules-js', (done) => {
     'loans',
     'overtime',
     'qualifications',
-    'reports',
     'time_sheets',
     'training',
     'travel',
@@ -399,18 +410,23 @@ gulp.task('modules-js', (done) => {
 });
 
 gulp.task('pro-admin-js', (done) => {
-  const proAdminPath = 'extensions/leave_and_performance/web/admin/src';
+  const proAdminPath = `${lnpPath}/web/admin/src`;
   if (!fs.existsSync(proAdminPath)) {
-    console.log('Pro admin modules not found, skipping...');
+    console.log('Package admin modules not found, skipping...');
     done();
     return;
   }
 
-  const files = [
+  const files = proModulesPresent('admin', [
     'employeehistory',
     'leaves',
     'performance',
-  ];
+  ]);
+  if (files.length === 0) {
+    console.log('Package admin modules not found, skipping...');
+    done();
+    return;
+  }
 
   return browserify({
     entries: files.map((file) => getProModulePath('admin', file)),
@@ -444,22 +460,27 @@ gulp.task('pro-admin-js', (done) => {
       compact: true,
     })))
     .pipe(ifElse(!isProduction, () => sourcemaps.write('./')))
-    .pipe(gulp.dest('./extensions/leave_and_performance/web/dist'));
+    .pipe(gulp.dest(`./${lnpPath}/web/dist`));
 });
 
 gulp.task('pro-modules-js', (done) => {
-  const proModulesPath = 'extensions/leave_and_performance/web/modules/src';
+  const proModulesPath = `${lnpPath}/web/modules/src`;
   if (!fs.existsSync(proModulesPath)) {
-    console.log('Pro user modules not found, skipping...');
+    console.log('Package user modules not found, skipping...');
     done();
     return;
   }
 
-  const files = [
+  const files = proModulesPresent('modules', [
     'leavecal',
     'leaves',
     'performance',
-  ];
+  ]);
+  if (files.length === 0) {
+    console.log('Package user modules not found, skipping...');
+    done();
+    return;
+  }
 
   return browserify({
     entries: files.map((file) => getProModulePath('modules', file)),
@@ -493,7 +514,7 @@ gulp.task('pro-modules-js', (done) => {
       compact: true,
     })))
     .pipe(ifElse(!isProduction, () => sourcemaps.write('./')))
-    .pipe(gulp.dest('./extensions/leave_and_performance/web/dist'));
+    .pipe(gulp.dest(`./${lnpPath}/web/dist`));
 });
 
 gulp.task('common-js', (done) => {
@@ -539,6 +560,42 @@ gulp.task('common-js', (done) => {
       .pipe(gulp.dest('./web/dist'));
 });
 
+// SPA migration Phase 1: the persistent React app shell bundle (app-shell.js).
+gulp.task('shell-js', (done) => browserify({
+  entries: ['web/shell/src/index.js'],
+  basedir: '.',
+  debug: true,
+  extensions: ['.js', '.jsx'],
+  cache: {},
+  packageCache: {},
+})
+  .external(vendorsFlat)
+  .transform('babelify', {
+    plugins: [
+      ['@babel/plugin-proposal-class-properties', { loose: true }],
+    ],
+    presets: ['@babel/preset-env', '@babel/preset-react'],
+    extensions: ['.js', '.jsx'],
+  })
+  .transform(require('browserify-css'))
+  .bundle()
+  .pipe(source('app-shell.js'))
+  .pipe(buffer())
+  .pipe(ifElse(!isProduction, () => sourcemaps.init({ loadMaps: true })))
+  .pipe(ifElse(isProduction, () => uglifyes(
+    {
+      compress: true,
+      mangle: {
+        reserved: [],
+      },
+    },
+  )))
+  .pipe(ifElse(isProduction, () => javascriptObfuscator({
+    compact: true,
+  })))
+  .pipe(ifElse(!isProduction, () => sourcemaps.write('./')))
+  .pipe(gulp.dest('./web/dist')));
+
 gulp.task('ejs', (done) => {
   let extension = process.argv.filter((item) => item.substr(0, 3) === '--x');
   if (extension.length === 1) {
@@ -550,8 +607,13 @@ gulp.task('ejs', (done) => {
   extensionName = parts[parts.length - 2]; // second to last (extension name)
   extensionGroup = parts[parts.length - 1]; // last (admin/user)
 
+  // The extension may live under the free extensions/ root or the paid
+  // extensions-pro/ split — build from wherever the source actually is.
+  const extRoot = fs.existsSync(`extensions-pro/${extension}/web/js/index.js`)
+    ? 'extensions-pro' : 'extensions';
+
   try {
-    deleteFiles(`./extensions/${extension}/dist/`);
+    deleteFiles(`./${extRoot}/${extension}/dist/`);
   } catch (e) {
 
   }
@@ -559,7 +621,7 @@ gulp.task('ejs', (done) => {
 
   // map them to our stream function
   return browserify({
-    entries: [`extensions/${extension}/web/js/index.js`],
+    entries: [`${extRoot}/${extension}/web/js/index.js`],
     basedir: '.',
     debug: true,
     cache: {},
@@ -590,7 +652,7 @@ gulp.task('ejs', (done) => {
       compact: true,
     })))
     .pipe(ifElse(!isProduction, () => sourcemaps.write('./')))
-    .pipe(gulp.dest(`./extensions/${extension}/dist`));
+    .pipe(gulp.dest(`./${extRoot}/${extension}/dist`));
 });
 
 gulp.task('clean-dist', (done) => {
@@ -602,8 +664,8 @@ gulp.task('clean-dist', (done) => {
 gulp.task('watch', () => {
   gulp.watch('web/admin/src/*/*.js', gulp.series('admin-js'));
   gulp.watch('web/modules/src/*/*.js', gulp.series('modules-js'));
-  gulp.watch('extensions/leave_and_performance/web/admin/src/*/*.js', gulp.series('pro-admin-js'));
-  gulp.watch('extensions/leave_and_performance/web/modules/src/*/*.js', gulp.series('pro-modules-js'));
+  gulp.watch(`${lnpPath}/web/admin/src/*/*.js`, gulp.series('pro-admin-js'));
+  gulp.watch(`${lnpPath}/web/modules/src/*/*.js`, gulp.series('pro-modules-js'));
   gulp.watch('web/components/*.js', gulp.series('admin-js', 'modules-js'));
   gulp.watch('web/api/*.js', gulp.series('admin-js', 'modules-js'));
 });
@@ -620,6 +682,7 @@ gulp.task('default', gulp.series(
   'admin-js',
   'modules-js',
   'common-js',
+  'shell-js',
 ));
 
 gulp.task('assets', gulp.series(

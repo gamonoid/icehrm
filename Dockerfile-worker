@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.20
 LABEL Maintainer="Thilina, Pituwala <thilina@icehrm.com>" \
       Description="IceHrm Docker Container with Nginx & PHP-FPM based on Alpine Linux."
 
@@ -6,9 +6,12 @@ ARG EXE_ENV
 
 
 # Install packages
-RUN apk --no-cache add php php-fpm php-opcache php-mysqli php-json php-openssl php-curl \
-    php-zlib php-xml php-phar php-intl php-dom php-simplexml php-xmlreader php-ctype php-session \
-    php-mbstring php-gd nginx supervisor curl
+RUN apk --no-cache add php83 php83-fpm php83-opcache php83-mysqli php83-json php83-openssl php83-curl \
+    php83-zlib php83-xml php83-phar php83-intl php83-dom php83-simplexml php83-xmlreader php83-ctype php83-session \
+    php83-mbstring php83-gd nginx supervisor curl
+
+# Create symlink for php command
+RUN ln -sf /usr/bin/php83 /usr/bin/php
 
 # Configure supervisord
 COPY docker/worker/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
@@ -16,14 +19,8 @@ COPY docker/worker/config/supervisord.conf /etc/supervisor/conf.d/supervisord.co
 # persistent / runtime deps
 
 RUN apk add --no-cache \
-        wkhtmltopdf \
-        xvfb \
-        xvfb-run \
         ttf-dejavu ttf-droid ttf-freefont ttf-liberation \
     ;
-
-RUN ln -s /usr/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf;
-RUN chmod +x /usr/local/bin/wkhtmltopdf;
 
 # Setup document root
 RUN mkdir -p /var/www/html

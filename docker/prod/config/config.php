@@ -30,6 +30,13 @@ define('MAX_FILE_SIZE_KB', 10 * 1024);
 
 define('LOG_STDERR', '1');
 
+// Hide the core Settings "Leave" tab. LEAVE_ENABLED is read only by the settings
+// page (core/admin/settings/index.php) and the SPA registry
+// (NativeModuleRegistry::settingsTabs); config.base.php defaults it to true when
+// unset, so defining it false here (loaded before config.base.php) suppresses that
+// tab without affecting the leave extension's own module/menu/area.
+define('LEAVE_ENABLED', false);
+
 if (!defined('APP_WEB_URL')) {
     define('APP_WEB_URL', 'https://icehrm.com');
 }

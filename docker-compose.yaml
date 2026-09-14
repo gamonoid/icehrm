@@ -1,56 +1,79 @@
-version: "3.5"
 services:
   mysql:
     image: mysql:8.0.32
-    #command: --lower_case_table_names=1
+    container_name: icehrm-mysql
+    restart: unless-stopped
     ports:
-      - 9306:3306
+      # Loopback only — an unauthenticated MySQL on 0.0.0.0 is reachable by anything
+      # on the same network (coffee-shop wifi, corporate LAN).
+      - "127.0.0.1:${DB_PORT:-9555}:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: IceHrmR00t
-      MYSQL_USER: dev
-      MYSQL_PASSWORD: dev
-      MYSQL_DATABASE: icehrm
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-icehrm_root_password}
+      MYSQL_DATABASE: ${DB_NAME:-icehrm}
+      MYSQL_USER: ${DB_USER:-icehrm}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-icehrm}
     volumes:
+      - mysql_data:/var/lib/mysql
       - ./docker/init.sql:/docker-entrypoint-initdb.d/setup.sql
-      - ./docker/development/db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASSWORD:-icehrm_root_password}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - icehrm-network
 
   icehrm:
     build:
       context: .
-      dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile
+    container_name: icehrm-app
+    restart: unless-stopped
     ports:
-      - 9080:8080
+      - "${APP_PORT:-5555}:8080"
     environment:
-      ICE_CONFIG_FILE: ../docker/development/config/config.php
+      - APP_BASE_URL=${APP_BASE_URL:-http://localhost:5555}
+      - DB_HOST=${DB_HOST:-mysql}
+      - DB_NAME=${DB_NAME:-icehrm}
+      - DB_USER=${DB_USER:-icehrm}
+      - DB_PASSWORD=${DB_PASSWORD:-icehrm}
     volumes:
-      - .:/var/www/html
+      - app_data:/var/www/html/app/data
+    depends_on:
+      mysql:
+        condition: service_healthy
+        required: false
+    networks:
+      - icehrm-network
 
-  icehrm-worker-dev:
+  icehrm-worker:
     build:
-      context: ./
+      context: .
       dockerfile: Dockerfile-worker
       args:
-        - EXE_ENV=development
-    volumes:
-      - .:/var/www/html
-      - ./docker/development/config/config.php:/var/www/html/app/config.php
-
-  phpmyadmin-dev:
-    depends_on:
-      - mysql
-    image: phpmyadmin
-    ports:
-      - "9081:80"
+        - EXE_ENV=prod
+    container_name: icehrm-worker
+    restart: unless-stopped
     environment:
-      PMA_HOSTS: mysql
-      PMA_PORT: 9306
-      PMA_USER: dev
-      PMA_PASSWORD: dev
+      - DB_HOST=${DB_HOST:-mysql}
+      - DB_NAME=${DB_NAME:-icehrm}
+      - DB_USER=${DB_USER:-icehrm}
+      - DB_PASSWORD=${DB_PASSWORD:-icehrm}
+    volumes:
+      - app_data:/var/www/html/app/data
+    depends_on:
+      - icehrm
+    networks:
+      - icehrm-network
 
-  mailhog:
-    image: ajoergensen/mailhog
-    ports:
-      - "1126:1025"
-      - "9082:8025"
 volumes:
-  db_data:
+  mysql_data:
+    name: icehrm-mysql-data
+  app_data:
+    name: icehrm-app-data
+
+networks:
+  icehrm-network:
+    name: icehrm-network
+    driver: bridge

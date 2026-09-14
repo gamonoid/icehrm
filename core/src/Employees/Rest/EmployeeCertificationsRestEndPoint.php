@@ -4,6 +4,7 @@ namespace Employees\Rest;
 
 use Classes\Data\Query\DataQuery;
 use Classes\Data\Query\Filter;
+use Classes\IceResponse;
 use Classes\RestEndPoint;
 use Qualifications\Common\Model\EmployeeCertification;
 use Qualifications\Common\Model\EmployeeEducation;
@@ -20,6 +21,17 @@ class EmployeeCertificationsRestEndpoint extends RestEndPoint
 
     public function listAll(User $user, $parameter = null)
     {
+        // Ownership gate. $parameter is the employee id straight from the URL; without
+        // this any authenticated employee could read a colleague's records by changing it
+        // (finding 2.9 / gamonoid/icehrm#375). checkBasicPermissions allows Admin, a Manager
+        // over their own subordinates, and an Employee only for themselves - the same guard
+        // already used by EmployeeRestEndPoint::setEmployeeStatusMessage and the attendance
+        // endpoints.
+        $permissionResponse = $this->checkBasicPermissions($user, $parameter);
+        if ($permissionResponse->getStatus() !== IceResponse::SUCCESS) {
+            return $permissionResponse;
+        }
+
         $query = new DataQuery('EmployeeCertification');
         $query->addFilter(new Filter('employee', $parameter));
         $mapping = <<<JSON

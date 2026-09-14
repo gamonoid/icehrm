@@ -95,4 +95,23 @@ class PayslipReport extends PDFReportBuilder implements PDFReportBuilderInterfac
     {
         return "payslip.html";
     }
+
+    /**
+     * Render the single payslip via its Twig template (the payslip design), then
+     * to PDF natively with mPDF — instead of the inherited PDFReportBuilder path
+     * that shells out to wkhtmltopdf. The template layout/design is preserved.
+     */
+    public function createReportFile($report, $data)
+    {
+        $this->initTemplateEngine($report);
+        $template = $this->twig->loadTemplate($this->getTemplate());
+        $html = $template->render($data);
+
+        $fileFirstPart = "Report_" . str_replace(" ", "_", $report->name) . "-" . date("Y-m-d_H-i-s");
+        $fileName = $fileFirstPart . ".pdf";
+        $fileFullName = BaseService::getInstance()->getDataDirectory() . $fileName;
+        \Classes\Pdf\HtmlPdfRenderer::toFile($html, $fileFullName);
+
+        return array($fileFirstPart, $fileName, $fileFullName);
+    }
 }

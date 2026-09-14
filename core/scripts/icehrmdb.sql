@@ -659,17 +659,6 @@ create table `Attendance` (
 ) engine=innodb default charset=utf8;
 
 
-create table `Permissions` (
-	`id` bigint(20) NOT NULL AUTO_INCREMENT,
-	`user_level` enum('Admin','Employee','Manager') default NULL,
-	`module_id` bigint(20) NOT NULL,
-	`permission` varchar(200) default null,
-	`meta` varchar(500) default null,
-	`value` varchar(200) default null,
-	UNIQUE KEY `Module_Permission` (`user_level`,`module_id`,`permission`),
-	primary key  (`id`)
-) engine=innodb default charset=utf8;
-
 create table `DataEntryBackups` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT,
 	`tableType` varchar(200) default null,

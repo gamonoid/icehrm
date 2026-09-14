@@ -17,7 +17,7 @@ class CompanyStructure extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getManagerAccess()
@@ -115,4 +115,15 @@ class CompanyStructure extends BaseModel
 
         return false;
     }
+
+    /**
+     * Columns this model's select boxes may request (see
+     * BaseModel::fieldValueFields). Derived from the pickers that actually exist,
+     * so this allows today's usage and nothing more.
+     */
+    public function fieldValueFields()
+    {
+        return array('id', 'title');
+    }
+
 }

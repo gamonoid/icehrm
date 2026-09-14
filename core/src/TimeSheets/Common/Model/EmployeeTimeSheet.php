@@ -18,22 +18,24 @@ class EmployeeTimeSheet extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getUserAccess()
     {
-        return array("get","element");
+        return array();
     }
 
     public function getUserOnlyMeAccess()
     {
-        return array("element","save","delete");
+        // "get" stays own-rows only: EmployeeTimeSheet is a registered user table,
+        // so get() applies the profile restriction to every list.
+        return array("get","element","add","save","delete");
     }
 
     public function getTotalTimeMinutes()

@@ -8,6 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
+    'PHPMD\\' => array($vendorDir . '/phpmd/phpmd/src/main/php'),
+    'PHPCodeBrowser\\' => array($vendorDir . '/mayflower/php-codebrowser/src'),
     'Net' => array($vendorDir . '/pear/net_smtp', $vendorDir . '/pear/net_socket'),
     'Mail' => array($vendorDir . '/pear/mail'),
     'Google_Service_' => array($vendorDir . '/google/apiclient-services/src'),

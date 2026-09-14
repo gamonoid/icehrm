@@ -1,0 +1,44 @@
+ICEHRM END USER LICENSE AGREEMENT
+NOTICE TO ALL USERS: BY PURCHASING THE MODULE, YOU (EITHER AN INDIVIDUAL OR A SINGLE ENTITY) CONSENT TO BE BOUND BY AND BECOME A PARTY TO THIS AGREEMENT.
+
+All references to "Software" herein shall be deemed to include the software license with which you will be provided by Gamonoid Media Pvt Ltd, as part of the Software.
+
+1. LICENSE GRANT. Subject to the payment of the applicable licence fees, and subject to the terms and conditions of this Agreement, ICEHRM hereby grants to you a non-exclusive, non-transferable right to use one copy of the specified version of the Software and the accompanying documentation (the "Documentation") for the term of this Agreement solely for your own internal business purposes. You may install one copy of the Software for production use.
+.
+2. USE. The Software is licensed as a single product; it may not be used on more than one ICEHRM Server at a time. The Software is "in use" on a Server when its installed on a Server. You shall not, nor permit any third party to copy (other than as expressly permitted herein). You shall not rent, lease or lend the Software to any other person, nor transfer or sub-licence your licence rights to any other person.
+
+3. TERM. This Agreement is effective until terminated as set forth herein. This Agreement will terminate automatically if you fail to comply with any of the conditions, limitations or other requirements described herein. Upon any termination of this Agreement, you must immediately destroy all copies of the Software and the Documentation. You may terminate this Agreement at any point by destroying all copies of the Software and the Documentation.
+
+4. SUPPORT. Gamonoid Media Pvt Ltd will provide you support according to the support agreement subscribed by the company.
+
+5. OWNERSHIP RIGHTS. The Software is protected by copyright laws. ICEHRM and Gamonoid Media Pvt Ltd own and retain all right, title and interest in and to the Software, including all copyrights, patents, trademarks and other intellectual property rights therein. Your possession, installation, or use of the Software does not transfer to you any title to the intellectual property in the Software, and you will not acquire any rights to the Software except as expressly set forth in this Agreement.
+
+6. LIMITED WARRANTY. You may not rent, lease, loan or resell the Software. You may not permit third parties to benefit from the use or functionality of the Software via a timesharing, service bureau or other arrangement, except to the extent such use is specified in the applicable list price or product packaging for the Software. You may not transfer any of the rights granted to you under this Agreement. You may not modify, or create derivative works based upon, the Software in whole or in part. You may not copy the Software or Documentation except as expressly permitted in Section 1 above. You may not remove any proprietary notices or labels on the Software. All rights not expressly set forth hereunder are reserved by ICEHRM. ICEHRM reserves the right to periodically conduct audits upon advance written notice to verify compliance with the terms of this Agreement.
+
+7. WARRANTY and DISCLAIMER. 
+
+(i) Gamonoid Media Pvt Ltd. warrants that for 30 days from first download or installation the Software will perform substantially in accordance with the functionality described in the Documentation (http://blog.icehrm.com) when operated properly and in the manner specified in the Documentation. 
+
+(ii) You accept all responsibility for the selection of this Software to meet your requirements. 
+
+(iii) Gamonoid Media Pvt Ltd. does not warrant that the Software and/or the Documentation will be suitable for such requirements nor that any use will be uninterrupted and error free.
+
+(iv) The warranty in (i) shall not apply if you (a) make or cause to be made any modifications to this Software, (b) use the Software in a manner for which it was not intended or (c) use the Software other than as permitted under this Agreement. 
+
+(vii) The warranties and conditions stated in this Agreement are in lieu of all other conditions, warranties or other terms concerning the supply or purported supply of, failure to supply or delay in supplying the Software or the Documentation which might but for this paragraph (vii) have effect between the ICEHRM and you or would otherwise be implied into or incorporated into this Agreement or any collateral contract, whether by statute, common law or otherwise, all of which are hereby excluded (including, without limitation, the implied conditions, warranties or other terms as to satisfactory quality, fitness for purpose or as to the use of reasonable skill and care).
+
+8. LIMITATION of LIABILITY. Gamonoid Media Pvt Ltd. shall have no liability (whether in contract, tort, restitution or otherwise) for any of the following losses or damage (whether such losses or damage were foreseen, foreseeable, known or otherwise): 
+- Loss of revenue; 
+- Loss of actual or anticipated profits (including for loss of profits on contracts); 
+- Loss of the use of money; 
+- Loss of anticipated savings; 
+- Loss of business; 
+- Loss of opportunity; 
+- Loss of goodwill; 
+- Loss of reputation; 
+- Loss of, damage to or corruption of data; 
+or 
+Any indirect or consequential loss or damage howsoever caused (including, for the avoidance of doubt, where such loss or damage is of the type specified in paragraph (ii), (a) to (ii), (i). 
+The ICEHRM liability (whether in contract, tort, restitution or otherwise) arising out of or in connection with the supply of the Software shall in no circumstances exceed a sum equal to the amount equally paid by you for the Software.
+The construction and interpretation of this Agreement shall be governed in accordance with the laws of Sri Lanka. The parties hereby submit to the jurisdiction of the courts of Sri Lanka save that ICEHRM as claimant shall be entitled to initiate proceedings in any court of competent jurisdiction.
+This Agreement contains the entire understanding of the parties with respect to the subject matter hereof and supersedes all and any prior understandings, undertakings and promises between you and ICEHRM, whether oral or in writing, which have been given or may be implied from anything written or said in negotiations between us or our representatives prior to this Agreement and all prior agreements between the parties relating to the matters aforesaid shall cease to have effect as from the Effective Date.

@@ -35,4 +35,9 @@ class ConnectionAdminManager extends AbstractModuleManager
     {
         // TODO: Implement setupModuleClassDefinitions() method.
     }
+
+    public function setupRestEndPoints()
+    {
+        (new ConnectionApiController())->registerEndPoints();
+    }
 }

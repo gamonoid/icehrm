@@ -1,0 +1,259 @@
+<?php
+/**
+ * React app shell entry (SPA migration Phase 1).
+ *
+ * Serves the single-page shell: authenticates via the existing session, mints a
+ * short-lived JWT (same as core/footer.php), and renders an HTML page that loads
+ * the antd vendor bundles + app-shell.js. The shell then calls /appshell/bootstrap
+ * to render the sidebar/top-nav. Reachable at: {CLIENT_BASE_URL}ui/
+ *
+ * This runs ALONGSIDE the legacy shell (header.php) behind a separate URL, so it
+ * can be validated without disturbing the existing app. See docs/SPA_MIGRATION_PLAN.md.
+ */
+
+// The New Relic PHP agent auto-injects its browser (RUM) agent into served HTML.
+// Its fetch wrapper copies page-derived strings into request headers, which throws
+// "String contains non ISO-8859-1 code point" for tenants whose company/user data
+// is non-Latin (CJK etc.), killing every SPA request before it is sent. Browser
+// monitoring was never intentionally part of the SPA — keep injection off here.
+if (function_exists('newrelic_disable_autorum')) {
+    newrelic_disable_autorum();
+}
+
+include 'includes.inc.php';
+
+if (empty($user) || empty($user->email)) {
+    header('Location:' . CLIENT_BASE_URL . 'login.php');
+    exit();
+}
+
+// Forced password reset. The account still stores an unsalted MD5 hash, so the
+// credential just used is one a database leak would hand straight to an attacker.
+// Serve the reset form INSTEAD of the shell — no token is minted and no module data
+// is loaded, so there is nothing to work around by closing the dialog. service.php
+// and data.php refuse everything except the reset action while this holds, and a
+// successful reset ends the session and returns the user to the login page.
+if (\Classes\PasswordManager::userNeedsPasswordReset($user)) {
+    include CLIENT_PATH . '/password-reset-required.php';
+    exit();
+}
+
+// Loading the SPA means the user is on the new UI — remember it in the session
+// AND persist it on the user record so logout/login keeps them here.
+\Utils\SessionUtils::saveSessionString('uiMode', 'new');
+$spaUser = new \Users\Common\Model\User();
+$spaUser->Load("id = ?", array($user->id));
+if (!empty($spaUser->id) && $spaUser->ui_mode !== 'new') {
+    $spaUser->ui_mode = 'new';
+    $spaUser->Save();
+}
+
+// Web SPA session token (type 'Web') — revoked on logout, separate from the
+// long-lived 'FullAPI' token used by mobile/API clients. Long-lived so the SPA
+// doesn't force a page refresh every hour to renew it.
+$token = $jwtService->create(\Classes\JwtTokenService::WEB_SESSION_LIFETIME, 'Web');
+$restApiBase = CLIENT_BASE_URL . 'api/';
+
+$companyNameSetting = \Classes\SettingsManager::getInstance()->getSetting('Company: Name');
+if (empty($companyNameSetting) || $companyNameSetting === 'Sample Company Pvt Ltd') {
+    $companyNameSetting = 'IceHrm';
+}
+
+$shellConfig = array(
+    'token' => $token,
+    'restApiBase' => $restApiBase,
+    'clientBaseUrl' => CLIENT_BASE_URL,
+    'baseUrl' => BASE_URL,
+    'userLevel' => $user->user_level,
+);
+?><!DOCTYPE html>
+<html>
+<head>
+<?php
+// Google Analytics (GA4) — same property as the legacy shell (core/header.php),
+// so users moving to the new UI keep reporting into it instead of silently
+// dropping out of the numbers.
+//
+// The SPA is a SINGLE document load: gtag's automatic page_view would fire once
+// and every module opened afterwards would be invisible. Auto page_view is
+// therefore switched off and one is sent per route change below.
+//
+// Defining GA4_MEASUREMENT_ID as '' disables analytics entirely (useful for an
+// on-premise deployment that should not report to us).
+$ga4Id = defined('GA4_MEASUREMENT_ID') ? trim((string) GA4_MEASUREMENT_ID) : '';
+if ($ga4Id !== '') :
+?>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?= rawurlencode($ga4Id) ?>"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        // send_page_view:false — the shell sends every page_view itself, the first
+        // one included, so a view is counted exactly once and never twice.
+        gtag('config', <?= json_encode($ga4Id) ?>, { send_page_view: false });
+
+        (function () {
+            var lastUrl = null;
+
+            // The route lives in the hash ('#modules::time_sheets'). GA4 drops the
+            // fragment when it derives the page path, so every view would collapse
+            // into one "/ui/" row. Fold the route into the path instead, turning the
+            // shell's separators into path segments:
+            //   #modules::time_sheets  -> /app/ui/modules/time_sheets
+            //   #extension::esign|user -> /app/ui/extension/esign/user
+            function route() {
+                var raw = (window.location.hash || '').replace(/^#\/?/, '');
+                if (!raw) { return ''; }
+                try { raw = decodeURIComponent(raw); } catch (e) { /* keep raw */ }
+                return raw;
+            }
+
+            function pageLocation(r) {
+                // Normalise '/app/ui/' or '/app/ui/index.php' to a clean directory base.
+                var base = window.location.pathname.replace(/index\.php$/, '');
+                if (base.charAt(base.length - 1) !== '/') { base += '/'; }
+                return window.location.origin + base
+                    + r.replace(/::/g, '/').replace(/\|/g, '/')
+                    + window.location.search;
+            }
+
+            function sendPageView() {
+                var r = route();
+                var url = pageLocation(r);
+                // One navigation can reach us twice (hashchange AND the history
+                // patch below); only the first is counted.
+                if (url === lastUrl) { return; }
+                lastUrl = url;
+                gtag('event', 'page_view', {
+                    // The document title is the company name and never changes, so
+                    // the route is the only thing that makes the GA4 Pages report
+                    // readable.
+                    page_title: r || 'home',
+                    page_location: url
+                });
+            }
+
+            // The shell navigates BOTH ways — `location.hash = ...` (fires
+            // hashchange) and `history.replaceState()` (fires nothing at all) — so
+            // cover both, or the modules reached the second way go unrecorded.
+            window.addEventListener('hashchange', sendPageView);
+            window.addEventListener('popstate', sendPageView);
+            ['pushState', 'replaceState'].forEach(function (name) {
+                var original = window.history[name];
+                if (typeof original !== 'function') { return; }
+                window.history[name] = function () {
+                    var result = original.apply(this, arguments);
+                    // The URL is already updated when the call returns.
+                    try { sendPageView(); } catch (e) { /* never break navigation */ }
+                    return result;
+                };
+            });
+
+            sendPageView(); // initial load (may already carry a deep-linked route)
+        })();
+    </script>
+<?php endif; ?>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title><?= htmlspecialchars($companyNameSetting) ?></title>
+    <link rel="shortcut icon" href="https://icehrm.s3.amazonaws.com/images/icon16.png">
+    <link href="<?= BASE_URL ?>css/fa-6.4.0/css/all.css?v=<?= $cssVersion ?>" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0; padding: 0; height: 100%; background: #f4f6f8;
+            font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px; color: rgba(0, 0, 0, 0.87);
+            -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+        }
+        #app-shell-root { height: 100%; }
+        /* Kill the browser focus ring antd draws around focusable tab panes */
+        .ant-tabs-tabpane:focus, .ant-tabs-tabpane:focus-visible { outline: none !important; }
+        /* Natively-mounted legacy modules: neutralise leftover legacy block styling */
+        .reviewBlock { border: 0 !important; box-shadow: none !important; padding: 0 !important; margin: 0 !important; }
+        .app-shell-loading {
+            display: flex; align-items: center; justify-content: center;
+            height: 100vh; color: #999; font-family: -apple-system, system-ui, sans-serif;
+        }
+        /* Admin/Employee "Viewing as" role switch chip (sidebar) */
+        .ice-role-switch {
+            transition: background .15s ease, border-color .15s ease, transform .05s ease;
+        }
+        .ice-role-switch:hover {
+            background: rgba(255, 255, 255, 0.11) !important;
+            border-color: rgba(255, 255, 255, 0.2) !important;
+        }
+        .ice-role-switch:hover .ice-role-switch-swap {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        .ice-role-switch:active { transform: translateY(1px); }
+        /* g2plot donut centre label is rendered as HTML with a hardcoded dark
+           grey colour (#4D4D4D) — override it in dark mode so it stays legible. */
+        body[data-color-mode="dark"] .ring-guide-html,
+        body[data-color-mode="dark"] .ring-guide-name,
+        body[data-color-mode="dark"] .ring-guide-value {
+            color: rgba(255, 255, 255, 0.85) !important;
+        }
+        /* Legacy view-mode form fields render as disabled inputs with a hardcoded
+           near-black colour (IceForm.js placeholder type) — invisible on dark.
+           Force legible light text inside dark-mode modals. */
+        body[data-color-mode="dark"] .ant-modal .ant-input[disabled],
+        body[data-color-mode="dark"] .ant-modal .ant-input-disabled,
+        body[data-color-mode="dark"] .ant-modal textarea.ant-input[disabled] {
+            color: rgba(255, 255, 255, 0.85) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.85) !important;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Apply the saved colour mode before React mounts, so dark-mode users
+        // never see a light flash. Mirrors readColorMode() in the shell bundle.
+        (function () {
+            try {
+                var m = localStorage.getItem('shell-color-mode');
+                if (m !== 'dark' && m !== 'light') {
+                    m = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                        ? 'dark' : 'light';
+                }
+                var bg = m === 'dark' ? '#0f141b' : '#f4f6f8';
+                var fg = m === 'dark' ? 'rgba(255,255,255,0.92)' : 'rgba(0,0,0,0.87)';
+                document.documentElement.style.background = bg;
+                document.body.style.background = bg;
+                document.body.style.color = fg;
+                document.body.setAttribute('data-color-mode', m);
+            } catch (e) { /* ignore */ }
+        })();
+    </script>
+    <div id="app-shell-root">
+        <div class="app-shell-loading">Loading&hellip;</div>
+    </div>
+
+    <script>
+        window.__shellErrors = [];
+        window.addEventListener('error', function (e) {
+            window.__shellErrors.push('error: ' + (e.message || '') + ' @ ' + (e.filename || '') + ':' + (e.lineno || ''));
+        });
+        window.addEventListener('unhandledrejection', function (e) {
+            window.__shellErrors.push('unhandledrejection: ' + ((e.reason && (e.reason.stack || e.reason.message)) || e.reason));
+        });
+    </script>
+
+    <script type="application/json" id="app-shell-config"><?= json_encode($shellConfig) ?></script>
+
+<?php
+    // Cache-bust the shell bundle on every rebuild during development.
+    $shellBundlePath = APP_BASE_PATH . '../web/dist/app-shell.js';
+    $shellBundleVer = file_exists($shellBundlePath) ? filemtime($shellBundlePath) : $jsVersion;
+?>
+    <script src="<?= BASE_URL ?>dist/vendorReact.js?v=<?= $jsVersion ?>"></script>
+    <script src="<?= BASE_URL ?>dist/vendorAntd.js?v=<?= $jsVersion ?>"></script>
+    <script src="<?= BASE_URL ?>dist/vendorAntdIcons.js?v=<?= $jsVersion ?>"></script>
+    <script src="<?= BASE_URL ?>dist/vendorAntv.js?v=<?= $jsVersion ?>"></script>
+    <script src="<?= BASE_URL ?>dist/app-shell.js?v=<?= $shellBundleVer ?>"></script>
+</body>
+</html>

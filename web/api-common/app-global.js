@@ -124,21 +124,9 @@ function randomString(length) {
   return str;
 }
 
-function verifyInstance(key) {
-  const object = {};
-  object.a = 'verifyInstance';
-  object.key = key;
-  $.post(this.baseUrl, object, (data) => {
-    if (data.status == 'SUCCESS') {
-      $('#verifyModel').hide();
-      $('body').removeClass('modal-open');
-      $('.modal-backdrop').remove();
-      alert('Success: Instance Verified');
-    } else {
-      alert(`Error: ${data.message}`);
-    }
-  }, 'json');
-}
+// verifyInstance() was removed along with the service action it posted to. Instance
+// verification is no longer part of the product, and the instance key is generated
+// server-side — there is deliberately no client-side way to set it.
 
 function nl2br(str, is_xhtml) {
   //  discuss at: http://phpjs.org/functions/nl2br/

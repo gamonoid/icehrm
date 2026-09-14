@@ -10,6 +10,15 @@
 import ReactModalAdapterBase from './ReactModalAdapterBase';
 
 class ReactLogViewAdapter extends ReactModalAdapterBase {
+  // The "mod" reference the status/log customActions route through. getLogs and
+  // changeStatus both go to admin=<modulePathName> for these approve/log
+  // adapters (matching the legacy hardcoded admin= prefix), regardless of
+  // whether the module is shown in the admin or user area. The native card list
+  // reads this so those actions hit the right action manager.
+  getActionModuleRef() {
+    return `admin=${this.modulePathName}`;
+  }
+
   getLogs(id) {
     const object = { id };
     const reqJson = JSON.stringify(object);

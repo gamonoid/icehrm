@@ -43,8 +43,8 @@ class EmployeeTaskCreator implements TaskCreator
                 if (empty($employeeState->id)) {
                     return (new Task(Task::PRIORITY_TOP, 'You haven\'t set your status for the day.'))
                         ->setLink(
-                            CLIENT_BASE_URL.'?g=modules&n=dashboard&m=module_Personal_Information',
-                            'Set your Status and Goals'
+                            CLIENT_BASE_URL.'?g=modules&n=employees&m=module_Personal_Information',
+                            'Set your Status'
                         );
                 }
 

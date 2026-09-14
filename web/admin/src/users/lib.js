@@ -146,6 +146,13 @@ class UserAdapter extends ReactModalAdapterBase {
     ];
     const formContainer = React.createRef();
     const formReference = React.createRef();
+    const container = document.getElementById('UserPasswordChangeForm');
+    // Always remount: if a previous modal instance is still mounted (e.g. it was
+    // cancelled, not saved), React reuses it on re-render and the fresh ref stays
+    // null — so formContainer.current.show() threw and the dialog never reopened
+    // for the next user. Unmounting first guarantees a clean mount whose ref is
+    // attached before we call show() (from the render callback).
+    ReactDOM.unmountComponentAtNode(container);
     ReactDOM.render(
       <IceFormModal
         ref={formContainer}
@@ -156,7 +163,7 @@ class UserAdapter extends ReactModalAdapterBase {
           modJs.apiClient.post('user/password', values)
             .then((response) => {
               closeCallback();
-              ReactDOM.unmountComponentAtNode(document.getElementById('UserPasswordChangeForm'));
+              ReactDOM.unmountComponentAtNode(container);
             }).catch((error) => {
               formContainer.current.iceFormReference.current.showError(
                 error.response.data.error[0][0].message,
@@ -164,12 +171,42 @@ class UserAdapter extends ReactModalAdapterBase {
             });
         }}
       />,
-      document.getElementById('UserPasswordChangeForm'),
+      container,
+      () => formContainer.current.show({ id }),
     );
-    formContainer.current.show({ id });
   }
 
   saveCallback(params, showError, closeCallback, adapter) {
+    // When invoked from the employee profile ("Create a User"), there is no
+    // per-form CSRF token primed in the SPA shell. Route through the
+    // token-authenticated REST endpoint instead of the CSRF-guarded saveUser
+    // custom action. createUserEmployeeId is set by EmployeeAdapter.createUser.
+    if (adapter.createUserEmployeeId) {
+      const employeeId = adapter.createUserEmployeeId;
+      adapter.apiClient.post(`employees/${employeeId}/create-user`, params)
+        .then((response) => {
+          const data = response.data || {};
+          if (data.error) {
+            showError(data.error[0]?.[0]?.message || 'Failed to create user');
+            return;
+          }
+          adapter.createUserEmployeeId = null;
+          closeCallback();
+          if (data.email_status === 'sent') {
+            adapter.showMessage('Create User', `An email has been sent to ${data.user.email} with a temporary password to login to IceHrm.`);
+          } else {
+            adapter.showMessage('Create User', 'User created successfully.');
+          }
+          if (adapter.saveCompleteCallback) {
+            adapter.saveCompleteCallback();
+          }
+        })
+        .catch((error) => {
+          showError(error.response?.data?.error?.[0]?.[0]?.message || 'Failed to create user');
+        });
+      return;
+    }
+
     params.csrf = $(`#${adapter.getTableName()}Form`).data('csrf');
     const reqJson = JSON.stringify(params);
 
@@ -400,7 +437,6 @@ class UserInvitationAdapter extends ReactModalAdapterBase {
     return [
       ['id', { label: 'ID', type: 'hidden', validation: '' }],
       ['email', { label: 'Email', type: 'text', validation: 'email' }],
-      ['employee_id', { label: 'Employee Number', type: 'text', validation: '' }],
       ['first_name', { label: 'First Name', type: 'text', validation: '' }],
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
       ['user_level',
@@ -448,7 +484,6 @@ class UserInvitationAdapter extends ReactModalAdapterBase {
         fields: [
           'id',
           'email',
-          'employee_id',
           'first_name',
           'last_name',
           'user_level',

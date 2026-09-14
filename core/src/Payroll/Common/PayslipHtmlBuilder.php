@@ -437,7 +437,7 @@ class PayslipHtmlBuilder
             height: auto;
         }
         a {
-            color: #1677ff;
+            color: #333;
             text-decoration: underline;
         }
         .container {
@@ -708,7 +708,7 @@ class PayslipHtmlBuilder
             $styleStr .= "text-align: {$styles['textAlign']}; ";
         }
         if (!empty($styles['color'])) {
-            $styleStr .= "color: {$styles['color']}; ";
+            $styleStr .= "color: " . $this->normalizeToBlackShade($styles['color']) . "; ";
         }
         if (!empty($styles['backgroundColor'])) {
             $styleStr .= "background-color: {$styles['backgroundColor']}; ";
@@ -730,6 +730,41 @@ class PayslipHtmlBuilder
         }
 
         return trim($styleStr);
+    }
+
+    /**
+     * Coerce a font colour to a shade of black. Payslips should be monochrome, so any
+     * chromatic colour from the design (blue/green/yellow/…) collapses to near-black, while
+     * existing greys (which are already shades of black) are preserved.
+     */
+    private function normalizeToBlackShade(string $color): string
+    {
+        $rgb = $this->parseHexColor($color);
+        if ($rgb === null) {
+            // Unparseable (named colour / gradient) — force a safe near-black.
+            return '#1a1a1a';
+        }
+        [$r, $g, $b] = $rgb;
+        // Low chroma == already a grey/black; keep it. Otherwise it's a colour → near-black.
+        if ((max($r, $g, $b) - min($r, $g, $b)) <= 16) {
+            return $color;
+        }
+        return '#1a1a1a';
+    }
+
+    /**
+     * Parse a #RGB or #RRGGBB colour into [r,g,b], or null if not a hex colour.
+     */
+    private function parseHexColor(string $color): ?array
+    {
+        $hex = ltrim(trim($color), '#');
+        if (strlen($hex) === 3) {
+            $hex = $hex[0].$hex[0].$hex[1].$hex[1].$hex[2].$hex[2];
+        }
+        if (strlen($hex) !== 6 || !ctype_xdigit($hex)) {
+            return null;
+        }
+        return [hexdec(substr($hex, 0, 2)), hexdec(substr($hex, 2, 2)), hexdec(substr($hex, 4, 2))];
     }
 
     /**
@@ -822,16 +857,16 @@ class PayslipHtmlBuilder
 
             // Check if it's a payroll column (green styling)
             if (strpos($fieldValue, 'column_') === 0) {
-                return '<span class="field-value" style="background-color: #f6ffed; padding: 2px 8px; border-radius: 4px; color: #52c41a;">{{' . htmlspecialchars($fieldValue, ENT_QUOTES, 'UTF-8') . '}}</span>';
+                return '<span class="field-value" style="color: #1a1a1a; font-weight: 500;">{{' . htmlspecialchars($fieldValue, ENT_QUOTES, 'UTF-8') . '}}</span>';
             }
 
             // Check if it's a payroll field (orange styling)
             if ($this->isPayrollField($fieldValue)) {
-                return '<span class="field-value" style="background-color: #fff7e6; padding: 2px 8px; border-radius: 4px; color: #fa8c16;">{{' . htmlspecialchars($fieldValue, ENT_QUOTES, 'UTF-8') . '}}</span>';
+                return '<span class="field-value" style="color: #1a1a1a; font-weight: 500;">{{' . htmlspecialchars($fieldValue, ENT_QUOTES, 'UTF-8') . '}}</span>';
             }
 
             // Default: employee field (blue styling)
-            return '<span class="field-value" style="background-color: #e6f4ff; padding: 2px 8px; border-radius: 4px; color: #1677ff;">{{' . htmlspecialchars($fieldValue, ENT_QUOTES, 'UTF-8') . '}}</span>';
+            return '<span class="field-value" style="color: #1a1a1a; font-weight: 500;">{{' . htmlspecialchars($fieldValue, ENT_QUOTES, 'UTF-8') . '}}</span>';
         }, $escaped);
 
         return $result;
@@ -860,7 +895,7 @@ class PayslipHtmlBuilder
             $html .= "<span class=\"field-label\">{$fieldLabel}: </span>";
         }
 
-        $html .= "<span class=\"field-value\" style=\"background-color: #e6f4ff; padding: 2px 8px; border-radius: 4px; color: #1677ff;\">{$placeholder}</span>";
+        $html .= "<span class=\"field-value\" style=\"color: #1a1a1a; font-weight: 500;\">{$placeholder}</span>";
         $html .= "</div>\n";
 
         return $html;
@@ -889,7 +924,7 @@ class PayslipHtmlBuilder
             $html .= "<span class=\"field-label\">{$fieldLabel}: </span>";
         }
 
-        $html .= "<span class=\"field-value\" style=\"background-color: #fff7e6; padding: 2px 8px; border-radius: 4px; color: #fa8c16;\">{$placeholder}</span>";
+        $html .= "<span class=\"field-value\" style=\"color: #1a1a1a; font-weight: 500;\">{$placeholder}</span>";
         $html .= "</div>\n";
 
         return $html;
@@ -918,7 +953,7 @@ class PayslipHtmlBuilder
             $html .= "<span class=\"field-label\">" . htmlspecialchars($columnName, ENT_QUOTES, 'UTF-8') . ": </span>";
         }
 
-        $html .= "<span class=\"field-value\" style=\"background-color: #f6ffed; padding: 2px 8px; border-radius: 4px; color: #52c41a;\">{$placeholder}</span>";
+        $html .= "<span class=\"field-value\" style=\"color: #1a1a1a; font-weight: 500;\">{$placeholder}</span>";
         $html .= "</div>\n";
 
         return $html;

@@ -13,10 +13,11 @@ function init(data) {
   modJsList.tabOvertimeCategory.setDataPipe(new IceDataPipe(modJsList.tabOvertimeCategory));
   modJsList.tabOvertimeCategory.setAccess(data.permissions.OvertimeCategory);
 
-  modJsList.tabEmployeeOvertime = new EmployeeOvertimeAdminAdapter('EmployeeOvertime', 'EmployeeOvertime', '', '');
+  modJsList.tabEmployeeOvertime = new EmployeeOvertimeAdminAdapter('EmployeeOvertime', 'EmployeeOvertime', '', 'start_time desc');
   modJsList.tabEmployeeOvertime.setObjectTypeName('Overtime Request');
   modJsList.tabEmployeeOvertime.setDataPipe(new IceDataPipe(modJsList.tabEmployeeOvertime));
   modJsList.tabEmployeeOvertime.setAccess(data.permissions.EmployeeOvertime);
+  modJsList.tabEmployeeOvertime.setShowPageSizeChanger(true);
 
 
   window.modJs = modJsList.tabOvertimeCategory;

@@ -19,6 +19,8 @@ if(\Classes\SettingsManager::getInstance()->getSetting('Api: REST Api Enabled') 
 
     \Utils\LogManager::getInstance()->debug('Api registered URI: '.$echoRoute);
 
+    require __DIR__ . '/appshell-routes.php';
+
     $moduleManagers = \Classes\BaseService::getInstance()->getModuleManagers();
 
     foreach ($moduleManagers as $moduleManagerObj) {
@@ -27,6 +29,11 @@ if(\Classes\SettingsManager::getInstance()->getSetting('Api: REST Api Enabled') 
     }
 
     $method = strtoupper($_REQUEST['method']);
+
+    // Global auth gate: every endpoint requires a valid bearer token (or an
+    // authenticated session) unless allowlisted in RestApiAuthGate.
+    \Classes\RestApiAuthGate::enforce($_GET['url'], $method);
+
     \Classes\IceRoute::dispatch($_GET['url'], $method);
 
 

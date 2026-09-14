@@ -5,84 +5,61 @@ $moduleData = [
 	'controller_url' => CLIENT_BASE_URL.'service.php',
 	'user_level' => $user->user_level,
 ];
-$content = null;
 
-if (isset($_REQUEST['object']) && isset($_REQUEST['id']) && isset($_REQUEST['field'])) {
+// New-content path may mint a hash; legacy redirects so the URL becomes the
+// canonical shareable hash URL. Do that handshake before the full resolve.
+if (!isset($_REQUEST['hash'])
+	&& isset($_REQUEST['object']) && isset($_REQUEST['id']) && isset($_REQUEST['field'])) {
 	$object = EditorService::getRelatedObject($_REQUEST['object'], $_REQUEST['id']);
 	$access = EditorService::getObjectAccess($object);
-    if (!in_array('element', $access)) {
-        $content = EditorService::getContent($_REQUEST['object'], $_REQUEST['id'], $_REQUEST['field']);
-    }
-	if ($content === null && !in_array('save', $access)) {
+	$newContent = null;
+	if (in_array('element', $access)) {
+		$newContent = EditorService::getContent($_REQUEST['object'], $_REQUEST['id'], $_REQUEST['field']);
+	}
+	if ($newContent === null && !in_array('save', $access)) {
 		echo 'You are not allowed to create this document';
 		exit();
 	}
-
-    if ($content === null && in_array('save', $access)) {
-        $content = EditorService::createContent($_REQUEST['object'], $_REQUEST['id'], $_REQUEST['field'], $_REQUEST['title'] ?? null);
-    }
-}
-
-if (!isset($_REQUEST['hash']) && $content !== null && !empty($content->hash)) {
-	$string = '<script type="text/javascript">';
-	$string .= 'window.location = "' . CLIENT_BASE_URL.'?g=extension&n=editor|user&m='.$_REQUEST['m'].'&hash='.$content->hash . '"';
-	$string .= '</script>';
-
-	echo $string;
-    exit();
-}
-
-if (!isset($_REQUEST['hash'])) {
-	echo 'Not found';
-	exit();
-}
-
-$content = EditorService::getContentByHash($_REQUEST['hash']);
-/** @var \Model\BaseModel $object */
-$object = EditorService::getRelatedObject($content->object_type, $content->object_id);
-if (!$object || empty($object->id)) {
-	echo 'No object for the document';
-	exit();
-}
-$access = EditorService::getObjectAccess($object);
-
-if (!in_array('element', $access)) {
-	echo 'Not allowed to view the document';
-	exit();
-}
-$data = json_decode($content->content) ?? null;
-$readOnly = ($_REQUEST['view'] == '1' || !in_array('save', $access))?'true':'false';
-
-$readOnlyTypes = [
-    'LmsEmployeeCourse',
-    'LmsEmployeeLesson',
-];
-
-if (in_array($content->object_type, $readOnlyTypes)) {
-	$readOnly = 'true';
-}
-$canSelectCheckBoxes = ($_REQUEST['checks'] == '1' && in_array('element', $access))?'true':'false';
-
-$editorPermissions = $object->getEditorPermissions();
-if (in_array('default', $editorPermissions)) {
-    // do nothing
-} else {
-    if ($readOnly == 'false' && !in_array('edit', $editorPermissions)) {
-        $readOnly = 'true';
-    }
-
-    if (in_array('view', $editorPermissions)) {
-		$readOnly = 'true';
-    }
-
-	if (in_array('check', $editorPermissions)) {
-		$canSelectCheckBoxes = 'true';
+	if ($newContent === null && in_array('save', $access)) {
+		$newContent = EditorService::createContent($_REQUEST['object'], $_REQUEST['id'], $_REQUEST['field'], $_REQUEST['title'] ?? null);
+	}
+	if ($newContent !== null && !empty($newContent->hash)) {
+		$string = '<script type="text/javascript">';
+		$string .= 'window.location = "' . CLIENT_BASE_URL.'?g=extension&n=editor|user&m='.$_REQUEST['m'].'&hash='.$newContent->hash . '"';
+		$string .= '</script>';
+		echo $string;
+		exit();
 	}
 }
 
+// Single source of truth (shared with the SPA's GET editor/document endpoint).
+$resolved = EditorService::resolveDocument([
+	'object' => $_REQUEST['object'] ?? null,
+	'id' => $_REQUEST['id'] ?? null,
+	'field' => $_REQUEST['field'] ?? null,
+	'hash' => $_REQUEST['hash'] ?? null,
+	'view' => (isset($_REQUEST['view']) && $_REQUEST['view'] == '1'),
+	'checks' => (isset($_REQUEST['checks']) && $_REQUEST['checks'] == '1'),
+	'title' => $_REQUEST['title'] ?? null,
+]);
 
-$employees = EditorService::getEmployeeNamesAndImages();
-$sideBarObject = $object->getEditorSideBarObject($readOnly === 'true'?'view':'edit');
+if (empty($resolved['allowed'])) {
+	echo $resolved['error'] ?? 'Not found';
+	exit();
+}
+
+$content = (object) [
+	'id' => $resolved['contentId'],
+	'hash' => $resolved['hash'],
+	'object_type' => $resolved['objectType'],
+	'object_id' => $resolved['objectId'],
+	'object_field' => $resolved['objectField'],
+];
+$data = $resolved['data'];
+$readOnly = $resolved['readOnly'] ? 'true' : 'false';
+$canSelectCheckBoxes = $resolved['canSelectChecks'] ? 'true' : 'false';
+$employees = $resolved['employees'];
+$sideBarObject = $resolved['sideBarObject'];
 ?>
 <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
 <link href="<?=BASE_URL?>js/editorjs/public/assets/demo.css" rel="stylesheet">

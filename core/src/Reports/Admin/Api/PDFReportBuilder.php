@@ -8,7 +8,6 @@
 
 namespace Reports\Admin\Api;
 
-use Classes\BaseService;
 use Classes\SettingsManager;
 use Classes\UIManager;
 use Utils\LogManager;
@@ -29,14 +28,21 @@ class PDFReportBuilder extends ReportBuilder
         return $defaultData;
     }
 
+    /**
+     * Templates live beside the code that renders them, in src/Reports/templates/.
+     *
+     * They used to sit in the reports MODULE directories, selected by a branch on
+     * $report->table. That branch could never work: it was written with a single "="
+     * — an assignment, always truthy — so every call took the "UserReports" path AND
+     * silently overwrote $report->table as a side effect. The admin branch was dead,
+     * and its directory did not even contain a customTemplates folder. Both reports
+     * modules are gone now (superseded by the advance_reports extension), so there is
+     * one location and no branch: PayslipReport, the only subclass, renders payslips
+     * for payrolls whose template has no stored data.
+     */
     protected function initTemplateEngine($report)
     {
-        if ($report->table = "UserReports") {
-            $path = APP_BASE_PATH."modules/reports/customTemplates/";
-        } else {
-            $path = APP_BASE_PATH."admin/reports/customTemplates/";
-        }
-        $loader = new \Twig_Loader_Filesystem($path);
+        $loader = new \Twig_Loader_Filesystem(APP_BASE_PATH . "src/Reports/templates/");
 
         if (defined('CACHE_THEME') && CACHE_THEME) {
             $twigOptions = array(
@@ -49,40 +55,11 @@ class PDFReportBuilder extends ReportBuilder
         $this->twig = new \Twig_Environment($loader, $twigOptions);
     }
 
-    public function createReportFile($report, $data)
-    {
-        $fileFirstPart = "Report_".str_replace(" ", "_", $report->name)."-".date("Y-m-d_H-i-s");
-        $fileName = $fileFirstPart.".html";
-
-        $fileFullName = BaseService::getInstance()->getDataDirectory().$fileName;
-
-        $this->initTemplateEngine($report);
-
-        $template = $this->twig->loadTemplate($this->getTemplate());
-        $result = $template->render($data);
-
-        $fp = fopen($fileFullName, 'w');
-        fwrite($fp, $result);
-        fclose($fp);
-
-        try {
-            $fileFullNamePdf = BaseService::getInstance()->getDataDirectory().$fileFirstPart.".pdf";
-            //Try generating the pdf
-            LogManager::getInstance()->debug(
-                "wkhtmltopdf 1:".print_r(WK_HTML_PATH." ".$fileFullName." ".$fileFullNamePdf, true)
-            );
-            exec(WK_HTML_PATH." ".$fileFullName." ".$fileFullNamePdf, $output, $ret);
-
-            LogManager::getInstance()->debug("wkhtmltopdf 2:".print_r($output, true));
-            LogManager::getInstance()->debug("wkhtmltopdf 3:".print_r($ret, true));
-
-            if (file_exists($fileFullNamePdf)) {
-                $fileName = $fileFirstPart.".pdf";
-                $fileFullName = $fileFullNamePdf;
-            }
-        } catch (\Exception $exp) {
-            LogManager::getInstance()->notifyException($exp);
-        }
-        return array($fileFirstPart, $fileName, $fileFullName);
-    }
+    // createReportFile() used to live here and shelled out to wkhtmltopdf via
+    // exec(WK_HTML_PATH." ".$fileFullName." ".$fileFullNamePdf) with an unquoted,
+    // report-name-derived filename. It was dead code — the only subclass
+    // (Reports\User\Reports\PayslipReport) overrides createReportFile() and renders
+    // natively with mPDF, and PDFReportBuilder is never instantiated directly. Removed
+    // rather than repaired; anything that does reach the inherited
+    // ReportBuilder::createReportFile() gets the CSV writer.
 }

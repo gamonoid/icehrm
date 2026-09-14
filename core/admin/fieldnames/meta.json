@@ -1,6 +1,7 @@
 {
     "label": "Field Names",
     "menu": "System",
+    "area": "configuration",
     "order": "81",
     "icon": "fa-ruler-horizontal",
     "user_levels": [

@@ -15,17 +15,17 @@ class Content extends BaseModel
 
 	public function getAdminAccess()
 	{
-		return array("get","element","save","delete");
+		return array("get","element","add","save","delete");
 	}
 
 	public function getManagerAccess()
 	{
-		return array("get","element","save","delete");
+		return array("get","element","add","save","delete");
 	}
 
 	public function getUserAccess()
 	{
-		return array("get","element");
+		return array();
 	}
 
 	public function getAnonymousAccess()
@@ -35,7 +35,7 @@ class Content extends BaseModel
 
 	public function getUserOnlyMeAccess()
 	{
-		return array("get","element","save","delete");
+		return array();
 	}
 
 	public function getModuleAccess()

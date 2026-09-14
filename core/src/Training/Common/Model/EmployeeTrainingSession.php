@@ -19,22 +19,24 @@ class EmployeeTrainingSession extends BaseModel
 
     public function getAdminAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getManagerAccess()
     {
-        return array("get","element","save","delete");
+        return array("get","element","add","save","delete");
     }
 
     public function getUserAccess()
     {
-        return array("get", "element");
+        return array();
     }
 
     public function getUserOnlyMeAccess()
     {
-        return array("element","save","delete");
+        // "get" stays own-rows only: EmployeeTrainingSession is a registered user
+        // table, so get() applies the profile restriction to every list.
+        return array("get","element","add","save","delete");
     }
 
     public function postProcessGetData($entry)
@@ -60,4 +62,15 @@ class EmployeeTrainingSession extends BaseModel
             new ModuleAccess('training', 'user'),
         ];
     }
+
+    /**
+     * A team list exists for this model: the adapter opts into `type=sub`
+     * (isSubProfileTable), so BaseService::getData() may scope its rows to the
+     * caller's direct reports. See BaseModel::allowsSubordinateList().
+     */
+    public function allowsSubordinateList()
+    {
+        return true;
+    }
+
 }

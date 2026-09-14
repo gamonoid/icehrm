@@ -80,6 +80,13 @@ class TravelActionManager extends ApproveAdminActionManager
             return new IceResponse(IceResponse::ERROR, "Travel request not found");
         }
 
+        // Ownership gate. $req->id is any travel record and this returns its full
+        // employee detail. Without this a manager could read a non-subordinate's
+        // travel request. Admin any; a manager only those they manage; the owner.
+        if (!BaseService::getInstance()->currentUserCanAccessEmployeeData($travelRequest->employee)) {
+            return new IceResponse(IceResponse::ERROR, "Permission denied", 403);
+        }
+
         // Get employee details with profile image
         $employee = new Employee();
         $employee->Load('id = ?', [$travelRequest->employee]);

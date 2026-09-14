@@ -55,6 +55,25 @@ class AdapterBase extends ModuleBase {
     this.masterDataReader = new MasterDataReader(this);
   }
 
+  // SPA: declare which module a write (save / delete / element / custom action)
+  // belongs to, so service.php derives the data scope per-request instead of from
+  // the shared session modulePath (see docs/DATA_SCOPE_ISSUE.md). This is what
+  // makes a user-scoped table (e.g. EmployeeOvertime under modules::overtime)
+  // resolve MODULE_TYPE='modules' and auto-populate the employee on save. Legacy
+  // adapters never set spaModuleGroup/spaModuleName, so nothing is added there.
+  spaScopeParams() {
+    if (this.spaModuleGroup && this.spaModuleName) {
+      return { mg: this.spaModuleGroup, mn: this.spaModuleName };
+    }
+    return {};
+  }
+
+  // Merge the SPA scope params into a plain request data object (mutates + returns
+  // it). No-op for legacy adapters.
+  withSpaScope(data) {
+    return Object.assign(data, this.spaScopeParams());
+  }
+
   setupApiClient(token) {
     this.apiClient = new IceApiClient(this.apiUrl, token, window.CLIENT_BASE_URL, true);
   }
@@ -132,6 +151,7 @@ class AdapterBase extends ModuleBase {
     }
     $(object).attr('a', 'add');
     $(object).attr('t', this.table);
+    this.withSpaScope(object);
     that.showLoader();
     this.requestCache.invalidateTable(this.table);
     $.post(this.moduleRelativeURL, object, (data) => {
@@ -178,7 +198,7 @@ class AdapterBase extends ModuleBase {
     const that = this;
     that.showLoader();
     this.requestCache.invalidateTable(this.table);
-    $.post(this.moduleRelativeURL, { t: this.table, a: 'delete', id }, (data) => {
+    $.post(this.moduleRelativeURL, this.withSpaScope({ t: this.table, a: 'delete', id }), (data) => {
       if (data.status === 'SUCCESS') {
         that.deleteSuccessCallBack(callBackData, data.object);
       } else {
@@ -195,8 +215,10 @@ class AdapterBase extends ModuleBase {
   }
 
   cleanDelete(id, callBack) {
-    $.post(this.moduleRelativeURL, { t: this.table, a: 'delete', id }, (data) => {
-      callBack(200, data.status);
+    $.post(this.moduleRelativeURL, this.withSpaScope({ t: this.table, a: 'delete', id }), (data) => {
+      // Pass the full response so callers can surface the server's reason
+      // (e.g. "…assigned to N employees") on a failed delete.
+      callBack(200, data.status, data);
     }, 'json')
       .fail((e) => {
         callBack(e.status);
@@ -373,9 +395,9 @@ class AdapterBase extends ModuleBase {
     let sourceMappingJson = JSON.stringify(this.getSourceMapping());
     sourceMappingJson = this.fixJSON(sourceMappingJson);
     that.showLoader();
-    $.post(this.moduleRelativeURL, {
+    $.post(this.moduleRelativeURL, this.withSpaScope({
       t: this.table, a: 'getElement', id, sm: sourceMappingJson,
-    }, function (data) {
+    }), function (data) {
       if (data.status === 'SUCCESS') {
         if (clone) {
           delete data.object.id;
@@ -477,12 +499,34 @@ class AdapterBase extends ModuleBase {
   }
 
   setAdminProfile(empId) {
+    // Preserve the SPA shell's view preference across the localStorage clear
+    // (same-origin iframe shares localStorage with the shell).
+    let shellView = null;
     try {
+      shellView = localStorage.getItem('shell-view');
       localStorage.clear();
+      if (shellView) localStorage.setItem('shell-view', shellView);
     } catch (e) {
       // No need to report
     }
     $.post(this.moduleRelativeURL, { a: 'setAdminEmp', empid: empId }, () => {
+      // When running inside the SPA shell (iframe), notify the shell and stay
+      // embedded instead of breaking the whole top window out to the legacy app.
+      if (window.top !== window.self) {
+        try {
+          window.parent.postMessage({ iceShell: 'profile-switched', empId }, '*');
+          return;
+        } catch (e) {
+          // fall through to legacy behavior
+        }
+      }
+      // Natively mounted in the SPA shell (same window, not an iframe): reload
+      // the shell so it re-bootstraps with the switched profile, rather than
+      // navigating the whole window out to the legacy app.
+      if (typeof window.__shellColorMode !== 'undefined') {
+        window.location.reload();
+        return;
+      }
       // eslint-disable-next-line no-restricted-globals
       top.location.href = clientUrl;
     }, 'json');

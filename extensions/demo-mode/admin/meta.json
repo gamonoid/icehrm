@@ -1,0 +1,31 @@
+{
+  "label": "Demo Data Manager",
+  "menu": [
+    "System",
+    "fa-cogs"
+  ],
+  "order": "97",
+  "icon": "fa-magic",
+  "user_levels": [
+    "Admin"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\DemoModeAdmin\\Common\\Model",
+  "manager": "\\DemoModeAdmin\\Extension",
+  "controller": "\\DemoModeAdmin\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "native": {
+    "initFn": "initDemoModeAdmin",
+    "bundle": "demo-mode/admin/dist/demo-mode.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "Demo Data Manager",
+        "component": "NativeExtensionView",
+        "viewGlobal": "DemoModeAdminView"
+      }
+    ]
+  }
+}

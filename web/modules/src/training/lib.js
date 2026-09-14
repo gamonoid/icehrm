@@ -3,13 +3,18 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import AdapterBase from '../../../api/AdapterBase';
+import React from 'react';
+import { Space, Tag } from 'antd';
+import {
+  CheckCircleOutlined, DeleteOutlined, EditOutlined, LoginOutlined, MonitorOutlined,
+} from '@ant-design/icons';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
 /**
  * EmployeeTrainingSessions Adapter
  */
 
-class EmployeeTrainingSessionAdapter extends AdapterBase {
+class EmployeeTrainingSessionAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -25,6 +30,13 @@ class EmployeeTrainingSessionAdapter extends AdapterBase {
       { sTitle: 'Training Session' },
       { sTitle: 'Status' },
       { sTitle: 'Course ID', bVisible: false },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      { title: 'Training Session', dataIndex: 'trainingSession', sorter: true },
+      { title: 'Status', dataIndex: 'status' },
     ];
   }
 
@@ -63,6 +75,31 @@ class EmployeeTrainingSessionAdapter extends AdapterBase {
     this.showMessage('Error Occurred while completing training session', callBackData);
   }
 
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => (
+      <Space size="middle">
+        {adapter.hasAccess('save') && adapter.showEdit && (
+          <Tag color="green" onClick={() => this.edit(record.id)} style={{ cursor: 'pointer' }}>
+            <EditOutlined />
+            {` ${adapter.gt('Provide Feedback')}`}
+          </Tag>
+        )}
+        {record.status === 'Scheduled' && (
+          <Tag color="blue" onClick={() => this.completed(record.id)} style={{ cursor: 'pointer' }}>
+            <CheckCircleOutlined />
+            {` ${adapter.gt('Completed')}`}
+          </Tag>
+        )}
+        {adapter.hasAccess('delete') && adapter.showDelete && (
+          <Tag color="volcano" onClick={() => this.deleteRow(record.id)} style={{ cursor: 'pointer' }}>
+            <DeleteOutlined />
+            {` ${adapter.gt('Delete')}`}
+          </Tag>
+        )}
+      </Space>
+    );
+  }
+
   getActionButtonsHtml(id, data) {
     const editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Provide Feedback" onclick="modJs.edit(_id_);return false;"></img>';
     const deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
@@ -71,12 +108,7 @@ class EmployeeTrainingSessionAdapter extends AdapterBase {
     let html = '<div style="width:100px;">_edit__course__delete__completed_</div>';
 
     if (this.showDelete) {
-      if (this.checkPermission('Delete Assigned Training Sessions') === 'No'
-        && data[3] === 'Assign') {
-        html = html.replace('_delete_', '');
-      } else {
-        html = html.replace('_delete_', deleteButton);
-      }
+      html = html.replace('_delete_', deleteButton);
     } else {
       html = html.replace('_delete_', '');
     }
@@ -108,7 +140,7 @@ class EmployeeTrainingSessionAdapter extends AdapterBase {
  */
 
 
-class TrainingSessionAdapter extends AdapterBase {
+class TrainingSessionAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -128,6 +160,16 @@ class TrainingSessionAdapter extends AdapterBase {
       { sTitle: 'Scheduled Time' },
       { sTitle: 'Training Type' },
       { sTitle: 'Location' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      { title: 'Name', dataIndex: 'name', sorter: true },
+      { title: 'Course', dataIndex: 'course' },
+      { title: 'Scheduled Time', dataIndex: 'scheduled', sorter: true },
+      { title: 'Training Type', dataIndex: 'deliveryMethod' },
+      { title: 'Location', dataIndex: 'deliveryLocation' },
     ];
   }
 
@@ -199,6 +241,21 @@ class TrainingSessionAdapter extends AdapterBase {
   }
 
 
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => (
+      <Space size="middle">
+        <Tag color="blue" onClick={() => this.edit(record.id)} style={{ cursor: 'pointer' }}>
+          <MonitorOutlined />
+          {` ${adapter.gt('View')}`}
+        </Tag>
+        <Tag color="green" onClick={() => this.signUp(record.id)} style={{ cursor: 'pointer' }}>
+          <LoginOutlined />
+          {` ${adapter.gt('Sign Up')}`}
+        </Tag>
+      </Space>
+    );
+  }
+
   // eslint-disable-next-line no-unused-vars
   getActionButtonsHtml(id, data) {
     const editButton = '<img class="tableActionButton" src="_BASE_images/view.png" style="cursor:pointer;" rel="tooltip" title="View" onclick="modJs.edit(_id_);return false;"></img>';
@@ -219,7 +276,7 @@ class TrainingSessionAdapter extends AdapterBase {
  * CoordinatedTrainingSessionAdapter
  */
 
-class CoordinatedTrainingSessionAdapter extends AdapterBase {
+class CoordinatedTrainingSessionAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -245,6 +302,17 @@ class CoordinatedTrainingSessionAdapter extends AdapterBase {
       { sTitle: 'Location' },
       { sTitle: 'Attendance Type' },
       { sTitle: 'Training Certificate Required' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      { title: 'Name', dataIndex: 'name', sorter: true },
+      { title: 'Course', dataIndex: 'course' },
+      { title: 'Scheduled Time', dataIndex: 'scheduled', sorter: true },
+      { title: 'Status', dataIndex: 'status' },
+      { title: 'Training Type', dataIndex: 'deliveryMethod' },
+      { title: 'Location', dataIndex: 'deliveryLocation' },
     ];
   }
 
@@ -294,6 +362,14 @@ class SubEmployeeTrainingSessionAdapter extends EmployeeTrainingSessionAdapter {
     ];
   }
 
+  getTableColumns() {
+    return [
+      { title: 'Employee', dataIndex: 'employee', sorter: true },
+      { title: 'Training Session', dataIndex: 'trainingSession' },
+      { title: 'Status', dataIndex: 'status' },
+    ];
+  }
+
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
@@ -323,6 +399,31 @@ class SubEmployeeTrainingSessionAdapter extends EmployeeTrainingSessionAdapter {
     this.customAction('sessionCompleted', 'modules=training', reqJson, callBackData);
   }
 
+  getTableActionButtonJsx(adapter) {
+    return (text, record) => (
+      <Space size="middle">
+        {adapter.hasAccess('save') && adapter.showEdit && (
+          <Tag color="green" onClick={() => this.edit(record.id)} style={{ cursor: 'pointer' }}>
+            <EditOutlined />
+            {` ${adapter.gt('Review Feedback')}`}
+          </Tag>
+        )}
+        {record.status === 'Attended' && (
+          <Tag color="blue" onClick={() => this.completed(record.id)} style={{ cursor: 'pointer' }}>
+            <CheckCircleOutlined />
+            {` ${adapter.gt('Approve Completed Status')}`}
+          </Tag>
+        )}
+        {adapter.hasAccess('delete') && adapter.showDelete && (
+          <Tag color="volcano" onClick={() => this.deleteRow(record.id)} style={{ cursor: 'pointer' }}>
+            <DeleteOutlined />
+            {` ${adapter.gt('Delete')}`}
+          </Tag>
+        )}
+      </Space>
+    );
+  }
+
   getActionButtonsHtml(id, data) {
     const editButton = '<img class="tableActionButton" src="_BASE_images/edit.png" style="cursor:pointer;" rel="tooltip" title="Review Feedback" onclick="modJs.edit(_id_);return false;"></img>';
     const deleteButton = '<img class="tableActionButton" src="_BASE_images/delete.png" style="margin-left:15px;cursor:pointer;" rel="tooltip" title="Delete" onclick="modJs.deleteRow(_id_);return false;"></img>';
@@ -331,11 +432,7 @@ class SubEmployeeTrainingSessionAdapter extends EmployeeTrainingSessionAdapter {
     let html = '<div style="width:100px;">_edit__course__delete__completed_</div>';
 
     if (this.showDelete) {
-      if (this.checkPermission('Delete Training Sessions of Direct Reports') === 'No') {
-        html = html.replace('_delete_', '');
-      } else {
-        html = html.replace('_delete_', deleteButton);
-      }
+      html = html.replace('_delete_', deleteButton);
     } else {
       html = html.replace('_delete_', '');
     }

@@ -1,0 +1,15 @@
+{
+    "label": "Leave",
+    "menu": "Leave",
+    "order": "1",
+    "icon": "fa-share-alt",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "dashboardPosition": 103,
+    "permissions": [],
+    "model_namespace": "\\Leaves\\Common\\Model",
+    "manager": "\\Leaves\\User\\Api\\LeavesModulesManager"
+}

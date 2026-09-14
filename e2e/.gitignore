@@ -1,0 +1,7 @@
+node_modules/
+test-results/
+playwright-report/
+.playwright/
+# Machine-local app URL for the e2e suites — copy .env.example to create it.
+.env
+results.json

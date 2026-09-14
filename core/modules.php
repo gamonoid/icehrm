@@ -5,12 +5,6 @@ use Classes\ExtensionManager;
 $initializers = [];
 //Reset modules if required
 if (\Classes\SettingsManager::getInstance()->getSetting("System: Reset Modules and Permissions") == "1") {
-    $permissionTemp = new \Permissions\Common\Model\Permission();
-    $permissions = $permissionTemp->Find("1=1");
-    foreach ($permissions as $permTemp) {
-        $permTemp->Delete();
-    }
-
     $moduleTemp = new \Modules\Common\Model\Module();
     $modulesTemp = $moduleTemp->Find("1=1");
     foreach ($modulesTemp as $moduleTemp) {
@@ -18,12 +12,6 @@ if (\Classes\SettingsManager::getInstance()->getSetting("System: Reset Modules a
     }
 
     \Classes\SettingsManager::getInstance()->setSetting("System: Reset Modules and Permissions", "0");
-}
-
-$addNewPermissions = false;
-if (\Classes\SettingsManager::getInstance()->getSetting("System: Add New Permissions") == "1") {
-    $addNewPermissions = true;
-    \Classes\SettingsManager::getInstance()->setSetting("System: Add New Permissions", "0");
 }
 
 $resetModuleNames = false;
@@ -63,33 +51,6 @@ function includeModuleManager($type, $name, $data)
     return $moduleManagerObj;
 }
 
-function createPermissions($meta, $moduleId)
-{
-    $permData = $meta->permissions;
-    if (empty($permData)) {
-        return;
-    }
-
-    foreach ($permData as $key => $val) {
-        if (!empty($val)) {
-            foreach ($val as $permissionString => $defaultValue) {
-                $permissionObj = new \Permissions\Common\Model\Permission();
-                $permissionObj->Load("user_level = ? and module_id = ? and permission = ?", array($key, $moduleId, $permissionString));
-
-                if (empty($permissionObj->id) && $permissionObj->module_id == $moduleId) {
-                } else {
-                    $permissionObj = new \Permissions\Common\Model\Permission();
-                    $permissionObj->user_level = $key;
-                    $permissionObj->module_id = $moduleId;
-                    $permissionObj->permission = $permissionString;
-                    $permissionObj->value = $defaultValue;
-                    $permissionObj->meta = '["value", {"label":"Value","type":"select","source":[["Yes","Yes"],["No","No"]]}]';
-                    $permissionObj->Save();
-                }
-            }
-        }
-    }
-}
 
 $dbModule = new \Modules\Common\Model\Module();
 $adminDbModules = $dbModule->Find("mod_group = ?", array("admin"));
@@ -128,14 +89,14 @@ foreach ($ams as $am) {
         $arr['user_roles'] = isset($meta->user_roles)?$meta->user_roles:"";
         $arr['model_namespace'] = $meta->model_namespace;
         $arr['manager'] = $meta->manager;
+        // Optional high-level SPA area (inert in legacy; see MenuAreaService).
+        $arr['area'] = isset($meta->area) ? $meta->area : null;
+        $arr['areaOrder'] = isset($meta->areaOrder) ? $meta->areaOrder : null;
 
         //Check in admin dbmodules
         if (isset($adminDBModuleList[$arr['name']])) {
             $dbModule = $adminDBModuleList[$arr['name']];
 
-            if ($addNewPermissions && isset($meta->permissions)) {
-                createPermissions($meta, $dbModule->id);
-            }
 
             if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
                 $dbModule->label = $arr['label'];
@@ -171,9 +132,6 @@ foreach ($ams as $am) {
             $dbModule->user_roles = isset($meta->user_roles)?json_encode($meta->user_roles):"";
             $dbModule->Save();
 
-            if (isset($meta->permissions)) {
-                createPermissions($meta, $dbModule->id);
-            }
         }
 
         /* @var \Classes\AbstractModuleManager */
@@ -205,9 +163,12 @@ foreach ($ams as $am) {
     }
 }
 
-// Scan pro admin modules if pro directory exists
-$proAdminPath = CLIENT_PATH.'/../extensions/leave_and_performance/core/admin/';
-if (is_dir($proAdminPath)) {
+// Scan the admin modules contributed by the leave package (extensions/leave, or
+// the legacy leave_and_performance package). See core/leave-package.php.
+require_once CLIENT_PATH.'/leave-package.php';
+$leavePackageDir = iceLeavePackageDir();
+$proAdminPath = $leavePackageDir === null ? null : $leavePackageDir.'core/admin/';
+if ($proAdminPath !== null && is_dir($proAdminPath)) {
     $proAms = scandir($proAdminPath);
     foreach ($proAms as $am) {
         if (is_dir($proAdminPath.$am) && $am != '.' && $am != '..') {
@@ -227,15 +188,15 @@ if (is_dir($proAdminPath)) {
             $arr['user_roles'] = isset($meta->user_roles)?$meta->user_roles:"";
             $arr['model_namespace'] = $meta->model_namespace;
             $arr['manager'] = $meta->manager;
+            // Optional high-level SPA area (inert in legacy; see MenuAreaService).
+            $arr['area'] = isset($meta->area) ? $meta->area : null;
+            $arr['areaOrder'] = isset($meta->areaOrder) ? $meta->areaOrder : null;
             $arr['is_pro'] = true;
 
             //Check in admin dbmodules
             if (isset($adminDBModuleList[$arr['name']])) {
                 $dbModule = $adminDBModuleList[$arr['name']];
 
-                if ($addNewPermissions && isset($meta->permissions)) {
-                    createPermissions($meta, $dbModule->id);
-                }
 
                 if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
                     $dbModule->label = $arr['label'];
@@ -268,9 +229,6 @@ if (is_dir($proAdminPath)) {
                 $dbModule->user_roles = isset($meta->user_roles)?json_encode($meta->user_roles):"";
                 $dbModule->Save();
 
-                if (isset($meta->permissions)) {
-                    createPermissions($meta, $dbModule->id);
-                }
             }
 
             /* @var \Classes\AbstractModuleManager */
@@ -332,9 +290,6 @@ foreach ($ams as $am) {
             if (isset($userDBModuleList[$arr['name']])) {
                 $dbModule = $userDBModuleList[$arr['name']];
 
-                if ($addNewPermissions && isset($meta->permissions)) {
-                    createPermissions($meta, $dbModule->id);
-                }
 
                 if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
                     $dbModule->label = $arr['label'];
@@ -370,9 +325,6 @@ foreach ($ams as $am) {
                 $dbModule->user_roles = isset($meta->user_roles) ? json_encode($meta->user_roles) : "";
                 $dbModule->Save();
 
-                if (isset($meta->permissions)) {
-                    createPermissions($meta, $dbModule->id);
-                }
             }
 
             /* @var \Classes\AbstractModuleManager */
@@ -407,9 +359,11 @@ foreach ($ams as $am) {
     }
 }
 
-// Scan pro user modules if pro directory exists
-$proModulesPath = CLIENT_PATH.'/../extensions/leave_and_performance/core/modules/';
-if (is_dir($proModulesPath)) {
+// Scan the user modules contributed by the leave package (extensions/leave, or
+// the legacy leave_and_performance package). See core/leave-package.php.
+$leavePackageDir = iceLeavePackageDir();
+$proModulesPath = $leavePackageDir === null ? null : $leavePackageDir.'core/modules/';
+if ($proModulesPath !== null && is_dir($proModulesPath)) {
     $proUms = scandir($proModulesPath);
     foreach ($proUms as $am) {
         try {
@@ -436,9 +390,6 @@ if (is_dir($proModulesPath)) {
                 if (isset($userDBModuleList[$arr['name']])) {
                     $dbModule = $userDBModuleList[$arr['name']];
 
-                    if ($addNewPermissions && isset($meta->permissions)) {
-                        createPermissions($meta, $dbModule->id);
-                    }
 
                     if ($resetModuleNames || $dbModule->label !== $arr['label'] || $dbModule->menu !== $arr['menu']) {
                         $dbModule->label = $arr['label'];
@@ -471,9 +422,6 @@ if (is_dir($proModulesPath)) {
                     $dbModule->user_roles = isset($meta->user_roles) ? json_encode($meta->user_roles) : "";
                     $dbModule->Save();
 
-                    if (isset($meta->permissions)) {
-                        createPermissions($meta, $dbModule->id);
-                    }
                 }
 
                 /* @var \Classes\AbstractModuleManager */
@@ -565,6 +513,11 @@ foreach ($userModulesTemp as $k => $v) {
 
 // Merge icons
 $mainIcons = array_merge($adminIcons, $userIcons);
+
+// SPA migration (Phase 0): capture the UNFILTERED menu tree so MenuService can
+// produce the same filtered menu for any user via the REST API. Must run BEFORE
+// the legacy session-user filter below. See docs/SPA_MIGRATION_PLAN.md.
+\Classes\MenuService::getInstance()->setRawMenus($adminModules, $userModules, $mainIcons);
 
 //Remove modules having no permissions
 if (!empty($user)) {

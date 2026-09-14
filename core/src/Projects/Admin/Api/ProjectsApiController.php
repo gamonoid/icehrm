@@ -1,11 +1,13 @@
 <?php
 namespace Projects\Admin\Api;
 
+use Classes\BaseService;
 use Classes\FileService;
 use Classes\IceApiController;
 use Classes\IceResponse;
 use Classes\RestEndPoint;
 use Employees\Common\Model\Employee;
+use Employees\Common\Model\EmployeeAccess;
 use Projects\Common\Model\EmployeeProject;
 use Projects\Common\Model\Project;
 use TimeSheets\Common\Model\EmployeeTimeEntry;
@@ -52,8 +54,33 @@ class ProjectsApiController extends IceApiController
         );
     }
 
+    /**
+     * These endpoints expose the full active roster and mutate project membership, so they
+     * are admin-only. The A1 auth gate guarantees a request reaches here only when
+     * authenticated; this adds the per-endpoint authorization the callbacks previously
+     * lacked (they never called process()). Returns false and sends a 403 when denied.
+     */
+    private function authorizeProjectManagement()
+    {
+        $user = BaseService::getInstance()->getCurrentUser();
+        if (empty($user) || empty($user->id)
+            || ($user->user_level !== 'Admin' && !EmployeeAccess::hasAccessToAllEmployeeData())
+        ) {
+            (new RestEndPoint())->sendResponse(new IceResponse(
+                IceResponse::ERROR,
+                'Permission denied',
+                403
+            ));
+            return false;
+        }
+        return true;
+    }
+
     private function getProjectTimeStats($projectId)
     {
+        if (!$this->authorizeProjectManagement()) {
+            return;
+        }
         $restEndpoint = new RestEndPoint();
 
         // Load the project
@@ -199,6 +226,9 @@ class ProjectsApiController extends IceApiController
 
     private function addEmployeeToProject($projectId)
     {
+        if (!$this->authorizeProjectManagement()) {
+            return;
+        }
         $restEndpoint = new RestEndPoint();
         $body = $restEndpoint->getRequestBody();
 
@@ -263,6 +293,9 @@ class ProjectsApiController extends IceApiController
 
     private function removeEmployeeFromProject($projectId, $employeeId)
     {
+        if (!$this->authorizeProjectManagement()) {
+            return;
+        }
         $restEndpoint = new RestEndPoint();
 
         // Find the assignment
@@ -285,6 +318,9 @@ class ProjectsApiController extends IceApiController
 
     private function getAvailableEmployees($projectId)
     {
+        if (!$this->authorizeProjectManagement()) {
+            return;
+        }
         $restEndpoint = new RestEndPoint();
 
         // Get all active employees

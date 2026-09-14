@@ -1,0 +1,33 @@
+{
+  "label": "Company",
+  "menu": [
+    "Collaboration",
+    "fa-th"
+  ],
+  "order": "2",
+  "icon": "fa-random",
+  "user_levels": [
+    "Admin",
+    "Manager",
+    "Employee"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\Company_overviewUser\\Common\\Model",
+  "manager": "\\Company_overviewUser\\Extension",
+  "controller": "\\Company_overviewUser\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "native": {
+    "initFn": "initCompany_overviewUser",
+    "bundle": "company_overview/user/dist/company_overview.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "Company",
+        "component": "NativeExtensionView",
+        "viewGlobal": "CompanyOverviewUserView"
+      }
+    ]
+  }
+}

@@ -265,7 +265,15 @@ class MoXMLSecEnc
                 switch ($this->type) {
                     case (self::Element):
                         $newdoc = new DOMDocument();
-                        $newdoc->loadXML($decrypted);
+                        // XXE hardening: decrypted content is still attacker-influenced.
+                        // LIBXML_NOENT is deliberately not passed.
+                        if (PHP_VERSION_ID < 80000) {
+                            $previousEntityLoader = libxml_disable_entity_loader(true);
+                        }
+                        $newdoc->loadXML($decrypted, LIBXML_NONET);
+                        if (PHP_VERSION_ID < 80000) {
+                            libxml_disable_entity_loader($previousEntityLoader);
+                        }
                         if ($this->rawNode->nodeType == XML_DOCUMENT_NODE) {
                             return $newdoc;
                         }

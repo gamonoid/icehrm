@@ -9,6 +9,7 @@ function init(data) {
   modJsList.tabAttendance.setDataPipe(new IceDataPipe(modJsList.tabAttendance));
   modJsList.tabAttendance.setAccess(data.permissions.Attendance);
   modJsList.tabAttendance.setOvertimeStartHour(data.overtimeStartHour);
+  modJsList.tabAttendance.setShowPageSizeChanger(true);
 
   modJsList.tabAttendanceStatus = new AttendanceStatusAdapter('AttendanceStatus','AttendanceStatus','','');
   modJsList.tabAttendanceStatus.setRemoteTable(true);

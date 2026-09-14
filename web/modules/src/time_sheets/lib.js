@@ -7,6 +7,7 @@
 import AdapterBase from '../../../api/AdapterBase';
 import FormValidation from '../../../api/FormValidation';
 import TableEditAdapter from '../../../api/TableEditAdapter';
+import { escapeHtml } from '../../../api-common/htmlEscape';
 
 const ValidationRules = FormValidation.getValidationRules();
 
@@ -286,11 +287,11 @@ class EmployeeTimeSheetAdapter extends AdapterBase {
         if (entries[i].project === 'null' || entries[i].project == null || entries[i].project === undefined) {
           t = t.replace(/_project_/g, 'None');
         } else {
-          t = t.replace(/_project_/g, entries[i].project);
+          t = t.replace(/_project_/g, escapeHtml(entries[i].project));
         }
-        t = t.replace(/_project_/g, entries[i].project);
-        t = t.replace(/_details_/g, entries[i].details);
-        t = t.replace(/_id_/g, entries[i].id);
+        t = t.replace(/_project_/g, escapeHtml(entries[i].project));
+        t = t.replace(/_details_/g, escapeHtml(entries[i].details));
+        t = t.replace(/_id_/g, escapeHtml(entries[i].id));
         t = t.replace(/_BASE_/g, this.baseUrl);
         html += t;
       } catch (e) {
@@ -298,10 +299,10 @@ class EmployeeTimeSheetAdapter extends AdapterBase {
       }
     }
 
-    $('.employee_name').html(employee.name);
+    $('.employee_name').html(escapeHtml(employee.name));
     $('.employee_image').attr('src', employee.image);
-    $('.timesheet_status_text').html(`Status: <b>${timesheet.status}</b>`);
-    $('.timesheet_total').html(`${timesheet.total_time}`);
+    $('.timesheet_status_text').html(`Status: <b>${escapeHtml(timesheet.status)}</b>`);
+    $('.timesheet_total').html(`${escapeHtml(timesheet.total_time)}`);
 
     setTimeout(() => {
       $('.timesheet_user').show();
@@ -518,7 +519,7 @@ class SubEmployeeTimeSheetAdapter extends EmployeeTimeSheetAdapter {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
       ['employee', {
-        label: 'Employee', type: 'select', 'allow-null': false, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
+        label: 'Employee', type: 'select', 'allow-null': false, 'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
       }],
       ['date_start', { label: 'TimeSheet Start Date', type: 'date', validation: '' }],
       ['date_end', { label: 'TimeSheet Start Date', type: 'date', validation: '' }],
@@ -632,7 +633,7 @@ class SubEmployeeTimeSheetAdapter extends EmployeeTimeSheetAdapter {
   getFilters() {
     return [
       ['employee', {
-        label: 'Employee', type: 'select2', 'allow-null': true, 'null-label': 'All Employees', 'remote-source': ['Employee', 'id', 'first_name+last_name'],
+        label: 'Employee', type: 'select2', 'allow-null': true, 'null-label': 'All Employees', 'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
       }],
       ['status', {
         label: 'Status', type: 'select', 'allow-null': true, 'null-label': 'All', source: [['Submitted', 'Submitted'], ['Pending', 'Pending'], ['Approved', 'Approved'], ['Rejected', 'Rejected']],

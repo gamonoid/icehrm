@@ -1,0 +1,33 @@
+{
+  "label": "Employee Directory",
+  "menu": [
+    "Collaboration",
+    "fa-th"
+  ],
+  "order": "3",
+  "icon": "fa-user",
+  "user_levels": [
+    "Admin",
+    "Manager",
+    "Employee"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\Directory\\Common\\Model",
+  "manager": "\\Directory\\User\\Extension",
+  "controller": "\\Directory\\User\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "native": {
+    "initFn": "initDirectoryUser",
+    "bundle": "directory/user/dist/directory.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "Employee Directory",
+        "component": "NativeExtensionView",
+        "viewGlobal": "DirectoryUserView"
+      }
+    ]
+  }
+}

@@ -1,63 +1,92 @@
 <?php
+/**
+ * Helpers for the public application form's custom fields.
+ *
+ * A job definition declares extra fields via its `additional_fields` JSON, e.g.
+ *   [{"field_name":"Portfolio URL","type":"Text Field","data":"","position":1}]
+ * extract_additional_fields() sorts them; create_field() renders each into the
+ * modern apply-form markup. Every field posts as `Custom_<Field Name>` (spaces
+ * become underscores) so the backend picks it up — keep that naming stable.
+ *
+ * Supported types: "Text Field", "Text Area", "Select", "Information".
+ */
+
 function extract_additional_fields($fieldsStr) {
-	if (empty ($fieldsStr)) {
-		return [];
-	}
+    if (empty($fieldsStr)) {
+        return [];
+    }
 
-	$fields = json_decode($fieldsStr, true);
-	if (empty($fields)) {
-		return [];
-	}
+    $fields = json_decode($fieldsStr, true);
+    if (empty($fields) || !is_array($fields)) {
+        return [];
+    }
 
-	usort($fields, function ($a, $b) {
-		return (int)$a['position'] - (int)$b['position'];
-	});
+    usort($fields, function ($a, $b) {
+        return (int)(isset($a['position']) ? $a['position'] : 0)
+             - (int)(isset($b['position']) ? $b['position'] : 0);
+    });
 
-	return $fields;
+    return $fields;
 }
 
 function create_field($field) {
-	if ($field['type'] === 'Text Field') {
-		$fieldStr = <<<'FIELD'
-<div class="col-12 mb-7">
-	<label for="" class="font-size-4 font-weight-semibold text-black-2 mb-5 line-height-reset">__label__</label>
-	<input id="__name__" name="__name__" type="text" class="form-control" placeholder="">
-</div>
-FIELD;
-	} elseif ($field['type'] === 'Text Area') {
-		$fieldStr = <<<'FIELD'
-<div class="col-lg-12 mb-7">
-	<label for="message" class="font-size-4 font-weight-semibold text-black-2 mb-5 line-height-reset">__label__</label>
-	<textarea id="__name__" name="__name__" placeholder="" class="form-control h-px-144"></textarea>
-</div>
-FIELD;
-	} elseif ($field['type'] === 'Select') {
-		$options = explode("\n", $field['data']);
-		$optionsStr = '';
-		foreach ($options as $option) {
-			$optionsStr .= "<option value=".$option.">".$option."</option>";
-		}
-		$fieldStr = <<<'FIELD'
-<div class="col-12 mb-7">
-	<label for="" class="font-size-4 font-weight-semibold text-black-2 mb-5 line-height-reset">__label__</label>
-	<select id="__name__" name="__name__" type="select" class="form-control">
-		__options__
-	</select>
-</div>
-FIELD;
-		$fieldStr = str_replace('__options__', $optionsStr, $fieldStr);
-	} elseif ($field['type'] === 'Information') {
-		$fieldStr = <<<'FIELD'
-<div class="col-lg-12 mb-7">
-	<label for="message" class="font-size-4 font-weight-semibold text-black-2 mb-5 line-height-reset">__label__</label>
-	<p>__text__</p>
-</div>
-FIELD;
-		$fieldStr = str_replace('__text__', $field['data'], $fieldStr);
-	}
+    if (empty($field['field_name']) || empty($field['type'])) {
+        return '';
+    }
 
-	$fieldStr = str_replace('__label__', $field['field_name'], $fieldStr);
-	$fieldStr = str_replace('__name__', 'Custom_'.str_replace(' ','_',$field['field_name']), $fieldStr);
+    $label = htmlspecialchars($field['field_name'], ENT_QUOTES, 'UTF-8');
+    $name  = 'Custom_'.str_replace(' ', '_', $field['field_name']);
+    $name  = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+    $data  = isset($field['data']) ? $field['data'] : '';
+    $required = !empty($field['required']) ? ' required' : '';
+    $reqMark  = !empty($field['required']) ? ' <span class="req">*</span>' : '';
 
-	return $fieldStr;
+    switch ($field['type']) {
+        case 'Text Field':
+            return <<<FIELD
+<div class="field col-2">
+    <label for="{$name}">{$label}{$reqMark}</label>
+    <input id="{$name}" name="{$name}" type="text" class="form-control" placeholder=""{$required}>
+</div>
+FIELD;
+
+        case 'Text Area':
+            return <<<FIELD
+<div class="field col-2">
+    <label for="{$name}">{$label}{$reqMark}</label>
+    <textarea id="{$name}" name="{$name}" class="form-control" placeholder=""{$required}></textarea>
+</div>
+FIELD;
+
+        case 'Select':
+            $optionsStr = '';
+            foreach (explode("\n", (string)$data) as $option) {
+                $option = trim($option);
+                if ($option === '') {
+                    continue;
+                }
+                $opt = htmlspecialchars($option, ENT_QUOTES, 'UTF-8');
+                $optionsStr .= "<option value=\"{$opt}\">{$opt}</option>";
+            }
+            return <<<FIELD
+<div class="field col-2">
+    <label for="{$name}">{$label}{$reqMark}</label>
+    <select id="{$name}" name="{$name}" class="form-control"{$required}>
+        <option value="">Select…</option>
+        {$optionsStr}
+    </select>
+</div>
+FIELD;
+
+        case 'Information':
+            $body = nl2br(htmlspecialchars((string)$data, ENT_QUOTES, 'UTF-8'));
+            return <<<FIELD
+<div class="field-info">
+    <div class="label">{$label}</div>
+    <div class="body">{$body}</div>
+</div>
+FIELD;
+    }
+
+    return '';
 }

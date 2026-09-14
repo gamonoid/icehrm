@@ -92,9 +92,14 @@ class IceDataPipe {
 
     let url = this.adapter.moduleRelativeURL.replace('service.php', 'data.php');
     url = `${url}?t=${this.adapter.table}`;
-    url = `${url}&sm=${sourceMappingJson}`;
-    url = `${url}&cl=${columns}`;
-    url = `${url}&ft=${filterJson}`;
+    // URL-encode the JSON params. Without this, a '+' inside a mapping's display
+    // field (e.g. Employee -> 'first_name+last_name') is decoded by PHP to a space,
+    // so the server sees 'first_name last_name' as one column, the picker allowlist
+    // (mappingFieldsAllowed) rejects it, and the FK is left as a raw id instead of
+    // the resolved name. Encoding keeps the '+' intact so the name resolves.
+    url = `${url}&sm=${encodeURIComponent(sourceMappingJson)}`;
+    url = `${url}&cl=${encodeURIComponent(columns)}`;
+    url = `${url}&ft=${encodeURIComponent(filterJson)}`;
 
     if (searchTerm && searchTerm.trim() !== '') {
       url += `&sSearch=${searchTerm}`;
@@ -106,6 +111,15 @@ class IceDataPipe {
 
     if (this.adapter.remoteTableSkipProfileRestriction()) {
       url = `${url}&skip=1`;
+    }
+
+    // SPA: declare which module this request belongs to so the server derives
+    // data scope per-request instead of from the shared session modulePath
+    // (see docs/DATA_SCOPE_ISSUE.md). Legacy adapters don't set these, so the
+    // params are omitted and legacy behaviour is unchanged.
+    if (this.adapter.spaModuleGroup && this.adapter.spaModuleName) {
+      url = `${url}&mg=${encodeURIComponent(this.adapter.spaModuleGroup)}`;
+      url = `${url}&mn=${encodeURIComponent(this.adapter.spaModuleName)}`;
     }
 
     return url;

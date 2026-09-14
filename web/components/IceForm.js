@@ -6,7 +6,7 @@ import {
   InfoCircleOutlined,
 } from '@ant-design/icons';
 import moment from 'moment';
-import ReactQuill, { Quill, Mixin, Toolbar } from 'react-quill';
+import IceRichTextBox from './IceRichTextBox';
 import IceUpload from './IceUpload';
 import IceDataGroup from './IceDataGroup';
 import IceSelect from './IceSelect';
@@ -126,10 +126,14 @@ class IceForm extends React.Component {
 
   render() {
     const { fields, twoColumnLayout, adapter } = this.props;
-    let formInputs = [];
-    const formInputs1 = [];
-    const formInputs2 = [];
     const columns = !twoColumnLayout ? 1 : 2;
+    // Field types that need the full row even in two-column mode (anything
+    // with a large editing surface or its own internal layout).
+    const WIDE_FIELD_TYPES = [
+      'textarea', 'datagroup', 'quill', 'richtext', 'fileupload', 'signature',
+      'document', 'location',
+    ];
+    const formItems = [];
     for (let i = 0; i < fields.length; i++) {
       if (this.props.viewOnly && adapter.getViewModeEnabledFields() !== null
         && adapter.getViewModeEnabledFields().indexOf(fields[i][0]) === -1
@@ -137,25 +141,20 @@ class IceForm extends React.Component {
         continue;
       }
 
-      formInputs.push(
-        adapter.beforeRenderFieldHook(
-          fields[i][0],
-          this.createFromField(fields[i], this.props.viewOnly),
-          fields[i][1],
-        ),
+      const node = adapter.beforeRenderFieldHook(
+        fields[i][0],
+        this.createFromField(fields[i], this.props.viewOnly),
+        fields[i][1],
       );
-    }
-    formInputs = formInputs.filter((input) => !!input);
-
-    for (let i = 0; i < formInputs.length; i++) {
-      if (formInputs[i] != null) {
-        if (columns === 1) {
-          formInputs1.push(formInputs[i]);
-        } else if (i % 2 === 0) {
-          formInputs1.push(formInputs[i]);
-        } else {
-          formInputs2.push(formInputs[i]);
-        }
+      if (node) {
+        formItems.push({
+          node,
+          key: fields[i][0],
+          wide: WIDE_FIELD_TYPES.indexOf(fields[i][1].type) >= 0,
+          // Hidden fields hold values only — they must not occupy a grid slot
+          // (an invisible half-row column) in two-column mode.
+          hidden: fields[i][1].type === 'hidden',
+        });
       }
     }
 
@@ -169,9 +168,10 @@ class IceForm extends React.Component {
     return (
       <Form
         ref={this.formReference}
-        labelCol={{ span: 6 }}
+        labelCol={{ span: 8 }}
         wrapperCol={{ span: layout === 'vertical' ? 24 : 16 }}
         layout={layout}
+        labelWrap
         initialValues={{ size: 'middle' }}
         onValuesChange={onFormLayoutChange}
         size="middle"
@@ -183,16 +183,21 @@ class IceForm extends React.Component {
               <br />
             </>
           )}
-        {columns === 1 && formInputs1}
+        {columns === 1 && formItems.map((it) => it.node)}
         {columns === 2 && (
-          <Row gutter={16}>
-            <Col className="gutter-row" span={12}>
-              {formInputs1}
-            </Col>
-            <Col className="gutter-row" span={12}>
-              {formInputs2}
-            </Col>
-          </Row>
+          // Narrow fields flow two-per-row (in definition order); wide fields
+          // (textareas, datagroups, uploads, …) break out to the full width.
+          // Hidden fields render outside the grid so they don't leave gaps.
+          <>
+            {formItems.filter((it) => it.hidden).map((it) => it.node)}
+            <Row gutter={16}>
+              {formItems.filter((it) => !it.hidden).map((it) => (
+                <Col key={it.key} className="gutter-row" span={it.wide ? 24 : 12}>
+                  {it.node}
+                </Col>
+              ))}
+            </Row>
+          </>
         )}
       </Form>
     );
@@ -226,7 +231,11 @@ class IceForm extends React.Component {
     const { adapter } = this.props;
     let { layout } = this.props;
     let validationRule = null;
-    data.label = adapter.gt(data.label);
+    // Use locals — never mutate the shared field definition object. Reassigning
+    // data.label used to leak across renders: viewing a record (which blanks the
+    // label when getViewModeShowLabel() is false) left the label empty in the
+    // subsequent edit form too.
+    const labelText = adapter.gt(data.label);
 
     // Skip rendering if display is set to 'none'
     if (data.display === 'none') {
@@ -239,7 +248,7 @@ class IceForm extends React.Component {
       layout = adapter.getFormLayout(this.props.viewOnly);
     }
 
-    const labelSpan = layout === 'vertical' ? { span: 24 } : { span: 6 };
+    const labelSpan = layout === 'vertical' ? { span: 24 } : { span: 8 };
 
     const tempSelectBoxes = ['select', 'select2', 'select2multi'];
     if (tempSelectBoxes.indexOf(data.type) >= 0 && data['allow-null'] === true) {
@@ -251,11 +260,12 @@ class IceForm extends React.Component {
       requiredRule.required = false;
     } else {
       requiredRule.required = true;
-      requiredRule.message = this.generateFieldMessage(data.label);
+      requiredRule.message = this.generateFieldMessage(labelText);
     }
 
+    let displayLabel = labelText;
     if (viewOnly && adapter.getViewModeShowLabel() === false) {
-      data.label = '';
+      displayLabel = '';
     }
 
     rules.push(requiredRule);
@@ -277,7 +287,7 @@ class IceForm extends React.Component {
     const label = (
       <div>
         {' '}
-        {data.label}
+        {displayLabel}
         {' '}
         { data.help
         && (<Tooltip title={data.help}><InfoCircleOutlined style={{ fontSize: '16px', color: '#1890ff' }} /></Tooltip>)}
@@ -306,7 +316,7 @@ class IceForm extends React.Component {
         if (validationRule) {
           this.validationRules[name] = {
             rule: validationRule,
-            message: data.message ? data.message : `Invalid value for ${data.label}`,
+            message: data.message ? data.message : `Invalid value for ${labelText}`,
           };
         }
       }
@@ -539,24 +549,10 @@ class IceForm extends React.Component {
           />
         </Form.Item>
       );
-    } if (data.type === 'quill') {
-      const modules = {
-        toolbar: [
-          [{ header: '1' }, { header: '2' }],
-          ['bold', 'italic', 'underline'],
-          [{ list: 'ordered' }, { list: 'bullet' }],
-        ],
-        clipboard: {
-          // toggle to add extra line breaks when pasting HTML:
-          matchVisual: false,
-        },
-      };
-      const formats = [
-        'header',
-        'bold', 'italic', 'underline',
-        'list', 'bullet',
-      ];
-
+    } if (data.type === 'quill' || data.type === 'richtext') {
+      // Rich text fields render the in-house IceRichTextBox (theme-aware, works
+      // in the dark SPA modal, no react-quill/findDOMNode issues). 'quill' is
+      // kept as an alias so existing field definitions need no changes.
       return (
         <Form.Item
           labelCol={labelSpan}
@@ -566,16 +562,7 @@ class IceForm extends React.Component {
           rules={rules}
           shouldUpdate
         >
-          {viewOnly
-            ? <IceLabel />
-            : (
-              <ReactQuill
-                theme="snow"
-                modules={modules}
-                formats={formats}
-              />
-            )}
-
+          <IceRichTextBox readOnly={viewOnly} />
         </Form.Item>
       );
     } if (data.type === 'slider') {

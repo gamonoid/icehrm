@@ -31,4 +31,9 @@ class JobsAdminManager extends AbstractModuleManager
         $this->addModelClass('JobTitle');
         $this->addModelClass('PayGrade');
     }
+
+    public function setupRestEndPoints()
+    {
+        (new JobsApiController())->registerEndPoints();
+    }
 }

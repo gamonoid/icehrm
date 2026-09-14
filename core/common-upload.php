@@ -11,6 +11,7 @@ use Utils\LogManager;
 include("config.base.php");
 include("include.common.php");
 include_once('server.includes.inc.php');
+include_once('upload.auth.inc.php');
 
 /**
  * Handle file uploads via regular form post (uses the $_FILES array)
@@ -138,6 +139,15 @@ if (empty($saveFileName) || $saveFileName == "_NEW_") {
 $file = new \Model\File();
 $file->Load("name = ?", array($saveFileName));
 
+// Authorization: confirm the caller may write to the employee named in the request and
+// may overwrite the row that already carries this name, before anything touches disk.
+if (!iceUploadMayActOnEmployee($user, isset($_REQUEST['user']) ? $_REQUEST['user'] : null)) {
+	iceUploadDeny('ACCESS_DENIED', 'Not allowed to upload files for this employee');
+}
+if (!iceUploadMayReplaceFile($user, $file)) {
+	iceUploadDeny('ACCESS_DENIED', 'Not allowed to replace this file');
+}
+
 // list of valid extensions, ex. array("jpeg", "xml", "bmp")
 
 $allowedExtensions = explode(',', "csv,doc,xls,docx,xlsx,txt,ppt,pptx,rtf,pdf,xml,jpg,bmp,gif,png,jpeg");
@@ -145,6 +155,18 @@ $allowedExtensions = explode(',', "csv,doc,xls,docx,xlsx,txt,ppt,pptx,rtf,pdf,xm
 $sizeLimit =MAX_FILE_SIZE_KB * 1024;
 $uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
 $result = $uploader->handleUpload(BaseService::getInstance()->getDataDirectory(), $saveFileName);
+// Content check: reject a non-image file disguised with an image extension (e.g. an
+// HTML/SVG payload named .png that could render inline). Extension-only validation
+// above does not inspect the bytes.
+if (!empty($result['success']) && !empty($result['filename'])) {
+    $iceSavedPath = BaseService::getInstance()->getDataDirectory().$result['filename'];
+    $iceSavedExt = pathinfo($result['filename'], PATHINFO_EXTENSION);
+    if (!iceUploadContentAllowed($iceSavedPath, $iceSavedExt)) {
+        @unlink($iceSavedPath);
+        iceUploadDeny('INVALID_FILE_CONTENT', 'Uploaded file content does not match its type');
+    }
+}
+
 // to pass data through iframe you will need to encode all html tags
 
 $uploadFilesToS3 = SettingsManager::getInstance()->getSetting("Files: Upload Files to S3");
@@ -172,7 +194,7 @@ if ($uploadFilesToS3.'' == '1' && !empty($uploadFilesToS3Key) && !empty($uploadF
 
 	$file_url = $s3WebUrl.$uploadname;
 	$file_url = $s3FileSys->generateExpiringURL($file_url);
-	LogManager::getInstance()->info("Response from s3 file sys:".print_r($res, true));
+	LogManager::getInstance()->debug("Response from s3 file sys:".print_r($res, true));
 	unlink($localFile);
 
 	$uploadedToS3 = true;

@@ -140,7 +140,7 @@ class Uploader
             $s3FileSys = new S3FileSystem($uploadFilesToS3Key, $uploadFilesToS3Secret);
             $res = $s3FileSys->putObject($s3Bucket, $uploadName, $localFile, 'authenticated-read');
 
-            LogManager::getInstance()->info("Response from s3 file sys:".print_r($res, true));
+            LogManager::getInstance()->debug("Response from s3 file sys:".print_r($res, true));
             unlink($localFile);
         }
 

@@ -25,13 +25,16 @@ window.requestPasswordChange = () => {
   if (id === '') {
     return false;
   }
+  // Server messages are rendered with .text(), not .html(): this page is
+  // unauthenticated, and any message that ever echoes request input would otherwise
+  // be a reflected-XSS sink.
   $.post('service.php', { a: 'rpc', id }, (data) => {
     if (data.status == 'SUCCESS') {
       $('#requestPasswordChangeFormAlert').show();
-      $('#requestPasswordChangeFormAlert').html(data.message);
+      $('#requestPasswordChangeFormAlert').text(data.message);
     } else {
       $('#requestPasswordChangeFormAlert').show();
-      $('#requestPasswordChangeFormAlert').html(data.message);
+      $('#requestPasswordChangeFormAlert').text(data.message);
     }
   }, 'json');
 };
@@ -59,7 +62,7 @@ window.changePassword = (key) => {
       top.location.href = 'login.php?c=1';
     } else {
       $('#newPasswordFormAlert').show();
-      $('#newPasswordFormAlert').html(data.message);
+      $('#newPasswordFormAlert').text(data.message);
     }
   }, 'json');
 };
@@ -112,7 +115,7 @@ window.requestLoginCode = () => {
 
   $.post('service.php', { a: 'rlc', email }, (data) => {
     $('#loginCodeFormAlert').show();
-    $('#loginCodeFormAlert').html(data.message);
+    $('#loginCodeFormAlert').text(data.message);
     if (data.status === 'SUCCESS') {
       $('#requestCodeBtn').hide();
       $('#enterCodeSection').show();

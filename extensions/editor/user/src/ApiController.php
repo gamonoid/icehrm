@@ -11,6 +11,35 @@ class ApiController extends IceApiController
 {
 	public function registerEndPoints() {
 
+		// Native SPA data source: resolves a document (access + data) as JSON,
+		// reusing the exact logic the legacy page uses (EditorService::resolveDocument).
+		self::register(
+			REST_API_PATH . 'editor/document', self::GET, function ($pathParams = null) {
+				$restEndpoint = new RestEndPoint();
+
+				$resolved = EditorService::resolveDocument([
+					'object' => isset($_REQUEST['object']) ? $_REQUEST['object'] : null,
+					'id' => isset($_REQUEST['id']) ? $_REQUEST['id'] : null,
+					'field' => isset($_REQUEST['field']) ? $_REQUEST['field'] : null,
+					'hash' => isset($_REQUEST['hash']) ? $_REQUEST['hash'] : null,
+					'view' => (isset($_REQUEST['view']) && $_REQUEST['view'] == '1'),
+					'checks' => (isset($_REQUEST['checks']) && $_REQUEST['checks'] == '1'),
+					'title' => isset($_REQUEST['title']) ? $_REQUEST['title'] : null,
+				]);
+
+				if (empty($resolved['allowed'])) {
+					$restEndpoint->sendResponse(new IceResponse(
+						IceResponse::ERROR,
+						isset($resolved['error']) ? $resolved['error'] : 'Not found',
+						403
+					));
+					return false;
+				}
+
+				$restEndpoint->sendResponse(new IceResponse(IceResponse::SUCCESS, $resolved));
+			}
+		);
+
         // REST Api post request
         self::register(
             REST_API_PATH . 'editor/save-content', self::POST, function ($pathParams = null) {

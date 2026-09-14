@@ -1,9 +1,10 @@
-version: "3.5"
+# Testing stack. Host ports use the 918x/938x block so this can run alongside
+# the dev stack, icehrm-pro and the release-test stacks.
 services:
   mysql-testing:
     image: mysql:5.7
     ports:
-      - 3306:3306
+      - 127.0.0.1:9387:3306
     environment:
       MYSQL_ROOT_PASSWORD: IceHrmR00t
       MYSQL_USER: testing
@@ -18,7 +19,9 @@ services:
       context: ./
       dockerfile: Dockerfile-testing
     ports:
-      - 8090:8090
+      # Host 9183 -> container 8090. Cypress reaches the app over the compose
+      # network at http://icehrm-testing:8090, so it is unaffected by this.
+      - 9183:8090
     logging:
       driver: none
     depends_on:

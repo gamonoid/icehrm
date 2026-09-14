@@ -15,13 +15,19 @@ class CoordinatedTrainingSession extends TrainingSession
 
     public function getUserAccess()
     {
+        // List access is safe for any employee: Find() below scopes the result to
+        // sessions whose course is coordinated by the current user.
+        if (empty($this->id)) {
+            return array("get");
+        }
+
         $course = new Course();
         $course->Load('id = ?', array($this->course));
 
         if (!empty($course->id) && $course->coordinator === BaseService::getInstance()->getCurrentUser()->id) {
-            return array("get","element","save");
+            return array("get","element","add","save");
         }
-        return array("get","element");
+        return array();
     }
 
     // @codingStandardsIgnoreStart

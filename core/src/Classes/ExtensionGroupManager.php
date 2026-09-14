@@ -44,24 +44,26 @@ class ExtensionGroupManager
             return;
         }
 
-        $extensionsPath = $this->getExtensionsPath();
-        if (!is_dir($extensionsPath)) {
-            $this->initialized = true;
-            return;
-        }
-
-        $dirs = scandir($extensionsPath);
-        foreach ($dirs as $dir) {
-            if ($dir === '.' || $dir === '..') {
+        // Scan both the free extensions/ root and the paid extensions-pro/ root
+        // (when present) for group definitions.
+        foreach (iceExtensionRoots($this->getExtensionsPath()) as $extensionsPath) {
+            if (!is_dir($extensionsPath)) {
                 continue;
             }
 
-            $groupJsonPath = $extensionsPath . $dir . '/group.json';
-            if (file_exists($groupJsonPath)) {
-                $content = file_get_contents($groupJsonPath);
-                $groupData = json_decode($content, true);
-                if ($groupData && isset($groupData['extensions'])) {
-                    $this->groups[$dir] = $groupData;
+            $dirs = scandir($extensionsPath);
+            foreach ($dirs as $dir) {
+                if ($dir === '.' || $dir === '..') {
+                    continue;
+                }
+
+                $groupJsonPath = $extensionsPath . $dir . '/group.json';
+                if (file_exists($groupJsonPath)) {
+                    $content = file_get_contents($groupJsonPath);
+                    $groupData = json_decode($content, true);
+                    if ($groupData && isset($groupData['extensions'])) {
+                        $this->groups[$dir] = $groupData;
+                    }
                 }
             }
         }
@@ -145,29 +147,36 @@ class ExtensionGroupManager
         $this->initialize();
 
         $extensions = [];
-        $extensionsPath = $this->getExtensionsPath();
 
-        $dirs = scandir($extensionsPath);
-        foreach ($dirs as $dir) {
-            if ($dir === '.' || $dir === '..') {
+        // Enumerate across both the free extensions/ root and the paid
+        // extensions-pro/ root (when present).
+        foreach (iceExtensionRoots($this->getExtensionsPath()) as $extensionsPath) {
+            if (!is_dir($extensionsPath)) {
                 continue;
             }
 
-            $fullPath = $extensionsPath . $dir;
-            if (!is_dir($fullPath)) {
-                continue;
-            }
-
-            // Check if this is a group
-            if (isset($this->groups[$dir])) {
-                // Add all extensions from this group
-                foreach ($this->groups[$dir]['extensions'] as $extName) {
-                    $extensions[] = $extName;
+            $dirs = scandir($extensionsPath);
+            foreach ($dirs as $dir) {
+                if ($dir === '.' || $dir === '..') {
+                    continue;
                 }
-            } else {
-                // Regular extension (has admin or user subdirectory)
-                if (is_dir($fullPath . '/admin') || is_dir($fullPath . '/user')) {
-                    $extensions[] = $dir;
+
+                $fullPath = $extensionsPath . $dir;
+                if (!is_dir($fullPath)) {
+                    continue;
+                }
+
+                // Check if this is a group
+                if (isset($this->groups[$dir])) {
+                    // Add all extensions from this group
+                    foreach ($this->groups[$dir]['extensions'] as $extName) {
+                        $extensions[] = $extName;
+                    }
+                } else {
+                    // Regular extension (has admin or user subdirectory)
+                    if (is_dir($fullPath . '/admin') || is_dir($fullPath . '/user')) {
+                        $extensions[] = $dir;
+                    }
                 }
             }
         }

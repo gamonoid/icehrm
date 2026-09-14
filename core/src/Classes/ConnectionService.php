@@ -10,6 +10,16 @@ class ConnectionService
     const SYSTEM_DATA_KEY = 'marketplace:connection';
     const CACHE_KEY_MY_EXTENSIONS = 'marketplace:my_extensions';
     const SYSTEM_DATA_KEY_MY_EXTENSIONS = 'marketplace:my_extensions';
+    /**
+     * Marks that an opportunistic refresh was TRIED, whether or not it worked.
+     *
+     * Separate from the data cache on purpose. The data cache is only written on
+     * success, so on its own it would let a failing or unreachable icehrm.com be
+     * retried on every single dashboard load — each one paying the cURL timeouts
+     * (10s connect, 30s total) in front of a synchronous bootstrap request. Writing
+     * this marker before the attempt caps it at one call per TTL either way.
+     */
+    const CACHE_KEY_MY_EXTENSIONS_ATTEMPT = 'marketplace:my_extensions:attempt';
     const CACHE_TTL_3_HOURS = 10800;
 
     private function __construct()
@@ -90,8 +100,8 @@ class ConnectionService
             CURLOPT_TIMEOUT => 30,
             CURLOPT_CONNECTTIMEOUT => 10,
             CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_SSL_VERIFYPEER => BaseService::shouldVerifyOutboundTls(),
+            CURLOPT_SSL_VERIFYHOST => BaseService::shouldVerifyOutboundTls() ? 2 : 0,
             CURLOPT_HTTPHEADER => [
                 'Accept: application/json',
                 'Content-Type: application/json',
@@ -132,6 +142,15 @@ class ConnectionService
         $connectionData = $data['data'];
         $this->saveConnectionData($connectionData);
 
+        // Immediately populate this account's subscription/extension data so it
+        // reflects the new connection without waiting for the user to open My
+        // Purchases. Best-effort — failure just defers the fetch.
+        try {
+            $this->fetchMyExtensions(true);
+        } catch (\Throwable $e) {
+            LogManager::getInstance()->error('ConnectionService: post-connect my-extensions fetch failed - ' . $e->getMessage());
+        }
+
         LogManager::getInstance()->info('ConnectionService: Token exchange successful');
 
         return $connectionData;
@@ -145,7 +164,36 @@ class ConnectionService
      */
     public function saveConnectionData($data)
     {
-        return BaseService::getInstance()->setSystemData(self::SYSTEM_DATA_KEY, $data);
+        $result = BaseService::getInstance()->setSystemData(self::SYSTEM_DATA_KEY, $data);
+        // A new/changed connection must not serve module/extension data cached
+        // for a previous (or disconnected) account.
+        $this->clearMarketplaceCaches();
+        return $result;
+    }
+
+    /**
+     * Drop the marketplace caches (module list + this account's extensions) plus
+     * the persisted "my extensions" SystemData, so a connect or disconnect takes
+     * effect immediately instead of serving stale data belonging to a previous
+     * (or now-disconnected) account. It is repopulated on the next
+     * fetchMyExtensions(). Best-effort.
+     */
+    private function clearMarketplaceCaches()
+    {
+        try {
+            $cache = DatabaseCache::getInstance();
+            $cache->delete(self::CACHE_KEY_MY_EXTENSIONS); // 'marketplace:my_extensions'
+            $cache->delete(self::CACHE_KEY_MY_EXTENSIONS_ATTEMPT);
+            $cache->delete('marketplace:modules');         // MarketplaceService::CACHE_KEY_MODULES
+        } catch (\Throwable $e) {
+            // ignore — caches will expire on their own TTL
+        }
+        try {
+            // Clear the persisted subscription/extension data for the account.
+            BaseService::getInstance()->setSystemData(self::SYSTEM_DATA_KEY_MY_EXTENSIONS, null);
+        } catch (\Throwable $e) {
+            // ignore — nothing else depends on this succeeding synchronously
+        }
     }
 
     /**
@@ -167,6 +215,94 @@ class ConnectionService
     {
         $data = $this->getConnectionData();
         return !empty($data) && !empty($data['access_token']);
+    }
+
+    /**
+     * Verify an INBOUND request from the connected icehrm.com server, using the
+     * credentials stored at connect time. The caller (icehrm.com) must present:
+     *
+     *   Authorization: Bearer <access_token>
+     *   X-Signature:   hash_hmac('sha256', <access_token>, <secret>)
+     *
+     * i.e. the access token proves identity and the signature proves the caller
+     * also holds the shared secret. A fixed message (the access token) is signed
+     * rather than the request URL so verification doesn't depend on
+     * reconstructing scheme/host/path behind proxies. Both are compared with
+     * hash_equals (constant time). Returns false unless the installation is
+     * connected and both values match.
+     *
+     * @param string $accessToken bearer token from the request
+     * @param string $signature   X-Signature header from the request
+     * @return bool
+     */
+    public function verifyInboundRequest($accessToken, $signature)
+    {
+        if (!$this->isConnected() || empty($accessToken) || empty($signature)) {
+            return false;
+        }
+        $data = $this->getConnectionData();
+        if (empty($data['access_token']) || empty($data['secret'])) {
+            return false;
+        }
+        $expectedSignature = hash_hmac('sha256', $data['access_token'], $data['secret']);
+        return hash_equals((string) $data['access_token'], (string) $accessToken)
+            && hash_equals($expectedSignature, (string) $signature);
+    }
+
+    /**
+     * Re-sync this account's purchases when the cached copy has aged out.
+     *
+     * Called from the app shell bootstrap so an ordinary admin visit keeps the
+     * snapshot current. Until this existed, the ONLY thing that ever refreshed it
+     * was an admin opening Marketplace > My Purchases, so on an installation where
+     * nobody visits that page the data stayed frozen at connect time — and the
+     * update banners, which read it, could never notice a new release.
+     *
+     * Cheap by construction, and silent:
+     *
+     *   - self-hosted only. On cloud, icehrm.com owns the subscription directly and
+     *     there is nothing to pull;
+     *   - not connected, nothing to ask;
+     *   - the 3-hour data cache is honoured, so a warm cache costs one local read;
+     *   - one attempt per 3 hours even when the request fails (see the attempt
+     *     marker), so an unreachable icehrm.com cannot make every dashboard load
+     *     wait on a cURL timeout;
+     *   - every failure path returns false rather than throwing. A dashboard must
+     *     render whether or not icehrm.com is reachable.
+     *
+     * @return bool whether a request was actually made and returned data
+     */
+    public function refreshMyExtensionsIfStale()
+    {
+        // Cloud installations are served by icehrm.com itself.
+        if (defined('IS_CLOUD') && IS_CLOUD) {
+            return false;
+        }
+
+        try {
+            if (!$this->isConnected()) {
+                return false;
+            }
+
+            $cache = DatabaseCache::getInstance();
+            if ($cache->get(self::CACHE_KEY_MY_EXTENSIONS) !== null) {
+                return false; // still fresh
+            }
+            if ($cache->get(self::CACHE_KEY_MY_EXTENSIONS_ATTEMPT) !== null) {
+                return false; // tried recently; do not retry on every page load
+            }
+
+            // Recorded BEFORE the call, so a failure is rate-limited exactly as a
+            // success is.
+            $cache->set(self::CACHE_KEY_MY_EXTENSIONS_ATTEMPT, time(), self::CACHE_TTL_3_HOURS);
+
+            return $this->fetchMyExtensions(false) !== null;
+        } catch (\Throwable $e) {
+            LogManager::getInstance()->error(
+                'ConnectionService: opportunistic my-extensions refresh failed - ' . $e->getMessage()
+            );
+            return false;
+        }
     }
 
     /**
@@ -196,7 +332,21 @@ class ConnectionService
         $secret = $connectionData['secret'];
 
         $requestUrl = APP_WEB_URL . '/sapi/connect/my-extensions';
+
+        // Signed BEFORE the query string is appended, so the signature stays byte-for-byte
+        // what it has always been. icehrm.com recomputes it from the bare endpoint, and
+        // signing the full URL instead would 401 every connected installation until the
+        // server was deployed in lockstep. The two parameters are hints for choosing what
+        // to advertise back — a version and an edition — never access decisions, so
+        // leaving them outside the signature costs nothing.
         $signature = hash_hmac('sha256', $requestUrl, $secret);
+
+        // Tell the server what this installation actually is, so it can answer with
+        // releases that suit it: the running version, and whether this is Pro (1) or the
+        // open-source build (0). An open-source installation asks this too — it is how it
+        // learns it holds a Pro subscription it has not installed yet.
+        $requestUrl .= '?version=' . urlencode(defined('VERSION') ? (string) VERSION : '')
+            . '&pro=' . ((defined('IS_ICEHRM_PRO') && IS_ICEHRM_PRO) ? '1' : '0');
 
         LogManager::getInstance()->info('ConnectionService: Fetching my-extensions from ' . $requestUrl);
 
@@ -207,8 +357,8 @@ class ConnectionService
             CURLOPT_TIMEOUT => 30,
             CURLOPT_CONNECTTIMEOUT => 10,
             CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_SSL_VERIFYPEER => BaseService::shouldVerifyOutboundTls(),
+            CURLOPT_SSL_VERIFYHOST => BaseService::shouldVerifyOutboundTls() ? 2 : 0,
             CURLOPT_HTTPHEADER => [
                 'Accept: application/json',
                 'Content-Type: application/json',
@@ -284,6 +434,10 @@ class ConnectionService
         // Always clear local connection data regardless of server response
         BaseService::getInstance()->setSystemData(self::SYSTEM_DATA_KEY, null);
 
+        // Drop marketplace caches so the disconnected state (or a later reconnect)
+        // isn't served stale module/extension data.
+        $this->clearMarketplaceCaches();
+
         return $result;
     }
 
@@ -312,8 +466,8 @@ class ConnectionService
             CURLOPT_TIMEOUT => 30,
             CURLOPT_CONNECTTIMEOUT => 10,
             CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_SSL_VERIFYPEER => BaseService::shouldVerifyOutboundTls(),
+            CURLOPT_SSL_VERIFYHOST => BaseService::shouldVerifyOutboundTls() ? 2 : 0,
             CURLOPT_HTTPHEADER => [
                 'Accept: application/json',
                 'Content-Type: application/json',

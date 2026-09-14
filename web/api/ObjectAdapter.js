@@ -3,6 +3,7 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 import AdapterBase from './AdapterBase';
+import { escapeHtml } from '../api-common/htmlEscape';
 /**
  * ObjectAdapter
  */
@@ -23,8 +24,12 @@ class ObjectAdapter extends AdapterBase {
   getObjectHTML(object) {
     const template = this.getCustomTemplate(this.getTemplateName());
     let t = template;
+    // The template is trusted, the object fields are not — they are server rows that
+    // other users can write. Escape each value, and pass the replacement as a function
+    // so `$&`/`$'` inside the data are not treated as replacement patterns.
     for (const index in object) {
-      t = t.replace(new RegExp(`#_${index}_#`, 'g'), object[index]);
+      const safeValue = escapeHtml(object[index]);
+      t = t.replace(new RegExp(`#_${index}_#`, 'g'), () => safeValue);
     }
     return t;
   }

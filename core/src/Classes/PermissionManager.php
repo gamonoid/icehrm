@@ -19,7 +19,8 @@ class PermissionManager
     const ACCESS_LIST_DESCRIPTION = [
         'get' => 'List',
         'element' => 'View Details',
-        'save' => 'Add/Edit',
+        'add' => 'Add',
+        'save' => 'Edit',
         'delete' => 'Delete',
     ];
 
@@ -31,11 +32,35 @@ class PermissionManager
     public static function manipulationAllowed($employeeId, BaseModel $object)
     {
         $subIds = self::getSubordinateIds($employeeId, $object->allowIndirectMapping());
-        if ($object->table === 'Employees') {
+
+        // Identify an employee record by CLASS, not by $object->table. The table property
+        // is public and BaseService::cleanUpAdoDB() unsets it before objects are returned
+        // (so the schema is not leaked to the client) — an Employee that has been through
+        // the service layer therefore has no ->table, would fall through to the branch
+        // below, and be tested on a ->employee property it does not have. That denies a
+        // genuine subordinate silently, with no error and nothing logged.
+        //
+        // Employee is the only class declaring table = 'Employees', so this matches exactly
+        // the same objects as before — it just cannot be defeated by an unset().
+        if ($object instanceof Employee) {
             return in_array($object->id, $subIds);
         }
 
         return in_array($object->employee, $subIds);
+    }
+
+    /**
+     * The employee ids $employeeId may act on: themselves plus their subordinates.
+     *
+     * Public accessor for the same set manipulationAllowed() uses, so callers that need
+     * the set ONCE for a whole result page (BaseService::projectForViewer) don't have to
+     * call manipulationAllowed() per row — that would re-run the subordinate lookups for
+     * every record. Keeping the rule itself here means there is still one definition of
+     * "who reports to me".
+     */
+    public static function getAccessibleEmployeeIds($employeeId, $addIndirect = false)
+    {
+        return self::getSubordinateIds($employeeId, $addIndirect);
     }
 
     private static function getSubordinateIds($employeeId, $addIndirect)

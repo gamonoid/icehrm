@@ -2,13 +2,13 @@
  Copyright (c) 2018 [Glacies UG, Berlin, Germany] (http://glacies.de)
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
-import AdapterBase from '../../../api/AdapterBase';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
 
 /**
  * CompanyLoanAdapter
  */
 
-class CompanyLoanAdapter extends AdapterBase {
+class CompanyLoanAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -25,6 +25,17 @@ class CompanyLoanAdapter extends AdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      { title: 'Name', dataIndex: 'name', sorter: true },
+      { title: 'Details', dataIndex: 'details' },
+    ];
+  }
+
+  showViewButton() {
+    return false;
+  }
+
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
@@ -39,7 +50,7 @@ class CompanyLoanAdapter extends AdapterBase {
  * EmployeeCompanyLoanAdapter
  */
 
-class EmployeeCompanyLoanAdapter extends AdapterBase {
+class EmployeeCompanyLoanAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -64,6 +75,22 @@ class EmployeeCompanyLoanAdapter extends AdapterBase {
       { sTitle: 'Amount' },
       { sTitle: 'Status' },
     ];
+  }
+
+  getTableColumns() {
+    return [
+      { title: 'Employee', dataIndex: 'employee', sorter: true },
+      { title: 'Loan Type', dataIndex: 'loan' },
+      { title: 'Loan Start Date', dataIndex: 'start_date', sorter: true },
+      { title: 'Loan Period (Months)', dataIndex: 'period_months' },
+      { title: 'Currency', dataIndex: 'currency' },
+      { title: 'Amount', dataIndex: 'amount' },
+      { title: 'Status', dataIndex: 'status' },
+    ];
+  }
+
+  showViewButton() {
+    return false;
   }
 
   getFormFields() {

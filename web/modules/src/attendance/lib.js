@@ -6,7 +6,7 @@
 /* global modJs, modJsList, webkitURL */
 
 import ReactModalAdapterBase from "../../../api/ReactModalAdapterBase";
-import {Button, Progress, Typography} from "antd";
+import {Button, Progress, Typography, message} from "antd";
 import React from "react";
 import {PlusCircleOutlined} from "@ant-design/icons";
 import AttendanceModal from '../../../admin/src/attendance/components/AttendanceModal';
@@ -210,7 +210,14 @@ class AttendanceAdapter extends ReactModalAdapterBase {
   }
 
   getPunchFailCallBack(callBackData) {
-    this.showMessage('Error Occurred while Time Punch', callBackData);
+    // Friendly, non-alarming feedback for a correctable mistake (a gentle toast,
+    // not a red error modal). Rephrase the common overlap message.
+    const raw = (typeof callBackData === 'string') ? callBackData : '';
+    let text = raw || 'We couldn’t record that punch. Please try again.';
+    if (/overlap/i.test(raw)) {
+      text = 'That time overlaps with an entry you already have — please pick a different time.';
+    }
+    message.warning({ content: text, duration: 4, style: { marginTop: '8vh' } });
   }
 
   getClientDate(date) {

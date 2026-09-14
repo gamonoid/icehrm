@@ -79,7 +79,7 @@ class DataActionManager extends SubActionManager
         }
 
 
-        $file = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
+        $file = bin2hex(random_bytes(16));
         $output = fopen('/tmp/'.$file, 'w');
         fputcsv($output, $headers);
         fputcsv($output, $sample);

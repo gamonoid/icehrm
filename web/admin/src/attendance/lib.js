@@ -141,9 +141,11 @@ class AttendanceAdapter extends ReactModalAdapterBase {
   getFilters() {
     return [
       ['employee', {
-        label: 'Employee', type: 'select2', 'allow-null': false, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
+        label: 'Employee', type: 'select2', 'allow-null': true, validation: 'none', 'remote-source': ['Employee', 'id', 'first_name+last_name'],
       }],
-
+      ['date', {
+        label: 'Date', type: 'date', 'allow-null': true, validation: 'none',
+      }],
     ];
   }
 
@@ -273,7 +275,8 @@ class AttendanceAdapter extends ReactModalAdapterBase {
 
     if (callBackData.note) {
       $('#attendanceNoteWrapper').show();
-      $('#attendanceNote').html(callBackData.note);
+      // Employee-entered punch note rendered in an admin's DOM — escape it.
+      $('#attendanceNote').text(callBackData.note);
     } else {
       $('#attendanceNoteWrapper').hide();
     }

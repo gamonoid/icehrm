@@ -3,13 +3,13 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import AdapterBase from '../../../api/AdapterBase';
-import IdNameAdapter from '../../../api/IdNameAdapter';
+import ReactModalAdapterBase from '../../../api/ReactModalAdapterBase';
+import ReactIdNameAdapter from '../../../api/ReactIdNameAdapter';
 /**
  * CountryAdapter
  */
 
-class CountryAdapter extends AdapterBase {
+class CountryAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -24,6 +24,17 @@ class CountryAdapter extends AdapterBase {
       { sTitle: 'Code' },
       { sTitle: 'Name' },
     ];
+  }
+
+  getTableColumns() {
+    return [
+      { title: 'Code', dataIndex: 'code', sorter: true },
+      { title: 'Name', dataIndex: 'name', sorter: true },
+    ];
+  }
+
+  showViewButton() {
+    return false;
   }
 
   getFormFields() {
@@ -40,7 +51,7 @@ class CountryAdapter extends AdapterBase {
  * ProvinceAdapter
  */
 
-class ProvinceAdapter extends AdapterBase {
+class ProvinceAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -57,6 +68,18 @@ class ProvinceAdapter extends AdapterBase {
       { sTitle: 'Name' },
       { sTitle: 'Country' },
     ];
+  }
+
+  getTableColumns() {
+    return [
+      { title: 'Code', dataIndex: 'code', sorter: true },
+      { title: 'Name', dataIndex: 'name', sorter: true },
+      { title: 'Country', dataIndex: 'country' },
+    ];
+  }
+
+  showViewButton() {
+    return false;
   }
 
   getFormFields() {
@@ -80,7 +103,7 @@ class ProvinceAdapter extends AdapterBase {
  * CurrencyTypeAdapter
  */
 
-class CurrencyTypeAdapter extends AdapterBase {
+class CurrencyTypeAdapter extends ReactModalAdapterBase {
   getDataMapping() {
     return [
       'id',
@@ -97,6 +120,17 @@ class CurrencyTypeAdapter extends AdapterBase {
     ];
   }
 
+  getTableColumns() {
+    return [
+      { title: 'Code', dataIndex: 'code', sorter: true },
+      { title: 'Name', dataIndex: 'name', sorter: true },
+    ];
+  }
+
+  showViewButton() {
+    return false;
+  }
+
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
@@ -111,7 +145,7 @@ class CurrencyTypeAdapter extends AdapterBase {
  * NationalityAdapter
  */
 
-class NationalityAdapter extends IdNameAdapter {
+class NationalityAdapter extends ReactIdNameAdapter {
 
 }
 
@@ -119,7 +153,7 @@ class NationalityAdapter extends IdNameAdapter {
  * ImmigrationStatusAdapter
  */
 
-class ImmigrationStatusAdapter extends IdNameAdapter {
+class ImmigrationStatusAdapter extends ReactIdNameAdapter {
 
 }
 
@@ -128,7 +162,7 @@ class ImmigrationStatusAdapter extends IdNameAdapter {
  * EthnicityAdapter
  */
 
-class EthnicityAdapter extends IdNameAdapter {
+class EthnicityAdapter extends ReactIdNameAdapter {
 
 }
 

@@ -1,0 +1,8 @@
+{
+  "skills": {
+    "create-admin-module": {
+      "description": "Create a new admin module or extension for IceHRM with all required files and boilerplate code",
+      "path": ".claude/skills/create-admin-module.md"
+    }
+  }
+}
