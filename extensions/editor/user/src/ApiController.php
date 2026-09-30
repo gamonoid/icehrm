@@ -4,7 +4,9 @@ namespace EditorUser;
 use Classes\BaseService;
 use Classes\IceApiController;
 use Classes\IceResponse;
+use Classes\PermissionManager;
 use Classes\RestEndPoint;
+use Employees\Common\Model\Employee;
 use Utils\SessionUtils;
 
 class ApiController extends IceApiController
@@ -71,6 +73,18 @@ class ApiController extends IceApiController
 						new IceResponse(IceResponse::ERROR, null, 403)
 					);
 					return false;
+				}
+
+				// Managers hold 'save' on all Employee records via the flat role matrix.
+				// Enforce subordinate scoping: a Manager may only write to employees who
+				// report to them, not to arbitrary colleagues or Admins.
+				if ($object instanceof Employee) {
+					if (!PermissionManager::manipulationAllowed($user->employee, $object)) {
+						$restEndpoint->sendResponse(
+							new IceResponse(IceResponse::ERROR, null, 403)
+						);
+						return false;
+					}
 				}
 
 				$result = EditorService::updateContent($data['hash'], json_encode($data['data']));

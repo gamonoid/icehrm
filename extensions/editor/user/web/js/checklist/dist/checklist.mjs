@@ -8,7 +8,7 @@ function k(i) {
   const e = document.createElement("div");
   return e.appendChild(i), e.innerHTML;
 }
-function r(i, e = null, t = {}) {
+function c(i, e = null, t = {}) {
   const n = document.createElement(i);
   Array.isArray(e) ? n.classList.add(...e) : e && n.classList.add(e);
   for (const s in t)
@@ -16,7 +16,7 @@ function r(i, e = null, t = {}) {
   return n;
 }
 function m(i) {
-  return i.innerHTML.replace("<br>", " ").trim();
+  return i.textContent.trim();
 }
 function p(i, e = !1, t = void 0) {
   const n = document.createRange(), s = window.getSelection();
@@ -34,7 +34,7 @@ Element.prototype.closest || (Element.prototype.closest = function(i) {
   } while (e !== null && e.nodeType === 1);
   return null;
 });
-class f {
+class S {
   /**
    * Notify core that read-only mode is supported
    *
@@ -121,7 +121,7 @@ class f {
    * @returns {Element}
    */
   render() {
-    return this._elements.wrapper = r("div", [this.CSS.baseBlock, this.CSS.wrapper]), this.data.items || (this.data.items = [
+    return this._elements.wrapper = c("div", [this.CSS.baseBlock, this.CSS.wrapper]), this.data.items || (this.data.items = [
       {
         text: "",
         checked: !1
@@ -193,18 +193,20 @@ class f {
    * @returns {Element} checkListItem - new element of checklist
    */
   createChecklistItem(e = {}) {
-    const t = r("div", this.CSS.item), n = r("span", this.CSS.checkbox), s = r("div", this.CSS.checkboxContainer), l = r("div", this.CSS.textField, {
-      innerHTML: e.text ? e.text : "",
+    const t = c("div", this.CSS.item), n = c("span", this.CSS.checkbox), s = c("div", this.CSS.checkboxContainer), l = c("div", this.CSS.textField, {
       contentEditable: !this.readOnly
-    }), a = this.findEmployeeImage(e.user_name), c = r("img", this.CSS.avatar, {
+    });
+    l.textContent = e.text || "";
+    const a = this.findEmployeeImage(e.user_name), o = c("img", this.CSS.avatar, {
       src: a ? a.replaceAll("&amp;", "&") : BASE_URL + "images/user-icon.png",
       title: e.user_name ? e.user_name : "Not assigned",
       "data-toggle": "tooltip"
     });
-    return this.readOnly || c.setAttribute("onclick", "selectEmployee(this)"), r("div", this.CSS.userName, {
-      innerHTML: `[${e.user_name}]`,
+    this.readOnly || o.setAttribute("onclick", "selectEmployee(this)");
+    const r = c("div", this.CSS.userName, {
       contentEditable: !this.readOnly
-    }), e.checked && t.classList.add(this.CSS.itemChecked), n.innerHTML = g, s.appendChild(n), t.appendChild(c), t.appendChild(s), t.appendChild(l), t;
+    });
+    return r.textContent = e.user_name ? `[${e.user_name}]` : "", e.checked && t.classList.add(this.CSS.itemChecked), n.innerHTML = g, s.appendChild(n), t.appendChild(o), t.appendChild(s), t.appendChild(l), t;
   }
   /**
    * Append new elements to the list by pressing Enter
@@ -219,11 +221,11 @@ class f {
       n.remove(), this.api.blocks.insert(), this.api.caret.setToBlock(u + 1);
       return;
     }
-    const a = d(), c = k(a), o = this.createChecklistItem({
-      text: c,
+    const a = d(), o = k(a), r = this.createChecklistItem({
+      text: o,
       checked: !1
     });
-    this._elements.wrapper.insertBefore(o, n.nextSibling), p(this.getItemInput(o), !0);
+    this._elements.wrapper.insertBefore(r, n.nextSibling), p(this.getItemInput(r), !0);
   }
   /**
    * Handle backspace
@@ -235,8 +237,8 @@ class f {
     if (!s || !(window.getSelection().focusOffset === 0))
       return;
     e.preventDefault();
-    const c = d(), o = this.getItemInput(s), h = o.childNodes.length;
-    o.appendChild(c), p(o, void 0, h), t.remove();
+    const o = d(), r = this.getItemInput(s), h = r.childNodes.length;
+    r.appendChild(o), p(r, void 0, h), t.remove();
   }
   /**
    * Styles
@@ -291,5 +293,5 @@ class f {
   }
 }
 export {
-  f as default
+  S as default
 };

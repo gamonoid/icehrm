@@ -90,13 +90,58 @@ class EditorService
 		return $content;
 	}
 
+	/**
+	 * Strip XSS vectors from editor block JSON before persistence.
+	 *
+	 * Checklist items store plain text — all HTML is removed via strip_tags().
+	 * For every other block type, event-handler attributes (on*=...) and
+	 * javascript: protocol strings are stripped from all string values so that
+	 * a rogue block type cannot sneak a payload past the frontend fix.
+	 */
+	private static function sanitizeBlockContent(string $json): string
+	{
+		$data = json_decode($json, true);
+		if (!is_array($data) || !isset($data['blocks']) || !is_array($data['blocks'])) {
+			return $json;
+		}
+
+		foreach ($data['blocks'] as &$block) {
+			if (!isset($block['type']) || !isset($block['data'])) {
+				continue;
+			}
+
+			if ($block['type'] === 'checklist' && isset($block['data']['items']) && is_array($block['data']['items'])) {
+				foreach ($block['data']['items'] as &$item) {
+					if (isset($item['text'])) {
+						$item['text'] = strip_tags($item['text']);
+					}
+					if (isset($item['user_name'])) {
+						$item['user_name'] = strip_tags($item['user_name']);
+					}
+				}
+				unset($item);
+			}
+
+			array_walk_recursive($block['data'], function (&$value) {
+				if (is_string($value)) {
+					$value = preg_replace('/\bon\w+\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s>\/]*)/i', '', $value);
+					$value = preg_replace('/javascript\s*:/i', '', $value);
+				}
+			});
+		}
+		unset($block);
+
+		$sanitized = json_encode($data);
+		return $sanitized !== false ? $sanitized : $json;
+	}
+
 	public static function updateContent($hash, $data) {
 		$content = self::getContentByHash($hash);
 		if (empty($content)) {
 			return false;
 		}
 
-		$content->content = $data;
+		$content->content = self::sanitizeBlockContent($data);
 		$ok = $content->Save();
 		if (!$ok) {
 			return false;
