@@ -48,3 +48,4 @@ SECURITY_AUDIT.md
 # (e.g. reinstalled via the marketplace or restored from a backup).
 extensions/payroll_config/
 .icehrm_ghtoken
+.env
