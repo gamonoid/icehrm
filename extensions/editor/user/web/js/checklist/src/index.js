@@ -253,9 +253,9 @@ export default class Checklist {
     const checkbox = make('span', this.CSS.checkbox);
     const checkboxContainer = make('div', this.CSS.checkboxContainer);
     const textField = make('div', this.CSS.textField, {
-      innerHTML: item.text ? item.text : '',
       contentEditable: !this.readOnly,
     });
+    textField.textContent = item.text || '';
 
     const image = this.findEmployeeImage(item.user_name);
 
@@ -271,9 +271,9 @@ export default class Checklist {
 
 
     const usernameField = make('div', this.CSS.userName, {
-      innerHTML: `[${item.user_name}]`,
       contentEditable: !this.readOnly,
     });
+    usernameField.textContent = item.user_name ? `[${item.user_name}]` : '';
 
     if (item.checked) {
       checkListItem.classList.add(this.CSS.itemChecked);
@@ -330,11 +330,16 @@ export default class Checklist {
     const fragmentAfterCaret = extractContentAfterCaret();
     const htmlAfterCaret = fragmentToHtml(fragmentAfterCaret);
 
+    // Strip markup from the extracted fragment so createChecklistItem receives
+    // plain text — the same guarantee as items loaded from saved data.
+    const tempEl = document.createElement('div');
+    tempEl.innerHTML = htmlAfterCaret;
+
     /**
      * Create new checklist item
      */
     const newItem = this.createChecklistItem({
-      text: htmlAfterCaret,
+      text: tempEl.textContent,
       checked: false,
     });
 
