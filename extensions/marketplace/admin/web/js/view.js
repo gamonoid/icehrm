@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Row, Col, Button, Spin, Empty, Typography, Tag, Tabs, Avatar, Space, message, Alert } from 'antd';
+import { Card, Row, Col, Button, Spin, Empty, Typography, Tag, Avatar, Space, message, Alert } from 'antd';
 import { ShoppingCartOutlined, AppstoreOutlined, LinkOutlined, UserOutlined, CheckCircleOutlined, DisconnectOutlined, ReloadOutlined, CloudDownloadOutlined, WarningOutlined, ExclamationCircleOutlined, CloseCircleOutlined } from '@ant-design/icons';
 
 const { Meta } = Card;
@@ -8,19 +8,13 @@ const { Text, Title } = Typography;
 class MarketplaceAdminExtensionView extends React.Component {
   constructor(props) {
     super(props);
-    // Only the "My Purchases" tab is shown, so it is always the active tab
-    // (Marketplace/Installed are hidden — see the tabItems in render()).
-    const initialTab = 'my-extensions';
-
     this.state = {
       modules: [],
       loading: true,
       error: null,
-      activeTab: initialTab,
       connected: false,
       connectionData: null,
       connectionLoading: true,
-      // null until known; false shows the "Get IceHrm Pro" ad on My Purchases.
       isPro: null,
       coreVersion: null,
       myExtensions: [],
@@ -37,26 +31,19 @@ class MarketplaceAdminExtensionView extends React.Component {
     this.fetchConnectionStatus();
     this.fetchModules();
 
-    // If starting on my-extensions tab, fetch extensions after connection status is known
-    if (this.state.activeTab === 'my-extensions') {
-      // Also fetch installed extensions to show installed versions
-      this.fetchInstalledExtensions();
-      // Wait for connection status, then fetch if connected
-      const checkAndFetch = () => {
-        const { connected, connectionLoading, myExtensionsLoaded } = this.state;
-        if (!connectionLoading && connected && !myExtensionsLoaded) {
-          this.fetchMyExtensions();
-        } else if (connectionLoading) {
-          setTimeout(checkAndFetch, 100);
-        }
-      };
-      checkAndFetch();
-    }
+    // Installed extensions give the version shown on each purchased extension.
+    this.fetchInstalledExtensions();
 
-    // If starting on installed tab, fetch installed extensions
-    if (this.state.activeTab === 'installed') {
-      this.fetchInstalledExtensions();
-    }
+    // Wait for connection status, then fetch purchases if connected.
+    const checkAndFetch = () => {
+      const { connected, connectionLoading, myExtensionsLoaded } = this.state;
+      if (!connectionLoading && connected && !myExtensionsLoaded) {
+        this.fetchMyExtensions();
+      } else if (connectionLoading) {
+        setTimeout(checkAndFetch, 100);
+      }
+    };
+    checkAndFetch();
   }
 
   fetchConnectionStatus = () => {
@@ -347,30 +334,6 @@ class MarketplaceAdminExtensionView extends React.Component {
         </Card>
       </Col>
     );
-  };
-
-  handleTabChange = (activeTab) => {
-    this.setState({ activeTab });
-
-    // Fetch my extensions when switching to that tab (if connected and not loaded yet)
-    if (activeTab === 'my-extensions') {
-      const { connected, myExtensionsLoaded, installedExtensionsLoaded } = this.state;
-      if (connected && !myExtensionsLoaded) {
-        this.fetchMyExtensions();
-      }
-      // Also fetch installed extensions to show installed versions
-      if (!installedExtensionsLoaded) {
-        this.fetchInstalledExtensions();
-      }
-    }
-
-    // Fetch installed extensions when switching to that tab
-    if (activeTab === 'installed') {
-      const { installedExtensionsLoaded } = this.state;
-      if (!installedExtensionsLoaded) {
-        this.fetchInstalledExtensions();
-      }
-    }
   };
 
   renderMarketplaceTab = () => {
@@ -1134,24 +1097,6 @@ class MarketplaceAdminExtensionView extends React.Component {
   };
 
   render() {
-    const { activeTab } = this.state;
-
-    // Only the "My Purchases" tab is surfaced; the Marketplace (browse/buy) and
-    // Installed tabs are intentionally hidden. The render methods are kept so the
-    // tabs can be reinstated by adding their entries back here.
-    const tabItems = [
-      {
-        key: 'my-extensions',
-        label: (
-          <span>
-            <AppstoreOutlined style={{ marginRight: 8 }} />
-            My Purchases
-          </span>
-        ),
-        children: this.renderMyExtensionsTab(),
-      },
-    ];
-
     return (
       <div style={{ padding: 16 }}>
         <style>
@@ -1162,11 +1107,7 @@ class MarketplaceAdminExtensionView extends React.Component {
           `}
         </style>
         {this.renderConnectionIndicator()}
-        <Tabs
-          activeKey={activeTab}
-          onChange={this.handleTabChange}
-          items={tabItems}
-        />
+        {this.renderMyExtensionsTab()}
       </div>
     );
   }

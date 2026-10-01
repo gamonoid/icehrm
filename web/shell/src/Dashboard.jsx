@@ -8,6 +8,7 @@ import {
   RiseOutlined, UserAddOutlined, CalendarOutlined,
   WarningOutlined, ExclamationCircleOutlined, CreditCardOutlined,
   RocketOutlined, StarOutlined, PlusCircleOutlined, ArrowUpOutlined, TagOutlined,
+  CloudOutlined,
 } from '@ant-design/icons';
 import {
   Pie, Donut, Column, Area, Bar,
@@ -90,10 +91,77 @@ function Kpi({
   );
 }
 
-// Small "upgrade to IceHrmPro" call-to-action shown in the KPI row. Clicking the
-// card opens the marketplace's IceHrmPro comparison tab; the Buy Now button links
-// straight to the purchase page.
 const ICEHRM_PRO_PURCHASE_URL = 'https://icehrm.com/purchase-icehrmpro';
+const ICEHRM_CLOUD_MIGRATE_URL = 'https://icehrm.zendesk.com/hc/en-us/requests/new?tf_subject=Migrate%20IceHrm%20Open%20Source';
+const ICEHRM_CLOUD_PRICING_URL = 'https://icehrm.com/managed-hosting';
+
+function CloudBox({ onLearnMore }) {
+  return (
+    <Card
+      bordered={false}
+      hoverable={!!onLearnMore}
+      onClick={onLearnMore}
+      style={{
+        borderRadius: 14,
+        boxShadow: MUI_SHADOW,
+        cursor: onLearnMore ? 'pointer' : 'default',
+        background: 'linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%)',
+        color: '#fff',
+        height: '100%',
+      }}
+      bodyStyle={{ padding: 18 }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+        <div style={{
+          width: 46, height: 46, borderRadius: 12, flex: '0 0 auto',
+          background: 'rgba(255,255,255,0.2)', color: '#fff', display: 'flex',
+          alignItems: 'center', justifyContent: 'center', fontSize: 20,
+        }}
+        >
+          <CloudOutlined />
+        </div>
+        <div style={{ minWidth: 0 }}>
+          <div style={{ fontSize: 15, fontWeight: 700, lineHeight: 1.2 }}>Migrate to IceHrm Cloud</div>
+          <div style={{ fontSize: 12, opacity: 0.9, whiteSpace: 'nowrap' }}>No servers, automatic updates</div>
+        </div>
+      </div>
+      <div style={{
+        marginTop: 12, display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap',
+      }}
+      >
+        <Button
+          size="small"
+          href={ICEHRM_CLOUD_MIGRATE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          style={{ background: '#fff', borderColor: '#fff', color: '#0369a1', fontWeight: 600 }}
+        >
+          Contact Us
+        </Button>
+        <Button
+          size="small"
+          href={ICEHRM_CLOUD_PRICING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            background: 'rgba(255,255,255,0.18)',
+            borderColor: 'rgba(255,255,255,0.65)',
+            color: '#fff',
+            fontWeight: 600,
+          }}
+        >
+          Check Pricing
+        </Button>
+        {onLearnMore ? (
+          <span style={{ fontSize: 12, opacity: 0.9, textDecoration: 'underline' }}>Learn more</span>
+        ) : null}
+      </div>
+    </Card>
+  );
+}
+
 function UpgradeBox({ onCompare }) {
   return (
     <Card
@@ -429,6 +497,8 @@ export default function Dashboard({ config, onNavigate }) {
     return () => { alive = false; };
   }, [config]);
 
+  const showCloudCard = useMemo(() => Math.random() < 0.5, []);
+
   const greeting = useMemo(() => {
     const h = new Date().getHours();
     return h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening';
@@ -517,15 +587,23 @@ export default function Dashboard({ config, onNavigate }) {
             />
           </Col>
         ))}
-        {/* Upgrade-to-Pro call to action, sitting next to the KPI tiles. */}
+        {/* Promo card — randomly shows Cloud or Pro card, one per page load. */}
         <Col xs={12} sm={8} md={6} xl={kpis.length > 6 ? 4 : 6}>
-          <UpgradeBox
-            onCompare={onNavigate ? () => {
-              // Deep-link into the marketplace's IceHrmPro comparison tab.
-              try { window.__iceShellStartTab = 'tabIceHrmPro'; } catch (e) { /* */ }
-              onNavigate('extension', 'marketplace|admin');
-            } : undefined}
-          />
+          {showCloudCard ? (
+            <CloudBox
+              onLearnMore={onNavigate ? () => {
+                try { window.__iceShellStartTab = 'tabIceHrmCloud'; } catch (e) { /* */ }
+                onNavigate('extension', 'marketplace|admin');
+              } : undefined}
+            />
+          ) : (
+            <UpgradeBox
+              onCompare={onNavigate ? () => {
+                try { window.__iceShellStartTab = 'tabIceHrmPro'; } catch (e) { /* */ }
+                onNavigate('extension', 'marketplace|admin');
+              } : undefined}
+            />
+          )}
         </Col>
       </Row>
 
