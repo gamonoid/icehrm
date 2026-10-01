@@ -13,7 +13,7 @@ Only the latest release receives security updates.
 
 Please **do not** open a public GitHub issue for security vulnerabilities.
 
-Report vulnerabilities privately by emailing **icehrm@gamonoid.com**. Include:
+Report vulnerabilities privately by emailing **team@icehrm.com**. Include:
 - A description of the vulnerability and its potential impact
 - Steps to reproduce or a proof-of-concept (kept confidential)
 - The IceHRM version you tested against
