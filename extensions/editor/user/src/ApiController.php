@@ -76,9 +76,10 @@ class ApiController extends IceApiController
 				}
 
 				// Managers hold 'save' on all Employee records via the flat role matrix.
-				// Enforce subordinate scoping: a Manager may only write to employees who
-				// report to them, not to arbitrary colleagues or Admins.
-				if ($object instanceof Employee) {
+				// Enforce subordinate scoping for Manager-type roles only — Admins already
+				// have unrestricted access and must not be blocked by this check.
+				$managerLevels = ['Manager', 'Restricted Manager'];
+				if ($object instanceof Employee && in_array($user->user_level, $managerLevels, true)) {
 					if (!PermissionManager::manipulationAllowed($user->employee, $object)) {
 						$restEndpoint->sendResponse(
 							new IceResponse(IceResponse::ERROR, null, 403)

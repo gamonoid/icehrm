@@ -61,7 +61,7 @@ export function make(tagName, classNames = null, properties = {}) {
  * @returns {string}
  */
 export function getHTML(el) {
-  return el.textContent.trim();
+  return el.innerText.trim();
 }
 
 /**

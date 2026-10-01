@@ -16,7 +16,7 @@ function c(i, e = null, t = {}) {
   return n;
 }
 function m(i) {
-  return i.textContent.trim();
+  return i.innerText.trim();
 }
 function p(i, e = !1, t = void 0) {
   const n = document.createRange(), s = window.getSelection();
@@ -34,7 +34,7 @@ Element.prototype.closest || (Element.prototype.closest = function(i) {
   } while (e !== null && e.nodeType === 1);
   return null;
 });
-class S {
+class f {
   /**
    * Notify core that read-only mode is supported
    *
@@ -221,11 +221,13 @@ class S {
       n.remove(), this.api.blocks.insert(), this.api.caret.setToBlock(u + 1);
       return;
     }
-    const a = d(), o = k(a), r = this.createChecklistItem({
-      text: o,
+    const a = d(), o = k(a), r = document.createElement("div");
+    r.innerHTML = o;
+    const h = this.createChecklistItem({
+      text: r.textContent,
       checked: !1
     });
-    this._elements.wrapper.insertBefore(r, n.nextSibling), p(this.getItemInput(r), !0);
+    this._elements.wrapper.insertBefore(h, n.nextSibling), p(this.getItemInput(h), !0);
   }
   /**
    * Handle backspace
@@ -293,5 +295,5 @@ class S {
   }
 }
 export {
-  S as default
+  f as default
 };

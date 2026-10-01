@@ -122,12 +122,18 @@ class EditorService
 				unset($item);
 			}
 
-			array_walk_recursive($block['data'], function (&$value) {
-				if (is_string($value)) {
-					$value = preg_replace('/\bon\w+\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s>\/]*)/i', '', $value);
-					$value = preg_replace('/javascript\s*:/i', '', $value);
-				}
-			});
+			// Only strip HTML event-handler vectors from block types that render
+			// their content as HTML. Code blocks store literal source text and
+			// must not be mutated — on* patterns and javascript: are valid there.
+			$htmlRenderingTypes = ['paragraph', 'header', 'list', 'quote', 'warning'];
+			if (in_array($block['type'], $htmlRenderingTypes, true)) {
+				array_walk_recursive($block['data'], function (&$value) {
+					if (is_string($value)) {
+						$value = preg_replace('/\bon\w+\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s>\/]*)/i', '', $value);
+						$value = preg_replace('/javascript\s*:/i', '', $value);
+					}
+				});
+			}
 		}
 		unset($block);
 

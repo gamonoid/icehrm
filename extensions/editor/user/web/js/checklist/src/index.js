@@ -330,11 +330,16 @@ export default class Checklist {
     const fragmentAfterCaret = extractContentAfterCaret();
     const htmlAfterCaret = fragmentToHtml(fragmentAfterCaret);
 
+    // Strip markup from the extracted fragment so createChecklistItem receives
+    // plain text — the same guarantee as items loaded from saved data.
+    const tempEl = document.createElement('div');
+    tempEl.innerHTML = htmlAfterCaret;
+
     /**
      * Create new checklist item
      */
     const newItem = this.createChecklistItem({
-      text: htmlAfterCaret,
+      text: tempEl.textContent,
       checked: false,
     });
 
