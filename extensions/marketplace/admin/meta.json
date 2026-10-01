@@ -30,9 +30,15 @@
       },
       {
         "key": "tabIceHrmPro",
-        "label": "IceHrmPro",
+        "label": "Upgrade to IceHrmPro",
         "component": "NativeExtensionView",
         "viewGlobal": "IceHrmProCompareView"
+      },
+      {
+        "key": "tabIceHrmCloud",
+        "label": "Migrate to Cloud",
+        "component": "NativeExtensionView",
+        "viewGlobal": "IceHrmCloudPromoView"
       }
     ]
   }

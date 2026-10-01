@@ -26,3 +26,6 @@ window.MarketplaceAdminView = (require('./view').default || require('./view'));
 
 // IceHrmPro comparison tab (declared in meta.json native.tabs as viewGlobal).
 window.IceHrmProCompareView = (require('./IceHrmProCompare').default || require('./IceHrmProCompare'));
+
+// IceHrm Cloud migration tab (declared in meta.json native.tabs as viewGlobal).
+window.IceHrmCloudPromoView = (require('./IceHrmCloudPromo').default || require('./IceHrmCloudPromo'));
