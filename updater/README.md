@@ -36,8 +36,11 @@ directory sits exactly one level below the IceHRM root. **Do not move `updater/`
 4. **Validate and extract** — every archive entry is checked for path traversal before
    anything is written, and the expected root directory must be present.
 5. **Version check** — `VERSION_NUMBER` from the downloaded `core/config.base.php` must
-   be greater than the installed one (compared numerically: it is `'360000'`, not a
-   dotted version).
+   be greater than the installed one (compared numerically: it is `'360001'`, not a
+   dotted version). Every release — patch releases included — must therefore bump it
+   along with `VERSION`; v36.0.1 shipped with the 36.0.0 number and the updater
+   reported "Already up to date". `release.sh` now refuses to build when the two
+   disagree (`php test/version-number-check.php`).
 6. **Confirm**, then **install** — see below.
 7. **Migrate** — the updater does not touch the database. Schema changes are applied by
    the application when an administrator signs in, so the final screen asks for that

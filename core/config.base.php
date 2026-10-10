@@ -49,7 +49,7 @@ if(!defined('HOME_LINK_OTHERS')){
 //Version
 define('VERSION', '36.0.1');
 define('CACHE_VALUE', '36.0.1.2026-10011822');
-define('VERSION_NUMBER', '360000');
+define('VERSION_NUMBER', '360001');
 define('VERSION_DATE', '01/10/2026');
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','icehrm@gamonoid.com');}

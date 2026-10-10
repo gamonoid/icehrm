@@ -15,6 +15,7 @@
  */
 
 use Classes\BaseService;
+use Classes\PermissionManager;
 use Utils\SessionUtils;
 
 // fileupload-new.php includes only one of common-upload/editor-upload per request, but
@@ -35,17 +36,64 @@ if (!function_exists('iceUploadDeny')) {
     }
 
     /**
-     * Admins and managers legitimately upload on behalf of other employees (HR
-     * attaching a contract, setting someone's profile image). Everyone else is
-     * confined to their own employee record.
+     * Admins upload on behalf of anyone (HR attaching a contract, setting a profile
+     * image). Managers do too, but only for their own team - see
+     * iceUploadManagerMayActOn(). Everyone else is confined to their own record.
+     */
+    function iceUploadCallerIsAdmin($user)
+    {
+        return in_array($user->user_level, array('Admin', 'Restricted Admin'), true);
+    }
+
+    function iceUploadCallerIsManager($user)
+    {
+        return in_array($user->user_level, array('Manager', 'Restricted Manager'), true);
+    }
+
+    /**
+     * Kept for callers that only need "is this an admin or a manager" (settings and
+     * editor flows that no employee record is tied to). It no longer implies
+     * authority over any employee: use iceUploadMayActOnEmployee() for that.
      */
     function iceUploadCallerIsPrivileged($user)
     {
-        return in_array(
-            $user->user_level,
-            array('Admin', 'Manager', 'Restricted Admin', 'Restricted Manager'),
-            true
+        return iceUploadCallerIsAdmin($user) || iceUploadCallerIsManager($user);
+    }
+
+    /**
+     * May the manager $user act on employee $ownerId's files?
+     *
+     * Previously every Manager / Restricted Manager was treated as globally
+     * privileged here, so a manager could attach to, or overwrite the bytes of, a
+     * file belonging to any employee in the company simply by naming them in the
+     * request - while the rest of the application (BaseService list/get/save
+     * scoping, PermissionManager::manipulationAllowed) confines managers to their
+     * subordinates. Apply the same rule: the manager, their direct reports, and -
+     * when the File model opts in - indirect reports. A role explicitly granted
+     * access to all employee data opts out, exactly as it does in BaseService.
+     */
+    function iceUploadManagerMayActOn($user, $ownerId)
+    {
+        if (!iceUploadCallerIsManager($user)) {
+            return false;
+        }
+        if (\Employees\Common\Model\EmployeeAccess::hasAccessToAllEmployeeData()) {
+            return true;
+        }
+        $profileId = BaseService::getInstance()->getCurrentProfileId();
+        if (empty($profileId)) {
+            return false;
+        }
+        $file = new \Model\File();
+        $accessible = PermissionManager::getAccessibleEmployeeIds(
+            $profileId,
+            $file->allowIndirectMapping()
         );
+        if (!is_array($accessible)) {
+            return false;
+        }
+
+        return in_array((string) intval($ownerId), array_map('strval', $accessible), true);
     }
 
     /**
@@ -57,12 +105,15 @@ if (!function_exists('iceUploadDeny')) {
         if ($ownerId === null || $ownerId === '' || $ownerId === '_NONE_') {
             return true;
         }
-        if (iceUploadCallerIsPrivileged($user)) {
+        if (iceUploadCallerIsAdmin($user)) {
             return true;
         }
         $ownProfileId = BaseService::getInstance()->getCurrentProfileId();
+        if (!empty($ownProfileId) && intval($ownerId) === intval($ownProfileId)) {
+            return true;
+        }
 
-        return !empty($ownProfileId) && intval($ownerId) === intval($ownProfileId);
+        return iceUploadManagerMayActOn($user, $ownerId);
     }
 
     /**
@@ -116,17 +167,23 @@ if (!function_exists('iceUploadDeny')) {
         if (empty($file->id)) {
             return true; // new row, nothing to overwrite
         }
-        if (iceUploadCallerIsPrivileged($user)) {
+        if (iceUploadCallerIsAdmin($user)) {
             return true;
         }
         $signInMappingField = SIGN_IN_ELEMENT_MAPPING_FIELD_NAME;
         $owner = $file->$signInMappingField;
         if (empty($owner)) {
-            return false; // owner-less existing asset — privileged callers only
+            // Owner-less existing asset - privileged callers only (managers run the
+            // editor flows; there is no employee whose data this could be).
+            return iceUploadCallerIsPrivileged($user);
         }
         $ownProfileId = BaseService::getInstance()->getCurrentProfileId();
+        if (!empty($ownProfileId) && intval($owner) === intval($ownProfileId)) {
+            return true;
+        }
 
-        return !empty($ownProfileId) && intval($owner) === intval($ownProfileId);
+        // Someone else's file: a manager may replace it only within their team.
+        return iceUploadManagerMayActOn($user, $owner);
     }
 }
 
