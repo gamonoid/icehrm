@@ -19,7 +19,7 @@ The `-f` matters: without it Compose picks up `docker-compose.yaml`, which is th
 
 | Service | URL / port | Notes |
 |---------|-----------|-------|
-| Web application | [http://localhost:5666](http://localhost:5666) | container `icehrm-dev-app`, built from `Dockerfile-dev` (php-fpm + nginx + xdebug) |
+| Web application | [http://localhost:5666](http://localhost:5666) | container `icehrm-dev-app`, built from `Dockerfile-dev` (PHP 8.3 php-fpm + nginx + xdebug, installed but off: uncomment `zend_extension` in `/etc/php83/conf.d/50_xdebug.ini` inside the container to enable it) |
 | MySQL | `127.0.0.1:9666` | user `dev`, password `dev`, database `icehrm`; seeded from `docker/init.sql` |
 | phpMyAdmin | [http://127.0.0.1:9667](http://127.0.0.1:9667) | signed in as `dev` already |
 | MailHog | [http://localhost:9668](http://localhost:9668) | catches all outgoing mail; SMTP on `1166` |
