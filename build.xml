@@ -305,6 +305,7 @@
         <exclude name="release-test-update.sh"/>
         <exclude name="release-ext.sh"/>
         <exclude name="release-os-upgrade.sh"/>
+        <exclude name="release-upload-s3.sh"/>
         <exclude name="remove-obfuscated-files.sh"/>
         <!-- Explicitly kept out of the release (dev tooling, sources, internal
              notes, keys and build scaffolding). Patterns without a slash are
