@@ -35,7 +35,7 @@ RUN rm -rf node_modules web/node_modules \
 RUN ls -la /build/ && ls -la /build/app/
 
 # Production stage
-FROM alpine:3.20
+FROM alpine:3.22
 LABEL Maintainer="Thilina Pituwala <thilina@icehrm.com>" \
       Description="IceHrm Production Container with Nginx & PHP-FPM based on Alpine Linux."
 

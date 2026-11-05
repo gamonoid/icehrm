@@ -431,6 +431,8 @@ class RestEndPoint
             $headers = trim($_SERVER["Authorization"]);
         } elseif (isset($_SERVER['HTTP_AUTHORIZATION'])) { //Nginx or fast CGI
             $headers = trim($_SERVER["HTTP_AUTHORIZATION"]);
+        } elseif (isset($_SERVER['REDIRECT_HTTP_AUTHORIZATION'])) { //Apache + PHP-FPM after mod_rewrite
+            $headers = trim($_SERVER['REDIRECT_HTTP_AUTHORIZATION']);
         } elseif (function_exists('apache_request_headers')) {
             $requestHeaders = apache_request_headers();
             // Server-side fix for bug in old Android versions
