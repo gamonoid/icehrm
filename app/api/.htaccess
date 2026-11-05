@@ -2,6 +2,12 @@
     Options +FollowSymlinks
     RewriteEngine On
 
+    # Pass the Authorization header through to PHP. Apache with PHP-FPM/CGI
+    # (e.g. AlmaLinux/RHEL 9) strips it by default, which breaks bearer-token
+    # auth (app shell bootstrap returns 403).
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
     # Explicitly disable rewriting for front controllers
     RewriteRule ^index.php - [L]
 
