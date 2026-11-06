@@ -1,3 +1,20 @@
+<table>
+<tr>
+<td>
+
+### 🚀 Try IceHrm in your browser: [icehrm.github.io](https://icehrm.github.io/)
+
+Test the open-source edition of IceHrm without installing anything. It runs entirely in your browser.
+
+- **This is only a demo.** It is not backed by a real server.
+- **It is experimental.** The browser-only demo showcases basic IceHrm functionality. If something is broken in the demo, it should work fine when you run IceHrm on your own server.
+- **All demo data is saved in your browser.** Nothing is sent to a server.
+- **File uploads are not supported** in the demo.
+
+</td>
+</tr>
+</table>
+
 IceHrm
 ===========
 
