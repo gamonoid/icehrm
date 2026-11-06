@@ -49,7 +49,7 @@ same thing; pass `user` for an employee-facing module.
 
 - Refresh IceHrm to see a new menu item called `Sample Admin`
 - The extension code can be found under `icehrm/extensions/sample/admin`
-- Refer: [https://icehrm.com/explore/docs/extensions/](https://icehrm.com/explore/docs/extensions/) for more details.
+- Refer: [https://icehrm.com/docs/developer-guide/creating-extension/](https://icehrm.com/docs/developer-guide/creating-extension/) for more details.
 
 ### Building frontend assets
 
