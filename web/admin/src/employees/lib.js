@@ -1524,7 +1524,7 @@ class EmployeeLanguageAdapter extends SubProfileEnabledAdapterBase {
         'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
       }],
       ['language_id', {
-        label: 'Language', type: 'select2', 'allow-null': false, 'remote-source': ['Language', 'id', 'name'],
+        label: 'Language', type: 'select2', 'allow-null': false, 'remote-source': ['Language', 'id', 'description'],
       }],
       ['reading', { label: 'Reading', type: 'select', source: compArray }],
       ['speaking', { label: 'Speaking', type: 'select', source: compArray }],
@@ -1544,7 +1544,7 @@ class EmployeeLanguageAdapter extends SubProfileEnabledAdapterBase {
         'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
       }],
       ['language_id', {
-        label: 'Language', type: 'select2', 'allow-null': true, 'null-label': 'All Languages', 'remote-source': ['Language', 'id', 'name'],
+        label: 'Language', type: 'select2', 'allow-null': true, 'null-label': 'All Languages', 'remote-source': ['Language', 'id', 'description'],
       }],
 
     ];
