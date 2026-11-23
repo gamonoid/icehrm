@@ -1,5 +1,6 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20261123_100000_widen_employee_salary_amount';
 $migrationList[] = 'v20260806_100000_remove_legacy_reports_modules';
 $migrationList[] = 'v20260804_100000_remove_add_new_permissions_setting';
 $migrationList[] = 'v20260803_100000_widen_migration_file';
