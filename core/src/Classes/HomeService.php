@@ -409,7 +409,15 @@ class HomeService
                 : array();
             $reports = $this->people($db, $select . 'e.supervisor = ? ORDER BY e.first_name, e.last_name LIMIT '
                 . self::TEAM_MEMBER_LIMIT, array($empId, $empId), 'Reports to you');
-            $members = array_merge($manager, $peers, $reports);
+            // One entry per person: two employees can supervise each other, which
+            // puts the manager in "reports to you" as well. The first role wins.
+            $members = array();
+            foreach (array_merge($manager, $peers, $reports) as $person) {
+                if (!isset($members[$person['id']])) {
+                    $members[$person['id']] = $person;
+                }
+            }
+            $members = array_values($members);
             if (!empty($members)) {
                 $groups[] = array('id' => null, 'name' => 'Your team', 'color' => null, 'members' => $members);
             }

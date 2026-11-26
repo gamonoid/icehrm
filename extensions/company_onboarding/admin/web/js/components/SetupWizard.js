@@ -41,8 +41,9 @@ function firstOpen(summary) {
 
 /**
  * Where the wizard opens. "Invite an Employee" (Employees module) asks for the invite
- * step: once the setup is complete that is "Invite your team", before that the setup
- * carries on where it was left.
+ * step, which opens "Invite your team" whether or not the earlier steps are done: the
+ * step creates any job titles, employment types and departments it needs itself.
+ * Otherwise the setup carries on where it was left.
  */
 function initialStep(summary) {
   let wanted = null;
@@ -52,7 +53,7 @@ function initialStep(summary) {
   } catch (e) {
     wanted = null;
   }
-  if (wanted === 'invite' && summary.remaining === 0 && summary.steps.some((s) => s.key === 'team')) {
+  if (wanted === 'invite' && summary.steps.some((s) => s.key === 'team')) {
     return 'team';
   }
   return firstOpen(summary);
