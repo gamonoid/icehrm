@@ -558,14 +558,34 @@ try {// Domain aware input cleanup
                     $user->login_hash = $hashedCode;
                     $user->Save();
 
-                    // Send email
-                    $companyName = SettingsManager::getInstance()->getSetting('Company: Name');
-                    $subject = "Your IceHrm Login Code $code";
-                    $body = "Your login code is: <strong>$code</strong><br><br>";
-                    $body .= "This code will expire in 15 minutes.<br><br>";
-                    $body .= "If you did not request this code, please ignore this email.";
+                    // Send email. The code is valid for 15 minutes (see login.php).
+                    $companyName = \Classes\Email\EmailParts::companyName();
+                    $firstName = '';
+                    if (!empty($user->employee)) {
+                        $codeEmployee = new \Employees\Common\Model\Employee();
+                        $codeEmployee->Load("id = ?", [$user->employee]);
+                        if ($codeEmployee->id == $user->employee) {
+                            $firstName = $codeEmployee->first_name;
+                        }
+                    }
+                    $subject = sprintf('Your %s sign-in code is %s', $companyName, $code);
+                    $body = \Classes\Email\EmailParts::greeting($firstName)
+                        . \Classes\Email\EmailParts::text(sprintf('Use this code to sign in to %s:', $companyName))
+                        . '<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;">'
+                        . '<tr><td style="padding:14px 24px;background:' . \Classes\Email\EmailParts::SOFT . ';'
+                        . 'border:1px solid ' . \Classes\Email\EmailParts::BORDER . ';border-radius:6px;'
+                        . 'font-family:Menlo, Consolas, monospace;font-size:30px;font-weight:700;letter-spacing:8px;'
+                        . 'color:' . \Classes\Email\EmailParts::TEXT . ';">' . \Classes\Email\EmailParts::esc($code)
+                        . '</td></tr></table>'
+                        . \Classes\Email\EmailParts::small(
+                            'This code expires in 15 minutes. If you did not request it, you can ignore this email; '
+                            . 'someone may have typed your email address by mistake.'
+                        );
+                    $params = [
+                        'preheader' => \Classes\Email\EmailParts::esc('Your sign-in code expires in 15 minutes.'),
+                    ];
 
-                    if (!$emailSender->sendEmail($subject, $user->email, $body, [])) {
+                    if (!$emailSender->sendEmail($subject, $user->email, $body, $params)) {
                         LogManager::getInstance()->error('Failed to send login code email to a registered address');
                     }
                 } else {

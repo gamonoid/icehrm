@@ -11,6 +11,55 @@ namespace Classes;
  */
 class DashboardService
 {
+    /** @var callable[] Extensions that add banners to the admin dashboard. */
+    private static $bannerProviders = array();
+
+    /**
+     * Register a dashboard banner provider. The callable receives the current user and
+     * returns null or a banner:
+     *   key       unique id (also used to remember a dismiss)
+     *   tone      'green' | 'blue' | 'purple' | 'orange'
+     *   icon      'rocket' | 'team' | 'setting'
+     *   title, message
+     *   progress  optional array('done' => int, 'total' => int)
+     *   actions   list of array('label', 'g', 'n', 'primary' => bool, 'sessionHint' =>
+     *             array('key' => ..., 'value' => ...)): the hint is put in
+     *             sessionStorage before navigating, for the module to read
+     *   dismissible  bool (hidden until the next login)
+     *   replacesDemoPrompt  bool: the sample-data prompt is not shown with it
+     *   vars      optional placeholder values for title and message ({count} ...)
+     * Texts are English; the shell translates them. Banners show on the admin
+     * dashboard, the employee dashboard and Home.
+     */
+    public static function addBannerProvider(callable $provider)
+    {
+        self::$bannerProviders[] = $provider;
+    }
+
+    /** Extension banners for this user, for every landing page (dashboards and Home). */
+    public static function bannersFor($user)
+    {
+        return (new self())->extensionBanners($user);
+    }
+
+    private function extensionBanners($user)
+    {
+        $banners = array();
+        foreach (self::$bannerProviders as $provider) {
+            try {
+                $banner = call_user_func($provider, $user);
+            } catch (\Throwable $e) {
+                \Utils\LogManager::getInstance()->error('Dashboard banner provider failed: ' . $e->getMessage());
+                continue;
+            }
+            // One banner per key, even if a provider was registered twice.
+            if (is_array($banner) && !empty($banner['key']) && !empty($banner['title'])) {
+                $banners[$banner['key']] = $banner;
+            }
+        }
+        return array_values($banners);
+    }
+
     /** @param \Users\Common\Model\User $user */
     public function getData($user)
     {
@@ -53,7 +102,17 @@ class DashboardService
         // Fresh-install sample data prompt (mirrors the legacy banner in
         // core/header.php: fresh install with only the default employee and no
         // demo data loaded).
-        if ($this->showDemoPrompt($db, $user)) {
+        $banners = $this->extensionBanners($user);
+        $replacesDemo = false;
+        foreach ($banners as $banner) {
+            if (!empty($banner['replacesDemoPrompt'])) {
+                $replacesDemo = true;
+            }
+        }
+        if (!empty($banners)) {
+            $data['banners'] = $banners;
+        }
+        if (!$replacesDemo && $this->showDemoPrompt($db, $user)) {
             $data['demoPrompt'] = true;
         }
 
@@ -119,47 +178,49 @@ class DashboardService
 
     private function celebrations($db)
     {
-        $rows = $this->rows($db, "SELECT first_name, last_name, birthday, joined_date
+        $rows = $this->rows($db, "SELECT id, first_name, last_name, birthday, joined_date
             FROM Employees WHERE status='Active'");
         $today = new \DateTime('today');
         $list = array();
         foreach ($rows as $r) {
             $name = trim($r['first_name'] . ' ' . $r['last_name']);
+            $id = (int) $r['id'];
             if ($this->validDate($r['birthday'])) {
                 $occ = $this->nextOccurrence($r['birthday'], $today);
                 if ($occ['days'] <= 60) {
-                    $list[] = array('name' => $name, 'type' => 'birthday', 'date' => $occ['date'], 'days' => $occ['days'], 'years' => null);
+                    $list[] = array('id' => $id, 'name' => $name, 'type' => 'birthday', 'date' => $occ['date'], 'days' => $occ['days'], 'years' => null);
                 }
             }
             if ($this->validDate($r['joined_date'])) {
                 $occ = $this->nextOccurrence($r['joined_date'], $today);
                 $years = (int) $today->format('Y') - (int) substr($r['joined_date'], 0, 4);
                 if ($occ['days'] <= 30 && $years > 0) {
-                    $list[] = array('name' => $name, 'type' => 'anniversary', 'date' => $occ['date'], 'days' => $occ['days'], 'years' => $years);
+                    $list[] = array('id' => $id, 'name' => $name, 'type' => 'anniversary', 'date' => $occ['date'], 'days' => $occ['days'], 'years' => $years);
                 }
             }
         }
         usort($list, function ($a, $b) {
             return $a['days'] - $b['days'];
         });
-        return array_slice($list, 0, 8);
+        return EmployeeDashboardService::withAvatars(array_slice($list, 0, 8));
     }
 
     private function recentHires($db)
     {
-        $rows = $this->rows($db, "SELECT e.first_name, e.last_name, e.joined_date, jt.name AS title
+        $rows = $this->rows($db, "SELECT e.id, e.first_name, e.last_name, e.joined_date, jt.name AS title
             FROM Employees e LEFT JOIN JobTitles jt ON jt.id = e.job_title
             WHERE e.status='Active' AND e.joined_date IS NOT NULL AND e.joined_date > '1990-01-01'
             ORDER BY e.joined_date DESC LIMIT 6");
         $out = array();
         foreach ($rows as $r) {
             $out[] = array(
+                'id' => (int) $r['id'],
                 'name' => trim($r['first_name'] . ' ' . $r['last_name']),
                 'title' => $r['title'],
                 'date' => $r['joined_date'],
             );
         }
-        return $out;
+        return EmployeeDashboardService::withAvatars($out);
     }
 
     // --- extension-tied sections --------------------------------------------

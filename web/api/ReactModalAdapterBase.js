@@ -381,6 +381,24 @@ class ReactModalAdapterBase extends AdapterBase {
   }
 
   /**
+   * Show the edit form for an item, opened on the step that holds one of the given
+   * fields (used by profile sections' Edit buttons). Falls back to the first step.
+   * @param id {int} id of the item to edit
+   * @param fieldNames {string[]} fields of the section, in order of preference
+   */
+  editAtFields(id, fieldNames) {
+    this.initialFormFields = fieldNames || null;
+    this.edit(id);
+  }
+
+  // Returns and clears the fields requested by editAtFields().
+  takeInitialFormFields() {
+    const fields = this.initialFormFields || null;
+    this.initialFormFields = null;
+    return fields;
+  }
+
+  /**
    * Show the edit form for an item
    * @method edit
    * @param id {int} id of the item to edit

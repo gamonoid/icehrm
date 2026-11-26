@@ -13,7 +13,7 @@ class UpdatePasswordModal extends React.Component {
     state = {
         loading: false,
         passwordHasError: false,
-        passwordState: { hasFeedback: false, validateStatus:'', help:'Password must include at least one number, one lowercase letter, one uppercase letter and a symbol' },
+        passwordState: { hasFeedback: false, validateStatus:'', help:'The password must include at least one number, one lowercase letter, one uppercase letter and a symbol.' },
         confirmationHasError: false,
         confirmationState: { hasFeedback: false, validateStatus:'', help:'' },
     };
@@ -146,7 +146,7 @@ class UpdatePasswordModal extends React.Component {
 
     validatePassword = (password) => {
         if (password.length < 8) {
-            return this.props.adapter.gt('Password too short');
+            return this.props.adapter.gt('The password is too short. Use at least 8 characters.');
         }
 
         if (password.length > 30) {
@@ -155,22 +155,22 @@ class UpdatePasswordModal extends React.Component {
 
         const numberTester = /.*[0-9]+.*$/;
         if (!password.match(numberTester)) {
-            return this.props.adapter.gt('Password must include at least one number');
+            return this.props.adapter.gt('The password must include at least one number.');
         }
 
         const lowerTester = /.*[a-z]+.*$/;
         if (!password.match(lowerTester)) {
-            return this.props.adapter.gt('Password must include at least one lowercase letter');
+            return this.props.adapter.gt('The password must include at least one lowercase letter.');
         }
 
         const upperTester = /.*[A-Z]+.*$/;
         if (!password.match(upperTester)) {
-            return this.props.adapter.gt('Password must include at least one uppercase letter');
+            return this.props.adapter.gt('The password must include at least one uppercase letter.');
         }
 
         const symbolTester = /.*[\W]+.*$/;
         if (!password.match(symbolTester)) {
-            return this.props.adapter.gt('Password must include at least one symbol');
+            return this.props.adapter.gt('The password must include at least one symbol.');
         }
 
         return null;

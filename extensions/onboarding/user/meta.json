@@ -1,0 +1,33 @@
+{
+  "label": "My Onboarding",
+  "menu": [
+    "About You"
+  ],
+  "order": "1",
+  "icon": "fa-user-plus",
+  "area": "people",
+  "user_levels": [
+    "Admin",
+    "Manager",
+    "Employee"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\OnboardingUser\\Common\\Model",
+  "manager": "\\OnboardingUser\\Extension",
+  "controller": "\\OnboardingUser\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "native": {
+    "initFn": "initOnboardingUser",
+    "bundle": "onboarding/user/dist/onboarding.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "My Onboarding",
+        "component": "NativeExtensionView",
+        "viewGlobal": "OnboardingUserView"
+      }
+    ]
+  }
+}

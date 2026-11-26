@@ -64,9 +64,14 @@ class EmergencyContactAdapter extends ReactModalAdapterBase {
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'text', validation: '' }],
       ['relationship', { label: 'Relationship', type: 'text', validation: 'none' }],
+      ['is_primary', {
+        label: 'Primary Contact', type: 'select', 'allow-null': true, source: [['Yes', 'Yes'], ['No', 'No']],
+      }],
+      ['mobile_phone', { label: 'Mobile Phone', type: 'text', validation: 'none' }],
       ['home_phone', { label: 'Home Phone', type: 'text', validation: 'none' }],
       ['work_phone', { label: 'Work Phone', type: 'text', validation: 'none' }],
-      ['mobile_phone', { label: 'Mobile Phone', type: 'text', validation: 'none' }],
+      ['email', { label: 'Email', type: 'text', validation: 'emailOrEmpty' }],
+      ['address', { label: 'Address', type: 'textarea', validation: 'none' }],
     ];
   }
 }

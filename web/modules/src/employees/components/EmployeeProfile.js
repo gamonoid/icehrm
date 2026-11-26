@@ -49,6 +49,15 @@ import TagList from '../../../../components/TagList';
 import EmployeeStatus from '../../../../components/EmployeeStatus';
 import UpdatePasswordModal from '../../../../components/UpdatePasswordModal';
 
+// Fields shown in each profile section, used to open the edit form on the step
+// that holds them. Several per section, in case a field is hidden or renamed.
+const SECTION_FIELDS = {
+  personal: ['first_name', 'birthday', 'gender', 'nationality', 'marital_status'],
+  identification: ['nic_num', 'ssn_num', 'tax_id', 'other_id', 'driving_license'],
+  contact: ['address1', 'city', 'country', 'mobile_phone', 'home_phone', 'work_email', 'private_email'],
+  job: ['job_title', 'employment_status', 'department', 'work_location', 'joined_date'],
+};
+
 const { Title, Text } = Typography;
 
 const isEmpty = (v) => v === null || v === undefined || v === '' || v === '-';
@@ -156,9 +165,15 @@ class EmployeeProfile extends React.Component {
 
   setShowPasswordUpdate(value) { this.setState({ showPasswordResetModal: value }); }
 
-  edit() {
-    // Opens the legacy employee edit (steps) modal.
-    if (typeof modJs !== 'undefined' && modJs.edit) modJs.edit(this.props.element.id);
+  // Opens the employee edit (steps) modal. With fields (a section's Edit button)
+  // it opens on the step that holds them.
+  edit(fields = null) {
+    if (typeof modJs === 'undefined') return;
+    if (fields && modJs.editAtFields) {
+      modJs.editAtFields(this.props.element.id, fields);
+    } else if (modJs.edit) {
+      modJs.edit(this.props.element.id);
+    }
   }
 
   updateProfileImage() {
@@ -205,7 +220,7 @@ class EmployeeProfile extends React.Component {
     </div>
   );
 
-  infoCard(title, icon, fields) {
+  infoCard(title, icon, fields, editFields = null) {
     const gt = (t) => this.props.adapter.gt(t);
     return (
       <Card
@@ -214,7 +229,7 @@ class EmployeeProfile extends React.Component {
         styles={{ header: { borderBottom: 'none', paddingTop: 12 }, body: { paddingTop: 4 } }}
         title={<Space size={8}>{icon}<span>{title}</span></Space>}
         extra={(
-          <Button type="text" size="small" icon={<EditOutlined />} onClick={() => this.edit()}>
+          <Button type="text" size="small" icon={<EditOutlined />} onClick={() => this.edit(editFields)}>
             {gt('Edit')}
           </Button>
         )}
@@ -393,12 +408,16 @@ class EmployeeProfile extends React.Component {
       <Row gutter={[16, 16]}>
         <Col xs={24} lg={12}>
           {this.infoCard(adapter.gt('Personal Information'), <UserOutlined />, [
+            { label: gm('Preferred Name'), value: e.name_preferred },
+            { label: gm('Pronouns'), value: e.pronouns },
+            { label: gm('Name Pronunciation'), value: e.name_pronunciation },
             { label: gm('Date of Birth'), value: e.birthday },
             { label: gm('Gender'), value: e.gender },
             { label: gm('Nationality'), value: e.nationality_Name },
             { label: gm('Marital Status'), value: e.marital_status },
             { label: gm('Joined Date'), value: e.joined_date },
-          ])}
+            { label: gm('About'), value: e.about, full: true },
+          ], SECTION_FIELDS.personal)}
         </Col>
         <Col xs={24} lg={12}>
           {this.infoCard(adapter.gt('Identification'), <SafetyCertificateOutlined />, [
@@ -408,7 +427,8 @@ class EmployeeProfile extends React.Component {
             { label: gm('Health Insurance'), value: e.health_insurance },
             { label: gm('Additional IDs'), value: e.other_id },
             { label: gm('Driving License'), value: e.driving_license },
-          ])}
+            { label: gm('Driving License Expiry'), value: e.driving_license_exp_date },
+          ], SECTION_FIELDS.identification)}
         </Col>
         <Col xs={24} lg={12}>
           {this.infoCard(adapter.gt('Contact Information'), <ContactsOutlined />, [
@@ -419,14 +439,24 @@ class EmployeeProfile extends React.Component {
             { label: gm('Home Phone'), value: e.home_phone, copyable: true },
             { label: gm('Work Phone'), value: e.work_phone, copyable: true },
             { label: gm('Private Email'), value: e.private_email, copyable: true },
-          ])}
+            { label: gm('LinkedIn'), value: e.linkedin_url, copyable: true },
+          ], SECTION_FIELDS.contact)}
         </Col>
         <Col xs={24} lg={12}>
           {this.infoCard(adapter.gt('Job Details'), <ApartmentOutlined />, [
             { label: gm('Job Title'), value: e.job_title_Name },
             { label: gm('Employment Status'), value: e.employment_status_Name },
             { label: gm('Department'), value: e.department_Name },
-          ])}
+            { label: gm('Employment Type'), value: e.employment_type },
+            { label: gm('Work Location'), value: e.work_location_Name },
+            { label: gm('Work Arrangement'), value: e.work_mode },
+            { label: gm('Weekly Hours'), value: e.weekly_hours != null && e.weekly_hours !== '' ? String(Number(e.weekly_hours)) : null },
+            { label: gm('Full-time Equivalent (FTE)'), value: e.fte != null && e.fte !== '' ? String(Number(e.fte)) : null },
+            { label: gm('Cost Center'), value: e.cost_center_Name },
+            { label: gm('Original Hire Date'), value: e.original_hire_date },
+            { label: gm('Probation End Date'), value: e.confirmation_date },
+            { label: gm('Contract End Date'), value: e.contract_end_date },
+          ], SECTION_FIELDS.job)}
         </Col>
       </Row>
     );

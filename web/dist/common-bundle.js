@@ -1,1 +1,259 @@
-var _0xce6c=['0\x2016px','Switch','browserify-css','Super\x20expression\x20must\x20either\x20be\x20null\x20or\x20a\x20function','setState','hide','firstChild','state','insertAt','web/components/css/user-view-switch.css','apply','stylesheet','props','antd','user','sham','setAttribute','__proto__','Invalid\x20value\x20for\x20parameter\x20\x27insertAt\x27.\x20Must\x20be\x20\x27top\x27\x20or\x20\x27bottom\x27.','__esModule','showUserViewSwitch','call','key','createStyle','#UserViewSwitch\x20\x20button\x20{\x0a\x20\x20background-color:\x20#4E545C\x20!important;\x0a\x20\x20/*\x20Custom\x20handle\x20color\x20*/\x0a}\x0a#UserViewSwitch\x20\x20.ant-switch-inner-checked\x20{\x0a\x20\x20font-size:\x2014px\x20!important;\x0a\x20\x20font-weight:\x20400\x20!important;\x0a}\x0a#UserViewSwitch\x20\x20.ant-switch-inner-unchecked\x20{\x0a\x20\x20font-size:\x2014px\x20!important;\x0a\x20\x20font-weight:\x20400\x20!important;\x0a}\x0a','defineProperty','href','setPrototypeOf','Component','user-view','default','createElement','location','object','iterator','admin','style','concat','undefined','enumerable','toString','getPrototypeOf','./css/user-view-switch.css','?g=modules&n=dashboard&m=module_Personal_Information','MODULE_NOT_FOUND','nextSibling','setItem','hasOwnProperty','create','Admin','prototype','constructor','value','link','getItem','push','Manager','Employee\x20View','data-','this\x20hasn\x27t\x20been\x20initialised\x20-\x20super()\x20hasn\x27t\x20been\x20called','react-dom','bottom','Manager\x20View','sheet','code','react','exports','construct','function','.skeletonContent','Cannot\x20find\x20module\x20\x27','length','insertBefore','[id^=\x22menu_module_\x22]','writable','Cannot\x20call\x20a\x20class\x20as\x20a\x20function','appendChild','innerHTML','cssText','100%','userLevel','show','.skeletonTabs','createTextNode','UserViewSwitch','.skeletonSideMenu','head','.sidebar','render','handleChange'];(function(_0x50af8d,_0xce6ccf){var _0x1f67ef=function(_0x5b2eb5){while(--_0x5b2eb5){_0x50af8d['push'](_0x50af8d['shift']());}};_0x1f67ef(++_0xce6ccf);}(_0xce6c,0x177));var _0x1f67=function(_0x50af8d,_0xce6ccf){_0x50af8d=_0x50af8d-0x0;var _0x1f67ef=_0xce6c[_0x50af8d];return _0x1f67ef;};var _0x40ff46=_0x1f67;!function e(_0x5b2eb5,_0x28c1da,_0x52cae8){var _0x4a909e=_0x1f67;function _0x182393(_0x3d8335,_0x4c7081){var _0x2a596a=_0x1f67;if(!_0x28c1da[_0x3d8335]){if(!_0x5b2eb5[_0x3d8335]){var _0x1994b8='function'==typeof require&&require;if(!_0x4c7081&&_0x1994b8)return _0x1994b8(_0x3d8335,!0x0);if(_0x292eb7)return _0x292eb7(_0x3d8335,!0x0);var _0x15b874=new Error(_0x2a596a('0x37')+_0x3d8335+'\x27');throw _0x15b874[_0x2a596a('0x31')]=_0x2a596a('0x1d'),_0x15b874;}var _0x5a668e=_0x28c1da[_0x3d8335]={'exports':{}};_0x5b2eb5[_0x3d8335][0x0][_0x2a596a('0x6')](_0x5a668e['exports'],function(_0x45de50){return _0x182393(_0x5b2eb5[_0x3d8335][0x1][_0x45de50]||_0x45de50);},_0x5a668e,_0x5a668e[_0x2a596a('0x33')],e,_0x5b2eb5,_0x28c1da,_0x52cae8);}return _0x28c1da[_0x3d8335][_0x2a596a('0x33')];}for(var _0x292eb7=_0x4a909e('0x35')==typeof require&&require,_0x5ae8f1=0x0;_0x5ae8f1<_0x52cae8[_0x4a909e('0x38')];_0x5ae8f1++)_0x182393(_0x52cae8[_0x5ae8f1]);return _0x182393;}({0x1:[function(_0x28dc29,_0x5dcc77,_0x94c38b){var _0x320258=_0x1f67;'use strict';var _0x136cfc=[],_0x25a9d0=function(_0xa2d765,_0x173bb0){var _0x510a47=_0x1f67,_0xd221c5=document['head']||document['getElementsByTagName'](_0x510a47('0x47'))[0x0],_0x24b627=_0x136cfc[_0x136cfc[_0x510a47('0x38')]-0x1];if((_0x173bb0=_0x173bb0||{})[_0x510a47('0x53')]=_0x173bb0[_0x510a47('0x53')]||'bottom','top'===_0x173bb0['insertAt'])_0x24b627?_0x24b627[_0x510a47('0x1e')]?_0xd221c5['insertBefore'](_0xa2d765,_0x24b627[_0x510a47('0x1e')]):_0xd221c5[_0x510a47('0x3d')](_0xa2d765):_0xd221c5[_0x510a47('0x39')](_0xa2d765,_0xd221c5[_0x510a47('0x51')]),_0x136cfc[_0x510a47('0x28')](_0xa2d765);else{if(_0x510a47('0x2e')!==_0x173bb0[_0x510a47('0x53')])throw new Error(_0x510a47('0x3'));_0xd221c5[_0x510a47('0x3d')](_0xa2d765);}};_0x5dcc77[_0x320258('0x33')]={'createLink':function(_0x33d79a,_0x15d653){var _0x545c3d=_0x320258,_0xff49dc=document[_0x545c3d('0x47')]||document['getElementsByTagName'](_0x545c3d('0x47'))[0x0],_0x5e64e3=document[_0x545c3d('0x10')](_0x545c3d('0x26'));for(var _0x36c055 in(_0x5e64e3[_0x545c3d('0xb')]=_0x33d79a,_0x5e64e3['rel']=_0x545c3d('0x56'),_0x15d653))if(_0x15d653[_0x545c3d('0x20')](_0x36c055)){var _0x37878e=_0x15d653[_0x36c055];_0x5e64e3[_0x545c3d('0x1')](_0x545c3d('0x2b')+_0x36c055,_0x37878e);}_0xff49dc[_0x545c3d('0x3d')](_0x5e64e3);},'createStyle':function(_0xd0130,_0x2c328c,_0xdd87fd){var _0x145a26=_0x320258;_0xdd87fd=_0xdd87fd||{};var _0x525dc5=document[_0x145a26('0x10')](_0x145a26('0x15'));for(var _0x108c34 in(_0x525dc5['type']='text/css',_0x2c328c))if(_0x2c328c['hasOwnProperty'](_0x108c34)){var _0x5e1381=_0x2c328c[_0x108c34];_0x525dc5[_0x145a26('0x1')](_0x145a26('0x2b')+_0x108c34,_0x5e1381);}_0x525dc5['sheet']?(_0x525dc5[_0x145a26('0x3e')]=_0xd0130,_0x525dc5[_0x145a26('0x30')]['cssText']=_0xd0130,_0x25a9d0(_0x525dc5,{'insertAt':_0xdd87fd[_0x145a26('0x53')]})):_0x525dc5['styleSheet']?(_0x25a9d0(_0x525dc5,{'insertAt':_0xdd87fd['insertAt']}),_0x525dc5['styleSheet'][_0x145a26('0x3f')]=_0xd0130):(_0x525dc5[_0x145a26('0x3d')](document[_0x145a26('0x44')](_0xd0130)),_0x25a9d0(_0x525dc5,{'insertAt':_0xdd87fd[_0x145a26('0x53')]}));}};},{}],0x2:[function(_0x5d6b0e,_0xaa80fb,_0x517b8e){var _0x1d5c79=_0x1f67;'use strict';var _0x52caa7=_0x49fdd4(_0x5d6b0e(_0x1d5c79('0x32'))),_0x5c8d6d=_0x49fdd4(_0x5d6b0e(_0x1d5c79('0x2d'))),_0x27a2a3=_0x49fdd4(_0x5d6b0e('../components/UserViewSwitch'));function _0x49fdd4(_0x3cf527){var _0x41f410=_0x1d5c79;return _0x3cf527&&_0x3cf527[_0x41f410('0x4')]?_0x3cf527:{'default':_0x3cf527};}window['handleViewChange']=function(_0x6381e3,_0x38a43e){var _0x55a2f9=_0x1d5c79;if(_0x55a2f9('0x22')!==_0x38a43e&&'Manager'!==_0x38a43e)return $(_0x55a2f9('0x46'))['hide'](),$(_0x55a2f9('0x36'))[_0x55a2f9('0x50')](),$(_0x55a2f9('0x43'))[_0x55a2f9('0x50')](),void $(_0x55a2f9('0x48'))['show']();null==_0x6381e3&&(_0x6381e3=_0x55a2f9('0x59')===localStorage[_0x55a2f9('0x27')](_0x55a2f9('0xe'))?'user':_0x55a2f9('0x14')),'admin'===_0x6381e3?($('[id^=\x22menu_module_\x22]')[_0x55a2f9('0x50')](),$('[id^=\x22menu_admin_\x22]')[_0x55a2f9('0x42')]()):($(_0x55a2f9('0x3a'))[_0x55a2f9('0x42')](),$('[id^=\x22menu_admin_\x22]')[_0x55a2f9('0x50')]()),$(_0x55a2f9('0x46'))[_0x55a2f9('0x50')](),$(_0x55a2f9('0x36'))[_0x55a2f9('0x50')](),$(_0x55a2f9('0x43'))[_0x55a2f9('0x50')](),$('.sidebar')['show']();},window[_0x1d5c79('0x5')]=function(_0x4ecb26){var _0x457c1d=_0x1d5c79;'Admin'!==_0x4ecb26&&_0x457c1d('0x29')!==_0x4ecb26||_0x5c8d6d[_0x457c1d('0xf')]['render'](_0x52caa7[_0x457c1d('0xf')][_0x457c1d('0x10')](_0x27a2a3[_0x457c1d('0xf')],{'userLevel':_0x4ecb26}),document['getElementById'](_0x457c1d('0x45')));};},{'../components/UserViewSwitch':0x3,'react':_0x40ff46('0x32'),'react-dom':_0x40ff46('0x2d')}],0x3:[function(_0x3440f0,_0x102e0b,_0x3712a3){var _0x3b206f=_0x40ff46;'use strict';Object[_0x3b206f('0xa')](_0x3712a3,_0x3b206f('0x4'),{'value':!0x0}),_0x3712a3[_0x3b206f('0xf')]=void 0x0;var _0x56be8d,_0x354483=(_0x56be8d=_0x3440f0('react'))&&_0x56be8d['__esModule']?_0x56be8d:{'default':_0x56be8d},_0x5dbfa7=_0x3440f0(_0x3b206f('0x58'));function _0x4b2af5(_0x2cc1b8){var _0x59c187=_0x3b206f;return(_0x4b2af5=_0x59c187('0x35')==typeof Symbol&&'symbol'==typeof Symbol[_0x59c187('0x13')]?function(_0x39232a){return typeof _0x39232a;}:function(_0x3a70f9){var _0x3025f3=_0x59c187;return _0x3a70f9&&_0x3025f3('0x35')==typeof Symbol&&_0x3a70f9[_0x3025f3('0x24')]===Symbol&&_0x3a70f9!==Symbol[_0x3025f3('0x23')]?'symbol':typeof _0x3a70f9;})(_0x2cc1b8);}function _0x4e8791(_0x24c4bf,_0x5f37fd){var _0x21aef9=_0x3b206f;for(var _0x2a2d1a=0x0;_0x2a2d1a<_0x5f37fd[_0x21aef9('0x38')];_0x2a2d1a++){var _0x4ec537=_0x5f37fd[_0x2a2d1a];_0x4ec537[_0x21aef9('0x18')]=_0x4ec537[_0x21aef9('0x18')]||!0x1,_0x4ec537['configurable']=!0x0,_0x21aef9('0x25')in _0x4ec537&&(_0x4ec537[_0x21aef9('0x3b')]=!0x0),Object[_0x21aef9('0xa')](_0x24c4bf,_0x4ec537[_0x21aef9('0x7')],_0x4ec537);}}function _0x157f7c(_0x162999,_0x3bb118){var _0x167c68=_0x3b206f;return!_0x3bb118||_0x167c68('0x12')!==_0x4b2af5(_0x3bb118)&&'function'!=typeof _0x3bb118?function(_0x44b7a4){var _0x14e10e=_0x167c68;if(void 0x0===_0x44b7a4)throw new ReferenceError(_0x14e10e('0x2c'));return _0x44b7a4;}(_0x162999):_0x3bb118;}function _0x1c91c6(){var _0x310c37=_0x3b206f;if(_0x310c37('0x17')==typeof Reflect||!Reflect[_0x310c37('0x34')])return!0x1;if(Reflect[_0x310c37('0x34')][_0x310c37('0x0')])return!0x1;if(_0x310c37('0x35')==typeof Proxy)return!0x0;try{return Date[_0x310c37('0x23')][_0x310c37('0x19')]['call'](Reflect['construct'](Date,[],function(){})),!0x0;}catch(_0x1ecf6c){return!0x1;}}function _0x44f2d8(_0x736836){var _0x42d0eb=_0x3b206f;return(_0x44f2d8=Object[_0x42d0eb('0xc')]?Object[_0x42d0eb('0x1a')]:function(_0x5e4a48){var _0x4a3418=_0x42d0eb;return _0x5e4a48['__proto__']||Object[_0x4a3418('0x1a')](_0x5e4a48);})(_0x736836);}function _0x71b34d(_0x483c8d,_0x366c5b){return(_0x71b34d=Object['setPrototypeOf']||function(_0x45cded,_0x492537){var _0x2149e1=_0x1f67;return _0x45cded[_0x2149e1('0x2')]=_0x492537,_0x45cded;})(_0x483c8d,_0x366c5b);}_0x3440f0(_0x3b206f('0x1b'));var _0x35e251=function(_0x344b85){var _0x7ab147=_0x3b206f;!function(_0x3439da,_0x854b58){var _0x503a54=_0x1f67;if(_0x503a54('0x35')!=typeof _0x854b58&&null!==_0x854b58)throw new TypeError(_0x503a54('0x4e'));_0x3439da[_0x503a54('0x23')]=Object[_0x503a54('0x21')](_0x854b58&&_0x854b58['prototype'],{'constructor':{'value':_0x3439da,'writable':!0x0,'configurable':!0x0}}),_0x854b58&&_0x71b34d(_0x3439da,_0x854b58);}(_0xe2c73a,_0x344b85);var _0x38771b,_0x4d2c33,_0x155f6d,_0x5c1161,_0x510592=(_0x38771b=_0xe2c73a,function(){var _0x413f7a=_0x1f67,_0x4326bb,_0x2d6335=_0x44f2d8(_0x38771b);if(_0x1c91c6()){var _0x56b4f4=_0x44f2d8(this)[_0x413f7a('0x24')];_0x4326bb=Reflect['construct'](_0x2d6335,arguments,_0x56b4f4);}else _0x4326bb=_0x2d6335[_0x413f7a('0x55')](this,arguments);return _0x157f7c(this,_0x4326bb);});function _0xe2c73a(_0x27f9f6){var _0x3c0a4e=_0x1f67,_0x2f2525;return function(_0x3c6283,_0x1154fa){var _0xb114d4=_0x1f67;if(!(_0x3c6283 instanceof _0x1154fa))throw new TypeError(_0xb114d4('0x3c'));}(this,_0xe2c73a),(_0x2f2525=_0x510592[_0x3c0a4e('0x6')](this,_0x27f9f6))[_0x3c0a4e('0x52')]={'view':_0x3c0a4e('0x59')===localStorage[_0x3c0a4e('0x27')](_0x3c0a4e('0xe'))?_0x3c0a4e('0x59'):_0x3c0a4e('0x14')},_0x2f2525;}return _0x4d2c33=_0xe2c73a,(_0x155f6d=[{'key':'componentDidMount','value':function(){}},{'key':'componentDidUpdate','value':function(_0x4d9e57,_0x3f1a45,_0x309044){}},{'key':_0x7ab147('0x4a'),'value':function(_0x16fb7e){var _0x52ea92=_0x7ab147,_0x297ea0=_0x16fb7e?_0x52ea92('0x14'):'user';localStorage[_0x52ea92('0x1f')](_0x52ea92('0xe'),_0x297ea0),this[_0x52ea92('0x4f')]({'view':_0x297ea0}),_0x52ea92('0x59')===_0x297ea0||_0x52ea92('0x29')===this[_0x52ea92('0x57')][_0x52ea92('0x41')]?window[_0x52ea92('0x11')]=''[_0x52ea92('0x16')](CLIENT_BASE_URL,_0x52ea92('0x1c')):'Admin'===this['props']['userLevel']&&(window[_0x52ea92('0x11')]=''[_0x52ea92('0x16')](CLIENT_BASE_URL,'?g=admin&n=dashboard&m=admin_Admin'));}},{'key':_0x7ab147('0x49'),'value':function(){var _0x24189b=_0x7ab147,_0x1dc62e=this;return _0x354483[_0x24189b('0xf')][_0x24189b('0x10')](_0x5dbfa7['ConfigProvider'],{'theme':{'components':{'Switch':{'handleSize':0x1b,'trackHeight':0x1e,'borderRadius':0x2,'backgroundColor':'#f39c05'}}}},_0x354483[_0x24189b('0xf')]['createElement'](_0x5dbfa7[_0x24189b('0x4c')],{'className':'custom-switch','checkedChildren':_0x24189b('0x22')===this[_0x24189b('0x57')][_0x24189b('0x41')]?'Admin\x20View':_0x24189b('0x2f'),'unCheckedChildren':_0x24189b('0x2a'),'defaultChecked':!0x0,'style':{'padding':_0x24189b('0x4b'),'width':_0x24189b('0x40'),'borderRadius':0x0,'fontSize':0x12},'checked':_0x24189b('0x14')===this['state']['view'],'onChange':function(_0x14e699){return _0x1dc62e['handleChange'](_0x14e699);}}));}}])&&_0x4e8791(_0x4d2c33[_0x7ab147('0x23')],_0x155f6d),_0x5c1161&&_0x4e8791(_0x4d2c33,_0x5c1161),_0xe2c73a;}(_0x354483[_0x3b206f('0xf')][_0x3b206f('0xd')]);_0x3712a3[_0x3b206f('0xf')]=_0x35e251;},{'./css/user-view-switch.css':0x4,'antd':'antd','react':'react'}],0x4:[function(_0x234c84,_0x5955ff,_0x4076bc){var _0xc8cfe0=_0x40ff46,_0x27c4bb=_0xc8cfe0('0x9');_0x234c84(_0xc8cfe0('0x4d'))[_0xc8cfe0('0x8')](_0x27c4bb,{'href':_0xc8cfe0('0x54')},{'insertAt':_0xc8cfe0('0x2e')}),_0x5955ff[_0xc8cfe0('0x33')]=_0x27c4bb;},{'browserify-css':0x1}]},{},[0x2]);
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+'use strict';
+// For more information about browser field, check out the browser field at https://github.com/substack/browserify-handbook#browser-field.
+
+var styleElementsInsertedAtTop = [];
+
+var insertStyleElement = function(styleElement, options) {
+    var head = document.head || document.getElementsByTagName('head')[0];
+    var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+
+    options = options || {};
+    options.insertAt = options.insertAt || 'bottom';
+
+    if (options.insertAt === 'top') {
+        if (!lastStyleElementInsertedAtTop) {
+            head.insertBefore(styleElement, head.firstChild);
+        } else if (lastStyleElementInsertedAtTop.nextSibling) {
+            head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+        } else {
+            head.appendChild(styleElement);
+        }
+        styleElementsInsertedAtTop.push(styleElement);
+    } else if (options.insertAt === 'bottom') {
+        head.appendChild(styleElement);
+    } else {
+        throw new Error('Invalid value for parameter \'insertAt\'. Must be \'top\' or \'bottom\'.');
+    }
+};
+
+module.exports = {
+    // Create a <link> tag with optional data attributes
+    createLink: function(href, attributes) {
+        var head = document.head || document.getElementsByTagName('head')[0];
+        var link = document.createElement('link');
+
+        link.href = href;
+        link.rel = 'stylesheet';
+
+        for (var key in attributes) {
+            if ( ! attributes.hasOwnProperty(key)) {
+                continue;
+            }
+            var value = attributes[key];
+            link.setAttribute('data-' + key, value);
+        }
+
+        head.appendChild(link);
+    },
+    // Create a <style> tag with optional data attributes
+    createStyle: function(cssText, attributes, extraOptions) {
+        extraOptions = extraOptions || {};
+
+        var style = document.createElement('style');
+        style.type = 'text/css';
+
+        for (var key in attributes) {
+            if ( ! attributes.hasOwnProperty(key)) {
+                continue;
+            }
+            var value = attributes[key];
+            style.setAttribute('data-' + key, value);
+        }
+
+        if (style.sheet) { // for jsdom and IE9+
+            style.innerHTML = cssText;
+            style.sheet.cssText = cssText;
+            insertStyleElement(style, { insertAt: extraOptions.insertAt });
+        } else if (style.styleSheet) { // for IE8 and below
+            insertStyleElement(style, { insertAt: extraOptions.insertAt });
+            style.styleSheet.cssText = cssText;
+        } else { // for Chrome, Firefox, and Safari
+            style.appendChild(document.createTextNode(cssText));
+            insertStyleElement(style, { insertAt: extraOptions.insertAt });
+        }
+    }
+};
+
+},{}],2:[function(require,module,exports){
+"use strict";
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactDom = _interopRequireDefault(require("react-dom"));
+
+var _UserViewSwitch = _interopRequireDefault(require("../components/UserViewSwitch"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+window.handleViewChange = function (view, userLevel) {
+  if (userLevel !== 'Admin' && userLevel !== 'Manager') {
+    $('.skeletonSideMenu').hide();
+    $('.skeletonContent').hide();
+    $('.skeletonTabs').hide();
+    $('.sidebar').show();
+    return;
+  }
+
+  if (view == null) {
+    view = localStorage.getItem('user-view') === 'user' ? 'user' : 'admin';
+  } // Data-driven, drift-proof: hide ALL admin menu groups in Employee view and ALL
+  // user menu groups in Admin view, by id prefix. The previous version hid a
+  // hardcoded list of group ids, which drifted — e.g. #menu_admin_Marketplace was
+  // never added, so the admin-only Marketplace leaked into Employee view. Using a
+  // prefix selector means any current/future group is handled automatically.
+  // (Admin menu groups render as #menu_admin_*, user groups as #menu_module_*.)
+
+
+  if (view === 'admin') {
+    $('[id^="menu_module_"]').hide();
+    $('[id^="menu_admin_"]').show();
+  } else {
+    $('[id^="menu_module_"]').show();
+    $('[id^="menu_admin_"]').hide();
+  }
+
+  $('.skeletonSideMenu').hide();
+  $('.skeletonContent').hide();
+  $('.skeletonTabs').hide();
+  $('.sidebar').show();
+};
+
+window.showUserViewSwitch = function (userLevel) {
+  if (userLevel !== 'Admin' && userLevel !== 'Manager') {
+    return;
+  }
+
+  _reactDom["default"].render( /*#__PURE__*/_react["default"].createElement(_UserViewSwitch["default"], {
+    userLevel: userLevel
+  }), document.getElementById('UserViewSwitch'));
+};
+
+},{"../components/UserViewSwitch":3,"react":"react","react-dom":"react-dom"}],3:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _antd = require("antd");
+
+require("./css/user-view-switch.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var UserViewSwitch = /*#__PURE__*/function (_React$Component) {
+  _inherits(UserViewSwitch, _React$Component);
+
+  var _super = _createSuper(UserViewSwitch);
+
+  function UserViewSwitch(props) {
+    var _this;
+
+    _classCallCheck(this, UserViewSwitch);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      view: localStorage.getItem('user-view') === 'user' ? 'user' : 'admin'
+    };
+    return _this;
+  }
+
+  _createClass(UserViewSwitch, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {}
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState, snapshot) {}
+  }, {
+    key: "handleChange",
+    value: function handleChange(value) {
+      var view = value ? 'admin' : 'user';
+      localStorage.setItem('user-view', view);
+      this.setState({
+        view: view
+      });
+
+      if (view === 'user') {
+        window.location = "".concat(CLIENT_BASE_URL, "?g=modules&n=dashboard&m=module_Personal_Information");
+      } else if (this.props.userLevel === 'Manager') {
+        window.location = "".concat(CLIENT_BASE_URL, "?g=modules&n=dashboard&m=module_Personal_Information");
+      } else if (this.props.userLevel === 'Admin') {
+        window.location = "".concat(CLIENT_BASE_URL, "?g=admin&n=dashboard&m=admin_Admin");
+      } //handleViewChange(view);
+
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return /*#__PURE__*/_react["default"].createElement(_antd.ConfigProvider, {
+        theme: {
+          components: {
+            Switch: {
+              handleSize: 27,
+              // Size of the inner circle (handle)
+              trackHeight: 30,
+              // Height of the switch
+              borderRadius: 2,
+              // Square border (use 0 for a perfect square)
+              backgroundColor: "#f39c05"
+            }
+          }
+        }
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Switch, {
+        className: "custom-switch",
+        checkedChildren: this.props.userLevel === 'Admin' ? 'Admin View' : 'Manager View',
+        unCheckedChildren: "Employee View",
+        defaultChecked: true,
+        style: {
+          padding: "0 16px",
+          width: '100%',
+          borderRadius: 0,
+          fontSize: 18
+        },
+        checked: this.state.view === 'admin',
+        onChange: function onChange(event) {
+          return _this2.handleChange(event);
+        }
+      }));
+    }
+  }]);
+
+  return UserViewSwitch;
+}(_react["default"].Component);
+
+var _default = UserViewSwitch;
+exports["default"] = _default;
+
+},{"./css/user-view-switch.css":4,"antd":"antd","react":"react"}],4:[function(require,module,exports){
+var css = "#UserViewSwitch  button {\n  background-color: #4E545C !important;\n  /* Custom handle color */\n}\n#UserViewSwitch  .ant-switch-inner-checked {\n  font-size: 14px !important;\n  font-weight: 400 !important;\n}\n#UserViewSwitch  .ant-switch-inner-unchecked {\n  font-size: 14px !important;\n  font-weight: 400 !important;\n}\n"; (require("browserify-css").createStyle(css, { "href": "web/components/css/user-view-switch.css" }, { "insertAt": "bottom" })); module.exports = css;
+},{"browserify-css":1}]},{},[2])
+
+//# sourceMappingURL=common-bundle.js.map

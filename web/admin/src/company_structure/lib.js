@@ -481,4 +481,108 @@ class CompanyGraphAdapter extends AdapterBase {
   }
 }
 
-module.exports = { CompanyStructureAdapter, CompanyGraphAdapter };
+/**
+ * WorkLocationAdapter
+ */
+
+class WorkLocationAdapter extends ReactModalAdapterBase {
+  getDataMapping() {
+    return ['id', 'name', 'city', 'country'];
+  }
+
+  getHeaders() {
+    return [
+      { sTitle: 'ID', bVisible: false },
+      { sTitle: 'Name' },
+      { sTitle: 'City' },
+      { sTitle: 'Country' },
+    ];
+  }
+
+  getFormFields() {
+    return [
+      ['id', { label: 'ID', type: 'hidden' }],
+      ['name', { label: 'Name', type: 'text' }],
+      ['address', { label: 'Address', type: 'textarea', validation: 'none' }],
+      ['city', { label: 'City', type: 'text', validation: 'none' }],
+      ['country', {
+        label: 'Country', type: 'select2', 'allow-null': true, 'remote-source': ['Country', 'code', 'name'],
+      }],
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      { title: 'Name', dataIndex: 'name', sorter: true },
+      { title: 'City', dataIndex: 'city', sorter: true },
+      { title: 'Country', dataIndex: 'country' },
+    ];
+  }
+
+  showViewButton() {
+    return false;
+  }
+
+  getHelpTitle() {
+    return this.gt('Work Locations');
+  }
+
+  getHelpDescription() {
+    return this.gt('Offices and sites employees can be based at. Choose an employee\'s work location on the Work step of the employee form.');
+  }
+}
+
+/**
+ * CostCenterAdapter
+ */
+
+class CostCenterAdapter extends ReactModalAdapterBase {
+  getDataMapping() {
+    return ['id', 'code', 'name', 'description'];
+  }
+
+  getHeaders() {
+    return [
+      { sTitle: 'ID', bVisible: false },
+      { sTitle: 'Code' },
+      { sTitle: 'Name' },
+      { sTitle: 'Description' },
+    ];
+  }
+
+  getFormFields() {
+    return [
+      ['id', { label: 'ID', type: 'hidden' }],
+      ['code', { label: 'Code', type: 'text', validation: 'none' }],
+      ['name', { label: 'Name', type: 'text' }],
+      ['description', { label: 'Description', type: 'textarea', validation: 'none' }],
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      { title: 'Code', dataIndex: 'code', sorter: true },
+      { title: 'Name', dataIndex: 'name', sorter: true },
+      { title: 'Description', dataIndex: 'description' },
+    ];
+  }
+
+  showViewButton() {
+    return false;
+  }
+
+  getHelpTitle() {
+    return this.gt('Cost Centers');
+  }
+
+  getHelpDescription() {
+    return this.gt('Cost centres that employee costs are charged to, for finance reporting.');
+  }
+}
+
+module.exports = {
+  CompanyStructureAdapter,
+  CompanyGraphAdapter,
+  WorkLocationAdapter,
+  CostCenterAdapter,
+};

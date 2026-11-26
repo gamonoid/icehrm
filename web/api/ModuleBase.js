@@ -1147,7 +1147,7 @@ class ModuleBase {
 
   validatePassword(password) {
     if (password.length < 8) {
-      return this.gt('Password too short');
+      return this.gt('The password is too short. Use at least 8 characters.');
     }
 
     if (password.length > 30) {
@@ -1156,22 +1156,22 @@ class ModuleBase {
 
     const numberTester = /.*[0-9]+.*$/;
     if (!password.match(numberTester)) {
-      return this.gt('Password must include at least one number');
+      return this.gt('The password must include at least one number.');
     }
 
     const lowerTester = /.*[a-z]+.*$/;
     if (!password.match(lowerTester)) {
-      return this.gt('Password must include at least one lowercase letter');
+      return this.gt('The password must include at least one lowercase letter.');
     }
 
     const upperTester = /.*[A-Z]+.*$/;
     if (!password.match(upperTester)) {
-      return this.gt('Password must include at least one uppercase letter');
+      return this.gt('The password must include at least one uppercase letter.');
     }
 
     const symbolTester = /.*[\W]+.*$/;
     if (!password.match(symbolTester)) {
-      return this.gt('Password must include at least one symbol');
+      return this.gt('The password must include at least one symbol.');
     }
 
     return null;

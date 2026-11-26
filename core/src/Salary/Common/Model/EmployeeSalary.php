@@ -54,6 +54,71 @@ class EmployeeSalary extends BaseModel
         ];
     }
 
+    /**
+     * Effective date and reason for the salary history row written on save or delete.
+     * They are not columns: the admin form and the payroll_config API set them, and
+     * getObjectKeys() lets the generic save copy them from the request.
+     */
+    public $history_effective_date = null;
+    public $history_reason = null;
+
+    public function getObjectKeys()
+    {
+        $keys = parent::getObjectKeys();
+        $keys['history_effective_date'] = 'history_effective_date';
+        $keys['history_reason'] = 'history_reason';
+        return $keys;
+    }
+
+    /**
+     * Every route that changes a salary line (admin Salary tab, payroll_config REST,
+     * demo data) goes through Save()/Delete(), so history is recorded here rather
+     * than in the generic save hooks, which the REST API skips. Backup restore writes
+     * rows with raw SQL and is intentionally not recorded.
+     */
+    public function Save()
+    {
+        $oldAmount = null;
+        $isInsert = empty($this->id);
+        if (!$isInsert) {
+            $stored = new EmployeeSalary();
+            $stored->Load('id = ?', array($this->id));
+            if (!empty($stored->id)) {
+                $oldAmount = $stored->amount;
+            }
+        }
+
+        $ok = parent::Save();
+
+        if ($ok && ($isInsert || (float) $oldAmount !== (float) $this->amount)) {
+            EmployeeSalaryHistory::record(
+                $this,
+                $oldAmount,
+                $this->amount,
+                $this->history_effective_date,
+                $this->history_reason ? $this->history_reason : ($isInsert ? 'Added' : 'Adjustment')
+            );
+        }
+
+        return $ok;
+    }
+
+    public function Delete()
+    {
+        $snapshot = clone $this;
+        $ok = parent::Delete();
+        if ($ok && !empty($snapshot->id)) {
+            EmployeeSalaryHistory::record(
+                $snapshot,
+                $snapshot->amount,
+                null,
+                $snapshot->history_effective_date,
+                'Removed'
+            );
+        }
+        return $ok;
+    }
+
     public function postProcessGetData($obj)
     {
         $employee = new Employee();

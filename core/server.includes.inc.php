@@ -77,6 +77,17 @@ BaseService::getInstance()->setCurrentUser($user);
 BaseService::getInstance()->setCustomFieldManager(new CustomFieldManager());
 BaseService::getInstance()->setDB($dbLocal);
 
+// A session can outlive its login: e.g. HR cancels an onboarding and the new hire's
+// login is deleted while they are still signed in. Treat such a session as signed out.
+if (!empty($user) && !empty($user->id)) {
+    $sessionUserRows = $dbLocal->Execute('SELECT id FROM Users WHERE id = ?', array((int) $user->id));
+    if (is_array($sessionUserRows) && count($sessionUserRows) === 0) {
+        \Utils\SessionUtils::unsetClientSession();
+        $user = null;
+        BaseService::getInstance()->setCurrentUser(null);
+    }
+}
+
 $settingsManager = SettingsManager::getInstance();
 $notificationManager = new NotificationManager();
 
@@ -169,7 +180,7 @@ if (defined('CLIENT_PATH')) {
         $moduleManagerObj->setupErrorMappings($mysqlErrors);
         //$moduleManagerObj->setupRestEndPoints();
         $moduleManagerObj->initCalculationHooks();
-        $moduleManagerObj->initialize();
+        $moduleManagerObj->initializeOnce();
 
         $modelClassList = $moduleManagerObj->getModelClasses();
         $metaData = $moduleManagerObj->getModuleObject();

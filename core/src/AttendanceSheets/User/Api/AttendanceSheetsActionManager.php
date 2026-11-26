@@ -94,25 +94,25 @@ class AttendanceSheetsActionManager extends SubActionManager
 
         if ($timeSheet->status == "Submitted" && $employee->id == $timeSheet->employee) {
             $notificationMsg = $employee->first_name." ".$employee->last_name
-                ." submitted attendance sheet from "
-                .date("M d, Y (l)", strtotime($timeSheet->date_start))
-                ." to ".date("M d, Y (l)", strtotime($timeSheet->date_end));
+                ." submitted an attendance sheet for "
+                .date("j M Y", strtotime($timeSheet->date_start))
+                ." to ".date("j M Y", strtotime($timeSheet->date_end)).".";
             $this->baseService->notificationManager->addNotification(
                 $employee->supervisor,
                 $notificationMsg,
                 '{"type":"url","url":"g=modules&n=attendance_sheets'
-                    .'&m=module_Time_Management#tabSubEmployeeTimeSheetAll"}',
+                    .'&m=module_Time_Management#tabTimeSheets"}',
                 IceConstants::NOTIFICATION_TIMESHEET
             );
         } elseif ($timeSheet->status == "Approved" || $timeSheet->status == "Rejected") {
-            $notificationMsg = $employee->first_name." ".$employee->last_name." ".$timeSheet->status
-                ." attendance sheet from ".date("M d, Y (l)", strtotime($timeSheet->date_start))
-                ." to ".date("M d, Y (l)", strtotime($timeSheet->date_end));
+            $notificationMsg = $employee->first_name." ".$employee->last_name." ".strtolower($timeSheet->status)
+                ." your attendance sheet for ".date("j M Y", strtotime($timeSheet->date_start))
+                ." to ".date("j M Y", strtotime($timeSheet->date_end)).".";
             $this->baseService->notificationManager->addNotification(
                 $timeSheet->employee,
                 $notificationMsg,
                 '{"type":"url","url":"g=modules&n=attendance_sheets'
-                .'&m=module_Time_Management#tabEmployeeTimeSheetApproved"}',
+                .'&m=module_Time_Management#tabTimeSheets"}',
                 IceConstants::NOTIFICATION_TIMESHEET
             );
         }

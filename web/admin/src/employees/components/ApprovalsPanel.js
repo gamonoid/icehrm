@@ -319,7 +319,7 @@ class ApprovalsPanel extends React.Component {
         onClick={() => this.startEdit(i)}
         disabled={this.state.saving}
       >
-        {this.gt(LEVELS[i].addLabel)}
+        {[this.gt('Add first approver'), this.gt('Add second approver'), this.gt('Add third approver')][i] || this.gt(LEVELS[i].addLabel)}
       </Button>
     );
   }

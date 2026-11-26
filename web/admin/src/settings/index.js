@@ -21,7 +21,7 @@ const SETTING_TABS = [
   ['LDAPSetting', { category: 'LDAP' }],
   ['SAMLSetting', { category: 'SAML' }],
   ['OtherSetting', {
-    category: ['Projects', 'Recruitment', 'Notifications', 'Expense', 'Travel', 'Api', 'Overtime', 'Microsoft', 'Google'],
+    category: ['Projects', 'Recruitment', 'Notifications', 'Expense', 'Travel', 'Api', 'Overtime', 'Microsoft', 'Google', 'Kudos'],
   }],
 ];
 

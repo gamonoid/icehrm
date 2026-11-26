@@ -97,11 +97,13 @@ class MenuAreaService
             'extension::marketplace|admin' => 'system',
 
             // --- user (employee) modules ---
+            'modules::home' => 'people',
             'modules::dashboard' => 'people',
             'modules::employees' => 'people',
             'modules::qualifications' => 'people',
             'modules::dependents' => 'people',
             'modules::emergency_contact' => 'people',
+            'modules::bank_accounts' => 'people',
             'extension::team|user' => 'people',
             'extension::company_overview|user' => 'people',
             'extension::directory|user' => 'people',
