@@ -3,7 +3,7 @@
   "menu": [
     "Manage"
   ],
-  "order": "2",
+  "order": "7",
   "icon": "fa-user-plus",
   "area": "people",
   "user_levels": [

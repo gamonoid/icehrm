@@ -64,6 +64,28 @@ class MenuService
     }
 
     /**
+     * A key for one menu item that is not yet used in that menu.
+     *
+     * core/modules.php and ExtensionManager key the items of a menu by their order
+     * ("A<order>", or "Z<n>" for unordered ones). When two modules in the same menu
+     * share an order, the second one used to overwrite the first, and the first
+     * module disappeared from the menu without any error. Add a suffix until the
+     * key is free, so both are kept. The suffix sorts right after the original key.
+     *
+     * @param  array|null $menuItems the items already in that menu
+     * @param  string     $key       the key the item would normally get
+     * @return string
+     */
+    public static function freeSlot($menuItems, $key)
+    {
+        $key = (string) $key;
+        while (is_array($menuItems) && isset($menuItems[$key])) {
+            $key .= '_';
+        }
+        return $key;
+    }
+
+    /**
      * Returns the menu tree filtered for the given user, mirroring core/modules.php.
      *
      * @param  \Users\Common\Model\User $user
