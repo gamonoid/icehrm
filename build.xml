@@ -333,7 +333,6 @@
         <exclude name=".env"/>
         <exclude name="keys.dev.pub"/>
         <exclude name="keys.tags.pub"/>
-        <exclude name="index.php"/>
         <exclude name="RoboFile.php"/>
         <exclude name="phpdox.xml"/>
         <exclude name="phpunit.xml"/>
@@ -415,6 +414,15 @@
 		  	<exclude name="test/**"/>
 		  </fileset>
 		</copy>
+
+	<!-- The root index.php redirects the site root to app/. Docker copies it in
+	     itself, but zip installs only have what is shipped here: without it the
+	     site root returns 403/404 (or a directory listing) instead of the app. -->
+	<fail message="Release is missing the root index.php (site root would not redirect to app/)">
+		<condition>
+			<not><available file="${basedir}/build/release/data/icehrm/index.php"/></not>
+		</condition>
+	</fail>
 
 	<zip destfile="${basedir}/build/release/icehrm.zip"
 	       basedir="${basedir}/build/release/data"
