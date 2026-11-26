@@ -3080,6 +3080,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -3099,21 +3105,34 @@ var IceApiClient = /*#__PURE__*/function () {
     this.clientBaseUrl = clientBaseUrl;
     this.legacyApiWrapper = legacyApiWrapper;
   }
+  /**
+   * @param endpoint {string} REST path, e.g. 'kudos/people'
+   * @param config {object} optional; `params` are sent as query-string parameters
+   */
+
 
   _createClass(IceApiClient, [{
     key: "get",
     value: function get(endpoint) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var params = IceApiClient.queryParams(config.params);
+
       if (this.legacyApiWrapper) {
         var url = "".concat(this.clientBaseUrl, "api/index.php?token=").concat(this.token, "&method=get&url=/").concat(endpoint);
-        return axios.get(url);
+        return axios.get(url, {
+          params: params
+        });
       }
 
       return axios.get(this.baseUrl + endpoint, {
+        params: params,
         headers: {
           Authorization: "Bearer ".concat(this.token)
         }
       });
-    }
+    } // The legacy wrapper routes on token/method/url in the same query string, so a
+    // caller's params must not override them.
+
   }, {
     key: "post",
     value: function post(endpoint, data) {
@@ -3142,6 +3161,18 @@ var IceApiClient = /*#__PURE__*/function () {
           Authorization: "Bearer ".concat(this.token)
         }
       });
+    }
+  }], [{
+    key: "queryParams",
+    value: function queryParams(params) {
+      if (!params) return undefined;
+
+      var out = _objectSpread({}, params);
+
+      delete out.token;
+      delete out.method;
+      delete out.url;
+      return out;
     }
   }]);
 

@@ -219,7 +219,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
 
   inviteEmployee() {
     if (this.inviteRoute) {
-      // Tell Company Onboarding to open its "Invite your team" step (when set up).
+      // Tell Company Onboarding to open its "Invite your team" step.
       try {
         window.sessionStorage.setItem('company-onboarding-open', 'invite');
       } catch (e) {
