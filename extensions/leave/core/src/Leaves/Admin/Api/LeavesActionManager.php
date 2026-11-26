@@ -14,6 +14,7 @@ use Classes\IceResponse;
 use Classes\SubActionManager;
 use Employees\Common\Model\Employee;
 use Employees\Common\Model\EmployeeAccess;
+use Leaves\Common\LeavesEmailSender;
 use Leaves\Common\Model\EmployeeLeave;
 use Leaves\Common\Model\EmployeeLeaveDay;
 use Leaves\Common\Model\EmployeeLeaveLog;
@@ -296,12 +297,18 @@ class LeavesActionManager extends SubActionManager
             LogManager::getInstance()->info($employeeLeaveLog->ErrorMsg());
         }
 
-        $employee = $this->getEmployeeById($employeeLeave->employee);
+        $currentEmpId = $this->getCurrentProfileId();
+        $reviewer = empty($currentEmpId) ? null : $this->getEmployeeById($currentEmpId);
 
         if ($oldLeaveStatus != $employeeLeave->status
             && $this->isLeaveNotificationsEnabled($employeeLeave->leave_type) == true
         ) {
-            $this->sendLeaveStatusChangedEmail($employee, $employeeLeave);
+            $this->sendLeaveStatusChangedEmail(
+                $reviewer,
+                $employeeLeave,
+                isset($req->reason) ? $req->reason : '',
+                $oldLeaveStatus
+            );
         }
 
         $this->baseService->audit(
@@ -309,60 +316,49 @@ class LeavesActionManager extends SubActionManager
             "Leave status changed \ from:".$oldLeaveStatus."\ to:".$employeeLeave->status." \ id:".$employeeLeave->id
         );
 
-        $currentEmpId = $this->getCurrentProfileId();
-
         if (!empty($currentEmpId)) {
-            $employee = $this->baseService->getElement('Employee', $currentEmpId, null, true);
-
-            if ($employeeLeave->status != "Pending") {
-                $notificationMsg
-                    = "Your leave has been $employeeLeave->status by ".$employee->first_name." ".$employee->last_name;
-                if (!empty($req->reason)) {
-                    $notificationMsg.=" (Note:".$req->reason.")";
-                }
-            }
-
-
             if ($employeeLeave->status === 'Approved') {
                 GoogleCalendarApiManager::approveLeaveEvents($employeeLeave);
             } elseif ($employeeLeave->status === 'Cancelled' || $employeeLeave->status === 'Rejected') {
                 GoogleCalendarApiManager::deleteLeaveEvents($employeeLeave);
             }
 
-            $this->baseService->notificationManager->addNotification(
-                $employeeLeave->employee,
-                $notificationMsg,
-                '{"type":"url","url":"g=modules&n=leaves&m=module_Leaves#tabEmployeeLeaveApproved"}',
-                IceConstants::NOTIFICATION_LEAVE
-            );
+            if ($employeeLeave->status != "Pending") {
+                $notificationMsg = LeavesEmailSender::statusSentence(
+                    $employeeLeave->status,
+                    empty($reviewer) ? '' : trim($reviewer->first_name." ".$reviewer->last_name),
+                    $oldLeaveStatus
+                );
+                if (!empty($req->reason)) {
+                    $notificationMsg .= " Note: ".trim($req->reason);
+                }
+
+                $this->baseService->notificationManager->addNotification(
+                    $employeeLeave->employee,
+                    $notificationMsg,
+                    '{"type":"url","url":"g=modules&n=leaves&m=module_Leaves#tabEmployeeLeaveApproved"}',
+                    IceConstants::NOTIFICATION_LEAVE
+                );
+            }
         }
 
         return new IceResponse(IceResponse::SUCCESS, "");
     }
 
-    public function sendLeaveStatusChangedEmail($employee, $leave)
+    /**
+     * Email the leave's owner about a status change. Uses the same sender as the
+     * employee/manager path, so both send the same email.
+     *
+     * @param Employee|null $reviewer who changed the status
+     */
+    public function sendLeaveStatusChangedEmail($reviewer, $leave, $note = '', $previousStatus = null)
     {
-
-        $emp = $this->getEmployeeById($leave->employee);
-
-        $params = array();
-        $params['name'] = $emp->first_name." ".$emp->last_name;
-        $params['startdate'] = $leave->date_start;
-        $params['enddate'] = $leave->date_end;
-        $params['status'] = $leave->status;
-
-        $user = $this->getUserFromProfileId($employee->id);
-
-        if (!empty($user)) {
-            // Resolve relative to this file: the templates ship with the leave
-            // package (<package>/core/modules/leaves), not with core/.
-            $email = file_get_contents(
-                __DIR__.'/../../../../modules/leaves/emailTemplates/leaveStatusChanged.html'
-            );
-            if (!empty($this->emailSender)) {
-                $this->emailSender->sendEmail("Leave Application ".$leave->status, $user->email, $email, $params);
-            }
+        if (empty($this->emailSender)) {
+            return;
         }
+        // This file lives at <lnp>/core/src/Leaves/Admin/Api/; the module is <lnp>/core/modules/leaves.
+        $sender = new LeavesEmailSender($this->emailSender, $this, __DIR__.'/../../../../modules/leaves');
+        $sender->sendLeaveStatusChangedEmail($reviewer, $leave, $note, $previousStatus);
     }
 
     private function getEmployeeById($id)

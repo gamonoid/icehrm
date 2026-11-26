@@ -47,9 +47,9 @@ if(!defined('HOME_LINK_OTHERS')){
 }
 
 //Version
-define('VERSION', '36.1.0');
-define('CACHE_VALUE', '36.1.0.2026-11220535');
-define('VERSION_NUMBER', '360100');
+define('VERSION', '36.1.1');
+define('CACHE_VALUE', '36.1.1.2026-11220535');
+define('VERSION_NUMBER', '360101');
 define('VERSION_DATE', '22/11/2026');
 
 if(!defined('CONTACT_EMAIL')){define('CONTACT_EMAIL','icehrm@gamonoid.com');}

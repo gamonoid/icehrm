@@ -99,10 +99,10 @@ class ExtensionManager
                     }
 
                     if ($arr['order'] == '0' || $arr['order'] == '') {
-                        $adminModulesTemp[$arr['menu']]["Z".$currentLocation] = $arr;
+                        $adminModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($adminModulesTemp[$arr['menu']], "Z".$currentLocation)] = $arr;
                         $currentLocation++;
                     } else {
-                        $adminModulesTemp[$arr['menu']]["A".$arr['order']] = $arr;
+                        $adminModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($adminModulesTemp[$arr['menu']], "A".$arr['order'])] = $arr;
                     }
                 }
 
@@ -129,10 +129,10 @@ class ExtensionManager
                     }
 
                     if ($arr['order'] == '0' || $arr['order'] == '') {
-                        $userModulesTemp[$arr['menu']]["Z" . $currentLocation] = $arr;
+                        $userModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($userModulesTemp[$arr['menu']], "Z" . $currentLocation)] = $arr;
                         $currentLocation++;
                     } else {
-                        $userModulesTemp[$arr['menu']]["A" . $arr['order']] = $arr;
+                        $userModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($userModulesTemp[$arr['menu']], "A" . $arr['order'])] = $arr;
                     }
                 }
             }
@@ -259,10 +259,10 @@ class ExtensionManager
 
         if (!$meta->headless) {
             if ($arr['order'] == '0' || $arr['order'] == '') {
-                $extensions[$menuName]["Z" . $currentLocation] = $arr;
+                $extensions[$menuName][\Classes\MenuService::freeSlot($extensions[$menuName], "Z" . $currentLocation)] = $arr;
                 $currentLocation++;
             } else {
-                $extensions[$arr['menu']]["A" . $arr['order']] = $arr;
+                $extensions[$arr['menu']][\Classes\MenuService::freeSlot($extensions[$arr['menu']], "A" . $arr['order'])] = $arr;
             }
         }
 

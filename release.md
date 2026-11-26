@@ -1,5 +1,28 @@
 # Release Notes IceHrmPro
 
+## Release note v36.1.1
+
+Full release notes with screenshots: [release-notes/v36.1.1.md](release-notes/v36.1.1.md)
+
+### 💼 Improvements
+
+#### Leave Emails
+* Leave request, cancellation request, request submitted and status changed emails use the shared IceHrm email layout.
+* The leave request email shows the employee, department, leave type, dates, days, reason and a day-by-day breakdown, with a Review request button.
+* The status changed email says who reviewed the request and includes their note, with a View my leave button.
+* Changing a leave's status from the administrator's leave screen sends the same email as a manager approval.
+* Leave notifications use the same clear wording as the emails.
+
+### 🐛 Bug Fixes
+* Attendance is back in the Manage menu; New Hire Onboarding had replaced it because both used the same menu position.
+* Modules that share a menu position are now both shown instead of one silently replacing the other.
+* Indirect supervisors are emailed about leave requests when the employee has no direct supervisor.
+* Setting a leave back to Pending no longer adds an empty notification.
+
+### 📋 Upgrade Notes
+* No database migrations.
+* The leave email templates (leaveApplied.html, leaveCancelled.html, leaveStatusChanged.html, leaveSubmittedForReview.html) are removed, so any local edits to them no longer apply.
+
 ## Release note v36.1.0
 
 Full release notes with screenshots: [release-notes/v36.1.0.md](release-notes/v36.1.0.md)
