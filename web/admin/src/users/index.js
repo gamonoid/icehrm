@@ -42,19 +42,20 @@ function init(data) {
   modJsList.tabUser = new UserAdapter('User');
   modJsList.tabUser.setCSRFRequired(true);
   modJsList.tabUser.setRemoteTable(true);
-  modJsList.tabUser.setObjectTypeName('User');
+  modJsList.tabUser.setObjectTypeName('Login');
   modJsList.tabUser.setDataPipe(new IceDataPipe(modJsList.tabUser));
   // Mirrors the legacy index.php (the Users tab is gated on UserRole access).
   modJsList.tabUser.setAccess(perm.UserRole || []);
 
   modJsList.tabUserRole = new UserRoleAdapter('UserRole');
   modJsList.tabUserRole.setTables(data.modelClasses || []);
-  modJsList.tabUserRole.setObjectTypeName('User Role');
+  modJsList.tabUserRole.setObjectTypeName('Permission Role');
   modJsList.tabUserRole.setDataPipe(new IceDataPipe(modJsList.tabUserRole));
   modJsList.tabUserRole.setAccess(perm.UserRole || []);
 
   modJsList.tabUserInvitation = new UserInvitationAdapter('UserInvitation');
-  modJsList.tabUserInvitation.setObjectTypeName('User Invitation');
+  modJsList.tabUserInvitation.setObjectTypeName('Invitation');
+  modJsList.tabUserInvitation.setInvitationModule('admin=users');
   modJsList.tabUserInvitation.setRemoteTable(true);
   modJsList.tabUserInvitation.setDataPipe(new IceDataPipe(modJsList.tabUserInvitation));
   modJsList.tabUserInvitation.setAccess(perm.UserInvitation || []);

@@ -838,9 +838,9 @@ class PayrollActionManager extends SubActionManager
             }
 
             $notificationMsg = sprintf(
-                'Your Payslip for the period %s to %s can be downloaded via My Documents section.',
-                $payroll->date_start,
-                $payroll->date_end
+                'Your payslip for %s to %s is ready. You can download it from My Documents.',
+                date('j M Y', strtotime($payroll->date_start)),
+                date('j M Y', strtotime($payroll->date_end))
             );
 
             $doc->visible_to = 'Owner Only';

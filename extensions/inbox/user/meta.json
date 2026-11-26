@@ -1,0 +1,31 @@
+{
+  "label": "Inbox",
+  "menu": ["About You"],
+  "order": "1.6",
+  "icon": "fa-inbox",
+  "user_levels": [
+    "Admin",
+    "Manager",
+    "Employee"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\InboxUser\\Common\\Model",
+  "manager": "\\InboxUser\\Extension",
+  "controller": "\\InboxUser\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "area": "people",
+  "native": {
+    "initFn": "initInboxUser",
+    "bundle": "inbox/user/dist/inbox.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "Inbox",
+        "component": "NativeExtensionView",
+        "viewGlobal": "InboxUserView"
+      }
+    ]
+  }
+}

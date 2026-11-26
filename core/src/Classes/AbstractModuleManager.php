@@ -24,8 +24,25 @@ abstract class AbstractModuleManager
     protected $moduleType = null;
     protected $actionManager = null;
 
+    /** @var bool see initializeOnce() */
+    private $initializeDone = false;
+
     public function initialize()
     {
+    }
+
+    /**
+     * Run initialize() once. An extension's manager is initialized when it is loaded
+     * (ExtensionManager) and again in the module loop (server.includes.inc.php); running
+     * it twice registered hooks twice (e.g. an invitation-accepted listener ran twice).
+     */
+    public function initializeOnce()
+    {
+        if ($this->initializeDone) {
+            return;
+        }
+        $this->initializeDone = true;
+        $this->initialize();
     }
 
     /**

@@ -266,7 +266,7 @@ class ExtensionManager
             }
         }
 
-        $manager->initialize();
+        $manager->initializeOnce();
         $initializer = $manager->getInitializer();
         if ($initializer !== null) {
             $initializer->setBaseService(BaseService::getInstance());

@@ -312,6 +312,15 @@ class BaseModel extends MySqlActiveRecord implements FinderProxy
     }
 
     /**
+     * Applied to each row returned by BaseService::get() (service.php a=get), which
+     * does not run postProcessGetData(). No-op by default; override to mask values.
+     */
+    public function postProcessGetList($obj)
+    {
+        return $obj;
+    }
+
+    /**
      * If a user was given permissions to a module via a user role,
      * The function `getModuleAccess` on models will define having access to which modules
      * give the right to access a specific model object.

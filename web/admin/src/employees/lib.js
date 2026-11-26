@@ -38,6 +38,33 @@ import {
 } from '../users/lib';
 
 
+const EMPLOYMENT_TYPES = [['Full-time', 'Full-time'], ['Part-time', 'Part-time'], ['Contractor', 'Contractor'], ['Intern', 'Intern'], ['Temporary', 'Temporary']];
+const WORK_MODES = [['Office', 'Office'], ['Remote', 'Remote'], ['Hybrid', 'Hybrid']];
+const TERMINATION_TYPES = [['Voluntary', 'Voluntary'], ['Involuntary', 'Involuntary'], ['Mutual agreement', 'Mutual agreement'], ['End of contract', 'End of contract'], ['Retirement', 'Retirement']];
+const REHIRE_OPTIONS = [['Yes', 'Yes'], ['No', 'No'], ['Conditional', 'Conditional']];
+const YES_NO = [['Yes', 'Yes'], ['No', 'No']];
+const CAREER_CHANGE_REASONS = [['Hire', 'Hire'], ['Promotion', 'Promotion'], ['Transfer', 'Transfer'], ['Reorganisation', 'Reorganisation'], ['Contract change', 'Contract change'], ['Other', 'Other']];
+const GENDERS = [['Male', 'Male'], ['Female', 'Female'], ['Non-binary', 'Non-binary'], ['Other', 'Other'], ['Prefer not to say', 'Prefer not to say']];
+
+/** Offboarding details, edited from the Resigned tab. */
+const OFFBOARDING_FIELDS = [
+  ['id', { label: 'ID', type: 'hidden', validation: '' }],
+  ['termination_date', { label: 'Termination Date', type: 'date', validation: 'none' }],
+  ['last_working_day', { label: 'Last Working Day', type: 'date', validation: 'none' }],
+  ['termination_type', {
+    label: 'Termination Type', type: 'select', 'allow-null': true, source: TERMINATION_TYPES,
+  }],
+  ['termination_reason', {
+    label: 'Termination Reason', type: 'select2', 'allow-null': true, 'remote-source': ['TerminationReason', 'id', 'name'],
+  }],
+  ['eligible_for_rehire', {
+    label: 'Eligible for Rehire', type: 'select', 'allow-null': true, source: REHIRE_OPTIONS,
+  }],
+  ['regrettable', {
+    label: 'Regrettable', type: 'select', 'allow-null': true, source: YES_NO,
+  }],
+];
+
 class SubProfileEnabledAdapterBase extends ReactModalAdapterBase {
   isSubProfileTable() {
     return this.user.user_level !== 'Admin' && this.user.user_level !== 'Restricted Admin';
@@ -191,12 +218,22 @@ class EmployeeAdapter extends ReactModalAdapterBase {
   }
 
   inviteEmployee() {
+    if (this.inviteRoute) {
+      // Tell Company Onboarding to open its "Invite your team" step (when set up).
+      try {
+        window.sessionStorage.setItem('company-onboarding-open', 'invite');
+      } catch (e) {
+        // Storage blocked: the setup opens on its current step instead.
+      }
+      window.location.hash = `#${encodeURIComponent(this.inviteRoute)}`;
+      return;
+    }
     modJsList.tabUserInvitation.initFieldMasterData(() => {
       modJsList.tabUserInvitation.renderForm();
     });
   }
 
-  add(object, getFunctionCallBackData, callGetFunction, successCallback) {
+  add(object, getFunctionCallBackData, callGetFunction, successCallback, failCallback) {
     const that = this;
     let callback;
     let content;
@@ -236,10 +273,10 @@ class EmployeeAdapter extends ReactModalAdapterBase {
         marginTop: '9vh',
       },
     });
-    super.add(object, getFunctionCallBackData, callGetFunction, callback);
+    super.add(object, getFunctionCallBackData, callGetFunction, callback, failCallback);
   }
 
-  addFailCallBack(callBackData, serverData) {
+  addFailCallBack(callBackData, serverData, failCallback, thisObject) {
     message.error({
       content: this.gt('Error updating employee profile'),
       key: 'updateEmployeeProfile',
@@ -249,7 +286,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       },
     });
 
-    super.addFailCallBack(callBackData, serverData);
+    super.addFailCallBack(callBackData, serverData, failCallback, thisObject);
   }
 
   preProcessRemoteTableData(data, cell, id) {
@@ -363,9 +400,12 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       ['first_name', { label: 'First Name', type: 'text', validation: '' }],
       ['middle_name', { label: 'Middle Name', type: 'text', validation: 'none' }],
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
+      ['name_preferred', { label: 'Preferred Name', type: 'text', validation: 'none' }],
+      ['pronouns', { label: 'Pronouns', type: 'text', validation: 'none' }],
+      ['name_pronunciation', { label: 'Name Pronunciation', type: 'text', validation: 'none' }],
       ['nationality', { label: 'Nationality', type: 'select2', 'remote-source': ['Nationality', 'id', 'name'] }],
       ['birthday', { label: 'Date of Birth', type: 'date', validation: '' }],
-      ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Non-binary', 'Non-binary'], ['Other', 'Other'], ['Prefer not to say', 'Prefer not to say']] }],
+      ['gender', { label: 'Gender', type: 'select', source: GENDERS }],
       ['marital_status', { label: 'Marital Status', type: 'select', source: [['Married', 'Married'], ['Single', 'Single'], ['Divorced', 'Divorced'], ['Widowed', 'Widowed'], ['Other', 'Other']] }],
       ['ethnicity', {
         label: 'Ethnicity', type: 'select2', 'allow-null': true, 'remote-source': ['Ethnicity', 'id', 'name'],
@@ -378,17 +418,39 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       ['nic_num', { label: 'National ID', type: 'text', validation: 'none' }],
       ['other_id', { label: 'Additional IDs', type: 'text', validation: 'none' }],
       ['driving_license', { label: 'Driving License', type: 'text', validation: 'none' }],
+      ['driving_license_exp_date', { label: 'Driving License Expiry', type: 'date', validation: 'none' }],
       ['health_insurance', { label: 'Health Insurance', type: 'text', validation: 'none' }],
 
       ['employment_status', { label: 'Employment Status', type: 'select2', 'remote-source': ['EmploymentStatus', 'id', 'name'] }],
+      ['employment_type', {
+        label: 'Employment Type', type: 'select', 'allow-null': true, source: EMPLOYMENT_TYPES,
+      }],
       ['department', { label: 'Department', type: 'select2', 'remote-source': ['CompanyStructure', 'id', 'title'] }],
       ['job_title', { label: 'Job Title', type: 'select2', 'remote-source': ['JobTitle', 'id', 'name'] }],
       ['pay_grade', {
         label: 'Pay Grade', type: 'select2', 'allow-null': true, 'remote-source': ['PayGrade', 'id', 'name'],
       }],
       ['joined_date', { label: 'Joined Date', type: 'date', validation: '' }],
-      ['confirmation_date', { label: 'Confirmation Date', type: 'date', validation: 'none' }],
+      ['original_hire_date', { label: 'Original Hire Date', type: 'date', validation: 'none' }],
+      ['confirmation_date', { label: 'Probation End Date', type: 'date', validation: 'none' }],
+      ['contract_end_date', { label: 'Contract End Date', type: 'date', validation: 'none' }],
       ['termination_date', { label: 'Termination Date', type: 'date', validation: 'none' }],
+      ['work_location', {
+        label: 'Work Location', type: 'select2', 'allow-null': true, 'remote-source': ['WorkLocation', 'id', 'name'],
+      }],
+      ['work_mode', {
+        label: 'Work Arrangement', type: 'select', 'allow-null': true, source: WORK_MODES,
+      }],
+      ['weekly_hours', { label: 'Weekly Hours', type: 'text', validation: 'none' }],
+      ['fte', {
+        label: 'Full-time Equivalent (FTE)',
+        type: 'text',
+        validation: 'none',
+        help: 'How much of a full-time job this person works: 1 is full time, 0.5 is half time. Leave it empty to work it out from Weekly Hours and the Standard Weekly Hours company setting.',
+      }],
+      ['cost_center', {
+        label: 'Cost Center', type: 'select2', 'allow-null': true, 'remote-source': ['CostCenter', 'id', 'name'],
+      }],
       ['timezone', {
         label: 'Time Zone', type: 'select2', 'allow-null': false, 'remote-source': ['Timezone', 'name', 'details', 'getTimezonesWithOffset'],
       }],
@@ -407,6 +469,8 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       ['work_phone', { label: 'Work Phone', type: 'text', validation: 'none' }],
       ['work_email', { label: 'Work Email', type: 'text', validation: 'emailOrEmpty' }],
       ['private_email', { label: 'Private Email', type: 'text', validation: 'emailOrEmpty' }],
+      ['linkedin_url', { label: 'LinkedIn', type: 'text', validation: 'none' }],
+      ['about', { label: 'About', type: 'textarea', validation: 'none' }],
 
       ['supervisor', {
         label: 'Direct Manager', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
@@ -478,11 +542,15 @@ class EmployeeAdapter extends ReactModalAdapterBase {
           'first_name',
           'middle_name',
           'last_name',
+          'name_preferred',
+          'pronouns',
+          'name_pronunciation',
           'nationality',
           'birthday',
           'gender',
           'marital_status',
           'ethnicity',
+          'about',
         ],
       },
       {
@@ -495,6 +563,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
           'nic_num',
           'other_id',
           'driving_license',
+          'driving_license_exp_date',
           'health_insurance',
         ],
       },
@@ -503,12 +572,25 @@ class EmployeeAdapter extends ReactModalAdapterBase {
         description: this.gt('Work related details'),
         fields: [
           'employment_status',
+          'employment_type',
           'department',
           'job_title',
           'pay_grade',
+          'work_location',
+          'work_mode',
+          'weekly_hours',
+          'fte',
+          'cost_center',
           'joined_date',
+          'original_hire_date',
           'confirmation_date',
-          'termination_date',
+          'contract_end_date',
+          // termination_date is deliberately absent from the form: it is set by
+          // the resignation action (see EmployeesActionManager::terminateEmployee)
+          // to the date the employee moved to the Resigned tab, and cleared again
+          // on activation. A blank field here would have overwritten that. The
+          // field definition is kept in getFormFields so it still appears in the
+          // field-name mapping screens.
           'work_station_id',
           'timezone',
         ],
@@ -522,7 +604,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
           'province', 'postal_code',
           'home_phone', 'mobile_phone',
           'work_phone', 'work_email',
-          'private_email',
+          'private_email', 'linkedin_url',
         ],
       },
       {
@@ -679,17 +761,73 @@ ${deleteBtn}
     });
   }
 
-  deleteEmployee(id) {
-    if (confirm('Are you sure you want to archive this employee? Data for this employee will be saved to an archive table. But you will not be able to covert the archived employee data into a normal employee.')) {
-      // Archive
-    } else {
+  // Opens the User adapter's edit form for the account linked to this employee
+  // (shown on the profile, admin only). Unlike createUser this goes through the
+  // normal CSRF-guarded saveUser path, so the token primed at init (userEditCsrf)
+  // is placed on #UserForm — the div saveUser reads it from — before the form opens.
+  editUser(employee) {
+    if (!employee || !employee.user_id) {
+      return;
+    }
+    const userAdapter = modJsList.tabUser;
+    let form = document.getElementById('UserForm');
+    if (!form) {
+      form = document.createElement('div');
+      form.id = 'UserForm';
+      form.style.display = 'none';
+      document.body.appendChild(form);
+    }
+    if (userAdapter.userEditCsrf) {
+      $(form).data('csrf', userAdapter.userEditCsrf);
+    }
+    // Ensure the create branch of saveCallback is not taken (edit, not create).
+    userAdapter.createUserEmployeeId = null;
+    userAdapter.setSaveCompleteCallback(() => { modJs.reloadEmployee(employee.id); });
+    userAdapter.initFieldMasterData(() => {
+      userAdapter.edit(employee.user_id);
+    });
+  }
+
+  // Opens the change-password form for the account linked to this employee (shown on
+  // the profile, admin only). Posts to the token-authenticated user/password endpoint,
+  // which lets an admin set any user's password — so no CSRF token is needed here.
+  changeUserPassword(employee) {
+    if (!employee || !employee.user_id) {
+      return;
+    }
+    let container = document.getElementById('UserPasswordChangeForm');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'UserPasswordChangeForm';
+      container.style.display = 'none';
+      document.body.appendChild(container);
+    }
+    modJsList.tabUser.showPasswordChangeForm(employee.user_id);
+  }
+
+  // Archives the employee (the deleteEmployee sub action copies the profile and
+  // all related records into ArchivedEmployees before removing the row) — this
+  // is never a plain row delete.
+  // `options` is passed by the SPA card list, which runs its own confirm and
+  // reloads itself; the legacy table has neither, so it keeps the browser
+  // confirm and the built-in message + refresh.
+  deleteEmployee(id, options) {
+    const opts = options || {};
+    const driven = typeof opts.onSuccess === 'function' || typeof opts.onFail === 'function';
+
+    // eslint-disable-next-line no-alert, no-restricted-globals
+    if (!driven && !confirm('Are you sure you want to archive this employee? Data for this employee will be saved to an archive table. But you will not be able to covert the archived employee data into a normal employee.')) {
       return;
     }
 
     const callBackData = [];
     callBackData.callBackData = [];
-    callBackData.callBackSuccess = 'deleteEmployeeSuccessCallback';
-    callBackData.callBackFail = 'deleteEmployeeFailCallback';
+    callBackData.callBackSuccess = driven
+      ? (data) => { if (opts.onSuccess) { opts.onSuccess(data); } }
+      : 'deleteEmployeeSuccessCallback';
+    callBackData.callBackFail = driven
+      ? (data) => { if (opts.onFail) { opts.onFail(data); } }
+      : 'deleteEmployeeFailCallback';
 
     this.customAction(
       'deleteEmployee',
@@ -700,13 +838,13 @@ ${deleteBtn}
 
 
   deleteEmployeeSuccessCallback(callBackData) {
-    this.showMessage('Delete Success', 'Employee deleted. You can find archived information for this employee in Archived Employees tab');
+    this.showMessage(this.gt('Delete Success'), this.gt('Employee deleted. You can find archived information for this employee in Archived Employees tab'));
     this.get([]);
   }
 
 
   deleteEmployeeFailCallback(callBackData) {
-    this.showMessage('Error occurred while deleting Employee', callBackData);
+    this.showMessage(this.gt('Error occurred while deleting Employee'), callBackData);
   }
 
 
@@ -715,8 +853,8 @@ ${deleteBtn}
     Modal.confirm({
       title: this.gt('Initiate Resignation'),
       icon: <ExclamationCircleOutlined />,
-      content: this.gt('Are you sure you want to terminate this employee contract? You will still be able to access all details of this employee.'),
-      okText: this.gt('Yes, Terminate'),
+      content: this.gt('Are you sure you want to mark this employee as resigned? They move to the Resigned tab, and you can still see all their details.'),
+      okText: this.gt('Yes, Mark as Resigned'),
       okType: 'danger',
       cancelText: this.gt('Cancel'),
       onOk() {
@@ -735,13 +873,13 @@ ${deleteBtn}
 
 
   terminateEmployeeSuccessCallback(callBackData) {
-    this.showMessage('Success', 'Employee contract terminated. The employee moved to Resigned Employees section.');
+    this.showMessage(this.gt('Success'), this.gt('The employee is marked as resigned and moved to the Resigned tab.'));
     this.reloadEmployeeList();
   }
 
 
   terminateEmployeeFailCallback(callBackData) {
-    this.showMessage('Error occured while terminating contract', callBackData);
+    this.showMessage(this.gt('The employee could not be marked as resigned.'), callBackData);
   }
 
 
@@ -769,13 +907,13 @@ ${deleteBtn}
 
 
   activateEmployeeSuccessCallback(callBackData) {
-    this.showMessage('Success', 'Employee contract re-activated.');
+    this.showMessage(this.gt('Success'), this.gt('Employee contract re-activated.'));
     this.get([]);
   }
 
 
   activateEmployeeFailCallback(callBackData) {
-    this.showMessage('Error occurred while activating Employee', callBackData);
+    this.showMessage(this.gt('Error occurred while activating Employee'), callBackData);
   }
 
 
@@ -796,7 +934,7 @@ ${deleteBtn}
 
 
   viewFailCallBack(callBackData) {
-    this.showMessage('Error', 'Error Occurred while retrieving candidate');
+    this.showMessage(this.gt('Error'), this.gt('Error Occurred while retrieving candidate'));
   }
 
   deleteProfileImage(empId) {
@@ -825,8 +963,35 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
     return (<EmployeeProfile />);
   }
 
+  // Editing a resigned employee records the offboarding details only.
+  getFormFields() {
+    return OFFBOARDING_FIELDS.map(([name, field]) => {
+      const mapped = this.fieldNameMap[name];
+      return [name, mapped ? { ...field, label: mapped.textMapped } : { ...field }];
+    });
+  }
+
+  renderForm(object = null, viewOnly = false) {
+    ReactModalAdapterBase.prototype.renderForm.call(this, object, viewOnly);
+  }
+
+  // The list's element only carries raw ids (this adapter's form has just the
+  // offboarding fields, so nothing else is mapped). The profile needs the same
+  // enriched record as the Employees tab ({id, display} for manager, nationality,
+  // country, job title, department...), so load it from the REST API.
   showElement(element) {
-    this.tableContainer.current.setCurrentElement(element);
+    const set = (el) => {
+      if (this.tableContainer && this.tableContainer.current) {
+        this.tableContainer.current.setCurrentElement(el);
+      }
+    };
+    if (!element || !element.id || !this.apiClient) {
+      set(element);
+      return;
+    }
+    this.apiClient.get(`employees/${element.id}`)
+      .then((response) => set(response && response.data && response.data.id ? response.data : element))
+      .catch(() => set(element));
   }
 
   getDataMapping() {
@@ -839,6 +1004,10 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
       'department',
       'gender',
       'supervisor',
+      // Requested through `cl`, so the list actually returns it for the card.
+      'termination_date',
+      // Not a column: the card uses it to flag hires whose onboarding was cancelled.
+      'termination_type',
     ];
   }
 
@@ -853,6 +1022,7 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
       { sTitle: 'Department' },
       { sTitle: 'Gender' },
       { sTitle: 'Manager' },
+      { sTitle: 'Last Day of Employment' },
     ];
   }
 
@@ -879,10 +1049,14 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
         title: 'Manager',
         dataIndex: 'supervisor',
       },
+      {
+        title: 'Last Day of Employment',
+        dataIndex: 'termination_date',
+      },
     ];
   }
 
-  add(object, getFunctionCallBackData, callGetFunction, successCallback) {
+  add(object, getFunctionCallBackData, callGetFunction, successCallback, failCallback) {
     const that = this;
     if (callGetFunction === undefined || callGetFunction === null) {
       // eslint-disable-next-line no-param-reassign
@@ -896,25 +1070,36 @@ class TerminatedEmployeeAdapter extends EmployeeAdapter {
       if (data.status === 'SUCCESS') {
         that.addSuccessCallBack(getFunctionCallBackData, data.object, callGetFunction, successCallback, that);
       } else {
-        that.addFailCallBack(getFunctionCallBackData, data.object);
+        that.addFailCallBack(getFunctionCallBackData, data.object, failCallback, that);
       }
     }, 'json')
       .fail((e) => {
+        // See AdapterBase.add — the fail path has to run here as well so the
+        // caller's saving state is released on a 500/timeout.
         if (e.status === 403) {
-          that.showMessage('Access Forbidden', e.responseJSON.message);
+          that.showMessage(that.gt('Access Forbidden'), that.getRequestFailureMessage(e));
+          if (failCallback !== undefined && failCallback !== null) {
+            failCallback.apply(that, [null]);
+          }
+          that.trackEvent('addFailed', that.tab, that.table);
+          return;
         }
+        that.addFailCallBack(getFunctionCallBackData, that.getRequestFailureMessage(e), failCallback, that);
       })
       .always(() => { that.hideLoader(); });
     this.trackEvent('add', this.tab, this.table);
   }
 
-  addFailCallBack(callBackData, serverData) {
+  addFailCallBack(callBackData, serverData, failCallback, thisObject) {
     try {
       this.closePlainMessage();
     } catch (e) {
       // No need to report
     }
-    this.showMessage('Error saving', serverData);
+    if (failCallback !== undefined && failCallback !== null) {
+      failCallback.apply(thisObject || this, [serverData]);
+    }
+    this.showMessage(this.gt('Error saving'), serverData);
     this.trackEvent('addFailed', this.tab, this.table);
   }
 
@@ -1508,11 +1693,11 @@ class EmployeeLanguageAdapter extends SubProfileEnabledAdapterBase {
   }
 
   getFormFields() {
-    const compArray = [['Elementary Proficiency', 'Elementary Proficiency'],
-      ['Limited Working Proficiency', 'Limited Working Proficiency'],
-      ['Professional Working Proficiency', 'Professional Working Proficiency'],
-      ['Full Professional Proficiency', 'Full Professional Proficiency'],
-      ['Native or Bilingual Proficiency', 'Native or Bilingual Proficiency']];
+    const compArray = [['Elementary Proficiency', this.gt('Elementary Proficiency')],
+      ['Limited Working Proficiency', this.gt('Limited Working Proficiency')],
+      ['Professional Working Proficiency', this.gt('Professional Working Proficiency')],
+      ['Full Professional Proficiency', this.gt('Full Professional Proficiency')],
+      ['Native or Bilingual Proficiency', this.gt('Native or Bilingual Proficiency')]];
 
     return [
       ['id', { label: 'ID', type: 'hidden' }],
@@ -1568,6 +1753,7 @@ class EmployeeDependentAdapter extends SubProfileEnabledAdapterBase {
       'employee',
       'name',
       'relationship',
+      'gender',
       'dob',
       'id_number',
     ];
@@ -1579,6 +1765,7 @@ class EmployeeDependentAdapter extends SubProfileEnabledAdapterBase {
       { sTitle: 'Employee' },
       { sTitle: 'Name' },
       { sTitle: 'Relationship' },
+      { sTitle: 'Gender' },
       { sTitle: 'Date of Birth' },
       { sTitle: 'Id Number' },
     ];
@@ -1624,7 +1811,10 @@ class EmployeeDependentAdapter extends SubProfileEnabledAdapterBase {
         'remote-source': ['Employee', 'id', 'first_name+last_name', 'getActiveSubordinateEmployees'],
       }],
       ['name', { label: 'Name', type: 'text', validation: '' }],
-      ['relationship', { label: 'Relationship', type: 'select', source: [['Child', 'Child'], ['Spouse', 'Spouse'], ['Parent', 'Parent'], ['Other', 'Other']] }],
+      ['relationship', { label: 'Relationship', type: 'select', source: [['Child', 'Child'], ['Spouse', 'Spouse'], ['Partner', 'Partner'], ['Parent', 'Parent'], ['Sibling', 'Sibling'], ['Other', 'Other']] }],
+      ['gender', {
+        label: 'Gender', type: 'select', 'allow-null': true, source: GENDERS,
+      }],
       ['dob', { label: 'Date of Birth', type: 'date', validation: '' }],
       ['id_number', { label: 'Id Number', type: 'text', validation: 'none' }],
     ];
@@ -1660,9 +1850,9 @@ class EmergencyContactAdapter extends SubProfileEnabledAdapterBase {
       'employee',
       'name',
       'relationship',
-      'home_phone',
-      'work_phone',
+      'is_primary',
       'mobile_phone',
+      'email',
     ];
   }
 
@@ -1672,9 +1862,9 @@ class EmergencyContactAdapter extends SubProfileEnabledAdapterBase {
       { sTitle: 'Employee' },
       { sTitle: 'Name' },
       { sTitle: 'Relationship' },
-      { sTitle: 'Home Phone' },
-      { sTitle: 'Work Phone' },
+      { sTitle: 'Primary' },
       { sTitle: 'Mobile Phone' },
+      { sTitle: 'Email' },
     ];
   }
 
@@ -1696,16 +1886,16 @@ class EmergencyContactAdapter extends SubProfileEnabledAdapterBase {
         sorter: true,
       },
       {
-        title: 'Home Phone',
-        dataIndex: 'home_phone',
-      },
-      {
-        title: 'Work Phone',
-        dataIndex: 'work_phone',
+        title: 'Primary',
+        dataIndex: 'is_primary',
       },
       {
         title: 'Mobile Phone',
         dataIndex: 'mobile_phone',
+      },
+      {
+        title: 'Email',
+        dataIndex: 'email',
       },
     ];
   }
@@ -1722,9 +1912,14 @@ class EmergencyContactAdapter extends SubProfileEnabledAdapterBase {
       }],
       ['name', { label: 'Name', type: 'text', validation: '' }],
       ['relationship', { label: 'Relationship', type: 'text', validation: 'none' }],
+      ['is_primary', {
+        label: 'Primary Contact', type: 'select', 'allow-null': true, source: YES_NO,
+      }],
+      ['mobile_phone', { label: 'Mobile Phone', type: 'text', validation: 'none' }],
       ['home_phone', { label: 'Home Phone', type: 'text', validation: 'none' }],
       ['work_phone', { label: 'Work Phone', type: 'text', validation: 'none' }],
-      ['mobile_phone', { label: 'Mobile Phone', type: 'text', validation: 'none' }],
+      ['email', { label: 'Email', type: 'text', validation: 'emailOrEmpty' }],
+      ['address', { label: 'Address', type: 'textarea', validation: 'none' }],
     ];
   }
 
@@ -1819,6 +2014,7 @@ class EmployeeCareerAdapter extends ReactModalAdapterBase {
       'employment_status',
       'department',
       'supervisor',
+      'change_reason',
     ];
   }
 
@@ -1827,6 +2023,11 @@ class EmployeeCareerAdapter extends ReactModalAdapterBase {
       {
         title: 'Employee',
         dataIndex: 'employee',
+        sorter: true,
+      },
+      {
+        title: 'Change Reason',
+        dataIndex: 'change_reason',
         sorter: true,
       },
       {
@@ -1880,8 +2081,28 @@ class EmployeeCareerAdapter extends ReactModalAdapterBase {
         label: 'Manager', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
       }],
       ['employment_status', { label: 'Employment Status', type: 'select2', 'remote-source': ['EmploymentStatus', 'id', 'name'] }],
+      ['employment_type', {
+        label: 'Employment Type', type: 'select', 'allow-null': true, source: EMPLOYMENT_TYPES,
+      }],
+      ['pay_grade', {
+        label: 'Pay Grade', type: 'select2', 'allow-null': true, 'remote-source': ['PayGrade', 'id', 'name'],
+      }],
+      ['work_location', {
+        label: 'Work Location', type: 'select2', 'allow-null': true, 'remote-source': ['WorkLocation', 'id', 'name'],
+      }],
+      ['change_reason', {
+        label: 'Change Reason', type: 'select', 'allow-null': true, source: CAREER_CHANGE_REASONS,
+      }],
       ['details', { label: 'Details', type: 'textarea', validation: 'none' }],
     ];
+  }
+
+  getHelpTitle() {
+    return this.gt('Work History');
+  }
+
+  getHelpDescription() {
+    return this.gt('A row with no end date that starts today or earlier is the current job. Saving it updates the employee record, and editing the job details on the employee record adds a row here.');
   }
 
 
@@ -1916,7 +2137,102 @@ class EmployeeCareerAdapter extends ReactModalAdapterBase {
 }
 
 
+/*
+ * EmployeeBankAccountAdapter
+ */
+
+const BANK_SPLIT_TYPES = [['Percentage', 'Percentage'], ['Fixed amount', 'Fixed amount'], ['Remainder', 'Remainder']];
+
+function bankAccountFormFields(withEmployee) {
+  const fields = [['id', { label: 'ID', type: 'hidden' }]];
+  if (withEmployee) {
+    fields.push(['employee', {
+      label: 'Employee',
+      type: 'select2',
+      sort: 'none',
+      'allow-null': false,
+      'remote-source': ['Employee', 'id', 'first_name+last_name'],
+    }]);
+  }
+  return fields.concat([
+    ['account_holder', { label: 'Account Holder', type: 'text', validation: '' }],
+    ['bank_name', { label: 'Bank Name', type: 'text', validation: '' }],
+    ['branch', { label: 'Branch', type: 'text', validation: 'none' }],
+    ['account_number', { label: 'Account Number', type: 'text', validation: 'none' }],
+    ['iban', { label: 'IBAN', type: 'text', validation: 'none' }],
+    ['swift_bic', { label: 'SWIFT / BIC', type: 'text', validation: 'none' }],
+    ['routing_code', {
+      label: 'Routing / Sort Code', type: 'text', validation: 'none', help: 'ABA routing number, sort code, BSB, IFSC or similar',
+    }],
+    ['currency', {
+      label: 'Currency', type: 'select2', 'allow-null': true, 'remote-source': ['CurrencyType', 'id', 'code+name'],
+    }],
+    ['is_primary', { label: 'Primary Account', type: 'select', source: YES_NO }],
+    ['split_type', {
+      label: 'Salary Split', type: 'select', 'allow-null': true, 'null-label': 'Whole salary', source: BANK_SPLIT_TYPES,
+    }],
+    ['split_value', { label: 'Split Value', type: 'text', validation: 'none' }],
+    ['notes', { label: 'Notes', type: 'textarea', validation: 'none' }],
+  ]);
+}
+
+class EmployeeBankAccountAdapter extends ReactModalAdapterBase {
+  getDataMapping() {
+    return [
+      'id',
+      'employee',
+      'account_holder',
+      'bank_name',
+      'account_number',
+      'is_primary',
+    ];
+  }
+
+  getHeaders() {
+    return [
+      { sTitle: 'ID', bVisible: false },
+      { sTitle: 'Employee' },
+      { sTitle: 'Account Holder' },
+      { sTitle: 'Bank Name' },
+      { sTitle: 'Account Number' },
+      { sTitle: 'Primary' },
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      { title: 'Employee', dataIndex: 'employee', sorter: true },
+      { title: 'Account Holder', dataIndex: 'account_holder', sorter: true },
+      { title: 'Bank Name', dataIndex: 'bank_name', sorter: true },
+      { title: 'Account Number', dataIndex: 'account_number' },
+      { title: 'Primary', dataIndex: 'is_primary' },
+    ];
+  }
+
+  getFormFields() {
+    return bankAccountFormFields(true);
+  }
+
+  getFilters() {
+    return [
+      ['employee', {
+        label: 'Employee', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
+      }],
+    ];
+  }
+
+  getHelpTitle() {
+    return this.gt('Bank Accounts');
+  }
+
+  getHelpDescription() {
+    return this.gt('Bank accounts employees are paid into. Account numbers and IBANs are stored encrypted; employees see only the last four characters of their own accounts.');
+  }
+}
+
 module.exports = {
+  EmployeeBankAccountAdapter,
+  bankAccountFormFields,
   EmployeeAdapter,
   TerminatedEmployeeAdapter,
   ArchivedEmployeeAdapter,

@@ -30,7 +30,7 @@ abstract class ApproveAdminActionManager extends ApproveCommonActionManager
         $obj->Load("id = ?", array($req->id));
 
         if ($obj->id != $req->id) {
-            return new IceResponse(IceResponse::ERROR, "$itemName not found");
+            return new IceResponse(IceResponse::ERROR, ucfirst($itemName)." not found");
         }
 
         // Ownership gate. $req->id is any approvable record (overtime, travel, ...) and
@@ -115,7 +115,7 @@ abstract class ApproveAdminActionManager extends ApproveCommonActionManager
             LogManager::getInstance()->info($obj->ErrorMsg());
             return new IceResponse(
                 IceResponse::ERROR,
-                "Error occurred while saving $itemName information. Please contact admin"
+                "Error occurred while saving the $itemName. Please contact an administrator."
             );
         }
 
@@ -134,14 +134,16 @@ abstract class ApproveAdminActionManager extends ApproveCommonActionManager
         );
 
         $currentEmpId = $this->getCurrentProfileId();
-
+        $deciderName = '';
         if (!empty($currentEmpId)) {
-            $employee = $this->baseService->getElement('Employee', $currentEmpId, null, true);
+            $decider = $this->baseService->getElement('Employee', $currentEmpId, null, true);
+            $deciderName = trim($decider->first_name." ".$decider->last_name);
+        }
 
-            $notificationMsg
-                = "Your $itemName has been $obj->status by ".$employee->first_name." ".$employee->last_name;
+        if ($deciderName !== '') {
+            $notificationMsg = self::statusChangeMessage($deciderName, $itemName, $obj->status);
             if (!empty($req->reason)) {
-                $notificationMsg.=" (Note:".$req->reason.")";
+                $notificationMsg .= " Note: ".trim((string) $req->reason);
             }
 
             $this->baseService->notificationManager->addNotification(
@@ -156,16 +158,13 @@ abstract class ApproveAdminActionManager extends ApproveCommonActionManager
         }
 
         if (!empty($sendApprovalEmailto)) {
-            $employee = $this->baseService->getElement(
-                'Employee',
-                BaseService::getInstance()->getCurrentProfileId(),
-                null,
-                true
-            );
+            $owner = $this->baseService->getElement('Employee', $obj->employee, null, true);
+            $ownerName = !empty($owner) ? trim($owner->first_name." ".$owner->last_name) : '';
+            $ownerItem = $ownerName !== '' ? $ownerName."'s ".$itemName : 'A '.$itemName;
 
-            $notificationMsg
-                = "You have been assigned ".$itemName." for approval by ".
-                    $employee->first_name." ".$employee->last_name;
+            $notificationMsg = $deciderName !== ''
+                ? sprintf('%s approved %s, and it now needs your approval.', $deciderName, $ownerItem)
+                : sprintf('%s needs your approval.', $ownerItem);
 
             $this->baseService->notificationManager->addNotification(
                 $sendApprovalEmailto,
@@ -179,5 +178,28 @@ abstract class ApproveAdminActionManager extends ApproveCommonActionManager
         }
 
         return new IceResponse(IceResponse::SUCCESS, "");
+    }
+
+    /**
+     * The sentence sent to the requester when a request changes status, e.g.
+     * "Jane Doe approved your overtime request." It is the notification text and the
+     * email subject, so keep it a complete sentence.
+     */
+    public static function statusChangeMessage($deciderName, $itemName, $status)
+    {
+        switch ($status) {
+            case 'Approved':
+                return sprintf('%s approved your %s.', $deciderName, $itemName);
+            case 'Processing':
+                return sprintf('%s approved your %s. It now goes to the next approver.', $deciderName, $itemName);
+            case 'Rejected':
+                return sprintf('%s rejected your %s.', $deciderName, $itemName);
+            case 'Cancelled':
+                return sprintf('%s cancelled your %s.', $deciderName, $itemName);
+            case 'Pending':
+                return sprintf('%s moved your %s back to pending.', $deciderName, $itemName);
+            default:
+                return sprintf('%s changed the status of your %s to %s.', $deciderName, $itemName, strtolower($status));
+        }
     }
 }

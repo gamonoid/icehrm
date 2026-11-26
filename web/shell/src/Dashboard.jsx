@@ -14,6 +14,7 @@ import {
   Pie, Donut, Column, Area, Bar,
 } from '@antv/g2plot';
 import { MUI_SHADOW, MUI_DARK } from './theme';
+import ExtensionBanners from '../../components/ExtensionBanners';
 
 const { Text } = Typography;
 
@@ -554,6 +555,7 @@ export default function Dashboard({ config, onNavigate }) {
   return (
     <div style={{ padding: 24, maxWidth: 1500, margin: '0 auto' }}>
       {/* Legacy-parity banners (same conditions as the legacy dashboard) */}
+      <ExtensionBanners banners={data.banners} onNavigate={onNavigate} />
       <DemoBanner show={data.demoPrompt} onNavigate={onNavigate} />
       <PaymentBanner billing={data.billing} onNavigate={onNavigate} />
       <UpgradeBanner upgradeAd={data.upgradeAd} onNavigate={onNavigate} />

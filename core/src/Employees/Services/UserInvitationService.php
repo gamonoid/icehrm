@@ -4,6 +4,9 @@ namespace Employees\Services;
 
 use Classes\BaseService;
 use Classes\IceResponse;
+use Classes\PasswordManager;
+use Classes\SettingsManager;
+use Utils\LogManager;
 use Classes\SubActionManager;
 use Employees\Common\Model\Employee;
 use Metadata\Common\Model\SupportedLanguage;
@@ -22,18 +25,99 @@ class UserInvitationService
 	const EMPLOYEE_USER_CREATED = 5;
 	const NO_WELCOME_EMAIL_SENT = 6;
 
-	public function getInvitationByHash($hash) {
-		$userInvitation = new UserInvitation();
-		// Accept up to EMAIL_ERROR: a failed *invitation* email (common when SMTP
-		// isn't set up) must not permanently brick the link — the hash is still
-		// valid, so if the invitee reaches it (e.g. an admin shared it manually)
-		// let them proceed. Anything beyond that (PROCESSING/created) is done.
-		$userInvitation->Load('password = ? and invitation_status <= ?', [$hash, self::INVITATION_EMAIL_ERROR]);
-		if (empty($userInvitation->password) || $userInvitation->password !== $hash) {
+	const REVOKED = 7;
+
+	/** Listeners called after an invitation is accepted: function (UserInvitation, Employee, User). */
+	private static $acceptListeners = [];
+
+	/** Providers of extra text for the accept page: function (UserInvitation) => array|null. */
+	private static $acceptPageProviders = [];
+
+	public static function onAccepted(callable $listener) {
+		self::$acceptListeners[] = $listener;
+	}
+
+	public static function addAcceptPageProvider(callable $provider) {
+		self::$acceptPageProviders[] = $provider;
+	}
+
+	/**
+	 * Extra content for the accept page (e.g. an onboarding welcome message and start
+	 * date). Each provider may return ['title' => ..., 'message' => ..., 'details' => [label => value]].
+	 */
+	public function getAcceptPageExtras(UserInvitation $invitation) {
+		$extras = [];
+		foreach (self::$acceptPageProviders as $provider) {
+			try {
+				$extra = call_user_func($provider, $invitation);
+				if (is_array($extra)) {
+					$extras = array_merge($extras, $extra);
+				}
+			} catch (\Exception $e) {
+				LogManager::getInstance()->error('Invitation accept page provider failed: ' . $e->getMessage());
+			}
+		}
+		return $extras;
+	}
+
+	public static function hashToken($token) {
+		return hash('sha256', (string) $token);
+	}
+
+	public static function getValidityDays() {
+		$days = intval(SettingsManager::getInstance()->getSetting('System: Invitation Link Validity (Days)'));
+		return $days > 0 ? min($days, 365) : 14;
+	}
+
+	/**
+	 * Give the invitation a new single-use token. Only its hash is stored; the plain
+	 * token is returned so it can be put in the email (and shown to the admin once).
+	 * Any earlier link stops working.
+	 */
+	public function issueToken(UserInvitation $invitation) {
+		$token = bin2hex(random_bytes(32));
+		$invitation->token_hash = self::hashToken($token);
+		// Kept only so the NOT NULL column is filled; it is not a credential any more.
+		$invitation->password = self::hashToken(random_bytes(16));
+		$invitation->expires_at = date('Y-m-d H:i:s', time() + self::getValidityDays() * 86400);
+		return $token;
+	}
+
+	public static function getAcceptUrl($token) {
+		return CLIENT_BASE_URL . 'accept-invitation.php?token=' . rawurlencode($token);
+	}
+
+	/**
+	 * Load the invitation a link points to, whatever its state. Links sent before tokens
+	 * were introduced carry the old value in `hash`; the migration stored its hash too.
+	 */
+	public function findByToken($token) {
+		if (!is_string($token) || $token === '' || strlen($token) > 128) {
 			return null;
 		}
+		$invitation = new UserInvitation();
+		$invitation->Load('token_hash = ?', [self::hashToken($token)]);
+		if (empty($invitation->id) || !hash_equals((string) $invitation->token_hash, self::hashToken($token))) {
+			return null;
+		}
+		return $invitation;
+	}
 
-		return $userInvitation;
+	/**
+	 * One of: valid, expired, accepted, revoked.
+	 */
+	public function getTokenState(UserInvitation $invitation) {
+		$status = intval($invitation->invitation_status);
+		if ($status === self::REVOKED) {
+			return 'revoked';
+		}
+		if (!empty($invitation->accepted_at) || $status > self::INVITATION_EMAIL_ERROR) {
+			return 'accepted';
+		}
+		if (empty($invitation->expires_at) || strtotime($invitation->expires_at) < time()) {
+			return 'expired';
+		}
+		return 'valid';
 	}
 
 	public function setInvitationStatus(UserInvitation $userInvitation, $status) {
@@ -43,16 +127,124 @@ class UserInvitationService
 		return $userInvitation;
 	}
 
-	public function processUserInvitation(UserInvitation $userInvitation) {
-		// Allow PENDING(0), INVITED(1) and EMAIL_ERROR(2) — a failed invitation
-		// email shouldn't block acceptance. PROCESSING(3)+ means it's already
-		// been (partially) processed.
-		if ($userInvitation->invitation_status > self::INVITATION_EMAIL_ERROR) {
-			return new IceResponse(IceResponse::ERROR, 'Invitation is not in a valid state. Please contact your HR department to request a new invitation.');
+	/**
+	 * Create and send an invitation from code (used by extensions such as onboarding).
+	 * Runs the same checks and emails as an invitation created by an admin.
+	 *
+	 * @return IceResponse SUCCESS with ['invitation' => UserInvitation, 'url' => accept link]
+	 */
+	public function createInvitation(array $data, $inviter = null) {
+		$invitation = new UserInvitation();
+		$fields = ['email', 'first_name', 'last_name', 'user_level', 'timezone', 'department', 'joined_date',
+			'job_title', 'employment_status', 'pay_grade', 'supervisor', 'country', 'context', 'context_ref'];
+		foreach ($fields as $field) {
+			if (isset($data[$field]) && $data[$field] !== '') {
+				$invitation->$field = $data[$field];
+			}
+		}
+		if (empty($invitation->user_level)) {
+			$invitation->user_level = 'Employee';
+		}
+		$invitation->email = trim((string) $invitation->email);
+		if (!StringUtils::validateEmail($invitation->email)) {
+			return new IceResponse(IceResponse::ERROR, 'Enter a valid email address.');
+		}
+		$pre = $invitation->executePreSaveActions($invitation);
+		if ($pre->getStatus() !== IceResponse::SUCCESS) {
+			return $pre;
+		}
+		$invitation = $pre->getData();
+		$invitation->created = date('Y-m-d H:i:s');
+		$invitation->updated = date('Y-m-d H:i:s');
+		if (!$invitation->Save()) {
+			return new IceResponse(IceResponse::ERROR, 'The invitation could not be saved.');
+		}
+		$token = $invitation->getPlainToken();
+		$this->sendInvitation($invitation, $token, $inviter);
+
+		return new IceResponse(IceResponse::SUCCESS, ['invitation' => $invitation, 'url' => self::getAcceptUrl($token)]);
+	}
+
+	/**
+	 * Email the link for this token and record the outcome.
+	 */
+	public function sendInvitation(UserInvitation $invitation, $token, $inviter = null) {
+		if ($inviter === null) {
+			$inviter = BaseService::getInstance()->getCurrentUserEmployee();
+		}
+		$result = false;
+		$emailSender = BaseService::getInstance()->getEmailSender();
+		if (!empty($emailSender)) {
+			$sender = new UsersEmailSender($emailSender, new SubActionManager());
+			$result = $sender->sendInviteUserEmail($invitation, $inviter, $token);
+		}
+		$invitation->last_sent_at = date('Y-m-d H:i:s');
+		$invitation->invitation_status = $result ? self::INVITATION_EMAIL_SENT : self::INVITATION_EMAIL_ERROR;
+		$invitation->Save();
+		return (bool) $result;
+	}
+
+	/**
+	 * New link (the old one stops working), new expiry, email again.
+	 *
+	 * @return IceResponse SUCCESS with ['url' => ..., 'sent' => bool]
+	 */
+	public function resend($id) {
+		$invitation = new UserInvitation();
+		$invitation->Load('id = ?', [$id]);
+		if (empty($invitation->id)) {
+			return new IceResponse(IceResponse::ERROR, 'Invitation not found.');
+		}
+		$state = $this->getTokenState($invitation);
+		if ($state === 'accepted') {
+			return new IceResponse(IceResponse::ERROR, 'This invitation has already been accepted.');
+		}
+		if (!$this->isUserEmailAvailable($invitation->email)) {
+			return new IceResponse(IceResponse::ERROR, 'A login with this email address already exists.');
+		}
+		$token = $this->issueToken($invitation);
+		$invitation->invitation_status = self::PENDING;
+		$invitation->updated = date('Y-m-d H:i:s');
+		$invitation->Save();
+		$sent = $this->sendInvitation($invitation, $token);
+
+		return new IceResponse(IceResponse::SUCCESS, ['url' => self::getAcceptUrl($token), 'sent' => $sent]);
+	}
+
+	public function revoke($id) {
+		$invitation = new UserInvitation();
+		$invitation->Load('id = ?', [$id]);
+		if (empty($invitation->id)) {
+			return new IceResponse(IceResponse::ERROR, 'Invitation not found.');
+		}
+		if ($this->getTokenState($invitation) === 'accepted') {
+			return new IceResponse(IceResponse::ERROR, 'This invitation has already been accepted.');
+		}
+		// The hash stays so the link shows "withdrawn"; the state check refuses it.
+		$invitation->invitation_status = self::REVOKED;
+		$invitation->updated = date('Y-m-d H:i:s');
+		$invitation->Save();
+		return new IceResponse(IceResponse::SUCCESS, $invitation->id);
+	}
+
+	/**
+	 * Accept an invitation: create the employee and their login with the password the
+	 * invitee chose. Nothing is created until this is called (the link alone does not).
+	 *
+	 * @return IceResponse SUCCESS with ['user' => User, 'employee' => Employee]
+	 */
+	public function acceptInvitation(UserInvitation $userInvitation, $password) {
+		if ($this->getTokenState($userInvitation) !== 'valid') {
+			return new IceResponse(IceResponse::ERROR, 'This invitation link is no longer valid. Please ask your HR team to send a new one.');
+		}
+
+		$strength = PasswordManager::isQualifiedPassword((string) $password);
+		if ($strength->getStatus() === IceResponse::ERROR) {
+			return $strength;
 		}
 
 		if (!$this->isUserEmailAvailable($userInvitation->email)) {
-			return new IceResponse(IceResponse::ERROR, 'A user with the same email address exists. Please contact your HR department to request a new invitation.');
+			return new IceResponse(IceResponse::ERROR, 'A login with this email address already exists. Please sign in or contact your HR team.');
 		}
 
 		$username = $this->getAvailableUserName($userInvitation->email);
@@ -60,52 +252,61 @@ class UserInvitationService
 			return new IceResponse(IceResponse::ERROR, 'Error processing your request. Please try again later.');
 		}
 
-		$userInvitation = $this->setInvitationStatus($userInvitation, self::PROCESSING);
+		// Claim the invitation first so a double submit cannot create two employees:
+		// only the request whose UPDATE still matches the current token hash wins.
+		$claim = self::hashToken(random_bytes(16));
+		$db = BaseService::getInstance()->getDB();
+		$db->Execute(
+			'UPDATE UserInvitations SET invitation_status = ?, token_hash = ? WHERE id = ? AND token_hash = ? AND invitation_status <= ?',
+			[self::PROCESSING, $claim, $userInvitation->id, $userInvitation->token_hash, self::INVITATION_EMAIL_ERROR]
+		);
+		$claimed = $db->Execute('SELECT id FROM UserInvitations WHERE id = ? AND token_hash = ?', [$userInvitation->id, $claim]);
+		if (empty($claimed)) {
+			return new IceResponse(IceResponse::ERROR, 'This invitation is already being processed.');
+		}
+		$previousHash = $userInvitation->token_hash;
+		$userInvitation->invitation_status = self::PROCESSING;
+		$userInvitation->token_hash = $claim;
 
 		$resp = $this->createEmployee($userInvitation);
-
 		if (IceResponse::ERROR === $resp->getStatus()) {
+			// Release the claim so the link can be used again.
+			$userInvitation->token_hash = $previousHash;
+			$this->setInvitationStatus($userInvitation, self::INVITATION_EMAIL_SENT);
 			return $resp;
 		}
-
 		$employee = $resp->getData();
-
 		$userInvitation->created_employee_id = $employee->id;
-		$ok = $userInvitation->Save();
+		$this->setInvitationStatus($userInvitation, self::EMPLOYEE_CREATED);
 
-		$userInvitation = $this->setInvitationStatus($userInvitation, self::EMPLOYEE_CREATED);
-
-		if (!$ok) {
-			return new IceResponse(IceResponse::ERROR, 'Error processing your request. Please try again later.');
-		}
-		$resp = $this->createUser($userInvitation, $username, $employee);
-
+		$resp = $this->createUser($userInvitation, $username, $employee, $password);
 		if (IceResponse::SUCCESS !== $resp->getStatus()) {
 			return $resp;
 		}
-
-		[$user, $mailStatus] = $resp->getData();
+		$user = $resp->getData();
 
 		$userInvitation->created_user_id = $user->id;
-		$userInvitation->email_status = $mailStatus === 'sent' ? 1 : 0;
-		$userInvitation->Save();
-
+		$userInvitation->accepted_at = date('Y-m-d H:i:s');
+		// Keep the hash so a reused link says "already used" rather than "not valid".
+		$userInvitation->token_hash = $previousHash;
 		$this->setInvitationStatus($userInvitation, self::EMPLOYEE_USER_CREATED);
 
-		if ($mailStatus !== 'sent') {
-			$this->setInvitationStatus($userInvitation, self::NO_WELCOME_EMAIL_SENT);
-			return new IceResponse(IceResponse::ERROR, 'There was an error sending your login details. Please contact your HR department to receive login details.');
+		foreach (self::$acceptListeners as $listener) {
+			try {
+				call_user_func($listener, $userInvitation, $employee, $user);
+			} catch (\Exception $e) {
+				LogManager::getInstance()->error('Invitation accept listener failed: ' . $e->getMessage());
+			}
 		}
 
-		return new IceResponse(IceResponse::SUCCESS);
+		return new IceResponse(IceResponse::SUCCESS, ['user' => $user, 'employee' => $employee]);
 	}
 
-	public function createUser(UserInvitation $userInvitation, $username, $employee) {
-		$password = StringUtils::randomString(9);
+	public function createUser(UserInvitation $userInvitation, $username, $employee, $password) {
 		$user = new User();
 		$user->username = $username;
 		$user->email = $userInvitation->email;
-		$user->password = \Classes\PasswordManager::createPasswordHash($password);
+		$user->password = PasswordManager::createPasswordHash($password);
 		$user->employee = $employee->id;
 		$user->user_level = $userInvitation->user_level;
 
@@ -121,15 +322,7 @@ class UserInvitationService
 			return new IceResponse(IceResponse::ERROR, 'Error saving the user. Please contact your HR department to request a new invitation.');
 		}
 
-		$mailResponse = 'none';
-		$emailSender = BaseService::getInstance()->getEmailSender();
-		if (!empty($emailSender)) {
-			$usersEmailSender = new UsersEmailSender($emailSender, new SubActionManager());
-			$mailResponse = $usersEmailSender->sendWelcomeUserEmail($user, $password, $employee);
-			$mailResponse = false !== $mailResponse ? 'sent' : 'not_sent';
-		}
-
-		return new IceResponse(IceResponse::SUCCESS, [$user, $mailResponse]);
+		return new IceResponse(IceResponse::SUCCESS, $user);
 	}
 
 	public function createEmployee(UserInvitation $userInvitation) {
@@ -179,7 +372,9 @@ class UserInvitationService
 		if (!empty($userInvitation->department)) {
 			$employee->department = $userInvitation->department;
 		}
-		$employee->status = 'Active';
+		// New hires invited through onboarding stay out of the directory, payroll and
+		// headcount until their start date (or until HR completes their onboarding).
+		$employee->status = $userInvitation->context === 'onboarding' ? 'Onboarding' : 'Active';
 		$ok = $employee->Save();
 
 		if (!$ok) {
@@ -241,14 +436,15 @@ class UserInvitationService
 	public static function getInvitationStatusLabel($status) {
 		$map = [
 			self::PENDING => 'Pending',
-			self::INVITATION_EMAIL_SENT => 'Invited',
-			self::INVITATION_EMAIL_ERROR => 'Invitation Failed',
+			self::INVITATION_EMAIL_SENT => 'Sent',
+			self::INVITATION_EMAIL_ERROR => 'Email Failed',
 			self::PROCESSING => 'Processing',
 			self::EMPLOYEE_CREATED => 'Employee Created',
-			self::EMPLOYEE_USER_CREATED => 'Employee and User Created',
-			self::NO_WELCOME_EMAIL_SENT=> 'Welcome Email Failed',
+			self::EMPLOYEE_USER_CREATED => 'Accepted',
+			self::NO_WELCOME_EMAIL_SENT=> 'Accepted',
+			self::REVOKED => 'Revoked',
 		];
 
-		return $map[$status];
+		return isset($map[$status]) ? $map[$status] : '';
 	}
 }

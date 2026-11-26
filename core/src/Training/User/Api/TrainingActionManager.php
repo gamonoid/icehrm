@@ -75,8 +75,8 @@ class TrainingActionManager extends SubActionManager
         if ($ts->requireProof == "Yes" && empty($trainingSession->proof)) {
             return new IceResponse(
                 IceResponse::ERROR,
-                "This training session requires a proof to be attached. 
-                Please provide a proof of completion before submitting for review."
+                "This training session requires proof of completion. "
+                ."Please attach it before submitting for review."
             );
         }
 
@@ -104,7 +104,7 @@ class TrainingActionManager extends SubActionManager
             $ok = $trainingSession->Save();
 
             $ts = new TrainingSession();
-            $ts->Load($trainingSession->trainingSession);
+            $ts->Load("id = ?", array($trainingSession->trainingSession));
 
             if ($ok) {
                 $this->baseService->audit(
@@ -112,15 +112,19 @@ class TrainingActionManager extends SubActionManager
                     "Training Attended \ name:".$trainingSession->name."\ id:".$trainingSession->id
                 );
 
-                $notificationMsg = $employee->first_name." ".$employee->last_name
-                    ." changed the status of training (".$ts->name.") to attended. Please approve";
+                // The trainee's supervisor confirms attendance (not the supervisor of
+                // whoever clicked, who may be the supervisor or an admin).
+                $notificationMsg = $trainingEmployee->first_name." ".$trainingEmployee->last_name
+                    .' attended the training session "'.$ts->name.'". Please review and confirm the attendance.';
 
-                $this->baseService->notificationManager->addNotification(
-                    $employee->supervisor,
-                    $notificationMsg,
-                    '{"type":"url","url":"g=modules&n=training&m=module_Training#tabSubEmployeeTraining"}',
-                    "Training Module"
-                );
+                if (!empty($trainingEmployee->supervisor) && $trainingEmployee->supervisor != $empId) {
+                    $this->baseService->notificationManager->addNotification(
+                        $trainingEmployee->supervisor,
+                        $notificationMsg,
+                        '{"type":"url","url":"g=modules&n=training&m=module_Training#tabSubEmployeeTraining"}',
+                        "Training Module"
+                    );
+                }
             }
 
             return new IceResponse(IceResponse::SUCCESS, $trainingSession);
@@ -158,7 +162,7 @@ class TrainingActionManager extends SubActionManager
             $ok = $trainingSession->Save();
 
             $ts = new TrainingSession();
-            $ts->Load($trainingSession->trainingSession);
+            $ts->Load("id = ?", array($trainingSession->trainingSession));
 
             if ($ok) {
                 $this->baseService->audit(
@@ -166,11 +170,15 @@ class TrainingActionManager extends SubActionManager
                     "Training Completed \ name:".$trainingSession->name."\ id:".$trainingSession->id
                 );
 
-                $notificationMsg = $employee->first_name." ".$employee->last_name
-                    ." approved the attendance status of training (".$ts->name.")";
+                // Tell the trainee (previously this went to the approver's own supervisor).
+                $approverName = !empty($employee)
+                    ? trim($employee->first_name." ".$employee->last_name)
+                    : 'An administrator';
+                $notificationMsg = $approverName
+                    .' confirmed your attendance at the training session "'.$ts->name.'".';
 
                 $this->baseService->notificationManager->addNotification(
-                    $employee->supervisor,
+                    $trainingSession->employee,
                     $notificationMsg,
                     '{"type":"url","url":"g=modules&n=training&m=module_Training#tabEmployeeTrainingSession"}',
                     "Training Module"

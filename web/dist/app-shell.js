@@ -1,1 +1,13554 @@
-var _0x23fb=['Mark\x20Completed','deleted\x20','Calendar','setApiUrl','dist/vendorOther.js','AppstoreOutlined','status_to','#0958d9','setCurrentTimeSheetId','deleteLast','form','appshell/dashboard','dateStr','Taken','gold','IceHRM\x20Pro\x20is\x20included\x20in\x20your\x20subscription','mine','actions','activate','No\x20time\x20entries','Leaves','KeyOutlined','strong','https://icehrm.com/purchase-icehrmpro','#4c9aff26','4px\x204px\x2010px','Submit','payment_method','SIDEBAR_BG','#389e0d','Previous\x20timesheet\x20created','disableCardClick','Reset\x20Token','tabIceHrmPro','Tue','#fbc02d','Import\x20failed:\x20invalid\x20file\x20or\x20server\x20error','target','changeTimeSheetStatus','\x20entitled','latestVersion','data-shell-embed','Departments','createNextWeekTimesheet','No\x20pending\x20requests','NativeAdapterView','Nothing\x20here','trim','Half\x20Day\x20·\x20','orange','days_total','Status\x20History','minutes','LogoutOutlined','Invalid\x20attempt\x20to\x20iterate\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.','forEach','0\x202px\x208px\x20rgba(0,0,0,0.1)','deps','celebrations','notes','carriedForwardAvailable','more','top','colorBorderSecondary','props','Current\x20period','@ant-design/icons','rgba(255,255,255,0.85)','created','EditOutlined','grp-manage','Badge','Get\x20it\x20on\x20Google\x20Play','Open\x20Job\x20Page','role','Request\x20Cancellation','ContactsOutlined','exportEndpoint','loginCodeFailCallBack','Refresh','isImage','matchMedia','warn','#2e9e50','https://icehrm.com/managed-hosting','Task\x20List','documentElement','setAdminProfile','Days\x20in\x20this\x20period','ScheduleOutlined','__timesheetsCtx','#1677ff','cancelRequest','location','CloseCircleOutlined','Allocated','showViewButton','colorTextTertiary','No\x20notifications','Edit','light','leaves','home','TagOutlined','country','Could\x20not\x20load\x20dashboard','Text','headcount','How\x20this\x20period\x20was\x20calculated','head','leaveTypeId','pointer','100%','Clocked\x20in','Activate','expenses','Clocked\x20out','Typography','extension::marketplace|admin','tabular-nums','auto','rows','signUp','Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20','remove','payroll_config/export/salary','bulkDelete','titleField','In\x20your\x20team','clientUrl','date_start','Could\x20not\x20reset\x20the\x20API\x20token.\x20Please\x20try\x20again.','8px\x2010px','\x20structures','StepBackwardOutlined','\x20could\x20not\x20be\x20deleted\x20(may\x20be\x20in\x20use)','replace','#222b36','resetApiTokenSuccessCallback','ApiOutlined','Change\x20Status','get','Spin','email','Re-submit\x20this\x20rejected\x20expense\x20for\x20approval?\x20Its\x20status\x20will\x20be\x20set\x20back\x20to\x20Pending.','user_level','🎉\x20','ShopOutlined','appendChild','instanceId','View\x20PDF','rgba(255,255,255,0.72)','FileOutlined','./LeaveCalcParser','Tag','T00:00:00','symbol','rgba(255,\x20255,\x20255,\x200.92)','app-shell-config','string','setAttribute','#6DC8EC','unpaidTotal','CheckSquareOutlined','Total\x20Time','Search','View\x20all','short','#9270CA','null','TrophyOutlined','expense/','(prefers-color-scheme:\x20dark)','ProjectOutlined','order','Could\x20not\x20load\x20the\x20timesheet\x20grid','StarOutlined','toString','manager_rating','Open\x20Expenses','tagFields','calculation','ellipsis','CreditCardOutlined','expiry_date','renderForm','default','dateh','setupApiClient','createElement','tabEmployeeLeave','#d46b08','button','copyRow','Entries','loan','My\x20Teams','Submit\x20Feedback','charCodeAt','transparent','members','BarChartOutlined','linear-gradient(135deg,\x20#722ed1\x200%,\x20#531dab\x20100%)','txn','labelColor','assign','No\x20leave\x20entitlement\x20for\x20the\x20current\x20period','Mon','data','submitFeedback','gradient','toLocaleString','mod_order','colorFillTertiary','Summary','\x20·\x20','Sun','/extensions/','rgba(255,255,255,0.45)','None\x20left\x20this\x20period','render','#ffffff','UserOutlined','onNavigate','1px\x20solid\x20rgba(255,255,255,0.14)','no\x20adapter','8px\x204px','setFilter','modJs','random','Expense\x20re-submitted','sort','middle','Search\x20structures…','colorMode','Dismiss','rgba(255,255,255,0.18)','isArray','downloadsUrl','FormOutlined','BuildOutlined','Please\x20select\x20an\x20industry.','availableLeaves','createPreviousTimesheet','total','#346CB0','modulePathName','#e6f0ff','You\x20can\x20clear\x20all\x20sample\x20data\x20with\x20one\x20click','./NativeAdapterView','mount','pre-wrap','mark','pending','bootstrap','86vh','ClockCircleOutlined','Scheduled','#f3f6f9','InfoCircleOutlined','timezone','Could\x20not\x20delete.\x20It\x20may\x20be\x20in\x20use.','Period','call','parent','HistoryOutlined','API\x20token\x20reset.\x20The\x20previous\x20token\x20no\x20longer\x20works.','Backup\x20downloaded','large','ExclamationCircleOutlined','MODULE_NOT_FOUND','allocated','Item','tagColors','Add\x20a\x20note\x20explaining\x20why\x20this\x20timesheet\x20is\x20rejected…','space-between','group','checked','linear-gradient(135deg,\x20#52c41a\x200%,\x20#389e0d\x20100%)','&name=','date','UsergroupAddOutlined','useBreakpoint','Generation\x20failed','\x20expired\x20on\x20','Bearer\x20','tabMyLeaveAll','MUI_SHADOW','MenuOutlined','#7b1fa2','reduce','range','#0369a1','spaModuleGroup','pendingCount','./LeaveCalcChart','SendOutlined','18px\x2028px','blue','readOnly','All\x20employees','script','userLevel','Cancel\x20request','test','section','abrupt','apiClient','CoffeeOutlined','tabQtsheet','end','replaceState','How\x20is\x20this\x20calculated?','Could\x20not\x20cancel','masterDataReader','documentUrl','Actions','colorTextQuaternary','Unit','areaOrder','loginCodeSuccessCallback','profile','json','rgba(25,118,210,0.14)','#d64545','carryForward','save','date_end','Export','theme','background','document_link','.json','useRef','./NativeDocumentModal','92%','DownloadOutlined','\x20—\x20Leave\x20Management,\x20Recruitment,\x20Expenses,\x20Performance,\x20','Select\x20all','Access\x20IceHrm\x20on\x20the\x20go.\x20Download\x20our\x20mobile\x20app\x20for\x20iOS\x20or\x20Android.','react','No\x20active\x20IceHrmPro\x20license','Could\x20not\x20load\x20the\x20org\x20chart','inline-flex','localeCompare','It\x20expires\x20on\x20','count','extraActions','pastPeriodCount','.switched-name','ReadOutlined','monospace','Switch\x20back','org-node','dist/third-party.js','PlusOutlined','Timesheet\x20saved','paymentMethods','Please\x20complete\x20payment\x20and\x20re-login\x20to\x20restore\x20full\x20access.','Empty','elevated','useState','useMemo','shellConfig','TeamOutlined','Arguments','TextArea','./LeaveCalendar','\x20—\x20these\x20days\x20have\x20approved\x20leave:','.\x20Renew\x20it\x20to\x20keep\x20using\x20this\x20feature.','DownOutlined','Set','Re-submit\x20expense','leave_time','employees','#0288d1','Import\x20failed','extension','Your\x20IceHrmPro\x20license','IceHRM\x20','length','./OrgChart','LoginOutlined','ctor','1px\x20solid\x20','Cancel\x20Leave','New\x20status','1px\x20solid\x20transparent','generateEndpoint','12px\x2016px','Switch\x20to\x20profile','project','attendance','round','Input','100vh','none','Available','next','customAction','ice-role-switch','in\x20','setFilterExternal','raw','taken','has_license','mon','Generate','appshell/org-structure','resolve','deleteWhen','Manage\x20members','rgba(255,\x20255,\x20255,\x200.78)','#f4f6f8','Could\x20not\x20save','Segmented','Export\x20Salary\x20Data','50%','.csv','pendingRequests','team|user','extensions\x20and\x20receive\x20product\x20updates.','enumerable','hideMeta','Download','updateAllMasterData','changeStatus','IceHrm','demo-mode|admin','resetApiToken','uppercase','review_pdf','catch','dayNum','#2a3441','0.04em','tabLeaveApproval','View\x20not\x20available','status','show','tabMyLeaveApproved','Learn\x20more','style','Your\x20account\x20has\x20an\x20overdue\x20balance\x20of\x20','submit','text/csv;charset=utf-8','onLearnMore','Delete\x20existing\x20entries\x20first','\x20Celebrations','iceShellOpenDocument','AuditOutlined','href','manageGroupEmployees','Gender\x20diversity','done','join','modules','MUI_SHADOW_HOVER','initFieldMasterData','colorFillQuaternary','logout','demoPrompt',';\x20border-radius:\x200\x206px\x200\x200;\x20}\x0a.org-tree\x20li:first-child::after\x20{\x20border-radius:\x206px\x200\x200\x200;\x20}\x0a.org-tree\x20ul\x20ul::before\x20{\x0a\x20\x20content:\x20\x27\x27;\x20position:\x20absolute;\x20top:\x200;\x20left:\x2050%;\x0a\x20\x20border-left:\x202px\x20solid\x20','Layout','pendingList','BASE_URL','Popconfirm','Manage\x20Sample\x20Data','1px\x2010px','component','getShowAddNew','colorBgContainer','Switch\x20to\x20light\x20mode','\x20IceHrm.com','finish','rgba(255,255,255,0.5)','courseId','\x20timesheet','updateAvailable','slice','viewGlobal','./ExpenseDialog','RightOutlined','\x20selected','#ed6c02','8px\x200','projects','Fri','rgba(25,118,210,0.10)','BulbOutlined','Popover','action\x20failed','_blank','Could\x20not\x20change\x20status','subject','After\x20accrual','MobileOutlined','getElementById','#607d8b','Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20this\x20company\x20structure?','body','cancelMyLeave','license','useToken','\x20·\x20joined\x20','rgb(','last_name','showAddNew','Add\x20New','Tabs',';\x20margin-top:\x202px;\x20}\x0a','Could\x20not\x20save\x20the\x20timesheet','#f7f9fb','getOwnPropertyDescriptor','CarOutlined','Duration','leaveType','#7c879a','Tomorrow','years','MailOutlined','dates','getFullYear','IdcardOutlined','toISOString','/detail','0\x207px','left','grid','0\x202px\x201px\x20-1px\x20rgba(0,0,0,0.08),\x200\x201px\x203px\x200\x20rgba(0,0,0,0.12),\x200\x201px\x201px\x200\x20rgba(0,0,0,0.06)','add','1px\x208px','timesheet','carriedToNext','bundle','QTDays','employmentTypeDist','method','<hr/>','#0f141b','is_admin','-year\x20anniversary','leave_type','reviewBlock','__nativeLogsOk','\x20Birthday','Tooltip','pro-upgrade','0\x204px\x2015px\x20rgba(82,\x20196,\x2026,\x200.3)','rgba(255,255,255,0.42)','currentVersion','click','Row','Headcount\x20growth','TagsOutlined','totalLeaves','constructor','context','Reason','CalendarOutlined','joblink','appshell/bootstrap','updateData','Payment\x20Reminder','\x20—\x20','#531dab','loading','\x20USD.\x20Please\x20complete\x20your\x20payment\x20to\x20continue\x20enjoying\x20uninterrupted\x20service.','Carried\x20to\x20next','Reason\x20for\x20this\x20status\x20change…','kept_assigned','\x20carried-forward\x20expire\x20','REST\x20API\x20access\x20is\x20not\x20enabled\x20for\x20your\x20account.','period','spaModuleName','My\x20To-Do\x20List','Direct\x20reports','Import','No\x20timesheets','transaction_no','Reset','extra','open','Upgrade\x20Now','deleteConfirm','openjob','colorText','exportLabel','resubmitAction','tabEmployeeTimeSheetAll','tabIceHrmCloud','0\x208px','Compare\x20editions','year','requests','4px\x2010px','itemMap','small','iframe','#e08321','setCurrentProfile','from','object','iceProModules','password','Total\x20hours\x20for\x20','employee','Card','groupLabel','download','showPasswordChangeForm','afterJoinedDate','\x20already\x20existed','salary-backup','4px\x207px','Approval\x20Log','Good\x20morning','Sat','avatarField','0\x201px\x204px\x20rgba(0,0,0,0.25)','getTableChildComponents','StepForwardOutlined','#E8684A','hoursToday','sticky','LockOutlined','initTable','exportFilePrefix','modules::dashboard','webBaseUrl','SlidersOutlined','Drawer','ArrowUpOutlined','FundOutlined','statusAction','items','currencies','unmountComponentAtNode','rgba(255,255,255,0.4)','paper','attachment','End','Select\x20an\x20industry\x20to\x20add\x20a\x20set\x20of\x20common\x20','2px\x20solid\x20rgba(255,255,255,0.3)','resubmitWhen','Save','Copy','Base\x20URL\x20for\x20all\x20REST\x20API\x20requests.','0\x204px\x2015px\x20rgba(114,\x2046,\x20209,\x200.3)','match','FieldTimeOutlined','baseUrl','exports','Close','Total','Status','marketplace|admin','getDay','Create\x20the\x20previous\x20week\x27s\x20timesheet','getStatusOptionsData','createReviewPdf','resubmit','Initiate\x20resignation','title','You\x20are\x20running\x20the\x20open\x20source\x20edition\x20','getAddNewLabel','Could\x20not\x20delete\x20entry','setTemplates','Could\x20not\x20load\x20company\x20structure','hideCancelButton','apiEnabled','getSourceMapping','nowrap','in_time','Could\x20not\x20load\x20this\x20list','View\x20employees','green','.\x20Updating\x20replaces\x20the\x20program\x20files;\x20your\x20','removeEventListener','Failed\x20to\x20load\x20','isAdminUser','hasAccess','statusOptionsFor','#5B8FF9','then','areaOfKey','16px\x2020px','service.php?a=getNotifications','src','attachments','dataIndex','updateAllData','contain','images/logo-sq.png','find','setAdminEmp','invitation_status_text','categories','useEffect','icehrm-update-banner-dismissed','itemsLabel','error','column','\x20USD.\x20Manager\x20access\x20has\x20been\x20temporarily\x20restricted.','\x20is\x20available','\x22Roboto\x22,\x20\x22Helvetica\x20Neue\x22,\x20Helvetica,\x20Arial,\x20sans-serif','isValidElement','showFilters','List','API\x20Access\x20Token','Content','noopener','Timeline','employee_rating','colorPrimary','parentTitle','terminateEmployee','getMonth','Submitted','defineProperty','note','Group','Create\x20the\x20next\x20week\x27s\x20timesheet','cardClickAction','createPdf','Update','headcountTrend','You\x27re\x20all\x20caught\x20up\x20🎉','border','hideActions','viewElement','AlertOutlined','rgba(255,255,255,0.25)','#eceff1','configurable','\x20–\x20','onSelect','tabCompanyStructure','in\x201\x20day','Next\x20Week','darkAlgorithm','trainingSession','Transaction\x20No','#e8684a','setBaseUrl','?g=','Go\x20to\x20Marketplace','itemsByArea','60vh','EnvironmentOutlined','resetFilters','isToday','Document','./CompanyStructureCards','now','__iceShellStartTab','noopener\x20noreferrer','showProjectDetails','Col','modules=time_sheets','Viewing\x20as\x20','onOpenDocument','Logout','pendingLeaves','Pagination','getOwnPropertySymbols','GlobalOutlined','Change\x20Timesheet\x20Status','parse','/web/','SearchOutlined','You\x20are\x20running\x20','deleteTip','onLeaveToday','0\x204px\x2015px\x20rgba(250,\x20140,\x2022,\x200.3)','Request\x20cancellation\x20of\x20this\x20approved\x20entry?','message','indexOf','\x20days','FileImageOutlined','rowtotal','.\x20Existing\x20entries\x20are\x20skipped.','renderMeta','secondary','mountEditorDocument','contentDocument','editor/user/dist/editor.js','writable','ReloadOutlined','rgba(255,255,255,0.06)','setUser','amount','#1565c0','customTemplates','defaultAlgorithm','expiryDate','Status\x20updated','document','HomeOutlined','appshell/employee-dashboard','linear-gradient(135deg,\x20#7B61FF\x200%,\x20#9270CA\x20100%)','initSourceMappings','PartitionOutlined','when\x20you\x27re\x20ready\x20to\x20go\x20live.','Total\x20logged','deducted','Apply','same-origin','onClick','ApartmentOutlined','requireStatusReason','travel_to','rgba(255,255,255,0.92)','startsWith','Carry-forward\x20propagation','./ApiAccess','available','first_name','category','leave','Nothing\x20coming\x20up','sent','RiseOutlined','View\x20teams','isManager','SaveOutlined','Check\x20Pricing','cancelSuccessCallBack','6px','SUCCESS','del','\x20records','subColor','\x20-\x2040px','16px\x200\x2012px','sub','addEventListener','API\x20Access','Checkbox','warning','__nativeStatusOk','div','./theme','Could\x20not\x20load\x20timesheet\x20entries','link','details','Could\x20not\x20load\x20industries','tobeAccrued','No\x20calculation\x20details\x20available','rgba(255,255,255,0.38)','__ts_ok_','Could\x20not\x20update\x20status','stringify','deleteExistingLabel','Allocated\x20for\x20period','CarryOutOutlined','textSecondary','switch','Alert','Thu','floor','showDetailsModal','.\x20Your\x20subscription\x20covers\x20','getUser','onToggleColorMode','deleteIcon','Expense\x20Date','dark','hiringStage','Request\x20One-time\x20Login\x20Code','linear-gradient(135deg,\x20#0ea5e9\x200%,\x20#0369a1\x20100%)','rgba(0,\x200,\x200,\x200.6)','Could\x20not\x20approve\x20the\x20selected\x20timesheets','has','statusFilter','./NativeModuleHost','InputNumber','editable','Transaction\x20/\x20Ref\x20No','cover','matches','dismiss-news','code','Descriptions','field','cloneElement','statusIcon','setClientUrl','scroll','rec','Paragraph','birthday','entries','Could\x20not\x20get\x20a\x20login\x20code.\x20Please\x20try\x20again\x20later.','edit','delete','showEdit','MUI_DARK','apply','0\x20auto','Modal','carriedForwardLeaveExpireDate','Upgrade\x20to\x20IceHrmPro','service.php','rgba(255,255,255,0.9)','give','carriedIn','accrualApplied','undefined','setFilterData','history','Restricted\x20Manager','iterator','All\x20statuses','BankOutlined','https://apps.apple.com/gb/app/icehrm/id1624346692','This\x20is\x20the\x20new\x20React\x20+\x20Ant\x20Design\x20interface.\x20Pick\x20a\x20module\x20from\x20the\x20menu\x20to\x20get\x20started.\x20The\x20sidebar\x20reflects\x20your\x20permissions\x20and\x20collapses\x20into\x20a\x20drawer\x20on\x20mobile.','red','top-center','min','Welcome\x20to\x20IceHrm!\x20Want\x20to\x20see\x20how\x20it\x20works?','kind','dataPipe','\x0a\x20\x20header.header\x20{\x20display:\x20none\x20!important;\x20}\x0a\x20\x20aside.left-side,\x20.sidebar-offcanvas,\x20.skeletonSideMenu\x20{\x20display:\x20none\x20!important;\x20}\x0a\x20\x20.right-side\x20{\x20margin-left:\x200\x20!important;\x20left:\x200\x20!important;\x20}\x0a\x20\x20.wrapper,\x20body,\x20html\x20{\x20padding-top:\x200\x20!important;\x20margin-top:\x200\x20!important;\x20background:\x20#fff\x20!important;\x20}\x0a\x20\x20body\x20{\x20min-width:\x200\x20!important;\x20}\x0a\x20\x20#DemoModeNotice,\x20#IceHrmConnectionNotice\x20{\x20display:\x20none\x20!important;\x20}\x0a','DollarOutlined','Note\x20(optional)','Could\x20not\x20','CopyOutlined','logs','SettingOutlined','#F6BD16','__nativeStatusFail','calc(100vh\x20-\x2064px','Set\x20status\x20to','includes','hideViewButton','Welcome\x20to\x20the\x20new\x20IceHrm','Structure\x20deleted','departments','No\x20time\x20can\x20be\x20logged\x20on\x20a\x20full-day\x20leave;\x20up\x20to\x204\x20hours\x20on\x20a\x20half-day\x20leave.','calendar','rgba(255,255,255,0.12)','ConfigProvider','tab','l(270)\x200:','isFinite','\x20→\x20','colorSplit','Could\x20not\x20delete\x20this\x20structure.\x20It\x20may\x20be\x20in\x20use.','Select\x20an\x20industry','current','Map','./EmployeeDashboard','Leave\x20Rule','editor|user','#2e7d32','tableInitialized','Reject','managerLockedStatuses','getTime','Approve\x20','total_time','info','UploadOutlined','upgradeAd','Reset\x20API\x20token','Button','shell-area','Toggle\x20colour\x20mode','#161d2b','Retry','View','teamStats','wrap','importEndpoint','key','Meta','month','1\x201\x20130px','Form','Next\x20timesheet\x20created','#1a2233','setContainers','stopPropagation','Rejected','ProfileOutlined','Currency','tabs','repeating-linear-gradient(45deg,\x20','tip','tableContainer','hasOwnProperty','Show\x20status:','All','appshell/module-context?group=','approved','RedoOutlined','templates','\x20cumulative','setFieldTemplates','Receipts','preventDefault','\x20-\x2084px','tabSubEmployeeTimeSheetAll','shadow','#d81b60','-0.02em','block','Notes','nodes','\x20Recent\x20hires','What\x27s\x20New','#fff','toLowerCase','#1976d2','generateFromIndustry','priority','permission','label','managerBlockedTargetStatuses','Leave\x20type','PRESENTED_IMAGE_SIMPLE','https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg','dist/common.js','1px\x20dashed\x20','Data\x20restored\x20—\x20refreshing…','confirm','textContent','Employment\x20type','Expense\x20saved','app-shell-root','No\x20projects\x20assigned','Could\x20not\x20re-submit','logout.php','https://play.google.com/store/apps/details?id=com.icehrm.m3&hl=en','Payee','address','CloudOutlined','Paid','restApiBase','yr\x20anniversary\x20·\x20','cancel','./News','No\x20records','getTableColumns','getCustomTopButtons','__shellColorMode','company','\x20entitled:\x20','deleted','0\x203px\x205px\x20-1px\x20rgba(0,0,0,0.12),\x200\x205px\x208px\x200\x20rgba(0,0,0,0.08),\x200\x201px\x2014px\x200\x20rgba(0,0,0,0.06)','setInstanceId','activateEmployee','#7B61FF','getDate','defineProperties','list','headcountByDept','Invalid\x20attempt\x20to\x20spread\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.','cleanDelete','getItem','My\x20pending\x20leave','async','0\x2016px','leave-calendar/year/','origFilter','pto','Timesheet\x20submitted','Edit\x20hours\x20grid','documentAction','hasCustomTopButtons','hideCopyButton','relative','Start','children','4px\x2020px\x2020px','Change\x20Password','skipped','Download\x20Document','20px\x2022px\x2018px','charAt','Filters','Export\x20failed','Completed','\x20item','SolutionOutlined','todo','Copy\x20Job\x20Link','00:00','numeric','onSaved','ids','\x0a.org-wrap\x20{\x20overflow-x:\x20auto;\x20padding:\x2012px\x208px\x2024px;\x20}\x0a.org-tree,\x20.org-tree\x20ul\x20{\x20position:\x20relative;\x20padding-top:\x2022px;\x20display:\x20flex;\x20justify-content:\x20center;\x20}\x0a.org-tree\x20ul\x20{\x20padding-left:\x200;\x20}\x0a.org-tree\x20li\x20{\x0a\x20\x20list-style:\x20none;\x20position:\x20relative;\x20padding:\x2022px\x2010px\x200;\x20text-align:\x20center;\x0a}\x0a.org-tree\x20li::before,\x20.org-tree\x20li::after\x20{\x0a\x20\x20content:\x20\x27\x27;\x20position:\x20absolute;\x20top:\x200;\x20right:\x2050%;\x0a\x20\x20border-top:\x202px\x20solid\x20','isNaN','Cannot\x20find\x20module\x20\x27','CompanyStructureForm','Here’s\x20what’s\x20happening\x20across\x20your\x20organisation\x20today.','leavedays','initFn','underline','payroll_config/import/salary','RocketOutlined','\x20taken,\x20','update','Donut','API\x20Base\x20URL','area','baseline','punchedIn','Upgrade\x20to\x20IceHrm\x20Cloud\x20for\x20unlimited\x20employees,\x20priority\x20support,\x20and\x20premium\x20features.','mode','FilePdfOutlined','FileTextOutlined','Add\x20a\x20note\x20for\x20this\x20status\x20change…','employee_id','\x20has\x20expired','rgba(255,255,255,0.2)','Get\x20Download\x20Link','#FF99C3','Title','entity','colorPrimaryBg','WarningOutlined','onload','./NativeCardList','holidays','toFixed','first','\x20in\x20use','scripts','#1a212b','Cannot\x20call\x20a\x20class\x20as\x20a\x20function','bootstrap\x20failed:\x20','Image','\x20approved','Object','user','application/json,.json','modJsList','tabKey','\x20—\x20how\x20this\x20is\x20calculated','__nativeResubmitFail','inline','height','Migrate\x20to\x20IceHrm\x20Cloud','validTill','kept\x20','submitted','ClusterOutlined','ArrowLeftOutlined','./UpdateAvailableBanner','BellOutlined','Employee','showDelete','set','employee_name','Wed','getOwnPropertyDescriptors','Category','punchedOutToday','17px','username','setting_order','Awaiting\x20approval','UserAddOutlined','https://icehrm.zendesk.com/hc/en-us/requests/new?tf_subject=Migrate%20IceHrm%20Open%20Source','url','expenseDialog','__esModule','Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20“','switchedProfile','Invalid\x20attempt\x20to\x20destructure\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.','Connect\x20now','unmount','CheckCircleOutlined','bulkApproveTimeSheets','MUI','options','#d32f2f','expense_date','colorBgLayout','This\x20installation\x20isn\x27t\x20connected\x20yet.\x20Connect\x20it\x20to\x20install\x20marketplace','getHours','10px\x206px','filtersAlreadySet','viewReviewPdf','cardClickView','divider','display','#108ee9','UserDeleteOutlined','isAdmin','formInitialized','showPageSizeChanger','shell-color-mode','max\x204h\x20allowed,\x20you\x20logged\x20','useCallback','getLeaveDaysReadonly','lines','Notifications','MUI_THEME','reload','manage','token','action','getActionModuleRef','abs','views','cb=','Leave','\x20/\x207','toUpperCase','No\x20project','keys','ttl','billing','rgba(255,255,255,0.08)','time','colorBorder','[app-shell]\x20boot\x20failed','finally','node','org-wrap','#cf1322','Reports','colorFillSecondary','buildTheme','payee','allowSwitchToEmployeeProfile','This\x20immediately\x20invalidates\x20your\x20current\x20token.\x20Any\x20integration\x20using\x20it\x20will\x20stop\x20working\x20until\x20updated.','cardConfig','Delete\x20structure','EmployeeTimeEntry','filter','Renew\x20IceHrm\x20Pro','You\x20have\x20an\x20unpaid\x20invoice\x20of\x20','currency','Approved','donut','allowDeleteExisting','Dropdown','Leave\x20Details','\x0a\x20\x20header.header\x20{\x20display:\x20none\x20!important;\x20}\x0a\x20\x20aside.left-side,\x20.sidebar-offcanvas,\x20.skeletonSideMenu\x20{\x20display:\x20none\x20!important;\x20}\x0a\x20\x20.right-side\x20{\x20margin-left:\x200\x20!important;\x20left:\x200\x20!important;\x20}\x0a\x20\x20.wrapper,\x20body,\x20html\x20{\x20padding-top:\x200\x20!important;\x20margin-top:\x200\x20!important;\x20background:\x20#f0f2f5\x20!important;\x20}\x0a\x20\x20body\x20{\x20min-width:\x200\x20!important;\x20}\x0a\x20\x20#DemoModeNotice,\x20#IceHrmConnectionNotice\x20{\x20display:\x20none\x20!important;\x20}\x0a','colorTextSecondary','greetingName','areas','totalForPeriod','Good\x20afternoon','Top\x20level','Performance\x20Review','absolute','some','Your\x20IceHrmPro\x20license\x20expires\x20','Half\x20Day','3px\x2012px','native','Could\x20not\x20delete\x20this\x20structure','rgba(0,\x200,\x200,\x200.12)','viewProps','apiBaseUrl','#5AD8A6','element','82vh','Morning','center','industriesEndpoint','#f0fbe6','Reject\x20Timesheet','Download\x20Mobile\x20App','max','Requested','tabSubLeaveCancel','start','viewPdf','licenseRenewal','removeChild','cancelFailCallBack','Select','meta','Back','initialFilter','flex','jwtToken','react-dom','On\x20your\x20to-do\x20list','Download\x20on\x20the\x20App\x20Store','bottomRight','28px','Leave\x20Type','10px\x2016px','Adjustment\x20','antd','getOneTimeLoginCode','rgba(0,\x200,\x200,\x200.87)','setItem','getFilterString','files','Progress','Space','\x20Pending\x20leave\x20approvals','firstName','Reason\x20(optional)','color','DeleteOutlined','stop','#c62828','Here’s\x20your\x20day\x20at\x20a\x20glance.','FireOutlined','Re-submit','BulbFilled','Direct\x20Reports','concat','Home','20px\x2024px','half','emptyText','createObjectURL','isReport','setCustomTemplates','colorError','dialogStatusChange','__ts_fail_','./LeaveEntitlement','ControlOutlined','iceShell','0\x201px\x204px\x20rgba(0,0,0,0.06)','parentNode','status_from','filled','/status','org-tree','ExportOutlined','danger','My\x20Timesheet','contentWindow','Create\x20PDF','name','type','button_text','setTranslations','no\x20time\x20allowed,\x20you\x20logged\x20','Sider','openIn','Member','kpis','Add\x20sample\x20employees,\x20projects,\x20attendance,\x20and\x20more\x20to\x20explore\x20all\x20features.','daysLeft','Column','prev','MonitorOutlined','showConnectBanner','completed','ghost','Project','POST','doc','getLeaveDaysForTimeSheet','You\x20cannot\x20','text','Table','admin','nav','max-content','approvedLeaves','view','Previous\x20Week','prototype','file','mountFn','Renew\x20now\x20to\x20keep\x20access\x20to\x20your\x20premium\x20features\x20without\x20interruption.','split','left\x20in\x20your\x20free\x20trial.','function','push','value','config','onerror','success','Fragment','2-digit','hideEditButton','image','Upgrade\x20to\x20Pro','primary','hashchange','Cancel','Could\x20not\x20load\x20this\x20module','Expense','teams','fetchEntitlement','signup','Personal','hidden','resetApiTokenFailCallback','Clear',';\x20border-radius:\x2012px;\x0a\x20\x20box-shadow:\x20','Admin','No\x20recent\x20hires','hash','Switch\x20area','No\x20servers,\x20automatic\x20updates','@antv/g2plot','getAllData','inline-block','12px\x2016px\x208px','Search\x20modules',';\x20width:\x200;\x20height:\x2022px;\x0a}\x0a.org-node\x20{\x0a\x20\x20display:\x20inline-flex;\x20align-items:\x20center;\x20gap:\x2012px;\x0a\x20\x20padding:\x2012px\x2016px;\x20min-width:\x20180px;\x20max-width:\x20240px;\x0a\x20\x20background:\x20','days','clientBaseUrl','img','Your\x20IceHrmPro\x20license\x20has\x20expired','0\x200\x20auto','No\x20matching\x20company\x20structures','Good\x20evening',';\x20border:\x201px\x20solid\x20','icon','addLabel','reports','10px\x2012px','application/json','exec','tabSubLeaveAll','currency_name','Entitlement\x20for\x20the\x20current\x20period,\x20step\x20by\x20step.','downloadAttachment','toLocaleDateString','tabEmployeeTimeEntry','Collapse','Manage','Show\x20calculation\x20log','review','containerOverrides','Full\x20Day','\x20day','revokeObjectURL','break-all','hideElement','getLogs','return','data-color-mode','changeLeaveStatus','tabMobileApp','You\x20have\x20approved\x20leave\x20this\x20week','After\x20join\x20date','🎂\x20Birthday\x20·\x20','#546e7a','Mobile\x20Authentication\x20Code','Cell','isWeekend','map','translations','Of\x20','iconField','GiftOutlined','every','GroupedColumn','Avatar','visible','Team\x20on\x20leave','__nativeLogsFail','\x20tasks','span','Attended','\x20available','iceShellSwitchModuleTab','Approve\x20Completed\x20Status','&n=','Pending','afterAccrue','dashboard','Delete','genderDist'];(function(_0x2bf66b,_0x23fbbd){var _0x3d72e8=function(_0x211b34){while(--_0x211b34){_0x2bf66b['push'](_0x2bf66b['shift']());}};_0x3d72e8(++_0x23fbbd);}(_0x23fb,0x182));var _0x3d72=function(_0x2bf66b,_0x23fbbd){_0x2bf66b=_0x2bf66b-0x0;var _0x3d72e8=_0x23fb[_0x2bf66b];return _0x3d72e8;};var _0x401518=_0x3d72;!function e(_0x211b34,_0x4fe2af,_0x276492){var _0x532a61=_0x3d72;function _0x46e4fe(_0x3631b0,_0x59dc01){var _0x49b54e=_0x3d72;if(!_0x4fe2af[_0x3631b0]){if(!_0x211b34[_0x3631b0]){var _0x1d38e1=_0x49b54e('0x3da')==typeof require&&require;if(!_0x59dc01&&_0x1d38e1)return _0x1d38e1(_0x3631b0,!0x0);if(_0x225f33)return _0x225f33(_0x3631b0,!0x0);var _0x43cb8f=new Error(_0x49b54e('0x2c4')+_0x3631b0+'\x27');throw _0x43cb8f[_0x49b54e('0x1f0')]=_0x49b54e('0x54c'),_0x43cb8f;}var _0x434566=_0x4fe2af[_0x3631b0]={'exports':{}};_0x211b34[_0x3631b0][0x0][_0x49b54e('0x545')](_0x434566['exports'],function(_0x29b9a3){return _0x46e4fe(_0x211b34[_0x3631b0][0x1][_0x29b9a3]||_0x29b9a3);},_0x434566,_0x434566[_0x49b54e('0x10a')],e,_0x211b34,_0x4fe2af,_0x276492);}return _0x4fe2af[_0x3631b0]['exports'];}for(var _0x225f33=_0x532a61('0x3da')==typeof require&&require,_0x1ab0f9=0x0;_0x1ab0f9<_0x276492[_0x532a61('0x5ba')];_0x1ab0f9++)_0x46e4fe(_0x276492[_0x1ab0f9]);return _0x46e4fe;}({0x1:[function(_0x3291e9,_0x7891f8,_0x2adc97){var _0x52931c=_0x3d72;'use strict';Object[_0x52931c('0x14d')](_0x2adc97,_0x52931c('0x30e'),{'value':!0x0}),_0x2adc97[_0x52931c('0x4f8')]=function(){var _0x2d2c72=_0x52931c,_0x223fcb=_0x6f48c9['theme'][_0x2d2c72('0x75')]()[_0x2d2c72('0x331')],_0x313e49=(window[_0x2d2c72('0x2f0')]||{})[_0x2d2c72('0x41f')]||null,_0x12ba4e=!!_0x313e49&&('1'===_0x313e49[_0x2d2c72('0x11c')]||0x1===_0x313e49[_0x2d2c72('0x11c')]),_0x5b3e95=_0x313e49?_0x313e49[_0x2d2c72('0x369')]:null,_0x5f4872=_0x3183ce((0x0,_0x841193[_0x2d2c72('0x5a7')])(_0x313e49?_0x313e49['token']:null),0x2),_0x2a1b67=_0x5f4872[0x0],_0x1077e0=_0x5f4872[0x1],_0x33d011=_0x3183ce((0x0,_0x841193[_0x2d2c72('0x5a7')])(!0x1),0x2),_0x51c2fb=_0x33d011[0x0],_0x466d0c=_0x33d011[0x1],_0x6143={'borderRadius':0xc,'boxShadow':_0x5ee7a9['MUI_SHADOW'],'marginBottom':0x10};if(!_0x12ba4e||!_0x2a1b67)return _0x841193[_0x2d2c72('0x4f8')][_0x2d2c72('0x4fb')](_0x2d2c72('0x1c7'),{'style':{'width':_0x2d2c72('0x4ae')}},_0x841193[_0x2d2c72('0x4f8')][_0x2d2c72('0x4fb')](_0x6f48c9[_0x2d2c72('0xdd')],{'style':_0x6143,'title':_0x841193[_0x2d2c72('0x4f8')][_0x2d2c72('0x4fb')](_0x6f48c9['Space'],null,_0x841193[_0x2d2c72('0x4f8')]['createElement'](_0x81886[_0x2d2c72('0x4c9')],null),_0x2d2c72('0x1c3'))},_0x841193[_0x2d2c72('0x4f8')][_0x2d2c72('0x4fb')](_0x6f48c9[_0x2d2c72('0x5a5')],{'image':_0x6f48c9[_0x2d2c72('0x5a5')][_0x2d2c72('0x27b')],'description':_0x2d2c72('0xba')})));return _0x841193['default']['createElement']('div',{'style':{'width':'100%'}},_0x5b3e95?_0x841193[_0x2d2c72('0x4f8')][_0x2d2c72('0x4fb')](_0x6f48c9['Card'],{'style':_0x6143,'title':_0x841193[_0x2d2c72('0x4f8')][_0x2d2c72('0x4fb')](_0x6f48c9['Space'],null,_0x841193[_0x2d2c72('0x4f8')][_0x2d2c72('0x4fb')](_0x81886[_0x2d2c72('0x4c9')],null),_0x2d2c72('0x2cf'))},_0x841193['default'][_0x2d2c72('0x4fb')](_0xabc9a7,{'type':_0x2d2c72('0x18d')},_0x2d2c72('0x105')),_0x841193['default'][_0x2d2c72('0x4fb')](_0xabc9a7,{'copyable':{'text':_0x5b3e95},'style':{'wordBreak':_0x2d2c72('0x419'),'fontFamily':'monospace','fontSize':12.5,'background':_0x223fcb['colorFillTertiary'],'padding':0xc,'borderRadius':0x8,'marginBottom':0x0}},_0x5b3e95)):null,_0x841193['default'][_0x2d2c72('0x4fb')](_0x6f48c9[_0x2d2c72('0xdd')],{'style':_0x6143,'title':_0x841193[_0x2d2c72('0x4f8')]['createElement'](_0x6f48c9[_0x2d2c72('0x390')],null,_0x841193[_0x2d2c72('0x4f8')][_0x2d2c72('0x4fb')](_0x81886['ApiOutlined'],null),_0x2d2c72('0x143')),'extra':_0x841193['default'][_0x2d2c72('0x4fb')](_0x6f48c9[_0x2d2c72('0x50')],{'title':_0x2d2c72('0x243'),'description':_0x2d2c72('0x34b'),'okText':_0x2d2c72('0xc2'),'cancelText':_0x2d2c72('0x3e7'),'okButtonProps':{'danger':!0x0},'onConfirm':function(){var _0x1329f8=_0x2d2c72;if(_0x313e49){_0x466d0c(!0x0),_0x313e49[_0x1329f8('0x4c8')]=function(_0x5731d5){var _0x504d5d=_0x1329f8;_0x466d0c(!0x1);var _0x5eab4a=Array[_0x504d5d('0x52b')](_0x5731d5)?_0x5731d5[0x0]:_0x5731d5,_0x59ad4f=_0x5eab4a&&'object'===_0x1612b1(_0x5eab4a)?_0x5eab4a[_0x504d5d('0x380')]:null;_0x59ad4f?(_0x313e49['token']=_0x59ad4f,_0x1077e0(_0x59ad4f),_0x6f48c9[_0x504d5d('0x186')][_0x504d5d('0x3df')](_0x504d5d('0x548'),0x5)):_0x6f48c9[_0x504d5d('0x186')][_0x504d5d('0x13b')](_0x504d5d('0x4c1'),0x5);},_0x313e49[_0x1329f8('0x3ef')]=function(){var _0x4864ce=_0x1329f8;_0x466d0c(!0x1),_0x6f48c9[_0x4864ce('0x186')][_0x4864ce('0x13b')]('Could\x20not\x20reset\x20the\x20API\x20token.\x20Please\x20try\x20again.',0x5);};try{_0x313e49[_0x1329f8('0x2b')]();}catch(_0x5593fe){_0x466d0c(!0x1);}}}},_0x841193['default']['createElement'](_0x6f48c9['Button'],{'danger':!0x0,'icon':_0x841193['default'][_0x2d2c72('0x4fb')](_0x81886[_0x2d2c72('0x192')],null),'loading':_0x51c2fb},_0x2d2c72('0x45e')))},_0x841193['default'][_0x2d2c72('0x4fb')](_0xabc9a7,{'type':_0x2d2c72('0x18d')},'Use\x20this\x20token\x20to\x20authenticate\x20REST\x20API\x20requests\x20(as\x20a\x20Bearer\x20token).\x20Keep\x20it\x20secret\x20—\x20anyone\x20with\x20this\x20token\x20can\x20act\x20as\x20you.'),_0x841193[_0x2d2c72('0x4f8')][_0x2d2c72('0x4fb')](_0xabc9a7,{'copyable':{'text':_0x2a1b67},'style':{'wordBreak':_0x2d2c72('0x419'),'fontFamily':_0x2d2c72('0x59d'),'fontSize':12.5,'background':_0x223fcb['colorFillTertiary'],'padding':0xc,'borderRadius':0x8,'marginBottom':0x0}},_0x2a1b67)));};var _0x841193=function(_0x184972){var _0x2fc6b0=_0x52931c;if(_0x184972&&_0x184972['__esModule'])return _0x184972;if(null===_0x184972||_0x2fc6b0('0xd8')!==_0x1612b1(_0x184972)&&_0x2fc6b0('0x3da')!=typeof _0x184972)return{'default':_0x184972};var _0x56adb6=_0x33d36e();if(_0x56adb6&&_0x56adb6['has'](_0x184972))return _0x56adb6[_0x2fc6b0('0x4cb')](_0x184972);var _0x39c649={},_0x1785a4=Object[_0x2fc6b0('0x14d')]&&Object[_0x2fc6b0('0x7f')];for(var _0x377f30 in _0x184972)if(Object[_0x2fc6b0('0x3d4')]['hasOwnProperty'][_0x2fc6b0('0x545')](_0x184972,_0x377f30)){var _0x48ee5f=_0x1785a4?Object['getOwnPropertyDescriptor'](_0x184972,_0x377f30):null;_0x48ee5f&&(_0x48ee5f[_0x2fc6b0('0x4cb')]||_0x48ee5f[_0x2fc6b0('0x300')])?Object[_0x2fc6b0('0x14d')](_0x39c649,_0x377f30,_0x48ee5f):_0x39c649[_0x377f30]=_0x184972[_0x377f30];}return _0x39c649['default']=_0x184972,_0x56adb6&&_0x56adb6[_0x2fc6b0('0x300')](_0x184972,_0x39c649),_0x39c649;}(_0x3291e9('react')),_0x6f48c9=_0x3291e9(_0x52931c('0x389')),_0x81886=_0x3291e9(_0x52931c('0x480')),_0x5ee7a9=_0x3291e9(_0x52931c('0x1c8'));function _0x33d36e(){var _0xd1976f=_0x52931c;if(_0xd1976f('0x3da')!=typeof WeakMap)return null;var _0x297996=new WeakMap();return _0x33d36e=function(){return _0x297996;},_0x297996;}function _0x1612b1(_0x3d0f8a){var _0x2cba56=_0x52931c;return(_0x1612b1='function'==typeof Symbol&&'symbol'==typeof Symbol[_0x2cba56('0x20e')]?function(_0x524924){return typeof _0x524924;}:function(_0x2f190d){var _0x3c248c=_0x2cba56;return _0x2f190d&&_0x3c248c('0x3da')==typeof Symbol&&_0x2f190d['constructor']===Symbol&&_0x2f190d!==Symbol[_0x3c248c('0x3d4')]?_0x3c248c('0x4da'):typeof _0x2f190d;})(_0x3d0f8a);}function _0x3183ce(_0x45d278,_0x29690f){return function(_0x538338){if(Array['isArray'](_0x538338))return _0x538338;}(_0x45d278)||function(_0x385fe9,_0x589009){var _0x15d243=_0x3d72;if(_0x15d243('0x20a')==typeof Symbol||!(Symbol[_0x15d243('0x20e')]in Object(_0x385fe9)))return;var _0x5de778=[],_0x4feaab=!0x0,_0x44242e=!0x1,_0x39c6ac=void 0x0;try{for(var _0x27edb9,_0x4ec8b3=_0x385fe9[Symbol[_0x15d243('0x20e')]]();!(_0x4feaab=(_0x27edb9=_0x4ec8b3['next']())[_0x15d243('0x44')])&&(_0x5de778[_0x15d243('0x3db')](_0x27edb9['value']),!_0x589009||_0x5de778[_0x15d243('0x5ba')]!==_0x589009);_0x4feaab=!0x0);}catch(_0xfa5163){_0x44242e=!0x0,_0x39c6ac=_0xfa5163;}finally{try{_0x4feaab||null==_0x4ec8b3[_0x15d243('0x41c')]||_0x4ec8b3[_0x15d243('0x41c')]();}finally{if(_0x44242e)throw _0x39c6ac;}}return _0x5de778;}(_0x45d278,_0x29690f)||function(_0x1b4419,_0xd9c903){var _0x53a321=_0x3d72;if(!_0x1b4419)return;if(_0x53a321('0x4dd')==typeof _0x1b4419)return _0x2b8e63(_0x1b4419,_0xd9c903);var _0x267d4c=Object['prototype'][_0x53a321('0x4ef')][_0x53a321('0x545')](_0x1b4419)['slice'](0x8,-0x1);'Object'===_0x267d4c&&_0x1b4419[_0x53a321('0xaa')]&&(_0x267d4c=_0x1b4419[_0x53a321('0xaa')]['name']);if('Map'===_0x267d4c||'Set'===_0x267d4c)return Array['from'](_0x267d4c);if(_0x53a321('0x5ab')===_0x267d4c||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x53a321('0x56e')](_0x267d4c))return _0x2b8e63(_0x1b4419,_0xd9c903);}(_0x45d278,_0x29690f)||function(){var _0x4faac4=_0x3d72;throw new TypeError(_0x4faac4('0x311'));}();}function _0x2b8e63(_0x481590,_0x5a3863){(null==_0x5a3863||_0x5a3863>_0x481590['length'])&&(_0x5a3863=_0x481590['length']);for(var _0x1ae41f=0x0,_0x3cfb4f=new Array(_0x5a3863);_0x1ae41f<_0x5a3863;_0x1ae41f++)_0x3cfb4f[_0x1ae41f]=_0x481590[_0x1ae41f];return _0x3cfb4f;}var _0xabc9a7=_0x6f48c9['Typography'][_0x52931c('0x1f8')];},{'./theme':0x1a,'@ant-design/icons':_0x401518('0x480'),'antd':_0x401518('0x389'),'react':_0x401518('0x592')}],0x2:[function(_0x436aa6,_0x25538d,_0x12e143){var _0xfba31=_0x401518;'use strict';function _0xa75dd(_0x1f2bc2){var _0x57516f=_0x3d72;return(_0xa75dd=_0x57516f('0x3da')==typeof Symbol&&_0x57516f('0x4da')==typeof Symbol[_0x57516f('0x20e')]?function(_0x2632a5){return typeof _0x2632a5;}:function(_0x58aab3){var _0x4b6f27=_0x57516f;return _0x58aab3&&_0x4b6f27('0x3da')==typeof Symbol&&_0x58aab3[_0x4b6f27('0xaa')]===Symbol&&_0x58aab3!==Symbol['prototype']?_0x4b6f27('0x4da'):typeof _0x58aab3;})(_0x1f2bc2);}Object['defineProperty'](_0x12e143,_0xfba31('0x30e'),{'value':!0x0}),_0x12e143[_0xfba31('0x4f8')]=function(_0x36bfa8){var _0x2d71c1=_0xfba31,_0x1c84d0=_0x36bfa8['bootstrap'],_0x4ecc39=_0x36bfa8['config'],_0x41ae92=_0x36bfa8[_0x2d71c1('0x528')],_0x4e586a=void 0x0===_0x41ae92?_0x2d71c1('0x4a2'):_0x41ae92,_0x58dee=_0x36bfa8[_0x2d71c1('0x1de')],_0x2484a7=_0x2d71c1('0x1e1')===_0x4e586a,_0x11e715=!_0xe791ce()['md'],_0x3c43d8=_0x18bb3d((0x0,_0x5b1a73[_0x2d71c1('0x5a7')])(!0x1),0x2),_0x170e26=_0x3c43d8[0x0],_0x4ca5c5=_0x3c43d8[0x1],_0x5890db=_0x18bb3d((0x0,_0x5b1a73[_0x2d71c1('0x5a7')])(null),0x2),_0x98dc6e=_0x5890db[0x0],_0x4dcf16=_0x5890db[0x1],_0x204113=_0x18bb3d((0x0,_0x5b1a73[_0x2d71c1('0x5a7')])(null),0x2),_0x3eb7cf=_0x204113[0x0],_0x24ad81=_0x204113[0x1],_0x48ed6f=_0x18bb3d((0x0,_0x5b1a73[_0x2d71c1('0x5a7')])(!0x1),0x2),_0x331f6b=_0x48ed6f[0x0],_0x4ed9d6=_0x48ed6f[0x1],_0x8fe541=(0x0,_0x5b1a73['useRef'])(null),_0x1f60ce=_0x4e702a[_0x2d71c1('0x587')][_0x2d71c1('0x75')]()[_0x2d71c1('0x331')],_0x56b6ed=_0x1c84d0[_0x2d71c1('0x295')]||{},_0x4d33fd=_0x1c84d0[_0x2d71c1('0x2ee')]||{},_0x48ee52=_0x1c84d0[_0x2d71c1('0x57f')]||{},_0xe0bc25=_0x48ee52[_0x2d71c1('0x392')]||_0x4d33fd['first_name']||_0x4d33fd['email'],_0x67777d=_0x1c84d0[_0x2d71c1('0x335')]||{'admin':[],'employee':[]},_0x56b5d1=_0x18bb3d((0x0,_0x5b1a73['useState'])(_0x1c84d0[_0x2d71c1('0x310')]||null),0x2),_0xc8e740=_0x56b5d1[0x0],_0x356a74=_0x56b5d1[0x1],_0x53d3ca=_0x18bb3d((0x0,_0x5b1a73['useState'])(0x0),0x2),_0x2ef965=_0x53d3ca[0x0],_0x228f45=_0x53d3ca[0x1],_0x39359b=_0x18bb3d((0x0,_0x5b1a73[_0x2d71c1('0x5a7')])(null),0x2),_0x5cfd8a=_0x39359b[0x0],_0x492c23=_0x39359b[0x1],_0x46ccba=function(_0x5b17d5){var _0x47bce5=_0x2d71c1;return _0x492c23(_0x5b17d5?{'url':_0x5b17d5,'title':_0x47bce5('0x493')}:null);};(0x0,_0x5b1a73['useEffect'])(function(){var _0x8fd2af=_0x2d71c1;return window[_0x8fd2af('0x3f')]=function(_0x4ed083,_0x4dae5e){return _0x492c23(_0x4ed083?{'url':_0x4ed083,'title':_0x4dae5e||'Document'}:null);},function(){var _0x48acf2=_0x8fd2af;delete window[_0x48acf2('0x3f')];};},[]),(0x0,_0x5b1a73['useEffect'])(function(){var _0x3e098a=_0x2d71c1,_0x4844de=function(_0x2d9b77){var _0x447f6b=_0x3d72;_0x2d9b77[_0x447f6b('0x50e')]&&'profile-switched'===_0x2d9b77[_0x447f6b('0x50e')][_0x447f6b('0x3aa')]&&(_0x4ed9d6(!0x0),_0x228f45(function(_0x2a8a0d){return _0x2a8a0d+0x1;}));};return window[_0x3e098a('0x1c2')]('message',_0x4844de),function(){var _0x5d4ccb=_0x3e098a;return window[_0x5d4ccb('0x124')](_0x5d4ccb('0x186'),_0x4844de);};},[]);var _0x1b474a=_0x1c84d0[_0x2d71c1('0x35b')]||[],_0x178366=(0x0,_0x5b1a73[_0x2d71c1('0x5a8')])(function(){var _0xb60df6=_0x2d71c1,_0x5bc1b2={},_0x552263={},_0x3a365c={},_0x3088fa=function(_0x10a425,_0x48f36d){var _0x1efc58=_0x3d72;return(Array[_0x1efc58('0x52b')](_0x10a425)?_0x10a425:[])[_0x1efc58('0x475')](function(_0x384bfb){var _0x2b5911=_0x1efc58;return(_0x384bfb[_0x2b5911('0xf9')]||[])[_0x2b5911('0x475')](function(_0x3639f3){var _0x4fef69=_0x2b5911,_0x42dc4d=_0x3639f3[_0x4fef69('0x2d0')]||_0x4fef69('0x47b'),_0x36429f=_0x420b14(_0x3639f3['g'],_0x3639f3['n']),_0x48821a=_0x3639f3[_0x4fef69('0x278')]||_0x3639f3['name'];_0x3a365c[_0x42dc4d]||(_0x3a365c[_0x42dc4d]={'manage':[],'mine':[],'keys':new Set()});var _0x5e80dd=_0x3a365c[_0x42dc4d];if(!_0x5e80dd[_0x4fef69('0x33b')][_0x4fef69('0x1e7')](_0x36429f)){_0x5e80dd[_0x4fef69('0x33b')][_0x4fef69('0x90')](_0x36429f);var _0x6f3264=0x0===_0x3639f3['areaOrder']||_0x3639f3[_0x4fef69('0x57d')]?_0x3639f3['areaOrder']:0x32;_0x5e80dd[_0x48f36d][_0x4fef69('0x3db')]({'key':_0x36429f,'label':_0x48821a,'order':_0x6f3264}),_0x5bc1b2[_0x36429f]||(_0x5bc1b2[_0x36429f]={'g':_0x3639f3['g'],'n':_0x3639f3['n'],'label':_0x48821a,'area':_0x42dc4d,'section':_0x48f36d},_0x552263[_0x36429f]=_0x42dc4d);}});});};return _0x3088fa(_0x67777d[_0xb60df6('0x3ce')],_0xb60df6('0x330')),_0x3088fa(_0x67777d['employee'],_0xb60df6('0x44e')),Object['keys'](_0x3a365c)[_0xb60df6('0x475')](function(_0x151e5f){var _0xb3f2b4=_0xb60df6,_0x5ad313=function(_0x4b2be4,_0x40e5de){var _0x4246b2=_0x3d72;return _0x4b2be4['order']-_0x40e5de[_0x4246b2('0x4ec')];};_0x3a365c[_0x151e5f][_0xb3f2b4('0x330')][_0xb3f2b4('0x525')](_0x5ad313),_0x3a365c[_0x151e5f][_0xb3f2b4('0x44e')][_0xb3f2b4('0x525')](_0x5ad313);}),{'itemMap':_0x5bc1b2,'areaOfKey':_0x552263,'itemsByArea':_0x3a365c};},[_0x67777d]),_0x5cad31=_0x178366[_0x2d71c1('0xd2')],_0x58fe7f=_0x178366[_0x2d71c1('0x12b')],_0x498398=_0x178366[_0x2d71c1('0x169')],_0x3040fc=function(_0x4fb6bf){var _0x3bf086=_0x2d71c1,_0x1c9964=_0x498398[_0x4fb6bf];return _0x1c9964?_0x1c9964[_0x3bf086('0x330')][_0x3bf086('0x5ba')]+_0x1c9964[_0x3bf086('0x44e')][_0x3bf086('0x5ba')]:0x0;},_0x3a197f=function(){var _0x2bfe6d=_0x2d71c1,_0x49a7dc=_0x1c84d0['homeLink'],_0x4cbc03=[];return _0x49a7dc&&_0x49a7dc[_0x2bfe6d('0x552')]&&_0x49a7dc[_0x2bfe6d('0x3b6')]&&_0x4cbc03[_0x2bfe6d('0x3db')](_0x420b14(_0x49a7dc['group'],_0x49a7dc[_0x2bfe6d('0x3b6')])),_0x4cbc03[_0x2bfe6d('0x3db')]('admin::dashboard',_0x2bfe6d('0xf2')),_0x4cbc03[_0x2bfe6d('0x134')](function(_0x27d999){return _0x5cad31[_0x27d999];})||null;},_0x131b26=(0x0,_0x5b1a73[_0x2d71c1('0x5a8')])(function(){var _0x386eb5=_0x2d71c1;return _0x1b474a[_0x386eb5('0x34f')](function(_0x439caa){return _0x3040fc(_0x439caa['id'])>0x0;});},[_0x1b474a,_0x498398]),_0xb448ee=_0x18bb3d((0x0,_0x5b1a73[_0x2d71c1('0x5a7')])(function(){var _0x1c30be=_0x2d71c1,_0x19f08c=localStorage['getItem'](_0x1c30be('0x245'));if(_0x19f08c&&_0x3040fc(_0x19f08c)>0x0)return _0x19f08c;var _0x2c9134=_0x3a197f(),_0x5a6745=_0x2c9134&&_0x58fe7f[_0x2c9134];if(_0x5a6745&&_0x3040fc(_0x5a6745)>0x0)return _0x5a6745;var _0x1fd5d0=_0x1b474a[_0x1c30be('0x134')](function(_0x4189bd){return _0x3040fc(_0x4189bd['id'])>0x0;});return _0x1fd5d0?_0x1fd5d0['id']:null;}),0x2),_0x3529e7=_0xb448ee[0x0],_0xb60f7a=_0xb448ee[0x1];(0x0,_0x5b1a73[_0x2d71c1('0x138')])(function(){var _0x1442fa=_0x2d71c1;_0x3529e7&&localStorage['setItem'](_0x1442fa('0x245'),_0x3529e7);},[_0x3529e7]);var _0x5d12b7=(0x0,_0x5b1a73['useMemo'])(function(){var _0x55b64e=_0x2d71c1,_0x4311f9=_0x498398[_0x3529e7];if(!_0x4311f9)return[];var _0x55e181=function(_0x22bdc3){var _0x129e30=_0x3d72;return{'key':_0x22bdc3[_0x129e30('0x24d')],'label':_0x22bdc3[_0x129e30('0x278')]};};return _0x4311f9[_0x55b64e('0x330')][_0x55b64e('0x5ba')]&&_0x4311f9[_0x55b64e('0x44e')][_0x55b64e('0x5ba')]?[{'type':_0x55b64e('0x552'),'key':_0x55b64e('0x484'),'label':_0x2376ac(_0x5b1a73['default'][_0x55b64e('0x4fb')](_0x4c90df[_0x55b64e('0x3a9')],null),_0x55b64e('0x412')),'children':_0x4311f9[_0x55b64e('0x330')][_0x55b64e('0x427')](_0x55e181)},{'type':'group','key':'grp-mine','label':_0x2376ac(_0x5b1a73[_0x55b64e('0x4f8')]['createElement'](_0x4c90df[_0x55b64e('0x51c')],null),_0x55b64e('0x3ed')),'children':_0x4311f9[_0x55b64e('0x44e')][_0x55b64e('0x427')](_0x55e181)}]:[]['concat'](_0x74d0a6(_0x4311f9[_0x55b64e('0x330')]),_0x74d0a6(_0x4311f9[_0x55b64e('0x44e')]))['map'](_0x55e181);},[_0x498398,_0x3529e7]),_0x4f7b22=function(_0x460b41){_0xb60f7a(_0x460b41);var _0x41ad64=function(_0x4c4a3f){var _0x281ea8=_0x3d72,_0x53e2a2=_0x498398[_0x4c4a3f];if(!_0x53e2a2)return null;var _0x4bc180=_0x53e2a2[_0x281ea8('0x330')][0x0]||_0x53e2a2['mine'][0x0];return _0x4bc180?_0x4bc180[_0x281ea8('0x24d')]:null;}(_0x460b41);_0x41ad64&&_0xcabf96(_0x41ad64);},_0x4d6735=function(){var _0x489934=_0x2d71c1,_0x41c2a5=(window[_0x489934('0x49b')][_0x489934('0x3f4')]||'')[_0x489934('0x4c6')](/^#\/?/,''),_0x4441e4=_0x41c2a5?decodeURIComponent(_0x41c2a5):_0x3a197f(),_0x257928=_0x4441e4&&_0x5cad31[_0x4441e4];_0x24ad81(null),_0x257928?(_0x4dcf16(_0x257928),_0x4ed9d6(!0x0)):_0x4dcf16(null);};(0x0,_0x5b1a73['useEffect'])(function(){var _0x25ee3a=_0x2d71c1;_0x4d6735();var _0x12f59c=function(){return _0x4d6735();};return window[_0x25ee3a('0x1c2')](_0x25ee3a('0x3e6'),_0x12f59c),function(){var _0x537121=_0x25ee3a;return window['removeEventListener'](_0x537121('0x3e6'),_0x12f59c);};},[_0x5cad31]);var _0xcabf96=function(_0x1a043a){var _0x121a28=_0x2d71c1,_0x134c22=_0x5cad31[_0x1a043a];if(_0x134c22){_0x11e715&&_0x4ca5c5(!0x1);var _0x388bba='#'[_0x121a28('0x39d')](encodeURIComponent(_0x1a043a));window['location'][_0x121a28('0x3f4')]===_0x388bba?(_0x4ed9d6(!0x0),_0x4dcf16(_0x50f980({},_0x134c22))):window[_0x121a28('0x49b')][_0x121a28('0x3f4')]=_0x388bba;}},_0x32b09a=_0x3eb7cf||_0x98dc6e,_0x83d8ec=function(_0x1ca16d,_0x4b1b37){var _0x387078=_0x2d71c1;if(_0x1ca16d&&_0x4b1b37){var _0x2f65af=_0x420b14(_0x1ca16d,_0x4b1b37);if(_0x11e715&&_0x4ca5c5(!0x1),_0x5cad31[_0x2f65af])_0xcabf96(_0x2f65af);else{_0x24ad81(null),_0x4dcf16({'g':_0x1ca16d,'n':_0x4b1b37,'label':_0x4b1b37}),_0x4ed9d6(!0x0);try{window[_0x387078('0x20c')][_0x387078('0x575')](null,'','#'[_0x387078('0x39d')](encodeURIComponent(_0x2f65af)));}catch(_0x38bce8){}}}},_0x1a14a6=_0x32b09a?_0x420b14(_0x32b09a['g'],_0x32b09a['n']):null;(0x0,_0x5b1a73['useEffect'])(function(){var _0x15d201=_0x1a14a6&&_0x58fe7f[_0x1a14a6];_0x15d201&&_0x15d201!==_0x3529e7&&_0xb60f7a(_0x15d201);},[_0x1a14a6,_0x58fe7f]);var _0x425bcc=_0x98dc6e&&_0x2d71c1('0x3ce')===_0x98dc6e['g']&&_0x2d71c1('0x43b')===_0x98dc6e['n'],_0x1c0a86=_0x98dc6e&&'modules'===_0x98dc6e['g']&&_0x2d71c1('0x43b')===_0x98dc6e['n'],_0x4287b6=_0x98dc6e?''[_0x2d71c1('0x39d')](_0x98dc6e['g'],'/')[_0x2d71c1('0x39d')](_0x98dc6e['n']):null,_0x3d7cf3=!!_0x4287b6&&!_0x425bcc&&!_0x1c0a86&&-0x1!==(_0x1c84d0['nativeModules']||[])[_0x2d71c1('0x187')](_0x4287b6),_0x4ec938=!_0x98dc6e||_0x425bcc||_0x1c0a86||_0x3d7cf3?null:''[_0x2d71c1('0x39d')](_0x4ecc39[_0x2d71c1('0x3fe')],_0x2d71c1('0x167'))[_0x2d71c1('0x39d')](encodeURIComponent(_0x98dc6e['g']),_0x2d71c1('0x438'))[_0x2d71c1('0x39d')](encodeURIComponent(_0x98dc6e['n']),'&_embed=1'),_0x4a292e=_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x4e702a['Menu'],{'mode':_0x2d71c1('0x2f4'),'theme':_0x2d71c1('0x1e1'),'selectedKeys':_0x1a14a6?[_0x1a14a6]:[],'style':{'borderInlineEnd':0x0},'items':_0x5d12b7,'onClick':function(_0x237cf9){var _0x1f2eb4=_0x2d71c1,_0x2e6027=_0x237cf9[_0x1f2eb4('0x24d')];return _0xcabf96(_0x2e6027);}}),_0x424051={'items':[{'key':_0x2d71c1('0x3b6'),'label':''['concat'](_0x48ee52[_0x2d71c1('0x392')]||_0x4d33fd[_0x2d71c1('0x1af')]||'','\x20')['concat'](_0x48ee52['lastName']||_0x4d33fd[_0x2d71c1('0x78')]||'')[_0x2d71c1('0x46d')]()||_0x4d33fd[_0x2d71c1('0x4cd')],'disabled':!0x0},{'type':_0x2d71c1('0x321')},{'key':_0x2d71c1('0x4a4'),'icon':_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4c90df[_0x2d71c1('0x19c')],null),'label':_0x2d71c1('0x39e')},{'key':_0x2d71c1('0x4a'),'icon':_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4c90df[_0x2d71c1('0x473')],null),'label':_0x2d71c1('0x178')}],'onClick':function(_0x16a604){var _0x462d16=_0x2d71c1,_0xebeacc=_0x16a604[_0x462d16('0x24d')];_0x462d16('0x4a')===_0xebeacc&&(window[_0x462d16('0x49b')][_0x462d16('0x41')]=''[_0x462d16('0x39d')](_0x4ecc39[_0x462d16('0x3fe')],_0x462d16('0x287'))),_0x462d16('0x4a4')===_0xebeacc&&(window['location'][_0x462d16('0x3f4')]='',_0x4dcf16(null));}},_0xaf44d3=_0x18bb3d((0x0,_0x5b1a73[_0x2d71c1('0x5a7')])(!0x1),0x2),_0x2a4794=_0xaf44d3[0x0],_0x3a98c7=_0xaf44d3[0x1],_0x29b25f=''[_0x2d71c1('0x39d')](_0x4ecc39[_0x2d71c1('0x109')]||'',_0x2d71c1('0x133')),_0x2dddce=_0x56b6ed['logoUrl']||_0x29b25f,_0xe7d90b=_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x2d71c1('0x1c7'),{'style':{'flex':_0x2d71c1('0x401'),'display':_0x2d71c1('0x37f'),'alignItems':_0x2d71c1('0x36e'),'justifyContent':_0x2d71c1('0x551'),'gap':0x8,'padding':_0x2d71c1('0x387'),'overflow':_0x2d71c1('0x3ee'),'borderTop':'1px\x20solid\x20rgba(255,255,255,0.08)','lineHeight':1.35}},_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x2d71c1('0x433'),{'style':{'color':_0x2d71c1('0xfc'),'fontSize':10.5,'whiteSpace':_0x2d71c1('0x11e')}},'©\x20'['concat'](new Date()[_0x2d71c1('0x88')](),_0x2d71c1('0x57'))),_0x1c84d0['version']&&_0x5b1a73[_0x2d71c1('0x4f8')]['createElement']('span',{'style':{'color':_0x2d71c1('0x4d5'),'fontSize':0xb,'fontWeight':0x258,'whiteSpace':_0x2d71c1('0x11e')}},'v'[_0x2d71c1('0x39d')](_0x1c84d0['version']))),_0x2e408f=(0x0,_0x5b1a73[_0x2d71c1('0x5a8')])(function(){var _0x2af1c9=_0x2d71c1;return Object[_0x2af1c9('0x33b')](_0x5cad31)[_0x2af1c9('0x427')](function(_0x5a299a){return _0x50f980({'key':_0x5a299a},_0x5cad31[_0x5a299a]);});},[_0x5cad31]),_0x2d3589=_0x131b26[_0x2d71c1('0x134')](function(_0x52e6fc){return _0x52e6fc['id']===_0x3529e7;})||_0x131b26[0x0]||null,_0x1ad24f=_0x131b26[_0x2d71c1('0x5ba')]>0x1&&_0x2d3589?_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x2d71c1('0x1c7'),{'style':{'padding':_0x2d71c1('0x3fa')}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x2d71c1('0x1c7'),{'style':{'fontSize':10.5,'letterSpacing':1.2,'fontWeight':0x2bc,'color':_0x2d71c1('0x1cf'),'marginBottom':0x8,'paddingLeft':0x2}},'AREA'),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4e702a['ConfigProvider'],{'theme':(0x0,_0x58f9c9[_0x2d71c1('0x348')])(_0x2d71c1('0x1e1'))},_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x4e702a[_0x2d71c1('0x356')],{'trigger':[_0x2d71c1('0xa5')],'menu':{'selectedKeys':[_0x3529e7],'items':_0x131b26[_0x2d71c1('0x427')](function(_0x5a623b){var _0x5e9c02=_0x2d71c1;return{'key':_0x5a623b['id'],'icon':_0x533df2(_0x5a623b['icon']),'label':_0x5a623b[_0x5e9c02('0x278')]};}),'onClick':function(_0x449681){var _0x48e77a=_0x2d71c1,_0xcad8e8=_0x449681[_0x48e77a('0x24d')];return _0x4f7b22(_0xcad8e8);}}},_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x2d71c1('0x4fe'),{'type':_0x2d71c1('0x4fe'),'className':_0x2d71c1('0xe'),'title':'Switch\x20area','style':{'width':_0x2d71c1('0x4ae'),'display':_0x2d71c1('0x37f'),'alignItems':_0x2d71c1('0x36e'),'gap':0xa,'padding':_0x2d71c1('0x4c2'),'borderRadius':0xc,'cursor':_0x2d71c1('0x4ad'),'color':_0x2d71c1('0x272'),'background':_0x2d71c1('0x193'),'border':'1px\x20solid\x20rgba(255,255,255,0.10)','textAlign':_0x2d71c1('0x8d')}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x2d71c1('0x433'),{'style':{'width':0x1e,'height':0x1e,'borderRadius':0x9,'flex':'0\x200\x20auto','fontSize':0xf,'background':_0x2d71c1('0x456'),'color':'#4c9aff','display':_0x2d71c1('0x37f'),'alignItems':_0x2d71c1('0x36e'),'justifyContent':_0x2d71c1('0x36e')}},_0x533df2(_0x2d3589[_0x2d71c1('0x405')])),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x2d71c1('0x433'),{'style':{'flex':0x1,'minWidth':0x0}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x2d71c1('0x433'),{'style':{'display':_0x2d71c1('0x26d'),'fontSize':13.5,'fontWeight':0x258,'lineHeight':1.2,'overflow':_0x2d71c1('0x3ee'),'textOverflow':_0x2d71c1('0x4f4'),'whiteSpace':_0x2d71c1('0x11e')}},_0x2d3589[_0x2d71c1('0x278')]),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x2d71c1('0x433'),{'style':{'display':_0x2d71c1('0x26d'),'fontSize':0xb,'color':_0x2d71c1('0x518'),'lineHeight':1.2}},_0x2d71c1('0x3f5'))),_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x4c90df['DownOutlined'],{'style':{'fontSize':0xc,'color':_0x2d71c1('0x59'),'flex':_0x2d71c1('0x401')}}))))):null,_0x169dcf=_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')]('div',{'role':_0x2d71c1('0x4fe'),'tabIndex':0x0,'onClick':function(){var _0x1ed18d=_0x2d71c1;window[_0x1ed18d('0x49b')][_0x1ed18d('0x3f4')]='',_0x4dcf16(null);},'title':_0x2d71c1('0x39e'),'style':{'display':_0x2d71c1('0x37f'),'alignItems':_0x2d71c1('0x36e'),'gap':0xa,'cursor':'pointer','paddingRight':0x12,'marginRight':0x4,'borderRight':_0x2d71c1('0x51e'),'height':0x30}},_0x2a4794?_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x2d71c1('0x433'),{'style':{'fontWeight':0x2bc,'fontSize':0x16,'color':'#fff','whiteSpace':_0x2d71c1('0x11e')}},_0x56b6ed[_0x2d71c1('0x3b6')]||_0x2d71c1('0x29')):_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x2d71c1('0x3ff'),{'src':_0x2dddce,'alt':_0x56b6ed[_0x2d71c1('0x3b6')]||'IceHrm','style':{'height':0x2e,'maxWidth':0xc8,'objectFit':_0x2d71c1('0x132')},'onError':function(){return _0x3a98c7(!0x0);}}));return _0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x4e702a[_0x2d71c1('0x4d')],{'style':{'minHeight':_0x2d71c1('0x9')}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4e702a[_0x2d71c1('0x22c')],{'theme':(0x0,_0x58f9c9['buildTheme'])(_0x2d71c1('0x1e1'))},_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x5c1b26,{'style':{'display':'flex','alignItems':_0x2d71c1('0x36e'),'justifyContent':'space-between','paddingInline':0x10,'background':_0x58f9c9['SIDEBAR_BG'],'position':_0x2d71c1('0xee'),'top':0x0,'zIndex':0x14,'boxShadow':_0x2d71c1('0xe9')}},_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x2d71c1('0x1c7'),{'style':{'display':_0x2d71c1('0x37f'),'alignItems':_0x2d71c1('0x36e'),'gap':0xa,'flex':_0x2d71c1('0x401')}},_0x11e715&&_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4e702a['Button'],{'type':_0x2d71c1('0x3cc'),'icon':_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4c90df[_0x2d71c1('0x55e')],{'style':{'color':_0x2d71c1('0x272')}}),'onClick':function(){return _0x4ca5c5(!0x0);}}),!_0x11e715&&_0x169dcf,_0x5b1a73['default']['createElement'](_0x2d71c1('0x433'),{'style':{'fontSize':0x10,'fontWeight':0x258,'color':_0x2d71c1('0x1aa'),'maxWidth':0x104,'overflow':_0x2d71c1('0x3ee'),'textOverflow':_0x2d71c1('0x4f4'),'whiteSpace':_0x2d71c1('0x11e')}},_0x32b09a?_0x32b09a[_0x2d71c1('0x278')]:_0x2d71c1('0x39e'))),_0x5b1a73['default'][_0x2d71c1('0x4fb')]('div',{'style':{'flex':0x1,'display':'flex','justifyContent':_0x2d71c1('0x36e'),'minWidth':0x0,'padding':_0x2d71c1('0x2a5')}},_0x5b1a73['default']['createElement']('div',{'style':{'width':_0x2d71c1('0x4ae'),'maxWidth':0x230}},_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x2eb064[_0x2d71c1('0x4f8')],{'items':_0x2e408f,'areas':_0x1b474a,'onSelect':function(_0x2f9337){return _0x83d8ec(_0x5cad31[_0x2f9337]['g'],_0x5cad31[_0x2f9337]['n']);},'dark':!0x0}))),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')]('div',{'style':{'display':_0x2d71c1('0x37f'),'alignItems':_0x2d71c1('0x36e'),'gap':0x4,'flex':_0x2d71c1('0x401')}},_0x5b1a73['default']['createElement'](_0x4e702a[_0x2d71c1('0xa0')],{'title':_0x2484a7?_0x2d71c1('0x56'):'Switch\x20to\x20dark\x20mode'},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4e702a[_0x2d71c1('0x244')],{'type':_0x2d71c1('0x3cc'),'aria-label':_0x2d71c1('0x246'),'icon':_0x2484a7?_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4c90df[_0x2d71c1('0x39b')],{'style':{'color':_0x2d71c1('0x461')}}):_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x4c90df[_0x2d71c1('0x67')],{'style':{'color':_0x2d71c1('0x272')}}),'onClick':_0x58dee})),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0xe840c7[_0x2d71c1('0x4f8')],{'clientBaseUrl':_0x4ecc39['clientBaseUrl'],'onNavigate':_0x83d8ec,'onOpenDocument':_0x46ccba}),_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x4e702a['Dropdown'],{'menu':_0x424051,'trigger':[_0x2d71c1('0xa5')]},_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x4e702a[_0x2d71c1('0x244')],{'type':_0x2d71c1('0x3cc'),'style':{'display':_0x2d71c1('0x37f'),'alignItems':_0x2d71c1('0x36e'),'gap':0x8,'color':'rgba(255,255,255,0.92)'}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4e702a['Avatar'],{'size':_0x2d71c1('0xd3'),'src':_0x48ee52[_0x2d71c1('0x3e3')]||void 0x0,'icon':_0x5b1a73['default']['createElement'](_0x4c90df[_0x2d71c1('0x51c')],null)}),!_0x11e715&&_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x2d71c1('0x433'),null,_0xe0bc25)))))),_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x4e702a[_0x2d71c1('0x4d')],null,!_0x11e715&&_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x43bee3,{'width':0xf0,'style':{'height':'calc(100vh\x20-\x2064px)','position':_0x2d71c1('0xee'),'top':0x40,'insetInlineStart':0x0,'background':_0x58f9c9['SIDEBAR_BG']}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')]('div',{'style':{'height':_0x2d71c1('0x4ae'),'display':_0x2d71c1('0x37f'),'flexDirection':_0x2d71c1('0x13c')}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')]('div',{'style':{'flex':0x1,'minHeight':0x0,'overflow':_0x2d71c1('0x4b6'),'paddingTop':0x8}},_0x1ad24f,_0x4a292e),_0xe7d90b)),_0x11e715&&_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4e702a[_0x2d71c1('0xf5')],{'placement':'left','open':_0x170e26,'onClose':function(){return _0x4ca5c5(!0x1);},'width':0x104,'styles':{'body':{'padding':0x0,'background':_0x58f9c9[_0x2d71c1('0x45a')]},'header':{'display':_0x2d71c1('0xa')}}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x2d71c1('0x1c7'),{'style':{'height':_0x2d71c1('0x4ae'),'display':_0x2d71c1('0x37f'),'flexDirection':_0x2d71c1('0x13c')}},_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x2d71c1('0x1c7'),{'style':{'flex':0x1,'minHeight':0x0,'overflow':_0x2d71c1('0x4b6'),'paddingTop':0x8}},_0x1ad24f,_0x4a292e),_0xe7d90b)),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4e702a[_0x2d71c1('0x4d')],null,_0xc8e740&&_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x4e702a[_0x2d71c1('0x1d8')],{'type':_0x2d71c1('0x1c5'),'banner':!0x0,'showIcon':!0x0,'message':_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x2d71c1('0x433'),null,_0x2d71c1('0x176'),_0x5b1a73['default']['createElement'](_0x2d71c1('0x454'),null,_0xc8e740['name'])),'action':_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x4e702a['Button'],{'size':'small','onClick':function(){var _0x48f8aa=_0x2d71c1;try{var _0x3c0b96=_0x8fe541[_0x48f8aa('0x234')]&&_0x8fe541[_0x48f8aa('0x234')][_0x48f8aa('0x3b4')];if(_0x3c0b96&&_0x3c0b96[_0x48f8aa('0x522')]&&_0x48f8aa('0x3da')==typeof _0x3c0b96[_0x48f8aa('0x522')]['setAdminProfile'])return void _0x3c0b96[_0x48f8aa('0x522')][_0x48f8aa('0x495')]('-1');}catch(_0x4b695d){}var _0x3aed33=new URLSearchParams({'a':_0x48f8aa('0x135'),'empid':'-1'});fetch(''[_0x48f8aa('0x39d')](_0x4ecc39[_0x48f8aa('0x3fe')],_0x48f8aa('0x205')),{'method':_0x48f8aa('0x3c8'),'credentials':_0x48f8aa('0x1a5'),'headers':{'Content-Type':'application/x-www-form-urlencoded'},'body':_0x3aed33['toString']()})[_0x48f8aa('0x12a')](function(){var _0x84b02c=_0x48f8aa;window[_0x84b02c('0x49b')][_0x84b02c('0x32f')]();})[_0x48f8aa('0x2e')](function(){var _0x589149=_0x48f8aa;window[_0x589149('0x49b')][_0x589149('0x32f')]();});}},_0x2d71c1('0x59e'))}),_0x1c84d0[_0x2d71c1('0x3c4')]&&_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4e702a[_0x2d71c1('0x1d8')],{'type':_0x2d71c1('0x1c5'),'banner':!0x0,'showIcon':!0x0,'style':{'padding':_0x2d71c1('0x567'),'alignItems':'center'},'message':_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')]('div',{'style':{'lineHeight':1.35}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x2d71c1('0x1c7'),{'style':{'fontSize':0x11,'fontWeight':0x2bc,'marginBottom':0x3}},'Connect\x20to\x20icehrm.com\x20to\x20unlock\x20the\x20marketplace'),_0x5b1a73['default']['createElement']('div',{'style':{'fontSize':0xe,'opacity':0.9}},_0x2d71c1('0x31b'),'\x20',_0x2d71c1('0x23'))),'action':_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x4e702a[_0x2d71c1('0x244')],{'size':_0x2d71c1('0x54a'),'type':_0x2d71c1('0x3e5'),'style':{'fontWeight':0x258},'onClick':function(){var _0x4c613c=_0x2d71c1;return _0x83d8ec(_0x4c613c('0x5b7'),'marketplace|admin');}},_0x2d71c1('0x312'))}),_0x5b1a73['default']['createElement'](_0x5b8c63,{'style':{'background':_0x1f60ce[_0x2d71c1('0x31a')],'position':_0x2d71c1('0x2ae'),'height':_0x2d71c1('0x222')[_0x2d71c1('0x39d')](_0xc8e740?_0x2d71c1('0x1bf'):'')[_0x2d71c1('0x39d')](_0x1c84d0[_0x2d71c1('0x3c4')]?_0x2d71c1('0x268'):'',')')}},_0x425bcc?_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x2d71c1('0x1c7'),{'style':{'height':_0x2d71c1('0x4ae'),'overflow':_0x2d71c1('0x4b6')}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x3a0e28[_0x2d71c1('0x4f8')],{'updateAvailable':_0x1c84d0[_0x2d71c1('0x5c')]}),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x37a085[_0x2d71c1('0x4f8')],{'licenseRenewal':_0x1c84d0[_0x2d71c1('0x378')]}),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x3e0d32[_0x2d71c1('0x4f8')],{'config':_0x4ecc39}),_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x53550e['default'],{'config':_0x4ecc39,'onNavigate':_0x83d8ec})):_0x1c0a86?_0x5b1a73['default']['createElement'](_0x2d71c1('0x1c7'),{'style':{'height':'100%','overflow':_0x2d71c1('0x4b6')}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x3a0e28[_0x2d71c1('0x4f8')],{'updateAvailable':_0x1c84d0[_0x2d71c1('0x5c')]}),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x37a085[_0x2d71c1('0x4f8')],{'licenseRenewal':_0x1c84d0[_0x2d71c1('0x378')]}),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x321a46[_0x2d71c1('0x4f8')],{'config':_0x4ecc39,'onNavigate':_0x83d8ec,'onOpenDocument':_0x46ccba})):_0x3d7cf3?_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x2d71c1('0x1c7'),{'style':{'height':'100%','overflow':_0x2d71c1('0x4b6')}},_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x2db65c[_0x2d71c1('0x4f8')],{'key':_0x4287b6,'group':_0x98dc6e['g'],'name':_0x98dc6e['n'],'shellConfig':_0x4ecc39})):_0x4ec938?_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x3e0')],null,_0x331f6b&&_0x5b1a73['default'][_0x2d71c1('0x4fb')]('div',{'style':{'position':'absolute','inset':0x0,'display':_0x2d71c1('0x37f'),'alignItems':'center','justifyContent':'center','zIndex':0x2,'background':_0x1f60ce[_0x2d71c1('0x31a')]}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0x4e702a[_0x2d71c1('0x4cc')],{'size':_0x2d71c1('0x54a')})),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')]('iframe',{'ref':_0x8fe541,'key':''[_0x2d71c1('0x39d')](_0x4ec938,'#')['concat'](_0x2ef965),'title':_0x98dc6e?_0x98dc6e[_0x2d71c1('0x278')]:'','src':_0x4ec938,'onLoad':function(_0x5a40a0){var _0x758164=_0x2d71c1;try{var _0x23dd1b=_0x5a40a0[_0x758164('0x463')]['contentDocument'];if(_0x23dd1b&&_0x23dd1b['head']){var _0x2f8f79=_0x23dd1b[_0x758164('0x4fb')](_0x758164('0x38'));_0x2f8f79[_0x758164('0x4de')](_0x758164('0x467'),'1'),_0x2f8f79['textContent']=_0x758164('0x358'),_0x23dd1b[_0x758164('0x4ab')]['appendChild'](_0x2f8f79);}var _0x33da30=_0x23dd1b&&_0x23dd1b['querySelector'](_0x758164('0x59b'));_0x356a74(_0x33da30?{'name':(_0x33da30[_0x758164('0x281')]||'')[_0x758164('0x46d')]()}:null);var _0x538090=_0x5a40a0['target'][_0x758164('0x3b4')]&&_0x5a40a0[_0x758164('0x463')][_0x758164('0x3b4')][_0x758164('0x49b')],_0x553206=_0x538090&&new URLSearchParams(_0x538090['search']),_0x2204ef=_0x553206&&_0x553206[_0x758164('0x4cb')]('g'),_0x32bfdd=_0x553206&&_0x553206[_0x758164('0x4cb')]('n');if(_0x2204ef&&_0x32bfdd){var _0x504758=_0x420b14(_0x2204ef,_0x32bfdd);if(_0x98dc6e&&_0x504758===_0x420b14(_0x98dc6e['g'],_0x98dc6e['n']))_0x24ad81(null);else{if(_0x5cad31[_0x504758]){_0x24ad81(_0x5cad31[_0x504758]);try{window[_0x758164('0x20c')][_0x758164('0x575')](null,'','#'[_0x758164('0x39d')](encodeURIComponent(_0x504758)));}catch(_0x26f532){}}}}}catch(_0x553f4b){}_0x4ed9d6(!0x1);},'style':{'width':'100%','height':'100%','border':0x0,'display':'block','visibility':_0x331f6b?'hidden':_0x2d71c1('0x42f')}})):_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')]('div',{'style':{'padding':0x18}},_0x5b1a73['default'][_0x2d71c1('0x4fb')](_0x2d71c1('0x1c7'),{'style':{'background':_0x1f60ce[_0x2d71c1('0x55')],'borderRadius':0x8,'padding':0x20,'maxWidth':0x2d0,'boxShadow':_0x2d71c1('0x3ab'),'color':_0x1f60ce[_0x2d71c1('0xc8')]}},_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')]('h2',{'style':{'marginTop':0x0}},_0x2d71c1('0x226')),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')]('p',{'style':{'color':_0x1f60ce['colorTextSecondary']}},_0x2d71c1('0x212')),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')]('p',{'style':{'color':_0x1f60ce['colorTextSecondary'],'fontSize':0xd}},'Signed\x20in\x20as\x20',_0x5b1a73[_0x2d71c1('0x4f8')]['createElement'](_0x2d71c1('0x454'),null,_0x4d33fd['email']),'\x20(',_0x1c84d0['userLevel'],').')))))),_0x5b1a73[_0x2d71c1('0x4f8')][_0x2d71c1('0x4fb')](_0xd8d7ff[_0x2d71c1('0x4f8')],{'documentUrl':_0x5cfd8a&&_0x5cfd8a['url'],'bundle':_0x2d71c1('0x190'),'mountFn':'mountEditorDocument','deps':[_0x2d71c1('0x442'),_0x2d71c1('0x5a0'),_0x2d71c1('0x27d')],'title':_0x5cfd8a&&_0x5cfd8a[_0x2d71c1('0x115')]||_0x2d71c1('0x16e'),'shellConfig':_0x4ecc39,'onClose':function(){return _0x492c23(null);}}));};var _0x5b1a73=function(_0x2c37a6){var _0x52c5f4=_0xfba31;if(_0x2c37a6&&_0x2c37a6[_0x52c5f4('0x30e')])return _0x2c37a6;if(null===_0x2c37a6||_0x52c5f4('0xd8')!==_0xa75dd(_0x2c37a6)&&_0x52c5f4('0x3da')!=typeof _0x2c37a6)return{'default':_0x2c37a6};var _0x5070d0=_0x41e6f2();if(_0x5070d0&&_0x5070d0[_0x52c5f4('0x1e7')](_0x2c37a6))return _0x5070d0[_0x52c5f4('0x4cb')](_0x2c37a6);var _0x39b64f={},_0x2ce61a=Object[_0x52c5f4('0x14d')]&&Object[_0x52c5f4('0x7f')];for(var _0x2b6ef6 in _0x2c37a6)if(Object[_0x52c5f4('0x3d4')][_0x52c5f4('0x25d')][_0x52c5f4('0x545')](_0x2c37a6,_0x2b6ef6)){var _0x173cfc=_0x2ce61a?Object['getOwnPropertyDescriptor'](_0x2c37a6,_0x2b6ef6):null;_0x173cfc&&(_0x173cfc[_0x52c5f4('0x4cb')]||_0x173cfc[_0x52c5f4('0x300')])?Object[_0x52c5f4('0x14d')](_0x39b64f,_0x2b6ef6,_0x173cfc):_0x39b64f[_0x2b6ef6]=_0x2c37a6[_0x2b6ef6];}return _0x39b64f['default']=_0x2c37a6,_0x5070d0&&_0x5070d0['set'](_0x2c37a6,_0x39b64f),_0x39b64f;}(_0x436aa6('react')),_0x4e702a=_0x436aa6('antd'),_0x4c90df=_0x436aa6('@ant-design/icons'),_0x58f9c9=_0x436aa6(_0xfba31('0x1c8')),_0xe840c7=_0x34a55d(_0x436aa6('./Notifications')),_0x3e0d32=_0x34a55d(_0x436aa6(_0xfba31('0x290'))),_0x53550e=_0x34a55d(_0x436aa6('./Dashboard')),_0x321a46=_0x34a55d(_0x436aa6(_0xfba31('0x236'))),_0x37a085=_0x34a55d(_0x436aa6('./LicenseRenewalBanner')),_0x3a0e28=_0x34a55d(_0x436aa6(_0xfba31('0x2fc'))),_0x2db65c=_0x34a55d(_0x436aa6(_0xfba31('0x1e9'))),_0xd8d7ff=_0x34a55d(_0x436aa6(_0xfba31('0x58c'))),_0x2eb064=_0x34a55d(_0x436aa6('./ModuleSearch'));function _0x34a55d(_0x5d9059){var _0x1c18f8=_0xfba31;return _0x5d9059&&_0x5d9059[_0x1c18f8('0x30e')]?_0x5d9059:{'default':_0x5d9059};}function _0x41e6f2(){var _0x5e49fa=_0xfba31;if(_0x5e49fa('0x3da')!=typeof WeakMap)return null;var _0x2c81a9=new WeakMap();return _0x41e6f2=function(){return _0x2c81a9;},_0x2c81a9;}function _0x44f739(_0x1d46a7,_0x59af9d){var _0x188eb5=_0xfba31,_0x5a91cf=Object['keys'](_0x1d46a7);if(Object[_0x188eb5('0x17b')]){var _0x459d1e=Object[_0x188eb5('0x17b')](_0x1d46a7);_0x59af9d&&(_0x459d1e=_0x459d1e[_0x188eb5('0x34f')](function(_0xc38233){var _0x40d8f9=_0x188eb5;return Object[_0x40d8f9('0x7f')](_0x1d46a7,_0xc38233)[_0x40d8f9('0x24')];})),_0x5a91cf[_0x188eb5('0x3db')][_0x188eb5('0x200')](_0x5a91cf,_0x459d1e);}return _0x5a91cf;}function _0x50f980(_0x576917){var _0x46d4f8=_0xfba31;for(var _0x12e3a5=0x1;_0x12e3a5<arguments[_0x46d4f8('0x5ba')];_0x12e3a5++){var _0x4782e4=null!=arguments[_0x12e3a5]?arguments[_0x12e3a5]:{};_0x12e3a5%0x2?_0x44f739(Object(_0x4782e4),!0x0)['forEach'](function(_0x55ec41){_0x4df1ee(_0x576917,_0x55ec41,_0x4782e4[_0x55ec41]);}):Object[_0x46d4f8('0x303')]?Object[_0x46d4f8('0x29d')](_0x576917,Object[_0x46d4f8('0x303')](_0x4782e4)):_0x44f739(Object(_0x4782e4))[_0x46d4f8('0x475')](function(_0x41ce43){var _0x28cfd2=_0x46d4f8;Object['defineProperty'](_0x576917,_0x41ce43,Object[_0x28cfd2('0x7f')](_0x4782e4,_0x41ce43));});}return _0x576917;}function _0x4df1ee(_0x2f5c79,_0x5d9952,_0x4b47c7){var _0x2dc6e2=_0xfba31;return _0x5d9952 in _0x2f5c79?Object[_0x2dc6e2('0x14d')](_0x2f5c79,_0x5d9952,{'value':_0x4b47c7,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x2f5c79[_0x5d9952]=_0x4b47c7,_0x2f5c79;}function _0x74d0a6(_0x3ba2c7){return function(_0xf66e15){var _0x45a93b=_0x3d72;if(Array[_0x45a93b('0x52b')](_0xf66e15))return _0x592412(_0xf66e15);}(_0x3ba2c7)||function(_0x404437){var _0x2e1405=_0x3d72;if('undefined'!=typeof Symbol&&Symbol['iterator']in Object(_0x404437))return Array[_0x2e1405('0xd7')](_0x404437);}(_0x3ba2c7)||_0x4968d8(_0x3ba2c7)||function(){var _0x52193b=_0x3d72;throw new TypeError(_0x52193b('0x2a0'));}();}function _0x18bb3d(_0x5a948b,_0x229ed6){return function(_0x5e9993){if(Array['isArray'](_0x5e9993))return _0x5e9993;}(_0x5a948b)||function(_0x463d99,_0x32d293){var _0x39ba58=_0x3d72;if(_0x39ba58('0x20a')==typeof Symbol||!(Symbol[_0x39ba58('0x20e')]in Object(_0x463d99)))return;var _0x361ae4=[],_0x13b9e2=!0x0,_0x13319e=!0x1,_0x3c7964=void 0x0;try{for(var _0x117474,_0x6dca21=_0x463d99[Symbol[_0x39ba58('0x20e')]]();!(_0x13b9e2=(_0x117474=_0x6dca21[_0x39ba58('0xc')]())[_0x39ba58('0x44')])&&(_0x361ae4['push'](_0x117474['value']),!_0x32d293||_0x361ae4[_0x39ba58('0x5ba')]!==_0x32d293);_0x13b9e2=!0x0);}catch(_0xbd8eae){_0x13319e=!0x0,_0x3c7964=_0xbd8eae;}finally{try{_0x13b9e2||null==_0x6dca21['return']||_0x6dca21['return']();}finally{if(_0x13319e)throw _0x3c7964;}}return _0x361ae4;}(_0x5a948b,_0x229ed6)||_0x4968d8(_0x5a948b,_0x229ed6)||function(){var _0xc9d185=_0x3d72;throw new TypeError(_0xc9d185('0x311'));}();}function _0x4968d8(_0x3ca7e1,_0x2b58f2){var _0x1b9262=_0xfba31;if(_0x3ca7e1){if(_0x1b9262('0x4dd')==typeof _0x3ca7e1)return _0x592412(_0x3ca7e1,_0x2b58f2);var _0x28a64d=Object[_0x1b9262('0x3d4')]['toString'][_0x1b9262('0x545')](_0x3ca7e1)['slice'](0x8,-0x1);return'Object'===_0x28a64d&&_0x3ca7e1['constructor']&&(_0x28a64d=_0x3ca7e1[_0x1b9262('0xaa')]['name']),_0x1b9262('0x235')===_0x28a64d||'Set'===_0x28a64d?Array[_0x1b9262('0xd7')](_0x28a64d):_0x1b9262('0x5ab')===_0x28a64d||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x1b9262('0x56e')](_0x28a64d)?_0x592412(_0x3ca7e1,_0x2b58f2):void 0x0;}}function _0x592412(_0x3f65c5,_0x2ff387){var _0x161e93=_0xfba31;(null==_0x2ff387||_0x2ff387>_0x3f65c5['length'])&&(_0x2ff387=_0x3f65c5[_0x161e93('0x5ba')]);for(var _0x15b49a=0x0,_0x42e301=new Array(_0x2ff387);_0x15b49a<_0x2ff387;_0x15b49a++)_0x42e301[_0x15b49a]=_0x3f65c5[_0x15b49a];return _0x42e301;}var _0x5c1b26=_0x4e702a[_0xfba31('0x4d')]['Header'],_0x43bee3=_0x4e702a[_0xfba31('0x4d')][_0xfba31('0x3bb')],_0x5b8c63=_0x4e702a[_0xfba31('0x4d')][_0xfba31('0x144')],_0xe791ce=_0x4e702a['Grid'][_0xfba31('0x558')],_0x2695f5=(_0x4c90df[_0xfba31('0x21f')],_0x4c90df[_0xfba31('0x5aa')],_0x4c90df[_0xfba31('0x443')],_0x4c90df[_0xfba31('0x507')],_0x4c90df[_0xfba31('0x507')],_0x4c90df[_0xfba31('0x3a9')],_0x4c90df[_0xfba31('0xf7')],_0x4c90df['DollarOutlined'],_0x4c90df['DollarOutlined'],_0x4c90df['SolutionOutlined'],_0x4c90df[_0xfba31('0x4d1')],_0x4c90df['UserOutlined'],_0x4c90df[_0xfba31('0x5aa')],_0x4c90df[_0xfba31('0xad')],_0x4c90df[_0xfba31('0x53e')],_0x4c90df[_0xfba31('0x4e1')],_0x4c90df[_0xfba31('0x2d6')],_0x4c90df[_0xfba31('0x59c')],_0x4c90df[_0xfba31('0x4e8')],_0x4c90df[_0xfba31('0x80')],{'home':_0x5b1a73[_0xfba31('0x4f8')]['createElement'](_0x4c90df[_0xfba31('0x19c')],null),'people':_0x5b1a73['default'][_0xfba31('0x4fb')](_0x4c90df['TeamOutlined'],null),'time':_0x5b1a73['default'][_0xfba31('0x4fb')](_0x4c90df['ClockCircleOutlined'],null),'leave':_0x5b1a73[_0xfba31('0x4f8')]['createElement'](_0x4c90df[_0xfba31('0xad')],null),'pay':_0x5b1a73[_0xfba31('0x4f8')][_0xfba31('0x4fb')](_0x4c90df[_0xfba31('0x21a')],null),'recruitment':_0x5b1a73[_0xfba31('0x4f8')][_0xfba31('0x4fb')](_0x4c90df[_0xfba31('0x2bb')],null),'learning':_0x5b1a73[_0xfba31('0x4f8')][_0xfba31('0x4fb')](_0x4c90df[_0xfba31('0x59c')],null),'performance':_0x5b1a73['default'][_0xfba31('0x4fb')](_0x4c90df['TrophyOutlined'],null),'documents':_0x5b1a73[_0xfba31('0x4f8')][_0xfba31('0x4fb')](_0x4c90df[_0xfba31('0x2d6')],null),'reports':_0x5b1a73[_0xfba31('0x4f8')]['createElement'](_0x4c90df['BarChartOutlined'],null),'configuration':_0x5b1a73[_0xfba31('0x4f8')][_0xfba31('0x4fb')](_0x4c90df[_0xfba31('0x52e')],null),'system':_0x5b1a73[_0xfba31('0x4f8')][_0xfba31('0x4fb')](_0x4c90df[_0xfba31('0x3a9')],null),'more':_0x5b1a73[_0xfba31('0x4f8')][_0xfba31('0x4fb')](_0x4c90df[_0xfba31('0x443')],null)}),_0x533df2=function(_0x3408db){var _0x21c5cf=_0xfba31;return _0x2695f5[_0x3408db]||_0x5b1a73[_0x21c5cf('0x4f8')][_0x21c5cf('0x4fb')](_0x4c90df[_0x21c5cf('0x443')],null);};function _0x2376ac(_0x31b715,_0x53697e){var _0x2045de=_0xfba31;return _0x5b1a73[_0x2045de('0x4f8')][_0x2045de('0x4fb')](_0x2045de('0x433'),{'style':{'display':_0x2045de('0x37f'),'alignItems':'center','gap':0x7,'paddingTop':0xc,'marginTop':0x2,'borderTop':'1px\x20solid\x20rgba(255,255,255,0.08)','fontSize':10.5,'fontWeight':0x2bc,'letterSpacing':1.3,'textTransform':_0x2045de('0x2c'),'color':_0x2045de('0xa3'),'cursor':_0x2045de('0x4f8'),'userSelect':'none'}},_0x5b1a73[_0x2045de('0x4f8')][_0x2045de('0x1f3')](_0x31b715,{'style':{'fontSize':0xc,'opacity':0.85}}),_0x5b1a73['default'][_0x2045de('0x4fb')](_0x2045de('0x433'),null,_0x53697e));}function _0x420b14(_0x471ae5,_0x1e9faa){var _0x16b877=_0xfba31;return''[_0x16b877('0x39d')](_0x471ae5)[_0x16b877('0x39d')]('::')[_0x16b877('0x39d')](_0x1e9faa);}},{'./Dashboard':0x4,'./EmployeeDashboard':0x5,'./LicenseRenewalBanner':0xc,'./ModuleSearch':0xe,'./NativeDocumentModal':0x11,'./NativeModuleHost':0x13,'./News':0x14,'./Notifications':0x15,'./UpdateAvailableBanner':0x18,'./theme':0x1a,'@ant-design/icons':_0x401518('0x480'),'antd':'antd','react':'react'}],0x3:[function(_0x11220f,_0x5d1441,_0x3f5a1e){var _0x1afbda=_0x401518;'use strict';function _0x1de2e4(_0x36c4c1){var _0x12055f=_0x3d72;return(_0x1de2e4='function'==typeof Symbol&&_0x12055f('0x4da')==typeof Symbol[_0x12055f('0x20e')]?function(_0x578731){return typeof _0x578731;}:function(_0x2f6655){var _0x460694=_0x12055f;return _0x2f6655&&_0x460694('0x3da')==typeof Symbol&&_0x2f6655['constructor']===Symbol&&_0x2f6655!==Symbol['prototype']?_0x460694('0x4da'):typeof _0x2f6655;})(_0x36c4c1);}Object[_0x1afbda('0x14d')](_0x3f5a1e,'__esModule',{'value':!0x0}),_0x3f5a1e['default']=function(_0x4e7ce7){var _0x3e3ecc=_0x1afbda,_0x3617e4=_0x4e7ce7[_0x3e3ecc('0x5a9')],_0x737374=_0xb578d5((0x0,_0x43e51f[_0x3e3ecc('0x5a7')])(null),0x2),_0x520f3e=_0x737374[0x0],_0x3ab54a=_0x737374[0x1],_0x44cbc4=_0xb578d5((0x0,_0x43e51f[_0x3e3ecc('0x5a7')])(!0x1),0x2),_0x58d3f1=_0x44cbc4[0x0],_0x100204=_0x44cbc4[0x1],_0x4332c7=_0xb578d5((0x0,_0x43e51f['useState'])(''),0x2),_0x3df814=_0x4332c7[0x0],_0x41d649=_0x4332c7[0x1],_0x5eaaa3=_0xb578d5((0x0,_0x43e51f['useState'])(0x1),0x2),_0x34081c=_0x5eaaa3[0x0],_0x3d910f=_0x5eaaa3[0x1],_0x435ed4=(0x0,_0x43e51f[_0x3e3ecc('0x58b')])(null),_0x4844e6=_0x5a79ca[_0x3e3ecc('0x587')][_0x3e3ecc('0x75')]()[_0x3e3ecc('0x331')],_0x5f4596=(0x0,_0x43e51f[_0x3e3ecc('0x32a')])(function(){var _0x1f99c6=_0x3e3ecc;fetch(''['concat'](_0x3617e4[_0x1f99c6('0x28d')],_0x1f99c6('0x16')),{'headers':{'Authorization':_0x1f99c6('0x55b')[_0x1f99c6('0x39d')](_0x3617e4[_0x1f99c6('0x331')])},'credentials':_0x1f99c6('0x1a5')})['then'](function(_0x1b60e0){var _0x8055b5=_0x1f99c6;return _0x1b60e0[_0x8055b5('0x580')]();})['then'](function(_0x3e2a7b){var _0x6c2c2c=_0x1f99c6;return _0x3ab54a(_0x3e2a7b&&_0x3e2a7b[_0x6c2c2c('0x26f')]||[]);})[_0x1f99c6('0x2e')](function(){return _0x100204(!0x0);});},[_0x3617e4]);(0x0,_0x43e51f[_0x3e3ecc('0x138')])(function(){_0x5f4596();},[_0x5f4596]),(0x0,_0x43e51f[_0x3e3ecc('0x138')])(function(){var _0x5c99a8=_0x3e3ecc,_0x51ab36=(window['modJsList']||{})['tabCompanyStructure'];if(_0x51ab36){_0x435ed4[_0x5c99a8('0x234')]=_0x51ab36,_0x51ab36[_0x5c99a8('0x25c')]={'current':{'reload':function(){return _0x5f4596();},'setCurrentElement':function(){},'setLoading':function(){},'setFilterData':function(){}}};try{_0x51ab36[_0x5c99a8('0x578')]&&_0x51ab36['masterDataReader']['updateAllMasterData']&&_0x51ab36['masterDataReader'][_0x5c99a8('0x27')]();}catch(_0x30a4de){}}},[null===_0x520f3e,_0x5f4596]);var _0x894ef3=function(){var _0x5bda7a=_0x3e3ecc;return _0x435ed4[_0x5bda7a('0x234')]||(window[_0x5bda7a('0x2f0')]||{})[_0x5bda7a('0x15f')];},_0x58521e=function(_0x5c74bf){var _0x5b9b53=_0x3e3ecc,_0x5e4c8e=_0x894ef3();return _0x5e4c8e&&_0x5e4c8e[_0x5b9b53('0x127')]&&_0x5e4c8e['hasAccess'](_0x5c74bf);},_0x184037=(0x0,_0x43e51f[_0x3e3ecc('0x5a8')])(function(){var _0x5c4c2e=_0x3e3ecc,_0x111d2f=_0x520f3e||[],_0x1c5998=_0x3df814[_0x5c4c2e('0x46d')]()['toLowerCase']();return _0x1c5998?_0x111d2f['filter'](function(_0x334e63){var _0x306b88=_0x5c4c2e;return''['concat'](_0x334e63[_0x306b88('0x115')],'\x20')['concat'](_0x334e63['type'],'\x20')[_0x306b88('0x39d')](_0x334e63[_0x306b88('0x4a6')],'\x20')[_0x306b88('0x39d')](_0x334e63[_0x306b88('0x149')]||'')[_0x306b88('0x273')]()[_0x306b88('0x224')](_0x1c5998);}):_0x111d2f;},[_0x520f3e,_0x3df814]),_0x510fd4=(0x0,_0x43e51f[_0x3e3ecc('0x5a8')])(function(){var _0x55cc3c=_0x3e3ecc;return _0x184037[_0x55cc3c('0x5d')](0x6*(_0x34081c-0x1),0x6*_0x34081c);},[_0x184037,_0x34081c]);if((0x0,_0x43e51f[_0x3e3ecc('0x138')])(function(){_0x3d910f(0x1);},[_0x3df814]),_0x58d3f1)return _0x43e51f[_0x3e3ecc('0x4f8')][_0x3e3ecc('0x4fb')](_0x5a79ca[_0x3e3ecc('0x5a5')],{'description':_0x3e3ecc('0x11a')});if(!_0x520f3e)return _0x43e51f[_0x3e3ecc('0x4f8')]['createElement']('div',{'style':{'display':'flex','justifyContent':_0x3e3ecc('0x36e'),'padding':0x3c}},_0x43e51f[_0x3e3ecc('0x4f8')][_0x3e3ecc('0x4fb')](_0x5a79ca['Spin'],{'size':_0x3e3ecc('0x54a')}));var _0x4b37a2=function(_0x2f7ac9,_0x19e446){var _0x535629=_0x3e3ecc;return _0x19e446?_0x43e51f[_0x535629('0x4f8')][_0x535629('0x4fb')](_0x535629('0x433'),{'style':{'display':_0x535629('0x595'),'alignItems':_0x535629('0x36e'),'gap':0x5,'maxWidth':0x118,'overflow':'hidden'}},_0x2f7ac9,_0x43e51f[_0x535629('0x4f8')][_0x535629('0x4fb')]('span',{'style':{'overflow':_0x535629('0x3ee'),'textOverflow':_0x535629('0x4f4'),'whiteSpace':'nowrap'}},_0x19e446)):null;};return _0x43e51f[_0x3e3ecc('0x4f8')][_0x3e3ecc('0x4fb')](_0x3e3ecc('0x1c7'),null,_0x43e51f[_0x3e3ecc('0x4f8')][_0x3e3ecc('0x4fb')](_0x3e3ecc('0x1c7'),{'id':_0x3e3ecc('0x2c5'),'style':{'display':_0x3e3ecc('0xa')}}),_0x43e51f[_0x3e3ecc('0x4f8')]['createElement']('div',{'id':'CompanyStructureFilterForm','style':{'display':'none'}}),_0x43e51f[_0x3e3ecc('0x4f8')][_0x3e3ecc('0x4fb')](_0x3e3ecc('0x1c7'),{'style':{'display':_0x3e3ecc('0x37f'),'justifyContent':_0x3e3ecc('0x551'),'alignItems':_0x3e3ecc('0x36e'),'gap':0xc,'marginBottom':0x10,'flexWrap':_0x3e3ecc('0x24b')}},_0x43e51f['default'][_0x3e3ecc('0x4fb')](_0x3e3ecc('0x1c7'),null,_0x58521e(_0x3e3ecc('0x584'))&&_0x43e51f[_0x3e3ecc('0x4f8')][_0x3e3ecc('0x4fb')](_0x5a79ca[_0x3e3ecc('0x244')],{'type':'primary','icon':_0x43e51f[_0x3e3ecc('0x4f8')]['createElement'](_0x6efd02[_0x3e3ecc('0x5a1')],null),'onClick':function(){var _0x5052bc=_0x3e3ecc,_0x238280=_0x894ef3();_0x238280&&_0x238280[_0x5052bc('0x4f7')]();}},'Add\x20Structure')),_0x43e51f[_0x3e3ecc('0x4f8')]['createElement'](_0x5a79ca[_0x3e3ecc('0x8')][_0x3e3ecc('0x4e3')],{'allowClear':!0x0,'placeholder':_0x3e3ecc('0x527'),'style':{'maxWidth':0x118},'onChange':function(_0x4c2f02){var _0x582787=_0x3e3ecc;return _0x41d649(_0x4c2f02[_0x582787('0x463')][_0x582787('0x3dc')]);}})),0x0===_0x184037[_0x3e3ecc('0x5ba')]?_0x43e51f[_0x3e3ecc('0x4f8')]['createElement'](_0x5a79ca[_0x3e3ecc('0x5a5')],{'description':_0x3e3ecc('0x402')}):_0x43e51f[_0x3e3ecc('0x4f8')][_0x3e3ecc('0x4fb')](_0x43e51f[_0x3e3ecc('0x4f8')][_0x3e3ecc('0x3e0')],null,_0x43e51f[_0x3e3ecc('0x4f8')][_0x3e3ecc('0x4fb')](_0x3e3ecc('0x1c7'),{'style':{'display':_0x3e3ecc('0x37f'),'flexDirection':'column','gap':0xa}},_0x510fd4[_0x3e3ecc('0x427')](function(_0xc575c5){var _0x2698a2=_0x3e3ecc,_0x1d60a0,_0x32500e=(_0x1d60a0=_0xc575c5[_0x2698a2('0x3b7')],_0x1b1d3a[_0x1d60a0]||{'icon':_0x43e51f[_0x2698a2('0x4f8')]['createElement'](_0x6efd02[_0x2698a2('0x1a7')],null),'color':_0x2698a2('0x70')});return _0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x5a79ca[_0x2698a2('0xdd')],{'key':_0xc575c5['id'],'hoverable':!0x0,'onClick':function(){var _0x4ae4f1=_0x2698a2;return _0x44add6=_0xc575c5['id'],void((_0x173004=_0x894ef3())&&_0x173004[_0x4ae4f1('0x1db')]&&_0x173004[_0x4ae4f1('0x1db')](_0x44add6));var _0x44add6,_0x173004;},'style':{'borderRadius':0xa,'boxShadow':_0xdc40d2[_0x2698a2('0x55d')],'cursor':'pointer'},'styles':{'body':{'padding':_0x2698a2('0x3')}}},_0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x2698a2('0x1c7'),{'style':{'display':_0x2698a2('0x37f'),'alignItems':_0x2698a2('0x36e'),'gap':0xe}},_0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x2698a2('0x1c7'),{'style':{'width':0x28,'height':0x28,'borderRadius':0xa,'flex':_0x2698a2('0x401'),'background':''[_0x2698a2('0x39d')](_0x32500e[_0x2698a2('0x394')],'18'),'color':_0x32500e[_0x2698a2('0x394')],'display':_0x2698a2('0x37f'),'alignItems':_0x2698a2('0x36e'),'justifyContent':_0x2698a2('0x36e'),'fontSize':0x12}},_0x32500e[_0x2698a2('0x405')]),_0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x2698a2('0x1c7'),{'style':{'minWidth':0x0,'flex':0x1}},_0x43e51f['default'][_0x2698a2('0x4fb')]('div',{'style':{'display':'flex','alignItems':_0x2698a2('0x36e'),'gap':0x8,'flexWrap':_0x2698a2('0x24b')}},_0x43e51f['default'][_0x2698a2('0x4fb')](_0x2698a2('0x433'),{'style':{'fontWeight':0x258,'fontSize':0xe}},_0xc575c5[_0x2698a2('0x115')]),_0x43e51f[_0x2698a2('0x4f8')]['createElement'](_0x5a79ca[_0x2698a2('0x4d8')],{'style':{'borderRadius':0x6,'margin':0x0}},_0xc575c5[_0x2698a2('0x3b7')]||_0x2698a2('0x57c')),_0xc575c5[_0x2698a2('0x4a9')]>0x0&&_0x43e51f['default'][_0x2698a2('0x4fb')](_0x5a79ca[_0x2698a2('0x4d8')],{'color':_0x2698a2('0x568'),'style':{'borderRadius':0x6,'margin':0x0}},_0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x6efd02['UserOutlined'],null),'\x20',_0xc575c5[_0x2698a2('0x4a9')])),_0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x2698a2('0x1c7'),{'style':{'display':'flex','alignItems':_0x2698a2('0x36e'),'gap':0x10,'marginTop':0x4,'color':_0x4844e6[_0x2698a2('0x359')],'fontSize':12.5,'flexWrap':_0x2698a2('0x24b')}},_0x4b37a2(_0x43e51f[_0x2698a2('0x4f8')]['createElement'](_0x6efd02[_0x2698a2('0x1a0')],null),_0xc575c5[_0x2698a2('0x149')]?'Reports\x20to\x20'[_0x2698a2('0x39d')](_0xc575c5[_0x2698a2('0x149')]):_0x2698a2('0x35e')),_0x4b37a2(_0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x6efd02[_0x2698a2('0x16b')],null),_0xc575c5[_0x2698a2('0x28a')]),_0x4b37a2(_0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x6efd02[_0x2698a2('0x17c')],null),_0xc575c5['country']),_0x4b37a2(_0x43e51f['default'][_0x2698a2('0x4fb')](_0x6efd02['ClockCircleOutlined'],null),_0xc575c5[_0x2698a2('0x542')]))),_0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x2698a2('0x1c7'),{'style':{'display':'flex','gap':0xa,'flex':_0x2698a2('0x401')},'onClick':function(_0x1dace1){var _0x5cba5b=_0x2698a2;return _0x1dace1[_0x5cba5b('0x255')]();}},_0x58521e(_0x2698a2('0x584'))&&_0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x5a79ca[_0x2698a2('0xa0')],{'title':'Edit'},_0x43e51f['default'][_0x2698a2('0x4fb')](_0x5a79ca[_0x2698a2('0x244')],{'icon':_0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x6efd02[_0x2698a2('0x483')],{'style':{'color':_0x2698a2('0x239')}}),'onClick':function(){return _0xf54fe6=_0xc575c5['id'],void((_0x2f970f=_0x894ef3())&&_0x2f970f['edit'](_0xf54fe6));var _0xf54fe6,_0x2f970f;}})),_0x58521e(_0x2698a2('0x584'))&&_0x43e51f[_0x2698a2('0x4f8')]['createElement'](_0x5a79ca['Tooltip'],{'title':_0x2698a2('0x104')},_0x43e51f[_0x2698a2('0x4f8')][_0x2698a2('0x4fb')](_0x5a79ca[_0x2698a2('0x244')],{'icon':_0x43e51f[_0x2698a2('0x4f8')]['createElement'](_0x6efd02['CopyOutlined'],{'style':{'color':_0x2698a2('0x423')}}),'onClick':function(){var _0x35d350=_0x2698a2;return _0x119848=_0xc575c5['id'],void((_0x3fcbb3=_0x894ef3())&&_0x3fcbb3['copyRow']&&_0x3fcbb3[_0x35d350('0x4ff')](_0x119848));var _0x119848,_0x3fcbb3;}})),_0x58521e(_0x2698a2('0x1fd'))&&_0x43e51f['default']['createElement'](_0x5a79ca[_0x2698a2('0xa0')],{'title':'Delete'},_0x43e51f['default'][_0x2698a2('0x4fb')](_0x5a79ca[_0x2698a2('0x244')],{'icon':_0x43e51f['default'][_0x2698a2('0x4fb')](_0x6efd02[_0x2698a2('0x395')],{'style':{'color':_0x2698a2('0x318')}}),'onClick':function(){return function(_0x53c3b7){var _0x46c218=_0x3d72,_0x2b6426=_0x894ef3();if(_0x2b6426){var _0x4c6da3=(_0x520f3e||[])['find'](function(_0x36df13){return String(_0x36df13['id'])===String(_0x53c3b7);});_0x5a79ca[_0x46c218('0x202')][_0x46c218('0x280')]({'title':_0x46c218('0x34d'),'content':_0x4c6da3?'Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20“'['concat'](_0x4c6da3['title'],'”?'):_0x46c218('0x71'),'okText':'Delete','okType':_0x46c218('0x3b2'),'onOk':function(){return new Promise(function(_0xb6fc5f){var _0x4103e8=_0x3d72;try{_0x2b6426[_0x4103e8('0x2a1')](_0x53c3b7,function(_0x17b388,_0x20dd6e){var _0x2bd990=_0x4103e8;0xc8===_0x17b388&&_0x2bd990('0x1bb')===_0x20dd6e?(_0x5a79ca[_0x2bd990('0x186')][_0x2bd990('0x3df')](_0x2bd990('0x227')),_0x5f4596()):_0x5a79ca['message'][_0x2bd990('0x13b')](_0x2bd990('0x232'),0x5),_0xb6fc5f();});}catch(_0x574d30){_0x5a79ca['message']['error'](_0x4103e8('0x366'),0x5),_0xb6fc5f();}});}});}}(_0xc575c5['id']);}})))));})),_0x43e51f[_0x3e3ecc('0x4f8')][_0x3e3ecc('0x4fb')](_0x3e3ecc('0x1c7'),{'style':{'display':'flex','justifyContent':'flex-end','marginTop':0x10}},_0x43e51f[_0x3e3ecc('0x4f8')][_0x3e3ecc('0x4fb')](_0x5a79ca['Pagination'],{'current':_0x34081c,'pageSize':0x6,'total':_0x184037[_0x3e3ecc('0x5ba')],'onChange':_0x3d910f,'showSizeChanger':!0x1,'showTotal':function(_0x5b3aaa){var _0x2a3482=_0x3e3ecc;return''[_0x2a3482('0x39d')](_0x5b3aaa,_0x2a3482('0x4c3'));}}))));};var _0x43e51f=function(_0x4a5e4b){var _0x2584ab=_0x1afbda;if(_0x4a5e4b&&_0x4a5e4b[_0x2584ab('0x30e')])return _0x4a5e4b;if(null===_0x4a5e4b||'object'!==_0x1de2e4(_0x4a5e4b)&&_0x2584ab('0x3da')!=typeof _0x4a5e4b)return{'default':_0x4a5e4b};var _0x24c981=_0x4d0da3();if(_0x24c981&&_0x24c981[_0x2584ab('0x1e7')](_0x4a5e4b))return _0x24c981['get'](_0x4a5e4b);var _0x3948a0={},_0x71ecc2=Object[_0x2584ab('0x14d')]&&Object[_0x2584ab('0x7f')];for(var _0x323c73 in _0x4a5e4b)if(Object['prototype'][_0x2584ab('0x25d')]['call'](_0x4a5e4b,_0x323c73)){var _0xb543a8=_0x71ecc2?Object[_0x2584ab('0x7f')](_0x4a5e4b,_0x323c73):null;_0xb543a8&&(_0xb543a8[_0x2584ab('0x4cb')]||_0xb543a8[_0x2584ab('0x300')])?Object[_0x2584ab('0x14d')](_0x3948a0,_0x323c73,_0xb543a8):_0x3948a0[_0x323c73]=_0x4a5e4b[_0x323c73];}return _0x3948a0[_0x2584ab('0x4f8')]=_0x4a5e4b,_0x24c981&&_0x24c981[_0x2584ab('0x300')](_0x4a5e4b,_0x3948a0),_0x3948a0;}(_0x11220f(_0x1afbda('0x592'))),_0x5a79ca=_0x11220f(_0x1afbda('0x389')),_0x6efd02=_0x11220f('@ant-design/icons'),_0xdc40d2=_0x11220f(_0x1afbda('0x1c8'));function _0x4d0da3(){var _0x1cf44c=_0x1afbda;if(_0x1cf44c('0x3da')!=typeof WeakMap)return null;var _0x216ba8=new WeakMap();return _0x4d0da3=function(){return _0x216ba8;},_0x216ba8;}function _0xb578d5(_0x4131ea,_0x2e1792){return function(_0x485ff5){var _0x35d739=_0x3d72;if(Array[_0x35d739('0x52b')](_0x485ff5))return _0x485ff5;}(_0x4131ea)||function(_0x38c226,_0x3c7052){var _0x3b4119=_0x3d72;if(_0x3b4119('0x20a')==typeof Symbol||!(Symbol['iterator']in Object(_0x38c226)))return;var _0x1f4fc7=[],_0x290222=!0x0,_0x5b099d=!0x1,_0xa24d4d=void 0x0;try{for(var _0x4740e5,_0x123e51=_0x38c226[Symbol[_0x3b4119('0x20e')]]();!(_0x290222=(_0x4740e5=_0x123e51[_0x3b4119('0xc')]())['done'])&&(_0x1f4fc7['push'](_0x4740e5[_0x3b4119('0x3dc')]),!_0x3c7052||_0x1f4fc7['length']!==_0x3c7052);_0x290222=!0x0);}catch(_0x3f49d7){_0x5b099d=!0x0,_0xa24d4d=_0x3f49d7;}finally{try{_0x290222||null==_0x123e51[_0x3b4119('0x41c')]||_0x123e51[_0x3b4119('0x41c')]();}finally{if(_0x5b099d)throw _0xa24d4d;}}return _0x1f4fc7;}(_0x4131ea,_0x2e1792)||function(_0x260c50,_0x4efab8){var _0x14222d=_0x3d72;if(!_0x260c50)return;if(_0x14222d('0x4dd')==typeof _0x260c50)return _0x143cb3(_0x260c50,_0x4efab8);var _0x23006b=Object['prototype'][_0x14222d('0x4ef')]['call'](_0x260c50)['slice'](0x8,-0x1);_0x14222d('0x2ed')===_0x23006b&&_0x260c50[_0x14222d('0xaa')]&&(_0x23006b=_0x260c50[_0x14222d('0xaa')][_0x14222d('0x3b6')]);if(_0x14222d('0x235')===_0x23006b||'Set'===_0x23006b)return Array[_0x14222d('0xd7')](_0x23006b);if(_0x14222d('0x5ab')===_0x23006b||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x14222d('0x56e')](_0x23006b))return _0x143cb3(_0x260c50,_0x4efab8);}(_0x4131ea,_0x2e1792)||function(){var _0x30ed88=_0x3d72;throw new TypeError(_0x30ed88('0x311'));}();}function _0x143cb3(_0x53f8e2,_0x459657){var _0x499d0e=_0x1afbda;(null==_0x459657||_0x459657>_0x53f8e2[_0x499d0e('0x5ba')])&&(_0x459657=_0x53f8e2['length']);for(var _0x445c92=0x0,_0x4f0854=new Array(_0x459657);_0x445c92<_0x459657;_0x445c92++)_0x4f0854[_0x445c92]=_0x53f8e2[_0x445c92];return _0x4f0854;}var _0x1b1d3a={'Company':{'icon':_0x43e51f['default'][_0x1afbda('0x4fb')](_0x6efd02[_0x1afbda('0x210')],null),'color':_0xdc40d2[_0x1afbda('0x316')]['primary']},'Head\x20Office':{'icon':_0x43e51f['default'][_0x1afbda('0x4fb')](_0x6efd02['HomeOutlined'],null),'color':_0x1afbda('0x5b5')},'Regional\x20Office':{'icon':_0x43e51f[_0x1afbda('0x4f8')][_0x1afbda('0x4fb')](_0x6efd02[_0x1afbda('0x2fa')],null),'color':_0x1afbda('0x55f')},'Department':{'icon':_0x43e51f[_0x1afbda('0x4f8')][_0x1afbda('0x4fb')](_0x6efd02['ApartmentOutlined'],null),'color':_0x1afbda('0x239')},'Unit':{'icon':_0x43e51f[_0x1afbda('0x4f8')][_0x1afbda('0x4fb')](_0x6efd02[_0x1afbda('0x5aa')],null),'color':_0x1afbda('0x62')},'Sub\x20Unit':{'icon':_0x43e51f[_0x1afbda('0x4f8')][_0x1afbda('0x4fb')](_0x6efd02['TeamOutlined'],null),'color':_0x1afbda('0x62')}};},{'./theme':0x1a,'@ant-design/icons':'@ant-design/icons','antd':_0x401518('0x389'),'react':'react'}],0x4:[function(_0x540eec,_0xc2b2c3,_0x55d1e5){var _0x4ac2c7=_0x401518;'use strict';function _0x132657(_0x3f98b2){var _0x522944=_0x3d72;return(_0x132657=_0x522944('0x3da')==typeof Symbol&&_0x522944('0x4da')==typeof Symbol['iterator']?function(_0x77afe8){return typeof _0x77afe8;}:function(_0x4ebb98){var _0x4fb451=_0x522944;return _0x4ebb98&&_0x4fb451('0x3da')==typeof Symbol&&_0x4ebb98[_0x4fb451('0xaa')]===Symbol&&_0x4ebb98!==Symbol[_0x4fb451('0x3d4')]?_0x4fb451('0x4da'):typeof _0x4ebb98;})(_0x3f98b2);}Object[_0x4ac2c7('0x14d')](_0x55d1e5,_0x4ac2c7('0x30e'),{'value':!0x0}),_0x55d1e5[_0x4ac2c7('0x4f8')]=function(_0x31baf9){var _0x52c30a=_0x4ac2c7,_0x3a615c=_0x31baf9[_0x52c30a('0x3dd')],_0x4e84a0=_0x31baf9[_0x52c30a('0x51d')],_0x2a5543=_0x4a529d((0x0,_0x5d7eaf[_0x52c30a('0x5a7')])(null),0x2),_0x3890f0=_0x2a5543[0x0],_0x3af86=_0x2a5543[0x1],_0x411d7d=_0x4a529d((0x0,_0x5d7eaf['useState'])(!0x0),0x2),_0x3ae61d=_0x411d7d[0x0],_0x5d292a=_0x411d7d[0x1],_0x3d9cf3=_0x4a529d((0x0,_0x5d7eaf[_0x52c30a('0x5a7')])(null),0x2),_0x3ac49b=_0x3d9cf3[0x0],_0x45eff2=_0x3d9cf3[0x1],_0x353b7d=_0x29f4bb[_0x52c30a('0x587')][_0x52c30a('0x75')]()[_0x52c30a('0x331')],_0x469ac2=_0x353b7d[_0x52c30a('0x55')]===_0x54f172['MUI_DARK'][_0x52c30a('0xfd')],_0x274c58=_0x52c30a('0x481'),_0x3b585d=_0x469ac2?{'text':{'style':{'fill':_0x274c58}}}:{},_0x91d621=_0x469ac2?{'label':{'style':{'fill':_0x52c30a('0x518')}},'line':{'style':{'stroke':_0x52c30a('0x15a')}},'grid':{'line':{'style':{'stroke':_0x52c30a('0x22b')}}}}:{},_0x147b37=_0x469ac2?{'style':{'fill':_0x274c58}}:{};(0x0,_0x5d7eaf[_0x52c30a('0x138')])(function(){var _0x1af28d=_0x52c30a,_0x2a8ed6=!0x0;return fetch(''['concat'](_0x3a615c[_0x1af28d('0x28d')],_0x1af28d('0x449')),{'headers':{'Authorization':'Bearer\x20'[_0x1af28d('0x39d')](_0x3a615c[_0x1af28d('0x331')])},'credentials':_0x1af28d('0x1a5')})[_0x1af28d('0x12a')](function(_0x34b2b6){return _0x34b2b6['json']();})[_0x1af28d('0x12a')](function(_0x37bfad){_0x2a8ed6&&(_0x3af86(_0x37bfad),_0x5d292a(!0x1));})['catch'](function(_0x41c2f0){var _0x460e87=_0x1af28d;_0x2a8ed6&&(_0x45eff2(_0x41c2f0[_0x460e87('0x186')]),_0x5d292a(!0x1));}),function(){_0x2a8ed6=!0x1;};},[_0x3a615c]);var _0x43cec6=(0x0,_0x5d7eaf[_0x52c30a('0x5a8')])(function(){var _0x2be101=_0x52c30a;return Math[_0x2be101('0x523')]()<0.5;},[]),_0x75c0a5=(0x0,_0x5d7eaf['useMemo'])(function(){var _0x20ee49=_0x52c30a,_0x417db6=new Date()[_0x20ee49('0x31c')]();return _0x417db6<0xc?_0x20ee49('0xe6'):_0x417db6<0x12?_0x20ee49('0x35d'):_0x20ee49('0x403');},[]),_0x5904fa=(0x0,_0x5d7eaf['useMemo'])(function(){var _0x43b57e=_0x52c30a,_0x367a59=_0x3890f0&&_0x3890f0[_0x43b57e('0x35a')]||'';return-0x1!==_0x367a59[_0x43b57e('0x187')]('@')?_0x367a59[_0x43b57e('0x3d8')]('@')[0x0][_0x43b57e('0x4c6')](/[._]+/g,'\x20')[_0x43b57e('0x4c6')](/\b\w/g,function(_0x35a11a){var _0x39ae5e=_0x43b57e;return _0x35a11a[_0x39ae5e('0x339')]();}):_0x367a59;},[_0x3890f0]);if(_0x3ae61d)return _0x5d7eaf[_0x52c30a('0x4f8')]['createElement'](_0x52c30a('0x1c7'),{'style':{'display':_0x52c30a('0x37f'),'justifyContent':'center','padding':0x50}},_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x29f4bb[_0x52c30a('0x4cc')],{'size':_0x52c30a('0x54a')}));if(_0x3ac49b||!_0x3890f0)return _0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x52c30a('0x1c7'),{'style':{'padding':0x20}},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x29f4bb[_0x52c30a('0x5a5')],{'description':_0x52c30a('0x4a7')[_0x52c30a('0x39d')](_0x3ac49b?':\x20'[_0x52c30a('0x39d')](_0x3ac49b):'')}));var _0xbbc2e8=_0x3890f0[_0x52c30a('0x3be')]||{},_0x5f02e6=[{'label':'Employees','value':_0xbbc2e8['totalEmployees'],'icon':_0x5d7eaf[_0x52c30a('0x4f8')]['createElement'](_0x145e58[_0x52c30a('0x5aa')],null),'color':_0x52c30a('0x533'),'nav':['admin',_0x52c30a('0x5b4')]},{'label':_0x52c30a('0x468'),'value':_0xbbc2e8[_0x52c30a('0x228')],'icon':_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x145e58[_0x52c30a('0x1a7')],null),'color':_0x52c30a('0x36a'),'nav':['admin','company_structure']}];_0x3890f0[_0x52c30a('0x1b1')]&&_0x5f02e6['push']({'label':'Pending\x20Approvals','value':_0x3890f0[_0x52c30a('0x1b1')][_0x52c30a('0x21')],'icon':_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x145e58[_0x52c30a('0x53e')],null),'color':_0x52c30a('0xec'),'nav':[_0x52c30a('0x3ce'),'leaves',_0x52c30a('0x4fc')]}),_0x3890f0['expenses']&&_0x5f02e6['push']({'label':_0x52c30a('0x4f1'),'value':_0x3890f0[_0x52c30a('0x4b1')][_0x52c30a('0x564')],'icon':_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x145e58[_0x52c30a('0x21a')],null),'color':'#5B8FF9','nav':[_0x52c30a('0x5b7'),'expenses|admin','tabEmployeeExpense']});var _0x7efb8d=function(_0x15cf5a){var _0x52fd3d=_0x52c30a;return{'data':_0x15cf5a||[],'angleField':_0x52fd3d('0x3dc'),'colorField':_0x52fd3d('0x3b7'),'radius':0.9,'padding':_0x52fd3d('0x4b6'),'color':_0x342d79,'legend':_0x275def({'visible':!0x0,'position':'bottom-center'},_0x3b585d),'label':{'visible':!0x1},'statistic':{'totalLabel':_0x52fd3d('0x10c')}};};return _0x5d7eaf['default']['createElement'](_0x52c30a('0x1c7'),{'style':{'padding':0x18,'maxWidth':0x5dc,'margin':_0x52c30a('0x201')}},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x5232ee,{'show':_0x3890f0[_0x52c30a('0x4b')],'onNavigate':_0x4e84a0}),_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x3fa801,{'billing':_0x3890f0[_0x52c30a('0x33d')],'onNavigate':_0x4e84a0}),_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x201bb6,{'upgradeAd':_0x3890f0[_0x52c30a('0x242')],'onNavigate':_0x4e84a0}),_0x5d7eaf['default'][_0x52c30a('0x4fb')]('div',{'style':{'marginBottom':0x12}},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x52c30a('0x1c7'),{'style':{'fontSize':0x16,'fontWeight':0x2bc}},_0x75c0a5,',','\x20',_0x5904fa,'\x20','👋'),_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x5effe5,{'type':'secondary'},_0x52c30a('0x2c6'))),_0x5d7eaf[_0x52c30a('0x4f8')]['createElement'](_0x29f4bb[_0x52c30a('0xa6')],{'gutter':[0x10,0x10]},_0x5f02e6[_0x52c30a('0x427')](function(_0x5c9be8){var _0x44750f=_0x52c30a;return _0x5d7eaf['default'][_0x44750f('0x4fb')](_0x29f4bb[_0x44750f('0x174')],{'xs':0xc,'sm':0x8,'md':0x6,'xl':_0x5f02e6[_0x44750f('0x5ba')]>0x6?0x4:0x6,'key':_0x5c9be8[_0x44750f('0x278')]},_0x5d7eaf[_0x44750f('0x4f8')][_0x44750f('0x4fb')](_0x5053da,_0x5e9f35({},_0x5c9be8,{'labelColor':_0x353b7d['colorTextSecondary'],'subColor':_0x353b7d[_0x44750f('0x49f')],'onClick':_0x5c9be8['nav']&&_0x4e84a0?function(){var _0x3d7b3f=_0x44750f;if(_0x5c9be8['nav'][0x2])try{window[_0x3d7b3f('0x171')]=_0x5c9be8['nav'][0x2];}catch(_0x39b1ad){}_0x4e84a0(_0x5c9be8[_0x3d7b3f('0x3cf')][0x0],_0x5c9be8[_0x3d7b3f('0x3cf')][0x1]);}:void 0x0})));}),_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x29f4bb['Col'],{'xs':0xc,'sm':0x8,'md':0x6,'xl':_0x5f02e6['length']>0x6?0x4:0x6},_0x43cec6?_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x306174,{'onLearnMore':_0x4e84a0?function(){var _0x12d022=_0x52c30a;try{window[_0x12d022('0x171')]=_0x12d022('0xcc');}catch(_0x54d50b){}_0x4e84a0(_0x12d022('0x5b7'),_0x12d022('0x10e'));}:void 0x0}):_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x4cbba0,{'onCompare':_0x4e84a0?function(){var _0x3f4eb5=_0x52c30a;try{window[_0x3f4eb5('0x171')]=_0x3f4eb5('0x45f');}catch(_0x572778){}_0x4e84a0(_0x3f4eb5('0x5b7'),_0x3f4eb5('0x10e'));}:void 0x0}))),_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x29f4bb[_0x52c30a('0xa6')],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x29f4bb[_0x52c30a('0x174')],{'xs':0x18,'lg':0x10},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x160e79,{'title':_0x52c30a('0xa7'),'extra':_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x29f4bb['Tag'],{'color':'blue'},_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x145e58[_0x52c30a('0x1b4')],null),_0x52c30a('0x264'))},_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x5bf54e,{'type':_0x52c30a('0x2d0'),'height':0x104,'config':{'data':_0x3890f0[_0x52c30a('0x154')]||[],'xField':'year','yField':'value','smooth':!0x0,'padding':_0x52c30a('0x4b6'),'color':_0x52c30a('0x533'),'areaStyle':{'fill':_0x52c30a('0x22e')[_0x52c30a('0x39d')](_0x353b7d[_0x52c30a('0x55')],'\x201:#346CB0')},'xAxis':_0x275def({'visible':!0x0},_0x91d621),'yAxis':_0x275def({'visible':!0x0,'min':0x0},_0x91d621),'point':{'visible':!0x1}}}))),_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x29f4bb[_0x52c30a('0x174')],{'xs':0x18,'lg':0x8},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x160e79,{'title':_0x52c30a('0x43')},_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x5bf54e,{'type':_0x52c30a('0x354'),'height':0x104,'config':_0x7efb8d(_0x3890f0[_0x52c30a('0x43d')])})))),_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x29f4bb[_0x52c30a('0xa6')],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x29f4bb['Col'],{'xs':0x18,'lg':0xe},_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x160e79,{'title':'Headcount\x20by\x20department'},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x5bf54e,{'type':_0x52c30a('0x13c'),'height':0xfa,'config':{'data':_0x3890f0[_0x52c30a('0x29f')]||[],'xField':_0x52c30a('0x3b6'),'yField':'value','padding':_0x52c30a('0x4b6'),'color':'#5B8FF9','columnSize':0x26,'label':_0x275def({'visible':!0x0,'position':_0x52c30a('0x47c')},_0x147b37),'xAxis':_0x275def({'visible':!0x0},_0x91d621),'yAxis':_0x275def({'visible':!0x0,'min':0x0},_0x91d621)}}))),_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x29f4bb[_0x52c30a('0x174')],{'xs':0x18,'lg':0xa},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x160e79,{'title':_0x52c30a('0x282')},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x5bf54e,{'type':_0x52c30a('0x354'),'height':0xfa,'config':_0x7efb8d(_0x3890f0[_0x52c30a('0x96')])})))),_0x5d7eaf['default']['createElement'](_0x29f4bb['Row'],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x29f4bb[_0x52c30a('0x174')],{'xs':0x18,'md':0xc,'xl':0x8},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x160e79,{'title':_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x52c30a('0x433'),null,_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x145e58[_0x52c30a('0x30a')],null),_0x52c30a('0x270'))},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x3933bd,{'data':_0x3890f0['recentHires'],'emptyText':_0x52c30a('0x3f3'),'renderMeta':function(_0x300af8){var _0x3afd7b=_0x52c30a;return _0x5d7eaf['default'][_0x3afd7b('0x4fb')](_0x5effe5,{'type':_0x3afd7b('0x18d'),'style':{'fontSize':0xc}},_0x300af8[_0x3afd7b('0x115')]||_0x3afd7b('0x2fe'),_0x3afd7b('0x76'),_0x3d0885(_0x300af8[_0x3afd7b('0x556')]));}}))),_0x3890f0['leave']?_0x5d7eaf[_0x52c30a('0x4f8')]['createElement'](_0x29f4bb[_0x52c30a('0x174')],{'xs':0x18,'md':0xc,'xl':0x8},_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x160e79,{'title':_0x5d7eaf['default'][_0x52c30a('0x4fb')](_0x52c30a('0x433'),null,_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x145e58['ClockCircleOutlined'],null),_0x52c30a('0x391')),'extra':_0x4e84a0?_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')]('a',{'onClick':function(){var _0x14bb91=_0x52c30a;try{window[_0x14bb91('0x171')]=_0x14bb91('0x4fc');}catch(_0x12ead8){}_0x4e84a0(_0x14bb91('0x3ce'),'leaves');}},_0x52c30a('0x4e4')):null},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x3933bd,{'data':_0x3890f0['leave'][_0x52c30a('0x4e')],'emptyText':_0x52c30a('0x46a'),'renderMeta':function(_0x3869dc){var _0x15b584=_0x52c30a;return _0x5d7eaf[_0x15b584('0x4f8')][_0x15b584('0x4fb')](_0x5effe5,{'type':_0x15b584('0x18d'),'style':{'fontSize':0xc}},_0x3869dc[_0x15b584('0x3b7')]||_0x15b584('0x337'),_0x15b584('0x515'),_0x3d0885(_0x3869dc[_0x15b584('0x376')]),_0x3869dc[_0x15b584('0x574')]&&_0x3869dc['end']!==_0x3869dc[_0x15b584('0x376')]?_0x15b584('0x15d')[_0x15b584('0x39d')](_0x3d0885(_0x3869dc[_0x15b584('0x574')])):'');}}))):null,_0x3890f0[_0x52c30a('0x478')]&&_0x3890f0[_0x52c30a('0x478')][_0x52c30a('0x5ba')]>0x0?_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x29f4bb[_0x52c30a('0x174')],{'xs':0x18,'md':0xc,'xl':0x8},_0x5d7eaf[_0x52c30a('0x4f8')]['createElement'](_0x160e79,{'title':_0x5d7eaf['default']['createElement']('span',null,_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x145e58[_0x52c30a('0x42b')],null),_0x52c30a('0x3e'))},_0x5d7eaf[_0x52c30a('0x4f8')][_0x52c30a('0x4fb')](_0x3933bd,{'data':_0x3890f0[_0x52c30a('0x478')],'renderMeta':function(_0x4ea1a7){var _0x54737c=_0x52c30a;return _0x5d7eaf[_0x54737c('0x4f8')][_0x54737c('0x4fb')](_0x5effe5,{'type':_0x54737c('0x18d'),'style':{'fontSize':0xc}},_0x54737c('0x1f9')===_0x4ea1a7['type']?_0x5d7eaf['default'][_0x54737c('0x4fb')]('span',null,_0x5d7eaf[_0x54737c('0x4f8')][_0x54737c('0x4fb')](_0x145e58['CalendarOutlined'],null),_0x54737c('0x9f')):_0x5d7eaf['default']['createElement'](_0x54737c('0x433'),null,_0x5d7eaf[_0x54737c('0x4f8')][_0x54737c('0x4fb')](_0x145e58[_0x54737c('0x42b')],null),'\x20',_0x4ea1a7['years'],_0x54737c('0x9b')),_0x54737c('0x515'),_0x3d0885(_0x4ea1a7[_0x54737c('0x556')]));}}))):null));};var _0x5d7eaf=function(_0x4c68c0){var _0x326cb7=_0x4ac2c7;if(_0x4c68c0&&_0x4c68c0['__esModule'])return _0x4c68c0;if(null===_0x4c68c0||_0x326cb7('0xd8')!==_0x132657(_0x4c68c0)&&_0x326cb7('0x3da')!=typeof _0x4c68c0)return{'default':_0x4c68c0};var _0x2a8730=_0x1d78c7();if(_0x2a8730&&_0x2a8730['has'](_0x4c68c0))return _0x2a8730[_0x326cb7('0x4cb')](_0x4c68c0);var _0x495e80={},_0x5af8d7=Object[_0x326cb7('0x14d')]&&Object['getOwnPropertyDescriptor'];for(var _0x59b0f8 in _0x4c68c0)if(Object['prototype'][_0x326cb7('0x25d')]['call'](_0x4c68c0,_0x59b0f8)){var _0x21e078=_0x5af8d7?Object[_0x326cb7('0x7f')](_0x4c68c0,_0x59b0f8):null;_0x21e078&&(_0x21e078['get']||_0x21e078[_0x326cb7('0x300')])?Object[_0x326cb7('0x14d')](_0x495e80,_0x59b0f8,_0x21e078):_0x495e80[_0x59b0f8]=_0x4c68c0[_0x59b0f8];}return _0x495e80[_0x326cb7('0x4f8')]=_0x4c68c0,_0x2a8730&&_0x2a8730[_0x326cb7('0x300')](_0x4c68c0,_0x495e80),_0x495e80;}(_0x540eec('react')),_0x29f4bb=_0x540eec('antd'),_0x145e58=_0x540eec(_0x4ac2c7('0x480')),_0x26f59c=_0x540eec(_0x4ac2c7('0x3f7')),_0x54f172=_0x540eec('./theme');function _0x1d78c7(){var _0x12220b=_0x4ac2c7;if(_0x12220b('0x3da')!=typeof WeakMap)return null;var _0x6b7b04=new WeakMap();return _0x1d78c7=function(){return _0x6b7b04;},_0x6b7b04;}function _0x5e9f35(){var _0xb7d4fb=_0x4ac2c7;return(_0x5e9f35=Object['assign']||function(_0x247517){var _0x1491b5=_0x3d72;for(var _0x31915b=0x1;_0x31915b<arguments[_0x1491b5('0x5ba')];_0x31915b++){var _0x441f78=arguments[_0x31915b];for(var _0x13b0c9 in _0x441f78)Object[_0x1491b5('0x3d4')][_0x1491b5('0x25d')]['call'](_0x441f78,_0x13b0c9)&&(_0x247517[_0x13b0c9]=_0x441f78[_0x13b0c9]);}return _0x247517;})[_0xb7d4fb('0x200')](this,arguments);}function _0x2e5889(_0x153f39,_0x5c11fb){var _0x171801=_0x4ac2c7,_0x17f39f=Object['keys'](_0x153f39);if(Object[_0x171801('0x17b')]){var _0x5c8f07=Object[_0x171801('0x17b')](_0x153f39);_0x5c11fb&&(_0x5c8f07=_0x5c8f07['filter'](function(_0x4f81de){var _0x5a0b9b=_0x171801;return Object[_0x5a0b9b('0x7f')](_0x153f39,_0x4f81de)[_0x5a0b9b('0x24')];})),_0x17f39f[_0x171801('0x3db')][_0x171801('0x200')](_0x17f39f,_0x5c8f07);}return _0x17f39f;}function _0x275def(_0x434bea){var _0x5a65ab=_0x4ac2c7;for(var _0x7b7f7d=0x1;_0x7b7f7d<arguments['length'];_0x7b7f7d++){var _0x21976b=null!=arguments[_0x7b7f7d]?arguments[_0x7b7f7d]:{};_0x7b7f7d%0x2?_0x2e5889(Object(_0x21976b),!0x0)['forEach'](function(_0x3d4503){_0x5a89c5(_0x434bea,_0x3d4503,_0x21976b[_0x3d4503]);}):Object['getOwnPropertyDescriptors']?Object['defineProperties'](_0x434bea,Object['getOwnPropertyDescriptors'](_0x21976b)):_0x2e5889(Object(_0x21976b))[_0x5a65ab('0x475')](function(_0x66bc6a){var _0x3042af=_0x5a65ab;Object[_0x3042af('0x14d')](_0x434bea,_0x66bc6a,Object[_0x3042af('0x7f')](_0x21976b,_0x66bc6a));});}return _0x434bea;}function _0x5a89c5(_0xd5b8d5,_0x4a3146,_0x375959){return _0x4a3146 in _0xd5b8d5?Object['defineProperty'](_0xd5b8d5,_0x4a3146,{'value':_0x375959,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0xd5b8d5[_0x4a3146]=_0x375959,_0xd5b8d5;}function _0x4a529d(_0x1d8911,_0x61b52d){return function(_0x4243){var _0x142eb5=_0x3d72;if(Array[_0x142eb5('0x52b')](_0x4243))return _0x4243;}(_0x1d8911)||function(_0x45e5ee,_0x11f41b){var _0x554e42=_0x3d72;if(_0x554e42('0x20a')==typeof Symbol||!(Symbol['iterator']in Object(_0x45e5ee)))return;var _0x4c176e=[],_0x33a797=!0x0,_0x1fb338=!0x1,_0x8f7bd0=void 0x0;try{for(var _0x53d91a,_0x4225ac=_0x45e5ee[Symbol[_0x554e42('0x20e')]]();!(_0x33a797=(_0x53d91a=_0x4225ac[_0x554e42('0xc')]())[_0x554e42('0x44')])&&(_0x4c176e[_0x554e42('0x3db')](_0x53d91a['value']),!_0x11f41b||_0x4c176e[_0x554e42('0x5ba')]!==_0x11f41b);_0x33a797=!0x0);}catch(_0x5a9f9a){_0x1fb338=!0x0,_0x8f7bd0=_0x5a9f9a;}finally{try{_0x33a797||null==_0x4225ac['return']||_0x4225ac[_0x554e42('0x41c')]();}finally{if(_0x1fb338)throw _0x8f7bd0;}}return _0x4c176e;}(_0x1d8911,_0x61b52d)||function(_0x38cb4b,_0x313719){var _0x813883=_0x3d72;if(!_0x38cb4b)return;if('string'==typeof _0x38cb4b)return _0x3331e4(_0x38cb4b,_0x313719);var _0xde3e0b=Object['prototype'][_0x813883('0x4ef')][_0x813883('0x545')](_0x38cb4b)['slice'](0x8,-0x1);_0x813883('0x2ed')===_0xde3e0b&&_0x38cb4b[_0x813883('0xaa')]&&(_0xde3e0b=_0x38cb4b[_0x813883('0xaa')][_0x813883('0x3b6')]);if(_0x813883('0x235')===_0xde3e0b||'Set'===_0xde3e0b)return Array[_0x813883('0xd7')](_0xde3e0b);if(_0x813883('0x5ab')===_0xde3e0b||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x813883('0x56e')](_0xde3e0b))return _0x3331e4(_0x38cb4b,_0x313719);}(_0x1d8911,_0x61b52d)||function(){var _0x5bfa47=_0x3d72;throw new TypeError(_0x5bfa47('0x311'));}();}function _0x3331e4(_0x4adafd,_0x4ad554){var _0x2d16fb=_0x4ac2c7;(null==_0x4ad554||_0x4ad554>_0x4adafd[_0x2d16fb('0x5ba')])&&(_0x4ad554=_0x4adafd[_0x2d16fb('0x5ba')]);for(var _0x4b3a92=0x0,_0x49edd7=new Array(_0x4ad554);_0x4b3a92<_0x4ad554;_0x4b3a92++)_0x49edd7[_0x4b3a92]=_0x4adafd[_0x4b3a92];return _0x49edd7;}var _0x5effe5=_0x29f4bb[_0x4ac2c7('0x4b3')]['Text'],_0x342d79=['#346CB0',_0x4ac2c7('0x36a'),'#5B8FF9',_0x4ac2c7('0x220'),'#E8684A','#9270CA','#6DC8EC',_0x4ac2c7('0x2dc')],_0x5ecdc8={'pie':_0x26f59c['Pie'],'donut':_0x26f59c[_0x4ac2c7('0x2ce')],'column':_0x26f59c[_0x4ac2c7('0x3c1')],'area':_0x26f59c['Area'],'bar':_0x26f59c['Bar']};function _0x5bf54e(_0x55eed1){var _0x56b787=_0x4ac2c7,_0x1e4c5e=_0x55eed1['type'],_0x4ef3d6=_0x55eed1[_0x56b787('0x3dd')],_0x124d8c=_0x55eed1['height'],_0x375856=void 0x0===_0x124d8c?0xe6:_0x124d8c,_0x2915cb=(0x0,_0x5d7eaf['useRef'])(null);return(0x0,_0x5d7eaf[_0x56b787('0x138')])(function(){var _0x59bcbb=_0x56b787;if(_0x2915cb[_0x59bcbb('0x234')]){var _0x423d34=_0x5ecdc8[_0x1e4c5e];if(_0x423d34){var _0x1ed101;try{(_0x1ed101=new _0x423d34(_0x2915cb[_0x59bcbb('0x234')],_0x4ef3d6))[_0x59bcbb('0x51a')]();}catch(_0x45dc46){}return function(){try{_0x1ed101&&_0x1ed101['destroy']();}catch(_0x1aa92f){}};}}},[_0x1e4c5e,JSON[_0x56b787('0x1d2')](_0x4ef3d6),_0x375856]),_0x5d7eaf[_0x56b787('0x4f8')]['createElement'](_0x56b787('0x1c7'),{'ref':_0x2915cb,'style':{'height':_0x375856}});}function _0x4a0c18(_0x58cce9){var _0x457f17=_0x4ac2c7;for(var _0x4b3f57=0x0,_0x2db4cf=0x0;_0x2db4cf<(_0x58cce9||'')['length'];_0x2db4cf+=0x1)_0x4b3f57=0x1f*_0x4b3f57+_0x58cce9[_0x457f17('0x504')](_0x2db4cf)>>>0x0;return _0x342d79[_0x4b3f57%_0x342d79[_0x457f17('0x5ba')]];}function _0x3d0885(_0x5dcae0){var _0x2676d0=_0x4ac2c7;if(!_0x5dcae0)return'';var _0x52e1fd=new Date(''['concat'](_0x5dcae0,_0x2676d0('0x4d9')));return Number[_0x2676d0('0x2c3')](_0x52e1fd[_0x2676d0('0x23d')]())?_0x5dcae0:_0x52e1fd[_0x2676d0('0x40f')](void 0x0,{'month':'short','day':_0x2676d0('0x2bf')});}function _0x5053da(_0x2a7555){var _0x21669a=_0x4ac2c7,_0x195dbf=_0x2a7555['icon'],_0x1508a9=_0x2a7555[_0x21669a('0x278')],_0x3c2286=_0x2a7555[_0x21669a('0x3dc')],_0x5d8175=_0x2a7555['color'],_0x25756d=_0x2a7555[_0x21669a('0x1c1')],_0x33d77c=_0x2a7555[_0x21669a('0x50a')],_0x48b9ef=_0x2a7555[_0x21669a('0x1be')],_0x409b48=_0x2a7555[_0x21669a('0x1a6')];return _0x5d7eaf[_0x21669a('0x4f8')][_0x21669a('0x4fb')](_0x29f4bb[_0x21669a('0xdd')],{'bordered':!0x1,'hoverable':!!_0x409b48,'onClick':_0x409b48,'style':{'borderRadius':0xe,'boxShadow':_0x54f172[_0x21669a('0x55d')],'cursor':_0x409b48?'pointer':_0x21669a('0x4f8')},'bodyStyle':{'padding':0x12}},_0x5d7eaf[_0x21669a('0x4f8')][_0x21669a('0x4fb')](_0x21669a('0x1c7'),{'style':{'display':_0x21669a('0x37f'),'alignItems':_0x21669a('0x36e'),'gap':0xe}},_0x5d7eaf[_0x21669a('0x4f8')][_0x21669a('0x4fb')]('div',{'style':{'width':0x2e,'height':0x2e,'borderRadius':0xc,'flex':_0x21669a('0x401'),'background':''[_0x21669a('0x39d')](_0x5d8175,'1f'),'color':_0x5d8175,'display':_0x21669a('0x37f'),'alignItems':_0x21669a('0x36e'),'justifyContent':_0x21669a('0x36e'),'fontSize':0x14}},_0x195dbf),_0x5d7eaf['default'][_0x21669a('0x4fb')]('div',{'style':{'minWidth':0x0}},_0x5d7eaf[_0x21669a('0x4f8')][_0x21669a('0x4fb')](_0x21669a('0x1c7'),{'style':{'fontSize':0x1a,'fontWeight':0x2bc,'lineHeight':1.1}},_0x3c2286),_0x5d7eaf[_0x21669a('0x4f8')][_0x21669a('0x4fb')](_0x21669a('0x1c7'),{'style':{'color':_0x33d77c,'fontSize':0xd,'whiteSpace':'nowrap'}},_0x1508a9))),_0x25756d?_0x5d7eaf[_0x21669a('0x4f8')][_0x21669a('0x4fb')](_0x21669a('0x1c7'),{'style':{'marginTop':0xa,'fontSize':0xc,'color':_0x48b9ef}},_0x25756d):null);}function _0x306174(_0x6be5d5){var _0x2ddaa7=_0x4ac2c7,_0x123cd6=_0x6be5d5[_0x2ddaa7('0x3c')];return _0x5d7eaf['default'][_0x2ddaa7('0x4fb')](_0x29f4bb[_0x2ddaa7('0xdd')],{'bordered':!0x1,'hoverable':!!_0x123cd6,'onClick':_0x123cd6,'style':{'borderRadius':0xe,'boxShadow':_0x54f172['MUI_SHADOW'],'cursor':_0x123cd6?_0x2ddaa7('0x4ad'):_0x2ddaa7('0x4f8'),'background':_0x2ddaa7('0x1e4'),'color':'#fff','height':_0x2ddaa7('0x4ae')},'bodyStyle':{'padding':0x12}},_0x5d7eaf[_0x2ddaa7('0x4f8')][_0x2ddaa7('0x4fb')]('div',{'style':{'display':'flex','alignItems':_0x2ddaa7('0x36e'),'gap':0xe}},_0x5d7eaf[_0x2ddaa7('0x4f8')][_0x2ddaa7('0x4fb')](_0x2ddaa7('0x1c7'),{'style':{'width':0x2e,'height':0x2e,'borderRadius':0xc,'flex':_0x2ddaa7('0x401'),'background':_0x2ddaa7('0x2da'),'color':_0x2ddaa7('0x272'),'display':_0x2ddaa7('0x37f'),'alignItems':'center','justifyContent':_0x2ddaa7('0x36e'),'fontSize':0x14}},_0x5d7eaf[_0x2ddaa7('0x4f8')][_0x2ddaa7('0x4fb')](_0x145e58[_0x2ddaa7('0x28b')],null)),_0x5d7eaf['default'][_0x2ddaa7('0x4fb')](_0x2ddaa7('0x1c7'),{'style':{'minWidth':0x0}},_0x5d7eaf['default'][_0x2ddaa7('0x4fb')](_0x2ddaa7('0x1c7'),{'style':{'fontSize':0xf,'fontWeight':0x2bc,'lineHeight':1.2}},_0x2ddaa7('0x2f6')),_0x5d7eaf[_0x2ddaa7('0x4f8')][_0x2ddaa7('0x4fb')](_0x2ddaa7('0x1c7'),{'style':{'fontSize':0xc,'opacity':0.9,'whiteSpace':_0x2ddaa7('0x11e')}},_0x2ddaa7('0x3f6')))),_0x5d7eaf[_0x2ddaa7('0x4f8')]['createElement']('div',{'style':{'marginTop':0xc,'display':'flex','gap':0x8,'alignItems':_0x2ddaa7('0x36e'),'flexWrap':_0x2ddaa7('0x24b')}},_0x5d7eaf[_0x2ddaa7('0x4f8')][_0x2ddaa7('0x4fb')](_0x29f4bb[_0x2ddaa7('0x244')],{'size':_0x2ddaa7('0xd3'),'href':_0x2ddaa7('0x30b'),'target':'_blank','rel':_0x2ddaa7('0x172'),'onClick':function(_0x50a242){var _0x5428f6=_0x2ddaa7;return _0x50a242[_0x5428f6('0x255')]();},'style':{'background':_0x2ddaa7('0x272'),'borderColor':_0x2ddaa7('0x272'),'color':_0x2ddaa7('0x562'),'fontWeight':0x258}},'Contact\x20Us'),_0x5d7eaf['default'][_0x2ddaa7('0x4fb')](_0x29f4bb[_0x2ddaa7('0x244')],{'size':_0x2ddaa7('0xd3'),'href':_0x2ddaa7('0x492'),'target':_0x2ddaa7('0x6a'),'rel':_0x2ddaa7('0x172'),'onClick':function(_0x18366b){var _0x1dfa7e=_0x2ddaa7;return _0x18366b[_0x1dfa7e('0x255')]();},'style':{'background':_0x2ddaa7('0x52a'),'borderColor':'rgba(255,255,255,0.65)','color':_0x2ddaa7('0x272'),'fontWeight':0x258}},_0x2ddaa7('0x1b8')),_0x123cd6?_0x5d7eaf[_0x2ddaa7('0x4f8')]['createElement'](_0x2ddaa7('0x433'),{'style':{'fontSize':0xc,'opacity':0.9,'textDecoration':_0x2ddaa7('0x2c9')}},_0x2ddaa7('0x37')):null));}function _0x4cbba0(_0x48a4ce){var _0x7c0ee5=_0x4ac2c7,_0x441ed5=_0x48a4ce['onCompare'];return _0x5d7eaf[_0x7c0ee5('0x4f8')]['createElement'](_0x29f4bb[_0x7c0ee5('0xdd')],{'bordered':!0x1,'hoverable':!!_0x441ed5,'onClick':_0x441ed5,'style':{'borderRadius':0xe,'boxShadow':_0x54f172[_0x7c0ee5('0x55d')],'cursor':_0x441ed5?_0x7c0ee5('0x4ad'):'default','background':_0x7c0ee5('0x19e'),'color':_0x7c0ee5('0x272'),'height':'100%'},'bodyStyle':{'padding':0x12}},_0x5d7eaf[_0x7c0ee5('0x4f8')]['createElement']('div',{'style':{'display':_0x7c0ee5('0x37f'),'alignItems':_0x7c0ee5('0x36e'),'gap':0xe}},_0x5d7eaf[_0x7c0ee5('0x4f8')]['createElement'](_0x7c0ee5('0x1c7'),{'style':{'width':0x2e,'height':0x2e,'borderRadius':0xc,'flex':_0x7c0ee5('0x401'),'background':_0x7c0ee5('0x2da'),'color':'#fff','display':_0x7c0ee5('0x37f'),'alignItems':_0x7c0ee5('0x36e'),'justifyContent':_0x7c0ee5('0x36e'),'fontSize':0x14}},_0x5d7eaf[_0x7c0ee5('0x4f8')][_0x7c0ee5('0x4fb')](_0x145e58[_0x7c0ee5('0x2cb')],null)),_0x5d7eaf[_0x7c0ee5('0x4f8')][_0x7c0ee5('0x4fb')](_0x7c0ee5('0x1c7'),{'style':{'minWidth':0x0}},_0x5d7eaf['default']['createElement']('div',{'style':{'fontSize':0xf,'fontWeight':0x2bc,'lineHeight':1.2}},_0x7c0ee5('0x204')),_0x5d7eaf[_0x7c0ee5('0x4f8')][_0x7c0ee5('0x4fb')](_0x7c0ee5('0x1c7'),{'style':{'fontSize':0xc,'opacity':0.9,'whiteSpace':_0x7c0ee5('0x11e')}},'Unlock\x20all\x20premium\x20extensions'))),_0x5d7eaf['default'][_0x7c0ee5('0x4fb')]('div',{'style':{'marginTop':0xc,'display':_0x7c0ee5('0x37f'),'gap':0x8,'alignItems':_0x7c0ee5('0x36e')}},_0x5d7eaf[_0x7c0ee5('0x4f8')][_0x7c0ee5('0x4fb')](_0x29f4bb[_0x7c0ee5('0x244')],{'size':'small','href':_0x7c0ee5('0x455'),'target':_0x7c0ee5('0x6a'),'rel':_0x7c0ee5('0x172'),'onClick':function(_0xa00ba){var _0x529fb6=_0x7c0ee5;return _0xa00ba[_0x529fb6('0x255')]();},'style':{'background':_0x7c0ee5('0x272'),'borderColor':_0x7c0ee5('0x272'),'color':_0x7c0ee5('0x29b'),'fontWeight':0x258}},'Buy\x20Now'),_0x441ed5?_0x5d7eaf[_0x7c0ee5('0x4f8')][_0x7c0ee5('0x4fb')](_0x7c0ee5('0x433'),{'style':{'fontSize':0xc,'opacity':0.9,'textDecoration':_0x7c0ee5('0x2c9')}},_0x7c0ee5('0xce')):null));}function _0x160e79(_0x508c3d){var _0x2403af=_0x4ac2c7,_0xd67ece=_0x508c3d[_0x2403af('0x115')],_0x758313=_0x508c3d[_0x2403af('0xc3')],_0x31ca0a=_0x508c3d[_0x2403af('0x2b0')],_0x3dd3d5=_0x508c3d[_0x2403af('0x2f5')];return _0x5d7eaf[_0x2403af('0x4f8')][_0x2403af('0x4fb')](_0x29f4bb[_0x2403af('0xdd')],{'title':_0x5d7eaf[_0x2403af('0x4f8')]['createElement']('span',{'style':{'fontWeight':0x258}},_0xd67ece),'extra':_0x758313,'bordered':!0x1,'style':{'borderRadius':0xe,'boxShadow':_0x54f172['MUI_SHADOW'],'height':_0x3dd3d5||_0x2403af('0x4ae')},'bodyStyle':{'padding':0x10}},_0x31ca0a);}function _0x3933bd(_0x402d6a){var _0x27c299=_0x4ac2c7,_0x13bcc6=_0x402d6a['data'],_0x5b9620=_0x402d6a[_0x27c299('0x18c')],_0x42ff31=_0x402d6a[_0x27c299('0x3a1')];return _0x13bcc6&&0x0!==_0x13bcc6[_0x27c299('0x5ba')]?_0x5d7eaf[_0x27c299('0x4f8')][_0x27c299('0x4fb')](_0x29f4bb['List'],{'dataSource':_0x13bcc6,'split':!0x1,'renderItem':function(_0xd34ac4){var _0x1b0b93=_0x27c299;return _0x5d7eaf[_0x1b0b93('0x4f8')][_0x1b0b93('0x4fb')](_0x29f4bb[_0x1b0b93('0x142')]['Item'],{'style':{'padding':_0x1b0b93('0x63')}},_0x5d7eaf[_0x1b0b93('0x4f8')]['createElement'](_0x29f4bb['List'][_0x1b0b93('0x54e')][_0x1b0b93('0x24e')],{'avatar':_0x5d7eaf[_0x1b0b93('0x4f8')][_0x1b0b93('0x4fb')](_0x29f4bb[_0x1b0b93('0x42e')],{'style':{'backgroundColor':_0x4a0c18(_0xd34ac4[_0x1b0b93('0x3b6')]),'verticalAlign':'middle'}},(_0x23214f=_0xd34ac4['name'],_0x2bce5e=(_0x23214f||'')['trim']()[_0x1b0b93('0x3d8')](/\s+/),(_0x2bce5e[0x0]&&_0x2bce5e[0x0][0x0]||''+(_0x2bce5e[0x1]&&_0x2bce5e[0x1][0x0]||''))[_0x1b0b93('0x339')]()+(_0x2bce5e[0x1]&&_0x2bce5e[0x1][0x0]||'')[_0x1b0b93('0x339')]())),'title':_0x5d7eaf[_0x1b0b93('0x4f8')]['createElement'](_0x1b0b93('0x433'),{'style':{'fontSize':0xe}},_0xd34ac4[_0x1b0b93('0x3b6')]),'description':_0x5b9620(_0xd34ac4)}));var _0x23214f,_0x2bce5e;}}):_0x5d7eaf[_0x27c299('0x4f8')][_0x27c299('0x4fb')](_0x29f4bb[_0x27c299('0x5a5')],{'image':_0x29f4bb[_0x27c299('0x5a5')][_0x27c299('0x27b')],'description':_0x42ff31||_0x27c299('0x46c')});}function _0x1a26bf(_0x30a74c){var _0x4a44ce=_0x4ac2c7,_0x1c1dcc=_0x30a74c[_0x4a44ce('0x510')],_0xb9f644=_0x30a74c[_0x4a44ce('0x26a')],_0x45b56d=_0x30a74c[_0x4a44ce('0x156')],_0x158a0f=_0x30a74c['icon'],_0x3dd441=_0x30a74c[_0x4a44ce('0x115')],_0x13fede=_0x30a74c[_0x4a44ce('0x186')],_0xcd55cd=_0x30a74c[_0x4a44ce('0x44f')];return _0x5d7eaf[_0x4a44ce('0x4f8')][_0x4a44ce('0x4fb')](_0x4a44ce('0x1c7'),{'style':{'background':_0x1c1dcc,'borderRadius':0xc,'padding':_0x4a44ce('0x39f'),'marginBottom':0x12,'display':_0x4a44ce('0x37f'),'justifyContent':_0x4a44ce('0x551'),'alignItems':'center','gap':0x10,'flexWrap':'wrap','boxShadow':_0xb9f644,'border':_0x45b56d||_0x4a44ce('0xa')}},_0x5d7eaf[_0x4a44ce('0x4f8')][_0x4a44ce('0x4fb')]('div',{'style':{'display':_0x4a44ce('0x37f'),'alignItems':_0x4a44ce('0x36e'),'gap':0x10}},_0x5d7eaf['default'][_0x4a44ce('0x4fb')](_0x4a44ce('0x1c7'),{'style':{'background':_0x4a44ce('0x2da'),'borderRadius':_0x4a44ce('0x1f'),'width':0x30,'height':0x30,'flex':_0x4a44ce('0x401'),'display':_0x4a44ce('0x37f'),'alignItems':_0x4a44ce('0x36e'),'justifyContent':_0x4a44ce('0x36e'),'color':_0x4a44ce('0x272'),'fontSize':0x14}},_0x158a0f),_0x5d7eaf['default']['createElement'](_0x4a44ce('0x1c7'),null,_0x5d7eaf[_0x4a44ce('0x4f8')][_0x4a44ce('0x4fb')]('div',{'style':{'color':_0x4a44ce('0x272'),'fontWeight':0x258,'fontSize':0x10,'marginBottom':0x4}},_0x3dd441),_0x5d7eaf['default'][_0x4a44ce('0x4fb')](_0x4a44ce('0x1c7'),{'style':{'color':_0x4a44ce('0x206'),'fontSize':0xe}},_0x13fede))),_0x5d7eaf[_0x4a44ce('0x4f8')][_0x4a44ce('0x4fb')](_0x4a44ce('0x1c7'),{'style':{'display':'flex','gap':0xa,'alignItems':_0x4a44ce('0x36e')}},_0xcd55cd));}function _0x3c3a94(_0x28a6da){var _0x16501c=_0x4ac2c7,_0x513955=_0x28a6da[_0x16501c('0x278')],_0x27b82f=_0x28a6da[_0x16501c('0x405')],_0x40856a=_0x28a6da[_0x16501c('0x394')],_0xc946d4=_0x28a6da[_0x16501c('0x1a6')],_0xb1a94b=_0x28a6da[_0x16501c('0x3c6')];return _0x5d7eaf[_0x16501c('0x4f8')][_0x16501c('0x4fb')]('a',{'key':_0x513955,'onClick':function(_0x488bdd){var _0x33e0d5=_0x16501c;_0x488bdd[_0x33e0d5('0x267')](),_0xc946d4();},'style':_0xb1a94b?{'background':_0x16501c('0x2da'),'color':_0x16501c('0x272'),'padding':_0x16501c('0x387'),'borderRadius':0x8,'textDecoration':_0x16501c('0xa'),'fontSize':0xe,'fontWeight':0x1f4,'whiteSpace':_0x16501c('0x11e'),'border':'1px\x20solid\x20rgba(255,255,255,0.3)'}:{'background':_0x16501c('0x272'),'color':_0x40856a,'padding':'10px\x2024px','borderRadius':0x8,'textDecoration':_0x16501c('0xa'),'fontSize':0xe,'fontWeight':0x258,'boxShadow':_0x16501c('0x476'),'whiteSpace':_0x16501c('0x11e')}},_0x27b82f,_0x27b82f?'\x20':null,_0x513955);}function _0x3fa801(_0x1b114b){var _0x28d595=_0x4ac2c7,_0x5e801c=_0x1b114b[_0x28d595('0x33d')],_0x5d1d77=_0x1b114b[_0x28d595('0x51d')],_0x5cd969=_0x5e801c&&_0x5e801c['unpaidInvoices']||0x0;if(_0x5cd969<0x1)return null;var _0x2a013a=0x1===_0x5cd969,_0x4dfa2d=Number(_0x5e801c[_0x28d595('0x4e0')]||0x0)[_0x28d595('0x511')](void 0x0,{'minimumFractionDigits':0x2,'maximumFractionDigits':0x2});return _0x5d7eaf[_0x28d595('0x4f8')][_0x28d595('0x4fb')](_0x1a26bf,{'gradient':_0x2a013a?'linear-gradient(135deg,\x20#fa8c16\x200%,\x20#d46b08\x20100%)':'linear-gradient(135deg,\x20#f5222d\x200%,\x20#cf1322\x20100%)','shadow':_0x2a013a?_0x28d595('0x184'):'0\x204px\x2015px\x20rgba(245,\x2034,\x2045,\x200.3)','icon':_0x2a013a?_0x5d7eaf[_0x28d595('0x4f8')][_0x28d595('0x4fb')](_0x145e58[_0x28d595('0x2e0')],null):_0x5d7eaf[_0x28d595('0x4f8')][_0x28d595('0x4fb')](_0x145e58[_0x28d595('0x54b')],null),'title':_0x2a013a?_0x28d595('0xb1'):'Service\x20Restricted\x20-\x20Payment\x20Required','message':_0x2a013a?_0x28d595('0x351')[_0x28d595('0x39d')](_0x4dfa2d,_0x28d595('0xb5')):_0x5d7eaf[_0x28d595('0x4f8')][_0x28d595('0x4fb')](_0x28d595('0x433'),null,_0x28d595('0x39')['concat'](_0x4dfa2d,_0x28d595('0x13d')),_0x5d7eaf[_0x28d595('0x4f8')]['createElement']('br',null),_0x28d595('0x5a4')),'actions':_0x3c3a94({'label':'Pay\x20Now','icon':_0x5d7eaf[_0x28d595('0x4f8')][_0x28d595('0x4fb')](_0x145e58[_0x28d595('0x4f5')],null),'color':_0x2a013a?_0x28d595('0x4fd'):_0x28d595('0x345'),'onClick':function(){var _0x4f1923=_0x28d595;_0x5d1d77&&_0x5d1d77('admin',_0x4f1923('0x33d'));}})});}function _0x5232ee(_0x322b4b){var _0x498286=_0x4ac2c7,_0x38b99c=_0x322b4b['show'],_0x1a749f=_0x322b4b[_0x498286('0x51d')],_0x17636a=_0x4a529d((0x0,_0x5d7eaf['useState'])(!0x1),0x2),_0x445c2e=_0x17636a[0x0],_0x398edd=_0x17636a[0x1];return!_0x38b99c||_0x445c2e?null:_0x5d7eaf[_0x498286('0x4f8')][_0x498286('0x4fb')](_0x1a26bf,{'gradient':_0x498286('0x554'),'shadow':_0x498286('0xa2'),'border':_0x498286('0x101'),'icon':_0x5d7eaf['default']['createElement'](_0x145e58[_0x498286('0x2cb')],null),'title':_0x498286('0x216'),'message':_0x5d7eaf[_0x498286('0x4f8')][_0x498286('0x4fb')](_0x498286('0x433'),null,_0x498286('0x3bf'),_0x5d7eaf['default'][_0x498286('0x4fb')]('br',null),_0x5d7eaf[_0x498286('0x4f8')][_0x498286('0x4fb')]('strong',null,_0x498286('0x536')),'\x20',_0x498286('0x1a1')),'actions':[_0x3c3a94({'label':_0x498286('0x51'),'icon':_0x5d7eaf[_0x498286('0x4f8')][_0x498286('0x4fb')](_0x145e58['PlusCircleOutlined'],null),'color':'#389e0d','onClick':function(){var _0x534b67=_0x498286;_0x1a749f&&_0x1a749f(_0x534b67('0x5b7'),_0x534b67('0x2a'));}}),_0x3c3a94({'label':_0x498286('0x529'),'ghost':!0x0,'onClick':function(){return _0x398edd(!0x0);}})]});}function _0x201bb6(_0x3cbe02){var _0x493408=_0x4ac2c7,_0x506679=_0x3cbe02[_0x493408('0x242')],_0x441143=_0x3cbe02[_0x493408('0x51d')];if(!_0x506679)return null;var _0x311f70=_0x506679[_0x493408('0x3fd')];return _0x5d7eaf[_0x493408('0x4f8')][_0x493408('0x4fb')](_0x1a26bf,{'gradient':_0x493408('0x508'),'shadow':_0x493408('0x106'),'icon':_0x5d7eaf['default']['createElement'](_0x145e58[_0x493408('0x4ee')],null),'title':'Unlock\x20the\x20Full\x20Potential\x20of\x20IceHrm','message':_0x5d7eaf['default']['createElement'](_0x493408('0x433'),null,null!=_0x311f70?_0x5d7eaf[_0x493408('0x4f8')][_0x493408('0x4fb')]('span',null,'You\x20have','\x20',_0x5d7eaf[_0x493408('0x4f8')][_0x493408('0x4fb')](_0x493408('0x454'),null,_0x311f70,'\x20',_0x493408('0x3fd')),'\x20',_0x493408('0x3d9'),'\x20'):null,_0x493408('0x2d3')),'actions':[_0x3c3a94({'label':_0x493408('0xc5'),'icon':_0x5d7eaf[_0x493408('0x4f8')][_0x493408('0x4fb')](_0x145e58[_0x493408('0xf6')],null),'color':_0x493408('0xb3'),'onClick':function(){var _0x6f237a=_0x493408;_0x441143&&_0x441143(_0x6f237a('0x3ce'),'billing');}}),_0x3c3a94({'label':'See\x20Plans','icon':_0x5d7eaf[_0x493408('0x4f8')]['createElement'](_0x145e58[_0x493408('0x4a5')],null),'ghost':!0x0,'onClick':function(){var _0x494c96=_0x493408;window[_0x494c96('0xc4')]('https://icehrm.com/cloud-hosting-charges',_0x494c96('0x6a'));}})]});}},{'./theme':0x1a,'@ant-design/icons':_0x401518('0x480'),'@antv/g2plot':_0x401518('0x3f7'),'antd':'antd','react':_0x401518('0x592')}],0x5:[function(_0x14dd74,_0x3b5895,_0x1af4d2){var _0x294281=_0x401518;'use strict';function _0x40be26(_0x395190){var _0x20c899=_0x3d72;return(_0x40be26=_0x20c899('0x3da')==typeof Symbol&&_0x20c899('0x4da')==typeof Symbol['iterator']?function(_0x8de9fb){return typeof _0x8de9fb;}:function(_0x19571e){var _0x29e070=_0x20c899;return _0x19571e&&_0x29e070('0x3da')==typeof Symbol&&_0x19571e[_0x29e070('0xaa')]===Symbol&&_0x19571e!==Symbol['prototype']?_0x29e070('0x4da'):typeof _0x19571e;})(_0x395190);}Object[_0x294281('0x14d')](_0x1af4d2,_0x294281('0x30e'),{'value':!0x0}),_0x1af4d2['default']=function(_0x5643e7){var _0x4d4736=_0x294281,_0x4e35b4=_0x5643e7[_0x4d4736('0x3dd')],_0x1420af=_0x5643e7[_0x4d4736('0x51d')],_0x2d25e6=(_0x5643e7[_0x4d4736('0x177')],_0x364c10[_0x4d4736('0x587')][_0x4d4736('0x75')]()[_0x4d4736('0x331')]),_0x156fb0=_0x27a931((0x0,_0x132b17[_0x4d4736('0x5a7')])(null),0x2),_0x583aa=_0x156fb0[0x0],_0x1dc1db=_0x156fb0[0x1],_0x4c0616=_0x27a931((0x0,_0x132b17[_0x4d4736('0x5a7')])(!0x0),0x2),_0x414265=_0x4c0616[0x0],_0x589c56=_0x4c0616[0x1],_0x5b9334=_0x27a931((0x0,_0x132b17[_0x4d4736('0x5a7')])(null),0x2),_0x4ef4b9=_0x5b9334[0x0],_0x27cd90=_0x5b9334[0x1],_0x4a9772=_0x27a931((0x0,_0x132b17['useState'])(!0x1),0x2),_0x49fe9=_0x4a9772[0x0],_0x3fb87a=_0x4a9772[0x1];(0x0,_0x132b17[_0x4d4736('0x138')])(function(){var _0x477755=_0x4d4736,_0x4b6f61=!0x0;return _0x589c56(!0x0),fetch(''[_0x477755('0x39d')](_0x4e35b4['restApiBase'],_0x477755('0x19d')),{'headers':{'Authorization':_0x477755('0x55b')['concat'](_0x4e35b4[_0x477755('0x331')])},'credentials':_0x477755('0x1a5')})['then'](function(_0x52024a){var _0x57f41e=_0x477755;return _0x52024a[_0x57f41e('0x580')]();})[_0x477755('0x12a')](function(_0x4f7767){_0x4b6f61&&(_0x1dc1db(_0x4f7767),_0x589c56(!0x1));})[_0x477755('0x2e')](function(_0x4bdf2d){var _0x54e73e=_0x477755;_0x4b6f61&&(_0x27cd90(_0x4bdf2d[_0x54e73e('0x186')]),_0x589c56(!0x1));}),function(){_0x4b6f61=!0x1;};},[_0x4e35b4]);var _0x543dc2=(0x0,_0x132b17['useMemo'])(function(){var _0x36a0a3=_0x4d4736,_0x33e7ae=new Date()['getHours']();return _0x33e7ae<0xc?_0x36a0a3('0xe6'):_0x33e7ae<0x12?'Good\x20afternoon':_0x36a0a3('0x403');},[]),_0x538dd6=(0x0,_0x132b17[_0x4d4736('0x5a8')])(function(){var _0x290859=_0x4d4736,_0x4af2b3=_0x583aa&&_0x583aa[_0x290859('0x35a')]||'';return-0x1!==_0x4af2b3[_0x290859('0x187')]('@')?_0x4af2b3[_0x290859('0x3d8')]('@')[0x0][_0x290859('0x4c6')](/[._]+/g,'\x20')[_0x290859('0x4c6')](/\b\w/g,function(_0x2a1af2){return _0x2a1af2['toUpperCase']();}):_0x4af2b3;},[_0x583aa]);if(_0x414265)return _0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x4d4736('0x1c7'),{'style':{'display':'flex','justifyContent':_0x4d4736('0x36e'),'padding':0x50}},_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0x4cc')],{'size':'large'}));if(_0x4ef4b9||!_0x583aa)return _0x132b17['default'][_0x4d4736('0x4fb')](_0x4d4736('0x1c7'),{'style':{'padding':0x20}},_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10['Empty'],{'description':_0x4d4736('0x4a7')['concat'](_0x4ef4b9?':\x20'[_0x4d4736('0x39d')](_0x4ef4b9):'')}));var _0x12abbd=_0x583aa[_0x4d4736('0x6')]||{},_0x41c908=_0x583aa[_0x4d4736('0x2bc')]||[],_0x1a74ff=_0x583aa[_0x4d4736('0x478')]||[],_0x2e4f2f=_0x583aa['directReports']||[],_0x36857c=_0x583aa[_0x4d4736('0x3ea')]||[],_0x3b9b9d=[];_0x12abbd&&void 0x0!==_0x12abbd[_0x4d4736('0xed')]&&_0x3b9b9d['push']({'label':'Hours\x20today','value':''[_0x4d4736('0x39d')]((_0x12abbd['hoursToday']||0x0)['toFixed'](0x1),'h'),'sub':_0x12abbd[_0x4d4736('0x2d2')]?_0x4d4736('0x4af'):_0x12abbd[_0x4d4736('0x305')]?_0x4d4736('0x4b2'):'Not\x20clocked\x20in','icon':_0x132b17['default'][_0x4d4736('0x4fb')](_0x3cd8d6['ClockCircleOutlined'],null),'color':_0x4d4736('0x533'),'nav':[_0x4d4736('0x46'),_0x4d4736('0x6')]}),(_0x3b9b9d[_0x4d4736('0x3db')]({'label':'Action\x20items','value':_0x41c908['length'],'sub':_0x4d4736('0x382'),'icon':_0x132b17[_0x4d4736('0x4f8')]['createElement'](_0x3cd8d6['CheckSquareOutlined'],null),'color':'#5AD8A6'}),_0x583aa['leave']&&_0x3b9b9d[_0x4d4736('0x3db')]({'label':_0x4d4736('0x2a3'),'value':_0x583aa[_0x4d4736('0x1b1')][_0x4d4736('0x53b')]||0x0,'sub':_0x4d4736('0x309'),'icon':_0x132b17[_0x4d4736('0x4f8')]['createElement'](_0x3cd8d6[_0x4d4736('0x572')],null),'color':_0x4d4736('0x220'),'nav':[_0x4d4736('0x46'),_0x4d4736('0x4a3')]})),_0x583aa['isManager']&&_0x583aa[_0x4d4736('0x24a')]&&(_0x3b9b9d['push']({'label':_0x4d4736('0xbe'),'value':_0x583aa[_0x4d4736('0x24a')][_0x4d4736('0x407')]||0x0,'sub':_0x4d4736('0x4be'),'icon':_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x3cd8d6[_0x4d4736('0x5aa')],null),'color':_0x4d4736('0x4e6'),'nav':[_0x4d4736('0x3ce'),_0x4d4736('0x5b4')]}),_0x3b9b9d['push']({'label':_0x4d4736('0x430'),'value':_0x583aa[_0x4d4736('0x24a')][_0x4d4736('0x183')]||0x0,'sub':'Today','icon':_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x3cd8d6[_0x4d4736('0xad')],null),'color':_0x4d4736('0xec'),'nav':[_0x4d4736('0x46'),_0x4d4736('0x4a3')]}));var _0x3da2c8=function(_0x276600,_0x2c9f3f,_0x3440aa){var _0x3f3521=_0x4d4736;return{'title':_0x132b17[_0x3f3521('0x4f8')][_0x3f3521('0x4fb')]('span',{'style':{'display':_0x3f3521('0x595'),'alignItems':'center','gap':0x8}},_0x276600,_0x2c9f3f),'extra':_0x3440aa};};return _0x132b17['default'][_0x4d4736('0x4fb')](_0x4d4736('0x1c7'),{'style':{'padding':0x18,'maxWidth':0x5dc,'margin':'0\x20auto'}},_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x4d4736('0x1c7'),{'style':{'marginBottom':0x12}},_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x4d4736('0x1c7'),{'style':{'fontSize':0x16,'fontWeight':0x2bc}},_0x543dc2,',','\x20',_0x538dd6,'\x20','👋'),_0x132b17[_0x4d4736('0x4f8')]['createElement'](_0x41fbb4,{'type':'secondary'},_0x4d4736('0x398'))),_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0xa6')],{'gutter':[0x10,0x10]},_0x3b9b9d[_0x4d4736('0x427')](function(_0x267bcc){var _0x2fff51=_0x4d4736;return _0x132b17[_0x2fff51('0x4f8')][_0x2fff51('0x4fb')](_0x364c10[_0x2fff51('0x174')],{'xs':0xc,'sm':0x8,'md':_0x583aa[_0x2fff51('0x1b6')]?0x6:0x8,'xl':_0x583aa[_0x2fff51('0x1b6')]?0x4:0x6,'key':_0x267bcc[_0x2fff51('0x278')]},_0x132b17[_0x2fff51('0x4f8')][_0x2fff51('0x4fb')](_0x364c10[_0x2fff51('0xdd')],{'hoverable':!0x0,'onClick':function(){var _0x227f54=_0x2fff51;return _0x267bcc['nav']&&_0x1420af&&_0x1420af(_0x267bcc[_0x227f54('0x3cf')][0x0],_0x267bcc[_0x227f54('0x3cf')][0x1]);},'style':{'borderRadius':0xc,'boxShadow':_0x11ead7[_0x2fff51('0x55d')]},'styles':{'body':{'padding':0x10}}},_0x132b17[_0x2fff51('0x4f8')][_0x2fff51('0x4fb')](_0x2fff51('0x1c7'),{'style':{'display':_0x2fff51('0x37f'),'alignItems':'center','gap':0xc}},_0x132b17[_0x2fff51('0x4f8')]['createElement'](_0x2fff51('0x433'),{'style':{'width':0x2a,'height':0x2a,'borderRadius':0xb,'flex':'0\x200\x20auto','fontSize':0x13,'background':''[_0x2fff51('0x39d')](_0x267bcc[_0x2fff51('0x394')],'22'),'color':_0x267bcc[_0x2fff51('0x394')],'display':_0x2fff51('0x37f'),'alignItems':_0x2fff51('0x36e'),'justifyContent':_0x2fff51('0x36e')}},_0x267bcc['icon']),_0x132b17[_0x2fff51('0x4f8')][_0x2fff51('0x4fb')](_0x2fff51('0x1c7'),{'style':{'minWidth':0x0}},_0x132b17[_0x2fff51('0x4f8')][_0x2fff51('0x4fb')]('div',{'style':{'fontSize':0x16,'fontWeight':0x2bc,'lineHeight':1.1}},_0x267bcc[_0x2fff51('0x3dc')]),_0x132b17[_0x2fff51('0x4f8')][_0x2fff51('0x4fb')](_0x2fff51('0x1c7'),{'style':{'fontSize':0xc,'color':_0x2d25e6['colorTextSecondary']}},_0x267bcc['label']))),_0x267bcc[_0x2fff51('0x1c1')]&&_0x132b17[_0x2fff51('0x4f8')][_0x2fff51('0x4fb')](_0x2fff51('0x1c7'),{'style':{'fontSize':11.5,'color':_0x2d25e6['colorTextTertiary'],'marginTop':0x8}},_0x267bcc['sub'])));})),_0x132b17['default'][_0x4d4736('0x4fb')](_0x364c10['Row'],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x132b17['default'][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0x174')],{'xs':0x18,'lg':_0x583aa[_0x4d4736('0x1b6')]?0xc:0xe},_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0xdd')],_0x5c4682({},_0x3da2c8(_0x132b17['default'][_0x4d4736('0x4fb')](_0x3cd8d6[_0x4d4736('0x4e1')],{'style':{'color':_0x4d4736('0x129')}}),_0x4d4736('0xbd')),{'style':{'borderRadius':0xc,'boxShadow':_0x11ead7[_0x4d4736('0x55d')]}}),0x0===_0x41c908[_0x4d4736('0x5ba')]?_0x132b17[_0x4d4736('0x4f8')]['createElement'](_0x364c10[_0x4d4736('0x5a5')],{'image':_0x364c10['Empty'][_0x4d4736('0x27b')],'description':_0x4d4736('0x155')}):_0x132b17[_0x4d4736('0x4f8')]['createElement'](_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x3e0')],null,_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0x146')],{'items':(_0x49fe9?_0x41c908:_0x41c908[_0x4d4736('0x5d')](0x0,0x4))['map'](function(_0x3ca275){var _0x44c05c=_0x4d4736,_0x2090b7=_0x3ca275[_0x44c05c('0x1ca')]?function(_0xaec204){var _0x4a0569=_0x44c05c;try{var _0x1d3e67=_0xaec204[_0x4a0569('0x187')]('?')>=0x0?_0xaec204['split']('?')[0x1]:_0xaec204,_0x3fb4d4=new URLSearchParams(_0x1d3e67),_0x5b2b8a=_0x3fb4d4[_0x4a0569('0x4cb')]('g'),_0x134143=_0x3fb4d4[_0x4a0569('0x4cb')]('n');return _0x5b2b8a&&_0x134143?{'g':_0x5b2b8a,'n':_0x134143}:null;}catch(_0x209b7f){return null;}}(_0x3ca275[_0x44c05c('0x1ca')]):null;return{'dot':_0x4c4674(_0x3ca275[_0x44c05c('0x276')]),'children':_0x132b17[_0x44c05c('0x4f8')][_0x44c05c('0x4fb')]('div',null,_0x132b17[_0x44c05c('0x4f8')][_0x44c05c('0x4fb')](_0x44c05c('0x1c7'),{'style':{'fontWeight':0x1f4}},_0x3ca275[_0x44c05c('0x3cc')]),_0x3ca275[_0x44c05c('0x1cb')]&&_0x132b17[_0x44c05c('0x4f8')]['createElement'](_0x44c05c('0x1c7'),{'style':{'fontSize':0xc,'color':_0x2d25e6[_0x44c05c('0x49f')],'marginTop':0x2}},_0x3ca275['details']),_0x3ca275['link']&&_0x3ca275[_0x44c05c('0x332')]&&_0x132b17[_0x44c05c('0x4f8')][_0x44c05c('0x4fb')](_0x364c10[_0x44c05c('0x244')],{'type':_0x44c05c('0x1ca'),'size':_0x44c05c('0xd3'),'style':{'paddingLeft':0x0},'onClick':function(){var _0x580d0d=_0x44c05c;_0x2090b7&&_0x1420af?_0x1420af(_0x2090b7['g'],_0x2090b7['n']):window['location']['href']=_0x3ca275[_0x580d0d('0x1ca')];}},_0x3ca275['action']))};})}),_0x41c908[_0x4d4736('0x5ba')]>0x4&&_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0x244')],{'type':_0x4d4736('0x3e5'),'onClick':function(){return _0x3fb87a(function(_0x231d9f){return!_0x231d9f;});}},_0x49fe9?'Show\x20less':'View\x20all\x20'[_0x4d4736('0x39d')](_0x41c908[_0x4d4736('0x5ba')],_0x4d4736('0x432')))))),_0x132b17['default'][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0x174')],{'xs':0x18,'lg':_0x583aa[_0x4d4736('0x1b6')]?0xc:0xa},_0x132b17[_0x4d4736('0x4f8')]['createElement'](_0x364c10[_0x4d4736('0xdd')],_0x5c4682({},_0x3da2c8(_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x3cd8d6[_0x4d4736('0x42b')],{'style':{'color':_0x4d4736('0xec')}}),'Upcoming\x20celebrations'),{'style':{'borderRadius':0xc,'boxShadow':_0x11ead7['MUI_SHADOW']}}),0x0===_0x1a74ff['length']?_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0x5a5')],{'image':_0x364c10[_0x4d4736('0x5a5')][_0x4d4736('0x27b')],'description':_0x4d4736('0x1b2')}):_0x132b17['default']['createElement'](_0x364c10[_0x4d4736('0x142')],{'dataSource':_0x1a74ff,'renderItem':function(_0x112bca){var _0x44cff7=_0x4d4736;return _0x132b17[_0x44cff7('0x4f8')][_0x44cff7('0x4fb')](_0x364c10[_0x44cff7('0x142')][_0x44cff7('0x54e')],null,_0x132b17[_0x44cff7('0x4f8')][_0x44cff7('0x4fb')](_0x364c10[_0x44cff7('0x142')][_0x44cff7('0x54e')][_0x44cff7('0x24e')],{'avatar':_0x132b17[_0x44cff7('0x4f8')][_0x44cff7('0x4fb')](_0x364c10[_0x44cff7('0x42e')],{'style':{'background':_0x1d29f5(_0x112bca[_0x44cff7('0x3b6')])}},_0x4137db(_0x112bca[_0x44cff7('0x3b6')])),'title':_0x132b17[_0x44cff7('0x4f8')][_0x44cff7('0x4fb')](_0x44cff7('0x433'),{'style':{'fontWeight':0x258}},_0x112bca[_0x44cff7('0x3b6')]),'description':_0x44cff7('0x1f9')===_0x112bca[_0x44cff7('0x3b7')]?_0x44cff7('0x422')[_0x44cff7('0x39d')](_0xb26868(_0x112bca[_0x44cff7('0x556')])):_0x44cff7('0x4d0')['concat'](_0x112bca[_0x44cff7('0x85')],_0x44cff7('0x28e'))[_0x44cff7('0x39d')](_0xb26868(_0x112bca[_0x44cff7('0x556')]))}),_0x132b17[_0x44cff7('0x4f8')]['createElement'](_0x364c10['Tag'],{'color':0x0===_0x112bca[_0x44cff7('0x3fd')]?_0x44cff7('0x213'):_0x44cff7('0x4f8')},0x0===(_0x187954=_0x112bca[_0x44cff7('0x3fd')])?'Today':0x1===_0x187954?_0x44cff7('0x84'):_0x44cff7('0xf')[_0x44cff7('0x39d')](_0x187954,'\x20days')));var _0x187954;}})))),_0x583aa[_0x4d4736('0x1b6')]&&_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0xa6')],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x132b17['default'][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0x174')],{'xs':0x18},_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10['Card'],_0x5c4682({},_0x3da2c8(_0x132b17['default'][_0x4d4736('0x4fb')](_0x3cd8d6[_0x4d4736('0x5aa')],{'style':{'color':_0x4d4736('0x4e6')}}),_0x4d4736('0x39c'),_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0x244')],{'type':'link','size':_0x4d4736('0xd3'),'onClick':function(){var _0x179ad0=_0x4d4736;return _0x1420af&&_0x1420af('admin',_0x179ad0('0x5b4'));}},_0x4d4736('0x121'),_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x3cd8d6[_0x4d4736('0x60')],null))),{'style':{'borderRadius':0xc,'boxShadow':_0x11ead7[_0x4d4736('0x55d')]}}),0x0===_0x2e4f2f['length']?_0x132b17[_0x4d4736('0x4f8')]['createElement'](_0x364c10[_0x4d4736('0x5a5')],{'image':_0x364c10[_0x4d4736('0x5a5')][_0x4d4736('0x27b')],'description':'No\x20direct\x20reports'}):_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0xa6')],{'gutter':[0xc,0xc]},_0x2e4f2f['map'](function(_0x10fc39){var _0xb3ca5=_0x4d4736;return _0x132b17['default'][_0xb3ca5('0x4fb')](_0x364c10[_0xb3ca5('0x174')],{'xs':0xc,'sm':0x8,'md':0x6,'xl':0x4,'key':_0x10fc39['id']},_0x132b17[_0xb3ca5('0x4f8')][_0xb3ca5('0x4fb')]('div',{'style':{'display':_0xb3ca5('0x37f'),'alignItems':_0xb3ca5('0x36e'),'gap':0xa,'padding':_0xb3ca5('0x4c2'),'border':_0xb3ca5('0x5be')[_0xb3ca5('0x39d')](_0x2d25e6[_0xb3ca5('0x47d')]),'borderRadius':0xa}},_0x132b17[_0xb3ca5('0x4f8')][_0xb3ca5('0x4fb')](_0x364c10[_0xb3ca5('0x42e')],{'style':{'background':_0x1d29f5(_0x10fc39[_0xb3ca5('0x3b6')]),'flex':_0xb3ca5('0x401')}},_0x4137db(_0x10fc39['name'])),_0x132b17[_0xb3ca5('0x4f8')][_0xb3ca5('0x4fb')](_0xb3ca5('0x1c7'),{'style':{'minWidth':0x0}},_0x132b17[_0xb3ca5('0x4f8')][_0xb3ca5('0x4fb')](_0xb3ca5('0x1c7'),{'style':{'fontWeight':0x258,'fontSize':0xd,'overflow':_0xb3ca5('0x3ee'),'textOverflow':'ellipsis','whiteSpace':'nowrap'}},_0x10fc39[_0xb3ca5('0x3b6')]),_0x132b17[_0xb3ca5('0x4f8')][_0xb3ca5('0x4fb')](_0xb3ca5('0x1c7'),{'style':{'fontSize':0xb,'color':_0x2d25e6['colorTextTertiary'],'overflow':_0xb3ca5('0x3ee'),'textOverflow':'ellipsis','whiteSpace':_0xb3ca5('0x11e')}},_0x10fc39[_0xb3ca5('0x115')]||'—'))));}))))),_0x36857c[_0x4d4736('0x5ba')]>0x0&&_0x132b17['default'][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0xa6')],{'gutter':[0x10,0x10],'style':{'marginTop':0x10}},_0x132b17['default']['createElement'](_0x364c10[_0x4d4736('0x174')],{'xs':0x18},_0x132b17[_0x4d4736('0x4f8')]['createElement'](_0x364c10[_0x4d4736('0xdd')],_0x5c4682({},_0x3da2c8(_0x132b17['default'][_0x4d4736('0x4fb')](_0x3cd8d6[_0x4d4736('0x557')],{'style':{'color':_0x4d4736('0x5b5')}}),_0x4d4736('0x502'),_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0x244')],{'type':_0x4d4736('0x1ca'),'size':_0x4d4736('0xd3'),'onClick':function(){var _0x400f2c=_0x4d4736;return _0x1420af&&_0x1420af(_0x400f2c('0x5b7'),_0x400f2c('0x22'));}},_0x4d4736('0x1b5'),_0x132b17['default'][_0x4d4736('0x4fb')](_0x3cd8d6['RightOutlined'],null))),{'style':{'borderRadius':0xc,'boxShadow':_0x11ead7['MUI_SHADOW']}}),_0x132b17[_0x4d4736('0x4f8')][_0x4d4736('0x4fb')](_0x364c10[_0x4d4736('0xa6')],{'gutter':[0xc,0xc]},_0x36857c[_0x4d4736('0x427')](function(_0x116742){var _0x587441=_0x4d4736;return _0x132b17[_0x587441('0x4f8')][_0x587441('0x4fb')](_0x364c10['Col'],{'xs':0x18,'sm':0xc,'md':0x8,'xl':0x6,'key':_0x116742['id']},_0x132b17[_0x587441('0x4f8')][_0x587441('0x4fb')](_0x587441('0x1c7'),{'style':{'display':_0x587441('0x37f'),'alignItems':_0x587441('0x36e'),'gap':0xa,'padding':_0x587441('0x408'),'border':_0x587441('0x5be')[_0x587441('0x39d')](_0x2d25e6[_0x587441('0x47d')]),'borderRadius':0xa}},_0x132b17[_0x587441('0x4f8')][_0x587441('0x4fb')](_0x587441('0x433'),{'style':{'width':0x24,'height':0x24,'borderRadius':0x9,'flex':_0x587441('0x401'),'background':(_0x116742[_0x587441('0x394')]||_0x587441('0x5b5'))+'22','color':_0x116742[_0x587441('0x394')]||'#0288d1','display':'flex','alignItems':'center','justifyContent':_0x587441('0x36e')}},_0x132b17[_0x587441('0x4f8')]['createElement'](_0x3cd8d6[_0x587441('0x5aa')],null)),_0x132b17[_0x587441('0x4f8')]['createElement']('div',{'style':{'minWidth':0x0,'flex':0x1}},_0x132b17[_0x587441('0x4f8')][_0x587441('0x4fb')](_0x587441('0x1c7'),{'style':{'fontWeight':0x258,'fontSize':0xd,'overflow':_0x587441('0x3ee'),'textOverflow':_0x587441('0x4f4'),'whiteSpace':'nowrap'}},_0x116742[_0x587441('0x3b6')]),_0x132b17['default'][_0x587441('0x4fb')]('div',{'style':{'fontSize':0xb,'color':_0x2d25e6[_0x587441('0x49f')]}},''[_0x587441('0x39d')](_0x116742['members'],'\x20member')[_0x587441('0x39d')](0x1===_0x116742[_0x587441('0x506')]?'':'s'))),_0x116742[_0x587441('0x488')]&&_0x587441('0x3bd')!==_0x116742[_0x587441('0x488')]&&_0x132b17[_0x587441('0x4f8')][_0x587441('0x4fb')](_0x364c10[_0x587441('0x4d8')],{'color':_0x587441('0x568')},_0x116742[_0x587441('0x488')])));}))))));};var _0x132b17=function(_0x69d246){var _0x481820=_0x294281;if(_0x69d246&&_0x69d246['__esModule'])return _0x69d246;if(null===_0x69d246||_0x481820('0xd8')!==_0x40be26(_0x69d246)&&'function'!=typeof _0x69d246)return{'default':_0x69d246};var _0x4ef805=_0x2ab6e1();if(_0x4ef805&&_0x4ef805[_0x481820('0x1e7')](_0x69d246))return _0x4ef805[_0x481820('0x4cb')](_0x69d246);var _0x11cc7e={},_0x38eb0f=Object[_0x481820('0x14d')]&&Object[_0x481820('0x7f')];for(var _0x59bbb1 in _0x69d246)if(Object[_0x481820('0x3d4')][_0x481820('0x25d')][_0x481820('0x545')](_0x69d246,_0x59bbb1)){var _0x56e1fc=_0x38eb0f?Object[_0x481820('0x7f')](_0x69d246,_0x59bbb1):null;_0x56e1fc&&(_0x56e1fc['get']||_0x56e1fc[_0x481820('0x300')])?Object[_0x481820('0x14d')](_0x11cc7e,_0x59bbb1,_0x56e1fc):_0x11cc7e[_0x59bbb1]=_0x69d246[_0x59bbb1];}return _0x11cc7e[_0x481820('0x4f8')]=_0x69d246,_0x4ef805&&_0x4ef805[_0x481820('0x300')](_0x69d246,_0x11cc7e),_0x11cc7e;}(_0x14dd74(_0x294281('0x592'))),_0x364c10=_0x14dd74(_0x294281('0x389')),_0x3cd8d6=_0x14dd74('@ant-design/icons'),_0x11ead7=_0x14dd74(_0x294281('0x1c8'));function _0x2ab6e1(){var _0xb95f22=_0x294281;if(_0xb95f22('0x3da')!=typeof WeakMap)return null;var _0x32fd2b=new WeakMap();return _0x2ab6e1=function(){return _0x32fd2b;},_0x32fd2b;}function _0x5c4682(){var _0x20485b=_0x294281;return(_0x5c4682=Object[_0x20485b('0x50b')]||function(_0x4244b4){var _0x4def9a=_0x20485b;for(var _0x2738dc=0x1;_0x2738dc<arguments[_0x4def9a('0x5ba')];_0x2738dc++){var _0x1ab37e=arguments[_0x2738dc];for(var _0x13b183 in _0x1ab37e)Object['prototype']['hasOwnProperty'][_0x4def9a('0x545')](_0x1ab37e,_0x13b183)&&(_0x4244b4[_0x13b183]=_0x1ab37e[_0x13b183]);}return _0x4244b4;})['apply'](this,arguments);}function _0x27a931(_0x5d2575,_0x3a6b59){return function(_0x33b356){if(Array['isArray'](_0x33b356))return _0x33b356;}(_0x5d2575)||function(_0xb73248,_0x2060d1){var _0x4bcd57=_0x3d72;if(_0x4bcd57('0x20a')==typeof Symbol||!(Symbol[_0x4bcd57('0x20e')]in Object(_0xb73248)))return;var _0x2f505d=[],_0xca190a=!0x0,_0x3c7d59=!0x1,_0x1a6260=void 0x0;try{for(var _0x4c48c5,_0x59e6e9=_0xb73248[Symbol[_0x4bcd57('0x20e')]]();!(_0xca190a=(_0x4c48c5=_0x59e6e9['next']())['done'])&&(_0x2f505d[_0x4bcd57('0x3db')](_0x4c48c5['value']),!_0x2060d1||_0x2f505d[_0x4bcd57('0x5ba')]!==_0x2060d1);_0xca190a=!0x0);}catch(_0x51777f){_0x3c7d59=!0x0,_0x1a6260=_0x51777f;}finally{try{_0xca190a||null==_0x59e6e9[_0x4bcd57('0x41c')]||_0x59e6e9[_0x4bcd57('0x41c')]();}finally{if(_0x3c7d59)throw _0x1a6260;}}return _0x2f505d;}(_0x5d2575,_0x3a6b59)||function(_0x26019b,_0x149171){var _0x104858=_0x3d72;if(!_0x26019b)return;if('string'==typeof _0x26019b)return _0x4ef497(_0x26019b,_0x149171);var _0x258794=Object[_0x104858('0x3d4')]['toString'][_0x104858('0x545')](_0x26019b)[_0x104858('0x5d')](0x8,-0x1);_0x104858('0x2ed')===_0x258794&&_0x26019b[_0x104858('0xaa')]&&(_0x258794=_0x26019b[_0x104858('0xaa')][_0x104858('0x3b6')]);if(_0x104858('0x235')===_0x258794||_0x104858('0x5b1')===_0x258794)return Array[_0x104858('0xd7')](_0x258794);if(_0x104858('0x5ab')===_0x258794||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x104858('0x56e')](_0x258794))return _0x4ef497(_0x26019b,_0x149171);}(_0x5d2575,_0x3a6b59)||function(){var _0x577944=_0x3d72;throw new TypeError(_0x577944('0x311'));}();}function _0x4ef497(_0x1ae6d9,_0x30a5af){var _0x40906b=_0x294281;(null==_0x30a5af||_0x30a5af>_0x1ae6d9[_0x40906b('0x5ba')])&&(_0x30a5af=_0x1ae6d9[_0x40906b('0x5ba')]);for(var _0x5d5be9=0x0,_0x4ed221=new Array(_0x30a5af);_0x5d5be9<_0x30a5af;_0x5d5be9++)_0x4ed221[_0x5d5be9]=_0x1ae6d9[_0x5d5be9];return _0x4ed221;}var _0x41fbb4=_0x364c10[_0x294281('0x4b3')][_0x294281('0x4a8')],_0x1b4d5e=[_0x294281('0x533'),_0x294281('0x36a'),_0x294281('0x129'),'#F6BD16',_0x294281('0xec'),'#9270CA',_0x294281('0x4df'),_0x294281('0x2dc')];function _0x4137db(_0x353937){var _0x7cb46=_0x294281,_0x5762a1=(_0x353937||'')[_0x7cb46('0x46d')]()[_0x7cb46('0x3d8')](/\s+/);return((_0x5762a1[0x0]&&_0x5762a1[0x0][0x0]||'')+(_0x5762a1[0x1]&&_0x5762a1[0x1][0x0]||''))[_0x7cb46('0x339')]()||'?';}function _0x1d29f5(_0x3f672d){var _0x51b6f9=_0x294281;for(var _0x54ff3d=0x0,_0x549a1b=0x0;_0x549a1b<(_0x3f672d||'')['length'];_0x549a1b+=0x1)_0x54ff3d=0x1f*_0x54ff3d+_0x3f672d[_0x51b6f9('0x504')](_0x549a1b)>>>0x0;return _0x1b4d5e[_0x54ff3d%_0x1b4d5e[_0x51b6f9('0x5ba')]];}function _0xb26868(_0x9788ed){var _0x464b81=_0x294281;if(!_0x9788ed)return'';var _0xca4d05=new Date(''[_0x464b81('0x39d')](_0x9788ed,_0x464b81('0x4d9')));return Number[_0x464b81('0x2c3')](_0xca4d05['getTime']())?_0x9788ed:_0xca4d05[_0x464b81('0x40f')](void 0x0,{'month':'short','day':'numeric'});}function _0x4c4674(_0x2d6ecf){var _0x383570=_0x294281;return _0x2d6ecf>=0x3e8?_0x132b17[_0x383570('0x4f8')][_0x383570('0x4fb')](_0x3cd8d6[_0x383570('0x159')],{'style':{'color':'#d32f2f','fontSize':0x10}}):_0x2d6ecf>=0x64?_0x132b17[_0x383570('0x4f8')][_0x383570('0x4fb')](_0x3cd8d6[_0x383570('0x399')],{'style':{'color':_0x383570('0x165'),'fontSize':0x10}}):_0x2d6ecf>=0x32?_0x132b17['default']['createElement'](_0x3cd8d6['WarningOutlined'],{'style':{'color':'#ed6c02','fontSize':0x10}}):_0x2d6ecf>=0x14?_0x132b17[_0x383570('0x4f8')][_0x383570('0x4fb')](_0x3cd8d6['InfoCircleOutlined'],{'style':{'color':_0x383570('0x499'),'fontSize':0x10}}):_0x132b17['default'][_0x383570('0x4fb')](_0x3cd8d6[_0x383570('0x314')],{'style':{'color':'#2e7d32','fontSize':0x10}});}},{'./theme':0x1a,'@ant-design/icons':_0x401518('0x480'),'antd':_0x401518('0x389'),'react':'react'}],0x6:[function(_0x15e569,_0x2eae38,_0xeda8d9){var _0x2e3bfb=_0x401518;'use strict';function _0x40d480(_0x3f3d98){return(_0x40d480='function'==typeof Symbol&&'symbol'==typeof Symbol['iterator']?function(_0x405918){return typeof _0x405918;}:function(_0x230762){var _0x412279=_0x3d72;return _0x230762&&_0x412279('0x3da')==typeof Symbol&&_0x230762[_0x412279('0xaa')]===Symbol&&_0x230762!==Symbol[_0x412279('0x3d4')]?_0x412279('0x4da'):typeof _0x230762;})(_0x3f3d98);}Object[_0x2e3bfb('0x14d')](_0xeda8d9,_0x2e3bfb('0x30e'),{'value':!0x0}),_0xeda8d9[_0x2e3bfb('0x4f8')]=function(_0xe71d65){var _0xe7c5c8=_0x2e3bfb,_0x795c41=_0xe71d65[_0xe7c5c8('0xc4')],_0x37b62b=_0xe71d65['onClose'],_0xb0882e=_0xe71d65[_0xe7c5c8('0x1f7')],_0x4a69a1=_0xe71d65[_0xe7c5c8('0x5a9')],_0x70e6b=_0xe71d65['mode'],_0x3b639a=void 0x0===_0x70e6b?'view':_0x70e6b,_0x233b70=_0xe71d65[_0xe7c5c8('0x2c0')],_0x43f871=_0xe71d65[_0xe7c5c8('0x128')],_0x21613f=_0x386b79[_0xe7c5c8('0x587')][_0xe7c5c8('0x75')]()[_0xe7c5c8('0x331')],_0x98420e=_0x21613f[_0xe7c5c8('0x55')]===_0x441b25[_0xe7c5c8('0x1ff')]['paper'],_0x5ebeec=_0x3699b1((0x0,_0xaae119[_0xe7c5c8('0x5a7')])(null),0x2),_0x19396d=_0x5ebeec[0x0],_0x18c188=_0x5ebeec[0x1],_0x4b46d7=_0x3699b1((0x0,_0xaae119[_0xe7c5c8('0x5a7')])(!0x1),0x2),_0x12332e=_0x4b46d7[0x0],_0x41da48=_0x4b46d7[0x1],_0x4d9d0b=_0x3699b1((0x0,_0xaae119[_0xe7c5c8('0x5a7')])(!0x1),0x2),_0x4e0dc2=_0x4d9d0b[0x0],_0x40ceda=_0x4d9d0b[0x1],_0x4b1967=_0x3699b1((0x0,_0xaae119[_0xe7c5c8('0x5a7')])({}),0x2),_0x4fc688=_0x4b1967[0x0],_0x158977=_0x4b1967[0x1],_0xe3d3d7=_0x3699b1((0x0,_0xaae119[_0xe7c5c8('0x5a7')])(null),0x2),_0x272bb2=_0xe3d3d7[0x0],_0x1e8907=_0xe3d3d7[0x1],_0x3fe05c=_0x3699b1((0x0,_0xaae119[_0xe7c5c8('0x5a7')])(''),0x2),_0x1dcb99=_0x3fe05c[0x0],_0x40136f=_0x3fe05c[0x1],_0x472352=_0x3699b1((0x0,_0xaae119['useState'])(!0x1),0x2),_0x49e421=_0x472352[0x0],_0x3f3c28=_0x472352[0x1],_0x39513d=_0xe7c5c8('0x1fc')===_0x3b639a||'resubmit'===_0x3b639a,_0x38d7ba=function(_0x3a87d1){var _0x5eda0f=_0xe7c5c8;return _0x3a87d1&&_0x41da48(!0x0),fetch(''[_0x5eda0f('0x39d')](_0x4a69a1['restApiBase'],_0x5eda0f('0x4e9'))[_0x5eda0f('0x39d')](_0xb0882e['id'],_0x5eda0f('0x8b')),{'headers':{'Authorization':_0x5eda0f('0x55b')[_0x5eda0f('0x39d')](_0x4a69a1[_0x5eda0f('0x331')])},'credentials':_0x5eda0f('0x1a5')})['then'](function(_0x822b94){var _0x39b1d7=_0x5eda0f;return _0x822b94[_0x39b1d7('0x580')]();})['then'](function(_0x704f89){var _0x14f219=_0x5eda0f;_0x704f89&&!_0x704f89[_0x14f219('0x13b')]?(_0x18c188(_0x704f89),_0x158977({'category':_0x704f89['category'],'expense_date':_0x704f89['expense_date'],'payment_method':_0x704f89[_0x14f219('0x459')],'payee':_0x704f89[_0x14f219('0x349')],'currency':_0x704f89[_0x14f219('0x352')],'amount':_0x704f89[_0x14f219('0x195')],'transaction_no':_0x704f89[_0x14f219('0xc1')],'notes':_0x704f89['notes']})):_0x18c188({});})[_0x5eda0f('0x2e')](function(){return _0x18c188({});})[_0x5eda0f('0x342')](function(){return _0x41da48(!0x1);});};if((0x0,_0xaae119[_0xe7c5c8('0x138')])(function(){if(!_0x795c41||!_0xb0882e)return _0x18c188(null),void _0x158977({});_0x18c188(null),_0x1e8907(null),_0x40136f(''),_0x38d7ba(!0x0);},[_0x795c41,_0xb0882e,_0x4a69a1]),!_0xb0882e)return null;var _0x1bd471=_0x19396d&&_0x19396d['status']||_0xb0882e[_0xe7c5c8('0x34')]||'—',_0x516184=_0x19396d&&_0x19396d[_0xe7c5c8('0x12f')]||[],_0x1e151c=_0x19396d&&_0x19396d[_0xe7c5c8('0x21e')]||[],_0x675eb3=_0x19396d&&_0x19396d[_0xe7c5c8('0x317')]||{},_0x1e9881=_0x19396d&&_0x19396d[_0xe7c5c8('0x301')]||_0xb0882e[_0xe7c5c8('0xdc')]||_0xe7c5c8('0x2fe'),_0x5519ce=_0x98420e?_0xe7c5c8('0x581'):'rgba(25,118,210,0.06)',_0x5816bf=function(_0xe94bb8,_0x33c212){return _0x158977(function(_0x424340){return function(_0x21e5bd){var _0x45fd7d=_0x3d72;for(var _0x9d5098=0x1;_0x9d5098<arguments[_0x45fd7d('0x5ba')];_0x9d5098++){var _0x4a9ee4=null!=arguments[_0x9d5098]?arguments[_0x9d5098]:{};_0x9d5098%0x2?_0x3dc132(Object(_0x4a9ee4),!0x0)[_0x45fd7d('0x475')](function(_0x30158b){_0x100ec1(_0x21e5bd,_0x30158b,_0x4a9ee4[_0x30158b]);}):Object[_0x45fd7d('0x303')]?Object[_0x45fd7d('0x29d')](_0x21e5bd,Object[_0x45fd7d('0x303')](_0x4a9ee4)):_0x3dc132(Object(_0x4a9ee4))[_0x45fd7d('0x475')](function(_0x18714c){var _0x59baaf=_0x45fd7d;Object['defineProperty'](_0x21e5bd,_0x18714c,Object[_0x59baaf('0x7f')](_0x4a9ee4,_0x18714c));});}return _0x21e5bd;}({},_0x424340,_0x100ec1({},_0xe94bb8,_0x33c212));});},_0x201f42=!_0x39513d&&'function'==typeof _0x43f871&&_0x19396d&&_0x19396d[_0xe7c5c8('0x34')]?_0x43f871(_0x19396d[_0xe7c5c8('0x34')]):[],_0x5c189c=_0x39513d?[_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x244')],{'key':_0xe7c5c8('0x28f'),'onClick':_0x37b62b},_0xe7c5c8('0x3e7')),_0xaae119['default'][_0xe7c5c8('0x4fb')](_0x386b79['Button'],{'key':_0xe7c5c8('0x584'),'type':_0xe7c5c8('0x3e5'),'loading':_0x4e0dc2,'onClick':function(){var _0x3a260f=_0xe7c5c8,_0x70b4f9=_0x3a260f('0x113')===_0x3b639a?'resubmit':'update';_0x40ceda(!0x0),fetch(''[_0x3a260f('0x39d')](_0x4a69a1[_0x3a260f('0x28d')],_0x3a260f('0x4e9'))['concat'](_0xb0882e['id'],'/')[_0x3a260f('0x39d')](_0x70b4f9),{'method':_0x3a260f('0x3c8'),'headers':{'Authorization':'Bearer\x20'[_0x3a260f('0x39d')](_0x4a69a1[_0x3a260f('0x331')]),'Content-Type':'application/json'},'credentials':'same-origin','body':JSON[_0x3a260f('0x1d2')](_0x4fc688)})[_0x3a260f('0x12a')](function(_0x12f7b3){return _0x12f7b3['json']();})[_0x3a260f('0x12a')](function(_0x505834){var _0x521182=_0x3a260f;if(_0x505834&&_0x505834[_0x521182('0x13b')]){var _0x4c4636=_0x505834[_0x521182('0x13b')][0x0]&&_0x505834[_0x521182('0x13b')][0x0][0x0]?_0x505834['error'][0x0][0x0]['message']:_0x521182('0x1c');_0x386b79[_0x521182('0x186')][_0x521182('0x13b')](_0x4c4636,0x5);}else _0x386b79[_0x521182('0x186')][_0x521182('0x3df')]('resubmit'===_0x3b639a?_0x521182('0x524'):_0x521182('0x283')),_0x233b70&&_0x233b70(),_0x37b62b();})[_0x3a260f('0x2e')](function(){var _0x40e2d9=_0x3a260f;return _0x386b79[_0x40e2d9('0x186')][_0x40e2d9('0x13b')](_0x40e2d9('0x1c'),0x5);})[_0x3a260f('0x342')](function(){return _0x40ceda(!0x1);});}},_0xe7c5c8('0x113')===_0x3b639a?_0xe7c5c8('0x39a'):_0xe7c5c8('0x103'))]:[_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x244')],{'key':'close','onClick':_0x37b62b},'Close'),_0x201f42[_0xe7c5c8('0x5ba')]>0x0?_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x356')],{'key':_0xe7c5c8('0x34'),'trigger':[_0xe7c5c8('0xa5')],'menu':{'items':_0x201f42['map'](function(_0x1b5cb4){return{'key':String(_0x1b5cb4['value']),'label':_0x1b5cb4['label']};}),'onClick':function(_0x493bd1){var _0x2fdd84=_0xe7c5c8,_0x27db61=_0x493bd1[_0x2fdd84('0x24d')];_0x40136f(''),_0x1e8907(_0x201f42[_0x2fdd84('0x134')](function(_0x674fbd){return String(_0x674fbd['value'])===String(_0x27db61);})||null);}}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x244')],{'type':_0xe7c5c8('0x3e5')},_0xe7c5c8('0x4ca'),_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x5bcc92[_0xe7c5c8('0x5b0')],null))):null],_0x57abac=_0x19396d&&_0x19396d[_0xe7c5c8('0x40c')]||_0xb0882e[_0xe7c5c8('0x352')]||'';return _0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x3e0')],null,_0xaae119[_0xe7c5c8('0x4f8')]['createElement'](_0x386b79[_0xe7c5c8('0x202')],{'open':_0x795c41,'onCancel':_0x37b62b,'title':null,'width':0x348,'footer':_0x5c189c,'styles':{'body':{'paddingTop':0x8}}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0xe7c5c8('0x1c7'),{'style':{'display':_0xe7c5c8('0x37f'),'gap':0x14}},_0xaae119['default'][_0xe7c5c8('0x4fb')](_0xe7c5c8('0x1c7'),{'style':{'flex':0x1,'minWidth':0x0}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0xe7c5c8('0x1c7'),{'style':{'display':_0xe7c5c8('0x37f'),'alignItems':_0xe7c5c8('0x36e'),'gap':0xe,'marginBottom':0x10}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x42e')],{'size':0x34,'src':_0xb0882e[_0xe7c5c8('0x3e3')]||void 0x0,'icon':_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x5bcc92['UserOutlined'],null),'style':{'flexShrink':0x0}}),_0xaae119['default'][_0xe7c5c8('0x4fb')](_0xe7c5c8('0x1c7'),{'style':{'flex':0x1,'minWidth':0x0}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x28a0d0,{'level':0x5,'style':{'margin':0x0},'ellipsis':!0x0},_0x1e9881),_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x215d65,{'type':_0xe7c5c8('0x18d'),'style':{'fontSize':0xd}},_0x19396d&&_0x19396d['category_name']||_0xb0882e[_0xe7c5c8('0x1b0')]||_0xe7c5c8('0x3e9'))),_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79['Tag'],{'color':_0xc6d103[_0x1bd471]||_0xe7c5c8('0x4f8'),'style':{'fontWeight':0x258,'marginInlineEnd':0x0}},_0x1bd471)),_0x12332e?_0xaae119['default'][_0xe7c5c8('0x4fb')](_0xe7c5c8('0x1c7'),{'style':{'textAlign':_0xe7c5c8('0x36e'),'padding':0x28}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79['Spin'],null)):_0x39513d?_0xaae119['default'][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x251')],{'layout':'vertical','size':_0xe7c5c8('0xd3')},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')]('div',{'style':{'display':'flex','gap':0xc}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79['Form'][_0xe7c5c8('0x54e')],{'label':'Amount','style':{'flex':0x1},'required':!0x0},_0xaae119['default']['createElement'](_0x386b79[_0xe7c5c8('0x1ea')],{'style':{'width':_0xe7c5c8('0x4ae')},'value':_0x4fc688[_0xe7c5c8('0x195')],'onChange':function(_0x3a6abf){var _0x2de29d=_0xe7c5c8;return _0x5816bf(_0x2de29d('0x195'),_0x3a6abf);},'stringMode':!0x0})),_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x251')][_0xe7c5c8('0x54e')],{'label':_0xe7c5c8('0x258'),'style':{'width':0x8c}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x37b')],{'showSearch':!0x0,'optionFilterProp':_0xe7c5c8('0x278'),'value':_0x4fc688[_0xe7c5c8('0x352')],'onChange':function(_0x1d719b){var _0x10a9b3=_0xe7c5c8;return _0x5816bf(_0x10a9b3('0x352'),_0x1d719b);},'options':(_0x675eb3[_0xe7c5c8('0xfa')]||[])[_0xe7c5c8('0x427')](function(_0x3eb41b){var _0x543f90=_0xe7c5c8;return{'value':_0x3eb41b['id'],'label':_0x3eb41b[_0x543f90('0x3b6')]};})}))),_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0xe7c5c8('0x1c7'),{'style':{'display':'flex','gap':0xc}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x251')]['Item'],{'label':_0xe7c5c8('0x304'),'style':{'flex':0x1}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x37b')],{'showSearch':!0x0,'optionFilterProp':_0xe7c5c8('0x278'),'value':_0x4fc688[_0xe7c5c8('0x1b0')],'onChange':function(_0x21a03f){var _0x43cc9c=_0xe7c5c8;return _0x5816bf(_0x43cc9c('0x1b0'),_0x21a03f);},'options':(_0x675eb3[_0xe7c5c8('0x137')]||[])[_0xe7c5c8('0x427')](function(_0x49efd8){var _0x43f99c=_0xe7c5c8;return{'value':_0x49efd8['id'],'label':_0x49efd8[_0x43f99c('0x3b6')]};})})),_0xaae119[_0xe7c5c8('0x4f8')]['createElement'](_0x386b79[_0xe7c5c8('0x251')][_0xe7c5c8('0x54e')],{'label':'Payment\x20Method','style':{'flex':0x1}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x37b')],{'showSearch':!0x0,'optionFilterProp':_0xe7c5c8('0x278'),'value':_0x4fc688[_0xe7c5c8('0x459')],'onChange':function(_0x39aedc){var _0x2be07c=_0xe7c5c8;return _0x5816bf(_0x2be07c('0x459'),_0x39aedc);},'options':(_0x675eb3[_0xe7c5c8('0x5a3')]||[])[_0xe7c5c8('0x427')](function(_0x57b7f2){var _0x581d4a=_0xe7c5c8;return{'value':_0x57b7f2['id'],'label':_0x57b7f2[_0x581d4a('0x3b6')]};})}))),_0xaae119['default'][_0xe7c5c8('0x4fb')](_0xe7c5c8('0x1c7'),{'style':{'display':_0xe7c5c8('0x37f'),'gap':0xc}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79['Form'][_0xe7c5c8('0x54e')],{'label':_0xe7c5c8('0x1e0'),'style':{'flex':0x1}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')]('input',{'type':_0xe7c5c8('0x556'),'value':_0x4fc688[_0xe7c5c8('0x319')]||'','onChange':function(_0x31edec){var _0x57a224=_0xe7c5c8;return _0x5816bf('expense_date',_0x31edec['target'][_0x57a224('0x3dc')]);},'style':{'width':_0xe7c5c8('0x4ae'),'height':0x18,'padding':_0xe7c5c8('0xcd'),'borderRadius':0x6,'border':_0xe7c5c8('0x5be')[_0xe7c5c8('0x39d')](_0x21613f[_0xe7c5c8('0x340')]),'background':_0x21613f['colorBgContainer'],'color':_0x21613f[_0xe7c5c8('0xc8')],'colorScheme':_0x98420e?_0xe7c5c8('0x1e1'):'light'}})),_0xaae119['default'][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x251')]['Item'],{'label':'Payee\x20/\x20Merchant','style':{'flex':0x1}},_0xaae119['default']['createElement'](_0x386b79[_0xe7c5c8('0x8')],{'value':_0x4fc688[_0xe7c5c8('0x349')]||'','onChange':function(_0x48a3cc){var _0x46df1c=_0xe7c5c8;return _0x5816bf(_0x46df1c('0x349'),_0x48a3cc[_0x46df1c('0x463')][_0x46df1c('0x3dc')]);}}))),_0xaae119[_0xe7c5c8('0x4f8')]['createElement'](_0x386b79[_0xe7c5c8('0x251')][_0xe7c5c8('0x54e')],{'label':_0xe7c5c8('0x1ec'),'style':{'marginBottom':0xc}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x8')],{'value':_0x4fc688[_0xe7c5c8('0xc1')]||'','onChange':function(_0xf22d6b){var _0x430b17=_0xe7c5c8;return _0x5816bf(_0x430b17('0xc1'),_0xf22d6b['target'][_0x430b17('0x3dc')]);}})),_0xaae119['default']['createElement'](_0x386b79[_0xe7c5c8('0x251')][_0xe7c5c8('0x54e')],{'label':_0xe7c5c8('0x26e'),'style':{'marginBottom':0x4}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x8')]['TextArea'],{'rows':0x2,'value':_0x4fc688[_0xe7c5c8('0x479')]||'','onChange':function(_0x1f403f){var _0x6d22e9=_0xe7c5c8;return _0x5816bf('notes',_0x1f403f[_0x6d22e9('0x463')][_0x6d22e9('0x3dc')]);}}))):_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0xaae119['default'][_0xe7c5c8('0x3e0')],null,_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')]('div',{'style':{'background':_0x5519ce,'borderRadius':0xc,'padding':_0xe7c5c8('0x12c'),'marginBottom':0x12,'display':'flex','alignItems':_0xe7c5c8('0x2d1'),'gap':0x8}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0xe7c5c8('0x433'),{'style':{'fontSize':0x1e,'fontWeight':0x2bc,'color':_0x21613f[_0xe7c5c8('0xc8')],'lineHeight':0x1}},null!=_0xb0882e[_0xe7c5c8('0x195')]?_0xb0882e[_0xe7c5c8('0x195')]:_0x19396d&&_0x19396d[_0xe7c5c8('0x195')]||'—'),_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0xe7c5c8('0x433'),{'style':{'fontSize':0xf,'fontWeight':0x258,'color':_0x21613f[_0xe7c5c8('0x359')]}},_0x57abac)),_0xaae119[_0xe7c5c8('0x4f8')]['createElement'](_0x386b79[_0xe7c5c8('0x1f1')],{'column':0x1,'size':_0xe7c5c8('0xd3'),'bordered':!0x0,'labelStyle':{'width':0x96,'color':_0x21613f[_0xe7c5c8('0x359')]},'items':[{'key':_0xe7c5c8('0x556'),'label':_0xe7c5c8('0x1e0'),'children':_0x19396d&&_0x19396d[_0xe7c5c8('0x319')]||_0xb0882e['expense_date']||'—'},{'key':'pm','label':'Payment\x20Method','children':_0x19396d&&_0x19396d['payment_method_name']||_0xb0882e[_0xe7c5c8('0x459')]||'—'},{'key':'payee','label':_0xe7c5c8('0x289'),'children':_0x19396d&&_0x19396d['payee']||_0xb0882e[_0xe7c5c8('0x349')]||'—'},{'key':_0xe7c5c8('0x509'),'label':_0xe7c5c8('0x164'),'children':_0x19396d&&_0x19396d[_0xe7c5c8('0xc1')]||'—'},{'key':_0xe7c5c8('0x2f9'),'label':_0xe7c5c8('0x14c'),'children':_0x19396d&&_0x19396d[_0xe7c5c8('0x482')]||'—'}]}),_0x19396d&&_0x19396d['notes']?_0xaae119[_0xe7c5c8('0x4f8')]['createElement'](_0xe7c5c8('0x1c7'),{'style':{'marginTop':0x10}},_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x215d65,{'strong':!0x0,'style':{'display':_0xe7c5c8('0x26d'),'marginBottom':0x6}},'Notes'),_0xaae119[_0xe7c5c8('0x4f8')]['createElement'](_0xe7c5c8('0x1c7'),{'style':{'background':_0x21613f['colorFillQuaternary'],'borderRadius':0x8,'padding':_0xe7c5c8('0x408'),'whiteSpace':_0xe7c5c8('0x539'),'color':_0x21613f[_0xe7c5c8('0xc8')]}},_0x19396d['notes'])):null),_0x516184[_0xe7c5c8('0x5ba')]>0x0&&_0xaae119['default'][_0xe7c5c8('0x4fb')](_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x3e0')],null,_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79['Divider'],{'style':{'margin':_0xe7c5c8('0x1c0')},'orientation':_0xe7c5c8('0x8d'),'plain':!0x0},_0xaae119[_0xe7c5c8('0x4f8')]['createElement'](_0x5bcc92[_0xe7c5c8('0x189')],{'style':{'marginRight':0x6}}),_0xe7c5c8('0x266')),_0xaae119[_0xe7c5c8('0x4f8')]['createElement'](_0xe7c5c8('0x1c7'),{'style':{'display':_0xe7c5c8('0x37f'),'flexWrap':_0xe7c5c8('0x24b'),'gap':0xc}},_0x516184[_0xe7c5c8('0x427')](function(_0x4f89c7){var _0x47dab8=_0xe7c5c8;return _0x4f89c7[_0x47dab8('0x48e')]?_0xaae119[_0x47dab8('0x4f8')][_0x47dab8('0x4fb')]('div',{'key':_0x4f89c7[_0x47dab8('0x1f2')],'style':{'textAlign':'center'}},_0xaae119['default'][_0x47dab8('0x4fb')](_0x386b79[_0x47dab8('0x2eb')],{'src':_0x4f89c7['url'],'alt':_0x4f89c7['label'],'width':0x52,'height':0x52,'style':{'objectFit':_0x47dab8('0x1ed'),'borderRadius':0x8,'border':_0x47dab8('0x5be')[_0x47dab8('0x39d')](_0x21613f[_0x47dab8('0x47d')])}}),_0xaae119[_0x47dab8('0x4f8')]['createElement']('div',{'style':{'fontSize':0xc,'color':_0x21613f['colorTextSecondary'],'marginTop':0x4}},_0x4f89c7[_0x47dab8('0x278')])):_0xaae119[_0x47dab8('0x4f8')][_0x47dab8('0x4fb')](_0x386b79[_0x47dab8('0x244')],{'key':_0x4f89c7[_0x47dab8('0x1f2')],'icon':_0xaae119[_0x47dab8('0x4f8')][_0x47dab8('0x4fb')](_0x5bcc92[_0x47dab8('0x58e')],null),'href':_0x4f89c7[_0x47dab8('0x30c')],'target':_0x47dab8('0x6a'),'rel':'noreferrer'},_0x4f89c7[_0x47dab8('0x278')]);})))),_0xaae119['default'][_0xe7c5c8('0x4fb')](_0x53299e,{'logs':_0x1e151c,'loading':_0x12332e,'token':_0x21613f}))),_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x202')],{'open':!!_0x272bb2,'title':_0xe7c5c8('0x4ca'),'okText':_0xe7c5c8('0x153'),'confirmLoading':_0x49e421,'okButtonProps':{'disabled':!_0x1dcb99['trim']()},'onOk':function(){var _0x554d38=_0xe7c5c8;_0x272bb2&&_0x1dcb99['trim']()&&(_0x3f3c28(!0x0),fetch(''['concat'](_0x4a69a1['restApiBase'],_0x554d38('0x4e9'))[_0x554d38('0x39d')](_0xb0882e['id'],_0x554d38('0x3af')),{'method':_0x554d38('0x3c8'),'headers':{'Authorization':'Bearer\x20'[_0x554d38('0x39d')](_0x4a69a1['token']),'Content-Type':'application/json'},'credentials':_0x554d38('0x1a5'),'body':JSON[_0x554d38('0x1d2')]({'status':_0x272bb2[_0x554d38('0x3dc')],'reason':_0x1dcb99})})['then'](function(_0x483b02){var _0x430fae=_0x554d38;return _0x483b02[_0x430fae('0x580')]();})[_0x554d38('0x12a')](function(_0x2910d6){var _0x61a5e=_0x554d38;if(_0x2910d6&&_0x2910d6[_0x61a5e('0x13b')]){var _0x177566=_0x2910d6[_0x61a5e('0x13b')][0x0]&&_0x2910d6['error'][0x0][0x0]?_0x2910d6[_0x61a5e('0x13b')][0x0][0x0][_0x61a5e('0x186')]:_0x61a5e('0x6b');_0x386b79[_0x61a5e('0x186')][_0x61a5e('0x13b')](_0x177566,0x5);}else _0x386b79[_0x61a5e('0x186')]['success'](_0x61a5e('0x19a')),_0x1e8907(null),_0x40136f(''),_0x233b70&&_0x233b70(),_0x38d7ba(!0x1);})['catch'](function(){var _0x39b66c=_0x554d38;return _0x386b79['message'][_0x39b66c('0x13b')]('Could\x20not\x20change\x20status',0x5);})[_0x554d38('0x342')](function(){return _0x3f3c28(!0x1);}));},'onCancel':function(){return _0x1e8907(null);},'width':0x1b8},_0xaae119['default'][_0xe7c5c8('0x4fb')](_0xe7c5c8('0x1c7'),{'style':{'marginBottom':0xa}},_0xe7c5c8('0x223'),'\x20',_0xaae119['default'][_0xe7c5c8('0x4fb')](_0x386b79[_0xe7c5c8('0x4d8')],{'color':_0xc6d103[_0x272bb2&&_0x272bb2[_0xe7c5c8('0x3dc')]]||_0xe7c5c8('0x4f8'),'style':{'fontWeight':0x258}},_0x272bb2&&_0x272bb2[_0xe7c5c8('0x278')])),_0xaae119[_0xe7c5c8('0x4f8')][_0xe7c5c8('0x4fb')]('div',{'style':{'marginBottom':0x6,'color':_0x21613f[_0xe7c5c8('0x359')]}},_0xaae119['default'][_0xe7c5c8('0x4fb')](_0xe7c5c8('0x433'),{'style':{'color':_0x21613f[_0xe7c5c8('0x3a5')],'marginRight':0x4}},'*'),_0xe7c5c8('0xac')),_0xaae119[_0xe7c5c8('0x4f8')]['createElement'](_0x386b79[_0xe7c5c8('0x8')]['TextArea'],{'rows':0x3,'value':_0x1dcb99,'onChange':function(_0xfc3fec){var _0xe17802=_0xe7c5c8;return _0x40136f(_0xfc3fec['target'][_0xe17802('0x3dc')]);},'status':_0x1dcb99[_0xe7c5c8('0x46d')]()?void 0x0:_0xe7c5c8('0x13b'),'placeholder':_0xe7c5c8('0xb7')})));};var _0xaae119=function(_0x3335fa){var _0x3820d1=_0x2e3bfb;if(_0x3335fa&&_0x3335fa['__esModule'])return _0x3335fa;if(null===_0x3335fa||_0x3820d1('0xd8')!==_0x40d480(_0x3335fa)&&_0x3820d1('0x3da')!=typeof _0x3335fa)return{'default':_0x3335fa};var _0x140c0e=_0xd66af3();if(_0x140c0e&&_0x140c0e[_0x3820d1('0x1e7')](_0x3335fa))return _0x140c0e['get'](_0x3335fa);var _0x951fa5={},_0x5c2797=Object['defineProperty']&&Object[_0x3820d1('0x7f')];for(var _0xa3771 in _0x3335fa)if(Object['prototype'][_0x3820d1('0x25d')][_0x3820d1('0x545')](_0x3335fa,_0xa3771)){var _0x5a6bed=_0x5c2797?Object[_0x3820d1('0x7f')](_0x3335fa,_0xa3771):null;_0x5a6bed&&(_0x5a6bed[_0x3820d1('0x4cb')]||_0x5a6bed[_0x3820d1('0x300')])?Object[_0x3820d1('0x14d')](_0x951fa5,_0xa3771,_0x5a6bed):_0x951fa5[_0xa3771]=_0x3335fa[_0xa3771];}return _0x951fa5[_0x3820d1('0x4f8')]=_0x3335fa,_0x140c0e&&_0x140c0e[_0x3820d1('0x300')](_0x3335fa,_0x951fa5),_0x951fa5;}(_0x15e569(_0x2e3bfb('0x592'))),_0x386b79=_0x15e569(_0x2e3bfb('0x389')),_0x5bcc92=_0x15e569(_0x2e3bfb('0x480')),_0x441b25=_0x15e569(_0x2e3bfb('0x1c8'));function _0xd66af3(){var _0x2b70bc=_0x2e3bfb;if(_0x2b70bc('0x3da')!=typeof WeakMap)return null;var _0x2cd378=new WeakMap();return _0xd66af3=function(){return _0x2cd378;},_0x2cd378;}function _0x3dc132(_0x110984,_0x413c09){var _0x36ce4f=_0x2e3bfb,_0xa232fb=Object['keys'](_0x110984);if(Object['getOwnPropertySymbols']){var _0x176746=Object['getOwnPropertySymbols'](_0x110984);_0x413c09&&(_0x176746=_0x176746[_0x36ce4f('0x34f')](function(_0x26b651){var _0x3b07b3=_0x36ce4f;return Object[_0x3b07b3('0x7f')](_0x110984,_0x26b651)[_0x3b07b3('0x24')];})),_0xa232fb[_0x36ce4f('0x3db')]['apply'](_0xa232fb,_0x176746);}return _0xa232fb;}function _0x100ec1(_0x4c063c,_0x230353,_0x1ba038){var _0xd6cb3d=_0x2e3bfb;return _0x230353 in _0x4c063c?Object[_0xd6cb3d('0x14d')](_0x4c063c,_0x230353,{'value':_0x1ba038,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x4c063c[_0x230353]=_0x1ba038,_0x4c063c;}function _0x3699b1(_0x344e03,_0x484e1c){return function(_0x49fc60){if(Array['isArray'](_0x49fc60))return _0x49fc60;}(_0x344e03)||function(_0x540b7f,_0x48e274){var _0x65d649=_0x3d72;if(_0x65d649('0x20a')==typeof Symbol||!(Symbol[_0x65d649('0x20e')]in Object(_0x540b7f)))return;var _0x24380f=[],_0x152590=!0x0,_0x585d27=!0x1,_0x5a9103=void 0x0;try{for(var _0x356e5c,_0x54b35e=_0x540b7f[Symbol[_0x65d649('0x20e')]]();!(_0x152590=(_0x356e5c=_0x54b35e[_0x65d649('0xc')]())[_0x65d649('0x44')])&&(_0x24380f[_0x65d649('0x3db')](_0x356e5c[_0x65d649('0x3dc')]),!_0x48e274||_0x24380f[_0x65d649('0x5ba')]!==_0x48e274);_0x152590=!0x0);}catch(_0x3a67dd){_0x585d27=!0x0,_0x5a9103=_0x3a67dd;}finally{try{_0x152590||null==_0x54b35e['return']||_0x54b35e[_0x65d649('0x41c')]();}finally{if(_0x585d27)throw _0x5a9103;}}return _0x24380f;}(_0x344e03,_0x484e1c)||function(_0x13b407,_0x27bf93){var _0x3c4fa7=_0x3d72;if(!_0x13b407)return;if(_0x3c4fa7('0x4dd')==typeof _0x13b407)return _0xb48fed(_0x13b407,_0x27bf93);var _0x17be0d=Object['prototype'][_0x3c4fa7('0x4ef')]['call'](_0x13b407)[_0x3c4fa7('0x5d')](0x8,-0x1);'Object'===_0x17be0d&&_0x13b407[_0x3c4fa7('0xaa')]&&(_0x17be0d=_0x13b407[_0x3c4fa7('0xaa')][_0x3c4fa7('0x3b6')]);if(_0x3c4fa7('0x235')===_0x17be0d||'Set'===_0x17be0d)return Array[_0x3c4fa7('0xd7')](_0x17be0d);if(_0x3c4fa7('0x5ab')===_0x17be0d||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x3c4fa7('0x56e')](_0x17be0d))return _0xb48fed(_0x13b407,_0x27bf93);}(_0x344e03,_0x484e1c)||function(){var _0xe9e226=_0x3d72;throw new TypeError(_0xe9e226('0x311'));}();}function _0xb48fed(_0x765491,_0x10c17b){var _0xc30400=_0x2e3bfb;(null==_0x10c17b||_0x10c17b>_0x765491[_0xc30400('0x5ba')])&&(_0x10c17b=_0x765491[_0xc30400('0x5ba')]);for(var _0x41a100=0x0,_0x7b8f8d=new Array(_0x10c17b);_0x41a100<_0x10c17b;_0x41a100++)_0x7b8f8d[_0x41a100]=_0x765491[_0x41a100];return _0x7b8f8d;}var _0x215d65=_0x386b79[_0x2e3bfb('0x4b3')][_0x2e3bfb('0x4a8')],_0x28a0d0=_0x386b79[_0x2e3bfb('0x4b3')]['Title'],_0xc6d103={'Pending':_0x2e3bfb('0x44c'),'Approved':_0x2e3bfb('0x122'),'Rejected':_0x2e3bfb('0x213'),'Paid':_0x2e3bfb('0x568'),'Cancelled':_0x2e3bfb('0x4f8')};function _0x53299e(_0x358840){var _0x1cbbce=_0x2e3bfb,_0x5abd7a=_0x358840[_0x1cbbce('0x21e')],_0xa54a37=_0x358840[_0x1cbbce('0xb4')],_0x316c1f=_0x358840[_0x1cbbce('0x331')];return _0xaae119['default']['createElement'](_0x1cbbce('0x1c7'),{'style':{'width':0x104,'flexShrink':0x0,'borderLeft':'1px\x20solid\x20'[_0x1cbbce('0x39d')](_0x316c1f[_0x1cbbce('0x47d')]),'paddingLeft':0x10,'display':_0x1cbbce('0x37f'),'flexDirection':'column','minHeight':0x0}},_0xaae119['default'][_0x1cbbce('0x4fb')](_0x215d65,{'strong':!0x0,'style':{'marginBottom':0xc}},_0xaae119[_0x1cbbce('0x4f8')][_0x1cbbce('0x4fb')](_0x5bcc92[_0x1cbbce('0x547')],{'style':{'marginRight':0x6}}),_0x1cbbce('0x471')),_0xaae119['default'][_0x1cbbce('0x4fb')]('div',{'style':{'overflowY':_0x1cbbce('0x4b6'),'flex':0x1,'maxHeight':0x1cc,'paddingRight':0x4,'paddingTop':0x6}},_0xa54a37?_0xaae119['default'][_0x1cbbce('0x4fb')](_0x1cbbce('0x1c7'),{'style':{'textAlign':'center','padding':0x18}},_0xaae119['default'][_0x1cbbce('0x4fb')](_0x386b79[_0x1cbbce('0x4cc')],{'size':_0x1cbbce('0xd3')})):_0x5abd7a&&0x0!==_0x5abd7a[_0x1cbbce('0x5ba')]?_0xaae119['default'][_0x1cbbce('0x4fb')](_0x386b79[_0x1cbbce('0x146')],{'items':_0x5abd7a[_0x1cbbce('0x427')](function(_0x46872d){var _0x481494=_0x1cbbce;return{'children':_0xaae119[_0x481494('0x4f8')]['createElement']('div',null,_0xaae119['default'][_0x481494('0x4fb')](_0x481494('0x1c7'),{'style':{'fontWeight':0x258,'fontSize':0xd}},''[_0x481494('0x39d')](_0x46872d[_0x481494('0x3ad')]||'',_0x481494('0x230'))[_0x481494('0x39d')](_0x46872d[_0x481494('0x444')]||'')),_0xaae119[_0x481494('0x4f8')][_0x481494('0x4fb')]('div',{'style':{'color':_0x316c1f['colorTextTertiary'],'fontSize':0xc}},_0x46872d[_0x481494('0x33f')]),_0x46872d[_0x481494('0x14e')]&&_0x46872d[_0x481494('0x14e')][_0x481494('0x46d')]()?_0xaae119[_0x481494('0x4f8')][_0x481494('0x4fb')](_0x481494('0x1c7'),{'style':{'fontSize':0xc,'marginTop':0x2}},_0x46872d[_0x481494('0x14e')][_0x481494('0x46d')]()):null)};})}):_0xaae119[_0x1cbbce('0x4f8')]['createElement'](_0x215d65,{'type':_0x1cbbce('0x18d'),'style':{'fontSize':0xd}},'No\x20status\x20changes\x20yet.')));}},{'./theme':0x1a,'@ant-design/icons':_0x401518('0x480'),'antd':_0x401518('0x389'),'react':'react'}],0x7:[function(_0x569c52,_0x5307dc,_0x481f89){var _0x540919=_0x401518;'use strict';function _0x1b2107(_0x3f068c){var _0x20e956=_0x3d72;return(_0x1b2107=_0x20e956('0x3da')==typeof Symbol&&'symbol'==typeof Symbol[_0x20e956('0x20e')]?function(_0x4cde82){return typeof _0x4cde82;}:function(_0x256f9e){var _0x2ba268=_0x20e956;return _0x256f9e&&_0x2ba268('0x3da')==typeof Symbol&&_0x256f9e['constructor']===Symbol&&_0x256f9e!==Symbol[_0x2ba268('0x3d4')]?'symbol':typeof _0x256f9e;})(_0x3f068c);}Object[_0x540919('0x14d')](_0x481f89,_0x540919('0x30e'),{'value':!0x0}),_0x481f89[_0x540919('0x4f8')]=function(_0x56dcf3){var _0x1c582a=_0x540919,_0x3a932d=_0x56dcf3[_0x1c582a('0x32c')],_0x2d1075=_0x1798a0[_0x1c582a('0x587')][_0x1c582a('0x75')]()[_0x1c582a('0x331')],_0xa748ef=(0x0,_0x5e9a70[_0x1c582a('0x5a8')])(function(){var _0x17708f=_0x1c582a;return new _0x59f535[(_0x17708f('0x4f8'))](_0x3a932d||[])[_0x17708f('0x17e')]();},[_0x3a932d]),_0x26b5df=_0x2d1075[_0x1c582a('0x55')]===_0x5f3fad['MUI_DARK'][_0x1c582a('0xfd')],_0x5d5c4f=_0x26b5df?{'label':{'style':{'fill':_0x1c582a('0x518')}},'line':{'style':{'stroke':_0x1c582a('0x15a')}},'grid':{'line':{'style':{'stroke':'rgba(255,255,255,0.12)'}}}}:{},_0xa5d150=_0x26b5df?{'text':{'style':{'fill':_0x1c582a('0x481')}}}:{},_0x50d81c=_0x26b5df?{'style':{'fill':_0x1c582a('0x481')}}:{},_0x548286=_0xa748ef['carryForward'][_0x1c582a('0x5ba')]>0x0,_0xe8ceb4=[];_0xa748ef[_0x1c582a('0x583')]['forEach'](function(_0x379545){var _0x2ba4c9=_0x1c582a;_0xe8ceb4[_0x2ba4c9('0x3db')]({'period':_0x379545[_0x2ba4c9('0x278')],'type':'Allocated','value':_0x379545[_0x2ba4c9('0x54d')]+_0x379545['pto']}),_0xe8ceb4[_0x2ba4c9('0x3db')]({'period':_0x379545[_0x2ba4c9('0x278')],'type':_0x2ba4c9('0xb6'),'value':_0x379545[_0x2ba4c9('0x93')]});});var _0x3e3d11=[];null!=_0xa748ef['totalForPeriod']&&_0x3e3d11[_0x1c582a('0x3db')]({'step':_0x1c582a('0x49d'),'value':_0xa748ef[_0x1c582a('0x35c')]}),_0xa748ef['joinedDateAdjusted']&&_0x3e3d11[_0x1c582a('0x3db')]({'step':_0x1c582a('0x421'),'value':_0xa748ef[_0x1c582a('0xe1')]}),_0xa748ef[_0x1c582a('0x209')]&&_0x3e3d11[_0x1c582a('0x3db')]({'step':_0x1c582a('0x6d'),'value':_0xa748ef[_0x1c582a('0x43a')]});var _0x454602={'data':_0xe8ceb4,'xField':'period','yField':_0x1c582a('0x3dc'),'groupField':_0x1c582a('0x3b7'),'color':[_0x1c582a('0x129'),_0x1c582a('0x36a')],'legend':_0x3d2ab1({'visible':!0x0,'position':_0x1c582a('0x214')},_0xa5d150),'label':{'visible':!0x1},'xAxis':_0x3d2ab1({'visible':!0x0,'title':{'visible':!0x0,'text':_0x1c582a('0x544')}},_0x5d5c4f),'yAxis':_0x3d2ab1({'visible':!0x0,'min':0x0,'title':{'visible':!0x0,'text':_0x1c582a('0x452')}},_0x5d5c4f)},_0xa8c22b={'data':_0x3e3d11,'xField':'step','yField':_0x1c582a('0x3dc'),'color':_0x1c582a('0x129'),'columnSize':0x30,'label':_0x3d2ab1({'visible':!0x0,'position':'top'},_0x50d81c),'xAxis':_0x3d2ab1({'visible':!0x0},_0x5d5c4f),'yAxis':_0x3d2ab1({'visible':!0x0,'min':0x0,'title':{'visible':!0x0,'text':_0x1c582a('0x452')}},_0x5d5c4f)},_0x1c0a88=_0xa748ef['carryForward'][_0x1c582a('0x427')](function(_0xc058c7,_0x1f8439){return _0x3d2ab1({'key':_0x1f8439},_0xc058c7);}),_0x42e550=[{'title':_0x1c582a('0x544'),'dataIndex':_0x1c582a('0x278'),'key':'label'},{'title':'Carried\x20in','dataIndex':_0x1c582a('0x208'),'key':'carriedIn','render':_0xa18741},{'title':_0x1c582a('0x49d'),'key':_0x1c582a('0x54d'),'render':function(_0x526600,_0x4afc0b){var _0x3d1b7a=_0x1c582a;return _0xa18741(_0x4afc0b[_0x3d1b7a('0x54d')]+_0x4afc0b[_0x3d1b7a('0x2a8')]);}},{'title':_0x1c582a('0x44b'),'dataIndex':_0x1c582a('0x12'),'key':_0x1c582a('0x12'),'render':_0xa18741},{'title':'Valid\x20till','dataIndex':'validTill','key':_0x1c582a('0x2f7')},{'title':_0x1c582a('0xb6'),'dataIndex':_0x1c582a('0x93'),'key':'carriedToNext','render':function(_0x20c376){var _0x504e45=_0x1c582a;return _0x5e9a70[_0x504e45('0x4f8')][_0x504e45('0x4fb')](_0x1dc814,{'strong':!0x0},_0xa18741(_0x20c376));}}],_0x4c0e17=_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1798a0[_0x1c582a('0x411')],{'ghost':!0x0,'items':[{'key':_0x1c582a('0x11'),'label':_0x1c582a('0x413'),'children':_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')]('ul',{'style':{'fontSize':12.5,'paddingLeft':0x12,'margin':0x0,'color':_0x2d1075['colorTextSecondary']}},(_0x3a932d||[])[_0x1c582a('0x427')](function(_0x296c2a,_0x2127b0){var _0x209faf=_0x1c582a;return _0x5e9a70['default'][_0x209faf('0x4fb')]('li',{'key':_0x2127b0,'style':{'marginBottom':0x3}},String(_0x296c2a)['replace'](/^\(client=[^)]*\)\s*/,''));}))}]});if(!_0x548286&&0x0===_0x3e3d11['length'])return _0x5e9a70[_0x1c582a('0x4f8')]['createElement'](_0x1c582a('0x1c7'),null,_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1798a0[_0x1c582a('0x5a5')],{'description':_0x1c582a('0x1ce')}),_0x4c0e17);return _0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1c582a('0x1c7'),{'style':{'display':_0x1c582a('0x37f'),'flexDirection':_0x1c582a('0x13c'),'gap':0x10}},_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1798a0[_0x1c582a('0x1f1')],{'size':_0x1c582a('0xd3'),'column':0x2,'bordered':!0x0},_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1798a0[_0x1c582a('0x1f1')][_0x1c582a('0x54e')],{'label':_0x1c582a('0x27a')},_0xa748ef[_0x1c582a('0x82')]||'—'),_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1798a0[_0x1c582a('0x1f1')][_0x1c582a('0x54e')],{'label':_0x1c582a('0x47f')},_0xa748ef[_0x1c582a('0xbb')]?''[_0x1c582a('0x39d')](_0xa748ef['period']['from'],_0x1c582a('0x230'))[_0x1c582a('0x39d')](_0xa748ef['period']['to']):'—'),_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1798a0[_0x1c582a('0x1f1')][_0x1c582a('0x54e')],{'label':_0x1c582a('0x1d4')},_0xa18741(_0xa748ef[_0x1c582a('0x35c')]||0x0)),_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1798a0[_0x1c582a('0x1f1')][_0x1c582a('0x54e')],{'label':'Available\x20this\x20period'},_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1dc814,{'strong':!0x0},_0xa18741(null!=_0xa748ef['afterAccrue']?_0xa748ef[_0x1c582a('0x43a')]:_0xa748ef['totalForPeriod']||0x0)),_0xa748ef[_0x1c582a('0x209')]?_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1798a0[_0x1c582a('0x4d8')],{'color':_0x1c582a('0x568'),'style':{'marginLeft':0x8}},'accrued'):null)),_0x548286?_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1c582a('0x1c7'),null,_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x313112,{'level':0x5,'style':{'marginBottom':0x4}},_0x1c582a('0x1ac')),_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1dc814,{'type':'secondary','style':{'fontSize':12.5}},'How\x20leaves\x20carried\x20across\x20'['concat'](_0xa748ef['carryForward'][_0x1c582a('0x5ba')],'\x20past\x20period(s)\x20into\x20the\x20current\x20one.')),_0x5e9a70[_0x1c582a('0x4f8')]['createElement'](_0x3178b7,{'ctor':_0x1f540c[_0x1c582a('0x42d')],'config':_0x454602}),_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1798a0[_0x1c582a('0x3cd')],{'size':_0x1c582a('0xd3'),'columns':_0x42e550,'dataSource':_0x1c0a88,'pagination':!0x1,'scroll':{'y':0xdc},'style':{'marginTop':0x8}})):_0x5e9a70[_0x1c582a('0x4f8')]['createElement']('div',null,_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x313112,{'level':0x5,'style':{'marginBottom':0x4}},_0x1c582a('0x4aa')),_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x1dc814,{'type':_0x1c582a('0x18d'),'style':{'fontSize':12.5}},_0x1c582a('0x40d')),_0x5e9a70[_0x1c582a('0x4f8')][_0x1c582a('0x4fb')](_0x3178b7,{'ctor':_0x1f540c[_0x1c582a('0x3c1')],'config':_0xa8c22b,'height':0xdc})),_0x4c0e17);};var _0x23e6ff,_0x5e9a70=function(_0x50c34e){var _0x501737=_0x540919;if(_0x50c34e&&_0x50c34e[_0x501737('0x30e')])return _0x50c34e;if(null===_0x50c34e||'object'!==_0x1b2107(_0x50c34e)&&_0x501737('0x3da')!=typeof _0x50c34e)return{'default':_0x50c34e};var _0x18c64b=_0x31806f();if(_0x18c64b&&_0x18c64b['has'](_0x50c34e))return _0x18c64b[_0x501737('0x4cb')](_0x50c34e);var _0x4b2a3a={},_0x5e44a0=Object['defineProperty']&&Object[_0x501737('0x7f')];for(var _0x526da5 in _0x50c34e)if(Object[_0x501737('0x3d4')][_0x501737('0x25d')][_0x501737('0x545')](_0x50c34e,_0x526da5)){var _0x1beac4=_0x5e44a0?Object[_0x501737('0x7f')](_0x50c34e,_0x526da5):null;_0x1beac4&&(_0x1beac4['get']||_0x1beac4['set'])?Object['defineProperty'](_0x4b2a3a,_0x526da5,_0x1beac4):_0x4b2a3a[_0x526da5]=_0x50c34e[_0x526da5];}return _0x4b2a3a[_0x501737('0x4f8')]=_0x50c34e,_0x18c64b&&_0x18c64b['set'](_0x50c34e,_0x4b2a3a),_0x4b2a3a;}(_0x569c52('react')),_0x1798a0=_0x569c52(_0x540919('0x389')),_0x1f540c=_0x569c52(_0x540919('0x3f7')),_0x59f535=(_0x23e6ff=_0x569c52(_0x540919('0x4d7')))&&_0x23e6ff['__esModule']?_0x23e6ff:{'default':_0x23e6ff},_0x5f3fad=_0x569c52(_0x540919('0x1c8'));function _0x31806f(){var _0x1e2284=_0x540919;if(_0x1e2284('0x3da')!=typeof WeakMap)return null;var _0x5e0a86=new WeakMap();return _0x31806f=function(){return _0x5e0a86;},_0x5e0a86;}function _0x413634(_0x312036,_0x1647d4){var _0x1c7cd1=_0x540919,_0x1058d3=Object[_0x1c7cd1('0x33b')](_0x312036);if(Object[_0x1c7cd1('0x17b')]){var _0xe1edb3=Object[_0x1c7cd1('0x17b')](_0x312036);_0x1647d4&&(_0xe1edb3=_0xe1edb3[_0x1c7cd1('0x34f')](function(_0x1859d5){var _0xbf3d28=_0x1c7cd1;return Object['getOwnPropertyDescriptor'](_0x312036,_0x1859d5)[_0xbf3d28('0x24')];})),_0x1058d3[_0x1c7cd1('0x3db')][_0x1c7cd1('0x200')](_0x1058d3,_0xe1edb3);}return _0x1058d3;}function _0x3d2ab1(_0x48ff37){var _0x312099=_0x540919;for(var _0x556d46=0x1;_0x556d46<arguments[_0x312099('0x5ba')];_0x556d46++){var _0x430ed3=null!=arguments[_0x556d46]?arguments[_0x556d46]:{};_0x556d46%0x2?_0x413634(Object(_0x430ed3),!0x0)[_0x312099('0x475')](function(_0x46ade1){_0x3c156f(_0x48ff37,_0x46ade1,_0x430ed3[_0x46ade1]);}):Object[_0x312099('0x303')]?Object['defineProperties'](_0x48ff37,Object[_0x312099('0x303')](_0x430ed3)):_0x413634(Object(_0x430ed3))[_0x312099('0x475')](function(_0x3d4f5b){var _0x56d928=_0x312099;Object['defineProperty'](_0x48ff37,_0x3d4f5b,Object[_0x56d928('0x7f')](_0x430ed3,_0x3d4f5b));});}return _0x48ff37;}function _0x3c156f(_0xbda85b,_0x420717,_0x30f551){var _0x7f1ec5=_0x540919;return _0x420717 in _0xbda85b?Object[_0x7f1ec5('0x14d')](_0xbda85b,_0x420717,{'value':_0x30f551,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0xbda85b[_0x420717]=_0x30f551,_0xbda85b;}var _0x1dc814=_0x1798a0[_0x540919('0x4b3')][_0x540919('0x4a8')],_0x313112=_0x1798a0[_0x540919('0x4b3')][_0x540919('0x2dd')],_0xa18741=function(_0x21abc5){var _0x5ce57e=_0x540919,_0x4a595b=Number(_0x21abc5);return Number[_0x5ce57e('0x22f')](_0x4a595b)?Number['isInteger'](_0x4a595b)?String(_0x4a595b):String(Math[_0x5ce57e('0x7')](0x3e8*_0x4a595b)/0x3e8):'0';};function _0x3178b7(_0x4d5469){var _0x42bd94=_0x540919,_0x340149=_0x4d5469[_0x42bd94('0x5bd')],_0x1c06bc=_0x4d5469['config'],_0x3fa19e=_0x4d5469['height'],_0x4153b9=void 0x0===_0x3fa19e?0x104:_0x3fa19e,_0x341d37=(0x0,_0x5e9a70[_0x42bd94('0x58b')])(null);return(0x0,_0x5e9a70[_0x42bd94('0x138')])(function(){var _0x1adc57=_0x42bd94;if(_0x341d37['current']){var _0x37ca6d;try{(_0x37ca6d=new _0x340149(_0x341d37['current'],_0x1c06bc))[_0x1adc57('0x51a')]();}catch(_0x242954){}return function(){try{_0x37ca6d&&_0x37ca6d['destroy']();}catch(_0x5d953a){}};}},[_0x340149,JSON[_0x42bd94('0x1d2')](_0x1c06bc),_0x4153b9]),_0x5e9a70[_0x42bd94('0x4f8')][_0x42bd94('0x4fb')](_0x42bd94('0x1c7'),{'ref':_0x341d37,'style':{'height':_0x4153b9}});}},{'./LeaveCalcParser':0x8,'./theme':0x1a,'@antv/g2plot':'@antv/g2plot','antd':'antd','react':_0x401518('0x592')}],0x8:[function(_0x2cfd0b,_0x3fb1ab,_0x37ff92){var _0x4be8a3=_0x401518;'use strict';function _0x1ffb84(_0x4c431a,_0x14a190){var _0xbd6868=_0x3d72;for(var _0x39350d=0x0;_0x39350d<_0x14a190['length'];_0x39350d++){var _0x46c12d=_0x14a190[_0x39350d];_0x46c12d[_0xbd6868('0x24')]=_0x46c12d['enumerable']||!0x1,_0x46c12d[_0xbd6868('0x15c')]=!0x0,'value'in _0x46c12d&&(_0x46c12d[_0xbd6868('0x191')]=!0x0),Object[_0xbd6868('0x14d')](_0x4c431a,_0x46c12d['key'],_0x46c12d);}}Object[_0x4be8a3('0x14d')](_0x37ff92,_0x4be8a3('0x30e'),{'value':!0x0}),_0x37ff92['default']=void 0x0;var _0x52a5d5=function(_0x610bf){var _0x354b3c=_0x4be8a3;return String(null==_0x610bf?'':_0x610bf)[_0x354b3c('0x4c6')](/^\(client=[^)]*\)\s*/,'')['trim']();},_0x541e6c=function(_0x105529){var _0x3ea70e=_0x4be8a3,_0x34bedc=Number(_0x105529);return Number[_0x3ea70e('0x22f')](_0x34bedc)?_0x34bedc:0x0;},_0x599f3b=function(){var _0x4cc3a6=_0x4be8a3;function _0x37d2ec(_0x3490ba){var _0x1fdba1=_0x3d72;!function(_0x2b5d61,_0x1c4745){var _0xdaa20e=_0x3d72;if(!(_0x2b5d61 instanceof _0x1c4745))throw new TypeError(_0xdaa20e('0x2e9'));}(this,_0x37d2ec),this[_0x1fdba1('0x32c')]=Array[_0x1fdba1('0x52b')](_0x3490ba)?_0x3490ba[_0x1fdba1('0x427')](_0x52a5d5):[];}var _0x5f006f,_0x4fb685,_0x20d345;return _0x5f006f=_0x37d2ec,_0x20d345=[{'key':'parse','value':function(_0x5bed87){var _0x110bf2=_0x3d72;return new _0x37d2ec(_0x5bed87)[_0x110bf2('0x17e')]();}}],(_0x4fb685=[{'key':_0x4cc3a6('0x17e'),'value':function(){var _0x2af526=_0x4cc3a6,_0x3ef3ff={'leaveType':'','leaveTypeId':null,'period':null,'totalForPeriod':null,'afterJoinedDate':null,'afterAccrue':null,'accrualApplied':!0x1,'joinedDateAdjusted':!0x1,'pastPeriodCount':0x0,'carryForward':[]},_0x4e7a66=null,_0x37b09c=function(){_0x4e7a66&&(_0x3ef3ff['carryForward']['push'](_0x4e7a66),_0x4e7a66=null);};this[_0x2af526('0x32c')][_0x2af526('0x475')](function(_0x46eed4){var _0x40d5ef=_0x2af526,_0x53d5dc;if(_0x46eed4&&_0x40d5ef('0x98')!==_0x46eed4){if(_0x53d5dc=_0x46eed4[_0x40d5ef('0x107')](/^Leave Type \((.+)\) \[id \((\d+)\)\]$/))_0x3ef3ff[_0x40d5ef('0x82')]||(_0x3ef3ff[_0x40d5ef('0x82')]=_0x53d5dc[0x1],_0x3ef3ff[_0x40d5ef('0x4ac')]=Number(_0x53d5dc[0x2]));else{if(_0x53d5dc=_0x46eed4['match'](/^Leave Period After Adjust\s*:\s*(\d{4}-\d{2}-\d{2})\s*-\s*(\d{4}-\d{2}-\d{2})/))_0x3ef3ff[_0x40d5ef('0xbb')]={'from':_0x53d5dc[0x1],'to':_0x53d5dc[0x2]};else{if(_0x53d5dc=_0x46eed4['match'](/^Total for leave for current period:\s*([\d.]+)/))_0x3ef3ff[_0x40d5ef('0x35c')]=_0x541e6c(_0x53d5dc[0x1]);else{if(_0x53d5dc=_0x46eed4[_0x40d5ef('0x107')](/^Total after adjusted based on joined date:\s*([\d.]+)/))_0x3ef3ff['afterJoinedDate']=_0x541e6c(_0x53d5dc[0x1]);else{if(_0x53d5dc=_0x46eed4['match'](/^Total after leave accrue:\s*([\d.]+)/))_0x3ef3ff['afterAccrue']=_0x541e6c(_0x53d5dc[0x1]);else{if(_0x53d5dc=_0x46eed4[_0x40d5ef('0x107')](/^Number of past leave periods:\s*(\d+)/))_0x3ef3ff[_0x40d5ef('0x59a')]=Number(_0x53d5dc[0x1]);else{if(_0x53d5dc=_0x46eed4[_0x40d5ef('0x107')](/^Calculating leave days carried forward from \[Period\s*(\d{4}-\d{2}-\d{2})\s*-\s*(\d{4}-\d{2}-\d{2})\]/))return _0x37b09c(),void(_0x4e7a66={'from':_0x53d5dc[0x1],'to':_0x53d5dc[0x2],'label':_0x53d5dc[0x1]['slice'](0x0,0x4),'carriedIn':0x0,'allocated':0x0,'pto':0x0,'taken':0x0,'deducted':0x0,'validTill':'','carriedToNext':0x0});if(_0x4e7a66){if(!(_0x53d5dc=_0x46eed4[_0x40d5ef('0x107')](/^Number of leaves carried from previous period:\s*([\d.-]+)/)))return(_0x53d5dc=_0x46eed4[_0x40d5ef('0x107')](/^Number of allocated \[.*\]:\s*leave\(([\d.-]+)\)\s*\+\s*PTO\(([\d.-]+)\)\s*=\s*([\d.-]+)/))?(_0x4e7a66[_0x40d5ef('0x54d')]=_0x541e6c(_0x53d5dc[0x1]),void(_0x4e7a66[_0x40d5ef('0x2a8')]=_0x541e6c(_0x53d5dc[0x2]))):void((_0x53d5dc=_0x46eed4[_0x40d5ef('0x107')](/^Leave days from previous period is valid till:\s*(\d{4}-\d{2}-\d{2})/))?_0x4e7a66[_0x40d5ef('0x2f7')]=_0x53d5dc[0x1]:(_0x53d5dc=_0x46eed4[_0x40d5ef('0x107')](/^Total number of leave days taken between .*:\s*([\d.-]+)/))?_0x4e7a66[_0x40d5ef('0x12')]=_0x541e6c(_0x53d5dc[0x1]):(_0x53d5dc=_0x46eed4['match'](/^Number of leave deducted from carried forward leaves from previous period:\s*([\d.-]+)/))?_0x4e7a66[_0x40d5ef('0x1a3')]=_0x541e6c(_0x53d5dc[0x1]):(_0x53d5dc=_0x46eed4[_0x40d5ef('0x107')](/^Number of leaves carried to next period:\s*([\d.-]+)/))&&(_0x4e7a66[_0x40d5ef('0x93')]=_0x541e6c(_0x53d5dc[0x1])));_0x4e7a66[_0x40d5ef('0x208')]=_0x541e6c(_0x53d5dc[0x1]);}}}}}}}}}),_0x37b09c();var _0x25b45c=function(_0x17b8e7,_0x407ad4){var _0x334ae0=_0x2af526;return null!=_0x17b8e7&&null!=_0x407ad4&&Math[_0x334ae0('0x334')](_0x17b8e7-_0x407ad4)>1e-9;};return _0x3ef3ff[_0x2af526('0x209')]=_0x25b45c(_0x3ef3ff[_0x2af526('0x43a')],_0x3ef3ff['afterJoinedDate']),_0x3ef3ff['joinedDateAdjusted']=_0x25b45c(_0x3ef3ff[_0x2af526('0xe1')],_0x3ef3ff[_0x2af526('0x35c')]),_0x3ef3ff;}}])&&_0x1ffb84(_0x5f006f[_0x4cc3a6('0x3d4')],_0x4fb685),_0x20d345&&_0x1ffb84(_0x5f006f,_0x20d345),_0x37d2ec;}();_0x37ff92[_0x4be8a3('0x4f8')]=_0x599f3b;},{}],0x9:[function(_0x546f9e,_0x554f69,_0x2d16b9){var _0x7e0007=_0x401518;'use strict';function _0x395996(_0x52fa13){var _0x5d28ad=_0x3d72;return(_0x395996=_0x5d28ad('0x3da')==typeof Symbol&&_0x5d28ad('0x4da')==typeof Symbol[_0x5d28ad('0x20e')]?function(_0x15da01){return typeof _0x15da01;}:function(_0x1df80b){var _0x4b7ad2=_0x5d28ad;return _0x1df80b&&_0x4b7ad2('0x3da')==typeof Symbol&&_0x1df80b['constructor']===Symbol&&_0x1df80b!==Symbol[_0x4b7ad2('0x3d4')]?'symbol':typeof _0x1df80b;})(_0x52fa13);}Object[_0x7e0007('0x14d')](_0x2d16b9,_0x7e0007('0x30e'),{'value':!0x0}),_0x2d16b9[_0x7e0007('0x4f8')]=function(_0x4d7b93){var _0x2b9fcc=_0x7e0007,_0x349e63=_0x4d7b93[_0x2b9fcc('0x5a9')],_0x399bf7=_0x40047a[_0x2b9fcc('0x587')][_0x2b9fcc('0x75')]()[_0x2b9fcc('0x331')],_0x5c73e1=_0x2ef730((0x0,_0x480443[_0x2b9fcc('0x5a7')])({}),0x2),_0x1e5d7f=_0x5c73e1[0x0],_0x3b6d7e=_0x5c73e1[0x1],_0x5de219=_0x2ef730((0x0,_0x480443[_0x2b9fcc('0x5a7')])([]),0x2),_0x140165=_0x5de219[0x0],_0x143946=_0x5de219[0x1],_0xb305d3=_0x2ef730((0x0,_0x480443[_0x2b9fcc('0x5a7')])({}),0x2),_0x29efcc=_0xb305d3[0x0],_0x2e34ee=_0xb305d3[0x1],_0x27207a=(0x0,_0x480443[_0x2b9fcc('0x32a')])(function(_0x3e9dcf){var _0x59c902=_0x2b9fcc,_0x7c964f=_0x349e63&&_0x349e63[_0x59c902('0x28d')]||'';return fetch(''[_0x59c902('0x39d')](_0x7c964f)[_0x59c902('0x39d')](_0x3e9dcf),{'headers':{'Authorization':_0x59c902('0x55b')['concat'](_0x349e63&&_0x349e63[_0x59c902('0x331')])},'credentials':_0x59c902('0x1a5')})[_0x59c902('0x12a')](function(_0x55539a){return _0x55539a['json']();});},[_0x349e63]),_0x242afd=(0x0,_0x480443[_0x2b9fcc('0x32a')])(function(_0x635039,_0x3e193b){var _0xe414d6=_0x2b9fcc;_0x27207a('leave-calendar/month/'[_0xe414d6('0x39d')](_0x635039,'/')['concat'](_0x1b97b5(_0x3e193b)))[_0xe414d6('0x12a')](function(_0x5480dd){var _0x4af3d5=_0xe414d6;_0x3b6d7e(function(_0x3917a2){var _0x45b7be=_0x3d72;return _0x13f344({},_0x3917a2,{},_0x5480dd&&_0x5480dd[_0x45b7be('0x1b1')]||{});}),_0x143946(_0x5480dd&&_0x5480dd[_0x4af3d5('0x2e3')]||[]);})[_0xe414d6('0x2e')](function(){});},[_0x27207a]),_0x144121=(0x0,_0x480443['useCallback'])(function(_0x17f96a){var _0x19cf97=_0x2b9fcc;_0x27207a(_0x19cf97('0x2a6')[_0x19cf97('0x39d')](_0x17f96a))[_0x19cf97('0x12a')](function(_0x2f98ac){return _0x2e34ee(function(_0x574204){return _0x13f344({},_0x574204,{},_0x2f98ac||{});});})[_0x19cf97('0x2e')](function(){});},[_0x27207a]);return(0x0,_0x480443[_0x2b9fcc('0x138')])(function(){var _0x49bab9=_0x2b9fcc,_0x5eda7b=new Date();_0x242afd(_0x5eda7b['getFullYear'](),_0x5eda7b[_0x49bab9('0x14b')]()+0x1);},[_0x242afd]),_0x480443[_0x2b9fcc('0x4f8')][_0x2b9fcc('0x4fb')](_0x2b9fcc('0x1c7'),{'style':{'background':_0x399bf7['colorBgContainer'],'borderRadius':0xa,'padding':0xc}},_0x480443[_0x2b9fcc('0x4f8')][_0x2b9fcc('0x4fb')](_0x40047a[_0x2b9fcc('0x440')],{'cellRender':function(_0x4adadd,_0x3117c7){var _0x492f2a=_0x2b9fcc;return _0x492f2a('0x556')===_0x3117c7['type']?(_0x171abf=''[_0x492f2a('0x39d')]((_0x4af9b8=_0x4adadd)['year'](),'-')[_0x492f2a('0x39d')](_0x1b97b5(_0x4af9b8[_0x492f2a('0x24f')]()+0x1),'-')['concat'](_0x1b97b5(_0x4af9b8['date']())),_0x125702=_0x1e5d7f[_0x171abf]||[],(_0x3b5f9c=_0x140165[_0x492f2a('0x134')](function(_0x4195be){var _0x3a4e8c=_0x492f2a;return _0x4195be&&_0x4195be[_0x3a4e8c('0x4f9')]===_0x171abf;}))||_0x125702[_0x492f2a('0x5ba')]?_0x480443[_0x492f2a('0x4f8')]['createElement'](_0x492f2a('0x1c7'),{'style':{'marginTop':0x4}},_0x3b5f9c?_0x480443[_0x492f2a('0x4f8')]['createElement'](_0x40047a[_0x492f2a('0x1d8')],{'message':_0x3b5f9c[_0x492f2a('0x3b6')],'type':_0x492f2a('0x1c5'),'showIcon':!0x0,'style':{'marginBottom':0x6,'padding':_0x492f2a('0x91')}}):null,_0x480443[_0x492f2a('0x4f8')]['createElement'](_0x492f2a('0x1c7'),{'style':{'display':'flex','flexWrap':_0x492f2a('0x24b'),'gap':0x6}},_0x125702[_0x492f2a('0x427')](function(_0x33a729,_0x271123){var _0x454c5b=_0x492f2a;return _0x480443[_0x454c5b('0x4f8')]['createElement'](_0x40047a['Tooltip'],{'key':''[_0x454c5b('0x39d')](_0x33a729[_0x454c5b('0xdc')]['id'],'-')[_0x454c5b('0x39d')](_0x271123),'title':''[_0x454c5b('0x39d')](_0x33a729[_0x454c5b('0xdc')][_0x454c5b('0x3b6')],_0x454c5b('0x515'))[_0x454c5b('0x39d')](_0x33a729[_0x454c5b('0x34')]),'color':_0x454c5b('0x323')},_0x480443['default'][_0x454c5b('0x4fb')](_0x40047a[_0x454c5b('0x485')],{'color':'Approved'===_0x33a729[_0x454c5b('0x34')]?_0x454c5b('0x122'):'orange','dot':!0x0},_0x480443[_0x454c5b('0x4f8')][_0x454c5b('0x4fb')](_0x40047a['Avatar'],{'size':_0x454c5b('0xd3'),'src':_0x33a729[_0x454c5b('0xdc')][_0x454c5b('0x3e3')]},_0x33a729[_0x454c5b('0xdc')]['name']?_0x33a729[_0x454c5b('0xdc')][_0x454c5b('0x3b6')][_0x454c5b('0x2b6')](0x0):'?')));}))):null):function(_0x37adc5){var _0x15b1b3=_0x492f2a,_0x457b8b=_0x29efcc[_0x37adc5[_0x15b1b3('0xcf')]()],_0xcaed19=''[_0x15b1b3('0x39d')](_0x37adc5[_0x15b1b3('0xcf')](),'-')[_0x15b1b3('0x39d')](_0x1b97b5(_0x37adc5[_0x15b1b3('0x24f')]()+0x1)),_0x39b4e7=_0x457b8b&&_0x457b8b[_0xcaed19]||[];return _0x39b4e7['length']?_0x480443['default'][_0x15b1b3('0x4fb')](_0x15b1b3('0x1c7'),{'style':{'marginTop':0x8,'display':'flex','flexWrap':_0x15b1b3('0x24b'),'gap':0x8}},_0x39b4e7[_0x15b1b3('0x427')](function(_0x50f3a1,_0x2b8125){var _0x3d424d=_0x15b1b3;return _0x480443[_0x3d424d('0x4f8')][_0x3d424d('0x4fb')](_0x40047a[_0x3d424d('0xa0')],{'key':''[_0x3d424d('0x39d')](_0x50f3a1[_0x3d424d('0xdc')]['id'],'-')[_0x3d424d('0x39d')](_0x2b8125),'title':_0x50f3a1[_0x3d424d('0xdc')][_0x3d424d('0x3b6')],'color':'#108ee9'},_0x480443['default'][_0x3d424d('0x4fb')](_0x40047a['Badge'],{'color':'green','size':_0x3d424d('0xd3'),'count':_0x50f3a1['count']},_0x480443[_0x3d424d('0x4f8')]['createElement'](_0x40047a[_0x3d424d('0x42e')],{'size':'small','src':_0x50f3a1['employee'][_0x3d424d('0x3e3')]},_0x50f3a1[_0x3d424d('0xdc')]['name']?_0x50f3a1[_0x3d424d('0xdc')][_0x3d424d('0x3b6')]['charAt'](0x0):'?')));})):null;}(_0x4adadd);var _0x4af9b8,_0x171abf,_0x125702,_0x3b5f9c;},'onPanelChange':function(_0x1a6d76,_0x2a0136){var _0x207c21=_0x2b9fcc;_0x207c21('0x24f')===_0x2a0136?_0x242afd(_0x1a6d76[_0x207c21('0xcf')](),_0x1a6d76[_0x207c21('0x24f')]()+0x1):_0x144121(_0x1a6d76['year']());}}));};var _0x480443=function(_0x4acf37){var _0xccbfdb=_0x7e0007;if(_0x4acf37&&_0x4acf37[_0xccbfdb('0x30e')])return _0x4acf37;if(null===_0x4acf37||_0xccbfdb('0xd8')!==_0x395996(_0x4acf37)&&'function'!=typeof _0x4acf37)return{'default':_0x4acf37};var _0xe358eb=_0x3dda63();if(_0xe358eb&&_0xe358eb[_0xccbfdb('0x1e7')](_0x4acf37))return _0xe358eb[_0xccbfdb('0x4cb')](_0x4acf37);var _0x26526a={},_0x5ecd7b=Object['defineProperty']&&Object[_0xccbfdb('0x7f')];for(var _0x101224 in _0x4acf37)if(Object[_0xccbfdb('0x3d4')]['hasOwnProperty'][_0xccbfdb('0x545')](_0x4acf37,_0x101224)){var _0x3ab40f=_0x5ecd7b?Object['getOwnPropertyDescriptor'](_0x4acf37,_0x101224):null;_0x3ab40f&&(_0x3ab40f[_0xccbfdb('0x4cb')]||_0x3ab40f['set'])?Object[_0xccbfdb('0x14d')](_0x26526a,_0x101224,_0x3ab40f):_0x26526a[_0x101224]=_0x4acf37[_0x101224];}return _0x26526a[_0xccbfdb('0x4f8')]=_0x4acf37,_0xe358eb&&_0xe358eb[_0xccbfdb('0x300')](_0x4acf37,_0x26526a),_0x26526a;}(_0x546f9e(_0x7e0007('0x592'))),_0x40047a=_0x546f9e('antd');function _0x3dda63(){var _0x20b419=_0x7e0007;if(_0x20b419('0x3da')!=typeof WeakMap)return null;var _0x377828=new WeakMap();return _0x3dda63=function(){return _0x377828;},_0x377828;}function _0x4cd60e(_0x219d45,_0x531359){var _0x1e4cab=_0x7e0007,_0x567d4e=Object[_0x1e4cab('0x33b')](_0x219d45);if(Object[_0x1e4cab('0x17b')]){var _0x91f4cb=Object[_0x1e4cab('0x17b')](_0x219d45);_0x531359&&(_0x91f4cb=_0x91f4cb[_0x1e4cab('0x34f')](function(_0x5ed0f3){var _0x378a49=_0x1e4cab;return Object[_0x378a49('0x7f')](_0x219d45,_0x5ed0f3)['enumerable'];})),_0x567d4e['push'][_0x1e4cab('0x200')](_0x567d4e,_0x91f4cb);}return _0x567d4e;}function _0x13f344(_0xfb941){var _0x59b5b3=_0x7e0007;for(var _0x1dc58d=0x1;_0x1dc58d<arguments['length'];_0x1dc58d++){var _0x49a370=null!=arguments[_0x1dc58d]?arguments[_0x1dc58d]:{};_0x1dc58d%0x2?_0x4cd60e(Object(_0x49a370),!0x0)[_0x59b5b3('0x475')](function(_0x2771a1){_0x8b06aa(_0xfb941,_0x2771a1,_0x49a370[_0x2771a1]);}):Object[_0x59b5b3('0x303')]?Object[_0x59b5b3('0x29d')](_0xfb941,Object['getOwnPropertyDescriptors'](_0x49a370)):_0x4cd60e(Object(_0x49a370))[_0x59b5b3('0x475')](function(_0xd848e1){var _0x2297fe=_0x59b5b3;Object[_0x2297fe('0x14d')](_0xfb941,_0xd848e1,Object[_0x2297fe('0x7f')](_0x49a370,_0xd848e1));});}return _0xfb941;}function _0x8b06aa(_0x4557c7,_0x25b142,_0x329e35){return _0x25b142 in _0x4557c7?Object['defineProperty'](_0x4557c7,_0x25b142,{'value':_0x329e35,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x4557c7[_0x25b142]=_0x329e35,_0x4557c7;}function _0x2ef730(_0x335976,_0x2e448d){return function(_0x514210){var _0x3fabce=_0x3d72;if(Array[_0x3fabce('0x52b')](_0x514210))return _0x514210;}(_0x335976)||function(_0x4ad295,_0x4ef2b4){var _0x1e343b=_0x3d72;if(_0x1e343b('0x20a')==typeof Symbol||!(Symbol[_0x1e343b('0x20e')]in Object(_0x4ad295)))return;var _0x5b6317=[],_0x19e43f=!0x0,_0x270e44=!0x1,_0x3d8bab=void 0x0;try{for(var _0x356bad,_0x50e49b=_0x4ad295[Symbol[_0x1e343b('0x20e')]]();!(_0x19e43f=(_0x356bad=_0x50e49b['next']())[_0x1e343b('0x44')])&&(_0x5b6317[_0x1e343b('0x3db')](_0x356bad[_0x1e343b('0x3dc')]),!_0x4ef2b4||_0x5b6317[_0x1e343b('0x5ba')]!==_0x4ef2b4);_0x19e43f=!0x0);}catch(_0x2b04b5){_0x270e44=!0x0,_0x3d8bab=_0x2b04b5;}finally{try{_0x19e43f||null==_0x50e49b[_0x1e343b('0x41c')]||_0x50e49b[_0x1e343b('0x41c')]();}finally{if(_0x270e44)throw _0x3d8bab;}}return _0x5b6317;}(_0x335976,_0x2e448d)||function(_0x320ce2,_0x3edbbc){var _0xb84f87=_0x3d72;if(!_0x320ce2)return;if(_0xb84f87('0x4dd')==typeof _0x320ce2)return _0x25c9be(_0x320ce2,_0x3edbbc);var _0x21619c=Object[_0xb84f87('0x3d4')]['toString'][_0xb84f87('0x545')](_0x320ce2)['slice'](0x8,-0x1);_0xb84f87('0x2ed')===_0x21619c&&_0x320ce2[_0xb84f87('0xaa')]&&(_0x21619c=_0x320ce2[_0xb84f87('0xaa')][_0xb84f87('0x3b6')]);if(_0xb84f87('0x235')===_0x21619c||_0xb84f87('0x5b1')===_0x21619c)return Array[_0xb84f87('0xd7')](_0x21619c);if('Arguments'===_0x21619c||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0xb84f87('0x56e')](_0x21619c))return _0x25c9be(_0x320ce2,_0x3edbbc);}(_0x335976,_0x2e448d)||function(){var _0x2e3416=_0x3d72;throw new TypeError(_0x2e3416('0x311'));}();}function _0x25c9be(_0x136598,_0x20b7da){var _0x46b334=_0x7e0007;(null==_0x20b7da||_0x20b7da>_0x136598[_0x46b334('0x5ba')])&&(_0x20b7da=_0x136598[_0x46b334('0x5ba')]);for(var _0x519e16=0x0,_0x2730d5=new Array(_0x20b7da);_0x519e16<_0x20b7da;_0x519e16++)_0x2730d5[_0x519e16]=_0x136598[_0x519e16];return _0x2730d5;}var _0x1b97b5=function(_0xa6d910){var _0x5437ca=_0x7e0007;return Number(_0xa6d910)<0xa?'0'[_0x5437ca('0x39d')](_0xa6d910):''['concat'](_0xa6d910);};},{'antd':_0x401518('0x389'),'react':'react'}],0xa:[function(_0x5032c4,_0x17e967,_0x44f08c){var _0x440fd6=_0x401518;'use strict';function _0x21ffd6(_0x19dd89){var _0x3f2941=_0x3d72;return(_0x21ffd6=_0x3f2941('0x3da')==typeof Symbol&&'symbol'==typeof Symbol[_0x3f2941('0x20e')]?function(_0x5b1203){return typeof _0x5b1203;}:function(_0x3fb737){var _0x54123e=_0x3f2941;return _0x3fb737&&_0x54123e('0x3da')==typeof Symbol&&_0x3fb737[_0x54123e('0xaa')]===Symbol&&_0x3fb737!==Symbol[_0x54123e('0x3d4')]?_0x54123e('0x4da'):typeof _0x3fb737;})(_0x19dd89);}Object[_0x440fd6('0x14d')](_0x44f08c,_0x440fd6('0x30e'),{'value':!0x0}),_0x44f08c['default']=function(_0x477f0b){var _0x4853ad=_0x440fd6,_0x431af9=_0x477f0b[_0x4853ad('0x2f1')],_0x392387=_0x47e240[_0x4853ad('0x587')][_0x4853ad('0x75')]()['token'],_0x22f0e5=_0x29467b((0x0,_0x204842[_0x4853ad('0x5a7')])(null),0x2),_0x2f2664=_0x22f0e5[0x0],_0x118361=_0x22f0e5[0x1],_0x17b24d=_0x29467b((0x0,_0x204842[_0x4853ad('0x5a7')])(null),0x2),_0x358817=_0x17b24d[0x0],_0x3785dd=_0x17b24d[0x1];(0x0,_0x204842[_0x4853ad('0x138')])(function(){var _0x1295e0=!0x1,_0x24fd5b=0x0;return function _0x2fdec8(){var _0x198a6d=_0x3d72;if(!_0x1295e0){var _0x19927f=(window[_0x198a6d('0x2f0')]||{})[_0x431af9];_0x19927f&&'function'==typeof _0x19927f[_0x198a6d('0x3eb')]?_0x19927f[_0x198a6d('0x3eb')]()[_0x198a6d('0x12a')](function(_0x4e1cf7){var _0x1bafdd=_0x198a6d;_0x1295e0||_0x118361(Array[_0x1bafdd('0x52b')](_0x4e1cf7)?_0x4e1cf7:[]);})[_0x198a6d('0x2e')](function(){_0x1295e0||_0x118361([]);}):(_0x24fd5b+=0x1)>0x64?_0x118361([]):setTimeout(_0x2fdec8,0x64);}}(),function(){_0x1295e0=!0x0;};},[_0x431af9]);if(null===_0x2f2664)return _0x204842[_0x4853ad('0x4f8')][_0x4853ad('0x4fb')]('div',{'style':{'display':_0x4853ad('0x37f'),'justifyContent':_0x4853ad('0x36e'),'padding':0x3c}},_0x204842[_0x4853ad('0x4f8')]['createElement'](_0x47e240[_0x4853ad('0x4cc')],{'size':_0x4853ad('0x54a')}));if(!_0x2f2664['length'])return _0x204842[_0x4853ad('0x4f8')]['createElement'](_0x47e240['Empty'],{'description':_0x4853ad('0x50c')});var _0x29e56a=function(_0x49b988){var _0x5f1171=_0x4853ad;return{'display':_0x5f1171('0x595'),'alignItems':_0x5f1171('0x36e'),'gap':0x6,'fontSize':0xc,'fontWeight':0x258,'padding':_0x5f1171('0xd1'),'borderRadius':0x3e7,'background':_0x5f1171('0x490')===_0x49b988?'rgba(224,131,33,0.14)':_0x392387['colorFillQuaternary'],'color':_0x5f1171('0x490')===_0x49b988?_0x595824:_0x392387[_0x5f1171('0x359')],'border':_0x5f1171('0x490')===_0x49b988?_0x5f1171('0x1'):_0x5f1171('0x5be')['concat'](_0x392387[_0x5f1171('0x47d')])};};return _0x204842[_0x4853ad('0x4f8')][_0x4853ad('0x4fb')]('div',{'style':{'display':_0x4853ad('0x8e'),'gridTemplateColumns':'repeat(auto-fill,\x20minmax(340px,\x201fr))','gap':0x12}},_0x2f2664[_0x4853ad('0x427')](function(_0x2ad9a6){var _0x40ac12=_0x4853ad,_0x9681d=Number(_0x2ad9a6[_0x40ac12('0xa9')])||0x0,_0x1a0e28=Number(_0x2ad9a6[_0x40ac12('0x3d1')])||0x0,_0x35f2c7=Number(_0x2ad9a6[_0x40ac12('0x179')])||0x0,_0x20cad1=Number(_0x2ad9a6[_0x40ac12('0x530')])||0x0,_0x2712c3=Number(_0x2ad9a6['carriedForward'])||0x0,_0x20df41=Number(_0x2ad9a6['paidTimeOff'])||0x0,_0x278d0b=Number(_0x2ad9a6[_0x40ac12('0x1cd')])||0x0,_0x10947d=Math['max'](_0x9681d,_0x1a0e28+_0x35f2c7+_0x20cad1,0.0001),_0x55cb4b=_0x325b53(_0x1a0e28,_0x10947d),_0x244af6=_0x325b53(_0x35f2c7,_0x10947d),_0x339062=_0x325b53(_0x20cad1,_0x10947d),_0x1ab099=_0x20cad1<=0x0,_0x2ced17=!_0x1ab099&&_0x9681d>0x0&&(_0x20cad1<=0x1||_0x20cad1/_0x9681d<=0.15),_0x5c2f0e=_0x1ab099?_0x966d73:_0x2ced17?_0x595824:_0x15203e;return _0x204842['default'][_0x40ac12('0x4fb')](_0x40ac12('0x1c7'),{'key':_0x2ad9a6['id'],'style':{'background':_0x392387[_0x40ac12('0x55')],'border':_0x40ac12('0x5be')[_0x40ac12('0x39d')](_0x392387[_0x40ac12('0x47d')]),'borderRadius':0xe,'boxShadow':_0x2aaf9b[_0x40ac12('0x55d')],'padding':_0x40ac12('0x2b5'),'display':_0x40ac12('0x37f'),'flexDirection':_0x40ac12('0x13c'),'gap':0x10}},_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40ac12('0x1c7'),{'style':{'display':_0x40ac12('0x37f'),'alignItems':_0x40ac12('0x36e'),'gap':0xd}},_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')]('div',{'style':{'width':0x2a,'height':0x2a,'borderRadius':0xb,'flex':_0x40ac12('0x401'),'display':'grid','placeItems':_0x40ac12('0x36e'),'background':_0x40ac12('0x66'),'color':_0x392387[_0x40ac12('0x148')],'fontSize':0x14}},_0x204842[_0x40ac12('0x4f8')]['createElement'](_0x43d1b9[_0x40ac12('0xad')],null)),_0x204842['default'][_0x40ac12('0x4fb')]('div',{'style':{'flex':0x1,'minWidth':0x0}},_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40ac12('0x1c7'),{'style':{'fontSize':16.5,'fontWeight':0x28a,'letterSpacing':'-0.01em'}},_0x2ad9a6['name']),_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x3b4fc2,{'type':_0x40ac12('0x18d'),'style':{'fontSize':12.5}},_0x40ac12('0x47f'))),_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40ac12('0x1c7'),{'style':{'textAlign':'right','flex':_0x40ac12('0x401')}},_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40ac12('0x1c7'),{'style':{'fontSize':0x1e,'fontWeight':0x2ee,'lineHeight':0x1,'color':_0x5c2f0e,'fontVariantNumeric':_0x40ac12('0x4b5'),'letterSpacing':_0x40ac12('0x26c')}},_0x1d14d3(_0x20cad1),_0x204842[_0x40ac12('0x4f8')]['createElement'](_0x40ac12('0x433'),{'style':{'fontSize':0xe,'fontWeight':0x258,'color':_0x392387['colorTextSecondary'],'marginLeft':0x3}},0x1===Math[_0x40ac12('0x334')](_0x20cad1)?'day':_0x40ac12('0x3fd'))),_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40ac12('0x1c7'),{'style':{'fontSize':11.5,'letterSpacing':_0x40ac12('0x31'),'textTransform':_0x40ac12('0x2c'),'color':_0x392387[_0x40ac12('0x49f')],'marginTop':0x3,'fontWeight':0x258}},_0x40ac12('0xb')))),_0x204842[_0x40ac12('0x4f8')]['createElement'](_0x40ac12('0x1c7'),{'style':{'display':_0x40ac12('0x37f'),'flexDirection':_0x40ac12('0x13c'),'gap':0x9}},_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40ac12('0x1c7'),{'role':'img','aria-label':_0x40ac12('0x429')[_0x40ac12('0x39d')](_0x1d14d3(_0x9681d),_0x40ac12('0x296'))[_0x40ac12('0x39d')](_0x1d14d3(_0x1a0e28),_0x40ac12('0x2cc'))[_0x40ac12('0x39d')](_0x1d14d3(_0x35f2c7),'\x20pending,\x20')[_0x40ac12('0x39d')](_0x1d14d3(_0x20cad1),_0x40ac12('0x435')),'style':{'height':0xc,'borderRadius':0x3e7,'background':_0x392387[_0x40ac12('0x513')],'display':_0x40ac12('0x37f'),'overflow':_0x40ac12('0x3ee')}},_0x204842['default'][_0x40ac12('0x4fb')](_0x40ac12('0x1c7'),{'style':{'width':''[_0x40ac12('0x39d')](_0x55cb4b,'%'),'background':_0x44324b}}),_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40ac12('0x1c7'),{'style':{'width':''[_0x40ac12('0x39d')](_0x244af6,'%'),'background':_0x40ac12('0x25a')['concat'](_0x595824,',\x20')['concat'](_0x595824,'\x205px,\x20rgba(255,255,255,0.45)\x205px,\x20rgba(255,255,255,0.45)\x2010px)')}}),_0x204842['default']['createElement'](_0x40ac12('0x1c7'),{'style':{'width':''['concat'](_0x339062,'%'),'background':_0x15203e}})),_0x204842['default'][_0x40ac12('0x4fb')](_0x40ac12('0x1c7'),{'style':{'display':_0x40ac12('0x37f'),'flexWrap':_0x40ac12('0x24b'),'gap':'4px\x2016px','fontSize':12.5,'color':_0x392387['colorTextSecondary'],'fontVariantNumeric':_0x40ac12('0x4b5')}},_0x1a0e28>0x0&&_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40c3b6,{'color':_0x44324b,'label':_0x40ac12('0x44b'),'value':_0x1a0e28,'token':_0x392387}),_0x35f2c7>0x0&&_0x204842['default'][_0x40ac12('0x4fb')](_0x40c3b6,{'color':_0x595824,'label':'Pending','value':_0x35f2c7,'token':_0x392387}),_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40c3b6,{'color':_0x15203e,'label':_0x40ac12('0xb'),'value':_0x20cad1,'token':_0x392387}),_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')]('span',{'style':{'marginLeft':_0x40ac12('0x4b6'),'color':_0x392387[_0x40ac12('0x49f')]}},'of\x20',_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')]('b',{'style':{'color':_0x392387[_0x40ac12('0xc8')],'fontWeight':0x28a}},_0x1d14d3(_0x9681d)),_0x40ac12('0x465')))),(_0x2ced17||_0x1ab099||_0x2712c3>0x0&&_0x2ad9a6[_0x40ac12('0x203')]||_0x278d0b>0x0||0x0!==_0x20df41)&&_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40ac12('0x1c7'),{'style':{'display':_0x40ac12('0x37f'),'flexWrap':'wrap','gap':0x7}},_0x1ab099&&_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40ac12('0x433'),{'style':_0x29e56a(_0x40ac12('0x490'))},_0x204842[_0x40ac12('0x4f8')]['createElement'](_0x43d1b9[_0x40ac12('0x2e0')],null),_0x40ac12('0x519')),_0x2ced17&&_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x40ac12('0x433'),{'style':_0x29e56a(_0x40ac12('0x490'))},_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x43d1b9[_0x40ac12('0x2e0')],null),'Running\x20low'),_0x2712c3>0x0&&_0x2ad9a6[_0x40ac12('0x203')]&&_0x204842['default'][_0x40ac12('0x4fb')]('span',{'style':_0x29e56a(_0x40ac12('0x490'))},_0x204842['default'][_0x40ac12('0x4fb')](_0x43d1b9['ClockCircleOutlined'],null),''[_0x40ac12('0x39d')](_0x1d14d3(_0x2ad9a6[_0x40ac12('0x47a')]),_0x40ac12('0xb9'))['concat'](_0x2ad9a6[_0x40ac12('0x203')])),_0x278d0b>0x0&&_0x204842['default'][_0x40ac12('0x4fb')]('span',{'style':_0x29e56a()},'+'[_0x40ac12('0x39d')](_0x1d14d3(_0x278d0b),'\x20still\x20to\x20accrue\x20this\x20period')),0x0!==_0x20df41&&_0x204842[_0x40ac12('0x4f8')]['createElement']('span',{'style':_0x29e56a()},_0x40ac12('0x388')[_0x40ac12('0x39d')](_0x20df41>0x0?'+':'')[_0x40ac12('0x39d')](_0x1d14d3(_0x20df41)))),_0x204842[_0x40ac12('0x4f8')]['createElement'](_0x40ac12('0x1c7'),{'style':{'display':_0x40ac12('0x37f'),'alignItems':_0x40ac12('0x36e'),'justifyContent':_0x40ac12('0x551'),'gap':0xc,'marginTop':0x2}},Array[_0x40ac12('0x52b')](_0x2ad9a6[_0x40ac12('0x4f3')])&&_0x2ad9a6[_0x40ac12('0x4f3')]['length']?_0x204842[_0x40ac12('0x4f8')][_0x40ac12('0x4fb')](_0x47e240[_0x40ac12('0x244')],{'type':_0x40ac12('0x1ca'),'size':'small','icon':_0x204842['default'][_0x40ac12('0x4fb')](_0x43d1b9[_0x40ac12('0x541')],null),'style':{'padding':0x0},'onClick':function(){var _0x105e0d=_0x40ac12;return _0x3785dd({'name':_0x2ad9a6[_0x105e0d('0x3b6')],'lines':_0x2ad9a6[_0x105e0d('0x4f3')]});}},_0x40ac12('0x576')):_0x204842[_0x40ac12('0x4f8')]['createElement'](_0x40ac12('0x433'),null),_0x204842[_0x40ac12('0x4f8')]['createElement'](_0x47e240[_0x40ac12('0x244')],{'type':_0x40ac12('0x3e5'),'icon':_0x204842[_0x40ac12('0x4f8')]['createElement'](_0x43d1b9[_0x40ac12('0x5a1')],null),'onClick':function(){return function(_0x1eb06f){var _0x59a121=_0x3d72,_0x38d8da=(window[_0x59a121('0x2f0')]||{})[_0x59a121('0x55c')]||window[_0x59a121('0x522')];if(_0x38d8da&&_0x59a121('0x3da')==typeof _0x38d8da[_0x59a121('0x4f7')]){var _0x4c4a50=function(){var _0x5dff06=_0x59a121;return _0x38d8da[_0x5dff06('0x4f7')]({'leave_type':_0x1eb06f});},_0x6ab30b=_0x38d8da['masterDataReader'];_0x6ab30b&&'function'==typeof _0x6ab30b[_0x59a121('0x27')]?_0x6ab30b[_0x59a121('0x27')]()[_0x59a121('0x12a')](_0x4c4a50,_0x4c4a50):_0x4c4a50();}}(_0x2ad9a6['id']);}},_0x40ac12('0x1a4'))));}),_0x204842[_0x4853ad('0x4f8')]['createElement'](_0x47e240[_0x4853ad('0x202')],{'open':!!_0x358817,'title':_0x358817?''[_0x4853ad('0x39d')](_0x358817[_0x4853ad('0x3b6')],_0x4853ad('0x2f2')):'','footer':[_0x204842['default'][_0x4853ad('0x4fb')](_0x47e240[_0x4853ad('0x244')],{'key':'c','onClick':function(){return _0x3785dd(null);}},_0x4853ad('0x10b'))],'onCancel':function(){return _0x3785dd(null);},'width':0x2f8},_0x358817?_0x204842[_0x4853ad('0x4f8')][_0x4853ad('0x4fb')](_0x1a8cf3[_0x4853ad('0x4f8')],{'lines':_0x358817[_0x4853ad('0x32c')]}):null));};var _0x37f2ac,_0x204842=function(_0xd14561){var _0x4ce14e=_0x440fd6;if(_0xd14561&&_0xd14561[_0x4ce14e('0x30e')])return _0xd14561;if(null===_0xd14561||_0x4ce14e('0xd8')!==_0x21ffd6(_0xd14561)&&_0x4ce14e('0x3da')!=typeof _0xd14561)return{'default':_0xd14561};var _0x1c6a33=_0x5552aa();if(_0x1c6a33&&_0x1c6a33['has'](_0xd14561))return _0x1c6a33[_0x4ce14e('0x4cb')](_0xd14561);var _0x56f325={},_0x2fabee=Object[_0x4ce14e('0x14d')]&&Object[_0x4ce14e('0x7f')];for(var _0x196575 in _0xd14561)if(Object[_0x4ce14e('0x3d4')][_0x4ce14e('0x25d')][_0x4ce14e('0x545')](_0xd14561,_0x196575)){var _0x3e0149=_0x2fabee?Object['getOwnPropertyDescriptor'](_0xd14561,_0x196575):null;_0x3e0149&&(_0x3e0149[_0x4ce14e('0x4cb')]||_0x3e0149['set'])?Object[_0x4ce14e('0x14d')](_0x56f325,_0x196575,_0x3e0149):_0x56f325[_0x196575]=_0xd14561[_0x196575];}return _0x56f325[_0x4ce14e('0x4f8')]=_0xd14561,_0x1c6a33&&_0x1c6a33[_0x4ce14e('0x300')](_0xd14561,_0x56f325),_0x56f325;}(_0x5032c4(_0x440fd6('0x592'))),_0x47e240=_0x5032c4(_0x440fd6('0x389')),_0x43d1b9=_0x5032c4('@ant-design/icons'),_0x2aaf9b=_0x5032c4('./theme'),_0x1a8cf3=(_0x37f2ac=_0x5032c4(_0x440fd6('0x565')))&&_0x37f2ac[_0x440fd6('0x30e')]?_0x37f2ac:{'default':_0x37f2ac};function _0x5552aa(){var _0x10100a=_0x440fd6;if(_0x10100a('0x3da')!=typeof WeakMap)return null;var _0x501384=new WeakMap();return _0x5552aa=function(){return _0x501384;},_0x501384;}function _0x29467b(_0x19c386,_0x41392d){return function(_0x2013b0){var _0x48cab4=_0x3d72;if(Array[_0x48cab4('0x52b')](_0x2013b0))return _0x2013b0;}(_0x19c386)||function(_0x70ab72,_0x4d4418){var _0x3c07e2=_0x3d72;if(_0x3c07e2('0x20a')==typeof Symbol||!(Symbol[_0x3c07e2('0x20e')]in Object(_0x70ab72)))return;var _0x5a4612=[],_0x44dc8d=!0x0,_0x18ef75=!0x1,_0x2093bf=void 0x0;try{for(var _0x2e2ab0,_0x59a3b6=_0x70ab72[Symbol[_0x3c07e2('0x20e')]]();!(_0x44dc8d=(_0x2e2ab0=_0x59a3b6[_0x3c07e2('0xc')]())[_0x3c07e2('0x44')])&&(_0x5a4612[_0x3c07e2('0x3db')](_0x2e2ab0['value']),!_0x4d4418||_0x5a4612[_0x3c07e2('0x5ba')]!==_0x4d4418);_0x44dc8d=!0x0);}catch(_0x232dec){_0x18ef75=!0x0,_0x2093bf=_0x232dec;}finally{try{_0x44dc8d||null==_0x59a3b6[_0x3c07e2('0x41c')]||_0x59a3b6['return']();}finally{if(_0x18ef75)throw _0x2093bf;}}return _0x5a4612;}(_0x19c386,_0x41392d)||function(_0x5e569e,_0x119ae2){var _0x3f07c4=_0x3d72;if(!_0x5e569e)return;if(_0x3f07c4('0x4dd')==typeof _0x5e569e)return _0x825fc4(_0x5e569e,_0x119ae2);var _0x1495bc=Object['prototype'][_0x3f07c4('0x4ef')][_0x3f07c4('0x545')](_0x5e569e)[_0x3f07c4('0x5d')](0x8,-0x1);_0x3f07c4('0x2ed')===_0x1495bc&&_0x5e569e['constructor']&&(_0x1495bc=_0x5e569e['constructor']['name']);if(_0x3f07c4('0x235')===_0x1495bc||_0x3f07c4('0x5b1')===_0x1495bc)return Array[_0x3f07c4('0xd7')](_0x1495bc);if(_0x3f07c4('0x5ab')===_0x1495bc||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x3f07c4('0x56e')](_0x1495bc))return _0x825fc4(_0x5e569e,_0x119ae2);}(_0x19c386,_0x41392d)||function(){var _0x181e2e=_0x3d72;throw new TypeError(_0x181e2e('0x311'));}();}function _0x825fc4(_0x246f06,_0x485d){var _0xdcb193=_0x440fd6;(null==_0x485d||_0x485d>_0x246f06[_0xdcb193('0x5ba')])&&(_0x485d=_0x246f06[_0xdcb193('0x5ba')]);for(var _0x76edcd=0x0,_0x77a718=new Array(_0x485d);_0x76edcd<_0x485d;_0x76edcd++)_0x77a718[_0x76edcd]=_0x246f06[_0x76edcd];return _0x77a718;}var _0x3b4fc2=_0x47e240[_0x440fd6('0x4b3')][_0x440fd6('0x4a8')],_0x15203e=_0x440fd6('0x491'),_0x44324b=_0x440fd6('0x83'),_0x595824=_0x440fd6('0xd5'),_0x966d73=_0x440fd6('0x582'),_0x1d14d3=function(_0x326652){var _0x4c774a=_0x440fd6,_0x14e790=Number(_0x326652);return Number[_0x4c774a('0x2c3')](_0x14e790)?'0':Number['isInteger'](_0x14e790)?String(_0x14e790):String(Math[_0x4c774a('0x7')](0x3e8*_0x14e790)/0x3e8);},_0x325b53=function(_0x29cfd9,_0x259e69){var _0x41ed69=_0x440fd6;return _0x259e69>0x0?Math[_0x41ed69('0x373')](0x0,Math[_0x41ed69('0x215')](0x64,_0x29cfd9/_0x259e69*0x64)):0x0;};function _0x40c3b6(_0x5b9aec){var _0x2c787a=_0x440fd6,_0x2ad79f=_0x5b9aec[_0x2c787a('0x394')],_0x31066d=_0x5b9aec['label'],_0x401448=_0x5b9aec[_0x2c787a('0x3dc')],_0x500be5=_0x5b9aec[_0x2c787a('0x331')];return _0x204842['default'][_0x2c787a('0x4fb')]('span',{'style':{'display':_0x2c787a('0x595'),'alignItems':'center','gap':0x6}},_0x204842[_0x2c787a('0x4f8')]['createElement']('i',{'style':{'width':0x9,'height':0x9,'borderRadius':0x3,'flex':'0\x200\x20auto','background':_0x2ad79f,'display':_0x2c787a('0x3f9')}}),_0x31066d,'\x20',_0x204842['default']['createElement']('b',{'style':{'color':_0x500be5['colorText'],'fontWeight':0x28a}},_0x1d14d3(_0x401448)));}},{'./LeaveCalcChart':0x7,'./theme':0x1a,'@ant-design/icons':_0x401518('0x480'),'antd':_0x401518('0x389'),'react':_0x401518('0x592')}],0xb:[function(_0x1df770,_0x339661,_0x5dff37){var _0x1190dc=_0x401518;'use strict';Object[_0x1190dc('0x14d')](_0x5dff37,_0x1190dc('0x30e'),{'value':!0x0}),_0x5dff37[_0x1190dc('0x4f8')]=function(_0x4aa215){var _0x14df8e=_0x1190dc,_0x3a266e=_0x4aa215[_0x14df8e('0x74')]||{},_0x2bf501=!_0x3a266e['has_license'],_0x12f082=_0x3a266e['expiry_date']?String(_0x3a266e[_0x14df8e('0x4f6')])[_0x14df8e('0x3d8')]('\x20')[0x0]:null,_0x2ff3c3=_0x2bf501?_0x14df8e('0x593'):_0x14df8e('0x400'),_0x402c07=_0x2bf501?'This\x20feature\x20is\x20part\x20of\x20IceHrmPro\x20and\x20needs\x20an\x20active\x20subscription\x20to\x20use.':_0x14df8e('0x5b8')[_0x14df8e('0x39d')](_0x12f082?_0x14df8e('0x55a')['concat'](_0x12f082):_0x14df8e('0x2d9'),_0x14df8e('0x5af'));return _0x3f7afc[_0x14df8e('0x4f8')][_0x14df8e('0x4fb')](_0x14df8e('0x1c7'),{'style':{'padding':0x18}},_0x3f7afc['default'][_0x14df8e('0x4fb')](_0x1d8a2b['Result'],{'status':'warning','title':_0x2ff3c3,'subTitle':_0x402c07,'extra':_0x3a266e[_0x14df8e('0x9a')]?_0x3f7afc[_0x14df8e('0x4f8')][_0x14df8e('0x4fb')](_0x1d8a2b['Button'],{'type':_0x14df8e('0x3e5'),'onClick':function(){var _0x15b36c=_0x14df8e;_0x15b36c('0x20a')!=typeof window&&(window[_0x15b36c('0x49b')][_0x15b36c('0x3f4')]='#'['concat'](encodeURIComponent(_0x15b36c('0x4b4'))));}},_0x14df8e('0x168')):null}));};var _0x4371a1,_0x3f7afc=(_0x4371a1=_0x1df770(_0x1190dc('0x592')))&&_0x4371a1['__esModule']?_0x4371a1:{'default':_0x4371a1},_0x1d8a2b=_0x1df770('antd');},{'antd':_0x401518('0x389'),'react':'react'}],0xc:[function(_0x5d18a9,_0x33be68,_0x340f49){var _0x4042d6=_0x401518;'use strict';Object[_0x4042d6('0x14d')](_0x340f49,_0x4042d6('0x30e'),{'value':!0x0}),_0x340f49['default']=function(_0x35e1fd){var _0x264ec1=_0x4042d6,_0x26e2f4=_0x35e1fd['licenseRenewal'];if(!_0x26e2f4)return null;var _0x179e5d=_0x26e2f4[_0x264ec1('0x3c0')],_0x2dac18=_0x26e2f4[_0x264ec1('0x199')],_0xece014=_0x26e2f4[_0x264ec1('0x325')],_0x4041a5=_0x26e2f4['renewUrl'],_0x1208e1=_0x2dac18?String(_0x2dac18)['split']('\x20')[0x0]:null,_0xe392da=_0x179e5d<=0x0?'today':0x1===_0x179e5d?_0x264ec1('0x160'):_0x264ec1('0xf')['concat'](_0x179e5d,_0x264ec1('0x188'));return _0x3a05e9[_0x264ec1('0x4f8')][_0x264ec1('0x4fb')](_0x4b1e4b[_0x264ec1('0x1d8')],{'type':_0x264ec1('0x1c5'),'banner':!0x0,'showIcon':!0x0,'style':{'padding':_0x264ec1('0x567'),'alignItems':'center','marginBottom':0x10},'message':_0x3a05e9[_0x264ec1('0x4f8')][_0x264ec1('0x4fb')]('div',{'style':{'lineHeight':1.35}},_0x3a05e9['default'][_0x264ec1('0x4fb')](_0x264ec1('0x1c7'),{'style':{'fontSize':0x11,'fontWeight':0x2bc,'marginBottom':0x3}},_0x264ec1('0x362'),_0xe392da),_0x3a05e9['default'][_0x264ec1('0x4fb')](_0x264ec1('0x1c7'),{'style':{'fontSize':0xe,'opacity':0.9}},_0x1208e1?_0x264ec1('0x597')[_0x264ec1('0x39d')](_0x1208e1,'.\x20'):'',_0x264ec1('0x3d7'))),'action':_0xece014&&_0x4041a5?_0x3a05e9['default'][_0x264ec1('0x4fb')](_0x4b1e4b[_0x264ec1('0x244')],{'size':_0x264ec1('0x54a'),'type':_0x264ec1('0x3e5'),'href':_0x4041a5,'target':_0x264ec1('0x6a'),'rel':_0x264ec1('0x172'),'style':{'fontWeight':0x258}},_0x264ec1('0x350')):null});};var _0x5e4ff4,_0x3a05e9=(_0x5e4ff4=_0x5d18a9(_0x4042d6('0x592')))&&_0x5e4ff4[_0x4042d6('0x30e')]?_0x5e4ff4:{'default':_0x5e4ff4},_0x4b1e4b=_0x5d18a9(_0x4042d6('0x389'));},{'antd':'antd','react':'react'}],0xd:[function(_0x26d177,_0x332cff,_0xaa76f2){var _0x970feb=_0x401518;'use strict';Object['defineProperty'](_0xaa76f2,_0x970feb('0x30e'),{'value':!0x0}),_0xaa76f2['default']=function(){var _0x854a79=_0x970feb,_0x2404ef=(window[_0x854a79('0x2f0')]||{})['tabMobileApp']||null,_0x4977f3=_0x53c302((0x0,_0x1ed6c6['useState'])(null),0x2),_0x5b0e53=_0x4977f3[0x0],_0x3a0115=_0x4977f3[0x1],_0x47d4fa=_0x53c302((0x0,_0x1ed6c6['useState'])(!0x1),0x2),_0x2859d3=_0x47d4fa[0x0],_0x1442d5=_0x47d4fa[0x1],_0x421313={'borderRadius':0xc,'boxShadow':_0x107e51[_0x854a79('0x55d')],'marginBottom':0x10};return _0x1ed6c6['default']['createElement']('div',{'style':{'width':_0x854a79('0x4ae')}},_0x1ed6c6[_0x854a79('0x4f8')][_0x854a79('0x4fb')](_0x4a6af9[_0x854a79('0xdd')],{'style':_0x421313,'title':_0x1ed6c6['default'][_0x854a79('0x4fb')](_0x4a6af9['Space'],null,_0x1ed6c6[_0x854a79('0x4f8')][_0x854a79('0x4fb')](_0x3ff153[_0x854a79('0x6e')],null),_0x854a79('0x372'))},_0x1ed6c6[_0x854a79('0x4f8')]['createElement'](_0xfab53e,{'type':_0x854a79('0x18d')},_0x854a79('0x591')),_0x1ed6c6['default'][_0x854a79('0x4fb')](_0x4a6af9['Space'],{'wrap':!0x0},_0x1ed6c6[_0x854a79('0x4f8')]['createElement']('a',{'href':_0x854a79('0x211'),'target':'_blank','rel':'noopener\x20noreferrer'},_0x1ed6c6[_0x854a79('0x4f8')][_0x854a79('0x4fb')](_0x854a79('0x3ff'),{'src':_0x854a79('0x27c'),'alt':_0x854a79('0x383'),'style':{'height':0x32}})),_0x1ed6c6[_0x854a79('0x4f8')][_0x854a79('0x4fb')]('a',{'href':_0x854a79('0x288'),'target':_0x854a79('0x6a'),'rel':_0x854a79('0x172')},_0x1ed6c6[_0x854a79('0x4f8')]['createElement']('img',{'src':'https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg','alt':_0x854a79('0x486'),'style':{'height':0x32}})))),_0x1ed6c6[_0x854a79('0x4f8')][_0x854a79('0x4fb')](_0x4a6af9[_0x854a79('0xdd')],{'style':_0x421313,'title':_0x1ed6c6[_0x854a79('0x4f8')]['createElement'](_0x4a6af9[_0x854a79('0x390')],null,_0x1ed6c6[_0x854a79('0x4f8')][_0x854a79('0x4fb')](_0x3ff153['LockOutlined'],null),_0x854a79('0x424'))},_0x1ed6c6[_0x854a79('0x4f8')][_0x854a79('0x4fb')](_0xfab53e,{'type':_0x854a79('0x18d')},'Use\x20this\x20one-time\x20code\x20to\x20securely\x20log\x20in\x20to\x20the\x20mobile\x20app.'),_0x5b0e53?_0x1ed6c6['default'][_0x854a79('0x4fb')](_0x4a6af9[_0x854a79('0x1d8')],{'type':'success','showIcon':!0x0,'style':{'marginBottom':0xc},'message':_0x1ed6c6[_0x854a79('0x4f8')][_0x854a79('0x4fb')](_0x160d62,{'strong':!0x0,'copyable':!0x0,'style':{'fontSize':0x12,'letterSpacing':0x1}},_0x5b0e53)}):null,_0x1ed6c6['default'][_0x854a79('0x4fb')](_0x4a6af9[_0x854a79('0x244')],{'type':'primary','icon':_0x1ed6c6[_0x854a79('0x4f8')][_0x854a79('0x4fb')](_0x3ff153[_0x854a79('0xef')],null),'loading':_0x2859d3,'onClick':function(){var _0x3dfe55=_0x854a79;if(_0x2404ef){_0x1442d5(!0x0),_0x2404ef[_0x3dfe55('0x57e')]=function(_0x161705){var _0x26484f=_0x3dfe55;_0x1442d5(!0x1);var _0x11aab6=Array[_0x26484f('0x52b')](_0x161705)?_0x161705[0x0]:_0x161705,_0x191473=_0x11aab6&&_0x26484f('0xd8')===_0x522642(_0x11aab6)?_0x11aab6[_0x26484f('0x1f0')]||_0x11aab6['data']||_0x11aab6['loginCode']||JSON['stringify'](_0x11aab6):_0x11aab6;_0x3a0115(null!=_0x191473?String(_0x191473):null);},_0x2404ef[_0x3dfe55('0x48c')]=function(){var _0x503ac9=_0x3dfe55;_0x1442d5(!0x1),_0x4a6af9[_0x503ac9('0x186')]['error'](_0x503ac9('0x1fb'),0x5);};try{_0x2404ef[_0x3dfe55('0x38a')]();}catch(_0x217dde){_0x1442d5(!0x1);}}}},_0x854a79('0x1e3'))));};var _0x1ed6c6=function(_0x51bcc8){var _0x108b20=_0x970feb;if(_0x51bcc8&&_0x51bcc8[_0x108b20('0x30e')])return _0x51bcc8;if(null===_0x51bcc8||_0x108b20('0xd8')!==_0x522642(_0x51bcc8)&&_0x108b20('0x3da')!=typeof _0x51bcc8)return{'default':_0x51bcc8};var _0x556549=_0x2aca85();if(_0x556549&&_0x556549[_0x108b20('0x1e7')](_0x51bcc8))return _0x556549[_0x108b20('0x4cb')](_0x51bcc8);var _0x532603={},_0x41bfa0=Object[_0x108b20('0x14d')]&&Object['getOwnPropertyDescriptor'];for(var _0x4ea2c1 in _0x51bcc8)if(Object[_0x108b20('0x3d4')]['hasOwnProperty'][_0x108b20('0x545')](_0x51bcc8,_0x4ea2c1)){var _0x12a3cb=_0x41bfa0?Object[_0x108b20('0x7f')](_0x51bcc8,_0x4ea2c1):null;_0x12a3cb&&(_0x12a3cb[_0x108b20('0x4cb')]||_0x12a3cb[_0x108b20('0x300')])?Object['defineProperty'](_0x532603,_0x4ea2c1,_0x12a3cb):_0x532603[_0x4ea2c1]=_0x51bcc8[_0x4ea2c1];}return _0x532603[_0x108b20('0x4f8')]=_0x51bcc8,_0x556549&&_0x556549[_0x108b20('0x300')](_0x51bcc8,_0x532603),_0x532603;}(_0x26d177(_0x970feb('0x592'))),_0x4a6af9=_0x26d177(_0x970feb('0x389')),_0x3ff153=_0x26d177(_0x970feb('0x480')),_0x107e51=_0x26d177(_0x970feb('0x1c8'));function _0x2aca85(){var _0x22d9a8=_0x970feb;if(_0x22d9a8('0x3da')!=typeof WeakMap)return null;var _0x32d52a=new WeakMap();return _0x2aca85=function(){return _0x32d52a;},_0x32d52a;}function _0x522642(_0x3d7199){var _0x47d7fc=_0x970feb;return(_0x522642=_0x47d7fc('0x3da')==typeof Symbol&&_0x47d7fc('0x4da')==typeof Symbol[_0x47d7fc('0x20e')]?function(_0x5eb0d8){return typeof _0x5eb0d8;}:function(_0x1cb99d){var _0xbcde82=_0x47d7fc;return _0x1cb99d&&_0xbcde82('0x3da')==typeof Symbol&&_0x1cb99d[_0xbcde82('0xaa')]===Symbol&&_0x1cb99d!==Symbol[_0xbcde82('0x3d4')]?_0xbcde82('0x4da'):typeof _0x1cb99d;})(_0x3d7199);}function _0x53c302(_0x104451,_0x13cbdf){return function(_0x50a39d){var _0x33b2ef=_0x3d72;if(Array[_0x33b2ef('0x52b')](_0x50a39d))return _0x50a39d;}(_0x104451)||function(_0xda6e11,_0x327adf){var _0x1acfbe=_0x3d72;if(_0x1acfbe('0x20a')==typeof Symbol||!(Symbol[_0x1acfbe('0x20e')]in Object(_0xda6e11)))return;var _0x58c207=[],_0x143dc0=!0x0,_0x4f7bc1=!0x1,_0x2408a7=void 0x0;try{for(var _0x4b0c5e,_0x278e3a=_0xda6e11[Symbol[_0x1acfbe('0x20e')]]();!(_0x143dc0=(_0x4b0c5e=_0x278e3a['next']())[_0x1acfbe('0x44')])&&(_0x58c207[_0x1acfbe('0x3db')](_0x4b0c5e['value']),!_0x327adf||_0x58c207[_0x1acfbe('0x5ba')]!==_0x327adf);_0x143dc0=!0x0);}catch(_0x33584c){_0x4f7bc1=!0x0,_0x2408a7=_0x33584c;}finally{try{_0x143dc0||null==_0x278e3a[_0x1acfbe('0x41c')]||_0x278e3a[_0x1acfbe('0x41c')]();}finally{if(_0x4f7bc1)throw _0x2408a7;}}return _0x58c207;}(_0x104451,_0x13cbdf)||function(_0x524c41,_0x3d05fb){var _0xeb6015=_0x3d72;if(!_0x524c41)return;if('string'==typeof _0x524c41)return _0x294272(_0x524c41,_0x3d05fb);var _0x1f206e=Object[_0xeb6015('0x3d4')]['toString'][_0xeb6015('0x545')](_0x524c41)[_0xeb6015('0x5d')](0x8,-0x1);_0xeb6015('0x2ed')===_0x1f206e&&_0x524c41[_0xeb6015('0xaa')]&&(_0x1f206e=_0x524c41[_0xeb6015('0xaa')][_0xeb6015('0x3b6')]);if(_0xeb6015('0x235')===_0x1f206e||_0xeb6015('0x5b1')===_0x1f206e)return Array[_0xeb6015('0xd7')](_0x1f206e);if(_0xeb6015('0x5ab')===_0x1f206e||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0xeb6015('0x56e')](_0x1f206e))return _0x294272(_0x524c41,_0x3d05fb);}(_0x104451,_0x13cbdf)||function(){var _0x12ce59=_0x3d72;throw new TypeError(_0x12ce59('0x311'));}();}function _0x294272(_0x315799,_0x48e1af){var _0x136a95=_0x970feb;(null==_0x48e1af||_0x48e1af>_0x315799[_0x136a95('0x5ba')])&&(_0x48e1af=_0x315799[_0x136a95('0x5ba')]);for(var _0x2e66cc=0x0,_0x4ca2bd=new Array(_0x48e1af);_0x2e66cc<_0x48e1af;_0x2e66cc++)_0x4ca2bd[_0x2e66cc]=_0x315799[_0x2e66cc];return _0x4ca2bd;}var _0x160d62=_0x4a6af9['Typography'][_0x970feb('0x4a8')],_0xfab53e=_0x4a6af9['Typography'][_0x970feb('0x1f8')];},{'./theme':0x1a,'@ant-design/icons':_0x401518('0x480'),'antd':_0x401518('0x389'),'react':_0x401518('0x592')}],0xe:[function(_0x36fb9a,_0x286a3f,_0x5e7ab7){var _0x567662=_0x401518;'use strict';function _0x381e70(_0x29d6a2){var _0x152b11=_0x3d72;return(_0x381e70=_0x152b11('0x3da')==typeof Symbol&&'symbol'==typeof Symbol[_0x152b11('0x20e')]?function(_0x89f145){return typeof _0x89f145;}:function(_0xe0b292){var _0x44d68f=_0x152b11;return _0xe0b292&&_0x44d68f('0x3da')==typeof Symbol&&_0xe0b292[_0x44d68f('0xaa')]===Symbol&&_0xe0b292!==Symbol[_0x44d68f('0x3d4')]?_0x44d68f('0x4da'):typeof _0xe0b292;})(_0x29d6a2);}Object[_0x567662('0x14d')](_0x5e7ab7,_0x567662('0x30e'),{'value':!0x0}),_0x5e7ab7[_0x567662('0x4f8')]=function(_0x46240c){var _0x5c24e3=_0x567662,_0x1764db=_0x46240c[_0x5c24e3('0xf9')],_0x385b5d=_0x46240c['areas'],_0x5c25a3=_0x46240c[_0x5c24e3('0x15e')],_0x59e1c3=(_0x46240c[_0x5c24e3('0x1e1')],_0x195037=(0x0,_0x5adce0[_0x5c24e3('0x5a7')])(void 0x0),_0x546b6a=0x2,function(_0x4168ec){var _0x23fcd8=_0x5c24e3;if(Array[_0x23fcd8('0x52b')](_0x4168ec))return _0x4168ec;}(_0x195037)||function(_0x4da170,_0x2d916d){var _0x4da3c3=_0x5c24e3;if(_0x4da3c3('0x20a')!=typeof Symbol&&Symbol[_0x4da3c3('0x20e')]in Object(_0x4da170)){var _0x5dae61=[],_0x5b42de=!0x0,_0xa13bb=!0x1,_0x2fdd3f=void 0x0;try{for(var _0x1fa175,_0x5a4193=_0x4da170[Symbol[_0x4da3c3('0x20e')]]();!(_0x5b42de=(_0x1fa175=_0x5a4193[_0x4da3c3('0xc')]())[_0x4da3c3('0x44')])&&(_0x5dae61['push'](_0x1fa175[_0x4da3c3('0x3dc')]),!_0x2d916d||_0x5dae61[_0x4da3c3('0x5ba')]!==_0x2d916d);_0x5b42de=!0x0);}catch(_0x1447aa){_0xa13bb=!0x0,_0x2fdd3f=_0x1447aa;}finally{try{_0x5b42de||null==_0x5a4193['return']||_0x5a4193[_0x4da3c3('0x41c')]();}finally{if(_0xa13bb)throw _0x2fdd3f;}}return _0x5dae61;}}(_0x195037,_0x546b6a)||function(_0x3e7f44,_0x2aa8ca){var _0x43462b=_0x5c24e3;if(_0x3e7f44){if(_0x43462b('0x4dd')==typeof _0x3e7f44)return _0x3dc1cd(_0x3e7f44,_0x2aa8ca);var _0x11b81c=Object[_0x43462b('0x3d4')][_0x43462b('0x4ef')][_0x43462b('0x545')](_0x3e7f44)[_0x43462b('0x5d')](0x8,-0x1);return _0x43462b('0x2ed')===_0x11b81c&&_0x3e7f44[_0x43462b('0xaa')]&&(_0x11b81c=_0x3e7f44['constructor'][_0x43462b('0x3b6')]),_0x43462b('0x235')===_0x11b81c||_0x43462b('0x5b1')===_0x11b81c?Array[_0x43462b('0xd7')](_0x11b81c):_0x43462b('0x5ab')===_0x11b81c||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/['test'](_0x11b81c)?_0x3dc1cd(_0x3e7f44,_0x2aa8ca):void 0x0;}}(_0x195037,_0x546b6a)||function(){throw new TypeError('Invalid\x20attempt\x20to\x20destructure\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.');}()),_0x40cc75=_0x59e1c3[0x0],_0x1a5783=_0x59e1c3[0x1],_0x42bd79=(0x0,_0x5adce0['useMemo'])(function(){var _0x4c6c33=_0x5c24e3,_0x23548d={};return(_0x385b5d||[])[_0x4c6c33('0x475')](function(_0x13cffe){var _0x1fb8f1=_0x4c6c33;_0x23548d[_0x13cffe['id']]=_0x13cffe[_0x1fb8f1('0x278')];}),_0x23548d;},[_0x385b5d]),_0x417274=(0x0,_0x5adce0[_0x5c24e3('0x5a8')])(function(){var _0xb43b13=_0x5c24e3,_0x29dbf6={};return(_0x1764db||[])[_0xb43b13('0x475')](function(_0x587b01){var _0x337a1f=_0xb43b13,_0x3eb623=_0x587b01[_0x337a1f('0x2d0')]||'more';_0x29dbf6[_0x3eb623]||(_0x29dbf6[_0x3eb623]=[]);var _0x56f890=_0x42bd79[_0x3eb623]||_0x3eb623,_0x5b9fbd='mine'===_0x587b01[_0x337a1f('0x56f')]?_0x337a1f('0x3ed'):'Manage';_0x29dbf6[_0x3eb623][_0x337a1f('0x3db')]({'value':_0x587b01['key'],'name':_0x587b01['label'],'section':_0x5b9fbd,'label':_0x5adce0['default'][_0x337a1f('0x4fb')](_0x337a1f('0x433'),{'style':{'display':_0x337a1f('0x37f'),'alignItems':_0x337a1f('0x36e'),'justifyContent':_0x337a1f('0x551'),'gap':0xc}},_0x5adce0[_0x337a1f('0x4f8')][_0x337a1f('0x4fb')](_0x337a1f('0x433'),{'style':{'overflow':_0x337a1f('0x3ee'),'textOverflow':'ellipsis','whiteSpace':_0x337a1f('0x11e')}},_0x587b01[_0x337a1f('0x278')]),_0x5adce0[_0x337a1f('0x4f8')][_0x337a1f('0x4fb')](_0x337a1f('0x433'),{'style':{'flex':'0\x200\x20auto','fontSize':0xb,'fontWeight':0x1f4,'padding':_0x337a1f('0x8c'),'lineHeight':_0x337a1f('0x306'),'borderRadius':0x9,'color':_0x337a1f('0x44e')===_0x587b01[_0x337a1f('0x56f')]?_0x337a1f('0x445'):_0x337a1f('0x45b'),'background':_0x337a1f('0x44e')===_0x587b01[_0x337a1f('0x56f')]?_0x337a1f('0x535'):_0x337a1f('0x370')}},_0x5b9fbd)),'search':''[_0x337a1f('0x39d')](_0x587b01[_0x337a1f('0x278')],'\x20')[_0x337a1f('0x39d')](_0x56f890,'\x20')[_0x337a1f('0x39d')](_0x5b9fbd)['toLowerCase']()});}),Object[_0xb43b13('0x33b')](_0x29dbf6)[_0xb43b13('0x525')](function(_0x39824e,_0x24bf7d){var _0x193f74=_0xb43b13;return(_0x42bd79[_0x39824e]||_0x39824e)[_0x193f74('0x596')](_0x42bd79[_0x24bf7d]||_0x24bf7d);})[_0xb43b13('0x427')](function(_0x1ba0dd){var _0x186b1f=_0xb43b13;return{'label':_0x42bd79[_0x1ba0dd]||_0x1ba0dd,'options':_0x29dbf6[_0x1ba0dd][_0x186b1f('0x525')](function(_0x3bf8ea,_0x1ab1a9){var _0x3b5172=_0x186b1f;return _0x3bf8ea['name'][_0x3b5172('0x596')](_0x1ab1a9['name']);})};});},[_0x1764db,_0x42bd79]),_0x195037,_0x546b6a;return _0x5adce0[_0x5c24e3('0x4f8')][_0x5c24e3('0x4fb')](_0x38053c[_0x5c24e3('0x37b')],{'showSearch':!0x0,'value':_0x40cc75,'placeholder':'Search\x20for\x20a\x20module…','suffixIcon':_0x5adce0['default']['createElement'](_0x4cd85b[_0x5c24e3('0x180')],{'style':{'fontSize':0xf}}),'options':_0x417274,'filterOption':function(_0x10c0a1,_0x65ee2a){var _0x4b14aa=_0x5c24e3;return!(!_0x65ee2a||_0x65ee2a['options'])&&(_0x65ee2a['search']||'')[_0x4b14aa('0x224')]((_0x10c0a1||'')[_0x4b14aa('0x273')]());},'onChange':function(_0x5eb0f5){_0x5eb0f5&&_0x5c25a3&&_0x5c25a3(_0x5eb0f5),_0x1a5783(void 0x0);},'onSelect':function(){return _0x1a5783(void 0x0);},'allowClear':!0x0,'style':{'width':'100%'},'popupMatchSelectWidth':!0x1,'listHeight':0x1a4,'variant':_0x5c24e3('0x3ae'),'aria-label':_0x5c24e3('0x3fb')});};var _0x5adce0=function(_0x7d9504){var _0x3abfdd=_0x567662;if(_0x7d9504&&_0x7d9504[_0x3abfdd('0x30e')])return _0x7d9504;if(null===_0x7d9504||'object'!==_0x381e70(_0x7d9504)&&_0x3abfdd('0x3da')!=typeof _0x7d9504)return{'default':_0x7d9504};var _0x4d72ad=_0x307ca6();if(_0x4d72ad&&_0x4d72ad['has'](_0x7d9504))return _0x4d72ad['get'](_0x7d9504);var _0x5b2e91={},_0x51152e=Object[_0x3abfdd('0x14d')]&&Object['getOwnPropertyDescriptor'];for(var _0xb2951b in _0x7d9504)if(Object['prototype']['hasOwnProperty'][_0x3abfdd('0x545')](_0x7d9504,_0xb2951b)){var _0x5d7b17=_0x51152e?Object[_0x3abfdd('0x7f')](_0x7d9504,_0xb2951b):null;_0x5d7b17&&(_0x5d7b17[_0x3abfdd('0x4cb')]||_0x5d7b17[_0x3abfdd('0x300')])?Object[_0x3abfdd('0x14d')](_0x5b2e91,_0xb2951b,_0x5d7b17):_0x5b2e91[_0xb2951b]=_0x7d9504[_0xb2951b];}return _0x5b2e91[_0x3abfdd('0x4f8')]=_0x7d9504,_0x4d72ad&&_0x4d72ad['set'](_0x7d9504,_0x5b2e91),_0x5b2e91;}(_0x36fb9a(_0x567662('0x592'))),_0x38053c=_0x36fb9a('antd'),_0x4cd85b=_0x36fb9a(_0x567662('0x480'));function _0x307ca6(){var _0x5176ae=_0x567662;if(_0x5176ae('0x3da')!=typeof WeakMap)return null;var _0x1c12f3=new WeakMap();return _0x307ca6=function(){return _0x1c12f3;},_0x1c12f3;}function _0x3dc1cd(_0x362646,_0x2ff844){var _0x561042=_0x567662;(null==_0x2ff844||_0x2ff844>_0x362646[_0x561042('0x5ba')])&&(_0x2ff844=_0x362646[_0x561042('0x5ba')]);for(var _0x2aa018=0x0,_0x2ebbfd=new Array(_0x2ff844);_0x2aa018<_0x2ff844;_0x2aa018++)_0x2ebbfd[_0x2aa018]=_0x362646[_0x2aa018];return _0x2ebbfd;}},{'@ant-design/icons':_0x401518('0x480'),'antd':'antd','react':_0x401518('0x592')}],0xf:[function(_0x507747,_0x124afd,_0xa640ce){var _0x2c2e9c=_0x401518;'use strict';function _0x4fded1(_0x2761e1){var _0x5a8712=_0x3d72;return(_0x4fded1='function'==typeof Symbol&&_0x5a8712('0x4da')==typeof Symbol[_0x5a8712('0x20e')]?function(_0x4881fb){return typeof _0x4881fb;}:function(_0x76c756){var _0x389b6e=_0x5a8712;return _0x76c756&&'function'==typeof Symbol&&_0x76c756[_0x389b6e('0xaa')]===Symbol&&_0x76c756!==Symbol['prototype']?_0x389b6e('0x4da'):typeof _0x76c756;})(_0x2761e1);}Object[_0x2c2e9c('0x14d')](_0xa640ce,_0x2c2e9c('0x30e'),{'value':!0x0}),_0xa640ce[_0x2c2e9c('0x4f8')]=function(_0x316312){var _0xdd51d7=_0x2c2e9c,_0x43e5e2=_0x316312[_0xdd51d7('0x2f1')],_0x53bcdf=(0x0,_0x20c0fb[_0xdd51d7('0x58b')])(null),_0x313c86=(0x0,_0x20c0fb[_0xdd51d7('0x58b')])(null),_0x3cbcdb=(0x0,_0x20c0fb[_0xdd51d7('0x58b')])(null),_0x2264c9=(_0x573b6e=(0x0,_0x20c0fb[_0xdd51d7('0x5a7')])(!0x1),_0x39af05=0x2,function(_0x3cc13c){if(Array['isArray'](_0x3cc13c))return _0x3cc13c;}(_0x573b6e)||function(_0x34d77c,_0x38e379){var _0x8e64cb=_0xdd51d7;if(_0x8e64cb('0x20a')!=typeof Symbol&&Symbol[_0x8e64cb('0x20e')]in Object(_0x34d77c)){var _0x51d173=[],_0x302f86=!0x0,_0x2a3f2c=!0x1,_0x15cbc7=void 0x0;try{for(var _0x305fa9,_0x53393b=_0x34d77c[Symbol[_0x8e64cb('0x20e')]]();!(_0x302f86=(_0x305fa9=_0x53393b[_0x8e64cb('0xc')]())[_0x8e64cb('0x44')])&&(_0x51d173['push'](_0x305fa9['value']),!_0x38e379||_0x51d173[_0x8e64cb('0x5ba')]!==_0x38e379);_0x302f86=!0x0);}catch(_0x33519e){_0x2a3f2c=!0x0,_0x15cbc7=_0x33519e;}finally{try{_0x302f86||null==_0x53393b['return']||_0x53393b['return']();}finally{if(_0x2a3f2c)throw _0x15cbc7;}}return _0x51d173;}}(_0x573b6e,_0x39af05)||function(_0x54bdec,_0x5d6c7b){var _0x1a249d=_0xdd51d7;if(_0x54bdec){if('string'==typeof _0x54bdec)return _0x3c3c84(_0x54bdec,_0x5d6c7b);var _0x4e7e87=Object[_0x1a249d('0x3d4')][_0x1a249d('0x4ef')][_0x1a249d('0x545')](_0x54bdec)[_0x1a249d('0x5d')](0x8,-0x1);return _0x1a249d('0x2ed')===_0x4e7e87&&_0x54bdec[_0x1a249d('0xaa')]&&(_0x4e7e87=_0x54bdec[_0x1a249d('0xaa')][_0x1a249d('0x3b6')]),_0x1a249d('0x235')===_0x4e7e87||'Set'===_0x4e7e87?Array[_0x1a249d('0xd7')](_0x4e7e87):_0x1a249d('0x5ab')===_0x4e7e87||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x1a249d('0x56e')](_0x4e7e87)?_0x3c3c84(_0x54bdec,_0x5d6c7b):void 0x0;}}(_0x573b6e,_0x39af05)||function(){var _0x53af5d=_0xdd51d7;throw new TypeError(_0x53af5d('0x311'));}()),_0x24c7f3=_0x2264c9[0x0],_0x54cb6c=_0x2264c9[0x1],_0x573b6e,_0x39af05;return(0x0,_0x20c0fb[_0xdd51d7('0x138')])(function(){var _0x4ab9f9=!0x1,_0x591243=0x0;return function _0x34f79d(){var _0x40c435=_0x3d72;if(!_0x4ab9f9){var _0x12aee7=(window[_0x40c435('0x2f0')]||{})[_0x43e5e2];if(_0x12aee7&&_0x53bcdf[_0x40c435('0x234')]){_0x40c435('0x3da')==typeof _0x12aee7['setContainers']&&_0x12aee7[_0x40c435('0x254')]({'Table':_0x53bcdf['current'],'Form':_0x313c86[_0x40c435('0x234')],'FilterForm':_0x3cbcdb[_0x40c435('0x234')]}),_0x12aee7['tableInitialized']=!0x1,_0x12aee7[_0x40c435('0x326')]=!0x1,window[_0x40c435('0x522')]=_0x12aee7;try{_0x12aee7[_0x40c435('0x578')]&&_0x12aee7[_0x40c435('0x578')][_0x40c435('0x27')]&&_0x12aee7[_0x40c435('0x578')][_0x40c435('0x27')]();}catch(_0x19d4ae){}try{_0x12aee7[_0x40c435('0x4cb')]([]);}catch(_0x4e723a){}_0x54cb6c(!0x0);}else(_0x591243+=0x1)<=0x64&&setTimeout(_0x34f79d,0x64);}}(),function(){_0x4ab9f9=!0x0;};},[_0x43e5e2]),_0x20c0fb[_0xdd51d7('0x4f8')][_0xdd51d7('0x4fb')]('div',null,!_0x24c7f3&&_0x20c0fb[_0xdd51d7('0x4f8')][_0xdd51d7('0x4fb')](_0xdd51d7('0x1c7'),{'style':{'display':'flex','justifyContent':_0xdd51d7('0x36e'),'padding':0x28}},_0x20c0fb[_0xdd51d7('0x4f8')][_0xdd51d7('0x4fb')](_0x63d36c[_0xdd51d7('0x4cc')],{'size':_0xdd51d7('0x54a')})),_0x20c0fb[_0xdd51d7('0x4f8')][_0xdd51d7('0x4fb')](_0xdd51d7('0x1c7'),{'ref':_0x53bcdf}),_0x20c0fb['default'][_0xdd51d7('0x4fb')](_0xdd51d7('0x1c7'),{'ref':_0x313c86}),_0x20c0fb[_0xdd51d7('0x4f8')][_0xdd51d7('0x4fb')](_0xdd51d7('0x1c7'),{'ref':_0x3cbcdb}));};var _0x20c0fb=function(_0x134836){var _0x16ff14=_0x2c2e9c;if(_0x134836&&_0x134836[_0x16ff14('0x30e')])return _0x134836;if(null===_0x134836||_0x16ff14('0xd8')!==_0x4fded1(_0x134836)&&_0x16ff14('0x3da')!=typeof _0x134836)return{'default':_0x134836};var _0x23e183=_0x42b1c6();if(_0x23e183&&_0x23e183['has'](_0x134836))return _0x23e183[_0x16ff14('0x4cb')](_0x134836);var _0x326bc3={},_0x3c8e39=Object['defineProperty']&&Object[_0x16ff14('0x7f')];for(var _0x565f19 in _0x134836)if(Object[_0x16ff14('0x3d4')]['hasOwnProperty'][_0x16ff14('0x545')](_0x134836,_0x565f19)){var _0x557180=_0x3c8e39?Object[_0x16ff14('0x7f')](_0x134836,_0x565f19):null;_0x557180&&(_0x557180[_0x16ff14('0x4cb')]||_0x557180[_0x16ff14('0x300')])?Object[_0x16ff14('0x14d')](_0x326bc3,_0x565f19,_0x557180):_0x326bc3[_0x565f19]=_0x134836[_0x565f19];}return _0x326bc3[_0x16ff14('0x4f8')]=_0x134836,_0x23e183&&_0x23e183[_0x16ff14('0x300')](_0x134836,_0x326bc3),_0x326bc3;}(_0x507747(_0x2c2e9c('0x592'))),_0x63d36c=_0x507747(_0x2c2e9c('0x389'));function _0x42b1c6(){var _0x154380=_0x2c2e9c;if(_0x154380('0x3da')!=typeof WeakMap)return null;var _0x5d7e90=new WeakMap();return _0x42b1c6=function(){return _0x5d7e90;},_0x5d7e90;}function _0x3c3c84(_0x5d3b2a,_0x45590f){(null==_0x45590f||_0x45590f>_0x5d3b2a['length'])&&(_0x45590f=_0x5d3b2a['length']);for(var _0x25598b=0x0,_0x41626e=new Array(_0x45590f);_0x25598b<_0x45590f;_0x25598b++)_0x41626e[_0x25598b]=_0x5d3b2a[_0x25598b];return _0x41626e;}},{'antd':_0x401518('0x389'),'react':_0x401518('0x592')}],0x10:[function(_0x2125b6,_0x494cc6,_0x241d62){var _0x26dd2b=_0x401518;'use strict';Object[_0x26dd2b('0x14d')](_0x241d62,_0x26dd2b('0x30e'),{'value':!0x0}),_0x241d62['default']=function(_0xfe3fe7){var _0x3a4988=_0x26dd2b,_0x531bce=_0xfe3fe7[_0x3a4988('0x5a9')],_0x5cc07b=_0xfe3fe7[_0x3a4988('0x2f1')],_0x546331=_0xfe3fe7[_0x3a4988('0x2de')],_0x1c364d=_0xfe3fe7[_0x3a4988('0x34c')],_0x125380=_0x27f901[_0x3a4988('0x587')]['useToken']()[_0x3a4988('0x331')],_0x262357=_0x3a4988('0x20a')!=typeof window&&_0x3a4988('0x1e1')===window[_0x3a4988('0x294')],_0x1810e6=function(_0x4c2486){return _0x262357?function(_0x31d1ad,_0x2af556){var _0x546210=_0x3d72,_0x6cc057=/^#?([0-9a-fA-F]{6})$/[_0x546210('0x40a')](_0x31d1ad||'');if(!_0x6cc057)return _0x31d1ad;var _0xc4e2a4=parseInt(_0x6cc057[0x1],0x10),_0x5a76e2=_0xc4e2a4>>0x10&0xff,_0xa81f30=_0xc4e2a4>>0x8&0xff,_0x3b8ced=0xff&_0xc4e2a4;return _0x5a76e2=Math[_0x546210('0x7')](_0x5a76e2+(0xff-_0x5a76e2)*_0x2af556),_0xa81f30=Math[_0x546210('0x7')](_0xa81f30+(0xff-_0xa81f30)*_0x2af556),_0x3b8ced=Math[_0x546210('0x7')](_0x3b8ced+(0xff-_0x3b8ced)*_0x2af556),_0x546210('0x77')['concat'](_0x5a76e2,',\x20')[_0x546210('0x39d')](_0xa81f30,',\x20')[_0x546210('0x39d')](_0x3b8ced,')');}(_0x4c2486,0.4):_0x4c2486;},_0x1d480e=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(null),0x2),_0x5b262a=_0x1d480e[0x0],_0x448f25=_0x1d480e[0x1],_0x250960=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(0x0),0x2),_0x1874a2=_0x250960[0x0],_0x34ae6c=_0x250960[0x1],_0xa26f74=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(0x1),0x2),_0x2cf763=_0xa26f74[0x0],_0x5d3d17=_0xa26f74[0x1],_0x516393=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(0x8),0x2),_0x59a1c8=_0x516393[0x0],_0x12ffae=_0x516393[0x1],_0x2b4f95=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(''),0x2),_0x4c530e=_0x2b4f95[0x0],_0x1fd4fe=_0x2b4f95[0x1],_0x215623=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(''),0x2),_0x41d2f3=_0x215623[0x0],_0x1f1d3b=_0x215623[0x1],_0x48c386=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(!0x1),0x2),_0x1016d1=_0x48c386[0x0],_0x444256=_0x48c386[0x1],_0x2e8eed=_0x4f6ea8((0x0,_0x5c63c7['useState'])(null),0x2),_0x4bdd4c=_0x2e8eed[0x0],_0x251751=_0x2e8eed[0x1],_0x467e8f=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(null),0x2),_0x2cba9e=_0x467e8f[0x0],_0x365f24=_0x467e8f[0x1],_0x5a9ae5=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(null),0x2),_0xdb2b57=_0x5a9ae5[0x0],_0x26798c=_0x5a9ae5[0x1],_0x228063=(0x0,_0x5c63c7['useRef'])(null),_0x3ce48b=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(null),0x2),_0x21c403=_0x3ce48b[0x0],_0x456c3e=_0x3ce48b[0x1],_0x585c75=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(null),0x2),_0x3bae0f=_0x585c75[0x0],_0x385896=_0x585c75[0x1],_0x552f20=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(''),0x2),_0xf4f4d9=_0x552f20[0x0],_0x370585=_0x552f20[0x1],_0x254e3e=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(!0x1),0x2),_0x3944b9=_0x254e3e[0x0],_0x572eba=_0x254e3e[0x1],_0x2aa88a=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(null),0x2),_0x47a220=_0x2aa88a[0x0],_0x4dfc35=_0x2aa88a[0x1],_0x452334=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(null),0x2),_0x1c056c=_0x452334[0x0],_0x36262e=_0x452334[0x1],_0x494329=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(0x0),0x2)[0x1],_0xe5d3a9=function(){return _0x494329(function(_0xd30f6c){return _0xd30f6c+0x1;});},_0x27fcae=_0x4f6ea8((0x0,_0x5c63c7['useState'])([]),0x2),_0x36e579=_0x27fcae[0x0],_0x2ef674=_0x27fcae[0x1],_0x526dea=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(!0x1),0x2),_0x5ca053=_0x526dea[0x0],_0x24c8a7=_0x526dea[0x1],_0x2341e3=function(){return _0x2ef674([]);},_0x4dbfab=(0x0,_0x5c63c7[_0x3a4988('0x58b')])(null),_0xf24a5c=function(){var _0x2dbb15=_0x3a4988;return _0x4dbfab['current']||(window[_0x2dbb15('0x2f0')]||{})[_0x5cc07b];},_0x37a52d=(0x0,_0x5c63c7[_0x3a4988('0x32a')])(function(){var _0x1308fb=_0x3a4988,_0x5ad721=arguments[_0x1308fb('0x5ba')]>0x0&&void 0x0!==arguments[0x0]?arguments[0x0]:null,_0x590995=arguments[_0x1308fb('0x5ba')]>0x1&&void 0x0!==arguments[0x1]?arguments[0x1]:null,_0x40399b=arguments[_0x1308fb('0x5ba')]>0x2&&void 0x0!==arguments[0x2]?arguments[0x2]:null,_0x543f64=_0xf24a5c();if(_0x543f64&&_0x543f64['dataPipe']){var _0x2891cd=null!=_0x5ad721?_0x5ad721:_0x2cf763,_0x54fbe3=null!=_0x590995?_0x590995:_0x4c530e,_0x542806=null!=_0x40399b?_0x40399b:_0x59a1c8;_0x444256(!0x1),_0x543f64['dataPipe'][_0x1308fb('0x4cb')]({'page':_0x2891cd,'limit':_0x542806,'search':_0x54fbe3})[_0x1308fb('0x12a')](function(_0x24baf5){var _0xeeb6f=_0x1308fb;_0x448f25(_0x24baf5&&_0x24baf5[_0xeeb6f('0xf9')]||[]),_0x34ae6c(_0x24baf5&&_0x24baf5[_0xeeb6f('0x532')]||0x0),_0xe5d3a9();})[_0x1308fb('0x2e')](function(){return _0x444256(!0x0);});}else _0x444256(!0x0);},[_0x5cc07b,_0x2cf763,_0x4c530e,_0x59a1c8]);(0x0,_0x5c63c7['useEffect'])(function(){var _0x12a5c9=_0x3a4988,_0xfe3ec5=!0x1,_0x35aab8=0x0,_0x85d114=document[_0x12a5c9('0x4fb')](_0x12a5c9('0x1c7')),_0x2d1f28=document[_0x12a5c9('0x4fb')](_0x12a5c9('0x1c7'));return document['body'][_0x12a5c9('0x4d2')](_0x85d114),document[_0x12a5c9('0x72')][_0x12a5c9('0x4d2')](_0x2d1f28),(function _0x11b961(){var _0x39fc22=_0x12a5c9;if(!_0xfe3ec5){var _0x19182d=_0xf24a5c();_0x19182d&&_0x19182d[_0x39fc22('0x218')]?function(_0x5b4529){var _0x1cc439=_0x39fc22;_0x4dbfab[_0x1cc439('0x234')]=_0x5b4529,window['modJs']=_0x5b4529,_0x1cc439('0x3da')==typeof _0x5b4529[_0x1cc439('0x254')]&&_0x5b4529[_0x1cc439('0x254')]({'Form':_0x85d114,'FilterForm':_0x2d1f28}),_0x5b4529[_0x1cc439('0x326')]=!0x1,_0x5b4529['tableContainer']={'current':{'reload':function(){return _0x37a52d();},'setCurrentElement':function(_0x646b7){return _0x251751(_0x646b7||null);},'setLoading':function(){},'setFilterData':function(){_0xe5d3a9();}}};try{_0x5b4529[_0x1cc439('0x578')]&&_0x5b4529[_0x1cc439('0x578')][_0x1cc439('0x27')]&&_0x5b4529[_0x1cc439('0x578')][_0x1cc439('0x27')](),'function'==typeof _0x5b4529[_0x1cc439('0x48')]&&_0x5b4529[_0x1cc439('0x48')]();}catch(_0x310246){}_0x5d3d17(0x1),_0x37a52d(0x1,'');}(_0x19182d):(_0x35aab8+=0x1)>0x64?_0x444256(!0x0):setTimeout(_0x11b961,0x64);}}(),function(){var _0x4f290=_0x12a5c9;_0xfe3ec5=!0x0;try{var _0x2bfe3a=_0xf24a5c();_0x2bfe3a&&_0x4f290('0x3da')==typeof _0x2bfe3a[_0x4f290('0x254')]&&_0x2bfe3a['setContainers'](null),_0x85d114[_0x4f290('0x3ac')]&&_0x85d114[_0x4f290('0x3ac')][_0x4f290('0x379')](_0x85d114),_0x2d1f28['parentNode']&&_0x2d1f28[_0x4f290('0x3ac')][_0x4f290('0x379')](_0x2d1f28);}catch(_0x34189e){}_0x4dbfab[_0x4f290('0x234')]=null;});},[_0x5cc07b]);var _0x23123e=_0xf24a5c(),_0x4382d3=function(){var _0x3be98d=_0x3a4988;if(!_0x23123e)return'admin=';if(_0x3be98d('0x3da')==typeof _0x23123e[_0x3be98d('0x333')])return _0x23123e[_0x3be98d('0x333')]();if(_0x3be98d('0x5b7')===_0x23123e[_0x3be98d('0x563')]&&_0x3be98d('0x4dd')==typeof _0x23123e[_0x3be98d('0xbc')]&&_0x23123e[_0x3be98d('0xbc')][_0x3be98d('0x187')]('|')>=0x0){var _0x4ac3fc=_0x4f6ea8(_0x23123e[_0x3be98d('0xbc')]['split']('|'),0x2),_0x4b1c8f=_0x4ac3fc[0x0],_0x277393=_0x4ac3fc[0x1];return''[_0x3be98d('0x39d')]('user'===_0x277393?_0x3be98d('0x46'):'admin','=')['concat'](_0x23123e[_0x3be98d('0x534')]||_0x4b1c8f);}return _0x23123e['spaModuleGroup']&&_0x23123e[_0x3be98d('0xbc')]?''[_0x3be98d('0x39d')](_0x23123e[_0x3be98d('0x563')],'=')['concat'](_0x23123e[_0x3be98d('0xbc')]):'admin='['concat'](_0x23123e[_0x3be98d('0x534')]);},_0x5d49d4=(0x0,_0x5c63c7[_0x3a4988('0x5a8')])(function(){var _0x234931=_0x3a4988;return _0x23123e&&'function'==typeof _0x23123e[_0x234931('0x292')]?(_0x23123e[_0x234931('0x292')]()||[])[_0x234931('0x427')](function(_0x1ad62f){var _0x547bdf=_0x234931;return _0x27f54f({},_0x1ad62f,{'label':_0x23123e['gt']?_0x23123e['gt'](_0x1ad62f[_0x547bdf('0x115')]):_0x1ad62f[_0x547bdf('0x115')]});}):[];},[_0x23123e,_0x5b262a]),_0x1f4de7=_0x27f54f({},_0x4a69bc[_0x546331]||{},{},_0x1c364d||{}),_0x4e2d86=_0x1f4de7[_0x3a4988('0x2ab')]||null,_0x2a177a=function(_0xd51a86){var _0x114e66=_0x3a4988;return!!(_0x23123e&&_0x23123e[_0x114e66('0x127')]&&_0x23123e[_0x114e66('0x127')](_0xd51a86));},_0x4d6974=_0x1f4de7['cardClickAction']&&_0x23123e&&_0x3a4988('0x3da')==typeof _0x23123e[_0x1f4de7[_0x3a4988('0x151')]]?function(_0x50fe4c){var _0x5d0735=_0x3a4988;return _0x23123e[_0x1f4de7[_0x5d0735('0x151')]](_0x50fe4c['id'],_0x50fe4c);}:null,_0x5866af=!(_0x1f4de7['disableView']||!_0x1f4de7[_0x3a4988('0x30d')]&&(!_0x23123e||!('function'==typeof _0x23123e[_0x3a4988('0x173')]||_0x2a177a(_0x3a4988('0x36b'))&&_0x23123e[_0x3a4988('0x49e')]&&_0x23123e[_0x3a4988('0x49e')]()))),_0x5ed5de=_0x5866af&&!_0x1f4de7[_0x3a4988('0x225')],_0x5f4aba=!(!_0x23123e||!_0x2a177a(_0x3a4988('0x584'))||!0x1===_0x23123e[_0x3a4988('0x1fe')]||_0x1f4de7[_0x3a4988('0x3e2')]),_0x22f141=!(!_0x23123e||!_0x2a177a('save')||!0x1===_0x23123e[_0x3a4988('0x79')]||_0x1f4de7[_0x3a4988('0x2ad')]),_0x2cc890=!(!_0x23123e||!_0x2a177a(_0x3a4988('0x1fd'))||!0x1===_0x23123e[_0x3a4988('0x2ff')]),_0x458996=function(_0x49f2dc){var _0x218cee=_0x3a4988;return _0x2cc890&&('function'!=typeof _0x1f4de7[_0x218cee('0x18')]||!!_0x1f4de7[_0x218cee('0x18')](_0x49f2dc));},_0x2e2b56=!!_0x1f4de7[_0x3a4988('0x4bc')]&&_0x2cc890&&_0x3a4988('0x3da')==typeof(_0x23123e&&_0x23123e[_0x3a4988('0x2a1')]),_0x25bc08=!!(_0x23123e&&_0x2a177a(_0x3a4988('0x584'))&&(_0x23123e['getShowAddNew']?_0x23123e[_0x3a4988('0x54')]():!0x1!==_0x23123e['showAddNew'])),_0x2de197=!!(_0x23123e&&_0x23123e['getFilters']&&_0x23123e['getFilters']()),_0x15253e=function(_0x553def){var _0x43b245=_0x3a4988,_0x14b324;_0x1f4de7['expenseDialog']?_0x36262e({'rec':_0x553def,'mode':_0x43b245('0x3d2')}):(_0x14b324=_0x553def['id'],_0x23123e&&('function'==typeof _0x23123e[_0x43b245('0x173')]?_0x23123e[_0x43b245('0x173')](_0x14b324):_0x43b245('0x3da')==typeof _0x23123e[_0x43b245('0x158')]&&_0x23123e[_0x43b245('0x158')](_0x14b324)));},_0x5f4277=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(!0x1),0x2),_0x528e78=_0x5f4277[0x0],_0x2968ee=_0x5f4277[0x1],_0x56e4c3=function(){var _0x4f41a4=_0x3a4988,_0x2f1dff=_0x3b8c48(regeneratorRuntime[_0x4f41a4('0x53a')](function _0x13ea61(){var _0x34e84e,_0x5f1b11,_0x435950,_0x3e9714,_0x246671,_0x8e6cec;return regeneratorRuntime['wrap'](function(_0x33f51a){var _0x385ffd=_0x3d72;for(;;)switch(_0x33f51a[_0x385ffd('0x3c2')]=_0x33f51a[_0x385ffd('0xc')]){case 0x0:if(_0x1f4de7[_0x385ffd('0x48b')]){_0x33f51a[_0x385ffd('0xc')]=0x2;break;}return _0x33f51a['abrupt'](_0x385ffd('0x41c'));case 0x2:return _0x2968ee(!0x0),_0x33f51a[_0x385ffd('0x3c2')]=0x3,_0x33f51a['next']=0x6,fetch(''[_0x385ffd('0x39d')](_0x531bce[_0x385ffd('0x28d')])['concat'](_0x1f4de7[_0x385ffd('0x48b')]),{'headers':{'Authorization':_0x385ffd('0x55b')[_0x385ffd('0x39d')](_0x531bce[_0x385ffd('0x331')])},'credentials':_0x385ffd('0x1a5')});case 0x6:return _0x34e84e=_0x33f51a[_0x385ffd('0x1b3')],_0x33f51a['next']=0x9,_0x34e84e[_0x385ffd('0x580')]();case 0x9:_0x5f1b11=_0x33f51a[_0x385ffd('0x1b3')],_0x435950=new Blob([JSON[_0x385ffd('0x1d2')](_0x5f1b11,null,0x2)],{'type':_0x385ffd('0x409')}),_0x3e9714=URL[_0x385ffd('0x3a2')](_0x435950),_0x246671=document[_0x385ffd('0x4fb')]('a'),_0x8e6cec=new Date()['toISOString']()['slice'](0x0,0x13)[_0x385ffd('0x4c6')](/[:T]/g,'-'),_0x246671[_0x385ffd('0x41')]=_0x3e9714,_0x246671[_0x385ffd('0xdf')]=''[_0x385ffd('0x39d')](_0x1f4de7[_0x385ffd('0xf1')]||'backup','-')['concat'](_0x8e6cec,_0x385ffd('0x58a')),document[_0x385ffd('0x72')][_0x385ffd('0x4d2')](_0x246671),_0x246671[_0x385ffd('0xa5')](),document['body'][_0x385ffd('0x379')](_0x246671),URL[_0x385ffd('0x418')](_0x3e9714),_0x27f901[_0x385ffd('0x186')]['success'](_0x385ffd('0x549')),_0x33f51a[_0x385ffd('0xc')]=0x1a;break;case 0x17:_0x33f51a['prev']=0x17,_0x33f51a['t0']=_0x33f51a['catch'](0x3),_0x27f901[_0x385ffd('0x186')][_0x385ffd('0x13b')](_0x385ffd('0x2b8'));case 0x1a:return _0x33f51a['prev']=0x1a,_0x2968ee(!0x1),_0x33f51a[_0x385ffd('0x58')](0x1a);case 0x1d:case _0x385ffd('0x574'):return _0x33f51a['stop']();}},_0x13ea61,null,[[0x3,0x17,0x1a,0x1d]]);}));return function(){return _0x2f1dff['apply'](this,arguments);};}(),_0x4caf5d=_0x4f6ea8((0x0,_0x5c63c7['useState'])(!0x1),0x2),_0x56ef14=_0x4caf5d[0x0],_0x27dadc=_0x4caf5d[0x1],_0x528ddf=(0x0,_0x5c63c7[_0x3a4988('0x58b')])(null),_0x30c9e9=function(){var _0x443f8c=_0x3b8c48(regeneratorRuntime['mark'](function _0x4ad10a(_0x3df2fd){var _0xacba42=_0x3d72,_0x25715b,_0x12d26b,_0x33a4d6,_0x25e8af,_0x41d245,_0x2463bb,_0x257e87,_0x5547a8;return regeneratorRuntime[_0xacba42('0x24b')](function(_0x321b51){var _0x242598=_0xacba42;for(;;)switch(_0x321b51[_0x242598('0x3c2')]=_0x321b51['next']){case 0x0:if(_0x25715b=_0x3df2fd[_0x242598('0x463')][_0x242598('0x38e')]&&_0x3df2fd[_0x242598('0x463')]['files'][0x0],_0x3df2fd['target']['value']='',_0x25715b&&_0x1f4de7[_0x242598('0x24c')]){_0x321b51[_0x242598('0xc')]=0x4;break;}return _0x321b51[_0x242598('0x570')](_0x242598('0x41c'));case 0x4:return _0x27dadc(!0x0),_0x321b51[_0x242598('0x3c2')]=0x5,_0x321b51[_0x242598('0xc')]=0x8,_0x25715b[_0x242598('0x3cc')]();case 0x8:return _0x12d26b=_0x321b51[_0x242598('0x1b3')],_0x33a4d6=JSON[_0x242598('0x17e')](_0x12d26b),_0x321b51[_0x242598('0xc')]=0xc,fetch(''[_0x242598('0x39d')](_0x531bce[_0x242598('0x28d')])[_0x242598('0x39d')](_0x1f4de7[_0x242598('0x24c')]),{'method':'POST','headers':{'Authorization':_0x242598('0x55b')[_0x242598('0x39d')](_0x531bce[_0x242598('0x331')]),'Content-Type':_0x242598('0x409')},'credentials':_0x242598('0x1a5'),'body':JSON[_0x242598('0x1d2')](_0x33a4d6)});case 0xc:return _0x25e8af=_0x321b51[_0x242598('0x1b3')],_0x321b51[_0x242598('0xc')]=0xf,_0x25e8af['json']();case 0xf:(_0x41d245=_0x321b51[_0x242598('0x1b3')])&&_0x41d245[_0x242598('0x13b')]?_0x27f901['message'][_0x242598('0x13b')]((null===(_0x2463bb=_0x41d245[_0x242598('0x13b')])||void 0x0===_0x2463bb||null===(_0x257e87=_0x2463bb[0x0])||void 0x0===_0x257e87||null===(_0x5547a8=_0x257e87[0x0])||void 0x0===_0x5547a8?void 0x0:_0x5547a8[_0x242598('0x186')])||_0x242598('0x5b6'),0x5):(_0x27f901[_0x242598('0x186')][_0x242598('0x3df')](_0x242598('0x27f')),setTimeout(function(){var _0x5997ec=_0x242598;return window[_0x5997ec('0x49b')][_0x5997ec('0x32f')]();},0x2bc)),_0x321b51[_0x242598('0xc')]=0x16;break;case 0x13:_0x321b51[_0x242598('0x3c2')]=0x13,_0x321b51['t0']=_0x321b51[_0x242598('0x2e')](0x5),_0x27f901[_0x242598('0x186')][_0x242598('0x13b')](_0x242598('0x462'),0x5);case 0x16:return _0x321b51[_0x242598('0x3c2')]=0x16,_0x27dadc(!0x1),_0x321b51[_0x242598('0x58')](0x16);case 0x19:case _0x242598('0x574'):return _0x321b51['stop']();}},_0x4ad10a,null,[[0x5,0x13,0x16,0x19]]);}));return function(_0x4300b1){var _0x1e39d8=_0x3d72;return _0x443f8c[_0x1e39d8('0x200')](this,arguments);};}(),_0xb82277=_0x1f4de7[_0x3a4988('0x275')]||null,_0x4625c9=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(!0x1),0x2),_0x213086=_0x4625c9[0x0],_0x29befc=_0x4625c9[0x1],_0x38be02=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])([]),0x2),_0x170c29=_0x38be02[0x0],_0x12017f=_0x38be02[0x1],_0x39404c=_0x4f6ea8((0x0,_0x5c63c7['useState'])(null),0x2),_0x38a189=_0x39404c[0x0],_0x47c762=_0x39404c[0x1],_0x4864d9=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(!0x1),0x2),_0x4d217c=_0x4864d9[0x0],_0x4af538=_0x4864d9[0x1],_0x21c3e5=_0x4f6ea8((0x0,_0x5c63c7[_0x3a4988('0x5a7')])(!0x1),0x2),_0x1d784a=_0x21c3e5[0x0],_0x13120c=_0x21c3e5[0x1],_0x18ea5d=_0x4f6ea8((0x0,_0x5c63c7['useState'])(!0x1),0x2),_0x26286b=_0x18ea5d[0x0],_0x1069cd=_0x18ea5d[0x1],_0xf2ebd2=function(_0xcb2acc){var _0x391f22=_0x3a4988,_0x50346b=function(_0x1765d1){var _0xed80ed=_0x3d72,_0x106f4e=_0x1765d1[_0xed80ed('0x589')];if(!_0x106f4e)return null;var _0x55b432=(window['baseUrl']||'')[_0xed80ed('0x4c6')]('service.php','');return/^https?:\/\//['test'](_0x106f4e)?_0x106f4e:''[_0xed80ed('0x39d')](_0x55b432)['concat'](_0x106f4e);}(_0xcb2acc);_0x50346b&&(_0x4e2d86&&_0x391f22('0x365')===_0x4e2d86[_0x391f22('0x3bc')]?_0x26798c(_0x50346b):_0x4e2d86&&'iframe-modal'===_0x4e2d86[_0x391f22('0x3bc')]?_0x365f24(_0x50346b):window[_0x391f22('0xc4')](_0x50346b,_0x391f22('0x6a'),_0x391f22('0x145')));},_0x458173=function(_0x2a3761){var _0x3d342f=_0x3a4988;if(_0x23123e){var _0x33f9e6=_0x5ef6a2(_0x2a3761),_0x3e413a=_0x3d342f('0x4dd')==typeof _0x33f9e6&&_0x33f9e6['trim']()?_0x33f9e6:null;_0x27f901['Modal']['confirm']({'title':_0x1f4de7['deleteTip']||_0x3d342f('0x43c'),'content':_0x1f4de7[_0x3d342f('0xc6')]||(_0x3e413a?_0x3d342f('0x30f')[_0x3d342f('0x39d')](_0x3e413a,'”?'):'Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20this\x20item?'),'okText':_0x1f4de7[_0x3d342f('0x182')]||_0x3d342f('0x43c'),'okType':_0x3d342f('0x3b2'),'onOk':function(){return new Promise(function(_0x3e6fb){var _0x199ed8=_0x3d72;try{_0x23123e[_0x199ed8('0x2a1')](_0x2a3761['id'],function(_0x16e2ee,_0x4f8e2a,_0x5b6d97){var _0x2ac9c6=_0x199ed8;if(0xc8===_0x16e2ee&&'SUCCESS'===_0x4f8e2a)_0x27f901[_0x2ac9c6('0x186')]['success']('Deleted'),_0x37a52d();else{var _0x146fad=_0x5b6d97&&_0x2ac9c6('0x4dd')==typeof _0x5b6d97[_0x2ac9c6('0x50e')]?_0x5b6d97[_0x2ac9c6('0x50e')]:null;_0x27f901[_0x2ac9c6('0x186')][_0x2ac9c6('0x13b')](_0x146fad||_0x2ac9c6('0x543'),0x5);}_0x3e6fb();});}catch(_0x188c10){_0x27f901[_0x199ed8('0x186')][_0x199ed8('0x13b')]('Could\x20not\x20delete',0x5),_0x3e6fb();}});}});}},_0x57708e=function(_0x105d06){return new Promise(function(_0x5184c1){var _0x4e4701=_0x3d72;try{_0x23123e[_0x4e4701('0x2a1')](_0x105d06,function(_0x2e6654,_0x32a47b){return _0x5184c1(0xc8===_0x2e6654&&'SUCCESS'===_0x32a47b);});}catch(_0x3e4420){_0x5184c1(!0x1);}});},_0x49b157=!(!_0x23123e||_0x3a4988('0x3da')!=typeof _0x23123e[_0x3a4988('0x111')]),_0x5f38c5=!(!_0x23123e||'function'!=typeof _0x23123e[_0x3a4988('0x49a')]),_0x20aeca=!(!_0x23123e||_0x3a4988('0x3da')!=typeof _0x23123e[_0x3a4988('0x41b')]),_0x14428b=function(_0x13b5c8){var _0x5a302c=_0x3a4988;if(!_0x49b157)return[];var _0x43d504=_0x23123e&&'function'==typeof _0x23123e['getUser']&&_0x23123e[_0x5a302c('0x1dd')]()?_0x23123e[_0x5a302c('0x1dd')]()[_0x5a302c('0x4cf')]:null,_0x5db21e=!!_0x43d504&&_0x5a302c('0x3f2')!==_0x43d504;if(_0x5db21e&&_0x1f4de7[_0x5a302c('0x23c')]&&_0x1f4de7['managerLockedStatuses'][_0x5a302c('0x187')](_0x13b5c8)>=0x0)return[];var _0x1e6ea6={};try{_0x1e6ea6=_0x23123e[_0x5a302c('0x111')](_0x13b5c8)||{};}catch(_0x5b738b){_0x1e6ea6={};}var _0x48d302=Object[_0x5a302c('0x33b')](_0x1e6ea6)[_0x5a302c('0x427')](function(_0x4c02f3){return{'value':_0x1e6ea6[_0x4c02f3],'label':_0x4c02f3};});return _0x5db21e&&_0x1f4de7[_0x5a302c('0x279')]&&(_0x48d302=_0x48d302[_0x5a302c('0x34f')](function(_0x4f0a08){var _0x126be5=_0x5a302c;return _0x1f4de7[_0x126be5('0x279')]['indexOf'](_0x4f0a08[_0x126be5('0x3dc')])<0x0;})),_0x48d302;},_0x35abbb=function(_0x455290){return _0x14428b(_0x455290['status']);},_0x4ae7d1='';try{_0x4ae7d1=_0x23123e&&_0x2de197&&_0x23123e[_0x3a4988('0x34f')]&&_0x23123e[_0x3a4988('0x38d')]?_0x23123e[_0x3a4988('0x38d')](_0x23123e[_0x3a4988('0x34f')]):'';}catch(_0x14bde0){_0x4ae7d1='';}var _0xd04e80=(_0x5b262a||[])[_0x3a4988('0x427')](function(_0x25b643){return _0x25b643['id'];}),_0x314da8=_0xd04e80[_0x3a4988('0x5ba')]>0x0&&_0xd04e80[_0x3a4988('0x42c')](function(_0x424fcb){var _0x67626d=_0x3a4988;return _0x36e579[_0x67626d('0x224')](_0x424fcb);}),_0x2e5d3a=(_0x3e644d=_0x546331,_0x36034f[_0x3e644d]||{'icon':_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x1d0b94[_0x3a4988('0x443')],null),'color':_0x3a4988('0x70')}),_0x15cbd4=[_0x3a4988('0x3b6'),_0x3a4988('0x115')][_0x3a4988('0x134')](function(_0x44853c){var _0x3d821e=_0x3a4988;return _0x5d49d4[_0x3d821e('0x361')](function(_0x48c5b6){return _0x48c5b6['dataIndex']===_0x44853c;});}),_0x3f3d02=_0x1f4de7[_0x3a4988('0x4bd')]||_0x15cbd4||_0x5d49d4[0x0]&&_0x5d49d4[0x0][_0x3a4988('0x130')],_0x14c7fd=new Set(_0x1f4de7[_0x3a4988('0x25')]||[]),_0x3e644d;!_0x1f4de7[_0x3a4988('0x115')]&&_0x3f3d02&&_0x14c7fd['add'](_0x3f3d02),(_0x1f4de7['tagFields']||[])[_0x3a4988('0x475')](function(_0x692b1f){return _0x14c7fd['add'](_0x692b1f);});var _0x4ffa4f=_0x5d49d4[_0x3a4988('0x34f')](function(_0xf80c20){var _0x256cf0=_0x3a4988;return!_0x14c7fd[_0x256cf0('0x1e7')](_0xf80c20[_0x256cf0('0x130')]);}),_0x2bcd55=(_0x1f4de7[_0x3a4988('0x4f2')]||[])[_0x3a4988('0x427')](function(_0x3b7d38){var _0x44754a=_0x3a4988;return _0x5d49d4[_0x44754a('0x134')](function(_0x32108d){return _0x32108d['dataIndex']===_0x3b7d38;});})[_0x3a4988('0x34f')](Boolean),_0x5ef6a2=function(_0xce0aac){var _0x207e1b=_0x3a4988,_0x484fba;if(_0x1f4de7[_0x207e1b('0x115')])_0x484fba=_0x1f4de7[_0x207e1b('0x115')](_0xce0aac,function(_0x55b5c9){return function(_0x5d6cc6,_0x4c2896){var _0x38bbfc=_0x5d49d4['find'](function(_0xc513e0){var _0xdd044=_0x3d72;return _0xc513e0[_0xdd044('0x130')]===_0x4c2896;});return _0x38bbfc?_0x2840b8(_0x38bbfc,_0x5d6cc6):_0x5d6cc6[_0x4c2896];}(_0xce0aac,_0x55b5c9);});else{if(!_0x3f3d02)return'#'['concat'](_0xce0aac['id']);_0x484fba=_0x2840b8(_0x5d49d4[_0x207e1b('0x134')](function(_0x563a1f){return _0x563a1f['dataIndex']===_0x3f3d02;})||{'dataIndex':_0x3f3d02},_0xce0aac);}return _0x484fba&&_0x207e1b('0xd8')===_0x4735c1(_0x484fba)&&!_0x5c63c7[_0x207e1b('0x4f8')][_0x207e1b('0x140')](_0x484fba)?''['concat'](_0x484fba[_0x207e1b('0x1af')]||'','\x20')[_0x207e1b('0x39d')](_0x484fba['last_name']||'')['trim']()||_0x484fba[_0x207e1b('0x3b6')]||'#'[_0x207e1b('0x39d')](_0xce0aac['id']):_0x484fba;},_0xbb9b6=function(_0x137703){var _0x3766c7=_0x3a4988;return _0x1f4de7['iconField']?(_0x45914f=_0x137703[_0x1f4de7[_0x3766c7('0x42a')]],_0x34adad[_0x45914f]||{'icon':_0x5c63c7[_0x3766c7('0x4f8')]['createElement'](_0x1d0b94[_0x3766c7('0x443')],null),'color':'#607d8b'}):_0x2e5d3a;var _0x45914f;};if((0x0,_0x5c63c7[_0x3a4988('0x138')])(function(){var _0x4977d5=_0x3a4988;if(_0xdb2b57&&_0x4e2d86&&'native'===_0x4e2d86[_0x4977d5('0x3bc')]){var _0x35c5ef=_0x228063['current'];if(_0x35c5ef){var _0x41b680=window[_0x4977d5('0x2f0')],_0x5d083b=window[_0x4977d5('0x522')],_0x44509a=!0x1,_0x194657=_0x4e2d86[_0x4977d5('0x3d6')],_0x4ba5ae=_0x194657?_0x194657[_0x4977d5('0x4c6')](_0x4977d5('0x538'),_0x4977d5('0x313')):null,_0x164e4c=(window[_0x4977d5('0x4f')]||'')[_0x4977d5('0x4c6')](_0x4977d5('0x17f'),'/extensions/'),_0x27d6e1=_0x4e2d86['bundle']?''[_0x4977d5('0x39d')](_0x164e4c)[_0x4977d5('0x39d')](_0x4e2d86['bundle']):null;return(_0x27d6e1?function(_0x481c7c){if(_0xe0847[_0x481c7c])return _0xe0847[_0x481c7c];var _0x1408f7=new Promise(function(_0x58d317,_0x4323fb){var _0x2af210=_0x3d72,_0x15fc7c=document[_0x2af210('0x4fb')]('script');_0x15fc7c[_0x2af210('0x12e')]=''[_0x2af210('0x39d')](_0x481c7c)[_0x2af210('0x39d')](_0x481c7c[_0x2af210('0x187')]('?')>=0x0?'&':'?','cb=')[_0x2af210('0x39d')](_0x53c2fd),_0x15fc7c['async']=!0x1,_0x15fc7c[_0x2af210('0x2e1')]=function(){return _0x58d317();},_0x15fc7c['onerror']=function(){var _0x47f1f1=_0x2af210;_0x15fc7c['remove'](),_0x4323fb(new Error(_0x47f1f1('0x125')[_0x47f1f1('0x39d')](_0x481c7c)));},document['head'][_0x2af210('0x4d2')](_0x15fc7c);});return _0xe0847[_0x481c7c]=_0x1408f7['catch'](function(_0x20ffae){throw delete _0xe0847[_0x481c7c],_0x20ffae;}),_0xe0847[_0x481c7c];}(_0x27d6e1):Promise[_0x4977d5('0x17')]())[_0x4977d5('0x12a')](function(){var _0x5a48ad=_0x4977d5,_0x1ce107;_0x44509a||'function'==typeof(_0x1ce107=_0x194657&&window[_0x194657])&&_0x1ce107(_0x35c5ef,{'documentUrl':_0xdb2b57,'restApiBase':_0x531bce[_0x5a48ad('0x28d')],'token':_0x531bce[_0x5a48ad('0x331')],'colorMode':window[_0x5a48ad('0x294')]||_0x5a48ad('0x4a2'),'onClose':function(){return _0x26798c(null);}});})['catch'](function(){}),function(){var _0x4efa28=_0x4977d5;_0x44509a=!0x0;var _0x22d878=_0x4ba5ae&&window[_0x4ba5ae];if(_0x4efa28('0x3da')==typeof _0x22d878)try{_0x22d878(_0x35c5ef);}catch(_0x2c9953){}window[_0x4efa28('0x2f0')]=_0x41b680,window[_0x4efa28('0x522')]=_0x5d083b,_0x37a52d();};}}},[_0xdb2b57]),_0x1016d1)return _0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x5a5')],{'description':_0x3a4988('0x120')});if(null===_0x5b262a)return _0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),{'style':{'display':_0x3a4988('0x37f'),'justifyContent':_0x3a4988('0x36e'),'padding':0x3c}},_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x4cc')],{'size':_0x3a4988('0x54a')}));var _0x1dae79=new Set(_0x1f4de7['progressFields']||[]);return _0x5c63c7[_0x3a4988('0x4f8')]['createElement'](_0x3a4988('0x1c7'),null,_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),{'style':{'display':_0x3a4988('0x37f'),'justifyContent':_0x3a4988('0x551'),'alignItems':_0x3a4988('0x36e'),'gap':0xc,'marginBottom':0x10,'flexWrap':_0x3a4988('0x24b')}},_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')]('div',{'style':{'display':_0x3a4988('0x37f'),'alignItems':_0x3a4988('0x36e'),'gap':0xa,'flexWrap':'wrap'}},_0x25bc08&&!_0x1f4de7[_0x3a4988('0x157')]&&_0x5c63c7['default'][_0x3a4988('0x4fb')](_0x27f901['Button'],{'type':_0x3a4988('0x3e5'),'icon':_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x1d0b94[_0x3a4988('0x5a1')],null),'onClick':function(){var _0x28c4de=_0x3a4988;_0x23123e&&_0x23123e[_0x28c4de('0x4f7')]();}},_0x1f4de7[_0x3a4988('0x406')]||_0x23123e&&_0x3a4988('0x3da')==typeof _0x23123e[_0x3a4988('0x117')]&&_0x23123e[_0x3a4988('0x117')]()||_0x3a4988('0x7a')),_0x23123e&&_0x3a4988('0x3da')==typeof _0x23123e[_0x3a4988('0x2ac')]&&_0x23123e['hasCustomTopButtons']()&&_0x3a4988('0x3da')==typeof _0x23123e['getCustomTopButtons']&&_0x5c63c7[_0x3a4988('0x4f8')]['createElement'](_0x3a4988('0x433'),null,_0x23123e[_0x3a4988('0x293')]()),_0x1f4de7[_0x3a4988('0x48b')]&&_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x244')],{'icon':_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x1d0b94[_0x3a4988('0x58e')],null),'loading':_0x528e78,'onClick':_0x56e4c3},_0x1f4de7[_0x3a4988('0xc9')]||_0x3a4988('0x586')),_0x1f4de7[_0x3a4988('0x24c')]&&_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x5c63c7['default']['Fragment'],null,_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')]('input',{'ref':_0x528ddf,'type':_0x3a4988('0x3d5'),'accept':_0x3a4988('0x2ef'),'style':{'display':'none'},'onChange':_0x30c9e9}),_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x244')],{'icon':_0x5c63c7['default']['createElement'](_0x1d0b94[_0x3a4988('0x241')],null),'loading':_0x56ef14,'onClick':function(){var _0x3a56bb=_0x3a4988;return _0x528ddf[_0x3a56bb('0x234')]&&_0x528ddf[_0x3a56bb('0x234')][_0x3a56bb('0xa5')]();}},_0x1f4de7['importLabel']||_0x3a4988('0xbf'))),_0xb82277&&!_0x1f4de7[_0x3a4988('0x157')]&&_0x25bc08&&_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x244')],{'icon':_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x1d0b94['AppstoreOutlined'],null),'onClick':function(){var _0x898c6d=_0x3a4988;_0xb82277&&(_0x47c762(null),_0x1069cd(!0x1),_0x29befc(!0x0),_0x4af538(!0x0),fetch(''[_0x898c6d('0x39d')](_0x531bce['restApiBase'])[_0x898c6d('0x39d')](_0xb82277[_0x898c6d('0x36f')]),{'headers':{'Authorization':_0x898c6d('0x55b')['concat'](_0x531bce[_0x898c6d('0x331')])},'credentials':_0x898c6d('0x1a5')})[_0x898c6d('0x12a')](function(_0x4e658b){return _0x4e658b['json']();})[_0x898c6d('0x12a')](function(_0x54fd2d){var _0x4ca063=_0x898c6d;_0x12017f(Array[_0x4ca063('0x52b')](_0x54fd2d)?_0x54fd2d:[]);})[_0x898c6d('0x2e')](function(){var _0x1e52a0=_0x898c6d;return _0x27f901[_0x1e52a0('0x186')][_0x1e52a0('0x13b')](_0x1e52a0('0x1cc'),0x5);})[_0x898c6d('0x342')](function(){return _0x4af538(!0x1);}));}},_0xb82277['label']||_0x3a4988('0x15')),_0x2de197&&_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x244')],{'icon':_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x1d0b94['FilterOutlined'],null),'onClick':function(){var _0x38dcd5=_0x3a4988;_0x23123e&&_0x23123e[_0x38dcd5('0x141')]&&_0x23123e[_0x38dcd5('0x141')]();}},_0x3a4988('0x2b7')),_0x4ae7d1&&_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x4d8')],{'color':_0x3a4988('0x568'),'closable':!0x0,'onClose':function(){var _0x47e57a=_0x3a4988;_0x23123e&&_0x23123e[_0x47e57a('0x16c')]&&_0x23123e[_0x47e57a('0x16c')]();},'style':{'lineHeight':_0x3a4988('0x385'),'borderRadius':0x6}},_0x4ae7d1),_0x2e2b56&&_0x36e579[_0x3a4988('0x5ba')]>0x0&&_0x5c63c7['default'][_0x3a4988('0x4fb')](_0x5c63c7['default'][_0x3a4988('0x3e0')],null,_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x244')],{'danger':!0x0,'icon':_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x1d0b94[_0x3a4988('0x395')],null),'loading':_0x5ca053,'onClick':function(){var _0x395be0=_0x3a4988;if(_0x23123e&&_0x36e579[_0x395be0('0x5ba')]){var _0x5bea84,_0x22a955=_0x57670d(_0x36e579);_0x27f901[_0x395be0('0x202')]['confirm']({'title':'Delete\x20selected','content':_0x395be0('0x4b9')['concat'](_0x22a955['length'],_0x395be0('0x2ba'))['concat'](0x1===_0x22a955[_0x395be0('0x5ba')]?'':'s','?\x20This\x20cannot\x20be\x20undone.'),'okText':'Delete\x20'[_0x395be0('0x39d')](_0x22a955[_0x395be0('0x5ba')]),'okType':_0x395be0('0x3b2'),'onOk':(_0x5bea84=_0x3b8c48(regeneratorRuntime[_0x395be0('0x53a')](function _0x203567(){var _0x4c0c18=_0x395be0,_0xa1d0c8,_0x1cd97d,_0x2abd18,_0x1cfa50,_0x14e4d5;return regeneratorRuntime[_0x4c0c18('0x24b')](function(_0x4d6a3e){var _0x25c9fa=_0x4c0c18;for(;;)switch(_0x4d6a3e[_0x25c9fa('0x3c2')]=_0x4d6a3e[_0x25c9fa('0xc')]){case 0x0:_0x24c8a7(!0x0),_0xa1d0c8=0x0,_0x1cd97d=_0x2f9300(_0x22a955),_0x4d6a3e['prev']=0x3,_0x1cd97d['s']();case 0x5:if((_0x2abd18=_0x1cd97d['n']())[_0x25c9fa('0x44')]){_0x4d6a3e['next']=0xd;break;}return _0x1cfa50=_0x2abd18[_0x25c9fa('0x3dc')],_0x4d6a3e[_0x25c9fa('0xc')]=0x9,_0x57708e(_0x1cfa50);case 0x9:if(!_0x4d6a3e[_0x25c9fa('0x1b3')]){_0x4d6a3e[_0x25c9fa('0xc')]=0xb;break;}_0xa1d0c8+=0x1;case 0xb:_0x4d6a3e['next']=0x5;break;case 0xd:_0x4d6a3e[_0x25c9fa('0xc')]=0x12;break;case 0xf:_0x4d6a3e['prev']=0xf,_0x4d6a3e['t0']=_0x4d6a3e[_0x25c9fa('0x2e')](0x3),_0x1cd97d['e'](_0x4d6a3e['t0']);case 0x12:return _0x4d6a3e[_0x25c9fa('0x3c2')]=0x12,_0x1cd97d['f'](),_0x4d6a3e[_0x25c9fa('0x58')](0x12);case 0x15:_0x24c8a7(!0x1),_0x14e4d5=_0x22a955[_0x25c9fa('0x5ba')]-_0xa1d0c8,_0xa1d0c8&&_0x27f901[_0x25c9fa('0x186')][_0x25c9fa('0x3df')]('Deleted\x20'[_0x25c9fa('0x39d')](_0xa1d0c8,_0x25c9fa('0x2ba'))['concat'](0x1===_0xa1d0c8?'':'s')),_0x14e4d5&&_0x27f901[_0x25c9fa('0x186')][_0x25c9fa('0x13b')](''[_0x25c9fa('0x39d')](_0x14e4d5,_0x25c9fa('0x4c5')),0x5),_0x2341e3(),_0x37a52d();case 0x1b:case _0x25c9fa('0x574'):return _0x4d6a3e[_0x25c9fa('0x396')]();}},_0x203567,null,[[0x3,0xf,0x12,0x15]]);})),function(){var _0x5b818a=_0x395be0;return _0x5bea84[_0x5b818a('0x200')](this,arguments);})});}}},'Delete\x20'['concat'](_0x36e579[_0x3a4988('0x5ba')],_0x3a4988('0x61'))),_0x5c63c7['default']['createElement'](_0x27f901['Button'],{'type':_0x3a4988('0x3cc'),'onClick':_0x2341e3},_0x3a4988('0x3f0')))),_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),{'style':{'display':_0x3a4988('0x37f'),'gap':0x8}},_0x1f4de7[_0x3a4988('0x1e8')]&&_0x5c63c7['default'][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x37b')],{'value':_0x41d2f3||void 0x0,'allowClear':!0x0,'placeholder':_0x3a4988('0x20f'),'style':{'minWidth':0x96},'onChange':function(_0x1af31c){var _0x4fe451=_0x3a4988;return _0x494fa6=_0x1af31c,void(_0x23123e&&(_0x23123e[_0x4fe451('0x521')](_0x494fa6?{'status':_0x494fa6}:null!=_0x23123e['origFilter']?_0x23123e[_0x4fe451('0x2a7')]:''),_0x1f1d3b(_0x494fa6||''),_0x2341e3(),_0x5d3d17(0x1),_0x37a52d(0x1)));var _0x494fa6;},'options':_0x1f4de7[_0x3a4988('0x1e8')]['map'](function(_0x57a9c3){return{'value':_0x57a9c3,'label':_0x57a9c3};})}),_0x5c63c7['default'][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x8')][_0x3a4988('0x4e3')],{'allowClear':!0x0,'placeholder':'Search…','style':{'maxWidth':0x118},'onSearch':function(_0x1399d0){_0x2341e3(),_0x1fd4fe(_0x1399d0),_0x5d3d17(0x1),_0x37a52d(0x1,_0x1399d0);}}))),0x0===_0x5b262a[_0x3a4988('0x5ba')]?_0x5c63c7[_0x3a4988('0x4f8')]['createElement'](_0x27f901[_0x3a4988('0x5a5')],{'description':_0x3a4988('0x291')}):_0x5c63c7[_0x3a4988('0x4f8')]['createElement'](_0x5c63c7[_0x3a4988('0x4f8')]['Fragment'],null,_0x2e2b56&&_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),{'style':{'display':_0x3a4988('0x37f'),'alignItems':_0x3a4988('0x36e'),'gap':0xa,'margin':'0\x204px\x2010px'}},_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x1c4')],{'checked':_0x314da8,'indeterminate':!_0x314da8&&_0xd04e80['some'](function(_0x4e4cbb){var _0x3f903b=_0x3a4988;return _0x36e579[_0x3f903b('0x224')](_0x4e4cbb);}),'onChange':function(){return _0x2ef674(function(_0x34a1f9){var _0x1777a2=_0x3d72;return _0x314da8?_0x34a1f9[_0x1777a2('0x34f')](function(_0x566199){var _0x210fb6=_0x1777a2;return!_0xd04e80[_0x210fb6('0x224')](_0x566199);}):Array[_0x1777a2('0xd7')](new Set([]['concat'](_0x57670d(_0x34a1f9),_0x57670d(_0xd04e80))));});}},_0x314da8?'Deselect\x20all':_0x3a4988('0x590')),_0x36e579[_0x3a4988('0x5ba')]>0x0&&_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x433'),{'style':{'color':_0x125380[_0x3a4988('0x49f')],'fontSize':12.5}},''['concat'](_0x36e579[_0x3a4988('0x5ba')],'\x20selected'))),_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')]('div',{'style':{'display':'flex','flexDirection':'column','gap':0xa}},_0x5b262a['map'](function(_0x1361d8){var _0x523627=_0x3a4988,_0x5ab1da,_0x20aa66=_0x5ef6a2(_0x1361d8),_0x2df675=_0xbb9b6(_0x1361d8);return _0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0xdd')],{'key':_0x1361d8['id'],'hoverable':!_0x1f4de7[_0x523627('0x45d')]&&(!!_0x4d6974||_0x5866af||!!_0x4e2d86),'onClick':_0x1f4de7[_0x523627('0x45d')]?void 0x0:_0x1f4de7[_0x523627('0x320')]&&_0x5866af?function(){return _0x15253e(_0x1361d8);}:_0x4d6974?function(){return _0x4d6974(_0x1361d8);}:_0x4e2d86?function(){return _0xf2ebd2(_0x1361d8);}:_0x5866af?function(){return _0x15253e(_0x1361d8);}:void 0x0,'style':{'borderRadius':0xa,'boxShadow':_0x33a32b[_0x523627('0x55d')],'cursor':!_0x1f4de7['disableCardClick']&&(_0x4d6974||_0x5866af||_0x4e2d86)?'pointer':_0x523627('0x4f8')},'styles':{'body':{'padding':'12px\x2016px'}}},_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x523627('0x1c7'),{'style':{'display':'flex','alignItems':_0x523627('0x36e'),'gap':0xe}},_0x2e2b56&&_0x5c63c7['default'][_0x523627('0x4fb')](_0x27f901[_0x523627('0x1c4')],{'checked':(_0x5ab1da=_0x1361d8['id'],_0x36e579[_0x523627('0x224')](_0x5ab1da)),'onClick':function(_0x20e4b5){return _0x20e4b5['stopPropagation']();},'onChange':function(){return function(_0x142496){return _0x2ef674(function(_0x2ebf83){var _0x3345b8=_0x3d72;return _0x2ebf83[_0x3345b8('0x224')](_0x142496)?_0x2ebf83[_0x3345b8('0x34f')](function(_0x3c3fd9){return _0x3c3fd9!==_0x142496;}):[]['concat'](_0x57670d(_0x2ebf83),[_0x142496]);});}(_0x1361d8['id']);},'style':{'flex':_0x523627('0x401')}}),_0x1f4de7[_0x523627('0xe8')]&&!_0x28e7ef(_0x1361d8[_0x1f4de7[_0x523627('0xe8')]])?_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0x42e')],{'size':0x28,'src':_0x1361d8[_0x1f4de7[_0x523627('0xe8')]],'style':{'flex':_0x523627('0x401')}}):_0x5c63c7[_0x523627('0x4f8')]['createElement'](_0x523627('0x1c7'),{'style':{'width':0x28,'height':0x28,'borderRadius':0xa,'flex':_0x523627('0x401'),'background':''[_0x523627('0x39d')](_0x2df675[_0x523627('0x394')],'18'),'color':_0x2df675[_0x523627('0x394')],'display':_0x523627('0x37f'),'alignItems':_0x523627('0x36e'),'justifyContent':_0x523627('0x36e'),'fontSize':0x12}},_0x2df675[_0x523627('0x405')]),_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x523627('0x1c7'),{'style':{'minWidth':0x0,'flex':0x1}},_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')]('div',{'style':{'display':'flex','alignItems':'center','gap':0x8,'minWidth':0x0}},_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')]('span',{'style':{'fontWeight':0x258,'fontSize':0xe,'overflow':_0x523627('0x3ee'),'textOverflow':_0x523627('0x4f4'),'whiteSpace':_0x523627('0x11e')}},_0x28e7ef(_0x20aa66)?'#'[_0x523627('0x39d')](_0x1361d8['id']):_0x20aa66),_0x2bcd55[_0x523627('0x427')](function(_0x3be07a){var _0x5c822d=_0x523627,_0x3d346d=_0x2840b8(_0x3be07a,_0x1361d8),_0x5c0a81=_0x1f4de7['tagColors']&&_0x1f4de7[_0x5c822d('0x54f')][_0x3d346d]||_0x5c822d('0x568');return _0x28e7ef(_0x3d346d)?null:_0x5c63c7['default'][_0x5c822d('0x4fb')](_0x27f901[_0x5c822d('0x4d8')],{'key':_0x3be07a['dataIndex'],'color':_0x5c0a81,'style':{'borderRadius':0x6,'margin':0x0,'flex':'0\x200\x20auto'}},_0x1f4de7['tagIcon'],_0x1f4de7['tagIcon']?'\x20':'',_0x3d346d);})),_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')]('div',{'style':{'display':_0x523627('0x37f'),'alignItems':_0x523627('0x36e'),'gap':0x10,'marginTop':0x4,'color':_0x125380[_0x523627('0x359')],'fontSize':12.5,'flexWrap':_0x523627('0x24b')}},_0x4ffa4f['map'](function(_0x30b5e4){var _0x1fec77=_0x523627;return _0x5c63c7[_0x1fec77('0x4f8')][_0x1fec77('0x4fb')](_0x5c63c7[_0x1fec77('0x4f8')][_0x1fec77('0x3e0')],{'key':_0x30b5e4[_0x1fec77('0x130')]},(_0x35868d=_0x30b5e4[_0x1fec77('0x278')],_0x28e7ef(_0x558edf=function(_0xe0e0f1,_0x2691e5){var _0x3d47a=_0x1fec77;return _0x1dae79[_0x3d47a('0x1e7')](_0xe0e0f1['dataIndex'])?_0x5c63c7[_0x3d47a('0x4f8')][_0x3d47a('0x4fb')](_0x27f901[_0x3d47a('0x38f')],{'percent':parseInt(_0x2691e5[_0xe0e0f1['dataIndex']],0xa)||0x0,'size':'small','style':{'width':0x82,'margin':0x0}}):_0x2840b8(_0xe0e0f1,_0x2691e5);}(_0x30b5e4,_0x1361d8))?null:_0x5c63c7[_0x1fec77('0x4f8')][_0x1fec77('0x4fb')](_0x1fec77('0x433'),{'style':{'display':'inline-flex','alignItems':'center','gap':0x5,'maxWidth':0x140,'overflow':_0x1fec77('0x3ee')}},_0x5c63c7['default'][_0x1fec77('0x4fb')]('span',{'style':{'color':_0x125380['colorTextTertiary']}},''[_0x1fec77('0x39d')](_0x35868d,':')),_0x5c63c7[_0x1fec77('0x4f8')]['createElement'](_0x1fec77('0x433'),{'style':{'overflow':_0x1fec77('0x3ee'),'textOverflow':_0x1fec77('0x4f4'),'whiteSpace':_0x1fec77('0x11e')}},_0x558edf))));var _0x35868d,_0x558edf;}))),!_0x1f4de7[_0x523627('0x157')]&&_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x523627('0x1c7'),{'style':{'display':'flex','gap':0xa,'flex':_0x523627('0x401')},'onClick':function(_0x5c577d){return _0x5c577d['stopPropagation']();}},(_0x1f4de7[_0x523627('0x599')]||[])[_0x523627('0x34f')](function(_0x5ac953){var _0x1259cb=_0x523627;return _0x5ac953[_0x1259cb('0x2e5')];})[_0x523627('0x427')](function(_0x581fed){var _0x365fe2=_0x523627;return'function'==typeof _0x581fed[_0x365fe2('0x35')]&&!_0x581fed[_0x365fe2('0x35')](_0x23123e,_0x1361d8)||_0x365fe2('0x3da')!=typeof _0x23123e[_0x581fed[_0x365fe2('0x97')]]?null:_0x5c63c7['default']['createElement'](_0x27f901[_0x365fe2('0xa0')],{'key':_0x581fed['key'],'title':_0x581fed[_0x365fe2('0x25b')]},_0x5c63c7[_0x365fe2('0x4f8')]['createElement'](_0x27f901['Button'],{'icon':_0x5c63c7['default'][_0x365fe2('0x1f3')](_0x581fed[_0x365fe2('0x405')],{'style':{'color':_0x1810e6(_0x581fed[_0x365fe2('0x394')])}}),'onClick':function(){var _0x10b50d=_0x365fe2;return _0x23123e[_0x581fed[_0x10b50d('0x97')]](_0x1361d8['id'],_0x1361d8);}}));}),_0x5ed5de&&_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0xa0')],{'title':_0x523627('0x249')},_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0x244')],{'icon':_0x5c63c7['default'][_0x523627('0x4fb')](_0x1d0b94['EyeOutlined'],{'style':{'color':_0x1810e6('#1565c0')}}),'onClick':function(){return _0x15253e(_0x1361d8);}})),_0x5f4aba&&function(_0x450193){var _0x4aa901=_0x523627;return _0x4aa901('0x3da')!=typeof _0x1f4de7['editWhen']||!!_0x1f4de7['editWhen'](_0x450193);}(_0x1361d8)&&_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0xa0')],{'title':_0x523627('0x4a1')},_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0x244')],{'icon':_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x1d0b94[_0x523627('0x483')],{'style':{'color':_0x1810e6('#2e7d32')}}),'onClick':function(){return function(_0x3447c2){var _0x75e3b=_0x3d72;_0x1f4de7[_0x75e3b('0x30d')]?_0x36262e({'rec':_0x3447c2,'mode':_0x75e3b('0x1fc')}):_0x23123e&&_0x23123e[_0x75e3b('0x1fc')](_0x3447c2['id']);}(_0x1361d8);}})),!_0x28e7ef(_0x1361d8[_0x523627('0x589')])&&_0x5c63c7[_0x523627('0x4f8')]['createElement'](_0x27f901['Tooltip'],{'title':_0x4e2d86&&_0x4e2d86[_0x523627('0x278')]||_0x523627('0x16e')},_0x5c63c7[_0x523627('0x4f8')]['createElement'](_0x27f901[_0x523627('0x244')],{'icon':_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x1f3')](_0x4e2d86?_0x4d14ae(_0x4e2d86[_0x523627('0x405')]):_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x1d0b94['FileOutlined'],null),{'style':{'color':_0x1810e6(_0x523627('0x5b5'))}}),'onClick':function(){return _0xf2ebd2(_0x1361d8);}})),_0x22f141&&_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0xa0')],{'title':_0x523627('0x104')},_0x5c63c7['default'][_0x523627('0x4fb')](_0x27f901['Button'],{'icon':_0x5c63c7['default'][_0x523627('0x4fb')](_0x1d0b94[_0x523627('0x21d')],{'style':{'color':_0x1810e6('#546e7a')}}),'onClick':function(){return function(_0x3d0208){var _0x66136b=_0x3d72;_0x23123e&&_0x23123e['copyRow']&&_0x23123e[_0x66136b('0x4ff')](_0x3d0208);}(_0x1361d8['id']);}})),_0x458996(_0x1361d8)&&!_0x1f4de7[_0x523627('0x447')]&&_0x5c63c7[_0x523627('0x4f8')]['createElement'](_0x27f901[_0x523627('0xa0')],{'title':_0x1f4de7['deleteTip']||'Delete'},_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0x244')],{'icon':_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x1f3')](_0x1f4de7['deleteIcon']||_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x1d0b94[_0x523627('0x395')],null),{'style':{'color':_0x1810e6(_0x523627('0x318'))}}),'onClick':function(){return _0x458173(_0x1361d8);}})),_0x49b157&&_0x35abbb(_0x1361d8)['length']>0x0&&_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0xa0')],{'title':_0x523627('0x4ca')},_0x5c63c7[_0x523627('0x4f8')]['createElement'](_0x27f901[_0x523627('0x244')],{'icon':_0x5c63c7['default'][_0x523627('0x1f3')](_0x1f4de7[_0x523627('0x1f4')]||_0x5c63c7['default'][_0x523627('0x4fb')](_0x1d0b94[_0x523627('0x3c3')],null),{'style':{'color':_0x1810e6(_0x523627('0x196'))}}),'onClick':function(){return function(_0x3bfd38){var _0x2a9623=_0x3d72,_0x39c259=_0x35abbb(_0x3bfd38);_0x456c3e(_0x3bfd38),_0x385896(_0x39c259[_0x2a9623('0x5ba')]?_0x39c259[0x0]['value']:null),_0x370585('');}(_0x1361d8);}})),_0x5f38c5&&!_0x1f4de7[_0x523627('0x11b')]&&_0x523627('0x353')===_0x1361d8[_0x523627('0x34')]&&_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0xa0')],{'title':'Cancel'},_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0x244')],{'icon':_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x1d0b94['CloseCircleOutlined'],{'style':{'color':_0x1810e6(_0x523627('0x318'))}}),'onClick':function(){return function(_0x75428c){var _0x5d69a6=_0x3d72;_0x23123e&&_0x23123e[_0x5d69a6('0x49a')]&&_0x27f901[_0x5d69a6('0x202')]['confirm']({'title':_0x5d69a6('0x56d'),'content':_0x5d69a6('0x185'),'okText':'Yes,\x20cancel\x20it','onOk':function(){var _0x874a87=_0x5d69a6;_0x23123e[_0x874a87('0x1b9')]=function(){var _0x2475ad=_0x874a87;_0x27f901[_0x2475ad('0x186')]['success']('Cancellation\x20requested'),_0x37a52d();},_0x23123e[_0x874a87('0x37a')]=function(_0x1b1862){var _0x1f6b15=_0x874a87;return _0x27f901['message'][_0x1f6b15('0x13b')](_0x1f6b15('0x4dd')==typeof _0x1b1862?_0x1b1862:'Could\x20not\x20cancel',0x5);};try{_0x23123e['cancelRequest'](_0x75428c['id']);}catch(_0x544004){_0x27f901[_0x874a87('0x186')][_0x874a87('0x13b')](_0x874a87('0x577'),0x5);}}});}(_0x1361d8);}})),_0x1f4de7['resubmitAction']&&_0x523627('0x3da')==typeof _0x1f4de7[_0x523627('0x102')]&&_0x1f4de7[_0x523627('0x102')](_0x1361d8)&&_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901['Tooltip'],{'title':_0x523627('0x39a')},_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0x244')],{'icon':_0x5c63c7['default']['createElement'](_0x1d0b94[_0x523627('0x262')],{'style':{'color':_0x1810e6(_0x523627('0x196'))}}),'onClick':function(){return function(_0x1522c8){var _0x1d28d6=_0x3d72;_0x23123e&&_0x1f4de7[_0x1d28d6('0xca')]&&(_0x1f4de7[_0x1d28d6('0x30d')]?_0x36262e({'rec':_0x1522c8,'mode':_0x1d28d6('0x113')}):_0x27f901[_0x1d28d6('0x202')]['confirm']({'title':_0x1d28d6('0x5b2'),'content':_0x1d28d6('0x4ce'),'okText':_0x1d28d6('0x39a'),'onOk':function(){var _0x41a1ab=_0x1d28d6;_0x23123e['__nativeResubmitOk']=function(){var _0x391868=_0x3d72;_0x27f901[_0x391868('0x186')][_0x391868('0x3df')](_0x391868('0x524')),_0x37a52d();},_0x23123e[_0x41a1ab('0x2f3')]=function(_0x48b2af){var _0x102aa7=_0x41a1ab;_0x27f901[_0x102aa7('0x186')]['error']('string'==typeof _0x48b2af?_0x48b2af:_0x102aa7('0x286'),0x5);};try{_0x23123e[_0x41a1ab('0xd')](_0x1f4de7[_0x41a1ab('0xca')],_0x4382d3(),JSON[_0x41a1ab('0x1d2')]({'id':_0x1522c8['id']}),{'callBackData':[],'callBackSuccess':'__nativeResubmitOk','callBackFail':_0x41a1ab('0x2f3')},!0x0);}catch(_0x26b4f0){_0x23123e[_0x41a1ab('0x2f3')](_0x41a1ab('0x286'));}}}));}(_0x1361d8);}})),_0x20aeca&&_0x5c63c7[_0x523627('0x4f8')]['createElement'](_0x27f901[_0x523627('0xa0')],{'title':'View\x20Logs'},_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901[_0x523627('0x244')],{'icon':_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x1d0b94[_0x523627('0x547')],{'style':{'color':_0x1810e6(_0x523627('0x423'))}}),'onClick':function(){return function(_0x3d3f59){var _0x596646=_0x3d72;if(_0x23123e&&_0x23123e['getLogs']){_0x4dfc35({'loading':!0x0,'rows':[]}),(_0x23123e['__nativeLogsOk']=function(_0x5411a8){var _0x21b041=_0x3d72,_0x30fa1f=Array[_0x21b041('0x52b')](_0x5411a8)?_0x5411a8:_0x5411a8&&Array[_0x21b041('0x52b')](_0x5411a8[_0x21b041('0x50e')])?_0x5411a8[_0x21b041('0x50e')]:[];_0x4dfc35({'loading':!0x1,'rows':_0x30fa1f});},_0x23123e[_0x596646('0x431')]=function(){return _0x4dfc35({'loading':!0x1,'rows':[]});});try{_0x23123e[_0x596646('0xd')]('getLogs',_0x4382d3(),JSON[_0x596646('0x1d2')]({'id':_0x3d3f59['id']}),{'callBackData':[],'callBackSuccess':_0x596646('0x9e'),'callBackFail':_0x596646('0x431')});}catch(_0x401d78){_0x4dfc35({'loading':!0x1,'rows':[]});}}}(_0x1361d8);}})),(_0x1f4de7[_0x523627('0x599')]||[])[_0x523627('0x34f')](function(_0x1d8765){var _0x3ee895=_0x523627;return!_0x1d8765[_0x3ee895('0x2e5')];})[_0x523627('0x427')](function(_0xf5d569){var _0x2968b6=_0x523627;return'function'==typeof _0xf5d569[_0x2968b6('0x35')]&&!_0xf5d569[_0x2968b6('0x35')](_0x23123e,_0x1361d8)||'function'!=typeof _0x23123e[_0xf5d569[_0x2968b6('0x97')]]?null:_0x5c63c7[_0x2968b6('0x4f8')][_0x2968b6('0x4fb')](_0x27f901[_0x2968b6('0xa0')],{'key':_0xf5d569[_0x2968b6('0x24d')],'title':_0xf5d569[_0x2968b6('0x25b')]},_0x5c63c7[_0x2968b6('0x4f8')][_0x2968b6('0x4fb')](_0x27f901[_0x2968b6('0x244')],{'icon':_0x5c63c7[_0x2968b6('0x4f8')][_0x2968b6('0x1f3')](_0xf5d569[_0x2968b6('0x405')],{'style':{'color':_0x1810e6(_0xf5d569[_0x2968b6('0x394')])}}),'onClick':function(){var _0x52a32a=_0x2968b6;return _0x23123e[_0xf5d569[_0x52a32a('0x97')]](_0x1361d8['id'],_0x1361d8);}}));}),_0x458996(_0x1361d8)&&_0x1f4de7['deleteLast']&&_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x27f901['Tooltip'],{'title':_0x1f4de7[_0x523627('0x182')]||_0x523627('0x43c')},_0x5c63c7[_0x523627('0x4f8')]['createElement'](_0x27f901[_0x523627('0x244')],{'icon':_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x1f3')](_0x1f4de7[_0x523627('0x1df')]||_0x5c63c7[_0x523627('0x4f8')][_0x523627('0x4fb')](_0x1d0b94[_0x523627('0x395')],null),{'style':{'color':_0x1810e6(_0x523627('0x318'))}}),'onClick':function(){return _0x458173(_0x1361d8);}})))));})),_0x5c63c7['default']['createElement'](_0x3a4988('0x1c7'),{'style':{'display':_0x3a4988('0x37f'),'justifyContent':'flex-end','marginTop':0x10}},_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x17a')],{'current':_0x2cf763,'pageSize':_0x59a1c8,'total':_0x1874a2,'onChange':function(_0x4df7dd,_0x261f73){_0x2341e3(),_0x261f73&&_0x261f73!==_0x59a1c8?(_0x12ffae(_0x261f73),_0x5d3d17(0x1),_0x37a52d(0x1,null,_0x261f73)):(_0x5d3d17(_0x4df7dd),_0x37a52d(_0x4df7dd,null));},'showSizeChanger':!(!_0x23123e||!_0x23123e[_0x3a4988('0x327')]),'pageSizeOptions':['8','16','24','50','100'],'showTotal':function(_0x578e1e){var _0x2118dc=_0x3a4988;return''[_0x2118dc('0x39d')](_0x578e1e,_0x2118dc('0x1bd'));}}))),_0x4bdd4c&&_0x23123e&&_0x3a4988('0x3da')==typeof _0x23123e[_0x3a4988('0xea')]&&_0x23123e[_0x3a4988('0xea')]()&&(_0x1f4de7['childSelfModal']?_0x5c63c7['default'][_0x3a4988('0x1f3')](_0x23123e[_0x3a4988('0xea')](),{'element':_0x4bdd4c,'adapter':_0x23123e,'loading':!0x1}):_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x202')],{'open':!0x0,'width':0x410,'style':{'top':0x18},'footer':null,'title':_0x5ef6a2(_0x4bdd4c),'onCancel':function(){var _0x2d345f=_0x3a4988;_0x251751(null);try{_0x23123e['hideElement']&&_0x23123e[_0x2d345f('0x41a')]();}catch(_0x344c5a){}},'styles':{'body':{'maxHeight':_0x3a4988('0x36c'),'overflowY':_0x3a4988('0x4b6')}}},_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x1f3')](_0x23123e['getTableChildComponents'](),{'element':_0x4bdd4c,'adapter':_0x23123e,'loading':!0x1}))),_0xdb2b57&&_0x5c63c7['default'][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x202')],{'open':!0x0,'width':_0x3a4988('0x58d'),'style':{'top':0x10,'maxWidth':0x500},'footer':null,'title':_0x4e2d86&&_0x4e2d86[_0x3a4988('0x278')]||_0x3a4988('0x16e'),'onCancel':function(){return _0x26798c(null);},'styles':{'body':{'padding':0x10,'minHeight':_0x3a4988('0x16a'),'maxHeight':_0x3a4988('0x53d'),'overflowY':_0x3a4988('0x4b6')}},'destroyOnClose':!0x0},_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),{'ref':_0x228063})),_0x2cba9e&&_0x5c63c7[_0x3a4988('0x4f8')]['createElement'](_0x27f901[_0x3a4988('0x202')],{'open':!0x0,'width':_0x3a4988('0x58d'),'style':{'top':0x10,'maxWidth':0x500},'footer':null,'title':_0x4e2d86&&_0x4e2d86[_0x3a4988('0x278')]||_0x3a4988('0x16e'),'onCancel':function(){_0x365f24(null),_0x37a52d();},'styles':{'body':{'padding':0x0,'height':_0x3a4988('0x36c')}},'destroyOnClose':!0x0},_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0xd4'),{'title':_0x4e2d86&&_0x4e2d86[_0x3a4988('0x278')]||_0x3a4988('0x16e'),'src':_0x2cba9e,'style':{'width':'100%','height':'100%','border':0x0,'display':_0x3a4988('0x26d')},'onLoad':function(_0x1ab724){var _0x1ee240=_0x3a4988;try{var _0x2e2ca8=_0x1ab724[_0x1ee240('0x463')][_0x1ee240('0x18f')];if(_0x2e2ca8&&_0x2e2ca8['head']){var _0x40c360=_0x2e2ca8[_0x1ee240('0x4fb')](_0x1ee240('0x38'));_0x40c360['textContent']=_0x1ee240('0x219'),_0x2e2ca8[_0x1ee240('0x4ab')][_0x1ee240('0x4d2')](_0x40c360);}}catch(_0x2be233){}}})),_0x21c403&&_0x5c63c7[_0x3a4988('0x4f8')]['createElement'](_0x27f901[_0x3a4988('0x202')],{'open':!0x0,'title':'Change\x20Status','okText':'Update','confirmLoading':_0x3944b9,'onOk':function(){var _0x381855=_0x3a4988;if(_0x23123e&&_0x21c403&&_0x3bae0f){_0x572eba(!0x0),(_0x23123e['__nativeStatusOk']=function(){var _0x27dd8a=_0x3d72;_0x572eba(!0x1),_0x456c3e(null),_0x27f901[_0x27dd8a('0x186')][_0x27dd8a('0x3df')]('Status\x20updated'),_0x37a52d();},_0x23123e[_0x381855('0x221')]=function(_0x343a83){var _0x53db3d=_0x381855;_0x572eba(!0x1),_0x27f901['message'][_0x53db3d('0x13b')](_0x53db3d('0x4dd')==typeof _0x343a83?_0x343a83:_0x53db3d('0x1d1'),0x5);});var _0x281f2d=JSON['stringify']({'id':_0x21c403['id'],'status':_0x3bae0f,'reason':_0xf4f4d9});try{_0x23123e[_0x381855('0xd')](_0x1f4de7[_0x381855('0xf8')]||_0x381855('0x28'),_0x4382d3(),_0x281f2d,{'callBackData':[],'callBackSuccess':_0x381855('0x1c6'),'callBackFail':_0x381855('0x221')},!0x0);}catch(_0x48c5b7){_0x23123e[_0x381855('0x221')](_0x381855('0x1d1'));}}},'okButtonProps':{'disabled':!_0x3bae0f||_0x1f4de7['requireStatusReason']&&!_0xf4f4d9[_0x3a4988('0x46d')]()},'onCancel':function(){return _0x456c3e(null);}},_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),{'style':{'display':_0x3a4988('0x37f'),'flexDirection':_0x3a4988('0x13c'),'gap':0xc,'paddingTop':0x8}},_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),null,_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),{'style':{'marginBottom':0x6,'color':_0x125380[_0x3a4988('0x359')]}},_0x3a4988('0x0')),_0x5c63c7['default'][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x37b')],{'style':{'width':'100%'},'value':_0x3bae0f,'onChange':_0x385896,'options':_0x35abbb(_0x21c403)})),_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),null,_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),{'style':{'marginBottom':0x6,'color':_0x125380[_0x3a4988('0x359')]}},_0x1f4de7[_0x3a4988('0x1a8')]&&_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x433'),{'style':{'color':_0x125380[_0x3a4988('0x3a5')],'marginRight':0x4}},'*'),_0x1f4de7[_0x3a4988('0x1a8')]?_0x3a4988('0xac'):_0x3a4988('0x393')),_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901['Input'][_0x3a4988('0x5ac')],{'rows':0x3,'value':_0xf4f4d9,'onChange':function(_0x47ec31){var _0x3be08c=_0x3a4988;return _0x370585(_0x47ec31[_0x3be08c('0x463')][_0x3be08c('0x3dc')]);},'placeholder':_0x3a4988('0x2d7'),'status':_0x1f4de7['requireStatusReason']&&!_0xf4f4d9[_0x3a4988('0x46d')]()?_0x3a4988('0x13b'):void 0x0})))),_0x47a220&&_0x5c63c7[_0x3a4988('0x4f8')]['createElement'](_0x27f901['Modal'],{'open':!0x0,'title':_0x3a4988('0xe5'),'footer':null,'onCancel':function(){return _0x4dfc35(null);}},_0x47a220[_0x3a4988('0xb4')]?_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')]('div',{'style':{'display':_0x3a4988('0x37f'),'justifyContent':'center','padding':0x20}},_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x4cc')],null)):_0x47a220[_0x3a4988('0x4b7')][_0x3a4988('0x5ba')]?_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x146')],{'items':_0x47a220['rows'][_0x3a4988('0x427')](function(_0x242805){var _0x3ff7ec=_0x3a4988;return{'children':_0x5c63c7[_0x3ff7ec('0x4f8')][_0x3ff7ec('0x4fb')]('div',null,_0x5c63c7[_0x3ff7ec('0x4f8')]['createElement'](_0x3ff7ec('0x1c7'),{'style':{'fontWeight':0x258}},''[_0x3ff7ec('0x39d')](_0x242805[_0x3ff7ec('0x3ad')]||'','\x20→\x20')[_0x3ff7ec('0x39d')](_0x242805[_0x3ff7ec('0x444')]||'')),_0x5c63c7['default'][_0x3ff7ec('0x4fb')](_0x3ff7ec('0x1c7'),{'style':{'color':_0x125380['colorTextSecondary'],'fontSize':0xc}},_0x242805[_0x3ff7ec('0x33f')]),_0x242805['note']?_0x5c63c7[_0x3ff7ec('0x4f8')][_0x3ff7ec('0x4fb')](_0x3ff7ec('0x1c7'),{'style':{'marginTop':0x2}},_0x242805[_0x3ff7ec('0x14e')]):null)};})}):_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901['Empty'],{'description':'No\x20approval\x20history'})),_0x1f4de7[_0x3a4988('0x30d')]&&_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x21d5c5[_0x3a4988('0x4f8')],{'open':!!_0x1c056c,'rec':_0x1c056c?_0x1c056c[_0x3a4988('0x1f7')]:null,'mode':_0x1c056c?_0x1c056c[_0x3a4988('0x2d4')]:_0x3a4988('0x3d2'),'onClose':function(){return _0x36262e(null);},'onSaved':function(){return _0x37a52d();},'shellConfig':_0x531bce,'statusOptionsFor':_0x1f4de7[_0x3a4988('0x3a6')]?_0x14428b:null}),_0xb82277&&_0x5c63c7['default'][_0x3a4988('0x4fb')](_0x27f901['Modal'],{'title':_0xb82277[_0x3a4988('0x278')]||_0x3a4988('0x15'),'open':_0x213086,'onCancel':function(){return _0x29befc(!0x1);},'onOk':function(){var _0x14a94a=_0x3a4988;_0xb82277&&_0x38a189?(_0x13120c(!0x0),fetch(''[_0x14a94a('0x39d')](_0x531bce[_0x14a94a('0x28d')])[_0x14a94a('0x39d')](_0xb82277[_0x14a94a('0x2')]),{'method':'POST','headers':{'Authorization':_0x14a94a('0x55b')[_0x14a94a('0x39d')](_0x531bce[_0x14a94a('0x331')]),'Content-Type':_0x14a94a('0x409')},'credentials':_0x14a94a('0x1a5'),'body':JSON[_0x14a94a('0x1d2')]({'industry':_0x38a189,'deleteExisting':_0x26286b})})[_0x14a94a('0x12a')](function(_0x5ba276){var _0x340bb8=_0x14a94a;return _0x5ba276[_0x340bb8('0x580')]();})['then'](function(_0x590cbe){var _0x23e383=_0x14a94a;if(_0x590cbe&&_0x590cbe[_0x23e383('0x13b')]){var _0x62b1ec,_0x134b6d,_0x4cfcd5;_0x27f901[_0x23e383('0x186')][_0x23e383('0x13b')]((null===(_0x62b1ec=_0x590cbe[_0x23e383('0x13b')])||void 0x0===_0x62b1ec||null===(_0x134b6d=_0x62b1ec[0x0])||void 0x0===_0x134b6d||null===(_0x4cfcd5=_0x134b6d[0x0])||void 0x0===_0x4cfcd5?void 0x0:_0x4cfcd5[_0x23e383('0x186')])||_0x23e383('0x559'),0x5);}else{var _0x575467=_0xb82277[_0x23e383('0x13a')]||_0x23e383('0xf9'),_0x2c83c9=['Added\x20'[_0x23e383('0x39d')](_0x590cbe[_0x23e383('0x482')],'\x20')['concat'](_0x575467)];_0x590cbe[_0x23e383('0x297')]&&_0x2c83c9['push'](_0x23e383('0x43f')[_0x23e383('0x39d')](_0x590cbe[_0x23e383('0x297')])),_0x590cbe[_0x23e383('0xb8')]&&_0x2c83c9['push'](_0x23e383('0x2f8')[_0x23e383('0x39d')](_0x590cbe[_0x23e383('0xb8')],_0x23e383('0x2e6'))),_0x590cbe[_0x23e383('0x2b3')]&&_0x2c83c9[_0x23e383('0x3db')](''['concat'](_0x590cbe[_0x23e383('0x2b3')],_0x23e383('0xe2'))),_0x27f901[_0x23e383('0x186')][_0x23e383('0x3df')](''[_0x23e383('0x39d')](_0x2c83c9[_0x23e383('0x45')](',\x20'),'.')),_0x29befc(!0x1),_0x37a52d();}})[_0x14a94a('0x2e')](function(){var _0x21a9a9=_0x14a94a;return _0x27f901[_0x21a9a9('0x186')][_0x21a9a9('0x13b')](_0x21a9a9('0x559'),0x5);})[_0x14a94a('0x342')](function(){return _0x13120c(!0x1);})):_0x27f901[_0x14a94a('0x186')][_0x14a94a('0x13b')](_0x14a94a('0x52f'),0x4);},'okText':_0xb82277['label']||_0x3a4988('0x15'),'confirmLoading':_0x1d784a,'okButtonProps':{'disabled':!_0x38a189}},_0x5c63c7['default'][_0x3a4988('0x4fb')]('p',{'style':{'marginTop':0x0}},_0x3a4988('0x100')[_0x3a4988('0x39d')](_0xb82277[_0x3a4988('0x13a')]||'items',_0x3a4988('0x18b'))),_0x5c63c7['default'][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x37b')],{'style':{'width':'100%'},'placeholder':_0x3a4988('0x233'),'loading':_0x4d217c,'value':_0x38a189,'onChange':_0x47c762,'showSearch':!0x0,'optionFilterProp':_0x3a4988('0x278'),'options':_0x170c29[_0x3a4988('0x427')](function(_0x24a246){var _0x191a1d=_0x3a4988;return{'value':_0x24a246[_0x191a1d('0x24d')],'label':_0x24a246[_0x191a1d('0x278')]};})}),_0xb82277[_0x3a4988('0x355')]&&_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),{'style':{'marginTop':0x10}},_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x27f901[_0x3a4988('0x1c4')],{'checked':_0x26286b,'onChange':function(_0x5755b7){var _0x2e1c84=_0x3a4988;return _0x1069cd(_0x5755b7[_0x2e1c84('0x463')][_0x2e1c84('0x553')]);}},_0xb82277[_0x3a4988('0x1d3')]||_0x3a4988('0x3d')),_0x5c63c7[_0x3a4988('0x4f8')][_0x3a4988('0x4fb')](_0x3a4988('0x1c7'),{'style':{'color':_0x125380[_0x3a4988('0x359')],'fontSize':0xc,'marginTop':0x4,'marginLeft':0x18}},'Only\x20entries\x20not\x20currently\x20in\x20use\x20are\x20removed;\x20those\x20in\x20use\x20are\x20kept.'))));};var _0x15d137,_0x5c63c7=function(_0x3a9a29){var _0x28fb69=_0x26dd2b;if(_0x3a9a29&&_0x3a9a29[_0x28fb69('0x30e')])return _0x3a9a29;if(null===_0x3a9a29||'object'!==_0x4735c1(_0x3a9a29)&&_0x28fb69('0x3da')!=typeof _0x3a9a29)return{'default':_0x3a9a29};var _0xdf8501=_0x539982();if(_0xdf8501&&_0xdf8501['has'](_0x3a9a29))return _0xdf8501[_0x28fb69('0x4cb')](_0x3a9a29);var _0x3a214e={},_0x46356c=Object['defineProperty']&&Object['getOwnPropertyDescriptor'];for(var _0x56acf7 in _0x3a9a29)if(Object[_0x28fb69('0x3d4')][_0x28fb69('0x25d')]['call'](_0x3a9a29,_0x56acf7)){var _0x3c33b6=_0x46356c?Object[_0x28fb69('0x7f')](_0x3a9a29,_0x56acf7):null;_0x3c33b6&&(_0x3c33b6['get']||_0x3c33b6[_0x28fb69('0x300')])?Object[_0x28fb69('0x14d')](_0x3a214e,_0x56acf7,_0x3c33b6):_0x3a214e[_0x56acf7]=_0x3a9a29[_0x56acf7];}return _0x3a214e['default']=_0x3a9a29,_0xdf8501&&_0xdf8501[_0x28fb69('0x300')](_0x3a9a29,_0x3a214e),_0x3a214e;}(_0x2125b6(_0x26dd2b('0x592'))),_0x27f901=_0x2125b6(_0x26dd2b('0x389')),_0x1d0b94=_0x2125b6(_0x26dd2b('0x480')),_0x33a32b=_0x2125b6(_0x26dd2b('0x1c8')),_0x21d5c5=(_0x15d137=_0x2125b6(_0x26dd2b('0x5f')))&&_0x15d137[_0x26dd2b('0x30e')]?_0x15d137:{'default':_0x15d137};function _0x539982(){var _0x1da8c0=_0x26dd2b;if(_0x1da8c0('0x3da')!=typeof WeakMap)return null;var _0x71e731=new WeakMap();return _0x539982=function(){return _0x71e731;},_0x71e731;}function _0x4735c1(_0x3b2ffe){var _0x21440f=_0x26dd2b;return(_0x4735c1='function'==typeof Symbol&&_0x21440f('0x4da')==typeof Symbol[_0x21440f('0x20e')]?function(_0x2e3d4){return typeof _0x2e3d4;}:function(_0x1583bf){var _0x3faa80=_0x21440f;return _0x1583bf&&_0x3faa80('0x3da')==typeof Symbol&&_0x1583bf['constructor']===Symbol&&_0x1583bf!==Symbol[_0x3faa80('0x3d4')]?'symbol':typeof _0x1583bf;})(_0x3b2ffe);}function _0x2f9300(_0x4da007){var _0x297cd1=_0x26dd2b;if(_0x297cd1('0x20a')==typeof Symbol||null==_0x4da007[Symbol[_0x297cd1('0x20e')]]){if(Array[_0x297cd1('0x52b')](_0x4da007)||(_0x4da007=_0x197b94(_0x4da007))){var _0x24736a=0x0,_0x214abe=function(){};return{'s':_0x214abe,'n':function(){var _0x35953f=_0x297cd1;return _0x24736a>=_0x4da007[_0x35953f('0x5ba')]?{'done':!0x0}:{'done':!0x1,'value':_0x4da007[_0x24736a++]};},'e':function(_0x133986){throw _0x133986;},'f':_0x214abe};}throw new TypeError(_0x297cd1('0x474'));}var _0x377ecb,_0x253894,_0x5bf4ac=!0x0,_0x2afca9=!0x1;return{'s':function(){var _0x3adec8=_0x297cd1;_0x377ecb=_0x4da007[Symbol[_0x3adec8('0x20e')]]();},'n':function(){var _0x137fac=_0x297cd1,_0x16b978=_0x377ecb['next']();return _0x5bf4ac=_0x16b978[_0x137fac('0x44')],_0x16b978;},'e':function(_0x4ec172){_0x2afca9=!0x0,_0x253894=_0x4ec172;},'f':function(){var _0x12ee49=_0x297cd1;try{_0x5bf4ac||null==_0x377ecb[_0x12ee49('0x41c')]||_0x377ecb[_0x12ee49('0x41c')]();}finally{if(_0x2afca9)throw _0x253894;}}};}function _0x57670d(_0x1788af){return function(_0x2b5e4c){var _0x51a3ec=_0x3d72;if(Array[_0x51a3ec('0x52b')](_0x2b5e4c))return _0x58f442(_0x2b5e4c);}(_0x1788af)||function(_0x386028){if('undefined'!=typeof Symbol&&Symbol['iterator']in Object(_0x386028))return Array['from'](_0x386028);}(_0x1788af)||_0x197b94(_0x1788af)||function(){var _0x400c85=_0x3d72;throw new TypeError(_0x400c85('0x2a0'));}();}function _0xee5444(_0x361a08,_0x1c95b8,_0x4d9d6a,_0x2dfc12,_0xf03ab6,_0x206574,_0x9e49b5){var _0x14b4ea=_0x26dd2b;try{var _0x78f777=_0x361a08[_0x206574](_0x9e49b5),_0x2390bb=_0x78f777[_0x14b4ea('0x3dc')];}catch(_0x26397a){return void _0x4d9d6a(_0x26397a);}_0x78f777[_0x14b4ea('0x44')]?_0x1c95b8(_0x2390bb):Promise['resolve'](_0x2390bb)[_0x14b4ea('0x12a')](_0x2dfc12,_0xf03ab6);}function _0x3b8c48(_0x53a8d3){return function(){var _0x31d2b4=this,_0x1ea11c=arguments;return new Promise(function(_0xa82309,_0x6aa66){var _0x34feda=_0x53a8d3['apply'](_0x31d2b4,_0x1ea11c);function _0x128664(_0x580c91){_0xee5444(_0x34feda,_0xa82309,_0x6aa66,_0x128664,_0x1949f8,'next',_0x580c91);}function _0x1949f8(_0x405e93){_0xee5444(_0x34feda,_0xa82309,_0x6aa66,_0x128664,_0x1949f8,'throw',_0x405e93);}_0x128664(void 0x0);});};}function _0x1850c8(_0x3bd496,_0xd1a6ad){var _0x32f03c=_0x26dd2b,_0x4d6689=Object[_0x32f03c('0x33b')](_0x3bd496);if(Object['getOwnPropertySymbols']){var _0x491cbc=Object[_0x32f03c('0x17b')](_0x3bd496);_0xd1a6ad&&(_0x491cbc=_0x491cbc[_0x32f03c('0x34f')](function(_0x13a526){var _0x39bcc7=_0x32f03c;return Object[_0x39bcc7('0x7f')](_0x3bd496,_0x13a526)[_0x39bcc7('0x24')];})),_0x4d6689[_0x32f03c('0x3db')][_0x32f03c('0x200')](_0x4d6689,_0x491cbc);}return _0x4d6689;}function _0x27f54f(_0x382a98){var _0xe04375=_0x26dd2b;for(var _0x81a0b5=0x1;_0x81a0b5<arguments['length'];_0x81a0b5++){var _0xed4a09=null!=arguments[_0x81a0b5]?arguments[_0x81a0b5]:{};_0x81a0b5%0x2?_0x1850c8(Object(_0xed4a09),!0x0)[_0xe04375('0x475')](function(_0x19a944){_0x3ee539(_0x382a98,_0x19a944,_0xed4a09[_0x19a944]);}):Object['getOwnPropertyDescriptors']?Object[_0xe04375('0x29d')](_0x382a98,Object[_0xe04375('0x303')](_0xed4a09)):_0x1850c8(Object(_0xed4a09))[_0xe04375('0x475')](function(_0x41deb0){Object['defineProperty'](_0x382a98,_0x41deb0,Object['getOwnPropertyDescriptor'](_0xed4a09,_0x41deb0));});}return _0x382a98;}function _0x3ee539(_0x4578ba,_0x4070f8,_0x4b7766){return _0x4070f8 in _0x4578ba?Object['defineProperty'](_0x4578ba,_0x4070f8,{'value':_0x4b7766,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x4578ba[_0x4070f8]=_0x4b7766,_0x4578ba;}function _0x4f6ea8(_0x35eb7b,_0x13234e){return function(_0x2cca11){if(Array['isArray'](_0x2cca11))return _0x2cca11;}(_0x35eb7b)||function(_0x34faac,_0x4840b2){var _0x1d9b70=_0x3d72;if(_0x1d9b70('0x20a')==typeof Symbol||!(Symbol[_0x1d9b70('0x20e')]in Object(_0x34faac)))return;var _0x58aeaa=[],_0x5347f3=!0x0,_0x1ebc33=!0x1,_0x5f0e4b=void 0x0;try{for(var _0x5d87fb,_0x1e1a08=_0x34faac[Symbol[_0x1d9b70('0x20e')]]();!(_0x5347f3=(_0x5d87fb=_0x1e1a08['next']())[_0x1d9b70('0x44')])&&(_0x58aeaa[_0x1d9b70('0x3db')](_0x5d87fb[_0x1d9b70('0x3dc')]),!_0x4840b2||_0x58aeaa[_0x1d9b70('0x5ba')]!==_0x4840b2);_0x5347f3=!0x0);}catch(_0x5ad859){_0x1ebc33=!0x0,_0x5f0e4b=_0x5ad859;}finally{try{_0x5347f3||null==_0x1e1a08[_0x1d9b70('0x41c')]||_0x1e1a08[_0x1d9b70('0x41c')]();}finally{if(_0x1ebc33)throw _0x5f0e4b;}}return _0x58aeaa;}(_0x35eb7b,_0x13234e)||_0x197b94(_0x35eb7b,_0x13234e)||function(){var _0x101075=_0x3d72;throw new TypeError(_0x101075('0x311'));}();}function _0x197b94(_0x4c725a,_0x382953){var _0x29644b=_0x26dd2b;if(_0x4c725a){if('string'==typeof _0x4c725a)return _0x58f442(_0x4c725a,_0x382953);var _0x5d9e7b=Object['prototype'][_0x29644b('0x4ef')][_0x29644b('0x545')](_0x4c725a)['slice'](0x8,-0x1);return _0x29644b('0x2ed')===_0x5d9e7b&&_0x4c725a['constructor']&&(_0x5d9e7b=_0x4c725a['constructor'][_0x29644b('0x3b6')]),_0x29644b('0x235')===_0x5d9e7b||_0x29644b('0x5b1')===_0x5d9e7b?Array[_0x29644b('0xd7')](_0x5d9e7b):_0x29644b('0x5ab')===_0x5d9e7b||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x29644b('0x56e')](_0x5d9e7b)?_0x58f442(_0x4c725a,_0x382953):void 0x0;}}function _0x58f442(_0x45e8fd,_0x3ac579){(null==_0x3ac579||_0x3ac579>_0x45e8fd['length'])&&(_0x3ac579=_0x45e8fd['length']);for(var _0x385d92=0x0,_0x2cf9cf=new Array(_0x3ac579);_0x385d92<_0x3ac579;_0x385d92++)_0x2cf9cf[_0x385d92]=_0x45e8fd[_0x385d92];return _0x2cf9cf;}var _0x207bce={'file':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94['FileOutlined'],null),'form':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x52d')],null),'export':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x3b1')],null),'monitor':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94['MonitorOutlined'],null)},_0x4d14ae=function(_0xe79569){var _0x26cdad=_0x26dd2b;return _0x207bce[_0xe79569]||_0x5c63c7['default'][_0x26cdad('0x4fb')](_0x1d0b94['FileOutlined'],null);},_0x53c2fd=String(Date[_0x26dd2b('0x170')]()),_0xe0847={},_0x36034f={'JobTitle':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x89')],null),'color':_0x26dd2b('0x274')},'PayGrade':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x21a')],null),'color':_0x26dd2b('0x239')},'EmploymentStatus':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x257')],null),'color':_0x26dd2b('0x55f')},'Skill':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':_0x26dd2b('0x274')},'Education':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':'#0288d1'},'Certification':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':_0x26dd2b('0x55f')},'Language':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':_0x26dd2b('0x62')},'Project':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x4eb')],null),'color':_0x26dd2b('0x274')},'EmployeeProject':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x5aa')],null),'color':_0x26dd2b('0x239')},'Client':{'icon':_0x5c63c7['default']['createElement'](_0x1d0b94[_0x26dd2b('0x210')],null),'color':'#7b1fa2'},'CustomField':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x443')],null),'color':_0x26dd2b('0x274')},'Audit':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x40')],null),'color':_0x26dd2b('0x423')},'EmailLogEntry':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x86')],null),'color':_0x26dd2b('0x5b5')},'Employee':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x51c')],null),'color':'#1976d2'},'EmployeeCareer':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2bb')],null),'color':_0x26dd2b('0x5b5')},'EmployeeSkill':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':_0x26dd2b('0x274')},'EmployeeEducation':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':_0x26dd2b('0x5b5')},'EmployeeCertification':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':_0x26dd2b('0x55f')},'EmployeeLanguage':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':_0x26dd2b('0x62')},'EmployeeDependent':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94['TeamOutlined'],null),'color':_0x26dd2b('0x239')},'EmergencyContact':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x48a')],null),'color':_0x26dd2b('0x318')},'TerminatedEmployee':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x324')],null),'color':_0x26dd2b('0x62')},'ArchivedEmployee':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x51c')],null),'color':'#546e7a'},'EmployeeDataHistory':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x257')],null),'color':'#0288d1'},'MyAttendance':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94['ClockCircleOutlined'],null),'color':_0x26dd2b('0x5b5')},'OvertimeCategory':{'icon':_0x5c63c7['default']['createElement'](_0x1d0b94[_0x26dd2b('0x108')],null),'color':_0x26dd2b('0x62')},'MyOvertime':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x53e')],null),'color':'#ed6c02'},'EmployeeOvertime':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x53e')],null),'color':_0x26dd2b('0x62')},'EmployeeOvertimeApproval':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x53e')],null),'color':'#7b1fa2'},'User':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94['UserOutlined'],null),'color':_0x26dd2b('0x274')},'UserRole':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x5aa')],null),'color':'#7b1fa2'},'UserInvitation':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94['MailOutlined'],null),'color':'#0288d1'},'LeaveType':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94['TagsOutlined'],null),'color':_0x26dd2b('0x62')},'LeavePeriod':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x497')],null),'color':'#2e7d32'},'WorkDay':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x1d5')],null),'color':_0x26dd2b('0x5b5')},'HoliDay':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x42b')],null),'color':_0x26dd2b('0x55f')},'LeaveStartingBalance':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0xf4')],null),'color':_0x26dd2b('0x5b5')},'LeaveGroup':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x5aa')],null),'color':'#1976d2'},'EmployeeLeave':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2bb')],null),'color':_0x26dd2b('0x62')},'MyLeave':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0xad')],null),'color':'#1976d2'},'MyLeaveApproved':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0xad')],null),'color':'#2e7d32'},'SubLeave':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2bb')],null),'color':_0x26dd2b('0x62')},'LeaveApproval':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2bb')],null),'color':_0x26dd2b('0x55f')},'ExpensesCategory':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0xa8')],null),'color':_0x26dd2b('0x55f')},'ExpensesPaymentMethod':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94['DollarOutlined'],null),'color':_0x26dd2b('0x239')},'EmployeeExpense':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x21a')],null),'color':_0x26dd2b('0x274')},'MyExpense':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x21a')],null),'color':_0x26dd2b('0x274')},'SubExpense':{'icon':_0x5c63c7['default']['createElement'](_0x1d0b94['DollarOutlined'],null),'color':_0x26dd2b('0x62')},'ExpenseApproval':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94['DollarOutlined'],null),'color':'#7b1fa2'},'Job':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94['AuditOutlined'],null),'color':_0x26dd2b('0x274')},'Candidate':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x557')],null),'color':'#7b1fa2'},'EmployementType':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94['IdcardOutlined'],null),'color':_0x26dd2b('0x274')},'ExperienceLevel':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94['SlidersOutlined'],null),'color':_0x26dd2b('0x62')},'JobFunction':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2bb')],null),'color':_0x26dd2b('0x55f')},'EducationLevel':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94['ReadOutlined'],null),'color':_0x26dd2b('0x239')},'Benifit':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x42b')],null),'color':'#d81b60'},'Setting':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x21f')],null),'color':_0x26dd2b('0x423')},'Module':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x443')],null),'color':_0x26dd2b('0x274')},'Permission':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x453')],null),'color':_0x26dd2b('0x55f')},'Country':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x17c')],null),'color':_0x26dd2b('0x274')},'Province':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94['ApartmentOutlined'],null),'color':'#0288d1'},'CurrencyType':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94['DollarOutlined'],null),'color':_0x26dd2b('0x239')},'Nationality':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x89')],null),'color':_0x26dd2b('0x55f')},'Ethnicity':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x5aa')],null),'color':_0x26dd2b('0x62')},'ImmigrationStatus':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2bb')],null),'color':_0x26dd2b('0x26b')},'CompanyDocument':{'icon':_0x5c63c7['default']['createElement'](_0x1d0b94[_0x26dd2b('0x2d6')],null),'color':_0x26dd2b('0x274')},'Document':{'icon':_0x5c63c7['default']['createElement'](_0x1d0b94[_0x26dd2b('0xa8')],null),'color':_0x26dd2b('0x55f')},'EmployeeDocument':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94['FileOutlined'],null),'color':'#0288d1'},'PayslipDocument':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x21a')],null),'color':'#2e7d32'},'MyDocument':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x4d6')],null),'color':_0x26dd2b('0x5b5')},'MyCompanyDocument':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2d6')],null),'color':_0x26dd2b('0x274')},'MyPayslip':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x21a')],null),'color':'#2e7d32'},'TrainingSessionWithCourse':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':'#1976d2'},'EmployeeTrainingSession':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':'#2e7d32'},'SubEmployeeTraining':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':_0x26dd2b('0x62')},'CoordinatedTrainingSession':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94['ScheduleOutlined'],null),'color':_0x26dd2b('0x55f')},'PerformanceReview':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2bb')],null),'color':_0x26dd2b('0x55f')},'ReviewFeedback':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94['FormOutlined'],null),'color':_0x26dd2b('0x5b5')},'ReviewTemplate':{'icon':_0x5c63c7['default']['createElement'](_0x1d0b94['ProfileOutlined'],null),'color':_0x26dd2b('0x62')},'EmployeeGoal':{'icon':_0x5c63c7['default']['createElement'](_0x1d0b94[_0x26dd2b('0x314')],null),'color':_0x26dd2b('0x239')},'MyPerformanceReview':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2bb')],null),'color':_0x26dd2b('0x274')},'MyReviewFeedback':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x52d')],null),'color':'#ed6c02'},'SalaryComponentType':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0xa8')],null),'color':_0x26dd2b('0x55f')},'SalaryComponent':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x443')],null),'color':_0x26dd2b('0x5b5')},'EmployeeSalary':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94['DollarOutlined'],null),'color':_0x26dd2b('0x239')},'CompanyLoan':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x210')],null),'color':_0x26dd2b('0x239')},'EmployeeCompanyLoan':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x21a')],null),'color':'#1976d2'},'MyLoan':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x21a')],null),'color':'#1976d2'},'TravelProject':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94['ProjectOutlined'],null),'color':_0x26dd2b('0x5b5')},'EmployeeTravelRecord':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x566')],null),'color':_0x26dd2b('0x274')},'MyTravel':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x566')],null),'color':'#1976d2'},'SubTravel':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x566')],null),'color':'#ed6c02'},'TravelApproval':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x566')],null),'color':'#7b1fa2'}},_0x34adad={'Employee':{'icon':_0x5c63c7['default']['createElement'](_0x1d0b94['UserOutlined'],null),'color':_0x26dd2b('0x274')},'CompanyStructure':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x1a7')],null),'color':_0x26dd2b('0x5b5')},'Project':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x4eb')],null),'color':_0x26dd2b('0x55f')},'Client':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x210')],null),'color':_0x26dd2b('0x239')},'JobTitle':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x89')],null),'color':_0x26dd2b('0x62')},'Qualification':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x59c')],null),'color':_0x26dd2b('0x274')},'Recruitment':{'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2bb')],null),'color':_0x26dd2b('0x55f')},'Document':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2d6')],null),'color':_0x26dd2b('0x423')},'Leave':{'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94['CalendarOutlined'],null),'color':'#ed6c02'}},_0x182361={'Pending':_0x26dd2b('0x44c'),'Submitted':_0x26dd2b('0x122'),'Completed':_0x26dd2b('0x568'),'Rejected':_0x26dd2b('0x213')},_0x4a69bc={'Attendance':{'childSelfModal':!0x0,'avatarField':_0x26dd2b('0x3e3'),'titleField':_0x26dd2b('0xdc'),'hideMeta':[_0x26dd2b('0x3e3')]},'AttendanceStatus':{'avatarField':'image','titleField':_0x26dd2b('0xdc'),'hideMeta':[_0x26dd2b('0x3e3')],'hideActions':!0x0},'MyAttendance':{'childSelfModal':!0x0,'titleField':_0x26dd2b('0x11f'),'hideMeta':[_0x26dd2b('0x3e3')]},'MyOvertime':{'titleField':_0x26dd2b('0x1b0')},'EmployeeOvertime':{'titleField':_0x26dd2b('0xdc'),'avatarField':_0x26dd2b('0x3e3'),'hideMeta':[_0x26dd2b('0x3e3')]},'EmployeeOvertimeApproval':{'titleField':_0x26dd2b('0xdc'),'avatarField':_0x26dd2b('0x3e3'),'hideMeta':[_0x26dd2b('0x3e3')]},'JobTitle':{'titleField':_0x26dd2b('0x3b6')},'Language':{'titleField':'description'},'CustomField':{'title':function(_0x10a22d){var _0x506ea2=_0x26dd2b;return''[_0x506ea2('0x39d')](_0x10a22d[_0x506ea2('0x3b7')]||'',_0x506ea2('0x230'))['concat'](_0x10a22d['name']||'');},'hideMeta':[_0x26dd2b('0x3b6'),_0x26dd2b('0x3b7'),_0x26dd2b('0x322')],'iconField':_0x26dd2b('0x3b7')},'Audit':{'title':function(_0x50e14c){var _0x4a7184=_0x26dd2b;return _0x50e14c[_0x4a7184('0x1cb')];},'tagFields':[_0x26dd2b('0x33f')],'tagIcon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x53e')],null),'hideMeta':[_0x26dd2b('0x1cb'),'time'],'hideViewButton':!0x0},'EmailLogEntry':{'titleField':_0x26dd2b('0x6c'),'hideMeta':[_0x26dd2b('0x6c')]},'Project':{'hideViewButton':!0x0},'EmployeeProject':{'hideViewButton':!0x0},'Client':{'hideViewButton':!0x0},'Employee':{'title':function(_0x23f2d2){var _0x35e4e8=_0x26dd2b;return''[_0x35e4e8('0x39d')](_0x23f2d2[_0x35e4e8('0x1af')]||'','\x20')[_0x35e4e8('0x39d')](_0x23f2d2[_0x35e4e8('0x78')]||'')[_0x35e4e8('0x46d')]()||_0x23f2d2[_0x35e4e8('0x2d8')];},'avatarField':'image','hideMeta':['first_name','last_name','image','id'],'extraActions':[{'key':_0x26dd2b('0x1d7'),'tip':_0x26dd2b('0x4'),'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x5bc')],null),'color':_0x26dd2b('0x62'),'method':'setAdminProfile','show':function(_0x2b702b){var _0x1d2926=_0x26dd2b;return!!_0x2b702b[_0x1d2926('0x34a')];}},{'key':'resign','tip':_0x26dd2b('0x114'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x324')],null),'color':_0x26dd2b('0x318'),'method':_0x26dd2b('0x14a'),'show':function(_0x2c92df){var _0x5e2ee3=_0x26dd2b;return _0x2c92df[_0x5e2ee3('0x127')](_0x5e2ee3('0x1fd'))&&!0x1!==_0x2c92df['showDelete'];}}]},'TerminatedEmployee':{'title':function(_0x44bce6){var _0x5c66d0=_0x26dd2b;return''[_0x5c66d0('0x39d')](_0x44bce6[_0x5c66d0('0x1af')]||'','\x20')[_0x5c66d0('0x39d')](_0x44bce6[_0x5c66d0('0x78')]||'')[_0x5c66d0('0x46d')]()||_0x44bce6[_0x5c66d0('0x2d8')];},'avatarField':_0x26dd2b('0x3e3'),'hideMeta':['first_name',_0x26dd2b('0x78'),'image','id'],'extraActions':[{'key':_0x26dd2b('0x450'),'tip':_0x26dd2b('0x4b0'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94['CheckCircleOutlined'],null),'color':_0x26dd2b('0x239'),'method':_0x26dd2b('0x29a')}]},'ArchivedEmployee':{'title':function(_0xd1d60b){var _0x2356c6=_0x26dd2b;return''[_0x2356c6('0x39d')](_0xd1d60b[_0x2356c6('0x1af')]||'','\x20')[_0x2356c6('0x39d')](_0xd1d60b['last_name']||'')[_0x2356c6('0x46d')]()||_0xd1d60b[_0x2356c6('0x2d8')];},'hideMeta':[_0x26dd2b('0x1af'),_0x26dd2b('0x78'),_0x26dd2b('0x3e3'),'id'],'extraActions':[{'key':_0x26dd2b('0xdf'),'tip':_0x26dd2b('0x26'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x58e')],null),'color':_0x26dd2b('0x5b5'),'method':_0x26dd2b('0xdf')}]},'EmployeeDataHistory':{'titleField':_0x26dd2b('0xdc'),'tagFields':[_0x26dd2b('0x482')],'tagIcon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x53e')],null),'hideMeta':[_0x26dd2b('0x482')]},'LeaveGroup':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0,'cardClickAction':'manageGroupEmployees','extraActions':[{'key':_0x26dd2b('0x506'),'tip':_0x26dd2b('0x19'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94['UsergroupAddOutlined'],null),'color':'#1677ff','method':_0x26dd2b('0x42'),'first':!0x0}]},'LeaveRule':{'title':function(_0x4bbb1c,_0x2c000f){var _0xe40e2a=_0x26dd2b,_0x2ac6e7=_0x2c000f(_0xe40e2a('0x9c'))||_0xe40e2a('0x237');return _0x4bbb1c[_0xe40e2a('0xdc')]?''['concat'](_0x2ac6e7,_0xe40e2a('0xb2'))[_0xe40e2a('0x39d')](_0x2c000f(_0xe40e2a('0xdc'))):_0x2ac6e7;},'hideViewButton':!0x0,'hideMeta':['id',_0x26dd2b('0x9c'),_0x26dd2b('0xdc')]},'EmployeeLeave':{'titleField':'employee','avatarField':_0x26dd2b('0x3e3'),'hideMeta':['id','image'],'hideEditButton':!0x0,'disableView':!0x0,'deleteLast':!0x0,'deleteTip':_0x26dd2b('0x5bf'),'deleteIcon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x49c')],null),'deleteConfirm':'Are\x20you\x20sure\x20you\x20want\x20to\x20cancel\x20this\x20leave?\x20This\x20cannot\x20be\x20undone.','statusIcon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94['SettingOutlined'],null),'extraActions':[{'key':_0x26dd2b('0x2c7'),'tip':_0x26dd2b('0x357'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x541')],null),'color':_0x26dd2b('0x239'),'method':_0x26dd2b('0x32b'),'first':!0x0}]},'MyLeave':{'titleField':_0x26dd2b('0x9c'),'hideMeta':['id'],'hideEditButton':!0x0,'hideCopyButton':!0x0,'disableView':!0x0,'cardClickAction':'getLeaveDaysReadonly','extraActions':[{'key':_0x26dd2b('0x2c7'),'tip':_0x26dd2b('0x357'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x541')],null),'color':_0x26dd2b('0x239'),'method':_0x26dd2b('0x32b'),'first':!0x0},{'key':_0x26dd2b('0x28f'),'tip':_0x26dd2b('0x5bf'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94['CloseCircleOutlined'],null),'color':_0x26dd2b('0x318'),'method':_0x26dd2b('0x73'),'show':function(_0x40a0b4,_0x43dde1){return _0x43dde1&&'Pending'===_0x43dde1['status'];}}]},'MyLeaveApproved':{'titleField':_0x26dd2b('0x9c'),'hideMeta':['id'],'hideEditButton':!0x0,'disableView':!0x0,'extraActions':[{'key':'leavedays','tip':'Leave\x20Details','icon':_0x5c63c7['default']['createElement'](_0x1d0b94[_0x26dd2b('0x541')],null),'color':'#2e7d32','method':_0x26dd2b('0x32b'),'first':!0x0},{'key':'cancel','tip':_0x26dd2b('0x489'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x49c')],null),'color':_0x26dd2b('0x318'),'method':'cancelLeave'}]},'SubLeave':{'titleField':'employee','avatarField':_0x26dd2b('0x3e3'),'hideMeta':['id','image'],'hideEditButton':!0x0,'disableView':!0x0,'statusIcon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x21f')],null),'statusAction':_0x26dd2b('0x41e'),'extraActions':[{'key':'leavedays','tip':_0x26dd2b('0x357'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x541')],null),'color':'#2e7d32','method':_0x26dd2b('0x32b'),'first':!0x0}]},'LeaveApproval':{'titleField':_0x26dd2b('0xdc'),'avatarField':_0x26dd2b('0x3e3'),'hideMeta':['id','image'],'hideEditButton':!0x0,'disableView':!0x0,'statusIcon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x21f')],null),'statusAction':_0x26dd2b('0x41e'),'extraActions':[{'key':'leavedays','tip':_0x26dd2b('0x357'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94['InfoCircleOutlined'],null),'color':_0x26dd2b('0x239'),'method':_0x26dd2b('0x32b'),'first':!0x0}]},'EmployeeExpense':{'titleField':'employee','avatarField':_0x26dd2b('0x3e3'),'hideMeta':['id',_0x26dd2b('0x3e3')],'expenseDialog':!0x0,'dialogStatusChange':!0x0,'requireStatusReason':!0x0,'managerLockedStatuses':[_0x26dd2b('0x28c')],'managerBlockedTargetStatuses':['Paid'],'deleteLast':!0x0,'statusIcon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x21f')],null)},'MyExpense':{'titleField':'category','hideMeta':['id'],'expenseDialog':!0x0,'statusFilter':[_0x26dd2b('0x439'),_0x26dd2b('0x353'),_0x26dd2b('0x256'),_0x26dd2b('0x28c')],'deleteWhen':function(_0x61c907){var _0x57e4b3=_0x26dd2b;return _0x57e4b3('0x439')===_0x61c907[_0x57e4b3('0x34')]||_0x57e4b3('0x256')===_0x61c907[_0x57e4b3('0x34')];},'editWhen':function(_0x3bcac7){var _0x1a7695=_0x26dd2b;return _0x1a7695('0x439')===_0x3bcac7['status'];},'resubmitAction':'resubmit','resubmitWhen':function(_0xa4779e){var _0x54ce2a=_0x26dd2b;return _0x54ce2a('0x256')===_0xa4779e[_0x54ce2a('0x34')];},'hideCancelButton':!0x0},'SubExpense':{'titleField':'employee','avatarField':_0x26dd2b('0x3e3'),'hideMeta':['id',_0x26dd2b('0x3e3')],'hideEditButton':!0x0,'hideCopyButton':!0x0,'disableView':!0x0,'deleteLast':!0x0,'statusIcon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x21f')],null)},'ExpenseApproval':{'titleField':_0x26dd2b('0xdc'),'avatarField':_0x26dd2b('0x3e3'),'hideMeta':['id',_0x26dd2b('0x3e3')],'hideEditButton':!0x0,'hideCopyButton':!0x0,'disableView':!0x0,'deleteLast':!0x0,'statusIcon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x21f')],null)},'Candidate':{'title':function(_0x13e99e){var _0x2d34af=_0x26dd2b;return''['concat'](_0x13e99e[_0x2d34af('0x1af')]||'','\x20')['concat'](_0x13e99e[_0x2d34af('0x78')]||'')[_0x2d34af('0x46d')]()||_0x13e99e[_0x2d34af('0x4cd')];},'hideMeta':['first_name',_0x26dd2b('0x78'),'id'],'tagFields':[_0x26dd2b('0x1e2')]},'Job':{'extraActions':[{'key':_0x26dd2b('0xae'),'tip':_0x26dd2b('0x2bd'),'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94['LinkOutlined'],null),'color':'#ed6c02','method':'copyJobLink','first':!0x0},{'key':_0x26dd2b('0xc7'),'tip':_0x26dd2b('0x487'),'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x3c3')],null),'color':'#1565c0','method':'openJobPage','first':!0x0}]},'Setting':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id',_0x26dd2b('0x37c'),_0x26dd2b('0x1b0'),_0x26dd2b('0x308')],'hideCopyButton':!0x0,'disableView':!0x0},'Module':{'titleField':_0x26dd2b('0x278'),'tagFields':[_0x26dd2b('0x34')],'hideMeta':['id','update_path',_0x26dd2b('0x512')],'hideCopyButton':!0x0,'disableView':!0x0},'Permission':{'title':function(_0x1cdf0e){var _0x29c80d=_0x26dd2b;return''[_0x29c80d('0x39d')](_0x1cdf0e[_0x29c80d('0x4cf')]||'',_0x29c80d('0xb2'))['concat'](_0x1cdf0e['permission']||'');},'hideMeta':['id',_0x26dd2b('0x4cf'),_0x26dd2b('0x277')],'hideCopyButton':!0x0,'disableView':!0x0},'Country':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0},'Province':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0},'CurrencyType':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0},'Nationality':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0},'Ethnicity':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0},'ImmigrationStatus':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0},'CompanyDocument':{'titleField':_0x26dd2b('0x3b6'),'tagFields':[_0x26dd2b('0x34')],'hideMeta':['id'],'hideCopyButton':!0x0},'Document':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0},'EmployeeDocument':{'titleField':_0x26dd2b('0xdc'),'avatarField':_0x26dd2b('0x3e3'),'tagFields':['status'],'hideMeta':['id',_0x26dd2b('0x3e3'),'attachment'],'hideCopyButton':!0x0,'disableView':!0x0,'extraActions':[{'key':_0x26dd2b('0xdf'),'tip':_0x26dd2b('0x2b4'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94['DownloadOutlined'],null),'color':_0x26dd2b('0x239'),'method':_0x26dd2b('0x40e'),'first':!0x0,'show':function(_0x51fac8,_0x483944){var _0x372cca=_0x26dd2b;return!(!_0x483944||!_0x483944[_0x372cca('0xfe')]);}}]},'PayslipDocument':{'titleField':'employee','avatarField':_0x26dd2b('0x3e3'),'tagFields':['status'],'hideMeta':['id',_0x26dd2b('0x3e3'),_0x26dd2b('0xfe')],'hideCopyButton':!0x0,'disableView':!0x0,'extraActions':[{'key':'download','tip':'Download\x20Document','icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x58e')],null),'color':_0x26dd2b('0x239'),'method':_0x26dd2b('0x40e'),'first':!0x0,'show':function(_0x4d04b4,_0x42d00a){var _0x490000=_0x26dd2b;return!(!_0x42d00a||!_0x42d00a[_0x490000('0xfe')]);}}]},'MyDocument':{'titleField':_0x26dd2b('0x19b'),'tagFields':['status'],'hideMeta':['id','attachment'],'hideCopyButton':!0x0,'disableView':!0x0,'extraActions':[{'key':_0x26dd2b('0xdf'),'tip':'Download\x20Document','icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x58e')],null),'color':'#2e7d32','method':_0x26dd2b('0x40e'),'first':!0x0,'show':function(_0x1ac64a,_0x6637fd){var _0x28b9f7=_0x26dd2b;return!(!_0x6637fd||!_0x6637fd[_0x28b9f7('0xfe')]);}}]},'MyCompanyDocument':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id','attachment'],'hideCopyButton':!0x0,'hideEditButton':!0x0,'disableView':!0x0,'extraActions':[{'key':'download','tip':_0x26dd2b('0x2b4'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x58e')],null),'color':_0x26dd2b('0x239'),'method':_0x26dd2b('0x40e'),'first':!0x0,'show':function(_0x4ace5f,_0x47b09e){var _0x2e2f04=_0x26dd2b;return!(!_0x47b09e||!_0x47b09e[_0x2e2f04('0xfe')]);}}]},'MyPayslip':{'titleField':'document','tagFields':[_0x26dd2b('0x34')],'hideMeta':['id',_0x26dd2b('0xfe')],'hideCopyButton':!0x0,'hideEditButton':!0x0,'disableView':!0x0,'extraActions':[{'key':_0x26dd2b('0xdf'),'tip':'Download\x20Payslip','icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x58e')],null),'color':'#2e7d32','method':_0x26dd2b('0x40e'),'first':!0x0,'show':function(_0x58f525,_0xa431a0){var _0x41f94e=_0x26dd2b;return!(!_0xa431a0||!_0xa431a0[_0x41f94e('0xfe')]);}}]},'TrainingSessionWithCourse':{'titleField':'name','hideMeta':['id'],'hideCopyButton':!0x0,'hideEditButton':!0x0,'extraActions':[{'key':_0x26dd2b('0x3ec'),'tip':'Sign\x20Up','icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x5bc')],null),'color':'#2e7d32','method':_0x26dd2b('0x4b8'),'first':!0x0}]},'EmployeeTrainingSession':{'titleField':_0x26dd2b('0x163'),'tagFields':[_0x26dd2b('0x34')],'hideMeta':['id','courseId'],'hideCopyButton':!0x0,'disableView':!0x0,'extraActions':[{'key':_0x26dd2b('0x3c5'),'tip':_0x26dd2b('0x43e'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x314')],null),'color':_0x26dd2b('0x239'),'method':_0x26dd2b('0x3c5'),'first':!0x0,'show':function(_0x46c752,_0x257168){var _0x170c14=_0x26dd2b;return _0x257168&&_0x170c14('0x53f')===_0x257168['status'];}}]},'SubEmployeeTraining':{'titleField':_0x26dd2b('0xdc'),'tagFields':['status'],'hideMeta':['id',_0x26dd2b('0x5a')],'hideCopyButton':!0x0,'disableView':!0x0,'extraActions':[{'key':'approve','tip':_0x26dd2b('0x437'),'icon':_0x5c63c7['default'][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x314')],null),'color':'#2e7d32','method':_0x26dd2b('0x3c5'),'first':!0x0,'show':function(_0x3ca9d3,_0x15ea10){var _0x409b11=_0x26dd2b;return _0x15ea10&&_0x409b11('0x434')===_0x15ea10[_0x409b11('0x34')];}}]},'CoordinatedTrainingSession':{'titleField':'name','tagFields':['status'],'hideMeta':['id'],'hideCopyButton':!0x0,'disableView':!0x0},'PerformanceReview':{'titleField':'employee','avatarField':_0x26dd2b('0x3e3'),'tagFields':[_0x26dd2b('0x34')],'tagColors':_0x182361,'hideMeta':['id',_0x26dd2b('0x3e3'),_0x26dd2b('0x2d')],'hideCopyButton':!0x0,'extraActions':[{'key':_0x26dd2b('0x152'),'tip':_0x26dd2b('0x3b5'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2d5')],null),'color':_0x26dd2b('0x397'),'method':_0x26dd2b('0x112'),'show':function(_0x4a30c3,_0x4a7f2b){var _0xa20c06=_0x26dd2b;return _0x4a7f2b&&_0xa20c06('0x2b9')===_0x4a7f2b[_0xa20c06('0x34')]&&(_0x28e7ef(_0x4a7f2b['review_pdf'])||_0x4a30c3[_0xa20c06('0x126')]&&_0x4a30c3[_0xa20c06('0x126')]());}},{'key':_0x26dd2b('0x377'),'tip':_0x26dd2b('0x4d4'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2d5')],null),'color':_0x26dd2b('0x239'),'method':_0x26dd2b('0x31f'),'show':function(_0x2078be,_0x524fa6){var _0x21ac7e=_0x26dd2b;return _0x524fa6&&!_0x28e7ef(_0x524fa6[_0x21ac7e('0x2d')]);}}]},'ReviewFeedback':{'titleField':_0x26dd2b('0xdc'),'avatarField':'image','tagFields':[_0x26dd2b('0x34')],'hideMeta':['id',_0x26dd2b('0x3e3')],'hideCopyButton':!0x0},'ReviewTemplate':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'hideCopyButton':!0x0},'EmployeeGoal':{'titleField':_0x26dd2b('0xdc'),'avatarField':_0x26dd2b('0x3e3'),'hideMeta':['id','image'],'hideCopyButton':!0x0,'disableView':!0x0,'progressFields':[_0x26dd2b('0x4f0'),_0x26dd2b('0x147')]},'MyPerformanceReview':{'title':function(_0x2dd938){var _0x34ec30=_0x26dd2b;return _0x2dd938[_0x34ec30('0x448')]||_0x34ec30('0x35f');},'tagFields':[_0x26dd2b('0x34')],'tagColors':_0x182361,'hideMeta':['id',_0x26dd2b('0x448'),_0x26dd2b('0x2d')],'hideCopyButton':!0x0,'hideEditButton':!0x0,'extraActions':[{'key':_0x26dd2b('0x377'),'tip':'View\x20PDF','icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x2d5')],null),'color':_0x26dd2b('0x239'),'method':'viewReviewPdf','show':function(_0x48946b,_0x46e0f8){var _0x290f2f=_0x26dd2b;return _0x46e0f8&&!_0x28e7ef(_0x46e0f8[_0x290f2f('0x2d')]);}}]},'MyReviewFeedback':{'titleField':_0x26dd2b('0x414'),'avatarField':_0x26dd2b('0x3e3'),'tagFields':[_0x26dd2b('0x34')],'hideMeta':['id',_0x26dd2b('0x3e3')],'hideCopyButton':!0x0,'hideEditButton':!0x0,'extraActions':[{'key':_0x26dd2b('0x207'),'tip':'Give\x20Feedback','icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94['FormOutlined'],null),'color':_0x26dd2b('0x239'),'method':'showConfigView','first':!0x0,'show':function(_0x2782ce,_0x34db49){var _0xa3f170=_0x26dd2b;return _0x34db49&&_0xa3f170('0x14c')!==_0x34db49[_0xa3f170('0x34')];}},{'key':_0x26dd2b('0x3a'),'tip':_0x26dd2b('0x503'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x3b1')],null),'color':_0x26dd2b('0x62'),'method':_0x26dd2b('0x50f'),'first':!0x0,'show':function(_0x4c10b2,_0x548825){var _0x483aa7=_0x26dd2b;return _0x548825&&_0x483aa7('0x439')===_0x548825[_0x483aa7('0x34')];}}]},'SalaryComponentType':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0,'exportEndpoint':_0x26dd2b('0x4bb'),'exportLabel':'Export\x20Salary\x20Data','exportFilePrefix':_0x26dd2b('0xe3'),'importEndpoint':_0x26dd2b('0x2ca')},'SalaryComponent':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0,'exportEndpoint':'payroll_config/export/salary','exportLabel':_0x26dd2b('0x1e'),'exportFilePrefix':'salary-backup','importEndpoint':'payroll_config/import/salary'},'EmployeeSalary':{'titleField':_0x26dd2b('0xdc'),'avatarField':_0x26dd2b('0x3e3'),'hideMeta':['id',_0x26dd2b('0x3e3')],'hideCopyButton':!0x0,'disableView':!0x0,'exportEndpoint':'payroll_config/export/salary','exportLabel':_0x26dd2b('0x1e'),'exportFilePrefix':_0x26dd2b('0xe3'),'importEndpoint':_0x26dd2b('0x2ca')},'CompanyLoan':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0},'EmployeeCompanyLoan':{'titleField':_0x26dd2b('0xdc'),'tagFields':[_0x26dd2b('0x34')],'hideMeta':['id'],'hideCopyButton':!0x0,'disableView':!0x0},'MyLoan':{'titleField':_0x26dd2b('0x501'),'tagFields':[_0x26dd2b('0x34')],'hideMeta':['id'],'hideEditButton':!0x0,'hideCopyButton':!0x0},'TravelProject':{'titleField':_0x26dd2b('0x3b6'),'hideMeta':['id'],'disableView':!0x0},'EmployeeTravelRecord':{'titleField':_0x26dd2b('0xdc'),'avatarField':_0x26dd2b('0x3e3'),'hideMeta':['id',_0x26dd2b('0x3e3')],'hideCopyButton':!0x0},'MyTravel':{'titleField':_0x26dd2b('0x1a9'),'hideMeta':['id'],'hideCopyButton':!0x0,'disableView':!0x0},'SubTravel':{'titleField':_0x26dd2b('0xdc'),'avatarField':'image','hideMeta':['id',_0x26dd2b('0x3e3')],'hideCopyButton':!0x0},'TravelApproval':{'titleField':_0x26dd2b('0xdc'),'avatarField':_0x26dd2b('0x3e3'),'hideMeta':['id',_0x26dd2b('0x3e3')],'hideCopyButton':!0x0,'hideEditButton':!0x0,'statusIcon':_0x5c63c7[_0x26dd2b('0x4f8')]['createElement'](_0x1d0b94[_0x26dd2b('0x21f')],null)},'User':{'titleField':'username','avatarField':'image','hideMeta':['image','id'],'extraActions':[{'key':_0x26dd2b('0xda'),'tip':_0x26dd2b('0x2b2'),'icon':_0x5c63c7[_0x26dd2b('0x4f8')][_0x26dd2b('0x4fb')](_0x1d0b94[_0x26dd2b('0x453')],null),'color':'#1565c0','method':_0x26dd2b('0xe0'),'show':function(_0x44b953){var _0x5c093b=_0x26dd2b;return!(!_0x44b953[_0x5c093b('0x127')]||!_0x44b953['hasAccess'](_0x5c093b('0x584')));}}]},'UserRole':{'hideMeta':['id']},'UserInvitation':{'titleField':_0x26dd2b('0x307'),'tagFields':[_0x26dd2b('0x136')],'hideMeta':['id']}};function _0x2840b8(_0x1aa6a0,_0x693f90){var _0x1f11a6=_0x26dd2b,_0x7d8365=_0x693f90[_0x1aa6a0[_0x1f11a6('0x130')]];if(_0x1f11a6('0x3da')==typeof _0x1aa6a0[_0x1f11a6('0x51a')])try{var _0x123dcb=_0x1aa6a0[_0x1f11a6('0x51a')](_0x7d8365,_0x693f90);return null==_0x123dcb||''===_0x123dcb?_0x7d8365:_0x123dcb;}catch(_0xd468c5){return _0x7d8365;}return _0x7d8365;}function _0x28e7ef(_0x333df1){return null==_0x333df1||''===_0x333df1||'-'===_0x333df1;}},{'./ExpenseDialog':0x6,'./theme':0x1a,'@ant-design/icons':_0x401518('0x480'),'antd':_0x401518('0x389'),'react':_0x401518('0x592')}],0x11:[function(_0x478f6b,_0x1a11d4,_0x477ffb){var _0x383a5f=_0x401518;'use strict';function _0x4b7a3b(_0x558200){var _0x41cded=_0x3d72;return(_0x4b7a3b='function'==typeof Symbol&&_0x41cded('0x4da')==typeof Symbol['iterator']?function(_0x3d6eab){return typeof _0x3d6eab;}:function(_0x467a5c){var _0x671dbd=_0x41cded;return _0x467a5c&&_0x671dbd('0x3da')==typeof Symbol&&_0x467a5c[_0x671dbd('0xaa')]===Symbol&&_0x467a5c!==Symbol[_0x671dbd('0x3d4')]?'symbol':typeof _0x467a5c;})(_0x558200);}Object[_0x383a5f('0x14d')](_0x477ffb,_0x383a5f('0x30e'),{'value':!0x0}),_0x477ffb[_0x383a5f('0x4f8')]=function(_0x22c233){var _0x45fc7a=_0x383a5f,_0x546276=_0x22c233[_0x45fc7a('0x579')],_0x231239=_0x22c233[_0x45fc7a('0x94')],_0x43f234=_0x22c233[_0x45fc7a('0x3d6')],_0x1ac93c=_0x22c233[_0x45fc7a('0x115')],_0x275267=_0x22c233[_0x45fc7a('0x477')],_0x7e59e4=_0x22c233['shellConfig'],_0x56e361=_0x22c233['onClose'],_0x10860e=(0x0,_0x3f1dc6[_0x45fc7a('0x58b')])(null);return(0x0,_0x3f1dc6[_0x45fc7a('0x138')])(function(){var _0x26fb51=_0x45fc7a;if(_0x546276){var _0x3f4666=_0x10860e[_0x26fb51('0x234')];if(_0x3f4666){_0x7e59e4[_0x26fb51('0x109')]&&(window[_0x26fb51('0x4f')]=window['BASE_URL']||_0x7e59e4['baseUrl']),_0x7e59e4[_0x26fb51('0x3fe')]&&(window['CLIENT_BASE_URL']=window['CLIENT_BASE_URL']||_0x7e59e4['clientBaseUrl']),!window[_0x26fb51('0x109')]&&_0x7e59e4[_0x26fb51('0x3fe')]&&(window[_0x26fb51('0x109')]=''[_0x26fb51('0x39d')](_0x7e59e4['clientBaseUrl'],_0x26fb51('0x205')));var _0x5acc32,_0x49101c=window[_0x26fb51('0x2f0')],_0x911f0a=window[_0x26fb51('0x522')],_0x3b1001=!0x1,_0x50ab19=_0x43f234||_0x26fb51('0x18e'),_0x2d9452=_0x50ab19['replace'](_0x26fb51('0x538'),'unmount'),_0x197749=window[_0x26fb51('0x4f')]||_0x7e59e4[_0x26fb51('0x109')]||'',_0x5a7ecb=_0x197749['replace'](_0x26fb51('0x17f'),_0x26fb51('0x517')),_0x49ce23=_0x231239?''[_0x26fb51('0x39d')](_0x5a7ecb)[_0x26fb51('0x39d')](_0x231239):null,_0x1d07f9=(_0x275267||[])[_0x26fb51('0x427')](function(_0x3872c3){var _0x4934d4=_0x26fb51;return/^https?:\/\//[_0x4934d4('0x56e')](_0x3872c3)?_0x3872c3:''[_0x4934d4('0x39d')](_0x197749)[_0x4934d4('0x39d')](_0x3872c3);});return(_0x5acc32=_0x1d07f9,_0x5acc32['reduce'](function(_0x37235d,_0x3667c6){var _0x32e18a=_0x26fb51;return _0x37235d[_0x32e18a('0x12a')](function(){return _0x20bf08(_0x3667c6);});},Promise[_0x26fb51('0x17')]()))[_0x26fb51('0x12a')](function(){var _0x5434fb=_0x26fb51;return _0x49ce23?_0x20bf08(_0x49ce23):Promise[_0x5434fb('0x17')]();})[_0x26fb51('0x12a')](function(){var _0x2206fa=_0x26fb51,_0x24fd2f;_0x3b1001||_0x2206fa('0x3da')==typeof(_0x24fd2f=window[_0x50ab19])&&_0x24fd2f(_0x3f4666,{'documentUrl':_0x546276,'restApiBase':_0x7e59e4[_0x2206fa('0x28d')],'token':_0x7e59e4[_0x2206fa('0x331')],'colorMode':window[_0x2206fa('0x294')]||'light','onClose':_0x56e361});})['catch'](function(){}),function(){var _0x5dc1d6=_0x26fb51;_0x3b1001=!0x0;var _0xe0735d=window[_0x2d9452];if(_0x5dc1d6('0x3da')==typeof _0xe0735d)try{_0xe0735d(_0x3f4666);}catch(_0x5954af){}window['modJsList']=_0x49101c,window[_0x5dc1d6('0x522')]=_0x911f0a;};}}},[_0x546276]),_0x546276?_0x3f1dc6[_0x45fc7a('0x4f8')]['createElement'](_0x3de942['Modal'],{'open':!0x0,'width':_0x45fc7a('0x58d'),'style':{'top':0x10,'maxWidth':0x500},'footer':null,'title':_0x1ac93c||_0x45fc7a('0x16e'),'onCancel':_0x56e361,'styles':{'body':{'padding':0x10,'minHeight':_0x45fc7a('0x16a'),'maxHeight':_0x45fc7a('0x53d'),'overflowY':_0x45fc7a('0x4b6')}},'destroyOnClose':!0x0},_0x3f1dc6[_0x45fc7a('0x4f8')][_0x45fc7a('0x4fb')]('div',{'ref':_0x10860e})):null;};var _0x3f1dc6=function(_0x16de76){var _0x8b98e1=_0x383a5f;if(_0x16de76&&_0x16de76[_0x8b98e1('0x30e')])return _0x16de76;if(null===_0x16de76||_0x8b98e1('0xd8')!==_0x4b7a3b(_0x16de76)&&_0x8b98e1('0x3da')!=typeof _0x16de76)return{'default':_0x16de76};var _0x54f1f0=_0x146284();if(_0x54f1f0&&_0x54f1f0[_0x8b98e1('0x1e7')](_0x16de76))return _0x54f1f0[_0x8b98e1('0x4cb')](_0x16de76);var _0x130d86={},_0x504bfa=Object[_0x8b98e1('0x14d')]&&Object['getOwnPropertyDescriptor'];for(var _0x30e2bd in _0x16de76)if(Object[_0x8b98e1('0x3d4')][_0x8b98e1('0x25d')][_0x8b98e1('0x545')](_0x16de76,_0x30e2bd)){var _0x504db8=_0x504bfa?Object[_0x8b98e1('0x7f')](_0x16de76,_0x30e2bd):null;_0x504db8&&(_0x504db8[_0x8b98e1('0x4cb')]||_0x504db8[_0x8b98e1('0x300')])?Object[_0x8b98e1('0x14d')](_0x130d86,_0x30e2bd,_0x504db8):_0x130d86[_0x30e2bd]=_0x16de76[_0x30e2bd];}return _0x130d86['default']=_0x16de76,_0x54f1f0&&_0x54f1f0[_0x8b98e1('0x300')](_0x16de76,_0x130d86),_0x130d86;}(_0x478f6b('react')),_0x3de942=_0x478f6b(_0x383a5f('0x389'));function _0x146284(){var _0x164352=_0x383a5f;if(_0x164352('0x3da')!=typeof WeakMap)return null;var _0x5a8291=new WeakMap();return _0x146284=function(){return _0x5a8291;},_0x5a8291;}var _0x44a2d9=String(Date['now']()),_0x2ed9c4={};function _0x20bf08(_0x11580c){if(_0x2ed9c4[_0x11580c])return _0x2ed9c4[_0x11580c];var _0x5c31d4=new Promise(function(_0x2d9e72,_0x56a088){var _0x5d92dc=_0x3d72,_0x4cded1=document[_0x5d92dc('0x4fb')](_0x5d92dc('0x56b'));_0x4cded1[_0x5d92dc('0x12e')]=''[_0x5d92dc('0x39d')](_0x11580c)[_0x5d92dc('0x39d')](_0x11580c['indexOf']('?')>=0x0?'&':'?',_0x5d92dc('0x336'))[_0x5d92dc('0x39d')](_0x44a2d9),_0x4cded1[_0x5d92dc('0x2a4')]=!0x1,_0x4cded1[_0x5d92dc('0x2e1')]=function(){return _0x2d9e72();},_0x4cded1['onerror']=function(){var _0x43ae15=_0x5d92dc;_0x4cded1[_0x43ae15('0x4ba')](),_0x56a088(new Error(_0x43ae15('0x125')[_0x43ae15('0x39d')](_0x11580c)));},document[_0x5d92dc('0x4ab')][_0x5d92dc('0x4d2')](_0x4cded1);});return _0x2ed9c4[_0x11580c]=_0x5c31d4['catch'](function(_0x210510){throw delete _0x2ed9c4[_0x11580c],_0x210510;}),_0x2ed9c4[_0x11580c];}},{'antd':_0x401518('0x389'),'react':_0x401518('0x592')}],0x12:[function(_0x5428de,_0x527258,_0x3360f8){var _0x3ad8a1=_0x401518;'use strict';Object[_0x3ad8a1('0x14d')](_0x3360f8,_0x3ad8a1('0x30e'),{'value':!0x0}),_0x3360f8[_0x3ad8a1('0x4f8')]=function(_0x5d941e){var _0x5a56bd=_0x3ad8a1,_0x51e38d=_0x5d941e[_0x5a56bd('0x5e')],_0x43e4cf=_0x5d941e[_0x5a56bd('0x368')],_0x5ebcca=_0x51e38d&&_0x5a56bd('0x20a')!=typeof window?window[_0x51e38d]:null;if(!_0x5ebcca)return _0x3873c7[_0x5a56bd('0x4f8')]['createElement'](_0x5a56bd('0x1c7'),{'style':{'padding':0x20}},_0x3873c7['default'][_0x5a56bd('0x4fb')](_0xf07281[_0x5a56bd('0x5a5')],{'description':_0x5a56bd('0x33')}));var _0x1802b6='undefined'!=typeof window?window[_0x5a56bd('0x522')]:null,_0x43694e={'apiClient':_0x1802b6&&_0x1802b6[_0x5a56bd('0x571')],'ice':_0x1802b6,'modJs':_0x1802b6};return _0x43e4cf&&_0x5a56bd('0xd8')===_0x55d628(_0x43e4cf)&&Object[_0x5a56bd('0x33b')](_0x43e4cf)[_0x5a56bd('0x475')](function(_0x35bac6){var _0xb36f20=_0x5a56bd,_0x38c563=_0x43e4cf[_0x35bac6];_0x43694e[_0x35bac6]=_0xb36f20('0x522')===_0x38c563?_0x1802b6:_0xb36f20('0x20a')!=typeof window?window[_0x38c563]:void 0x0;}),_0x3873c7[_0x5a56bd('0x4f8')]['createElement'](_0x5ebcca,_0x43694e);};var _0x492b21,_0x3873c7=(_0x492b21=_0x5428de(_0x3ad8a1('0x592')))&&_0x492b21['__esModule']?_0x492b21:{'default':_0x492b21},_0xf07281=_0x5428de(_0x3ad8a1('0x389'));function _0x55d628(_0x31867b){var _0x57de71=_0x3ad8a1;return(_0x55d628='function'==typeof Symbol&&_0x57de71('0x4da')==typeof Symbol[_0x57de71('0x20e')]?function(_0xc02763){return typeof _0xc02763;}:function(_0x2336dd){var _0x2f3fdb=_0x57de71;return _0x2336dd&&_0x2f3fdb('0x3da')==typeof Symbol&&_0x2336dd[_0x2f3fdb('0xaa')]===Symbol&&_0x2336dd!==Symbol['prototype']?'symbol':typeof _0x2336dd;})(_0x31867b);}},{'antd':_0x401518('0x389'),'react':_0x401518('0x592')}],0x13:[function(_0x267a65,_0x3ff90d,_0x374412){var _0x59a19e=_0x401518;'use strict';function _0x184c44(_0xbc70f3){var _0x84387e=_0x3d72;return(_0x184c44=_0x84387e('0x3da')==typeof Symbol&&_0x84387e('0x4da')==typeof Symbol[_0x84387e('0x20e')]?function(_0x499289){return typeof _0x499289;}:function(_0x5834aa){var _0x1833a3=_0x84387e;return _0x5834aa&&_0x1833a3('0x3da')==typeof Symbol&&_0x5834aa['constructor']===Symbol&&_0x5834aa!==Symbol[_0x1833a3('0x3d4')]?_0x1833a3('0x4da'):typeof _0x5834aa;})(_0xbc70f3);}Object[_0x59a19e('0x14d')](_0x374412,_0x59a19e('0x30e'),{'value':!0x0}),_0x374412['default']=function(_0x4594bc){var _0x37c38d=_0x59a19e,_0x37307a=_0x4594bc[_0x37c38d('0x552')],_0x48ce06=_0x4594bc['name'],_0x556908=_0x4594bc[_0x37c38d('0x5a9')],_0x208cd4=_0x539ded((0x0,_0x4416fa[_0x37c38d('0x5a7')])(null),0x2),_0x354e6c=_0x208cd4[0x0],_0x4492e9=_0x208cd4[0x1],_0x7f8464=_0x539ded((0x0,_0x4416fa['useState'])(!0x1),0x2),_0x136c7b=_0x7f8464[0x0],_0x20ed96=_0x7f8464[0x1],_0x4bdea5=_0x539ded((0x0,_0x4416fa['useState'])(!0x0),0x2),_0x515f1b=_0x4bdea5[0x0],_0x42deca=_0x4bdea5[0x1],_0x10bbf7=_0x539ded((0x0,_0x4416fa[_0x37c38d('0x5a7')])(null),0x2),_0x20ae2d=_0x10bbf7[0x0],_0x47f98e=_0x10bbf7[0x1],_0x483f00=_0x539ded((0x0,_0x4416fa['useState'])(!0x1),0x2),_0xdf0e2a=_0x483f00[0x0],_0xe8207b=_0x483f00[0x1],_0x1ce1d7=_0x539ded((0x0,_0x4416fa[_0x37c38d('0x5a7')])(0x0),0x2),_0x2f779e=_0x1ce1d7[0x0],_0xfb44aa=_0x1ce1d7[0x1],_0xcf92f3=(0x0,_0x4416fa[_0x37c38d('0x58b')])({}),_0x39cf52=_0x238af9['theme'][_0x37c38d('0x75')]()[_0x37c38d('0x331')],_0x27d252=_0x39cf52['colorBgContainer']===_0x58936f['MUI_DARK'][_0x37c38d('0xfd')],_0x404b6e=(0x0,_0x4416fa['useRef'])(!0x0);(0x0,_0x4416fa[_0x37c38d('0x138')])(function(){var _0x290a40=_0x37c38d;if(_0x404b6e[_0x290a40('0x234')])_0x404b6e[_0x290a40('0x234')]=!0x1;else{if(_0x354e6c&&_0x354e6c['config']){window[_0x290a40('0x294')]=_0x27d252?_0x290a40('0x1e1'):_0x290a40('0x4a2');var _0x5482b2=window[_0x290a40('0x2f0')]||{};(_0x354e6c['config'][_0x290a40('0x259')]||[])['forEach'](function(_0x592b18){var _0x3af15c=_0x290a40,_0x4ef3b5=_0x3af15c('0x46b')===_0x592b18['component'];if(!_0x592b18[_0x3af15c('0x53')]||_0x4ef3b5){var _0x277c0a=_0x5482b2[_0x592b18[_0x3af15c('0x24d')]];if(_0x277c0a&&_0x3af15c('0x3da')==typeof _0x277c0a[_0x3af15c('0xf0')]){if(_0x4ef3b5?!(!_0x277c0a['containerOverrides']||!_0x277c0a[_0x3af15c('0x415')][_0x3af15c('0x3cd')]):_0xcf92f3[_0x3af15c('0x234')][_0x592b18['key']])try{_0x277c0a[_0x3af15c('0x23a')]=!0x1,_0x277c0a[_0x3af15c('0xf0')]();}catch(_0x17cbde){}}}});}}},[_0x27d252]),(0x0,_0x4416fa[_0x37c38d('0x138')])(function(){var _0x34b12f=_0x37c38d,_0x4ac1e7=!0x0;_0x4492e9(null),_0x20ed96(!0x1),_0x42deca(!0x0),_0xe8207b(!0x1),_0xcf92f3[_0x34b12f('0x234')]={};try{fetch(''[_0x34b12f('0x39d')](_0x556908['restApiBase'],_0x34b12f('0x260'))[_0x34b12f('0x39d')](encodeURIComponent(_0x37307a),_0x34b12f('0x555'))['concat'](encodeURIComponent(_0x48ce06)),{'headers':{'Authorization':_0x34b12f('0x55b')[_0x34b12f('0x39d')](_0x556908[_0x34b12f('0x331')])},'credentials':'same-origin'})['then'](function(_0x82c187){var _0x3232e4=_0x34b12f;return _0x82c187[_0x3232e4('0x580')]();})['then'](function(_0x50cb25){_0x4ac1e7&&(_0x50cb25&&_0x50cb25['config']?_0x4492e9(_0x50cb25):_0x20ed96(!0x0));})[_0x34b12f('0x2e')](function(){_0x4ac1e7&&_0x20ed96(!0x0);});}catch(_0x4f2d90){_0x4ac1e7&&_0x20ed96(!0x0);}return function(){_0x4ac1e7=!0x1;};},[_0x37307a,_0x48ce06,_0x556908,_0x2f779e]);var _0x5bc02c=function(_0x3a21b7){var _0xd0087c=_0x37c38d,_0xbf316c=(_0x354e6c&&_0x354e6c[_0xd0087c('0x3dd')]&&_0x354e6c[_0xd0087c('0x3dd')][_0xd0087c('0x259')]?_0x354e6c[_0xd0087c('0x3dd')]['tabs']:[])[_0xd0087c('0x134')](function(_0x3337de){var _0x48048a=_0xd0087c;return _0x3337de[_0x48048a('0x24d')]===_0x3a21b7;});if(!_0xbf316c||!_0xbf316c[_0xd0087c('0x53')]){var _0x563527=(window['modJsList']||{})[_0x3a21b7];if(_0x563527&&(window[_0xd0087c('0x522')]=_0x563527,!_0xcf92f3[_0xd0087c('0x234')][_0x3a21b7])){_0xcf92f3[_0xd0087c('0x234')][_0x3a21b7]=!0x0;try{_0x563527['get']([]),_0x563527['isV2']||(null!=_0x563527[_0xd0087c('0x37e')]?_0x563527[_0xd0087c('0x48')](null,_0x563527[_0xd0087c('0x10')]):_0x563527['initFieldMasterData']());}catch(_0x2de0bb){}}}};if((0x0,_0x4416fa[_0x37c38d('0x138')])(function(){var _0x1fae16=_0x37c38d;if(_0x354e6c&&_0x354e6c['config']){var _0x516462=!0x1,_0x410b58=_0x354e6c[_0x1fae16('0xab')]||{};return window['CLIENT_BASE_URL']=_0x410b58[_0x1fae16('0x4bf')],window[_0x1fae16('0x4f')]=_0x410b58[_0x1fae16('0xf3')],window[_0x1fae16('0x109')]=_0x410b58[_0x1fae16('0x109')],function(_0x178d1c){var _0x24a6c4=_0x1fae16;return _0x178d1c[_0x24a6c4('0x560')](function(_0x1f4aea,_0x52e3f9){var _0x457028=_0x24a6c4;return _0x1f4aea[_0x457028('0x12a')](function(){return function(_0xfeccf7){var _0x202201=_0x3d72;if(_0x477e81[_0xfeccf7])return _0x477e81[_0xfeccf7];var _0x4c1152=new Promise(function(_0x115c3d,_0x13900d){var _0x555e7c=_0x3d72,_0xb6f7d6=document['createElement'](_0x555e7c('0x56b'));_0xb6f7d6['src']=_0xfeccf7,_0xb6f7d6[_0x555e7c('0x2a4')]=!0x1,_0xb6f7d6[_0x555e7c('0x2e1')]=function(){return _0x115c3d();},_0xb6f7d6[_0x555e7c('0x3de')]=function(){var _0x160e1c=_0x555e7c;_0xb6f7d6[_0x160e1c('0x4ba')](),_0x13900d(new Error(_0x160e1c('0x125')[_0x160e1c('0x39d')](_0xfeccf7)));},document['head'][_0x555e7c('0x4d2')](_0xb6f7d6);});return _0x477e81[_0xfeccf7]=_0x4c1152[_0x202201('0x2e')](function(_0x2757b4){throw delete _0x477e81[_0xfeccf7],_0x2757b4;}),_0x477e81[_0xfeccf7];}(_0x52e3f9);});},Promise[_0x24a6c4('0x17')]());}((_0x354e6c[_0x1fae16('0x3dd')][_0x1fae16('0x2e7')]||[])[_0x1fae16('0x427')](function(_0x884b4){var _0x1cad9f=_0x1fae16;return/^https?:\/\//['test'](_0x884b4)||_0x884b4[_0x1cad9f('0x1ab')]('//')?_0x884b4:(_0x410b58[_0x1cad9f('0xf3')]||'')+_0x884b4;}))[_0x1fae16('0x12a')](function(){var _0x477afc=_0x1fae16;if(!_0x516462){var _0x491bd0=window[_0x354e6c[_0x477afc('0x3dd')]['initFn']];if(_0x477afc('0x3da')==typeof _0x491bd0){var _0xd94130=!(!window[_0x477afc('0xd9')]||!window[_0x477afc('0xd9')][_0x354e6c[_0x477afc('0x3dd')][_0x477afc('0x2c8')]]),_0x578b18=_0x354e6c[_0x477afc('0x74')];if(_0xd94130&&_0x578b18&&(!_0x578b18[_0x477afc('0x13')]||_0x578b18['is_expired']))return _0xe8207b(!0x0),void _0x42deca(!0x1);_0x491bd0(_0x354e6c[_0x477afc('0x50e')]||{});var _0x5e14d7=window[_0x477afc('0x2f0')]||{};Object[_0x477afc('0x33b')](_0x5e14d7)['forEach'](function(_0x5d7d5e){var _0x4d5414=_0x477afc,_0x276393=_0x5e14d7[_0x5d7d5e];try{_0x276393[_0x4d5414('0x563')]=_0x37307a,_0x276393[_0x4d5414('0xbc')]=_0x48ce06,_0x276393[_0x4d5414('0x3b9')](_0x410b58[_0x4d5414('0x428')]||{}),_0x276393[_0x4d5414('0x265')](_0x410b58['fieldTemplates']||{}),_0x276393[_0x4d5414('0x119')](_0x410b58[_0x4d5414('0x263')]||{}),_0x276393[_0x4d5414('0x3a4')](_0x410b58[_0x4d5414('0x197')]||{}),_0x276393[_0x4d5414('0x194')](_0x410b58[_0x4d5414('0x2ee')]||{}),_0x276393[_0x4d5414('0x19f')](),_0x276393[_0x4d5414('0x166')](_0x410b58[_0x4d5414('0x109')]),_0x276393[_0x4d5414('0x1f5')](_0x410b58[_0x4d5414('0x4bf')]),_0x276393[_0x4d5414('0xd6')](null),_0x276393[_0x4d5414('0x299')](_0x410b58[_0x4d5414('0x4d3')]||''),_0x276393[_0x4d5414('0x441')](_0x410b58[_0x4d5414('0x28d')]),_0x276393[_0x4d5414('0x4fa')](_0x556908[_0x4d5414('0x331')]);}catch(_0x5bc238){}}),_0x42deca(!0x1);var _0x5cc415=_0x354e6c[_0x477afc('0x3dd')]['tabs'][0x0][_0x477afc('0x24d')];try{var _0x3ff1f=window[_0x477afc('0x171')];_0x3ff1f&&_0x354e6c[_0x477afc('0x3dd')]['tabs'][_0x477afc('0x361')](function(_0xb717d9){return _0xb717d9['key']===_0x3ff1f;})&&(_0x5cc415=_0x3ff1f),window[_0x477afc('0x171')]=null;}catch(_0x2a1257){}_0x47f98e(_0x5cc415),_0x5bc02c(_0x5cc415),window[_0x477afc('0x436')]=function(_0x115dbd,_0x463d41){var _0xcde20f=_0x477afc,_0x492851=(window[_0xcde20f('0x2f0')]||{})[_0x115dbd];_0x492851&&_0x463d41&&_0xcde20f('0x3da')==typeof _0x492851['setFilter']&&(_0x492851['setFilter'](_0x463d41),_0x492851[_0xcde20f('0x31e')]=!0x0),_0x47f98e(_0x115dbd),_0x5bc02c(_0x115dbd);try{_0x492851&&_0x492851['tableContainer']&&_0x492851[_0xcde20f('0x25c')][_0xcde20f('0x234')]&&(_0x463d41&&_0x492851[_0xcde20f('0x25c')]['current'][_0xcde20f('0x20b')](_0x463d41),_0x492851[_0xcde20f('0x25c')][_0xcde20f('0x234')][_0xcde20f('0x32f')]());}catch(_0x3d4df0){}try{window['scrollTo']({'top':0x0});}catch(_0x5a26cf){}};}else _0x20ed96(!0x0);}})[_0x1fae16('0x2e')](function(){_0x516462||_0x20ed96(!0x0);}),function(){var _0x591727=_0x1fae16;_0x516462=!0x0;try{_0x354e6c[_0x591727('0x3dd')]['tabs'][_0x591727('0x475')](function(_0x740fd0){var _0x35fbf5=_0x591727;return(_0x740fd0['ids']||[])[_0x35fbf5('0x475')](function(_0x1317a1){var _0x842e84=_0x35fbf5,_0x2d59c5=document[_0x842e84('0x6f')](_0x1317a1);if(_0x2d59c5)try{_0x506760[_0x842e84('0x4f8')][_0x842e84('0xfb')](_0x2d59c5);}catch(_0x20f9a2){}});});}catch(_0x79f89){}delete window[_0x591727('0x436')],window[_0x591727('0x522')]=void 0x0,window[_0x591727('0x2f0')]=void 0x0;};}},[_0x354e6c]),_0x136c7b)return _0x4416fa[_0x37c38d('0x4f8')]['createElement'](_0x37c38d('0x1c7'),{'style':{'padding':0x20,'textAlign':_0x37c38d('0x36e')}},_0x4416fa[_0x37c38d('0x4f8')][_0x37c38d('0x4fb')](_0x238af9[_0x37c38d('0x5a5')],{'description':_0x37c38d('0x3e8')},_0x4416fa[_0x37c38d('0x4f8')][_0x37c38d('0x4fb')](_0x238af9[_0x37c38d('0x244')],{'type':_0x37c38d('0x3e5'),'onClick':function(){return _0xfb44aa(function(_0x1331cf){return _0x1331cf+0x1;});}},_0x37c38d('0x248'))));if(!_0x354e6c)return _0x4416fa[_0x37c38d('0x4f8')][_0x37c38d('0x4fb')]('div',{'style':{'display':_0x37c38d('0x37f'),'justifyContent':_0x37c38d('0x36e'),'padding':0x50}},_0x4416fa[_0x37c38d('0x4f8')][_0x37c38d('0x4fb')](_0x238af9[_0x37c38d('0x4cc')],{'size':_0x37c38d('0x54a')}));if(_0xdf0e2a)return _0x4416fa['default'][_0x37c38d('0x4fb')](_0x12fade[_0x37c38d('0x4f8')],{'license':_0x354e6c['license']});var _0xd839c0=_0x354e6c[_0x37c38d('0x3dd')][_0x37c38d('0x259')][_0x37c38d('0x34f')](function(_0x13a47a){var _0x458c47=_0x37c38d;return _0x458c47('0x414')===_0x13a47a['group'];}),_0x562a1b=_0xd839c0[_0x37c38d('0x5ba')]?_0xd839c0[0x0][_0x37c38d('0x24d')]:null,_0x4045bd=_0xd839c0[_0x37c38d('0x5ba')]&&_0xd839c0[0x0][_0x37c38d('0xde')]||'',_0x4d68d8=function(_0x829132){var _0x118276=_0x37c38d,_0x19f1c7='number'==typeof _0x829132[_0x118276('0x598')]&&_0x829132[_0x118276('0x598')]>0x0?_0x4416fa['default']['createElement'](_0x238af9['Badge'],{'count':_0x829132['count'],'size':_0x118276('0xd3'),'overflowCount':0x63,'style':{'marginLeft':0x6}}):null,_0x420ec9=_0x4416fa['default'][_0x118276('0x4fb')](_0x118276('0x433'),null,_0x829132[_0x118276('0x278')],_0x19f1c7);return _0x829132[_0x118276('0x24d')]&&_0x829132[_0x118276('0x24d')]===_0x562a1b?_0x4416fa['default'][_0x118276('0x4fb')]('span',{'style':{'display':_0x118276('0x595'),'alignItems':_0x118276('0x36e')}},_0x4416fa[_0x118276('0x4f8')]['createElement'](_0x118276('0x433'),{'style':{'display':_0x118276('0x3f9'),'width':0x1,'height':0x12,'background':_0x39cf52[_0x118276('0x231')],'marginRight':0xe}}),_0x4045bd&&_0x4416fa[_0x118276('0x4f8')]['createElement']('span',{'style':{'fontSize':0xb,'textTransform':_0x118276('0x2c'),'letterSpacing':0.6,'color':_0x39cf52[_0x118276('0x49f')],'marginRight':0xa,'fontWeight':0x258}},_0x4045bd),_0x420ec9):_0x420ec9;},_0x5079b3=_0x354e6c[_0x37c38d('0x3dd')][_0x37c38d('0x259')][_0x37c38d('0x427')](function(_0x765191){var _0x1f8b3c=_0x37c38d;if(_0x765191[_0x1f8b3c('0x53')]){var _0x1b3538=_0x109059[_0x765191[_0x1f8b3c('0x53')]];return{'key':_0x765191[_0x1f8b3c('0x24d')],'label':_0x4d68d8(_0x765191),'children':_0x1b3538&&!_0x515f1b?_0x4416fa[_0x1f8b3c('0x4f8')][_0x1f8b3c('0x4fb')](_0x1b3538,{'shellConfig':_0x556908,'tabKey':_0x765191['key'],'entity':_0x765191['entity'],'cardConfig':_0x765191['card'],'viewGlobal':_0x765191[_0x1f8b3c('0x5e')],'viewProps':_0x765191[_0x1f8b3c('0x47e')]}):null};}return{'key':_0x765191[_0x1f8b3c('0x24d')],'label':_0x4d68d8(_0x765191),'forceRender':!0x0,'children':_0x4416fa[_0x1f8b3c('0x4f8')][_0x1f8b3c('0x4fb')](_0x1f8b3c('0x1c7'),{'style':_0x319f2f({'background':_0x39cf52['colorBgContainer'],'color':_0x39cf52[_0x1f8b3c('0xc8')],'borderRadius':0xa,'padding':0xc,'minHeight':0x140},_0x765191[_0x1f8b3c('0x1f6')]?{'overflowX':'auto'}:{})},(_0x765191[_0x1f8b3c('0x2c1')]||[])[_0x1f8b3c('0x427')](function(_0x37fcca){var _0x514946=_0x1f8b3c;return _0x4416fa[_0x514946('0x4f8')][_0x514946('0x4fb')](_0x514946('0x1c7'),{'id':_0x37fcca,'key':_0x37fcca,'className':_0x514946('0x9d')});}))};}),_0x4f472a=_0x5079b3['length']<=0x1;return _0x4416fa['default']['createElement'](_0x37c38d('0x1c7'),{'style':{'padding':0x18,'position':_0x37c38d('0x2ae')}},_0x515f1b&&_0x4416fa[_0x37c38d('0x4f8')][_0x37c38d('0x4fb')]('div',{'style':{'position':_0x37c38d('0x360'),'inset':0x0,'display':'flex','alignItems':_0x37c38d('0x36e'),'justifyContent':_0x37c38d('0x36e'),'zIndex':0x2,'background':_0x39cf52['colorBgLayout'],'opacity':0.6}},_0x4416fa[_0x37c38d('0x4f8')][_0x37c38d('0x4fb')](_0x238af9[_0x37c38d('0x4cc')],{'size':_0x37c38d('0x54a')})),_0x4416fa[_0x37c38d('0x4f8')]['createElement'](_0x37c38d('0x1c7'),{'style':{'background':_0x39cf52['colorBgContainer'],'borderRadius':0xe,'boxShadow':_0x58936f[_0x37c38d('0x55d')],'padding':_0x4f472a?0x14:_0x37c38d('0x2b1')}},_0x4416fa[_0x37c38d('0x4f8')][_0x37c38d('0x4fb')](_0x238af9[_0x37c38d('0x7b')],{'activeKey':_0x20ae2d||_0x5079b3[0x0]&&_0x5079b3[0x0][_0x37c38d('0x24d')],'onChange':function(_0x2bf73c){_0x47f98e(_0x2bf73c),_0x5bc02c(_0x2bf73c);},'items':_0x5079b3,'tabBarStyle':_0x4f472a?{'display':_0x37c38d('0xa')}:{'marginBottom':0x10}})));};var _0x4416fa=function(_0x2a664a){var _0x5be736=_0x59a19e;if(_0x2a664a&&_0x2a664a[_0x5be736('0x30e')])return _0x2a664a;if(null===_0x2a664a||'object'!==_0x184c44(_0x2a664a)&&_0x5be736('0x3da')!=typeof _0x2a664a)return{'default':_0x2a664a};var _0x47b82=_0x5a51bc();if(_0x47b82&&_0x47b82[_0x5be736('0x1e7')](_0x2a664a))return _0x47b82['get'](_0x2a664a);var _0xcf4568={},_0x20e683=Object[_0x5be736('0x14d')]&&Object[_0x5be736('0x7f')];for(var _0xe52a9e in _0x2a664a)if(Object[_0x5be736('0x3d4')]['hasOwnProperty'][_0x5be736('0x545')](_0x2a664a,_0xe52a9e)){var _0x297179=_0x20e683?Object[_0x5be736('0x7f')](_0x2a664a,_0xe52a9e):null;_0x297179&&(_0x297179['get']||_0x297179[_0x5be736('0x300')])?Object[_0x5be736('0x14d')](_0xcf4568,_0xe52a9e,_0x297179):_0xcf4568[_0xe52a9e]=_0x2a664a[_0xe52a9e];}return _0xcf4568[_0x5be736('0x4f8')]=_0x2a664a,_0x47b82&&_0x47b82[_0x5be736('0x300')](_0x2a664a,_0xcf4568),_0xcf4568;}(_0x267a65(_0x59a19e('0x592'))),_0x506760=_0x5e3d82(_0x267a65(_0x59a19e('0x381'))),_0x238af9=_0x267a65(_0x59a19e('0x389')),_0x58936f=_0x267a65(_0x59a19e('0x1c8')),_0x37868a=_0x5e3d82(_0x267a65(_0x59a19e('0x5bb'))),_0x577054=_0x5e3d82(_0x267a65(_0x59a19e('0x16f'))),_0x47d84d=_0x5e3d82(_0x267a65(_0x59a19e('0x2e2'))),_0x484cb3=_0x5e3d82(_0x267a65('./NativeExtensionView')),_0x4bfa43=_0x5e3d82(_0x267a65('./MobileApp')),_0x31893d=_0x5e3d82(_0x267a65(_0x59a19e('0x1ad'))),_0x2fada1=_0x5e3d82(_0x267a65('./TimeSheets')),_0x4be4ef=_0x5e3d82(_0x267a65(_0x59a19e('0x3a8'))),_0x94aff3=_0x5e3d82(_0x267a65(_0x59a19e('0x5ad'))),_0x5acbf4=_0x5e3d82(_0x267a65(_0x59a19e('0x537'))),_0x12fade=_0x5e3d82(_0x267a65('./LicenseBlocked'));function _0x5e3d82(_0x18a33a){var _0x203bcc=_0x59a19e;return _0x18a33a&&_0x18a33a[_0x203bcc('0x30e')]?_0x18a33a:{'default':_0x18a33a};}function _0x5a51bc(){var _0x260ecd=_0x59a19e;if(_0x260ecd('0x3da')!=typeof WeakMap)return null;var _0x1c5bc3=new WeakMap();return _0x5a51bc=function(){return _0x1c5bc3;},_0x1c5bc3;}function _0x3e2aef(_0x2ab20e,_0x21feb4){var _0x2fd17a=_0x59a19e,_0x12bdf7=Object[_0x2fd17a('0x33b')](_0x2ab20e);if(Object['getOwnPropertySymbols']){var _0x1e2248=Object[_0x2fd17a('0x17b')](_0x2ab20e);_0x21feb4&&(_0x1e2248=_0x1e2248['filter'](function(_0x44218b){var _0xee0533=_0x2fd17a;return Object[_0xee0533('0x7f')](_0x2ab20e,_0x44218b)[_0xee0533('0x24')];})),_0x12bdf7[_0x2fd17a('0x3db')]['apply'](_0x12bdf7,_0x1e2248);}return _0x12bdf7;}function _0x319f2f(_0x4b8b8f){var _0x588537=_0x59a19e;for(var _0x23ddfe=0x1;_0x23ddfe<arguments['length'];_0x23ddfe++){var _0x532328=null!=arguments[_0x23ddfe]?arguments[_0x23ddfe]:{};_0x23ddfe%0x2?_0x3e2aef(Object(_0x532328),!0x0)[_0x588537('0x475')](function(_0x5f5c79){_0x2d4466(_0x4b8b8f,_0x5f5c79,_0x532328[_0x5f5c79]);}):Object[_0x588537('0x303')]?Object[_0x588537('0x29d')](_0x4b8b8f,Object[_0x588537('0x303')](_0x532328)):_0x3e2aef(Object(_0x532328))[_0x588537('0x475')](function(_0x36aa12){var _0x247a34=_0x588537;Object['defineProperty'](_0x4b8b8f,_0x36aa12,Object[_0x247a34('0x7f')](_0x532328,_0x36aa12));});}return _0x4b8b8f;}function _0x2d4466(_0x237a34,_0x278ac4,_0x32e8f1){return _0x278ac4 in _0x237a34?Object['defineProperty'](_0x237a34,_0x278ac4,{'value':_0x32e8f1,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x237a34[_0x278ac4]=_0x32e8f1,_0x237a34;}function _0x539ded(_0x903c96,_0x5f53f6){return function(_0x20467d){var _0x5d3a16=_0x3d72;if(Array[_0x5d3a16('0x52b')](_0x20467d))return _0x20467d;}(_0x903c96)||function(_0x37ec7c,_0x3201b4){var _0x20c6d1=_0x3d72;if('undefined'==typeof Symbol||!(Symbol[_0x20c6d1('0x20e')]in Object(_0x37ec7c)))return;var _0xf3b931=[],_0x5cd775=!0x0,_0x5e612f=!0x1,_0x3253da=void 0x0;try{for(var _0x396a06,_0x37ae60=_0x37ec7c[Symbol[_0x20c6d1('0x20e')]]();!(_0x5cd775=(_0x396a06=_0x37ae60[_0x20c6d1('0xc')]())[_0x20c6d1('0x44')])&&(_0xf3b931['push'](_0x396a06[_0x20c6d1('0x3dc')]),!_0x3201b4||_0xf3b931[_0x20c6d1('0x5ba')]!==_0x3201b4);_0x5cd775=!0x0);}catch(_0x14ffa9){_0x5e612f=!0x0,_0x3253da=_0x14ffa9;}finally{try{_0x5cd775||null==_0x37ae60['return']||_0x37ae60[_0x20c6d1('0x41c')]();}finally{if(_0x5e612f)throw _0x3253da;}}return _0xf3b931;}(_0x903c96,_0x5f53f6)||function(_0x55a7d4,_0x39be94){var _0x13f48c=_0x3d72;if(!_0x55a7d4)return;if(_0x13f48c('0x4dd')==typeof _0x55a7d4)return _0x1cf924(_0x55a7d4,_0x39be94);var _0x36765d=Object[_0x13f48c('0x3d4')][_0x13f48c('0x4ef')]['call'](_0x55a7d4)['slice'](0x8,-0x1);_0x13f48c('0x2ed')===_0x36765d&&_0x55a7d4['constructor']&&(_0x36765d=_0x55a7d4[_0x13f48c('0xaa')]['name']);if(_0x13f48c('0x235')===_0x36765d||_0x13f48c('0x5b1')===_0x36765d)return Array[_0x13f48c('0xd7')](_0x36765d);if(_0x13f48c('0x5ab')===_0x36765d||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x13f48c('0x56e')](_0x36765d))return _0x1cf924(_0x55a7d4,_0x39be94);}(_0x903c96,_0x5f53f6)||function(){var _0x22113e=_0x3d72;throw new TypeError(_0x22113e('0x311'));}();}function _0x1cf924(_0x29c025,_0x1cfa2f){var _0xf0c424=_0x59a19e;(null==_0x1cfa2f||_0x1cfa2f>_0x29c025['length'])&&(_0x1cfa2f=_0x29c025[_0xf0c424('0x5ba')]);for(var _0x563f86=0x0,_0x27e0c0=new Array(_0x1cfa2f);_0x563f86<_0x1cfa2f;_0x563f86++)_0x27e0c0[_0x563f86]=_0x29c025[_0x563f86];return _0x27e0c0;}var _0x109059={'OrgChart':_0x37868a[_0x59a19e('0x4f8')],'CompanyStructureCards':_0x577054[_0x59a19e('0x4f8')],'NativeCardList':_0x47d84d[_0x59a19e('0x4f8')],'NativeExtensionView':_0x484cb3[_0x59a19e('0x4f8')],'MobileApp':_0x4bfa43[_0x59a19e('0x4f8')],'ApiAccess':_0x31893d['default'],'TimeSheets':_0x2fada1['default'],'LeaveEntitlement':_0x4be4ef[_0x59a19e('0x4f8')],'LeaveCalendar':_0x94aff3[_0x59a19e('0x4f8')],'NativeAdapterView':_0x5acbf4[_0x59a19e('0x4f8')]},_0x477e81={};},{'./ApiAccess':0x1,'./CompanyStructureCards':0x3,'./LeaveCalendar':0x9,'./LeaveEntitlement':0xa,'./LicenseBlocked':0xb,'./MobileApp':0xd,'./NativeAdapterView':0xf,'./NativeCardList':0x10,'./NativeExtensionView':0x12,'./OrgChart':0x16,'./TimeSheets':0x17,'./theme':0x1a,'antd':'antd','react':_0x401518('0x592'),'react-dom':'react-dom'}],0x14:[function(_0xd8fcd5,_0x304cdb,_0x436ab3){var _0x2f3cec=_0x401518;'use strict';function _0x1e76df(_0x13cdad){var _0x3d1e43=_0x3d72;return(_0x1e76df='function'==typeof Symbol&&_0x3d1e43('0x4da')==typeof Symbol[_0x3d1e43('0x20e')]?function(_0x215ae9){return typeof _0x215ae9;}:function(_0x11c0eb){var _0x56fa95=_0x3d1e43;return _0x11c0eb&&_0x56fa95('0x3da')==typeof Symbol&&_0x11c0eb[_0x56fa95('0xaa')]===Symbol&&_0x11c0eb!==Symbol[_0x56fa95('0x3d4')]?_0x56fa95('0x4da'):typeof _0x11c0eb;})(_0x13cdad);}Object['defineProperty'](_0x436ab3,'__esModule',{'value':!0x0}),_0x436ab3[_0x2f3cec('0x4f8')]=function(_0x4a050a){var _0x206cd0=_0x2f3cec,_0x189ad9=_0x4a050a[_0x206cd0('0x3dd')],_0x476ea4=(_0x2d12ce=(0x0,_0x46faff['useState'])(null),_0x237cde=0x2,function(_0x23caf8){var _0x3f0b97=_0x206cd0;if(Array[_0x3f0b97('0x52b')](_0x23caf8))return _0x23caf8;}(_0x2d12ce)||function(_0x1e18b8,_0x171591){var _0x2ec7a4=_0x206cd0;if('undefined'!=typeof Symbol&&Symbol[_0x2ec7a4('0x20e')]in Object(_0x1e18b8)){var _0x4b67f1=[],_0x3e438d=!0x0,_0x1092e1=!0x1,_0x93ccd3=void 0x0;try{for(var _0xbc0812,_0x465b44=_0x1e18b8[Symbol[_0x2ec7a4('0x20e')]]();!(_0x3e438d=(_0xbc0812=_0x465b44[_0x2ec7a4('0xc')]())[_0x2ec7a4('0x44')])&&(_0x4b67f1[_0x2ec7a4('0x3db')](_0xbc0812[_0x2ec7a4('0x3dc')]),!_0x171591||_0x4b67f1[_0x2ec7a4('0x5ba')]!==_0x171591);_0x3e438d=!0x0);}catch(_0x1ebe89){_0x1092e1=!0x0,_0x93ccd3=_0x1ebe89;}finally{try{_0x3e438d||null==_0x465b44[_0x2ec7a4('0x41c')]||_0x465b44['return']();}finally{if(_0x1092e1)throw _0x93ccd3;}}return _0x4b67f1;}}(_0x2d12ce,_0x237cde)||function(_0x300a36,_0x5d8698){var _0x25ded1=_0x206cd0;if(_0x300a36){if(_0x25ded1('0x4dd')==typeof _0x300a36)return _0x467268(_0x300a36,_0x5d8698);var _0xbaf3b7=Object[_0x25ded1('0x3d4')][_0x25ded1('0x4ef')][_0x25ded1('0x545')](_0x300a36)[_0x25ded1('0x5d')](0x8,-0x1);return'Object'===_0xbaf3b7&&_0x300a36[_0x25ded1('0xaa')]&&(_0xbaf3b7=_0x300a36[_0x25ded1('0xaa')]['name']),_0x25ded1('0x235')===_0xbaf3b7||_0x25ded1('0x5b1')===_0xbaf3b7?Array['from'](_0xbaf3b7):_0x25ded1('0x5ab')===_0xbaf3b7||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/['test'](_0xbaf3b7)?_0x467268(_0x300a36,_0x5d8698):void 0x0;}}(_0x2d12ce,_0x237cde)||function(){var _0xd1a8bb=_0x206cd0;throw new TypeError(_0xd1a8bb('0x311'));}()),_0xbcad43=_0x476ea4[0x0],_0x224cae=_0x476ea4[0x1],_0x2d12ce,_0x237cde;if((0x0,_0x46faff[_0x206cd0('0x138')])(function(){var _0x4551b1=_0x206cd0,_0x2aaf58=!0x1;return fetch(''[_0x4551b1('0x39d')](_0x189ad9[_0x4551b1('0x28d')],'appshell/news'),{'headers':{'Authorization':_0x4551b1('0x55b')[_0x4551b1('0x39d')](_0x189ad9[_0x4551b1('0x331')])},'credentials':_0x4551b1('0x1a5')})[_0x4551b1('0x12a')](function(_0x22083a){return _0x22083a['ok']?_0x22083a['json']():null;})[_0x4551b1('0x12a')](function(_0x5d7df5){_0x2aaf58||_0x224cae(_0x5d7df5&&_0x5d7df5['id']?_0x5d7df5:null);})[_0x4551b1('0x2e')](function(){}),function(){_0x2aaf58=!0x0;};},[_0x189ad9[_0x206cd0('0x28d')],_0x189ad9[_0x206cd0('0x331')]]),!_0xbcad43||!_0xbcad43['id'])return null;return _0x46faff[_0x206cd0('0x4f8')][_0x206cd0('0x4fb')](_0x3b0dd1[_0x206cd0('0x1d8')],{'type':'info','showIcon':!0x0,'style':{'margin':'16px\x2024px\x200'},'message':_0xbcad43[_0x206cd0('0x115')],'description':_0xbcad43[_0x206cd0('0x186')],'action':_0x46faff['default'][_0x206cd0('0x4fb')](_0x3b0dd1['Space'],null,_0xbcad43[_0x206cd0('0x30c')]&&_0xbcad43[_0x206cd0('0x3b8')]?_0x46faff[_0x206cd0('0x4f8')]['createElement'](_0x3b0dd1[_0x206cd0('0x244')],{'size':_0x206cd0('0xd3'),'type':_0x206cd0('0x3e5'),'onClick':function(){var _0x428ba4=_0x206cd0;return window[_0x428ba4('0xc4')](_0xbcad43['url'],_0x428ba4('0x6a'),'noopener,noreferrer');}},_0xbcad43[_0x206cd0('0x3b8')]):null,_0x46faff['default']['createElement'](_0x3b0dd1[_0x206cd0('0x244')],{'size':_0x206cd0('0xd3'),'onClick':function(){var _0x6e66c3=_0x206cd0;_0x224cae(null),fetch(''[_0x6e66c3('0x39d')](_0x189ad9['restApiBase'],_0x6e66c3('0x1ef')),{'method':_0x6e66c3('0x3c8'),'headers':{'Authorization':'Bearer\x20'[_0x6e66c3('0x39d')](_0x189ad9[_0x6e66c3('0x331')]),'Content-Type':_0x6e66c3('0x409')},'credentials':_0x6e66c3('0x1a5'),'body':JSON[_0x6e66c3('0x1d2')]({'id':_0xbcad43['id'],'period':_0xbcad43['dismiss_period']||0x15180})})[_0x6e66c3('0x2e')](function(){});}},_0x206cd0('0x529')))});};var _0x46faff=function(_0x3855d8){var _0x44c3bf=_0x2f3cec;if(_0x3855d8&&_0x3855d8[_0x44c3bf('0x30e')])return _0x3855d8;if(null===_0x3855d8||_0x44c3bf('0xd8')!==_0x1e76df(_0x3855d8)&&_0x44c3bf('0x3da')!=typeof _0x3855d8)return{'default':_0x3855d8};var _0x19b73e=_0x2e60c1();if(_0x19b73e&&_0x19b73e[_0x44c3bf('0x1e7')](_0x3855d8))return _0x19b73e[_0x44c3bf('0x4cb')](_0x3855d8);var _0x146bed={},_0x516006=Object[_0x44c3bf('0x14d')]&&Object[_0x44c3bf('0x7f')];for(var _0x11c2ed in _0x3855d8)if(Object[_0x44c3bf('0x3d4')][_0x44c3bf('0x25d')][_0x44c3bf('0x545')](_0x3855d8,_0x11c2ed)){var _0x4a9658=_0x516006?Object[_0x44c3bf('0x7f')](_0x3855d8,_0x11c2ed):null;_0x4a9658&&(_0x4a9658[_0x44c3bf('0x4cb')]||_0x4a9658['set'])?Object[_0x44c3bf('0x14d')](_0x146bed,_0x11c2ed,_0x4a9658):_0x146bed[_0x11c2ed]=_0x3855d8[_0x11c2ed];}return _0x146bed['default']=_0x3855d8,_0x19b73e&&_0x19b73e[_0x44c3bf('0x300')](_0x3855d8,_0x146bed),_0x146bed;}(_0xd8fcd5('react')),_0x3b0dd1=_0xd8fcd5(_0x2f3cec('0x389'));function _0x2e60c1(){var _0x8624b8=_0x2f3cec;if(_0x8624b8('0x3da')!=typeof WeakMap)return null;var _0x5bd282=new WeakMap();return _0x2e60c1=function(){return _0x5bd282;},_0x5bd282;}function _0x467268(_0x85d49b,_0x489d45){var _0x54dc98=_0x2f3cec;(null==_0x489d45||_0x489d45>_0x85d49b['length'])&&(_0x489d45=_0x85d49b[_0x54dc98('0x5ba')]);for(var _0x27cbb4=0x0,_0x14d6bd=new Array(_0x489d45);_0x27cbb4<_0x489d45;_0x27cbb4++)_0x14d6bd[_0x27cbb4]=_0x85d49b[_0x27cbb4];return _0x14d6bd;}},{'antd':_0x401518('0x389'),'react':_0x401518('0x592')}],0x15:[function(_0x237a47,_0x239068,_0x5eecb0){var _0x2d8b2f=_0x401518;'use strict';function _0x3d3c3a(_0x3d8206){var _0x42f5f6=_0x3d72;return(_0x3d3c3a=_0x42f5f6('0x3da')==typeof Symbol&&_0x42f5f6('0x4da')==typeof Symbol[_0x42f5f6('0x20e')]?function(_0x40cfc8){return typeof _0x40cfc8;}:function(_0xe328){var _0x4b9296=_0x42f5f6;return _0xe328&&_0x4b9296('0x3da')==typeof Symbol&&_0xe328[_0x4b9296('0xaa')]===Symbol&&_0xe328!==Symbol[_0x4b9296('0x3d4')]?_0x4b9296('0x4da'):typeof _0xe328;})(_0x3d8206);}Object[_0x2d8b2f('0x14d')](_0x5eecb0,_0x2d8b2f('0x30e'),{'value':!0x0}),_0x5eecb0[_0x2d8b2f('0x4f8')]=function(_0x49dbaa){var _0x49d146=_0x2d8b2f,_0x7a7641=_0x49dbaa[_0x49d146('0x3fe')],_0x2cd07d=_0x49dbaa[_0x49d146('0x51d')],_0x5485a6=_0x49dbaa[_0x49d146('0x177')],_0x416692=_0x59d42a[_0x49d146('0x587')]['useToken']()[_0x49d146('0x331')],_0x5ee044=_0x355e8e((0x0,_0x229495['useState'])(0x0),0x2),_0x4d56e3=_0x5ee044[0x0],_0x4e47c1=_0x5ee044[0x1],_0x165d04=_0x355e8e((0x0,_0x229495[_0x49d146('0x5a7')])([]),0x2),_0x3ed155=_0x165d04[0x0],_0x3e8b90=_0x165d04[0x1],_0x4e423c=_0x355e8e((0x0,_0x229495[_0x49d146('0x5a7')])(!0x1),0x2),_0x1007cb=_0x4e423c[0x0],_0x5677e9=_0x4e423c[0x1],_0x5486a2=(0x0,_0x229495['useCallback'])(function(){var _0x2180ce=_0x49d146;fetch(''[_0x2180ce('0x39d')](_0x7a7641,_0x2180ce('0x12d')),{'credentials':_0x2180ce('0x1a5')})['then'](function(_0x149f07){var _0x81cf4c=_0x2180ce;return _0x149f07[_0x81cf4c('0x580')]();})[_0x2180ce('0x12a')](function(_0xd37095){var _0x47d8e1=_0x2180ce;_0xd37095&&_0xd37095[_0x47d8e1('0x50e')]&&(_0x4e47c1(_0xd37095[_0x47d8e1('0x50e')][0x0]||0x0),_0x3e8b90(Array[_0x47d8e1('0x52b')](_0xd37095[_0x47d8e1('0x50e')][0x1])?_0xd37095[_0x47d8e1('0x50e')][0x1]:[]));})['catch'](function(){});},[_0x7a7641]);(0x0,_0x229495[_0x49d146('0x138')])(function(){_0x5486a2();var _0x1593a9=setInterval(_0x5486a2,0xea60);return function(){return clearInterval(_0x1593a9);};},[_0x5486a2]);var _0x160fd8=_0x229495[_0x49d146('0x4f8')][_0x49d146('0x4fb')](_0x49d146('0x1c7'),{'style':{'width':0x154,'maxHeight':0x1b8,'overflow':_0x49d146('0x4b6')}},_0x229495['default'][_0x49d146('0x4fb')]('div',{'style':{'display':'flex','justifyContent':_0x49d146('0x551'),'alignItems':_0x49d146('0x36e'),'padding':_0x49d146('0x457'),'borderBottom':_0x49d146('0x5be')['concat'](_0x416692['colorBorderSecondary']),'marginBottom':0x4}},_0x229495['default']['createElement'](_0x45ccf4,{'strong':!0x0},'Notifications'),_0x3ed155['length']>0x0&&_0x229495['default']['createElement'](_0x59d42a[_0x49d146('0x244')],{'type':'link','size':_0x49d146('0xd3'),'onClick':function(){var _0x3e357f=_0x49d146;fetch(''[_0x3e357f('0x39d')](_0x7a7641,'service.php?a=clearNotifications'),{'credentials':_0x3e357f('0x1a5')})[_0x3e357f('0x12a')](function(){_0x4e47c1(0x0),_0x5486a2();})[_0x3e357f('0x2e')](function(){});}},'Mark\x20all\x20read')),0x0===_0x3ed155['length']?_0x229495[_0x49d146('0x4f8')]['createElement'](_0x59d42a[_0x49d146('0x5a5')],{'image':_0x59d42a['Empty'][_0x49d146('0x27b')],'description':_0x49d146('0x4a0'),'style':{'padding':0x10}}):_0x229495[_0x49d146('0x4f8')]['createElement'](_0x59d42a['List'],{'dataSource':_0x3ed155,'renderItem':function(_0x564718){var _0x28f635=_0x49d146;return _0x229495[_0x28f635('0x4f8')]['createElement'](_0x59d42a[_0x28f635('0x142')][_0x28f635('0x54e')],{'style':{'padding':_0x28f635('0x31d'),'cursor':_0x388726(_0x564718['action'])?_0x28f635('0x4ad'):_0x28f635('0x4f8')},'onClick':function(){return function(_0x532030){var _0x14eb27=_0x3d72,_0xe442b2=_0x388726(_0x532030[_0x14eb27('0x332')]);if(_0x5677e9(!0x1),_0xe442b2){if(_0xe442b2[_0x14eb27('0x3c9')]&&_0x5485a6)_0x5485a6(_0xe442b2[_0x14eb27('0x3c9')]);else{if(_0xe442b2['g']&&_0x2cd07d){if(_0xe442b2[_0x14eb27('0x22d')])try{window['__iceShellStartTab']=_0xe442b2[_0x14eb27('0x22d')],decodeURIComponent(window[_0x14eb27('0x49b')][_0x14eb27('0x3f4')][_0x14eb27('0x4c6')](/^#/,''))===''[_0x14eb27('0x39d')](_0xe442b2['g'],'::')[_0x14eb27('0x39d')](_0xe442b2['n'])&&window[_0x14eb27('0x436')]&&window[_0x14eb27('0x436')](_0xe442b2[_0x14eb27('0x22d')]);}catch(_0x228960){}_0x2cd07d(_0xe442b2['g'],_0xe442b2['n']);}}}}(_0x564718);}},_0x229495['default']['createElement'](_0x59d42a[_0x28f635('0x142')][_0x28f635('0x54e')][_0x28f635('0x24e')],{'avatar':_0x229495[_0x28f635('0x4f8')][_0x28f635('0x4fb')](_0x59d42a['Avatar'],{'src':_0x564718[_0x28f635('0x3e3')],'icon':_0x229495[_0x28f635('0x4f8')][_0x28f635('0x4fb')](_0x420510[_0x28f635('0x51c')],null),'size':'small'}),'title':_0x229495[_0x28f635('0x4f8')][_0x28f635('0x4fb')]('span',{'style':{'fontSize':0xd,'fontWeight':0x1f4}},_0x564718[_0x28f635('0x3b7')]||'Notification'),'description':_0x229495[_0x28f635('0x4f8')][_0x28f635('0x4fb')](_0x229495[_0x28f635('0x4f8')]['Fragment'],null,_0x229495[_0x28f635('0x4f8')][_0x28f635('0x4fb')]('div',{'style':{'fontSize':0xd,'color':_0x416692[_0x28f635('0xc8')]}},_0x564718[_0x28f635('0x186')]),_0x229495[_0x28f635('0x4f8')][_0x28f635('0x4fb')](_0x28f635('0x1c7'),{'style':{'fontSize':0xb,'color':_0x416692[_0x28f635('0x49f')],'marginTop':0x2}},_0x564718['time']))}));}}));return _0x229495[_0x49d146('0x4f8')]['createElement'](_0x59d42a[_0x49d146('0x68')],{'content':_0x160fd8,'trigger':'click','open':_0x1007cb,'onOpenChange':_0x5677e9,'placement':_0x49d146('0x384')},_0x229495[_0x49d146('0x4f8')][_0x49d146('0x4fb')](_0x59d42a[_0x49d146('0x244')],{'type':_0x49d146('0x3cc'),'style':{'display':'flex','alignItems':'center'},'aria-label':_0x49d146('0x32d')},_0x229495['default'][_0x49d146('0x4fb')](_0x59d42a[_0x49d146('0x485')],{'count':_0x4d56e3,'size':_0x49d146('0xd3'),'overflowCount':0x63},_0x229495['default'][_0x49d146('0x4fb')](_0x420510[_0x49d146('0x2fd')],{'style':{'fontSize':0x12,'color':'#fff'}}))));};var _0x229495=function(_0x45faf1){var _0x567f7f=_0x2d8b2f;if(_0x45faf1&&_0x45faf1[_0x567f7f('0x30e')])return _0x45faf1;if(null===_0x45faf1||'object'!==_0x3d3c3a(_0x45faf1)&&_0x567f7f('0x3da')!=typeof _0x45faf1)return{'default':_0x45faf1};var _0x239c1f=_0x542984();if(_0x239c1f&&_0x239c1f['has'](_0x45faf1))return _0x239c1f['get'](_0x45faf1);var _0x27e3e3={},_0x1677c8=Object['defineProperty']&&Object['getOwnPropertyDescriptor'];for(var _0x392655 in _0x45faf1)if(Object[_0x567f7f('0x3d4')][_0x567f7f('0x25d')][_0x567f7f('0x545')](_0x45faf1,_0x392655)){var _0x3d13d5=_0x1677c8?Object[_0x567f7f('0x7f')](_0x45faf1,_0x392655):null;_0x3d13d5&&(_0x3d13d5[_0x567f7f('0x4cb')]||_0x3d13d5[_0x567f7f('0x300')])?Object[_0x567f7f('0x14d')](_0x27e3e3,_0x392655,_0x3d13d5):_0x27e3e3[_0x392655]=_0x45faf1[_0x392655];}return _0x27e3e3[_0x567f7f('0x4f8')]=_0x45faf1,_0x239c1f&&_0x239c1f[_0x567f7f('0x300')](_0x45faf1,_0x27e3e3),_0x27e3e3;}(_0x237a47(_0x2d8b2f('0x592'))),_0x59d42a=_0x237a47(_0x2d8b2f('0x389')),_0x420510=_0x237a47(_0x2d8b2f('0x480'));function _0x542984(){var _0x1cdb8f=_0x2d8b2f;if(_0x1cdb8f('0x3da')!=typeof WeakMap)return null;var _0x2249cb=new WeakMap();return _0x542984=function(){return _0x2249cb;},_0x2249cb;}function _0x355e8e(_0x11a8af,_0x470535){return function(_0x1660f2){var _0x35be17=_0x3d72;if(Array[_0x35be17('0x52b')](_0x1660f2))return _0x1660f2;}(_0x11a8af)||function(_0x455dea,_0x5e91cb){var _0x1b3a93=_0x3d72;if('undefined'==typeof Symbol||!(Symbol[_0x1b3a93('0x20e')]in Object(_0x455dea)))return;var _0x49a917=[],_0x4e3dde=!0x0,_0x7ac3f6=!0x1,_0x1e388a=void 0x0;try{for(var _0x3b2597,_0x20718f=_0x455dea[Symbol[_0x1b3a93('0x20e')]]();!(_0x4e3dde=(_0x3b2597=_0x20718f['next']())[_0x1b3a93('0x44')])&&(_0x49a917['push'](_0x3b2597[_0x1b3a93('0x3dc')]),!_0x5e91cb||_0x49a917['length']!==_0x5e91cb);_0x4e3dde=!0x0);}catch(_0xb7dc80){_0x7ac3f6=!0x0,_0x1e388a=_0xb7dc80;}finally{try{_0x4e3dde||null==_0x20718f[_0x1b3a93('0x41c')]||_0x20718f[_0x1b3a93('0x41c')]();}finally{if(_0x7ac3f6)throw _0x1e388a;}}return _0x49a917;}(_0x11a8af,_0x470535)||function(_0x2137c8,_0x1a76d0){var _0x5887b0=_0x3d72;if(!_0x2137c8)return;if(_0x5887b0('0x4dd')==typeof _0x2137c8)return _0x258701(_0x2137c8,_0x1a76d0);var _0x30a29d=Object['prototype'][_0x5887b0('0x4ef')][_0x5887b0('0x545')](_0x2137c8)[_0x5887b0('0x5d')](0x8,-0x1);_0x5887b0('0x2ed')===_0x30a29d&&_0x2137c8[_0x5887b0('0xaa')]&&(_0x30a29d=_0x2137c8[_0x5887b0('0xaa')][_0x5887b0('0x3b6')]);if(_0x5887b0('0x235')===_0x30a29d||_0x5887b0('0x5b1')===_0x30a29d)return Array[_0x5887b0('0xd7')](_0x30a29d);if(_0x5887b0('0x5ab')===_0x30a29d||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/['test'](_0x30a29d))return _0x258701(_0x2137c8,_0x1a76d0);}(_0x11a8af,_0x470535)||function(){var _0x4cf15a=_0x3d72;throw new TypeError(_0x4cf15a('0x311'));}();}function _0x258701(_0x490a11,_0x23bb3){var _0xab7b15=_0x2d8b2f;(null==_0x23bb3||_0x23bb3>_0x490a11[_0xab7b15('0x5ba')])&&(_0x23bb3=_0x490a11['length']);for(var _0x1d7d50=0x0,_0x49c766=new Array(_0x23bb3);_0x1d7d50<_0x23bb3;_0x1d7d50++)_0x49c766[_0x1d7d50]=_0x490a11[_0x1d7d50];return _0x49c766;}var _0x45ccf4=_0x59d42a[_0x2d8b2f('0x4b3')]['Text'],_0x11901a={'tabSubEmployeeLeaveAll':_0x2d8b2f('0x40b'),'tabEmployeeLeaveApproval':_0x2d8b2f('0x32'),'tabEmployeeLeaveApproved':_0x2d8b2f('0x36'),'tabSubEmployeeLeaveCancel':_0x2d8b2f('0x375')};function _0x388726(_0x459611){var _0x5d060d=_0x2d8b2f;try{var _0x4e73d0='string'==typeof _0x459611?JSON[_0x5d060d('0x17e')](_0x459611):_0x459611;if(_0x4e73d0&&_0x5d060d('0x30c')===_0x4e73d0['type']&&_0x4e73d0[_0x5d060d('0x30c')]){var _0x561aa9=_0x4e73d0['url'][_0x5d060d('0x187')]('#'),_0x50997b=_0x561aa9>=0x0?_0x4e73d0[_0x5d060d('0x30c')][_0x5d060d('0x5d')](_0x561aa9+0x1):null,_0x20cd79=_0x561aa9>=0x0?_0x4e73d0[_0x5d060d('0x30c')]['slice'](0x0,_0x561aa9):_0x4e73d0[_0x5d060d('0x30c')],_0x290809=_0x20cd79[_0x5d060d('0x187')]('?')>=0x0?_0x20cd79[_0x5d060d('0x3d8')]('?')[0x1]:_0x20cd79,_0x4b61bb=new URLSearchParams(_0x290809),_0x4980ed=_0x4b61bb[_0x5d060d('0x4cb')]('g'),_0x1a8437=_0x4b61bb[_0x5d060d('0x4cb')]('n');if(_0x5d060d('0x5b7')===_0x4980ed&&_0x5d060d('0x238')===_0x1a8437&&(_0x4b61bb[_0x5d060d('0x4cb')](_0x5d060d('0x3f4'))||_0x4b61bb['get'](_0x5d060d('0xd8'))))return{'doc':_0x4e73d0[_0x5d060d('0x30c')]};if(_0x4980ed&&_0x1a8437)return{'g':_0x4980ed,'n':_0x1a8437,'tab':_0x50997b?_0x11901a[_0x50997b]||_0x50997b:null};}}catch(_0x42dc8b){}return null;}},{'@ant-design/icons':'@ant-design/icons','antd':'antd','react':'react'}],0x16:[function(_0x2f45cd,_0x5491db,_0xd6ff4d){var _0x24cbf7=_0x401518;'use strict';function _0x505496(_0x2f0533){var _0x5af818=_0x3d72;return(_0x505496='function'==typeof Symbol&&_0x5af818('0x4da')==typeof Symbol['iterator']?function(_0x2cf738){return typeof _0x2cf738;}:function(_0xad9c98){var _0x4a7433=_0x5af818;return _0xad9c98&&_0x4a7433('0x3da')==typeof Symbol&&_0xad9c98[_0x4a7433('0xaa')]===Symbol&&_0xad9c98!==Symbol[_0x4a7433('0x3d4')]?_0x4a7433('0x4da'):typeof _0xad9c98;})(_0x2f0533);}Object[_0x24cbf7('0x14d')](_0xd6ff4d,_0x24cbf7('0x30e'),{'value':!0x0}),_0xd6ff4d['default']=function(_0x5296ee){var _0x4c68fe=_0x24cbf7,_0x5c7312=_0x5296ee[_0x4c68fe('0x5a9')],_0xef3a77=_0xb1cb81((0x0,_0x60aab5[_0x4c68fe('0x5a7')])(null),0x2),_0x425054=_0xef3a77[0x0],_0x1e78ca=_0xef3a77[0x1],_0x3abafd=_0xb1cb81((0x0,_0x60aab5[_0x4c68fe('0x5a7')])(!0x1),0x2),_0x2ee57d=_0x3abafd[0x0],_0x59bbdf=_0x3abafd[0x1],_0x2d71d8=_0x32067f[_0x4c68fe('0x587')][_0x4c68fe('0x75')]()[_0x4c68fe('0x331')];if((0x0,_0x60aab5[_0x4c68fe('0x138')])(function(){var _0x456f9f=_0x4c68fe,_0x45c894=!0x0;return fetch(''[_0x456f9f('0x39d')](_0x5c7312['restApiBase'],_0x456f9f('0x16')),{'headers':{'Authorization':_0x456f9f('0x55b')[_0x456f9f('0x39d')](_0x5c7312['token'])},'credentials':_0x456f9f('0x1a5')})[_0x456f9f('0x12a')](function(_0x2f9d2e){return _0x2f9d2e['json']();})['then'](function(_0x558867){_0x45c894&&_0x1e78ca(_0x558867&&_0x558867['nodes']||[]);})['catch'](function(){_0x45c894&&_0x59bbdf(!0x0);}),function(){_0x45c894=!0x1;};},[_0x5c7312]),_0x2ee57d)return _0x60aab5[_0x4c68fe('0x4f8')][_0x4c68fe('0x4fb')](_0x32067f['Empty'],{'description':_0x4c68fe('0x594')});if(!_0x425054)return _0x60aab5['default']['createElement']('div',{'style':{'display':_0x4c68fe('0x37f'),'justifyContent':_0x4c68fe('0x36e'),'padding':0x3c}},_0x60aab5[_0x4c68fe('0x4f8')][_0x4c68fe('0x4fb')](_0x32067f[_0x4c68fe('0x4cc')],null));if(0x0===_0x425054[_0x4c68fe('0x5ba')])return _0x60aab5[_0x4c68fe('0x4f8')][_0x4c68fe('0x4fb')](_0x32067f[_0x4c68fe('0x5a5')],{'description':'No\x20company\x20structure\x20defined\x20yet'});var _0x3e46f0=function(_0x66a7d1){var _0x3fb38c=_0x4c68fe,_0x3d05e2={};_0x66a7d1[_0x3fb38c('0x475')](function(_0x223f77){_0x3d05e2[_0x223f77['id']]=function(_0x5a521c){var _0x5f4642=_0x3d72;for(var _0x2192ff=0x1;_0x2192ff<arguments[_0x5f4642('0x5ba')];_0x2192ff++){var _0xe827f6=null!=arguments[_0x2192ff]?arguments[_0x2192ff]:{};_0x2192ff%0x2?_0x22464a(Object(_0xe827f6),!0x0)[_0x5f4642('0x475')](function(_0x5b81e4){_0x2749e2(_0x5a521c,_0x5b81e4,_0xe827f6[_0x5b81e4]);}):Object[_0x5f4642('0x303')]?Object[_0x5f4642('0x29d')](_0x5a521c,Object[_0x5f4642('0x303')](_0xe827f6)):_0x22464a(Object(_0xe827f6))[_0x5f4642('0x475')](function(_0x478f0e){var _0xd3fb97=_0x5f4642;Object[_0xd3fb97('0x14d')](_0x5a521c,_0x478f0e,Object['getOwnPropertyDescriptor'](_0xe827f6,_0x478f0e));});}return _0x5a521c;}({},_0x223f77,{'children':[]});});var _0x1f2586=[];return _0x66a7d1['forEach'](function(_0x4b0880){var _0x310bfb=_0x3fb38c;_0x4b0880[_0x310bfb('0x546')]&&_0x3d05e2[_0x4b0880[_0x310bfb('0x546')]]?_0x3d05e2[_0x4b0880[_0x310bfb('0x546')]][_0x310bfb('0x2b0')]['push'](_0x3d05e2[_0x4b0880['id']]):_0x1f2586['push'](_0x3d05e2[_0x4b0880['id']]);}),_0x1f2586;}(_0x425054);return _0x60aab5['default'][_0x4c68fe('0x4fb')](_0x60aab5[_0x4c68fe('0x4f8')][_0x4c68fe('0x3e0')],null,_0x60aab5[_0x4c68fe('0x4f8')]['createElement'](_0x4c68fe('0x38'),null,function(_0x3ddfa9){var _0x2a5186=_0x4c68fe;return _0x2a5186('0x2c2')['concat'](_0x3ddfa9['colorBorderSecondary'],';\x20width:\x2050%;\x20height:\x2022px;\x0a}\x0a.org-tree\x20li::after\x20{\x20right:\x20auto;\x20left:\x2050%;\x20border-left:\x202px\x20solid\x20')[_0x2a5186('0x39d')](_0x3ddfa9['colorBorderSecondary'],';\x20}\x0a.org-tree\x20li:only-child::after,\x20.org-tree\x20li:only-child::before\x20{\x20display:\x20none;\x20}\x0a.org-tree\x20li:only-child\x20{\x20padding-top:\x200;\x20}\x0a.org-tree\x20li:first-child::before,\x20.org-tree\x20li:last-child::after\x20{\x20border:\x200\x20none;\x20}\x0a.org-tree\x20li:last-child::before\x20{\x20border-right:\x202px\x20solid\x20')[_0x2a5186('0x39d')](_0x3ddfa9[_0x2a5186('0x47d')],_0x2a5186('0x4c'))[_0x2a5186('0x39d')](_0x3ddfa9[_0x2a5186('0x47d')],_0x2a5186('0x3fc'))[_0x2a5186('0x39d')](_0x3ddfa9[_0x2a5186('0x55')],_0x2a5186('0x404'))[_0x2a5186('0x39d')](_0x3ddfa9['colorBorderSecondary'],_0x2a5186('0x3f1'))[_0x2a5186('0x39d')](_0x2a17a5[_0x2a5186('0x55d')],';\x20text-align:\x20left;\x20transition:\x20box-shadow\x20.15s,\x20transform\x20.15s;\x0a}\x0a.org-node:hover\x20{\x20transform:\x20translateY(-2px);\x20box-shadow:\x200\x206px\x2016px\x20rgba(0,0,0,0.12);\x20}\x0a.org-node\x20.ic\x20{\x0a\x20\x20width:\x2038px;\x20height:\x2038px;\x20border-radius:\x2010px;\x20flex:\x200\x200\x20auto;\x0a\x20\x20display:\x20flex;\x20align-items:\x20center;\x20justify-content:\x20center;\x20font-size:\x2018px;\x0a}\x0a.org-node\x20.ttl\x20{\x20font-weight:\x20600;\x20font-size:\x2014px;\x20line-height:\x201.2;\x20color:\x20')[_0x2a5186('0x39d')](_0x3ddfa9['colorText'],';\x20}\x0a.org-node\x20.sub\x20{\x20font-size:\x2012px;\x20color:\x20')[_0x2a5186('0x39d')](_0x3ddfa9['colorTextSecondary'],_0x2a5186('0x7c'));}(_0x2d71d8)),_0x60aab5[_0x4c68fe('0x4f8')][_0x4c68fe('0x4fb')](_0x4c68fe('0x1c7'),{'className':_0x4c68fe('0x344')},_0x60aab5[_0x4c68fe('0x4f8')]['createElement'](_0x4c68fe('0x1c7'),{'className':_0x4c68fe('0x3b0')},_0x60aab5['default'][_0x4c68fe('0x4fb')]('ul',null,_0x3e46f0['map'](function(_0x3ec2e6){var _0x4e3713=_0x4c68fe;return _0x60aab5['default'][_0x4e3713('0x4fb')](_0x23631e,{'key':_0x3ec2e6['id'],'node':_0x3ec2e6});})))));};var _0x60aab5=function(_0x21f593){var _0x58122e=_0x24cbf7;if(_0x21f593&&_0x21f593[_0x58122e('0x30e')])return _0x21f593;if(null===_0x21f593||_0x58122e('0xd8')!==_0x505496(_0x21f593)&&'function'!=typeof _0x21f593)return{'default':_0x21f593};var _0x32a70=_0x360088();if(_0x32a70&&_0x32a70['has'](_0x21f593))return _0x32a70['get'](_0x21f593);var _0x311812={},_0xa51f81=Object[_0x58122e('0x14d')]&&Object[_0x58122e('0x7f')];for(var _0x118dff in _0x21f593)if(Object[_0x58122e('0x3d4')]['hasOwnProperty'][_0x58122e('0x545')](_0x21f593,_0x118dff)){var _0x209232=_0xa51f81?Object[_0x58122e('0x7f')](_0x21f593,_0x118dff):null;_0x209232&&(_0x209232['get']||_0x209232[_0x58122e('0x300')])?Object[_0x58122e('0x14d')](_0x311812,_0x118dff,_0x209232):_0x311812[_0x118dff]=_0x21f593[_0x118dff];}return _0x311812[_0x58122e('0x4f8')]=_0x21f593,_0x32a70&&_0x32a70[_0x58122e('0x300')](_0x21f593,_0x311812),_0x311812;}(_0x2f45cd(_0x24cbf7('0x592'))),_0x32067f=_0x2f45cd('antd'),_0x505221=_0x2f45cd(_0x24cbf7('0x480')),_0x2a17a5=_0x2f45cd('./theme');function _0x360088(){var _0x48af8e=_0x24cbf7;if(_0x48af8e('0x3da')!=typeof WeakMap)return null;var _0x181738=new WeakMap();return _0x360088=function(){return _0x181738;},_0x181738;}function _0xb1cb81(_0x2f3761,_0x1997c5){return function(_0xfc1b36){var _0x3a812d=_0x3d72;if(Array[_0x3a812d('0x52b')](_0xfc1b36))return _0xfc1b36;}(_0x2f3761)||function(_0x20d7b6,_0x5a1e4f){var _0x598e25=_0x3d72;if(_0x598e25('0x20a')==typeof Symbol||!(Symbol[_0x598e25('0x20e')]in Object(_0x20d7b6)))return;var _0x9f66d7=[],_0x3da432=!0x0,_0x496ec3=!0x1,_0x23293d=void 0x0;try{for(var _0x596a93,_0x4f0f9b=_0x20d7b6[Symbol[_0x598e25('0x20e')]]();!(_0x3da432=(_0x596a93=_0x4f0f9b['next']())[_0x598e25('0x44')])&&(_0x9f66d7['push'](_0x596a93[_0x598e25('0x3dc')]),!_0x5a1e4f||_0x9f66d7['length']!==_0x5a1e4f);_0x3da432=!0x0);}catch(_0x31a02e){_0x496ec3=!0x0,_0x23293d=_0x31a02e;}finally{try{_0x3da432||null==_0x4f0f9b['return']||_0x4f0f9b[_0x598e25('0x41c')]();}finally{if(_0x496ec3)throw _0x23293d;}}return _0x9f66d7;}(_0x2f3761,_0x1997c5)||function(_0x46472f,_0x57f869){var _0x403200=_0x3d72;if(!_0x46472f)return;if(_0x403200('0x4dd')==typeof _0x46472f)return _0x553a13(_0x46472f,_0x57f869);var _0x1ca8f0=Object[_0x403200('0x3d4')][_0x403200('0x4ef')]['call'](_0x46472f)[_0x403200('0x5d')](0x8,-0x1);'Object'===_0x1ca8f0&&_0x46472f['constructor']&&(_0x1ca8f0=_0x46472f[_0x403200('0xaa')][_0x403200('0x3b6')]);if(_0x403200('0x235')===_0x1ca8f0||_0x403200('0x5b1')===_0x1ca8f0)return Array['from'](_0x1ca8f0);if(_0x403200('0x5ab')===_0x1ca8f0||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x403200('0x56e')](_0x1ca8f0))return _0x553a13(_0x46472f,_0x57f869);}(_0x2f3761,_0x1997c5)||function(){throw new TypeError('Invalid\x20attempt\x20to\x20destructure\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.');}();}function _0x553a13(_0xaaf144,_0x51cbe5){var _0x3a1b76=_0x24cbf7;(null==_0x51cbe5||_0x51cbe5>_0xaaf144[_0x3a1b76('0x5ba')])&&(_0x51cbe5=_0xaaf144[_0x3a1b76('0x5ba')]);for(var _0x58747e=0x0,_0x5128dd=new Array(_0x51cbe5);_0x58747e<_0x51cbe5;_0x58747e++)_0x5128dd[_0x58747e]=_0xaaf144[_0x58747e];return _0x5128dd;}function _0x22464a(_0xcfa8ed,_0xb44bf5){var _0xa51636=_0x24cbf7,_0x3bfe5d=Object['keys'](_0xcfa8ed);if(Object[_0xa51636('0x17b')]){var _0x4fb0de=Object[_0xa51636('0x17b')](_0xcfa8ed);_0xb44bf5&&(_0x4fb0de=_0x4fb0de['filter'](function(_0x15defe){var _0x4f6585=_0xa51636;return Object[_0x4f6585('0x7f')](_0xcfa8ed,_0x15defe)[_0x4f6585('0x24')];})),_0x3bfe5d[_0xa51636('0x3db')]['apply'](_0x3bfe5d,_0x4fb0de);}return _0x3bfe5d;}function _0x2749e2(_0x30edd2,_0x362e59,_0x15ee77){var _0x2ed3cc=_0x24cbf7;return _0x362e59 in _0x30edd2?Object[_0x2ed3cc('0x14d')](_0x30edd2,_0x362e59,{'value':_0x15ee77,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x30edd2[_0x362e59]=_0x15ee77,_0x30edd2;}var _0xadbc3c={'Company':{'icon':_0x60aab5[_0x24cbf7('0x4f8')][_0x24cbf7('0x4fb')](_0x505221[_0x24cbf7('0x210')],null),'color':_0x2a17a5['MUI']['primary']},'Head\x20Office':{'icon':_0x60aab5[_0x24cbf7('0x4f8')][_0x24cbf7('0x4fb')](_0x505221[_0x24cbf7('0x19c')],null),'color':_0x24cbf7('0x5b5')},'Regional\x20Office':{'icon':_0x60aab5[_0x24cbf7('0x4f8')]['createElement'](_0x505221[_0x24cbf7('0x2fa')],null),'color':_0x24cbf7('0x55f')},'Department':{'icon':_0x60aab5[_0x24cbf7('0x4f8')]['createElement'](_0x505221[_0x24cbf7('0x1a7')],null),'color':_0x24cbf7('0x239')},'Unit':{'icon':_0x60aab5[_0x24cbf7('0x4f8')][_0x24cbf7('0x4fb')](_0x505221['TeamOutlined'],null),'color':_0x24cbf7('0x62')},'Sub\x20Unit':{'icon':_0x60aab5['default']['createElement'](_0x505221['TeamOutlined'],null),'color':_0x24cbf7('0x62')},'Other':{'icon':_0x60aab5[_0x24cbf7('0x4f8')][_0x24cbf7('0x4fb')](_0x505221[_0x24cbf7('0x1a7')],null),'color':'#607d8b'}};function _0x33a5ad(_0x378656){var _0x114d8b=_0x24cbf7,_0x2f335e,_0x25bdc4=_0x378656[_0x114d8b('0x343')],_0x2ab511=(_0x2f335e=_0x25bdc4[_0x114d8b('0x3b7')],_0xadbc3c[_0x2f335e]||{'icon':_0x60aab5[_0x114d8b('0x4f8')]['createElement'](_0x505221['ApartmentOutlined'],null),'color':_0x114d8b('0x70')});return _0x60aab5[_0x114d8b('0x4f8')][_0x114d8b('0x4fb')]('div',{'className':_0x114d8b('0x59f')},_0x60aab5[_0x114d8b('0x4f8')]['createElement']('div',{'className':'ic','style':{'background':''['concat'](_0x2ab511[_0x114d8b('0x394')],'18'),'color':_0x2ab511[_0x114d8b('0x394')]}},_0x2ab511[_0x114d8b('0x405')]),_0x60aab5[_0x114d8b('0x4f8')][_0x114d8b('0x4fb')](_0x114d8b('0x1c7'),{'style':{'minWidth':0x0}},_0x60aab5[_0x114d8b('0x4f8')][_0x114d8b('0x4fb')](_0x114d8b('0x1c7'),{'className':_0x114d8b('0x33c')},_0x25bdc4['title']),_0x60aab5[_0x114d8b('0x4f8')][_0x114d8b('0x4fb')](_0x114d8b('0x1c7'),{'className':_0x114d8b('0x1c1')},_0x25bdc4[_0x114d8b('0x3b7')]||_0x114d8b('0x57c'),_0x25bdc4['headcount']>0x0&&_0x60aab5[_0x114d8b('0x4f8')][_0x114d8b('0x4fb')](_0x60aab5[_0x114d8b('0x4f8')][_0x114d8b('0x3e0')],null,_0x114d8b('0x515'),_0x60aab5['default'][_0x114d8b('0x4fb')](_0x505221[_0x114d8b('0x51c')],{'style':{'fontSize':0xb}}),'\x20',_0x25bdc4[_0x114d8b('0x4a9')]))));}function _0x23631e(_0x462416){var _0x538759=_0x24cbf7,_0x19d6d4=_0x462416['node'];return _0x60aab5[_0x538759('0x4f8')][_0x538759('0x4fb')]('li',null,_0x60aab5['default'][_0x538759('0x4fb')](_0x33a5ad,{'node':_0x19d6d4}),_0x19d6d4[_0x538759('0x2b0')]&&_0x19d6d4[_0x538759('0x2b0')][_0x538759('0x5ba')]>0x0&&_0x60aab5[_0x538759('0x4f8')]['createElement']('ul',null,_0x19d6d4[_0x538759('0x2b0')]['map'](function(_0x6ce22){var _0x6c1555=_0x538759;return _0x60aab5[_0x6c1555('0x4f8')]['createElement'](_0x23631e,{'key':_0x6ce22['id'],'node':_0x6ce22});})));}},{'./theme':0x1a,'@ant-design/icons':_0x401518('0x480'),'antd':_0x401518('0x389'),'react':_0x401518('0x592')}],0x17:[function(_0x172a26,_0x14be71,_0x5c16a9){var _0x43bb36=_0x401518;'use strict';function _0x2a822b(_0x51d950){var _0x53e285=_0x3d72;return(_0x2a822b='function'==typeof Symbol&&_0x53e285('0x4da')==typeof Symbol[_0x53e285('0x20e')]?function(_0x360521){return typeof _0x360521;}:function(_0x2a9610){var _0x5d59e6=_0x53e285;return _0x2a9610&&_0x5d59e6('0x3da')==typeof Symbol&&_0x2a9610['constructor']===Symbol&&_0x2a9610!==Symbol[_0x5d59e6('0x3d4')]?_0x5d59e6('0x4da'):typeof _0x2a9610;})(_0x51d950);}Object[_0x43bb36('0x14d')](_0x5c16a9,_0x43bb36('0x30e'),{'value':!0x0}),_0x5c16a9[_0x43bb36('0x4f8')]=function(){var _0x45277d=_0x43bb36,_0x588465=_0x2dc001[_0x45277d('0x587')][_0x45277d('0x75')]()[_0x45277d('0x331')],_0x4d830f=-0x1!==_0x4c8ff5[_0x45277d('0x187')](('undefined'!=typeof window&&window[_0x45277d('0x498')]||{})[_0x45277d('0x56c')]),_0x1e1b56=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(_0x45277d('0x29e')),0x2),_0x3eb116=_0x1e1b56[0x0],_0x55fdd2=_0x1e1b56[0x1],_0x370362=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(_0x45277d('0x25f')),0x2),_0x88da27=_0x370362[0x0],_0x215f2e=_0x370362[0x1],_0x2e667f=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(null),0x2),_0x38156b=_0x2e667f[0x0],_0x369a9e=_0x2e667f[0x1],_0x10f62e=_0x400e28((0x0,_0x1800cf['useState'])(['Submitted']),0x2),_0x4e6239=_0x10f62e[0x0],_0x51a35f=_0x10f62e[0x1],_0x52d3df=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])([]),0x2),_0x4fcaaa=_0x52d3df[0x0],_0x1b8bb8=_0x52d3df[0x1],_0x16adcb=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(!0x1),0x2),_0xdf6751=_0x16adcb[0x0],_0x12e139=_0x16adcb[0x1],_0x342191=_0x400e28((0x0,_0x1800cf['useState'])(null),0x2),_0x357769=_0x342191[0x0],_0x2e2653=_0x342191[0x1],_0x12cc48=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(null),0x2),_0x1af248=_0x12cc48[0x0],_0x14ee00=_0x12cc48[0x1],_0x4c9dd7=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])({}),0x2),_0x442d50=_0x4c9dd7[0x0],_0x3f5c88=_0x4c9dd7[0x1],_0x321302=_0x400e28((0x0,_0x1800cf['useState'])(!0x1),0x2),_0x1645ef=_0x321302[0x0],_0x52458a=_0x321302[0x1],_0x24ee1b=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(null),0x2),_0xcc11ba=_0x24ee1b[0x0],_0xd95639=_0x24ee1b[0x1],_0x4ea9d2=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(null),0x2),_0x5ab38b=_0x4ea9d2[0x0],_0xa0cae4=_0x4ea9d2[0x1],_0x500e8b=_0x400e28((0x0,_0x1800cf['useState'])(null),0x2),_0x5f12b9=_0x500e8b[0x0],_0x5c66f1=_0x500e8b[0x1],_0x5b95c8=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(null),0x2),_0x571ccb=_0x5b95c8[0x0],_0x3bab39=_0x5b95c8[0x1],_0x2ba857=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])({}),0x2),_0x12e037=_0x2ba857[0x0],_0x3ccc32=_0x2ba857[0x1],_0x14b4ed=_0x400e28((0x0,_0x1800cf['useState'])([]),0x2),_0x4ce117=_0x14b4ed[0x0],_0x20e365=_0x14b4ed[0x1],_0x112b72=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(!0x1),0x2),_0x2904bb=_0x112b72[0x0],_0x48519e=_0x112b72[0x1],_0x533542=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(!0x1),0x2),_0x3d0dbc=_0x533542[0x0],_0x4e3ee1=_0x533542[0x1],_0x53f761=_0x400e28((0x0,_0x1800cf['useState'])(null),0x2),_0x3945ec=_0x53f761[0x0],_0x62e882=_0x53f761[0x1],_0x4d35d9=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(!0x1),0x2),_0x4c0f7d=_0x4d35d9[0x0],_0x4afa68=_0x4d35d9[0x1],_0x55ca2d=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])([]),0x2),_0x477678=_0x55ca2d[0x0],_0x57ad26=_0x55ca2d[0x1],_0x4068b4=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])({'available':!0x1,'requests':[]}),0x2),_0x4ce3af=_0x4068b4[0x0],_0x21c594=_0x4068b4[0x1],_0x2ed108=_0x400e28((0x0,_0x1800cf[_0x45277d('0x5a7')])(null),0x2),_0x31df28=_0x2ed108[0x0],_0x19115c=_0x2ed108[0x1],_0x35c28a=(0x0,_0x1800cf[_0x45277d('0x32a')])(function(){var _0x5f0d0b=_0x45277d,_0x12c7b7=_0xd4246f()[_0x5f0d0b('0xcb')];_0x12c7b7&&_0x12c7b7[_0x5f0d0b('0x218')]?(_0x2e2653(null),_0x12c7b7[_0x5f0d0b('0x218')]['get']({'page':0x1,'limit':0x1f4,'search':''})[_0x5f0d0b('0x12a')](function(_0x5eb451){var _0x5c0298=_0x5f0d0b;return _0x2e2653(_0x5eb451&&_0x5eb451[_0x5c0298('0xf9')]||[]);})[_0x5f0d0b('0x2e')](function(){return _0x2e2653([]);})):_0x2e2653([]);},[]),_0x27617d=(0x0,_0x1800cf[_0x45277d('0x32a')])(function(){var _0x4c553d=_0x45277d,_0x3a1daf=_0xd4246f()[_0x4c553d('0x269')];_0x3a1daf&&_0x3a1daf[_0x4c553d('0x218')]?(_0x14ee00(null),_0x3a1daf[_0x4c553d('0x218')][_0x4c553d('0x4cb')]({'page':0x1,'limit':0x1f4,'search':''})['then'](function(_0x5bf252){var _0x52e330=_0x4c553d,_0xd5bf25=_0x5bf252&&_0x5bf252['items']||[];_0x14ee00(_0xd5bf25);var _0x2c052b=_0xd5bf25['map'](function(_0x41c71f){return _0x41c71f['id'];});_0x2c052b[_0x52e330('0x5ba')]?_0x552704(_0x3a1daf,'getLeaveDaysCountForTimeSheets',{'ids':_0x2c052b})[_0x52e330('0x12a')](function(_0x368efd){var _0x247332=_0x52e330;_0x52458a(!(!_0x368efd||!_0x368efd[_0x247332('0x1ae')])),_0x3f5c88(_0x368efd&&_0x368efd['counts']||{});})['catch'](function(){_0x52458a(!0x1),_0x3f5c88({});}):(_0x52458a(!0x1),_0x3f5c88({}));})['catch'](function(){return _0x14ee00([]);})):_0x14ee00([]);},[]);(0x0,_0x1800cf[_0x45277d('0x138')])(function(){_0x35c28a(),_0x4d830f&&_0x27617d();},[_0x35c28a,_0x27617d,_0x4d830f]);var _0x33e3fd=function(){var _0x39c6a6=_0x45277d;_0x39c6a6('0x346')===_0x88da27?_0x27617d():_0x35c28a();},_0x5874e3=function(){var _0x13122a=_0x45277d;_0x55fdd2(_0x13122a('0x29e')),_0x5c66f1(null),_0x3bab39(null),_0x62e882(null),_0x3ccc32({}),_0x33e3fd();},_0x5aec18=function(_0x241195){var _0x1cc166=_0x45277d,_0x2265b8=_0xd4246f()[_0x1cc166('0x573')];_0x2265b8&&(_0x2265b8[_0x1cc166('0x446')](_0x241195['id']),_0x5c66f1(_0x383152({},_0x241195,{'readOnly':!0x1})),_0x3ccc32({}),_0x3bab39(null),_0x20e365([]),_0x55fdd2(_0x1cc166('0x8e')),_0x48519e(!0x0),_0x552704(_0x2265b8,_0x1cc166('0x3f8'),{'rowTable':_0x1cc166('0x3c7'),'columnTable':_0x1cc166('0x95'),'valueTable':_0x1cc166('0x34e'),'currentId':_0x241195['id'],'save':0x0})[_0x1cc166('0x12a')](function(_0x9d9d2c){_0x3bab39({'projects':_0x9d9d2c[0x0]||[],'dates':_0x9d9d2c[0x1]||[],'entries':_0x9d9d2c[0x2]||[]}),_0x48519e(!0x1);})['catch'](function(){var _0x29b013=_0x1cc166;_0x48519e(!0x1),_0x2dc001['message'][_0x29b013('0x13b')](_0x29b013('0x4ed'),0x5);}),_0x552704(_0x2265b8,_0x1cc166('0x3ca'),{'id':_0x241195['id']})[_0x1cc166('0x12a')](function(_0x59aa63){var _0x386d6e=_0x1cc166;return _0x20e365(Array[_0x386d6e('0x52b')](_0x59aa63)?_0x59aa63:[]);})[_0x1cc166('0x2e')](function(){return _0x20e365([]);}));},_0x3820bc=function(_0x15f7f9,_0x503ea3){var _0x4b18e4=_0x45277d,_0x4d842b=_0x503ea3?_0xd4246f()[_0x4b18e4('0x269')]:_0xd4246f()[_0x4b18e4('0xcb')],_0x1cdf4b=_0xd4246f()[_0x4b18e4('0x410')],_0x137137=_0x1cdf4b&&_0x1cdf4b[_0x4b18e4('0x11d')]?JSON[_0x4b18e4('0x1d2')](_0x1cdf4b['getSourceMapping']()):'';_0x5c66f1(_0x383152({},_0x15f7f9,{'readOnly':!0x0,'isReport':!!_0x503ea3})),_0x62e882(null),_0x57ad26([]),_0x21c594({'available':!0x1,'requests':[]}),_0x55fdd2(_0x4b18e4('0x22a')),_0x4afa68(!0x0),_0x552704(_0x4d842b,'getTimeEntries',{'id':_0x15f7f9['id'],'sm':_0x137137})[_0x4b18e4('0x12a')](function(_0x3ce6bb){_0x62e882({'entries':_0x3ce6bb[0x0]||[],'employee':_0x3ce6bb[0x1]||{},'timesheet':_0x3ce6bb[0x2]||{}}),_0x4afa68(!0x1);})[_0x4b18e4('0x2e')](function(){var _0xc347c5=_0x4b18e4;_0x4afa68(!0x1),_0x2dc001[_0xc347c5('0x186')]['error'](_0xc347c5('0x1c9'),0x5);}),_0x552704(_0x4d842b,'getTimeSheetLogs',{'id':_0x15f7f9['id']})[_0x4b18e4('0x12a')](function(_0x2b2748){var _0x429064=_0x4b18e4;return _0x57ad26(Array[_0x429064('0x52b')](_0x2b2748)?_0x2b2748:[]);})[_0x4b18e4('0x2e')](function(){return _0x57ad26([]);}),_0x552704(_0x4d842b,'getLeaveRequestsForTimeSheet',{'id':_0x15f7f9['id']})[_0x4b18e4('0x12a')](function(_0x15151f){var _0x4a07e4=_0x4b18e4;return _0x21c594({'available':!(!_0x15151f||!_0x15151f['available']),'requests':_0x15151f&&Array[_0x4a07e4('0x52b')](_0x15151f['requests'])?_0x15151f[_0x4a07e4('0xd0')]:[]});})[_0x4b18e4('0x2e')](function(){return _0x21c594({'available':!0x1,'requests':[]});});},_0x56d671=function(_0x5c59fa,_0x4191ed,_0x496ef4,_0x538c8a){_0xd95639(_0x496ef4),_0x552704(_0x5c59fa,_0x4191ed,{'id':_0x496ef4},!0x0)['then'](function(){var _0x1804e8=_0x3d72;_0x2dc001[_0x1804e8('0x186')]['success'](_0x538c8a),_0x35c28a();})['catch'](function(_0x2f0eb2){var _0x2accde=_0x3d72;return _0x2dc001[_0x2accde('0x186')][_0x2accde('0x13b')](_0x2f0eb2&&_0x2f0eb2['message']||_0x2accde('0x21c')[_0x2accde('0x39d')](_0x4191ed),0x5);})['finally'](function(){return _0xd95639(null);});},_0x685b60=function(){var _0x4d2bac=_0x45277d,_0xebbc92=_0xd4246f()[_0x4d2bac('0x269')]||_0xd4246f()[_0x4d2bac('0xcb')];_0xebbc92&&_0x4fcaaa['length']&&(_0x12e139(!0x0),_0x552704(_0xebbc92,_0x4d2bac('0x315'),{'ids':_0x4fcaaa},!0x0)['then'](function(_0x17bce5){var _0x37dd03=_0x4d2bac,_0x20ed61=_0x17bce5&&_0x17bce5[_0x37dd03('0x261')]||0x0;_0x2dc001['message'][_0x37dd03('0x3df')](''[_0x37dd03('0x39d')](_0x20ed61,_0x37dd03('0x5b'))[_0x37dd03('0x39d')](0x1===_0x20ed61?'':'s',_0x37dd03('0x2ec'))),_0x1b8bb8([]),_0x27617d();})['catch'](function(){var _0x443ed0=_0x4d2bac;return _0x2dc001[_0x443ed0('0x186')][_0x443ed0('0x13b')](_0x443ed0('0x1e6'),0x5);})['finally'](function(){return _0x12e139(!0x1);}));},_0x232a87=function(_0x2122ea,_0x5608f2,_0x1baf36,_0x1d4f8b){var _0x3c18fc=_0x45277d,_0x4ed0b3=_0xd4246f()[_0x3c18fc('0x269')]||_0xd4246f()[_0x3c18fc('0xcb')];return _0xd95639(_0x2122ea),_0x552704(_0x4ed0b3,_0x3c18fc('0x464'),{'id':_0x2122ea,'status':_0x5608f2,'note':_0x1d4f8b||''},!0x0)['then'](function(){var _0x471f8e=_0x3c18fc;_0x2dc001[_0x471f8e('0x186')][_0x471f8e('0x3df')]('Timesheet\x20'[_0x471f8e('0x39d')](_0x5608f2[_0x471f8e('0x273')]())),_0x1baf36&&_0x1baf36();})[_0x3c18fc('0x2e')](function(){var _0x4c8c4e=_0x3c18fc;return _0x2dc001['message'][_0x4c8c4e('0x13b')](_0x4c8c4e('0x6b'),0x5);})['finally'](function(){return _0xd95639(null);});},_0x531995=function(_0x373692){var _0x4f0612=_0x45277d,_0x1cbf1a=_0xd4246f()['tabEmployeeTimeEntry'];_0x1cbf1a&&_0x4f0612('0x3da')==typeof _0x1cbf1a[_0x4f0612('0x2a1')]&&_0x1cbf1a[_0x4f0612('0x2a1')](_0x373692,function(_0x3692e7,_0x349dda){var _0xb9fb43=_0x4f0612;0xc8===_0x3692e7&&_0xb9fb43('0x1bb')===_0x349dda?(_0x2dc001[_0xb9fb43('0x186')]['success']('Entry\x20deleted'),_0x5f12b9&&_0x3820bc(_0x5f12b9,_0x5f12b9[_0xb9fb43('0x3a3')])):_0x2dc001[_0xb9fb43('0x186')][_0xb9fb43('0x13b')](_0xb9fb43('0x118'),0x5);});},_0x177958=(0x0,_0x1800cf[_0x45277d('0x5a8')])(function(){var _0x8f28c4=_0x45277d;return _0x571ccb?_0x571ccb[_0x8f28c4('0x64')][_0x8f28c4('0x34f')](function(_0x22c41f){return-0x1!==_0x22c41f['id']&&'-1'!==_0x22c41f['id'];}):[];},[_0x571ccb]),_0x7e739=(0x0,_0x1800cf[_0x45277d('0x32a')])(function(_0x38dad3,_0x24a742){var _0x306c36=_0x45277d,_0x2c2ec1=''[_0x306c36('0x39d')](_0x24a742,'=')[_0x306c36('0x39d')](_0x38dad3);if(_0x2c2ec1 in _0x12e037)return _0x12e037[_0x2c2ec1];if(!_0x571ccb)return'';var _0x3840cb=_0x571ccb[_0x306c36('0x1fa')][_0x306c36('0x134')](function(_0x4b8120){var _0x3d89db=_0x306c36;return _0x4b8120['project']===_0x38dad3&&_0x4b8120[_0x3d89db('0x556')]===_0x24a742;});return _0x3840cb&&null!=_0x3840cb[_0x306c36('0x195')]?_0x3840cb['amount']:'';},[_0x12e037,_0x571ccb]),_0x3561c8=(0x0,_0x1800cf[_0x45277d('0x32a')])(function(_0xfe282){var _0x38adf3=_0x45277d;return _0x177958[_0x38adf3('0x560')](function(_0x433b24,_0x4fa8de){var _0x4f0e26=parseFloat(_0x7e739(_0x4fa8de['id'],_0xfe282));return _0x433b24+(Number['isNaN'](_0x4f0e26)?0x0:_0x4f0e26);},0x0);},[_0x177958,_0x7e739]),_0x679ae=(0x0,_0x1800cf[_0x45277d('0x32a')])(function(_0x256a7b){var _0x51d7c4=_0x45277d;return _0x571ccb?_0x571ccb[_0x51d7c4('0x87')][_0x51d7c4('0x560')](function(_0x120cb1,_0xbcb7b5){var _0x5022f7=parseFloat(_0x7e739(_0x256a7b,_0xbcb7b5['id']));return _0x120cb1+(Number['isNaN'](_0x5022f7)?0x0:_0x5022f7);},0x0):0x0;},[_0x571ccb,_0x7e739]),_0x5ed27d=_0x5f12b9&&!_0x5f12b9[_0x45277d('0x569')]&&_0x45277d('0x353')!==_0x5f12b9['status'],_0x5c5f7d=function(_0x397e98){var _0x449d3f=_0x45277d,_0x5e79b3=new Date(''[_0x449d3f('0x39d')](String(_0x397e98[_0x449d3f('0x556')])['slice'](0x0,0xa),_0x449d3f('0x4d9'))),_0x15c586=Number['isNaN'](_0x5e79b3[_0x449d3f('0x23d')]())?_0x397e98[_0x449d3f('0x556')]:_0x5e79b3['toLocaleDateString'](void 0x0,{'weekday':'short','month':'short','day':_0x449d3f('0x2bf')}),_0x15ad7e=_0x449d3f('0x416');if(_0x397e98[_0x449d3f('0x3a0')]){var _0x1f0907=/morning/i[_0x449d3f('0x56e')](_0x397e98['type'])?_0x449d3f('0x36d'):/after|evening/i[_0x449d3f('0x56e')](_0x397e98[_0x449d3f('0x3b7')])?'Afternoon':_0x449d3f('0x363');_0x15ad7e=_0x449d3f('0x46e')[_0x449d3f('0x39d')](_0x1f0907);}return{'dateStr':_0x15c586,'kind':_0x15ad7e,'cap':_0x397e98[_0x449d3f('0x3a0')]?0x4:0x0};},_0x12f84f=function(_0x2cb623){var _0x47e919=_0x45277d,_0x257d1f=_0xd4246f()[_0x47e919('0x573')];if(_0x257d1f&&_0x5f12b9){var _0x5d09cb=_0x571ccb[_0x47e919('0x87')]['find'](function(_0xb0166a){return _0x3561c8(_0xb0166a['id'])>0x18;});if(_0x5d09cb)_0x2dc001[_0x47e919('0x186')]['error'](_0x47e919('0xdb')[_0x47e919('0x39d')](_0x5d09cb['name'],'\x20exceed\x2024.'),0x5);else{if(_0x4ce117[_0x47e919('0x5ba')]){var _0x384ca7=_0x4ce117[_0x47e919('0x427')](function(_0x40fd06){return{'ld':_0x40fd06,'total':_0x3561c8(_0x40fd06['date'])};})[_0x47e919('0x34f')](function(_0x82044a){var _0x2afb9e=_0x47e919,_0x148e40=_0x82044a['ld'];return _0x82044a[_0x2afb9e('0x532')]>(_0x148e40[_0x2afb9e('0x3a0')]?0x4:0x0);});if(_0x384ca7[_0x47e919('0x5ba')])return void _0x2dc001[_0x47e919('0x202')][_0x47e919('0x13b')]({'title':'Time\x20logged\x20on\x20leave\x20days','content':_0x1800cf['default']['createElement'](_0x47e919('0x1c7'),null,_0x1800cf['default'][_0x47e919('0x4fb')]('p',null,_0x47e919('0x3cb')[_0x47e919('0x39d')](_0x47e919('0x131')===_0x2cb623?_0x47e919('0x3a'):'save',_0x47e919('0x5ae'))),_0x1800cf[_0x47e919('0x4f8')][_0x47e919('0x4fb')]('ul',{'style':{'paddingLeft':0x12,'margin':0x0}},_0x384ca7[_0x47e919('0x427')](function(_0x14940a){var _0x7954ed=_0x47e919,_0x52dab0=_0x14940a['ld'],_0x29e4a6=_0x14940a['total'],_0x477527=_0x5c5f7d(_0x52dab0);return _0x1800cf[_0x7954ed('0x4f8')][_0x7954ed('0x4fb')]('li',{'key':_0x52dab0[_0x7954ed('0x556')],'style':{'marginBottom':0x4}},_0x1800cf[_0x7954ed('0x4f8')]['createElement']('b',null,_0x477527[_0x7954ed('0x44a')]),_0x7954ed('0xb2'),_0x477527[_0x7954ed('0x217')],':\x20',_0x52dab0[_0x7954ed('0x3a0')]?_0x7954ed('0x329')[_0x7954ed('0x39d')](_0x29e4a6,'h'):_0x7954ed('0x3ba')[_0x7954ed('0x39d')](_0x29e4a6,'h'));})))});}var _0x679aad={'rowTable':_0x47e919('0x3c7'),'columnTable':_0x47e919('0x95'),'valueTable':'EmployeeTimeEntry','currentId':_0x5f12b9['id']};Object[_0x47e919('0x33b')](_0x12e037)[_0x47e919('0x475')](function(_0x159207){var _0x5bb6af=_0x47e919,_0x328cd1=_0x400e28(_0x159207[_0x5bb6af('0x3d8')]('='),0x2),_0x139810=_0x328cd1[0x0],_0x31bbbb=_0x328cd1[0x1];_0x679aad[_0x159207]=[_0x139810,_0x31bbbb,''[_0x5bb6af('0x39d')](''===_0x12e037[_0x159207]||null==_0x12e037[_0x159207]?0x0:_0x12e037[_0x159207])];}),_0x4e3ee1(!0x0),_0x552704(_0x257d1f,_0x2cb623,_0x679aad,!0x0)[_0x47e919('0x12a')](function(){var _0x5f0720=_0x47e919;_0x2dc001[_0x5f0720('0x186')][_0x5f0720('0x3df')](_0x5f0720('0x131')===_0x2cb623?_0x5f0720('0x2a9'):_0x5f0720('0x5a2')),_0x3ccc32({});var _0x4b553b=_0x5f0720('0x131')===_0x2cb623?_0x5f0720('0x14c'):_0x5f12b9['status'];_0x5aec18(_0x383152({},_0x5f12b9,{'status':_0x4b553b}));})[_0x47e919('0x2e')](function(){var _0x2640a9=_0x47e919;return _0x2dc001[_0x2640a9('0x186')][_0x2640a9('0x13b')](_0x2640a9('0x7d'),0x5);})['finally'](function(){return _0x4e3ee1(!0x1);});}}},_0x4da822=function(_0xaf18){var _0x50ff6e=_0x45277d;return _0x1800cf[_0x50ff6e('0x4f8')][_0x50ff6e('0x4fb')](_0x2dc001[_0x50ff6e('0x4d8')],{'color':_0x5865ed[_0xaf18]||_0x50ff6e('0x4f8')},_0xaf18);},_0xb634a2=function(_0x13f8d2){var _0x537da9=_0x45277d;return _0x13f8d2>0x0?''[_0x537da9('0x39d')](Math[_0x537da9('0x1da')](_0x13f8d2/0x3c),'h')['concat'](_0x13f8d2%0x3c?'\x20'[_0x537da9('0x39d')](_0x13f8d2%0x3c,'m'):''):'0h';},_0x147c05=function(_0x42c0c0){var _0x165b8f=_0x45277d,_0x41512b=_0x6eba4b(_0x42c0c0['date_start']),_0x2f9e3d=_0x6eba4b(_0x42c0c0['date_end']);return _0x41512b&&_0x2f9e3d?Math[_0x165b8f('0x373')](0x0,Math[_0x165b8f('0x7')]((_0x2f9e3d-_0x41512b)/0xea60)):0x0;};if(_0x45277d('0x8e')===_0x3eb116&&_0x5f12b9){var _0x3fd349=_0x5ed27d&&_0x45277d('0x14c')!==_0x5f12b9[_0x45277d('0x34')];return _0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x45277d('0x1c7'),{'style':{'padding':0x8}},_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x2dc001[_0x45277d('0xdd')],{'style':{'borderRadius':0xe},'title':_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x2dc001['Space'],{'wrap':!0x0},_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x2dc001[_0x45277d('0x244')],{'icon':_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x51bd1c[_0x45277d('0x2fb')],null),'onClick':_0x5874e3},_0x45277d('0x37d')),_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x53e7e7,{'level':0x5,'style':{'margin':0x0}},''[_0x45277d('0x39d')](_0xfa2e94(_0x5f12b9[_0x45277d('0x4c0')]),'\x20–\x20')['concat'](_0xfa2e94(_0x5f12b9['date_end']))),_0x4da822(_0x5f12b9[_0x45277d('0x34')])),'extra':_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x2dc001[_0x45277d('0x390')],{'wrap':!0x0},_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x2dc001[_0x45277d('0x244')],{'icon':_0x1800cf['default']['createElement'](_0x51bd1c[_0x45277d('0x58e')],null),'onClick':function(){var _0x4f0479=_0x45277d;if(_0x571ccb){var _0x47adc8=[[_0x4f0479('0x3c7')][_0x4f0479('0x39d')](_0xe3d6d0(_0x571ccb[_0x4f0479('0x87')][_0x4f0479('0x427')](function(_0x51e49c){var _0x1c7389=_0x4f0479;return _0x51e49c[_0x1c7389('0x3b6')];})),[_0x4f0479('0x10c')])[_0x4f0479('0x45')](',')];_0x177958['forEach'](function(_0x194460){var _0xf7dc50=_0x4f0479;return _0x47adc8[_0xf7dc50('0x3db')]([JSON[_0xf7dc50('0x1d2')](_0x194460[_0xf7dc50('0x3b6')])][_0xf7dc50('0x39d')](_0xe3d6d0(_0x571ccb[_0xf7dc50('0x87')][_0xf7dc50('0x427')](function(_0x3b16d9){return _0x7e739(_0x194460['id'],_0x3b16d9['id'])||0x0;})),[_0x679ae(_0x194460['id'])])[_0xf7dc50('0x45')](','));}),_0x47adc8['push']([_0x4f0479('0x10c')][_0x4f0479('0x39d')](_0xe3d6d0(_0x571ccb[_0x4f0479('0x87')]['map'](function(_0x1072f6){return _0x3561c8(_0x1072f6['id']);})),[''])[_0x4f0479('0x45')](','));var _0x1cf38e=document[_0x4f0479('0x4fb')]('a');_0x1cf38e[_0x4f0479('0x41')]=URL['createObjectURL'](new Blob([_0x47adc8[_0x4f0479('0x45')]('\x0d\x0a')],{'type':_0x4f0479('0x3b')})),_0x1cf38e[_0x4f0479('0xdf')]='timesheet_'['concat'](_0x5f12b9['id'],_0x4f0479('0x20')),_0x1cf38e[_0x4f0479('0xa5')](),URL[_0x4f0479('0x418')](_0x1cf38e[_0x4f0479('0x41')]);}}},'Download'),_0x5ed27d&&_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x2dc001[_0x45277d('0x244')],{'icon':_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x51bd1c[_0x45277d('0x1b7')],null),'loading':_0x3d0dbc,'onClick':function(){var _0x31e1c7=_0x45277d;return _0x12f84f(_0x31e1c7('0xb0'));}},_0x45277d('0x103')),_0x3fd349&&_0x1800cf['default']['createElement'](_0x2dc001[_0x45277d('0x244')],{'type':'primary','icon':_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x51bd1c[_0x45277d('0x314')],null),'loading':_0x3d0dbc,'onClick':function(){return _0x12f84f('updateAllData');}},_0x45277d('0x458')))},function(){var _0x29b5a5=_0x45277d;if(_0x2904bb||!_0x571ccb)return _0x1800cf['default']['createElement'](_0x29b5a5('0x1c7'),{'style':{'textAlign':_0x29b5a5('0x36e'),'padding':0x3c}},_0x1800cf['default'][_0x29b5a5('0x4fb')](_0x2dc001['Spin'],{'size':'large'}));var _0x239034=[{'title':'Project','dataIndex':'name','key':'name','fixed':_0x29b5a5('0x8d'),'width':0xc8,'render':function(_0x27e6de){var _0x3fd7c6=_0x29b5a5;return _0x1800cf[_0x3fd7c6('0x4f8')]['createElement'](_0x3c6e4d,{'strong':!0x0},_0x27e6de);}}][_0x29b5a5('0x39d')](_0xe3d6d0(_0x571ccb[_0x29b5a5('0x87')]['map'](function(_0xaa41d){var _0x606149=_0x29b5a5;return{'title':_0xaa41d[_0x606149('0x3b6')],'key':_0xaa41d['id'],'align':_0x606149('0x36e'),'width':0x60,'render':function(_0x14cfee,_0x31bda4){var _0x195989=_0x606149,_0x49b6d2=_0x5ed27d&&'No'!==_0xaa41d[_0x195989('0x1eb')],_0x5ab044=_0x7e739(_0x31bda4['id'],_0xaa41d['id']);return _0x49b6d2?_0x1800cf[_0x195989('0x4f8')][_0x195989('0x4fb')](_0x2dc001[_0x195989('0x1ea')],{'size':'small','min':0x0,'max':0x18,'step':0.5,'controls':!0x1,'value':''===_0x5ab044?null:Number(_0x5ab044),'onChange':function(_0x48690a){return _0x1309b4=_0x31bda4['id'],_0x2333e5=_0xaa41d['id'],_0x1ba0c2=_0x48690a,_0x3ccc32(function(_0x3b1034){var _0x4a3208=_0x3d72;return _0x383152({},_0x3b1034,_0x2e4488({},''[_0x4a3208('0x39d')](_0x2333e5,'=')[_0x4a3208('0x39d')](_0x1309b4),null==_0x1ba0c2?'':_0x1ba0c2));});var _0x1309b4,_0x2333e5,_0x1ba0c2;},'style':{'width':0x46}}):_0x1800cf[_0x195989('0x4f8')]['createElement'](_0x195989('0x433'),null,''===_0x5ab044||null==_0x5ab044?'–':_0x5ab044);}};})),[{'title':'Total','key':_0x29b5a5('0x18a'),'align':_0x29b5a5('0x36e'),'fixed':'right','width':0x50,'render':function(_0x272600,_0xe1bcea){var _0x2fa96a=_0x29b5a5;return _0x1800cf[_0x2fa96a('0x4f8')][_0x2fa96a('0x4fb')](_0x3c6e4d,{'strong':!0x0},_0x679ae(_0xe1bcea['id'])[_0x2fa96a('0x2e4')](0x2)['replace'](/\.00$/,''));}}]);return _0x1800cf[_0x29b5a5('0x4f8')]['createElement'](_0x1800cf[_0x29b5a5('0x4f8')][_0x29b5a5('0x3e0')],null,_0x1800cf[_0x29b5a5('0x4f8')][_0x29b5a5('0x4fb')](_0x2dc001[_0x29b5a5('0x3cd')],{'rowKey':'id','size':'small','bordered':!0x0,'columns':_0x239034,'dataSource':_0x177958,'pagination':!0x1,'scroll':{'x':'max-content'},'locale':{'emptyText':_0x1800cf[_0x29b5a5('0x4f8')][_0x29b5a5('0x4fb')](_0x2dc001['Empty'],{'image':_0x2dc001['Empty'][_0x29b5a5('0x27b')],'description':_0x29b5a5('0x285')})},'summary':function(){var _0x3c5f17=_0x29b5a5;return _0x1800cf[_0x3c5f17('0x4f8')][_0x3c5f17('0x4fb')](_0x2dc001['Table'][_0x3c5f17('0x514')],{'fixed':!0x0},_0x1800cf[_0x3c5f17('0x4f8')][_0x3c5f17('0x4fb')](_0x2dc001[_0x3c5f17('0x3cd')]['Summary'][_0x3c5f17('0xa6')],null,_0x1800cf[_0x3c5f17('0x4f8')][_0x3c5f17('0x4fb')](_0x2dc001[_0x3c5f17('0x3cd')][_0x3c5f17('0x514')][_0x3c5f17('0x425')],{'index':0x0},_0x1800cf[_0x3c5f17('0x4f8')]['createElement'](_0x3c6e4d,{'strong':!0x0},_0x3c5f17('0x10c'))),_0x571ccb['dates'][_0x3c5f17('0x427')](function(_0x518837,_0x300301){var _0x3243d3=_0x3c5f17,_0x3cd94f=_0x3561c8(_0x518837['id']);return _0x1800cf['default']['createElement'](_0x2dc001[_0x3243d3('0x3cd')]['Summary'][_0x3243d3('0x425')],{'key':_0x518837['id'],'index':_0x300301+0x1,'align':_0x3243d3('0x36e')},_0x1800cf['default'][_0x3243d3('0x4fb')](_0x3c6e4d,{'strong':!0x0,'style':{'color':_0x3cd94f>0x18?_0x588465[_0x3243d3('0x3a5')]:void 0x0}},_0x3cd94f[_0x3243d3('0x2e4')](0x2)[_0x3243d3('0x4c6')](/\.00$/,'')));}),_0x1800cf[_0x3c5f17('0x4f8')][_0x3c5f17('0x4fb')](_0x2dc001['Table'][_0x3c5f17('0x514')][_0x3c5f17('0x425')],{'index':_0x571ccb[_0x3c5f17('0x87')]['length']+0x1,'align':_0x3c5f17('0x36e')},_0x1800cf['default'][_0x3c5f17('0x4fb')](_0x3c6e4d,{'strong':!0x0},_0x177958[_0x3c5f17('0x560')](function(_0x162af8,_0x3263bc){return _0x162af8+_0x679ae(_0x3263bc['id']);},0x0)[_0x3c5f17('0x2e4')](0x2)['replace'](/\.00$/,'')))));}}),_0x4ce117[_0x29b5a5('0x5ba')]>0x0&&_0x1800cf[_0x29b5a5('0x4f8')]['createElement'](_0x2dc001['Alert'],{'type':_0x29b5a5('0x1c5'),'showIcon':!0x0,'icon':_0x1800cf[_0x29b5a5('0x4f8')][_0x29b5a5('0x4fb')](_0x51bd1c['CoffeeOutlined'],null),'style':{'marginTop':0x10,'borderRadius':0xa},'message':_0x1800cf[_0x29b5a5('0x4f8')][_0x29b5a5('0x4fb')](_0x3c6e4d,{'strong':!0x0},_0x29b5a5('0x420')),'description':_0x1800cf[_0x29b5a5('0x4f8')]['createElement'](_0x29b5a5('0x1c7'),null,_0x1800cf[_0x29b5a5('0x4f8')]['createElement']('div',{'style':{'display':_0x29b5a5('0x37f'),'flexWrap':_0x29b5a5('0x24b'),'gap':0x8,'margin':_0x29b5a5('0x63')}},_0x4ce117[_0x29b5a5('0x427')](function(_0xb27ba2){var _0x3916a7=_0x29b5a5,_0x5c4b7f=_0x5c5f7d(_0xb27ba2);return _0x1800cf['default'][_0x3916a7('0x4fb')](_0x2dc001['Tag'],{'key':_0xb27ba2['date'],'color':_0xb27ba2['half']?_0x3916a7('0x44c'):'volcano','icon':_0x1800cf[_0x3916a7('0x4f8')][_0x3916a7('0x4fb')](_0x51bd1c[_0x3916a7('0xad')],null),'style':{'padding':_0x3916a7('0x364'),'borderRadius':0xe,'fontSize':0xd,'margin':0x0}},_0x1800cf[_0x3916a7('0x4f8')][_0x3916a7('0x4fb')]('b',null,_0x5c4b7f[_0x3916a7('0x44a')]),'\x20·\x20',_0x5c4b7f['kind']);})),_0x1800cf[_0x29b5a5('0x4f8')][_0x29b5a5('0x4fb')](_0x3c6e4d,{'type':_0x29b5a5('0x18d'),'style':{'fontSize':12.5}},_0x29b5a5('0x229')))}));}()));}if('calendar'===_0x3eb116&&_0x5f12b9){var _0x1aca93=_0x3945ec&&_0x3945ec[_0x45277d('0xdc')]||{},_0x309bd2=_0x3945ec&&_0x3945ec[_0x45277d('0x92')]||{},_0x29a361=_0x5f12b9['isReport'];return _0x1800cf['default'][_0x45277d('0x4fb')]('div',{'style':{'padding':0x8}},_0x1800cf['default'][_0x45277d('0x4fb')](_0x2dc001[_0x45277d('0xdd')],{'style':{'borderRadius':0xe},'styles':{'header':{'paddingTop':0xc,'paddingBottom':0xc}},'title':_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x2dc001[_0x45277d('0x390')],{'wrap':!0x0,'size':'middle'},_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x2dc001[_0x45277d('0x244')],{'icon':_0x1800cf['default'][_0x45277d('0x4fb')](_0x51bd1c['ArrowLeftOutlined'],null),'onClick':_0x5874e3},'Back'),_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x2dc001['Avatar'],{'size':0x28,'src':_0x1aca93['image'],'icon':_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x51bd1c[_0x45277d('0x51c')],null)}),_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')]('div',null,_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x45277d('0x1c7'),{'style':{'display':_0x45277d('0x37f'),'alignItems':_0x45277d('0x36e'),'gap':0x8}},_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x53e7e7,{'level':0x5,'style':{'margin':0x0}},_0x1aca93[_0x45277d('0x3b6')]||_0x45277d('0x3b3')),_0x4da822(_0x309bd2[_0x45277d('0x34')]||_0x5f12b9[_0x45277d('0x34')])),_0x1800cf['default'][_0x45277d('0x4fb')](_0x3c6e4d,{'type':_0x45277d('0x18d'),'style':{'fontSize':12.5,'fontWeight':0x190}},''[_0x45277d('0x39d')](_0xfa2e94(_0x5f12b9['date_start']),_0x45277d('0x15d'))[_0x45277d('0x39d')](_0xfa2e94(_0x5f12b9[_0x45277d('0x585')]))))),'extra':_0x29a361?_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x2dc001['Space'],{'wrap':!0x0},_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x2dc001[_0x45277d('0x244')],{'type':_0x45277d('0x3e5'),'icon':_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x51bd1c[_0x45277d('0x314')],null),'loading':_0xcc11ba===_0x5f12b9['id'],'onClick':function(){var _0x1e9c4e=_0x45277d;return _0x232a87(_0x5f12b9['id'],_0x1e9c4e('0x353'),_0x5874e3);}},'Approve'),_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x2dc001[_0x45277d('0x244')],{'danger':!0x0,'icon':_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x51bd1c[_0x45277d('0x49c')],null),'loading':_0xcc11ba===_0x5f12b9['id'],'onClick':function(){return _0x19115c({'id':_0x5f12b9['id'],'note':''});}},_0x45277d('0x23b'))):null},function(){var _0x473670=_0x45277d;if(_0x4c0f7d||!_0x3945ec)return _0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x473670('0x1c7'),{'style':{'textAlign':_0x473670('0x36e'),'padding':0x3c}},_0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x2dc001[_0x473670('0x4cc')],{'size':_0x473670('0x54a')}));var _0x717460=_0x6eba4b(_0x5f12b9[_0x473670('0x4c0')]),_0xb7bc7c=new Date()[_0x473670('0x8a')]()[_0x473670('0x5d')](0x0,0xa),_0x5418f1=Array[_0x473670('0xd7')]({'length':0x7},function(_0x3b2f72,_0x423c44){var _0x432f27=_0x473670,_0x57553a=new Date(_0x717460);_0x57553a['setDate'](_0x717460[_0x432f27('0x29c')]()+_0x423c44);var _0x2ed69b=_0x57553a[_0x432f27('0x8a')]()[_0x432f27('0x5d')](0x0,0xa);return{'key':_0x2ed69b,'dayName':_0x282896[_0x57553a['getDay']()],'dayNum':_0x57553a[_0x432f27('0x29c')](),'mon':_0x57553a[_0x432f27('0x40f')](void 0x0,{'month':'short'}),'isToday':_0x2ed69b===_0xb7bc7c,'isWeekend':0x0===_0x57553a['getDay']()||0x6===_0x57553a[_0x432f27('0x10f')](),'entries':[],'minutes':0x0};}),_0x3a1b34=0x0;_0x3945ec['entries'][_0x473670('0x475')](function(_0x58a247){var _0x57a414=_0x473670,_0x27b19f=String(_0x58a247[_0x57a414('0x4c0')]||'')['slice'](0x0,0xa),_0x5ee000=_0x147c05(_0x58a247),_0x304ac4=_0x5418f1[_0x57a414('0x134')](function(_0x101560){var _0x48fc22=_0x57a414;return _0x101560[_0x48fc22('0x24d')]===_0x27b19f;});_0x304ac4&&(_0x304ac4[_0x57a414('0x1fa')][_0x57a414('0x3db')](_0x58a247),_0x304ac4[_0x57a414('0x472')]+=_0x5ee000),_0x3a1b34+=_0x5ee000;});var _0x189781=_0x5418f1[_0x473670('0x34f')](function(_0x2024b5){var _0x549e0b=_0x473670;return _0x2024b5[_0x549e0b('0x472')]>0x0;})['length'],_0x575fe2=_0x3945ec[_0x473670('0x1fa')]['length'],_0x3f7c0d=!_0x5f12b9[_0x473670('0x3a3')]&&_0x473670('0x353')!==_0x5f12b9[_0x473670('0x34')],_0x152126=function(_0x58bce1){var _0x5cfd70=_0x473670,_0x202ebc=_0x58bce1[_0x5cfd70('0x405')],_0x189881=_0x58bce1[_0x5cfd70('0x278')],_0x4fa48d=_0x58bce1[_0x5cfd70('0x3dc')],_0x4ebea2=_0x58bce1['accent'];return _0x1800cf[_0x5cfd70('0x4f8')][_0x5cfd70('0x4fb')](_0x5cfd70('0x1c7'),{'style':{'flex':_0x5cfd70('0x250'),'minWidth':0x82,'background':_0x588465[_0x5cfd70('0x49')],'borderRadius':0xc,'padding':_0x5cfd70('0x3')}},_0x1800cf['default'][_0x5cfd70('0x4fb')](_0x5cfd70('0x1c7'),{'style':{'fontSize':0xc,'color':_0x588465[_0x5cfd70('0x359')],'marginBottom':0x3}},_0x189881),_0x1800cf[_0x5cfd70('0x4f8')][_0x5cfd70('0x4fb')](_0x5cfd70('0x1c7'),{'style':{'fontSize':0x16,'fontWeight':0x2bc,'lineHeight':1.1,'color':_0x4ebea2||_0x588465[_0x5cfd70('0xc8')],'display':_0x5cfd70('0x37f'),'alignItems':_0x5cfd70('0x36e'),'gap':0x7}},_0x202ebc,_0x4fa48d));};return _0x1800cf[_0x473670('0x4f8')]['createElement'](_0x1800cf[_0x473670('0x4f8')][_0x473670('0x3e0')],null,_0x1800cf['default'][_0x473670('0x4fb')](_0x473670('0x1c7'),{'style':{'display':_0x473670('0x37f'),'gap':0xc,'flexWrap':'wrap','marginBottom':0x12}},_0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x152126,{'icon':_0x1800cf[_0x473670('0x4f8')]['createElement'](_0x51bd1c[_0x473670('0x53e')],null),'label':_0x473670('0x1a2'),'value':_0xb634a2(_0x3a1b34),'accent':_0x588465[_0x473670('0x148')]}),_0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x152126,{'label':_0x473670('0x500'),'value':_0x575fe2}),_0x1800cf['default']['createElement'](_0x152126,{'label':'Days\x20worked','value':''[_0x473670('0x39d')](_0x189781,_0x473670('0x338'))}),_0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x152126,{'label':'Avg\x20/\x20working\x20day','value':_0x189781?_0xb634a2(Math[_0x473670('0x7')](_0x3a1b34/_0x189781)):'0h'})),_0x1800cf[_0x473670('0x4f8')]['createElement'](_0x473670('0x1c7'),{'style':{'overflowX':_0x473670('0x4b6')}},_0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x473670('0x1c7'),{'style':{'display':_0x473670('0x37f'),'minWidth':0x2f8,'borderRadius':0xc,'overflow':'hidden','border':_0x473670('0x5be')[_0x473670('0x39d')](_0x588465[_0x473670('0x47d')])}},_0x5418f1['map'](function(_0x128827,_0x4b8c8c){var _0xe6ec1c=_0x473670;return _0x1800cf[_0xe6ec1c('0x4f8')][_0xe6ec1c('0x4fb')](_0xe6ec1c('0x1c7'),{'key':_0x128827['key'],'style':{'flex':0x1,'minWidth':0x6a,'borderRight':_0x4b8c8c<0x6?_0xe6ec1c('0x5be')[_0xe6ec1c('0x39d')](_0x588465[_0xe6ec1c('0x47d')]):'none','background':_0x128827[_0xe6ec1c('0x426')]?_0x588465[_0xe6ec1c('0x49')]:_0x588465[_0xe6ec1c('0x55')]}},_0x1800cf[_0xe6ec1c('0x4f8')][_0xe6ec1c('0x4fb')](_0xe6ec1c('0x1c7'),{'style':{'textAlign':_0xe6ec1c('0x36e'),'padding':_0xe6ec1c('0x520'),'background':_0x128827[_0xe6ec1c('0x16d')]?_0x588465[_0xe6ec1c('0x148')]:_0x588465[_0xe6ec1c('0x347')],'color':_0x128827[_0xe6ec1c('0x16d')]?_0xe6ec1c('0x272'):_0x588465[_0xe6ec1c('0xc8')],'borderBottom':_0xe6ec1c('0x5be')['concat'](_0x588465['colorBorderSecondary'])}},_0x1800cf['default'][_0xe6ec1c('0x4fb')](_0xe6ec1c('0x1c7'),{'style':{'fontSize':10.5,'textTransform':_0xe6ec1c('0x2c'),'letterSpacing':0.6,'opacity':0.85}},_0x128827['dayName']),_0x1800cf[_0xe6ec1c('0x4f8')][_0xe6ec1c('0x4fb')](_0xe6ec1c('0x1c7'),{'style':{'fontSize':0x11,'fontWeight':0x2bc,'lineHeight':1.15}},_0x128827[_0xe6ec1c('0x2f')]),_0x1800cf['default'][_0xe6ec1c('0x4fb')](_0xe6ec1c('0x1c7'),{'style':{'fontSize':10.5,'opacity':0.8}},_0x128827[_0xe6ec1c('0x14')])),_0x1800cf[_0xe6ec1c('0x4f8')][_0xe6ec1c('0x4fb')](_0xe6ec1c('0x1c7'),{'style':{'textAlign':'center','padding':'4px\x200','fontSize':0xc,'fontWeight':0x2bc,'color':_0x128827['minutes']>0x0?_0x588465[_0xe6ec1c('0x148')]:_0x588465[_0xe6ec1c('0x57b')],'borderBottom':_0xe6ec1c('0x27e')['concat'](_0x588465[_0xe6ec1c('0x47d')])}},_0x128827['minutes']>0x0?_0xb634a2(_0x128827[_0xe6ec1c('0x472')]):'—'),_0x1800cf[_0xe6ec1c('0x4f8')][_0xe6ec1c('0x4fb')]('div',{'style':{'minHeight':0x4e,'padding':_0xe6ec1c('0x1ba'),'display':'flex','flexDirection':'column','gap':0x5}},_0x128827[_0xe6ec1c('0x1fa')][_0xe6ec1c('0x427')](function(_0x1b4791){var _0x3a0ef5=_0xe6ec1c;return _0x1800cf[_0x3a0ef5('0x4f8')][_0x3a0ef5('0x4fb')]('div',{'key':_0x1b4791['id'],'style':{'background':_0x588465[_0x3a0ef5('0x2df')],'border':'1px\x20solid\x20'['concat'](_0x588465['colorPrimaryBorder']),'borderRadius':0x7,'padding':_0x3a0ef5('0xe4'),'fontSize':11.5}},_0x1800cf['default'][_0x3a0ef5('0x4fb')]('div',{'style':{'fontWeight':0x258,'display':_0x3a0ef5('0x37f'),'justifyContent':_0x3a0ef5('0x551'),'gap':0x4}},_0x1800cf[_0x3a0ef5('0x4f8')][_0x3a0ef5('0x4fb')](_0x3a0ef5('0x433'),null,_0x102951(_0x6eba4b(_0x1b4791[_0x3a0ef5('0x4c0')]))),_0x1800cf[_0x3a0ef5('0x4f8')]['createElement']('span',{'style':{'color':_0x588465['colorPrimary']}},_0xb634a2(_0x147c05(_0x1b4791)))),_0x1800cf[_0x3a0ef5('0x4f8')]['createElement']('div',{'style':{'color':_0x588465[_0x3a0ef5('0x359')],'whiteSpace':_0x3a0ef5('0x11e'),'overflow':_0x3a0ef5('0x3ee'),'textOverflow':_0x3a0ef5('0x4f4')}},_0x1b4791['project']&&'null'!==_0x1b4791[_0x3a0ef5('0x5')]?_0x1b4791[_0x3a0ef5('0x5')]:_0x3a0ef5('0x33a')));}),0x0===_0x128827[_0xe6ec1c('0x1fa')][_0xe6ec1c('0x5ba')]&&_0x1800cf[_0xe6ec1c('0x4f8')][_0xe6ec1c('0x4fb')]('div',{'style':{'textAlign':'center','color':_0x588465[_0xe6ec1c('0x57b')],'fontSize':0xb,'paddingTop':0x6}},'—')));}))),_0x4ce3af[_0x473670('0x1ae')]&&_0x4ce3af['requests'][_0x473670('0x5ba')]>0x0&&_0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x473670('0x1c7'),{'style':{'marginTop':0x16}},_0x1800cf['default'][_0x473670('0x4fb')](_0x3c6e4d,{'strong':!0x0,'style':{'display':_0x473670('0x26d'),'marginBottom':0x8}},_0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x51bd1c[_0x473670('0x572')],{'style':{'marginRight':0x6}}),'Leave\x20in\x20this\x20period\x20('[_0x473670('0x39d')](_0x4ce3af[_0x473670('0xd0')]['length'],')')),_0x1800cf[_0x473670('0x4f8')]['createElement'](_0x2dc001[_0x473670('0x3cd')],{'rowKey':'id','size':'small','pagination':!0x1,'scroll':{'x':_0x473670('0x3d0')},'dataSource':_0x4ce3af['requests'],'columns':[{'title':_0x473670('0x386'),'key':_0x473670('0x3b7'),'render':function(_0x9a8709,_0xfa6749){var _0x3603ff=_0x473670;return _0x1800cf[_0x3603ff('0x4f8')][_0x3603ff('0x4fb')](_0x3603ff('0x1c7'),null,_0x1800cf[_0x3603ff('0x4f8')][_0x3603ff('0x4fb')](_0x3603ff('0x1c7'),{'style':{'fontWeight':0x258}},_0xfa6749[_0x3603ff('0x9c')]||_0x3603ff('0x337')),_0xfa6749[_0x3603ff('0x1cb')]&&String(_0xfa6749[_0x3603ff('0x1cb')])['trim']()?_0x1800cf[_0x3603ff('0x4f8')][_0x3603ff('0x4fb')](_0x3c6e4d,{'type':_0x3603ff('0x18d'),'style':{'fontSize':0xc}},String(_0xfa6749[_0x3603ff('0x1cb')])[_0x3603ff('0x46d')]()):null);}},{'title':_0x473670('0x374'),'key':_0x473670('0x561'),'render':function(_0x418d2e,_0x555d2f){var _0x2fb66c=_0x473670;return _0x555d2f[_0x2fb66c('0x4c0')]===_0x555d2f[_0x2fb66c('0x585')]?_0x4cf66b(_0x555d2f[_0x2fb66c('0x4c0')]):''[_0x2fb66c('0x39d')](_0x4cf66b(_0x555d2f[_0x2fb66c('0x4c0')]),_0x2fb66c('0x15d'))[_0x2fb66c('0x39d')](_0x4cf66b(_0x555d2f[_0x2fb66c('0x585')]));}},{'title':_0x473670('0x496'),'key':_0x473670('0x3fd'),'render':function(_0x6bb0f,_0x4441a5){var _0x3d4ed0=_0x473670,_0x35d1dd=Array[_0x3d4ed0('0x52b')](_0x4441a5[_0x3d4ed0('0x3fd')])?_0x4441a5['days']:[];return _0x35d1dd[_0x3d4ed0('0x5ba')]?_0x1800cf[_0x3d4ed0('0x4f8')]['createElement'](_0x3d4ed0('0x1c7'),{'style':{'display':_0x3d4ed0('0x37f'),'flexWrap':_0x3d4ed0('0x24b'),'gap':0x6}},_0x35d1dd['map'](function(_0x1f25fb){var _0x30a6da=_0x3d4ed0;return _0x1800cf[_0x30a6da('0x4f8')]['createElement'](_0x2dc001[_0x30a6da('0x4d8')],{'key':''[_0x30a6da('0x39d')](_0x4441a5['id'],'-')[_0x30a6da('0x39d')](_0x1f25fb[_0x30a6da('0x556')]),'color':(_0x1bc665=_0x1f25fb['type'],/^\s*full day\s*$/i[_0x30a6da('0x56e')](String(_0x1bc665||''))?'volcano':_0x30a6da('0x44c')),'icon':_0x1800cf['default'][_0x30a6da('0x4fb')](_0x51bd1c[_0x30a6da('0xad')],null),'style':{'margin':0x0,'borderRadius':0xc,'padding':_0x30a6da('0x52')}},_0x1800cf[_0x30a6da('0x4f8')][_0x30a6da('0x4fb')]('b',null,_0x4cf66b(_0x1f25fb[_0x30a6da('0x556')])),'\x20·\x20',_0x1f25fb[_0x30a6da('0x3b7')]);var _0x1bc665;})):_0x1800cf[_0x3d4ed0('0x4f8')][_0x3d4ed0('0x4fb')](_0x3c6e4d,{'type':_0x3d4ed0('0x18d')},'—');}},{'title':_0x473670('0x10c'),'key':_0x473670('0x532'),'align':_0x473670('0x36e'),'render':function(_0x4f7e3e,_0x36aa23){var _0x2411f1=_0x473670,_0x598a7e=Number(_0x36aa23[_0x2411f1('0x470')])||0x0;return _0x598a7e?''[_0x2411f1('0x39d')](_0x598a7e,_0x2411f1('0x417'))['concat'](0x1===_0x598a7e?'':'s'):_0x1800cf[_0x2411f1('0x4f8')]['createElement'](_0x3c6e4d,{'type':_0x2411f1('0x18d')},'—');}},{'title':_0x473670('0x10d'),'key':_0x473670('0x34'),'render':function(_0x18f788,_0xfe435a){var _0x376d28=_0x473670;return _0x1800cf['default'][_0x376d28('0x4fb')](_0x2dc001['Tag'],{'color':_0x597043[_0xfe435a[_0x376d28('0x34')]]||_0x376d28('0x4f8'),'style':{'margin':0x0}},_0xfe435a[_0x376d28('0x34')]);}}]})),_0x1800cf[_0x473670('0x4f8')]['createElement'](_0x3c6e4d,{'strong':!0x0,'style':{'display':_0x473670('0x26d'),'margin':'20px\x200\x208px'}},'All\x20entries\x20('['concat'](_0x575fe2,')')),_0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x2dc001[_0x473670('0x3cd')],{'rowKey':'id','size':_0x473670('0xd3'),'dataSource':_0x3945ec[_0x473670('0x1fa')],'pagination':!0x1,'locale':{'emptyText':_0x1800cf['default'][_0x473670('0x4fb')](_0x2dc001['Empty'],{'image':_0x2dc001['Empty'][_0x473670('0x27b')],'description':_0x473670('0x451')})},'columns':[{'title':_0x473670('0x2af'),'key':_0x473670('0x376'),'render':function(_0x510678,_0x18484f){var _0x450028=_0x473670,_0x3419e1=_0x6eba4b(_0x18484f['date_start']);return _0x3419e1?''[_0x450028('0x39d')](_0x3419e1[_0x450028('0x40f')](),'\x20')['concat'](_0x102951(_0x3419e1)):'-';}},{'title':_0x473670('0xff'),'key':_0x473670('0x574'),'render':function(_0x18358b,_0x233c3a){var _0x536c97=_0x473670,_0x2fb336=_0x6eba4b(_0x233c3a[_0x536c97('0x585')]);return _0x2fb336?''[_0x536c97('0x39d')](_0x2fb336[_0x536c97('0x40f')](),'\x20')[_0x536c97('0x39d')](_0x102951(_0x2fb336)):'-';}},{'title':_0x473670('0x81'),'key':'dur','render':function(_0x3b8db3,_0x4bb389){var _0x582d36=_0x473670;return _0x1800cf['default']['createElement'](_0x2dc001[_0x582d36('0x4d8')],{'color':_0x582d36('0x568'),'style':{'margin':0x0}},_0xb634a2(_0x147c05(_0x4bb389)));}},{'title':_0x473670('0x3c7'),'key':_0x473670('0x5'),'render':function(_0x39cfb8,_0x1923e1){var _0x420432=_0x473670;return _0x1923e1['project']&&_0x420432('0x4e7')!==_0x1923e1['project']?_0x1923e1[_0x420432('0x5')]:_0x1800cf[_0x420432('0x4f8')]['createElement'](_0x3c6e4d,{'type':'secondary'},_0x420432('0x33a'));}},{'title':'Details','dataIndex':_0x473670('0x1cb'),'key':_0x473670('0x1cb'),'ellipsis':!0x0,'render':function(_0x5f2326){var _0x23ac01=_0x473670;return _0x5f2326||_0x1800cf[_0x23ac01('0x4f8')][_0x23ac01('0x4fb')](_0x3c6e4d,{'type':_0x23ac01('0x18d')},'—');}}][_0x473670('0x39d')](_0xe3d6d0(_0x3f7c0d?[{'title':'','key':_0x473670('0x1bc'),'width':0x32,'render':function(_0x3771cb,_0x30e7d4){var _0x493be2=_0x473670;return _0x1800cf[_0x493be2('0x4f8')]['createElement'](_0x2dc001[_0x493be2('0x50')],{'title':'Delete\x20this\x20entry?','onConfirm':function(){return _0x531995(_0x30e7d4['id']);},'okText':_0x493be2('0x43c'),'okButtonProps':{'danger':!0x0}},_0x1800cf[_0x493be2('0x4f8')][_0x493be2('0x4fb')](_0x2dc001['Button'],{'size':_0x493be2('0xd3'),'type':_0x493be2('0x3cc'),'danger':!0x0,'icon':_0x1800cf[_0x493be2('0x4f8')][_0x493be2('0x4fb')](_0x51bd1c[_0x493be2('0x395')],null)}));}}]:[]))}),_0x477678['length']>0x0&&_0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x473670('0x1c7'),{'style':{'marginTop':0x18}},_0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x3c6e4d,{'strong':!0x0,'style':{'display':_0x473670('0x26d'),'marginBottom':0xc}},_0x1800cf[_0x473670('0x4f8')][_0x473670('0x4fb')](_0x51bd1c[_0x473670('0x547')],{'style':{'marginRight':0x6}}),'Approval\x20Log'),_0x1800cf[_0x473670('0x4f8')]['createElement'](_0x2dc001[_0x473670('0x146')],{'items':_0x477678['map'](function(_0x33db73,_0x5ad9d0){var _0x534a36=_0x473670;return{'color':'Approved'===_0x33db73['status_to']?_0x534a36('0x122'):_0x534a36('0x256')===_0x33db73['status_to']?_0x534a36('0x213'):'blue','key':_0x5ad9d0,'children':_0x1800cf[_0x534a36('0x4f8')][_0x534a36('0x4fb')](_0x534a36('0x1c7'),null,_0x1800cf['default'][_0x534a36('0x4fb')](_0x534a36('0x1c7'),{'style':{'fontWeight':0x258}},''[_0x534a36('0x39d')](_0x33db73[_0x534a36('0x3ad')]||'',_0x534a36('0x230'))['concat'](_0x33db73[_0x534a36('0x444')]||'')),_0x1800cf[_0x534a36('0x4f8')][_0x534a36('0x4fb')](_0x534a36('0x1c7'),{'style':{'color':_0x588465[_0x534a36('0x359')],'fontSize':0xc}},_0x33db73[_0x534a36('0x33f')]),_0x33db73[_0x534a36('0x14e')]&&_0x33db73[_0x534a36('0x14e')][_0x534a36('0x46d')]()?_0x1800cf[_0x534a36('0x4f8')]['createElement'](_0x534a36('0x1c7'),{'style':{'marginTop':0x2}},_0x33db73[_0x534a36('0x14e')][_0x534a36('0x46d')]()):null)};})})));}()),_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x2dc001['Modal'],{'title':_0x45277d('0x371'),'open':!!_0x31df28,'okText':_0x45277d('0x23b'),'okButtonProps':{'danger':!0x0},'confirmLoading':_0xcc11ba===(_0x31df28&&_0x31df28['id']),'onOk':function(){var _0x62a18c=_0x45277d,_0x46d4f1=_0x31df28;_0x19115c(null),_0x232a87(_0x46d4f1['id'],_0x62a18c('0x256'),_0x5874e3,_0x46d4f1[_0x62a18c('0x14e')]);},'onCancel':function(){return _0x19115c(null);}},_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x45277d('0x1c7'),{'style':{'marginBottom':0x6,'color':_0x588465['colorTextSecondary']}},_0x45277d('0x21b')),_0x1800cf['default'][_0x45277d('0x4fb')](_0x2dc001[_0x45277d('0x8')][_0x45277d('0x5ac')],{'rows':0x3,'value':_0x31df28?_0x31df28['note']:'','onChange':function(_0x4c2a46){return _0x19115c(function(_0x503c43){var _0x3e68dc=_0x3d72;return _0x383152({},_0x503c43,{'note':_0x4c2a46[_0x3e68dc('0x463')][_0x3e68dc('0x3dc')]});});},'placeholder':_0x45277d('0x550')})));}var _0x3217ed=[{'label':'All\x20My\x20Timesheets','value':_0x45277d('0x25f')},{'label':_0x45277d('0x353'),'value':'Approved'},{'label':_0x45277d('0x439'),'value':_0x45277d('0x439')},{'label':_0x45277d('0x256'),'value':_0x45277d('0x256')}]['concat'](_0xe3d6d0(_0x4d830f?[{'label':'Direct\x20Reports\x20-\x20Time\x20Sheets','value':_0x45277d('0x346')}]:[])),_0x514ad4=Array[_0x45277d('0xd7')](new Set((_0x1af248||[])[_0x45277d('0x427')](function(_0x2293d2){return _0x2293d2['employee'];})['filter'](Boolean)))[_0x45277d('0x525')]();return _0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x45277d('0x1c7'),{'style':{'padding':0x8}},_0x1800cf['default'][_0x45277d('0x4fb')](_0x2dc001[_0x45277d('0xdd')],{'style':{'borderRadius':0xe},'styles':{'body':{'paddingTop':0x10}}},_0x1800cf['default'][_0x45277d('0x4fb')](_0x2dc001[_0x45277d('0x390')],{'style':{'width':_0x45277d('0x4ae'),'justifyContent':_0x45277d('0x551'),'marginBottom':0x10},'wrap':!0x0},_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x45277d('0x1c7'),{'style':{'overflowX':'auto'}},_0x1800cf['default']['createElement'](_0x2dc001[_0x45277d('0x1d')],{'options':_0x3217ed,'value':_0x88da27,'onChange':function(_0xa837e9){_0x1b8bb8([]),_0x215f2e(_0xa837e9);}})),_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x2dc001['Space'],{'wrap':!0x0},'Reports'===_0x88da27&&_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x2dc001[_0x45277d('0x37b')],{'allowClear':!0x0,'showSearch':!0x0,'placeholder':_0x45277d('0x56a'),'style':{'minWidth':0xc8},'value':_0x38156b||void 0x0,'onChange':function(_0x134f08){return _0x369a9e(_0x134f08||null);},'options':_0x514ad4[_0x45277d('0x427')](function(_0xc187eb){return{'value':_0xc187eb,'label':_0xc187eb};})}),_0x1800cf['default'][_0x45277d('0x4fb')](_0x2dc001[_0x45277d('0x244')],{'icon':_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x51bd1c['ReloadOutlined'],null),'onClick':_0x33e3fd},_0x45277d('0x48d')))),function(){var _0x470ece=_0x45277d,_0x2be14e=_0x470ece('0x346')===_0x88da27,_0x6d5b49=_0x2be14e?_0x1af248:_0x357769;if(null===_0x6d5b49)return _0x1800cf[_0x470ece('0x4f8')]['createElement'](_0x470ece('0x1c7'),{'style':{'textAlign':_0x470ece('0x36e'),'padding':0x3c}},_0x1800cf[_0x470ece('0x4f8')][_0x470ece('0x4fb')](_0x2dc001['Spin'],{'size':'large'}));var _0x915003=_0x2be14e||_0x470ece('0x25f')===_0x88da27?_0x6d5b49:_0x6d5b49[_0x470ece('0x34f')](function(_0x23ff03){var _0xc94d74=_0x470ece;return _0x23ff03[_0xc94d74('0x34')]===_0x88da27;});_0x2be14e&&_0x38156b&&(_0x915003=_0x915003[_0x470ece('0x34f')](function(_0x53aee6){var _0x7ad51=_0x470ece;return _0x53aee6[_0x7ad51('0xdc')]===_0x38156b;})),_0x2be14e&&(_0x915003=_0x915003[_0x470ece('0x34f')](function(_0x445024){var _0x2e67fb=_0x470ece;return-0x1!==_0x4e6239[_0x2e67fb('0x187')](_0x445024['status']);}));var _0x54d009=[][_0x470ece('0x39d')](_0xe3d6d0(_0x2be14e?[{'title':_0x470ece('0x2fe'),'dataIndex':_0x470ece('0xdc'),'key':_0x470ece('0xdc')}]:[]),[{'title':_0x470ece('0x544'),'key':_0x470ece('0xbb'),'render':function(_0x3e10bd,_0x1a9e0a){var _0x1a97c5=_0x470ece;return _0x1800cf[_0x1a97c5('0x4f8')][_0x1a97c5('0x4fb')](_0x3c6e4d,{'strong':!0x0},''[_0x1a97c5('0x39d')](_0xfa2e94(_0x1a9e0a[_0x1a97c5('0x4c0')]),'\x20–\x20')[_0x1a97c5('0x39d')](_0xfa2e94(_0x1a9e0a[_0x1a97c5('0x585')])));}},{'title':_0x470ece('0x4e2'),'dataIndex':_0x470ece('0x23f'),'key':_0x470ece('0x23f'),'render':function(_0x14315f){var _0x3653ee=_0x470ece;return _0x1800cf[_0x3653ee('0x4f8')][_0x3653ee('0x4fb')](_0x2dc001[_0x3653ee('0x390')],{'size':0x4},_0x1800cf[_0x3653ee('0x4f8')][_0x3653ee('0x4fb')](_0x51bd1c['ClockCircleOutlined'],null),_0x14315f||_0x3653ee('0x2be'));}}],_0xe3d6d0(_0x2be14e&&_0x1645ef?[{'title':'Leave\x20Time','key':_0x470ece('0x5b3'),'render':function(_0x5955bc,_0x5bc675){var _0x2d6ce9=_0x470ece,_0xc70590=_0x442d50[_0x5bc675['id']]||0x0;return _0xc70590>0x0?_0x1800cf[_0x2d6ce9('0x4f8')][_0x2d6ce9('0x4fb')](_0x2dc001[_0x2d6ce9('0x4d8')],{'color':_0x2d6ce9('0x44c'),'style':{'margin':0x0}},''[_0x2d6ce9('0x39d')](_0xc70590,_0x2d6ce9('0x417'))[_0x2d6ce9('0x39d')](0x1===_0xc70590?'':'s')):_0x1800cf[_0x2d6ce9('0x4f8')][_0x2d6ce9('0x4fb')](_0x3c6e4d,{'type':'secondary'},'—');}}]:[]),[{'title':_0x470ece('0x10d'),'dataIndex':'status','key':'status','render':_0x4da822},{'title':_0x470ece('0x57a'),'key':_0x470ece('0x44f'),'render':function(_0x47996f,_0x33b5e5){var _0x185ae6=_0x470ece;return _0x1800cf[_0x185ae6('0x4f8')][_0x185ae6('0x4fb')](_0x2dc001[_0x185ae6('0x390')],{'wrap':!0x0,'onClick':function(_0x54dba2){var _0x24d786=_0x185ae6;return _0x54dba2[_0x24d786('0x255')]();}},!_0x2be14e&&_0x1800cf[_0x185ae6('0x4f8')][_0x185ae6('0x4fb')](_0x2dc001['Tooltip'],{'title':_0x185ae6('0x2aa')},_0x1800cf['default'][_0x185ae6('0x4fb')](_0x2dc001[_0x185ae6('0x244')],{'size':_0x185ae6('0xd3'),'icon':_0x1800cf[_0x185ae6('0x4f8')][_0x185ae6('0x4fb')](_0x51bd1c[_0x185ae6('0x483')],null),'onClick':function(){return _0x5aec18(_0x33b5e5);}})),_0x2be14e&&_0x1800cf[_0x185ae6('0x4f8')][_0x185ae6('0x4fb')](_0x2dc001[_0x185ae6('0x244')],{'size':'small','icon':_0x1800cf[_0x185ae6('0x4f8')]['createElement'](_0x51bd1c['AuditOutlined'],null),'onClick':function(){var _0x4160c6=_0x185ae6;return _0xa0cae4({'id':_0x33b5e5['id'],'value':_0x4160c6('0x353')});}},_0x185ae6('0x10d')),!_0x2be14e&&_0x1800cf[_0x185ae6('0x4f8')][_0x185ae6('0x4fb')](_0x1800cf[_0x185ae6('0x4f8')]['Fragment'],null,_0x1800cf[_0x185ae6('0x4f8')]['createElement'](_0x2dc001[_0x185ae6('0xa0')],{'title':_0x185ae6('0x110')},_0x1800cf[_0x185ae6('0x4f8')][_0x185ae6('0x4fb')](_0x2dc001[_0x185ae6('0x244')],{'size':'small','icon':_0x1800cf[_0x185ae6('0x4f8')][_0x185ae6('0x4fb')](_0x51bd1c[_0x185ae6('0x4c4')],null),'loading':_0xcc11ba===_0x33b5e5['id'],'onClick':function(){var _0x460486=_0x185ae6;return _0x56d671(_0xd4246f()[_0x460486('0xcb')],_0x460486('0x531'),_0x33b5e5['id'],_0x460486('0x45c'));}},_0x185ae6('0x3d3'))),_0x1800cf[_0x185ae6('0x4f8')][_0x185ae6('0x4fb')](_0x2dc001['Tooltip'],{'title':_0x185ae6('0x150')},_0x1800cf[_0x185ae6('0x4f8')][_0x185ae6('0x4fb')](_0x2dc001[_0x185ae6('0x244')],{'size':'small','icon':_0x1800cf[_0x185ae6('0x4f8')][_0x185ae6('0x4fb')](_0x51bd1c[_0x185ae6('0xeb')],null),'loading':_0xcc11ba===_0x33b5e5['id'],'onClick':function(){var _0x5e3837=_0x185ae6;return _0x56d671(_0xd4246f()[_0x5e3837('0xcb')],_0x5e3837('0x469'),_0x33b5e5['id'],_0x5e3837('0x252'));}},_0x185ae6('0x161')))));}}]);return _0x1800cf[_0x470ece('0x4f8')][_0x470ece('0x4fb')](_0x1800cf['default'][_0x470ece('0x3e0')],null,_0x2be14e&&_0x1800cf[_0x470ece('0x4f8')]['createElement'](_0x470ece('0x1c7'),{'style':{'display':_0x470ece('0x37f'),'alignItems':'center','flexWrap':'wrap','gap':0x8,'marginBottom':0xe}},_0x1800cf[_0x470ece('0x4f8')]['createElement'](_0x3c6e4d,{'type':'secondary','style':{'marginRight':0x4}},_0x470ece('0x25e')),_0x1800cf[_0x470ece('0x4f8')][_0x470ece('0x4fb')](_0x2dc001[_0x470ece('0x1c4')][_0x470ece('0x14f')],{'value':_0x4e6239,'onChange':_0x51a35f,'options':[_0x470ece('0x439'),_0x470ece('0x14c'),_0x470ece('0x353'),'Rejected'][_0x470ece('0x427')](function(_0x247e9b){return{'label':_0x247e9b,'value':_0x247e9b};})}),_0x4fcaaa[_0x470ece('0x5ba')]>0x0&&_0x1800cf[_0x470ece('0x4f8')][_0x470ece('0x4fb')](_0x2dc001[_0x470ece('0x244')],{'type':_0x470ece('0x3e5'),'icon':_0x1800cf[_0x470ece('0x4f8')][_0x470ece('0x4fb')](_0x51bd1c[_0x470ece('0x314')],null),'loading':_0xdf6751,'style':{'marginLeft':_0x470ece('0x4b6')},'onClick':_0x685b60},_0x470ece('0x23e')[_0x470ece('0x39d')](_0x4fcaaa[_0x470ece('0x5ba')],'\x20selected'))),_0x1800cf[_0x470ece('0x4f8')]['createElement'](_0x2dc001[_0x470ece('0x3cd')],_0x3ea6e1({'rowKey':'id','size':_0x470ece('0x526'),'columns':_0x54d009,'dataSource':_0x915003,'pagination':{'pageSize':0xa,'hideOnSinglePage':!0x0},'scroll':{'x':'max-content'},'onRow':function(_0x5109c8){var _0x5a69be=_0x470ece;return{'onClick':function(){return _0x3820bc(_0x5109c8,_0x2be14e);},'style':{'cursor':_0x5a69be('0x4ad')}};},'locale':{'emptyText':_0x1800cf[_0x470ece('0x4f8')][_0x470ece('0x4fb')](_0x2dc001[_0x470ece('0x5a5')],{'image':_0x2dc001['Empty'][_0x470ece('0x27b')],'description':_0x470ece('0xc0')})}},_0x2be14e?{'rowSelection':{'selectedRowKeys':_0x4fcaaa,'onChange':_0x1b8bb8,'getCheckboxProps':function(_0x41bc50){var _0x3a99f9=_0x470ece;return{'disabled':_0x3a99f9('0x14c')!==_0x41bc50[_0x3a99f9('0x34')]};}}}:{})));}()),_0x1800cf['default'][_0x45277d('0x4fb')](_0x2dc001['Modal'],{'title':_0x45277d('0x17d'),'open':!!_0x5ab38b,'onCancel':function(){return _0xa0cae4(null);},'onOk':function(){var _0x5297c4=_0x45277d;return _0x232a87(_0x5ab38b['id'],_0x5ab38b[_0x5297c4('0x3dc')],function(){_0xa0cae4(null),_0x27617d();},_0x5ab38b&&_0x5ab38b[_0x5297c4('0x14e')]);},'confirmLoading':_0xcc11ba===(_0x5ab38b&&_0x5ab38b['id']),'okText':_0x45277d('0x4ca')},_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x45277d('0x1c7'),{'style':{'marginBottom':0x8}},_0x1800cf['default'][_0x45277d('0x4fb')](_0x3c6e4d,{'type':'secondary'},'Timesheet\x20Status')),_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x2dc001['Select'],{'style':{'width':_0x45277d('0x4ae')},'value':_0x5ab38b&&_0x5ab38b[_0x45277d('0x3dc')],'onChange':function(_0x388af2){return _0xa0cae4(function(_0x1f5fe6){return _0x383152({},_0x1f5fe6,{'value':_0x388af2});});},'options':[_0x45277d('0x353'),'Pending',_0x45277d('0x256'),_0x45277d('0x14c')]['map'](function(_0x1f9134){return{'value':_0x1f9134,'label':_0x1f9134};})}),_0x5ab38b&&_0x45277d('0x256')===_0x5ab38b['value']&&_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x45277d('0x1c7'),{'style':{'marginTop':0xe}},_0x1800cf[_0x45277d('0x4f8')]['createElement'](_0x45277d('0x1c7'),{'style':{'marginBottom':0x6}},_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x3c6e4d,{'type':'secondary'},_0x45277d('0x21b'))),_0x1800cf[_0x45277d('0x4f8')][_0x45277d('0x4fb')](_0x2dc001['Input'][_0x45277d('0x5ac')],{'rows':0x3,'value':_0x5ab38b[_0x45277d('0x14e')]||'','onChange':function(_0x34e9d0){return _0xa0cae4(function(_0x4db4cb){var _0x131c03=_0x3d72;return _0x383152({},_0x4db4cb,{'note':_0x34e9d0[_0x131c03('0x463')][_0x131c03('0x3dc')]});});},'placeholder':'Add\x20a\x20note\x20explaining\x20why\x20this\x20timesheet\x20is\x20rejected…'}))));};var _0x1800cf=function(_0x54d5dd){var _0x1b643f=_0x43bb36;if(_0x54d5dd&&_0x54d5dd[_0x1b643f('0x30e')])return _0x54d5dd;if(null===_0x54d5dd||_0x1b643f('0xd8')!==_0x2a822b(_0x54d5dd)&&_0x1b643f('0x3da')!=typeof _0x54d5dd)return{'default':_0x54d5dd};var _0x3caf5f=_0x144e95();if(_0x3caf5f&&_0x3caf5f['has'](_0x54d5dd))return _0x3caf5f[_0x1b643f('0x4cb')](_0x54d5dd);var _0x4c63d6={},_0x2fd063=Object[_0x1b643f('0x14d')]&&Object[_0x1b643f('0x7f')];for(var _0x59d306 in _0x54d5dd)if(Object[_0x1b643f('0x3d4')]['hasOwnProperty'][_0x1b643f('0x545')](_0x54d5dd,_0x59d306)){var _0x347c94=_0x2fd063?Object['getOwnPropertyDescriptor'](_0x54d5dd,_0x59d306):null;_0x347c94&&(_0x347c94[_0x1b643f('0x4cb')]||_0x347c94[_0x1b643f('0x300')])?Object[_0x1b643f('0x14d')](_0x4c63d6,_0x59d306,_0x347c94):_0x4c63d6[_0x59d306]=_0x54d5dd[_0x59d306];}return _0x4c63d6[_0x1b643f('0x4f8')]=_0x54d5dd,_0x3caf5f&&_0x3caf5f['set'](_0x54d5dd,_0x4c63d6),_0x4c63d6;}(_0x172a26(_0x43bb36('0x592'))),_0x2dc001=_0x172a26(_0x43bb36('0x389')),_0x51bd1c=_0x172a26(_0x43bb36('0x480'));function _0x144e95(){if('function'!=typeof WeakMap)return null;var _0x308f57=new WeakMap();return _0x144e95=function(){return _0x308f57;},_0x308f57;}function _0x3ea6e1(){var _0x4fffad=_0x43bb36;return(_0x3ea6e1=Object[_0x4fffad('0x50b')]||function(_0x46aa42){var _0x57012e=_0x4fffad;for(var _0x8b5a4b=0x1;_0x8b5a4b<arguments[_0x57012e('0x5ba')];_0x8b5a4b++){var _0x23fb6a=arguments[_0x8b5a4b];for(var _0x4dcf82 in _0x23fb6a)Object[_0x57012e('0x3d4')]['hasOwnProperty'][_0x57012e('0x545')](_0x23fb6a,_0x4dcf82)&&(_0x46aa42[_0x4dcf82]=_0x23fb6a[_0x4dcf82]);}return _0x46aa42;})[_0x4fffad('0x200')](this,arguments);}function _0xe3d6d0(_0x692cf9){return function(_0xcba281){var _0x48915b=_0x3d72;if(Array[_0x48915b('0x52b')](_0xcba281))return _0x396e5d(_0xcba281);}(_0x692cf9)||function(_0xac5edf){var _0x443d90=_0x3d72;if(_0x443d90('0x20a')!=typeof Symbol&&Symbol[_0x443d90('0x20e')]in Object(_0xac5edf))return Array[_0x443d90('0xd7')](_0xac5edf);}(_0x692cf9)||_0x1884d2(_0x692cf9)||function(){throw new TypeError('Invalid\x20attempt\x20to\x20spread\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.');}();}function _0x5e906a(_0xd18ef3,_0x18f79a){var _0x280904=_0x43bb36,_0x38608c=Object[_0x280904('0x33b')](_0xd18ef3);if(Object[_0x280904('0x17b')]){var _0x5a835c=Object[_0x280904('0x17b')](_0xd18ef3);_0x18f79a&&(_0x5a835c=_0x5a835c[_0x280904('0x34f')](function(_0x3f4954){var _0x5f4c5c=_0x280904;return Object[_0x5f4c5c('0x7f')](_0xd18ef3,_0x3f4954)['enumerable'];})),_0x38608c['push'][_0x280904('0x200')](_0x38608c,_0x5a835c);}return _0x38608c;}function _0x383152(_0x5b096e){var _0x107eab=_0x43bb36;for(var _0x4239ee=0x1;_0x4239ee<arguments['length'];_0x4239ee++){var _0x15ad55=null!=arguments[_0x4239ee]?arguments[_0x4239ee]:{};_0x4239ee%0x2?_0x5e906a(Object(_0x15ad55),!0x0)[_0x107eab('0x475')](function(_0x7bb6b6){_0x2e4488(_0x5b096e,_0x7bb6b6,_0x15ad55[_0x7bb6b6]);}):Object['getOwnPropertyDescriptors']?Object[_0x107eab('0x29d')](_0x5b096e,Object['getOwnPropertyDescriptors'](_0x15ad55)):_0x5e906a(Object(_0x15ad55))[_0x107eab('0x475')](function(_0x416ce5){var _0x2913c5=_0x107eab;Object[_0x2913c5('0x14d')](_0x5b096e,_0x416ce5,Object[_0x2913c5('0x7f')](_0x15ad55,_0x416ce5));});}return _0x5b096e;}function _0x2e4488(_0x457bed,_0x527961,_0x2d999f){var _0x5da9db=_0x43bb36;return _0x527961 in _0x457bed?Object[_0x5da9db('0x14d')](_0x457bed,_0x527961,{'value':_0x2d999f,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x457bed[_0x527961]=_0x2d999f,_0x457bed;}function _0x400e28(_0x5dfd81,_0x380066){return function(_0x2afccd){var _0x5f0f22=_0x3d72;if(Array[_0x5f0f22('0x52b')](_0x2afccd))return _0x2afccd;}(_0x5dfd81)||function(_0x3f67c1,_0x3d51e5){var _0x5dec38=_0x3d72;if(_0x5dec38('0x20a')==typeof Symbol||!(Symbol[_0x5dec38('0x20e')]in Object(_0x3f67c1)))return;var _0x5233fc=[],_0x588a17=!0x0,_0x4cf55c=!0x1,_0x14cdac=void 0x0;try{for(var _0x2f487f,_0x3764fe=_0x3f67c1[Symbol[_0x5dec38('0x20e')]]();!(_0x588a17=(_0x2f487f=_0x3764fe[_0x5dec38('0xc')]())['done'])&&(_0x5233fc[_0x5dec38('0x3db')](_0x2f487f[_0x5dec38('0x3dc')]),!_0x3d51e5||_0x5233fc[_0x5dec38('0x5ba')]!==_0x3d51e5);_0x588a17=!0x0);}catch(_0xe8d85c){_0x4cf55c=!0x0,_0x14cdac=_0xe8d85c;}finally{try{_0x588a17||null==_0x3764fe[_0x5dec38('0x41c')]||_0x3764fe[_0x5dec38('0x41c')]();}finally{if(_0x4cf55c)throw _0x14cdac;}}return _0x5233fc;}(_0x5dfd81,_0x380066)||_0x1884d2(_0x5dfd81,_0x380066)||function(){var _0x4034b2=_0x3d72;throw new TypeError(_0x4034b2('0x311'));}();}function _0x1884d2(_0x378ad7,_0x17dc62){var _0x3e78ac=_0x43bb36;if(_0x378ad7){if(_0x3e78ac('0x4dd')==typeof _0x378ad7)return _0x396e5d(_0x378ad7,_0x17dc62);var _0x35cfd5=Object['prototype'][_0x3e78ac('0x4ef')][_0x3e78ac('0x545')](_0x378ad7)[_0x3e78ac('0x5d')](0x8,-0x1);return _0x3e78ac('0x2ed')===_0x35cfd5&&_0x378ad7['constructor']&&(_0x35cfd5=_0x378ad7[_0x3e78ac('0xaa')][_0x3e78ac('0x3b6')]),_0x3e78ac('0x235')===_0x35cfd5||'Set'===_0x35cfd5?Array[_0x3e78ac('0xd7')](_0x35cfd5):_0x3e78ac('0x5ab')===_0x35cfd5||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/['test'](_0x35cfd5)?_0x396e5d(_0x378ad7,_0x17dc62):void 0x0;}}function _0x396e5d(_0x116702,_0x151948){var _0x1b1cb3=_0x43bb36;(null==_0x151948||_0x151948>_0x116702[_0x1b1cb3('0x5ba')])&&(_0x151948=_0x116702['length']);for(var _0x4e2c1a=0x0,_0x449fb3=new Array(_0x151948);_0x4e2c1a<_0x151948;_0x4e2c1a++)_0x449fb3[_0x4e2c1a]=_0x116702[_0x4e2c1a];return _0x449fb3;}var _0x3c6e4d=_0x2dc001[_0x43bb36('0x4b3')]['Text'],_0x53e7e7=_0x2dc001[_0x43bb36('0x4b3')]['Title'],_0x5865ed={'Pending':_0x43bb36('0x46f'),'Submitted':'blue','Approved':_0x43bb36('0x122'),'Rejected':_0x43bb36('0x213')},_0x597043={'Approved':'green','Pending':_0x43bb36('0x46f'),'Processing':_0x43bb36('0x568'),'Rejected':_0x43bb36('0x213'),'Cancellation\x20Requested':_0x43bb36('0x44c'),'Cancelled':'default'},_0x4c8ff5=[_0x43bb36('0x3f2'),'Manager','Restricted\x20Admin',_0x43bb36('0x20d')],_0x3ad9d2=_0x43bb36('0x175'),_0x282896=[_0x43bb36('0x516'),_0x43bb36('0x50d'),_0x43bb36('0x460'),_0x43bb36('0x302'),_0x43bb36('0x1d9'),_0x43bb36('0x65'),_0x43bb36('0xe7')],_0xd4246f=function(){var _0x444c6c=_0x43bb36;return _0x444c6c('0x20a')!=typeof window&&window[_0x444c6c('0x2f0')]||{};};function _0xfa2e94(_0x538a14){var _0x1b67e8=_0x43bb36;if(!_0x538a14)return'';var _0x541eaf=new Date(''[_0x1b67e8('0x39d')](String(_0x538a14)[_0x1b67e8('0x5d')](0x0,0xa),_0x1b67e8('0x4d9')));return Number[_0x1b67e8('0x2c3')](_0x541eaf[_0x1b67e8('0x23d')]())?_0x538a14:_0x541eaf[_0x1b67e8('0x40f')](void 0x0,{'weekday':'short','month':_0x1b67e8('0x4e5'),'day':_0x1b67e8('0x2bf'),'year':_0x1b67e8('0x2bf')});}function _0x4cf66b(_0x27f623){var _0xe01ecc=_0x43bb36;if(!_0x27f623)return'';var _0x5bdb00=new Date(''[_0xe01ecc('0x39d')](String(_0x27f623)[_0xe01ecc('0x5d')](0x0,0xa),_0xe01ecc('0x4d9')));return Number['isNaN'](_0x5bdb00[_0xe01ecc('0x23d')]())?String(_0x27f623):_0x5bdb00[_0xe01ecc('0x40f')](void 0x0,{'weekday':_0xe01ecc('0x4e5'),'month':_0xe01ecc('0x4e5'),'day':_0xe01ecc('0x2bf')});}function _0x6eba4b(_0x36cf2c){var _0x427a8c=_0x43bb36;if(!_0x36cf2c)return null;var _0x31ef68=new Date(String(_0x36cf2c)[_0x427a8c('0x4c6')]('\x20','T'));return Number['isNaN'](_0x31ef68['getTime']())?null:_0x31ef68;}function _0x102951(_0x22f298){var _0x440a22=_0x43bb36;return _0x22f298?_0x22f298['toLocaleTimeString'](void 0x0,{'hour':'2-digit','minute':_0x440a22('0x3e1')}):'';}var _0x2690b9=0x0;function _0x552704(_0x3c726f,_0xe62ef0,_0x92f5f7){var _0xfb59f5=_0x43bb36,_0x289597=arguments[_0xfb59f5('0x5ba')]>0x3&&void 0x0!==arguments[0x3]&&arguments[0x3];return new Promise(function(_0x5efa24,_0x1a7151){var _0x1f1360=_0xfb59f5;if(_0x3c726f&&_0x1f1360('0x3da')==typeof _0x3c726f[_0x1f1360('0xd')]){var _0x29165d=_0x1f1360('0x1d0')['concat'](_0x2690b9+=0x1),_0x55cc69=_0x1f1360('0x3a7')[_0x1f1360('0x39d')](_0x2690b9);_0x3c726f[_0x29165d]=function(_0xe31f9c){return _0x5efa24(_0xe31f9c);},_0x3c726f[_0x55cc69]=function(_0x42e28a){var _0x3aa193=_0x1f1360;return _0x1a7151(_0x42e28a||new Error(_0x3aa193('0x69')));};var _0x35c98e={'callBackData':[],'callBackSuccess':_0x29165d,'callBackFail':_0x55cc69};try{_0x3c726f[_0x1f1360('0xd')](_0xe62ef0,_0x3ad9d2,JSON[_0x1f1360('0x1d2')](_0x92f5f7||{}),_0x35c98e,_0x289597);}catch(_0x4d9cb6){_0x1a7151(_0x4d9cb6);}}else _0x1a7151(new Error(_0x1f1360('0x51f')));});}},{'@ant-design/icons':_0x401518('0x480'),'antd':_0x401518('0x389'),'react':_0x401518('0x592')}],0x18:[function(_0x8cba29,_0x588c59,_0x48a9af){var _0x1de07b=_0x401518;'use strict';Object[_0x1de07b('0x14d')](_0x48a9af,'__esModule',{'value':!0x0}),_0x48a9af[_0x1de07b('0x4f8')]=function(_0xf3fe0d){var _0xa36126=_0x1de07b,_0x335cfe=_0xf3fe0d[_0xa36126('0x5c')],_0x293ae0=!!_0x335cfe&&_0xa36126('0xa1')===_0x335cfe[_0xa36126('0x217')],_0x344ccc=_0x335cfe?''[_0xa36126('0x39d')](_0x335cfe[_0xa36126('0x217')]||_0xa36126('0x2cd'),':')[_0xa36126('0x39d')](_0x335cfe[_0xa36126('0x466')]):null,_0x4d92f3=(_0x5b8a45=_0x57c239[_0xa36126('0x4f8')][_0xa36126('0x5a7')](function(){var _0x2714ba=_0xa36126;if(!_0x344ccc)return!0x1;try{return window['sessionStorage'][_0x2714ba('0x2a2')](_0x2714ba('0x139'))===_0x344ccc;}catch(_0xe98a15){return!0x1;}}),_0x142497=0x2,function(_0x3578d1){if(Array['isArray'](_0x3578d1))return _0x3578d1;}(_0x5b8a45)||function(_0x192beb,_0x51c464){var _0x25140e=_0xa36126;if(_0x25140e('0x20a')!=typeof Symbol&&Symbol[_0x25140e('0x20e')]in Object(_0x192beb)){var _0x1bc450=[],_0x1e6466=!0x0,_0x2e9c9f=!0x1,_0x2d5af9=void 0x0;try{for(var _0x3abc84,_0x262637=_0x192beb[Symbol[_0x25140e('0x20e')]]();!(_0x1e6466=(_0x3abc84=_0x262637[_0x25140e('0xc')]())['done'])&&(_0x1bc450[_0x25140e('0x3db')](_0x3abc84['value']),!_0x51c464||_0x1bc450['length']!==_0x51c464);_0x1e6466=!0x0);}catch(_0x21848f){_0x2e9c9f=!0x0,_0x2d5af9=_0x21848f;}finally{try{_0x1e6466||null==_0x262637[_0x25140e('0x41c')]||_0x262637[_0x25140e('0x41c')]();}finally{if(_0x2e9c9f)throw _0x2d5af9;}}return _0x1bc450;}}(_0x5b8a45,_0x142497)||function(_0x5d21dc,_0x4eb568){var _0x241fec=_0xa36126;if(_0x5d21dc){if(_0x241fec('0x4dd')==typeof _0x5d21dc)return _0x5871d3(_0x5d21dc,_0x4eb568);var _0x5c69b7=Object[_0x241fec('0x3d4')][_0x241fec('0x4ef')][_0x241fec('0x545')](_0x5d21dc)[_0x241fec('0x5d')](0x8,-0x1);return _0x241fec('0x2ed')===_0x5c69b7&&_0x5d21dc[_0x241fec('0xaa')]&&(_0x5c69b7=_0x5d21dc[_0x241fec('0xaa')][_0x241fec('0x3b6')]),_0x241fec('0x235')===_0x5c69b7||_0x241fec('0x5b1')===_0x5c69b7?Array[_0x241fec('0xd7')](_0x5c69b7):_0x241fec('0x5ab')===_0x5c69b7||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/['test'](_0x5c69b7)?_0x5871d3(_0x5d21dc,_0x4eb568):void 0x0;}}(_0x5b8a45,_0x142497)||function(){throw new TypeError('Invalid\x20attempt\x20to\x20destructure\x20non-iterable\x20instance.\x0aIn\x20order\x20to\x20be\x20iterable,\x20non-array\x20objects\x20must\x20have\x20a\x20[Symbol.iterator]()\x20method.');}()),_0x12378f=_0x4d92f3[0x0],_0xfb80f5=_0x4d92f3[0x1],_0x5b8a45,_0x142497;if(!_0x335cfe||_0x12378f)return null;var _0xdee42c=_0x335cfe[_0xa36126('0xa4')],_0x2bea62=_0x335cfe['latestVersion'],_0x4e211f=_0x335cfe['changelogUrl'],_0x92bfc9=_0x335cfe['updaterUrl'],_0x5560f8=_0x335cfe[_0xa36126('0x52c')],_0x31a0d1=_0x293ae0?_0xa36126('0x44d'):_0xa36126('0x5b9')['concat'](_0x2bea62,_0xa36126('0x13e')),_0x251790=_0x293ae0?_0xa36126('0x116')[_0xa36126('0x39d')](_0xdee42c,_0xa36126('0x1dc'))+'IceHRM\x20Pro\x20'['concat'](_0x2bea62,_0xa36126('0x58f'))+'Payroll,\x20Insights\x20and\x20more.\x20Upgrading\x20keeps\x20your\x20settings,\x20uploads\x20and\x20data,\x20and\x20the\x20previous\x20version\x20is\x20backed\x20up\x20so\x20it\x20can\x20be\x20undone.':_0xa36126('0x181')[_0xa36126('0x39d')](_0xdee42c,_0xa36126('0x123'))+'settings,\x20uploads\x20and\x20data\x20are\x20kept,\x20and\x20the\x20previous\x20version\x20is\x20backed\x20up\x20so\x20the\x20update\x20can\x20be\x20undone.';return _0x57c239[_0xa36126('0x4f8')][_0xa36126('0x4fb')](_0x6647a5[_0xa36126('0x1d8')],{'type':_0x293ae0?_0xa36126('0x3df'):_0xa36126('0x240'),'banner':!0x0,'showIcon':!0x0,'closable':!0x0,'onClose':function(){var _0x2ba2cd=_0xa36126;try{window['sessionStorage'][_0x2ba2cd('0x38c')]('icehrm-update-banner-dismissed',_0x344ccc);}catch(_0x4636d2){}_0xfb80f5(!0x0);},'style':{'padding':_0xa36126('0x567'),'alignItems':'center','marginBottom':0x10},'message':_0x57c239[_0xa36126('0x4f8')][_0xa36126('0x4fb')](_0xa36126('0x1c7'),{'style':{'lineHeight':1.35}},_0x57c239[_0xa36126('0x4f8')][_0xa36126('0x4fb')](_0xa36126('0x1c7'),{'style':{'fontSize':0x11,'fontWeight':0x2bc,'marginBottom':0x3}},_0x31a0d1),_0x57c239[_0xa36126('0x4f8')][_0xa36126('0x4fb')](_0xa36126('0x1c7'),{'style':{'fontSize':0xe,'opacity':0.9}},_0x251790)),'action':_0x57c239[_0xa36126('0x4f8')][_0xa36126('0x4fb')](_0x6647a5[_0xa36126('0x390')],null,_0x4e211f?_0x57c239[_0xa36126('0x4f8')]['createElement'](_0x6647a5['Button'],{'size':_0xa36126('0x54a'),'href':_0x4e211f,'target':_0xa36126('0x6a'),'rel':'noopener\x20noreferrer'},_0xa36126('0x271')):null,_0x293ae0&&_0x5560f8?_0x57c239[_0xa36126('0x4f8')]['createElement'](_0x6647a5['Button'],{'size':_0xa36126('0x54a'),'href':_0x5560f8,'target':_0xa36126('0x6a'),'rel':_0xa36126('0x172')},_0xa36126('0x2db')):null,_0x92bfc9?_0x57c239['default']['createElement'](_0x6647a5[_0xa36126('0x244')],{'size':_0xa36126('0x54a'),'type':_0xa36126('0x3e5'),'href':_0x92bfc9,'target':_0xa36126('0x6a'),'rel':_0xa36126('0x172'),'style':{'fontWeight':0x258}},_0x293ae0?_0xa36126('0x3e4'):_0xa36126('0x153')):null)});};var _0x386059,_0x57c239=(_0x386059=_0x8cba29(_0x1de07b('0x592')))&&_0x386059[_0x1de07b('0x30e')]?_0x386059:{'default':_0x386059},_0x6647a5=_0x8cba29(_0x1de07b('0x389'));function _0x5871d3(_0xf96a9a,_0x39005a){var _0x5123a1=_0x1de07b;(null==_0x39005a||_0x39005a>_0xf96a9a[_0x5123a1('0x5ba')])&&(_0x39005a=_0xf96a9a[_0x5123a1('0x5ba')]);for(var _0x426e6f=0x0,_0x238be4=new Array(_0x39005a);_0x426e6f<_0x39005a;_0x426e6f++)_0x238be4[_0x426e6f]=_0xf96a9a[_0x426e6f];return _0x238be4;}},{'antd':_0x401518('0x389'),'react':_0x401518('0x592')}],0x19:[function(_0x349b73,_0x206936,_0x5a8b78){var _0xbd3ba2=_0x401518;'use strict';var _0x2f7065=_0x4cf88a(_0x349b73(_0xbd3ba2('0x592'))),_0x58ec6a=_0x4cf88a(_0x349b73(_0xbd3ba2('0x381'))),_0x5e69d6=_0x349b73(_0xbd3ba2('0x389')),_0x55b9f7=_0x4cf88a(_0x349b73('./AppShell')),_0x51087c=_0x349b73(_0xbd3ba2('0x1c8'));function _0x4cf88a(_0x541079){var _0x5187de=_0xbd3ba2;return _0x541079&&_0x541079[_0x5187de('0x30e')]?_0x541079:{'default':_0x541079};}function _0x5d1b3b(_0x67bdfb,_0x3fe2a7){return function(_0x2d9350){if(Array['isArray'](_0x2d9350))return _0x2d9350;}(_0x67bdfb)||function(_0x7943b6,_0x520c95){var _0x2d925f=_0x3d72;if(_0x2d925f('0x20a')==typeof Symbol||!(Symbol['iterator']in Object(_0x7943b6)))return;var _0x4022aa=[],_0x3fc453=!0x0,_0x57fe3c=!0x1,_0x82d6ec=void 0x0;try{for(var _0x14d184,_0x57d022=_0x7943b6[Symbol[_0x2d925f('0x20e')]]();!(_0x3fc453=(_0x14d184=_0x57d022[_0x2d925f('0xc')]())[_0x2d925f('0x44')])&&(_0x4022aa[_0x2d925f('0x3db')](_0x14d184[_0x2d925f('0x3dc')]),!_0x520c95||_0x4022aa[_0x2d925f('0x5ba')]!==_0x520c95);_0x3fc453=!0x0);}catch(_0x3b93e9){_0x57fe3c=!0x0,_0x82d6ec=_0x3b93e9;}finally{try{_0x3fc453||null==_0x57d022[_0x2d925f('0x41c')]||_0x57d022[_0x2d925f('0x41c')]();}finally{if(_0x57fe3c)throw _0x82d6ec;}}return _0x4022aa;}(_0x67bdfb,_0x3fe2a7)||function(_0x48af05,_0x5b6db4){var _0x230dd0=_0x3d72;if(!_0x48af05)return;if('string'==typeof _0x48af05)return _0x17b882(_0x48af05,_0x5b6db4);var _0x3426ee=Object[_0x230dd0('0x3d4')]['toString'][_0x230dd0('0x545')](_0x48af05)[_0x230dd0('0x5d')](0x8,-0x1);_0x230dd0('0x2ed')===_0x3426ee&&_0x48af05[_0x230dd0('0xaa')]&&(_0x3426ee=_0x48af05[_0x230dd0('0xaa')][_0x230dd0('0x3b6')]);if('Map'===_0x3426ee||_0x230dd0('0x5b1')===_0x3426ee)return Array[_0x230dd0('0xd7')](_0x3426ee);if('Arguments'===_0x3426ee||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/[_0x230dd0('0x56e')](_0x3426ee))return _0x17b882(_0x48af05,_0x5b6db4);}(_0x67bdfb,_0x3fe2a7)||function(){var _0x1ae8a8=_0x3d72;throw new TypeError(_0x1ae8a8('0x311'));}();}function _0x17b882(_0x4df203,_0x1ed071){var _0x3afd83=_0xbd3ba2;(null==_0x1ed071||_0x1ed071>_0x4df203[_0x3afd83('0x5ba')])&&(_0x1ed071=_0x4df203[_0x3afd83('0x5ba')]);for(var _0x3329b8=0x0,_0x2e35da=new Array(_0x1ed071);_0x3329b8<_0x1ed071;_0x3329b8++)_0x2e35da[_0x3329b8]=_0x4df203[_0x3329b8];return _0x2e35da;}function _0x4c0185(){var _0x171874=_0xbd3ba2;try{var _0x3b64f4=localStorage[_0x171874('0x2a2')](_0x171874('0x328'));if(_0x171874('0x1e1')===_0x3b64f4||'light'===_0x3b64f4)return _0x3b64f4;}catch(_0x19a29f){}try{if(window[_0x171874('0x48f')]&&window['matchMedia'](_0x171874('0x4ea'))[_0x171874('0x1ee')])return _0x171874('0x1e1');}catch(_0x3f0030){}return _0x171874('0x4a2');}function _0x120b12(_0x3356ad){var _0x385ba3=_0xbd3ba2,_0x5a8f02=_0x385ba3('0x1e1')===_0x3356ad?_0x51087c['MUI_DARK']['bg']:_0x51087c[_0x385ba3('0x316')]['bg'],_0x50202f=_0x385ba3('0x1e1')===_0x3356ad?_0x51087c[_0x385ba3('0x1ff')]['text']:_0x51087c['MUI'][_0x385ba3('0x3cc')];try{document[_0x385ba3('0x494')]['style'][_0x385ba3('0x588')]=_0x5a8f02,document[_0x385ba3('0x72')]['style'][_0x385ba3('0x588')]=_0x5a8f02,document[_0x385ba3('0x72')]['style'][_0x385ba3('0x394')]=_0x50202f,document[_0x385ba3('0x72')][_0x385ba3('0x4de')](_0x385ba3('0x41d'),_0x3356ad),window[_0x385ba3('0x294')]=_0x3356ad;}catch(_0x48fdea){}}function _0x36587b(_0x48dded){var _0x1aa028=_0xbd3ba2,_0x2f6484=_0x48dded[_0x1aa028('0x53c')],_0x861e97=_0x48dded[_0x1aa028('0x3dd')],_0x2b72f0=_0x5d1b3b(_0x2f7065['default']['useState'](_0x4c0185),0x2),_0x204ec5=_0x2b72f0[0x0],_0x24fa31=_0x2b72f0[0x1];_0x2f7065[_0x1aa028('0x4f8')][_0x1aa028('0x138')](function(){_0x120b12(_0x204ec5);},[_0x204ec5]);var _0x1dc237=_0x2f7065[_0x1aa028('0x4f8')]['useCallback'](function(){_0x24fa31(function(_0x6d5170){var _0x4476c7=_0x3d72,_0x3cc492='dark'===_0x6d5170?_0x4476c7('0x4a2'):'dark';try{localStorage[_0x4476c7('0x38c')](_0x4476c7('0x328'),_0x3cc492);}catch(_0x43bbd7){}return _0x3cc492;});},[]);return _0x2f7065['default'][_0x1aa028('0x4fb')](_0x5e69d6[_0x1aa028('0x22c')],{'theme':(0x0,_0x51087c[_0x1aa028('0x348')])(_0x204ec5)},_0x2f7065[_0x1aa028('0x4f8')][_0x1aa028('0x4fb')](_0x55b9f7[_0x1aa028('0x4f8')],{'bootstrap':_0x2f6484,'config':_0x861e97,'colorMode':_0x204ec5,'onToggleColorMode':_0x1dc237}));}!function(){var _0x49052f=_0xbd3ba2;_0x120b12(_0x4c0185());var _0x409674=function(){var _0x35a7c9=_0x3d72,_0x30729c=document['getElementById'](_0x35a7c9('0x4dc'));if(!_0x30729c)return{};try{return JSON[_0x35a7c9('0x17e')](_0x30729c[_0x35a7c9('0x281')]||'{}');}catch(_0x3f0cf5){return{};}}();fetch(''['concat'](_0x409674['restApiBase'],_0x49052f('0xaf')),{'headers':{'Authorization':_0x49052f('0x55b')[_0x49052f('0x39d')](_0x409674[_0x49052f('0x331')])},'credentials':_0x49052f('0x1a5')})[_0x49052f('0x12a')](function(_0x1b081c){var _0x3bdbdd=_0x49052f;if(!_0x1b081c['ok'])throw new Error(_0x3bdbdd('0x2ea')[_0x3bdbdd('0x39d')](_0x1b081c['status']));return _0x1b081c['json']();})['then'](function(_0x1b7f96){var _0x20af0e=_0x49052f;_0x58ec6a[_0x20af0e('0x4f8')][_0x20af0e('0x51a')](_0x2f7065[_0x20af0e('0x4f8')][_0x20af0e('0x4fb')](_0x36587b,{'bootstrap':_0x1b7f96,'config':_0x409674}),document[_0x20af0e('0x6f')](_0x20af0e('0x284')));})['catch'](function(_0x4394ca){var _0x45c5f=_0x49052f,_0x54fb40;console[_0x45c5f('0x13b')](_0x45c5f('0x341'),_0x4394ca),_0x54fb40=_0x2f7065[_0x45c5f('0x4f8')][_0x45c5f('0x4fb')](_0x45c5f('0x1c7'),{'style':{'padding':0x18}},'Failed\x20to\x20load\x20the\x20app\x20shell:\x20'[_0x45c5f('0x39d')](_0x4394ca[_0x45c5f('0x186')])),_0x58ec6a['default'][_0x45c5f('0x51a')](_0x2f7065[_0x45c5f('0x4f8')][_0x45c5f('0x4fb')](_0x5e69d6['ConfigProvider'],{'theme':(0x0,_0x51087c['buildTheme'])(_0x4c0185())},_0x54fb40),document[_0x45c5f('0x6f')](_0x45c5f('0x284')));try{_0x5e69d6[_0x45c5f('0x186')][_0x45c5f('0x13b')]('Failed\x20to\x20load\x20the\x20app\x20shell');}catch(_0x5d52b7){}});}();},{'./AppShell':0x2,'./theme':0x1a,'antd':_0x401518('0x389'),'react':'react','react-dom':_0x401518('0x381')}],0x1a:[function(_0x54dab,_0x3e1004,_0x3012f1){var _0x56accd=_0x401518;'use strict';Object['defineProperty'](_0x3012f1,_0x56accd('0x30e'),{'value':!0x0}),_0x3012f1['buildTheme']=_0x52ae23,_0x3012f1['MUI_THEME']=_0x3012f1[_0x56accd('0x47')]=_0x3012f1[_0x56accd('0x55d')]=_0x3012f1[_0x56accd('0x45a')]=_0x3012f1[_0x56accd('0x1ff')]=_0x3012f1[_0x56accd('0x316')]=void 0x0;var _0xf596ad=_0x54dab(_0x56accd('0x389'));function _0x33d134(_0xe41825,_0x2e9784){var _0x2e4149=_0x56accd,_0x323e16=Object['keys'](_0xe41825);if(Object[_0x2e4149('0x17b')]){var _0x3698fc=Object[_0x2e4149('0x17b')](_0xe41825);_0x2e9784&&(_0x3698fc=_0x3698fc[_0x2e4149('0x34f')](function(_0xc01d6c){var _0x51201e=_0x2e4149;return Object[_0x51201e('0x7f')](_0xe41825,_0xc01d6c)['enumerable'];})),_0x323e16['push'][_0x2e4149('0x200')](_0x323e16,_0x3698fc);}return _0x323e16;}function _0x3118fd(_0x414053){var _0x425130=_0x56accd;for(var _0x1d4412=0x1;_0x1d4412<arguments['length'];_0x1d4412++){var _0x3b2b8a=null!=arguments[_0x1d4412]?arguments[_0x1d4412]:{};_0x1d4412%0x2?_0x33d134(Object(_0x3b2b8a),!0x0)['forEach'](function(_0x32e551){_0x400478(_0x414053,_0x32e551,_0x3b2b8a[_0x32e551]);}):Object['getOwnPropertyDescriptors']?Object[_0x425130('0x29d')](_0x414053,Object[_0x425130('0x303')](_0x3b2b8a)):_0x33d134(Object(_0x3b2b8a))['forEach'](function(_0xb7f457){var _0x312903=_0x425130;Object[_0x312903('0x14d')](_0x414053,_0xb7f457,Object[_0x312903('0x7f')](_0x3b2b8a,_0xb7f457));});}return _0x414053;}function _0x400478(_0x28e0a3,_0xdd9d38,_0x4a81c2){var _0x43ce65=_0x56accd;return _0xdd9d38 in _0x28e0a3?Object[_0x43ce65('0x14d')](_0x28e0a3,_0xdd9d38,{'value':_0x4a81c2,'enumerable':!0x0,'configurable':!0x0,'writable':!0x0}):_0x28e0a3[_0xdd9d38]=_0x4a81c2,_0x28e0a3;}var _0x48e999={'primary':'#1976d2','primaryDark':_0x56accd('0x196'),'success':'#2e7d32','warning':'#ed6c02','error':'#d32f2f','info':_0x56accd('0x5b5'),'bg':_0x56accd('0x1b'),'paper':_0x56accd('0x51b'),'text':_0x56accd('0x38b'),'textSecondary':_0x56accd('0x1e5'),'divider':_0x56accd('0x367')};_0x3012f1[_0x56accd('0x316')]=_0x48e999;var _0x457a77={'bg':_0x56accd('0x99'),'paper':_0x56accd('0x2e8'),'elevated':_0x56accd('0x4c7'),'text':_0x56accd('0x4db'),'textSecondary':_0x56accd('0x1a'),'border':_0x56accd('0x30')};_0x3012f1[_0x56accd('0x1ff')]=_0x457a77,_0x3012f1[_0x56accd('0x45a')]=_0x56accd('0x253'),_0x3012f1[_0x56accd('0x55d')]=_0x56accd('0x8f'),_0x3012f1[_0x56accd('0x47')]=_0x56accd('0x298');function _0x52ae23(_0x387ebe){var _0x5ba52a=_0x56accd,_0x455a31=_0x5ba52a('0x1e1')===_0x387ebe;return{'algorithm':_0x455a31?_0xf596ad[_0x5ba52a('0x587')][_0x5ba52a('0x162')]:_0xf596ad[_0x5ba52a('0x587')][_0x5ba52a('0x198')],'token':_0x3118fd({'colorPrimary':_0x48e999[_0x5ba52a('0x3e5')],'colorInfo':_0x48e999[_0x5ba52a('0x3e5')],'colorSuccess':_0x48e999[_0x5ba52a('0x3df')],'colorWarning':_0x48e999[_0x5ba52a('0x1c5')],'colorError':_0x48e999['error'],'colorLink':_0x48e999[_0x5ba52a('0x3e5')],'fontFamily':_0x5ba52a('0x13f'),'fontSize':0xe,'borderRadius':0x8,'wireframe':!0x1},_0x455a31?{'colorBgLayout':_0x457a77['bg'],'colorBgContainer':_0x457a77[_0x5ba52a('0xfd')],'colorBgElevated':_0x457a77[_0x5ba52a('0x5a6')],'colorText':_0x457a77[_0x5ba52a('0x3cc')],'colorTextHeading':_0x457a77[_0x5ba52a('0x3cc')],'colorTextSecondary':_0x457a77['textSecondary'],'colorBorderSecondary':_0x457a77['border']}:{'colorBgLayout':_0x48e999['bg'],'colorText':_0x48e999[_0x5ba52a('0x3cc')],'colorTextHeading':_0x48e999[_0x5ba52a('0x3cc')],'colorTextSecondary':_0x48e999[_0x5ba52a('0x1d6')],'colorBorderSecondary':_0x5ba52a('0x15b')}),'components':{'Card':{'borderRadiusLG':0xc,'paddingLG':0x14},'Button':{'fontWeight':0x1f4,'primaryShadow':'none','defaultShadow':_0x5ba52a('0xa'),'controlHeight':0x24},'Table':_0x455a31?{'headerBg':_0x5ba52a('0x4c7'),'headerSplitColor':_0x5ba52a('0x505'),'rowHoverBg':_0x5ba52a('0x4c7'),'cellPaddingBlock':0xe}:{'headerBg':_0x5ba52a('0x7e'),'headerColor':_0x48e999['textSecondary'],'headerSplitColor':_0x5ba52a('0x505'),'borderColor':'#eceff1','rowHoverBg':_0x5ba52a('0x540'),'cellPaddingBlock':0xe},'Tabs':{'itemSelectedColor':_0x48e999['primary'],'inkBarColor':_0x48e999[_0x5ba52a('0x3e5')],'titleFontSize':0xe,'horizontalItemGutter':0x1c},'Layout':{'headerBg':_0x455a31?_0x457a77[_0x5ba52a('0xfd')]:_0x5ba52a('0x51b'),'bodyBg':_0x455a31?_0x457a77['bg']:_0x48e999['bg'],'headerHeight':0x40},'Input':{'controlHeight':0x24},'Select':{'controlHeight':0x24},'Menu':{'darkItemBg':_0x5ba52a('0x253'),'darkSubMenuItemBg':_0x5ba52a('0x247'),'darkItemSelectedBg':_0x48e999['primary'],'darkItemHoverBg':_0x5ba52a('0x33e'),'itemBorderRadius':0x8}}};}var _0x38bbaf=_0x52ae23(_0x56accd('0x4a2'));_0x3012f1[_0x56accd('0x32e')]=_0x38bbaf;},{'antd':_0x401518('0x389')}]},{},[0x19]);
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.setI18n = setI18n;
+exports.getI18n = getI18n;
+exports.getLanguage = getLanguage;
+exports.getLocale = getLocale;
+exports.isRtl = isRtl;
+exports.lookup = lookup;
+exports.has = has;
+exports.t = t;
+exports.tp = tp;
+exports.formatNumber = formatNumber;
+exports.formatDate = formatDate;
+exports["default"] = void 0;
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/**
+ * UI translations for every bundle (shell, admin, modules, extensions).
+ *
+ * Keys are the English text itself (gettext style), so an untranslated string
+ * simply renders in English:
+ *
+ *   import { t, tp } from '../../api/i18n';
+ *   t('Save')                                  // "Speichern"
+ *   t('Welcome back, {name}', { name })        // placeholders use {braces}
+ *   tp(count, '{count} day', '{count} days')   // English singular/plural pair
+ *
+ * The catalog lives on `window` (not in this module) because each gulp bundle
+ * gets its own copy of this file — they must all read the one catalog the shell
+ * installed from /appshell/bootstrap (or core/footer.php on legacy pages).
+ *
+ * Catalogs are maintained with `node tools/i18n/i18n.js` — see
+ * docs/TRANSLATIONS.md. Only pass string LITERALS to t()/tp() so the extractor
+ * can find them; runtime data (menu labels, field labels) must have its
+ * literal in the source somewhere the extractor scans.
+ */
+var STORE_KEY = '__icehrmI18n';
+
+function store() {
+  if (typeof window === 'undefined') return {
+    messages: {}
+  };
+
+  if (!window[STORE_KEY]) {
+    window[STORE_KEY] = {
+      lang: 'en',
+      locale: 'en',
+      dir: 'ltr',
+      messages: {},
+      missing: {}
+    };
+  }
+
+  return window[STORE_KEY];
+}
+/**
+ * Install a catalog: { lang, locale, dir, messages: { english: translated } }.
+ */
+
+
+function setI18n(payload) {
+  var s = store();
+  var p = payload || {};
+  s.lang = p.lang || 'en';
+  s.locale = p.locale || s.lang;
+  s.dir = p.dir === 'rtl' ? 'rtl' : 'ltr';
+  s.messages = p.messages && _typeof(p.messages) === 'object' ? p.messages : {};
+  s.languages = Array.isArray(p.languages) ? p.languages : [];
+  s.userLang = p.userLang || null;
+  s.defaultLang = p.defaultLang || 'en';
+  s.missing = {};
+}
+
+function getI18n() {
+  return store();
+}
+
+function getLanguage() {
+  return store().lang;
+}
+
+function getLocale() {
+  return store().locale;
+}
+
+function isRtl() {
+  return store().dir === 'rtl';
+}
+
+function interpolate(text, vars) {
+  if (!vars) return text;
+  return text.replace(/\{(\w+)\}/g, function (match, name) {
+    return Object.prototype.hasOwnProperty.call(vars, name) && vars[name] !== undefined && vars[name] !== null ? String(vars[name]) : match;
+  });
+}
+/**
+ * Translated text for an English key, or the key itself when there is no
+ * translation. Non-string input is returned unchanged.
+ */
+
+
+function lookup(key) {
+  if (typeof key !== 'string' || key === '') return key;
+  var s = store();
+  var hit = s.messages[key];
+  if (typeof hit === 'string' && hit !== '') return hit;
+  if (s.lang !== 'en' && s.missing) s.missing[key] = true;
+  return key;
+}
+/**
+ * Whether the active catalog has a translation for the key.
+ */
+
+
+function has(key) {
+  var hit = store().messages[key];
+  return typeof hit === 'string' && hit !== '';
+}
+
+function t(key, vars) {
+  var out = lookup(key);
+  return typeof out === 'string' ? interpolate(out, vars) : out;
+}
+/**
+ * Plural helper. English has two forms; `{count}` is filled from `n`. Languages
+ * with richer plural rules translate each form as a whole sentence.
+ */
+
+
+function tp(n, one, other, vars) {
+  return t(n === 1 ? one : other, Object.assign({
+    count: n
+  }, vars || {}));
+}
+/**
+ * Format a number / date with the UI locale (Intl), falling back quietly.
+ */
+
+
+function formatNumber(value, options) {
+  try {
+    return new Intl.NumberFormat(getLocale(), options).format(value);
+  } catch (e) {
+    return String(value);
+  }
+}
+
+function formatDate(value, options) {
+  try {
+    var d = value instanceof Date ? value : new Date(value);
+    if (Number.isNaN(d.getTime())) return String(value);
+    return new Intl.DateTimeFormat(getLocale(), options).format(d);
+  } catch (e) {
+    return String(value);
+  }
+}
+
+var _default = t;
+exports["default"] = _default;
+
+},{}],2:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = ExtensionBanners;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _i18n = require("../api/i18n");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * Banners that extensions add to the landing pages (admin dashboard, employee
+ * dashboard and Home), from DashboardService::addBannerProvider. Each banner:
+ *   {key, tone, icon, title, message, vars, progress: {done, total},
+ *    actions: [{label, g, n, primary, sessionHint: {key, value}}], dismissible}
+ * Texts arrive in English and are translated here (vars fill {placeholders}).
+ * A dismiss lasts until the next login (sessionStorage).
+ */
+var TONES = {
+  green: {
+    gradient: 'linear-gradient(135deg, #52c41a 0%, #389e0d 100%)',
+    shadow: 'rgba(82, 196, 26, 0.3)',
+    color: '#389e0d'
+  },
+  blue: {
+    gradient: 'linear-gradient(135deg, #346CB0 0%, #1d4f8f 100%)',
+    shadow: 'rgba(52, 108, 176, 0.3)',
+    color: '#1d4f8f'
+  },
+  purple: {
+    gradient: 'linear-gradient(135deg, #7b5cd6 0%, #5a3fb0 100%)',
+    shadow: 'rgba(123, 92, 214, 0.3)',
+    color: '#5a3fb0'
+  },
+  orange: {
+    gradient: 'linear-gradient(135deg, #fa8c16 0%, #d46b08 100%)',
+    shadow: 'rgba(250, 140, 22, 0.3)',
+    color: '#d46b08'
+  }
+};
+var ICONS = {
+  rocket: /*#__PURE__*/_react["default"].createElement(_icons.RocketOutlined, null),
+  team: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+  setting: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null)
+};
+var STORE = 'dashboard-dismissed-banners';
+
+function dismissedBanners() {
+  try {
+    return JSON.parse(window.sessionStorage.getItem(STORE) || '[]');
+  } catch (e) {
+    return [];
+  }
+}
+
+function goTo(action, onNavigate) {
+  if (action.sessionHint && action.sessionHint.key) {
+    try {
+      window.sessionStorage.setItem(action.sessionHint.key, action.sessionHint.value);
+    } catch (e) {// Storage blocked: the module opens on its default page.
+    }
+  }
+
+  if (onNavigate) {
+    onNavigate(action.g, action.n);
+  } else {
+    window.location.hash = "#".concat(encodeURIComponent("".concat(action.g, "::").concat(action.n)));
+  }
+}
+
+function BannerButton(_ref) {
+  var label = _ref.label,
+      color = _ref.color,
+      ghost = _ref.ghost,
+      _onClick = _ref.onClick;
+  return /*#__PURE__*/_react["default"].createElement("a", {
+    href: "#",
+    onClick: function onClick(e) {
+      e.preventDefault();
+
+      _onClick();
+    },
+    style: ghost ? {
+      background: 'rgba(255,255,255,0.2)',
+      color: '#fff',
+      padding: '10px 16px',
+      borderRadius: 8,
+      textDecoration: 'none',
+      fontSize: 14,
+      fontWeight: 500,
+      whiteSpace: 'nowrap',
+      border: '1px solid rgba(255,255,255,0.3)'
+    } : {
+      background: '#fff',
+      color: color,
+      padding: '10px 24px',
+      borderRadius: 8,
+      textDecoration: 'none',
+      fontSize: 14,
+      fontWeight: 600,
+      whiteSpace: 'nowrap',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+    }
+  }, label);
+}
+
+function ExtensionBanners(_ref2) {
+  var banners = _ref2.banners,
+      onNavigate = _ref2.onNavigate,
+      style = _ref2.style;
+
+  var _useState = (0, _react.useState)(dismissedBanners),
+      _useState2 = _slicedToArray(_useState, 2),
+      dismissed = _useState2[0],
+      setDismissed = _useState2[1];
+
+  if (!Array.isArray(banners) || banners.length === 0) return null;
+
+  var dismiss = function dismiss(key) {
+    var next = dismissed.concat([key]);
+    setDismissed(next);
+
+    try {
+      window.sessionStorage.setItem(STORE, JSON.stringify(next));
+    } catch (e) {// Storage blocked: the dismiss lasts for this page only.
+    }
+  };
+
+  var visible = banners.filter(function (b) {
+    return dismissed.indexOf(b.key) === -1;
+  });
+  if (visible.length === 0) return null;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: style
+  }, visible.map(function (b) {
+    var tone = TONES[b.tone] || TONES.blue;
+    var progress = b.progress && b.progress.total > 0 ? b.progress : null;
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      key: b.key,
+      style: {
+        background: tone.gradient,
+        borderRadius: 12,
+        padding: '20px 24px',
+        marginBottom: 18,
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        gap: 16,
+        flexWrap: 'wrap',
+        boxShadow: "0 4px 15px ".concat(tone.shadow),
+        border: '2px solid rgba(255,255,255,0.3)'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16,
+        minWidth: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        background: 'rgba(255,255,255,0.2)',
+        borderRadius: '50%',
+        width: 48,
+        height: 48,
+        flex: '0 0 auto',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#fff',
+        fontSize: 20
+      }
+    }, ICONS[b.icon] || /*#__PURE__*/_react["default"].createElement(_icons.RocketOutlined, null)), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        color: '#fff',
+        fontWeight: 600,
+        fontSize: 16,
+        marginBottom: 4
+      }
+    }, (0, _i18n.t)(b.title, b.vars)), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        color: 'rgba(255,255,255,0.9)',
+        fontSize: 14
+      }
+    }, (0, _i18n.t)(b.message, b.vars)), progress ? /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+        marginTop: 8,
+        maxWidth: 360
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Progress, {
+      percent: Math.round(progress.done / progress.total * 100),
+      showInfo: false,
+      size: "small",
+      strokeColor: "#fff",
+      trailColor: "rgba(255,255,255,0.3)",
+      style: {
+        flex: 1,
+        margin: 0
+      }
+    }), /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        fontSize: 12,
+        whiteSpace: 'nowrap',
+        color: 'rgba(255,255,255,0.9)'
+      }
+    }, (0, _i18n.t)('{done} of {total} steps', {
+      done: progress.done,
+      total: progress.total
+    }))) : null)), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        gap: 10,
+        alignItems: 'center',
+        flexWrap: 'wrap'
+      }
+    }, (b.actions || []).map(function (a, i) {
+      return /*#__PURE__*/_react["default"].createElement(BannerButton, {
+        key: a.label,
+        label: (0, _i18n.t)(a.label),
+        color: tone.color,
+        ghost: !a.primary && i > 0,
+        onClick: function onClick() {
+          return goTo(a, onNavigate);
+        }
+      });
+    }), b.dismissible ? /*#__PURE__*/_react["default"].createElement(BannerButton, {
+      label: (0, _i18n.t)('Dismiss'),
+      ghost: true,
+      onClick: function onClick() {
+        return dismiss(b.key);
+      }
+    }) : null));
+  }));
+}
+
+},{"../api/i18n":1,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],3:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = ApiAccess;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Paragraph = _antd.Typography.Paragraph; // Native "API Access" tab for modules::employees — shows the employee's REST API
+// access token and lets them reset it. Reads from / writes to the same legacy
+// MobileAppAdapter (window.modJsList.tabMobileApp) the Mobile App tab uses; the
+// token/enabled flag are injected by initModulesEmployees.
+
+function ApiAccess() {
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var adapter = (window.modJsList || {}).tabMobileApp || null;
+  var apiEnabled = adapter ? adapter.apiEnabled === '1' || adapter.apiEnabled === 1 : false;
+  var apiBaseUrl = adapter ? adapter.apiBaseUrl : null;
+
+  var _useState = (0, _react.useState)(adapter ? adapter.token : null),
+      _useState2 = _slicedToArray(_useState, 2),
+      apiToken = _useState2[0],
+      setApiToken = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      resetting = _useState4[0],
+      setResetting = _useState4[1];
+
+  var cardStyle = {
+    borderRadius: 12,
+    boxShadow: _theme.MUI_SHADOW,
+    marginBottom: 16
+  };
+
+  var resetToken = function resetToken() {
+    if (!adapter) return;
+    setResetting(true);
+
+    adapter.resetApiTokenSuccessCallback = function (cb) {
+      setResetting(false);
+      var v = Array.isArray(cb) ? cb[0] : cb;
+      var newToken = v && _typeof(v) === 'object' ? v.jwtToken : null;
+
+      if (newToken) {
+        adapter.token = newToken; // keep it in sync for the Mobile App tab / re-mounts
+
+        setApiToken(newToken);
+
+        _antd.message.success('API token reset. The previous token no longer works.', 5);
+      } else {
+        _antd.message.error('Could not reset the API token. Please try again.', 5);
+      }
+    };
+
+    adapter.resetApiTokenFailCallback = function () {
+      setResetting(false);
+
+      _antd.message.error('Could not reset the API token. Please try again.', 5);
+    };
+
+    try {
+      adapter.resetApiToken();
+    } catch (e) {
+      setResetting(false);
+    }
+  };
+
+  if (!apiEnabled || !apiToken) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: '100%'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      style: cardStyle,
+      title: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, /*#__PURE__*/_react["default"].createElement(_icons.ApiOutlined, null), "API Access")
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+      description: "REST API access is not enabled for your account."
+    })));
+  }
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: '100%'
+    }
+  }, apiBaseUrl ? /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    style: cardStyle,
+    title: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, /*#__PURE__*/_react["default"].createElement(_icons.ApiOutlined, null), "API Base URL")
+  }, /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    type: "secondary"
+  }, "Base URL for all REST API requests."), /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    copyable: {
+      text: apiBaseUrl
+    },
+    style: {
+      wordBreak: 'break-all',
+      fontFamily: 'monospace',
+      fontSize: 12.5,
+      background: token.colorFillTertiary,
+      padding: 12,
+      borderRadius: 8,
+      marginBottom: 0
+    }
+  }, apiBaseUrl)) : null, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    style: cardStyle,
+    title: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, /*#__PURE__*/_react["default"].createElement(_icons.ApiOutlined, null), "API Access Token"),
+    extra: /*#__PURE__*/_react["default"].createElement(_antd.Popconfirm, {
+      title: "Reset API token",
+      description: "This immediately invalidates your current token. Any integration using it will stop working until updated.",
+      okText: "Reset",
+      cancelText: "Cancel",
+      okButtonProps: {
+        danger: true
+      },
+      onConfirm: resetToken
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      danger: true,
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ReloadOutlined, null),
+      loading: resetting
+    }, "Reset Token"))
+  }, /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    type: "secondary"
+  }, "Use this token to authenticate REST API requests (as a Bearer token). Keep it secret \u2014 anyone with this token can act as you."), /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    copyable: {
+      text: apiToken
+    },
+    style: {
+      wordBreak: 'break-all',
+      fontFamily: 'monospace',
+      fontSize: 12.5,
+      background: token.colorFillTertiary,
+      padding: 12,
+      borderRadius: 8,
+      marginBottom: 0
+    }
+  }, apiToken)));
+}
+
+},{"./theme":29,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = AppShell;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+var _Notifications = _interopRequireDefault(require("./Notifications"));
+
+var _News = _interopRequireDefault(require("./News"));
+
+var _Dashboard = _interopRequireDefault(require("./Dashboard"));
+
+var _EmployeeDashboard = _interopRequireDefault(require("./EmployeeDashboard"));
+
+var _LicenseRenewalBanner = _interopRequireDefault(require("./LicenseRenewalBanner"));
+
+var _UpdateAvailableBanner = _interopRequireDefault(require("./UpdateAvailableBanner"));
+
+var _NativeModuleHost = _interopRequireDefault(require("./NativeModuleHost"));
+
+var _NativeDocumentModal = _interopRequireDefault(require("./NativeDocumentModal"));
+
+var _ModuleSearch = _interopRequireDefault(require("./ModuleSearch"));
+
+var _legacyLinks = require("./legacyLinks");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Header = _antd.Layout.Header,
+    Sider = _antd.Layout.Sider,
+    Content = _antd.Layout.Content;
+var useBreakpoint = _antd.Grid.useBreakpoint; // Map menu-group names to antd SVG icons (always render, unlike the FA webfont
+// which is not fully deployed). Falls back to a generic icon.
+
+var GROUP_ICONS = {
+  Admin: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null),
+  Employees: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+  Manage: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+  Reports: /*#__PURE__*/_react["default"].createElement(_icons.BarChartOutlined, null),
+  'My Reports': /*#__PURE__*/_react["default"].createElement(_icons.BarChartOutlined, null),
+  System: /*#__PURE__*/_react["default"].createElement(_icons.ControlOutlined, null),
+  Insights: /*#__PURE__*/_react["default"].createElement(_icons.FundOutlined, null),
+  Payroll: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+  Finance: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+  Recruitment: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+  Marketplace: /*#__PURE__*/_react["default"].createElement(_icons.ShopOutlined, null),
+  'About You': /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+  Collaboration: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+  Leave: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+  Time: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+  'My Tasks': /*#__PURE__*/_react["default"].createElement(_icons.CheckSquareOutlined, null),
+  Documents: /*#__PURE__*/_react["default"].createElement(_icons.FileTextOutlined, null),
+  Training: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+  Performance: /*#__PURE__*/_react["default"].createElement(_icons.TrophyOutlined, null),
+  Travel: /*#__PURE__*/_react["default"].createElement(_icons.CarOutlined, null)
+}; // Area `icon` name (from the server area registry) -> antd icon. Falls back to a
+// generic icon for extension-defined areas.
+
+var AREA_ICONS = {
+  home: /*#__PURE__*/_react["default"].createElement(_icons.HomeOutlined, null),
+  people: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+  time: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+  leave: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+  pay: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+  recruitment: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+  learning: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+  performance: /*#__PURE__*/_react["default"].createElement(_icons.TrophyOutlined, null),
+  documents: /*#__PURE__*/_react["default"].createElement(_icons.FileTextOutlined, null),
+  reports: /*#__PURE__*/_react["default"].createElement(_icons.BarChartOutlined, null),
+  configuration: /*#__PURE__*/_react["default"].createElement(_icons.BuildOutlined, null),
+  system: /*#__PURE__*/_react["default"].createElement(_icons.ControlOutlined, null),
+  more: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null)
+};
+
+var areaIcon = function areaIcon(name) {
+  return AREA_ICONS[name] || /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null);
+}; // A section header label inside the area menu (e.g. "MANAGE" / "PERSONAL"). Styled
+// to read clearly as a heading, NOT a clickable menu item: small uppercase,
+// letter-spaced, muted, with a leading icon and a hairline rule above.
+
+
+function sectionHeader(icon, text) {
+  return /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 7,
+      paddingTop: 12,
+      marginTop: 2,
+      borderTop: '1px solid rgba(255,255,255,0.08)',
+      fontSize: 10.5,
+      fontWeight: 700,
+      letterSpacing: 1.3,
+      textTransform: 'uppercase',
+      color: 'rgba(255,255,255,0.42)',
+      cursor: 'default',
+      userSelect: 'none'
+    }
+  }, _react["default"].cloneElement(icon, {
+    style: {
+      fontSize: 12,
+      opacity: 0.85
+    }
+  }), /*#__PURE__*/_react["default"].createElement("span", null, text));
+} // CSS injected into each module iframe (same-origin) to hide the legacy chrome
+// (top bar + sidebar) so only the module content shows inside the new shell.
+// No legacy files are modified — this is applied from the parent shell on load.
+
+
+var EMBED_CSS = "\n  header.header { display: none !important; }\n  aside.left-side, .sidebar-offcanvas, .skeletonSideMenu { display: none !important; }\n  .right-side { margin-left: 0 !important; left: 0 !important; }\n  .wrapper, body, html { padding-top: 0 !important; margin-top: 0 !important; background: #f0f2f5 !important; }\n  body { min-width: 0 !important; }\n  #DemoModeNotice, #IceHrmConnectionNotice { display: none !important; }\n";
+var KEY_SEP = '::';
+var HOME_KEY = "modules".concat(KEY_SEP, "home"); // Build antd Menu `items` from a view's group list. Each item already carries its
+// resolved { g, n } route from the server (MenuService.getViewMenus).
+
+function buildItems(groups) {
+  if (!Array.isArray(groups)) return [];
+  return groups.map(function (group) {
+    return {
+      key: "grp:".concat(group.name),
+      label: group.name,
+      icon: GROUP_ICONS[group.name] || /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+      children: (group.items || []).map(function (it) {
+        return {
+          key: "".concat(it.g).concat(KEY_SEP).concat(it.n),
+          label: it.label || it.name,
+          data: {
+            g: it.g,
+            n: it.n,
+            label: it.label || it.name
+          }
+        };
+      })
+    };
+  });
+}
+
+function keyFor(g, n) {
+  return "".concat(g).concat(KEY_SEP).concat(n);
+} // Merge several group lists into one, de-duplicating groups by name (their items
+// are concatenated, items de-duped by g::n) — used to give non-switch privileged
+// users (e.g. Managers) a single combined menu of their admin + employee modules.
+
+
+function mergeGroups() {
+  var byName = new Map();
+  var order = [];
+
+  for (var _len = arguments.length, lists = new Array(_len), _key = 0; _key < _len; _key++) {
+    lists[_key] = arguments[_key];
+  }
+
+  lists.forEach(function (list) {
+    return (Array.isArray(list) ? list : []).forEach(function (group) {
+      if (!byName.has(group.name)) {
+        byName.set(group.name, {
+          name: group.name,
+          items: []
+        });
+        order.push(group.name);
+      }
+
+      var tgt = byName.get(group.name);
+      var seen = new Set(tgt.items.map(function (it) {
+        return keyFor(it.g, it.n);
+      }));
+      (group.items || []).forEach(function (it) {
+        var k = keyFor(it.g, it.n);
+
+        if (!seen.has(k)) {
+          seen.add(k);
+          tgt.items.push(it);
+        }
+      });
+    });
+  });
+  return order.map(function (n) {
+    return byName.get(n);
+  });
+}
+/**
+ * Links in notification emails and system to-dos still use the legacy form
+ * "ui/?g=modules&n=overtime#tabSubordinateEmployeeOvertime" (app/index.php forwards
+ * the old "app/?g=…" links here, and the login page keeps the tab). Turn that into
+ * the shell route "#modules::overtime" and the start tab, before the first render.
+ */
+
+
+function consumeLegacyRoute() {
+  try {
+    var sp = new URLSearchParams(window.location.search);
+    var g = sp.get('g');
+    var n = sp.get('n');
+    if (!g || !n) return;
+    var frag = (window.location.hash || '').replace(/^#/, '');
+    var tab = /^[A-Za-z][A-Za-z0-9_]*$/.test(frag) ? frag : null;
+    if (!tab) tab = window.sessionStorage.getItem('ice-legacy-tab');
+    window.sessionStorage.removeItem('ice-legacy-tab');
+    var route = (0, _legacyLinks.resolveLegacyRoute)(g, n, tab);
+    if (route.tab) window.__iceShellStartTab = route.tab;
+    window.history.replaceState(null, '', "".concat(window.location.pathname, "#").concat(encodeURIComponent("".concat(route.g, "::").concat(route.n))));
+  } catch (e) {// Leave the URL as it is: the shell then opens Home.
+  }
+}
+
+if (typeof window !== 'undefined') consumeLegacyRoute();
+
+function AppShell(_ref) {
+  var bootstrap = _ref.bootstrap,
+      config = _ref.config,
+      _ref$colorMode = _ref.colorMode,
+      colorMode = _ref$colorMode === void 0 ? 'light' : _ref$colorMode,
+      onToggleColorMode = _ref.onToggleColorMode;
+  var isDark = colorMode === 'dark';
+  var screens = useBreakpoint();
+  var isMobile = !screens.md; // < 768px
+
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      drawerOpen = _useState2[0],
+      setDrawerOpen = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      current = _useState4[0],
+      setCurrent = _useState4[1]; // { g, n, label } | null — drives the iframe src
+  // When a module navigates the iframe internally to ANOTHER module, this tracks
+  // what the iframe is actually showing (for title/selection/hash) without
+  // changing the iframe src (which would reload it).
+
+
+  var _useState5 = (0, _react.useState)(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      override = _useState6[0],
+      setOverride = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      iframeLoading = _useState8[0],
+      setIframeLoading = _useState8[1];
+
+  var iframeRef = (0, _react.useRef)(null);
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var company = bootstrap.company || {};
+  var user = bootstrap.user || {};
+  var profile = bootstrap.profile || {};
+  var displayName = profile.firstName || user.first_name || user.email;
+  var views = bootstrap.views || {
+    admin: [],
+    employee: []
+  }; // "View as employee" (profile switch) — initiated from inside a module. The
+  // switch state lives in the legacy (cookie) session, which the stateless REST
+  // API can't see, so the shell derives the banner directly from the loaded
+  // module page (the .switched-name marker) on every iframe load.
+  // Seed from bootstrap (set when an admin has switched into an employee profile
+  // and is viewing a natively-mounted module — no iframe marker to derive from).
+
+  var _useState9 = (0, _react.useState)(bootstrap.switchedProfile || null),
+      _useState10 = _slicedToArray(_useState9, 2),
+      switchedProfile = _useState10[0],
+      setSwitchedProfile = _useState10[1];
+
+  var _useState11 = (0, _react.useState)(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      reloadNonce = _useState12[0],
+      setReloadNonce = _useState12[1]; // A document (e.g. an editor task list) opened from a notification — mounted in
+  // a shell-level modal rather than navigated to (the editor isn't a route).
+
+
+  var _useState13 = (0, _react.useState)(null),
+      _useState14 = _slicedToArray(_useState13, 2),
+      doc = _useState14[0],
+      setDoc = _useState14[1];
+
+  var setDocUrl = function setDocUrl(url) {
+    return setDoc(url ? {
+      url: url,
+      title: 'Task List'
+    } : null);
+  }; // Seam for bespoke extension views (NativeExtensionView trees, e.g. the learn
+  // user "Open Course" button): a legacy document_link would navigate the SPA away
+  // (and bounce to the dashboard), so views call this global to open the document
+  // in the shell's native editor modal instead. Cleared on unmount so a stale
+  // handler never outlives the shell.
+
+
+  (0, _react.useEffect)(function () {
+    window.iceShellOpenDocument = function (url, title) {
+      return setDoc(url ? {
+        url: url,
+        title: title || 'Document'
+      } : null);
+    };
+
+    return function () {
+      delete window.iceShellOpenDocument;
+    };
+  }, []);
+
+  var reloadIframe = function reloadIframe() {
+    setIframeLoading(true);
+    setReloadNonce(function (n) {
+      return n + 1;
+    });
+  }; // AdapterBase.setAdminProfile posts this (instead of breaking the top window
+  // out to the legacy app) after a switch/switch-back. Reload the current module;
+  // the banner is then re-derived from the reloaded page in onIframeLoad.
+
+
+  (0, _react.useEffect)(function () {
+    var onMsg = function onMsg(e) {
+      if (!e.data || e.data.iceShell !== 'profile-switched') return;
+      reloadIframe();
+    };
+
+    window.addEventListener('message', onMsg);
+    return function () {
+      return window.removeEventListener('message', onMsg);
+    };
+  }, []); // Switch back. Inside an iframe, delegate to the module's (session-correct)
+  // handler. For a natively-mounted module there is no iframe, so post the
+  // switch-back to the legacy session endpoint ourselves and reload the shell.
+
+  var switchBack = function switchBack() {
+    try {
+      var win = iframeRef.current && iframeRef.current.contentWindow;
+
+      if (win && win.modJs && typeof win.modJs.setAdminProfile === 'function') {
+        win.modJs.setAdminProfile('-1');
+        return;
+      }
+    } catch (e) {
+      /* fall through to native */
+    }
+
+    var body = new URLSearchParams({
+      a: 'setAdminEmp',
+      empid: '-1'
+    });
+    fetch("".concat(config.clientBaseUrl, "service.php"), {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: body.toString()
+    }).then(function () {
+      window.location.reload();
+    })["catch"](function () {
+      window.location.reload();
+    });
+  }; // There is no Admin/Employee switch any more — the menu is sliced by high-level
+  // AREA (Home/People/Time and Work/…). Within an area, items are split into two
+  // sections: "Manage" (admin/management modules, from the admin view) and "Mine"
+  // (the user's own self-service modules, from the employee view).
+
+
+  var areaRegistry = bootstrap.areas || []; // Build, per area, the Manage + Mine item lists (de-duped by route across both
+  // views), plus a flat route -> data map and route -> area map. We must NOT dedupe
+  // by label: an admin module and a self-service module can share a label but be
+  // different destinations (e.g. "Expenses" = manage all vs "My Expenses" = apply
+  // as an employee), disambiguated by the "My …" rename.
+
+  var _useMemo = (0, _react.useMemo)(function () {
+    var map = {};
+    var aok = {};
+    var byArea = {}; // area -> { manage:[], mine:[], keys:Set }
+
+    var add = function add(groups, section) {
+      return (Array.isArray(groups) ? groups : []).forEach(function (grp) {
+        return (grp.items || []).forEach(function (it) {
+          var area = it.area || 'more';
+          var key = keyFor(it.g, it.n);
+          var label = it.label || it.name;
+          if (!byArea[area]) byArea[area] = {
+            manage: [],
+            mine: [],
+            keys: new Set()
+          };
+          var b = byArea[area];
+          if (b.keys.has(key)) return; // same route in both views: keep the first (Manage)
+
+          b.keys.add(key); // areaOrder lets meta.json position an item within its section; unset
+          // items default to 50 and keep their natural order via a stable sort.
+
+          var order = it.areaOrder === 0 || it.areaOrder ? it.areaOrder : 50;
+          b[section].push({
+            key: key,
+            label: label,
+            order: order
+          });
+
+          if (!map[key]) {
+            map[key] = {
+              g: it.g,
+              n: it.n,
+              label: label,
+              area: area,
+              section: section
+            };
+            aok[key] = area;
+          }
+        });
+      });
+    };
+
+    add(views.admin, 'manage');
+    add(views.employee, 'mine'); // Stable sort each section by areaOrder (ties keep insertion/menu order).
+
+    Object.keys(byArea).forEach(function (a) {
+      var cmp = function cmp(x, y) {
+        return x.order - y.order;
+      };
+
+      byArea[a].manage.sort(cmp);
+      byArea[a].mine.sort(cmp);
+    });
+    return {
+      itemMap: map,
+      areaOfKey: aok,
+      itemsByArea: byArea
+    };
+  }, [views]),
+      itemMap = _useMemo.itemMap,
+      areaOfKey = _useMemo.areaOfKey,
+      itemsByArea = _useMemo.itemsByArea;
+
+  var areaCount = function areaCount(id) {
+    var b = itemsByArea[id];
+    return b ? b.manage.length + b.mine.length : 0;
+  };
+
+  var firstKeyOf = function firstKeyOf(id) {
+    var b = itemsByArea[id];
+    if (!b) return null;
+    var it = b.manage[0] || b.mine[0];
+    return it ? it.key : null;
+  }; // The module to land on when there is no hash: the user's home module, else a
+  // dashboard. Must exist in the menu.
+
+
+  var defaultKey = function defaultKey() {
+    var hl = bootstrap.homeLink;
+    var cands = [];
+    if (hl && hl.group && hl.name) cands.push(keyFor(hl.group, hl.name));
+    cands.push('admin::dashboard', 'modules::dashboard');
+    return cands.find(function (k) {
+      return itemMap[k];
+    }) || null;
+  }; // Areas that actually have ≥1 accessible item, in registry order.
+
+
+  var availableAreas = (0, _react.useMemo)(function () {
+    return areaRegistry.filter(function (a) {
+      return areaCount(a.id) > 0;
+    });
+  }, [areaRegistry, itemsByArea] // eslint-disable-line react-hooks/exhaustive-deps
+  );
+
+  var _useState15 = (0, _react.useState)(function () {
+    var saved = localStorage.getItem('shell-area');
+    if (saved && areaCount(saved) > 0) return saved;
+    var dk = defaultKey();
+    var a = dk && areaOfKey[dk];
+    if (a && areaCount(a) > 0) return a;
+    var first = areaRegistry.find(function (ar) {
+      return areaCount(ar.id) > 0;
+    });
+    return first ? first.id : null;
+  }),
+      _useState16 = _slicedToArray(_useState15, 2),
+      selectedArea = _useState16[0],
+      setSelectedArea = _useState16[1];
+
+  (0, _react.useEffect)(function () {
+    if (selectedArea) localStorage.setItem('shell-area', selectedArea);
+  }, [selectedArea]); // The left menu = the selected area's items. When both Manage and Mine sections
+  // have items, render labelled groups separated by a divider; if only one section
+  // exists, render it flat (no redundant header).
+
+  var menuItems = (0, _react.useMemo)(function () {
+    var b = itemsByArea[selectedArea];
+    if (!b) return []; // A bubble from bootstrap.menuBadges (route -> count), e.g. setup steps left.
+
+    var badges = bootstrap.menuBadges || {};
+
+    var toItem = function toItem(it) {
+      return {
+        key: it.key,
+        label: badges[it.key] > 0 ? /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 8
+          }
+        }, /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+          }
+        }, it.label), /*#__PURE__*/_react["default"].createElement(_antd.Badge, {
+          count: badges[it.key],
+          size: "small"
+        })) : it.label
+      };
+    }; // Home has its own pinned entry above; drop it here so it is not listed twice.
+
+
+    var notHome = function notHome(it) {
+      return it.key !== HOME_KEY;
+    };
+
+    var manage = b.manage.filter(notHome);
+    var mine = b.mine.filter(notHome);
+
+    if (manage.length && mine.length) {
+      return [{
+        type: 'group',
+        key: 'grp-manage',
+        label: sectionHeader( /*#__PURE__*/_react["default"].createElement(_icons.ControlOutlined, null), 'Manage'),
+        children: manage.map(toItem)
+      }, {
+        type: 'group',
+        key: 'grp-mine',
+        label: sectionHeader( /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null), 'Personal'),
+        children: mine.map(toItem)
+      }];
+    }
+
+    return [].concat(_toConsumableArray(manage), _toConsumableArray(mine)).map(toItem);
+  }, [itemsByArea, selectedArea]);
+
+  var onAreaChange = function onAreaChange(areaId) {
+    setSelectedArea(areaId);
+    var first = firstKeyOf(areaId);
+    if (first) openModule(first);
+  }; // --- routing: hash <-> selected module -----------------------------------
+
+
+  var applyHash = function applyHash() {
+    var raw = (window.location.hash || '').replace(/^#\/?/, '');
+    var key = raw ? decodeURIComponent(raw) : defaultKey();
+    var data = key && itemMap[key];
+    setOverride(null);
+
+    if (data) {
+      setCurrent(data);
+      setIframeLoading(true);
+    } else {
+      setCurrent(null);
+    }
+  }; // Go to the landing (Home). Clearing the hash re-runs applyHash, which resolves
+  // defaultKey() — so the URL stays clean and Home mounts like any other module.
+
+
+  var goHome = function goHome() {
+    if (window.location.hash) {
+      window.location.hash = '';
+    } else {
+      applyHash();
+    }
+  };
+
+  (0, _react.useEffect)(function () {
+    applyHash();
+
+    var onHash = function onHash() {
+      return applyHash();
+    };
+
+    window.addEventListener('hashchange', onHash);
+    return function () {
+      return window.removeEventListener('hashchange', onHash);
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [itemMap]);
+
+  var openModule = function openModule(key) {
+    var data = itemMap[key];
+    if (!data) return;
+    if (isMobile) setDrawerOpen(false);
+    var hash = "#".concat(encodeURIComponent(key));
+
+    if (window.location.hash === hash) {
+      // same module: force reload of the iframe
+      setIframeLoading(true);
+      setCurrent(_objectSpread({}, data));
+    } else {
+      window.location.hash = hash; // triggers applyHash via hashchange
+    }
+  }; // What the iframe is actually showing (may differ from `current` after an
+  // in-iframe navigation) — drives the title, sidebar selection and hash.
+
+
+  var displayed = override || current; // Navigate to a module by group/name (used by notifications). Uses the menu
+  // route if known, else loads the page directly.
+
+  var navigateTo = function navigateTo(g, n) {
+    if (!g || !n) return;
+    var key = keyFor(g, n);
+    if (isMobile) setDrawerOpen(false);
+
+    if (itemMap[key]) {
+      openModule(key);
+    } else {
+      setOverride(null);
+      setCurrent({
+        g: g,
+        n: n,
+        label: n
+      });
+      setIframeLoading(true);
+
+      try {
+        window.history.replaceState(null, '', "#".concat(encodeURIComponent(key)));
+      } catch (z) {
+        /* */
+      }
+    }
+  }; // Deep-link / intent contract (docs/HOME_AND_KUDOS_PLAN.md §4.4) for Home widgets,
+  // notifications and other modules:
+  //   window.iceShellOpenIntent({ group, module, tab, id, action, params })
+  // Sets the one-shot start-tab hint the module host already honours, stashes the
+  // record/action intent for the mounted module to consume (window.__iceShellIntent),
+  // then navigates. `module` may be a name, a "group::name" key, or {group,name};
+  // 'home' / no module goes to the landing. Purely additive over the existing hash
+  // forms. Re-registered every render so it always closes over the latest navigateTo.
+  // (No promises/async here on purpose — this bundle has no regenerator runtime.)
+
+
+  (0, _react.useEffect)(function () {
+    window.iceShellOpenIntent = function (intent) {
+      var it = intent || {};
+      var mod = it.module;
+
+      if (!mod || mod === 'home') {
+        goHome();
+        return;
+      }
+
+      var g = it.group;
+      var n = mod;
+
+      if (typeof mod === 'string' && mod.indexOf(KEY_SEP) !== -1) {
+        var parts = mod.split(KEY_SEP);
+        g = parts[0];
+        n = parts[1];
+      } else if (mod && _typeof(mod) === 'object') {
+        g = mod.group;
+        n = mod.name;
+      }
+
+      if (!g) g = 'modules'; // it.tab may be a legacy anchor (from a system to-do link); map it to the SPA key.
+
+      try {
+        window.__iceShellStartTab = (0, _legacyLinks.resolveLegacyTab)(it.tab);
+      } catch (e) {
+        /* ignore */
+      }
+
+      try {
+        window.__iceShellIntent = it.id || it.action || it.params ? {
+          id: it.id || null,
+          action: it.action || null,
+          params: it.params || null
+        } : null;
+      } catch (e) {
+        /* ignore */
+      }
+
+      navigateTo(g, n);
+    };
+
+    return function () {
+      delete window.iceShellOpenIntent;
+    };
+  });
+  var selectedKey = displayed ? keyFor(displayed.g, displayed.n) : null; // Keep the area selector in sync with whatever module is actually showing
+  // (deep links, in-iframe navigation to another area's module, etc.).
+
+  (0, _react.useEffect)(function () {
+    var a = selectedKey && areaOfKey[selectedKey];
+    if (a && a !== selectedArea) setSelectedArea(a); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedKey, areaOfKey]);
+
+  var onIframeLoad = function onIframeLoad(e) {
+    try {
+      var _doc = e.target.contentDocument;
+
+      if (_doc && _doc.head) {
+        var style = _doc.createElement('style');
+
+        style.setAttribute('data-shell-embed', '1');
+        style.textContent = EMBED_CSS;
+
+        _doc.head.appendChild(style);
+      } // Derive the "viewing as employee" banner from the page's own switched
+      // marker, so it stays correct on load, after a switch, and after switch-back.
+
+
+      var nameEl = _doc && _doc.querySelector('.switched-name');
+
+      setSwitchedProfile(nameEl ? {
+        name: (nameEl.textContent || '').trim()
+      } : null); // If the module navigated the iframe to ANOTHER module (e.g. a dashboard
+      // widget link), sync the title/selection/hash to it WITHOUT reloading.
+
+      var loc = e.target.contentWindow && e.target.contentWindow.location;
+      var sp = loc && new URLSearchParams(loc.search);
+      var g = sp && sp.get('g');
+      var n = sp && sp.get('n');
+
+      if (g && n) {
+        var k = keyFor(g, n);
+
+        if (current && k === keyFor(current.g, current.n)) {
+          setOverride(null);
+        } else if (itemMap[k]) {
+          setOverride(itemMap[k]);
+
+          try {
+            window.history.replaceState(null, '', "#".concat(encodeURIComponent(k)));
+          } catch (z) {
+            /* */
+          }
+        }
+      }
+    } catch (err) {// cross-origin (shouldn't happen — same origin) — ignore
+    }
+
+    setIframeLoading(false);
+  }; // The admin dashboard is rendered natively (React + charts), not via the iframe.
+
+
+  var isNativeDashboard = current && current.g === 'admin' && current.n === 'dashboard'; // The employee/manager personal dashboard is also native.
+
+  var isNativeEmployeeDashboard = current && current.g === 'modules' && current.n === 'dashboard'; // Modules registered for native in-shell mounting (no iframe).
+
+  var nativeKey = current ? "".concat(current.g, "/").concat(current.n) : null;
+  var isNativeModule = !!nativeKey && !isNativeDashboard && !isNativeEmployeeDashboard && (bootstrap.nativeModules || []).indexOf(nativeKey) !== -1;
+  var iframeSrc = current && !isNativeDashboard && !isNativeEmployeeDashboard && !isNativeModule ? "".concat(config.clientBaseUrl, "?g=").concat(encodeURIComponent(current.g), "&n=").concat(encodeURIComponent(current.n), "&_embed=1") : null; // --- chrome --------------------------------------------------------------
+  // The pinned Home entry, directly under the area switcher and present in every
+  // area. Rendered as a one-item Menu so it inherits the exact styling and
+  // selected state of the module menu below it. Hidden when this user cannot
+  // reach Home at all (e.g. a restricted user without a role on it).
+
+  var homeNav = itemMap[HOME_KEY] ? /*#__PURE__*/_react["default"].createElement(_antd.Menu, {
+    mode: "inline",
+    theme: "dark",
+    selectedKeys: selectedKey === HOME_KEY ? [HOME_KEY] : [],
+    style: {
+      borderInlineEnd: 0
+    },
+    items: [{
+      key: HOME_KEY,
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.HomeOutlined, null),
+      label: 'Home'
+    }],
+    onClick: function onClick() {
+      if (isMobile) setDrawerOpen(false);
+      goHome();
+    }
+  }) : null;
+
+  var sideMenu = /*#__PURE__*/_react["default"].createElement(_antd.Menu, {
+    mode: "inline",
+    theme: "dark",
+    selectedKeys: selectedKey ? [selectedKey] : [],
+    style: {
+      borderInlineEnd: 0
+    },
+    items: menuItems,
+    onClick: function onClick(_ref2) {
+      var key = _ref2.key;
+      return openModule(key);
+    }
+  });
+
+  var userMenu = {
+    items: [{
+      key: 'name',
+      label: "".concat(profile.firstName || user.first_name || '', " ").concat(profile.lastName || user.last_name || '').trim() || user.email,
+      disabled: true
+    }, {
+      type: 'divider'
+    }, {
+      key: 'home',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.HomeOutlined, null),
+      label: 'Home'
+    }, {
+      key: 'logout',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.LogoutOutlined, null),
+      label: 'Logout'
+    }],
+    onClick: function onClick(_ref3) {
+      var key = _ref3.key;
+      if (key === 'logout') window.location.href = "".concat(config.clientBaseUrl, "logout.php");
+
+      if (key === 'home') {
+        goHome();
+      }
+    }
+  };
+
+  var _useState17 = (0, _react.useState)(false),
+      _useState18 = _slicedToArray(_useState17, 2),
+      logoFailed = _useState18[0],
+      setLogoFailed = _useState18[1]; // Prefer a company-uploaded logo (white-label); otherwise the compact IceHrm
+  // mark. Left-aligned to line up with the menu items.
+
+
+  var defaultLogo = "".concat(config.baseUrl || '', "images/logo-sq.png");
+  var logoSrc = company.logoUrl || defaultLogo; // Pinned brand footer at the bottom of the sidebar: just version + copyright
+  // (the logo now lives in the top bar).
+
+  var logo = /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: '0 0 auto',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: 8,
+      padding: '10px 16px',
+      overflow: 'hidden',
+      borderTop: '1px solid rgba(255,255,255,0.08)',
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      color: 'rgba(255,255,255,0.4)',
+      fontSize: 10.5,
+      whiteSpace: 'nowrap'
+    }
+  }, "\xA9 ".concat(new Date().getFullYear(), " IceHrm.com")), bootstrap.version && /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      color: 'rgba(255,255,255,0.72)',
+      fontSize: 11,
+      fontWeight: 600,
+      whiteSpace: 'nowrap'
+    }
+  }, "v".concat(bootstrap.version))); // Every reachable module, for the top-bar global search (route map -> list).
+
+
+  var allModules = (0, _react.useMemo)(function () {
+    return Object.keys(itemMap).map(function (key) {
+      return _objectSpread({
+        key: key
+      }, itemMap[key]);
+    });
+  }, [itemMap]); // Area selector — replaces the old Admin/Employee switch. Picking an area
+  // filters the left menu to that functional domain. Styled as a dropdown (icon
+  // tile + name + chevron) so it clearly reads as switchable.
+
+  var currentArea = availableAreas.find(function (a) {
+    return a.id === selectedArea;
+  }) || availableAreas[0] || null;
+  var areaSwitch = availableAreas.length > 1 && currentArea ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: '12px 16px 8px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 10.5,
+      letterSpacing: 1.2,
+      fontWeight: 700,
+      color: 'rgba(255,255,255,0.38)',
+      marginBottom: 8,
+      paddingLeft: 2
+    }
+  }, "AREA"), /*#__PURE__*/_react["default"].createElement(_antd.ConfigProvider, {
+    theme: (0, _theme.buildTheme)('dark')
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Dropdown, {
+    trigger: ['click'],
+    menu: {
+      selectedKeys: [selectedArea],
+      items: availableAreas.map(function (a) {
+        return {
+          key: a.id,
+          icon: areaIcon(a.icon),
+          label: a.label
+        };
+      }),
+      onClick: function onClick(_ref4) {
+        var key = _ref4.key;
+        return onAreaChange(key);
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement("button", {
+    type: "button",
+    className: "ice-role-switch",
+    title: "Switch area",
+    style: {
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      padding: '8px 10px',
+      borderRadius: 12,
+      cursor: 'pointer',
+      color: '#fff',
+      background: 'rgba(255,255,255,0.06)',
+      border: '1px solid rgba(255,255,255,0.10)',
+      textAlign: 'left'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      width: 30,
+      height: 30,
+      borderRadius: 9,
+      flex: '0 0 auto',
+      fontSize: 15,
+      background: '#4c9aff26',
+      color: '#4c9aff',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  }, areaIcon(currentArea.icon)), /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      display: 'block',
+      fontSize: 13.5,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap'
+    }
+  }, currentArea.label), /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      display: 'block',
+      fontSize: 11,
+      color: 'rgba(255,255,255,0.45)',
+      lineHeight: 1.2
+    }
+  }, "Switch area")), /*#__PURE__*/_react["default"].createElement(_icons.DownOutlined, {
+    style: {
+      fontSize: 12,
+      color: 'rgba(255,255,255,0.5)',
+      flex: '0 0 auto'
+    }
+  }))))) : null; // --- top bar (GA-style): brand · area switch · module search ----------------
+
+  var headerBrand = /*#__PURE__*/_react["default"].createElement("div", {
+    role: "button",
+    tabIndex: 0,
+    onClick: function onClick() {
+      return goHome();
+    },
+    title: "Home",
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      cursor: 'pointer',
+      paddingRight: 18,
+      marginRight: 4,
+      borderRight: '1px solid rgba(255,255,255,0.14)',
+      height: 48
+    }
+  }, !logoFailed ? /*#__PURE__*/_react["default"].createElement("img", {
+    src: logoSrc,
+    alt: company.name || 'IceHrm',
+    style: {
+      height: 46,
+      maxWidth: 200,
+      objectFit: 'contain'
+    },
+    onError: function onError() {
+      return setLogoFailed(true);
+    }
+  }) : /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontWeight: 700,
+      fontSize: 22,
+      color: '#fff',
+      whiteSpace: 'nowrap'
+    }
+  }, company.name || 'IceHrm'));
+
+  return /*#__PURE__*/_react["default"].createElement(_antd.Layout, {
+    style: {
+      minHeight: '100vh'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.ConfigProvider, {
+    theme: (0, _theme.buildTheme)('dark')
+  }, /*#__PURE__*/_react["default"].createElement(Header, {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      paddingInline: 16,
+      background: _theme.SIDEBAR_BG,
+      position: 'sticky',
+      top: 0,
+      zIndex: 20,
+      boxShadow: '0 1px 4px rgba(0,0,0,0.25)'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      flex: '0 0 auto'
+    }
+  }, isMobile && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "text",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.MenuOutlined, {
+      style: {
+        color: '#fff'
+      }
+    }),
+    onClick: function onClick() {
+      return setDrawerOpen(true);
+    }
+  }), !isMobile && headerBrand, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontSize: 16,
+      fontWeight: 600,
+      color: 'rgba(255,255,255,0.92)',
+      maxWidth: 260,
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap'
+    }
+  }, displayed ? displayed.label : 'Home')), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'center',
+      minWidth: 0,
+      padding: '0 16px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: '100%',
+      maxWidth: 560
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_ModuleSearch["default"], {
+    items: allModules,
+    areas: areaRegistry,
+    onSelect: function onSelect(key) {
+      return navigateTo(itemMap[key].g, itemMap[key].n);
+    },
+    dark: true
+  }))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 4,
+      flex: '0 0 auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+    title: isDark ? 'Switch to light mode' : 'Switch to dark mode'
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "text",
+    "aria-label": "Toggle colour mode",
+    icon: isDark ? /*#__PURE__*/_react["default"].createElement(_icons.BulbFilled, {
+      style: {
+        color: '#fbc02d'
+      }
+    }) : /*#__PURE__*/_react["default"].createElement(_icons.BulbOutlined, {
+      style: {
+        color: '#fff'
+      }
+    }),
+    onClick: onToggleColorMode
+  })), /*#__PURE__*/_react["default"].createElement(_Notifications["default"], {
+    clientBaseUrl: config.clientBaseUrl,
+    onNavigate: navigateTo,
+    onOpenDocument: setDocUrl
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Dropdown, {
+    menu: userMenu,
+    trigger: ['click']
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "text",
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8,
+      color: 'rgba(255,255,255,0.92)'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+    size: "small",
+    src: profile.image || undefined,
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null)
+  }), !isMobile && /*#__PURE__*/_react["default"].createElement("span", null, displayName)))))), /*#__PURE__*/_react["default"].createElement(_antd.Layout, null, !isMobile && /*#__PURE__*/_react["default"].createElement(Sider, {
+    width: 240,
+    style: {
+      height: 'calc(100vh - 64px)',
+      position: 'sticky',
+      top: 64,
+      insetInlineStart: 0,
+      background: _theme.SIDEBAR_BG
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: 1,
+      minHeight: 0,
+      overflow: 'auto',
+      paddingTop: 8
+    }
+  }, areaSwitch, homeNav, sideMenu), logo)), isMobile && /*#__PURE__*/_react["default"].createElement(_antd.Drawer, {
+    placement: "left",
+    open: drawerOpen,
+    onClose: function onClose() {
+      return setDrawerOpen(false);
+    },
+    width: 260,
+    styles: {
+      body: {
+        padding: 0,
+        background: _theme.SIDEBAR_BG
+      },
+      header: {
+        display: 'none'
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: 1,
+      minHeight: 0,
+      overflow: 'auto',
+      paddingTop: 8
+    }
+  }, areaSwitch, homeNav, sideMenu), logo)), /*#__PURE__*/_react["default"].createElement(_antd.Layout, null, switchedProfile && /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: "warning",
+    banner: true,
+    showIcon: true,
+    message: /*#__PURE__*/_react["default"].createElement("span", null, "Viewing as ", /*#__PURE__*/_react["default"].createElement("strong", null, switchedProfile.name)),
+    action: /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "small",
+      onClick: switchBack
+    }, "Switch back")
+  }), bootstrap.showConnectBanner && /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: "warning",
+    banner: true,
+    showIcon: true,
+    style: {
+      padding: '18px 28px',
+      alignItems: 'center'
+    },
+    message: /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        lineHeight: 1.35
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 17,
+        fontWeight: 700,
+        marginBottom: 3
+      }
+    }, "Connect to icehrm.com to unlock the marketplace"), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 14,
+        opacity: 0.9
+      }
+    }, "This installation isn't connected yet. Connect it to install marketplace", ' ', "extensions and receive product updates.")),
+    action: /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "large",
+      type: "primary",
+      style: {
+        fontWeight: 600
+      },
+      onClick: function onClick() {
+        return navigateTo('extension', 'marketplace|admin');
+      }
+    }, "Connect now")
+  }), /*#__PURE__*/_react["default"].createElement(Content, {
+    style: {
+      background: token.colorBgLayout,
+      position: 'relative',
+      height: "calc(100vh - 64px".concat(switchedProfile ? ' - 40px' : '').concat(bootstrap.showConnectBanner ? ' - 84px' : '', ")")
+    }
+  }, isNativeDashboard ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      height: '100%',
+      overflow: 'auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_UpdateAvailableBanner["default"], {
+    updateAvailable: bootstrap.updateAvailable
+  }), /*#__PURE__*/_react["default"].createElement(_LicenseRenewalBanner["default"], {
+    licenseRenewal: bootstrap.licenseRenewal
+  }), /*#__PURE__*/_react["default"].createElement(_News["default"], {
+    config: config
+  }), /*#__PURE__*/_react["default"].createElement(_Dashboard["default"], {
+    config: config,
+    onNavigate: navigateTo
+  })) : isNativeEmployeeDashboard ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      height: '100%',
+      overflow: 'auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_UpdateAvailableBanner["default"], {
+    updateAvailable: bootstrap.updateAvailable
+  }), /*#__PURE__*/_react["default"].createElement(_LicenseRenewalBanner["default"], {
+    licenseRenewal: bootstrap.licenseRenewal
+  }), /*#__PURE__*/_react["default"].createElement(_EmployeeDashboard["default"], {
+    config: config,
+    onNavigate: navigateTo,
+    onOpenDocument: setDocUrl
+  })) : isNativeModule ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      height: '100%',
+      overflow: 'auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_NativeModuleHost["default"], {
+    key: nativeKey,
+    group: current.g,
+    name: current.n,
+    shellConfig: config
+  })) : iframeSrc ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, iframeLoading && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 2,
+      background: token.colorBgLayout
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+    size: "large"
+  })), /*#__PURE__*/_react["default"].createElement("iframe", {
+    ref: iframeRef,
+    key: "".concat(iframeSrc, "#").concat(reloadNonce),
+    title: current ? current.label : '',
+    src: iframeSrc,
+    onLoad: onIframeLoad,
+    style: {
+      width: '100%',
+      height: '100%',
+      border: 0,
+      display: 'block',
+      visibility: iframeLoading ? 'hidden' : 'visible'
+    }
+  })) : /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 24
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: token.colorBgContainer,
+      borderRadius: 8,
+      padding: 32,
+      maxWidth: 720,
+      boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
+      color: token.colorText
+    }
+  }, /*#__PURE__*/_react["default"].createElement("h2", {
+    style: {
+      marginTop: 0
+    }
+  }, "Welcome to the new IceHrm"), /*#__PURE__*/_react["default"].createElement("p", {
+    style: {
+      color: token.colorTextSecondary
+    }
+  }, "This is the new React + Ant Design interface. Pick a module from the menu to get started. The sidebar reflects your permissions and collapses into a drawer on mobile."), /*#__PURE__*/_react["default"].createElement("p", {
+    style: {
+      color: token.colorTextSecondary,
+      fontSize: 13
+    }
+  }, "Signed in as ", /*#__PURE__*/_react["default"].createElement("strong", null, user.email), " (", bootstrap.userLevel, ").")))))), /*#__PURE__*/_react["default"].createElement(_NativeDocumentModal["default"], {
+    documentUrl: doc && doc.url,
+    bundle: "editor/user/dist/editor.js",
+    mountFn: "mountEditorDocument",
+    deps: ['dist/vendorOther.js', 'dist/third-party.js', 'dist/common.js'],
+    title: doc && doc.title || 'Document',
+    shellConfig: config,
+    onClose: function onClose() {
+      return setDoc(null);
+    }
+  }));
+}
+
+},{"./Dashboard":6,"./EmployeeDashboard":7,"./LicenseRenewalBanner":14,"./ModuleSearch":16,"./NativeDocumentModal":19,"./NativeModuleHost":21,"./News":22,"./Notifications":23,"./UpdateAvailableBanner":26,"./legacyLinks":28,"./theme":29,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],5:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = CompanyStructureCards;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var PAGE_SIZE = 6;
+var TYPE_STYLE = {
+  Company: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.BankOutlined, null),
+    color: _theme.MUI.primary
+  },
+  'Head Office': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.HomeOutlined, null),
+    color: '#0288d1'
+  },
+  'Regional Office': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClusterOutlined, null),
+    color: '#7b1fa2'
+  },
+  Department: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#2e7d32'
+  },
+  Unit: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#ed6c02'
+  },
+  'Sub Unit': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#ed6c02'
+  }
+};
+
+var typeStyle = function typeStyle(t) {
+  return TYPE_STYLE[t] || {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#607d8b'
+  };
+};
+
+function CompanyStructureCards(_ref) {
+  var shellConfig = _ref.shellConfig;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      nodes = _useState2[0],
+      setNodes = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      err = _useState4[0],
+      setErr = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      search = _useState6[0],
+      setSearch = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(1),
+      _useState8 = _slicedToArray(_useState7, 2),
+      page = _useState8[0],
+      setPage = _useState8[1];
+
+  var adapterRef = (0, _react.useRef)(null);
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var load = (0, _react.useCallback)(function () {
+    fetch("".concat(shellConfig.restApiBase, "appshell/org-structure"), {
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      return setNodes(d && d.nodes || []);
+    })["catch"](function () {
+      return setErr(true);
+    });
+  }, [shellConfig]);
+  (0, _react.useEffect)(function () {
+    load();
+  }, [load]); // Use the legacy adapter (instantiated by the module's init) for Add/Edit/Delete
+  // and hook its post-save reload into our refresh by injecting a fake table ref.
+
+  (0, _react.useEffect)(function () {
+    var list = window.modJsList || {};
+    var m = list.tabCompanyStructure;
+    if (!m) return;
+    adapterRef.current = m;
+    m.tableContainer = {
+      current: {
+        reload: function reload() {
+          return load();
+        },
+        setCurrentElement: function setCurrentElement() {},
+        setLoading: function setLoading() {},
+        setFilterData: function setFilterData() {}
+      }
+    }; // Load the form's remote-source select options (Parent Structure, Country,
+    // Time Zone, Leads). Normally done inside the adapter's get(); the cards tab
+    // never calls get(), so do it here — otherwise selects show ids / "No data".
+
+    try {
+      if (m.masterDataReader && m.masterDataReader.updateAllMasterData) {
+        m.masterDataReader.updateAllMasterData();
+      }
+    } catch (e) {
+      /* ignore */
+    }
+  }, [nodes === null, load]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  var adapter = function adapter() {
+    return adapterRef.current || (window.modJsList || {}).tabCompanyStructure;
+  };
+
+  var can = function can(a) {
+    var m = adapter();
+    return m && m.hasAccess && m.hasAccess(a);
+  };
+
+  var addNew = function addNew() {
+    var m = adapter();
+    if (m) m.renderForm();
+  };
+
+  var edit = function edit(id) {
+    var m = adapter();
+    if (m) m.edit(id);
+  }; // The adapter's deleteRow() relies on the legacy Bootstrap #deleteModel that
+  // does not exist in the native shell mount, so confirm with antd and delete
+  // via cleanDelete() (a plain $.post to service.php, no Bootstrap/loader), then
+  // refresh the cards ourselves.
+
+
+  var del = function del(id) {
+    var m = adapter();
+    if (!m) return;
+    var node = (nodes || []).find(function (n) {
+      return String(n.id) === String(id);
+    });
+
+    _antd.Modal.confirm({
+      title: 'Delete structure',
+      content: node ? "Are you sure you want to delete \u201C".concat(node.title, "\u201D?") : 'Are you sure you want to delete this company structure?',
+      okText: 'Delete',
+      okType: 'danger',
+      onOk: function onOk() {
+        return new Promise(function (resolve) {
+          try {
+            m.cleanDelete(id, function (httpStatus, status) {
+              if (httpStatus === 200 && status === 'SUCCESS') {
+                _antd.message.success('Structure deleted');
+
+                load();
+              } else {
+                _antd.message.error('Could not delete this structure. It may be in use.', 5);
+              }
+
+              resolve();
+            });
+          } catch (e) {
+            _antd.message.error('Could not delete this structure', 5);
+
+            resolve();
+          }
+        });
+      }
+    });
+  };
+
+  var view = function view(id) {
+    var m = adapter();
+    if (m && m.showDetailsModal) m.showDetailsModal(id);
+  };
+
+  var copy = function copy(id) {
+    var m = adapter();
+    if (m && m.copyRow) m.copyRow(id);
+  };
+
+  var filtered = (0, _react.useMemo)(function () {
+    var all = nodes || [];
+    var q = search.trim().toLowerCase();
+    if (!q) return all;
+    return all.filter(function (n) {
+      return "".concat(n.title, " ").concat(n.type, " ").concat(n.country, " ").concat(n.parentTitle || '').toLowerCase().includes(q);
+    });
+  }, [nodes, search]);
+  var paged = (0, _react.useMemo)(function () {
+    return filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  }, [filtered, page]);
+  (0, _react.useEffect)(function () {
+    setPage(1);
+  }, [search]);
+  if (err) return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "Could not load company structure"
+  });
+  if (!nodes) return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      padding: 60
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+    size: "large"
+  }));
+
+  var metaItem = function metaItem(icon, text) {
+    return text ? /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 5,
+        maxWidth: 280,
+        overflow: 'hidden'
+      }
+    }, icon, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, text)) : null;
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+    id: "CompanyStructureForm",
+    style: {
+      display: 'none'
+    }
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    id: "CompanyStructureFilterForm",
+    style: {
+      display: 'none'
+    }
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 12,
+      marginBottom: 16,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", null, can('save') && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "primary",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.PlusOutlined, null),
+    onClick: addNew
+  }, "Add Structure")), /*#__PURE__*/_react["default"].createElement(_antd.Input.Search, {
+    allowClear: true,
+    placeholder: "Search structures\u2026",
+    style: {
+      maxWidth: 280
+    },
+    onChange: function onChange(e) {
+      return setSearch(e.target.value);
+    }
+  })), filtered.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "No matching company structures"
+  }) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10
+    }
+  }, paged.map(function (n) {
+    var st = typeStyle(n.type);
+    return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      key: n.id,
+      hoverable: true,
+      onClick: function onClick() {
+        return view(n.id);
+      },
+      style: {
+        borderRadius: 10,
+        boxShadow: _theme.MUI_SHADOW,
+        cursor: 'pointer'
+      },
+      styles: {
+        body: {
+          padding: '12px 16px'
+        }
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 14
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: 40,
+        height: 40,
+        borderRadius: 10,
+        flex: '0 0 auto',
+        background: "".concat(st.color, "18"),
+        color: st.color,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 18
+      }
+    }, st.icon), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: 0,
+        flex: 1
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        flexWrap: 'wrap'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        fontWeight: 600,
+        fontSize: 14
+      }
+    }, n.title), /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+      style: {
+        borderRadius: 6,
+        margin: 0
+      }
+    }, n.type || 'Unit'), n.headcount > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+      color: "blue",
+      style: {
+        borderRadius: 6,
+        margin: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null), ' ', n.headcount)), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16,
+        marginTop: 4,
+        color: token.colorTextSecondary,
+        fontSize: 12.5,
+        flexWrap: 'wrap'
+      }
+    }, metaItem( /*#__PURE__*/_react["default"].createElement(_icons.PartitionOutlined, null), n.parentTitle ? "Reports to ".concat(n.parentTitle) : 'Top level'), metaItem( /*#__PURE__*/_react["default"].createElement(_icons.EnvironmentOutlined, null), n.address), metaItem( /*#__PURE__*/_react["default"].createElement(_icons.GlobalOutlined, null), n.country), metaItem( /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null), n.timezone))), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        gap: 10,
+        flex: '0 0 auto'
+      },
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      }
+    }, can('save') && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Edit"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.EditOutlined, {
+        style: {
+          color: '#2e7d32'
+        }
+      }),
+      onClick: function onClick() {
+        return edit(n.id);
+      }
+    })), can('save') && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Copy"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CopyOutlined, {
+        style: {
+          color: '#546e7a'
+        }
+      }),
+      onClick: function onClick() {
+        return copy(n.id);
+      }
+    })), can('delete') && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Delete"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DeleteOutlined, {
+        style: {
+          color: '#d32f2f'
+        }
+      }),
+      onClick: function onClick() {
+        return del(n.id);
+      }
+    })))));
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Pagination, {
+    current: page,
+    pageSize: PAGE_SIZE,
+    total: filtered.length,
+    onChange: setPage,
+    showSizeChanger: false,
+    showTotal: function showTotal(t) {
+      return "".concat(t, " structures");
+    }
+  }))));
+}
+
+},{"./theme":29,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],6:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Dashboard;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _g2plot = require("@antv/g2plot");
+
+var _theme = require("./theme");
+
+var _ExtensionBanners = _interopRequireDefault(require("../../components/ExtensionBanners"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text;
+var PALETTE = ['#346CB0', '#5AD8A6', '#5B8FF9', '#F6BD16', '#E8684A', '#9270CA', '#6DC8EC', '#FF99C3'];
+var PLOTS = {
+  pie: _g2plot.Pie,
+  donut: _g2plot.Donut,
+  column: _g2plot.Column,
+  area: _g2plot.Area,
+  bar: _g2plot.Bar
+}; // Thin React wrapper around g2plot 1.x (the version already bundled as vendorAntv).
+// Dark mode is handled by injecting light text/axis colours into each chart's
+// config (see darkChart* below) rather than g2plot's built-in 'dark' theme,
+// which paints an opaque grey background that does not match the card. The
+// donut's centre label is HTML (see the .ring-guide-* CSS in spa-shell.php).
+
+function Chart(_ref) {
+  var type = _ref.type,
+      config = _ref.config,
+      _ref$height = _ref.height,
+      height = _ref$height === void 0 ? 230 : _ref$height;
+  var ref = (0, _react.useRef)(null);
+  (0, _react.useEffect)(function () {
+    if (!ref.current) return undefined;
+    var Ctor = PLOTS[type];
+    if (!Ctor) return undefined;
+    var plot;
+
+    try {
+      plot = new Ctor(ref.current, config);
+      plot.render();
+    } catch (e) {
+      /* ignore render errors */
+    }
+
+    return function () {
+      try {
+        if (plot) plot.destroy();
+      } catch (e) {
+        /* */
+      }
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [type, JSON.stringify(config), height]);
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    ref: ref,
+    style: {
+      height: height
+    }
+  });
+}
+
+function initials(name) {
+  var p = (name || '').trim().split(/\s+/);
+  return (p[0] && p[0][0] || '' + (p[1] && p[1][0] || '')).toUpperCase() + (p[1] && p[1][0] || '').toUpperCase();
+}
+
+function colorFor(name) {
+  var h = 0;
+
+  for (var i = 0; i < (name || '').length; i += 1) {
+    h = h * 31 + name.charCodeAt(i) >>> 0;
+  }
+
+  return PALETTE[h % PALETTE.length];
+}
+
+function fmtDate(d) {
+  if (!d) return '';
+  var dt = new Date("".concat(d, "T00:00:00"));
+  if (Number.isNaN(dt.getTime())) return d;
+  return dt.toLocaleDateString(undefined, {
+    month: 'short',
+    day: 'numeric'
+  });
+}
+
+function Kpi(_ref2) {
+  var icon = _ref2.icon,
+      label = _ref2.label,
+      value = _ref2.value,
+      color = _ref2.color,
+      sub = _ref2.sub,
+      labelColor = _ref2.labelColor,
+      subColor = _ref2.subColor,
+      onClick = _ref2.onClick;
+  return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    bordered: false,
+    hoverable: !!onClick,
+    onClick: onClick,
+    style: {
+      borderRadius: 14,
+      boxShadow: _theme.MUI_SHADOW,
+      cursor: onClick ? 'pointer' : 'default'
+    },
+    bodyStyle: {
+      padding: 18
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 14
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: 46,
+      height: 46,
+      borderRadius: 12,
+      flex: '0 0 auto',
+      background: "".concat(color, "1f"),
+      color: color,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: 20
+    }
+  }, icon), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 26,
+      fontWeight: 700,
+      lineHeight: 1.1
+    }
+  }, value), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      color: labelColor,
+      fontSize: 13,
+      whiteSpace: 'nowrap'
+    }
+  }, label))), sub ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginTop: 10,
+      fontSize: 12,
+      color: subColor
+    }
+  }, sub) : null);
+}
+
+var ICEHRM_PRO_PURCHASE_URL = 'https://icehrm.com/purchase-icehrmpro';
+var ICEHRM_CLOUD_MIGRATE_URL = 'https://icehrm.zendesk.com/hc/en-us/requests/new?tf_subject=Migrate%20IceHrm%20Open%20Source';
+var ICEHRM_CLOUD_PRICING_URL = 'https://icehrm.com/managed-hosting';
+
+function CloudBox(_ref3) {
+  var onLearnMore = _ref3.onLearnMore;
+  return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    bordered: false,
+    hoverable: !!onLearnMore,
+    onClick: onLearnMore,
+    style: {
+      borderRadius: 14,
+      boxShadow: _theme.MUI_SHADOW,
+      cursor: onLearnMore ? 'pointer' : 'default',
+      background: 'linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%)',
+      color: '#fff',
+      height: '100%'
+    },
+    bodyStyle: {
+      padding: 18
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 14
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: 46,
+      height: 46,
+      borderRadius: 12,
+      flex: '0 0 auto',
+      background: 'rgba(255,255,255,0.2)',
+      color: '#fff',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: 20
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_icons.CloudOutlined, null)), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 15,
+      fontWeight: 700,
+      lineHeight: 1.2
+    }
+  }, "Migrate to IceHrm Cloud"), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 12,
+      opacity: 0.9,
+      whiteSpace: 'nowrap'
+    }
+  }, "No servers, automatic updates"))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginTop: 12,
+      display: 'flex',
+      gap: 8,
+      alignItems: 'center',
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    size: "small",
+    href: ICEHRM_CLOUD_MIGRATE_URL,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    onClick: function onClick(e) {
+      return e.stopPropagation();
+    },
+    style: {
+      background: '#fff',
+      borderColor: '#fff',
+      color: '#0369a1',
+      fontWeight: 600
+    }
+  }, "Contact Us"), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    size: "small",
+    href: ICEHRM_CLOUD_PRICING_URL,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    onClick: function onClick(e) {
+      return e.stopPropagation();
+    },
+    style: {
+      background: 'rgba(255,255,255,0.18)',
+      borderColor: 'rgba(255,255,255,0.65)',
+      color: '#fff',
+      fontWeight: 600
+    }
+  }, "Check Pricing"), onLearnMore ? /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontSize: 12,
+      opacity: 0.9,
+      textDecoration: 'underline'
+    }
+  }, "Learn more") : null));
+}
+
+function UpgradeBox(_ref4) {
+  var onCompare = _ref4.onCompare;
+  return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    bordered: false,
+    hoverable: !!onCompare,
+    onClick: onCompare,
+    style: {
+      borderRadius: 14,
+      boxShadow: _theme.MUI_SHADOW,
+      cursor: onCompare ? 'pointer' : 'default',
+      background: 'linear-gradient(135deg, #7B61FF 0%, #9270CA 100%)',
+      color: '#fff',
+      height: '100%'
+    },
+    bodyStyle: {
+      padding: 18
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 14
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: 46,
+      height: 46,
+      borderRadius: 12,
+      flex: '0 0 auto',
+      background: 'rgba(255,255,255,0.2)',
+      color: '#fff',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: 20
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_icons.RocketOutlined, null)), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 15,
+      fontWeight: 700,
+      lineHeight: 1.2
+    }
+  }, "Upgrade to IceHrmPro"), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 12,
+      opacity: 0.9,
+      whiteSpace: 'nowrap'
+    }
+  }, "Unlock all premium extensions"))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginTop: 12,
+      display: 'flex',
+      gap: 8,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    size: "small",
+    href: ICEHRM_PRO_PURCHASE_URL,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    onClick: function onClick(e) {
+      return e.stopPropagation();
+    },
+    style: {
+      background: '#fff',
+      borderColor: '#fff',
+      color: '#7B61FF',
+      fontWeight: 600
+    }
+  }, "Buy Now"), onCompare ? /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontSize: 12,
+      opacity: 0.9,
+      textDecoration: 'underline'
+    }
+  }, "Compare editions") : null));
+}
+
+function SectionCard(_ref5) {
+  var title = _ref5.title,
+      extra = _ref5.extra,
+      children = _ref5.children,
+      height = _ref5.height;
+  return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    title: /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        fontWeight: 600
+      }
+    }, title),
+    extra: extra,
+    bordered: false,
+    style: {
+      borderRadius: 14,
+      boxShadow: _theme.MUI_SHADOW,
+      height: height || '100%'
+    },
+    bodyStyle: {
+      padding: 16
+    }
+  }, children);
+}
+
+function PeopleList(_ref6) {
+  var data = _ref6.data,
+      renderMeta = _ref6.renderMeta,
+      emptyText = _ref6.emptyText;
+
+  if (!data || data.length === 0) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+      description: emptyText || 'Nothing here'
+    });
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(_antd.List, {
+    dataSource: data,
+    split: false,
+    renderItem: function renderItem(item) {
+      return /*#__PURE__*/_react["default"].createElement(_antd.List.Item, {
+        style: {
+          padding: '8px 0'
+        }
+      }, /*#__PURE__*/_react["default"].createElement(_antd.List.Item.Meta, {
+        avatar: /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+          style: {
+            backgroundColor: colorFor(item.name),
+            verticalAlign: 'middle'
+          }
+        }, initials(item.name)),
+        title: /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            fontSize: 14
+          }
+        }, item.name),
+        description: renderMeta(item)
+      }));
+    }
+  });
+} // Shared scaffold for the legacy-parity dashboard banners (payment reminder,
+// demo-data prompt, trial upgrade ad): gradient card, round icon, title +
+// message on the left, action buttons on the right.
+
+
+function DashBanner(_ref7) {
+  var gradient = _ref7.gradient,
+      shadow = _ref7.shadow,
+      border = _ref7.border,
+      icon = _ref7.icon,
+      title = _ref7.title,
+      message = _ref7.message,
+      actions = _ref7.actions;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: gradient,
+      borderRadius: 12,
+      padding: '20px 24px',
+      marginBottom: 18,
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 16,
+      flexWrap: 'wrap',
+      boxShadow: shadow,
+      border: border || 'none'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: 'rgba(255,255,255,0.2)',
+      borderRadius: '50%',
+      width: 48,
+      height: 48,
+      flex: '0 0 auto',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: '#fff',
+      fontSize: 20
+    }
+  }, icon), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      color: '#fff',
+      fontWeight: 600,
+      fontSize: 16,
+      marginBottom: 4
+    }
+  }, title), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      color: 'rgba(255,255,255,0.9)',
+      fontSize: 14
+    }
+  }, message))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 10,
+      alignItems: 'center'
+    }
+  }, actions));
+}
+
+function bannerButton(_ref8) {
+  var label = _ref8.label,
+      icon = _ref8.icon,
+      color = _ref8.color,
+      _onClick = _ref8.onClick,
+      ghost = _ref8.ghost;
+  return /*#__PURE__*/_react["default"].createElement("a", {
+    key: label,
+    onClick: function onClick(e) {
+      e.preventDefault();
+
+      _onClick();
+    },
+    style: ghost ? {
+      background: 'rgba(255,255,255,0.2)',
+      color: '#fff',
+      padding: '10px 16px',
+      borderRadius: 8,
+      textDecoration: 'none',
+      fontSize: 14,
+      fontWeight: 500,
+      whiteSpace: 'nowrap',
+      border: '1px solid rgba(255,255,255,0.3)'
+    } : {
+      background: '#fff',
+      color: color,
+      padding: '10px 24px',
+      borderRadius: 8,
+      textDecoration: 'none',
+      fontSize: 14,
+      fontWeight: 600,
+      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+      whiteSpace: 'nowrap'
+    }
+  }, icon, icon ? ' ' : null, label);
+} // Unpaid-invoice banner — same conditions and copy as the legacy admin
+// dashboard (core/admin/dashboard/index.php): orange reminder for a single
+// unpaid invoice, red service-restricted notice for two or more.
+
+
+function PaymentBanner(_ref9) {
+  var billing = _ref9.billing,
+      onNavigate = _ref9.onNavigate;
+  var count = billing && billing.unpaidInvoices || 0;
+  if (count < 1) return null;
+  var single = count === 1;
+  var total = Number(billing.unpaidTotal || 0).toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+  return /*#__PURE__*/_react["default"].createElement(DashBanner, {
+    gradient: single ? 'linear-gradient(135deg, #fa8c16 0%, #d46b08 100%)' : 'linear-gradient(135deg, #f5222d 0%, #cf1322 100%)',
+    shadow: single ? '0 4px 15px rgba(250, 140, 22, 0.3)' : '0 4px 15px rgba(245, 34, 45, 0.3)',
+    icon: single ? /*#__PURE__*/_react["default"].createElement(_icons.WarningOutlined, null) : /*#__PURE__*/_react["default"].createElement(_icons.ExclamationCircleOutlined, null),
+    title: single ? 'Payment Reminder' : 'Service Restricted - Payment Required',
+    message: single ? "You have an unpaid invoice of ".concat(total, " USD. Please complete your payment to continue enjoying uninterrupted service.") : /*#__PURE__*/_react["default"].createElement("span", null, "Your account has an overdue balance of ".concat(total, " USD. Manager access has been temporarily restricted."), /*#__PURE__*/_react["default"].createElement("br", null), "Please complete payment and re-login to restore full access."),
+    actions: bannerButton({
+      label: 'Pay Now',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CreditCardOutlined, null),
+      color: single ? '#d46b08' : '#cf1322',
+      onClick: function onClick() {
+        if (onNavigate) onNavigate('admin', 'billing');
+      }
+    })
+  });
+} // Fresh-install sample data prompt — same conditions as the legacy banner in
+// core/header.php (data.demoPrompt is computed server-side). Dismiss hides it
+// for this render only, like the legacy display:none link.
+
+
+function DemoBanner(_ref10) {
+  var show = _ref10.show,
+      onNavigate = _ref10.onNavigate;
+
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      dismissed = _useState2[0],
+      setDismissed = _useState2[1];
+
+  if (!show || dismissed) return null;
+  return /*#__PURE__*/_react["default"].createElement(DashBanner, {
+    gradient: "linear-gradient(135deg, #52c41a 0%, #389e0d 100%)",
+    shadow: "0 4px 15px rgba(82, 196, 26, 0.3)",
+    border: "2px solid rgba(255,255,255,0.3)",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.RocketOutlined, null),
+    title: "Welcome to IceHrm! Want to see how it works?",
+    message: /*#__PURE__*/_react["default"].createElement("span", null, "Add sample employees, projects, attendance, and more to explore all features.", /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("strong", null, "You can clear all sample data with one click"), ' ', "when you're ready to go live."),
+    actions: [bannerButton({
+      label: 'Manage Sample Data',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.PlusCircleOutlined, null),
+      color: '#389e0d',
+      onClick: function onClick() {
+        if (onNavigate) onNavigate('extension', 'demo-mode|admin');
+      }
+    }), bannerButton({
+      label: 'Dismiss',
+      ghost: true,
+      onClick: function onClick() {
+        return setDismissed(true);
+      }
+    })]
+  });
+} // Trial upgrade ad — same gate as the legacy admin dashboard banner
+// (show_upgrade_ad session flag; data.upgradeAd carries remaining trial days).
+
+
+function UpgradeBanner(_ref11) {
+  var upgradeAd = _ref11.upgradeAd,
+      onNavigate = _ref11.onNavigate;
+  if (!upgradeAd) return null;
+  var days = upgradeAd.days;
+  return /*#__PURE__*/_react["default"].createElement(DashBanner, {
+    gradient: "linear-gradient(135deg, #722ed1 0%, #531dab 100%)",
+    shadow: "0 4px 15px rgba(114, 46, 209, 0.3)",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.StarOutlined, null),
+    title: "Unlock the Full Potential of IceHrm",
+    message: /*#__PURE__*/_react["default"].createElement("span", null, days !== null && days !== undefined ? /*#__PURE__*/_react["default"].createElement("span", null, "You have", ' ', /*#__PURE__*/_react["default"].createElement("strong", null, days, ' ', "days"), ' ', "left in your free trial.", ' ') : null, "Upgrade to IceHrm Cloud for unlimited employees, priority support, and premium features."),
+    actions: [bannerButton({
+      label: 'Upgrade Now',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ArrowUpOutlined, null),
+      color: '#531dab',
+      onClick: function onClick() {
+        if (onNavigate) onNavigate('admin', 'billing');
+      }
+    }), bannerButton({
+      label: 'See Plans',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.TagOutlined, null),
+      ghost: true,
+      onClick: function onClick() {
+        window.open('https://icehrm.com/cloud-hosting-charges', '_blank');
+      }
+    })]
+  });
+}
+
+function Dashboard(_ref12) {
+  var config = _ref12.config,
+      onNavigate = _ref12.onNavigate;
+
+  var _useState3 = (0, _react.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      data = _useState4[0],
+      setData = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(true),
+      _useState6 = _slicedToArray(_useState5, 2),
+      loading = _useState6[0],
+      setLoading = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(null),
+      _useState8 = _slicedToArray(_useState7, 2),
+      error = _useState8[0],
+      setError = _useState8[1];
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var isDark = token.colorBgContainer === _theme.MUI_DARK.paper; // Light text/axis colours injected into g2plot configs in dark mode (the
+  // canvas text otherwise defaults to dark grey and is invisible on the card).
+
+  var D_TXT = 'rgba(255,255,255,0.85)';
+  var D_AXIS = 'rgba(255,255,255,0.45)';
+  var D_LINE = 'rgba(255,255,255,0.25)';
+  var D_GRID = 'rgba(255,255,255,0.12)';
+  var darkLegend = isDark ? {
+    text: {
+      style: {
+        fill: D_TXT
+      }
+    }
+  } : {};
+  var darkAxis = isDark ? {
+    label: {
+      style: {
+        fill: D_AXIS
+      }
+    },
+    line: {
+      style: {
+        stroke: D_LINE
+      }
+    },
+    grid: {
+      line: {
+        style: {
+          stroke: D_GRID
+        }
+      }
+    }
+  } : {};
+  var darkLabel = isDark ? {
+    style: {
+      fill: D_TXT
+    }
+  } : {};
+  (0, _react.useEffect)(function () {
+    var alive = true;
+    fetch("".concat(config.restApiBase, "appshell/dashboard"), {
+      headers: {
+        Authorization: "Bearer ".concat(config.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (alive) {
+        setData(d);
+        setLoading(false);
+      }
+    })["catch"](function (e) {
+      if (alive) {
+        setError(e.message);
+        setLoading(false);
+      }
+    });
+    return function () {
+      alive = false;
+    };
+  }, [config]);
+  var showCloudCard = (0, _react.useMemo)(function () {
+    return Math.random() < 0.5;
+  }, []);
+  var greeting = (0, _react.useMemo)(function () {
+    var h = new Date().getHours();
+    return h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening';
+  }, []);
+  var greetName = (0, _react.useMemo)(function () {
+    var n = data && data.greetingName || '';
+
+    if (n.indexOf('@') !== -1) {
+      return n.split('@')[0].replace(/[._]+/g, ' ').replace(/\b\w/g, function (c) {
+        return c.toUpperCase();
+      });
+    }
+
+    return n;
+  }, [data]);
+
+  if (loading) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 80
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+  }
+
+  if (error || !data) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 32
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "Could not load dashboard".concat(error ? ": ".concat(error) : '')
+    }));
+  }
+
+  var k = data.kpis || {};
+  var kpis = [{
+    label: 'Employees',
+    value: k.totalEmployees,
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#346CB0',
+    nav: ['admin', 'employees']
+  }, {
+    label: 'Departments',
+    value: k.departments,
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#5AD8A6',
+    nav: ['admin', 'company_structure']
+  }];
+
+  if (data.leave) {
+    kpis.push({
+      label: 'Pending Approvals',
+      value: data.leave.pendingRequests,
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+      color: '#E8684A',
+      nav: ['admin', 'leaves', 'tabEmployeeLeave']
+    });
+  }
+
+  if (data.expenses) {
+    kpis.push({
+      label: 'Open Expenses',
+      value: data.expenses.pendingCount,
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+      color: '#5B8FF9',
+      nav: ['extension', 'expenses|admin', 'tabEmployeeExpense']
+    });
+  }
+
+  var donutCfg = function donutCfg(rows) {
+    return {
+      data: rows || [],
+      angleField: 'value',
+      colorField: 'type',
+      radius: 0.9,
+      padding: 'auto',
+      color: PALETTE,
+      legend: _objectSpread({
+        visible: true,
+        position: 'bottom-center'
+      }, darkLegend),
+      label: {
+        visible: false
+      },
+      statistic: {
+        totalLabel: 'Total'
+      }
+    };
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 24,
+      maxWidth: 1500,
+      margin: '0 auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_ExtensionBanners["default"], {
+    banners: data.banners,
+    onNavigate: onNavigate
+  }), /*#__PURE__*/_react["default"].createElement(DemoBanner, {
+    show: data.demoPrompt,
+    onNavigate: onNavigate
+  }), /*#__PURE__*/_react["default"].createElement(PaymentBanner, {
+    billing: data.billing,
+    onNavigate: onNavigate
+  }), /*#__PURE__*/_react["default"].createElement(UpgradeBanner, {
+    upgradeAd: data.upgradeAd,
+    onNavigate: onNavigate
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 18
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 22,
+      fontWeight: 700
+    }
+  }, greeting, ",", ' ', greetName, ' ', "\uD83D\uDC4B"), /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary"
+  }, "Here\u2019s what\u2019s happening across your organisation today.")), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16]
+  }, kpis.map(function (kpi) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+      xs: 12,
+      sm: 8,
+      md: 6,
+      xl: kpis.length > 6 ? 4 : 6,
+      key: kpi.label
+    }, /*#__PURE__*/_react["default"].createElement(Kpi, _extends({}, kpi, {
+      labelColor: token.colorTextSecondary,
+      subColor: token.colorTextTertiary,
+      onClick: kpi.nav && onNavigate ? function () {
+        // kpi.nav[2] optionally deep-links to a specific tab of the target module.
+        if (kpi.nav[2]) {
+          try {
+            window.__iceShellStartTab = kpi.nav[2];
+          } catch (e) {
+            /* */
+          }
+        }
+
+        onNavigate(kpi.nav[0], kpi.nav[1]);
+      } : undefined
+    })));
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 12,
+    sm: 8,
+    md: 6,
+    xl: kpis.length > 6 ? 4 : 6
+  }, showCloudCard ? /*#__PURE__*/_react["default"].createElement(CloudBox, {
+    onLearnMore: onNavigate ? function () {
+      try {
+        window.__iceShellStartTab = 'tabIceHrmCloud';
+      } catch (e) {
+        /* */
+      }
+
+      onNavigate('extension', 'marketplace|admin');
+    } : undefined
+  }) : /*#__PURE__*/_react["default"].createElement(UpgradeBox, {
+    onCompare: onNavigate ? function () {
+      try {
+        window.__iceShellStartTab = 'tabIceHrmPro';
+      } catch (e) {
+        /* */
+      }
+
+      onNavigate('extension', 'marketplace|admin');
+    } : undefined
+  }))), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: 16
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: "Headcount growth",
+    extra: /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+      color: "blue"
+    }, /*#__PURE__*/_react["default"].createElement(_icons.RiseOutlined, null), " cumulative")
+  }, /*#__PURE__*/_react["default"].createElement(Chart, {
+    type: "area",
+    height: 260,
+    config: {
+      data: data.headcountTrend || [],
+      xField: 'year',
+      yField: 'value',
+      smooth: true,
+      padding: 'auto',
+      color: '#346CB0',
+      areaStyle: {
+        fill: "l(270) 0:".concat(token.colorBgContainer, " 1:#346CB0")
+      },
+      xAxis: _objectSpread({
+        visible: true
+      }, darkAxis),
+      yAxis: _objectSpread({
+        visible: true,
+        min: 0
+      }, darkAxis),
+      point: {
+        visible: false
+      }
+    }
+  }))), /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: 8
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: "Gender diversity"
+  }, /*#__PURE__*/_react["default"].createElement(Chart, {
+    type: "donut",
+    height: 260,
+    config: donutCfg(data.genderDist)
+  })))), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: 14
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: "Headcount by department"
+  }, /*#__PURE__*/_react["default"].createElement(Chart, {
+    type: "column",
+    height: 250,
+    config: {
+      data: data.headcountByDept || [],
+      xField: 'name',
+      yField: 'value',
+      padding: 'auto',
+      color: '#5B8FF9',
+      columnSize: 38,
+      label: _objectSpread({
+        visible: true,
+        position: 'top'
+      }, darkLabel),
+      xAxis: _objectSpread({
+        visible: true
+      }, darkAxis),
+      yAxis: _objectSpread({
+        visible: true,
+        min: 0
+      }, darkAxis)
+    }
+  }))), /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: 10
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: "Employment type"
+  }, /*#__PURE__*/_react["default"].createElement(Chart, {
+    type: "donut",
+    height: 250,
+    config: donutCfg(data.employmentTypeDist)
+  })))), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    md: 12,
+    xl: 8
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: /*#__PURE__*/_react["default"].createElement("span", null, /*#__PURE__*/_react["default"].createElement(_icons.UserAddOutlined, null), " Recent hires")
+  }, /*#__PURE__*/_react["default"].createElement(PeopleList, {
+    data: data.recentHires,
+    emptyText: "No recent hires",
+    renderMeta: function renderMeta(it) {
+      return /*#__PURE__*/_react["default"].createElement(Text, {
+        type: "secondary",
+        style: {
+          fontSize: 12
+        }
+      }, it.title || 'Employee', ' · joined ', fmtDate(it.date));
+    }
+  }))), data.leave ? /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    md: 12,
+    xl: 8
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: /*#__PURE__*/_react["default"].createElement("span", null, /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null), " Pending leave approvals"),
+    extra: onNavigate ? /*#__PURE__*/_react["default"].createElement("a", {
+      onClick: function onClick() {
+        try {
+          window.__iceShellStartTab = 'tabEmployeeLeave';
+        } catch (e) {
+          /* */
+        }
+
+        onNavigate('admin', 'leaves');
+      }
+    }, "View all") : null
+  }, /*#__PURE__*/_react["default"].createElement(PeopleList, {
+    data: data.leave.pendingList,
+    emptyText: "No pending requests",
+    renderMeta: function renderMeta(it) {
+      return /*#__PURE__*/_react["default"].createElement(Text, {
+        type: "secondary",
+        style: {
+          fontSize: 12
+        }
+      }, it.type || 'Leave', ' · ', fmtDate(it.start), it.end && it.end !== it.start ? " \u2013 ".concat(fmtDate(it.end)) : '');
+    }
+  }))) : null, data.celebrations && data.celebrations.length > 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    md: 12,
+    xl: 8
+  }, /*#__PURE__*/_react["default"].createElement(SectionCard, {
+    title: /*#__PURE__*/_react["default"].createElement("span", null, /*#__PURE__*/_react["default"].createElement(_icons.GiftOutlined, null), " Celebrations")
+  }, /*#__PURE__*/_react["default"].createElement(PeopleList, {
+    data: data.celebrations,
+    renderMeta: function renderMeta(it) {
+      return /*#__PURE__*/_react["default"].createElement(Text, {
+        type: "secondary",
+        style: {
+          fontSize: 12
+        }
+      }, it.type === 'birthday' ? /*#__PURE__*/_react["default"].createElement("span", null, /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null), " Birthday") : /*#__PURE__*/_react["default"].createElement("span", null, /*#__PURE__*/_react["default"].createElement(_icons.GiftOutlined, null), " ", it.years, "-year anniversary"), ' · ', fmtDate(it.date));
+    }
+  }))) : null));
+}
+
+},{"../../components/ExtensionBanners":2,"./theme":29,"@ant-design/icons":"@ant-design/icons","@antv/g2plot":"@antv/g2plot","antd":"antd","react":"react"}],7:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = EmployeeDashboard;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+var _ExtensionBanners = _interopRequireDefault(require("../../components/ExtensionBanners"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text;
+var PALETTE = ['#346CB0', '#5AD8A6', '#5B8FF9', '#F6BD16', '#E8684A', '#9270CA', '#6DC8EC', '#FF99C3'];
+
+function initials(name) {
+  var p = (name || '').trim().split(/\s+/);
+  return ((p[0] && p[0][0] || '') + (p[1] && p[1][0] || '')).toUpperCase() || '?';
+}
+
+function colorFor(name) {
+  var h = 0;
+
+  for (var i = 0; i < (name || '').length; i += 1) {
+    h = h * 31 + name.charCodeAt(i) >>> 0;
+  }
+
+  return PALETTE[h % PALETTE.length];
+}
+
+function fmtDate(d) {
+  if (!d) return '';
+  var dt = new Date("".concat(d, "T00:00:00"));
+  if (Number.isNaN(dt.getTime())) return d;
+  return dt.toLocaleDateString(undefined, {
+    month: 'short',
+    day: 'numeric'
+  });
+}
+
+function daysLabel(n) {
+  if (n === 0) return 'Today';
+  if (n === 1) return 'Tomorrow';
+  return "in ".concat(n, " days");
+} // Map a Task priority to a timeline dot icon (mirrors the legacy My To-Do List).
+
+
+function todoDot(priority) {
+  if (priority >= 1000) return /*#__PURE__*/_react["default"].createElement(_icons.AlertOutlined, {
+    style: {
+      color: '#d32f2f',
+      fontSize: 16
+    }
+  });
+  if (priority >= 100) return /*#__PURE__*/_react["default"].createElement(_icons.FireOutlined, {
+    style: {
+      color: '#e8684a',
+      fontSize: 16
+    }
+  });
+  if (priority >= 50) return /*#__PURE__*/_react["default"].createElement(_icons.WarningOutlined, {
+    style: {
+      color: '#ed6c02',
+      fontSize: 16
+    }
+  });
+  if (priority >= 20) return /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, {
+    style: {
+      color: '#1677ff',
+      fontSize: 16
+    }
+  });
+  return /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, {
+    style: {
+      color: '#2e7d32',
+      fontSize: 16
+    }
+  });
+} // Pull g/n out of a legacy task link so we can navigate within the SPA.
+
+
+function routeFromLink(link) {
+  try {
+    var qs = link.indexOf('?') >= 0 ? link.split('?')[1] : link;
+    var sp = new URLSearchParams(qs);
+    var g = sp.get('g');
+    var n = sp.get('n');
+    return g && n ? {
+      g: g,
+      n: n
+    } : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function EmployeeDashboard(_ref) {
+  var config = _ref.config,
+      onNavigate = _ref.onNavigate,
+      onOpenDocument = _ref.onOpenDocument;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      data = _useState2[0],
+      setData = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(true),
+      _useState4 = _slicedToArray(_useState3, 2),
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      error = _useState6[0],
+      setError = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      showAllTodo = _useState8[0],
+      setShowAllTodo = _useState8[1];
+
+  (0, _react.useEffect)(function () {
+    var alive = true;
+    setLoading(true);
+    fetch("".concat(config.restApiBase, "appshell/employee-dashboard"), {
+      headers: {
+        Authorization: "Bearer ".concat(config.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (alive) {
+        setData(d);
+        setLoading(false);
+      }
+    })["catch"](function (e) {
+      if (alive) {
+        setError(e.message);
+        setLoading(false);
+      }
+    });
+    return function () {
+      alive = false;
+    };
+  }, [config]);
+  var greeting = (0, _react.useMemo)(function () {
+    var h = new Date().getHours();
+    return h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening';
+  }, []);
+  var greetName = (0, _react.useMemo)(function () {
+    var n = data && data.greetingName || '';
+
+    if (n.indexOf('@') !== -1) {
+      return n.split('@')[0].replace(/[._]+/g, ' ').replace(/\b\w/g, function (c) {
+        return c.toUpperCase();
+      });
+    }
+
+    return n;
+  }, [data]);
+
+  if (loading) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 80
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+  }
+
+  if (error || !data) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 32
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "Could not load dashboard".concat(error ? ": ".concat(error) : '')
+    }));
+  }
+
+  var att = data.attendance || {};
+  var todo = data.todo || [];
+  var cels = data.celebrations || [];
+  var directReports = data.directReports || [];
+  var teams = data.teams || []; // --- stat cards ----------------------------------------------------------
+
+  var stats = [];
+
+  if (att && att.hoursToday !== undefined) {
+    stats.push({
+      label: 'Hours today',
+      value: "".concat((att.hoursToday || 0).toFixed(1), "h"),
+      sub: att.punchedIn ? 'Clocked in' : att.punchedOutToday ? 'Clocked out' : 'Not clocked in',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+      color: '#346CB0',
+      nav: ['modules', 'attendance']
+    });
+  }
+
+  stats.push({
+    label: 'Action items',
+    value: todo.length,
+    sub: 'On your to-do list',
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckSquareOutlined, null),
+    color: '#5AD8A6'
+  });
+
+  if (data.leave) {
+    stats.push({
+      label: 'My pending leave',
+      value: data.leave.pending || 0,
+      sub: 'Awaiting approval',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CoffeeOutlined, null),
+      color: '#F6BD16',
+      nav: ['modules', 'leaves']
+    });
+  }
+
+  if (data.isManager && data.teamStats) {
+    stats.push({
+      label: 'Direct reports',
+      value: data.teamStats.reports || 0,
+      sub: 'In your team',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+      color: '#9270CA',
+      nav: ['admin', 'employees']
+    });
+    stats.push({
+      label: 'Team on leave',
+      value: data.teamStats.onLeaveToday || 0,
+      sub: 'Today',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+      color: '#E8684A',
+      nav: ['modules', 'leaves']
+    });
+  }
+
+  var cardHead = function cardHead(icon, title, extra) {
+    return {
+      title: /*#__PURE__*/_react["default"].createElement("span", {
+        style: {
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 8
+        }
+      }, icon, title),
+      extra: extra
+    };
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 24,
+      maxWidth: 1500,
+      margin: '0 auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_ExtensionBanners["default"], {
+    banners: data.banners,
+    onNavigate: onNavigate
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 18
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      fontSize: 22,
+      fontWeight: 700
+    }
+  }, greeting, ",", ' ', greetName, ' ', "\uD83D\uDC4B"), /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary"
+  }, "Here\u2019s your day at a glance.")), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16]
+  }, stats.map(function (s) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+      xs: 12,
+      sm: 8,
+      md: data.isManager ? 6 : 8,
+      xl: data.isManager ? 4 : 6,
+      key: s.label
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      hoverable: true,
+      onClick: function onClick() {
+        return s.nav && onNavigate && onNavigate(s.nav[0], s.nav[1]);
+      },
+      style: {
+        borderRadius: 12,
+        boxShadow: _theme.MUI_SHADOW
+      },
+      styles: {
+        body: {
+          padding: 16
+        }
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 12
+      }
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        width: 42,
+        height: 42,
+        borderRadius: 11,
+        flex: '0 0 auto',
+        fontSize: 19,
+        background: "".concat(s.color, "22"),
+        color: s.color,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }
+    }, s.icon), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 22,
+        fontWeight: 700,
+        lineHeight: 1.1
+      }
+    }, s.value), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 12,
+        color: token.colorTextSecondary
+      }
+    }, s.label))), s.sub && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 11.5,
+        color: token.colorTextTertiary,
+        marginTop: 8
+      }
+    }, s.sub)));
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: data.isManager ? 12 : 14
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, _extends({}, cardHead( /*#__PURE__*/_react["default"].createElement(_icons.CheckSquareOutlined, {
+    style: {
+      color: '#5B8FF9'
+    }
+  }), 'My To-Do List'), {
+    style: {
+      borderRadius: 12,
+      boxShadow: _theme.MUI_SHADOW
+    }
+  }), todo.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+    description: "You're all caught up \uD83C\uDF89"
+  }) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Timeline, {
+    items: (showAllTodo ? todo : todo.slice(0, 4)).map(function (t) {
+      var route = t.link ? routeFromLink(t.link) : null;
+      return {
+        dot: todoDot(t.priority),
+        children: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontWeight: 500
+          }
+        }, t.text), t.details && /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontSize: 12,
+            color: token.colorTextTertiary,
+            marginTop: 2
+          }
+        }, t.details), t.link && t.action && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+          type: "link",
+          size: "small",
+          style: {
+            paddingLeft: 0
+          },
+          onClick: function onClick() {
+            if (route && onNavigate) onNavigate(route.g, route.n);else window.location.href = t.link;
+          }
+        }, t.action))
+      };
+    })
+  }), todo.length > 4 && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "primary",
+    onClick: function onClick() {
+      return setShowAllTodo(function (v) {
+        return !v;
+      });
+    }
+  }, showAllTodo ? 'Show less' : "View all ".concat(todo.length, " tasks"))))), /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24,
+    lg: data.isManager ? 12 : 10
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, _extends({}, cardHead( /*#__PURE__*/_react["default"].createElement(_icons.GiftOutlined, {
+    style: {
+      color: '#E8684A'
+    }
+  }), 'Upcoming celebrations'), {
+    style: {
+      borderRadius: 12,
+      boxShadow: _theme.MUI_SHADOW
+    }
+  }), cels.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+    description: "Nothing coming up"
+  }) : /*#__PURE__*/_react["default"].createElement(_antd.List, {
+    dataSource: cels,
+    renderItem: function renderItem(c) {
+      return /*#__PURE__*/_react["default"].createElement(_antd.List.Item, null, /*#__PURE__*/_react["default"].createElement(_antd.List.Item.Meta, {
+        avatar: /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+          style: {
+            background: colorFor(c.name)
+          }
+        }, initials(c.name)),
+        title: /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            fontWeight: 600
+          }
+        }, c.name),
+        description: c.type === 'birthday' ? "\uD83C\uDF82 Birthday \xB7 ".concat(fmtDate(c.date)) : "\uD83C\uDF89 ".concat(c.years, "yr anniversary \xB7 ").concat(fmtDate(c.date))
+      }), /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+        color: c.days === 0 ? 'red' : 'default'
+      }, daysLabel(c.days)));
+    }
+  })))), data.isManager && /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, _extends({}, cardHead( /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, {
+    style: {
+      color: '#9270CA'
+    }
+  }), 'Direct Reports', /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "link",
+    size: "small",
+    onClick: function onClick() {
+      return onNavigate && onNavigate('admin', 'employees');
+    }
+  }, "View employees", /*#__PURE__*/_react["default"].createElement(_icons.RightOutlined, null))), {
+    style: {
+      borderRadius: 12,
+      boxShadow: _theme.MUI_SHADOW
+    }
+  }), directReports.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+    description: "No direct reports"
+  }) : /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [12, 12]
+  }, directReports.map(function (m) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+      xs: 12,
+      sm: 8,
+      md: 6,
+      xl: 4,
+      key: m.id
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+        padding: '8px 10px',
+        border: "1px solid ".concat(token.colorBorderSecondary),
+        borderRadius: 10
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+      style: {
+        background: colorFor(m.name),
+        flex: '0 0 auto'
+      }
+    }, initials(m.name)), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontWeight: 600,
+        fontSize: 13,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, m.name), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 11,
+        color: token.colorTextTertiary,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, m.title || '—'))));
+  }))))), teams.length > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [16, 16],
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+    xs: 24
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, _extends({}, cardHead( /*#__PURE__*/_react["default"].createElement(_icons.UsergroupAddOutlined, {
+    style: {
+      color: '#0288d1'
+    }
+  }), 'My Teams', /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "link",
+    size: "small",
+    onClick: function onClick() {
+      return onNavigate && onNavigate('extension', 'team|user');
+    }
+  }, "View teams", /*#__PURE__*/_react["default"].createElement(_icons.RightOutlined, null))), {
+    style: {
+      borderRadius: 12,
+      boxShadow: _theme.MUI_SHADOW
+    }
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Row, {
+    gutter: [12, 12]
+  }, teams.map(function (t) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Col, {
+      xs: 24,
+      sm: 12,
+      md: 8,
+      xl: 6,
+      key: t.id
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+        padding: '10px 12px',
+        border: "1px solid ".concat(token.colorBorderSecondary),
+        borderRadius: 10
+      }
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        width: 36,
+        height: 36,
+        borderRadius: 9,
+        flex: '0 0 auto',
+        background: (t.color || '#0288d1') + '22',
+        color: t.color || '#0288d1',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null)), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: 0,
+        flex: 1
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontWeight: 600,
+        fontSize: 13,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, t.name), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 11,
+        color: token.colorTextTertiary
+      }
+    }, "".concat(t.members, " member").concat(t.members === 1 ? '' : 's'))), t.role && t.role !== 'Member' && /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+      color: "blue"
+    }, t.role)));
+  }))))));
+}
+
+},{"../../components/ExtensionBanners":2,"./theme":29,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],8:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = ExpenseDialog;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text,
+    Title = _antd.Typography.Title;
+var STATUS_COLOR = {
+  Pending: 'gold',
+  Approved: 'green',
+  Rejected: 'red',
+  Paid: 'blue',
+  Cancelled: 'default'
+}; // Right-hand, vertically scrollable status-change log. Entries arrive newest-first
+// from the backend (expense/{id}/logs), so the latest change is at the top.
+
+function LogSidebar(_ref) {
+  var logs = _ref.logs,
+      loading = _ref.loading,
+      token = _ref.token;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: 260,
+      flexShrink: 0,
+      borderLeft: "1px solid ".concat(token.colorBorderSecondary),
+      paddingLeft: 16,
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    strong: true,
+    style: {
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_icons.HistoryOutlined, {
+    style: {
+      marginRight: 6
+    }
+  }), "Status History"), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      overflowY: 'auto',
+      flex: 1,
+      maxHeight: 460,
+      paddingRight: 4,
+      paddingTop: 6
+    }
+  }, loading ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      textAlign: 'center',
+      padding: 24
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+    size: "small"
+  })) : !logs || logs.length === 0 ? /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary",
+    style: {
+      fontSize: 13
+    }
+  }, "No status changes yet.") : /*#__PURE__*/_react["default"].createElement(_antd.Timeline, {
+    items: logs.map(function (l) {
+      return {
+        children: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontWeight: 600,
+            fontSize: 13
+          }
+        }, "".concat(l.status_from || '', " \u2192 ").concat(l.status_to || '')), /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            color: token.colorTextTertiary,
+            fontSize: 12
+          }
+        }, l.time), l.note && l.note.trim() ? /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontSize: 12,
+            marginTop: 2
+          }
+        }, l.note.trim()) : null)
+      };
+    })
+  })));
+}
+/**
+ * Unified expense dialog with a status-history sidebar. Three modes:
+ *  - 'view'     : read-only detail (admin/manager, and employees on non-editable rows)
+ *  - 'edit'     : editable form + Save (owner / admin)
+ *  - 'resubmit' : editable form + Re-submit -> sets a rejected expense back to Pending
+ * A new, expense-only component — it does not touch the shared form/modal components.
+ */
+
+
+function ExpenseDialog(_ref2) {
+  var open = _ref2.open,
+      onClose = _ref2.onClose,
+      rec = _ref2.rec,
+      shellConfig = _ref2.shellConfig,
+      _ref2$mode = _ref2.mode,
+      mode = _ref2$mode === void 0 ? 'view' : _ref2$mode,
+      onSaved = _ref2.onSaved,
+      statusOptionsFor = _ref2.statusOptionsFor;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var isDark = token.colorBgContainer === _theme.MUI_DARK.paper;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      detail = _useState2[0],
+      setDetail = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      saving = _useState6[0],
+      setSaving = _useState6[1];
+
+  var _useState7 = (0, _react.useState)({}),
+      _useState8 = _slicedToArray(_useState7, 2),
+      values = _useState8[0],
+      setValues = _useState8[1]; // Status-change (view dialog dropdown): the chosen target + its reason prompt.
+
+
+  var _useState9 = (0, _react.useState)(null),
+      _useState10 = _slicedToArray(_useState9, 2),
+      statusTarget = _useState10[0],
+      setStatusTarget = _useState10[1];
+
+  var _useState11 = (0, _react.useState)(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      statusReason = _useState12[0],
+      setStatusReason = _useState12[1];
+
+  var _useState13 = (0, _react.useState)(false),
+      _useState14 = _slicedToArray(_useState13, 2),
+      statusSaving = _useState14[0],
+      setStatusSaving = _useState14[1];
+
+  var editable = mode === 'edit' || mode === 'resubmit';
+
+  var loadDetail = function loadDetail(withSpinner) {
+    if (withSpinner) {
+      setLoading(true);
+    }
+
+    return fetch("".concat(shellConfig.restApiBase, "expense/").concat(rec.id, "/detail"), {
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (d && !d.error) {
+        setDetail(d);
+        setValues({
+          category: d.category,
+          expense_date: d.expense_date,
+          payment_method: d.payment_method,
+          payee: d.payee,
+          currency: d.currency,
+          amount: d.amount,
+          transaction_no: d.transaction_no,
+          notes: d.notes
+        });
+      } else {
+        setDetail({});
+      }
+    })["catch"](function () {
+      return setDetail({});
+    })["finally"](function () {
+      return setLoading(false);
+    });
+  };
+
+  (0, _react.useEffect)(function () {
+    if (!open || !rec) {
+      setDetail(null);
+      setValues({});
+      return;
+    }
+
+    setDetail(null);
+    setStatusTarget(null);
+    setStatusReason('');
+    loadDetail(true); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, rec, shellConfig]);
+  if (!rec) return null;
+  var status = detail && detail.status || rec.status || '—';
+  var attachments = detail && detail.attachments || [];
+  var logs = detail && detail.logs || [];
+  var options = detail && detail.options || {};
+  var employeeName = detail && detail.employee_name || rec.employee || 'Employee';
+  var heroBg = isDark ? 'rgba(25,118,210,0.14)' : 'rgba(25,118,210,0.06)';
+
+  var setV = function setV(k, v) {
+    return setValues(function (prev) {
+      return _objectSpread({}, prev, _defineProperty({}, k, v));
+    });
+  };
+
+  var doSave = function doSave() {
+    var endpoint = mode === 'resubmit' ? 'resubmit' : 'update';
+    setSaving(true);
+    fetch("".concat(shellConfig.restApiBase, "expense/").concat(rec.id, "/").concat(endpoint), {
+      method: 'POST',
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token),
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify(values)
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (d && d.error) {
+        var msg = d.error[0] && d.error[0][0] ? d.error[0][0].message : 'Could not save';
+
+        _antd.message.error(msg, 5);
+
+        return;
+      }
+
+      _antd.message.success(mode === 'resubmit' ? 'Expense re-submitted' : 'Expense saved');
+
+      if (onSaved) onSaved();
+      onClose();
+    })["catch"](function () {
+      return _antd.message.error('Could not save', 5);
+    })["finally"](function () {
+      return setSaving(false);
+    });
+  }; // Status change from the view dialog (admin/manager). A reason is mandatory and
+  // all rules are enforced by the backend; on success we refresh in place so the
+  // new status + log entry show immediately.
+
+
+  var submitStatusChange = function submitStatusChange() {
+    if (!statusTarget || !statusReason.trim()) return;
+    setStatusSaving(true);
+    fetch("".concat(shellConfig.restApiBase, "expense/").concat(rec.id, "/status"), {
+      method: 'POST',
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token),
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({
+        status: statusTarget.value,
+        reason: statusReason
+      })
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (d && d.error) {
+        var msg = d.error[0] && d.error[0][0] ? d.error[0][0].message : 'Could not change status';
+
+        _antd.message.error(msg, 5);
+
+        return;
+      }
+
+      _antd.message.success('Status updated');
+
+      setStatusTarget(null);
+      setStatusReason('');
+      if (onSaved) onSaved();
+      loadDetail(false);
+    })["catch"](function () {
+      return _antd.message.error('Could not change status', 5);
+    })["finally"](function () {
+      return setStatusSaving(false);
+    });
+  };
+
+  var statusOpts = !editable && typeof statusOptionsFor === 'function' && detail && detail.status ? statusOptionsFor(detail.status) : [];
+  var footer = editable ? [/*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    key: "cancel",
+    onClick: onClose
+  }, "Cancel"), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    key: "save",
+    type: "primary",
+    loading: saving,
+    onClick: doSave
+  }, mode === 'resubmit' ? 'Re-submit' : 'Save')] : [/*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    key: "close",
+    onClick: onClose
+  }, "Close"), statusOpts.length > 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Dropdown, {
+    key: "status",
+    trigger: ['click'],
+    menu: {
+      items: statusOpts.map(function (o) {
+        return {
+          key: String(o.value),
+          label: o.label
+        };
+      }),
+      onClick: function onClick(_ref3) {
+        var key = _ref3.key;
+        setStatusReason('');
+        setStatusTarget(statusOpts.find(function (o) {
+          return String(o.value) === String(key);
+        }) || null);
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "primary"
+  }, "Change Status", /*#__PURE__*/_react["default"].createElement(_icons.DownOutlined, null))) : null];
+  var currencyLabel = detail && detail.currency_name || rec.currency || '';
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: open,
+    onCancel: onClose,
+    title: null,
+    width: 840,
+    footer: footer,
+    styles: {
+      body: {
+        paddingTop: 8
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 20
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 14,
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+    size: 52,
+    src: rec.image || undefined,
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+    style: {
+      flexShrink: 0
+    }
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Title, {
+    level: 5,
+    style: {
+      margin: 0
+    },
+    ellipsis: true
+  }, employeeName), /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary",
+    style: {
+      fontSize: 13
+    }
+  }, detail && detail.category_name || rec.category || 'Expense')), /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+    color: STATUS_COLOR[status] || 'default',
+    style: {
+      fontWeight: 600,
+      marginInlineEnd: 0
+    }
+  }, status)), loading ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      textAlign: 'center',
+      padding: 40
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, null)) : editable ? /*#__PURE__*/_react["default"].createElement(_antd.Form, {
+    layout: "vertical",
+    size: "small"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Amount",
+    style: {
+      flex: 1
+    },
+    required: true
+  }, /*#__PURE__*/_react["default"].createElement(_antd.InputNumber, {
+    style: {
+      width: '100%'
+    },
+    value: values.amount,
+    onChange: function onChange(v) {
+      return setV('amount', v);
+    },
+    stringMode: true
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Currency",
+    style: {
+      width: 140
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    showSearch: true,
+    optionFilterProp: "label",
+    value: values.currency,
+    onChange: function onChange(v) {
+      return setV('currency', v);
+    },
+    options: (options.currencies || []).map(function (o) {
+      return {
+        value: o.id,
+        label: o.name
+      };
+    })
+  }))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Category",
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    showSearch: true,
+    optionFilterProp: "label",
+    value: values.category,
+    onChange: function onChange(v) {
+      return setV('category', v);
+    },
+    options: (options.categories || []).map(function (o) {
+      return {
+        value: o.id,
+        label: o.name
+      };
+    })
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Payment Method",
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    showSearch: true,
+    optionFilterProp: "label",
+    value: values.payment_method,
+    onChange: function onChange(v) {
+      return setV('payment_method', v);
+    },
+    options: (options.paymentMethods || []).map(function (o) {
+      return {
+        value: o.id,
+        label: o.name
+      };
+    })
+  }))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Expense Date",
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/_react["default"].createElement("input", {
+    type: "date",
+    value: values.expense_date || '',
+    onChange: function onChange(e) {
+      return setV('expense_date', e.target.value);
+    },
+    style: {
+      width: '100%',
+      height: 24,
+      padding: '0 8px',
+      borderRadius: 6,
+      border: "1px solid ".concat(token.colorBorder),
+      background: token.colorBgContainer,
+      color: token.colorText,
+      colorScheme: isDark ? 'dark' : 'light'
+    }
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Payee / Merchant",
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Input, {
+    value: values.payee || '',
+    onChange: function onChange(e) {
+      return setV('payee', e.target.value);
+    }
+  }))), /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Transaction / Ref No",
+    style: {
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Input, {
+    value: values.transaction_no || '',
+    onChange: function onChange(e) {
+      return setV('transaction_no', e.target.value);
+    }
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Form.Item, {
+    label: "Notes",
+    style: {
+      marginBottom: 4
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Input.TextArea, {
+    rows: 2,
+    value: values.notes || '',
+    onChange: function onChange(e) {
+      return setV('notes', e.target.value);
+    }
+  }))) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: heroBg,
+      borderRadius: 12,
+      padding: '16px 20px',
+      marginBottom: 18,
+      display: 'flex',
+      alignItems: 'baseline',
+      gap: 8
+    }
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontSize: 30,
+      fontWeight: 700,
+      color: token.colorText,
+      lineHeight: 1
+    }
+  }, rec.amount != null ? rec.amount : detail && detail.amount || '—'), /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontSize: 15,
+      fontWeight: 600,
+      color: token.colorTextSecondary
+    }
+  }, currencyLabel)), /*#__PURE__*/_react["default"].createElement(_antd.Descriptions, {
+    column: 1,
+    size: "small",
+    bordered: true,
+    labelStyle: {
+      width: 150,
+      color: token.colorTextSecondary
+    },
+    items: [{
+      key: 'date',
+      label: 'Expense Date',
+      children: detail && detail.expense_date || rec.expense_date || '—'
+    }, {
+      key: 'pm',
+      label: 'Payment Method',
+      children: detail && detail.payment_method_name || rec.payment_method || '—'
+    }, {
+      key: 'payee',
+      label: 'Payee',
+      children: detail && detail.payee || rec.payee || '—'
+    }, {
+      key: 'txn',
+      label: 'Transaction No',
+      children: detail && detail.transaction_no || '—'
+    }, {
+      key: 'submitted',
+      label: 'Submitted',
+      children: detail && detail.created || '—'
+    }]
+  }), detail && detail.notes ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    strong: true,
+    style: {
+      display: 'block',
+      marginBottom: 6
+    }
+  }, "Notes"), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: token.colorFillQuaternary,
+      borderRadius: 8,
+      padding: '10px 12px',
+      whiteSpace: 'pre-wrap',
+      color: token.colorText
+    }
+  }, detail.notes)) : null), attachments.length > 0 && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Divider, {
+    style: {
+      margin: '16px 0 12px'
+    },
+    orientation: "left",
+    plain: true
+  }, /*#__PURE__*/_react["default"].createElement(_icons.FileImageOutlined, {
+    style: {
+      marginRight: 6
+    }
+  }), "Receipts"), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 12
+    }
+  }, attachments.map(function (a) {
+    return a.isImage ? /*#__PURE__*/_react["default"].createElement("div", {
+      key: a.field,
+      style: {
+        textAlign: 'center'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Image, {
+      src: a.url,
+      alt: a.label,
+      width: 82,
+      height: 82,
+      style: {
+        objectFit: 'cover',
+        borderRadius: 8,
+        border: "1px solid ".concat(token.colorBorderSecondary)
+      }
+    }), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 12,
+        color: token.colorTextSecondary,
+        marginTop: 4
+      }
+    }, a.label)) : /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      key: a.field,
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      href: a.url,
+      target: "_blank",
+      rel: "noreferrer"
+    }, a.label);
+  })))), /*#__PURE__*/_react["default"].createElement(LogSidebar, {
+    logs: logs,
+    loading: loading,
+    token: token
+  }))), /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: !!statusTarget,
+    title: "Change Status",
+    okText: "Update",
+    confirmLoading: statusSaving,
+    okButtonProps: {
+      disabled: !statusReason.trim()
+    },
+    onOk: submitStatusChange,
+    onCancel: function onCancel() {
+      return setStatusTarget(null);
+    },
+    width: 440
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 10
+    }
+  }, "Set status to", ' ', /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+    color: STATUS_COLOR[statusTarget && statusTarget.value] || 'default',
+    style: {
+      fontWeight: 600
+    }
+  }, statusTarget && statusTarget.label)), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 6,
+      color: token.colorTextSecondary
+    }
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      color: token.colorError,
+      marginRight: 4
+    }
+  }, "*"), "Reason"), /*#__PURE__*/_react["default"].createElement(_antd.Input.TextArea, {
+    rows: 3,
+    value: statusReason,
+    onChange: function onChange(e) {
+      return setStatusReason(e.target.value);
+    },
+    status: !statusReason.trim() ? 'error' : undefined,
+    placeholder: "Reason for this status change\u2026"
+  })));
+}
+
+},{"./theme":29,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],9:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = LeaveCalcChart;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _g2plot = require("@antv/g2plot");
+
+var _LeaveCalcParser = _interopRequireDefault(require("./LeaveCalcParser"));
+
+var _theme = require("./theme");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Text = _antd.Typography.Text,
+    Title = _antd.Typography.Title;
+
+var fmt = function fmt(v) {
+  var n = Number(v);
+  if (!Number.isFinite(n)) return '0';
+  return Number.isInteger(n) ? String(n) : String(Math.round(n * 1000) / 1000);
+}; // Thin g2plot 1.x wrapper (mirrors the shell Dashboard chart wrapper). The
+// bundled g2plot is 1.x, so grouping uses the dedicated GroupedColumn plot and
+// the { visible: true } config style. Dark mode is handled by feeding theme
+// colours into the axis/label config rather than g2plot's opaque 'dark' theme.
+
+
+function Plot(_ref) {
+  var Ctor = _ref.ctor,
+      config = _ref.config,
+      _ref$height = _ref.height,
+      height = _ref$height === void 0 ? 260 : _ref$height;
+  var ref = (0, _react.useRef)(null);
+  (0, _react.useEffect)(function () {
+    if (!ref.current) return undefined;
+    var plot;
+
+    try {
+      plot = new Ctor(ref.current, config);
+      plot.render();
+    } catch (e) {
+      /* ignore render errors */
+    }
+
+    return function () {
+      try {
+        if (plot) plot.destroy();
+      } catch (e) {
+        /* */
+      }
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [Ctor, JSON.stringify(config), height]);
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    ref: ref,
+    style: {
+      height: height
+    }
+  });
+}
+/**
+ * LeaveCalcChart — renders a graphical view of how a leave type's entitlement
+ * was calculated, parsed from the raw "How is this calculated?" log lines.
+ *
+ * For leave types that carry forward, it charts the year-over-year propagation
+ * (carried in vs carried to next) plus a per-period breakdown table. For simple
+ * types it charts the current-period derivation (allocated → joined-date →
+ * accrual). The raw log is preserved in a collapsible panel.
+ */
+
+
+function LeaveCalcChart(_ref2) {
+  var lines = _ref2.lines;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var model = (0, _react.useMemo)(function () {
+    return new _LeaveCalcParser["default"](lines || []).parse();
+  }, [lines]);
+  var isDark = token.colorBgContainer === _theme.MUI_DARK.paper;
+  var darkAxis = isDark ? {
+    label: {
+      style: {
+        fill: 'rgba(255,255,255,0.45)'
+      }
+    },
+    line: {
+      style: {
+        stroke: 'rgba(255,255,255,0.25)'
+      }
+    },
+    grid: {
+      line: {
+        style: {
+          stroke: 'rgba(255,255,255,0.12)'
+        }
+      }
+    }
+  } : {};
+  var darkLegend = isDark ? {
+    text: {
+      style: {
+        fill: 'rgba(255,255,255,0.85)'
+      }
+    }
+  } : {};
+  var darkLabel = isDark ? {
+    style: {
+      fill: 'rgba(255,255,255,0.85)'
+    }
+  } : {};
+  var hasCarry = model.carryForward.length > 0; // --- Chart data ---------------------------------------------------------
+  // Two series tell the propagation story: how much was allocated each period vs
+  // how much actually carried forward to the next one (the rest expires / is used).
+
+  var carryData = [];
+  model.carryForward.forEach(function (p) {
+    carryData.push({
+      period: p.label,
+      type: 'Allocated',
+      value: p.allocated + p.pto
+    });
+    carryData.push({
+      period: p.label,
+      type: 'Carried to next',
+      value: p.carriedToNext
+    });
+  });
+  var derivationData = [];
+  if (model.totalForPeriod != null) derivationData.push({
+    step: 'Allocated',
+    value: model.totalForPeriod
+  });
+  if (model.joinedDateAdjusted) derivationData.push({
+    step: 'After join date',
+    value: model.afterJoinedDate
+  });
+  if (model.accrualApplied) derivationData.push({
+    step: 'After accrual',
+    value: model.afterAccrue
+  });
+  var carryConfig = {
+    data: carryData,
+    xField: 'period',
+    yField: 'value',
+    groupField: 'type',
+    color: ['#5B8FF9', '#5AD8A6'],
+    legend: _objectSpread({
+      visible: true,
+      position: 'top-center'
+    }, darkLegend),
+    label: {
+      visible: false
+    },
+    xAxis: _objectSpread({
+      visible: true,
+      title: {
+        visible: true,
+        text: 'Period'
+      }
+    }, darkAxis),
+    yAxis: _objectSpread({
+      visible: true,
+      min: 0,
+      title: {
+        visible: true,
+        text: 'Leaves'
+      }
+    }, darkAxis)
+  };
+  var derivationConfig = {
+    data: derivationData,
+    xField: 'step',
+    yField: 'value',
+    color: '#5B8FF9',
+    columnSize: 48,
+    label: _objectSpread({
+      visible: true,
+      position: 'top'
+    }, darkLabel),
+    xAxis: _objectSpread({
+      visible: true
+    }, darkAxis),
+    yAxis: _objectSpread({
+      visible: true,
+      min: 0,
+      title: {
+        visible: true,
+        text: 'Leaves'
+      }
+    }, darkAxis)
+  }; // --- Per-period breakdown table ----------------------------------------
+
+  var tableData = model.carryForward.map(function (p, i) {
+    return _objectSpread({
+      key: i
+    }, p);
+  });
+  var columns = [{
+    title: 'Period',
+    dataIndex: 'label',
+    key: 'label'
+  }, {
+    title: 'Carried in',
+    dataIndex: 'carriedIn',
+    key: 'carriedIn',
+    render: fmt
+  }, {
+    title: 'Allocated',
+    key: 'allocated',
+    render: function render(_, r) {
+      return fmt(r.allocated + r.pto);
+    }
+  }, {
+    title: 'Taken',
+    dataIndex: 'taken',
+    key: 'taken',
+    render: fmt
+  }, {
+    title: 'Valid till',
+    dataIndex: 'validTill',
+    key: 'validTill'
+  }, {
+    title: 'Carried to next',
+    dataIndex: 'carriedToNext',
+    key: 'carriedToNext',
+    render: function render(v) {
+      return /*#__PURE__*/_react["default"].createElement(Text, {
+        strong: true
+      }, fmt(v));
+    }
+  }];
+
+  var rawPanel = /*#__PURE__*/_react["default"].createElement(_antd.Collapse, {
+    ghost: true,
+    items: [{
+      key: 'raw',
+      label: 'Show calculation log',
+      children: /*#__PURE__*/_react["default"].createElement("ul", {
+        style: {
+          fontSize: 12.5,
+          paddingLeft: 18,
+          margin: 0,
+          color: token.colorTextSecondary
+        }
+      }, (lines || []).map(function (line, i) {
+        return (
+          /*#__PURE__*/
+          // eslint-disable-next-line react/no-array-index-key
+          _react["default"].createElement("li", {
+            key: i,
+            style: {
+              marginBottom: 3
+            }
+          }, String(line).replace(/^\(client=[^)]*\)\s*/, ''))
+        );
+      }))
+    }]
+  });
+
+  if (!hasCarry && derivationData.length === 0) {
+    return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "No calculation details available"
+    }), rawPanel);
+  }
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Descriptions, {
+    size: "small",
+    column: 2,
+    bordered: true
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Descriptions.Item, {
+    label: "Leave type"
+  }, model.leaveType || '—'), /*#__PURE__*/_react["default"].createElement(_antd.Descriptions.Item, {
+    label: "Current period"
+  }, model.period ? "".concat(model.period.from, " \u2192 ").concat(model.period.to) : '—'), /*#__PURE__*/_react["default"].createElement(_antd.Descriptions.Item, {
+    label: "Allocated for period"
+  }, fmt(model.totalForPeriod || 0)), /*#__PURE__*/_react["default"].createElement(_antd.Descriptions.Item, {
+    label: "Available this period"
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    strong: true
+  }, fmt(model.afterAccrue != null ? model.afterAccrue : model.totalForPeriod || 0)), model.accrualApplied ? /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+    color: "blue",
+    style: {
+      marginLeft: 8
+    }
+  }, "accrued") : null)), hasCarry ? /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(Title, {
+    level: 5,
+    style: {
+      marginBottom: 4
+    }
+  }, "Carry-forward propagation"), /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary",
+    style: {
+      fontSize: 12.5
+    }
+  }, "How leaves carried across ".concat(model.carryForward.length, " past period(s) into the current one.")), /*#__PURE__*/_react["default"].createElement(Plot, {
+    ctor: _g2plot.GroupedColumn,
+    config: carryConfig
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Table, {
+    size: "small",
+    columns: columns,
+    dataSource: tableData,
+    pagination: false,
+    scroll: {
+      y: 220
+    },
+    style: {
+      marginTop: 8
+    }
+  })) : /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(Title, {
+    level: 5,
+    style: {
+      marginBottom: 4
+    }
+  }, "How this period was calculated"), /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary",
+    style: {
+      fontSize: 12.5
+    }
+  }, "Entitlement for the current period, step by step."), /*#__PURE__*/_react["default"].createElement(Plot, {
+    ctor: _g2plot.Column,
+    config: derivationConfig,
+    height: 220
+  })), rawPanel);
+}
+
+},{"./LeaveCalcParser":10,"./theme":29,"@antv/g2plot":"@antv/g2plot","antd":"antd","react":"react"}],10:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * LeaveCalcParser — turns the free-text "How is this calculated?" leave
+ * entitlement log (an array of strings produced by LeavesActionManager's
+ * LogManager::collectLogs) into a structured model that a chart can render.
+ *
+ * The log has two parts:
+ *  1. A header describing the current period entitlement:
+ *       Leave Type (Annual leave) [id (1)]
+ *       Leave Period After Adjust : 2026-01-01 - 2026-12-31
+ *       Total for leave for current period: 14
+ *       Total after adjusted based on joined date: 14
+ *       Total after leave accrue: 7.154
+ *       Number of past leave periods: 0
+ *  2. Zero or more carry-forward blocks, one per past period, each delimited by
+ *     "<hr/>" and starting with "Calculating leave days carried forward from
+ *     [Period FROM - TO]", then carried-in / allocated / taken / carried-to-next.
+ *
+ * Lines may be prefixed with "(client=<name>) " and the first leave type in a
+ * batch is preceded by "Calculating Leave Entitlement" + the employee name;
+ * both are ignored here.
+ */
+var stripPrefix = function stripPrefix(line) {
+  return String(line == null ? '' : line).replace(/^\(client=[^)]*\)\s*/, '').trim();
+};
+
+var toNum = function toNum(s) {
+  var n = Number(s);
+  return Number.isFinite(n) ? n : 0;
+};
+
+var LeaveCalcParser = /*#__PURE__*/function () {
+  function LeaveCalcParser(lines) {
+    _classCallCheck(this, LeaveCalcParser);
+
+    this.lines = Array.isArray(lines) ? lines.map(stripPrefix) : [];
+  }
+  /**
+   * @returns {{
+   *   leaveType: string, leaveTypeId: (number|null),
+   *   period: ({from: string, to: string}|null),
+   *   totalForPeriod: (number|null), afterJoinedDate: (number|null),
+   *   afterAccrue: (number|null), accrualApplied: boolean,
+   *   joinedDateAdjusted: boolean, pastPeriodCount: number,
+   *   carryForward: Array<{
+   *     label: string, from: string, to: string,
+   *     carriedIn: number, allocated: number, pto: number,
+   *     taken: number, deducted: number, validTill: string, carriedToNext: number,
+   *   }>,
+   * }}
+   */
+
+
+  _createClass(LeaveCalcParser, [{
+    key: "parse",
+    value: function parse() {
+      var model = {
+        leaveType: '',
+        leaveTypeId: null,
+        period: null,
+        totalForPeriod: null,
+        afterJoinedDate: null,
+        afterAccrue: null,
+        accrualApplied: false,
+        joinedDateAdjusted: false,
+        pastPeriodCount: 0,
+        carryForward: []
+      };
+      var current = null;
+
+      var flush = function flush() {
+        if (current) {
+          model.carryForward.push(current);
+          current = null;
+        }
+      };
+
+      this.lines.forEach(function (line) {
+        if (!line || line === '<hr/>') return;
+        var m;
+
+        if (m = line.match(/^Leave Type \((.+)\) \[id \((\d+)\)\]$/)) {
+          if (!model.leaveType) {
+            model.leaveType = m[1];
+            model.leaveTypeId = Number(m[2]);
+          }
+
+          return;
+        }
+
+        if (m = line.match(/^Leave Period After Adjust\s*:\s*(\d{4}-\d{2}-\d{2})\s*-\s*(\d{4}-\d{2}-\d{2})/)) {
+          model.period = {
+            from: m[1],
+            to: m[2]
+          };
+          return;
+        }
+
+        if (m = line.match(/^Total for leave for current period:\s*([\d.]+)/)) {
+          model.totalForPeriod = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Total after adjusted based on joined date:\s*([\d.]+)/)) {
+          model.afterJoinedDate = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Total after leave accrue:\s*([\d.]+)/)) {
+          model.afterAccrue = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Number of past leave periods:\s*(\d+)/)) {
+          model.pastPeriodCount = Number(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Calculating leave days carried forward from \[Period\s*(\d{4}-\d{2}-\d{2})\s*-\s*(\d{4}-\d{2}-\d{2})\]/)) {
+          flush();
+          current = {
+            from: m[1],
+            to: m[2],
+            label: m[1].slice(0, 4),
+            carriedIn: 0,
+            allocated: 0,
+            pto: 0,
+            taken: 0,
+            deducted: 0,
+            validTill: '',
+            carriedToNext: 0
+          };
+          return;
+        }
+
+        if (!current) return; // remaining patterns only apply inside a carry block
+
+        if (m = line.match(/^Number of leaves carried from previous period:\s*([\d.-]+)/)) {
+          current.carriedIn = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Number of allocated \[.*\]:\s*leave\(([\d.-]+)\)\s*\+\s*PTO\(([\d.-]+)\)\s*=\s*([\d.-]+)/)) {
+          current.allocated = toNum(m[1]);
+          current.pto = toNum(m[2]);
+          return;
+        }
+
+        if (m = line.match(/^Leave days from previous period is valid till:\s*(\d{4}-\d{2}-\d{2})/)) {
+          current.validTill = m[1];
+          return;
+        }
+
+        if (m = line.match(/^Total number of leave days taken between .*:\s*([\d.-]+)/)) {
+          current.taken = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Number of leave deducted from carried forward leaves from previous period:\s*([\d.-]+)/)) {
+          current.deducted = toNum(m[1]);
+          return;
+        }
+
+        if (m = line.match(/^Number of leaves carried to next period:\s*([\d.-]+)/)) {
+          current.carriedToNext = toNum(m[1]);
+          return;
+        }
+      });
+      flush();
+
+      var near = function near(a, b) {
+        return a != null && b != null && Math.abs(a - b) > 1e-9;
+      };
+
+      model.accrualApplied = near(model.afterAccrue, model.afterJoinedDate);
+      model.joinedDateAdjusted = near(model.afterJoinedDate, model.totalForPeriod);
+      return model;
+    }
+    /** Convenience: parse and return only the carry-forward periods. */
+
+  }], [{
+    key: "parse",
+    value: function parse(lines) {
+      return new LeaveCalcParser(lines).parse();
+    }
+  }]);
+
+  return LeaveCalcParser;
+}();
+
+exports["default"] = LeaveCalcParser;
+
+},{}],11:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = LeaveCalendar;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var pad = function pad(n) {
+  return Number(n) < 10 ? "0".concat(n) : "".concat(n);
+};
+/**
+ * Leave Calendar (modules::leavecal) — a month/year calendar showing the
+ * employee's and their direct reports' leaves, plus holidays. Data comes from
+ * the leave-calendar REST endpoint, fetched with the shell's auth token.
+ */
+
+
+function LeaveCalendar(_ref) {
+  var shellConfig = _ref.shellConfig;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var _useState = (0, _react.useState)({}),
+      _useState2 = _slicedToArray(_useState, 2),
+      byDate = _useState2[0],
+      setByDate = _useState2[1]; // 'YYYY-MM-DD' -> [{ employee, status }]
+
+
+  var _useState3 = (0, _react.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      holidays = _useState4[0],
+      setHolidays = _useState4[1];
+
+  var _useState5 = (0, _react.useState)({}),
+      _useState6 = _slicedToArray(_useState5, 2),
+      byMonth = _useState6[0],
+      setByMonth = _useState6[1]; // year -> { 'YYYY-MM': [{ employee, count }] }
+
+
+  var apiGet = (0, _react.useCallback)(function (path) {
+    var base = shellConfig && shellConfig.restApiBase || '';
+    return fetch("".concat(base).concat(path), {
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig && shellConfig.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    });
+  }, [shellConfig]);
+  var loadMonth = (0, _react.useCallback)(function (year, month) {
+    apiGet("leave-calendar/month/".concat(year, "/").concat(pad(month))).then(function (d) {
+      setByDate(function (prev) {
+        return _objectSpread({}, prev, {}, d && d.leave || {});
+      });
+      setHolidays(d && d.holidays || []);
+    })["catch"](function () {
+      /* ignore */
+    });
+  }, [apiGet]);
+  var loadYear = (0, _react.useCallback)(function (year) {
+    apiGet("leave-calendar/year/".concat(year)).then(function (d) {
+      return setByMonth(function (prev) {
+        return _objectSpread({}, prev, {}, d || {});
+      });
+    })["catch"](function () {
+      /* ignore */
+    });
+  }, [apiGet]);
+  (0, _react.useEffect)(function () {
+    var now = new Date();
+    loadMonth(now.getFullYear(), now.getMonth() + 1);
+  }, [loadMonth]);
+
+  var onPanelChange = function onPanelChange(value, mode) {
+    if (mode === 'month') loadMonth(value.year(), value.month() + 1);else loadYear(value.year());
+  };
+
+  var dateCell = function dateCell(value) {
+    var key = "".concat(value.year(), "-").concat(pad(value.month() + 1), "-").concat(pad(value.date()));
+    var list = byDate[key] || [];
+    var holiday = holidays.find(function (h) {
+      return h && h.dateh === key;
+    });
+    if (!holiday && !list.length) return null;
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        marginTop: 4
+      }
+    }, holiday ? /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+      message: holiday.name,
+      type: "warning",
+      showIcon: true,
+      style: {
+        marginBottom: 6,
+        padding: '1px 8px'
+      }
+    }) : null, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 6
+      }
+    }, list.map(function (item, i) {
+      return /*#__PURE__*/_react["default"].createElement(_antd.Tooltip // eslint-disable-next-line react/no-array-index-key
+      , {
+        key: "".concat(item.employee.id, "-").concat(i),
+        title: "".concat(item.employee.name, " \xB7 ").concat(item.status),
+        color: "#108ee9"
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Badge, {
+        color: item.status === 'Approved' ? 'green' : 'orange',
+        dot: true
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+        size: "small",
+        src: item.employee.image
+      }, item.employee.name ? item.employee.name.charAt(0) : '?')));
+    })));
+  };
+
+  var monthCell = function monthCell(value) {
+    var yd = byMonth[value.year()];
+    var mk = "".concat(value.year(), "-").concat(pad(value.month() + 1));
+    var list = yd && yd[mk] || [];
+    if (!list.length) return null;
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        marginTop: 8,
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 8
+      }
+    }, list.map(function (item, i) {
+      return /*#__PURE__*/_react["default"].createElement(_antd.Tooltip // eslint-disable-next-line react/no-array-index-key
+      , {
+        key: "".concat(item.employee.id, "-").concat(i),
+        title: item.employee.name,
+        color: "#108ee9"
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Badge, {
+        color: "green",
+        size: "small",
+        count: item.count
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+        size: "small",
+        src: item.employee.image
+      }, item.employee.name ? item.employee.name.charAt(0) : '?')));
+    }));
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: token.colorBgContainer,
+      borderRadius: 10,
+      padding: 12
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Calendar, {
+    cellRender: function cellRender(current, info) {
+      return info.type === 'date' ? dateCell(current) : monthCell(current);
+    },
+    onPanelChange: onPanelChange
+  }));
+}
+
+},{"antd":"antd","react":"react"}],12:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = LeaveEntitlement;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+var _LeaveCalcChart = _interopRequireDefault(require("./LeaveCalcChart"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text; // Semantic colours that read on both light and dark grounds. Kept out of the
+// theme tokens on purpose: these encode leave state (remaining / pending /
+// taken), which is separate from the app's blue accent.
+
+var C = {
+  available: '#2e9e50',
+  availableSoft: 'rgba(46,158,80,0.14)',
+  used: '#7c879a',
+  pending: '#e08321',
+  danger: '#d64545'
+};
+
+var num = function num(v) {
+  var n = Number(v);
+  if (Number.isNaN(n)) return '0';
+  return Number.isInteger(n) ? String(n) : String(Math.round(n * 1000) / 1000);
+};
+
+var pct = function pct(part, denom) {
+  return denom > 0 ? Math.max(0, Math.min(100, part / denom * 100)) : 0;
+};
+/**
+ * Leave Entitlement — one summary card per leave type. The card answers, at a
+ * glance, "how much do I have left and can I book it": a hero Available figure,
+ * a proportion meter (taken / pending / available of the entitlement), quiet
+ * supporting detail, and an Apply action prefilled to that leave type.
+ *
+ * Data comes from the bundled adapter's getEntitlement action; Apply opens the
+ * main leave adapter's "Apply Leave" modal preselected to this type.
+ */
+
+
+function LeaveEntitlement(_ref) {
+  var tabKey = _ref.tabKey;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      rows = _useState2[0],
+      setRows = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      calc = _useState4[0],
+      setCalc = _useState4[1]; // { name, lines: [] }
+
+
+  (0, _react.useEffect)(function () {
+    var cancelled = false;
+    var tries = 0;
+
+    var tick = function tick() {
+      if (cancelled) return;
+      var m = (window.modJsList || {})[tabKey];
+
+      if (m && typeof m.fetchEntitlement === 'function') {
+        m.fetchEntitlement().then(function (data) {
+          if (!cancelled) setRows(Array.isArray(data) ? data : []);
+        })["catch"](function () {
+          if (!cancelled) setRows([]);
+        });
+        return;
+      }
+
+      tries += 1;
+
+      if (tries > 100) {
+        setRows([]);
+        return;
+      }
+
+      setTimeout(tick, 100);
+    };
+
+    tick();
+    return function () {
+      cancelled = true;
+    };
+  }, [tabKey]); // Open the "Apply Leave" modal (owned by the All My Leaves adapter) with the
+  // leave type preselected. renderForm() sets up its own portal-rendered modal,
+  // so this works even though that tab isn't the active one.
+
+  var applyFor = function applyFor(leaveTypeId) {
+    var adapter = (window.modJsList || {}).tabMyLeaveAll || window.modJs;
+    if (!adapter || typeof adapter.renderForm !== 'function') return;
+
+    var open = function open() {
+      return adapter.renderForm({
+        leave_type: leaveTypeId
+      });
+    }; // The Apply form's Leave Type select reads its options from the adapter's
+    // master data, which is only fetched when that tab's list loads. Opening
+    // from here (that tab was never visited) needs it loaded first, otherwise
+    // the select shows the raw id instead of the type name. Cached after first load.
+
+
+    var reader = adapter.masterDataReader;
+
+    if (reader && typeof reader.updateAllMasterData === 'function') {
+      reader.updateAllMasterData().then(open, open);
+    } else {
+      open();
+    }
+  };
+
+  if (rows === null) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 60
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+  }
+
+  if (!rows.length) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "No leave entitlement for the current period"
+    });
+  }
+
+  var chipStyle = function chipStyle(variant) {
+    return {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 6,
+      fontSize: 12,
+      fontWeight: 600,
+      padding: '4px 10px',
+      borderRadius: 999,
+      background: variant === 'warn' ? 'rgba(224,131,33,0.14)' : token.colorFillQuaternary,
+      color: variant === 'warn' ? C.pending : token.colorTextSecondary,
+      border: variant === 'warn' ? '1px solid transparent' : "1px solid ".concat(token.colorBorderSecondary)
+    };
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+      gap: 18
+    }
+  }, rows.map(function (r) {
+    var total = Number(r.totalLeaves) || 0;
+    var approved = Number(r.approvedLeaves) || 0;
+    var pending = Number(r.pendingLeaves) || 0;
+    var available = Number(r.availableLeaves) || 0;
+    var carried = Number(r.carriedForward) || 0;
+    var adj = Number(r.paidTimeOff) || 0;
+    var accrue = Number(r.tobeAccrued) || 0;
+    var denom = Math.max(total, approved + pending + available, 0.0001);
+    var usedW = pct(approved, denom);
+    var pendW = pct(pending, denom);
+    var availW = pct(available, denom);
+    var isZero = available <= 0;
+    var isLow = !isZero && total > 0 && (available <= 1 || available / total <= 0.15);
+    var heroColor = isZero ? C.danger : isLow ? C.pending : C.available;
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      key: r.id,
+      style: {
+        background: token.colorBgContainer,
+        border: "1px solid ".concat(token.colorBorderSecondary),
+        borderRadius: 14,
+        boxShadow: _theme.MUI_SHADOW,
+        padding: '20px 22px 18px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 16
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 13
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: 42,
+        height: 42,
+        borderRadius: 11,
+        flex: '0 0 auto',
+        display: 'grid',
+        placeItems: 'center',
+        background: 'rgba(25,118,210,0.10)',
+        color: token.colorPrimary,
+        fontSize: 20
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null)), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        flex: 1,
+        minWidth: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 16.5,
+        fontWeight: 650,
+        letterSpacing: '-0.01em'
+      }
+    }, r.name), /*#__PURE__*/_react["default"].createElement(Text, {
+      type: "secondary",
+      style: {
+        fontSize: 12.5
+      }
+    }, "Current period")), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        textAlign: 'right',
+        flex: '0 0 auto'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 30,
+        fontWeight: 750,
+        lineHeight: 1,
+        color: heroColor,
+        fontVariantNumeric: 'tabular-nums',
+        letterSpacing: '-0.02em'
+      }
+    }, num(available), /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        fontSize: 14,
+        fontWeight: 600,
+        color: token.colorTextSecondary,
+        marginLeft: 3
+      }
+    }, Math.abs(available) === 1 ? 'day' : 'days')), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 11.5,
+        letterSpacing: '0.04em',
+        textTransform: 'uppercase',
+        color: token.colorTextTertiary,
+        marginTop: 3,
+        fontWeight: 600
+      }
+    }, "Available"))), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 9
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      role: "img",
+      "aria-label": "Of ".concat(num(total), " entitled: ").concat(num(approved), " taken, ").concat(num(pending), " pending, ").concat(num(available), " available"),
+      style: {
+        height: 12,
+        borderRadius: 999,
+        background: token.colorFillTertiary,
+        display: 'flex',
+        overflow: 'hidden'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: "".concat(usedW, "%"),
+        background: C.used
+      }
+    }), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: "".concat(pendW, "%"),
+        background: "repeating-linear-gradient(45deg, ".concat(C.pending, ", ").concat(C.pending, " 5px, rgba(255,255,255,0.45) 5px, rgba(255,255,255,0.45) 10px)")
+      }
+    }), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: "".concat(availW, "%"),
+        background: C.available
+      }
+    })), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '4px 16px',
+        fontSize: 12.5,
+        color: token.colorTextSecondary,
+        fontVariantNumeric: 'tabular-nums'
+      }
+    }, approved > 0 && /*#__PURE__*/_react["default"].createElement(LegendItem, {
+      color: C.used,
+      label: "Taken",
+      value: approved,
+      token: token
+    }), pending > 0 && /*#__PURE__*/_react["default"].createElement(LegendItem, {
+      color: C.pending,
+      label: "Pending",
+      value: pending,
+      token: token
+    }), /*#__PURE__*/_react["default"].createElement(LegendItem, {
+      color: C.available,
+      label: "Available",
+      value: available,
+      token: token
+    }), /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        marginLeft: 'auto',
+        color: token.colorTextTertiary
+      }
+    }, "of ", /*#__PURE__*/_react["default"].createElement("b", {
+      style: {
+        color: token.colorText,
+        fontWeight: 650
+      }
+    }, num(total)), " entitled"))), (isLow || isZero || carried > 0 && r.carriedForwardLeaveExpireDate || accrue > 0 || adj !== 0) && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 7
+      }
+    }, isZero && /*#__PURE__*/_react["default"].createElement("span", {
+      style: chipStyle('warn')
+    }, /*#__PURE__*/_react["default"].createElement(_icons.WarningOutlined, null), "None left this period"), isLow && /*#__PURE__*/_react["default"].createElement("span", {
+      style: chipStyle('warn')
+    }, /*#__PURE__*/_react["default"].createElement(_icons.WarningOutlined, null), "Running low"), carried > 0 && r.carriedForwardLeaveExpireDate && /*#__PURE__*/_react["default"].createElement("span", {
+      style: chipStyle('warn')
+    }, /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null), "".concat(num(r.carriedForwardAvailable), " carried-forward expire ").concat(r.carriedForwardLeaveExpireDate)), accrue > 0 && /*#__PURE__*/_react["default"].createElement("span", {
+      style: chipStyle()
+    }, "+".concat(num(accrue), " still to accrue this period")), adj !== 0 && /*#__PURE__*/_react["default"].createElement("span", {
+      style: chipStyle()
+    }, "Adjustment ".concat(adj > 0 ? '+' : '').concat(num(adj)))), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 12,
+        marginTop: 2
+      }
+    }, Array.isArray(r.calculation) && r.calculation.length ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      type: "link",
+      size: "small",
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      style: {
+        padding: 0
+      },
+      onClick: function onClick() {
+        return setCalc({
+          name: r.name,
+          lines: r.calculation
+        });
+      }
+    }, "How is this calculated?") : /*#__PURE__*/_react["default"].createElement("span", null), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      type: "primary",
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.PlusOutlined, null),
+      onClick: function onClick() {
+        return applyFor(r.id);
+      }
+    }, "Apply")));
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: !!calc,
+    title: calc ? "".concat(calc.name, " \u2014 how this is calculated") : '',
+    footer: [/*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      key: "c",
+      onClick: function onClick() {
+        return setCalc(null);
+      }
+    }, "Close")],
+    onCancel: function onCancel() {
+      return setCalc(null);
+    },
+    width: 760
+  }, calc ? /*#__PURE__*/_react["default"].createElement(_LeaveCalcChart["default"], {
+    lines: calc.lines
+  }) : null));
+}
+
+function LegendItem(_ref2) {
+  var color = _ref2.color,
+      label = _ref2.label,
+      value = _ref2.value,
+      token = _ref2.token;
+  return /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 6
+    }
+  }, /*#__PURE__*/_react["default"].createElement("i", {
+    style: {
+      width: 9,
+      height: 9,
+      borderRadius: 3,
+      flex: '0 0 auto',
+      background: color,
+      display: 'inline-block'
+    }
+  }), label, " ", /*#__PURE__*/_react["default"].createElement("b", {
+    style: {
+      color: token.colorText,
+      fontWeight: 650
+    }
+  }, num(value)));
+}
+
+},{"./LeaveCalcChart":9,"./theme":29,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],13:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = LicenseBlocked;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _antd = require("antd");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function LicenseBlocked(_ref) {
+  var license = _ref.license;
+  var lic = license || {};
+  var missing = !lic.has_license;
+  var expiredOn = lic.expiry_date ? String(lic.expiry_date).split(' ')[0] : null;
+  var title = missing ? 'No active IceHrmPro license' : 'Your IceHrmPro license has expired';
+  var subTitle = missing ? 'This feature is part of IceHrmPro and needs an active subscription to use.' : "Your IceHrmPro license".concat(expiredOn ? " expired on ".concat(expiredOn) : ' has expired', ". Renew it to keep using this feature.");
+
+  var goToMarketplace = function goToMarketplace() {
+    if (typeof window !== 'undefined') {
+      window.location.hash = "#".concat(encodeURIComponent('extension::marketplace|admin'));
+    }
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 24
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Result, {
+    status: "warning",
+    title: title,
+    subTitle: subTitle,
+    extra: lic.is_admin ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      type: "primary",
+      onClick: goToMarketplace
+    }, "Go to Marketplace") : null
+  }));
+}
+
+},{"antd":"antd","react":"react"}],14:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = LicenseRenewalBanner;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _antd = require("antd");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function LicenseRenewalBanner(_ref) {
+  var licenseRenewal = _ref.licenseRenewal;
+  if (!licenseRenewal) return null;
+  var daysLeft = licenseRenewal.daysLeft,
+      expiryDate = licenseRenewal.expiryDate,
+      isAdmin = licenseRenewal.isAdmin,
+      renewUrl = licenseRenewal.renewUrl;
+  var dateStr = expiryDate ? String(expiryDate).split(' ')[0] : null;
+  var whenLabel = daysLeft <= 0 ? 'today' : daysLeft === 1 ? 'in 1 day' : "in ".concat(daysLeft, " days");
+  return /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: "warning",
+    banner: true,
+    showIcon: true,
+    style: {
+      padding: '18px 28px',
+      alignItems: 'center',
+      marginBottom: 16
+    },
+    message: /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        lineHeight: 1.35
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 17,
+        fontWeight: 700,
+        marginBottom: 3
+      }
+    }, "Your IceHrmPro license expires ", whenLabel), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 14,
+        opacity: 0.9
+      }
+    }, dateStr ? "It expires on ".concat(dateStr, ". ") : '', "Renew now to keep access to your premium features without interruption.")),
+    action: isAdmin && renewUrl ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "large",
+      type: "primary",
+      href: renewUrl,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      style: {
+        fontWeight: 600
+      }
+    }, "Renew IceHrm Pro") : null
+  });
+}
+
+},{"antd":"antd","react":"react"}],15:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = MobileApp;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text,
+    Paragraph = _antd.Typography.Paragraph; // Native "Mobile App" tab for modules::employees — mirrors the legacy
+// index.php panels (app-store badges, one-time login code, API access token).
+// The login-code request reuses the legacy MobileAppAdapter (window.modJsList
+// .tabMobileApp) so it hits the same backend custom action; we just swap its
+// DOM-writing callbacks for React state.
+
+function MobileApp() {
+  var adapter = (window.modJsList || {}).tabMobileApp || null;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      code = _useState2[0],
+      setCode = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  var requestCode = function requestCode() {
+    if (!adapter) return;
+    setLoading(true);
+
+    adapter.loginCodeSuccessCallback = function (cb) {
+      setLoading(false);
+      var v = Array.isArray(cb) ? cb[0] : cb;
+      var out = v && _typeof(v) === 'object' ? v.code || v.data || v.loginCode || JSON.stringify(v) : v;
+      setCode(out != null ? String(out) : null);
+    };
+
+    adapter.loginCodeFailCallBack = function () {
+      setLoading(false);
+
+      _antd.message.error('Could not get a login code. Please try again later.', 5);
+    };
+
+    try {
+      adapter.getOneTimeLoginCode();
+    } catch (e) {
+      setLoading(false);
+    }
+  };
+
+  var cardStyle = {
+    borderRadius: 12,
+    boxShadow: _theme.MUI_SHADOW,
+    marginBottom: 16
+  };
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: '100%'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    style: cardStyle,
+    title: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, /*#__PURE__*/_react["default"].createElement(_icons.MobileOutlined, null), "Download Mobile App")
+  }, /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    type: "secondary"
+  }, "Access IceHrm on the go. Download our mobile app for iOS or Android."), /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+    wrap: true
+  }, /*#__PURE__*/_react["default"].createElement("a", {
+    href: "https://apps.apple.com/gb/app/icehrm/id1624346692",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, /*#__PURE__*/_react["default"].createElement("img", {
+    src: "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg",
+    alt: "Download on the App Store",
+    style: {
+      height: 50
+    }
+  })), /*#__PURE__*/_react["default"].createElement("a", {
+    href: "https://play.google.com/store/apps/details?id=com.icehrm.m3&hl=en",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, /*#__PURE__*/_react["default"].createElement("img", {
+    src: "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg",
+    alt: "Get it on Google Play",
+    style: {
+      height: 50
+    }
+  })))), /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    style: cardStyle,
+    title: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, /*#__PURE__*/_react["default"].createElement(_icons.LockOutlined, null), "Mobile Authentication Code")
+  }, /*#__PURE__*/_react["default"].createElement(Paragraph, {
+    type: "secondary"
+  }, "Use this one-time code to securely log in to the mobile app."), code ? /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: "success",
+    showIcon: true,
+    style: {
+      marginBottom: 12
+    },
+    message: /*#__PURE__*/_react["default"].createElement(Text, {
+      strong: true,
+      copyable: true,
+      style: {
+        fontSize: 18,
+        letterSpacing: 1
+      }
+    }, code)
+  }) : null, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "primary",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.LockOutlined, null),
+    loading: loading,
+    onClick: requestCode
+  }, "Request One-time Login Code")));
+}
+
+},{"./theme":29,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],16:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = ModuleSearch;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * GA-style global module search for the top bar. A searchable dropdown of every
+ * module the user can reach (from the shell's route map), grouped by area.
+ * Selecting one navigates there. Filtering matches the module label and its area
+ * name, so "leave" or "time" both surface the right entries.
+ */
+function ModuleSearch(_ref) {
+  var items = _ref.items,
+      areas = _ref.areas,
+      onSelect = _ref.onSelect,
+      dark = _ref.dark;
+
+  var _useState = (0, _react.useState)(undefined),
+      _useState2 = _slicedToArray(_useState, 2),
+      value = _useState2[0],
+      setValue = _useState2[1];
+
+  var areaLabel = (0, _react.useMemo)(function () {
+    var m = {};
+    (areas || []).forEach(function (a) {
+      m[a.id] = a.label;
+    });
+    return m;
+  }, [areas]);
+
+  var sectionLabel = function sectionLabel(s) {
+    return s === 'mine' ? 'Personal' : 'Manage';
+  }; // Group options by area. Two modules can share a label within an area — the
+  // admin (Manage) twin and the self-service (Personal) twin — so tag each option
+  // with its section to disambiguate (e.g. "Task Lists" Manage vs Personal). The
+  // search string includes label + area + section so any of them matches.
+
+
+  var options = (0, _react.useMemo)(function () {
+    var byArea = {};
+    (items || []).forEach(function (it) {
+      var a = it.area || 'more';
+      if (!byArea[a]) byArea[a] = [];
+      var aLabel = areaLabel[a] || a;
+      var sec = sectionLabel(it.section);
+      byArea[a].push({
+        value: it.key,
+        name: it.label,
+        section: sec,
+        // antd renders this for the option + selected value.
+        label: /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 12
+          }
+        }, /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap'
+          }
+        }, it.label), /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            flex: '0 0 auto',
+            fontSize: 11,
+            fontWeight: 500,
+            padding: '0 7px',
+            lineHeight: '17px',
+            borderRadius: 9,
+            color: it.section === 'mine' ? '#0958d9' : '#389e0d',
+            background: it.section === 'mine' ? '#e6f0ff' : '#f0fbe6'
+          }
+        }, sec)),
+        // Plus the module's own name (e.g. "users" for Logins & Permissions), without
+        // the extension prefix or "|user"/"|admin" suffix, so old names still match.
+        search: "".concat(it.label, " ").concat(String(it.n || '').split('|')[0].replace(/^.*>/, ''), " ").concat(aLabel, " ").concat(sec).toLowerCase()
+      });
+    });
+    return Object.keys(byArea).sort(function (x, y) {
+      return (areaLabel[x] || x).localeCompare(areaLabel[y] || y);
+    }).map(function (a) {
+      return {
+        label: areaLabel[a] || a,
+        options: byArea[a].sort(function (p, q) {
+          return p.name.localeCompare(q.name);
+        })
+      };
+    });
+  }, [items, areaLabel]);
+  return /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    showSearch: true,
+    value: value,
+    placeholder: "Search for a module\u2026",
+    suffixIcon: /*#__PURE__*/_react["default"].createElement(_icons.SearchOutlined, {
+      style: {
+        fontSize: 15
+      }
+    }),
+    options: options // Match against our combined label+area search string.
+    ,
+    filterOption: function filterOption(input, option) {
+      if (!option || option.options) return false; // skip group headers
+
+      return (option.search || '').includes((input || '').toLowerCase());
+    },
+    onChange: function onChange(key) {
+      if (key && onSelect) onSelect(key);
+      setValue(undefined);
+    },
+    onSelect: function onSelect() {
+      return setValue(undefined);
+    },
+    allowClear: true,
+    style: {
+      width: '100%'
+    },
+    popupMatchSelectWidth: false,
+    listHeight: 420,
+    variant: "filled",
+    "aria-label": "Search modules"
+  });
+}
+
+},{"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],17:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NativeAdapterView;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * Mounts a module tab whose ADAPTER draws its own view — e.g. the settings
+ * module, whose initTable() renders the bespoke SettingsPage (grouped inline
+ * controls) instead of a table. The shell provides the Table/Form/FilterForm
+ * containers (via setContainers) and triggers the adapter's get(), exactly as
+ * the legacy footer would; everything else is the module's own code.
+ */
+function NativeAdapterView(_ref) {
+  var tabKey = _ref.tabKey;
+  var tableRef = (0, _react.useRef)(null);
+  var formRef = (0, _react.useRef)(null);
+  var filterRef = (0, _react.useRef)(null);
+
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      ready = _useState2[0],
+      setReady = _useState2[1];
+
+  (0, _react.useEffect)(function () {
+    var cancelled = false;
+    var tries = 0;
+
+    var tick = function tick() {
+      if (cancelled) return;
+      var m = (window.modJsList || {})[tabKey];
+
+      if (m && tableRef.current) {
+        if (typeof m.setContainers === 'function') {
+          m.setContainers({
+            Table: tableRef.current,
+            Form: formRef.current,
+            FilterForm: filterRef.current
+          });
+        } // The instance persists across remounts — force a re-render into the
+        // current containers.
+
+
+        m.tableInitialized = false;
+        m.formInitialized = false;
+        window.modJs = m;
+
+        try {
+          if (m.masterDataReader && m.masterDataReader.updateAllMasterData) {
+            m.masterDataReader.updateAllMasterData();
+          }
+        } catch (e) {
+          /* ignore */
+        }
+
+        try {
+          m.get([]);
+        } catch (e) {
+          /* ignore */
+        }
+
+        setReady(true);
+        return;
+      }
+
+      tries += 1;
+      if (tries <= 100) setTimeout(tick, 100);
+    };
+
+    tick();
+    return function () {
+      cancelled = true;
+    };
+  }, [tabKey]);
+  return /*#__PURE__*/_react["default"].createElement("div", null, !ready && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      padding: 40
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+    size: "large"
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    ref: tableRef
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    ref: formRef
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    ref: filterRef
+  }));
+}
+
+},{"antd":"antd","react":"react"}],18:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NativeCardList;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+var _ExpenseDialog = _interopRequireDefault(require("./ExpenseDialog"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+// Employees.termination_type set when an onboarding is cancelled after acceptance.
+var ONBOARDING_CANCELLED = 'Onboarding cancelled'; // Icon name (from declarative extension card config) -> component.
+
+var ICON_BY_NAME = {
+  file: /*#__PURE__*/_react["default"].createElement(_icons.FileOutlined, null),
+  form: /*#__PURE__*/_react["default"].createElement(_icons.FormOutlined, null),
+  "export": /*#__PURE__*/_react["default"].createElement(_icons.ExportOutlined, null),
+  monitor: /*#__PURE__*/_react["default"].createElement(_icons.MonitorOutlined, null)
+};
+
+var iconByName = function iconByName(name) {
+  return ICON_BY_NAME[name] || /*#__PURE__*/_react["default"].createElement(_icons.FileOutlined, null);
+}; // Lighten a hex colour toward white by `amt` (0..1) so the saturated action-icon
+// hues (tuned for light mode) stay legible on the dark sidebar/cards.
+
+
+function lighten(hex, amt) {
+  var m = /^#?([0-9a-fA-F]{6})$/.exec(hex || '');
+  if (!m) return hex;
+  var n = parseInt(m[1], 16);
+  var r = n >> 16 & 255;
+  var g = n >> 8 & 255;
+  var b = n & 255;
+  r = Math.round(r + (255 - r) * amt);
+  g = Math.round(g + (255 - g) * amt);
+  b = Math.round(b + (255 - b) * amt);
+  return "rgb(".concat(r, ", ").concat(g, ", ").concat(b, ")");
+}
+
+var PAGE_SIZE = 8; // Lazy, idempotent loader for an extension bundle that exposes a native
+// document-mount function (e.g. the editor's window.mountEditorDocument). A
+// per-session cache-bust keeps it fresh across hard reloads without re-fetching
+// the (large) bundle on every modal open.
+
+var NATIVE_CB = String(Date.now());
+var nativeBundles = {};
+
+function loadNativeBundle(url) {
+  if (nativeBundles[url]) return nativeBundles[url];
+  var p = new Promise(function (resolve, reject) {
+    var s = document.createElement('script');
+    s.src = "".concat(url).concat(url.indexOf('?') >= 0 ? '&' : '?', "cb=").concat(NATIVE_CB);
+    s.async = false;
+
+    s.onload = function () {
+      return resolve();
+    };
+
+    s.onerror = function () {
+      s.remove();
+      reject(new Error("Failed to load ".concat(url)));
+    };
+
+    document.head.appendChild(s);
+  }); // Evict on failure so the next open retries instead of replaying the rejection.
+
+  nativeBundles[url] = p["catch"](function (e) {
+    delete nativeBundles[url];
+    throw e;
+  });
+  return nativeBundles[url];
+} // Injected into a same-origin document-editor iframe to hide the legacy page
+// chrome (top bar + sidebar) so only the editor content shows.
+
+
+var EMBED_CSS = "\n  header.header { display: none !important; }\n  aside.left-side, .sidebar-offcanvas, .skeletonSideMenu { display: none !important; }\n  .right-side { margin-left: 0 !important; left: 0 !important; }\n  .wrapper, body, html { padding-top: 0 !important; margin-top: 0 !important; background: #fff !important; }\n  body { min-width: 0 !important; }\n  #DemoModeNotice, #IceHrmConnectionNotice { display: none !important; }\n"; // A representative icon + accent colour per entity (falls back to a generic one).
+
+var ENTITY_STYLE = {
+  JobTitle: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.IdcardOutlined, null),
+    color: '#1976d2'
+  },
+  PayGrade: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  EmploymentStatus: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProfileOutlined, null),
+    color: '#7b1fa2'
+  },
+  Skill: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#1976d2'
+  },
+  Education: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#0288d1'
+  },
+  Certification: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#7b1fa2'
+  },
+  Language: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#ed6c02'
+  },
+  Project: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProjectOutlined, null),
+    color: '#1976d2'
+  },
+  EmployeeProject: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#2e7d32'
+  },
+  Client: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.BankOutlined, null),
+    color: '#7b1fa2'
+  },
+  CustomField: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    color: '#1976d2'
+  },
+  Audit: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AuditOutlined, null),
+    color: '#546e7a'
+  },
+  EmailLogEntry: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.MailOutlined, null),
+    color: '#0288d1'
+  },
+  Employee: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+    color: '#1976d2'
+  },
+  EmployeeCareer: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#0288d1'
+  },
+  EmployeeSkill: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#1976d2'
+  },
+  EmployeeEducation: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#0288d1'
+  },
+  EmployeeCertification: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#7b1fa2'
+  },
+  EmployeeLanguage: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#ed6c02'
+  },
+  EmployeeDependent: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#2e7d32'
+  },
+  EmergencyContact: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ContactsOutlined, null),
+    color: '#d32f2f'
+  },
+  TerminatedEmployee: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserDeleteOutlined, null),
+    color: '#ed6c02'
+  },
+  ArchivedEmployee: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+    color: '#546e7a'
+  },
+  EmployeeDataHistory: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProfileOutlined, null),
+    color: '#0288d1'
+  },
+  MyAttendance: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    color: '#0288d1'
+  },
+  OvertimeCategory: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FieldTimeOutlined, null),
+    color: '#ed6c02'
+  },
+  MyOvertime: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    color: '#ed6c02'
+  },
+  EmployeeOvertime: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    color: '#ed6c02'
+  },
+  EmployeeOvertimeApproval: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    color: '#7b1fa2'
+  },
+  User: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+    color: '#1976d2'
+  },
+  UserRole: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#7b1fa2'
+  },
+  UserInvitation: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.MailOutlined, null),
+    color: '#0288d1'
+  },
+  LeaveType: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TagsOutlined, null),
+    color: '#ed6c02'
+  },
+  LeavePeriod: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ScheduleOutlined, null),
+    color: '#2e7d32'
+  },
+  WorkDay: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CarryOutOutlined, null),
+    color: '#0288d1'
+  },
+  HoliDay: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.GiftOutlined, null),
+    color: '#7b1fa2'
+  },
+  LeaveStartingBalance: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SlidersOutlined, null),
+    color: '#0288d1'
+  },
+  LeaveGroup: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#1976d2'
+  },
+  EmployeeLeave: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#ed6c02'
+  },
+  // User leaves (modules::leaves)
+  MyLeave: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+    color: '#1976d2'
+  },
+  MyLeaveApproved: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+    color: '#2e7d32'
+  },
+  SubLeave: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#ed6c02'
+  },
+  LeaveApproval: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#7b1fa2'
+  },
+  // Expenses extension
+  ExpensesCategory: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TagsOutlined, null),
+    color: '#7b1fa2'
+  },
+  ExpensesPaymentMethod: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  EmployeeExpense: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#1976d2'
+  },
+  MyExpense: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#1976d2'
+  },
+  SubExpense: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#ed6c02'
+  },
+  ExpenseApproval: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#7b1fa2'
+  },
+  // Job positions (extension::jobpositions|admin)
+  Job: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AuditOutlined, null),
+    color: '#1976d2'
+  },
+  // Candidates (extension::candidates|admin)
+  Candidate: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UsergroupAddOutlined, null),
+    color: '#7b1fa2'
+  },
+  // Recruitment setup (extension::jobsetup|admin)
+  EmployementType: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.IdcardOutlined, null),
+    color: '#1976d2'
+  },
+  ExperienceLevel: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SlidersOutlined, null),
+    color: '#ed6c02'
+  },
+  JobFunction: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#7b1fa2'
+  },
+  EducationLevel: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#2e7d32'
+  },
+  Benifit: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.GiftOutlined, null),
+    color: '#d81b60'
+  },
+  // System (admin::settings / admin::modules / admin::permissions)
+  Setting: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null),
+    color: '#546e7a'
+  },
+  Module: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    color: '#1976d2'
+  },
+  Permission: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.KeyOutlined, null),
+    color: '#7b1fa2'
+  },
+  // Metadata (admin::metadata) — master data lookups.
+  Country: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.GlobalOutlined, null),
+    color: '#1976d2'
+  },
+  Province: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#0288d1'
+  },
+  CurrencyType: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  Nationality: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.IdcardOutlined, null),
+    color: '#7b1fa2'
+  },
+  Ethnicity: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#ed6c02'
+  },
+  ImmigrationStatus: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#d81b60'
+  },
+  // Documents (admin::documents / modules::documents)
+  CompanyDocument: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FileTextOutlined, null),
+    color: '#1976d2'
+  },
+  Document: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TagsOutlined, null),
+    color: '#7b1fa2'
+  },
+  EmployeeDocument: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FileOutlined, null),
+    color: '#0288d1'
+  },
+  PayslipDocument: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  MyDocument: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FileOutlined, null),
+    color: '#0288d1'
+  },
+  MyCompanyDocument: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FileTextOutlined, null),
+    color: '#1976d2'
+  },
+  MyPayslip: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  // Training (modules::training)
+  TrainingSessionWithCourse: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#1976d2'
+  },
+  EmployeeTrainingSession: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#2e7d32'
+  },
+  SubEmployeeTraining: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#ed6c02'
+  },
+  CoordinatedTrainingSession: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ScheduleOutlined, null),
+    color: '#7b1fa2'
+  },
+  // Performance (admin::performance / modules::performance)
+  PerformanceReview: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#7b1fa2'
+  },
+  ReviewFeedback: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FormOutlined, null),
+    color: '#0288d1'
+  },
+  ReviewTemplate: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProfileOutlined, null),
+    color: '#ed6c02'
+  },
+  EmployeeGoal: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+    color: '#2e7d32'
+  },
+  MyPerformanceReview: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#1976d2'
+  },
+  MyReviewFeedback: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FormOutlined, null),
+    color: '#ed6c02'
+  },
+  // Salary (admin::salary)
+  SalaryComponentType: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TagsOutlined, null),
+    color: '#7b1fa2'
+  },
+  SalaryComponent: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    color: '#0288d1'
+  },
+  EmployeeSalary: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#2e7d32'
+  },
+  // Loans (admin::loans / modules::loans)
+  CompanyLoan: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.BankOutlined, null),
+    color: '#2e7d32'
+  },
+  EmployeeCompanyLoan: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#1976d2'
+  },
+  MyLoan: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DollarOutlined, null),
+    color: '#1976d2'
+  },
+  // Travel (admin::travel)
+  TravelProject: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProjectOutlined, null),
+    color: '#0288d1'
+  },
+  EmployeeTravelRecord: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SendOutlined, null),
+    color: '#1976d2'
+  },
+  MyTravel: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SendOutlined, null),
+    color: '#1976d2'
+  },
+  SubTravel: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SendOutlined, null),
+    color: '#ed6c02'
+  },
+  TravelApproval: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SendOutlined, null),
+    color: '#7b1fa2'
+  }
+};
+
+var entityStyle = function entityStyle(e) {
+  return ENTITY_STYLE[e] || {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    color: '#607d8b'
+  };
+}; // Icon + colour for a custom-field Object Type value (the type column).
+
+
+var OBJECT_TYPE_STYLE = {
+  Employee: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+    color: '#1976d2'
+  },
+  CompanyStructure: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#0288d1'
+  },
+  Project: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ProjectOutlined, null),
+    color: '#7b1fa2'
+  },
+  Client: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.BankOutlined, null),
+    color: '#2e7d32'
+  },
+  JobTitle: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.IdcardOutlined, null),
+    color: '#ed6c02'
+  },
+  Qualification: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReadOutlined, null),
+    color: '#1976d2'
+  },
+  Recruitment: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.SolutionOutlined, null),
+    color: '#7b1fa2'
+  },
+  Document: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FileTextOutlined, null),
+    color: '#546e7a'
+  },
+  Leave: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+    color: '#ed6c02'
+  }
+};
+
+var objectTypeStyle = function objectTypeStyle(t) {
+  return OBJECT_TYPE_STYLE[t] || {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    color: '#607d8b'
+  };
+}; // Per-entity card overrides: which column is the title, what to hide from the
+// meta line, which fields to show as a Tag, dynamic icons, and whether to hide
+// the dedicated View button (row click still views).
+// Shared status -> tag colour map for performance review cards (admin + employee
+// lists), so a review's status reads the same everywhere.
+
+
+var REVIEW_STATUS_COLORS = {
+  Pending: 'gold',
+  Submitted: 'green',
+  Completed: 'blue',
+  Rejected: 'red'
+};
+var ENTITY_CONFIG = {
+  // AttendanceModal renders its own antd Modal (controlled by `element`), so the
+  // card list must NOT also wrap it in a Modal (that showed two modals).
+  // Show the employee's profile photo as the card avatar, name as the title.
+  Attendance: {
+    childSelfModal: true,
+    avatarField: 'image',
+    titleField: 'employee',
+    hideMeta: ['image']
+  },
+  AttendanceStatus: {
+    avatarField: 'image',
+    titleField: 'employee',
+    hideMeta: ['image'],
+    hideActions: true // read-only status view — no row actions / Add New
+
+  },
+  // The employee's own attendance (modules::attendance) — one card per punch day.
+  // Title by clock-in time; the detail view is AttendanceModal (self-modal).
+  MyAttendance: {
+    childSelfModal: true,
+    titleField: 'in_time',
+    hideMeta: ['image']
+  },
+  // Overtime — the employee's own requests (modules::overtime own tab) have no
+  // employee column, so title by category. The admin / subordinate / approval
+  // adapters carry the employee photo + name (like AttendanceStatus).
+  MyOvertime: {
+    titleField: 'category'
+  },
+  EmployeeOvertime: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['image']
+  },
+  EmployeeOvertimeApproval: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['image']
+  },
+  JobTitle: {
+    titleField: 'name'
+  },
+  Language: {
+    titleField: 'description'
+  },
+  CustomField: {
+    title: function title(r) {
+      return "".concat(r.type || '', " \u2192 ").concat(r.name || '');
+    },
+    hideMeta: ['name', 'type', 'display'],
+    iconField: 'type'
+  },
+  Audit: {
+    title: function title(r) {
+      return r.details;
+    },
+    tagFields: ['time'],
+    tagIcon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    hideMeta: ['details', 'time'],
+    hideViewButton: true
+  },
+  EmailLogEntry: {
+    titleField: 'subject',
+    hideMeta: ['subject']
+  },
+  Project: {
+    hideViewButton: true
+  },
+  EmployeeProject: {
+    hideViewButton: true
+  },
+  Client: {
+    hideViewButton: true
+  },
+  Employee: {
+    title: function title(r) {
+      return "".concat(r.first_name || '', " ").concat(r.last_name || '').trim() || r.employee_id;
+    },
+    avatarField: 'image',
+    hideMeta: ['first_name', 'last_name', 'image', 'id'],
+    extraActions: [{
+      key: 'switch',
+      tip: 'Switch to profile',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.LoginOutlined, null),
+      color: '#ed6c02',
+      method: 'setAdminProfile',
+      show: function show(m) {
+        return !!m.allowSwitchToEmployeeProfile;
+      }
+    }, {
+      key: 'resign',
+      tip: 'Initiate resignation',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.UserDeleteOutlined, null),
+      color: '#d32f2f',
+      method: 'terminateEmployee',
+      show: function show(m) {
+        return m.hasAccess('delete') && m.showDelete !== false;
+      }
+    }]
+  },
+  TerminatedEmployee: {
+    title: function title(r) {
+      return "".concat(r.first_name || '', " ").concat(r.last_name || '').trim() || r.employee_id;
+    },
+    avatarField: 'image',
+    hideMeta: ['first_name', 'last_name', 'image', 'id'],
+    // A hire whose onboarding was cancelled never started: they are flagged, and
+    // cannot be activated (re-hiring means sending a new onboarding invitation).
+    badges: function badges(r) {
+      return r.termination_type === ONBOARDING_CANCELLED ? [{
+        key: 'onb',
+        text: 'Onboarding cancelled',
+        color: 'volcano'
+      }] : [];
+    },
+    extraActions: [{
+      key: 'activate',
+      tip: 'Activate',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'activateEmployee',
+      show: function show(m, r) {
+        return !r || r.termination_type !== ONBOARDING_CANCELLED;
+      }
+    }]
+  },
+  ArchivedEmployee: {
+    title: function title(r) {
+      return "".concat(r.first_name || '', " ").concat(r.last_name || '').trim() || r.employee_id;
+    },
+    hideMeta: ['first_name', 'last_name', 'image', 'id'],
+    extraActions: [{
+      key: 'download',
+      tip: 'Download',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#0288d1',
+      method: 'download'
+    }]
+  },
+  EmployeeDataHistory: {
+    titleField: 'employee',
+    tagFields: ['created'],
+    tagIcon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+    hideMeta: ['created']
+  },
+  // Leave groups (admin::leaves) — no view; the "Add Employees" action opens a
+  // dialog to view the group and manage its members.
+  LeaveGroup: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true,
+    // Clicking the card opens the manage-members dialog; the icon action does too.
+    cardClickAction: 'manageGroupEmployees',
+    extraActions: [{
+      key: 'members',
+      tip: 'Manage members',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.UsergroupAddOutlined, null),
+      color: '#1677ff',
+      method: 'manageGroupEmployees',
+      first: true
+    }]
+  },
+  // Leave rules (admin::leaves → Leave Rule). Title by leave type name, plus the
+  // employee name when the rule targets a specific employee (most rules apply to
+  // everyone and have no employee). No dedicated View button — clicking the card
+  // opens the rule (row-click still views).
+  LeaveRule: {
+    title: function title(r, get) {
+      var type = get('leave_type') || 'Leave Rule';
+      return r.employee ? "".concat(type, " \u2014 ").concat(get('employee')) : type;
+    },
+    hideViewButton: true,
+    hideMeta: ['id', 'leave_type', 'employee']
+  },
+  // Employee Leave List (admin::leaves → Employee Leave List). Mirrors the
+  // legacy three actions: Leave Days (details + logs), Leave Status (approve
+  // workflow) and Cancel Leave (delete, shown last).
+  EmployeeLeave: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideEditButton: true,
+    disableView: true,
+    deleteLast: true,
+    deleteTip: 'Cancel Leave',
+    deleteIcon: /*#__PURE__*/_react["default"].createElement(_icons.CloseCircleOutlined, null),
+    deleteConfirm: 'Are you sure you want to cancel this leave? This cannot be undone.',
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null),
+    extraActions: [{
+      key: 'leavedays',
+      tip: 'Leave Details',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'getLeaveDaysReadonly',
+      first: true
+    }]
+  },
+  // --- User leaves (modules::leaves) ------------------------------------
+  // My own leave requests (All My Leaves + Pending): Leave Details, and Cancel
+  // (delete) shown only while the request is still Pending.
+  MyLeave: {
+    titleField: 'leave_type',
+    hideMeta: ['id'],
+    hideEditButton: true,
+    hideCopyButton: true,
+    disableView: true,
+    // Clicking the card opens the leave details dialog.
+    cardClickAction: 'getLeaveDaysReadonly',
+    extraActions: [{
+      key: 'leavedays',
+      tip: 'Leave Details',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'getLeaveDaysReadonly',
+      first: true
+    }, {
+      key: 'cancel',
+      tip: 'Cancel Leave',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CloseCircleOutlined, null),
+      color: '#d32f2f',
+      method: 'cancelMyLeave',
+      show: function show(m, rec) {
+        return rec && rec.status === 'Pending';
+      }
+    }]
+  },
+  // My approved leaves: Leave Details + request cancellation (cancelLeave).
+  MyLeaveApproved: {
+    titleField: 'leave_type',
+    hideMeta: ['id'],
+    hideEditButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'leavedays',
+      tip: 'Leave Details',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'getLeaveDaysReadonly',
+      first: true
+    }, {
+      key: 'cancel',
+      tip: 'Request Cancellation',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CloseCircleOutlined, null),
+      color: '#d32f2f',
+      method: 'cancelLeave'
+    }]
+  },
+  // Direct reports' leaves (approve/reject): Leave Details + Change Status (cog,
+  // driven by the adapter's getStatusOptionsData approve workflow).
+  SubLeave: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideEditButton: true,
+    disableView: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null),
+    statusAction: 'changeLeaveStatus',
+    extraActions: [{
+      key: 'leavedays',
+      tip: 'Leave Details',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'getLeaveDaysReadonly',
+      first: true
+    }]
+  },
+  // Multi-level approval queue (same shape/actions as direct reports).
+  LeaveApproval: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideEditButton: true,
+    disableView: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null),
+    statusAction: 'changeLeaveStatus',
+    extraActions: [{
+      key: 'leavedays',
+      tip: 'Leave Details',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.InfoCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'getLeaveDaysReadonly',
+      first: true
+    }]
+  },
+  // Employee Expenses (extension::expenses|admin) — approve workflow on the
+  // expense record; show the employee photo + name.
+  EmployeeExpense: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    // Bespoke expense dialog (ExpenseDialog) with a status-history sidebar,
+    // instead of the generic legacy view/edit modals. Admins/managers view here;
+    // admins may also edit (owner/admin only, enforced by the backend).
+    expenseDialog: true,
+    // Admins/managers can change the status from within the view dialog.
+    dialogStatusChange: true,
+    // A reason is mandatory when changing an expense's status.
+    requireStatusReason: true,
+    // Managers cannot change the status of a Paid expense (admins still can);
+    // backend enforces this in Expenses\Admin\Controller::changeStatus.
+    managerLockedStatuses: ['Paid'],
+    // Managers cannot set an expense TO Paid (admins still can); backend enforces
+    // this in Expenses\Admin\Controller::changeStatus.
+    managerBlockedTargetStatuses: ['Paid'],
+    deleteLast: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null)
+  },
+  // --- User expenses (extension::expenses|user) -------------------------
+  // My own expenses: edit/delete, and request cancellation (for approved).
+  MyExpense: {
+    titleField: 'category',
+    hideMeta: ['id'],
+    // Bespoke expense dialog (ExpenseDialog) with a status-history sidebar for
+    // view / edit / re-submit — no legacy view/edit modal.
+    expenseDialog: true,
+    // Quick "filter by status" dropdown in the toolbar.
+    statusFilter: ['Pending', 'Approved', 'Rejected', 'Paid'],
+    // Employees may delete their own expense while it is Pending or Rejected
+    // (the backend enforces this via EmployeeExpense::getUserOnlyMeAccess).
+    deleteWhen: function deleteWhen(rec) {
+      return rec.status === 'Pending' || rec.status === 'Rejected';
+    },
+    // Employees may only edit their own expenses while still Pending.
+    editWhen: function editWhen(rec) {
+      return rec.status === 'Pending';
+    },
+    // A rejected expense can be re-submitted (status -> Pending) by its owner.
+    resubmitAction: 'resubmit',
+    resubmitWhen: function resubmitWhen(rec) {
+      return rec.status === 'Rejected';
+    },
+    // Expenses do not support employee-initiated cancellation of approved rows.
+    hideCancelButton: true
+  },
+  // Direct reports' expenses (and the multi-level approval queue): approve
+  // workflow with the employee photo + name.
+  SubExpense: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideEditButton: true,
+    hideCopyButton: true,
+    disableView: true,
+    deleteLast: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null)
+  },
+  ExpenseApproval: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideEditButton: true,
+    hideCopyButton: true,
+    disableView: true,
+    deleteLast: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null)
+  },
+  // Candidates (extension::candidates|admin) — the eye opens the rich
+  // CandidateProfile via getTableChildComponents (same mechanism as the
+  // employees module). All hiring-stage tabs share this config.
+  Candidate: {
+    title: function title(r) {
+      return "".concat(r.first_name || '', " ").concat(r.last_name || '').trim() || r.email;
+    },
+    hideMeta: ['first_name', 'last_name', 'id'],
+    tagFields: ['hiringStage']
+  },
+  // Job positions (extension::jobpositions|admin) — the rest of the card config
+  // comes inline from the extension's meta.json native block; extraActions hold
+  // React elements so they live here. Copy Job Link mirrors the legacy Job Link
+  // action (public apply?ref=<code> URL).
+  Job: {
+    extraActions: [{
+      key: 'joblink',
+      tip: 'Copy Job Link',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.LinkOutlined, null),
+      color: '#ed6c02',
+      method: 'copyJobLink',
+      first: true
+    }, {
+      key: 'openjob',
+      tip: 'Open Job Page',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.MonitorOutlined, null),
+      color: '#1565c0',
+      method: 'openJobPage',
+      first: true
+    }]
+  },
+  // System (admin::settings) — settings rows are edit-only.
+  Setting: {
+    titleField: 'name',
+    hideMeta: ['id', 'meta', 'category', 'setting_order'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  Module: {
+    titleField: 'label',
+    tagFields: ['status'],
+    hideMeta: ['id', 'update_path', 'mod_order'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  Permission: {
+    title: function title(r) {
+      return "".concat(r.user_level || '', " \u2014 ").concat(r.permission || '');
+    },
+    hideMeta: ['id', 'user_level', 'permission'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  // Metadata (admin::metadata) — simple lookups.
+  Country: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  Province: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  CurrencyType: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  Nationality: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  Ethnicity: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  ImmigrationStatus: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  // Documents (admin::documents)
+  CompanyDocument: {
+    titleField: 'name',
+    tagFields: ['status'],
+    hideMeta: ['id'],
+    hideCopyButton: true
+  },
+  Document: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  EmployeeDocument: {
+    titleField: 'employee',
+    avatarField: 'image',
+    tagFields: ['status'],
+    hideMeta: ['id', 'image', 'attachment'],
+    hideCopyButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'download',
+      tip: 'Download Document',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#2e7d32',
+      method: 'downloadAttachment',
+      first: true,
+      show: function show(m, rec) {
+        return !!(rec && rec.attachment);
+      }
+    }]
+  },
+  PayslipDocument: {
+    titleField: 'employee',
+    avatarField: 'image',
+    tagFields: ['status'],
+    hideMeta: ['id', 'image', 'attachment'],
+    hideCopyButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'download',
+      tip: 'Download Document',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#2e7d32',
+      method: 'downloadAttachment',
+      first: true,
+      show: function show(m, rec) {
+        return !!(rec && rec.attachment);
+      }
+    }]
+  },
+  // Documents (modules::documents) — read-only lists with downloads.
+  MyDocument: {
+    titleField: 'document',
+    tagFields: ['status'],
+    hideMeta: ['id', 'attachment'],
+    hideCopyButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'download',
+      tip: 'Download Document',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#2e7d32',
+      method: 'downloadAttachment',
+      first: true,
+      show: function show(m, rec) {
+        return !!(rec && rec.attachment);
+      }
+    }]
+  },
+  MyCompanyDocument: {
+    titleField: 'name',
+    hideMeta: ['id', 'attachment'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'download',
+      tip: 'Download Document',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#2e7d32',
+      method: 'downloadAttachment',
+      first: true,
+      show: function show(m, rec) {
+        return !!(rec && rec.attachment);
+      }
+    }]
+  },
+  MyPayslip: {
+    titleField: 'document',
+    tagFields: ['status'],
+    hideMeta: ['id', 'attachment'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'download',
+      tip: 'Download Payslip',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+      color: '#2e7d32',
+      method: 'downloadAttachment',
+      first: true,
+      show: function show(m, rec) {
+        return !!(rec && rec.attachment);
+      }
+    }]
+  },
+  // Training (modules::training)
+  TrainingSessionWithCourse: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    extraActions: [{
+      key: 'signup',
+      tip: 'Sign Up',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.LoginOutlined, null),
+      color: '#2e7d32',
+      method: 'signUp',
+      first: true
+    }]
+  },
+  EmployeeTrainingSession: {
+    titleField: 'trainingSession',
+    tagFields: ['status'],
+    hideMeta: ['id', 'courseId'],
+    hideCopyButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'completed',
+      tip: 'Mark Completed',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'completed',
+      first: true,
+      show: function show(m, rec) {
+        return rec && rec.status === 'Scheduled';
+      }
+    }]
+  },
+  SubEmployeeTraining: {
+    titleField: 'employee',
+    tagFields: ['status'],
+    hideMeta: ['id', 'courseId'],
+    hideCopyButton: true,
+    disableView: true,
+    extraActions: [{
+      key: 'approve',
+      tip: 'Approve Completed Status',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+      color: '#2e7d32',
+      method: 'completed',
+      first: true,
+      show: function show(m, rec) {
+        return rec && rec.status === 'Attended';
+      }
+    }]
+  },
+  CoordinatedTrainingSession: {
+    titleField: 'name',
+    tagFields: ['status'],
+    hideMeta: ['id'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  // Performance (admin::performance / modules::performance). The eye opens the
+  // rich review/feedback views via the adapters' viewElement flows.
+  PerformanceReview: {
+    titleField: 'employee',
+    avatarField: 'image',
+    tagFields: ['status'],
+    tagColors: REVIEW_STATUS_COLORS,
+    hideMeta: ['id', 'image', 'review_pdf'],
+    hideCopyButton: true,
+    extraActions: [{
+      key: 'createPdf',
+      tip: 'Create PDF',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.FilePdfOutlined, null),
+      color: '#c62828',
+      method: 'createReviewPdf',
+      // Anyone with access can generate the first PDF; once one exists only an
+      // admin may regenerate it (the backend enforces this too).
+      show: function show(m, rec) {
+        return rec && rec.status === 'Completed' && (isEmpty(rec.review_pdf) || m.isAdminUser && m.isAdminUser());
+      }
+    }, {
+      key: 'viewPdf',
+      tip: 'View PDF',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.FilePdfOutlined, null),
+      color: '#2e7d32',
+      method: 'viewReviewPdf',
+      show: function show(m, rec) {
+        return rec && !isEmpty(rec.review_pdf);
+      }
+    }]
+  },
+  ReviewFeedback: {
+    titleField: 'employee',
+    avatarField: 'image',
+    tagFields: ['status'],
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true
+  },
+  ReviewTemplate: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    hideCopyButton: true
+  },
+  EmployeeGoal: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true,
+    disableView: true,
+    progressFields: ['manager_rating', 'employee_rating']
+  },
+  // User performance (modules::performance)
+  MyPerformanceReview: {
+    // 'form' arrives as the review template name (resolved server-side via the
+    // adapter's source mapping); the period dates render formatted through the
+    // adapter's column render functions in the meta line.
+    title: function title(r) {
+      return r.form || 'Performance Review';
+    },
+    tagFields: ['status'],
+    tagColors: REVIEW_STATUS_COLORS,
+    hideMeta: ['id', 'form', 'review_pdf'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    // Employees can view (not create) the review PDF once a manager generates
+    // it — the PDF only exists on Completed reviews.
+    extraActions: [{
+      key: 'viewPdf',
+      tip: 'View PDF',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.FilePdfOutlined, null),
+      color: '#2e7d32',
+      method: 'viewReviewPdf',
+      show: function show(m, rec) {
+        return rec && !isEmpty(rec.review_pdf);
+      }
+    }]
+  },
+  MyReviewFeedback: {
+    titleField: 'review',
+    avatarField: 'image',
+    tagFields: ['status'],
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    extraActions: [{
+      key: 'give',
+      tip: 'Give Feedback',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.FormOutlined, null),
+      color: '#2e7d32',
+      method: 'showConfigView',
+      first: true,
+      show: function show(m, rec) {
+        return rec && rec.status !== 'Submitted';
+      }
+    }, {
+      key: 'submit',
+      tip: 'Submit Feedback',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ExportOutlined, null),
+      color: '#ed6c02',
+      method: 'submitFeedback',
+      first: true,
+      show: function show(m, rec) {
+        return rec && rec.status === 'Pending';
+      }
+    }]
+  },
+  // Salary (admin::salary)
+  SalaryComponentType: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true,
+    exportEndpoint: 'payroll_config/export/salary',
+    exportLabel: 'Export Salary Data',
+    exportFilePrefix: 'salary-backup',
+    importEndpoint: 'payroll_config/import/salary'
+  },
+  SalaryComponent: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true,
+    exportEndpoint: 'payroll_config/export/salary',
+    exportLabel: 'Export Salary Data',
+    exportFilePrefix: 'salary-backup',
+    importEndpoint: 'payroll_config/import/salary'
+  },
+  EmployeeSalary: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true,
+    disableView: true,
+    exportEndpoint: 'payroll_config/export/salary',
+    exportLabel: 'Export Salary Data',
+    exportFilePrefix: 'salary-backup',
+    importEndpoint: 'payroll_config/import/salary'
+  },
+  // Loans (admin::loans)
+  CompanyLoan: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  EmployeeCompanyLoan: {
+    titleField: 'employee',
+    tagFields: ['status'],
+    hideMeta: ['id'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  // My loans (modules::loans) — read-only; the eye opens the record details.
+  MyLoan: {
+    titleField: 'loan',
+    tagFields: ['status'],
+    hideMeta: ['id'],
+    hideEditButton: true,
+    hideCopyButton: true
+  },
+  // Travel (admin::travel)
+  TravelProject: {
+    titleField: 'name',
+    hideMeta: ['id'],
+    disableView: true
+  },
+  // Travel Requests — the View button opens a rich custom modal
+  // (viewElement -> TravelRequestView) with status change; keep it enabled.
+  EmployeeTravelRecord: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true
+  },
+  // --- User travel (modules::travel) ------------------------------------
+  // My own travel requests: apply/edit/delete + request cancellation.
+  MyTravel: {
+    titleField: 'travel_to',
+    hideMeta: ['id'],
+    hideCopyButton: true,
+    disableView: true
+  },
+  // Direct reports' (and the multi-level approval queue) travel requests:
+  // the View modal handles the status change.
+  SubTravel: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true
+  },
+  TravelApproval: {
+    titleField: 'employee',
+    avatarField: 'image',
+    hideMeta: ['id', 'image'],
+    hideCopyButton: true,
+    hideEditButton: true,
+    statusIcon: /*#__PURE__*/_react["default"].createElement(_icons.SettingOutlined, null)
+  },
+  // Users module (admin::users).
+  User: {
+    titleField: 'username',
+    avatarField: 'image',
+    hideMeta: ['image', 'id'],
+    extraActions: [{
+      key: 'password',
+      tip: 'Change Password',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.KeyOutlined, null),
+      color: '#1565c0',
+      method: 'showPasswordChangeForm',
+      show: function show(m) {
+        return !!(m.hasAccess && m.hasAccess('save'));
+      }
+    }]
+  },
+  UserRole: {
+    hideMeta: ['id']
+  },
+  UserInvitation: {
+    titleField: 'username',
+    tagFields: ['invitation_status_text'],
+    hideMeta: ['id', 'invitation_state'],
+    extraActions: [{
+      key: 'resend',
+      tip: 'Resend invitation',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.SendOutlined, null),
+      color: '#0288d1',
+      method: 'resendInvitation',
+      show: function show(m, r) {
+        return m.hasAccess('save') && m.canResendInvitation(r);
+      }
+    }, {
+      key: 'revoke',
+      tip: 'Revoke invitation',
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.StopOutlined, null),
+      color: '#d32f2f',
+      method: 'revokeInvitation',
+      show: function show(m, r) {
+        return m.hasAccess('save') && m.canRevokeInvitation(r);
+      }
+    }]
+  }
+}; // Render a column cell for a record, tolerating legacy render() functions.
+
+function cellValue(col, record) {
+  var raw = record[col.dataIndex];
+
+  if (typeof col.render === 'function') {
+    try {
+      var out = col.render(raw, record);
+      if (out === null || out === undefined || out === '') return raw;
+      return out;
+    } catch (e) {
+      return raw;
+    }
+  }
+
+  return raw;
+}
+
+function isEmpty(v) {
+  return v === null || v === undefined || v === '' || v === '-';
+}
+/**
+ * Generic horizontal card list for natively-mounted legacy admin modules.
+ * Drives off the module's legacy adapter (window.modJsList[tabKey]): it fetches
+ * pages through the adapter's IceDataPipe, renders each row as a compact card
+ * built from getTableColumns(), and exposes the adapter's actions (edit / view /
+ * delete / copy / document) as buttons — gated by the same flags the legacy
+ * table uses. Add/Edit/View/Filter modals render through the adapter (themed via
+ * ReactModalAdapterBase.shellThemeWrap). Delete uses an antd confirm + the
+ * adapter's cleanDelete (the legacy Bootstrap confirm modal is absent here).
+ * Matches the Company Structure card design and is dark/light-mode aware.
+ */
+
+
+function NativeCardList(_ref) {
+  var shellConfig = _ref.shellConfig,
+      tabKey = _ref.tabKey,
+      entity = _ref.entity,
+      cardConfig = _ref.cardConfig;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token; // Action-icon colours: the hues are tuned for light mode; in dark mode lighten
+  // them so they stay legible on the dark cards.
+
+
+  var isDark = typeof window !== 'undefined' && window.__shellColorMode === 'dark';
+
+  var ac = function ac(hex) {
+    return isDark ? lighten(hex, 0.4) : hex;
+  };
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      items = _useState2[0],
+      setItems = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      total = _useState4[0],
+      setTotal = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(1),
+      _useState6 = _slicedToArray(_useState5, 2),
+      page = _useState6[0],
+      setPage = _useState6[1]; // Page size is fixed at PAGE_SIZE unless the module opts into the size
+  // selector via adapter.setShowPageSizeChanger(true) (e.g. admin Attendance).
+
+
+  var _useState7 = (0, _react.useState)(PAGE_SIZE),
+      _useState8 = _slicedToArray(_useState7, 2),
+      pageSize = _useState8[0],
+      setPageSize = _useState8[1];
+
+  var _useState9 = (0, _react.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      search = _useState10[0],
+      setSearch = _useState10[1];
+
+  var _useState11 = (0, _react.useState)(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      statusFilterVal = _useState12[0],
+      setStatusFilterVal = _useState12[1];
+
+  var _useState13 = (0, _react.useState)(false),
+      _useState14 = _slicedToArray(_useState13, 2),
+      err = _useState14[0],
+      setErr = _useState14[1]; // Some adapters (Employee) "view" by setting a current element that the legacy
+  // table renders as a child component (e.g. the employee profile) instead of a
+  // modal — capture it and render that child in our own modal.
+
+
+  var _useState15 = (0, _react.useState)(null),
+      _useState16 = _slicedToArray(_useState15, 2),
+      currentElement = _useState16[0],
+      _setCurrentElement = _useState16[1]; // A document URL (e.g. a task-list editor page) opened in an embedded modal.
+
+
+  var _useState17 = (0, _react.useState)(null),
+      _useState18 = _slicedToArray(_useState17, 2),
+      editorUrl = _useState18[0],
+      setEditorUrl = _useState18[1]; // A document opened as a NATIVE in-shell component (no iframe) — the URL drives
+  // an extension's mount fn (e.g. the editor) into nativeElRef below.
+
+
+  var _useState19 = (0, _react.useState)(null),
+      _useState20 = _slicedToArray(_useState19, 2),
+      nativeDoc = _useState20[0],
+      setNativeDoc = _useState20[1];
+
+  var nativeElRef = (0, _react.useRef)(null); // Approve-workflow state: the record whose status is being changed, and the
+  // approval-log list being viewed (both null when closed).
+
+  var _useState21 = (0, _react.useState)(null),
+      _useState22 = _slicedToArray(_useState21, 2),
+      statusRec = _useState22[0],
+      setStatusRec = _useState22[1];
+
+  var _useState23 = (0, _react.useState)(null),
+      _useState24 = _slicedToArray(_useState23, 2),
+      statusValue = _useState24[0],
+      setStatusValue = _useState24[1];
+
+  var _useState25 = (0, _react.useState)(''),
+      _useState26 = _slicedToArray(_useState25, 2),
+      statusReason = _useState26[0],
+      setStatusReason = _useState26[1];
+
+  var _useState27 = (0, _react.useState)(false),
+      _useState28 = _slicedToArray(_useState27, 2),
+      statusSaving = _useState28[0],
+      setStatusSaving = _useState28[1];
+
+  var _useState29 = (0, _react.useState)(null),
+      _useState30 = _slicedToArray(_useState29, 2),
+      logsState = _useState30[0],
+      setLogsState = _useState30[1]; // { loading, rows } | null
+
+
+  var _useState31 = (0, _react.useState)(null),
+      _useState32 = _slicedToArray(_useState31, 2),
+      expenseDialog = _useState32[0],
+      setExpenseDialog = _useState32[1]; // { rec, mode } | null
+
+
+  var _useState33 = (0, _react.useState)(0),
+      _useState34 = _slicedToArray(_useState33, 2),
+      force = _useState34[1];
+
+  var bump = function bump() {
+    return force(function (n) {
+      return n + 1;
+    });
+  }; // Bulk-delete selection (enabled per entity via cfg.bulkDelete).
+
+
+  var _useState35 = (0, _react.useState)([]),
+      _useState36 = _slicedToArray(_useState35, 2),
+      selectedIds = _useState36[0],
+      setSelectedIds = _useState36[1];
+
+  var _useState37 = (0, _react.useState)(false),
+      _useState38 = _slicedToArray(_useState37, 2),
+      bulkDeleting = _useState38[0],
+      setBulkDeleting = _useState38[1];
+
+  var clearSelection = function clearSelection() {
+    return setSelectedIds([]);
+  }; // The module's adapter instances are stable for the life of the mounted module,
+  // but window.modJsList is a SHARED global that another overlay can temporarily
+  // borrow — e.g. the native document editor's initEditorUser replaces it while
+  // its modal is open. So capture this tab's adapter instance once it's wired and
+  // prefer the captured instance for render/load; only fall back to the live
+  // global during initial discovery. This keeps the list rendering correctly even
+  // while an editor modal has borrowed the globals.
+
+
+  var boundRef = (0, _react.useRef)(null);
+
+  var adapter = function adapter() {
+    return boundRef.current || (window.modJsList || {})[tabKey];
+  };
+
+  var load = (0, _react.useCallback)(function () {
+    var toPage = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+    var toSearch = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var toLimit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+    var m = adapter();
+
+    if (!m || !m.dataPipe) {
+      setErr(true);
+      return;
+    }
+
+    var p = toPage != null ? toPage : page;
+    var s = toSearch != null ? toSearch : search;
+    var lim = toLimit != null ? toLimit : pageSize;
+    setErr(false);
+    m.dataPipe.get({
+      page: p,
+      limit: lim,
+      search: s
+    }).then(function (d) {
+      setItems(d && d.items || []);
+      setTotal(d && d.total || 0);
+      bump();
+    })["catch"](function () {
+      return setErr(true);
+    });
+  }, [tabKey, page, search, pageSize]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Wire the adapter to the shell: mount containers for its modals, a fake table
+  // container so reload()/loading hooks resolve to us, master data for selects.
+  // The module's init() (which creates the adapters) runs asynchronously after
+  // the bundles load, so the adapter may not exist when this first mounts — poll
+  // briefly until it is ready instead of erroring out.
+
+  (0, _react.useEffect)(function () {
+    var cancelled = false;
+    var tries = 0; // Detached mount points for the adapter's modals (the antd Modal inside
+    // portals to <body> regardless; these just need to be real elements that
+    // exist independently of this component's conditional render).
+
+    var formEl = document.createElement('div');
+    var filterEl = document.createElement('div');
+    document.body.appendChild(formEl);
+    document.body.appendChild(filterEl);
+
+    var wireUp = function wireUp(m) {
+      boundRef.current = m;
+      window.modJs = m;
+
+      if (typeof m.setContainers === 'function') {
+        m.setContainers({
+          Form: formEl,
+          FilterForm: filterEl
+        });
+      } // Force the adapter to (re)render its form/filter modals into the current
+      // containers on the next open (the instance persists across remounts).
+
+
+      m.formInitialized = false;
+      m.tableContainer = {
+        current: {
+          reload: function reload() {
+            return load();
+          },
+          setCurrentElement: function setCurrentElement(el) {
+            return _setCurrentElement(el || null);
+          },
+          setLoading: function setLoading() {},
+          setFilterData: function setFilterData() {
+            bump();
+          }
+        }
+      };
+
+      try {
+        if (m.masterDataReader && m.masterDataReader.updateAllMasterData) {
+          m.masterDataReader.updateAllMasterData();
+        }
+
+        if (typeof m.initFieldMasterData === 'function') m.initFieldMasterData();
+      } catch (e) {
+        /* ignore */
+      }
+
+      setPage(1);
+      load(1, '');
+    };
+
+    var tick = function tick() {
+      if (cancelled) return;
+      var m = adapter();
+
+      if (m && m.dataPipe) {
+        wireUp(m);
+        return;
+      }
+
+      tries += 1;
+
+      if (tries > 100) {
+        setErr(true);
+        return;
+      } // ~10s
+
+
+      setTimeout(tick, 100);
+    };
+
+    tick();
+    return function () {
+      cancelled = true;
+
+      try {
+        var _m = adapter();
+
+        if (_m && typeof _m.setContainers === 'function') _m.setContainers(null);
+        if (formEl.parentNode) formEl.parentNode.removeChild(formEl);
+        if (filterEl.parentNode) filterEl.parentNode.removeChild(filterEl);
+      } catch (e) {
+        /* ignore */
+      }
+
+      boundRef.current = null;
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tabKey]);
+  var m = adapter(); // The "group=name" reference for customAction routing (the legacy `mod`
+  // param). Prefer the adapter's own ref (approve/log adapters know whether
+  // they hit admin= or modules=); otherwise derive from the SPA module scope:
+  // core admin -> admin=<name>, core user -> modules=<name>, extensions
+  // (registry name "<ext>|<subType>") -> admin=<ext> / modules=<ext>.
+
+  var moduleRef = function moduleRef() {
+    if (!m) return 'admin=';
+    if (typeof m.getActionModuleRef === 'function') return m.getActionModuleRef();
+
+    if (m.spaModuleGroup === 'extension' && typeof m.spaModuleName === 'string' && m.spaModuleName.indexOf('|') >= 0) {
+      var _m$spaModuleName$spli = m.spaModuleName.split('|'),
+          _m$spaModuleName$spli2 = _slicedToArray(_m$spaModuleName$spli, 2),
+          ext = _m$spaModuleName$spli2[0],
+          sub = _m$spaModuleName$spli2[1];
+
+      return "".concat(sub === 'user' ? 'modules' : 'admin', "=").concat(m.modulePathName || ext);
+    }
+
+    if (m.spaModuleGroup && m.spaModuleName) return "".concat(m.spaModuleGroup, "=").concat(m.spaModuleName);
+    return "admin=".concat(m.modulePathName);
+  };
+
+  var columns = (0, _react.useMemo)(function () {
+    if (!m || typeof m.getTableColumns !== 'function') return [];
+    return (m.getTableColumns() || []).map(function (c) {
+      return _objectSpread({}, c, {
+        label: m.gt ? m.gt(c.title) : c.title
+      });
+    });
+  }, [m, items]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Hardcoded per-entity config for core modules, optionally overridden by a
+  // declarative config an extension supplies via its meta.json `native` block.
+
+  var cfg = _objectSpread({}, ENTITY_CONFIG[entity] || {}, {}, cardConfig || {});
+
+  var docAction = cfg.documentAction || null; // --- capabilities -------------------------------------------------------
+
+  var can = function can(a) {
+    return !!(m && m.hasAccess && m.hasAccess(a));
+  }; // cfg.disableView turns off viewing entirely (no eye button AND no row-click
+  // view) — e.g. task lists, which are opened via their document action instead.
+  // A card-config method invoked when the card body is clicked (e.g. leave
+  // groups open a manage-members dialog). Falls back to the default view.
+
+
+  var cardClick = cfg.cardClickAction && m && typeof m[cfg.cardClickAction] === 'function' ? function (rec) {
+    return m[cfg.cardClickAction](rec.id, rec);
+  } : null;
+  var hasView = !cfg.disableView && (!!cfg.expenseDialog || !!(m && (typeof m.showProjectDetails === 'function' || can('element') && m.showViewButton && m.showViewButton())));
+  var showViewBtn = hasView && !cfg.hideViewButton;
+  var canEdit = !!(m && can('save') && m.showEdit !== false) && !cfg.hideEditButton;
+  var canCopy = !!(m && can('save') && m.showAddNew !== false) && !cfg.hideCopyButton;
+  var canDelete = !!(m && can('delete') && m.showDelete !== false); // Per-record delete gate: some entities only allow deleting rows in a certain
+  // state (e.g. employees may delete only their own Pending expenses). A card
+  // config `deleteWhen(rec) => bool` refines the list-level canDelete row by row;
+  // the backend still enforces the same rule per record.
+
+  var rowDeletable = function rowDeletable(rec) {
+    return canDelete && (typeof cfg.deleteWhen === 'function' ? !!cfg.deleteWhen(rec) : true);
+  }; // Same per-record refinement for editing (e.g. employees may edit only their
+  // own Pending expenses).
+
+
+  var rowEditable = function rowEditable(rec) {
+    return typeof cfg.editWhen === 'function' ? !!cfg.editWhen(rec) : true;
+  };
+
+  var bulkEnabled = !!cfg.bulkDelete && canDelete && typeof (m && m.cleanDelete) === 'function';
+  var canAdd = !!(m && can('save') && (m.getShowAddNew ? m.getShowAddNew() : m.showAddNew !== false));
+  var hasFilters = !!(m && m.getFilters && m.getFilters());
+
+  var doView = function doView(id) {
+    if (!m) return;
+    if (typeof m.showProjectDetails === 'function') m.showProjectDetails(id);else if (typeof m.viewElement === 'function') m.viewElement(id);
+  }; // Entities with a bespoke dialog (cfg.expenseDialog) open that instead of the
+  // legacy generic view/edit modals, in the appropriate mode.
+
+
+  var openView = function openView(rec) {
+    if (cfg.expenseDialog) {
+      setExpenseDialog({
+        rec: rec,
+        mode: 'view'
+      });
+      return;
+    }
+
+    doView(rec.id);
+  };
+
+  var openEdit = function openEdit(rec) {
+    if (cfg.expenseDialog) {
+      setExpenseDialog({
+        rec: rec,
+        mode: 'edit'
+      });
+      return;
+    }
+
+    if (m) m.edit(rec.id);
+  };
+
+  var doEdit = function doEdit(id) {
+    if (m) m.edit(id);
+  };
+
+  var doCopy = function doCopy(id) {
+    if (m && m.copyRow) m.copyRow(id);
+  };
+
+  var doAdd = function doAdd() {
+    if (m) m.renderForm();
+  }; // Fetch a backup from the REST API (using the shell's bearer token) and download it as
+  // JSON. Driven by cfg.exportEndpoint (see the salary entities in ENTITY_CONFIG).
+
+
+  var _useState39 = (0, _react.useState)(false),
+      _useState40 = _slicedToArray(_useState39, 2),
+      exporting = _useState40[0],
+      setExporting = _useState40[1];
+
+  var doExport = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      var resp, backup, blob, url, a, stamp;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              if (cfg.exportEndpoint) {
+                _context.next = 2;
+                break;
+              }
+
+              return _context.abrupt("return");
+
+            case 2:
+              setExporting(true);
+              _context.prev = 3;
+              _context.next = 6;
+              return fetch("".concat(shellConfig.restApiBase).concat(cfg.exportEndpoint), {
+                headers: {
+                  Authorization: "Bearer ".concat(shellConfig.token)
+                },
+                credentials: 'same-origin'
+              });
+
+            case 6:
+              resp = _context.sent;
+              _context.next = 9;
+              return resp.json();
+
+            case 9:
+              backup = _context.sent;
+              blob = new Blob([JSON.stringify(backup, null, 2)], {
+                type: 'application/json'
+              });
+              url = URL.createObjectURL(blob);
+              a = document.createElement('a');
+              stamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
+              a.href = url;
+              a.download = "".concat(cfg.exportFilePrefix || 'backup', "-").concat(stamp, ".json");
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              URL.revokeObjectURL(url);
+
+              _antd.message.success('Backup downloaded');
+
+              _context.next = 26;
+              break;
+
+            case 23:
+              _context.prev = 23;
+              _context.t0 = _context["catch"](3);
+
+              _antd.message.error('Export failed');
+
+            case 26:
+              _context.prev = 26;
+              setExporting(false);
+              return _context.finish(26);
+
+            case 29:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[3, 23, 26, 29]]);
+    }));
+
+    return function doExport() {
+      return _ref2.apply(this, arguments);
+    };
+  }(); // Restore a backup by POSTing an uploaded JSON file to cfg.importEndpoint.
+
+
+  var _useState41 = (0, _react.useState)(false),
+      _useState42 = _slicedToArray(_useState41, 2),
+      importing = _useState42[0],
+      setImporting = _useState42[1];
+
+  var importInputRef = (0, _react.useRef)(null);
+
+  var doImportFile = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(event) {
+      var file, text, backup, resp, data, _data$error, _data$error$, _data$error$$;
+
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              file = event.target.files && event.target.files[0];
+              event.target.value = '';
+
+              if (!(!file || !cfg.importEndpoint)) {
+                _context2.next = 4;
+                break;
+              }
+
+              return _context2.abrupt("return");
+
+            case 4:
+              setImporting(true);
+              _context2.prev = 5;
+              _context2.next = 8;
+              return file.text();
+
+            case 8:
+              text = _context2.sent;
+              backup = JSON.parse(text);
+              _context2.next = 12;
+              return fetch("".concat(shellConfig.restApiBase).concat(cfg.importEndpoint), {
+                method: 'POST',
+                headers: {
+                  Authorization: "Bearer ".concat(shellConfig.token),
+                  'Content-Type': 'application/json'
+                },
+                credentials: 'same-origin',
+                body: JSON.stringify(backup)
+              });
+
+            case 12:
+              resp = _context2.sent;
+              _context2.next = 15;
+              return resp.json();
+
+            case 15:
+              data = _context2.sent;
+
+              if (data && data.error) {
+                _antd.message.error(((_data$error = data.error) === null || _data$error === void 0 ? void 0 : (_data$error$ = _data$error[0]) === null || _data$error$ === void 0 ? void 0 : (_data$error$$ = _data$error$[0]) === null || _data$error$$ === void 0 ? void 0 : _data$error$$.message) || 'Import failed', 5);
+              } else {
+                _antd.message.success('Data restored — refreshing…'); // A salary import restores multiple tables (types/components/salaries); reload so
+                // every tab reflects it, not just the currently visible card list.
+
+
+                setTimeout(function () {
+                  return window.location.reload();
+                }, 700);
+              }
+
+              _context2.next = 22;
+              break;
+
+            case 19:
+              _context2.prev = 19;
+              _context2.t0 = _context2["catch"](5);
+
+              _antd.message.error('Import failed: invalid file or server error', 5);
+
+            case 22:
+              _context2.prev = 22;
+              setImporting(false);
+              return _context2.finish(22);
+
+            case 25:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[5, 19, 22, 25]]);
+    }));
+
+    return function doImportFile(_x) {
+      return _ref3.apply(this, arguments);
+    };
+  }(); // "Generate from industry" toolbar action (cfg.generateFromIndustry). Reusable:
+  // fetches a list of industries from one endpoint and posts the chosen one to a
+  // generate endpoint (e.g. Job Titles). Any module can opt in via its card config.
+
+
+  var genCfg = cfg.generateFromIndustry || null;
+
+  var _useState43 = (0, _react.useState)(false),
+      _useState44 = _slicedToArray(_useState43, 2),
+      genOpen = _useState44[0],
+      setGenOpen = _useState44[1];
+
+  var _useState45 = (0, _react.useState)([]),
+      _useState46 = _slicedToArray(_useState45, 2),
+      genIndustries = _useState46[0],
+      setGenIndustries = _useState46[1];
+
+  var _useState47 = (0, _react.useState)(null),
+      _useState48 = _slicedToArray(_useState47, 2),
+      genIndustry = _useState48[0],
+      setGenIndustry = _useState48[1];
+
+  var _useState49 = (0, _react.useState)(false),
+      _useState50 = _slicedToArray(_useState49, 2),
+      genLoading = _useState50[0],
+      setGenLoading = _useState50[1];
+
+  var _useState51 = (0, _react.useState)(false),
+      _useState52 = _slicedToArray(_useState51, 2),
+      generating = _useState52[0],
+      setGenerating = _useState52[1];
+
+  var _useState53 = (0, _react.useState)(false),
+      _useState54 = _slicedToArray(_useState53, 2),
+      genDelete = _useState54[0],
+      setGenDelete = _useState54[1];
+
+  var openGenerate = function openGenerate() {
+    if (!genCfg) return;
+    setGenIndustry(null);
+    setGenDelete(false);
+    setGenOpen(true);
+    setGenLoading(true);
+    fetch("".concat(shellConfig.restApiBase).concat(genCfg.industriesEndpoint), {
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      setGenIndustries(Array.isArray(d) ? d : []);
+    })["catch"](function () {
+      return _antd.message.error('Could not load industries', 5);
+    })["finally"](function () {
+      return setGenLoading(false);
+    });
+  };
+
+  var doGenerate = function doGenerate() {
+    if (!genCfg || !genIndustry) {
+      _antd.message.error('Please select an industry.', 4);
+
+      return;
+    }
+
+    setGenerating(true);
+    fetch("".concat(shellConfig.restApiBase).concat(genCfg.generateEndpoint), {
+      method: 'POST',
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token),
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({
+        industry: genIndustry,
+        deleteExisting: genDelete
+      })
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (d && d.error) {
+        var _d$error, _d$error$, _d$error$$;
+
+        _antd.message.error(((_d$error = d.error) === null || _d$error === void 0 ? void 0 : (_d$error$ = _d$error[0]) === null || _d$error$ === void 0 ? void 0 : (_d$error$$ = _d$error$[0]) === null || _d$error$$ === void 0 ? void 0 : _d$error$$.message) || 'Generation failed', 5);
+
+        return;
+      }
+
+      var label = genCfg.itemsLabel || 'items';
+      var parts = ["Added ".concat(d.created, " ").concat(label)];
+      if (d.deleted) parts.push("deleted ".concat(d.deleted));
+      if (d.kept_assigned) parts.push("kept ".concat(d.kept_assigned, " in use"));
+      if (d.skipped) parts.push("".concat(d.skipped, " already existed"));
+
+      _antd.message.success("".concat(parts.join(', '), "."));
+
+      setGenOpen(false);
+      load();
+    })["catch"](function () {
+      return _antd.message.error('Generation failed', 5);
+    })["finally"](function () {
+      return setGenerating(false);
+    });
+  };
+
+  var docUrl = function docUrl(rec) {
+    var link = rec.document_link;
+    if (!link) return null;
+    var base = (window.baseUrl || '').replace('service.php', '');
+    return /^https?:\/\//.test(link) ? link : "".concat(base).concat(link);
+  };
+
+  var doDocument = function doDocument(rec) {
+    var url = docUrl(rec);
+    if (!url) return; // Native in-shell mount (no iframe, theme-aware), an embedded iframe modal,
+    // or a new tab — per the entity's documentAction config.
+
+    if (docAction && docAction.openIn === 'native') {
+      setNativeDoc(url);
+      return;
+    }
+
+    if (docAction && docAction.openIn === 'iframe-modal') {
+      setEditorUrl(url);
+      return;
+    }
+
+    window.open(url, '_blank', 'noopener');
+  };
+
+  var doDelete = function doDelete(rec) {
+    if (!m) return; // Use the same title the card shows (respects the entity's titleField /
+    // title config) — falling back to a generic message if it isn't a plain
+    // string (e.g. a rendered cell), so we never surface a raw URL/field value.
+
+    var t = titleOf(rec);
+    var label = typeof t === 'string' && t.trim() ? t : null;
+
+    _antd.Modal.confirm({
+      title: cfg.deleteTip || 'Delete',
+      content: cfg.deleteConfirm || (label ? "Are you sure you want to delete \u201C".concat(label, "\u201D?") : 'Are you sure you want to delete this item?'),
+      okText: cfg.deleteTip || 'Delete',
+      okType: 'danger',
+      onOk: function onOk() {
+        return new Promise(function (resolve) {
+          try {
+            m.cleanDelete(rec.id, function (httpStatus, status, data) {
+              if (httpStatus === 200 && status === 'SUCCESS') {
+                _antd.message.success('Deleted');
+
+                load();
+              } else {
+                // Prefer the server's reason (e.g. "…assigned to N employees").
+                var serverMsg = data && typeof data.data === 'string' ? data.data : null;
+
+                _antd.message.error(serverMsg || 'Could not delete. It may be in use.', 5);
+              }
+
+              resolve();
+            });
+          } catch (e) {
+            _antd.message.error('Could not delete', 5);
+
+            resolve();
+          }
+        });
+      }
+    });
+  }; // Delete one id via the adapter, resolved to true/false (never rejects).
+
+
+  var deleteOne = function deleteOne(id) {
+    return new Promise(function (resolve) {
+      try {
+        m.cleanDelete(id, function (httpStatus, status) {
+          return resolve(httpStatus === 200 && status === 'SUCCESS');
+        });
+      } catch (e) {
+        resolve(false);
+      }
+    });
+  };
+
+  var doBulkDelete = function doBulkDelete() {
+    if (!m || !selectedIds.length) return;
+
+    var ids = _toConsumableArray(selectedIds);
+
+    _antd.Modal.confirm({
+      title: 'Delete selected',
+      content: "Are you sure you want to delete ".concat(ids.length, " item").concat(ids.length === 1 ? '' : 's', "? This cannot be undone."),
+      okText: "Delete ".concat(ids.length),
+      okType: 'danger',
+      onOk: function () {
+        var _onOk = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+          var ok, _iterator, _step, id, failed;
+
+          return regeneratorRuntime.wrap(function _callee3$(_context3) {
+            while (1) {
+              switch (_context3.prev = _context3.next) {
+                case 0:
+                  setBulkDeleting(true);
+                  ok = 0; // Sequential to avoid hammering the endpoint; tolerant of individual failures.
+                  // eslint-disable-next-line no-restricted-syntax
+
+                  _iterator = _createForOfIteratorHelper(ids);
+                  _context3.prev = 3;
+
+                  _iterator.s();
+
+                case 5:
+                  if ((_step = _iterator.n()).done) {
+                    _context3.next = 13;
+                    break;
+                  }
+
+                  id = _step.value;
+                  _context3.next = 9;
+                  return deleteOne(id);
+
+                case 9:
+                  if (!_context3.sent) {
+                    _context3.next = 11;
+                    break;
+                  }
+
+                  ok += 1;
+
+                case 11:
+                  _context3.next = 5;
+                  break;
+
+                case 13:
+                  _context3.next = 18;
+                  break;
+
+                case 15:
+                  _context3.prev = 15;
+                  _context3.t0 = _context3["catch"](3);
+
+                  _iterator.e(_context3.t0);
+
+                case 18:
+                  _context3.prev = 18;
+
+                  _iterator.f();
+
+                  return _context3.finish(18);
+
+                case 21:
+                  setBulkDeleting(false);
+                  failed = ids.length - ok;
+                  if (ok) _antd.message.success("Deleted ".concat(ok, " item").concat(ok === 1 ? '' : 's'));
+                  if (failed) _antd.message.error("".concat(failed, " could not be deleted (may be in use)"), 5);
+                  clearSelection();
+                  load();
+
+                case 27:
+                case "end":
+                  return _context3.stop();
+              }
+            }
+          }, _callee3, null, [[3, 15, 18, 21]]);
+        }));
+
+        function onOk() {
+          return _onOk.apply(this, arguments);
+        }
+
+        return onOk;
+      }()
+    });
+  }; // --- approve workflow (overtime/expenses/leave/…) -----------------------
+  // Detected from the adapter, driven natively (the legacy bootstrap status modal
+  // + log popup don't exist in the SPA). changeStatus/getLogs/cancelRequest run
+  // through the adapter's customAction with injected native callbacks.
+
+
+  var isApprove = !!(m && typeof m.getStatusOptionsData === 'function');
+  var canCancel = !!(m && typeof m.cancelRequest === 'function');
+  var hasLogs = !!(m && typeof m.getLogs === 'function'); // Target-status options available FROM a given current status, applying the
+  // non-admin restrictions (a manager cannot change a Paid expense, nor set one
+  // to Paid). Used by both the card status button and the dialog dropdown.
+
+  var statusOptionsForStatus = function statusOptionsForStatus(status) {
+    if (!isApprove) return [];
+    var lvl = m && typeof m.getUser === 'function' && m.getUser() ? m.getUser().user_level : null;
+    var isNonAdmin = !!lvl && lvl !== 'Admin';
+
+    if (isNonAdmin && cfg.managerLockedStatuses && cfg.managerLockedStatuses.indexOf(status) >= 0) {
+      return [];
+    }
+
+    var data = {};
+
+    try {
+      data = m.getStatusOptionsData(status) || {};
+    } catch (e) {
+      data = {};
+    }
+
+    var opts = Object.keys(data).map(function (k) {
+      return {
+        value: data[k],
+        label: k
+      };
+    });
+
+    if (isNonAdmin && cfg.managerBlockedTargetStatuses) {
+      opts = opts.filter(function (o) {
+        return cfg.managerBlockedTargetStatuses.indexOf(o.value) < 0;
+      });
+    }
+
+    return opts;
+  };
+
+  var statusOptionsFor = function statusOptionsFor(rec) {
+    return statusOptionsForStatus(rec.status);
+  };
+
+  var openStatus = function openStatus(rec) {
+    var opts = statusOptionsFor(rec);
+    setStatusRec(rec);
+    setStatusValue(opts.length ? opts[0].value : null);
+    setStatusReason('');
+  };
+
+  var submitStatus = function submitStatus() {
+    if (!m || !statusRec || !statusValue) return;
+    setStatusSaving(true);
+    var cb = {
+      callBackData: [],
+      callBackSuccess: '__nativeStatusOk',
+      callBackFail: '__nativeStatusFail'
+    };
+
+    m.__nativeStatusOk = function () {
+      setStatusSaving(false);
+      setStatusRec(null);
+
+      _antd.message.success('Status updated');
+
+      load();
+    };
+
+    m.__nativeStatusFail = function (d) {
+      setStatusSaving(false);
+
+      _antd.message.error(typeof d === 'string' ? d : 'Could not update status', 5);
+    };
+
+    var payload = JSON.stringify({
+      id: statusRec.id,
+      status: statusValue,
+      reason: statusReason
+    });
+
+    try {
+      // Some modules use a differently-named status action (e.g. leaves ->
+      // changeLeaveStatus); the card config can override the default.
+      m.customAction(cfg.statusAction || 'changeStatus', moduleRef(), payload, cb, true);
+    } catch (e) {
+      m.__nativeStatusFail('Could not update status');
+    }
+  }; // Re-submit a rejected record (e.g. an employee resending a rejected expense
+  // back into the approval queue -> status becomes Pending). Driven by a custom
+  // action named in cfg.resubmitAction; the backend re-checks ownership/status.
+
+
+  var doResubmit = function doResubmit(rec) {
+    if (!m || !cfg.resubmitAction) return; // With the expense dialog, re-submit opens the editable dialog (so the owner
+    // can fix the expense before resending); the dialog itself does the resubmit.
+
+    if (cfg.expenseDialog) {
+      setExpenseDialog({
+        rec: rec,
+        mode: 'resubmit'
+      });
+      return;
+    }
+
+    _antd.Modal.confirm({
+      title: 'Re-submit expense',
+      content: 'Re-submit this rejected expense for approval? Its status will be set back to Pending.',
+      okText: 'Re-submit',
+      onOk: function onOk() {
+        var cb = {
+          callBackData: [],
+          callBackSuccess: '__nativeResubmitOk',
+          callBackFail: '__nativeResubmitFail'
+        };
+
+        m.__nativeResubmitOk = function () {
+          _antd.message.success('Expense re-submitted');
+
+          load();
+        };
+
+        m.__nativeResubmitFail = function (d) {
+          _antd.message.error(typeof d === 'string' ? d : 'Could not re-submit', 5);
+        };
+
+        try {
+          m.customAction(cfg.resubmitAction, moduleRef(), JSON.stringify({
+            id: rec.id
+          }), cb, true);
+        } catch (e) {
+          m.__nativeResubmitFail('Could not re-submit');
+        }
+      }
+    });
+  };
+
+  var doCancel = function doCancel(rec) {
+    if (!m || !m.cancelRequest) return;
+
+    _antd.Modal.confirm({
+      title: 'Cancel request',
+      content: 'Request cancellation of this approved entry?',
+      okText: 'Yes, cancel it',
+      onOk: function onOk() {
+        m.cancelSuccessCallBack = function () {
+          _antd.message.success('Cancellation requested');
+
+          load();
+        };
+
+        m.cancelFailCallBack = function (d) {
+          return _antd.message.error(typeof d === 'string' ? d : 'Could not cancel', 5);
+        };
+
+        try {
+          m.cancelRequest(rec.id);
+        } catch (e) {
+          _antd.message.error('Could not cancel', 5);
+        }
+      }
+    });
+  };
+
+  var openLogs = function openLogs(rec) {
+    if (!m || !m.getLogs) return;
+    setLogsState({
+      loading: true,
+      rows: []
+    });
+    var cb = {
+      callBackData: [],
+      callBackSuccess: '__nativeLogsOk',
+      callBackFail: '__nativeLogsFail'
+    };
+
+    m.__nativeLogsOk = function (d) {
+      // Tolerate either an array or { data: [...] }.
+      var rows = Array.isArray(d) ? d : d && Array.isArray(d.data) ? d.data : [];
+      setLogsState({
+        loading: false,
+        rows: rows
+      });
+    };
+
+    m.__nativeLogsFail = function () {
+      return setLogsState({
+        loading: false,
+        rows: []
+      });
+    };
+
+    try {
+      m.customAction('getLogs', moduleRef(), JSON.stringify({
+        id: rec.id
+      }), cb);
+    } catch (e) {
+      setLogsState({
+        loading: false,
+        rows: []
+      });
+    }
+  }; // --- filters ------------------------------------------------------------
+  // getFilterString resolves ids via the adapter's field master data, which may
+  // not be loaded yet (e.g. a filter handed over before this tab first opened) —
+  // never let a display-string lookup crash the whole card list render.
+
+
+  var filterString = '';
+
+  try {
+    filterString = m && hasFilters && m.filter && m.getFilterString ? m.getFilterString(m.filter) : '';
+  } catch (e) {
+    filterString = '';
+  }
+
+  var openFilters = function openFilters() {
+    if (m && m.showFilters) m.showFilters();
+  };
+
+  var clearFilters = function clearFilters() {
+    if (m && m.resetFilters) m.resetFilters();
+  };
+
+  var onSearch = function onSearch(val) {
+    clearSelection();
+    setSearch(val);
+    setPage(1);
+    load(1, val);
+  }; // Quick status filter (e.g. expenses). Applies the value as the adapter's
+  // server-side filter ({status}) and reloads; clearing restores the tab's
+  // original filter so the list shows every status again.
+
+
+  var onStatusFilter = function onStatusFilter(val) {
+    if (!m) return;
+    m.setFilter(val ? {
+      status: val
+    } : m.origFilter != null ? m.origFilter : '');
+    setStatusFilterVal(val || '');
+    clearSelection();
+    setPage(1);
+    load(1);
+  };
+
+  var onPage = function onPage(p, ps) {
+    clearSelection(); // antd fires onChange for both page and page-size changes. When the size
+    // changes, jump back to page 1 and refetch with the new limit.
+
+    if (ps && ps !== pageSize) {
+      setPageSize(ps);
+      setPage(1);
+      load(1, null, ps);
+    } else {
+      setPage(p);
+      load(p, null);
+    }
+  }; // Selection helpers (bulk delete).
+
+
+  var isSelected = function isSelected(id) {
+    return selectedIds.includes(id);
+  };
+
+  var toggleSelect = function toggleSelect(id) {
+    return setSelectedIds(function (prev) {
+      return prev.includes(id) ? prev.filter(function (x) {
+        return x !== id;
+      }) : [].concat(_toConsumableArray(prev), [id]);
+    });
+  };
+
+  var pageIds = (items || []).map(function (r) {
+    return r.id;
+  });
+  var allOnPageSelected = pageIds.length > 0 && pageIds.every(function (id) {
+    return selectedIds.includes(id);
+  });
+
+  var toggleSelectAll = function toggleSelectAll() {
+    return setSelectedIds(function (prev) {
+      return allOnPageSelected ? prev.filter(function (id) {
+        return !pageIds.includes(id);
+      }) : Array.from(new Set([].concat(_toConsumableArray(prev), _toConsumableArray(pageIds))));
+    });
+  };
+
+  var st = entityStyle(entity); // Title / meta / tag / icon resolution from the per-entity config.
+  // When no titleField is configured, prefer the conventional IceHRM display
+  // columns (`name` / `title`) before falling back to the first column — the
+  // first column may be an avatar/image (e.g. Task Lists), which must never be
+  // used as the title or in the delete confirmation.
+
+  var hasCol = function hasCol(k) {
+    return columns.some(function (c) {
+      return c.dataIndex === k;
+    });
+  };
+
+  var conventionalTitle = ['name', 'title'].find(hasCol);
+  var titleFieldName = cfg.titleField || conventionalTitle || columns[0] && columns[0].dataIndex;
+  var hideSet = new Set(cfg.hideMeta || []); // Don't repeat the title field down in the meta line (unless a custom title()
+  // function is used, in which case the underlying columns are still meta).
+
+  if (!cfg.title && titleFieldName) hideSet.add(titleFieldName);
+  (cfg.tagFields || []).forEach(function (f) {
+    return hideSet.add(f);
+  });
+  var metaColumns = columns.filter(function (c) {
+    return !hideSet.has(c.dataIndex);
+  });
+  var tagColumns = (cfg.tagFields || []).map(function (f) {
+    return columns.find(function (c) {
+      return c.dataIndex === f;
+    });
+  }).filter(Boolean); // Resolve a column to its displayed (name-resolved) value for a record, so a
+  // custom title() can show a foreign key's name (e.g. leave_type -> "Annual
+  // leave") instead of its raw id, exactly like the meta line does.
+
+  var resolveField = function resolveField(rec, field) {
+    var col = columns.find(function (c) {
+      return c.dataIndex === field;
+    });
+    return col ? cellValue(col, rec) : rec[field];
+  };
+
+  var titleOf = function titleOf(rec) {
+    var v;
+
+    if (cfg.title) {
+      v = cfg.title(rec, function (field) {
+        return resolveField(rec, field);
+      });
+    } else if (titleFieldName) {
+      var col = columns.find(function (c) {
+        return c.dataIndex === titleFieldName;
+      }) || {
+        dataIndex: titleFieldName
+      };
+      v = cellValue(col, rec);
+    } else {
+      return "#".concat(rec.id);
+    } // Custom view elements may carry a nested record here (e.g. the performance
+    // review view passes an employee OBJECT) — rendering that as a React child
+    // crashes (#31). Reduce it to a display name.
+
+
+    if (v && _typeof(v) === 'object' && !_react["default"].isValidElement(v)) {
+      var name = "".concat(v.first_name || '', " ").concat(v.last_name || '').trim();
+      return name || v.name || "#".concat(rec.id);
+    }
+
+    return v;
+  };
+
+  var iconOf = function iconOf(rec) {
+    return cfg.iconField ? objectTypeStyle(rec[cfg.iconField]) : st;
+  }; // Native document mount: when a row's documentAction is openIn:'native', load
+  // the extension's bundle (declared in the card config) and call its mount fn
+  // into the modal container, passing the shell session + colour mode.
+  //
+  // The mounted bundle (e.g. the editor's initEditorUser) overwrites the shared
+  // window.modJs/modJsList globals that THIS card list also drives off. The host
+  // owns the snapshot + restore here — taken synchronously before the bundle can
+  // clobber it, restored synchronously after unmount — so the list always comes
+  // back. We restore here rather than in the editor because the editor re-mounts
+  // on in-document navigation and can't know the original host value.
+
+
+  (0, _react.useEffect)(function () {
+    if (!nativeDoc || !docAction || docAction.openIn !== 'native') return undefined;
+    var el = nativeElRef.current;
+    if (!el) return undefined; // Snapshot the host's module globals BEFORE the bundle's init clobbers them.
+
+    var savedModJsList = window.modJsList;
+    var savedModJs = window.modJs;
+    var cancelled = false;
+    var mountName = docAction.mountFn;
+    var unmountName = mountName ? mountName.replace('mount', 'unmount') : null;
+    var extBase = (window.BASE_URL || '').replace('/web/', '/extensions/');
+    var bundleUrl = docAction.bundle ? "".concat(extBase).concat(docAction.bundle) : null;
+
+    var run = function run() {
+      var fn = mountName && window[mountName];
+
+      if (typeof fn === 'function') {
+        fn(el, {
+          documentUrl: nativeDoc,
+          restApiBase: shellConfig.restApiBase,
+          token: shellConfig.token,
+          colorMode: window.__shellColorMode || 'light',
+          onClose: function onClose() {
+            return setNativeDoc(null);
+          }
+        });
+      }
+    };
+
+    (bundleUrl ? loadNativeBundle(bundleUrl) : Promise.resolve()).then(function () {
+      if (!cancelled) run();
+    })["catch"](function () {
+      /* ignore */
+    });
+    return function () {
+      cancelled = true;
+      var ufn = unmountName && window[unmountName]; // Unmount the editor's React root synchronously (runs its teardown).
+
+      if (typeof ufn === 'function') {
+        try {
+          ufn(el);
+        } catch (e) {
+          /* ignore */
+        }
+      } // Restore the host module globals, THEN refresh the list — order matters:
+      // load() reads window.modJsList[tabKey], so it must run after the restore.
+
+
+      window.modJsList = savedModJsList;
+      window.modJs = savedModJs;
+      load();
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nativeDoc]);
+  if (err) return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "Could not load this list"
+  });
+
+  if (items === null) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 60
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+  }
+
+  var metaItem = function metaItem(label, value) {
+    return isEmpty(value) ? null : /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 5,
+        maxWidth: 320,
+        overflow: 'hidden'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        color: token.colorTextTertiary
+      }
+    }, "".concat(label, ":")), /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, value));
+  }; // Fields listed in cfg.progressFields render as a real progress bar (a legacy
+  // render()'s full-width <Progress> collapses inside the inline meta span).
+
+
+  var progressSet = new Set(cfg.progressFields || []);
+
+  var metaValue = function metaValue(c, rec) {
+    return progressSet.has(c.dataIndex) ? /*#__PURE__*/_react["default"].createElement(_antd.Progress, {
+      percent: parseInt(rec[c.dataIndex], 10) || 0,
+      size: "small",
+      style: {
+        width: 130,
+        margin: 0
+      }
+    }) : cellValue(c, rec);
+  };
+
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 12,
+      marginBottom: 16,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      flexWrap: 'wrap'
+    }
+  }, canAdd && !cfg.hideActions && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "primary",
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.PlusOutlined, null),
+    onClick: doAdd
+  }, cfg.addLabel || m && typeof m.getAddNewLabel === 'function' && m.getAddNewLabel() || 'Add New'), m && typeof m.hasCustomTopButtons === 'function' && m.hasCustomTopButtons() && typeof m.getCustomTopButtons === 'function' && /*#__PURE__*/_react["default"].createElement("span", null, m.getCustomTopButtons()), cfg.exportEndpoint && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+    loading: exporting,
+    onClick: doExport
+  }, cfg.exportLabel || 'Export'), cfg.importEndpoint && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("input", {
+    ref: importInputRef,
+    type: "file",
+    accept: "application/json,.json",
+    style: {
+      display: 'none'
+    },
+    onChange: doImportFile
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.UploadOutlined, null),
+    loading: importing,
+    onClick: function onClick() {
+      return importInputRef.current && importInputRef.current.click();
+    }
+  }, cfg.importLabel || 'Import')), genCfg && !cfg.hideActions && canAdd && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.AppstoreOutlined, null),
+    onClick: openGenerate
+  }, genCfg.label || 'Generate'), hasFilters && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.FilterOutlined, null),
+    onClick: openFilters
+  }, "Filters"), filterString && /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+    color: "blue",
+    closable: true,
+    onClose: clearFilters,
+    style: {
+      lineHeight: '28px',
+      borderRadius: 6
+    }
+  }, filterString), bulkEnabled && selectedIds.length > 0 && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    danger: true,
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.DeleteOutlined, null),
+    loading: bulkDeleting,
+    onClick: doBulkDelete
+  }, "Delete ".concat(selectedIds.length, " selected")), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "text",
+    onClick: clearSelection
+  }, "Clear"))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8
+    }
+  }, cfg.statusFilter && /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    value: statusFilterVal || undefined,
+    allowClear: true,
+    placeholder: "All statuses",
+    style: {
+      minWidth: 150
+    },
+    onChange: function onChange(v) {
+      return onStatusFilter(v);
+    },
+    options: cfg.statusFilter.map(function (s) {
+      return {
+        value: s,
+        label: s
+      };
+    })
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Input.Search, {
+    allowClear: true,
+    placeholder: "Search\u2026",
+    style: {
+      maxWidth: 280
+    },
+    onSearch: onSearch
+  }))), items.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "No records"
+  }) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, bulkEnabled && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      margin: '0 4px 10px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Checkbox, {
+    checked: allOnPageSelected,
+    indeterminate: !allOnPageSelected && pageIds.some(function (id) {
+      return selectedIds.includes(id);
+    }),
+    onChange: toggleSelectAll
+  }, allOnPageSelected ? 'Deselect all' : 'Select all'), selectedIds.length > 0 && /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      color: token.colorTextTertiary,
+      fontSize: 12.5
+    }
+  }, "".concat(selectedIds.length, " selected"))), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10
+    }
+  }, items.map(function (rec) {
+    var title = titleOf(rec);
+    var rst = iconOf(rec);
+    return /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      key: rec.id,
+      hoverable: !cfg.disableCardClick && (!!cardClick || hasView || !!docAction),
+      onClick: cfg.disableCardClick ? undefined : cfg.cardClickView && hasView ? function () {
+        return openView(rec);
+      } : cardClick ? function () {
+        return cardClick(rec);
+      } : docAction ? function () {
+        return doDocument(rec);
+      } : hasView ? function () {
+        return openView(rec);
+      } : undefined,
+      style: {
+        borderRadius: 10,
+        boxShadow: _theme.MUI_SHADOW,
+        cursor: !cfg.disableCardClick && (cardClick || hasView || docAction) ? 'pointer' : 'default'
+      },
+      styles: {
+        body: {
+          padding: '12px 16px'
+        }
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 14
+      }
+    }, bulkEnabled && /*#__PURE__*/_react["default"].createElement(_antd.Checkbox, {
+      checked: isSelected(rec.id),
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      },
+      onChange: function onChange() {
+        return toggleSelect(rec.id);
+      },
+      style: {
+        flex: '0 0 auto'
+      }
+    }), cfg.avatarField && !isEmpty(rec[cfg.avatarField]) ? /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+      size: 40,
+      src: rec[cfg.avatarField],
+      style: {
+        flex: '0 0 auto'
+      }
+    }) : /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        width: 40,
+        height: 40,
+        borderRadius: 10,
+        flex: '0 0 auto',
+        background: "".concat(rst.color, "18"),
+        color: rst.color,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 18
+      }
+    }, rst.icon), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: 0,
+        flex: 1
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        minWidth: 0
+      }
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      style: {
+        fontWeight: 600,
+        fontSize: 14,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      }
+    }, isEmpty(title) ? "#".concat(rec.id) : title), tagColumns.map(function (c) {
+      var v = cellValue(c, rec); // Per-value colours (e.g. status): cfg.tagColors maps a
+      // value -> antd tag colour; falls back to blue.
+
+      var tagColor = cfg.tagColors && cfg.tagColors[v] || 'blue';
+      return isEmpty(v) ? null : /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+        key: c.dataIndex,
+        color: tagColor,
+        style: {
+          borderRadius: 6,
+          margin: 0,
+          flex: '0 0 auto'
+        }
+      }, cfg.tagIcon, cfg.tagIcon ? ' ' : '', v);
+    }), (typeof cfg.badges === 'function' ? cfg.badges(rec) : []).map(function (b) {
+      return /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+        key: b.key || b.text,
+        color: b.color || 'blue',
+        style: {
+          borderRadius: 6,
+          margin: 0,
+          flex: '0 0 auto'
+        }
+      }, b.text);
+    })), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16,
+        marginTop: 4,
+        color: token.colorTextSecondary,
+        fontSize: 12.5,
+        flexWrap: 'wrap'
+      }
+    }, metaColumns.map(function (c) {
+      return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
+        key: c.dataIndex
+      }, metaItem(c.label, metaValue(c, rec)));
+    }))), !cfg.hideActions && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        gap: 10,
+        flex: '0 0 auto'
+      },
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      }
+    }, (cfg.extraActions || []).filter(function (a) {
+      return a.first;
+    }).map(function (a) {
+      return (typeof a.show === 'function' ? a.show(m, rec) : true) && typeof m[a.method] === 'function' ? /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+        key: a.key,
+        title: a.tip
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: _react["default"].cloneElement(a.icon, {
+          style: {
+            color: ac(a.color)
+          }
+        }),
+        onClick: function onClick() {
+          return m[a.method](rec.id, rec);
+        }
+      })) : null;
+    }), showViewBtn && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "View"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.EyeOutlined, {
+        style: {
+          color: ac('#1565c0')
+        }
+      }),
+      onClick: function onClick() {
+        return openView(rec);
+      }
+    })), canEdit && rowEditable(rec) && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Edit"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.EditOutlined, {
+        style: {
+          color: ac('#2e7d32')
+        }
+      }),
+      onClick: function onClick() {
+        return openEdit(rec);
+      }
+    })), !isEmpty(rec.document_link) && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: docAction && docAction.label || 'Document'
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: _react["default"].cloneElement(docAction ? iconByName(docAction.icon) : /*#__PURE__*/_react["default"].createElement(_icons.FileOutlined, null), {
+        style: {
+          color: ac('#0288d1')
+        }
+      }),
+      onClick: function onClick() {
+        return doDocument(rec);
+      }
+    })), canCopy && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Copy"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CopyOutlined, {
+        style: {
+          color: ac('#546e7a')
+        }
+      }),
+      onClick: function onClick() {
+        return doCopy(rec.id);
+      }
+    })), rowDeletable(rec) && !cfg.deleteLast && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: cfg.deleteTip || 'Delete'
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: _react["default"].cloneElement(cfg.deleteIcon || /*#__PURE__*/_react["default"].createElement(_icons.DeleteOutlined, null), {
+        style: {
+          color: ac('#d32f2f')
+        }
+      }),
+      onClick: function onClick() {
+        return doDelete(rec);
+      }
+    })), isApprove && statusOptionsFor(rec).length > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Change Status"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: _react["default"].cloneElement(cfg.statusIcon || /*#__PURE__*/_react["default"].createElement(_icons.MonitorOutlined, null), {
+        style: {
+          color: ac('#1565c0')
+        }
+      }),
+      onClick: function onClick() {
+        return openStatus(rec);
+      }
+    })), canCancel && !cfg.hideCancelButton && rec.status === 'Approved' && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Cancel"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CloseCircleOutlined, {
+        style: {
+          color: ac('#d32f2f')
+        }
+      }),
+      onClick: function onClick() {
+        return doCancel(rec);
+      }
+    })), cfg.resubmitAction && typeof cfg.resubmitWhen === 'function' && cfg.resubmitWhen(rec) && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "Re-submit"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.RedoOutlined, {
+        style: {
+          color: ac('#1565c0')
+        }
+      }),
+      onClick: function onClick() {
+        return doResubmit(rec);
+      }
+    })), hasLogs && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: "View Logs"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.HistoryOutlined, {
+        style: {
+          color: ac('#546e7a')
+        }
+      }),
+      onClick: function onClick() {
+        return openLogs(rec);
+      }
+    })), (cfg.extraActions || []).filter(function (a) {
+      return !a.first;
+    }).map(function (a) {
+      return (typeof a.show === 'function' ? a.show(m, rec) : true) && typeof m[a.method] === 'function' ? /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+        key: a.key,
+        title: a.tip
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: _react["default"].cloneElement(a.icon, {
+          style: {
+            color: ac(a.color)
+          }
+        }),
+        onClick: function onClick() {
+          return m[a.method](rec.id, rec);
+        }
+      })) : null;
+    }), rowDeletable(rec) && cfg.deleteLast && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+      title: cfg.deleteTip || 'Delete'
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      icon: _react["default"].cloneElement(cfg.deleteIcon || /*#__PURE__*/_react["default"].createElement(_icons.DeleteOutlined, null), {
+        style: {
+          color: ac('#d32f2f')
+        }
+      }),
+      onClick: function onClick() {
+        return doDelete(rec);
+      }
+    })))));
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Pagination, {
+    current: page,
+    pageSize: pageSize,
+    total: total,
+    onChange: onPage,
+    showSizeChanger: !!(m && m.showPageSizeChanger),
+    pageSizeOptions: ['8', '16', '24', '50', '100'],
+    showTotal: function showTotal(t) {
+      return "".concat(t, " records");
+    }
+  }))), currentElement && m && typeof m.getTableChildComponents === 'function' && m.getTableChildComponents() && (cfg.childSelfModal // The child component renders its OWN modal (e.g. AttendanceModal,
+  // controlled by the `element` prop, closed via setCurrentElement(null)).
+  // Render it directly — wrapping it in our Modal would show two modals.
+  ? _react["default"].cloneElement(m.getTableChildComponents(), {
+    element: currentElement,
+    adapter: m,
+    loading: false
+  }) : /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    width: 1040,
+    style: {
+      top: 24
+    },
+    footer: null,
+    title: titleOf(currentElement),
+    onCancel: function onCancel() {
+      _setCurrentElement(null);
+
+      try {
+        if (m.hideElement) m.hideElement();
+      } catch (e) {
+        /* ignore */
+      }
+    },
+    styles: {
+      body: {
+        maxHeight: '82vh',
+        overflowY: 'auto'
+      }
+    }
+  }, _react["default"].cloneElement(m.getTableChildComponents(), {
+    element: currentElement,
+    adapter: m,
+    loading: false
+  }))), nativeDoc && /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    width: "92%",
+    style: {
+      top: 16,
+      maxWidth: 1280
+    },
+    footer: null,
+    title: docAction && docAction.label || 'Document',
+    onCancel: function onCancel() {
+      return setNativeDoc(null);
+    },
+    styles: {
+      body: {
+        padding: 16,
+        minHeight: '60vh',
+        maxHeight: '86vh',
+        overflowY: 'auto'
+      }
+    },
+    destroyOnClose: true
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    ref: nativeElRef
+  })), editorUrl && /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    width: "92%",
+    style: {
+      top: 16,
+      maxWidth: 1280
+    },
+    footer: null,
+    title: docAction && docAction.label || 'Document',
+    onCancel: function onCancel() {
+      setEditorUrl(null);
+      load();
+    },
+    styles: {
+      body: {
+        padding: 0,
+        height: '82vh'
+      }
+    },
+    destroyOnClose: true
+  }, /*#__PURE__*/_react["default"].createElement("iframe", {
+    title: docAction && docAction.label || 'Document',
+    src: editorUrl,
+    style: {
+      width: '100%',
+      height: '100%',
+      border: 0,
+      display: 'block'
+    },
+    onLoad: function onLoad(e) {
+      try {
+        var doc = e.target.contentDocument;
+
+        if (doc && doc.head) {
+          var style = doc.createElement('style');
+          style.textContent = EMBED_CSS;
+          doc.head.appendChild(style);
+        }
+      } catch (err) {
+        /* cross-origin — ignore */
+      }
+    }
+  })), statusRec && /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    title: "Change Status",
+    okText: "Update",
+    confirmLoading: statusSaving,
+    onOk: submitStatus,
+    okButtonProps: {
+      disabled: !statusValue || cfg.requireStatusReason && !statusReason.trim()
+    },
+    onCancel: function onCancel() {
+      return setStatusRec(null);
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 12,
+      paddingTop: 8
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 6,
+      color: token.colorTextSecondary
+    }
+  }, "New status"), /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    style: {
+      width: '100%'
+    },
+    value: statusValue,
+    onChange: setStatusValue,
+    options: statusOptionsFor(statusRec)
+  })), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 6,
+      color: token.colorTextSecondary
+    }
+  }, cfg.requireStatusReason && /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      color: token.colorError,
+      marginRight: 4
+    }
+  }, "*"), cfg.requireStatusReason ? 'Reason' : 'Reason (optional)'), /*#__PURE__*/_react["default"].createElement(_antd.Input.TextArea, {
+    rows: 3,
+    value: statusReason,
+    onChange: function onChange(e) {
+      return setStatusReason(e.target.value);
+    },
+    placeholder: "Add a note for this status change\u2026",
+    status: cfg.requireStatusReason && !statusReason.trim() ? 'error' : undefined
+  })))), logsState && /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    title: "Approval Log",
+    footer: null,
+    onCancel: function onCancel() {
+      return setLogsState(null);
+    }
+  }, logsState.loading ? /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      padding: 32
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, null)) : logsState.rows.length ? /*#__PURE__*/_react["default"].createElement(_antd.Timeline, {
+    items: logsState.rows.map(function (l) {
+      return {
+        children: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontWeight: 600
+          }
+        }, "".concat(l.status_from || '', " \u2192 ").concat(l.status_to || '')), /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            color: token.colorTextSecondary,
+            fontSize: 12
+          }
+        }, l.time), l.note ? /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            marginTop: 2
+          }
+        }, l.note) : null)
+      };
+    })
+  }) : /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "No approval history"
+  })), cfg.expenseDialog && /*#__PURE__*/_react["default"].createElement(_ExpenseDialog["default"], {
+    open: !!expenseDialog,
+    rec: expenseDialog ? expenseDialog.rec : null,
+    mode: expenseDialog ? expenseDialog.mode : 'view',
+    onClose: function onClose() {
+      return setExpenseDialog(null);
+    },
+    onSaved: function onSaved() {
+      return load();
+    },
+    shellConfig: shellConfig,
+    statusOptionsFor: cfg.dialogStatusChange ? statusOptionsForStatus : null
+  }), genCfg && /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    title: genCfg.label || 'Generate',
+    open: genOpen,
+    onCancel: function onCancel() {
+      return setGenOpen(false);
+    },
+    onOk: doGenerate,
+    okText: genCfg.label || 'Generate',
+    confirmLoading: generating,
+    okButtonProps: {
+      disabled: !genIndustry
+    }
+  }, /*#__PURE__*/_react["default"].createElement("p", {
+    style: {
+      marginTop: 0
+    }
+  }, "Select an industry to add a set of common ".concat(genCfg.itemsLabel || 'items', ". Existing entries are skipped.")), /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    style: {
+      width: '100%'
+    },
+    placeholder: "Select an industry",
+    loading: genLoading,
+    value: genIndustry,
+    onChange: setGenIndustry,
+    showSearch: true,
+    optionFilterProp: "label",
+    options: genIndustries.map(function (i) {
+      return {
+        value: i.key,
+        label: i.label
+      };
+    })
+  }), genCfg.allowDeleteExisting && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Checkbox, {
+    checked: genDelete,
+    onChange: function onChange(e) {
+      return setGenDelete(e.target.checked);
+    }
+  }, genCfg.deleteExistingLabel || 'Delete existing entries first'), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      color: token.colorTextSecondary,
+      fontSize: 12,
+      marginTop: 4,
+      marginLeft: 24
+    }
+  }, "Only entries not currently in use are removed; those in use are kept."))));
+}
+
+},{"./ExpenseDialog":8,"./theme":29,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],19:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NativeDocumentModal;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+// Lazy, idempotent loader for an extension bundle that exposes a native
+// document-mount function (e.g. the editor's window.mountEditorDocument). Mirrors
+// loadNativeBundle in NativeCardList — kept local so this modal has no coupling to
+// the card list.
+var DOC_CB = String(Date.now());
+var docBundles = {};
+
+function loadDocBundle(url) {
+  if (docBundles[url]) return docBundles[url];
+  var p = new Promise(function (resolve, reject) {
+    var s = document.createElement('script');
+    s.src = "".concat(url).concat(url.indexOf('?') >= 0 ? '&' : '?', "cb=").concat(DOC_CB);
+    s.async = false;
+
+    s.onload = function () {
+      return resolve();
+    };
+
+    s.onerror = function () {
+      s.remove();
+      reject(new Error("Failed to load ".concat(url)));
+    };
+
+    document.head.appendChild(s);
+  }); // Evict on failure so the next open retries instead of replaying the rejection.
+
+  docBundles[url] = p["catch"](function (e) {
+    delete docBundles[url];
+    throw e;
+  });
+  return docBundles[url];
+}
+/**
+ * Shell-level modal that mounts a native document editor for an arbitrary
+ * document URL (a legacy `g=extension&n=editor|user&...&hash=…` link). Used when
+ * something OUTSIDE a card list needs to open a document — e.g. clicking a task
+ * notification. It loads the editor bundle and calls its mountFn, snapshotting +
+ * restoring the shared window.modJs/modJsList globals the bundle clobbers (same
+ * contract as NativeCardList's native documentAction).
+ */
+// Load a list of bundle URLs strictly in order (each waits for the previous), so
+// dependency bundles register their modules before dependents run.
+
+
+function loadDocBundlesInOrder(urls) {
+  return urls.reduce(function (p, url) {
+    return p.then(function () {
+      return loadDocBundle(url);
+    });
+  }, Promise.resolve());
+}
+
+function NativeDocumentModal(_ref) {
+  var documentUrl = _ref.documentUrl,
+      bundle = _ref.bundle,
+      mountFn = _ref.mountFn,
+      title = _ref.title,
+      deps = _ref.deps,
+      shellConfig = _ref.shellConfig,
+      onClose = _ref.onClose;
+  var elRef = (0, _react.useRef)(null);
+  (0, _react.useEffect)(function () {
+    if (!documentUrl) return undefined;
+    var el = elRef.current;
+    if (!el) return undefined; // The editor bundle (EditorDocument / mountEditor) reads these globals. When
+    // the modal opens from a context that hasn't mounted a native module yet (e.g.
+    // the dashboard), they may be unset — seed them from the shell config so the
+    // bundle URL + REST calls resolve correctly.
+
+    if (shellConfig.baseUrl) window.BASE_URL = window.BASE_URL || shellConfig.baseUrl;
+    if (shellConfig.clientBaseUrl) window.CLIENT_BASE_URL = window.CLIENT_BASE_URL || shellConfig.clientBaseUrl; // Legacy adapter code (AdapterBase) reads a bare global `baseUrl` (the
+    // service.php endpoint) at construction. NativeModuleHost sets it per module;
+    // seed it here for the standalone case.
+
+    if (!window.baseUrl && shellConfig.clientBaseUrl) window.baseUrl = "".concat(shellConfig.clientBaseUrl, "service.php");
+    var savedModJsList = window.modJsList;
+    var savedModJs = window.modJs;
+    var cancelled = false;
+    var mountName = mountFn || 'mountEditorDocument';
+    var unmountName = mountName.replace('mount', 'unmount');
+    var webBase = window.BASE_URL || shellConfig.baseUrl || '';
+    var extBase = webBase.replace('/web/', '/extensions/');
+    var bundleUrl = bundle ? "".concat(extBase).concat(bundle) : null; // Vendor/dep bundles the extension bundle expects to already be registered
+    // (npm externals like moment). NativeModuleHost loads these before any module;
+    // when the modal opens standalone (from a notification) we must load them too.
+
+    var depUrls = (deps || []).map(function (d) {
+      return /^https?:\/\//.test(d) ? d : "".concat(webBase).concat(d);
+    });
+
+    var run = function run() {
+      var fn = window[mountName];
+
+      if (typeof fn === 'function') {
+        fn(el, {
+          documentUrl: documentUrl,
+          restApiBase: shellConfig.restApiBase,
+          token: shellConfig.token,
+          colorMode: window.__shellColorMode || 'light',
+          onClose: onClose
+        });
+      }
+    };
+
+    loadDocBundlesInOrder(depUrls).then(function () {
+      return bundleUrl ? loadDocBundle(bundleUrl) : Promise.resolve();
+    }).then(function () {
+      if (!cancelled) run();
+    })["catch"](function () {
+      /* ignore */
+    });
+    return function () {
+      cancelled = true;
+      var ufn = window[unmountName];
+
+      if (typeof ufn === 'function') {
+        try {
+          ufn(el);
+        } catch (e) {
+          /* ignore */
+        }
+      }
+
+      window.modJsList = savedModJsList;
+      window.modJs = savedModJs;
+    };
+  }, [documentUrl]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (!documentUrl) return null;
+  return /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    open: true,
+    width: "92%",
+    style: {
+      top: 16,
+      maxWidth: 1280
+    },
+    footer: null,
+    title: title || 'Document',
+    onCancel: onClose,
+    styles: {
+      body: {
+        padding: 16,
+        minHeight: '60vh',
+        maxHeight: '86vh',
+        overflowY: 'auto'
+      }
+    },
+    destroyOnClose: true
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    ref: elRef
+  }));
+}
+
+},{"antd":"antd","react":"react"}],20:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NativeExtensionView;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _antd = require("antd");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/**
+ * Mounts a bespoke extension's own React view component natively (no iframe).
+ *
+ * Many extensions (team, esign, directory, …) are already full React UIs whose
+ * `module.js` does `ReactDOM.render(<TheView/>, #content)` — a SEPARATE React
+ * root that wouldn't inherit the shell theme. Instead, the extension exposes its
+ * view component on `window` (e.g. `window.TeamsAdminView`) and declares
+ * `viewGlobal` in its meta.json native tab; we render it INSIDE the shell tree so
+ * it inherits the active (light/dark) ConfigProvider for free.
+ *
+ * The extension's init() (run by NativeModuleHost before tabs render) has already
+ * created window.modJs + its controller and wired the API client, so the view's
+ * data fetching works exactly as in the legacy page.
+ */
+function NativeExtensionView(_ref) {
+  var viewGlobal = _ref.viewGlobal,
+      viewProps = _ref.viewProps;
+  var Comp = viewGlobal && typeof window !== 'undefined' ? window[viewGlobal] : null;
+
+  if (!Comp) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 32
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "View not available"
+    }));
+  } // Pass the props an extension's module.js typically passes its view. Defaults
+  // cover the common ones; `viewProps` (from the meta tab) maps any extra prop
+  // name -> window global, e.g. { adapter: 'modJs', controller: 'learnExtensionController' }.
+
+
+  var modJs = typeof window !== 'undefined' ? window.modJs : null;
+  var props = {
+    apiClient: modJs && modJs.apiClient,
+    ice: modJs,
+    modJs: modJs
+  };
+
+  if (viewProps && _typeof(viewProps) === 'object') {
+    Object.keys(viewProps).forEach(function (k) {
+      var g = viewProps[k];
+      props[k] = g === 'modJs' ? modJs : typeof window !== 'undefined' ? window[g] : undefined;
+    });
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(Comp, props);
+}
+
+},{"antd":"antd","react":"react"}],21:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NativeModuleHost;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactDom = _interopRequireDefault(require("react-dom"));
+
+var _antd = require("antd");
+
+var _theme = require("./theme");
+
+var _OrgChart = _interopRequireDefault(require("./OrgChart"));
+
+var _CompanyStructureCards = _interopRequireDefault(require("./CompanyStructureCards"));
+
+var _NativeCardList = _interopRequireDefault(require("./NativeCardList"));
+
+var _NativeExtensionView = _interopRequireDefault(require("./NativeExtensionView"));
+
+var _MobileApp = _interopRequireDefault(require("./MobileApp"));
+
+var _ApiAccess = _interopRequireDefault(require("./ApiAccess"));
+
+var _TimeSheets = _interopRequireDefault(require("./TimeSheets"));
+
+var _LeaveEntitlement = _interopRequireDefault(require("./LeaveEntitlement"));
+
+var _LeaveCalendar = _interopRequireDefault(require("./LeaveCalendar"));
+
+var _NativeAdapterView = _interopRequireDefault(require("./NativeAdapterView"));
+
+var _LicenseBlocked = _interopRequireDefault(require("./LicenseBlocked"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+// Tabs may declare a custom React component instead of mounting a legacy adapter.
+var TAB_COMPONENTS = {
+  OrgChart: _OrgChart["default"],
+  CompanyStructureCards: _CompanyStructureCards["default"],
+  NativeCardList: _NativeCardList["default"],
+  NativeExtensionView: _NativeExtensionView["default"],
+  MobileApp: _MobileApp["default"],
+  ApiAccess: _ApiAccess["default"],
+  TimeSheets: _TimeSheets["default"],
+  LeaveEntitlement: _LeaveEntitlement["default"],
+  LeaveCalendar: _LeaveCalendar["default"],
+  NativeAdapterView: _NativeAdapterView["default"]
+};
+/**
+ * Natively mounts a registered legacy/React module inside the shell — no iframe.
+ * It fetches /appshell/module-context, loads the module's JS bundles once, calls
+ * its global init() into shell-provided containers (the legacy `#<tab><suffix>`
+ * div ids), applies the context the legacy footer.php injects, then drives each
+ * tab's adapter (get / field master data) like the footer does. On unmount it
+ * tears the adapters down. SPA migration Phase 3.
+ */
+
+var loadedScripts = {};
+
+function loadScript(url) {
+  if (loadedScripts[url]) return loadedScripts[url];
+  var p = new Promise(function (resolve, reject) {
+    var s = document.createElement('script');
+    s.src = url;
+    s.async = false;
+
+    s.onload = function () {
+      return resolve();
+    };
+
+    s.onerror = function () {
+      s.remove();
+      reject(new Error("Failed to load ".concat(url)));
+    };
+
+    document.head.appendChild(s);
+  }); // Evict on failure — a cached rejection would otherwise brick the module for
+  // the lifetime of the page (every navigation replays it until a full refresh).
+
+  loadedScripts[url] = p["catch"](function (e) {
+    delete loadedScripts[url];
+    throw e;
+  });
+  return loadedScripts[url];
+}
+
+function loadScriptsSequential(urls) {
+  return urls.reduce(function (prev, u) {
+    return prev.then(function () {
+      return loadScript(u);
+    });
+  }, Promise.resolve());
+}
+
+function NativeModuleHost(_ref) {
+  var group = _ref.group,
+      name = _ref.name,
+      shellConfig = _ref.shellConfig;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      mc = _useState2[0],
+      setMc = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      failed = _useState4[0],
+      setFailed = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(true),
+      _useState6 = _slicedToArray(_useState5, 2),
+      booting = _useState6[0],
+      setBooting = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(null),
+      _useState8 = _slicedToArray(_useState7, 2),
+      activeTab = _useState8[0],
+      setActiveTab = _useState8[1];
+
+  var _useState9 = (0, _react.useState)(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      licenseBlocked = _useState10[0],
+      setLicenseBlocked = _useState10[1];
+
+  var _useState11 = (0, _react.useState)(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      retryTick = _useState12[0],
+      setRetryTick = _useState12[1];
+
+  var started = (0, _react.useRef)({});
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var isDark = token.colorBgContainer === _theme.MUI_DARK.paper; // Legacy adapter tabs render in their own React root (wrapped in shellThemeWrap,
+  // which captures the colour mode at render time), so they don't follow a live
+  // theme toggle. Re-render them when the mode flips.
+
+  var skipFirstThemeRun = (0, _react.useRef)(true);
+  (0, _react.useEffect)(function () {
+    if (skipFirstThemeRun.current) {
+      skipFirstThemeRun.current = false;
+      return;
+    }
+
+    if (!mc || !mc.config) return; // Ensure the global shellThemeWrap reads matches this render's mode — the
+    // index.js updater runs in a parent effect (after this child effect).
+
+    window.__shellColorMode = isDark ? 'dark' : 'light';
+    var list = window.modJsList || {};
+    (mc.config.tabs || []).forEach(function (t) {
+      // Adapter-drawn component tabs (NativeAdapterView, e.g. settings) render
+      // their own root too — re-render those on a flip as well.
+      var adapterDrawn = t.component === 'NativeAdapterView';
+      if (t.component && !adapterDrawn) return;
+      var m = list[t.key];
+      if (!m || typeof m.initTable !== 'function') return;
+      var mounted = adapterDrawn ? !!(m.containerOverrides && m.containerOverrides.Table) : started.current[t.key];
+
+      if (mounted) {
+        try {
+          m.tableInitialized = false;
+          m.initTable();
+        } catch (e) {
+          /* ignore */
+        }
+      }
+    }); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isDark]); // 1) fetch the module context
+
+  (0, _react.useEffect)(function () {
+    var alive = true;
+    setMc(null);
+    setFailed(false);
+    setBooting(true);
+    setLicenseBlocked(false);
+    started.current = {}; // try/catch because instrumented fetch (e.g. an injected monitoring agent's
+    // wrapper) can throw synchronously — without it that exception escapes the
+    // effect and the pane goes blank instead of showing the failure state.
+
+    try {
+      fetch("".concat(shellConfig.restApiBase, "appshell/module-context?group=").concat(encodeURIComponent(group), "&name=").concat(encodeURIComponent(name)), {
+        headers: {
+          Authorization: "Bearer ".concat(shellConfig.token)
+        },
+        credentials: 'same-origin'
+      }).then(function (r) {
+        return r.json();
+      }).then(function (d) {
+        if (alive) {
+          if (d && d.config) setMc(d);else setFailed(true);
+        }
+      })["catch"](function () {
+        if (alive) setFailed(true);
+      });
+    } catch (e) {
+      if (alive) setFailed(true);
+    }
+
+    return function () {
+      alive = false;
+    };
+  }, [group, name, shellConfig, retryTick]);
+
+  var startTab = function startTab(key) {
+    // Component tabs (e.g. the org chart) are pure React — no legacy adapter to drive.
+    var cfg = (mc && mc.config && mc.config.tabs ? mc.config.tabs : []).find(function (t) {
+      return t.key === key;
+    });
+    if (cfg && cfg.component) return;
+    var list = window.modJsList || {};
+    var m = list[key];
+    if (!m) return;
+    window.modJs = m;
+    if (started.current[key]) return;
+    started.current[key] = true;
+
+    try {
+      m.get([]);
+
+      if (!m.isV2) {
+        if (m.initialFilter != null) m.initFieldMasterData(null, m.setFilterExternal);else m.initFieldMasterData();
+      }
+    } catch (e) {
+      /* ignore */
+    }
+  }; // 2) once context is in and the tab divs are rendered: load scripts, init, wire
+
+
+  (0, _react.useEffect)(function () {
+    if (!mc || !mc.config) return undefined;
+    var destroyed = false;
+    var ctx = mc.context || {};
+    window.CLIENT_BASE_URL = ctx.clientUrl;
+    window.BASE_URL = ctx.webBaseUrl;
+    window.baseUrl = ctx.baseUrl;
+    var urls = (mc.config.scripts || []).map(function (s) {
+      return /^https?:\/\//.test(s) || s.startsWith('//') ? s : (ctx.webBaseUrl || '') + s;
+    });
+    loadScriptsSequential(urls).then(function () {
+      if (destroyed) return;
+      var initFn = window[mc.config.initFn];
+
+      if (typeof initFn !== 'function') {
+        setFailed(true);
+        return;
+      }
+
+      var isProModule = !!(window.iceProModules && window.iceProModules[mc.config.initFn]);
+      var lic = mc.license;
+
+      if (isProModule && lic && (!lic.has_license || lic.is_expired)) {
+        setLicenseBlocked(true);
+        setBooting(false);
+        return;
+      }
+
+      initFn(mc.data || {});
+      var list = window.modJsList || {};
+      Object.keys(list).forEach(function (k) {
+        var m = list[k]; // Tag each adapter with the module it belongs to, so its data.php
+        // requests declare scope explicitly (fixes the shared-session
+        // modulePath data-scope bug — see docs/DATA_SCOPE_ISSUE.md).
+        // Each setter is guarded on its own: a lightweight adapter (e.g. Home's,
+        // which has no table) may lack or throw in one of them, and a single
+        // shared try/catch used to abandon the rest — leaving the module with
+        // no api client at all.
+
+        var step = function step(fn) {
+          try {
+            fn();
+          } catch (e) {
+            /* ignore */
+          }
+        };
+
+        step(function () {
+          m.spaModuleGroup = group;
+          m.spaModuleName = name;
+        });
+        step(function () {
+          return m.setTranslations(ctx.translations || {});
+        });
+        step(function () {
+          return m.setFieldTemplates(ctx.fieldTemplates || {});
+        });
+        step(function () {
+          return m.setTemplates(ctx.templates || {});
+        });
+        step(function () {
+          return m.setCustomTemplates(ctx.customTemplates || {});
+        });
+        step(function () {
+          return m.setUser(ctx.user || {});
+        });
+        step(function () {
+          return m.initSourceMappings();
+        });
+        step(function () {
+          return m.setBaseUrl(ctx.baseUrl);
+        });
+        step(function () {
+          return m.setClientUrl(ctx.clientUrl);
+        });
+        step(function () {
+          return m.setCurrentProfile(null);
+        });
+        step(function () {
+          return m.setInstanceId(ctx.instanceId || '');
+        });
+        step(function () {
+          return m.setApiUrl(ctx.restApiBase);
+        });
+        step(function () {
+          return m.setupApiClient(shellConfig.token);
+        });
+      });
+      setBooting(false); // Default to the first tab, unless a caller requested a specific start tab
+      // (e.g. a dashboard tile deep-linking into a module's tab). The hint is
+      // consumed once and only if it matches a tab this module actually has.
+
+      var first = mc.config.tabs[0].key;
+
+      try {
+        var desired = window.__iceShellStartTab;
+
+        if (desired && mc.config.tabs.some(function (t) {
+          return t.key === desired;
+        })) {
+          first = desired;
+        }
+
+        window.__iceShellStartTab = null;
+      } catch (e) {
+        /* ignore */
+      }
+
+      setActiveTab(first);
+      startTab(first); // Seam for views INSIDE a module (e.g. the employee profile's
+      // Qualifications edit buttons) to switch this host's active tab —
+      // the legacy global switchTab() clicks a legacy tab anchor that does
+      // not exist in the SPA. Optionally applies a filter to the target
+      // tab's adapter (e.g. {employee: id}) before it loads/reloads.
+
+      window.iceShellSwitchModuleTab = function (key, filter) {
+        var list = window.modJsList || {};
+        var m = list[key];
+
+        if (m && filter && typeof m.setFilter === 'function') {
+          m.setFilter(filter);
+          m.filtersAlreadySet = true;
+        }
+
+        setActiveTab(key);
+        startTab(key); // Tab already mounted (e.g. a wired card list): refresh so the new
+        // filter takes effect and the filter tag shows.
+
+        try {
+          if (m && m.tableContainer && m.tableContainer.current) {
+            if (filter) m.tableContainer.current.setFilterData(filter);
+            m.tableContainer.current.reload();
+          }
+        } catch (e) {
+          /* ignore */
+        }
+
+        try {
+          window.scrollTo({
+            top: 0
+          });
+        } catch (e) {
+          /* ignore */
+        }
+      };
+    })["catch"](function () {
+      if (!destroyed) setFailed(true);
+    });
+    return function () {
+      destroyed = true;
+
+      try {
+        mc.config.tabs.forEach(function (t) {
+          return (t.ids || []).forEach(function (id) {
+            var el = document.getElementById(id);
+
+            if (el) {
+              try {
+                _reactDom["default"].unmountComponentAtNode(el);
+              } catch (e) {
+                /* */
+              }
+            }
+          });
+        });
+      } catch (e) {
+        /* */
+      }
+
+      delete window.iceShellSwitchModuleTab;
+      window.modJs = undefined;
+      window.modJsList = undefined;
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mc]);
+
+  if (failed) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 32,
+        textAlign: 'center'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+      description: "Could not load this module"
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      type: "primary",
+      onClick: function onClick() {
+        return setRetryTick(function (t) {
+          return t + 1;
+        });
+      }
+    }, "Retry")));
+  }
+
+  if (!mc) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: 80
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+  }
+
+  if (licenseBlocked) {
+    return /*#__PURE__*/_react["default"].createElement(_LicenseBlocked["default"], {
+      license: mc.license
+    });
+  } // A "group" (e.g. leaves' "For Approval" tabs about OTHER employees) is set
+  // off from the preceding tabs by a divider + caption on its first tab, and
+  // each grouped tab can carry a pending-count bubble.
+
+
+  var reviewTabs = mc.config.tabs.filter(function (t) {
+    return t.group === 'review';
+  });
+  var firstReviewKey = reviewTabs.length ? reviewTabs[0].key : null;
+  var groupLabel = reviewTabs.length ? reviewTabs[0].groupLabel || '' : '';
+
+  var renderTabLabel = function renderTabLabel(t) {
+    var badge = typeof t.count === 'number' && t.count > 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Badge, {
+      count: t.count,
+      size: "small",
+      overflowCount: 99,
+      style: {
+        marginLeft: 6
+      }
+    }) : null;
+
+    var inner = /*#__PURE__*/_react["default"].createElement("span", null, t.label, badge);
+
+    if (t.key && t.key === firstReviewKey) {
+      return /*#__PURE__*/_react["default"].createElement("span", {
+        style: {
+          display: 'inline-flex',
+          alignItems: 'center'
+        }
+      }, /*#__PURE__*/_react["default"].createElement("span", {
+        style: {
+          display: 'inline-block',
+          width: 1,
+          height: 18,
+          background: token.colorSplit,
+          marginRight: 14
+        }
+      }), groupLabel && /*#__PURE__*/_react["default"].createElement("span", {
+        style: {
+          fontSize: 11,
+          textTransform: 'uppercase',
+          letterSpacing: 0.6,
+          color: token.colorTextTertiary,
+          marginRight: 10,
+          fontWeight: 600
+        }
+      }, groupLabel), inner);
+    }
+
+    return inner;
+  };
+
+  var items = mc.config.tabs.map(function (t) {
+    if (t.component) {
+      var Comp = TAB_COMPONENTS[t.component]; // Only mount the native component AFTER init has run (booting === false),
+      // so window.modJs + its apiClient are in place. On SPA re-entry the bundle
+      // is already cached, so without this gate a bespoke view would mount and
+      // fetch before initFn re-ran (window.modJs was nulled on the prior unmount),
+      // showing an empty state. The booting overlay covers this brief gap.
+
+      return {
+        key: t.key,
+        label: renderTabLabel(t),
+        children: Comp && !booting ? /*#__PURE__*/_react["default"].createElement(Comp, {
+          shellConfig: shellConfig,
+          tabKey: t.key,
+          entity: t.entity,
+          cardConfig: t.card,
+          viewGlobal: t.viewGlobal,
+          viewProps: t.props
+        }) : null
+      };
+    } // Legacy adapter tabs render via their own React root; the adapter wraps that
+    // render in shellThemeWrap so it follows the shell's colour mode. Use the
+    // themed container surface so the legacy view sits on the right background.
+
+
+    return {
+      key: t.key,
+      label: renderTabLabel(t),
+      forceRender: true,
+      children: /*#__PURE__*/_react["default"].createElement("div", {
+        style: _objectSpread({
+          background: token.colorBgContainer,
+          color: token.colorText,
+          borderRadius: 10,
+          padding: 12,
+          minHeight: 320
+        }, t.scroll ? {
+          overflowX: 'auto'
+        } : {})
+      }, (t.ids || []).map(function (id) {
+        return /*#__PURE__*/_react["default"].createElement("div", {
+          id: id,
+          key: id,
+          className: "reviewBlock"
+        });
+      }))
+    };
+  });
+  var singleTab = items.length <= 1;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 24,
+      position: 'relative'
+    }
+  }, booting && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 2,
+      background: token.colorBgLayout,
+      opacity: 0.6
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+    size: "large"
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      background: token.colorBgContainer,
+      borderRadius: 14,
+      boxShadow: _theme.MUI_SHADOW,
+      padding: singleTab ? 20 : '4px 20px 20px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Tabs, {
+    activeKey: activeTab || items[0] && items[0].key,
+    onChange: function onChange(k) {
+      setActiveTab(k);
+      startTab(k);
+    },
+    items: items,
+    tabBarStyle: singleTab ? {
+      display: 'none'
+    } : {
+      marginBottom: 16
+    }
+  })));
+}
+
+},{"./ApiAccess":3,"./CompanyStructureCards":5,"./LeaveCalendar":11,"./LeaveEntitlement":12,"./LicenseBlocked":13,"./MobileApp":15,"./NativeAdapterView":17,"./NativeCardList":18,"./NativeExtensionView":20,"./OrgChart":24,"./TimeSheets":25,"./theme":29,"antd":"antd","react":"react","react-dom":"react-dom"}],22:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = News;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * News — shows an announcement from icehrm.com on the dashboard, mirroring the
+ * legacy dashboard "news" feature. The backend (appshell/news) fetches and
+ * caches icehrm.com's /sapi/news for the current version + user level and only
+ * returns an item when it's flagged to show and the user hasn't dismissed it.
+ * Dismissing suppresses it per user for `dismiss_period` seconds via the shared
+ * dismiss-news endpoint (UserMeta), the same store the legacy UI used.
+ */
+function News(_ref) {
+  var config = _ref.config;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      news = _useState2[0],
+      setNews = _useState2[1];
+
+  (0, _react.useEffect)(function () {
+    var cancelled = false;
+    fetch("".concat(config.restApiBase, "appshell/news"), {
+      headers: {
+        Authorization: "Bearer ".concat(config.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).then(function (item) {
+      if (!cancelled) setNews(item && item.id ? item : null);
+    })["catch"](function () {
+      /* no news on failure — same as legacy */
+    });
+    return function () {
+      cancelled = true;
+    };
+  }, [config.restApiBase, config.token]);
+
+  if (!news || !news.id) {
+    return null;
+  }
+
+  var dismiss = function dismiss() {
+    setNews(null);
+    fetch("".concat(config.restApiBase, "dismiss-news"), {
+      method: 'POST',
+      headers: {
+        Authorization: "Bearer ".concat(config.token),
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({
+        id: news.id,
+        period: news.dismiss_period || 86400
+      })
+    })["catch"](function () {
+      /* dismissal is best-effort */
+    });
+  };
+
+  return /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: "info",
+    showIcon: true,
+    style: {
+      margin: '16px 24px 0'
+    },
+    message: news.title,
+    description: news.message,
+    action: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, news.url && news.button_text ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "small",
+      type: "primary",
+      onClick: function onClick() {
+        return window.open(news.url, '_blank', 'noopener,noreferrer');
+      }
+    }, news.button_text) : null, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "small",
+      onClick: dismiss
+    }, "Dismiss"))
+  });
+}
+
+},{"antd":"antd","react":"react"}],23:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Notifications;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text; // Legacy tab anchors (used in notification action URLs) → native SPA tab keys,
+// where they differ. Anchors that already match a SPA tab key pass through.
+
+var LEGACY_TAB_ALIASES = {
+  // Leave module: legacy notification anchors (tab + mapping name) → native SPA
+  // tab keys, which the SPA rebuild shortened.
+  tabSubEmployeeLeaveAll: 'tabSubLeaveAll',
+  // "applied for a leave" → Leave Requests (Direct Reports)
+  tabEmployeeLeaveApproval: 'tabLeaveApproval',
+  // "assigned … for approval" → Approval Requests
+  tabEmployeeLeaveApproved: 'tabMyLeaveApproved',
+  // "leave approved" → Approved Leave
+  tabSubEmployeeLeaveCancel: 'tabSubLeaveCancel' // cancellation request → Leave Cancellation Requests
+
+}; // Notifications come from the legacy service.php (cookie session), the same
+// source the legacy top bar polled. The shell reuses it with credentials.
+
+function parseAction(action) {
+  try {
+    var a = typeof action === 'string' ? JSON.parse(action) : action;
+
+    if (a && a.type === 'url' && a.url) {
+      // The legacy anchor (e.g. #tabSubEmployeeLeaveAll) names the tab the
+      // notification should land on — strip it before query parsing.
+      var hashIdx = a.url.indexOf('#');
+      var frag = hashIdx >= 0 ? a.url.slice(hashIdx + 1) : null;
+      var urlNoFrag = hashIdx >= 0 ? a.url.slice(0, hashIdx) : a.url; // The url may be a full legacy URL or just a query string; parse the part
+      // after '?' so the first key isn't swallowed by the scheme/path.
+
+      var qs = urlNoFrag.indexOf('?') >= 0 ? urlNoFrag.split('?')[1] : urlNoFrag;
+      var sp = new URLSearchParams(qs);
+      var g = sp.get('g');
+      var n = sp.get('n'); // The editor extension is a document viewer, not a standalone module — it
+      // can't be mounted by route (it needs a hash/object). Open it in the native
+      // document modal instead (e.g. a "you were assigned a task list" link).
+
+      if (g === 'extension' && n === 'editor|user' && (sp.get('hash') || sp.get('object'))) {
+        return {
+          doc: a.url
+        };
+      }
+
+      if (g && n) {
+        var tab = frag ? LEGACY_TAB_ALIASES[frag] || frag : null;
+        return {
+          g: g,
+          n: n,
+          tab: tab
+        };
+      }
+    }
+  } catch (e) {
+    /* ignore */
+  }
+
+  return null;
+}
+
+function Notifications(_ref) {
+  var clientBaseUrl = _ref.clientBaseUrl,
+      onNavigate = _ref.onNavigate,
+      onOpenDocument = _ref.onOpenDocument;
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var _useState = (0, _react.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      count = _useState2[0],
+      setCount = _useState2[1];
+
+  var _useState3 = (0, _react.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      list = _useState4[0],
+      setList = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      open = _useState6[0],
+      setOpen = _useState6[1];
+
+  var load = (0, _react.useCallback)(function () {
+    fetch("".concat(clientBaseUrl, "service.php?a=getNotifications"), {
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (j) {
+      if (j && j.data) {
+        setCount(j.data[0] || 0);
+        setList(Array.isArray(j.data[1]) ? j.data[1] : []);
+      }
+    })["catch"](function () {});
+  }, [clientBaseUrl]);
+  (0, _react.useEffect)(function () {
+    load();
+    var id = setInterval(load, 60000);
+    return function () {
+      return clearInterval(id);
+    };
+  }, [load]);
+
+  var clearAll = function clearAll() {
+    fetch("".concat(clientBaseUrl, "service.php?a=clearNotifications"), {
+      credentials: 'same-origin'
+    }).then(function () {
+      setCount(0);
+      load();
+    })["catch"](function () {});
+  };
+
+  var handleClick = function handleClick(item) {
+    var dest = parseAction(item.action);
+    setOpen(false);
+    if (!dest) return;
+
+    if (dest.doc && onOpenDocument) {
+      onOpenDocument(dest.doc);
+      return;
+    }
+
+    if (dest.g && onNavigate) {
+      if (dest.tab) {
+        // Land on the tab the notification points at (e.g. a leave application →
+        // "Leave Requests (Direct Reports)"). NativeModuleHost consumes the hint
+        // at module boot — and only if the module actually has that tab.
+        try {
+          window.__iceShellStartTab = dest.tab; // Already viewing that module? Switch its tab directly.
+
+          var cur = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+
+          if (cur === "".concat(dest.g, "::").concat(dest.n) && window.iceShellSwitchModuleTab) {
+            window.iceShellSwitchModuleTab(dest.tab);
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      }
+
+      onNavigate(dest.g, dest.n);
+    }
+  };
+
+  var panel = /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      width: 340,
+      maxHeight: 440,
+      overflow: 'auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: '4px 4px 10px',
+      borderBottom: "1px solid ".concat(token.colorBorderSecondary),
+      marginBottom: 4
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    strong: true
+  }, "Notifications"), list.length > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "link",
+    size: "small",
+    onClick: clearAll
+  }, "Mark all read")), list.length === 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+    description: "No notifications",
+    style: {
+      padding: 16
+    }
+  }) : /*#__PURE__*/_react["default"].createElement(_antd.List, {
+    dataSource: list,
+    renderItem: function renderItem(item) {
+      return /*#__PURE__*/_react["default"].createElement(_antd.List.Item, {
+        style: {
+          padding: '10px 6px',
+          cursor: parseAction(item.action) ? 'pointer' : 'default'
+        },
+        onClick: function onClick() {
+          return handleClick(item);
+        }
+      }, /*#__PURE__*/_react["default"].createElement(_antd.List.Item.Meta, {
+        avatar: /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+          src: item.image,
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null),
+          size: "small"
+        }),
+        title: /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            fontSize: 13,
+            fontWeight: 500
+          }
+        }, item.type || 'Notification'),
+        description: /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontSize: 13,
+            color: token.colorText
+          }
+        }, item.message), /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontSize: 11,
+            color: token.colorTextTertiary,
+            marginTop: 2
+          }
+        }, item.time))
+      }));
+    }
+  }));
+
+  return /*#__PURE__*/_react["default"].createElement(_antd.Popover, {
+    content: panel,
+    trigger: "click",
+    open: open,
+    onOpenChange: setOpen,
+    placement: "bottomRight"
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    type: "text",
+    style: {
+      display: 'flex',
+      alignItems: 'center'
+    },
+    "aria-label": "Notifications"
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Badge, {
+    count: count,
+    size: "small",
+    overflowCount: 99
+  }, /*#__PURE__*/_react["default"].createElement(_icons.BellOutlined, {
+    style: {
+      fontSize: 18,
+      color: '#fff'
+    }
+  }))));
+}
+
+},{"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],24:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = OrgChart;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+var _theme = require("./theme");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+// A clean, dependency-free top-down org chart (pure-CSS connectors) for the
+// company structure. Replaces the legacy d3 graph.
+var orgCss = function orgCss(token) {
+  return "\n.org-wrap { overflow-x: auto; padding: 12px 8px 24px; }\n.org-tree, .org-tree ul { position: relative; padding-top: 22px; display: flex; justify-content: center; }\n.org-tree ul { padding-left: 0; }\n.org-tree li {\n  list-style: none; position: relative; padding: 22px 10px 0; text-align: center;\n}\n.org-tree li::before, .org-tree li::after {\n  content: ''; position: absolute; top: 0; right: 50%;\n  border-top: 2px solid ".concat(token.colorBorderSecondary, "; width: 50%; height: 22px;\n}\n.org-tree li::after { right: auto; left: 50%; border-left: 2px solid ").concat(token.colorBorderSecondary, "; }\n.org-tree li:only-child::after, .org-tree li:only-child::before { display: none; }\n.org-tree li:only-child { padding-top: 0; }\n.org-tree li:first-child::before, .org-tree li:last-child::after { border: 0 none; }\n.org-tree li:last-child::before { border-right: 2px solid ").concat(token.colorBorderSecondary, "; border-radius: 0 6px 0 0; }\n.org-tree li:first-child::after { border-radius: 6px 0 0 0; }\n.org-tree ul ul::before {\n  content: ''; position: absolute; top: 0; left: 50%;\n  border-left: 2px solid ").concat(token.colorBorderSecondary, "; width: 0; height: 22px;\n}\n.org-node {\n  display: inline-flex; align-items: center; gap: 12px;\n  padding: 12px 16px; min-width: 180px; max-width: 240px;\n  background: ").concat(token.colorBgContainer, "; border: 1px solid ").concat(token.colorBorderSecondary, "; border-radius: 12px;\n  box-shadow: ").concat(_theme.MUI_SHADOW, "; text-align: left; transition: box-shadow .15s, transform .15s;\n}\n.org-node:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }\n.org-node .ic {\n  width: 38px; height: 38px; border-radius: 10px; flex: 0 0 auto;\n  display: flex; align-items: center; justify-content: center; font-size: 18px;\n}\n.org-node .ttl { font-weight: 600; font-size: 14px; line-height: 1.2; color: ").concat(token.colorText, "; }\n.org-node .sub { font-size: 12px; color: ").concat(token.colorTextSecondary, "; margin-top: 2px; }\n");
+};
+
+var TYPE_STYLE = {
+  Company: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.BankOutlined, null),
+    color: _theme.MUI.primary
+  },
+  'Head Office': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.HomeOutlined, null),
+    color: '#0288d1'
+  },
+  'Regional Office': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ClusterOutlined, null),
+    color: '#7b1fa2'
+  },
+  Department: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#2e7d32'
+  },
+  Unit: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#ed6c02'
+  },
+  'Sub Unit': {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.TeamOutlined, null),
+    color: '#ed6c02'
+  },
+  Other: {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#607d8b'
+  }
+};
+
+function nodeStyle(type) {
+  return TYPE_STYLE[type] || {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ApartmentOutlined, null),
+    color: '#607d8b'
+  };
+}
+
+function buildForest(nodes) {
+  var byId = {};
+  nodes.forEach(function (n) {
+    byId[n.id] = _objectSpread({}, n, {
+      children: []
+    });
+  });
+  var roots = [];
+  nodes.forEach(function (n) {
+    if (n.parent && byId[n.parent]) byId[n.parent].children.push(byId[n.id]);else roots.push(byId[n.id]);
+  });
+  return roots;
+}
+
+function NodeCard(_ref) {
+  var node = _ref.node;
+  var st = nodeStyle(node.type);
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "org-node"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "ic",
+    style: {
+      background: "".concat(st.color, "18"),
+      color: st.color
+    }
+  }, st.icon), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      minWidth: 0
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "ttl"
+  }, node.title), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "sub"
+  }, node.type || 'Unit', node.headcount > 0 && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, ' · ', /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, {
+    style: {
+      fontSize: 11
+    }
+  }), ' ', node.headcount))));
+}
+
+function TreeNode(_ref2) {
+  var node = _ref2.node;
+  return /*#__PURE__*/_react["default"].createElement("li", null, /*#__PURE__*/_react["default"].createElement(NodeCard, {
+    node: node
+  }), node.children && node.children.length > 0 && /*#__PURE__*/_react["default"].createElement("ul", null, node.children.map(function (c) {
+    return /*#__PURE__*/_react["default"].createElement(TreeNode, {
+      key: c.id,
+      node: c
+    });
+  })));
+}
+
+function OrgChart(_ref3) {
+  var shellConfig = _ref3.shellConfig;
+
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      nodes = _useState2[0],
+      setNodes = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      err = _useState4[0],
+      setErr = _useState4[1];
+
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  (0, _react.useEffect)(function () {
+    var alive = true;
+    fetch("".concat(shellConfig.restApiBase, "appshell/org-structure"), {
+      headers: {
+        Authorization: "Bearer ".concat(shellConfig.token)
+      },
+      credentials: 'same-origin'
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (alive) setNodes(d && d.nodes || []);
+    })["catch"](function () {
+      if (alive) setErr(true);
+    });
+    return function () {
+      alive = false;
+    };
+  }, [shellConfig]);
+  if (err) return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "Could not load the org chart"
+  });
+  if (!nodes) return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      padding: 60
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, null));
+  if (nodes.length === 0) return /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+    description: "No company structure defined yet"
+  });
+  var roots = buildForest(nodes);
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("style", null, orgCss(token)), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "org-wrap"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "org-tree"
+  }, /*#__PURE__*/_react["default"].createElement("ul", null, roots.map(function (r) {
+    return /*#__PURE__*/_react["default"].createElement(TreeNode, {
+      key: r.id,
+      node: r
+    });
+  })))));
+}
+
+},{"./theme":29,"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],25:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = TimeSheets;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _antd = require("antd");
+
+var _icons = require("@ant-design/icons");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Text = _antd.Typography.Text,
+    Title = _antd.Typography.Title;
+var STATUS_COLORS = {
+  Pending: 'orange',
+  Submitted: 'blue',
+  Approved: 'green',
+  Rejected: 'red'
+}; // EmployeeLeaves.status values (see the leave module's approval workflow).
+
+var LEAVE_STATUS_COLORS = {
+  Approved: 'green',
+  Pending: 'orange',
+  Processing: 'blue',
+  Rejected: 'red',
+  'Cancellation Requested': 'gold',
+  Cancelled: 'default'
+};
+var MANAGER_LEVELS = ['Admin', 'Manager', 'Restricted Admin', 'Restricted Manager'];
+var MODULE = 'modules=time_sheets';
+var DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+var ctx = function ctx() {
+  return typeof window !== 'undefined' && window.__timesheetsCtx || {};
+};
+
+var adapters = function adapters() {
+  return typeof window !== 'undefined' && window.modJsList || {};
+};
+
+function fmtDate(d) {
+  if (!d) return '';
+  var dt = new Date("".concat(String(d).slice(0, 10), "T00:00:00"));
+  if (Number.isNaN(dt.getTime())) return d;
+  return dt.toLocaleDateString(undefined, {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
+} // Compact date for the leave list: "Mon, Aug 3".
+
+
+function fmtShortDate(d) {
+  if (!d) return '';
+  var dt = new Date("".concat(String(d).slice(0, 10), "T00:00:00"));
+  if (Number.isNaN(dt.getTime())) return String(d);
+  return dt.toLocaleDateString(undefined, {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric'
+  });
+} // A leave day is stored as 'Full Day', 'Half Day - Morning', '2 Hours - Afternoon', …
+// Anything that is not a full day is a partial day and gets the softer colour.
+
+
+function isFullDayLeave(type) {
+  return /^\s*full day\s*$/i.test(String(type || ''));
+}
+
+function parseDT(s) {
+  if (!s) return null;
+  var dt = new Date(String(s).replace(' ', 'T'));
+  return Number.isNaN(dt.getTime()) ? null : dt;
+}
+
+function fmtTime(dt) {
+  return dt ? dt.toLocaleTimeString(undefined, {
+    hour: '2-digit',
+    minute: '2-digit'
+  }) : '';
+}
+
+function duration(start, end) {
+  var a = parseDT(start);
+  var b = parseDT(end);
+  if (!a || !b) return '';
+  var min = Math.max(0, Math.round((b - a) / 60000));
+  return "".concat(Math.floor(min / 60), "h ").concat(min % 60, "m");
+} // Run an adapter custom action and resolve with the server payload.
+
+
+var actionSeq = 0;
+
+function callAction(adapter, action, req) {
+  var isPost = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  return new Promise(function (resolve, reject) {
+    if (!adapter || typeof adapter.customAction !== 'function') {
+      reject(new Error('no adapter'));
+      return;
+    }
+
+    actionSeq += 1;
+    var okName = "__ts_ok_".concat(actionSeq);
+    var failName = "__ts_fail_".concat(actionSeq);
+
+    adapter[okName] = function (payload) {
+      return resolve(payload);
+    };
+
+    adapter[failName] = function (payload) {
+      return reject(payload || new Error('action failed'));
+    };
+
+    var cb = {
+      callBackData: [],
+      callBackSuccess: okName,
+      callBackFail: failName
+    };
+
+    try {
+      adapter.customAction(action, MODULE, JSON.stringify(req || {}), cb, isPost);
+    } catch (e) {
+      reject(e);
+    }
+  });
+}
+
+function TimeSheets() {
+  var _theme$useToken = _antd.theme.useToken(),
+      token = _theme$useToken.token;
+
+  var isManager = MANAGER_LEVELS.indexOf(ctx().userLevel) !== -1;
+
+  var _useState = (0, _react.useState)('list'),
+      _useState2 = _slicedToArray(_useState, 2),
+      view = _useState2[0],
+      setView = _useState2[1]; // 'list' | 'grid' | 'calendar'
+
+
+  var _useState3 = (0, _react.useState)('All'),
+      _useState4 = _slicedToArray(_useState3, 2),
+      tab = _useState4[0],
+      setTab = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      reportEmp = _useState6[0],
+      setReportEmp = _useState6[1]; // Direct Reports employee filter
+
+
+  var _useState7 = (0, _react.useState)(['Submitted']),
+      _useState8 = _slicedToArray(_useState7, 2),
+      reportStatuses = _useState8[0],
+      setReportStatuses = _useState8[1]; // visible statuses
+
+
+  var _useState9 = (0, _react.useState)([]),
+      _useState10 = _slicedToArray(_useState9, 2),
+      selectedReportIds = _useState10[0],
+      setSelectedReportIds = _useState10[1]; // bulk-approve selection
+
+
+  var _useState11 = (0, _react.useState)(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      bulkApproving = _useState12[0],
+      setBulkApproving = _useState12[1];
+
+  var _useState13 = (0, _react.useState)(null),
+      _useState14 = _slicedToArray(_useState13, 2),
+      myRows = _useState14[0],
+      setMyRows = _useState14[1];
+
+  var _useState15 = (0, _react.useState)(null),
+      _useState16 = _slicedToArray(_useState15, 2),
+      reportRows = _useState16[0],
+      setReportRows = _useState16[1];
+
+  var _useState17 = (0, _react.useState)({}),
+      _useState18 = _slicedToArray(_useState17, 2),
+      reportLeave = _useState18[0],
+      setReportLeave = _useState18[1]; // { timesheetId: leaveDays }
+
+
+  var _useState19 = (0, _react.useState)(false),
+      _useState20 = _slicedToArray(_useState19, 2),
+      reportLeaveOn = _useState20[0],
+      setReportLeaveOn = _useState20[1]; // leave module installed?
+
+
+  var _useState21 = (0, _react.useState)(null),
+      _useState22 = _slicedToArray(_useState21, 2),
+      busyId = _useState22[0],
+      setBusyId = _useState22[1];
+
+  var _useState23 = (0, _react.useState)(null),
+      _useState24 = _slicedToArray(_useState23, 2),
+      statusModal = _useState24[0],
+      setStatusModal = _useState24[1];
+
+  var _useState25 = (0, _react.useState)(null),
+      _useState26 = _slicedToArray(_useState25, 2),
+      current = _useState26[0],
+      setCurrent = _useState26[1]; // { id, date_start, date_end, status, readOnly }
+  // Grid state
+
+
+  var _useState27 = (0, _react.useState)(null),
+      _useState28 = _slicedToArray(_useState27, 2),
+      grid = _useState28[0],
+      setGrid = _useState28[1];
+
+  var _useState29 = (0, _react.useState)({}),
+      _useState30 = _slicedToArray(_useState29, 2),
+      edits = _useState30[0],
+      setEdits = _useState30[1];
+
+  var _useState31 = (0, _react.useState)([]),
+      _useState32 = _slicedToArray(_useState31, 2),
+      leaveDays = _useState32[0],
+      setLeaveDays = _useState32[1]; // [{ date:'Y-m-d', type, half }]
+
+
+  var _useState33 = (0, _react.useState)(false),
+      _useState34 = _slicedToArray(_useState33, 2),
+      gridLoading = _useState34[0],
+      setGridLoading = _useState34[1];
+
+  var _useState35 = (0, _react.useState)(false),
+      _useState36 = _slicedToArray(_useState35, 2),
+      saving = _useState36[0],
+      setSaving = _useState36[1]; // Calendar / entries state
+
+
+  var _useState37 = (0, _react.useState)(null),
+      _useState38 = _slicedToArray(_useState37, 2),
+      cal = _useState38[0],
+      setCal = _useState38[1]; // { entries, employee, timesheet }
+
+
+  var _useState39 = (0, _react.useState)(false),
+      _useState40 = _slicedToArray(_useState39, 2),
+      calLoading = _useState40[0],
+      setCalLoading = _useState40[1];
+
+  var _useState41 = (0, _react.useState)([]),
+      _useState42 = _slicedToArray(_useState41, 2),
+      tsLogs = _useState42[0],
+      setTsLogs = _useState42[1]; // approval log entries (newest first)
+  // Leave requests overlapping the open timesheet, every status:
+  // { available, requests: [{ id, leave_type, date_start, date_end, status, details, days, days_total }] }
+
+
+  var _useState43 = (0, _react.useState)({
+    available: false,
+    requests: []
+  }),
+      _useState44 = _slicedToArray(_useState43, 2),
+      leaveReq = _useState44[0],
+      setLeaveReq = _useState44[1];
+
+  var _useState45 = (0, _react.useState)(null),
+      _useState46 = _slicedToArray(_useState45, 2),
+      rejectModal = _useState46[0],
+      setRejectModal = _useState46[1]; // { id, note } | null
+  // ---- list loading -------------------------------------------------------
+
+
+  var loadMine = (0, _react.useCallback)(function () {
+    var a = adapters().tabEmployeeTimeSheetAll;
+
+    if (!a || !a.dataPipe) {
+      setMyRows([]);
+      return;
+    }
+
+    setMyRows(null);
+    a.dataPipe.get({
+      page: 1,
+      limit: 500,
+      search: ''
+    }).then(function (d) {
+      return setMyRows(d && d.items || []);
+    })["catch"](function () {
+      return setMyRows([]);
+    });
+  }, []);
+  var loadReports = (0, _react.useCallback)(function () {
+    var a = adapters().tabSubEmployeeTimeSheetAll;
+
+    if (!a || !a.dataPipe) {
+      setReportRows([]);
+      return;
+    }
+
+    setReportRows(null);
+    a.dataPipe.get({
+      page: 1,
+      limit: 500,
+      search: ''
+    }).then(function (d) {
+      var items = d && d.items || [];
+      setReportRows(items); // Leave time per timesheet (only when the leave module is installed).
+
+      var ids = items.map(function (r) {
+        return r.id;
+      });
+
+      if (ids.length) {
+        callAction(a, 'getLeaveDaysCountForTimeSheets', {
+          ids: ids
+        }).then(function (res) {
+          setReportLeaveOn(!!(res && res.available));
+          setReportLeave(res && res.counts || {});
+        })["catch"](function () {
+          setReportLeaveOn(false);
+          setReportLeave({});
+        });
+      } else {
+        setReportLeaveOn(false);
+        setReportLeave({});
+      }
+    })["catch"](function () {
+      return setReportRows([]);
+    });
+  }, []);
+  (0, _react.useEffect)(function () {
+    loadMine();
+    if (isManager) loadReports();
+  }, [loadMine, loadReports, isManager]);
+
+  var reloadList = function reloadList() {
+    if (tab === 'Reports') loadReports();else loadMine();
+  };
+
+  var backToList = function backToList() {
+    setView('list');
+    setCurrent(null);
+    setGrid(null);
+    setCal(null);
+    setEdits({});
+    reloadList();
+  }; // ---- grid (Edit) --------------------------------------------------------
+
+
+  var openGrid = function openGrid(ts) {
+    var qt = adapters().tabQtsheet;
+    if (!qt) return;
+    qt.setCurrentTimeSheetId(ts.id);
+    setCurrent(_objectSpread({}, ts, {
+      readOnly: false
+    }));
+    setEdits({});
+    setGrid(null);
+    setLeaveDays([]);
+    setView('grid');
+    setGridLoading(true);
+    callAction(qt, 'getAllData', {
+      rowTable: 'Project',
+      columnTable: 'QTDays',
+      valueTable: 'EmployeeTimeEntry',
+      currentId: ts.id,
+      save: 0
+    }).then(function (d) {
+      setGrid({
+        projects: d[0] || [],
+        dates: d[1] || [],
+        entries: d[2] || []
+      });
+      setGridLoading(false);
+    })["catch"](function () {
+      setGridLoading(false);
+
+      _antd.message.error('Could not load the timesheet grid', 5);
+    });
+    callAction(qt, 'getLeaveDaysForTimeSheet', {
+      id: ts.id
+    }).then(function (d) {
+      return setLeaveDays(Array.isArray(d) ? d : []);
+    })["catch"](function () {
+      return setLeaveDays([]);
+    });
+  }; // ---- calendar / entries (View) -----------------------------------------
+
+
+  var openCalendar = function openCalendar(ts, isReport) {
+    var a = isReport ? adapters().tabSubEmployeeTimeSheetAll : adapters().tabEmployeeTimeSheetAll;
+    var entryAdapter = adapters().tabEmployeeTimeEntry;
+    var sm = entryAdapter && entryAdapter.getSourceMapping ? JSON.stringify(entryAdapter.getSourceMapping()) : '';
+    setCurrent(_objectSpread({}, ts, {
+      readOnly: true,
+      isReport: !!isReport
+    }));
+    setCal(null);
+    setTsLogs([]);
+    setLeaveReq({
+      available: false,
+      requests: []
+    });
+    setView('calendar');
+    setCalLoading(true);
+    callAction(a, 'getTimeEntries', {
+      id: ts.id,
+      sm: sm
+    }).then(function (d) {
+      setCal({
+        entries: d[0] || [],
+        employee: d[1] || {},
+        timesheet: d[2] || {}
+      });
+      setCalLoading(false);
+    })["catch"](function () {
+      setCalLoading(false);
+
+      _antd.message.error('Could not load timesheet entries', 5);
+    });
+    callAction(a, 'getTimeSheetLogs', {
+      id: ts.id
+    }).then(function (d) {
+      return setTsLogs(Array.isArray(d) ? d : []);
+    })["catch"](function () {
+      return setTsLogs([]);
+    }); // Leave the employee has in this period — hidden when the leave module is
+    // not installed (available: false).
+
+    callAction(a, 'getLeaveRequestsForTimeSheet', {
+      id: ts.id
+    }).then(function (d) {
+      return setLeaveReq({
+        available: !!(d && d.available),
+        requests: d && Array.isArray(d.requests) ? d.requests : []
+      });
+    })["catch"](function () {
+      return setLeaveReq({
+        available: false,
+        requests: []
+      });
+    });
+  };
+
+  var reloadCalendar = function reloadCalendar() {
+    if (current) openCalendar(current, current.isReport);
+  }; // ---- row / status actions ----------------------------------------------
+
+
+  var rowAction = function rowAction(adapter, action, id, okMsg) {
+    setBusyId(id);
+    callAction(adapter, action, {
+      id: id
+    }, true).then(function () {
+      _antd.message.success(okMsg);
+
+      loadMine();
+    })["catch"](function (e) {
+      return _antd.message.error(e && e.message || "Could not ".concat(action), 5);
+    })["finally"](function () {
+      return setBusyId(null);
+    });
+  };
+
+  var doBulkApprove = function doBulkApprove() {
+    var a = adapters().tabSubEmployeeTimeSheetAll || adapters().tabEmployeeTimeSheetAll;
+    if (!a || !selectedReportIds.length) return;
+    setBulkApproving(true);
+    callAction(a, 'bulkApproveTimeSheets', {
+      ids: selectedReportIds
+    }, true).then(function (res) {
+      var n = res && res.approved || 0;
+
+      _antd.message.success("".concat(n, " timesheet").concat(n === 1 ? '' : 's', " approved"));
+
+      setSelectedReportIds([]);
+      loadReports();
+    })["catch"](function () {
+      return _antd.message.error('Could not approve the selected timesheets', 5);
+    })["finally"](function () {
+      return setBulkApproving(false);
+    });
+  };
+
+  var changeStatus = function changeStatus(id, status, after, note) {
+    var a = adapters().tabSubEmployeeTimeSheetAll || adapters().tabEmployeeTimeSheetAll;
+    setBusyId(id);
+    return callAction(a, 'changeTimeSheetStatus', {
+      id: id,
+      status: status,
+      note: note || ''
+    }, true).then(function () {
+      _antd.message.success("Timesheet ".concat(status.toLowerCase()));
+
+      if (after) after();
+    })["catch"](function () {
+      return _antd.message.error('Could not change status', 5);
+    })["finally"](function () {
+      return setBusyId(null);
+    });
+  };
+
+  var deleteEntry = function deleteEntry(entryId) {
+    var e = adapters().tabEmployeeTimeEntry;
+    if (!e || typeof e.cleanDelete !== 'function') return;
+    e.cleanDelete(entryId, function (httpStatus, status) {
+      if (httpStatus === 200 && status === 'SUCCESS') {
+        _antd.message.success('Entry deleted');
+
+        reloadCalendar();
+      } else _antd.message.error('Could not delete entry', 5);
+    });
+  }; // ---- grid helpers -------------------------------------------------------
+
+
+  var realProjects = (0, _react.useMemo)(function () {
+    return grid ? grid.projects.filter(function (p) {
+      return p.id !== -1 && p.id !== '-1';
+    }) : [];
+  }, [grid]);
+  var cellValue = (0, _react.useCallback)(function (projectId, dateId) {
+    var key = "".concat(dateId, "=").concat(projectId);
+    if (key in edits) return edits[key];
+    if (!grid) return '';
+    var e = grid.entries.find(function (x) {
+      return x.project === projectId && x.date === dateId;
+    });
+    return e && e.amount != null ? e.amount : '';
+  }, [edits, grid]);
+  var colTotal = (0, _react.useCallback)(function (dateId) {
+    return realProjects.reduce(function (s, p) {
+      var v = parseFloat(cellValue(p.id, dateId));
+      return s + (Number.isNaN(v) ? 0 : v);
+    }, 0);
+  }, [realProjects, cellValue]);
+  var rowTotal = (0, _react.useCallback)(function (projectId) {
+    return grid ? grid.dates.reduce(function (s, d) {
+      var v = parseFloat(cellValue(projectId, d.id));
+      return s + (Number.isNaN(v) ? 0 : v);
+    }, 0) : 0;
+  }, [grid, cellValue]);
+  var editable = current && !current.readOnly && current.status !== 'Approved';
+
+  var setCell = function setCell(projectId, dateId, value) {
+    return setEdits(function (p) {
+      return _objectSpread({}, p, _defineProperty({}, "".concat(dateId, "=").concat(projectId), value == null ? '' : value));
+    });
+  }; // Map a leave day to a readable label + its per-day hour cap.
+
+
+  var leaveDayInfo = function leaveDayInfo(ld) {
+    var dt = new Date("".concat(String(ld.date).slice(0, 10), "T00:00:00"));
+    var dateStr = Number.isNaN(dt.getTime()) ? ld.date : dt.toLocaleDateString(undefined, {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric'
+    });
+    var kind = 'Full Day';
+
+    if (ld.half) {
+      var part = /morning/i.test(ld.type) ? 'Morning' : /after|evening/i.test(ld.type) ? 'Afternoon' : 'Half Day';
+      kind = "Half Day \xB7 ".concat(part);
+    }
+
+    return {
+      dateStr: dateStr,
+      kind: kind,
+      cap: ld.half ? 4 : 0
+    };
+  };
+
+  var persist = function persist(action) {
+    var qt = adapters().tabQtsheet;
+    if (!qt || !current) return;
+    var over = grid.dates.find(function (d) {
+      return colTotal(d.id) > 24;
+    });
+
+    if (over) {
+      _antd.message.error("Total hours for ".concat(over.name, " exceed 24."), 5);
+
+      return;
+    } // On save AND submit, block time logged on approved-leave days (full day:
+    // none; half day: up to 4h). The backend enforces the same rule.
+
+
+    if (leaveDays.length) {
+      var violations = leaveDays.map(function (ld) {
+        return {
+          ld: ld,
+          total: colTotal(ld.date)
+        };
+      }).filter(function (_ref) {
+        var ld = _ref.ld,
+            total = _ref.total;
+        return total > (ld.half ? 4 : 0);
+      });
+
+      if (violations.length) {
+        _antd.Modal.error({
+          title: 'Time logged on leave days',
+          content: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("p", null, "You cannot ".concat(action === 'updateAllData' ? 'submit' : 'save', " \u2014 these days have approved leave:")), /*#__PURE__*/_react["default"].createElement("ul", {
+            style: {
+              paddingLeft: 18,
+              margin: 0
+            }
+          }, violations.map(function (_ref2) {
+            var ld = _ref2.ld,
+                total = _ref2.total;
+            var info = leaveDayInfo(ld);
+            return /*#__PURE__*/_react["default"].createElement("li", {
+              key: ld.date,
+              style: {
+                marginBottom: 4
+              }
+            }, /*#__PURE__*/_react["default"].createElement("b", null, info.dateStr), " \u2014 ", info.kind, ": ", ld.half ? "max 4h allowed, you logged ".concat(total, "h") : "no time allowed, you logged ".concat(total, "h"));
+          })))
+        });
+
+        return;
+      }
+    }
+
+    var req = {
+      rowTable: 'Project',
+      columnTable: 'QTDays',
+      valueTable: 'EmployeeTimeEntry',
+      currentId: current.id
+    };
+    Object.keys(edits).forEach(function (key) {
+      var _key$split = key.split('='),
+          _key$split2 = _slicedToArray(_key$split, 2),
+          dateId = _key$split2[0],
+          projectId = _key$split2[1];
+
+      req[key] = [dateId, projectId, "".concat(edits[key] === '' || edits[key] == null ? 0 : edits[key])];
+    });
+    setSaving(true);
+    callAction(qt, action, req, true).then(function () {
+      _antd.message.success(action === 'updateAllData' ? 'Timesheet submitted' : 'Timesheet saved');
+
+      setEdits({});
+      var newStatus = action === 'updateAllData' ? 'Submitted' : current.status;
+      openGrid(_objectSpread({}, current, {
+        status: newStatus
+      }));
+    })["catch"](function () {
+      return _antd.message.error('Could not save the timesheet', 5);
+    })["finally"](function () {
+      return setSaving(false);
+    });
+  };
+
+  var download = function download() {
+    if (!grid) return;
+    var header = ['Project'].concat(_toConsumableArray(grid.dates.map(function (d) {
+      return d.name;
+    })), ['Total']);
+    var lines = [header.join(',')];
+    realProjects.forEach(function (p) {
+      return lines.push([JSON.stringify(p.name)].concat(_toConsumableArray(grid.dates.map(function (d) {
+        return cellValue(p.id, d.id) || 0;
+      })), [rowTotal(p.id)]).join(','));
+    });
+    lines.push(['Total'].concat(_toConsumableArray(grid.dates.map(function (d) {
+      return colTotal(d.id);
+    })), ['']).join(','));
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([lines.join('\r\n')], {
+      type: 'text/csv;charset=utf-8'
+    }));
+    a.download = "timesheet_".concat(current.id, ".csv");
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+
+  var statusTag = function statusTag(s) {
+    return /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+      color: STATUS_COLORS[s] || 'default'
+    }, s);
+  }; // ---- list view ----------------------------------------------------------
+
+
+  var renderList = function renderList() {
+    var reports = tab === 'Reports';
+    var all = reports ? reportRows : myRows;
+    if (all === null) return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        textAlign: 'center',
+        padding: 60
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+    var rows = reports ? all : tab === 'All' ? all : all.filter(function (r) {
+      return r.status === tab;
+    });
+    if (reports && reportEmp) rows = rows.filter(function (r) {
+      return r.employee === reportEmp;
+    });
+    if (reports) rows = rows.filter(function (r) {
+      return reportStatuses.indexOf(r.status) !== -1;
+    });
+    var columns = [].concat(_toConsumableArray(reports ? [{
+      title: 'Employee',
+      dataIndex: 'employee',
+      key: 'employee'
+    }] : []), [{
+      title: 'Period',
+      key: 'period',
+      render: function render(_, r) {
+        return /*#__PURE__*/_react["default"].createElement(Text, {
+          strong: true
+        }, "".concat(fmtDate(r.date_start), " \u2013 ").concat(fmtDate(r.date_end)));
+      }
+    }, {
+      title: 'Total Time',
+      dataIndex: 'total_time',
+      key: 'total_time',
+      render: function render(t) {
+        return /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+          size: 4
+        }, /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null), t || '00:00');
+      }
+    }], _toConsumableArray(reports && reportLeaveOn ? [{
+      title: 'Leave Time',
+      key: 'leave_time',
+      render: function render(_, r) {
+        var d = reportLeave[r.id] || 0;
+        return d > 0 ? /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+          color: "gold",
+          style: {
+            margin: 0
+          }
+        }, "".concat(d, " day").concat(d === 1 ? '' : 's')) : /*#__PURE__*/_react["default"].createElement(Text, {
+          type: "secondary"
+        }, "\u2014");
+      }
+    }] : []), [{
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'status',
+      render: statusTag
+    }, {
+      title: 'Actions',
+      key: 'actions',
+      // Clicks on action buttons must not trigger the row's view action.
+      render: function render(_, r) {
+        return /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+          wrap: true,
+          onClick: function onClick(e) {
+            return e.stopPropagation();
+          }
+        }, !reports && /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+          title: "Edit hours grid"
+        }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+          size: "small",
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.EditOutlined, null),
+          onClick: function onClick() {
+            return openGrid(r);
+          }
+        })), reports && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+          size: "small",
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.AuditOutlined, null),
+          onClick: function onClick() {
+            return setStatusModal({
+              id: r.id,
+              value: 'Approved'
+            });
+          }
+        }, "Status"), !reports && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+          title: "Create the previous week's timesheet"
+        }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+          size: "small",
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.StepBackwardOutlined, null),
+          loading: busyId === r.id,
+          onClick: function onClick() {
+            return rowAction(adapters().tabEmployeeTimeSheetAll, 'createPreviousTimesheet', r.id, 'Previous timesheet created');
+          }
+        }, "Previous Week")), /*#__PURE__*/_react["default"].createElement(_antd.Tooltip, {
+          title: "Create the next week's timesheet"
+        }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+          size: "small",
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.StepForwardOutlined, null),
+          loading: busyId === r.id,
+          onClick: function onClick() {
+            return rowAction(adapters().tabEmployeeTimeSheetAll, 'createNextWeekTimesheet', r.id, 'Next timesheet created');
+          }
+        }, "Next Week"))));
+      }
+    }]);
+    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, reports && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: 8,
+        marginBottom: 14
+      }
+    }, /*#__PURE__*/_react["default"].createElement(Text, {
+      type: "secondary",
+      style: {
+        marginRight: 4
+      }
+    }, "Show status:"), /*#__PURE__*/_react["default"].createElement(_antd.Checkbox.Group, {
+      value: reportStatuses,
+      onChange: setReportStatuses,
+      options: ['Pending', 'Submitted', 'Approved', 'Rejected'].map(function (s) {
+        return {
+          label: s,
+          value: s
+        };
+      })
+    }), selectedReportIds.length > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      type: "primary",
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+      loading: bulkApproving,
+      style: {
+        marginLeft: 'auto'
+      },
+      onClick: doBulkApprove
+    }, "Approve ".concat(selectedReportIds.length, " selected"))), /*#__PURE__*/_react["default"].createElement(_antd.Table, _extends({
+      rowKey: "id",
+      size: "middle",
+      columns: columns,
+      dataSource: rows,
+      pagination: {
+        pageSize: 10,
+        hideOnSinglePage: true
+      },
+      scroll: {
+        x: 'max-content'
+      },
+      onRow: function onRow(r) {
+        return {
+          onClick: function onClick() {
+            return openCalendar(r, reports);
+          },
+          style: {
+            cursor: 'pointer'
+          }
+        };
+      },
+      locale: {
+        emptyText: /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+          image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+          description: "No timesheets"
+        })
+      }
+    }, reports ? {
+      rowSelection: {
+        selectedRowKeys: selectedReportIds,
+        onChange: setSelectedReportIds,
+        // Only Submitted timesheets are approvable in bulk.
+        getCheckboxProps: function getCheckboxProps(r) {
+          return {
+            disabled: r.status !== 'Submitted'
+          };
+        }
+      }
+    } : {})));
+  }; // ---- grid view ----------------------------------------------------------
+
+
+  var renderGrid = function renderGrid() {
+    if (gridLoading || !grid) return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        textAlign: 'center',
+        padding: 60
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+    var columns = [{
+      title: 'Project',
+      dataIndex: 'name',
+      key: 'name',
+      fixed: 'left',
+      width: 200,
+      render: function render(n) {
+        return /*#__PURE__*/_react["default"].createElement(Text, {
+          strong: true
+        }, n);
+      }
+    }].concat(_toConsumableArray(grid.dates.map(function (d) {
+      return {
+        title: d.name,
+        key: d.id,
+        align: 'center',
+        width: 96,
+        render: function render(_, p) {
+          var ed = editable && d.editable !== 'No';
+          var val = cellValue(p.id, d.id);
+          if (!ed) return /*#__PURE__*/_react["default"].createElement("span", null, val === '' || val == null ? '–' : val);
+          return /*#__PURE__*/_react["default"].createElement(_antd.InputNumber, {
+            size: "small",
+            min: 0,
+            max: 24,
+            step: 0.5,
+            controls: false,
+            value: val === '' ? null : Number(val),
+            onChange: function onChange(v) {
+              return setCell(p.id, d.id, v);
+            },
+            style: {
+              width: 70
+            }
+          });
+        }
+      };
+    })), [{
+      title: 'Total',
+      key: 'rowtotal',
+      align: 'center',
+      fixed: 'right',
+      width: 80,
+      render: function render(_, p) {
+        return /*#__PURE__*/_react["default"].createElement(Text, {
+          strong: true
+        }, rowTotal(p.id).toFixed(2).replace(/\.00$/, ''));
+      }
+    }]);
+    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_antd.Table, {
+      rowKey: "id",
+      size: "small",
+      bordered: true,
+      columns: columns,
+      dataSource: realProjects,
+      pagination: false,
+      scroll: {
+        x: 'max-content'
+      },
+      locale: {
+        emptyText: /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+          image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+          description: "No projects assigned"
+        })
+      },
+      summary: function summary() {
+        return /*#__PURE__*/_react["default"].createElement(_antd.Table.Summary, {
+          fixed: true
+        }, /*#__PURE__*/_react["default"].createElement(_antd.Table.Summary.Row, null, /*#__PURE__*/_react["default"].createElement(_antd.Table.Summary.Cell, {
+          index: 0
+        }, /*#__PURE__*/_react["default"].createElement(Text, {
+          strong: true
+        }, "Total")), grid.dates.map(function (d, i) {
+          var t = colTotal(d.id);
+          return /*#__PURE__*/_react["default"].createElement(_antd.Table.Summary.Cell, {
+            key: d.id,
+            index: i + 1,
+            align: "center"
+          }, /*#__PURE__*/_react["default"].createElement(Text, {
+            strong: true,
+            style: {
+              color: t > 24 ? token.colorError : undefined
+            }
+          }, t.toFixed(2).replace(/\.00$/, '')));
+        }), /*#__PURE__*/_react["default"].createElement(_antd.Table.Summary.Cell, {
+          index: grid.dates.length + 1,
+          align: "center"
+        }, /*#__PURE__*/_react["default"].createElement(Text, {
+          strong: true
+        }, realProjects.reduce(function (s, p) {
+          return s + rowTotal(p.id);
+        }, 0).toFixed(2).replace(/\.00$/, '')))));
+      }
+    }), leaveDays.length > 0 && /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+      type: "warning",
+      showIcon: true,
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.CoffeeOutlined, null),
+      style: {
+        marginTop: 16,
+        borderRadius: 10
+      },
+      message: /*#__PURE__*/_react["default"].createElement(Text, {
+        strong: true
+      }, "You have approved leave this week"),
+      description: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: 8,
+          margin: '8px 0'
+        }
+      }, leaveDays.map(function (ld) {
+        var info = leaveDayInfo(ld);
+        return /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+          key: ld.date,
+          color: ld.half ? 'gold' : 'volcano',
+          icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+          style: {
+            padding: '3px 12px',
+            borderRadius: 14,
+            fontSize: 13,
+            margin: 0
+          }
+        }, /*#__PURE__*/_react["default"].createElement("b", null, info.dateStr), ' · ', info.kind);
+      })), /*#__PURE__*/_react["default"].createElement(Text, {
+        type: "secondary",
+        style: {
+          fontSize: 12.5
+        }
+      }, "No time can be logged on a full-day leave; up to 4 hours on a half-day leave."))
+    }));
+  }; // ---- calendar / entries view -------------------------------------------
+
+
+  var fmtHM = function fmtHM(min) {
+    return min > 0 ? "".concat(Math.floor(min / 60), "h").concat(min % 60 ? " ".concat(min % 60, "m") : '') : '0h';
+  };
+
+  var entryMin = function entryMin(e) {
+    var a = parseDT(e.date_start);
+    var b = parseDT(e.date_end);
+    return a && b ? Math.max(0, Math.round((b - a) / 60000)) : 0;
+  };
+
+  var renderCalendar = function renderCalendar() {
+    if (calLoading || !cal) return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        textAlign: 'center',
+        padding: 60
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Spin, {
+      size: "large"
+    }));
+    var start = parseDT(current.date_start);
+    var todayKey = new Date().toISOString().slice(0, 10);
+    var days = Array.from({
+      length: 7
+    }, function (_, i) {
+      var d = new Date(start);
+      d.setDate(start.getDate() + i);
+      var key = d.toISOString().slice(0, 10);
+      return {
+        key: key,
+        dayName: DAY_NAMES[d.getDay()],
+        dayNum: d.getDate(),
+        mon: d.toLocaleDateString(undefined, {
+          month: 'short'
+        }),
+        isToday: key === todayKey,
+        isWeekend: d.getDay() === 0 || d.getDay() === 6,
+        entries: [],
+        minutes: 0
+      };
+    });
+    var totalMin = 0;
+    cal.entries.forEach(function (e) {
+      var k = String(e.date_start || '').slice(0, 10);
+      var min = entryMin(e);
+      var day = days.find(function (dd) {
+        return dd.key === k;
+      });
+
+      if (day) {
+        day.entries.push(e);
+        day.minutes += min;
+      }
+
+      totalMin += min;
+    });
+    var daysWorked = days.filter(function (d) {
+      return d.minutes > 0;
+    }).length;
+    var entryCount = cal.entries.length;
+    var canDelete = !current.isReport && current.status !== 'Approved';
+
+    var Stat = function Stat(_ref3) {
+      var icon = _ref3.icon,
+          label = _ref3.label,
+          value = _ref3.value,
+          accent = _ref3.accent;
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          flex: '1 1 130px',
+          minWidth: 130,
+          background: token.colorFillQuaternary,
+          borderRadius: 12,
+          padding: '12px 16px'
+        }
+      }, /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          fontSize: 12,
+          color: token.colorTextSecondary,
+          marginBottom: 3
+        }
+      }, label), /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          fontSize: 22,
+          fontWeight: 700,
+          lineHeight: 1.1,
+          color: accent || token.colorText,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 7
+        }
+      }, icon, value));
+    };
+
+    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        gap: 12,
+        flexWrap: 'wrap',
+        marginBottom: 18
+      }
+    }, /*#__PURE__*/_react["default"].createElement(Stat, {
+      icon: /*#__PURE__*/_react["default"].createElement(_icons.ClockCircleOutlined, null),
+      label: "Total logged",
+      value: fmtHM(totalMin),
+      accent: token.colorPrimary
+    }), /*#__PURE__*/_react["default"].createElement(Stat, {
+      label: "Entries",
+      value: entryCount
+    }), /*#__PURE__*/_react["default"].createElement(Stat, {
+      label: "Days worked",
+      value: "".concat(daysWorked, " / 7")
+    }), /*#__PURE__*/_react["default"].createElement(Stat, {
+      label: "Avg / working day",
+      value: daysWorked ? fmtHM(Math.round(totalMin / daysWorked)) : '0h'
+    })), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        overflowX: 'auto'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        display: 'flex',
+        minWidth: 760,
+        borderRadius: 12,
+        overflow: 'hidden',
+        border: "1px solid ".concat(token.colorBorderSecondary)
+      }
+    }, days.map(function (d, i) {
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        key: d.key,
+        style: {
+          flex: 1,
+          minWidth: 106,
+          borderRight: i < 6 ? "1px solid ".concat(token.colorBorderSecondary) : 'none',
+          background: d.isWeekend ? token.colorFillQuaternary : token.colorBgContainer
+        }
+      }, /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          textAlign: 'center',
+          padding: '8px 4px',
+          background: d.isToday ? token.colorPrimary : token.colorFillSecondary,
+          color: d.isToday ? '#fff' : token.colorText,
+          borderBottom: "1px solid ".concat(token.colorBorderSecondary)
+        }
+      }, /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          fontSize: 10.5,
+          textTransform: 'uppercase',
+          letterSpacing: 0.6,
+          opacity: 0.85
+        }
+      }, d.dayName), /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          fontSize: 17,
+          fontWeight: 700,
+          lineHeight: 1.15
+        }
+      }, d.dayNum), /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          fontSize: 10.5,
+          opacity: 0.8
+        }
+      }, d.mon)), /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          textAlign: 'center',
+          padding: '4px 0',
+          fontSize: 12,
+          fontWeight: 700,
+          color: d.minutes > 0 ? token.colorPrimary : token.colorTextQuaternary,
+          borderBottom: "1px dashed ".concat(token.colorBorderSecondary)
+        }
+      }, d.minutes > 0 ? fmtHM(d.minutes) : '—'), /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          minHeight: 78,
+          padding: '6px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 5
+        }
+      }, d.entries.map(function (e) {
+        return /*#__PURE__*/_react["default"].createElement("div", {
+          key: e.id,
+          style: {
+            background: token.colorPrimaryBg,
+            border: "1px solid ".concat(token.colorPrimaryBorder),
+            borderRadius: 7,
+            padding: '4px 7px',
+            fontSize: 11.5
+          }
+        }, /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            fontWeight: 600,
+            display: 'flex',
+            justifyContent: 'space-between',
+            gap: 4
+          }
+        }, /*#__PURE__*/_react["default"].createElement("span", null, fmtTime(parseDT(e.date_start))), /*#__PURE__*/_react["default"].createElement("span", {
+          style: {
+            color: token.colorPrimary
+          }
+        }, fmtHM(entryMin(e)))), /*#__PURE__*/_react["default"].createElement("div", {
+          style: {
+            color: token.colorTextSecondary,
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+          }
+        }, e.project && e.project !== 'null' ? e.project : 'No project'));
+      }), d.entries.length === 0 && /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          textAlign: 'center',
+          color: token.colorTextQuaternary,
+          fontSize: 11,
+          paddingTop: 6
+        }
+      }, "\u2014")));
+    }))), leaveReq.available && leaveReq.requests.length > 0 && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        marginTop: 22
+      }
+    }, /*#__PURE__*/_react["default"].createElement(Text, {
+      strong: true,
+      style: {
+        display: 'block',
+        marginBottom: 8
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_icons.CoffeeOutlined, {
+      style: {
+        marginRight: 6
+      }
+    }), "Leave in this period (".concat(leaveReq.requests.length, ")")), /*#__PURE__*/_react["default"].createElement(_antd.Table, {
+      rowKey: "id",
+      size: "small",
+      pagination: false,
+      scroll: {
+        x: 'max-content'
+      },
+      dataSource: leaveReq.requests,
+      columns: [{
+        title: 'Leave Type',
+        key: 'type',
+        render: function render(_, r) {
+          return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+            style: {
+              fontWeight: 600
+            }
+          }, r.leave_type || 'Leave'), r.details && String(r.details).trim() ? /*#__PURE__*/_react["default"].createElement(Text, {
+            type: "secondary",
+            style: {
+              fontSize: 12
+            }
+          }, String(r.details).trim()) : null);
+        }
+      }, {
+        title: 'Requested',
+        key: 'range',
+        render: function render(_, r) {
+          return r.date_start === r.date_end ? fmtShortDate(r.date_start) : "".concat(fmtShortDate(r.date_start), " \u2013 ").concat(fmtShortDate(r.date_end));
+        }
+      }, {
+        title: 'Days in this period',
+        key: 'days',
+        render: function render(_, r) {
+          var days = Array.isArray(r.days) ? r.days : [];
+          if (!days.length) return /*#__PURE__*/_react["default"].createElement(Text, {
+            type: "secondary"
+          }, "\u2014");
+          return /*#__PURE__*/_react["default"].createElement("div", {
+            style: {
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: 6
+            }
+          }, days.map(function (d) {
+            return /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+              key: "".concat(r.id, "-").concat(d.date),
+              color: isFullDayLeave(d.type) ? 'volcano' : 'gold',
+              icon: /*#__PURE__*/_react["default"].createElement(_icons.CalendarOutlined, null),
+              style: {
+                margin: 0,
+                borderRadius: 12,
+                padding: '1px 10px'
+              }
+            }, /*#__PURE__*/_react["default"].createElement("b", null, fmtShortDate(d.date)), ' · ', d.type);
+          }));
+        }
+      }, {
+        title: 'Total',
+        key: 'total',
+        align: 'center',
+        render: function render(_, r) {
+          var t = Number(r.days_total) || 0;
+          return t ? "".concat(t, " day").concat(t === 1 ? '' : 's') : /*#__PURE__*/_react["default"].createElement(Text, {
+            type: "secondary"
+          }, "\u2014");
+        }
+      }, {
+        title: 'Status',
+        key: 'status',
+        render: function render(_, r) {
+          return /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+            color: LEAVE_STATUS_COLORS[r.status] || 'default',
+            style: {
+              margin: 0
+            }
+          }, r.status);
+        }
+      }]
+    })), /*#__PURE__*/_react["default"].createElement(Text, {
+      strong: true,
+      style: {
+        display: 'block',
+        margin: '20px 0 8px'
+      }
+    }, "All entries (".concat(entryCount, ")")), /*#__PURE__*/_react["default"].createElement(_antd.Table, {
+      rowKey: "id",
+      size: "small",
+      dataSource: cal.entries,
+      pagination: false,
+      locale: {
+        emptyText: /*#__PURE__*/_react["default"].createElement(_antd.Empty, {
+          image: _antd.Empty.PRESENTED_IMAGE_SIMPLE,
+          description: "No time entries"
+        })
+      },
+      columns: [{
+        title: 'Start',
+        key: 'start',
+        render: function render(_, e) {
+          var d = parseDT(e.date_start);
+          return d ? "".concat(d.toLocaleDateString(), " ").concat(fmtTime(d)) : '-';
+        }
+      }, {
+        title: 'End',
+        key: 'end',
+        render: function render(_, e) {
+          var d = parseDT(e.date_end);
+          return d ? "".concat(d.toLocaleDateString(), " ").concat(fmtTime(d)) : '-';
+        }
+      }, {
+        title: 'Duration',
+        key: 'dur',
+        render: function render(_, e) {
+          return /*#__PURE__*/_react["default"].createElement(_antd.Tag, {
+            color: "blue",
+            style: {
+              margin: 0
+            }
+          }, fmtHM(entryMin(e)));
+        }
+      }, {
+        title: 'Project',
+        key: 'project',
+        render: function render(_, e) {
+          return e.project && e.project !== 'null' ? e.project : /*#__PURE__*/_react["default"].createElement(Text, {
+            type: "secondary"
+          }, "No project");
+        }
+      }, {
+        title: 'Details',
+        dataIndex: 'details',
+        key: 'details',
+        ellipsis: true,
+        render: function render(t) {
+          return t || /*#__PURE__*/_react["default"].createElement(Text, {
+            type: "secondary"
+          }, "\u2014");
+        }
+      }].concat(_toConsumableArray(canDelete ? [{
+        title: '',
+        key: 'del',
+        width: 50,
+        render: function render(_, e) {
+          return /*#__PURE__*/_react["default"].createElement(_antd.Popconfirm, {
+            title: "Delete this entry?",
+            onConfirm: function onConfirm() {
+              return deleteEntry(e.id);
+            },
+            okText: "Delete",
+            okButtonProps: {
+              danger: true
+            }
+          }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+            size: "small",
+            type: "text",
+            danger: true,
+            icon: /*#__PURE__*/_react["default"].createElement(_icons.DeleteOutlined, null)
+          }));
+        }
+      }] : []))
+    }), tsLogs.length > 0 && /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        marginTop: 24
+      }
+    }, /*#__PURE__*/_react["default"].createElement(Text, {
+      strong: true,
+      style: {
+        display: 'block',
+        marginBottom: 12
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_icons.HistoryOutlined, {
+      style: {
+        marginRight: 6
+      }
+    }), "Approval Log"), /*#__PURE__*/_react["default"].createElement(_antd.Timeline, {
+      items: tsLogs.map(function (l, i) {
+        return {
+          color: l.status_to === 'Approved' ? 'green' : l.status_to === 'Rejected' ? 'red' : 'blue',
+          key: i,
+          children: /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+            style: {
+              fontWeight: 600
+            }
+          }, "".concat(l.status_from || '', " \u2192 ").concat(l.status_to || '')), /*#__PURE__*/_react["default"].createElement("div", {
+            style: {
+              color: token.colorTextSecondary,
+              fontSize: 12
+            }
+          }, l.time), l.note && l.note.trim() ? /*#__PURE__*/_react["default"].createElement("div", {
+            style: {
+              marginTop: 2
+            }
+          }, l.note.trim()) : null)
+        };
+      })
+    })));
+  }; // ---- top-level ----------------------------------------------------------
+
+
+  if (view === 'grid' && current) {
+    var canSubmit = editable && current.status !== 'Submitted';
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 8
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      style: {
+        borderRadius: 14
+      },
+      title: /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+        wrap: true
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.ArrowLeftOutlined, null),
+        onClick: backToList
+      }, "Back"), /*#__PURE__*/_react["default"].createElement(Title, {
+        level: 5,
+        style: {
+          margin: 0
+        }
+      }, "".concat(fmtDate(current.date_start), " \u2013 ").concat(fmtDate(current.date_end))), statusTag(current.status)),
+      extra: /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+        wrap: true
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.DownloadOutlined, null),
+        onClick: download
+      }, "Download"), editable && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.SaveOutlined, null),
+        loading: saving,
+        onClick: function onClick() {
+          return persist('updateData');
+        }
+      }, "Save"), canSubmit && /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        type: "primary",
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+        loading: saving,
+        onClick: function onClick() {
+          return persist('updateAllData');
+        }
+      }, "Submit"))
+    }, renderGrid()));
+  }
+
+  if (view === 'calendar' && current) {
+    var emp = cal && cal.employee || {};
+    var ts = cal && cal.timesheet || {};
+    var isReport = current.isReport;
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        padding: 8
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+      style: {
+        borderRadius: 14
+      },
+      styles: {
+        header: {
+          paddingTop: 12,
+          paddingBottom: 12
+        }
+      },
+      title: /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+        wrap: true,
+        size: "middle"
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.ArrowLeftOutlined, null),
+        onClick: backToList
+      }, "Back"), /*#__PURE__*/_react["default"].createElement(_antd.Avatar, {
+        size: 40,
+        src: emp.image,
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.UserOutlined, null)
+      }), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8
+        }
+      }, /*#__PURE__*/_react["default"].createElement(Title, {
+        level: 5,
+        style: {
+          margin: 0
+        }
+      }, emp.name || 'My Timesheet'), statusTag(ts.status || current.status)), /*#__PURE__*/_react["default"].createElement(Text, {
+        type: "secondary",
+        style: {
+          fontSize: 12.5,
+          fontWeight: 400
+        }
+      }, "".concat(fmtDate(current.date_start), " \u2013 ").concat(fmtDate(current.date_end))))),
+      extra: isReport ? /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+        wrap: true
+      }, /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        type: "primary",
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.CheckCircleOutlined, null),
+        loading: busyId === current.id,
+        onClick: function onClick() {
+          return changeStatus(current.id, 'Approved', backToList);
+        }
+      }, "Approve"), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+        danger: true,
+        icon: /*#__PURE__*/_react["default"].createElement(_icons.CloseCircleOutlined, null),
+        loading: busyId === current.id,
+        onClick: function onClick() {
+          return setRejectModal({
+            id: current.id,
+            note: ''
+          });
+        }
+      }, "Reject")) : null
+    }, renderCalendar()), /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+      title: "Reject Timesheet",
+      open: !!rejectModal,
+      okText: "Reject",
+      okButtonProps: {
+        danger: true
+      },
+      confirmLoading: busyId === (rejectModal && rejectModal.id),
+      onOk: function onOk() {
+        var rm = rejectModal;
+        setRejectModal(null);
+        changeStatus(rm.id, 'Rejected', backToList, rm.note);
+      },
+      onCancel: function onCancel() {
+        return setRejectModal(null);
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        marginBottom: 6,
+        color: token.colorTextSecondary
+      }
+    }, "Note (optional)"), /*#__PURE__*/_react["default"].createElement(_antd.Input.TextArea, {
+      rows: 3,
+      value: rejectModal ? rejectModal.note : '',
+      onChange: function onChange(e) {
+        return setRejectModal(function (m) {
+          return _objectSpread({}, m, {
+            note: e.target.value
+          });
+        });
+      },
+      placeholder: "Add a note explaining why this timesheet is rejected\u2026"
+    })));
+  }
+
+  var segOptions = [{
+    label: 'All My Timesheets',
+    value: 'All'
+  }, {
+    label: 'Approved',
+    value: 'Approved'
+  }, {
+    label: 'Pending',
+    value: 'Pending'
+  }, {
+    label: 'Rejected',
+    value: 'Rejected'
+  }].concat(_toConsumableArray(isManager ? [{
+    label: 'Direct Reports - Time Sheets',
+    value: 'Reports'
+  }] : []));
+  var reportEmployees = Array.from(new Set((reportRows || []).map(function (r) {
+    return r.employee;
+  }).filter(Boolean))).sort();
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      padding: 8
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Card, {
+    style: {
+      borderRadius: 14
+    },
+    styles: {
+      body: {
+        paddingTop: 16
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+    style: {
+      width: '100%',
+      justifyContent: 'space-between',
+      marginBottom: 16
+    },
+    wrap: true
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      overflowX: 'auto'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_antd.Segmented, {
+    options: segOptions,
+    value: tab,
+    onChange: function onChange(t) {
+      setSelectedReportIds([]);
+      setTab(t);
+    }
+  })), /*#__PURE__*/_react["default"].createElement(_antd.Space, {
+    wrap: true
+  }, tab === 'Reports' && /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    allowClear: true,
+    showSearch: true,
+    placeholder: "All employees",
+    style: {
+      minWidth: 200
+    },
+    value: reportEmp || undefined,
+    onChange: function onChange(v) {
+      return setReportEmp(v || null);
+    },
+    options: reportEmployees.map(function (e) {
+      return {
+        value: e,
+        label: e
+      };
+    })
+  }), /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_icons.ReloadOutlined, null),
+    onClick: reloadList
+  }, "Refresh"))), renderList()), /*#__PURE__*/_react["default"].createElement(_antd.Modal, {
+    title: "Change Timesheet Status",
+    open: !!statusModal,
+    onCancel: function onCancel() {
+      return setStatusModal(null);
+    },
+    onOk: function onOk() {
+      return changeStatus(statusModal.id, statusModal.value, function () {
+        setStatusModal(null);
+        loadReports();
+      }, statusModal && statusModal.note);
+    },
+    confirmLoading: busyId === (statusModal && statusModal.id),
+    okText: "Change Status"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 8
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary"
+  }, "Timesheet Status")), /*#__PURE__*/_react["default"].createElement(_antd.Select, {
+    style: {
+      width: '100%'
+    },
+    value: statusModal && statusModal.value,
+    onChange: function onChange(v) {
+      return setStatusModal(function (m) {
+        return _objectSpread({}, m, {
+          value: v
+        });
+      });
+    },
+    options: ['Approved', 'Pending', 'Rejected', 'Submitted'].map(function (s) {
+      return {
+        value: s,
+        label: s
+      };
+    })
+  }), statusModal && statusModal.value === 'Rejected' && /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginTop: 14
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      marginBottom: 6
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Text, {
+    type: "secondary"
+  }, "Note (optional)")), /*#__PURE__*/_react["default"].createElement(_antd.Input.TextArea, {
+    rows: 3,
+    value: statusModal.note || '',
+    onChange: function onChange(e) {
+      return setStatusModal(function (m) {
+        return _objectSpread({}, m, {
+          note: e.target.value
+        });
+      });
+    },
+    placeholder: "Add a note explaining why this timesheet is rejected\u2026"
+  }))));
+}
+
+},{"@ant-design/icons":"@ant-design/icons","antd":"antd","react":"react"}],26:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = UpdateAvailableBanner;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _antd = require("antd");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var DISMISS_KEY = 'icehrm-update-banner-dismissed';
+/**
+ * "A newer IceHRM is available" / "Move up to IceHRM Pro" banner.
+ *
+ * The payload is built server-side by Classes\UpdateAvailability and is null unless the
+ * signed-in user is an administrator AND there is something to offer — so there is no
+ * version comparison, no licence check, and no notion of who may see this, here.
+ *
+ * Two shapes arrive, told apart by `kind`:
+ *
+ *   'update'      a newer release of the edition already installed (Pro or open source)
+ *   'pro-upgrade' an open-source installation whose owner is licensed for Pro
+ *
+ * Dismissal is per browser session and keyed on kind + version, so it comes back when a
+ * newer release appears and after the next sign-in, but does not nag on every dashboard
+ * visit in between.
+ *
+ * The Update link is single-use in spirit: it carries a signature that expires two hours
+ * after the page was rendered. Opening it in a new tab keeps the admin's IceHRM session
+ * intact, which matters because the updater deliberately runs its own separate session.
+ */
+
+function UpdateAvailableBanner(_ref) {
+  var updateAvailable = _ref.updateAvailable;
+  var isProUpgrade = !!updateAvailable && updateAvailable.kind === 'pro-upgrade';
+  var dismissToken = updateAvailable ? "".concat(updateAvailable.kind || 'update', ":").concat(updateAvailable.latestVersion) : null;
+
+  var _React$useState = _react["default"].useState(function () {
+    if (!dismissToken) return false;
+
+    try {
+      return window.sessionStorage.getItem(DISMISS_KEY) === dismissToken;
+    } catch (e) {
+      return false;
+    }
+  }),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      dismissed = _React$useState2[0],
+      setDismissed = _React$useState2[1];
+
+  if (!updateAvailable || dismissed) return null;
+  var currentVersion = updateAvailable.currentVersion,
+      latestVersion = updateAvailable.latestVersion,
+      changelogUrl = updateAvailable.changelogUrl,
+      updaterUrl = updateAvailable.updaterUrl,
+      downloadsUrl = updateAvailable.downloadsUrl;
+
+  var dismiss = function dismiss() {
+    try {
+      window.sessionStorage.setItem(DISMISS_KEY, dismissToken);
+    } catch (e) {// Private browsing or a full quota: dismissing for this render is enough.
+    }
+
+    setDismissed(true);
+  };
+
+  var heading = isProUpgrade ? 'IceHRM Pro is included in your subscription' : "IceHRM ".concat(latestVersion, " is available");
+  var detail = isProUpgrade ? "You are running the open source edition ".concat(currentVersion, ". Your subscription covers ") + "IceHRM Pro ".concat(latestVersion, " \u2014 Leave Management, Recruitment, Expenses, Performance, ") + 'Payroll, Insights and more. Upgrading keeps your settings, uploads and data, and the ' + 'previous version is backed up so it can be undone.' : "You are running ".concat(currentVersion, ". Updating replaces the program files; your ") + 'settings, uploads and data are kept, and the previous version is backed up ' + 'so the update can be undone.';
+  return /*#__PURE__*/_react["default"].createElement(_antd.Alert, {
+    type: isProUpgrade ? 'success' : 'info',
+    banner: true,
+    showIcon: true,
+    closable: true,
+    onClose: dismiss,
+    style: {
+      padding: '18px 28px',
+      alignItems: 'center',
+      marginBottom: 16
+    },
+    message: /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        lineHeight: 1.35
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 17,
+        fontWeight: 700,
+        marginBottom: 3
+      }
+    }, heading), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        fontSize: 14,
+        opacity: 0.9
+      }
+    }, detail)),
+    action: /*#__PURE__*/_react["default"].createElement(_antd.Space, null, changelogUrl ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "large",
+      href: changelogUrl,
+      target: "_blank",
+      rel: "noopener noreferrer"
+    }, "What's New") : null, isProUpgrade && downloadsUrl ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "large",
+      href: downloadsUrl,
+      target: "_blank",
+      rel: "noopener noreferrer"
+    }, "Get Download Link") : null, updaterUrl ? /*#__PURE__*/_react["default"].createElement(_antd.Button, {
+      size: "large",
+      type: "primary",
+      href: updaterUrl,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      style: {
+        fontWeight: 600
+      }
+    }, isProUpgrade ? 'Upgrade to Pro' : 'Update') : null)
+  });
+}
+
+},{"antd":"antd","react":"react"}],27:[function(require,module,exports){
+"use strict";
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactDom = _interopRequireDefault(require("react-dom"));
+
+var _antd = require("antd");
+
+var _AppShell = _interopRequireDefault(require("./AppShell"));
+
+var _theme = require("./theme");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * App shell entry (SPA migration Phase 1).
+ * Reads bootstrap config injected by core/spa-shell.php, fetches /appshell/bootstrap
+ * with the JWT, and renders the persistent shell.
+ */
+function readConfig() {
+  var el = document.getElementById('app-shell-config');
+  if (!el) return {};
+
+  try {
+    return JSON.parse(el.textContent || '{}');
+  } catch (e) {
+    return {};
+  }
+}
+
+var COLOR_MODE_KEY = 'shell-color-mode';
+
+function readColorMode() {
+  try {
+    var saved = localStorage.getItem(COLOR_MODE_KEY);
+    if (saved === 'dark' || saved === 'light') return saved;
+  } catch (e) {}
+  /* ignore */
+  // Fall back to the OS preference the first time.
+
+
+  try {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+  } catch (e) {
+    /* ignore */
+  }
+
+  return 'light';
+} // Keep the document background (visible during loads / outside React) in sync
+// with the active mode, so there is no light flash in dark mode.
+
+
+function applyBodyBackground(mode) {
+  var bg = mode === 'dark' ? _theme.MUI_DARK.bg : _theme.MUI.bg;
+  var fg = mode === 'dark' ? _theme.MUI_DARK.text : _theme.MUI.text;
+
+  try {
+    document.documentElement.style.background = bg;
+    document.body.style.background = bg;
+    document.body.style.color = fg;
+    document.body.setAttribute('data-color-mode', mode); // Exposed so legacy adapter modals (rendered in their own React roots,
+    // outside this ConfigProvider) can theme themselves to match — see
+    // ReactModalAdapterBase.shellThemeWrap().
+
+    window.__shellColorMode = mode;
+  } catch (e) {
+    /* ignore */
+  }
+} // A tiny stateful wrapper so the in-app toggle can re-theme the whole shell.
+
+
+function ThemedShell(_ref) {
+  var bootstrap = _ref.bootstrap,
+      config = _ref.config;
+
+  var _React$useState = _react["default"].useState(readColorMode),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      mode = _React$useState2[0],
+      setMode = _React$useState2[1];
+
+  _react["default"].useEffect(function () {
+    applyBodyBackground(mode);
+  }, [mode]);
+
+  var toggleColorMode = _react["default"].useCallback(function () {
+    setMode(function (prev) {
+      var next = prev === 'dark' ? 'light' : 'dark';
+
+      try {
+        localStorage.setItem(COLOR_MODE_KEY, next);
+      } catch (e) {
+        /* ignore */
+      }
+
+      return next;
+    });
+  }, []);
+
+  return _react["default"].createElement(_antd.ConfigProvider, {
+    theme: (0, _theme.buildTheme)(mode)
+  }, _react["default"].createElement(_AppShell["default"], {
+    bootstrap: bootstrap,
+    config: config,
+    colorMode: mode,
+    onToggleColorMode: toggleColorMode
+  }));
+}
+
+function renderRaw(children) {
+  _reactDom["default"].render(_react["default"].createElement(_antd.ConfigProvider, {
+    theme: (0, _theme.buildTheme)(readColorMode())
+  }, children), document.getElementById('app-shell-root'));
+} // NOTE: intentionally using Promise chains (not async/await) so the bundle does
+// not depend on regeneratorRuntime, which is not provided by the vendor bundles.
+
+
+function boot() {
+  applyBodyBackground(readColorMode());
+  var config = readConfig();
+  fetch("".concat(config.restApiBase, "appshell/bootstrap"), {
+    headers: {
+      Authorization: "Bearer ".concat(config.token)
+    },
+    credentials: 'same-origin'
+  }).then(function (res) {
+    if (!res.ok) {
+      throw new Error("bootstrap failed: ".concat(res.status));
+    }
+
+    return res.json();
+  }).then(function (bootstrap) {
+    _reactDom["default"].render(_react["default"].createElement(ThemedShell, {
+      bootstrap: bootstrap,
+      config: config
+    }), document.getElementById('app-shell-root'));
+  })["catch"](function (err) {
+    // eslint-disable-next-line no-console
+    console.error('[app-shell] boot failed', err);
+    renderRaw(_react["default"].createElement('div', {
+      style: {
+        padding: 24
+      }
+    }, "Failed to load the app shell: ".concat(err.message)));
+
+    try {
+      _antd.message.error('Failed to load the app shell');
+    } catch (e) {
+      /* noop */
+    }
+  });
+}
+
+boot();
+
+},{"./AppShell":4,"./theme":29,"antd":"antd","react":"react","react-dom":"react-dom"}],28:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.resolveLegacyRoute = resolveLegacyRoute;
+exports.resolveLegacyTab = resolveLegacyTab;
+exports.routeFromLegacyLink = routeFromLegacyLink;
+exports.navigateToTab = navigateToTab;
+exports.LEGACY_ROUTE_ALIASES = exports.LEGACY_TAB_ALIASES = void 0;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+// Legacy (pre-SPA) links — "…?g=modules&n=leaves#tabSubEmployeeLeaveAll" — still
+// come out of the backend in notification actions and system to-dos. These
+// helpers resolve one to an in-app route plus the tab its anchor names.
+// Legacy tab anchors → native SPA tab keys, where they differ. Anchors that
+// already match a SPA tab key pass through.
+var LEGACY_TAB_ALIASES = {
+  // Leave module: the SPA rebuild shortened the tab keys.
+  tabSubEmployeeLeaveAll: 'tabSubLeaveAll',
+  // "applied for a leave" / pending-leave to-do → Leave Requests
+  tabEmployeeLeaveApproval: 'tabLeaveApproval',
+  // "assigned … for approval" → Approval Requests
+  tabEmployeeLeaveApproved: 'tabMyLeaveApproved',
+  // "leave approved" → Approved Leave
+  tabSubEmployeeLeaveCancel: 'tabSubLeaveCancel',
+  // cancellation request → Cancellation Requests
+  // Time sheets: one tab in the SPA.
+  tabSubEmployeeTimeSheetAll: 'tabTimeSheets',
+  tabEmployeeTimeSheetApproved: 'tabTimeSheets',
+  // Renamed approval tabs.
+  tabEmployeeTravelRecordApproval: 'tabEmployeeTravelRecordApprove',
+  tabEmployeeExpenseApproval: 'tabEmployeeExpenseApprove',
+  // An overtime link was sent without the "tab" prefix.
+  SubordinateEmployeeOvertime: 'tabSubordinateEmployeeOvertime'
+}; // Legacy links whose page moved to another module ("g::n#tab" → [g, n, tab]), so
+// links in notification emails already sent still land in the right place.
+
+exports.LEGACY_TAB_ALIASES = LEGACY_TAB_ALIASES;
+var LEGACY_ROUTE_ALIASES = {
+  // Managers review their reports' expenses in Expenses (admin) > Employee Expenses.
+  'extension::expenses|user#tabSubordinateEmployeeExpense': ['extension', 'expenses|admin', 'tabEmployeeExpense'],
+  // Coordinated performance reviews are in Performance (admin).
+  'modules::performance#tabCoordinatedPerformanceReview': ['admin', 'performance', 'tabPerformanceReview']
+};
+/** { g, n, tab } for a legacy route, following moves and tab renames. */
+
+exports.LEGACY_ROUTE_ALIASES = LEGACY_ROUTE_ALIASES;
+
+function resolveLegacyRoute(g, n, tab) {
+  var moved = LEGACY_ROUTE_ALIASES["".concat(g, "::").concat(n, "#").concat(tab || '')];
+  if (moved) return {
+    g: moved[0],
+    n: moved[1],
+    tab: moved[2]
+  };
+  return {
+    g: g,
+    n: n,
+    tab: resolveLegacyTab(tab)
+  };
+}
+
+function resolveLegacyTab(tab) {
+  if (!tab) return null;
+  return LEGACY_TAB_ALIASES[tab] || tab;
+} // { g, n, tab, sp } for a legacy module link, or null when it isn't one. `sp` is
+// the parsed query for callers that need more than the route.
+
+
+function routeFromLegacyLink(link) {
+  try {
+    var hashIdx = link.indexOf('#');
+    var frag = hashIdx >= 0 ? link.slice(hashIdx + 1) : null;
+    var noFrag = hashIdx >= 0 ? link.slice(0, hashIdx) : link; // May be a full URL or just a query string; parse the part after '?' so the
+    // first key isn't swallowed by the scheme/path.
+
+    var qs = noFrag.indexOf('?') >= 0 ? noFrag.split('?')[1] : noFrag;
+    var sp = new URLSearchParams(qs);
+    var g = sp.get('g');
+    var n = sp.get('n');
+    return g && n ? _objectSpread({}, resolveLegacyRoute(g, n, frag), {
+      sp: sp
+    }) : null;
+  } catch (e) {
+    return null;
+  }
+} // Navigate to a module, landing on `tab` when it has one. NativeModuleHost
+// consumes the start-tab hint at boot; if that module is already showing, it
+// won't re-boot, so switch its tab directly.
+
+
+function navigateToTab(onNavigate, g, n, tab) {
+  if (tab) {
+    try {
+      window.__iceShellStartTab = tab;
+      var cur = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+
+      if (cur === "".concat(g, "::").concat(n) && window.iceShellSwitchModuleTab) {
+        window.iceShellSwitchModuleTab(tab);
+      }
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
+  onNavigate(g, n);
+}
+
+},{}],29:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.buildTheme = buildTheme;
+exports.MUI_THEME = exports.MUI_SHADOW_HOVER = exports.MUI_SHADOW = exports.SIDEBAR_BG = exports.MUI_DARK = exports.MUI = void 0;
+
+var _antd = require("antd");
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var MUI = {
+  primary: '#1976d2',
+  primaryDark: '#1565c0',
+  success: '#2e7d32',
+  warning: '#ed6c02',
+  error: '#d32f2f',
+  info: '#0288d1',
+  bg: '#f4f6f8',
+  paper: '#ffffff',
+  text: 'rgba(0, 0, 0, 0.87)',
+  textSecondary: 'rgba(0, 0, 0, 0.6)',
+  divider: 'rgba(0, 0, 0, 0.12)'
+}; // Dark-mode surface palette (Material dark: near-black layout, raised papers).
+
+exports.MUI = MUI;
+var MUI_DARK = {
+  bg: '#0f141b',
+  // app/layout background (behind cards)
+  paper: '#1a212b',
+  // card / container surface
+  elevated: '#222b36',
+  // popovers, dropdowns, modals
+  text: 'rgba(255, 255, 255, 0.92)',
+  textSecondary: 'rgba(255, 255, 255, 0.78)',
+  border: '#2a3441'
+}; // The sidebar uses a fixed dark navy in BOTH modes (it reads as intentional
+// chrome rather than following the body) — exported so the shell can reuse it.
+
+exports.MUI_DARK = MUI_DARK;
+var SIDEBAR_BG = '#1a2233'; // Material elevation-1 style card shadow.
+
+exports.SIDEBAR_BG = SIDEBAR_BG;
+var MUI_SHADOW = '0 2px 1px -1px rgba(0,0,0,0.08), 0 1px 3px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.06)'; // Slightly stronger (hover / elevation-3).
+
+exports.MUI_SHADOW = MUI_SHADOW;
+var MUI_SHADOW_HOVER = '0 3px 5px -1px rgba(0,0,0,0.12), 0 5px 8px 0 rgba(0,0,0,0.08), 0 1px 14px 0 rgba(0,0,0,0.06)';
+exports.MUI_SHADOW_HOVER = MUI_SHADOW_HOVER;
+var FONT = '"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif'; // Build the antd ConfigProvider theme for a colour mode ('light' | 'dark').
+
+function buildTheme(mode) {
+  var dark = mode === 'dark';
+  return {
+    algorithm: dark ? _antd.theme.darkAlgorithm : _antd.theme.defaultAlgorithm,
+    token: _objectSpread({
+      colorPrimary: MUI.primary,
+      colorInfo: MUI.primary,
+      colorSuccess: MUI.success
+    }, dark ? {} : {
+      colorSuccessBg: '#edf7ed',
+      colorSuccessBorder: '#a5d6a7'
+    }, {
+      colorWarning: MUI.warning,
+      colorError: MUI.error,
+      colorLink: MUI.primary,
+      fontFamily: FONT,
+      fontSize: 14,
+      borderRadius: 8,
+      wireframe: false
+    }, dark ? {
+      colorBgLayout: MUI_DARK.bg,
+      colorBgContainer: MUI_DARK.paper,
+      colorBgElevated: MUI_DARK.elevated,
+      colorText: MUI_DARK.text,
+      colorTextHeading: MUI_DARK.text,
+      colorTextSecondary: MUI_DARK.textSecondary,
+      colorBorderSecondary: MUI_DARK.border
+    } : {
+      colorBgLayout: MUI.bg,
+      colorText: MUI.text,
+      colorTextHeading: MUI.text,
+      colorTextSecondary: MUI.textSecondary,
+      colorBorderSecondary: '#eceff1'
+    }),
+    components: {
+      Card: {
+        borderRadiusLG: 12,
+        paddingLG: 20
+      },
+      Button: {
+        fontWeight: 500,
+        primaryShadow: 'none',
+        defaultShadow: 'none',
+        controlHeight: 36
+      },
+      Table: dark ? {
+        headerBg: '#222b36',
+        headerSplitColor: 'transparent',
+        rowHoverBg: '#222b36',
+        cellPaddingBlock: 14
+      } : {
+        headerBg: '#f7f9fb',
+        headerColor: MUI.textSecondary,
+        headerSplitColor: 'transparent',
+        borderColor: '#eceff1',
+        rowHoverBg: '#f3f6f9',
+        cellPaddingBlock: 14
+      },
+      Tabs: {
+        itemSelectedColor: MUI.primary,
+        inkBarColor: MUI.primary,
+        titleFontSize: 14,
+        horizontalItemGutter: 28
+      },
+      Layout: {
+        headerBg: dark ? MUI_DARK.paper : '#ffffff',
+        bodyBg: dark ? MUI_DARK.bg : MUI.bg,
+        headerHeight: 64
+      },
+      Input: {
+        controlHeight: 36
+      },
+      Select: {
+        controlHeight: 36
+      },
+      // The sidebar Menu stays dark-themed in both modes.
+      Menu: {
+        darkItemBg: SIDEBAR_BG,
+        darkSubMenuItemBg: '#161d2b',
+        darkItemSelectedBg: MUI.primary,
+        darkItemHoverBg: 'rgba(255,255,255,0.08)',
+        itemBorderRadius: 8
+      }
+    }
+  };
+} // Backwards-compatible default (light) theme object.
+
+
+var MUI_THEME = buildTheme('light');
+exports.MUI_THEME = MUI_THEME;
+
+},{"antd":"antd"}]},{},[27])
+
+//# sourceMappingURL=app-shell.js.map

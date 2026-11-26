@@ -669,8 +669,8 @@ class TimesheetRestEndPoint extends RestEndPoint
      */
     private function sendStatusNotification($timesheet, $actionEmployee, $oldStatus, $newStatus)
     {
-        $dateRange = date("M d, Y", strtotime($timesheet->date_start))
-            . " to " . date("M d, Y", strtotime($timesheet->date_end));
+        $dateRange = date("j M Y", strtotime($timesheet->date_start))
+            . " to " . date("j M Y", strtotime($timesheet->date_end));
 
         if ($newStatus === 'Submitted' && $actionEmployee->id == $timesheet->employee) {
             // Notify supervisor
@@ -679,22 +679,22 @@ class TimesheetRestEndPoint extends RestEndPoint
 
             if (!empty($timesheetEmployee->supervisor)) {
                 $notificationMsg = $actionEmployee->first_name . " " . $actionEmployee->last_name
-                    . " submitted timesheet for " . $dateRange;
+                    . " submitted a timesheet for " . $dateRange . ".";
                 BaseService::getInstance()->notificationManager->addNotification(
                     $timesheetEmployee->supervisor,
                     $notificationMsg,
-                    '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabSubEmployeeTimeSheetAll"}',
+                    '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabTimeSheets"}',
                     IceConstants::NOTIFICATION_TIMESHEET
                 );
             }
         } elseif ($newStatus === 'Approved' || $newStatus === 'Rejected') {
             // Notify timesheet owner
             $notificationMsg = $actionEmployee->first_name . " " . $actionEmployee->last_name
-                . " " . strtolower($newStatus) . " your timesheet for " . $dateRange;
+                . " " . strtolower($newStatus) . " your timesheet for " . $dateRange . ".";
             BaseService::getInstance()->notificationManager->addNotification(
                 $timesheet->employee,
                 $notificationMsg,
-                '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabEmployeeTimeSheetApproved"}',
+                '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabTimeSheets"}',
                 IceConstants::NOTIFICATION_TIMESHEET
             );
         }

@@ -7,6 +7,7 @@ use Classes\IceResponse;
 use Classes\ModuleAccess;
 use Classes\PermissionManager;
 use Company\Common\Model\CompanyStructure;
+use Employees\Services\WorkHistoryService;
 use Metadata\Common\Model\Country;
 use Model\BaseModel;
 use Model\CustomFieldTrait;
@@ -50,8 +51,31 @@ class Employee extends BaseModel
         "confirmation_date"=>"confirmation_date",
         "supervisor"=>"supervisor_Name",
         "indirect_supervisors"=>"indirect_supervisors",
-        "department"=>"department_Name"
+        "department"=>"department_Name",
+        "name_preferred"=>"name_preferred",
+        "pronouns"=>"pronouns",
+        "employment_type"=>"employment_type",
+        "work_location"=>"work_location_Name",
+        "work_mode"=>"work_mode",
+        "weekly_hours"=>"weekly_hours",
+        "fte"=>"fte",
+        "contract_end_date"=>"contract_end_date",
+        "original_hire_date"=>"original_hire_date",
+        "cost_center"=>"cost_center_Name",
+        "last_working_day"=>"last_working_day",
+        "termination_type"=>"termination_type",
+        "termination_reason"=>"termination_reason_Name",
+        "eligible_for_rehire"=>"eligible_for_rehire",
     );
+
+    /** Lookup mapping used to show readable values in the change history. */
+    const HISTORY_MAPPING = '{"nationality":["Nationality","id","name"],'
+        .'"employment_status":["EmploymentStatus","id","name"],"job_title":["JobTitle","id","name"],'
+        .'"pay_grade":["PayGrade","id","name"],"country":["Country","code","name"],'
+        .'"province":["Province","id","name"],"department":["CompanyStructure","id","title"],'
+        .'"supervisor":["Employee","id","first_name+last_name"],'
+        .'"work_location":["WorkLocation","id","name"],"cost_center":["CostCenter","id","name"],'
+        .'"termination_reason":["TerminationReason","id","name"]}';
 
     public function getAdminAccess()
     {
@@ -111,6 +135,10 @@ class Employee extends BaseModel
             'work_email',
             'joined_date',
             'gender',
+            'name_preferred',
+            'pronouns',
+            'name_pronunciation',
+            'work_location',
             'country',
             'address1',
             'address2',
@@ -147,6 +175,10 @@ class Employee extends BaseModel
                 'approver1', 'approver2', 'approver3',
                 'job_title', 'department', 'pay_grade',
                 'employment_status', 'status', 'termination_date',
+                'employment_type', 'work_location', 'work_mode', 'weekly_hours', 'fte',
+                'contract_end_date', 'original_hire_date', 'cost_center',
+                'last_working_day', 'termination_type', 'termination_reason',
+                'eligible_for_rehire', 'regrettable',
             );
         }
         return array();
@@ -159,11 +191,7 @@ class Employee extends BaseModel
         $oldObjOrig->Load("id = ?", array($obj->id));
         $this->oldObjOrig = $oldObjOrig;
 
-        $mapping = '{"nationality":["Nationality","id","name"],'
-            .'"employment_status":["EmploymentStatus","id","name"],"job_title":["JobTitle","id","name"],'
-            .'"pay_grade":["PayGrade","id","name"],"country":["Country","code","name"],'
-            .'"province":["Province","id","name"],"department":["CompanyStructure","id","title"],'
-            .'"supervisor":["Employee","id","first_name+last_name"]}';
+        $mapping = self::HISTORY_MAPPING;
 
         $this->oldObj = BaseService::getInstance()->getElement('Employee', $obj->id, $mapping, true);
     }
@@ -179,16 +207,14 @@ class Employee extends BaseModel
         $oldObj = $this->oldObj;
         $oldObjOrig = $this->oldObjOrig;
 
-        $mapping = '{"nationality":["Nationality","id","name"],'
-            .'"employment_status":["EmploymentStatus","id","name"],"job_title":["JobTitle","id","name"],'
-            .'"pay_grade":["PayGrade","id","name"],"country":["Country","code","name"],'
-            .'"province":["Province","id","name"],"department":["CompanyStructure","id","title"],'
-            .'"supervisor":["Employee","id","first_name+last_name"]}';
+        $mapping = self::HISTORY_MAPPING;
 
         $objEnriched = BaseService::getInstance()->getElement('Employee', $obj->id, $mapping, true);
 
         foreach ($this->historyFieldsToTrack as $k => $v) {
-            if (empty($oldObjOrig->$k) && $obj->$k = '[]') {
+            // Was an assignment (`=`), which overwrote every previously empty field on
+            // the saved object with '[]' and skipped its history.
+            if (empty($oldObjOrig->$k) && (empty($obj->$k) || $obj->$k === '[]')) {
                 continue;
             }
 
@@ -248,7 +274,117 @@ class Employee extends BaseModel
         if (self::isEmployeeNumberGenerationEnabled()) {
             $obj->employee_id = self::generateEmployeeNumber();
         }
+        $timeZone = $this->requireTimeZone($obj);
+        if ($timeZone->getStatus() !== IceResponse::SUCCESS) {
+            return $timeZone;
+        }
+        return $this->normalizeNumbers($obj);
+    }
+
+    /**
+     * Every employee must have a time zone. The forms require one; a save that
+     * comes without it (an import, the REST API, an invitation) takes the time zone
+     * of the employee's department, or of the nearest parent structure that has one.
+     */
+    protected function requireTimeZone($obj)
+    {
+        $timeZone = isset($obj->timezone) ? trim((string) $obj->timezone) : '';
+        if ($timeZone === '' || $timeZone === 'NULL') {
+            $timeZone = (string) self::getStructureTimeZone(isset($obj->department) ? $obj->department : null);
+        }
+        if ($timeZone === '') {
+            return new IceResponse(IceResponse::ERROR, 'Time zone is required');
+        }
+        $obj->timezone = $timeZone;
         return new IceResponse(IceResponse::SUCCESS, $obj);
+    }
+
+    /** Time zone of a company structure, or of the nearest parent that has one. */
+    public static function getStructureTimeZone($structureId)
+    {
+        $visited = array();
+        while (!empty($structureId) && !isset($visited[$structureId]) && count($visited) < 50) {
+            $visited[$structureId] = true;
+            $structure = new CompanyStructure();
+            $structure->Load('id = ?', array($structureId));
+            if (empty($structure->id)) {
+                return null;
+            }
+            if (!empty($structure->timezone)) {
+                return $structure->timezone;
+            }
+            $structureId = $structure->parent;
+        }
+        return null;
+    }
+
+    /**
+     * Weekly hours and FTE are optional decimals. MySQL strict mode rejects '' for a
+     * DECIMAL column, so blanks become NULL and anything else must be a number.
+     */
+    protected function normalizeNumbers($obj, $savedObject = null)
+    {
+        // Optional lookups (integer foreign keys): a blank value means "not set".
+        foreach (array('work_location', 'cost_center', 'termination_reason') as $field) {
+            if (isset($obj->$field) && (trim((string) $obj->$field) === '' || $obj->$field === 'NULL')) {
+                $obj->$field = null;
+            }
+        }
+
+        $limits = array('weekly_hours' => 168, 'fte' => 1);
+        foreach ($limits as $field => $max) {
+            if (!isset($obj->$field) || $obj->$field === null || trim((string) $obj->$field) === '') {
+                $obj->$field = null;
+                continue;
+            }
+            $value = trim((string) $obj->$field);
+            if (!is_numeric($value) || (float) $value < 0 || (float) $value > $max) {
+                $label = $field === 'fte' ? 'FTE must be a number between 0 and 1' : 'Weekly hours must be a number between 0 and 168';
+                return new IceResponse(IceResponse::ERROR, $label);
+            }
+            $obj->$field = $value;
+        }
+        $this->fillFte($obj, $savedObject);
+        return new IceResponse(IceResponse::SUCCESS, $obj);
+    }
+
+    /**
+     * Work out FTE from weekly hours and "Company: Standard Weekly Hours" (40 = 1.0,
+     * 20 = 0.5), capped at 1. It is filled when FTE is blank, and recalculated when
+     * the weekly hours change while FTE was left as it was. An FTE the admin
+     * enters or changes is kept.
+     */
+    protected function fillFte($obj, $savedObject = null)
+    {
+        if ($obj->weekly_hours === null) {
+            return;
+        }
+        $hoursChanged = $savedObject !== null && !empty($savedObject->id)
+            && (float) $savedObject->weekly_hours !== (float) $obj->weekly_hours;
+        $fteUntouched = $savedObject !== null && !empty($savedObject->id)
+            && (string) $savedObject->fte === (string) $obj->fte
+            && $savedObject->fte !== null;
+        $fteMatchesOldHours = $fteUntouched
+            && $savedObject->weekly_hours !== null
+            && abs((float) $savedObject->fte - self::calculateFte($savedObject->weekly_hours)) < 0.0005;
+        if ($obj->fte !== null && !($hoursChanged && $fteMatchesOldHours)) {
+            return;
+        }
+        $fte = self::calculateFte($obj->weekly_hours);
+        if ($fte !== null) {
+            $obj->fte = number_format($fte, 3, '.', '');
+        }
+    }
+
+    /** FTE for the given weekly hours, or null when no standard work week is set. */
+    public static function calculateFte($weeklyHours)
+    {
+        $standard = (float) \Classes\SettingsManager::getInstance()
+            ->getSetting('Company: Standard Weekly Hours');
+        if ($standard <= 0 || $weeklyHours === null || $weeklyHours === '') {
+            return null;
+        }
+        return min(1, round((float) $weeklyHours / $standard, 3));
     }
 
     /** Whether "Company: Generate Employee Numbers" is turned on. */
@@ -301,6 +437,14 @@ class Employee extends BaseModel
 		$savedObject = new Employee();
 		$savedObject->Load('id = ?', [$obj->id]);
 		$obj = $this->processBasicPermissions($obj, $savedObject);
+        $timeZone = $this->requireTimeZone($obj);
+        if ($timeZone->getStatus() !== IceResponse::SUCCESS) {
+            return $timeZone;
+        }
+        $normalized = $this->normalizeNumbers($obj, $savedObject);
+        if ($normalized->getStatus() !== IceResponse::SUCCESS) {
+            return $normalized;
+        }
         $this->initHistory($obj);
         return new IceResponse(IceResponse::SUCCESS, $obj);
     }
@@ -313,12 +457,24 @@ class Employee extends BaseModel
 			$obj->employee_id = $savedObject->employee_id;
 		}
 
+		// A hire whose onboarding was cancelled stays flagged: the flag is what keeps
+		// them from being activated, so editing the offboarding details must not drop it.
+		if ($savedObject->termination_type === 'Onboarding cancelled' && $savedObject->status === 'Terminated') {
+			$obj->termination_type = $savedObject->termination_type;
+		}
+
 		return $obj;
 	}
 
     public function executePostUpdateActions($obj)
     {
+        (new WorkHistoryService())->recordChange($this->oldObjOrig, $obj);
         $this->saveHistory($obj);
+    }
+
+    public function executePostSaveActions($obj)
+    {
+        (new WorkHistoryService())->recordHire($obj);
     }
 
     public function postProcessGetData($obj)

@@ -1,0 +1,69 @@
+{
+  "key": "workforce-standard",
+  "track": "workforce",
+  "order": 1,
+  "name": "Workforce onboarding",
+  "audience": "Existing staff of a company that is starting to use IceHrm",
+  "description": "Each employee checks their profile and emergency contacts, then HR checks them, sets their manager and checks their job details. No document upload steps.",
+  "welcome_message": "We now use IceHrm to keep employee records and run HR. Please check and complete your details below. It takes about 10 minutes.",
+  "first_day_info": null,
+  "steps": [
+    {
+      "key": "welcome",
+      "type": "info",
+      "title": "Welcome to IceHrm",
+      "owner_type": "new_hire",
+      "due_offset_days": 0,
+      "phase": "day1",
+      "required": true,
+      "config": {
+        "text": "Your company now keeps employee records in IceHrm. Here you can see and update your details, request leave and more. Start by completing the steps below. When you are done, HR checks your details."
+      }
+    },
+    {
+      "key": "profile",
+      "type": "info",
+      "title": "Check your profile",
+      "owner_type": "new_hire",
+      "due_offset_days": 5,
+      "phase": "day1",
+      "required": true,
+      "config": {
+        "text": "Open Personal Details in the menu (under About You) and check your name, date of birth, contact details and address. Correct anything that is missing or out of date. Then open Emergency Contacts and add at least one person we can call in an emergency."
+      }
+    },
+    {
+      "key": "hr_profile",
+      "type": "task",
+      "title": "Check the employee's profile",
+      "instructions": "Check that personal details, contact details and emergency contacts are complete.",
+      "owner_type": "hr",
+      "due_offset_days": 7,
+      "phase": "week1",
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "manager",
+      "type": "set_manager",
+      "title": "Set the manager",
+      "instructions": "Choose who this employee reports to. You can choose someone who is still being onboarded once they have accepted their invitation.",
+      "owner_type": "hr",
+      "due_offset_days": 7,
+      "phase": "week1",
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "job",
+      "type": "task",
+      "title": "Check job details",
+      "instructions": "Check the job title, department, employment type and joined date in the employee's profile.",
+      "owner_type": "hr",
+      "due_offset_days": 7,
+      "phase": "week1",
+      "required": true,
+      "config": {}
+    }
+  ]
+}

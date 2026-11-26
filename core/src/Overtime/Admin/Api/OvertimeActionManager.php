@@ -20,7 +20,7 @@ class OvertimeActionManager extends ApproveAdminActionManager
 
     public function getItemName()
     {
-        return "Overtime Request";
+        return "overtime request";
     }
 
     public function getModuleName()
