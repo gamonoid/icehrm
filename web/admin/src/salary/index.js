@@ -2,12 +2,14 @@ import {
   SalaryComponentTypeAdapter,
   SalaryComponentAdapter,
   EmployeeSalaryAdapter,
+  EmployeeSalaryHistoryAdapter,
 } from './lib';
 import IceDataPipe from '../../../api/IceDataPipe';
 
 window.SalaryComponentTypeAdapter = SalaryComponentTypeAdapter;
 window.SalaryComponentAdapter = SalaryComponentAdapter;
 window.EmployeeSalaryAdapter = EmployeeSalaryAdapter;
+window.EmployeeSalaryHistoryAdapter = EmployeeSalaryHistoryAdapter;
 
 // Native (SPA shell) init — replicates core/admin/salary/index.php so the module
 // mounts without the legacy page. See NativeModuleRegistry (admin/salary).
@@ -31,6 +33,15 @@ function init(data) {
   modJsList.tabEmployeeSalary.setRemoteTable(true);
   modJsList.tabEmployeeSalary.setDataPipe(new IceDataPipe(modJsList.tabEmployeeSalary));
   modJsList.tabEmployeeSalary.setAccess(permissions.EmployeeSalary || []);
+
+  modJsList.tabEmployeeSalaryHistory = new EmployeeSalaryHistoryAdapter('EmployeeSalaryHistory', 'EmployeeSalaryHistory', '', 'effective_date desc, id desc');
+  modJsList.tabEmployeeSalaryHistory.setObjectTypeName('Salary History');
+  modJsList.tabEmployeeSalaryHistory.setRemoteTable(true);
+  modJsList.tabEmployeeSalaryHistory.setShowAddNew(false);
+  modJsList.tabEmployeeSalaryHistory.setShowEdit(false);
+  modJsList.tabEmployeeSalaryHistory.setShowDelete(false);
+  modJsList.tabEmployeeSalaryHistory.setDataPipe(new IceDataPipe(modJsList.tabEmployeeSalaryHistory));
+  modJsList.tabEmployeeSalaryHistory.setAccess(permissions.EmployeeSalaryHistory || []);
 
   window.modJs = modJsList.tabSalaryComponentType;
   window.modJsList = modJsList;

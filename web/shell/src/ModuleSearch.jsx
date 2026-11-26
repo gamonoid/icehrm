@@ -47,7 +47,9 @@ export default function ModuleSearch({ items, areas, onSelect, dark }) {
             </span>
           </span>
         ),
-        search: `${it.label} ${aLabel} ${sec}`.toLowerCase(),
+        // Plus the module's own name (e.g. "users" for Logins & Permissions), without
+        // the extension prefix or "|user"/"|admin" suffix, so old names still match.
+        search: `${it.label} ${String(it.n || '').split('|')[0].replace(/^.*>/, '')} ${aLabel} ${sec}`.toLowerCase(),
       });
     });
     return Object.keys(byArea)

@@ -1,0 +1,215 @@
+{
+  "key": "standard-office-hire",
+  "order": 1,
+  "name": "Standard office hire",
+  "audience": "Office-based employees in most white-collar roles",
+  "description": "Personal and bank details, ID, policies, IT setup, a first-week plan and 30-60-90 day check-ins.",
+  "welcome_message": "We are delighted that you are joining us. Before your first day, please complete the steps below so everything is ready when you arrive. If anything is unclear, reply to your invitation email or ask your manager.",
+  "first_day_info": "Your manager will meet you on your first day and walk you through the plan for your first week.",
+  "steps": [
+    {
+      "key": "welcome",
+      "type": "info",
+      "title": "Welcome to the team",
+      "owner_type": "new_hire",
+      "due_offset_days": -14,
+      "required": true,
+      "config": {
+        "text": "Start here: this checklist covers everything we need before your first day. It takes about 20 minutes. You can come back to it at any time."
+      }
+    },
+    {
+      "key": "profile",
+      "type": "info",
+      "title": "Complete your profile",
+      "owner_type": "new_hire",
+      "due_offset_days": -10,
+      "required": true,
+      "config": {
+        "text": "Open Personal Details in the menu (under About You) and check your name, date of birth, contact details and address. Correct anything that is missing or out of date. Then open Emergency Contacts and add at least one person we can call in an emergency. Give HR your bank details for your salary. If you like, add a short note about yourself so the team can get to know you."
+      }
+    },
+    {
+      "key": "hr_profile",
+      "type": "task",
+      "title": "Check the new hire's profile",
+      "instructions": "Check that personal details, contact details and emergency contacts are complete. Add the bank details to payroll.",
+      "owner_type": "hr",
+      "due_offset_days": -8,
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "id",
+      "type": "document",
+      "title": "Upload a copy of your ID",
+      "instructions": "Upload your passport or national identity card. Bring the original on your first day.",
+      "owner_type": "new_hire",
+      "due_offset_days": -7,
+      "required": true,
+      "needs_review": true,
+      "config": {
+        "document_name": "ID Copy"
+      }
+    },
+    {
+      "key": "conduct",
+      "type": "acknowledge",
+      "title": "Code of conduct",
+      "owner_type": "new_hire",
+      "due_offset_days": -3,
+      "required": true,
+      "config": {
+        "text": "I have read the company's code of conduct and I agree to follow it."
+      }
+    },
+    {
+      "key": "it_use",
+      "type": "acknowledge",
+      "title": "IT acceptable use policy",
+      "owner_type": "new_hire",
+      "due_offset_days": -3,
+      "required": true,
+      "config": {
+        "text": "I have read the IT acceptable use policy. I will use company systems, devices and accounts only as it allows, keep my passwords private and report anything suspicious to IT."
+      }
+    },
+    {
+      "key": "privacy",
+      "type": "acknowledge",
+      "title": "Employee privacy notice",
+      "owner_type": "new_hire",
+      "due_offset_days": -3,
+      "required": true,
+      "config": {
+        "text": "I have read the employee privacy notice, which explains what personal data the company keeps about me, why, and how long it is kept."
+      }
+    },
+    {
+      "key": "first_day",
+      "type": "info",
+      "title": "Your first day",
+      "owner_type": "new_hire",
+      "due_offset_days": -2,
+      "required": true,
+      "config": {
+        "text": "On your first day you will meet your manager and your buddy, collect your equipment and set up your accounts. Check the start time and location in your welcome email, and bring your original ID documents."
+      }
+    },
+    {
+      "key": "laptop",
+      "type": "task",
+      "title": "Hand over the laptop",
+      "owner_type": "hr",
+      "due_offset_days": -1,
+      "required": false,
+      "config": {},
+      "instructions": "Give the new hire their laptop and note its serial number in their profile or documents."
+    },
+    {
+      "key": "hr_contract",
+      "type": "task",
+      "title": "Send the signed contract and offer letter",
+      "instructions": "Make sure the signed contract is on file before the start date.",
+      "owner_type": "hr",
+      "due_offset_days": -10,
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "hr_payroll",
+      "type": "task",
+      "title": "Set up payroll and benefits",
+      "instructions": "Add the new hire to payroll with their bank and tax details once they have given them to you.",
+      "owner_type": "hr",
+      "due_offset_days": -3,
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "it_accounts",
+      "type": "task",
+      "title": "Create email and system accounts",
+      "instructions": "Create the email account, single sign-on and access to chat and the HR system. Assign this task to your IT contact if you have one.",
+      "owner_type": "hr",
+      "due_offset_days": -3,
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "it_laptop",
+      "type": "task",
+      "title": "Prepare laptop and equipment",
+      "instructions": "Set up the laptop with security software and multi-factor sign-in.",
+      "owner_type": "hr",
+      "due_offset_days": -2,
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "mgr_plan",
+      "type": "task",
+      "title": "Plan the first week",
+      "instructions": "Agree meetings, introductions and a first piece of work.",
+      "owner_type": "manager",
+      "due_offset_days": -3,
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "mgr_buddy",
+      "type": "task",
+      "title": "Introduce the buddy and the team",
+      "owner_type": "manager",
+      "due_offset_days": 0,
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "mgr_goals",
+      "type": "task",
+      "title": "Agree 30-60-90 day goals",
+      "owner_type": "manager",
+      "due_offset_days": 7,
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "mgr_30",
+      "type": "task",
+      "title": "30-day check-in",
+      "owner_type": "manager",
+      "due_offset_days": 30,
+      "required": false,
+      "config": {}
+    },
+    {
+      "key": "mgr_60",
+      "type": "task",
+      "title": "60-day check-in",
+      "owner_type": "manager",
+      "due_offset_days": 60,
+      "required": false,
+      "config": {}
+    },
+    {
+      "key": "mgr_90",
+      "type": "task",
+      "title": "90-day review",
+      "instructions": "Review progress against the goals and decide on the end of probation if it applies.",
+      "owner_type": "manager",
+      "due_offset_days": 90,
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "buddy_day1",
+      "type": "task",
+      "title": "Have lunch with the new hire on day one",
+      "owner_type": "buddy",
+      "due_offset_days": 0,
+      "required": false,
+      "config": {}
+    }
+  ]
+}

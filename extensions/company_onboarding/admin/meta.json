@@ -1,0 +1,32 @@
+{
+  "label": "Company Onboarding",
+  "menu": [
+    "Manage"
+  ],
+  "order": "1",
+  "areaOrder": 0,
+  "icon": "fa-building",
+  "area": "people",
+  "user_levels": [
+    "Admin"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\CompanyOnboardingAdmin\\Common\\Model",
+  "manager": "\\CompanyOnboardingAdmin\\Extension",
+  "controller": "\\CompanyOnboardingAdmin\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "native": {
+    "initFn": "initCompanyOnboardingAdmin",
+    "bundle": "company_onboarding/admin/dist/company_onboarding.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "Company Onboarding",
+        "component": "NativeExtensionView",
+        "viewGlobal": "CompanyOnboardingAdminView"
+      }
+    ]
+  }
+}

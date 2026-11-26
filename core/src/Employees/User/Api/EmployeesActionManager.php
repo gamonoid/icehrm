@@ -89,16 +89,14 @@ class EmployeesActionManager extends SubActionManager
         $subordinates = $subordinate->Find("supervisor = ?", array($employee->id));
         $employee->subordinates = $subordinates;
 
-        if (!empty($employee->birthday)) {
-            $employee->birthday = date("F jS, Y", strtotime($employee->birthday));
-        }
-
-        if (!empty($employee->driving_license_exp_date)) {
-            $employee->driving_license_exp_date = date("F jS, Y", strtotime($employee->driving_license_exp_date));
-        }
-
-        if (!empty($employee->joined_date)) {
-            $employee->joined_date = date("F jS, Y", strtotime($employee->joined_date));
+        $dateFields = array(
+            'birthday', 'driving_license_exp_date', 'joined_date',
+            'confirmation_date', 'contract_end_date', 'original_hire_date',
+        );
+        foreach ($dateFields as $dateField) {
+            if (!empty($employee->$dateField) && $employee->$dateField !== '0000-00-00') {
+                $employee->$dateField = date("F jS, Y", strtotime($employee->$dateField));
+            }
         }
 
         //Read custom fields

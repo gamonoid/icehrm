@@ -39,7 +39,8 @@ class EmployeeRestEndPoint extends RestEndPoint
   "department": [ "CompanyStructure", "id", "title" ],
   "supervisor": [ "Employee", "id", "first_name+last_name" ],
   "employment_status": [ "EmploymentStatus", "id", "name" ],
-  "pay_grade": [ "PayGrade", "id", "name" ]
+  "pay_grade": [ "PayGrade", "id", "name" ],
+  "work_location": [ "WorkLocation", "id", "name" ]
 }
 JSON;
         $query->setFieldMapping($mapping);
@@ -143,7 +144,10 @@ JSON;
   "indirect_supervisors": [ "Employee", "id", "first_name+last_name" ],
   "approver1": [ "Employee", "id", "first_name+last_name" ],
   "approver2": [ "Employee", "id", "first_name+last_name" ],
-  "approver3": [ "Employee", "id", "first_name+last_name" ]
+  "approver3": [ "Employee", "id", "first_name+last_name" ],
+  "work_location": [ "WorkLocation", "id", "name" ],
+  "cost_center": [ "CostCenter", "id", "name" ],
+  "termination_reason": [ "TerminationReason", "id", "name" ]
 }
 JSON;
 
@@ -173,6 +177,7 @@ JSON;
         $emp->can_login = 0;
         if (!empty($user->id)) {
             $emp->can_login = 1;
+            $emp->user_id = $user->id;
             $emp->user_name = $user->username;
             $emp->user_email = $user->email;
             $emp->user_level = $user->user_level;

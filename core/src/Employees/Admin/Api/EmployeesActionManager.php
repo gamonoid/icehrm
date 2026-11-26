@@ -43,7 +43,10 @@ class EmployeesActionManager extends SubActionManager
             return new IceResponse(IceResponse::ERROR, "Employee Not Found");
         }
 
-        $employee->termination_date = date('Y-m-d H:i:s');
+        // Employees.termination_date is a DATE column and the field is no longer
+        // editable on the employee form — this action is what sets it, to the day
+        // the employee moved to the Resigned tab.
+        $employee->termination_date = date('Y-m-d');
         $employee->status = 'Terminated';
 
         $ok = $employee->Save();
@@ -69,6 +72,15 @@ class EmployeesActionManager extends SubActionManager
 
         if (empty($employee->id)) {
             return new IceResponse(IceResponse::ERROR, "Employee Not Found");
+        }
+
+        // Set by the Onboarding extension when a hire is cancelled before they start.
+        // They never worked here and have no login; re-hiring is a new invitation.
+        if ($employee->termination_type === 'Onboarding cancelled') {
+            return new IceResponse(
+                IceResponse::ERROR,
+                "This person's onboarding was cancelled, so they cannot be activated. Send them a new onboarding invitation instead."
+            );
         }
 
         $employee->termination_date = null;
@@ -154,6 +166,10 @@ class EmployeesActionManager extends SubActionManager
         $data->emergencyContacts = $this->getEmployeeData($employee->id, new EmergencyContact());
         $data->projects = $this->getEmployeeData($employee->id, new EmployeeProject());
         $data->expenses = $this->getEmployeeData($employee->id, new EmployeeExpense());
+        $data->workHistory = $this->getEmployeeData($employee->id, new \Employees\Common\Model\EmployeeCareer());
+        $data->salaryHistory = $this->getEmployeeData($employee->id, new \Salary\Common\Model\EmployeeSalaryHistory());
+        // Account numbers stay encrypted in the archive.
+        $data->bankAccounts = $this->getEmployeeData($employee->id, new \Employees\Common\Model\EmployeeBankAccount());
 
         $archived->data = json_encode($data, JSON_PRETTY_PRINT);
 
@@ -220,5 +236,26 @@ class EmployeesActionManager extends SubActionManager
             $data[] = BaseService::getInstance()->cleanUpAdoDB($entry);
         }
         return $data;
+    }
+
+    /**
+     * Send the invitation again with a new link (the old link stops working).
+     * Admin only: same rule as editing invitations.
+     */
+    public function resendInvitation($req)
+    {
+        $this->baseService->checkSecureAccess('save', new \Model\UserInvitation(), 'UserInvitation', $_POST);
+        $service = new \Employees\Services\UserInvitationService();
+        return $service->resend(intval($req->id));
+    }
+
+    /**
+     * Withdraw an invitation so its link can no longer be used.
+     */
+    public function revokeInvitation($req)
+    {
+        $this->baseService->checkSecureAccess('save', new \Model\UserInvitation(), 'UserInvitation', $_POST);
+        $service = new \Employees\Services\UserInvitationService();
+        return $service->revoke(intval($req->id));
     }
 }

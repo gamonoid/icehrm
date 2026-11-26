@@ -1,0 +1,33 @@
+{
+  "label": "Channels",
+  "menu": [
+    "About You"
+  ],
+  "order": "1.5",
+  "icon": "fa-comments",
+  "user_levels": [
+    "Admin",
+    "Manager",
+    "Employee"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\DiscussionsUser\\Common\\Model",
+  "manager": "\\DiscussionsUser\\Extension",
+  "controller": "\\DiscussionsUser\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "area": "people",
+  "native": {
+    "initFn": "initDiscussionsUser",
+    "bundle": "discussions/user/dist/discussions.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "Channels",
+        "component": "NativeExtensionView",
+        "viewGlobal": "DiscussionsUserView"
+      }
+    ]
+  }
+}

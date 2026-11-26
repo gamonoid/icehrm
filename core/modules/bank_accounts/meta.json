@@ -1,0 +1,10 @@
+{
+	"label":"Bank Accounts",
+	"menu":"About You",
+	"order":"7",
+	"icon":"fa-university",
+	"user_levels":["Admin","Manager","Employee"],
+
+	"model_namespace": "\\Employees\\Common\\Model",
+	"manager": "\\Employees\\User\\Api\\BankAccountsModulesManager"
+}

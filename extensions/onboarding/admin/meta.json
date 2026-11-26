@@ -1,0 +1,40 @@
+{
+  "label": "New Hire Onboarding",
+  "menu": [
+    "Manage"
+  ],
+  "order": "2",
+  "icon": "fa-user-plus",
+  "area": "people",
+  "user_levels": [
+    "Admin",
+    "Manager"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\OnboardingAdmin\\Common\\Model",
+  "manager": "\\OnboardingAdmin\\Extension",
+  "controller": "\\OnboardingAdmin\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "native": {
+    "initFn": "initOnboardingAdmin",
+    "bundle": "onboarding/admin/dist/onboarding.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "New Hire Onboarding",
+        "component": "NativeExtensionView",
+        "viewGlobal": "OnboardingAdminView"
+      }
+    ],
+    "profileSections": [
+      {
+        "key": "onboarding",
+        "label": "Onboarding",
+        "icon": "user-add",
+        "viewGlobal": "OnboardingProfileSection"
+      }
+    ]
+  }
+}

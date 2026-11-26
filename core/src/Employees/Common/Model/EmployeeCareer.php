@@ -3,6 +3,7 @@ namespace Employees\Common\Model;
 
 use Classes\IceResponse;
 use Classes\ModuleAccess;
+use Employees\Services\WorkHistoryService;
 use Model\BaseModel;
 
 class EmployeeCareer extends BaseModel
@@ -34,6 +35,13 @@ class EmployeeCareer extends BaseModel
 
     protected function validate($obj)
     {
+        // Optional lookups (integer foreign keys): a blank value means "not set".
+        foreach (array('work_location', 'pay_grade') as $field) {
+            if (isset($obj->$field) && (trim((string) $obj->$field) === '' || $obj->$field === 'NULL')) {
+                $obj->$field = null;
+            }
+        }
+
         if (!empty($obj->date_end) && strtotime($obj->date_end) < strtotime($obj->date_start)) {
             return new IceResponse(IceResponse::ERROR, 'Start date should be earlier than end date');
         }
@@ -61,6 +69,16 @@ class EmployeeCareer extends BaseModel
         }
 
         return new IceResponse(IceResponse::SUCCESS, $obj);
+    }
+
+    public function executePostSaveActions($obj)
+    {
+        (new WorkHistoryService())->applyToEmployee($obj);
+    }
+
+    public function executePostUpdateActions($obj)
+    {
+        (new WorkHistoryService())->applyToEmployee($obj);
     }
 
     /**

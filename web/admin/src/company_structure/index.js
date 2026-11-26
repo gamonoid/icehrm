@@ -1,4 +1,6 @@
-import { CompanyStructureAdapter, CompanyGraphAdapter } from './lib';
+import {
+  CompanyStructureAdapter, CompanyGraphAdapter, WorkLocationAdapter, CostCenterAdapter,
+} from './lib';
 import IceDataPipe from "../../../api/IceDataPipe";
 
 
@@ -12,6 +14,18 @@ function init(data) {
   modJsList.tabCompanyStructure.setCustomFields(data.customFields);
 
   modJsList.tabCompanyGraph = new CompanyGraphAdapter('CompanyStructure');
+
+  const lookups = [
+    ['tabWorkLocation', WorkLocationAdapter, 'WorkLocation', 'Work Locations'],
+    ['tabCostCenter', CostCenterAdapter, 'CostCenter', 'Cost Centers'],
+  ];
+  lookups.forEach(([key, Adapter, entity, name]) => {
+    const a = new Adapter(entity, entity, '', '');
+    a.setObjectTypeName(name);
+    a.setDataPipe(new IceDataPipe(a));
+    a.setAccess((data.permissions && data.permissions[entity]) || []);
+    modJsList[key] = a;
+  });
 
   window.modJs = modJsList.tabCompanyStructure;
   window.modJsList = modJsList;

@@ -25,49 +25,59 @@ abstract class EmailSender
         $this->settings = $settings;
     }
 
+    /**
+     * Send an in-app notification as an email. The subject is the notification itself
+     * (e.g. "Jane Doe submitted an overtime request"), so it reads well in the inbox.
+     */
     public function sendEmailFromNotification($notification, $delayed = false)
     {
-        $toEmail = null;
         $user = new User();
         $user->Load("id = ?", array($notification->toUser));
-
-        if (!empty($user->email)) {
-            $name = "User";
-            $employee = new Employee();
-            $employee->Load("id = ?", array($user->employee));
-            if ($employee->id == $user->employee && !empty($employee->id)) {
-                $name = $employee->first_name;
-            }
-
-            $action = json_decode($notification->action);
-
-            $emailBody = file_get_contents(APP_BASE_PATH.'/templates/email/notificationEmail.html');
-            $emailBody = str_replace("#_user_#", $name, $emailBody);
-            $emailBody = str_replace("#_message_#", $notification->message, $emailBody);
-            if ($action->type == "url") {
-                $emailBody = str_replace("#_url_#", CLIENT_BASE_URL."?".$action->url, $emailBody);
-            }
-
-            if ($delayed) {
-                $this->sendEmailDelayed(
-                    'IceHrm Notification from '.$notification->type,
-                    $user->email,
-                    $emailBody,
-                    array(),
-                    array(),
-                    array()
-                );
-            } else {
-                $this->sendEmail(
-                    'IceHrm Notification from '.$notification->type,
-                    $user->email,
-                    $emailBody,
-                    array(),
-                    array(),
-                    array()
-                );
-            }
+        if (empty($user->email)) {
+            return;
         }
+
+        $name = '';
+        $employee = new Employee();
+        $employee->Load("id = ?", array($user->employee));
+        if ($employee->id == $user->employee && !empty($employee->id)) {
+            $name = $employee->first_name;
+        }
+
+        $message = trim(html_entity_decode(strip_tags((string) $notification->message), ENT_QUOTES, 'UTF-8'));
+        $action = json_decode((string) $notification->action);
+        $url = (!empty($action) && isset($action->type) && $action->type == 'url' && !empty($action->url))
+            ? EmailParts::appUrl($action->url)
+            : CLIENT_BASE_URL;
+
+        $body = EmailParts::greeting($name)
+            . EmailParts::text($message)
+            . EmailParts::button($url, 'Open in ' . EmailParts::companyName())
+            . EmailParts::fallbackLink($url);
+
+        $subject = self::subjectFrom($message, 'You have a new notification');
+        $params = array('url' => $url, 'preheader' => EmailParts::esc($message));
+
+        if ($delayed) {
+            $this->sendEmailDelayed($subject, $user->email, $body, $params, array(), array());
+        } else {
+            $this->sendEmail($subject, $user->email, $body, $params, array(), array());
+        }
+    }
+
+    /** A one-line subject from a message: first sentence, at most 90 characters. */
+    public static function subjectFrom($message, $fallback)
+    {
+        $line = trim(preg_replace('/\s+/', ' ', (string) $message));
+        if ($line === '') {
+            return $fallback;
+        }
+        $first = preg_split('/(?<=[.!?])\s/', $line, 2);
+        $line = rtrim($first[0], '.');
+        if (mb_strlen($line) > 90) {
+            $line = rtrim(mb_substr($line, 0, 87)) . '...';
+        }
+        return $line;
     }
 
     public function sendEmailDelayed($subject, $toEmail, $template, $params, $ccList = array(), $bccList = array())
@@ -113,67 +123,73 @@ abstract class EmailSender
 
     public function sendEmail($subject, $toEmail, $template, $params, $ccList = array(), $bccList = array())
     {
+        list($emailBody, $replyTo) = $this->renderEmail($template, $params);
+        return $this->sendEmailWithLogging(
+            $subject,
+            $emailBody,
+            $toEmail,
+            $this->settings->getSetting("Email: Email From"),
+            $replyTo,
+            $ccList,
+            $bccList,
+            EmailParts::companyName()
+        );
+    }
 
-        $body = $template;
-
+    /**
+     * Fill a body template and wrap it in the standard layout
+     * (core/templates/email/emailBody.html). Returns [html, replyToEmail].
+     *
+     * Wrapper params (all optional): preheader (preview text, HTML-escaped),
+     * emailReason (footer sentence, trusted HTML), url (logo link), adminEmail.
+     */
+    public function renderEmail($template, $params)
+    {
+        $body = (string) $template;
         foreach ($params as $k => $v) {
-            $body = str_replace("#_".$k."_#", $v, $body);
+            $body = str_replace("#_".$k."_#", (string) $v, $body);
         }
 
-        $fromEmail = $this->settings->getSetting("Email: Email From");
-        $companyName = $this->settings->getSetting("Company: Name");
-        if ($companyName == "" || $companyName == 'Sample Company Pvt Ltd') {
-            $companyName = "IceHrm";
-        }
-
-        //Convert to a html email
+        $companyName = EmailParts::companyName();
         $emailBody = file_get_contents(APP_BASE_PATH.'/templates/email/emailBody.html');
 
         if (empty($params['adminEmail'])) {
-            $user = new User();
-            $user->Load("username = ?", array('admin'));
-
-            if (empty($user->id)) {
-                $users = $user->Find("user_level = ?", array('Admin'));
-                $user = $users[0];
-            }
-            $params['adminEmail'] = $user->email;
+            $params['adminEmail'] = $this->adminEmail();
         }
-        $emailBody = str_replace("#_adminEmail_#", $params['adminEmail'], $emailBody);
-
         if (!isset($params['emailReason'])) {
-            // #_emailReason_# can be an empty string
-            $params['emailReason'] = 'You are receiving this email because your <a href="#_url_#"><strong><font color="405A6A">organization</font></strong></a> has added you as an employee. ';
+            $params['emailReason'] = 'You received this email because you have an account at '
+                . EmailParts::esc($companyName) . '.';
         }
-        $emailBody = str_replace("#_emailReason_#", $params['emailReason'], $emailBody);
-
-        // Replace values in base template
+        if (!isset($params['preheader'])) {
+            $params['preheader'] = '';
+        }
+        // The body goes in first, so placeholders it contains are filled below too.
         $emailBody = str_replace("#_emailBody_#", $body, $emailBody);
-
 
         $params['year'] = date("Y");
         $params['icehrm_url'] = 'https://icehrm.com';
-        $params['company_name'] = $companyName;
+        $params['company_name'] = EmailParts::esc($companyName);
         $params['logourl'] = UIManager::getInstance()->getCompanyLogoUrl();
-
         if (!isset($params['url'])) {
             $params['url'] = CLIENT_BASE_URL;
         }
 
         foreach ($params as $k => $v) {
-            $emailBody = str_replace("#_".$k."_#", $v, $emailBody);
+            $emailBody = str_replace("#_".$k."_#", (string) $v, $emailBody);
         }
+        return array($emailBody, $params['adminEmail']);
+    }
 
-        return $this->sendEmailWithLogging(
-            $subject,
-            $emailBody,
-            $toEmail,
-            $fromEmail,
-            $params['adminEmail'],
-            $ccList,
-            $bccList,
-            APP_NAME
-        );
+    /** The main admin's email address (reply-to and footer contact). */
+    protected function adminEmail()
+    {
+        $user = new User();
+        $user->Load("username = ?", array('admin'));
+        if (empty($user->id)) {
+            $users = $user->Find("user_level = ?", array('Admin'));
+            $user = empty($users) ? $user : $users[0];
+        }
+        return (string) $user->email;
     }
 
     public function sendEmailWithoutWrap($subject, $toEmail, $template, $params, $ccList = array(), $bccList = array())
@@ -185,7 +201,7 @@ abstract class EmailSender
             $body = str_replace("#_".$k."_#", $v, $body);
         }
 
-        $fromEmail = APP_NAME." <".$this->settings->getSetting("Email: Email From").">";
+        $fromEmail = EmailParts::companyName()." <".$this->settings->getSetting("Email: Email From").">";
 
         //Convert to an html email
         $emailBody = $body;
@@ -279,17 +295,36 @@ abstract class EmailSender
             }
         }
 
-        $params = array();
-        //$params['user'] = $user->first_name." ".$user->last_name;
-        $params['url'] = CLIENT_BASE_URL;
+        $firstName = '';
+        if (!empty($user->employee)) {
+            $employee = new Employee();
+            $employee->Load("id = ?", array($user->employee));
+            if ($employee->id == $user->employee) {
+                $firstName = $employee->first_name;
+            }
+        }
 
-        $encJson = PasswordManager::createPasswordRestKey($user);
+        $company = EmailParts::companyName();
+        $resetUrl = CLIENT_BASE_URL."service.php?a=rsp&key=".PasswordManager::createPasswordRestKey($user);
 
-        $params['passurl'] = CLIENT_BASE_URL."service.php?a=rsp&key=".$encJson;
+        // PasswordManager::verifyPasswordRestKey() accepts the key for 30 minutes, and it
+        // stops working once the password changes (it is encrypted with the old hash).
+        $body = EmailParts::greeting($firstName)
+            . EmailParts::paragraph(
+                'We received a request to reset the password for your ' . EmailParts::esc($company)
+                . ' account (username ' . EmailParts::strong($user->username) . ').'
+            )
+            . EmailParts::button($resetUrl, 'Set a new password')
+            . EmailParts::fallbackLink($resetUrl)
+            . EmailParts::small(
+                'This link expires in 30 minutes and works only once. If you did not ask to reset your password, '
+                . 'you can ignore this email: your password will not change.'
+            )
+            . EmailParts::signOff();
 
-        $emailBody = file_get_contents(APP_BASE_PATH.'/templates/email/passwordReset.html');
-
-        $this->sendEmail("[".APP_NAME."] Password Change Request", $user->email, $emailBody, $params);
+        $this->sendEmail('Reset your password', $user->email, $body, array(
+            'preheader' => EmailParts::esc('Use this link within 30 minutes to choose a new password.'),
+        ));
         return true;
     }
 }

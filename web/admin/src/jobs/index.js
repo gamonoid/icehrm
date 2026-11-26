@@ -1,4 +1,9 @@
-import { JobTitleAdapter, PayGradeAdapter, EmploymentStatusAdapter } from './lib';
+import {
+  JobTitleAdapter,
+  PayGradeAdapter,
+  EmploymentStatusAdapter,
+  TerminationReasonAdapter,
+} from './lib';
 import IceDataPipe from '../../../api/IceDataPipe';
 
 function init(data) {
@@ -18,6 +23,17 @@ function init(data) {
   modJsList.tabEmploymentStatus.setObjectTypeName('Employment Status');
   modJsList.tabEmploymentStatus.setDataPipe(new IceDataPipe(modJsList.tabEmploymentStatus));
   modJsList.tabEmploymentStatus.setAccess(data.permissions.EmploymentStatus);
+
+  const lookups = [
+    ['tabTerminationReason', TerminationReasonAdapter, 'TerminationReason', 'Termination Reasons'],
+  ];
+  lookups.forEach(([key, Adapter, entity, name]) => {
+    const a = new Adapter(entity, entity, '', '');
+    a.setObjectTypeName(name);
+    a.setDataPipe(new IceDataPipe(a));
+    a.setAccess(data.permissions[entity] || []);
+    modJsList[key] = a;
+  });
 
   window.modJs = modJsList.tabJobTitle;
   window.modJsList = modJsList;

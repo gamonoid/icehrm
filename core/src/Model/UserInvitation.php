@@ -4,6 +4,7 @@ namespace Model;
 
 use Classes\BaseService;
 use Classes\IceResponse;
+use Classes\ModuleAccess;
 use Classes\PasswordManager;
 use Classes\SubActionManager;
 use Employees\Common\Model\Employee;
@@ -15,6 +16,21 @@ use Utils\StringUtils;
 class UserInvitation extends BaseModel
 {
 	public $table = 'UserInvitations';
+
+	/** @var string|null plain token, set only in the request that issued it */
+	public $plainToken = null;
+
+	/**
+	 * Surfaced under the Users admin module (System > Users > User Invitations), so
+	 * declaring it lets a role added to that module grant access to this model.
+	 */
+	public function getModuleAccess()
+	{
+		return [
+			new ModuleAccess('users', 'admin'),
+			new ModuleAccess('employees', 'admin'),
+		];
+	}
 
 	public function getAdminAccess()
 	{
@@ -48,11 +64,11 @@ class UserInvitation extends BaseModel
 			$obj->employee_id = (string) random_int(1000, 9999);
 		}
 
-		// Make sure email is not duplicated.
+		// Make sure email is not duplicated by an invitation that can still be accepted.
 		$ui = new UserInvitation();
-		$ui->Load('email = ? and invitation_status < 2', [$obj->email]);
+		$ui->Load('email = ? and invitation_status <= 2 and token_hash is not null and expires_at > ?', [$obj->email, date('Y-m-d H:i:s')]);
 		if ($ui->email === $obj->email) {
-			return new IceResponse(IceResponse::ERROR, 'There is an active invitation for this email address.');
+			return new IceResponse(IceResponse::ERROR, 'There is an active invitation for this email address. Resend it instead.');
 		}
 
 		// Make sure there is no user with same email.
@@ -65,40 +81,49 @@ class UserInvitation extends BaseModel
 		$service = new UserInvitationService();
 		$obj->invitation_status = UserInvitationService::PENDING;
 		$obj->username = $service->getAvailableUserName($obj->email);
-		$obj->password = md5(PasswordManager::createPasswordHash(StringUtils::randomString(12))).md5(StringUtils::randomString(10));
+		// A random single-use token; only its hash is stored. The plain token is kept on
+		// the object for this request so the email can include the link.
+		$obj->plainToken = $service->issueToken($obj);
 
 		return new IceResponse(IceResponse::SUCCESS, $obj);
 	}
 
 	public function executePostSaveActions($obj)
 	{
-		if ($obj->invitation_status !== UserInvitationService::PENDING) {
+		if ($obj->invitation_status !== UserInvitationService::PENDING || empty($obj->plainToken)) {
 			return;
 		}
 
-		$userEmailSender = new UsersEmailSender(BaseService::getInstance()->getEmailSender(), new SubActionManager());
-		$result = $userEmailSender->sendInviteUserEmail(
-			$obj,
-			BaseService::getInstance()->getCurrentUserEmployee()
-		);
+		$service = new UserInvitationService();
+		$service->sendInvitation($obj, $obj->plainToken);
+	}
 
-		$userInvitationService = new UserInvitationService();
-		if (!$result) {
-			$userInvitationService->setInvitationStatus($obj, UserInvitationService::INVITATION_EMAIL_ERROR);
-		} else {
-			$userInvitationService->setInvitationStatus($obj, UserInvitationService::INVITATION_EMAIL_SENT);
-		}
+	/** The plain token issued during this request (null afterwards). */
+	public function getPlainToken()
+	{
+		return isset($this->plainToken) ? $this->plainToken : null;
+	}
+
+	private function present($obj)
+	{
+		$service = new UserInvitationService();
+		$state = $service->getTokenState($obj);
+		$obj->invitation_status_text = $state === 'expired'
+			? 'Expired'
+			: UserInvitationService::getInvitationStatusLabel($obj->invitation_status);
+		$obj->invitation_state = $state;
+		// Never send the stored hashes to the browser.
+		unset($obj->password, $obj->token_hash);
+		return $obj;
 	}
 
 	public function postProcessGetData($obj)
 	{
-		$obj->invitation_status_text = UserInvitationService::getInvitationStatusLabel($obj->invitation_status);
-		return $obj;
+		return $this->present($obj);
 	}
 
 	public function postProcessGetElement($obj)
 	{
-		$obj->invitation_status_text = UserInvitationService::getInvitationStatusLabel($obj->invitation_status);
-		return $obj;
+		return $this->present($obj);
 	}
 }

@@ -104,6 +104,10 @@ class AppShellRestEndPoint extends RestEndPoint
                     return UIManager::getInstance()->getCompanyLogoUrl();
                 }),
             ],
+            // Bubbles on menu items (route => count), from extensions (MenuService).
+            'menuBadges' => $this->safeCall(function () use ($user) {
+                return MenuService::getInstance()->getMenuBadges($user);
+            }) ?: new \stdClass(),
             'restApiBase' => $this->getRestApiBase(),
             'version' => defined('VERSION') ? VERSION : null,
             'homeLink' => $this->getHomeLink($user),
@@ -397,6 +401,37 @@ class AppShellRestEndPoint extends RestEndPoint
      * Personal / manager dashboard (modules::dashboard). Available to every
      * authenticated user. GET /app/api/appshell/employee-dashboard
      */
+    /**
+     * Home — the landing page / entry point for every user level. One call returns
+     * every lightweight widget payload (see Classes\HomeService and
+     * docs/HOME_AND_KUDOS_PLAN.md). GET /app/api/appshell/home
+     */
+    public function getHome(User $user)
+    {
+        $data = $this->safeCall(function () use ($user) {
+            return (new HomeService())->getData($user);
+        });
+        if ($data === null) {
+            return new IceResponse(IceResponse::ERROR, 'Failed to build home', 500);
+        }
+        $profile = $this->safeCall(function () use ($user) {
+            return $this->getProfileInfo($user);
+        });
+        $data['greetingName'] = (!empty($profile['firstName']))
+            ? $profile['firstName']
+            : (!empty($user->first_name) ? $user->first_name : $user->email);
+        // The signed-in person, for the composer/comment avatars in the feed.
+        $data['me'] = array(
+            'name' => trim(
+                (isset($profile['firstName']) ? $profile['firstName'] : '')
+                . ' ' . (isset($profile['lastName']) ? $profile['lastName'] : '')
+            ),
+            'image' => isset($profile['image']) ? $profile['image'] : null,
+            'employeeId' => !empty($user->employee) ? (int) $user->employee : null,
+        );
+        return new IceResponse(IceResponse::SUCCESS, $data);
+    }
+
     public function getEmployeeDashboard(User $user)
     {
         $data = $this->safeCall(function () use ($user) {
@@ -432,6 +467,14 @@ class AppShellRestEndPoint extends RestEndPoint
         if (empty($config)) {
             return new IceResponse(IceResponse::ERROR, 'Module not registered for native mount', 404);
         }
+        // A restricted user (e.g. a new hire still onboarding) may only open the
+        // modules the restriction lists.
+        $restricted = $this->safeCall(function () use ($user, $group, $name) {
+            return !MenuService::getInstance()->isAllowedByRestriction($user, $group, $name);
+        });
+        if ($restricted === true) {
+            return new IceResponse(IceResponse::ERROR, 'This page is not available yet', 403);
+        }
 
         // Gate individual tabs. Optional conditions (all must pass):
         //  - 'requiresSetting' => 'Setting Name' : dropped unless the setting is '1'
@@ -455,7 +498,12 @@ class AppShellRestEndPoint extends RestEndPoint
         });
 
         if (!empty($config['tabs']) && is_array($config['tabs'])) {
-            $config['tabs'] = array_values(array_filter($config['tabs'], function ($tab) use ($user, $privileged, $hasSubordinates) {
+            $moduleKey = $group . '/' . $name;
+            $config['tabs'] = array_values(array_filter($config['tabs'], function ($tab) use ($user, $privileged, $hasSubordinates, $moduleKey) {
+                // Tabs an installed extension replaces (NativeModuleRegistry::hideTab).
+                if (!empty($tab['key']) && NativeModuleRegistry::isTabHidden($moduleKey, $tab['key'])) {
+                    return false;
+                }
                 if (!empty($tab['requiresLevel'])) {
                     $levels = is_array($tab['requiresLevel'])
                         ? $tab['requiresLevel'] : array($tab['requiresLevel']);
@@ -714,6 +762,11 @@ class AppShellRestEndPoint extends RestEndPoint
         if (!empty($config['extraData']) && is_array($config['extraData'])) {
             $moduleData = array_merge($moduleData, $config['extraData']);
         }
+        // Tabs an extension replaced, with the route that replaces them.
+        $replacedTabs = NativeModuleRegistry::replacedTabs($group . '/' . $name);
+        if (!empty($replacedTabs)) {
+            $moduleData['replacedTabs'] = $replacedTabs;
+        }
 
         // Module-specific settings a native module's init() needs (the bits its
         // legacy index.php pulled from SettingsManager). Declared in the registry
@@ -850,6 +903,14 @@ class AppShellRestEndPoint extends RestEndPoint
      */
     private function getHomeLink(User $user)
     {
+        // A restricted user (e.g. a new hire still onboarding) lands where the
+        // restriction says.
+        $restriction = $this->safeCall(function () use ($user) {
+            return MenuService::getInstance()->getRestriction($user);
+        });
+        if (!empty($restriction) && !empty($restriction['home'])) {
+            return $restriction['home'];
+        }
         if (!empty($user->default_module)) {
             $module = new \Modules\Common\Model\Module();
             $module->Load('id = ?', [$user->default_module]);
@@ -857,6 +918,23 @@ class AppShellRestEndPoint extends RestEndPoint
                 $group = $module->mod_group === 'user' ? 'modules' : $module->mod_group;
                 return ['group' => $group, 'name' => $module->name];
             }
+        }
+        // Home is the landing for everyone who has not pinned a default module —
+        // but only when the user can actually open it (the same rule the menu uses).
+        // A set default_module always wins above, exactly as before.
+        $home = $this->safeCall(function () use ($user) {
+            $module = ModuleAccessService::getInstance()->getModule('home', 'user');
+            if (empty($module) || (isset($module->status) && $module->status !== 'Enabled')) {
+                return null;
+            }
+            $levels = empty($module->user_levels) ? [] : json_decode($module->user_levels, true);
+            $roles = empty($module->user_roles) ? [] : json_decode($module->user_roles, true);
+            return ModuleAccessService::getInstance()->userMayAccessModuleLevels($levels, $roles, $user)
+                ? ['group' => 'modules', 'name' => 'home']
+                : null;
+        });
+        if (!empty($home)) {
+            return $home;
         }
         if ($user->user_level === 'Admin') {
             return ['group' => 'admin', 'name' => 'dashboard'];
