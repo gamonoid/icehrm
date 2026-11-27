@@ -8,7 +8,7 @@ namespace Classes\Migration;
  * column 'amount'". Widen it to decimal(12,2), the size PayGrades.min_salary and
  * max_salary already use.
  */
-class v20261123_100000_widen_employee_salary_amount extends AbstractMigration {
+class v20261128_110000_widen_employee_salary_amount extends AbstractMigration {
 
 	public function up() {
 		return $this->executeQuery(
