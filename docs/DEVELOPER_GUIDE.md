@@ -257,7 +257,7 @@ php ice create:extension sample admin
 
 The extension code will be created under `extensions/sample/admin/`.
 
-For more details, refer to: [https://icehrm.com/explore/docs/extensions/](https://icehrm.com/explore/docs/extensions/)
+For more details, refer to: [https://icehrm.com/docs/developer-guide/creating-extension/](https://icehrm.com/docs/developer-guide/creating-extension/)
 
 ### Extension Types
 
