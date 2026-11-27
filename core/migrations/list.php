@@ -1,5 +1,7 @@
 <?php
 $migrationList = [];
+$migrationList[] = 'v20261128_110000_widen_employee_salary_amount';
+$migrationList[] = 'v20261128_100000_widen_attendance_ip';
 $migrationList[] = 'v20261125_100000_invitation_tokens';
 $migrationList[] = 'v20261124_100000_rename_users_to_logins';
 $migrationList[] = 'v20261123_100000_employee_fields';
