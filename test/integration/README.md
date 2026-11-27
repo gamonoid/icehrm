@@ -14,6 +14,7 @@ entirely — hence no PHPUnit dependency was added.)
 |---|---|
 | `bootstrap.php` | Boots the full app in CLI (config → `config.base.php` → `include.common.php` → `server.includes.inc.php`), exactly as a web request does. Picks the app config from `ICEHRM_TEST_CONFIG`, else the testing container config, else the dev config. |
 | `lib/TestContext.php` | Helpers: act as a given user, describe a model's owner column, generically seed a throwaway row (fills NOT-NULL columns, FK checks off), and clean up. |
+| `EmployeeDocumentCountTest.php` | Query forms and role-specific visibility for employee-document counts, including the count-only service path. |
 | `security/ElementAccessTest.php` | The **`element`** column, all roles — PART 1 role sweep + vertical default-deny; PART 2 the anonymous *declared* policy audit. |
 | `security/GetAccessTest.php` | The **`get` (list)** column, all roles — a list leaks a whole table at once, so this pins who may see whose rows in a listing. |
 | `security/AddAccessTest.php` | The **`add`** column, all roles — ownership spoofing: may you create a row owned by somebody else? |
