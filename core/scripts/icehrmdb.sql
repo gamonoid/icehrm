@@ -168,7 +168,7 @@ create table `Employees` (
 	`custom10` varchar(250) default null,
 	`termination_date` date default null,
 	`notes` text default null,
-	`status` enum('Active','Terminated') default 'Active',
+	`status` enum('Active','Terminated','Onboarding') default 'Active',
 	`ethnicity` bigint(20) default null,
 	`immigration_status` bigint(20) default null,
 	`approver1` bigint(20) default null,

@@ -8,6 +8,7 @@ import {
   AlertOutlined, FireOutlined, WarningOutlined, InfoCircleOutlined, CheckCircleOutlined,
 } from '@ant-design/icons';
 import { MUI_SHADOW } from './theme';
+import ExtensionBanners from '../../components/ExtensionBanners';
 
 const { Text } = Typography;
 
@@ -160,6 +161,7 @@ export default function EmployeeDashboard({ config, onNavigate, onOpenDocument }
 
   return (
     <div style={{ padding: 24, maxWidth: 1500, margin: '0 auto' }}>
+      <ExtensionBanners banners={data.banners} onNavigate={onNavigate} />
       {/* Greeting */}
       <div style={{ marginBottom: 18 }}>
         <div style={{ fontSize: 22, fontWeight: 700 }}>

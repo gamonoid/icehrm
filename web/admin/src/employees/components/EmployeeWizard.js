@@ -8,7 +8,7 @@
 */
 import React from 'react';
 import {
-  Button, Modal, Space, Steps, Typography,
+  Button, Modal, Space, Steps, Typography, theme,
 } from 'antd';
 import {
   IdcardOutlined, SafetyCertificateOutlined, ApartmentOutlined, MailOutlined,
@@ -16,41 +16,70 @@ import {
 } from '@ant-design/icons';
 import IceStepForm from '../../../../components/IceStepForm';
 import IceStepFormModal from '../../../../components/IceStepFromModal';
+import { t } from '../../../../api/i18n';
 
 const { Title, Text } = Typography;
 
 // Keyed by the step titles from EmployeeAdapter.getMappedFields().
-const STEP_META = {
+// A function (not a constant) so the texts are translated at render time.
+const stepMeta = () => ({
   Personal: {
     icon: <IdcardOutlined />,
-    heading: 'Who are they?',
-    blurb: 'Name, date of birth and other personal details.',
+    heading: t('Who are they?'),
+    blurb: t('Name, date of birth and other personal details.'),
   },
   Identification: {
     icon: <SafetyCertificateOutlined />,
-    heading: 'Identification',
-    blurb: 'Tax, insurance and identity document numbers.',
+    heading: t('Identification'),
+    blurb: t('Tax, insurance and identity document numbers.'),
   },
   Work: {
     icon: <ApartmentOutlined />,
-    heading: 'Role & employment',
-    blurb: 'Where they sit in the company and when they joined.',
+    heading: t('Role & employment'),
+    blurb: t('Where they sit in the company and when they joined.'),
   },
   Contact: {
     icon: <MailOutlined />,
-    heading: 'How to reach them',
-    blurb: 'Address, phone numbers and email addresses.',
+    heading: t('How to reach them'),
+    blurb: t('Address, phone numbers and email addresses.'),
   },
   Report: {
     icon: <TeamOutlined />,
-    heading: 'Reporting lines',
-    blurb: 'Their manager, leave approvers and internal notes.',
+    heading: t('Reporting lines'),
+    blurb: t('Their manager, leave approvers and internal notes.'),
   },
   Other: {
     icon: <AppstoreOutlined />,
-    heading: 'Additional information',
-    blurb: 'Custom fields defined by your company.',
+    heading: t('Additional information'),
+    blurb: t('Custom fields defined by your company.'),
   },
+});
+
+// The action row stays pinned to the bottom of the modal. Most steps are taller
+// than the window, and Save / Next used to sit below the fold, out of reach until
+// the modal was scrolled to the end.
+const StickyActions = ({ children }) => {
+  const { token } = theme.useToken();
+  return (
+    <div style={{
+      position: 'sticky',
+      bottom: 0,
+      zIndex: 5,
+      display: 'flex',
+      justifyContent: 'space-between',
+      marginTop: 16,
+      marginInline: -24,
+      marginBottom: -20,
+      padding: '12px 24px 20px',
+      background: token.colorBgElevated,
+      borderTop: `1px solid ${token.colorSplit}`,
+      borderBottomLeftRadius: token.borderRadiusLG,
+      borderBottomRightRadius: token.borderRadiusLG,
+    }}
+    >
+      {children}
+    </div>
+  );
 };
 
 class EmployeeStepForm extends IceStepForm {
@@ -58,7 +87,7 @@ class EmployeeStepForm extends IceStepForm {
     const { adapter } = this.props;
     const { current, steps } = this.state;
     const gt = (s) => adapter.gt(s);
-    const meta = STEP_META[steps[current].title] || {};
+    const meta = stepMeta()[steps[current].title] || {};
     const isLast = current === steps.length - 1;
     const editing = !!(adapter.currentElement && adapter.currentElement.id);
 
@@ -70,14 +99,14 @@ class EmployeeStepForm extends IceStepForm {
           onChange={(c) => this.moveToStep(c)}
           items={steps.map((item) => ({
             title: gt(item.title),
-            icon: (STEP_META[item.title] || {}).icon,
+            icon: (stepMeta()[item.title] || {}).icon,
           }))}
           style={{ marginBottom: 20 }}
         />
 
         <div style={{ marginBottom: 12 }}>
-          <Title level={5} style={{ marginBottom: 2 }}>{gt(meta.heading || steps[current].description || steps[current].title)}</Title>
-          {meta.blurb && <Text type="secondary">{gt(meta.blurb)}</Text>}
+          <Title level={5} style={{ marginBottom: 2 }}>{meta.heading || gt(steps[current].description || steps[current].title)}</Title>
+          {meta.blurb && <Text type="secondary">{meta.blurb}</Text>}
         </div>
 
         <div className="steps-content">
@@ -88,22 +117,25 @@ class EmployeeStepForm extends IceStepForm {
           ))}
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 16 }}>
+        <StickyActions>
           <div>
             {current > 0 && <Button onClick={() => this.prev()}>{gt('Back')}</Button>}
           </div>
           <Space>
             <Button onClick={() => this.props.closeModal()}>{gt('Cancel')}</Button>
             {!isLast && (
-              <Button type="primary" onClick={() => this.next()}>{gt('Next')}</Button>
+              // While editing, Save sits beside Next on every step so a change
+              // can be saved without walking to the end — Next drops to a
+              // secondary button there, since saving is the primary intent.
+              <Button type={editing ? 'default' : 'primary'} onClick={() => this.next()}>{gt('Next')}</Button>
             )}
-            {isLast && (
+            {(isLast || editing) && (
               <Button type="primary" loading={this.state.loading} onClick={() => this.saveData()}>
                 {editing ? gt('Save changes') : gt('Create employee')}
               </Button>
             )}
           </Space>
-        </div>
+        </StickyActions>
       </>
     );
   }

@@ -59,7 +59,10 @@ class EmployeeDependentAdapter extends ReactModalAdapterBase {
     return [
       ['id', { label: 'ID', type: 'hidden' }],
       ['name', { label: 'Name', type: 'text', validation: '' }],
-      ['relationship', { label: 'Relationship', type: 'select', source: [['Child', 'Child'], ['Spouse', 'Spouse'], ['Parent', 'Parent'], ['Other', 'Other']] }],
+      ['relationship', { label: 'Relationship', type: 'select', source: [['Child', 'Child'], ['Spouse', 'Spouse'], ['Partner', 'Partner'], ['Parent', 'Parent'], ['Sibling', 'Sibling'], ['Other', 'Other']] }],
+      ['gender', {
+        label: 'Gender', type: 'select', 'allow-null': true, source: [['Male', 'Male'], ['Female', 'Female'], ['Non-binary', 'Non-binary'], ['Other', 'Other'], ['Prefer not to say', 'Prefer not to say']],
+      }],
       ['dob', { label: 'Date of Birth', type: 'date', validation: '' }],
       ['id_number', { label: 'Id Number', type: 'text', validation: 'none' }],
     ];

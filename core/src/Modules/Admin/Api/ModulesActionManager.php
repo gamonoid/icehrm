@@ -39,6 +39,7 @@ class ModulesActionManager extends SubActionManager
             "modules>dashboard",
             "modules>dependents",
             "modules>emergency_contact",
+            "modules>bank_accounts",
             "modules>employees",
             "modules>projects",
             "modules>qualifications",

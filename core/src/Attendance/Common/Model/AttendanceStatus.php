@@ -77,9 +77,10 @@ class AttendanceStatus extends BaseModel
         $employee = new Employee();
         $data = array();
         if (strstr($whereOrderBy, 'department=?')) {
-            $employees = $employee->Find("department=?", $bindarr);
+            $employees = $employee->Find("department=? and status <> 'Onboarding'", $bindarr);
         } else {
-            $employees = $employee->Find("1=1");
+            // New hires who are still onboarding do not clock in yet.
+            $employees = $employee->Find("status <> 'Onboarding'");
         }
 
         // This override DISCARDS the caller's scoping clause (getData() passes
@@ -149,9 +150,9 @@ class AttendanceStatus extends BaseModel
     {
         $employee = new Employee();
         if (strstr($query, 'department=?')) {
-            $rows = $employee->Find("department=?", $data);
+            $rows = $employee->Find("department=? and status <> 'Onboarding'", $data);
         } else {
-            $rows = $employee->Find("1=1");
+            $rows = $employee->Find("status <> 'Onboarding'");
         }
 
         // Mirror Find(): the paging total must reflect the same manager scope, otherwise

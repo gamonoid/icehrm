@@ -209,6 +209,10 @@ if ($result['success'] == 1) {
 	$file->size = $f_size;
 	$file->size_text = FileService::getInstance()->getReadableSize($f_size);
 	$file->Save();
+	if ($file->file_group === 'profile_image' && !empty($file->$signInMappingField)) {
+		// Only the newest photo may remain, or the profile keeps showing the old one
+		FileService::getInstance()->removeOtherProfileImages($file->$signInMappingField, $file->filename);
+	}
 	if ($uploadedToS3) {
 		$url = $file_url;
 	} else {

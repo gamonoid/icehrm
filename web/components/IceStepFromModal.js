@@ -10,7 +10,14 @@ class IceStepFormModal extends IceFormModal {
   }
 
   show(data) {
+    if (this.iceFormReference.current && this.iceFormReference.current.resetSavingState) {
+      this.iceFormReference.current.resetSavingState();
+    }
     this.props.adapter.beforeRenderFieldHook = this.props.adapter.beforeRenderField ? this.props.adapter.beforeRenderField(data) : (fieldName, field) => field;
+    // A profile section's Edit button asks for the step holding its fields.
+    const initialFields = this.props.adapter.takeInitialFormFields
+      ? this.props.adapter.takeInitialFormFields() : null;
+    const initialStep = () => this.iceFormReference.current.getStepIndexForFields(initialFields);
     if (!data) {
       this.setState({ visible: true });
       if (this.iceFormReference.current) {
@@ -19,14 +26,14 @@ class IceStepFormModal extends IceFormModal {
     } else {
       this.setState({ visible: true });
       if (this.iceFormReference.current && this.iceFormReference.current.isReady()) {
-        this.iceFormReference.current.moveToStep(0);
+        this.iceFormReference.current.moveToStep(initialStep());
         this.iceFormReference.current.updateFields(data);
       } else {
         this.waitForIt(
           () => this.iceFormReference.current && this.iceFormReference.current.isReady(),
           () => {
             this.iceFormReference.current.updateFields(data);
-            this.iceFormReference.current.moveToStep(0);
+            this.iceFormReference.current.moveToStep(initialStep());
           },
           1000,
         );

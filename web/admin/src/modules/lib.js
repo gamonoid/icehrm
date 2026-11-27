@@ -81,8 +81,8 @@ class ModuleAdapter extends ReactModalAdapterBase {
       ['label', { label: 'Label', type: 'placeholder', validation: '' }],
       ['status', { label: 'Status', type: 'select', source: [['Enabled', 'Enabled'], ['Disabled', 'Disabled']] }],
       ['user_levels', { label: 'User Levels', type: 'select2multi', source: [['Admin', 'Admin'], ['Manager', 'Manager'], ['Employee', 'Employee']] }],
-      ['user_roles', { label: 'Allowed User Roles', validation: 'none', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
-      ['user_roles_blacklist', { label: 'Disallowed User Roles', validation: 'none', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
+      ['user_roles', { label: 'Allowed Permission Roles', validation: 'none', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
+      ['user_roles_blacklist', { label: 'Disallowed Permission Roles', validation: 'none', type: 'select2multi', 'remote-source': ['UserRole', 'id', 'name'] }],
     ];
   }
 

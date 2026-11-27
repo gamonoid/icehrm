@@ -23,7 +23,15 @@ if (function_exists('newrelic_disable_autorum')) {
 include 'includes.inc.php';
 
 if (empty($user) || empty($user->email)) {
-    header('Location:' . CLIENT_BASE_URL . 'login.php');
+    // Opened from an email link while signed out: come back to the same module after
+    // signing in (login.php follows "next"; the #tab fragment is kept by the login page).
+    $next = '';
+    if (isset($_GET['g'], $_GET['n'])
+        && in_array($_GET['g'], array('admin', 'modules', 'extension'), true)
+        && preg_match('/^[A-Za-z0-9_\-]+(\|[A-Za-z]+)?$/', (string) $_GET['n'])) {
+        $next = '?next=' . \Base64Url\Base64Url::encode('ui/?g=' . rawurlencode($_GET['g']) . '&n=' . rawurlencode($_GET['n']));
+    }
+    header('Location:' . CLIENT_BASE_URL . 'login.php' . $next);
     exit();
 }
 

@@ -140,7 +140,7 @@ class QualificationsPanel extends React.Component {
       <Row gutter={[16, 16]} style={{ width: '100%', padding: '10px' }}>
         <Col xs={24} md={12}>
           {this.card('Skills', <ToolOutlined />, '#1677ff', skills.length, editExtra('tabEmployeeSkill'),
-            skills.length === 0 ? this.empty('No skills recorded') : (
+            skills.length === 0 ? this.empty(gt('No skills recorded')) : (
               <div>
                 {skills.map((s) => this.rowItem(s.id, displayOf(s.skill_id), s.details, null))}
               </div>
@@ -148,7 +148,7 @@ class QualificationsPanel extends React.Component {
         </Col>
         <Col xs={24} md={12}>
           {this.card('Education', <ReadOutlined />, '#13c2c2', educations.length, editExtra('tabEmployeeEducation'),
-            educations.length === 0 ? this.empty('No education recorded') : (
+            educations.length === 0 ? this.empty(gt('No education recorded')) : (
               <div>
                 {educations.map((e) => this.rowItem(
                   e.id,
@@ -161,7 +161,7 @@ class QualificationsPanel extends React.Component {
         </Col>
         <Col xs={24} md={12}>
           {this.card('Certifications', <SafetyCertificateOutlined />, '#fa8c16', certifications.length, editExtra('tabEmployeeCertification'),
-            certifications.length === 0 ? this.empty('No certifications recorded') : (
+            certifications.length === 0 ? this.empty(gt('No certifications recorded')) : (
               <div>
                 {certifications.map((c) => this.rowItem(
                   c.id,
@@ -174,7 +174,7 @@ class QualificationsPanel extends React.Component {
         </Col>
         <Col xs={24} md={12}>
           {this.card('Languages', <GlobalOutlined />, '#722ed1', languages.length, editExtra('tabEmployeeLanguage'),
-            languages.length === 0 ? this.empty('No languages recorded') : (
+            languages.length === 0 ? this.empty(gt('No languages recorded')) : (
               <div>
                 {languages.map((l) => (
                   <div key={l.id} style={{ padding: '8px 0', borderBottom: '1px solid rgba(140,140,140,0.15)' }}>

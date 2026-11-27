@@ -28,7 +28,7 @@ class TravelActionManager extends ApproveAdminActionManager
 
     public function getItemName()
     {
-        return "TravelRequest";
+        return "travel request";
     }
 
     public function getModuleName()
@@ -48,7 +48,7 @@ class TravelActionManager extends ApproveAdminActionManager
 
     public function getModuleApprovalTabUrl()
     {
-        return "g=modules&n=travel&m=module_Travel_Management#tabEmployeeTravelRecordApproval";
+        return "g=modules&n=travel&m=module_Travel_Management#tabEmployeeTravelRecordApprove";
     }
 
     public function getLogs($req)

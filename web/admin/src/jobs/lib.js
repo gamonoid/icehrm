@@ -208,4 +208,55 @@ class EmploymentStatusAdapter extends ReactModalAdapterBase {
 }
 
 
-module.exports = { JobTitleAdapter, PayGradeAdapter, EmploymentStatusAdapter };
+/**
+ * TerminationReasonAdapter
+ */
+
+class TerminationReasonAdapter extends ReactModalAdapterBase {
+  getDataMapping() {
+    return ['id', 'name', 'description'];
+  }
+
+  getHeaders() {
+    return [
+      { sTitle: 'ID', bVisible: false },
+      { sTitle: 'Name' },
+      { sTitle: 'Description' },
+    ];
+  }
+
+  getFormFields() {
+    return [
+      ['id', { label: 'ID', type: 'hidden' }],
+      ['name', { label: 'Name', type: 'text' }],
+      ['description', { label: 'Description', type: 'textarea', validation: 'none' }],
+    ];
+  }
+
+  getTableColumns() {
+    return [
+      { title: 'Name', dataIndex: 'name', sorter: true },
+      { title: 'Description', dataIndex: 'description' },
+    ];
+  }
+
+  showViewButton() {
+    return false;
+  }
+
+  getHelpTitle() {
+    return this.gt('Termination Reasons');
+  }
+
+  getHelpDescription() {
+    return this.gt('Reasons recorded when an employee leaves. Set them on the Resigned tab of the Employees module.');
+  }
+}
+
+
+module.exports = {
+  JobTitleAdapter,
+  PayGradeAdapter,
+  EmploymentStatusAdapter,
+  TerminationReasonAdapter,
+};

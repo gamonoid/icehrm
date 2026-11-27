@@ -31,6 +31,10 @@
     (new \Classes\AppShellRestEndPoint())->process('getEmployeeDashboard');
 });
 
+\Classes\Macaw::get(REST_API_PATH . 'appshell/home', function () {
+    (new \Classes\AppShellRestEndPoint())->process('getHome');
+});
+
 \Classes\Macaw::get(REST_API_PATH . 'appshell/news', function () {
     (new \Classes\AppShellRestEndPoint())->process('getNews');
 });

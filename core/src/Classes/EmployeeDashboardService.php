@@ -50,6 +50,10 @@ class EmployeeDashboardService
         // Teams = the collaboration (matrix) view: teams this person belongs to,
         // independent of line management. Shown for everyone who is on a team.
         $data['teams'] = $this->myTeams($db, $empId);
+        $banners = DashboardService::bannersFor($user);
+        if (!empty($banners)) {
+            $data['banners'] = $banners;
+        }
 
         return $data;
     }
@@ -108,14 +112,21 @@ class EmployeeDashboardService
         }
         $upcoming = $this->rows(
             $db,
-            "SELECT el.date_start, el.date_end, lt.name AS leave_type
+            "SELECT el.id, el.date_start, el.date_end, el.status, lt.name AS leave_type, lt.leave_color
              FROM EmployeeLeaves el LEFT JOIN LeaveTypes lt ON lt.id = el.leave_type
-             WHERE el.employee = " . $empId . " AND el.status='Approved' AND el.date_end >= CURDATE()
+             WHERE el.employee = " . $empId . " AND el.status IN ('Approved','Pending') AND el.date_end >= CURDATE()
              ORDER BY el.date_start LIMIT 5"
         );
         $up = array();
         foreach ($upcoming as $r) {
-            $up[] = array('type' => $r['leave_type'], 'start' => $r['date_start'], 'end' => $r['date_end']);
+            $up[] = array(
+                'id' => (int) $r['id'],
+                'type' => $r['leave_type'],
+                'color' => !empty($r['leave_color']) ? $r['leave_color'] : null,
+                'start' => $r['date_start'],
+                'end' => $r['date_end'],
+                'status' => $r['status'],
+            );
         }
         return array(
             'pending' => (int) $this->scalar($db, "SELECT COUNT(*) FROM EmployeeLeaves WHERE employee = " . $empId . " AND status='Pending'"),
@@ -176,32 +187,71 @@ class EmployeeDashboardService
 
     private function celebrations($db)
     {
-        $rows = $this->rows($db, "SELECT first_name, last_name, birthday, joined_date
+        $rows = $this->rows($db, "SELECT id, first_name, last_name, birthday, joined_date
             FROM Employees WHERE status='Active'");
         $today = new \DateTime('today');
         $list = array();
         foreach ($rows as $r) {
             $name = trim($r['first_name'] . ' ' . $r['last_name']);
+            $id = (int) $r['id'];
             if ($this->validDate($r['birthday'])) {
                 $occ = $this->nextOccurrence($r['birthday'], $today);
                 // Birthdays are only surfaced when they fall today or tomorrow
                 // (days == 0 or 1); anything further out is not shown.
                 if ($occ['days'] <= 1) {
-                    $list[] = array('name' => $name, 'type' => 'birthday', 'date' => $occ['date'], 'days' => $occ['days'], 'years' => null);
+                    $list[] = array('id' => $id, 'name' => $name, 'type' => 'birthday', 'date' => $occ['date'], 'days' => $occ['days'], 'years' => null);
                 }
             }
             if ($this->validDate($r['joined_date'])) {
                 $occ = $this->nextOccurrence($r['joined_date'], $today);
                 $years = (int) $today->format('Y') - (int) substr($r['joined_date'], 0, 4);
                 if ($occ['days'] <= 30 && $years > 0) {
-                    $list[] = array('name' => $name, 'type' => 'anniversary', 'date' => $occ['date'], 'days' => $occ['days'], 'years' => $years);
+                    $list[] = array('id' => $id, 'name' => $name, 'type' => 'anniversary', 'date' => $occ['date'], 'days' => $occ['days'], 'years' => $years);
                 }
             }
         }
         usort($list, function ($a, $b) {
             return $a['days'] - $b['days'];
         });
-        return array_slice($list, 0, 6);
+        return self::withAvatars(array_slice($list, 0, 6));
+    }
+
+    /**
+     * Add each person's profile picture (or their generated initials avatar) to a
+     * list of {id, …} rows. Home shows faces rather than generic icons, and the
+     * ids let "Send wishes" open the Kudos composer on the right person.
+     *
+     * Shared by the dashboards; one Employee load per distinct id, images resolved
+     * by FileService exactly as every other avatar in the app.
+     *
+     * @param  array $list rows carrying an 'id'
+     * @return array the same rows, each with an added 'image'
+     */
+    public static function withAvatars(array $list)
+    {
+        $cache = array();
+        foreach ($list as $i => $row) {
+            $id = isset($row['id']) ? (int) $row['id'] : 0;
+            if ($id <= 0) {
+                $list[$i]['image'] = null;
+                continue;
+            }
+            if (!array_key_exists($id, $cache)) {
+                $cache[$id] = null;
+                try {
+                    $emp = new \Employees\Common\Model\Employee();
+                    $emp->Load('id = ?', array($id));
+                    if (!empty($emp->id)) {
+                        $emp = \Classes\FileService::getInstance()->updateSmallProfileImage($emp);
+                        $cache[$id] = empty($emp->image) ? null : $emp->image;
+                    }
+                } catch (\Throwable $e) {
+                    $cache[$id] = null;
+                }
+            }
+            $list[$i]['image'] = $cache[$id];
+        }
+        return $list;
     }
 
     // --- helpers (same contracts as DashboardService) ------------------------
@@ -215,7 +265,7 @@ class EmployeeDashboardService
         return $this->extensionExists('leave') || $this->extensionExists('leave_and_performance');
     }
 
-    private function extensionExists($name)
+    public function extensionExists($name)
     {
         if (!defined('APP_BASE_PATH')) {
             return false;

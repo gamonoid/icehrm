@@ -1,5 +1,183 @@
 # Release Notes IceHrmPro
 
+## Release note v36.1.1
+
+Full release notes with screenshots: [release-notes/v36.1.1.md](release-notes/v36.1.1.md)
+
+### 💼 Improvements
+
+#### Leave Emails
+* Leave request, cancellation request, request submitted and status changed emails use the shared IceHrm email layout.
+* The leave request email shows the employee, department, leave type, dates, days, reason and a day-by-day breakdown, with a Review request button.
+* The status changed email says who reviewed the request and includes their note, with a View my leave button.
+* Changing a leave's status from the administrator's leave screen sends the same email as a manager approval.
+* Leave notifications use the same clear wording as the emails.
+
+### 🐛 Bug Fixes
+* Attendance is back in the Manage menu; New Hire Onboarding had replaced it because both used the same menu position.
+* Modules that share a menu position are now both shown instead of one silently replacing the other.
+* Indirect supervisors are emailed about leave requests when the employee has no direct supervisor.
+* Setting a leave back to Pending no longer adds an empty notification.
+
+### 📋 Upgrade Notes
+* No database migrations.
+* The leave email templates (leaveApplied.html, leaveCancelled.html, leaveStatusChanged.html, leaveSubmittedForReview.html) are removed, so any local edits to them no longer apply.
+
+## Release note v36.1.0
+
+Full release notes with screenshots: [release-notes/v36.1.0.md](release-notes/v36.1.0.md)
+
+### ☘️ New Features
+
+#### Home
+* New **Home** page as the landing page for every user level.
+* Quick actions to request time off, clock in and give kudos.
+* Pending tasks from every module in one list, each linking to where it is resolved.
+* Company feed with posts, kudos, reactions and comments.
+* My team, upcoming time off, birthdays and work anniversaries.
+* Setup banner for administrators until Company Onboarding is finished.
+
+#### Kudos
+* Give kudos to a colleague with a message, an optional company value and an optional image.
+* Choose who sees it: everyone, your department or your team.
+* Monthly allowance (5 by default, 2 to 10 via the **Kudos: Max Kudos Per Month** setting).
+* Feed, Received and Given views, and emoji reactions.
+
+#### Channels and Inbox
+* **Channels**: company discussions with per-channel read, post and reply permissions by user level.
+* Built-in **Announcements** and **Public** channels; Public is the feed on Home.
+* Rich posts with attachments, replies, reactions and @mentions.
+* **Inbox**: private direct messages between two employees.
+
+#### Company Onboarding
+* Eight-step setup: start clean, company details, offices and departments, job titles, employment types, work week and holidays, leave types, and invite your team.
+* Invite people one at a time or paste them from a spreadsheet.
+* **Invite an Employee** on the Employees screen opens the invite step directly.
+
+#### New Hire Onboarding
+* Invite a new hire with a workflow; six ready-made workflows (Standard office, Remote, Engineering, Contractor, Financial services, Workforce), or copy one to customise.
+* Checklist for the new hire before and after their start date: information, acknowledgements and document uploads with HR review.
+* Tasks for HR, IT, the manager and a buddy, shown under **My onboarding tasks** and on Home.
+* Form, e-signature, course and asset steps when those extensions are installed.
+* New *Onboarding* employee status; the hire becomes *Active* on their start date.
+
+#### Richer Employee Records
+* Employment fields: employment type, work location, work mode, cost center, contract end date, weekly hours, FTE and original hire date.
+* Offboarding fields: last working day, termination type and reason, eligible for rehire, regrettable leaver.
+* Personal fields: about and LinkedIn profile.
+* New lists: work locations, cost centers and termination reasons.
+* **Work History** tab recording job, department, manager, pay grade, location and employment type changes.
+* **Salary History** recorded over time.
+* **Bank Accounts** with a primary account and salary split; account numbers and IBANs are stored encrypted.
+* Emergency contacts gain email, address and a primary flag; dependents gain gender and more relationship types.
+
+### 💼 Improvements
+* Invitations use single-use, expiring links and the invitee chooses their own password; no password is sent by email.
+* **Users** menu renamed to **Logins & Permissions**.
+* All system emails share one consistent layout.
+* Shared translation support for every bundle.
+* Profile sections open their edit form on the relevant step.
+* Extensions can show banners with progress and actions on Home and the dashboards.
+
+### 🐛 Bug Fixes
+* The release package includes the root `index.php` again, so the site root redirects to the application on non-Docker installations.
+
+### 📋 Upgrade Notes
+* Migrations run automatically on the next sign-in.
+* Each active employee without work history gets one open Work History entry; Salary History is filled from current salaries.
+* Employee time zone is now required; employees without one get their department's (or nearest parent structure's) time zone.
+* Invitation links sent before the upgrade keep working and expire 14 days after the upgrade.
+* **Requirements**: no change from v36.0. **Breaking changes**: none.
+
+## Release note v36.0.0
+
+Full release notes with screenshots: [release-notes/v36.0.0.md](release-notes/v36.0.0.md)
+
+### ☘️ New Features
+
+#### A Completely New Interface
+* IceHrm now runs as a single-page application: the sidebar and header stay loaded, so moving between modules is instant instead of a full page reload.
+* **Areas**: modules grouped into People, Time and Work, Leave and Pay, switchable from the top of the sidebar.
+* **Global module search**: jump straight to any module you have access to from the header search box.
+* Permission-aware menu that shows only what the signed-in user may open.
+* Deep links: every module has its own address, so screens can be bookmarked and shared.
+
+#### Dark Mode
+* Full dark theme across the application, remembered per browser.
+* Applied before the first paint, so there is no white flash on load.
+* Charts, dialogs, tables and forms are all themed, including older screens.
+
+#### Works on a Phone
+* The sidebar collapses into a drawer, cards stack and tables become scrollable.
+* Employees can check leave balances, submit requests and view payslips from a phone browser.
+
+#### In-App Notifications
+* Approvals, assignments and reminders appear in a notification tray in the header, with an unread count.
+
+#### Redesigned Dashboards
+* **Organization Overview** for administrators: employees, departments and pending approvals as clickable cards.
+* Headcount growth, gender diversity, employment type and headcount by department charts.
+* **Employee Dashboard**: leave balances, upcoming holidays, pending requests, assigned tasks and training on one page.
+
+#### Leave Management
+* Leave module now in the open-source edition: leave types, leave period, work week, public holidays and manual leave adjustments.
+* Employees apply for leave and see entitlement, pending and approved requests in one place; managers approve or reject from the same screen.
+* **Leave Calendar** shows the whole team's absences across the month.
+* Leave data shown on timesheets.
+
+#### Visual Company Structure
+* Company structure list with type, reporting line, address, country, timezone and headcount, plus inline edit, duplicate and delete.
+* New **Org Chart** tab showing the same data as a hierarchy.
+* Employee-facing **Company** view of the same structure.
+
+#### Modernised Everyday Screens
+* Rebuilt as native React views: no embedded frames, consistent styling and matching dialogs.
+* **Employee Directory**: searchable directory with photos, roles and contact details.
+* **Time Sheets**: weekly entry and review with project breakdowns and an approval flow.
+* **Employee Profile**: personal details, qualifications, dependents, emergency contacts and documents in tabs.
+
+#### Extensions Marketplace
+* Browse and manage extensions from inside the application, with licence status for each one.
+* Purchases are kept current automatically instead of only when the marketplace page is opened.
+
+#### Smarter Payroll Formulas
+* Precise syntax errors with the line number, e.g. *Unexpected end of input: unclosed '{' (line 3)*.
+* Unknown (misspelt) variables are reported with a suggested correction instead of silently evaluating to zero.
+* Functions that return nothing, produce NaN or divide by zero are reported in plain language.
+* Rounding, division and number formatting behave identically on every installation.
+
+#### Built-in Updater
+* Administrators see a banner when a newer version is published; **What's New** opens the changelog for your edition.
+* The updater downloads the release, checks the version and asks for confirmation before replacing anything.
+* Configuration, uploads and cached files are never replaced; extensions you installed yourself are preserved and reported.
+* Automatic backup of the previous version, one-click rollback, and a full log of every step.
+
+### 💼 Improvements
+* Material-style theme with Roboto typography, replacing the previous default serif font.
+* Consistent card layouts, spacing and iconography across every module.
+* Themed dialogs and forms, including on older screens.
+* Charts restyled and readable in both light and dark themes.
+* Clickable KPI cards that navigate to the underlying module.
+* Bundled public-holiday import for the Holidays tab.
+* Module descriptions throughout the Manage Modules screen.
+* Employee profile photos shown consistently in lists, charts and headers.
+* Database migrations run automatically the next time any user signs in, exactly once even if several people sign in at the same time.
+* Production Docker setup updated; MySQL is now published on loopback only.
+
+### 🐛 Bug Fixes
+* Fixed the overtime report.
+* Fixed the employee leave list name.
+* Fixed marketplace module issues.
+* Migration fixes and Docker container tweaks.
+
+### 🗑️ Removed
+* Legacy UI: every screen now runs in the new application shell.
+
+### 📋 Upgrade Notes
+* **Requirements**: no change. IceHrm v36 runs on the same PHP and MySQL versions as v35.
+* **Breaking changes**: none. All changes are backward compatible.
+* **Extensions**: now organised into free and paid sets. Existing installations keep working, and extensions you installed yourself are preserved across updates.
+
 ## Release note v35.0.0
 
 ### ☘️ New Features

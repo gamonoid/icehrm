@@ -20,7 +20,7 @@ class OvertimeActionManager extends ApproveModuleActionManager
 
     public function getItemName()
     {
-        return "Overtime Request";
+        return "overtime request";
     }
 
     public function getModuleName()
@@ -30,7 +30,7 @@ class OvertimeActionManager extends ApproveModuleActionManager
 
     public function getModuleTabUrl()
     {
-        return "g=modules&n=overtime&m=module_Time_Management#SubordinateEmployeeOvertime";
+        return "g=modules&n=overtime&m=module_Time_Management#tabSubordinateEmployeeOvertime";
     }
 
     public function getLogs($req)

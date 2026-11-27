@@ -20,7 +20,7 @@ class TravelActionManager extends ApproveModuleActionManager
 
     public function getItemName()
     {
-        return "TravelRequest";
+        return "travel request";
     }
 
     public function getModuleName()

@@ -159,25 +159,27 @@ export default function NativeModuleHost({ group, name, shellConfig }) {
       const list = window.modJsList || {};
       Object.keys(list).forEach((k) => {
         const m = list[k];
-        try {
-          // Tag each adapter with the module it belongs to, so its data.php
-          // requests declare scope explicitly (fixes the shared-session
-          // modulePath data-scope bug — see docs/DATA_SCOPE_ISSUE.md).
-          m.spaModuleGroup = group;
-          m.spaModuleName = name;
-          m.setTranslations(ctx.translations || {});
-          m.setFieldTemplates(ctx.fieldTemplates || {});
-          m.setTemplates(ctx.templates || {});
-          m.setCustomTemplates(ctx.customTemplates || {});
-          m.setUser(ctx.user || {});
-          m.initSourceMappings();
-          m.setBaseUrl(ctx.baseUrl);
-          m.setClientUrl(ctx.clientUrl);
-          m.setCurrentProfile(null);
-          m.setInstanceId(ctx.instanceId || '');
-          m.setApiUrl(ctx.restApiBase);
-          m.setupApiClient(shellConfig.token);
-        } catch (e) { /* ignore */ }
+        // Tag each adapter with the module it belongs to, so its data.php
+        // requests declare scope explicitly (fixes the shared-session
+        // modulePath data-scope bug — see docs/DATA_SCOPE_ISSUE.md).
+        // Each setter is guarded on its own: a lightweight adapter (e.g. Home's,
+        // which has no table) may lack or throw in one of them, and a single
+        // shared try/catch used to abandon the rest — leaving the module with
+        // no api client at all.
+        const step = (fn) => { try { fn(); } catch (e) { /* ignore */ } };
+        step(() => { m.spaModuleGroup = group; m.spaModuleName = name; });
+        step(() => m.setTranslations(ctx.translations || {}));
+        step(() => m.setFieldTemplates(ctx.fieldTemplates || {}));
+        step(() => m.setTemplates(ctx.templates || {}));
+        step(() => m.setCustomTemplates(ctx.customTemplates || {}));
+        step(() => m.setUser(ctx.user || {}));
+        step(() => m.initSourceMappings());
+        step(() => m.setBaseUrl(ctx.baseUrl));
+        step(() => m.setClientUrl(ctx.clientUrl));
+        step(() => m.setCurrentProfile(null));
+        step(() => m.setInstanceId(ctx.instanceId || ''));
+        step(() => m.setApiUrl(ctx.restApiBase));
+        step(() => m.setupApiClient(shellConfig.token));
       });
 
       setBooting(false);
