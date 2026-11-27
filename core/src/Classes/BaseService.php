@@ -188,7 +188,9 @@ class BaseService
 
         $newList = array();
         foreach ($list as $listObj) {
-            $newList[] = $this->cleanUpAdoDB($listObj);
+            // Opt-in hook (no-op by default) so a model can mask values, e.g. bank
+            // account numbers, on this list path too.
+            $newList[] = $this->cleanUpAdoDB($listObj->postProcessGetList($listObj));
         }
 
         if (!empty($mappingStr) && is_object($map)) {
@@ -1551,7 +1553,9 @@ class BaseService
 
 		$employee = new Employee();
 		if ($activeOnly) {
-			$employee->Load('id = ? and status = ?', [$employeeId, 'Active']);
+			// New hires who are onboarding are not active yet, but they must still be able
+			// to see and edit their own records.
+			$employee->Load("id = ? and status IN ('Active', 'Onboarding')", [$employeeId]);
 		} else {
 			$employee->Load('id = ?', [$employeeId]);
 		}

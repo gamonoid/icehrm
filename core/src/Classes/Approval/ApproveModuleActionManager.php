@@ -33,11 +33,11 @@ abstract class ApproveModuleActionManager extends ApproveCommonActionManager
         $obj = new $nsClass();
         $obj->Load("id = ?", array($req->id));
         if ($obj->id != $req->id) {
-            return new IceResponse(IceResponse::ERROR, "$itemName record not found");
+            return new IceResponse(IceResponse::ERROR, ucfirst($itemName)." not found");
         }
 
         if ($this->user->user_level != 'Admin' && $this->getCurrentProfileId() != $obj->employee) {
-            return new IceResponse(IceResponse::ERROR, "Only an admin or owner of the $itemName can do this");
+            return new IceResponse(IceResponse::ERROR, "Only an administrator or the owner of the $itemName can do this");
         }
 
         if ($obj->status != 'Approved') {
@@ -50,20 +50,30 @@ abstract class ApproveModuleActionManager extends ApproveCommonActionManager
             LogManager::getInstance()->error("Error occurred while cancelling the $itemName:".$obj->ErrorMsg());
             return new IceResponse(
                 IceResponse::ERROR,
-                "Error occurred while cancelling the $itemName. Please contact admin."
+                "Error occurred while cancelling the $itemName. Please contact an administrator."
             );
         }
 
         $this->baseService->audit(
             IceConstants::AUDIT_ACTION,
-            "Expense cancellation | start:".$obj->date_start."| end:".$obj->date_end
+            ucfirst($itemName)." cancellation requested | id:".$obj->id
         );
-        $notificationMsg
-            = $employee->first_name." ".$employee->last_name
-            ." cancelled a expense. Visit expense management module to approve";
+        // The owner's supervisor reviews the cancellation (an admin may cancel on the
+        // owner's behalf, so do not use the current user's supervisor).
+        $isOwner = !empty($employee) && $obj->employee == $this->getCurrentProfileId();
+        $owner = $isOwner ? $employee : $this->baseService->getElement('Employee', $obj->employee, null, true);
+        $actorName = !empty($employee) ? trim($employee->first_name." ".$employee->last_name) : 'An administrator';
+        $notificationMsg = $isOwner
+            ? sprintf('%s asked to cancel an approved %s.', $actorName, $itemName)
+            : sprintf(
+                "%s asked to cancel %s's approved %s.",
+                $actorName,
+                trim($owner->first_name." ".$owner->last_name),
+                $itemName
+            );
 
         $this->baseService->notificationManager->addNotification(
-            $employee->supervisor,
+            $owner->supervisor,
             $notificationMsg,
             '{"type":"url","url":"'.$this->getModuleTabUrl().'"}',
             $this->getModuleName(),

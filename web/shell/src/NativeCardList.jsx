@@ -14,11 +14,14 @@ import {
   LoginOutlined, UserDeleteOutlined, CheckCircleOutlined, DownloadOutlined, UploadOutlined, ContactsOutlined,
   FormOutlined, ExportOutlined, MonitorOutlined, CloseCircleOutlined, HistoryOutlined,
   FieldTimeOutlined, KeyOutlined, TagsOutlined, ScheduleOutlined, CarryOutOutlined, GiftOutlined,
-  InfoCircleOutlined, SettingOutlined, SlidersOutlined, SendOutlined, LinkOutlined, RedoOutlined,
+  InfoCircleOutlined, SettingOutlined, SlidersOutlined, SendOutlined, LinkOutlined, RedoOutlined, StopOutlined,
   GlobalOutlined, FilePdfOutlined,
 } from '@ant-design/icons';
 import { MUI_SHADOW } from './theme';
 import ExpenseDialog from './ExpenseDialog';
+
+// Employees.termination_type set when an onboarding is cancelled after acceptance.
+const ONBOARDING_CANCELLED = 'Onboarding cancelled';
 
 // Icon name (from declarative extension card config) -> component.
 const ICON_BY_NAME = {
@@ -276,10 +279,14 @@ const ENTITY_CONFIG = {
     title: (r) => `${r.first_name || ''} ${r.last_name || ''}`.trim() || r.employee_id,
     avatarField: 'image',
     hideMeta: ['first_name', 'last_name', 'image', 'id'],
+    // A hire whose onboarding was cancelled never started: they are flagged, and
+    // cannot be activated (re-hiring means sending a new onboarding invitation).
+    badges: (r) => (r.termination_type === ONBOARDING_CANCELLED
+      ? [{ key: 'onb', text: 'Onboarding cancelled', color: 'volcano' }] : []),
     extraActions: [
       {
         key: 'activate', tip: 'Activate', icon: <CheckCircleOutlined />, color: '#2e7d32',
-        method: 'activateEmployee',
+        method: 'activateEmployee', show: (m, r) => !r || r.termination_type !== ONBOARDING_CANCELLED,
       },
     ],
   },
@@ -850,7 +857,17 @@ const ENTITY_CONFIG = {
   UserInvitation: {
     titleField: 'username',
     tagFields: ['invitation_status_text'],
-    hideMeta: ['id'],
+    hideMeta: ['id', 'invitation_state'],
+    extraActions: [
+      {
+        key: 'resend', tip: 'Resend invitation', icon: <SendOutlined />, color: '#0288d1',
+        method: 'resendInvitation', show: (m, r) => m.hasAccess('save') && m.canResendInvitation(r),
+      },
+      {
+        key: 'revoke', tip: 'Revoke invitation', icon: <StopOutlined />, color: '#d32f2f',
+        method: 'revokeInvitation', show: (m, r) => m.hasAccess('save') && m.canRevokeInvitation(r),
+      },
+    ],
   },
 };
 
@@ -1745,6 +1762,11 @@ export default function NativeCardList({
                             </Tag>
                           );
                         })}
+                        {(typeof cfg.badges === 'function' ? cfg.badges(rec) : []).map((b) => (
+                          <Tag key={b.key || b.text} color={b.color || 'blue'} style={{ borderRadius: 6, margin: 0, flex: '0 0 auto' }}>
+                            {b.text}
+                          </Tag>
+                        ))}
                       </div>
                       <div style={{
                         display: 'flex', alignItems: 'center', gap: 16, marginTop: 4,

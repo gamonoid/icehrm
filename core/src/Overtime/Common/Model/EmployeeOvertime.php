@@ -20,10 +20,15 @@ class EmployeeOvertime extends ApproveModel
     public $table = 'EmployeeOvertime';
 
     public $notificationModuleName = "Overtime Management";
-    public $notificationUnitName = "OvertimeRequest";
+    public $notificationUnitName = "overtime request";
     public $notificationUnitPrefix = "An";
     public $notificationUnitAdminUrl = "g=modules&n=overtime&m=module_Time_Management#tabSubordinateEmployeeOvertime";
     public $preApproveSettingName = "Attendance: Pre-Approve Overtime Request";
+
+    public function getNotificationAdminUrl()
+    {
+        return "g=admin&n=overtime&m=admin_Manage#tabEmployeeOvertime";
+    }
 
     public function isMultiLevelApprovalsEnabled()
     {

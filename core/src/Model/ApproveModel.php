@@ -6,7 +6,6 @@ use Classes\BaseService;
 use Classes\IceResponse;
 use Classes\SettingsManager;
 use Employees\Common\Model\EmployeeApproval;
-use Travel\Common\Model\EmployeeTravelRecord;
 
 abstract class ApproveModel extends BaseModel
 {
@@ -14,6 +13,27 @@ abstract class ApproveModel extends BaseModel
     public function isMultiLevelApprovalsEnabled()
     {
         return false;
+    }
+
+    /** "an overtime request", "a travel request" (from $notificationUnitName). */
+    public function notificationUnitWithArticle()
+    {
+        $unit = (string) $this->notificationUnitName;
+        return (preg_match('/^[aeiou]/i', $unit) ? 'an ' : 'a ') . $unit;
+    }
+
+    /**
+     * Where admins review requests from employees without a supervisor. Defaults to
+     * the supervisor's page; models override it with their admin module.
+     */
+    public function getNotificationAdminUrl()
+    {
+        return $this->notificationUnitAdminUrl;
+    }
+
+    protected static function employeeFullName($employee)
+    {
+        return trim($employee->first_name . ' ' . $employee->last_name);
     }
 
     public function executePreSaveActions($obj)
@@ -41,10 +61,11 @@ abstract class ApproveModel extends BaseModel
             $employee = BaseService::getInstance()->getElement('Employee', $currentEmpId, null, true);
 
             if (!empty($employee->supervisor)) {
-                $notificationMsg = "A new "
-                    .$this->notificationUnitName." has been added by "
-                    . $employee->first_name . " " . $employee->last_name
-                    . ". Please visit ".$this->notificationModuleName." module to review it";
+                $notificationMsg = sprintf(
+                    '%s submitted %s for your approval.',
+                    self::employeeFullName($employee),
+                    $this->notificationUnitWithArticle()
+                );
 
                 BaseService::getInstance()->notificationManager->addNotification(
                     $employee->supervisor,
@@ -61,30 +82,35 @@ abstract class ApproveModel extends BaseModel
                 if ($user->user_level == "Admin") {
                     //Auto approve
                     $obj->status = 'Approved';
-                    $notificationMsg = 'Your '.$this->notificationUnitName
-                        .' is auto approved since you are an administrator and do not have any supervisor assigned';
+                    $notificationMsg = sprintf(
+                        'Your %s was approved automatically because you are an administrator '
+                        . 'with no supervisor assigned.',
+                        $this->notificationUnitName
+                    );
                     BaseService::getInstance()->notificationManager->addNotification(
                         null,
                         $notificationMsg,
-                        '{"type":"url","url":"'.$this->notificationUnitAdminUrl.'"}',
+                        '{"type":"url","url":"'.$this->getNotificationAdminUrl().'"}',
                         $this->notificationModuleName,
                         $user->id,
                         false,
                         $sendNotificationEmail
                     );
                 } else {
-                    //If the user do not have a supervisor, notify all admins
+                    //If the user does not have a supervisor, notify all admins
                     $admins = BaseService::getInstance()->getAllAdmins();
+                    $notificationMsg = sprintf(
+                        '%s submitted %s for your approval. You are receiving this because %s '
+                        . 'has no supervisor assigned.',
+                        self::employeeFullName($employee),
+                        $this->notificationUnitWithArticle(),
+                        $employee->first_name
+                    );
                     foreach ($admins as $admin) {
-                        $notificationMsg = 'A new '.$this->notificationUnitName.' has been added by '
-                            .$employee->first_name . ' ' . $employee->last_name . '. Please visit '
-                            .$this->notificationModuleName
-                            .' module to review it. You are getting this notification since you are an '
-                            .'administrator and the user do not have any supervisor assigned.';
                         BaseService::getInstance()->notificationManager->addNotification(
                             null,
                             $notificationMsg,
-                            '{"type":"url","url":"'.$this->notificationUnitAdminUrl.'"}',
+                            '{"type":"url","url":"'.$this->getNotificationAdminUrl().'"}',
                             $this->notificationModuleName,
                             $admin->id,
                             false,
@@ -106,13 +132,15 @@ abstract class ApproveModel extends BaseModel
 
         $fieldsToCheck = $this->fieldsNeedToBeApproved();
 
-        $travelRequest = new EmployeeTravelRecord();
-        $travelRequest->Load('id = ?', array($obj->id));
+        // Compare against the stored record of the same model (overtime, travel, expense...).
+        $modelClass = get_class($this);
+        $savedRecord = new $modelClass();
+        $savedRecord->Load('id = ?', array($obj->id));
 
         $needToApprove = false;
         if ($preApprove != "1") {
             foreach ($fieldsToCheck as $field) {
-                if ($obj->$field != $travelRequest->$field) {
+                if ($obj->$field != $savedRecord->$field) {
                     $needToApprove = true;
                     break;
                 }
@@ -134,10 +162,11 @@ abstract class ApproveModel extends BaseModel
                 $employee = BaseService::getInstance()->getElement('Employee', $currentEmpId, null, true);
 
                 if (!empty($employee->supervisor)) {
-                    $notificationMsg = $this->notificationUnitPrefix." "
-                        .$this->notificationUnitName." has been updated by "
-                        .$employee->first_name . " " . $employee->last_name
-                        .". Please visit ".$this->notificationModuleName." module to review it";
+                    $notificationMsg = sprintf(
+                        '%s updated %s, and it needs your approval again.',
+                        self::employeeFullName($employee),
+                        $this->notificationUnitWithArticle()
+                    );
 
                     BaseService::getInstance()->notificationManager->addNotification(
                         $employee->supervisor,
@@ -153,20 +182,21 @@ abstract class ApproveModel extends BaseModel
 
                     if ($user->user_level == 'Admin') {
                     } else {
-                        //If the user do not have a supervisor, notify all admins
+                        //If the user does not have a supervisor, notify all admins
                         $admins = BaseService::getInstance()->getAllAdmins();
+                        $notificationMsg = sprintf(
+                            '%s updated %s, and it needs your approval again. You are receiving this '
+                            . 'because %s has no supervisor assigned.',
+                            self::employeeFullName($employee),
+                            $this->notificationUnitWithArticle(),
+                            $employee->first_name
+                        );
                         foreach ($admins as $admin) {
-                            $notificationMsg = $this->notificationUnitPrefix.' '
-                                .$this->notificationUnitName.' request has been updated by '
-                                .$employee->first_name . ' ' . $employee->last_name
-                                .'. Please visit '.$this->notificationModuleName
-                                .' module to review it. You are getting this notification since you are '
-                                .'an administrator and the user do not have any supervisor assigned.';
                             BaseService::getInstance()->notificationManager->addNotification(
                                 null,
                                 $notificationMsg,
-                                '{"type":"url","url":"g=admin&n=travel&m=admin_Employees"}',
-                                'Travel Module',
+                                '{"type":"url","url":"'.$this->getNotificationAdminUrl().'"}',
+                                $this->notificationModuleName,
                                 $admin->id,
                                 false,
                                 $sendNotificationEmail

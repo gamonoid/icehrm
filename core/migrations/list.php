@@ -1,6 +1,9 @@
 <?php
 $migrationList = [];
 $migrationList[] = 'v20261106_100000_widen_attendance_ip';
+$migrationList[] = 'v20261125_100000_invitation_tokens';
+$migrationList[] = 'v20261124_100000_rename_users_to_logins';
+$migrationList[] = 'v20261123_100000_employee_fields';
 $migrationList[] = 'v20260806_100000_remove_legacy_reports_modules';
 $migrationList[] = 'v20260804_100000_remove_add_new_permissions_setting';
 $migrationList[] = 'v20260803_100000_widen_migration_file';

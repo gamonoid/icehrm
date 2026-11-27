@@ -8,17 +8,34 @@ class IceApiClient {
     this.legacyApiWrapper = legacyApiWrapper;
   }
 
-  get(endpoint) {
+  /**
+   * @param endpoint {string} REST path, e.g. 'kudos/people'
+   * @param config {object} optional; `params` are sent as query-string parameters
+   */
+  get(endpoint, config = {}) {
+    const params = IceApiClient.queryParams(config.params);
     if (this.legacyApiWrapper) {
       const url = `${this.clientBaseUrl}api/index.php?token=${this.token}&method=get&url=/${endpoint}`;
-      return axios.get(url);
+      return axios.get(url, { params });
     }
 
     return axios.get(this.baseUrl + endpoint, {
+      params,
       headers: {
         Authorization: `Bearer ${this.token}`,
       },
     });
+  }
+
+  // The legacy wrapper routes on token/method/url in the same query string, so a
+  // caller's params must not override them.
+  static queryParams(params) {
+    if (!params) return undefined;
+    const out = { ...params };
+    delete out.token;
+    delete out.method;
+    delete out.url;
+    return out;
   }
 
   post(endpoint, data) {

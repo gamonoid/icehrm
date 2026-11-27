@@ -42,7 +42,16 @@ $name= $_REQUEST['n'];
 $iceEmbedded = (isset($_REQUEST['_embed']) && $_REQUEST['_embed'] === '1')
 	|| (isset($_SERVER['HTTP_SEC_FETCH_DEST']) && $_SERVER['HTTP_SEC_FETCH_DEST'] === 'iframe');
 if (!$iceEmbedded) {
-	header('Location: ' . CLIENT_BASE_URL . 'ui/');
+	// Keep the destination: links in notification emails and system to-dos still use
+	// the legacy form "?g=modules&n=overtime#tabX". Forward the route as a query; the
+	// browser keeps the "#tabX" fragment, and the app shell turns both into the module
+	// and its tab. Only well-formed route parts are passed on.
+	$target = 'ui/';
+	if (in_array($group, array('admin', 'modules', 'extension'), true)
+		&& preg_match('/^[A-Za-z0-9_\-]+(\|[A-Za-z]+)?$/', (string) $name)) {
+		$target .= '?g=' . rawurlencode($group) . '&n=' . rawurlencode($name);
+	}
+	header('Location: ' . CLIENT_BASE_URL . $target);
 	exit();
 }
 

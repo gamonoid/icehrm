@@ -375,6 +375,38 @@ class FileService
         return BaseService::getInstance()->verifyHash($fileName.'|'.$expires, $signature);
     }
 
+    /**
+     * Remove an employee's older profile photos after a new one was uploaded.
+     *
+     * The photo is read with Load('file_group = ? and employee = ?'), which returns the oldest
+     * row, so a new upload saved under a new name was never shown. Removes every other
+     * profile_image row and all profile_image_small rows (the thumbnail is made again from the
+     * new photo on the next read). Rows with the new file's name are kept: the legacy dialog
+     * reuses one name, so its file on disk is the one just uploaded.
+     */
+    public function removeOtherProfileImages($employeeId, $keepFilename)
+    {
+        if (empty($employeeId)) {
+            return;
+        }
+        $file = new File();
+        foreach (array('profile_image', 'profile_image_small') as $group) {
+            $rows = $file->Find('file_group = ? and employee = ?', array($group, $employeeId));
+            foreach ($rows as $row) {
+                if ($row->employee != $employeeId || $row->filename === $keepFilename) {
+                    continue;
+                }
+                if ($row->Delete()) {
+                    try {
+                        $this->deleteFileFromDisk($row);
+                    } catch (\Exception $e) {
+                        LogManager::getInstance()->error('Could not delete old profile image: '.$e->getMessage());
+                    }
+                }
+            }
+        }
+    }
+
     public function deleteProfileImage($profileId)
     {
         $file = new File();

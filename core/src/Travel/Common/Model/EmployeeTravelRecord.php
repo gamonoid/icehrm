@@ -24,11 +24,16 @@ class EmployeeTravelRecord extends ApproveModel
     protected $allowCustomFields = true;
 
     public $notificationModuleName = "Travel Management";
-    public $notificationUnitName = "TravelRequest";
+    public $notificationUnitName = "travel request";
     public $notificationUnitPrefix = "A";
     public $notificationUnitAdminUrl
         = "g=modules&n=travel&m=module_Travel_Management#tabSubordinateEmployeeTravelRecord";
     public $preApproveSettingName = "Travel: Pre-Approve Travel Request";
+
+    public function getNotificationAdminUrl()
+    {
+        return "g=admin&n=travel&m=admin_Manage#tabEmployeeTravelRecord";
+    }
 
     public function isMultiLevelApprovalsEnabled()
     {

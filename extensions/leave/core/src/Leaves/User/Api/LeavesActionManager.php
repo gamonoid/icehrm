@@ -227,8 +227,9 @@ class LeavesActionManager extends SubActionManager
             IceConstants::AUDIT_ACTION,
             "Leave applied \ start:".$employeeLeave->date_start."\ end:".$employeeLeave->date_end
         );
-        $notificationMsg = $employee->first_name." ".$employee->last_name
-            ." applied for a leave. Visit leave module to approve or reject";
+        $notificationMsg = trim($employee->first_name." ".$employee->last_name)
+            ." applied for leave "
+            .LeavesEmailSender::shortDateRange($employeeLeave->date_start, $employeeLeave->date_end).".";
 
 
 		$managerApprovalNeeded = (int)SettingsManager::getInstance()->getSetting('Leave: Manager Needs to Approve');
@@ -306,8 +307,9 @@ class LeavesActionManager extends SubActionManager
             IceConstants::AUDIT_ACTION,
             "Leave cancellation \ start:".$employeeLeave->date_start."\ end:".$employeeLeave->date_end
         );
-        $notificationMsg = $employee->first_name." ".$employee->last_name
-            ." cancelled a leave. Visit leave module to approve";
+        $notificationMsg = trim($employee->first_name." ".$employee->last_name)
+            ." asked to cancel approved leave "
+            .LeavesEmailSender::shortDateRange($employeeLeave->date_start, $employeeLeave->date_end).".";
 
         $this->baseService->notificationManager->addNotification(
             $employee->supervisor,
@@ -1921,7 +1923,12 @@ class LeavesActionManager extends SubActionManager
             && $this->isLeaveNotificationsEnabled($employeeLeave->leave_type) == true
         ) {
             $leavesEmailSender = $this->createLeaveEmailSender();
-            $leavesEmailSender->sendLeaveStatusChangedEmail($employee, $employeeLeave);
+            $leavesEmailSender->sendLeaveStatusChangedEmail(
+                $autoApproval ? null : $employee,
+                $employeeLeave,
+                isset($req->reason) ? $req->reason : '',
+                $oldLeaveStatus
+            );
         }
 
         $this->baseService->audit(
@@ -1937,19 +1944,25 @@ class LeavesActionManager extends SubActionManager
 		}
 
         if ($employeeLeave->status != "Pending") {
-            $notificationMsg = "Your leave status has been changed to $employeeLeave->status by "
-                .$employee->first_name." ".$employee->last_name;
+            $reviewerName = (!$autoApproval && !empty($employee))
+                ? trim($employee->first_name." ".$employee->last_name)
+                : '';
+            $notificationMsg = LeavesEmailSender::statusSentence(
+                $employeeLeave->status,
+                $reviewerName,
+                $oldLeaveStatus
+            );
             if (!empty($req->reason)) {
-                $notificationMsg.=" (Note:".$req->reason.")";
+                $notificationMsg .= " Note: ".trim($req->reason);
             }
-        }
 
-        $this->baseService->notificationManager->addNotification(
-            $employeeLeave->employee,
-            $notificationMsg,
-            '{"type":"url","url":"g=modules&n=leaves&m=module_Leaves#tabEmployeeLeaveApproved"}',
-            IceConstants::NOTIFICATION_LEAVE
-        );
+            $this->baseService->notificationManager->addNotification(
+                $employeeLeave->employee,
+                $notificationMsg,
+                '{"type":"url","url":"g=modules&n=leaves&m=module_Leaves#tabEmployeeLeaveApproved"}',
+                IceConstants::NOTIFICATION_LEAVE
+            );
+        }
 
         if (!empty($sendApprovalEmailto)) {
             $employee = $this->baseService->getElement(
@@ -1959,8 +1972,12 @@ class LeavesActionManager extends SubActionManager
                 true
             );
 
-            $notificationMsg = "You have been assigned ".$employeeLeave->getDisplayName()
-                ." for approval by ".$employee->first_name." ".$employee->last_name;
+            $leaveOwner = $this->baseService->getElement('Employee', $employeeLeave->employee, null, true);
+            $ownerName = empty($leaveOwner) ? '' : trim($leaveOwner->first_name." ".$leaveOwner->last_name);
+            $request = $ownerName === '' ? "a leave request" : "a leave request from ".$ownerName;
+            $notificationMsg = empty($employee)
+                ? "You have ".$request." to approve."
+                : trim($employee->first_name." ".$employee->last_name)." sent you ".$request." to approve.";
 
             $this->baseService->notificationManager->addNotification(
                 $sendApprovalEmailto,

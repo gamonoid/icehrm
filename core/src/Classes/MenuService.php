@@ -64,6 +64,28 @@ class MenuService
     }
 
     /**
+     * A key for one menu item that is not yet used in that menu.
+     *
+     * core/modules.php and ExtensionManager key the items of a menu by their order
+     * ("A<order>", or "Z<n>" for unordered ones). When two modules in the same menu
+     * share an order, the second one used to overwrite the first, and the first
+     * module disappeared from the menu without any error. Add a suffix until the
+     * key is free, so both are kept. The suffix sorts right after the original key.
+     *
+     * @param  array|null $menuItems the items already in that menu
+     * @param  string     $key       the key the item would normally get
+     * @return string
+     */
+    public static function freeSlot($menuItems, $key)
+    {
+        $key = (string) $key;
+        while (is_array($menuItems) && isset($menuItems[$key])) {
+            $key .= '_';
+        }
+        return $key;
+    }
+
+    /**
      * Returns the menu tree filtered for the given user, mirroring core/modules.php.
      *
      * @param  \Users\Common\Model\User $user
@@ -72,12 +94,214 @@ class MenuService
     public function getMenuForUser($user)
     {
         $userRoles = $this->decodeUserRoles($user);
+        $allowed = $this->getRestriction($user);
 
         return [
-            'adminModules' => $this->filterMenus($this->rawAdminModules, $user, $userRoles),
-            'userModules' => $this->filterMenus($this->rawUserModules, $user, $userRoles),
+            'adminModules' => $this->hideMenus($this->restrictMenus($this->filterMenus($this->rawAdminModules, $user, $userRoles), 'admin', $allowed), 'admin', $user),
+            'userModules' => $this->hideMenus($this->restrictMenus($this->filterMenus($this->rawUserModules, $user, $userRoles), 'modules', $allowed), 'modules', $user),
             'mainIcons' => $this->mainIcons,
         ];
+    }
+
+    /** @var callable[] see addVisibilityFilter() */
+    private static $visibilityFilters = [];
+
+    /**
+     * Let an extension hide one of its menu items from users it does not apply to
+     * (it stays reachable by URL; access is still checked by the module itself). The
+     * callable gets (User, group, name), e.g. (user, 'extension', 'onboarding|user'),
+     * and returns false to hide the item; anything else keeps it. Inert when no
+     * filter is registered.
+     */
+    public static function addVisibilityFilter(callable $filter)
+    {
+        self::$visibilityFilters[] = $filter;
+    }
+
+    private function isVisibleByFilters($user, $group, $name)
+    {
+        foreach (self::$visibilityFilters as $filter) {
+            try {
+                if (call_user_func($filter, $user, $group, $name) === false) {
+                    return false;
+                }
+            } catch (\Throwable $e) {
+                continue;
+            }
+        }
+        return true;
+    }
+
+    private function hideMenus(array $menus, $defaultGroup, $user)
+    {
+        if (empty(self::$visibilityFilters) || empty($user)) {
+            return $menus;
+        }
+        $result = [];
+        foreach ($menus as $menu) {
+            $kept = [];
+            foreach ($menu['menu'] as $key => $item) {
+                $g = !empty($item['link_group']) ? $item['link_group'] : $defaultGroup;
+                $n = !empty($item['link_name']) ? $item['link_name'] : $item['name'];
+                if ($this->isVisibleByFilters($user, $g, $n)) {
+                    $kept[$key] = $item;
+                }
+            }
+            if (!empty($kept)) {
+                $result[] = ['name' => $menu['name'], 'menu' => $kept];
+            }
+        }
+        return $result;
+    }
+
+    private function hideView(array $groups, $user)
+    {
+        if (empty(self::$visibilityFilters) || empty($user)) {
+            return $groups;
+        }
+        $result = [];
+        foreach ($groups as $group) {
+            $items = [];
+            foreach ($group['items'] as $item) {
+                if ($this->isVisibleByFilters($user, $item['g'], $item['n'])) {
+                    $items[] = $item;
+                }
+            }
+            if (!empty($items)) {
+                $result[] = ['name' => $group['name'], 'items' => $items];
+            }
+        }
+        return $result;
+    }
+
+    /** @var callable[] see addBadgeProvider() */
+    private static $badgeProviders = [];
+
+    /**
+     * Let an extension show a bubble (a number) on menu items. The callable gets the
+     * User and returns [route => count], where route is the shell key "group::name",
+     * e.g. ['extension::company_onboarding|admin' => 4]. Counts of 0 are dropped.
+     */
+    public static function addBadgeProvider(callable $provider)
+    {
+        self::$badgeProviders[] = $provider;
+    }
+
+    /** @return array route => count, for this user */
+    public function getMenuBadges($user)
+    {
+        $badges = [];
+        if (empty($user)) {
+            return $badges;
+        }
+        foreach (self::$badgeProviders as $provider) {
+            try {
+                $r = call_user_func($provider, $user);
+            } catch (\Throwable $e) {
+                continue;
+            }
+            if (!is_array($r)) {
+                continue;
+            }
+            foreach ($r as $route => $count) {
+                if ((int) $count > 0) {
+                    $badges[(string) $route] = (int) $count;
+                }
+            }
+        }
+        return $badges;
+    }
+
+    /** @var callable[] see addRestriction() */
+    private static $restrictions = [];
+
+    /**
+     * Let an extension limit what a user may open, e.g. a new hire who is still
+     * onboarding. The callable gets the User and returns null (no limit) or
+     * ['modules' => ['modules:hrforms', ...], 'home' => ['group' => ..., 'name' => ...]].
+     */
+    public static function addRestriction(callable $restriction)
+    {
+        self::$restrictions[] = $restriction;
+    }
+
+    /**
+     * The combined restriction for this user, or null when nothing limits them.
+     *
+     * @return array|null ['modules' => [group:name => true], 'home' => array|null]
+     */
+    public function getRestriction($user)
+    {
+        if (empty($user)) {
+            return null;
+        }
+        $result = null;
+        foreach (self::$restrictions as $restriction) {
+            try {
+                $r = call_user_func($restriction, $user);
+            } catch (\Exception $e) {
+                continue;
+            }
+            if (!is_array($r) || !isset($r['modules']) || !is_array($r['modules'])) {
+                continue;
+            }
+            if ($result === null) {
+                $result = ['modules' => [], 'home' => null];
+            }
+            foreach ($r['modules'] as $key) {
+                $result['modules'][(string) $key] = true;
+            }
+            if (empty($result['home']) && !empty($r['home'])) {
+                $result['home'] = $r['home'];
+            }
+        }
+        return $result;
+    }
+
+    /** True when the restriction (if any) lets the user open group/name. */
+    public function isAllowedByRestriction($user, $group, $name)
+    {
+        $allowed = $this->getRestriction($user);
+        return $allowed === null || isset($allowed['modules'][$group . ':' . $name]);
+    }
+
+    private function restrictMenus(array $menus, $defaultGroup, $allowed)
+    {
+        if ($allowed === null) {
+            return $menus;
+        }
+        $result = [];
+        foreach ($menus as $menu) {
+            $kept = [];
+            foreach ($menu['menu'] as $key => $item) {
+                $g = !empty($item['link_group']) ? $item['link_group'] : $defaultGroup;
+                $n = !empty($item['link_name']) ? $item['link_name'] : $item['name'];
+                if (isset($allowed['modules'][$g . ':' . $n])) {
+                    $kept[$key] = $item;
+                }
+            }
+            if (!empty($kept)) {
+                $result[] = ['name' => $menu['name'], 'menu' => $kept];
+            }
+        }
+        return $result;
+    }
+
+    private function restrictView(array $groups, $allowed)
+    {
+        if ($allowed === null) {
+            return $groups;
+        }
+        $result = [];
+        foreach ($groups as $group) {
+            $items = array_values(array_filter($group['items'], function ($item) use ($allowed) {
+                return isset($allowed['modules'][$item['g'] . ':' . $item['n']]);
+            }));
+            if (!empty($items)) {
+                $result[] = ['name' => $group['name'], 'items' => $items];
+            }
+        }
+        return $result;
     }
 
     /**
@@ -100,18 +324,19 @@ class MenuService
     public function getViewMenus($user)
     {
         $userRoles = $this->decodeUserRoles($user);
+        $allowed = $this->getRestriction($user);
 
         return [
-            'admin' => $this->buildView(
+            'admin' => $this->hideView($this->restrictView($this->buildView(
                 [[$this->rawAdminModules, 'admin']],
                 $user->user_level,
                 $userRoles
-            ),
-            'employee' => $this->buildView(
+            ), $allowed), $user),
+            'employee' => $this->hideView($this->restrictView($this->buildView(
                 [[$this->rawAdminModules, 'admin'], [$this->rawUserModules, 'modules']],
                 'Employee',
                 []
-            ),
+            ), $allowed), $user),
             'mainIcons' => $this->mainIcons,
         ];
     }

@@ -17,6 +17,7 @@ import {
   EmployeeSubEmergencyContactAdapter,
   EmployeeSubDocumentAdapter,
   EmployeeCareerAdapter,
+  EmployeeBankAccountAdapter,
 } from './lib';
 import { UserAdapter, UserInvitationAdapter } from '../users/lib';
 import IceDataPipe from '../../../api/IceDataPipe';
@@ -39,6 +40,7 @@ window.EmployeeSubDependentAdapter = EmployeeSubDependentAdapter;
 window.EmployeeSubEmergencyContactAdapter = EmployeeSubEmergencyContactAdapter;
 window.EmployeeSubDocumentAdapter = EmployeeSubDocumentAdapter;
 window.EmployeeCareerAdapter = EmployeeCareerAdapter;
+window.EmployeeBankAccountAdapter = EmployeeBankAccountAdapter;
 
 window.IceDataPipe = IceDataPipe;
 
@@ -67,6 +69,12 @@ function init(data) {
   modJsList.tabEmployee.setRemoteTable(true);
   modJsList.tabEmployee.setFieldNameMap(data.fieldNameMap || {});
   modJsList.tabEmployee.setCustomFields(data.customFields || {});
+  // Sections that installed extensions add to the profile (e.g. Forms); see
+  // NativeModuleRegistry::withProfileSections.
+  modJsList.tabEmployee.profileSections = Array.isArray(data.profileSections) ? data.profileSections : [];
+  // An extension (Company Onboarding) can replace the Invitations tab; "Invite an
+  // Employee" then opens its route instead of the plain invitation form.
+  modJsList.tabEmployee.inviteRoute = (data.replacedTabs || {}).tabUserInvitation || null;
   modJsList.tabEmployee.setEmployeeNumberGeneration(
     Number(data.generateEmployeeNumbers) === 1,
     data.employeeNumberPrefix || '',
@@ -84,6 +92,7 @@ function init(data) {
     ['tabEmployeeLanguage', EmployeeLanguageAdapter, ['EmployeeLanguage'], 'Employee Language', 'EmployeeLanguage'],
     ['tabEmployeeDependent', EmployeeDependentAdapter, ['EmployeeDependent'], 'Employee Dependent', 'EmployeeDependent'],
     ['tabEmergencyContact', EmergencyContactAdapter, ['EmergencyContact'], 'Emergency Contact', 'EmergencyContact'],
+    ['tabEmployeeBankAccount', EmployeeBankAccountAdapter, ['EmployeeBankAccount'], 'Bank Account', 'EmployeeBankAccount'],
   ];
   simpleLists.forEach(([key, Adapter, args, name, permKey]) => {
     const a = new Adapter(...args);
@@ -97,7 +106,12 @@ function init(data) {
   modJsList.tabTerminatedEmployee = new TerminatedEmployeeAdapter('Employee', 'TerminatedEmployee', { status: 'Terminated' });
   modJsList.tabTerminatedEmployee.setRemoteTable(true);
   modJsList.tabTerminatedEmployee.setShowAddNew(false);
-  modJsList.tabTerminatedEmployee.setShowEdit(false);
+  // Admins edit the offboarding details (termination type, reason, last working
+  // day, rehire eligibility) of resigned employees here.
+  modJsList.tabTerminatedEmployee.setShowEdit(isAdmin);
+  modJsList.tabTerminatedEmployee.setFieldNameMap(data.fieldNameMap || {});
+  // Resigned employees keep their extension sections (Forms, Onboarding) too.
+  modJsList.tabTerminatedEmployee.profileSections = modJsList.tabEmployee.profileSections;
   modJsList.tabTerminatedEmployee.setObjectTypeName('Deactivated Employees');
   modJsList.tabTerminatedEmployee.setDataPipe(new IceDataPipe(modJsList.tabTerminatedEmployee));
   modJsList.tabTerminatedEmployee.setAccess(perm.Employee || []);
@@ -114,12 +128,16 @@ function init(data) {
   modJsList.tabUser = new UserAdapter('User');
   modJsList.tabUser.setCSRFRequired(true);
   modJsList.tabUser.setRemoteTable(true);
-  modJsList.tabUser.setObjectTypeName('User');
+  modJsList.tabUser.setObjectTypeName('Login');
   modJsList.tabUser.setDataPipe(new IceDataPipe(modJsList.tabUser));
   modJsList.tabUser.setAccess(perm.UserRole || []);
+  // CSRF token the "Edit User" flow (EmployeeAdapter.editUser) primes on #UserForm
+  // before saveUser posts. Supplied by the module's includeCsrf => 'User' config.
+  modJsList.tabUser.userEditCsrf = data.csrf || null;
 
   modJsList.tabUserInvitation = new UserInvitationAdapter('UserInvitation');
-  modJsList.tabUserInvitation.setObjectTypeName('User Invitation');
+  modJsList.tabUserInvitation.setObjectTypeName('Invitation');
+  modJsList.tabUserInvitation.setInvitationModule('admin=employees');
   modJsList.tabUserInvitation.setRemoteTable(true);
   modJsList.tabUserInvitation.setDataPipe(new IceDataPipe(modJsList.tabUserInvitation));
   modJsList.tabUserInvitation.setAccess(perm.UserInvitation || []);

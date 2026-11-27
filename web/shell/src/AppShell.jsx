@@ -2,7 +2,7 @@ import React, {
   useEffect, useMemo, useRef, useState,
 } from 'react';
 import {
-  Layout, Menu, Drawer, Grid, Avatar, Dropdown, Button, theme, Spin, Alert, Tooltip, ConfigProvider,
+  Layout, Menu, Drawer, Grid, Avatar, Dropdown, Button, theme, Spin, Alert, Tooltip, ConfigProvider, Badge,
 } from 'antd';
 import {
   MenuOutlined, UserOutlined, LogoutOutlined, AppstoreOutlined,
@@ -23,6 +23,7 @@ import UpdateAvailableBanner from './UpdateAvailableBanner';
 import NativeModuleHost from './NativeModuleHost';
 import NativeDocumentModal from './NativeDocumentModal';
 import ModuleSearch from './ModuleSearch';
+import { resolveLegacyRoute, resolveLegacyTab } from './legacyLinks';
 
 const { Header, Sider, Content } = Layout;
 const { useBreakpoint } = Grid;
@@ -102,6 +103,7 @@ const EMBED_CSS = `
 `;
 
 const KEY_SEP = '::';
+const HOME_KEY = `modules${KEY_SEP}home`;
 
 // Build antd Menu `items` from a view's group list. Each item already carries its
 // resolved { g, n } route from the server (MenuService.getViewMenus).
@@ -143,6 +145,32 @@ function mergeGroups(...lists) {
   }));
   return order.map((n) => byName.get(n));
 }
+
+/**
+ * Links in notification emails and system to-dos still use the legacy form
+ * "ui/?g=modules&n=overtime#tabSubordinateEmployeeOvertime" (app/index.php forwards
+ * the old "app/?g=…" links here, and the login page keeps the tab). Turn that into
+ * the shell route "#modules::overtime" and the start tab, before the first render.
+ */
+function consumeLegacyRoute() {
+  try {
+    const sp = new URLSearchParams(window.location.search);
+    const g = sp.get('g');
+    const n = sp.get('n');
+    if (!g || !n) return;
+    const frag = (window.location.hash || '').replace(/^#/, '');
+    let tab = /^[A-Za-z][A-Za-z0-9_]*$/.test(frag) ? frag : null;
+    if (!tab) tab = window.sessionStorage.getItem('ice-legacy-tab');
+    window.sessionStorage.removeItem('ice-legacy-tab');
+    const route = resolveLegacyRoute(g, n, tab);
+    if (route.tab) window.__iceShellStartTab = route.tab;
+    window.history.replaceState(null, '', `${window.location.pathname}#${encodeURIComponent(`${route.g}::${route.n}`)}`);
+  } catch (e) {
+    // Leave the URL as it is: the shell then opens Home.
+  }
+}
+
+if (typeof window !== 'undefined') consumeLegacyRoute();
 
 export default function AppShell({
   bootstrap, config, colorMode = 'light', onToggleColorMode,
@@ -315,24 +343,38 @@ export default function AppShell({
   const menuItems = useMemo(() => {
     const b = itemsByArea[selectedArea];
     if (!b) return [];
-    const toItem = (it) => ({ key: it.key, label: it.label });
-    if (b.manage.length && b.mine.length) {
+    // A bubble from bootstrap.menuBadges (route -> count), e.g. setup steps left.
+    const badges = bootstrap.menuBadges || {};
+    const toItem = (it) => ({
+      key: it.key,
+      label: badges[it.key] > 0 ? (
+        <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+          <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{it.label}</span>
+          <Badge count={badges[it.key]} size="small" />
+        </span>
+      ) : it.label,
+    });
+    // Home has its own pinned entry above; drop it here so it is not listed twice.
+    const notHome = (it) => it.key !== HOME_KEY;
+    const manage = b.manage.filter(notHome);
+    const mine = b.mine.filter(notHome);
+    if (manage.length && mine.length) {
       return [
         {
           type: 'group',
           key: 'grp-manage',
           label: sectionHeader(<ControlOutlined />, 'Manage'),
-          children: b.manage.map(toItem),
+          children: manage.map(toItem),
         },
         {
           type: 'group',
           key: 'grp-mine',
           label: sectionHeader(<UserOutlined />, 'Personal'),
-          children: b.mine.map(toItem),
+          children: mine.map(toItem),
         },
       ];
     }
-    return [...b.manage, ...b.mine].map(toItem);
+    return [...manage, ...mine].map(toItem);
   }, [itemsByArea, selectedArea]);
 
   const onAreaChange = (areaId) => {
@@ -353,6 +395,16 @@ export default function AppShell({
       setIframeLoading(true);
     } else {
       setCurrent(null);
+    }
+  };
+
+  // Go to the landing (Home). Clearing the hash re-runs applyHash, which resolves
+  // defaultKey() — so the URL stays clean and Home mounts like any other module.
+  const goHome = () => {
+    if (window.location.hash) {
+      window.location.hash = '';
+    } else {
+      applyHash();
     }
   };
 
@@ -396,6 +448,46 @@ export default function AppShell({
       try { window.history.replaceState(null, '', `#${encodeURIComponent(key)}`); } catch (z) { /* */ }
     }
   };
+
+  // Deep-link / intent contract (docs/HOME_AND_KUDOS_PLAN.md §4.4) for Home widgets,
+  // notifications and other modules:
+  //   window.iceShellOpenIntent({ group, module, tab, id, action, params })
+  // Sets the one-shot start-tab hint the module host already honours, stashes the
+  // record/action intent for the mounted module to consume (window.__iceShellIntent),
+  // then navigates. `module` may be a name, a "group::name" key, or {group,name};
+  // 'home' / no module goes to the landing. Purely additive over the existing hash
+  // forms. Re-registered every render so it always closes over the latest navigateTo.
+  // (No promises/async here on purpose — this bundle has no regenerator runtime.)
+  useEffect(() => {
+    window.iceShellOpenIntent = (intent) => {
+      const it = intent || {};
+      const mod = it.module;
+      if (!mod || mod === 'home') {
+        goHome();
+        return;
+      }
+      let g = it.group;
+      let n = mod;
+      if (typeof mod === 'string' && mod.indexOf(KEY_SEP) !== -1) {
+        const parts = mod.split(KEY_SEP);
+        g = parts[0];
+        n = parts[1];
+      } else if (mod && typeof mod === 'object') {
+        g = mod.group;
+        n = mod.name;
+      }
+      if (!g) g = 'modules';
+      // it.tab may be a legacy anchor (from a system to-do link); map it to the SPA key.
+      try { window.__iceShellStartTab = resolveLegacyTab(it.tab); } catch (e) { /* ignore */ }
+      try {
+        window.__iceShellIntent = (it.id || it.action || it.params)
+          ? { id: it.id || null, action: it.action || null, params: it.params || null }
+          : null;
+      } catch (e) { /* ignore */ }
+      navigateTo(g, n);
+    };
+    return () => { delete window.iceShellOpenIntent; };
+  });
 
   const selectedKey = displayed ? keyFor(displayed.g, displayed.n) : null;
 
@@ -455,6 +547,21 @@ export default function AppShell({
     : null;
 
   // --- chrome --------------------------------------------------------------
+  // The pinned Home entry, directly under the area switcher and present in every
+  // area. Rendered as a one-item Menu so it inherits the exact styling and
+  // selected state of the module menu below it. Hidden when this user cannot
+  // reach Home at all (e.g. a restricted user without a role on it).
+  const homeNav = itemMap[HOME_KEY] ? (
+    <Menu
+      mode="inline"
+      theme="dark"
+      selectedKeys={selectedKey === HOME_KEY ? [HOME_KEY] : []}
+      style={{ borderInlineEnd: 0 }}
+      items={[{ key: HOME_KEY, icon: <HomeOutlined />, label: 'Home' }]}
+      onClick={() => { if (isMobile) setDrawerOpen(false); goHome(); }}
+    />
+  ) : null;
+
   const sideMenu = (
     <Menu
       mode="inline"
@@ -475,7 +582,7 @@ export default function AppShell({
     ],
     onClick: ({ key }) => {
       if (key === 'logout') window.location.href = `${config.clientBaseUrl}logout.php`;
-      if (key === 'home') { window.location.hash = ''; setCurrent(null); }
+      if (key === 'home') { goHome(); }
     },
   };
 
@@ -574,7 +681,7 @@ export default function AppShell({
     <div
       role="button"
       tabIndex={0}
-      onClick={() => { window.location.hash = ''; setCurrent(null); }}
+      onClick={() => goHome()}
       title="Home"
       style={{
         display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer',
@@ -663,6 +770,7 @@ export default function AppShell({
             <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
               <div style={{ flex: 1, minHeight: 0, overflow: 'auto', paddingTop: 8 }}>
                 {areaSwitch}
+                {homeNav}
                 {sideMenu}
               </div>
               {logo}
@@ -684,6 +792,7 @@ export default function AppShell({
             <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
               <div style={{ flex: 1, minHeight: 0, overflow: 'auto', paddingTop: 8 }}>
                 {areaSwitch}
+                {homeNav}
                 {sideMenu}
               </div>
               {logo}

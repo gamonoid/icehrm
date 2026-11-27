@@ -20,6 +20,17 @@ IceHrm
 
 IceHrm is a comprehensive [HRM software](https://icehrm.com) that enables companies to manage employee information, track attendance, handle leave requests, and streamline HR workflows.
 
+### Home and Company Onboarding
+
+| Home | Company Onboarding |
+|:----:|:------------------:|
+| ![Home](docs/images/home.png) | ![Company Onboarding](docs/images/company-onboarding.png) |
+
+Home is everyone's starting point: a team feed with posts and kudos, pending tasks from
+every module, your team, upcoming time off and birthdays, with one-click actions to request
+time off, clock in or give kudos. A step-by-step setup takes a new company from its details,
+offices and job titles through to inviting the whole team.
+
 ### Core HR Management
 
 | Employee Management | Company Structure |

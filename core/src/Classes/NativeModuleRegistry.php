@@ -14,6 +14,39 @@ namespace Classes;
  */
 class NativeModuleRegistry
 {
+    /** @var array "group/name" => [tabKey => true], see hideTab() */
+    private static $hiddenTabs = array();
+
+    /**
+     * Let an extension remove a core tab it replaces, e.g. Company Onboarding hides
+     * Employees > Invitations. Without the extension the tab stays. $replacement is
+     * the shell route ("group::name") that takes over; the module gets it in its init
+     * data as replacedTabs[tabKey], so buttons that opened the tab can go there.
+     */
+    public static function hideTab($module, $tabKey, $replacement = null)
+    {
+        self::$hiddenTabs[(string) $module][(string) $tabKey] = $replacement === null ? true : (string) $replacement;
+    }
+
+    public static function isTabHidden($module, $tabKey)
+    {
+        return isset(self::$hiddenTabs[(string) $module][(string) $tabKey]);
+    }
+
+    /** @return array tabKey => replacement route, for the hidden tabs of a module */
+    public static function replacedTabs($module)
+    {
+        $out = array();
+        if (!empty(self::$hiddenTabs[(string) $module])) {
+            foreach (self::$hiddenTabs[(string) $module] as $tabKey => $replacement) {
+                if (is_string($replacement)) {
+                    $out[$tabKey] = $replacement;
+                }
+            }
+        }
+        return $out;
+    }
+
     public static function get($group, $name)
     {
         $map = self::map();
@@ -47,7 +80,58 @@ class NativeModuleRegistry
      */
     private static function map()
     {
-        return array_merge(self::coreMap(), self::discoverExtensionModules());
+        $map = array_merge(self::coreMap(), self::discoverExtensionModules());
+        if (isset($map['admin/employees'])) {
+            $map['admin/employees'] = self::withProfileSections($map['admin/employees']);
+        }
+        return $map;
+    }
+
+    /**
+     * Extensions can add a section to the admin employee profile by declaring, in
+     * their ADMIN meta.json:
+     *   native.profileSections: [ { key, label, icon, viewGlobal } ]
+     * The extension's admin bundle is then loaded with the employees module (it must
+     * have no side effects at load time beyond defining its globals), and the
+     * sections are passed to init(data) as data.profileSections. The profile renders
+     * window[viewGlobal] with { employeeId, employeeName, apiClient }. A disabled or
+     * removed extension's module manager is not loaded, so its section disappears.
+     */
+    private static function withProfileSections(array $entry)
+    {
+        $sections = array();
+        foreach (self::safeModuleManagers() as $manager) {
+            if (!($manager instanceof IceExtension) || $manager->getModuleType() !== 'admin') {
+                continue;
+            }
+            $obj = $manager->getModuleObject();
+            $native = isset($obj['native']) && is_array($obj['native']) ? $obj['native'] : array();
+            if (empty($native['profileSections']) || !is_array($native['profileSections'])
+                || empty($native['bundle']) || empty($obj['name'])) {
+                continue;
+            }
+            $bundle = self::extAssetUrl($obj['name']) . $native['bundle'];
+            if (!in_array($bundle, $entry['scripts'], true)) {
+                $entry['scripts'][] = $bundle;
+            }
+            foreach ($native['profileSections'] as $section) {
+                if (!is_array($section) || empty($section['key']) || empty($section['viewGlobal'])) {
+                    continue;
+                }
+                $sections[] = array(
+                    'key' => (string) $section['key'],
+                    'label' => isset($section['label']) ? (string) $section['label'] : (string) $section['key'],
+                    'icon' => isset($section['icon']) ? (string) $section['icon'] : null,
+                    'viewGlobal' => (string) $section['viewGlobal'],
+                );
+            }
+        }
+        if (!empty($sections)) {
+            $extraData = isset($entry['extraData']) && is_array($entry['extraData']) ? $entry['extraData'] : array();
+            $extraData['profileSections'] = $sections;
+            $entry['extraData'] = $extraData;
+        }
+        return $entry;
     }
 
     /** JS bundles a natively-mounted USER (modules group) module loads. */
@@ -114,7 +198,7 @@ class NativeModuleRegistry
             if ((!defined('SAML_ENABLED') || SAML_ENABLED == true) && $visible('SAML')) {
                 $tabs[] = $mk('SAMLSetting', 'SAML');
             }
-            $other = array('Projects', 'Recruitment', 'Notifications', 'Expense', 'Travel', 'Api', 'Overtime', 'Microsoft', 'Google');
+            $other = array('Projects', 'Recruitment', 'Notifications', 'Expense', 'Travel', 'Api', 'Overtime', 'Microsoft', 'Google', 'Kudos');
             if ($visible($other)) {
                 $tabs[] = $mk('OtherSetting', 'Other');
             }
@@ -296,6 +380,8 @@ class NativeModuleRegistry
                 'scripts' => $scripts,
                 'entities' => array(
                     'CompanyStructure' => '\\Company\\Common\\Model\\CompanyStructure',
+                    'WorkLocation' => '\\Employees\\Common\\Model\\WorkLocation',
+                    'CostCenter' => '\\Employees\\Common\\Model\\CostCenter',
                 ),
                 'customFieldType' => 'CompanyStructure',
                 'tabs' => array(
@@ -309,6 +395,8 @@ class NativeModuleRegistry
                         'label' => 'Org Chart',
                         'component' => 'OrgChart',
                     ),
+                    array('key' => 'tabWorkLocation', 'label' => 'Work Locations', 'component' => 'NativeCardList', 'entity' => 'WorkLocation'),
+                    array('key' => 'tabCostCenter', 'label' => 'Cost Centers', 'component' => 'NativeCardList', 'entity' => 'CostCenter'),
                 ),
             ),
 
@@ -319,6 +407,7 @@ class NativeModuleRegistry
                     'JobTitle' => '\\Jobs\\Common\\Model\\JobTitle',
                     'PayGrade' => '\\Jobs\\Common\\Model\\PayGrade',
                     'EmploymentStatus' => '\\Employees\\Common\\Model\\EmploymentStatus',
+                    'TerminationReason' => '\\Employees\\Common\\Model\\TerminationReason',
                 ),
                 'tabs' => array(
                     array('key' => 'tabJobTitle', 'label' => 'Job Titles', 'component' => 'NativeCardList', 'entity' => 'JobTitle', 'card' => array(
@@ -335,6 +424,7 @@ class NativeModuleRegistry
                     )),
                     array('key' => 'tabPayGrade', 'label' => 'Pay Grades', 'component' => 'NativeCardList', 'entity' => 'PayGrade'),
                     array('key' => 'tabEmploymentStatus', 'label' => 'Employment Status', 'component' => 'NativeCardList', 'entity' => 'EmploymentStatus'),
+                    array('key' => 'tabTerminationReason', 'label' => 'Termination Reasons', 'component' => 'NativeCardList', 'entity' => 'TerminationReason'),
                 ),
             ),
 
@@ -440,10 +530,15 @@ class NativeModuleRegistry
                     'EmployeeLanguage' => '\\Qualifications\\Common\\Model\\EmployeeLanguage',
                     'EmployeeDependent' => '\\Dependents\\Common\\Model\\EmployeeDependent',
                     'EmergencyContact' => '\\EmergencyContacts\\Common\\Model\\EmergencyContact',
+                    'EmployeeBankAccount' => '\\Employees\\Common\\Model\\EmployeeBankAccount',
+                    'UserInvitation' => '\\Model\\UserInvitation',
                 ),
                 'customFieldType' => 'Employee',
                 'includeFieldNameMappings' => 'Employee',
                 'includeManagersCanSwitch' => true,
+                // The profile's "Edit User" action (admin only) opens the User adapter's
+                // edit form, whose saveUser custom action is CSRF-guarded — prime its token.
+                'includeCsrf' => 'User',
                 // Employee-number auto-generation + multi-level-approval settings,
                 // surfaced to init(data). The Approvals tab shows when ANY module
                 // has multi-level approvals enabled.
@@ -462,6 +557,9 @@ class NativeModuleRegistry
                     array('key' => 'tabEmployee', 'label' => 'Employees', 'ids' => array(
                         'EmployeeTable', 'EmployeeForm', 'EmployeeFilterForm', 'UserForm', 'UserInvitationForm',
                     )),
+                    // Pending invitations sit next to the employee directory: inviting
+                    // someone is part of onboarding. Admin-only, as it was under Users.
+                    array('key' => 'tabUserInvitation', 'label' => 'Invitations', 'component' => 'NativeCardList', 'entity' => 'UserInvitation', 'requiresLevel' => array('Admin')),
                     // The sub-tabs are simple card lists with edit/delete; the
                     // read-only View modal is redundant here, so hide it (scoped
                     // to this module via the per-tab card config — these entities
@@ -473,6 +571,7 @@ class NativeModuleRegistry
                     array('key' => 'tabEmployeeLanguage', 'label' => 'Languages', 'component' => 'NativeCardList', 'entity' => 'EmployeeLanguage', 'card' => array('hideViewButton' => true)),
                     array('key' => 'tabEmployeeDependent', 'label' => 'Dependents', 'component' => 'NativeCardList', 'entity' => 'EmployeeDependent', 'card' => array('hideViewButton' => true)),
                     array('key' => 'tabEmergencyContact', 'label' => 'Contacts', 'component' => 'NativeCardList', 'entity' => 'EmergencyContact', 'card' => array('hideViewButton' => true)),
+                    array('key' => 'tabEmployeeBankAccount', 'label' => 'Bank Accounts', 'component' => 'NativeCardList', 'entity' => 'EmployeeBankAccount', 'card' => array('hideViewButton' => true)),
                     array('key' => 'tabTerminatedEmployee', 'label' => 'Resigned', 'component' => 'NativeCardList', 'entity' => 'TerminatedEmployee', 'card' => array('hideViewButton' => true)),
                     array('key' => 'tabArchivedEmployee', 'label' => 'Archived', 'component' => 'NativeCardList', 'entity' => 'ArchivedEmployee', 'card' => array('hideViewButton' => true)),
                 ),
@@ -500,11 +599,13 @@ class NativeModuleRegistry
                     'SalaryComponentType' => '\\Salary\\Common\\Model\\SalaryComponentType',
                     'SalaryComponent' => '\\Salary\\Common\\Model\\SalaryComponent',
                     'EmployeeSalary' => '\\Salary\\Common\\Model\\EmployeeSalary',
+                    'EmployeeSalaryHistory' => '\\Salary\\Common\\Model\\EmployeeSalaryHistory',
                 ),
                 'tabs' => array(
                     array('key' => 'tabSalaryComponentType', 'label' => 'Salary Component Types', 'component' => 'NativeCardList', 'entity' => 'SalaryComponentType'),
                     array('key' => 'tabSalaryComponent', 'label' => 'Salary Components', 'component' => 'NativeCardList', 'entity' => 'SalaryComponent'),
                     array('key' => 'tabEmployeeSalary', 'label' => 'Salary', 'component' => 'NativeCardList', 'entity' => 'EmployeeSalary'),
+                    array('key' => 'tabEmployeeSalaryHistory', 'label' => 'Salary History', 'component' => 'NativeCardList', 'entity' => 'EmployeeSalaryHistory', 'card' => array('hideViewButton' => true)),
                 ),
             ),
 
@@ -766,13 +867,25 @@ class NativeModuleRegistry
                 'includeCsrf' => 'User',
                 'includeModelClasses' => true,
                 'tabs' => array(
-                    array('key' => 'tabUser', 'label' => 'Users', 'component' => 'NativeCardList', 'entity' => 'User'),
-                    array('key' => 'tabUserRole', 'label' => 'User Roles', 'component' => 'NativeCardList', 'entity' => 'UserRole'),
-                    array('key' => 'tabUserInvitation', 'label' => 'User Invitations', 'component' => 'NativeCardList', 'entity' => 'UserInvitation'),
+                    // Invitations moved to Employees (next to the Employees tab).
+                    array('key' => 'tabUser', 'label' => 'Logins', 'component' => 'NativeCardList', 'entity' => 'User'),
+                    array('key' => 'tabUserRole', 'label' => 'Permission Roles', 'component' => 'NativeCardList', 'entity' => 'UserRole'),
                 ),
             ),
 
             // --- user (modules group) self-service lists -------------------
+            // Home — the landing page / entry point for every level. A bespoke React
+            // view driven by a widget registry (web/modules/src/home), fed by one
+            // aggregation call (appshell/home). See docs/HOME_AND_KUDOS_PLAN.md.
+            'modules/home' => array(
+                'initFn' => 'initModulesHome',
+                'scripts' => self::moduleScripts(),
+                'entities' => array(),
+                'tabs' => array(
+                    array('key' => 'tabHome', 'label' => 'Home', 'component' => 'NativeExtensionView', 'viewGlobal' => 'HomeView'),
+                ),
+            ),
+
             'modules/dependents' => array(
                 'initFn' => 'initModulesDependents',
                 'scripts' => self::moduleScripts(),
@@ -958,6 +1071,17 @@ class NativeModuleRegistry
                 ),
                 'tabs' => array(
                     array('key' => 'tabEmergencyContact', 'label' => 'Emergency Contacts', 'component' => 'NativeCardList', 'entity' => 'EmergencyContact', 'card' => array('disableView' => true)),
+                ),
+            ),
+
+            'modules/bank_accounts' => array(
+                'initFn' => 'initModulesBankAccounts',
+                'scripts' => self::moduleScripts(),
+                'entities' => array(
+                    'EmployeeBankAccount' => '\\Employees\\Common\\Model\\EmployeeBankAccount',
+                ),
+                'tabs' => array(
+                    array('key' => 'tabEmployeeBankAccount', 'label' => 'Bank Accounts', 'component' => 'NativeCardList', 'entity' => 'EmployeeBankAccount', 'card' => array('disableView' => true)),
                 ),
             ),
 

@@ -3,6 +3,7 @@ namespace Users\Admin\Api;
 
 use Classes\AbstractModuleManager;
 use Classes\Macaw;
+use Reactions\Rest\ReactionRestEndPoint;
 use Users\Common\Model\User;
 use Users\Rest\UserRestEndPoint;
 
@@ -53,5 +54,9 @@ class UsersAdminManager extends AbstractModuleManager
 				$userRestEndpoint->process('updatePassword');
 			}
 		);
+
+        // Generic emoji reactions (core/src/Reactions). Registered here because the
+        // users module is always loaded, so the routes exist on every install.
+        (new ReactionRestEndPoint())->registerEndPoints();
     }
 }

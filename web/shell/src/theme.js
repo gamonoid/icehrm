@@ -50,6 +50,9 @@ export function buildTheme(mode) {
       colorPrimary: MUI.primary,
       colorInfo: MUI.primary,
       colorSuccess: MUI.success,
+      // antd derives the success background from colorSuccess; for this dark green it
+      // came out a muddy grey-green in light mode, so set a clear light green.
+      ...(dark ? {} : { colorSuccessBg: '#edf7ed', colorSuccessBorder: '#a5d6a7' }),
       colorWarning: MUI.warning,
       colorError: MUI.error,
       colorLink: MUI.primary,

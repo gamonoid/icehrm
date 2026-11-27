@@ -1,6 +1,7 @@
 import React from 'react';
 import {List, Skeleton, Space, Input, Divider} from 'antd';
 import LazyAvatar from '../../../../components/LazyAvatar';
+import { t } from '../../../../api/i18n';
 const { Search } = Input;
 
 class EmployeeList extends React.Component {
@@ -169,7 +170,7 @@ class EmployeeList extends React.Component {
             onClick={() => this.selectItem(item)}
             avatar={<LazyAvatar src={item.image} name={item.first_name} />}
             title={item.first_name + ' ' + item.last_name}
-            description={`${item.department?.display} | ${item.job_title?.display}`}
+            description={[item.department?.display, item.job_title?.display].filter(Boolean).join(' | ')}
           />
         </Skeleton>
       </List.Item>
@@ -181,7 +182,7 @@ class EmployeeList extends React.Component {
     return (
       <div style={{border: '1px solid rgba(140, 140, 140, 0.18)', padding: '10px'}}>
         <Space direction={'vertical'} style={{width:'100%', textAlign: 'Right'}}>
-          <Search placeholder="Search by Name" onSearch={this.onSearch} enterButton />
+          <Search placeholder={t('Search by Name')} onSearch={this.onSearch} enterButton />
         </Space>
         <Divider></Divider>
         {/* The directory scrolls inside its own viewport-capped panel, so the

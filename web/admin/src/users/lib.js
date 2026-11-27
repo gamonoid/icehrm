@@ -3,7 +3,9 @@
  Developer: Thilina Hasantha (http://lk.linkedin.com/in/thilinah | https://github.com/thilinah)
  */
 
-import { Avatar, Space, Tag, message } from 'antd';
+import {
+  Avatar, Modal, Space, Tag, Typography, message,
+} from 'antd';
 import {
   CopyOutlined, DeleteOutlined, EditOutlined, MonitorOutlined,
 } from '@ant-design/icons';
@@ -28,10 +30,10 @@ class UserAdapter extends ReactModalAdapterBase {
     return [
       { sTitle: 'ID' },
       { sTitle: '' },
-      { sTitle: 'User Name' },
+      { sTitle: 'Username' },
       { sTitle: 'Authentication Email' },
       { sTitle: 'Employee' },
-      { sTitle: 'User Level' },
+      { sTitle: 'Access Level' },
     ];
   }
 
@@ -57,7 +59,7 @@ class UserAdapter extends ReactModalAdapterBase {
         dataIndex: 'employee',
       },
       {
-        title: 'User Level',
+        title: 'Access Level',
         dataIndex: 'user_level',
       },
     ];
@@ -66,14 +68,14 @@ class UserAdapter extends ReactModalAdapterBase {
   getFormFields() {
     return [
       ['id', { label: 'ID', type: 'hidden', validation: '' }],
-      ['username', { label: 'User Name', type: 'text', validation: 'username' }],
+      ['username', { label: 'Username', type: 'text', validation: 'username' }],
       ['email', { label: 'Email', type: 'text', validation: 'email' }],
       ['employee', {
         label: 'Employee', type: 'select2', 'allow-null': true, 'remote-source': ['Employee', 'id', 'first_name+last_name'],
       }],
       ['user_level',
         {
-          label: 'User Level',
+          label: 'Access Level',
           type: 'select',
           source: [
             ['Admin', 'Admin'],
@@ -86,7 +88,7 @@ class UserAdapter extends ReactModalAdapterBase {
         },
       ],
       ['user_roles', {
-        label: 'User Roles', type: 'select2multi', validation: 'none', 'remote-source': ['UserRole', 'id', 'name'],
+        label: 'Permission Roles', type: 'select2multi', validation: 'none', 'remote-source': ['UserRole', 'id', 'name'],
       }],
       ['lang', {
         label: 'Language', type: 'select2', 'allow-null': true, 'remote-source': ['SupportedLanguage', 'id', 'description'],
@@ -164,6 +166,7 @@ class UserAdapter extends ReactModalAdapterBase {
             .then((response) => {
               closeCallback();
               ReactDOM.unmountComponentAtNode(container);
+              adapter.showMessage(adapter.gt('Change Password'), adapter.gt('Password updated successfully.'));
             }).catch((error) => {
               formContainer.current.iceFormReference.current.showError(
                 error.response.data.error[0][0].message,
@@ -193,9 +196,9 @@ class UserAdapter extends ReactModalAdapterBase {
           adapter.createUserEmployeeId = null;
           closeCallback();
           if (data.email_status === 'sent') {
-            adapter.showMessage('Create User', `An email has been sent to ${data.user.email} with a temporary password to login to IceHrm.`);
+            adapter.showMessage('Create Login', `An email has been sent to ${data.user.email} with a temporary password to login to IceHrm.`);
           } else {
-            adapter.showMessage('Create User', 'User created successfully.');
+            adapter.showMessage('Create Login', 'Login created successfully.');
           }
           if (adapter.saveCompleteCallback) {
             adapter.saveCompleteCallback();
@@ -221,9 +224,9 @@ class UserAdapter extends ReactModalAdapterBase {
   saveUserSuccessCallBack(callBackData, serverData) {
     const user = callBackData[0];
     if (callBackData[1] === 'sent') {
-      this.showMessage('Create User', `An email has been sent to ${user.email} with a temporary password to login to IceHrm.`);
+      this.showMessage('Create Login', `An email has been sent to ${user.email} with a temporary password to login to IceHrm.`);
     } else if (callBackData[1] === 'not_sent') {
-      this.showMessage('Create User', 'User created successfully. But there was a problem sending welcome email.');
+      this.showMessage('Create Login', 'Login created successfully. But there was a problem sending the welcome email.');
     }
     this.get([]);
     if (this.saveCompleteCallback) {
@@ -344,6 +347,7 @@ class UserInvitationAdapter extends ReactModalAdapterBase {
       'last_name',
       'user_level',
       'invitation_status_text',
+      'expires_at',
     ];
   }
 
@@ -355,8 +359,9 @@ class UserInvitationAdapter extends ReactModalAdapterBase {
       { sTitle: 'Employee ID' },
       { sTitle: 'First Name' },
       { sTitle: 'Last Name' },
-      { sTitle: 'User Level' },
+      { sTitle: 'Access Level' },
       { sTitle: 'Status' },
+      { sTitle: 'Link Expires' },
     ];
   }
 
@@ -391,14 +396,87 @@ class UserInvitationAdapter extends ReactModalAdapterBase {
         dataIndex: 'last_name',
       },
       {
-        title: 'User Level',
+        title: 'Access Level',
         dataIndex: 'user_level',
       },
       {
         title: 'Status',
         dataIndex: 'invitation_status_text',
       },
+      {
+        title: 'Link Expires',
+        dataIndex: 'expires_at',
+      },
     ];
+  }
+
+  /** Module whose action manager handles resend / revoke (admin=employees or admin=users). */
+  setInvitationModule(module) {
+    this.invitationModule = module;
+  }
+
+  canResendInvitation(record) {
+    return record && record.invitation_state !== 'accepted';
+  }
+
+  canRevokeInvitation(record) {
+    return record && ['valid', 'expired'].includes(record.invitation_state);
+  }
+
+  resendInvitation(id) {
+    const params = JSON.stringify({ id });
+    const callBackData = [];
+    callBackData.callBackData = [];
+    callBackData.callBackSuccess = 'resendInvitationSuccessCallback';
+    callBackData.callBackFail = 'invitationActionFailCallback';
+    this.customAction('resendInvitation', this.invitationModule || 'admin=employees', params, callBackData);
+  }
+
+  resendInvitationSuccessCallback(data) {
+    this.get([]);
+    Modal.info({
+      title: data && data.sent ? this.gt('Invitation sent') : this.gt('The email could not be sent'),
+      width: 560,
+      content: (
+        <div>
+          <Typography.Paragraph>
+            {data && data.sent
+              ? this.gt('A new link was emailed. The previous link no longer works. You can also share this link yourself; it is shown only once.')
+              : this.gt('Check the email settings. Meanwhile you can share this link with the person yourself; it is shown only once.')}
+          </Typography.Paragraph>
+          <Typography.Paragraph copyable code style={{ wordBreak: 'break-all' }}>
+            {data ? data.url : ''}
+          </Typography.Paragraph>
+        </div>
+      ),
+    });
+  }
+
+  revokeInvitation(id) {
+    const that = this;
+    Modal.confirm({
+      title: this.gt('Revoke this invitation?'),
+      content: this.gt('The link will stop working. You can send a new invitation later.'),
+      okText: this.gt('Revoke'),
+      okButtonProps: { danger: true },
+      cancelText: this.gt('Cancel'),
+      onOk() {
+        const callBackData = [];
+        callBackData.callBackData = [];
+        callBackData.callBackSuccess = 'revokeInvitationSuccessCallback';
+        callBackData.callBackFail = 'invitationActionFailCallback';
+        that.customAction('revokeInvitation', that.invitationModule || 'admin=employees', JSON.stringify({ id }), callBackData);
+      },
+    });
+  }
+
+  revokeInvitationSuccessCallback() {
+    message.success(this.gt('Invitation revoked'));
+    this.get([]);
+  }
+
+  invitationActionFailCallback(data) {
+    message.error(typeof data === 'string' ? data : this.gt('That did not work. Please try again.'));
   }
 
   showViewButton() {
@@ -441,7 +519,7 @@ class UserInvitationAdapter extends ReactModalAdapterBase {
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
       ['user_level',
         {
-          label: 'User Level',
+          label: 'Access Level',
           type: 'select',
           source: [
             ['Admin', 'Admin'],
@@ -479,8 +557,8 @@ class UserInvitationAdapter extends ReactModalAdapterBase {
     const fields = this.getFormFields();
     const steps = [
       {
-        title: this.gt('Mandatory User Information'),
-        description: this.gt('Mandatory User Information'),
+        title: this.gt('Required Details'),
+        description: this.gt('Required Details'),
         fields: [
           'id',
           'email',
@@ -531,7 +609,7 @@ class UserInvitationAdapter extends ReactModalAdapterBase {
     if (parseInt(serverData.invitation_status, 10) === 1) {
       message.success(this.gt('An email with an invitation link is sent.'));
     } else {
-      message.error(this.gt('There was an error sending the invitation. Please check under System -> User -> User Invitations.'));
+      message.error(this.gt('The invitation was saved, but the email could not be sent. Use Resend under Employees -> Invitations to get a link you can share.'));
     }
   }
 
@@ -542,7 +620,7 @@ class UserInvitationAdapter extends ReactModalAdapterBase {
       2: 'Invitation Failed',
       3: 'Processing',
       4: 'Employee Created',
-      5: 'Employee and User Created',
+      5: 'Employee and Login Created',
       6: 'Welcome Email Failed',
     };
 

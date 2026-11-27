@@ -131,22 +131,22 @@ class TimeSheetsActionManager extends SubActionManager
 
         if ($timeSheet->status == "Submitted" && $employee->id == $timeSheet->employee) {
             $notificationMsg = $employee->first_name." ".$employee->last_name
-                ." submitted timesheet from ".date("M d, Y (l)", strtotime($timeSheet->date_start))
-                ." to ".date("M d, Y (l)", strtotime($timeSheet->date_end));
+                ." submitted a timesheet for ".date("j M Y", strtotime($timeSheet->date_start))
+                ." to ".date("j M Y", strtotime($timeSheet->date_end)).".";
             $this->baseService->notificationManager->addNotification(
                 $employee->supervisor,
                 $notificationMsg,
-                '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabSubEmployeeTimeSheetAll"}',
+                '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabTimeSheets"}',
                 IceConstants::NOTIFICATION_TIMESHEET
             );
         } elseif ($timeSheet->status == "Approved" || $timeSheet->status == "Rejected") {
-            $notificationMsg = $employee->first_name." ".$employee->last_name." ".$timeSheet->status
-                ." timesheet from ".date("M d, Y (l)", strtotime($timeSheet->date_start))." to "
-                .date("M d, Y (l)", strtotime($timeSheet->date_end));
+            $notificationMsg = $employee->first_name." ".$employee->last_name." ".strtolower($timeSheet->status)
+                ." your timesheet for ".date("j M Y", strtotime($timeSheet->date_start))." to "
+                .date("j M Y", strtotime($timeSheet->date_end)).".";
             $this->baseService->notificationManager->addNotification(
                 $timeSheet->employee,
                 $notificationMsg,
-                '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabEmployeeTimeSheetApproved"}',
+                '{"type":"url","url":"g=modules&n=time_sheets&m=module_Time_Management#tabTimeSheets"}',
                 IceConstants::NOTIFICATION_TIMESHEET
             );
         }

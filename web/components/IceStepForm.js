@@ -40,6 +40,29 @@ class IceStepForm extends IceForm {
     };
   }
 
+  // Index of the first step that contains one of the given fields, or 0.
+  getStepIndexForFields(fieldNames) {
+    if (!fieldNames || !fieldNames.length) {
+      return 0;
+    }
+    const { steps } = this.state;
+    for (let i = 0; i < fieldNames.length; i++) {
+      const index = steps.findIndex((step) => (step.fields || []).some(([key]) => key === fieldNames[i]));
+      if (index >= 0) {
+        return index;
+      }
+    }
+    return 0;
+  }
+
+  // Called whenever the modal opens, so a save that never returned cannot leave
+  // the Save button disabled for the next record.
+  resetSavingState() {
+    if (this.state.loading) {
+      this.setState({ loading: false });
+    }
+  }
+
   moveToStep(current) {
     this.setState({ current });
   }
@@ -126,10 +149,15 @@ class IceStepForm extends IceForm {
   save(params, success, fail) {
     const { adapter } = this.props;
     adapter.add(params, [], () => adapter.get([]), () => {
-      this.resetFields();
-      this.showError(false);
-      success();
-      this.setState({ loading: false });
+      // Always release the Save button, even if resetting the form throws;
+      // otherwise it stays in its loading state and ignores every later click.
+      try {
+        this.resetFields();
+        this.showError(false);
+        success();
+      } finally {
+        this.setState({ loading: false });
+      }
     }, () => {
       this.setState({ loading: false });
       if (fail) { fail() };

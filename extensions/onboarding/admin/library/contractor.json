@@ -1,0 +1,97 @@
+{
+  "key": "contractor",
+  "order": 5,
+  "name": "Contractor",
+  "audience": "Contractors and short-term staff",
+  "description": "A short version: contact details, ID, confidentiality, IT access and a point of contact. No benefits or probation steps.",
+  "welcome_message": "Welcome! Please complete these few steps before you start so your access is ready on day one.",
+  "first_day_info": "Your manager will meet you on your first day and walk you through the plan for your first week.",
+  "steps": [
+    {
+      "key": "welcome",
+      "type": "info",
+      "title": "Welcome",
+      "owner_type": "new_hire",
+      "due_offset_days": -7,
+      "required": true,
+      "config": {
+        "text": "This short checklist sets up your access. It takes about 10 minutes."
+      }
+    },
+    {
+      "key": "profile",
+      "type": "info",
+      "title": "Complete your profile",
+      "owner_type": "new_hire",
+      "due_offset_days": -5,
+      "required": true,
+      "config": {
+        "text": "Open Personal Details in the menu (under About You) and check your name, date of birth, contact details and address. Correct anything that is missing or out of date. Then open Emergency Contacts and add at least one person we can call in an emergency."
+      }
+    },
+    {
+      "key": "hr_profile",
+      "type": "task",
+      "title": "Check the new hire's profile",
+      "instructions": "Check that personal details, contact details and emergency contacts are complete.",
+      "owner_type": "hr",
+      "due_offset_days": -3,
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "id",
+      "type": "document",
+      "title": "Upload a copy of your ID",
+      "instructions": "Upload your passport or national identity card.",
+      "owner_type": "new_hire",
+      "due_offset_days": -5,
+      "required": true,
+      "needs_review": true,
+      "config": {
+        "document_name": "ID Copy"
+      }
+    },
+    {
+      "key": "ip",
+      "type": "acknowledge",
+      "title": "Confidentiality and IP",
+      "owner_type": "new_hire",
+      "due_offset_days": -3,
+      "required": true,
+      "config": {
+        "text": "I will keep the company's confidential information private, during and after my work here. Work I create for the company belongs to the company, as set out in my agreement."
+      }
+    },
+    {
+      "key": "it_use",
+      "type": "acknowledge",
+      "title": "IT acceptable use policy",
+      "owner_type": "new_hire",
+      "due_offset_days": -3,
+      "required": true,
+      "config": {
+        "text": "I have read the IT acceptable use policy. I will use company systems, devices and accounts only as it allows, keep my passwords private and report anything suspicious to IT."
+      }
+    },
+    {
+      "key": "it_accounts",
+      "type": "task",
+      "title": "Create accounts with an end date",
+      "instructions": "Set the account to expire at the end of the contract.",
+      "owner_type": "hr",
+      "due_offset_days": -2,
+      "required": true,
+      "config": {}
+    },
+    {
+      "key": "mgr_intro",
+      "type": "task",
+      "title": "Brief the contractor on the work",
+      "owner_type": "manager",
+      "due_offset_days": 0,
+      "required": true,
+      "config": {}
+    }
+  ]
+}

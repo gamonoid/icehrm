@@ -1,0 +1,10 @@
+{
+"label":"Home",
+"menu":"About You",
+"order":"0",
+"icon":"fa-home",
+"user_levels":["Admin","Manager","Employee"],
+
+	"model_namespace": "\\Home\\Common\\Model",
+	"manager": "\\Home\\User\\Api\\HomeModulesManager"
+}

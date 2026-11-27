@@ -239,7 +239,9 @@ gulp.task('api-common', (done) => browserify({
   .pipe(gulp.dest('web/dist')));
 
 const vendorReact = ['react', 'react-dom'];
-const vendorAntd = ['antd'];
+// dayjs is antd's date library; exposing it here gives every bundle (extensions
+// included) the same instance antd's DatePicker uses.
+const vendorAntd = ['antd', 'dayjs'];
 const vendorAntdIcons = ['@ant-design/icons'];
 const vendorAntv = ['@antv/g2plot'];
 const vendorOther = ['moment', 'codemirror'];
@@ -360,11 +362,13 @@ gulp.task('modules-js', (done) => {
   // Note: leavecal, leaves, performance are in pro extension only
   const files = [
     'attendance',
+    'bank_accounts',
     'dashboard',
     'dependents',
     'documents',
     'emergency_contact',
     'employees',
+    'home',
     'loans',
     'overtime',
     'qualifications',

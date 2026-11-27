@@ -1,0 +1,33 @@
+{
+  "label": "Kudos",
+  "menu": [
+    "Kudos"
+  ],
+  "order": "2",
+  "icon": "fa-trophy",
+  "user_levels": [
+    "Admin",
+    "Manager",
+    "Employee"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\KudosUser\\Common\\Model",
+  "manager": "\\KudosUser\\Extension",
+  "controller": "\\KudosUser\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "area": "people",
+  "native": {
+    "initFn": "initKudosUser",
+    "bundle": "kudos/user/dist/kudos.js",
+    "tabs": [
+      {
+        "key": "tabMain",
+        "label": "Kudos",
+        "component": "NativeExtensionView",
+        "viewGlobal": "KudosUserView"
+      }
+    ]
+  }
+}

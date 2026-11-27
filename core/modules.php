@@ -148,10 +148,10 @@ foreach ($ams as $am) {
         }
 
         if ($arr['order'] == '0' || $arr['order'] == '') {
-            $adminModulesTemp[$arr['menu']]["Z".$currentLocation] = $arr;
+            $adminModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($adminModulesTemp[$arr['menu']], "Z".$currentLocation)] = $arr;
             $currentLocation++;
         } else {
-            $adminModulesTemp[$arr['menu']]["A".$arr['order']] = $arr;
+            $adminModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($adminModulesTemp[$arr['menu']], "A".$arr['order'])] = $arr;
         }
 
         /* @var \Classes\AbstractInitialize $initializer */
@@ -248,10 +248,10 @@ if ($proAdminPath !== null && is_dir($proAdminPath)) {
             }
 
             if ($arr['order'] == '0' || $arr['order'] == '') {
-                $adminModulesTemp[$arr['menu']]["Z".$currentLocation] = $arr;
+                $adminModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($adminModulesTemp[$arr['menu']], "Z".$currentLocation)] = $arr;
                 $currentLocation++;
             } else {
-                $adminModulesTemp[$arr['menu']]["A".$arr['order']] = $arr;
+                $adminModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($adminModulesTemp[$arr['menu']], "A".$arr['order'])] = $arr;
             }
 
             /* @var \Classes\AbstractInitialize $initializer */
@@ -342,10 +342,10 @@ foreach ($ams as $am) {
             }
 
             if ($arr['order'] == '0' || $arr['order'] == '') {
-                $userModulesTemp[$arr['menu']]["Z" . $currentLocation] = $arr;
+                $userModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($userModulesTemp[$arr['menu']], "Z" . $currentLocation)] = $arr;
                 $currentLocation++;
             } else {
-                $userModulesTemp[$arr['menu']]["A" . $arr['order']] = $arr;
+                $userModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($userModulesTemp[$arr['menu']], "A" . $arr['order'])] = $arr;
             }
 
             $initializer = $manager->getInitializer();
@@ -441,10 +441,10 @@ if ($proModulesPath !== null && is_dir($proModulesPath)) {
                 }
 
                 if ($arr['order'] == '0' || $arr['order'] == '') {
-                    $userModulesTemp[$arr['menu']]["Z" . $currentLocation] = $arr;
+                    $userModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($userModulesTemp[$arr['menu']], "Z" . $currentLocation)] = $arr;
                     $currentLocation++;
                 } else {
-                    $userModulesTemp[$arr['menu']]["A" . $arr['order']] = $arr;
+                    $userModulesTemp[$arr['menu']][\Classes\MenuService::freeSlot($userModulesTemp[$arr['menu']], "A" . $arr['order'])] = $arr;
                 }
 
                 $initializer = $manager->getInitializer();

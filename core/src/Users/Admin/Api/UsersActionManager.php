@@ -162,4 +162,25 @@ class UsersActionManager extends SubActionManager
         }
         return $randomString;
     }
+
+    /**
+     * Send the invitation again with a new link (the old link stops working).
+     * Admin only: same rule as editing invitations.
+     */
+    public function resendInvitation($req)
+    {
+        $this->baseService->checkSecureAccess('save', new \Model\UserInvitation(), 'UserInvitation', $_POST);
+        $service = new \Employees\Services\UserInvitationService();
+        return $service->resend(intval($req->id));
+    }
+
+    /**
+     * Withdraw an invitation so its link can no longer be used.
+     */
+    public function revokeInvitation($req)
+    {
+        $this->baseService->checkSecureAccess('save', new \Model\UserInvitation(), 'UserInvitation', $_POST);
+        $service = new \Employees\Services\UserInvitationService();
+        return $service->revoke(intval($req->id));
+    }
 }

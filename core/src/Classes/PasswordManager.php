@@ -260,7 +260,7 @@ class PasswordManager
     public static function isQualifiedPassword($password)
     {
         if (strlen($password) < 8) {
-            $error = "Password too short";
+            $error = "The password is too short. Use at least 8 characters.";
 
             return new IceResponse(IceResponse::ERROR, $error);
         }
@@ -268,31 +268,31 @@ class PasswordManager
         // bcrypt hashes the first 72 bytes, so 72 is the real ceiling; the old cap of 30
         // needlessly blocked passphrases.
         if (strlen($password) > 72) {
-            $error = "Password too long";
+            $error = "The password is too long. Use at most 72 characters.";
 
             return new IceResponse(IceResponse::ERROR, $error);
         }
 
         if (!preg_match("#[0-9]+#", $password)) {
-            $error = "Password must include at least one number";
+            $error = "The password must include at least one number.";
 
             return new IceResponse(IceResponse::ERROR, $error);
         }
 
         if (!preg_match("#[a-z]+#", $password)) {
-            $error = "Password must include at least one lowercase letter";
+            $error = "The password must include at least one lowercase letter.";
 
             return new IceResponse(IceResponse::ERROR, $error);
         }
 
         if (!preg_match("#[A-Z]+#", $password)) {
-            $error = "Password must include at least one uppercase letter";
+            $error = "The password must include at least one uppercase letter.";
 
             return new IceResponse(IceResponse::ERROR, $error);
         }
 
         if (!preg_match("#\W+#", $password)) {
-            $error = "Password must include at least one symbol";
+            $error = "The password must include at least one symbol.";
 
             return new IceResponse(IceResponse::ERROR, $error);
         }

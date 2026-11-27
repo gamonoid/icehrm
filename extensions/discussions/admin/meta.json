@@ -1,0 +1,31 @@
+{
+  "label": "Channels",
+  "menu": [
+    "Manage"
+  ],
+  "order": "5",
+  "icon": "fa-comments",
+  "user_levels": [
+    "Admin"
+  ],
+  "dashboardPosition": 0,
+  "permissions": [],
+  "model_namespace": "\\DiscussionsAdmin\\Common\\Model",
+  "manager": "\\DiscussionsAdmin\\Extension",
+  "controller": "\\DiscussionsAdmin\\Controller",
+  "headless": false,
+  "show_in_menu": true,
+  "area": "people",
+  "native": {
+    "initFn": "initDiscussionsAdmin",
+    "bundle": "discussions/admin/dist/discussions.js",
+    "tabs": [
+      {
+        "key": "tabChannels",
+        "label": "Channels",
+        "component": "NativeExtensionView",
+        "viewGlobal": "DiscussionsAdminView"
+      }
+    ]
+  }
+}

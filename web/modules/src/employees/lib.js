@@ -130,13 +130,23 @@ class EmployeeAdapter extends ReactModalAdapterBase {
 
     employee_id = ['employee_id', { label: 'Employee Number', type: 'text', validation: '' }];
     ssn_num = ['ssn_num', { label: 'EPF/CPF/SS No', type: 'text', validation: 'none' }];
-    employment_status = ['employment_status', { label: 'Employment Status', type: 'select2', 'remote-source': ['EmploymentStatus', 'id', 'name'] }];
-    job_title = ['job_title', { label: 'Job Title', type: 'select2', 'remote-source': ['JobTitle', 'id', 'name'] }];
+    // Employment details are managed by HR: the server keeps the stored values when
+    // employees save their own record (Employee::getProtectedFields), so they are
+    // shown read-only here instead of looking editable. 'allow-null' keeps an empty
+    // read-only value from blocking the save.
+    employment_status = ['employment_status', {
+      label: 'Employment Status', type: 'select2', 'allow-null': true, readonly: true, 'remote-source': ['EmploymentStatus', 'id', 'name'],
+    }];
+    job_title = ['job_title', {
+      label: 'Job Title', type: 'select2', 'allow-null': true, readonly: true, 'remote-source': ['JobTitle', 'id', 'name'],
+    }];
     pay_grade = ['pay_grade', {
-      label: 'Pay Grade', type: 'select2', 'allow-null': true, 'remote-source': ['PayGrade', 'id', 'name'],
+      label: 'Pay Grade', type: 'select2', 'allow-null': true, readonly: true, 'remote-source': ['PayGrade', 'id', 'name'],
     }];
     joined_date = ['joined_date', { label: 'Joined Date', type: 'date', validation: '' }];
-    department = ['department', { label: 'Department', type: 'select2', 'remote-source': ['CompanyStructure', 'id', 'title'] }];
+    department = ['department', {
+      label: 'Department', type: 'select2', 'allow-null': true, readonly: true, 'remote-source': ['CompanyStructure', 'id', 'title'],
+    }];
     work_email = ['work_email', { label: 'Work Email', type: 'text', validation: 'email' }];
     country = ['country', { label: 'Country', type: 'select2', 'remote-source': ['Country', 'code', 'name'] }];
 
@@ -146,6 +156,10 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       ['first_name', { label: 'First Name', type: 'text', validation: '' }],
       ['middle_name', { label: 'Middle Name', type: 'text', validation: 'none' }],
       ['last_name', { label: 'Last Name', type: 'text', validation: '' }],
+      ['name_preferred', { label: 'Preferred Name', type: 'text', validation: 'none' }],
+      ['pronouns', { label: 'Pronouns', type: 'text', validation: 'none' }],
+      ['name_pronunciation', { label: 'Name Pronunciation', type: 'text', validation: 'none' }],
+      ['about', { label: 'About', type: 'textarea', validation: 'none' }],
       ['nationality', { label: 'Nationality', type: 'select2', 'remote-source': ['Nationality', 'id', 'name'] }],
       ['birthday', { label: 'Date of Birth', type: 'date', validation: '' }],
       ['gender', { label: 'Gender', type: 'select', source: [['Male', 'Male'], ['Female', 'Female'], ['Non-binary', 'Non-binary'], ['Other', 'Other'], ['Prefer not to say', 'Prefer not to say']] }],
@@ -158,6 +172,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       ['nic_num', { label: 'NIC', type: 'text', validation: 'none' }],
       ['other_id', { label: 'Other ID', type: 'text', validation: 'none' }],
       ['driving_license', { label: 'Driving License No', type: 'text', validation: 'none' }],
+      ['driving_license_exp_date', { label: 'Driving License Expiry', type: 'date', validation: 'none' }],
       ['health_insurance', { label: 'Health Insurance', type: 'text', validation: 'none' }],
       employment_status,
       job_title,
@@ -179,6 +194,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
       ['work_phone', { label: 'Work Phone', type: 'text', validation: 'none' }],
       work_email,
       ['private_email', { label: 'Private Email', type: 'text', validation: 'emailOrEmpty' }],
+      ['linkedin_url', { label: 'LinkedIn', type: 'text', validation: 'none' }],
       joined_date,
       department,
     ];
@@ -214,11 +230,15 @@ class EmployeeAdapter extends ReactModalAdapterBase {
           'first_name',
           'middle_name',
           'last_name',
+          'name_preferred',
+          'pronouns',
+          'name_pronunciation',
           'nationality',
           'birthday',
           'gender',
           'marital_status',
           'ethnicity',
+          'about',
         ],
       },
       {
@@ -231,6 +251,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
           'nic_num',
           'other_id',
           'driving_license',
+          'driving_license_exp_date',
           'health_insurance',
         ],
       },
@@ -244,7 +265,6 @@ class EmployeeAdapter extends ReactModalAdapterBase {
           'pay_grade',
           'joined_date',
           'confirmation_date',
-          'termination_date',
           'work_station_id',
           'timezone',
         ],
@@ -258,7 +278,7 @@ class EmployeeAdapter extends ReactModalAdapterBase {
           'province', 'postal_code',
           'home_phone', 'mobile_phone',
           'work_phone', 'work_email',
-          'private_email',
+          'private_email', 'linkedin_url',
         ],
       },
     ];
@@ -295,6 +315,8 @@ class EmployeeAdapter extends ReactModalAdapterBase {
   getSourceMapping() {
     const k = this.sourceMapping;
     k.supervisor = ['Employee', 'id', 'first_name+last_name'];
+    k.work_location = ['WorkLocation', 'id', 'name'];
+    k.cost_center = ['CostCenter', 'id', 'name'];
     return k;
   }
 
