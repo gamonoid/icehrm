@@ -8,7 +8,7 @@ namespace Classes\Migration;
  * saw "Error occurred while saving attendance". Widen both columns to the same
  * size AuditLog.ip already uses.
  */
-class v20261106_100000_widen_attendance_ip extends AbstractMigration {
+class v20261128_100000_widen_attendance_ip extends AbstractMigration {
 
 	public function up() {
 		return $this->executeQuery(
