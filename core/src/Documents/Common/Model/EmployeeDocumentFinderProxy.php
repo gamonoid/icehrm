@@ -28,6 +28,14 @@ class EmployeeDocumentFinderProxy extends EmployeeDocument implements FinderProx
 
     public function getTotalCount($query, $data)
     {
+        $normalizedQuery = trim(strtolower($query));
+        if ($normalizedQuery !== '' &&
+            strpos($normalizedQuery, 'and') !== 0 &&
+            strpos($normalizedQuery, 'order by') !== 0 &&
+            strpos($normalizedQuery, 'limit') !== 0) {
+            $query = ' AND ' . $query;
+        }
+
         $find = $this->createFindQuery();
         $sql = "Select count(id) as count from " . $this->table;
         $sql .= " WHERE 1=1 AND " . $find.$this->getAdditionalQuery().$query;
